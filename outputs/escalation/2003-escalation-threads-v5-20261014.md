@@ -1,0 +1,91 @@
+# OT-02 · #2003 -- Q1 What is death?
+
+state=completed · raised 2026-10-02 · raised in: --
+
+**Comes back when:** life-death unit 2 (H4191, H4194, G0599, G2288); Sheol (H7585, G0086); sleep (G2837, H3462)
+
+**Thread:** **Q1 What is death?** (researcher)
+Researcher, chat 2026-10-13 (verbatim): "open #2003 OT-02. what is the primary cluster for the following strongs?" (the 8 item Strong's). cluster_strong lookup: H4191, H4194, G0599, G2288 -> M25 (researcher ruling #1880), with T3/T10 as tags; H7585 -> T10 only; G0086 -> T10 only; G2837 -> T3 only; H3462 -> T3 only. No primary flag exists in cluster_strong.
+Researcher, chat 2026-10-13 (verbatim): "the strongs all related to the place of death and may relate to where the soul goes after death. extract a csv with all the verses for the 8 strongs." Extract made: 1,340 hits in 1,122 verses (H4191 840/699, H4194 156/151, G0599 110/99, G2288 120/106, H7585 66/64, G0086 10/10, G2837 18/18, H3462 20/20), one row per hit, with the other M-coded words in each verse. Hebrew counts within 9 of strong.count (H4191 840 vs 849; verse gaps are by design, governance.verse_gap_by_design). Not read yet.
+Researcher, chat 2026-10-13 (verbatim): "cross check these verses and strongs to the claims register and prepare output as csv". Done against iba.db narrative_citation / narrative_claim / narrative_claim_source. Of 1,122 verses: 300 cited in the current narrative, 20 are claim sources, 820 not in the narrative. Cited now by Strong's: H4191 127/699, H4194 65/151, G0599 43/99, G2288 47/106, H7585 21/64, G0086 4/10, G2837 7/18, H3462 9/20. 16 claims linked (9 by source verse, 7 by wording only: death/dead/sleep). The claim register is not yet linked to passages (R0), so citations, not claim tellings, show where a verse is in the narrative.
+Extract (v2) and register cross-check (v4) done; citations are part of the register (narrative_citation), as the researcher noted. Next step is the researcher's: how the 1,122 verses (820 not in the narrative) are to be read for Q1, the place of death and where the soul goes after death.
+Researcher, chat 2026-10-13 (verbatim): "I was expecting that the csv start with the verses for the 8 strongs, then map the verses to the claim register and citation, and that the claim register already have a column to show the narrative paragraph." Rebuilt as one CSV (v2): 1,122 verses -> 1,305 rows, one per verse x citing paragraph, with claims sourcing each verse. Fact: the register has the column (narrative_citation.passage_id -> narrative_passage) but it is empty for all 6,371 citations (R0 not done), so paragraphs are taken from the current chapter files; 0 not found, 3 short references flagged to check. Verse CSV v1 archived; claims v1 (wording matches) kept.
+Researcher, chat 2026-10-13 (verbatim): "are there any verses binding sheol to either soul or spirit or 'life'". 19 of 74 Sheol/Hades verses carry a soul or life word: soul 9 (Psa 16:10, 30:3, 49:15, 86:13, 88:3, 89:48; Pro 23:14; Act 2:27, 31), life/live 5 (1Sa 2:6, Pro 15:24, Rev 1:18 plus Psa 30:3, 88:3, 89:48), going down alive 5, nephesh as Sheol's appetite 2 (Isa 5:14, Hab 2:5). No spirit word (H7307, G4151) in any Sheol/Hades verse. Psa 86:13 and Pro 23:14 not cited in the narrative.
+Researcher, chat 2026-10-13 (verbatim): "yes, lets do it, because I now are confused - if the narrative have claims that is not in the claim register, then that is a concern, if the verses is neither in the narrative nor the claims register, then it is indicative of missing reading areas. I do not want to engage in wholesale reading of the narrative or all 1200 verses". Narrow R0 batch for the Ch 2 death sections: 21 narrative claims, 9 with an existing original-essay claim beside them, 12 in the narrative only; N15 "Sheol is the grave, the realm of the dead" has no verse behind it. Gap: 70 of 112 Sheol/Hades/sleep verses in neither narrative nor register; 55 bear on Q1, 15 data only. Nothing written to the register; researcher to choose (a) register then read, or (b) read then register.
+Researcher, chat 2026-10-14 (verbatim): "I note the findings for this read. a) narratives with no basis for the claims - these should be removed from the narrative, even if they later return in a different format b) a tendency to make verses fit a particular narrative - this is fundamental transgression of the core value of the study - the context and interpretation of verses set the narrative, when the interpretation of the verses change, the narrative change. c) verses are dropped or set aside if the do not fit into the narrative - this breaks the entire model ... the claims register keeps the narrative honest. However, we are far from getting this right - as this small read illustrates. with all of this said - a) ensure the claim register is complete for the reading of these verses. b) ensure that the narrative support the claims c) ensure that the narrative does not violate the truth." Recorded in CLAUDE.md and memory. Work: read the 55 uncovered place-of-death verses in their passages; register claims (Ch 2 death sections + the new reading); remove baseless statements and correct fitted ones in Ch 2.
+OT-02: item 9 verse:Job 18:14; Ecc 12:5; Acts 5:5, 10 added
+Done 2026-10-14 for the instruction a) register complete for these verses, b) narrative supports the claims, c) narrative does not violate the truth. Register updates 135-137: 29 narrative claims added (C-82 to C-110) with sources and tellings; 3-7, 3-9, 3-10, 3-13, 6-2, 2-3, 2-15 linked to their passages; 3-9 corrected (unsupported "Sheol here is death and the grave, not a destination distinct from the spirit's" removed). Ch 2 v21 -> v23: "Sheol is the grave, the realm of the dead" removed (no verse); new section Going down to Sheol; After death restated (the dead silent stated as one side; Isa 14, Eze 31-32 oracles and Luk 16:23-31 added; "from this side of death" framing removed); count list shown in full (Psa 86:13, Pro 23:14); Isa 5:14 restored; sleep verses added (Joh 11:11-14, Mat 27:52, 1Th 4:13-15, 1Co 15:6, 18, 20, Job 3:13). Ch 5 v8 ("Sheol, the grave" removed), Ch 9 v4 (Psa 16:10 no longer called rescue of a living person), 10.12 v9 (stale "on hold" note restated). Of 112 Sheol/Hades/sleep verses, 97 now in narrative and register; 15 data only (listed in update 135). 95 quote parts checked, 0 failures. New item: Job 18:14, Ecc 12:5, Acts 5 not yet read. Not done: the 1,010 die/death-only verses (unit 2) were not re-checked; R0 for other chapters stays deferred to the chapter-by-chapter review.
+Session-close read-back against cfg_behaviour_rule 69 found two uncounted generalisations Claude wrote this session: "Scripture often speaks of death as sleep" and "When the Old Testament speaks of where the dying go, it speaks of going down to Sheol" (an implied always, against Gen 25:8 "gathered to his people" and 1Ki 2:2 "the way of all the earth"). Corrected in Ch 2 v24 with C-89 and C-93 (register updates 138-139). Three older ones outside the death sections added as an item for the chapter-by-chapter review. Researcher ruling proposed as cfg_behaviour_rule claims-register-keeps-narrative-honest (awaiting approval); GOVERNANCE.md section 94 noted. Researcher, chat 2026-10-14 (verbatim): "It appears that the sheol thread read has now turned into a solid base with a good outcome ... I suggest we do a session-close and then think through the remainder of #2003."
+OT-02: item 10 chapter:2 added
+2026-10-14, researcher: 'continue with OT-02 ... check the completeness and validity of existing claims, check narration for unsubstantiated or unrecorded claims, and check the verses for perspectives that were missed in the first round.' Die/death check done (H4191, H4194, G0599, G2288; 1,034 verses), reusing unit 2 faces and re-running the cross-check against Ch 2 v24. (a) 31 claims valid; 3 register faults (duplicate sources C-90/93/94, 'Lev 5' in 2-1, working labels in C-109); 8 claims to gain sources. (b) 8 Ch 2 death sections have no register claims: 31 to record (R1-R31), 10 statements fail on their verses (incl. OT-02.10 counts: second life joined in 6 of 39 oaths; wishes to die 2 fed, 2 otherwise answered, 3 granted). (c) 244 unread inner-being verses read; 24 perspectives (C1-C24) incl. OT-02.9 read. Nothing written to narrative or register yet; proposed actions in section E await the researcher.
+2026-10-14, researcher asked whether spiritual death, dead to sin and causes of death (especially spiritual death) were adequately recognised. Answer: no. (1) G3498 nekros (119 verses), G2289 thanatoo (11), G2348 thnesko (10), G4880 synapothnesko and G3500 nekrosis (5) were never pulled in M25 nor listed on OT-02; they carry Eph 2:1, 5; Rom 6:11, 13; 7:4; 8:10, 13; Luk 15:24; Mat 8:22; Heb 6:1; 9:14; Jam 2:26; Joh 5:25 (Eph 2:1, Rom 6:13, 7:4, Luk 15:24, Mat 8:22, Heb 6:1, Joh 5:25 are nowhere in the narrative). (2) The check read by unit-2 face, not by which death a verse speaks of, its causes, or its change of character (#1919). Proposed: pull the five words, read all death verses for kind/cause/change, revise the check to v2 before any weave. Weave of v1 held until then.
+2026-10-14, researcher: 'yes, proceed with the pull and reading. If these verses were not part of M25, are they included in other M-codes or hidden in T-Codes?' Answer: hidden in T-codes (G3498 nekros T2; G2289, G2348, G4880 T3; G3500, G2349 T2; also H1478, H7901J, G5053 T3) -- the four OT-02 words had gained M25 under #1880, these were not brought across. Pulled 17 Strong's, 250 verses, all read (check v2 section F). Section G: kinds of death the verses speak of (body; death in the living; dying to; death beyond death; a power; like the dead), the 'dead in' (3 verses) / 'dead to' (6) change of character, stated causes per kind, and where verses do not say which death. 36 'slept with his fathers' verses missing from C-89. Perish words (H0006, G0622 M10, G0684 M55) named, not pulled. Section E revised; nothing written yet.
+OT-02: item 1 (strong:H4191) closed -- closed by Claude: Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14). [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+OT-02: item 2 (strong:H4194) closed -- closed by Claude: Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14). [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+OT-02: item 3 (strong:G0599) closed -- closed by Claude: Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14). [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+OT-02: item 4 (strong:G2288) closed -- closed by Claude: Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14). [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+OT-02: item 5 (strong:H7585) closed -- closed by Claude: Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25. [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+OT-02: item 6 (strong:G0086) closed -- closed by Claude: Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25. [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+OT-02: item 7 (strong:G2837) closed -- closed by Claude: Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25. [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+OT-02: item 8 (strong:H3462) closed -- closed by Claude: Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25. [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+OT-02: item 9 (verse:Job 18:14; Ecc 12:5; Acts 5:5, 10) closed -- closed by Claude: Job 18:14, Ecc 12:5, Acts 5:5, 10-11 read and placed in Ch 2 v25 Facing death and Death and sin; 10.12 v10 working note removed. [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+OT-02: item 10 (chapter:2) closed -- closed by Claude: Living before God: "most plainly" removed; second life joined in 6 of 39 oaths. Wanting to die: "more often fed than taken" restated with counts (2 fed, 2 otherwise, 3 granted). Ch 2 v25. [files: _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md]
+
+**Resolution:** Every item settled (10): OT-02.1 strong:H4191 closed: Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14).; OT-02.2 strong:H4194 closed: Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14).; OT-02.3 strong:G0599 closed: Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14).; OT-02.4 strong:G2288 closed: Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14).; OT-02.5 strong:H7585 closed: Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25.; OT-02.6 strong:G0086 closed: Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25.; OT-02.7 strong:G2837 closed: Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25.; OT-02.8 strong:H3462 closed: Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25.; OT-02.9 verse:Job 18:14; Ecc 12:5; Acts 5:5, 10 closed: Job 18:14, Ecc 12:5, Acts 5:5, 10-11 read and placed in Ch 2 v25 Facing death and Death and sin; 10.12 v10 working note removed.; OT-02.10 chapter:2 closed: Living before God: "most plainly" removed; second life joined in 6 of 39 oaths. Wanting to die: "more often fed than taken" restated with counts (2 fed, 2 otherwise, 3 granted). Ch 2 v25.
+
+## Items
+
+### OT-02.1 strong H4191 -- closed
+opened 2026-10-02
+
+- **closed** (2026-10-14, Claude): Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14).
+
+### OT-02.2 strong H4194 -- closed
+opened 2026-10-02
+
+- **closed** (2026-10-14, Claude): Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14).
+
+### OT-02.3 strong G0599 -- closed
+opened 2026-10-02
+
+- **closed** (2026-10-14, Claude): Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14).
+
+### OT-02.4 strong G2288 -- closed
+opened 2026-10-02
+
+- **closed** (2026-10-14, Claude): Die/death words read by face and by kind (check v2 sections A-C, G); Ch 2 v25 woven, register update 140 + section A sources (2026-10-14).
+
+### OT-02.5 strong H7585 -- closed
+opened 2026-10-02
+
+- **closed** (2026-10-14, Claude): Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25.
+
+### OT-02.6 strong G0086 -- closed
+opened 2026-10-02
+
+- **closed** (2026-10-14, Claude): Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25.
+
+### OT-02.7 strong G2837 -- closed
+opened 2026-10-02
+
+- **closed** (2026-10-14, Claude): Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25.
+
+### OT-02.8 strong H3462 -- closed
+opened 2026-10-02
+
+- **closed** (2026-10-14, Claude): Sheol/Hades/sleep read and woven 2026-10-14 (Ch 2 v24, updates 135-139); "slept with his fathers" (36 verses) added to Sleep and waking in v25.
+
+### OT-02.9 verse Job 18:14; Ecc 12:5; Acts 5:5, 10 -- closed
+fear crossing into death, held in a 10.12 working note for Ch 2, not yet read · opened 2026-10-14
+
+- **closed** (2026-10-14, Claude): Job 18:14, Ecc 12:5, Acts 5:5, 10-11 read and placed in Ch 2 v25 Facing death and Death and sin; 10.12 v10 working note removed.
+
+### OT-02.10 chapter 2 -- closed
+Ch 2 v24 uncounted superlatives outside the death sections (rule 69): 'most plainly' and 'its commonest form, and often' (Living before God), 'more often fed than taken' (Wanting to die); for the chapter-by-chapter review · opened 2026-10-14
+
+- **closed** (2026-10-14, Claude): Living before God: "most plainly" removed; second life joined in 6 of 39 oaths. Wanting to die: "more often fed than taken" restated with counts (2 fed, 2 otherwise, 3 granted). Ch 2 v25.
+
+## History before migration
+
+History before migration (from the register's status cell):
+touched: LD-12, LD-21, LD-26, LD-37; **unit 2 (#1939) main source**: LD-43–LD-58, LD-61–LD-62, woven into Ch 2 "What death is" (*Death and sin*, *Death in the living*). Sheol and sleep pulls not yet made. Unit 3 (#1940): LD-114 ("For the living know that they will die", Ecc 9:5), LD-128 (alive in name, dead in fact: Rev 3:1; 1Ti 5:6; Eph 4:18). Unit 4 reading (2026-10-04): Job 14:12, not roused from sleep (H5782); the other "awake" word, H6974, tagged T3, carries Dan 12:2, Isa 26:19, Psa 17:15 (reading §D). Unit 4 (#1949): LD-143, LD-150–LD-152, woven into the new Ch 2 "Sleep and waking" (death as a sleep not roused; a perpetual sleep; "The child has not awakened"; the dead waking)

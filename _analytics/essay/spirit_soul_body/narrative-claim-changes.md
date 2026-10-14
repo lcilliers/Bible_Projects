@@ -2,6 +2,666 @@
 
 *Published from iba.db on 2026-10-14. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-14 — OT-02 die, dead and perish words: Ch 2 death part rebuilt, claims registered
+
+**Strand:** life and death (M25), OT-02 Q1 What is death?
+
+**Researcher:** "proceed with the weave as proposed, include the perish pull. What I am seeing is encouraging that we heading in right direction." (2026-10-14), on check v2; earlier: "check the completeness and validity of existing claims, check narration for unsubstantiated or unrecorded claims, and check the verses for perspectives that were missed in the first round"; "have you adequately recognised the different perspectives of death related to 'spiritual death', 'dead to sin', 'causes of death'"
+
+**Method:** Die/death words (H4191, H4194, G0599, G2288) checked against the claims and Ch 2 by unit-2 face; the dead/die words hidden in T-codes (G3498 and 16 others, 250 verses) and the perish words (H0006, G0622, G0684, 271 verses) pulled and read. Ch 2 death part rebuilt by kind of death (Death spoken of in more than one way; Death in the living with stated causes and the way out; new Dead to sin; new Those left behind); 10 statements corrected (OT-02.10 counts); 31 + 16 claims registered with tellings. Pointers in 10.10, 10.12 (working note removed), 12 and 14.
+
+**Sources:** _analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v2-20261014.md
+_analytics/Clusters/M25 - life-death/life-death-ot02-die-death-face-coverage-v1-20261014.csv
+_analytics/Clusters/M25 - life-death/life-death-ot02-dead-words-pull-v1-20261014.csv
+_analytics/Clusters/M25 - life-death/life-death-ot02-perish-pull-v1-20261014.csv
+
+**Scripts:** _analytics/Clusters/M25 - life-death/life-death-ot02-ch2-v25-weave-v1-20261014.py
+_analytics/Clusters/M25 - life-death/life-death-ot02-face-coverage-v1-20261014.py
+_analytics/Clusters/M25 - life-death/life-death-ot02-register-update-build-v1-20261014.py
+_analytics/Clusters/M25 - life-death/narrative-quote-check-v1-20261014.py
+
+**Refs:** thread OT-02
+
+**Quote check:** 259 parts, 0 failures. the 8 non-matches are section names in quotation marks, not Scripture
+
+- **C-84** telling changed · 02 *What death is* (recorded, 2026-10-14)
+  - passage before: The same death is met in different ways. "One dies in his full vigor, being wholly at ease and secure"; "Another dies in bitterness of soul, never having tasted of prosperity" (Job 21:23, 25). Nothing goes with the dead: "For when he dies he will carry nothing away; his glory will not go down after him" (Psalm 49:17); "When the wicked dies, his hope will perish" (Proverbs 11:7). No one knows when it will come: "I am old; I do not know the day of my death" (Genesis 27:2). Yet the Preacher can write that "the day of death" is better "than the day of birth" (Ecclesiastes 7:1).
+  - passage after: The same death is met in different ways. "One dies in his full vigor, being wholly at ease and secure"; "Another dies in bitterness of soul, never having tasted of prosperity" (Job 21:23, 25). Nothing goes with the dead: "For when he dies he will carry nothing away; his glory will not go down after him" (Psalm 49:17); "When the wicked dies, his hope will perish" (Proverbs 11:7). No one knows when it will come: "I am old; I do not know the day of my death" (Genesis 27:2). Yet the Preacher can write that "the day of death" is better "than the day of birth" (Ecclesiastes 7:1). Asaph, who says "I was envious" of the wicked, noticed that "they have no pangs until death" (Psalm 73:3–4).
+- **C-85** telling changed · 02 *Death and sin* (recorded, 2026-10-14)
+  - passage before: Scripture ties death to sin from the first command. "of the tree of the knowledge of good and evil you shall not eat, for in the day that you eat of it you shall surely die" (Genesis 2:17). The first word spoken against that command denies the death: "But the serpent said to the woman, 'You will not surely die.'" (Genesis 3:4).
+  - passage after: Scripture ties death to sin from the first command. "of the tree of the knowledge of good and evil you shall not eat, for in the day that you eat of it you shall surely die" (Genesis 2:17). The woman repeats it with more than was said: "neither shall you touch it, lest you die" (Genesis 3:3). The first word spoken against that command denies the death: "But the serpent said to the woman, 'You will not surely die.'" (Genesis 3:4).
+- **C-87** telling changed · 02 *Death and sin* (recorded, 2026-10-14)
+  - passage before: Each person answers for his own. "the soul who sins shall die" (Ezekiel 18:4). "But each one shall die for his own sin" (2 Kings 14:6). Jesus says it of unbelief: "unless you believe that I am he you will die in your sins" (John 8:24). John speaks of "sin that leads to death" and of sin that does not, and tells a believer to ask life for a brother whose sin does not lead to death (1 John 5:16–17). He does not say which sin leads to death, and I do not guess.
+  - passage after: Each person answers for his own. "the soul who sins shall die" (Ezekiel 18:4). "But each one shall die for his own sin" (2 Kings 14:6; from Deuteronomy 24:16). Jeremiah repeats it: "everyone shall die for his own iniquity" (Jeremiah 31:30). Jesus says it of unbelief: "unless you believe that I am he you will die in your sins" (John 8:24). John speaks of "sin that leads to death" and of sin that does not, and tells a believer to ask life for a brother whose sin does not lead to death (1 John 5:16–17). He does not say which sin leads to death, and I do not guess.
+- **C-88** telling changed · 02 *Death in the living* (recorded, 2026-10-14)
+  - passage before: Scripture also speaks of death inside a living person: - **The heart can die first.** Nabal's "heart died within him, and he became as a stone" ten days before he died (below). - **The living can be called dead.** Paul writes to living people, "you, who were dead in your trespasses and the uncircumcision of your flesh" (Colossians 2:13; also Ephesians 2:5). - **A person can be called alive and be dead.** "You have the reputation of being alive, but you are dead" (Revelation 3:1). "She who is self-indulgent is dead even while she lives" (1 Timothy 5:6). Paul speaks of people "alienated from the life of God because of the ignorance that is in them, due to their hardness of heart" (Ephesians 4:18). - **The mind can be set on it.** "For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace" (Romans 8:6). - **A person can abide in it.** "Whoever does not love abides in death" (1 John 3:14). And "worldly grief produces death" (2 Corinthians 7:10). - **A person can cry out under it.** "Wretched man that I am! Who will deliver me from this body of death?" (Romans 7:24). - **A church can be near it.** "strengthen what remains and is about to die" (Revelation 3:2).
+  - passage after: Scripture also speaks of death inside a living person: - **The heart can die first.** Nabal's "heart died within him, and he became as a stone" ten days before he died (below). - **The living can be called dead.** Paul writes to living people, "you, who were dead in your trespasses and the uncircumcision of your flesh" (Colossians 2:13; also Ephesians 2:5). - **A person can be called alive and be dead.** "You have the reputation of being alive, but you are dead" (Revelation 3:1). "She who is self-indulgent is dead even while she lives" (1 Timothy 5:6). Paul speaks of people "alienated from the life of God because of the ignorance that is in them, due to their hardness of heart" (Ephesians 4:18). - **The mind can be set on it.** "For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace" (Romans 8:6). - **A person can abide in it.** "Whoever does not love abides in death" (1 John 3:14). And "worldly grief produces death" (2 Corinthians 7:10). - **A person can cry out under it.** "Wretched man that I am! Who will deliver me from this body of death?" (Romans 7:24). - **A church can be near it.** "strengthen what remains and is about to die" (Revelation 3:2). - **Works and faith can be dead.** "repentance from dead works" (Hebrews 6:1); the blood of Christ will "purify our conscience from dead works to serve the living God" (9:14); "faith by itself, if it does not have works, is dead" (James 2:17). - **It can lie behind a fair outside.** "you are like whitewashed tombs, which outwardly appear beautiful, but within are full of dead people's bones and all uncleanness" (Matthew 23:27). - **A people can die while it lives.** Ephraim "incurred guilt through Baal and died" (Hosea 13:1). False teachers are "twice dead, uprooted" (Jude 12). - **Inner things can perish.** "the hope of the godless shall perish" (Job 8:13). "My endurance has perished; so has my hope from the Lord" (Lamentations 3:18). "Our bones are dried up, and our hope is lost" (Ezekiel 37:11). "Courage shall fail both king and officials" (Jeremiah 4:9); the word behind "courage" is *lēḇ* ("heart"), and the verb is *ʾāḇaḏ* ("perish"). "The wisdom of their wise men shall perish" (Isaiah 29:14). "Truth has perished; it is cut off from their lips" (Jeremiah 7:28). "A bribe corrupts the heart" (Ecclesiastes 7:7), with the same verb.
+- **C-89** telling changed · 02 *Sleep and waking* (recorded, 2026-10-14)
+  - passage before: Jesus speaks of death as sleep. "the girl is not dead but sleeping. And they laughed at him" (Matthew 9:24). Of Lazarus he says, "Our friend Lazarus has fallen asleep, but I go to awaken him." The disciples hear it as rest: "Lord, if he has fallen asleep, he will recover." So "Jesus told them plainly, 'Lazarus has died'" (John 11:11–14). The picture had to be said plainly before they understood it. At his own death, "many bodies of the saints who had fallen asleep were raised" (Matthew 27:52).
+  - passage after: Jesus speaks of death as sleep. "the girl is not dead but sleeping. And they laughed at him" (Matthew 9:24); Luke adds, "knowing that she was dead" (Luke 8:53). Of Lazarus he says, "Our friend Lazarus has fallen asleep, but I go to awaken him." The disciples hear it as rest: "Lord, if he has fallen asleep, he will recover." So "Jesus told them plainly, 'Lazarus has died'" (John 11:11–14). The picture had to be said plainly before they understood it. At his own death, "many bodies of the saints who had fallen asleep were raised" (Matthew 27:52).
+- **C-104** telling changed · 02 *Delivered from death* (recorded, 2026-10-14)
+  - passage before: The verses picture death as something that surrounds and holds. "For the waves of death encompassed me, the torrents of destruction assailed me; the cords of Sheol entangled me; the snares of death confronted me" (2 Samuel 22:5–6; nearly the same words in Psalm 18:4–5, which goes on, "In my distress I called upon the Lord … and my cry to him reached his ears", 18:6). It has gates: "O you who lift me up from the gates of death" (Psalm 9:13). God is named by the rescue: "Our God is a God of salvation, and to God, the Lord, belong deliverances from death" (Psalm 68:20). Even his discipline stops short of it: "The Lord has disciplined me severely, but he has not given me over to death" (Psalm 118:18). Paul says it of a danger in his own life: "He delivered us from such a deadly peril, and he will deliver us" (2 Corinthians 1:10).
+  - passage after: The verses picture death as something that surrounds and holds. "For the waves of death encompassed me, the torrents of destruction assailed me; the cords of Sheol entangled me; the snares of death confronted me" (2 Samuel 22:5–6; nearly the same words in Psalm 18:4–5, which goes on, "In my distress I called upon the Lord … and my cry to him reached his ears", 18:6). It has gates: "O you who lift me up from the gates of death" (Psalm 9:13). God is named by the rescue: "Our God is a God of salvation, and to God, the Lord, belong deliverances from death" (Psalm 68:20). Even his discipline stops short of it: "The Lord has disciplined me severely, but he has not given me over to death" (Psalm 118:18). "In famine he will redeem you from death" (Job 5:20); "He who is bowed down shall speedily be released; he shall not die and go down to the pit" (Isaiah 51:14); a psalm asks him to "preserve those doomed to die" (Psalm 79:11). Habakkuk rests it on who God is: "Are you not from everlasting, O Lord my God, my Holy One? We shall not die" (Habakkuk 1:12). Paul says it of a danger in his own life: "He delivered us from such a deadly peril, and he will deliver us" (2 Corinthians 1:10).
+- **C-106** telling changed · 02 *After death* (recorded, 2026-10-14)
+  - passage before: Other verses say that the dead are silent and gone: - "But a man dies and is laid low; man breathes his last, and where is he?" (Job 14:10) - "As the cloud fades and vanishes, so he who goes down to Sheol does not come up; he returns no more to his house, nor does his place know him anymore" (Job 7:9–10) - "For the living know that they will die, but the dead know nothing, and they have no more reward, for the memory of them is forgotten" (Ecclesiastes 9:5). The Preacher draws the living back to the work in hand: "Whatever your hand finds to do, do it with your might, for there is no work or thought or knowledge or wisdom in Sheol, to which you are going" (9:10). - "For in death there is no remembrance of you; in Sheol who will give you praise?" (Psalm 6:5) - "The dead do not praise the Lord, nor do any who go down into silence" (Psalm 115:17) - "For Sheol does not thank you; death does not praise you; those who go down to the pit do not hope for your faithfulness. The living, the living, he thanks you, as I do this day" (Isaiah 38:18–19) - Of the man who trusts in his wealth: "his soul will go to the generation of his fathers, who will never again see light" (Psalm 49:19)
+  - passage after: Other verses say that the dead are silent and gone: - "But a man dies and is laid low; man breathes his last, and where is he?" (Job 14:10) - "As the cloud fades and vanishes, so he who goes down to Sheol does not come up; he returns no more to his house, nor does his place know him anymore" (Job 7:9–10) - "For the living know that they will die, but the dead know nothing, and they have no more reward, for the memory of them is forgotten" (Ecclesiastes 9:5). The Preacher draws the living back to the work in hand: "Whatever your hand finds to do, do it with your might, for there is no work or thought or knowledge or wisdom in Sheol, to which you are going" (9:10). - "For in death there is no remembrance of you; in Sheol who will give you praise?" (Psalm 6:5) - "The dead do not praise the Lord, nor do any who go down into silence" (Psalm 115:17) - "Do you work wonders for the dead? Do the departed rise up to praise you?" (Psalm 88:10) - "For Sheol does not thank you; death does not praise you; those who go down to the pit do not hope for your faithfulness. The living, the living, he thanks you, as I do this day" (Isaiah 38:18–19) - Of the man who trusts in his wealth: "his soul will go to the generation of his fathers, who will never again see light" (Psalm 49:19)
+- **C-111** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Life is held in the breath, and the breath is God's to give and to take back
+  - verdict before: —
+  - verdict after: New
+- **C-112** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: When the breath goes, a person's plans go with it
+  - verdict before: —
+  - verdict after: New
+- **C-113** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: God holds both ends, killing and making alive, and keeps alive between them
+  - verdict before: —
+  - verdict after: New
+- **C-114** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The breath also gives understanding, and words come out on it
+  - verdict before: —
+  - verdict after: New
+- **C-115** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The breath can fail in someone still alive
+  - verdict before: —
+  - verdict after: New
+- **C-116** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: God gives human frailty as a reason for holding back his anger
+  - verdict before: —
+  - verdict after: New
+- **C-117** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Humans and animals share one breath and one lot
+  - verdict before: —
+  - verdict after: New
+- **C-118** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Life and death are set before a person to choose; life is chosen by doing, seeking and holding on
+  - verdict before: —
+  - verdict after: New
+- **C-119** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Long days are promised with some commands, and the Preacher sets the righteous who perish beside them; both are stated
+  - verdict before: —
+  - verdict after: New
+- **C-120** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Wisdom marks where the way to death ends, and some of what kills a person is named from within
+  - verdict before: —
+  - verdict after: New
+- **C-121** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: God has no pleasure in anyone's death and calls for turning; the turning is a considered act that reaches back over the past, and trust can lean the wrong way
+  - verdict before: —
+  - verdict after: New
+- **C-122** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Life can be wrongly kept or taken by lying words
+  - verdict before: —
+  - verdict after: New
+- **C-123** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The same message is death to one and life to another
+  - verdict before: —
+  - verdict after: New
+- **C-124** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Another's death can be laid at a person's hand
+  - verdict before: —
+  - verdict after: New
+- **C-125** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The commonest form of the oath by life is "As the Lord lives" (39 verses); in six of them a second life is joined
+  - verdict before: —
+  - verdict after: New
+- **C-126** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The oath "As the Lord lives" places a promise before the living God and binds the speaker to it by life
+  - verdict before: —
+  - verdict after: New
+- **C-127** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The oath's words stay the same while the heart that speaks them differs; it is judged by how it is sworn
+  - verdict before: —
+  - verdict after: New
+- **C-128** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: God swears by his own life, and the oath carries what he wants and what he will do
+  - verdict before: —
+  - verdict after: New
+- **C-129** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: "The living God" sets him against idols, which have no breath
+  - verdict before: —
+  - verdict after: New
+- **C-130** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The inner being turns toward the living God, or away from him
+  - verdict before: —
+  - verdict after: New
+- **C-131** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Scripture counts a life in days and says what the days are for
+  - verdict before: —
+  - verdict after: New
+- **C-132** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The world where life is lived is named "the land of the living"
+  - verdict before: —
+  - verdict after: New
+- **C-133** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: People weigh their own lives: loathed, worn down, enjoyed, and not consisting in possessions
+  - verdict before: —
+  - verdict after: New
+- **C-134** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Where the hope of seeing good has gone, life is weighed as a breath
+  - verdict before: —
+  - verdict after: New
+- **C-135** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The difference in how a life is weighed lies in what each verse sets life beside
+  - verdict before: —
+  - verdict after: New
+- **C-136** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Death's certainty can be turned into a reason to indulge, and Scripture answers it
+  - verdict before: —
+  - verdict after: New
+- **C-137** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The law weighs a life by what it has begun, and names what a death can leave unfinished
+  - verdict before: —
+  - verdict after: New
+- **C-138** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: What lies beyond death is not shown to a person
+  - verdict before: —
+  - verdict after: New
+- **C-139** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Scripture speaks of death in more than one way: the body's death, death in the living, dying to sin, a death beyond death, death as a power, and the living made like the dead
+  - verdict before: —
+  - verdict after: New
+- **C-140** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The father sets "dead" beside "lost" and "alive" beside "found"; to perish and to be lost are one word
+  - verdict before: —
+  - verdict after: New
+- **C-141** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: "Dead in" trespasses and "died to" sin are opposites: death under sin, and death that ends its rule
+  - verdict before: —
+  - verdict after: New
+- **C-142** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The word "dead" passes to sin itself, to faith and to works
+  - verdict before: —
+  - verdict after: New
+- **C-143** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Some are perishing now, set against being saved; what is set against perishing is eternal life
+  - verdict before: —
+  - verdict after: New
+- **C-144** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Where a verse sets death against eternal life (Romans 6:23) it speaks of more than the body's death; other verses do not say which death, and are left as written
+  - verdict before: —
+  - verdict after: New
+- **C-145** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: In Acts a lie contrived in the heart is followed at once by death, and fear comes on all who hear
+  - verdict before: —
+  - verdict after: New
+- **C-146** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Inner things can perish: hope, endurance, courage (the heart), wisdom and truth
+  - verdict before: —
+  - verdict after: New
+- **C-147** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The verses name what brings death in the living, each in its own place; no verse gathers them into one list
+  - verdict before: —
+  - verdict after: New
+- **C-148** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The verses name the way out of death in the living: hearing the Son and believing, God making alive with forgiveness, waking, coming home; loving the brothers is its sign
+  - verdict before: —
+  - verdict after: New
+- **C-149** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: One person's freedom can destroy another
+  - verdict before: —
+  - verdict after: New
+- **C-150** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The believer has already died to sin, to the law and to the powers of the world, and a putting to death is still to be done
+  - verdict before: —
+  - verdict after: New
+- **C-151** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Kings and Chronicles tell the deaths of kings as sleeping with their fathers (36 verses)
+  - verdict before: —
+  - verdict after: New
+- **C-152** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The coming of death is often met with anguish and terror, and the fear of dying shapes what people do
+  - verdict before: —
+  - verdict after: New
+- **C-153** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: "The king of terrors" is Bildad's word, said of Job, and God's verdict on the friends stands over it
+  - verdict before: —
+  - verdict after: New
+- **C-154** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The nearness of death is given a purpose: to rely on God who raises the dead
+  - verdict before: —
+  - verdict after: New
+- **C-155** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: A death is met by those who remain: grief, not watching, fasting and then eating, reproach, limits on mourning, mourning withheld, and death not taken to heart
+  - verdict before: —
+  - verdict after: New
+- **C-156** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: People sometimes want to die; of the 24 verses with such a wish, 17 name no inner word
+  - verdict before: —
+  - verdict after: New
+- **C-157** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Of the seven wishes to die answered in these passages, two are fed, two are answered another way, and three are granted, each to a man already blinded or wounded
+  - verdict before: —
+  - verdict after: New
+- **C-158** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Giving life belongs to the Father, the Son and the Spirit
+  - verdict before: —
+  - verdict after: New
+- **C-159** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The dead made alive are living people; the crossing from death to life happens now, and life is spoken of as had now and still to come
+  - verdict before: —
+  - verdict after: New
+- **C-160** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The making alive rests on a death, and Christ went to it himself
+  - verdict before: —
+  - verdict after: New
+- **C-161** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: That death changes how the living live: no longer for themselves, dead to sin, Christ living in them
+  - verdict before: —
+  - verdict after: New
+- **C-162** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: A death, too, can belong to the Lord, and a dying can go on while a person lives
+  - verdict before: —
+  - verdict after: New
+- **C-163** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Scripture speaks of the death of the upright in its own words: precious, wished for, a refuge, in faith, bearing fruit, glorifying God
+  - verdict before: —
+  - verdict after: New
+- **C-164** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Some wait to see one thing before they die, and then let go
+  - verdict before: —
+  - verdict after: New
+- **C-165** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: People hold to someone, or to something, even to death, and the readiness can fail
+  - verdict before: —
+  - verdict after: New
+- **C-166** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The living are told how to deal with the dead: inquiring of them and offering to them are forbidden; kindness to the dead is blessed
+  - verdict before: —
+  - verdict after: New
+- **C-111** telling added · 02 *Breath lent, and held by God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Life is held in the breath, and the breath is God's to give and to take back. - "In his hand is the life of every living thing and the breath of all mankind" (Job 12:10). - Daniel tells a king who had praised idols that he had not honoured "the God in whose hand is your breath, and whose are all your ways" (Daniel 5:23). - "If he should set his heart to it and gather to himself his spirit and his breath, all flesh would perish together, and man would return to dust" (Job 34:14–15). - "When you take away their breath, they die and return to their dust. When you send forth your Spirit, they are created" (Psalm 104:29–30). - "No man has power to retain the spirit, or power over the day of death" (Ecclesiastes 8:8). - "When his breath departs, he returns to the earth; on that very day his plans perish" (Psalm 146:4). Thinking goes when the breath goes. "Man is like a breath; his days are like a passing shadow" (Psalm 144:4), and the Lord "knows the thoughts of man, that they are but a breath" (Psalm 94:11).
+  - note: in full
+- **C-112** telling added · 02 *Breath lent, and held by God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Life is held in the breath, and the breath is God's to give and to take back. - "In his hand is the life of every living thing and the breath of all mankind" (Job 12:10). - Daniel tells a king who had praised idols that he had not honoured "the God in whose hand is your breath, and whose are all your ways" (Daniel 5:23). - "If he should set his heart to it and gather to himself his spirit and his breath, all flesh would perish together, and man would return to dust" (Job 34:14–15). - "When you take away their breath, they die and return to their dust. When you send forth your Spirit, they are created" (Psalm 104:29–30). - "No man has power to retain the spirit, or power over the day of death" (Ecclesiastes 8:8). - "When his breath departs, he returns to the earth; on that very day his plans perish" (Psalm 146:4). Thinking goes when the breath goes. "Man is like a breath; his days are like a passing shadow" (Psalm 144:4), and the Lord "knows the thoughts of man, that they are but a breath" (Psalm 94:11).
+  - note: in part
+- **C-113** telling added · 02 *Breath lent, and held by God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: God holds both ends. "I kill and I make alive; I wound and I heal" (Deuteronomy 32:39). "The Lord kills and brings to life; he brings down to Sheol and raises up" (1 Samuel 2:6). When a letter asked the king of Israel to heal a man of leprosy, he tore his clothes: "Am I God, to kill and to make alive …?" (2 Kings 5:7). And between the two ends, he keeps alive: - "that he may deliver their soul from death and keep them alive in famine" (Psalm 33:19) - "He does not keep the wicked alive, but gives the afflicted their right" (Job 36:6) - Joseph to his brothers: "you meant evil against me, but God meant it for good, to bring it about that many people should be kept alive" (Genesis 50:20) - Moses joins it to the fear of God: "to fear the Lord our God, for our good always, that he might preserve us alive" (Deuteronomy 6:24)
+  - note: in full
+- **C-114** telling added · 02 *Breath lent, and held by God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The breath does more than keep a body going. "But it is the spirit in man, the breath of the Almighty, that makes him understand" (Job 32:8). "The spirit of man is the lamp of the Lord, searching all his innermost parts" (Proverbs 20:27). There the word the ESV renders "spirit" is *nəšāmâ* ("breath"). Words come out on it too. Job asks a friend, "With whose help have you uttered words, and whose breath has come out from you?" (Job 26:4). Not everything breathed out is good: "a false witness breathes out lies" (Proverbs 14:5). Section 10.5 follows that.
+  - note: in full
+- **C-115** telling added · 02 *Breath lent, and held by God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The breath can fail in a person who is still alive. After his vision Daniel says, "no strength remains in me, and no breath is left in me" (Daniel 10:17). Zion is pictured "gasping for breath, stretching out her hands" (Jeremiah 4:31). The psalm's last word gives the breath its purpose: "Let everything that has breath praise the Lord!" (Psalm 150:6).
+  - note: in full
+- **C-116** telling added · 02 *Breath lent, and held by God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: God gives this frailty as a reason for holding back his anger: "I will not contend forever, nor will I always be angry; for the spirit would grow faint before me, and the breath of life that I made" (Isaiah 57:16). A psalm says what the holding back did, and why: "Yet he, being compassionate, atoned for their iniquity and did not destroy them; he restrained his anger often and did not stir up all his wrath. He remembered that they were but flesh, a wind that passes and comes not again" (Psalm 78:38–39). The people lived because his wrath was not stirred. And a whole life can be felt as lived under that anger: "For all our days pass away under your wrath; we bring our years to an end like a sigh" (Psalm 90:9). Chapter 13 follows this.
+  - note: in full
+- **C-117** telling added · 02 *Breath lent, and held by God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: In this, humans and animals share one lot: "They all have the same breath, and man has no advantage over the beasts" (Ecclesiastes 3:19). The flood fell on "all flesh in which is the breath of life" (Genesis 6:17), and "Everything on the dry land in whose nostrils was the breath of life died" (7:22).
+  - note: in full
+- **C-118** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Life is set before the inner being as something to choose. "I have set before you life and death, blessing and curse. Therefore choose life, that you and your offspring may live" (Deuteronomy 30:19). The same chapter also speaks of God's own work on the heart: "And the Lord your God will circumcise your heart and the heart of your offspring, so that you will love the Lord your God with all your heart and with all your soul, that you may live" (30:6). The choice is made by doing, seeking and holding on: - "if a person does them, he shall live by them: I am the Lord" (Leviticus 18:5) - "Justice, and only justice, you shall follow, that you may live" (Deuteronomy 16:20) - "Let your heart hold fast my words; keep my commandments, and live" (Proverbs 4:4) - "Leave your simple ways, and live, and walk in the way of insight" (Proverbs 9:6) - "Seek me and live" (Amos 5:4); "Seek good, and not evil, that you may live" (5:14) - "his soul is puffed up; it is not upright within him, but the righteous shall live by his faith" (Habakkuk 2:4)
+  - note: in full
+- **C-118** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Death is set before a person just as plainly. "See, I have set before you today life and good, death and evil" (Deuteronomy 30:15). "Behold, I set before you the way of life and the way of death" (Jeremiah 21:8). Proverbs marks where the other way ends: - "There is a way that seems right to a man, but its end is the way to death" (Proverbs 14:12) - "In the path of righteousness is life, and in its pathway there is no death" (Proverbs 12:28) - Wisdom: "For whoever finds me finds life and obtains favor from the Lord, but he who fails to find me injures himself; all who hate me love death" (Proverbs 8:35–36). To hate wisdom is to love death. - "Death and life are in the power of the tongue, and those who love it will eat its fruits" (Proverbs 18:21). James calls the tongue "a restless evil, full of deadly poison" (James 3:8).
+  - note: in part
+- **C-119** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Long days are promised with some of the commands. "Honor your father and your mother, that your days may be long in the land" (Exodus 20:12). Moses gives the law "that you may fear the Lord your God … all the days of your life, and that your days may be long" (Deuteronomy 6:2). Peter takes up a psalm: "Whoever desires to love life and see good days, let him keep his tongue from evil" (1 Peter 3:10).
+  - note: in part
+- **C-119** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The Preacher sets another sight beside this. "There is a righteous man who perishes in his righteousness, and there is a wicked man who prolongs his life in his evildoing" (Ecclesiastes 7:15). And he adds: "Though a sinner does evil a hundred times and prolongs his life, yet I know that it will be well with those who fear God" (8:12). Scripture states both. I leave them side by side.
+  - note: in full
+- **C-120** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Death is set before a person just as plainly. "See, I have set before you today life and good, death and evil" (Deuteronomy 30:15). "Behold, I set before you the way of life and the way of death" (Jeremiah 21:8). Proverbs marks where the other way ends: - "There is a way that seems right to a man, but its end is the way to death" (Proverbs 14:12) - "In the path of righteousness is life, and in its pathway there is no death" (Proverbs 12:28) - Wisdom: "For whoever finds me finds life and obtains favor from the Lord, but he who fails to find me injures himself; all who hate me love death" (Proverbs 8:35–36). To hate wisdom is to love death. - "Death and life are in the power of the tongue, and those who love it will eat its fruits" (Proverbs 18:21). James calls the tongue "a restless evil, full of deadly poison" (James 3:8).
+  - note: in full
+- **C-120** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Some of what kills a person is named from within. "Surely vexation kills the fool, and jealousy slays the simple" (Job 5:2). "The desire of the sluggard kills him, for his hands refuse to labor" (Proverbs 21:25). Proverbs names more: - "He dies for lack of discipline, and because of his great folly he is led astray" (Proverbs 5:23) - "whoever hates reproof will die" (Proverbs 15:10) - "he who despises his ways will die" (Proverbs 19:16)
+  - note: in full
+- **C-120** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Elihu says it of those who will not hear: "if they do not listen, they perish by the sword and die without knowledge" (Job 36:12). Sections 10.1, 10.5 and 10.6 follow these.
+  - note: in full
+- **C-121** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: God says what he wants. "Have I any pleasure in the death of the wicked, declares the Lord God, and not rather that he should turn from his way and live?" (Ezekiel 18:23). "For I have no pleasure in the death of anyone, declares the Lord God; so turn, and live" (18:32). He says it to people who had given up: "Surely our transgressions and our sins are upon us, and we rot away because of them. How then can we live?" The answer comes at once: "turn back, turn back from your evil ways, for why will you die, O house of Israel?" (33:10–11).
+  - note: in full
+- **C-121** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The turning is a considered act, and it reaches back over the past: - "Because he considered and turned away from all the transgressions that he had committed, he shall surely live; he shall not die" (Ezekiel 18:28). - "None of the transgressions that he has committed shall be remembered against him" (18:22). - It reaches back the other way too: when a righteous man turns to injustice, "None of the righteous deeds that he has done shall be remembered" (18:24). - Trust can lean the wrong way: "if he trusts in his righteousness and does injustice, none of his righteous deeds shall be remembered, but in his injustice that he has done he shall die" (33:13).
+  - note: in full
+- **C-122** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Life can also be wrongly kept or taken by words. God condemns those who were "putting to death souls who should not die and keeping alive souls who should not live, by your lying to my people, who listen to lies" (Ezekiel 13:19).
+  - note: in full
+- **C-123** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The same word can be death to one and life to another. Paul says of the message he carries: "to one a fragrance from death to death, to the other a fragrance from life to life. Who is sufficient for these things?" (2 Corinthians 2:16).
+  - note: in full
+- **C-124** telling added · 02 *Life set before a person* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Another's death can be laid at a person's hand. The watchman who does not warn the wicked is told, "his blood I will require at your hand"; if he warns and is not heeded, "you will have delivered your soul" (Ezekiel 33:8–9). Section 10.10 follows that.
+  - note: in full
+- **C-124** telling added · 10.10 *(opening)* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: - **Another's death can be laid at one's hand.** The watchman who does not warn is told, "his blood I will require at your hand" (Ezekiel 33:8; Chapter 2, "Life set before a person").
+  - note: pointer
+- **C-125** telling added · 02 *Living before God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: "As the Lord lives" is its commonest form, in 39 verses. In six of them a second life is joined to it, the life of the one spoken to. David to Jonathan: "But truly, as the Lord lives and as your soul lives, there is but a step between me and death" (1 Samuel 20:3). Elisha, three times, to Elijah: "As the Lord lives, and as you yourself live, I will not leave you" (2 Kings 2:2). Ittai to David: "wherever my lord the king shall be, whether for death or for life, there also will your servant be" (2 Samuel 15:21). I read the oath as placing a promise before the living God and binding the speaker to it by life.
+  - note: in full
+- **C-126** telling added · 02 *Living before God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The opening of this chapter said that life is lived before God. Scripture shows it in an oath that people swore by life itself.
+  - note: in part
+- **C-126** telling added · 02 *Living before God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: "As the Lord lives" is its commonest form, in 39 verses. In six of them a second life is joined to it, the life of the one spoken to. David to Jonathan: "But truly, as the Lord lives and as your soul lives, there is but a step between me and death" (1 Samuel 20:3). Elisha, three times, to Elijah: "As the Lord lives, and as you yourself live, I will not leave you" (2 Kings 2:2). Ittai to David: "wherever my lord the king shall be, whether for death or for life, there also will your servant be" (2 Samuel 15:21). I read the oath as placing a promise before the living God and binding the speaker to it by life.
+  - note: in part
+- **C-127** telling added · 02 *Living before God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The words of the oath stay the same, but the heart that speaks them does not. David, his anger "greatly kindled", swore, "As the Lord lives, the man who has done this deserves to die" (2 Samuel 12:5). Saul swore that Jonathan should die, and the people swore back, "As the Lord lives, there shall not one hair of his head fall to the ground" (1 Samuel 14:45). Gehazi swore it on his way to take what his master had refused: "As the Lord lives, I will run after him and get something from him" (2 Kings 5:20). So the oath is judged by how it is sworn. "Though they say, 'As the Lord lives,' yet they swear falsely" (Jeremiah 5:2). It is to be sworn "in truth, in justice, and in righteousness" (Jeremiah 4:2). Section 10.5 follows the oath as speech.
+  - note: in full
+- **C-128** telling added · 02 *Living before God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: God swears by his own life, and the oath carries both what he wants and what he will do. "As I live, declares the Lord God, I have no pleasure in the death of the wicked, but that the wicked turn from his way and live" (Ezekiel 33:11). "As I live, declares the Lord God, I will not be inquired of by you" (Ezekiel 20:3). Paul quotes it of the end: "As I live, says the Lord, every knee shall bow to me, and every tongue shall confess to God" (Romans 14:11).
+  - note: in full
+- **C-129** telling added · 02 *Living before God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The one before whom life is lived is called "the living God". The name sets him against idols: "But the Lord is the true God; he is the living God and the everlasting King" (Jeremiah 10:10); "you turned to God from idols to serve the living and true God" (1 Thessalonians 1:9). Habakkuk mocks the other side: "Woe to him who says to a wooden thing, Awake; to a silent stone, Arise! Can this teach? Behold, it is overlaid with gold and silver, and there is no breath at all in it. But the Lord is in his holy temple; let all the earth keep silence before him" (Habakkuk 2:19–20). What has no breath cannot be woken, and the one who calls on it "trusts in his own creation" (2:18). Before the living God, the answer is silence.
+  - note: in full
+- **C-130** telling added · 02 *Living before God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The inner being turns toward him, or away from him: - "My soul thirsts for God, for the living God" (Psalm 42:2) - "my heart and flesh sing for joy to the living God" (Psalm 84:2) - "lest there be in any of you an evil, unbelieving heart, leading you to fall away from the living God" (Hebrews 3:12) - "It is a fearful thing to fall into the hands of the living God" (Hebrews 10:31)
+  - note: in full
+- **C-131** telling added · 02 *Living before God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture counts a life in days, and says what the days are for. Israel was gathered "so that they may learn to fear me all the days that they live on the earth, and that they may teach their children so" (Deuteronomy 4:10). The king "shall read in it all the days of his life, that he may learn to fear the Lord his God" (17:19). The Passover was kept "that all the days of your life you may remember the day when you came out of the land of Egypt" (16:3). The psalmists give the length of their lives to praise: "I will praise the Lord as long as I live" (Psalm 146:2); "that I may dwell in the house of the Lord all the days of my life" (Psalm 27:4). And a life can be summed at its end. Jacob said to Pharaoh, "Few and evil have been the days of the years of my life" (Genesis 47:9). Sections 10.2, 10.3 and 10.9 follow these.
+  - note: in full
+- **C-132** telling added · 02 *Living before God* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The world where life is lived has its own name, "the land of the living". There the goodness of God is looked for: "I believe that I shall look upon the goodness of the Lord in the land of the living!" (Psalm 27:13); "You are my refuge, my portion in the land of the living" (Psalm 142:5). Hezekiah, told he would die, mourned that he would leave it: "I shall not see the Lord, the Lord in the land of the living" (Isaiah 38:11). Abigail says to David that his life "shall be bound in the bundle of the living in the care of the Lord your God" (1 Samuel 25:29).
+  - note: in full
+- **C-133** telling added · 02 *Life weighed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture lets people weigh their own lives, and not only when death is near.
+  - note: in full
+- **C-133** telling added · 02 *Life weighed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Life can be loathed. "I loathe my life; I will give free utterance to my complaint; I will speak in the bitterness of my soul" (Job 10:1). Rebekah: "I loathe my life because of the Hittite women … what good will my life be to me?" (Genesis 27:46). The Preacher: "So I hated life, because what is done under the sun was grievous to me" (Ecclesiastes 2:17). Job asks why life is given "to the bitter in soul" (Job 3:20). Here the soul is bitter, and life itself is what it weighs.
+  - note: in part
+- **C-133** telling added · 02 *Life weighed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Life can be worn down. "For my life is spent with sorrow, and my years with sighing" (Psalm 31:10). "For my soul is full of troubles, and my life draws near to Sheol" (Psalm 88:3). Under the curse, "Your life shall hang in doubt before you. Night and day you shall be in dread and have no assurance of your life" (Deuteronomy 28:66). Paul says of Asia, "we were so utterly burdened beyond our strength that we despaired of life itself" (2 Corinthians 1:8). A psalmist has lived near death all along: "Afflicted and close to death from my youth up, I suffer your terrors" (Psalm 88:15).
+  - note: in part
+- **C-133** telling added · 02 *Life weighed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The living are weighed too. "But he who is joined with all the living has hope, for a living dog is better than a dead lion" (Ecclesiastes 9:4). The verse before it says what is in the living: "the hearts of the children of man are full of evil, and madness is in their hearts while they live" (9:3). And before God, "no one living is righteous before you" (Psalm 143:2). Chapter 12 follows this.
+  - note: in part
+- **C-133** telling added · 02 *Life weighed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Life can be enjoyed, as something given. "Enjoy life with the wife whom you love, all the days of your vain life that he has given you under the sun, because that is your portion in life" (Ecclesiastes 9:9). Of the one who receives his portion, the Preacher says, "he will not much remember the days of his life because God keeps him occupied with joy in his heart" (5:20).
+  - note: in part
+- **C-133** telling added · 02 *Life weighed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: And Scripture says what life does not consist in. "for one's life does not consist in the abundance of his possessions" (Luke 12:15). Paul tells the rich to store up treasure "so that they may take hold of that which is truly life" (1 Timothy 6:19). "If in Christ we have hope in this life only, we are of all people most to be pitied" (1 Corinthians 15:19). "Whoever loves his life loses it, and whoever hates his life in this world will keep it for eternal life" (John 12:25).
+  - note: in part
+- **C-134** telling added · 02 *Life weighed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The want for life is a want to see good: "What man is there who desires life and loves many days, that he may see good?" (Psalm 34:12). Job uses the same words for its loss: "my eye will never again see good" (Job 7:7). Where the hope of seeing good has gone, life is weighed as a breath (10.6, *Wanting life*).
+  - note: in full
+- **C-135** telling added · 02 *Life weighed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The same life is loathed, worn down, enjoyed and let go. I read the difference in what each verse sets life beside: misery under the sun, sorrow, the gift of God, possessions, the life to come. Several of these verses do not wish for death at all. Those that do are taken up below, in "Wanting to die". Sections 10.1, 10.3 and 10.6 follow these.
+  - note: in full
+- **C-136** telling added · 02 *Life weighed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Death's certainty can be turned into a reason. "Let us eat and drink, for tomorrow we die" (Isaiah 22:13). In Isaiah the Lord answers it at once: "Surely this iniquity will not be atoned for you until you die" (22:14). Paul quotes the saying as what would follow if the dead are not raised (1 Corinthians 15:32).
+  - note: in full
+- **C-137** telling added · 02 *What death is* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The law names what a death can leave unfinished. A man who has built a house, planted a vineyard or betrothed a wife is sent home from the battle, "lest he die in the battle and another man dedicate it … enjoy its fruit … take her" (Deuteronomy 20:5–7). I read the law as weighing a life by what it has begun.
+  - note: in full
+- **C-138** telling added · 02 *What death is* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: What lies beyond death is not shown to a person. God asks Job, "Have the gates of death been revealed to you, or have you seen the gates of deep darkness?" (Job 38:17).
+  - note: in full
+- **C-139** telling added · 02 *Death spoken of in more than one way* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: So far, death is the end of the body's life. Scripture also uses the word for more than that, sometimes in one sentence. "Leave the dead to bury their own dead" (Matthew 8:22; Luke 9:60). The first "dead" are living people; the second is the man's father. Jesus does not explain the first.
+  - note: in full
+- **C-139** telling added · 02 *Death spoken of in more than one way* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The verses speak of death in these ways: - **the body's death**: the breath taken, the return to dust (above) - **death in the living**: people still alive called dead (below, "Death in the living") - **dying *to***: a death the believer has already died, to sin and to the law (below, "Dead to sin") - **a death beyond death**: "the second death" (Revelation 2:11; 20:14; 21:8; below, "Life, and judgment") - **death as a power** that reigns and stings (Romans 5:14; 1 Corinthians 15:56; "Going down to Sheol") - **the living made like the dead**: for fear, the guards at the tomb "became like dead men" (Matthew 28:4); John "fell at his feet as though dead" (Revelation 1:17)
+  - note: in full
+- **C-140** telling added · 02 *Death spoken of in more than one way* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The father of the son who came home says, "this my son was dead, and is alive again; he was lost, and is found" (Luke 15:24). He sets "dead" beside "lost", and "alive" beside "found". The son had not died in body. The word for "lost", *apollymi* ("to destroy, perish, lose"), is used of the sheep and the coin in the same chapter (15:4, 8). It is the word in "whoever believes in him should not perish but have eternal life" (John 3:16), and in "the Son of Man came to seek and to save the lost" (Luke 19:10).
+  - note: in full
+- **C-141** telling added · 02 *Death spoken of in more than one way* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The same word changes character with what it is joined to. Of the same people Paul says that they "were dead in" their trespasses (Ephesians 2:1, 5; Colossians 2:13) and that they "died to sin" (Romans 6:2, 11). Dead *in* trespasses is death under them. Dead *to* sin is a death that ends their rule: "one who has died has been set free from sin" (Romans 6:7). The word passes even to sin itself: "apart from the law, sin lies dead"; then, "when the commandment came, sin came alive and I died" (Romans 7:8–9). It is said of faith, and set beside the body: "as the body apart from the spirit is dead, so also faith apart from works is dead" (James 2:26). And Paul says both of one person: "although the body is dead because of sin, the Spirit is life because of righteousness" (Romans 8:10).
+  - note: in full
+- **C-141** telling added · 02 *Dead to sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: It is the opposite of being dead in sin (above). Chapter 14 follows the life that comes out of it.
+  - note: in full
+- **C-142** telling added · 02 *Death spoken of in more than one way* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The same word changes character with what it is joined to. Of the same people Paul says that they "were dead in" their trespasses (Ephesians 2:1, 5; Colossians 2:13) and that they "died to sin" (Romans 6:2, 11). Dead *in* trespasses is death under them. Dead *to* sin is a death that ends their rule: "one who has died has been set free from sin" (Romans 6:7). The word passes even to sin itself: "apart from the law, sin lies dead"; then, "when the commandment came, sin came alive and I died" (Romans 7:8–9). It is said of faith, and set beside the body: "as the body apart from the spirit is dead, so also faith apart from works is dead" (James 2:26). And Paul says both of one person: "although the body is dead because of sin, the Spirit is life because of righteousness" (Romans 8:10).
+  - note: in part
+- **C-142** telling added · 02 *Death in the living* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture also speaks of death inside a living person: - **The heart can die first.** Nabal's "heart died within him, and he became as a stone" ten days before he died (below). - **The living can be called dead.** Paul writes to living people, "you, who were dead in your trespasses and the uncircumcision of your flesh" (Colossians 2:13; also Ephesians 2:5). - **A person can be called alive and be dead.** "You have the reputation of being alive, but you are dead" (Revelation 3:1). "She who is self-indulgent is dead even while she lives" (1 Timothy 5:6). Paul speaks of people "alienated from the life of God because of the ignorance that is in them, due to their hardness of heart" (Ephesians 4:18). - **The mind can be set on it.** "For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace" (Romans 8:6). - **A person can abide in it.** "Whoever does not love abides in death" (1 John 3:14). And "worldly grief produces death" (2 Corinthians 7:10). - **A person can cry out under it.** "Wretched man that I am! Who will deliver me from this body of death?" (Romans 7:24). - **A church can be near it.** "strengthen what remains and is about to die" (Revelation 3:2). - **Works and faith can be dead.** "repentance from dead works" (Hebrews 6:1); the blood of Christ will "purify our conscience from dead works to serve the living God" (9:14); "faith by itself, if it does not have works, is dead" (James 2:17). - **It can lie behind a fair outside.** "you are like whitewashed tombs, which outwardly appear beautiful, but within are full of dead people's bones and all uncleanness" (Matthew 23:27). - **A people can die while it lives.** Ephraim "incurred guilt through Baal and died" (Hosea 13:1). False teachers are "twice dead, uprooted" (Jude 12). - **Inner things can perish.** "the hope of the godless shall perish" (Job 8:13). "My endurance has perished; so has my hope from the Lord" (Lamentations 3:18). "Our bones are dried up, and our hope is lost" (Ezekiel 37:11). "Courage shall fail both king and officials" (Jeremiah 4:9); the word behind "courage" is *lēḇ* ("heart"), and the verb is *ʾāḇaḏ* ("perish"). "The wisdom of their wise men shall perish" (Isaiah 29:14). "Truth has perished; it is cut off from their lips" (Jeremiah 7:28). "A bribe corrupts the heart" (Ecclesiastes 7:7), with the same verb.
+  - note: in part
+- **C-143** telling added · 02 *Death spoken of in more than one way* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Perishing is spoken of in the same way. Some are perishing now: "the word of the cross is folly to those who are perishing, but to us who are being saved it is the power of God" (1 Corinthians 1:18); "even if our gospel is veiled, it is veiled to those who are perishing" (2 Corinthians 4:3). Paul gives a reason in one place: "because they refused to love the truth and so be saved" (2 Thessalonians 2:10). Jesus warns, "unless you repent, you will all likewise perish" (Luke 13:3). What is set against perishing is eternal life: "I give them eternal life, and they will never perish" (John 10:28).
+  - note: in full
+- **C-144** telling added · 02 *Death and sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: These verses do not always say which death they mean. "The wages of sin is death" is set against "eternal life" (Romans 6:23). "Sin when it is fully grown brings forth death" (James 1:15). "If you live according to the flesh you will die" (Romans 8:13). "The soul who sins shall die" (Ezekiel 18:4). I read Romans 6:23, where the opposite is eternal life, as speaking of more than the body's death. The others I leave as they are written.
+  - note: in full
+- **C-145** telling added · 02 *Death and sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: In Acts a lie is followed at once by death. Peter asks Ananias, "Why is it that you have contrived this deed in your heart? You have not lied to man but to God." "When Ananias heard these words, he fell down and breathed his last. And great fear came upon all who heard of it" (Acts 5:4–5). His wife dies the same way (5:10).
+  - note: in full
+- **C-145** telling added · 02 *Facing death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: A death can bring fear on others. After Ananias and Sapphira died, "great fear came upon the whole church and upon all who heard of these things" (Acts 5:11).
+  - note: in full
+- **C-146** telling added · 02 *Death in the living* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture also speaks of death inside a living person: - **The heart can die first.** Nabal's "heart died within him, and he became as a stone" ten days before he died (below). - **The living can be called dead.** Paul writes to living people, "you, who were dead in your trespasses and the uncircumcision of your flesh" (Colossians 2:13; also Ephesians 2:5). - **A person can be called alive and be dead.** "You have the reputation of being alive, but you are dead" (Revelation 3:1). "She who is self-indulgent is dead even while she lives" (1 Timothy 5:6). Paul speaks of people "alienated from the life of God because of the ignorance that is in them, due to their hardness of heart" (Ephesians 4:18). - **The mind can be set on it.** "For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace" (Romans 8:6). - **A person can abide in it.** "Whoever does not love abides in death" (1 John 3:14). And "worldly grief produces death" (2 Corinthians 7:10). - **A person can cry out under it.** "Wretched man that I am! Who will deliver me from this body of death?" (Romans 7:24). - **A church can be near it.** "strengthen what remains and is about to die" (Revelation 3:2). - **Works and faith can be dead.** "repentance from dead works" (Hebrews 6:1); the blood of Christ will "purify our conscience from dead works to serve the living God" (9:14); "faith by itself, if it does not have works, is dead" (James 2:17). - **It can lie behind a fair outside.** "you are like whitewashed tombs, which outwardly appear beautiful, but within are full of dead people's bones and all uncleanness" (Matthew 23:27). - **A people can die while it lives.** Ephraim "incurred guilt through Baal and died" (Hosea 13:1). False teachers are "twice dead, uprooted" (Jude 12). - **Inner things can perish.** "the hope of the godless shall perish" (Job 8:13). "My endurance has perished; so has my hope from the Lord" (Lamentations 3:18). "Our bones are dried up, and our hope is lost" (Ezekiel 37:11). "Courage shall fail both king and officials" (Jeremiah 4:9); the word behind "courage" is *lēḇ* ("heart"), and the verb is *ʾāḇaḏ* ("perish"). "The wisdom of their wise men shall perish" (Isaiah 29:14). "Truth has perished; it is cut off from their lips" (Jeremiah 7:28). "A bribe corrupts the heart" (Ecclesiastes 7:7), with the same verb.
+  - note: in part
+- **C-147** telling added · 02 *Death in the living* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The verses name what brings it, each in its own place: - trespasses and sins (Ephesians 2:1), "the uncircumcision of your flesh" (Colossians 2:13) - self-indulgence (1 Timothy 5:6) - works that look alive: "I know your works. You have the reputation of being alive" (Revelation 3:1) - not loving (1 John 3:14) - the mind set on the flesh (Romans 8:6) - sin taking its opportunity through the commandment: "It was sin, producing death in me through what is good" (Romans 7:13) - worldly grief (2 Corinthians 7:10) - the letter: "the letter kills, but the Spirit gives life" (2 Corinthians 3:6) - hating wisdom: "all who hate me love death" (Proverbs 8:36)
+  - note: in full
+- **C-147** telling added · 02 *Death in the living* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: No verse gathers these into one list, and I do not join them into one.
+  - note: in full
+- **C-148** telling added · 02 *Death in the living* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The verses also name the way out. "Truly, truly, I say to you, an hour is coming, and is now here, when the dead will hear the voice of the Son of God, and those who hear will live" (John 5:25); "whoever hears my word and believes him who sent me … has passed from death to life" (5:24). God "made alive together with him, having forgiven us all our trespasses" (Colossians 2:13). To believers: "Awake, O sleeper, and arise from the dead, and Christ will shine on you" (Ephesians 5:14). The lost son "came to himself" and went home, and his father calls it coming alive (Luke 15:17–24). John gives a sign that it has happened: "We know that we have passed out of death into life, because we love the brothers" (1 John 3:14). "Made alive", below, follows this.
+  - note: in full
+- **C-149** telling added · 02 *Death in the living* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: One person can bring it on another. "And so by your knowledge this weak person is destroyed, the brother for whom Christ died" (1 Corinthians 8:11); "By what you eat, do not destroy the one for whom Christ died" (Romans 14:15). Section 10.10 follows that.
+  - note: in full
+- **C-150** telling added · 02 *Dead to sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Paul speaks of a death the believer has already died. "How can we who died to sin still live in it?" (Romans 6:2). "Do you not know that all of us who have been baptized into Christ Jesus were baptized into his death?" (6:3). "For one who has died has been set free from sin" (6:7). "So you also must consider yourselves dead to sin and alive to God in Christ Jesus" (6:11). - **To the law:** "you also have died to the law through the body of Christ, so that you may belong to another, to him who has been raised from the dead, in order that we may bear fruit for God" (Romans 7:4); "through the law I died to the law, so that I might live to God" (Galatians 2:19). - **To the powers of the world:** "If with Christ you died to the elemental spirits of the world, why, as if you were still alive in the world, do you submit to regulations" (Colossians 2:20). - **With him:** "If we have died with him, we will also live with him" (2 Timothy 2:11). "One has died for all, therefore all have died" (2 Corinthians 5:14).
+  - note: in full
+- **C-150** telling added · 02 *Dead to sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: This death is spoken of as done, and a putting to death is still to be done. "Put to death therefore what is earthly in you" (Colossians 3:5); "if by the Spirit you put to death the deeds of the body, you will live" (Romans 8:13). Paul also carries a death in his body: "always carrying in the body the death of Jesus, so that the life of Jesus also may be manifested in our bodies" (2 Corinthians 4:10).
+  - note: in full
+- **C-150** telling added · 14 *Revived, restored, renewed* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: - **Died to sin, and to the law:** "How can we who died to sin still live in it?" (Romans 6:2). "For one who has died has been set free from sin" (Romans 6:7). "For through the law I died to the law, so that I might live to God" (Galatians 2:19). "we are released from the law, having died to that which held us captive, so that we serve in the new way of the Spirit" (Romans 7:6). Chapter 2 ("Dead to sin") sets this death beside being dead in trespasses.
+  - note: pointer
+- **C-151** telling added · 02 *Sleep and waking* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The books of Kings and Chronicles tell the deaths of kings this way, 36 times: "Then David slept with his fathers and was buried in the city of David" (1 Kings 2:10). The sleep is with the fathers: the king lies down with those who went before him.
+  - note: in full
+- **C-152** telling added · 02 *Facing death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture shows the inner being under the coming of death. Often it is anguish (the calmer deaths are in "Dying to the Lord", below): - "My heart is in anguish within me; the terrors of death have fallen upon me" (Psalm 55:4) - David to Jonathan: "there is but a step between me and death" (1 Samuel 20:3) - "Consider and answer me, O Lord my God; light up my eyes, lest I sleep the sleep of death" (Psalm 13:3) - In Gethsemane: "My soul is very sorrowful, even to death" (Matthew 26:38)
+  - note: in full
+- **C-152** telling added · 02 *Facing death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The fear of dying shapes what people do. Isaac passed off his wife as his sister: "Because I thought, 'Lest I die because of her.'" (Genesis 26:9). Judah kept Shelah from Tamar, "for he feared that he would die, like his brothers" (Genesis 38:11). Lot would not flee to the hills, "lest the disaster overtake me and I die" (Genesis 19:19). Near the tabernacle the people cried, "Behold, we perish, we are undone … Are we all to perish?" (Numbers 17:12–13). And Agag came "cheerfully", saying, "Surely the bitterness of death is past" (1 Samuel 15:32). God asks his people, "who are you that you are afraid of man who dies, of the son of man who is made like grass" (Isaiah 51:12). Hebrews names that fear as bondage: Christ shared flesh and blood "that through death he might destroy the one who has the power of death, that is, the devil, and deliver all those who through fear of death were subject to lifelong slavery" (Hebrews 2:14–15). Section 10.1 follows fear.
+  - note: in full
+- **C-153** telling added · 02 *Facing death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Bildad says the wicked man "is torn from the tent in which he trusted and is brought to the king of terrors" (Job 18:14). He says it of Job, and God's later verdict on Job's friends stands over it (Job 42:7; 10.12). The Preacher pictures old age near its end: "they are afraid also of what is high, and terrors are in the way … and desire fails, because man is going to his eternal home" (Ecclesiastes 12:5).
+  - note: in full
+- **C-154** telling added · 02 *Facing death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Paul gives the nearness of death a purpose: "Indeed, we felt that we had received the sentence of death. But that was to make us rely not on ourselves but on God who raises the dead" (2 Corinthians 1:9). Jesus himself "offered up prayers and supplications, with loud cries and tears, to him who was able to save him from death, and he was heard because of his reverence" (Hebrews 5:7). Paul says the apostles live "like men sentenced to death, because we have become a spectacle to the world, to angels, and to men" (1 Corinthians 4:9).
+  - note: in full
+- **C-155** telling added · 02 *Those left behind* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: A death is met by those who remain, and Scripture shows them. - Hagar could not watch: "Let me not look on the death of the child." And "she lifted up her voice and wept" (Genesis 21:16). - David fasted and wept while his child was ill. When the child died, he "arose and ate food", and his servants asked why. He answered, "But now he is dead. Why should I fast? Can I bring him back again? I shall go to him, but he will not return to me" (2 Samuel 12:21, 23). - His grief for Absalom brought Joab's rebuke: "today I know that if Absalom were alive and all of us were dead today, then you would be pleased" (2 Samuel 19:6). - Martha met Jesus with, "Lord, if you had been here, my brother would not have died" (John 11:21). - At Nain a dead man was carried out, "the only son of his mother, and she was a widow". Jesus raised him and "gave him to his mother" (Luke 7:12, 15). - Paul was spared a death he feared: God had mercy on Epaphroditus, "and not only on him but on me also, lest I should have sorrow upon sorrow" (Philippians 2:27). - Uriah's wife "lamented over her husband" (2 Samuel 11:26). Jacob speaks of Rachel's death, "to my sorrow" (Genesis 48:7).
+  - note: in full
+- **C-155** telling added · 02 *Those left behind* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The law limits the mourning: "You shall not cut yourselves or make any baldness on your foreheads for the dead" (Deuteronomy 14:1). Under judgment it is withheld: "They shall not be lamented, nor shall they be buried" (Jeremiah 16:4); "No one shall break bread for the mourner, to comfort him for the dead" (16:7). A death can pass with no one taking it in: "The righteous man perishes, and no one lays it to heart" (Isaiah 57:1). And a death can be promised its mourners: "people shall burn spices for you and lament for you, saying, 'Alas, lord!'" (Jeremiah 34:5).
+  - note: in full
+- **C-155** telling added · 02 *Those left behind* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Paul does not forbid the grief. He sets it apart from grief that has no hope (1 Thessalonians 4:13, in "Sleep and waking", above). Section 10.1 follows grief.
+  - note: in part
+- **C-156** telling added · 02 *Wanting to die* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture is honest that people sometimes want to die. In the words of Elijah, Jonah, Job, Saul and Samson below, the Hebrew word behind "my life" or "I" is *nephesh* ("soul, life"). Most other such wishes name no inner word at all: of the 24 verses with a wish to die, 17 do not. - Elijah "asked that he might die, saying, 'It is enough; now, O Lord, take away my life'" (1 Kings 19:4). - Jonah: "take my life from me, for it is better for me to die than to live" (Jonah 4:3). - Job: "I would choose strangling and death rather than my bones. I loathe my life; I would not live forever" (Job 7:15–16). A few verses earlier he spoke of "the anguish of my spirit" and "the bitterness of my soul" (7:11). The wish comes out of his nights: "When I say, 'My bed will comfort me' … then you scare me with dreams and terrify me with visions" (7:13–14). He says it to God, "Leave me alone" (7:16), and he does not act on it. - Saul, wounded on Gilboa: "anguish has seized me, and yet my life still lingers" (2 Samuel 1:9). - Job speaks of those "who long for death, but it comes not, and dig for it more than for hidden treasures" (Job 3:21), and asks, "Why did I not die at birth, come out from the womb and expire?" (Job 3:11); "Would that I had died before any eye had seen me" (10:18). What he wants from death is rest: "For then I would have lain down and been quiet; I would have slept; then I would have been at rest" (3:13). - Jeremiah: "Cursed be the day on which I was born!" He wishes he had died before birth, "because he did not kill me in the womb; so my mother would have been my grave", and asks, "Why did I come out from the womb to see toil and sorrow, and spend my days in shame?" (Jeremiah 20:14, 17–18). - Rachel, envying her sister: "Give me children, or I shall die!" (Genesis 30:1). - The Preacher: "I thought the dead who are already dead more fortunate than the living who are still alive" (Ecclesiastes 4:2).
+  - note: in full
+- **C-157** telling added · 02 *Wanting to die* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Of the wishes in this section, four are answered with something other than death: - **Elijah** is given food, twice: "Arise and eat". He goes "in the strength of that food forty days and forty nights" (1 Kings 19:5–8). - **Jonah's** wish came with his anger at God's mercy: "angry enough to die" (Jonah 4:9). He is given a question about God's pity for Nineveh (Jonah 4:10–11). - **Israel**, wishing they had died beside the meat pots of Egypt, is given bread from heaven (Exodus 16:3–4). - When Israel loathed the manna and spoke against God, the answer was something to look at: "everyone who is bitten, when he sees it, shall live" (Numbers 21:8).
+  - note: in full
+- **C-157** telling added · 02 *Wanting to die* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Three are granted, each to a man already blinded or wounded. Samson, blinded and a prisoner (Judges 16:21), is given one last act of strength (16:30). Abimelech, wounded, says to his armor-bearer, "Draw your sword and kill me, lest they say of me, 'A woman killed him.'" And "his young man thrust him through, and he died" (Judges 9:54). Saul's death is carried out by an Amalekite, whom David then condemns (2 Samuel 1:14–16).
+  - note: in full
+- **C-157** telling added · 02 *Wanting to die* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: So, of the seven, two are fed, two are answered another way, and three are granted.
+  - note: in full
+- **C-158** telling added · 02 *Made alive* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: In the New Testament, giving life belongs to the Father, to the Son and to the Spirit. - "For as the Father raises the dead and gives them life, so also the Son gives life to whom he will" (John 5:21). - Abraham believed "God … who gives life to the dead and calls into existence the things that do not exist" (Romans 4:17). - "It is the Spirit who gives life; the flesh is no help at all. The words that I have spoken to you are spirit and life" (John 6:63). - "For the letter kills, but the Spirit gives life" (2 Corinthians 3:6).
+  - note: in full
+- **C-159** telling added · 02 *Made alive* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: In these verses the dead who are made alive are living people, "dead in your trespasses". "God made alive together with him, having forgiven us all our trespasses" (Colossians 2:13). "Even when we were dead in our trespasses, made us alive together with Christ" (Ephesians 2:5). Jesus says the crossing happens now: "whoever hears my word and believes him who sent me has eternal life. He does not come into judgment, but has passed from death to life" (John 5:24). "If anyone keeps my word, he will never see death" (John 8:51), and his hearers answer, "Abraham died, as did the prophets" (8:52). Of the bread from heaven he says, "that one may eat of it and not die" (6:50). Hebrews tells of one man who did not see death: "By faith Enoch was taken up so that he should not see death … Now before he was taken he was commended as having pleased God" (Hebrews 11:5). "everyone who lives and believes in me shall never die. Do you believe this?" (John 11:26). The life given is spoken of as had now and as still to come. "Truly, truly, I say to you, whoever believes has eternal life" (John 6:47); "I write these things to you who believe in the name of the Son of God, that you may know that you have eternal life" (1 John 5:13). Jesus also promises "in the age to come eternal life" (Mark 10:30). Scripture states both. John gives a sign that the crossing has happened: "We know that we have passed out of death into life, because we love the brothers" (1 John 3:14). Paul says it is meant to show in the way a person lives: "just as Christ was raised from the dead by the glory of the Father, we too might walk in newness of life" (Romans 6:4). "For you have died, and your life is hidden with Christ in God" (Colossians 3:3).
+  - note: in full
+- **C-160** telling added · 02 *Made alive* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The making alive rests on a death: - "Christ died for our sins in accordance with the Scriptures" (1 Corinthians 15:3) - "while we were still sinners, Christ died for us" (Romans 5:8) - "so that by the grace of God he might taste death for everyone" (Hebrews 2:9) - God himself calls for it: "Awake, O sword, against my shepherd, against the man who stands next to me … Strike the shepherd, and the sheep will be scattered" (Zechariah 13:7). Jesus reads it of his own death on the night of his arrest (Matthew 26:31). - Isaiah says it of the soul: "he poured out his soul to death and was numbered with the transgressors; yet he bore the sin of many" (Isaiah 53:12)
+  - note: in full
+- **C-160** telling added · 02 *Made alive* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: He went to that death himself: "he humbled himself by becoming obedient to the point of death, even death on a cross" (Philippians 2:8). "For the death he died he died to sin, once for all, but the life he lives he lives to God" (Romans 6:10), and "death no longer has dominion over him" (6:9).
+  - note: in full
+- **C-161** telling added · 02 *Made alive* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Paul says what that death means for those who live: "For the love of Christ controls us, because we have concluded this: that one has died for all, therefore all have died; and he died for all, that those who live might no longer live for themselves but for him who for their sake died and was raised" (2 Corinthians 5:14–15). He also speaks of a death the believer has died, and of a putting to death still to be done ("Dead to sin", above).
+  - note: in full
+- **C-161** telling added · 02 *Made alive* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Paul says who lives in the one made alive: "For through the law I died to the law, so that I might live to God. I have been crucified with Christ. It is no longer I who live, but Christ who lives in me" (Galatians 2:19–20). He asks for the body as well: "present your bodies as a living sacrifice" (Romans 12:1). Peter: "that we might die to sin and live to righteousness" (1 Peter 2:24).
+  - note: in full
+- **C-162** telling added · 02 *Dying to the Lord* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Death, too, can belong to the Lord. Paul says it plainly: "For none of us lives to himself, and none of us dies to himself. For if we live, we live to the Lord, and if we die, we die to the Lord. So then, whether we live or whether we die, we are the Lord's" (Romans 14:7–8). "For to this end Christ died and lived again, that he might be Lord both of the dead and of the living" (14:9). He says it of himself: "Christ will be honored in my body, whether by life or by death. For to me to live is Christ, and to die is gain" (Philippians 1:20–21). And to a church: "whether Paul or Apollos or Cephas or the world or life or death or the present or the future—all are yours" (1 Corinthians 3:22). And he speaks of a dying that goes on while he lives: - "I die every day!" (1 Corinthians 15:31) - "For we who live are always being given over to death for Jesus' sake, so that the life of Jesus also may be manifested in our mortal flesh" (2 Corinthians 4:11) - "as dying, and behold, we live" (2 Corinthians 6:9) - "So death is at work in us, but life in you" (2 Corinthians 4:12)
+  - note: in full
+- **C-163** telling added · 02 *Dying to the Lord* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture speaks of the death of the upright in its own words: - precious: "Precious in the sight of the Lord is the death of his saints" (Psalm 116:15) - wished for: Balaam says, "Let me die the death of the upright, and let my end be like his!" (Numbers 23:10) - a refuge: "The righteous finds refuge in his death" (Proverbs 14:32) - in faith: "These all died in faith, not having received the things promised" (Hebrews 11:13); of Abel, "through his faith, though he died, he still speaks" (Hebrews 11:4) - bearing fruit: "unless a grain of wheat falls into the earth and dies, it remains alone; but if it dies, it bears much fruit" (John 12:24) - glorifying God: Jesus speaks to Peter of "what kind of death he was to glorify God" (John 21:19)
+  - note: in full
+- **C-164** telling added · 02 *Dying to the Lord* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Some wait to see one thing before they die, and then let go. Simeon had been told "he would not see death before he had seen the Lord's Christ" (Luke 2:26). Holding the child, he says, "Lord, now you are letting your servant depart in peace, according to your word" (2:29). Jacob, told that Joseph lived: "It is enough; Joseph my son is still alive. I will go and see him before I die" (Genesis 45:28); and when he had: "Now let me die, since I have seen your face and know that you are still alive" (46:30).
+  - note: in full
+- **C-165** telling added · 02 *Dying to the Lord* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Others hold to someone, or to something, even to death. - Ruth to Naomi: "Where you die I will die, and there will I be buried" (Ruth 1:17). - The spies to Rahab: "Our life for yours even to death!" (Joshua 2:14). - Jonathan, condemned by his father's oath: "Here I am; I will die" (1 Samuel 14:43). - Esther, going to the king: "if I perish, I perish" (Esther 4:16). - Thomas: "Let us also go, that we may die with him" (John 11:16). - Job: "till I die I will not put away my integrity from me" (Job 27:5). - Paul: "I would rather die than have anyone deprive me of my ground for boasting" (1 Corinthians 9:15). - To a church: "Be faithful unto death, and I will give you the crown of life" (Revelation 2:10). Of the faithful: "they loved not their lives even unto death" (Revelation 12:11).
+  - note: in full
+- **C-165** telling added · 02 *Dying to the Lord* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The readiness can fail. Peter said, "Lord, I am ready to go with you both to prison and to death", and was told, "the rooster will not crow this day, until you deny three times that you know me" (Luke 22:33–34). "If I must die with you, I will not deny you." And they all said the same (Mark 14:31).
+  - note: in full
+- **C-165** telling added · 10.10 *Loyalty and honour* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Loyalty can be held even to death, and it can fail there. The spies promise Rahab, "Our life for yours even to death!" (Joshua 2:14). Thomas: "Let us also go, that we may die with him" (John 11:16). Peter says he is "ready to go with you both to prison and to death", and is told he will deny him (Luke 22:33–34). Chapter 2 ("Dying to the Lord") gives these.
+  - note: pointer
+- **C-166** telling added · 02 *After death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The living are told how to deal with the dead. Inquiring of them is forbidden: there shall not be found among you "a necromancer or one who inquires of the dead" (Deuteronomy 18:11). Israel is condemned because they "ate sacrifices offered to the dead" (Psalm 106:28). Kindness to the dead is blessed. Naomi says to her daughters-in-law, "May the Lord deal kindly with you, as you have dealt with the dead and with me" (Ruth 1:8).
+  - note: in full
+
 ## 2026-10-14 — OT-02: passage openings re-pointed after Ch 2 v24
 
 **Strand:** life and death (M25), OT-02 Q1 What is death?
@@ -3699,3 +4359,4 @@ These areas are absent from the original, or are listed there only as gaps. [Cla
 | 2026-10-09 | desire (M18) × life and death (M25), and the held items (#1993, #1942) | 10.6 given section headings (Through the eye; Aimed at nothing, and enjoyment given; As heat; Wanting speaks, and drives thinking; Beside choosing; Delight; Wanting that owns the one who wants; Unmet, and wanting against God; Shaped by fear; Evil desire; Wanting life; Wanting and death; Aimed at God; Thirst answered; A person; Jealousy and envy; Taken away; Possessions), with no text dropped. 13.1 gains *Jealousy* and *Stirring*. 13.4 gets its first content. 10.9 gains *Waiting, and pleading*. 10.10 gains *Friends, company and care*. No renumbering. | 10.6 had grown to some 20 paragraphs on many faces of wanting with no structure; the headings name the subject only (style guide). God's jealousy and his stirring of spirits had no home in 13.1. |
 | 2026-10-09 | desire (M18), group A (#1993 item F) | 10.6 gains the section *Coveting* (after *Through the eye*). No other structure change. | The commandment, the see–covet–take order and the law naming the desire make one phenomenon. It had no home. |
 | 2026-10-14 | life and death (M25), OT-02 Q1 What is death? | Ch 2 gains the section 'Going down to Sheol' before 'Sleep and waking'. | The Sheol verses had no home; read in their passages they speak of where Sheol lies, who goes down, how, and God and Sheol. |
+| 2026-10-14 | life and death (M25), OT-02 Q1 What is death? | Ch 2: new subsections "Death spoken of in more than one way" and "Dead to sin" under What death is; new section "Those left behind" before Wanting to die | The death words were read by face, not by which death; the kinds, the dead-in/dead-to change and the stated causes had no one account; Ch 2 had no place for death as the living meet it in another |

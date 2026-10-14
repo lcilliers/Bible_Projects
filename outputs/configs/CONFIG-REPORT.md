@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-13T08:18:32Z |
+| generated_at | 2026-10-14T10:25:10Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -48,7 +48,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-5. GOVERNANCE.md was last modified 2026-10-13T04:22:19Z, before the newest applied cfg_change_detail row (2026-10-13T08:07:33Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+5. GOVERNANCE.md was last modified 2026-10-14T10:04:12Z, before the newest applied cfg_change_detail row (2026-10-14T10:25:10Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -99,7 +99,7 @@ _(none)_
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
-**Unenforced behaviour rules** (49) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
+**Unenforced behaviour rules** (50) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
 21. [chat] #17 confirm-before-nontrivial-work — context_delivered
 22. [chat] #18 output-to-file-not-chat-only — context_delivered
 23. [chat] #19 factual-discipline-no-guessing — context_delivered
@@ -134,21 +134,22 @@ _(none)_
 52. [llm_output] #70 cluster-tags-loose-no-retagging — context_delivered
 53. [llm_output] #72 route-verses-hib-other-beings-data-only — context_delivered
 54. [llm_output] #73 read-verse-by-role-of-each-mcode-word — context_delivered
-55. [sqlite] #1 verify-before-acting — context_delivered
-56. [sqlite] #11 readonly-by-default — context_delivered
-57. [sqlite] #13 dont-assume-which-database — context_delivered
-58. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
-59. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
-60. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
-61. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
-62. [sqlite] #67 bible-research-db-excluded-from-iba-results — context_delivered
-63. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
-64. [sqlite] #71 reuse-extracted-base-data-set-based-mcode — context_delivered
-65. [terminal] #2 step-not-done-without-validated-output — context_delivered
-66. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
-67. [terminal] #27 heredoc-powershell-only — context_delivered
-68. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
-69. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
+55. [llm_output] #77 claims-register-keeps-narrative-honest — context_delivered
+56. [sqlite] #1 verify-before-acting — context_delivered
+57. [sqlite] #11 readonly-by-default — context_delivered
+58. [sqlite] #13 dont-assume-which-database — context_delivered
+59. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
+60. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
+61. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
+62. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
+63. [sqlite] #67 bible-research-db-excluded-from-iba-results — context_delivered
+64. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
+65. [sqlite] #71 reuse-extracted-base-data-set-based-mcode — context_delivered
+66. [terminal] #2 step-not-done-without-validated-output — context_delivered
+67. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
+68. [terminal] #27 heredoc-powershell-only — context_delivered
+69. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
+70. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
 
 **Undelivered conversational rules** (0) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
 _(none)_
@@ -157,40 +158,40 @@ _(none)_
 _(none)_
 
 **PS scripts bypassing run.py** (2) — an active PS script calling iba.app.(handlers|lib|tools) directly instead of dispatching through iba.app.run:
-70. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
-71. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+71. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+72. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
 
 **Steps without a PS entry point** (0) — an active cfg_step whose work package has no cfg_work_package.ps_script:
 _(none)_
 
 **Escalation-file naming drift** (27) — a Workflow/Catalogue or iba/docs file whose own header names an escalation the filename doesn't carry as its prefix:
-72. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-73. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
-74. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-75. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
-76. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
-77. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
-78. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
-79. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
-80. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
-81. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
-82. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
-83. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-84. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
-85. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-86. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
-87. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-88. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
-89. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
-90. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
-91. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
-92. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
-93. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
-94. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-95. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
-96. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-97. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-98. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
+73. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+74. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
+75. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+76. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
+77. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
+78. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
+79. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
+80. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
+81. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
+82. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
+83. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
+84. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+85. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
+86. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+87. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
+88. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+89. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
+90. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
+91. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
+92. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
+93. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
+94. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
+95. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+96. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
+97. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+98. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+99. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
 
 **Config hedge phrases** (0) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
 _(none)_
@@ -198,8 +199,9 @@ _(none)_
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
 
-**Query file convention** (0) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
-_(none)_
+**Query file convention** (2) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
+100. scripts/SQLite/IBA_DB/Untitled-1.sqlite3-query — untitled, needs a real descriptive name
+101. scripts/SQLite/IBA_DB/Untitled-2.sqlite3-query — untitled, needs a real descriptive name
 
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
@@ -734,8 +736,8 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- |
 | backup | backup.alerting_policy | NAS backup tasks alert on failure; Outlook SMTP is blocked from this network, alerting uses Gmail instead. |  |
 | backup | backup.iba_db_gap | RESOLVED 2026-08-17 (escalation #703): iba.db now has its own dedicated NAS backup+alerting script -- scripts/backup_db_to_nas.py, generalized to serve both databases (filename prefix, pruning lineage, and alert job identity all derived from --source, not hardcoded), scheduled task "IBA DB Backup to NAS" (daily 18:10, staggered 10 min after bible_research.db's 18:00 task). Found and fixed while resolving this: a 2026-07-19 commit had accidentally repointed the shared script's DEFAULT_SOURCE to iba.db, so the 18:00 task had been backing up iba.db under misleading bible_research_-prefixed names for ~29 days, leaving bible_research.db with no dedicated integrity-checked backup in that window -- confirmed via NAS file-size comparison, not assumed. Restored + root-fixed (prefix now derived, not constant) so this class of accident cannot silently recur. |  |
-| backup | backup.nas_db_backup_schedule | database/bible_research.db backed up daily 18:00 (Windows scheduled task 'BibleResearch DB Backup to NAS', scripts/backup_db_to_nas.py) to \LSUK-SYNRACK\HomeMedia\bible_study_projects\db_backups\. iba/app/db/iba.db has NO equivalent dedicated backup+alerting script -- see backup.iba_db_gap. |  |
-| backup | backup.nas_full_mirror_schedule | whole project folder + memory mirrored daily 18:30 (Windows scheduled task 'BibleResearch Full Mirror to NAS', scripts/mirror_to_nas.ps1, robocopy /MIR) to \LSUK-SYNRACK\HomeMedia\bible_study_projects\mirror\ + claude-backup\ -- this DOES include iba/app/db/iba.db as a side effect of mirroring the whole tree, but with no DB-specific integrity check the way backup_db_to_nas.py gives bible_research.db. |  |
+| backup | backup.nas_db_backup_schedule | database/bible_research.db backed up daily 18:00 (task 'BibleResearch DB Backup to NAS') and iba/app/db/iba.db daily 18:10 (task 'IBA DB Backup to NAS'), both by scripts/backup_db_to_nas.py, to \\LSUK-SYNRACK\HomeMedia\bible_study_projects\db_backups\. Each run integrity-checks, hash-verifies the NAS copy and refuses a source under its PER-DATABASE size floor (bible_research 10 MB, iba 400 MB; #2141, 2026-10-14 -- a single 50 MB floor had refused the prose-only bible_research.db since 2026-09-28). Tasks run in a hidden window (pwsh -WindowStyle Hidden) so closing a console cannot kill them (#2141); missed runs are not caught up (researcher, 2026-10-14). scripts/backup_watchdog.ps1 (daily 19:00 + logon) alerts on FAIL or >26 h staleness for mirror, dbbackup and dbbackup_iba. |  |
+| backup | backup.nas_full_mirror_schedule | whole project folder + memory mirrored daily 18:30 (Windows scheduled task 'BibleResearch Full Mirror to NAS', scripts/mirror_to_nas.ps1, robocopy /MIR, run in a hidden window since #2141) to \\LSUK-SYNRACK\HomeMedia\bible_study_projects\mirror\ + claude-backup\. The mirror also carries a copy of both databases as files, without an integrity check; the integrity-checked, hash-verified DB backups are the separate 18:00 (bible_research.db) and 18:10 (iba.db) tasks -- see backup.nas_db_backup_schedule. |  |
 | backup | backup.pre_run_snapshot_policy | a full DB file snapshot (WAL-checkpointed first) is taken automatically before every NEW run (run.py:_ensure_run -> lib/dbsnapshot.snapshot()), never on resume -- this already covers every step in every pipeline; retention.snapshot_keep_count controls how many are kept (oldest pruned first). IBA_NO_SNAPSHOT=1 skips it for a tight loop. |  |
 | backup | backup.write_atomicity_guarantee | every DB write happens inside one atomic transaction -- sqlite3 default deferred-transaction isolation, nothing commits until a handler's own single final commit(). A hard kill (power loss, session breakdown, process death) at any point before that commits NOTHING -- the DB file is left exactly as it was before the call started, and re-submitting the identical call is always safe. |  |
 | behaviour | behaviour.list_report_path | outputs/configs/behaviour-rules-list.md | output path for Behaviour.ps1 -Action List / python -m iba.app.lib.behaviour list |

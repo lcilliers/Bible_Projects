@@ -4,7 +4,7 @@ backup_watchdog.ps1 - independent staleness check for the NAS backup jobs.
 The on-failure alerts inside mirror_to_nas.ps1 / backup_db_to_nas.py only fire when those
 scripts RUN. This watchdog catches the cases they can't: the task was disabled, the PC was
 off at backup time, or the script crashed before its alert. It reads the LOCAL status files
-each job writes and raises an alert if either job has not SUCCEEDED within the threshold,
+each job writes and raises an alert if any job has not SUCCEEDED within the threshold,
 or its last recorded status was FAIL.
 
 Run by the 'BibleResearch Backup Watchdog' scheduled task (daily 19:00 + at logon).
@@ -16,7 +16,9 @@ $maxAgeHrs = 26   # one daily run (+margin) must have succeeded within this wind
 
 $jobs = @(
     @{ Job = 'mirror';   Label = 'NAS full mirror (18:30)' },
-    @{ Job = 'dbbackup'; Label = 'NAS DB backup (18:00)'  }
+    @{ Job = 'dbbackup'; Label = 'NAS DB backup (18:00)'  },
+    # added 2026-10-14 (escalation #2141): the iba.db job failed 10-10..10-13 with no alert
+    @{ Job = 'dbbackup_iba'; Label = 'NAS iba.db backup (18:10)' }
 )
 
 $problems = @()

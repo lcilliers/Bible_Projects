@@ -1,0 +1,16 @@
+-- database: c:\Bible_study_projects\iba\app\db\iba.db
+
+select
+ esc.id
+, esc.type
+, eti.id as thread_item_id
+,esc.short_description,
+esc.comment,
+esc.context,
+esc.resolution,
+eti.kind,
+eti.note,
+eti.status,
+eti.value
+from escalation esc
+join escalation_thread_item eti on esc.id = eti.escalation_id;

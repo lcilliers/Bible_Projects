@@ -22,10 +22,8 @@ eti.status,
 eti.value
 from escalation esc
 join escalation_thread_item eti on esc.id = eti.escalation_id
-where value in ('M01','M02','M18','M25','M47','M72')
-and eti.status not in ('completed','withdraw','closed','supersede')
+where eti.status not in ('completed','withdraw','closed','supersede')
 ;
-
 
 
 --closed escalations

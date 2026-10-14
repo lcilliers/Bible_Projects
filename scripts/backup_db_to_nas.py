@@ -71,7 +71,19 @@ KEEP_RECENT = 24   # the N most-recent backups, always
 KEEP_DAILY = 30    # newest backup of each of the last D calendar days (UTC)
 KEEP_WEEKLY = 26   # newest backup of each of the last W ISO weeks
 
-MIN_PLAUSIBLE_BYTES = 50 * 1024 * 1024  # a real DB is >> 50 MB; guard against stubs
+# Size guard against stubs, set PER DATABASE (escalation #2141, 2026-10-14). A single 50 MB floor
+# refused bible_research.db every night from 2026-09-28: after the prose-only purge (2026-09-27) it
+# is ~36 MB, so it had no NAS backup for 17 days. Keyed on the source stem (see _prefix); each
+# floor sits well under that DB's real size on 2026-10-14 (bible_research 36 MB, iba 810 MB).
+MIN_PLAUSIBLE_BYTES = {
+    "bible_research": 10 * 1024 * 1024,
+    "iba": 400 * 1024 * 1024,
+}
+MIN_PLAUSIBLE_BYTES_DEFAULT = 10 * 1024 * 1024  # any other --source
+
+
+def _min_bytes(source: Path) -> int:
+    return MIN_PLAUSIBLE_BYTES.get(_prefix(source), MIN_PLAUSIBLE_BYTES_DEFAULT)
 
 # Local (off-NAS) status + alert. The normal backup_log.txt lives ON the NAS, so when
 # the NAS is down the failure leaves no local trace — this writes one and raises alerts.
@@ -225,9 +237,9 @@ def main() -> tuple[int, str]:
         print(f"ABORT: source not found: {source}")
         return 2, job
     size = source.stat().st_size
-    if size < MIN_PLAUSIBLE_BYTES:
-        print(f"ABORT: source is implausibly small ({size} bytes) — refusing to back up "
-              f"a possibly-corrupt/empty DB. Pruning skipped.")
+    if size < _min_bytes(source):
+        print(f"ABORT: source is implausibly small ({size} bytes, floor {_min_bytes(source)} for "
+              f"{_prefix(source)}) — refusing to back up a possibly-corrupt/empty DB. Pruning skipped.")
         return 3, job
     ok, detail = _integrity_ok(source)
     if not ok:

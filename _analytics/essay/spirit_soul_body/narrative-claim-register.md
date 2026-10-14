@@ -145,7 +145,40 @@ File `01-the-question-v4-20261002.md` (v4) · draft
 
 ### 02 — Life, breath and death
 
-File `02-life-breath-and-death-v24-20261014.md` (v24) · draft
+File `02-life-breath-and-death-v25-20261014.md` (v25) · draft
+
+**Breath lent, and held by God**
+
+- **C-111** Life is held in the breath, and the breath is God's to give and to take back (in full)
+- **C-112** When the breath goes, a person's plans go with it (in part)
+- **C-113** God holds both ends, killing and making alive, and keeps alive between them (in full)
+- **C-114** The breath also gives understanding, and words come out on it (in full)
+- **C-115** The breath can fail in someone still alive (in full)
+- **C-116** God gives human frailty as a reason for holding back his anger (in full)
+- **C-117** Humans and animals share one breath and one lot (in full)
+
+**Life set before a person**
+
+- **C-118** Life and death are set before a person to choose; life is chosen by doing, seeking and holding on (in full)
+- **C-119** Long days are promised with some commands, and the Preacher sets the righteous who perish beside them; both are stated (in part)
+- **C-119** Long days are promised with some commands, and the Preacher sets the righteous who perish beside them; both are stated (in full)
+- **C-118** Life and death are set before a person to choose; life is chosen by doing, seeking and holding on (in part)
+- **C-120** Wisdom marks where the way to death ends, and some of what kills a person is named from within (in full)
+- **C-123** The same message is death to one and life to another (in full)
+- **C-121** God has no pleasure in anyone's death and calls for turning; the turning is a considered act that reaches back over the past, and trust can lean the wrong way (in full)
+- **C-124** Another's death can be laid at a person's hand (in full) — also told in: 10.10 *(opening)* (pointer)
+- **C-122** Life can be wrongly kept or taken by lying words (in full)
+
+**Living before God**
+
+- **C-125** The commonest form of the oath by life is "As the Lord lives" (39 verses); in six of them a second life is joined (in full)
+- **C-126** The oath "As the Lord lives" places a promise before the living God and binds the speaker to it by life (in part)
+- **C-127** The oath's words stay the same while the heart that speaks them differs; it is judged by how it is sworn (in full)
+- **C-128** God swears by his own life, and the oath carries what he wants and what he will do (in full)
+- **C-129** "The living God" sets him against idols, which have no breath (in full)
+- **C-130** The inner being turns toward the living God, or away from him (in full)
+- **C-131** Scripture counts a life in days and says what the days are for (in full)
+- **C-132** The world where life is lived is named "the land of the living" (in full)
 
 **What death is**
 
@@ -153,6 +186,16 @@ File `02-life-breath-and-death-v24-20261014.md` (v24) · draft
 - **C-83** Death comes to everyone, and falls alike on those the world would set apart (in full)
 - **C-83** Death comes to everyone, and falls alike on those the world would set apart (in part: Death falls alike on those the world would set apart)
 - **C-84** The same death is met in different ways, and nothing goes with the dead (in full)
+- **C-137** The law weighs a life by what it has begun, and names what a death can leave unfinished (in full)
+- **C-138** What lies beyond death is not shown to a person (in full)
+
+**Death spoken of in more than one way**
+
+- **C-139** Scripture speaks of death in more than one way: the body's death, death in the living, dying to sin, a death beyond death, death as a power, and the living made like the dead (in full)
+- **C-140** The father sets "dead" beside "lost" and "alive" beside "found"; to perish and to be lost are one word (in full)
+- **C-141** "Dead in" trespasses and "died to" sin are opposites: death under sin, and death that ends its rule (in full) — also told in: 02 *Dead to sin* (in full)
+- **C-142** The word "dead" passes to sin itself, to faith and to works (in part) — also told in: 02 *Death in the living* (in part)
+- **C-143** Some are perishing now, set against being saved; what is set against perishing is eternal life (in full)
 
 **Death and sin**
 
@@ -160,10 +203,22 @@ File `02-life-breath-and-death-v24-20261014.md` (v24) · draft
 - **C-85** Scripture ties death to sin from the first command (in part)
 - **C-86** James and Paul trace death's coming from within: desire, sin, death (in full)
 - **C-87** Each person answers for his own sin, and sin can be put away while a death still follows (in part)
+- **C-144** Where a verse sets death against eternal life (Romans 6:23) it speaks of more than the body's death; other verses do not say which death, and are left as written (in full)
+- **C-145** In Acts a lie contrived in the heart is followed at once by death, and fear comes on all who hear (in full) — also told in: 02 *Facing death* (in full)
 
 **Death in the living**
 
 - **C-88** Scripture speaks of death inside a living person: the heart dying first, the living called dead, abiding in death (in full)
+- **C-142** The word "dead" passes to sin itself, to faith and to works (in part) — also told in: 02 *Death spoken of in more than one way* (in part)
+- **C-146** Inner things can perish: hope, endurance, courage (the heart), wisdom and truth (in part)
+- **C-147** The verses name what brings death in the living, each in its own place; no verse gathers them into one list (in full)
+- **C-148** The verses name the way out of death in the living: hearing the Son and believing, God making alive with forgiveness, waking, coming home; loving the brothers is its sign (in full)
+- **C-149** One person's freedom can destroy another (in full)
+
+**Dead to sin**
+
+- **C-150** The believer has already died to sin, to the law and to the powers of the world, and a putting to death is still to be done (in full) — also told in: 14 *Revived, restored, renewed* (pointer)
+- **C-141** "Dead in" trespasses and "died to" sin are opposites: death under sin, and death that ends its rule (in full) — also told in: 02 *Death spoken of in more than one way* (in full)
 
 **Going down to Sheol**
 
@@ -180,10 +235,36 @@ File `02-life-breath-and-death-v24-20261014.md` (v24) · draft
 **Sleep and waking**
 
 - **C-89** Scripture speaks of death as sleep, and gives its hope against death as waking (in full)
+- **C-151** Kings and Chronicles tell the deaths of kings as sleeping with their fathers (36 verses) (in full)
 - **C-89** Scripture speaks of death as sleep, and gives its hope against death as waking (in part)
 - **C-90** Paul uses sleep to speak to grief: grief with hope is set apart from grief without hope, and the hope rests on Christ's rising (in full)
 - **C-91** The calls on God to wake speak from how it feels when God does not act (in full)
 - **C-92** The waking of the dead is not the same for all (in full)
+
+**Life weighed**
+
+- **C-133** People weigh their own lives: loathed, worn down, enjoyed, and not consisting in possessions (in full)
+- **C-133** People weigh their own lives: loathed, worn down, enjoyed, and not consisting in possessions (in part)
+- **C-134** Where the hope of seeing good has gone, life is weighed as a breath (in full)
+- **C-136** Death's certainty can be turned into a reason to indulge, and Scripture answers it (in full)
+- **C-135** The difference in how a life is weighed lies in what each verse sets life beside (in full)
+
+**Facing death**
+
+- **C-152** The coming of death is often met with anguish and terror, and the fear of dying shapes what people do (in full)
+- **C-153** "The king of terrors" is Bildad's word, said of Job, and God's verdict on the friends stands over it (in full)
+- **C-145** In Acts a lie contrived in the heart is followed at once by death, and fear comes on all who hear (in full) — also told in: 02 *Death and sin* (in full)
+- **C-154** The nearness of death is given a purpose: to rely on God who raises the dead (in full)
+
+**Those left behind**
+
+- **C-155** A death is met by those who remain: grief, not watching, fasting and then eating, reproach, limits on mourning, mourning withheld, and death not taken to heart (in full)
+- **C-155** A death is met by those who remain: grief, not watching, fasting and then eating, reproach, limits on mourning, mourning withheld, and death not taken to heart (in part)
+
+**Wanting to die**
+
+- **C-156** People sometimes want to die; of the 24 verses with such a wish, 17 name no inner word (in full)
+- **C-157** Of the seven wishes to die answered in these passages, two are fed, two are answered another way, and three are granted, each to a man already blinded or wounded (in full)
 
 **Soul, spirit and heart at death**
 
@@ -203,6 +284,20 @@ File `02-life-breath-and-death-v24-20261014.md` (v24) · draft
 - **2-3** Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) (in part)
 - **C-105** Deliverance from death is for something: walking before God among the living and telling of him (in full)
 
+**Made alive**
+
+- **C-158** Giving life belongs to the Father, the Son and the Spirit (in full)
+- **C-159** The dead made alive are living people; the crossing from death to life happens now, and life is spoken of as had now and still to come (in full)
+- **C-160** The making alive rests on a death, and Christ went to it himself (in full)
+- **C-161** That death changes how the living live: no longer for themselves, dead to sin, Christ living in them (in full)
+
+**Dying to the Lord**
+
+- **C-162** A death, too, can belong to the Lord, and a dying can go on while a person lives (in full)
+- **C-163** Scripture speaks of the death of the upright in its own words: precious, wished for, a refuge, in faith, bearing fruit, glorifying God (in full)
+- **C-164** Some wait to see one thing before they die, and then let go (in full)
+- **C-165** People hold to someone, or to something, even to death, and the readiness can fail (in full) — also told in: 10.10 *Loyalty and honour* (pointer)
+
 **After death**
 
 - **3-10** Conscious existence after death (Rev 6:9; Heb 12:23) (in full)
@@ -212,6 +307,7 @@ File `02-life-breath-and-death-v24-20261014.md` (v24) · draft
 - **C-108** In Jesus' account of the rich man and Lazarus the dead remember, see, ask and are answered; one is comforted and one in anguish, and the chasm between them cannot be crossed (in full)
 - **C-109** Scripture speaks of the dead in more than one way, and neither way is made to explain the other away (in full)
 - **C-110** With God, the dead are carried, blessed and at rest (in full)
+- **C-166** The living are told how to deal with the dead: inquiring of them and offering to them are forbidden; kindness to the dead is blessed (in full)
 
 ### 03 — One inner person, many words
 
@@ -296,7 +392,15 @@ File `10-09-relating-to-god-v23-20261013.md` (v23) · draft
 
 ### 10.10 — Relating to others
 
-File `10-10-relating-to-others-v25-20261013.md` (v25) · draft
+File `10-10-relating-to-others-v26-20261014.md` (v26) · draft
+
+**(opening)**
+
+- **C-124** Another's death can be laid at a person's hand (pointer) — also told in: 02 *Life set before a person* (in full)
+
+**Loyalty and honour**
+
+- **C-165** People hold to someone, or to something, even to death, and the readiness can fail (pointer) — also told in: 02 *Dying to the Lord* (in full); 02 *Dying to the Lord* (in full)
 
 ### 10.11 — Hiding and disclosing
 
@@ -304,7 +408,7 @@ File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft
 
 ### 10.12 — Fear
 
-File `10-12-fear-v9-20261014.md` (v9) · draft
+File `10-12-fear-v10-20261014.md` (v10) · draft
 
 ### 10.13 — Anger
 
@@ -316,7 +420,7 @@ File `11-other-sides-of-the-inner-being-v33-20261013.md` (v33) · draft
 
 ### 12 — When the inner being goes wrong
 
-File `12-when-the-inner-being-goes-wrong-v21-20261013.md` (v21) · draft + held
+File `12-when-the-inner-being-goes-wrong-v22-20261014.md` (v22) · draft + held
 
 ### 13 — Other beings
 
@@ -340,7 +444,11 @@ File `13-04-nature-v5-20261012.md` (v5) · draft
 
 ### 14 — Made new
 
-File `14-made-new-v16-20261013.md` (v16) · draft + held
+File `14-made-new-v17-20261014.md` (v17) · draft + held
+
+**Revived, restored, renewed**
+
+- **C-150** The believer has already died to sin, to the law and to the powers of the world, and a putting to death is still to be done (pointer) — also told in: 02 *Dead to sin* (in full); 02 *Dead to sin* (in full)
 
 ### 15 — Beyond the named words
 
@@ -572,7 +680,7 @@ File `—` (v—) · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 27 |
+| narrative | New | 83 |
 | original essay | Corrected | 1 |
 | original essay | Held | 10 |
 | original essay | Restated | 35 |
@@ -580,4 +688,4 @@ File `—` (v—) · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 14 |
 
-110 claims; 36 told in the narrative, 74 not.
+166 claims; 92 told in the narrative, 74 not.
