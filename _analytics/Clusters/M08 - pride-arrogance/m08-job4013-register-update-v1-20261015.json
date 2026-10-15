@@ -1,0 +1,16 @@
+{
+ "update": {
+  "update_date": "2026-10-15",
+  "title": "Job 40:13 citation removed from 13.1 and 10.14 (#2158)",
+  "strand": "pride and arrogance (M08), #2158",
+  "researcher_instruction": "\"2158, I looked at the verse Job 40:13 - it has no relevance. remove the citation,  and if not supported by other verses, remove the claim also in the narrative.\" (2026-10-15)",
+  "method": "The ranges Job 40:10-14 (13.1 Majesty) and Job 40:11-14 (10.14 The proud brought low) restated as 40:10-12, 14 and 40:11-12, 14; the quoted words are from those verses. The Job 40:13 source rows of C-239 and C-181 removed by direct edit (no register action removes a source row, #2146) and their written ranges restated. Both claims keep their other sources (C-239: Psa 93:1-2, Exo 15:1, 7, Deu 33:26, Psa 68:34-35, Isa 2:10-11, Job 40:10-12, 14; C-181: its other sources and Job 40:11-12, 14), so neither is removed.",
+  "claims_changed_note": "C-239 and C-181: Job 40:13 source removed; claims kept (supported by other verses)",
+  "notes": "Applies the researcher's ruling on Job 40:13 to both citations of it, including 10.14 / C-181, earlier closed as by-design under #2151."
+ },
+ "refs": [{"kind": "escalation", "value": "2158"}, {"kind": "escalation", "value": "2151"}],
+ "chapters": [
+  {"chapter": "13.1", "from_version": 27, "to_version": 28, "file": "13-01-divine-v28-20261015.md"},
+  {"chapter": "10.14", "from_version": 2, "to_version": 3, "file": "10-14-humility-v3-20261015.md"}
+ ]
+}

@@ -1279,7 +1279,6 @@
 | Job 40:10 | 13.1 *Majesty* (quoted) | C-239 |
 | Job 40:11 | 10.14 *The proud brought low, the lowly raised* (quoted); 11 *4. One word, opposite values* (quoted); 13.1 *Majesty* (quoted) | C-181, C-239, C-242 |
 | Job 40:12 | 10.14 *The proud brought low, the lowly raised* (quoted); 13.1 *Majesty* (quoted) | C-181, C-239 |
-| Job 40:13 | 10.14 *The proud brought low, the lowly raised* (no verse row); 13.1 *Majesty* (no verse row) | C-181, C-239 |
 | Job 40:14 | 10.14 *The proud brought low, the lowly raised* (quoted); 13.1 *Majesty* (quoted) | C-181, C-239 |
 | Job 41:33 | 10.12 *Other parties* (quoted) | — |
 | Job 42:2 | 10.4 *When thinking changes character* (quoted); 11 *4. One word, opposite values* (quoted) | — |

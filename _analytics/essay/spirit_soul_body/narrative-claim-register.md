@@ -572,7 +572,7 @@ File `10-13-anger-v10-20261015.md` (v10) · draft
 
 ### 10.14 — Humility
 
-File `10-14-humility-v2-20261015.md` (v2) · draft
+File `10-14-humility-v3-20261015.md` (v3) · draft
 
 **(opening)**
 
@@ -808,7 +808,7 @@ File `13-00-other-beings-v2-20261008.md` (v2) · draft
 
 ### 13.1 — Divine
 
-File `13-01-divine-v27-20261015.md` (v27) · draft
+File `13-01-divine-v28-20261015.md` (v28) · draft
 
 **Choosing**
 
