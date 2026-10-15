@@ -1,0 +1,53 @@
+# Narrative register check
+
+35 active chapter(s) checked. 49 finding(s).
+
+- claim I-2 is current but no current passage tells it
+- claim I-3 is current but no current passage tells it
+- claim I-4 is current but no current passage tells it
+- claim I-6 is current but no current passage tells it
+- claim 1-1 is current but no current passage tells it
+- claim 1-2 is current but no current passage tells it
+- claim 1-3 is current but no current passage tells it
+- claim 1-5 is current but no current passage tells it
+- claim 1-6 is current but no current passage tells it
+- claim 2-1 is current but no current passage tells it
+- claim 2-4 is current but no current passage tells it
+- claim 2-8 is current but no current passage tells it
+- claim 2-10 is current but no current passage tells it
+- claim 2-11 is current but no current passage tells it
+- claim 2-12 is current but no current passage tells it
+- claim 2-14 is current but no current passage tells it
+- claim 2-16 is current but no current passage tells it
+- claim 3-1 is current but no current passage tells it
+- claim 3-2 is current but no current passage tells it
+- claim 3-3 is current but no current passage tells it
+- claim 3-4 is current but no current passage tells it
+- claim 3-5 is current but no current passage tells it
+- claim 3-8 is current but no current passage tells it
+- claim 3-11 is current but no current passage tells it
+- claim 3-14 is current but no current passage tells it
+- claim 4-1 is current but no current passage tells it
+- claim 4-2 is current but no current passage tells it
+- claim 4-3 is current but no current passage tells it
+- claim 4-4 is current but no current passage tells it
+- claim 4-5 is current but no current passage tells it
+- claim 4-7 is current but no current passage tells it
+- claim 4-9 is current but no current passage tells it
+- claim 4-10 is current but no current passage tells it
+- claim 5-1 is current but no current passage tells it
+- claim 5-3 is current but no current passage tells it
+- claim 6-1 is current but no current passage tells it
+- claim 6-3 is current but no current passage tells it
+- claim 8-1 is current but no current passage tells it
+- claim 9-1 is current but no current passage tells it
+- claim 9-3 is current but no current passage tells it
+- claim 9-4 is current but no current passage tells it
+- claim 9-5 is current but no current passage tells it
+- claim 10-1 is current but no current passage tells it
+- claim 10-2 is current but no current passage tells it
+- claim 10-3 is current but no current passage tells it
+- claim 10-4 is current but no current passage tells it
+- claim 10-7 is current but no current passage tells it
+- Ch 10.14 *The proud brought low, the lowly raised*: reference 'Job 40:11–14' read as Job 40:13 matches no verse
+- claim C-181 source 'Job 40:11-14' read as Job 40:13 matches no verse

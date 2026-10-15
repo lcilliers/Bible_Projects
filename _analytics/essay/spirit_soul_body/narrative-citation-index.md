@@ -354,7 +354,7 @@
 | Deu 8:2 | 04 *The heart humbled* (quoted); 10.14 *Being humbled by God* (quoted) | C-167, C-178 |
 | Deu 8:3 | 02 *Where life flows from* (quoted); 10.14 *Being humbled by God* (quoted) | C-178 |
 | Deu 8:11 | 10.3 *Forgetting God* (quoted) | — |
-| Deu 8:14 | 10.14 *Being humbled by God* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-178 |
+| Deu 8:14 | 10.14 *Being humbled by God* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-178, C-207 |
 | Deu 8:15 | 10.1 *The words* | C-178 |
 | Deu 8:16 | 10.14 *Being humbled by God* (quoted); 10.14 *When humility changes character*; 13.1 *Lowering himself* (quoted) | C-178, C-203 |
 | Deu 8:17 | 04 *The heart speaks to itself* (quoted); 10.14 *Being humbled by God* (quoted); 12 *The heart deceives its owner* (quoted) | C-178 |
@@ -1047,12 +1047,14 @@
 | Est 5:12 | 11 *2. Thresholds: the merry heart and the sad heart* | — |
 | Est 5:13 | 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | — |
 | Est 5:14 | 10.10 *Fear that arrives with a person*; 11 *2. Thresholds: the merry heart and the sad heart* | — |
-| Est 6:6 | 10.1 *Delight* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Est 6:8 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Est 6:9 | 10.1 *When delight is only the measure* (quoted) | — |
-| Est 6:10 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Est 6:12 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Est 6:13 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
+| Est 6:6 | 10.1 *Delight* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-211 |
+| Est 6:7 | — | C-211 |
+| Est 6:8 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-211 |
+| Est 6:9 | 10.1 *When delight is only the measure* (quoted) | C-211 |
+| Est 6:10 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-211 |
+| Est 6:11 | — | C-211 |
+| Est 6:12 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-211 |
+| Est 6:13 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-211 |
 | Est 7:3 | 10.7 *Whose measure* (quoted) | — |
 | Est 8:3 | 10.10 *Plotting against another* (quoted) | — |
 | Est 8:8 | 10.1 *When delight is only the measure* (quoted); 10.7 *Whose measure* (quoted) | — |
@@ -1451,8 +1453,9 @@
 | Psa 39:4 | 10.5 *The pause between* (quoted) | — |
 | Psa 39:11 | 10.6 *Taken away* (quoted) | — |
 | Psa 40 | 13.1 *Delight* (no verse row) | — |
-| Psa 40:6 | 13.1 *Delight* (quoted) | — |
-| Psa 40:8 | 10.1 *On God's word, and on God*; 13.1 *Delight* (quoted) | — |
+| Psa 40:6 | 13.1 *Delight* (quoted) | C-206 |
+| Psa 40:7 | — | C-206 |
+| Psa 40:8 | 10.1 *On God's word, and on God*; 13.1 *Delight* (quoted) | C-206 |
 | Psa 40:10 | 10.11 *Hiding what I hold* (quoted) | — |
 | Psa 40:14 | 10.1 *Delight* (quoted) | — |
 | Psa 40:17 | 10.4 *What thinking does* (quoted); 10.4 *Small, passing, and wholly seen* (quoted); 10.9 *(opening)* (quoted); 13.1 *Purposing* (quoted) | — |
@@ -1484,7 +1487,7 @@
 | Psa 49:16 | 02 *Soul, spirit and heart at death* (quoted); 10.12 *Fear between people* (quoted) | — |
 | Psa 49:17 | 02 *What death is* (quoted) | C-84 |
 | Psa 49:19 | 02 *Soul, spirit and heart at death* (quoted); 02 *After death* (quoted) | C-100, C-106 |
-| Psa 50:21 | 10.4 *What thinking does* (quoted); 10.9 *(opening)* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
+| Psa 50:21 | 10.4 *What thinking does* (quoted); 10.9 *(opening)* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-208 |
 | Psa 51 | 10.14 *A lowly and contrite spirit* (no verse row) | — |
 | Psa 51:5 | 13.1 *Delight* (quoted) | — |
 | Psa 51:6 | 13.1 *Delight* (quoted) | — |
@@ -1493,10 +1496,10 @@
 | Psa 51:11 | 06 *The human spirit* (quoted); 06 *God's Spirit and the human person* (quoted); 10.9 *When God hides his face* (quoted); 14 *A new heart and a new spirit* (quoted) | — |
 | Psa 51:12 | 06 *The human spirit* (quoted); 10.7 *Willing* (quoted); 14 *A new heart and a new spirit* (quoted) | — |
 | Psa 51:13 | 10.7 *Willing* (quoted) | — |
-| Psa 51:16 | 10.14 *Humility as a way of walking* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* (quoted) | C-188 |
-| Psa 51:17 | 03 *Side by side* (quoted); 10.14 *Humility as a way of walking* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* (quoted) | 1-1, C-188, C-189 |
-| Psa 51:18 | 11 *What changes the character* | C-188 |
-| Psa 51:19 | 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* | C-188 |
+| Psa 51:16 | 10.14 *Humility as a way of walking* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* (quoted) | C-188, C-206 |
+| Psa 51:17 | 03 *Side by side* (quoted); 10.14 *Humility as a way of walking* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* (quoted) | 1-1, C-188, C-189, C-206 |
+| Psa 51:18 | 11 *What changes the character* | C-188, C-206 |
+| Psa 51:19 | 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* | C-188, C-206 |
 | Psa 52:2 | 10.0 *From a thought to a deed* (quoted); 10.5 *The tongue, the lips and the eyes devise* (quoted) | — |
 | Psa 52:7 | 10.6 *Possessions* (quoted) | — |
 | Psa 53:1 | 12 *Fear that goes wrong* (quoted) | — |
@@ -1568,9 +1571,9 @@
 | Psa 75:6 | 10.14 *The proud brought low, the lowly raised* (quoted) | C-181 |
 | Psa 75:7 | 10.14 *The proud brought low, the lowly raised* (quoted) | C-181 |
 | Psa 76 | 10.13 *Shelter, and who can stand* (no verse row) | — |
-| Psa 76:7 | 10.12 *Fear before God* (quoted); 10.13 *Shelter, and who can stand* (quoted); 10.13 *The responses, gathered* (quoted) | — |
-| Psa 76:8 | 10.12 *Fear before God* (quoted); 10.13 *Shelter, and who can stand* (quoted) | — |
-| Psa 76:9 | 10.12 *Fear before God* (quoted); 10.13 *Shelter, and who can stand* (quoted); 10.14 *The humble* (quoted) | — |
+| Psa 76:7 | 10.12 *Fear before God* (quoted); 10.13 *Shelter, and who can stand* (quoted); 10.13 *The responses, gathered* (quoted) | C-204 |
+| Psa 76:8 | 10.12 *Fear before God* (quoted); 10.13 *Shelter, and who can stand* (quoted) | C-204 |
+| Psa 76:9 | 10.12 *Fear before God* (quoted); 10.13 *Shelter, and who can stand* (quoted); 10.14 *The humble* (quoted) | C-204 |
 | Psa 76:10 | 10.9 *Anger toward God, and before God* (quoted) | — |
 | Psa 77:2 | 05 *The soul suffers* (quoted) | — |
 | Psa 77:9 | 10.3 *Remembering as a cure, and remembering as hope* (quoted) | — |
@@ -1787,10 +1790,10 @@
 | Psa 142:5 | 02 *Living before God* (quoted) | C-132 |
 | Psa 143 | 11 *3. The parts give way in sequence* (no verse row) | — |
 | Psa 143:2 | 02 *Life weighed* (quoted); 12 *The heart as the source* (quoted) | C-133 |
-| Psa 143:3 | 02 *Death in the living* (quoted); 11 *3. The parts give way in sequence* (quoted); 11 *4. One word, opposite values* | — |
-| Psa 143:4 | 03 *One inside another* (quoted); 06 *The human spirit* (quoted); 10.1 *(opening)* (quoted); 11 *3. The parts give way in sequence* (quoted); 11 *4. One word, opposite values* | 1-1 |
-| Psa 143:5 | 10.2 *(opening)* (quoted); 10.3 *Remembering feeds thinking and prayer* (quoted); 10.4 *Connections*; 11 *3. The parts give way in sequence* (quoted) | — |
-| Psa 143:6 | 11 *3. The parts give way in sequence* (quoted) | — |
+| Psa 143:3 | 02 *Death in the living* (quoted); 11 *3. The parts give way in sequence* (quoted); 11 *4. One word, opposite values* | C-205 |
+| Psa 143:4 | 03 *One inside another* (quoted); 06 *The human spirit* (quoted); 10.1 *(opening)* (quoted); 11 *3. The parts give way in sequence* (quoted); 11 *4. One word, opposite values* | 1-1, C-205 |
+| Psa 143:5 | 10.2 *(opening)* (quoted); 10.3 *Remembering feeds thinking and prayer* (quoted); 10.4 *Connections*; 11 *3. The parts give way in sequence* (quoted) | C-205 |
+| Psa 143:6 | 11 *3. The parts give way in sequence* (quoted) | C-205 |
 | Psa 143:7 | 10.9 *When God hides his face* (quoted) | — |
 | Psa 143:10 | 06 *God's Spirit and the human person* (quoted); 10.7 *Willing* (quoted) | — |
 | Psa 144:3 | 10.9 *(opening)* (quoted) | — |
@@ -1916,7 +1919,7 @@
 | Pro 15:8 | 13.1 *Delight* (quoted) | — |
 | Pro 15:10 | 02 *Life set before a person* (quoted) | C-120 |
 | Pro 15:11 | 02 *Going down to Sheol* (quoted) | C-98 |
-| Pro 15:13 | 03 *Causes running in every direction* (quoted); 06 *The human spirit* (quoted); 10.1 *Feeling and thinking* (quoted); 10.14 *A lowly and contrite spirit* (quoted); 11 *3. The parts give way in sequence* (quoted) | C-189 |
+| Pro 15:13 | 03 *Causes running in every direction* (quoted); 06 *The human spirit* (quoted); 10.1 *Feeling and thinking* (quoted); 10.14 *A lowly and contrite spirit* (quoted); 11 *3. The parts give way in sequence* (quoted) | C-189, C-205 |
 | Pro 15:15 | 10.1 *Feeling and thinking* (quoted) | — |
 | Pro 15:18 | 10.13 *What it does next* (quoted) | — |
 | Pro 15:22 | 10.4 *When thinking changes character* (quoted) | — |
@@ -1929,12 +1932,12 @@
 | Pro 15:33 | 10.14 *Humility as a way of walking* (quoted) | C-187 |
 | Pro 16:2 | 06 *The human spirit* (quoted) | — |
 | Pro 16:3 | 10.0 *The path runs back* (quoted); 10.4 *When thinking changes character* (quoted); 11 *What changes the character* | — |
-| Pro 16:5 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
+| Pro 16:5 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-207 |
 | Pro 16:6 | 10.8 *(opening)* (quoted); 10.12 *The fear of God* (quoted) | — |
 | Pro 16:9 | 04 *The heart thinks, attends and remembers* (quoted); 10.4 *Where thoughts come from* (quoted); 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Pro 16:14 | 10.13 *Other parties* (quoted); 10.13 *Connections* | — |
 | Pro 16:16 | 10.7 *The words* (quoted); 10.7 *What draws it* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | — |
-| Pro 16:18 | 06 *The human spirit* (quoted); 09 *Lines that are often drawn, but that I cannot find*; 12 *Pride and the lifted-up heart and spirit* (quoted) | 2-2, 2-2 |
+| Pro 16:18 | 06 *The human spirit* (quoted); 09 *Lines that are often drawn, but that I cannot find*; 12 *Pride and the lifted-up heart and spirit* (quoted) | 2-2, 2-2, C-207 |
 | Pro 16:19 | 06 *The human spirit* (quoted); 10.7 *Taking the lower place* (quoted); 10.14 *The proud brought low, the lowly raised* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
 | Pro 16:24 | 10.5 *The oath* (quoted) | — |
 | Pro 16:26 | 05 *From throat to corpse* (quoted) | — |
@@ -1943,7 +1946,7 @@
 | Pro 16:32 | 06 *The human spirit* (quoted); 10.13 *Governed, and put away* (quoted); 11 *7. The inner being is governed* (quoted); 11 *Authority as a standing* (quoted) | — |
 | Pro 17:3 | 10.9 *(opening)* (quoted) | — |
 | Pro 17:4 | 10.2 *(opening)* (quoted) | — |
-| Pro 17:22 | 03 *Causes running in every direction* (quoted); 10.1 *Feeling and thinking* (quoted); 11 *3. The parts give way in sequence* (quoted) | 2-9 |
+| Pro 17:22 | 03 *Causes running in every direction* (quoted); 10.1 *Feeling and thinking* (quoted); 11 *3. The parts give way in sequence* (quoted) | 2-9, C-205 |
 | Pro 17:27 | 06 *The human spirit* (quoted); 10.1 *(opening)* (quoted) | — |
 | Pro 17:28 | 10.4 *What thinking does* (quoted) | — |
 | Pro 18:1 | 10.6 *Evil desire* (quoted) | — |
@@ -2149,8 +2152,9 @@
 | Song 8:7 | 10.6 *A person* (quoted) | — |
 | Isa 1 | 10.7 *What a choice rests on* (no verse row); 10.7 *Willing* (no verse row) | — |
 | Isa 1:3 | 10.7 *What a choice rests on* (quoted) | — |
-| Isa 1:11 | 13.1 *Delight* (quoted) | — |
-| Isa 1:13 | 13.1 *Delight* (quoted) | — |
+| Isa 1:11 | 13.1 *Delight* (quoted) | C-206 |
+| Isa 1:12 | — | C-206 |
+| Isa 1:13 | 13.1 *Delight* (quoted) | C-206 |
 | Isa 1:14 | 11 *8. God has a heart and a soul* (quoted) | 2-12 |
 | Isa 1:15 | 11 *8. God has a heart and a soul* | — |
 | Isa 1:16 | 10.7 *Two sides* (quoted) | — |
@@ -2220,10 +2224,10 @@
 | Isa 14:6 | 10.10 *Anger between people* (quoted) | — |
 | Isa 14:7 | 10.10 *Anger between people* (quoted) | — |
 | Isa 14:9 | 02 *After death* (quoted) | C-93, C-93, C-107, C-109 |
-| Isa 14:10 | 02 *After death* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-107, C-109 |
-| Isa 14:11 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Isa 14:13 | 04 *The heart speaks to itself* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Isa 14:14 | 11 *4. One word, opposite values* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
+| Isa 14:10 | 02 *After death* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-107, C-109, C-210 |
+| Isa 14:11 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-210 |
+| Isa 14:13 | 04 *The heart speaks to itself* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-208 |
+| Isa 14:14 | 11 *4. One word, opposite values* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-208 |
 | Isa 14:15 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Isa 17:2 | 10.12 *"Fear not"* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Isa 19:4 | 13.1 *Ruling* (quoted) | — |
@@ -2693,13 +2697,14 @@
 | Eze 24:25 | 10.6 *Taken away* (quoted) | — |
 | Eze 27:26 | 04 *The middle of things* (quoted) | — |
 | Eze 27:35 | 07 *Flesh answers the inner being* (quoted) | — |
-| Eze 28:2 | 12 *Pride and the lifted-up heart and spirit* | — |
-| Eze 28:13 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Eze 28:15 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Eze 28:16 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Eze 28:17 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Eze 31:9 | 10.6 *Jealousy and envy* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Eze 31:10 | 10.6 *Jealousy and envy* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
+| Eze 28:2 | 12 *Pride and the lifted-up heart and spirit* | C-208 |
+| Eze 28:13 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-209 |
+| Eze 28:14 | — | C-209 |
+| Eze 28:15 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-209 |
+| Eze 28:16 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-209 |
+| Eze 28:17 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-209 |
+| Eze 31:9 | 10.6 *Jealousy and envy* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-209 |
+| Eze 31:10 | 10.6 *Jealousy and envy* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-209 |
 | Eze 31:15 | 02 *Going down to Sheol* | C-94, C-94 |
 | Eze 31:16 | 02 *Going down to Sheol* (quoted); 02 *After death* (quoted) | C-94, C-94, C-107 |
 | Eze 31:17 | 02 *Going down to Sheol* | C-94, C-94 |
@@ -2761,7 +2766,7 @@
 | Dan 5:12 | 10.2 *Perplexity* (quoted); 10.4 *The night and the bed* (quoted) | — |
 | Dan 5:17 | 10.7 *Others around a choice* (quoted); 11 *Authority as a standing* (quoted) | — |
 | Dan 5:19 | 04 *The heart decides and is moved* (quoted); 10.7 *Willing* (quoted); 10.7 *What changes the character*; 10.10 *Fear that arrives with a person* (quoted) | — |
-| Dan 5:20 | 04 *The heart decides and is moved* (quoted); 06 *The human spirit* (quoted); 10.7 *Willing* (quoted); 10.14 *What it is set against* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-168 |
+| Dan 5:20 | 04 *The heart decides and is moved* (quoted); 06 *The human spirit* (quoted); 10.7 *Willing* (quoted); 10.14 *What it is set against* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-168, C-207 |
 | Dan 5:21 | 10.7 *Willing* (quoted); 13.1 *Willing* (quoted) | C-168 |
 | Dan 5:22 | 04 *The heart decides and is moved* (quoted); 04 *The heart humbled* (quoted); 10.7 *Willing* (quoted); 10.14 *It answers a word heard* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-168, C-170, C-171 |
 | Dan 5:23 | 02 *Breath lent, and held by God* (quoted); 10.9 *(opening)* (quoted); 10.14 *What it is set against* (quoted) | C-111, C-168 |
@@ -2799,8 +2804,9 @@
 | Hos 5:4 | 06 *"A spirit of …" — what comes upon a person* (quoted); 12 *Idols taken inside* (quoted) | — |
 | Hos 5:11 | 10.7 *Willing* (quoted) | — |
 | Hos 6:2 | 02 *The body raised* (quoted) | — |
-| Hos 6:4 | 13.1 *Delight* (quoted) | — |
-| Hos 6:6 | 13.1 *Delight* (quoted) | — |
+| Hos 6:4 | 13.1 *Delight* (quoted) | C-206 |
+| Hos 6:5 | — | C-206 |
+| Hos 6:6 | 13.1 *Delight* (quoted) | C-206 |
 | Hos 7:5 | 10.13 *The words* (quoted) | — |
 | Hos 7:6 | 04 *The heart feels* | — |
 | Hos 7:7 | 04 *The heart feels* (quoted) | — |
@@ -2992,7 +2998,7 @@
 | Mat 8:26 | 10.12 *Fear set against faith and love* (quoted) | — |
 | Mat 9:6 | 13.1 *Ruling* (quoted) | — |
 | Mat 9:8 | 10.12 *What fear does* (quoted) | — |
-| Mat 9:13 | 13.1 *Delight* | — |
+| Mat 9:13 | 13.1 *Delight* | C-206 |
 | Mat 9:24 | 02 *Sleep and waking* (quoted) | C-89 |
 | Mat 10:1 | 13.1 *Ruling* (quoted) | — |
 | Mat 10:19 | 10.1 *Meeting anxiety* (quoted) | — |
@@ -3006,7 +3012,7 @@
 | Mat 11:26 | 13.1 *Willing* (quoted) | — |
 | Mat 11:27 | 13.1 *Willing* (quoted) | — |
 | Mat 11:29 | 04 *The heart humbled* (quoted); 05 *Rest for the soul* (quoted); 10.14 *Jesus* (quoted); 11 *6. Inner states pass between people* (quoted); 13.1 *Lowering himself* (quoted) | C-197, C-202 |
-| Mat 12:7 | 13.1 *Delight* | — |
+| Mat 12:7 | 13.1 *Delight* | C-206 |
 | Mat 12:14 | 13.1 *Choosing* (quoted) | — |
 | Mat 12:15 | 13.1 *Choosing* (quoted) | — |
 | Mat 12:16 | 13.1 *Choosing* (quoted) | — |
@@ -3200,7 +3206,7 @@
 | Luk 1:46 | 03 *Side by side* (quoted); 05 *The soul rejoices and worships* (quoted) | 1-1 |
 | Luk 1:47 | 03 *Side by side* (quoted); 10.9 *(opening)* (quoted) | 1-1 |
 | Luk 1:48 | 10.14 *Jesus* (quoted); 13.1 *Lowering himself* | C-203 |
-| Luk 1:51 | 10.14 *Jesus* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
+| Luk 1:51 | 10.14 *Jesus* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-208 |
 | Luk 1:52 | 10.14 *The proud brought low, the lowly raised* (quoted); 10.14 *Jesus* | — |
 | Luk 1:53 | 10.14 *Jesus* | — |
 | Luk 1:66 | 10.12 *What fear does* (quoted) | — |

@@ -2,6 +2,234 @@
 
 *Published from iba.db on 2026-10-15. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-15 — M09 humility: existing humility claims reconciled in the touched chapters
+
+**Strand:** humility (M09), claims reconciliation of update 141 (#2152)
+
+**Researcher:** "We agreed that the claim reconciliation will take place when a particular chapter is touched with updates.  I cannot see how you can update the chapter in the narrative with new information without reviewing the current claims, and ensuring that the claims in the narrative are recorded in the register." and "The method I am proposing is to reconcile the existing claims for the concepts that is being updated, for instance in this case humility and related.  to reconcile every claim in the chapter will cause severe disruption because it is not the focus and cannot be resolved in this session." (2026-10-15)
+
+**Method:** In the 15 chapters touched by update 141, the existing passages on humility and related concepts (63 by word search, plus the edited passages that keep older text) were read against the register. Matched to the claims of update 141 or to the untold legacy claims 1-4, 2-2 and 5-2 by new tellings; 8 statements with no claim registered (n1-n3, p1-p5); C-188 restated (its count of four passages was incomplete across the narrative); two statements beyond their verses restated in the text (10.7 "not wrong in itself"; Ch 14 "God's reason is tender"). Passages that only quote, or that belong to other concepts (fear, authority, flesh, the gentle waters of Isa 8:6, the gentle lamb of Jer 11:19), were left for their own strands.
+
+**Sources:** _analytics/Clusters/M09 - humility-lowliness/m09-humility-reconcile-v1-20261015.md
+
+**Scripts:** _analytics/Clusters/M09 - humility-lowliness/m09-humility-reconcile-text-v1-20261015.py
+_analytics/Clusters/M09 - humility-lowliness/m09-humility-reconcile-register-build-v1-20261015.py
+
+**Original claims changed:** 8 new claims (n1-n3, p1-p5); C-188 restated; 40 tellings on existing passages; legacy 1-4, 2-2, 5-2 now told
+
+**Not woven:** Other concepts in the touched chapters (soul, the Spirit given, heart as centre, fear, authority) are not reconciled here; they wait for their strands (researcher ruling on scope).
+
+**Refs:** escalation 2152, escalation 2148
+
+**Quote check:** 0 parts, 0 failures. no new quotations; two restatements remove words
+
+- **C-204** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: God's anger is roused to save the humble, and the earth falls still before it
+  - verdict before: —
+  - verdict after: New
+- **C-205** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The parts of the inner person give way in sequence: soul, spirit, heart under an enemy, then a turn; heart, then spirit, then body under sorrow
+  - verdict before: —
+  - verdict after: New
+- **C-206** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The offering is weighed by what is inside the one who brings it: an ear opened, the law in the heart, a broken heart, a love that lasts
+  - verdict before: —
+  - verdict after: New
+- **C-207** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride is placed in the heart and in the spirit
+  - verdict before: —
+  - verdict after: New
+- **C-208** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: In pride, thinking goes wrong at the point of comparing: a person makes himself like God, or shrinks God to his own size
+  - verdict before: —
+  - verdict after: New
+- **C-209** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart
+  - verdict before: —
+  - verdict after: New
+- **C-210** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Death brings pride down
+  - verdict before: —
+  - verdict after: New
+- **C-211** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride can design its own honour, and the honour it designed becomes the measure of its fall
+  - verdict before: —
+  - verdict after: New
+- **C-188** verdict changed (recorded, 2026-10-15)
+  - verdict before: New
+  - verdict after: Restated
+- **C-188** edited (recorded, 2026-10-15)
+  - claim before: In four passages what God looks to is set against a religious act; the offering follows the broken heart
+  - claim after: What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart
+- **1-4** telling added · 10.1 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **The spirit** is troubled, crushed, faint, provoked, and hot or cool in temper. "My spirit faints within me" (Psalm 143:4). "He who has a cool spirit is a man of understanding" (Proverbs 17:27).
+  - note: in part: spirit: crushed
+- **C-189** telling added · 10.2 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Hearing is the main way in.** The ear receives, and the heart keeps it or refuses it. "All my words that I shall speak to you receive in your heart, and hear with your ears" (Ezekiel 3:10). "Making your ear attentive to wisdom and inclining your heart to understanding" (Proverbs 2:2). When the heart is hard, hearing stops: "Pharaoh's heart was hardened, and he would not listen" (Exodus 7:13). "They made their hearts diamond-hard lest they should hear the law" (Zechariah 7:12). A crushed spirit can block hearing as well. Israel "did not listen to Moses, because of their broken spirit and harsh slavery" (Exodus 6:9).
+  - note: in part: a crushed spirit can block hearing
+- **C-190** telling added · 10.7 *Being chosen* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **What the chosen are called to.** Being chosen is given as the ground of commands: - **Be strong and do it.** *"the Lord has chosen you to build a house for the sanctuary; be strong and do it"* (1 Chronicles 28:10), with *"serve him with a whole heart and with a willing mind, for the Lord searches all hearts"* (28:9). - **Put on.** *"Put on then, as God's chosen ones, holy and beloved, compassionate hearts, kindness, humility, meekness, and patience"* (Colossians 3:12). What is put on is turned toward others: *"as the Lord has forgiven you, so you also must forgive"* (3:13); *"above all these put on love"* (3:14). - **Stand firm.** *"stand firm and hold to the traditions that you were taught by us"* (2 Thessalonians 2:15). - **Confirm it.** *"be all the more diligent to confirm your calling and election, for if you practice these qualities you will never fall"* (2 Peter 1:10). The qualities are added one to another, from faith to love (1:5–7). The effort follows what was given first: *"His divine power has granted to us all things that pertain to life and godliness"* (1:3). - **Remember.** *"Remember the wondrous works that he has done … children of Jacob, his chosen ones!"* (Psalm 105:5–6); *"Remember these things, O Jacob … you will not be forgotten by me"* (Isaiah 44:21).
+  - note: in part: Put on: humility put on, turned toward others
+- **C-176** telling added · 10.7 *Others around a choice* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **An inner act weighed by what God chooses.** In one passage what the others offer from within is set against God's own choosing. The people fast and complain, *"Why have we humbled ourselves, and you take no knowledge of it?"*, while *"in the day of your fast you seek your own pleasure, and oppress all your workers"* (Isaiah 58:3). God answers, *"Is such the fast that I choose, a day for a person to humble himself?"* (58:5). What he chooses is turned outward: *"to let the oppressed go free"*, *"to share your bread with the hungry"*, *"not to hide yourself from your own flesh"* (58:6–7). The humbling stood beside oppression in the same people, and it was not what he chooses. The same people *"delight to know my ways"* (58:2), in the same delight word as Isaiah 66:4 in *Whose measure*.
+  - note: in part: the humbling beside oppression
+- **C-171** telling added · 10.7 *Willing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **The will made absolute.** Of Nebuchadnezzar: *"Whom he would, he killed, and whom he would, he kept alive; whom he would, he raised up, and whom he would, he humbled"* (Daniel 5:19). The next verse says what happened inside him: *"But when his heart was lifted up and his spirit was hardened so that he dealt proudly, he was brought down"* (5:20). He had been offered counsel (4:27). He was driven out *"until he knew that the Most High God rules the kingdom of mankind and sets over it whom he will"* (5:21). His reason returned when he lifted his eyes to heaven (4:34). His son knew all this, and Daniel says to him, *"you his son, Belshazzar, have not humbled your heart, though you knew all this"* (5:22). Knowing did not move his will.
+  - note: in part: Belshazzar has not humbled his heart
+- **2-2** telling added · 10.8 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: When Scripture judges a person, it often names the heart. The heart is upright or crooked, pure or deceitful, whole or double, proud or humble. God "weighs the heart" (Proverbs 21:2). The soul is the one who answers for what is done: "the soul who sins shall die". The spirit is judged too: haughty or lowly, crushed or contrite. Chapter 12 takes this further.
+  - note: in part: the spirit judged: haughty or lowly, crushed or contrite
+- **C-192** telling added · 10.10 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **The spirit is the manner of approach.** "Shall I come to you with a rod, or with love in a spirit of gentleness?" (1 Corinthians 4:21).
+  - note: in part: a spirit of gentleness
+- **C-194** telling added · 10.10 *Holding authority over another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Turned round.** When "A dispute also arose among them, as to which of them was to be regarded as the greatest", Jesus said, "The kings of the Gentiles exercise lordship over them, and those in authority over them are called benefactors. But not so with you" (Luke 22:24–26). Those who lord it over others take a good name for it as well. In its place: "I am among you as the one who serves" (22:27). Elders are to shepherd "not under compulsion, but willingly", "not domineering over those in your charge, but being examples to the flock" (1 Peter 5:2–3), and all of them, elders too, are to clothe themselves "with humility toward one another" (5:5). Paul had authority and would not use it over faith: "Not that we lord it over your faith, but we work with you for your joy, for you stand firm in your faith" (2 Corinthians 1:24). He had stayed away "to spare you" (1:23).
+  - note: in part: elders not domineering; humility toward one another
+- **C-194** telling added · 10.10 *Holding authority over another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Under it.** The verses ask something of the one beneath, and give its ground. "Remind them to be submissive to rulers and authorities, to be obedient, to be ready for every good work, to speak evil of no one, to avoid quarreling, to be gentle", and then "For we ourselves were once foolish, disobedient, led astray" (Titus 3:1–3). The ground is remembering what one was, and God's kindness (3:4; 10.3). Under a foreign rule a people can be turned against its own. "Do you not know that the Philistines are rulers over us? What then is this that you have done to us?", said three thousand men of Judah to Samson, and they bound him "that we may give you into the hands of the Philistines" (Judges 15:11–12).
+  - note: in part: submission with its ground
+- **C-192** telling added · 10.10 *Holding authority over another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Under it.** The verses ask something of the one beneath, and give its ground. "Remind them to be submissive to rulers and authorities, to be obedient, to be ready for every good work, to speak evil of no one, to avoid quarreling, to be gentle", and then "For we ourselves were once foolish, disobedient, led astray" (Titus 3:1–3). The ground is remembering what one was, and God's kindness (3:4; 10.3). Under a foreign rule a people can be turned against its own. "Do you not know that the Philistines are rulers over us? What then is this that you have done to us?", said three thousand men of Judah to Samson, and they bound him "that we may give you into the hands of the Philistines" (Judges 15:11–12).
+  - note: in part: remembering what one was
+- **C-171** telling added · 10.13 *The heart that turns, and the heart that does not* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Josiah heard the book read and tore his clothes. The answer named his heart: "because your heart was penitent, and you humbled yourself before the Lord … I also have heard you" (2 Kings 22:19). Hezekiah's "heart was proud", and wrath came. "But Hezekiah humbled himself for the pride of his heart … so that the wrath of the Lord did not come upon them in the days of Hezekiah" (2 Chronicles 32:25–26). The same heart provoked the anger and turned it.
+  - note: in part: the same heart provoked the anger and turned it
+- **C-175** telling added · 10.13 *The heart that turns, and the heart that does not* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Turning can be partial. Rehoboam humbled himself and was spared, "and he did evil, for he did not set his heart to seek the Lord" (2 Chronicles 12:14).
+  - note: in part: Rehoboam
+- **C-174** telling added · 10.13 *The heart that turns, and the heart that does not* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Distress turns people both ways. Under the judges, "the Lord was moved to pity by their groaning" (Judges 2:18). Manasseh, "when he was in distress, he entreated the favor of the Lord his God and humbled himself greatly" (2 Chronicles 33:12). Ahaz, in the same distress, became "yet more faithless" (28:22). The texts do not say why one turns and the other does not. They set the cases side by side.
+  - note: in full
+- **C-183** telling added · 10.13 *Shelter, and who can stand* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Zephaniah calls people to seek before the day comes: "Seek the Lord, all you humble of the land, who do his just commands; seek righteousness; seek humility; perhaps you may be hidden on the day of the anger of the Lord" (Zephaniah 2:3). Those called are already humble and already doing his commands, and they are told to seek humility. The verse promises nothing beyond "perhaps", and the hiding is God's to give. What a person has leaned on is tested on that day: "Riches do not profit in the day of wrath, but righteousness delivers from death" (Proverbs 11:4).
+  - note: in part: the humble told to seek humility
+- **C-204** telling added · 10.13 *Shelter, and who can stand* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Psalm 76 asks the same question and gives the anger's purpose: "But you, you are to be feared! Who can stand before you when once your anger is roused? From the heavens you uttered judgment; the earth feared and was still, when God arose to establish judgment, to save all the humble of the earth" (Psalm 76:7–9). The anger is roused to save the humble, and the fear is the earth falling still before it (10.12).
+  - note: in full
+- **C-174** telling added · 10.13 *The responses, gathered* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Distress under the anger goes two ways, and the verses do not say why. Ahaz "in the time of his distress … became yet more faithless to the Lord" (2 Chronicles 28:22). Manasseh, "when he was in distress, he entreated the favor of the Lord his God and humbled himself greatly" (2 Chronicles 33:12).
+  - note: in part
+- **C-171** telling added · 04 *The heart and anger* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Under God's anger, the verses give the heart several roles, each in its own verses. - **The heart that provokes it.** "And the Lord was angry with Solomon, because his heart had turned away from the Lord" (1 Kings 11:9). "Do not harden your hearts, as at Meribah" (Psalm 95:8). "They made their hearts diamond-hard lest they should hear the law … Therefore great anger came from the Lord of hosts" (Zechariah 7:12). "Because of your hard and impenitent heart you are storing up wrath for yourself on the day of wrath" (Romans 2:5). - **The heart that turns it.** "Now it is in my heart to make a covenant with the Lord, the God of Israel, in order that his fierce anger may turn away from us" (2 Chronicles 29:10). "But Hezekiah humbled himself for the pride of his heart … so that the wrath of the Lord did not come upon them" (2 Chronicles 32:26). Josiah was heard "because your heart was penitent" (2 Kings 22:19). - **The heart that is called to be torn, or cut.** "Return to me with all your heart … and rend your hearts and not your garments" (Joel 2:12–13). "Circumcise yourselves to the Lord; remove the foreskin of your hearts … lest my wrath go forth like fire" (Jeremiah 4:4). - **The heart that does not take it in.** "It set him on fire all around, but he did not understand; it burned him up, but he did not take it to heart" (Isaiah 42:25). - **The heart that rejoices** when God's anger acts for it: "You shall see, and your heart shall rejoice … and the hand of the Lord shall be known to his servants, and he shall show his indignation against his enemies" (Isaiah 66:14).
+  - note: in part: The heart that turns it
+- **C-189** telling added · 04 *The heart is the source* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Chapter 2 starts from that verse. The state of the heart reaches the body: "A tranquil heart gives life to the flesh, but envy makes the bones rot" (Proverbs 14:30). And the heart itself can be revived. God dwells with the lowly "to revive the heart of the contrite" (Isaiah 57:15). "You who seek God, let your hearts revive" (Psalm 69:32). To those who seek him the psalmist says, "May your hearts live forever!" (Psalm 22:26).
+  - note: in part: the heart of the contrite revived
+- **2-2** telling added · 06 *The human spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: This matters because it is often said that the human spirit never sins. It is true that I found no verse where "the spirit" is the subject of the verb "to sin". But the spirit is certainly judged. It is proud or lowly, faithful or unfaithful, deceitful or clean, and it needs renewing.
+  - note: in full
+- **5-2** telling added · 06 *The human spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The verbs in these verses are many: the spirit is moved, stirred, fervent ("fervent in spirit", Romans 12:11), willing, crushed, revived and ruled.
+  - note: in full
+- **2-2** telling added · 06 *The human spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **It is lowly or proud, and it is judged.** "Pride goes before destruction, and a haughty spirit before a fall" (Proverbs 16:18). The next verse chooses the company: "It is better to be of a lowly spirit with the poor than to divide the spoil with the proud" (16:19). "One's pride will bring him low, but he who is lowly in spirit will obtain honor" (Proverbs 29:23). "Blessed are the poor in spirit" (Matthew 5:3). God dwells "with him who is of a contrite and lowly spirit" (Isaiah 57:15). God looks to "he who is humble and contrite in spirit and trembles at my word" (Isaiah 66:2). Israel was "a generation whose heart was not steadfast, whose spirit was not faithful to God" (Psalm 78:8). The psalm's blessed man is "the one whose transgression is forgiven" (Psalm 32:1), the man "against whom the Lord counts no iniquity, and in whose spirit there is no deceit" (32:2). The no-deceit stands beside his confession: "I acknowledged my sin to you, and I did not cover my iniquity" (32:5). David prays for "a right spirit" (Psalm 51:10). Paul calls for cleansing "from every defilement of body and spirit" (2 Corinthians 7:1). And "the Lord weighs the spirit" (Proverbs 16:2).
+  - note: in part
+- **C-189** telling added · 06 *The human spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **It is crushed, and it faints.** "By sorrow of heart the spirit is crushed" (Proverbs 15:13). "A man's spirit will endure sickness, but a crushed spirit who can bear?" (Proverbs 18:14). "My spirit faints within me" (Psalm 143:4). Israel "did not listen to Moses, because of their broken spirit and harsh slavery" (Exodus 6:9). A broken spirit can keep a person from even hearing good news. Job: "My spirit is broken; my days are extinct; the graveyard is ready for me" (Job 17:1).
+  - note: in part: a broken spirit can keep a person from hearing
+- **C-205** telling added · 11 *3. The parts give way in sequence* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Psalm 143 shows a collapse spreading from one part to the next, then turning. "The enemy has pursued my soul; he has crushed my life to the ground" (143:3). "Therefore my spirit faints within me; my heart within me is appalled" (143:4). Then a turn: "I remember the days of old" (143:5), and "my soul thirsts for you like a parched land" (143:6).
+  - note: in full
+- **C-205** telling added · 11 *3. The parts give way in sequence* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Proverbs gives the same chain in two lines: "by sorrow of heart the spirit is crushed" (Proverbs 15:13), and "a crushed spirit dries up the bones" (17:22). Heart, then spirit, then body.
+  - note: in part
+- **C-189** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Crushing.** Crushed by an enemy, the spirit collapses (Psalm 143:3–4). Offered to God, a crushed spirit is the very sacrifice he wants: "a broken spirit; a broken and contrite heart, O God, you will not despise" (Psalm 51:17).
+  - note: in part: crushed by an enemy, or offered to God
+- **C-188** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **An offering.** "For you will not delight in sacrifice, or I would give it" (Psalm 51:16). Three verses on: "then will you delight in right sacrifices, in burnt offerings and whole burnt offerings" (51:19). It is the same offering. Between the two stands "a broken and contrite heart, O God, you will not despise" (51:17) (13.1).
+  - note: in part
+- **C-174** telling added · 11 *What changes the character* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Distress turns people both ways.** In distress Manasseh "humbled himself greatly" (2 Chronicles 33:12), and Ahaz "became yet more faithless" (28:22). The texts set the cases side by side without saying why. Ease cuts both ways too: "I am exceedingly angry with the nations that are at ease" (Zechariah 1:15).
+  - note: in part
+- **C-188** telling added · 11 *What changes the character* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **What the one who brings it brings first.** The same offering is refused and then delighted in, and what comes between is a broken heart (Psalm 51:16–19, §4 above). The same weakness is pleaded against and then pleases, and what comes between is God's answer (2 Corinthians 12:8–10).
+  - note: in part
+- **C-207** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride is placed in the heart and in the spirit.
+  - note: in full
+- **C-208** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride is also a false likeness. "You said in your heart, 'I will ascend to heaven … I will make myself like the Most High'" (Isaiah 14:13–14). The prince of Tyre: "you have said, 'I am a god'" (Ezekiel 28:2). The opposite mistake shrinks God to my size: "you thought that I was one like yourself" (Psalm 50:21). Either way, thinking has gone wrong at the point of comparing. Mary sings of what God does with it: "he has scattered the proud in the thoughts of their hearts" (Luke 1:51).
+  - note: in full
+- **C-209** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride can grow from a beauty that was given. Of the great tree: *"I made it beautiful in the mass of its branches, and all the trees of Eden envied it"* (Ezekiel 31:9); *"Because it towered high and set its top among the clouds, and its heart was proud of its height"* (31:10). The others envied the gift, and the tree was proud of it (10.6).
+  - note: in part: the great tree
+- **C-209** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The king of Tyre is lamented in the same way. *"You were in Eden, the garden of God; every precious stone was your covering"* (Ezekiel 28:13). *"You were blameless in your ways from the day you were created, till unrighteousness was found in you"* (28:15). *"In the abundance of your trade you were filled with violence in your midst, and you sinned"* (28:16). *"Your heart was proud because of your beauty; you corrupted your wisdom for the sake of your splendor"* (28:17). The covering was prepared for him on the day he was made. The heart took the beauty as its ground, and wisdom was spent for splendour. I read the order the verses give: given, blameless, then trade, violence and a proud heart.
+  - note: in full
+- **C-210** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Death brings pride down. In Isaiah's taunt over the king of Babylon (Isaiah 14:4), the dead greet him: "You too have become as weak as we! You have become like us! Your pomp is brought down to Sheol, the sound of your harps; maggots are laid as a bed beneath you, and worms are your covers" (14:10–11).
+  - note: in full
+- **C-211** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride can design its own honour. The king asks, "What should be done to the man whom the king delights to honor?" And Haman "said to himself, 'Whom would the king delight to honor more than me?'" (Esther 6:6). He spells it out: "let royal robes be brought, which the king has worn, and the horse that the king has ridden, and on whose head a royal crown is set" (6:8). The king answers, "Hurry; take the robes and the horse, as you have said, and do so to Mordecai the Jew" (6:10). Haman leads Mordecai through the square, then "hurried to his house, mourning and with his head covered" (6:12). His wife and wise men tell him, "you will not overcome him but will surely fall before him" (6:13). The act is self-exaltation. The king's delight is only what Haman misreads (10.1, *Delight*). I read that the honour he designed for himself became the measure of his fall.
+  - note: in full
+- **2-2** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The human spirit is judged here beside the heart. Pride and humility are where the spirit is weighed: haughty or lowly, proud or poor in spirit.
+  - note: in part: the spirit weighed: haughty or lowly
+- **C-176** telling added · 13.1 *Choosing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **What he chooses is turned toward others.** "Is not this the fast that I choose: to loose the bonds of wickedness, to undo the straps of the yoke, to let the oppressed go free, and to break every yoke?" (Isaiah 58:6). The self-humbling offered beside oppression is not what he chooses (58:3–5).
+  - note: in part: the self-humbling beside oppression
+- **C-203** telling added · 13.1 *Willing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **He does as he wills.** Nebuchadnezzar learned it by being humbled: *"till you know that the Most High rules the kingdom of men and gives it to whom he will"* (Daniel 4:25; 4:17, 32; 5:21). When his reason returned, he said, *"he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his hand or say to him, 'What have you done?'"* (4:35). He set it beside *"those who walk in pride he is able to humble"* (4:37).
+  - note: in part: those who walk in pride he is able to humble
+- **C-188** telling added · 13.1 *Delight* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Not the offering itself.** Five verses say he does not delight in sacrifice, and each sets something else in its place. - "What to me is the multitude of your sacrifices? says the Lord; I have had enough of burnt offerings of rams and the fat of well-fed beasts; I do not delight in the blood of bulls, or of lambs, or of goats" (Isaiah 1:11). Two verses on: "I cannot endure iniquity and solemn assembly" (1:13). - "In sacrifice and offering you have not delighted, but you have given me an open ear" (Psalm 40:6), and the answer: "I delight to do your will, O my God; your law is within my heart" (40:8). - "For you will not delight in sacrifice, or I would give it; you will not be pleased with a burnt offering. The sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise" (Psalm 51:16–17). - "For I desire steadfast love and not sacrifice, the knowledge of God rather than burnt offerings" (Hosea 6:6), after "Your love is like a morning cloud, like the dew that goes early away" (6:4). The "love" of 6:4 and the "steadfast love" of 6:6 are one Hebrew word, *ḥesed*. What he desires is the very thing their love lacks: that it last. - Jesus sends his hearers to learn it: "Go and learn what this means: 'I desire mercy, and not sacrifice.' For I came not to call the righteous, but sinners" (Matthew 9:13); "And if you had known what this means, 'I desire mercy, and not sacrifice,' you would not have condemned the guiltless" (12:7). - And then: "then will you delight in right sacrifices, in burnt offerings and whole burnt offerings" (Psalm 51:19). The offerings he did not delight in (51:16) he will delight in, after the broken heart.
+  - note: in part: the offerings delighted in after the broken heart
+- **C-206** telling added · 13.1 *Delight* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The verses do not say he has no use for offerings; David says he would give them. Each names something inward that comes first: an ear opened, the law in the heart, a broken heart, a love that lasts. I read that the offering is weighed by what is inside the one who brings it.
+  - note: in full
+- **C-189** telling added · 14 *Revived, restored, renewed* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **The lowly spirit and the contrite heart revived:** "I dwell in the high and holy place, and also with him who is of a contrite and lowly spirit, to revive the spirit of the lowly, and to revive the heart of the contrite" (Isaiah 57:15). God gives the reason: "I will not contend forever … for the spirit would grow faint before me" (57:16).
+  - note: in part
+
 ## 2026-10-15 — M09 humility: 10.14 Humility written, angles woven into their chapters, four corrections
 
 **Strand:** humility (M09), fan-out of humbling oneself (#2148)

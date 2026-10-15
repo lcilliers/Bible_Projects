@@ -317,11 +317,19 @@ File `03-one-inner-person-v5-20261013.md` (v5) · draft
 
 File `04-the-heart-v18-20261015.md` (v18) · draft
 
+**The heart and anger**
+
+- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: The heart that turns it) — also told in: 04 *The heart humbled* (in full); 10.7 *Willing* (in part); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+
+**The heart is the source**
+
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: the heart of the contrite revived) — also told in: 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
+
 **The heart humbled**
 
-- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in full) — also told in: 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in full) — also told in: 04 *The heart and anger* (in part); 10.7 *Willing* (in part); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-178** God humbles to show what is in the heart, to teach what a person lives by, and to do him good in the end, against the heart that lifts itself up in plenty (in part: testing the heart; hearts bowed down) — also told in: 10.14 *Being humbled by God* (in full)
-- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part) — also told in: 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full)
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part) — also told in: 04 *The heart is the source* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
 
 ### 05 — The soul
 
@@ -337,7 +345,11 @@ File `06-the-spirit-v13-20261015.md` (v13) · draft
 
 **The human spirit**
 
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: a broken spirit can keep a person from hearing) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
+- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part) — also told in: 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in full) — also told in: 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in part: the spirits of prophets subject to prophets) — also told in: 10.14 *Submitting* (in full)
+- **5-2** Replaced by the profile in 05: moved, stirred, troubled, crushed, revived, fervent, ruled, self-knowing (dep §2.3b; C §11.3; B §9.3) (in full)
 
 ### 07 — Flesh
 
@@ -368,9 +380,17 @@ File `10-00-the-inner-being-at-work-v6-20261015.md` (v6) · draft
 
 File `10-01-feeling-v22-20261015.md` (v22) · draft
 
+**(opening)**
+
+- **1-4** They overlap, but each word has its own profile. Soul: bitterness, longing, weariness. Spirit: troubled, crushed, faint, and temper. Heart: the widest range of all (A §9.1) (in part: spirit: crushed)
+
 ### 10.2 — Knowing and hearing
 
 File `10-02-knowing-and-hearing-v18-20261015.md` (v18) · draft
+
+**(opening)**
+
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: a crushed spirit can block hearing) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
 
 **Humility and hearing**
 
@@ -394,15 +414,31 @@ File `10-06-wanting-v23-20261013.md` (v23) · draft
 
 ### 10.7 — Choosing and setting direction
 
-File `10-07-choosing-and-setting-direction-v29-20261015.md` (v29) · draft
+File `10-07-choosing-and-setting-direction-v30-20261015.md` (v30) · draft
+
+**Being chosen**
+
+- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in part: Put on: humility put on, turned toward others) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
+
+**Others around a choice**
+
+- **C-176** The humbling God does not take knowledge of is kept alongside self-pleasure and oppression and leaves the seen naked uncovered; Ahab's, against himself when the word came, was answered (in part: the humbling beside oppression) — also told in: 10.14 *A humbling God does not take knowledge of* (in full); 13.1 *Choosing* (in part)
 
 **Taking the lower place**
 
 - **C-191** The lower place is taken before anyone gives it; the honour is given, not taken (in full) — also told in: 10.14 *Toward one another* (in full)
 
+**Willing**
+
+- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: Belshazzar has not humbled his heart) — also told in: 04 *The heart and anger* (in part); 04 *The heart humbled* (in full); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+
 ### 10.8 — Right and wrong
 
 File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft
+
+**(opening)**
+
+- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part: the spirit judged: haughty or lowly, crushed or contrite) — also told in: 06 *The human spirit* (in part); 06 *The human spirit* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
 
 ### 10.9 — Relating to God
 
@@ -413,7 +449,7 @@ File `10-09-relating-to-god-v24-20261015.md` (v24) · draft
 - **C-169** Humbling oneself is done before someone: God, or the prophet who carries his word (in part: done before him, or before his word) — also told in: 10.14 *It faces someone* (in full)
 - **C-170** Most often a person humbles himself when a word reaches him, and the humbling owns that God is right (in part: its words own that God is right) — also told in: 10.14 *It answers a word heard* (in full)
 - **C-173** To humble oneself under God's hand is also to put down what one carries, because he cares; the lifting is his to time (in part: puts down what he carries) — also told in: 10.14 *What goes with it* (in full)
-- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: God sees it) — also told in: 10.14 *God sees it, and answers in measure* (in full); 10.14 *God sees it, and answers in measure* (in part)
+- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: God sees it) — also told in: 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *God sees it, and answers in measure* (in full); 10.14 *God sees it, and answers in measure* (in part)
 - **C-193** Submitting to God and humbling oneself are said as one (in part: submitting and drawing near) — also told in: 10.14 *Submitting* (in full)
 
 ### 10.10 — Relating to others
@@ -422,14 +458,21 @@ File `10-10-relating-to-others-v27-20261015.md` (v27) · draft
 
 **(opening)**
 
+- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in part: a spirit of gentleness) — also told in: 10.10 *Humility toward one another* (in full); 10.10 *Holding authority over another* (in part); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
 - **C-124** Another's death can be laid at a person's hand (pointer) — also told in: 02 *Life set before a person* (in full)
 
 **Humility toward one another**
 
-- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in full) — also told in: 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
-- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in full) — also told in: 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
-- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
+- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in full) — also told in: 10.7 *Being chosen* (in part); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
+- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in full) — also told in: 10.10 *(opening)* (in part); 10.10 *Holding authority over another* (in part); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
+- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.10 *Holding authority over another* (in part); 10.10 *Holding authority over another* (in part); 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
 - **C-198** Jesus is given as the ground and example of humility toward others (in part: the ground is this mind) — also told in: 10.14 *Jesus* (in full)
+
+**Holding authority over another**
+
+- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in part: elders not domineering; humility toward one another) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
+- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in part: remembering what one was) — also told in: 10.10 *(opening)* (in part); 10.10 *Humility toward one another* (in full); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
+- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in part: submission with its ground) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
 
 **Loyalty and honour**
 
@@ -446,6 +489,21 @@ File `10-12-fear-v11-20261015.md` (v11) · draft
 ### 10.13 — Anger
 
 File `10-13-anger-v10-20261015.md` (v10) · draft
+
+**The heart that turns, and the heart that does not**
+
+- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: the same heart provoked the anger and turned it) — also told in: 04 *The heart and anger* (in part); 04 *The heart humbled* (in full); 10.7 *Willing* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: Rehoboam) — also told in: 10.9 *Humbling oneself before God* (in part); 10.14 *God sees it, and answers in measure* (in full); 10.14 *God sees it, and answers in measure* (in part)
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in full) — also told in: 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part); 11 *What changes the character* (in part)
+
+**Shelter, and who can stand**
+
+- **C-183** Humility is not held once for all: the humble are told to seek it (in part: the humble told to seek humility) — also told in: 10.14 *The humble* (in full)
+- **C-204** God's anger is roused to save the humble, and the earth falls still before it (in full)
+
+**The responses, gathered**
+
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part); 11 *What changes the character* (in part)
 
 ### 10.14 — Humility
 
@@ -466,7 +524,7 @@ File `10-14-humility-v1-20261015.md` (v1) · draft
 
 **Where it happens**
 
-- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in full) — also told in: 04 *The heart humbled* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in full) — also told in: 04 *The heart and anger* (in part); 04 *The heart humbled* (in full); 10.7 *Willing* (in part); 10.13 *The heart that turns, and the heart that does not* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
 
 **What goes with it**
 
@@ -475,21 +533,21 @@ File `10-14-humility-v1-20261015.md` (v1) · draft
 
 **What it is set against**
 
-- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part: the same call met two hearts) — also told in: 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part)
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part: the same call met two hearts) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part); 11 *What changes the character* (in part)
 
 **Distress does not decide it**
 
-- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in full) — also told in: 10.14 *What it is set against* (in part)
-- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part: Amon) — also told in: 10.14 *What it is set against* (in part)
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in full) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 11 *What changes the character* (in part)
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part: Amon) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 11 *What changes the character* (in part)
 
 **God sees it, and answers in measure**
 
-- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in full) — also told in: 10.9 *Humbling oneself before God* (in part)
-- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: Rehoboam) — also told in: 10.9 *Humbling oneself before God* (in part)
+- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in full) — also told in: 10.9 *Humbling oneself before God* (in part); 10.13 *The heart that turns, and the heart that does not* (in part)
+- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: Rehoboam) — also told in: 10.9 *Humbling oneself before God* (in part); 10.13 *The heart that turns, and the heart that does not* (in part)
 
 **A humbling God does not take knowledge of**
 
-- **C-176** The humbling God does not take knowledge of is kept alongside self-pleasure and oppression and leaves the seen naked uncovered; Ahab's, against himself when the word came, was answered (in full)
+- **C-176** The humbling God does not take knowledge of is kept alongside self-pleasure and oppression and leaves the seen naked uncovered; Ahab's, against himself when the word came, was answered (in full) — also told in: 10.7 *Others around a choice* (in part); 13.1 *Choosing* (in part)
 - **C-177** What looks like lowering can puff a person up (in full)
 
 **Being humbled by God**
@@ -506,7 +564,7 @@ File `10-14-humility-v1-20261015.md` (v1) · draft
 
 **The humble**
 
-- **C-183** Humility is not held once for all: the humble are told to seek it (in full)
+- **C-183** Humility is not held once for all: the humble are told to seek it (in full) — also told in: 10.13 *Shelter, and who can stand* (in part)
 - **C-184** The humble are glad at what God did for another (in full)
 - **C-185** The humble are the teachable, and the teachable own their guilt (in full)
 - **C-186** Meekness stands where another provokes and leaves the answer to God (in full)
@@ -515,24 +573,24 @@ File `10-14-humility-v1-20261015.md` (v1) · draft
 
 - **C-187** Humility goes with the ear that can take a reproof and a word, and does not answer before it hears (in full) — also told in: 10.2 *Humility and hearing* (in full)
 - **C-187** Humility goes with the ear that can take a reproof and a word, and does not answer before it hears (in part) — also told in: 10.2 *Humility and hearing* (in full)
-- **C-188** In four passages what God looks to is set against a religious act; the offering follows the broken heart (in part: what to bring, and a way to walk)
-- **C-188** In four passages what God looks to is set against a religious act; the offering follows the broken heart (in full)
-- **C-188** In four passages what God looks to is set against a religious act; the offering follows the broken heart (in part)
+- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part: what to bring, and a way to walk) — also told in: 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
+- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in full) — also told in: 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
+- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
 
 **A lowly and contrite spirit**
 
-- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in full) — also told in: 04 *The heart humbled* (in part)
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in full) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
 
 **Toward one another**
 
-- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in full) — also told in: 10.10 *Humility toward one another* (in full)
+- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in full) — also told in: 10.7 *Being chosen* (in part); 10.10 *Humility toward one another* (in full)
 - **C-191** The lower place is taken before anyone gives it; the honour is given, not taken (in full) — also told in: 10.7 *Taking the lower place* (in full)
-- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in full) — also told in: 10.10 *Humility toward one another* (in full)
+- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in full) — also told in: 10.10 *(opening)* (in part); 10.10 *Humility toward one another* (in full); 10.10 *Holding authority over another* (in part)
 
 **Submitting**
 
 - **C-193** Submitting to God and humbling oneself are said as one (in full) — also told in: 10.9 *Humbling oneself before God* (in part)
-- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.10 *Humility toward one another* (in full)
+- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.10 *Humility toward one another* (in full); 10.10 *Holding authority over another* (in part); 10.10 *Holding authority over another* (in part)
 - **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in full) — also told in: 06 *The human spirit* (in part)
 - **C-195** Refusing submission is right where the truth of the gospel is at stake (in full)
 
@@ -555,8 +613,20 @@ File `10-14-humility-v1-20261015.md` (v1) · draft
 
 File `11-other-sides-of-the-inner-being-v34-20261015.md` (v34) · draft
 
+**3. The parts give way in sequence**
+
+- **C-205** The parts of the inner person give way in sequence: soul, spirit, heart under an enemy, then a turn; heart, then spirit, then body under sorrow (in full)
+- **C-205** The parts of the inner person give way in sequence: soul, spirit, heart under an enemy, then a turn; heart, then spirit, then body under sorrow (in part)
+
+**4. One word, opposite values**
+
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: crushed by an enemy, or offered to God) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 14 *Revived, restored, renewed* (in part)
+- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
+
 **What changes the character**
 
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part)
+- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *4. One word, opposite values* (in part); 13.1 *Delight* (in part)
 - **C-201** Humility changes character with who acts, toward whom, and to what end (in full) — also told in: 10.14 *When humility changes character* (in full)
 
 ### 12 — When the inner being goes wrong
@@ -565,9 +635,16 @@ File `12-when-the-inner-being-goes-wrong-v23-20261015.md` (v23) · draft + held
 
 **Pride and the lifted-up heart and spirit**
 
+- **C-207** Pride is placed in the heart and in the spirit (in full)
+- **C-208** In pride, thinking goes wrong at the point of comparing: a person makes himself like God, or shrinks God to his own size (in full)
+- **C-209** Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart (in part: the great tree)
+- **C-209** Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart (in full)
+- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part: the spirit weighed: haughty or lowly) — also told in: 06 *The human spirit* (in part); 06 *The human spirit* (in full); 10.8 *(opening)* (in part)
 - **C-168** Humility is always set against a rising: the proud heart, the lifted-up self, the stiff neck, the haughty eyes (pointer) — also told in: 10.14 *(opening)* (in full)
-- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: Hezekiah and Belshazzar) — also told in: 04 *The heart humbled* (in full); 10.14 *Where it happens* (in full)
+- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: Hezekiah and Belshazzar) — also told in: 04 *The heart and anger* (in part); 04 *The heart humbled* (in full); 10.7 *Willing* (in part); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full)
 - **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in part: the day against pride) — also told in: 10.14 *The proud brought low, the lowly raised* (in full); 10.14 *The proud brought low, the lowly raised* (in part)
+- **C-210** Death brings pride down (in full)
+- **C-211** Pride can design its own honour, and the honour it designed becomes the measure of its fall (in full)
 
 ### 13 — Other beings
 
@@ -577,11 +654,24 @@ File `13-00-other-beings-v2-20261008.md` (v2) · draft
 
 File `13-01-divine-v26-20261015.md` (v26) · draft
 
+**Choosing**
+
+- **C-176** The humbling God does not take knowledge of is kept alongside self-pleasure and oppression and leaves the seen naked uncovered; Ahab's, against himself when the word came, was answered (in part: the self-humbling beside oppression) — also told in: 10.7 *Others around a choice* (in part); 10.14 *A humbling God does not take knowledge of* (in full)
+
+**Willing**
+
+- **C-203** God sees and answers the one who humbles himself, gives favor to the humble, humbles to test and do good, brings the proud low and looks on a humble estate (in part: those who walk in pride he is able to humble) — also told in: 13.1 *Lowering himself* (in full)
+
+**Delight**
+
+- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part: the offerings delighted in after the broken heart) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part)
+- **C-206** The offering is weighed by what is inside the one who brings it: an ear opened, the law in the heart, a broken heart, a love that lasts (in full)
+
 **Lowering himself**
 
 - **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in part) — also told in: 10.14 *The Old Testament and the New* (in part)
 - **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in full) — also told in: 10.14 *The Old Testament and the New* (in part)
-- **C-203** God sees and answers the one who humbles himself, gives favor to the humble, humbles to test and do good, brings the proud low and looks on a humble estate (in full)
+- **C-203** God sees and answers the one who humbles himself, gives favor to the humble, humbles to test and do good, brings the proud low and looks on a humble estate (in full) — also told in: 13.1 *Willing* (in part)
 
 ### 13.2 — Angels
 
@@ -597,10 +687,11 @@ File `13-04-nature-v5-20261012.md` (v5) · draft
 
 ### 14 — Made new
 
-File `14-made-new-v18-20261015.md` (v18) · draft + held
+File `14-made-new-v19-20261015.md` (v19) · draft + held
 
 **Revived, restored, renewed**
 
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part)
 - **C-150** The believer has already died to sin, to the law and to the powers of the world, and a putting to death is still to be done (pointer) — also told in: 02 *Dead to sin* (in full); 02 *Dead to sin* (in full)
 
 ### 15 — Beyond the named words
@@ -631,7 +722,7 @@ File `—` (v—) · deferred
 | 1-1 | Soul and spirit in synonymous parallel (Isa 26:9; Job 7:11; Luk 1:46–47) | Widened | Soul and spirit in synonymous parallel (Isa 26:9; Job 7:11; Luk 1:46–47) | — |
 | 1-2 | Hannah uses both words for one experience (1Sa 1:10–15) | Widened | Hannah uses both words for one experience (1Sa 1:10–15) | — |
 | 1-3 | Both soul and spirit are used reflexively for "self"; Rom 1:9 and 1Co 5:3 show spirit = "me" | Restated | Soul as "myself" is common (about 126 Hebrew verses; e.g. Lev 16:29 "afflict yourselves"). Spirit is not shown as a reflexive. 1Co 5:3 and Col 2:5 say the spirit can be present where the body is absent, which is a different claim. Rom 1:9 is service located in the spirit (dep §2.2a, §3.4; H §3.1) | — |
-| 1-4 | The emotional vocabulary of soul and spirit is "virtually identical" | Restated | They overlap, but each word has its own profile. Soul: bitterness, longing, weariness. Spirit: troubled, crushed, faint, and temper. Heart: the widest range of all (A §9.1) | — |
+| 1-4 | The emotional vocabulary of soul and spirit is "virtually identical" | Restated | They overlap, but each word has its own profile. Soul: bitterness, longing, weariness. Spirit: troubled, crushed, faint, and temper. Heart: the widest range of all (A §9.1) | 10.1 *(opening)* (in part) |
 | 1-5 | Soul and spirit both worship | Widened | Soul and spirit both worship | — |
 | 1-6 | The overlap is real but not total | Stands | The overlap is real but not total | — |
 
@@ -640,7 +731,7 @@ File `—` (v—) · deferred
 | # | Original claim | Verdict | Claim now | Told in |
 |---|---|---|---|---|
 | 2-1 | "The soul who sins shall die" (Eze 18:4, 20); "if anyone [*nephesh*] sins" (Lev 5) makes the soul the seat of sin | Restated | In these verses *nephesh* is the person, the one who answers for sin; it is not a faculty inside the person. The soul is the accountable, answerable self (D §3.1, §11.2) | — |
-| 2-2 | The human spirit is never described as sinning: "consistent silence across 1,340 passages" | Restated | No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside | — |
+| 2-2 | The human spirit is never described as sinning: "consistent silence across 1,340 passages" | Restated | No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside | 06 *The human spirit* (in part); 06 *The human spirit* (in full); 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part) |
 | 2-3 | Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) | Stands | Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) | 02 *Delivered from death* (in part) |
 | 2-4 | Animals are *nephesh ḥayyâ* just as man is (Gen 1:20–24; 2:7; 9:10) | Stands | Animals are *nephesh ḥayyâ* just as man is (Gen 1:20–24; 2:7; 9:10) | — |
 | 2-5 | Animals almost never have *rûaḥ*; Ecc 3:21 is the only exception; Gen 7:22 uses *neshamah*, not *rûaḥ* | Withdrawn | Animals almost never have *rûaḥ*; Ecc 3:21 is the only exception; Gen 7:22 uses *neshamah*, not *rûaḥ* | — |
@@ -698,7 +789,7 @@ File `—` (v—) · deferred
 | # | Original claim | Verdict | Claim now | Told in |
 |---|---|---|---|---|
 | 5-1 | 515 references: Holy Spirit 422 (82%), evil 52 (10%), human 175 (34%), beings 9, special 15 | Restated | The percentages add up to more than 100%. Recount by what each verse itself shows (559 uses): 259 clearly God's Spirit; 28 God's Spirit only because the translation capitalises it; 138 human spirit; 68 other spirit-beings; 23 "a spirit of …" dispositions; 7 temper; 41 cannot be decided, each with its reason (SC §2–3) | — |
-| 5-2 | Human-spirit subcategories: emotion 68, character 42, life 25, cognition 18 | Restated | Replaced by the profile in 05: moved, stirred, troubled, crushed, revived, fervent, ruled, self-knowing (dep §2.3b; C §11.3; B §9.3) | — |
+| 5-2 | Human-spirit subcategories: emotion 68, character 42, life 25, cognition 18 | Restated | Replaced by the profile in 05: moved, stirred, troubled, crushed, revived, fervent, ruled, self-knowing (dep §2.3b; C §11.3; B §9.3) | 06 *The human spirit* (in full) |
 | 5-3 | Spirits of jealousy, whoredom, deep sleep etc. are evil spirits | Restated | See 9-4 | — |
 
 ### Chapter 6 — Soul categorised
@@ -762,11 +853,9 @@ File `—` (v—) · deferred
 | 1-1 | Soul and spirit in synonymous parallel (Isa 26:9; Job 7:11; Luk 1:46–47) | current | Widened |
 | 1-2 | Hannah uses both words for one experience (1Sa 1:10–15) | current | Widened |
 | 1-3 | Soul as "myself" is common (about 126 Hebrew verses; e.g. Lev 16:29 "afflict yourselves"). Spirit is not shown as a reflexive. 1Co 5:3 and Col 2:5 say the spirit can be present where the body is absent, which is a different claim. Rom 1:9 is service located in the spirit (dep §2.2a, §3.4; H §3.1) | current | Restated |
-| 1-4 | They overlap, but each word has its own profile. Soul: bitterness, longing, weariness. Spirit: troubled, crushed, faint, and temper. Heart: the widest range of all (A §9.1) | current | Restated |
 | 1-5 | Soul and spirit both worship | current | Widened |
 | 1-6 | The overlap is real but not total | current | Stands |
 | 2-1 | In these verses *nephesh* is the person, the one who answers for sin; it is not a faculty inside the person. The soul is the accountable, answerable self (D §3.1, §11.2) | current | Restated |
-| 2-2 | No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside | current | Restated |
 | 2-4 | Animals are *nephesh ḥayyâ* just as man is (Gen 1:20–24; 2:7; 9:10) | current | Stands |
 | 2-5 | Animals almost never have *rûaḥ*; Ecc 3:21 is the only exception; Gen 7:22 uses *neshamah*, not *rûaḥ* | withdrawn | Withdrawn |
 | 2-6 | The image of God may be located in the spirit | withdrawn | Withdrawn |
@@ -803,7 +892,6 @@ File `—` (v—) · deferred
 | 4-10 | New heart and new spirit are both needed (Eze 11:19; 36:26) | current | Widened |
 | 4-11 | "Heart emerges as integrated centre" in the creation process | withdrawn | Withdrawn |
 | 5-1 | The percentages add up to more than 100%. Recount by what each verse itself shows (559 uses): 259 clearly God's Spirit; 28 God's Spirit only because the translation capitalises it; 138 human spirit; 68 other spirit-beings; 23 "a spirit of …" dispositions; 7 temper; 41 cannot be decided, each with its reason (SC §2–3) | current | Restated |
-| 5-2 | Replaced by the profile in 05: moved, stirred, troubled, crushed, revived, fervent, ruled, self-knowing (dep §2.3b; C §11.3; B §9.3) | current | Restated |
 | 5-3 | See 9-4 | current | Restated |
 | 6-1 | The shape stands. Distinct Hebrew verses by sense: soul 230, life 180, myself 126, person 83, appetite 45, dead body 13, creature 12, neck 2. Greek: soul 46, life 33, person 8, myself 6. Add throat / neck (stocktake §2) | current | Restated |
 | 6-3 | *Nephesh* covers the whole person, on a physical–spiritual continuum | current | Stands |
@@ -833,7 +921,8 @@ File `—` (v—) · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 120 |
+| narrative | New | 127 |
+| narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
 | original essay | Restated | 35 |
@@ -841,4 +930,4 @@ File `—` (v—) · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-203 claims; 129 told in the narrative, 74 not.
+211 claims; 140 told in the narrative, 71 not.

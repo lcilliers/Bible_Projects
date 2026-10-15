@@ -1,0 +1,537 @@
+{
+ "update": {
+  "update_date": "2026-10-15",
+  "title": "M09 humility: existing humility claims reconciled in the touched chapters",
+  "strand": "humility (M09), claims reconciliation of update 141 (#2152)",
+  "researcher_instruction": "\"We agreed that the claim reconciliation will take place when a particular chapter is touched with updates.  I cannot see how you can update the chapter in the narrative with new information without reviewing the current claims, and ensuring that the claims in the narrative are recorded in the register.\" and \"The method I am proposing is to reconcile the existing claims for the concepts that is being updated, for instance in this case humility and related.  to reconcile every claim in the chapter will cause severe disruption because it is not the focus and cannot be resolved in this session.\" (2026-10-15)",
+  "method": "In the 15 chapters touched by update 141, the existing passages on humility and related concepts (63 by word search, plus the edited passages that keep older text) were read against the register. Matched to the claims of update 141 or to the untold legacy claims 1-4, 2-2 and 5-2 by new tellings; 8 statements with no claim registered (n1-n3, p1-p5); C-188 restated (its count of four passages was incomplete across the narrative); two statements beyond their verses restated in the text (10.7 \"not wrong in itself\"; Ch 14 \"God's reason is tender\"). Passages that only quote, or that belong to other concepts (fear, authority, flesh, the gentle waters of Isa 8:6, the gentle lamb of Jer 11:19), were left for their own strands.",
+  "source_files": [
+   "_analytics/Clusters/M09 - humility-lowliness/m09-humility-reconcile-v1-20261015.md"
+  ],
+  "scripts": [
+   "_analytics/Clusters/M09 - humility-lowliness/m09-humility-reconcile-text-v1-20261015.py",
+   "_analytics/Clusters/M09 - humility-lowliness/m09-humility-reconcile-register-build-v1-20261015.py"
+  ],
+  "claims_changed_note": "8 new claims (n1-n3, p1-p5); C-188 restated; 40 tellings on existing passages; legacy 1-4, 2-2, 5-2 now told",
+  "not_woven_note": "Other concepts in the touched chapters (soul, the Spirit given, heart as centre, fear, authority) are not reconciled here; they wait for their strands (researcher ruling on scope).",
+  "quote_parts": 0,
+  "quote_failures": 0,
+  "quote_note": "no new quotations; two restatements remove words"
+ },
+ "refs": [
+  {
+   "kind": "escalation",
+   "value": "2152"
+  },
+  {
+   "kind": "escalation",
+   "value": "2148"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "10.1",
+   "from_version": 22,
+   "to_version": 22,
+   "file": "10-01-feeling-v22-20261015.md"
+  },
+  {
+   "chapter": "10.2",
+   "from_version": 18,
+   "to_version": 18,
+   "file": "10-02-knowing-and-hearing-v18-20261015.md"
+  },
+  {
+   "chapter": "10.8",
+   "from_version": 8,
+   "to_version": 8,
+   "file": "10-08-right-and-wrong-v8-20261015.md"
+  },
+  {
+   "chapter": "10.10",
+   "from_version": 27,
+   "to_version": 27,
+   "file": "10-10-relating-to-others-v27-20261015.md"
+  },
+  {
+   "chapter": "10.13",
+   "from_version": 10,
+   "to_version": 10,
+   "file": "10-13-anger-v10-20261015.md"
+  },
+  {
+   "chapter": "04",
+   "from_version": 18,
+   "to_version": 18,
+   "file": "04-the-heart-v18-20261015.md"
+  },
+  {
+   "chapter": "06",
+   "from_version": 13,
+   "to_version": 13,
+   "file": "06-the-spirit-v13-20261015.md"
+  },
+  {
+   "chapter": "11",
+   "from_version": 34,
+   "to_version": 34,
+   "file": "11-other-sides-of-the-inner-being-v34-20261015.md"
+  },
+  {
+   "chapter": "12",
+   "from_version": 23,
+   "to_version": 23,
+   "file": "12-when-the-inner-being-goes-wrong-v23-20261015.md"
+  },
+  {
+   "chapter": "13.1",
+   "from_version": 26,
+   "to_version": 26,
+   "file": "13-01-divine-v26-20261015.md"
+  },
+  {
+   "chapter": "10.7",
+   "from_version": 29,
+   "to_version": 30,
+   "file": "10-07-choosing-and-setting-direction-v30-20261015.md"
+  },
+  {
+   "chapter": "14",
+   "from_version": 18,
+   "to_version": 19,
+   "file": "14-made-new-v19-20261015.md"
+  }
+ ],
+ "claims": [
+  {
+   "key": "n1",
+   "new": {
+    "text": "God's anger is roused to save the humble, and the earth falls still before it",
+    "beyond_text": "joins \"when once your anger is roused\" with \"to save all the humble of the earth\"",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": false,
+    "sources": [
+     "Psalm 76:7-9"
+    ]
+   }
+  },
+  {
+   "key": "n2",
+   "new": {
+    "text": "The parts of the inner person give way in sequence: soul, spirit, heart under an enemy, then a turn; heart, then spirit, then body under sorrow",
+    "beyond_text": "reads Psa 143:3-6 and Pro 15:13 with 17:22 as one chain each",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": false,
+    "sources": [
+     "Psalm 143:3-6",
+     "Proverbs 15:13",
+     "Proverbs 17:22"
+    ]
+   }
+  },
+  {
+   "key": "n3",
+   "new": {
+    "text": "The offering is weighed by what is inside the one who brings it: an ear opened, the law in the heart, a broken heart, a love that lasts",
+    "beyond_text": "gathers the verses that set something inward in place of sacrifice",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": true,
+    "sources": [
+     "Isaiah 1:11-13",
+     "Psalm 40:6-8",
+     "Psalm 51:16-19",
+     "Hosea 6:4-6",
+     "Matthew 9:13",
+     "Matthew 12:7"
+    ]
+   }
+  },
+  {
+   "key": "p1",
+   "new": {
+    "text": "Pride is placed in the heart and in the spirit",
+    "beyond_text": "gathers the verses that seat pride",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": false,
+    "sources": [
+     "Deuteronomy 8:14",
+     "Proverbs 16:5",
+     "Proverbs 16:18",
+     "Daniel 5:20"
+    ]
+   }
+  },
+  {
+   "key": "p2",
+   "new": {
+    "text": "In pride, thinking goes wrong at the point of comparing: a person makes himself like God, or shrinks God to his own size",
+    "beyond_text": "sets the self-exaltation of Isa 14 and Eze 28 beside Psa 50:21",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": false,
+    "sources": [
+     "Isaiah 14:13-14",
+     "Ezekiel 28:2",
+     "Psalm 50:21",
+     "Luke 1:51"
+    ]
+   }
+  },
+  {
+   "key": "p3",
+   "new": {
+    "text": "Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart",
+    "beyond_text": "reads the order of Eze 28 and the great tree of Eze 31",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": true,
+    "sources": [
+     "Ezekiel 31:9-10",
+     "Ezekiel 28:13-17"
+    ]
+   }
+  },
+  {
+   "key": "p4",
+   "new": {
+    "text": "Death brings pride down",
+    "beyond_text": "reads the taunt of Isa 14",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": false,
+    "sources": [
+     "Isaiah 14:10-11"
+    ]
+   }
+  },
+  {
+   "key": "p5",
+   "new": {
+    "text": "Pride can design its own honour, and the honour it designed becomes the measure of its fall",
+    "beyond_text": "reads Haman's proposal and its outcome",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": true,
+    "sources": [
+     "Esther 6:6-13"
+    ]
+   }
+  },
+  {
+   "ref": "C-188",
+   "edit": {
+    "text": "What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart",
+    "verdict": "Restated",
+    "note": "The first wording (\"In four passages\") counted only the humility passages; 13.1 Delight gathers more (Isa 1:11-13; Psa 40:6-8; Hos 6:6; Mat 9:13; 12:7). Found in the reconciliation of #2152."
+   }
+  }
+ ],
+ "tellings": [
+  {
+   "claim": "1-4",
+   "chapter": "10.1",
+   "passage": "The spirit is troubled, crushed, faint",
+   "kind": "in part",
+   "action": "add",
+   "part": "spirit: crushed"
+  },
+  {
+   "claim": "C-189",
+   "chapter": "10.2",
+   "passage": "Hearing is the main way in.",
+   "kind": "in part",
+   "action": "add",
+   "part": "a crushed spirit can block hearing"
+  },
+  {
+   "claim": "C-190",
+   "chapter": "10.7",
+   "passage": "What the chosen are called to.",
+   "kind": "in part",
+   "action": "add",
+   "part": "Put on: humility put on, turned toward others"
+  },
+  {
+   "claim": "C-176",
+   "chapter": "10.7",
+   "passage": "An inner act weighed by what God chooses.",
+   "kind": "in part",
+   "action": "add",
+   "part": "the humbling beside oppression"
+  },
+  {
+   "claim": "C-171",
+   "chapter": "10.7",
+   "passage": "The will made absolute. Of Nebuchadnezzar",
+   "kind": "in part",
+   "action": "add",
+   "part": "Belshazzar has not humbled his heart"
+  },
+  {
+   "claim": "2-2",
+   "chapter": "10.8",
+   "passage": "When Scripture judges a person, it often names the heart.",
+   "kind": "in part",
+   "action": "add",
+   "part": "the spirit judged: haughty or lowly, crushed or contrite"
+  },
+  {
+   "claim": "C-192",
+   "chapter": "10.10",
+   "passage": "The spirit is the manner of approach.",
+   "kind": "in part",
+   "action": "add",
+   "part": "a spirit of gentleness"
+  },
+  {
+   "claim": "C-194",
+   "chapter": "10.10",
+   "passage": "Turned round.",
+   "kind": "in part",
+   "action": "add",
+   "part": "elders not domineering; humility toward one another"
+  },
+  {
+   "claim": "C-194",
+   "chapter": "10.10",
+   "passage": "Under it. The verses ask something of the one beneath",
+   "kind": "in part",
+   "action": "add",
+   "part": "submission with its ground"
+  },
+  {
+   "claim": "C-192",
+   "chapter": "10.10",
+   "passage": "Under it. The verses ask something of the one beneath",
+   "kind": "in part",
+   "action": "add",
+   "part": "remembering what one was"
+  },
+  {
+   "claim": "C-171",
+   "chapter": "10.13",
+   "passage": "Josiah heard the book read",
+   "kind": "in part",
+   "action": "add",
+   "part": "the same heart provoked the anger and turned it"
+  },
+  {
+   "claim": "C-175",
+   "chapter": "10.13",
+   "passage": "Turning can be partial.",
+   "kind": "in part",
+   "action": "add",
+   "part": "Rehoboam"
+  },
+  {
+   "claim": "C-174",
+   "chapter": "10.13",
+   "passage": "Distress turns people both ways. Under the judges",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "C-183",
+   "chapter": "10.13",
+   "passage": "Zephaniah calls people to seek before the day comes",
+   "kind": "in part",
+   "action": "add",
+   "part": "the humble told to seek humility"
+  },
+  {
+   "claim": "n1",
+   "chapter": "10.13",
+   "passage": "Psalm 76 asks the same question",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "C-174",
+   "chapter": "10.13",
+   "passage": "Distress under the anger goes two ways",
+   "kind": "in part",
+   "action": "add"
+  },
+  {
+   "claim": "C-171",
+   "chapter": "04",
+   "passage": "Under God's anger, the verses give the heart several roles",
+   "kind": "in part",
+   "action": "add",
+   "part": "The heart that turns it"
+  },
+  {
+   "claim": "C-189",
+   "chapter": "04",
+   "passage": "Chapter 2 starts from that verse.",
+   "kind": "in part",
+   "action": "add",
+   "part": "the heart of the contrite revived"
+  },
+  {
+   "claim": "2-2",
+   "chapter": "06",
+   "passage": "This matters because it is often said that the human spirit never sins.",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "5-2",
+   "chapter": "06",
+   "passage": "The verbs in these verses are many",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "2-2",
+   "chapter": "06",
+   "passage": "It is lowly or proud, and it is judged.",
+   "kind": "in part",
+   "action": "add"
+  },
+  {
+   "claim": "C-189",
+   "chapter": "06",
+   "passage": "It is crushed, and it faints.",
+   "kind": "in part",
+   "action": "add",
+   "part": "a broken spirit can keep a person from hearing"
+  },
+  {
+   "claim": "n2",
+   "chapter": "11",
+   "passage": "Psalm 143 shows a collapse spreading",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "n2",
+   "chapter": "11",
+   "passage": "Proverbs gives the same chain in two lines",
+   "kind": "in part",
+   "action": "add"
+  },
+  {
+   "claim": "C-189",
+   "chapter": "11",
+   "passage": "Crushing. Crushed by an enemy",
+   "kind": "in part",
+   "action": "add",
+   "part": "crushed by an enemy, or offered to God"
+  },
+  {
+   "claim": "C-188",
+   "chapter": "11",
+   "passage": "An offering. For you will not delight in sacrifice",
+   "kind": "in part",
+   "action": "add"
+  },
+  {
+   "claim": "C-174",
+   "chapter": "11",
+   "passage": "Distress turns people both ways. In distress Manasseh",
+   "kind": "in part",
+   "action": "add"
+  },
+  {
+   "claim": "C-188",
+   "chapter": "11",
+   "passage": "What the one who brings it brings first.",
+   "kind": "in part",
+   "action": "add"
+  },
+  {
+   "claim": "p1",
+   "chapter": "12",
+   "passage": "Pride is placed in the heart and in the spirit.",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "p2",
+   "chapter": "12",
+   "passage": "Pride is also a false likeness.",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "p3",
+   "chapter": "12",
+   "passage": "Pride can grow from a beauty that was given.",
+   "kind": "in part",
+   "action": "add",
+   "part": "the great tree"
+  },
+  {
+   "claim": "p3",
+   "chapter": "12",
+   "passage": "The king of Tyre is lamented in the same way.",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "p4",
+   "chapter": "12",
+   "passage": "Death brings pride down.",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "p5",
+   "chapter": "12",
+   "passage": "Pride can design its own honour.",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "2-2",
+   "chapter": "12",
+   "passage": "The human spirit is judged here beside the heart.",
+   "kind": "in part",
+   "action": "add",
+   "part": "the spirit weighed: haughty or lowly"
+  },
+  {
+   "claim": "C-176",
+   "chapter": "13.1",
+   "passage": "What he chooses is turned toward others.",
+   "kind": "in part",
+   "action": "add",
+   "part": "the self-humbling beside oppression"
+  },
+  {
+   "claim": "C-203",
+   "chapter": "13.1",
+   "passage": "He does as he wills.",
+   "kind": "in part",
+   "action": "add",
+   "part": "those who walk in pride he is able to humble"
+  },
+  {
+   "claim": "C-188",
+   "chapter": "13.1",
+   "passage": "Not the offering itself.",
+   "kind": "in part",
+   "action": "add",
+   "part": "the offerings delighted in after the broken heart"
+  },
+  {
+   "claim": "n3",
+   "chapter": "13.1",
+   "passage": "The verses do not say he has no use for offerings",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "C-189",
+   "chapter": "14",
+   "passage": "The lowly spirit and the contrite heart revived:",
+   "kind": "in part",
+   "action": "add"
+  }
+ ]
+}
