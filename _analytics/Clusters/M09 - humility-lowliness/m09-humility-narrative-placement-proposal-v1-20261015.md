@@ -1,6 +1,13 @@
 # M09: where humility fits in the narrative (proposal)
 
-**Date:** 2026-10-15 · **Escalation:** #2148 · **Status:** proposal for the researcher's decision. No narrative file is changed.
+**Date:** 2026-10-15 · **Escalation:** #2148 · **Status:** **decided 2026-10-15: option A, 10.14 *Humility*.** No narrative file is changed yet.
+
+**Researcher, verbatim:** *"Your recommendation. Ch 14 might expand in scope as we move forward, but it needs its own chapter to encapsulate it properly.  It does have many different  angles that need to be woven onto those chapters in context of each angle."* "Ch 14" is read as 10.14, because Ch 14 is *Made new*.
+
+What was decided:
+- **10.14 *Humility*** holds the full account. It may grow in scope as later strands add to it.
+- **Each angle is also woven into the chapter where it belongs, in that chapter's own context.** Examples: before God in 10.9, the walk and the lower place in 10.7 and 10.10, hearing and reproof in 10.2, turning wrath in 10.13, the contrite spirit in Ch 6 / Ch 11, the opposite of pride in Ch 12, and God's lowering in 13.1. These are not pointers only.
+- 10.14 is written after batches 4 and 5 and the cross-check.
 
 **Researcher, verbatim (chat 2026-10-15):** *"we need to consider where the humility fits into the narrative, especially in the Ch 10 section. Ch10.1 does not feel right. humility is not a feeling."*
 
