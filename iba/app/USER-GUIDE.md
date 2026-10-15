@@ -1503,6 +1503,11 @@ iba\app\ps\Narrative-Register.ps1 -Action Export
   **A list directly under a paragraph (no blank line between) belongs to that paragraph's passage**,
   so its bullets are not passages of their own; anchor the paragraph's opening words instead, or put a
   blank line before the list (found 2026-10-15, #2148/#2152, two refused records).
+- **`narrative_passage` holds only passages that tell a claim** (a row is created on telling). A
+  check of whether the narrative is anchored for a set of words must split the current chapter files
+  with `parse_chapter` and match the rows by `opens_with`, not query the table alone (found
+  2026-10-15, #2156: the table showed 41 pride passages, all told; the files held 151, 110 untold).
+  Reusable scan: `_analytics/Clusters/M08 - pride-arrogance/m08-pride-anchor-scan-v1-20261015.py`.
 - **`Record`** takes one weave's whole update as JSON (the shape is in `record()`'s docstring in
   `iba/app/lib/narrativeregister.py`): the update (date, title, strand, instruction, sources, scripts,
   notes, quote check), refs (escalations, threads, thread items), the chapter versions (from → to, the
