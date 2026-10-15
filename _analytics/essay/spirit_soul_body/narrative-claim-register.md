@@ -1,6 +1,6 @@
 # Narrative claim register
 
-*Published from iba.db on 2026-10-14. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-15. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 ## (index opening)
 
@@ -315,11 +315,17 @@ File `03-one-inner-person-v5-20261013.md` (v5) · draft
 
 ### 04 — The heart
 
-File `04-the-heart-v17-20261013.md` (v17) · draft
+File `04-the-heart-v18-20261015.md` (v18) · draft
+
+**The heart humbled**
+
+- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in full) — also told in: 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-178** God humbles to show what is in the heart, to teach what a person lives by, and to do him good in the end, against the heart that lifts itself up in plenty (in part: testing the heart; hearts bowed down) — also told in: 10.14 *Being humbled by God* (in full)
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part) — also told in: 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full)
 
 ### 05 — The soul
 
-File `05-the-soul-v8-20261014.md` (v8) · draft
+File `05-the-soul-v9-20261015.md` (v9) · draft
 
 **From throat to corpse**
 
@@ -327,7 +333,11 @@ File `05-the-soul-v8-20261014.md` (v8) · draft
 
 ### 06 — The spirit
 
-File `06-the-spirit-v12-20261009.md` (v12) · draft
+File `06-the-spirit-v13-20261015.md` (v13) · draft
+
+**The human spirit**
+
+- **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in part: the spirits of prophets subject to prophets) — also told in: 10.14 *Submitting* (in full)
 
 ### 07 — Flesh
 
@@ -352,15 +362,19 @@ File `—` (v—) · draft
 
 ### 10.0 — The inner being at work
 
-File `10-00-the-inner-being-at-work-v5-20261002.md` (v5) · draft
+File `10-00-the-inner-being-at-work-v6-20261015.md` (v6) · draft
 
 ### 10.1 — Feeling
 
-File `10-01-feeling-v21-20261013.md` (v21) · draft
+File `10-01-feeling-v22-20261015.md` (v22) · draft
 
 ### 10.2 — Knowing and hearing
 
-File `10-02-knowing-and-hearing-v17-20261012.md` (v17) · draft
+File `10-02-knowing-and-hearing-v18-20261015.md` (v18) · draft
+
+**Humility and hearing**
+
+- **C-187** Humility goes with the ear that can take a reproof and a word, and does not answer before it hears (in full) — also told in: 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part)
 
 ### 10.3 — Remembering and forgetting
 
@@ -380,23 +394,42 @@ File `10-06-wanting-v23-20261013.md` (v23) · draft
 
 ### 10.7 — Choosing and setting direction
 
-File `10-07-choosing-and-setting-direction-v28-20261013.md` (v28) · draft
+File `10-07-choosing-and-setting-direction-v29-20261015.md` (v29) · draft
+
+**Taking the lower place**
+
+- **C-191** The lower place is taken before anyone gives it; the honour is given, not taken (in full) — also told in: 10.14 *Toward one another* (in full)
 
 ### 10.8 — Right and wrong
 
-File `10-08-right-and-wrong-v7-20261009.md` (v7) · draft
+File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft
 
 ### 10.9 — Relating to God
 
-File `10-09-relating-to-god-v23-20261013.md` (v23) · draft
+File `10-09-relating-to-god-v24-20261015.md` (v24) · draft
+
+**Humbling oneself before God**
+
+- **C-169** Humbling oneself is done before someone: God, or the prophet who carries his word (in part: done before him, or before his word) — also told in: 10.14 *It faces someone* (in full)
+- **C-170** Most often a person humbles himself when a word reaches him, and the humbling owns that God is right (in part: its words own that God is right) — also told in: 10.14 *It answers a word heard* (in full)
+- **C-173** To humble oneself under God's hand is also to put down what one carries, because he cares; the lifting is his to time (in part: puts down what he carries) — also told in: 10.14 *What goes with it* (in full)
+- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: God sees it) — also told in: 10.14 *God sees it, and answers in measure* (in full); 10.14 *God sees it, and answers in measure* (in part)
+- **C-193** Submitting to God and humbling oneself are said as one (in part: submitting and drawing near) — also told in: 10.14 *Submitting* (in full)
 
 ### 10.10 — Relating to others
 
-File `10-10-relating-to-others-v26-20261014.md` (v26) · draft
+File `10-10-relating-to-others-v27-20261015.md` (v27) · draft
 
 **(opening)**
 
 - **C-124** Another's death can be laid at a person's hand (pointer) — also told in: 02 *Life set before a person* (in full)
+
+**Humility toward one another**
+
+- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in full) — also told in: 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
+- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in full) — also told in: 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
+- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
+- **C-198** Jesus is given as the ground and example of humility toward others (in part: the ground is this mind) — also told in: 10.14 *Jesus* (in full)
 
 **Loyalty and honour**
 
@@ -408,19 +441,133 @@ File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft
 
 ### 10.12 — Fear
 
-File `10-12-fear-v10-20261014.md` (v10) · draft
+File `10-12-fear-v11-20261015.md` (v11) · draft
 
 ### 10.13 — Anger
 
-File `10-13-anger-v9-20261013.md` (v9) · draft
+File `10-13-anger-v10-20261015.md` (v10) · draft
+
+### 10.14 — Humility
+
+File `10-14-humility-v1-20261015.md` (v1) · draft
+
+**(opening)**
+
+- **C-167** Humility is not a feeling in the verses; they speak of it as an act, a standing, a quality sought and walked in, a state of the spirit, a place taken, something done to a person, and God's own way (in full)
+- **C-168** Humility is always set against a rising: the proud heart, the lifted-up self, the stiff neck, the haughty eyes (in full) — also told in: 12 *Pride and the lifted-up heart and spirit* (pointer)
+
+**It faces someone**
+
+- **C-169** Humbling oneself is done before someone: God, or the prophet who carries his word (in full) — also told in: 10.9 *Humbling oneself before God* (in part)
+
+**It answers a word heard**
+
+- **C-170** Most often a person humbles himself when a word reaches him, and the humbling owns that God is right (in full) — also told in: 10.9 *Humbling oneself before God* (in part)
+
+**Where it happens**
+
+- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in full) — also told in: 04 *The heart humbled* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+
+**What goes with it**
+
+- **C-172** The one who exalts himself measures himself against others and lists what he does; the one who humbles himself owns that he is a sinner and asks for mercy (in full)
+- **C-173** To humble oneself under God's hand is also to put down what one carries, because he cares; the lifting is his to time (in full) — also told in: 10.9 *Humbling oneself before God* (in part)
+
+**What it is set against**
+
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part: the same call met two hearts) — also told in: 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part)
+
+**Distress does not decide it**
+
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in full) — also told in: 10.14 *What it is set against* (in part)
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part: Amon) — also told in: 10.14 *What it is set against* (in part)
+
+**God sees it, and answers in measure**
+
+- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in full) — also told in: 10.9 *Humbling oneself before God* (in part)
+- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: Rehoboam) — also told in: 10.9 *Humbling oneself before God* (in part)
+
+**A humbling God does not take knowledge of**
+
+- **C-176** The humbling God does not take knowledge of is kept alongside self-pleasure and oppression and leaves the seen naked uncovered; Ahab's, against himself when the word came, was answered (in full)
+- **C-177** What looks like lowering can puff a person up (in full)
+
+**Being humbled by God**
+
+- **C-178** God humbles to show what is in the heart, to teach what a person lives by, and to do him good in the end, against the heart that lifts itself up in plenty (in full) — also told in: 04 *The heart humbled* (in part)
+- **C-179** Being humbled by God can turn a person or harden him (in full)
+
+**The proud brought low, the lowly raised**
+
+- **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in full) — also told in: 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in part: the lifted-up thing made to give way) — also told in: 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-181** Only God lifts up and puts down; a person cannot abase the proud (in full)
+- **C-182** The boast is moved from what a person has to what God does (in full)
+
+**The humble**
+
+- **C-183** Humility is not held once for all: the humble are told to seek it (in full)
+- **C-184** The humble are glad at what God did for another (in full)
+- **C-185** The humble are the teachable, and the teachable own their guilt (in full)
+- **C-186** Meekness stands where another provokes and leaves the answer to God (in full)
+
+**Humility as a way of walking**
+
+- **C-187** Humility goes with the ear that can take a reproof and a word, and does not answer before it hears (in full) — also told in: 10.2 *Humility and hearing* (in full)
+- **C-187** Humility goes with the ear that can take a reproof and a word, and does not answer before it hears (in part) — also told in: 10.2 *Humility and hearing* (in full)
+- **C-188** In four passages what God looks to is set against a religious act; the offering follows the broken heart (in part: what to bring, and a way to walk)
+- **C-188** In four passages what God looks to is set against a religious act; the offering follows the broken heart (in full)
+- **C-188** In four passages what God looks to is set against a religious act; the offering follows the broken heart (in part)
+
+**A lowly and contrite spirit**
+
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in full) — also told in: 04 *The heart humbled* (in part)
+
+**Toward one another**
+
+- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in full) — also told in: 10.10 *Humility toward one another* (in full)
+- **C-191** The lower place is taken before anyone gives it; the honour is given, not taken (in full) — also told in: 10.7 *Taking the lower place* (in full)
+- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in full) — also told in: 10.10 *Humility toward one another* (in full)
+
+**Submitting**
+
+- **C-193** Submitting to God and humbling oneself are said as one (in full) — also told in: 10.9 *Humbling oneself before God* (in part)
+- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.10 *Humility toward one another* (in full)
+- **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in full) — also told in: 06 *The human spirit* (in part)
+- **C-195** Refusing submission is right where the truth of the gospel is at stake (in full)
+
+**Jesus**
+
+- **C-197** In the New Testament humility rests on what is said of Jesus; the saying he taught, that whoever humbles himself will be exalted, is what is told of him (in full)
+- **C-198** Jesus is given as the ground and example of humility toward others (in full) — also told in: 10.10 *Humility toward one another* (in part)
+- **C-199** John's lowering of himself before Jesus is said with joy (in full)
+
+**The Old Testament and the New**
+
+- **C-200** The same lines of humility run through both Testaments; the New differs in emphasis, adding humility toward one another, and in one new thing, Christ, in whom God's lowering is done in a human life (in full)
+- **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in part: what God did, the Son did in a human life) — also told in: 13.1 *Lowering himself* (in part); 13.1 *Lowering himself* (in full)
+
+**When humility changes character**
+
+- **C-201** Humility changes character with who acts, toward whom, and to what end (in full) — also told in: 11 *What changes the character* (in full)
 
 ### 11 — Other sides of the inner being
 
-File `11-other-sides-of-the-inner-being-v33-20261013.md` (v33) · draft
+File `11-other-sides-of-the-inner-being-v34-20261015.md` (v34) · draft
+
+**What changes the character**
+
+- **C-201** Humility changes character with who acts, toward whom, and to what end (in full) — also told in: 10.14 *When humility changes character* (in full)
 
 ### 12 — When the inner being goes wrong
 
-File `12-when-the-inner-being-goes-wrong-v22-20261014.md` (v22) · draft + held
+File `12-when-the-inner-being-goes-wrong-v23-20261015.md` (v23) · draft + held
+
+**Pride and the lifted-up heart and spirit**
+
+- **C-168** Humility is always set against a rising: the proud heart, the lifted-up self, the stiff neck, the haughty eyes (pointer) — also told in: 10.14 *(opening)* (in full)
+- **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: Hezekiah and Belshazzar) — also told in: 04 *The heart humbled* (in full); 10.14 *Where it happens* (in full)
+- **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in part: the day against pride) — also told in: 10.14 *The proud brought low, the lowly raised* (in full); 10.14 *The proud brought low, the lowly raised* (in part)
 
 ### 13 — Other beings
 
@@ -428,7 +575,13 @@ File `13-00-other-beings-v2-20261008.md` (v2) · draft
 
 ### 13.1 — Divine
 
-File `13-01-divine-v25-20261013.md` (v25) · draft
+File `13-01-divine-v26-20261015.md` (v26) · draft
+
+**Lowering himself**
+
+- **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in part) — also told in: 10.14 *The Old Testament and the New* (in part)
+- **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in full) — also told in: 10.14 *The Old Testament and the New* (in part)
+- **C-203** God sees and answers the one who humbles himself, gives favor to the humble, humbles to test and do good, brings the proud low and looks on a humble estate (in full)
 
 ### 13.2 — Angels
 
@@ -444,7 +597,7 @@ File `13-04-nature-v5-20261012.md` (v5) · draft
 
 ### 14 — Made new
 
-File `14-made-new-v17-20261014.md` (v17) · draft + held
+File `14-made-new-v18-20261015.md` (v18) · draft + held
 
 **Revived, restored, renewed**
 
@@ -585,7 +738,7 @@ File `—` (v—) · deferred
 | 10-2 | "That which is born of the Spirit is spirit" (Joh 3:6) | Stands | "That which is born of the Spirit is spirit" (Joh 3:6) | — |
 | 10-3 | OT "upon" becomes NT "within" | Restated | "Within" is already the OT promise (Eze 36:27; 37:14). The OT also has the Spirit turning a man "into another man" (1Sa 10:6) | — |
 | 10-4 | Three phases mapped to three parts: spirit (regeneration, instant) → soul (sanctification, lifelong) → body (glorification) | Restated | The body's redemption at the end stands (Rom 8:23; 1Co 15:42–44), but these are not in the reading and are held. The text renews the inner self "day by day" (2Co 4:16); renewal is both God's gift (Eze 36:26) and the person's task (Eze 18:31). Assigning each phase to one component is not stated | — |
-| 10-5 | Seven conditions (2Ch 7:14) | Held | Seven conditions (2Ch 7:14) | — |
+| 10-5 | Seven conditions (2Ch 7:14) | Withdrawn | Seven conditions (2Ch 7:14) | — |
 | 10-6 | Means of grace; historical revivals | Held | Means of grace; historical revivals | — |
 | 10-7 | 1Th 5:23 as the final word | Stands | 1Th 5:23 as the final word | — |
 
@@ -669,7 +822,7 @@ File `—` (v—) · deferred
 | 10-2 | "That which is born of the Spirit is spirit" (Joh 3:6) | current | Stands |
 | 10-3 | "Within" is already the OT promise (Eze 36:27; 37:14). The OT also has the Spirit turning a man "into another man" (1Sa 10:6) | current | Restated |
 | 10-4 | The body's redemption at the end stands (Rom 8:23; 1Co 15:42–44), but these are not in the reading and are held. The text renews the inner self "day by day" (2Co 4:16); renewal is both God's gift (Eze 36:26) and the person's task (Eze 18:31). Assigning each phase to one component is not stated | current | Restated |
-| 10-5 | Seven conditions (2Ch 7:14) | held | Held |
+| 10-5 | Seven conditions (2Ch 7:14) | withdrawn | Withdrawn |
 | 10-6 | Means of grace; historical revivals | held | Held |
 | 10-7 | 1Th 5:23 as the final word | current | Stands |
 | K-1 | "Spirit first, soul second, body third"; "inside out" | withdrawn | Withdrawn |
@@ -680,12 +833,12 @@ File `—` (v—) · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 83 |
+| narrative | New | 120 |
 | original essay | Corrected | 1 |
-| original essay | Held | 10 |
+| original essay | Held | 9 |
 | original essay | Restated | 35 |
 | original essay | Stands | 14 |
 | original essay | Widened | 7 |
-| original essay | Withdrawn | 14 |
+| original essay | Withdrawn | 15 |
 
-166 claims; 92 told in the narrative, 74 not.
+203 claims; 129 told in the narrative, 74 not.

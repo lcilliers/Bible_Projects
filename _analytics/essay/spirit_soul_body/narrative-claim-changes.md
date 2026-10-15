@@ -1,6 +1,524 @@
 # Narrative claim changes
 
-*Published from iba.db on 2026-10-14. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-15. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+
+## 2026-10-15 — M09 humility: 10.14 Humility written, angles woven into their chapters, four corrections
+
+**Strand:** humility (M09), fan-out of humbling oneself (#2148)
+
+**Researcher:** "excellent work.  bring the narrative up to date, and ensure that the claims register / narrative is updated" (2026-10-15); placement: "Your recommendation. Ch 14 might expand in scope as we move forward, but it needs its own chapter to encapsulate it properly.  It does have many different  angles that need to be woven onto those chapters in context of each angle."; "humility is not a feeling"; "Jesus is part of divinity and need attention in Ch 13"
+
+**Method:** Humbling oneself fanned out across clusters (218 verses: the M09 words and the humility, meekness, contrite and submission words filed in M05, M10, M23, M24, M53, M73, M75, T2, T3), read in five batches by passage; the 27 no-other-M-code verses read; OT/NT comparison and the role of Jesus; cross-check against the narrative, register, M08 and M47. New 10.14 Humility holds the full account; each angle woven into its chapter in context (10.2, 10.7, 10.9, 10.10, Ch 4, 5, 6, 11, 12, 13.1), pointers in 10.1, 10.12, 10.13, 10.0. Cross-check corrections: Ch 12 "weighed most" (uncounted superlative removed); Mic 6:8 taken out of the anger-at-wrong-to-the-weak statements in 10.8 and 10.13 and placed for what it says; Ch 11 "rest that passes from his heart to ours" restated to the verse; Ch 14 held bullet "seven conditions for the Spirit's work" (2Ch 7:14) removed, the verse now told in 10.14, claim 10-5 withdrawn. Correction 5 (claim 1-1 sources) needs no change: the claim was widened to heart // spirit on first record.
+
+**Sources:** _analytics/Clusters/M09 - humility-lowliness/m09-cluster-overview-v3-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-no-other-mcode-reading-v1-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-humbling-fanout-scope-v1-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch1-reading-v1-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch2-reading-v1-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch3-reading-v1-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch4-reading-v1-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch5-reading-v1-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-humbling-ot-nt-and-jesus-v1-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-humbling-crosscheck-v1-20261015.md
+_analytics/Clusters/M09 - humility-lowliness/m09-humility-narrative-placement-proposal-v1-20261015.md
+
+**Scripts:** _analytics/Clusters/M09 - humility-lowliness/m09-humbling-fanout-pull-v1-20261015.py
+_analytics/Clusters/M09 - humility-lowliness/m09-humbling-crosscheck-pull-v1-20261015.py
+_analytics/Clusters/M09 - humility-lowliness/m09-humility-weave-v1-20261015.py
+_analytics/Clusters/M09 - humility-lowliness/m09-humility-register-update-build-v1-20261015.py
+
+**Original claims changed:** 37 new claims (10.14, 13.1); 10-5 withdrawn
+
+**Not woven:** The poor and needy are carried by threads OT-105 (the poor as seen by another) and OT-106 (the poor person's own side), not woven. The serve/servant words (Mar 10:45; Joh 13; 2Cor 8:9) were not pulled. Ch 1 outline (#2111) not touched.
+
+**Notes:** The 10.14 chapter row was added directly to narrative_chapter (reading_order 25, later chapters +1) because no Narrative-Register action adds a chapter.
+
+**Refs:** escalation 2148, thread OT-12, thread OT-105, thread OT-106
+
+**Quote check:** 361 parts, 0 failures. every quoted part in the added lines of the 17 files checked against iba.db verse text in chapter order, case-insensitive (capitals at the start of a quote only)
+
+- **C-167** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Humility is not a feeling in the verses; they speak of it as an act, a standing, a quality sought and walked in, a state of the spirit, a place taken, something done to a person, and God's own way
+  - verdict before: —
+  - verdict after: New
+- **C-168** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Humility is always set against a rising: the proud heart, the lifted-up self, the stiff neck, the haughty eyes
+  - verdict before: —
+  - verdict after: New
+- **C-169** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Humbling oneself is done before someone: God, or the prophet who carries his word
+  - verdict before: —
+  - verdict after: New
+- **C-170** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Most often a person humbles himself when a word reaches him, and the humbling owns that God is right
+  - verdict before: —
+  - verdict after: New
+- **C-171** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride
+  - verdict before: —
+  - verdict after: New
+- **C-172** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The one who exalts himself measures himself against others and lists what he does; the one who humbles himself owns that he is a sinner and asks for mercy
+  - verdict before: —
+  - verdict after: New
+- **C-173** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: To humble oneself under God's hand is also to put down what one carries, because he cares; the lifting is his to time
+  - verdict before: —
+  - verdict after: New
+- **C-174** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why
+  - verdict before: —
+  - verdict after: New
+- **C-175** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself
+  - verdict before: —
+  - verdict after: New
+- **C-176** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The humbling God does not take knowledge of is kept alongside self-pleasure and oppression and leaves the seen naked uncovered; Ahab's, against himself when the word came, was answered
+  - verdict before: —
+  - verdict after: New
+- **C-177** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: What looks like lowering can puff a person up
+  - verdict before: —
+  - verdict after: New
+- **C-178** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: God humbles to show what is in the heart, to teach what a person lives by, and to do him good in the end, against the heart that lifts itself up in plenty
+  - verdict before: —
+  - verdict after: New
+- **C-179** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Being humbled by God can turn a person or harden him
+  - verdict before: —
+  - verdict after: New
+- **C-180** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted
+  - verdict before: —
+  - verdict after: New
+- **C-181** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Only God lifts up and puts down; a person cannot abase the proud
+  - verdict before: —
+  - verdict after: New
+- **C-182** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The boast is moved from what a person has to what God does
+  - verdict before: —
+  - verdict after: New
+- **C-183** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Humility is not held once for all: the humble are told to seek it
+  - verdict before: —
+  - verdict after: New
+- **C-184** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The humble are glad at what God did for another
+  - verdict before: —
+  - verdict after: New
+- **C-185** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The humble are the teachable, and the teachable own their guilt
+  - verdict before: —
+  - verdict after: New
+- **C-186** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Meekness stands where another provokes and leaves the answer to God
+  - verdict before: —
+  - verdict after: New
+- **C-187** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Humility goes with the ear that can take a reproof and a word, and does not answer before it hears
+  - verdict before: —
+  - verdict after: New
+- **C-188** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: In four passages what God looks to is set against a religious act; the offering follows the broken heart
+  - verdict before: —
+  - verdict after: New
+- **C-189** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair
+  - verdict before: —
+  - verdict after: New
+- **C-190** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving
+  - verdict before: —
+  - verdict after: New
+- **C-191** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The lower place is taken before anyone gives it; the honour is given, not taken
+  - verdict before: —
+  - verdict after: New
+- **C-192** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God
+  - verdict before: —
+  - verdict after: New
+- **C-193** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Submitting to God and humbling oneself are said as one
+  - verdict before: —
+  - verdict after: New
+- **C-194** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side
+  - verdict before: —
+  - verdict after: New
+- **C-195** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Refusing submission is right where the truth of the gospel is at stake
+  - verdict before: —
+  - verdict after: New
+- **C-196** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: One's own spirit is under the person: the one who speaks governs what moves in him
+  - verdict before: —
+  - verdict after: New
+- **C-197** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: In the New Testament humility rests on what is said of Jesus; the saying he taught, that whoever humbles himself will be exalted, is what is told of him
+  - verdict before: —
+  - verdict after: New
+- **C-198** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Jesus is given as the ground and example of humility toward others
+  - verdict before: —
+  - verdict after: New
+- **C-199** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: John's lowering of himself before Jesus is said with joy
+  - verdict before: —
+  - verdict after: New
+- **C-200** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The same lines of humility run through both Testaments; the New differs in emphasis, adding humility toward one another, and in one new thing, Christ, in whom God's lowering is done in a human life
+  - verdict before: —
+  - verdict after: New
+- **C-201** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Humility changes character with who acts, toward whom, and to what end
+  - verdict before: —
+  - verdict after: New
+- **C-202** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The lowering that the Old Testament tells of God is done in the Son in a human life
+  - verdict before: —
+  - verdict after: New
+- **C-203** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: God sees and answers the one who humbles himself, gives favor to the humble, humbles to test and do good, brings the proud low and looks on a humble estate
+  - verdict before: —
+  - verdict after: New
+- **10-5** claim withdrawn (recorded, 2026-10-15)
+  - note: status: held -> withdrawn
+- **10-5** verdict changed (recorded, 2026-10-15)
+  - verdict before: Held
+  - verdict after: Withdrawn
+- **C-167** telling added · 10.14 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Humility is not a feeling in the verses. In none that I read is a person said to feel humble. They speak of it in other ways: - **as something a person does.** He humbles himself, before God or before God's word. - **as a standing.** Some are called the humble, the lowly or the meek. - **as something sought and walked in.** "Seek humility" (Zephaniah 2:3). "Walk humbly with your God" (Micah 6:8). - **as a state of the spirit.** A lowly and contrite spirit; a broken heart. - **as a place taken among people.** The lower seat; counting others more significant than oneself. - **as something done to a person.** God humbles to test and to teach, and he brings the proud low. - **as God's own way.** He "looks far down" (Psalm 113:6), and in his Son he "humbled himself" (Philippians 2:8).
+  - note: in full
+- **C-168** telling added · 10.14 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: In every one of these the verses set humility against a rising: the proud heart, the lifted-up self, the stiff neck, the haughty eyes. I cannot read humility in Scripture without reading what it stands against. Chapter 12 holds pride, and this section holds its counterpart.
+  - note: in full
+- **C-168** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The counterpart is humbling oneself (10.14). Hezekiah "humbled himself for the pride of his heart" (2 Chronicles 32:26), the verse after "his heart was proud" (32:25). Belshazzar knew what had come of his father's lifted-up heart, and was told, "you … have not humbled your heart, though you knew all this" (Daniel 5:22). The day against pride is named for its end: "The haughty looks of man shall be brought low, and the lofty pride of men shall be humbled, and the Lord alone will be exalted in that day" (Isaiah 2:11).
+  - note: pointer
+- **C-169** telling added · 10.14 *It faces someone* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Humbling oneself is never done in the air. It is done "before me" (1 Kings 21:29), "before the Lord" (2 Kings 22:19), "before the God of his fathers" (2 Chronicles 33:12), "before your God" (Daniel 10:12). Zedekiah's failure is put this way: "He did not humble himself before Jeremiah the prophet, who spoke from the mouth of the Lord" (2 Chronicles 36:12). To refuse the prophet was to refuse the word he carried.
+  - note: in full
+- **C-169** telling added · 10.9 *Humbling oneself before God* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: One way a person comes before God is by lowering himself. It is done before him, or before his word. Josiah humbled himself "when you heard how I spoke against this place" (2 Kings 22:19). Zedekiah's failure was that "He did not humble himself before Jeremiah the prophet, who spoke from the mouth of the Lord" (2 Chronicles 36:12). Its words own that God is right and ask for mercy: "The Lord is righteous" (2 Chronicles 12:6); "God, be merciful to me, a sinner!" (Luke 18:13).
+  - note: in part: done before him, or before his word
+- **C-170** telling added · 10.14 *It answers a word heard* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Most often a person humbles himself when a word reaches him. - Rehoboam and his princes heard "You abandoned me, so I have abandoned you". They "humbled themselves and said, 'The Lord is righteous'" (2 Chronicles 12:5–6). Their humbling was saying that God was right. - Josiah humbled himself "when you heard how I spoke against this place" (2 Kings 22:19). - Ahab, "when Ahab heard those words, … tore his clothes and put sackcloth on his flesh and fasted" (1 Kings 21:27). - Belshazzar had the word in his father's story and did not bow to it: "you … have not humbled your heart, though you knew all this" (Daniel 5:22).
+  - note: in full
+- **C-170** telling added · 10.9 *Humbling oneself before God* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: One way a person comes before God is by lowering himself. It is done before him, or before his word. Josiah humbled himself "when you heard how I spoke against this place" (2 Kings 22:19). Zedekiah's failure was that "He did not humble himself before Jeremiah the prophet, who spoke from the mouth of the Lord" (2 Chronicles 36:12). Its words own that God is right and ask for mercy: "The Lord is righteous" (2 Chronicles 12:6); "God, be merciful to me, a sinner!" (Luke 18:13).
+  - note: in part: its words own that God is right
+- **C-171** telling added · 10.14 *Where it happens* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The verses place it in the heart. - "Because your heart was penitent, and you humbled yourself before the Lord" (2 Kings 22:19), or, in the parallel account, "your heart was tender" (2 Chronicles 34:27). - "If then their uncircumcised heart is humbled and they make amends for their iniquity" (Leviticus 26:41), after they "confess their iniquity" (26:40). - "Hezekiah humbled himself for the pride of his heart" (2 Chronicles 32:26). The verse before says, "his heart was proud" (32:25). I read this as the same heart turning back from itself. The pride and the humbling are in one place. - Daniel's is not a response to rebuke at all: "from the first day that you set your heart to understand and humbled yourself before your God, your words have been heard" (Daniel 10:12). Here humbling oneself stands beside setting the heart to understand.
+  - note: in full
+- **C-171** telling added · 04 *The heart humbled* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The heart is where a person humbles himself. "Because your heart was penitent, and you humbled yourself before the Lord" (2 Kings 22:19); in the parallel account, "your heart was tender" (2 Chronicles 34:27). "If then their uncircumcised heart is humbled" (Leviticus 26:41). Hezekiah "humbled himself for the pride of his heart" (2 Chronicles 32:26), the same heart that was proud a verse before (32:25). Daniel "set your heart to understand and humbled yourself before your God" (Daniel 10:12). Belshazzar's charge is the refusal: "you … have not humbled your heart, though you knew all this" (Daniel 5:22).
+  - note: in full
+- **C-171** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The counterpart is humbling oneself (10.14). Hezekiah "humbled himself for the pride of his heart" (2 Chronicles 32:26), the verse after "his heart was proud" (32:25). Belshazzar knew what had come of his father's lifted-up heart, and was told, "you … have not humbled your heart, though you knew all this" (Daniel 5:22). The day against pride is named for its end: "The haughty looks of man shall be brought low, and the lofty pride of men shall be humbled, and the Lord alone will be exalted in that day" (Isaiah 2:11).
+  - note: in part: Hezekiah and Belshazzar
+- **C-172** telling added · 10.14 *What goes with it* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Jesus gives it a face. The tax collector, "standing far off, would not even lift up his eyes to heaven, but beat his breast, saying, 'God, be merciful to me, a sinner!'" The Pharisee beside him prayed, "God, I thank you that I am not like other men … I fast twice a week; I give tithes of all that I get." Jesus: "this man went down to his house justified, rather than the other. For everyone who exalts himself will be humbled, but the one who humbles himself will be exalted" (Luke 18:11–14). The one who lifts himself measures himself against others and lists what he does. The one who humbles himself owns that he is a sinner and asks for mercy.
+  - note: in full
+- **C-173** telling added · 10.14 *What goes with it* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: James and Peter say it as a run of commands. "Submit yourselves therefore to God. Resist the devil … Draw near to God … Cleanse your hands, you sinners, and purify your hearts, you double-minded. Be wretched and mourn and weep … Humble yourselves before the Lord, and he will exalt you" (James 4:7–10). "Humble yourselves, therefore, under the mighty hand of God so that at the proper time he may exalt you, casting all your anxieties on him, because he cares for you" (1 Peter 5:6–7). In Peter, to humble oneself under God's hand is also to put down what one carries, because he cares. The lifting is "at the proper time". It is his to time.
+  - note: in full
+- **C-173** telling added · 10.9 *Humbling oneself before God* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: God is said to see it. "When the Lord saw that they humbled themselves" (2 Chronicles 12:7). "Have you seen how Ahab has humbled himself before me?" (1 Kings 21:29). The one who humbles himself puts down what he carries: "Humble yourselves, therefore, under the mighty hand of God so that at the proper time he may exalt you, casting all your anxieties on him, because he cares for you" (1 Peter 5:6–7). James joins it to submitting and drawing near: "Submit yourselves therefore to God … Draw near to God, and he will draw near to you" (James 4:7–8). The whole account is in 10.14.
+  - note: in part: puts down what he carries
+- **C-174** telling added · 10.14 *Distress does not decide it* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Manasseh, captured and bound, "when he was in distress, … entreated the favor of the Lord his God and humbled himself greatly" (2 Chronicles 33:12). Ahaz, under the same kind of pressure, "In the time of his distress … became yet more faithless to the Lord" (2 Chronicles 28:22). Distress is not what humbles a person. It is met by the heart either way (Chapter 11, *What changes the character*).
+  - note: in full
+- **C-174** telling added · 10.14 *What it is set against* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: When Hezekiah's couriers carried the call, the cities "laughed them to scorn and mocked them. However, some men of Asher, of Manasseh, and of Zebulun humbled themselves and came to Jerusalem" (2 Chronicles 30:10–11). The same call met two hearts. The verses do not say why.
+  - note: in part: the same call met two hearts
+- **C-174** telling added · 10.14 *Distress does not decide it* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Nor does it pass from father to son. Amon "did not humble himself before the Lord, as Manasseh his father had humbled himself" (2 Chronicles 33:23).
+  - note: in part: Amon
+- **C-175** telling added · 10.14 *God sees it, and answers in measure* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The answer is real, and it is measured. - "I will grant them some deliverance … Nevertheless, they shall be servants to him" (2 Chronicles 12:7–8). - "I will not bring the disaster in his days; but in his son's days" (1 Kings 21:29). - The wrath turned "so as not to make a complete destruction" (2 Chronicles 12:12).
+  - note: in full
+- **C-175** telling added · 10.14 *God sees it, and answers in measure* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: It does not hold by itself. Two verses after Rehoboam humbled himself: "he did evil, for he did not set his heart to seek the Lord" (2 Chronicles 12:14). And in Manasseh, knowing comes after: "Then Manasseh knew that the Lord was God" (2 Chronicles 33:13).
+  - note: in part: Rehoboam
+- **C-175** telling added · 10.9 *Humbling oneself before God* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: God is said to see it. "When the Lord saw that they humbled themselves" (2 Chronicles 12:7). "Have you seen how Ahab has humbled himself before me?" (1 Kings 21:29). The one who humbles himself puts down what he carries: "Humble yourselves, therefore, under the mighty hand of God so that at the proper time he may exalt you, casting all your anxieties on him, because he cares for you" (1 Peter 5:6–7). James joins it to submitting and drawing near: "Submit yourselves therefore to God … Draw near to God, and he will draw near to you" (James 4:7–8). The whole account is in 10.14.
+  - note: in part: God sees it
+- **C-176** telling added · 10.14 *A humbling God does not take knowledge of* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Ahab's sackcloth and fasting were seen and answered (1 Kings 21:27–29). Israel's were not. I read the difference in what went with them. Ahab acted when the word came against him. Israel fasted while seeking its own pleasure, and left the naked it saw uncovered.
+  - note: in full
+- **C-177** telling added · 10.14 *A humbling God does not take knowledge of* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The New Testament names the same thing. The noun for humility appears as "asceticism": "Let no one disqualify you, insisting on asceticism … puffed up without reason by his sensuous mind", and "self-made religion and asceticism and severity to the body, but they are of no value in stopping the indulgence of the flesh" (Colossians 2:18, 23). What looks like lowering puffs the person up. The Pharisee's "I fast twice a week" stands on the same side (Luke 18:12).
+  - note: in full
+- **C-178** telling added · 10.14 *Being humbled by God* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **To show the heart, and to teach.** "that he might humble you, testing you to know what was in your heart, whether you would keep his commandments or not. And he humbled you and let you hunger and fed you with manna … that he might make you know that man does not live by bread alone" (Deuteronomy 8:2–3). The end is named: "to do you good in the end" (8:16). The danger it guards against comes in the same chapter. When plenty comes, "your heart be lifted up, and you forget the Lord", and you "say in your heart, 'My power and the might of my hand have gotten me this wealth'" (8:14, 17). The next chapter goes on: "Do not say in your heart … 'It is because of my righteousness'" (9:4).
+  - note: in full
+- **C-178** telling added · 04 *The heart humbled* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: God humbles too, and what he reaches is the heart: "testing you to know what was in your heart" (Deuteronomy 8:2); "he bowed their hearts down with hard labor" (Psalm 107:12). The opposite is named: "Before destruction a man's heart is haughty" (Proverbs 18:12).
+  - note: in part: testing the heart; hearts bowed down
+- **C-179** telling added · 10.14 *Being humbled by God* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Being humbled can turn a person, or harden him.** "The Lord humbled Judah because of Ahaz", and Ahaz grew "yet more faithless" (2 Chronicles 28:19, 22). Manasseh, brought low, humbled himself (33:12).
+  - note: in full
+- **C-180** telling added · 10.14 *The proud brought low, the lowly raised* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **What is brought low is a bearing, not only a rank.** - "The haughty looks of man shall be brought low, and the lofty pride of men shall be humbled, and the Lord alone will be exalted in that day" (Isaiah 2:11, 17). - "the eyes of the haughty are brought low" (Isaiah 5:15). - "I will put an end to the pomp of the arrogant, and lay low the pompous pride of the ruthless" (Isaiah 13:11).
+  - note: in full
+- **C-180** telling added · 10.14 *The proud brought low, the lowly raised* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: In Isaiah the setting is a land "filled with silver and gold … filled with idols; they bow down to the work of their hands" (2:7–8). I read being brought low there as the lifted-up thing made to give way to the One who is high. The verse gives the end: "the Lord alone will be exalted".
+  - note: in part: the lifted-up thing made to give way
+- **C-180** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The counterpart is humbling oneself (10.14). Hezekiah "humbled himself for the pride of his heart" (2 Chronicles 32:26), the verse after "his heart was proud" (32:25). Belshazzar knew what had come of his father's lifted-up heart, and was told, "you … have not humbled your heart, though you knew all this" (Daniel 5:22). The day against pride is named for its end: "The haughty looks of man shall be brought low, and the lofty pride of men shall be humbled, and the Lord alone will be exalted in that day" (Isaiah 2:11).
+  - note: in part: the day against pride
+- **C-181** telling added · 10.14 *The proud brought low, the lowly raised* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Only God does it.** Job is challenged: "look on everyone who is proud and abase him … Then will I also acknowledge to you that your own right hand can save you" (Job 40:11–14). He cannot. "Not from the east or from the west … comes lifting up, but it is God who executes judgment, putting down one and lifting up another" (Psalm 75:6–7).
+  - note: in full
+- **C-182** telling added · 10.14 *The proud brought low, the lowly raised* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Where the boast goes.** "Let the lowly brother boast in his exaltation, and the rich in his humiliation, because like a flower of the grass he will pass away" (James 1:9–10). "God chose what is low and despised in the world … so that no human being might boast in the presence of God … 'Let the one who boasts, boast in the Lord'" (1 Corinthians 1:28–31). I read both as moving the boast from what a person has to what God does. The rich man may boast in being brought low, because it tells him the truth about himself.
+  - note: in full
+- **C-183** telling added · 10.14 *The humble* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **They seek.** "Seek the Lord, all you humble of the land, who do his just commands; seek righteousness; seek humility; perhaps you may be hidden on the day of the anger of the Lord" (Zephaniah 2:3). Those already called humble are told to seek humility. I read from this that humility is not held once for all. Of the remnant God leaves: "a people humble and lowly. They shall seek refuge in the name of the Lord … they shall do no injustice and speak no lies" (Zephaniah 3:12–13).
+  - note: in full
+- **C-184** telling added · 10.14 *The humble* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **They are glad at what God did for another.** "My soul makes its boast in the Lord; let the humble hear and be glad" (Psalm 34:2). "When the humble see it they will be glad; you who seek God, let your hearts revive" (Psalm 69:32). In both psalms one man's rescue is the gladness of others.
+  - note: in full
+- **C-185** telling added · 10.14 *The humble* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **They are taught.** "He leads the humble in what is right, and teaches the humble his way" (Psalm 25:9). The man praying it says, "Remember not the sins of my youth" and "pardon my guilt, for it is great" (25:7, 11). I read the humble here as the teachable, and the teachable as those who own their guilt.
+  - note: in full
+- **C-186** telling added · 10.14 *The humble* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **The meek, where another provokes.** "Refrain from anger, and forsake wrath! Fret not yourself; it tends only to evil … But the meek shall inherit the land and delight themselves in abundant peace" (Psalm 37:8–11). "Blessed are the meek, for they shall inherit the earth" (Matthew 5:5). Moses was "very meek, more than all people who were on the face of the earth" (Numbers 12:3). That is said at the moment Miriam and Aaron spoke against him, and it is the Lord, not Moses, who answers them. I read meekness, in both places, as standing where another provokes, and leaving the answer to God.
+  - note: in full
+- **C-187** telling added · 10.14 *Humility as a way of walking* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **With hearing.** In both places where "humility comes before honor", the verse beside it is about hearing. - "The ear that listens to life-giving reproof will dwell among the wise. Whoever ignores instruction despises himself, but he who listens to reproof gains intelligence" (Proverbs 15:31–32). - "If one gives an answer before he hears, it is his folly and shame" (Proverbs 18:13). - James says it again: "let every person be quick to hear, slow to speak, slow to anger … receive with meekness the implanted word, which is able to save your souls" (James 1:19–21). - God looks to "he who is humble and contrite in spirit and trembles at my word" (Isaiah 66:2).
+  - note: in full
+- **C-187** telling added · 10.14 *Humility as a way of walking* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: I read humility, in these verses, as the ear that can take a reproof and a word, and does not answer before it hears (10.2).
+  - note: in part
+- **C-187** telling added · 10.2 *Humility and hearing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Twice Proverbs says "humility comes before honor", and both times the verse beside it is about the ear. "The ear that listens to life-giving reproof will dwell among the wise. Whoever ignores instruction despises himself, but he who listens to reproof gains intelligence" (Proverbs 15:31–32). "If one gives an answer before he hears, it is his folly and shame" (Proverbs 18:13). James puts them in one sentence: "let every person be quick to hear, slow to speak, slow to anger … receive with meekness the implanted word" (James 1:19–21). And God looks to the one who "trembles at my word" (Isaiah 66:2). I read humility here as the ear that can take a word against itself, and does not answer before it hears. The whole account is in 10.14.
+  - note: in full
+- **C-188** telling added · 10.14 *Humility as a way of walking* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Instead of the offering.** Three more passages set what God looks to against a religious act: - the fast (Isaiah 58) - the house and the sacrifices: "But this is the one to whom I will look: he who is humble and contrite in spirit" (Isaiah 66:1–3) - "For you will not delight in sacrifice … The sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise" (Psalm 51:16–17)
+  - note: in full
+- **C-188** telling added · 10.14 *Humility as a way of walking* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Walking with God.** "With what shall I come before the Lord … Shall I come before him with burnt offerings …? He has told you, O man, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?" (Micah 6:6–8). The question is what to bring, and the answer is a way to walk. "Humbly" is "with your God": a walk in his company, not a gift handed over.
+  - note: in part: what to bring, and a way to walk
+- **C-188** telling added · 10.14 *Humility as a way of walking* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The psalm goes on, "then will you delight in right sacrifices" (51:19). The offering is not done away with. It follows the broken heart.
+  - note: in part
+- **C-189** telling added · 10.14 *A lowly and contrite spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Where God and a broken heart meet in these verses, he is near and he heals: - "The Lord is near to the brokenhearted and saves the crushed in spirit" (Psalm 34:18) - "He heals the brokenhearted and binds up their wounds" (Psalm 147:3) - the anointed one is sent "to bind up the brokenhearted" (Isaiah 61:1)
+  - note: in full
+- **C-189** telling added · 10.14 *A lowly and contrite spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **The breaking has more than one cause.** - **Over one's own sin**, and brought to God: Psalm 51, and "I am feeble and crushed; I groan because of the tumult of my heart" because "my iniquities have gone over my head", with "all my longing is before you" (Psalm 38:4, 8–9). - **By what others do:** "Reproaches have broken my heart, so that I am in despair. I looked for pity, but there was none" (Psalm 69:20). "For I am poor and needy, and my heart is stricken within me" (Psalm 109:22). - **By slavery:** "they did not listen to Moses, because of their broken spirit and harsh slavery" (Exodus 6:9). That broken spirit could not hear the promise of rescue. - **By God's word against what is seen:** "My heart is broken within me … because of the Lord and because of his holy words" (Jeremiah 23:9). - **By sorrow:** "by sorrow of heart the spirit is crushed" (Proverbs 15:13), and "a crushed spirit who can bear?" (Proverbs 18:14).
+  - note: in full
+- **C-189** telling added · 10.14 *A lowly and contrite spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The verses do not divide contrition from despair by name. They give the cause of the breaking, and whether the broken heart is brought to God. Where it is, God is near, heals and revives. The spirit's own part is in Chapter 6.
+  - note: in full
+- **C-189** telling added · 04 *The heart humbled* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The heart can be broken. "Reproaches have broken my heart, so that I am in despair" (Psalm 69:20). "I am poor and needy, and my heart is stricken within me" (Psalm 109:22). "I groan because of the tumult of my heart" (Psalm 38:8). The prophet: "My heart is broken within me … because of the Lord and because of his holy words" (Jeremiah 23:9). And "He heals the brokenhearted and binds up their wounds" (Psalm 147:3).
+  - note: in part
+- **C-190** telling added · 10.14 *Toward one another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Counting others.** "Do nothing from selfish ambition or conceit, but in humility count others more significant than yourselves. Let each of you look not only to his own interests, but also to the interests of others" (Philippians 2:3–4). "Do not be haughty, but associate with the lowly. Never be wise in your own sight" (Romans 12:16).
+  - note: in full
+- **C-190** telling added · 10.14 *Toward one another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Worn.** "Put on then … compassionate hearts, kindness, humility, meekness, and patience, bearing with one another and … forgiving each other" (Colossians 3:12–13). "Clothe yourselves, all of you, with humility toward one another" (1 Peter 5:5). It is always named with patience, bearing with, forgiving, sympathy and a tender heart (Ephesians 4:2; 1 Peter 3:8). It keeps "the unity of the Spirit in the bond of peace" (Ephesians 4:3).
+  - note: in full
+- **C-190** telling added · 10.10 *Humility toward one another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Between people, humility is a way of counting the other: "in humility count others more significant than yourselves. Let each of you look not only to his own interests, but also to the interests of others" (Philippians 2:3–4). It is set against "selfish ambition or conceit" (2:3), and against being "haughty" or "wise in your own sight" (Romans 12:16). It is worn toward others: "Clothe yourselves, all of you, with humility toward one another" (1 Peter 5:5). And it is named beside "bearing with one another in love" (Ephesians 4:2).
+  - note: in full
+- **C-191** telling added · 10.14 *Toward one another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **The seat and the title.** "do not sit down in a place of honor … go and sit in the lowest place, so that when your host comes he may say to you, 'Friend, move up higher'" (Luke 14:8–10). The proverb had said it: "Do not put yourself forward in the king's presence … it is better to be told, 'Come up here,' than to be put lower in the presence of a noble" (Proverbs 25:6–7). To the question of titles: "you are not to be called rabbi … The greatest among you shall be your servant" (Matthew 23:8, 11). And: "Whoever humbles himself like this child is the greatest in the kingdom of heaven" (Matthew 18:4). The lower place is taken before anyone gives it, and the honour is given, not taken.
+  - note: in full
+- **C-191** telling added · 10.7 *Taking the lower place* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Some choices are choices of place. Jesus told a parable "when he noticed how they chose the places of honor": "do not sit down in a place of honor … But when you are invited, go and sit in the lowest place, so that when your host comes he may say to you, 'Friend, move up higher'" (Luke 14:7–10). The proverb had the same counsel: "Do not put yourself forward in the king's presence … for it is better to be told, 'Come up here,' than to be put lower in the presence of a noble" (Proverbs 25:6–7). The lower place is chosen before anyone else must give it, and the honour, if it comes, is given.
+  - note: in full
+- **C-192** telling added · 10.14 *Toward one another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **In meeting someone who is wrong.** Gentleness shows in how one meets a wrong: - "restore him in a spirit of gentleness. Keep watch on yourself, lest you too be tempted" (Galatians 6:1); "if anyone thinks he is something, when he is nothing, he deceives himself" (6:3) - "correcting his opponents with gentleness. God may perhaps grant them repentance" (2 Timothy 2:25) - "make a defense … with gentleness and respect" (1 Peter 3:15) - "to be gentle, and to show perfect courtesy toward all people. For we ourselves were once foolish" (Titus 3:2–3)
+  - note: in full
+- **C-192** telling added · 10.14 *Toward one another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: What these verses join to gentleness is watching oneself, remembering what one was, and leaving the outcome to God.
+  - note: in full
+- **C-192** telling added · 10.10 *Humility toward one another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: It shows in how a wrong is met: "restore him in a spirit of gentleness. Keep watch on yourself, lest you too be tempted" (Galatians 6:1); "correcting his opponents with gentleness" (2 Timothy 2:25). The reason given is one's own past: "For we ourselves were once foolish" (Titus 3:3).
+  - note: in full
+- **C-193** telling added · 10.14 *Submitting* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **To God.** "Submit yourselves therefore to God" (James 4:7), in the same breath as "Humble yourselves before the Lord" (4:10). James draws no line between them.
+  - note: in full
+- **C-193** telling added · 10.9 *Humbling oneself before God* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: God is said to see it. "When the Lord saw that they humbled themselves" (2 Chronicles 12:7). "Have you seen how Ahab has humbled himself before me?" (1 Kings 21:29). The one who humbles himself puts down what he carries: "Humble yourselves, therefore, under the mighty hand of God so that at the proper time he may exalt you, casting all your anxieties on him, because he cares for you" (1 Peter 5:6–7). James joins it to submitting and drawing near: "Submit yourselves therefore to God … Draw near to God, and he will draw near to you" (James 4:7–8). The whole account is in 10.14.
+  - note: in part: submitting and drawing near
+- **C-194** telling added · 10.14 *Submitting* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **To one another, for a reason that faces God.** Submission among people is almost never told without its ground:
+  - note: in full
+- **C-194** telling added · 10.14 *Submitting* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Where the passage goes on, it lays a duty on the other side: - "Husbands, love your wives, as Christ loved the church and gave himself up for her" (Ephesians 5:25) - "do not be harsh with them" (Colossians 3:19) - the elders are "not domineering over those in your charge" (1 Peter 5:3)
+  - note: in full
+- **C-194** telling added · 10.10 *Humility toward one another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: It is also a submission that runs both ways: "submitting to one another out of reverence for Christ" (Ephesians 5:21), and the elders "not domineering over those in your charge" (1 Peter 5:3). The ground for all of it is "this mind among yourselves, which is yours in Christ Jesus" (Philippians 2:5). The whole account is in 10.14.
+  - note: in full
+- **C-195** telling added · 10.14 *Submitting* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **The limit.** "to them we did not yield in submission even for a moment, so that the truth of the gospel might be preserved for you" (Galatians 2:5). To false brothers who would bring others into slavery, refusing is the right act. Its ground is given too.
+  - note: in full
+- **C-196** telling added · 10.14 *Submitting* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **One's own spirit.** "the spirits of prophets are subject to prophets. For God is not a God of confusion but of peace" (1 Corinthians 14:32–33). The one who speaks governs what moves in him.
+  - note: in full
+- **C-196** telling added · 06 *The human spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **It is gentle, and it is under the person.** "restore him in a spirit of gentleness" (Galatians 6:1). "Shall I come to you with a rod, or with love in a spirit of gentleness?" (1 Corinthians 4:21). "a gentle and quiet spirit, which in God's sight is very precious" (1 Peter 3:4). "the spirits of prophets are subject to prophets. For God is not a God of confusion but of peace" (1 Corinthians 14:32–33): the one who speaks governs what moves in him. And every spirit has one Father: "Shall we not much more be subject to the Father of spirits and live?" (Hebrews 12:9). Humility is in 10.14.
+  - note: in part: the spirits of prophets subject to prophets
+- **C-197** telling added · 10.14 *Jesus* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: In the New Testament, humility rests on what the verses say of Jesus. God's own part is in 13.1, *Lowering himself*. Here is what it means for the one who humbles himself.
+  - note: in full
+- **C-197** telling added · 10.14 *Jesus* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **He humbled himself, and was exalted.** "who, though he was in the form of God, did not count equality with God a thing to be grasped, but emptied himself, by taking the form of a servant, being born in the likeness of men. And being found in human form, he humbled himself by becoming obedient to the point of death, even death on a cross. Therefore God has highly exalted him" (Philippians 2:6–9). "we see him who for a little while was made lower than the angels, namely Jesus, crowned with glory and honor because of the suffering of death" (Hebrews 2:9). I read the saying he taught, "whoever humbles himself will be exalted", as what is told of him.
+  - note: in full
+- **C-198** telling added · 10.14 *Jesus* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **He is the ground of humility toward others.** - "Have this mind among yourselves, which is yours in Christ Jesus" (Philippians 2:5) is the reason for "in humility count others more significant than yourselves" (2:3). - "leaving you an example, so that you might follow in his steps" (1 Peter 2:21). - "out of reverence for Christ" (Ephesians 5:21). - Paul appeals "by the meekness and gentleness of Christ" (2 Corinthians 10:1).
+  - note: in full
+- **C-198** telling added · 10.10 *Humility toward one another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: It is also a submission that runs both ways: "submitting to one another out of reverence for Christ" (Ephesians 5:21), and the elders "not domineering over those in your charge" (1 Peter 5:3). The ground for all of it is "this mind among yourselves, which is yours in Christ Jesus" (Philippians 2:5). The whole account is in 10.14.
+  - note: in part: the ground is this mind
+- **C-199** telling added · 10.14 *Jesus* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Others lower themselves before him.** John the Baptist: "He must increase, but I must decrease" (John 3:30). He says it after "I am not the Christ", and with "this joy of mine is now complete" (3:28–29). His lowering is said with joy.
+  - note: in full
+- **C-200** telling added · 10.14 *The Old Testament and the New* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Everything above is in both Testaments: - humbling oneself before God, and God's answer - the proud brought low and the humble raised - favour to the humble - the lower seat - the meek inheriting - God humbling for good - a humbling he does not accept - humility beside hearing - the humble king - God lowering himself
+  - note: in full
+- **C-200** telling added · 10.14 *The Old Testament and the New* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Before God, then also toward one another.** In the Old Testament humbling is almost always before God. Kings and the people humble themselves, and the answer is wrath turned or disaster delayed. In the New, much of what is said is about humility toward one another. It always has a reason that faces God, and the answer is named as being justified, grace, and rest for the soul.
+  - note: in full
+- **C-200** telling added · 10.14 *The Old Testament and the New* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **The new thing: Christ.** He is the one who is lowly in heart, who humbled himself to death, and in whose mind the humble live. What God did in looking down, in his gentleness and in his breaking over a heart, the Son did in a human life. What the Old Testament said of man, "you have made him a little lower than the heavenly beings … you have put all things under his feet" (Psalm 8:5–6), the letter to the Hebrews reads as "namely Jesus" (Hebrews 2:6–9).
+  - note: in full
+- **C-201** telling added · 10.14 *When humility changes character* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The same words wear different faces. - **One Hebrew verb** is a king humbling himself before God, God humbling a people, and an enemy "subdued" in war. When a person humbles himself, the heart is named and God answers. When an enemy is beaten, no inner act is named. - **One Greek noun** is humility toward one another, and a self-made asceticism that puffs up (Colossians 2:18, 23). - **The word "humble" itself** is a charge flung at Paul: "I who am humble when face to face with you, but bold toward you when I am away!" (2 Corinthians 10:1). - **Being brought low** is God's judgment on the proud (Isaiah 2:11), a test for good (Deuteronomy 8:16), a circumstance met with contentment (Philippians 4:12), and the place Christ went (Philippians 2:8). - **Submitting** is right before God, right for the Lord's sake among people, and wrong to those who would enslave the gospel (Galatians 2:5).
+  - note: in full
+- **C-201** telling added · 11 *What changes the character* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Who lowers whom, and before whom.** A king humbling himself before God is answered (2 Chronicles 12:7). A people humbled by God may turn or harden (2 Chronicles 33:12; 28:22). A nation humbled by an enemy is only "subdued" (Judges 3:30). The noun for humility toward one another also names a self-made severity that puffs a person up (Colossians 2:18, 23), and submission is right before God and wrong to those who would enslave the gospel (Galatians 2:5) (10.14).
+  - note: in full
+- **C-202** telling added · 13.1 *Lowering himself* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: I read the lowering that the Old Testament tells of God, looking down, dwelling with the lowly, his gentleness, his being broken over a heart, as done in the Son in a human life.
+  - note: in full
+- **C-202** telling added · 13.1 *Lowering himself* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The Lord is high, and the verses keep saying that he looks low. - "Who is like the Lord our God, who is seated on high, who looks far down on the heavens and the earth? He raises the poor from the dust" (Psalm 113:5–7). The verb for looking far down is the one used when he brings the proud low. - "For though the Lord is high, he regards the lowly, but the haughty he knows from afar" (Psalm 138:6). - "I dwell in the high and holy place, and also with him who is of a contrite and lowly spirit, to revive the spirit of the lowly, and to revive the heart of the contrite" (Isaiah 57:15). - David: "You have given me the shield of your salvation, and your gentleness made me great" (2 Samuel 22:36; Psalm 18:35). The word rendered "gentleness" is the word for humility. - Over his people's unfaithfulness: "how I have been broken over their whoring heart that has departed from me" (Ezekiel 6:9).
+  - note: in part
+- **C-202** telling added · 10.14 *The Old Testament and the New* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **The new thing: Christ.** He is the one who is lowly in heart, who humbled himself to death, and in whose mind the humble live. What God did in looking down, in his gentleness and in his breaking over a heart, the Son did in a human life. What the Old Testament said of man, "you have made him a little lower than the heavenly beings … you have put all things under his feet" (Psalm 8:5–6), the letter to the Hebrews reads as "namely Jesus" (Hebrews 2:6–9).
+  - note: in part: what God did, the Son did in a human life
+- **C-203** telling added · 13.1 *Lowering himself* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Toward the humble and the proud.** He sees the one who humbles himself and answers: "When the Lord saw that they humbled themselves" (2 Chronicles 12:7); "Have you seen how Ahab has humbled himself before me?" (1 Kings 21:29). He gives favour: "to the humble he gives favor" (Proverbs 3:34); "God opposes the proud but gives grace to the humble" (James 4:6). He humbles to test, "to do you good in the end" (Deuteronomy 8:16). He brings the proud low, "and the Lord alone will be exalted in that day" (Isaiah 2:11). He looks on a humble estate (Luke 1:48). What this means for the one who humbles himself is in 10.14.
+  - note: in full
 
 ## 2026-10-14 — OT-02 die, dead and perish words: Ch 2 death part rebuilt, claims registered
 
@@ -4360,3 +4878,4 @@ These areas are absent from the original, or are listed there only as gaps. [Cla
 | 2026-10-09 | desire (M18), group A (#1993 item F) | 10.6 gains the section *Coveting* (after *Through the eye*). No other structure change. | The commandment, the see–covet–take order and the law naming the desire make one phenomenon. It had no home. |
 | 2026-10-14 | life and death (M25), OT-02 Q1 What is death? | Ch 2 gains the section 'Going down to Sheol' before 'Sleep and waking'. | The Sheol verses had no home; read in their passages they speak of where Sheol lies, who goes down, how, and God and Sheol. |
 | 2026-10-14 | life and death (M25), OT-02 Q1 What is death? | Ch 2: new subsections "Death spoken of in more than one way" and "Dead to sin" under What death is; new section "Those left behind" before Wanting to die | The death words were read by face, not by which death; the kinds, the dead-in/dead-to change and the stated causes had no one account; Ch 2 had no place for death as the living meet it in another |
+| 2026-10-15 | humility (M09), fan-out of humbling oneself (#2148) | New sub-chapter 10.14 Humility (reading order after 10.13). New sections: 10.2 Humility and hearing; 10.7 Taking the lower place; 10.9 Humbling oneself before God; 10.10 Humility toward one another; Ch 4 The heart humbled; Ch 5 Rest for the soul; 13.1 Lowering himself. Ch 6 gains a paragraph (It is gentle, and it is under the person); Ch 11 s4 a face (Who lowers whom, and before whom); Ch 12 the counterpart paragraph. 10.0 names 10.12 to 10.14. | Humility is not a feeling (researcher); the readings show it as act, standing, sought quality, state of spirit, place taken, done to a person and God's own way, across the activities. A key characteristic gets one full account as its own Ch 10 sub-chapter (#1961), with each angle woven in context (#1920). |
