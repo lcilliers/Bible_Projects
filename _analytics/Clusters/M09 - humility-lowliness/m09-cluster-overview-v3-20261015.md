@@ -1,0 +1,425 @@
+# M09 Humility & Lowliness: cluster overview (strand start)
+
+**Date:** 2026-10-15 · **Escalation:** #2148 · **Status:** data overview only. No verse has been read for M09. **v2** adds §3B.1: the researcher's observation on the dimensions of poor and needy, and the verses where it can be tested. §9 point 2 is restated in its light. **v3** adds §3G, a new group split off from B: the poor as seen by another person and by God. It also adds §3D/3E.1, which shows where the contrite and submission words are filed outside M09, and §9 is updated. v1 and v2 are in `archive/`.
+
+**Instruction (researcher, chat 2026-10-15, verbatim):** *"starting a new cluster M09.  add a new escalation, prepare a summary of M09 cluster"*.
+
+**Source:** read-only against iba.db, in the same shape as the M72 overview (#1998) and the M18 overview (#1993). It uses live `cluster_strong` rows only and hits from `verse_lexical`. The "other" side is every other M-cluster. There is one change from M72: narrative citations and claims-register sources are read live from `narrative_citation` and `narrative_claim_source` (#2110), not parsed from the chapter files. So single-chapter books (Jude, Phile, etc.) cause no parsing gap.
+- Script: [`m09-cluster-overview-pull-v1-20261015.py`](m09-cluster-overview-pull-v1-20261015.py). This is the M72 script with the code changed and the narrative cross-reference added.
+- All hits: [`m09-cluster-hits-v1-20261015.csv`](m09-cluster-hits-v1-20261015.csv) (304 rows).
+- Per Strong's, with the tag source: [`m09-cluster-strongs-v1-20261015.csv`](m09-cluster-strongs-v1-20261015.csv) (26 rows).
+- Other M-codes in the same verses: [`m09-cluster-mcode-cooccurrence-v1-20261015.csv`](m09-cluster-mcode-cooccurrence-v1-20261015.csv).
+- Every M09 verse with its M09 Strong's, its narrative places, whether it is in the claims register, and its other M-codes: [`m09-cluster-verses-crossref-v1-20261015.csv`](m09-cluster-verses-crossref-v1-20261015.csv) (273 rows).
+
+## 1. The cluster
+
+- **Name:** Humility & Lowliness.
+- **Definition in `cluster`:** "Humility, lowliness, meekness, contrition, being needy/poor".
+- **Status:** `t_cluster_assignment_completed`.
+- **How the 26 live Strong's came to be tagged** (`cluster_strong.source`):
+
+| Source | Strong's |
+| --- | --- |
+| heuristic family grouping (2026-09-05), family "humility-lowliness-contrition" | 11 |
+| old-system migration | 10 |
+| LLM allocation v1.3 (H8214, H7807, G0036) | 3 |
+| researcher ruling #1880 (2026-09-28): H1793A *dakkāʾ* "contrite", moved from M11 | 1 |
+| auto-precedent: H8215 | 1 |
+
+- **Deleted rows (8):**
+  - Four Strong's left M09 earlier:
+    - G1299 "to direct", now T3
+    - G5549 and H4102 "to delay", now T3
+    - H5081G "noble: willing", now M64
+  - Four are superseded duplicates of rows that are still live: H0034, H1800, H7326 and H1793A. Under #1880 (D-R6) "needy/poor" stays in M09 by design, because the cluster's own definition names it.
+- Per #1970 the tags are a loose association for analysis. Nothing here proposes a re-tag.
+
+## 2. Scale
+
+| Measure | Count |
+| --- | --- |
+| M09 Strong's (live), all with hits | 26 (16 Hebrew, 10 Greek) |
+| M09 hits (distinct verse · position · Strong's) | 304 |
+| Verses | 273 (OT 202, NT 71) |
+| Books | 42 |
+| Verses with more than one M09 hit | 29 |
+| Verses that also hold another M-code | 246 |
+| Verses with no other M-code | 27 |
+| Verses already cited in the narrative | 51 |
+| Verses that are a source in the claims register | 4 (Luk 16:22, Psa 34:18, 2Ch 7:14, Phili 2:8) |
+
+M09 is small. It is about a fifth of M18 (1,370 verses) and a fourteenth of M72 (3,972).
+
+**Books with the most M09 verses:**
+
+| Book | Verses |
+| --- | --- |
+| Psa | 44 |
+| Pro | 37 |
+| Job | 15 |
+| Luk | 15 |
+| 2Ch | 13 |
+| Lev | 12 |
+| Isa | 11 |
+| Eze | 9 |
+| 2Cor | 8 |
+| Mat | 8 |
+| Jam | 8 |
+| Amo | 7 |
+| 2Sa | 7 |
+
+The cluster is centred on the wisdom books and the Psalms. 2Ch is mostly the "humbled himself" accounts of the kings.
+
+## 3. The Strong's by gloss
+
+These groups are a reading aid by gloss only. They are not a finding, and they are not a sub-grouping of the cluster.
+
+| Gloss group | Strong's | Hits | Verses | Cited | No other M-code |
+| --- | --- | --- | --- | --- | --- |
+| A. humble, lowly, humility (the humbling words) | 12 | 95 | 86 | 20 | 8 |
+| B. poor, needy, destitute | 10 | 180 | 164 | 22 | 17 |
+| C. *ʿānāw*: humble, afflicted, poor, meek (one word across A and B) | 1 | 22 | 21 | 8 | 1 |
+| D. contrite | 1 | 2 | 2 | 2 | 0 |
+| E. submission | 1 | 4 | 4 | 1 | 1 |
+| F. gloss away from the cluster | 1 | 1 | 1 | 0 | 0 |
+
+**Most verses hold one group only:**
+
+| Groups in the verse | Verses |
+| --- | --- |
+| B only | 160 |
+| A only | 85 |
+| C only | 17 |
+| B and C | 4 |
+| A and D (Isa 57:15) | 1 |
+
+The words for being poor make up 59% of the hits. The humbling words make up 31%.
+
+### 3A. Humble, lowly, humility (12 Strong's, 95 hits)
+
+| Strong's | Gloss | Hits | Verses | Surface (top) |
+| --- | --- | --- | --- | --- |
+| H3665 *kānaʿ* | be humble | 36 | 32 | humbled (12), subdued (10), subdue (4), humbled yourself (3), humble (3) |
+| H8217 *šāphāl* | low | 17 | 16 | lowly (7), deeper (4), low (2), abased (2), humble (1) |
+| G5013 *tapeinoō* | to humble | 14 | 11 | humbled (4), humbles (4), Humble yourselves (2), made low (1) |
+| G5011 *tapeinos* | lowly | 8 | 8 | humble (3), lowly (3), downcast (1), humble estate (1) |
+| G5012 *tapeinophrosynē* | humility | 7 | 7 | humility (5), asceticism (2) |
+| H8214 *šᵊphal* (Aramaic) | be low | 4 | 4 | humbled (2), humble (1), put down (1) |
+| G5014 *tapeinōsis* | lowliness | 4 | 4 | humiliation (2), lowly (1), humble estate (1) |
+| 5 others | | 5 | | H6800A "humbly" (Mic 6:8), H6800B "humble", H7807 "lowly", H8215 "lowliest", G0036 "low" (1 each) |
+
+### 3B. Poor, needy, destitute (10 Strong's, 180 hits)
+
+| Strong's | Gloss | Hits | Verses | Surface (top) |
+| --- | --- | --- | --- | --- |
+| H0034 *ʾebyôn* | needy | 61 | 58 | needy (46), poor (14), needy one (1) |
+| H1800 *dal* | poor | 47 | 46 | poor (35), weak (3), poor man (3), needy (2), weakest, haggard |
+| G4434 *ptōchos* | poor | 34 | 34 | poor (30), poor man (3), worthless (1) |
+| H7326 *rûš* | be poor | 24 | 24 | poor (17), poor man (2), destitute (1) |
+| H4134 *mûkh* | be poor | 5 | 5 | becomes poor (4), poor (1) |
+| H4542 *miskēn* | poor | 4 | 3 | poor (4) (Ecclesiastes) |
+| 4 others | | 5 | | H2489 "helpless" 2; G3993 *penēs* 1 (2Co 9:9); G4433 "became poor" 1 (2Co 8:9); H6199 "destitute" 1 |
+
+The most frequent pair in one verse is "needy" with "poor" (H0034 + H1800, 10 verses).
+
+### 3B.1 Poor and needy have more than one dimension (researcher's observation, 2026-10-15)
+
+**Researcher, verbatim:** *"a quick observation that may steer your analysis and summary:  poor - to be poor, lacking resources, is a state or status naming a persons availability of external resources (wealth);  it could also be a inner being characteristic where being or perceiving in the inner being of lack perceived but may not be true or could be true, but the verification is not in external resources, this characteristic is closely aligned to needy, although needy is an expression with an objective to get simpathy or help.  This description for you need to be corroborated in the verses, but I am highlighting that poor, needy have multiple dimensions"*
+
+The observation names three dimensions. Each is to be corroborated in the verses, not assumed:
+1. **Poor as a state or status:** a person's means in external resources.
+2. **Poor as an inner-being characteristic:** a lack that is in the inner being, or perceived there. It may or may not be true, and it is not verified by external resources. It is close to needy.
+3. **Needy as an expression:** said with the aim of getting sympathy or help.
+
+**Where the verses can test it (data markers, not a reading).** Script and full list: [`m09-poor-needy-dimension-markers-v1-20261015.py`](m09-poor-needy-dimension-markers-v1-20261015.py) → [`.csv`](m09-poor-needy-dimension-markers-v1-20261015.csv), 181 verses (group B plus H6035), with the ESV text. A verse may carry more than one marker.
+
+| Marker | What it picks out | Verses |
+| --- | --- | --- |
+| wealth | an M46 wealth word in the same verse | 29 |
+| harm | M10, M06 or M58 in the same verse | 28 |
+| inner | an M47 inner-seat word in the same verse | 22 |
+| appeal | M42 prayer or M41 being heard in the same verse | 19 |
+| care | M05 or M50 in the same verse | 16 |
+| self | the speaker names himself poor or needy | 10 (only 5 are true hits; see below) |
+| none | none of these | 88 |
+
+The `self` pattern catches more than it should. Only five of its ten hits are a speaker calling himself poor: 1Sa 18:23, Psa 40:17, Psa 70:5, Psa 86:1 and Psa 109:22. The other five are Luk 4:18, Isa 61:1, Luk 19:8, Job 29:16 and Job 30:25. The markers are a working aid only: they point to verses to read and decide nothing.
+
+**What the verse text sets beside the word.** These are quoted, not read. They point to where each dimension can be tested in its passage.
+
+- **Means, set against the rich:**
+  - "A rich man's wealth is his strong city; the poverty of the poor is their ruin" (Pro 10:15)
+  - "The rich rules over the poor" (Pro 22:7)
+  - "The rich shall not give more, and the poor shall not give less" (Exo 30:15)
+  - "one of your brothers should become poor … you shall not harden your heart or shut your hand" (Deu 15:7)
+- **Poor where the verse separates what is said or seen from what is so:**
+  - "One pretends to be rich, yet has nothing; another pretends to be poor, yet has great wealth" (Pro 13:7)
+  - "you say, 'I am rich … I need nothing,' not realizing that you are … poor" (Rev 3:17)
+  - "as poor, yet making many rich; as having nothing, yet possessing everything" (2Co 6:10)
+  - "poor in the world to be rich in faith" (Jam 2:5)
+  - "though he was rich, yet for your sake he became poor" (2Co 8:9)
+- **Poor joined to the spirit or heart:**
+  - "Blessed are the poor in spirit" (Mat 5:3)
+  - "better to be of a lowly spirit with the poor" (Pro 16:19)
+  - "I am poor and needy, and my heart is stricken within me" (Psa 109:22)
+- **Poor or needy said by the speaker as the ground of a plea:**
+  - "answer me, for I am poor and needy" (Psa 86:1)
+  - "I am poor and needy; hasten to me, O God!" (Psa 70:5)
+  - "As for me, I am poor and needy, but the Lord takes thought for me" (Psa 40:17)
+- **Poor said of one's own standing:** "since I am a poor man and have no reputation" (1Sa 18:23).
+- **The poor appealing to others:**
+  - "The poor use entreaties, but the rich answer roughly" (Pro 18:23)
+  - "you hear the desire of the afflicted" (Psa 10:17)
+  - "he cry to the Lord against you" (Deu 15:9)
+
+**Note for reading.** In Psa 40:17, 70:5, 86:1 and 109:22, "poor" in "poor and needy" is H6041 *ʿānî*, which is tagged M24 (§5), and "needy" is H0034 (M09). This was checked in `verse_lexical`. These verses therefore sit on both sides of the M09 / M24 line.
+
+**Not yet known.** It is not yet known whether the verses carry the "perceived lack" or the "aim of getting sympathy or help" as the researcher describes them. That is for the reading, verse by verse, in the passage. The 27 verses with no other M-code did not show either one (`m09-no-other-mcode-reading-v1-20261015.md` §3).
+
+### 3G. The poor as seen by another: what it moves in a person, and in God (split from B; researcher, 2026-10-15)
+
+**Researcher, verbatim:** *"your are right in observing that observing someone else as being poor triggers/or should trigger behaviour in a IB, as it triggers divine behaviour.  this in itself should become a separate gloss group, and may be a split off from group B."*
+
+**How the split was made.** I read all 181 verses of group B plus H6035 and gave each one primary code (script [`m09-poor-needy-split-v1-20261015.py`](m09-poor-needy-split-v1-20261015.py) → [`.csv`](m09-poor-needy-split-v1-20261015.csv)). Unlike groups A to F, this group is set by reading, not by gloss. The code is a working aid. Many verses carry both sides, and the code is the side the verse puts first.
+
+| Code | The verse puts first | Verses | of which H6035 |
+| --- | --- | --- | --- |
+| **G-person** | another person sees, speaks of, or acts toward the poor | 93 | 3 |
+| **G-God** | God (or the king as his agent, where the verse sets God's act) sees, hears, delivers or raises the poor | 34 | 11 |
+| B (stays) | the poor or humble person's own state, standing, voice or act | 48 | 7 |
+| data | no poverty sense here (Gal 4:9, 2Sa 3:1, 2Sa 13:4), or "rich and poor" as a pair meaning everyone (Rut 3:10, Rev 13:16, Psa 49:2) | 6 | 0 |
+
+**127 of the 181 verses (70%) are about the poor as seen and met by another.** Group B proper, the poor person's own side, is 48 verses.
+
+**Seeing is often named.** These are quoted, not read:
+- *"Blessed is the one who considers the poor!"* (Psa 41:1)
+- *"if I have seen anyone perish for lack of clothing"* (Job 31:19)
+- *"If you see in a province the oppression of the poor"* (Ecc 5:8)
+- *"Whoever has a bountiful eye … shares his bread with the poor"* (Pro 22:9)
+- *"he who hides his eyes will get many a curse"* (Pro 28:27)
+- *"your eye look grudgingly on your poor brother"* (Deu 15:9)
+- *"His eyes stealthily watch for the helpless"* (Psa 10:8)
+
+**What the sight moves in a person, as the verses name it (G-person):**
+- *"Was not my soul grieved for the needy?"* (Job 30:25)
+- *"He has pity on the weak and the needy"* (Psa 72:13, the king)
+- *"you shall not harden your heart or shut your hand"* (Deu 15:7)
+- *"an unworthy thought in your heart"* (Deu 15:9)
+- *"Whoever mocks the poor … he who is glad at calamity"* (Pro 17:5)
+- *"The poor is disliked even by his neighbor"* (Pro 14:20)
+- *"All a poor man's brothers hate him"* (Pro 19:7)
+- *"the poor man's wisdom is despised"* (Ecc 9:16)
+- *"These are only the poor; they have no sense"* (Jer 5:4)
+- *"no one remembered that poor man"* (Ecc 9:15)
+- *"the very thing I was eager to do"* (Gal 2:10)
+- *"pleased to make some contribution for the poor"* (Rom 15:26)
+- *"not because he cared about the poor"* (Joh 12:6)
+- *"the master of the house became angry and said … bring in the poor"* (Luk 14:21)
+
+The acts span giving, opening the hand, judging the cause and redeeming, at one end, and robbing, trampling, selling, mocking, partiality and pretext at the other.
+
+**What the sight moves in God (G-God):**
+- *"Because the poor are plundered, because the needy groan, I will now arise," says the Lord* (Psa 12:5)
+- *"But you do see … to you the helpless commits himself"* (Psa 10:14)
+- *"he does not forget the cry of the afflicted"* (Psa 9:12)
+- *"he regards the prayer of the destitute"* (Psa 102:17)
+- *"I the Lord will answer them"* (Isa 41:17)
+- *"He raises the poor from the dust"* (Psa 113:7; 1Sa 2:8)
+
+These go to 13.1 (route A), with the HIB side where the poor person's own cry or trust is named.
+
+**Where a verse joins the two sides:**
+- *"Whoever oppresses a poor man insults his Maker, but he who is generous to the needy honors him"* (Pro 14:31)
+- *"Whoever mocks the poor insults his Maker"* (Pro 17:5)
+- *"Whoever is generous to the poor lends to the Lord"* (Pro 19:17)
+- *"He judged the cause of the poor and needy … Is not this to know me? declares the Lord"* (Jer 22:16)
+- *"The rich and the poor meet together; the Lord is the Maker of them all"* (Pro 22:2)
+- *"Did not he who made me in the womb make him?"* (Job 31:15)
+
+These verses state the link. It is not drawn by me.
+
+**Two notes for reading:**
+- The same verses often set the poor beside the widow, the fatherless and the sojourner, for example Job 31:16, Deu 24:14, Isa 10:2, Psa 10:14 and Psa 82:3. Those words are not M09 and are not pulled.
+- Of the 27 verses with no other M-code, that reading's groups B (Bethany) and D (the ruler, Zacchaeus) and most of E fall in G-person. The poor widow (its group C) and Lazarus at the gate (Luk 16:20) are B proper: the verse puts the poor person first.
+
+### 3C. *ʿānāw* (H6035, 22 hits, 21 verses)
+
+Surface: humble (9), afflicted (5), poor (4), meek (4). This one word is rendered on both sides of the cluster's definition. Examples:
+- "the meek" (Num 12:3 of Moses; Psa 37:11)
+- "the humble" (Pro 3:34; Psa 25:9)
+- "the afflicted" (Psa 9:12; 10:12)
+- "the poor" (Isa 61:1; Pro 16:19)
+
+### 3D, 3E, 3F
+
+- **D.** H1793A *dakkāʾ* "contrite": Isa 57:15 ("contrite and lowly spirit") and Psa 34:18 ("crushed in spirit"). Both are cited in the narrative.
+- **E.** G5292 *hypotagē* "submission": 2Co 9:13, Gal 2:5, 1Ti 2:11, 1Ti 3:4.
+- **F.** G3635 *okneō* "to delay": Act 9:38 ("do not delay"). It came in by old-system migration. Its gloss has no bearing on humility.
+
+### 3D/3E.1 Why D and E are so small: the words are filed in other clusters and T-codes (2026-10-15)
+
+The researcher was surprised that D and E are so small and suggested the words may sit in other clusters or T-codes. They do. The surface and gloss scan found the words below. None is pulled or re-tagged (#1970).
+
+**Contrite, broken, crushed, joined to the heart or spirit.** These are verses where a "broken / crushed / contrite" surface sits in the same verse as heart, spirit or soul:
+
+| Strong's | Gloss | Tagged | Verses where the heart or spirit is broken or contrite (quoted) |
+| --- | --- | --- | --- |
+| H7665 *šāḇar* | to break | M24, T3 | *"The sacrifices of God are a broken spirit; a broken and contrite heart"* (Psa 51:17); *"near to the brokenhearted"* (Psa 34:18); *"He heals the brokenhearted"* (Psa 147:3); *"bind up the brokenhearted"* (Isa 61:1); *"Reproaches have broken my heart"* (Psa 69:20); *"My heart is broken within me"* (Jer 23:9); *"how I have been broken over their whoring heart"* (Eze 6:9, of God) |
+| H1794 / H1792 *dākhāh*, *dākhāʾ* | to crush | M10 | *"contrite heart"* (Psa 51:17); *"the contrite"* (Isa 57:15, beside the M09 word); *"I am feeble and crushed"* (Psa 38:8) |
+| H5223 *nākheh* | crippled | M73 | *"he who is humble and contrite in spirit and trembles at my word"* (Isa 66:2) |
+| H5218B *nākhēʾ* | stricken | T2 | *"by sorrow of heart the spirit is crushed"* (Pro 15:13); *"a crushed spirit dries up the bones"* (Pro 17:22); *"a crushed spirit who can bear?"* (Pro 18:14) |
+| H7115 *qōṣer* | shortness | T2 | *"because of their broken spirit and harsh slavery"* (Exo 6:9) |
+| H3512A *kāʾāh* | be disheartened | M20 | *"the brokenhearted"* (Psa 109:16, beside the M09 poor and needy) |
+| H2254B | to destroy | M10 | *"My spirit is broken"* (Job 17:1) |
+| H2490A | to profane | T3 | *"my heart is stricken within me"* (Psa 109:22, beside the M09 poor and needy) |
+
+In Isa 66:2, "humble" is H6041 *ʿānî* (M24) and "contrite" is H5223 (M73). The verse carries no M09 word at all. Psa 51:17 is the same: its broken and contrite words are in M24 and M10.
+
+**Submission.**
+
+| Strong's | Gloss | Tagged | Verses | Note |
+| --- | --- | --- | --- | --- |
+| G5293 *hypotassō* | to subject | M23 | 32 | the verb of M09's G5292. *"Submit yourselves therefore to God"* (Jam 4:7, three verses before the M09 *"Humble yourselves"*, 4:10); *"be subject to the elders. Clothe yourselves, all of you, with humility"* (1Pe 5:5); Eph 5:21; Rom 13:1; Luk 2:51; also "subjected" of creation and of all things under Christ |
+| G0506 *anypotaktos* | insubordinate | M75 | 4 | the opposite (1Ti 1:9; Tit 1:6, 10; Heb 2:8) |
+| G5226 *hypeikō* | to submit | T3 | 1 | *"Obey your leaders and submit to them"* (Heb 13:17) |
+| H3533 *kāḇaš* | to subdue | T3 | 13 | subdue the earth (Gen 1:28), land and people; mostly the outward act, like H3665 "subdued" |
+| H7812, H3766, H6915, H7817 | to bow | T3 | 53 / 14 / 9 / 21 | bowing down, often in worship; H7817 has "humbled" 4 times (§5). Whether bowing belongs here is a reading question |
+
+So M09's own submission word (G5292, 4 verses) is the noun. The verb (32 verses) is in M23 Strength & Courage.
+
+## 4. Where the surface varies within one Strong's
+
+This is where the change-of-character reading (#1919) would start. No reading has been done.
+- **H3665 *kānaʿ*:** "humbled himself" (kings in 2Ch, 1Ki 21:29, 2Ki 22:19) versus "subdued" (nations in Judg, 1Sa 7:13, 2Sa 8:1, 1Ch 18:1, Psa 81:14). It is the same verb for humbling oneself before God and for being brought low by another.
+- **H8217 *šāphāl*:** "lowly" (Isa 57:15; Psa 138:6; Pro 29:23) versus "deeper than the skin" (Lev 13 and 14, leprosy, 4 verses) versus "low" of a vine and a kingdom (Eze 17; 29:14–15).
+- **G5012 *tapeinophrosynē*:** "humility" (Phili 2:3; Col 3:12; Eph 4:2; 1Pe 5:5; Act 20:19) versus "asceticism" (Col 2:18, 23).
+- **H6035 *ʿānāw*:** humble / afflicted / poor / meek, as in §3C.
+- **H1800 *dal*:** poor / weak / "haggard" (2Sa 13:4, Amnon).
+- **G4434 *ptōchos*:** poor / "worthless" (Gal 4:9, the elementary principles).
+
+## 5. Words outside M09 that carry the same sense (gloss and surface scan)
+
+This scan follows the OT-02 lesson (`feedback_strand_pulls_check_t_coded_synonyms`). Some Strong's carry humility or poverty in their gloss or surface but are tagged to another cluster. None of them is pulled. The table records where they sit.
+
+| Strong's | Gloss | Tagged | Verses | Shared with M09 | Cited | Surface that bears on M09 |
+| --- | --- | --- | --- | --- | --- | --- |
+| H6041 *ʿānî* | afflicted | M24 | 72 | 32 | 15 | poor (48), humble (5) |
+| H6031B *ʿānāh* | to afflict | M24 | 76 | 1 | 22 | humble (5), humbled (4), might humble (3) |
+| H6040 *ʿŏnî* | affliction | M24 | 36 | 1 | 10 | (affliction) |
+| H8213 *šāphēl* | to abase | M53 | 29 | 6 | 2 | humbled, lowly |
+| H7817 *šāḥaḥ* | to bow | T3 | 21 | 0 | 3 | humbled (4) |
+| H6038 *ʿănāwāh* | gentleness | M05 | 5 | 1 | 1 | humility (4) |
+| H6037 *ʿanwāh* | gentleness | M05 | 2 | 0 | 0 | meekness |
+| G4236 / G4240 *praotēs*, *prautēs* | gentleness | M05 | 7 / 4 | 3 / 0 | 3 / 4 | meekness |
+| G4239 / G4235 *praus*, *praos* | gentle | M05 | 4 / 1 | 0 / 1 | 1 / 1 | humble, meek (Mat 5:5; 11:29) |
+| G5293 *hypotassō* | to subject | M23 | 32 | 2 | 12 | submit, submissive |
+| H1792 / H1794 *dākhāʾ*, *dākhāh* | to crush | M10 | 18 / 5 | 3 / 0 | 4 / 2 | contrite |
+
+Points that follow from the scan, with no reading done:
+- *ʿānî* (H6041) is the partner of *ʿānāw* and of "poor and needy". It shares 32 verses with M09. This accounts for much of M24's place as M09's largest co-occurring cluster (§6).
+- "Humility" as a noun in the OT (Pro 15:33; 18:12; 22:4, H6038) sits in M05, not M09.
+- "Meek" and "gentle" in the NT (Mat 5:5; 11:29; Gal 5:23) sit in M05.
+- H8213 *šāphēl*, "to bring low", sits in M53. Its 29 verses include 1Sa 2:7, Psa 18:27, Pro 29:23, Isa 2:9–17 and Eze 21:26.
+
+## 6. Other M-codes in the same verses
+
+246 of the 273 verses also hold a word from another M-cluster. Shared verses, top 25:
+
+| M-code | Verses | M-code | Verses |
+| --- | --- | --- | --- |
+| M24 Faintness & Despair | 47 | M23 Strength & Courage | 17 |
+| M47 Inner Seat | 34 | M42 Prayer & Petition | 16 |
+| M72 Authority & Dominion | 33 | M50 Grace & Mercy | 16 |
+| M46 Wealth & Riches | 30 | M58 Wickedness | 14 |
+| M12 Righteousness & Integrity | 28 | M25 Life & Death | 14 |
+| M08 Pride & Arrogance | 23 | M05 Kindness & Friendship | 13 |
+| M18 Desire & Longing | 23 | M56 Sin & Guilt | 13 |
+| M15 Knowing & Understanding | 21 | M41 Being Heard | 12 |
+| M65 Speech & Tongue | 20 | M30 Rebellion & Stubbornness | 12 |
+| M45 Renewal & Transformation | 19 | M63 Reasoning & Interpretation | 12 |
+| M10 Violence & Cruelty | 19 | M03 Grief & Lament | 10 |
+| M22 Praise & Song | 18 | M16 Wisdom & Folly | 10 |
+| | | M26 Judgment & Condemnation | 10 |
+
+**M08 Pride & Arrogance (23 verses)** holds the paired sayings, for example:
+- Jam 4:6, 1Pe 5:5 and Pro 3:34 ("opposes the proud, gives grace to the humble")
+- Pro 29:23 and Pro 11:2
+- Psa 138:6, Job 5:11 and Job 22:29
+- Eze 17:24 and Eze 21:26
+- Dan 4:37
+
+The full list is in the crossref CSV. M08 has not been taken as a strand. The narrative already has **Ch 12 *Pride and the lifted-up heart and spirit***.
+
+**What earlier strands already hold for M09:**
+- **M18 (23 shared verses), OT-97 item 17 (`cluster:M09`).** Three verses are marked forward to M09: Job 31:16 and Rom 15:26 (group B triage v2) and Mar 14:7 (group C triage v2). The others were decided in the M18 strand. For example, Pro 22:9 was read and Mat 19:21 was carried in 10.6.
+- **M02 (6 shared verses), OT-103 item 44 (`cluster:M09`):** Luk 14:21, 2Ch 12:7, 2Ch 12:12, 2Ch 32:26, Zep 2:3 and Psa 10:14. In the 2Ch verses, God's wrath turns when the king humbles himself.
+- **M72 (33 shared verses).** The group D forward list (`m72-group-D-forward-v2-20261012.csv`) marks 9 hand verses forward to M09: 2Ch 12:7, Jer 20:13, Psa 82:4, Neh 9:24, 1Sa 7:13, 2Sa 8:1, 1Ch 18:1, Job 5:15 and Psa 106:42. Most of them are H3665 "subdued" or "the needy". Neh 9:24 was already read and woven in M18 group C.
+- **M47 (34 shared verses).** Under the #1979 closure, each strand checks its M47 verses for dropped placements, by word and not by citation (OT-09). The earlier M47 assessment lists M09 under "D. Moral condition" (`M47-other-cluster-cooccurrence-assessment-v1-20260927.md`).
+- **M25 (14 shared verses).** The life-death overview gives these pairings: to live + low (Isa 57:15), to die + needy (Isa 14:30, Psa 109:16), to die + poor (Luk 16:22).
+- **Open threads matched (`Escalation.ps1 -Action Match -Cluster M09 -Strong <26>`):** only OT-97 (item 17) and OT-103 (item 44). No thread names an M09 Strong's or verse directly.
+
+**In the narrative now.** 51 M09 verses are cited. By chapter:
+
+| Chapter | Verses cited |
+| --- | --- |
+| 10.7 | 12 |
+| 10.13 | 10 |
+| Ch 11 | 9 |
+| 10.6 | 9 |
+| Ch 4 | 7 |
+| 10.10 | 7 |
+| 13.1 | 6 |
+| Ch 2 | 5 |
+| Ch 6, Ch 14, 10.9, 10.1, 10.5, 10.4 | 2 each |
+| Ch 3 | 1 |
+
+There is no section on humility or lowliness. The words appear in passing: "contrite" 16 times, "lowly" 15, "humbled" 15, "humble" 12, "humility" 5, "meekness" 2. A citation is verse-level and does not mean the M09 word was read (#1987). Only 4 M09 verses are sources in the claims register.
+
+**Verses with no other M-code (27).** Unlike the M64 choose verses that were parked (OT-93), these include verses central to the cluster:
+- Num 12:3 (Moses very meek)
+- Mat 23:12, Luk 14:11 and Jam 4:10 (humble yourself and be exalted)
+- Luk 1:52 ("exalted those of humble estate")
+- 2Sa 6:22 (David "abased in my own eyes")
+- the widow's offering (Mar 12:42; Luk 21:3)
+
+The list is in the crossref CSV (blank `other_mcodes`).
+
+## 7. Within-M09 pairs (verses with more than one M09 hit)
+
+There are 33 unordered pairs in 29 verses:
+
+| Pair | Count |
+| --- | --- |
+| H0034 + H1800 (needy, poor) | 10 |
+| H3665 + H3665 (humble, humble) | 4 |
+| G5013 + G5013 | 3 |
+| H0034 + H0034 | 3 |
+| H1793A + H8217 (contrite, lowly) | 2 |
+| H1800 + H6035, H1800 + H7326, H0034 + H6035 | 2 each |
+
+## 8. Earlier M09 work (pre-reset, archived)
+
+The old system produced a full M09 study in June 2026. It holds 134 files in `_analytics/Clusters/archive/stale-20260907/M09-Humility/`: characteristic A–D evidence and tier findings, a findings audit, a VE-lexical extract, and an essay (`wa-m09-humility-essay-v1-20260621`). It predates the 2026-06-25 method reset and is legacy under that reset. It is not used here, and it is noted only so that the investigation it holds is known.
+
+## 9. Points for your direction
+
+M64, M18 and M72 were taken in focused pulls (#1978, #1998). These are the facts that bear on where to start. The choice is yours.
+
+1. **Group A, the humbling words** (12 Strong's, 86 verses), with D (contrite, 2 verses). These words are closest to the inner act the definition names: humbling oneself, a lowly spirit, humility.
+2. **Group B, poor and needy, now split (§3G).**
+   - **G, the poor as seen by another** (127 verses): what the sight moves in a person (93) and in God (34).
+   - **B proper, the poor person's own state, standing and voice** (48 verses). This is where the researcher's dimensions (§3B.1: state of means, inner lack perceived or real, needy as an appeal) are tested.
+   - The poverty word is not a qualifier by default (rule 73, per occurrence).
+3. **H6035 *ʿānāw*** (21 verses), which spans A and B, together with its partner H6041 *ʿānî* (M24, 32 shared verses).
+4. **The words outside M09** (§5, §3D/3E.1). None is re-tagged (#1970). Whether any is read with this strand is for you to say. The main ones:
+   - humility and meekness in M05 (H6038, *praus*)
+   - H8213 in M53
+   - the contrite and broken heart or spirit in M24, M10, M73 and T2 (Psa 51:17, Isa 66:2, Psa 147:3)
+   - the submission verb *hypotassō* in M23 (Jam 4:7, 1Pe 5:5)
+5. **What earlier strands hold:** the 3 M18 forward marks (OT-97), the 6 M02 verses (OT-103), the 9 M72 group D forward marks, and the 34 M47 verses (#1979 check).
+6. **The pride pairing with M08** (23 verses) and Ch 12 *Pride and the lifted-up heart and spirit*.
+
+## 10. Note on the data
+
+- The narrative counts come from `narrative_citation` rows with `last_version IS NULL` in active chapters, which are the current citations. The claims-register count comes from `narrative_claim_source.verse_id`.
+- H8217 *šāphāl* includes "and its" (Eze 17:6), a span-surface artefact of the word's position in the verse. It is counted as a hit, as in the DB.
