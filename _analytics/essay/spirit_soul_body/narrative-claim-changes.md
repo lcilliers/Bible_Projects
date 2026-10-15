@@ -2,6 +2,500 @@
 
 *Published from iba.db on 2026-10-15. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-15 — M08 pride: 10.15 Pride written, angles woven, pride passages anchored in the register
+
+**Strand:** pride and arrogance (M08): pride, boasting, mocking (#2156)
+
+**Researcher:** "ensure all the verses that need a re-read, or incorporation into another cluster read as outstanding items in the register, then proceed with a consolidated cross batch synergy, updating the claims register, weaving and cross checking that the narrative is anchored in the claims register for this group of words" (2026-10-15); earlier: "group B - lets do one more scan of these, it seems they are mostly data.  Set them aside as data unless the terms are supporting other M-codes"; "mark the 34 verses forward as suggested. then start reading A, C and D in batches.  The Ch 13 references should include a reflection on a) are any of the pride words indicative of their characteristics? I suspect there is difference between the 'pride','most high' of God, which is not an assumed position but a undisputed state, verses IB pride that is mostly assumed."
+
+**Method:** M08 overview; group B (height words, 211 verses) scanned: 135 data, 42 pride sense, 34 forward (OT-97). Groups A, C, D with the B pride-sense verses and E read in five batches by passage (355 verses: 312 read, 25 carried from M09, 18 data), each with a Ch 13 reflection; Isa 47:8 read from group F. Outstanding items registered as OT-107 (#2157), OT-97.25 and OT-103.22 closed, OT-105 items added. Cross-batch account (m08-pride-synergy). New 10.15 Pride holds the full account (#1961); angles woven in context into 13.1 (Majesty), 10.2 (Pride and hearing), 10.10 (Pride over another), 10.7 (Presumption), Ch 11 s4 (Lifted up); pointers in Ch 12, 10.14, 10.0. Anchor cross-check: every narrative passage using a pride-group word read against the register (151 before the weave, 110 telling no claim); the pride statements among them registered or told; the passages that use a pride word for another concept left to that concept's strand.
+
+**Sources:** _analytics/Clusters/M08 - pride-arrogance/m08-cluster-overview-v1-20261015.md
+_analytics/Clusters/M08 - pride-arrogance/m08-group-B-scan-v1-20261015.md
+_analytics/Clusters/M08 - pride-arrogance/m08-batch1-reading-v1-20261015.md
+_analytics/Clusters/M08 - pride-arrogance/m08-batch2-reading-v1-20261015.md
+_analytics/Clusters/M08 - pride-arrogance/m08-batch3-reading-v1-20261015.md
+_analytics/Clusters/M08 - pride-arrogance/m08-batch4-reading-v1-20261015.md
+_analytics/Clusters/M08 - pride-arrogance/m08-batch5-reading-v1-20261015.md
+_analytics/Clusters/M08 - pride-arrogance/m08-reading-summary-v1-20261015.md
+_analytics/Clusters/M08 - pride-arrogance/m08-pride-synergy-v1-20261015.md
+_analytics/Clusters/M08 - pride-arrogance/m08-pride-anchor-crosscheck-v1-20261015.md
+
+**Scripts:** _analytics/Clusters/M08 - pride-arrogance/m08-reading-scope-v1-20261015.py
+_analytics/Clusters/M08 - pride-arrogance/m08-batch-pull-v1-20261015.py
+_analytics/Clusters/M08 - pride-arrogance/m08-quote-check-v1-20261015.py
+_analytics/Clusters/M08 - pride-arrogance/m08-narrative-quote-check-v1-20261015.py
+_analytics/Clusters/M08 - pride-arrogance/m08-pride-anchor-scan-v1-20261015.py
+_analytics/Clusters/M08 - pride-arrogance/m08-pride-weave-v1-20261015.py
+_analytics/Clusters/M08 - pride-arrogance/m08-pride-register-update-build-v1-20261015.py
+
+**Original claims changed:** 31 new claims (10.15, 13.1, Ch 11 lexical); existing claims C-182, C-207, C-208, C-209, C-210 and 2-2 told in further passages; no claim withdrawn
+
+**Not woven:** Held for other strands (OT-107): 13.2 (2Pe 2:10-11; Job 33:23), 13.3 (2Co 12:7; 1Ti 3:6), 13.4 (Job 41:34; Job 38:11; Psa 89:9), the 25 God-on-high height verses, the self-exaltation words outside M08 (H7311A, G5312, H5375L, H7682), H2778A, the M06 scorn words, G2754, G1703, pride against love/mourning/rest for M51/M03/M33, the Ch 12 Held vice lists, Amo 8:7 and Job 9:23 unsettled. Ch 1 outline (#2111) not touched.
+
+**Notes:** The 10.15 chapter row was added directly to narrative_chapter (reading_order 26, later chapters +1), as for 10.14, because no Narrative-Register action adds a chapter (#2155).
+
+**Refs:** escalation 2156, escalation 2157, thread OT-107, thread OT-97, thread OT-103, thread OT-105
+
+**Quote check:** 214 parts, 0 failures. every double-quoted part of 10.15 (149) and of the lines added to the eight woven chapters (65), split on the ellipsis, checked against iba.db verse text in canonical order (m08-narrative-quote-check-v1-20261015.py)
+
+- **C-168** telling changed · 10.14 *(opening)* (recorded, 2026-10-15)
+  - passage before: In every one of these the verses set humility against a rising: the proud heart, the lifted-up self, the stiff neck, the haughty eyes. I cannot read humility in Scripture without reading what it stands against. Chapter 12 holds pride, and this section holds its counterpart.
+  - passage after: In every one of these the verses set humility against a rising: the proud heart, the lifted-up self, the stiff neck, the haughty eyes. I cannot read humility in Scripture without reading what it stands against. Pride is in 10.15, and where it goes wrong in Chapter 12. This section holds its counterpart.
+- **C-207** telling changed · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: Pride is placed in the heart and in the spirit.
+  - passage after: Pride is placed in the heart and in the spirit. The whole account of pride, with the boast and the mock, is in 10.15. Here I keep what shows the inner being going wrong.
+- **C-209** telling changed · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: Pride can grow from a beauty that was given. Of the great tree: *"I made it beautiful in the mass of its branches, and all the trees of Eden envied it"* (Ezekiel 31:9); *"Because it towered high and set its top among the clouds, and its heart was proud of its height"* (31:10). The others envied the gift, and the tree was proud of it (10.6).
+  - passage after: Pride can grow from a beauty that was given. Of the great tree: *"I made it beautiful in the mass of its branches, and all the trees of Eden envied it"* (Ezekiel 31:9); *"Because it towered high and set its top among the clouds, and its heart was proud of its height"* (31:10). The others envied the gift, and the tree was proud of it (10.6). Section 10.15 shows the same order with strength, healing, wealth and majesty: given, then held as one's own.
+- **C-212** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew
+  - verdict before: —
+  - verdict after: New
+- **C-213** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride, the boast and the mock belong together in the verses
+  - verdict before: —
+  - verdict after: New
+- **C-214** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them
+  - verdict before: —
+  - verdict after: New
+- **C-215** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride credits to its own hand what was done through it
+  - verdict before: —
+  - verdict after: New
+- **C-216** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The same word names an honour God chooses, gives or restores, and what was given can be turned into pride
+  - verdict before: —
+  - verdict after: New
+- **C-217** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride at its full height says of itself what is true only of God: the proud city's "I am, and there is no one besides me" repeats God's self-statement
+  - verdict before: —
+  - verdict after: New
+- **C-218** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride claims a place that is God's: likeness to the Most High, a god's seat, his temple
+  - verdict before: —
+  - verdict after: New
+- **C-219** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride deceives the one who holds it, and the fear one inspires in others can feed it
+  - verdict before: —
+  - verdict after: New
+- **C-220** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride shuts God out of the thoughts, is set against faith, and gives no rest
+  - verdict before: —
+  - verdict after: New
+- **C-221** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride shows in the eyes, the walk and what is worn, and the verses join it to ease
+  - verdict before: —
+  - verdict after: New
+- **C-222** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride is set against hearing: it will not take rebuke or advice, and the scoffer is known by what he will not receive
+  - verdict before: —
+  - verdict after: New
+- **C-223** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Presumption acts on its own word where another word was given: speaking what God did not command, going up when told not to, not keeping the decision given
+  - verdict before: —
+  - verdict after: New
+- **C-224** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: God works to keep pride from a person: by warnings that open the ear, and by a thorn given against conceit
+  - verdict before: —
+  - verdict after: New
+- **C-225** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: What the verses set against pride is hearing and the fear of God
+  - verdict before: —
+  - verdict after: New
+- **C-226** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride stands over someone: the poor, the widow, the needy left unaided, the righteous; it closes the heart to pity and is set against love
+  - verdict before: —
+  - verdict after: New
+- **C-227** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Pride is also felt by the one under it, and the answer given is to look to the Lord
+  - verdict before: —
+  - verdict after: New
+- **C-228** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The verses do not condemn boasting as such; they judge it by what it rests on
+  - verdict before: —
+  - verdict after: New
+- **C-229** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Boasting in oneself is excluded because what is held was given: grace, gift, and God's choosing of the low
+  - verdict before: —
+  - verdict after: New
+- **C-230** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Boasting in weakness claims no more than is so, and makes room for Christ's power
+  - verdict before: —
+  - verdict after: New
+- **C-231** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The right measure of oneself, and of one's boast, is the measure God assigned; thinking oneself something when one is nothing is self-deception
+  - verdict before: —
+  - verdict after: New
+- **C-232** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: A boast can be in another person, and it puts the one who boasts at stake on the other's conduct
+  - verdict before: —
+  - verdict after: New
+- **C-233** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Mocking takes the sufferer's trust in God as its target, and the sufferer answers God, not the mockers
+  - verdict before: —
+  - verdict after: New
+- **C-234** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: Mocking God's messengers and word goes on until there is no remedy; the same call is met by mocking and by humbling
+  - verdict before: —
+  - verdict after: New
+- **C-235** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: In the proverbs pride brings its own fall, with no other hand named; elsewhere God brings it down
+  - verdict before: —
+  - verdict after: New
+- **C-236** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The one who is high by nature comes near the low; those who make themselves high are known from afar
+  - verdict before: —
+  - verdict after: New
+- **C-237** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The charge of pride can come from another's anger or from a ready explanation, and the verses do not make it true
+  - verdict before: —
+  - verdict after: New
+- **C-238** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The same words are not pride when the height is given or faces God: a heart lifted up in God's ways, strength of soul given, a heart not lifted up and at rest
+  - verdict before: —
+  - verdict after: New
+- **C-239** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: God's majesty is his own and everlasting, shown in what he does, turned toward help, and joined to what only he does
+  - verdict before: —
+  - verdict after: New
+- **C-240** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: God's majesty is challenged and not overturned; his laughter answers only those who rise against him and is never aimed at the weak
+  - verdict before: —
+  - verdict after: New
+- **C-241** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: The Son's majesty is received and grounded, stands beside his being handed over, and does not defend itself against mockery; he did not grasp what pride grasps
+  - verdict before: —
+  - verdict after: New
+- **C-242** claim created (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: One Hebrew word, ebrah, names the overflow of anger and the overflow of pride
+  - verdict before: —
+  - verdict after: New
+- **C-212** telling added · 10.15 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The words for pride in Scripture are words of height. A heart is "lifted up", a spirit is "haughty", eyes are "raised too high", a soul is "puffed up". The same Hebrew words that name human pride also name God's majesty. "In the greatness of your majesty you overthrow your adversaries" (Exodus 15:7) uses the word that elsewhere is "the pride of Moab" (Jeremiah 48:29). The English chooses "majesty" for God and "pride" for people, but the Hebrew does not change. So I cannot read pride in Scripture without asking whose height it is, and where it comes from.
+  - note: in full
+- **C-212** telling added · 13.1 *Majesty* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The words that name human pride also name God's majesty, and the verses say what his is like. - **It is his own.** "The Lord reigns; he is robed in majesty … Your throne is established from of old; you are from everlasting" (Psalm 93:1–2). - **It is shown in what he does.** "I will sing to the Lord, for he has triumphed gloriously; the horse and his rider he has thrown into the sea" (Exodus 15:1). "In the greatness of your majesty you overthrow your adversaries" (15:7). The enemy's own rising is quoted in the same song: "I will pursue, I will overtake, I will divide the spoil, my desire shall have its fill of them" (15:9). - **It turns toward help.** "There is none like God, O Jeshurun, who rides through the heavens to your help, through the skies in his majesty" (Deuteronomy 33:26). "Ascribe power to God, whose majesty is over Israel … he is the one who gives power and strength to his people" (Psalm 68:34–35). - **It goes with what only he does.** God says to Job, "Adorn yourself with majesty and dignity … look on everyone who is proud and abase him … Then will I also acknowledge to you that your own right hand can save you" (Job 40:10–14). - **It is hidden from.** "Enter into the rock and hide in the dust from before the terror of the Lord, and from the splendor of his majesty" (Isaiah 2:10), in the day when "the Lord alone will be exalted" (2:11). - **It is not seen by all.** "If favor is shown to the wicked, he does not learn righteousness … and does not see the majesty of the Lord" (Isaiah 26:10). - **It is a name.** The Son "sat down at the right hand of the Majesty on high" (Hebrews 1:3).
+  - note: in part: the same words
+- **C-212** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Lifted up.** One Hebrew word names the heart that grew proud when Uzziah was strong (2 Chronicles 26:16) and Jehoshaphat's heart, "courageous in the ways of the Lord" (2 Chronicles 17:6). One family of words is God's majesty and human pride (Exodus 15:7; Jeremiah 48:29). And the boast moves: "Let not the wise man boast in his wisdom" (Jeremiah 9:23), "but let him who boasts boast in this, that he understands and knows me" (9:24). What differs is where the height comes from, and which way it faces (10.15).
+  - note: in part: one family of words is God's majesty and human pride
+- **C-213** telling added · 10.15 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride also speaks. It boasts, and it mocks. This section holds all three, because the verses keep them together: *"'Scoffer' is the name of the arrogant, haughty man who acts with arrogant pride"* (Proverbs 21:24).
+  - note: in full
+- **C-214** telling added · 10.15 *Given, then held as one's own* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The clearest thing the verses say about pride is where it comes from. In account after account a person is given something, and the heart rises on it. - **Strength.** Uzziah "was marvelously helped, till he was strong. But when he was strong, he grew proud, to his destruction" (2 Chronicles 26:15–16). - **Healing.** Hezekiah was healed and given a sign, and gifts were brought "so that he was exalted in the sight of all nations". Then: "But Hezekiah did not make return according to the benefit done to him, for his heart was proud" (2 Chronicles 32:23–25). - **Majesty.** "The Most High God gave Nebuchadnezzar your father kingship and greatness and glory and majesty … But when his heart was lifted up and his spirit was hardened so that he dealt proudly, he was brought down from his kingly throne" (Daniel 5:18–20). - **Wealth.** "By your great wisdom in your trade you have increased your wealth, and your heart has become proud in your wealth" (Ezekiel 28:5). - **Beauty and height.** Of the great tree God says, "I made it beautiful", and then, "its heart was proud of its height" (Ezekiel 31:9–10). Chapter 12 follows the king of Tyre's beauty the same way.
+  - note: in full
+- **C-214** telling added · 10.15 *Given, then held as one's own* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: So the standing in these verses is real. It was given. Pride holds it as if it had not been given. I read that this is the line the verses draw. It does not run between having height and having none. It runs between height that is one's own by nature, height that is given, and height that is taken as one's own.
+  - note: in full
+- **C-214** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride can grow from a beauty that was given. Of the great tree: *"I made it beautiful in the mass of its branches, and all the trees of Eden envied it"* (Ezekiel 31:9); *"Because it towered high and set its top among the clouds, and its heart was proud of its height"* (31:10). The others envied the gift, and the tree was proud of it (10.6). Section 10.15 shows the same order with strength, healing, wealth and majesty: given, then held as one's own.
+  - note: pointer
+- **C-214** telling added · 13.1 *Majesty* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **He gives height.** He gave Nebuchadnezzar "kingship and greatness and glory and majesty" (Daniel 5:18). He chose for his people "the pride of Jacob whom he loves" (Psalm 47:4). "Not from the east or from the west and not from the wilderness comes lifting up, but it is God who executes judgment, putting down one and lifting up another" (Psalm 75:6–7). Though he is high, "he regards the lowly, but the haughty he knows from afar" (Psalm 138:6).
+  - note: in part: the height he gives
+- **C-214** telling added · 04 *The heart and anger* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The heart is named **just before** the anger, in the state it was in when the anger came. - Haman "went out that day joyful and glad of heart. But when Haman saw Mordecai in the king's gate, that he neither rose nor trembled before him, he was filled with wrath against Mordecai" (Esther 5:9). - "But when he was strong, he grew proud, to his destruction" (2 Chronicles 26:16). The Hebrew has *his heart was lifted up*. Three verses later Uzziah's anger at the priests breaks out with leprosy (26:19).
+  - note: in part: Uzziah's heart lifted up when he was strong
+- **C-214** telling added · 10.3 *Remembering as a cure, and remembering as hope* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: So remembering is commanded. - **Against self-righteousness:** "Remember and do not forget how you provoked the Lord your God to wrath in the wilderness" (Deuteronomy 9:7). It comes straight after "Do not say in your heart … 'It is because of my righteousness'" (9:4). - **Against fear:** "you shall not be afraid of them but you shall remember what the Lord your God did to Pharaoh and to all Egypt" (Deuteronomy 7:18). - **Against the pride of having:** "You shall remember the Lord your God, for it is he who gives you power to get wealth" (Deuteronomy 8:18). - **Kept in a song**, so it will not be lost: "this song shall confront them as a witness (for it will live unforgotten in the mouths of their offspring)" (Deuteronomy 31:21).
+  - note: in part: against the pride of having
+- **C-214** telling added · 10.4 *What thinking does* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The same skill is put to different uses: - The tabernacle craftsmen were given it for God's house (Exodus 35:35). Huram-abi, sent to Solomon for the temple, was trained "to do all sorts of engraving and execute any design that may be assigned him" (2 Chronicles 2:14). His skill was to carry out a design another gave him. - King Uzziah's engineers turned it to war: "he made machines, invented by skillful men … And his fame spread far, for he was marvelously helped, till he was strong" (2 Chronicles 26:15). The next verse: "But when he was strong, he grew proud, to his destruction" (26:16). - Those "at ease in Zion" (Amos 6:1) turned it on themselves: they "like David invent for themselves instruments of music" (6:5).
+  - note: in part: Uzziah strong, then proud
+- **C-214** telling added · 10.6 *Thirst answered* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: A thirst met can be forgotten. *"You gave them bread from heaven for their hunger and brought water for them out of the rock for their thirst … But they and our fathers acted presumptuously and stiffened their neck"*; they *"were not mindful of the wonders that you performed among them"* (Nehemiah 9:15–17). Isaiah sets the same memory beside the wicked: *"They did not thirst when he led them through the deserts; he made water flow for them from the rock … There is no peace, says the Lord, for the wicked"* (Isaiah 48:21–22). I read a want met so fully that it was no longer felt, and the giver forgotten with it (10.3).
+  - note: in part: the giver forgotten
+- **C-215** telling added · 10.15 *Given, then held as one's own* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **It credits its own hand.** The king of Assyria says, "By the strength of my hand I have done it, and by my wisdom, for I have understanding" (Isaiah 10:13). In the same passage he is the rod in the Lord's hand: "Shall the axe boast over him who hews with it?" (10:5, 15). Nebuchadnezzar: "Is not this great Babylon, which I have built by my mighty power … for the glory of my majesty?" (Daniel 4:30). I read pride here as crediting to itself what was done through it.
+  - note: in full
+- **C-215** telling added · 10.13 *Those who carry it out* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Some people carry out God's anger, and the verses judge how they do it. - **Assyria is the rod, and has its own heart:** "Woe to Assyria, the rod of my anger … But he does not so intend, and his heart does not so think; but it is in his heart to destroy" (Isaiah 10:5, 7). He boasts, "By the strength of my hand I have done it, and by my wisdom" (10:13), and the Lord "will punish the speech of the arrogant heart of the king of Assyria and the boastful look in his eyes" (10:12). "Shall the axe boast over him who hews with it …?" (10:15). - **Babylon goes too far:** "I gave them into your hand; you showed them no mercy" (Isaiah 47:6). "While I was angry but a little, they furthered the disaster" (Zechariah 1:15). - **Israel's army goes past the commission:** "you have killed them in a rage that has reached up to heaven" (2 Chronicles 28:9). - **Saul is judged for not carrying it out:** "Because you did not obey the voice of the Lord and did not carry out his fierce wrath against Amalek, therefore the Lord has done this thing to you this day" (1 Samuel 28:18). - **The governing authority:** "he is the servant of God, an avenger who carries out God's wrath on the wrongdoer. Therefore one must be in subjection, not only to avoid God's wrath but also for the sake of conscience" (Romans 13:4–5).
+  - note: in part: the rod that boasts
+- **C-215** telling added · 11 *Authority as a standing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **What moves inside it.** The same standing is filled by very different acts. - **Fear.** Pilate "was even more afraid" (John 19:8), and then said, "Do you not know that I have authority to release you and authority to crucify you?" (19:10). I read his claim as coming out of his fear. - **Pride.** "Is not this great Babylon, which I have built by my mighty power as a royal residence and for the glory of my majesty?" (Daniel 4:30). The psalmist, given dominion over the works of God's hands, answers the other way, with wonder: "what is man that you are mindful of him", and "O Lord, our Lord, how majestic is your name in all the earth!" (Psalm 8:4, 9). - **Wanting it, and trying to buy it.** Simon offered money: "Give me this power also". Peter: "your heart is not right before God" (Acts 8:19, 21). - **Hatred.** Joseph's brothers: "Are you indeed to reign over us? Or are you indeed to rule over us?" So they hated him even more for his dreams and for his words (Genesis 37:8). - **Conviction and fury.** "I myself was convinced that I ought to do many things in opposing the name of Jesus of Nazareth"; "in raging fury against them I persecuted them" (Acts 26:9, 11). - **Faith.** The centurion: "For I too am a man under authority, with soldiers under me." Jesus "marveled": "with no one in Israel have I found such faith" (Matthew 8:9–10). - **Care for another.** Paul argues that a right is his, and then: "we have not made use of this right, but we endure anything rather than put an obstacle in the way of the gospel of Christ" (1 Corinthians 9:12). To others: "take care that this right of yours does not somehow become a stumbling block to the weak" (8:9). The authority "the Lord gave for building you up and not for destroying you" (2 Corinthians 10:8) he would rather not have to be "severe in my use of" (13:10). - **Joy.** "do not rejoice in this, that the spirits are subject to you, but rejoice that your names are written in heaven" (Luke 10:20). "Not that we lord it over your faith, but we work with you for your joy" (2 Corinthians 1:24). - **The fear of God, as its limit.** "You shall not rule over him ruthlessly but shall fear your God" (Leviticus 25:43). - **Knowing who rules.** "your kingdom shall be confirmed for you from the time that you know that Heaven rules" (Daniel 4:26).
+  - note: in part: pride: built by my mighty power
+- **C-215** telling added · 12 *Pride and the lifted-up heart and spirit* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Before the fall named in Daniel 5:20 stands the boast itself: "Is not this great Babylon, which I have built by my mighty power as a royal residence and for the glory of my majesty?" "While the words were still in the king's mouth, there fell a voice from heaven" (Daniel 4:30–31; Chapter 4). He had been told that his kingdom would stand "from the time that you know that Heaven rules" (4:26).
+  - note: in part
+- **C-216** telling added · 10.15 *Given, then held as one's own* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **The same word can name an honour God gives.** "He chose our heritage for us, the pride of Jacob whom he loves" (Psalm 47:4). To a city "forsaken and hated": "I will make you majestic forever, a joy from age to age" (Isaiah 60:15). "The Lord is restoring the majesty of Jacob" (Nahum 2:2). Israel's triumph is the Lord himself: "the sword of your triumph" (Deuteronomy 33:29). Where God chooses, gives or restores it, the word is honour. And what was given can be turned. God's own sanctuary became "the pride of your power, the delight of your eyes, and the yearning of your soul" (Ezekiel 24:21). His beautiful ornament "they used for pride, and they made their abominable images … of it" (Ezekiel 7:20).
+  - note: in full
+- **C-216** telling added · 13.1 *Majesty* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **He gives height.** He gave Nebuchadnezzar "kingship and greatness and glory and majesty" (Daniel 5:18). He chose for his people "the pride of Jacob whom he loves" (Psalm 47:4). "Not from the east or from the west and not from the wilderness comes lifting up, but it is God who executes judgment, putting down one and lifting up another" (Psalm 75:6–7). Though he is high, "he regards the lowly, but the haughty he knows from afar" (Psalm 138:6).
+  - note: in part: the pride of Jacob whom he loves
+- **C-217** telling added · 10.15 *The heart that says what God says* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: God says of himself: "I am the Lord, and there is no other, besides me there is no God" (Isaiah 45:5). "I am God, and there is no other; I am God, and there is none like me" (Isaiah 46:9). Two chapters later Babylon is addressed as the one "who say in your heart, 'I am, and there is no one besides me'" (Isaiah 47:8), and again, "you said in your heart, 'I am, and there is no one besides me'" (47:10). Nineveh "said in her heart, 'I am, and there is no one else'" (Zephaniah 2:15). The words are nearly the same. I read that pride at its full height says of itself what is true only of God.
+  - note: in full
+- **C-217** telling added · 13.1 *Majesty* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Only he says it of himself.** "I am the Lord, and there is no other, besides me there is no God" (Isaiah 45:5); "I am God, and there is none like me" (Isaiah 46:9). The proud city says the same in its heart: "I am, and there is no one besides me" (Isaiah 47:8). I read that the words true of him are the words pride takes for itself (10.15).
+  - note: in full
+- **C-218** telling added · 10.15 *The heart that says what God says* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The same claim comes in other words. - "You said in your heart, 'I will ascend to heaven … I will make myself like the Most High'" (Isaiah 14:13–14). - The prince of Tyre: "you have said, 'I am a god' … yet you are but a man, and no god, though you make your heart like the heart of a god" (Ezekiel 28:2). The verse names the gap itself: a heart *made* like a god's, in a man. - At the end, one "who opposes and exalts himself against every so-called god or object of worship, so that he takes his seat in the temple of God, proclaiming himself to be God" (2 Thessalonians 2:4).
+  - note: in full
+- **C-208** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Likening.** Comparing is how love praises ("I compare you, my love", Song of Songs 1:9), how comfort reaches out (Lamentations 2:13), and how worship ends ("who in the skies can be compared to the Lord?", Psalm 89:6). It is also how pride rises: "I will make myself like the Most High" (Isaiah 14:14).
+  - note: in part: how pride rises
+- **C-219** telling added · 10.15 *The heart that says what God says* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **It deceives the one who holds it.** "The pride of your heart has deceived you, you who live in the clefts of the rock, in your lofty dwelling, who say in your heart, 'Who will bring me down to the ground?'" (Obadiah 3). Edom had a second deceiver: "The horror you inspire has deceived you, and the pride of your heart" (Jeremiah 49:16). The fear that others felt fed what Edom told itself.
+  - note: in full
+- **C-220** telling added · 10.15 *The heart that says what God says* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **It shuts God out of the thoughts.** "In the pride of his face the wicked does not seek him; all his thoughts are, 'There is no God'" (Psalm 10:4). "Behold, his soul is puffed up; it is not upright within him, but the righteous shall live by his faith" (Habakkuk 2:4). The puffed-up soul is set against faith. The next verse gives it no rest: "an arrogant man who is never at rest. His greed is as wide as Sheol" (2:5).
+  - note: in full
+- **C-221** telling added · 10.15 *The heart that says what God says* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **It shows.** In the eyes: "Haughty eyes and a proud heart, the lamp of the wicked, are sin" (Proverbs 21:4). In the walk: the daughters of Zion "walk with outstretched necks, glancing wantonly with their eyes" (Isaiah 3:16). Worn: "Therefore pride is their necklace" (Psalm 73:6), and the "therefore" points back to ease: "they have no pangs until death" (73:4). It is placed in the heart and in the spirit (Chapter 12), and Jesus names it among what comes "from within, out of the heart of man" (Mark 7:21–22).
+  - note: in full
+- **C-222** telling added · 10.15 *Pride and hearing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Across all its words, pride is set against hearing. - "Hear and give ear; be not proud, for the Lord has spoken" (Jeremiah 13:15). And then: "if you will not listen, my soul will weep in secret for your pride" (13:17). - "By insolence comes nothing but strife, but with those who take advice is wisdom" (Proverbs 13:10). - The scoffer is known by what he will not receive. He "does not listen to rebuke" (Proverbs 13:1); he "does not like to be reproved; he will not go to the wise" (15:12). "Do not reprove a scoffer, or he will hate you; reprove a wise man, and he will love you" (9:8). The same rebuke meets two hearts. "A scoffer seeks wisdom in vain" (14:6). When he is struck, others learn: "Strike a scoffer, and the simple will learn prudence" (19:25). - "Now therefore do not scoff, lest your bonds be made strong … Give ear, and hear my voice" (Isaiah 28:22–23).
+  - note: in full
+- **C-222** telling added · 10.2 *Pride and hearing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride is set against the ear. "Hear and give ear; be not proud, for the Lord has spoken" (Jeremiah 13:15). The scoffer is known by what he will not hear: he "does not listen to rebuke" (Proverbs 13:1); he "does not like to be reproved; he will not go to the wise" (Proverbs 15:12). "By insolence comes nothing but strife, but with those who take advice is wisdom" (Proverbs 13:10). The word itself can be scorned: "the word of the Lord is to them an object of scorn" (Jeremiah 6:10, above). God opens the ear against it: "he opens the ears of men … that he may turn man aside from his deed and conceal pride from a man" (Job 33:16–17). I read pride as the ear that will not take a word against itself, the opposite of the humility above. The whole account is in 10.15.
+  - note: in full
+- **C-222** telling added · 10.2 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Ears can be closed to a word that is still being spoken. "To whom shall I speak and give warning, that they may hear? Behold, their ears are uncircumcised, they cannot listen; behold, the word of the Lord is to them an object of scorn; they take no pleasure in it" (Jeremiah 6:10). The act is a hearing that does not happen. "Cannot listen" is followed by what they do with the word instead: they scorn it. Taking no pleasure in it is the measure of the scorn. I read the uncircumcised ears as hearing that lacks the mark of belonging to him. The one who must speak is left holding it: "Therefore I am full of the wrath of the Lord; I am weary of holding it in" (6:11).
+  - note: in part: the word scorned
+- **C-223** telling added · 10.15 *Pride and hearing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Presumption** is pride acting on its own word. - The prophet "who presumes to speak a word in my name that I have not commanded him to speak" (Deuteronomy 18:20). Of such a word: "You need not be afraid of him" (18:22). - Israel was told, "Do not go up or fight, for I am not in your midst". "So I spoke to you, and you would not listen; but you rebelled against the command of the Lord and presumptuously went up into the hill country" (Deuteronomy 1:42–43). It came just after "We have sinned against the Lord. We ourselves will go up" (1:41). I read a presumption that wore the words of repentance and went up when the time to go up had passed. - "They and our fathers acted presumptuously and stiffened their neck and did not obey your commandments … and were not mindful of the wonders that you performed among them" (Nehemiah 9:16–17). God's answer is in the same breath: "But you are a God ready to forgive" (9:17). - The psalmist asks to be kept from it: "Keep back your servant also from presumptuous sins; let them not have dominion over me!" (Psalm 19:13).
+  - note: in full
+- **C-223** telling added · 10.7 *Presumption* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Some choices go beyond what was given. Israel was told, "Do not go up or fight, for I am not in your midst". "So I spoke to you, and you would not listen; but you rebelled against the command of the Lord and presumptuously went up into the hill country" (Deuteronomy 1:42–43). The prophet "who presumes to speak a word in my name that I have not commanded him to speak" (Deuteronomy 18:20) chooses his own word in place of God's. I read presumption as a choice made on one's own word where another word had been given.
+  - note: in full
+- **C-223** telling added · 10.7 *Others around a choice* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Fear is learned there too, at a meal: *"that you may learn to fear the Lord your God always"* (Deuteronomy 14:23). In the same passage the people spend their money *"for whatever you desire … whatever your appetite craves"*, and *"eat there before the Lord your God and rejoice"* (14:26). Fear of the Lord, a satisfied appetite and joy belong to the one meal, and the passage does not set them against each other. When a case is *"too difficult for you"*, the decision is sought at the place, and what is asked is *"you shall be careful to do according to all that they direct you"* (17:8, 10). Presumption is the opposite, and its end is that *"all the people shall hear and fear and not act presumptuously again"* (17:13). I read this as a person's own judgement reaching its limit and being asked to yield. The passage names the limit and the carefulness, not the struggle.
+  - note: in part: presumption is the opposite
+- **C-223** telling added · 10.9 *Kept from what would rule* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The psalmist names two kinds of sin and asks differently for each. "Who can discern his errors? Declare me innocent from hidden faults. Keep back your servant also from presumptuous sins; let them not have dominion over me! Then I shall be blameless, and innocent of great transgression" (Psalm 19:12–13). Only the sins done knowingly are spoken of as able to rule him, and from those he asks to be held back. Elsewhere, in the same breath as longing for the commandments: "Keep steady my steps according to your promise, and let no iniquity get dominion over me. Redeem me from man's oppression, that I may keep your precepts" (Psalm 119:133–134). Two dominions stand side by side, sin within and oppression without, and he asks God against both (Chapter 14 for sin's rule ended).
+  - note: in part: presumptuous sins that would rule
+- **C-224** telling added · 10.15 *Pride and hearing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **God works to keep pride from a person.** "He opens the ears of men and terrifies them with warnings, that he may turn man aside from his deed and conceal pride from a man" (Job 33:16–17). Paul, given "the surpassing greatness of the revelations", was given a second thing "to keep me from becoming conceited": "a thorn … in the flesh" (2 Corinthians 12:7). The answer to his prayer was "My grace is sufficient for you, for my power is made perfect in weakness" (12:9).
+  - note: in full
+- **C-224** telling added · 10.2 *(opening)* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Learning to fear God takes a life. Israel was gathered "so that they may learn to fear me all the days that they live on the earth, and that they may teach their children so" (Deuteronomy 4:10). The ear decides much: "The ear that listens to life-giving reproof will dwell among the wise" (Proverbs 15:31). God can open the ear himself. In a dream "he opens the ears of men and terrifies them with warnings, that he may turn man aside from his deed and conceal pride from a man" (Job 33:16–17). Chapter 2 ("Living before God", "Delivered from death") gives the setting.
+  - note: in part: God opens the ear to conceal pride
+- **C-225** telling added · 10.15 *Pride and hearing* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: What the verses set against pride is hearing, and fear. "So do not become proud, but fear" (Romans 11:20). "The fear of the Lord is hatred of evil. Pride and arrogance and the way of evil and perverted speech I hate" (Proverbs 8:13). Section 10.2 takes this up.
+  - note: in full
+- **C-225** telling added · 10.12 *The fear of God* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Fear of God is also called for as a guard, and set against pride. "So do not become proud, but fear. For if God did not spare the natural branches, neither will he spare you" (Romans 11:20–21). "Let us fear lest any of you should seem to have failed to reach it" (Hebrews 4:1).
+  - note: in part
+- **C-226** telling added · 10.15 *Pride over another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride is seldom alone in these verses. It stands over someone. - **The poor.** "In arrogance the wicked hotly pursue the poor" (Psalm 10:2). "Whoever mocks the poor insults his Maker" (Proverbs 17:5). The mocking reaches past the poor man to the one who made him. - **The widow.** "The Lord tears down the house of the proud but maintains the widow's boundaries" (Proverbs 15:25). - **The needy left unaided.** "Behold, this was the guilt of your sister Sodom: she and her daughters had pride, excess of food, and prosperous ease, but did not aid the poor and needy" (Ezekiel 16:49). Pride is listed with plenty and ease, and with what was not done. - **The righteous.** Lips "which speak insolently against the righteous in pride and contempt" (Psalm 31:18). "The insolent utterly deride me … The insolent smear me with lies … The insolent have dug pitfalls for me" (Psalm 119:51, 69, 85). Against each, the one who bears it holds to the law: "but I do not turn away from your law" (119:51). - **With the heart closed.** "They close their hearts to pity; with their mouths they speak arrogantly" (Psalm 17:10). - **Against love.** "'Knowledge' puffs up, but love builds up" (1 Corinthians 8:1). "Love … does not envy or boast; it is not arrogant" (13:4). Conceit goes with provoking and envying: "Let us not become conceited, provoking one another, envying one another" (Galatians 5:26). - **Where mourning belongs.** "And you are arrogant! Ought you not rather to mourn?" (1 Corinthians 5:2).
+  - note: in full
+- **C-226** telling added · 10.10 *Pride over another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride between people stands over someone weaker. "In arrogance the wicked hotly pursue the poor" (Psalm 10:2). "Whoever mocks the poor insults his Maker" (Proverbs 17:5). "The Lord tears down the house of the proud but maintains the widow's boundaries" (Proverbs 15:25). Sodom's pride sat with plenty and ease, and the poor and needy were not helped (Ezekiel 16:49). It closes the heart: "They close their hearts to pity; with their mouths they speak arrogantly" (Psalm 17:10). It divides: "Let us not become conceited, provoking one another, envying one another" (Galatians 5:26). And it is set against love: "'knowledge' puffs up, but love builds up" (1 Corinthians 8:1).
+  - note: in full
+- **C-227** telling added · 10.15 *Pride over another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: It is also felt from below. "Our soul has had more than enough of the scorn of those who are at ease, of the contempt of the proud" (Psalm 123:4). The psalm's answer is to look elsewhere: "our eyes look to the Lord our God, till he has mercy upon us" (123:2). Section 10.10 follows pride between people.
+  - note: in full
+- **C-227** telling added · 10.10 *Pride over another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The one under it carries it: "Our soul has had more than enough of the scorn of those who are at ease, of the contempt of the proud" (Psalm 123:4).
+  - note: in part
+- **C-228** telling added · 10.15 *The boast* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: A boast is what a person stands on, said aloud. The verses do not condemn boasting as such. They judge it by what it rests on.
+  - note: in full
+- **C-182** telling added · 10.15 *The boast* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Moved.** The boast is not taken away. It is turned. "But let him who boasts boast in this, that he understands and knows me, that I am the Lord who practices steadfast love, justice, and righteousness in the earth. For in these things I delight, declares the Lord" (Jeremiah 9:24). "Let the one who boasts, boast in the Lord" (1 Corinthians 1:31). "My soul makes its boast in the Lord; let the humble hear and be glad" (Psalm 34:2). The same Greek word becomes joy: "we rejoice in hope of the glory of God. Not only that, but we rejoice in our sufferings" (Romans 5:2–3).
+  - note: in full
+- **C-182** telling added · 05 *Rest for the soul* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: "learn from me, for I am gentle and lowly in heart, and you will find rest for your souls" (Matthew 11:29). The rest is promised to the soul, and it is found by learning from one who is lowly in heart. The word received with meekness "is able to save your souls" (James 1:21). Leaders are to be obeyed because "they are keeping watch over your souls" (Hebrews 13:17). And the soul boasts in the Lord, not in itself: "My soul makes its boast in the Lord; let the humble hear and be glad" (Psalm 34:2). Humility is in 10.14.
+  - note: in part: the soul boasts in the Lord, not in itself
+- **C-182** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Lifted up.** One Hebrew word names the heart that grew proud when Uzziah was strong (2 Chronicles 26:16) and Jehoshaphat's heart, "courageous in the ways of the Lord" (2 Chronicles 17:6). One family of words is God's majesty and human pride (Exodus 15:7; Jeremiah 48:29). And the boast moves: "Let not the wise man boast in his wisdom" (Jeremiah 9:23), "but let him who boasts boast in this, that he understands and knows me" (9:24). What differs is where the height comes from, and which way it faces (10.15).
+  - note: in part: the boast moves
+- **C-229** telling added · 10.15 *The boast* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Excluded.** "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast" (Ephesians 2:8–9). "Then what becomes of our boasting? It is excluded" (Romans 3:27). God chose what is low "so that no human being might boast in the presence of God" (1 Corinthians 1:29). A boast is shut out because what is held was given.
+  - note: in full
+- **C-230** telling added · 10.15 *The boast* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **In weakness.** Forced to boast, Paul turns it round: "If I must boast, I will boast of the things that show my weakness" (2 Corinthians 11:30). He holds back even a true boast, "so that no one may think more of me than he sees in me or hears from me" (12:6). "I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me" (12:9). I read this as the opposite of pride's standing: no more is claimed than is so.
+  - note: in full
+- **C-231** telling added · 10.15 *The boast* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Within a measure.** "We will not boast beyond limits, but will boast only with regard to the area of influence God assigned to us" (2 Corinthians 10:13). It matches the measure for thinking of oneself: "not to think of himself more highly than he ought to think, but to think with sober judgment, each according to the measure of faith that God has assigned" (Romans 12:3). And its opposite: "For if anyone thinks he is something, when he is nothing, he deceives himself" (Galatians 6:3).
+  - note: in full
+- **C-232** telling added · 10.15 *The boast* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Of others.** Paul's most frequent boast is in other people. "I have great pride in you; I am filled with comfort" (2 Corinthians 7:4). "What is our hope or joy or crown of boasting before our Lord Jesus at his coming? Is it not you?" (1 Thessalonians 2:19).
+  - note: in full
+- **C-232** telling added · 10.10 *Pride over another* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The word for boasting turns the other way between people when the boast is in another. "I have great pride in you; I am filled with comfort" (2 Corinthians 7:4). "So give proof before the churches of your love and of our boasting about you to these men" (2 Corinthians 8:24). The whole account is in 10.15.
+  - note: in full
+- **C-233** telling added · 10.15 *The mock* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Mocking is pride turned outward, on another. - It takes the sufferer's trust as its target. "All who see me mock me; they make mouths at me; they wag their heads; 'He trusts in the Lord; let him deliver him'" (Psalm 22:7–8). The sufferer answers God, not them: "Yet you are he who took me from the womb" (22:9). - It belittles. Sanballat "was angry and greatly enraged, and he jeered at the Jews. And he said … 'What are these feeble Jews doing?'" (Nehemiah 4:1–2). - It is aimed at the one who carries God's word. "I have become a laughingstock all the day; everyone mocks me … the word of the Lord has become for me a reproach and derision all day long" (Jeremiah 20:7–8). And still: "there is in my heart as it were a burning fire shut up in my bones, and I am weary with holding it in, and I cannot" (20:9). - It mocks the word until there is no way back. God "sent persistently to them by his messengers, because he had compassion on his people … But they kept mocking the messengers of God, despising his words and scoffing at his prophets, until the wrath of the Lord rose against his people, until there was no remedy" (2 Chronicles 36:15–16). When Hezekiah's couriers called the people to return, "they laughed them to scorn and mocked them. However, some men … humbled themselves and came" (2 Chronicles 30:10–11). The same call was met by mocking and by humbling. - "Do not be deceived: God is not mocked, for whatever one sows, that will he also reap" (Galatians 6:7).
+  - note: in full
+- **C-233** telling added · 10.5 *Speech before words* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Mockery can begin without words. "All who see me mock me; they make mouths at me; they wag their heads" (Psalm 22:7), and then the words: "He trusts in the Lord; let him deliver him; let him rescue him, for he delights in him!" (22:8). The mouth and the head move first. The words that follow turn his trust and God's delight into a taunt. He answers God, not them: "Yet you are he who took me from the womb" (22:9; 13.1).
+  - note: in part
+- **C-233** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **God's delight in a person.** It is the thanks of the rescued: "he rescued me, because he delighted in me" (Psalm 18:19). It is the mockers' taunt over a sufferer: "let him rescue him, for he delights in him!" (Psalm 22:8). The claim is the same. The sufferer does not answer the mockers; he answers God: "Yet you are he who took me from the womb" (22:9) (13.1).
+  - note: in part: the mockers' taunt
+- **C-233** telling added · 13.1 *Delight* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **His delight in people's mouths.** Joshua and Caleb: "If the Lord delights in us, he will bring us into this land and give it to us" (Numbers 14:8), with "do not fear the people of the land" (14:9); the congregation "said to stone them with stones" (14:10). A man whose "close friend in whom I trusted, who ate my bread, has lifted his heel against me" (Psalm 41:9) says, "By this I know that you delight in me: my enemy will not shout in triumph over me" (41:11). The mockers: "He trusts in the Lord; let him deliver him; let him rescue him, for he delights in him!" (Psalm 22:8). The words that are thanks in Psalm 18:19 are a taunt here, and the sufferer answers God, not them: "Yet you are he who took me from the womb" (22:9). David will not presume it: "But if he says, 'I have no pleasure in you,' behold, here I am, let him do to me what seems good to him" (2 Samuel 15:26). What each person does with it is placed with the act: not fearing (10.9), yielding (10.7), mockery (10.5) and betrayal (10.10).
+  - note: in part: the mockers
+- **C-234** telling added · 10.15 *The mock* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Mocking is pride turned outward, on another. - It takes the sufferer's trust as its target. "All who see me mock me; they make mouths at me; they wag their heads; 'He trusts in the Lord; let him deliver him'" (Psalm 22:7–8). The sufferer answers God, not them: "Yet you are he who took me from the womb" (22:9). - It belittles. Sanballat "was angry and greatly enraged, and he jeered at the Jews. And he said … 'What are these feeble Jews doing?'" (Nehemiah 4:1–2). - It is aimed at the one who carries God's word. "I have become a laughingstock all the day; everyone mocks me … the word of the Lord has become for me a reproach and derision all day long" (Jeremiah 20:7–8). And still: "there is in my heart as it were a burning fire shut up in my bones, and I am weary with holding it in, and I cannot" (20:9). - It mocks the word until there is no way back. God "sent persistently to them by his messengers, because he had compassion on his people … But they kept mocking the messengers of God, despising his words and scoffing at his prophets, until the wrath of the Lord rose against his people, until there was no remedy" (2 Chronicles 36:15–16). When Hezekiah's couriers called the people to return, "they laughed them to scorn and mocked them. However, some men … humbled themselves and came" (2 Chronicles 30:10–11). The same call was met by mocking and by humbling. - "Do not be deceived: God is not mocked, for whatever one sows, that will he also reap" (Galatians 6:7).
+  - note: in part: until there was no remedy
+- **C-235** telling added · 10.15 *Where it ends* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Its own fall.** In the proverbs no other hand is named: "Pride goes before destruction, and a haughty spirit before a fall" (Proverbs 16:18). "One's pride will bring him low" (Proverbs 29:23). "When pride comes, then comes disgrace" (Proverbs 11:2). The rod blossoms and pride buds: "the rod has blossomed; pride has budded" (Ezekiel 7:10).
+  - note: in full
+- **C-235** telling added · 10.15 *Where it ends* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **God brings it down.** "God opposes the proud but gives grace to the humble" (James 4:6). "He has scattered the proud in the thoughts of their hearts" (Luke 1:51). "The haughty looks of man shall be brought low, and the lofty pride of men shall be humbled, and the Lord alone will be exalted in that day" (Isaiah 2:11). "Not from the east or from the west and not from the wilderness comes lifting up, but it is God who executes judgment, putting down one and lifting up another" (Psalm 75:6–7). Death brings it down too: "Your pomp is brought down to Sheol" (Isaiah 14:11).
+  - note: in full
+- **C-235** telling added · 10.14 *The proud brought low, the lowly raised* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Pride brings its own fall.** In the proverbs no other hand is named: "One's pride will bring him low" (Proverbs 29:23). "When pride comes, then comes disgrace" (Proverbs 11:2). "Before destruction a man's heart is haughty" (Proverbs 18:12). "It is better to be of a lowly spirit with the poor than to divide the spoil with the proud" (Proverbs 16:19). That last is a choice of company.
+  - note: in part
+- **C-210** telling added · 10.15 *Where it ends* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **God brings it down.** "God opposes the proud but gives grace to the humble" (James 4:6). "He has scattered the proud in the thoughts of their hearts" (Luke 1:51). "The haughty looks of man shall be brought low, and the lofty pride of men shall be humbled, and the Lord alone will be exalted in that day" (Isaiah 2:11). "Not from the east or from the west and not from the wilderness comes lifting up, but it is God who executes judgment, putting down one and lifting up another" (Psalm 75:6–7). Death brings it down too: "Your pomp is brought down to Sheol" (Isaiah 14:11).
+  - note: in part: Your pomp is brought down to Sheol
+- **C-236** telling added · 10.15 *Where it ends* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **God's height does not do what pride does.** "For though the Lord is high, he regards the lowly, but the haughty he knows from afar" (Psalm 138:6). I read the contrast the verses give: the one who is high by nature comes near the low, and those who make themselves high are known from afar.
+  - note: in full
+- **C-236** telling added · 13.1 *Majesty* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **He gives height.** He gave Nebuchadnezzar "kingship and greatness and glory and majesty" (Daniel 5:18). He chose for his people "the pride of Jacob whom he loves" (Psalm 47:4). "Not from the east or from the west and not from the wilderness comes lifting up, but it is God who executes judgment, putting down one and lifting up another" (Psalm 75:6–7). Though he is high, "he regards the lowly, but the haughty he knows from afar" (Psalm 138:6).
+  - note: in part: he regards the lowly
+- **C-237** telling added · 10.15 *Where it ends* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Pride can be named wrongly.** Eliab, angry, says to his young brother, "I know your presumption and the evil of your heart" (1 Samuel 17:28), and the chapter has shown that David came because his father sent him (17:17–18). Eliphaz explains a man brought low: "For when they are humbled you say, 'It is because of pride'" (Job 22:29). I read that the charge of pride can come from another's anger, or from a ready explanation, and the verses do not make it true.
+  - note: in full
+- **C-237** telling added · 04 *The heart and anger* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The angry can **read another's heart wrongly**. Eliab, angry at David on the battlefield: "I know your presumption and the evil of your heart, for you have come down to see the battle" (1 Samuel 17:28). The chapter shows David was sent by his father with food (17:17–18, 20).
+  - note: in part
+- **C-237** telling added · 10.4 *When anger thinks* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Anger does not stay a feeling. It starts to reckon, and it reckons badly. - It reads another's heart, and misreads it. Eliab, angry at his young brother, says, "I know your presumption and the evil of your heart" (1 Samuel 17:28). The reader knows David came because his father sent him. - It calculates the future. "They have ascribed to David ten thousands, and to me they have ascribed thousands, and what more can he have but the kingdom?" (1 Samuel 18:8). Seventeen verses later it has become a plan: "Now Saul thought to make David fall by the hand of the Philistines" (18:25). - It soothes itself with a plan. "Your brother Esau comforts himself about you by planning to kill you" (Genesis 27:42). - Rage and plotting stand in one line: "Why do the nations rage, and the peoples plot in vain?" (Psalm 2:1). The apostles read that psalm over what was done to Jesus (Acts 4:25–27).
+  - note: in part: Eliab misreads
+- **C-237** telling added · 10.14 *The proud brought low, the lowly raised* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **Reading another's fall.** "For when they are humbled you say, 'It is because of pride'; but he saves the lowly" (Job 22:29). Eliphaz explains a man brought low as pride. The book shows how far that explanation can be wrong.
+  - note: in full
+- **C-238** telling added · 10.15 *The other face* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The same words are not pride when the height is given, or when it faces God. - **A heart lifted up in God's ways.** Jehoshaphat "sought the God of his father and walked in his commandments … His heart was courageous in the ways of the Lord" (2 Chronicles 17:4, 6). The word for "courageous" is the word for Uzziah's heart that "grew proud" (26:16). I read that the lifting is the same and the direction differs. - **Strength of soul given.** "On the day I called, you answered me; my strength of soul you increased" (Psalm 138:3). The word is the one rendered "insolent" in Isaiah 3:5. - **A heart not lifted up.** "O Lord, my heart is not lifted up; my eyes are not raised too high … But I have calmed and quieted my soul, like a weaned child with its mother" (Psalm 131:1–2). The arrogant man is "never at rest" (Habakkuk 2:5). The heart that is not lifted up is at rest. - **The honour given, and the boast in the Lord** (above).
+  - note: in full
+- **C-238** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Lifted up.** One Hebrew word names the heart that grew proud when Uzziah was strong (2 Chronicles 26:16) and Jehoshaphat's heart, "courageous in the ways of the Lord" (2 Chronicles 17:6). One family of words is God's majesty and human pride (Exodus 15:7; Jeremiah 48:29). And the boast moves: "Let not the wise man boast in his wisdom" (Jeremiah 9:23), "but let him who boasts boast in this, that he understands and knows me" (9:24). What differs is where the height comes from, and which way it faces (10.15).
+  - note: in full
+- **C-239** telling added · 13.1 *Majesty* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The words that name human pride also name God's majesty, and the verses say what his is like. - **It is his own.** "The Lord reigns; he is robed in majesty … Your throne is established from of old; you are from everlasting" (Psalm 93:1–2). - **It is shown in what he does.** "I will sing to the Lord, for he has triumphed gloriously; the horse and his rider he has thrown into the sea" (Exodus 15:1). "In the greatness of your majesty you overthrow your adversaries" (15:7). The enemy's own rising is quoted in the same song: "I will pursue, I will overtake, I will divide the spoil, my desire shall have its fill of them" (15:9). - **It turns toward help.** "There is none like God, O Jeshurun, who rides through the heavens to your help, through the skies in his majesty" (Deuteronomy 33:26). "Ascribe power to God, whose majesty is over Israel … he is the one who gives power and strength to his people" (Psalm 68:34–35). - **It goes with what only he does.** God says to Job, "Adorn yourself with majesty and dignity … look on everyone who is proud and abase him … Then will I also acknowledge to you that your own right hand can save you" (Job 40:10–14). - **It is hidden from.** "Enter into the rock and hide in the dust from before the terror of the Lord, and from the splendor of his majesty" (Isaiah 2:10), in the day when "the Lord alone will be exalted" (2:11). - **It is not seen by all.** "If favor is shown to the wicked, he does not learn righteousness … and does not see the majesty of the Lord" (Isaiah 26:10). - **It is a name.** The Son "sat down at the right hand of the Majesty on high" (Hebrews 1:3).
+  - note: in full
+- **C-240** telling added · 13.1 *Majesty* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **It is challenged, and not overturned.** "The kings of the earth set themselves, and the rulers take counsel together, against the Lord and against his Anointed … He who sits in the heavens laughs; the Lord holds them in derision" (Psalm 2:2–4). "But you, O Lord, laugh at them; you hold all the nations in derision" (Psalm 59:8). "Toward the scorners he is scornful, but to the humble he gives favor" (Proverbs 3:34). "God is not mocked" (Galatians 6:7). In these verses his laughter answers only those who rise against him. It is never aimed at the weak, as human mocking is (10.15).
+  - note: in full
+- **C-241** telling added · 13.1 *Majesty* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **In the Son.** His majesty is received: "we were eyewitnesses of his majesty. For when he received honor and glory from God the Father" (2 Peter 1:16–17). His place rests on what he is: "that in everything he might be preeminent. For in him all the fullness of God was pleased to dwell" (Colossians 1:18–19). At the moment "all were astonished at the majesty of God", he said, "The Son of Man is about to be delivered into the hands of men" (Luke 9:43–44). Then he was mocked on that very standing: "Hail, King of the Jews!" (Matthew 27:29); "Prophesy! Who is it that struck you?" (Luke 22:64); "He saved others; he cannot save himself" (Mark 15:31). He "made no answer" (Luke 23:9), and he prayed, "Father, forgive them, for they know not what they do" (Luke 23:34). I read that the majesty no one can overturn did not defend itself against mockery. Pride grasps a place that is not its own; he "did not count equality with God a thing to be grasped" (Philippians 2:6; *Lowering himself*, below).
+  - note: in full
+- **C-241** telling added · 10.15 *The mock* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Jesus was mocked as king, as prophet and as saviour, and he did not answer in kind. That is told in 13.1.
+  - note: pointer
+- **C-242** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Overflow.** One Hebrew word, *ʿebrah*, is the overflow of anger and the overflow of pride. God offers it to Job with irony: "Pour out the overflowings of your anger, and look on everyone who is proud and abase him" (Job 40:11). And "'Scoffer' is the name of the arrogant, haughty man who acts with arrogant pride" (Proverbs 21:24), where the word is the same.
+  - note: in full
+- **C-209** telling added · 10.6 *Jealousy and envy* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Envy can be pictured in a figure. Of the great tree that stands for Assyria, God says, *"I made it beautiful in the mass of its branches, and all the trees of Eden envied it"* (Ezekiel 31:9). The next verse turns to the tree's own heart: *"its heart was proud of its height"* (31:10). I read the envy of the others and the pride of the tree as two answers to the same given beauty (Chapter 12).
+  - note: in part: the pride of the tree and the given beauty
+- **2-2** telling added · 09 *Lines that are often drawn, but that I cannot find* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **"The soul sins; the human spirit never does."** It is true that "the soul who sins shall die" (Ezekiel 18:4), but there the soul means the *person*, the one who answers for the sin. And while I find no verse where "the spirit" is the subject of the verb "to sin", the spirit is plainly judged. It is "haughty" before a fall (Proverbs 16:18). It was "not faithful to God" (Psalm 78:8). It is hardened (Deuteronomy 2:30). It needs to be made "right" (Psalm 51:10). It has or lacks "deceit" (Psalm 32:2). It needs cleansing from "defilement" (2 Corinthians 7:1). If Scripture has a *moral centre*, it is the heart (Chapter 12). The spirit stands beside it, not above it.
+  - note: in part: the spirit haughty before a fall
+
 ## 2026-10-15 — M09 humility: existing humility claims reconciled in the touched chapters
 
 **Strand:** humility (M09), claims reconciliation of update 141 (#2152)
@@ -4391,6 +4885,52 @@ These areas are absent from the original, or are listed there only as gaps. [Cla
 
 ## Direct edits (no update)
 
+- **C-243** claim created · 10.15 (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: One Greek word is rendered both boast and rejoice: the boast in self and joy in hope and in suffering
+  - verdict before: —
+  - verdict after: New
+- **C-244** claim created · 10.7 (recorded, 2026-10-15)
+  - claim before: —
+  - claim after: A plan can presume on time it does not own; the boast about tomorrow is set against saying If the Lord wills
+  - verdict before: —
+  - verdict after: New
+- **C-212** telling added · 10.15 *The words* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Height.** The heart, the eyes, the spirit and the horn are "lifted up" or "high". The same verbs are used for God being high (Psalm 138:6; Isaiah 57:15) and for the proud heart (2 Chronicles 26:16; Daniel 5:20).
+- **C-212** telling added · 10.15 *The words* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Pride and majesty.** One family of Hebrew words is "pride", "arrogance" and "pomp" in people, and "majesty" and "triumphed gloriously" in God (Exodus 15:1, 7; Psalm 93:1).
+- **C-223** telling added · 10.15 *The words* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **Presumption.** Another family names acting beyond what one was given: speaking where one was not sent, going up when told not to.
+- **C-243** telling added · 10.15 *The words* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **The boast.** Pride said aloud. The same Greek word is rendered "boast" and "rejoice" (Romans 5:2–3).
+- **C-240** telling added · 10.15 *The words* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: - **The mock.** Pride turned on another in laughter and taunts. These words are also used of God's laughter at those who rise against him (Psalm 2:4).
+- **C-214** telling added · 10.15 *Given, then held as one's own* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The law saw it coming: "then your heart be lifted up, and you forget the Lord your God … Beware lest you say in your heart, 'My power and the might of my hand have gotten me this wealth.' You shall remember the Lord your God, for it is he who gives you power to get wealth" (Deuteronomy 8:14, 17–18). Paul says it as a question: "What do you have that you did not receive? If then you received it, why do you boast as if you did not receive it?" (1 Corinthians 4:7).
+- **C-207** telling added · 10.15 *The heart that says what God says* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: Pride lives in the heart, and the verses let it speak.
+- **C-228** telling added · 10.15 *The boast* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **In oneself.** "Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches" (Jeremiah 9:23). "Those who trust in their wealth and boast of the abundance of their riches" are told, "Truly no man can ransom another" (Psalm 49:6–7). "Do not boast about tomorrow, for you do not know what a day may bring" (Proverbs 27:1); "Let not him who straps on his armor boast himself as he who takes it off" (1 Kings 20:11). "Like clouds and wind without rain is a man who boasts of a gift he does not give" (Proverbs 25:14). "If you have bitter jealousy and selfish ambition in your hearts, do not boast and be false to the truth" (James 3:14).
+- **C-244** telling added · 10.15 *The boast* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: **In oneself.** "Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches" (Jeremiah 9:23). "Those who trust in their wealth and boast of the abundance of their riches" are told, "Truly no man can ransom another" (Psalm 49:6–7). "Do not boast about tomorrow, for you do not know what a day may bring" (Proverbs 27:1); "Let not him who straps on his armor boast himself as he who takes it off" (1 Kings 20:11). "Like clouds and wind without rain is a man who boasts of a gift he does not give" (Proverbs 25:14). "If you have bitter jealousy and selfish ambition in your hearts, do not boast and be false to the truth" (James 3:14).
+- **C-244** telling added · 10.7 *Presumption* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: A plan can presume on the time it needs. "Come now, you who say, 'Today or tomorrow we will go into such and such a town and spend a year there and trade and make a profit' — yet you do not know what tomorrow will bring … Instead you ought to say, 'If the Lord wills, we will live and do this or that.' As it is, you boast in your arrogance" (James 4:13–16). "Do not boast about tomorrow, for you do not know what a day may bring" (Proverbs 27:1). The whole account of pride is in 10.15.
+- **C-214** telling added · 11 *2. Thresholds: the merry heart and the sad heart* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: The same threshold is reached by other roads. Uzziah's heart was lifted by strength, not wine: "when he was strong, he grew proud". When the priests withstood him, "Uzziah was angry" (2 Chronicles 26:16, 19).
+- **C-214** telling added · 10.1 *How a feeling rises* (recorded, 2026-10-15)
+  - passage before: —
+  - passage after: It rises where a heart that was lifted up is checked. Uzziah "when he was strong, he grew proud" (2 Chronicles 26:16). When the priests withstood him, "Uzziah was angry" (26:19). The king's anger burned when "the heart of the king was merry with wine" and his queen refused him (Esther 1:10–12). Chapter 11 follows this threshold further.
 - **I-3** renumbered (recorded, 2026-10-02)
   - note: New ch: 08 -> 09 \| version note: chapter renumbering, #1936
 - **I-6** renumbered (recorded, 2026-10-02)
@@ -5107,3 +5647,4 @@ These areas are absent from the original, or are listed there only as gaps. [Cla
 | 2026-10-14 | life and death (M25), OT-02 Q1 What is death? | Ch 2 gains the section 'Going down to Sheol' before 'Sleep and waking'. | The Sheol verses had no home; read in their passages they speak of where Sheol lies, who goes down, how, and God and Sheol. |
 | 2026-10-14 | life and death (M25), OT-02 Q1 What is death? | Ch 2: new subsections "Death spoken of in more than one way" and "Dead to sin" under What death is; new section "Those left behind" before Wanting to die | The death words were read by face, not by which death; the kinds, the dead-in/dead-to change and the stated causes had no one account; Ch 2 had no place for death as the living meet it in another |
 | 2026-10-15 | humility (M09), fan-out of humbling oneself (#2148) | New sub-chapter 10.14 Humility (reading order after 10.13). New sections: 10.2 Humility and hearing; 10.7 Taking the lower place; 10.9 Humbling oneself before God; 10.10 Humility toward one another; Ch 4 The heart humbled; Ch 5 Rest for the soul; 13.1 Lowering himself. Ch 6 gains a paragraph (It is gentle, and it is under the person); Ch 11 s4 a face (Who lowers whom, and before whom); Ch 12 the counterpart paragraph. 10.0 names 10.12 to 10.14. | Humility is not a feeling (researcher); the readings show it as act, standing, sought quality, state of spirit, place taken, done to a person and God's own way, across the activities. A key characteristic gets one full account as its own Ch 10 sub-chapter (#1961), with each angle woven in context (#1920). |
+| 2026-10-15 | pride and arrogance (M08): pride, boasting, mocking (#2156) | New sub-chapter 10.15 Pride (reading order 26, after 10.14; later chapters +1). New sections: 13.1 Majesty (before Lowering himself); 10.2 Pride and hearing; 10.10 Pride over another; 10.7 Presumption (before Willing). Ch 11 s4 gains the face Lifted up. Ch 12 Pride section points to 10.15; 10.14 opening and Connections name 10.15; 10.0 names 10.12 to 10.15. | Pride has its own words, faces, other parties and outcomes across the activities, with God as its counter-measure; a key characteristic gets one full account as its own Ch 10 sub-chapter (#1961), with each angle woven in context (#1920). Ch 12 keeps the passages that show the inner being going wrong. |
