@@ -1,9 +1,9 @@
 # Session close — escalation update / governance drift / BUILD.md coverage check (#1875)
 
-> Generated 2026-10-14T17:06:39Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
+> Generated 2026-10-15T05:17:11Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
 
-- session_id: `6e94275d-bf9b-4d90-a1be-9360bb1446c6` (identified by: CLAUDE_CODE_SESSION_ID)
-- session started: 2026-10-14T08:32:01Z
+- session_id: `d6a86344-95d4-4b8d-b908-31c9be7b000f` (identified by: CLAUDE_CODE_SESSION_ID)
+- session started: 2026-10-15T02:38:50Z
 - transcript found: True
 - escalation-update gaps: **0**
 - BUILD.md gaps: **0**
@@ -24,18 +24,20 @@
 ## Escalation update coverage
 
 Escalations touched this session (id, highest version seen in transcript vs. live `escalation_history`):
-- #1993: transcript v19
-- #2003: transcript v16
-- #2006: transcript v4
-- #2010: transcript v7
-- #2140: transcript v4
-- #2146: transcript v2
-- #2147: transcript v1
+- #2098: transcript v3
+- #2109: transcript v72
+- #2148: transcript v16
+- #2149: transcript v2
+- #2151: transcript v2
+- #2152: transcript v3
+- #2153: transcript v2
+- #2154: transcript v2
+- #2155: transcript v1
 
 <a id="governance-config-doc-drift"></a>
 ## Governance / config / doc drift
 
-Files changed this session under governance/doc scope: iba/app/GOVERNANCE.md, CLAUDE.md.
+Files changed this session under governance/doc scope: CLAUDE.md, iba/app/USER-GUIDE.md.
 
 Whether chat content that SHOULD have updated governance/config actually did, and whether any now-superseded text is properly marked superseded/retired, is a judgement call for Claude to make reading the actual session transcript — not mechanically checked here (no chat-content-to-decision mapping exists to check against). If the session's own SESSION-LOG 'decisions made' section names a decision with no matching change among the files above, that is the signal to look at.
 

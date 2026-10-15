@@ -1500,6 +1500,9 @@ iba\app\ps\Narrative-Register.ps1 -Action Export
 - **`-Passage`** is the passage's opening words (case, quotation marks and emphasis ignored). A
   passage is a paragraph, one bullet, one table row or one block quote. Too few words to pick one
   passage is refused, with the count.
+  **A list directly under a paragraph (no blank line between) belongs to that paragraph's passage**,
+  so its bullets are not passages of their own; anchor the paragraph's opening words instead, or put a
+  blank line before the list (found 2026-10-15, #2148/#2152, two refused records).
 - **`Record`** takes one weave's whole update as JSON (the shape is in `record()`'s docstring in
   `iba/app/lib/narrativeregister.py`): the update (date, title, strand, instruction, sources, scripts,
   notes, quote check), refs (escalations, threads, thread items), the chapter versions (from → to, the
