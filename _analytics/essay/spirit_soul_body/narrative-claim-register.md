@@ -449,13 +449,15 @@ File `10-01-feeling-v22-20261015.md` (v22) · draft · activity
 
 ### 10.2 — Knowing and hearing
 
-File `10-02-knowing-and-hearing-v19-20261015.md` (v19) · draft · activity
+File `10-02-knowing-and-hearing-v20-20261018.md` (v20) · draft · activity
 
 **(opening)**
 
 - **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: a crushed spirit can block hearing) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
+- **C-260** The poor wise man who saved the city was forgotten and his words not heard; what was seen in him was his poverty (in full)
 - **C-222** Pride is set against hearing: it will not take rebuke or advice, and the scoffer is known by what he will not receive (in part: the word scorned) — also told in: 10.2 *Pride and hearing* (in full); 10.15 *Pride and hearing* (in full)
 - **C-224** God works to keep pride from a person: by warnings that open the ear, and by a thorn given against conceit (in part: God opens the ear to conceal pride) — also told in: 10.15 *Pride and hearing* (in full)
+- **C-259** God names judging the cause of the poor and needy as knowing him, and sets it against eyes and heart given only to gain (in full) — also told in: 10.6 *Possessions* (pointer)
 
 **Humility and hearing**
 
@@ -496,7 +498,7 @@ File `10-05-speaking-v22-20261013.md` (v22) · draft · activity
 
 ### 10.6 — Wanting
 
-File `10-06-wanting-v24-20261018.md` (v24) · draft · activity
+File `10-06-wanting-v25-20261018.md` (v25) · draft · activity
 
 **Thirst answered**
 
@@ -509,6 +511,7 @@ File `10-06-wanting-v24-20261018.md` (v24) · draft · activity
 **Possessions**
 
 - **C-253** In Habakkuk's taunt, the safety greed gathers by taking from others is answered by fear of those it took from (in part: Safety (Habakkuk 2:6-10))
+- **C-259** God names judging the cause of the poor and needy as knowing him, and sets it against eyes and heart given only to gain (pointer) — also told in: 10.2 *(opening)* (in full)
 
 ### 10.7 — Choosing and setting direction
 
@@ -570,7 +573,7 @@ File `10-09-relating-to-god-v26-20261018.md` (v26) · draft · activity
 
 ### 10.10 — Relating to others
 
-File `10-10-relating-to-others-v30-20261018.md` (v30) · draft · activity
+File `10-10-relating-to-others-v31-20261018.md` (v31) · draft · activity
 
 **(opening)**
 
@@ -608,6 +611,11 @@ File `10-10-relating-to-others-v30-20261018.md` (v30) · draft · activity
 
 - **C-165** People hold to someone, or to something, even to death, and the readiness can fail (pointer) — also told in: 02 *Dying to the Lord* (in full); 02 *Dying to the Lord* (in full)
 
+**Friends, company and care**
+
+- **C-261** Job's oath counts refusing what the poor desired, and eating one's morsel alone, among the wrongs he disowns (in full)
+- **C-262** The gladness of deliverance is kept by giving, to one another and to the poor (in full)
+
 ### 10.11 — Hiding and disclosing
 
 File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft · activity
@@ -636,7 +644,11 @@ File `10-12-fear-v13-20261018.md` (v13) · draft · key characteristic
 
 ### 10.13 — Anger
 
-File `10-13-anger-v11-20261018.md` (v11) · draft · key characteristic
+File `10-13-anger-v12-20261018.md` (v12) · draft · key characteristic
+
+**What it rises at**
+
+- **C-263** The indignation at the ointment, first said to themselves, named the poor as its reason, and Jesus put doing good to the poor in the hearers' own will (in part: the disciples' indignation (Mark 14:4-7))
 
 **The heart that turns, and the heart that does not**
 
@@ -1192,7 +1204,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 174 |
+| narrative | New | 179 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1201,4 +1213,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-258 claims; 187 told in the narrative, 71 not.
+263 claims; 192 told in the narrative, 71 not.

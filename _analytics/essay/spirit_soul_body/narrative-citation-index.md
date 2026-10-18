@@ -1098,6 +1098,7 @@
 | Est 9:5 | 10.10 *Fear that arrives with a person* (quoted) | — |
 | Est 9:12 | 10.7 *Whose measure* | — |
 | Est 9:13 | 10.7 *Whose measure* (quoted) | — |
+| Est 9:22 | 10.10 *Friends, company and care* (quoted) | C-262 |
 | Est 9:24 | 10.10 *Plotting against another* (quoted) | — |
 | Est 9:25 | 10.0 *The path runs back* (quoted); 10.0 *How the activities connect*; 10.4 *What is devised comes back* (quoted); 11 *What changes the character* | — |
 | Job 1:1 | 10.7 *(opening)* (quoted); 10.8 *(opening)* (quoted) | — |
@@ -1237,6 +1238,8 @@
 | Job 30:16 | 05 *The soul suffers* (quoted) | — |
 | Job 30:23 | — | C-83 |
 | Job 31:9 | 11 *1. The inner being is acted upon as much as it acts* (quoted) | — |
+| Job 31:16 | 10.10 *Friends, company and care* (quoted) | C-261 |
+| Job 31:17 | 10.10 *Friends, company and care* (quoted) | C-261 |
 | Job 31:19 | 10.10 *Friends, company and care* (quoted) | — |
 | Job 31:20 | 10.10 *Friends, company and care* (quoted) | — |
 | Job 31:23 | 10.9 *Afraid in his presence* (quoted) | — |
@@ -2194,6 +2197,8 @@
 | Ecc 9:7 | 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | — |
 | Ecc 9:9 | 02 *Life weighed* (quoted) | C-133, C-135 |
 | Ecc 9:10 | 02 *After death* (quoted) | C-106 |
+| Ecc 9:15 | 10.2 *(opening)* (quoted) | C-260 |
+| Ecc 9:16 | 10.2 *(opening)* (quoted) | C-260 |
 | Ecc 11:5 | 02 *Life breathed in* (quoted) | 3-4 |
 | Ecc 11:7 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 11:8 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
@@ -2623,6 +2628,9 @@
 | Jer 21:5 | 10.13 *The hand that is felt* (quoted); 11 *4. One word, opposite values* | — |
 | Jer 21:8 | 02 *Life set before a person* (quoted); 10.7 *Life and death set before a person* (quoted) | C-118 |
 | Jer 22:10 | 10.1 *Where it turns* (quoted) | — |
+| Jer 22:13 | 10.2 *(opening)* (quoted) | C-259 |
+| Jer 22:16 | 10.2 *(opening)* (quoted); 10.6 *Possessions* (quoted) | C-259 |
+| Jer 22:17 | 10.2 *(opening)* (quoted); 10.6 *Possessions* (quoted) | C-259 |
 | Jer 23:9 | 04 *The heart humbled* (quoted); 10.14 *A lowly and contrite spirit* (quoted) | C-189 |
 | Jer 23:17 | 10.13 *The heart that turns, and the heart that does not* (quoted); 12 *False peace* (quoted) | — |
 | Jer 23:19 | 10.13 *How it is spoken of* (quoted) | — |
@@ -3215,8 +3223,8 @@
 | Mat 25:37 | 10.10 *Friends, company and care* (quoted) | — |
 | Mat 25:40 | 10.10 *Friends, company and care* (quoted) | — |
 | Mat 25:44 | 10.10 *Friends, company and care* (quoted) | — |
-| Mat 26:8 | 10.1 *When feeling changes character* (quoted); 10.13 *Jesus' anger* | — |
-| Mat 26:10 | 10.13 *What it rises at* (quoted) | — |
+| Mat 26:8 | 10.1 *When feeling changes character* (quoted); 10.13 *What it rises at*; 10.13 *Jesus' anger* | C-263 |
+| Mat 26:10 | 10.13 *What it rises at* (quoted) | C-263 |
 | Mat 26:31 | 02 *Made alive* (quoted) | C-160 |
 | Mat 26:35 | 10.10 *(opening)* (quoted) | — |
 | Mat 26:38 | 02 *Facing death* (quoted); 02 *Soul, spirit and heart at death* (quoted); 05 *The soul suffers* (quoted); 07 *The willing spirit and the weak flesh* (quoted) | C-100, C-152 |
@@ -3303,6 +3311,9 @@
 | Mar 12:40 | 10.5 *When mouth and heart part* (quoted) | — |
 | Mar 12:43 | 10.5 *When mouth and heart part* (quoted) | — |
 | Mar 12:44 | 10.5 *When mouth and heart part* (quoted) | — |
+| Mar 14:4 | 10.13 *What it rises at* (quoted) | C-263 |
+| Mar 14:5 | 10.13 *What it rises at* (quoted) | C-263 |
+| Mar 14:7 | 10.13 *What it rises at* (quoted) | C-263 |
 | Mar 14:31 | 02 *Dying to the Lord* (quoted) | C-165 |
 | Mar 14:33 | 10.12 *Fear before God* (quoted) | — |
 | Mar 15:15 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted); 11 *4. One word, opposite values* | — |

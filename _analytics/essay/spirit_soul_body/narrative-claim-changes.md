@@ -2,6 +2,75 @@
 
 *Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-18 — OT-105.9: five passages on the poor as seen by another woven (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-105.9 (M18)
+
+**Researcher:** "Weave the five OT-105.9 gaps as proposed (Jer 22:16-17, Job 31:16-17, Mar 14:4-7, Ecc 9:15-16, Est 9:22) with their claims, close OT-105.9, commit and push, then read OT-106.3 (M47)." (2026-10-18)
+
+**Method:** OT-105.9 (the ten P-coded M09 verses with an M18 word) read in their passages. Where M18 carries the act the verses were already told. Five passage gaps on OT-105's subject woven: Jer 22:13-17 (10.2, pointer 10.6), Ecc 9:15-16 (10.2), Job 31:16-17 and Est 9:22 (10.10 Friends, company and care), Mar 14:4-7 (10.13, with Matthew 26:8, 10). Rule 77: the only claim told in a touched passage (C-253, 10.6) is unaffected.
+
+**Sources:** _analytics/Clusters/M18 - desire-longing/ot-105-9-m18-poor-seen-reading-v1-20261018.md
+
+**Original claims changed:** Five new claims, one per passage.
+
+**Refs:** escalation 2160, thread OT-105, thread item OT-105.9, escalation 2148
+
+**Quote check:** 14 parts, 0 failures. checked against iba.db verse (ESV)
+
+- **C-253** telling changed · 10.6 *Possessions* (recorded, 2026-10-18)
+  - passage before: The verses also give greed's reasons and its roots. A root: *"For the love of money is a root of all kinds of evils. It is through this craving that some have wandered away from the faith and pierced themselves with many pangs"* (1 Timothy 6:10). Refuge in the wrong place: *"See the man who would not make God his refuge, but trusted in the abundance of his riches and sought refuge in his own destruction!"* (Psalm 52:7). What he ran to was his ruin. Safety: *"Woe to him who gets evil gain for his house, to set his nest on high, to be safe from the reach of harm! … you have forfeited your life"* (Habakkuk 2:9–10). The picture is a bird nesting out of reach. The same taunt says what that safety comes to. Of the one "who heaps up what is not his own" it asks, "Will not your debtors suddenly arise, and those awake who will make you tremble? Then you will be spoil for them" (2:6–7). I read the two woes together: the safety gathered by taking from others is answered by fear of those it took from. Forgetting God: *"you … make gain of your neighbors by extortion; but me you have forgotten"* (Ezekiel 22:12). No contentment: *"Because he knew no contentment in his belly, he will not let anything in which he delights escape him"* (Job 20:20). And it can sit in the leaders, with a false peace: *"everyone is greedy for unjust gain; and from prophet to priest, everyone deals falsely. They have healed the wound of my people lightly, saying, 'Peace, peace,' when there is no peace"* (Jeremiah 6:13–14).
+  - passage after: The verses also give greed's reasons and its roots. A root: *"For the love of money is a root of all kinds of evils. It is through this craving that some have wandered away from the faith and pierced themselves with many pangs"* (1 Timothy 6:10). Refuge in the wrong place: *"See the man who would not make God his refuge, but trusted in the abundance of his riches and sought refuge in his own destruction!"* (Psalm 52:7). What he ran to was his ruin. Safety: *"Woe to him who gets evil gain for his house, to set his nest on high, to be safe from the reach of harm! … you have forfeited your life"* (Habakkuk 2:9–10). The picture is a bird nesting out of reach. The same taunt says what that safety comes to. Of the one "who heaps up what is not his own" it asks, "Will not your debtors suddenly arise, and those awake who will make you tremble? Then you will be spoil for them" (2:6–7). I read the two woes together: the safety gathered by taking from others is answered by fear of those it took from. Forgetting God: *"you … make gain of your neighbors by extortion; but me you have forgotten"* (Ezekiel 22:12). Jeremiah sets the heart given to gain against knowing God: *"you have eyes and heart only for your dishonest gain"*, said beside *"Is not this to know me?"* of a king who judged the cause of the poor (Jeremiah 22:16–17; 10.2). No contentment: *"Because he knew no contentment in his belly, he will not let anything in which he delights escape him"* (Job 20:20). And it can sit in the leaders, with a false peace: *"everyone is greedy for unjust gain; and from prophet to priest, everyone deals falsely. They have healed the wound of my people lightly, saying, 'Peace, peace,' when there is no peace"* (Jeremiah 6:13–14).
+- **C-259** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: God names judging the cause of the poor and needy as knowing him, and sets it against eyes and heart given only to gain
+  - verdict before: —
+  - verdict after: New
+- **C-260** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: The poor wise man who saved the city was forgotten and his words not heard; what was seen in him was his poverty
+  - verdict before: —
+  - verdict after: New
+- **C-261** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: Job's oath counts refusing what the poor desired, and eating one's morsel alone, among the wrongs he disowns
+  - verdict before: —
+  - verdict after: New
+- **C-262** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: The gladness of deliverance is kept by giving, to one another and to the poor
+  - verdict before: —
+  - verdict after: New
+- **C-263** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: The indignation at the ointment, first said to themselves, named the poor as its reason, and Jesus put doing good to the poor in the hearers' own will
+  - verdict before: —
+  - verdict after: New
+- **C-259** telling added · 10.2 *(opening)* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: God also says what knowing him is. Of Josiah: "He judged the cause of the poor and needy; then it was well. Is not this to know me? declares the Lord" (Jeremiah 22:16). It is said against his son, who built "by unrighteousness" and kept back his neighbour's wages (22:13): "But you have eyes and heart only for your dishonest gain, for shedding innocent blood, and for practicing oppression and violence" (22:17). Knowing God is named here in a deed done for the poor, and set against a heart and eyes given to gain (10.6).
+  - note: in full
+- **C-259** telling added · 10.6 *Possessions* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: The verses also give greed's reasons and its roots. A root: *"For the love of money is a root of all kinds of evils. It is through this craving that some have wandered away from the faith and pierced themselves with many pangs"* (1 Timothy 6:10). Refuge in the wrong place: *"See the man who would not make God his refuge, but trusted in the abundance of his riches and sought refuge in his own destruction!"* (Psalm 52:7). What he ran to was his ruin. Safety: *"Woe to him who gets evil gain for his house, to set his nest on high, to be safe from the reach of harm! … you have forfeited your life"* (Habakkuk 2:9–10). The picture is a bird nesting out of reach. The same taunt says what that safety comes to. Of the one "who heaps up what is not his own" it asks, "Will not your debtors suddenly arise, and those awake who will make you tremble? Then you will be spoil for them" (2:6–7). I read the two woes together: the safety gathered by taking from others is answered by fear of those it took from. Forgetting God: *"you … make gain of your neighbors by extortion; but me you have forgotten"* (Ezekiel 22:12). Jeremiah sets the heart given to gain against knowing God: *"you have eyes and heart only for your dishonest gain"*, said beside *"Is not this to know me?"* of a king who judged the cause of the poor (Jeremiah 22:16–17; 10.2). No contentment: *"Because he knew no contentment in his belly, he will not let anything in which he delights escape him"* (Job 20:20). And it can sit in the leaders, with a false peace: *"everyone is greedy for unjust gain; and from prophet to priest, everyone deals falsely. They have healed the wound of my people lightly, saying, 'Peace, peace,' when there is no peace"* (Jeremiah 6:13–14).
+  - note: pointer
+- **C-260** telling added · 10.2 *(opening)* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: Who speaks can decide whether a word is heard. In the Preacher's example a poor, wise man "by his wisdom delivered the city. Yet no one remembered that poor man. But I say that wisdom is better than might, though the poor man's wisdom is despised and his words are not heard" (Ecclesiastes 9:15–16). His wisdom had saved them. I read the verse as saying that what was seen in him was his poverty, and that was why he was forgotten and not heard (10.3).
+  - note: in full
+- **C-261** telling added · 10.10 *Friends, company and care* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: Job's oath begins with what the poor wanted: *"If I have withheld anything that the poor desired, or have caused the eyes of the widow to fail, or have eaten my morsel alone, and the fatherless has not eaten of it"* (Job 31:16–17). Refusing what the poor desired, and eating alone, are among the wrongs he disowns.
+  - note: in full
+- **C-262** telling added · 10.10 *Friends, company and care* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: Giving to the poor is also kept as part of joy. The days of deliverance in Esther's time were to be kept "as the month that had been turned for them from sorrow into gladness and from mourning into a holiday; that they should make them days of feasting and gladness, days for sending gifts of food to one another and gifts to the poor" (Esther 9:22). The gladness is kept by giving, and the poor are named beside one another.
+  - note: in full
+- **C-263** telling added · 10.13 *What it rises at* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: Whether what sets it off is true is part of the account. Potiphar acted on a lie. The officials raged at Jeremiah over a charge he denied: "It is a lie; I am not deserting" (Jeremiah 37:14). The disciples were indignant at the waste of ointment (Matthew 26:8). Mark says the indignation was first said "to themselves", then spoken, with the poor as its reason: "'Why was the ointment wasted like that? For this ointment could have been sold for more than three hundred denarii and given to the poor.' And they scolded her" (Mark 14:4–5). Jesus answered, "she has done a beautiful thing to me" (Matthew 26:10), and put the poor back in their own hands: "For you always have the poor with you, and whenever you want, you can do good for them" (Mark 14:7).
+  - note: in part: the disciples' indignation (Mark 14:4-7)
+
 ## 2026-10-18 — OT-105.8: the master's anger in Luke 14 given its ground and end (#2160)
 
 **Strand:** open threads on completed clusters (#2160), OT-105.8 (M02)
