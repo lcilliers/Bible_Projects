@@ -98,7 +98,7 @@
 | Gen 34:8 | 10.6 *A person* (quoted) | — |
 | Gen 34:13 | 10.1 *In a person* | — |
 | Gen 34:19 | 10.1 *In a person* (quoted) | — |
-| Gen 35:5 | 10.12 *Dread laid on others* (quoted); 10.12 *Other parties* | — |
+| Gen 35:5 | 10.12 *Dread laid on others* (quoted); 10.12 *Other parties* | C-245 |
 | Gen 35:17 | 02 *Soul, spirit and heart at death* (quoted); 10.10 *Speaking to another's fear* (quoted) | — |
 | Gen 35:18 | 02 *Soul, spirit and heart at death* (quoted) | 3-7, C-100, C-101 |
 | Gen 37:4 | 10.6 *Jealousy and envy* (quoted) | — |
@@ -308,7 +308,7 @@
 | Num 21:6 | — | C-157 |
 | Num 21:7 | — | C-157 |
 | Num 21:8 | 02 *Wanting to die* (quoted) | C-157 |
-| Num 22:3 | 10.12 *Dread laid on others* (quoted) | — |
+| Num 22:3 | 10.12 *Dread laid on others* (quoted) | C-245 |
 | Num 22:6 | 10.12 *Dread laid on others* (quoted) | — |
 | Num 22:22 | 10.13 *Other parties* (quoted) | — |
 | Num 22:27 | 10.13 *What it does next* (quoted); 10.13 *Other parties* (quoted) | — |
@@ -466,7 +466,7 @@
 | Deu 34:9 | 06 *"A spirit of …" — what comes upon a person* (quoted) | — |
 | Jos 1:8 | 10.0 *From a thought to a deed* (quoted) | — |
 | Jos 2:4 | 10.10 *Care, discouragement and hiding between people* | — |
-| Jos 2:11 | 10.2 *(opening)* (quoted); 10.11 *Hiding another* (quoted); 10.12 *Dread laid on others* (quoted) | — |
+| Jos 2:11 | 10.2 *(opening)* (quoted); 10.11 *Hiding another* (quoted); 10.12 *Dread laid on others* (quoted) | C-245 |
 | Jos 2:13 | 02 *Delivered from death* | — |
 | Jos 2:14 | 02 *Dying to the Lord* (quoted); 10.10 *Loyalty and honour* (quoted) | C-165 |
 | Jos 4:14 | 10.10 *Reverence for people* (quoted) | — |
@@ -1080,9 +1080,11 @@
 | Est 7:3 | 10.7 *Whose measure* (quoted) | — |
 | Est 8:3 | 10.10 *Plotting against another* (quoted) | — |
 | Est 8:8 | 10.1 *When delight is only the measure* (quoted); 10.7 *Whose measure* (quoted) | — |
+| Est 8:17 | 10.12 *Dread laid on others* (quoted) | C-245 |
 | Est 9:1 | 10.10 *Fear that arrives with a person* (quoted) | — |
-| Est 9:2 | 10.10 *Fear that arrives with a person* (quoted) | — |
+| Est 9:2 | 10.10 *Fear that arrives with a person* (quoted) | C-245 |
 | Est 9:3 | 10.10 *Fear that arrives with a person* (quoted) | — |
+| Est 9:5 | 10.10 *Fear that arrives with a person* (quoted) | — |
 | Est 9:12 | 10.7 *Whose measure* | — |
 | Est 9:13 | 10.7 *Whose measure* (quoted) | — |
 | Est 9:24 | 10.10 *Plotting against another* (quoted) | — |
@@ -1682,8 +1684,11 @@
 | Psa 102:6 | 10.4 *What thinking does* (quoted) | — |
 | Psa 102:20 | — | C-104 |
 | Psa 103:1 | 05 *The soul rejoices and worships* (quoted); 05 *The soul is spoken to* (quoted) | 2-14 |
+| Psa 103:11 | 10.9 *How God meets those who fear him* (quoted) | — |
 | Psa 103:13 | 10.4 *The inclination: a shaped thing* (quoted); 10.9 *How God meets those who fear him* (quoted) | — |
-| Psa 103:14 | 10.3 *God remembers* (quoted); 10.4 *The inclination: a shaped thing* (quoted) | 4-4 |
+| Psa 103:14 | 10.3 *God remembers* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 10.9 *How God meets those who fear him* (quoted) | 4-4 |
+| Psa 103:17 | 10.9 *How God meets those who fear him* (quoted); 10.12 *The fear of God* (quoted) | — |
+| Psa 103:18 | 10.12 *The fear of God* (quoted) | — |
 | Psa 103:20 | 13.2 *(opening)* (quoted) | — |
 | Psa 103:21 | 13.2 *(opening)* (quoted) | — |
 | Psa 103:22 | 05 *The soul rejoices and worships* (quoted); 13.1 *Ruling* (quoted) | — |
@@ -2183,9 +2188,11 @@
 | Ecc 11:8 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 11:9 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 11:10 | 04 *The heart and anger* (quoted); 07 *Flesh answers the inner being* (quoted) | — |
-| Ecc 12:3 | 07 *Flesh answers the inner being* (quoted) | — |
-| Ecc 12:5 | 02 *Facing death* (quoted); 10.6 *Wanting and death* (quoted); 10.12 *Connections* | C-153 |
-| Ecc 12:7 | 02 *Soul, spirit and heart at death* (quoted) | 2-15, 3-3, 3-8 |
+| Ecc 12:1 | 10.3 *Remembering as a cure, and remembering as hope* (quoted) | C-246 |
+| Ecc 12:3 | 07 *Flesh answers the inner being* (quoted); 10.12 *Fear that comes upon a person* (quoted) | C-246 |
+| Ecc 12:4 | 10.12 *Fear that comes upon a person* (quoted) | C-246 |
+| Ecc 12:5 | 02 *Facing death* (quoted); 10.6 *Wanting and death* (quoted); 10.12 *Fear that comes upon a person* (quoted); 10.12 *Connections* | C-153, C-246 |
+| Ecc 12:7 | 02 *Soul, spirit and heart at death* (quoted); 10.12 *Fear that comes upon a person* | 2-15, 3-3, 3-8, C-246 |
 | Ecc 12:10 | 10.2 *(opening)* (quoted) | — |
 | Ecc 12:11 | 10.2 *(opening)* (quoted) | — |
 | Ecc 12:12 | 07 *Flesh answers the inner being* (quoted); 10.2 *(opening)* (quoted) | — |

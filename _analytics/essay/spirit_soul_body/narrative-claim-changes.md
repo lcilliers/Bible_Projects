@@ -2,6 +2,59 @@
 
 *Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-18 — OT-97.37: the forward marks to fear woven (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-97.37 (M01 fear)
+
+**Researcher:** "Starting with B.  Each open item is likely to be unique. I am not sure that they can be closed in bulk.  lets start with OT-97.37. Read to related verses and let me know what the impact is." then "I am happy with the weave" (2026-10-18)
+
+**Method:** The four verses marked forward to M01 by later strands (Est 8:17 from the M18 x M72 pairing; Est 9:5 from M18 group C; Ecc 12:5 and Psa 103:11 from M08 group B) read in their passages (Est 8:9-9:6, Ecc 12:1-8, Psa 103:6-18) and woven by the main operation of each. Rule 77 reconciliation for fear in the touched sections: the only current claim told there (C-225, The fear of God) is unaffected; no current fear claim is untold.
+
+**Sources:** _analytics/Clusters/M01 - fear-awe/ot-97-37-fear-forward-marks-reading-v1-20261018.md
+_analytics/cross-cluster-web/open-threads-analysed-clusters-review-v1-20261018.md
+
+**Original claims changed:** Two new claims: dread on a people with no giver named, which brings them over (Est 8:17); fear that comes with age, under the call to remember the Creator first (Ecc 12, I read).
+
+**Not woven:** None of the four left out. Est 9:5 adds only the outcome (10.10).
+
+**Refs:** escalation 2160, thread OT-97, thread item OT-97.37
+
+**Quote check:** 14 parts, 0 failures. every new quotation checked against iba.db verse (ESV)
+
+- **C-214** telling changed · 10.3 *Remembering as a cure, and remembering as hope* (recorded, 2026-10-18)
+  - passage before: So remembering is commanded. - **Against self-righteousness:** "Remember and do not forget how you provoked the Lord your God to wrath in the wilderness" (Deuteronomy 9:7). It comes straight after "Do not say in your heart … 'It is because of my righteousness'" (9:4). - **Against fear:** "you shall not be afraid of them but you shall remember what the Lord your God did to Pharaoh and to all Egypt" (Deuteronomy 7:18). - **Against the pride of having:** "You shall remember the Lord your God, for it is he who gives you power to get wealth" (Deuteronomy 8:18). - **Kept in a song**, so it will not be lost: "this song shall confront them as a witness (for it will live unforgotten in the mouths of their offspring)" (Deuteronomy 31:21).
+  - passage after: So remembering is commanded. - **Against self-righteousness:** "Remember and do not forget how you provoked the Lord your God to wrath in the wilderness" (Deuteronomy 9:7). It comes straight after "Do not say in your heart … 'It is because of my righteousness'" (9:4). - **Against fear:** "you shall not be afraid of them but you shall remember what the Lord your God did to Pharaoh and to all Egypt" (Deuteronomy 7:18). - **Against the pride of having:** "You shall remember the Lord your God, for it is he who gives you power to get wealth" (Deuteronomy 8:18). - **Before old age:** "Remember also your Creator in the days of your youth, before the evil days come" (Ecclesiastes 12:1). The days that follow are pictured with trembling and terrors (12:3–5; 10.12). - **Kept in a song**, so it will not be lost: "this song shall confront them as a witness (for it will live unforgotten in the mouths of their offspring)" (Deuteronomy 31:21).
+- **C-245** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear
+  - verdict before: —
+  - verdict after: New
+- **C-246** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: In the Preacher's picture of old age, fear comes as the body fails, with no enemy behind it, and the call is to remember the Creator before those days
+  - verdict before: —
+  - verdict after: New
+- **C-245** telling added · 10.12 *Dread laid on others* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: The same dread came to different peoples and ended in different ways. - **Rahab:** "as soon as we heard it, our hearts melted, and there was no spirit left in any man because of you, for the Lord your God, he is God in the heavens above and on the earth beneath" (Joshua 2:11). - **Moab:** "Moab was in great dread of the people, because they were many", and Balak sent for Balaam: "Come now, curse this people for me, since they are too mighty for me" (Numbers 22:3, 6). - **The peoples in Esther's day:** where the king's second edict reached, "there was gladness and joy among the Jews … And many from the peoples of the country declared themselves Jews, for fear of the Jews had fallen on them" (Esther 8:17). The verse gives fear as the only reason. This dread did not send the peoples away, nor set them against the Jews; it brought many of them over to the name of those they feared. On the day itself, "no one could stand against them, for the fear of them had fallen on all peoples" (9:2; 10.10).
+  - note: in part: the peoples in Esther's day
+- **C-245** telling added · 10.12 *Dread laid on others* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: Fear does not stay with single persons. It falls on peoples and on creatures. In most of these verses God lays it; in Esther no giver is named. The verses say what it led to. - "The fear of you and the dread of you shall be upon every beast of the earth" (Genesis 9:2). - "a terror from God fell upon the cities that were around them, so that they did not pursue the sons of Jacob" (Genesis 35:5). - "Put them in fear, O Lord! Let the nations know that they are but men!" (Psalm 9:20).
+  - note: in part: in Esther no giver is named
+- **C-245** telling added · 10.10 *Fear that arrives with a person* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: Mastery can turn on the day it is hoped for. "on the very day when the enemies of the Jews hoped to gain the mastery over them, the reverse occurred: the Jews gained mastery over those who hated them", and "the fear of them had fallen on all peoples" (Esther 9:1–2). With no one able to stand against them, the Jews "did as they pleased to those who hated them" (9:5). Before that day, as the edict went out, "many from the peoples of the country declared themselves Jews, for fear of the Jews had fallen on them" (8:17; 10.12).
+  - note: pointer
+- **C-246** telling added · 10.12 *Fear that comes upon a person* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: Fear also comes with age. The Preacher pictures the last days of life, "in the day when the keepers of the house tremble, and the strong men are bent", when "one rises up at the sound of a bird" (Ecclesiastes 12:3–4). Then: "they are afraid also of what is high, and terrors are in the way" (12:5). I read the house and its keepers as the body, as the passage ends with the dust returning to the earth (12:7). No enemy stands behind these fears; they come as the body fails. The passage opens with what to do before then: "Remember also your Creator in the days of your youth, before the evil days come" (12:1; 10.3). Chapter 2 carries the same verse as the approach of death.
+  - note: in full
+- **C-246** telling added · 10.3 *Remembering as a cure, and remembering as hope* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: So remembering is commanded. - **Against self-righteousness:** "Remember and do not forget how you provoked the Lord your God to wrath in the wilderness" (Deuteronomy 9:7). It comes straight after "Do not say in your heart … 'It is because of my righteousness'" (9:4). - **Against fear:** "you shall not be afraid of them but you shall remember what the Lord your God did to Pharaoh and to all Egypt" (Deuteronomy 7:18). - **Against the pride of having:** "You shall remember the Lord your God, for it is he who gives you power to get wealth" (Deuteronomy 8:18). - **Before old age:** "Remember also your Creator in the days of your youth, before the evil days come" (Ecclesiastes 12:1). The days that follow are pictured with trembling and terrors (12:3–5; 10.12). - **Kept in a song**, so it will not be lost: "this song shall confront them as a witness (for it will live unforgotten in the mouths of their offspring)" (Deuteronomy 31:21).
+  - note: pointer: Before old age (Ecc 12:1)
+
 ## 2026-10-18 — Each chapter's use recorded in the chapter table
 
 **Sources:** _analytics/essay/spirit_soul_body/wa-essay-narrative-chapter-table-proposal-v1-20261018.md

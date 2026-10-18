@@ -1,0 +1,135 @@
+{
+ "update": {
+  "update_date": "2026-10-18",
+  "title": "OT-97.37: the forward marks to fear woven (#2160)",
+  "strand": "open threads on completed clusters (#2160), OT-97.37 (M01 fear)",
+  "researcher_instruction": "\"Starting with B.  Each open item is likely to be unique. I am not sure that they can be closed in bulk.  lets start with OT-97.37. Read to related verses and let me know what the impact is.\" then \"I am happy with the weave\" (2026-10-18)",
+  "method": "The four verses marked forward to M01 by later strands (Est 8:17 from the M18 x M72 pairing; Est 9:5 from M18 group C; Ecc 12:5 and Psa 103:11 from M08 group B) read in their passages (Est 8:9-9:6, Ecc 12:1-8, Psa 103:6-18) and woven by the main operation of each. Rule 77 reconciliation for fear in the touched sections: the only current claim told there (C-225, The fear of God) is unaffected; no current fear claim is untold.",
+  "source_files": [
+   "_analytics/Clusters/M01 - fear-awe/ot-97-37-fear-forward-marks-reading-v1-20261018.md",
+   "_analytics/cross-cluster-web/open-threads-analysed-clusters-review-v1-20261018.md"
+  ],
+  "scripts": [],
+  "claims_changed_note": "Two new claims: dread on a people with no giver named, which brings them over (Est 8:17); fear that comes with age, under the call to remember the Creator first (Ecc 12, I read).",
+  "not_woven_note": "None of the four left out. Est 9:5 adds only the outcome (10.10).",
+  "quote_parts": 14,
+  "quote_failures": 0,
+  "quote_note": "every new quotation checked against iba.db verse (ESV)"
+ },
+ "refs": [
+  {
+   "kind": "escalation",
+   "value": "2160"
+  },
+  {
+   "kind": "thread",
+   "value": "OT-97"
+  },
+  {
+   "kind": "thread item",
+   "value": "OT-97.37"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "10.12",
+   "from_version": 11,
+   "to_version": 12,
+   "file": "10-12-fear-v12-20261018.md"
+  },
+  {
+   "chapter": "10.9",
+   "from_version": 24,
+   "to_version": 25,
+   "file": "10-09-relating-to-god-v25-20261018.md"
+  },
+  {
+   "chapter": "10.10",
+   "from_version": 28,
+   "to_version": 29,
+   "file": "10-10-relating-to-others-v29-20261018.md"
+  },
+  {
+   "chapter": "10.3",
+   "from_version": 7,
+   "to_version": 8,
+   "file": "10-03-remembering-and-forgetting-v8-20261018.md"
+  }
+ ],
+ "claims": [
+  {
+   "key": "n1",
+   "new": {
+    "text": "Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear",
+    "beyond_text": "sets Est 8:17 beside the God-given dread of Gen 35:5 and the dread of Rahab and Moab, and reads its outcome as coming over, not flight or opposition",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 0,
+    "sources": [
+     "Est 8:17",
+     "Est 9:2",
+     "Gen 35:5",
+     "Jos 2:11",
+     "Num 22:3"
+    ]
+   }
+  },
+  {
+   "key": "n2",
+   "new": {
+    "text": "In the Preacher's picture of old age, fear comes as the body fails, with no enemy behind it, and the call is to remember the Creator before those days",
+    "beyond_text": "reads the house and its keepers in Ecc 12:3 as the body; the passage does not explain the figure",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 1,
+    "sources": [
+     "Ecc 12:1",
+     "Ecc 12:3",
+     "Ecc 12:4",
+     "Ecc 12:5",
+     "Ecc 12:7"
+    ]
+   }
+  }
+ ],
+ "tellings": [
+  {
+   "claim": "n1",
+   "chapter": "10.12",
+   "passage": "The same dread came to different peoples",
+   "kind": "in part",
+   "action": "add",
+   "part": "the peoples in Esther's day"
+  },
+  {
+   "claim": "n1",
+   "chapter": "10.12",
+   "passage": "Fear does not stay with single persons",
+   "kind": "in part",
+   "part": "in Esther no giver is named",
+   "action": "add"
+  },
+  {
+   "claim": "n1",
+   "chapter": "10.10",
+   "passage": "Mastery can turn on the day it is hoped for",
+   "kind": "pointer",
+   "action": "add"
+  },
+  {
+   "claim": "n2",
+   "chapter": "10.12",
+   "passage": "Fear also comes with age",
+   "kind": "in full",
+   "action": "add"
+  },
+  {
+   "claim": "n2",
+   "chapter": "10.3",
+   "passage": "So remembering is commanded",
+   "kind": "pointer",
+   "action": "add",
+   "part": "Before old age (Ecc 12:1)"
+  }
+ ]
+}

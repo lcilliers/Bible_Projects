@@ -463,11 +463,12 @@ File `10-02-knowing-and-hearing-v19-20261015.md` (v19) · draft · activity
 
 ### 10.3 — Remembering and forgetting
 
-File `10-03-remembering-and-forgetting-v7-20261012.md` (v7) · draft · activity
+File `10-03-remembering-and-forgetting-v8-20261018.md` (v8) · draft · activity
 
 **Remembering as a cure, and remembering as hope**
 
 - **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: against the pride of having) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+- **C-246** In the Preacher's picture of old age, fear comes as the body fails, with no enemy behind it, and the call is to remember the Creator before those days (pointer: Before old age (Ecc 12:1)) — also told in: 10.12 *Fear that comes upon a person* (in full)
 
 ### 10.4 — Thinking
 
@@ -537,7 +538,7 @@ File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft · activity
 
 ### 10.9 — Relating to God
 
-File `10-09-relating-to-god-v24-20261015.md` (v24) · draft · activity
+File `10-09-relating-to-god-v25-20261018.md` (v25) · draft · activity
 
 **Humbling oneself before God**
 
@@ -553,12 +554,16 @@ File `10-09-relating-to-god-v24-20261015.md` (v24) · draft · activity
 
 ### 10.10 — Relating to others
 
-File `10-10-relating-to-others-v28-20261015.md` (v28) · draft · activity
+File `10-10-relating-to-others-v29-20261018.md` (v29) · draft · activity
 
 **(opening)**
 
 - **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in part: a spirit of gentleness) — also told in: 10.10 *Humility toward one another* (in full); 10.10 *Holding authority over another* (in part); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
 - **C-124** Another's death can be laid at a person's hand (pointer) — also told in: 02 *Life set before a person* (in full)
+
+**Fear that arrives with a person**
+
+- **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (pointer) — also told in: 10.12 *Dread laid on others* (in part); 10.12 *Dread laid on others* (in part)
 
 **Humility toward one another**
 
@@ -589,11 +594,20 @@ File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft · activity
 
 ### 10.12 — Fear
 
-File `10-12-fear-v11-20261015.md` (v11) · draft · key characteristic
+File `10-12-fear-v12-20261018.md` (v12) · draft · key characteristic
+
+**Fear that comes upon a person**
+
+- **C-246** In the Preacher's picture of old age, fear comes as the body fails, with no enemy behind it, and the call is to remember the Creator before those days (in full) — also told in: 10.3 *Remembering as a cure, and remembering as hope* (pointer)
 
 **The fear of God**
 
 - **C-225** What the verses set against pride is hearing and the fear of God (in part) — also told in: 10.15 *Pride and hearing* (in full)
+
+**Dread laid on others**
+
+- **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (in part: in Esther no giver is named) — also told in: 10.10 *Fear that arrives with a person* (pointer)
+- **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (in part: the peoples in Esther's day) — also told in: 10.10 *Fear that arrives with a person* (pointer)
 
 ### 10.13 — Anger
 
@@ -1137,7 +1151,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 160 |
+| narrative | New | 162 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1146,4 +1160,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-244 claims; 173 told in the narrative, 71 not.
+246 claims; 175 told in the narrative, 71 not.
