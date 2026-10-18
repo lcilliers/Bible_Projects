@@ -3423,7 +3423,11 @@
 | Luk 14:9 | 10.7 *Taking the lower place*; 10.14 *Toward one another* | C-191 |
 | Luk 14:10 | 10.7 *Taking the lower place* (quoted); 10.14 *Toward one another* (quoted) | C-167, C-191 |
 | Luk 14:11 | — | C-191 |
-| Luk 14:21 | 10.13 *Other parties* (quoted) | — |
+| Luk 14:18 | 10.13 *Other parties* (quoted) | C-258 |
+| Luk 14:19 | 10.13 *Other parties* | C-258 |
+| Luk 14:20 | 10.13 *Other parties* | C-258 |
+| Luk 14:21 | 10.13 *Other parties* (quoted) | C-258 |
+| Luk 14:24 | 10.13 *Other parties* (quoted) | C-258 |
 | Luk 14:28 | 10.7 *Planning* (quoted) | — |
 | Luk 14:30 | 10.7 *Planning* (quoted) | — |
 | Luk 14:31 | 10.7 *Planning* (quoted); 11 *4. One word, opposite values* | — |

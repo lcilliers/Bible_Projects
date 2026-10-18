@@ -1,0 +1,68 @@
+{
+ "update": {
+  "update_date": "2026-10-18",
+  "title": "OT-105.8: the master's anger in Luke 14 given its ground and end (#2160)",
+  "strand": "open threads on completed clusters (#2160), OT-105.8 (M02)",
+  "researcher_instruction": "\"Widen 10.13 Other parties with the ground (Luk 14:18-20) and end (14:24), add Luk 14:12-14 to OT-105, close OT-105.8, commit and push, then read OT-105.9 (M18).\" (2026-10-18)",
+  "method": "OT-105.8 (Luk 14:21) read in its passage (Luk 14:12-24). 10.13 Other parties told the master's anger without its ground or end; widened with the excuses (14:18-20), the report (14:21) and the end (14:24). Luk 14:12-14 (invite the poor because they cannot repay) added to OT-105 as a verse item. Rule 77: no claim is told in the touched passage.",
+  "source_files": [
+   "_analytics/Clusters/M02 - anger-wrath/ot-105-8-m02-poor-seen-reading-v1-20261018.md"
+  ],
+  "claims_changed_note": "One new claim: the master's anger in Luke 14 rests on the guests' refusals and ends with them shut out.",
+  "not_woven_note": "Luk 14:12-14 to OT-105 (the poor as seen by another).",
+  "quote_parts": 4,
+  "quote_failures": 0,
+  "quote_note": "checked against iba.db verse (ESV)"
+ },
+ "refs": [
+  {
+   "kind": "escalation",
+   "value": "2160"
+  },
+  {
+   "kind": "thread",
+   "value": "OT-105"
+  },
+  {
+   "kind": "thread item",
+   "value": "OT-105.8"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "10.13",
+   "from_version": 10,
+   "to_version": 11,
+   "file": "10-13-anger-v11-20261018.md"
+  }
+ ],
+ "claims": [
+  {
+   "key": "n1",
+   "new": {
+    "text": "In the parable of the banquet the master's anger rests on the invited guests' refusals, turns into a wider invitation to the poor, and ends with the refusers shut out",
+    "beyond_text": "joins the excuses (14:18-20), the anger and its command (14:21) and the end (14:24) as one account of the anger",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 0,
+    "sources": [
+     "Luk 14:18",
+     "Luk 14:19",
+     "Luk 14:20",
+     "Luk 14:21",
+     "Luk 14:24"
+    ]
+   }
+  }
+ ],
+ "tellings": [
+  {
+   "claim": "n1",
+   "chapter": "10.13",
+   "passage": "Each party that comes into anger's verses does so in its own way",
+   "kind": "in part",
+   "part": "The master in Jesus' parables (Luke 14:18-24)",
+   "action": "add"
+  }
+ ]
+}

@@ -2,6 +2,34 @@
 
 *Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-18 — OT-105.8: the master's anger in Luke 14 given its ground and end (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-105.8 (M02)
+
+**Researcher:** "Widen 10.13 Other parties with the ground (Luk 14:18-20) and end (14:24), add Luk 14:12-14 to OT-105, close OT-105.8, commit and push, then read OT-105.9 (M18)." (2026-10-18)
+
+**Method:** OT-105.8 (Luk 14:21) read in its passage (Luk 14:12-24). 10.13 Other parties told the master's anger without its ground or end; widened with the excuses (14:18-20), the report (14:21) and the end (14:24). Luk 14:12-14 (invite the poor because they cannot repay) added to OT-105 as a verse item. Rule 77: no claim is told in the touched passage.
+
+**Sources:** _analytics/Clusters/M02 - anger-wrath/ot-105-8-m02-poor-seen-reading-v1-20261018.md
+
+**Original claims changed:** One new claim: the master's anger in Luke 14 rests on the guests' refusals and ends with them shut out.
+
+**Not woven:** Luk 14:12-14 to OT-105 (the poor as seen by another).
+
+**Refs:** escalation 2160, thread OT-105, thread item OT-105.8
+
+**Quote check:** 4 parts, 0 failures. checked against iba.db verse (ESV)
+
+- **C-258** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: In the parable of the banquet the master's anger rests on the invited guests' refusals, turns into a wider invitation to the poor, and ends with the refusers shut out
+  - verdict before: —
+  - verdict after: New
+- **C-258** telling added · 10.13 *Other parties* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: Each party that comes into anger's verses does so in its own way. - **The Spirit of God** comes with anger. "And the Spirit of God rushed upon Saul when he heard these words, and his anger was greatly kindled" (1 Samuel 11:6). The Spirit rushed upon Samson, and he went down to Ashkelon and struck down thirty men; after it, "In hot anger he went back to his father's house" (Judges 14:19). Ezekiel, lifted by the Spirit, went "in the heat of my spirit, the hand of the Lord being strong upon me" (Ezekiel 3:14). The anger list in Ephesians is set beside the Spirit grieved (Ephesians 4:30–31). - **The prophet is filled with God's wrath:** "Therefore I am full of the wrath of the Lord; I am weary of holding it in" (Jeremiah 6:11). "I sat alone, because your hand was upon me, for you had filled me with indignation" (Jeremiah 15:17). - **Angels.** The angel of the Lord stood in Balaam's way, seen by the donkey and not by the man: "God's anger was kindled because he went, and the angel of the Lord took his stand in the way as his adversary" (Numbers 22:22). Balaam's own anger fell on the donkey (22:27). God "let loose on them his burning anger … a company of destroying angels" (Psalm 78:49). An angel asked how long: "O Lord of hosts, how long will you have no mercy on Jerusalem … against which you have been angry these seventy years?", and "the Lord answered gracious and comforting words" (Zechariah 1:12–13). - **The devil:** "Woe to you, O earth and sea, for the devil has come down to you in great wrath, because he knows that his time is short!" (Revelation 12:12). - **The master in Jesus' parables,** a figure standing for God. "In anger his master delivered him to the jailers" (Matthew 18:34), after "should not you have had mercy on your fellow servant, as I had mercy on you?" (18:33). The applied lesson places the requirement in the hearer's heart: "So also my heavenly Father will do to every one of you, if you do not forgive your brother from your heart" (18:35). In another parable the anger turns into a wider invitation. Those invited "all alike began to make excuses": a field to see, oxen to examine, a wife just married (Luke 14:18–20). "So the servant came and reported these things to his master. Then the master of the house became angry and said to his servant, 'Go out quickly … and bring in the poor and crippled and blind and lame'" (14:21). The anger has its ground in the refusals, and its end is stated: "none of those men who were invited shall taste my banquet" (14:24). - **Onlookers:** "Do not rejoice when your enemy falls … lest the Lord see it and be displeased, and turn away his anger from him" (Proverbs 24:17–18). - **The physical world** bears it. "My anger and my wrath will be poured out on this place, upon man and beast, upon the trees of the field and the fruit of the ground" (Jeremiah 7:20). "The foundations also of the mountains trembled and quaked, because he was angry" (Psalm 18:7). - **Enemies' anger,** as the one attacked bears it: "then they would have swallowed us up alive, when their anger was kindled against us" (Psalm 124:3). Answered by God's hand: "you stretch out your hand against the wrath of my enemies, and your right hand delivers me" (Psalm 138:7). And by "do not fear": "Be careful, be quiet, do not fear, and do not let your heart be faint because of these two smoldering stumps of firebrands, at the fierce anger of Rezin" (Isaiah 7:4). "By faith he left Egypt, not being afraid of the anger of the king" (Hebrews 11:27). - **A ruler's anger,** as those beneath it bear it: "A king's wrath is a messenger of death, and a wise man will appease it" (Proverbs 16:14). "The terror of a king is like the growling of a lion; whoever provokes him to anger forfeits his life" (20:2). The next verse says what to do instead: "It is an honor for a man to keep aloof from strife, but every fool will be quarreling" (20:3). - **Those who pursue another.** Job's friends say, "How we will pursue him!" and "The root of the matter is found in him" (Job 19:28). He answers them: "be afraid of the sword, for wrath brings the punishment of the sword, that you may know there is a judgment" (19:29). He says it straight after "I know that my Redeemer lives" (19:25). I read the one accused as turning the fear of wrath back on those who pursue him, from the confidence he has just spoken. - **The nations.** In worship the elders say, "The nations raged, but your wrath came" (Revelation 11:18). Two angers stand in one sentence, and the second answers the first. The same verse names the reward of "those who fear your name, both small and great" (10.12; 13.1).
+  - note: in part: The master in Jesus' parables (Luke 14:18-24)
+
 ## 2026-10-18 — OT-97.17: Ezekiel 17:24 added to 10.14 (#2160)
 
 **Strand:** open threads on completed clusters (#2160), OT-97.17 (M09)

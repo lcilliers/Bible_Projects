@@ -636,7 +636,7 @@ File `10-12-fear-v13-20261018.md` (v13) · draft · key characteristic
 
 ### 10.13 — Anger
 
-File `10-13-anger-v10-20261015.md` (v10) · draft · key characteristic
+File `10-13-anger-v11-20261018.md` (v11) · draft · key characteristic
 
 **The heart that turns, and the heart that does not**
 
@@ -656,6 +656,10 @@ File `10-13-anger-v10-20261015.md` (v10) · draft · key characteristic
 **Those who carry it out**
 
 - **C-215** Pride credits to its own hand what was done through it (in part: the rod that boasts) — also told in: 10.15 *Given, then held as one's own* (in full); 11 *Authority as a standing* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
+
+**Other parties**
+
+- **C-258** In the parable of the banquet the master's anger rests on the invited guests' refusals, turns into a wider invitation to the poor, and ends with the refusers shut out (in part: The master in Jesus' parables (Luke 14:18-24))
 
 ### 10.14 — Humility
 
@@ -1188,7 +1192,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 173 |
+| narrative | New | 174 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1197,4 +1201,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-257 claims; 186 told in the narrative, 71 not.
+258 claims; 187 told in the narrative, 71 not.
