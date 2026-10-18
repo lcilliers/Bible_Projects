@@ -2,6 +2,78 @@
 
 *Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-18 — OT-97.71: Isaiah 57:18-21 and 1 Samuel 16:6 woven (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-97.71 (M47)
+
+**Researcher:** "Add Isa 57:18-19, Isa 57:20-21 and 1Sa 16:6 as proposed with their claims, close OT-97.71, commit and push, then read OT-97.17 (M09)." (2026-10-18)
+
+**Method:** OT-97.71 (the M08 marks on Isa 57:15 and 1Sa 16:7) read in their passages (Isa 57:13-21; 1Sa 16:1-13). Both verses were already told for their M47 words. Three passage gaps woven: Isa 57:18-19 in 10.9 When God hides his face (after 57:17); Isa 57:20-21 in Ch 12 False peace (the Ch 12 option of the two proposed); 1Sa 16:6 in Ch 4 The heart is hidden, and God sees it (with 16:7). Rule 77: no claim is told in the three touched passages; none untold on these concepts.
+
+**Sources:** _analytics/Clusters/M47 - inner-seat/ot-97-71-m47-forward-marks-reading-v1-20261018.md
+
+**Original claims changed:** Three new claims: healing promised after the heart's way is seen; the tossing sea as the inner state of the wicked (I read); the prophet's thought formed from appearance and corrected.
+
+**Refs:** escalation 2160, thread OT-97, thread item OT-97.71
+
+**Quote check:** 9 parts, 0 failures. checked against iba.db verse (ESV)
+
+- **C-254** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: God's seeing of a heart's own backsliding way is followed by a promise to heal, not by giving it up
+  - verdict before: —
+  - verdict after: New
+- **C-255** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: The tossing sea that cannot be quiet pictures the inner state of the wicked: no stillness, what is thrown up is mire, and by God's word no peace
+  - verdict before: —
+  - verdict after: New
+- **C-256** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: Even the prophet sent to choose formed his thought from appearance, and God's word corrected it
+  - verdict before: —
+  - verdict after: New
+- **C-254** telling added · 10.9 *When God hides his face* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: The same hidden face is not met the same way by every heart. - **A heart already seeking.** "You have said, 'Seek my face.' My heart says to you, 'Your face, Lord, do I seek.' Hide not your face from me" (Psalm 27:8–9). The plea comes from a heart that is already turned toward his face. - **A penitent heart.** David asks God to hide his face from the sin, and in the next breath not to send him away: "Create in me a clean heart, O God, and renew a right spirit within me. Cast me not away from your presence, and take not your Holy Spirit from me" (Psalm 51:10–11). - **A heart that takes it as permission.** The wicked "says in his heart, 'God has forgotten, he has hidden his face, he will never see it'" (Psalm 10:11; Chapter 12). - **A heart that does not notice.** "I hid my face and was angry, but he went on backsliding in the way of his own heart" (Isaiah 57:17). Here the hidden face is not felt at all. The next verses answer it: "I have seen his ways, but I will heal him; I will lead him and restore comfort to him and his mourners, creating the fruit of the lips. Peace, peace, to the far and to the near," says the Lord, "and I will heal him" (57:18–19). The heart's own way is seen, and healing is promised anyway. - **A heart that waits.** "I will wait for the Lord, who is hiding his face from the house of Jacob, and I will hope in him" (Isaiah 8:17). "Truly, you are a God who hides himself, O God of Israel, the Savior" (Isaiah 45:15). Isaiah calls the God who hides himself the Savior in the same breath.
+  - note: in part: A heart that does not notice (Isaiah 57:17-19)
+- **C-255** telling added · 12 *False peace* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: The heart can say that all is well. "I shall be safe, though I walk in the stubbornness of my heart" (Deuteronomy 29:19). The false prophets say it to a whole people: "It shall be well with you" (Jeremiah 23:17). The guilty say it of God: "surely his anger has turned from me" (Jeremiah 2:35). God's word is the opposite: "But the wicked are like the tossing sea; for it cannot be quiet, and its waters toss up mire and dirt. There is no peace," says my God, "for the wicked" (Isaiah 57:20–21). I read the sea as the picture of the inner state: it cannot be still, and what it throws up is mire. The same oracle gives peace "to the far and to the near" whom God heals (57:19; 10.9). The arrogant man is likewise "never at rest" (Habakkuk 2:5; 10.15). Chapter 13 follows how the human heart meets God's anger: provoking it, bearing it, and turning under it.
+  - note: in part: the tossing sea (Isaiah 57:20-21)
+- **C-256** telling added · 04 *The heart is hidden, and God sees it* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: "The heart is deceitful above all things, and desperately sick; who can understand it?" (Jeremiah 17:9). "The heart knows its own bitterness, and no stranger shares its joy" (Proverbs 14:10). Other people cannot fully see into it, and often its owner cannot either. But "man looks on the outward appearance, but the Lord looks on the heart" (1 Samuel 16:7). The word corrects a prophet. Samuel had looked on Eliab and "thought, 'Surely the Lord's anointed is before him'" (16:6). The one sent to choose formed his thought from what he saw. God is the one who "knows the secrets of the heart" (Psalm 44:21). "You discern my thoughts from afar" (Psalm 139:2). He knows the heart's leaning before it acts: "I know what they are inclined to do even today" (Deuteronomy 31:21). He tests it and weighs it: "the Lord weighs the heart" (Proverbs 21:2). People try to hide what the heart holds, and Isaiah answers them: "Ah, you who hide deep from the Lord your counsel … and who say, 'Who sees us? Who knows us?' You turn things upside down!" (Isaiah 29:15–16). Section 10.11 follows hiding and disclosing.
+  - note: in part: Samuel's thought (1 Samuel 16:6-7)
+
+## 2026-10-18 — OT-97.68: Habakkuk 2:7 added to 10.6 Possessions (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-97.68 (M18)
+
+**Researcher:** "Add Hab 2:7 to 10.6 Possessions with its claim, then close OT-97.68 and read OT-97.71 (M47)." (2026-10-18)
+
+**Method:** OT-97.68 (the M08 mark on Hab 2:9) read in its passage (Hab 2:4-14). Hab 2:9-10 was already told in 10.6 Possessions for its M18 act (gain for safety). The passage's first woe (2:6-7) added beside it: the safety gathered by taking from others answered by trembling before those it took from. Rule 77: no current claim on greed or possessions is told in the passage or untold.
+
+**Sources:** _analytics/Clusters/M18 - desire-longing/ot-97-68-m18-forward-mark-reading-v1-20261018.md
+
+**Original claims changed:** One new claim: greed's sought safety answered by fear of those it took from (I read, joining 2:7 and 2:9).
+
+**Not woven:** Hab 2:11 (the stone cries out) left for M20 / 10.11; 'safe' (M45) stays on OT-97.27.
+
+**Refs:** escalation 2160, thread OT-97, thread item OT-97.68
+
+**Quote check:** 2 parts, 0 failures. checked against iba.db verse (ESV)
+
+- **C-253** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: In Habakkuk's taunt, the safety greed gathers by taking from others is answered by fear of those it took from
+  - verdict before: —
+  - verdict after: New
+- **C-253** telling added · 10.6 *Possessions* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: The verses also give greed's reasons and its roots. A root: *"For the love of money is a root of all kinds of evils. It is through this craving that some have wandered away from the faith and pierced themselves with many pangs"* (1 Timothy 6:10). Refuge in the wrong place: *"See the man who would not make God his refuge, but trusted in the abundance of his riches and sought refuge in his own destruction!"* (Psalm 52:7). What he ran to was his ruin. Safety: *"Woe to him who gets evil gain for his house, to set his nest on high, to be safe from the reach of harm! … you have forfeited your life"* (Habakkuk 2:9–10). The picture is a bird nesting out of reach. The same taunt says what that safety comes to. Of the one "who heaps up what is not his own" it asks, "Will not your debtors suddenly arise, and those awake who will make you tremble? Then you will be spoil for them" (2:6–7). I read the two woes together: the safety gathered by taking from others is answered by fear of those it took from. Forgetting God: *"you … make gain of your neighbors by extortion; but me you have forgotten"* (Ezekiel 22:12). No contentment: *"Because he knew no contentment in his belly, he will not let anything in which he delights escape him"* (Job 20:20). And it can sit in the leaders, with a false peace: *"everyone is greedy for unjust gain; and from prophet to priest, everyone deals falsely. They have healed the wound of my people lightly, saying, 'Peace, peace,' when there is no peace"* (Jeremiah 6:13–14).
+  - note: in part: Safety (Habakkuk 2:6-10)
+
 ## 2026-10-18 — OT-97.38: the M72 forward marks read by their acts and woven (#2160)
 
 **Strand:** open threads on completed clusters (#2160), OT-97.38 (M72)

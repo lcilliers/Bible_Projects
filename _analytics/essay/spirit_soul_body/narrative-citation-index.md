@@ -620,7 +620,8 @@
 | 1Sa 15:28 | 13.1 *Ruling* (quoted) | C-250 |
 | 1Sa 15:32 | 02 *Facing death* (quoted) | C-152 |
 | 1Sa 16:4 | 10.1 *Fear* (quoted); 10.10 *Fear that arrives with a person* (quoted); 10.12 *Fear that comes upon a person* (quoted) | — |
-| 1Sa 16:7 | 04 *The heart is hidden, and God sees it* (quoted); 09 *Inner and outer* (quoted) | — |
+| 1Sa 16:6 | 04 *The heart is hidden, and God sees it* (quoted) | C-256 |
+| 1Sa 16:7 | 04 *The heart is hidden, and God sees it* (quoted); 09 *Inner and outer* (quoted) | C-256 |
 | 1Sa 16:13 | 06 *God's Spirit and the human person* (quoted) | I-6 |
 | 1Sa 16:14 | 06 *Other spirits* (quoted); 12 *Dispositions that come upon a person, and spirits that act* (quoted) | 9-4 |
 | 1Sa 16:16 | 06 *Other spirits* | — |
@@ -2470,7 +2471,11 @@
 | Isa 57:11 | 10.1 *What fear does* (quoted); 10.1 *The words*; 10.3 *Forgetting God* (quoted) | — |
 | Isa 57:15 | 02 *Life that returns* (quoted); 04 *The heart is the source* (quoted); 06 *The human spirit* (quoted); 10.14 *A lowly and contrite spirit* (quoted); 10.15 *The words* (quoted); 13.1 *Lowering himself* (quoted); 14 *Revived, restored, renewed* (quoted) | C-167, C-189, C-202 |
 | Isa 57:16 | 02 *Breath lent, and held by God* (quoted); 06 *The human spirit* (quoted); 10.13 *Why it is held back* (quoted); 10.14 *A lowly and contrite spirit* (quoted); 14 *Revived, restored, renewed* (quoted) | C-116, C-189 |
-| Isa 57:17 | 10.9 *When God hides his face* (quoted) | — |
+| Isa 57:17 | 10.9 *When God hides his face* (quoted) | C-254 |
+| Isa 57:18 | 10.9 *When God hides his face* (quoted) | C-254 |
+| Isa 57:19 | 10.9 *When God hides his face* (quoted) | C-254, C-255 |
+| Isa 57:20 | 12 *False peace* (quoted) | C-255 |
+| Isa 57:21 | 12 *False peace* (quoted) | C-255 |
 | Isa 58 | 10.14 *Humility as a way of walking* (no verse row) | — |
 | Isa 58:2 | 10.1 *When delight is only the measure* (quoted); 10.7 *Others around a choice* (quoted) | — |
 | Isa 58:3 | 10.1 *Delight* (quoted); 10.7 *Others around a choice* (quoted); 10.14 *A humbling God does not take knowledge of* (quoted); 13.1 *Choosing* | C-176, C-188 |
@@ -2991,9 +2996,11 @@
 | Hab 1:13 | 10.9 *Under rule, and longing for his* (quoted) | — |
 | Hab 1:14 | 10.9 *Under rule, and longing for his* (quoted) | — |
 | Hab 2:4 | 02 *Life set before a person* (quoted); 10.15 *The heart that says what God says* (quoted) | C-118, C-220 |
-| Hab 2:5 | 02 *Going down to Sheol* (quoted); 10.6 *Wanting and death* (quoted); 10.15 *The heart that says what God says* (quoted); 10.15 *The other face* (quoted) | C-97, C-220, C-238 |
-| Hab 2:9 | 10.6 *Possessions* (quoted) | — |
-| Hab 2:10 | 10.6 *Possessions* (quoted) | — |
+| Hab 2:5 | 02 *Going down to Sheol* (quoted); 10.6 *Wanting and death* (quoted); 10.15 *The heart that says what God says* (quoted); 10.15 *The other face* (quoted); 12 *False peace* (quoted) | C-97, C-220, C-238, C-255 |
+| Hab 2:6 | 10.6 *Possessions* (quoted) | C-253 |
+| Hab 2:7 | 10.6 *Possessions* (quoted) | C-253 |
+| Hab 2:9 | 10.6 *Possessions* (quoted) | C-253 |
+| Hab 2:10 | 10.6 *Possessions* (quoted) | C-253 |
 | Hab 2:15 | 10.0 *The path runs back* (quoted); 10.13 *How it is spoken of* (quoted) | — |
 | Hab 2:16 | 10.0 *The path runs back* (quoted); 10.13 *How it is spoken of* (quoted) | — |
 | Hab 2:18 | 02 *Living before God* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 12 *Idols taken inside* (quoted) | C-129 |

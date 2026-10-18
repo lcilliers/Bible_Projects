@@ -1,0 +1,67 @@
+{
+ "update": {
+  "update_date": "2026-10-18",
+  "title": "OT-97.68: Habakkuk 2:7 added to 10.6 Possessions (#2160)",
+  "strand": "open threads on completed clusters (#2160), OT-97.68 (M18)",
+  "researcher_instruction": "\"Add Hab 2:7 to 10.6 Possessions with its claim, then close OT-97.68 and read OT-97.71 (M47).\" (2026-10-18)",
+  "method": "OT-97.68 (the M08 mark on Hab 2:9) read in its passage (Hab 2:4-14). Hab 2:9-10 was already told in 10.6 Possessions for its M18 act (gain for safety). The passage's first woe (2:6-7) added beside it: the safety gathered by taking from others answered by trembling before those it took from. Rule 77: no current claim on greed or possessions is told in the passage or untold.",
+  "source_files": [
+   "_analytics/Clusters/M18 - desire-longing/ot-97-68-m18-forward-mark-reading-v1-20261018.md"
+  ],
+  "claims_changed_note": "One new claim: greed's sought safety answered by fear of those it took from (I read, joining 2:7 and 2:9).",
+  "not_woven_note": "Hab 2:11 (the stone cries out) left for M20 / 10.11; 'safe' (M45) stays on OT-97.27.",
+  "quote_parts": 2,
+  "quote_failures": 0,
+  "quote_note": "checked against iba.db verse (ESV)"
+ },
+ "refs": [
+  {
+   "kind": "escalation",
+   "value": "2160"
+  },
+  {
+   "kind": "thread",
+   "value": "OT-97"
+  },
+  {
+   "kind": "thread item",
+   "value": "OT-97.68"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "10.6",
+   "from_version": 23,
+   "to_version": 24,
+   "file": "10-06-wanting-v24-20261018.md"
+  }
+ ],
+ "claims": [
+  {
+   "key": "n1",
+   "new": {
+    "text": "In Habakkuk's taunt, the safety greed gathers by taking from others is answered by fear of those it took from",
+    "beyond_text": "joins the first woe (2:6-7, debtors who make him tremble) to the second (2:9, the nest set high to be safe)",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 1,
+    "sources": [
+     "Hab 2:6",
+     "Hab 2:7",
+     "Hab 2:9",
+     "Hab 2:10"
+    ]
+   }
+  }
+ ],
+ "tellings": [
+  {
+   "claim": "n1",
+   "chapter": "10.6",
+   "passage": "The verses also give greed's reasons and its roots",
+   "kind": "in part",
+   "part": "Safety (Habakkuk 2:6-10)",
+   "action": "add"
+  }
+ ]
+}

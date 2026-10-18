@@ -363,7 +363,7 @@ File `03-one-inner-person-v5-20261013.md` (v5) · draft · chapter
 
 ### 04 — The heart
 
-File `04-the-heart-v18-20261015.md` (v18) · draft · chapter
+File `04-the-heart-v19-20261018.md` (v19) · draft · chapter
 
 **The heart and anger**
 
@@ -374,6 +374,10 @@ File `04-the-heart-v18-20261015.md` (v18) · draft · chapter
 **The heart is the source**
 
 - **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: the heart of the contrite revived) — also told in: 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
+
+**The heart is hidden, and God sees it**
+
+- **C-256** Even the prophet sent to choose formed his thought from appearance, and God's word corrected it (in part: Samuel's thought (1 Samuel 16:6-7))
 
 **The heart humbled**
 
@@ -492,7 +496,7 @@ File `10-05-speaking-v22-20261013.md` (v22) · draft · activity
 
 ### 10.6 — Wanting
 
-File `10-06-wanting-v23-20261013.md` (v23) · draft · activity
+File `10-06-wanting-v24-20261018.md` (v24) · draft · activity
 
 **Thirst answered**
 
@@ -501,6 +505,10 @@ File `10-06-wanting-v23-20261013.md` (v23) · draft · activity
 **Jealousy and envy**
 
 - **C-209** Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart (in part: the pride of the tree and the given beauty) — also told in: 12 *Pride and the lifted-up heart and spirit* (in part); 12 *Pride and the lifted-up heart and spirit* (in full)
+
+**Possessions**
+
+- **C-253** In Habakkuk's taunt, the safety greed gathers by taking from others is answered by fear of those it took from (in part: Safety (Habakkuk 2:6-10))
 
 ### 10.7 — Choosing and setting direction
 
@@ -542,7 +550,7 @@ File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft · activity
 
 ### 10.9 — Relating to God
 
-File `10-09-relating-to-god-v25-20261018.md` (v25) · draft · activity
+File `10-09-relating-to-god-v26-20261018.md` (v26) · draft · activity
 
 **Humbling oneself before God**
 
@@ -551,6 +559,10 @@ File `10-09-relating-to-god-v25-20261018.md` (v25) · draft · activity
 - **C-173** To humble oneself under God's hand is also to put down what one carries, because he cares; the lifting is his to time (in part: puts down what he carries) — also told in: 10.14 *What goes with it* (in full)
 - **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: God sees it) — also told in: 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *God sees it, and answers in measure* (in full); 10.14 *God sees it, and answers in measure* (in part)
 - **C-193** Submitting to God and humbling oneself are said as one (in part: submitting and drawing near) — also told in: 10.14 *Submitting* (in full)
+
+**When God hides his face**
+
+- **C-254** God's seeing of a heart's own backsliding way is followed by a promise to heal, not by giving it up (in part: A heart that does not notice (Isaiah 57:17-19))
 
 **Kept from what would rule**
 
@@ -860,7 +872,7 @@ File `11-other-sides-of-the-inner-being-v35-20261015.md` (v35) · draft · chapt
 
 ### 12 — When the inner being goes wrong
 
-File `12-when-the-inner-being-goes-wrong-v24-20261015.md` (v24) · draft + held · chapter
+File `12-when-the-inner-being-goes-wrong-v25-20261018.md` (v25) · draft + held · chapter
 
 **Pride and the lifted-up heart and spirit**
 
@@ -876,6 +888,10 @@ File `12-when-the-inner-being-goes-wrong-v24-20261015.md` (v24) · draft + held 
 - **C-210** Death brings pride down (in full) — also told in: 10.15 *Where it ends* (in part)
 - **C-211** Pride can design its own honour, and the honour it designed becomes the measure of its fall (in full)
 - **C-215** Pride credits to its own hand what was done through it (in part) — also told in: 10.13 *Those who carry it out* (in part); 10.15 *Given, then held as one's own* (in full); 11 *Authority as a standing* (in part)
+
+**False peace**
+
+- **C-255** The tossing sea that cannot be quiet pictures the inner state of the wicked: no stillness, what is thrown up is mire, and by God's word no peace (in part: the tossing sea (Isaiah 57:20-21))
 
 ### 13 — Other beings
 
@@ -1171,7 +1187,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 168 |
+| narrative | New | 172 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1180,4 +1196,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-252 claims; 181 told in the narrative, 71 not.
+256 claims; 185 told in the narrative, 71 not.

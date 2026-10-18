@@ -1,0 +1,123 @@
+{
+ "update": {
+  "update_date": "2026-10-18",
+  "title": "OT-97.71: Isaiah 57:18-21 and 1 Samuel 16:6 woven (#2160)",
+  "strand": "open threads on completed clusters (#2160), OT-97.71 (M47)",
+  "researcher_instruction": "\"Add Isa 57:18-19, Isa 57:20-21 and 1Sa 16:6 as proposed with their claims, close OT-97.71, commit and push, then read OT-97.17 (M09).\" (2026-10-18)",
+  "method": "OT-97.71 (the M08 marks on Isa 57:15 and 1Sa 16:7) read in their passages (Isa 57:13-21; 1Sa 16:1-13). Both verses were already told for their M47 words. Three passage gaps woven: Isa 57:18-19 in 10.9 When God hides his face (after 57:17); Isa 57:20-21 in Ch 12 False peace (the Ch 12 option of the two proposed); 1Sa 16:6 in Ch 4 The heart is hidden, and God sees it (with 16:7). Rule 77: no claim is told in the three touched passages; none untold on these concepts.",
+  "source_files": [
+   "_analytics/Clusters/M47 - inner-seat/ot-97-71-m47-forward-marks-reading-v1-20261018.md"
+  ],
+  "claims_changed_note": "Three new claims: healing promised after the heart's way is seen; the tossing sea as the inner state of the wicked (I read); the prophet's thought formed from appearance and corrected.",
+  "quote_parts": 9,
+  "quote_failures": 0,
+  "quote_note": "checked against iba.db verse (ESV)"
+ },
+ "refs": [
+  {
+   "kind": "escalation",
+   "value": "2160"
+  },
+  {
+   "kind": "thread",
+   "value": "OT-97"
+  },
+  {
+   "kind": "thread item",
+   "value": "OT-97.71"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "10.9",
+   "from_version": 25,
+   "to_version": 26,
+   "file": "10-09-relating-to-god-v26-20261018.md"
+  },
+  {
+   "chapter": "12",
+   "from_version": 24,
+   "to_version": 25,
+   "file": "12-when-the-inner-being-goes-wrong-v25-20261018.md"
+  },
+  {
+   "chapter": "04",
+   "from_version": 18,
+   "to_version": 19,
+   "file": "04-the-heart-v19-20261018.md"
+  }
+ ],
+ "claims": [
+  {
+   "key": "n1",
+   "new": {
+    "text": "God's seeing of a heart's own backsliding way is followed by a promise to heal, not by giving it up",
+    "beyond_text": "joins 57:18-19 to the heart of 57:17 that did not notice the hidden face",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 0,
+    "sources": [
+     "Isa 57:17",
+     "Isa 57:18",
+     "Isa 57:19"
+    ]
+   }
+  },
+  {
+   "key": "n2",
+   "new": {
+    "text": "The tossing sea that cannot be quiet pictures the inner state of the wicked: no stillness, what is thrown up is mire, and by God's word no peace",
+    "beyond_text": "reads the figure of Isa 57:20 as an inner state, and sets it against a false peace and beside the arrogant man never at rest",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 1,
+    "sources": [
+     "Isa 57:20",
+     "Isa 57:21",
+     "Isa 57:19",
+     "Hab 2:5"
+    ]
+   }
+  },
+  {
+   "key": "n3",
+   "new": {
+    "text": "Even the prophet sent to choose formed his thought from appearance, and God's word corrected it",
+    "beyond_text": "sets Samuel's thought (16:6) as what 16:7 answers",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 0,
+    "sources": [
+     "1Sa 16:6",
+     "1Sa 16:7"
+    ]
+   }
+  }
+ ],
+ "tellings": [
+  {
+   "claim": "n1",
+   "chapter": "10.9",
+   "passage": "The same hidden face is not met the same way by every heart",
+   "kind": "in part",
+   "part": "A heart that does not notice (Isaiah 57:17-19)",
+   "action": "add"
+  },
+  {
+   "claim": "n2",
+   "chapter": "12",
+   "passage": "The heart can say that all is well",
+   "kind": "in part",
+   "part": "the tossing sea (Isaiah 57:20-21)",
+   "action": "add"
+  },
+  {
+   "claim": "n3",
+   "chapter": "04",
+   "passage": "The heart is deceitful above all things",
+   "kind": "in part",
+   "part": "Samuel's thought (1 Samuel 16:6-7)",
+   "action": "add"
+  }
+ ]
+}
