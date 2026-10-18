@@ -22,8 +22,16 @@
       Untell       -Claim C-412 -Chapter 10.1 -Passage "<opening words>" [-Note ..]
       Withdraw     -Claim C-412 [-Note ..]
       EditNote     -Heading "<block heading>" [-Text ..] [-NewHeading ..] [-Ordinal n]
-      EditChapter  -Chapter 10.1 [-NewNumber ..] [-Title ..] [-State ..] [-CurrentFile ..]
-                   [-CurrentVersion n] [-ReadingOrder n] [-Inactive 0|1] [-Note ..]
+      AddChapter   -Chapter 10.16 -Title ".." -Kind "key characteristic" -Purpose ".." -PurposeRef "#nnnn"
+                   (-After 10.15 | -ReadingOrder n) [-CurrentFile <file on disk>] [-State draft]
+                   [-BuiltFrom ..] [-FileStem ..] [-Note "<reason>"]
+                   (the chapter table is the authority for the chapters, #2155: later chapters move
+                   down, section rows come from the file, a Structure log entry is written; -Kind is
+                   cfg_enum narrative_chapter_kind; a file is needed unless the kind is in
+                   narrative.chapter_kinds_without_file)
+      EditChapter  -Chapter 10.1 [-NewNumber ..] [-Title ..] [-Kind ..] [-Purpose ..] [-PurposeRef ..]
+                   [-State ..] [-CurrentFile ..] [-CurrentVersion n] [-After <chapter> | -ReadingOrder n]
+                   [-Inactive 0|1] [-Note "<reason>"]   (a structural change is logged)
       EditSection  -Chapter 10.1 -Section "<heading>" [-NewHeading ..] [-Level n] [-Ordinal n]
                    [-LastVersion n]   (an unknown -Section with -Level adds it)
       Record       -File "<path to the weave's update JSON>"   (shape: lib/narrativeregister.py record())
@@ -45,7 +53,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('AddClaim', 'Edit', 'Tell', 'Untell', 'Withdraw', 'EditNote', 'EditChapter',
+    [ValidateSet('AddClaim', 'Edit', 'Tell', 'Untell', 'Withdraw', 'EditNote', 'AddChapter', 'EditChapter',
                  'EditSection', 'Record', 'Find', 'History', 'Check', 'Export')]
     [string] $Action,
     [ValidateSet('Claude', 'Researcher')] [string] $By,
@@ -56,6 +64,7 @@ param(
     [string] $Heading, [string] $NewHeading, [string] $Ordinal, [string] $Level, [string] $LastVersion,
     [string] $NewNumber, [string] $Title, [string] $State, [string] $CurrentFile, [string] $CurrentVersion,
     [string] $ReadingOrder, [string] $Inactive,
+    [string] $Purpose, [string] $PurposeRef, [string] $After, [string] $BuiltFrom, [string] $FileStem,
     [string] $File, [string] $Note,
     [string] $Verse, [string] $Escalation, [string] $Thread,
     [switch] $NotInNarrative, [switch] $ToldInMoreThanOne,
@@ -73,7 +82,7 @@ Set-Location $RepoRoot
 
 $stepName = @{
     AddClaim = 'add_claim'; Edit = 'edit'; Tell = 'tell'; Untell = 'untell'; Withdraw = 'withdraw'
-    EditNote = 'edit_note'; EditChapter = 'edit_chapter'; EditSection = 'edit_section'
+    EditNote = 'edit_note'; AddChapter = 'add_chapter'; EditChapter = 'edit_chapter'; EditSection = 'edit_section'
     Record = 'record'; Find = 'find'; History = 'history'; Check = 'check'; Export = 'export'
 }[$Action]
 $stepId = "narrative_register.$stepName"
@@ -84,7 +93,8 @@ foreach ($name in @('By', 'Claim', 'ClaimRef', 'Text', 'BeyondText', 'Source', '
                     'Status', 'IRead', 'MainChapter', 'MainSection', 'Chapter', 'Section', 'Passage',
                     'Kind', 'Part', 'Heading', 'NewHeading', 'Ordinal', 'Level', 'LastVersion',
                     'NewNumber', 'Title', 'State', 'CurrentFile', 'CurrentVersion', 'ReadingOrder',
-                    'Inactive', 'File', 'Note', 'Verse', 'Escalation', 'Thread')) {
+                    'Inactive', 'Purpose', 'PurposeRef', 'After', 'BuiltFrom', 'FileStem',
+                    'File', 'Note', 'Verse', 'Escalation', 'Thread')) {
     $value = Get-Variable -Name $name -ValueOnly
     if ($PSBoundParameters.ContainsKey($name)) { $paramArgs += @('--param', "$name=$value") }
 }

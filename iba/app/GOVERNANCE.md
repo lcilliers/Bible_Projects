@@ -4202,4 +4202,25 @@ They record where things were at that date.
   - The concept's current claims that no passage tells are linked, restated or withdrawn.
   - Rule 77 was amended to say so (approved and applied 2026-10-15, #2154, `RUN-20261015_060627_533`). The whole-chapter wording proposed first (#2153) was withdrawn.
   - First done in register update 142 (M09 humility).
-- **Chapters are not fixed** (Q-J, *"they will morph as more clusters are being read"*): nothing in the design depends on the present chapters; a chapter can be added, split, merged, renamed, renumbered or retired, each logged; a passage keeps its row and its claims when it moves.
+- **Chapters are not fixed** (Q-J, *"they will morph as more clusters are being read"*): nothing in the design depends on the present chapters; a chapter can be added, split, merged, renamed, renumbered or retired, each logged; a passage keeps its row and its claims when it moves. Since #2155 (§95) this is done through `AddChapter`/`EditChapter`, and every structural change is in the Structure log.
+
+## §95. The chapter table is the authority for the narrative's chapters and their use (2026-10-18, researcher-approved proposal, escalation #2155)
+
+- **Ruling.** Researcher, verbatim: *"got it, the chapter table was built with the claims register migration.  Yes, any the chapter build should be added to the chapter table. The use of the chapters should be clear from the chapter table and this table should be fully integrated into the governance and config"*. Then: *"Approve #2155 as proposed: D1 kinds as listed, D2 purposes as drafted, D3 publishing follows the table, D4 the behaviour rule. Proceed to test and build."* Proposal: `_analytics/essay/spirit_soul_body/wa-essay-narrative-chapter-table-proposal-v1-20261018.md`.
+- **What the table holds.** `narrative_chapter` (iba.db) says which chapters exist, their reading order and what each is for:
+  - `kind`, from `cfg_enum narrative_chapter_kind`: front matter, chapter, part heading, opening, activity, key characteristic, other beings, deferred
+  - `purpose`: what the chapter holds, what belongs in it and what goes elsewhere
+  - `purpose_ref`: the rulings that set the purpose up
+
+  `built_from` and `replaces_original` stay as history. The published register (`narrative-claim-register.md`) opens with a **Chapters** table built from these columns. That table is the place to read what each chapter is for.
+- **Changed only through the tool** (`cfg_behaviour_rule` `narrative-chapters-change-only-through-the-register`, D4, `partially_enforced`):
+  - `Narrative-Register.ps1 -Action AddChapter` adds a chapter. It needs a kind, a purpose and its ruling. A file on disk is required unless the kind is in `cfg_setting narrative.chapter_kinds_without_file`. It moves the later chapters down, writes the section rows from the file and writes a Structure log entry.
+  - `EditChapter` changes a chapter, including `-After` to move it. A change of number, title, kind, purpose, ruling, place or retirement writes a Structure log entry with the before and after. A new file version or state is not structural; Record logs those with the weave.
+  - A direct SQL insert cannot be stopped. `Check` reports a row whose `created_by` is `direct edit`.
+- **Check** also reports:
+  - a chapter with no kind or purpose
+  - a file-needing chapter with no file
+  - two chapters sharing a reading order
+  - a `.md` file in the narrative folder that is no chapter's current file
+- **Publishing follows the table** (D3). `Copy-NarrativeToLearning4Comfort.ps1` (`lib/narrativecopy.py`) copies exactly the active chapters' current files. A stray file is reported and not copied, and a chapter whose file is missing stops the copy.
+- **Built** by `iba/app/migration/narrative_chapter_table_config_v1_20261018.py` (run_id `DEVMODE-2155-CHAPTER-20261018`, every cfg_* write through `configmaint.apply_logged`). It also wrote the approved purposes for all 37 active chapters, and a Structure log entry for 00 Introduction, which was added on 2026-10-18 by direct insert before `AddChapter` existed (#2159). BUILD.md §351.

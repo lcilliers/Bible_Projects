@@ -1475,6 +1475,8 @@ iba\app\ps\Narrative-Register.ps1 -Action Untell -Claim C-12 -Chapter 8 -Passage
 iba\app\ps\Narrative-Register.ps1 -Action Withdraw -Claim C-12 -Note "<why>" -By Researcher
 iba\app\ps\Narrative-Register.ps1 -Action EditNote -Heading "Researcher direction" -Text "<text>" -By Researcher
 iba\app\ps\Narrative-Register.ps1 -Action EditChapter -Chapter 9 -NewNumber 2 -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action AddChapter -Chapter 10.16 -Title "<title>" -Kind "key characteristic" -Purpose "<what it holds>" -PurposeRef "#nnnn (date)" -After 10.15 -CurrentFile "10-16-<stem>-v1-<date>.md" -Note "<why>" -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action EditChapter -Chapter 10.16 -After 10.11 -Note "<why>" -By Claude
 iba\app\ps\Narrative-Register.ps1 -Action EditSection -Chapter 10.1 -Section "<heading>" -NewHeading "<new>" -By Claude
 iba\app\ps\Narrative-Register.ps1 -Action Record -File "<the weave's update JSON>" -By Claude
 
@@ -1524,6 +1526,21 @@ iba\app\ps\Narrative-Register.ps1 -Action Export
 - **Direct edits** in the database (e.g. the VS Code SQLite extension) are allowed and logged by the
   triggers as `direct edit`; run `-Action Export` afterwards to republish, and `-Action Check` to
   confirm the files and the register agree.
+
+- **Chapters (#2155, GOVERNANCE §95).** The chapter table (`narrative_chapter`) is the authority for
+  which chapters exist, their order and what each is for (`kind`, `purpose`, `purpose_ref`; the
+  published register opens with a Chapters table). Add a chapter with `AddChapter`, never a direct
+  insert:
+  - It needs `-Kind`, `-Purpose` and `-PurposeRef`, and `-After` or `-ReadingOrder`.
+  - A `-CurrentFile` on disk is needed unless the kind is a part heading or deferred
+    (`narrative.chapter_kinds_without_file`).
+  - It moves the later chapters down, writes the section rows from the file's headings (no separate
+    `EditSection`), and writes a Structure log entry.
+
+  `EditChapter` takes `-Kind`, `-Purpose`, `-PurposeRef` and `-After` too. A structural change is
+  logged. `Check` reports chapters with no kind or purpose, shared reading orders, stray `.md`
+  files in the narrative folder, and rows inserted outside the tool. The copy to learning4comfort
+  takes exactly the active chapters' current files.
 
 ## 13. Log retention (read-only)
 

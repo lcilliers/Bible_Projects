@@ -2,6 +2,50 @@
 
 *Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## Chapters
+
+What each chapter is for, from the chapter table (the authority for the chapters, #2155).
+
+| No. | Title | Kind | State | Purpose | Ruling |
+|---|---|---|---|---|---|
+| 00 | Introduction | front matter | draft | What the study is, where it began and how it is put together, for a reader coming to it new. Points to Ch 1 for the question. | #2159 (2026-10-18) |
+| 01 | The question behind the words | chapter | draft | How the question moved from "two parts or three?" to "how does the inner being work?", and the shape of the book. | No recorded ruling; reset 2026-09-30 (#1912/#1913) |
+| 02 | Life, breath and death | chapter | draft | Sets the scene: what life is about and what death means, as the setting in which the inner being works. Death is told by its kinds (dead in, dead to, death in the living). | #1936, #1937 (2026-10-02); OT-02 #2003 (2026-10-14) |
+| 03 | One inner person, many words | chapter | draft | How the words for the inner person relate: one person, spoken of from several sides. | No recorded ruling |
+| 04 | The heart | chapter | draft | The word heart: what Scripture shows the heart doing and undergoing. | No recorded ruling |
+| 05 | The soul | chapter | draft | The word soul, as for the heart. | No recorded ruling |
+| 06 | The spirit | chapter | draft | The human spirit, as for the heart. The Holy Spirit's own acts go to 13.1. | #1986 (2026-10-08) for the 13.1 boundary |
+| 07 | Flesh | chapter | draft | The word flesh as part of the inner person. | No recorded ruling |
+| 08 | Conscience and the bosom | chapter | draft | The words conscience and bosom. | No recorded ruling |
+| 09 | Where the words part | chapter | draft | The places where Scripture does draw the words apart. | No recorded ruling |
+| 10 | Part 10 — The inner being at work | part heading | draft | Heading for the activity chapters 10.0 to 10.15. No file. | #1918 (2026-09-30): Ch 10 designed to grow |
+| 10.0 | The inner being at work | opening | draft | How the activities work together, following the paths from a thought or a feeling to a deed; the map of Part 10. | No recorded ruling |
+| 10.1 | Feeling | activity | draft | Feeling as an activity, with Delight: a person's delight has its one account here. The "feeling" frame itself is an open question (OT-12). | M18 group B ruling (2026-10-09); OT-12 |
+| 10.2 | Knowing and hearing | activity | draft | Knowing and hearing, including what blocks hearing (pride, a famine of hearing). | No recorded ruling |
+| 10.3 | Remembering and forgetting | activity | draft | Remembering and forgetting. | #1920 (2026-10-01) |
+| 10.4 | Thinking | activity | draft | Thinking and where thought comes from. | No recorded ruling |
+| 10.5 | Speaking | activity | draft | Speaking and what speech carries from within. | No recorded ruling |
+| 10.6 | Wanting | activity | draft | Wanting and desire: the home for the desire words (M18), apart from delight (10.1). | M18 ruling (2026-10-09): "10.6 is fine for M18" |
+| 10.7 | Choosing and setting direction | activity | draft | Choosing, being chosen, planning, willing and taking the lower place: choosing as one account of setting direction. | #1978 (2026-10-08 reframe); #1986 |
+| 10.8 | Right and wrong | activity | draft | Knowing and doing right and wrong. | No recorded ruling |
+| 10.9 | Relating to God | activity | draft | The person's side of relating to God (God's own acts go to 13.1). | #1982 (2026-10-07) |
+| 10.10 | Relating to others | activity | draft | Relating to others, including holding authority over another and pride over another. | #1998 (2026-10-12) |
+| 10.11 | Hiding and disclosing | activity | draft | Concealment and disclosure, before God and before others, as one account. | #1931 (2026-10-02) |
+| 10.12 | Fear | key characteristic | draft | The full account of fear as a key characteristic. Other chapters carry fear only where it belongs to their own activity, and point here. | #1961 (2026-10-04) |
+| 10.13 | Anger | key characteristic | draft | The full account of anger, including living under God's anger (the old Ch 13, folded in). | #1963, #1977 (2026-10-05) |
+| 10.14 | Humility | key characteristic | draft | The full account of humility ("humility is not a feeling"). Each of its angles is also woven into its own chapter. | #2148 (2026-10-15) |
+| 10.15 | Pride | key characteristic | draft | The full account of pride. Ch 12 keeps pride as a way the inner being goes wrong and points here. | #2156 (2026-10-15) |
+| 11 | Other sides of the inner being | chapter | draft | A collection of inner-being elements that have no other home; the title carries no weight in the analysis. Section 4 is the cross-cutting account of how a word or act changes character. | #1998 (2026-10-12); #1919 (2026-10-01) |
+| 12 | When the inner being goes wrong | chapter | draft + held | What goes wrong in the inner being. Unchecked original material stays in Held sections. | No recorded ruling for the purpose; Held rule from the 2026-09-30 reset |
+| 13 | Other beings | opening | draft | The opening of Ch 13: other beings in their own right, routed here (verse routing A). | #1982 (2026-10-07); rule 72 |
+| 13.1 | Divine | other beings | draft | God in his own right, including the Spirit and Jesus, and how his character reaches the human inner being. | #1982; #1986 (2026-10-08); #2148 (2026-10-15) |
+| 13.2 | Angels | other beings | draft | Angels in their own right. | #1982 |
+| 13.3 | Other spirits | other beings | empty | Other spirits in their own right, including the devil. | #1982 |
+| 13.4 | Nature | other beings | draft | The physical world in its own right. | #1982 |
+| 14 | Made new | chapter | draft + held | How the inner being is made new. Unchecked original material stays in Held sections. | No recorded ruling |
+| 15 | Beyond the named words | chapter | draft | The inner life Scripture describes without naming heart, soul or spirit. | No recorded ruling |
+| science | (science) | deferred | deferred | The science chapters, written after the biblical reading. | Reset 2026-09-30: "Science chapters come later" |
+
 ## (index opening)
 
 # The inner-being narrative — index and status (v1)
@@ -141,15 +185,15 @@ Pro 17:27 had already been corrected.
 
 ### 00 — Introduction
 
-File `00-introduction-v1-20261018.md` (v1) · draft
+File `00-introduction-v1-20261018.md` (v1) · draft · front matter
 
 ### 01 — The question behind the words
 
-File `01-the-question-v4-20261002.md` (v4) · draft
+File `01-the-question-v4-20261002.md` (v4) · draft · chapter
 
 ### 02 — Life, breath and death
 
-File `02-life-breath-and-death-v25-20261014.md` (v25) · draft
+File `02-life-breath-and-death-v25-20261014.md` (v25) · draft · chapter
 
 **Breath lent, and held by God**
 
@@ -315,11 +359,11 @@ File `02-life-breath-and-death-v25-20261014.md` (v25) · draft
 
 ### 03 — One inner person, many words
 
-File `03-one-inner-person-v5-20261013.md` (v5) · draft
+File `03-one-inner-person-v5-20261013.md` (v5) · draft · chapter
 
 ### 04 — The heart
 
-File `04-the-heart-v18-20261015.md` (v18) · draft
+File `04-the-heart-v18-20261015.md` (v18) · draft · chapter
 
 **The heart and anger**
 
@@ -339,7 +383,7 @@ File `04-the-heart-v18-20261015.md` (v18) · draft
 
 ### 05 — The soul
 
-File `05-the-soul-v9-20261015.md` (v9) · draft
+File `05-the-soul-v9-20261015.md` (v9) · draft · chapter
 
 **From throat to corpse**
 
@@ -351,7 +395,7 @@ File `05-the-soul-v9-20261015.md` (v9) · draft
 
 ### 06 — The spirit
 
-File `06-the-spirit-v13-20261015.md` (v13) · draft
+File `06-the-spirit-v13-20261015.md` (v13) · draft · chapter
 
 **The human spirit**
 
@@ -363,15 +407,15 @@ File `06-the-spirit-v13-20261015.md` (v13) · draft
 
 ### 07 — Flesh
 
-File `07-flesh-v8-20261012.md` (v8) · draft
+File `07-flesh-v8-20261012.md` (v8) · draft · chapter
 
 ### 08 — Conscience and the bosom
 
-File `08-conscience-and-bosom-v7-20261012.md` (v7) · draft
+File `08-conscience-and-bosom-v7-20261012.md` (v7) · draft · chapter
 
 ### 09 — Where the words part
 
-File `09-where-the-words-part-v4-20261014.md` (v4) · draft
+File `09-where-the-words-part-v4-20261014.md` (v4) · draft · chapter
 
 **Lines that are often drawn, but that I cannot find**
 
@@ -381,15 +425,15 @@ File `09-where-the-words-part-v4-20261014.md` (v4) · draft
 
 ### 10 — Part 10 — The inner being at work
 
-File `—` (v—) · draft
+File `—` (v—) · draft · part heading
 
 ### 10.0 — The inner being at work
 
-File `10-00-the-inner-being-at-work-v7-20261015.md` (v7) · draft
+File `10-00-the-inner-being-at-work-v7-20261015.md` (v7) · draft · opening
 
 ### 10.1 — Feeling
 
-File `10-01-feeling-v22-20261015.md` (v22) · draft
+File `10-01-feeling-v22-20261015.md` (v22) · draft · activity
 
 **(opening)**
 
@@ -401,7 +445,7 @@ File `10-01-feeling-v22-20261015.md` (v22) · draft
 
 ### 10.2 — Knowing and hearing
 
-File `10-02-knowing-and-hearing-v19-20261015.md` (v19) · draft
+File `10-02-knowing-and-hearing-v19-20261015.md` (v19) · draft · activity
 
 **(opening)**
 
@@ -419,7 +463,7 @@ File `10-02-knowing-and-hearing-v19-20261015.md` (v19) · draft
 
 ### 10.3 — Remembering and forgetting
 
-File `10-03-remembering-and-forgetting-v7-20261012.md` (v7) · draft
+File `10-03-remembering-and-forgetting-v7-20261012.md` (v7) · draft · activity
 
 **Remembering as a cure, and remembering as hope**
 
@@ -427,7 +471,7 @@ File `10-03-remembering-and-forgetting-v7-20261012.md` (v7) · draft
 
 ### 10.4 — Thinking
 
-File `10-04-thinking-v14-20261013.md` (v14) · draft
+File `10-04-thinking-v14-20261013.md` (v14) · draft · activity
 
 **What thinking does**
 
@@ -439,7 +483,7 @@ File `10-04-thinking-v14-20261013.md` (v14) · draft
 
 ### 10.5 — Speaking
 
-File `10-05-speaking-v22-20261013.md` (v22) · draft
+File `10-05-speaking-v22-20261013.md` (v22) · draft · activity
 
 **Speech before words**
 
@@ -447,7 +491,7 @@ File `10-05-speaking-v22-20261013.md` (v22) · draft
 
 ### 10.6 — Wanting
 
-File `10-06-wanting-v23-20261013.md` (v23) · draft
+File `10-06-wanting-v23-20261013.md` (v23) · draft · activity
 
 **Thirst answered**
 
@@ -459,7 +503,7 @@ File `10-06-wanting-v23-20261013.md` (v23) · draft
 
 ### 10.7 — Choosing and setting direction
 
-File `10-07-choosing-and-setting-direction-v31-20261015.md` (v31) · draft
+File `10-07-choosing-and-setting-direction-v31-20261015.md` (v31) · draft · activity
 
 **Being chosen**
 
@@ -485,7 +529,7 @@ File `10-07-choosing-and-setting-direction-v31-20261015.md` (v31) · draft
 
 ### 10.8 — Right and wrong
 
-File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft
+File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft · activity
 
 **(opening)**
 
@@ -493,7 +537,7 @@ File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft
 
 ### 10.9 — Relating to God
 
-File `10-09-relating-to-god-v24-20261015.md` (v24) · draft
+File `10-09-relating-to-god-v24-20261015.md` (v24) · draft · activity
 
 **Humbling oneself before God**
 
@@ -509,7 +553,7 @@ File `10-09-relating-to-god-v24-20261015.md` (v24) · draft
 
 ### 10.10 — Relating to others
 
-File `10-10-relating-to-others-v28-20261015.md` (v28) · draft
+File `10-10-relating-to-others-v28-20261015.md` (v28) · draft · activity
 
 **(opening)**
 
@@ -541,11 +585,11 @@ File `10-10-relating-to-others-v28-20261015.md` (v28) · draft
 
 ### 10.11 — Hiding and disclosing
 
-File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft
+File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft · activity
 
 ### 10.12 — Fear
 
-File `10-12-fear-v11-20261015.md` (v11) · draft
+File `10-12-fear-v11-20261015.md` (v11) · draft · key characteristic
 
 **The fear of God**
 
@@ -553,7 +597,7 @@ File `10-12-fear-v11-20261015.md` (v11) · draft
 
 ### 10.13 — Anger
 
-File `10-13-anger-v10-20261015.md` (v10) · draft
+File `10-13-anger-v10-20261015.md` (v10) · draft · key characteristic
 
 **The heart that turns, and the heart that does not**
 
@@ -576,7 +620,7 @@ File `10-13-anger-v10-20261015.md` (v10) · draft
 
 ### 10.14 — Humility
 
-File `10-14-humility-v3-20261015.md` (v3) · draft
+File `10-14-humility-v3-20261015.md` (v3) · draft · key characteristic
 
 **(opening)**
 
@@ -682,7 +726,7 @@ File `10-14-humility-v3-20261015.md` (v3) · draft
 
 ### 10.15 — Pride
 
-File `10-15-pride-v1-20261015.md` (v1) · draft
+File `10-15-pride-v1-20261015.md` (v1) · draft · key characteristic
 
 **(opening)**
 
@@ -755,7 +799,7 @@ File `10-15-pride-v1-20261015.md` (v1) · draft
 
 ### 11 — Other sides of the inner being
 
-File `11-other-sides-of-the-inner-being-v35-20261015.md` (v35) · draft
+File `11-other-sides-of-the-inner-being-v35-20261015.md` (v35) · draft · chapter
 
 **2. Thresholds: the merry heart and the sad heart**
 
@@ -789,7 +833,7 @@ File `11-other-sides-of-the-inner-being-v35-20261015.md` (v35) · draft
 
 ### 12 — When the inner being goes wrong
 
-File `12-when-the-inner-being-goes-wrong-v24-20261015.md` (v24) · draft + held
+File `12-when-the-inner-being-goes-wrong-v24-20261015.md` (v24) · draft + held · chapter
 
 **Pride and the lifted-up heart and spirit**
 
@@ -808,11 +852,11 @@ File `12-when-the-inner-being-goes-wrong-v24-20261015.md` (v24) · draft + held
 
 ### 13 — Other beings
 
-File `13-00-other-beings-v2-20261008.md` (v2) · draft
+File `13-00-other-beings-v2-20261008.md` (v2) · draft · opening
 
 ### 13.1 — Divine
 
-File `13-01-divine-v28-20261015.md` (v28) · draft
+File `13-01-divine-v28-20261015.md` (v28) · draft · other beings
 
 **Choosing**
 
@@ -847,19 +891,19 @@ File `13-01-divine-v28-20261015.md` (v28) · draft
 
 ### 13.2 — Angels
 
-File `13-02-angels-v5-20261012.md` (v5) · draft
+File `13-02-angels-v5-20261012.md` (v5) · draft · other beings
 
 ### 13.3 — Other spirits
 
-File `13-03-other-spirits-v3-20261012.md` (v3) · empty
+File `13-03-other-spirits-v3-20261012.md` (v3) · empty · other beings
 
 ### 13.4 — Nature
 
-File `13-04-nature-v5-20261012.md` (v5) · draft
+File `13-04-nature-v5-20261012.md` (v5) · draft · other beings
 
 ### 14 — Made new
 
-File `14-made-new-v19-20261015.md` (v19) · draft + held
+File `14-made-new-v19-20261015.md` (v19) · draft + held · chapter
 
 **Revived, restored, renewed**
 
@@ -868,11 +912,11 @@ File `14-made-new-v19-20261015.md` (v19) · draft + held
 
 ### 15 — Beyond the named words
 
-File `15-beyond-the-named-words-v7-20261002.md` (v7) · draft
+File `15-beyond-the-named-words-v7-20261002.md` (v7) · draft · chapter
 
 ### science — (science)
 
-File `—` (v—) · deferred
+File `—` (v—) · deferred · deferred
 
 ## The original essay claims
 

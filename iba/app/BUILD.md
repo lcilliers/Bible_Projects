@@ -17148,3 +17148,37 @@ It was the only file under `iba/` with 0x08 bytes.
 **Files:** `iba/app/lib/narrativeregister.py`; `iba/app/tools/temp_2138_add_gap_verses.py`; `iba/app/tools/temp_2136_citation_format_audit.py`; the chapter files; Record JSONs `_analytics/essay/spirit_soul_body/narrative-citation-{verse-links-2138,format-2136,format-2136-ch3}-v1-20261013.json`; test plan v5.
 
 **Addendum, same day (#2138):** both verses were then judged not relevant and removed from the narrative. Researcher, verbatim: *"just remove 1 Sam 17:19 from the narative, it has no relevance;  Ps 116:9 is also not relevant and can be removed."* Register update 134: Ch 2 v21 cites Psalm 116:3–8, with the quoted words of 116:9 removed; Ch 4 v17 cites 1 Samuel 17:17–18, 20. Then, on *"soft delete and prepare the 2138 for approval"*, the two verse rows were soft-deleted (`temp_2138_add_gap_verses.py --delete`, each table under the grant that wrote it): verse 2, span 16, verse_lexical 23. `verse_meta` (2) followed by the trigger `verse_meta_on_verse_deleted`. No strong_verse rows were ever made. The `_sync_citations` verse_id update stays in place for any verse added later. Spine check after: 0 fatal.
+
+## 351. The chapter table as the authority for the narrative's chapters (2026-10-18, escalation #2155)
+
+**Why:** researcher, chat 2026-10-18 (verbatim): *"Yes, any the chapter build should be added to the chapter table. The use of the chapters should be clear from the chapter table and this table should be fully integrated into the governance and config"*; proposal `_analytics/essay/spirit_soul_body/wa-essay-narrative-chapter-table-proposal-v1-20261018.md` approved as proposed (D1–D4). Before this, there was no action to add a chapter, so 10.14, 10.15 and 00 were inserted by hand.
+
+**Config and schema** (`iba/app/migration/narrative_chapter_table_config_v1_20261018.py`, run_id `DEVMODE-2155-CHAPTER-20261018`, 27 audited cfg_* changes):
+- `cfg_enum narrative_chapter_kind` (8 kinds)
+- `cfg_setting narrative.chapter_kinds_without_file`
+- `cfg_column` rows for `kind`, `purpose` and `purpose_ref`; the columns were added from them (`lib/db.py _col_ddl`)
+- `cfg_table` use
+- `cfg_step narrative_register.add_chapter`, with its `cfg_on_fail` and write grants; edit_chapter granted `narrative_update`
+- `cfg_behaviour_rule narrative-chapters-change-only-through-the-register` (partially_enforced)
+- `cfg_utility` rows
+
+**Data:** the approved kind, purpose and ruling for all 37 active chapters; Structure log entries for 00 Introduction (added by direct insert earlier the same day, #2159) and for the purposes.
+
+**Code:**
+- `lib/narrativeregister.py`:
+  - `add_chapter` (makes room in the reading order, syncs section rows from the file, writes a Structure log entry, all in one savepoint)
+  - `edit_chapter` gains `-Kind/-Purpose/-PurposeRef/-After` and logs structural changes
+  - `check` gains the chapter findings and a Notices section for `direct edit` rows
+  - `export` opens the register with a Chapters table
+- `handlers/narrativeregister.py` `add_chapter`
+- `ps/Narrative-Register.ps1` (AddChapter; `-Purpose -PurposeRef -After -BuiltFrom -FileStem`)
+- `lib/narrativecopy.py` copies the active chapters' current files from the chapter table, and reports a stray file without copying it (`--db` for tests)
+
+**Tested** on a copy of iba.db and a scratch copy of the narrative folder (proposal §4):
+- T1–T9, T11–T13: 16 of 16 checks passed.
+- T10, Check on a migrated copy with the real folder: 47 findings, the same as before.
+- Then on live: AddChapter refused for a number in use, through the PS wrapper; Check 47 findings; Export written; copy dry-run lists the 35 chapter files and 0 strays.
+
+**Expected and deviating:**
+- T10 shows **0** `direct edit` notices, not the 3 the proposal predicted. The hand inserts of 10.14, 10.15 and 00 were written with `created_by='Claude'`, so Check cannot tell them apart. Their record is the Structure log (updates 141 and 143, and the new 00 entry).
+

@@ -2,6 +2,20 @@
 
 *Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-18 — Each chapter's use recorded in the chapter table
+
+**Sources:** _analytics/essay/spirit_soul_body/wa-essay-narrative-chapter-table-proposal-v1-20261018.md
+
+**Scripts:** iba/app/migration/narrative_chapter_table_config_v1_20261018.py
+
+
+## 2026-10-18 — 00 Introduction added (recorded after the event)
+
+**Sources:** _analytics/essay/spirit_soul_body/wa-essay-narrative-chapter-table-proposal-v1-20261018.md
+
+**Scripts:** iba/app/migration/narrative_chapter_table_config_v1_20261018.py
+
+
 ## 2026-10-15 — Job 40:13 citation removed from 13.1 and 10.14 (#2158)
 
 **Strand:** pride and arrogance (M08), #2158
@@ -5672,3 +5686,5 @@ These areas are absent from the original, or are listed there only as gaps. [Cla
 | 2026-10-14 | life and death (M25), OT-02 Q1 What is death? | Ch 2: new subsections "Death spoken of in more than one way" and "Dead to sin" under What death is; new section "Those left behind" before Wanting to die | The death words were read by face, not by which death; the kinds, the dead-in/dead-to change and the stated causes had no one account; Ch 2 had no place for death as the living meet it in another |
 | 2026-10-15 | humility (M09), fan-out of humbling oneself (#2148) | New sub-chapter 10.14 Humility (reading order after 10.13). New sections: 10.2 Humility and hearing; 10.7 Taking the lower place; 10.9 Humbling oneself before God; 10.10 Humility toward one another; Ch 4 The heart humbled; Ch 5 Rest for the soul; 13.1 Lowering himself. Ch 6 gains a paragraph (It is gentle, and it is under the person); Ch 11 s4 a face (Who lowers whom, and before whom); Ch 12 the counterpart paragraph. 10.0 names 10.12 to 10.14. | Humility is not a feeling (researcher); the readings show it as act, standing, sought quality, state of spirit, place taken, done to a person and God's own way, across the activities. A key characteristic gets one full account as its own Ch 10 sub-chapter (#1961), with each angle woven in context (#1920). |
 | 2026-10-15 | pride and arrogance (M08): pride, boasting, mocking (#2156) | New sub-chapter 10.15 Pride (reading order 26, after 10.14; later chapters +1). New sections: 13.1 Majesty (before Lowering himself); 10.2 Pride and hearing; 10.10 Pride over another; 10.7 Presumption (before Willing). Ch 11 s4 gains the face Lifted up. Ch 12 Pride section points to 10.15; 10.14 opening and Connections name 10.15; 10.0 names 10.12 to 10.15. | Pride has its own words, faces, other parties and outcomes across the activities, with God as its counter-measure; a key characteristic gets one full account as its own Ch 10 sub-chapter (#1961), with each angle woven in context (#1920). Ch 12 keeps the passages that show the inner being going wrong. |
+| 2026-10-18 |  | New front chapter 00 Introduction (front matter; reading order 0, before Ch 1; later chapters +1). Added 2026-10-18 by a direct insert, before AddChapter existed; this entry records it. | #2159: the introduction placed as 00-introduction so it is published with the chapters (researcher, 2026-10-18). |
+| 2026-10-18 |  | Every active chapter given a kind, a purpose and the ruling behind it (37 chapters), as approved in the proposal's Appendix A. | #2155 (researcher, 2026-10-18): "The use of the chapters should be clear from the chapter table"; D2 approved as drafted. |

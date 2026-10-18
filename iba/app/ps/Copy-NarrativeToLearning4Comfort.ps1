@@ -5,9 +5,11 @@
     prepares, reviews and publishes from its inbox.
 
 .DESCRIPTION
-    Source: cfg_setting narrative.copy_source_dir (top-level .md files only; archive/ is never
-    copied). Target: cfg_setting narrative.learning4comfort_inbox_dir. Earlier versions of the same
-    files in the target are replaced; every other file there is left untouched. No git commands.
+    Source: cfg_setting narrative.copy_source_dir. The chapter table decides what is copied
+    (#2155): exactly the active narrative_chapter rows' current files; a .md file in the folder that
+    is no chapter's current file is reported and not copied; archive/ is never copied.
+    Target: cfg_setting narrative.learning4comfort_inbox_dir. Earlier versions of the same files in
+    the target are replaced; every other file there is left untouched. No git commands.
 
     Run it when a section of work is complete, on request, and as part of /session-close
     (.claude/commands/session-close.md).

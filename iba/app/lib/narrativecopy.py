@@ -6,8 +6,11 @@ directly to github b) on completion of a section of work or on request, the curr
 session-close trigger the copy in b)". Inbox folder: the_inner_being (researcher, same day).
 
 What it does:
-- Source = cfg_setting narrative.copy_source_dir. Only the TOP-LEVEL .md files are copied
-  (the current version of each chapter, plus the index). The archive/ subfolder is never copied.
+- Source = cfg_setting narrative.copy_source_dir. What is copied is decided by the chapter table
+  (escalation #2155 D3, researcher 2026-10-18: publishing follows the table): exactly the active
+  narrative_chapter rows' current files, in reading order. A top-level .md file in the folder that
+  is no chapter's current file is reported ("not a chapter") and not copied; a chapter whose file
+  is missing is an error. The archive/ subfolder is never copied.
 - Target = cfg_setting narrative.learning4comfort_inbox_dir (created if missing; local-only
   staging in the learning4comfort repo, which owns preparation and publishing).
 - In the target, an .md file whose base name (without -vN-YYYYMMDD) matches a current source file
@@ -17,8 +20,8 @@ What it does:
 - Never runs git, in either repository.
 
 Usage (from the repo root):
-  python -m iba.app.lib.narrativecopy [--dry-run] [--source DIR --target DIR]
---source/--target override the config, for testing only.
+  python -m iba.app.lib.narrativecopy [--dry-run] [--source DIR --target DIR] [--db PATH]
+--source/--target/--db override the config, for testing only.
 """
 import argparse, hashlib, os, re, shutil, sys
 
@@ -38,10 +41,19 @@ def _hash(path: str) -> str:
     return h.hexdigest()
 
 
-def plan(source: str, target: str):
-    """Return (copy, unchanged, remove, untouched) lists of file names."""
-    current = sorted(f for f in os.listdir(source)
+def chapter_files(conn) -> list[str]:
+    """The active chapters' current files, in reading order (the chapter table decides, #2155)."""
+    return [r[0] for r in conn.execute(
+        "SELECT current_file FROM narrative_chapter WHERE inactive=0 AND current_file IS NOT NULL "
+        "ORDER BY reading_order")]
+
+
+def plan(source: str, target: str, chapters: list[str]):
+    """Return (current, copy, unchanged, remove, untouched, not_chapters) lists of file names."""
+    on_disk = sorted(f for f in os.listdir(source)
                      if f.endswith('.md') and os.path.isfile(os.path.join(source, f)))
+    not_chapters = [f for f in on_disk if f not in chapters]
+    current = list(chapters)
     cur_by_base = {base_name(f): f for f in current}
     existing = sorted(f for f in os.listdir(target)
                       if os.path.isfile(os.path.join(target, f))) if os.path.isdir(target) else []
@@ -55,17 +67,21 @@ def plan(source: str, target: str):
         else:
             copy.append(f)
     untouched = [f for f in existing if f not in remove and f not in current]
-    return current, copy, unchanged, remove, untouched
+    return current, copy, unchanged, remove, untouched, not_chapters
 
 
-def run(source: str, target: str, dry_run: bool) -> int:
+def run(source: str, target: str, dry_run: bool, chapters: list[str]) -> int:
     if not os.path.isdir(source):
         print(f'ERROR: source folder not found: {source}')
         return 1
-    current, copy, unchanged, remove, untouched = plan(source, target)
+    absent = [f for f in chapters if not os.path.isfile(os.path.join(source, f))]
+    if absent:
+        print(f'ERROR: chapter file(s) in the chapter table but not on disk: {absent}')
+        return 1
+    current, copy, unchanged, remove, untouched, not_chapters = plan(source, target, chapters)
     mode = 'DRY RUN (nothing written)' if dry_run else 'COPY'
     print(f'narrative copy — {mode}')
-    print(f'  source : {source}  ({len(current)} current files)')
+    print(f'  source : {source}  ({len(current)} chapter files, from the chapter table)')
     print(f'  target : {target}')
     if not dry_run:
         os.makedirs(target, exist_ok=True)
@@ -81,6 +97,7 @@ def run(source: str, target: str, dry_run: bool) -> int:
     print(f'  unchanged               : {len(unchanged)}')
     print(f'  earlier versions removed: {len(remove)}' + ('' if not remove else '  ' + ', '.join(remove)))
     print(f'  other files left as is  : {len(untouched)}' + ('' if not untouched else '  ' + ', '.join(untouched)))
+    print(f'  not a chapter, not copied: {len(not_chapters)}' + ('' if not not_chapters else '  ' + ', '.join(not_chapters)))
     if not dry_run:
         print(f'  verified: all {len(current)} current files in the target match the source')
     return 0
@@ -91,15 +108,21 @@ def main(argv=None) -> int:
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--source')
     ap.add_argument('--target')
+    ap.add_argument('--db')
     a = ap.parse_args(argv)
-    if a.source and a.target:
-        source, target = a.source, a.target
-    else:
-        from iba.app.lib.cfg import Cfg
-        cfg = Cfg()
-        source = cfg.required_setting('narrative.copy_source_dir')
-        target = cfg.required_setting('narrative.learning4comfort_inbox_dir')
-    return run(source, target, a.dry_run)
+    import pathlib
+    from iba.app.lib.cfg import Cfg
+    cfg = Cfg(pathlib.Path(a.db)) if a.db else Cfg()
+    try:
+        chapters = chapter_files(cfg.conn)
+        if a.source and a.target:
+            source, target = a.source, a.target
+        else:
+            source = cfg.required_setting('narrative.copy_source_dir')
+            target = cfg.required_setting('narrative.learning4comfort_inbox_dir')
+    finally:
+        cfg.close()
+    return run(source, target, a.dry_run, chapters)
 
 
 if __name__ == '__main__':

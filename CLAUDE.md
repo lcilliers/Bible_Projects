@@ -95,6 +95,8 @@
 >   only know if it creates more confusion than be helpful after we have the table to search and
 >   explore it."*
 >
+> **The chapter table is the authority for the chapters (researcher, 2026-10-18, #2155; GOVERNANCE.md §95).** `narrative_chapter` in iba.db says which chapters exist, their order and what each is for (`kind`, `purpose`, `purpose_ref`). Read a chapter's purpose there before placing material in it. A new chapter is added with `Narrative-Register.ps1 -Action AddChapter` (with its purpose and ruling), never a direct insert; structural changes go through `EditChapter`. Researcher, verbatim: *"The use of the chapters should be clear from the chapter table and this table should be fully integrated into the governance and config"*.
+>
 > Rules for the chapter text:
 > - Unchecked original material stays in marked **Held** sections.
 > - Quote wording is checked against the ESV text in iba.db `verse`.

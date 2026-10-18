@@ -11,7 +11,8 @@ the rows it caused as `basis='recorded'` with its own provenance (and the update
 Parts:
   references   parse_refs()      chapter/register references -> verse rows (alias map in config)
   chapters     parse_chapter()   a chapter file -> sections and passages (paragraphs, bullets, rows)
-  actions      add_claim, edit, tell, untell, withdraw, edit_note, edit_chapter, edit_section, record
+  actions      add_claim, edit, tell, untell, withdraw, edit_note, add_chapter, edit_chapter,
+               edit_section, record   (chapters: #2155, the chapter table is the authority)
   read-only    find, history, check
   publishing   export            the three fixed-name files (spec sec8)
 
@@ -717,31 +718,145 @@ def edit_note(cfg, w: Writer, p: dict) -> str:
     return f"index note {heading!r} {'added' if row is None else 'changed'}"
 
 
+# ── chapters (#2155: the chapter table is the authority for the chapters and their use) ─────────
+# A structural change (a chapter added, moved, renamed, renumbered, retired, or its kind, purpose or
+# ruling changed) writes a Structure log entry: a narrative_update row with structure_change and
+# structure_reason, published in narrative-claim-changes.md. A new file version or state is not
+# structural; Record logs those with the weave.
+_STRUCTURAL = ("chapter_no", "title", "kind", "purpose", "purpose_ref", "reading_order", "inactive")
+
+
+def _structure_entry(w: Writer, title: str, change: str, reason: str | None) -> int:
+    return w.insert("narrative_update", {"update_date": _today(), "title": title,
+                                         "structure_change": change, "structure_reason": reason})
+
+
+def _order_after(conn, after: str, exclude_id: int | None = None) -> int:
+    """The reading order a chapter placed after `after` takes."""
+    a = _chapter(conn, after)
+    if exclude_id is not None and a["id"] == exclude_id:
+        raise Refused("-After names the chapter being moved")
+    return a["reading_order"] + 1
+
+
+def _make_room(w: Writer, conn, order: int) -> int:
+    """Every active chapter at `order` or later moves down one place; returns how many moved."""
+    rows = conn.execute("SELECT id, reading_order FROM narrative_chapter WHERE inactive=0 AND "
+                        "reading_order >= ? ORDER BY reading_order DESC", (order,)).fetchall()
+    for r in rows:
+        w.update("narrative_chapter", {"id": r["id"]}, {"reading_order": r["reading_order"] + 1})
+    return len(rows)
+
+
+def _close_gap(w: Writer, conn, order: int) -> None:
+    """After a chapter leaves `order`, every active chapter after it moves up one place."""
+    for r in conn.execute("SELECT id, reading_order FROM narrative_chapter WHERE inactive=0 AND "
+                          "reading_order > ? ORDER BY reading_order", (order,)).fetchall():
+        w.update("narrative_chapter", {"id": r["id"]}, {"reading_order": r["reading_order"] - 1})
+
+
+def add_chapter(cfg, w: Writer, p: dict) -> str:
+    conn = cfg.conn
+    no = (p.get("Chapter") or "").strip()
+    missing = [n for n in ("Chapter", "Title", "Kind", "Purpose", "PurposeRef") if not p.get(n)]
+    if missing:
+        raise Refused(f"AddChapter needs {', '.join('-' + m for m in missing)}")
+    if bool(p.get("After")) == (p.get("ReadingOrder") is not None):
+        raise Refused("give one of -After <chapter> or -ReadingOrder n")
+    if conn.execute("SELECT 1 FROM narrative_chapter WHERE inactive=0 AND chapter_no=?", (no,)).fetchone():
+        raise Refused(f"chapter {no!r} is already used by an active chapter")
+    kind, state = p["Kind"], p.get("State") or "draft"
+    _check_enum(cfg.enum("narrative_chapter_kind"), kind, "-Kind")
+    _check_enum(cfg.enum("narrative_chapter_state"), state, "-State")
+    no_file = kind in (cfg.required_setting("narrative.chapter_kinds_without_file") or [])
+    cur = p.get("CurrentFile")
+    sections: list[Section] = []
+    version = None
+    if cur:
+        path = chapter_dir(cfg) / cur
+        if not path.is_file():
+            raise Refused(f"-CurrentFile {cur!r} is not on disk")
+        fv = file_version(cur)
+        if not fv:
+            raise Refused(f"-CurrentFile {cur!r} is not named <stem>-vN-YYYYMMDD.md")
+        stem, version = fv
+        _, sections, _ = parse_chapter(path.read_text(encoding="utf-8"))
+    elif not no_file:
+        raise Refused(f"-CurrentFile is required for a {kind!r} chapter (only "
+                      f"{cfg.required_setting('narrative.chapter_kinds_without_file')} have no file)")
+    else:
+        stem = p.get("FileStem") or re.sub(r"[^a-z0-9]+", "-", f"{no} {p['Title']}".lower()).strip("-")
+    order = _order_after(conn, p["After"]) if p.get("After") else int(p["ReadingOrder"])
+    where = f"after {p['After']}" if p.get("After") else f"reading order {order}"
+
+    def go():
+        since = _max_change_id(conn)
+        moved = _make_room(w, conn, order)
+        cid = w.insert("narrative_chapter", {
+            "chapter_no": no, "title": p["Title"], "reading_order": order, "file_stem": stem,
+            "current_version": version, "current_file": cur, "state": state, "kind": kind,
+            "purpose": p["Purpose"], "purpose_ref": p["PurposeRef"], "built_from": p.get("BuiltFrom"),
+            "replaces_original": p.get("ReplacesOriginal") or "—"})
+        ch = conn.execute("SELECT * FROM narrative_chapter WHERE id=?", (cid,)).fetchone()
+        if sections:
+            _sync_sections(conn, w, ch, sections, version)
+        _structure_entry(w, f"Chapter {no} {p['Title']} added",
+                         f"New chapter {no} {p['Title']} ({kind}; reading order {order}, {where}"
+                         f"{'; later chapters +1' if moved else ''}). Purpose: {p['Purpose']}",
+                         p.get("Note") or p["PurposeRef"])
+        w.mark_changes(since, "Narrative-Register.ps1 -Action AddChapter", note=p.get("Note"))
+        return moved
+    moved = _atomic(conn, go)
+    return (f"chapter {no} {p['Title']!r} added at reading order {order} ({kind}); "
+            f"{moved} later chapter(s) moved down; {len(sections)} section row(s)")
+
+
 def edit_chapter(cfg, w: Writer, p: dict) -> str:
     conn = cfg.conn
     ch = _chapter(conn, p.get("Chapter"))
     sets = {}
     for prm, col in (("NewNumber", "chapter_no"), ("Title", "title"), ("State", "state"),
                      ("CurrentFile", "current_file"), ("CurrentVersion", "current_version"),
-                     ("ReadingOrder", "reading_order"), ("Inactive", "inactive")):
+                     ("ReadingOrder", "reading_order"), ("Inactive", "inactive"), ("Kind", "kind"),
+                     ("Purpose", "purpose"), ("PurposeRef", "purpose_ref")):
         if p.get(prm) is not None:
             sets[col] = p[prm]
+    if p.get("After"):
+        if "reading_order" in sets:
+            raise Refused("give one of -After <chapter> or -ReadingOrder n, not both")
+        target = _order_after(conn, p["After"], exclude_id=ch["id"])
+        if target > ch["reading_order"]:
+            target -= 1                  # the gap it leaves closes first
+        sets["reading_order"] = target
     _check_enum(cfg.enum("narrative_chapter_state"), sets.get("state"), "-State")
+    _check_enum(cfg.enum("narrative_chapter_kind"), sets.get("kind"), "-Kind")
     if "current_file" in sets and not (chapter_dir(cfg) / sets["current_file"]).is_file():
         raise Refused(f"-CurrentFile {sets['current_file']!r} is not on disk")
     if not sets:
-        raise Refused("nothing to change: give -NewNumber, -Title, -State, -CurrentFile, "
-                      "-CurrentVersion, -ReadingOrder or -Inactive")
+        raise Refused("nothing to change: give -NewNumber, -Title, -Kind, -Purpose, -PurposeRef, -State, "
+                      "-CurrentFile, -CurrentVersion, -After, -ReadingOrder or -Inactive")
+    structural = {k: v for k, v in sets.items() if k in _STRUCTURAL and str(ch[k]) != str(v)}
 
     def go():
         since = _max_change_id(conn)
         try:
+            if p.get("After") and sets["reading_order"] != ch["reading_order"]:
+                _close_gap(w, conn, ch["reading_order"])
+                w.update("narrative_chapter", {"id": ch["id"]}, {"reading_order": -1})
+                _make_room(w, conn, sets["reading_order"])
             w.update("narrative_chapter", {"id": ch["id"]}, sets)
         except sqlite3.IntegrityError as exc:
             raise Refused(str(exc)) from exc
+        if structural:
+            label = sets.get("chapter_no", ch["chapter_no"])
+            _structure_entry(w, f"Chapter {label} changed",
+                             "; ".join(f"{k}: {ch[k]!r} -> {v!r}" for k, v in structural.items())
+                             + (f" (placed after {p['After']})" if p.get("After") else ""),
+                             p.get("Note"))
         w.mark_changes(since, "Narrative-Register.ps1 -Action EditChapter", note=p.get("Note"))
     _atomic(conn, go)
-    return f"chapter {ch['chapter_no']} changed: {', '.join(sets)}"
+    return (f"chapter {ch['chapter_no']} changed: {', '.join(sets)}"
+            + ("; Structure log entry written" if structural else ""))
 
 
 def edit_section(cfg, w: Writer, p: dict) -> str:
@@ -1272,9 +1387,29 @@ def check(cfg, p: dict) -> tuple[list[str], list[str]]:
         if unresolved(vx, r["ref_normalised"] or "", None):
             problems.append(f"claim {r['claim_ref']} source '{r['ref_as_written']}' read as "
                             f"{r['ref_normalised']} matches no verse")
+    # the chapter table is the authority for the chapters (#2155)
+    notices: list[str] = []
+    no_file = cfg.required_setting("narrative.chapter_kinds_without_file") or []
+    for ch in chs:
+        if not ch["kind"] or not ch["purpose"]:
+            problems.append(f"Ch {ch['chapter_no']}: no {'kind' if not ch['kind'] else 'purpose'} -- "
+                            f"set it with EditChapter -Kind/-Purpose")
+        if not ch["current_file"] and ch["kind"] and ch["kind"] not in no_file:
+            problems.append(f"Ch {ch['chapter_no']}: a {ch['kind']!r} chapter with no current file")
+        if ch["created_by"] == "direct edit":
+            notices.append(f"Ch {ch['chapter_no']}: row inserted outside the tool (created_by 'direct edit')")
+    for order, nos in conn.execute("SELECT reading_order, GROUP_CONCAT(chapter_no, ', ') FROM narrative_chapter "
+                                   "WHERE inactive=0 GROUP BY reading_order HAVING COUNT(*) > 1"):
+        problems.append(f"reading order {order} is shared by Ch {nos}")
+    current = {ch["current_file"] for ch in chs if ch["current_file"]}
+    for f in sorted(x.name for x in chapter_dir(cfg).glob("*.md")):
+        if f not in current:
+            problems.append(f"{f} is in the narrative folder but is no chapter's current file "
+                            f"(it is not published)")
     # every enumerated column holds only its cfg_enum values (a direct edit is not checked on entry)
     for table, col, allowed in (
             ("narrative_chapter", "state", cfg.enum("narrative_chapter_state")),
+            ("narrative_chapter", "kind", cfg.enum("narrative_chapter_kind")),
             ("narrative_claim", "origin", cfg.enum("narrative_claim_origin")),
             ("narrative_claim", "verdict", cfg.enum("narrative_claim_verdict")),
             ("narrative_claim", "part_verdict", cfg.enum("narrative_claim_verdict")),
@@ -1291,7 +1426,9 @@ def check(cfg, p: dict) -> tuple[list[str], list[str]]:
                 problems.append(f"{table}.{col}: {n} row(s) hold {v!r}, not one of {allowed}")
     lines = ["# Narrative register check", "", f"{len(chs)} active chapter(s) checked. "
              f"{len(problems)} finding(s).", ""] + [f"- {x}" for x in problems]
-    return lines, [f"{len(problems)} finding(s)"] + problems[:20]
+    if notices:
+        lines += ["", "## Notices (history, not findings)", ""] + [f"- {x}" for x in notices]
+    return lines, ([f"{len(problems)} finding(s), {len(notices)} notice(s)"] + problems[:20])
 
 
 # ══ export (spec sec8) ══════════════════════════════════════════════════════════════════════════
@@ -1303,12 +1440,21 @@ def export(cfg) -> list[pathlib.Path]:
     out = []
     # 1. the register
     L = ["# Narrative claim register", "", header, ""]
+    chapters = conn.execute("SELECT * FROM narrative_chapter WHERE inactive=0 ORDER BY reading_order").fetchall()
+    L += ["## Chapters", "",
+          "What each chapter is for, from the chapter table (the authority for the chapters, #2155).", "",
+          "| No. | Title | Kind | State | Purpose | Ruling |", "|---|---|---|---|---|---|"]
+    for ch in chapters:
+        L.append(f"| {ch['chapter_no']} | {_cell(ch['title'])} | {ch['kind'] or '—'} | {ch['state']} | "
+                 f"{_cell(ch['purpose']) or '—'} | {_cell(ch['purpose_ref']) or '—'} |")
+    L.append("")
     for n in conn.execute("SELECT * FROM narrative_index_note ORDER BY ordinal"):
         L += [f"## {n['heading']}", "", n["text"], ""]
     L += ["## Chapters, sections and the claims told there", ""]
-    for ch in conn.execute("SELECT * FROM narrative_chapter WHERE inactive=0 ORDER BY reading_order"):
+    for ch in chapters:
         L += [f"### {ch['chapter_no']} — {ch['title']}", "",
-              f"File `{ch['current_file'] or '—'}` (v{ch['current_version'] or '—'}) · {ch['state']}", ""]
+              f"File `{ch['current_file'] or '—'}` (v{ch['current_version'] or '—'}) · {ch['state']}"
+              f" · {ch['kind'] or '—'}", ""]
         for s in conn.execute("SELECT * FROM narrative_section WHERE chapter_id=? AND last_version IS NULL "
                               "ORDER BY ordinal", (ch["id"],)):
             told = conn.execute(

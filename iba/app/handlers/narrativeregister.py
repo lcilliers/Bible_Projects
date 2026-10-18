@@ -71,6 +71,10 @@ def edit_note(ctx: Ctx) -> Outcome:
     return _write(ctx, nr.edit_note)
 
 
+def add_chapter(ctx: Ctx) -> Outcome:
+    return _write(ctx, nr.add_chapter)
+
+
 def edit_chapter(ctx: Ctx) -> Outcome:
     return _write(ctx, nr.edit_chapter)
 
