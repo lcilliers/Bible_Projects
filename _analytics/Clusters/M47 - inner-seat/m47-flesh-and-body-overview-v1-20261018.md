@@ -113,3 +113,12 @@ faces are recorded as the verses give them, with the circumstances in which each
   Ch 7 pointing to it? This can wait until the reading.
 - **D4. Strand status:** run this as its own strand, on #2162, with #2160 group B paused after
   OT-05.11? Only OT-05.26 is left in group B.
+
+## 6. Completeness check (step 0, done 2026-10-18)
+
+Each of the 19 Strong's was fetched from STEP (ESV_th; preflight OK, H0430 = 2,088 verses) with
+`Step.call3_strong`, and every returned verse was compared with the iba.db `verse` table. **None is
+missing.** STEP's verse count equals the iba.db count for every code (for example G4561 126, G4983 122,
+H1320 241, H5038 41). No verses need to be added. The counts in §2 are complete as far as STEP tags
+the ESV.
+
