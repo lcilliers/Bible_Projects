@@ -1,6 +1,6 @@
 # Narrative citation index
 
-*Published from iba.db on 2026-10-15. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 | Verse | Cited in | Claims resting on it |
 |---|---|---|

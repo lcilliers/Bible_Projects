@@ -1,6 +1,6 @@
 # Narrative claim register
 
-*Published from iba.db on 2026-10-15. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 ## (index opening)
 
@@ -138,6 +138,10 @@ Pro 17:27 had already been corrected.
 **The remaining 42 flags are checker noise:** glosses and terms in quotation marks, the section headings of Chapter 8, and references attributed to the wrong verse. One exception: **Psa 116:9 is absent from `iba.db`** (the known verse gap, #1891). Its wording was read from the STEP server during the Batch G reading.
 
 ## Chapters, sections and the claims told there
+
+### 00 — Introduction
+
+File `00-introduction-v1-20261018.md` (v1) · draft
 
 ### 01 — The question behind the words
 

@@ -1,6 +1,6 @@
 # Narrative claim changes
 
-*Published from iba.db on 2026-10-15. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 ## 2026-10-15 — Job 40:13 citation removed from 13.1 and 10.14 (#2158)
 
