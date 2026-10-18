@@ -504,7 +504,7 @@ File `10-06-wanting-v23-20261013.md` (v23) · draft · activity
 
 ### 10.7 — Choosing and setting direction
 
-File `10-07-choosing-and-setting-direction-v31-20261015.md` (v31) · draft · activity
+File `10-07-choosing-and-setting-direction-v32-20261018.md` (v32) · draft · activity
 
 **Being chosen**
 
@@ -518,6 +518,10 @@ File `10-07-choosing-and-setting-direction-v31-20261015.md` (v31) · draft · ac
 **Taking the lower place**
 
 - **C-191** The lower place is taken before anyone gives it; the honour is given, not taken (in full) — also told in: 10.14 *Toward one another* (in full)
+
+**Setting the heart**
+
+- **C-247** Ezra's heart set to study the Law, to do it and to teach it is given straight after the good hand of God on him, as its ground in him (in part: Set to study, to do and to teach (Ezra 7:10)) — also told in: 13.1 *Delight* (pointer)
 
 **Presumption**
 
@@ -554,12 +558,16 @@ File `10-09-relating-to-god-v25-20261018.md` (v25) · draft · activity
 
 ### 10.10 — Relating to others
 
-File `10-10-relating-to-others-v29-20261018.md` (v29) · draft · activity
+File `10-10-relating-to-others-v30-20261018.md` (v30) · draft · activity
 
 **(opening)**
 
 - **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in part: a spirit of gentleness) — also told in: 10.10 *Humility toward one another* (in full); 10.10 *Holding authority over another* (in part); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
 - **C-124** Another's death can be laid at a person's hand (pointer) — also told in: 02 *Life set before a person* (in full)
+
+**Care, discouragement and hiding between people**
+
+- **C-249** What one person tells of God's dealing with him can give others resolve (in part: Resolve is given by another, too (Nehemiah 2:18)) — also told in: 10.12 *What changes it* (pointer)
 
 **Fear that arrives with a person**
 
@@ -594,7 +602,7 @@ File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft · activity
 
 ### 10.12 — Fear
 
-File `10-12-fear-v12-20261018.md` (v12) · draft · key characteristic
+File `10-12-fear-v13-20261018.md` (v13) · draft · key characteristic
 
 **Fear that comes upon a person**
 
@@ -608,6 +616,11 @@ File `10-12-fear-v12-20261018.md` (v12) · draft · key characteristic
 
 - **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (in part: in Esther no giver is named) — also told in: 10.10 *Fear that arrives with a person* (pointer)
 - **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (in part: the peoples in Esther's day) — also told in: 10.10 *Fear that arrives with a person* (pointer)
+
+**What changes it**
+
+- **C-248** Knowing that God's hand is on him is the named ground of Ezra's courage, and the courage turns at once into a deed (in part: Knowing whose hand is on one (Ezra 7:28))
+- **C-249** What one person tells of God's dealing with him can give others resolve (pointer) — also told in: 10.10 *Care, discouragement and hiding between people* (in part)
 
 ### 10.13 — Anger
 
@@ -870,7 +883,7 @@ File `13-00-other-beings-v2-20261008.md` (v2) · draft · opening
 
 ### 13.1 — Divine
 
-File `13-01-divine-v28-20261015.md` (v28) · draft · other beings
+File `13-01-divine-v29-20261018.md` (v29) · draft · other beings
 
 **Choosing**
 
@@ -885,6 +898,13 @@ File `13-01-divine-v28-20261015.md` (v28) · draft · other beings
 - **C-233** Mocking takes the sufferer's trust in God as its target, and the sufferer answers God, not the mockers (in part: the mockers) — also told in: 10.5 *Speech before words* (in part); 10.15 *The mock* (in full); 11 *4. One word, opposite values* (in part)
 - **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part: the offerings delighted in after the broken heart) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part)
 - **C-206** The offering is weighed by what is inside the one who brings it: an ear opened, the law in the heart, a broken heart, a love that lasts (in full)
+- **C-247** Ezra's heart set to study the Law, to do it and to teach it is given straight after the good hand of God on him, as its ground in him (pointer) — also told in: 10.7 *Setting the heart* (in part)
+- **C-252** Those on whom God's good hand rests name it as the reason for what came about, and it is said to be for good on all who seek him (in full)
+
+**Ruling**
+
+- **C-250** God's taking of the kingdom from Saul answers Saul's rejection of his word, in the same word (in part: Saul (1 Samuel 15:26-28))
+- **C-251** God's reign is spoken with wrath in one place, and as good news with peace, salvation and comfort in another (in full)
 
 **Majesty**
 
@@ -1151,7 +1171,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 162 |
+| narrative | New | 168 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1160,4 +1180,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-246 claims; 175 told in the narrative, 71 not.
+252 claims; 181 told in the narrative, 71 not.

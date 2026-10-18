@@ -615,6 +615,9 @@
 | 1Sa 15:21 | 13.1 *Delight* (quoted) | — |
 | 1Sa 15:22 | 13.1 *Delight* (quoted) | — |
 | 1Sa 15:24 | 10.1 *What fear does* (quoted); 10.8 *(opening)* (quoted); 10.12 *What fear does* (quoted); 12 *Fear that goes wrong* (quoted) | — |
+| 1Sa 15:26 | 13.1 *Ruling* (quoted) | C-250 |
+| 1Sa 15:27 | 13.1 *Ruling* | C-250 |
+| 1Sa 15:28 | 13.1 *Ruling* (quoted) | C-250 |
 | 1Sa 15:32 | 02 *Facing death* (quoted) | C-152 |
 | 1Sa 16:4 | 10.1 *Fear* (quoted); 10.10 *Fear that arrives with a person* (quoted); 10.12 *Fear that comes upon a person* (quoted) | — |
 | 1Sa 16:7 | 04 *The heart is hidden, and God sees it* (quoted); 09 *Inner and outer* (quoted) | — |
@@ -943,7 +946,7 @@
 | 2Ch 12:7 | 10.9 *Humbling oneself before God* (quoted); 10.13 *Why it is held back* (quoted); 10.14 *God sees it, and answers in measure* (quoted); 11 *What changes the character*; 13.1 *Lowering himself* (quoted) | C-175, C-200, C-201, C-203 |
 | 2Ch 12:8 | 10.14 *God sees it, and answers in measure* (quoted) | C-175 |
 | 2Ch 12:12 | 10.13 *The responses, gathered* (quoted); 10.14 *God sees it, and answers in measure* (quoted) | C-175 |
-| 2Ch 12:14 | 10.13 *The heart that turns, and the heart that does not* (quoted); 10.14 *God sees it, and answers in measure* (quoted) | C-175 |
+| 2Ch 12:14 | 10.7 *Setting the heart* (quoted); 10.13 *The heart that turns, and the heart that does not* (quoted); 10.14 *God sees it, and answers in measure* (quoted) | C-175, C-247 |
 | 2Ch 15:15 | 10.6 *Aimed at God* (quoted) | — |
 | 2Ch 17:4 | 10.15 *The other face* (quoted) | C-238 |
 | 2Ch 17:5 | — | C-238 |
@@ -999,12 +1002,17 @@
 | Ezr 1:6 | 10.7 *Willing* (quoted) | — |
 | Ezr 2:68 | 10.7 *Willing* (quoted) | — |
 | Ezr 2:69 | 10.7 *Willing* (quoted) | — |
+| Ezr 7:6 | 13.1 *Delight* (quoted) | C-252 |
+| Ezr 7:9 | 10.7 *Setting the heart* (quoted); 13.1 *Delight* (quoted) | C-247, C-252 |
+| Ezr 7:10 | 10.7 *Setting the heart* (quoted) | C-247 |
 | Ezr 7:13 | 10.7 *Willing* (quoted) | — |
 | Ezr 7:15 | 10.7 *Willing* (quoted) | — |
 | Ezr 7:16 | 10.7 *Willing* (quoted) | — |
 | Ezr 7:27 | 11 *1. The inner being is acted upon as much as it acts* (quoted) | — |
+| Ezr 7:28 | 10.10 *Care, discouragement and hiding between people*; 10.12 *What changes it* (quoted) | C-248, C-249 |
+| Ezr 8:18 | 13.1 *Delight* (quoted) | C-252 |
 | Ezr 8:21 | 10.14 *What goes with it* | — |
-| Ezr 8:22 | 10.14 *What goes with it* (quoted) | — |
+| Ezr 8:22 | 10.14 *What goes with it* (quoted); 13.1 *Delight* (quoted) | C-248, C-252 |
 | Ezr 9:8 | 02 *Life asked for* (quoted) | — |
 | Ezr 10:9 | 10.1 *Fear* (quoted) | — |
 | Ezr 10:11 | 10.7 *Willing* (quoted) | — |
@@ -1016,7 +1024,9 @@
 | Neh 2:3 | 11 *2. Thresholds: the merry heart and the sad heart* | — |
 | Neh 2:4 | 10.7 *Whose measure* (quoted); 11 *2. Thresholds: the merry heart and the sad heart* | — |
 | Neh 2:5 | 10.7 *Whose measure* (quoted); 11 *2. Thresholds: the merry heart and the sad heart* | — |
-| Neh 2:8 | 10.7 *Whose measure* (quoted) | — |
+| Neh 2:8 | 10.7 *Whose measure* (quoted); 13.1 *Delight* (quoted) | C-252 |
+| Neh 2:17 | 10.10 *Care, discouragement and hiding between people* (quoted) | C-249 |
+| Neh 2:18 | 10.10 *Care, discouragement and hiding between people* (quoted); 10.12 *What changes it* | C-249 |
 | Neh 4:1 | 10.15 *The mock* (quoted) | — |
 | Neh 4:2 | 10.15 *The mock* (quoted) | — |
 | Neh 4:6 | 15 *Other ways Scripture shows the inner life* (quoted) | — |
@@ -2432,6 +2442,9 @@
 | Isa 51:22 | 10.13 *How it is spoken of* (quoted); 10.13 *How it ends* (quoted) | — |
 | Isa 51:23 | 10.13 *How it is spoken of* (quoted) | — |
 | Isa 52:1 | 10.9 *Calling on God to wake* (quoted) | — |
+| Isa 52:7 | 13.1 *Ruling* (quoted) | C-251 |
+| Isa 52:8 | 13.1 *Ruling* (quoted) | C-251 |
+| Isa 52:9 | 13.1 *Ruling* (quoted) | C-251 |
 | Isa 53:2 | 10.6 *Through the eye* (quoted) | — |
 | Isa 53:3 | 10.4 *What thinking does*; 10.6 *Through the eye* (quoted) | — |
 | Isa 53:4 | 10.0 *From a thought to a deed* (quoted); 10.4 *What thinking does* (quoted); 10.6 *Through the eye* (quoted); 11 *4. One word, opposite values* (quoted) | — |
@@ -4530,8 +4543,8 @@
 | Rev 7:17 | 10.6 *Thirst answered* (quoted) | — |
 | Rev 9:6 | 02 *Wanting to die* (quoted) | — |
 | Rev 11:11 | 02 *Life that returns* (quoted) | 3-14 |
-| Rev 11:17 | 13.1 *Ruling* (quoted) | — |
-| Rev 11:18 | 10.12 *Fear before God* (quoted); 10.13 *Other parties* (quoted); 13.1 *Ruling* (quoted) | — |
+| Rev 11:17 | 13.1 *Ruling* (quoted) | C-251 |
+| Rev 11:18 | 10.12 *Fear before God* (quoted); 10.13 *Other parties* (quoted); 13.1 *Ruling* (quoted) | C-251 |
 | Rev 12:11 | 02 *Dying to the Lord* (quoted) | C-165 |
 | Rev 12:12 | 10.13 *Other parties* (quoted) | — |
 | Rev 13:2 | 13.3 *(opening)* (quoted) | — |
