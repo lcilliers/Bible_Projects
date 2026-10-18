@@ -363,7 +363,7 @@ File `03-one-inner-person-v5-20261013.md` (v5) · draft · chapter
 
 ### 04 — The heart
 
-File `04-the-heart-v19-20261018.md` (v19) · draft · chapter
+File `04-the-heart-v20-20261018.md` (v20) · draft · chapter
 
 **The heart and anger**
 
@@ -384,6 +384,7 @@ File `04-the-heart-v19-20261018.md` (v19) · draft · chapter
 - **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in full) — also told in: 04 *The heart and anger* (in part); 10.7 *Willing* (in part); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-178** God humbles to show what is in the heart, to teach what a person lives by, and to do him good in the end, against the heart that lifts itself up in plenty (in part: testing the heart; hearts bowed down) — also told in: 10.14 *Being humbled by God* (in full)
 - **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part) — also told in: 04 *The heart is the source* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
+- **C-268** 'Poor and needy', said of oneself, comes with the stricken heart and the gaunt body and ends in an appeal for help (in part: Psalm 109:22-26)
 
 ### 05 — The soul
 
@@ -399,12 +400,13 @@ File `05-the-soul-v9-20261015.md` (v9) · draft · chapter
 
 ### 06 — The spirit
 
-File `06-the-spirit-v13-20261015.md` (v13) · draft · chapter
+File `06-the-spirit-v14-20261018.md` (v14) · draft · chapter
 
 **The human spirit**
 
 - **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: a broken spirit can keep a person from hearing) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
 - **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part) — also told in: 09 *Lines that are often drawn, but that I cannot find* (in part); 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-267** Matthew 5:3 places poverty in the spirit, not in what a person has, and the next blessing is on those who mourn (in part: poor in spirit (Matthew 5:3-4))
 - **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in full) — also told in: 09 *Lines that are often drawn, but that I cannot find* (in part); 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in part: the spirits of prophets subject to prophets) — also told in: 10.14 *Submitting* (in full)
 - **5-2** Replaced by the profile in 05: moved, stirred, troubled, crushed, revived, fervent, ruled, self-knowing (dep §2.3b; C §11.3; B §9.3) (in full)
@@ -498,7 +500,7 @@ File `10-05-speaking-v22-20261013.md` (v22) · draft · activity
 
 ### 10.6 — Wanting
 
-File `10-06-wanting-v25-20261018.md` (v25) · draft · activity
+File `10-06-wanting-v26-20261018.md` (v26) · draft · activity
 
 **Thirst answered**
 
@@ -512,6 +514,9 @@ File `10-06-wanting-v25-20261018.md` (v25) · draft · activity
 
 - **C-253** In Habakkuk's taunt, the safety greed gathers by taking from others is answered by fear of those it took from (in part: Safety (Habakkuk 2:6-10))
 - **C-259** God names judging the cause of the poor and needy as knowing him, and sets it against eyes and heart given only to gain (pointer) — also told in: 10.2 *(opening)* (in full)
+- **C-264** Poverty can be shown without being had: the proverb sets what a person makes himself out to be, rich or poor, against what he has (in full)
+- **C-265** Wealth that can ransom a life also draws threats that the poor man never hears (in full)
+- **C-266** In Nathan's parable the poor man's one possession is loved as kin, and it is what the rich man takes rather than his own (in full)
 
 ### 10.7 — Choosing and setting direction
 
@@ -553,7 +558,7 @@ File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft · activity
 
 ### 10.9 — Relating to God
 
-File `10-09-relating-to-god-v26-20261018.md` (v26) · draft · activity
+File `10-09-relating-to-god-v27-20261018.md` (v27) · draft · activity
 
 **Humbling oneself before God**
 
@@ -566,6 +571,10 @@ File `10-09-relating-to-god-v26-20261018.md` (v26) · draft · activity
 **When God hides his face**
 
 - **C-254** God's seeing of a heart's own backsliding way is followed by a promise to heal, not by giving it up (in part: A heart that does not notice (Isaiah 57:17-19))
+
+**Waiting, and pleading**
+
+- **C-269** The one who calls himself poor is the one who cries and is heard, and what he is delivered from includes his fears (in full)
 
 **Kept from what would rule**
 
@@ -1204,7 +1213,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 179 |
+| narrative | New | 185 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1213,4 +1222,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-263 claims; 192 told in the narrative, 71 not.
+269 claims; 198 told in the narrative, 71 not.

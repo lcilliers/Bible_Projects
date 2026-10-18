@@ -718,6 +718,8 @@
 | 2Sa 11:4 | 10.6 *Coveting* (quoted) | — |
 | 2Sa 11:11 | 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | — |
 | 2Sa 11:26 | 02 *Those left behind* (quoted) | C-155 |
+| 2Sa 12:3 | 10.6 *Possessions* (quoted) | C-266 |
+| 2Sa 12:4 | 10.6 *Possessions* (quoted) | C-266 |
 | 2Sa 12:5 | 02 *Living before God* (quoted); 10.13 *What it rises at*; 10.13 *What changes it*; 11 *What changes the character* (quoted) | C-127 |
 | 2Sa 12:9 | 10.6 *Coveting* (quoted) | — |
 | 2Sa 12:13 | 02 *Death and sin* (quoted); 10.13 *Reading the ruin* | C-87 |
@@ -1442,7 +1444,8 @@
 | Psa 33:11 | 11 *8. God has a heart and a soul* (quoted) | — |
 | Psa 33:19 | 02 *Breath lent, and held by God* (quoted); 02 *Delivered from death* | C-113 |
 | Psa 34:2 | 05 *Rest for the soul* (quoted); 10.14 *The humble* (quoted); 10.15 *The boast* (quoted) | C-184 |
-| Psa 34:4 | — | C-184 |
+| Psa 34:4 | 10.9 *Waiting, and pleading* (quoted) | C-184, C-269 |
+| Psa 34:6 | 10.9 *Waiting, and pleading* (quoted) | C-269 |
 | Psa 34:10 | 10.6 *Wanting life* (quoted) | — |
 | Psa 34:11 | 10.6 *Wanting life* (quoted) | — |
 | Psa 34:12 | 02 *Life weighed* (quoted); 10.6 *Wanting life* (quoted) | C-134 |
@@ -1595,10 +1598,11 @@
 | Psa 69:17 | 10.9 *When God hides his face* (quoted) | — |
 | Psa 69:20 | 04 *The heart humbled* (quoted); 10.6 *Thirst answered* (quoted); 10.9 *When God hides his face* (quoted); 10.14 *A lowly and contrite spirit* (quoted) | C-189 |
 | Psa 69:21 | 10.6 *Thirst answered* (quoted) | — |
-| Psa 69:29 | — | C-184 |
+| Psa 69:29 | 10.9 *Waiting, and pleading* (quoted) | C-184, C-269 |
 | Psa 69:30 | — | C-184 |
 | Psa 69:31 | — | C-184 |
 | Psa 69:32 | 02 *Life that returns* (quoted); 04 *The heart is the source* (quoted); 10.14 *The humble* (quoted) | C-184 |
+| Psa 69:33 | 10.9 *Waiting, and pleading* (quoted) | C-269 |
 | Psa 70:2 | 10.1 *Delight* (quoted) | — |
 | Psa 71:20 | 02 *Delivered from death* (quoted) | — |
 | Psa 71:24 | 10.5 *From the heart to the mouth* (quoted) | — |
@@ -1744,7 +1748,11 @@
 | Psa 109:16 | 10.1 *Losing heart* (quoted); 10.5 *From the heart to the mouth* (quoted) | — |
 | Psa 109:17 | 10.1 *When delight is only the measure* (quoted); 10.5 *From the heart to the mouth* (quoted) | — |
 | Psa 109:18 | 10.5 *From the heart to the mouth* (quoted) | — |
-| Psa 109:22 | 04 *The heart humbled* (quoted); 10.14 *A lowly and contrite spirit* (quoted) | C-189 |
+| Psa 109:22 | 04 *The heart humbled* (quoted); 10.14 *A lowly and contrite spirit* (quoted) | C-189, C-268 |
+| Psa 109:23 | 04 *The heart humbled* (quoted) | C-189, C-268 |
+| Psa 109:24 | 04 *The heart humbled* (quoted) | C-189, C-268 |
+| Psa 109:25 | 04 *The heart humbled* (quoted) | C-189, C-268 |
+| Psa 109:26 | 04 *The heart humbled* (quoted) | C-189, C-268 |
 | Psa 111:10 | 10.2 *(opening)* (quoted) | — |
 | Psa 112:1 | 10.1 *On God's word, and on God* (quoted); 10.1 *When feeling changes character* | — |
 | Psa 112:7 | 10.1 *Meeting fear* (quoted) | — |
@@ -1967,6 +1975,8 @@
 | Pro 12:28 | 02 *Life set before a person* (quoted) | C-120 |
 | Pro 13:1 | 10.2 *Pride and hearing* (quoted); 10.15 *Pride and hearing* (quoted) | C-222 |
 | Pro 13:4 | 10.6 *Evil desire* (quoted) | — |
+| Pro 13:7 | 10.6 *Possessions* (quoted) | C-264 |
+| Pro 13:8 | 10.6 *Possessions* (quoted) | C-265 |
 | Pro 13:10 | 10.2 *Pride and hearing* (quoted); 10.15 *Pride and hearing* (quoted) | C-222 |
 | Pro 13:12 | 02 *Where life flows from* (quoted); 10.6 *Thirst answered* (quoted) | — |
 | Pro 13:13 | 10.8 *(opening)* (quoted) | — |
@@ -3081,7 +3091,8 @@
 | Mat 3:9 | 10.13 *The heart that turns, and the heart that does not* (quoted) | — |
 | Mat 3:17 | 11 *4. One word, opposite values* (quoted) | — |
 | Mat 4:16 | 02 *Death in the living* (quoted) | — |
-| Mat 5:3 | 06 *The human spirit* (quoted) | — |
+| Mat 5:3 | 06 *The human spirit* (quoted) | C-267 |
+| Mat 5:4 | 06 *The human spirit* (quoted) | C-267 |
 | Mat 5:5 | 10.14 *The humble* (quoted) | C-186 |
 | Mat 5:6 | 10.6 *Thirst answered* (quoted) | — |
 | Mat 5:14 | 10.11 *Hiding what I hold* (quoted) | — |

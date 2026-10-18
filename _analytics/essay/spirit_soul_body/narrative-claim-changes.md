@@ -2,6 +2,83 @@
 
 *Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-18 — OT-106.3: the poor person's own side, woven (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-106.3 (M47)
+
+**Researcher:** "Weave all five OT-106.3 placements as proposed with their claims, close OT-106.3, commit and push, then read OT-05.11 (M47)." (2026-10-18)
+
+**Method:** OT-106.3 (poverty joined to the spirit or heart: Mat 5:3, Pro 16:19, Psa 109:22, with the five other S-coded M09 verses that carry an M47 word) read in their passages for OT-106's question (the researcher's three dimensions of poor/needy, #2148). Woven: Pro 13:7-8 and 2Sa 12:3-4 (10.6 Possessions), Mat 5:3-4 (Ch 6), Psa 109:22-26 (Ch 4), Psa 34:4-6 and 69:29, 33 (10.9 Waiting, and pleading). Pro 13:7: both verbs are the reflexive (hithpael) stem of 'be rich' (H6238) and 'be poor' (H7326), checked in iba.db span. Rule 77: 2-2 (Ch 6) and C-189 (Ch 4) told in touched passages; both stand; C-189 gains Psa 109:23-26 as sources.
+
+**Sources:** _analytics/Clusters/M47 - inner-seat/ot-106-3-m47-poor-own-side-reading-v1-20261018.md
+
+**Original claims changed:** Six new claims; C-189 gains sources Psa 109:23-26.
+
+**Refs:** escalation 2160, thread OT-106, thread item OT-106.3, escalation 2148
+
+**Quote check:** 14 parts, 0 failures. checked against iba.db verse (ESV)
+
+- **2-2** telling changed · 06 *The human spirit* (recorded, 2026-10-18)
+  - passage before: **It is lowly or proud, and it is judged.** "Pride goes before destruction, and a haughty spirit before a fall" (Proverbs 16:18). The next verse chooses the company: "It is better to be of a lowly spirit with the poor than to divide the spoil with the proud" (16:19). "One's pride will bring him low, but he who is lowly in spirit will obtain honor" (Proverbs 29:23). "Blessed are the poor in spirit" (Matthew 5:3). God dwells "with him who is of a contrite and lowly spirit" (Isaiah 57:15). God looks to "he who is humble and contrite in spirit and trembles at my word" (Isaiah 66:2). Israel was "a generation whose heart was not steadfast, whose spirit was not faithful to God" (Psalm 78:8). The psalm's blessed man is "the one whose transgression is forgiven" (Psalm 32:1), the man "against whom the Lord counts no iniquity, and in whose spirit there is no deceit" (32:2). The no-deceit stands beside his confession: "I acknowledged my sin to you, and I did not cover my iniquity" (32:5). David prays for "a right spirit" (Psalm 51:10). Paul calls for cleansing "from every defilement of body and spirit" (2 Corinthians 7:1). And "the Lord weighs the spirit" (Proverbs 16:2).
+  - passage after: **It is lowly or proud, and it is judged.** "Pride goes before destruction, and a haughty spirit before a fall" (Proverbs 16:18). The next verse chooses the company: "It is better to be of a lowly spirit with the poor than to divide the spoil with the proud" (16:19). "One's pride will bring him low, but he who is lowly in spirit will obtain honor" (Proverbs 29:23). "Blessed are the poor in spirit" (Matthew 5:3). The verse places the poverty in the spirit, not in what a person has, and the next blessing is on "those who mourn, for they shall be comforted" (5:4). God dwells "with him who is of a contrite and lowly spirit" (Isaiah 57:15). God looks to "he who is humble and contrite in spirit and trembles at my word" (Isaiah 66:2). Israel was "a generation whose heart was not steadfast, whose spirit was not faithful to God" (Psalm 78:8). The psalm's blessed man is "the one whose transgression is forgiven" (Psalm 32:1), the man "against whom the Lord counts no iniquity, and in whose spirit there is no deceit" (32:2). The no-deceit stands beside his confession: "I acknowledged my sin to you, and I did not cover my iniquity" (32:5). David prays for "a right spirit" (Psalm 51:10). Paul calls for cleansing "from every defilement of body and spirit" (2 Corinthians 7:1). And "the Lord weighs the spirit" (Proverbs 16:2).
+- **C-189** telling changed · 04 *The heart humbled* (recorded, 2026-10-18)
+  - passage before: The heart can be broken. "Reproaches have broken my heart, so that I am in despair" (Psalm 69:20). "I am poor and needy, and my heart is stricken within me" (Psalm 109:22). "I groan because of the tumult of my heart" (Psalm 38:8). The prophet: "My heart is broken within me … because of the Lord and because of his holy words" (Jeremiah 23:9). And "He heals the brokenhearted and binds up their wounds" (Psalm 147:3).
+  - passage after: The heart can be broken. "Reproaches have broken my heart, so that I am in despair" (Psalm 69:20). "I am poor and needy, and my heart is stricken within me" (Psalm 109:22). The one who prays says it of himself, and goes on: "I am gone like a shadow at evening … My knees are weak through fasting; my body has become gaunt, with no fat. I am an object of scorn to my accusers … Help me, O Lord my God!" (109:23–26). Poor and needy, the stricken heart and the gaunt body are named together, and the words end in an appeal. "I groan because of the tumult of my heart" (Psalm 38:8). The prophet: "My heart is broken within me … because of the Lord and because of his holy words" (Jeremiah 23:9). And "He heals the brokenhearted and binds up their wounds" (Psalm 147:3).
+- **C-264** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: Poverty can be shown without being had: the proverb sets what a person makes himself out to be, rich or poor, against what he has
+  - verdict before: —
+  - verdict after: New
+- **C-265** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: Wealth that can ransom a life also draws threats that the poor man never hears
+  - verdict before: —
+  - verdict after: New
+- **C-266** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: In Nathan's parable the poor man's one possession is loved as kin, and it is what the rich man takes rather than his own
+  - verdict before: —
+  - verdict after: New
+- **C-267** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: Matthew 5:3 places poverty in the spirit, not in what a person has, and the next blessing is on those who mourn
+  - verdict before: —
+  - verdict after: New
+- **C-268** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: 'Poor and needy', said of oneself, comes with the stricken heart and the gaunt body and ends in an appeal for help
+  - verdict before: —
+  - verdict after: New
+- **C-269** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: The one who calls himself poor is the one who cries and is heard, and what he is delivered from includes his fears
+  - verdict before: —
+  - verdict after: New
+- **C-264** telling added · 10.6 *Possessions* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: What is had and what is shown can differ. "One pretends to be rich, yet has nothing; another pretends to be poor, yet has great wealth. The ransom of a man's life is his wealth, but a poor man hears no threat" (Proverbs 13:7–8). The verbs are the words for being rich and being poor, turned back on oneself: each makes himself out to be what he is not. So poverty can be shown without being had. I read 13:8 as giving the other side: wealth can ransom a life, and so draws the threats the poor man never hears.
+  - note: in full
+- **C-265** telling added · 10.6 *Possessions* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: What is had and what is shown can differ. "One pretends to be rich, yet has nothing; another pretends to be poor, yet has great wealth. The ransom of a man's life is his wealth, but a poor man hears no threat" (Proverbs 13:7–8). The verbs are the words for being rich and being poor, turned back on oneself: each makes himself out to be what he is not. So poverty can be shown without being had. I read 13:8 as giving the other side: wealth can ransom a life, and so draws the threats the poor man never hears.
+  - note: in full
+- **C-266** telling added · 10.6 *Possessions* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: A poor man's one possession can be loved as kin. In Nathan's parable "the poor man had nothing but one little ewe lamb, which he had bought. And he brought it up, and it grew up with him and with his children. It used to eat of his morsel and drink from his cup and lie in his arms, and it was like a daughter to him", while the rich man "was unwilling to take one of his own flock or herd" (2 Samuel 12:3–4).
+  - note: in full
+- **C-267** telling added · 06 *The human spirit* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: **It is lowly or proud, and it is judged.** "Pride goes before destruction, and a haughty spirit before a fall" (Proverbs 16:18). The next verse chooses the company: "It is better to be of a lowly spirit with the poor than to divide the spoil with the proud" (16:19). "One's pride will bring him low, but he who is lowly in spirit will obtain honor" (Proverbs 29:23). "Blessed are the poor in spirit" (Matthew 5:3). The verse places the poverty in the spirit, not in what a person has, and the next blessing is on "those who mourn, for they shall be comforted" (5:4). God dwells "with him who is of a contrite and lowly spirit" (Isaiah 57:15). God looks to "he who is humble and contrite in spirit and trembles at my word" (Isaiah 66:2). Israel was "a generation whose heart was not steadfast, whose spirit was not faithful to God" (Psalm 78:8). The psalm's blessed man is "the one whose transgression is forgiven" (Psalm 32:1), the man "against whom the Lord counts no iniquity, and in whose spirit there is no deceit" (32:2). The no-deceit stands beside his confession: "I acknowledged my sin to you, and I did not cover my iniquity" (32:5). David prays for "a right spirit" (Psalm 51:10). Paul calls for cleansing "from every defilement of body and spirit" (2 Corinthians 7:1). And "the Lord weighs the spirit" (Proverbs 16:2).
+  - note: in part: poor in spirit (Matthew 5:3-4)
+- **C-268** telling added · 04 *The heart humbled* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: The heart can be broken. "Reproaches have broken my heart, so that I am in despair" (Psalm 69:20). "I am poor and needy, and my heart is stricken within me" (Psalm 109:22). The one who prays says it of himself, and goes on: "I am gone like a shadow at evening … My knees are weak through fasting; my body has become gaunt, with no fat. I am an object of scorn to my accusers … Help me, O Lord my God!" (109:23–26). Poor and needy, the stricken heart and the gaunt body are named together, and the words end in an appeal. "I groan because of the tumult of my heart" (Psalm 38:8). The prophet: "My heart is broken within me … because of the Lord and because of his holy words" (Jeremiah 23:9). And "He heals the brokenhearted and binds up their wounds" (Psalm 147:3).
+  - note: in part: Psalm 109:22-26
+- **C-269** telling added · 10.9 *Waiting, and pleading* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: A plea can come from the poor man's own mouth, and be heard. "I sought the Lord, and he answered me and delivered me from all my fears … This poor man cried, and the Lord heard him and saved him out of all his troubles" (Psalm 34:4, 6). "But I am afflicted and in pain; let your salvation, O God, set me on high! … For the Lord hears the needy" (Psalm 69:29, 33). The one who calls himself poor is the one who cries, and what he is delivered from includes his fears (10.12).
+  - note: in full
+
 ## 2026-10-18 — OT-105.9: five passages on the poor as seen by another woven (#2160)
 
 **Strand:** open threads on completed clusters (#2160), OT-105.9 (M18)
