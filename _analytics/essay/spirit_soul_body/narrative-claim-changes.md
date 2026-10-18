@@ -2,6 +2,37 @@
 
 *Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-18 — OT-97.17: Ezekiel 17:24 added to 10.14 (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-97.17 (M09)
+
+**Researcher:** "Add Eze 17:24 to 10.14 Only God does it with its claim, leave Job 5 out, forward Ecc 5:8 to OT-105, close OT-97.17, commit and push, then read OT-105.8 (M02)." (2026-10-18)
+
+**Method:** OT-97.17 (the six M08 marks to M09) read in their passages. Isa 57:15, Jam 1:9 and Eze 21:26 already in 10.14. Eze 17:24 added to 10.14 The proud brought low, the lowly raised (Only God does it). Job 5:11 left out by ruling (Eliphaz). Ecc 5:8 forwarded to OT-105. Rule 77: C-181 (Only God lifts up and puts down), told in the touched passage, gains Eze 17:24 as a source; C-180, C-182, C-235, C-237 unaffected.
+
+**Sources:** _analytics/Clusters/M09 - humility-lowliness/ot-97-17-m09-forward-marks-reading-v1-20261018.md
+
+**Original claims changed:** One new claim (the reversal is done so that he is known, as sure as his word); C-181 gains source Eze 17:24.
+
+**Not woven:** Job 5:11, 16 left out (researcher); Ecc 5:8 to OT-105.
+
+**Refs:** escalation 2160, thread OT-97, thread item OT-97.17
+
+**Quote check:** 1 parts, 0 failures. checked against iba.db verse (ESV)
+
+- **C-181** telling changed · 10.14 *The proud brought low, the lowly raised* (recorded, 2026-10-18)
+  - passage before: **Only God does it.** Job is challenged: "look on everyone who is proud and abase him … Then will I also acknowledge to you that your own right hand can save you" (Job 40:11–12, 14). He cannot. "Not from the east or from the west … comes lifting up, but it is God who executes judgment, putting down one and lifting up another" (Psalm 75:6–7).
+  - passage after: **Only God does it.** Job is challenged: "look on everyone who is proud and abase him … Then will I also acknowledge to you that your own right hand can save you" (Job 40:11–12, 14). He cannot. "Not from the east or from the west … comes lifting up, but it is God who executes judgment, putting down one and lifting up another" (Psalm 75:6–7). Ezekiel gives it in a figure, with what it is for: "And all the trees of the field shall know that I am the Lord; I bring low the high tree, and make high the low tree, dry up the green tree, and make the dry tree flourish. I am the Lord; I have spoken, and I will do it" (Ezekiel 17:24). The reversal is done so that he is known, and it is as sure as his word.
+- **C-257** claim created (recorded, 2026-10-18)
+  - claim before: —
+  - claim after: God's reversal of high and low is done so that he is known, and is as sure as his word
+  - verdict before: —
+  - verdict after: New
+- **C-257** telling added · 10.14 *The proud brought low, the lowly raised* (recorded, 2026-10-18)
+  - passage before: —
+  - passage after: **Only God does it.** Job is challenged: "look on everyone who is proud and abase him … Then will I also acknowledge to you that your own right hand can save you" (Job 40:11–12, 14). He cannot. "Not from the east or from the west … comes lifting up, but it is God who executes judgment, putting down one and lifting up another" (Psalm 75:6–7). Ezekiel gives it in a figure, with what it is for: "And all the trees of the field shall know that I am the Lord; I bring low the high tree, and make high the low tree, dry up the green tree, and make the dry tree flourish. I am the Lord; I have spoken, and I will do it" (Ezekiel 17:24). The reversal is done so that he is known, and it is as sure as his word.
+  - note: in part: Ezekiel 17:24
+
 ## 2026-10-18 — OT-97.71: Isaiah 57:18-21 and 1 Samuel 16:6 woven (#2160)
 
 **Strand:** open threads on completed clusters (#2160), OT-97.71 (M47)

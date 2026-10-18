@@ -1,0 +1,64 @@
+{
+ "update": {
+  "update_date": "2026-10-18",
+  "title": "OT-97.17: Ezekiel 17:24 added to 10.14 (#2160)",
+  "strand": "open threads on completed clusters (#2160), OT-97.17 (M09)",
+  "researcher_instruction": "\"Add Eze 17:24 to 10.14 Only God does it with its claim, leave Job 5 out, forward Ecc 5:8 to OT-105, close OT-97.17, commit and push, then read OT-105.8 (M02).\" (2026-10-18)",
+  "method": "OT-97.17 (the six M08 marks to M09) read in their passages. Isa 57:15, Jam 1:9 and Eze 21:26 already in 10.14. Eze 17:24 added to 10.14 The proud brought low, the lowly raised (Only God does it). Job 5:11 left out by ruling (Eliphaz). Ecc 5:8 forwarded to OT-105. Rule 77: C-181 (Only God lifts up and puts down), told in the touched passage, gains Eze 17:24 as a source; C-180, C-182, C-235, C-237 unaffected.",
+  "source_files": [
+   "_analytics/Clusters/M09 - humility-lowliness/ot-97-17-m09-forward-marks-reading-v1-20261018.md"
+  ],
+  "claims_changed_note": "One new claim (the reversal is done so that he is known, as sure as his word); C-181 gains source Eze 17:24.",
+  "not_woven_note": "Job 5:11, 16 left out (researcher); Ecc 5:8 to OT-105.",
+  "quote_parts": 1,
+  "quote_failures": 0,
+  "quote_note": "checked against iba.db verse (ESV)"
+ },
+ "refs": [
+  {
+   "kind": "escalation",
+   "value": "2160"
+  },
+  {
+   "kind": "thread",
+   "value": "OT-97"
+  },
+  {
+   "kind": "thread item",
+   "value": "OT-97.17"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "10.14",
+   "from_version": 3,
+   "to_version": 4,
+   "file": "10-14-humility-v4-20261018.md"
+  }
+ ],
+ "claims": [
+  {
+   "key": "n1",
+   "new": {
+    "text": "God's reversal of high and low is done so that he is known, and is as sure as his word",
+    "beyond_text": "reads the purpose clause ('shall know that I am the Lord') and 'I have spoken, and I will do it' of Eze 17:24 as the point of the reversal",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 0,
+    "sources": [
+     "Eze 17:24"
+    ]
+   }
+  }
+ ],
+ "tellings": [
+  {
+   "claim": "n1",
+   "chapter": "10.14",
+   "passage": "Only God does it",
+   "kind": "in part",
+   "part": "Ezekiel 17:24",
+   "action": "add"
+  }
+ ]
+}

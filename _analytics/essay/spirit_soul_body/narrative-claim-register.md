@@ -659,7 +659,7 @@ File `10-13-anger-v10-20261015.md` (v10) · draft · key characteristic
 
 ### 10.14 — Humility
 
-File `10-14-humility-v3-20261015.md` (v3) · draft · key characteristic
+File `10-14-humility-v4-20261018.md` (v4) · draft · key characteristic
 
 **(opening)**
 
@@ -712,6 +712,7 @@ File `10-14-humility-v3-20261015.md` (v3) · draft · key characteristic
 - **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in full) — also told in: 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in part: the lifted-up thing made to give way) — also told in: 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-181** Only God lifts up and puts down; a person cannot abase the proud (in full)
+- **C-257** God's reversal of high and low is done so that he is known, and is as sure as his word (in part: Ezekiel 17:24)
 - **C-235** In the proverbs pride brings its own fall, with no other hand named; elsewhere God brings it down (in part) — also told in: 10.15 *Where it ends* (in full); 10.15 *Where it ends* (in full)
 - **C-182** The boast is moved from what a person has to what God does (in full) — also told in: 05 *Rest for the soul* (in part); 10.15 *The boast* (in full); 11 *4. One word, opposite values* (in part)
 - **C-237** The charge of pride can come from another's anger or from a ready explanation, and the verses do not make it true (in full) — also told in: 04 *The heart and anger* (in part); 10.4 *When anger thinks* (in part); 10.15 *Where it ends* (in full)
@@ -1187,7 +1188,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 172 |
+| narrative | New | 173 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1196,4 +1197,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-256 claims; 185 told in the narrative, 71 not.
+257 claims; 186 told in the narrative, 71 not.

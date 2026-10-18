@@ -2760,6 +2760,7 @@
 | Eze 16:44 | 10.13 *How it is provoked* (quoted); 11 *6. Inner states pass between people* (quoted) | — |
 | Eze 16:49 | 10.10 *Pride over another*; 10.15 *Pride over another* (quoted) | C-226 |
 | Eze 16:63 | 10.3 *Remembering in shame* (quoted) | — |
+| Eze 17:24 | 10.14 *The proud brought low, the lowly raised* (quoted) | C-181, C-257 |
 | Eze 18:4 | 02 *Death and sin* (quoted); 02 *Soul, spirit and heart at death* (quoted); 05 *The soul answers for itself* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted); 12 *The soul answers for it* (quoted) | 2-1, C-87, C-100, C-101, C-144 |
 | Eze 18:13 | — | C-87 |
 | Eze 18:17 | — | C-87 |
