@@ -193,7 +193,7 @@ File `01-the-question-v4-20261002.md` (v4) · draft · chapter
 
 ### 02 — Life, breath and death
 
-File `02-life-breath-and-death-v26-20261019.md` (v26) · draft · chapter
+File `02-life-breath-and-death-v29-20261019.md` (v29) · draft · chapter
 
 **Breath lent, and held by God**
 
@@ -204,6 +204,10 @@ File `02-life-breath-and-death-v26-20261019.md` (v26) · draft · chapter
 - **C-115** The breath can fail in someone still alive (in full)
 - **C-116** God gives human frailty as a reason for holding back his anger (in full)
 - **C-117** Humans and animals share one breath and one lot (in full)
+
+**Where life flows from**
+
+- **C-320** Life is said to flow from another's face and favour (in full)
 
 **Life set before a person**
 
@@ -294,6 +298,7 @@ File `02-life-breath-and-death-v26-20261019.md` (v26) · draft · chapter
 - **C-133** People weigh their own lives: loathed, worn down, enjoyed, and not consisting in possessions (in full)
 - **C-133** People weigh their own lives: loathed, worn down, enjoyed, and not consisting in possessions (in part)
 - **C-134** Where the hope of seeing good has gone, life is weighed as a breath (in full)
+- **C-288** In the siege of Jerusalem a slow death by hunger is called worse than death by the sword (in full)
 - **C-136** Death's certainty can be turned into a reason to indulge, and Scripture answers it (in full)
 - **C-135** The difference in how a life is weighed lies in what each verse sets life beside (in full)
 
@@ -303,6 +308,7 @@ File `02-life-breath-and-death-v26-20261019.md` (v26) · draft · chapter
 - **C-153** "The king of terrors" is Bildad's word, said of Job, and God's verdict on the friends stands over it (in full)
 - **C-145** In Acts a lie contrived in the heart is followed at once by death, and fear comes on all who hear (in full) — also told in: 02 *Death and sin* (in full)
 - **C-154** The nearness of death is given a purpose: to rely on God who raises the dead (in full)
+- **C-321** Barzillai asks to die in his own city near his parents' grave and gives his place at court to another (in full)
 
 **Those left behind**
 
@@ -381,6 +387,7 @@ File `02-life-breath-and-death-v26-20261019.md` (v26) · draft · chapter
 
 - **C-92** The waking of the dead is not the same for all (in full) — also told in: 02 *Sleep and waking* (in full)
 - **C-139** Scripture speaks of death in more than one way: the body's death, death in the living, dying to sin, a death beyond death, death as a power, and the living made like the dead (in part: a death beyond death) — also told in: 02 *Death spoken of in more than one way* (in full); 02 *Death spoken of in more than one way* (in full)
+- **C-296** At the judgment the shut-out weep and gnash their teeth at a sight: others inside, themselves outside (in full)
 
 **After death**
 
@@ -399,7 +406,7 @@ File `03-one-inner-person-v5-20261013.md` (v5) · draft · chapter
 
 ### 04 — The heart
 
-File `04-the-heart-v20-20261018.md` (v20) · draft · chapter
+File `04-the-heart-v21-20261019.md` (v21) · draft · chapter
 
 **The heart and anger**
 
@@ -410,6 +417,10 @@ File `04-the-heart-v20-20261018.md` (v20) · draft · chapter
 **The heart is the source**
 
 - **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: the heart of the contrite revived) — also told in: 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
+
+**The heart judges itself**
+
+- **C-319** The heart is called on as the witness of the harm it knows it did (in full)
 
 **The heart is hidden, and God sees it**
 
@@ -475,7 +486,7 @@ File `10-00-the-inner-being-at-work-v7-20261015.md` (v7) · draft · opening
 
 ### 10.1 — Feeling
 
-File `10-01-feeling-v22-20261015.md` (v22) · draft · activity
+File `10-01-feeling-v23-20261019.md` (v23) · draft · activity
 
 **(opening)**
 
@@ -484,10 +495,11 @@ File `10-01-feeling-v22-20261015.md` (v22) · draft · activity
 **How a feeling rises**
 
 - **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the heart lifted up when Uzziah was strong) — also told in: 04 *The heart and anger* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+- **C-316** At the king's feast every guest was set free to do as he desired before the merry heart gave its command (in full)
 
 ### 10.2 — Knowing and hearing
 
-File `10-02-knowing-and-hearing-v20-20261018.md` (v20) · draft · activity
+File `10-02-knowing-and-hearing-v21-20261019.md` (v21) · draft · activity
 
 **(opening)**
 
@@ -505,9 +517,17 @@ File `10-02-knowing-and-hearing-v20-20261018.md` (v20) · draft · activity
 
 - **C-222** Pride is set against hearing: it will not take rebuke or advice, and the scoffer is known by what he will not receive (in full) — also told in: 10.2 *(opening)* (in part); 10.15 *Pride and hearing* (in full)
 
+**Doubt**
+
+- **C-300** God's call can go unanswered, and the same passage sets beside it the servant's ear awakened morning by morning (in full)
+
 ### 10.3 — Remembering and forgetting
 
-File `10-03-remembering-and-forgetting-v8-20261018.md` (v8) · draft · activity
+File `10-03-remembering-and-forgetting-v9-20261019.md` (v9) · draft · activity
+
+**Forgetting lets anger go, and remembering brings it back**
+
+- **C-315** The king's remembering of Vashti was turned aside by a pleasure offered, and the young women's own wishes were not asked (in full)
 
 **Remembering as a cure, and remembering as hope**
 
@@ -516,11 +536,12 @@ File `10-03-remembering-and-forgetting-v8-20261018.md` (v8) · draft · activity
 
 ### 10.4 — Thinking
 
-File `10-04-thinking-v14-20261013.md` (v14) · draft · activity
+File `10-04-thinking-v15-20261019.md` (v15) · draft · activity
 
 **What thinking does**
 
 - **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: Uzziah strong, then proud) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+- **C-317** A wrong expectation can be what a teaching answers (in full)
 
 **When anger thinks**
 
@@ -528,19 +549,31 @@ File `10-04-thinking-v14-20261013.md` (v14) · draft · activity
 
 ### 10.5 — Speaking
 
-File `10-05-speaking-v22-20261013.md` (v22) · draft · activity
+File `10-05-speaking-v23-20261019.md` (v23) · draft · activity
 
 **Speech before words**
 
 - **C-233** Mocking takes the sufferer's trust in God as its target, and the sufferer answers God, not the mockers (in part) — also told in: 10.15 *The mock* (in full); 11 *4. One word, opposite values* (in part); 13.1 *Delight* (in part)
 
+**The oath**
+
+- **C-318** A promise not to refuse can be overridden by an oath (in full)
+
 ### 10.6 — Wanting
 
-File `10-06-wanting-v26-20261018.md` (v26) · draft · activity
+File `10-06-wanting-v27-20261019.md` (v27) · draft · activity
+
+**Coveting**
+
+- **C-310** Coveting can add until it leaves the coveter alone (in full)
 
 **Thirst answered**
 
 - **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the giver forgotten) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+
+**A person**
+
+- **C-311** Adonijah's wish for Abishag was read by Solomon as the throne asked for again; the verses give Solomon's reading, not Adonijah's heart (in full)
 
 **Jealousy and envy**
 
@@ -553,10 +586,11 @@ File `10-06-wanting-v26-20261018.md` (v26) · draft · activity
 - **C-264** Poverty can be shown without being had: the proverb sets what a person makes himself out to be, rich or poor, against what he has (in full)
 - **C-265** Wealth that can ransom a life also draws threats that the poor man never hears (in full)
 - **C-266** In Nathan's parable the poor man's one possession is loved as kin, and it is what the rich man takes rather than his own (in full)
+- **C-312** Solomon's desire to build was carried out by the forced labour of the peoples left in the land (in full)
 
 ### 10.7 — Choosing and setting direction
 
-File `10-07-choosing-and-setting-direction-v32-20261018.md` (v32) · draft · activity
+File `10-07-choosing-and-setting-direction-v33-20261019.md` (v33) · draft · activity
 
 **Being chosen**
 
@@ -575,6 +609,10 @@ File `10-07-choosing-and-setting-direction-v32-20261018.md` (v32) · draft · ac
 
 - **C-247** Ezra's heart set to study the Law, to do it and to teach it is given straight after the good hand of God on him, as its ground in him (in part: Set to study, to do and to teach (Ezra 7:10)) — also told in: 13.1 *Delight* (pointer)
 
+**Planning**
+
+- **C-313** Joseph's counsel plans against a famine he has been shown (in full)
+
 **Presumption**
 
 - **C-223** Presumption acts on its own word where another word was given: speaking what God did not command, going up when told not to, not keeping the decision given (in full) — also told in: 10.7 *Others around a choice* (in part); 10.9 *Kept from what would rule* (in part); 10.15 *The words* (pointer); 10.15 *Pride and hearing* (in full)
@@ -583,6 +621,7 @@ File `10-07-choosing-and-setting-direction-v32-20261018.md` (v32) · draft · ac
 **Willing**
 
 - **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: Belshazzar has not humbled his heart) — also told in: 04 *The heart and anger* (in part); 04 *The heart humbled* (in full); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-314** Daniel's visions picture the will made absolute: doing as one pleases and becoming great, even against the Prince of the host (in full)
 
 ### 10.8 — Right and wrong
 
@@ -594,7 +633,7 @@ File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft · activity
 
 ### 10.9 — Relating to God
 
-File `10-09-relating-to-god-v27-20261018.md` (v27) · draft · activity
+File `10-09-relating-to-god-v28-20261019.md` (v28) · draft · activity
 
 **Humbling oneself before God**
 
@@ -616,9 +655,17 @@ File `10-09-relating-to-god-v27-20261018.md` (v27) · draft · activity
 
 - **C-223** Presumption acts on its own word where another word was given: speaking what God did not command, going up when told not to, not keeping the decision given (in part: presumptuous sins that would rule) — also told in: 10.7 *Others around a choice* (in part); 10.7 *Presumption* (in full); 10.15 *The words* (pointer); 10.15 *Pride and hearing* (in full)
 
+**Under rule, and longing for his**
+
+- **C-297** Under rulers who make injustice law, the psalmist's thought of falling was met by steadfast love before the question was asked (in full)
+
+**Knowing who rules**
+
+- **C-298** Trust in God can be attacked by casting doubt on the one who leads and by naming a past of power (in full)
+
 ### 10.10 — Relating to others
 
-File `10-10-relating-to-others-v31-20261018.md` (v31) · draft · activity
+File `10-10-relating-to-others-v34-20261019.md` (v34) · draft · activity
 
 **(opening)**
 
@@ -632,6 +679,14 @@ File `10-10-relating-to-others-v31-20261018.md` (v31) · draft · activity
 **Fear that arrives with a person**
 
 - **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (pointer) — also told in: 10.12 *Dread laid on others* (in part); 10.12 *Dread laid on others* (in part)
+
+**Making others afraid**
+
+- **C-295** Fear laid on Samson's wife became the weeping she laid on him to get his secret (in full)
+
+**Plotting against another**
+
+- **C-301** Absalom's burning of Joab's field was a demand to be seen by his father (in full)
 
 **Humility toward one another**
 
@@ -651,15 +706,21 @@ File `10-10-relating-to-others-v31-20261018.md` (v31) · draft · activity
 - **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in part: elders not domineering; humility toward one another) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
 - **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in part: remembering what one was) — also told in: 10.10 *(opening)* (in part); 10.10 *Humility toward one another* (in full); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
 - **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in part: submission with its ground) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
+- **C-302** The one who holds power holds life for those under it, and in Jesus' parable the king uses it to release out of pity (in full)
 
 **Loyalty and honour**
 
 - **C-165** People hold to someone, or to something, even to death, and the readiness can fail (pointer) — also told in: 02 *Dying to the Lord* (in full); 02 *Dying to the Lord* (in full)
+- **C-303** Loyalty can fail at its post: Abner did not keep watch over the Lord's anointed, while David refused to strike him (in full)
+- **C-304** Joab yielded the honour of taking Rabbah to David (in full)
+- **C-305** Solomon on his throne showed honour upward to his mother, then refused her request (in full)
 
 **Friends, company and care**
 
 - **C-261** Job's oath counts refusing what the poor desired, and eating one's morsel alone, among the wrongs he disowns (in full)
 - **C-262** The gladness of deliverance is kept by giving, to one another and to the poor (in full)
+- **C-289** Under siege the hands of women called compassionate boiled their own children; the verse names when, not why (in part: Lamentations 4:10) — also told in: 11 *What changes the character* (pointer)
+- **C-306** A gift can be judged and resented between friends (in full)
 
 ### 10.11 — Hiding and disclosing
 
@@ -667,11 +728,21 @@ File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft · activity
 
 ### 10.12 — Fear
 
-File `10-12-fear-v13-20261018.md` (v13) · draft · key characteristic
+File `10-12-fear-v16-20261019.md` (v16) · draft · key characteristic
 
 **Fear that comes upon a person**
 
 - **C-246** In the Preacher's picture of old age, fear comes as the body fails, with no enemy behind it, and the call is to remember the Creator before those days (in full) — also told in: 10.3 *Remembering as a cure, and remembering as hope* (pointer)
+- **C-309** Fear can come with seeing what has been decided against oneself (in full)
+
+**Fear in the body**
+
+- **C-282** Fear and anguish are shown in the body, and the verses see them first in the hands: hands fall at a report, grow feeble as the heart melts, and are held as in labour (in part: the hands fall; hands and heart; the posture of labour)
+- **C-283** Fear is aimed at the hands, and the answer is given to the hands (in part: fear aimed at the hands; the answer given to the hands)
+- **C-284** In Lamentations 4:6 the Hebrew says that hands did not writhe in or on her; the ESV's 'no hands were wrung for her' takes it as grief, and the words also allow that no human hand worked Sodom's fall (in full)
+- **C-287** One Hebrew root, chul, is labour pain, trembling, anguish of heart, the dance, the whirling storm and patient waiting (pointer) — also told in: 11 *4. One word, opposite values* (in full)
+- **C-285** In 2 Samuel 4:1 the ESV's 'his courage failed' renders 'his hands dropped' (in full)
+- **C-286** In the hands verses, what weakens the hands is something heard, and what strengthens them is a word, another person, or God asked to do it (in full)
 
 **The fear of God**
 
@@ -680,6 +751,7 @@ File `10-12-fear-v13-20261018.md` (v13) · draft · key characteristic
 **Dread laid on others**
 
 - **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (in part: in Esther no giver is named) — also told in: 10.10 *Fear that arrives with a person* (pointer)
+- **C-294** In Ezekiel 21:15 the melting heart is what the sword is given for (in part: Ezekiel 21:15)
 - **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (in part: the peoples in Esther's day) — also told in: 10.10 *Fear that arrives with a person* (pointer)
 
 **What changes it**
@@ -689,11 +761,23 @@ File `10-12-fear-v13-20261018.md` (v13) · draft · key characteristic
 
 ### 10.13 — Anger
 
-File `10-13-anger-v12-20261018.md` (v12) · draft · key characteristic
+File `10-13-anger-v15-20261019.md` (v15) · draft · key characteristic
 
 **What it rises at**
 
+- **C-290** Samson's hot anger has its ground in being outwitted through his wife; the Spirit's rushing goes with the striking at Ashkelon (in part: Being outwitted through someone close) — also told in: 10.13 *Other parties* (in part)
 - **C-263** The indignation at the ointment, first said to themselves, named the poor as its reason, and Jesus put doing good to the poor in the hearers' own will (in part: the disciples' indignation (Mark 14:4-7))
+- **C-307** Anger can rise at contempt for a request that rested on good done (in full)
+- **C-308** Anger can rest on a misreading and still decide, and it abates when its object is gone (in full)
+
+**Anger in the body**
+
+- **C-291** Anger shows in the body, and the verses see it in the teeth: the angry, the plotter, the enraged hearers, gloating enemies and mockers gnash their teeth (in part: the teeth)
+- **C-292** Job pictures God's anger, as he feels it under it, as gnashing of teeth (in part: Job 16:9)
+
+**How it is spoken of**
+
+- **C-293** In 2 Kings 3:27 the wrath has no bearer named and no breach before it, and the verse leaves open whose wrath it was (in part: Once, with no bearer named)
 
 **The heart that turns, and the heart that does not**
 
@@ -717,6 +801,7 @@ File `10-13-anger-v12-20261018.md` (v12) · draft · key characteristic
 **Other parties**
 
 - **C-258** In the parable of the banquet the master's anger rests on the invited guests' refusals, turns into a wider invitation to the poor, and ends with the refusers shut out (in part: The master in Jesus' parables (Luke 14:18-24))
+- **C-290** Samson's hot anger has its ground in being outwitted through his wife; the Spirit's rushing goes with the striking at Ashkelon (in part: the Spirit and Samson) — also told in: 10.13 *What it rises at* (in part)
 
 ### 10.14 — Humility
 
@@ -827,7 +912,7 @@ File `10-14-humility-v4-20261018.md` (v4) · draft · key characteristic
 
 ### 10.15 — Pride
 
-File `10-15-pride-v1-20261015.md` (v1) · draft · key characteristic
+File `10-15-pride-v2-20261019.md` (v2) · draft · key characteristic
 
 **(opening)**
 
@@ -900,7 +985,7 @@ File `10-15-pride-v1-20261015.md` (v1) · draft · key characteristic
 
 ### 11 — Other sides of the inner being
 
-File `11-other-sides-of-the-inner-being-v36-20261019.md` (v36) · draft · chapter
+File `11-other-sides-of-the-inner-being-v38-20261019.md` (v38) · draft · chapter
 
 **2. Thresholds: the merry heart and the sad heart**
 
@@ -922,20 +1007,27 @@ File `11-other-sides-of-the-inner-being-v36-20261019.md` (v36) · draft · chapt
 - **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
 - **C-233** Mocking takes the sufferer's trust in God as its target, and the sufferer answers God, not the mockers (in part: the mockers' taunt) — also told in: 10.5 *Speech before words* (in part); 10.15 *The mock* (in full); 13.1 *Delight* (in part)
 - **C-279** 'Imperishable' is said of the raised body and also of what is within or held for a person: love, the seed of new birth, the beauty of a gentle spirit, an inheritance (in full) — also told in: 02 *Changed* (in full)
+- **C-287** One Hebrew root, chul, is labour pain, trembling, anguish of heart, the dance, the whirling storm and patient waiting (in full) — also told in: 10.12 *Fear in the body* (pointer)
 
 **What changes the character**
 
 - **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part)
+- **C-289** Under siege the hands of women called compassionate boiled their own children; the verse names when, not why (pointer) — also told in: 10.10 *Friends, company and care* (in part)
 - **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *4. One word, opposite values* (in part); 13.1 *Delight* (in part)
 - **C-201** Humility changes character with who acts, toward whom, and to what end (in full) — also told in: 10.14 *When humility changes character* (in full)
 
 **Authority as a standing**
 
 - **C-215** Pride credits to its own hand what was done through it (in part: pride: built by my mighty power) — also told in: 10.13 *Those who carry it out* (in part); 10.15 *Given, then held as one's own* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-299** Rule can be turned into injustice, and power can be given for a time and used at will (in full)
+
+**8. God has a heart and a soul**
+
+- **C-322** God names his heart and eyes as set on a place (in full)
 
 ### 12 — When the inner being goes wrong
 
-File `12-when-the-inner-being-goes-wrong-v25-20261018.md` (v25) · draft + held · chapter
+File `12-when-the-inner-being-goes-wrong-v26-20261019.md` (v26) · draft + held · chapter
 
 **Pride and the lifted-up heart and spirit**
 
@@ -962,7 +1054,7 @@ File `13-00-other-beings-v2-20261008.md` (v2) · draft · opening
 
 ### 13.1 — Divine
 
-File `13-01-divine-v30-20261019.md` (v30) · draft · other beings
+File `13-01-divine-v31-20261019.md` (v31) · draft · other beings
 
 **Choosing**
 
@@ -984,6 +1076,7 @@ File `13-01-divine-v30-20261019.md` (v30) · draft · other beings
 
 - **C-250** God's taking of the kingdom from Saul answers Saul's rejection of his word, in the same word (in part: Saul (1 Samuel 15:26-28))
 - **C-251** God's reign is spoken with wrath in one place, and as good news with peace, salvation and comfort in another (in full)
+- **C-323** God's power is put as a question to a people who did not answer him (in full)
 
 **Majesty**
 
@@ -1253,7 +1346,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 197 |
+| narrative | New | 239 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1262,4 +1355,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-281 claims; 211 told in the narrative, 70 not.
+323 claims; 253 told in the narrative, 70 not.

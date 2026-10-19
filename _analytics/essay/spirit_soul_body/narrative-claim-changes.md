@@ -2,6 +2,483 @@
 
 *Published from iba.db on 2026-10-19. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-19 — OT-98.2: the 30 verses closed as data, read outward and woven (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-98.2 (M18 x M72)
+
+**Researcher:** "OT-98.2: weave as proposed in section 2; add 1Sa 25 and 2Ki 18-19 / Isa 36-37 as verse items for later strands; then close OT-98.2 and OT-98.10." (2026-10-19)
+
+**Method:** The 30 verses of the 182 M18 x M72 verses that the M18 strand closed as data or route C (under the M72 scope ruling later called premature, #2160 v7) read outward by guide v2 (#2168), each in its passage, with 1Ki 2:13-25. 23 carry the inner being, with about a dozen uncited neighbours; 2 parallels; Mat 18:23 carried by its parable; 4 data with reasons (2Ch 36:10, Dan 11:8, 1Ki 5:17, Judg 1:35). Placed by appending to the end of the named sections in 16 chapters.
+
+**Sources:** _analytics/Clusters/M18 - desire-longing/ot-98-2-data-verses-reading-v1-20261019.md
+_analytics/Clusters/M18 - desire-longing/ot-98-2-3-m72-shared-reading-v1-20261019.md
+
+**Scripts:** _analytics/Clusters/M18 - desire-longing/ot-98-2-weave-v1-20261019.py
+
+**Original claims changed:** 27 new claims, one per new passage that goes beyond its verses.
+
+**Not woven:** 1Sa 25 (Nabal and Abigail) and 2Ki 18-19 / Isa 36-37 (the Assyrian speech) added as verse items on OT-98 for later strands. Data: 2Ch 36:10, Dan 11:8, 1Ki 5:17, Judg 1:35 (the hand as power, noted for signpost #1893).
+
+**Refs:** escalation 2160, thread OT-98, thread item OT-98.2, thread item OT-98.10
+
+**Quote check:** 63 parts, 0 failures. added lines checked against iba.db verse (ESV), 16 chapters, 0 failures
+
+- **C-297** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Under rulers who make injustice law, the psalmist's thought of falling was met by steadfast love before the question was asked
+  - verdict before: —
+  - verdict after: New
+- **C-298** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Trust in God can be attacked by casting doubt on the one who leads and by naming a past of power
+  - verdict before: —
+  - verdict after: New
+- **C-299** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Rule can be turned into injustice, and power can be given for a time and used at will
+  - verdict before: —
+  - verdict after: New
+- **C-300** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: God's call can go unanswered, and the same passage sets beside it the servant's ear awakened morning by morning
+  - verdict before: —
+  - verdict after: New
+- **C-301** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Absalom's burning of Joab's field was a demand to be seen by his father
+  - verdict before: —
+  - verdict after: New
+- **C-302** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: The one who holds power holds life for those under it, and in Jesus' parable the king uses it to release out of pity
+  - verdict before: —
+  - verdict after: New
+- **C-303** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Loyalty can fail at its post: Abner did not keep watch over the Lord's anointed, while David refused to strike him
+  - verdict before: —
+  - verdict after: New
+- **C-304** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Joab yielded the honour of taking Rabbah to David
+  - verdict before: —
+  - verdict after: New
+- **C-305** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Solomon on his throne showed honour upward to his mother, then refused her request
+  - verdict before: —
+  - verdict after: New
+- **C-306** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: A gift can be judged and resented between friends
+  - verdict before: —
+  - verdict after: New
+- **C-307** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Anger can rise at contempt for a request that rested on good done
+  - verdict before: —
+  - verdict after: New
+- **C-308** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Anger can rest on a misreading and still decide, and it abates when its object is gone
+  - verdict before: —
+  - verdict after: New
+- **C-309** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Fear can come with seeing what has been decided against oneself
+  - verdict before: —
+  - verdict after: New
+- **C-310** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Coveting can add until it leaves the coveter alone
+  - verdict before: —
+  - verdict after: New
+- **C-311** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Adonijah's wish for Abishag was read by Solomon as the throne asked for again; the verses give Solomon's reading, not Adonijah's heart
+  - verdict before: —
+  - verdict after: New
+- **C-312** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Solomon's desire to build was carried out by the forced labour of the peoples left in the land
+  - verdict before: —
+  - verdict after: New
+- **C-313** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Joseph's counsel plans against a famine he has been shown
+  - verdict before: —
+  - verdict after: New
+- **C-314** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Daniel's visions picture the will made absolute: doing as one pleases and becoming great, even against the Prince of the host
+  - verdict before: —
+  - verdict after: New
+- **C-315** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: The king's remembering of Vashti was turned aside by a pleasure offered, and the young women's own wishes were not asked
+  - verdict before: —
+  - verdict after: New
+- **C-316** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: At the king's feast every guest was set free to do as he desired before the merry heart gave its command
+  - verdict before: —
+  - verdict after: New
+- **C-317** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: A wrong expectation can be what a teaching answers
+  - verdict before: —
+  - verdict after: New
+- **C-318** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: A promise not to refuse can be overridden by an oath
+  - verdict before: —
+  - verdict after: New
+- **C-319** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: The heart is called on as the witness of the harm it knows it did
+  - verdict before: —
+  - verdict after: New
+- **C-320** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Life is said to flow from another's face and favour
+  - verdict before: —
+  - verdict after: New
+- **C-321** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Barzillai asks to die in his own city near his parents' grave and gives his place at court to another
+  - verdict before: —
+  - verdict after: New
+- **C-322** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: God names his heart and eyes as set on a place
+  - verdict before: —
+  - verdict after: New
+- **C-323** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: God's power is put as a question to a people who did not answer him
+  - verdict before: —
+  - verdict after: New
+- **C-297** telling added · 10.9 *Under rule, and longing for his* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Under rulers who make injustice into law, a psalmist asks, "Can wicked rulers be allied with you, those who frame injustice by statute? They band together against the life of the righteous and condemn the innocent to death" (Psalm 94:20–21). The verses around the question carry its answer. "When I thought, 'My foot slips,' your steadfast love, O Lord, held me up. When the cares of my heart are many, your consolations cheer my soul" (94:18–19). "But the Lord has become my stronghold, and my God the rock of my refuge" (94:22). The thought of falling was met before the question was asked.
+  - note: in full
+- **C-298** telling added · 10.9 *Knowing who rules* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Trust in God can be attacked from outside, and the attack is aimed at the trust itself. Sennacherib's servants asked the besieged city, "On what are you trusting, that you endure the siege in Jerusalem? Is not Hezekiah misleading you, that he may give you over to die by famine and by thirst, when he tells you, 'The Lord our God will deliver us from the hand of the king of Assyria'?" (2 Chronicles 32:10–11). They set their record against it: "Do you not know what I and my fathers have done to all the peoples of other lands?" (32:13). The words go for the people's trust by casting doubt on the one who leads them and by naming a past of power.
+  - note: in full
+- **C-299** telling added · 11 *Authority as a standing* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Rule can be turned into injustice: "Can wicked rulers be allied with you, those who frame injustice by statute?" (Psalm 94:20; 10.9). And power can be given for a time and used at will. The two witnesses "have power over the waters to turn them into blood and to strike the earth with every kind of plague, as often as they desire", during "the days of their prophesying" (Revelation 11:6).
+  - note: in full
+- **C-300** telling added · 10.2 *Doubt* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: God's own call can go unanswered. "Why, when I came, was there no man; why, when I called, was there no one to answer? Is my hand shortened, that it cannot redeem?" (Isaiah 50:2). Two verses on, the servant speaks: "Morning by morning he awakens; he awakens my ear to hear as those who are taught" (50:4). The people who did not answer and the ear that was awakened stand in one passage.
+  - note: in full
+- **C-301** telling added · 10.10 *Plotting against another* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Absalom gave the reason for the burned field when Joab came: "Why have I come from Geshur? It would be better for me to be there still. Now therefore let me go into the presence of the king, and if there is guilt in me, let him put me to death" (2 Samuel 14:32). I read the fire as a demand to be seen by his father. "So he came to the king and bowed himself on his face to the ground before the king, and the king kissed Absalom" (14:33).
+  - note: in full
+- **C-302** telling added · 10.10 *Holding authority over another* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: The one who holds power holds life for those under it. "A king's wrath is a messenger of death, and a wise man will appease it. In the light of a king's face there is life, and his favor is like the clouds that bring the spring rain" (Proverbs 16:14–15). In Jesus' parable the king uses that power to release: "And out of pity for him, the master of that servant released him and forgave him the debt" (Matthew 18:27). The same servant then refused his fellow servant, and the master's anger followed (18:33–34; 10.13).
+  - note: in full
+- **C-303** telling added · 10.10 *Loyalty and honour* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Loyalty can fail at its post. David called across to Saul's guard: "Why then have you not kept watch over your lord the king? For one of the people came in to destroy the king your lord. This thing that you have done is not good. As the Lord lives, you deserve to die, because you have not kept watch over your lord, the Lord's anointed" (1 Samuel 26:15–16). David had refused to strike Saul himself (26:9–11). He showed the spear and the jar as proof and asked Saul, "Why does my lord pursue after his servant? For what have I done? What evil is on my hands?" (26:18).
+  - note: in full
+- **C-304** telling added · 10.10 *Loyalty and honour* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Honour can be yielded. Joab, about to take Rabbah, sent for David: "encamp against the city and take it, lest I take the city and it be called by my name" (2 Samuel 12:28). The crown of the city's king "was placed on David's head" (12:30).
+  - note: in full
+- **C-305** telling added · 10.10 *Loyalty and honour* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Honour can be shown upward by the one on the throne. When Bathsheba came, "the king rose to meet her and bowed down to her. Then he sat on his throne and had a seat brought for the king's mother, and she sat on his right" (1 Kings 2:19). He promised, "Make your request, my mother, for I will not refuse you" (2:20). Then he refused it (2:22; 10.5).
+  - note: in full
+- **C-306** telling added · 10.10 *Friends, company and care* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: A gift can be judged and resented between friends. Solomon gave Hiram twenty cities, "But when Hiram came from Tyre to see the cities that Solomon had given him, they did not please him. Therefore he said, 'What kind of cities are these that you have given me, my brother?'" (1 Kings 9:12–13).
+  - note: in full
+- **C-307** telling added · 10.13 *What it rises at* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Anger can rise at contempt for a request that rested on good done. David's men asked Nabal for "whatever you have at hand", and gave the ground: "your shepherds have been with us, and we did them no harm" (1 Samuel 25:7–8). Nabal answered, "Who is David? Who is the son of Jesse?" (25:10). David said, "Every man strap on his sword!" (25:13). I have not yet read the rest of the chapter, where Abigail meets him.
+  - note: in full
+- **C-308** telling added · 10.13 *What it rises at* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Anger can rest on a misreading and still decide. When the king came back from the garden, Haman "was falling on the couch where Esther was", begging for his life, and the king said, "Will he even assault the queen in my presence, in my own house?" (Esther 7:8). When the gallows had done its work, "the wrath of the king abated" (7:10).
+  - note: in full
+- **C-309** telling added · 10.12 *Fear that comes upon a person* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Fear can come with seeing what has been decided. Haman "stayed to beg for his life from Queen Esther, for he saw that harm was determined against him by the king" (Esther 7:7).
+  - note: in full
+- **C-310** telling added · 10.6 *Coveting* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Coveting can add until it leaves the coveter alone. "Woe to those who join house to house, who add field to field, until there is no more room, and you are made to dwell alone in the midst of the land." The answer is sworn: "Surely many houses shall be desolate, large and beautiful houses, without inhabitant" (Isaiah 5:8–9).
+  - note: in full
+- **C-311** telling added · 10.6 *A person* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Wanting a person can be read as wanting something else. Adonijah had said of the throne, "the kingdom has turned about and become my brother's, for it was his from the Lord". Then he asked through Bathsheba for Abishag as his wife (1 Kings 2:15–17). Solomon heard it as the throne asked for again: "Ask for him the kingdom also, for he is my older brother" (2:22). The verses give Solomon's reading. They do not give Adonijah's heart.
+  - note: in full
+- **C-312** telling added · 10.6 *Possessions* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: A king's desire can be carried out by other people's labour. Solomon built "all that Solomon desired to build" (1 Kings 9:1), and "whatever Solomon desired to build in Jerusalem, in Lebanon, and in all the land of his dominion". The peoples left in the land "Solomon drafted to be slaves, and so they are to this day" (9:19, 21). When he had finished, the Lord appeared to him a second time (9:1–3; Chapter 11).
+  - note: in full
+- **C-313** telling added · 10.7 *Planning* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Joseph's counsel to Pharaoh plans against a famine he has been shown. "Let Pharaoh select a discerning and wise man", gather the food of the good years "under the authority of Pharaoh", and keep it as "a reserve for the land against the seven years of famine", "so that the land may not perish" (Genesis 41:33–36). "This proposal pleased Pharaoh and all his servants" (41:37).
+  - note: in full
+- **C-314** telling added · 10.7 *Willing* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: The visions picture the same will. The ram "did as he pleased and became great" (Daniel 8:4), and the horn after it "became great, even as great as the Prince of the host" (8:11; 10.15).
+  - note: in full
+- **C-315** telling added · 10.3 *Forgetting lets anger go, and remembering brings it back* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: What others do with a king's remembering is part of it. After his anger abated and "he remembered Vashti", his young men answered with a search: "Let beautiful young virgins be sought out for the king", and "let the young woman who pleases the king be queen instead of Vashti." "This pleased the king, and he did so" (Esther 2:1–4). I read the remembering as turned aside by a pleasure offered. The young women's own wishes are not asked.
+  - note: in full
+- **C-316** telling added · 10.1 *How a feeling rises* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Before the king's merry heart gave its command, the feast had set every guest free: "There is no compulsion", "to do as each man desired" (Esther 1:8, 10).
+  - note: in full
+- **C-317** telling added · 10.4 *What thinking does* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: A wrong expectation can be what a teaching answers. Jesus told the parable of the nobleman and the minas "because he was near to Jerusalem, and because they supposed that the kingdom of God was to appear immediately" (Luke 19:11).
+  - note: in full
+- **C-318** telling added · 10.5 *The oath* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: A promise can be given and then overridden by an oath. Solomon told his mother, "Make your request, my mother, for I will not refuse you". When he heard it, he swore, "God do so to me and more also if this word does not cost Adonijah his life!" (1 Kings 2:20, 23; 10.6).
+  - note: in full
+- **C-319** telling added · 04 *The heart judges itself* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Solomon calls on Shimei's own heart as the witness: "You know in your own heart all the harm that you did to David my father. So the Lord will bring back your harm on your own head" (1 Kings 2:44).
+  - note: in full
+- **C-320** telling added · 02 *Where life flows from* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Life is also said to flow from another's face: "In the light of a king's face there is life, and his favor is like the clouds that bring the spring rain" (Proverbs 16:15; 10.10).
+  - note: in full
+- **C-321** telling added · 02 *Facing death* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Barzillai, at eighty, asks to go home to die: "Please let your servant return, that I may die in my own city near the grave of my father and my mother. But here is your servant Chimham" (2 Samuel 19:37). He gives his place at court to another (10.7).
+  - note: in full
+- **C-322** telling added · 11 *8. God has a heart and a soul* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: God names his heart with a place. "I have consecrated this house that you have built, by putting my name there forever. My eyes and my heart will be there for all time" (1 Kings 9:3; 13.1, *Choosing*).
+  - note: in full
+- **C-323** telling added · 13.1 *Ruling* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: His power is also his question to a people who did not answer him: "Is my hand shortened, that it cannot redeem? Or have I no power to deliver? Behold, by my rebuke I dry up the sea" (Isaiah 50:2).
+  - note: in full
+
+## 2026-10-19 — 10.13: 2Ki 3:18 citation written in full (#2170)
+
+**Strand:** open threads on completed clusters (#2160), OT-07.3 (M02)
+
+**Method:** Update 157 left one unresolved reference (#2170): in 10.13 How it is spoken of, '(3:18)' followed a 2 Chronicles reference and was read as 2Ch 3:18. The citation is 2 Kings 3:18; written in full in 10.13 v14. No other text changed.
+
+**Refs:** escalation 2160, escalation 2170
+
+**Quote check:** 0 parts, 0 failures. no quote changed
+
+- **C-293** telling changed · 10.13 *How it is spoken of* (recorded, 2026-10-19)
+  - passage before: The verses describe God's anger in pictures, and they keep the pictures. - **Fire, smoke and breath:** "By the breath of God they perish, and by the blast of his anger they are consumed" (Job 4:9). "Why does your anger smoke against the sheep of your pasture?" (Psalm 74:1). - **A poured liquid:** "he has poured out his fury like fire" (Lamentations 2:4). - **A cup.** "Take from my hand this cup of the wine of wrath, and make all the nations to whom I send you drink it" (Jeremiah 25:15). It is drunk to the dregs and then taken away: "Behold, I have taken from your hand the cup of staggering … and I will put it into the hand of your tormentors" (Isaiah 51:22–23). A man's wrath is also poured as a drink: "Woe to him who makes his neighbors drink—you pour out your wrath and make them drunk" (Habakkuk 2:15), and "The cup in the Lord's right hand will come around to you" (2:16). - **A storm:** "Behold, the storm of the Lord! Wrath has gone forth, a whirling tempest; it will burst upon the head of the wicked" (Jeremiah 23:19). - **Weight:** "Your wrath lies heavy upon me" (Psalm 88:7). - **In the New Testament,** it is revealed (Romans 1:18), stored up (Romans 2:5), it remains (John 3:36), and it is finished (Revelation 15:1). - **Once, with no bearer named.** At the siege, when the king of Moab "saw that the battle was going against him", he "took his oldest son who was to reign in his place and offered him for a burnt offering on the wall. And there came great wrath against Israel. And they withdrew from him and returned to their own land" (2 Kings 3:26–27). Elsewhere the same words, wrath coming upon a people, follow a breach, and once the wrath is then named "the wrath of the Lord" (2 Chronicles 32:25–26). Here no breach is named, and Elisha had said, "He will also give the Moabites into your hand" (3:18). I read the verse as leaving open whose wrath it was. The king gave up his own heir at the point of defeat, and the campaign ended short of the word.
+  - passage after: The verses describe God's anger in pictures, and they keep the pictures. - **Fire, smoke and breath:** "By the breath of God they perish, and by the blast of his anger they are consumed" (Job 4:9). "Why does your anger smoke against the sheep of your pasture?" (Psalm 74:1). - **A poured liquid:** "he has poured out his fury like fire" (Lamentations 2:4). - **A cup.** "Take from my hand this cup of the wine of wrath, and make all the nations to whom I send you drink it" (Jeremiah 25:15). It is drunk to the dregs and then taken away: "Behold, I have taken from your hand the cup of staggering … and I will put it into the hand of your tormentors" (Isaiah 51:22–23). A man's wrath is also poured as a drink: "Woe to him who makes his neighbors drink—you pour out your wrath and make them drunk" (Habakkuk 2:15), and "The cup in the Lord's right hand will come around to you" (2:16). - **A storm:** "Behold, the storm of the Lord! Wrath has gone forth, a whirling tempest; it will burst upon the head of the wicked" (Jeremiah 23:19). - **Weight:** "Your wrath lies heavy upon me" (Psalm 88:7). - **In the New Testament,** it is revealed (Romans 1:18), stored up (Romans 2:5), it remains (John 3:36), and it is finished (Revelation 15:1). - **Once, with no bearer named.** At the siege, when the king of Moab "saw that the battle was going against him", he "took his oldest son who was to reign in his place and offered him for a burnt offering on the wall. And there came great wrath against Israel. And they withdrew from him and returned to their own land" (2 Kings 3:26–27). Elsewhere the same words, wrath coming upon a people, follow a breach, and once the wrath is then named "the wrath of the Lord" (2 Chronicles 32:25–26). Here no breach is named, and Elisha had said, "He will also give the Moabites into your hand" (2 Kings 3:18). I read the verse as leaving open whose wrath it was. The king gave up his own heir at the point of defeat, and the campaign ended short of the word.
+
+## 2026-10-19 — OT-07.3: the anger ledger's held items, woven (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-07.3 (M02)
+
+**Researcher:** "OT-07.3: weave as proposed in section 3 (the Judg 14:19 correction, 2Ki 3:27, Anger in the body, the other placements), then read OT-98.2 and OT-98.3." (2026-10-19)
+
+**Method:** The anger ledger's section M (AN-H1 to AN-H5) read outward by guide v2 (#2168). Correction (rule 77, a verse fitted to a line): Judg 14:19 taken out of 'The Spirit of God comes with anger' in 10.13 Other parties; Samson's hot anger given its own ground in the passage (Judg 14:15-20, outwitted through his wife) under What it rises at. 2Ki 3:27, held in 10.13 since the anger strand, read with 3:18 and 3:26 and the other 'wrath came upon' verses (qesep, H7110A; 2Ch 32:25-26): the bearer stated as open. Found by reading outward: anger in the body, the teeth (a set-based pull of the gnashing words H2786, G1031, G1030). Woven: 10.13 v13 (Being outwitted through someone close; new subsection Anger in the body; the Spirit bullet corrected; Once, with no bearer named; Rev 18:3; the held line removed), 10.12 v15 (Eze 21:15), 10.10 v33 (Samson's wife: fear passed on as pressure), Ch 2 v28 (weeping and gnashing of teeth, Luk 13:28), Ch 12 v26 (Num 20:13). AN-H1 (withdrawn 2026-10-01), the pilot rows, the unit 2 revisit-note verses and Rom 13:5 were found already told; AN-H3 stays with signpost #1893; AN-H5 data.
+
+**Sources:** _analytics/Clusters/M02 - anger-wrath/ot-07-3-anger-ledger-m-reading-v1-20261019.md
+
+**Scripts:** _analytics/Clusters/M02 - anger-wrath/ot-07-3-weave-v1-20261019.py
+
+**Original claims changed:** Seven new claims. No existing claim rested on Judg 14:19 or 2Ki 3:27.
+
+**Not woven:** AN-H3 (the fuller hand of the Lord pass) stays with signpost #1893.
+
+**Refs:** escalation 2160, thread OT-07, thread item OT-07.3
+
+**Quote check:** 25 parts, 0 failures. added lines checked against iba.db verse (ESV): 10.13 16 parts, 10.12 1, 10.10 3, Ch 2 1, Ch 12 4.
+
+- **C-258** telling changed · 10.13 *Other parties* (recorded, 2026-10-19)
+  - passage before: Each party that comes into anger's verses does so in its own way. - **The Spirit of God** comes with anger. "And the Spirit of God rushed upon Saul when he heard these words, and his anger was greatly kindled" (1 Samuel 11:6). The Spirit rushed upon Samson, and he went down to Ashkelon and struck down thirty men; after it, "In hot anger he went back to his father's house" (Judges 14:19). Ezekiel, lifted by the Spirit, went "in the heat of my spirit, the hand of the Lord being strong upon me" (Ezekiel 3:14). The anger list in Ephesians is set beside the Spirit grieved (Ephesians 4:30–31). - **The prophet is filled with God's wrath:** "Therefore I am full of the wrath of the Lord; I am weary of holding it in" (Jeremiah 6:11). "I sat alone, because your hand was upon me, for you had filled me with indignation" (Jeremiah 15:17). - **Angels.** The angel of the Lord stood in Balaam's way, seen by the donkey and not by the man: "God's anger was kindled because he went, and the angel of the Lord took his stand in the way as his adversary" (Numbers 22:22). Balaam's own anger fell on the donkey (22:27). God "let loose on them his burning anger … a company of destroying angels" (Psalm 78:49). An angel asked how long: "O Lord of hosts, how long will you have no mercy on Jerusalem … against which you have been angry these seventy years?", and "the Lord answered gracious and comforting words" (Zechariah 1:12–13). - **The devil:** "Woe to you, O earth and sea, for the devil has come down to you in great wrath, because he knows that his time is short!" (Revelation 12:12). - **The master in Jesus' parables,** a figure standing for God. "In anger his master delivered him to the jailers" (Matthew 18:34), after "should not you have had mercy on your fellow servant, as I had mercy on you?" (18:33). The applied lesson places the requirement in the hearer's heart: "So also my heavenly Father will do to every one of you, if you do not forgive your brother from your heart" (18:35). In another parable the anger turns into a wider invitation. Those invited "all alike began to make excuses": a field to see, oxen to examine, a wife just married (Luke 14:18–20). "So the servant came and reported these things to his master. Then the master of the house became angry and said to his servant, 'Go out quickly … and bring in the poor and crippled and blind and lame'" (14:21). The anger has its ground in the refusals, and its end is stated: "none of those men who were invited shall taste my banquet" (14:24). - **Onlookers:** "Do not rejoice when your enemy falls … lest the Lord see it and be displeased, and turn away his anger from him" (Proverbs 24:17–18). - **The physical world** bears it. "My anger and my wrath will be poured out on this place, upon man and beast, upon the trees of the field and the fruit of the ground" (Jeremiah 7:20). "The foundations also of the mountains trembled and quaked, because he was angry" (Psalm 18:7). - **Enemies' anger,** as the one attacked bears it: "then they would have swallowed us up alive, when their anger was kindled against us" (Psalm 124:3). Answered by God's hand: "you stretch out your hand against the wrath of my enemies, and your right hand delivers me" (Psalm 138:7). And by "do not fear": "Be careful, be quiet, do not fear, and do not let your heart be faint because of these two smoldering stumps of firebrands, at the fierce anger of Rezin" (Isaiah 7:4). "By faith he left Egypt, not being afraid of the anger of the king" (Hebrews 11:27). - **A ruler's anger,** as those beneath it bear it: "A king's wrath is a messenger of death, and a wise man will appease it" (Proverbs 16:14). "The terror of a king is like the growling of a lion; whoever provokes him to anger forfeits his life" (20:2). The next verse says what to do instead: "It is an honor for a man to keep aloof from strife, but every fool will be quarreling" (20:3). - **Those who pursue another.** Job's friends say, "How we will pursue him!" and "The root of the matter is found in him" (Job 19:28). He answers them: "be afraid of the sword, for wrath brings the punishment of the sword, that you may know there is a judgment" (19:29). He says it straight after "I know that my Redeemer lives" (19:25). I read the one accused as turning the fear of wrath back on those who pursue him, from the confidence he has just spoken. - **The nations.** In worship the elders say, "The nations raged, but your wrath came" (Revelation 11:18). Two angers stand in one sentence, and the second answers the first. The same verse names the reward of "those who fear your name, both small and great" (10.12; 13.1).
+  - passage after: Each party that comes into anger's verses does so in its own way. - **The Spirit of God** comes with anger. "And the Spirit of God rushed upon Saul when he heard these words, and his anger was greatly kindled" (1 Samuel 11:6). When the Spirit rushed upon Samson, the verse joins it to the striking at Ashkelon; his hot anger afterwards has its ground in being outwitted through his wife (Judges 14:18–19; *What it rises at*, above). Ezekiel, lifted by the Spirit, went "in the heat of my spirit, the hand of the Lord being strong upon me" (Ezekiel 3:14). The anger list in Ephesians is set beside the Spirit grieved (Ephesians 4:30–31). - **The prophet is filled with God's wrath:** "Therefore I am full of the wrath of the Lord; I am weary of holding it in" (Jeremiah 6:11). "I sat alone, because your hand was upon me, for you had filled me with indignation" (Jeremiah 15:17). - **Angels.** The angel of the Lord stood in Balaam's way, seen by the donkey and not by the man: "God's anger was kindled because he went, and the angel of the Lord took his stand in the way as his adversary" (Numbers 22:22). Balaam's own anger fell on the donkey (22:27). God "let loose on them his burning anger … a company of destroying angels" (Psalm 78:49). An angel asked how long: "O Lord of hosts, how long will you have no mercy on Jerusalem … against which you have been angry these seventy years?", and "the Lord answered gracious and comforting words" (Zechariah 1:12–13). - **The devil:** "Woe to you, O earth and sea, for the devil has come down to you in great wrath, because he knows that his time is short!" (Revelation 12:12). - **The master in Jesus' parables,** a figure standing for God. "In anger his master delivered him to the jailers" (Matthew 18:34), after "should not you have had mercy on your fellow servant, as I had mercy on you?" (18:33). The applied lesson places the requirement in the hearer's heart: "So also my heavenly Father will do to every one of you, if you do not forgive your brother from your heart" (18:35). In another parable the anger turns into a wider invitation. Those invited "all alike began to make excuses": a field to see, oxen to examine, a wife just married (Luke 14:18–20). "So the servant came and reported these things to his master. Then the master of the house became angry and said to his servant, 'Go out quickly … and bring in the poor and crippled and blind and lame'" (14:21). The anger has its ground in the refusals, and its end is stated: "none of those men who were invited shall taste my banquet" (14:24). - **Onlookers:** "Do not rejoice when your enemy falls … lest the Lord see it and be displeased, and turn away his anger from him" (Proverbs 24:17–18). - **The physical world** bears it. "My anger and my wrath will be poured out on this place, upon man and beast, upon the trees of the field and the fruit of the ground" (Jeremiah 7:20). "The foundations also of the mountains trembled and quaked, because he was angry" (Psalm 18:7). - **Enemies' anger,** as the one attacked bears it: "then they would have swallowed us up alive, when their anger was kindled against us" (Psalm 124:3). Answered by God's hand: "you stretch out your hand against the wrath of my enemies, and your right hand delivers me" (Psalm 138:7). And by "do not fear": "Be careful, be quiet, do not fear, and do not let your heart be faint because of these two smoldering stumps of firebrands, at the fierce anger of Rezin" (Isaiah 7:4). "By faith he left Egypt, not being afraid of the anger of the king" (Hebrews 11:27). - **A ruler's anger,** as those beneath it bear it: "A king's wrath is a messenger of death, and a wise man will appease it" (Proverbs 16:14). "The terror of a king is like the growling of a lion; whoever provokes him to anger forfeits his life" (20:2). The next verse says what to do instead: "It is an honor for a man to keep aloof from strife, but every fool will be quarreling" (20:3). - **Those who pursue another.** Job's friends say, "How we will pursue him!" and "The root of the matter is found in him" (Job 19:28). He answers them: "be afraid of the sword, for wrath brings the punishment of the sword, that you may know there is a judgment" (19:29). He says it straight after "I know that my Redeemer lives" (19:25). I read the one accused as turning the fear of wrath back on those who pursue him, from the confidence he has just spoken. - **The nations.** In worship the elders say, "The nations raged, but your wrath came" (Revelation 11:18). Two angers stand in one sentence, and the second answers the first. The same verse names the reward of "those who fear your name, both small and great" (10.12; 13.1).
+- **C-245** telling changed · 10.12 *Dread laid on others* (recorded, 2026-10-19)
+  - passage before: Fear does not stay with single persons. It falls on peoples and on creatures. In most of these verses God lays it; in Esther no giver is named. The verses say what it led to. - "The fear of you and the dread of you shall be upon every beast of the earth" (Genesis 9:2). - "a terror from God fell upon the cities that were around them, so that they did not pursue the sons of Jacob" (Genesis 35:5). - "Put them in fear, O Lord! Let the nations know that they are but men!" (Psalm 9:20).
+  - passage after: Fear does not stay with single persons. It falls on peoples and on creatures. In most of these verses God lays it; in Esther no giver is named. The verses say what it led to. - "The fear of you and the dread of you shall be upon every beast of the earth" (Genesis 9:2). - "a terror from God fell upon the cities that were around them, so that they did not pursue the sons of Jacob" (Genesis 35:5). - "Put them in fear, O Lord! Let the nations know that they are but men!" (Psalm 9:20). - "that their hearts may melt, and many stumble. At all their gates I have given the glittering sword" (Ezekiel 21:15). The melting heart is what the sword is given for (*Fear in the body*, above).
+- **C-290** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Samson's hot anger has its ground in being outwitted through his wife; the Spirit's rushing goes with the striking at Ashkelon
+  - verdict before: —
+  - verdict after: New
+- **C-291** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Anger shows in the body, and the verses see it in the teeth: the angry, the plotter, the enraged hearers, gloating enemies and mockers gnash their teeth
+  - verdict before: —
+  - verdict after: New
+- **C-292** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Job pictures God's anger, as he feels it under it, as gnashing of teeth
+  - verdict before: —
+  - verdict after: New
+- **C-293** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: In 2 Kings 3:27 the wrath has no bearer named and no breach before it, and the verse leaves open whose wrath it was
+  - verdict before: —
+  - verdict after: New
+- **C-294** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: In Ezekiel 21:15 the melting heart is what the sword is given for
+  - verdict before: —
+  - verdict after: New
+- **C-295** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Fear laid on Samson's wife became the weeping she laid on him to get his secret
+  - verdict before: —
+  - verdict after: New
+- **C-296** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: At the judgment the shut-out weep and gnash their teeth at a sight: others inside, themselves outside
+  - verdict before: —
+  - verdict after: New
+- **C-290** telling added · 10.13 *What it rises at* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Human anger in the verses is often set off by something perceived. Sometimes the verse names hearing or seeing; sometimes the setting gives the cause. - **A report:** Potiphar's anger rose on his wife's words (Genesis 39:19). It was not tested, and it was false. - **A sight:** "when Haman saw Mordecai in the king's gate, that he neither rose nor trembled before him, he was filled with wrath" (Esther 5:9). - **A demand, an expectation or a slight.** Rachel demanded children, and "Jacob's anger was kindled against Rachel, and he said, 'Am I in the place of God?'" (Genesis 30:2). Naaman: "Behold, I thought that he would surely come out to me" (2 Kings 5:11). Queen Vashti refused to come, and the king's "anger burned within him" (Esther 1:12). - **A rival's honour:** the women sang of David's ten thousands, and "Saul was very angry" (1 Samuel 18:8). The elder brother heard the music for his returned brother, "was angry and refused to go in" (Luke 15:28). - **A wrong done to another.** Jacob's sons were indignant "because he had done an outrageous thing in Israel" (Genesis 34:7). David burned at the rich man in Nathan's parable (2 Samuel 12:5). Nehemiah: "I was very angry when I heard their outcry" (Nehemiah 5:6). Paul's "spirit was provoked within him as he saw that the city was full of idols" (Acts 17:16). - **Good done,** where it breaks a rule: the ruler of the synagogue was "indignant because Jesus had healed on the Sabbath" (Luke 13:14). - **A word that exposes.** At Nazareth, "When they heard these things, all in the synagogue were filled with wrath" (Luke 4:28). At Stephen's speech, "they cried out with a loud voice and stopped their ears and rushed together at him" (Acts 7:57). - **Being outwitted through someone close.** Samson's riddle was got out of him through his wife's tears (Judges 14:15–17; 10.10). When the men of the city answered it, he said, "If you had not plowed with my heifer, you would not have found out my riddle" (14:18). The Spirit rushed upon him for the striking at Ashkelon, and then, "In hot anger he went back to his father's house" (14:19). "And Samson's wife was given to his companion, who had been his best man" (14:20). - **Something within.** "What causes quarrels and what causes fights among you? Is it not this, that your passions are at war within you?" (James 4:1).
+  - note: in part: Being outwitted through someone close
+- **C-290** telling added · 10.13 *Other parties* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Each party that comes into anger's verses does so in its own way. - **The Spirit of God** comes with anger. "And the Spirit of God rushed upon Saul when he heard these words, and his anger was greatly kindled" (1 Samuel 11:6). When the Spirit rushed upon Samson, the verse joins it to the striking at Ashkelon; his hot anger afterwards has its ground in being outwitted through his wife (Judges 14:18–19; *What it rises at*, above). Ezekiel, lifted by the Spirit, went "in the heat of my spirit, the hand of the Lord being strong upon me" (Ezekiel 3:14). The anger list in Ephesians is set beside the Spirit grieved (Ephesians 4:30–31). - **The prophet is filled with God's wrath:** "Therefore I am full of the wrath of the Lord; I am weary of holding it in" (Jeremiah 6:11). "I sat alone, because your hand was upon me, for you had filled me with indignation" (Jeremiah 15:17). - **Angels.** The angel of the Lord stood in Balaam's way, seen by the donkey and not by the man: "God's anger was kindled because he went, and the angel of the Lord took his stand in the way as his adversary" (Numbers 22:22). Balaam's own anger fell on the donkey (22:27). God "let loose on them his burning anger … a company of destroying angels" (Psalm 78:49). An angel asked how long: "O Lord of hosts, how long will you have no mercy on Jerusalem … against which you have been angry these seventy years?", and "the Lord answered gracious and comforting words" (Zechariah 1:12–13). - **The devil:** "Woe to you, O earth and sea, for the devil has come down to you in great wrath, because he knows that his time is short!" (Revelation 12:12). - **The master in Jesus' parables,** a figure standing for God. "In anger his master delivered him to the jailers" (Matthew 18:34), after "should not you have had mercy on your fellow servant, as I had mercy on you?" (18:33). The applied lesson places the requirement in the hearer's heart: "So also my heavenly Father will do to every one of you, if you do not forgive your brother from your heart" (18:35). In another parable the anger turns into a wider invitation. Those invited "all alike began to make excuses": a field to see, oxen to examine, a wife just married (Luke 14:18–20). "So the servant came and reported these things to his master. Then the master of the house became angry and said to his servant, 'Go out quickly … and bring in the poor and crippled and blind and lame'" (14:21). The anger has its ground in the refusals, and its end is stated: "none of those men who were invited shall taste my banquet" (14:24). - **Onlookers:** "Do not rejoice when your enemy falls … lest the Lord see it and be displeased, and turn away his anger from him" (Proverbs 24:17–18). - **The physical world** bears it. "My anger and my wrath will be poured out on this place, upon man and beast, upon the trees of the field and the fruit of the ground" (Jeremiah 7:20). "The foundations also of the mountains trembled and quaked, because he was angry" (Psalm 18:7). - **Enemies' anger,** as the one attacked bears it: "then they would have swallowed us up alive, when their anger was kindled against us" (Psalm 124:3). Answered by God's hand: "you stretch out your hand against the wrath of my enemies, and your right hand delivers me" (Psalm 138:7). And by "do not fear": "Be careful, be quiet, do not fear, and do not let your heart be faint because of these two smoldering stumps of firebrands, at the fierce anger of Rezin" (Isaiah 7:4). "By faith he left Egypt, not being afraid of the anger of the king" (Hebrews 11:27). - **A ruler's anger,** as those beneath it bear it: "A king's wrath is a messenger of death, and a wise man will appease it" (Proverbs 16:14). "The terror of a king is like the growling of a lion; whoever provokes him to anger forfeits his life" (20:2). The next verse says what to do instead: "It is an honor for a man to keep aloof from strife, but every fool will be quarreling" (20:3). - **Those who pursue another.** Job's friends say, "How we will pursue him!" and "The root of the matter is found in him" (Job 19:28). He answers them: "be afraid of the sword, for wrath brings the punishment of the sword, that you may know there is a judgment" (19:29). He says it straight after "I know that my Redeemer lives" (19:25). I read the one accused as turning the fear of wrath back on those who pursue him, from the confidence he has just spoken. - **The nations.** In worship the elders say, "The nations raged, but your wrath came" (Revelation 11:18). Two angers stand in one sentence, and the second answers the first. The same verse names the reward of "those who fear your name, both small and great" (10.12; 13.1).
+  - note: in part: the Spirit and Samson
+- **C-291** telling added · 10.13 *Anger in the body* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Anger shows, and the verses see it in the teeth. - "The wicked man sees it and is angry; he gnashes his teeth and melts away" (Psalm 112:10). - "The wicked plots against the righteous and gnashes his teeth at him" (Psalm 37:12). - At Stephen's speech, "they were enraged, and they ground their teeth at him" (Acts 7:54). The Greek of "enraged" is *sawn through in their hearts* (Chapter 4). The heart and the teeth are named in one sentence. - Enemies gloat with it: "All your enemies rail against you; they hiss, they gnash their teeth, they cry: 'We have swallowed her!'" (Lamentations 2:16). Mockers do the same: "like profane mockers at a feast, they gnash at me with their teeth" (Psalm 35:16). - Job says it of God's anger as he feels it: "He has torn me in his wrath and hated me; he has gnashed his teeth at me" (Job 16:9). It is how the anger looks to the one under it (*Living under God's anger*, below).
+  - note: in part: the teeth
+- **C-292** telling added · 10.13 *Anger in the body* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Anger shows, and the verses see it in the teeth. - "The wicked man sees it and is angry; he gnashes his teeth and melts away" (Psalm 112:10). - "The wicked plots against the righteous and gnashes his teeth at him" (Psalm 37:12). - At Stephen's speech, "they were enraged, and they ground their teeth at him" (Acts 7:54). The Greek of "enraged" is *sawn through in their hearts* (Chapter 4). The heart and the teeth are named in one sentence. - Enemies gloat with it: "All your enemies rail against you; they hiss, they gnash their teeth, they cry: 'We have swallowed her!'" (Lamentations 2:16). Mockers do the same: "like profane mockers at a feast, they gnash at me with their teeth" (Psalm 35:16). - Job says it of God's anger as he feels it: "He has torn me in his wrath and hated me; he has gnashed his teeth at me" (Job 16:9). It is how the anger looks to the one under it (*Living under God's anger*, below).
+  - note: in part: Job 16:9
+- **C-293** telling added · 10.13 *How it is spoken of* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: The verses describe God's anger in pictures, and they keep the pictures. - **Fire, smoke and breath:** "By the breath of God they perish, and by the blast of his anger they are consumed" (Job 4:9). "Why does your anger smoke against the sheep of your pasture?" (Psalm 74:1). - **A poured liquid:** "he has poured out his fury like fire" (Lamentations 2:4). - **A cup.** "Take from my hand this cup of the wine of wrath, and make all the nations to whom I send you drink it" (Jeremiah 25:15). It is drunk to the dregs and then taken away: "Behold, I have taken from your hand the cup of staggering … and I will put it into the hand of your tormentors" (Isaiah 51:22–23). A man's wrath is also poured as a drink: "Woe to him who makes his neighbors drink—you pour out your wrath and make them drunk" (Habakkuk 2:15), and "The cup in the Lord's right hand will come around to you" (2:16). - **A storm:** "Behold, the storm of the Lord! Wrath has gone forth, a whirling tempest; it will burst upon the head of the wicked" (Jeremiah 23:19). - **Weight:** "Your wrath lies heavy upon me" (Psalm 88:7). - **In the New Testament,** it is revealed (Romans 1:18), stored up (Romans 2:5), it remains (John 3:36), and it is finished (Revelation 15:1). - **Once, with no bearer named.** At the siege, when the king of Moab "saw that the battle was going against him", he "took his oldest son who was to reign in his place and offered him for a burnt offering on the wall. And there came great wrath against Israel. And they withdrew from him and returned to their own land" (2 Kings 3:26–27). Elsewhere the same words, wrath coming upon a people, follow a breach, and once the wrath is then named "the wrath of the Lord" (2 Chronicles 32:25–26). Here no breach is named, and Elisha had said, "He will also give the Moabites into your hand" (3:18). I read the verse as leaving open whose wrath it was. The king gave up his own heir at the point of defeat, and the campaign ended short of the word.
+  - note: in part: Once, with no bearer named
+- **C-294** telling added · 10.12 *Dread laid on others* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Fear does not stay with single persons. It falls on peoples and on creatures. In most of these verses God lays it; in Esther no giver is named. The verses say what it led to. - "The fear of you and the dread of you shall be upon every beast of the earth" (Genesis 9:2). - "a terror from God fell upon the cities that were around them, so that they did not pursue the sons of Jacob" (Genesis 35:5). - "Put them in fear, O Lord! Let the nations know that they are but men!" (Psalm 9:20). - "that their hearts may melt, and many stumble. At all their gates I have given the glittering sword" (Ezekiel 21:15). The melting heart is what the sword is given for (*Fear in the body*, above).
+  - note: in part: Ezekiel 21:15
+- **C-295** telling added · 10.10 *Making others afraid* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Fear can be passed on as pressure. At Samson's wedding the guests threatened his wife: "Entice your husband to tell us what the riddle is, lest we burn you and your father's house with fire" (Judges 14:15). She pressed him with tears and with a charge against his love: "You only hate me; you do not love me" (14:16). "She wept before him the seven days that their feast lasted, and on the seventh day he told her, because she pressed him hard" (14:17). I read the fear laid on her as becoming the weeping she laid on him. His anger at the end is in 10.13.
+  - note: in full
+- **C-296** telling added · 02 *Life, and judgment* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Jesus speaks of what the shut-out feel. "In that place there will be weeping and gnashing of teeth, when you see Abraham and Isaac and Jacob and all the prophets in the kingdom of God but you yourselves cast out" (Luke 13:28). The saying comes seven times (Matthew 8:12; 13:42, 50; 22:13; 24:51; 25:30; Luke 13:28). In Luke the weeping and gnashing come at a sight: others inside, oneself outside. I read the gnashing as standing with the weeping. The verses do not say whether it is anguish or rage (10.13, *Anger in the body*).
+  - note: in full
+
+## 2026-10-19 — OT-07.2: fear in the body, the hands (Lam 4:6), woven (#2160)
+
+**Strand:** open threads on completed clusters (#2160), OT-07.2 (M01)
+
+**Researcher:** "I am still finding that you analysis and interpretation are very binary. reading Lam 4:6 is a a verse that connect wringing of hands with fear ..." Then: "#2168 approved: amend rule 73 and its guide with the three points. Then weave OT-07.2 as proposed in v2 section 4." (2026-10-19)
+
+**Method:** FE-85 (Lam 4:6), held since fear unit 2, read outward from the verse (#2168, guide v2): the clause read in the Hebrew (hul, 'to twist, writhe', with 'hands', literally 'hands did not writhe in/on her'); hul's range from strong_meaning_tree and its ESV renderings in verse_lexical; a set-based pull of verses where a hand word stands with the writhing/anguish words, with the neighbouring verses read (Isa 13:7-8; Eze 7:17; 21:7; Jer 30:6; Zep 3:16; Neh 6:9; 2Sa 4:1; Isa 35:3; Job 4:3; Heb 12:12). Woven: 10.12 v14 new section Fear in the body; Ch 11 v37 bullet Writhing and a Lam 4:10 case under Distress turns people both ways; Ch 2 v27 Lam 4:9 in Life weighed; 10.10 v32 Lam 4:10 after Lam 4:3-4.
+
+**Sources:** _analytics/Clusters/M01 - fear-awe/ot-07-2-fe85-lam4-reading-v2-20261019.md
+
+**Scripts:** _analytics/Clusters/M01 - fear-awe/ot-07-2-weave-v1-20261019.py
+
+**Original claims changed:** Eight new claims (fear in the body and the hands; the Lam 4:6 and 2Sa 4:1 translation notes; hul's range; Lam 4:9; Lam 4:10).
+
+**Not woven:** Lam 4:6's comparison of punishments goes to M56 as a forward item (not read). The wider pull with the feeble-hands word (H7503) and the melting heart (H4549) was not run.
+
+**Refs:** escalation 2160, escalation 2168, thread OT-07, thread item OT-07.2
+
+**Quote check:** 36 parts, 0 failures. added lines checked against iba.db verse (ESV): 10.12 16 parts, Ch 11 11, Ch 2 3, 10.10 6. The two flagged parts are the gloss 'to twist, writhe', a word meaning, not a quote.
+
+- **C-174** telling changed · 11 *What changes the character* (recorded, 2026-10-19)
+  - passage before: - **Distress turns people both ways.** In distress Manasseh "humbled himself greatly" (2 Chronicles 33:12), and Ahaz "became yet more faithless" (28:22). The texts set the cases side by side without saying why. Ease cuts both ways too: "I am exceedingly angry with the nations that are at ease" (Zechariah 1:15).
+  - passage after: - **Distress turns people both ways.** In distress Manasseh "humbled himself greatly" (2 Chronicles 33:12), and Ahaz "became yet more faithless" (28:22). The texts set the cases side by side without saying why. Under siege, "The hands of compassionate women have boiled their own children" (Lamentations 4:10; 10.10). Ease cuts both ways too: "I am exceedingly angry with the nations that are at ease" (Zechariah 1:15).
+- **C-282** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Fear and anguish are shown in the body, and the verses see them first in the hands: hands fall at a report, grow feeble as the heart melts, and are held as in labour
+  - verdict before: —
+  - verdict after: New
+- **C-283** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Fear is aimed at the hands, and the answer is given to the hands
+  - verdict before: —
+  - verdict after: New
+- **C-284** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: In Lamentations 4:6 the Hebrew says that hands did not writhe in or on her; the ESV's 'no hands were wrung for her' takes it as grief, and the words also allow that no human hand worked Sodom's fall
+  - verdict before: —
+  - verdict after: New
+- **C-285** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: In 2 Samuel 4:1 the ESV's 'his courage failed' renders 'his hands dropped'
+  - verdict before: —
+  - verdict after: New
+- **C-286** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: In the hands verses, what weakens the hands is something heard, and what strengthens them is a word, another person, or God asked to do it
+  - verdict before: —
+  - verdict after: New
+- **C-287** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: One Hebrew root, chul, is labour pain, trembling, anguish of heart, the dance, the whirling storm and patient waiting
+  - verdict before: —
+  - verdict after: New
+- **C-288** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: In the siege of Jerusalem a slow death by hunger is called worse than death by the sword
+  - verdict before: —
+  - verdict after: New
+- **C-289** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Under siege the hands of women called compassionate boiled their own children; the verse names when, not why
+  - verdict before: —
+  - verdict after: New
+- **C-282** telling added · 10.12 *Fear in the body* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Fear is not only felt. It is seen, and the verses see it first in the hands. - **The hands fall when the report comes.** The people's hands fall helpless at the report (Jeremiah 6:24, above). The same is said of an enemy king: "The king of Babylon heard the report of them, and his hands fell helpless; anguish seized him, pain as of a woman in labor" (Jeremiah 50:43). - **The hands go with the heart.** "Therefore all hands will be feeble, and every human heart will melt. They will be dismayed: pangs and agony will seize them; they will be in anguish like a woman in labor. They will look aghast at one another; their faces will be aflame" (Isaiah 13:7–8). Ezekiel names the inner and the outer in one breath: "Every heart will melt, and all hands will be feeble; every spirit will faint, and all knees will be weak as water" (Ezekiel 21:7). "All hands are feeble, and all knees turn to water" (7:17). - **The body takes up the posture of labour.** "Why then do I see every man with his hands on his stomach like a woman in labor? Why has every face turned pale?" (Jeremiah 30:6). - **Fear is aimed at the hands.** Nehemiah's enemies "all wanted to frighten us, thinking, 'Their hands will drop from the work, and it will not be done.' But now, O God, strengthen my hands" (Nehemiah 6:9). God speaks to the same place: "Fear not, O Zion; let not your hands grow weak" (Zephaniah 3:16). - **And the answer is given to the hands.** "Strengthen the weak hands, and make firm the feeble knees" (Isaiah 35:3). "Therefore lift your drooping hands and strengthen your weak knees" (Hebrews 12:12). Eliphaz says to Job, "you have instructed many, and you have strengthened the weak hands" (Job 4:3).
+  - note: in part: the hands fall; hands and heart; the posture of labour
+- **C-283** telling added · 10.12 *Fear in the body* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Fear is not only felt. It is seen, and the verses see it first in the hands. - **The hands fall when the report comes.** The people's hands fall helpless at the report (Jeremiah 6:24, above). The same is said of an enemy king: "The king of Babylon heard the report of them, and his hands fell helpless; anguish seized him, pain as of a woman in labor" (Jeremiah 50:43). - **The hands go with the heart.** "Therefore all hands will be feeble, and every human heart will melt. They will be dismayed: pangs and agony will seize them; they will be in anguish like a woman in labor. They will look aghast at one another; their faces will be aflame" (Isaiah 13:7–8). Ezekiel names the inner and the outer in one breath: "Every heart will melt, and all hands will be feeble; every spirit will faint, and all knees will be weak as water" (Ezekiel 21:7). "All hands are feeble, and all knees turn to water" (7:17). - **The body takes up the posture of labour.** "Why then do I see every man with his hands on his stomach like a woman in labor? Why has every face turned pale?" (Jeremiah 30:6). - **Fear is aimed at the hands.** Nehemiah's enemies "all wanted to frighten us, thinking, 'Their hands will drop from the work, and it will not be done.' But now, O God, strengthen my hands" (Nehemiah 6:9). God speaks to the same place: "Fear not, O Zion; let not your hands grow weak" (Zephaniah 3:16). - **And the answer is given to the hands.** "Strengthen the weak hands, and make firm the feeble knees" (Isaiah 35:3). "Therefore lift your drooping hands and strengthen your weak knees" (Hebrews 12:12). Eliphaz says to Job, "you have instructed many, and you have strengthened the weak hands" (Job 4:3).
+  - note: in part: fear aimed at the hands; the answer given to the hands
+- **C-284** telling added · 10.12 *Fear in the body* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: The Hebrew verb behind much of this anguish is *ḥûl*, "to twist, writhe". It is the writhing of a woman in labour, and the heart's anguish: "My heart is in anguish within me" (Psalm 55:4). In Lamentations it is said of hands. The ESV reads, "For the chastisement of the daughter of my people has been greater than the punishment of Sodom, which was overthrown in a moment, and no hands were wrung for her" (Lamentations 4:6). The Hebrew says that hands did not writhe in her or on her. I read two things the words allow: no one's hands writhed in grief over Sodom, or no human hand worked her fall, which came "in a moment". The English chooses the first. Either way the writhing of hands is the body's anguish, and the root carries it; "wrung" is the translator's word for it. Chapter 11 sets out the root's other faces.
+  - note: in full
+- **C-287** telling added · 10.12 *Fear in the body* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: The Hebrew verb behind much of this anguish is *ḥûl*, "to twist, writhe". It is the writhing of a woman in labour, and the heart's anguish: "My heart is in anguish within me" (Psalm 55:4). In Lamentations it is said of hands. The ESV reads, "For the chastisement of the daughter of my people has been greater than the punishment of Sodom, which was overthrown in a moment, and no hands were wrung for her" (Lamentations 4:6). The Hebrew says that hands did not writhe in her or on her. I read two things the words allow: no one's hands writhed in grief over Sodom, or no human hand worked her fall, which came "in a moment". The English chooses the first. Either way the writhing of hands is the body's anguish, and the root carries it; "wrung" is the translator's word for it. Chapter 11 sets out the root's other faces.
+  - note: pointer
+- **C-285** telling added · 10.12 *Fear in the body* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: The English can also hide the body. When Ish-bosheth heard that Abner had died, "his courage failed, and all Israel was dismayed" (2 Samuel 4:1). The Hebrew says his hands dropped.
+  - note: in full
+- **C-286** telling added · 10.12 *Fear in the body* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: I read the hands as the place where the verses let fear be seen: the work stops, the grip goes, the arms take the posture of pain. In these verses what weakens the hands is something heard: a report, news that is coming, a threat meant to frighten. What strengthens them is a word ("Fear not"), another person, or God asked to do it. Chapter 7 follows the body.
+  - note: in full
+- **C-287** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: - **Writhing.** The Hebrew *ḥûl*, "to twist, writhe", is a woman in labour ("Writhe and groan, O daughter of Zion, like a woman in labor", Micah 4:10), the earth before God ("tremble before him, all the earth!", Psalm 96:9), and the heart in anguish (Psalm 55:4). It is also the daughters of Shiloh who come out "to dance in the dances" (Judges 21:21), "a whirling tempest" (Jeremiah 23:19), and patient waiting: "Be still before the Lord and wait patiently for him" (Psalm 37:7). Struck people can be without it: "You have struck them down, but they felt no anguish" (Jeremiah 5:3). One twisting is pain, trembling, birth, the dance and waiting (10.12, *Fear in the body*).
+  - note: in full
+- **C-289** telling added · 11 *What changes the character* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: - **Distress turns people both ways.** In distress Manasseh "humbled himself greatly" (2 Chronicles 33:12), and Ahaz "became yet more faithless" (28:22). The texts set the cases side by side without saying why. Under siege, "The hands of compassionate women have boiled their own children" (Lamentations 4:10; 10.10). Ease cuts both ways too: "I am exceedingly angry with the nations that are at ease" (Zechariah 1:15).
+  - note: pointer
+- **C-288** telling added · 02 *Life weighed* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: A death can be weighed against a death. In the siege of Jerusalem, "Happier were the victims of the sword than the victims of hunger, who wasted away, pierced by lack of the fruits of the field" (Lamentations 4:9). The verse before says what the wasting was: "their skin has shriveled on their bones; it has become as dry as wood" (4:8). The same lament sets Zion's long punishment above Sodom's, "which was overthrown in a moment" (4:6). The quick death is called the happier one. The lingering is what makes it worse.
+  - note: in full
+- **C-289** telling added · 10.10 *Friends, company and care* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Thirst can be left unmet by those who should meet it. In the siege, *"Even jackals offer the breast; they nurse their young; but the daughter of my people has become cruel … The tongue of the nursing infant sticks to the roof of its mouth for thirst; the children beg for food, but no one gives to them"* (Lamentations 4:3–4). The animals are set above the people. The same lament goes further: "The hands of compassionate women have boiled their own children; they became their food during the destruction of the daughter of my people" (Lamentations 4:10). The women are called compassionate, and the verse names when it happened: "during the destruction". I read the siege as what turned the hands of compassion. The verse does not explain it, and I do not try to. And the worker thirsts among what he makes for another: *"they tread the winepresses, but suffer thirst … yet God charges no one with wrong"* (Job 24:11–12; 10.9).
+  - note: in part: Lamentations 4:10
+
 ## 2026-10-19 — OT-05.26: R0 of Ch 2 The body raised, woven (#2160)
 
 **Strand:** open threads on completed clusters (#2160), OT-05.26 (M25)

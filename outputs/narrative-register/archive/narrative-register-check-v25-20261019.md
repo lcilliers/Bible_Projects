@@ -1,0 +1,58 @@
+# Narrative register check
+
+37 active chapter(s) checked. 54 finding(s).
+
+- Ch 02: current file 02-life-breath-and-death-v26-20261019.md is not on disk
+- Ch 10.10: current file 10-10-relating-to-others-v31-20261018.md is not on disk
+- Ch 10.12: current file 10-12-fear-v13-20261018.md is not on disk
+- Ch 11: current file 11-other-sides-of-the-inner-being-v36-20261019.md is not on disk
+- claim I-2 is current but no current passage tells it
+- claim I-3 is current but no current passage tells it
+- claim I-4 is current but no current passage tells it
+- claim I-6 is current but no current passage tells it
+- claim 1-1 is current but no current passage tells it
+- claim 1-2 is current but no current passage tells it
+- claim 1-3 is current but no current passage tells it
+- claim 1-5 is current but no current passage tells it
+- claim 1-6 is current but no current passage tells it
+- claim 2-1 is current but no current passage tells it
+- claim 2-4 is current but no current passage tells it
+- claim 2-8 is current but no current passage tells it
+- claim 2-10 is current but no current passage tells it
+- claim 2-11 is current but no current passage tells it
+- claim 2-12 is current but no current passage tells it
+- claim 2-14 is current but no current passage tells it
+- claim 2-16 is current but no current passage tells it
+- claim 3-1 is current but no current passage tells it
+- claim 3-2 is current but no current passage tells it
+- claim 3-3 is current but no current passage tells it
+- claim 3-4 is current but no current passage tells it
+- claim 3-5 is current but no current passage tells it
+- claim 3-8 is current but no current passage tells it
+- claim 3-11 is current but no current passage tells it
+- claim 3-14 is current but no current passage tells it
+- claim 4-1 is current but no current passage tells it
+- claim 4-2 is current but no current passage tells it
+- claim 4-3 is current but no current passage tells it
+- claim 4-4 is current but no current passage tells it
+- claim 4-5 is current but no current passage tells it
+- claim 4-7 is current but no current passage tells it
+- claim 4-9 is current but no current passage tells it
+- claim 4-10 is current but no current passage tells it
+- claim 5-1 is current but no current passage tells it
+- claim 5-3 is current but no current passage tells it
+- claim 6-1 is current but no current passage tells it
+- claim 6-3 is current but no current passage tells it
+- claim 8-1 is current but no current passage tells it
+- claim 9-1 is current but no current passage tells it
+- claim 9-3 is current but no current passage tells it
+- claim 9-4 is current but no current passage tells it
+- claim 9-5 is current but no current passage tells it
+- claim 10-1 is current but no current passage tells it
+- claim 10-2 is current but no current passage tells it
+- claim 10-3 is current but no current passage tells it
+- claim 10-7 is current but no current passage tells it
+- 02-life-breath-and-death-v27-20261019.md is in the narrative folder but is no chapter's current file (it is not published)
+- 10-10-relating-to-others-v32-20261019.md is in the narrative folder but is no chapter's current file (it is not published)
+- 10-12-fear-v14-20261019.md is in the narrative folder but is no chapter's current file (it is not published)
+- 11-other-sides-of-the-inner-being-v37-20261019.md is in the narrative folder but is no chapter's current file (it is not published)

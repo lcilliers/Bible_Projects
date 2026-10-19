@@ -1,0 +1,58 @@
+{
+ "update": {
+  "update_date": "2026-10-19",
+  "title": "OT-07.3: the anger ledger's held items, woven (#2160)",
+  "strand": "open threads on completed clusters (#2160), OT-07.3 (M02)",
+  "researcher_instruction": "\"OT-07.3: weave as proposed in section 3 (the Judg 14:19 correction, 2Ki 3:27, Anger in the body, the other placements), then read OT-98.2 and OT-98.3.\" (2026-10-19)",
+  "method": "The anger ledger's section M (AN-H1 to AN-H5) read outward by guide v2 (#2168). Correction (rule 77, a verse fitted to a line): Judg 14:19 taken out of 'The Spirit of God comes with anger' in 10.13 Other parties; Samson's hot anger given its own ground in the passage (Judg 14:15-20, outwitted through his wife) under What it rises at. 2Ki 3:27, held in 10.13 since the anger strand, read with 3:18 and 3:26 and the other 'wrath came upon' verses (qesep, H7110A; 2Ch 32:25-26): the bearer stated as open. Found by reading outward: anger in the body, the teeth (a set-based pull of the gnashing words H2786, G1031, G1030). Woven: 10.13 v13 (Being outwitted through someone close; new subsection Anger in the body; the Spirit bullet corrected; Once, with no bearer named; Rev 18:3; the held line removed), 10.12 v15 (Eze 21:15), 10.10 v33 (Samson's wife: fear passed on as pressure), Ch 2 v28 (weeping and gnashing of teeth, Luk 13:28), Ch 12 v26 (Num 20:13). AN-H1 (withdrawn 2026-10-01), the pilot rows, the unit 2 revisit-note verses and Rom 13:5 were found already told; AN-H3 stays with signpost #1893; AN-H5 data.",
+  "source_files": [
+   "_analytics/Clusters/M02 - anger-wrath/ot-07-3-anger-ledger-m-reading-v1-20261019.md"
+  ],
+  "scripts": [
+   "_analytics/Clusters/M02 - anger-wrath/ot-07-3-weave-v1-20261019.py"
+  ],
+  "claims_changed_note": "Seven new claims. No existing claim rested on Judg 14:19 or 2Ki 3:27.",
+  "not_woven_note": "AN-H3 (the fuller hand of the Lord pass) stays with signpost #1893.",
+  "quote_parts": 25,
+  "quote_failures": 0,
+  "quote_note": "added lines checked against iba.db verse (ESV): 10.13 16 parts, 10.12 1, 10.10 3, Ch 2 1, Ch 12 4."
+ },
+ "refs": [
+  {"kind": "escalation", "value": "2160"},
+  {"kind": "thread", "value": "OT-07"},
+  {"kind": "thread item", "value": "OT-07.3"}
+ ],
+ "chapters": [
+  {"chapter": "10.13", "from_version": 12, "to_version": 13, "file": "10-13-anger-v13-20261019.md"},
+  {"chapter": "10.12", "from_version": 14, "to_version": 15, "file": "10-12-fear-v15-20261019.md"},
+  {"chapter": "10.10", "from_version": 32, "to_version": 33, "file": "10-10-relating-to-others-v33-20261019.md"},
+  {"chapter": "02", "from_version": 27, "to_version": 28, "file": "02-life-breath-and-death-v28-20261019.md"},
+  {"chapter": "12", "from_version": 25, "to_version": 26, "file": "12-when-the-inner-being-goes-wrong-v26-20261019.md"}
+ ],
+ "claims": [
+  {"key": "a1", "new": {"text": "Samson's hot anger has its ground in being outwitted through his wife; the Spirit's rushing goes with the striking at Ashkelon", "beyond_text": "separates the two parts of Judg 14:19 by the passage's own ground (14:16-18)", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Judg 14:16", "Judg 14:17", "Judg 14:18", "Judg 14:19", "Judg 14:20"]}},
+  {"key": "a2", "new": {"text": "Anger shows in the body, and the verses see it in the teeth: the angry, the plotter, the enraged hearers, gloating enemies and mockers gnash their teeth", "beyond_text": "gathers the gnashing verses as anger seen in the body", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Psa 112:10", "Psa 37:12", "Act 7:54", "Lam 2:16", "Psa 35:16"]}},
+  {"key": "a3", "new": {"text": "Job pictures God's anger, as he feels it under it, as gnashing of teeth", "beyond_text": "reads Job 16:9 as the sufferer's view of God's anger", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Job 16:9"]}},
+  {"key": "a4", "new": {"text": "In 2 Kings 3:27 the wrath has no bearer named and no breach before it, and the verse leaves open whose wrath it was", "beyond_text": "compares the verse with the other 'wrath came upon' verses, where a breach comes first", "origin": "narrative", "verdict": "New", "i_read": 1,
+   "sources": ["2Ki 3:26", "2Ki 3:27", "2Ki 3:18", "2Ch 32:25", "2Ch 32:26"]}},
+  {"key": "a5", "new": {"text": "In Ezekiel 21:15 the melting heart is what the sword is given for", "beyond_text": "reads the purpose clause as fear aimed at the heart", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Eze 21:15"]}},
+  {"key": "a6", "new": {"text": "Fear laid on Samson's wife became the weeping she laid on him to get his secret", "beyond_text": "joins the threat (14:15) to the tears and pressure (14:16-17)", "origin": "narrative", "verdict": "New", "i_read": 1,
+   "sources": ["Judg 14:15", "Judg 14:16", "Judg 14:17"]}},
+  {"key": "a7", "new": {"text": "At the judgment the shut-out weep and gnash their teeth at a sight: others inside, themselves outside", "beyond_text": "reads Luke's 'when you see' as the moment of the weeping and gnashing", "origin": "narrative", "verdict": "New", "i_read": 1,
+   "sources": ["Luk 13:28", "Mat 8:12", "Mat 13:42", "Mat 13:50", "Mat 22:13", "Mat 24:51", "Mat 25:30"]}}
+ ],
+ "tellings": [
+  {"claim": "a1", "chapter": "10.13", "passage": "Human anger in the verses is often set off by something perceived", "kind": "in part", "part": "Being outwitted through someone close", "action": "add"},
+  {"claim": "a1", "chapter": "10.13", "passage": "Each party that comes into anger's verses does so in its own way", "kind": "in part", "part": "the Spirit and Samson", "action": "add"},
+  {"claim": "a2", "chapter": "10.13", "passage": "Anger shows, and the verses see it in the teeth", "kind": "in part", "part": "the teeth", "action": "add"},
+  {"claim": "a3", "chapter": "10.13", "passage": "Anger shows, and the verses see it in the teeth", "kind": "in part", "part": "Job 16:9", "action": "add"},
+  {"claim": "a4", "chapter": "10.13", "passage": "The verses describe God's anger in pictures, and they keep the pictures", "kind": "in part", "part": "Once, with no bearer named", "action": "add"},
+  {"claim": "a5", "chapter": "10.12", "passage": "Fear does not stay with single persons", "kind": "in part", "part": "Ezekiel 21:15", "action": "add"},
+  {"claim": "a6", "chapter": "10.10", "passage": "Fear can be passed on as pressure", "kind": "in full", "action": "add"},
+  {"claim": "a7", "chapter": "02", "passage": "Jesus speaks of what the shut-out feel", "kind": "in full", "action": "add"}
+ ]
+}

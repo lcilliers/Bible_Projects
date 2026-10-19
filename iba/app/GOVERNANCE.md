@@ -4121,7 +4121,7 @@ They record where things were at that date.
 - **Live rule:** `cfg_behaviour_rule` id 73 `read-verse-by-role-of-each-mcode-word` (#1996, applied 2026-10-11 via `Config-Maintenance.ps1 -Step Propose`).
   - #1995 was withdrawn: its v1 text was framed on the "entry word" and coined its own terms.
   - #1997 was a stray coherence-check stop on the first apply attempt (the stored Set was not passed). It was closed.
-- **Guide:** [`Workflow/Instructions/wa-verse-reading-by-role-guide-v1-20261011.md`](../../Workflow/Instructions/wa-verse-reading-by-role-guide-v1-20261011.md). It defines no new concepts. It sets the study's existing terms in reading order:
+- **Guide:** [`Workflow/Instructions/wa-verse-reading-by-role-guide-v2-20261019.md`](../../Workflow/Instructions/wa-verse-reading-by-role-guide-v2-20261019.md) (v1 archived 2026-10-19). It defines no new concepts. It sets the study's existing terms in reading order:
   - the glossary *role* (characteristic / qualifier-process-element / standalone, decided per occurrence)
   - verse-analysis method §13–14
   - the role-driven five-step sequence (#1704, researcher decisions 1–4)
@@ -4133,6 +4133,11 @@ They record where things were at that date.
   3. Only then read the strand's word, in the role it has there.
   4. A qualifier is carried in place. It is recorded as an interrelationship and a face, and the verse's home follows the characteristic.
   5. Collections are grouped by main operation, not by entry word.
+- **Amended 2026-10-19 (#2168; researcher, verbatim):** *"I am still finding that you analysis and interpretation are very binary. … many verses have double and tripple significance, and I can see how we are loosing a lot of these."* Then: *"#2168 approved: amend rule 73 and its guide with the three points."* The guide's v2 adds:
+  6. Read outward from the verse, not inward from the item's question. Write down everything the verse carries, each with where it bears, and answer the item's question last (§4.0).
+  7. Look at the original for every inner or bodily word: the root's range and whether the English adds or hides something (§4.6a).
+  8. Never close on "not X". A role label is never a verdict; the close records what the verse is (§4.9).
+  - Occasion: Lam 4:6 (OT-07.2) was first closed as "not a fear face". Read again, it carried four significances, among them hands as where fear shows in the body (`_analytics/Clusters/M01 - fear-awe/ot-07-2-fe85-lam4-reading-v2-20261019.md`). The rule 73 row amendment was proposed through `Config-Maintenance.ps1 -Step Propose`.
 - **No narrative-wide audit** (researcher, 2026-10-09): placements are corrected in each strand's read-back.
 - **Triage order for a strand pull (researcher, 2026-10-11, verbatim):** *"you will not blanketly read every verse, but will optimise the reading by first assessing the status of the M18 M-code, if it is supportive, for another cluster's reading then the reading is marked forward for when that cluster is read, else if the M-code is central to the verse, then read in in deapth and in context."* Verses whose qualified act carries no M-code (so no cluster reading will reach them) are read by their act and placed (researcher: *"read the 15 now as recommended"*). Forward marks go to the open threads register (OT-97). Applied to M18 groups B and C (#1993).
 - Memory `feedback_entry_word_is_not_the_main_operation`. No `iba/app/**` code changed.

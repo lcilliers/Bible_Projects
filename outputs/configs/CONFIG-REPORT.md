@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-19T04:10:12Z |
+| generated_at | 2026-10-19T04:34:37Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -48,7 +48,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-5. GOVERNANCE.md was last modified 2026-10-18T14:00:20Z, before the newest applied cfg_change_detail row (2026-10-19T04:10:11Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+5. GOVERNANCE.md was last modified 2026-10-19T04:30:10Z, before the newest applied cfg_change_detail row (2026-10-19T04:34:36Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_

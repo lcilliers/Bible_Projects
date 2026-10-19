@@ -1,6 +1,6 @@
 # Session close — escalation update / governance drift / BUILD.md coverage check (#1875)
 
-> Generated 2026-10-19T04:13:19Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
+> Generated 2026-10-19T05:00:21Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
 
 - session_id: `68419ea2-1665-4387-ad84-70371403ad08` (identified by: CLAUDE_CODE_SESSION_ID)
 - session started: 2026-10-18T17:31:43Z
@@ -24,13 +24,16 @@
 ## Escalation update coverage
 
 Escalations touched this session (id, highest version seen in transcript vs. live `escalation_history`):
-- #2160: transcript v18
+- #1893: transcript v4
+- #2160: transcript v25
 - #2162: transcript v6
 - #2163: transcript v4
 - #2164: transcript v4
 - #2165: transcript v2
 - #2166: transcript v1
 - #2167: transcript v4
+- #2168: transcript v3
+- #2169: transcript v4
 
 <a id="governance-config-doc-drift"></a>
 ## Governance / config / doc drift
