@@ -1,0 +1,61 @@
+{
+ "update": {
+  "update_date": "2026-10-19",
+  "title": "OT-05.16: self-glory (Rev 18:7, Php 3:19), read outward and woven (#2160 group C)",
+  "strand": "open threads on completed clusters (#2160), OT-05.16 (M25 -> M08)",
+  "researcher_instruction": "\"proceed with C\" (2026-10-19), on the proposal in ot-05-16-self-glory-reading-v1-20261019.md",
+  "method": "Group C of #2160 had proposed re-pointing OT-05.16 to M22 because the self-glory words (doxazo G1392, doxa G1391) are M22-tagged. Read outward by guide v2 (#2168), with the passages Rev 18:2-10 and Php 3:17-21: both verses were uncited and carry the inner being now. Rev 18:7 takes up Isa 47:7-9 (no widow; one day). Original checked in verse_lexical: G1392 reflexive in Rev 18:7 (the Mat 5:16 verb), G2836 koilia (Rom 16:18 'appetites'), G5426 phroneo in Php 3:19 and Col 3:2, G1391 in Php 3:19 and 3:21. Woven: 10.15 v3 (It gives itself the glory; It tells itself that loss will not come; The boast: In shame; Where it ends: A like measure), Ch 4 v22 (About myself), 10.6 v28 (served as a god), 10.7 v34 (the set mind, beside Rom 8:6; moved from the proposal's 10.4, which has no account of the set mind), Ch 11 v39 (section 4 Glory), 10.10 v35 (another's pride wept over). Rule 77 reconciliation for pride in the touched 10.15 sections: C-214 to C-221, C-228 to C-232, C-235 to C-237, C-182, C-243, C-244 read; none rests on these verses and none needs restating.",
+  "source_files": [
+   "_analytics/Clusters/M08 - pride-arrogance/ot-05-16-self-glory-reading-v1-20261019.md"
+  ],
+  "scripts": [
+   "_analytics/Clusters/M08 - pride-arrogance/ot-05-16-weave-v1-20261019.py"
+  ],
+  "claims_changed_note": "Seven new claims. No existing claim changed.",
+  "not_woven_note": "The M22 glory faces stay for the glory strand as a cluster:M22 handle on OT-05; the belly as god is noted for the flesh-and-body reading (#2162).",
+  "quote_parts": 33,
+  "quote_failures": 0,
+  "quote_note": "added lines checked against iba.db verse (ESV): Rev 18:4-10, Php 3:17-21, Isa 47:7-9, Col 3:2, Mat 5:16, Rom 16:18, Jer 13:17, Rom 8:6-7."
+ },
+ "refs": [
+  {"kind": "escalation", "value": "2160"},
+  {"kind": "thread", "value": "OT-05"},
+  {"kind": "thread item", "value": "OT-05.16"}
+ ],
+ "chapters": [
+  {"chapter": "10.15", "from_version": 2, "to_version": 3, "file": "10-15-pride-v3-20261019.md"},
+  {"chapter": "04", "from_version": 21, "to_version": 22, "file": "04-the-heart-v22-20261019.md"},
+  {"chapter": "10.6", "from_version": 27, "to_version": 28, "file": "10-06-wanting-v28-20261019.md"},
+  {"chapter": "10.7", "from_version": 33, "to_version": 34, "file": "10-07-choosing-and-setting-direction-v34-20261019.md"},
+  {"chapter": "11", "from_version": 38, "to_version": 39, "file": "11-other-sides-of-the-inner-being-v39-20261019.md"},
+  {"chapter": "10.10", "from_version": 34, "to_version": 35, "file": "10-10-relating-to-others-v35-20261019.md"}
+ ],
+ "claims": [
+  {"key": "b1", "new": {"text": "Pride's heart tells itself it will not be moved and that loss and mourning will not come, and it does not lay its end to heart", "beyond_text": "reads Rev 18:7-8 as taking up Isa 47:7-9 and joins the two heart-sayings", "origin": "narrative", "verdict": "New", "i_read": 1,
+   "sources": ["Isa 47:7", "Isa 47:8", "Isa 47:9", "Rev 18:7", "Rev 18:8"]}},
+  {"key": "b2", "new": {"text": "The great city gives herself the glory that the same verb elsewhere gives to God", "beyond_text": "compares doxazo in Rev 18:7 (reflexive) with Mat 5:16", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Rev 18:7", "Mat 5:16"]}},
+  {"key": "b3", "new": {"text": "What comes to the self-glorifying city is in like measure to her self-glory and luxury: the mourning she said she would never see", "beyond_text": "joins the measure clause of Rev 18:7 to the heart-saying in the same verse and to 18:6", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Rev 18:4", "Rev 18:6", "Rev 18:7", "Rev 18:8", "Rev 18:9", "Rev 18:10"]}},
+  {"key": "b4", "new": {"text": "Glorying in shame does the boast's work turned upside down; against it stand the citizenship in heaven and the glorious body to come", "beyond_text": "reads doxa in Php 3:19 as a boast and sets it against doxa in 3:21", "origin": "narrative", "verdict": "New", "i_read": 1,
+   "sources": ["Php 3:18", "Php 3:19", "Php 3:20", "Php 3:21"]}},
+  {"key": "b5", "new": {"text": "Appetite can be set in the place of God and served", "beyond_text": "reads koilia (belly) in Php 3:19 as appetite, from its rendering in Rom 16:18", "origin": "narrative", "verdict": "New", "i_read": 1,
+   "sources": ["Php 3:18", "Php 3:19", "Rom 16:18"]}},
+  {"key": "b6", "new": {"text": "The mind can be set downward, on earthly things, and the call is to set it on things above", "beyond_text": "joins phroneo in Php 3:19 and Col 3:2 and the noun in Rom 8:6", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Php 3:19", "Php 3:20", "Col 3:2", "Rom 8:6"]}},
+  {"key": "b7", "new": {"text": "Another's pride can be wept over, and the tears go with the telling, not in place of it", "beyond_text": "joins Jer 13:17 and Php 3:17-19 as weeping over another's pride", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Jer 13:17", "Php 3:17", "Php 3:18", "Php 3:19"]}}
+ ],
+ "tellings": [
+  {"claim": "b1", "chapter": "10.15", "passage": "It tells itself that loss will not come", "kind": "in full", "action": "add"},
+  {"claim": "b1", "chapter": "04", "passage": "About myself. \"I shall not be moved", "kind": "in part", "part": "Revelation 18:7", "action": "add"},
+  {"claim": "b2", "chapter": "10.15", "passage": "It gives itself the glory. The great city", "kind": "in full", "action": "add"},
+  {"claim": "b2", "chapter": "11", "passage": "Glory. The verb that gives glory to God", "kind": "in part", "part": "Revelation 18:7", "action": "add"},
+  {"claim": "b3", "chapter": "10.15", "passage": "A like measure. \"As she glorified herself", "kind": "in full", "action": "add"},
+  {"claim": "b4", "chapter": "10.15", "passage": "In shame. Paul names many who", "kind": "in full", "action": "add"},
+  {"claim": "b4", "chapter": "11", "passage": "Glory. The verb that gives glory to God", "kind": "in part", "part": "Philippians 3:19, 21", "action": "add"},
+  {"claim": "b5", "chapter": "10.6", "passage": "The verses give desire the verbs of a person acting", "kind": "in part", "part": "served as a god", "action": "add"},
+  {"claim": "b6", "chapter": "10.7", "passage": "A purpose held. Some plans are aimed at one's own life", "kind": "in part", "part": "minds set on earthly things", "action": "add"},
+  {"claim": "b7", "chapter": "10.10", "passage": "Another's pride can also be wept over", "kind": "in full", "action": "add"}
+ ]
+}

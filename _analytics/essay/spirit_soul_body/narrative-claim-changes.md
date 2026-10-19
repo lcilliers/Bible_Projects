@@ -2,6 +2,102 @@
 
 *Published from iba.db on 2026-10-19. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-19 — OT-05.16: self-glory (Rev 18:7, Php 3:19), read outward and woven (#2160 group C)
+
+**Strand:** open threads on completed clusters (#2160), OT-05.16 (M25 -> M08)
+
+**Researcher:** "proceed with C" (2026-10-19), on the proposal in ot-05-16-self-glory-reading-v1-20261019.md
+
+**Method:** Group C of #2160 had proposed re-pointing OT-05.16 to M22 because the self-glory words (doxazo G1392, doxa G1391) are M22-tagged. Read outward by guide v2 (#2168), with the passages Rev 18:2-10 and Php 3:17-21: both verses were uncited and carry the inner being now. Rev 18:7 takes up Isa 47:7-9 (no widow; one day). Original checked in verse_lexical: G1392 reflexive in Rev 18:7 (the Mat 5:16 verb), G2836 koilia (Rom 16:18 'appetites'), G5426 phroneo in Php 3:19 and Col 3:2, G1391 in Php 3:19 and 3:21. Woven: 10.15 v3 (It gives itself the glory; It tells itself that loss will not come; The boast: In shame; Where it ends: A like measure), Ch 4 v22 (About myself), 10.6 v28 (served as a god), 10.7 v34 (the set mind, beside Rom 8:6; moved from the proposal's 10.4, which has no account of the set mind), Ch 11 v39 (section 4 Glory), 10.10 v35 (another's pride wept over). Rule 77 reconciliation for pride in the touched 10.15 sections: C-214 to C-221, C-228 to C-232, C-235 to C-237, C-182, C-243, C-244 read; none rests on these verses and none needs restating.
+
+**Sources:** _analytics/Clusters/M08 - pride-arrogance/ot-05-16-self-glory-reading-v1-20261019.md
+
+**Scripts:** _analytics/Clusters/M08 - pride-arrogance/ot-05-16-weave-v1-20261019.py
+
+**Original claims changed:** Seven new claims. No existing claim changed.
+
+**Not woven:** The M22 glory faces stay for the glory strand as a cluster:M22 handle on OT-05; the belly as god is noted for the flesh-and-body reading (#2162).
+
+**Refs:** escalation 2160, thread OT-05, thread item OT-05.16
+
+**Quote check:** 33 parts, 0 failures. added lines checked against iba.db verse (ESV): Rev 18:4-10, Php 3:17-21, Isa 47:7-9, Col 3:2, Mat 5:16, Rom 16:18, Jer 13:17, Rom 8:6-7.
+
+- **C-324** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Pride's heart tells itself it will not be moved and that loss and mourning will not come, and it does not lay its end to heart
+  - verdict before: —
+  - verdict after: New
+- **C-325** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: The great city gives herself the glory that the same verb elsewhere gives to God
+  - verdict before: —
+  - verdict after: New
+- **C-326** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: What comes to the self-glorifying city is in like measure to her self-glory and luxury: the mourning she said she would never see
+  - verdict before: —
+  - verdict after: New
+- **C-327** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Glorying in shame does the boast's work turned upside down; against it stand the citizenship in heaven and the glorious body to come
+  - verdict before: —
+  - verdict after: New
+- **C-328** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Appetite can be set in the place of God and served
+  - verdict before: —
+  - verdict after: New
+- **C-329** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: The mind can be set downward, on earthly things, and the call is to set it on things above
+  - verdict before: —
+  - verdict after: New
+- **C-330** claim created (recorded, 2026-10-19)
+  - claim before: —
+  - claim after: Another's pride can be wept over, and the tears go with the telling, not in place of it
+  - verdict before: —
+  - verdict after: New
+- **C-324** telling added · 10.15 *The heart that says what God says* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: **It tells itself that loss will not come.** Babylon in Isaiah says more than "I am". She says, "I shall not sit as a widow or know the loss of children" (Isaiah 47:8). Before it: "You said, 'I shall be mistress forever,' so that you did not lay these things to heart or remember their end" (47:7). The answer: "These two things shall come to you in a moment, in one day" (47:9). Revelation gives the great city the same voice: "in her heart she says, 'I sit as a queen, I am no widow, and mourning I shall never see'" (Revelation 18:7). And the same answer: "For this reason her plagues will come in a single day, death and mourning and famine" (18:8). I read Revelation as taking up Isaiah's words. Pride's heart says that it will not be moved from where it sits, and that nothing will be taken from it. The verse in Isaiah names what goes with it: the end is not laid to heart.
+  - note: in full
+- **C-324** telling added · 04 *The heart speaks to itself* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: - **About myself.** "I shall not be moved; throughout all generations I shall not meet adversity" (Psalm 10:6). "I will ascend to heaven" (Isaiah 14:13). "Who will bring me down to the ground?" (Obadiah 3). "I sit as a queen, I am no widow, and mourning I shall never see" (Revelation 18:7; 10.15).
+  - note: in part: Revelation 18:7
+- **C-325** telling added · 10.15 *Given, then held as one's own* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: **It gives itself the glory.** The great city "glorified herself and lived in luxury" (Revelation 18:7). The Greek verb is the one used where people give glory to God: "so that they may see your good works and give glory to your Father who is in heaven" (Matthew 5:16). Here she is the one who gives the glory and the one who receives it. What it brings her is in *Where it ends*, below.
+  - note: in full
+- **C-325** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: - **Glory.** The verb that gives glory to God (Matthew 5:16) is the great city's own: she "glorified herself" (Revelation 18:7). The noun is the glory some take "in their shame" (Philippians 3:19), and two verses later the glory of the body to come, "like his glorious body" (3:21). The same word names glory taken where it does not belong and glory given (10.15).
+  - note: in part: Revelation 18:7
+- **C-326** telling added · 10.15 *Where it ends* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: **A like measure.** "As she glorified herself and lived in luxury, so give her a like measure of torment and mourning" (Revelation 18:7). The measure of what comes to the city is the measure of the glory she gave herself and the luxury she lived in. The mourning she said she would never see is what she is given. The verse before says the same of her deeds: "Pay her back as she herself has paid back others … mix a double portion for her in the cup she mixed" (18:6). Those who shared her luxury "will stand far off, in fear of her torment" (18:9–10). And before it all comes a call: "Come out of her, my people, lest you take part in her sins, lest you share in her plagues" (18:4).
+  - note: in full
+- **C-327** telling added · 10.15 *The boast* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: **In shame.** Paul names many who "walk as enemies of the cross of Christ. Their end is destruction, their god is their belly, and they glory in their shame, with minds set on earthly things" (Philippians 3:18–19). The word is "glory" (*doxa*), not the boast word. I read it as doing the boast's work, saying what a person stands on, and as turned upside down: it rests on what should shame. Paul tells it "even with tears" (3:18; 10.10). Against it he sets, "But our citizenship is in heaven", and a Savior who "will transform our lowly body to be like his glorious body" (3:20–21). "Glorious" is the same word. Their glory is in their shame, and the glory awaited is his.
+  - note: in full
+- **C-327** telling added · 11 *4. One word, opposite values* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: - **Glory.** The verb that gives glory to God (Matthew 5:16) is the great city's own: she "glorified herself" (Revelation 18:7). The noun is the glory some take "in their shame" (Philippians 3:19), and two verses later the glory of the body to come, "like his glorious body" (3:21). The same word names glory taken where it does not belong and glory given (10.15).
+  - note: in part: Philippians 3:19, 21
+- **C-328** telling added · 10.6 *Wanting that owns the one who wants* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: The verses give desire the verbs of a person acting on the one who wants. It is obeyed under sin as king: *"Let not sin therefore reign in your mortal body, to make you obey its passions"* (Romans 6:12). It is followed: *"grumblers, malcontents, following their own sinful desires"* (Jude 16); *"scoffers will come in the last days with scoffing, following their own sinful desires. They will say, 'Where is the promise of his coming?'"* (2 Peter 3:3–4). It picks what is heard: *"having itching ears they will accumulate for themselves teachers to suit their own passions, and will turn away from listening to the truth and wander off into myths"* (2 Timothy 4:3–4). The itch is a want to be scratched, and the teachers are gathered to scratch it. It keeps learning from arriving: *"led astray by various passions, always learning and never able to arrive at a knowledge of the truth"* (3:6–7). It deceives: *"your old self … is corrupt through deceitful desires"* (Ephesians 4:22). It baits: *"each person is tempted when he is lured and enticed by his own desire"* (James 1:14). That is the fisherman's or hunter's picture, and it comes before the conceiving of 1:15. It takes captive: *"the treacherous are taken captive by their lust"* (Proverbs 11:6). It crouches like an animal at the threshold: *"sin is crouching at the door. Its desire is for you, and you must rule over it"* (Genesis 4:7). And it can be inherited: *"You are of your father the devil, and your will is to do your father's desires"* (John 8:44). It is served as a god. Some "walk as enemies of the cross of Christ … their god is their belly" (Philippians 3:18–19). The same Greek word is "appetites" where Paul writes of those who "do not serve our Lord Christ, but their own appetites" (Romans 16:18). I read the belly as the appetite, set in the place of God and served. I read these as one act seen from different sides: the want leads, and the one who wants follows.
+  - note: in part: served as a god
+- **C-329** telling added · 10.7 *Planning* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: **A purpose held.** Some plans are aimed at one's own life. *"You have tried my heart, you have visited me by night, you have tested me, and you will find nothing; I have purposed that my mouth will not transgress"* (Psalm 17:3). The psalmist has set a course for his own speech ahead of time, and he states it under God's testing. He goes on: *"My steps have held fast to your paths"* (17:5). - Barnabas, at Antioch, *"exhorted them all to remain faithful to the Lord with steadfast purpose"* (Acts 11:23). The verse says what moved him: he *"saw the grace of God"* and *"was glad"*. - Paul lists his *"aim in life"* among what Timothy had followed, beside *"my faith, my patience, my love, my steadfastness"* (2 Timothy 3:10). - David prays that God will keep what the people have set: *"keep forever such purposes and thoughts in the hearts of your people, and direct their hearts toward you"* (1 Chronicles 29:18). He asks God to hold the purpose in place. - Paul uses a purpose word for where the mind is set: *"to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace"* (Romans 8:6). *"For the mind that is set on the flesh is hostile to God"* (8:7). Chapter 7 gives the flesh. - The verb of the same word names a mind set downward: *"their god is their belly, and they glory in their shame, with minds set on earthly things"* (Philippians 3:19). The next verse turns it: *"But our citizenship is in heaven"* (3:20). And the call uses the same verb: *"Set your minds on things that are above, not on things that are on earth"* (Colossians 3:2). - *"You keep him in perfect peace whose mind is stayed on you, because he trusts in you"* (Isaiah 26:3).
+  - note: in part: minds set on earthly things
+- **C-330** telling added · 10.10 *Pride over another* (recorded, 2026-10-19)
+  - passage before: —
+  - passage after: Another's pride can also be wept over. "But if you will not listen, my soul will weep in secret for your pride" (Jeremiah 13:17). Paul writes of many "of whom I have often told you and now tell you even with tears, walk as enemies of the cross of Christ" (Philippians 3:18), who "glory in their shame" (3:19). He tells it with tears, and he still tells it: "keep your eyes on those who walk according to the example you have in us" (3:17).
+  - note: in full
+
 ## 2026-10-19 — OT-98.2: the 30 verses closed as data, read outward and woven (#2160)
 
 **Strand:** open threads on completed clusters (#2160), OT-98.2 (M18 x M72)

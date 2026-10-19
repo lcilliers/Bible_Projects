@@ -406,7 +406,11 @@ File `03-one-inner-person-v5-20261013.md` (v5) · draft · chapter
 
 ### 04 — The heart
 
-File `04-the-heart-v21-20261019.md` (v21) · draft · chapter
+File `04-the-heart-v22-20261019.md` (v22) · draft · chapter
+
+**The heart speaks to itself**
+
+- **C-324** Pride's heart tells itself it will not be moved and that loss and mourning will not come, and it does not lay its end to heart (in part: Revelation 18:7) — also told in: 10.15 *The heart that says what God says* (in full)
 
 **The heart and anger**
 
@@ -561,11 +565,15 @@ File `10-05-speaking-v23-20261019.md` (v23) · draft · activity
 
 ### 10.6 — Wanting
 
-File `10-06-wanting-v27-20261019.md` (v27) · draft · activity
+File `10-06-wanting-v28-20261019.md` (v28) · draft · activity
 
 **Coveting**
 
 - **C-310** Coveting can add until it leaves the coveter alone (in full)
+
+**Wanting that owns the one who wants**
+
+- **C-328** Appetite can be set in the place of God and served (in part: served as a god)
 
 **Thirst answered**
 
@@ -590,7 +598,7 @@ File `10-06-wanting-v27-20261019.md` (v27) · draft · activity
 
 ### 10.7 — Choosing and setting direction
 
-File `10-07-choosing-and-setting-direction-v33-20261019.md` (v33) · draft · activity
+File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · activity
 
 **Being chosen**
 
@@ -611,6 +619,7 @@ File `10-07-choosing-and-setting-direction-v33-20261019.md` (v33) · draft · ac
 
 **Planning**
 
+- **C-329** The mind can be set downward, on earthly things, and the call is to set it on things above (in part: minds set on earthly things)
 - **C-313** Joseph's counsel plans against a famine he has been shown (in full)
 
 **Presumption**
@@ -665,7 +674,7 @@ File `10-09-relating-to-god-v28-20261019.md` (v28) · draft · activity
 
 ### 10.10 — Relating to others
 
-File `10-10-relating-to-others-v34-20261019.md` (v34) · draft · activity
+File `10-10-relating-to-others-v35-20261019.md` (v35) · draft · activity
 
 **(opening)**
 
@@ -700,6 +709,7 @@ File `10-10-relating-to-others-v34-20261019.md` (v34) · draft · activity
 - **C-226** Pride stands over someone: the poor, the widow, the needy left unaided, the righteous; it closes the heart to pity and is set against love (in full) — also told in: 10.15 *Pride over another* (in full)
 - **C-227** Pride is also felt by the one under it, and the answer given is to look to the Lord (in part) — also told in: 10.15 *Pride over another* (in full)
 - **C-232** A boast can be in another person, and it puts the one who boasts at stake on the other's conduct (in full) — also told in: 10.15 *The boast* (in full)
+- **C-330** Another's pride can be wept over, and the tears go with the telling, not in place of it (in full)
 
 **Holding authority over another**
 
@@ -912,7 +922,7 @@ File `10-14-humility-v4-20261018.md` (v4) · draft · key characteristic
 
 ### 10.15 — Pride
 
-File `10-15-pride-v2-20261019.md` (v2) · draft · key characteristic
+File `10-15-pride-v3-20261019.md` (v3) · draft · key characteristic
 
 **(opening)**
 
@@ -933,6 +943,7 @@ File `10-15-pride-v2-20261019.md` (v2) · draft · key characteristic
 - **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: your heart lifted up, you forget; it is he who gives you power) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
 - **C-215** Pride credits to its own hand what was done through it (in full) — also told in: 10.13 *Those who carry it out* (in part); 11 *Authority as a standing* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-216** The same word names an honour God chooses, gives or restores, and what was given can be turned into pride (in full) — also told in: 13.1 *Majesty* (in part)
+- **C-325** The great city gives herself the glory that the same verb elsewhere gives to God (in full) — also told in: 11 *4. One word, opposite values* (in part)
 
 **The heart that says what God says**
 
@@ -941,6 +952,7 @@ File `10-15-pride-v2-20261019.md` (v2) · draft · key characteristic
 - **C-218** Pride claims a place that is God's: likeness to the Most High, a god's seat, his temple (in full)
 - **C-219** Pride deceives the one who holds it, and the fear one inspires in others can feed it (in full)
 - **C-220** Pride shuts God out of the thoughts, is set against faith, and gives no rest (in full)
+- **C-324** Pride's heart tells itself it will not be moved and that loss and mourning will not come, and it does not lay its end to heart (in full) — also told in: 04 *The heart speaks to itself* (in part)
 - **C-221** Pride shows in the eyes, the walk and what is worn, and the verses join it to ease (in full)
 
 **Pride and hearing**
@@ -962,6 +974,7 @@ File `10-15-pride-v2-20261019.md` (v2) · draft · key characteristic
 - **C-244** A plan can presume on time it does not own; the boast about tomorrow is set against saying If the Lord wills (in part: do not boast about tomorrow) — also told in: 10.7 *Presumption* (in full)
 - **C-229** Boasting in oneself is excluded because what is held was given: grace, gift, and God's choosing of the low (in full)
 - **C-182** The boast is moved from what a person has to what God does (in full) — also told in: 05 *Rest for the soul* (in part); 10.14 *The proud brought low, the lowly raised* (in full); 11 *4. One word, opposite values* (in part)
+- **C-327** Glorying in shame does the boast's work turned upside down; against it stand the citizenship in heaven and the glorious body to come (in full) — also told in: 11 *4. One word, opposite values* (in part)
 - **C-230** Boasting in weakness claims no more than is so, and makes room for Christ's power (in full)
 - **C-231** The right measure of oneself, and of one's boast, is the measure God assigned; thinking oneself something when one is nothing is self-deception (in full)
 - **C-232** A boast can be in another person, and it puts the one who boasts at stake on the other's conduct (in full) — also told in: 10.10 *Pride over another* (in full)
@@ -977,6 +990,7 @@ File `10-15-pride-v2-20261019.md` (v2) · draft · key characteristic
 - **C-235** In the proverbs pride brings its own fall, with no other hand named; elsewhere God brings it down (in full) — also told in: 10.14 *The proud brought low, the lowly raised* (in part)
 - **C-210** Death brings pride down (in part: Your pomp is brought down to Sheol) — also told in: 12 *Pride and the lifted-up heart and spirit* (in full)
 - **C-236** The one who is high by nature comes near the low; those who make themselves high are known from afar (in full) — also told in: 13.1 *Majesty* (in part)
+- **C-326** What comes to the self-glorifying city is in like measure to her self-glory and luxury: the mourning she said she would never see (in full)
 - **C-237** The charge of pride can come from another's anger or from a ready explanation, and the verses do not make it true (in full) — also told in: 04 *The heart and anger* (in part); 10.4 *When anger thinks* (in part); 10.14 *The proud brought low, the lowly raised* (in full)
 
 **The other face**
@@ -985,7 +999,7 @@ File `10-15-pride-v2-20261019.md` (v2) · draft · key characteristic
 
 ### 11 — Other sides of the inner being
 
-File `11-other-sides-of-the-inner-being-v38-20261019.md` (v38) · draft · chapter
+File `11-other-sides-of-the-inner-being-v39-20261019.md` (v39) · draft · chapter
 
 **2. Thresholds: the merry heart and the sad heart**
 
@@ -1004,6 +1018,8 @@ File `11-other-sides-of-the-inner-being-v38-20261019.md` (v38) · draft · chapt
 - **C-182** The boast is moved from what a person has to what God does (in part: the boast moves) — also told in: 05 *Rest for the soul* (in part); 10.14 *The proud brought low, the lowly raised* (in full); 10.15 *The boast* (in full)
 - **C-212** The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew (in part: one family of words is God's majesty and human pride) — also told in: 10.15 *(opening)* (in full); 10.15 *The words* (in part); 10.15 *The words* (in full); 13.1 *Majesty* (in part)
 - **C-238** The same words are not pride when the height is given or faces God: a heart lifted up in God's ways, strength of soul given, a heart not lifted up and at rest (in full) — also told in: 10.15 *The other face* (in full)
+- **C-325** The great city gives herself the glory that the same verb elsewhere gives to God (in part: Revelation 18:7) — also told in: 10.15 *Given, then held as one's own* (in full)
+- **C-327** Glorying in shame does the boast's work turned upside down; against it stand the citizenship in heaven and the glorious body to come (in part: Philippians 3:19, 21) — also told in: 10.15 *The boast* (in full)
 - **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
 - **C-233** Mocking takes the sufferer's trust in God as its target, and the sufferer answers God, not the mockers (in part: the mockers' taunt) — also told in: 10.5 *Speech before words* (in part); 10.15 *The mock* (in full); 13.1 *Delight* (in part)
 - **C-279** 'Imperishable' is said of the raised body and also of what is within or held for a person: love, the seed of new birth, the beauty of a gentle spirit, an inheritance (in full) — also told in: 02 *Changed* (in full)
@@ -1346,7 +1362,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 239 |
+| narrative | New | 246 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1355,4 +1371,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-323 claims; 253 told in the narrative, 70 not.
+330 claims; 260 told in the narrative, 70 not.

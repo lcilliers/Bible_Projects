@@ -2499,7 +2499,9 @@
 | Isa 46:10 | 13.1 *Purposing* (quoted) | — |
 | Isa 46:11 | 13.1 *Purposing* (quoted) | — |
 | Isa 47:6 | 10.13 *Those who carry it out* (quoted) | — |
-| Isa 47:8 | 04 *The heart speaks to itself* (quoted); 10.15 *The heart that says what God says* (quoted); 13.1 *Majesty* (quoted) | C-217 |
+| Isa 47:7 | 10.15 *The heart that says what God says* | C-324 |
+| Isa 47:8 | 04 *The heart speaks to itself* (quoted); 10.15 *The heart that says what God says* (quoted); 13.1 *Majesty* (quoted) | C-217, C-324 |
+| Isa 47:9 | 10.15 *The heart that says what God says* | C-324 |
 | Isa 47:10 | 10.15 *The heart that says what God says* (quoted); 12 *The heart deceives its owner* (quoted) | C-217 |
 | Isa 47:13 | 10.7 *Planning* (quoted) | — |
 | Isa 47:14 | 10.7 *Planning* (quoted); 12 *Idols taken inside* (quoted) | — |
@@ -2663,7 +2665,7 @@
 | Jer 12:11 | 13.1 *Delight* (quoted) | — |
 | Jer 13:15 | 10.2 *Pride and hearing* (quoted); 10.15 *Pride and hearing* (quoted) | C-222, C-225 |
 | Jer 13:16 | — | C-222 |
-| Jer 13:17 | 10.15 *Pride and hearing* (quoted) | C-222 |
+| Jer 13:17 | 10.10 *Pride over another* (quoted); 10.15 *Pride and hearing* (quoted) | C-222, C-330 |
 | Jer 15:1 | 10.13 *God's heart named with his anger* (quoted); 10.13 *The hand that is felt* (quoted); 11 *8. God has a heart and a soul* (quoted) | — |
 | Jer 15:16 | 10.9 *Anger toward God, and before God* (quoted) | — |
 | Jer 15:17 | 10.9 *Anger toward God, and before God* (quoted); 10.13 *Other parties* (quoted) | — |
@@ -3181,6 +3183,7 @@
 | Mat 5:5 | 10.14 *The humble* (quoted) | C-186 |
 | Mat 5:6 | 10.6 *Thirst answered* (quoted) | — |
 | Mat 5:14 | 10.11 *Hiding what I hold* (quoted) | — |
+| Mat 5:16 | 10.15 *Given, then held as one's own* (quoted); 11 *4. One word, opposite values* | C-325 |
 | Mat 5:22 | 10.10 *Anger between people* (quoted); 10.13 *What the verses say about it* (quoted) | — |
 | Mat 5:24 | 10.10 *Anger between people* (quoted) | — |
 | Mat 5:28 | 04 *The heart feels* (quoted); 10.6 *Through the eye* (quoted) | — |
@@ -3985,7 +3988,7 @@
 | Rom 7:24 | 02 *Death in the living* (quoted); 10.1 *On God's word, and on God*; 10.7 *Willing* | C-88 |
 | Rom 7:25 | 07 *Flesh in the New Testament: one word, several values* (quoted); 10.1 *On God's word, and on God*; 10.7 *Willing*; 11 *7. The inner being is governed* (quoted) | 4-7 |
 | Rom 8:2 | 14 *Revived, restored, renewed* (quoted) | — |
-| Rom 8:6 | 02 *Death in the living* (quoted); 07 *Flesh in the New Testament: one word, several values* (quoted); 10.7 *Planning* (quoted) | C-88, C-147 |
+| Rom 8:6 | 02 *Death in the living* (quoted); 07 *Flesh in the New Testament: one word, several values* (quoted); 10.7 *Planning* (quoted) | C-88, C-147, C-329 |
 | Rom 8:7 | 10.7 *Planning* (quoted); 10.14 *Submitting* (quoted); 12 *Flesh as an orientation* (quoted) | — |
 | Rom 8:9 | 10.14 *Submitting* | — |
 | Rom 8:10 | 02 *Death spoken of in more than one way* (quoted); 14 *Revived, restored, renewed* (quoted) | C-142 |
@@ -4052,6 +4055,7 @@
 | Rom 15:23 | 10.6 *A person* (quoted) | — |
 | Rom 15:27 | 10.7 *Willing* (quoted) | — |
 | Rom 15:32 | 10.7 *Planning* (quoted) | — |
+| Rom 16:18 | 10.6 *Wanting that owns the one who wants* (quoted) | C-328 |
 | 1Cor 1:18 | 02 *Death spoken of in more than one way* (quoted) | C-143 |
 | 1Cor 1:21 | 13.1 *Delight* (quoted) | — |
 | 1Cor 1:28 | 10.14 *The proud brought low, the lowly raised* (quoted) | C-182, C-229 |
@@ -4356,8 +4360,11 @@
 | Phili 3:6 | 10.6 *Jealousy and envy* (quoted); 11 *What changes the character* | — |
 | Phili 3:7 | 10.6 *Jealousy and envy* (quoted) | — |
 | Phili 3:10 | 14 *Revived, restored, renewed* (quoted) | — |
-| Phili 3:20 | 02 *Changed* (quoted); 10.6 *Wanting and death* (quoted) | — |
-| Phili 3:21 | 02 *Changed* (quoted) | C-270 |
+| Phili 3:17 | 10.10 *Pride over another* (quoted) | C-330 |
+| Phili 3:18 | 10.6 *Wanting that owns the one who wants* (quoted); 10.10 *Pride over another* (quoted); 10.15 *The boast* (quoted) | C-327, C-328, C-330 |
+| Phili 3:19 | 10.6 *Wanting that owns the one who wants* (quoted); 10.7 *Planning* (quoted); 10.10 *Pride over another* (quoted); 10.15 *The boast* (quoted); 11 *4. One word, opposite values* (quoted) | C-327, C-328, C-329, C-330 |
+| Phili 3:20 | 02 *Changed* (quoted); 10.6 *Wanting and death* (quoted); 10.7 *Planning* (quoted); 10.15 *The boast* | C-327, C-329 |
+| Phili 3:21 | 02 *Changed* (quoted); 10.15 *The boast*; 11 *4. One word, opposite values* (quoted) | C-270, C-327 |
 | Phili 4:1 | 10.6 *A person* (quoted) | — |
 | Phili 4:6 | 10.1 *Meeting anxiety* (quoted); 11 *What changes the character*; 15 *Other ways Scripture shows the inner life* | — |
 | Phili 4:7 | 10.1 *Meeting anxiety* (quoted); 10.4 *Where thoughts come from* (quoted); 11 *What changes the character*; 15 *Other ways Scripture shows the inner life* (quoted) | — |
@@ -4380,7 +4387,7 @@
 | Col 2:20 | 02 *Dead to sin* (quoted) | C-150 |
 | Col 2:23 | 10.14 *The words*; 10.14 *A humbling God does not take knowledge of* (quoted); 10.14 *When humility changes character*; 11 *What changes the character* | C-177 |
 | Col 3:1 | 02 *The body raised* (quoted) | C-271 |
-| Col 3:2 | 02 *The body raised* (quoted) | — |
+| Col 3:2 | 02 *The body raised* (quoted); 10.7 *Planning* (quoted) | C-329 |
 | Col 3:3 | 02 *Made alive* (quoted); 10.11 *Hiding another* (quoted); 14 *Revived, restored, renewed* (quoted) | C-159 |
 | Col 3:4 | 02 *Where life flows from* (quoted) | — |
 | Col 3:5 | 02 *Dead to sin* (quoted); 10.6 *Wanting and death* (quoted); 11 *What changes the character* (quoted); 12 *Held — not yet re-examined*; 14 *Revived, restored, renewed* (quoted) | C-150 |
@@ -4737,6 +4744,12 @@
 | Rev 17:17 | 13.1 *Choosing* (quoted) | — |
 | Rev 18:1 | 13.2 *(opening)* (quoted) | — |
 | Rev 18:3 | 10.13 *What changes it* (quoted) | — |
+| Rev 18:4 | 10.15 *Where it ends* (quoted) | C-326 |
+| Rev 18:6 | 10.15 *Where it ends* (quoted) | C-326 |
+| Rev 18:7 | 04 *The heart speaks to itself* (quoted); 10.15 *Given, then held as one's own* (quoted); 10.15 *The heart that says what God says* (quoted); 10.15 *Where it ends* (quoted); 11 *4. One word, opposite values* (quoted) | C-324, C-325, C-326 |
+| Rev 18:8 | 10.15 *The heart that says what God says* | C-324, C-326 |
+| Rev 18:9 | 10.15 *Where it ends* (quoted) | C-326 |
+| Rev 18:10 | 10.15 *Where it ends* (quoted) | C-326 |
 | Rev 18:11 | 10.6 *Taken away* (quoted) | — |
 | Rev 18:12 | 10.6 *Taken away* (quoted) | — |
 | Rev 18:13 | 10.6 *Taken away* (quoted) | — |
