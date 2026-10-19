@@ -1,0 +1,81 @@
+{
+ "update": {
+  "update_date": "2026-10-19",
+  "title": "OT-05.26: R0 of Ch 2 The body raised, woven (#2160)",
+  "strand": "open threads on completed clusters (#2160), OT-05.26 (M25)",
+  "researcher_instruction": "\"OT-05.26: R0 of The body raised over the 76 cited verses plus the resurrection/perishable/mortal words (not the glory or generic raise handles). Read and report the impact.\" Then: \"regarding OT-05.26 proceed with the weave.\" (2026-10-19)",
+  "method": "R0 by the OT-02 tests: (a) statements with no register basis, (b) verses fitted to the line, (c) verses dropped. The section had 0 register passages, tellings or claims. 182 verses read: the 76 cited, and 106 carrying a resurrection, perishable or mortal word (egeiro/anistemi only with nekros), each decided once (decisions CSV). Woven: Ch 2 v26 (the opening restated on Col 2:12, 3:1-2, Eph 1:19-20, 2:6 and 1Pe 1:21, 23 beside Rom 8:11; new subsection Believed, questioned, denied; psychikos widened with Jam 3:15 and Jude 19; 1Co 15:21; Hos 13:14 quoted to its end; the imperishable said of what is within; Rom 8:19-22 before 8:23; living toward it, ending with 1Co 15:58; Rev 20:6). 13.1 v30 new section Immortal (1Ti 1:17, 6:16; 2Co 1:9; Rom 8:11; Joh 11:25; Rev 1:18; Act 17:31). Ch 11 v36 bullet Imperishable. Hos 6:2 taken out of The body raised: in its passage it is the people's call to return, answered by 'Your love is like a morning cloud' (Hos 6:1-4); 6:4 stays told in 13.1. Rule 77 (concept-scoped): C-92 and C-139 told in the section; 10-4 restated (its 'held' note is out of date) and told in part.",
+  "source_files": [
+   "_analytics/Clusters/M25 - life-death/life-death-ot05-26-body-raised-r0-v1-20261019.md",
+   "_analytics/Clusters/M25 - life-death/life-death-ot05-26-body-raised-r0-pull-v1-20261019.csv",
+   "_analytics/Clusters/M25 - life-death/life-death-ot05-26-body-raised-r0-decisions-v1-20261019.csv"
+  ],
+  "scripts": [
+   "_analytics/Clusters/M25 - life-death/life-death-ot05-26-body-raised-r0-pull-v1-20261019.py",
+   "_analytics/Clusters/M25 - life-death/life-death-ot05-26-body-raised-r0-decisions-v1-20261019.py",
+   "_analytics/Clusters/M25 - life-death/life-death-ot05-26-weave-v1-20261019.py"
+  ],
+  "claims_changed_note": "Twelve new claims (the section's statements a1-a4 and the woven additions); 10-4 restated; C-92 and C-139 told in the section.",
+  "not_woven_note": "Data (20 verses: Christ's rising proclaimed or witnessed, or the word in another sense). Corruption's moral face (2Pe 2:12, 2:19) left with the M57 handle OT-05.24. Luk 24:39 and 1Co 15:50 (OT-05.54/.55) and Gal 6:8 left for the flesh-and-body reading. Glory and generic raise excluded by instruction.",
+  "quote_parts": 87,
+  "quote_failures": 0,
+  "quote_note": "added lines checked against iba.db verse (ESV): Ch 2 75 parts, 13.1 8, Ch 11 4. The one flagged part, the gloss 'natural, of the soul', is a word meaning, not a quote. The whole section re-checked: 117 parts, same single gloss."
+ },
+ "refs": [
+  {"kind": "escalation", "value": "2160"},
+  {"kind": "thread", "value": "OT-05"},
+  {"kind": "thread item", "value": "OT-05.26"},
+  {"kind": "thread item", "value": "OT-05.30"}
+ ],
+ "chapters": [
+  {"chapter": "02", "from_version": 25, "to_version": 26, "file": "02-life-breath-and-death-v26-20261019.md"},
+  {"chapter": "13.1", "from_version": 29, "to_version": 30, "file": "13-01-divine-v30-20261019.md"},
+  {"chapter": "11", "from_version": 35, "to_version": 36, "file": "11-other-sides-of-the-inner-being-v36-20261019.md"}
+ ],
+ "claims": [
+  {"key": "n1", "new": {"text": "The hope Scripture gives against death includes the body", "beyond_text": "gathers the verses that speak of the body raised, seen in or given life, as one hope", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Job 19:26", "Isa 26:19", "Rom 8:11", "Rom 8:23", "2Cor 5:4", "Phili 3:21"]}},
+  {"key": "n2", "new": {"text": "Paul speaks of believers as already raised with Christ, while their mortal bodies are still to be given life", "beyond_text": "sets the past 'raised with him' beside the future 'will also give life to your mortal bodies'", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Col 2:12", "Col 3:1", "Eph 2:6", "Rom 8:11"]}},
+  {"key": "n3", "new": {"text": "The word psychikos carries no blame when it is said of the body and carries blame when it is said of a person", "beyond_text": "compares the uses of one word", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["1Cor 15:44", "1Cor 15:46", "1Cor 2:14", "Jam 3:15", "Jude 19"]}},
+  {"key": "n4", "new": {"text": "The Gospels show the risen body without defining it", "beyond_text": "states what the accounts do not do", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Luk 24:16", "Luk 24:31", "Luk 24:39", "Luk 24:42", "Luk 24:43", "Joh 20:14", "Joh 20:19", "Joh 20:27", "Joh 21:4"]}},
+  {"key": "n5", "new": {"text": "Jesus puts the denial of the resurrection down to knowing neither the Scriptures nor the power of God, and answers it from God's name", "beyond_text": "joins his diagnosis to his answer from the bush", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Act 23:8", "Mat 22:28", "Mat 22:29", "Mar 12:26", "Luk 20:38"]}},
+  {"key": "n6", "new": {"text": "The disciples did not understand the rising from the dead until afterwards, when they remembered and their minds were opened", "beyond_text": "sets the questioning before and the understanding after", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Mar 9:10", "Joh 20:9", "Joh 2:22", "Luk 24:45"]}},
+  {"key": "n7", "new": {"text": "Paul lets faith and hope rest on Christ having been raised", "beyond_text": "reads 1Co 15:17 and 15:19 together as one dependence", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["1Cor 15:12", "1Cor 15:17", "1Cor 15:19"]}},
+  {"key": "n8", "new": {"text": "Herod's word that John has been raised is his conscience speaking", "beyond_text": "reads the naming of the beheading as conscience; the verses do not say it", "origin": "narrative", "verdict": "New", "i_read": 1,
+   "sources": ["Mar 6:16", "Luk 9:7"]}},
+  {"key": "n9", "new": {"text": "The coming resurrection is given as a reason for how a person lives now: giving without return, enduring, self-control, steadfast work", "beyond_text": "gathers the verses as one ground for conduct", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Luk 14:14", "Heb 11:35", "1Cor 9:25", "Rom 2:7", "1Cor 15:58"]}},
+  {"key": "n10", "new": {"text": "'Imperishable' is said of the raised body and also of what is within or held for a person: love, the seed of new birth, the beauty of a gentle spirit, an inheritance", "beyond_text": "sets the uses of one word side by side", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["1Cor 15:52", "Eph 6:24", "1Pe 1:23", "1Pe 3:4", "1Pe 1:4"]}},
+  {"key": "n11", "new": {"text": "Paul sets the creation's eager waiting and groaning before the believers' own inward groaning", "beyond_text": "names the order of Rom 8:19-23", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["Rom 8:19", "Rom 8:21", "Rom 8:22", "Rom 8:23"]}},
+  {"key": "n12", "new": {"text": "Immortality is said to be God's alone, and it is what the mortal body must put on", "beyond_text": "sets the two uses of athanasia side by side", "origin": "narrative", "verdict": "New", "i_read": 0,
+   "sources": ["1Ti 6:16", "1Cor 15:53"]}},
+  {"ref": "10-4", "edit": {"text": "The body's redemption at the end stands (Rom 8:23; 1Co 15:42–44), told in Chapter 2. The text renews the inner self \"day by day\" (2Co 4:16); renewal is both God's gift (Eze 36:26) and the person's task (Eze 18:31). Assigning each phase to one component is not stated", "verdict": "Restated", "note": "OT-05.26 (#2160): Rom 8:23 and 1Co 15:42-44 are now read and told in Ch 2; the 'not in the reading and are held' note removed"}}
+ ],
+ "tellings": [
+  {"claim": "n1", "chapter": "02", "passage": "The hope Scripture gives does not leave the body behind", "kind": "in full", "action": "add"},
+  {"claim": "n2", "chapter": "02", "passage": "Paul ties the raising of the body to the Spirit already living within", "kind": "in full", "action": "add"},
+  {"claim": "n3", "chapter": "02", "passage": "The word for natural is psychikos", "kind": "in full", "action": "add"},
+  {"claim": "n4", "chapter": "02", "passage": "The Gospels show his risen body. They do not define it", "kind": "in full", "action": "add"},
+  {"claim": "n5", "chapter": "02", "passage": "The raising of the dead is not only told", "kind": "in part", "part": "Denied", "action": "add"},
+  {"claim": "n6", "chapter": "02", "passage": "The raising of the dead is not only told", "kind": "in part", "part": "Questioned, and understood later", "action": "add"},
+  {"claim": "n7", "chapter": "02", "passage": "The raising of the dead is not only told", "kind": "in part", "part": "Faith resting on it", "action": "add"},
+  {"claim": "n8", "chapter": "02", "passage": "The raising of the dead is not only told", "kind": "in part", "part": "Feared (Herod)", "action": "add"},
+  {"claim": "n9", "chapter": "02", "passage": "The hope is given as a reason for how a person lives now", "kind": "in full", "action": "add"},
+  {"claim": "n10", "chapter": "02", "passage": "The word for the imperishable is not kept for the body", "kind": "in full", "action": "add"},
+  {"claim": "n10", "chapter": "11", "passage": "Imperishable. The Greek aphthartos and its noun", "kind": "in full", "action": "add"},
+  {"claim": "n11", "chapter": "02", "passage": "The raised body is waited for, and the waiting is felt within", "kind": "in part", "part": "Rom 8:19-23", "action": "add"},
+  {"claim": "n12", "chapter": "13.1", "passage": "Paul's praise names God as the one whose life has no end", "kind": "in full", "action": "add"},
+  {"claim": "n12", "chapter": "02", "passage": "The word for the imperishable is not kept for the body", "kind": "in part", "part": "1Ti 6:16 beside 1Co 15:53", "action": "add"},
+  {"claim": "C-92", "chapter": "02", "passage": "The rising is not to life for all", "kind": "in full", "action": "add"},
+  {"claim": "C-139", "chapter": "02", "passage": "Revelation names a second death beyond the first", "kind": "in part", "part": "a death beyond death", "action": "add"},
+  {"claim": "10-4", "chapter": "02", "passage": "The raised body is waited for, and the waiting is felt within", "kind": "in part", "part": "the redemption of our bodies (Rom 8:23)", "action": "add"}
+ ]
+}

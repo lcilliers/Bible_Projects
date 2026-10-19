@@ -1,6 +1,6 @@
 # Narrative claim register
 
-*Published from iba.db on 2026-10-18. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-19. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 ## Chapters
 
@@ -193,7 +193,7 @@ File `01-the-question-v4-20261002.md` (v4) · draft · chapter
 
 ### 02 — Life, breath and death
 
-File `02-life-breath-and-death-v25-20261014.md` (v25) · draft · chapter
+File `02-life-breath-and-death-v26-20261019.md` (v26) · draft · chapter
 
 **Breath lent, and held by God**
 
@@ -239,7 +239,7 @@ File `02-life-breath-and-death-v25-20261014.md` (v25) · draft · chapter
 
 **Death spoken of in more than one way**
 
-- **C-139** Scripture speaks of death in more than one way: the body's death, death in the living, dying to sin, a death beyond death, death as a power, and the living made like the dead (in full)
+- **C-139** Scripture speaks of death in more than one way: the body's death, death in the living, dying to sin, a death beyond death, death as a power, and the living made like the dead (in full) — also told in: 02 *Life, and judgment* (in part)
 - **C-140** The father sets "dead" beside "lost" and "alive" beside "found"; to perish and to be lost are one word (in full)
 - **C-141** "Dead in" trespasses and "died to" sin are opposites: death under sin, and death that ends its rule (in full) — also told in: 02 *Dead to sin* (in full)
 - **C-142** The word "dead" passes to sin itself, to faith and to works (in part) — also told in: 02 *Death in the living* (in part)
@@ -287,7 +287,7 @@ File `02-life-breath-and-death-v25-20261014.md` (v25) · draft · chapter
 - **C-89** Scripture speaks of death as sleep, and gives its hope against death as waking (in part)
 - **C-90** Paul uses sleep to speak to grief: grief with hope is set apart from grief without hope, and the hope rests on Christ's rising (in full)
 - **C-91** The calls on God to wake speak from how it feels when God does not act (in full)
-- **C-92** The waking of the dead is not the same for all (in full)
+- **C-92** The waking of the dead is not the same for all (in full) — also told in: 02 *Life, and judgment* (in full)
 
 **Life weighed**
 
@@ -345,6 +345,42 @@ File `02-life-breath-and-death-v25-20261014.md` (v25) · draft · chapter
 - **C-163** Scripture speaks of the death of the upright in its own words: precious, wished for, a refuge, in faith, bearing fruit, glorifying God (in full)
 - **C-164** Some wait to see one thing before they die, and then let go (in full)
 - **C-165** People hold to someone, or to something, even to death, and the readiness can fail (in full) — also told in: 10.10 *Loyalty and honour* (pointer)
+
+**The body raised**
+
+- **C-270** The hope Scripture gives against death includes the body (in full)
+- **C-271** Paul speaks of believers as already raised with Christ, while their mortal bodies are still to be given life (in full)
+
+**Believed, questioned, denied**
+
+- **C-274** Jesus puts the denial of the resurrection down to knowing neither the Scriptures nor the power of God, and answers it from God's name (in part: Denied)
+- **C-275** The disciples did not understand the rising from the dead until afterwards, when they remembered and their minds were opened (in part: Questioned, and understood later)
+- **C-276** Paul lets faith and hope rest on Christ having been raised (in part: Faith resting on it)
+- **C-277** Herod's word that John has been raised is his conscience speaking (in part: Feared (Herod))
+
+**Sown and raised**
+
+- **C-272** The word psychikos carries no blame when it is said of the body and carries blame when it is said of a person (in full)
+
+**Christ first**
+
+- **C-273** The Gospels show the risen body without defining it (in full)
+
+**Changed**
+
+- **C-279** 'Imperishable' is said of the raised body and also of what is within or held for a person: love, the seed of new birth, the beauty of a gentle spirit, an inheritance (in full) — also told in: 11 *4. One word, opposite values* (in full)
+- **C-281** Immortality is said to be God's alone, and it is what the mortal body must put on (in part: 1Ti 6:16 beside 1Co 15:53) — also told in: 13.1 *Immortal* (in full)
+
+**Waited for**
+
+- **10-4** The body's redemption at the end stands (Rom 8:23; 1Co 15:42–44), told in Chapter 2. The text renews the inner self "day by day" (2Co 4:16); renewal is both God's gift (Eze 36:26) and the person's task (Eze 18:31). Assigning each phase to one component is not stated (in part: the redemption of our bodies (Rom 8:23))
+- **C-280** Paul sets the creation's eager waiting and groaning before the believers' own inward groaning (in part: Rom 8:19-23)
+- **C-278** The coming resurrection is given as a reason for how a person lives now: giving without return, enduring, self-control, steadfast work (in full)
+
+**Life, and judgment**
+
+- **C-92** The waking of the dead is not the same for all (in full) — also told in: 02 *Sleep and waking* (in full)
+- **C-139** Scripture speaks of death in more than one way: the body's death, death in the living, dying to sin, a death beyond death, death as a power, and the living made like the dead (in part: a death beyond death) — also told in: 02 *Death spoken of in more than one way* (in full); 02 *Death spoken of in more than one way* (in full)
 
 **After death**
 
@@ -864,7 +900,7 @@ File `10-15-pride-v1-20261015.md` (v1) · draft · key characteristic
 
 ### 11 — Other sides of the inner being
 
-File `11-other-sides-of-the-inner-being-v35-20261015.md` (v35) · draft · chapter
+File `11-other-sides-of-the-inner-being-v36-20261019.md` (v36) · draft · chapter
 
 **2. Thresholds: the merry heart and the sad heart**
 
@@ -885,6 +921,7 @@ File `11-other-sides-of-the-inner-being-v35-20261015.md` (v35) · draft · chapt
 - **C-238** The same words are not pride when the height is given or faces God: a heart lifted up in God's ways, strength of soul given, a heart not lifted up and at rest (in full) — also told in: 10.15 *The other face* (in full)
 - **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
 - **C-233** Mocking takes the sufferer's trust in God as its target, and the sufferer answers God, not the mockers (in part: the mockers' taunt) — also told in: 10.5 *Speech before words* (in part); 10.15 *The mock* (in full); 13.1 *Delight* (in part)
+- **C-279** 'Imperishable' is said of the raised body and also of what is within or held for a person: love, the seed of new birth, the beauty of a gentle spirit, an inheritance (in full) — also told in: 02 *Changed* (in full)
 
 **What changes the character**
 
@@ -925,7 +962,7 @@ File `13-00-other-beings-v2-20261008.md` (v2) · draft · opening
 
 ### 13.1 — Divine
 
-File `13-01-divine-v29-20261018.md` (v29) · draft · other beings
+File `13-01-divine-v30-20261019.md` (v30) · draft · other beings
 
 **Choosing**
 
@@ -964,6 +1001,10 @@ File `13-01-divine-v29-20261018.md` (v29) · draft · other beings
 - **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in part) — also told in: 10.14 *The Old Testament and the New* (in part)
 - **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in full) — also told in: 10.14 *The Old Testament and the New* (in part)
 - **C-203** God sees and answers the one who humbles himself, gives favor to the humble, humbles to test and do good, brings the proud low and looks on a humble estate (in full) — also told in: 13.1 *Willing* (in part)
+
+**Immortal**
+
+- **C-281** Immortality is said to be God's alone, and it is what the mortal body must put on (in full) — also told in: 02 *Changed* (in part)
 
 ### 13.2 — Angels
 
@@ -1120,7 +1161,7 @@ File `—` (v—) · deferred · deferred
 | 10-1 | Regeneration makes the dead human spirit alive; the Holy Spirit indwells the human spirit | Restated | The verses read give the Spirit into the heart (Gal 4:6; 2Co 1:22; Rom 5:5), within (Eze 36:27) and in the body (1Co 6:19), and bear witness with our spirit (Rom 8:16). The renewal texts renew heart and spirit together and replace stone with flesh (Eze 11:19; 36:26) (E §11.2) | — |
 | 10-2 | "That which is born of the Spirit is spirit" (Joh 3:6) | Stands | "That which is born of the Spirit is spirit" (Joh 3:6) | — |
 | 10-3 | OT "upon" becomes NT "within" | Restated | "Within" is already the OT promise (Eze 36:27; 37:14). The OT also has the Spirit turning a man "into another man" (1Sa 10:6) | — |
-| 10-4 | Three phases mapped to three parts: spirit (regeneration, instant) → soul (sanctification, lifelong) → body (glorification) | Restated | The body's redemption at the end stands (Rom 8:23; 1Co 15:42–44), but these are not in the reading and are held. The text renews the inner self "day by day" (2Co 4:16); renewal is both God's gift (Eze 36:26) and the person's task (Eze 18:31). Assigning each phase to one component is not stated | — |
+| 10-4 | Three phases mapped to three parts: spirit (regeneration, instant) → soul (sanctification, lifelong) → body (glorification) | Restated | The body's redemption at the end stands (Rom 8:23; 1Co 15:42–44), told in Chapter 2. The text renews the inner self "day by day" (2Co 4:16); renewal is both God's gift (Eze 36:26) and the person's task (Eze 18:31). Assigning each phase to one component is not stated | 02 *Waited for* (in part) |
 | 10-5 | Seven conditions (2Ch 7:14) | Withdrawn | Seven conditions (2Ch 7:14) | — |
 | 10-6 | Means of grace; historical revivals | Held | Means of grace; historical revivals | — |
 | 10-7 | 1Th 5:23 as the final word | Stands | 1Th 5:23 as the final word | — |
@@ -1201,7 +1242,6 @@ File `—` (v—) · deferred · deferred
 | 10-1 | The verses read give the Spirit into the heart (Gal 4:6; 2Co 1:22; Rom 5:5), within (Eze 36:27) and in the body (1Co 6:19), and bear witness with our spirit (Rom 8:16). The renewal texts renew heart and spirit together and replace stone with flesh (Eze 11:19; 36:26) (E §11.2) | current | Restated |
 | 10-2 | "That which is born of the Spirit is spirit" (Joh 3:6) | current | Stands |
 | 10-3 | "Within" is already the OT promise (Eze 36:27; 37:14). The OT also has the Spirit turning a man "into another man" (1Sa 10:6) | current | Restated |
-| 10-4 | The body's redemption at the end stands (Rom 8:23; 1Co 15:42–44), but these are not in the reading and are held. The text renews the inner self "day by day" (2Co 4:16); renewal is both God's gift (Eze 36:26) and the person's task (Eze 18:31). Assigning each phase to one component is not stated | current | Restated |
 | 10-5 | Seven conditions (2Ch 7:14) | withdrawn | Withdrawn |
 | 10-6 | Means of grace; historical revivals | held | Held |
 | 10-7 | 1Th 5:23 as the final word | current | Stands |
@@ -1213,7 +1253,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 185 |
+| narrative | New | 197 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1222,4 +1262,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-269 claims; 198 told in the narrative, 71 not.
+281 claims; 211 told in the narrative, 70 not.

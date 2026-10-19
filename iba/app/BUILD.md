@@ -17182,3 +17182,49 @@ It was the only file under `iba/` with 0x08 bytes.
 **Expected and deviating:**
 - T10 shows **0** `direct edit` notices, not the 3 the proposal predicted. The hand inserts of 10.14, 10.15 and 00 were written with `created_by='Claude'`, so Check cannot tell them apart. Their record is the Structure log (updates 141 and 143, and the new 00 entry).
 
+
+## 352. Flesh and body made one word complex in M47 (2026-10-18, escalation #2163, for #2162)
+
+Researcher, verbatim: *"the body words should be clustered in with the flesh cluster, and be part
+of the flesh word complex.  the word-registry has a range of associated terms associated with a
+word."* Then: *"In this case all the T-code terms related to flesh need to be re-assigned to M47.
+All the verses, raw data tables, span, lexical analysis must be brought in line."* And: *"I notice
+you did not re-allocate the T-code words and ran into trouble because of it."*
+
+**Why.** In #2162 step 0, the body words sat in T-codes outside the flesh word complex. *sōma*
+G4983 and others were `backfill` (meaning only, 0 `strong_verse` rows), so a "completeness check"
+was run by calling STEP inline (`Step.call3_strong`) outside `run.py`. That route is withdrawn.
+Verse sets come only from the raw layer.
+
+**Build:**
+- `iba/app/migration/apply_flesh_body_complex_2163_v1_20261018.py` (new): ops `move` (soft-delete
+  the live `cluster_strong` row, insert M47) and `link` (insert `word_strong` for word 150
+  `flesh`). Writer `migration`, source `researcher-ruling-2163-20261018`, idempotent, `--dry-run`,
+  `--scope-only`. cfg_utility registration proposed (`RUN-20261018_185153_038-CONFIGMAINT`, awaiting approval).
+- Spec `iba/docs/flesh-body-complex-spec-2163-v2-20261018.json` (v1 archived). v1: the body codes
+  G4983, H1472, H1655, G4984, G4954, H0990J, H1480, H6106I and G2907 "meat" to M47 with links,
+  plus a G4560 "fleshly" link (stays M28). v2 adds the T-coded codes already in `flesh`: H3894
+  intestine, H4578 belly, H6371 excess fat, H8270 umbilical cord. H3318G "to come out" (T3) is not
+  a flesh term and is unchanged.
+
+**Run:**
+- DB backup `iba/app/db/iba.db.pre-2163-flesh-body-20261018.bak` (15,528 live `cluster_strong`,
+  4,612 live `word_strong`).
+- Migration v1 then v2 live: 13 codes re-coded to M47, 10 links added (live `word_strong` 4,621).
+- `python -m iba.app.run new-word --step strong.reconcile --param Word=flesh` (twice): 5 promoted
+  (G4983, H1655, G4984, H1480, G4560: full concordance via `raw.verses_one`, `origin='word'`,
+  `verse_lexical` built). The concordances equal the verses already present: no verse was missing.
+  2 exceptions (sibling conflict, not promoted): H0990J (siblings H0990G/H T14, H0990I T2) and
+  H6106I (sibling H6106G, word `strength`).
+- Role refresh. A chapter-range `lexical.build` loop was started per book (lowest to highest
+  affected chapter) and **stopped by the researcher's challenge** (*"I am worried that you are
+  re-running the entire lexical build, should only be for the missing verses"*). 37 books had run:
+  every run 0 inserted, 0 removed, 1–6 codes updated (the role changes), the rest unchanged. The
+  promotion had already refreshed the promoted codes, so the remaining stale rows were 5 verses
+  (Rom 14:21, Ruth 1:11, Song 5:4, Song 5:14, Zeph 1:17), rebuilt one verse each with `-Range`.
+  Lesson: refresh by the stale verses, not by chapter span.
+- Post-check: all 14 codes' `verse_lexical` roles carry their live cluster, 0 mismatches;
+  `stale_role_strongs_for_cluster('M47')` empty (51 members). Spine check v64: 0 FATAL.
+
+**Open (#2163):** H0990J/H6106I exceptions; whether the wider T-coded body set (corpse/carcass,
+*mortal*, *member*, skin, bone, belly, loins, womb) also joins the complex.

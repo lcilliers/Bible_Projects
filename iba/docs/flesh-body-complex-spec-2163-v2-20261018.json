@@ -1,0 +1,206 @@
+{
+  "escalation": 2163,
+  "for": 2162,
+  "word_id": 150,
+  "word": "flesh",
+  "ruling": "Researcher, chat 2026-10-18 (verbatim): 'the body words should be clustered in with the flesh cluster, and be part of the flesh word complex.  the word-registry has a range of associated terms associated with a word.' Then: 'In this case all the T-code terms related to flesh need to be re-assigned to M47. All the verses, raw data tables, span, lexical analysis must be brought in line.'",
+  "op_semantics": {
+    "move": "soft-delete the live (strong, from) cluster_strong row; insert (strong, to) if absent",
+    "link": "insert a live word_strong (word_id, strong) row if absent; other word links are kept"
+  },
+  "items": [
+    {
+      "strong": "G4983",
+      "gloss": "body",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T14",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "H1472",
+      "gloss": "body",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "H1655",
+      "gloss": "body",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "G4984",
+      "gloss": "bodily",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "G4954",
+      "gloss": "of the same body",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "H0990J",
+      "gloss": "belly: body",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T14",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "H1480",
+      "gloss": "body",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "H6106I",
+      "gloss": "bone: body",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "G2907",
+      "gloss": "meat",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "G4560",
+      "gloss": "fleshly",
+      "ops": [
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "H3894",
+      "gloss": "intestine",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "H4578",
+      "gloss": "belly",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T14",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "H6371",
+      "gloss": "excess fat",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    },
+    {
+      "strong": "H8270",
+      "gloss": "umbilical cord",
+      "ops": [
+        {
+          "op": "move",
+          "from": "T2",
+          "to": "M47"
+        },
+        {
+          "op": "link"
+        }
+      ]
+    }
+  ],
+  "version": 2,
+  "ruling_v2": "Researcher, chat 2026-10-18 (verbatim): 'I notice you did not re-allocate the T-code words and ran into trouble because of it.' v2 adds the T-coded codes already in word 150 'flesh' (H3318G 'to come out', T3, is not a flesh term and stays)."
+}

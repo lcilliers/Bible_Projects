@@ -658,8 +658,14 @@ iba\app\ps\Config-Maintenance.ps1 -Step Validate
 iba\app\ps\Config-Maintenance.ps1 -Step Propose -Table cfg_setting -Op update `
     -Where '{"key":"passage.review_over"}' -Set '{"value":"12"}' `
     -Question "Raise passage.review_over from 10 to 12 — fewer long passages flagged needs_review."
-#   PAUSED, run_id printed
-iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve
+#   PAUSED, run_id printed; the proposal is a decision_required escalation (state raised/review)
+# Claude prepares it for approval:
+iba\app\ps\Escalation.ps1 -Action Update -Id <id> -AnsweredBy Claude -AssignedTo Researcher `
+    -NextAction ready_for_approval -Resolution "<recommendation>"
+# the researcher approves through Update, never AnswerRun (cfg_behaviour_rule
+# 'decision-required-answered-via-update-not-answerrun'; AnswerRun is for self_correctable items):
+iba\app\ps\Escalation.ps1 -Action Update -Id <id> -AnsweredBy Researcher -NextAction approved
+# then the same Propose call is re-run with the run_id to apply:
 iba\app\ps\Config-Maintenance.ps1 -Step Propose -RunId <run_id> -Table cfg_setting -Op update `
     -Where '{"key":"passage.review_over"}' -Set '{"value":"12"}'
 #   applied

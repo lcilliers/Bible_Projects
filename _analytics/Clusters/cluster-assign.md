@@ -1,11 +1,11 @@
 # Cluster-assignment quality report
 
-> Generated 2026-09-15T07:39:05Z by `cluster.validate`. Read-only findings, not a gate.
+> Generated 2026-10-18T17:48:42Z by `cluster.validate`. Read-only findings, not a gate.
 
 - `strong` rows with no cluster assignment at all: **0**
 - `backfill`-origin, non-T2 assignment, not yet promoted (should be `word`): **0**
-- exception — non-T2 assignment with no `word_registry` link: **4460**
-- exception — `backfill` code with an active/clustered sibling: **2789**
+- exception — non-T2 assignment with no `word_registry` link: **4458**
+- exception — `backfill` code with an active/clustered sibling: **2786**
 
 ## Contents
 
@@ -20,13 +20,12 @@
 15455 strong(s) checked
 unclassified: 0
 not yet promoted (backfill, non-T2, has a word): 0
-exception — no word: 4460
-exception — sibling conflict: 2789
+exception — no word: 4458
+exception — sibling conflict: 2786
 
 <a id="exception-non-t2-cluster-no-word-registry-link"></a>
 ## Exception -- non-T2 cluster, no word_registry link
 
-`H8088A` — 'sound', cluster M62
 `H2048A` — 'to mock', cluster M08
 `H5607A` — 'mockery', cluster M08
 `H8178A` — 'shuddering', cluster M01
@@ -54,7 +53,6 @@ exception — sibling conflict: 2789
 `H3778` — 'Chaldea', cluster T10
 `H4335` — 'Meshach', cluster T8
 `H4428G` — 'king', cluster M72
-`H4487` — 'to count', cluster M26
 `H5019` — 'Nebuchadnezzar', cluster T8
 `H5612H` — 'scroll: book', cluster T12
 `H5664` — 'Abednego', cluster T8
@@ -78,7 +76,6 @@ exception — sibling conflict: 2789
 `H2006A` — 'if', cluster T6
 `H2006B` — 'therefore', cluster T6
 `H2164` — 'to agree', cluster M44
-`H2324` — 'to show', cluster M05
 `H3779` — 'Chaldean', cluster T11
 `H3809` — 'not', cluster T5
 `H3861` — 'except', cluster T6
@@ -264,6 +261,7 @@ exception — sibling conflict: 2789
 `H5680` — 'Hebrew', cluster T10
 `H7453` — 'neighbor', cluster T8
 `H8659H` — 'Tarshish', cluster T10
+`H0990G` — 'belly: abdomen', cluster T14
 `H1710` — 'fish', cluster T13
 `H4867` — 'wave', cluster M01
 `H5869H` — 'eye: seeing', cluster T14
@@ -283,7 +281,7 @@ exception — sibling conflict: 2789
 `H2625` — 'locust', cluster T13
 `H3100T` — 'Joel', cluster T8
 `H3218` — 'locust', cluster T13
-`H3548` — 'priest', cluster M36
+`H3548` — 'priest', cluster T8
 `H3755` — 'to tend vineyards', cluster T8
 `H3833C` — 'lion', cluster T13
 `H4057B` — 'wilderness', cluster T10
@@ -367,12 +365,12 @@ exception — sibling conflict: 2789
 `H0518I` — 'if: surely yes', cluster T6
 `H1699A` — 'pasture', cluster T10
 `H2256D` — 'destruction', cluster M55
-`H2256M` — 'cord', cluster M03,T12
+`H2256M` — 'cord', cluster T12
 `H3863` — 'if', cluster T6
 `H4496H` — 'resting', cluster M33
 `H4904` — 'bed', cluster T12
 `H8008` — 'garment', cluster T12
-`H3384B` — 'to show', cluster M05
+`H3384B` — 'to show', cluster M16
 `H5518A` — 'pot', cluster T12
 `H5785` — 'skin', cluster T14
 `H7218H` — 'head: leader', cluster M72
@@ -394,6 +392,7 @@ exception — sibling conflict: 2789
 `H7626G` — 'tribe: staff', cluster T12
 `H0175` — 'Aaron', cluster T8
 `H0256G` — 'Ahab', cluster T8
+`H0990J` — 'belly: body', cluster T14
 `H1060` — 'firstborn', cluster M37
 `H1109A` — 'Balaam', cluster T8
 `H1111` — 'Balak', cluster T8
@@ -428,7 +427,7 @@ exception — sibling conflict: 2789
 `H4468` — 'kingdom', cluster M72
 `H5818G` — 'Uzziah', cluster T8
 `H6010M` — 'Valley [of Jezreel]', cluster T10
-`H0269` — 'sister', cluster M44
+`H0269` — 'sister', cluster T8
 `H0781` — 'to betroth', cluster M44
 `H1168A` — 'Baal', cluster T10
 `H2320H` — 'month: new moon', cluster T13
@@ -473,6 +472,7 @@ exception — sibling conflict: 2789
 `H1890` — 'gift', cluster M39
 `H2803H` — 'to devise: count', cluster M64
 `H6780` — 'branch', cluster T13
+`H0990H` — 'belly: womb', cluster T14
 `H1187` — 'Baal of Peor', cluster T7
 `H2336` — 'thistle', cluster T13
 `H4644` — 'Memphis', cluster T10
@@ -486,7 +486,7 @@ exception — sibling conflict: 2789
 `H8020` — 'Shalman', cluster T8
 `H0126` — 'Admah', cluster T10
 `H5288` — 'youth', cluster T8
-`H5688` — 'cord', cluster M03,T12
+`H5688` — 'cord', cluster T12
 `H6636` — 'Zeboiim', cluster T10
 `H6833` — 'bird', cluster T13
 `H8637` — 'to teach', cluster M16
@@ -532,7 +532,7 @@ exception — sibling conflict: 2789
 `G0032G` — 'angel', cluster T9
 `G0032H` — 'angel: messenger', cluster T9
 `G0068H` — 'Field (of blood)', cluster T10
-`G0079` — 'sister', cluster M44
+`G0079` — 'sister', cluster T8
 `G0086` — 'hell: Hades', cluster T10
 `G0091` — 'to harm', cluster M24
 `G0105` — 'eagle', cluster T13
@@ -565,6 +565,7 @@ exception — sibling conflict: 2789
 `G0672` — 'to leave', cluster M59
 `G0684` — 'destruction', cluster M55
 `G0686` — 'therefore', cluster T6
+`G0692` — 'idle', cluster M67,T2
 `G0694` — 'money', cluster M46
 `G0707` — 'Arimathea', cluster T10
 `G0726` — 'to seize', cluster M24
@@ -593,7 +594,6 @@ exception — sibling conflict: 2789
 `G1147` — 'finger', cluster T14
 `G1158` — 'Daniel', cluster T8
 `G1161` — 'then', cluster T6
-`G1166` — 'to show', cluster M05
 `G1321` — 'to teach', cluster M15
 `G1372` — 'to thirst', cluster M18
 `G1390` — 'gift', cluster M39
@@ -618,7 +618,7 @@ exception — sibling conflict: 2789
 `G2048` — 'deserted', cluster T10
 `G2050` — 'devastation', cluster M55
 `G2083` — 'friend', cluster M05
-`G2132` — 'to reconcile', cluster M05
+`G2132` — 'to reconcile', cluster M59
 `G2168` — 'to thank', cluster M49
 `G2190` — 'enemy', cluster M06
 `G2194` — 'Zebulun', cluster T8
@@ -656,7 +656,7 @@ exception — sibling conflict: 2789
 `G2501I` — 'Joseph', cluster T8
 `G2502` — 'Josiah', cluster T8
 `G2505` — 'as/just as', cluster T6
-`G2511` — 'to clean', cluster M12
+`G2511` — 'to clean', cluster M61
 `G2531` — 'as/just as', cluster T6
 `G2532` — 'and', cluster T6
 `G2537` — 'new', cluster M45
@@ -801,7 +801,6 @@ exception — sibling conflict: 2789
 `G5495` — 'hand', cluster T14
 `G5510` — 'snow', cluster T13
 `G5528` — 'grass', cluster T13
-`G5549` — 'to delay', cluster M09
 `G5578` — 'false prophet', cluster M14
 `G5580` — 'false Christ', cluster M14
 `G5606` — 'shoulder', cluster T14
@@ -927,6 +926,7 @@ exception — sibling conflict: 2789
 `G4648` — 'to watch out', cluster M74
 `G4651` — 'scorpion', cluster T13
 `G4661` — 'plunder', cluster M24
+`G4709` — 'diligently', cluster M67,T2
 `G4738` — 'chest', cluster T14
 `G4780` — 'to conceal', cluster M14
 `G4788` — 'to confine', cluster M23
@@ -1106,14 +1106,13 @@ exception — sibling conflict: 2789
 `G1384` — 'tested', cluster M35
 `G1434` — 'free gift', cluster M39
 `G1558` — 'avenging', cluster M26
-`G1731` — 'to show', cluster M05
 `G1738` — 'just', cluster M12
 `G1878` — 'to remind', cluster M82
 `G1943` — 'to cover', cluster M45
 `G2269H` — 'Esau', cluster T11
 `G2509` — 'just as', cluster T6
 `G2526` — 'insofar as', cluster T6
-`G2644` — 'to reconcile', cluster M05
+`G2644` — 'to reconcile', cluster M59
 `G2995` — 'throat', cluster T14
 `G3304` — 'rather', cluster T6
 `G3380` — 'not yet', cluster T5
@@ -1170,6 +1169,7 @@ exception — sibling conflict: 2789
 `G2506` — 'destruction', cluster M55
 `G2583` — 'rule', cluster M72
 `G2676` — 'perfection', cluster M61
+`G3671` — 'confession', cluster M60,T2
 `G3749` — 'clay', cluster T13
 `G3841` — 'almighty', cluster M23
 `G4255` — 'to predetermine', cluster M37
@@ -1184,7 +1184,7 @@ exception — sibling conflict: 2789
 `G3445` — 'to form', cluster M61
 `G3456` — 'to mock', cluster M08
 `G5422` — 'to deceive', cluster M14
-`G0604` — 'to reconcile', cluster M05
+`G0604` — 'to reconcile', cluster M59
 `G0781` — 'unwise', cluster M63
 `G0956` — 'arrow', cluster T12
 `G2282` — 'to care for', cluster M05
@@ -1249,7 +1249,7 @@ exception — sibling conflict: 2789
 `G2369` — 'incense altar', cluster T12
 `G2422` — 'Jephthah', cluster T8
 `G2428` — 'supplication', cluster M42
-`G2514` — 'cleanness', cluster M12
+`G2514` — 'cleanness', cluster M61
 `G2535` — 'Cain', cluster T8
 `G2543` — 'and yet/although', cluster T6
 `G2610` — 'to conquer', cluster M23
@@ -1627,7 +1627,6 @@ exception — sibling conflict: 2789
 `H7018` — 'Kenan', cluster T8
 `H7070H` — 'branch: stem', cluster T13
 `H7073G` — 'Kenaz', cluster T8
-`H7122G` — 'to encounter: meet', cluster M37
 `H7122I` — 'to encounter: chanced', cluster M37
 `H7141G` — 'Korah', cluster T8
 `H7153` — 'Kiriath-arba', cluster T10
@@ -1784,7 +1783,6 @@ exception — sibling conflict: 2789
 `H6532` — 'curtain', cluster T12
 `H6547I` — 'Pharaoh', cluster T8
 `H6547J` — 'Pharaoh', cluster T8
-`H6569` — 'refuse', cluster M30
 `H6619` — 'Pithom', cluster T10
 `H6696C` — 'to form', cluster M61
 `H6731A` — 'flower', cluster T13
@@ -1806,7 +1804,7 @@ exception — sibling conflict: 2789
 `H7508` — 'Rephidim', cluster T10
 `H7545` — 'spice', cluster T12
 `H7785` — 'leg', cluster T14
-`H7806` — 'to twist', cluster M57
+`H7806` — 'to twist', cluster T12
 `H7892B` — 'song', cluster M22
 `H7950` — 'snow', cluster T13
 `H7958` — 'quail', cluster T13
@@ -2376,7 +2374,7 @@ exception — sibling conflict: 2789
 `H3278` — 'Jael', cluster T8
 `H3316H` — 'Jephthah', cluster T8
 `H3378` — 'Jerubbaal', cluster T8
-`H3499B` — 'cord', cluster M03,T12
+`H3499B` — 'cord', cluster T12
 `H3500G` — 'Jether', cluster T8
 `H3573` — 'Cushan-rishathaim', cluster T8
 `H3829` — 'Lebonah', cluster T10
@@ -2521,7 +2519,7 @@ exception — sibling conflict: 2789
 `H2416B` — 'kinsfolk', cluster M25,T8
 `H2444` — 'Hachilah', cluster T10
 `H2584` — 'Hannah', cluster T8
-`H2638` — 'lacking', cluster M18
+`H2638` — 'lacking', cluster M16
 `H2652` — 'Hophni', cluster T8
 `H2678` — 'arrow', cluster T12
 `H2793G` — 'Horesh', cluster T10
@@ -3289,7 +3287,6 @@ exception — sibling conflict: 2789
 `H5196` — 'Netaim', cluster T10
 `H5292B` — 'Naarah', cluster T8
 `H5295` — 'Naaran', cluster T10
-`H5329` — 'to conduct', cluster M76
 `H5418H` — 'Nethaniah', cluster T8
 `H5540` — 'Seled', cluster T8
 `H5565` — 'Semachiah', cluster T8
@@ -3578,6 +3575,7 @@ exception — sibling conflict: 2789
 `H0499K` — 'Eleazar', cluster T8
 `H0563` — 'lamb', cluster T13
 `H0564I` — 'Immer', cluster T10
+`H0629` — 'diligently', cluster M67,T2
 `H0670` — 'Persia', cluster T10
 `H0740G` — 'Ariel', cluster T8
 `H0756` — 'Erech', cluster T10
@@ -4001,7 +3999,7 @@ exception — sibling conflict: 2789
 `H7905` — 'spear', cluster T12
 `H7929` — 'shoulder', cluster T14
 `H8183` — 'storm', cluster T13
-`H8235` — 'clearness', cluster M61
+`H8235` — 'clearness', cluster T13
 `H8417` — 'error', cluster M55
 `H8485H` — 'Tema', cluster T10
 `H8630` — 'to prevail', cluster M23
@@ -4092,7 +4090,8 @@ exception — sibling conflict: 2789
 `H1947` — 'madness', cluster M66
 `H1948` — 'madness', cluster M66
 `H2070` — 'fly', cluster T13
-`H3908` — 'charm', cluster M14
+`H3908` — 'charm', cluster T12
+`H8220` — 'idleness', cluster M67,T2
 `H8623` — 'mighty', cluster M23
 `H1174` — 'Baal-hamon', cluster T10
 `H1313` — 'spice', cluster T12
@@ -4125,7 +4124,6 @@ exception — sibling conflict: 2789
 `H1746H` — 'Dumah', cluster T10
 `H1775` — 'Dibon', cluster T10
 `H1852` — 'curtain', cluster T12
-`H1998` — 'sound', cluster M62
 `H2041` — '[City of] Destruction', cluster T10
 `H2148z` — 'Zechariah', cluster T8
 `H2609` — 'Hanes', cluster T10
@@ -4490,7 +4488,7 @@ exception — sibling conflict: 2789
 <a id="exception-backfill-code-with-an-activeclustered-sibling"></a>
 ## Exception -- backfill code with an active/clustered sibling
 
-`H8088A` — 'sound', cluster M62
+`H8088A` — 'sound', cluster T2
 `H3724A` — 'ransom', cluster T2
 `H2048A` — 'to mock', cluster M08
 `H5607A` — 'mockery', cluster M08
@@ -4703,7 +4701,7 @@ exception — sibling conflict: 2789
 `H7126G` — 'to present: come', cluster T3
 `H7901G` — 'to lie down: lay down', cluster T3
 `H8659H` — 'Tarshish', cluster T10
-`H0990G` — 'belly: abdomen', cluster T2
+`H0990G` — 'belly: abdomen', cluster T14
 `H1530H` — 'heap: wave', cluster T2
 `H1644G` — 'to drive out: drive out', cluster T3
 `H1964G` — 'temple', cluster T2
@@ -4798,7 +4796,7 @@ exception — sibling conflict: 2789
 `H1644H` — 'to drive out: divorce', cluster T3
 `H1699A` — 'pasture', cluster T10
 `H2256D` — 'destruction', cluster M55
-`H2256M` — 'cord', cluster M03,T12
+`H2256M` — 'cord', cluster T12
 `H3162A` — 'unitedness', cluster T2
 `H4496H` — 'resting', cluster M33
 `H5375N` — 'to lift: loud', cluster T3
@@ -4806,7 +4804,7 @@ exception — sibling conflict: 2789
 `H0227A` — 'then', cluster T2
 `H0935K` — 'to come [in]: [sun]set', cluster T3
 `H3293A` — 'wood', cluster T2
-`H3384B` — 'to show', cluster M05
+`H3384B` — 'to show', cluster M16
 `H5391A` — 'to bite', cluster T3
 `H5518A` — 'pot', cluster T12
 `H5844A` — 'to enwrap', cluster T3
@@ -4827,7 +4825,7 @@ exception — sibling conflict: 2789
 `H7626G` — 'tribe: staff', cluster T12
 `H0068H` — 'stone: weight', cluster T2
 `H0256G` — 'Ahab', cluster T8
-`H0990J` — 'belly: body', cluster T2
+`H0990J` — 'belly: body', cluster T14
 `H1121L` — 'son: aged', cluster T2
 `H1160H` — 'Beor', cluster T8
 `H1537G` — 'Gilgal', cluster T10
@@ -4899,7 +4897,7 @@ exception — sibling conflict: 2789
 `H0759H` — 'citadel: fortress', cluster T2
 `H2803H` — 'to devise: count', cluster M64
 `H5492A` — 'whirlwind', cluster T2
-`H0990H` — 'belly: womb', cluster T2
+`H0990H` — 'belly: womb', cluster T14
 `H3423G` — 'to possess: possess', cluster T3
 `H5116A` — 'pasture', cluster T2
 `H0206H` — 'Aven', cluster T10
@@ -4966,9 +4964,6 @@ exception — sibling conflict: 2789
 `G1487I` — 'if: is[question]', cluster T2
 `G1487L` — 'if: else', cluster T2
 `G1492H` — 'to perceive: see', cluster T3
-`G2012` — 'manager', cluster T2
-`G2083` — 'friend', cluster M05
-`G2149` — 'broad', cluster T2
 `G2197G` — 'Zechariah', cluster T8
 `G2264G` — 'Herod', cluster T2
 `G2264H` — 'Herod', cluster T2
@@ -5326,7 +5321,7 @@ exception — sibling conflict: 2789
 `H7070H` — 'branch: stem', cluster T13
 `H7073G` — 'Kenaz', cluster T8
 `H7097A` — 'end', cluster T2
-`H7122G` — 'to encounter: meet', cluster M37
+`H7122G` — 'to encounter: meet', cluster T3
 `H7122I` — 'to encounter: chanced', cluster M37
 `H7141G` — 'Korah', cluster T8
 `H7200J` — 'to see: select', cluster T3
@@ -5776,7 +5771,7 @@ exception — sibling conflict: 2789
 `H3083G` — 'Jonathan', cluster T8
 `H3101G` — 'Joash', cluster T8
 `H3147G` — 'Jotham', cluster T8
-`H3499B` — 'cord', cluster M03,T12
+`H3499B` — 'cord', cluster T12
 `H3500G` — 'Jether', cluster T8
 `H3844H` — '[Mount] Lebanon', cluster T10
 `H3870G` — 'Luz', cluster T10

@@ -4071,6 +4071,7 @@ They record where things were at that date.
 - **Live rule:** `cfg_behaviour_rule` id 70 `cluster-tags-loose-no-retagging` (#1972, applied 2026-10-05 via `Config-Maintenance.ps1 -Step Propose`). A strand or unit that finds a word associated with another cluster records it in its ledger (§F) as a cross-cluster association, for cross-cluster analysis. It never proposes, raises or applies a re-tag, and never builds option tables for one.
 - **Occasion:** anger unit 4 found *qînāh* (H7015, tagged M02) to be lament throughout. It stays tagged M02; its link to grief (M03) is recorded in `_analytics/Clusters/M02 - anger-wrath/anger-observation-ledger-unit4-v1-20261005.md` (AG-196, F.11).
 - `cluster_strong` is unchanged. No `iba/app/**` code changed.
+- **Amended 2026-10-19 (#2167; researcher, verbatim):** *"Rule 70 - retagging only takes place in exceptional circumstances where are group of words turn out to be wrongly clustered."* Rule 70 now bars re-tagging a single word and allows one exception: a group of words that turns out to be wrongly clustered, re-tagged on the researcher's instruction. The first case was #2163: the body words and the flesh word's own T-codes moved to M47 by migration (BUILD.md §352). Applied with `Config-Maintenance.ps1 -Step Propose` (`RUN-20261019_050407_343-CONFIGMAINT`).
 
 ## §89. Reuse extracted base data; read verse-to-M-code set-based from `verse_lexical` (2026-10-07, researcher ruling, escalations #1978, #1980)
 
