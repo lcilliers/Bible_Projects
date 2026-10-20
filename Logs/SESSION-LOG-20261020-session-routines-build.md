@@ -68,4 +68,15 @@ Claude's, within the approved design (none needed a new researcher decision):
 
 ## 6. Git
 
-Written after the session commit.
+Branch `main`. Session commit, pushed (output of `git push`, `git log -1` and `git status -sb`):
+
+```
+To https://github.com/lcilliers/Bible_Projects.git
+   7d3e33ac..b9c01f6a  main -> main
+b9c01f6a593a1a105ae1498a4219daade5f09b47 2026-10-20 16:58:49 +0100 session 20261020 (2): #2173 build - start-project and session-close rebuilt; #2174 decided
+## main...origin/main
+```
+
+Before the commit, `Session-Close.ps1` reported 0 open findings
+(`iba/app/reports/session-close-v143-20261020.md`). This section is committed alone as "session
+log git confirmation" (`session_close.final_commit_marker`); the next start checks for it.
