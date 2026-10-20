@@ -61,12 +61,17 @@ def main() -> None:
             return
         conn = sqlite3.connect(db_path, timeout=2)
         conn.row_factory = sqlite3.Row
+        # #2173 G1: the not-yet-closed states (open + parked) come from cfg_enum, not a literal list
+        live = [r[0] for r in conn.execute(
+            "SELECT value FROM cfg_enum WHERE name IN ('escalation_state_open', "
+            "'escalation_state_parked') AND inactive=0")] or \
+            ["raised", "in-progress", "re-assigned", "on-hold"]
         rows = conn.execute(
             "SELECT id, type, state, next_action, short_description FROM escalation "
             "WHERE next_action_assigned_to='Claude' "
-            "AND state IN ('raised','in-progress','re-assigned','on-hold') "
+            f"AND state IN ({','.join('?' * len(live))}) "
             "AND NOT (type='thread' AND state!='in-progress') "   # #2000, cfg_escalation 4 / T5
-            "ORDER BY id"
+            "ORDER BY id", live
         ).fetchall()
         conn.close()
     except Exception:

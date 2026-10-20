@@ -646,12 +646,15 @@ Programme-state SQL queries (Session B progress, VC progress, OWNER terms needin
 
 - Excluded: `database/bible_research.db`, `backups/`.
 - Committed: `Sessions/Patches/*.json`.
-- **No direct GitHub publishing (2026-10-04, #1941; GOVERNANCE.md §86).** This project never publishes a site to GitHub. The inner-being narrative reaches learning4comfort only through `iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1`, which copies the current files to `C:\learning4comfort\publication-inbox	he_inner_being`. Run it when a section of work is complete, on request, and at every `/session-close` (step 6a). `cfg_setting governance.no_direct_github_publish`.
+- **No direct GitHub publishing (2026-10-04, #1941; GOVERNANCE.md §86).** This project never publishes a site to GitHub. The inner-being narrative reaches learning4comfort only through `iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1`, which copies the current files to `C:\learning4comfort\publication-inbox\the_inner_being`. Run it when a section of work is complete, on request, and at `/session-close` when a chapter changed in the session (SC12; restated 2026-10-20, #2173). `cfg_setting governance.no_direct_github_publish`.
 - Commit message: `session YYYYMMDD: brief description`. Branch: `main`. Remote: `github.com/lcilliers/Bible_Projects`.
-- **Standing pre-authorization (2026-07-23, scope widened 2026-08-10, widened again 2026-09-24):**
-  completing a session log (any `SESSION-LOG-*.md`, including `iba/app/SESSION-LOG-*.md`) **OR**
-  completing a `/session-close` cycle (`.claude/commands/session-close.md`, escalation #1875/#1876)
-  means the full commit-and-push cycle happens in the same unit of work — write a proper commit
+- **Standing pre-authorization (2026-07-23, scope widened 2026-08-10, widened again 2026-09-24,
+  restated 2026-10-20, #2173 G2):** a `/session-close` cycle (`.claude/commands/session-close.md`)
+  includes writing the session log, and ends in the full commit-and-push cycle once
+  `Session-Close.ps1` shows no open finding (it exits 3 while one is open; nothing is committed
+  then). After that commit the log's git section is written and committed alone ("session log
+  git confirmation"). ~~completing a session log OR completing a `/session-close` cycle~~ (the
+  OR let October's closes commit with no log). The cycle happens in the same unit of work — write a proper commit
   message, commit, push, confirm `git status` clean/pushed. This is the standing exception to
   "never commit unless explicitly asked" (§ system instructions) — narrowly scoped to these two
   triggers, not a general license to commit proactively elsewhere. Mirrors

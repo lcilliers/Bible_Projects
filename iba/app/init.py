@@ -5,10 +5,16 @@ The startup sequence, idempotent:
   2. load the config into the DB if it is not already there (or --reload to reseed)
   3. build the data tables from the config if they are missing (or --reset to rebuild)
   4. pre-flight STEP — up AND answering with the tagged module
-  5. orient on BUILD.md + GOVERNANCE.md — what's built, and how config governs it
-  6. print every governance.* cfg_setting explicitly — the only real 'usage' a process rule has
-     (added 2026-07-23, escalation #305 — see lib/cfgquality.find_orphan_configs)
+  5. how the last session ended (S6, escalation #2173): uncommitted work, a missing close
+  6. deliver the rules in full: every governance.* setting, active behaviour rule and active
+     escalation rule (#305; #2173 P2 A) — the input to the session compliance file
   7. print the status
+
+Escalation #2173 P0 (researcher, 2026-10-20, verbatim): *"then stop printing reports that have no
+meaning. If I want to inspect the report, I request it on demand. scale down every any start up
+check that is meaningless."* A check that passes is silent; only a problem is printed, and problems
+come first. The BUILD.md/GOVERNANCE.md one-line orientation and the "first run" hint are dropped:
+the docs are read when work on the app is in hand.
 
 Run it before the first run of a session:
     python -m iba.app.init            # prepare + status (idempotent)
@@ -19,24 +25,11 @@ Run it before the first run of a session:
 from __future__ import annotations
 
 import argparse
-import pathlib
 import sqlite3
 import sys
 
 from .lib.cfg import Cfg, DB_PATH
-from .lib import cfgload, db as dbmod
-
-APP_DIR = pathlib.Path(__file__).resolve().parent
-
-
-def _doc_orientation(path: pathlib.Path) -> str:
-    """First heading + first blockquote line of a doc — enough to orient without dumping it."""
-    if not path.exists():
-        return f"MISSING — expected at {path}"
-    lines = path.read_text(encoding="utf-8").splitlines()
-    heading = next((l.lstrip("#").strip() for l in lines if l.startswith("#")), path.name)
-    blurb = next((l[2:].strip() for l in lines if l.startswith(">")), "")
-    return f"{heading} — {blurb}"
+from .lib import cfgload, compliance, db as dbmod, sessionwindow
 
 
 def _config_loaded() -> bool:
@@ -65,6 +58,7 @@ def main() -> int:
     a = ap.parse_args()
 
     print("IBA app — startup")
+    problems: list[str] = []          # printed first; a passing check prints nothing (P0)
 
     # 1-2. config
     if a.reload or not _config_loaded():
@@ -73,26 +67,18 @@ def main() -> int:
         except cfgload.ConfigRejected as e:
             print(f"  ✗ {e}", file=sys.stderr)
             return 1
-        print(f"  ✓ config loaded ({sum(counts.values())} rows in {len(counts)} cfg_* tables)")
-    else:
-        print("  ✓ config already loaded (use --reload to reseed)")
-
+        problems.append(f"config was (re)loaded from the seeds ({sum(counts.values())} rows in "
+                        f"{len(counts)} cfg_* tables) — confirm this was intended")
     cfg = Cfg()
-    print(f"    config_version: {cfg.config_version()}")
 
     # 3. data tables
     if a.reset or not _data_tables_exist(cfg):
         dbmod.build(reset_data=a.reset)
-        print(f"  ✓ data tables {'rebuilt' if a.reset else 'created'} ({len(cfg.tables())} tables)")
-    else:
-        print(f"  ✓ data tables present ({len(cfg.tables())})")
+        problems.append(f"data tables {'rebuilt' if a.reset else 'created'} "
+                        f"({len(cfg.tables())} tables)")
 
-    # 3b. database-path integrity check — the real consumer of database.iba.path/
-    # database.bible_research.path (escalation #723's cfg_enum project_database +
-    # cfg_setting.database.* pair, escalation #727: both settings were genuine orphans, no code
-    # anywhere read them). Cfg.database_path() is that consumer: confirms the configured path
-    # actually points at a real, existing file, catching path drift (a DB moved but the setting
-    # not updated) rather than reading-and-discarding just to silence the orphan check.
+    # 3b. database-path integrity (escalation #723/#727): Cfg.database_path() is the consumer of
+    # database.*.path; a configured path that does not exist is path drift.
     for db_name in cfg.enum("project_database"):
         try:
             p = cfg.database_path(db_name)
@@ -100,61 +86,47 @@ def main() -> int:
             print(f"  ✗ database_path({db_name!r}): {e}", file=sys.stderr)
             return 1
         if not p.exists():
-            print(f"  ⚠ database.{db_name}.path configured as {p} — file does not exist there")
-        else:
-            print(f"  ✓ database {db_name!r} -> {p}")
+            problems.append(f"database.{db_name}.path is {p}, which does not exist")
 
-    # 4. STEP pre-flight. step.required_for_runs is a real cfg_setting (module='step'), not just
-    # a hardcoded check + doc convention — flip it and this behaviour actually changes, per
-    # governance.rules_must_be_config_driven (2026-07-26): a doc/code-only "must" is not a real
-    # rule until the code reads it from config. Default True matches the behaviour this app has
-    # always had (STEP is mandatory infra), so an unset row changes nothing.
+    # 4. STEP pre-flight. step.required_for_runs is the config's call (governance.rules_must_be_
+    # config_driven); the known-answer probe proves STEP answers, not just that its port is open
+    # (start-project step 2's port probe only launches it, #2173 S5).
     from .lib.stepapi import Step, StepUnavailable
     step_required = cfg.setting("step.required_for_runs", True)
     try:
-        ev = Step(cfg).up()
-        # report the EVIDENCE, not a bare 'up' — the known answer that proves it
-        print(f"  ✓ STEP up and tagged ({ev['base']}, {ev['version']})")
-        print(f"    known-answer probe: {ev['probe']} -> {ev['resolved']} "
-              f"gloss {ev['gloss']!r}, {ev['verses']} verses")
+        Step(cfg).up()
         step_ok = True
     except StepUnavailable as e:
-        print(f"  ⚠ STEP not ready: {e}")
-        print(f"    start the local STEP server, then re-run this. "
-              f"{'Runs will refuse to start without it.' if step_required else '(step.required_for_runs=false — runs may proceed without it.)'}")
+        problems.append(f"STEP not ready: {e} — "
+                        + ("runs will refuse to start without it" if step_required
+                           else "step.required_for_runs=false, runs may proceed"))
         step_ok = False
 
-    # 5. orientation — read before touching code or config; not a substitute for reading them in full
-    print("\n  orientation (read before making changes):")
-    print(f"    BUILD.md      {_doc_orientation(APP_DIR / 'BUILD.md')}")
-    print(f"    GOVERNANCE.md {_doc_orientation(APP_DIR / 'GOVERNANCE.md')}")
+    # 5. how the last session ended (S6)
+    try:
+        problems += [f"last session: {x}" for x in sessionwindow.last_close_findings(cfg)]
+    except Exception as exc:                      # never hide why the check did not run
+        problems.append(f"last-session check could not run: {type(exc).__name__}: {exc}")
 
-    # 6. governance rules — read EXPLICITLY here, not just pointed at via the doc above. Per the
-    # researcher's 2026-07-23 correction (escalation #305): a governance.* cfg_setting is a
-    # process rule the AI must comply with, not a runtime application input, so it has no code
-    # path that "applies its value" the way an ordinary setting does. Its only real 'usage' is
-    # being surfaced here, at the one place every session is required to run before doing any
-    # work — otherwise it's a rule that exists only as an unread database row.
-    print("\n  governance rules (must be complied with this session):")
-    for row in cfg.conn.execute(
-            "SELECT key, value FROM cfg_setting WHERE module='governance' ORDER BY key"):
-        print(f"    {row['key']}: {row['value']}")
+    if problems:
+        print("\n  NEEDS ACTION:")
+        for x in problems:
+            print(f"  ! {x}")
 
+    # 6. the rules, in full, from the DB (#305; #2173 P2 A). The session compliance file
+    # (Compliance.ps1 -Action Template, then -Action Check -Phase Start) restates each one.
+    print("\n  RULES (comply with every one this session; restate each in the compliance file):")
+    for line in compliance.deliver_lines(cfg.conn):
+        print(line)
     cfg.close()
 
     if not step_ok and step_required:
-        # Found 2026-07-26: this used to print the warning above then `return 0` unconditionally
-        # — "runs will refuse to start without it" had no actual teeth at the one place every
-        # session runs first, which is exactly how a STEP-dependent tool got run (and its result
-        # reported as a pass) while STEP was down. Now the exit code actually reflects the stated
-        # rule, gated by step.required_for_runs so it's the config's call, not a hardcoded one.
+        # 2026-07-26: "runs will refuse to start without it" has teeth here, gated by config.
         print("\nNOT READY — STEP is required (step.required_for_runs) and not reachable. "
               "Start STEP, then re-run.")
         return 1
-
-    print("\nREADY." if step_ok else "\nREADY (config + DB) — waiting on STEP "
-          "(step.required_for_runs=false, proceeding anyway).")
-    print("  first run:  iba\\app\\ps\\New-Word.ps1 -Word <word> -Source \"<why>\"")
+    print("\nREADY." if step_ok else
+          "\nREADY (config + DB) — STEP not reachable, step.required_for_runs=false.")
     return 0
 
 

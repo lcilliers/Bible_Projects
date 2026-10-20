@@ -3854,6 +3854,8 @@ table-group framing is now stale too (pre-dates this ruling); flagged, not rewri
 
 ## §82. `session.close` built — mechanical detection of escalation-update/governance-doc/BUILD.md gaps at session end, `/session-close` slash command (2026-09-24, researcher-directed, escalation #1875)
 
+> **Superseded in part 2026-10-20 (§96, #2173).** Checks (a)-(c) below compared records with records (the CLI's own write confirmations against `escalation_history`), listed files instead of checking them, and passed when the git window was missing. `session.close` now checks the work against its record (SC1-SC12) and blocks the commit while a finding is open. The record below is kept as history.
+
 Researcher, verbatim: *"create a slash command to action a session close. ... a) check that every
 escalation touched in the session was properly updated with the chat content for the escalation ...
 b) validate that all the chats have updated governance, and the configs, and where previous
@@ -4048,7 +4050,7 @@ They record where things were at that date.
 
 - **Live rule:** `cfg_setting governance.no_direct_github_publish`. No GitHub Actions workflow and no push to a site repository from this project.
 - **The route:** `iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1` (`narrativecopy.py`). Source `narrative.copy_source_dir`; target `narrative.learning4comfort_inbox_dir`.
-- **When:** on completion of a section of work, on request, and at every `/session-close` (step 6a).
+- **When:** on completion of a section of work, on request, and at `/session-close` when a chapter changed in the session (restated 2026-10-20, §96: it had run at every close).
 - **Ownership:** the learning4comfort repo owns preparation, review, approval and publishing from its inbox. This project only places files there.
 - **Superseded:** the direct-to-GitHub workflow and `publishing/learning4comfort/` (never committed) are retired to `archive/publishing-retired-20261004/`. The earlier note "publishing handled with another provider" (memory, 2026-10-02) is history only.
 - Build record: BUILD.md §335.
@@ -4230,3 +4232,55 @@ They record where things were at that date.
   - a `.md` file in the narrative folder that is no chapter's current file
 - **Publishing follows the table** (D3). `Copy-NarrativeToLearning4Comfort.ps1` (`lib/narrativecopy.py`) copies exactly the active chapters' current files. A stray file is reported and not copied, and a chapter whose file is missing stops the copy.
 - **Built** by `iba/app/migration/narrative_chapter_table_config_v1_20261018.py` (run_id `DEVMODE-2155-CHAPTER-20261018`, every cfg_* write through `configmaint.apply_logged`). It also wrote the approved purposes for all 37 active chapters, and a Structure log entry for 00 Introduction, which was added on 2026-10-18 by direct insert before `AddChapter` existed (#2159). BUILD.md §351.
+
+## §96. The session routines check the work against its record: rules restated at start and proved at close; the close blocks the commit (2026-10-20, escalations #2173, #2174)
+
+Researcher, verbatim (2026-10-20): *"Counts and stats are meaningless if they do not lead to real
+disclosure."* *"You print the config report, but you ignore the content. What step can I take as
+part of the behaviour section to ensure that you read and understood the governance and config
+rules and acknowledge that you will comply with it."* *"This is your domain, I am expecting you to
+do a professional, complete, with proper controls, self audit job"*. Design: the two proposals in
+`outputs/markdown/session-routines-*-change-proposal-v1-20261020.md`; build BUILD.md §353.
+
+What config now governs, and where:
+
+- **"Open" has one meaning** (G1): `cfg_enum escalation_state_open` (raised, in-progress,
+  re-assigned); on-hold is **parked** (`escalation_state_parked`); `escalation_state_terminal`.
+  Code reads the groups (lib/escalation.py `state_group`, the stop hook); nothing hardcodes them.
+- **Start (P0):** a check that passes is silent; only problems are reported, problems first.
+  Reports are on demand except where they carry findings the session must act on.
+- **Rules read and proved (P2)** -- `cfg_behaviour_rule` 81 session-compliance-restated-and-proved.
+  `init.py` delivers every active governance setting, behaviour rule and escalation rule in full;
+  method rules by area. The session compliance file (`compliance.dir`) restates each one for the
+  session or marks it not engaged with a reason, carries `compliance.acknowledgement`, and names
+  every conflict or rule not followed. `Compliance.ps1 -Action Check -Phase Start` must pass before
+  the start ends; at close (SC6) every engaged rule needs evidence that checks. The researcher's
+  control is the close list and a spot check of the start file.
+- **What open escalations point to (P1):** `Escalation.ps1 -Action Context` reads every field of
+  every version; files resolve to the latest live version. Escalation rule 7 is checked by it; rule
+  6 is **retired** (#2174: its column was removed by #909; its purpose is met by Context).
+- **Threads (P5):** `Escalation.ps1 -Action ThreadAudit`, T-a to T-g by item; worked strands from
+  `escalation.worked_strand_escalations` and live state, never memory.
+- **Spine (P3)** -- method rules 68 (restated), 126 spine-meaning-complete-against-step (new, Q1),
+  66 superseded, 67 restated without the retired parse tables: span -> strong, verse <-> span,
+  strong -> cluster, strong -> meaning against STEP (`spine.meaning_lexicon_languages`). Run at
+  close (SC2), not at start.
+- **Close (SC1-SC14)** -- `cfg_behaviour_rule` 82 session-close-blocks-commit-on-open-findings:
+  `Session-Close.ps1` exits 3 while a finding is open; a finding clears by a fix or a disposition
+  the check verifies. Rules 79 (reading-file-placement-per-verse, Q2) and 80
+  (open-items-lines-carry-a-handle) are enforced there. The quote check is in the app
+  (`Narrative-Register.ps1 -Action QuoteCheck`, G14). Settings `session_close.*`.
+- **Session log and commit** -- `governance.session_log_triggers_commit` (G2) and
+  `governance.session_log_required_content` (G4) restated: the close includes the log; the log's
+  six sections are headed as `session_close.log_sections`; decisions name their targets (SC9); the
+  commit follows the log, then section 6 is written and committed alone ("session log git
+  confirmation", `session_close.final_commit_marker`), which the next start checks (S6).
+- **Publishing** -- `governance.no_direct_github_publish` restated: the narrative copy runs at
+  close only when a chapter changed (SC12).
+
+Contradictions resolved in the same migration (rules naming retired things): behaviour rules 47 and
+54 retired (their tables inactive since §81); 43, 62, 74 restated; escalation rules 3 (the gate is
+disabled, #859), 12 and 17 restated; `governance.verse_gap_by_design` restated. Not yet in config:
+a mechanical `evidence_check` per context-delivered rule (P2 D, G5/G12); until then the close
+evidence is Claude's, checked where it names a file, `#n vN` or a commit.
+

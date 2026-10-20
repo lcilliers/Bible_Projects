@@ -1,159 +1,121 @@
 ---
-description: Session-startup procedure — git check, IBA app bootstrap, orientation, status report
+description: Session-startup procedure — git and last-close check, IBA bootstrap, rule compliance file, open escalations and their files, thread audit, status report
 ---
 
 # Start Project — Session Startup
 
-Run this procedure in full, in order, every time it's invoked — even if a prior session in this
-conversation seems recent. Do not skip steps. Do not infer a task from the results and start
-executing it — this command ends in a status report and a question, not in work.
+Rebuilt 2026-10-20 (escalation #2173; proposal
+`outputs/markdown/session-routines-start-project-change-proposal-v1-20261020.md`). Run every step,
+in order, every time. Do not infer a task from the results and start it: this command ends with
+the findings and a question.
 
-## 1. Git state check
+**P0 (researcher, verbatim): *"stop printing reports that have no meaning. If I want to inspect
+the report, I request it on demand."*** A check that passes is not reported. Report only what is
+wrong or needs action, by name, with its reason. Never report a bare count or "N checks passed".
+The escalation list, the threads list, the spine check and the config report are on demand only
+(`Escalation.ps1 -Action List` / `-Action Thread`, `Spine-Check.ps1`, `Config-Maintenance.ps1`).
 
-Run `git status` and `git log -1 --format="%H %ci"`.
+## 1. STEP
 
-- If the working tree isn't clean, say what's changed — don't commit anything unasked.
-- If there's an uncommitted `SESSION-LOG-*.md` (anywhere, including `iba/app/`), flag it
-  immediately: per CLAUDE.md §12, completing a session log means the full commit-and-push cycle
-  happens in the same unit of work, and an uncommitted one left over from a prior session is a
-  known recurring gap (see `feedback_commit_incrementally`), not something to carry forward
-  silently.
-
-## 2. Start STEP if it isn't already up
-
-STEP (the local STEP Bible server, `http://localhost:8989`) is a standalone desktop app, not part
-of this repo: `C:\Program Files (x86)\STEP\step.exe`. Check first, don't blindly relaunch:
+Check port 8989; if nothing listens, start STEP and wait (it only launches STEP; step 2 proves it
+answers):
 
 ```powershell
-Get-NetTCPConnection -LocalPort 8989 -State Listen -ErrorAction SilentlyContinue
+if (-not (Get-NetTCPConnection -LocalPort 8989 -State Listen -ErrorAction SilentlyContinue)) {
+    Start-Process "C:\Program Files (x86)\STEP\step.exe"
+    $deadline = (Get-Date).AddSeconds(90)
+    do { Start-Sleep -Seconds 5; $up = Get-NetTCPConnection -LocalPort 8989 -State Listen -ErrorAction SilentlyContinue } while (-not $up -and (Get-Date) -lt $deadline)
+}
 ```
 
-If nothing is listening, start it and wait for it to come up before moving on:
+No report line unless it did not come up.
+
+## 2. Bootstrap, last session, rules: `iba\app\ps\Start-Iba.ps1`
+
+`python -m iba.app.init` (`iba/app/init.py`). It prints only problems, under **NEEDS ACTION**:
+config reloaded, tables created, a database path that does not exist, STEP not answering the
+known-answer probe, and **how the last session ended** (`lib/sessionwindow.last_close_findings`,
+S6): uncommitted paths, an uncommitted session log, a newest commit that is not a session-close's
+final commit (`session_close.final_commit_marker`) with the commits since the last close, and a
+newest session log that names no existing commit in its git section. Then it prints **every**
+active governance setting (`G:`), behaviour rule (`B:`) and escalation rule (`E:`) in full, from
+the database. Read them: step 3 restates each one.
+
+Report each NEEDS ACTION line first. NOT READY stops the start. If the last session did not end
+with a completed close, say so and name the commits; read that session's log only then.
+
+## 3. Rule compliance file (P2): `iba\app\ps\Compliance.ps1`
 
 ```powershell
-Start-Process "C:\Program Files (x86)\STEP\step.exe"
-$deadline = (Get-Date).AddSeconds(90)
-do {
-    Start-Sleep -Seconds 5
-    $up = Get-NetTCPConnection -LocalPort 8989 -State Listen -ErrorAction SilentlyContinue
-} while (-not $up -and (Get-Date) -lt $deadline)
+.\iba\app\ps\Compliance.ps1 -Action Template
 ```
 
-It's a GUI app under the researcher's own local install — launching it is expected to pop its
-window; that's normal, not a fault. If it still isn't listening after the 90s poll window, stop
-polling and say so plainly in the step-5 report — don't loop indefinitely and don't claim READY
-without the port actually confirmed open.
+It writes `Logs/compliance/COMPLIANCE-<date>-<session8>.md` with one row per active rule. Fill it
+(`cfg_behaviour_rule` session-compliance-restated-and-proved):
 
-## 3. Bootstrap the IBA app
+- **Acknowledgement:** the exact sentence in `compliance.acknowledgement`.
+- **Rules:** per row, status `engaged` or `not engaged`, and in your own words what the rule
+  requires of you **in this session** (the work in hand), or why it is not engaged. Never copy the
+  rule text: a copy is a finding. No `|` inside a cell. Leave `evidence` empty for now.
+- **Conflicts and rules not followed:** one `- <id>: ...` line per rule that conflicts with
+  another rule, a CLAUDE.md banner or memory (name both sides), or that is not or cannot be
+  followed (why). Every rule the check lists as naming a retired thing must be here.
 
-Run `iba/app/ps/Start-Iba.ps1` via the PowerShell tool (not Bash — it's a `.ps1`).
+Then:
 
-Per CLAUDE.md, this is mandatory on opening the project, before any IBA work — run it regardless
-of whether this session turns out to touch IBA. It validates/loads config into `iba.db`, builds
-data tables if missing, pre-flights the local STEP server (a second, authoritative check beyond
-the port probe in step 2 — it confirms STEP is not just up but answering with the tagged module),
-and prints pointers to `iba/app/BUILD.md` (what's built) and `iba/app/GOVERNANCE.md` (how config
-governs the code).
+```powershell
+.\iba\app\ps\Compliance.ps1 -Action Check -Phase Start
+```
 
-Report plainly whether it reached READY. If STEP still isn't reachable, a dependency is missing,
-or the script errors, say so as-is — do not proceed as though it passed.
+It exits 3 until the file passes. **The start does not end until it passes.** During the session,
+add each engaged rule's evidence (a file path, `#nnnn vN`, a commit hash, a command's output) as
+you produce it; session-close checks it (SC6). The researcher may spot-check any row against its
+rule: a wrong, vague or copied restatement means the rule was not understood, and the session
+stops there until it is re-read.
 
-## 4. Orient on open threads
+## 4. Open escalations and what they point to (P1)
 
-Read from the live system, not from memory — per `feedback_iba_session_start_read_live_docs_not_memory`.
-The escalation table is the project's single authoritative open-item/task system
-(`governance.escalation.scope`, project-wide, not IBA-only — `docs/governance-alignment-register.md`
-was retired 2026-08-18 in favour of it):
+```powershell
+.\iba\app\ps\Escalation.ps1 -Action Context
+```
 
-- Run `iba/app/ps/Escalation.ps1 -Action List` and read the report it writes
-  (`iba/app/reports/escalation-list.md` by default) — note anything `raised`/`in-progress`/
-  `on-hold`/`re-assign` that's relevant to this session, especially rows `next_action_assigned_to`
-  Claude.
-- The most recent file(s) under `outputs/markdown/` and `outputs/session-logs/` if an open
-  escalation or the last commit message points to an in-progress thread worth naming.
-- **Unenforced-config summary (escalation #1384, 2026-09-03 — "not decided"/"not yet"/"flagged"
-  notes on active configs are not control; they must be visible every session, not rediscovered
-  by accident).** Query `cfg_behaviour_rule` for `active=1 AND enforcement_status !=
-  'mechanically_enforced'` (a count by `enforcement_status`, not just a total). The live enum
-  (`cfg_enum.behaviour_rule_enforcement_status`) has 7 values: `mechanically_enforced` (excluded
-  from this count), `context_delivered` and `deliberately_deferred` (already-settled
-  determinations — nothing pending), `partially_enforced` and `buildable_not_built` (structurally
-  known, not yet fully built), `judgment_call_pending` (waiting on a researcher decision — call
-  these out by name and rule_key, not just a count), and `not_mechanically_checkable` (legacy
-  value — escalation #1388, 2026-09-03, converted every row that carried it to `context_delivered`
-  with a real verified-delivery check; it should read 0 live, and a nonzero count here is itself
-  worth flagging as new drift, not silently absorbed into the total). Report the breakdown by
-  every status present, not only `judgment_call_pending` vs a lump "settled" bucket — or, once
-  `configmaint.validate`/`report` has actually run this session for another reason, its own
-  `unenforced_behaviour_rules`/`config_hedge_phrases` findings cover the same ground, don't
-  re-query separately. Don't run `configmaint.validate` solely to produce this count if nothing
-  else calls for it this session — a direct `cfg_behaviour_rule` query is cheaper and sufficient
-  for orientation.
+It writes `escalation.context_report_path` (versioned): for every **open** escalation (raised,
+in-progress, re-assigned; `cfg_enum escalation_state_open`; on-hold is parked and is read when
+taken up), every file named in any field of any version, resolved to its **latest live version**.
+Findings: `missing` (no live version; the escalation points at nothing) and `bare` (a bare
+filename, escalation rule 7).
 
-## 4A. Spine integrity check (`governance.base_data_spine`, escalation #1613, 2026-09-10)
+Then **read the resolved latest file(s) of each open escalation** with its question in mind, and
+say per escalation what they show for its next action: what is decided, what is still open, and
+whether a newer file supersedes what the escalation describes. Name the `missing`/`bare`
+findings. Items assigned to Claude come first (escalation rule 4).
 
-Run `iba/app/ps/Spine-Check.ps1`. It checks the base-data spine (verse/span/strong sync, strong-
-extended-meaning-parse completeness — both FATAL per `cfg_method_rule` if broken) and reports a
-discoverability pass (M-code strongs in analyzed verses missing parse, `word_strong` strongs
-missing parse). Read-only, persists its own report every run.
+## 5. Threads (P5)
 
-- If it reports 0 FATAL findings: note the discoverability count plainly in step 5, move on.
-- If it reports any FATAL finding: **surface this prominently and first** in the step-5 report,
-  above everything else — per `governance.base_data_spine`, a spine desync is fixed on discovery,
-  not carried forward silently. Do not treat a pending pause/escalation from a prior run as
-  resolved without checking `Escalation.ps1 -Action List` for its actual state.
+```powershell
+.\iba\app\ps\Escalation.ps1 -Action ThreadCheck -AnsweredBy Claude
+.\iba\app\ps\Escalation.ps1 -Action ThreadAudit
+```
 
-## 4B. Open threads (researcher, 2026-10-12; carried in the escalation table since #2000)
+ThreadCheck (rule T5) is reported only if it moved a thread or closed an item, naming each move.
+ThreadAudit writes `escalation.thread_audit_report_path`: findings by thread item, T-a (handle
+does not resolve), T-b (no note), T-c (referred escalation closed, item open), T-d (open on a
+worked strand, `escalation.worked_strand_escalations`), T-e (verse already told), T-f (thread
+shape), T-g (register file out of date). Report the findings by check with their items (the
+report path for the full list); a check with none is not mentioned.
 
-Researcher, verbatim: *"you can add the open register as a standard item when a new session is
-started."* Since escalation #2000 the open threads register is carried in the escalation table as
-type `thread` (alias `OT-nn`; `cfg_behaviour_rule` open-threads-carried-as-escalations). The file
-`_analytics/cross-cluster-web/open-threads-register.md` is generated from it: do not read it, and
-never edit it. Instead:
+Only when a strand is in progress (none while the study is on hold, CLAUDE.md banner): run
+`Escalation.ps1 -Action Match -Cluster .. -Strong .. -Verse ..` for it and name the threads that
+bear on it. Name the threads waiting on the researcher only when their answer blocks the work in
+hand.
 
-1. **Thread check (rule T5)** -- run first:
+## 6. Report and stop
 
-   ```powershell
-   .\iba\app\ps\Escalation.ps1 -Action ThreadCheck -AnsweredBy Claude
-   ```
+In chat, in this order, findings only:
 
-   Every on-hold thread referenced by an **in-progress** task or issue (an open `escalation`
-   item) moves to `in-progress`; an item whose task or issue has closed is closed. A reference
-   from a raised or on-hold task waits until that task is started (round 2: *"in-progress only"*).
-2. **List the open threads:**
+1. Everything wrong or needing action (FATAL first): NEEDS ACTION lines; the last-session check.
+2. The open escalations, each with what its files show for its next action; the Context findings.
+3. The compliance file: passed, and the rules named in its conflicts section.
+4. The thread findings.
 
-   ```powershell
-   .\iba\app\ps\Escalation.ps1 -Action Thread
-   ```
-
-   Report the counts by state. Rule 4 (`cfg_escalation` resolution_precedence) counts the
-   `in-progress` threads only: name each one with its alias, id and title. An on-hold thread is
-   never "work first".
-3. **Name the threads that bear on the work in hand.** The strand in progress is taken from the
-   CLAUDE.md strand queue and the last commit message. Match its cluster codes, Strong's numbers or
-   verses (rule T1):
-
-   ```powershell
-   .\iba\app\ps\Escalation.ps1 -Action Match -Cluster M18 -Strong H2530
-   ```
-
-   This is read-only. When a task or issue is raised or about to be started, add `-For nnnn
-   -AnsweredBy Claude` to record the match on each thread.
-4. **Name any threads waiting on the researcher**: open threads with a `researcher` item (for
-   example OT-99, OT-100; `-Action Thread -Id OT-nn` shows a thread's items in full).
-
-## 5. Report and stop
-
-Summarise, briefly, in chat (not a new `.md` file — this is a status check, not a deliverable):
-
-- Git state (clean/dirty; anything uncommitted flagged).
-- STEP (was it already up, or did this command start it — and did it come up in time).
-- IBA bootstrap result (READY or what went wrong).
-- **Spine check result (step 4A) — FATAL findings first, if any.**
-- Open escalations relevant to this session, and any other loose end found.
-- Open threads (step 4B): what the thread check moved; the counts by state; the in-progress
-  threads; the threads that bear on the strand in progress; the threads waiting on the researcher.
-- Unenforced-config count from step 4, by `enforcement_status` — name the `judgment_call_pending`
-  ones specifically (they're waiting on a researcher decision), not just a bare total.
-
-Then stop and ask what to work on this session. Do not start a task on your own initiative.
+Then ask what to work on. Do not start a task on your own initiative.

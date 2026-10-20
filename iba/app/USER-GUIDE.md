@@ -74,43 +74,42 @@ commands from the repo root (`C:\Bible_study_projects`).
 iba\app\ps\Start-Iba.ps1
 ```
 
-This prepares the environment and reports `READY`. Typical (repeat-session) output:
+This prepares the environment and reports `READY`. **A check that passes prints nothing**
+(escalation #2173 P0, researcher: *"stop printing reports that have no meaning"*). Typical output:
 
 ```
 IBA app — startup
-  ✓ config already loaded (use --reload to reseed)
-    config_version: app-0.1.0+6c68c02fb4b8
-  ✓ data tables present (40)
-  ✓ STEP up and tagged (http://localhost:8989, ESV_th)
-    known-answer probe: H0430 -> H0430G gloss 'God', 2088 verses
 
-  orientation (read before making changes):
-    BUILD.md      The IBA app — build record — ...
-    GOVERNANCE.md How the app is governed by config — ...
+  NEEDS ACTION:
+  ! last session: the working tree is not clean: 3 path(s) uncommitted, e.g. ...
 
-  governance rules (must be complied with this session):
-    governance.build_md_on_code_change: ...
-    governance.escalation.scope: ...
-    ... one line per `module='governance'` cfg_setting row, ALL of them, every run (currently
-    33 rows) — read this block in full, not just the two doc-teaser lines above it ...
+  RULES (comply with every one this session; restate each in the compliance file):
+
+  -- governance settings (cfg_setting module=governance) --
+  G:governance.User_Guide_scope  governance.User_Guide_scope: ...
+  ...
+  -- behaviour rules (cfg_behaviour_rule, active) --
+  B:1  sqlite.verify-before-acting [context_delivered]: ...
+  ...
+  -- escalation rules (cfg_escalation, active) --
+  E:1  source_classification: ...
 
 READY.
-  first run:  iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"
 ```
 
-Table/row/rule counts above are a real snapshot (2026-08-17), not fixed — they grow as config and
-the DB grow. On a genuinely first-ever run (no config loaded yet), the first two lines instead read
-`✓ config loaded (N rows in M cfg_* tables)`, and the data-tables line reads `created` rather than
-`present`.
+`NEEDS ACTION` appears only when something is wrong: config reloaded, data tables created, a
+database path that does not exist, STEP not answering, or **how the last session ended**
+(`lib/sessionwindow.last_close_findings`, #2173 S6): uncommitted paths or session log, a newest
+commit that is not a session-close's final commit (`session_close.final_commit_marker`, with the
+commits since the last close), or a newest session log that names no existing commit in its git
+section.
 
-It is **idempotent** — safe to run any time. What it does, in order (`init.py`'s docstring, steps
-1–7): validate the config; load it into the DB if not already there (or `--reload` to reseed);
-build the data tables if missing (or `--reset` to rebuild); pre-flight STEP; print an orientation
-pointer to `BUILD.md`/`GOVERNANCE.md` (added 2026-07-22); **print every `module='governance'`
-`cfg_setting` row explicitly, in full** (added 2026-07-23, escalation #305) — not summarised, not
-optional: per `governance.rules_must_be_config_driven`, a process rule unread at startup from its
-own `cfg_*` row is a rule that exists only in a doc or in memory, which the config itself forbids;
-print the `READY`/`NOT READY` status.
+It is **idempotent** — safe to run any time. What it does, in order (`init.py`'s docstring): validate
+the config; load it into the DB if not already there (or `--reload` to reseed); build the data
+tables if missing (or `--reset` to rebuild); pre-flight STEP; check how the last session ended;
+**print every active governance setting, behaviour rule and escalation rule in full** (#305;
+#2173 P2) — the rules the session compliance file then restates (§11c); print `READY`/`NOT READY`.
+The BUILD.md/GOVERNANCE.md orientation line and the "first run" hint were dropped (#2173 P0).
 
 **The STEP check is a known-answer probe, not a ping.** It does not merely ask "did something
 answer on the port" — it fetches a fixed Strong's (`H0430`) and requires the *expected* answer back:
@@ -498,7 +497,30 @@ item with `-NextAction reject -State supersede -Comment "superseded by #901 — 
 item's own `-Action History` separately (escalation #909, 2026-08-27: they're no longer linked
 into one combined thread — see the retirement note above).
 
+### 4.7a Open and parked; what open escalations point to (2026-10-20, escalation #2173)
+
+**Open** means raised, in-progress or re-assigned (`cfg_enum escalation_state_open`); on-hold is
+**parked** (`escalation_state_parked`); completed/closed/withdraw/supersede are terminal. The list
+report heads "N open, M parked". At every start:
+
+```powershell
+iba\app\ps\Escalation.ps1 -Action Context       # outputs/escalation/escalation-context-vN-<date>.md
+iba\app\ps\Escalation.ps1 -Action ThreadAudit   # outputs/escalation/escalation-thread-audit-vN-<date>.md
+```
+
+`Context` (`lib/escalationcontext.py`) lists, per open escalation, every file named in any field
+(short_description, comment, tried, context, resolution) of any version, resolved to its **latest
+live version** (same base name, highest `-vN`, outside `archive/`). Findings: `missing` (no live
+version) and `bare` (a bare filename, escalation rule 7). Read the resolved file, not the one
+named. `ThreadAudit` (`lib/threadaudit.py`) is in §4.8.
+
 ### 4.8 Threads — the open threads register (2026-10-12, escalation #2000)
+
+**Thread audit (#2173 P5):** `Escalation.ps1 -Action ThreadAudit` lists findings by item: T-a a
+handle that does not resolve; T-b an open item with no note; T-c an item whose referred escalation
+is closed; T-d an item open on a worked strand (`escalation.worked_strand_escalations`, completed
+by state); T-e a verse item whose verse a chapter tells; T-f thread shape (no open item, no "comes
+back when", a successor that does not exist); T-g the register file out of date.
 
 The open threads register (held items, researcher questions and signposts, each with a "comes
 back when") is carried in this table as type `thread`. Each thread has an alias `OT-nn`, and
@@ -817,40 +839,75 @@ the everyday flow.
 
 ---
 
-## 11b. Session-close checks (`Session-Close.ps1`, `/session-close`, added 2026-09-24, escalation #1875)
+## 11b. Session-close checks (`Session-Close.ps1`, `/session-close`; rebuilt 2026-10-20, escalation #2173)
 
-Run at the end of a session, before handing off — not tied to any build step, like §11's checks.
-Read-only detection of three things the researcher asked to be checked every time a session ends:
+Run at the end of a session through `/session-close` (`.claude/commands/session-close.md`).
 
 ```powershell
 iba\app\ps\Session-Close.ps1
-#   -> iba/app/reports/session-close.md — escalation-update coverage, governance/doc drift signal,
-#      BUILD.md coverage
+#   -> iba/app/reports/session-close-vN-<date>.md ; exit 3 while any finding is open (commit BLOCKED)
 ```
 
-It re-reads the CURRENT session's own transcript — Claude Code already records one automatically
-per session (`~/.claude/projects/.../<sessionId>.jsonl`), so no separate tracker is needed — and
-checks: (a) every escalation the transcript shows was touched via `Escalation.ps1` has a matching
-`escalation_history` row at that version; (b) reports which of `GOVERNANCE.md`/`CLAUDE.md`/
-`USER-GUIDE.md` changed in the session's `git` diff window (whether that's enough is a judgement
-call, not mechanically decided here); (c) any `iba/app/**` file changed this session with no
-matching `iba/app/BUILD.md` entry.
+It checks the session's work against its record (`handlers/session_close.py`). Each finding has a
+stable key:
 
-**Which session it checks** (corrected 2026-09-30, escalation #1894): the session it is running
-in. It is identified by `CLAUDE_CODE_SESSION_ID`, or failing that by the transcript that contains
-the running `Session-Close.ps1` call. The report's `session_id` line names the method used. The
-diff window starts at that session's own record in `.claude/session-boundary/<session_id>.json`.
-It no longer uses the shared `.session-boundary-state.json`, which any other session starting or
-resuming in the folder overwrites. If the session cannot be identified, the report says so and
-skips the checks. Sessions started before 2026-09-30's change have no per-session record, so the
-git-based checks are skipped for them, and the report says so.
+| step | finding |
+|---|---|
+| SC1 | the session or its boundary record cannot be found (the close fails: the git window is unknown) |
+| SC2 | a spine FATAL finding (§11d) |
+| SC3 | a researcher message in the transcript that appears in no escalation comment written this session |
+| SC4 | an `Open items` line (in a file changed this session) with no open `OT-nn.n`/`#nnnn`; a researcher message with a holding word (`session_close.held_words`) |
+| SC5 | a chapter file changed with no recorded weave; a quotation in a chapter's added lines not in the ESV text; a register-check finding new since the last close, or standing on a chapter changed now; a verse a changed reading file names with no placement, or placed `told` and not told (`cfg_behaviour_rule` 79) |
+| SC6 | an engaged rule in the session compliance file with no evidence, or evidence that does not check (§11c) |
+| SC8 | no session log naming this session in `governance.session_log_dir`, or a missing section (`session_close.log_sections`) |
+| SC9 | a line in the log's decisions section naming no target that changed this session (a file, a `cfg_*` table, `#nnnn vN`) |
+| SC10 | a code/config file changed (`session_close.build_scope`) not named in what BUILD.md gained |
+| SC12 | whether the narrative copy (a chapter changed) and the threads export (a thread row changed, or the register file is out of date) are needed |
 
-**Never blocks** — always exits clean, even with gaps found (`gaps-found` → `report-continue`), so
-it never creates an approval cycle. It only detects; it doesn't fix anything itself. Use the
-`/session-close` slash command (`.claude/commands/session-close.md`) to run this AND have Claude
-actually remediate whatever it finds — read the report, then follow the command's own remediation
-steps (escalation updates capturing researcher-verbatim/design-debates/decisions/skipped-items,
-governance/doc edits, BUILD.md entries). Full design record: `GOVERNANCE.md` §82.
+**Clearing a finding:** fix it, or write a disposition in the compliance file's
+`## Close dispositions` section, `- <key> :: <disposition>`: `carried OT-nn.n` / `carried #nnnn`
+(an open item); for SC3 `recorded in #n vN` or `no record needed: <reason>`; for SC4(b)
+`in register ...` or `not held: <reason>`; for a quotation `not scripture: <reason>`. The check
+verifies each one. The previous close's register-check findings are kept in
+`session_close.state_path` (the baseline for "new").
+
+**Session identity** (#1894): `CLAUDE_CODE_SESSION_ID`, else the newest transcript containing the
+running call; the start is the session's own `.claude/session-boundary/<id>.json`.
+
+**Commit:** while the script exits 3 nothing is committed (`cfg_behaviour_rule` 82). After the
+commit, the log's section 6 is written and committed alone ("session log git confirmation"). Full
+record: `GOVERNANCE.md` §82 (history) and §96.
+
+## 11c. The session compliance file (`Compliance.ps1`, added 2026-10-20, escalation #2173 P2)
+
+```powershell
+iba\app\ps\Compliance.ps1 -Action Template            # Logs/compliance/COMPLIANCE-<date>-<session8>.md
+iba\app\ps\Compliance.ps1 -Action Check -Phase Start  # exit 3 until it passes
+```
+
+The template has one row per active rule: `G:<governance setting>`, `B:<behaviour rule id>`,
+`E:<escalation rule id>`. Claude fills it at the start (`/start-project` step 3): the
+acknowledgement sentence (`compliance.acknowledgement`); per rule, status `engaged` or
+`not engaged` and, in its own words, what the rule requires in this session or why it is not
+engaged (a row that copies the rule text is a finding: `compliance.copy_shingle_words`,
+`compliance.copy_share_max`); and in `## Conflicts and rules not followed` every rule in conflict
+or not followed, by id (every rule that names a retired table, step, setting or file must be
+there). During the session each engaged row gains its **evidence** (a file path, `#nnnn vN`, a
+commit hash, a command output); session-close (SC6) checks it. **To check compliance yourself:**
+read the SC6 list in the close report, and spot-check any row of the start file against its rule.
+
+## 11d. Spine check (`Spine-Check.ps1`; extended 2026-10-20, escalation #2173 P3)
+
+```powershell
+iba\app\ps\Spine-Check.ps1     # -> research/discovery/spine-check-vN-<date>.md
+```
+
+Read-only. FATAL: a span code with no live `strong`; a live span with no live verse, or a live
+verse with no live span (a verse with no row at all is a gap by design); a strong in a live span
+with no live `cluster_strong` row to a live cluster; a meaning gap (`strong_sense`,
+`strong_meaning_tree`, or for `spine.meaning_lexicon_languages` `strong_lexicon`) where STEP holds
+the content. A gap where STEP holds nothing is listed as by design. It runs inside session-close
+(SC2) and on demand; it no longer runs at start.
 
 ---
 
@@ -1494,7 +1551,15 @@ iba\app\ps\Narrative-Register.ps1 -Action Find -ToldInMoreThanOne
 iba\app\ps\Narrative-Register.ps1 -Action History -Claim K-2
 iba\app\ps\Narrative-Register.ps1 -Action Check
 iba\app\ps\Narrative-Register.ps1 -Action Export
+iba\app\ps\Narrative-Register.ps1 -Action QuoteCheck -File <chapter.md> [-Against <previous.md>]
 ```
+
+- **`QuoteCheck`** (#2173 G14, `lib/quotecheck.py`): every quotation in `-File` (or only in the
+  lines it added against `-Against`) must be in the ESV text of iba.db `verse`, joined in canonical
+  order so a quote across a verse boundary is found. Glosses after an italic transliteration and
+  quoted section/chapter titles are skipped; parts under `narrative.quote_min_words` words too.
+  Report under `narrative.register_report_dir`. Session-close (SC5) runs it on every chapter
+  changed. The one-off copies in cluster folders are superseded by it.
 
 - **`-Source`** is one string: items separated by `;` (or ` | `). A verse reference in any spelling
   the chapters or the register use (`2 Corinthians 1:12`, `2Co 1:12`, ranges, lists, `Mal 2:17–3:2`),

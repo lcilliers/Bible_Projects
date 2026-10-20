@@ -17228,3 +17228,91 @@ Verse sets come only from the raw layer.
 
 **Open (#2163):** H0990J/H6106I exceptions; whether the wider T-coded body set (corpse/carcass,
 *mortal*, *member*, skin, bone, belly, loins, womb) also joins the complex.
+
+## 353. start-project and session-close rebuilt: rules read and proved, work checked against its record (2026-10-20, escalations #2173, #2174)
+
+Researcher, verbatim (Developer Mode session): *"This is your domain, I am expecting you to do a
+professional, complete, with proper controls, self audit job of preparing the code and updating
+the tables and documentation."* ... *"You are suppose to do the work in 2173, I also not you
+created 2174 which is a subset of the work and must also be included."* Design:
+`outputs/markdown/session-routines-start-project-change-proposal-v1-20261020.md` (P0-P5, S1-S6,
+G1-G12) and `outputs/markdown/session-routines-session-close-change-proposal-v1-20261020.md`
+(SC1-SC14, G13-G14); description `outputs/markdown/session-routines-start-close-description-v1-20261020.md`.
+
+**Build (code):**
+- `iba/app/lib/escalation.py` -- G1: the state groups come from `cfg_enum`
+  (`escalation_state_open`/`_parked`/`_terminal`; `state_group()`, `live_states()`); the hardcoded
+  `_OPEN_STATES`/`_TERMINAL_STATES` are gone. Every "not yet closed" check (Update's gate, Match,
+  duplicate suppression, `open_for_step`) uses open + parked, so behaviour is unchanged; the list
+  report heads "N open, M parked". `render_thread_register()` split from `write_thread_register()`.
+- `iba/app/handlers/reports.py` -- `escalation_list` message (open/parked); new
+  `escalation_context` and `escalation_thread_audit` steps.
+- `iba/app/lib/escalationcontext.py` (new) -- P1: every file each open escalation names in any
+  field of any version, resolved to its latest live version; findings `missing` and `bare` (rule 7).
+- `iba/app/lib/threadaudit.py` (new) -- P5: thread findings T-a to T-g by item; worked strands
+  from `escalation.worked_strand_escalations` and the escalations' live state.
+- `iba/app/lib/compliance.py` (new), `iba/app/handlers/compliance.py` (new),
+  `iba/app/ps/Compliance.ps1` (new) -- P2: rules delivered in full (`deliver_lines`), the session
+  compliance file (`template`), the start check (`check_start`: a row per rule, none blank, none
+  copied, the acknowledgement, retired-name rules named in the conflicts section) and the close
+  check (`check_close`: evidence for every engaged rule, checked). Exits 3 until it passes.
+- `iba/app/lib/sessionwindow.py` (new) -- session identity, boundary record, git window, transcript
+  messages (factored out of `handlers/session_close.py`) and S6 `last_close_findings()`. Git runs
+  in `GIT_ROOT`; file checks use `repo_root()`.
+- `iba/app/init.py` -- P0: silent on pass, problems first under NEEDS ACTION; S6 last-session check;
+  P2 A: every active governance setting, behaviour rule and escalation rule printed in full; the
+  BUILD/GOVERNANCE orientation line and the first-run hint dropped.
+- `iba/app/handlers/spine.py` -- P3: `compute()` checks span -> strong, verse <-> span,
+  strong -> cluster (governance.base_data_spine, stated since 2026-09-21 and unchecked until now)
+  and strong -> meaning (local gaps in `strong_sense`, `strong_meaning_tree`, `strong_lexicon`
+  asked of STEP: content in STEP the table lacks is FATAL; nothing in STEP is a gap by design;
+  STEP unreachable leaves gaps unverified, FATAL). `finding_lines()` gives stable keys.
+- `iba/app/lib/quotecheck.py` (new) -- G14: the M08 quote check moved into the app, with quote
+  marks paired in order, glosses after an italic transliteration and quoted titles skipped.
+  `narrative_register.quote_check` step (`Narrative-Register.ps1 -Action QuoteCheck -File
+  [-Against]`) in `iba/app/handlers/narrativeregister.py`.
+- `iba/app/handlers/session_close.py` -- rebuilt, SC1-SC12 with stable finding keys and checked
+  dispositions (compliance file `## Close dispositions`); state between closes in
+  `session_close.state_path` (SC5c baseline); SC12 export also when the register file differs
+  from the table (it embeds rule 74). `iba/app/ps/Session-Close.ps1` exits 3 (commit blocked) while
+  any finding is open and prints the publish flags.
+- `iba/app/ps/Escalation.ps1` -- `-Action Context`, `-Action ThreadAudit`.
+- `iba/app/ps/Narrative-Register.ps1` -- `-Action QuoteCheck`, `-Against`.
+- `.claude/hooks/stop_check_escalation_backlog.py` -- reads the open + parked states from cfg_enum.
+- `.claude/commands/start-project.md`, `.claude/commands/session-close.md` -- rewritten from the code.
+
+**Build (config):** `iba/app/migration/session_routines_2173_v1_20261020.py`, Developer Mode, every
+write through `configmaint.apply_logged` (run `DEVMODE-2173-SESSION-ROUTINES-20261020`):
+4 enums; 24 settings (escalation.context_*, thread_audit_report_path, worked_strand_escalations;
+compliance.*; spine.meaning_lexicon_languages with its evidence; narrative.quote_min_words;
+session_close.*); restated governance settings session_log_triggers_commit (G2),
+session_log_required_content (G4, Q3), verse_gap_by_design, no_direct_github_publish; behaviour
+rules 79 reading-file-placement-per-verse (Q2), 80 open-items-lines-carry-a-handle, 81
+session-compliance-restated-and-proved, 82 session-close-blocks-commit-on-open-findings; rules 47
+and 54 retired (their tables inactive since GOVERNANCE.md section 81); 43, 62, 74 restated; method
+rule 126 spine-meaning-complete-against-step (Q1), 66 superseded (G6), 67 and 68 restated (G7, G8);
+escalation rules 3 (G9; the gate is disabled, #859), 7 (G10), 12, 17 restated, **6 retired (#2174)**;
+work package session-compliance; 5 steps, 3 `does` texts; 3 reports, 13 report sections (3
+retired); 6 on-fail rows (1 retired); 7 utilities (exemptions with reasons), 2 purposes. 101 audited rows.
+DB backup `iba/app/db/iba.db.pre-2173-session-routines-20261020.bak`.
+
+**#2174 decided:** escalation rule 6 retired. It could not be followed (related_activity removed
+2026-08-27, #909); its purpose is met by `-Action Context`.
+
+**Test plan run:** `iba/docs/2173-session-routines-test-plan-v1-20261020.md`, runner
+`iba/app/tools/temp_2173_test_plan_run.py` against a migrated copy and a scratch file tree:
+**49 of 49 pass**. The acceptance run on this session found five faults, each fixed at the root with a test: a false copy finding on a short restatement (`compliance.copy_min_words`, P2.7); the hex in a file name read as a commit (P2.8); a short message ("proceed") matched by substring (`session_close.message_min_words`, SC3); a wrapped bullet read as one physical line (`_bullets`, SC4a.3); the close report's own heading read as an Open items section (`session_close.open_items_exclude`, SC4a.4). Config validation, copy vs live: 0 coherence errors (17 found and fixed on the
+first pass: setting modules), no new orphan, 5 lib modules registered. Live after the migration:
+List "6 open, 8 parked"; Context 11 findings; ThreadAudit 187 findings (raised as #2176, on hold
+with the study); Spine-Check 0 FATAL, 6 gaps by design; QuoteCheck over every chapter: 15 of 5,571
+quoted parts not found (raised as #2175, on hold). PS worksheet drift 0
+(`iba/app/tools/archive/temp_2173_ps_worksheet_sync.py`, one-off, archived at close; it also cleared the drift other tabs already
+had: Narrative-Register, Purge-SoftDeletes, VerseReading, and three scripts with no tab).
+
+**Not done here:**
+- An `evidence_check` per context-delivered rule (P2 D "over time", G5/G12): today a rule's close
+  evidence is given by Claude and checked only where it names a file, `#n vN` or a commit.
+- The `bare` Context findings sit in historical escalation text (history is not edited); they
+  clear as those escalations close.
+- SC14's commit hashes are in the session log's section 6 (written after the first commit), not in
+  the close report, which is written before the commit.

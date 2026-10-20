@@ -1,15 +1,16 @@
 <#
 .SYNOPSIS
-    Session-close checks — escalation update coverage, governance/config/doc drift signal, and
-    BUILD.md tracking-id coverage for the current Claude Code session (escalation #1875, researcher
-    design approval 2026-09-24). Standalone, single-step work package, like Spine-Check.ps1.
+    Session-close detection (escalation #1875; rebuilt #2173, SC1-SC14): session and window, spine
+    (FATAL first), researcher's words recorded, open items in the register, analysis integrity,
+    rule compliance evidence, session log, decisions' targets, BUILD.md coverage, publish flags.
 
 .DESCRIPTION
-    Read-only detection. Always persists a report (session_close.report_path). Never blocks or
-    escalates for a `gaps-found` condition — this step's own findings route to `report-continue`
-    (exit 0), per the researcher's explicit instruction that remediation must not create an
-    additional approval cycle. Remediation itself is a separate step: read the report this prints,
-    then follow `.claude/commands/session-close.md` to fix any gap found.
+    Read-only detection; always persists a report (session_close.report_path). A finding is
+    cleared only by fixing it or by a disposition in the session compliance file that the check
+    accepts. While any finding is open this script exits 3 and the commit is BLOCKED (SC13): the
+    findings route to report-continue (no escalation, no approval cycle -- the researcher's
+    2026-09-24 instruction), and the block is this exit code. Remediation follows
+    `.claude/commands/session-close.md`.
 
 .PARAMETER RunId   resume a specific run_id (rarely needed — this step never pauses).
 .PARAMETER Trace   Print every config read (IBA_TRACE).
@@ -51,6 +52,16 @@ Write-IbaStepResult -Step $stepId -Path $res.path -Message $res.message -Code $c
 
 if ($code -eq 2) {
     Write-IbaPaused -WorkPackage 'session-close' -RunId $runId -Message $res.message
+}
+if ($res.counts -and ($res.counts.PSObject.Properties.Name -contains 'open_findings')) {
+    $pub = @()
+    if ($res.counts.narrative_copy -eq 1) { $pub += 'narrative copy NEEDED' } else { $pub += 'narrative copy not needed' }
+    if ($res.counts.thread_export -eq 1) { $pub += 'threads export NEEDED' } else { $pub += 'threads export not needed' }
+    Write-Host "  publish (SC12): $($pub -join '; ')"
+    if ($res.counts.open_findings -gt 0) {
+        Write-Host "  COMMIT BLOCKED: $($res.counts.open_findings) open finding(s) ($($res.counts.fatal) FATAL). Fix each, or disposition it in the compliance file, then re-run." -ForegroundColor Red
+        exit 3
+    }
 }
 
 exit $code

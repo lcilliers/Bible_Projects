@@ -1,20 +1,34 @@
 # Base-data spine integrity check
 
-> Generated 2026-10-20T13:34:20Z by `spine.check`. Read-only findings against the base-data spine (`governance.base_data_spine`, escalation #1613, researcher ruling 2026-09-10) — verse defines what's included, span defines how meaning is derived, strong is the operative anchor. The strong -> extended-meaning-parse check that used to run here was REMOVED 2026-09-11 (escalation #1681/#1684/#1686) — it checked coverage against strong_meaning_parsed/strong_lsj_parsed/strong_mounce_parsed, which were retired and frozen on 2026-09-10 and are no longer maintained; see handlers/spine.py module docstring for the full history. FATAL findings need action.
+> Generated 2026-10-20T15:31:18Z by `spine.check` (#1613; extended #2173 P3). Read-only. Checks: span -> strong, verse <-> span, strong -> cluster, strong -> meaning (strong_sense, strong_meaning_tree, strong_lexicon against what STEP holds for each local gap). The parse tables stay retired. Every FATAL finding needs action.
 
-- **FATAL** verse/span/strong desync (span-referenced codes with no live `strong` row): **0**
+- live strongs checked: 15455; Strong's codes named by live spans: 15455
+- **FATAL findings: 0**
+- meaning gaps by design (STEP holds nothing more): 6
+
 
 ## Contents
 
 - [Summary](#summary)
 - [Integrity (FATAL)](#integrity-fatal)
+- [Meaning gaps by design](#meaning-gaps-by-design-step-holds-nothing)
 
 <a id="summary"></a>
 ## Summary
 
-0 verse/span/strong desync (FATAL)
+0 FATAL finding(s); 6 meaning gap(s) by design
 
 <a id="integrity-fatal"></a>
 ## Integrity (FATAL)
 
-**verse/span/strong sync** — 0 code(s) a live `span` row actually names with no live `strong` row. Sample: []
+_no FATAL finding_
+
+<a id="meaning-gaps-by-design-step-holds-nothing"></a>
+## Meaning gaps by design (STEP holds nothing)
+
+- G0001G: strong_lexicon.mounce -- STEP holds nothing for it
+- G4528H: strong_lexicon.mounce -- STEP holds nothing for it
+- G6094: strong_lexicon.mounce -- STEP holds nothing for it
+- H0430H: strong_meaning_tree -- STEP holds nothing for it
+- H1121A: strong_meaning_tree -- STEP holds nothing for it
+- H5945H: strong_meaning_tree -- STEP holds nothing for it

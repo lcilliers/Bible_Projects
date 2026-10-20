@@ -189,7 +189,16 @@
                         in-progress; items whose task/issue has closed are closed.
     -Action Export -Type thread
                         regenerates `_analytics/cross-cluster-web/open-threads-register.md`
-                        (escalation.thread_register_path). Session-close runs it.
+                        (escalation.thread_register_path). Session-close runs it only when a
+                        thread row changed in the session (SC12, #2173).
+    -Action Context      #2173 P1, at session start: every file each OPEN escalation (raised,
+                        in-progress, re-assigned) names in any field of any version, resolved to
+                        its latest live version (escalation.context_report_path). Findings:
+                        `missing` (no live version) and `bare` (bare filename, cfg_escalation
+                        rule 7). Read-only, through run.py (escalation.context).
+    -Action ThreadAudit  #2173 P5, at session start: thread quality, validity and integrity
+                        (T-a handle resolves .. T-g register file current), each finding by thread
+                        item (escalation.thread_audit_report_path). Read-only.
 
 .EXAMPLE
     .\Escalation.ps1 -Action List
@@ -230,7 +239,7 @@ param(
     [Parameter(Mandatory = $true)]
     [ValidateSet('List', 'History', 'AnswerRun', 'Raise', 'Update', 'Correction',
                  'ResolveSelfCorrectable', 'EscalateToDecision',
-                 'Thread', 'Match', 'ThreadCheck', 'Export')]
+                 'Thread', 'Match', 'ThreadCheck', 'Export', 'Context', 'ThreadAudit')]
     [string] $Action,
     # escalation #2000: a string, so a thread alias (OT-16) is accepted anywhere an id is.
     [string] $Id,
@@ -469,6 +478,24 @@ switch ($Action) {
         if ($State) { $params += @('--param', "State=$($State.ToLower())") }
         if ($Id) { $params += @('--param', "Id=$Id") }
         $json = python -m iba.app.run escalation-reporting --step escalation.thread --run-id $runId @params
+        $code = $LASTEXITCODE
+        $res = $json | ConvertFrom-Json
+        Write-Host "  $($res.message)"
+        exit $code
+    }
+    'Context' {
+        # escalation #2173 P1: what every open escalation points to (start-project step 4).
+        $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-ESCALATION-CONTEXT"
+        $json = python -m iba.app.run escalation-reporting --step escalation.context --run-id $runId
+        $code = $LASTEXITCODE
+        $res = $json | ConvertFrom-Json
+        Write-Host "  $($res.message)"
+        exit $code
+    }
+    'ThreadAudit' {
+        # escalation #2173 P5: thread findings by item (start-project step 4B).
+        $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-ESCALATION-THREAD-AUDIT"
+        $json = python -m iba.app.run escalation-reporting --step escalation.thread_audit --run-id $runId
         $code = $LASTEXITCODE
         $res = $json | ConvertFrom-Json
         Write-Host "  $($res.message)"

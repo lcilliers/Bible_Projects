@@ -139,9 +139,37 @@ from . import reportkit
 from .cfg import Cfg
 from .db import Db
 
-_OPEN_STATES = ("raised", "re-assigned", "on-hold", "in-progress")
-_TERMINAL_STATES = ("completed", "closed", "withdraw", "supersede")
+# State groups (escalation #2173 G1, 2026-10-20). "Open" had two meanings: the researcher's
+# (raised, in-progress, re-assigned -- what is being worked) and this module's old hardcoded
+# _OPEN_STATES, which also counted on-hold and so reported parked items as open ("there are only 4
+# open escalations. Where do you get 35?"). The groups now live in config (cfg_enum
+# escalation_state_open / _parked / _terminal, governance.rules_must_be_config_driven), and every
+# "not yet closed" check uses open + parked explicitly (live_states), so duplicate suppression,
+# Update's gate and Match keep their behaviour.
+_STATE_GROUP_ENUM = {"open": "escalation_state_open", "parked": "escalation_state_parked",
+                     "terminal": "escalation_state_terminal"}
+_STATE_GROUP_SQL = {   # literal names, so configmaint's orphan check sees each group's reader
+    "open": "SELECT value FROM cfg_enum WHERE name='escalation_state_open' AND inactive=0 ORDER BY ordinal",
+    "parked": "SELECT value FROM cfg_enum WHERE name='escalation_state_parked' AND inactive=0 ORDER BY ordinal",
+    "terminal": "SELECT value FROM cfg_enum WHERE name='escalation_state_terminal' AND inactive=0 ORDER BY ordinal",
+}
 _THREAD_OPEN_STATES = ("on-hold", "in-progress")    # a thread never sits at raised (T2)
+
+
+def state_group(db, group: str) -> tuple[str, ...]:
+    """The states in one group ('open' | 'parked' | 'terminal'), from cfg_enum. `db` is a Db or a
+    sqlite3 connection. Missing config is an error, never a silent default."""
+    conn = getattr(db, "conn", db)
+    rows = conn.execute(_STATE_GROUP_SQL[group]).fetchall()
+    if not rows:
+        raise RuntimeError(f"cfg_enum {_STATE_GROUP_ENUM[group]!r} has no active values -- the "
+                           f"escalation state groups are config (#2173 G1)")
+    return tuple(r[0] for r in rows)
+
+
+def live_states(db) -> tuple[str, ...]:
+    """Not yet closed: open + parked."""
+    return state_group(db, "open") + state_group(db, "parked")
 
 # every business column on `escalation` / `escalation_history` (id/version/escalation_id excluded
 # -- those are structural, not part of a snapshot's business content)
@@ -902,7 +930,7 @@ def _sync_threads_for(cfg: Cfg, db: Db, ref_id: int, *, who: str) -> list[str]:
         it = dict(it)
         thread = _current(db, it["escalation_id"])
         label = thread["alias"] or f"#{thread['id']}"
-        if ref["state"] in _TERMINAL_STATES:
+        if ref["state"] in state_group(db, "terminal"):
             # #2000 lifecycle (G2): the item takes the task's own ending -- a withdrawn or
             # superseded task does not read as work done.
             kind = {"withdraw": "withdrawn", "supersede": "superseded"}.get(ref["state"], "closed")
@@ -982,7 +1010,7 @@ def match_threads(cfg: Cfg, db: Db, *, clusters=(), strongs=(), verses=(), for_r
         target = _current(db, for_id)
         if target["type"] == "thread":
             raise ValueError(f"-For must be a task or issue, not a thread (#{for_id})")
-        if target["state"] not in _OPEN_STATES:
+        if target["state"] not in live_states(db):
             raise ValueError(f"-For #{for_id} is not open (state={target['state']!r})")
         who = _check_assignee(db, who)
     if not (clusters or strongs or verses):
@@ -1239,10 +1267,11 @@ def open_duplicate(db: Db, at_step: str, stable_key: str):
        never see. Fixed: reuse the module's own shared `_OPEN_STATES` (raised/re-assigned/
        on-hold/in-progress) -- the same "still open, not yet closed" definition `write_list_report`
        already uses -- rather than the narrower literal this function invented independently."""
-    ph = ",".join("?" * len(_OPEN_STATES))
+    live = live_states(db)
+    ph = ",".join("?" * len(live))
     rows = db.rows(
         f"SELECT * FROM escalation WHERE at_step=? AND state IN ({ph}) AND context LIKE ? "
-        f"ORDER BY id DESC LIMIT 1", (at_step, *_OPEN_STATES, f"%{stable_key}%"))
+        f"ORDER BY id DESC LIMIT 1", (at_step, *live, f"%{stable_key}%"))
     return rows[0] if rows else None
 
 
@@ -1252,10 +1281,11 @@ def open_for_step(db: Db, at_step: str, tried_prefix: str):
     the exact finding summary, so a configmaint.validate re-run whose COUNTS had changed raised a
     new escalation and left the earlier one open (#2104 -> #2105 -> #2106 -> #2107, then #2112 and
     #2113 open side by side). The caller now records the changed findings on this one instead."""
-    ph = ",".join("?" * len(_OPEN_STATES))
+    live = live_states(db)
+    ph = ",".join("?" * len(live))
     rows = db.rows(
         f"SELECT * FROM escalation WHERE at_step=? AND state IN ({ph}) AND tried LIKE ? "
-        f"ORDER BY id DESC LIMIT 1", (at_step, *_OPEN_STATES, f"{tried_prefix}%"))
+        f"ORDER BY id DESC LIMIT 1", (at_step, *live, f"{tried_prefix}%"))
     return rows[0] if rows else None
 
 
@@ -1458,7 +1488,7 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     if not cur["run_id"].startswith("MANUAL-") and cur["resolution_kind"] != "decision_required":
         return (f"escalation #{escalation_id} is dispatcher-tied (run_id {cur['run_id']!r}), not "
                f"manual -- answer it via AnswerRun, not Update")
-    if cur["state"] not in _OPEN_STATES:
+    if cur["state"] not in live_states(db):
         return f"escalation #{escalation_id} is not open (state={cur['state']!r})"
 
     who = _check_assignee(db, originator)
@@ -1782,19 +1812,21 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
     Threads (escalation #2000, proposal sec5, clash C6) are kept out of the per-item body -- 100
     of them would flood it -- and get one short section instead: counts by state, then the
     in-progress threads only (rule 4 counts those alone). `-Action Thread` lists them all."""
-    ph = ",".join("?" * len(_OPEN_STATES))
+    open_s, parked_s = state_group(db, "open"), state_group(db, "parked")
+    live = open_s + parked_s
+    ph = ",".join("?" * len(live))
     rows = db.rows(f"SELECT * FROM escalation WHERE state IN ({ph}) AND type != 'thread' "
-                   f"ORDER BY id", _OPEN_STATES)
-    n_on_hold = sum(1 for r in rows if r["state"] == "on-hold")
-    n_in_progress = sum(1 for r in rows if r["state"] == "in-progress")
-    n_active = len(rows) - n_on_hold - n_in_progress
+                   f"ORDER BY id", live)
+    n_open = sum(1 for r in rows if r["state"] in open_s)
+    n_parked = len(rows) - n_open
     objectives = cfg.required_setting("escalation.control_objectives")
     process = cfg.required_setting("escalation.control_process")
     L = ["# Open escalations", "",
         f"> {objectives}. {process}.".strip(), "",
-        f"> Generated by `Escalation.ps1 -Action List`. {len(rows)} open escalation(s) "
-        f"({n_active} active, {n_in_progress} in-progress, {n_on_hold} on-hold), full history "
-        f"inline (each row = that version's own changes).", ""]
+        f"> Generated by `Escalation.ps1 -Action List`. {n_open} open ({', '.join(open_s)}), "
+        f"{n_parked} parked ({', '.join(parked_s)}) -- state groups from cfg_enum "
+        f"escalation_state_open/_parked (#2173 G1). Full history inline (each row = that "
+        f"version's own changes).", ""]
     if not rows:
         L.append("_no open escalations_")
     for r in rows:
@@ -1846,8 +1878,8 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
     # deliberate filter.
     resolved = db.rows(
         "SELECT id, short_description, state, resolution, answered_at "
-        "FROM escalation WHERE state IN ('completed','closed','withdraw','supersede') "
-        "AND type != 'thread' ORDER BY answered_at DESC LIMIT 15")
+        f"FROM escalation WHERE state IN ({','.join('?' * len(state_group(db, 'terminal')))}) "
+        "AND type != 'thread' ORDER BY answered_at DESC LIMIT 15", state_group(db, "terminal"))
     L += ["## Recently resolved (last 15)", ""]
     if not resolved:
         L.append("_none yet_")
@@ -2004,6 +2036,14 @@ def write_thread_report(cfg: Cfg, db: Db, path: pathlib.Path, *, state: str | No
 
 
 def write_thread_register(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Path, int]:
+    """Writes render_thread_register() (split 2026-10-20, #2173 P5: the thread audit compares the
+    file on disk with what this would write now)."""
+    L, n = render_thread_register(cfg, db)
+    out = reportkit.write_report(db.conn, "escalation.thread_export", path, L)
+    return out, n
+
+
+def render_thread_register(cfg: Cfg, db: Db) -> tuple[list[str], int]:
     """`Escalation.ps1 -Action Export -Type thread` (escalation #2000, proposal sec5): regenerates
     the open threads register at its old path from the escalation table -- every thread, by OT
     number, `OT-nn · #id` in the id cell (decision 3). The thread, raised and comes-back-when cells
@@ -2038,8 +2078,7 @@ def write_thread_register(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib
         L.append(f"| {t['alias']} · #{t['id']} | {_cell(t['comment'])} | "
                  f"{_cell(_raised_in(t['context']))} | {_cell(t['comes_back_when'])} | "
                  f"{_cell(chr(10).join(parts))} |")
-    out = reportkit.write_report(db.conn, "escalation.thread_export", path, L)
-    return out, len(threads)
+    return L, len(threads)
 
 
 def _extract_flag(args: list[str], name: str) -> tuple[list[str], str | None]:
@@ -2154,7 +2193,8 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
     if len(argv) >= 1 and argv[0] == "list":
         path = pathlib.Path(cfg.required_setting("escalation.list_report_path"))
         out, rows = write_list_report(cfg, db, path)
-        print(f"  {len(rows)} open escalation(s) -> {out}")
+        n_open = sum(1 for r in rows if r["state"] in state_group(db, "open"))
+        print(f"  {n_open} open, {len(rows) - n_open} parked escalation(s) -> {out}")
     elif len(argv) >= 3 and argv[0] == "answer-run":
         rest, by = _extract_flag(argv[3:], "by")
         rest, resolution = _extract_flag(rest, "resolution")

@@ -1,40 +1,80 @@
-# Session close — escalation update / governance drift / BUILD.md coverage check (#1875)
+# Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-20T14:49:51Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
+> Generated 2026-10-20T15:58:12Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session_id: `433b41df-6cc4-4c91-81c1-acb568a4df0f` (identified by: CLAUDE_CODE_SESSION_ID)
-- session started: 2026-10-20T13:33:42Z
-- transcript found: True
-- escalation-update gaps: **0**
-- BUILD.md gaps: **0**
+- session: `d7696d1d-b5aa-4ccf-a85e-a48878417161` (CLAUDE_CODE_SESSION_ID); started 2026-10-20T14:51:00Z; window base commit `7d3e33ac90f22d1c9388c7abedcca9187c409cec`
+- compliance file: `Logs/compliance/COMPLIANCE-20261020-d7696d1d.md`; session log: `Logs/SESSION-LOG-20261020-session-routines-build.md`
+- **open findings: 0**; cleared by disposition: 1
+
 
 ## Contents
 
 - [Summary](#summary)
-- [Escalation update coverage](#escalation-update-coverage)
-- [Governance / config / doc drift](#governance-config-doc-drift)
-- [BUILD.md coverage](#buildmd-coverage)
+- [SC1](#sc1-session-and-window)
+- [SC2](#sc2-spine-fatal)
+- [SC3](#sc3-researchers-words-recorded)
+- [SC4](#sc4-open-items-in-the-register)
+- [SC5](#sc5-analysis-integrity)
+- [SC6](#sc6-rule-compliance)
+- [SC8](#sc8-session-log)
+- [SC9](#sc9-decisions-reached-their-targets)
+- [SC10](#sc10-buildmd-coverage)
+- [SC12](#sc12-publish)
 
 <a id="summary"></a>
 ## Summary
 
-0 escalation-update gap(s), 0 BUILD.md gap(s).
+0 open finding(s); none
 
-<a id="escalation-update-coverage"></a>
-## Escalation update coverage
+<a id="sc1-session-and-window"></a>
+## SC1 Session and window
 
-Escalations touched this session (id, highest version seen in transcript vs. live `escalation_history`):
-- #2173: transcript v11
-- #2174: transcript v1
+_no finding_
 
-<a id="governance-config-doc-drift"></a>
-## Governance / config / doc drift
+<a id="sc2-spine-fatal"></a>
+## SC2 Spine (FATAL)
 
-Files changed this session under governance/doc scope: CLAUDE.md.
+_no finding_
 
-Whether chat content that SHOULD have updated governance/config actually did, and whether any now-superseded text is properly marked superseded/retired, is a judgement call for Claude to make reading the actual session transcript — not mechanically checked here (no chat-content-to-decision mapping exists to check against). If the session's own SESSION-LOG 'decisions made' section names a decision with no matching change among the files above, that is the signal to look at.
+<a id="sc3-researchers-words-recorded"></a>
+## SC3 Researcher's words recorded
 
-<a id="buildmd-coverage"></a>
-## BUILD.md coverage
+- cleared `SC3:c1a83a94`: researcher message 2026-10-20T14:51 is too short to be matched; name where it is recorded: "proceed" -- disposition: no record needed: "proceed" answered my question whether to run /developer-mode for #2173; the session it started and the researcher's next, full instruction are recorded verbatim in #2173 v12
 
-No BUILD.md gap detected — either no `iba/app/**` code changed this session, or `BUILD.md` was updated alongside it.
+<a id="sc4-open-items-in-the-register"></a>
+## SC4 Open items in the register
+
+_no finding_
+
+<a id="sc5-analysis-integrity"></a>
+## SC5 Analysis integrity
+
+Chapters changed: none; quote parts checked: 0; register check findings now: 46.
+
+_no finding_
+
+<a id="sc6-rule-compliance"></a>
+## SC6 Rule compliance
+
+_no finding_
+
+<a id="sc8-session-log"></a>
+## SC8 Session log
+
+_no finding_
+
+<a id="sc9-decisions-reached-their-targets"></a>
+## SC9 Decisions reached their targets
+
+_no finding_
+
+<a id="sc10-buildmd-coverage"></a>
+## SC10 BUILD.md coverage
+
+_no finding_
+
+<a id="sc12-publish"></a>
+## SC12 Publish
+
+- narrative copy: not needed (no chapter changed)
+- threads register export: RUN (a thread row changed)

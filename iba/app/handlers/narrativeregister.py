@@ -103,3 +103,35 @@ def check(ctx: Ctx) -> Outcome:
 def export(ctx: Ctx) -> Outcome:
     paths = nr.export(ctx.cfg)
     return ok("\n  ".join(["wrote"] + [str(p) for p in paths]), files=len(paths))
+
+
+def quote_check(ctx: Ctx) -> Outcome:
+    """escalation #2173 G14 -- `Narrative-Register.ps1 -Action QuoteCheck -File <chapter.md>
+    [-Against <previous.md>]`: every quotation in the file (or only in the lines it added against
+    -Against) must be found in the ESV text (lib/quotecheck.py). Read-only."""
+    import pathlib
+    from ..lib import quotecheck
+    f = ctx.params.get("File")
+    if not f:
+        return fail("refused", "QuoteCheck needs -File")
+    p = pathlib.Path(f)
+    if not p.is_file():
+        return fail("refused", f"no such file: {f}")
+    against = ctx.params.get("Against")
+    old = pathlib.Path(against).read_text(encoding="utf-8") if against else None
+    lines = quotecheck.added_lines(old, p.read_text(encoding="utf-8"))
+    corpus = quotecheck.Corpus(ctx.db.conn)
+    n, bad = quotecheck.check_lines(corpus, lines,
+                                    int(ctx.cfg.required_setting("narrative.quote_min_words")),
+                                    quotecheck.titles(ctx.db.conn))
+    report = [f"# Quote check: {p.name}", "",
+              f"{'Lines added against ' + pathlib.Path(against).name if against else 'Whole file'}. "
+              f"{n} quoted part(s) checked; {len(bad)} not found in the ESV text.", ""]
+    report += [f"- \"{b}\"" for b in bad]
+    out_dir = pathlib.Path(ctx.cfg.required_setting("narrative.register_report_dir"))
+    out = reportkit.write_report(ctx.db.conn, ctx.step_id, out_dir / f"{p.stem}-quote-check.md",
+                                 report)
+    msg = [f"{n} quote part(s), {len(bad)} failing -> {out}"] + [f"  ! {b[:150]}" for b in bad[:30]]
+    if bad:
+        return fail("quotes-failing", "\n".join(msg), parts=n, failing=len(bad), path=str(out))
+    return ok("\n".join(msg), parts=n, failing=0, path=str(out))

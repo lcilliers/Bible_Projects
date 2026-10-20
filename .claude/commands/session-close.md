@@ -1,124 +1,91 @@
 ---
-description: Session-close validation — escalation update coverage, governance/config/doc drift, BUILD.md tracking-id coverage (escalation #1875)
+description: Session close — detection (SC1-SC12) of what the session did, decided or left open against its record; remediation; session log; commit blocked until clean; two commits
 ---
 
-# Session Close — Close-Out Validation
+# Session Close
 
-Run this at the end of a session, before handing off. It checks three things the researcher asked
-for directly (escalation #1875, 2026-09-24): (a) every escalation touched this session actually
-got a proper update recorded, (b) governance/config/doc text that this session's chat decided
-should change actually changed, with superseded text properly marked, and (c) any build/update
-activity this session is recorded in `iba/app/BUILD.md` with a proper tracking id. This command
-does the DETECTION mechanically, then has you (Claude) do the REMEDIATION using the actual
-conversation content — the detection script cannot write the sentence that fixes a gap, only find
-it.
+Rebuilt 2026-10-20 (escalation #2173; proposal
+`outputs/markdown/session-routines-session-close-change-proposal-v1-20261020.md`). Purpose: end
+the session so that nothing done, decided or left open in it exists only in the chat or in an
+unrecorded file, and the base data and the narrative are sound. **Detection is code
+(`Session-Close.ps1`); remediation is Claude's.** Do not skip steps. **Nothing is committed while
+`Session-Close.ps1` exits 3** (`cfg_behaviour_rule` session-close-blocks-commit-on-open-findings).
 
-Do not skip steps. This command ends by re-confirming the checks are clean (or explaining what's
-deliberately deferred), not by stopping at "found some gaps."
+## 1. Detect: `iba\app\ps\Session-Close.ps1`
 
-## 1. Run the detection script
+`handlers/session_close.py` writes `session_close.report_path` (versioned). Each finding has a
+stable key. The checks:
 
-Run `iba/app/ps/Session-Close.ps1` via the PowerShell tool. It re-reads this session's own JSONL
-transcript (harness-native, already recorded automatically — no separate tracker needed), diffs
-git state since session start, cross-references `escalation_history` and `BUILD.md`, and persists
-a report. It never blocks — always exits 0/continue. Read the report path it prints.
+| step | finds |
+|---|---|
+| SC1 | no session id or no boundary record (the close fails: the window is unknown) |
+| SC2 | spine FATAL (`handlers/spine.compute`): span -> strong, verse <-> span, strong -> cluster, strong -> meaning against STEP |
+| SC3 | a researcher message in the transcript that is in no escalation comment written this session |
+| SC4 | (a) an `Open items` line in a changed file with no open OT-nn.n / #nnnn; (b) a researcher message with a holding word (`session_close.held_words`) |
+| SC5 | (a) a chapter file changed with no recorded weave; (b) a quotation in a chapter's added lines not in the ESV text; (c) a register-check finding new since the last close, or standing on a chapter changed now (rule 77); (d) a verse a changed reading file names with no placement, or placed `told` and not told |
+| SC6 | an engaged rule in the compliance file with no evidence, or evidence that does not check |
+| SC8 | no session log naming this session, or a missing/empty section |
+| SC9 | a decision line in the log naming no target that changed this session |
+| SC10 | a code/config file changed (`session_close.build_scope`) not named in what BUILD.md gained |
+| SC12 | whether the narrative copy and the threads export are needed |
 
-## 2. Read the report
+Read the whole report.
 
-Read the full report (`iba/app/reports/session-close.md`, or the versioned path the script just
-printed). It has three sections: escalation update coverage, governance/config/doc drift, BUILD.md
-coverage.
+## 2. Remediate (SC7)
 
-## 3. Remediate (a) — escalation update gaps
+Fix each finding. Where a fix is not made now, disposition it. Dispositions go in the compliance
+file's `## Close dispositions` section, one line each: `- <finding key> :: <disposition>`. The check
+verifies every disposition; an unchecked one leaves the finding open.
 
-For every escalation id the report lists under "GAPS" (touched in the transcript, `escalation_history`
-behind it): re-read this session's own conversation for what was actually said/decided about that
-item, then call `Escalation.ps1 -Action Update` (or `-Action Correction` if the item is already
-closed) to add the missing entry. Per the researcher's exact instruction, the entry must capture —
-not just a general summary:
+- **SC3:** write the missing `Escalation.ps1 -Action Update` (the researcher's words verbatim, the
+  debate, the decisions, anything skipped), then the finding clears itself; or
+  `:: recorded in #n vN` / `:: no record needed: <reason>` (e.g. a bare "proceed" recorded in the
+  context of the item it answers).
+- **SC4:** raise the item the same turn (rule 21) and name it: `:: in register OT-nn.n` /
+  `:: in register #nnnn`; or `:: not held: <reason>`. Fix an `Open items` line by naming its
+  handle.
+- **SC5:** record the weave (`Narrative-Register.ps1 -Action Record`); correct a misquote (or
+  `:: not scripture: <reason>` for a quoted gloss or statement); reconcile register findings under
+  rule 77; add the missing placements.
+- **SC6:** add the evidence for each engaged rule in the compliance file.
+- **SC2, and anything not fixed now:** `:: carried OT-nn.n` or `:: carried #nnnn` (an open item;
+  raise it if needed).
+- **SC10:** a BUILD.md entry (`## N.`, matching the existing shape) that names each file.
 
-- **researcher update verbatim** — their own words, quoted, not paraphrased
-- **design debates** — the back-and-forth, options considered, objections raised
-- **design decisions** — what was actually decided and why
-- **anything skipped, postponed, or ignored** — named explicitly, not silently dropped
+## 3. Session log (SC8, SC9)
 
-This is filing paperwork for something that already happened in this same session — do this
-directly, no approval cycle needed.
+Write `Logs/SESSION-LOG-<date>-<topic>.md` (`governance.session_log_dir`), naming the session id,
+with the six sections headed exactly as `session_close.log_sections`: `## 1. Scope`,
+`## 2. Escalations`, `## 3. Files`, `## 4. Decisions`, `## 5. Open items`, `## 6. Git`
+(`governance.session_log_required_content`). In **4. Decisions** each line names where the
+decision was recorded: a file path, a `cfg_*` table, or `#nnnn vN`. Leave **6. Git** to step 6.
 
-## 4. Remediate (b) — governance/config/doc drift
+## 4. Re-run (SC11)
 
-The report lists which of `GOVERNANCE.md`/`CLAUDE.md`/`USER-GUIDE.md` changed in this session's
-git diff window — but whether they changed ENOUGH is not mechanically checkable, so do this by
-hand: re-read the session's own decisions (the conversation, and this session's `SESSION-LOG-*.md`
-if one exists) and check each one against those three files plus any relevant `cfg_*` row:
+Re-run `Session-Close.ps1` until it exits 0 (no open finding). Repeat steps 2-3 as needed.
 
-- If a decision should have updated governance/config and didn't, make that edit now (or file the
-  `cfg_*` change via `Config-Maintenance.ps1 -Step Propose` if it's a config value, not just a doc).
-- If new chat content conflicts with existing GOVERNANCE.md/CLAUDE.md/USER-GUIDE.md/config text,
-  confirm the old text is marked superseded/retired (dated, pointing to what replaced it) — not
-  left silently stale.
-- This is also paperwork for an already-approved in-session decision — auto-remediate, no fresh
-  approval cycle.
-- **Exception**: if you find a genuinely NEW unresolved conflict — chat decided X, but it's
-  ambiguous whether some existing doc/config still asserts incompatible Y, and it's not obvious
-  which should win — that is not a documentation gap, it's a fresh judgement call. Do not silently
-  pick a winner. Raise it as its own new `decision_required` escalation instead.
+## 5. Publish only what changed (SC12)
 
-## 5. Remediate (c) — BUILD.md coverage
+The script prints `publish (SC12)`. Only if it says NEEDED:
 
-For every file the report lists under "GAPS" in the BUILD.md coverage section, add a proper
-`iba/app/BUILD.md` entry (next sequential `## N.` id after the current highest, matching the
-existing entry shape: title line with date/attribution/escalation refs, a verbatim researcher
-quote where applicable, a **Build** paragraph naming the actual files/functions, a **Test plan
-run** paragraph, a **Not done here** paragraph if anything was deliberately deferred, and a closing
-**Files:** line). If several gap files belong to the same piece of work, one entry covering all of
-them is correct — don't force one entry per file.
+- narrative copy: `iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1` (report what it copied);
+- threads export: `iba\app\ps\Escalation.ps1 -Action Export -Type thread`.
 
-## 6. Re-confirm clean
+Never publish to GitHub (`governance.no_direct_github_publish`).
 
-Re-run `Session-Close.ps1`. Confirm 0 escalation-update gaps and 0 BUILD.md gaps. A remaining
-governance/doc item is acceptable only if you've explicitly judged it doesn't need a change (say
-why); anything you fixed should no longer show as changed-without-BUILD.md-entry.
+## 6. Commit and push, twice (SC13)
 
-## 6a. Copy the narrative to learning4comfort
+Standing pre-authorisation: `governance.session_log_triggers_commit`, CLAUDE.md section 12.
 
-Run `iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1` via the PowerShell tool (escalation #1941,
-researcher: *"session-close trigger the copy"*). It copies the current inner-being narrative files
-(`cfg_setting narrative.copy_source_dir`, top-level `.md` only, never `archive/`) to the
-learning4comfort inbox (`narrative.learning4comfort_inbox_dir`). Earlier versions of the same
-files there are replaced, and every other file is left untouched. It runs no git command, in
-either repository. This project never publishes to GitHub itself
-(`governance.no_direct_github_publish`). Quote the script's summary lines in the step 8 report.
-Run it every close, even when no chapter changed: it then reports every file as "unchanged".
+1. `git status`; stage every outstanding change (read anything unfamiliar first; never
+   `database/bible_research.db`, `backups/`); commit `session YYYYMMDD: ...`; push.
+2. Write **6. Git** into the session log: branch, the commit hash and the push output, from the
+   actual git output. Commit it alone with the message
+   `session YYYYMMDD: session log git confirmation` (`session_close.final_commit_marker`; the
+   next start checks for it) and push.
+3. Show `git status` clean and the push output.
 
-## 6b. Regenerate the open threads register
+## 7. Report (SC14)
 
-Run `iba\app\ps\Escalation.ps1 -Action Export -Type thread` via the PowerShell tool (escalation #2000, proposal v3 sec5: *"Session-close regenerates it"*). It rewrites
-`_analytics/cross-cluster-web/open-threads-register.md` from the escalation table (type `thread`;
-`cfg_setting escalation.thread_register_path`), with each row as `OT-nn · #id`. The file is
-generated: never edit it by hand. Every note on a thread is an Update (`cfg_behaviour_rule`
-open-threads-carried-as-escalations). Quote its summary line in the step 8 report. Run it every
-close, so the committed file matches the table.
-
-## 7. Commit and push
-
-Completing a `/session-close` cycle is a standing pre-authorization to commit
-(`governance.session_log_triggers_commit`, `CLAUDE.md` §12, widened 2026-09-24 to cover this
-command specifically, escalation #1876) — the same trigger a completed `SESSION-LOG-*.md` already
-is. Do the full cycle in this same unit of work, not a separate pass:
-
-1. `git status` — see everything outstanding, not just what this session's own remediation touched
-   (CLAUDE.md §12's "default scope" rule: stage the full outstanding diff, not session-own changes
-   only — but still read anything unfamiliar before staging it, and still exclude
-   `database/bible_research.db`/`backups/`).
-2. Stage it, write a proper commit message (`session YYYYMMDD: brief description`, per CLAUDE.md
-   §12), commit.
-3. Push.
-4. Confirm `git status` is clean and the push succeeded — don't assert it, show the actual output.
-
-## 8. Report
-
-Summarise in chat: what the checks found, what was fixed, whether anything was escalated as a
-fresh decision_required item under the exception in step 4, and the commit/push confirmation from
-step 7. Do not present this as a `.md` deliverable — a brief chat summary plus the report path is
-enough, per the standard interaction protocol for a status check.
+The close report (`session_close.report_path`) is the persisted record. In chat: the findings
+carried rather than fixed (with their items), and the two commits with the push confirmation.

@@ -654,7 +654,9 @@ def escalation_list(ctx: Ctx) -> Outcome:
     already writes the full open-items report, now including the D15 exception sections."""
     path = pathlib.Path(ctx.cfg.required_setting("escalation.list_report_path"))
     out, rows = esc.write_list_report(ctx.cfg, ctx.db, path)
-    return ok(f"{len(rows)} open escalation(s) -> {out}", path=str(out), open_count=len(rows))
+    n_open = sum(1 for r in rows if r["state"] in esc.state_group(ctx.db, "open"))   # #2173 G1
+    return ok(f"{n_open} open, {len(rows) - n_open} parked escalation(s) -> {out}", path=str(out),
+              open_count=n_open, parked_count=len(rows) - n_open)
 
 
 def escalation_history(ctx: Ctx) -> Outcome:
@@ -695,3 +697,31 @@ def escalation_thread_export(ctx: Ctx) -> Outcome:
     path = pathlib.Path(ctx.cfg.required_setting("escalation.thread_register_path"))
     out, n = esc.write_thread_register(ctx.cfg, ctx.db, path)
     return ok(f"{n} thread(s) -> {out}", path=str(out), threads=n)
+
+
+def escalation_context(ctx: Ctx) -> Outcome:
+    """escalation #2173 P1 -- `Escalation.ps1 -Action Context`: every file each open escalation
+    names (any field, any version), resolved to its latest live version. Read-only."""
+    from ..lib import escalationcontext
+    path = pathlib.Path(ctx.cfg.required_setting("escalation.context_report_path"))
+    out, items = escalationcontext.write_report(ctx.cfg, ctx.db, path)
+    n_find = sum(len(i["findings"]) for i in items)
+    lines = [f"{len(items)} open escalation(s), {sum(len(i['refs']) for i in items)} file "
+             f"reference(s), {n_find} finding(s) -> {out}"]
+    for i in items:
+        for f in i["findings"]:
+            lines.append(f"  #{i['escalation']['id']}: {f['status']} `{f['named']}` -- {f['note']}")
+    return ok("\n".join(lines), path=str(out), findings=n_find)
+
+
+def escalation_thread_audit(ctx: Ctx) -> Outcome:
+    """escalation #2173 P5 -- `Escalation.ps1 -Action ThreadAudit`: thread quality, validity and
+    integrity findings (T-a .. T-g), by thread item. Read-only."""
+    from ..lib import threadaudit
+    path = pathlib.Path(ctx.cfg.required_setting("escalation.thread_audit_report_path"))
+    out, F = threadaudit.write_report(ctx.cfg, ctx.db, path)
+    by: dict[str, int] = {}
+    for f in F:
+        by[f["check"]] = by.get(f["check"], 0) + 1
+    summary = ", ".join(f"{k} {v}" for k, v in sorted(by.items())) or "none"
+    return ok(f"{len(F)} thread finding(s) ({summary}) -> {out}", path=str(out), findings=len(F))

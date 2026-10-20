@@ -41,6 +41,9 @@
       History      -Claim C-412
       Check
       Export
+      QuoteCheck   -File <chapter.md> [-Against <previous version.md>]   (#2173 G14: every quotation,
+                   or only those in lines added against -Against, must be in the ESV text;
+                   lib/quotecheck.py; session-close SC5 runs it on every chapter changed)
 
 .EXAMPLE
     iba\app\ps\Narrative-Register.ps1 -Action Find -Verse "1 Samuel 24:5"
@@ -54,7 +57,7 @@
 param(
     [Parameter(Mandatory = $true)]
     [ValidateSet('AddClaim', 'Edit', 'Tell', 'Untell', 'Withdraw', 'EditNote', 'AddChapter', 'EditChapter',
-                 'EditSection', 'Record', 'Find', 'History', 'Check', 'Export')]
+                 'EditSection', 'Record', 'Find', 'History', 'Check', 'Export', 'QuoteCheck')]
     [string] $Action,
     [ValidateSet('Claude', 'Researcher')] [string] $By,
     [string] $Claim, [string] $ClaimRef, [string] $Text, [string] $BeyondText, [string] $Source,
@@ -65,7 +68,7 @@ param(
     [string] $NewNumber, [string] $Title, [string] $State, [string] $CurrentFile, [string] $CurrentVersion,
     [string] $ReadingOrder, [string] $Inactive,
     [string] $Purpose, [string] $PurposeRef, [string] $After, [string] $BuiltFrom, [string] $FileStem,
-    [string] $File, [string] $Note,
+    [string] $File, [string] $Note, [string] $Against,
     [string] $Verse, [string] $Escalation, [string] $Thread,
     [switch] $NotInNarrative, [switch] $ToldInMoreThanOne,
     [switch] $Trace
@@ -84,6 +87,7 @@ $stepName = @{
     AddClaim = 'add_claim'; Edit = 'edit'; Tell = 'tell'; Untell = 'untell'; Withdraw = 'withdraw'
     EditNote = 'edit_note'; AddChapter = 'add_chapter'; EditChapter = 'edit_chapter'; EditSection = 'edit_section'
     Record = 'record'; Find = 'find'; History = 'history'; Check = 'check'; Export = 'export'
+    QuoteCheck = 'quote_check'
 }[$Action]
 $stepId = "narrative_register.$stepName"
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-NARRATIVEREG"
@@ -94,7 +98,7 @@ foreach ($name in @('By', 'Claim', 'ClaimRef', 'Text', 'BeyondText', 'Source', '
                     'Kind', 'Part', 'Heading', 'NewHeading', 'Ordinal', 'Level', 'LastVersion',
                     'NewNumber', 'Title', 'State', 'CurrentFile', 'CurrentVersion', 'ReadingOrder',
                     'Inactive', 'Purpose', 'PurposeRef', 'After', 'BuiltFrom', 'FileStem',
-                    'File', 'Note', 'Verse', 'Escalation', 'Thread')) {
+                    'File', 'Note', 'Against', 'Verse', 'Escalation', 'Thread')) {
     $value = Get-Variable -Name $name -ValueOnly
     if ($PSBoundParameters.ContainsKey($name)) { $paramArgs += @('--param', "$name=$value") }
 }
