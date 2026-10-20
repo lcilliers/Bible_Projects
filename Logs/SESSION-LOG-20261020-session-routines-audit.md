@@ -53,4 +53,13 @@ threads list (v21) and the spine check (v65, 0 FATAL).
 
 ## 5. Git state
 
-Recorded after the push, in the second commit (decided this session).
+Session commit, pushed (output of `git log -1` and `git status -sb` after the push):
+
+```
+e5f5ff2e8201a02f5ce04c6b8a4dc1356be5e322 2026-10-20 15:49:59 +0100
+## main...origin/main
+```
+
+Branch `main`, in line with `origin/main`. This section is committed separately as "session log
+git confirmation" (decided this session); that commit's own hash is in its push output and in
+`git log`.
