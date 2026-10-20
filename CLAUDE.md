@@ -391,7 +391,7 @@ Bible_study_projects/             ← working dir (C:\Bible_study_projects — m
 ├── outputs/                      ← Generated artefacts (docx, markdown, pdf, session-logs)
 ├── research/                     ← discovery/ (STEP raw output), investigations/, notes/, templates/
 ├── docs/                         ← file-organisation-rules.md, interaction-preferences.md, *_setup.md
-├── Logs/                         ← Pre-restructure session logs (historical)
+├── Logs/                         ← SESSION-LOG-*.md, live (`governance.session_log_dir`; one per session). ~~Pre-restructure session logs (historical)~~ corrected 2026-10-20, #2173 G3
 ├── archive/                      ← patches/, scripts/, docs/, Sessions/, References/, Programme_prose/, Logs/
 └── backups/                      ← DB snapshots (NOT in Git)
 ```
