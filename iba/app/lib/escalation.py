@@ -1,128 +1,37 @@
-"""escalation.py — util.escalation.
+"""escalation.py -- util.escalation: the record of open items in the project (errors, issues,
+building tasks, threads). Not a run log: a standard routine is logged by the engine (run state,
+resume point, outcome) and escalates only on a genuine error. A development or design control,
+above all a configmaint.propose config write, keeps a gated approval here.
 
-**D14/D15 RETIRED 2026-08-27, escalation #909.** `from_id` and `related_activity` are both gone —
-not deprecated, not unenforced, removed: neither column exists on `escalation`/
-`escalation_history` any more, and every check/report section built on them (the pairing
-requirement, `_link_graph`/cycle/dangling/mismatched-pairing/missing-link/incoherent-link, the
-list report's group-by, the history report's relationship-walk) is deleted, not merely
-unreachable. The researcher's own instruction named both columns together, not just the graph
-mechanism on top of one of them — a half-measure (keep the free-text field, drop only the
-enforcement) would have been exactly the "smoke and mirrors" the instruction explicitly rejected.
-Researcher, verbatim, after two live audits this session found the mechanism was unreliable and
-never actually used
-(`iba/app/reports/related-activity-summary-mockup-20260826.md`,
-`iba/app/reports/from-id-data-quality-audit-20260826.md`, on top of escalation #768's own 10-round
-closure, `GOVERNANCE.md` §56): *"the related-activity and fromid columns in the table is
-unreliable, and does not serve a purpose, and is very confusing and distracting in the history
-report. I dont think you can solve the problem, and I dont think it is worth it, because you in
-any case are not using it. so scrap it."* Full removal record: `GOVERNANCE.md` §57.
+Two shapes, both writing through `_snapshot()`:
+  - dispatcher-tied (`run_id` set): a real pipeline pause. `raise_()`, `pending_for_run()`,
+    `answered_for_run()`, `answer_for_run()`.
+  - manual (`run_id` MANUAL-...): the researcher/Claude backlog. `raise_new()`, `update()`,
+    `correction()`, `resolve_self_correctable()`, `escalate_to_decision()`.
+`escalation` holds each item's current state; `escalation_history` holds one row per version, its
+content fields set only where that version changed them.
 
-util.escalation. The authoritative record of open items in the project: errors,
-issues, and building tasks. NOT a run-logging mechanism — a standard operational routine (run
-through an already-approved app PS script) is logged by the engine (`run.state`/`resume_point`/
-`outcome`) and escalates only on genuine error. A DEVELOPMENT/DESIGN control — anything that
-changes the app's own behaviour, above all a `configmaint.propose` config write — keeps a real,
-gated approval here.
+State derivation is config (`cfg_escalation_transition`, `_evaluate_transition()`), and so are the
+field requirements (`cfg_escalation_requirement`, `_check_requirements()`). `originator` has no
+default anywhere: every caller says who it is.
 
-**Full rebuild, 2026-08-20** (full design: `iba/docs/escalation-rebuild-design-v1-20260820.md`).
-The redesign that preceded this (2026-08-19/20, `escalation-redesign-plan-v3-20260819.md`) fixed
-the loss-of-history bug (#715) correctly but shipped with no config representation for any of its
-own validate/complete rules, and its `escalation_history` rows stored full cumulative snapshots
-instead of per-version deltas — both found, in one session, alongside a chain of smaller defects
-(a title-shape violation, ≥39 originator misattributions from a silent default, two `cfg_escalation`
-rows naming a function that no longer existed). Researcher: *"the system is not ready for
-production ... export the data ... delete all the records ... go back and do a proper design and
-implementation."* Both tables were exported (`iba/app/db/archive/escalation{,_history}-export-
-20260820.json`) and emptied before this rewrite.
+Threads (type='thread', alias OT-nn, #2000): items in `escalation_thread_item` (current status),
+every response in `escalation_thread_item_response`; rules T0-T9 in config (THREADS section).
 
-**What actually changed** (§1 of the design doc has the full before/after table):
-  - `escalation_history`'s content fields (`comment`/`context`/`resolution`/`tried`/
-    `short_description`/`related_activity`) are now TRUE DELTAS — `NULL` unless this transaction
-    actually set them. `escalation`'s own fields are unchanged: still the cumulative/current state.
-  - State-derivation is now a config-driven rule engine (`cfg_escalation_transition`), evaluated
-    in priority order, not a hardcoded `if`/`elif` chain — see `_evaluate_transition()`.
-  - Field-requirement rules are config-driven too (`cfg_escalation_requirement`) — see
-    `_check_requirements()`.
-  - `originator` has NO default anywhere, in this file or in `Escalation.ps1` — every caller must
-    say who they are. The old `"Researcher"` default was the actual root cause of the
-    misattribution bug.
-  - Two-stage approval (`ready_for_approval` → `approved`) now checks the two parties differ.
-  - `escalation_next_action` (the old merged cfg_enum) is retired; the dispatcher and manual
-    shapes each validate against their own group (`escalation_next_action_dispatcher` /
-    `_manual`), closing the vocabulary-leak gap the merged enum had.
-
-**Two shapes, deliberately not unified** (unchanged from the prior redesign, still correct):
-  - **dispatcher-tied** (`run_id` set) — a real pipeline pause. `raise_()` / `pending_for_run()` /
-    `answered_for_run()` / `answer_for_run()`.
-  - **manual** (`run_id` is `MANUAL-...`) — the researcher/Claude backlog workflow. `raise_new()` /
-    `update()`.
-
-Both write through the SAME snapshot mechanism (`_snapshot()`), so both get real (now correctly
-delta-shaped) history for free.
-
-**Register v9 build, 2026-08-21** (`iba/docs/escalation-design-plan-v5-20260821.md` +
-`iba/docs/escalation-design-decision-register-v9-20260821.md`, both narrated D1-D28):
-  - D12: `raise_new()` now special-cases `type='notice'` at creation (`state='closed'`,
-    `next_action=None`, no review/decision cycle) -- every other type still defaults
-    `state='raised'`/`next_action='review'`.
-  - D14 (RETIRED 2026-08-27, escalation #909 -- see the banner at the top of this docstring):
-    was a `from_id` column + `related_activity` pairing check. Removed entirely, not just
-    unenforced -- see the retirement note below.
-  - D25: two-stage approval is now an AUTHORITY check, not an identity check -- `approved` is
-    refused only if the caller differs from whoever `ready_for_approval` assigned the item to (the
-    old same-party refusal wrongly blocked legitimate self-authorisation).
-  - D26: `update()` refuses to attach `comment`/`context`/`tried` while the resulting state would
-    still be `raised` -- work has to be explicitly moved off `raised` first
-    (`cfg_escalation_requirement`, `check_kind='not_raised_with_content'`).
-  - D27 (config only, `cfg_escalation_transition`): `ready_for_approval` now has its own explicit
-    transition row, rather than relying on the incidental `assignee_changed` rule.
-  - `cfg_escalation_requirement` gained a `check_kind` column (`field_required` — the pre-existing
-    implicit behaviour, now named — plus `not_raised_with_content` (`exists`/`not_self` were D14's
-    own, retired with it, escalation #909)).
-
-CLI (module path: iba.app.lib.escalation, invoked as `python -m iba.app.lib.escalation`):
-    python -m iba.app.lib.escalation list
-    python -m iba.app.lib.escalation answer-run <run_id> <approve|reject|revise|hold|noted>
-        --by=Claude|Researcher [--resolution=...] [comment words...]
-    python -m iba.app.lib.escalation raise <question...>
-        --originator=Claude|Researcher [--source=claude|researcher] [--assigned-to=Claude|Researcher]
-        [--type=task|...] --comment=...
-        --resolution-kind=decision_required|self_correctable
-        [--needs-followup=1] — set when finishing this item needs a further Claude action AFTER
-        approval (escalation #1075): approved then routes back to Claude, not straight to completed.
-    python -m iba.app.lib.escalation resolve-self-correctable <id> --originator=Claude
-        --resolution=... — closes a self_correctable item. No AnswerRun, no decision vocabulary
-        (escalation #798/#799): Claude fixes it, states the resolution, done.
-    python -m iba.app.lib.escalation escalate-to-decision <id> --originator=Claude --tried=...
-        — converts a self_correctable item to decision_required when a fix attempt reveals a real
-        decision is needed (`tried`'s original purpose). Does not change `type`.
-    python -m iba.app.lib.escalation update <id> --originator=Claude|Researcher
-        [--next-action=...] [--assigned-to=...] [--state=on-hold|in-progress|closed|withdraw|supersede]
-        [--resolution=...] [--tried=...]
-        [--needs-followup=1|0] — set/clear the followup flag (escalation #1075); omit to carry the
-        item's current value forward unchanged.
-        [comment/context words...]
-    python -m iba.app.lib.escalation correction <id> --originator=Claude|Researcher
-        [--short-description=...] [--next-action=...] [--assigned-to=...] [--state=...]
-        [--resolution=...] [--tried=...]
-        [comment/context words...]
-        — ★ ERROR CORRECTION ONLY (escalation #774) — a copy of Update that works on ANY item state
-        (closed/completed included, unlike Update) and can touch short_description (which Update
-        never exposes). Not a workflow action: state/next_action are taken exactly as given, never
-        auto-derived, and carry forward unchanged if omitted. Use Update for every ordinary change;
-        use Correction only to fix something already recorded wrong.
-
-`--originator`/`--by` are now REQUIRED on every write verb — no default, see above.
-
-**Threads, escalation #2000 (2026-10-12)** -- the open threads register carried in this table as
-type='thread' (alias OT-nn). Design: `_analytics/cross-cluster-web/open-threads-table-proposal-v3-
-20261012.md`; rules T0-T9 in config (see the THREADS section below). Child tables
-`escalation_thread_item` (current status only) and `escalation_thread_item_response` (every
-response, each completion included). New verbs: `match` (T1) and `thread-check` (T5); `raise`
-gains --state (T2, manual raise only -- `raise_()` keeps 'raised'), --comes-back-when and
-repeatable --item; `update` gains --item/--response-kind/--respond/--via/--file and --add-item;
-every <id> also takes the alias. Reports (dispatched through run.py): `write_thread_report`
-(-Action Thread) and `write_thread_register` (-Action Export -Type thread).
+CLI (`python -m iba.app.lib.escalation`; `--originator`/`--by` required on every write verb):
+    list
+    answer-run <run_id> <approve|reject|revise|hold|noted> --by=... [--resolution=...] [comment...]
+    raise <question...> --originator=... --comment=... --resolution-kind=decision_required|self_correctable
+        [--source=...] [--assigned-to=...] [--type=...] [--state=...] [--comes-back-when=...]
+        [--item=kind:value ...] [--needs-followup=1]   (approved then routes back to Claude, #1075)
+    resolve-self-correctable <id> --originator=Claude --resolution=...
+    escalate-to-decision <id> --originator=Claude --tried=...
+    update <id> --originator=... [--next-action=...] [--assigned-to=...] [--state=...]
+        [--resolution=...] [--tried=...] [--needs-followup=1|0] [thread flags] [comment words...]
+    correction <id> --originator=... [--short-description=...] [--state=...] [...]
+        error correction only (#774): any state, nothing auto-derived.
+    match | thread-check                              (threads, T1 / T5)
+Every <id> also takes a thread alias.
 """
 
 from __future__ import annotations
@@ -139,13 +48,8 @@ from . import reportkit
 from .cfg import Cfg
 from .db import Db
 
-# State groups (escalation #2173 G1, 2026-10-20). "Open" had two meanings: the researcher's
-# (raised, in-progress, re-assigned -- what is being worked) and this module's old hardcoded
-# _OPEN_STATES, which also counted on-hold and so reported parked items as open ("there are only 4
-# open escalations. Where do you get 35?"). The groups now live in config (cfg_enum
-# escalation_state_open / _parked / _terminal, governance.rules_must_be_config_driven), and every
-# "not yet closed" check uses open + parked explicitly (live_states), so duplicate suppression,
-# Update's gate and Match keep their behaviour.
+# State groups live in config (cfg_enum escalation_state_open / _parked / _terminal, #2173): open
+# is what is being worked; every "not yet closed" check uses open + parked (live_states).
 _STATE_GROUP_ENUM = {"open": "escalation_state_open", "parked": "escalation_state_parked",
                      "terminal": "escalation_state_terminal"}
 _STATE_GROUP_SQL = {   # literal names, so configmaint's orphan check sees each group's reader
@@ -171,12 +75,8 @@ def live_states(db) -> tuple[str, ...]:
     """Not yet closed: open + parked."""
     return state_group(db, "open") + state_group(db, "parked")
 
-# every business column on `escalation` / `escalation_history` (id/version/escalation_id excluded
-# -- those are structural, not part of a snapshot's business content)
-# D14/D15 RETIRED 2026-08-27 (escalation #909): from_id and related_activity both removed from
-# these tuples (and from the tables themselves) -- see the module docstring's retirement banner.
-# escalation #2000 (2026-10-12): `alias` (OT-nn, threads only) is immutable like type/raised_at;
-# `comes_back_when` is a replace column like tried/resolution.
+# every business column on `escalation` / `escalation_history` (id/version/escalation_id are
+# structural). `alias` (threads) is immutable like type/raised_at.
 _ENVELOPE_COLS = ("state", "next_action", "next_action_assigned_to", "originator", "answered_at",
                  "resolution_kind", "needs_claude_followup")
 _APPEND_COLS = ("comment", "context")            # escalation: cumulative. history: raw increment.
@@ -257,9 +157,8 @@ _TITLE_MAX_CHARS = 60
 
 
 def _title_shape_error(short_description: str) -> str | None:
-    """Returns an error message if `short_description` violates the title-shape spec (escalation
-    #759 -- 'a short description of item, like a title', <=60 chars, no embedded clause-stitching)
-    -- else None."""
+    """Returns an error message if `short_description` breaks the title shape (#759: a title,
+    <=60 chars, no clause-stitching), else None."""
     if "\n" in short_description:
         return "short_description must be a single line (a title) -- it contains a newline."
     if len(short_description) > _TITLE_MAX_CHARS:
@@ -275,10 +174,7 @@ def _title_shape_error(short_description: str) -> str | None:
 
 
 def _status_for(db: Db, set_by_substr: str, fallback: str) -> str:
-    """cfg_status_flow lookup for entity='escalation' -- same pattern handlers/registry.py uses
-    for entity='word'. `fallback` is only hit if the row is somehow missing post-rebuild (defensive,
-    should not happen -- every key used below has a seeded row, see migration/
-    rebuild_escalation_rules_config_20260820.py)."""
+    """cfg_status_flow lookup for entity='escalation'. `fallback` only covers a missing row."""
     for r in db.conn.execute(
             "SELECT status FROM cfg_status_flow WHERE entity='escalation' AND set_by LIKE ?",
             (f"%{set_by_substr}%",)):
@@ -291,16 +187,13 @@ def _condition_true(condition_key: str, *, next_action: str | None, has_resoluti
                     assignee_changed: bool, has_explicit_state: bool = False,
                     needs_followup: bool = False, cur_next_action: str | None = None,
                     thread: dict | None = None) -> bool:
-    """The fixed, small vocabulary cfg_escalation_transition.condition_key draws from -- see
-    escalation-rebuild-design-v1-20260820.md sec2.4. A new condition needs a code change here
-    (a new named boolean); which RULE consumes it, in what priority, with what resulting status,
-    is config from that point on.
+    """The fixed vocabulary cfg_escalation_transition.condition_key draws from. A new condition
+    needs a code change here; which rule consumes it, in what priority, with what result, is config.
 
-    `thread` (escalation #2000) is None for every non-thread item, so the two thread conditions
-    are always false for them (so is thread_reassigned, #2000 D1). For a thread it carries: items_changed (an item added, closed or
-    reopened this call, or the state of the work an 'escalation' item references changed),
-    closed_some (an item closed this call), open_remaining (open items after this call) and
-    referenced (an open 'escalation' item points at a task/issue at state in-progress)."""
+    `thread` is None for every non-thread item, so the thread conditions are false for them. For
+    a thread it carries: items_changed (an item added, closed or reopened this call, or the state
+    of the work an 'escalation' item references changed), closed_some, open_remaining, all_settled
+    and referenced (an open 'escalation' item points at a task/issue at state in-progress)."""
     if condition_key == "always":
         return True
     if condition_key == "thread_items_changed_and_referenced":          # T3/T5
@@ -310,40 +203,20 @@ def _condition_true(condition_key: str, *, next_action: str | None, has_resoluti
                     and not thread["referenced"])
     if condition_key == "has_resolution":
         return bool(has_resolution)
-    if condition_key == "thread_items_all_settled":           # #2000 lifecycle: the last open
-        return bool(thread and thread["items_changed"]         # item settled this call -> the
-                    and thread["all_settled"]                  # thread completes. Never on
-                    and next_action != "reject")               # reject: withdraw/supersede of a
-                                                                # thread settles its items itself
-    if condition_key == "thread_reassigned":                  # escalation #2000 D1 (researcher:
-        return bool(thread is not None and assignee_changed)   # "go with option a"): reassigning a
-                                                                # thread keeps its state -- it never
-                                                                # lands on re-assigned, outside the
-                                                                # thread open states
+    if condition_key == "thread_items_all_settled":           # last open item settled: the
+        return bool(thread and thread["items_changed"]         # thread completes; never on
+                    and thread["all_settled"]                  # reject (withdraw/supersede
+                    and next_action != "reject")               # settles its items itself)
+    if condition_key == "thread_reassigned":                  # reassigning a thread keeps its
+        return bool(thread is not None and assignee_changed)   # state (#2000 D1)
     if condition_key == "assignee_changed":
         return bool(assignee_changed)
-    if condition_key == "explicit_state_given":               # found live 2026-08-21 (#762): an
-        return bool(has_explicit_state)                        # explicit -State must outrank the
-                                                                # assignee_changed inference, not
-                                                                # lose to it -- see priority 6 below
-    if condition_key == "needs_followup":                      # escalation #1075, 2026-08-30: an
-        return bool(needs_followup)                            # 'approved' item still flagged
-                                                                # needs_claude_followup routes back
-                                                                # to Claude, not straight to
-                                                                # completed -- checked ahead of the
-                                                                # plain has_resolution rule.
+    if condition_key == "explicit_state_given":               # an explicit -State outranks
+        return bool(has_explicit_state)                        # assignee_changed (#762)
+    if condition_key == "needs_followup":                      # approved but flagged: back to
+        return bool(needs_followup)                            # Claude, not completed (#1075)
     if condition_key == "followup_cleared_was_approved":
-        # Researcher, 2026-08-31, found live: clearing needs_claude_followup (Claude reporting the
-        # approved write is actually applied) never reached completed on its own -- the priority
-        # 1/2 'approved' rules above only fire when the CALLER re-supplies -NextAction approved
-        # THIS call, which a bare -NeedsFollowup 0 call never does, so it fell through to the
-        # generic reassignment rule (priority 7) instead, landing on re-assigned for an unrelated
-        # reason. And since decision_required_approval_requires_researcher (this same session)
-        # now blocks Claude from ever re-supplying -NextAction approved itself, there was no path
-        # to completed left at all except the researcher re-running the whole approve handshake a
-        # second time, for a decision already made -- friction with no control value. This
-        # recognises "already approved, resolution on file, follow-up now done" as itself
-        # sufficient: no NEW decision is being made, just the existing one finishing.
+        # Approved, resolution on file, follow-up now cleared: completed, without a second approval.
         return not needs_followup and has_resolution and cur_next_action == "approved"
     raise ValueError(f"unknown cfg_escalation_transition.condition_key {condition_key!r}")
 
@@ -352,17 +225,10 @@ def _evaluate_transition(db: Db, shape: str, next_action: str | None, *, has_res
                          assignee_changed: bool, explicit_state: str | None,
                          cur_state: str, needs_followup: bool = False,
                          cur_next_action: str | None = None, thread: dict | None = None) -> str:
-    """Reads cfg_escalation_transition for `shape`, in priority order, first match wins -- replaces
-    the old hardcoded if/elif chain. `resulting_status_key` of `__explicit__` means the reject
-    branch: state comes from the caller's own choice, validated here (withdraw|supersede only).
-    `__unchanged__` means no rule truly fires: state carries forward (or the caller's -State).
-
-    D-fix 2026-08-21 (#762): the caller's own explicit -State must outrank an INFERRED
-    assignee_changed result -- `-AssignedTo Researcher -State on-hold` was silently landing on
-    `re-assigned` (assignee_changed's rule fired first, matching next_action=None the same way the
-    catch-all does, but at an earlier priority) with no way to combine an explicit state with a
-    reassignment. cfg_escalation_transition priority 6 (condition_key='explicit_state_given') now
-    sits ahead of assignee_changed (shifted to 7) for exactly this."""
+    """Reads cfg_escalation_transition for `shape`, in priority order, first match wins.
+    `resulting_status_key` `__explicit__` is the reject branch: the caller's own state, validated
+    here (withdraw|supersede only). `__unchanged__` carries the state forward (or the caller's
+    -State). The caller's explicit -State outranks an inferred assignee_changed result (#762)."""
     rows = db.rows(
         "SELECT priority, next_action, condition_key, resulting_status_key FROM "
         "cfg_escalation_transition WHERE shape=? AND active=1 ORDER BY priority", (shape,))
@@ -405,7 +271,7 @@ def _requirement_condition_true(condition_key: str, *, originator: str, checked_
         return bool(values.get("comment") or values.get("context") or values.get("tried"))
     if condition_key == "thread_type":                         # escalation #2000 (T4/T6/T7)
         return values.get("type") == "thread"
-    if condition_key == "thread_superseding":                  # #2000 lifecycle: a thread
+    if condition_key == "thread_superseding":
         return values.get("type") == "thread" and values.get("state") == "supersede"
     raise ValueError(f"unknown cfg_escalation_requirement.condition_key {condition_key!r}")
 
@@ -413,10 +279,8 @@ def _requirement_condition_true(condition_key: str, *, originator: str, checked_
 def _check_requirements(db: Db, action: str, *, originator: str, checked_action: str | None,
                         values: dict, self_id: int | None = None) -> None:
     """Raises ValueError on the first unmet requirement. `values` = the field->value the caller is
-    actually supplying this transaction (already-merged where relevant, e.g. resolution). `check_kind`
-    (register v9 D25/D26 -- column added alongside these rules, previously only 'field_required'
-    existed implicitly) selects which comparison runs. `self_id` is the item's own id (None at
-    Raise -- the new id does not exist yet)."""
+    supplying this transaction (already merged where relevant). `check_kind` selects the
+    comparison. `self_id` is the item's own id (None at Raise)."""
     rows = db.rows(
         "SELECT field, condition_key, check_kind, message FROM cfg_escalation_requirement "
         "WHERE action=? AND active=1", (action,))
@@ -433,22 +297,7 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
             if field_val == "raised":
                 raise ValueError(r["message"])
         elif kind == "requires_current_ready_for_approval_if_decision_required":
-            # escalation #851, 2026-08-26: the D25 authority check alone is vacuous when no prior
-            # ready_for_approval transition exists at all -- exactly how #865 was self-approved, and
-            # would still be true of 'noted' even after D25 was extended to cover it. This makes the
-            # SEQUENCE itself required for decision_required items, not just an opportunistic
-            # comparison against whichever prior transition happens to exist.
-            #
-            # TIGHTENED 2026-08-31, researcher direct correction: the original check (renamed from
-            # requires_PRIOR_ready_for_approval_if_decision_required) only checked that a
-            # ready_for_approval transition existed SOMEWHERE in escalation_history, ever -- not
-            # that it's where the item currently sits. So `ready_for_approval -> revise ->
-            # in-progress -> approved` would have passed: a ready_for_approval happened once, long
-            # ago, satisfying the old check, even though the item had since moved away from it.
-            # Researcher, verbatim: "approval should not be able to be in any other state that
-            # ready for approval" (decision_required only -- explicitly excluded self_correctable,
-            # which never uses this vocabulary anyway). Now checks the item's CURRENT next_action
-            # directly, not history.
+            # A decision_required item may be approved only while it sits at ready_for_approval (#851).
             if self_id is not None:
                 row = db.rows("SELECT resolution_kind, next_action FROM escalation WHERE id=?",
                               (self_id,))
@@ -456,32 +305,9 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
                         and row[0]["next_action"] != "ready_for_approval"):
                     raise ValueError(r["message"])
         elif kind == "actor_must_be_assignee":
-            # researcher, 2026-08-31 morning: "the code should have a blocker that the party
-            # processing an item (answered_by) must be the assigned_to." Built same day, wired
-            # into update()/resolve_self_correctable()/escalate_to_decision() via
-            # cfg_escalation_requirement rows (action IN those three, check_kind=this).
-            #
-            # WALKED BACK same day, evening, researcher's own words: "the objective of
-            # actor_must_be_assignee is to prevent you to do what you like. but I also see that it
-            # is now preventing you from acting on a chat, and requires me to put all notes through
-            # the difficult to use escalation excel tool. so the two objectives works against each
-            # other... escalation activities are now consuming 80% of time spent on the project...
-            # My conclusion is just drop this requirement." Live evidence that surfaced it:
-            # `iba/docs/escalation-operational-friction-review-v1-20260831.md` Defect 2 -- #1338/
-            # #1339 (Claude blocked from leaving a clarifying comment on an item held by
-            # Researcher) and #1341 (Researcher blocked from giving feedback on an item held by
-            # Claude) -- the guard controlled who may say ANYTHING about an item, not just who
-            # does the substantive work, and hit both parties in ordinary back-and-forth.
-            #
-            # Disabled by deactivating the three cfg_escalation_requirement rows (rowid 17/18/19,
-            # active=0) rather than deleting them or this code branch -- reversible without a
-            # redeploy if ever wanted back in a narrower form. This branch is now practically dead
-            # (no active row references check_kind='actor_must_be_assignee') but left in place so
-            # re-activating is a one-row UPDATE, not a rebuild. The SEPARATE, narrower D25 check --
-            # whoever `ready_for_approval` assigned an item to is the only one who may `approved`/
-            # `noted` it (hardcoded in update(), search "authority check, not identity -- D25") --
-            # is NOT touched by this reversal; that one gates an actual decision, this one gated
-            # everything.
+            # Inactive: no active cfg_escalation_requirement row uses this check_kind (rows 17-19 set
+            # active=0); kept so it can be re-enabled by one row update. The D25 authority
+            # check in update() is separate and stays.
             if self_id is not None:
                 row = db.rows("SELECT next_action_assigned_to FROM escalation WHERE id=?", (self_id,))
                 cur_assignee = row[0]["next_action_assigned_to"] if row else None
@@ -491,49 +317,21 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
                         f"{cur_assignee} may act on it (got originator={originator!r}). "
                         f"{cur_assignee} must process it first (even just to reassign it onward).")
         elif kind == "decision_required_approval_requires_researcher":
-            # researcher, 2026-08-31: "the only way for you to get me to approve anything is to
-            # set the item to ready_for_approval... When I process the approval step, that
-            # implicitly is my approval." Closes the loophole D25 alone leaves open: D25 only
-            # checks that the approver matches whoever 'ready_for_approval' assigned it to -- if
-            # Claude assigns ready_for_approval to ITSELF (a legitimate self-authorisation for
-            # self_correctable-shaped work), D25 passes even though the item is decision_required,
-            # which structurally must never be Claude's call. Independent of assignment history.
+            # Only the researcher may approve a decision_required item, whoever it was assigned to.
             if self_id is not None:
                 row = db.rows("SELECT resolution_kind FROM escalation WHERE id=?", (self_id,))
                 if (row and row[0]["resolution_kind"] == "decision_required"
                         and originator != "Researcher"):
                     raise ValueError(r["message"])
         elif kind == "ready_for_approval_not_assignable_to_claude":
-            # researcher, 2026-08-31: "you may want to build in another overall control that
-            # ready for approval for tasks and issue can not be assigned to claude, because you do
-            # not have authority to self approve these types." Belt-and-suspenders alongside
-            # decision_required_approval_requires_researcher above -- that one catches Claude
-            # setting approved/noted on a self-assigned item; this one stops the self-assignment
-            # from ever landing at ready_for_approval in the first place, for type in
-            # ('task','issue') regardless of resolution_kind (a self_correctable item never
-            # reaches ready_for_approval at all -- it closes via resolve_self_correctable() -- so
-            # scoping by type rather than resolution_kind changes nothing in practice, and matches
-            # the researcher's own words exactly). Real example this was written against: escalation
-            # #1315, set ready_for_approval but left assigned_to=Claude by Claude's own mistake.
+            # A task or issue can never be put at ready_for_approval assigned to Claude.
             if self_id is not None and values.get("next_action_assigned_to") == "Claude":
                 row = db.rows("SELECT type FROM escalation WHERE id=?", (self_id,))
                 if row and row[0]["type"] in ("task", "issue"):
                     raise ValueError(r["message"])
         elif kind == "reassign_to_researcher_requires_ready_for_approval":
-            # researcher, 2026-09-03: caught Claude bare-reassigning 4 decision_required items
-            # (#1373/#1316/#1366/#1375) back to the researcher -- next_action left at 'review',
-            # only next_action_assigned_to touched -- after already doing complete, real work on
-            # each. Verbatim: "why did you pass [them] back to me. the expectation is that you do
-            # a ready for approval... and assign it to me... It is not the first time we get into
-            # this loop and it must stop now with a proper fix in the configs." cfg_behaviour_rule
-            # 63's own two-branch design (progress-via-ready_for_approval OR bounce-with-a-comment
-            # when genuinely unsure) left exactly this judgement call open, and it kept getting
-            # made wrong. This closes it structurally, no judgement call left: handing a
-            # decision_required item from Claude to the Researcher must set
-            # next_action=ready_for_approval in the SAME call -- there is no third, bare-handoff
-            # option any more, including "I'm stuck, please advise" (state that as the resolution
-            # text on a ready_for_approval call; the researcher's reply -- approved/reject/revise --
-            # already covers "yes"/"no"/"reconsider this way" without a separate bare-review path).
+            # Claude hands a decision_required item to the researcher only by setting
+            # next_action=ready_for_approval in the same call; no bare reassignment (rule 63).
             if self_id is not None:
                 row = db.rows("SELECT resolution_kind, next_action_assigned_to FROM escalation "
                               "WHERE id=?", (self_id,))
@@ -546,15 +344,12 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
                             and new_next_action != "ready_for_approval"):
                         raise ValueError(r["message"])
         elif kind == "must_be_self_correctable":
-            # escalation #2000 T4 (researcher, round 1: "I am ok if threads are assigned as
-            # self-correctable"): every thread is raised self_correctable.
+            # every thread is raised self_correctable (T4)
             if field_val != "self_correctable":
                 raise ValueError(r["message"])
         elif kind == "no_open_thread_items":
-            # escalation #2000 T6: a thread reaches completed/closed only when every item is
-            # closed. `field` is 'state' -- the state this call would land on. Items written
-            # earlier in the same call (a last item closed together with approved) are already
-            # visible here: same connection, same transaction.
+            # T6: a thread reaches completed/closed only when every item is closed. `field` is 'state',
+            # the state this call would land on; items written earlier in the same call are visible here.
             if self_id is not None and field_val in ("completed", "closed"):
                 n_open = db.rows("SELECT COUNT(*) AS n FROM escalation_thread_item WHERE "
                                  "escalation_id=? AND status='open'", (self_id,))[0]["n"]
@@ -578,8 +373,7 @@ def _grant_both(cfg: Cfg) -> None:
 
 
 def _create(cfg: Cfg, db: Db, **fields) -> int:
-    """New item, version 1. Every field is 'set' at creation -- no delta/envelope split needed,
-    v1's history row IS the full row (matches escalation itself)."""
+    """New item, version 1: every field is set, so the v1 history row is the full row."""
     _grant_both(cfg)
     row = {"version": 1, **{k: fields.get(k) for k in _COLS}}
     new_id = db.write("escalation", row)
@@ -590,14 +384,10 @@ def _create(cfg: Cfg, db: Db, **fields) -> int:
 
 def _snapshot(cfg: Cfg, db: Db, escalation_id: int, deltas: dict, envelope: dict,
               originator: str) -> dict:
-    """`deltas` = exactly what the caller is setting THIS transaction for append/replace columns
-    (raw, un-merged increments -- None/absent means untouched). `envelope` = state/next_action/
-    next_action_assigned_to already resolved by the caller. Writes escalation_history with deltas
-    AS GIVEN (NULL where not supplied this version) plus envelope always populated -- a true
-    per-version delta, not a cumulative snapshot (escalation-rebuild-design-v1 sec1/sec3). Writes
-    `escalation` with append-cols merged onto the running cumulative text and replace-cols taking
-    the new value or carrying forward -- `escalation` stays the full current-state materialisation
-    it always was."""
+    """`deltas` = what the caller sets THIS transaction for append/replace columns (None/absent =
+    untouched). `envelope` = state/next_action/next_action_assigned_to, already resolved. The
+    history row gets the deltas as given (NULL where not supplied) plus the envelope; `escalation`
+    gets append columns merged onto the running text and replace columns updated or carried."""
     _grant_both(cfg)
     cur = _current(db, escalation_id)
     version = cur["version"] + 1
@@ -642,9 +432,8 @@ def _last_next_action_originator(db: Db, escalation_id: int, next_action: str) -
 
 
 def _last_next_action_assigned_to(db: Db, escalation_id: int, next_action: str) -> str | None:
-    """D25: who a past transaction ASSIGNED the item to when it set `next_action` -- distinct from
-    `_last_next_action_originator` (who DID it). Used to answer 'ready_for_approval assigned this to
-    whom' for the authority check."""
+    """Who a past transaction ASSIGNED the item to when it set `next_action` (not who did it).
+    Answers 'ready_for_approval assigned this to whom' for the D25 authority check."""
     rows = db.rows(
         "SELECT next_action_assigned_to FROM escalation_history WHERE escalation_id=? AND "
         "next_action=? ORDER BY version DESC LIMIT 1", (escalation_id, next_action))
@@ -652,17 +441,14 @@ def _last_next_action_assigned_to(db: Db, escalation_id: int, next_action: str) 
 
 
 # ── THREADS (type='thread', escalation #2000) ────────────────────────────────────────────────────
-# The open threads register carried in the escalation table. Design: _analytics/cross-cluster-web/
-# open-threads-table-proposal-v3-20261012.md (rounds 1-6). Rules T0-T9 live in config:
-# cfg_escalation (thread_check_before_work, raise_state_choice, thread_completion, 4 amended),
-# cfg_escalation_transition (priority 0, the two thread_* condition keys),
+# The open threads register carried in the escalation table. Rules T0-T9 are config:
+# cfg_escalation, cfg_escalation_transition (priority 0, the thread_* condition keys),
 # cfg_escalation_requirement (thread_type rows), cfg_behaviour_rule
-# open-threads-carried-as-escalations. A thread's items (escalation_thread_item) hold current status
-# only; every response, including each completion, is an escalation_thread_item_response row.
+# open-threads-carried-as-escalations. escalation_thread_item holds current status only; every
+# response, each completion included, is an escalation_thread_item_response row.
 
 def resolve_id(db: Db, ref) -> int:
-    """An escalation id from `ref`: 2000, '2000', '#2000', or a thread alias 'OT-16' (any case).
-    Escalation.ps1 -Id accepts the alias anywhere an id is taken (proposal sec5)."""
+    """An escalation id from `ref`: 2000, '2000', '#2000', or a thread alias 'OT-16' (any case)."""
     s = str(ref).strip()
     if s.startswith("#"):
         s = s[1:]
@@ -723,8 +509,8 @@ def _add_item(cfg: Cfg, db: Db, escalation_id: int, kind: str, value: str, note:
 
 
 def _resolve_item(db: Db, thread: dict, ref: str):
-    """An item of `thread` from `ref` (proposal sec3.4): 'OT-16.1' (alias must be this thread's),
-    '1' (the item number), 'kind:value', or the value alone (unique within the thread)."""
+    """An item of `thread` from `ref`: 'OT-16.1' (alias must be this thread's), '1' (the item
+    number), 'kind:value', or the value alone (unique within the thread)."""
     s = ref.strip()
     alias = thread["alias"] or ""
     if alias and s.upper().startswith(alias.upper() + "."):
@@ -747,15 +533,13 @@ def _resolve_item(db: Db, thread: dict, ref: str):
     return dict(rows[0])
 
 
-_SETTLE_KINDS = ("closed", "withdrawn", "superseded")   # #2000 lifecycle: response kinds
-                                                         # that settle an item (its status = kind)
+_SETTLE_KINDS = ("closed", "withdrawn", "superseded")   # response kinds that settle an item
 _SUCCESSOR_RE = re.compile(r"\bOT-\d+(?:\.\d+)?\b|#\d+")
 
 
 def _respond(cfg: Cfg, db: Db, item: dict, kind: str, text: str, *, via: int | None, by: str,
              files: list | None, at: str) -> None:
-    """One response row (ruling 7: every individual completion is recorded in the response table).
-    A settling kind -- closed, withdrawn, superseded (#2000 lifecycle) -- needs an open item and
+    """One response row. A settling kind (closed, withdrawn, superseded) needs an open item and
     sets its status to that kind; 'reopened' opens a settled item again. 'superseded' must name
     what carries the item on (OT-nn, OT-nn.n or #nnnn) in its text."""
     _grant(cfg, "escalation_thread_item_response")
@@ -794,12 +578,11 @@ def _respond(cfg: Cfg, db: Db, item: dict, kind: str, text: str, *, via: int | N
 def _settle_thread_on_reject(cfg: Cfg, db: Db, thread: dict, state: str | None, superseded_by,
                              *, reason: str | None, who: str, at: str,
                              succ_lines: list[str] | None = None) -> list[str]:
-    """#2000 lifecycle (G4): no thread ends with an open item. Withdraw -> each open item is
-    withdrawn with the thread's reason. Supersede -> each open item is added to the successor
-    thread (an existing item of the same kind:value is reused, reopened if settled) and recorded
-    superseded here, naming its new reference. Returns summary lines for the history comment.
-    `succ_lines`, when given, receives what happened on the successor -- each item added,
-    reopened or already open there -- for the successor's own history (G5-a, test plan v5)."""
+    """No thread ends with an open item. Withdraw: each open item is withdrawn with the thread's
+    reason. Supersede: each open item is added to the successor thread (an existing item of the
+    same kind:value is reused, reopened if settled) and recorded superseded here, naming its new
+    reference. Returns summary lines for the history comment; `succ_lines`, when given, receives
+    what happened on the successor, for the successor's own history."""
     alias = thread["alias"] or f"#{thread['id']}"
     open_items = [dict(r) for r in _thread_items(db, thread["id"], "open")]
     out = []
@@ -845,8 +628,7 @@ def _settle_thread_on_reject(cfg: Cfg, db: Db, thread: dict, state: str | None, 
 
 
 def _thread_referenced(db: Db, escalation_id: int) -> bool:
-    """T5 (round 2, 'in-progress only'): an open 'escalation' item points at a task or issue that
-    is itself at state in-progress."""
+    """T5: an open 'escalation' item points at a task or issue that is itself in-progress."""
     for it in _thread_items(db, escalation_id, "open"):
         if it["kind"] != "escalation":
             continue
@@ -869,8 +651,8 @@ def _thread_facts(db: Db, escalation_id: int, *, items_changed: bool, closed_som
 
 
 def _thread_completion_resolution(db: Db, thread: dict) -> str:
-    """#2000 lifecycle: the resolution written when a thread completes because its last item was
-    settled -- each item with how it was settled, from its latest response."""
+    """The resolution written when a thread completes because its last item was settled: each item
+    with how it was settled, from its latest response."""
     alias = thread["alias"] or f"#{thread['id']}"
     parts = []
     for it in _thread_items(db, thread["id"]):
@@ -886,8 +668,7 @@ def _restate_thread(cfg: Cfg, db: Db, thread_id: int, summary: str, *, who: str,
                     closed_some: bool) -> str | None:
     """Re-derive a thread's state after its items, or the work they reference, changed outside an
     Update of the thread itself (a Match, a referenced task changing state). Same config rows as
-    update(): the two priority-0 thread rows, else unchanged. Writes one history version carrying
-    `summary` (ruling 8: notes on a thread land in history). Returns the new state, or None when
+    update(). Writes one history version carrying `summary`. Returns the new state, or None when
     the thread is not open."""
     cur = _current(db, thread_id)
     if cur["state"] not in _THREAD_OPEN_STATES:
@@ -915,9 +696,8 @@ def _restate_thread(cfg: Cfg, db: Db, thread_id: int, summary: str, *, who: str,
 
 def _sync_threads_for(cfg: Cfg, db: Db, ref_id: int, *, who: str) -> list[str]:
     """After a task or issue changes, bring every thread that references it (an open 'escalation'
-    item '#ref_id') into line -- T6: when the task or issue reaches a terminal state its item
-    closes, with a note of what it settled (round 2: it may close without resolving its threads);
-    T3/T5: a thread follows the in-progress state of the work that references it."""
+    item '#ref_id') into line: T6, at a terminal state its item takes the same ending; T3/T5, a
+    thread follows the in-progress state of the work that references it."""
     ref = _current(db, ref_id)
     if ref["type"] == "thread":
         return []
@@ -931,8 +711,7 @@ def _sync_threads_for(cfg: Cfg, db: Db, ref_id: int, *, who: str) -> list[str]:
         thread = _current(db, it["escalation_id"])
         label = thread["alias"] or f"#{thread['id']}"
         if ref["state"] in state_group(db, "terminal"):
-            # #2000 lifecycle (G2): the item takes the task's own ending -- a withdrawn or
-            # superseded task does not read as work done.
+            # the item takes the task's own ending: a withdrawn or superseded task is not work done
             kind = {"withdraw": "withdrawn", "supersede": "superseded"}.get(ref["state"], "closed")
             settled = (ref["resolution"] or ref["comment"] or "").strip().replace("\n", " ")
             text = (f"#{ref_id} reached {ref['state']}"
@@ -1059,9 +838,8 @@ def match_threads(cfg: Cfg, db: Db, *, clusters=(), strongs=(), verses=(), for_r
 
 
 def thread_check(cfg: Cfg, db: Db, *, who: str) -> list[str]:
-    """T5, run at session start (.claude/commands/start-project.md step 4B): every open thread
-    referenced by a task or issue is brought into line with that work -- moved to in-progress when
-    the work is in-progress, its item closed when the work has reached a terminal state."""
+    """T5, run at session start: every open thread referenced by a task or issue is brought into
+    line with that work -- in-progress when the work is, its item closed when the work is done."""
     who = _check_assignee(db, who)
     refs = db.rows("SELECT DISTINCT i.value FROM escalation_thread_item i JOIN escalation e ON "
                    "e.id=i.escalation_id WHERE i.kind='escalation' AND i.status='open' AND "
@@ -1079,10 +857,9 @@ def thread_check(cfg: Cfg, db: Db, *, who: str) -> list[str]:
 
 # ── DISPATCHER-TIED shape (run_id set) -- vocabulary/semantics unchanged, engine now config-driven
 def _sanitise_dispatcher_title(question: str, preset: dict) -> tuple[str, dict]:
-    """Dispatcher-tied short_description still respects the title-shape spec, but this path fires
-    from inside a crash/pause handler (run.py:172-200) -- raising here would mask the real crash.
-    Sanitise instead of reject, never lose data: the untouched original survives in
-    preset['full_message'] whenever sanitising actually changes anything."""
+    """Dispatcher-tied titles still follow the title shape, but this fires from inside a crash or
+    pause handler, where raising would mask the real crash: sanitise instead of reject. The
+    original survives in preset['full_message'] whenever sanitising changes anything."""
     if _title_shape_error(question) is None:
         return question, preset
     flat = question.replace("\n", " ").replace("--", "-")
@@ -1097,53 +874,17 @@ def raise_(db: Db, run_id: str, source: str, at_step: str, question: str,
           title: str | None = None) -> int:
     """Record a pause -- called by run.py at a real dispatcher pause point.
 
-    `resolution_kind` (escalation #798/#799): every real call site now supplies one explicitly
-    (crash/report-stop pass `self_correctable` -- "pure coding logic", researcher 2026-08-22;
-    pause-continue passes through whatever the handler's own `escalate()` call decided). The
-    `None` fallback below (-> `decision_required`, the conservative "we don't know, ask" default)
-    exists only as the same sanitise-don't-crash safety net this function already follows
-    elsewhere -- never intended to be the normal path. If `decision_required` and `etype` isn't
-    `notice`, `type` is forced to `issue` (same rule as `raise_new()`).
+    `resolution_kind`: every call site passes one (crash/report-stop pass `self_correctable`;
+    pause-continue passes the handler's own choice). The `None` fallback (`decision_required`) is
+    only a safety net. If `decision_required` and `etype` isn't `notice`, `type` becomes `issue`.
 
-    Escalation #790 (2026-08-22, researcher: "Proceed to fix this bug"): this shape used to leave
-    `comment`/`originator` unset (NULL), even though `cfg_escalation_requirement` states `comment`
-    is required "always" at Raise, with no carve-out for the dispatcher shape -- #787 was the live
-    example. Fixed by ALWAYS populating both, not by calling `_check_requirements()` (which
-    raises on failure): this function already fires from inside crash/pause handling
-    (`run.py`), where the module's own long-standing rule for `_sanitise_dispatcher_title` applies
-    equally -- "raising here would mask the real crash. Sanitise instead of reject, never lose
-    data." `comment` reuses `tried` (every real call site already passes a real, non-empty
-    explanation there -- the same content a comment is meant to hold, e.g. "ran the full
-    validation report -- {out}"); `originator` is 'Claude' (every current call site is invoked by
-    Claude Code, and 'Claude'/'Researcher' are the only two values `cfg_enum
-    escalation_assignee` allows -- there is no third 'system' option).
-    `next_action` is `'review'` (researcher, 2026-08-22: "it just does not have a next-action and
-    the state should be review" -- correcting an earlier, wrong version of this docstring, which
-    reasoned `next_action` had to be a member of `cfg_enum escalation_next_action_dispatcher`
-    (approve/reject/revise/hold/noted) and left it `None` on that basis. That enum is only ever
-    consulted by `_check_next_action_dispatcher()`, which fires solely inside `answer_for_run()`
-    -- it validates the ANSWER decision, never the value a freshly-raised item starts at.
-    `raise_new()` (the manual shape) already sets its own initial `next_action = "review"` as a
-    bare literal, with no enum check at all at creation -- `'review'` here does exactly the same,
-    for the same reason: it means "this needs a decision", not "the decision is X".
+    `comment` and `originator` are always populated (#790) without raising, since this runs inside
+    crash handling: `comment` reuses `tried`, `originator` is 'Claude'. `next_action` starts at
+    'review', as in raise_new().
 
-    `title` (escalation #1326, 2026-08-31): a caller-supplied, already title-shaped
-    short_description -- used directly, `question` then stays free to be the real, longer
-    REPRESENTATIVE description a caller like `configmaint.propose` needs, without either being
-    forced through the lossy word-slicing `_sanitise_dispatcher_title()` otherwise applies. Found
-    live: every `configmaint.propose` escalation's short_description was a mid-word-truncated
-    fragment of its `-Question`, because that single field had to serve as both the representative
-    description AND the title -- `-Question` was never actually validated as (or intended to be) a
-    title. Omitted (the crash-handler call site in `run.py`'s `except Exception` never has a
-    pre-built title to give), the old sanitise-by-truncation behaviour is unchanged -- that
-    fallback stays deliberately lossy-but-safe because it fires from inside exception handling,
-    where raising here would mask the real crash (see `_sanitise_dispatcher_title`'s own
-    docstring). A caller-supplied title is assumed pre-validated (the two live call sites --
-    `configmaint.propose`, `handlers/base.py:escalate()`'s docstring -- both point back to
-    `_title_shape_error` at the source, where a bad title fails loudly as its own clear crash
-    rather than being silently swallowed here); still guarded defensively rather than trusted
-    blindly, since a badly-shaped title reaching this deep should never itself become a second,
-    confusing failure on top of whatever the original escalation was about."""
+    `title`: a caller-supplied, already title-shaped short_description (#1326), so `question` can
+    carry the full description. Without it, the title is sanitised from `question`. A supplied title
+    is still guarded, since a bad title here must not become a second failure."""
     now = _now()
     if title and _title_shape_error(title) is None:
         short_description = title
@@ -1171,12 +912,8 @@ def raise_(db: Db, run_id: str, source: str, at_step: str, question: str,
 
 
 def pending_for_run(db: Db, run_id: str):
-    """`run_id` accepts either the full dispatcher run_id string, or (as a convenience) the short
-    escalation id, e.g. '796' -- researcher-reported UX gap, escalation #795 v4 (2026-08-22): the
-    researcher tried the short numeric id instead of the long generated string and got 'no pending
-    escalation for run 796'; the long string is error-prone to copy correctly. Short-id resolution
-    still requires the row to actually be dispatcher-tied (run_id IS NOT NULL) so a manual-shaped
-    item can never be answered through this path just by guessing its id."""
+    """`run_id` takes the full dispatcher run_id or the short escalation id, e.g. '796' (#795).
+    A short id still has to be dispatcher-tied (run_id IS NOT NULL)."""
     if run_id.isdigit():
         return db.rows(
             "SELECT * FROM escalation WHERE id=? AND run_id IS NOT NULL AND state='raised' "
@@ -1187,23 +924,9 @@ def pending_for_run(db: Db, run_id: str):
 
 
 def answered_for_run(db: Db, run_id: str, at_step: str):
-    """The latest ANSWERED escalation for a run at a step, or None -- a real decision
-    (approve/approved/reject/revise) recorded in `next_action`, regardless of `state`. `hold`/
-    `noted` deliberately never match (their own `next_action` values aren't in this list).
-
-    Fixed 2026-08-31 (escalation #1328, researcher's own live suspicion, confirmed by
-    reproduction): this used to require `state='completed'` -- correct before escalation #1075/
-    #1301 existed, wrong since. A `needs_claude_followup` item's `approved` deliberately resolves
-    to `state='re-assigned'`, NOT `completed` (cfg_escalation_transition priority 1, "routes back
-    to Claude instead of completed") -- meaning the OLD query could never find a
-    `configmaint.propose` approval at all, because `propose()` always sets `needs_followup=True`.
-    Reproduced live: re-running an approved #1309 with the researcher's real 'approved' decision
-    already on file still fell all the way through to demanding a fresh decision, because this
-    query's `state='completed'` filter excluded the very row that held the answer. Every
-    `configmaint.propose` approval before this fix was silently subject to the same gap -- caught
-    only where independently re-verified against the live DB (escalations #1238-1256's own
-    history notes exactly this), never by the escalation's own terminal state, because there
-    never was one to reach."""
+    """The latest ANSWERED escalation for a run at a step, or None: a real decision (approve/
+    approved/reject/revise) in `next_action`, whatever the `state` (#1328: an approved item with
+    needs_claude_followup sits at re-assigned, not completed). `hold`/`noted` never match."""
     rows = db.rows(
         "SELECT * FROM escalation WHERE run_id=? AND at_step=? AND "
         "next_action IN ('approve','approved','reject','revise') "
@@ -1212,23 +935,11 @@ def answered_for_run(db: Db, run_id: str, at_step: str):
 
 
 def answered_baseline_for_step(db: Db, at_step: str, current_counts: dict):
-    """The most recent APPROVED escalation for `at_step`, ACROSS every run (not just this one),
-    if its recorded `context` preset counts already cover `current_counts` component-wise --
-    or None if no such row exists, parsing fails, or the current counts exceed what was approved.
-
-    Built 2026-09-15, escalation #1707 (researcher, verbatim, on that item's own comment: "this
-    report is as expected. Can be signed off. This situation should no longer create an exception
-    everytime it runs"). `answered_for_run()` above only recognises an answer given to THIS SAME
-    run_id -- a plain read-only DB-wide check like `cluster.validate`/`spine.check` gets a fresh
-    run_id every invocation, so a researcher's 'approved' on one run's findings could never be
-    recognised by any LATER run, however unchanged the underlying backlog -- exactly the repeated-
-    escalation-on-a-known-situation defect this closes. Deliberately narrow and fail-safe: only
-    `next_action IN ('approve','approved')` counts as durable acknowledgment (a `reject`/`revise`
-    means the researcher wants it acted on, never silently re-absorbed); every key in
-    `current_counts` must be present in the stored preset AND <= its stored value, or this returns
-    None (escalate again) rather than guess. A genuine INCREASE in any count still escalates fresh,
-    exactly as before -- this only suppresses re-raising the SAME already-acknowledged situation,
-    never masks growth."""
+    """The most recent APPROVED escalation for `at_step`, across every run, if its recorded
+    `context` preset counts cover `current_counts` component-wise -- else None (#1707). Lets a
+    repeated read-only check recognise an already-approved, unchanged situation. Only
+    approve/approved counts; every key in `current_counts` must be present and <= its stored
+    value, so any increase escalates again."""
     import json
     rows = db.rows(
         "SELECT * FROM escalation WHERE at_step=? AND "
@@ -1248,25 +959,8 @@ def answered_baseline_for_step(db: Db, at_step: str, current_counts: dict):
 
 
 def open_duplicate(db: Db, at_step: str, stable_key: str):
-    """Two real bugs found and fixed live 2026-08-29 (a `configmaint.validate` re-run pile-up --
-    #1008/#1011/#1015/#1016/#1017/#1038/#1039, seven near-identical "cfg_* is structurally
-    coherent" notices in one session, the exact class this function's own call site comment says
-    it exists to prevent):
-
-    1. Matched against `short_description`, which `_sanitise_dispatcher_title` truncates to
-       `_TITLE_MAX_CHARS` (60) chars -- but `configmaint.validate`'s own lead-in text ("cfg_* is
-       structurally coherent, but has findings needing your judgement: ") is already ~74 chars, so
-       `short_description` NEVER contains any of the variable finding-summary text `stable_key`
-       actually is. The `LIKE` could never match, structurally, regardless of whether the
-       underlying finding-set had genuinely changed or not. Fixed: match against `context`
-       instead, which holds the un-truncated `json.dumps(preset)` (via `escalate()`) -- `preset`
-       includes `full_message`, which DOES contain `stable_key` verbatim.
-    2. Matched only `state='raised'` -- but the researcher's own documented workaround for this
-       exact class of noise (#1008: "I am leaving it here so the system will not duplicate the
-       same error") moves the anchor escalation to `state='in-progress'`, which this query could
-       never see. Fixed: reuse the module's own shared `_OPEN_STATES` (raised/re-assigned/
-       on-hold/in-progress) -- the same "still open, not yet closed" definition `write_list_report`
-       already uses -- rather than the narrower literal this function invented independently."""
+    """Matches on `context` (it holds the untruncated preset, whose `full_message` contains
+    `stable_key`; short_description is truncated to 60 chars) across every live state."""
     live = live_states(db)
     ph = ",".join("?" * len(live))
     rows = db.rows(
@@ -1277,10 +971,8 @@ def open_duplicate(db: Db, at_step: str, stable_key: str):
 
 def open_for_step(db: Db, at_step: str, tried_prefix: str):
     """The newest still-open escalation raised by `at_step` whose `tried` starts with
-    `tried_prefix`, whatever its findings. Escalation #2108 (2026-10-13): open_duplicate() matches
-    the exact finding summary, so a configmaint.validate re-run whose COUNTS had changed raised a
-    new escalation and left the earlier one open (#2104 -> #2105 -> #2106 -> #2107, then #2112 and
-    #2113 open side by side). The caller now records the changed findings on this one instead."""
+    `tried_prefix`, whatever its findings (#2108): a re-run with changed counts records them on
+    this one instead of raising another."""
     live = live_states(db)
     ph = ",".join("?" * len(live))
     rows = db.rows(
@@ -1291,38 +983,12 @@ def open_for_step(db: Db, at_step: str, tried_prefix: str):
 
 def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | None = None,
                    *, answered_by: str, resolution: str | None = None) -> str:
-    """Record the decision on a run-scoped (dispatcher-tied) escalation. `answered_by` is required,
-    no default (escalation-rebuild-design-v1 sec6).
+    """Record the decision on a dispatcher-tied escalation. `answered_by` is required.
 
-    escalation #795 (researcher, 2026-08-22) -- BOTH `resolution_kind` values now refuse this
-    path, checked and confirmed live as real gaps before either guard existed, not assumed:
-
-    - `decision_required` (checked live 2026-08-22, escalation #820: a flat 'approve' via AnswerRun
-      silently succeeded on a decision_required item -- researcher's own words, "it should not be
-      possible"). Mirrors `update()`'s own carve-out the OTHER way: `update()` refuses a
-      dispatcher-tied item UNLESS `resolution_kind='decision_required'`; this refuses one IF
-      `resolution_kind='decision_required'` -- together, a decision_required item is answerable
-      ONLY through Update's richer vocabulary (ready_for_approval -> approved, -State on-hold,
-      next_action=reject/revise/noted).
-    - `self_correctable` (this was always the APPROVED spec -- proposal
-      `escalation-decision-vs-defect-axis-proposal-v4-20260822.md` §6: "No approve/reject/revise/
-      hold/noted vocabulary. AnswerRun is never invoked" -- and its own §11 Stage 2 test named this
-      exact check by name: "confirm the second [a self_correctable item] has no reachable AnswerRun
-      path (attempting it should refuse, citing resolution_kind)". #799's Stage 2 build never
-      actually implemented or tested this specific line of its own approved spec -- found live
-      2026-08-22 re-checking #795, escalation #822, the same way #820 was found: a flat 'approve'
-      succeeded with no refusal at all. A self_correctable item is closed ONLY via
-      `resolve_self_correctable()` / converted via `escalate_to_decision()`, never AnswerRun.
-
-    Net effect: `AnswerRun`'s flat approve/reject/revise/hold/noted vocabulary is now unreachable
-    for EVERY item raised under the resolution_kind regime (i.e. every item raised since #799,
-    resolution_kind being required at Raise) -- both branches refuse. This is a real, deliberate
-    consequence of the approved design, not a partial/temporary state: `decision_required` runs
-    terminate and never resume the same run_id (a fresh run is the test, per §5), and
-    `self_correctable` items never carried decision vocabulary to begin with (per §6) -- neither
-    kind ever had a genuine use for AnswerRun's original 'answer and resume' semantics. See
-    `cfg_behaviour_rule` (class=development,
-    rule_key='decision-required-answered-via-update-not-answerrun') -- text covers both halves."""
+    Refused for both resolution_kind values (#795): a decision_required item is answered only
+    through Update (ready_for_approval -> approved, -State on-hold, reject/revise/noted); a
+    self_correctable item closes only through resolve_self_correctable() or converts through
+    escalate_to_decision(). cfg_behaviour_rule decision-required-answered-via-update-not-answerrun."""
     decision = decision.lower()
     rows = pending_for_run(db, run_id)
     if not rows:
@@ -1364,39 +1030,20 @@ def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str 
              *, originator: str, state: str | None = None,
              comes_back_when: str | None = None,
              items: list[tuple[str, str, str | None]] | None = None) -> int:
-    """Raise -- a new MANUAL item. `originator` is required, no default. `comment`/
-    `short_description` requirements come from cfg_escalation_requirement (action='raise').
+    """Raise -- a new MANUAL item. `originator` is required. `comment`/`short_description`
+    requirements come from cfg_escalation_requirement (action='raise').
 
-    `resolution_kind` (escalation #798/#799): `decision_required` or `self_correctable`, required
-    at Raise (`cfg_escalation_requirement`).
+    `resolution_kind`: decision_required or self_correctable, required. `etype` is used as given,
+    checked against cfg_enum. Only `notice` is special: it closes on arrival (state='closed',
+    next_action=NULL); every other type starts at state='raised', next_action='review'.
 
-    **No longer forces `type` to `issue` under `decision_required` -- removed 2026-08-26, escalation
-    #872.** Until this fix, any `decision_required` raise silently overwrote whatever `etype` was
-    passed (unless it was `notice`) with `issue`, regardless of caller intent -- never a config rule
-    (no `cfg_escalation_requirement`/`cfg_escalation_transition` row implemented it, just a bare
-    Python `if`), and the researcher's own explicit instruction on #872 was 'Task and notes as types
-    are a requirement' -- `task` must be settable and respected under `decision_required`, not
-    coerced. Whatever `etype` is passed (or defaults to) is now used as-is, checked only for cfg_enum
-    membership.
+    `needs_followup` (#1075): finishing needs a further Claude action after approval, so `approved`
+    routes back to Claude instead of to completed. Default False.
 
-    D12 (register v9, type-keyed Raise defaults): only `notice` is special -- it closes on arrival
-    (`state='closed'`, `next_action=NULL`), never entering the review/decision machinery. Every
-    other type (`task`/`issue`/`run_error`/`config`/`note`) defaults identically: `state='raised'`,
-    `next_action='review'`.
-
-    `needs_followup` (escalation #1075, 2026-08-30): set when finishing this item will require a
-    further action from Claude AFTER the researcher approves it (a config apply, a build step) --
-    consumed by cfg_escalation_transition so `approved` routes back to Claude instead of straight to
-    `completed`. Defaults False -- most items need nothing further.
-
-    escalation #2000 (2026-10-12):
-    - `state` (T2, cfg_escalation raise_state_choice): a manual Raise may land at any member of
-      cfg_enum escalation_raise_state (raised / on-hold / in-progress); default 'raised'. Offered
-      here only -- the code path `raise_()` keeps 'raised', so module_blocking still fires.
-    - type 'thread': `items` (kind, value, note) are required (T7), resolution_kind must be
-      self_correctable (T4), the alias OT-nn is assigned automatically, the state defaults to
-      on-hold and may not be 'raised', and next_action is left empty (a thread is not waiting on
-      review). `comes_back_when` holds the thread's whole 'comes back when' text."""
+    `state` (T2): a manual Raise may land at any cfg_enum escalation_raise_state; default 'raised'.
+    type 'thread': `items` (kind, value, note) are required (T7), resolution_kind must be
+    self_correctable (T4), the alias OT-nn is assigned, the state defaults to on-hold and may not be
+    'raised', and next_action is empty. `comes_back_when` holds the thread's 'comes back when' text."""
     checked_type = _check_type(db, etype)
     checked_kind = _check_resolution_kind(db, resolution_kind) if resolution_kind else None
     is_thread = checked_type == "thread"
@@ -1452,38 +1099,22 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
           item_refs: list[str] | None = None, respond: str | None = None,
           response_kind: str | None = None, via=None, files: list | None = None,
           superseded_by=None) -> str:
-    """Update -- every subsequent change to a MANUAL item. `originator` is required, no default.
-    Two-stage approval separation of duties: the party that sets `approved` must differ from the
-    party that most recently set `ready_for_approval` on this item.
+    """Update -- every later change to a MANUAL item. `originator` is required.
 
-    `needs_followup` (escalation #1075): None (the default) carries the item's current flag
-    forward unchanged -- pass True/False to set or clear it, normally done at the
-    `ready_for_approval` call (flag it there) and cleared once Claude actually finishes the real
-    follow-up work, before the final `noted` that closes the item out.
+    `needs_followup`: None carries the current flag forward; True/False sets or clears it.
 
-    Dispatcher-tied carve-out (escalation #798/#799): a dispatcher-tied item is still refused
-    UNLESS `resolution_kind='decision_required'`, in which case it's handled exactly like a
-    manual item from here on -- `decision_required` always uses the manual ready_for_approval/
-    approved vocabulary, regardless of which shape raised it (`cfg_behaviour_rule
-    'decision-points-are-terminal-not-inline'`). A dispatcher-tied `self_correctable` item still
-    has no `Update`/`AnswerRun` path at all -- see `resolve_self_correctable()`/
-    `escalate_to_decision()` instead.
+    A dispatcher-tied item is refused unless it is decision_required, which always uses the manual
+    ready_for_approval/approved vocabulary. A dispatcher-tied self_correctable item closes through
+    resolve_self_correctable() / escalate_to_decision().
 
-    Threads (escalation #2000, proposal sec3.3): `item_refs` + `response_kind` + `respond` (+ `via`,
-    `files`) record one response per named item, all sharing one `via`; `closed` closes the item,
-    `reopened` opens it again, and `forward` needs at least one `add_items` entry (the forward mark
-    becomes a matchable item). `add_items` alone adds items. Each such Update also writes a
-    one-line summary into the thread's history (ruling 8). The thread's state then follows the
-    priority-0 cfg_escalation_transition rows (T3/T5, T6); completed/closed is refused while any
-    item is open (T6). After any change to a task or issue, every thread referencing it is brought
-    into line (`_sync_threads_for`).
-
-    Thread lifecycle (#2000, researcher 2026-10-12: "the rest you need to control ... all
-    interaction must go to history"): `withdrawn`/`superseded` settle an item like `closed`; when
-    an item change leaves none open, the thread completes with a generated resolution. A thread
-    withdrawn (`-NextAction reject -State withdraw`) withdraws its open items; superseded
-    (`-State supersede`) needs `superseded_by` (OT-nn) and moves each open item there, recording
-    it superseded. Each item response is written in full into the thread's history comment."""
+    Threads: `item_refs` + `response_kind` + `respond` (+ `via`, `files`) record one response per
+    named item; `closed`/`withdrawn`/`superseded` settle an item, `reopened` opens it, and `forward`
+    needs at least one `add_items` entry. `add_items` alone adds items. Each such Update writes the
+    responses in full into the thread's history. The thread's state follows the priority-0 transition
+    rows; completed/closed is refused while any item is open (T6), and when the last item settles
+    the thread completes with a generated resolution. Withdrawing a thread withdraws its open items;
+    superseding (`superseded_by` OT-nn) moves them to the successor. After any change to a task or
+    issue, every thread referencing it is brought into line (`_sync_threads_for`)."""
     cur = _current(db, escalation_id)
     if not cur["run_id"].startswith("MANUAL-") and cur["resolution_kind"] != "decision_required":
         return (f"escalation #{escalation_id} is dispatcher-tied (run_id {cur['run_id']!r}), not "
@@ -1494,39 +1125,17 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     who = _check_assignee(db, originator)
     checked_action = _check_next_action_manual(db, next_action)
     new_resolution = resolution if resolution is not None else cur["resolution"]
-    # Hoisted above its one prior use site (envelope construction, below) so the
-    # 'ready_for_approval' guard can see what the assignment WOULD become this call, not just
-    # what it currently is.
     resolved_assignee = _check_assignee(db, next_action_assigned_to, required=False) or cur["next_action_assigned_to"]
-    # Also hoisted above its later use (was computed just before _evaluate_transition, below) so
-    # the forced-reassignment rule right after this can see it.
     resolved_needs_followup = (int(needs_followup) if needs_followup is not None
                                else cur["needs_claude_followup"])
 
-    # researcher, 2026-08-31: "approval... will progress to approved, with Claude as assignee...
-    # when claude completes the work, claude must be able to set the item to completed." An
-    # approval that still needs follow-up work must hand the item BACK to Claude -- not leave it
-    # sitting with whoever approved it (normally the Researcher) because nobody remembered to pass
-    # -AssignedTo Claude explicitly. Forced, not merely defaulted: this overrides even an explicit
-    # -AssignedTo on this specific call, because the flag's whole meaning is "this isn't done,
-    # Claude has to act next" -- there is no legitimate reason to approve-with-followup and assign
-    # it anywhere else.
+    # An approval that still needs follow-up goes back to Claude, overriding any -AssignedTo.
     if checked_action == "approved" and resolved_needs_followup:
         resolved_assignee = "Claude"
 
-    # D25 (register v9, corrects a shipped defect): approval is an AUTHORITY check, not an identity
-    # check. The party ready_for_approval assigned the item to is who may approve -- Claude assigning
-    # to itself is a legitimate, visible self-authorisation for items Claude holds authority over;
-    # assigning to the researcher means only the researcher may approve. Same-party is fine when
-    # that party holds the authority; what's refused is approving something assigned to someone else.
-    #
-    # Extended to 'noted' -- escalation #851, 2026-08-26. noted and approved both reach state=closed
-    # (cfg_escalation_transition priorities 1/4) but only approved had this check; a decision_required
-    # item could be closed via noted with zero authority check, something approved on the same item
-    # would correctly have refused. Only for decision_required items -- self_correctable items close
-    # via resolve_self_correctable() (its own, separate, no-approval-needed path by design, per
-    # cfg_behaviour_rule 'decision-points-are-terminal-not-inline'); a self_correctable item reaching
-    # 'noted' via plain Update is unaffected by this check.
+    # D25: approval is an authority check -- only the party ready_for_approval assigned the item to
+    # may approve or note a decision_required item (#851 for noted). self_correctable items close
+    # through resolve_self_correctable().
     if checked_action in ("approved", "noted") and cur["resolution_kind"] == "decision_required":
         rfa_assigned_to = _last_next_action_assigned_to(db, escalation_id, "ready_for_approval")
         if rfa_assigned_to and who != rfa_assigned_to:
@@ -1553,11 +1162,11 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
         _check_requirements(db, "revise", originator=who, checked_action=checked_action,
                             values={"tried": tried})
 
-    # ── thread items and responses (escalation #2000) -- written before the state is derived, in
-    # the same transaction, so the transition rows and the T6 check see this call's changes.
+    # thread items and responses: written before the state is derived, in the same transaction,
+    # so the transition rows and the T6 check see this call's changes.
     is_thread = cur["type"] == "thread"
     thread_facts, item_summary = None, []
-    succ_lines: list[str] = []          # G5-a: what a supersede did on the successor thread
+    succ_lines: list[str] = []          # what a supersede did on the successor thread
     if (add_items or item_refs or respond or response_kind or superseded_by) and not is_thread:
         raise ValueError("-Item/-AddItem/-Respond/-ResponseKind/-SupersededBy are for type thread "
                          "only")
@@ -1580,7 +1189,7 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
         for kind, value, note in add_items or []:
             new_item = _add_item(cfg, db, escalation_id, kind, value, note, opened_by=via_id, at=now)
             item_summary.append(f"item {new_item['item_no']} {kind}:{value} added")
-        if checked_action == "reject":                          # #2000 lifecycle (G4)
+        if checked_action == "reject":
             item_summary += _settle_thread_on_reject(cfg, db, cur, state, superseded_by,
                                                      reason=comment, who=who, at=now,
                                                      succ_lines=succ_lines)
@@ -1588,7 +1197,7 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
         thread_facts = _thread_facts(db, escalation_id, items_changed=changed,
                                      closed_some=response_kind in _SETTLE_KINDS)
         if item_summary:
-            # all interaction to history (#2000 lifecycle, G5): the response itself, in full
+            # the response itself, in full, to history
             line = (f"{cur['alias'] or '#' + str(escalation_id)}: " + "; ".join(item_summary)
                     + (f" (via #{via_id})" if via_id else ""))
             if respond:
@@ -1598,20 +1207,16 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
             comment = f"{comment}\n{line}" if comment else line
 
     assignee_changed = bool(next_action_assigned_to) and next_action_assigned_to != cur["next_action_assigned_to"]
-    # resolved_needs_followup now computed earlier, above -- the forced-reassignment rule needs it
-    # before this point.
     new_state = _evaluate_transition(db, "manual", checked_action, has_resolution=bool(new_resolution),
                                      assignee_changed=assignee_changed, explicit_state=state,
                                      cur_state=cur["state"], needs_followup=bool(resolved_needs_followup),
                                      cur_next_action=cur["next_action"], thread=thread_facts)
 
     if (is_thread and new_state == "completed" and thread_facts and thread_facts["all_settled"]
-            and not new_resolution):                        # #2000 lifecycle: last item settled
+            and not new_resolution):                        # last item settled
         resolution = new_resolution = _thread_completion_resolution(db, cur)
 
-    # D26 (register v9): work cannot land on a `raised` item -- comment/context/tried content
-    # requires the state to actually move first (e.g. -State in-progress), mechanically enforced
-    # here via cfg_escalation_requirement (action='update', check_kind='not_raised_with_content').
+    # D26: comment/context/tried cannot land on a `raised` item (check_kind not_raised_with_content)
     _check_requirements(db, "update", originator=who, checked_action=checked_action,
                         values={"state": new_state, "comment": comment, "context": context,
                                "tried": tried, "next_action": next_action,
@@ -1629,9 +1234,6 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
                            "resolution_kind": cur["resolution_kind"],
                            "needs_claude_followup": resolved_needs_followup},
                        originator=who)
-    # researcher, 2026-08-31: the old message showed only state (e.g. "-> state='re-assigned'"),
-    # leaving next_action invisible -- ambiguous, since 're-assigned' alone doesn't say WHAT it was
-    # re-assigned by (approved? a plain reassignment?). Show both.
     msg = (f"escalation #{escalation_id} v{merged['version']} -> "
            f"state={new_state!r}, next_action={merged['next_action']!r}, "
            f"assigned_to={merged['next_action_assigned_to']!r}")
@@ -1659,41 +1261,11 @@ def correction(cfg: Cfg, db: Db, escalation_id: int, *, short_description: str |
               state: str | None = None, next_action: str | None = None,
               next_action_assigned_to: str | None = None,
               originator: str) -> str:
-    """Correction — escalation #774 v2, researcher verbatim: "create a copy of update transaction
-    as Correction and allow the Correction transaction to update any column in any state... ensure
-    that this is update in the documentation and that correction is stated as only to be used for
-    error correction."
-
-    ★ ERROR CORRECTION ONLY — not a normal workflow action. Use Update for every ordinary change
-    (comments, decisions, reassignment, state changes); use Correction only to fix something
-    already recorded wrong (a bad title, a typo in a resolution). Correction does
-    NOT advance an item through its lifecycle — state/next_action are taken EXACTLY as given, never
-    auto-derived via cfg_escalation_transition, and default to the item's CURRENT values (carried
-    forward unchanged) when omitted, which is the normal case: most corrections touch content, not
-    workflow.
-
-    Differs from `update()` in exactly the two ways the researcher asked for, nothing more:
-    1. No `_OPEN_STATES` gate — works on closed/completed/withdraw/supersede items, which `update()`
-       structurally refuses (escalation #774's own finding).
-    2. `short_description` is a real parameter — `update()` has none at all (escalation #10's
-       finding; `_REPLACE_COLS` already lists it as an eligible delta column, nothing before this
-       ever wired it through). Still subject to the same title-shape spec as Raise (#759's
-       guardrail) — a Correction cannot write an over-length/dashed/multi-line title either.
-
-    Deliberately NOT copied from `update()`: the D25 same-approval-authority check and the D26
-    raised-state content guard — both are workflow-transition safeguards, not data-integrity ones,
-    and a correction has to be able to fix ANY state (including a `raised` item with a wrong
-    title) without being routed through the two-stage approval machinery.
-
-    **No `MANUAL-` restriction — removed 2026-08-26, escalation #867.** A `run_id.startswith
-    ('MANUAL-')` gate was added at some point after #774 and was never actually part of the
-    original spec quoted above, which says "any column in any state" — no carve-out for
-    dispatcher-tied items. Found live when it blocked correcting #865/#866 (both dispatcher-tied,
-    wrongly recorded `completed`/`approved` after an invalid transition), the exact class of repair
-    Correction exists for. Researcher, #867 v2, verbatim: "the correction action was intended to be
-    able override the controls and to reset a escalation. It should be handled with care but must
-    be available." Handling-with-care is the CLI's own yellow ERROR-CORRECTION-ONLY warning at the
-    point of use (`Escalation.ps1`), not a code-level restriction on which items qualify."""
+    """Correction -- ERROR CORRECTION ONLY (#774), never a workflow action: fix something already
+    recorded wrong (a bad title, a typo). Works on any item in any state, dispatcher-tied included
+    (#867), and can set short_description (still title-shape checked). state/next_action are taken
+    exactly as given, never derived, and carry forward when omitted. The D25 authority check and
+    the D26 raised-state guard do not apply."""
     cur = _current(db, escalation_id)
     who = _check_assignee(db, originator)
 
@@ -1716,21 +1288,18 @@ def correction(cfg: Cfg, db: Db, escalation_id: int, *, short_description: str |
                                 "resolution_kind": cur["resolution_kind"],
                                 "needs_claude_followup": cur["needs_claude_followup"]},
                        originator=who)
-    synced = _sync_threads_for(cfg, db, escalation_id, who=who)       # escalation #2000
+    synced = _sync_threads_for(cfg, db, escalation_id, who=who)
     return (f"escalation #{escalation_id} v{merged['version']} CORRECTED -> "
            f"state={resolved_state!r}, next_action={resolved_next_action!r}, "
            f"assigned_to={resolved_assigned_to!r}"
            + ("\n  threads: " + "; ".join(synced) if synced else ""))
 
 
-# ── resolution_kind transactions (escalation #798/#799) ─────────────────────────────────────────
+# ── resolution_kind transactions ─────────────────────────────────────────────────────────────
 def resolve_self_correctable(cfg: Cfg, db: Db, escalation_id: int, resolution: str,
                              *, originator: str) -> str:
-    """Closes a `self_correctable` escalation. No `approve`/`reject`/`revise`/`hold`/`noted`
-    vocabulary and no `AnswerRun` involvement -- `cfg_behaviour_rule
-    'decision-points-are-terminal-not-inline'`: a researcher never fixes code, so there is no
-    decision for them to make here. Claude fixes it, states what was wrong and what changed
-    (`resolution`, required), and this closes the item directly."""
+    """Closes a `self_correctable` escalation: Claude states what was wrong and what changed
+    (`resolution`, required). No approval vocabulary, no AnswerRun."""
     cur = _current(db, escalation_id)
     if cur["resolution_kind"] != "self_correctable":
         raise ValueError(f"escalation #{escalation_id} is not self_correctable "
@@ -1739,8 +1308,7 @@ def resolve_self_correctable(cfg: Cfg, db: Db, escalation_id: int, resolution: s
     if not resolution:
         raise ValueError("resolution is required -- state what was wrong and what changed")
     who = _check_assignee(db, originator)
-    # values (escalation #2000): type + the state this lands on, so the T6 row
-    # (no_open_thread_items, condition thread_type) can refuse a thread with open items.
+    # type + landing state, so the T6 row can refuse a thread with open items
     _check_requirements(db, "resolve_self_correctable", originator=who, checked_action=None,
                         values={"type": cur["type"], "state": "completed"}, self_id=escalation_id)
     merged = _snapshot(cfg, db, escalation_id,
@@ -1757,13 +1325,8 @@ def resolve_self_correctable(cfg: Cfg, db: Db, escalation_id: int, resolution: s
 
 def escalate_to_decision(cfg: Cfg, db: Db, escalation_id: int, tried: str,
                          *, originator: str) -> str:
-    """Converts an existing `self_correctable` escalation to `decision_required` -- the mechanism
-    named in `cfg_behaviour_rule 'decision-points-are-terminal-not-inline'`: a self-correction
-    attempt that reveals a genuine new decision is needed, not just an execution slip (this is
-    `tried`'s original purpose: what was attempted before escalating further). Does NOT change
-    `type` -- immutable, same as `run_id`/`source`/`at_step`/`raised_at`; the item keeps whatever
-    type it was raised with, only `resolution_kind`/`state`/`next_action` change. `tried` is
-    required and non-empty."""
+    """Converts a `self_correctable` escalation to `decision_required` when a fix attempt shows a
+    real decision is needed. `tried` (what was attempted) is required. `type` does not change."""
     cur = _current(db, escalation_id)
     if cur["resolution_kind"] != "self_correctable":
         raise ValueError(f"escalation #{escalation_id} is not self_correctable "
@@ -1782,7 +1345,7 @@ def escalate_to_decision(cfg: Cfg, db: Db, escalation_id: int, tried: str,
                                 "resolution_kind": "decision_required",
                                 "needs_claude_followup": cur["needs_claude_followup"]},
                        originator=who)
-    synced = _sync_threads_for(cfg, db, escalation_id, who=who)       # escalation #2000
+    synced = _sync_threads_for(cfg, db, escalation_id, who=who)
     return (f"escalation #{escalation_id} v{merged['version']} converted to decision_required "
            f"(state={new_state!r})" + ("\n  threads: " + "; ".join(synced) if synced else ""))
 
@@ -1794,24 +1357,12 @@ def _gist(raw, width: int = 80) -> str:
     return str(raw).replace("\n", " ")[:width]
 
 
-# D15 RETIRED 2026-08-27, escalation #909, along with D14 (see module docstring's retirement
-# banner) -- the whole from_id/related_activity graph (cycle/dangling/mismatched-pairing/
-# missing-link/incoherent-link) and its detection functions (_link_graph/_find_cycles/
-# _find_dangling/_find_mismatched_pairing/_find_missing_link/_find_incoherent_link) are removed,
-# not just unreachable.
 
 
 def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Path, list]:
-    """Open items, WITH full history inline underneath each one -- the `comment`/`context` columns
-    here are the true per-version DELTA (blank when that version didn't touch the field), not a
-    cumulative gist (escalation-rebuild-design-v1 sec4.2).
-
-    No longer grouped by `related_activity` (D14/D15 retired 2026-08-27, escalation #909, see
-    module docstring) -- straight `id` order.
-
-    Threads (escalation #2000, proposal sec5, clash C6) are kept out of the per-item body -- 100
-    of them would flood it -- and get one short section instead: counts by state, then the
-    in-progress threads only (rule 4 counts those alone). `-Action Thread` lists them all."""
+    """Open items, each with its full history inline (`comment`/`context` per version, blank where
+    that version didn't set them), in id order. Threads get one short section instead: counts by
+    state, then the in-progress threads only. `-Action Thread` lists them all."""
     open_s, parked_s = state_group(db, "open"), state_group(db, "parked")
     live = open_s + parked_s
     ph = ",".join("?" * len(live))
@@ -1845,7 +1396,7 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
                      f"{h['originator'] or ''} | {summary} | {h['answered_at']} |")
         L.append("")
 
-    # ── threads (escalation #2000) ──
+    # ── threads ──
     counts = db.rows("SELECT state, COUNT(*) AS n FROM escalation WHERE type='thread' "
                      "GROUP BY state ORDER BY state")
     L += ["## Open threads", ""]
@@ -1868,14 +1419,7 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
                          f"{refs} |")
             L.append("")
 
-    # Found live 2026-08-21 (researcher, reading this exact table): no short_description column at
-    # all -- a resolution-text-only row gives no way to tell what the item was ABOUT without going
-    # to look it up elsewhere. Fixed: short_description now selected and shown first. Widened the
-    # WHERE too -- `resolution IS NOT NULL` silently excluded closed notice-type items whose
-    # resolution text was folded into `comment` instead (raise_new() can't set `resolution` on an
-    # auto-closed notice) -- those items are just as "recently resolved" as any other; requiring a
-    # non-null resolution was accidentally hiding a whole class of legitimately-closed items, not a
-    # deliberate filter.
+    # recently resolved items, with their title; closed notices carry their text in `comment`
     resolved = db.rows(
         "SELECT id, short_description, state, resolution, answered_at "
         f"FROM escalation WHERE state IN ({','.join('?' * len(state_group(db, 'terminal')))}) "
@@ -1895,23 +1439,13 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
             L.append(f"| {r['id']} | {sd} | {r['state']} | {res} | "
                      f"{r['answered_at']} |")
 
-    # 2026-08-26 (escalation #857): was manual archive_before_write()+write_text(), bypassing the
-    # app-wide report.version_on_regenerate mechanism (BUILD.md sec60) every other report writer
-    # goes through -- this report never got versioned/archived-with-history like the rest of the
-    # app. Now uses reportkit.write_report() like everything else; return value captured and
-    # returned (not the pre-write `path`), per sec60's own fixed 19-site systemic bug.
     out = reportkit.write_report(db.conn, "escalation.list", path, L)
     return out, rows
 
 
 def write_history_report(cfg: Cfg, db: Db, escalation_id: int, path: pathlib.Path) -> pathlib.Path:
-    """Deep-history report for one item -- its own full history only. Every column shown: envelope
-    fields always, delta fields only when this version actually set them (escalation-rebuild-
-    design-v1 sec4.1).
-
-    No longer walks related items (D14/D15 retired 2026-08-27, escalation #909, see module
-    docstring) -- this used to queue every escalation `from_id` or `related_activity`'s free-text
-    `#NNN` mentions pulled in, transitively. One item's history only, now."""
+    """Deep-history report for one item: every version, envelope fields always, delta fields only
+    where that version set them."""
     rows = db.rows("SELECT * FROM escalation WHERE id=?", (escalation_id,))
     if not rows:
         raise ValueError(f"no escalation #{escalation_id}")
@@ -1930,12 +1464,7 @@ def write_history_report(cfg: Cfg, db: Db, escalation_id: int, path: pathlib.Pat
                 label = c.replace("_", " ")
                 L.append(f"> **{label} (set this version):** {h[c]}")
         L.append("")
-    # 2026-08-26 (escalation #857): same fix as write_list_report above -- was manual
-    # archive_before_write()+write_text(), bypassing report.version_on_regenerate (BUILD.md
-    # sec60) entirely. Now goes through reportkit.write_report(); `path`'s stem (built by the
-    # caller, id-prefixed per the researcher's direct instruction this escalation) becomes the
-    # versioned {stem}-v{n}-{date}.md filename automatically -- no separate filename-pattern
-    # setting needed, the app-wide mechanism already provides it.
+    # `path`'s stem (id-prefixed by the caller) becomes the versioned {stem}-v{n}-{date}.md name
     return reportkit.write_report(db.conn, "escalation.history", path, L)
 
 
@@ -1974,11 +1503,9 @@ def _item_line(db: Db, alias: str, it, latest: bool = True) -> str:
 
 def write_thread_report(cfg: Cfg, db: Db, path: pathlib.Path, *, state: str | None = None,
                         ident=None) -> tuple[pathlib.Path, list[str]]:
-    """`Escalation.ps1 -Action Thread` (escalation #2000, ruling 6: "Open threads should be a easy
-    query on -action thread only"). Without `ident`: every open thread (on-hold and in-progress;
-    `state` narrows to one), each with its open items. With `ident` (an id or OT-nn): that one
-    thread, every item with its responses in date order. Returns the written path and short
-    console lines."""
+    """`Escalation.ps1 -Action Thread`. Without `ident`: every open thread (on-hold and
+    in-progress; `state` narrows to one), each with its open items. With `ident` (an id or OT-nn):
+    that thread, every item with its responses in date order. Returns the path and console lines."""
     console: list[str] = []
     if ident is not None:
         t = _current(db, resolve_id(db, ident))
@@ -2036,19 +1563,17 @@ def write_thread_report(cfg: Cfg, db: Db, path: pathlib.Path, *, state: str | No
 
 
 def write_thread_register(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Path, int]:
-    """Writes render_thread_register() (split 2026-10-20, #2173 P5: the thread audit compares the
-    file on disk with what this would write now)."""
+    """Writes render_thread_register() to its path."""
     L, n = render_thread_register(cfg, db)
     out = reportkit.write_report(db.conn, "escalation.thread_export", path, L)
     return out, n
 
 
 def render_thread_register(cfg: Cfg, db: Db) -> tuple[list[str], int]:
-    """`Escalation.ps1 -Action Export -Type thread` (escalation #2000, proposal sec5): regenerates
-    the open threads register at its old path from the escalation table -- every thread, by OT
-    number, `OT-nn · #id` in the id cell (decision 3). The thread, raised and comes-back-when cells
-    carry the imported text unchanged; the status cell is generated: state, each item with its
-    latest response, then the register's own status text from before the migration (`tried`)."""
+    """`Escalation.ps1 -Action Export -Type thread`: regenerates the open threads register from the
+    escalation table -- every thread by OT number, `OT-nn · #id` in the id cell. The thread, raised
+    and comes-back-when cells carry the stored text; the status cell is generated: state, each item
+    with its latest response, then the register's earlier status text (`tried`)."""
     threads = db.rows("SELECT * FROM escalation WHERE type='thread' "
                       "ORDER BY CAST(substr(alias, 4) AS INTEGER)")
     by_state: dict[str, int] = {}
@@ -2093,7 +1618,7 @@ def _extract_flag(args: list[str], name: str) -> tuple[list[str], str | None]:
 
 
 def _extract_multi(args: list[str], name: str) -> tuple[list[str], list[str]]:
-    """A repeatable --name=value flag (escalation #2000: -Item, -AddItem, -Cluster, ...)."""
+    """A repeatable --name=value flag (-Item, -AddItem, -Cluster, ...)."""
     prefix = f"--{name}="
     remaining, values = [], []
     for a in args:
@@ -2108,16 +1633,9 @@ def _files_arg(raw: list[str]) -> list[str] | None:
     return [f.strip() for f in raw if f.strip()] or None
 
 
-# escalation #1708, 2026-09-15: the per-connection 30s busy_timeout (cfg.py:Cfg.__init__, WAL +
-# PRAGMA busy_timeout=30000) already retries a lock internally -- but a sustained heavy DB-wide
-# sweep in a SEPARATE process (e.g. cluster.validate's own 15,455-strong scan, run concurrently
-# this session) held a write lock long enough that even 30s wasn't always enough, and this CLI's
-# own crash handler (below) recorded it as a run_error rather than a real defect. Genuinely
-# transient, not a logic bug -- a short CLI-level retry on the SPECIFIC "database is locked"
-# error is proportionate defense-in-depth for exactly the interactive-researcher-typed-command
-# case that crashed here, without masking any other failure (only this one error string retries;
-# everything else still falls straight through to the existing crash-recording path unchanged).
-_LOCK_RETRY_DELAYS = (1.0, 2.0, 4.0)  # seconds; 3 retries, ~7s total on top of the 30s per-attempt timeout
+# A sustained write lock from another process can outlast the 30s busy_timeout (#1708): the CLI
+# retries only "database is locked", a few times, before falling through to crash recording.
+_LOCK_RETRY_DELAYS = (1.0, 2.0, 4.0)  # seconds
 
 
 def main() -> int:
@@ -2138,19 +1656,8 @@ def main() -> int:
                      f"{len(_LOCK_RETRY_DELAYS)})...", file=sys.stderr)
         raise AssertionError("unreachable")  # loop always returns or re-raises above
     except ValueError as exc:
-        # escalation-operational-friction-review-v1-20260831, Defect 1: a ValueError here is a
-        # deliberate validation guard doing its job (_title_shape_error, _check_assignee,
-        # _check_requirements, _require_flag, ... all raise exactly this) -- the CLI correctly
-        # rejecting a malformed call, not a system failure. Filing it as a run_error escalation
-        # (the old behaviour, shared with the branch below) meant every usage slip -- a title 2
-        # chars over the limit, a missing -Resolution -- left a permanent traceback-carrying row
-        # that then needed a hand-written "usage error, not a code defect" resolution: seven of
-        # those, same day, before this fix (#1319, #1313, #1311, #1317, #1318, #1326, #1328).
-        # Clean rejection instead: rollback (unchanged), print the message, exit non-zero, no
-        # escalation write -- exactly like a shell command rejecting a bad flag. Only exceptions
-        # NOT explicitly raised as validation (the branch below) still auto-file, because those
-        # really are unanticipated -- this is how #1307/#1308's real WinError 32 bug and #1330's
-        # real answered_for_run bug got caught today, and that stays unchanged.
+        # a ValueError is a validation guard rejecting a malformed call: print it and exit non-zero,
+        # no escalation. Only unanticipated exceptions (below) are recorded.
         db.conn.rollback()
         db.close()
         print(f"error: {exc}", file=sys.stderr)
@@ -2166,18 +1673,10 @@ def main() -> int:
                      etype="run_error", comment=f"argv={argv!r}\n{tb}",
                      context=json.dumps(extra),
                      assigned_to="Claude",
-                     resolution_kind="self_correctable",  # "pure coding logic" (researcher,
-                     # 2026-08-22) -- same reasoning as run.py's crash/report-stop sites;
-                     # escalate_to_decision() converts it if a fix reveals a real decision needed.
+                     resolution_kind="self_correctable",
                      originator="Claude")
         except Exception as record_exc:
-            # escalation #798/#799 SS7 fix: never SILENTLY discard a secondary failure -- the
-            # original crash still re-raises unmasked (that guarantee is unchanged), but a failure
-            # in the recording path itself must be visible, not invisible. Real risk right now:
-            # raise_new() just gained a resolution_kind requirement (this call doesn't supply one
-            # -- deliberately, a CLI crash is always decision_required by nature, no code path here
-            # to decide otherwise -- but if that ever regresses, this is exactly the failure that
-            # would go unnoticed under the old `except Exception: pass`).
+            # never silently discard a failure in the recording path; the original crash still re-raises
             print(f"[WARN] failed to record crash escalation: {record_exc!r}", file=sys.stderr)
         db.close()
         raise
@@ -2287,7 +1786,6 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
                             response_kind=response_kind, via=via, files=_files_arg(files),
                             superseded_by=superseded_by))
     elif len(argv) >= 2 and argv[0] == "history":
-        # id-prefixed stem, 2026-08-26 (escalation #857) -- matches handlers/reports.py's copy
         eid = resolve_id(db, argv[1])
         path = pathlib.Path(cfg.required_setting("escalation.history_report_dir")) / f"{eid}-escalation-history.md"
         out = write_history_report(cfg, db, eid, path)

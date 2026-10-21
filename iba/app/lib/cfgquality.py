@@ -1,7 +1,6 @@
-"""cfgquality.py — shared config-quality checks, used by BOTH handlers/configmaint.py (the
-propose-time / validate-time checks) and lib/cfgreport.py (so CONFIG-REPORT.md can show current
-findings, not just the live escalation). Split out 2026-07-21 to avoid a circular import
-(configmaint.py already imports cfgreport; cfgreport importing configmaint back would cycle).
+"""cfgquality.py — shared config-quality checks, used by handlers/configmaint.py (propose and
+validate) and lib/cfgreport.py (CONFIG-REPORT.md). Kept separate to avoid a circular import
+(configmaint imports cfgreport).
 """
 
 from __future__ import annotations
@@ -14,24 +13,15 @@ import re
 import sqlite3
 import tokenize
 
-# module -> the dedicated table it already has, if any. Per the researcher's 2026-07-21 rule
-# ("there must be a very good reason why a config goes into settings, rather than the specific
-# module or utility"): a module on this list already has a purpose-built home, so a NEW
-# cfg_setting row for it needs explicit justification. Grows the same way CFG_TABLES does — a
-# small, named fact, not derived generically (only one entry exists so far).
+# module -> the dedicated table it already has: a new cfg_setting row for such a module needs a
+# justification, since the module has a purpose-built home.
 MODULE_DEDICATED_TABLE = {
     "candidate": "cfg_candidate_rule",
 }
 
-# module -> (table, key) locating the setting that must hold WHERE that module's quality-check
-# findings persist. `table` is almost always 'cfg_setting', but a module with its own dedicated
-# settings table (governance.module.config — e.g. cfg_passage, escalation #798/#799) keeps its
-# report-path setting there instead; each entry names its own home rather than assuming one table
-# for all. Per the researcher's 2026-07-21 rule ("errors is not optional to fix... why is there a
-# standard if you don't follow it"): every step whose Outcome is advisory findings (not a data
-# write) must persist those findings to a report file, matching report.py/validation.py/
-# cfgreport.py's established pattern — not just a terminal print + an escalation row that scrolls
-# away.
+# quality-check step -> (table, key) of the setting holding where its findings persist
+# (governance.reports_must_persist). Usually cfg_setting; a module with its own settings table
+# (governance.module.config, e.g. cfg_passage) keeps it there.
 QUALITY_CHECK_REPORT_PATH = {
     "configmaint.validate": ("cfg_setting", "configmaint.report_path"),  # -> CONFIG-REPORT.md
     "candidate.validate": ("cfg_setting", "candidate.quality_report_path"),
@@ -39,13 +29,8 @@ QUALITY_CHECK_REPORT_PATH = {
     "lexicon.validate": ("cfg_setting", "lexicon.quality_report_path"),
 }
 
-# Every step known to write a persistent report via lib/reportkit.render_scaffold — the ground
-# truth cfg_report SHOULD contain a row for, one per report-producing step. A hardcoded list, same
-# shape as QUALITY_CHECK_REPORT_PATH above and for the same reason: checking cfg_report against
-# itself couldn't catch a step that's missing its row entirely (added 2026-07-22,
-# PLAN-reports-config-governance-v1-20260722.md §10.1/§11 — "will you miss configs when you build"
-# gets a check, not a promise; this is the check that would have caught the retention/candidate.load
-# gaps sooner had it existed then).
+# Every step that writes a persistent report via reportkit.render_scaffold: the list cfg_report is
+# checked against, so a step missing its row entirely is caught.
 REPORT_STEPS = (
     "configmaint.report", "candidate.validate", "candidate.load", "passage.validate",
     "report.word", "validation.word", "validation.book", "retention.report",
@@ -55,20 +40,15 @@ REPORT_STEPS = (
 
 
 def _step_inactive(conn: sqlite3.Connection, step: str) -> bool:
-    """True if `step` has an cfg_step row and every one of them is inactive — REPORT_STEPS/
-    QUALITY_CHECK_REPORT_PATH are hardcoded Python names, disconnected from cfg_step.inactive
-    (escalation #310), so checks keyed off them need to ask explicitly rather than silently keep
-    flagging a step the researcher has already retired."""
+    """True if `step` has cfg_step rows and all are inactive. REPORT_STEPS/QUALITY_CHECK_REPORT_PATH
+    are hardcoded names, so checks keyed off them ask cfg_step explicitly (#310)."""
     rows = conn.execute("SELECT inactive FROM cfg_step WHERE step=?", (step,)).fetchall()
     return bool(rows) and all(r[0] for r in rows)
 
 
 def find_missing_cfg_report_rows(conn: sqlite3.Connection) -> list[str]:
     """Every ACTIVE step in REPORT_STEPS must have an active cfg_report row (title/ToC/footer/
-    naming/CSV pairing) — a report-producing step with no cfg_report row means its content-shape
-    is still hardcoded Python, the exact gap this plan closed for the original 8, re-checked so it
-    can't silently reopen for a 9th. A retired (inactive) step is skipped entirely (escalation
-    #310) — its missing/stale report config is no longer a live defect."""
+    naming/CSV pairing); otherwise its report shape is still hardcoded. Inactive steps are skipped."""
     missing = []
     for step in REPORT_STEPS:
         if _step_inactive(conn, step):
@@ -81,10 +61,8 @@ def find_missing_cfg_report_rows(conn: sqlite3.Connection) -> list[str]:
 
 
 def find_chained_packages_missing_complete_message(conn: sqlite3.Connection) -> list[str]:
-    """Every ACTIVE CHAINED work package prints a COMPLETE banner at the end of its sequence
-    (PS-side) — if cfg_work_package.complete_message is NULL, that banner's wording has nowhere to
-    come from but a hardcoded PS string again. An inactive work package is excluded (escalation
-    #310) — a retired package with no complete_message isn't a live defect."""
+    """Every ACTIVE chained work package needs cfg_work_package.complete_message, the wording of the
+    COMPLETE banner PS prints at the end of its sequence. Inactive packages are skipped."""
     missing = []
     for r in conn.execute(
             "SELECT name FROM cfg_work_package WHERE chained=1 AND inactive=0 AND "
@@ -94,10 +72,8 @@ def find_chained_packages_missing_complete_message(conn: sqlite3.Connection) -> 
 
 
 def find_settings_needing_justification(conn: sqlite3.Connection) -> list[str]:
-    """A cfg_setting row whose module ALREADY has its own dedicated table — advisory. Doesn't
-    (and can't) judge whether the reason is good — just surfaces every case where the question
-    needs asking, so it isn't silently missed. Inactive settings are excluded (escalation #310) —
-    a retired setting doesn't need a live justification decision."""
+    """A cfg_setting row whose module already has its own dedicated table -- advisory: surfaces
+    each case needing a justification, without judging it. Inactive settings are skipped."""
     flags = []
     for module, table in MODULE_DEDICATED_TABLE.items():
         for r in conn.execute(
@@ -108,66 +84,33 @@ def find_settings_needing_justification(conn: sqlite3.Connection) -> list[str]:
     return flags
 
 
-# Modules whose cfg_setting rows are pure narrative/documentation -- a fact recorded for a human
-# or an external, non-dispatcher-mediated process to read, never a value the app's own runtime
-# applies via .setting(). Distinct from the module='governance' branch below: governance rows must
-# still be read by init.py (AI-startup-compliance requirement); these have no such requirement at
-# all. Escalation #719, 2026-08-18 -- start with 'backup' (verified: all 6 live rows document
-# Windows Scheduled Tasks / standalone scripts outside the app, not one is a masked real orphan).
-# Add a module here only after checking its live rows the same way, not by assumption.
+# Modules whose cfg_setting rows are documentation only -- facts for a human or an external process
+# (e.g. 'backup': Windows Scheduled Tasks, standalone scripts), never applied via .setting(). Add a
+# module only after checking its live rows (#719).
 _NARRATIVE_MODULES = frozenset({"backup"})
 
-# module='database' keys of the shape `database.<name>.path` -- read via Cfg.database_path()'s
-# `self.setting(f"database.{name}.path")`, an f-string-composed key the literal-string scan in
-# find_orphan_configs cannot see. Narrowly matched against this exact known indirection (see the
-# call-site check where this is used), not a blanket module exemption. Escalation #748.
+# module='database' keys `database.<name>.path`, read via Cfg.database_path()'s f-string key, which
+# the literal scan cannot see. Matched narrowly against that call site (#748).
 _DATABASE_PATH_KEY = re.compile(r"^database\.[^.]+\.path$")
 
 
 def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
-    """cfg_setting keys / cfg_enum groups without REAL usage — configs the app would not actually
-    respond to if their value/membership changed. ADVISORY, not a coherence error: an orphan may
-    be legitimately pre-staged for a not-yet-built step rather than a mistake.
-    EXCLUDES iba/app/migration/: those scripts exist to WRITE a setting's initial value, so they
-    always mention its name — counting that as "usage" would mask genuine orphans.
+    """cfg_setting keys / cfg_enum groups without real usage -- configs the app would not respond to
+    if they changed. ADVISORY: an orphan may be pre-staged for a step not yet built. Excludes
+    iba/app/migration/ (migrations write initial values, so they always name the key).
 
-    REDEFINED 2026-07-23 (researcher's correction — escalation #305): "not referenced anywhere"
-    was too loose a test — a key merely appearing as a quoted literal (e.g. in a comment or an
-    unrelated docstring) passed it without the code actually applying the config's VALUE. "Usage"
-    is not one shape; per the researcher, it differs by config kind:
-      - a plain cfg_setting: the app must apply its VALUE at runtime. Proven by the key literal
-        co-occurring, IN THE SAME FILE, with an actual `.setting(` accessor call — not just the
-        key text appearing anywhere in the multi-file corpus, which could be satisfied by an
-        unrelated comment/docstring in a file that never reads config at all. (Same-file rather
-        than same-call-site: several settings are read via a level of indirection — e.g.
-        validation.py's `_WORD_SECTIONS = {"label": "validation.show_health", ...}` then
-        `cfg.setting(key, True)` in a loop — genuinely applied, just not through a literal
-        `cfg.setting("validation.show_health", ...)` call site. Settings read via a
-        cfg_column.expectation data-driven key, e.g. 'pattern:<key>', are handled by the
-        exclusion below — also genuinely applied, also not through a literal call site.)
-      - a cfg_setting with module='governance': these are process rules for the AI/researcher
-        workflow, not runtime application inputs — there is no "apply the value" behaviour to grep
-        for. Per the researcher: they "must be read by the startup routine explicitly to ensure
-        that AI complies with it." Usage = referenced specifically in iba/app/init.py (the startup
-        routine), not anywhere in the app at large — either by the individual key literal, or by a
-        generic `WHERE module='governance'` read (init.py deliberately reads the whole module
-        dynamically so a NEW governance setting is picked up without an init.py edit; that generic
-        read counts as usage for every row it covers, the same reasoning as the
-        cfg_column.expectation exclusion below).
-      - a cfg_enum group: per the researcher, this is "a lookup, or options... not hard coded but
-        use the config" — usage = the group is actually queried by NAME at runtime (`cfg.enum(name)`,
-        or the equivalent raw `cfg_enum WHERE name='<name>'`/`name="<name>"` SQL some handlers use
-        directly), so a change to the DB's membership is something code would notice. A group's
-        VALUES appearing as hardcoded string literals elsewhere (e.g. `state == "paused"`) is NOT
-        usage of the enum — the vocabulary isn't actually being read from cfg_enum in that case.
-
-    FIXED 2026-07-22 (kept): a setting/enum read dynamically via `cfg_column.expectation` data
-    ('pattern:<key>' for a cfg_setting, 'enum.<name>' for a cfg_enum group) is genuinely enforced
-    by lib/valuequality.py's engine, but the value lives in a DB row, not literal .py source —
-    excluded before the source-level checks below run."""
-    # .ps1 too, not just .py: "PowerShell orchestrates, Python works" means a PS script reading
-    # a setting via an inline `python -c "...c.setting('key')..."` (e.g. configmaint.auto_report,
-    # read by Config-Maintenance.ps1 this way) is real usage the .py-only scan used to miss.
+    "Usage" differs by kind (#305):
+      - a plain cfg_setting: the key literal appears in the same file as a `.setting(` /
+        `.required_setting(` call (same file, not same call site, since some settings are read
+        through a dict or loop).
+      - a module='governance' setting: read by the startup routine (init.py / lib/compliance.py),
+        by key or by the generic `module='governance'` read.
+      - a cfg_enum group: queried by name at runtime (`cfg.enum(name)` or raw `cfg_enum WHERE
+        name=...` SQL). Its values appearing as literals elsewhere is not usage.
+    A setting or group read through `cfg_column.expectation` ('pattern:<key>', 'enum.<name>') is
+    enforced by lib/valuequality.py and excluded first."""
+    # .ps1 too: a PS script may read a setting through an inline `python -c` (e.g.
+    # configmaint.auto_report in Config-Maintenance.ps1).
     per_file: dict[pathlib.Path, str] = {}
     for pattern in ("*.py", "*.ps1"):
         for f in app_root.rglob(pattern):
@@ -179,10 +122,7 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
                 continue
     corpus = "".join(per_file.values())
     init_corpus = per_file.get(app_root / "init.py", "")
-    # #2173 moved the startup delivery of the rules (init.py step 6) into lib/compliance.py, which
-    # init.py calls; the generic `module='governance'` read now lives there. Found 2026-10-21
-    # (#2181): with only init.py scanned, 51 of 56 orphans were governance settings that the start
-    # routine does read. Both files are the startup routine.
+    # the startup routine is init.py plus lib/compliance.py, where the rules are delivered (#2173)
     startup_corpus = init_corpus + per_file.get(app_root / "lib" / "compliance.py", "")
     governance_generic_read = (
         "module='governance'" in startup_corpus or 'module="governance"' in startup_corpus)
@@ -205,41 +145,14 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
                            f"iba/app/init.py, the startup routine)")
             continue
         if module in _NARRATIVE_MODULES:
-            # Escalation #719, 2026-08-18: all 6 module='backup' rows checked individually against
-            # their live value text, not assumed -- every one documents infrastructure the app's
-            # own runtime never touches (Windows Scheduled Tasks, standalone scripts under
-            # scripts/*.py invoked outside the dispatcher, one historical-incident note). Same KIND
-            # of content the governance branch above already exempts ("no apply-the-value
-            # behaviour to grep for"), just without governance's extra "must be read by init.py"
-            # compliance requirement -- there is no AI-startup-compliance angle for a backup
-            # schedule fact. Confirmed no module='backup' row currently DOES pass the generic
-            # check below, so this loses no real detection. Writing a fake .setting() call
-            # somewhere just to silence this check would be worse than the finding it replaces.
+            # documentation-only module (_NARRATIVE_MODULES): nothing to apply
             continue
-        # ".setting(" / ".required_setting(" -- escalation (2026-08-29, the no-hardcoded-locations
-        # ruling): every `.setting(key, "literal")` call site project-wide was converted to
-        # `.required_setting(key)` (no silent default -- lib/cfg.py's own new method, same no-
-        # fallback discipline database_path() already had), so a usage check that only recognised
-        # ".setting(" went blind to all 62 of them the moment the rename landed -- found live the
-        # same session, fixed in the same pass rather than left for the next validate run to
-        # surface as a false "orphan" wave.
+        # .setting( or .required_setting( (the no-default accessor)
         used = any((f'"{key}"' in text or f"'{key}'" in text)
                   and (".setting(" in text or ".required_setting(" in text)
                   for text in per_file.values())
         if not used and module == "database" and _DATABASE_PATH_KEY.match(key):
-            # Escalation #748, 2026-08-21: Cfg.database_path() (lib/cfg.py) is the real, live
-            # consumer -- `self.setting(f"database.{name}.path")`, an f-string-composed key, so
-            # the literal key text never appears in source for the same-file/same-call-site scan
-            # above to find. Same class of indirection the validation.py dict-lookup case already
-            # documents in this function's docstring, just via string interpolation instead of a
-            # dict. Verified live both ways: (a) the exact call-site text is still present in
-            # cfg.py, (b) init.py's startup path-integrity check (step 3b) genuinely calls
-            # database_path() for every cfg.enum('project_database') member, applying the value,
-            # not just reading and discarding it. Recurred as a false positive on every validate
-            # run since escalation #727 added the real consumer without ever teaching this checker
-            # the new call shape -- narrowly matched (module='database' AND the exact call-site
-            # text), not a blanket module exemption, so a genuinely new orphan under module=
-            # 'database' would still be caught.
+            # Cfg.database_path() reads it through an f-string key (#748); confirmed by its call site
             cfgpy = per_file.get(app_root / "lib" / "cfg.py", "")
             if 'self.setting(f"database.{name}.path")' in cfgpy:
                 used = True
@@ -247,16 +160,8 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
             orphans.append(f"cfg_setting {key!r} (key not found together with a "
                            f"cfg.setting(...) call in any one file)")
 
-    # Escalation #1796, 2026-09-20: clusterstatus.py's _assert_enum_parity() genuinely looks up
-    # BOTH of these groups live, every call -- "SELECT value FROM cfg_enum WHERE name=?", (group,)
-    # inside a `for group, ordinal_dict in (("cluster.status", ...), ("cluster_subgroup.status",
-    # ...))` loop. The regex below only recognises a LITERAL quoted name immediately after
-    # `.enum(`/`name=`, so a name reached through a loop variable is invisible to it even though
-    # the runtime coverage is real -- confirmed live by reading clusterstatus.py itself, not
-    # assumed. Same shape of false positive as the database.{name}.path exemption above (an
-    # indirect lookup a static regex can't see); narrowly named, not a blanket loosening -- a
-    # genuinely new orphan under either of these two exact names would still need this same
-    # confirmed cross-check to stay exempt.
+    # clusterstatus._assert_enum_parity() reads both groups through a loop variable, which the regex
+    # below cannot see (#1796); exempt only while that call site is confirmed present.
     _PARITY_CHECKED_ENUMS = {"cluster.status", "cluster_subgroup.status"}
     clusterstatus_py = per_file.get(app_root / "lib" / "clusterstatus.py", "")
     parity_confirmed = (
@@ -277,22 +182,11 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
     return orphans
 
 
-# Extended 2026-07-30 per the researcher's correction ("your validations is only touching settings
-# and enum and not incorporating all the other config tables") — `find_orphan_configs` above was
-# the ONLY usage check in the whole app, and it only ever covered `cfg_setting`/`cfg_enum`. Every
-# other table got at most a structural/referential check (does an FK point somewhere real), never
-# "is this actually consumed." These three close that gap for `cfg_book_order`/`cfg_connection`/
-# `cfg_candidate_rule` — the same "not referenced anywhere" concern, extended past the two tables
-# it happened to start with.
+# Usage checks beyond cfg_setting/cfg_enum: cfg_book_order, cfg_connection, cfg_candidate_rule.
 
 def find_orphan_book_order(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
-    """`cfg.book_order()` — the WHOLE table is read as one dict, not looked up by individual key,
-    so (unlike cfg_setting/cfg_enum) there is no per-row "is this ONE book used" question — the
-    question is whether the accessor itself is called anywhere (same corpus-scan convention as
-    `find_orphan_configs`, `migration/` excluded for the same reason: those scripts exist to
-    populate/consume the seed once, not to represent ongoing app usage). ALSO flags duplicate
-    book/ordinal rows — free to check while already reading the table, the same class of internal-
-    coherence gap `_validate_live`'s schema checks already catch for other tables."""
+    """`cfg.book_order()` reads the whole table as one dict, so the question is whether the accessor
+    is called anywhere (migrations excluded). Also flags duplicate book/ordinal rows."""
     out: list[str] = []
     used = False
     for f in app_root.rglob("*.py"):
@@ -320,15 +214,8 @@ def find_orphan_book_order(conn: sqlite3.Connection, app_root: pathlib.Path) -> 
 
 def find_orphan_connection_keys(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
     """Every active `cfg_connection.key` must co-occur with a `.connection(` call in the same file
-    — identical methodology to `find_orphan_configs`'s cfg_setting check, just scoped to this
-    table (which that check never covered)."""
-    # NOT `_code_only_text` here — that blanks OUT string-literal tokens, and the thing this check
-    # needs to find (`"base_url"`) is itself a string literal. `_code_only_text` only helps when
-    # searching for bare CODE SYNTAX that never legitimately appears inside a string/comment (a
-    # method-call pattern with no argument, like `find_orphan_book_order`'s `.book_order(` check);
-    # here it would silently blank out every real call site too — caught 2026-07-30 by re-testing
-    # immediately after switching to it and seeing genuinely-used keys (`base_url` et al., real
-    # calls in `stepapi.py`) suddenly flagged as unused.
+    (the same method as find_orphan_configs's cfg_setting check)."""
+    # raw text, not _code_only_text: the key being searched for is itself a string literal
     per_file: dict[pathlib.Path, str] = {}
     for f in app_root.rglob("*.py"):
         if "migration" in f.relative_to(app_root).parts:
@@ -348,37 +235,17 @@ def find_orphan_connection_keys(conn: sqlite3.Connection, app_root: pathlib.Path
     return out
 
 
-# The only two steps whose code calls `.candidate_rules(...)` (`candidate.seed`/`candidate.curate`
-# — verified by direct grep, 2026-07-30, not guessed). Both are currently INACTIVE (2026-07-23
-# candidate-system retraction) — when both are inactive, "code calls kind X but 0 active rows back
-# it" is not a live gap, it's the same already-recorded retraction every other inactive-scoped
-# check already excludes (escalation #310); skip the whole first direction of the check rather than
-# re-surface a fact GOVERNANCE.md §15D already covers. The reverse direction (rows nobody calls) is
-# NOT step-gated — a config value with no code path to it at all is a gap regardless of whether the
-# would-be caller happens to be active right now.
+# The steps whose code calls `.candidate_rules(...)`. While both are inactive, the first direction
+# of the check (a kind called with no active rows) is skipped; the reverse direction always runs.
 _CANDIDATE_RULES_CALLER_STEPS = ("candidate.seed", "candidate.curate")
 _CANDIDATE_RULES_CALL_RE = re.compile(r"\.candidate_rules\(\s*[\"']([^\"']+)[\"']")
 
 
 def find_orphan_candidate_rules(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
-    """Two-directional usage check for `cfg_candidate_rule` — "orphan" means something different
-    here than a single cfg_setting key, since a row is a candidate WORD, not a configurable key:
-    (a) code calls the candidate_rules accessor for a kind with ZERO active rows — the call will
-    silently return an empty list, which may be exactly what's happening right now and going
-    unnoticed (skipped while `_CANDIDATE_RULES_CALLER_STEPS` are both inactive — see that
-    constant's comment); (b) a kind WITH active rows that no code anywhere asks for — config
-    nobody reads, the same direction `find_orphan_configs` already checks for cfg_setting/
-    cfg_enum.
-
-    Deliberately raw `read_text`, NOT `_code_only_text` — `_CANDIDATE_RULES_CALL_RE` needs to see
-    the actual quoted argument (the kind name IS a string literal), and `_code_only_text` blanks
-    string-literal tokens out; using it here would silently blank every real call site too (caught
-    2026-07-30 the same way as the `cfg_connection` check above — re-tested immediately after
-    switching and found real usage in `candidate.py` suddenly detected as zero). Also deliberately
-    NOT spelling out the literal call-with-a-quoted-kind syntax in prose anywhere in this docstring
-    (unlike the previous draft of this exact paragraph, which did, and matched its own regex
-    against this file's own text) — same class of self-collision `cfgreport.py`'s own "NOTE" already
-    documents for `find_utility_config_density`."""
+    """Two-directional usage check for `cfg_candidate_rule`: (a) code calls the accessor for a kind
+    with zero active rows (skipped while _CANDIDATE_RULES_CALLER_STEPS are inactive); (b) a kind with
+    active rows that no code asks for. Raw text, not _code_only_text: the kind name is a string
+    literal. (This docstring avoids spelling out the call syntax, which the regex would match.)"""
     called_kinds: set[str] = set()
     for f in app_root.rglob("*.py"):
         if "migration" in f.relative_to(app_root).parts:
@@ -405,27 +272,12 @@ def find_orphan_candidate_rules(conn: sqlite3.Connection, app_root: pathlib.Path
 
 
 def find_bad_report_csv_table_references(conn: sqlite3.Connection) -> list[str]:
-    """Every `cfg_report_csv_table.table_name` must name a real table — a DATA table (`cfg_table`)
-    or a `cfg_*` infrastructure table — or the wildcard `cfg_*` prefix `reportkit.write_csv_pairing`
-    itself recognises (a literal trailing `*`) — **or be marked `virtual`** (a row_filter-supplied
-    CSV pairing: the handler computes the rows itself and passes them to `write_csv_pairing` under
-    this `table_name` as a key, so no `SELECT * FROM {table_name}` ever runs against it — see
-    `write_csv_pairing`'s `row_filter` parameter). The same referential-integrity discipline
-    `find_report_step_references`/`_validate_live`'s write-grant check already apply to `.step`/
-    write-grant table references — never applied to THIS table's own column before (2026-07-30,
-    researcher: "your validations is only touching settings and enum"). A hard structural fault:
-    a CSV pairing for a table that doesn't exist AND isn't `virtual` would crash `write_csv_pairing`
-    the moment that report actually runs, not just sit as a cosmetic gap.
-
-    **`virtual` added 2026-08-15** — this check itself was a false positive against two entries
-    that were never broken (`report.registry`/`word_registry_strong_pairing`,
-    `report.cluster`/`strong_without_cluster`, both legitimate `row_filter` keys), re-raised across
-    three separate `configmaint.validate` escalations (#591, #597, #642) over five days because the
-    check had no way to represent "this is intentionally not a literal table." A `virtual` row
-    without a `join_note` is still flagged — the exemption cannot silently hide an actually-wrong
-    entry with no explanation attached."""
-    # database='iba' -- this checks cfg_report_csv_table references against THIS app's own data
-    # tables (escalation #653, 2026-08-17, widened cfg_table to also carry bible_research.db's).
+    """Every `cfg_report_csv_table.table_name` must name a real data table (`cfg_table`) or `cfg_*`
+    table, or the `cfg_*` wildcard `reportkit.write_csv_pairing` recognises, or be marked `virtual`
+    (a row_filter-supplied pairing whose rows the handler computes). A hard fault: a pairing for a
+    missing, non-virtual table crashes write_csv_pairing when the report runs. A `virtual` row
+    without a `join_note` is still flagged."""
+    # database='iba': this app's own data tables
     data_tables = {r[0] for r in conn.execute("SELECT name FROM cfg_table WHERE database='iba'")}
     cfg_tables = {r[0] for r in conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg\\_%' ESCAPE '\\'")}
@@ -452,22 +304,15 @@ def find_bad_report_csv_table_references(conn: sqlite3.Connection) -> list[str]:
     return out
 
 
-# Writer identities in cfg_write_grant that are NOT a cfg_step.step — dispatcher/API internals,
-# not steps. Fallback only — the real value is `cfg_enum` group `writer_identity` (added
-# 2026-07-29); kept byte-identical to that group's proposed values so this check works correctly
-# even before the enum rows are approved. Found 2026-07-29: cfg_write_grant.writer was never
-# checked against anything at all — a typo'd writer name would have gone unnoticed structurally
-# forever, the same class of gap `find_orphan_configs` already closes for cfg_setting/cfg_enum.
+# Writer identities in cfg_write_grant that are not a cfg_step.step (dispatcher/API internals).
+# Fallback only: the live list is cfg_enum `writer_identity`.
 _WRITER_IDENTITY_FALLBACK = ("run", "escalation", "migration",
                              "call1_meanings", "call2_getInfo", "call3_strong")
 
 
 def find_report_step_references(conn: sqlite3.Connection) -> list[str]:
-    """Every active `cfg_report`/`cfg_report_section`/`cfg_report_csv_table.step` must name a
-    currently-ACTIVE `cfg_step.step` — the same discipline `_validate_live`'s existing `on_fail`
-    check already applies to `cfg_on_fail.step`, extended to the three report-shape tables that
-    were never checked against anything at all. A hard structural fault: a report row for a step
-    that doesn't exist (or was retired) is broken plumbing, not a judgement call."""
+    """Every active `cfg_report`/`cfg_report_section`/`cfg_report_csv_table.step` must name an
+    ACTIVE `cfg_step.step` (as `_validate_live` does for `cfg_on_fail.step`). A hard fault."""
     active_steps = {r[0] for r in conn.execute("SELECT step FROM cfg_step WHERE inactive=0")}
     out: list[str] = []
     for table in ("cfg_report", "cfg_report_section", "cfg_report_csv_table"):
@@ -479,15 +324,12 @@ def find_report_step_references(conn: sqlite3.Connection) -> list[str]:
 
 def find_unknown_write_grant_writers(conn: sqlite3.Connection,
                                      writer_identities: set[str] | None = None) -> list[str]:
-    """Every active `cfg_write_grant.writer` must resolve to a currently-ACTIVE `cfg_step.step`,
-    OR be a declared non-step writer identity (dispatcher/API internals — see
-    `_WRITER_IDENTITY_FALLBACK`/`enum.writer_identity`). Anything else is an unchecked typo/orphan
-    reference — found live 2026-07-29 to be clean today, but never actually checked before."""
+    """Every active `cfg_write_grant.writer` must be an ACTIVE `cfg_step.step` or a declared non-step
+    writer identity (`_WRITER_IDENTITY_FALLBACK`/`enum.writer_identity`)."""
     active_steps = {r[0] for r in conn.execute("SELECT step FROM cfg_step WHERE inactive=0")}
     identities = writer_identities or set(_WRITER_IDENTITY_FALLBACK)
     out: list[str] = []
-    # database='iba' -- escalation #680 widened cfg_write_grant to also (eventually) carry
-    # bible_research.db-scoped grants; this checks THIS app's own step/writer coherence.
+    # database='iba': this app's own step/writer coherence
     for r in conn.execute("SELECT DISTINCT writer FROM cfg_write_grant WHERE database='iba' "
                           "AND inactive=0"):
         if r[0] not in active_steps and r[0] not in identities:
@@ -497,21 +339,10 @@ def find_unknown_write_grant_writers(conn: sqlite3.Connection,
 
 
 def find_cfg_tables_missing_configmaint_grant(conn: sqlite3.Connection) -> list[str]:
-    """Every real `cfg_*` RULE table must have a `cfg_write_grant` row for writer
-    `configmaint.propose` — that's the one sanctioned path `USER-GUIDE.md` §9 states for changing
-    any `cfg_*` row, and `governance.config_control` states it as a blanket rule with no carve-out.
-    Found 2026-08-17 the hard way: `cfg_escalation`/`cfg_method_rule`/`cfg_quality_check`/`cfg_index`
-    had silently shipped with NO grant at all — `cfg_method_rule`'s gap is the live, still-unfixed
-    root cause of escalations #539/#550 (crashed 2026-08-06/07, reproduced identically 2026-08-17).
-    A hard structural fault, not a judgement call: a `cfg_*` table nobody can write through the
-    sanctioned gate is broken plumbing the same class as an unresolved `on_fail`/`write_grant`
-    reference, just the opposite direction (a table with zero grants, not a grant naming a dead
-    step).
-
-    `category='rule'` (escalation #1146, 2026-08-31): scoped to genuine rule tables only, not
-    every cfg_-prefixed name — `cfg_change_detail`/`cfg_change_log` are audit logs, and this check
-    would otherwise immediately re-flag their now-deliberately-revoked configmaint.propose grant as
-    a fresh "missing grant" finding, undoing the fix this same escalation made."""
+    """Every `cfg_*` rule table (`category='rule'`) must have a `cfg_write_grant` row for writer
+    `configmaint.propose`, the one sanctioned path for changing a `cfg_*` row
+    (governance.config_control). Audit-log tables (cfg_change_detail, cfg_change_log) are not rule
+    tables. A hard fault."""
     cfg_tables = {r[0] for r in conn.execute(
         "SELECT name FROM cfg_table WHERE database='iba' AND name LIKE 'cfg\\_%' ESCAPE '\\' "
         "AND category='rule'")}
@@ -526,28 +357,13 @@ def find_cfg_tables_missing_configmaint_grant(conn: sqlite3.Connection) -> list[
 
 def find_unregistered_tables_and_columns(conn: sqlite3.Connection,
                                          project_root: pathlib.Path) -> list[str]:
-    """`governance.tables`/`governance.table_columns`: every table in the project, in EITHER
-    database, must be listed in `cfg_table`/`cfg_column` — "applies to all databases". Nothing
-    ever actually checked this against the two databases' LIVE schema before this (found live
-    2026-08-30, escalation #1058's follow-on: `finding_verse_index`, built and populated with
-    475,790 rows on 2026-08-29, had zero `cfg_table`/`cfg_column` rows — a config-driven registry
-    the researcher has spent six weeks building, silently out of sync with the schema it exists to
-    describe, discovered by accident rather than caught by validation). This is that check, for
-    both `iba` and `bible_research`, run every `configmaint.validate`.
-
-    Four shapes of drift, all hard errors (small scale, confirmed live — single digits per
-    database — not the kind of large pre-existing backlog `find_unregistered_project_scripts`
-    above has to treat as advisory; unlike that check, there is no known backlog here to protect
-    against drowning in, so nothing is lost by failing loudly on all four immediately):
-    1. a live table with no `cfg_table` row at all;
-    2. an ACTIVE (`inactive=0`) `cfg_table` row naming a table that no longer exists live (a drop/
-       rename that was never reflected — should have been marked `inactive=1`, not left active
-       and pointing at nothing);
-    3. for every table that's both live and actively registered — a live column with no
-       `cfg_column` row;
-    4. an ACTIVE `cfg_column` row naming a column that no longer exists on its live table.
-
-    `sqlite_%` tables are skipped (SQLite's own internal bookkeeping, never a project table)."""
+    """`governance.tables`/`governance.table_columns`: every table in either database must be listed
+    in `cfg_table`/`cfg_column`. Four shapes of drift, all hard errors:
+    1. a live table with no `cfg_table` row;
+    2. an ACTIVE `cfg_table` row naming a table that is not live (should be `inactive=1`);
+    3. for a live, actively registered table, a live column with no `cfg_column` row;
+    4. an ACTIVE `cfg_column` row naming a column not on its live table.
+    `sqlite_%` tables are skipped."""
     def _db_path(name: str) -> pathlib.Path:
         r = conn.execute("SELECT value FROM cfg_setting WHERE key=?",
                          (f"database.{name}.path",)).fetchone()
@@ -593,11 +409,9 @@ def _norm_sql(sql: str | None) -> str:
 
 
 def find_unregistered_triggers(conn: sqlite3.Connection, project_root: pathlib.Path) -> list[str]:
-    """Live triggers against `cfg_trigger`, in both databases (escalation #2110, 2026-10-13): a
-    trigger is schema like a table or column (`governance.tables`), and `lib/db.py:trigger_ddl()`
-    rebuilds it from config. Three shapes of drift, all hard errors: a live trigger with no row; an
-    active row naming a trigger that is not live; a live trigger whose SQL differs from its row
-    (whitespace ignored)."""
+    """Live triggers against `cfg_trigger`, in both databases (#2110): `lib/db.py:trigger_ddl()`
+    rebuilds them from config. Hard errors: a live trigger with no row; an active row naming a trigger
+    that is not live; a live trigger whose SQL differs from its row (whitespace ignored)."""
     def _db_path(name: str) -> pathlib.Path:
         r = conn.execute("SELECT value FROM cfg_setting WHERE key=?",
                          (f"database.{name}.path",)).fetchone()
@@ -630,25 +444,11 @@ def find_unregistered_triggers(conn: sqlite3.Connection, project_root: pathlib.P
 
 def find_unregistered_project_scripts(conn: sqlite3.Connection,
                                       project_root: pathlib.Path) -> list[str]:
-    """Phase 0 of the engine-controls migration (escalation #672, `engine-controls-migration-plan-v3
-    -20260817.md`): *"any new script or routine, anywhere in the project, must be registered in
-    cfg_utility... in the same unit of work it is created"* (governance.new_utility_registration_timing)
-    — this is the enforcement half of that rule. Walks the WHOLE project (not just `iba/app/lib/`,
-    which `find_unregistered_lib_modules` already covers by module stem) for `.py` files with no
-    matching `cfg_utility.file_path` row, matched by project-root-relative path since files outside
-    `iba/app/` don't share `iba/app/lib/`'s one-unique-stem-per-file guarantee. `temp_*` files are
-    exempt (governance.scripts_and_routines' own carve-out for throwaway scripts).
-
-    **ADVISORY, not a hard error** — deliberate, same reasoning as the retired stale-GOVERNANCE.md check:
-    at the moment this check was built, ~345 pre-existing files (`engine/`, `scripts/`, `research/`,
-    `iba/prototype/`, `iba/scripts/`) are unregistered by design (that's Phase 2 of the same plan,
-    not yet executed) — a hard error here would fail `configmaint.validate` wall-to-wall for a known,
-    already-tracked backlog rather than catch NEW drift, which is this check's actual job. Revisit
-    once Phase 2 substantially closes the backlog; hard-failing on it now would drown the signal
-    this exists to give, not strengthen it."""
-    # Checked against EVERY path component, not just parts[0] — found live while verifying this
-    # check: scripts/analytics/venv/ is a NESTED virtualenv (3,042 site-packages .py files) that a
-    # top-level-only exclusion completely misses, turning 345 real findings into 3,100+ noise.
+    """governance.new_utility_registration_timing: every `.py` file in the project outside iba/app/
+    needs a `cfg_utility.file_path` row (matched by project-root-relative path). `temp_*` files are
+    exempt (governance.scripts_and_routines). ADVISORY: a known backlog of older unregistered files
+    exists, and this check is for catching new drift."""
+    # excluded on any path component (nested virtualenvs such as scripts/analytics/venv/)
     _EXCLUDE_ANYWHERE = {".git", "archive", "__pycache__", ".venv", "venv", "node_modules",
                         "site-packages"}
     registered = {pathlib.PurePosixPath(r[0]) for r in
@@ -662,7 +462,7 @@ def find_unregistered_project_scripts(conn: sqlite3.Connection,
         if _EXCLUDE_ANYWHERE & set(parts):
             continue
         if parts[0] == "iba" and len(parts) > 1 and parts[1] == "app":
-            continue  # iba/app/ covered by find_unregistered_lib_modules + handler/tool/migration checks
+            continue  # iba/app/ is checked by find_unregistered_lib_modules (lib/ only; #2198)
         if f.stem == "__init__" or f.stem.startswith("temp_"):
             continue
         rel_posix = pathlib.PurePosixPath(rel.as_posix())
@@ -672,21 +472,15 @@ def find_unregistered_project_scripts(conn: sqlite3.Connection,
 
 
 def find_filled_by_referencing_inactive_step(conn: sqlite3.Connection) -> list[str]:
-    """`cfg_column.filled_by` naming a step that is now `inactive=1` — ADVISORY, not a hard error,
-    because the correct fix needs a human judgement call per column (is the column now genuinely
-    dormant, as `passage.rule`/`.source` are, or has a DIFFERENT currently-active mechanism quietly
-    taken over — `passage.created_at`/`verse_passage.created_at` are in fact written by
-    `lib/passagetrack.py` today, not `passage.build`, and simply clearing `filled_by` there would
-    be its own new inaccuracy). Found 2026-07-29: 21 columns across the candidate/passage
-    retirements had this defect, silent, because nothing checked it — see
-    `passage-config-full-extract-20260729.md`."""
+    """`cfg_column.filled_by` naming an inactive step -- ADVISORY: each needs a judgement (the column
+    may be dormant, or another active mechanism may now write it)."""
     inactive_steps = {r[0] for r in conn.execute("SELECT step FROM cfg_step WHERE inactive=1")}
     if not inactive_steps:
         return []
     out: list[str] = []
     for r in conn.execute(
             "SELECT table_name, name, filled_by FROM cfg_column WHERE filled_by IS NOT NULL "
-            "AND inactive=0"):   # #2107: an inactive column is already settled as dormant
+            "AND inactive=0"):   # an inactive column is already settled as dormant (#2107)
         if r["filled_by"] in inactive_steps:
             out.append(f"{r['table_name']}.{r['name']} filled_by={r['filled_by']!r} "
                       f"(an inactive step) — confirm dormant or update to the real current writer")
@@ -694,12 +488,8 @@ def find_filled_by_referencing_inactive_step(conn: sqlite3.Connection) -> list[s
 
 
 def find_missing_report_paths(conn: sqlite3.Connection) -> list[str]:
-    """Every ACTIVE quality-check step (QUALITY_CHECK_REPORT_PATH) must have its output-path
-    setting actually present, non-null, and active in cfg_setting — the code-backed enforcement of
-    governance.reports_must_persist. A registered quality-check step with no report path means
-    its findings can only ever live in a terminal print + an escalation row, which is exactly the
-    standard violation the researcher found and required fixed 2026-07-21. A retired (inactive)
-    step is skipped entirely (escalation #310)."""
+    """Every ACTIVE quality-check step (QUALITY_CHECK_REPORT_PATH) must have its output-path setting
+    present, non-null and active (governance.reports_must_persist). Inactive steps are skipped."""
     missing = []
     for step, (table, key) in QUALITY_CHECK_REPORT_PATH.items():
         if _step_inactive(conn, step):
@@ -713,22 +503,13 @@ def find_missing_report_paths(conn: sqlite3.Connection) -> list[str]:
 
 
 def find_report_version_clutter(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
-    """`lib/reportkit.oneoff_path()` was found 2026-08-08 (BUILD.md §83) to version correctly
-    (`-v2`/`-v3`/...) but never archive the superseded version — every reconciliation report and
-    several extract tools accumulated their whole lineage flat in `governance.oneoff_report_dir`
-    forever, unlike `write_report`'s own reports (fixed 2026-08-05, §60) which correctly hold
-    exactly one live file per stem. Fixed at the source (`oneoff_path` now archives before writing)
-    — this is the ACTIVE detector that a future regression (a new caller bypassing `oneoff_path`,
-    or the archiving logic breaking) doesn't silently recur unnoticed, matching this app's own
-    "not stated, enforced" convention rather than trusting the fix to hold by inspection alone."""
+    """Detects a superseded one-off report version left live: `reportkit.oneoff_path()` archives
+    before writing, so more than one live version per stem means a caller bypassed it."""
     from . import reportkit
     out_dir_setting = _cfg_setting(conn, "governance.oneoff_report_dir")
     if not out_dir_setting:
         return []
-    # governance.oneoff_report_dir's value ("iba/app/reports/") is already relative to the REPO
-    # ROOT (same resolution oneoff_path() itself relies on, via cwd) -- NOT relative to app_root
-    # (iba/app, one level in) the way other checks in this file use it. app_root.parent.parent
-    # recovers the repo root correctly either way, without assuming cwd.
+    # governance.oneoff_report_dir is relative to the repo root (app_root.parent.parent)
     out_dir_path = pathlib.Path(out_dir_setting)
     out_dir = out_dir_path if out_dir_path.is_absolute() else app_root.parent.parent / out_dir_path
     findings = []
@@ -748,11 +529,8 @@ def _cfg_setting(conn: sqlite3.Connection, key: str):
 
 
 def find_unregistered_lib_modules(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
-    """Every `iba/app/lib/*.py` module must have a `cfg_utility` row (added 2026-07-29, Phase 4 of
-    `PLAN-config-system-remediation-v1-20260729.md`) — a NEW module added later and never
-    registered would otherwise be invisible to `find_utility_config_density` below, the same
-    "found by chance, not by a check" gap this whole registry exists to close. ADVISORY: a brand
-    new file mid-edit is a normal transient state, not a coherence error."""
+    """Every `iba/app/lib/*.py` module must have a `cfg_utility` row, or find_utility_config_density
+    cannot see it. ADVISORY: a new file mid-edit is a normal transient state."""
     registered = {r[0] for r in conn.execute("SELECT module FROM cfg_utility")}
     lib_dir = app_root / "lib"
     out = []
@@ -767,34 +545,18 @@ def find_unregistered_lib_modules(conn: sqlite3.Connection, app_root: pathlib.Pa
     return out
 
 
-# Every real method the `Cfg` class exposes — computed live from the class itself (not a hand-
-# maintained list) so this stays accurate as `Cfg` grows. Used to detect genuine config-consumption
-# call sites (`<anything>.setting(`, `<anything>.tables(`, ...), not just the two most common ones.
-# Escalation review 2026-07-30 (`cfg-utility-density-check-review-20260730.md`) found this check's
-# OWN pattern was the bug for two modules: `db.py` genuinely consumes config via `.tables()`/
-# `.columns()`/`.unique_key()` — real usage the old `.setting(`/`.enum(` -only pattern never
-# counted; `dbsnapshot.py` genuinely calls `.setting(` but on a `Cfg` instance bound to `c`, not
-# `cfg` — the old pattern hardcoded the literal text `cfg.setting(`/`cfg.enum(`, missing any other
-# variable name entirely.
+# Every method the `Cfg` class exposes, computed from the class itself, so any config-consuming call
+# (`.setting(`, `.tables(`, ...) under any variable name counts.
 _STRING_TOKEN_TYPES = {tokenize.COMMENT, tokenize.STRING}
-for _name in ("FSTRING_START", "FSTRING_MIDDLE", "FSTRING_END"):    # Python 3.12+ (PEP 701) only
+for _name in ("FSTRING_START", "FSTRING_MIDDLE", "FSTRING_END"):    # Python 3.12+ only
     if hasattr(tokenize, _name):
         _STRING_TOKEN_TYPES.add(getattr(tokenize, _name))
 
 
 def _code_only_text(path: pathlib.Path) -> str:
-    """Source with every COMMENT/STRING(/f-string literal piece) span blanked to spaces IN PLACE —
-    so a call-site scan can't be fooled by a docstring or comment that merely MENTIONS the pattern
-    in prose, while every real call site keeps its EXACT original adjacency (`cfg.setting(` stays
-    literally `cfg.setting(`, not spread apart). Found 2026-07-30, twice in one session:
-    `cfgreport.py` (fixed by rewording one line) and then `cfgquality.py` itself — THIS file's own
-    docstrings talk about `.setting(`/`.enum(`/`.tables(` (they document the exact check below),
-    which falsely satisfied the old raw-text substring scan. First attempt at this fix (joining
-    non-string tokens with a space) was itself wrong — it broke every REAL match too, by inserting
-    spaces between `cfg`/`.`/`setting`/`(`, caught immediately by re-testing `db.py`/`dbsnapshot.py`
-    (known-good cases) and finding them suddenly failing. Blanking spans in the original string,
-    same length, fixes both directions at once. Falls back to raw text if a file doesn't tokenize
-    cleanly (better a possible false negative than a hard crash on some edge-case file)."""
+    """Source with every COMMENT/STRING (and f-string piece) span blanked to spaces in place, so a
+    call-site scan isn't fooled by prose that mentions the pattern, while real call sites keep their
+    exact adjacency. Falls back to raw text if a file doesn't tokenize."""
     text = path.read_text(encoding="utf-8", errors="ignore")
     try:
         tokens = list(tokenize.generate_tokens(io.StringIO(text).readline))
@@ -822,23 +584,14 @@ def _cfg_method_pattern() -> re.Pattern:
     return re.compile(r"\.(?:" + "|".join(re.escape(m) for m in methods) + r")\(")
 
 
-_CFG_METHOD_RE = None  # lazy: built on first use, not at import time (avoids a circular import —
-                       # cfg.py doesn't import cfgquality, but this keeps the dependency one-way)
+_CFG_METHOD_RE = None  # built on first use, keeping the dependency on cfg one-way
 
 
 def find_utility_config_density(conn: sqlite3.Connection) -> list[str]:
-    """Every ACTIVE, NON-EXEMPT `cfg_utility` module with ZERO real `Cfg`-method call sites in its
-    own file (any method `Cfg` exposes — `.setting(`/`.enum(` and every schema/write-grant/sequence
-    method alike, under any variable name — see `_cfg_method_pattern`) — ADVISORY, the same "could
-    be legitimate" caveat `find_orphan_configs` already carries: a module like `retention.py`/
-    `seedreport.py` genuinely has no config of its own because its caller resolves paths for it (a
-    legitimate zero — now declared via `cfg_utility.config_exempt`, not re-derived every run); a
-    module like `lexiconparse.py` — six regexes and a hardcoded tag-set deciding a real parse, zero
-    `Cfg` reference anywhere — is the actual gap this check exists to surface (found by hand
-    2026-07-29, `core-module-config-intent-vs-effect-20260729.md`). `cfg_utility.file_path` is
-    already repo-root-relative (e.g. `iba/app/lib/cfg.py`) — resolved against the CWD, which every
-    PS entry point already sets to the repo root (`Set-Location $RepoRoot`), not recombined with
-    any other path."""
+    """Every ACTIVE, non-exempt `cfg_utility` module with zero `Cfg`-method call sites in its own file
+    (any method, any variable name; `_cfg_method_pattern`). ADVISORY: a module whose caller resolves
+    its config is declared via `cfg_utility.config_exempt`. `file_path` is repo-root-relative,
+    resolved against the CWD (every PS entry point sets the repo root)."""
     global _CFG_METHOD_RE
     if _CFG_METHOD_RE is None:
         _CFG_METHOD_RE = _cfg_method_pattern()
@@ -857,15 +610,10 @@ def find_utility_config_density(conn: sqlite3.Connection) -> list[str]:
     return out
 
 
-# D28 (register v9): Escalation.ps1's `[ValidateSet(...)]` literals are a THIRD, hardcoded copy of
-# the escalation vocabulary — alongside the two live cfg_enum groups (escalation_next_action_manual/
-# _dispatcher) lib/escalation.py actually validates against. Nothing keeps the PS copy in sync if the
-# enum changes (D27's own fix wouldn't reach it without a manual edit). A drift-detection check, not
-# a dynamically-querying ValidateSet — disproportionate machinery for a rarely-changing list (per the
-# register's own reasoning). Maps PS -Parameter name -> (cfg_enum group, value-transform) — only the
-# groups meant to be an EXACT match; -State's ValidateSet is a deliberate curated SUBSET (only the
-# explicitly-settable states — raised/re-assigned/completed are system-derived) and is excluded here
-# for that reason, not because it was overlooked.
+# Escalation.ps1's `[ValidateSet(...)]` literals are a hardcoded copy of escalation vocabulary held
+# in cfg_enum; this map names the parameters that must match their group exactly (PS -Parameter ->
+# (cfg_enum group, value transform)). -State's ValidateSet is a deliberate subset (only settable
+# states) and is not listed.
 _PS_VALIDATESET_ENUM_MAP = {
     "NextAction": ("escalation_next_action_manual", lambda v: v),
     "Decision": ("escalation_next_action_dispatcher", lambda v: v.lower()),
@@ -880,12 +628,8 @@ _VALIDATESET_ITEM_RE = re.compile(r"'([^']*)'|\"([^\"]*)\"")
 
 def _ps_validateset_drift(conn: sqlite3.Connection, ps_path: pathlib.Path, ps_label: str,
                           enum_map: dict) -> list[str]:
-    """Generic core: every `enum_map` parameter's `[ValidateSet(...)]` values in `ps_path` must
-    exactly match the live `cfg_enum` group it's supposed to mirror. Escalation #977, 2026-08-27
-    (D28/register v9) originated this for `Escalation.ps1` specifically; generalised 2026-08-28
-    (escalation #971/#977) so a second PS script's own hardcoded `ValidateSet` vocabulary — e.g.
-    `FolderPurpose.ps1`'s `-Type`/`-Status` — gets the same standing drift check instead of being
-    a one-off, silently-driftable copy nothing ever re-verifies against its `cfg_enum` source."""
+    """Every `enum_map` parameter's `[ValidateSet(...)]` values in `ps_path` must exactly match the
+    live `cfg_enum` group it mirrors (#977)."""
     if not ps_path.exists():
         return [f"{ps_label} not found at {ps_path} — cannot check ValidateSet drift"]
     text = ps_path.read_text(encoding="utf-8", errors="ignore")
@@ -919,10 +663,8 @@ def _ps_validateset_drift(conn: sqlite3.Connection, ps_path: pathlib.Path, ps_la
 
 def find_escalation_ps_validateset_drift(conn: sqlite3.Connection, app_root: pathlib.Path
                                          ) -> list[str]:
-    """Every `_PS_VALIDATESET_ENUM_MAP` parameter's `[ValidateSet(...)]` values must exactly match
-    the live `cfg_enum` group it's supposed to mirror (after `-Decision`'s lowercase transform).
-    ADVISORY — a real drift is a genuine finding needing a look, not necessarily a hard structural
-    fault (the PS script may simply not have been updated yet)."""
+    """Escalation.ps1's `_PS_VALIDATESET_ENUM_MAP` parameters against their cfg_enum groups
+    (after `-Decision`'s lowercase transform). ADVISORY: the script may not be updated yet."""
     return _ps_validateset_drift(conn, app_root / "ps" / "Escalation.ps1", "Escalation.ps1",
                                  _PS_VALIDATESET_ENUM_MAP)
 
@@ -935,46 +677,27 @@ _FOLDERPURPOSE_PS_VALIDATESET_ENUM_MAP = {
 
 def find_folderpurpose_ps_validateset_drift(conn: sqlite3.Connection, app_root: pathlib.Path
                                             ) -> list[str]:
-    """`FolderPurpose.ps1`'s `-Type`/`-Status` `[ValidateSet(...)]` values against the live
-    `cfg_enum` groups they mirror — escalation #977's own resolution: the values ARE registered in
-    `cfg_enum` and `set_purpose()` validates against it live (not a hardcoded Python set), but nothing
-    previously checked whether the OTHER two hardcoded copies of the same vocabulary — this PS
-    script's `ValidateSet`, and `lib/folderpurpose.py:_assess_type()`/`_assess_status()`'s literal
-    `return` values (Method D — necessarily hardcoded, since they're the RULES deciding which
-    enum value applies, not a re-statement of what values exist) — had drifted. This check covers
-    the PS copy; `auto_assess()` now validates its own literal vocabulary against the live enum at
-    the top of every run (raises loudly on drift, not a silent bad write) — found live while
-    resolving #977 that it hadn't been, unlike `set_purpose()`, which always had."""
+    """`FolderPurpose.ps1`'s `-Type`/`-Status` `[ValidateSet(...)]` values against the live cfg_enum
+    groups they mirror (#977). folderpurpose.auto_assess() checks its own literal vocabulary at run
+    time."""
     return _ps_validateset_drift(conn, app_root / "ps" / "FolderPurpose.ps1", "FolderPurpose.ps1",
                                  _FOLDERPURPOSE_PS_VALIDATESET_ENUM_MAP)
 
 
-# ── PS-script vs. Excel-worksheet drift (escalation #1007 follow-on, 2026-08-29) ────────────────
-# The researcher keeps two hand/generated Excel workbooks as the CLI interface to iba/app/ps:
-# `iba/docs/ps tools worksheet.xlsx` (one tab per script, row 4 = flag headers, mechanically built
-# from each script's own `param()` block — escalation #1004) and `iba/docs/escalation actions
-# worksheet.xlsx` (the researcher's own hand-built model, one sheet, fixed action-shapes for
-# Escalation.ps1 specifically). Nothing previously re-checked either workbook against the scripts
-# they describe — the same class of drift the ValidateSet checks above catch for a narrower case
-# (one parameter's allowed VALUES), generalised here to a script's whole PARAMETER LIST against its
-# worksheet tab. Two checks, not one, because the two workbooks are structurally different: the
-# generic one is a strict per-script tab match; the hand-built escalation one only supports a
-# subset check (its columns are the union of several fixed action-shapes, not one row per param).
+# ── PS-script vs. Excel-worksheet drift ─────────────────────────────────────────────────────────
+# Two workbooks are the researcher's CLI interface to iba/app/ps: `iba/docs/ps tools worksheet.xlsx`
+# (one tab per script, row 4 = flag headers, built from each script's param() block) and
+# `iba/docs/escalation actions worksheet.xlsx` (hand-built, one sheet, fixed action shapes for
+# Escalation.ps1). The first gets a strict per-script tab match; the second a subset check.
 _PS_WORKSHEET_SKIP_STEMS = {"Escalation"}  # its tab is a pointer to the model sheet, not real headers
-# PowerShell automatic variables that can legally appear INSIDE a param() block without being a
-# parameter — e.g. `[Parameter(Mandatory = $true)]` — found live: Behaviour.ps1 and 20+ others use
-# exactly this attribute, and a bare `\$(\w+)` capture can't tell "a parameter's own $Name" from
-# "a literal referenced inside someone else's attribute" any other way without a real PS parser
-# (disproportionate for this check's purpose, per the same reasoning _ps_validateset_drift's own
-# regex approach already accepted).
+# PowerShell automatic variables that can appear inside a param() block without being a parameter,
+# e.g. `[Parameter(Mandatory = $true)]`.
 _PS_AUTOMATIC_VARS = {"true", "false", "null"}
 
 
 def _ps_param_names(ps_path: pathlib.Path) -> set[str]:
-    """Every declared parameter name in `ps_path`'s outer `param(...)` block — bracket-depth aware
-    (a naive regex closing on the first `)` would mis-close on a `[ValidateSet('a','b')]`'s own,
-    earlier, closing paren) rather than a fixed-form regex like `_VALIDATESET_RE` above, which only
-    has to find named ValidateSet blocks, not the whole param list."""
+    """Every declared parameter name in `ps_path`'s outer `param(...)` block, bracket-depth aware
+    (a `[ValidateSet('a','b')]` closing paren must not end the block)."""
     text = ps_path.read_text(encoding="utf-8", errors="ignore")
     m = re.search(r"\bparam\s*\(", text, re.I)
     if not m:
@@ -1006,12 +729,9 @@ def _load_worksheet_setting(conn: sqlite3.Connection, key: str, project_root: pa
 
 
 def _index_ps_worksheet_tabs(wb) -> dict[str, "openpyxl.worksheet.worksheet.Worksheet"]:
-    """Maps a script's own embedded path cell (e.g. `iba\\app\\ps\\Behaviour.ps1`, found live in
-    row 6 of its tab, col A — each tab's compiled-command formula references it) back to that
-    worksheet, scanning every tab once. Matching on the embedded path rather than the tab NAME
-    because Excel's 31-char sheet-name limit already forces some tabs to a shortened name (e.g.
-    `create-passages-by-book-view-and-export.ps1` → tab `passages-by-book-view-export`) — the
-    embedded path is never truncated and stays the one reliable anchor."""
+    """Maps a script's embedded path cell (e.g. `iba\\app\\ps\\Behaviour.ps1`, row 6 col A of its tab)
+    back to that worksheet, scanning every tab once. The path, not the tab name, is the anchor: Excel's
+    31-char limit shortens some tab names."""
     idx: dict[str, object] = {}
     for ws in wb.worksheets:
         for row in ws.iter_rows(min_row=1, max_row=8, max_col=3, values_only=True):
@@ -1023,13 +743,9 @@ def _index_ps_worksheet_tabs(wb) -> dict[str, "openpyxl.worksheet.worksheet.Work
 
 def find_ps_worksheet_drift(conn: sqlite3.Connection, app_root: pathlib.Path,
                             project_root: pathlib.Path) -> list[str]:
-    """Every `iba/app/ps/*.ps1` script's live `param()` names against its own tab's row-4 flag
-    headers in `governance.ps_worksheet_path` (`iba/docs/ps tools worksheet.xlsx`) — a parameter
-    added/removed/renamed on the script with no matching tab update is exactly the drift the
-    researcher asked this check to catch (2026-08-29: "any change to any PS instruction will find
-    its way into the two excel worksheets"). ADVISORY — a real finding needing a look, not
-    necessarily wrong (the tab may just not have been updated yet). `Escalation.ps1` is skipped —
-    its tab is a deliberate pointer to the OTHER worksheet, checked separately below."""
+    """Every `iba/app/ps/*.ps1` script's live `param()` names against its tab's row-4 flag headers
+    in `governance.ps_worksheet_path`. ADVISORY. `Escalation.ps1` is skipped: its tab points to the
+    other worksheet, checked below."""
     try:
         import openpyxl
     except ImportError:
@@ -1052,9 +768,7 @@ def find_ps_worksheet_drift(conn: sqlite3.Connection, app_root: pathlib.Path,
         live = _ps_param_names(ps_file)
         sheet = {c[1:] for row in ws.iter_rows(min_row=4, max_row=4, values_only=True)
                 for c in row if isinstance(c, str) and c.startswith("-")}
-        # PowerShell parameter names are case-insensitive; compare on that basis (found live:
-        # Escalation.ps1's own '-Action' vs. the model sheet's '-action' would false-positive
-        # otherwise — same fix applied to both checks here for consistency).
+        # PowerShell parameter names are case-insensitive
         sheet_lower = {s.lower() for s in sheet}
         live_lower = {p.lower() for p in live}
         missing = {p for p in live if p.lower() not in sheet_lower}
@@ -1070,13 +784,9 @@ def find_ps_worksheet_drift(conn: sqlite3.Connection, app_root: pathlib.Path,
 
 def find_escalation_worksheet_drift(conn: sqlite3.Connection, app_root: pathlib.Path,
                                     project_root: pathlib.Path) -> list[str]:
-    """`Escalation.ps1`'s live `param()` names must each appear SOMEWHERE as a `-Flag` header in
-    the researcher's own `governance.escalation_worksheet_path` (`iba/docs/escalation actions
-    worksheet.xlsx`) — a subset check, not a per-tab exact match like `find_ps_worksheet_drift`
-    above, because that workbook's one sheet is hand-built around several fixed action-shapes
-    (Raise/Update/AnswerRun/...) sharing columns, not one row per parameter. Still catches the
-    thing the researcher actually asked for: a new/renamed Escalation.ps1 parameter that the
-    model sheet was never updated to include."""
+    """Each of `Escalation.ps1`'s live `param()` names must appear somewhere as a `-Flag` header in
+    `governance.escalation_worksheet_path` -- a subset check, since that one sheet shares columns
+    across several action shapes."""
     try:
         import openpyxl
     except ImportError:
@@ -1098,14 +808,9 @@ def find_escalation_worksheet_drift(conn: sqlite3.Connection, app_root: pathlib.
 
 
 def find_unclassified_active_steps(conn: sqlite3.Connection) -> list[str]:
-    """Every ACTIVE `cfg_step` must have `kind` set (`operations` | `utility` — the researcher's
-    own classification, 2026-07-30, `migration/bootstrap_step_kind.py`). A HARD error, not a
-    judgement call: `run.py`'s dispatch gate (escalation, same day) refuses to dispatch a step with
-    no classification at all — this is the structural check that keeps that gate's premise true
-    (a NEW step, added later without a `kind`, would otherwise silently sit undispatchable with no
-    coherence check pointing at why). `find_enum_violations` (value-quality) already catches an
-    INVALID `kind` value; this catches a MISSING one, which that check explicitly does not (it
-    skips `NULL` by design)."""
+    """Every ACTIVE `cfg_step` must have `kind` set (`operations` | `utility`). A hard error:
+    `run.py` refuses to dispatch a step with no kind. (`find_enum_violations` catches an invalid
+    value; this catches a missing one.)"""
     return [f"cfg_step ({r['work_package']}, {r['step']}) is active but has no kind "
            f"(operations|utility) — classify it via configmaint.propose before it can be "
            f"dispatched (run.py now refuses undispatched steps with no kind)"
@@ -1115,56 +820,35 @@ def find_unclassified_active_steps(conn: sqlite3.Connection) -> list[str]:
 
 def find_unresolvable_location_settings(conn: sqlite3.Connection, project_root: pathlib.Path
                                        ) -> list[str]:
-    """Every location-shaped config value (`cfg_setting` AND every per-module table shaped like it
-    — `cfg_prose`, `cfg_passage`, ...; see `lib/folderpurpose.location_settings()`, the one shared
-    enumeration both this check and `folderpurpose`'s Method B use) must resolve to a real folder
-    on disk, project-root-relative. ADVISORY, not a hard structural fault — a setting can point
-    ahead of a folder not yet created by design (a report path whose folder gets `mkdir(parents=
-    True)`'d on first write), so this flags for a look rather than failing the whole validate run.
-
-    Added 2026-08-28 (researcher, escalation #971/#976): "configmaint should validate every
-    location reference in every config as part of its validation routine." Direct cause: `cfg_prose.
-    prose.edit_file_dir` pointed at `outputs/markdown/prose-edits`, a folder physically moved away
-    (to `Workflow/Programme/prose-edits`) during the 2026-08-27 folder reorg with the setting never
-    updated to follow — undetected until the researcher noticed a DIFFERENT gap (`folder_purpose`
-    missing a `governed_by_setting`) and asked why. This check makes that class of drift a standing,
-    automatic finding instead of something found by chance."""
-    # Local import: folderpurpose lives in lib/ alongside this module; importing at call time (not
-    # module level) avoids a hard dependency for every cfgquality caller that never needs it.
+    """Every location-shaped config value (`cfg_setting` and every per-module table shaped like it;
+    `lib/folderpurpose.location_settings()`) must resolve to a real folder, project-root-relative.
+    ADVISORY: a report folder may be created on first write (#971/#976)."""
     from . import folderpurpose as fp_mod
 
     out = []
     for table, key, raw_value in fp_mod.location_settings(conn):
         norm = fp_mod.normalize_setting_value(raw_value)
         if norm is None:
-            continue  # not a plausible bare folder path (a sentence, a {template}, a JSON list)
+            continue  # not a bare folder path (a sentence, a {template}, a JSON list)
         if not (project_root / norm).is_dir():
             out.append(f"{table}.{key} = {raw_value!r} — {norm!r} does not exist as a folder "
                       f"on disk (project-root-relative)")
     return out
 
 
-# `filing` behaviour class item 4 (escalation #863/#971/#992): a write that hand-imitates the
-# same-day -v{n} versioning pattern instead of calling filingkit.versioned_path()/reportkit.
-# oneoff_path(). Matches an f-string/format literal building "...-v{...}..." or "...-v" + str(...)
-# by hand — the two ways this codebase's own existing writers were found (2026-08-28 survey) to do
-# it before the shared utility existed.
+# `filing` behaviour class item 4: a write that builds a "-v{...}" / "-v" + str(...) filename by hand
+# instead of calling filingkit.versioned_path() / reportkit.oneoff_path().
 _HAND_VERSION_RE = re.compile(r"-v\{[^}]*\}|-v[\"']\s*\+")
 _FILINGKIT_CALL_RE = re.compile(r"\b(?:versioned_path|oneoff_path)\s*\(")
 _FILING_SCAN_EXCLUDE_ANYWHERE = {".git", "archive", "__pycache__", ".venv", "venv",
                                 "node_modules", "site-packages", "migration",
-                                # 2026-08-28: `engine/` is superseded (CLAUDE.md top banner,
-                                # 2026-08-15) and its own `-v{n}` matches turned out to be a
-                                # reference table of NAMING PATTERNS (documentary string data),
-                                # not real file-writing code — genuinely not this check's target.
+                                # engine/ is superseded; its -v{n} matches are documentary naming patterns
                                 "engine"}
 
 
 def _strip_comments(text: str) -> str:
-    """Blanks Python COMMENT token spans (only — string literals stay live) so a comment merely
-    MENTIONING '-v{n}' in prose (found live: escalation.py's own comment describing that its
-    caller ALREADY goes through reportkit.write_report()) doesn't false-positive the same way
-    `cfgquality._code_only_text`'s docstring problem does for call-site scans, just inverted."""
+    """Blanks COMMENT token spans only (string literals stay), so a comment that mentions '-v{n}'
+    does not match."""
     try:
         tokens = list(tokenize.generate_tokens(io.StringIO(text).readline))
     except (tokenize.TokenError, IndentationError, SyntaxError, ValueError):
@@ -1186,14 +870,10 @@ def _strip_comments(text: str) -> str:
 
 def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.Path
                                 ) -> list[str]:
-    """`filing` behaviour class rule 4 (`cfg_behaviour_rule` 'archiving-trigger', plus the
-    naming-shape rule) as a standing check, not just a stated rule nobody re-verifies: every ACTIVE
-    (`cfg_utility.inactive=0`, or unregistered — same scope `pathaudit.py` uses) `.py` file that
-    builds a `-v{n}`-shaped filename by hand should be calling `filingkit.versioned_path()` (or its
-    `reportkit.oneoff_path()` wrapper) instead of reimplementing the same-day-bump/archive-before-
-    write logic itself. ADVISORY — a real hit needs a look (migrate the call site), not necessarily
-    a hard fault; `iba/app/migration/` excluded for the same reason `pathaudit.py` excludes it (a
-    migration's own filename literals are seed data, not a report-writing call site)."""
+    """`filing` behaviour class rule 4 (archiving-trigger, naming-shape): every active (or
+    unregistered) `.py` file building a `-v{n}` filename by hand should call
+    `filingkit.versioned_path()` or `reportkit.oneoff_path()`. ADVISORY. `iba/app/migration/` is
+    excluded (its filename literals are seed data)."""
     inactive = {r[0] for r in conn.execute("SELECT file_path FROM cfg_utility WHERE inactive=1")}
     out = []
     for f in sorted(project_root.rglob("*.py")):
@@ -1208,9 +888,8 @@ def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.
             continue
         if rel_posix in ("iba/app/lib/filingkit.py", "iba/app/lib/reportkit.py"):
             continue  # the canonical implementation itself, not a caller reinventing it
-        # Exempt by researcher ruling (2026-10-13, #2108 F, verbatim: "F - yes it is exempt, and
-        # that has been like that for ever"): prosestore.py's cross-day edit-cycle counter (#784)
-        # and the one-off analysis scripts under _analytics/.
+        # exempt by researcher ruling (#2108 F): prosestore.py's cross-day edit-cycle counter and the
+        # one-off analysis scripts under _analytics/
         if rel_posix == "iba/app/lib/prosestore.py" or parts[0] == "_analytics":
             continue
         try:
@@ -1224,16 +903,11 @@ def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.
     return out
 
 
-# ── unenforced behaviour rules — the master finding for escalation #1384 ────────────────────────
+# ── unenforced behaviour rules ─────────────────────────────────────────────────────────────────
 def find_unenforced_behaviour_rules(conn: sqlite3.Connection) -> list[str]:
-    """Every active `cfg_behaviour_rule` row whose `enforcement_status` is not
-    `mechanically_enforced` — the structural answer to '44/64 rules said not yet mechanically
-    checked and nobody ever came back to them' (escalation #1384, 2026-09-03). Reads the
-    `enforcement_status` column (cfg_enum `behaviour_rule_enforcement_status`) directly — a
-    queryable fact set by explicit per-rule audit, not a fragile hedge-phrase text scan (the
-    scan that found this whole problem in the first place is exactly the kind of thing that
-    silently stops matching the moment wording drifts). ADVISORY, always — an unenforced rule
-    is a known state to track, not itself a coherence fault."""
+    """Every active `cfg_behaviour_rule` whose `enforcement_status` (cfg_enum
+    `behaviour_rule_enforcement_status`) is not `mechanically_enforced` (#1384). ADVISORY: an
+    unenforced rule is a known state to track."""
     rows = conn.execute(
         "SELECT id, class, rule_key, enforcement_status FROM cfg_behaviour_rule "
         "WHERE active=1 AND (enforcement_status IS NULL OR enforcement_status != 'mechanically_enforced') "
@@ -1245,22 +919,12 @@ def find_unenforced_behaviour_rules(conn: sqlite3.Connection) -> list[str]:
     return out
 
 
-# Where this researcher's Claude Code memory lives — outside the git repo (per-user, per-machine),
-# so it cannot be a cfg_setting resolved by find_unresolvable_location_settings the way an in-repo
-# *_dir/*_path setting is. Path.home() keeps this portable across whichever Windows account this
-# runs under; the "c--Bible-study-projects" segment is this specific project's slug inside the
-# Claude Code SDK's per-project memory layout and is not expected to change.
+# This project's Claude Code memory folder, outside the repo (so not a cfg_setting location).
 CLAUDE_MEMORY_DIR = pathlib.Path.home() / ".claude" / "projects" / "c--Bible-study-projects" / "memory"
 
-# Regexes used by verify_behaviour_rule_delivery() below to pull delivery claims out of a
-# cfg_behaviour_rule.source/enforced_by free-text field. Deliberately simple (this project's
-# "simple-steps-not-engineered-designs" rule, id 39) — a handful of literal patterns, not a
-# general-purpose citation parser.
-# Captures one or more comma-separated identifier-shaped slugs right after the word "memory" --
-# deliberately narrow (word-chars only, comma-joined) rather than a broad char class, so it stops
-# cleanly at the first word of following prose instead of running on into enforced_by's free text
-# (found live testing #1388: an earlier [a-z0-9_,\s]+? class treated a bare space the same as a
-# comma and kept consuming enforced_by's boilerplate until the whole match failed).
+# Patterns verify_behaviour_rule_delivery() uses to read delivery claims from a rule's source /
+# enforced_by text. The memory pattern takes comma-joined identifier slugs only, so it stops at the
+# first word of following prose.
 _MEMORY_SOURCE_RE = re.compile(
     r"memory\s+((?:[a-z][a-z0-9_]*)(?:\s*,\s*[a-z][a-z0-9_]*)*)", re.IGNORECASE)
 _MEMORY_SLUG_RE = re.compile(r"[a-z][a-z0-9_]*")
@@ -1270,36 +934,15 @@ _DOC_PATH_RE = re.compile(r"\b(?:docs|Workflow|iba/docs)/[\w\-./ ]+?\.md")
 
 def verify_behaviour_rule_delivery(source_text: str, enforced_by_text: str,
                                     project_root: pathlib.Path) -> tuple[bool, str]:
-    """Escalation #1388, 2026-09-03 (researcher correction of #1384's own audit): a
-    `not_mechanically_checkable`/`context_delivered` classification is only honest if the rule's
-    claimed delivery path — the thing that actually puts this rule's content in front of Claude
-    every session, since no code path can check a conversational rule's compliance after the fact
-    — is REAL and CURRENT, not merely asserted in a free-text `source` field. #1384 built the
-    enforcement_status column but never checked whether `source` pointed at anything live; 8 of
-    its 31 `not_mechanically_checkable` rows turned out to cite an already-obsolete
-    `wa_rule_registry` row or an orphaned doc nothing loaded references — i.e. genuinely
-    undelivered, not merely uncheckable.
-
-    Checks three concrete, verifiable delivery mechanisms against the combined source+enforced_by
-    text, in order, and returns as soon as one verifies:
-      1. `memory <slug>[, <slug>...]` — the named memory file exists on disk AND the slug is
-         indexed in MEMORY.md (both are loaded into every session's context).
-      2. `governance.<key>` — a `cfg_setting` row with that key, module='governance', inactive=0
-         exists (every such row is printed verbatim at every `Start-Iba.ps1` run — init.py's
-         "governance rules" step, escalation #305).
-      3. `CLAUDE.md`/`GOVERNANCE.md`/`USER-GUIDE.md` — the cited doc exists AND, when the source
-         text also quotes a distinguishing phrase for the cited section, that phrase is actually
-         still present in the doc's current text (catches the section being rewritten/removed
-         later, not just a one-time existence check). CLAUDE.md is auto-loaded every session;
-         GOVERNANCE.md/USER-GUIDE.md are not, but are the authoritative record CLAUDE.md's own
-         top banner directs Claude to consult for this class of question, so a rule whose real
-         content lives there (not merely cited from there) still counts as properly included.
-    A bare doc path (docs/..., Workflow/...) only counts if the file exists on disk AND is itself
-    referenced from one of CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md — a doc nothing loaded points to
-    is exactly the orphan case this rule exists to catch, not a pass.
-    A `wa_rule_registry` citation never verifies — that table was superseded project-wide
-    2026-08-17, so it cannot deliver anything into a live session.
-    Returns (True, "<mechanism that verified>") or (False, "<why nothing verified>")."""
+    """Whether a rule's claimed delivery path (what puts it in front of Claude every session) is
+    real and current (#1388). Checks, in order, returning on the first that verifies:
+      1. `memory <slug>[, <slug>...]`: the memory file exists and is indexed in MEMORY.md.
+      2. `governance.<key>`: an active module='governance' cfg_setting row exists.
+      3. `CLAUDE.md`/`GOVERNANCE.md`/`USER-GUIDE.md`: the doc exists and, if the source quotes a
+         phrase from it, that phrase is still present.
+    A bare doc path counts only if the file exists and one of those three docs names it. A
+    `wa_rule_registry` citation never verifies.
+    Returns (True, "<mechanism>") or (False, "<why nothing verified>")."""
     text = f"{source_text or ''} {enforced_by_text or ''}"
     conn_path = project_root / "iba" / "app" / "db" / "iba.db"
 
@@ -1328,15 +971,7 @@ def verify_behaviour_rule_delivery(source_text: str, enforced_by_text: str,
         finally:
             conn.close()
 
-    # 3. CLAUDE.md / GOVERNANCE.md / USER-GUIDE.md, optionally with a quoted distinguishing phrase.
-    # CLAUDE.md is auto-loaded every session; GOVERNANCE.md/USER-GUIDE.md are not auto-injected the
-    # same way, but they are the authoritative record CLAUDE.md's own top banner directs Claude to
-    # consult for exactly this "how is this governed" class of question -- a rule whose real,
-    # current text lives there (not merely cited from there) is properly included, not undelivered.
-    # Symmetric across all three rather than a CLAUDE.md-only special case (root-fix-not-one-off,
-    # id 38): rule 55's actual content lives only in GOVERNANCE.md D2 with no separate design doc
-    # to point the doc-path branch below at, and treating that as an unfixable gap would be
-    # dodging the real fix, not applying it.
+    # 3. CLAUDE.md / GOVERNANCE.md / USER-GUIDE.md, optionally with a quoted distinguishing phrase
     for doc_name, doc_rel in (("CLAUDE.md", "CLAUDE.md"),
                                ("GOVERNANCE.md", "iba/app/GOVERNANCE.md"),
                                ("USER-GUIDE.md", "iba/app/USER-GUIDE.md")):
@@ -1367,25 +1002,12 @@ def verify_behaviour_rule_delivery(source_text: str, enforced_by_text: str,
 
 def find_undelivered_conversational_rules(conn: sqlite3.Connection,
                                            project_root: pathlib.Path) -> list[str]:
-    """Escalation #1388, 2026-09-03. Sibling to find_unenforced_behaviour_rules() above, but
-    sharper: that check answers "is this code-checked", which is the wrong question for a rule
-    whose whole enforcement model is conversational (no code path can check Claude's own turn-by-
-    turn conduct after the fact). For every active `cfg_behaviour_rule` row classified
-    `context_delivered` or `not_mechanically_checkable`, this ACTUALLY VERIFIES the delivery
-    mechanism its `source`/`enforced_by` field claims — rather than trusting the claim the way
-    #1384's own audit did, which is exactly how 8 of its 31 rows went unnoticed citing a dead
-    table or an orphaned doc. A row that fails here is not "uncheckable" — it is undelivered:
-    nothing puts it in front of Claude, in any session, ever. ADVISORY (feeds the same
-    unenforced_behaviour_rules-style escalation in configmaint.validate), but a row appearing here
-    is a strictly worse state than merely appearing in find_unenforced_behaviour_rules — that
-    check would show it as an accepted, deliberate classification; this one shows the
-    classification itself is currently false."""
-    # #2181 (2026-10-21): since #2173 the start routine delivers the active behaviour rules in full
-    # (init.py step 6 -> lib/compliance.deliver_lines, read from cfg_behaviour_rule WHERE active=1),
-    # scoped since #2185 by deliver_when (always; study_active while the study is active;
-    # developer_mode in a Developer Mode session), and the compliance file restates each one. That is the delivery mechanism for every row this
-    # check covers, so it is verified once, against the code, instead of per row against CLAUDE.md
-    # or memory (which no longer carry rule text: control map, cfg_control_home).
+    """For every active `cfg_behaviour_rule` classified `context_delivered` or
+    `not_mechanically_checkable`, verifies the delivery mechanism it claims (#1388): a row that fails
+    is undelivered, not merely uncheckable. ADVISORY."""
+    # The start routine delivers every active behaviour rule in full (init.py -> lib/compliance.
+    # deliver_lines, scoped by deliver_when) and the compliance file restates each one, so the
+    # mechanism is verified once against the code rather than per row.
     app_root = project_root / "iba" / "app"
     try:
         init_text = (app_root / "init.py").read_text(encoding="utf-8", errors="ignore")
@@ -1407,12 +1029,10 @@ def find_undelivered_conversational_rules(conn: sqlite3.Connection,
     return out
 
 
-# ── mechanically-checkable behaviour rules built 2026-09-03 (escalation #1384) ──────────────────
+# ── mechanically checkable behaviour rules (#1384) ─────────────────────────────────────────────
 def find_unpushed_commits(project_root: pathlib.Path) -> list[str]:
-    """`cfg_behaviour_rule` 26 (git-commit-and-push-together): a commit is never left unpushed.
-    Checked via `git rev-list --count @{u}..HEAD` — 0 means clean. Fails soft (empty list, not an
-    exception) if this isn't a git repo or has no upstream configured, rather than crashing
-    validate over an environment that simply doesn't have one."""
+    """`cfg_behaviour_rule` 26 (git-commit-and-push-together): no unpushed commit, via
+    `git rev-list --count @{u}..HEAD`. Returns an empty list if there is no repo or upstream."""
     import subprocess
     try:
         result = subprocess.run(
@@ -1429,14 +1049,9 @@ def find_unpushed_commits(project_root: pathlib.Path) -> list[str]:
 
 
 def find_ps_scripts_bypassing_runpy(app_root: pathlib.Path) -> list[str]:
-    """`cfg_behaviour_rule` 43 (every-active-ps-script-dispatches-through-run-py): every PS script
-    under iba/app/ps/ that performs a real operation calls `python -m iba.app.run`, not a direct
-    `python -m iba.app.handlers`/`.lib`/`.tools` call. Two permanent, named exceptions (the rule's
-    own text): Start-Iba.ps1 (bootstraps what run.py depends on) and Escalation.ps1's manual-front-
-    door actions (Raise/Update/Correction/AnswerRun — List/History already dispatch through
-    run.py). A simple substring scan, same shape as the rule's own known-non-compliance list —
-    intentionally crude (a real bypass reads as `python -m iba.app.handlers.foo:bar` regardless of
-    surrounding PowerShell), not a full PowerShell parse."""
+    """`cfg_behaviour_rule` 43: every PS script under iba/app/ps/ that performs an operation calls
+    `python -m iba.app.run`, not a module directly. Named exceptions: Start-Iba.ps1, and
+    Escalation.ps1's manual front-door actions. A simple substring scan."""
     ps_dir = app_root / "ps"
     if not ps_dir.exists():
         return []
@@ -1458,11 +1073,8 @@ def find_ps_scripts_bypassing_runpy(app_root: pathlib.Path) -> list[str]:
 
 
 def find_steps_without_ps_script(conn: sqlite3.Connection) -> list[str]:
-    """`cfg_behaviour_rule` 41 (every-interactive-module-needs-ps-script): every active
-    `cfg_step` belongs to a `cfg_work_package` that has a real `ps_script` set — a step reachable
-    only via raw `python -m iba.app.run` (no PS entry point at all) is a usability/audit gap the
-    same way the rule's own origin case (`cfg_behaviour_class`/`cfg_behaviour_rule` before
-    Behaviour.ps1 existed) was."""
+    """`cfg_behaviour_rule` 41: every active `cfg_step` belongs to a `cfg_work_package` with a
+    `ps_script` set."""
     rows = conn.execute(
         "SELECT DISTINCT s.work_package FROM cfg_step s LEFT JOIN cfg_work_package w "
         "ON s.work_package = w.name WHERE s.inactive=0 AND "
@@ -1476,13 +1088,9 @@ _ESCALATION_HEADER_RE = re.compile(r"Escalation\s+#(\d+)(?:/#(\d+))?")
 
 def find_escalation_file_naming_violations(conn: sqlite3.Connection, project_root: pathlib.Path
                                            ) -> list[str]:
-    """`cfg_behaviour_rule` 64 (escalation-file-carries-escalation-id-prefix) + 56 (naming-shape,
-    the id/date/version parts): a file in Workflow/Catalogue/ or iba/docs/ whose own first-15-lines
-    header self-declares '> Escalation #N' should be named '{N}-...' — checked directly against
-    each file's own stated escalation, not guessed. Also flags a filename containing a raw space
-    (naming-shape: hyphens, not spaces) and a literal 'Untitled' stem. ADVISORY — a doc without a
-    self-declared escalation header is out of this check's scope entirely, not a violation (not
-    every doc in these folders is escalation-tied)."""
+    """`cfg_behaviour_rule` 64 + 56: a file in Workflow/Catalogue/ or iba/docs/ whose first 15 lines
+    declare '> Escalation #N' should be named '{N}-...'. Also flags a filename with a raw space or an
+    'Untitled' stem. ADVISORY; a file with no escalation header is out of scope."""
     out = []
     for folder in (project_root / "Workflow" / "Catalogue", project_root / "iba" / "docs"):
         if not folder.exists():
@@ -1501,12 +1109,7 @@ def find_escalation_file_naming_violations(conn: sqlite3.Connection, project_roo
             if not matches:
                 continue
             candidate_ids = sorted({g for pair in matches for g in pair if g}, key=int)
-            # ANY escalation number named anywhere in the header block satisfies the check — which
-            # one actually owns the file when several are named (a dual tag like '#1378/#1379', or
-            # a '(adjacent)'-qualified provenance mention alongside the true owner) is a
-            # researcher's/Claude's own documented judgement call, not something a text scan
-            # re-litigates; this only flags a file naming NO escalation anywhere in its own
-            # filename that its own header also names.
+            # any escalation named in the header satisfies the check
             if any(f.name.startswith(f"{eid}-") for eid in candidate_ids):
                 continue
             out.append(f"{rel} — header names Escalation #{'/#'.join(candidate_ids)}, filename "
@@ -1515,14 +1118,9 @@ def find_escalation_file_naming_violations(conn: sqlite3.Connection, project_roo
 
 
 def find_hedge_phrases_in_active_config(conn: sqlite3.Connection) -> list[str]:
-    """`cfg_behaviour_rule` 32 (no-hedge-in-complete-records), applied to the config system's own
-    text: an ACTIVE cfg_behaviour_rule/cfg_method_rule/cfg_setting row whose text still carries a
-    bare 'not yet'/'TBD'/'to be decided' with no enforcement_status (behaviour rules) or no
-    explanation of what happens next — the exact pattern escalation #1384 found live 44/64 rows
-    doing. Behaviour rules are excluded here once they carry a real enforcement_status (that
-    column, not this phrase scan, is now the authority for them) — this check is the ongoing
-    guard against the SAME drift recurring in cfg_method_rule/cfg_setting, which have no
-    equivalent structured column."""
+    """`cfg_behaviour_rule` 32 applied to the config's own text: an ACTIVE cfg_behaviour_rule /
+    cfg_method_rule / cfg_setting row still carrying a bare 'not yet'/'TBD'/'to be decided'.
+    Behaviour rules with an enforcement_status are excluded (that column is the authority)."""
     hedges = ("not yet mechanically checked", "not yet built", "not yet applied", "not yet done",
              "not yet decided", "not yet determined", "not yet resolved", "not yet implemented",
              "not yet enforced", "not yet reviewed", "not yet confirmed", "not-yet-decided",
@@ -1544,13 +1142,8 @@ def find_hedge_phrases_in_active_config(conn: sqlite3.Connection) -> list[str]:
 
 
 def find_query_file_convention_violations(project_root: pathlib.Path) -> list[str]:
-    """`cfg_behaviour_rule` 14 (query-file-conventions): an ad-hoc SQL scratch file lives under
-    scripts/SQLite/{IBA_DB,Research_DB}/ (the folder convention, decided authoritative 2026-09-03
-    — supersedes the flat scripts/SQLite_-prefix form), named with hyphens not spaces, never left
-    untitled. Detection only — this does NOT rename files itself; auto-fixing IS permitted per
-    researcher instruction 2026-09-03, but folding a filesystem mutation into a read-only validate
-    step would blur what `configmaint.validate` means. A future `-Action FixQueryFileNames`-shaped
-    tool applying this same logic is the right home for the actual rename, not this function."""
+    """`cfg_behaviour_rule` 14 (query-file-conventions): an SQL scratch file lives under
+    scripts/SQLite/{IBA_DB,Research_DB}/, hyphenated, never untitled. Detection only; no rename."""
     sql_dir = project_root / "scripts" / "SQLite"
     out = []
     if sql_dir.exists():
@@ -1572,19 +1165,10 @@ def find_query_file_convention_violations(project_root: pathlib.Path) -> list[st
 
 def find_restated_authoritative_content(conn: sqlite3.Connection, project_root: pathlib.Path,
                                         min_ratio: float = 0.8) -> list[str]:
-    """`cfg_behaviour_rule` 3 (single-authority-pointer-not-copy): a governance doc paragraph that
-    near-duplicates an active cfg_setting/cfg_behaviour_rule/cfg_method_rule row's own text is a
-    restatement, not a pointer — the two copies will drift apart the moment one is edited and not
-    the other. Deliberately NOT built on content_index (escalation #1385 paused it — 14M rows/8GB
-    from over-broad per-line indexing was the wrong tool for this): this compares a SMALL, FIXED
-    set of governance docs (GOVERNANCE.md, USER-GUIDE.md, CLAUDE.md — where restated cfg_* content
-    would actually matter) against cfg_* row text directly, in memory, no index table at all.
-    difflib.SequenceMatcher.quick_ratio() as a cheap pre-filter, real .ratio() only on survivors —
-    tested live 2026-09-03: 128 rows x 569 paragraphs in ~24s, 0 false-positive noise at
-    min_ratio=0.8 (an earlier, looser attempt at 0.6 produced ~19,000 unusable hits from a 50-row
-    sample — precision tuning is the real difficulty here, not the lack of content_index)."""
-    # #2186: the documents compared are the control files (control_files, from cfg_control_home
-    # and session_close.control_kinds) plus USER-GUIDE.md, not a fixed list of three.
+    """`cfg_behaviour_rule` 3: a paragraph in a control file or USER-GUIDE.md that near-duplicates an
+    active cfg_setting/cfg_behaviour_rule/cfg_method_rule row is a restatement, not a pointer.
+    Compared in memory: difflib quick_ratio() as a pre-filter, ratio() on survivors, min_ratio 0.8."""
+    # the control files (cfg_control_home, session_close.control_kinds) plus USER-GUIDE.md
     docs = {}
     files = [f for _, f, _ in control_files(conn, project_root)]
     files += [project_root / "iba/app/USER-GUIDE.md"]
@@ -1619,7 +1203,7 @@ def find_restated_authoritative_content(conn: sqlite3.Connection, project_root: 
     return out
 
 
-# ── control files (escalation #2186, option G of the #2179 review) ─────────────────────────────
+# ── control files (#2186) ───────────────────────────────────────────────────────────────────────
 _CTRL_PATH_RX = re.compile(
     r"(?:\]\(|`)((?:~|\.{1,2}/)?[\w.-]+(?:/[\w. -]+)*\.(?:md|py|ps1|json|csv|xlsx|txt))(?:\)|`)")
 
