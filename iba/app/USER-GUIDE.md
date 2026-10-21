@@ -93,6 +93,12 @@ A Developer Mode session (`/developer-mode`) writes its own file:
 iba\app\ps\Compliance.ps1 -Action Template -Mode Developer
 ```
 
+**Rules at the point of use.** The first time in a session that Claude runs a PS tool action, git
+commit or push, a migration or a database query, or writes a file in a governed area, the hook
+`.claude/hooks/rules_at_point_of_use.py` refuses the call once. It shows the rules for that operation
+(`cfg_rule_scope`) and the tool's usage from this guide, and Claude re-issues the call. To change
+which rules govern an operation, change its `cfg_rule_scope` rows.
+
 ### 2.2 Close: `/session-close`
 
 ```powershell

@@ -224,6 +224,8 @@ def validate(ctx: Ctx) -> Outcome:
     errors = _validate_live(ctx.db.conn)
     # a live script in no utility or module is a hard error (#2198, #2200)
     errors += cfgquality.find_unregistered_project_scripts(ctx.db.conn, PROJECT_ROOT)
+    # every rule linked to the operations it governs (#2209)
+    errors += cfgquality.find_rule_scope_gaps(ctx.db.conn, APP_ROOT)
     if errors:
         error_summary = "; ".join(errors)
         # Every run has a fresh run_id, so run.py's idempotency guard never catches a repeat: an

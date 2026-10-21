@@ -923,6 +923,37 @@ def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.
 
 
 # ── unenforced behaviour rules ─────────────────────────────────────────────────────────────────
+def find_rule_scope_gaps(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
+    """#2209: every rule knows the operations it governs. A coherence ERROR, each case must be zero:
+    an active rule (behaviour, escalation, governance setting that is a rule) with no active
+    cfg_rule_scope link; a link to a rule that is missing or inactive; a `ps` link naming a script
+    not in the PS folder; an active method rule on a step that is not active."""
+    if not conn.execute("SELECT 1 FROM sqlite_master WHERE name='cfg_rule_scope'").fetchone():
+        return ["cfg_rule_scope is missing (#2209)"]
+    values = set()
+    row = conn.execute("SELECT value FROM cfg_setting WHERE key='compliance.value_settings' AND "
+                       "inactive=0").fetchone()
+    if row:
+        values = set(json.loads(row[0]))
+    live = {f"B:{i}" for (i,) in conn.execute("SELECT id FROM cfg_behaviour_rule WHERE active=1")}
+    live |= {f"E:{i}" for (i,) in conn.execute("SELECT id FROM cfg_escalation WHERE active=1")}
+    live |= {f"G:{k}" for (k,) in conn.execute(
+        "SELECT key FROM cfg_setting WHERE module='governance' AND inactive=0") if k not in values}
+    links = conn.execute("SELECT rule_ref, scope_kind, scope_value FROM cfg_rule_scope "
+                         "WHERE inactive=0").fetchall()
+    linked = {r[0] for r in links}
+    out = [f"rule {r} has no cfg_rule_scope link" for r in sorted(live - linked)]
+    out += [f"cfg_rule_scope links {r}, which is missing or inactive" for r in sorted(linked - live)]
+    folder = ps_dir(conn, app_root)
+    for ref, kind, value in links:
+        if kind == "ps" and not (folder / value.split(" ")[0]).exists():
+            out.append(f"cfg_rule_scope {ref} names PS script {value.split(' ')[0]}, not in {folder.name}/")
+    out += [f"method rule {i} ({k}) is active on step {s}, which is not active" for i, k, s in conn.execute(
+        "SELECT m.id, m.rule_key, m.step FROM cfg_method_rule m LEFT JOIN cfg_step s ON s.step = m.step "
+        "WHERE m.active=1 AND COALESCE(s.inactive, 1)=1 ORDER BY m.id")]
+    return out
+
+
 def find_unenforced_behaviour_rules(conn: sqlite3.Connection) -> list[str]:
     """Every active `cfg_behaviour_rule` with no control (#1384): its `enforcement_status` (cfg_enum
     `behaviour_rule_enforcement_status`) is neither `mechanically_enforced` nor `context_delivered`.

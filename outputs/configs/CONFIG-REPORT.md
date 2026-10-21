@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-21T18:03:13Z |
+| generated_at | 2026-10-21T19:48:01Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -180,7 +180,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**937** registered module(s) — **484** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **817** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**939** registered module(s) — **486** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **819** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -749,6 +749,8 @@ _(none)_
 | rule63_approval_handover_checks_v1_20261021 | iba/app/migration/archive/rule63_approval_handover_checks_v1_20261021.py | ONE-OFF migration -- escalation #2178: adds the approval hand-over checks to cfg_behaviour_rule 63, every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2178-RULE63-HANDOVER-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | rule97_copy_with_backup_api_v1_20261021 | iba/app/migration/archive/rule97_copy_with_backup_api_v1_20261021.py | ONE-OFF migration -- escalation #2193: rule 97 names dbsnapshot.copy_db as how a database test copy is made, through configmaint.apply_logged under run_id DEVMODE-2193-RULE97-BACKUP-COPY-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | rule_delivery_scope_v1_20261021 | iba/app/migration/archive/rule_delivery_scope_v1_20261021.py | ONE-OFF migration -- escalation #2185: scopes the start-up rule print and the compliance restatement to the session (deliver_when), every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2185-RULE-DELIVERY-SCOPE-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| rule_scope_2209_v1_20261021 | iba/app/migration/archive/rule_scope_2209_v1_20261021.py | ONE-OFF migration -- escalation #2209: creates cfg_rule_scope and links every rule to its operations, through configmaint.apply_logged under run_id DEVMODE-2209-RULE-SCOPE-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| rule_scope_grant_2209_v1_20261021 | iba/app/migration/archive/rule_scope_grant_2209_v1_20261021.py | ONE-OFF migration -- escalation #2209: write grant for cfg_rule_scope, through configmaint.apply_logged under run_id DEVMODE-2209-RULE-SCOPE-GRANT-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | run | iba/app/run.py | The dispatcher and run-state machine: cfg_step handler, cfg_on_fail path, run rows. | ✓ | ✓ | app core, outside the utility config-density check |
 | schema_overview | iba/app/tools/build_schema_overview_report.py | Renders the DBSchema register (iba/config/DBSchema/DBSchema.json, built by iba/scripts/build_dbschema.py) into a human-readable markdown overview report -- one row per table with description/rows/cols/PK/FKs/indexes, plus an undescribed-items flag section. Escalation #1306. |  |  |  |
 | schemareport | iba/app/lib/schemareport.py | schemareport.py — the IBA app's own DATA-schema snapshot, one of the four "missing reports" | ✓ | ✓ | receives cfg.conn from its caller; no settings/enums of its own. |
@@ -1854,7 +1856,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | cluster.assign | cluster_strong |
 | cluster.reading | ib_node, ib_observation, run_batch |
 | cluster.subgroup | cluster_subgroup, cluster_subgroup_strong, ib_node, ib_observation, run_batch |
-| configmaint.propose | cfg_api, cfg_behaviour_class, cfg_behaviour_rule, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_content_index_exclude, cfg_content_index_size_override, cfg_control_home, cfg_enum, cfg_escalation, cfg_escalation_requirement, cfg_escalation_transition, cfg_index, cfg_lexical_code_class, cfg_meta, cfg_method_rule, cfg_observation_enhancer_rule, cfg_on_fail, cfg_passage, cfg_prose, cfg_prose_concept, cfg_quality_check, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_table_purpose, cfg_trigger, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
+| configmaint.propose | cfg_api, cfg_behaviour_class, cfg_behaviour_rule, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_content_index_exclude, cfg_content_index_size_override, cfg_control_home, cfg_enum, cfg_escalation, cfg_escalation_requirement, cfg_escalation_transition, cfg_index, cfg_lexical_code_class, cfg_meta, cfg_method_rule, cfg_observation_enhancer_rule, cfg_on_fail, cfg_passage, cfg_prose, cfg_prose_concept, cfg_quality_check, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_rule_scope, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_table_purpose, cfg_trigger, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
 | escalation | escalation, escalation_history, escalation_thread_item, escalation_thread_item_response, word_registry |
 | hib.set | debate_change_detail, hib, hib_referent_option, verse_hib |
 | lexical.build | verse_lexical |
@@ -3357,6 +3359,16 @@ _one row per kind of control content_ — The control map: for each kind of cont
 | added_at | TEXT |  | ✓ |  |  | when the row was added (ISO-8601 UTC) | migration/control_map_v1_20261021.py |
 | inactive | INTEGER |  | ✓ |  |  | 0=active, 1=retired (kept as history) | migration/control_map_v1_20261021.py |
 
+### cfg_rule_scope
+_one row per link between a rule and an operation it governs_ — #2209: which operations each rule governs, so the rules of an operation are put in front of Claude when it is used (.claude/hooks/rules_at_point_of_use.py) and configmaint.validate can check every rule and every operation is linked
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate key | migration/archive/rule_scope_2209_v1_20261021.py |
+| rule_ref | TEXT |  | ✓ |  |  | the rule: B:<cfg_behaviour_rule.id>, E:<cfg_escalation.id> or G:<cfg_setting.key of a governance rule> | migration/archive/rule_scope_2209_v1_20261021.py |
+| scope_kind | TEXT |  | ✓ |  |  | what kind of operation the rule governs: general (all work, delivered at start), ps (a PS tool), command (git, migration, sqlite), path (a file written) | migration/archive/rule_scope_2209_v1_20261021.py |
+| scope_value | TEXT |  | ✓ |  |  | the operation: a PS script name with an optional -Action/-Step (Escalation.ps1 -Action Update), a command family (git, migration, sqlite), a repo-relative path glob (iba/app/**, **), or * for general | migration/archive/rule_scope_2209_v1_20261021.py |
+| inactive | INTEGER |  | ✓ |  |  | 1 = link no longer in force | migration/archive/rule_scope_2209_v1_20261021.py |
+
 <a id="11-enums"></a>
 ## 11. Enums
 
@@ -3429,6 +3441,7 @@ _one row per kind of control content_ — The control map: for each kind of cont
 | record_change_log_status | change_proposed, change_applied, declined |
 | resolution_kind | decision_required, self_correctable |
 | resolution_status | resolved, unresolved, unclassified, not_supported_this_language, checked_empty |
+| rule_scope_kind | general, ps, command, path |
 | run_batch.status | running, committed, failed |
 | run_state | running, paused, done, failed |
 | step_kind | operations, utility |

@@ -18261,3 +18261,48 @@ stays delivered: no code reads it yet.
 
 **Live:** `configmaint.validate` run RUN-20261021_190253_956-CONFIGMAINT matched open #2207 as
 identical (no new version), so the change altered no finding.
+
+## 374. Every rule linked to the operations it governs, and shown at the point of use (2026-10-21, escalation #2209 part (a), for #2177)
+
+Researcher, verbatim (chat 2026-10-21): "my requirement is so simple - before you do something, just
+check that you do it in the right way." Then: "if it is realistic, and achievable, then proceed with
+doing it accross the board for the project." Assessment and design:
+`outputs/escalation/2209-check-before-acting-v2-20261021.md`.
+
+**Config:** new table `cfg_rule_scope` (`rule_ref`, `scope_kind` from `cfg_enum rule_scope_kind`:
+general, ps, command, path; `scope_value`; `inactive`), registered in `cfg_table`/`cfg_column`.
+Migration `iba/app/migration/archive/rule_scope_2209_v1_20261021.py`, run
+`DEVMODE-2209-RULE-SCOPE-20261021`, one CREATE TABLE and 229 `apply_logged` writes:
+- 202 links covering every active behaviour rule, escalation rule and governance rule, 163 rules in
+  all, 41 of them `general`. The mapping is Claude's classification, for review as a whole.
+- 16 method rules deactivated. They sat on steps already retired (`lexical.enrich`, #1753;
+  `passage.suggest_boundary`, sec 370), and the cascade had been missed.
+
+**Code:**
+- `.claude/hooks/rules_at_point_of_use.py` (PreToolUse; Bash, PowerShell, Edit, Write; named in
+  `.claude/settings.json`). It finds the operations in a call, matched only as commands at the start
+  of a line or segment: a PS script with its action, git commit or push, a migration run, a database
+  query, or a path written. It collects:
+  - the linked non-general rules;
+  - the method rules of a PS tool's steps;
+  - the tool's usage lines from USER-GUIDE.md.
+  It refuses the first use in a session once, with their full text; the re-issued call passes.
+  State is kept in `.claude/.rules-shown.json`. An internal error lets the call through and is
+  logged.
+- `iba/app/lib/cfgquality.py` `find_rule_scope_gaps`, a validate coherence error. It reports:
+  - an unlinked rule;
+  - a link to a missing rule or PS script;
+  - an active method rule on an inactive step.
+  Live: 0.
+
+**Tests:** `iba/app/tools/temp_2209_rule_scope_test_run.py` on a `copy_db` copy, 20/20 pass:
+`outputs/escalation/2209-rule-scope-test-results-v1-20261021.md`. Live, the hook:
+- refused this session's first edit of `iba/app/GOVERNANCE.md`, with the 24 rules for `iba/app/**`;
+- refused a heredoc whose text mentioned "git commit". That false trigger was fixed before commit.
+
+**Found by validate, fixed:** `cfg_rule_scope` had no `cfg_write_grant` row for `configmaint.propose` (governance.config_control). Migration `iba/app/migration/archive/rule_scope_grant_2209_v1_20261021.py`, run `DEVMODE-2209-RULE-SCOPE-GRANT-20261021`, 2 writes, checked on a copy first. Live validate RUN-20261021_204737_770-CONFIGMAINT is then coherent.
+
+**Docs:** GOVERNANCE.md sections 5 and 7; USER-GUIDE.md section 2.1.
+
+**Not yet done (part b):** the start routine still delivers every rule, and the other check layers
+are unchanged. Each is to be assessed on its origin before it is cut.

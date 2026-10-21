@@ -98,6 +98,8 @@ write is checked against `cfg_write_grant`. `IBA_TRACE=1` prints the config read
   - tables, columns or triggers in the live schema but missing from `cfg_table`/`cfg_column`/`cfg_trigger`
   - a live script (`.py`/`.ps1` outside `archive/`) in no utility or module, or a retired script left
     outside `archive/` (§4)
+  - a rule with no link to the operations it governs (`cfg_rule_scope`), a link to a missing rule or
+    PS script, or an active method rule on an inactive step (§7)
 - **Findings** are listed in full in the config report's section 0:
   - orphan configs, read by nothing
   - behaviour rules with no control: neither mechanically enforced nor restated and proved through
@@ -136,6 +138,11 @@ The `escalation` table holds every open item, task, issue, decision and thread
   from the database. The session
   restates each one in its compliance file, and `Compliance.ps1 -Action Check -Phase Start` must pass
   (`cfg_behaviour_rule` 81).
+- **At the point of use:** `cfg_rule_scope` links each rule to the operations it governs: a PS tool
+  and action, git, a migration, a database query, or a file path written. Rules with scope `general`
+  have no single point of use. The hook `.claude/hooks/rules_at_point_of_use.py` refuses an
+  operation's first use in a session once. Its reason carries the operation's linked rules, the
+  method rules of a PS tool's steps, and the tool's usage from USER-GUIDE.md.
 - **Close:** `.claude/commands/session-close.md`. `iba/app/ps/Session-Close.ps1` checks what the session did,
   decided and left open against the record. Nothing is committed while it shows an open finding
   (`cfg_behaviour_rule` 82). The close writes the session log

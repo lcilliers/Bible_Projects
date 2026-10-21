@@ -60,6 +60,17 @@
             "statusMessage": "Checking for retired scripts..."
           }
         ]
+      },
+      {
+        "matcher": "Bash|PowerShell|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/rules_at_point_of_use.py\"",
+            "timeout": 10,
+            "statusMessage": "Checking the rules for this operation..."
+          }
+        ]
       }
     ],
     "UserPromptExpansion": [

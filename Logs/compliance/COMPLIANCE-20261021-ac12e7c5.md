@@ -16,7 +16,7 @@ I have read the governance settings, behaviour rules and escalation rules, and w
 | G:governance.base_data_spine | not engaged | Verse, span, strong and parse must agree; no base-data work is in hand. No build task chosen yet; re-assessed when the researcher names one. |  |
 | G:governance.behaviour_boundary.backup_recovery | not engaged | Placement ruling only: durability falls under the sqlite class. Nothing written to a DB yet. |  |
 | G:governance.behaviour_boundary.git_commit | engaged | Commit and push count as terminal discipline; any commit this session follows the terminal rule. |  |
-| G:governance.build_md_on_code_change | engaged | The #2206 code edits under iba/app get their BUILD.md section in the same pass. | iba/app/BUILD.md sec 372 and 373 |
+| G:governance.build_md_on_code_change | engaged | The #2206 code edits under iba/app get their BUILD.md section in the same pass. | iba/app/BUILD.md sec 372 and 373 sec 374 |
 | G:governance.config_control | engaged | The new compliance setting goes in through the audited configmaint write. | run DEVMODE-2206-READING-WASTE-20261021 iba/app/migration/archive/reading_waste_2206_v1_20261021.py |
 | G:governance.confmaint_configs | not engaged | Config-maintenance behaviour comes from configmaint-module settings. No cfg write yet. |  |
 | G:governance.engineering_documentation_folder | not engaged | Cross-cutting design notes go in iba/docs, escalation deliverables in outputs/escalation. No note written yet. |  |
@@ -97,7 +97,7 @@ I have read the governance settings, behaviour rules and escalation rules, and w
 | B:43 | not engaged | New ps scripts dispatch through run.py except the two named exceptions. No build task chosen yet; re-assessed when the researcher names one. |  |
 | B:44 | engaged | A new decision met while building stops the work and goes back for design; my own slips I fix and record. | #2208 v1 outputs/escalation/2206-low-config-density-utilities-v1-20261021.md |
 | B:45 | not engaged | Answering decision items uses Update, self-correctables use ResolveSelfCorrectable; no answers made yet. |  |
-| B:46 | engaged | The #2206 test plan covers every changed path, is run, and its results go on #2206. | outputs/escalation/2206-reading-waste-test-results-v1-20261021.md outputs/escalation/2208-ps-dir-setting-test-results-v1-20261021.md |
+| B:46 | engaged | The #2206 test plan covers every changed path, is run, and its results go on #2206. | outputs/escalation/2206-reading-waste-test-results-v1-20261021.md outputs/escalation/2208-ps-dir-setting-test-results-v1-20261021.md outputs/escalation/2209-rule-scope-test-results-v1-20261021.md |
 | B:48 | not engaged | Prose-section writes need a change-log row in the same transaction; no prose writes. |  |
 | B:49 | not engaged | Version column on covered rows points to its log row; no prose writes. |  |
 | B:50 | not engaged | Log payload holds the prior state; no prose writes. |  |
@@ -118,7 +118,7 @@ I have read the governance settings, behaviour rules and escalation rules, and w
 | B:66 | not engaged | Cluster labels revisited when membership changes; no cluster changes. |  |
 | B:67 | engaged | I keep research_db out of any IBA result except prose and maintenance utilities. |  |
 | B:68 | not engaged | ib_observation changes only via a real fresh LLM answer; no observation work. |  |
-| B:75 | engaged | The cfg write in this session went through apply_logged under a DEVMODE run id. | run DEVMODE-2206-READING-WASTE-20261021 and DEVMODE-2208-PS-DIR-SETTING-20261021 |
+| B:75 | engaged | The cfg write in this session went through apply_logged under a DEVMODE run id. | run DEVMODE-2206-READING-WASTE-20261021 and DEVMODE-2208-PS-DIR-SETTING-20261021 DEVMODE-2209-RULE-SCOPE-20261021 |
 | B:80 | not engaged | Open-items lines in files carry a live handle; none written yet. |  |
 | B:81 | engaged | This file: each rule restated in my words, ack given, conflicts listed, start check passing, evidence added later. |  |
 | B:82 | engaged | At close nothing is committed while Session-Close shows an open finding. |  |
