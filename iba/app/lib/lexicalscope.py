@@ -28,13 +28,10 @@ def _span_token_set(conn: sqlite3.Connection) -> set[str]:
 
 def strongs_with_no_occurrence(conn: sqlite3.Connection, strongs: list[str],
                                span_tokens: set[str] | None = None) -> list[str]:
-    """Of a resolved strong-list (from -ClusterCode/-Word/-StrongList), which have ZERO live span
-    occurrences — a real, found-live data-sync gap: 3 `cluster_strong` rows (T7/T8, source=
-    'migration-20260905-decfgification') carry the BARE form of a code (G1135/G2424/H0802) instead
-    of the suffixed sub-entry `span.strong_variant` actually uses (G1135G/H, G2424G/I/J, H0802G/H/I)
-    — those 3 rows can never match a real verse as currently stored. Not raised as an error here
-    (a genuinely rare/unattested lemma legitimately belonging to a cluster is not itself a bug) —
-    the caller surfaces this as a named warning, never silently drops it."""
+    """Of a resolved strong-list (from -ClusterCode/-Word/-StrongList), the codes with zero live span
+    occurrences, e.g. a `cluster_strong` row holding a bare code (G1135) where spans use suffixed
+    sub-entries (G1135G). Not an error by itself (a rare lemma can belong to a cluster); the caller
+    reports it as a named warning."""
     tokens = span_tokens if span_tokens is not None else _span_token_set(conn)
     return [s for s in strongs if s not in tokens]
 

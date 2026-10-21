@@ -130,10 +130,9 @@ def record_debate(cfg, book: str, lo: int, hi: int, verse_lo: int | None, verse_
 
 
 def find_prior_debate(conn, book: str, sc: int, sv: int) -> sqlite3.Row | None:
-    """The most recently completed debate for `book` whose range ends at or before (sc, sv) —
-    i.e. the immediately-adjacent prior range, per the corpus-continuity discipline (read it in
-    full before drafting the next one — the process gap the corpus review found being followed
-    by memory, not enforced). Only `debate_status='filled'` rows count: a scaffold still holding
+    """The most recently completed debate for `book` whose range ends at or before (sc, sv) -- the
+    adjacent prior range, read in full before drafting the next one (corpus continuity). Only
+    `debate_status='filled'` rows count: a scaffold still holding
     `FILL_IN_MARKER` has no analytical content worth reading for continuity. `<=` (not `<`) on
     the end-reference so a range that shares its boundary verse with the range before it (as
     several Daniel ranges deliberately do, e.g. `Dan 1:1-7` then `Dan 1:7-21`) still finds its

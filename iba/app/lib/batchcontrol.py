@@ -1,5 +1,5 @@
-"""batchcontrol.py — the single writer for `run_batch` (escalation #1756, researcher-approved
-design 2026-09-18). Every long-running LLM-calling step wraps its own API-call-plus-write unit
+"""batchcontrol.py — the single writer for `run_batch` (#1756). Every long-running LLM-calling step
+wraps its own API-call-plus-write unit
 with `start_batch()` before the call and `commit_batch()`/`fail_batch()` after, and checks
 `already_committed()` before spending on a batch a prior run may have already paid for.
 

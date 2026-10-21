@@ -248,10 +248,8 @@ def subgroup(ctx: Ctx) -> Outcome:
             batchcontrol.fail_batch(conn, batch_id, f"bad-subgroup-output: {e}")
             return fail("bad-subgroup-output", str(e))
 
-        # Observations captured via the SAME mechanism Stage 1 (`lexical.meaning`) already uses --
-        # researcher correction, this session: placement_note is a comment on a placement, never the
-        # observation itself; any substantive claim the LLM makes goes through record_batch exactly
-        # like verse-reading's own observations do, stage='char-subgroup', not a bespoke promotion path.
+        # observations go through record_batch (stage='char-subgroup'), as verse-reading's do;
+        # placement_note only comments on the placement, never carries the observation itself
         obs_summary = recordingpass.record_batch(
             conn, cluster_code, "char-subgroup", parsed, source_json_serial=1,
             similarity_threshold=float(ctx.cfg.setting("cluster.recording_similarity_threshold", 0.85)))

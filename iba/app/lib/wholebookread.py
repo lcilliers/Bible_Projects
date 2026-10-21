@@ -1,35 +1,17 @@
-"""wholebookread.py — registers the whole-book-read step (`report.whole_book_read`) as a real
-report generator, matching the pattern `passagedebatereport.py` set for `report.passage_debate`.
+"""wholebookread.py — the whole-book-read step (`report.whole_book_read`): the place each passage
+debate's deferred "Emergent questions log" lands.
 
-**Why this exists.** Every passage-debate document defers its "Emergent questions log" to "the
-whole-book read" — a phrase repeated across all sixteen Daniel debates — but until now no such
-step existed anywhere in `cfg_work_package`; the deferral had nowhere to land. At least one
-Daniel EQ was in fact answered several chapters later (Dan 2's "does coerced worship ever reveal
-genuine disposition?" answered at Dan 3:28) with no step ever formally closing that loop; it only
-surfaced because all sixteen files were read by hand in one sitting for an unrelated task.
+Gathering every filled debate for a book, extracting each one's "Emergent questions" and
+"Passage-level linkages" sections, and laying them out together in one scaffold is mechanised.
+Deciding whether a given emergent question was resolved by a later passage is not: the scaffold
+leaves that as prose for the researcher/AI to write.
 
-**What this mechanises, and what it deliberately does not** (same boundary
-`passagedebatereport.py`'s own docstring draws, and the same reasoning applies here): gathering
-every filled debate for a book, extracting each one's "Emergent questions" and "Passage-level
-linkages" sections, and laying them out together in one scaffold IS mechanised — that's plumbing,
-not judgment. Deciding whether/how a given emergent question actually got resolved by a later
-passage is NOT mechanised; the scaffold leaves that as prose for the researcher/AI to write, the
-same way `passagedebatereport.py` leaves Observation/Operation/Decision content unfilled.
-
-**Heading drift is real, not hypothetical — confirmed twice, not just anticipated.** Reading all
-sixteen Daniel files directly found real inconsistency: most files head their closing sections
-"## Emergent questions log" / "## Passage-level linkages (Q7)"; `WA-dan-2-1-16-debate` instead uses
-"## Emergent-questions log" / "## Linkages surfaced (and non-linkages)"; `WA-dan-1-1-7-debate` uses
-the SINGULAR "## Passage-level linkage (stated once — Q7)" (found only on the first real run
-against Daniel, after the first two variants were already handled — see BUILD.md §32); the exact
-parenthetical after "Emergent questions log" varies file to file too (some say "not merged across
-passages," others "not merged with other passages' logs," others "filed against this passage
-only"). `_extract_section` below matches on a tolerant PREFIX of the heading line, not the full
-heading text, and captures everything up to the next `##`-level heading (or end of file) — a file
-whose heading doesn't match any known pattern gets an explicit "NOT FOUND" marker in the output,
-never a silent gap. Given three distinct variants found across sixteen files in one book, more
-should be expected, not treated as exhausted — the NOT-FOUND path is the actual safety net here,
-not the pattern list.
+Debate files head these sections in several variants ("## Emergent questions log",
+"## Emergent-questions log", "## Passage-level linkages (Q7)", "## Linkages surfaced (and
+non-linkages)", "## Passage-level linkage (stated once — Q7)", ...). `_extract_section` matches a
+tolerant PREFIX of the heading line and captures everything up to the next `##` heading (or end of
+file); a file whose heading matches no known pattern gets an explicit "NOT FOUND" marker, never a
+silent gap.
 """
 
 from __future__ import annotations

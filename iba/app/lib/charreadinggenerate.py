@@ -43,8 +43,8 @@ class MultipleOverCapStrongs(Exception):
 def _partition_occurrences_by_surface(occurrences: list[dict], cap: int) -> list[list[dict]]:
     """Groups occurrences by their own `surface` value, then greedily first-fits whole surface-
     groups into partitions each <= cap occurrences -- NEVER splits one surface's own occurrences
-    across two partitions (the researcher's own rule: 'each SURFACE instance can be batched
-    separately'). Groups are considered largest-first so the partition count stays close to
+    across two partitions ('each SURFACE instance can be batched separately', #1761). Groups are
+    considered largest-first so the partition count stays close to
     minimal, rather than literally one partition per distinct surface string (most subgroups have
     several surfaces with only 1-2 occurrences each -- forcing those into their own call each would
     be wasteful and was never what the rule asked for). A single surface whose own count exceeds

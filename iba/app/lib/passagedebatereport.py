@@ -1,31 +1,17 @@
-"""passagedebatereport.py — registers the passage-debate method (`WA-passage-read-guidance` +
-`WA-interpretation-questions`, see `iba/docs/`) as a real report step (`report.passage_debate`),
-matching the pattern `versespanmeaningreport.py` set for `report.verse_span_meaning`.
+"""passagedebatereport.py — the passage-debate method (`WA-passage-read-guidance` +
+`WA-interpretation-questions`) as a report step (`report.passage_debate`), writing a debate SCAFFOLD.
 
-**What this mechanises, and what it deliberately does not.** The debate itself — applying the
-Q1-Q10 interrogative to a verse, deciding what's stated vs inferred, naming an operation's
-subject/source/target — is analytical work an AI does against the method docs, not something a
-DB-driven renderer can produce (same boundary CLAUDE.md draws everywhere else: Claude Code is the
-DB/mechanical engine, Claude AI/the researcher is the analytical layer). What this module DOES
-mechanise is everything the corpus review (`iba/app/reports/dan-debate-method-assessment-
-20260727.md`) found was going wrong for reasons that have nothing to do with interpretation:
-the base extract not being checked for first, the current method-doc version not being resolved
-from a stable source, the Subject/Operation/Source/Target parts drifting into free prose instead
-of an extractable block, and inconsistent file naming/versioning. All of that is now enforced by
-the scaffold this module writes, not left to memory.
+The debate itself (applying the Q1-Q10 interrogative to a verse, deciding what is stated vs
+inferred, naming an operation's subject/source/target) is analytical work an AI does against the
+method docs. This module enforces the mechanical parts: the base data must exist first, the current
+method-doc version comes from config, the Subject/Operation/Source/Target parts sit in an
+extractable block, and the file naming/versioning is consistent.
 
-Reads `method.passage_read_guidance_path` / `method.interpretation_questions_path` (module
-`method`, new — the CURRENT version of each doc, config-driven per `governance.
-rules_must_be_config_driven` rather than a citation an AI has to remember or a debate's own
-front-matter asserting a version that was never bumped on disk, which is exactly the gap the
-corpus review found: every debate cited "v1.1" of the read guidance when no such file existed).
+Reads `method.passage_read_guidance_path` / `method.interpretation_questions_path` (module `method`)
+for the current version of each doc.
 
-Output path/naming reuses `report.verse_analysis_output_dir` (the extract and its debate live in
-the same book folder) + a new `report.passage_debate_naming_pattern` (module `report`, stable
-scheme — `reportkit.write_report` archives the prior version on regenerate, same as
-`report.verse_span_meaning`; no `-vN-`/date in the name itself, unlike the ad-hoc convention the
-four hand-authored debates used before this was registered — see BUILD.md for the reconciliation
-note on those four pre-existing files).
+Output: `report.verse_analysis_output_dir` (the book folder) + `report.passage_debate_naming_pattern`
+(stable scheme; `reportkit.write_report` archives the prior version on regenerate).
 """
 
 from __future__ import annotations
