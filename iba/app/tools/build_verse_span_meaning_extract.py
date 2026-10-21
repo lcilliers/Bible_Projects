@@ -1,63 +1,21 @@
 """build_verse_span_meaning_extract.py  (READ-ONLY, one-off)
 
-Base-data extract for manual movement analysis: for a book (and chapter range), in true verse
-sequence, render each verse's text followed by a table of its spans (surface, Strong's, morph)
-and each span's meaning. No candidate/passage machinery involved — that layer is retired
-(GOVERNANCE.md 15D); this reads only verse/span/strong*.
+Base-data extract for manual movement analysis: for a book (and chapter range), in verse order,
+each verse's text followed by a table of its spans (surface, Strong's, morph) and each span's
+meaning. Reads only verse/span/strong*.
 
-UPDATED 2026-07-25, THREE TIMES in the same day's line of work, all real regressions/defects this
-report had silently picked up without being touched itself:
+Meaning comes from the parsed tables (strong_meaning_parsed, strong_lsj_parsed,
+strong_mounce_parsed), looked up per code (a span's strong_variant can hold several codes, e.g.
+"G1722 G0054"). All sources are shown together, each on its own labelled line ("(none)" where
+empty). meaning_tree prefers the exact strong_variant row; a base-fallback row is flagged
+[AMBIGUOUS] when the code's own stepGloss shares no vocabulary with it, and STEP is then called
+live for that exact code (memoised per code per run). STEP is required (step.required_for_runs):
+the run refuses to build if STEP's preflight fails.
 
-  1. Meaning source switched from the RAW, unparsed strong_meaning_tree.sense_text/strong_lexicon.
-     mounce (HTML tags, un-scoped refs/notes, false comma-splitting — all bugs fixed this session,
-     see lib/lexiconparse.py) to the CORRECTED, PARSED strong_meaning_parsed/strong_mounce_parsed
-     tables (migration/bootstrap_lexicon_parsed_layer.py). strong_sense.head is dropped entirely —
-     strong_meaning_parsed's glosses supersede it with the same underlying source, better parsed.
-  2. Per-span meaning lookup is now PER-CODE, not per-row: since the SAME day's earlier span-model
-     fix (BUILD.md 16), span.strong_variant can hold more than one code together (STEP's own HTML
-     combines them on one <span> tag, e.g. "G1722 G0054" on "purity" — a real combined unit, not
-     duplication). The old single blind lookup on the whole (possibly multi-code) string matched
-     nothing for any combined row — confirmed live: 2636 of 5253 Daniel spans (50%) would have
-     silently shown "no meaning captured" without this fix, despite real coverage existing.
-  3. Researcher's correction (found live via H3581B): "the report is not working strictly with the
-     strong variant" and "meaning means considering the three parse files together, not pick the
-     first one." Both real. (a) The old renderer looked up strong_meaning_parsed by BASE lemma_key
-     and presented it as if specific to the exact span code — but a base can be shared by genuine
-     homonyms (H3581A "reptile" vs H3581B "strength", same accentedUnicode/transliteration,
-     unrelated meanings), so the wrong sub-entry's sense could be shown with no indication it might
-     not apply. Now labeled with its base and an explicit [AMBIGUOUS...] flag naming the sibling
-     codes whenever the base isn't unique to this span's code — meaning_tree cannot be MADE
-     code-specific (that's a property of the source data), but it can stop being presented as if it
-     already were. (b) stepGloss/meaning_tree/lsj/mounce were a priority cascade (stop at the first
-     non-empty), and lsj was excluded outright. Now all applicable sources are shown together, every
-     time, each on its own labeled line — "(none)" where a source has nothing, not silently omitted.
+Verse order is osisId parsed as (chapter, verse) numerically, not string order or verse.id.
 
-UPDATED 2026-07-26 — live STEP disambiguation for AMBIGUOUS spans (session 20260726 root-caused why
-this happens — handlers/raw.py:detail_one()'s write-time guard silently drops a sub-lettered code's
-own tree whenever a sibling already occupies that base — but the DB-side fix needs a schema decision
-not yet made). Confirmed live last session: STEP's call2_getInfo DOES return the exact queried code's
-own mediumDef (e.g. H3581B's own "strength, power, might..." distinct from H3581A's "reptile"), the
-DB just isn't storing it that way yet. So whenever a span's meaning_tree is flagged [AMBIGUOUS], this
-report now calls STEP live for that EXACT code and adds its own labeled line — no more silent "look it
-up yourself" gap. Scope is naturally small (only ambiguous spans call out, ~22 of Dan 1:1-7's 494),
-per the project's API-reads-are-small-bounded-batches rule, not a bulk pull. Per-code memoised within
-one run (a code repeated across verses is fetched once). **STEP is REQUIRED, not optional, for this
-report now**: `main()` runs STEP's known-answer preflight (`step.up()`) up front and refuses to build
-anything if it fails, matching this app's standing rule (init.py/USER-GUIDE.md: "runs refuse to start
-without STEP") — a first version of this change instead let the report degrade to a DB-only note per
-ambiguous span when STEP was down, which the researcher correctly rejected: this tool proceeded with
-STEP down at all, the opposite of the app's own convention, and the "degraded" run was then reported
-as a passing test instead of being stopped.
-
-Verse order is derived from osisId parsed as (chapter, verse) NUMERICALLY, not string-sorted and
-not by verse.id (id reflects onboarding-run insertion order across many different word registrations,
-not a clean by-book build) -- the same class of bug BUILD.md 5 already found once for book order.
-
-Coverage caveat (real, not a defect): `strong`/etc. are only populated for Strong's codes that came
-in through a word's own `raw.detail` onboarding (word_registry), not a full-Bible lexical import.
-Most spans in an arbitrary passage will have NO row here yet. Each such span is rendered with an
-explicit "(not yet registered)" marker, never a blank cell, and the report's own intro states the
-coverage fraction per chapter so the gap is visible up front, not discovered mid-read.
+Coverage: `strong` holds only codes onboarded through a word or backfill, so many spans render
+"(not yet registered)", and the intro states the coverage fraction per chapter.
 
 Usage:
   python -m iba.app.tools.build_verse_span_meaning_extract --book Dan --chapters 1-3
@@ -142,12 +100,8 @@ def fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
 
 
 def sibling_variant_codes(conn: sqlite3.Connection, base: str, exclude: str) -> list[str]:
-    """Every OTHER full strong code in `strong` sharing this base — e.g. base H3581 has both
-    H3581A and H3581B, two genuinely different homonyms (confirmed live: H3581A="reptile",
-    H3581B="strength", same accentedUnicode/transliteration, unrelated meanings). strong_
-    meaning_tree/strong_meaning_parsed is base-keyed only (it collapses sub-entry letters), so
-    when siblings exist its content is NOT reliably specific to any one of them — this is used to
-    flag that ambiguity explicitly instead of silently presenting it as if it were."""
+    """Every OTHER full strong code in `strong` sharing this base (e.g. H3581A "reptile" and H3581B
+    "strength"): used to flag a base-keyed meaning row that may not apply to this code."""
     rows = conn.execute(
         "SELECT strongNumber FROM strong WHERE (strongNumber = ? OR strongNumber LIKE ?) "
         "AND strongNumber != ? ORDER BY strongNumber",
@@ -166,17 +120,10 @@ def _tokens(text: str) -> set[str]:
 
 
 def gloss_supported_by_tree(step_gloss: str, tree_text: str) -> bool:
-    """True if the code's OWN stepGloss (fetched fresh per exact code, never base-collapsed —
-    see handlers/raw.py:detail_one — so it is never itself wrong) shares real vocabulary with the
-    base-keyed meaning_tree text. Confirmed 2026-07-26 (researcher's direct challenge on H0935G):
-    of 470 sub-lettered codes sharing a base with a sibling, 362 (77%) are like H0935G/H0935P —
-    the SAME root's different stems (Qal 'come' vs Hiphil 'bring'), where the shared tree is a
-    normal single combined dictionary entry, already stem-labeled ("(Qal)...(Hiphil)..."), and
-    stepGloss's own word already appears in it — NOT a genuine collapse/data-loss the way
-    H3581A/B is (stepGloss 'strength' vs the shared tree's unrelated 'reptile' content, zero
-    overlap). Flagging [AMBIGUOUS] and paying for a live STEP call for every sibling regardless
-    was wrong: `strong.stepGloss` already answers the question for the H0935G-shaped majority
-    with no ambiguity and no network call needed at all."""
+    """True if the code's own stepGloss (fetched per exact code) shares real vocabulary with the
+    base-keyed meaning_tree text: most siblings are the same root's stems (H0935G Qal 'come' / H0935P
+    Hiphil 'bring') sharing one legitimate entry, so only no overlap (H3581B 'strength' vs 'reptile')
+    marks a genuine collapse."""
     gloss_tok = _tokens(step_gloss)
     tree_tok = _tokens(tree_text)
     if not gloss_tok or not tree_tok:
@@ -185,16 +132,9 @@ def gloss_supported_by_tree(step_gloss: str, tree_text: str) -> bool:
 
 
 def live_step_meaning(step: "Step | None", code: str, live_cache: dict[str, str]) -> str:
-    """Live, per-EXACT-code disambiguation via STEP call2_getInfo — used only for spans whose
-    meaning_tree is [AMBIGUOUS] (base shared with siblings). Confirmed live 2026-07-25/26: STEP
-    returns the exact queried code's own mediumDef (e.g. H3581B's own "strength, power, might..."
-    distinct from sibling H3581A's "reptile") — the DB-side strong_meaning_tree just doesn't store
-    it that way yet (handlers/raw.py:detail_one() write-time guard, root-caused but not yet fixed).
-    Memoised per code for the life of one report run — a code repeated across verses/spans is
-    fetched from STEP once, not per occurrence (bounded-batch discipline, not a bulk pull).
-    `step` is None ONLY when build() decided to proceed without it, which itself only happens when
-    the cfg_setting step.required_for_runs is explicitly false (default true — see build()); this
-    is a config-authorized degrade, not a silent hardcoded fallback."""
+    """Live, per-exact-code meaning via STEP call2_getInfo, for spans whose meaning_tree is
+    [AMBIGUOUS]. Memoised per code for one run. `step` is None only when step.required_for_runs is
+    explicitly false (a config-authorised degrade)."""
     if code in live_cache:
         return live_cache[code]
     if step is None:
@@ -203,8 +143,7 @@ def live_step_meaning(step: "Step | None", code: str, live_cache: dict[str, str]
         return text
     try:
         vocabs = step.call2_getInfo(code).get("vocabInfos") or []
-    except Exception as e:  # a transient hiccup mid-run, AFTER the up-front preflight passed —
-                            # degrade this one line, not silently pretend STEP was never required
+    except Exception as e:  # a transient failure after the preflight passed: degrade this one line
         text = f"(STEP lookup failed for {code} mid-run: {e} — resolve manually against STEP)"
         live_cache[code] = text
         return text
@@ -223,12 +162,9 @@ def live_step_meaning(step: "Step | None", code: str, live_cache: dict[str, str]
 
 def meaning_for_code(conn: sqlite3.Connection, code: str, step: "Step | None",
                      live_cache: dict[str, str]) -> tuple[str, bool]:
-    """Returns (rendered meaning text for ONE Strong's code, covered?). Strictly per-code for
-    every source keyed that way (strong, strong_lsj_parsed, strong_mounce_parsed); meaning_tree is
-    base-keyed in the SOURCE data itself (cannot be made code-specific here), so it is labeled with
-    its base and flagged when siblings make it ambiguous, never silently merged in as if exact.
-    ALL THREE parse tables (meaning_tree, lsj, mounce) are shown together, every time — not a
-    cascade that stops at the first one with content."""
+    """Returns (rendered meaning text for ONE Strong's code, covered?). Per code for every source
+    keyed that way; meaning_tree is labelled with its base when it comes from a base row. All three
+    parse tables are shown together, every time."""
     strong_row = conn.execute(
         "SELECT strongNumber, language, stepGloss FROM strong WHERE strongNumber=?",
         (code,),
@@ -239,9 +175,7 @@ def meaning_for_code(conn: sqlite3.Connection, code: str, step: "Step | None",
     base = _base(code)
     lines = [f"stepGloss: {strong_row['stepGloss'] or '(none)'}"]
 
-    # strong_meaning_tree/strong_meaning_parsed carry strong_variant (2026-07-26, migration/
-    # fix_strong_meaning_tree_collapse.py): prefer THIS code's own exact-variant row; fall back to
-    # the base/unsplit row only for pre-fix legacy data that was never re-fetched per exact code.
+    # prefer this code's own exact-variant row; fall back to the base row for legacy data
     meaning_rows = conn.execute(
         "SELECT gloss FROM strong_meaning_parsed WHERE strong_variant=? ORDER BY sort, id",
         (code,),
@@ -254,14 +188,8 @@ def meaning_for_code(conn: sqlite3.Connection, code: str, step: "Step | None",
         ).fetchall()
     meaning_text = "; ".join(r["gloss"] for r in meaning_rows if r["gloss"])
     siblings = sibling_variant_codes(conn, base, exclude=code)
-    # A sibling existing is NOT itself ambiguity — most sub-lettered codes are the SAME root's
-    # different stems (H0935G Qal "come" / H0935P Hiphil "bring"), sharing one legitimate combined
-    # dictionary entry. An EXACT strong_variant match is, by construction, this code's OWN tree
-    # content, never a shared/fallback row — never ambiguous regardless of siblings. Only the
-    # base-fallback case still needs the gloss-overlap check (only flag + pay for a live STEP call
-    # when this code's OWN (never-collapsed) stepGloss shares no real vocabulary with the shared
-    # fallback entry — the actual signal of a genuine base-collapse, e.g. H3581B "strength" vs the
-    # shared tree's unrelated "reptile" content).
+    # an exact strong_variant match is this code's own content, never ambiguous; only a base fallback
+    # needs the gloss-overlap check (and a live STEP call when there is no overlap)
     genuinely_ambiguous = (bool(siblings) and meaning_text and not exact_variant and
                           not gloss_supported_by_tree(strong_row["stepGloss"], meaning_text))
     if meaning_text:
@@ -295,10 +223,8 @@ def meaning_for_code(conn: sqlite3.Connection, code: str, step: "Step | None",
 
 def meaning_for(conn: sqlite3.Connection, strong_variant: str | None, step: "Step | None",
                 live_cache: dict[str, str]) -> tuple[str, bool]:
-    """Returns (rendered meaning text, covered?). strong_variant may hold more than one code
-    (STEP's HTML combines them on one <span> tag, e.g. "G1722 G0054" — see BUILD.md 16) — each is
-    looked up and rendered separately, since a combined tag's codes can have very different
-    coverage (a function word with none vs. a content word with plenty)."""
+    """Returns (rendered meaning text, covered?). Each code of a combined strong_variant is looked up
+    and rendered separately."""
     if not strong_variant:
         return "(no Strong's code on this span)", False
     codes = strong_variant.split()
@@ -313,14 +239,9 @@ def meaning_for(conn: sqlite3.Connection, strong_variant: str | None, step: "Ste
 
 def build(book: str, lo: int, hi: int, verse_lo: int | None = None,
          verse_hi: int | None = None, *, cfg: "Cfg") -> list[str]:
-    """Reads step.required_for_runs (cfg_setting, module='step', default True — same setting
-    init.py's own startup preflight reads, ONE source of truth, not a hardcoded copy of the rule
-    duplicated per tool). Default True means: raises StepUnavailable if STEP's known-answer
-    preflight fails, and the caller (main()) must refuse rather than produce a report that
-    silently can't do the AMBIGUOUS-span disambiguation it exists to add (UPDATED 2026-07-26
-    note above). Only if the researcher has explicitly set step.required_for_runs=false does this
-    proceed STEP-down, with a DB-only note on every affected span instead of a resolved sense —
-    a config-authorized degrade, not a silent default."""
+    """Reads step.required_for_runs (module 'step', default True; the same setting init.py's preflight
+    reads). True: raises StepUnavailable if STEP's preflight fails, and main() refuses. False: proceeds
+    STEP-down with a DB-only note on each affected span."""
     required = cfg.setting("step.required_for_runs", True)
     step: Step | None = None
     try:
@@ -405,11 +326,8 @@ def main() -> int:
 
     cfg = Cfg()
     try:
-        # build() reads step.required_for_runs itself (ONE source of truth, shared with
-        # init.py's own startup preflight — see governance.rules_must_be_config_driven,
-        # 2026-07-26). Default true means StepUnavailable propagates from build() when STEP is
-        # down; caught here to print the refusal and exit non-zero, same as every other
-        # STEP-dependent tool in iba/app/tools/ (build_strong_related_extract.py et al.).
+        # build() raises StepUnavailable when STEP is required and down: print the refusal and exit
+        # non-zero, like every other STEP-dependent tool
         try:
             if args.vrange:
                 ch, vlo, vhi = parse_range(args.vrange)

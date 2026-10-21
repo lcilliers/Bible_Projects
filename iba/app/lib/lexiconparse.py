@@ -1,41 +1,23 @@
 """lexiconparse.py — the governed parse of the raw lexicon layer (strong_meaning_tree.sense_text,
 strong_lexicon.lsj, strong_lexicon.mounce) into strong_meaning_parsed / strong_lsj_parsed /
-strong_mounce_parsed (handlers/lexicon.py:parse). This is the single source of truth for these
-rules going forward — ported here, corrected, from this session's exploratory work in
-iba/app/tools/build_meaning_tree_extract.py / build_lsj_sense_extract.py /
-build_mounce_lexicon_extract.py (which found and fixed the underlying bugs first, against
-outputs/csv exports; those tools scripts remain as independent, standalone-runnable copies —
-"exploratory, not wired into the app" by their own docstrings — this module is the one the app
-itself calls, not a shared import between the two, to keep that boundary real, not just stated).
+strong_mounce_parsed (handlers/lexicon.py:parse) -- the single source of these rules for the app.
+The tools/ extract scripts (build_meaning_tree_extract.py, build_lsj_sense_extract.py,
+build_mounce_lexicon_extract.py) are separate standalone copies, not imported.
 
-Corrected rules, all confirmed against live data / a live STEP re-fetch before being trusted:
+Rules:
+  - comma/semicolon/colon are NOT sense separators: a <b> span like "to celebrate, praise;" (G0021)
+    is one sense, as STEP displays it. The only sense separator is a literal line break (mounce's
+    <br>).
+  - a row's refs/notes are scoped to the <b> span they follow (SegmentParser), never pooled across
+    the row.
 
-  - comma/semicolon/colon are NOT sense separators in strong_meaning_tree.sense_text or
-    strong_lexicon.lsj/mounce — a <b> span like "to celebrate, praise;" (G0021) or
-    "goodness, virtue, beneficence," (G0019) is ONE sense as STEP itself displays it. The only
-    sense-separator recognised is a literal line break (mounce's <br> tags; none exist in
-    meaning_tree/lsj's sources today, so those two currently never explode a gloss further).
-  - a source row's refs/notes are SCOPED to the exact <b> span they followed (SegmentParser),
-    not pooled across the whole row — the bug that misattributed one span's verse citation onto
-    an unrelated sibling gloss in the same row (e.g. G0019's Gal.5.22 landing on "goodness" too).
+Each table keeps its natural source key: strong_meaning_tree.lemma_key is base-only, with its own
+`strong_variant` column naming the exact code a row came from; strong_lexicon.strong is the full
+code. Parsing is in place: one raw row's HTML into several clean rows under the same key.
 
-Unlike the tools/ extract scripts (which split strong into base+variant for a common join key
-across sources), these functions keep each table's NATURAL source key as-is: strong_meaning_tree.
-lemma_key is base-only (it never carries a sub-entry letter — confirmed 3169/3169) AND (2026-07-26,
-migration/fix_strong_meaning_tree_collapse.py) carries its own `strong_variant` column recording
-the EXACT code a given tree row's content actually came from; strong_lexicon.strong is already the
-full code (matching strong.strongNumber exactly) — no splitting/reconstruction needed for a DB
-table that's simply parsing IN PLACE, one raw row's HTML into several clean rows under the same key.
-
-Every regex/threshold/tag-set that decides a classification or parse boundary is config-driven
-(cfg_setting, module='lexicon') — added 2026-07-30 per the researcher's correction: "the core of
-the app says all configurable elements of code must NOT be hard coded, but included in configs,"
-directly analogous to `candidate.py`'s own config-driven patterns (`candidate.tag_max_words`,
-`candidate.transliteration_pattern`, etc.) which this module had not been following. `load_rules()`
-reads every one of them ONCE per top-level call (`meaning_tree_rows`/`lsj_rows`/`mounce_rows`),
-each with a fallback default matching the original hardcoded behaviour exactly (`migration/
-add_lexicon_parse_settings.py` seeds the live rows with the same values) — a missing setting never
-changes behaviour, it just stops being config-governed until the row exists.
+Every regex/threshold/tag-set deciding a classification or parse boundary is config (cfg_setting,
+module='lexicon'), read once per top-level call by `load_rules()`; each has a fallback equal to the
+seeded value, so a missing setting does not change behaviour.
 """
 
 from __future__ import annotations
@@ -47,10 +29,7 @@ from html.parser import HTMLParser
 
 
 # ── config-driven rules (cfg_setting, module='lexicon') ────────────────────────────────────────
-# Fallback defaults below match this module's original hardcoded values exactly — used only when
-# a setting is (not yet, or no longer) present; `migration/add_lexicon_parse_settings.py` seeds the
-# live cfg_setting rows with these same values so behaviour is unchanged until a researcher tunes
-# one via configmaint.propose.
+# Fallbacks below equal the seeded cfg_setting values; used only when a setting is absent.
 _DEFAULTS = {
     "lexicon.non_latin_script_pattern": r"[Ͱ-Ͽἀ-῿֐-׿]",
     "lexicon.classify_lookup_max_words": 3,
@@ -61,10 +40,9 @@ _DEFAULTS = {
     "lexicon.lsj_top_level_label_pattern": r"^[IVXLCDM]+$",
     "lexicon.lsj_sublabel_pattern": r"^\d+[a-z]*$",
     "lexicon.bracket_pairs": {"(": ")", "[": "]", "{": "}"},
-    # escalation #1668, 2026-09-10: STEP's own BDB/Mounce-derived mediumDef text places a bare
-    # part-of-speech abbreviation ahead of (or between) numbered senses as a section header, e.g.
-    # H0503: "v<br>1) to make thousand-fold...<br>n m<br>3) chief, chiliarch" -- "v"/"n m" label
-    # the numbered group that follows, they are not senses themselves. See is_header_only_line().
+# STEP's mediumDef can place a bare part-of-speech abbreviation ahead of numbered senses as a section
+# header (H0503: "v<br>1) to make thousand-fold...<br>n m<br>3) chief, chiliarch"): headers, not
+# senses (#1668). See is_header_only_line().
     "lexicon.header_pos_tags": [
         "v", "vb", "n", "a", "adj", "adv", "prep", "subst", "conj", "interj", "pron", "num",
         "part", "n m", "n f", "n c", "nm", "nf", "nc", "n pr m", "n pr f", "n pr loc",
@@ -228,28 +206,15 @@ def parse_meaning_tree_row(lemma_key: str, strong_variant: str, sort: int, sense
                            sense_text: str, rules: Rules) -> list[tuple]:
     """-> [(lemma_key, strong_variant, sort, sense_code, gloss, verse_refs, note, row_type), ...]
 
-    `strong_variant` (2026-07-26, migration/fix_strong_meaning_tree_collapse.py) is a straight
-    pass-through of strong_meaning_tree's own new column — parsing never decides it, it just
-    carries the source row's key forward so a reader can look up a SPECIFIC sibling code's own
-    parsed gloss instead of only ever the shared base row (see BUILD.md sec24/sec25)."""
+    `strong_variant` passes through strong_meaning_tree's own column, so a reader can look up a
+    specific sibling code's parsed gloss."""
     code, remaining = _extract_sense_code(sense_code, sense_text, rules)
 
     p = _MeaningSegmentParser()
     p.feed(_normalize_refs(remaining, rules))
 
-    # Escalation #1668-cont., 2026-09-10 (researcher's own live example, G1375): a <b>...</b> span
-    # containing ONLY punctuation (STEP bolding a bare comma ahead of a citation --
-    # "...religious reasons)<b>,</b> <ref=...>Mt. 13:21</ref>") starts a new segment (per
-    # _MeaningSegmentParser's "one segment per <b> span" rule) but has NO real gloss content once
-    # cleaned (_clean(",") strips to ""). Previously this fell through the "if not gloss and note:
-    # gloss, note = note, ''" fallback below and PROMOTED whatever stray text sat between the
-    # surrounding <ref> tags (here, a lone ';') into the gloss itself -- a second, fake sort=0 row
-    # (G1375's own strong_meaning_parsed had TWO live rows at sort=0: the real gloss, and ';').
-    # Fixed here, not by touching the fallback (which is still needed for the FIRST-segment edge
-    # case): a content-empty segment is folded into the PRECEDING real segment's note/refs instead
-    # of becoming its own row -- no information lost (G1375's Mt.13.21/Mk.4.17 refs, previously
-    # stranded on the dropped phantom row, now correctly attach to the real "chase, pursuit;
-    # persecution" row), it just stops masquerading as an independent sense.
+    # a <b> span holding only punctuation (STEP bolding a bare comma before a citation) has no gloss:
+    # it is folded into the preceding segment's note/refs, not made its own row (#1668)
     real_segments = []
     for seg in p.segments:
         gloss_parts = _dedupe_preserve_order([_clean(g) for g in seg["gloss"] if _clean(g)])
@@ -282,16 +247,10 @@ def _strip_tags(s: str) -> str:
 
 def is_header_only_line(sense_code: str, sense_text: str, transliteration: str | None,
                         rules: Rules) -> bool:
-    """True if this `strong_meaning_tree` row is a bare STEP-source header/label line — a
-    part-of-speech abbreviation (BDB/Mounce convention: 'v', 'n m', 'adj', ...) or the code's own
-    transliteration echoed as if it were a gloss — sitting ahead of (or between) the real numbered
-    senses, not a sense in its own right. Confirmed live, escalation #1668, 2026-09-10: STEP's own
-    `call2_getInfo('H0503').mediumDef` = `'v<br>1) to make thousand-fold...<br>n m<br>3) chief,
-    chiliarch'` ('v'/'n m' are headers for the numbered groups that follow, not senses);
-    `call2_getInfo('H6310').mediumDef` = `': lip/mouth<br>peh<br>1) mouth...'` ('peh' is H6310's
-    own `stepTransliteration`, not a translated gloss). Only fires when the row has NO sense_code
-    of its own — an already-numbered '1)'/'2a)' row is never excluded, even if its text happens to
-    coincide, since a real numbered sense could in principle BE just a short abbreviation."""
+    """True if this `strong_meaning_tree` row is a bare STEP header/label line -- a part-of-speech
+    abbreviation ('v', 'n m', 'adj', ...) or the code's own transliteration echoed as a gloss (e.g.
+    H6310 'peh') -- ahead of or between the numbered senses (#1668). Only fires for a row with no
+    sense_code of its own; a numbered '1)'/'2a)' row is never excluded."""
     if sense_code:
         return False
     stripped = _strip_tags(sense_text).lower()
@@ -305,19 +264,12 @@ def is_header_only_line(sense_code: str, sense_text: str, transliteration: str |
 
 
 def meaning_tree_rows(cfg) -> list[tuple]:
-    """All of strong_meaning_tree, parsed. -> [(lemma_key, strong_variant, sort, sense_code,
-    gloss, verse_refs, note, row_type), ...]
+    """All of strong_meaning_tree, parsed. -> [(lemma_key, strong_variant, sort, sense_code, gloss,
+    verse_refs, note, row_type), ...]
 
-    Escalation #1668, 2026-09-10: a row whose entire text is a bare STEP-source header/label
-    (see `is_header_only_line()`) is dropped here, before it ever reaches
-    `parse_meaning_tree_row()` — so it never becomes a `strong_meaning_parsed` row at all, rather
-    than being written and relied on for every downstream reader to filter back out (the
-    researcher's own framing: "resolved-sense will be pulled directly from parse, not
-    recalculated" — the exclusion belongs in the parse step itself). `sort` is then RENUMBERED
-    contiguously from 0 per (lemma_key, strong_variant) group across the surviving rows — the
-    excluded header line would otherwise leave a permanent gap at the low end (e.g. H6310 losing
-    its old sort=0 'peh' row would leave 'mouth' sitting at sort=1, breaking the "sort=0 is always
-    the true first sense" invariant escalation #1663 confirmed universally true corpus-wide)."""
+    A header-only row (`is_header_only_line()`) is dropped before parsing (#1668), and `sort` is
+    renumbered contiguously from 0 per (lemma_key, strong_variant), so sort=0 is always the true first
+    sense (#1663)."""
     rules = load_rules(cfg)
     cur = cfg.conn.execute(
         "SELECT smt.lemma_key, smt.strong_variant, smt.sort, smt.sense_code, smt.sense_text, "

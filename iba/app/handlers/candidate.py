@@ -40,13 +40,9 @@ def _may(ctx: Ctx, writer: str, table: str):
 
 def _set_decision(ctx: Ctx, lemma_key: str, decision: str, layer: str, now: str,
                   strong_variant: str | None = None, sense_seq: int = 0):
-    """strong_variant defaults to lemma_key itself — 'this row applies to the whole base lemma,
-    no sub-strong split decided yet' (found 2026-07-22: candidate_seed had no way to give ONE
-    base lemma multiple clean, single-concept tags, one per sub-strong sense — 173 base lemmas
-    have sub-lettered strong variants with genuinely different glosses). Dedup is now
-    (lemma_key, strong_variant, sense_seq) — sense_seq defaults to 0 (the only/first sense);
-    seed()'s bulk net-matching always targets sense_seq=0, it never creates a second sense — only
-    candidate.load's dual-concept split does that."""
+    """strong_variant defaults to lemma_key itself (the row applies to the whole base lemma). Dedup is
+    (lemma_key, strong_variant, sense_seq), sense_seq defaulting to 0 (the first sense); seed() only
+    targets sense_seq=0; only candidate.load's dual-concept split creates a second sense."""
     variant = strong_variant or lemma_key
     if ctx.db.get("candidate_seed", lemma_key=lemma_key, strong_variant=variant, sense_seq=sense_seq):
         ctx.db.update("candidate_seed", {"lemma_key": lemma_key, "strong_variant": variant,
@@ -123,13 +119,8 @@ def set(ctx: Ctx) -> Outcome:
         return fail("no-spans", f"book {book!r} has no spans — build its words first")
 
     _may(ctx, "candidate.set", "span_candidate")
-    # KNOWN LIMITATION (flagged 2026-07-22, sense_seq's own design doc): a span carries no signal
-    # for WHICH sense applies when (lemma_key, strong_variant) has more than one sense_seq row
-    # (candidate.load's dual-concept split, #228) — word-sense disambiguation from verse context
-    # is out of scope here. Deterministic choice: order sense_seq DESC so the dict comprehension's
-    # last write is sense_seq=0 (the original/default sense), which therefore always wins a
-    # collision — every span stamps with the base sense unless/until real per-verse
-    # disambiguation is built.
+    # A span carries no signal for which sense applies when (lemma_key, strong_variant) has several
+    # sense_seq rows: ordered sense_seq DESC so sense_seq=0 (the base sense) wins a collision.
     cand = {(r["lemma_key"], r["strong_variant"]): r for r in ctx.db.rows(
         "SELECT lemma_key, strong_variant, tag, layer FROM candidate_seed "
         "WHERE decision='candidate' AND deleted=0 ORDER BY sense_seq DESC")}
@@ -155,23 +146,11 @@ def set(ctx: Ctx) -> Outcome:
 
 
 # ── validate (standalone, on-demand — NOT part of the seed/set sequence) ─────
-# Extended 2026-07-21: originally checked span_candidate.candidate_tag only (a hand-rolled regex,
-# never declared in config). Found that day the SAME shape of dirt exists upstream, unchecked, in
-# candidate_seed.tag (the seed decision itself) and lemma_inventory.gloss (the independent
-# substrate candidate_seed is built from, and what cfg_candidate_rule's synonym rule matches
-# against) — candidate_seed.tag is a verbatim copy of gloss/seed_word at migration time, so a
-# dirty gloss is upstream of a dirty seed tag, not just a mirror of it. All three now go through
-# ONE engine (lib/valuequality.find_value_quality_findings), reading cfg_column.expectation —
-# no more hand-rolled regex per table. This is the seed's proper quality report (previously it had
-# none at all): the researcher could not see candidate_seed/lemma_inventory dirt anywhere.
-#
-# Also kept from the original finding: 17.7% of span_candidate rows have a null tag (normal —
-# _set_decision() never sets one; only the historical import_seed.py migration did) and 52.3% have
-# a lemma_key with no strong row yet (also normal — strong only grows per registered word). Neither
-# is a hard-blocking rule — both are a researcher judgement call, so both stay in the ESCALATE
-# path, same as the value-quality findings. Standalone (its own work package, run when the
-# researcher actually wants the picture), one escalation per invocation covering everything found
-# — not one per row, not repeated every book build.
+# ── validate (standalone, on-demand -- not part of the seed/set sequence) ─────
+# span_candidate.candidate_tag, candidate_seed.tag and lemma_inventory.gloss (upstream of the seed
+# tag) all go through one engine, lib/valuequality.find_value_quality_findings, reading
+# cfg_column.expectation. Also reported: span_candidate rows with a null tag and lemma_keys with no
+# strong row yet (both normal, both researcher judgements). One escalation per invocation.
 def _category(value: str) -> str:
     """Cheap grouping for the worklist — which shape of dirt, not a full taxonomy."""
     if ":" in value:
@@ -200,11 +179,8 @@ def _finding_section(f: "vq.ValueFinding") -> list[str]:
 def _write_quality_report(ctx: Ctx, sc_null: int, sc_tag: "vq.ValueFinding", seed_null: int,
                           seed_tag: "vq.ValueFinding", orphan_rows: list,
                           gloss: "vq.ValueFinding") -> pathlib.Path:
-    """Persist the current findings — per the researcher's 2026-07-21 ruling that a quality check's
-    output must persist to a report file like every other report in the app (report.py/
-    validation.py/cfgreport.py), not live only in a terminal print + an escalation row. Now covers
-    span_candidate (the stamp), candidate_seed (the seed decision), and lemma_inventory (the
-    independent substrate) — the seed's own report the researcher asked for, not just the stamp's."""
+    """Persist the current findings for span_candidate (the stamp), candidate_seed (the seed decision)
+    and lemma_inventory (the substrate) (governance.reports_must_persist)."""
     path = pathlib.Path(ctx.cfg.required_setting("candidate.quality_report_path"))
     orphan_sorted = sorted(orphan_rows, key=lambda r: -r["n"])
     intro = [
@@ -225,11 +201,7 @@ def _write_quality_report(ctx: Ctx, sc_null: int, sc_tag: "vq.ValueFinding", see
             + [f"| {r['lk']} | {r['n']} |" for r in orphan_sorted] + [""]),
     }
     L = reportkit.render_scaffold(ctx.db.conn, "candidate.validate", sections, intro=intro)
-    # Same class of bug found+fixed 2026-07-30 in handlers/passage.py (`write_csv_pairing`'s
-    # default is an UNFILTERED full-table dump — appropriate for a cfg_* audit trail, wrong for a
-    # table with real soft-deleted rows): `candidate_seed` has 281 deleted=1 rows right now, which
-    # a plain dump would include even though every count/finding above is deleted=0-scoped. Pass
-    # the live rows explicitly via `row_filter`, same mechanism `candidate.load` already uses.
+    # the CSV pairing gets the live (deleted=0) rows via row_filter, not a full-table dump
     row_filter = {t: ctx.db.rows(f'SELECT * FROM "{t}" WHERE deleted=0')
                  for t in ("candidate_seed", "lemma_inventory", "span_candidate")}
     reportkit.write_csv_pairing(ctx.db.conn, "candidate.validate", path.parent / "export",
@@ -307,14 +279,10 @@ def validate(ctx: Ctx) -> Outcome:
               "known/acceptable, reject to flag for action, or revise with a comment on what to check")
 
 
-# ── curate (standalone, on-demand — the ongoing add/correct/remove utility) ──
-# configmaint.propose deliberately never touches DATA tables (candidate_seed, lemma_inventory) —
-# it is restricted to cfg_* (see handlers/configmaint.py's CFG_TABLES). candidate_seed still needs
-# a governed, single-row, approval-gated way to correct a wrong tag, reject a lemma, split a base
-# lemma into per-sub-strong concept rows, or remove an invalid row once written — seed() only ever
-# sets tag/decision on FIRST insert (_set_decision), never revises an existing row. This is that
-# path: same shape as configmaint.propose (check -> escalate representative payload -> three-way
-# approve/reject/revise -> apply), scoped to one (lemma_key, strong_variant) row.
+# ── curate (standalone, on-demand -- add/correct/remove) ──
+# configmaint.propose never touches DATA tables, and seed() sets tag/decision only on first insert,
+# so this is the governed, single-row, approval-gated path for candidate_seed: check -> escalate a
+# representative payload -> approve/reject/revise -> apply, for one (lemma_key, strong_variant) row.
 #
 # Field:
 #   tag / decision  — correct the row for (LemmaKey, StrongVariant or default=LemmaKey).
@@ -339,9 +307,8 @@ def curate(ctx: Ctx) -> Outcome:
     if fld not in ("tag", "decision", "split", "delete"):
         return fail("invalid-proposal", f"Field must be tag/decision/split/delete, got {fld!r}")
 
-    # KNOWN GAP (named 2026-07-22, candidate.load's design doc): curate() has no -SenseSeq param,
-    # so it only ever targets sense_seq=0 — correcting a sense_seq>0 row (created by a
-    # candidate.load dual-concept split with no distinct sub-strong) isn't supported yet.
+    # curate() has no -SenseSeq param, so it targets sense_seq=0 only; a sense_seq>0 row cannot be
+    # corrected here
     row = None
     base_row = None
     if fld == "split":
@@ -420,9 +387,7 @@ def curate(ctx: Ctx) -> Outcome:
               "decline, or revise with a comment on what to check")
 
 
-# ── load (none; JSON-batch create/update/validate — the missing "add a batch of words, from
-# outside the app" mode configuration_maintenance's propose can't provide, since propose never
-# touches data tables). Design: iba/docs (plan) melodic-foraging-bunny — approved 2026-07-22.
+# ── load (JSON batch create/update/validate -- adding a batch of words from outside the app) ──
 #
 # Unlike curate() (single-row, approval-gated, candidate.curate's whole reason to exist),
 # load() follows seed()'s precedent: a clean item auto-loads, no per-item approval. Only
@@ -467,19 +432,12 @@ def _resolve_lemma(ctx: Ctx, word: str) -> tuple[str | None, str | None, str | N
     collapsed gloss when one matches (the researcher's 2026-07-22 rule: pull the variant gloss,
     never the lemma gloss, when a variant exists). Returns (None, None, None) if nothing matches.
 
-    FIXED 2026-07-22 (found by testing, not by inspection): raw substring containment
-    (`w in gloss or gloss in w`) is unsafe when either side is short — gloss 'I' matched inside
-    'hearing', gloss 'word' matched inside the test nonsense-word 'zzznotarealword'. Matching is
-    now WORD-BOUNDARY bounded (`\\bword\\b`), and an EXACT match on an existing candidate_seed.tag
-    is tried FIRST — this word is a real Strong's already-loaded synonym-shaped tag, this word
-    duplicates a real existing candidate.load bug found: 'hearing' re-resolved to a different,
-    wrong lemma (H0589, gloss 'I') instead of recognising H8085's existing tag='hearing' row as
-    the same word."""
+    Matching is word-boundary bounded (`\\bword\\b`, so 'I' does not match inside 'hearing'), and an
+    exact match on an existing candidate_seed.tag is tried first."""
     w = word.strip().lower()
 
-    # exact match against an EXISTING candidate_seed.tag first — if this word is already
-    # someone's tag, THAT is the right lemma; prevents a second, wrong lemma_key being resolved
-    # for a word that's already correctly seeded (the 'hearing' bug).
+    # an exact match on an existing candidate_seed.tag first: if the word is already a tag, that is
+    # its lemma
     existing = ctx.db.rows(
         "SELECT lemma_key, strong_variant FROM candidate_seed WHERE deleted=0 AND lower(tag)=?", (w,))
     if existing:
@@ -583,12 +541,8 @@ def _process_item(ctx: Ctx, word: str, reason: str, sense_seq: int, clean_re, ma
         return
 
     if ctx.db.get("candidate_seed", lemma_key=lemma_key, strong_variant=variant, sense_seq=sense_seq):
-        # per the approved plan: a true duplicate writes NOTHING and touches NOTHING — the
-        # existing row is the record; only report the collision. (FIXED 2026-07-22, found by
-        # testing: this used to call _write_exception, which — because the row already exists —
-        # took its UPDATE branch and overwrote the pre-existing legitimate row's decision/tag.
-        # That's real data corruption on every duplicate, the same class of mistake as the
-        # revalidation bug earlier this session, caught before it ran over the full seed.)
+        # a true duplicate writes and touches nothing: the existing row is the record; only the collision
+        # is reported
         c["duplicates"] = c.get("duplicates", 0) + 1
         c.setdefault("duplicate_samples", []).append(f"{word!r} -> existing candidate_seed[{lemma_key}/{variant}/{sense_seq}]")
         return

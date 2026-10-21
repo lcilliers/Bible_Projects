@@ -1,57 +1,21 @@
-"""build_debate_report.py (standalone; reads `iba.db` broadly, writes ONLY `passage.debate_path`/
-`debate_written_at`/`debate_status` on the one passage it renders — see 2026-08-06 update below) —
-Step 6 (debate digest) / Step 6's own stated purpose (BUILD.md §61: "the .md document becomes a
-generated extract off those DB records... never itself written to directly"): renders one
-hib-continuity passage's `hib`/`phenomenon`/`operation`/`operation_party`/`passage_linkage`/
-`passage_insufficiency`/`passage_emergent_question`/`passage_validation_note` rows into the exact
-8-section shape `WA-interpretation-questions-v1.4` Part C specifies, plus a leading
-**process-control section** (researcher, 2026-08-06: "I would expect both detail and controls
-regarding each table that was updated, and that the report tells the story of the IB operations in
-the chapter") — this is also B5's "working record," collapsed into a report rather than a
-maintained file, exactly as `b3-b5-operations-schema-design-20260805.md` proposed ("a report, not
-a file to maintain... report.passage_control").
+"""build_debate_report.py (standalone; reads `iba.db` broadly, writes only `passage.debate_path`/
+`debate_written_at`/`debate_status` on the passage it renders) -- Step 6 (debate digest): renders
+one hib-continuity passage's `hib`/`phenomenon`/`operation`/`operation_party`/`passage_linkage`/
+`passage_insufficiency`/`passage_emergent_question`/`passage_validation_note` rows into the
+8-section shape of `WA-interpretation-questions-v1.4` Part C, plus a leading process-control section
+(detail and controls for each table updated, telling the story of the IB operations in the chapter).
+The .md is a generated extract off the DB records, never written to directly.
 
-**2026-08-06 update — no longer purely read-only.** Researcher, reviewing `configmaint.validate`'s
-own stale-`filled_by` finding: `passage.debate_path`/`debate_written_at`/`debate_status` were never
-written for a new-model passage at all — this tool only ever rendered a file, never recorded that
-it had. Fixed: after a successful render, grant-checked (`report.debate → passage`, same principle
-as every other write in this app even though there's no `Ctx`/dispatcher here) writes those three
-columns. `debate_status` is computed live every call, not hand-set — `empty` (no phenomena yet),
-`in-progress` (Steps 3-5 not both complete), `complete` (phase gate set and every phenomenon has an
-operation) — new `enum.passage_debate_status` values alongside legacy's `scaffold`/`filled`. One
-call now does what the legacy model needed two for (`report.passage_debate` + a separate
-`PassageDebate-Sync.ps1` confirmation) — nothing here is a static file needing a human to confirm
-they filled it in; status is recomputed from the DB fresh every regenerate.
+After a successful render, a grant-checked write (`report.debate -> passage`) records the three
+tracking columns. `debate_status` is computed live every call: `empty` (no phenomena), `in-progress`
+(Steps 3-5 not both complete), `complete` (phase gate set and every phenomenon has an operation)
+(enum.passage_debate_status, alongside legacy's `scaffold`/`filled`).
 
-**Why a standalone tool, not a `cfg_report`-registered `report.*` step (2026-08-06 scoping call).**
-`reportkit.render_scaffold` requires a `cfg_report`/`cfg_report_section` row per section — 8+ new
-config rows, each needing its own `configmaint.propose` approval cycle, on top of the write-grant
-proposals `closing.set` already needed. This tool instead hand-builds Markdown; it still gets
-versioning + archive-on-regenerate for free via `reportkit.write_report` (`step="report.debate"` —
-already a recognised writer name, via `cfg_write_grant`, no NEW config row needed for that either).
-If the researcher later wants these 8 section headings to be config-editable the way
-`report.passage_debate` already is, promoting this to a registered `cfg_report` step is a small,
-well-scoped follow-up, not a redesign — flagged, not built here, to keep this delivery unblocked by
-an approval queue.
+A standalone tool, not a `cfg_report` step: it hand-builds its Markdown and gets versioning +
+archive-on-regenerate via `reportkit.write_report` (`step="report.debate"`). Filed under
+`report.verse_analysis_output_dir/<book_label or book>/` like the other book tools (`--book-label`).
 
-**Filing corrected 2026-08-08 (found live: a real book's debate reports were landing flat in
-`iba/app/reports/` instead of the book-scoped folder every sibling book tool uses).** This report is
-book-scoped analytical output, same class as `lexical.build`/`report.verse_span_meaning`/
-`report.whole_book_read`/the narrative — not a "one-off investigatory" report (`reportkit.oneoff_path`,
-what `build_verse_span_meaning_extract.py`/`build_verse_span_strongtree_extract.py` correctly use,
-since THOSE really are ad-hoc extracts, not the book's filed record). Now files under the SAME
-`report.verse_analysis_output_dir/<book_label or book>/` convention as every sibling tool
-(`versespanmeaningreport.py`/`lexical.py`/`passagedebatereport.py`/`narrativegenerate.py`/
-`wholebookread.py` all do `folder = book_label or book` inline — no shared helper existed to reuse,
-so this follows the same inline shape rather than inventing a new abstraction) — takes an optional
-`--book-label` the same shape as those tools' `-BookLabel`.
-
-**Reads broadly, writes narrowly.** Every table it reads from is untouched; the only write is the
-grant-checked tracking-column update on its own target passage, described above. Refuses to run
-against a legacy (`rule IS NULL`) passage — this report only makes sense for a passage actually
-carrying `hib`/`phenomenon`/
-`operation` rows, which only a `hib-continuity` passage can have (BUILD.md §64's `_find_new_model_
-passage` guard, mirrored here read-only).
+Refuses a legacy (`rule IS NULL`) passage: only a `hib-continuity` passage carries these rows.
 
 Usage:
   python -m iba.app.tools.build_debate_report --book Dan --range 8:1-27 --book-label Daniel
@@ -95,11 +59,8 @@ def build(conn: sqlite3.Connection, book: str, lo: int, hi: int, vlo=None, vhi=N
         raise ValueError(problem)
     pid = passage["id"]
 
-    # 2026-08-06 fix (researcher, first real Dan 8 run): ORDER BY is_anchor DESC alone has no
-    # tiebreaker for the non-anchor rows -- SQLite does not guarantee tie order without one, which
-    # is why Dan 8:19 rendered before Dan 8:6. `verse` has no chapter/verse columns (osisId-only,
-    # same as every other reader in this app -- versespanmeaningreport.fetch_verses parses it the
-    # same way), so the tiebreak is done in Python after fetch, anchor still pinned first.
+    # anchor rows first, then verse order: `verse` has no chapter/verse columns, so the tiebreak is
+    # done in Python on the parsed osisId
     vp_rows = _rows(
         conn, "SELECT vp.verse_id, vp.is_anchor, v.osisId FROM verse_passage vp "
               "JOIN verse v ON v.id = vp.verse_id WHERE vp.passage_id=? AND vp.deleted=0", (pid,))
@@ -157,21 +118,15 @@ def build(conn: sqlite3.Connection, book: str, lo: int, hi: int, vlo=None, vhi=N
               "WHERE passage_id=? AND deleted=0 ORDER BY ordinal", (pid,))
     open_decisions = passage["open_decisions_note"]
 
-    # ── process control (researcher, 2026-08-06: "detail AND controls... tells the story") ──
+# ── process control (detail and controls per table) ──
     total_pairs = len(verse_ids) and len(_rows(
         conn, f"SELECT verse_id, hib_id FROM verse_hib WHERE deleted=0 AND verse_id IN "
               f"({','.join('?' * len(verse_ids))})", tuple(verse_ids)))
     phen_count = len(phen_rows)
     op_count = len(op_by_phen)
     missing_ops = phen_count - op_count
-    # debate_status, 2026-08-06 (researcher: "this should now reference the new report" --
-    # passage.debate_path/debate_written_at/debate_status were never written for a new-model
-    # passage at all before this; the OLD scaffold/filled lifecycle needed a human to hand-fill
-    # a static file and a separate PassageDebate-Sync.ps1 call to confirm it -- this report is
-    # regenerated fresh from the DB every call, so status is just computed live, no sync step
-    # needed. 'empty' = nothing started; 'in-progress' = some phenomena but Steps 3-5 not both
-    # complete; 'complete' = phase gate set AND every phenomenon has an operation (enum.
-    # passage_debate_status: empty|in-progress|complete, alongside legacy's scaffold|filled).
+    # debate_status, computed live: 'empty' = nothing started; 'in-progress' = some phenomena but Steps
+    # 3-5 not both complete; 'complete' = phase gate set and every phenomenon has an operation
     if phen_count == 0:
         debate_status = "empty"
     elif passage["phenomena_complete_at"] and missing_ops == 0:
@@ -312,8 +267,7 @@ def build(conn: sqlite3.Connection, book: str, lo: int, hi: int, vlo=None, vhi=N
 
 
 def _may_write_passage(conn: sqlite3.Connection) -> bool:
-    """Grant-checked, same principle as every other write in this app (`_may`/`_grant`) even
-    though this is a standalone tool with no `Ctx`/dispatcher — a write is a write."""
+    """Grant-checked like every other write in this app, though this tool has no `Ctx`."""
     return conn.execute(
         "SELECT 1 FROM cfg_write_grant WHERE writer='report.debate' AND table_name='passage' "
         "AND database='iba' AND inactive=0").fetchone() is not None
@@ -361,20 +315,15 @@ def main() -> int:
                 text += "\n"
             out_path.write_text(text, encoding="utf-8")
         else:
-            # Book-scoped filing (fixed 2026-08-08) -- same convention every sibling book tool uses:
-            # report.verse_analysis_output_dir/<book_label or book>/<topic>.md, versioned +
-            # archived-on-regenerate by write_report (not the flat oneoff_path this used to call).
+            # book-scoped filing: report.verse_analysis_output_dir/<book_label or book>/<topic>.md, versioned and
+            # archived on regenerate by write_report
             output_dir = pathlib.Path(cfg.required_setting("report.verse_analysis_output_dir"))
             folder = args.book_label or args.book
             out_path = output_dir / folder / f"{topic}.md"
             out_path = reportkit.write_report(cfg.conn, "report.debate", out_path, lines)
         print(f"wrote {out_path}")
 
-        # 2026-08-06: this report is no longer purely read-only -- it keeps passage.debate_path/
-        # debate_written_at/debate_status current for new-model passages, the same tracking the
-        # legacy report.passage_debate scaffold+PassageDebate-Sync.ps1 dance kept for old ones,
-        # but in one call instead of two (nothing here is a static file needing a separate human
-        # "confirm you filled it in" step -- status is recomputed from the DB every regenerate).
+        # keep passage.debate_path/debate_written_at/debate_status current; status is recomputed from the DB
         if not _may_write_passage(cfg.conn):
             print("NOTE: report.debate -> passage write grant not active -- tracking columns "
                   "(debate_path/debate_written_at/debate_status) NOT updated this run.")
