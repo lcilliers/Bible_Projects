@@ -18,7 +18,7 @@ It re-introduces the earlier guides and reconciles them with the researcher's la
 | `Instructions/archive/wa-global-sessionc-prose-rule-v1_1-20260414.md` | 2026-04-14 | Derive only from the evidence; the gap corollary; the insight caveat; the five prohibited patterns |
 | `Instructions/archive/wa-sessionc-cluster-style-method-v1_1-20260512.md` | 2026-05-12 | Voice and tone; words to avoid; citation discipline; the silence principle; reverse audit; self-review |
 | `Instructions/archive/wa-cc-cluster-essay-style-template-v1_0-20260620.md` | 2026-06-20 | Completeness ("do not omit findings for simplicity"); plain quantifiers; no project superlatives |
-| `Instructions/wa-narrative-style-instruction-v1-20260702.md` | 2026-07-02 | Testimony, not report; every clause grounded; "a claim with no citable ground is not written"; convergence as warrant |
+| `Instructions/archive/wa-narrative-style-instruction-v1-20260702.md` | 2026-07-02 | Testimony, not report; every clause grounded; "a claim with no citable ground is not written"; convergence as warrant |
 | `Instructions/WA-inner-being-narrative-guidance-v1-2026-07-28.md` | 2026-07-28 | The three channels (non-human, human, physical world) |
 | `Instructions/WA-inner-being-narrative-hard-constraints-v1-2026-07-30.md` | 2026-07-30 | Nothing invented; open threads stay open; contradictions stand; no forced unity; general-reader language; no self-reference |
 | Researcher rulings, 2026-09-30 to 2026-10-01 (CLAUDE.md banners; #1912, #1913, #1916, #1918, #1919, #1921) | | The current frame, voice, weave and change-of-character rules, and *let Scripture speak for itself* |

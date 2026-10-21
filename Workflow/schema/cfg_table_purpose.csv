@@ -63,3 +63,7 @@ cfg_utility,purpose,"The registry of every script/module in the project -- what 
 cfg_utility,success,Every real .py file doing project work has a row; every rows file_path genuinely exists on disk.
 cfg_work_package,purpose,"The top-level PS-script-to-work-package registry -- which script runs which package, whether its steps chain under one run_id, and the researcher-facing pause/complete messages."
 cfg_work_package,success,Every ps_script path is a real file; every name matches a real cfg_step.work_package grouping; chained correctly reflects whether the PS script actually loops its whole sequence.
+cfg_trigger,purpose,"Every SQLite trigger the project's two databases carry -- table, name and full CREATE TRIGGER statement -- so a table rebuilt from config gets its triggers back."
+cfg_trigger,success,"Every live trigger in iba.db and bible_research.db has a row here with the same SQL, and every active row names a live trigger (cfgquality.find_unregistered_triggers)."
+cfg_control_home,purpose,"The control map: for each kind of control content, its ONE home, when that home is read, and where replaced versions go so they are not read routinely."
+cfg_control_home,success,"Every control file, table and folder in the project is the home of a row here or is history; no rule or setting is held in two homes; every always-read home holds only its row's content."

@@ -42,6 +42,11 @@ fixed (it no longer appears) or by a disposition in the session compliance file'
   SC12 publish              whether the narrative copy (a chapter changed) and the threads export
                             (a thread row changed, or the register file differs from the table --
                             it embeds rule text) are needed; each runs only then.
+  SC15 control files        every file of the control-map kinds in session_close.control_kinds
+                            (cfgquality.find_control_file_problems, #2186): it exists; every path it
+                            names resolves and is not in an archive/ unless the line marks it as
+                            history; no replaced-history text (rule 96); an always-read file within
+                            session_close.always_read_max_bytes.
 SC7 (remediation), SC11 (re-run) and SC13 (commit, blocked while any finding is open) are steps of
 the command; Session-Close.ps1 exits 3 while any finding is open. SC14: this report is the close's
 persisted record.
@@ -58,8 +63,8 @@ import re
 
 from .base import Ctx, Outcome, ok, fail
 from . import spine as spine_mod
-from ..lib import (compliance, escalation as esc, narrativeregister as nr, quotecheck, reportkit,
-                   sessionwindow as sw)
+from ..lib import (cfgquality, compliance, escalation as esc, narrativeregister as nr, quotecheck,
+                   reportkit, sessionwindow as sw)
 
 _HANDLE_RX = re.compile(r"\bOT-(\d+)(?:\.(\d+))?\b|#(\d+)\b")
 _HIST_RX = re.compile(r"#(\d+)\s*v(\d+)")
@@ -536,7 +541,7 @@ _STEP_TITLES = {"SC1": "SC1 Session and window", "SC2": "SC2 Spine (FATAL)",
                 "SC3": "SC3 Researcher's words recorded", "SC4": "SC4 Open items in the register",
                 "SC5": "SC5 Analysis integrity", "SC6": "SC6 Rule compliance",
                 "SC8": "SC8 Session log", "SC9": "SC9 Decisions reached their targets",
-                "SC10": "SC10 BUILD.md coverage"}
+                "SC10": "SC10 BUILD.md coverage", "SC15": "SC15 Control files"}
 
 
 def _write_report(ctx, ident, F, info) -> pathlib.Path:
@@ -626,6 +631,8 @@ def check(ctx: Ctx) -> Outcome:
         ident["log"] = log.relative_to(root).as_posix() if log else None
         F += f89
         F += _sc10(cfg, base, changed)
+        F += [dict(key=k, step="SC15", text=t)
+              for k, t in cfgquality.find_control_file_problems(db.conn, root)]
         info["publish"] = _sc12(cfg, db, root, changed, since)
         disp = compliance.parse(cpath)["dispositions"] if cpath else {}
     else:

@@ -17316,3 +17316,344 @@ had: Narrative-Register, Purge-SoftDeletes, VerseReading, and three scripts with
   clear as those escalations close.
 - SC14's commit hashes are in the session log's section 6 (written after the first commit), not in
   the close report, which is written before the commit.
+
+## 354. Rule 63: a hand-over for approval says what is to be approved (2026-10-21, escalation #2178, for #2177)
+
+`iba/app/migration/rule63_approval_handover_checks_v1_20261021.py` amends `cfg_behaviour_rule` 63
+(`claude-held-item-must-progress-or-bounce-back`) through `apply_logged` (run
+`DEVMODE-2178-RULE63-HANDOVER-20261021`): before any hand-over for approval, Claude checks and
+states what is to be approved, that it is ready, and what approval is sought; an interim approval
+carries `-NeedsFollowup 1`. The Stop hook message (`.claude/hooks/stop_check_escalation_backlog.py`)
+carries the same checks. Tested on a copy: the migration applies once and skips on a re-run;
+approval with the follow-up flag routed the item to Claude (`re-assigned`), without it to
+`completed`. Approved by the researcher 2026-10-21. Record: GOVERNANCE.md §97.
+
+## 355. The control map, `cfg_control_home` (2026-10-21, escalation #2180, option A of #2179, for #2177)
+
+New `cfg_*` table `cfg_control_home`: one row per kind of control content, naming its one home,
+when that home is read (`cfg_enum control_read_when`), its home type (`cfg_enum
+control_home_type`) and where replaced versions go. 23 rows. Registered in `cfg_table`,
+`cfg_column` (with `enum.` expectations, so `valuequality.find_enum_violations` checks the two
+columns), `cfg_table_purpose` and `cfg_write_grant` (`configmaint.propose`). `lib/cfgreport.py`
+gains section 15, *Control map*, with its `cfg_report_section` row. `cfg_behaviour_rule` 3
+(`single-authority-pointer-not-copy`) names the map; `cfg_setting
+governance.procedural_document_taxonomy` is retired (inactive), the map replacing its four-way
+taxonomy. Migration `iba/app/migration/control_map_v1_20261021.py`, run
+`DEVMODE-2180-CONTROL-MAP-20261021`, 49 audited writes.
+
+Tested on a copy before the live run: one apply, re-run makes 0 writes; `_validate_live` 0 errors
+(live and copy); `_find_orphan_configs` 55 on the copy vs 56 live, no new orphan (the retired
+taxonomy setting dropped out); the config report generated from the copy shows section 15. Live:
+23 rows, 49 `cfg_change_detail` rows; `outputs/configs/CONFIG-REPORT-v598-20261021.md`.
+
+## 356. CLAUDE.md cut to a short entry file; its rules moved to config (2026-10-21, escalation #2181, option B of #2179, for #2177)
+
+CLAUDE.md went from 703 lines (115 KB, read every conversation) to a pointers-only entry file
+(1.5 KB), as the control map's `session_entry` row requires (§355). The old file is history at
+`archive/docs/claude-md-history-to-20261021.md`. Where each part now lives:
+`outputs/escalation/2181-claude-md-content-homes-v1-20261021.md`.
+
+Config (migration `iba/app/migration/claude_md_rules_to_config_v1_20261021.py`, run
+`DEVMODE-2181-CLAUDE-MD-RULES-20261021`, 19 audited writes):
+- a new behaviour class, `study_method`
+- 13 new rules (ids 83–95): `authoritative-source-only` (filing) and 12 `study_method` rules for
+  the fan-out, prose, the narrative reset and weave record, chapter text, weave-not-fit, change of
+  character, weaving with meaning, probing narration, no unnecessary holding, the M47 check per
+  strand, gloss scans across codes, and verse sets only through the raw layer
+- `cfg_setting governance.study_status` (the 2026-10-19 hold)
+- rule 74 gains Match before every unit pull
+- 3 `enforced_by` texts that named CLAUDE.md as the delivery are restated
+
+Code:
+- `lib/cfgquality.py` `find_orphan_configs`: the governance-setting usage check reads
+  `lib/compliance.py` beside `init.py`. #2173 moved the start routine's generic
+  `module='governance'` read there, and since then 51 of the 56 reported orphans were false.
+- `lib/cfgquality.py` `find_undelivered_conversational_rules`: verifies once, against the code,
+  that the start routine delivers every active rule (`init.py` → `compliance.deliver_lines`, from
+  `cfg_behaviour_rule WHERE active=1`), instead of per row against CLAUDE.md or memory.
+- `ps/Start-Iba.ps1`: the description no longer cites CLAUDE.md.
+
+Commands: `.claude/commands/start-project.md` (the conflicts line; the study-hold condition now
+reads `governance.study_status`), `session-close.md` and `developer-mode.md` no longer point at
+CLAUDE.md.
+
+Tested on a copy first: 19 writes, re-run 0, `_validate_live` 0 errors, orphans 4 (no new one;
+the study-status setting, flagged before the cfgquality fix, is read by the start routine).
+Delivery check: live, no undelivered rule; synthetic project root without the delivery code
+falls back to the per-row checks. Every pointer in the new CLAUDE.md resolves.
+
+Known: `iba/app/tools/temp_2110_test_plan_run.py` test 10.2 reads CLAUDE.md for the
+Narrative-Register rule text, so it now fails by design; the rule is rule 86. The script is a
+one-off (`temp_`) and should have been archived when #2110 closed (option D, #2182).
+
+## 357. Stale root controls retired to archive (2026-10-21, escalation #2182, option D of #2179, for #2177)
+
+Moves only (git mv), each into its folder's `archive/`, the control map's history home:
+- `README.md` and `tasks.md` (repo root) → `archive/docs/`
+- 19 `Workflow/Instructions/` files, including the five July `AUTHORITATIVE` ones; 8 kept
+- 169 `iba/docs/` files; 35 kept
+
+A file was retired only if nothing live names it. "Live" covers:
+- every text column of the active rule-category `cfg_*` tables
+- open and parked escalations
+- `iba/app` code (not migrations)
+- `.claude/`
+- CLAUDE.md, CHARTER.md, GOVERNANCE.md and USER-GUIDE.md
+
+The style guide's source table points at the archived `wa-narrative-style-instruction-v1`. The
+manifest was rebuilt (`research/discovery/file-manifest-v8-20261021.md`). Record, with the 27 old
+tasks and the permission-setting lines left for the researcher:
+`outputs/escalation/2182-stale-root-controls-retired-v1-20261021.md`. The #2179 review is now v2: v1
+called `scripts/apply_session_patch.py` missing, and it is present (superseded).
+
+## 358. Replaced history out of the routine read path (2026-10-21, escalation #2183, option C of #2179, for #2177)
+
+The researcher's widening of option C: history replaced by a new or changed version, in any file,
+document or table, is not read every time; it is kept for deliberate reading of a past state.
+
+Config:
+- Migration `iba/app/migration/history_out_of_read_path_v1_20261021.py` (run
+  `DEVMODE-2183-HISTORY-OUT-20261021`, 36 audited writes):
+  - new rule 96 `replaced-history-out-of-read-path`
+  - rule 33 no longer keeps reversed items struck through in place
+  - `governance.governance_md_on_rule_change`: GOVERNANCE.md describes the mechanism as it is now;
+    a single rule change is recorded in `cfg_change_detail`, not as a GOVERNANCE.md entry
+  - 21 rule texts and 13 settings restated as the current rule only. A rule's removed text is
+    appended to its `source`; a setting's prior value is in `cfg_change_detail`.
+  - the control map's `mechanism` row names the archived GOVERNANCE.md as history
+- Migration `iba/app/migration/devmode_rule_from_command_v1_20261021.py` (run
+  `DEVMODE-2183-DEVMODE-RULE-20261021`): rule 97 `developer-mode-scope-and-conduct`, the scope and
+  conduct the /developer-mode command used to hold as text.
+
+The start-up print, measured by `compliance.deliver_lines`, went from 85 KB to 77 KB on the copy.
+
+Documents:
+- **GOVERNANCE.md** is rewritten as the current mechanism (about 130 lines). The old file, with
+  §1–§97, is history at `archive/docs/governance-md-history-to-20261021.md` (a byte-identical copy,
+  checked with cmp). References to "GOVERNANCE.md §NN" point there.
+- **CHARTER.md §4:** the struck-through testing sentence is replaced by its current statement, on the
+  researcher's C instruction.
+- **`.claude/commands/`:** developer-mode.md is the procedure only, and start-project.md and
+  session-close.md lose their rebuild-provenance lines.
+
+Tested on a copy first: 36 writes, re-run 0, `_validate_live` 0 errors, orphans 4 (unchanged), no
+live rule or setting left with a dated-amendment or incident marker. Every claim in the new
+GOVERNANCE.md was checked against the code and config. Two corrections were made before it went
+live: `cfg_trigger` is schema, and unregistered tables are coherence errors.
+
+Not in this entry:
+- USER-GUIDE.md is rewritten under #2187.
+- Memory and the docs/ duplicates are option E (#2184).
+- The study's own files (style guide change history, chapter version notes) wait for the study to
+  re-open (`governance.study_status`).
+- History in code comments and docstrings is not swept.
+- `cfgquality.find_stale_governance_docs` still compares GOVERNANCE.md against every config change;
+  it is retargeted under G (#2186).
+
+## 359. Memory holds only what config cannot (2026-10-21, escalation #2184, option E of #2179, for #2177)
+
+Claude's project memory went from 345 files (a 115-entry index read every conversation) to 6: the
+researcher's profile and 5 data pointers, under a short index. The other 339 files are in the
+memory folder's `archive/` (moved, not deleted). By disposition:
+- 77 repeat a rule already in config
+- 22 held live rules with no config home; these became 15 new rules (migration
+  `iba/app/migration/memory_rules_to_config_v1_20261021.py`, run
+  `DEVMODE-2184-MEMORY-RULES-20261021`, 17 audited writes including two class pointers cleared)
+- 7 tool facts for the USER-GUIDE rewrite (#2187)
+- 29 study principles left for the researcher when the study re-opens
+- 70 retired-method rules, 122 project-state files and 12 stale pointers, all history
+
+`docs/interaction-preferences.md` and `docs/file-organisation-rules.md` are archived to
+`archive/docs/`, and `cfg_behaviour_class.authoritative_doc` for `chat`/`terminal` is cleared.
+
+Tested on a copy first: 17 writes, re-run 0, `_validate_live` 0 errors, orphans 4.
+
+Record, with every memory file's disposition:
+`outputs/escalation/2184-memory-dispositions-v1-20261021.md`.
+
+## 360. Rule delivery scoped to the session (2026-10-21, escalation #2185, option F of #2179, for #2177)
+
+Every active behaviour rule now carries `cfg_behaviour_rule.deliver_when`:
+- `always`
+- `study_active`: delivered only while the new `cfg_setting behaviour.study_state` is `active`
+- `developer_mode`: delivered only in a Developer Mode session's compliance file
+
+Both value lists are `cfg_enum` sets, `behaviour_rule_deliver_when` and `study_state`.
+`governance.study_status` keeps the ruling and the reason. Tagged:
+- 26 study rules: the `study_method` class, plus 69–74 and 76–79 filed under other classes
+- 9 code-building rules: 5, 6, 41, 42, 43, 46, 75, 97, 106
+- the rest stay `always`
+
+Migration `iba/app/migration/rule_delivery_scope_v1_20261021.py`, run
+`DEVMODE-2185-RULE-DELIVERY-SCOPE-20261021`, 42 audited writes and one `ALTER TABLE`.
+
+Code:
+- `lib/compliance.py`: `deliver_set`/`withheld`/`study_active`; `rules`, `deliver_lines`,
+  `template` and `retired_mentions` take a mode; the file carries `Mode:`, which `parse` and
+  `check_start` read; `deliver_lines` ends with the count not delivered.
+- `handlers/compliance.py`: reads `-Param Mode`.
+- `ps/Compliance.ps1`: `-Mode Standard|Developer`.
+- `lib/cfgquality.py`: comment only.
+
+Docs: USER-GUIDE §11c; `.claude/commands/developer-mode.md` step 2. A Developer Mode session now
+writes and checks its own compliance file; before, it loaded the development class only and
+restated nothing. The PS tools worksheet is synced
+(`iba/app/tools/temp_2185_ps_worksheet_sync.py`; drift 0).
+
+Effect, live, study on hold: the standard start delivers 71 of the 106 active behaviour rules, and
+the start print went from 85 KB (before C) to 60 KB.
+
+Test plan `iba/app/tools/temp_2185_rule_delivery_test_run.py`, run on a copy: 10/10 pass (T1–T8:
+standard/developer/study-active sets, an invalid state raises, the mode round-trips through the
+file, a developer-only row in a standard file is reported, the withheld summary, validate clean
+and a bad `deliver_when` caught).
+
+**Testing note:** copies made with a plain file copy miss writes still in `iba.db-wal`. This one
+was taken with the SQLite backup API. Earlier copy tests this session (§355–§359) used `cp` and
+may have missed in-session writes. Each of those live applies was checked afterwards, and a full
+live validation after F gives 0 coherence errors, the same 4 pre-existing orphans and no
+undelivered rule.
+
+## 361. Session-close checks the control files, SC15 (2026-10-21, escalation #2186, option G of #2179, for #2177)
+
+The researcher took G to be in place already. It was not: nothing read the control documents' own
+pointers, sizes or leftover history. What existed:
+- path checks on escalations (Context)
+- path checks on rule texts (compliance `retired_mentions`)
+- a restatement check over 3 fixed documents
+- a GOVERNANCE.md timestamp check, wrong since #2183
+
+New `cfgquality.control_files` lists the files of the control-map kinds that
+`session_close.control_kinds` names. New `cfgquality.find_control_file_problems` checks each one:
+- it exists
+- every path it names (link or backtick, outside code fences) resolves, relative to the file or
+  the project root
+- no path points into an `archive/` folder unless the line carries
+  `session_close.history_pointer_word`
+- no `session_close.history_markers` text (rule 96)
+- a file read every conversation stays within `session_close.always_read_max_bytes` (10,000)
+
+Wiring:
+- `handlers/session_close.py` runs it as **SC15** on every close.
+- `find_restated_authoritative_content` now compares the same control files, plus USER-GUIDE.md.
+- `find_stale_governance_docs` is retired from `configmaint.validate` and the config report.
+
+Settings: migration `iba/app/migration/control_file_check_v1_20261021.py`, run
+`DEVMODE-2186-CONTROL-FILE-CHECK-20261021`, 4 settings (module validation). `tool_usage`
+(USER-GUIDE.md) is left out of the kinds until its rewrite, #2187.
+
+Test plan `iba/app/tools/temp_2186_control_file_check_test_run.py`, on a WAL-complete copy: 9/9
+synthetic cases pass (clean set, unresolved path, archive pointer with and without the history
+word, struck text, dated superseded note, fenced path ignored, size limit, missing file). The first
+real run found 13 bare or stale references in the control files (bare script names; two memory
+pointers). They were fixed to full paths, and `.db` was dropped from the path pattern (`iba.db`
+names a database). After the fixes: 15 control files, 0 findings. Validation found a list-valued
+setting named `*patterns` (a regex-string convention); it was renamed
+`session_close.history_markers`. Live: SC15 0 findings; restatement check over the control files 0
+(17 s); `_validate_live` 0 errors. Documented in `.claude/commands/session-close.md` and the
+USER-GUIDE session-close table.
+
+## 362. #2182 follow-up: the second configurator and the one-off scripts retired (2026-10-21, escalation #2182, for #2177)
+
+On the researcher's instruction (#2182 §6, "retire and archive all these items"):
+- **`iba/config/`:** the unused configurator design moved to
+  `iba/config/archive/configurator-design-to-20261021/`. That is the README, the
+  `process/` and `wide/` folders, `_manifest*`, `_change_log.jsonl`,
+  `utility/config-maintenance.*` and `utility/run.json`. What live code reads stays:
+  `DBSchema/`, `utility/DBSchema_maintenance.*` and `utility/step.*` (read by
+  `iba/scripts/build_dbschema.py` and `iba/scripts/probe_step_api.py`).
+- **GOVERNANCE.md §8** says this.
+- **The 15 one-off `iba/app/tools/temp_*.py` scripts** moved to `iba/app/tools/archive/`
+  (`governance.redundancy_archiving`), including this session's test runs for #2185 and #2186.
+- **The 27 tasks of the archived `tasks.md`** are closed as superseded or retired; the task list is
+  the escalation table.
+
+Raised from the same instruction:
+- #2188: the 8 live instruction files moved into config, the narrative rules first
+- #2189: information on the permission settings, for a decision
+
+SC15 after the moves: 0 findings.
+
+## 363. USER-GUIDE.md rewritten as current tool usage (2026-10-21, escalation #2187, for #2177)
+
+USER-GUIDE.md went from 2,104 lines (137 KB, 43 sections, much of it dated history and retired
+tools presented as live) to 607 lines (33 KB). It now holds how to run each active tool, as it is
+now; rules are named by key, not restated. The old guide is a byte-identical copy at
+`archive/docs/user-guide-md-history-to-20261021.md`.
+
+**Built from the live sources:** every `iba/app/ps/*.ps1` (its help and `param()` block) and
+`cfg_work_package`/`cfg_step` (active or inactive). Corrections against the old guide, all taken
+from config:
+- `Build-Passages.ps1` is active, though the old guide called it retired.
+- `BookNarrative-Generate.ps1` and `BookNarrative-Validate.ps1` are inactive, though the old guide
+  presented them as live; `Book-Narrative.ps1` runs both steps.
+- Nine active scripts the old guide never mentioned are covered: BatchProgress, Catalogue-Report,
+  Catalogue-Update, Lexical-Readiness, Observation-Enhancer, Purge-SoftDeletes, RelationalReading,
+  Run-Stage1Batch, VerseMeta, and Copy-NarrativeToLearning4Comfort.
+- The API key is needed by the cluster-reading stages and `Book-Narrative.ps1` (checked in code).
+- The seven escalation tool facts recovered from memory (#2184) are in §3.2.
+- Inactive scripts are listed in §12.
+
+**Also:**
+- `ps/Behaviour.ps1` `-Class` gains `filing` and `study_method`, the two classes missing from its
+  list.
+- `session_close.control_kinds` gains `tool_usage` (migration
+  `iba/app/migration/control_kinds_add_tool_usage_v1_20261021.py`, run
+  `DEVMODE-2187-CONTROL-KINDS-TOOL-USAGE-20261021`), so the guide is checked at every close (SC15).
+  It was tested on a WAL-complete copy first: 22 bare script names were found and written as full
+  paths, after which there were 0 findings.
+
+**Live after:**
+- SC15 0 findings over 16 control files.
+- Restatement check 0.
+- `_validate_live` 0 errors, orphans 4 (unchanged).
+- PS worksheet drift 0.
+- Two bell bytes (0x07, from `\a` in an edit string) were found in the guide and fixed (rule 108).
+
+## 364. Files moved to archive this session, by name (2026-10-21, escalations #2182, #2186, for #2177)
+
+For SC10. These moves were made under §362 (#2182 §6) and the test-script archiving in §360–§361:
+
+- `iba/app/tools/archive/temp_1682_assemble_cluster_json.py`
+- `iba/app/tools/archive/temp_1682_build_A_destroy.py`
+- `iba/app/tools/archive/temp_1682_build_B_sin.py`
+- `iba/app/tools/archive/temp_1682_build_H_guilt_v2.py`
+- `iba/app/tools/archive/temp_1682_build_SUNDRY_v2.py`
+- `iba/app/tools/archive/temp_1682_build_processD_B_sin.py`
+- `iba/app/tools/archive/temp_1682_build_processD_G_transgression.py`
+- `iba/app/tools/archive/temp_1682_build_processD_H_guilt.py`
+- `iba/app/tools/archive/temp_1682_build_processE_synthesis1.py`
+- `iba/app/tools/archive/temp_1682_render_family_md.py`
+- `iba/app/tools/archive/temp_1682_verify_strong_checks.py`
+- `iba/app/tools/archive/temp_2110_test_plan_run.py`
+- `iba/app/tools/archive/temp_2136_citation_format_audit.py`
+- `iba/app/tools/archive/temp_2138_add_gap_verses.py`
+- `iba/app/tools/archive/temp_2173_test_plan_run.py`
+- `iba/app/tools/archive/temp_2185_ps_worksheet_sync.py`
+- `iba/app/tools/archive/temp_2185_rule_delivery_test_run.py`
+- `iba/app/tools/archive/temp_2186_control_file_check_test_run.py`
+- `iba/config/archive/configurator-design-to-20261021/README.md`
+- `iba/config/archive/configurator-design-to-20261021/_change_log.jsonl`
+- `iba/config/archive/configurator-design-to-20261021/_manifest.json`
+- `iba/config/archive/configurator-design-to-20261021/_manifest.md`
+- `iba/config/archive/configurator-design-to-20261021/process/base.json`
+- `iba/config/archive/configurator-design-to-20261021/process/base.md`
+- `iba/config/archive/configurator-design-to-20261021/process/characteristics.json`
+- `iba/config/archive/configurator-design-to-20261021/process/characteristics.md`
+- `iba/config/archive/configurator-design-to-20261021/process/lexical.json`
+- `iba/config/archive/configurator-design-to-20261021/process/lexical.md`
+- `iba/config/archive/configurator-design-to-20261021/process/raw.json`
+- `iba/config/archive/configurator-design-to-20261021/process/raw.md`
+- `iba/config/archive/configurator-design-to-20261021/process/registry.json`
+- `iba/config/archive/configurator-design-to-20261021/process/registry.md`
+- `iba/config/archive/configurator-design-to-20261021/utility/config-maintenance.json`
+- `iba/config/archive/configurator-design-to-20261021/utility/config-maintenance.md`
+- `iba/config/archive/configurator-design-to-20261021/utility/run.json`
+- `iba/config/archive/configurator-design-to-20261021/wide/enums.json`
+- `iba/config/archive/configurator-design-to-20261021/wide/enums.md`
+- `iba/config/archive/configurator-design-to-20261021/wide/pipeline.json`
+- `iba/config/archive/configurator-design-to-20261021/wide/pipeline.md`
+- `iba/config/archive/configurator-design-to-20261021/wide/reconciliations.json`
+- `iba/config/archive/configurator-design-to-20261021/wide/reconciliations.md`
+
+Also changed: `iba/app/handlers/configmaint.py`, which drops the retired `stale_docs` finding (§361).

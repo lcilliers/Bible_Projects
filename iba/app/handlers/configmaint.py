@@ -344,8 +344,6 @@ def validate(ctx: Ctx) -> Outcome:
                                 "setting(s) needing justification"),
         "stale_filled_by": (cfgquality.find_filled_by_referencing_inactive_step(ctx.db.conn),
                            "column(s) with a stale filled_by"),
-        "stale_docs": (cfgquality.find_stale_governance_docs(ctx.db.conn, APP_ROOT),
-                      "stale-doc finding(s)"),
         "unregistered_lib_modules": (cfgquality.find_unregistered_lib_modules(ctx.db.conn, APP_ROOT),
                                     "lib module(s) missing a cfg_utility row"),
         # Phase 0 of the engine-controls migration (escalation #672) — the project-wide counterpart

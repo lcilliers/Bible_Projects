@@ -1,0 +1,174 @@
+﻿database,table_name,name,ordinal,sql,use,inactive
+iba,verse,verse_meta_on_verse_insert,0,"CREATE TRIGGER verse_meta_on_verse_insert
+            AFTER INSERT ON verse
+            BEGIN
+                INSERT INTO verse_meta
+                    (verse_id, testament, language, chapter, verse_num, created_at, deleted)
+                SELECT
+                    NEW.id,
+                    CASE WHEN (SELECT ordinal FROM cfg_book_order
+                               WHERE book = substr(NEW.osisId, 1, instr(NEW.osisId,'.')-1)) <= 38
+                         THEN 'OT' ELSE 'NT' END,
+                    CASE WHEN (SELECT ordinal FROM cfg_book_order
+                               WHERE book = substr(NEW.osisId, 1, instr(NEW.osisId,'.')-1)) <= 38
+                         THEN 'Hebrew' ELSE 'Greek' END,
+                    CAST(substr(NEW.osisId, instr(NEW.osisId,'.')+1,
+                         instr(substr(NEW.osisId, instr(NEW.osisId,'.')+1),'.')-1) AS INTEGER),
+                    CAST(substr(NEW.osisId, instr(NEW.osisId,'.')+1
+                         + instr(substr(NEW.osisId, instr(NEW.osisId,'.')+1),'.')) AS INTEGER),
+                    strftime('%Y-%m-%dT%H:%M:%SZ','now'), NEW.deleted;
+            END",keeps verse_meta in step when a verse row is inserted,0
+iba,verse,verse_meta_on_verse_deleted,1,"CREATE TRIGGER verse_meta_on_verse_deleted
+            AFTER UPDATE OF deleted ON verse
+            WHEN NEW.deleted != OLD.deleted
+            BEGIN
+                UPDATE verse_meta SET deleted = NEW.deleted, updated_at = strftime('%Y-%m-%dT%H:%M:%SZ','now')
+                WHERE verse_id = NEW.id;
+            END",keeps verse_meta in step when a verse is soft-deleted,0
+iba,verse_passage,verse_meta_on_passage_change,2,"CREATE TRIGGER verse_meta_on_passage_change
+            AFTER INSERT ON verse_passage
+            WHEN NEW.deleted = 0
+            BEGIN
+                UPDATE verse_meta SET
+                    passage_id = NEW.passage_id,
+                    is_passage_anchor = NEW.is_anchor,
+                    updated_at = strftime('%Y-%m-%dT%H:%M:%SZ','now')
+                WHERE verse_id = NEW.verse_id;
+            END",keeps verse_meta in step when verse_passage changes,0
+iba,verse_lexical,verse_meta_on_lexical_change,3,"CREATE TRIGGER verse_meta_on_lexical_change
+            AFTER INSERT ON verse_lexical
+            WHEN NEW.deleted = 0 AND NEW.strong IS NOT NULL
+            BEGIN
+                UPDATE verse_meta SET
+                    language = (
+                        SELECT s.language FROM verse_lexical vl
+                        JOIN strong s ON s.strongNumber = vl.strong
+                        WHERE vl.verse_id = NEW.verse_id AND vl.deleted = 0
+                        AND s.language IS NOT NULL
+                        GROUP BY s.language ORDER BY COUNT(*) DESC, s.language LIMIT 1
+                    ),
+                    updated_at = strftime('%Y-%m-%dT%H:%M:%SZ','now')
+                WHERE verse_id = NEW.verse_id;
+            END",keeps verse_meta in step when verse_lexical changes,0
+bible_research,wa_verse_records,wa_verse_records_updated_at,0,"CREATE TRIGGER wa_verse_records_updated_at
+AFTER UPDATE ON wa_verse_records
+BEGIN
+    UPDATE wa_verse_records
+    SET updated_at = strftime('%Y-%m-%dT%H:%M:%S','now')
+    WHERE id = NEW.id;
+END",stamps wa_verse_records.updated_at on update,0
+bible_research,wa_quality_flag_types,wa_quality_flag_types_cascade_delete,1,"CREATE TRIGGER wa_quality_flag_types_cascade_delete
+AFTER UPDATE OF delete_flagged ON wa_quality_flag_types
+WHEN NEW.delete_flagged = 1 AND OLD.delete_flagged = 0
+BEGIN
+    UPDATE wa_data_quality_flags SET delete_flagged = 1 WHERE flag_id = NEW.id;
+END",removes a quality flag type's flags with it,0
+bible_research,prose_section,prose_section_ad,2,"CREATE TRIGGER prose_section_ad AFTER DELETE ON prose_section BEGIN
+        DELETE FROM prose_section_fts WHERE rowid = old.id;
+    END",keeps prose_section_fts in step on delete,0
+bible_research,prose_section,prose_section_ai,3,"CREATE TRIGGER prose_section_ai AFTER INSERT ON prose_section BEGIN
+            INSERT INTO prose_section_fts(rowid, body, heading, section_type_code,
+                                          registry_id, cluster_code, characteristic_id, status)
+            VALUES (new.id, new.body, new.heading,
+                    (SELECT code FROM ""prose_section_type"" WHERE id=new.section_type_id),
+                    new.registry_id, new.cluster_code, new.characteristic_id, new.status);
+        END",keeps prose_section_fts in step on insert,0
+bible_research,prose_section,prose_section_au,4,"CREATE TRIGGER prose_section_au AFTER UPDATE ON prose_section BEGIN
+        DELETE FROM prose_section_fts WHERE rowid = old.id;
+        INSERT INTO prose_section_fts(rowid, body, heading, section_type_code,
+                                      registry_id, cluster_code, characteristic_id, status)
+        VALUES (new.id, new.body, new.heading,
+                (SELECT code FROM ""prose_section_type"" WHERE id=new.section_type_id),
+                new.registry_id, new.cluster_code, new.characteristic_id, new.status);
+    END",keeps prose_section_fts in step on update,0
+iba,narrative_claim,trg_narrative_claim_ref_ai,0,"CREATE TRIGGER trg_narrative_claim_ref_ai AFTER INSERT ON narrative_claim WHEN NEW.claim_ref IS NULL
+BEGIN
+  UPDATE narrative_claim SET claim_ref = 'C-' || NEW.id WHERE id = NEW.id;
+END",a new claim with no claim_ref is given C-{id} (spec sec3.3) -- escalation #2110,0
+iba,narrative_claim,trg_narrative_claim_ai,1,"CREATE TRIGGER trg_narrative_claim_ai AFTER INSERT ON narrative_claim
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, change_date, change_kind, claim_after, verdict_after, chapter_id, section_id, basis, provenance, created_by)
+  VALUES (NEW.id, substr(NEW.created_at, 1, 10), 'claim created', NEW.claim_text, NEW.verdict, NEW.main_chapter_id, NEW.main_section_id, 'direct edit', 'trigger trg_narrative_claim_ai', 'trigger');
+END",every new claim writes its 'claim created' change row -- escalation #2110,0
+iba,narrative_claim,trg_narrative_claim_text_au,2,"CREATE TRIGGER trg_narrative_claim_text_au AFTER UPDATE OF claim_text ON narrative_claim WHEN OLD.claim_text IS NOT NEW.claim_text
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, change_date, change_kind, claim_before, claim_after, basis, provenance, created_by)
+  VALUES (NEW.id, date('now'), 'edited', OLD.claim_text, NEW.claim_text, 'direct edit', 'trigger trg_narrative_claim_text_au', 'trigger');
+END",a change to a claim's wording writes its before and after (test plan 2.4) -- escalation #2110,0
+iba,narrative_claim,trg_narrative_claim_verdict_au,3,"CREATE TRIGGER trg_narrative_claim_verdict_au AFTER UPDATE OF verdict ON narrative_claim WHEN OLD.verdict IS NOT NEW.verdict
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, change_date, change_kind, verdict_before, verdict_after, basis, provenance, created_by)
+  VALUES (NEW.id, date('now'), 'verdict changed', OLD.verdict, NEW.verdict, 'direct edit', 'trigger trg_narrative_claim_verdict_au', 'trigger');
+END",a change of verdict writes its before and after (test plan 2.5) -- escalation #2110,0
+iba,narrative_claim,trg_narrative_claim_status_au,4,"CREATE TRIGGER trg_narrative_claim_status_au AFTER UPDATE OF status ON narrative_claim WHEN OLD.status IS NOT NEW.status
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, change_date, change_kind, claim_before, claim_after, note, basis, provenance, created_by)
+  VALUES (NEW.id, date('now'), CASE NEW.status WHEN 'withdrawn' THEN 'claim withdrawn' ELSE 'edited' END, NEW.claim_text, NEW.claim_text, 'status: ' || OLD.status || ' -> ' || NEW.status, 'direct edit', 'trigger trg_narrative_claim_status_au', 'trigger');
+END","a change of status (withdrawn, held, current) is logged -- escalation #2110",0
+iba,narrative_passage,trg_narrative_passage_text_au,0,"CREATE TRIGGER trg_narrative_passage_text_au AFTER UPDATE OF passage_text ON narrative_passage WHEN OLD.passage_text IS NOT NEW.passage_text
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, passage_id, change_date, change_kind, passage_before, passage_after, chapter_id, section_id, basis, provenance, created_by)
+  SELECT t.claim_id, NEW.id, date('now'), 'telling changed', OLD.passage_text, NEW.passage_text, NEW.chapter_id, NEW.section_id, 'direct edit', 'trigger trg_narrative_passage_text_au', 'trigger' FROM narrative_claim_telling t WHERE t.passage_id = NEW.id AND t.status = 'current';
+END","a change to a passage writes one row per claim it tells, with the passage before and after (test plan 2.6) -- escalation #2110",0
+iba,narrative_passage,trg_narrative_passage_move_au,1,"CREATE TRIGGER trg_narrative_passage_move_au AFTER UPDATE OF chapter_id, section_id ON narrative_passage WHEN (OLD.chapter_id IS NOT NEW.chapter_id OR OLD.section_id IS NOT NEW.section_id) AND NOT (OLD.chapter_id IS NEW.chapter_id AND (SELECT renamed_from_id FROM narrative_section WHERE id = NEW.section_id) IS OLD.section_id)
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, passage_id, change_date, change_kind, passage_after, chapter_id, section_id, section_before_id, note, basis, provenance, created_by)
+  SELECT t.claim_id, NEW.id, date('now'), 'passage moved', NEW.passage_text, NEW.chapter_id, NEW.section_id, OLD.section_id, 'moved from chapter id ' || OLD.chapter_id, 'direct edit', 'trigger trg_narrative_passage_move_au', 'trigger' FROM narrative_claim_telling t WHERE t.passage_id = NEW.id AND t.status = 'current';
+END",a passage moved to another chapter or section keeps its row and its claims; the move is logged with where from (spec sec3.1). A heading renamed in place (the new section row's renamed_from_id is the old one) is not a move -- escalation #2110,0
+iba,narrative_passage,trg_narrative_passage_retire_au,2,"CREATE TRIGGER trg_narrative_passage_retire_au AFTER UPDATE OF last_version ON narrative_passage WHEN (OLD.last_version IS NULL) <> (NEW.last_version IS NULL)
+BEGIN
+  UPDATE narrative_claim SET in_narrative = (SELECT EXISTS (SELECT 1 FROM narrative_claim_telling t JOIN narrative_passage p ON p.id = t.passage_id WHERE t.claim_id = narrative_claim.id AND t.status = 'current' AND t.kind <> 'pointer' AND p.last_version IS NULL)) WHERE id IN (SELECT claim_id FROM narrative_claim_telling WHERE passage_id = NEW.id);
+END",a passage that leaves (or returns to) the current narrative updates in_narrative of the claims it tells (test plan 2.9) -- escalation #2110,0
+iba,narrative_claim_telling,trg_narrative_telling_ai,0,"CREATE TRIGGER trg_narrative_telling_ai AFTER INSERT ON narrative_claim_telling
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, passage_id, change_date, change_kind, passage_after, chapter_id, section_id, note, basis, provenance, created_by)
+  SELECT NEW.claim_id, NEW.passage_id, substr(NEW.created_at, 1, 10), 'telling added', p.passage_text, p.chapter_id, p.section_id, NEW.kind || COALESCE(': ' || NEW.part_told, ''), 'direct edit', 'trigger trg_narrative_telling_ai', 'trigger' FROM narrative_passage p WHERE p.id = NEW.passage_id;
+  UPDATE narrative_claim SET in_narrative = (SELECT EXISTS (SELECT 1 FROM narrative_claim_telling t JOIN narrative_passage p ON p.id = t.passage_id WHERE t.claim_id = narrative_claim.id AND t.status = 'current' AND t.kind <> 'pointer' AND p.last_version IS NULL)) WHERE id = NEW.claim_id;
+END","a new telling writes 'telling added' and updates in_narrative (test plan 2.7, 2.9) -- escalation #2110",0
+iba,narrative_claim_telling,trg_narrative_telling_status_au,1,"CREATE TRIGGER trg_narrative_telling_status_au AFTER UPDATE OF status ON narrative_claim_telling WHEN OLD.status IS NOT NEW.status
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, passage_id, change_date, change_kind, passage_before, passage_after, chapter_id, section_id, note, basis, provenance, created_by)
+  SELECT NEW.claim_id, NEW.passage_id, date('now'), CASE NEW.status WHEN 'removed' THEN 'telling removed' ELSE 'telling added' END, CASE NEW.status WHEN 'removed' THEN p.passage_text END, CASE NEW.status WHEN 'removed' THEN NULL ELSE p.passage_text END, p.chapter_id, p.section_id, 'status: ' || OLD.status || ' -> ' || NEW.status, 'direct edit', 'trigger trg_narrative_telling_status_au', 'trigger' FROM narrative_passage p WHERE p.id = NEW.passage_id;
+  UPDATE narrative_claim SET in_narrative = (SELECT EXISTS (SELECT 1 FROM narrative_claim_telling t JOIN narrative_passage p ON p.id = t.passage_id WHERE t.claim_id = narrative_claim.id AND t.status = 'current' AND t.kind <> 'pointer' AND p.last_version IS NULL)) WHERE id = NEW.claim_id;
+END","a telling removed (or restored) is logged and updates in_narrative (test plan 2.7, 2.9) -- escalation #2110",0
+iba,narrative_claim_telling,trg_narrative_telling_kind_au,2,"CREATE TRIGGER trg_narrative_telling_kind_au AFTER UPDATE OF kind, part_told ON narrative_claim_telling WHEN OLD.kind IS NOT NEW.kind OR OLD.part_told IS NOT NEW.part_told
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, passage_id, change_date, change_kind, passage_after, chapter_id, section_id, note, basis, provenance, created_by)
+  SELECT NEW.claim_id, NEW.passage_id, date('now'), 'telling changed', p.passage_text, p.chapter_id, p.section_id, 'kind: ' || OLD.kind || ' -> ' || NEW.kind || '; part: ' || COALESCE(OLD.part_told, '-') || ' -> ' || COALESCE(NEW.part_told, '-'), 'direct edit', 'trigger trg_narrative_telling_kind_au', 'trigger' FROM narrative_passage p WHERE p.id = NEW.passage_id;
+  UPDATE narrative_claim SET in_narrative = (SELECT EXISTS (SELECT 1 FROM narrative_claim_telling t JOIN narrative_passage p ON p.id = t.passage_id WHERE t.claim_id = narrative_claim.id AND t.status = 'current' AND t.kind <> 'pointer' AND p.last_version IS NULL)) WHERE id = NEW.claim_id;
+END","a change to how a passage tells a claim (kind, part told) is logged -- escalation #2110",0
+iba,narrative_claim_telling,trg_narrative_telling_ad,3,"CREATE TRIGGER trg_narrative_telling_ad AFTER DELETE ON narrative_claim_telling
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, passage_id, change_date, change_kind, passage_before, note, basis, provenance, created_by)
+  SELECT OLD.claim_id, OLD.passage_id, date('now'), 'telling removed', (SELECT passage_text FROM narrative_passage WHERE id = OLD.passage_id), 'telling row deleted', 'direct edit', 'trigger trg_narrative_telling_ad', 'trigger';
+  UPDATE narrative_claim SET in_narrative = (SELECT EXISTS (SELECT 1 FROM narrative_claim_telling t JOIN narrative_passage p ON p.id = t.passage_id WHERE t.claim_id = narrative_claim.id AND t.status = 'current' AND t.kind <> 'pointer' AND p.last_version IS NULL)) WHERE id = OLD.claim_id;
+END",a deleted telling row (the tool never deletes; Untell sets status removed) is still logged -- escalation #2110,0
+iba,narrative_chapter,trg_narrative_chapter_no_bi,0,"CREATE TRIGGER trg_narrative_chapter_no_bi BEFORE INSERT ON narrative_chapter WHEN NEW.inactive = 0 AND EXISTS (SELECT 1 FROM narrative_chapter WHERE chapter_no = NEW.chapter_no AND inactive = 0)
+BEGIN
+  SELECT RAISE(ABORT, 'narrative_chapter: chapter_no is already used by an active chapter');
+END",chapter_no unique among active rows (test plan 2.3) -- escalation #2110,0
+iba,narrative_chapter,trg_narrative_chapter_no_bu,1,"CREATE TRIGGER trg_narrative_chapter_no_bu BEFORE UPDATE OF chapter_no, inactive ON narrative_chapter WHEN NEW.inactive = 0 AND EXISTS (SELECT 1 FROM narrative_chapter WHERE chapter_no = NEW.chapter_no AND inactive = 0 AND id <> NEW.id)
+BEGIN
+  SELECT RAISE(ABORT, 'narrative_chapter: chapter_no is already used by an active chapter');
+END",chapter_no unique among active rows (test plan 2.3) -- escalation #2110,0
+iba,narrative_chapter,trg_narrative_chapter_renumber_au,2,"CREATE TRIGGER trg_narrative_chapter_renumber_au AFTER UPDATE OF chapter_no ON narrative_chapter WHEN OLD.chapter_no IS NOT NEW.chapter_no
+BEGIN
+  INSERT INTO narrative_claim_change (claim_id, change_date, change_kind, chapter_id, note, basis, provenance, created_by)
+  SELECT DISTINCT t.claim_id, date('now'), 'renumbered', NEW.id, 'Ch ' || OLD.chapter_no || ' -> Ch ' || NEW.chapter_no, 'direct edit', 'trigger trg_narrative_chapter_renumber_au', 'trigger' FROM narrative_claim_telling t JOIN narrative_passage p ON p.id = t.passage_id WHERE p.chapter_id = NEW.id AND t.status = 'current';
+END",a renumbered chapter is logged on every claim it tells (spec sec3.1) -- escalation #2110,0
+iba,narrative_claim_source,trg_narrative_claim_source_verse_bi,0,"CREATE TRIGGER trg_narrative_claim_source_verse_bi BEFORE INSERT ON narrative_claim_source WHEN NEW.verse_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM verse WHERE id = NEW.verse_id)
+BEGIN
+  SELECT RAISE(ABORT, 'narrative_claim_source: verse_id has no verse row');
+END",a verse_id that names no verse row is refused (test plan 2.2); NULL is allowed -- escalation #2110,0
+iba,narrative_claim_source,trg_narrative_claim_source_verse_bu,1,"CREATE TRIGGER trg_narrative_claim_source_verse_bu BEFORE UPDATE OF verse_id ON narrative_claim_source WHEN NEW.verse_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM verse WHERE id = NEW.verse_id)
+BEGIN
+  SELECT RAISE(ABORT, 'narrative_claim_source: verse_id has no verse row');
+END",a verse_id that names no verse row is refused (test plan 2.2); NULL is allowed -- escalation #2110,0
+iba,narrative_citation,trg_narrative_citation_verse_bi,0,"CREATE TRIGGER trg_narrative_citation_verse_bi BEFORE INSERT ON narrative_citation WHEN NEW.verse_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM verse WHERE id = NEW.verse_id)
+BEGIN
+  SELECT RAISE(ABORT, 'narrative_citation: verse_id has no verse row');
+END",a verse_id that names no verse row is refused (test plan 2.2); NULL is allowed -- escalation #2110,0
+iba,narrative_citation,trg_narrative_citation_verse_bu,1,"CREATE TRIGGER trg_narrative_citation_verse_bu BEFORE UPDATE OF verse_id ON narrative_citation WHEN NEW.verse_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM verse WHERE id = NEW.verse_id)
+BEGIN
+  SELECT RAISE(ABORT, 'narrative_citation: verse_id has no verse row');
+END",a verse_id that names no verse row is refused (test plan 2.2); NULL is allowed -- escalation #2110,0

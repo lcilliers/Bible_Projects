@@ -3,8 +3,8 @@
     Start the IBA app: prepare the environment and report ready.
 
 .DESCRIPTION
-    The session startup. Run this once when you begin, before any word run — and, per CLAUDE.md,
-    on opening this project at all, before any IBA work. It:
+    The session startup. Run this once when you begin, before any word run — and, as the start-project
+    routine does, on opening this project at all, before any IBA work. It:
       - checks Python and the one dependency (requests) are available,
       - validates + loads the config into the DB (idempotent),
       - builds the data tables if missing,

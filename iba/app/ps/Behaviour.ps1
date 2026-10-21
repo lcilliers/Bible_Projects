@@ -25,7 +25,7 @@ param(
     [Parameter(Mandatory = $true)]
     [ValidateSet('List')]
     [string] $Action,
-    [ValidateSet('chat', 'terminal', 'sqlite', 'documentation', 'llm_output', 'development')]
+    [ValidateSet('chat', 'terminal', 'sqlite', 'documentation', 'llm_output', 'development', 'filing', 'study_method')]
     [string] $Class
 )
 

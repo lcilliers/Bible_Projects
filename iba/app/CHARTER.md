@@ -96,14 +96,8 @@ for building/fixing the app itself: any code, any config, any table, without the
 `cfg_behaviour_rule`) must still be checked and applied — full permissions is not licence to skip
 research. Every development task still gets an escalation item as the durable record.
 
-**App Mode (standard)** — the default session type: standard Claude Code permissions, used both
-for real operation of the app. ~~It is also used for testing anything built in a Developer Mode
-session (a Developer Mode session's own work is never tested in that same session — testing
-happens in a fresh, standard-permission session).~~ **Superseded 2026-10-13 (#2137):** work built
-in a Developer Mode session is tested in that same session, against a copy (never the live DB or
-live files), with the result recorded on its escalation. Researcher, verbatim: *"my view is that
-the testing regularly show additional development work, and switching between development and
-standard for the sake of testing is an overkill."* In App Mode, every `cfg_*` change — no exceptions for any
+**App Mode (standard)** — the default session type: standard Claude Code permissions, used
+for real operation of the app. Work built in a Developer Mode session is tested in that same session, against a copy (never the live DB or live files), with the result recorded on its escalation (#2137). In App Mode, every `cfg_*` change — no exceptions for any
 table, "mechanism" or otherwise — goes through the full `configmaint.propose` → researcher
 approval → apply cycle, exactly as it always has. Only registered modules/utilities run (the PS
 scripts under `iba/app/ps/`, dispatched through `python -m iba.app.run`) — no ad-hoc scripts, no

@@ -46,8 +46,50 @@ def _today() -> str:
     return datetime.date.today().strftime("%Y%m%d")
 
 
-def rules(conn) -> list[dict]:
-    """Every active rule of the three sets delivered at start, in delivery order."""
+MODES = ("standard", "developer")
+
+
+def study_active(conn) -> bool:
+    """The study's state flag (cfg_setting behaviour.study_state, cfg_enum study_state)."""
+    row = conn.execute("SELECT value FROM cfg_setting WHERE key='behaviour.study_state' AND "
+                       "inactive=0").fetchone()
+    if not row:
+        return False
+    state = json.loads(row[0])
+    valid = {v for (v,) in conn.execute("SELECT value FROM cfg_enum WHERE name='study_state' AND "
+                                        "inactive=0")}
+    if state not in valid:
+        raise ValueError(f"behaviour.study_state {state!r} is not one of cfg_enum study_state "
+                         f"{sorted(valid)}")
+    return state == "active"
+
+
+def deliver_set(conn, mode: str = "standard") -> set[str]:
+    """Which cfg_behaviour_rule.deliver_when values are delivered this session (#2185): 'always';
+    'study_active' only while the study is active; 'developer_mode' only in a Developer Mode
+    session. A rule outside the set is not withheld from force: its condition does not hold."""
+    allowed = {"always"}
+    if study_active(conn):
+        allowed.add("study_active")
+    if mode == "developer":
+        allowed.add("developer_mode")
+    return allowed
+
+
+def withheld(conn, mode: str = "standard") -> dict[str, int]:
+    """{deliver_when: count} of the active behaviour rules not delivered this session."""
+    allowed = deliver_set(conn, mode)
+    out: dict[str, int] = {}
+    for (dw,) in conn.execute("SELECT deliver_when FROM cfg_behaviour_rule WHERE active=1"):
+        if dw not in allowed:
+            out[dw] = out.get(dw, 0) + 1
+    return out
+
+
+def rules(conn, mode: str = "standard") -> list[dict]:
+    """Every active rule of the three sets delivered at start, in delivery order. Behaviour rules
+    are scoped by deliver_when (deliver_set)."""
+    allowed = deliver_set(conn, mode)
     out = []
     for r in conn.execute("SELECT key, value FROM cfg_setting WHERE module='governance' AND "
                           "inactive=0 ORDER BY key"):
@@ -56,8 +98,10 @@ def rules(conn) -> list[dict]:
         except Exception:
             text = r[1]
         out.append(dict(id=f"G:{r[0]}", key=r[0], text=str(text)))
-    for r in conn.execute("SELECT id, class, rule_key, rule_text, enforcement_status FROM "
-                          "cfg_behaviour_rule WHERE active=1 ORDER BY id"):
+    for r in conn.execute("SELECT id, class, rule_key, rule_text, enforcement_status, deliver_when "
+                          "FROM cfg_behaviour_rule WHERE active=1 ORDER BY id"):
+        if r[5] not in allowed:
+            continue
         out.append(dict(id=f"B:{r[0]}", key=f"{r[1]}.{r[2]}", text=r[3],
                         status=r[4]))
     for r in conn.execute("SELECT id, rule_key, rule_text FROM cfg_escalation WHERE active=1 "
@@ -66,20 +110,24 @@ def rules(conn) -> list[dict]:
     return out
 
 
-def deliver_lines(conn) -> list[str]:
-    """P2 A: the full text, from the DB, never from memory."""
+def deliver_lines(conn, mode: str = "standard") -> list[str]:
+    """P2 A: the full text, from the DB, never from memory -- the rules that apply this session."""
     L = []
     heads = {"G": "governance settings (cfg_setting module=governance)",
              "B": "behaviour rules (cfg_behaviour_rule, active)",
              "E": "escalation rules (cfg_escalation, active)"}
     last = None
-    for r in rules(conn):
+    for r in rules(conn, mode):
         k = r["id"][0]
         if k != last:
             L += ["", f"  -- {heads[k]} --"]
             last = k
         st = f" [{r['status']}]" if r.get("status") else ""
         L.append(f"  {r['id']}  {r['key']}{st}: {r['text']}")
+    w = withheld(conn, mode)
+    if w:
+        L += ["", "  -- not delivered this session (their condition does not hold): "
+              + ", ".join(f"{n} {k}" for k, n in sorted(w.items())) + " --"]
     return L
 
 
@@ -101,15 +149,15 @@ def find_file(cfg, session_id: str) -> pathlib.Path | None:
     return hits[-1] if hits else None
 
 
-def template(cfg, session_id: str) -> tuple[pathlib.Path, bool]:
-    """The skeleton, one row per active rule id; never overwrites an existing file."""
+def template(cfg, session_id: str, mode: str = "standard") -> tuple[pathlib.Path, bool]:
+    """The skeleton, one row per rule delivered in this mode; never overwrites an existing file."""
     existing = find_file(cfg, session_id)
     if existing:
         return existing, False
     path = file_path(cfg, session_id)
     path.parent.mkdir(parents=True, exist_ok=True)
     ack = cfg.required_setting("compliance.acknowledgement")
-    L = [f"# Session compliance -- {_today()} -- session {session_id}", "",
+    L = [f"# Session compliance -- {_today()} -- session {session_id}", "", f"Mode: {mode}", "",
          "> Escalation #2173 P2. Written by Claude at session start, checked by "
          "`Compliance.ps1 -Action Check -Phase Start`; evidence added during the session and "
          "checked at close (`Session-Close.ps1`, SC6). One row per rule: what it requires of me "
@@ -117,7 +165,7 @@ def template(cfg, session_id: str) -> tuple[pathlib.Path, bool]:
          "text. The `|` character may not be used inside a cell.", "",
          "## Acknowledgement", "", f"_(write: {ack})_", "",
          "## Rules", "", "| id | status | requires / reason | evidence |", "|---|---|---|---|"]
-    for r in rules(cfg.conn):
+    for r in rules(cfg.conn, mode):
         L.append(f"| {r['id']} |  |  |  |")
     L += ["", "## Conflicts and rules not followed", "",
           "_(one line per rule: `- <id>: <the conflict, both sides named / why it is not or "
@@ -161,7 +209,9 @@ def parse(path: pathlib.Path) -> dict:
             dispositions[m.group(1)] = m.group(2).strip()
     ack = " ".join(l.strip() for l in sections.get("acknowledgement", []) if l.strip()
                    and not l.strip().startswith("_("))
-    return dict(rows=rows, conflicts=conflicts, dispositions=dispositions, ack=ack)
+    m = re.search(r"^Mode:\s*(\w+)\s*$", text, re.M)
+    mode = m.group(1).lower() if m and m.group(1).lower() in MODES else "standard"
+    return dict(rows=rows, conflicts=conflicts, dispositions=dispositions, ack=ack, mode=mode)
 
 
 def _shingles(text: str, n: int) -> set[tuple]:
@@ -182,7 +232,7 @@ def copied(restatement: str, rule_text: str, n: int, share: float, min_words: in
     return len(mine & theirs) / len(mine) >= share
 
 
-def retired_mentions(conn) -> dict[str, list[str]]:
+def retired_mentions(conn, mode: str = "standard") -> dict[str, list[str]]:
     """{rule id: [retired things it names]} -- an aid for part C, never a verdict by itself."""
     from . import escalationcontext as ec
     tables = {r[0] for r in conn.execute("SELECT name FROM cfg_table WHERE inactive=1")} - \
@@ -197,7 +247,7 @@ def retired_mentions(conn) -> dict[str, list[str]]:
     # a plain English word ('finding', 'books', 'sources') counts only when written as code
     code = lambda t: re.compile(r"`" + re.escape(t) + r"`")
     path_rx = re.compile(r"(?<![\w/.-])((?:\.?[\w-]+/)+[\w.*-]+\.(?:md|py|ps1|json|xlsx|csv))\b")
-    for r in rules(conn):
+    for r in rules(conn, mode):
         hits = [f"table {t}" for t in tables
                 if (word(t) if "_" in t else code(t)).search(r["text"])]
         hits += [f"step {s}" for s in steps if word(s).search(r["text"])]
@@ -223,7 +273,7 @@ def check_start(cfg, path: pathlib.Path) -> list[dict]:
     F = []
     if sw.normalise(ack) not in sw.normalise(f["ack"]):
         F.append(dict(key="ack", reason="the acknowledgement sentence is missing or altered"))
-    live = {r["id"]: r for r in rules(conn)}
+    live = {r["id"]: r for r in rules(conn, f["mode"])}
     for rid, r in live.items():
         row = f["rows"].get(rid)
         if row is None:
@@ -240,8 +290,9 @@ def check_start(cfg, path: pathlib.Path) -> list[dict]:
                                           "reading)"))
     for rid in f["rows"]:
         if rid not in live:
-            F.append(dict(key=rid, reason="row for a rule that is not active (retired or unknown)"))
-    for rid, hits in retired_mentions(conn).items():
+            F.append(dict(key=rid, reason="row for a rule that is not delivered in this session's "
+                                          "mode (retired, unknown, or its condition does not hold)"))
+    for rid, hits in retired_mentions(conn, f["mode"]).items():
         if rid not in f["conflicts"]:
             F.append(dict(key=rid, reason="names retired things (" + "; ".join(hits[:3])
                                           + ") and is not named in the conflicts section"))

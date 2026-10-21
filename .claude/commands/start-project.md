@@ -4,8 +4,7 @@ description: Session-startup procedure — git and last-close check, IBA bootstr
 
 # Start Project — Session Startup
 
-Rebuilt 2026-10-20 (escalation #2173; proposal
-`outputs/markdown/session-routines-start-project-change-proposal-v1-20261020.md`). Run every step,
+Run every step,
 in order, every time. Do not infer a task from the results and start it: this command ends with
 the findings and a question.
 
@@ -13,7 +12,7 @@ the findings and a question.
 the report, I request it on demand."*** A check that passes is not reported. Report only what is
 wrong or needs action, by name, with its reason. Never report a bare count or "N checks passed".
 The escalation list, the threads list, the spine check and the config report are on demand only
-(`Escalation.ps1 -Action List` / `-Action Thread`, `Spine-Check.ps1`, `Config-Maintenance.ps1`).
+(`Escalation.ps1 -Action List` / `-Action Thread`, `iba/app/ps/Spine-Check.ps1`, `iba/app/ps/Config-Maintenance.ps1`).
 
 ## 1. STEP
 
@@ -58,7 +57,7 @@ It writes `Logs/compliance/COMPLIANCE-<date>-<session8>.md` with one row per act
   requires of you **in this session** (the work in hand), or why it is not engaged. Never copy the
   rule text: a copy is a finding. No `|` inside a cell. Leave `evidence` empty for now.
 - **Conflicts and rules not followed:** one `- <id>: ...` line per rule that conflicts with
-  another rule, a CLAUDE.md banner or memory (name both sides), or that is not or cannot be
+  another rule, a document or memory that restates it (name both sides; control map, `cfg_control_home`), or that is not or cannot be
   followed (why). Every rule the check lists as naming a retired thing must be here.
 
 Then:
@@ -104,7 +103,7 @@ worked strand, `escalation.worked_strand_escalations`), T-e (verse already told)
 shape), T-g (register file out of date). Report the findings by check with their items (the
 report path for the full list); a check with none is not mentioned.
 
-Only when a strand is in progress (none while the study is on hold, CLAUDE.md banner): run
+Only when a strand is in progress (none while `governance.study_status` says the study is on hold): run
 `Escalation.ps1 -Action Match -Cluster .. -Strong .. -Verse ..` for it and name the threads that
 bear on it. Name the threads waiting on the researcher only when their answer blocks the work in
 hand.

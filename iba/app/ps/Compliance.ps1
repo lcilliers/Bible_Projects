@@ -14,6 +14,11 @@
         Never overwrites an existing file. Claude then fills it: per rule, what it requires in this
         session in Claude's own words, or "not engaged" with the reason; the acknowledgement
         sentence; every conflict or rule not followed, by id.
+    -Mode Standard | Developer   (Template only; default Standard)
+        Which behaviour rules the file carries, by cfg_behaviour_rule.deliver_when (#2185):
+        'always' rules in both modes; 'developer_mode' rules only with -Mode Developer;
+        'study_active' rules only while cfg_setting behaviour.study_state is 'active'. The mode is
+        written into the file, and Check reads it from there.
     -Action Check -Phase Start
         Checks the file (lib/compliance.check_start): every active rule has a row, none is blank,
         none copies the rule text, the statuses are known, the acknowledgement is present, and
@@ -23,6 +28,8 @@
 
 .EXAMPLE
     .\Compliance.ps1 -Action Template
+.EXAMPLE
+    .\Compliance.ps1 -Action Template -Mode Developer
 .EXAMPLE
     .\Compliance.ps1 -Action Check -Phase Start
 #>
@@ -34,6 +41,8 @@ param(
     [string] $Action,
     [ValidateSet('Start')]
     [string] $Phase,
+    [ValidateSet('Standard', 'Developer')]
+    [string] $Mode = 'Standard',
     [switch] $Trace
 )
 
@@ -54,7 +63,9 @@ $stepId = if ($Action -eq 'Template') { 'compliance.template' } else { 'complian
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-COMPLIANCE"
 
 Write-IbaRunHeader -WorkPackage 'session-compliance' -Step $stepId -RunId $runId
-$json = python -m iba.app.run session-compliance --step $stepId --run-id $runId
+$params = @()
+if ($Action -eq 'Template') { $params += @('--param', "Mode=$($Mode.ToLower())") }
+$json = python -m iba.app.run session-compliance --step $stepId --run-id $runId @params
 $code = $LASTEXITCODE
 $res = $json | ConvertFrom-Json
 Write-IbaStepResult -Step $stepId -Path $res.path -Message $res.message -Code $code

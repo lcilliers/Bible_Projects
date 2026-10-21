@@ -71,4 +71,26 @@ spine.check,spine-fatal-found,pause-continue,,spine has FATAL findings needing r
 spine.check,needs-revision,report-stop,,researcher asked for more specific investigation (see comment),terminal,0
 strong.reconcile,unclassified,pause-continue,,"a strong got no cluster assignment at all (no HIGH-confidence precedent match) -- a researcher/Claude classification decision, not silently continuing (escalation #1606).",terminal,0
 raw.backfill_meaning,unclassified,pause-continue,,"a backfilled strong got no cluster assignment at all -- same class of gap as strong.reconcile, must not silently continue (escalation #1606).",terminal,0
-session.close,gaps-found,report-continue,,"session-close detected one or more gaps — see report for detail; remediation is Claude's own follow-up via .claude/commands/session-close.md, not a blocking approval cycle",terminal,0
+session.close,gaps-found,report-continue,,"session-close detected one or more gaps — see report for detail; remediation is Claude's own follow-up via .claude/commands/session-close.md, not a blocking approval cycle",terminal,1
+escalation.thread,bad-parameter,report-continue,,"usage error, not recorded as an escalation -- check -Id (id or OT-nn) and -State (on-hold|in-progress)",terminal,0
+escalation.history,bad-parameter,report-continue,,"usage error, not recorded as an escalation -- check -Id (id or OT-nn)",terminal,0
+narrative_register.add_claim,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.edit,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.tell,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.untell,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.withdraw,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.edit_note,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.edit_chapter,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.edit_section,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.record,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.find,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.history,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.check,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.export,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+narrative_register.add_chapter,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0
+compliance.template,no-session,report-continue,,the session could not be identified -- see the message,terminal,0
+compliance.check_start,no-session,report-continue,,the session could not be identified -- see the message,terminal,0
+compliance.check_start,findings-open,report-continue,,the compliance file does not pass the start check -- fix it and re-run (Compliance.ps1 exits 3),terminal,0
+session.close,findings-open,report-continue,,"session-close found open findings -- the commit is blocked until each is fixed or carried (Session-Close.ps1 exits 3); remediation is Claude's, not an approval cycle",terminal,0
+narrative_register.quote_check,quotes-failing,report-continue,,"quotations not found in the ESV text -- correct them, or disposition each at session-close",terminal,0
+narrative_register.quote_check,refused,report-continue,,"refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation)",terminal,0

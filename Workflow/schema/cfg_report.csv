@@ -34,4 +34,12 @@ report.batch_progress,Batch progress monitor,1,,md,stable,archive,0
 purge.audit,"Soft-delete purge audit (app-wide, #1766)",1,,md,stable,archive,0
 purge.execute,"Soft-delete purge execute (app-wide, #1766/#1868)",1,,md,stable,archive,0
 purge.retire_database,Database retirement — inactive tables cleared (#1868/#1872/#1873),1,,md,stable,archive,0
-session.close,Session close — escalation update / governance drift / BUILD.md coverage check (#1875),1,,md,stable,archive,0
+session.close,"Session close (#1875, rebuilt #2173)",1,,md,stable,archive,0
+escalation.thread,Open threads,1,,md,dated,archive,0
+escalation.thread_export,Open threads register,0,Generated from the escalation table (type=thread) by Escalation.ps1 -Action Export -Type thread. Do not edit by hand: respond through Escalation.ps1 -Action Update.,md,stable,archive,0
+narrative_register.find,Narrative register search,0,,md,dated,archive,0
+narrative_register.history,Narrative claim history,0,,md,dated,archive,0
+narrative_register.check,Narrative register check,0,,md,dated,archive,0
+escalation.context,What the open escalations point to,1,,md,dated,archive,0
+escalation.thread_audit,Thread audit,1,,md,dated,archive,0
+narrative_register.quote_check,Quote check,0,,md,dated,archive,0

@@ -20,7 +20,10 @@ def template(ctx: Ctx) -> Outcome:
     sid, how = _session(ctx)
     if not sid:
         return fail("no-session", f"cannot identify this session: {how}")
-    path, made = compliance.template(ctx.cfg, sid)
+    mode = str(ctx.params.get("Mode", "standard")).strip().lower()
+    if mode not in compliance.MODES:
+        return fail("no-session", f"unknown mode {mode!r}: one of {compliance.MODES}")
+    path, made = compliance.template(ctx.cfg, sid, mode)
     rel = path.relative_to(sw.repo_root()).as_posix()
     return ok(f"{'wrote' if made else 'already present'}: {rel} -- restate every rule, then "
               f"Compliance.ps1 -Action Check -Phase Start", path=rel, created=int(made))

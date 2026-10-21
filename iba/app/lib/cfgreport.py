@@ -231,8 +231,9 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
          cfgquality.find_missing_report_paths(conn)),
         ("Stale filled_by", "cfg_column.filled_by names a now-inactive step",
          cfgquality.find_filled_by_referencing_inactive_step(conn)),
-        ("Stale governance docs", "GOVERNANCE.md older than the newest applied config change",
-         cfgquality.find_stale_governance_docs(conn, APP)),
+        # "Stale governance docs" retired 2026-10-21 (#2186): GOVERNANCE.md now changes only when the
+        # mechanism changes (governance.governance_md_on_rule_change), so a config change newer than
+        # the file is not a finding. Control files are checked at every close (SC15).
         ("Unregistered lib modules", "iba/app/lib/*.py with no cfg_utility row",
          cfgquality.find_unregistered_lib_modules(conn, APP)),
         # NOTE: deliberately NOT spelling out the literal call-site pattern here (see the
@@ -363,6 +364,15 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
     ] + _table(["module", "key", "value", "use"], [
         [r["module"], r["key"], r["value"], r["use"]] for r in q(
             'SELECT module, key, value, "use" AS "use" FROM cfg_setting ORDER BY module, key')])
+
+    # escalation #2180: the control map -- each kind of control content, its one home, when the
+    # home is read, and where replaced versions go (kept out of the routine read path).
+    sections["control_map"] = _table(
+        ["kind", "home_type", "home", "read_when", "history_home", "description"], [
+            [r["kind"], r["home_type"], r["home"], r["read_when"], r["history_home"],
+             r["description"]] for r in q(
+                "SELECT kind, home_type, home, read_when, history_home, description "
+                "FROM cfg_control_home WHERE inactive=0 ORDER BY rowid")])
 
     sections["apis"] = _table(["name", "route", "input", "returns"], [
         [r["name"], r["route"], r["input"], r["returns"]] for r in q(

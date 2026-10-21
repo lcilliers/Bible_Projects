@@ -116,6 +116,20 @@ purge.retire_database,0,summary,## Summary,Summary,1,0
 purge.retire_database,1,fk-cleanup,## Dangling FK cleanup on retained tables,Dangling FK cleanup on retained tables,1,0
 purge.retire_database,2,purged,## Cleared,Cleared,1,0
 session.close,0,summary,## Summary,Summary,1,0
-session.close,1,escalation_gaps,## Escalation update coverage,Escalation update coverage,1,0
-session.close,2,governance_gaps,## Governance / config / doc drift,Governance / config / doc drift,1,0
-session.close,3,build_gaps,## BUILD.md coverage,BUILD.md coverage,1,0
+session.close,1,escalation_gaps,## Escalation update coverage,Escalation update coverage,1,1
+session.close,2,governance_gaps,## Governance / config / doc drift,Governance / config / doc drift,1,1
+session.close,3,build_gaps,## BUILD.md coverage,BUILD.md coverage,1,1
+escalation.context,0,items,## Open escalations and their files,Escalations,1,0
+escalation.thread_audit,0,findings,## Findings by check,Findings,1,0
+spine.check,3,meaning_by_design,## Meaning gaps by design (STEP holds nothing),Meaning gaps by design,1,0
+session.close,1,sc1,## SC1 Session and window,SC1,1,0
+session.close,2,sc2,## SC2 Spine (FATAL),SC2,1,0
+session.close,3,sc3,## SC3 Researcher's words recorded,SC3,1,0
+session.close,4,sc4,## SC4 Open items in the register,SC4,1,0
+session.close,5,sc5,## SC5 Analysis integrity,SC5,1,0
+session.close,6,sc6,## SC6 Rule compliance,SC6,1,0
+session.close,7,sc8,## SC8 Session log,SC8,1,0
+session.close,8,sc9,## SC9 Decisions reached their targets,SC9,1,0
+session.close,9,sc10,## SC10 BUILD.md coverage,SC10,1,0
+session.close,10,sc12,## SC12 Publish,SC12,1,0
+configmaint.report,15,control_map,## 15. Control map — one home per kind of control,15. Control map — one home per kind of control,1,0

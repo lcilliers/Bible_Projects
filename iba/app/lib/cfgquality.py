@@ -179,8 +179,13 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
                 continue
     corpus = "".join(per_file.values())
     init_corpus = per_file.get(app_root / "init.py", "")
+    # #2173 moved the startup delivery of the rules (init.py step 6) into lib/compliance.py, which
+    # init.py calls; the generic `module='governance'` read now lives there. Found 2026-10-21
+    # (#2181): with only init.py scanned, 51 of 56 orphans were governance settings that the start
+    # routine does read. Both files are the startup routine.
+    startup_corpus = init_corpus + per_file.get(app_root / "lib" / "compliance.py", "")
     governance_generic_read = (
-        "module='governance'" in init_corpus or 'module="governance"' in init_corpus)
+        "module='governance'" in startup_corpus or 'module="governance"' in startup_corpus)
 
     expectations = {r[0] for r in conn.execute(
         "SELECT expectation FROM cfg_column WHERE expectation IS NOT NULL")}
@@ -634,7 +639,7 @@ def find_unregistered_project_scripts(conn: sqlite3.Connection,
     `iba/app/` don't share `iba/app/lib/`'s one-unique-stem-per-file guarantee. `temp_*` files are
     exempt (governance.scripts_and_routines' own carve-out for throwaway scripts).
 
-    **ADVISORY, not a hard error** — deliberate, same reasoning as `find_stale_governance_docs`:
+    **ADVISORY, not a hard error** — deliberate, same reasoning as the retired stale-GOVERNANCE.md check:
     at the moment this check was built, ~345 pre-existing files (`engine/`, `scripts/`, `research/`,
     `iba/prototype/`, `iba/scripts/`) are unregistered by design (that's Phase 2 of the same plan,
     not yet executed) — a hard error here would fail `configmaint.validate` wall-to-wall for a known,
@@ -705,34 +710,6 @@ def find_missing_report_paths(conn: sqlite3.Connection) -> list[str]:
             missing.append(f"{step} has no active {key} setting in {table} — its findings would "
                           f"not persist to a report")
     return missing
-
-
-def find_stale_governance_docs(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
-    """`GOVERNANCE.md`'s own §8 rule (LIVE `cfg_setting` rows `governance.governance_md_on_rule_change`/
-    `build_md_on_code_change`, escalations #238/#239): any `cfg_*` rule change updates GOVERNANCE.md,
-    same unit of work — a rule §8 itself named as "follow-up work, not done in this pass" on
-    2026-07-22, still unbuilt when a 2026-07-29 audit found 7 real rule changes (2026-07-26 to
-    2026-07-28) with no matching GOVERNANCE.md entry. ADVISORY only (a doc update is a human act
-    this can prompt, not perform): flags if the newest applied `cfg_change_detail` row is more
-    recent than GOVERNANCE.md's own last-modified time. A coarse signal (a doc edit unrelated to
-    config also resets the clock) — good enough to prompt a look, not precise enough to hard-fail
-    on."""
-    row = conn.execute("SELECT MAX(applied_at) FROM cfg_change_detail").fetchone()
-    latest_change = row[0] if row else None
-    if not latest_change:
-        return []
-    gov = app_root / "GOVERNANCE.md"
-    if not gov.exists():
-        return [f"{gov} does not exist — cannot check currency against the newest applied "
-                f"config change ({latest_change})"]
-    import datetime
-    gov_mtime = datetime.datetime.fromtimestamp(
-        gov.stat().st_mtime, tz=datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    if gov_mtime < latest_change:
-        return [f"GOVERNANCE.md was last modified {gov_mtime}, before the newest applied "
-                f"cfg_change_detail row ({latest_change}) — check whether that change needs an "
-                f"entry (GOVERNANCE.md §8's own rule)"]
-    return []
 
 
 def find_report_version_clutter(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
@@ -1403,6 +1380,21 @@ def find_undelivered_conversational_rules(conn: sqlite3.Connection,
     is a strictly worse state than merely appearing in find_unenforced_behaviour_rules — that
     check would show it as an accepted, deliberate classification; this one shows the
     classification itself is currently false."""
+    # #2181 (2026-10-21): since #2173 the start routine delivers the active behaviour rules in full
+    # (init.py step 6 -> lib/compliance.deliver_lines, read from cfg_behaviour_rule WHERE active=1),
+    # scoped since #2185 by deliver_when (always; study_active while the study is active;
+    # developer_mode in a Developer Mode session), and the compliance file restates each one. That is the delivery mechanism for every row this
+    # check covers, so it is verified once, against the code, instead of per row against CLAUDE.md
+    # or memory (which no longer carry rule text: control map, cfg_control_home).
+    app_root = project_root / "iba" / "app"
+    try:
+        init_text = (app_root / "init.py").read_text(encoding="utf-8", errors="ignore")
+        comp_text = (app_root / "lib" / "compliance.py").read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        init_text = comp_text = ""
+    if ("compliance.deliver_lines" in init_text
+            and "cfg_behaviour_rule WHERE active=1" in comp_text):
+        return []
     rows = conn.execute(
         "SELECT id, class, rule_key, source, enforced_by FROM cfg_behaviour_rule "
         "WHERE active=1 AND enforcement_status IN ('context_delivered', 'not_mechanically_checkable') "
@@ -1591,12 +1583,19 @@ def find_restated_authoritative_content(conn: sqlite3.Connection, project_root: 
     tested live 2026-09-03: 128 rows x 569 paragraphs in ~24s, 0 false-positive noise at
     min_ratio=0.8 (an earlier, looser attempt at 0.6 produced ~19,000 unusable hits from a 50-row
     sample — precision tuning is the real difficulty here, not the lack of content_index)."""
+    # #2186: the documents compared are the control files (control_files, from cfg_control_home
+    # and session_close.control_kinds) plus USER-GUIDE.md, not a fixed list of three.
     docs = {}
-    for rel in ("iba/app/GOVERNANCE.md", "iba/app/USER-GUIDE.md", "CLAUDE.md"):
-        p = project_root / rel
-        if not p.exists():
+    files = [f for _, f, _ in control_files(conn, project_root)]
+    files += [project_root / "iba/app/USER-GUIDE.md"]
+    for p in dict.fromkeys(files):
+        if not p.is_file():
             continue
         text = p.read_text(encoding="utf-8", errors="ignore")
+        try:
+            rel = p.relative_to(project_root).as_posix()
+        except ValueError:
+            rel = "memory/" + p.name
         docs[rel] = [x.strip() for x in text.split("\n\n") if len(x.strip()) > 150]
 
     rows: list[tuple[str, str]] = []
@@ -1617,4 +1616,93 @@ def find_restated_authoritative_content(conn: sqlite3.Connection, project_root: 
                 if sm.ratio() >= min_ratio:
                     out.append(f"{table} row (starts: {txt[:60]!r}) closely matches a paragraph "
                               f"in {docname} (starts: {p[:60]!r}) — restatement, not a pointer?")
+    return out
+
+
+# ── control files (escalation #2186, option G of the #2179 review) ─────────────────────────────
+_CTRL_PATH_RX = re.compile(
+    r"(?:\]\(|`)((?:~|\.{1,2}/)?[\w.-]+(?:/[\w. -]+)*\.(?:md|py|ps1|json|csv|xlsx|txt))(?:\)|`)")
+
+
+def _setting(conn, key):
+    row = conn.execute("SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
+    if row is None:
+        raise KeyError(f"cfg_setting {key} missing")
+    return json.loads(row[0])
+
+
+def control_files(conn: sqlite3.Connection, project_root: pathlib.Path) -> list[tuple[str, pathlib.Path, str]]:
+    """[(kind, file, read_when)] -- the live files of the control-map kinds that
+    session_close.control_kinds names (cfg_control_home). A folder home contributes its *.md files
+    (never its archive/); the memory home is the Claude memory folder."""
+    kinds = set(_setting(conn, "session_close.control_kinds"))
+    out = []
+    for kind, home, read_when in conn.execute(
+            "SELECT kind, home, read_when FROM cfg_control_home WHERE inactive=0 ORDER BY rowid"):
+        if kind not in kinds:
+            continue
+        m = re.search(r"(~?[\w./-]*/[\w./-]*|[\w.-]+\.md)", home)
+        if not m:
+            continue
+        ref = m.group(1)
+        base = (pathlib.Path.home() / ref[2:]) if ref.startswith("~/") else project_root / ref
+        if base.is_dir():
+            out += [(kind, f, read_when) for f in sorted(base.glob("*.md"))]
+        elif base.is_file():
+            out.append((kind, base, read_when))
+        else:
+            out.append((kind, base, read_when))  # reported as missing by the check
+    return out
+
+
+def find_control_file_problems(conn: sqlite3.Connection, project_root: pathlib.Path) -> list[tuple[str, str]]:
+    """Session-close SC15 (#2186): [(key, text)] for every control file (control_files):
+      - the file is missing
+      - a path it names does not resolve (relative to the file, then the project root)
+      - a path it names is in an archive/ folder, on a line that does not carry the history marker
+        (session_close.history_pointer_word): a live pointer into history
+      - it carries replaced-history text (session_close.history_markers; rule 96)
+      - an always-read file is over session_close.always_read_max_bytes."""
+    marker = _setting(conn, "session_close.history_pointer_word").lower()
+    patterns = [re.compile(p) for p in _setting(conn, "session_close.history_markers")]
+    max_bytes = int(_setting(conn, "session_close.always_read_max_bytes"))
+    out = []
+    for kind, f, read_when in control_files(conn, project_root):
+        try:
+            rel = f.relative_to(project_root).as_posix()
+        except ValueError:
+            rel = "memory/" + f.name
+        if not f.is_file():
+            out.append((f"SC15:{rel}:missing", f"`{rel}` (control kind {kind}) does not exist"))
+            continue
+        text = f.read_text(encoding="utf-8", errors="ignore")
+        always_read = read_when == "always" and (kind != "claude_memory" or f.name == "MEMORY.md")
+        if always_read and len(text.encode("utf-8")) > max_bytes:
+            out.append((f"SC15:{rel}:size", f"`{rel}` is read every conversation and is "
+                        f"{len(text.encode('utf-8'))} bytes, over {max_bytes}"))
+        in_fence = False
+        for n, line in enumerate(text.splitlines(), 1):
+            if line.lstrip().startswith("```"):
+                in_fence = not in_fence
+                continue
+            for p in patterns:
+                if p.search(line):
+                    out.append((f"SC15:{rel}:{n}:history", f"`{rel}` line {n} carries replaced-"
+                                f"history text ({p.pattern!r}): {line.strip()[:90]}"))
+                    break
+            if in_fence:
+                continue
+            for ref in _CTRL_PATH_RX.findall(line):
+                if any(ch in ref for ch in "*{}<>") or "..." in ref:
+                    continue
+                cand = [(f.parent / ref), (project_root / ref)]
+                if ref.startswith("~/"):
+                    cand = [pathlib.Path.home() / ref[2:]]
+                hit = next((c for c in cand if c.exists()), None)
+                if hit is None:
+                    out.append((f"SC15:{rel}:{n}:{ref}", f"`{rel}` line {n} names `{ref}`, which "
+                                f"does not resolve"))
+                elif "archive" in hit.resolve().parts and marker not in line.lower():
+                    out.append((f"SC15:{rel}:{n}:{ref}", f"`{rel}` line {n} points into an archive "
+                                f"(`{ref}`) without marking it as history"))
     return out

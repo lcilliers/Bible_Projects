@@ -1,19 +1,18 @@
 ---
-description: Session close — detection (SC1-SC12) of what the session did, decided or left open against its record; remediation; session log; commit blocked until clean; two commits
+description: Session close — detection (SC1-SC12, SC15) of what the session did, decided or left open against its record; remediation; session log; commit blocked until clean; two commits
 ---
 
 # Session Close
 
-Rebuilt 2026-10-20 (escalation #2173; proposal
-`outputs/markdown/session-routines-session-close-change-proposal-v1-20261020.md`). Purpose: end
+Purpose: end
 the session so that nothing done, decided or left open in it exists only in the chat or in an
 unrecorded file, and the base data and the narrative are sound. **Detection is code
-(`Session-Close.ps1`); remediation is Claude's.** Do not skip steps. **Nothing is committed while
-`Session-Close.ps1` exits 3** (`cfg_behaviour_rule` session-close-blocks-commit-on-open-findings).
+(`iba/app/ps/Session-Close.ps1`); remediation is Claude's.** Do not skip steps. **Nothing is committed while
+`iba/app/ps/Session-Close.ps1` exits 3** (`cfg_behaviour_rule` session-close-blocks-commit-on-open-findings).
 
 ## 1. Detect: `iba\app\ps\Session-Close.ps1`
 
-`handlers/session_close.py` writes `session_close.report_path` (versioned). Each finding has a
+`iba/app/handlers/session_close.py` writes `session_close.report_path` (versioned). Each finding has a
 stable key. The checks:
 
 | step | finds |
@@ -28,6 +27,7 @@ stable key. The checks:
 | SC9 | a decision line in the log naming no target that changed this session |
 | SC10 | a code/config file changed (`session_close.build_scope`) not named in what BUILD.md gained |
 | SC12 | whether the narrative copy and the threads export are needed |
+| SC15 | a control file (`session_close.control_kinds`) missing, naming a path that does not resolve or points into an archive without marking it as history, carrying replaced-history text, or (read every conversation) over `session_close.always_read_max_bytes` |
 
 Read the whole report.
 
@@ -51,6 +51,7 @@ verifies every disposition; an unchecked one leaves the finding open.
 - **SC2, and anything not fixed now:** `:: carried OT-nn.n` or `:: carried #nnnn` (an open item;
   raise it if needed).
 - **SC10:** a BUILD.md entry (`## N.`, matching the existing shape) that names each file.
+- **SC15:** fix the control file: correct the path, mark a deliberate history pointer as history, move replaced text to its history home (rule 96), or cut the always-read file back.
 
 ## 3. Session log (SC8, SC9)
 
@@ -62,7 +63,7 @@ decision was recorded: a file path, a `cfg_*` table, or `#nnnn vN`. Leave **6. G
 
 ## 4. Re-run (SC11)
 
-Re-run `Session-Close.ps1` until it exits 0 (no open finding). Repeat steps 2-3 as needed.
+Re-run `iba/app/ps/Session-Close.ps1` until it exits 0 (no open finding). Repeat steps 2-3 as needed.
 
 ## 5. Publish only what changed (SC12)
 
@@ -75,7 +76,7 @@ Never publish to GitHub (`governance.no_direct_github_publish`).
 
 ## 6. Commit and push, twice (SC13)
 
-Standing pre-authorisation: `governance.session_log_triggers_commit`, CLAUDE.md section 12.
+Standing pre-authorisation: `governance.session_log_triggers_commit`.
 
 1. `git status`; stage every outstanding change (read anything unfamiliar first; never
    `database/bible_research.db`, `backups/`); commit `session YYYYMMDD: ...`; push.

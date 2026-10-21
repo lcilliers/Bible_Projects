@@ -326,3 +326,101 @@ wa_obs_question_catalogue.scope,Characteristic relational,5,0
 wa_obs_question_catalogue.scope,The HIB,6,0
 wa_obs_question_catalogue.scope,Other non-human beings,7,0
 ib_observation.tag,elevation-candidate,21,0
+escalation_type,thread,6,0
+escalation_thread_item_kind,cluster,0,0
+escalation_thread_item_kind,strong,1,0
+escalation_thread_item_kind,verse,2,0
+escalation_thread_item_kind,strand,3,0
+escalation_thread_item_kind,chapter,4,0
+escalation_thread_item_kind,event,5,0
+escalation_thread_item_kind,researcher,6,0
+escalation_thread_item_kind,escalation,7,0
+escalation_thread_item_status,open,0,0
+escalation_thread_item_status,closed,1,0
+escalation_thread_item_response_kind,touched,0,0
+escalation_thread_item_response_kind,narrowed,1,0
+escalation_thread_item_response_kind,forward,2,0
+escalation_thread_item_response_kind,ruling,3,0
+escalation_thread_item_response_kind,note,4,0
+escalation_thread_item_response_kind,closed,5,0
+escalation_thread_item_response_kind,reopened,6,0
+escalation_raise_state,raised,0,0
+escalation_raise_state,on-hold,1,0
+escalation_raise_state,in-progress,2,0
+escalation_requirement_check_kind,no_open_thread_items,9,0
+escalation_requirement_check_kind,must_be_self_correctable,10,0
+escalation_thread_item_status,withdrawn,2,0
+escalation_thread_item_status,superseded,3,0
+escalation_thread_item_response_kind,withdrawn,7,0
+escalation_thread_item_response_kind,superseded,8,0
+narrative_chapter_state,draft,0,0
+narrative_chapter_state,draft + held,1,0
+narrative_chapter_state,empty,2,0
+narrative_chapter_state,deferred,3,0
+narrative_claim_origin,original essay,0,0
+narrative_claim_origin,narrative,1,0
+narrative_claim_verdict,Stands,0,0
+narrative_claim_verdict,Widened,1,0
+narrative_claim_verdict,Restated,2,0
+narrative_claim_verdict,Withdrawn,3,0
+narrative_claim_verdict,Held,4,0
+narrative_claim_verdict,Added,5,0
+narrative_claim_verdict,New,6,0
+narrative_claim_verdict,Removed,7,0
+narrative_claim_verdict,Corrected,8,0
+narrative_claim_status,current,0,0
+narrative_claim_status,withdrawn,1,0
+narrative_claim_status,held,2,0
+narrative_claim_source_kind,verse,0,0
+narrative_claim_source_kind,lexical,1,0
+narrative_claim_source_kind,science,2,0
+narrative_claim_source_kind,study file,3,0
+narrative_telling_kind,in full,0,0
+narrative_telling_kind,in part,1,0
+narrative_telling_kind,pointer,2,0
+narrative_telling_status,current,0,0
+narrative_telling_status,removed,1,0
+narrative_claim_change_kind,claim created,0,0
+narrative_claim_change_kind,claim restated,1,0
+narrative_claim_change_kind,verdict changed,2,0
+narrative_claim_change_kind,claim withdrawn,3,0
+narrative_claim_change_kind,telling added,4,0
+narrative_claim_change_kind,telling changed,5,0
+narrative_claim_change_kind,telling removed,6,0
+narrative_claim_change_kind,passage moved,7,0
+narrative_claim_change_kind,renumbered,8,0
+narrative_claim_change_kind,edited,9,0
+narrative_change_basis,recorded,0,0
+narrative_change_basis,reconstructed,1,0
+narrative_change_basis,direct edit,2,0
+narrative_update_ref_kind,escalation,0,0
+narrative_update_ref_kind,thread,1,0
+narrative_update_ref_kind,thread item,2,0
+narrative_chapter_kind,front matter,0,0
+narrative_chapter_kind,chapter,1,0
+narrative_chapter_kind,part heading,2,0
+narrative_chapter_kind,opening,3,0
+narrative_chapter_kind,activity,4,0
+narrative_chapter_kind,key characteristic,5,0
+narrative_chapter_kind,other beings,6,0
+narrative_chapter_kind,deferred,7,0
+escalation_state_open,raised,0,0
+escalation_state_open,in-progress,1,0
+escalation_state_open,re-assigned,2,0
+escalation_state_parked,on-hold,0,0
+escalation_state_terminal,completed,0,0
+escalation_state_terminal,closed,1,0
+escalation_state_terminal,withdraw,2,0
+escalation_state_terminal,supersede,3,0
+compliance_rule_status,engaged,0,0
+compliance_rule_status,not engaged,1,0
+control_home_type,cfg_table,0,0
+control_home_type,db_table,1,0
+control_home_type,document,2,0
+control_home_type,folder,3,0
+control_home_type,harness,4,0
+control_read_when,always,0,0
+control_read_when,session_start,1,0
+control_read_when,when_invoked,2,0
+control_read_when,when_needed,3,0
+control_read_when,history_only,4,0

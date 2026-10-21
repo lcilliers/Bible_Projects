@@ -99,6 +99,13 @@ def main() -> None:
         "or write a comment and reassign it to the Researcher. Merely naming an item as 'open' "
         "without doing one of those two things is not enough -- that already happened once "
         "(2026-08-31) and produced no actual progress."
+        "\n\nBefore handing any item to the Researcher for approval (escalation #2178, rule 63): "
+        "ask (a) what exactly is the researcher to approve, (b) is it ready for approval -- "
+        "finished work or a decision with its options, not work the researcher told Claude to "
+        "carry -- and (c) does the resolution state plainly what approval is sought. If not, do "
+        "not hand it over: clearing this check is never a reason to. For an interim approval "
+        "whose result needs a further action by Claude, pass -NeedsFollowup 1 in the same call, "
+        "so `approved` routes it back to Claude and does not close a step in progress."
     )
     print(json.dumps({"decision": "block", "reason": reason}))
 

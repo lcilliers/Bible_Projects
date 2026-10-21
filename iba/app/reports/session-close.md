@@ -1,9 +1,9 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-21T03:35:17Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-21T05:52:11Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `d7696d1d-b5aa-4ccf-a85e-a48878417161` (CLAUDE_CODE_SESSION_ID); started 2026-10-20T14:51:00Z; window base commit `7d3e33ac90f22d1c9388c7abedcca9187c409cec`
-- compliance file: `Logs/compliance/COMPLIANCE-20261020-d7696d1d.md`; session log: `Logs/SESSION-LOG-20261020-session-routines-build.md`
+- session: `089851fd-e080-45a5-bb43-64281485997f` (CLAUDE_CODE_SESSION_ID); started 2026-10-21T03:38:03Z; window base commit `825e180a3401ff965ef7299ae7b17a2d359a76e8`
+- compliance file: `Logs/compliance/COMPLIANCE-20261021-089851fd.md`; session log: `Logs/SESSION-LOG-20261021-iba-reset-controls.md`
 - **open findings: 0**; cleared by disposition: 3
 
 
@@ -20,6 +20,7 @@
 - [SC9](#sc9-decisions-reached-their-targets)
 - [SC10](#sc10-buildmd-coverage)
 - [SC12](#sc12-publish)
+- sc15
 
 <a id="summary"></a>
 ## Summary
@@ -39,13 +40,13 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:c1a83a94`: researcher message 2026-10-20T14:51 is too short to be matched; name where it is recorded: "proceed" -- disposition: no record needed: "proceed" answered my question whether to run /developer-mode for #2173; the session it started and the researcher's next, full instruction are recorded verbatim in #2173 v12
-- cleared `SC3:88b53095`: researcher message 2026-10-21T03:34 is in no escalation comment written this session: "you can close this sessio" -- disposition: no record needed: the instruction to run session-close is carried out by this close itself and recorded in the session log
+- cleared `SC3:29c0df3e`: researcher message 2026-10-21T03:57 is too short to be matched; name where it is recorded: "2178 approved" -- disposition: recorded in #2178 v4
+- cleared `SC3:f0b39fe3`: researcher message 2026-10-21T04:04 is too short to be matched; name where it is recorded: "proceed with 2179" -- disposition: recorded in #2179 v2
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:727db28d`: researcher message 2026-10-21T03:21 holds, defers or asks to check something; name its register item: "And all this is done because Claude does not know how to comply with the rules and must be checked every time.  This problem existed from day 1, the IBA app was" -- disposition: in register #2173 (recorded verbatim in #2173 v18; the objection to self-checking is the open process question on #2173)
+- cleared `SC4b:8a1acaa7`: researcher message 2026-10-21T03:51 holds, defers or asks to check something; name its register item: "add to your action to clear the automatic backlog check that assigning something for me to approve means you asked what I am suppose to approve, and is it ready" -- disposition: not held: an instruction carried out the same session as #2178 (rule 63 amended and approved)
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -79,3 +80,5 @@ _no finding_
 
 - narrative copy: not needed (no chapter changed)
 - threads register export: not needed (no thread row changed)
+
+_no finding_
