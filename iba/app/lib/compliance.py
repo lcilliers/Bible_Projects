@@ -1,22 +1,16 @@
-"""compliance.py -- rule compliance: read at start, proved at close (escalation #2173 P2).
+"""compliance.py -- rule compliance: read at start, proved at close (#2173 P2). The control is a
+restatement at start checked against evidence at close:
 
-Researcher, chat 2026-10-20 (verbatim): *"You print the config report, but you ignore the content.
-What step can I take as part of the behaviour section to ensure that you read and understood the
-governance and config rules and acknowledge that you will comply with it."* An acknowledgement at
-start is what already failed (governance.session_log_required_content was printed at every start
-in October and no log was written), so the control is a restatement at start checked against
-evidence at close:
-
-  A  deliver   init.py prints, in full, every active governance setting, behaviour rule and
-               escalation rule (deliver_lines). Method rules are delivered by area when work in
-               that area starts (method_rule_lines), not all at start.
+  A  deliver   init.py prints in full every active governance setting, behaviour rule and escalation
+               rule delivered for the session (deliver_lines). Method rules are delivered by area
+               when work in that area starts (method_rule_lines).
   B  restate   Claude writes the session compliance file (template() makes the skeleton): one row
-               per rule id -- what the rule requires of me in this session, in my words, or
+               per rule id -- what the rule requires in this session, in Claude's words, or
                "not engaged" with the reason. check_start(): every active id has a row, none is
                blank, none copies the rule text, the statuses are known.
   C  conflicts the acknowledgement sentence, and by id every rule in conflict or not followed.
                retired_mentions() lists rules naming a retired table, step, setting or a file that
-               no longer exists; each must be named in the conflicts section.
+               is not on disk; each must be named in the conflicts section.
   D  prove     check_close(): every engaged rule carries evidence, and every evidence item that can
                be checked (a file, #id vN, a commit hash) checks.
 

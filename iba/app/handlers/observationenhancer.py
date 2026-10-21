@@ -1,6 +1,4 @@
-"""observationenhancer.py -- the observation_enhancer utility (escalation #1778, researcher-
-approved design 2026-09-20: proposal doc iba/docs/1778-correction-rule-utility-proposal-v1-
-20260919.md, verbatim researcher instruction "proceed with the build as planned").
+"""observationenhancer.py -- the observation_enhancer utility (#1778).
 
 Applies researcher-authored rules, stored in `cfg_observation_enhancer_rule` (added/edited via
 the standard `configmaint.propose` cycle, same as any other cfg_* row -- NOT a bespoke mechanism
@@ -50,12 +48,8 @@ def _get_rule(conn: sqlite3.Connection, rule_key: str) -> sqlite3.Row | None:
 
 
 def _applyable_statuses(conn: sqlite3.Connection) -> set[str]:
-    """Live cfg_enum lookup, not a hardcoded tuple -- found live 2026-09-20 (escalation #1795):
-    cfg_observation_enhancer_rule.status was registered as a cfg_enum group but nothing actually
-    looked it up by name at runtime, exactly the orphan-enum pattern this build should not add to.
-    'confirmed'/'active' are the two values that permit -Action Apply; intersected with the live
-    enum (not just asserted) so a future cfg_enum edit that retires/renames one of them is caught
-    here instead of silently still accepting the old name."""
+    """The statuses that permit -Action Apply ('confirmed'/'active'), intersected with the live
+    cfg_enum (#1795), so a renamed or removed value is caught here."""
     live = {r["value"] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='cfg_observation_enhancer_rule.status' "
         "AND inactive=0")}
@@ -89,13 +83,7 @@ def _validate_update_fields(conn: sqlite3.Connection, update: dict) -> str | Non
     locked = set(update) & pk
     if locked:
         return f"update_json cannot change primary key column(s) {sorted(locked)}"
-    # Added 2026-09-20 (escalation #1796): for any column that has its own cfg_enum group
-    # (ib_observation.<column>), the new value must be a live member of it -- e.g. a rule that
-    # accidentally sets status to a typo/retired value now fails loudly at this gate instead of
-    # writing an unvalidated string. Only checked for columns that actually have a registered enum
-    # group (most don't) -- see meaning_source's own note in recordingpass.py for why THAT column's
-    # live pipeline can't use this same strictness; a rule author targeting it deliberately through
-    # this tool should still be held to the canonical values, unlike the hot LLM-write path.
+    # a column with its own cfg_enum group (ib_observation.<column>) must get a live member of it (#1796)
     for col, value in update.items():
         enum_values = {r[0] for r in conn.execute(
             "SELECT value FROM cfg_enum WHERE name=? AND inactive=0", (f"ib_observation.{col}",))}

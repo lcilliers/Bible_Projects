@@ -1,10 +1,6 @@
-"""db.py — the DATA layer. Built FROM the config in the database.
-
-The schema is not in this file and no longer in a JSON file the app reads. It is in
-the cfg_* tables (cfgload.py seeded them). build_data_tables() reads cfg_column and
-creates the data tables from it. Db.write validates against cfg_column; upsert takes
-its key from cfg.unique_key. So the data tables, the allowed columns, and the dedup
-keys are all governed by config — the code enforces, it does not decide.
+"""db.py — the DATA layer, built from the config in the database: build_data_tables() creates the
+data tables from cfg_column; Db.write validates against cfg_column; upsert takes its key from
+cfg.unique_key. The code enforces; config decides.
 """
 
 from __future__ import annotations
@@ -34,25 +30,14 @@ def _col_ddl(c: sqlite3.Row) -> str:
 
 
 def table_ddl(cfg: Cfg, table: str, name: str | None = None) -> tuple[str, list[str]]:
-    """(create_table_sql, [index_sql, ...]) for `table`, entirely from current config — the ONE
-    place this logic lives (`build_data_tables()` and `migration/retrofit_debate_lexicon_tables.py`
-    both call this, so a rebuilt table is provably identical to what the generic builder would
-    produce, never a second hand-written copy of the same rules). `name` overrides the physical
-    table name in the generated SQL (used for a `{table}__retrofit` staging table) while FK/index
-    definitions still reference the real config-declared relationships.
+    """(create_table_sql, [index_sql, ...]) for `table`, entirely from current config -- the one place
+    this logic lives (also used by `migration/retrofit_debate_lexicon_tables.py`). `name` overrides the
+    physical table name (e.g. a `{table}__retrofit` staging table) while FK/index definitions keep the
+    config-declared relationships.
 
-    **Uniqueness (fixed 2026-08-07, schema-remediation-design-20260807.md).** A plain table-level
-    `UNIQUE(...)` is WRONG for any table that uses this app's soft-delete-and-reconcile convention
-    (a `deleted` column, rows corrected by soft-deleting and reinserting under the SAME natural
-    key) — it collides with the table's own legitimate history the first time any row is ever
-    corrected. Found live retrofitting `verse_lexical`: 593 natural keys already had this shape
-    (one live row + several soft-deleted predecessors from repeated rebuild passes) — a plain
-    UNIQUE would have made every one of those a hard failure. `passage` had already hit and fixed
-    this the hard way (`idx_passage_range_live`, a PARTIAL unique index, `WHERE deleted=0`) by
-    hand-bypassing this exact builder, rather than the builder itself knowing the right rule. Fixed
-    at the root instead: a table WITH a `deleted` column gets a partial unique index
-    (`CREATE UNIQUE INDEX ... WHERE deleted=0`) — unique only among LIVE rows, history exempt.
-    A table with no `deleted` column (none currently) still gets the plain inline UNIQUE."""
+    Uniqueness: a table with a `deleted` column (soft-delete-and-reconcile) gets a partial unique
+    index (`CREATE UNIQUE INDEX ... WHERE deleted=0`), unique among live rows only, so its history
+    never collides. A table without one gets a plain inline UNIQUE."""
     phys = name or table
     cols = cfg.columns(table)
     col_names = {c["name"] for c in cols}
@@ -81,9 +66,8 @@ def table_ddl(cfg: Cfg, table: str, name: str | None = None) -> tuple[str, list[
 
 
 def trigger_ddl(cfg: Cfg, table: str) -> list[str]:
-    """The CREATE TRIGGER statements for `table`, from `cfg_trigger` (escalation #2110,
-    2026-10-13). Kept apart from `table_ddl()` because a trigger may name other tables, so every
-    table must exist before any trigger is created (`build_data_tables()` does tables first)."""
+    """The CREATE TRIGGER statements for `table`, from `cfg_trigger` (#2110). Kept apart from
+    `table_ddl()`: a trigger may name other tables, so `build_data_tables()` creates every table first."""
     return cfg.triggers(table)
 
 

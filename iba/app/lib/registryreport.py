@@ -1,12 +1,7 @@
-"""registryreport.py — evaluate/review the `word_registry`: a summary, a plain per-word listing,
-its join to `strong` (via `word_strong`), and a sense report grouping registry words by the
-gloss/broad meaning their strong carries. Built 2026-07-23 per escalation #272 (the registry had
-no evaluation report at all).
-
-`listing` section added 2026-08-10 (BUILD.md §89) — the join-based sections are INNER JOIN
-through `word_strong`, so a zero-strong-link word (`blindness`, the one registry row that has
-none) was never named as an identifiable row anywhere in the report. `listing` is a plain
-`word_registry` scan, no join, so every active row appears exactly once regardless of linkage.
+"""registryreport.py — evaluate/review the `word_registry`: a summary, a plain per-word listing, its
+join to `strong` (via `word_strong`), and a sense report grouping registry words by the gloss/broad
+meaning their strong carries (#272). The `listing` section is a plain `word_registry` scan, so a
+word with no word_strong link still appears.
 """
 
 from __future__ import annotations
@@ -50,14 +45,8 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     S += ["", "**By source:**", ""] + _tbl(["source", "rows"], [[r["source"], r["n"]] for r in by_source])
     sections["summary"] = S
 
-    # Plain registry listing — one row PER WORD, regardless of word_strong linkage. Added
-    # 2026-08-10 (researcher: "does not include a listing of the registry") — every other section
-    # below joins through word_strong (INNER JOIN for by_strong/sense_report), so a word with zero
-    # links (e.g. `blindness`, id 183) never appears as an identifiable row anywhere in this
-    # report; only the intro's aggregate "with no word_strong link: N" count hints it exists.
-    # Confirmed live: grepping the previous report for "blindness" only matched an unrelated
-    # `source` string, not an actual listing of that word. This section is the one place every
-    # active word_registry row is named directly.
+# Plain registry listing -- one row per word, regardless of word_strong linkage (the other sections
+# join through word_strong, so a word with no links appears only here).
     listing = q(
         "SELECT wr.id, wr.word, wr.status, wr.source, "
         "(SELECT COUNT(*) FROM word_strong ws WHERE ws.word_id=wr.id AND ws.deleted=0) strong_count "
@@ -112,17 +101,10 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         "LEFT JOIN strong_sense ss ON ss.strong=s.strongNumber AND ss.deleted=0 "
         "WHERE wr.deleted=0 "
         "ORDER BY wr.word")
-    # Two CSVs, not one — researcher, 2026-08-10: "both word-registry table and registry table."
-    # Renamed 2026-08-11 (researcher escalation, via configmaint.propose) after the original names
-    # caused a real misreading: the joined/pairing file was called `word_registry.csv`, which read
-    # as a dump of the `word_registry` TABLE — leading the researcher and Claude to independently
-    # conclude the table itself had degenerated into a Strong's table, when the live table was
-    # (and always was) clean: one row per word, no Strong's columns. Names now match content:
-    # `word_registry.csv` (`listing`, built above for the report's own `listing` section) is the
-    # PLAIN export — one row per `word_registry` row, no join at all, genuinely "the registry".
-    # `word_registry_strong_pairing.csv` (`joined`) is the PAIRING export (LEFT JOIN word_strong/
-    # strong/strong_sense — one row per registry-word/strong pair, or one null-strong row for a
-    # zero-link word) — never read this one as "the list of registry words" on its own.
+    # Two CSVs: `word_registry.csv` (`listing`) is the plain export, one row per word_registry row, no
+    # join; `word_registry_strong_pairing.csv` (`joined`) is the pairing export (LEFT JOIN
+    # word_strong/strong/strong_sense: one row per word/strong pair, or one null-strong row for a word
+    # with no links)
     reportkit.write_csv_pairing(conn, "report.registry", path.parent / "export",
                                 row_filter={"word_registry_strong_pairing": joined,
                                             "word_registry": listing})

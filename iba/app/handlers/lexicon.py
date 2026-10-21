@@ -1,17 +1,12 @@
-"""Lexicon-parsed-layer handlers (L2b — see migration/bootstrap_lexicon_parsed_layer.py) —
-interpreters, config-governed, same shape as handlers/raw.py and handlers/candidate.py.
+"""Lexicon-parsed-layer handlers — interpreters, config-governed, same shape as handlers/raw.py.
 
-Three steps, work package `lexicon-parse` (standalone, not chained — each invoked independently):
+Three steps, work package `lexicon-parse` (standalone, each invoked independently):
   parse    — strong_meaning_tree + strong_lexicon -> strong_meaning_parsed/strong_lsj_parsed/
-             strong_mounce_parsed, via lib.lexiconparse (the corrected 2026-07-25 parse rules).
-             No network. Global scope: a full clear-and-rebuild every run, not per-word incremental
-             — there is no natural dedup key on a parsed-sense table (matches strong_meaning_tree's
-             own no-unique-key shape), and a clear-rebuild is what guarantees the parsed layer
-             always reflects the CURRENT parsing rules against the current raw data, the same
-             reasoning this session's span rebuild used (migration/rebuild_span_combined_units.py).
-  related  — strong -> strong_related, one live STEP getInfo call per row (relatedNos). Also a
-             full clear-and-rebuild (STEP's answer can change; there's no reason to keep a stale
-             fetch around once a fresh one succeeds).
+             strong_mounce_parsed, via lib.lexiconparse. No network. A full clear-and-rebuild every
+             run: a parsed-sense table has no natural dedup key, and a rebuild always reflects the
+             current rules against the current raw data.
+  related  — strong -> strong_related, one live STEP getInfo call per row (relatedNos); also a full
+             clear-and-rebuild.
   validate — read-only coverage + value-quality check across all 4 tables, persists a report every
              run (governance.reports_must_persist), escalates only if findings exist.
 """
@@ -45,17 +40,11 @@ def _base(code: str) -> str:
 
 
 def _derived_variant_rows(conn) -> list[tuple]:
-    """Escalation #1655, researcher ruling verbatim 2026-09-10: "every parse must support the
-    strong table code, if STEP does not return a result for the variant, then A NOTE MUST BE IN
-    parse to the effect, and the lemma level can be used in parse as the derived value."
-
-    For every live `strong` code that still has no exact-variant `strong_meaning_parsed` row
-    after the normal per-variant rebuild (i.e. `strong_meaning_tree` never had a row for this
-    EXACT code — checked live, confirmed against STEP directly for the whole corpus at the time
-    this was built: true STEP-side absence, not an unfetched gap), derive its parse coverage from
-    whatever senses already exist under its own base lemma, copied verbatim with a `note` marking
-    them as derived, not variant-specific. Skipped entirely for a lemma with nothing at all —
-    that's the accepted anomaly (`spine-extended-meaning-accepted-anomaly`), not fixable here."""
+    """Every parse must support the strong table code (#1655): for each live `strong` code with no
+    exact-variant `strong_meaning_parsed` row after the per-variant rebuild (STEP holds nothing for
+    that exact code), its base lemma's senses are copied with a `note` marking them derived, not
+    variant-specific. A lemma with nothing at all is skipped (the accepted anomaly,
+    spine-extended-meaning-accepted-anomaly)."""
     live_codes = {r[0] for r in conn.execute("SELECT strongNumber FROM strong WHERE deleted=0")}
     have_variant = {r[0] for r in conn.execute(
         "SELECT DISTINCT strong_variant FROM strong_meaning_parsed WHERE deleted=0")}
@@ -78,15 +67,9 @@ def _derived_variant_rows(conn) -> list[tuple]:
 
 # ── parse (global; no network) — also called directly by handlers/raw.py:backfill_meaning ────
 def rebuild_parsed_tables(ctx: Ctx) -> dict:
-    """The full parse rebuild, factored out so raw.backfill_meaning can call it directly after
-    pulling new raw meaning, instead of the researcher having to remember a separate manual
-    lexicon.parse re-run every time (found 2026-07-25: exactly this was missed once already).
-
-    Escalation #1655 (2026-09-10): after the normal per-variant rebuild, adds a standing
-    lemma-derived-with-note fallback pass (`_derived_variant_rows`) so every live `strong` code
-    ends up with SOME `strong_meaning_parsed` coverage — variant-specific where STEP has it,
-    lemma-derived-and-noted where it genuinely doesn't. Matches `strong`'s own grain (the same
-    grain `span` uses) rather than silently leaving STEP-empty variants with zero parse rows."""
+    """The full parse rebuild, also called by raw.backfill_meaning after new raw meaning is pulled.
+    After the per-variant rebuild, `_derived_variant_rows` adds lemma-derived, noted rows, so every
+    live `strong` code has `strong_meaning_parsed` coverage (#1655)."""
     _may(ctx, "lexicon.parse", "strong_meaning_parsed")
     _may(ctx, "lexicon.parse", "strong_lsj_parsed")
     _may(ctx, "lexicon.parse", "strong_mounce_parsed")
@@ -249,8 +232,7 @@ def validate(ctx: Ctx) -> Outcome:
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision, comment = answered["next_action"], answered["comment"]
-        # escalation #798/#799 SS4: decision_required now resolves via Update()'s manual
-        # vocabulary (approved) not AnswerRun's dispatcher vocabulary (approve).
+        # decision_required resolves via Update's vocabulary (approved)
         if decision in ("approve", "approved"):
             return ok(f"acknowledged: {no_lsj} strong_lexicon row(s) with no lsj parse, {no_mounce} "
                       f"with no mounce parse, {no_related} strong row(s) with no related fetch, "

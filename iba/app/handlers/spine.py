@@ -1,28 +1,21 @@
 """spine.py -- the base-data spine check (governance.base_data_spine; cfg_method_rule
-spine-verse-span-strong-sync-fatal; escalation #1613, researcher ruling 2026-09-10). Extended
-2026-10-20, escalation #2173 P3, so the check does what its name says:
+spine-verse-span-strong-sync-fatal; #1613, #2173):
 
-  1. span -> strong     every Strong's code a live span names is a live `strong` row (as before)
+  1. span -> strong     every Strong's code a live span names is a live `strong` row
   2. verse <-> span     every live span belongs to a live verse; every live verse has live spans.
-                        A verse with no `verse` row at all is a gap by design
+                        A verse with no `verse` row is a gap by design
                         (governance.verse_gap_by_design) and is never looked for.
   3. strong -> cluster  every strong a live span names resolves through cluster_strong to a live
-                        cluster (governance.base_data_spine as extended 2026-09-21, #1807/#1810 --
-                        stated since then, checked by nothing until now)
-  4. strong -> meaning  researcher, 2026-10-20 (Q1, verbatim): "you need to check that each strong
-                        have its meaning, the three tables are the extracts from STEP, so it is not
-                        about which table, it depend on what the STRONG has in step. parsed table
-                        stay retired. the check is done directly to the three core meaning
-                        tables." Local gaps are found in strong_sense (no live row or an empty
+                        cluster (#1807/#1810)
+  4. strong -> meaning  each strong has its meaning in the three core meaning tables (the STEP
+                        extracts): local gaps are found in strong_sense (no live row or an empty
                         head), strong_meaning_tree (no live row with text for the exact code) and
-                        strong_lexicon (for the languages in spine.meaning_lexicon_languages: no
-                        live row, or an empty lsj or mounce). For those codes only, STEP is asked
-                        (call2_getInfo, split exactly as raw.detail_one splits it): content in STEP
-                        that the table lacks is FATAL; STEP holding nothing is a gap by design,
-                        listed as such. If STEP cannot be asked, the gaps are reported unverified
-                        (FATAL: the check could not complete).
-
-The parse tables stay retired (removed from this check 2026-09-11, #1681/#1684/#1686).
+                        strong_lexicon (for spine.meaning_lexicon_languages: no live row, or an
+                        empty lsj or mounce). For those codes only, STEP is asked (call2_getInfo,
+                        split as raw.detail_one splits it): content in STEP that the table lacks is
+                        FATAL; STEP holding nothing is a gap by design, listed as such. If STEP
+                        cannot be asked, the gaps are reported unverified (FATAL: incomplete).
+The parse tables are not part of this check.
 
 compute() is shared with session-close (SC2, which reports FATAL findings first and blocks the
 commit until each is fixed or carried). check() is the stand-alone step (Spine-Check.ps1): it

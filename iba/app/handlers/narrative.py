@@ -1,15 +1,10 @@
 """narrative handler — structural validation for inner-being narratives written from a book's
 passage debates. Config-governed, matching `handlers/passage.py:validate`'s shape.
 
-**What this checks, and what it deliberately does not** (see `WA-inner-being-narrative-guidance-
-v1-2026-07-28.md` §4 for the full reasoning). This is a presence check on one specific,
-previously-found failure mode — a narrative silently narrowing its own stated scope by dropping
-one of the three channels (non-human<->human, human<->human, physical world<->human) an inner
-state can be reached through, found 2026-07-28 when a summary of the second Daniel narrative
-narrowed "transfer... from the outside, and other humans" down to person-to-person only. It does
-NOT judge whether a narrative's content is good, whether its citations are accurate, or whether it
-correctly applies the passage debates it draws from — those remain the researcher's/writer's own
-read, the same boundary every other quality-check in this app respects.
+A presence check on one failure mode: a narrative narrowing its own stated scope by dropping one of
+the three channels (non-human<->human, human<->human, physical world<->human) an inner state can be
+reached through (`WA-inner-being-narrative-guidance-v1-2026-07-28.md` §4). It does not judge a
+narrative's content, citations, or use of the debates: those remain the researcher's/writer's read.
 """
 
 from __future__ import annotations
@@ -20,10 +15,7 @@ import re
 from .base import Ctx, Outcome, ok, fail
 from ..lib import narrativegenerate, reportkit
 
-# Fallback only — the real value is `cfg_enum` group `narrative_required_channel` (added
-# 2026-07-29, closing a completeness gap: the exact fact this whole check exists to enforce used
-# to live only here, in code, with no config counterpart at all). Kept byte-identical so behaviour
-# is unchanged whether or not the cfg_enum rows have been approved yet.
+# Fallback only: the real value is `cfg_enum` group `narrative_required_channel`.
 _REQUIRED_LABELS_FALLBACK = ("Non-human ↔ human", "Human ↔ human", "Physical world ↔ human")
 
 _SECTION_RE = re.compile(r"^##\s+Scope self-check\s*$", re.IGNORECASE | re.MULTILINE)
@@ -134,16 +126,8 @@ def validate(ctx: Ctx) -> Outcome:
 
 def generate(ctx: Ctx) -> Outcome:
     """Assemble a book's filled debates + the two governing docs, then make ONE live Anthropic API
-    call and file the result. See `lib/narrativegenerate.py`'s module docstring for the full
-    cost/config mechanism.
-
-    escalation #798/#799 SS3.4: no longer a pause-continue approval step. `narrative.
-    generate_max_cost` is itself the approval, already enforced below as a hard `fail()` when
-    exceeded -- asking again for every call that's already within the approved cap added a
-    decision that wasn't needed (researcher, 2026-08-22: "if spend above then it is a failure...
-    an approved specification is the approval"). Any call within the cap now completes in one
-    invocation; only exceeding the cap still needs a decision, and that was already correctly a
-    `fail()`, unaffected by this change."""
+    call and file the result (see `lib/narrativegenerate.py`). `narrative.generate_max_cost` is the
+    approval: a call within it completes in one invocation; exceeding it is a `fail()`."""
     book = ctx.params["Book"]
     book_label = ctx.params.get("BookLabel") or book
     try:

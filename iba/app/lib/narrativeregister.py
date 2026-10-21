@@ -1,6 +1,6 @@
 """narrativeregister.py -- the narrative claim register in iba.db (escalation #2110).
 
-Specification (approved 2026-10-13): `_analytics/essay/spirit_soul_body/wa-essay-narrative-record-
+Specification: `_analytics/essay/spirit_soul_body/wa-essay-narrative-record-
 db-specification-v1-20261013.md`. A **claim** is a statement derived from sources that goes beyond
 their mere text, held in its own wording; the **narrative** is the story, recorded here only as the
 **passages** that tell claims; claims and passages are joined many to many. Every change keeps its
@@ -189,8 +189,8 @@ _FOLLOW_V = re.compile(r"\((?:v\.?\s?|vv\.?\s?)?(?P<body>\d+(?:\s?[–-]\s?\d+)?
 
 def unresolved(vx: VerseIndex, normalised: str, verse_id: int | None) -> bool:
     """A reference that matches no verse row: a verse with no verse_id, or a whole chapter the book
-    does not have. Researcher, 2026-10-13 (#2134): an unresolved reference in the narrative is an
-    error, and an escalation is raised to resolve it."""
+    does not have. An unresolved reference in the narrative is an error and raises an escalation
+    (#2134)."""
     if verse_id is not None:
         return False
     m = re.fullmatch(r"(\S+) (\d+)", normalised)
