@@ -1,27 +1,18 @@
-"""dbsnapshot.py — pre-write DB snapshots. THE GAP FOUND 2026-07-22: this app had no rollback
-mechanism at all — a bug in `candidate.load`'s revalidation pass wrote `decision='exception'`
-over 1029 of 1806 `candidate_seed` rows, and the only recovery path was a stale 3-day-old manual
-`.bak` file plus a lucky same-morning CSV export via `Export-Tables.ps1`. The researcher's
-verdict: this should have existed "from the word go," the way the legacy Bible-study engine
-snapshots before its `_apply_*` scripts run. This is that mechanism for the IBA app.
+"""dbsnapshot.py -- database copies: the pre-run rollback snapshot and test copies (#2193).
 
-Design, deliberately simple (a file copy, not a real backup system):
-  - `snapshot(reason)` copies iba.db to iba/app/db/snapshots/iba-<UTC timestamp>-<reason-slug>.db,
-    then prunes down to `retention.snapshot_keep_count` (config-driven, oldest deleted first).
-  - Called once per NEW run (`run.py:_ensure_run`, only when the run is first created — a resumed
-    paused run does not re-snapshot on every retry) — every run gets a pre-state to revert to,
-    not just data-writing ones, since a run's own bug is exactly what a snapshot protects against.
-  - Skippable via `IBA_NO_SNAPSHOT=1`, matching the legacy engine's `--no-backup` escape hatch for
-    tight loops (e.g. a book-by-book Set-Candidates.ps1 sweep across 66 books) — a snapshot on
-    every iteration of a loop is the "back up scripts run in a loop" problem the engine's own
-    memory entry already names.
-  - A plain file copy, not `VACUUM INTO` or a hot-backup API — iba.db is ~110MB and this runs
-    synchronously before work starts, so simplicity over cleverness; WAL mode means the
-    connection isn't holding an exclusive lock at rest, so a copy of the base file plus checkpoint
-    first is safe (see `_checkpoint_wal`).
+Every copy is made with SQLite's online backup API (`copy_db`), never a file copy: a file copy of
+a WAL-mode database misses writes still in the -wal file, and a checkpoint before it can fail
+silently while another connection is busy.
 
-    python -m iba.app.lib.dbsnapshot --reason manual-test    # take one now, from the CLI
+  - `copy_db(dest, src)` -- a consistent copy of `src` (default iba.db) at `dest`. Developer Mode
+    tests run against such a copy (cfg_behaviour_rule developer-mode-scope-and-conduct).
+  - `snapshot(reason)` -- copies iba.db to iba/app/db/snapshots/iba-<UTC timestamp>-<reason>.db,
+    then prunes to `retention.snapshot_keep_count`. Called once per new run (`run.py:_ensure_run`).
+    Skipped when IBA_NO_SNAPSHOT=1 (for tight loops, e.g. a book-by-book sweep).
+
+    python -m iba.app.lib.dbsnapshot --reason manual-test    # take a snapshot now
     python -m iba.app.lib.dbsnapshot --list                  # show what's kept
+    python -m iba.app.lib.dbsnapshot --copy-to PATH          # a test copy of iba.db at PATH
 """
 
 from __future__ import annotations
@@ -29,7 +20,6 @@ from __future__ import annotations
 import argparse
 import datetime
 import re
-import shutil
 import sqlite3
 import sys
 from pathlib import Path
@@ -44,15 +34,20 @@ def _slug(reason: str) -> str:
     return s[:40] or "run"
 
 
-def _checkpoint_wal(db_path: Path) -> None:
-    """Flush the WAL into the main db file first, so a plain file copy is a consistent snapshot
-    (WAL mode means recent writes may still be sitting in iba.db-wal, not the base file)."""
+def copy_db(dest: Path | str, src: Path | str = DB_PATH) -> Path:
+    """Copy `src` to `dest` with the SQLite backup API; returns `dest`. Refuses to overwrite."""
+    dest = Path(dest)
+    if dest.exists():
+        raise FileExistsError(f"{dest} already exists")
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    source = sqlite3.connect(f"file:{Path(src).as_posix()}?mode=ro", uri=True, timeout=30.0)
+    target = sqlite3.connect(dest)
     try:
-        conn = sqlite3.connect(db_path, timeout=5.0)
-        conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
-        conn.close()
-    except sqlite3.Error:
-        pass
+        source.backup(target)
+    finally:
+        target.close()
+        source.close()
+    return dest
 
 
 def snapshot(reason: str = "run", keep: int | None = None) -> Path | None:
@@ -64,11 +59,8 @@ def snapshot(reason: str = "run", keep: int | None = None) -> Path | None:
     if not DB_PATH.exists():
         return None
 
-    SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
-    _checkpoint_wal(DB_PATH)
     ts = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    dest = SNAPSHOT_DIR / f"iba-{ts}-{_slug(reason)}.db"
-    shutil.copy2(DB_PATH, dest)
+    dest = copy_db(SNAPSHOT_DIR / f"iba-{ts}-{_slug(reason)}.db")
     prune(keep)
     return dest
 
@@ -99,7 +91,12 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--reason", default="manual")
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--copy-to", help="write a test copy of iba.db to this path")
     a = ap.parse_args()
+
+    if a.copy_to:
+        print(f"copy: {copy_db(a.copy_to)}")
+        return 0
 
     if a.list:
         if not SNAPSHOT_DIR.exists():

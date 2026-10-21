@@ -17733,3 +17733,22 @@ Files moved:
 - `wa-study-close-20260630.md`
 - `word_study_extract_design.md`
 - `zotero_setup.md`
+
+## 367. Database copies through the SQLite backup API (2026-10-21, escalation #2193, for #2177)
+
+A plain file copy of iba.db misses writes still in `iba.db-wal`. The #2185 test copies were made
+that way, and so was the pre-run snapshot (a checkpoint, then `shutil.copy2`; the checkpoint fails
+silently while another connection is busy).
+
+- `iba/app/lib/dbsnapshot.py`: new `copy_db(dest, src)` using `sqlite3.Connection.backup`, which
+  refuses to overwrite; `snapshot()` now copies through it (`_checkpoint_wal` and `shutil` removed);
+  new `--copy-to PATH` CLI option. The docstring is rewritten to the current state.
+- Rule 97 (developer-mode-scope-and-conduct) names `dbsnapshot.copy_db` as how a database test
+  copy is made. It was amended rather than a new rule added (rule 104). Migration
+  `iba/app/migration/rule97_copy_with_backup_api_v1_20261021.py`, run
+  `DEVMODE-2193-RULE97-BACKUP-COPY-20261021`, tested on a `copy_db` copy first.
+- USER-GUIDE.md §12: the three dbsnapshot commands.
+- Test plan, 9 cases, all pass: `outputs/escalation/2193-copy-db-test-results-v1-20261021.md`
+  (runner archived: `iba/app/tools/archive/temp_2193_test_plan_run.py`). It includes the WAL case
+  (the file copy loses the row, `copy_db` keeps it), row counts of all 102 iba.db tables, and a
+  run.py snapshot (854 MB, quick_check ok).

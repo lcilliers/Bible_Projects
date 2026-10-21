@@ -587,6 +587,16 @@ These are standalone investigation utilities with no work package:
 
 `iba/app/migration/` holds one-off migrations, which are not part of any routine.
 
+**Database copies.** Every run takes a pre-run snapshot in `iba/app/db/snapshots/`. To test against
+a copy of iba.db, make it with the backup API, never a file copy (which misses writes still in
+`iba.db-wal`):
+
+```powershell
+python -m iba.app.lib.dbsnapshot --copy-to <path>.db       # a test copy of iba.db
+python -m iba.app.lib.dbsnapshot --reason <why>            # a snapshot now
+python -m iba.app.lib.dbsnapshot --list                    # the snapshots kept
+```
+
 ---
 
 ## 13. Where things are
