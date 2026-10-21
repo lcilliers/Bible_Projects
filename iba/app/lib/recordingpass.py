@@ -246,7 +246,7 @@ def _validate_tag(conn, tag: str) -> None:
 
 
 # ib_observation.meaning_source is not validated: live values are free-form strings, far outside
-# its 3-value enum; the field's shape is the open question of #1771.
+# its 3-value enum (an orphan-config finding in configmaint.validate).
 
 
 def _validate_stage(conn, stage: str) -> None:

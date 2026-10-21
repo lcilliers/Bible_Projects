@@ -233,7 +233,7 @@ def recompute_cluster_status_rollup(conn, cluster_code: str) -> dict:
     """The `ready_for_reading` -> `ready_for_observations` cluster rollup (#1690 §3a, cfg_column
     iba.cluster.status): advances once every live subgroup (excluding the FLAG bucket) has reached the
     matching level. Only this transition: ready_for_observations -> ready_for_synthesis depends on
-    Stage 5 (char-synergy), which is not designed (#1695/#1698)."""
+    Stage 5 (char-synergy), which is not designed."""
     _assert_enum_parity(conn)
     row = conn.execute("SELECT status FROM cluster WHERE cluster_code=?", (cluster_code,)).fetchone()
     if row is None:

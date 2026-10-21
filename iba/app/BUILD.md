@@ -17752,3 +17752,31 @@ silently while another connection is busy).
   (runner archived: `iba/app/tools/archive/temp_2193_test_plan_run.py`). It includes the WAL case
   (the file copy loses the row, `copy_db` keeps it), row counts of all 102 iba.db tables, and a
   run.py snapshot (854 MB, quick_check ok).
+
+## 368. Replaced history taken out of code comments and docstrings (2026-10-21, escalation #2192, for #2177)
+
+Researcher, verbatim: "take out the history overhead out of the code. it does not belong in the
+code, it belongs in the escalation or referenced file." Then: "Exclude code serving retired
+functions from the sweep. List it for archiving under governance.redundancy_archiving, then continue
+the sweep on active code only."
+
+- **Rule applied:** a comment or docstring states what the code does now and why, and points to its
+  escalation (`#nnnn`). Incident accounts, dated amendment notes, verbatim quotes and "used to /
+  previously" text were removed; they already sit in the escalations and in this file. Stale
+  statements found along the way were corrected to the current behaviour. Examples: `raw.py`'s
+  "supersedes, never overwrites" (writes are identity-stable since #1520); `narrativegenerate.py`'s
+  pause for approval (the cost cap is the approval); comments naming closed escalations as open.
+- **Scope:** 89 files in `iba/app/` (lib, handlers, tools, run.py, init.py, report.py) and
+  `.claude/hooks/`, net 4,065 comment lines fewer (2,300 in, 6,365 out). Code that serves no active
+  function was excluded and listed for archiving: 22 modules, method and list in
+  `outputs/escalation/2192-retired-code-for-archiving-v1-20261021.md`, carried by #2200. Five such
+  files were swept before the researcher's instruction; their edits stand.
+- **Safety test, every file:** compiles, and its AST with docstrings removed is identical to the
+  committed version, so only comments and docstrings changed. `configmaint.validate` gives the same
+  findings before and after (CONFIG-REPORT v599 vs v600). The escalation list, thread report and
+  compliance check run, and 31 key modules import. Tools, archived after use:
+  `iba/app/tools/archive/temp_2192_comment_sweep_check.py` (check / count / hits),
+  `temp_2192_apply.py` (line-range patches) and `temp_2192_active_reach.py` (active-code
+  reachability).
+- **Open items found in comments**, which no escalation carried, are raised as #2201. Unused
+  functions inside active files are added to #2200, and study-side exclusions to #2190.
