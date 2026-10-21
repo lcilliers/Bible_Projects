@@ -38,5 +38,23 @@ def main(target: str, patch: str) -> int:
     return 0
 
 
+def multi(patch: str) -> int:
+    """A patch whose sections are headed `FILE <path>`: each section applied to its file."""
+    import tempfile
+    sections, cur = [], None
+    for line in pathlib.Path(patch).read_text(encoding="utf8").splitlines():
+        if line.startswith("FILE "):
+            cur = [line[5:].strip(), []]
+            sections.append(cur)
+        elif cur is not None:
+            cur[1].append(line)
+    for target, body in sections:
+        with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False, encoding="utf8") as t:
+            t.write("\n".join(body))
+        if main(target, t.name):
+            return 1
+    return 0
+
+
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1], sys.argv[2]))
+    sys.exit(multi(sys.argv[1]) if len(sys.argv) == 2 else main(sys.argv[1], sys.argv[2]))

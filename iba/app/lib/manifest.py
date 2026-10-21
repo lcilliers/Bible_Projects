@@ -1,29 +1,14 @@
-"""manifest.py — the project-wide file manifest: rebuild and search.
-
-Ported from `scripts/build_file_manifest.py` (a standalone main-repo script — filename/path
-metadata only, never file *content*) per the researcher's 2026-08-15 instruction that manifest
-build/update/search must be governed IBA App functionality, with rules and a user guide, not a
-standalone script nothing else knows about. The manifest still indexes the WHOLE project tree, not
-`iba/` only — the governing MECHANISM moves into IBA; the TARGET doesn't shrink (per the
-researcher's own framing: "IBA App is the engine for all processing related tables").
+"""manifest.py — the project-wide file manifest: rebuild and search. Indexes the whole project tree
+(filename/path metadata only, never file content) into `file_manifest` in iba.db.
 
 Category/type/currency classification and the date/registry/version/cluster/word extraction
-patterns below are project-naming FACTS — how files across this repo's actual history have been
-named — not policy decisions anyone proposes to change via `configmaint.propose`. That's the same
-distinction the STEP client config (`iba/config/utility/step.json`) draws between "facts" (code:
-canon order, response field names) and "choices" (config: base_url, timeouts) — so these stay in
-code, ported near-verbatim from the working script. What genuinely IS a decision — which
-directories/extensions to skip during a scan — is `cfg_setting`, per
-`governance.rules_must_be_config_driven`.
+patterns are project-naming facts (how files in this repo are named), so they stay in code; which
+directories/extensions to skip during a scan is a decision, so it is `cfg_setting`
+(governance.rules_must_be_config_driven). folder_purpose is the primary classification source for a
+registered folder; these rules are the fallback.
 
-This module is the baseline for `contentindex.py` (round 2, file-content concordance search): the
-manifest's `file_manifest` table is the authoritative "what files exist" list that the content
-index is cross-checked against, so no file with real content silently falls outside search
-coverage.
-
-Writes to the `file_manifest` table in THIS app's own DB (`iba.db`) — not the loose JSON file
-`scripts/build_file_manifest.py` produces. That script and `database/file_manifest.json` are
-superseded once this ships (their logic lives here now), not run in parallel.
+`file_manifest` is the baseline `contentindex.py` is cross-checked against, so no file with content
+falls outside search coverage.
 """
 
 from __future__ import annotations
@@ -63,8 +48,7 @@ _CURRENCY_RULES = [
     ("sessions-v2/", "current"), ("workflow/", "current"), ("research/", "current"),
     ("docs/", "current"), ("outputs/", "current"), ("scripts/", "current"),
     ("engine/", "current"), ("database/", "current"), ("data/", "current"), ("iba/", "current"),
-    # 2026-08-28 (escalation #971/#976) — folders this week's reorg created, same reasoning as
-    # classify_category()'s matching addition just above.
+    # top-level working folders (_analytics/, _raw_data/, ...) and their categories
     ("_analytics/", "current"), ("_raw_data/", "current"), ("memory/", "current"),
     ("sessions/session_clusters", "cross-reference"), ("sessions/", "cross-reference"),
     ("logs/", "historical"), ("backups/", "backup"),
@@ -134,14 +118,8 @@ def compute_currency(rel_path: str) -> str:
 def classify_category(rel_path: str) -> str:
     parts = rel_path.replace("\\", "/").lower()
     if parts.startswith("archive/"):
-        # Stripped-prefix reclassification, not a fresh hand-enumerated rule per archive
-        # subfolder (added 2026-08-28, escalation #971/#976/pathaudit) — the 2026-08-27 reorg
-        # (~7,900 files renamed into archive/ subfolders, researcher's own framing) made the old
-        # 4 hand-picked archive/{scripts,logs,docs,patches} rules stale by construction: any NEW
-        # archive subfolder fell straight through to 'other' with no rule ever written for it.
-        # Reclassifying by what the content WOULD be outside archive/ is the general fix; the 4
-        # original rules still apply first since they're literal prefix matches checked below,
-        # this is only the fallback for everything they don't already catch.
+        # Anything under an archive/ subfolder is classified by what its content would be outside archive/
+        # (the literal archive/{scripts,logs,docs,patches} rules below are checked first)
         inner = classify_category(parts[len("archive/"):])
         if inner != "other":
             return inner
@@ -174,8 +152,7 @@ def classify_category(rel_path: str) -> str:
     if parts.startswith("research/discovery"):
         return "discovery"
     if parts.startswith("research/"):
-        return "investigation"  # 2026-08-28: research/{templates,notes,projects,reports} etc. —
-        # smaller, less-formal siblings of research/investigations, same category
+        return "investigation"  # research/{templates,notes,projects,reports} etc.
     if parts.startswith("data/schema"):
         return "schema"
     if parts.startswith("archive/scripts"):
@@ -192,12 +169,8 @@ def classify_category(rel_path: str) -> str:
         return "doc"
     if parts.startswith("logs"):
         return "log"
-    # 2026-08-28 (escalation #971/#976) — folders created/populated by this week's reorg that
-    # simply didn't exist when this function was last written, found live via folder_purpose's
-    # own census: _analytics/ (6,577 files, per-word/per-book/per-cluster analysis OUTPUT, closest
-    # existing category is 'report'), _raw_data/ (1,033 files, raw imported source data, same
-    # concept 'import' already names for data/imports), memory/ (project memory mirror, markdown
-    # facts, closest existing category is 'doc').
+    # _analytics/ (analysis output: 'report'), _raw_data/ (raw imported source data: 'import'),
+    # memory/ (project memory mirror: 'doc')
     if parts.startswith("_analytics"):
         return "report"
     if parts.startswith("_raw_data"):
@@ -307,11 +280,9 @@ _EXCLUDE_EXTS_DEFAULT = [".pyc", ".pyo", ".pyd", ".tmp", ".swp", ".lock"]
 
 
 def _folder_purpose_lookup(cfg) -> list[tuple[str, str, str]]:
-    """(folder_path, manifest_category, manifest_currency) for every folder_purpose row that has
-    at least one of the two set, longest-path-first so the caller's prefix match picks the most
-    specific governing row. Escalation #971 Part D: folder_purpose is the primary classification
-    source once a folder is registered; classify_category()/compute_currency() below remain the
-    fallback for anything not yet registered there — non-breaking by construction."""
+    """(folder_path, manifest_category, manifest_currency) for every folder_purpose row with at least
+    one of the two set, longest path first so a prefix match picks the most specific row (#971).
+    classify_category()/compute_currency() are the fallback for unregistered folders."""
     try:
         rows = cfg.conn.execute(
             "SELECT folder_path, manifest_category, manifest_currency FROM folder_purpose "

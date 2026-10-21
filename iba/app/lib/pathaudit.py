@@ -1,44 +1,17 @@
 """pathaudit.py — project-wide scan for hardcoded folder/file-path string literals that should be
-`cfg_setting`/`cfg.module_setting()`-driven instead. The general-case, automated successor to the
-one-off manual sweep (escalation #648, 2026-08-17, `iba/app/reports/hardcoded-constants-sweep-
-20260817.md`) — that sweep covered every kind of hardcoded constant by hand, once; this covers only
-LOCATION literals (the class escalation #971/#976 kept surfacing — `cfg_prose.prose.edit_file_dir`
-pointing at a moved folder, the `_analytics/Bible_Books` casing mismatch), automatically, every run.
+config-driven (`cfg.required_setting()` / `cfg.module_setting()`). Scope: every `.py` file
+project-wide (the walk `cfgquality.find_unregistered_project_scripts` uses), minus files whose
+`cfg_utility` row is `inactive=1`; an unregistered file is included.
 
-Researcher, 2026-08-28: *"we are now in the real meat of sorting out locations that does not go
-through config, so applying to [every] script, and pushing it into a utility (with all the
-governance around it) is relevant now. the only scripts to not include, are scripts that is marked
-as inactive."* Scope: every `.py` file project-wide (the same walk `cfgquality.
-find_unregistered_project_scripts` already uses), MINUS any file whose `cfg_utility` row is
-`inactive=1` — a file with no `cfg_utility` row at all is INCLUDED (it isn't marked inactive; not
-registering it is itself `find_unregistered_project_scripts`'s own finding, not a reason to skip it
-here too).
-
-**Method, and its honest limits (ADVISORY by construction, not a hard fault):**
-1. Tokenize each file; look at every real STRING literal (not a COMMENT — the tokenizer already
-   distinguishes them, so a docstring/comment merely *mentioning* a path in prose doesn't fool a
-   call-site scan the way it does for `cfgquality._code_only_text`'s docstring problem — but a
-   docstring IS itself a STRING token, so it's still a source of possible false positives here).
-2. A literal counts as a location candidate if it passes the same plausibility filter
-   `folderpurpose.normalize_setting_value` already uses (no spaces, no `{template}` braces,
-   reasonable length) AND its first path segment matches a live `folder_purpose.top_level_root`
-   value (the actual top-level folders of this project, not a guessed list) — catches both a full
-   embedded path (`"outputs/markdown/prose-edits"`) and the `Path("Workflow") / "Programme" / ...`
-   construction idiom (a bare `"Workflow"` segment).
-3. **No exemption for a literal sitting next to a config accessor call** (removed 2026-08-29,
-   researcher direct ruling after a full-codebase sweep found 41 `.setting(key, "literal")` call
-   sites where the literal had drifted out of sync with the live setting: *"there should be NO
-   hardcoded literals in current code"* — no exception for "it's a documented default"). Every
-   such call site project-wide was converted to `cfg.required_setting(key)` (lib/cfg.py — no
-   default parameter at all, raises if the setting is missing/inactive), so this scanner no longer
-   needs a same-line/adjacent-line carve-out for that shape; if a NEW call site is ever written as
-   `.setting(key, "literal/path")` again, this now correctly flags it rather than exempting it.
-4. No-space docstrings/comments mentioning a bare path can still false-positive; genuinely
-   deliberate hardcodes reviewed and accepted before (e.g. `prosestore.OUT_DIR` et al., "unchanged
-   from the original scripts — not flagged by escalation #648") will be flagged again here — this
-   is a coarser, blunter net than a human review, by design (automated, every run, catches drift a
-   one-off sweep can't) — every finding needs the same researcher judgement any advisory check here
-   does, not a silent auto-fix.
+Method (ADVISORY: every finding needs a researcher judgement):
+1. Tokenize each file and look at every STRING literal (comments are skipped; docstrings are
+   strings, so they can still false-positive).
+2. A literal is a location candidate if it passes `folderpurpose.normalize_setting_value`'s
+   plausibility filter (no spaces, no `{template}` braces, reasonable length) AND its first path
+   segment is a live `folder_purpose.top_level_root` -- catching both a full embedded path
+   (`"outputs/markdown/prose-edits"`) and the `Path("Workflow") / "Programme" / ...` idiom.
+3. No exemption for a literal next to a config accessor: there are no hardcoded literals in current
+   code, so a `.setting(key, "literal/path")` call is flagged.
 """
 
 from __future__ import annotations
@@ -50,13 +23,8 @@ import tokenize
 
 from . import folderpurpose as fp_mod
 
-# "migration" excluded 2026-08-28, checked live: a migration script's whole JOB is writing a
-# literal path VALUE into a cfg_setting/cfg_utility/cfg_step row as part of a one-time DB seed —
-# that's not a hardcoded-location violation, it's the migration doing exactly what it should
-# (same reasoning bootstrap_file_manifest.py's own docstring gives for schema/DDL being a direct
-# bootstrap, not something to route through configmaint.propose). Confirmed on the unfiltered
-# first run: 109 of 126 findings (86%) were migration scripts recording their own seed values,
-# swamping the 17 real findings elsewhere.
+# "migration" excluded: a migration's job is writing literal path values into config rows as a
+# one-time seed.
 _EXCLUDE_ANYWHERE = {".git", "archive", "__pycache__", ".venv", "venv", "node_modules",
                     "site-packages", "migration"}
 
@@ -111,11 +79,8 @@ def _scan_file(path: pathlib.Path, roots: set[str]) -> list[dict]:
         line_no = tok.start[0]
         line_text = lines[line_no - 1] if 0 < line_no <= len(lines) else ""
         if "/" not in norm:
-            # A BARE single-segment literal ("iba", "database", "archive") is only a real path
-            # candidate when it's actually an argument to pathlib.Path( — otherwise it's just as
-            # likely a plain string being compared/labelled (found live: `if name == "iba":` in
-            # cfg.py, nothing to do with a folder at all). Multi-segment literals (containing "/")
-            # carry no such ambiguity and are checked regardless.
+            # a bare single-segment literal ("iba", "archive") is a candidate only as a pathlib.Path(
+            # argument; a multi-segment literal (containing "/") is always checked
             col = tok.start[1]
             before = line_text[:col]
             if not before.rstrip().endswith("Path("):

@@ -1,18 +1,12 @@
 """versespanmeaningreport.py — the governed copy of `tools/build_verse_span_meaning_extract.py`'s
-verse : span : meaning extract, registered as a real report (`report.verse_span_meaning`) instead
-of a one-off `tools/` script. Per established precedent (BUILD.md §17: "ported again into the app's
-own governed copy — the tools/ scripts stay standalone/independent, not imported from"), this is a
-separate copy, not an import of the tools/ module.
+verse : span : meaning extract, registered as `report.verse_span_meaning` (a separate copy, not an
+import of the tools/ module).
 
-Output location is config, not hardcoded: `report.verse_analysis_output_dir` (base folder) +
-a per-call `book_label` subfolder (e.g. "Daniel" — a caller-supplied parameter, not a setting,
-same boundary as `table_export`'s -Out/-Table: which book folder a given call writes into varies
-per invocation, it isn't a rule) + `report.verse_analysis_output_pattern` (filename template).
+Output: `report.verse_analysis_output_dir` + a per-call `book_label` subfolder (a parameter, not a
+setting) + `report.verse_analysis_output_pattern`.
 
-STEP is used for [AMBIGUOUS]-span live disambiguation (see tools/build_verse_span_meaning_extract.py's
-2026-07-26 note for the full history). Reads the shared `step.required_for_runs` cfg_setting — same
-row `init.py`'s own startup preflight reads (governance.rules_must_be_config_driven) — rather than
-hardcoding its own copy of the rule.
+STEP is used for live disambiguation of [AMBIGUOUS] spans, governed by `step.required_for_runs`
+(the same setting init.py's preflight reads).
 """
 
 from __future__ import annotations
@@ -24,11 +18,7 @@ import sqlite3
 from . import reportkit
 from .stepapi import Step, StepUnavailable
 
-# Fallback only — the real value is `cfg_setting raw.strong_base_pattern` (module `raw`), the
-# single home for this fact after it was found duplicated three ways: here, in
-# `handlers/raw.py`, and in the now-inactive `candidate.lemma_base_pattern` (GOVERNANCE.md §5,
-# 2026-07-22 — named then, closed 2026-07-29). Kept byte-identical so behaviour is unchanged
-# whether or not the cfg_setting row has been approved yet.
+# Fallback only: the real value is `cfg_setting raw.strong_base_pattern` (module `raw`).
 _BASE_RE_FALLBACK = r"^([HG]\d+)([A-Z]?)$"
 BASE_RE = re.compile(_BASE_RE_FALLBACK)  # back-compat alias — migration/fix_strong_meaning_tree_collapse.py imports this
 
@@ -83,16 +73,10 @@ def fetch_verses(conn: sqlite3.Connection, book: str, lo: int, hi: int,
 
 
 def detect_verse_gaps(verses: list[dict], verse_lo: int | None = None) -> dict[int, list[int]]:
-    """Per chapter actually touched by `verses`, find verse numbers structurally provable as
-    missing from `iba.db`: a leading gap (the chapter's first fetched verse isn't verse 1, or
-    isn't `verse_lo` for a `-Range` sub-chapter call) and any internal gap between two fetched
-    verses. DB-only, no STEP call — this is a real limitation, not an oversight: it cannot prove
-    a chapter's OWN TRAILING verse(s) are missing (there's no way to know a chapter's true final
-    verse number without an external reference, and `iba.db` has none). Per the researcher's
-    2026-07-29 ruling (governance.verse_gap_by_design) this is by design, not an error, and the
-    census (iba/app/reports/verse-existence-census-20260729.md) found leading/internal gaps are
-    the dominant shape of it — this covers the overwhelming majority of real cases without
-    needing STEP at debate-generation time."""
+    """Per chapter touched by `verses`, the verse numbers provably missing from `iba.db`: a leading
+    gap (the first fetched verse isn't 1, or `verse_lo` for a sub-chapter range) and any internal gap.
+    DB-only, so a chapter's trailing missing verses cannot be detected. Missing verses are by design
+    (governance.verse_gap_by_design)."""
     by_chapter: dict[int, list[int]] = {}
     for v in verses:
         by_chapter.setdefault(v["chapter"], []).append(v["verse"])
@@ -146,17 +130,10 @@ def _tokens(text: str) -> set[str]:
 
 
 def gloss_supported_by_tree(step_gloss: str, tree_text: str) -> bool:
-    """True if the code's OWN stepGloss (fetched fresh per exact code, never base-collapsed —
-    see handlers/raw.py:detail_one — so it is never itself wrong) shares real vocabulary with the
-    base-keyed meaning_tree text. Confirmed 2026-07-26 (researcher's direct challenge on H0935G):
-    of 470 sub-lettered codes sharing a base with a sibling, 362 (77%) are like H0935G/H0935P —
-    the SAME root's different stems (Qal 'come' vs Hiphil 'bring'), where the shared tree is a
-    normal single combined dictionary entry, already stem-labeled ("(Qal)...(Hiphil)..."), and
-    stepGloss's own word already appears in it — NOT a genuine collapse/data-loss the way
-    H3581A/B is (stepGloss 'strength' vs the shared tree's unrelated 'reptile' content, zero
-    overlap). Flagging [AMBIGUOUS] and paying for a live STEP call for every sibling regardless
-    was wrong: `strong.stepGloss` already answers the question for the H0935G-shaped majority
-    with no ambiguity and no network call needed at all."""
+    """True if the code's own stepGloss (fetched per exact code) shares real vocabulary with the
+    base-keyed meaning_tree text: most siblings are the same root's stems (H0935G Qal 'come' / H0935P
+    Hiphil 'bring') sharing one legitimate entry, so only no overlap (H3581B 'strength' vs 'reptile')
+    marks a genuine collapse."""
     gloss_tok = _tokens(step_gloss)
     tree_tok = _tokens(tree_text)
     if not gloss_tok or not tree_tok:
@@ -212,9 +189,7 @@ def meaning_for_code(conn: sqlite3.Connection, code: str, step: "Step | None",
     base = _base(code, base_pattern)
     lines = [f"stepGloss: {strong_row['stepGloss'] or '(none)'}"]
 
-    # strong_meaning_tree/strong_meaning_parsed carry strong_variant (2026-07-26, migration/
-    # fix_strong_meaning_tree_collapse.py): prefer THIS code's own exact-variant row; fall back to
-    # the base/unsplit row only for pre-fix legacy data that was never re-fetched per exact code.
+    # prefer this code's own exact-variant row; fall back to the base row for legacy data
     meaning_rows = conn.execute(
         "SELECT gloss FROM strong_meaning_parsed WHERE strong_variant=? ORDER BY sort, id",
         (code,),
@@ -296,16 +271,12 @@ def _range_str(lo: int, hi: int, verse_lo: int | None, verse_hi: int | None) -> 
 
 def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
                  verse_hi: int | None = None, book_label: str | None = None) -> pathlib.Path:
-    """Reads step.required_for_runs (cfg_setting, module='step', default True — see
-    tools/build_verse_span_meaning_extract.py's UPDATED 2026-07-26 note and BUILD.md §21 for why).
-    Default True: raises StepUnavailable if STEP's preflight fails — the caller (handlers/reports.py)
-    catches this and reports a clean fail(), not a crash. Only if the researcher has set it False
-    does this proceed STEP-down, with a DB-only note per AMBIGUOUS span instead of a resolved sense.
+    """Reads step.required_for_runs (module 'step', default True). True: raises StepUnavailable if
+    STEP's preflight fails (handlers/reports.py reports a clean fail()). False: proceeds STEP-down with
+    a DB-only note per AMBIGUOUS span.
 
-    `book_label` is the human-facing subfolder name (e.g. "Daniel") — a per-call PARAMETER, not a
-    setting, same boundary as `table_export`'s -Out/-Table (GOVERNANCE.md §14): which folder label
-    a given call uses varies per invocation, it is not a rule. Defaults to the OSIS `book` code if
-    not given.
+    `book_label` is the subfolder name (e.g. "Daniel"), a per-call parameter defaulting to the OSIS
+    `book` code.
     """
     required = cfg.setting("step.required_for_runs", True)
     base_pattern = cfg.setting("raw.strong_base_pattern", _BASE_RE_FALLBACK)

@@ -1,22 +1,8 @@
-"""schemareport.py — the IBA app's own DATA-schema snapshot, one of the four "missing reports"
-from PLAN-reports-config-governance-v1-20260722.md §3.4. There was no equivalent of the Bible-study
-side's `DBSchema.json`/`build_dbschema.py` for the IBA app's data tables (only `cfgreport.py` §8
-documents the config-governed `cfg_*` tables). Introspects the live DB directly (`PRAGMA table_info` /
-`foreign_key_list` / `index_list`) — no CSV pairing: this report already *is* the schema, a CSV of
-it would just be the same information reformatted.
-
-escalation #1306 (recovered 2026-08-31 -- the researcher's actual feedback crashed into #1341
-instead of landing here, sat unapplied for hours): "I suspect the data comes straight from the DB
-schema. However, the report should merge the data and the DB schema extract and show the
-comparison. I can spot some that will show discrepancies. This applies for both the table level
-and column level data and applies to both IBA and Bible research." Both `write_report()` (IBA) and
-`write_report_bible_research()` below now merge live introspection against `cfg_table`/`cfg_column`
-(governance.tables / governance.table_columns' own governing registries -- `database` is a real
-column on both, already carrying rows for 'iba' and 'bible_research') and flag discrepancies at
-both levels, instead of a pure live-only snapshot. This also retires the old hand-maintained
-`DATA_TABLES` tuple (41 entries, chronically stale -- escalations #396 and #1306 both caught it
-short of the live table count) in favour of cfg_table itself as the one curated table list, so it
-can no longer silently drift out of sync with a second, code-resident copy of the same fact.
+"""schemareport.py — the data-schema snapshot of iba.db (`write_report()`) and of bible_research.db
+(`write_report_bible_research()`). Introspects the live DB (`PRAGMA table_info` /
+`foreign_key_list` / `index_list`) and merges it against `cfg_table`/`cfg_column` (the curated
+registries, governance.tables / governance.table_columns), flagging discrepancies at table and column
+level (#1306). No CSV pairing: the report already is the schema.
 """
 
 from __future__ import annotations
@@ -32,13 +18,9 @@ def _now() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-# Tables the researcher has formally retired at the DATA level (soft-deleted `deleted=1` on
-# effectively every row via `migration/retract_passage_system.py`) — NOT the same thing as the
-# 2026-07-23 candidate-system retraction, which only retracted CONFIG (cfg_step/cfg_work_package/
-# etc. — see `migration/retract_candidate_system.py`) and left `candidate_seed`/`span_candidate`'s
-# actual DATA untouched. Kept as an explicit, named fact (escalation #394, "tables marked as
-# deleted or not applicable") rather than inferred from a deleted-row percentage, which would be a
-# fragile, ever-changing signal for any table with ordinary per-row curation.
+# Tables retired at the DATA level (soft-deleted on effectively every row,
+# migration/retract_passage_system.py), named explicitly (#394) rather than inferred from a
+# deleted-row percentage.
 RETIRED_TABLES = {
     "passage": "reports/archive/passage-system-retirement-record-20260726.md",
     "verse_passage": "reports/archive/passage-system-retirement-record-20260726.md",
@@ -112,12 +94,8 @@ def _table_section(cfg_conn, live_conn, database: str, live_tables: list[str],
     cfg_table/cfg_column for one `database`. Returns (overview_lines, tables_lines)."""
     cfg_tables = _cfg_tables(cfg_conn, database)
     if database == "iba":
-        # This report's own declared scope is the DATA tables only -- `cfg_%` rule/log tables are
-        # deliberately excluded from `live_tables` above (same predicate the live-table query
-        # uses), so they must be excluded from the cfg_table merge set too, or every real cfg_*
-        # rule table (category='rule'/'log', not '%data%') falsely shows up as "NO LIVE TABLE" --
-        # found live while first testing this build, not a hypothetical. CONFIG-REPORT.md is the
-        # report that covers cfg_* tables; this one stays DATA-only, per its own module docstring.
+        # DATA tables only: `cfg_%` tables are excluded from the cfg_table merge set too, as from
+        # live_tables (CONFIG-REPORT.md covers them)
         cfg_tables = {k: v for k, v in cfg_tables.items() if not k.startswith("cfg_")}
     all_names = sorted(set(live_tables) | set(cfg_tables))
     gap_count = sum(1 for t in all_names
@@ -177,9 +155,7 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
 
     overview, tables_lines = _table_section(conn, conn, "iba", live, counts)
 
-    # Escalation #393 (2026-07-30): this report had no generated-at timestamp at all — every
-    # sibling report (retention.py, cfgreport.py) states one, this one only named the step. Fixed
-    # to match the same "> Generated <ts> ..." convention `retention.write_report` uses.
+    # "> Generated <ts> ..." line, as retention.write_report does
     intro = [
         f"> Generated {_now()} by `report.schema_overview`. Introspects the live DB directly and "
         f"merges it against `cfg_table`/`cfg_column` (database='iba') — always current, never "
@@ -194,23 +170,10 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
 
 
 def write_report_bible_research(cfg, path: pathlib.Path) -> pathlib.Path:
-    """The `bible_research.db` counterpart to `write_report()` above -- escalation #1306, 2026-08-31
-    (researcher: "There is no report for Bible_Research_db and no handle in the excel tools for
-    this report"). Deliberately mirrors that function's shape (same helpers, same rendering, same
-    cfg_table/cfg_column merge -- see #1306's recovered follow-up feedback in the module docstring),
-    not a separate design: introspects the live DB directly via `PRAGMA`, no separately-maintained
-    register to go stale (unlike `iba/config/DBSchema/DBSchema.json`/`build_dbschema.py`, which
-    profiles column VALUES and needs an explicit rebuild -- this stays deliberately lighter,
-    structure-only, always current by construction, same trade-off `schemareport.py`'s own
-    docstring already made for the IBA side).
-
-    Every real `bible_research.db` table is shown (~113), matched against `cfg_table`/`cfg_column`
-    rows where `database='bible_research'` -- no curated allowlist here, `cfg_table` itself is now
-    the one curated list, same as the IBA side. `conn` for introspection is a second, separate
-    connection to `bible_research.db` (`cfg.database_path('bible_research')`, the same pattern
-    `cataloguereport.py`/`table_export` already use); `cfg.conn` (iba.db) is still what
-    `render_scaffold`/`write_report` read `cfg_report`/`cfg_report_section` from, and is also where
-    `cfg_table`/`cfg_column` themselves live regardless of which database the report is ABOUT."""
+    """The `bible_research.db` counterpart to `write_report()` (#1306): same helpers, rendering and
+    cfg_table/cfg_column merge (rows where `database='bible_research'`), structure only, always current.
+    Introspection uses a second connection (`cfg.database_path('bible_research')`); `cfg.conn` (iba.db)
+    supplies `cfg_report`/`cfg_report_section` and `cfg_table`/`cfg_column`."""
     research_conn = sqlite3.connect(cfg.database_path("bible_research"))
     try:
         live = sorted(r[0] for r in research_conn.execute(

@@ -1,19 +1,7 @@
-"""Registry handlers — config-governed. New-word creation is a STANDARD OPERATIONAL routine, not a
-development/design control (researcher, 2026-08-20 — the run.py escalation-volume review that
-found configmaint.propose/registry.create/configmaint.validate together made up 79% of all
-escalation rows): "if the standard new word create routine are used, then running should be logged
-in the engine, it does not need another approval mechanism." Config writes (configmaint.propose)
-are the opposite case — changes to the app's own behaviour — and correctly keep their real
-escalation-gated approval; this file no longer does.
-
-**No per-word approval gate as of 2026-08-20** (was: create as 'proposed', raise an escalation,
-researcher answers Approve/Reject, resume). A new word is now created and marked 'approved'
-directly, in one call — its outcome (including the duplicate/typo warning `_ask_approval` used to
-gate on) is logged via `run.outcome`, the engine's own standard-run log, per the researcher's
-instruction. `Escalation.ps1 -Action Answer -Word ...` (word-scoped answer) is now dead code for
-this handler; kept in `lib/escalation.py` only because `handlers/configmaint.py`'s crash/report-stop
-paths are unrelated to it and nothing else currently calls it, not because anything here still
-does.
+"""Registry handlers — config-governed. New-word creation is a standard operational routine, not a
+development/design control: a new word is created and marked 'approved' in one call, with no
+approval gate; its outcome (including the duplicate/typo warning) is logged in `run.outcome`, the
+engine's standard-run log. Config writes (configmaint.propose) keep their approval gate.
 """
 
 from __future__ import annotations
@@ -22,10 +10,7 @@ import datetime
 
 from .base import Ctx, Outcome, ok, fail
 
-# Fallback only — the real value is `cfg_enum` group `word_status_built` (added 2026-07-29,
-# closing a completeness gap: `cfg_status_flow` exists for exactly this kind of fact, but which
-# statuses count as "already built" used to live only here, in code). Kept byte-identical so
-# behaviour is unchanged whether or not the cfg_enum rows have been approved yet.
+# Fallback only: the real value is `cfg_enum` group `word_status_built`.
 _BUILT_FALLBACK = ("raw-complete", "signed-off")     # a word past approval — a real duplicate
 
 
@@ -79,13 +64,11 @@ def create(ctx: Ctx) -> Outcome:
         ctx.word_id = row["id"]
         return ok(f"{row['word']!r} already registered (id {row['id']}) — proceeding")
 
-    # a word rejected under the old gate, before 2026-08-20 -- re-running now just creates it,
-    # same as any other new word (no gate left to re-propose against).
+    # a word rejected under the former approval gate: re-running creates it like any new word
     if row and row["status"] == "rejected":
         return _register(ctx, row["id"], row["word"], is_new=False)
 
-    # a word stuck 'proposed' from before this change (none live as of 2026-08-20, but a stale
-    # dump/backup could still have one) -- treat it the same as brand new, not a special case.
+    # a word left 'proposed' by the former gate: treated as brand new
     if row and row["status"] == "proposed":
         return _register(ctx, row["id"], row["word"], is_new=False)
 
@@ -112,11 +95,8 @@ def _possible_duplicates(ctx: Ctx, seeds: list[str], self_id: int) -> list[dict]
 
 
 def _register(ctx: Ctx, word_id: int, word: str, is_new: bool) -> Outcome:
-    """No approval gate (2026-08-20) -- creates/confirms the word and returns ok(). The
-    duplicate/typo check the old _ask_approval() used to escalate on is kept, but now as a note
-    in the outcome message (logged to run.outcome, the engine's standard-run log) rather than a
-    blocking decision -- per the researcher's instruction, the standard routine gets no separate
-    approval mechanism at all, not even for this case."""
+    """Creates/confirms the word and returns ok(); no approval gate. The duplicate/typo check is a
+    note in the outcome message (logged to run.outcome)."""
     ctx.word_id = word_id
     d = ctx.step.call1_meanings(word)
     seeds = [x["strongNumber"] for x in d.get("definitions", [])
