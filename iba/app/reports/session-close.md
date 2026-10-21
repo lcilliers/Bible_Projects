@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-20T15:58:12Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-21T03:35:17Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `d7696d1d-b5aa-4ccf-a85e-a48878417161` (CLAUDE_CODE_SESSION_ID); started 2026-10-20T14:51:00Z; window base commit `7d3e33ac90f22d1c9388c7abedcca9187c409cec`
 - compliance file: `Logs/compliance/COMPLIANCE-20261020-d7696d1d.md`; session log: `Logs/SESSION-LOG-20261020-session-routines-build.md`
-- **open findings: 0**; cleared by disposition: 1
+- **open findings: 0**; cleared by disposition: 3
 
 
 ## Contents
@@ -40,11 +40,12 @@ _no finding_
 ## SC3 Researcher's words recorded
 
 - cleared `SC3:c1a83a94`: researcher message 2026-10-20T14:51 is too short to be matched; name where it is recorded: "proceed" -- disposition: no record needed: "proceed" answered my question whether to run /developer-mode for #2173; the session it started and the researcher's next, full instruction are recorded verbatim in #2173 v12
+- cleared `SC3:88b53095`: researcher message 2026-10-21T03:34 is in no escalation comment written this session: "you can close this sessio" -- disposition: no record needed: the instruction to run session-close is carried out by this close itself and recorded in the session log
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-_no finding_
+- cleared `SC4b:727db28d`: researcher message 2026-10-21T03:21 holds, defers or asks to check something; name its register item: "And all this is done because Claude does not know how to comply with the rules and must be checked every time.  This problem existed from day 1, the IBA app was" -- disposition: in register #2173 (recorded verbatim in #2173 v18; the objection to self-checking is the open process question on #2173)
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -77,4 +78,4 @@ _no finding_
 ## SC12 Publish
 
 - narrative copy: not needed (no chapter changed)
-- threads register export: RUN (a thread row changed)
+- threads register export: not needed (no thread row changed)

@@ -7,14 +7,18 @@ Session `d7696d1d-b5aa-4ccf-a85e-a48878417161`, Developer Mode (started 2026-10-
 2026-10-20. Built every part of the two #2173 proposals (start-project P0-P5 and S1-S6;
 session-close SC1-SC14; contradictions G1-G14) as app code and config, decided and applied #2174,
 tested on a copy of iba.db, then ran the rebuilt start and close on this session as the
-acceptance test. Researcher, verbatim: *"This is your domain, I am expecting you to do a
+acceptance test. Continued 2026-10-21: cost estimate of the two routines; the researcher did not
+approve the build but kept it, and named the cause as a process that re-reads documents instead
+of recording in iba.db. Researcher, verbatim: *"This is your domain, I am expecting you to do a
 professional, complete, with proper controls, self audit job of preparing the code and updating
 the tables and documentation."* The study stays on hold; no reading or narrative change.
 
 ## 2. Escalations
 
 - **#2173** (task): v12 researcher's instruction recorded verbatim; v13 build recorded; v14
-  ready_for_approval, assigned Researcher, with the resolution.
+  ready_for_approval, assigned Researcher, with the resolution; v15-v16 acceptance faults; v17 cost
+  question and estimate; v18 researcher's objection to self-checking; v19 not approved; v20 build
+  kept, sequence fault acknowledged, decision 2 (diagnosis only) open with the researcher.
 - **#2174** (issue): v2 in-progress (taken into #2173 on the researcher's instruction); v3
   ready_for_approval, assigned Researcher: escalation rule 6 retired, with the evidence.
 - **#2175** (issue, raised, on hold): 15 of 5,571 quoted parts in the current chapters not found in
@@ -40,6 +44,7 @@ Tests and tools: `iba/docs/2173-session-routines-test-plan-v1-20261020.md`,
 `iba/docs/ps tools worksheet.xlsx`.
 Docs: `iba/app/BUILD.md` (section 353), `iba/app/GOVERNANCE.md` (section 96; section 82 marked
 superseded in part; the narrative copy timing), `iba/app/USER-GUIDE.md`, `CLAUDE.md` (section 12).
+Cost estimate: `outputs/markdown/2173-session-routine-cost-estimate-v1-20261021.md`.
 Records: `Logs/compliance/COMPLIANCE-20261020-d7696d1d.md`,
 `outputs/markdown/2173-narrative-quote-check-all-chapters-v1-20261020.md`, and the reports the new
 steps wrote (`outputs/escalation/escalation-context-v1-20261020.md`,
@@ -49,6 +54,7 @@ steps wrote (`outputs/escalation/escalation-context-v1-20261020.md`,
 
 Researcher's decisions:
 - Do the whole of #2173 in this session and include #2174; Claude owns rule coherence (#2173 v12).
+- The build is not approved (#2173 v19) but is kept in place, no revert (#2173 v20).
 
 Claude's, within the approved design (none needed a new researcher decision):
 - #2174: escalation rule 6 retired; rules 7 and 12 restated (`iba/app/migration/session_routines_2173_v1_20261020.py`, recorded in #2174 v3).
@@ -61,12 +67,16 @@ Claude's, within the approved design (none needed a new researcher decision):
 
 ## 5. Open items
 
-- #2173 and #2174: for the researcher's approval.
+- #2173: not approved, build kept; the researcher decides whether Claude writes a diagnosis (no
+  build) of where working state lives in documents instead of iba.db (#2173 v20).
+- #2174: rule 6 retired as part of the kept build; for the researcher (#2174).
 - #2175 and #2176: on hold until the study re-opens (researcher).
 - Not done in the build (named in BUILD.md section 353): a mechanical evidence check per
   context-delivered rule; it stays part of #2173's record for the researcher's direction.
 
 ## 6. Git
+
+_First close, 2026-10-20 (kept as written):_
 
 Branch `main`. Session commit, pushed (output of `git push`, `git log -1` and `git status -sb`):
 
