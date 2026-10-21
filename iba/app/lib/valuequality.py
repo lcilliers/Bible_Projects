@@ -1,22 +1,13 @@
-"""valuequality.py — the generic column-level VALUE-QUALITY engine.
-
-Every validate step in this app checked STRUCTURE (a row exists, an FK resolves, a column is
-not-null, a dedup key holds) but nothing checked that a column's actual VALUE serves what it is
-declared for (`cfg_column.use`). Found 2026-07-21 via `candidate_seed.tag` (dirty IB labels
-carrying raw dictionary glosses) and confirmed to repeat across `lemma_inventory.gloss`,
-`strong_sense.head`, `word_registry.word`, `span.surface` — one systemic gap, not several.
-
-This closes GOVERNANCE.md §6's named-but-unbuilt "V8" increment for real: `cfg_column.expectation`
-now drives a genuine value-quality scan, not just FK/enum documentation. Three recognised forms:
+"""valuequality.py — the generic column-level VALUE-QUALITY engine: checks that a column's actual
+values serve what it is declared for (`cfg_column.use`), beyond structure (row exists, FK resolves,
+not-null, dedup key). Driven by `cfg_column.expectation`, three forms:
 
     notblank        value is not NULL and not empty/whitespace after trim
     nohtml          value contains no '<' character (catches leftover markup / an unsplit tree)
     pattern:<key>   value matches the regex stored at cfg_setting <key> (reuses an existing
-                    setting, e.g. candidate.tag_clean_pattern — never forks a parallel constant)
+                    setting, e.g. candidate.tag_clean_pattern -- never a parallel constant)
 
-One column, one rule, one scan — added by setting `cfg_column.expectation`, nothing else. A new
-column with the same kind of expectation is checked automatically, the same way `validation.py`'s
-`_integrity`/`_references` already generalise notnull/FK checks from `cfg_column`.
+One column, one rule, one scan: a column is covered by setting its `cfg_column.expectation`.
 """
 
 from __future__ import annotations
@@ -32,14 +23,9 @@ class ValueFinding:
     rule: str
     total: int          # rows considered (non-null, where relevant)
     violations: int
-    samples: list = field(default_factory=list)   # EVERY distinct violating (value, count) or bare
-                                                    # value, most-frequent first — NOT capped. A
-                                                    # persisted report is the actual review artifact
-                                                    # (per the researcher's 2026-07-21 point: "the
-                                                    # only way I can review it is to be exposed to
-                                                    # the data" — a top-10 sample is not that).
-                                                    # Truncate only at the point of DISPLAY (e.g. an
-                                                    # escalation's inline prompt text), never here.
+    samples: list = field(default_factory=list)   # every distinct violating (value, count), most
+                                                    # frequent first, not capped (the persisted report
+                                                    # is the review artifact); truncate only for display
 
 
 def _has_deleted(cfg, table: str) -> bool:
@@ -119,30 +105,10 @@ def find_value_quality_findings(cfg) -> list[ValueFinding]:
 
 
 def find_enum_violations(conn) -> list[str]:
-    """Every cfg_column row whose expectation is enum.<name>: confirm every live value in that
-    column is a member of the declared cfg_enum set. A STRUCTURAL coherence check (like the FK/PK
-    checks already in configmaint.py's _validate_live), not a researcher judgement call — an
-    enum violation is a hard fault, always report-stop, never escalated.
-
-    Found 2026-07-21: candidate_seed.decision/.layer already declared enum.candidate_decision/
-    enum.candidate_source in cfg_column, but nothing ever checked live values against them —
-    confirmed by grep, the enums are referenced nowhere in the app's code. Clean today by luck
-    (2,013 candidate/73 rejected, no stray values), not by anything enforced.
-
-    FIXED 2026-08-26 (escalations #896/#900/#901/#902's own follow-on): this function only ever
-    queried `conn` directly for the target table's data, silently assuming every `expectation=
-    'enum.*'` column lives in the SAME database as `cfg_column`/`cfg_enum` themselves (iba.db) —
-    true for every case it was built/tested against (candidate_seed, an iba.db table), but
-    `cfg_column.database` can be `'bible_research'` too, and nothing here ever branched on it.
-    Crashed live the first time a `bible_research.db` column was actually wired
-    (`prose_section.status`, etc.): `sqlite3.OperationalError: no such table: prose_section` --
-    the table is real, just not IN the connection this function was handed. Opens a real
-    connection to the target database per `cfg_column.database` (cached, one connection per
-    database for the life of one call) instead of assuming `conn` covers everything. Also widened
-    the dead-row exclusion this same pass: it only ever recognised a column literally named
-    `deleted` (iba.db's own convention) — `bible_research.db`'s parallel convention,
-    `delete_flagged`, was silently never excluded, meaning a soft-deleted row there could still
-    trip a false violation. Checks for either, whichever the table actually has."""
+    """Every cfg_column row whose expectation is enum.<name>: every live value in that column must be a
+    member of the cfg_enum set. A structural coherence check: a violation is a hard fault, report-stop.
+    Each column is read from its own database (`cfg_column.database`, one cached connection per
+    database), and soft-deleted rows (`deleted` or `delete_flagged`) are excluded."""
     out: list[str] = []
     other_conns: dict[str, object] = {}
 

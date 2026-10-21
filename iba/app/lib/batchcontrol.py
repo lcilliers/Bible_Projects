@@ -19,14 +19,10 @@ nothing else needs to detect it separately.
 committed row, `run_batch` can be queried live, mid-run, from a separate connection (as
 `BatchProgress.ps1` does) without waiting for the run to finish or reading process stdout.
 
-**The resume/skip key above is an APPLICATION-level guarantee, not a schema one** — found live
-minutes after this shipped (escalation #1758, `fix_run_batch_unique_constraint_v1_20260918.py`):
-a `UNIQUE(step, selector_key, batch_content_key)` constraint on the table was tried first, but it
-blocked a legitimate retry after a transient failure (the same content_key, a genuine second
-attempt) with an `IntegrityError`, not just a genuine duplicate. `already_committed()`'s own
-`WHERE status='committed'` check, consulted BEFORE `start_batch()` runs, is what actually prevents
-re-paying for already-committed work — `start_batch()` itself always inserts a fresh row per
-attempt, on purpose, so a retry history stays visible in the table rather than being blocked.
+**The resume/skip key is an application-level guarantee, not a schema one**: a UNIQUE constraint
+would block a legitimate retry after a transient failure. `already_committed()` (`WHERE
+status='committed'`, consulted before `start_batch()`) prevents re-paying; `start_batch()` inserts a
+fresh row per attempt, so the retry history stays visible (#1758).
 """
 
 from __future__ import annotations
@@ -40,12 +36,8 @@ def _now() -> str:
 
 
 def _assert_valid_status(conn, status: str) -> None:
-    """Live cfg_enum lookup, not trust in the literal -- found live 2026-09-20 (escalation #1796):
-    run_batch.status was a registered cfg_enum group nothing ever actually looked up by name at
-    runtime. The 3 call sites below (start/commit/fail) each pass their own fixed literal, so this
-    can only ever fire if a future edit introduces a typo or a 4th status without updating both the
-    enum and these call sites -- exactly the drift this check exists to catch immediately, not
-    months later."""
+    """Checks a status literal against the live run_batch.status cfg_enum (#1796), catching a typo or
+    a new status added without updating the enum."""
     valid = {r[0] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='run_batch.status' AND inactive=0")}
     if status not in valid:

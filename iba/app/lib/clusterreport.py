@@ -1,15 +1,9 @@
 """clusterreport.py — evaluate/review the `cluster` taxonomy and its `cluster_strong` assignment
-coverage. Built 2026-08-11, replacing an ad hoc script that wrote CSVs straight to `iba/app/
-reports/` outside the app's own reporting mechanism (researcher-caught governance violation,
-same session) — this is the config-governed replacement, same shape as registryreport.py/
-strongreport.py.
+coverage (same shape as registryreport.py/strongreport.py).
 
-Scoped by `strong.origin` ('word' | 'backfill', bootstrap_strong_origin_column_20260811.py):
-cluster/meaning relevance applies to 'word'-origin strongs only — a registry word's own,
-deliberately-onboarded codes. 'backfill'-origin strongs (onboarded by raw.backfill_meaning's
-book-scoped completeness sweep, independent of any word) are out of scope for cluster mapping
-entirely — they exist to support lexical resolution, not as inner-being study subjects — and are
-reported as an explicit count, never included in the gap list.
+Scoped by `strong.origin` ('word' | 'backfill'): cluster/meaning relevance applies to 'word'-origin
+strongs only (a registry word's own codes). 'backfill'-origin strongs exist to support lexical
+resolution and are reported as a count, never in the gap list.
 """
 
 from __future__ import annotations
@@ -126,12 +120,9 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
               [[r["strongNumber"], r["stepGloss"], r["stepTransliteration"], r["language"],
                 r["count"]] for r in gap]))
 
-    # ── cluster summary — every origin (not word-only, unlike the sections above): strong/span/
-    # lexical/verse counts per cluster, + top-10 meanings grouped by a rough English-gloss stem so
-    # derivational family members (grace/gracious/graciously) count as one line, not three
-    # (2026-08-12, researcher request, same session as the cluster-assign module). `verse_lexical`
-    # already carries one row per (span, code) — joining it directly gives span/lexical/verse
-    # counts without re-parsing `span.strong_variant` text.
+# ── cluster summary — every origin: strong/span/lexical/verse counts per cluster, + top-10 meanings
+# grouped by a rough English-gloss stem (grace/gracious/graciously count as one line).
+# `verse_lexical` has one row per (span, code), so joining it gives the counts directly.
     suffixes = cfg.setting("report.cluster_stem_suffixes", _STEM_SUFFIXES_DEFAULT)
     prefix_len = int(cfg.setting("report.cluster_stem_prefix_len", _STEM_PREFIX_LEN_DEFAULT))
     top_n = int(cfg.setting("report.cluster_top_meanings", _STEM_TOP_N_DEFAULT))
@@ -178,16 +169,9 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         summary_lines.append("")
     sections["cluster_summary"] = summary_lines
 
-    # ── backfill vocabulary outside the cluster taxonomy (2026-08-13, researcher request: "not in
-    # clusters" is a real ~9.5k-row mass — a bare count isn't useful, but it's too large to hand-
-    # review line by line, so it needs typing/ordering that still keeps individual outliers visible
-    # rather than folding everything into a summary number. See iba/app/reports/
-    # m10bc-cluster-review-20260813.md for the M10b/M10c work this followed from.
-    #
-    # Not yet registered in cfg_report_section (renders via render_scaffold's "extra_keys" safety
-    # net, own heading/anchor included below) or cfg_report_csv_table (CSVs below are written
-    # directly, bypassing write_csv_pairing) — both are configmaint.propose-gated and this is a
-    # first pass; formalise later if the researcher wants a governed ToC entry/ordinal.
+# ── backfill vocabulary outside the cluster taxonomy: typed and ordered so individual outliers stay
+# visible. Not registered in cfg_report_section (renders via render_scaffold's extra_keys) or
+# cfg_report_csv_table (its CSVs are written directly).
     bf_freq_threshold = int(cfg.setting("report.cluster_backfill_closedclass_freq", 1000))
     bf_kw_minlen = int(cfg.setting("report.cluster_backfill_keyword_minlen", 4))
     bf_crossmatch_cap = int(cfg.setting("report.cluster_backfill_crossmatch_cap", 60))
@@ -232,11 +216,7 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         w = re.sub(r"^to\s+", "", (gloss or "").strip().lower())
         return [x for x in re.findall(r"[a-z]+", w) if len(x) >= bf_kw_minlen and x not in _BF_STOP]
 
-    # Built from live cluster_strong membership (strong.stepGloss), not cluster.gloss -- that
-    # column is dropped (2026-09-17, researcher: "gloss is a strong level entity", #1720). This is
-    # strictly better than the old static worked-example snapshot: it reflects CURRENT membership,
-    # not a one-time migration, and needs no gloss-list text parsing since stepGloss is already a
-    # plain string.
+    # built from live cluster_strong membership (strong.stepGloss): gloss is a strong-level entity (#1720)
     word_to_clusters: dict[str, set[str]] = {}
     for r in q("SELECT cs.cluster_code AS cluster_code, s.stepGloss AS gloss FROM cluster_strong cs "
               "JOIN strong s ON s.strongNumber = cs.strong AND s.deleted = 0 WHERE cs.deleted = 0"):

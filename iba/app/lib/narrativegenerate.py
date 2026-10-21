@@ -1,27 +1,15 @@
-"""narrativegenerate.py — registers `narrative.generate` as a real report step: assembles a book's
-filled passage debates + the two governing instruction docs into one package, submits it to the
-Anthropic Messages API, and writes the result as the book's inner-being narrative. Matches the
-pattern `passagedebatereport.py`/`wholebookread.py` set — the discovery/assembly/filing plumbing is
-mechanised; the actual writing is not done by this module, it is done by the model on the other end
-of the API call, working strictly from the instructions and source material this module assembles
-(same "consistent package in, consistent quality out" intent the researcher asked for 2026-07-30).
+"""narrativegenerate.py — `narrative.generate`: assembles a book's filled passage debates + the two
+governing instruction docs into one package, submits it to the Anthropic Messages API, and files the
+result as the book's inner-being narrative. The writing is done by the model, strictly from the
+instructions and sources assembled here.
 
-**Cost is real money, not a subscription.** Every `key` this reads is `cfg_setting` (module
-`narrative`) so the model, the token budget, and the per-run cost cap are all changeable via
-`configmaint.propose`, never hard-coded here. Before ever calling the API, the package is assembled
-and its cost is ESTIMATED (character-count heuristic, ~4 chars/token) and checked against `narrative.
-generate_max_cost` — over the cap is a hard refusal (`cost-cap-exceeded`, report-stop), not a
-silent overspend. Below the cap, the run PAUSES for researcher approval (`needs-approval`,
-pause-continue) exactly like every other spend/write-worthy step in this app (`registry.create`,
-`configmaint.propose`) — the same run_id is re-run once approved, and only then is the live call
-made. Every live call's REAL token/cost (from the API response's own `usage` block, not the
-estimate) is appended to `narrative.usage_log_path` — an on-disk, append-only audit trail, since
-`scripts/cost_ledger.py` (repo root) only ingests Console CSV exports, not this app's own live
-calls.
+**Cost is real money.** Model, token budget and per-run cost cap are `cfg_setting` (module
+`narrative`). The package's cost is estimated before any call (~4 chars/token) and checked against
+`narrative.generate_max_cost`: over the cap is a hard refusal (`cost-cap-exceeded`); within it the
+call proceeds (the configured cap is the approval). Every live call's real token/cost (the API's
+`usage` block) is appended to `narrative.usage_log_path`.
 
-Uses `requests` directly against the Messages API rather than the `anthropic` SDK — this app has
-exactly one Python dependency (`requests`, see `USER-GUIDE.md` §1) and the Messages API is a plain
-JSON POST, so a second dependency isn't needed for one endpoint.
+Uses `requests` directly (this app's one Python dependency) rather than the `anthropic` SDK.
 """
 
 from __future__ import annotations
@@ -107,9 +95,8 @@ def assemble_package(cfg, book: str, book_label: str) -> dict:
     pair, and estimate its token count/cost. Raises NoDebatesFound/MethodDocMissing before ever
     touching the network.
 
-    Checked for compliance first (escalation #648, 2026-08-17) — this module's own API_URL/
-    API_VERSION/CHARS_PER_TOKEN are hardcoded, flagged NON-COMPLIANT in cfg_utility; using it now
-    signals (via cfg.assert_utility_compliant) that it needs revision before this is called again."""
+    Checked for compliance first (#648): this module's API_URL/API_VERSION/CHARS_PER_TOKEN are flagged
+    NON-COMPLIANT in cfg_utility, so cfg.assert_utility_compliant stops it until revised."""
     cfg.assert_utility_compliant("iba/app/lib/narrativegenerate.py")
     conn: sqlite3.Connection = cfg.conn
     constraints_path = _method_doc(cfg, "method.narrative_hard_constraints_path")
@@ -148,16 +135,8 @@ def call_api(package: dict) -> dict:
     """One live Messages API call. Returns {"text": str, "input_tokens": int, "output_tokens": int,
     "cost_usd": float}. Raises ApiCallFailed on a non-2xx response.
 
-    `thinking` explicitly disabled -- escalation #1717 (2026-09-18), the same fix already applied
-    to `lexicalenrichgenerate.call_api` (found 2026-09-17 building `lexical.meaning`): the Messages
-    API defaults to extended thinking even when `thinking` is omitted, and with `max_output_tokens`
-    sized for the answer alone (the assumption this module's own cost-estimation has always made),
-    the entire budget can be consumed by thinking, leaving 0 tokens for the actual answer -- real
-    money spent for a genuinely empty response. This module's own request shape was structurally
-    identical to the one that actually hit the bug; checked `narrative.usage_log_path` before
-    claiming anything -- the log file doesn't exist at all, confirming `book_narrative_generate`
-    has never actually been run live yet, so there is no past silent-empty-response incident to
-    find either way. Fixed proactively before its first real run, not after a failure."""
+    Extended thinking is disabled explicitly (#1717): the API otherwise defaults to it and can spend
+    the whole output budget on thinking, leaving no answer."""
     key = _api_key()
     resp = requests.post(
         API_URL,

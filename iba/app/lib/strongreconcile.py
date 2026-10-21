@@ -1,22 +1,11 @@
-"""strongreconcile.py — the single-strong reconciler, `reconcile(ctx, code)`.
+"""strongreconcile.py — the single-strong reconciler, `reconcile(ctx, code)`: one code in, a full
+classify -> exception-check -> promote-or-leave sequence out. Every strong-creation path (`new-word`,
+`raw.backfill_meaning`'s auto-backfill, a DB-wide sweep) goes through it.
 
-One code in, a full classify -> exception-check -> promote-or-leave sequence out. The one place
-every strong-creation path (`new-word`, `raw.backfill_meaning`'s auto-backfill, a DB-wide sweep)
-funnels its cluster-assignment/promotion logic through — see `backfill-cluster-triage-plan-v3-
-20260812.md` (design) and `cluster-assign-build-spec-20260812.md` (build order).
-
-Deliberately NEVER escalates itself — only a top-level dispatched handler's returned Outcome
-reaches `run.py`'s escalation-writing logic (checked against `run.py` directly before writing this).
-On either named exception shape, `reconcile()` flags it and declines to promote, leaving the code
-exactly as it was — `cluster.validate` (handlers/cluster.py) is what surfaces it, on its own
-periodic run, same shape as `lexicon.validate`. This also gives the researcher's "one-time clearing
-vs. standing watch" split for free: the FIRST `cluster.validate` run reports today's whole backlog;
-once resolved, anything new is visibly "happening again" — no separate one-off code path needed.
-
-Promotion cascade reuses `raw.py:verses_one()` and `lib.lexical.build_for_verse_ids()` UNCHANGED —
-no new STEP-fetching or lexical-building mechanism, only the sequencing and the trigger. Meaning/
-parse tables need no action on promotion (reverted 2026-08-12 — `backfill` already carries full
-parse depth, same as `word`-origin; see v3's "Reverted" note).
+Never escalates itself: on a named exception shape it flags the code and does not promote, leaving
+it as it was; `cluster.validate` (handlers/cluster.py) surfaces it on its own run. The promotion
+cascade reuses `raw.py:verses_one()` and `lib.lexical.build_for_verse_ids()` unchanged. Meaning/parse
+tables need no action on promotion.
 """
 
 from __future__ import annotations
@@ -41,15 +30,9 @@ _WORD_OPTIONAL_DEFAULT = ["T2", "T3"]
 
 
 def _word_optional_clusters(ctx) -> set[str]:
-    """Cluster codes exempt from the 'needs a word_registry link' rule (Q2.4.1 exception 1).
-    Researcher correction, 2026-08-12: the ownership requirement was originally written as
-    'any non-T2 cluster with no word' — too broad. `word_strong`'s real job is generating the
-    VERSE, not owning every strong that turns out to occur in it ("the whole purpose of having a
-    word is to generate the verse, which we have" — a code discovered afterward doesn't need its
-    own dedicated word just because the verse already exists). T2 never promotes regardless. T3
-    is 'by its nature ... not word specific' (the researcher's own words) — a T3 code spans many
-    verses pulled by many different original words, so requiring it to correlate with exactly ONE
-    of them is backwards. Only a real M-cluster/FLAG classification still needs a word."""
+    """Cluster codes exempt from the 'needs a word_registry link' rule: `word_strong` exists to
+    generate the verse, not to own every strong in it. T2 never promotes; T3 is not word-specific by
+    nature. Only an M-cluster/FLAG classification needs a word."""
     return set(ctx.cfg.setting("cluster.assign.word_optional_clusters", _WORD_OPTIONAL_DEFAULT))
 
 
@@ -110,11 +93,8 @@ def _promote(ctx, code: str) -> None:
         "SELECT DISTINCT verse_id FROM strong_verse WHERE strong=? AND deleted=0", (code,))]
     if verse_ids:
         _may(ctx, "lexical.build", "verse_lexical")
-        # step arg REMOVED 2026-09-16 (#1706 Phase B) -- Layer 1 no longer calls STEP at all.
-        # NotReady propagates uncaught here deliberately: this call runs immediately after this
-        # same code was just cluster-classified (the promote cascade above), so it should never
-        # legitimately fire; if it somehow does, that's a real bug worth a loud traceback, not a
-        # silently swallowed one in a function documented as "pure -- never escalates."
+        # NotReady propagates uncaught on purpose: the code was just cluster-classified, so it should never
+        # fire here, and if it does that is a real bug
         lexlib.build_for_verse_ids(ctx.db.conn, verse_ids)
     ctx.db.conn.commit()
 
@@ -141,10 +121,8 @@ def reconcile(ctx, code: str) -> dict:
         result["status"] = "t2-confirmed"
         return result
 
-    # Q2.4.1 exception 1 — a cluster assignment BEYOND the word-optional set (T2/T3, config-driven,
-    # see _word_optional_clusters) with no word_registry link at all. T2 never reaches here (already
-    # returned above); T3-only codes are exempt from this check entirely, per the 2026-08-12
-    # correction — only a real M-cluster/FLAG classification still needs a word.
+    # Q2.4.1 exception 1: an assignment beyond the word-optional set (T2/T3, _word_optional_clusters)
+    # with no word_registry link; T3-only codes are exempt
     needs_word = bool(cluster_codes - {"T2"} - _word_optional_clusters(ctx))
     word_linked = ctx.db.count("word_strong", strong=code, deleted=0) > 0
     if needs_word and not word_linked:

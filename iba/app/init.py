@@ -10,11 +10,7 @@ The startup sequence, idempotent:
      escalation rule (#305; #2173 P2 A) — the input to the session compliance file
   7. print the status
 
-Escalation #2173 P0 (researcher, 2026-10-20, verbatim): *"then stop printing reports that have no
-meaning. If I want to inspect the report, I request it on demand. scale down every any start up
-check that is meaningless."* A check that passes is silent; only a problem is printed, and problems
-come first. The BUILD.md/GOVERNANCE.md one-line orientation and the "first run" hint are dropped:
-the docs are read when work on the app is in hand.
+A check that passes is silent; only a problem is printed, and problems come first (#2173).
 
 Run it before the first run of a session:
     python -m iba.app.init            # prepare + status (idempotent)
@@ -121,7 +117,7 @@ def main() -> int:
     cfg.close()
 
     if not step_ok and step_required:
-        # 2026-07-26: "runs will refuse to start without it" has teeth here, gated by config.
+        # STEP is required for runs when step.required_for_runs is set
         print("\nNOT READY — STEP is required (step.required_for_runs) and not reachable. "
               "Start STEP, then re-run.")
         return 1

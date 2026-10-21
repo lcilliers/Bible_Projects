@@ -1,37 +1,19 @@
-"""clusterstatus.py — the `cluster.status` lifecycle transitions `#1697` designed but never built
-(found live 2026-09-17, building Stage 2 of `#1706`'s pipeline). Escalation #1697's own closing
-resolution said it plainly: *"Design-complete... Nothing built yet."* Confirmed live before writing
-this: all 80 live clusters sit at ordinal 2 (`t_cluster_assignment_completed`, the one-time
-backfill every cluster started at) with no code anywhere that ever advances one past it, and no
-DB trigger or application hook implements `strongs_reassigned` detection at all -- despite the
-researcher's own explicit instruction (#1697 v5) that it "must trigger a warning to the chat."
+"""clusterstatus.py — the `cluster.status` lifecycle transitions (#1697):
 
-**Three real gaps this module closes:**
+1. **ordinal 2 -> 3 (`ready_for_subgroup_allocation`).** `advance_if_verse_reading_complete`: a
+   cluster advances once every member strong (`lexicalscope.resolve_strongs`) has its verse-reading
+   coverage complete. Verse-reading is the pre-subgroup reading that process (b) requires first
+   (#1690, #1711).
 
-1. **The ordinal-2 -> ordinal-3 (`ready_for_subgroup_allocation`) transition.** `#1711` names
-   `verse_meaning`/`verse-reading` "the pre-subgroup Layer 2 stage" -- the name itself states the
-   sequencing. This module's `advance_if_verse_reading_complete` is the missing gate: a cluster
-   becomes `ready_for_subgroup_allocation` once every one of its member strongs (per
-   `lexicalscope.resolve_strongs`) has at least one live `ib_observation` row from the
-   `verse-reading` stage. Not a judgement call -- `#1690` §2's own governing rule (a) requires
-   process (b) to read "all gloss and surface values for every strong... FIRST", and `verse-reading`
-   is exactly that reading, now formalized as a stage with its own record.
+2. **`strongs_reassigned` detection.** `flag_if_reassigned`, called by anything that changes
+   `cluster_strong` membership, sets `status='strongs_reassigned'` and raises a decision_required
+   escalation (manual control, no automatic resubmission), only when the cluster is past ordinal 2
+   (nothing downstream exists to invalidate before that).
 
-2. **`strongs_reassigned` detection.** `flag_if_reassigned` -- called by anything that changes
-   `cluster_strong` membership -- sets `status='strongs_reassigned'` and raises a real,
-   `decision_required` escalation (per #1697 v5's explicit instruction: manual control, no automatic
-   resubmission) **only when the cluster has already progressed past ordinal 2** (`cfg_column.use`
-   on `cluster.status`: "ordinals 1-2... no gating code needed for these" -- nothing downstream
-   exists yet to invalidate while a cluster is still there, so nothing needs flagging that early).
-
-3. **The ordinal-3 -> ordinal-4 (`ready_for_reading`) transition, added building Stage 2.**
-   `require_ready_for_subgroup_allocation`/`advance_after_subgroup_allocation` -- `#1690` §3 item 5's
-   hard precondition + unconditional single-step advance on `cluster.subgroup` (process b)
-   completing. Distinct in kind from item 1 above: this transition doesn't wait on a completeness
-   check across member strongs (allocation either just fully succeeded or didn't run at all), and
-   later transitions past `ready_for_reading` are gated on `cluster_subgroup.status` rollup instead
-   (`#1690` §3a) -- not this module's concern, that rollup lives with subgroup-grain code once
-   reading/answer are built.
+3. **ordinal 3 -> 4 (`ready_for_reading`).** `require_ready_for_subgroup_allocation` /
+   `advance_after_subgroup_allocation`: the precondition and single-step advance on
+   `cluster.subgroup` (process b) completing (#1690 §3 item 5). Later transitions are gated on the
+   `cluster_subgroup.status` rollup (#1690 §3a).
 """
 
 from __future__ import annotations
@@ -49,15 +31,9 @@ _STATUS_ORDINAL = {
 
 
 class EnumDrift(Exception):
-    """`_STATUS_ORDINAL`/`_SUBGROUP_STATUS_ORDINAL` (below) duplicate `cfg_enum` groups
-    `cluster.status`/`cluster_subgroup.status` on purpose -- the enum has no ordering, and this
-    module's whole job IS the ordering. Escalation #1753 B2 found the two groups registered in
-    `cfg_enum` with zero runtime lookup anywhere -- an orphan-config finding, but checking live
-    data first showed no actual drift (both dicts' keysets already match their enum exactly).
-    Rather than replace a working, carefully-designed ordinal lookup with a config round-trip
-    that would add nothing (order still has to live here), this asserts the two stay in sync --
-    the enum is now genuinely read at runtime, and any future edit to one side without the other
-    fails loudly here instead of drifting silently."""
+    """`_STATUS_ORDINAL`/`_SUBGROUP_STATUS_ORDINAL` hold the ordering of the `cluster.status` /
+    `cluster_subgroup.status` cfg_enum groups (the enum itself has no order). This asserts their
+    keysets match the live enum, so an edit to one side without the other fails loudly (#1753)."""
 
 
 def _assert_enum_parity(conn) -> None:
@@ -154,14 +130,9 @@ def advance_after_subgroup_allocation(conn, cluster_code: str) -> dict:
 
 
 def advance_subgroups_after_allocation(conn, cluster_code: str) -> dict:
-    """The subgroup-grain analogue of `advance_after_subgroup_allocation`, missing since Stage 2
-    shipped 2026-09-17 -- found live building Stage 3 (2026-09-18): `#1690` §3a's own table states
-    the rule plainly ("same shape as §3 item 5's cluster-level rule, one grain down") but nothing
-    ever called it, so every subgroup Stage 2 has ever written (M67's 4, confirmed live) sat at
-    `allocated` indefinitely with no path to `ready_for_reading` at all. Unconditional, single-step,
-    every non-FLAG subgroup for this cluster currently at `allocated` -- mirrors the cluster-level
-    transition exactly (allocation either just fully succeeded or didn't run), no completeness check
-    needed. Idempotent: a subgroup already past `allocated` is left untouched."""
+    """The subgroup-grain analogue of `advance_after_subgroup_allocation` (#1690 §3a): every non-FLAG
+    subgroup of this cluster at `allocated` moves to `ready_for_reading`. Unconditional, single-step;
+    idempotent (a subgroup past `allocated` is left alone)."""
     now = _now()
     cur = conn.execute(
         "UPDATE cluster_subgroup SET status='ready_for_reading', last_updated_date=? "
@@ -259,16 +230,10 @@ _SUBGROUP_STATUS_ORDINAL = {
 
 
 def recompute_cluster_status_rollup(conn, cluster_code: str) -> dict:
-    """The `ready_for_reading` -> `ready_for_observations` cluster-level rollup, missing since
-    Stage 4 shipped (found live 2026-09-18, researcher's own review of the data: `M67` stayed at
-    `ready_for_reading` despite all 4 subgroups reaching `answer_complete`). `#1690` §3a / `cfg_
-    column` (iba.cluster.status) both state the rule: cluster.status can only progress past
-    ready_for_reading once EVERY live subgroup (excluding the never-progressing FLAG bucket) has
-    itself reached the matching level. Deliberately scoped to ONLY this one transition -- the
-    further ready_for_observations -> ready_for_synthesis step depends on Stage 5 (char-synergy),
-    which is not built and not even fully designed yet (#1695/#1698 still open); building that
-    transition now would be guessing at an undesigned stage's own precondition, not a root-fix of
-    an already-specified rule."""
+    """The `ready_for_reading` -> `ready_for_observations` cluster rollup (#1690 §3a, cfg_column
+    iba.cluster.status): advances once every live subgroup (excluding the FLAG bucket) has reached the
+    matching level. Only this transition: ready_for_observations -> ready_for_synthesis depends on
+    Stage 5 (char-synergy), which is not designed (#1695/#1698)."""
     _assert_enum_parity(conn)
     row = conn.execute("SELECT status FROM cluster WHERE cluster_code=?", (cluster_code,)).fetchone()
     if row is None:
@@ -298,12 +263,10 @@ def recompute_cluster_status_rollup(conn, cluster_code: str) -> dict:
 
 
 def flag_if_reassigned(cfg, db, conn, cluster_code: str, reason: str) -> dict | None:
-    """Call this whenever `cluster_strong` membership changes for `cluster_code`. Per #1697 v5
-    (researcher, verbatim: "strongs_reassigned must trigger a warning to the chat. I do not see
-    that the system can proceed with automated resetting, I want to control that process") --
-    fires ONLY when the cluster has already progressed past ordinal 2 (nothing downstream exists to
-    invalidate before that); sets status='strongs_reassigned' and raises a real, decision_required
-    escalation naming the cluster and the reason. Returns None if no flag was needed."""
+    """Call this whenever `cluster_strong` membership changes for `cluster_code`. Fires only when the
+    cluster is past ordinal 2: sets status='strongs_reassigned' and raises a decision_required
+    escalation naming the cluster and the reason (manual control, #1697). Returns None if no flag was
+    needed."""
     from . import escalation as esc
     row = conn.execute("SELECT status FROM cluster WHERE cluster_code=?", (cluster_code,)).fetchone()
     if row is None:

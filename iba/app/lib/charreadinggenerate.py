@@ -1,34 +1,18 @@
 """charreadinggenerate.py — the LLM-calling half of `cluster.reading` (the `char-reading` stage,
-process (c), escalation #1706 Phase F stage 3, built 2026-09-18). Sibling to `subgroupgenerate.py`/
-`versereadinggenerate.py`, same separation: this module only assembles the payload and calls the
-API; `recordingpass.py` is the only thing that ever writes `ib_observation`/`ib_node` (single-writer
-principle, checklist rule 0.1).
+process (c), #1706). Assembles the payload and calls the API; `recordingpass.py` is the only writer
+of `ib_observation`/`ib_node`.
 
-**Scope grain: per-subgroup, never the whole cluster** (`#1682` §2 rule 1 / checklist §2 rule 1) —
-one LLM call per `cluster_subgroup`, given that subgroup's own member strongs. Genuinely different
-work from Stage 1 (`verse-reading`, per-verse across a cluster) and Stage 2 (`char-subgroup`,
-whole-cluster placement): this stage reads EVERY occurrence of every subgroup member strong across
-the whole corpus (checklist §2 rule 3, "no sampling"), not just the verses a single batch happens to
-cover, so it can synergise the similar and different contextual meaning of the subgroup's OWN
-member strongs against each other — the comparison Stage 1's single-verse view structurally cannot
-make and Stage 2's placement-only pass does not attempt.
+**Scope: per subgroup, never the whole cluster** (#1682 §2 rule 1): one call per `cluster_subgroup`
+(split by surface for a strong over the cap), reading every occurrence of every member strong across
+the corpus (no sampling), so the subgroup's member strongs can be compared against each other.
 
-**What this stage does NOT do, to avoid duplicating Stage 1's own ground:** Stage 1 already answers
-`M0.1`/`M0.5` (including the `M0.5.11` per-occurrence surface/gloss divergence question) for every
-occurrence, per verse. This stage does not re-ask those; it is given Stage 1's own observations as
-grounding and focuses on what only a subgroup-grain view adds — comparing member strongs against
-EACH OTHER (tags `tightly-related`/`no-direct-connection`, already registered), grouping genuinely
-similar verses across a strong's own occurrence set (`verse-grouping`), and per-strong completeness
-(checklist §2 rule 10) verified by CODE after the write, not trusted from an LLM self-report (an
-improvement on the original 2026-09-11 spec's LLM-self-reported `strong_checks`, consistent with the
-single-writer/never-trust-the-model discipline `recordingpass.py` already established for
-`question_code`/`tag`/`obs_text`).
+**Not re-asked:** Stage 1 already answers `M0.1`/`M0.5` (including `M0.5.11`) per occurrence; its
+observations are given as grounding. This stage adds what only a subgroup view gives: member
+strongs against each other (tags `tightly-related`/`no-direct-connection`), grouping similar verses
+across a strong's occurrences (`verse-grouping`), and per-strong completeness, verified by code
+after the write, never taken from the model.
 
-**Role-driven-walk — deliberately NOT structurally forced.** Checklist §2 rule 14 named this a hard
-gate; that was superseded 2026-09-17 (recorded at `#1706` v32, confirmed closed 2026-09-18 against
-three stale docs) — the researcher's actual resolution is question-driven catalogue expansion
-(`M0.6.5`), not an imposed mechanical structure. No forced-walk logic is built here, matching how
-Stage 1/2 were also built without it.
+No forced role-driven walk is built: the approach is question-driven catalogue expansion (`M0.6.5`).
 """
 
 from __future__ import annotations
@@ -45,14 +29,8 @@ from .taggingguidance import tags_for_stage, guidance_block  # reuse, don't dupl
 
 _JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
 
-_MAX_OCCURRENCES_PER_STRONG = 60  # checklist §2 rule 3 says "no sampling" -- never a silent
-# truncation. A strong past this cap is SPLIT into multiple reading calls by
-# _partition_occurrences_by_surface (escalation #1761, researcher's own rule, 2026-09-18: "if we
-# have a strong that have more than 100 occurrences of the same SURFACE and no multi cluster
-# occurance, then it can be capped. if the strong has different SURFACEs for the verses then each
-# SURFACE instance can be batched separately" -- H3034 checked live, 114 occurrences across 23
-# distinct surfaces, no single surface >60, so it needs splitting, not a raised cap), never a
-# refusal and never a drop.
+_MAX_OCCURRENCES_PER_STRONG = 60  # "no sampling": a strong past this cap is split into several
+# reading calls by surface (_partition_occurrences_by_surface, #1761), never refused or dropped
 
 
 class MultipleOverCapStrongs(Exception):
@@ -97,8 +75,7 @@ def parse_response(text: str) -> dict:
     if m:
         candidate = m.group(1)
     try:
-        # strict=False: escalation #1826 -- tolerate raw control characters inside obs_text
-        # (Python's own documented leniency), not a custom sanitizer.
+        # strict=False: tolerate raw control characters inside obs_text (#1826)
         parsed = json.loads(candidate, strict=False)
     except json.JSONDecodeError as e:
         raise BadModelResponse(f"model reply is not valid JSON: {e} -- first 300 chars: {text[:300]!r}")

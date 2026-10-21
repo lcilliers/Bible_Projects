@@ -1,24 +1,11 @@
-"""clusterassign.py — the mechanical (HIGH-confidence-only) cluster-precedent matcher.
+"""clusterassign.py — the mechanical (HIGH-confidence-only) cluster-precedent matcher: P1, an exact
+gloss match to an existing labelled `cluster_strong` row (`strong.stepGloss`), judged safe to
+automate without a researcher decision. Everything else (precedent conflict, profile suggestion, no
+signal) is left for a researcher/LLM-reviewed batch.
 
-Codes the ONE deterministic tier of the cluster-allocation session's own reusable method
-(`iba/docs/cluster assignment process/wa-global-cluster-alloc-sessionlog-v1_0-20260811.md` §4) —
-P1, exact gloss match to an existing labelled `cluster_strong` row (`strong.stepGloss`). Judged
-safe to automate without a researcher decision in that session ("HIGH... no decision needed");
-everything else (precedent-conflict, profile-suggestion, no-signal) is deliberately left
-unresolved here — that judgment tier stays a researcher/LLM-reviewed batch process, not something
-this module auto-decides (session log §5: TF-IDF/profile scoring was tried and rejected for
-HIGH — too noisy on short glosses).
-
-**P2 (exact match against `cluster.gloss`'s own worked-example list) REMOVED 2026-09-17** —
-researcher, verbatim: *"I dont think it make sense to have gloss on cluster level. gloss is a
-strong level entity. this column can be removed"* (`#1720`). `cluster.gloss` is dropped from the
-schema entirely, not just unused here.
-
-Reused pitfalls from that session, not re-derived:
-- Gloss matching is exact-string (trimmed, case-insensitive), never substring — avoids the
-  ill/kill, sin/hissing false-positive class the session log's LOW-review pass hit and fixed.
-- A precedent that resolves to MORE THAN ONE cluster is a conflict, not a HIGH match — returns
-  None, left for a later judgment-tier pass.
+- Gloss matching is exact-string (trimmed, case-insensitive), never substring (avoids ill/kill,
+  sin/hissing).
+- A precedent resolving to more than one cluster is a conflict, not a HIGH match: returns None.
 """
 
 from __future__ import annotations
@@ -49,13 +36,8 @@ def _norm(s: str | None) -> str:
 
 
 def match_precedent(conn, rules: Rules, step_gloss: str) -> tuple[str, str] | None:
-    """(cluster_code, rationale) for a HIGH-confidence match, else None. `conn` is a plain
-    sqlite3 connection (read-only here) — no writes, no STEP calls, deterministic.
-
-    P2 (exact match against `cluster.gloss`'s own worked-example list) REMOVED 2026-09-17 —
-    researcher, verbatim: *"I dont think it make sense to have gloss on cluster level. gloss is a
-    strong level entity. this column can be removed"* (`#1720`). P1 already covers the strong-level
-    signal this rule wants; `cluster.gloss` itself is dropped, not just its use here."""
+    """(cluster_code, rationale) for a HIGH-confidence match, else None. `conn` is a plain sqlite3
+    connection (read-only here): no writes, no STEP calls, deterministic."""
     target = _norm(step_gloss)
     if not target:
         return None
