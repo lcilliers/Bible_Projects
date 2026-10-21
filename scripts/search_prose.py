@@ -1,10 +1,7 @@
 """Search prose_section across all prose books.
 
-Core logic now lives in `iba/app/lib/prosestore.py` (escalation #784, 2026-08-21 — incorporated
-into the IBA app; this file is the thin CLI entry point documented in
-`docs/prose-store-architecture.md` §8). `DEFAULT_LIMIT` is no longer hardcoded here — it reads
-`prose.search_default_limit` from `cfg_setting` (module='prose'), resolving the NON-COMPLIANT
-flag from escalation #648.
+Thin CLI entry point; the logic is `iba/app/lib/prosestore.py` (#784). The default limit is
+`prose.search_default_limit` in `cfg_setting` (#648).
 
 Examples:
   python scripts/search_prose.py grace

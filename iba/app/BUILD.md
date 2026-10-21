@@ -17675,3 +17675,61 @@ Also changed: `iba/app/handlers/configmaint.py`, which drops the retired `stale_
 
 Both were tested first on a copy of iba.db made with the SQLite backup API (dry run, apply, rerun
 skipped), then applied live. Validate (`CONFIG-REPORT-v599-20261021`) shows no new finding.
+
+## 366. Old docs/ files archived (2026-10-21, escalation #2191, for #2177)
+
+All 36 files in `docs/` were moved (`git mv`) to `docs/archive/`; `docs/` now holds only `archive/`.
+The test is #2182's: archive a file if nothing live names it. 35 files failed it outright.
+`prose-store-architecture.md` was still named by `iba/app/lib/prosestore.py` and by the source of
+rules 52 and 53, but the researcher ruled it superseded in the configs. Each home its own table
+maps to was checked live first: the five prose `cfg_enum` groups, `cfg_status_flow` for
+prose_section, `cfg_prose`, the prose `cfg_write_grant` rows, rules 48-53, the `prose` work package
+and `Prose.ps1` in USER-GUIDE.md.
+
+- Rules 52 and 53's `source` now names `docs/archive/prose-store-architecture.md`, and the
+  `scripts_build_programme_prose_extract` purpose is rewritten to the current state. Migration
+  `iba/app/migration/docs_archive_pointers_v1_20261021.py`, run `DEVMODE-2191-DOCS-ARCHIVE-20261021`,
+  tested on a backup-API copy first.
+- Docstrings that cited the archived doc's §8 were rewritten: `iba/app/lib/prosestore.py`,
+  `scripts/build_programme_prose_extract.py`, `scripts/export_prose_chapter_edit.py`,
+  `scripts/import_prose_chapter_edit.py`, `scripts/search_prose.py`.
+- Manifest rebuilt: `research/discovery/file-manifest-v9-20261021.md`.
+- Live cfg descriptions still naming files #2182 archived are raised as #2199.
+
+Files moved:
+- `Session-A-v9-Architecture-v4-Final-20260318.docx`
+- `Session-A-v9-Architecture-v4-Final-20260318.md`
+- `Session-A-v9-Stage1-Evaluation-20260318.docx`
+- `Strong decision table.xlsx`
+- `audit_word_design.md`
+- `audit_word_refactor_review.md`
+- `cluster-rename-map-20260521.json`
+- `data-preparation-pipeline.md`
+- `data_setup.md`
+- `database-table-analysis.md`
+- `field-data-flow-mapping.json`
+- `field-data-flow-mapping.md`
+- `filing-audit-20260614.md`
+- `filing-maintenance-20260709.md`
+- `governance-alignment-register.md`
+- `iba-config-tables-dump-v1-20260718.md`
+- `iba-db-schema-overview-v1-20260718.md`
+- `iba-db-schema-overview-v2-20260719.md`
+- `iba-db-schema-overview-v3-20260721.md`
+- `iba-set-candidates-config-review-v1-20260719.md`
+- `pipeline_decisions_20260323.md`
+- `pipeline_design_review_20260323.md`
+- `project-orientation-core-memory-map.md`
+- `prose-store-architecture.md`
+- `reusable-scripts-catalogue.md`
+- `rules-update-protocol.md`
+- `script-registry-generated-20260614.md`
+- `step_setup.md`
+- `strong decision table.jpg`
+- `verse-analysis-filing-design-proposal-v1-20260627.md`
+- `wa-prose-section-status-assessment-v1-20260629.md`
+- `wa-research-control-system-v1-20260629.md`
+- `wa-scalability-of-the-verse-method-v1-20260629.md`
+- `wa-study-close-20260630.md`
+- `word_study_extract_design.md`
+- `zotero_setup.md`

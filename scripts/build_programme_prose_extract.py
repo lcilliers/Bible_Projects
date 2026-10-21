@@ -2,11 +2,8 @@
 
 Source of truth: `prose_section_type` and the actual `prose_section` content.
 
-Core logic now lives in `iba/app/lib/prosestore.py` (escalation #784, 2026-08-21 — incorporated
-into the IBA app; this file is the thin CLI entry point documented in
-`docs/prose-store-architecture.md` §8). `EXTRACTOR_VERSION`/`CHAPTER_NAMES`/`BOOK_STAGE_MAP` are no
-longer hardcoded here — they read from `cfg_setting` (module='prose'), resolving the
-NON-COMPLIANT flag from escalation #648.
+Thin CLI entry point; the logic is `iba/app/lib/prosestore.py` (#784), with its settings in
+`cfg_setting` module 'prose' (#648).
 
 Usage:
   python scripts/build_programme_prose_extract.py

@@ -24,9 +24,8 @@ controlled nothing and gated nothing. Now that this file is under IBA's own code
 `governance.build_md_on_code_change`), a static tool-version label has no reason to live in
 `cfg_setting` too — dropped from the extract's output entirely rather than config-driven.
 
-The four `scripts/*.py` CLI entry points remain the documented CLI usage
-(`docs/prose-store-architecture.md` §8) — they now import their core logic from here instead of
-defining it locally, so there is exactly one implementation, exercised both by direct CLI use and
+The four `scripts/*.py` CLI entry points import their core logic from here, so there is exactly
+one implementation, exercised both by direct CLI use and
 by the registered `prose` work package (`python -m iba.app.run prose --step prose.extract ...`).
 
 `run_flag()` (escalation #829 sec12.4, angle a) is the one exception to "read-only against

@@ -3,9 +3,7 @@
 The markers are immutable routing metadata. Edit only the body below each
 chapter heading; the importer rejects structural marker changes.
 
-Core logic now lives in `iba/app/lib/prosestore.py` (escalation #784, 2026-08-21 — incorporated
-into the IBA app; this file is the thin CLI entry point documented in
-`docs/prose-store-architecture.md` §8).
+Thin CLI entry point; the logic is `iba/app/lib/prosestore.py` (#784).
 """
 from __future__ import annotations
 
