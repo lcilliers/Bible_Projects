@@ -92,8 +92,11 @@ def count() -> int:
 
 
 def blocks(path: str) -> int:
-    for n, line in doc_lines((ROOT / path).read_text(encoding="utf8")):
-        print(f"{n}: {line}")
+    src = (ROOT / path).read_text(encoding="utf8")
+    raw = src.split("\n")
+    for n, line in doc_lines(src):
+        trailing = line.startswith("#") and not raw[n - 1].lstrip().startswith("#")
+        print(f"{n}{' T' if trailing else ''}: {line}")
     return 0
 
 

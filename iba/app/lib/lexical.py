@@ -1,25 +1,13 @@
-"""lexical.py — the `verse_lexical` engine: T1-T3 of the verse-lexical technique
-(`iba/docs/WA-verse-reading-technique-v4-2026-08-05.md`), mechanised. Replaces
-`report.verse_span_meaning`'s per-span dump with one row per CODE within a span, holding a
-mechanically resolved — never interpreted — reading. Full design record:
-`iba/app/reports/t1-t3-design-decisions-20260805.md`.
+"""lexical.py — the `verse_lexical` engine (Layer 1): one row per CODE within a span, holding a
+mechanically resolved, never interpreted, reading. Reuses `versespanmeaningreport`'s resolution
+helpers (`_base`, `sibling_variant_codes`, `gloss_supported_by_tree`, `live_step_meaning`) rather
+than re-deriving them, and persists the result.
 
-Reuses `versespanmeaningreport`'s exact-variant/base-fallback resolution and its sibling/base
-ambiguity check (`_base`, `sibling_variant_codes`, `gloss_supported_by_tree`, `live_step_meaning`)
-rather than re-deriving them — same underlying facts, this module adds role classification and
-stem/voice selection on top, then persists the result instead of only rendering it.
-
-Runs independent of T4-T9 and `report.passage_debate` — no awareness of either. Identity-stable
-writes (redesigned 2026-09-05, escalation #1520 — see `write_readings_for_span`'s own docstring
-for the full rationale): a (span_id, code_ordinal) slot keeps the same `verse_lexical.id` for as
-long as it exists, whether its content is confirmed unchanged (no write at all) or genuinely
-corrected (real `UPDATE ... WHERE id=?`) — never soft-delete-and-reinsert for a slot that still
-exists. Matches `handlers/operations.py:phenomenon_set`'s own in-place-UPDATE convention, used
-there for the same reason: a downstream FK (`verse_lexical_note`, like `operation.phenomenon_id`)
-depends on the id staying stable. Only a slot that genuinely disappears (the span shrank) is
-soft-deleted for real — `verse`/`span`/`strong`'s own supersede-on-every-write convention remains
-correct for those tables (nothing external held a durable pointer into their old ids the way
-`verse_lexical_note` does into this one) and is deliberately NOT changed here.
+Identity-stable writes (#1520, `write_readings_for_span`): a (span_id, code_ordinal) slot keeps
+the same `verse_lexical.id` while it exists -- unchanged content is not written, changed content
+is an `UPDATE ... WHERE id=?`, and only a slot that disappears (the span shrank) is soft-deleted.
+`verse_lexical_note` depends on the id staying stable, as `operation.phenomenon_id` does in
+`handlers/operations.py:phenomenon_set`.
 """
 
 from __future__ import annotations
@@ -44,50 +32,17 @@ def _fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
         "FROM span WHERE verse_id=? AND deleted=0 ORDER BY position", (verse_id,),
     ).fetchall()]
 
-# ── role — REDESIGNED 2026-09-16 (escalation #1706 Phase B item 3, #1607 D1/D4) ─────────────────
-# Full rebuild, not a patch: the OLD role (a 'content'/'function' morph-tag classifier, below in
-# git history) is DELETED, not fixed — it's the exact mechanism escalation #1590 diagnosed as
-# buggy (the Greek article tag 'T' misclassified content instead of function), and per #1592/#1607
-# it's being replaced wholesale, not repaired. `role` is now a bare JSON array of every live
-# `cluster_strong.cluster_code` for this strong (T-codes AND M-codes both, not just the T4/T5/T7/
-# T8/T9 subset `load_code_classes` below restricts to) — e.g. `["T5","M12"]`, not an array of
-# objects (researcher, verbatim, 2026-09-16: "the column value should include the role(s) of the
-# word in the row" — a plain list, D1's own volume note: "not more than 3-4 cluster codes").
-# `role` is ALSO now the base-data readiness signal itself (#1606 D1, researcher verbatim,
-# 2026-09-09/10): "role is almost the validator that the base data is ready for lexical
-# analysis... if role is null for any word in the span for the scope, the validation fails and the
-# run does not proceed" — an empty array (no cluster_strong allocation at all) is that failure
-# state; see `unready_codes_in_scope` below, called by every build entry point BEFORE any write.
-#
-# CORRECTED 2026-09-20 (escalation #1806) — `load_role_codes`/`_role_for`/`unready_codes_in_scope`
-# used to key on `_base(strong)` (the suffix-letter-stripped code), unioning cluster_strong across
-# every sub-lettered sibling sharing a base number. Found live: verse_id 7478 span 637365 (strong
-# H7725O, cluster_strong live-allocated to M11 only) carried role `["M11","M81","T3"]` — M81 and T3
-# belong to siblings H7725N and H7725G/H/I/J/K/L/M respectively, never to H7725O itself.
-# `cluster_strong` treats each suffixed code as an independently-assigned entry (confirmed: those
-# siblings carry different, separately-made cluster judgements) — unioning them back together in
-# `role` tagged verses for clusters unrelated to the word actually occurring there. Researcher
-# ruling, verbatim, this chat: the span's `strong_variant` is "the strong that need to be carried in
-# the strong table, need to be associated with a cluster, and need to be the role" — a direct
-# lookup, not a computed aggregation. Matches the project's own established rule elsewhere
-# (`reference_strong_related_keyed_on_exact_code_not_base`: exact code, never base). All three
-# functions below now key on the EXACT strong code. `handlers/lexical.py:readiness()` Leg 3 was
-# already exact-match (never needed this fix); this brings `role` in line with it. Affected
-# 69,563 of 544,667 live `verse_lexical` rows at time of fix — rebuilt via `build_for_verse_ids`
-# over every affected verse_id (see BUILD.md for the rebuild record), not left for the next
-# incidental `lexical.build` call to silently correct.
+# ── role (#1706, #1607) ──────────────────────────────────────────────────────────────────────────
+# `role` is a JSON array of every live `cluster_strong.cluster_code` for this strong (T- and M-codes),
+# e.g. `["T5","M12"]`, keyed on the EXACT strong code, never the base (#1806: siblings carry their
+# own cluster judgements). It is also the base-data readiness signal (#1606): an empty array (no
+# cluster_strong allocation) fails the run before any write (`unready_codes_in_scope`).
 
 
 def load_role_codes(conn: sqlite3.Connection) -> dict[str, list[str]]:
-    """EXACT strong_code -> sorted list of every live `cluster_strong.cluster_code` (T-codes and
-    M-codes both) — the full set, unlike `load_code_classes` below (which stays, unchanged, for
-    is_negator/party_kind's own narrower T4/T5/T7/T8/T9 need — a deliberately different, base-keyed
-    lookup for a different field, see its own docstring). Loaded once per build call, same pattern
-    as load_code_classes/live_cache. A strong with no live cluster_strong row of any kind maps to
-    [] — the empty-array readiness-failure state `unready_codes_in_scope` checks for.
-
-    Keyed on the EXACT code, never `_base()` — see the module banner above (escalation #1806,
-    2026-09-20): base-keying pulled in unrelated siblings' cluster allocations."""
+    """EXACT strong_code -> sorted list of every live `cluster_strong.cluster_code` (T- and M-codes),
+    loaded once per build call. A strong with no live cluster_strong row maps to [], the readiness
+    failure state. Never keyed on `_base()` (#1806)."""
     out: dict[str, list[str]] = {}
     for r in conn.execute("SELECT strong, cluster_code FROM cluster_strong WHERE deleted=0"):
         out.setdefault(r["strong"], []).append(r["cluster_code"])
@@ -100,12 +55,9 @@ def _role_for(code: str | None, role_codes: dict[str, list[str]]) -> str:
 
 
 def unready_codes_in_scope(conn: sqlite3.Connection, verse_ids: list[int]) -> list[str]:
-    """The pre-run readiness validator (#1606 D1) — every DISTINCT strong code occurring in a live
-    span across `verse_ids` that would resolve to an EMPTY role array (no live cluster_strong
-    allocation at all). Non-empty return means the scope is not ready; the caller fails fast,
-    before any resolve/write happens — same EXACT-code lookup `_role_for` itself uses (escalation
-    #1806, 2026-09-20 — no longer base-stripped), so a code this reports as unready is exactly one
-    whose `role` would otherwise be written as `[]`."""
+    """The pre-run readiness validator (#1606) -- every distinct strong code in a live span across
+    `verse_ids` whose role would be empty (no live cluster_strong allocation). Non-empty means the
+    scope is not ready; the caller fails fast before any write. Same exact-code lookup as `_role_for`."""
     if not verse_ids:
         return []
     ph = ",".join("?" * len(verse_ids))
@@ -120,20 +72,12 @@ def unready_codes_in_scope(conn: sqlite3.Connection, verse_ids: list[int]) -> li
 
 def stale_role_strongs_for_cluster(conn: sqlite3.Connection, cluster_code: str,
                                    member_strongs: list[str]) -> list[str]:
-    """The pre-`verse-reading` freshness check (`#1719`, found and required live 2026-09-17 running
-    `M67`/`M60`, researcher instruction same day: *"before starting verse-reading, a validation
-    check must be performed to ensure that the lexical for the cluster in focus is up to date"*).
-
-    `verse_lexical.role` is a point-in-time snapshot of `cluster_strong` taken at the last
-    `lexical.build` run for that verse -- nothing re-syncs it automatically when `cluster_strong`
-    changes afterward (a curation fix, a reassignment) for a cluster still short of
-    `ready_for_subgroup_allocation`. A member strong whose OWN live `verse_lexical` rows never
-    carry `cluster_code` in `role`, despite `cluster_strong` currently listing it as a member, is
-    exactly the failure mode found live: Layer 1 silently never presents that strong to the LLM at
-    all, so a "complete" verse-reading pass can be complete against a stale, undercounted
-    membership list without anyone noticing. A strong with ZERO live `verse_lexical` rows at all is
-    a different, already-handled case (`unready_codes_in_scope`/`lexicalscope.
-    strongs_with_no_occurrence`) -- not reported here, since there is nothing to be stale."""
+    """The pre-verse-reading freshness check (#1719). `verse_lexical.role` is a snapshot of
+    `cluster_strong` taken at the last `lexical.build` for that verse and is not re-synced when
+    cluster_strong changes. Reports member strongs whose live `verse_lexical` rows never carry
+    `cluster_code` in `role` although `cluster_strong` lists them, since Layer 1 would never present
+    them to the LLM. A strong with no live `verse_lexical` rows at all is handled elsewhere
+    (`unready_codes_in_scope`, `lexicalscope.strongs_with_no_occurrence`)."""
     stale: list[str] = []
     for strong in member_strongs:
         rows = conn.execute(
@@ -146,20 +90,14 @@ def stale_role_strongs_for_cluster(conn: sqlite3.Connection, cluster_code: str,
 
 
 # ── resolution, per code ─────────────────────────────────────────────────────────────────────
-# SIMPLIFIED 2026-09-16 (#1706 Phase B) -- resolved_sense/ambiguity_note are both dropped from
-# Layer 1 entirely (researcher, verbatim, 2026-09-15: the multi-source meaning reading "should be
-# part of layer 2... an observation linked to a question," not a Layer 1 column at all -- see the
-# new `verse_meaning` stage, #1711). This function no longer touches `strong_meaning_parsed` or
-# STEP live lookups at all -- it just confirms the strong is registered. `role` moved to
-# `_layer1_fields` below (it's a code_classes-style lookup, same shape as is_negator/party_kind,
-# not something that belongs in the per-strong_meaning_parsed resolution path).
+# Layer 1 only confirms the strong is registered; meaning readings are Layer 2 observations
+# (#1706, #1711). `role` is added in `_layer1_fields`.
 
 def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None) -> dict:
     """One code's full verse_lexical row content (minus span_id/verse_id/code_ordinal, and minus
-    the Layer-1-mechanical fields `_layer1_fields` adds afterward). `_language` is transient —
-    carried only so `_layer1_fields`/`_narrative_morph_for` can gate on Hebrew-vs-Greek; never
-    written to the DB (verse_lexical.language is dropped, #1706 Phase B item 8; the verse-grain
-    equivalent is `verse_meta.language`, auto-computed by trigger, not by this module)."""
+    the fields `_layer1_fields` adds). `_language` is transient, carried only for the Hebrew/Greek
+    gate in `_layer1_fields`/`_narrative_morph_for`; never written (language lives at
+    `verse_meta.language`)."""
     row = {"strong": code, "morph_code": morph_slice, "status": "unregistered", "_language": None}
     strong_row = conn.execute(
         "SELECT strongNumber, language FROM strong WHERE strongNumber=?", (code,)).fetchone()
@@ -176,45 +114,18 @@ def _now() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-# ── Layer 1 mechanical fields (escalation #1383, build spec §B.5/§C.1) ────────────────────────
-# position/surface/language/testament/is_negator/narrative_morph/gloss_consistent_in_verse/
-# party_kind — computed unconditionally for every code, no selection (method-and-drift-
-# mitigation doc §1-2, cfg_method_rule `mechanical-columns-run-on-every-code-no-selection`).
+# ── Layer 1 mechanical fields (#1383) ──────────────────────────────────────────────────────────
+# position/surface/testament/is_negator/narrative_morph/gloss_consistent_in_verse/party_kind --
+# computed for every code, no selection (cfg_method_rule mechanical-columns-run-on-every-code-no-selection).
 
 def load_code_classes(conn: sqlite3.Connection) -> dict[str, set[str]]:
-    """EXACT strong_code -> set of live code-classes. Loaded once per build call (see
-    build_for_range/build_for_verse_ids) and threaded through, same pattern as `live_cache` —
-    this lookup is small (~40 rows) but every-code-every-verse re-querying it would still be
-    wasteful at corpus scale. `lexical-code-class-lookup-not-hardcoded`: this IS the queried
-    lookup that rule requires, never a hardcoded dict in this module.
-
-    Sourced from `cluster_strong`, NOT `cfg_lexical_code_class` (architecture correction,
-    researcher verdict 2026-09-05: "assigning a special status to a strong is to use a cluster
-    for it... this is not cfg territory" — full record BUILD.md #228/#229).
-
-    CORRECTED 2026-09-21 (escalation #1810, same defect class as `role` — BUILD.md #305/#1806):
-    this used to base-strip `cluster_strong.strong` via `_base()` before keying the dict, on the
-    reasoning "the old table was one-row-per-BASE-code, so base-keying needs no change to
-    `_code_classes_for()`" — inertia from a data-source migration, not a considered decision that
-    party/negator classification should be shared across sub-lettered siblings. Found live, same
-    session as the `role` fix: 9,100 live `verse_lexical` rows had a `party_kind`/`is_negator`
-    borrowed from an unrelated sibling's cluster_strong allocation (e.g. H4428G showed
-    `party_kind='divine'` with zero live T7/divine-party allocation of its own — the tag belonged
-    to a different H4428 suffix code entirely). Same root cause, same fix: keyed on the EXACT
-    strong code now, never `_base()`. Unlike `role`, this one was never read by any live LLM
-    generator (`versereadinggenerate.py`/`subgroupgenerate.py`/`charreadinggenerate.py`/
-    `charanswergenerate.py` — checked, none reference `is_negator`/`party_kind`); its only live
-    consumers were `report.lexical_exceptions` (a read-only diagnostic count) and the inactive
-    `lexical.run`/`lexical.enrich` notes payload — so no downstream `ib_observation` re-examination
-    question here, unlike `role`'s.
+    """EXACT strong_code -> set of live code-classes, from `cluster_strong` (a special status for a
+    strong is a cluster, not cfg), loaded once per build call and threaded through
+    (lexical-code-class-lookup-not-hardcoded). Keyed on the exact code, never `_base()` (#1810).
 
     `T5`/`T7`/`T8`/`T9`/`T4` here are `cluster.cluster_code` values (Negator/Party-Divine/
-    Party-Human/Party-Angelic/Adversarial) — NOT this module's own unrelated "T1-T9" (the Verse
-    Reading Technique steps named in this file's own docstring) or the observation-catalogue's
-    T0-T7 tier scheme. Three different T-numbering schemes coexist project-wide; see the
-    programme glossary's own T1 disambiguation entry. `T6` (Connective) is deliberately excluded
-    — nothing in this module reads a connective classification (that lives in `verse_lexical_note`
-    instead, a different mechanism entirely, `lexicalenrich.py`)."""
+    Party-Human/Party-Angelic/Adversarial), not the verse-reading technique's T1-T9 or the
+    observation catalogue's T0-T7 tiers. `T6` (Connective) is not read here."""
     _CLUSTER_CODE_TO_CLASS = {
         "T5": "negator", "T4": "party_adversarial", "T7": "party_divine",
         "T8": "party_human", "T9": "party_angelic",
@@ -233,13 +144,6 @@ def _code_classes_for(code: str, code_classes: dict[str, set[str]]) -> set[str]:
     return code_classes.get(code, set())
 
 
-# `load_mcode_strongs` — DELETED 2026-09-16 (#1706 Phase B). Its sole purpose (gating
-# `resolved_sense` to M-code strongs only, escalation #1527) went dead the moment #1575/#1527-cont.
-# stopped writing resolved_sense from Layer 1 at all (2026-09-07); it had already been reduced to
-# "loaded, threaded through, unused" by that point (see `build_for_verse`'s own prior comment) and
-# resolved_sense's full removal from Layer 1 (this rebuild) removes its last reason to exist.
-# `role` now needs the FULL cluster_strong set regardless of M/T-code (see `load_role_codes`
-# above) — a different, wider lookup, not a revival of this one.
 
 
 _PARTY_CLASS_TO_KIND = {"party_divine": "divine", "party_human": "human",
@@ -249,13 +153,8 @@ _party_kind_parity_checked = False
 
 
 def _assert_party_kind_parity(conn: sqlite3.Connection) -> None:
-    """Live cfg_enum cross-check for _PARTY_CLASS_TO_KIND's own value set, added 2026-09-20
-    (escalation #1796): party_kind was a registered cfg_enum group nothing ever looked up by name
-    at runtime -- this hardcoded dict is the sole source of every party_kind ever written, with
-    nothing confirming its 3 output values (divine/human/non_human) stay inside the registered
-    enum. Cached after the first call (module-level flag, not re-queried per verse) -- build_for_verse
-    runs once per verse in bulk builds, and this only needs to catch a genuine future edit drifting
-    the two apart, not run thousands of times per call."""
+    """Checks _PARTY_CLASS_TO_KIND's output values (divine/human/non_human) against the live
+    party_kind cfg_enum (#1796). Cached after the first call."""
     global _party_kind_parity_checked
     if _party_kind_parity_checked:
         return
@@ -296,11 +195,9 @@ def _narrative_morph_for(morph_slice: str | None, language: str | None,
 def _layer1_fields(row: dict, span: dict, sibling_codes: list[str], language: str | None,
                    testament: str | None, code_classes: dict[str, set[str]],
                    role_codes: dict[str, list[str]], base_pattern: str) -> None:
-    """Mutates `row` (a resolve_code() result) in place, adding the Layer-1 mechanical fields —
-    everything except gloss_consistent_in_verse, which needs the whole verse's rows (computed
-    separately, see _apply_gloss_consistency below). `language` is NOT stored (2026-09-16, #1706
-    Phase B item 8 — dropped from verse_lexical, lives at verse_meta grain instead); still threaded
-    through as a parameter because `_narrative_morph_for` needs the per-code Hebrew/Greek gate."""
+    """Mutates `row` (a resolve_code() result) in place, adding the Layer-1 mechanical fields --
+    everything except gloss_consistent_in_verse, which needs the whole verse (_apply_gloss_consistency).
+    `language` is not stored; it is passed for `_narrative_morph_for`'s Hebrew/Greek gate."""
     row["position"] = span["position"]
     row["surface"] = span["surface"]
     row["testament"] = testament
@@ -308,39 +205,19 @@ def _layer1_fields(row: dict, span: dict, sibling_codes: list[str], language: st
     row["role"] = _role_for(code, role_codes)
     classes = _code_classes_for(code, code_classes) if code else set()
     row["is_negator"] = 1 if "negator" in classes else None
-    # Deterministic by RESULTING KIND, not by picking an arbitrary class out of an unordered set
-    # (fixed 2026-09-21, escalation #1810 re-verification -- found live on H4317Q/Michael, which
-    # deliberately carries BOTH party_human and party_angelic live at once per the researcher's own
-    # 2026-09-09 instruction: "both stay live so Layer 2 checks which referent applies per
-    # occurrence." The old `next((c for c in classes if c in _PARTY_CLASS_TO_KIND), None)` drew
-    # from Python's unordered set iteration -- reproducible only by accident of a single process's
-    # hash seed, not by anything in the data, contradicting this module's own "mechanically
-    # resolved, never interpreted" principle. Two classes mapping to the SAME kind (e.g.
-    # party_angelic + party_adversarial, both "non_human") are not a real conflict and still
-    # resolve; two classes mapping to DIFFERENT kinds (human vs non_human, Michael's actual case)
-    # is a genuine, then-unresolved conflict -- written as None, matching the researcher's own
-    # stated design that Layer 2 (not Layer 1) is what disambiguates a specific occurrence, not
-    # silently asserted as whichever kind happened to iterate first.
+    # Deterministic by resulting kind, never by set iteration order (#1810): classes mapping to the
+    # same kind resolve; classes mapping to different kinds (e.g. H4317Q, human and angelic) are a
+    # conflict written as None, left for Layer 2 to disambiguate per occurrence.
     party_kinds = {_PARTY_CLASS_TO_KIND[c] for c in classes if c in _PARTY_CLASS_TO_KIND}
     row["party_kind"] = next(iter(party_kinds)) if len(party_kinds) == 1 else None
     row["narrative_morph"] = _narrative_morph_for(row["morph_code"], language, sibling_codes)
 
 
 def _apply_gloss_consistency(verse_rows: list[dict]) -> None:
-    """Mutates every row in `verse_rows` in place — gloss_consistent_in_verse=0 iff this row's
-    own (strong, morph_code) pair has >1 distinct SURFACE (the translation's own rendering, not
-    resolved_sense) among this verse's own rows, else 1 (never NULL — per §D.1). Needs the WHOLE
-    verse's resolved rows, not just one span's, hence a separate pass after every span in the
-    verse has been resolved.
-
-    Escalation #1527 (2026-09-06), researcher decision, previously made and confirmed here:
-    keyed on `surface`, not `resolved_sense`. `resolved_sense` is a pure function of
-    (strong, morph_code) with no per-occurrence signal at all (see #1527's own root-cause
-    finding), so a same-code-different-sense check against it can never fire, for any corpus —
-    it isn't a rare miss, it's structurally impossible. `surface` (the aligned translation word
-    for this span) genuinely does vary by occurrence — confirmed live, Dan 1:8's own H0834A
-    ('that' at one occurrence, 'allow' at the other) — so this is the field the check was always
-    meant to be run against."""
+    """Mutates every row in `verse_rows` in place: gloss_consistent_in_verse=0 iff this row's own
+    (strong, morph_code) pair has >1 distinct SURFACE among this verse's rows, else 1 (never NULL).
+    Keyed on `surface`, which varies by occurrence (#1527). Needs the whole verse, so it runs after
+    every span in the verse is resolved."""
     groups: dict[tuple, set] = {}
     for r in verse_rows:
         if r["strong"] is None or r["morph_code"] is None:
@@ -355,9 +232,6 @@ def _apply_gloss_consistency(verse_rows: list[dict]) -> None:
         r["gloss_consistent_in_verse"] = 1 if len(groups[key]) <= 1 else 0
 
 
-# resolved_sense/ambiguity_note/language DROPPED 2026-09-16 (#1706 Phase B items 3-4/8) — see
-# module banner. `role`'s CONTENT changed (cluster-code JSON array, not content/function) but it
-# stays a plain identity-write column like every other field here — no special-casing needed.
 _CONTENT_FIELDS = ("strong", "morph_code", "role", "status",
                   "position", "surface", "testament", "is_negator",
                   "narrative_morph", "gloss_consistent_in_verse", "party_kind")
@@ -365,29 +239,13 @@ _CONTENT_FIELDS = ("strong", "morph_code", "role", "status",
 
 def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: int,
                             resolved: list[dict]) -> dict:
-    """Identity-stable write, redesigned 2026-09-05 (escalation #1520 root-cause fix,
-    `iba/docs/1520-verse-lexical-crud-safety-review-v1-20260905.md`) — replaces the old
-    "soft-delete + insert a fresh row on every run, even for identical content" convention, which
-    minted a new `verse_lexical.id` on every rebuild and silently orphaned any `verse_lexical_note`
-    row that had come to depend on the old one. Matches this codebase's own already-correct
-    precedent for a table WITH downstream FK dependents (`handlers/operations.py:phenomenon_set`,
-    in-place UPDATE, not supersede) rather than the pattern that's only safe for a leaf table with
-    none (`verse`/`span`/`strong`'s own convention, which `verse_lexical` used to copy blindly).
-
-    Per code_ordinal within this span:
-      - no live row yet             -> INSERT (genuinely new — a fresh id is correct here).
-      - live row, content identical -> untouched. No write at all: same id, same created_at,
-        same `verse_lexical_note` attachments. This is the common case (most rebuilds re-confirm
-        already-correct data) and it is what actually eliminates the orphan risk, not a workaround
-        bolted on beside it.
-      - live row, content differs   -> real `UPDATE ... WHERE id=?`. Same id preserved forever;
-        `updated_at` set to record when the correction was confirmed (replaces the old
-        "created_at reflects the last run" signal without requiring the id to churn to get it).
-      - a code_ordinal that WAS live before this call but has no resolved code now (the span
-        genuinely shrank) -> soft-deleted for real. This is the one case where the row's id
-        legitimately goes away, so any `verse_lexical_note` still pointing at it is now genuinely
-        stale, not a rebuild artefact — counted and returned as `removed_with_live_notes` rather
-        than silently left to dangle; the caller surfaces a nonzero count, never swallows it.
+    """Identity-stable write (#1520). Per code_ordinal within this span:
+      - no live row yet             -> INSERT.
+      - live row, content identical -> untouched: same id, same created_at, same
+        `verse_lexical_note` attachments.
+      - live row, content differs   -> `UPDATE ... WHERE id=?`, same id; `updated_at` records when.
+      - a code_ordinal live before but with no resolved code now (the span shrank) -> soft-deleted;
+        notes still pointing at it are counted as `removed_with_live_notes` for the caller to surface.
 
     Returns counts: inserted / updated / unchanged / removed / removed_with_live_notes."""
     c = {"inserted": 0, "updated": 0, "unchanged": 0, "removed": 0, "removed_with_live_notes": 0}
@@ -450,10 +308,8 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int,
                     base_pattern: str = _BASE_RE_FALLBACK,
                     code_classes: dict[str, set[str]] | None = None,
                     role_codes: dict[str, list[str]] | None = None) -> dict:
-    """Internal to this module — only ever called from `build_for_range`/`build_for_verse_ids`
-    below (checked live 2026-09-16, no external caller), which is why the readiness pre-check
-    (`unready_codes_in_scope`) lives at THEIR entry points, not here: this function has no
-    standalone `verse_ids` scope of its own to check against."""
+    """Called only from `build_for_range`/`build_for_verse_ids`, whose entry points run the readiness
+    pre-check (`unready_codes_in_scope`)."""
     _assert_party_kind_parity(conn)
     c = {"spans": 0, "codes": 0, "inserted": 0, "updated": 0, "unchanged": 0, "removed": 0,
         "removed_with_live_notes": 0}
@@ -501,9 +357,9 @@ _TOTAL_KEYS = ("spans", "codes", "inserted", "updated", "unchanged", "removed",
 
 
 class NotReady(Exception):
-    """Raised by `build_for_range`/`build_for_verse_ids` when `unready_codes_in_scope` finds any
-    code in the requested scope with zero cluster_strong allocation (#1606 D1) — the run does not
-    proceed, per the researcher's own ruling, 2026-09-09/10. `.codes` carries the exact list."""
+    """Raised by `build_for_range`/`build_for_verse_ids` when `unready_codes_in_scope` finds any code
+    in scope with zero cluster_strong allocation (#1606); the run does not proceed. `.codes` carries
+    the list."""
     def __init__(self, codes: list[str]):
         self.codes = codes
         super().__init__(f"{len(codes)} code(s) in scope have no cluster_strong allocation "
@@ -528,15 +384,10 @@ def build_for_range(conn: sqlite3.Connection, book: str, lo: int, hi: int,
 
 
 def build_for_verse_ids(conn: sqlite3.Connection, verse_ids: list[int]) -> dict:
-    """Same shape as `build_for_range`, but scoped to an explicit verse_id list rather than a
-    book/chapter range — for a per-WORD rebuild (2026-08-10, `raw.lexical`, the `new-word` chain's
-    closing step: "checking that the lexicals for the verses are correct with the parse values").
-    `build_for_verse` is identity-stable (`write_readings_for_span`, redesigned 2026-09-05,
-    escalation #1520): re-running this for a verse whose parse values haven't changed is a true
-    no-op (`unchanged`, same ids, nothing written); a verse whose span content HAS changed gets its
-    `verse_lexical` rows corrected in place (`updated`, same ids) — either way, any
-    `verse_lexical_note` already attached survives untouched. Dedups the input (a word's strongs
-    can share a verse many times over)."""
+    """Same shape as `build_for_range`, scoped to an explicit verse_id list (e.g. a per-word rebuild,
+    `raw.lexical`, the `new-word` chain's closing step). Identity-stable: unchanged verses write
+    nothing, changed ones are corrected in place, and attached `verse_lexical_note` rows survive.
+    Dedups the input."""
     verse_ids = list(dict.fromkeys(verse_ids))     # de-dup, preserve order
     unready = unready_codes_in_scope(conn, verse_ids)
     if unready:

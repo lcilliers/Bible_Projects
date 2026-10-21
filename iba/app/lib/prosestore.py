@@ -1,43 +1,16 @@
-"""prosestore.py — the DB-canonical prose store: extract, search, chapter export/import.
+"""prosestore.py — the DB-canonical prose store: extract, search, chapter export/import, flags,
+status set (#784). Connects to `bible_research.db` via `cfg.database_path('bible_research')`.
 
-Incorporates operations that were previously standalone and untouched by any IBA code —
-`scripts/build_programme_prose_extract.py`, `scripts/search_prose.py`,
-`scripts/export_prose_chapter_edit.py`, `scripts/import_prose_chapter_edit.py` — into the app
-proper (`governance.project_change_rule`: "Any operation defined in the past that is not in the
-IBA app must be migrated to the app."). Escalation #784, 2026-08-21: the researcher's own finding
-was that despite `prose_section`/`prose_section_type` being fully catalogued in `cfg_table`/
-`cfg_column`, zero `cfg_step`/`cfg_work_package`/handler code ever touched them — the schema
-catalogue described the tables, nothing in the app operated on them.
+Settings are `cfg_prose` rows (module 'prose'), read through `cfg.required_module_setting()` with
+no fallback. The four `scripts/*.py` CLI entry points import their core logic from here, so there
+is one implementation, exercised by direct CLI use and by the registered `prose` work package
+(`python -m iba.app.run prose --step prose.extract ...`).
 
-Connects to `bible_research.db` via `cfg.database_path('bible_research')` — the first real
-operational consumer of that setting beyond `init.py`'s startup drift check (`Cfg.database_path`'s
-own docstring notes both path settings "sat as genuine orphans" until now).
-
-Config-driven values (module='prose' in `cfg_setting`) replace what were module-level hardcoded
-constants flagged NON-COMPLIANT under escalation #648 (`iba/app/reports/hardcoded-constants-sweep-
-20260817.md`): `prose.chapter_names`, `prose.book_stage_map`, `prose.search_default_limit`.
-`EXTRACTOR_VERSION` (the fourth constant #648 flagged) is deliberately NOT one of these — researcher,
-2026-08-22 (escalation #784/#794): it labelled the extract *tool's* own version, not prose content
-(which has its own real per-section version/supersede model, `prose_section.version`/
-`supersedes_id` — a completely different thing this constant was easily confused with). It
-controlled nothing and gated nothing. Now that this file is under IBA's own code control (git,
-`governance.build_md_on_code_change`), a static tool-version label has no reason to live in
-`cfg_setting` too — dropped from the extract's output entirely rather than config-driven.
-
-The four `scripts/*.py` CLI entry points import their core logic from here, so there is exactly
-one implementation, exercised both by direct CLI use and
-by the registered `prose` work package (`python -m iba.app.run prose --step prose.extract ...`).
-
-`run_flag()` (escalation #829 sec12.4, angle a) is the one exception to "read-only against
-`prose_section`/`prose_section_type`" above — it writes directly to `wa_data_quality_flags`
-(`bible_research.db`), a different table family entirely, not gated behind a generated patch file.
-
-`run_flag_fix_propose()`/`run_flag_fix_apply()` (escalation #890 D5, angle b) add propose/apply on
-top of angle a: propose writes a review report (no DB write); apply re-checks each approved
-section fresh and generates a `PROSE` supersede patch, same shape/boundary as `run_import_chapter`
-— neither is a new exception to the read-only/patch-generating rule above. `run_import_chapter`
-also gained delete-detection (escalation #890 D3) — a section missing from an edit file now
-refuses the import, matching add/move's existing behaviour, instead of silently no-op'ing.
+Read-only against `prose_section`/`prose_section_type`: every change is a generated patch applied
+by scripts/apply_session_patch.py. The one direct write is `run_flag()` (#829), to
+`wa_data_quality_flags`. `run_flag_fix_propose()` writes a review report; `run_flag_fix_apply()`
+re-checks each approved section and generates a `PROSE` supersede patch (#890). `run_import_chapter`
+refuses a section missing from an edit file, as it refuses an added or moved one (#890 D3).
 """
 from __future__ import annotations
 
@@ -47,18 +20,8 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Every output-location constant that used to live here (OUT_DIR/DOCX_OUT_DIR/SEARCH_OUT_DIR/
-# CHAPTER_EDIT_OUT_DIR/PATCH_OUT_DIR/_DEFAULT_CHAPTER_NAMES/_DEFAULT_BOOK_STAGE_MAP/
-# _DEFAULT_BOOK_OUTPUT_DIR/_DEFAULT_SEARCH_LIMIT/_DEFAULT_EDIT_FILE_DIR) was a "Python-level
-# DEFAULT only, used when cfg_prose is inactive/absent" — removed entirely 2026-08-29 (researcher
-# direct ruling, full-codebase sweep: *"there should be NO hardcoded literals in current code"*).
-# This was, on its own history, the clearest case for removing the pattern rather than re-fixing
-# its drifted value again: CHAPTER_EDIT_OUT_DIR had ALREADY silently drifted once (corrected
-# 2026-08-22, drifted again, corrected again 2026-08-28, escalation #971/#976) — the fallback
-# constant, not the config, was what kept going stale, because nothing ever re-verified it against
-# the live row. Every function below now reads its `cfg_prose` row via `cfg.required_module_
-# setting()` (lib/cfg.py, no default parameter at all) — a missing/inactive row now fails loudly
-# instead of silently resurrecting a value that already proved it can go stale unnoticed.
+# Every location comes from its `cfg_prose` row through cfg.required_module_setting(): no hardcoded
+# fallback, so a missing or inactive row fails loudly.
 
 MARKER_RE = re.compile(r"<!-- PROSE_([A-Z_]+): ?(.*?) -->")
 ID_RE = re.compile(r"<!-- PROSE_SECTION_ID: (\d+) -->")
@@ -80,17 +43,11 @@ def today_compact() -> str:
 
 
 def _next_edit_version(stem: str, edit_dir: Path) -> int:
-    """Next edit-cycle version number for a chapter-edit export with this book/chapter/section
-    stem. `edit_dir` has no default — its sole caller always passes `edit_file_dir(cfg)` explicitly
-    (a hardcoded default here would be the exact same drift-prone shape removed everywhere else
-    2026-08-29). Researcher, 2026-08-22 (escalation #784): 'all files must be version controlled' --
-    'currently the name of the file makes it impossible to link the file with the book-chapter-
-    session' (read as: without a version number, two edit exports of the same book+chapter can't be
-    told apart, and a same-day re-export silently overwrites). This is an edit-CYCLE version, distinct from
-    prose_section.version -- one exported file can bundle several section rows that may each sit at
-    a different DB version, so the file's own version is a separate counter. Scans both the active
-    folder and its archive (§5 below moves imported files there) so a version is never reused even
-    after archiving."""
+    """Next edit-cycle version number for a chapter-edit export with this book/chapter/section stem
+    (`edit_dir` is always `edit_file_dir(cfg)`). Every export is versioned so it can be traced to its
+    edit session and a re-export never overwrites (#784). Distinct from prose_section.version: one
+    file can bundle several sections at different DB versions. Scans the folder and its archive, so
+    a version is never reused."""
     pattern = re.compile(re.escape(stem) + r"-v(\d+)-\d{8}\.md$")
     max_v = 0
     for folder in (edit_dir, edit_dir / "archive"):
@@ -110,32 +67,12 @@ def get_schema_version(conn) -> str:
     return row[0] if row else "unknown"
 
 
-# `chapter_names()` (read `prose.chapter_names` — a fixed 0-6 dict of Programme's own literary
-# chapter names) RETIRED, escalation #1381 (researcher, 2026-09-02: "dropping the
-# cfg_prose.chapter_names"). It was a Programme-book-specific lookup applied unconditionally to
-# every book's `chapter_no` by both render_markdown_view and render_docx -- confirmed live to
-# silently mislabel other books' content (e.g. Detail design's chapter_no=1, shared by 4
-# unrelated items across 4 sessions, would all render "Chapter 1 -- Programme purpose"). The
-# heading hierarchy no longer needs a name-lookup at all: `section_label` supplies the Chapter's
-# display text directly. Programme's own `section_label` data was migrated from a constant
-# `'Programme'` placeholder to the 7 real chapter names this function used to provide, as part of
-# the same fix, so no information was lost by the retirement.
+# Chapter display text is `section_label` directly; there is no chapter-name lookup (#1381).
 
 
 def book_stage_map(cfg) -> dict:
-    """`prose.book_stage_map` — D10 RESOLVED (escalation #890 D6, 2026-08-26): this function's own
-    docstring previously claimed the stage-based map drives which book a `prose_section_type` row
-    is filed under, and that 1 of 949 rows (id 78, `prog_purp_observations_framework` —
-    `source_stage='programme'`, `book_label='Detail design'`) would be misfiled as a result. That
-    claim was checked against the actual call sites this round and found **false** — this function
-    is used ONLY to validate the `--book` CLI argument against the list of real book names
-    (`run_extract`'s `book not in book_stage_map(cfg)` check); the actual row filtering
-    (`extract_programme_prose`) already queries `WHERE book_label = ?` directly and always has.
-    Id 78 is therefore already correctly filed under 'Detail design' (its own `book_label`), not
-    'Programme' — there was no functional bug, only a stale comment describing a design that was
-    superseded by the time the code was actually written. Kept as the `--book` choice-list source
-    (still useful for CLI validation) — not dropped, since nothing else currently enumerates the 4
-    live book names."""
+    """`prose.book_stage_map` -- the list of real book names, used to validate the `--book` CLI
+    argument. Row filtering uses `book_label` directly (#890 D6)."""
     return cfg.required_module_setting("cfg_prose", "prose.book_stage_map")
 
 
@@ -144,26 +81,20 @@ def search_default_limit(cfg) -> int:
 
 
 def edit_file_dir(cfg) -> Path:
-    """`prose.edit_file_dir` (escalation #829, `governance.rules_must_be_config_driven`) — no
-    hardcoded fallback (removed 2026-08-29; its predecessor constant drifted silently twice)."""
+    """`prose.edit_file_dir` -- no hardcoded fallback."""
     return Path(cfg.required_module_setting("cfg_prose", "prose.edit_file_dir"))
 
 
 def output_dir(cfg) -> Path:
-    """`prose.output_dir` (escalation #971/#976, `iba/app/lib/pathaudit.py`'s scan) — no hardcoded
-    fallback (removed 2026-08-29, same reasoning as `edit_file_dir` above). Stays the Programme-
-    only/no-`--book`-given default — `output_dir_for` below is the book-aware entry point
-    (escalation #989/#1000)."""
+    """`prose.output_dir` -- no hardcoded fallback. The Programme / no-`--book` default;
+    `output_dir_for` is the book-aware entry point."""
     return Path(cfg.required_module_setting("cfg_prose", "prose.output_dir"))
 
 
 def output_dir_for(cfg, book_label: str | None) -> Path:
-    """`prose.book_output_dir` — book-aware output directory (escalation #989/#1000). These
-    folders hold prose operation WORKING FILES for that book, not a replica of prose content
-    (researcher ruling, #1000). `book_label is None` (no `--book` given) falls back to the flat
-    `output_dir(cfg)` (Programme's own dir), unchanged existing behaviour. A `book_label` not
-    present in the map raises rather than guessing a location -- matches `run_extract`'s existing
-    "unknown book" refusal for an unrecognised `--book` value."""
+    """`prose.book_output_dir` -- book-aware output directory (#989/#1000): working files for that
+    book, not a replica of prose content. `book_label is None` falls back to `output_dir(cfg)`; a
+    book not in the map raises, as `run_extract` refuses an unknown `--book`."""
     if book_label is None:
         return output_dir(cfg)
     book_map = cfg.required_module_setting("cfg_prose", "prose.book_output_dir")
@@ -189,7 +120,7 @@ def patch_output_dir(cfg) -> Path:
     return Path(cfg.required_module_setting("cfg_prose", "prose.patch_output_dir"))
 
 
-# ── extract (was scripts/build_programme_prose_extract.py) ─────────────────
+# ── extract (CLI: scripts/build_programme_prose_extract.py) ────────────────
 
 def extract_programme_prose(
     conn, include_body: bool = False, book: str | None = None, chapter: int | None = None
@@ -284,28 +215,13 @@ def build_extract(
 
 
 def render_markdown_view(cfg, extract: dict) -> str:
-    """Heading hierarchy corrected per escalation #1381 (researcher, 2026-09-02):
-    `# {book_label}` (Book) -> `## {section_label}` (Chapter) -> `### {label}` (Section).
-    Neither Book nor Chapter carries a subtext paragraph; `description` renders below the
-    Section heading, not above it (the old code put it above `label` -- backwards per spec).
+    """Heading hierarchy (#1381): `# {book_label}` (Book) -> `## {section_label}` (Chapter) ->
+    `### {label}` (Section). Neither Book nor Chapter carries a subtext paragraph; `description`
+    renders below the Section heading.
 
-    Ordering: Book by `book_order` (unchanged). Chapter-within-book and Section-within-chapter
-    are NOT `chapter_no`-based as first specified -- checked against live data before building
-    this (see escalation #1381's own findings) and `chapter_no` does not reliably discriminate
-    either tier: it varies WITHIN one section_label group (Session A's 6 Sections carry
-    chapter_no 1..6) and sometimes not even within that (Findings/"Verse analysis" has 3
-    Sections all sharing chapter_no=1). `section_order` is what actually varies BETWEEN
-    section_label groups (confirmed live), so it orders Chapters; `sort_order` reliably
-    discriminates Sections within one chapter (confirmed live: 1003/1004/1005 on the Findings
-    case above), so it orders Sections. `chapter_no` is no longer used for ordering here --
-    see prose_section_type.chapter_no's own cfg_column.use for its remaining role, if any.
-
-    `chapter_names(cfg)`/`prose.chapter_names` is retired as part of this fix (escalation #1381
-    -- "drop it" per researcher instruction) -- the Chapter's display text is `section_label`
-    directly, no separate name-lookup table. Programme's `section_label` data was migrated from
-    a constant `'Programme'` (a workaround for the OLD suppression guard this function no
-    longer has) to the real per-chapter names `chapter_names` used to provide, so no chapter
-    text is lost by the retirement -- see the migration this escalation's resolution records.
+    Ordering: Book by `book_order`, Chapter by `section_order` (it varies between section_label
+    groups), Section by `sort_order` (it discriminates Sections within a chapter). `chapter_no` does
+    not reliably discriminate either tier, so it is not used for ordering.
     """
     lines = []
     meta = extract["meta"]
@@ -380,14 +296,8 @@ def render_markdown_view(cfg, extract: dict) -> str:
 
 
 def render_docx(cfg, extract: dict, out_path: Path) -> bool:
-    """Readable .docx export. Returns False (no-op) if python-docx isn't installed.
-
-    Same Book -> Chapter -> Section hierarchy fix as `render_markdown_view` (escalation #1381)
-    -- read that function's docstring for the full rationale (ordering-field substitution,
-    chapter_names retirement). This function had a WORSE pre-existing bug than the markdown
-    view: it never grouped by book at all -- every export was hardcoded under a single
-    "Programme" heading regardless of which book was actually being extracted. Fixed here in
-    the same pass, not left half-done."""
+    """Readable .docx export, grouped by book with the same Book -> Chapter -> Section hierarchy and
+    ordering as `render_markdown_view`. Returns False (no-op) if python-docx isn't installed."""
     try:
         from docx import Document
         from docx.shared import Pt, RGBColor
@@ -473,12 +383,6 @@ def render_docx(cfg, extract: dict, out_path: Path) -> bool:
                             rr = p.add_run("(body not included in this extract — re-run with --include-body)")
                             rr.italic = True
                             continue
-                        # Pre-existing bug fixed here, escalation #1381 (found while touching this
-                        # exact block for the heading-hierarchy fix, not introduced by it -- `git
-                        # diff` confirms these lines were untouched before this fix): `continue`
-                        # previously sat OUTSIDE this `if`, unconditionally, so this loop below was
-                        # unreachable dead code for every row -- the docx export never actually
-                        # wrote a section's body text, regardless of --include-body.
                         for para in body.split("\n\n"):
                             para = para.strip()
                             if not para:
@@ -555,7 +459,7 @@ def run_extract(cfg, include_body=False, book=None, chapter=None, also_markdown=
         conn.close()
 
 
-# ── search (was scripts/search_prose.py) ────────────────────────────────────
+# ── search (CLI: scripts/search_prose.py) ───────────────────────────────────
 
 def search_prose(conn, query, book=None, limit=100, raw_fts=False):
     book_clause = ""
@@ -609,11 +513,7 @@ def render_search_markdown(query, rows, total_matches, book):
         return "\n".join(lines) + "\n"
 
     for index, row in enumerate(rows, start=1):
-        # Book -> Chapter -> Section breadcrumb, matching escalation #1381's heading hierarchy
-        # (book_label / section_label / label). Previously this aliased pst.label AS
-        # "chapter_title" and displayed it as if it were the chapter's own name -- it isn't; it's
-        # the Section's name. Renamed to section_type_label in the query above and shown here as
-        # what it actually is.
+        # Book -> Chapter -> Section breadcrumb (book_label / section_label / label)
         location = [row["book_label"] or "Unassigned book",
                    row["section_label"] or "Unassigned chapter",
                    row["section_type_label"] or "Unassigned section"]
@@ -649,7 +549,7 @@ def run_search(cfg, query, book=None, limit=None, raw_fts=False, out=None) -> di
         conn.close()
 
 
-# ── chapter export (was scripts/export_prose_chapter_edit.py) ──────────────
+# ── chapter export (CLI: scripts/export_prose_chapter_edit.py) ─────────────
 
 def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> dict:
     conn = open_db(cfg)
@@ -694,12 +594,8 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
         book_name = rows[0]["book_label"] or "unassigned-book"
         chapter_no = rows[0]["chapter_no"]
         title = f"{book_name} — Chapter {chapter_no}" if chapter_no is not None else book_name
-        # Filename stem: book + chapter, or book + section code when there's no chapter to key on
-        # (e.g. a single-type export). Researcher, 2026-08-22 (escalation #784): the un-versioned
-        # name made it "impossible to link the file with the book-chapter-session" -- two exports
-        # of the same book/chapter were indistinguishable, and a same-day re-export silently
-        # overwrote (found live this session). -v{n}- (an edit-cycle counter, see
-        # _next_edit_version) is what makes each export traceable to its own edit session.
+        # filename stem: book + chapter, or book + section code when there's no chapter; -v{n}- is the
+        # edit-cycle counter (_next_edit_version)
         stem = (
             f"prose-edit-{book_name.lower().replace(' ', '-')}-"
             f"{('chapter-' + str(chapter_no)) if chapter_no is not None else ('section-' + str(rows[0]['code']))}"
@@ -714,13 +610,8 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
             "<!-- This file becomes permanent provenance once imported (its archived path is -->",
             "<!-- recorded as record_change_log.change_source, escalation #836) -- do not delete -->",
             "<!-- by hand; the import step archives it automatically on success. -->",
-            # Escalation #890 D3: the authoritative record of which section ids this export
-            # covered -- read back at import time to detect a whole block silently removed by
-            # hand. Deliberately NOT re-derived from whichever blocks happen to survive in the
-            # file (a section_type-code-based inference was tried and found live to blind itself
-            # exactly when the deleted block was the ONLY one of its type left in the file --
-            # its code then vanishes from the surviving blocks too, so nothing is left to detect
-            # against). This marker is fixed at export time and can't be fooled by any deletion.
+            # the section ids this export covers, fixed at export time and read back at import to detect a
+            # block removed by hand (#890 D3)
             f"<!-- PROSE_EXPORT_SECTION_IDS: {','.join(str(r['id']) for r in rows)} -->", "",
         ]
         for row in rows:
@@ -728,17 +619,11 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
                 f"<!-- PROSE_SECTION_ID: {row['id']} -->",
                 f"<!-- PROSE_SECTION_TYPE: {row['code']} -->",
                 f"<!-- PROSE_BOOK: {row['book_label']} -->",
-                # Renamed 2026-09-02 (escalation #1381/#1382 follow-up, researcher instruction):
-                # this marker held `section_label`, which #1381 established renders as the
-                # Chapter heading -- "PROSE_SECTION" for Chapter data was backwards, the same
-                # confusion #1381 fixed in the read-only reports. `_parse_edit_blocks`/
-                # `run_import_chapter` accept the old `PROSE_SECTION` name too so the 6 in-flight
-                # edit files already exported under the old name still import cleanly.
+                # holds `section_label`, the Chapter heading (#1381); the importer also accepts the older
+                # PROSE_SECTION name
                 f"<!-- PROSE_CHAPTER: {row['section_label']} -->",
                 f"<!-- PROSE_CHAPTER_NO: {row['chapter_no']} -->",
-                # Renamed from PROSE_CHAPTER_TITLE -- this holds `label`, which #1381 established
-                # renders as the SECTION heading, not the chapter's. Same backward-compat note
-                # as PROSE_CHAPTER above.
+                # holds `label`, the Section heading; the older PROSE_CHAPTER_TITLE name is also accepted
                 f"<!-- PROSE_SECTION_TITLE: {row['section_title']} -->",
                 f"<!-- PROSE_SORT_ORDER: {row['sort_order']} -->",
                 f"<!-- PROSE_VERSION: {row['version']} -->",
@@ -752,7 +637,7 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
         conn.close()
 
 
-# ── chapter import (was scripts/import_prose_chapter_edit.py) ──────────────
+# ── chapter import (CLI: scripts/import_prose_chapter_edit.py) ─────────────
 
 def _parse_edit_blocks(text: str) -> list[dict[str, str]]:
     starts = list(ID_RE.finditer(text))
@@ -778,27 +663,16 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
     database itself — apply the reviewed patch with scripts/apply_session_patch.py, same as before
     this operation was incorporated (the write-authorisation boundary is unchanged)."""
     input_path = Path(input_path)
-    # Computed up front (before any move happens) so the patch's own _patch_summary can name it
-    # even though the physical move only happens after the patch is successfully written.
+    # computed before any move, so the patch summary can name the archived path
     archived_source = edit_file_dir(cfg) / "archive" / input_path.name
     text = input_path.read_text(encoding="utf-8")
     blocks = _parse_edit_blocks(text)
     conn = open_db(cfg)
     operations = []
     try:
-        # Delete-detection (escalation #890 D3, resolving #784 sec6's open decision): a section
-        # silently vanishing from an edit file used to be a no-op -- the removed row's DB state
-        # came back completely untouched, no error, no trace. Add and move both already refuse
-        # outright (found live at #784); this makes delete symmetric with them, for the same
-        # reason -- an edit file is a round-trip artefact (export -> edit -> import), not an
-        # authoring surface for structural changes. Compares against the PROSE_EXPORT_SECTION_IDS
-        # marker `run_export_chapter` now writes -- a fixed record of the export's own original
-        # scope, not re-derived from whichever blocks happen to survive (an earlier
-        # section_type-code-based version of this check was tried and found live, by actual
-        # testing, to blind itself exactly when the deleted block was the only one of its type
-        # left in the file). Files exported before this fix carry no marker -- skipped, not
-        # crashed, with a visible note, rather than refusing every pre-existing edit file in
-        # flight.
+        # delete-detection (#890 D3): an edit file is a round-trip artefact, not an authoring surface,
+        # so a section missing from it refuses the import, as an added or moved one does. Compared against
+        # the PROSE_EXPORT_SECTION_IDS marker; a file exported without the marker is skipped with a note.
         export_ids_match = re.search(r"<!-- PROSE_EXPORT_SECTION_IDS: ([\d,]*) -->", text)
         if export_ids_match:
             expected_ids = {int(x) for x in export_ids_match.group(1).split(",") if x}
@@ -817,13 +691,7 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
                   f"before escalation #890's delete-detection fix) -- delete-detection skipped "
                   f"for this file.")
         for block in blocks:
-            # SECTION/CHAPTER_TITLE renamed to CHAPTER/SECTION_TITLE 2026-09-02 (escalation
-            # #1381/#1382 follow-up) -- the old names had Chapter/Section data backwards relative
-            # to #1381's corrected model. Both old and new marker names are accepted here on
-            # import so the 6 edit files already exported under the old names (as of this fix)
-            # still import cleanly; `run_export_chapter` only ever writes the new names going
-            # forward, so this fallback is purely for files already in flight, not a permanent
-            # dual format.
+            # both the current and the older marker names are accepted (files exported before #1381/#1382)
             required_either = [
                 ("SECTION_ID",), ("SECTION_TYPE",), ("BOOK",),
                 ("CHAPTER", "SECTION"),
@@ -836,9 +704,7 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
                 raise ValueError(f"section {block.get('SECTION_ID')} missing markers: {missing}")
 
             def _pick(*keys):
-                # Closes over `block` from the enclosing `for block in blocks:` loop -- no
-                # late-binding risk, this runs immediately within the same iteration, not stored
-                # for later execution.
+                # closes over `block` from the enclosing loop; runs within the same iteration
                 return next((block[k] for k in keys if k in block), None)
 
             chapter_marker = _pick("CHAPTER", "SECTION")
@@ -877,21 +743,15 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
                         f"file={block[key]!r}, database={expected!r}")
             if not block["BODY"]:
                 raise ValueError(f"section {row['id']} has an empty body")
-            # The section is the editing unit, not the chapter a bundled export happens to cover
-            # (researcher, 2026-08-22, escalation #784: "each chapter can have multiple sections,
-            # the section is the editing unit... if a chapter export is exported then all the
-            # sections in the chapter will have to change version which is not necessary"). A
-            # chapter-edit file bundles several independently-versioned sections purely for editing
-            # convenience -- importing it back must only supersede the sections whose body actually
-            # changed, not every block the file happens to contain.
+            # the section is the editing unit (#784): only sections whose body changed are superseded, not
+            # every block a bundled chapter file contains
             if block["BODY"].strip() == (row["body"] or "").strip():
                 continue
             operations.append({
                 "op_id": f"PROSE-{row['id']}-SUPERSEDE",
                 "table": "prose_section",
                 "operation": "supersede",
-                # `supersedes_id` names the row being edited (Model A, escalation #836 --
-                # apply_session_patch.py mutates it in place, no new row is created).
+                # `supersedes_id` names the row being edited (Model A, #836: apply_session_patch.py updates it in place)
                 "supersedes_id": row["id"],
                 "record": {
                     "body": block["BODY"], "heading": row["heading"], "author": author,
@@ -928,29 +788,19 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
     output = Path(out) if out else patch_output_dir(cfg) / f"wa-prose-chapter-supersede-{stamp}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
-    # On successful patch generation, archive the edit file -- researcher, 2026-08-22 (escalation
-    # #784): "the import must get the file from the editing location, and on successful update move
-    # the file to archive." Move, not copy or delete: the file is now permanent provenance (its
-    # archived path is what apply_session_patch.py's _write_change_log() records as
-    # record_change_log.change_source via the patch's own patch_id, escalation #836), never
-    # discarded, per this session's #1 finding.
+    # on a successful patch, move the edit file to archive (#784): it stays as provenance, recorded as
+    # record_change_log.change_source through the patch id (#836)
     archived_source.parent.mkdir(parents=True, exist_ok=True)
     input_path.replace(archived_source)
     return {"path": str(output), "sections": len(operations), "archived_source": str(archived_source)}
 
 
-# ── flag (angle a of escalation #829 sec12.4 -- create only, no prose-section reference) ────
+# ── flag (#829, create only, no prose-section reference) ────────────────────
 
 def run_flag(cfg, flag_code: str | None, description: str | None) -> dict:
-    """Raise one `wa_data_quality_flags` instance, `flag_group='PROSE_QUALITY'`. This is the only
-    direct DB write `prosestore.py` performs itself (every other operation here is read-only or
-    generates a patch file for `apply_session_patch.py` to apply) — `wa_data_quality_flags` is not
-    under `record_change_log` discipline (that covers `prose_section`/`prose_section_type` only,
-    escalation #836), so no choke-point call applies here.
-
-    Deliberately does NOT take a `prose_section` reference — escalation #829 sec12.2: which prose
-    rows a flag touches is discovered by search at fix time (angle b, escalation #835, not built),
-    not stored and kept in sync from raise time.
+    """Raise one `wa_data_quality_flags` instance, `flag_group='PROSE_QUALITY'` -- the one direct DB
+    write this module performs. `wa_data_quality_flags` is not under `record_change_log` discipline.
+    No `prose_section` reference is stored: which rows a flag touches is found by search at fix time.
     """
     if not flag_code:
         raise ValueError("prose.flag needs --flag-code")
@@ -978,27 +828,15 @@ def run_flag(cfg, flag_code: str | None, description: str | None) -> dict:
         conn.close()
 
 
-# ── flag-fix (angle b of escalation #829 sec12.4 / #890 D5 -- propose -> approve -> apply) ──
+# ── flag-fix (#829, #890 D5 -- propose -> approve -> apply) ─────────────────
 
 def run_flag_fix_propose(cfg, flag_code: str | None, find: str | None, replace: str | None,
                           out=None) -> dict:
     """**Propose** step. Searches active `prose_section.body` for a literal `find` substring and
-    writes a review report (a `.json` file, not a DB write or a patch) listing every matching
-    section with its proposed replacement text. Read-only against the database — matches this
-    module's existing convention (every operation except `run_flag` is read-only or
-    patch-generating, never a direct write).
-
-    Deliberately does NOT write to `record_change_log` with `status='change_proposed'`, even
-    though that vocabulary already exists on the column — checked live before building (escalation
-    #890): `record_change_log.payload` has its own hard rule (`record-change-log-payload-is-
-    prior-state`) that it holds ONLY the content a change overwrote, never the resulting content.
-    A pending proposal's payload is the opposite — the content that WOULD result, not yet applied
-    — so writing it into that same field under a different status would make the field mean two
-    different things depending on status, silently breaking that rule for any code/report that
-    reads `payload` assuming "prior state" unconditionally. A plain review file avoids the
-    collision entirely and matches how every other approval step in this project works (a written
-    record the researcher reviews, then a separate explicit go-ahead) rather than inventing a new,
-    narrower meaning for an already-governed field.
+    writes a review report (a `.json` file; no DB write, no patch) listing every matching section
+    with its proposed replacement. Not written to `record_change_log` as 'change_proposed': its
+    `payload` holds only prior state (record-change-log-payload-is-prior-state), and a proposal's
+    payload would be the resulting content.
     """
     if not flag_code:
         raise ValueError("prose.flag_fix_propose needs --flag-code")
@@ -1049,19 +887,10 @@ def run_flag_fix_propose(cfg, flag_code: str | None, find: str | None, replace: 
 
 def run_flag_fix_apply(cfg, proposal_file, section_ids: list[int], flag_code: str | None,
                         out=None) -> dict:
-    """**Apply** step (run only after the researcher has reviewed the proposal report and chosen
-    which `section_ids` to act on — the "approve" stage of propose/approve/apply is that review,
-    done by reading the file, not a separate mechanised gate). Re-reads each approved section's
-    CURRENT body fresh from the database (never trusts the proposal file's cached snapshot, in
-    case the row changed between propose and apply) and generates a `PROSE` supersede patch —
-    the same, already-built-and-tested operation `run_import_chapter` already uses. Writes no DB
-    row itself; apply the reviewed patch with `scripts/apply_session_patch.py`, same boundary as
-    every other patch-generating operation in this module.
-
-    Does NOT close the `wa_data_quality_flags` row itself — that write is deliberately left as a
-    separate, explicit step taken once the generated patch has actually been applied (closing it
-    here, before the patch is live, would let a flag read "corrected" while the body text hasn't
-    actually changed yet if the patch is never applied)."""
+    """**Apply** step, run after the researcher has reviewed the proposal report and chosen the
+    `section_ids`. Re-reads each approved section's current body from the database and generates a
+    `PROSE` supersede patch, as `run_import_chapter` does. Writes no DB row itself. Does not close the
+    `wa_data_quality_flags` row: that is a separate step once the patch is applied."""
     if not section_ids:
         raise ValueError("prose.flag_fix_apply needs --section-ids")
     proposal_path = Path(proposal_file)
@@ -1141,21 +970,13 @@ def run_flag_fix_apply(cfg, proposal_file, section_ids: list[int], flag_code: st
     return {"path": str(output), "sections": len(operations), "skipped": skipped}
 
 
-# ── status set/reset (escalation #918, 2026-08-27) ──────────────────────────────
+# ── status set/reset (#918) ──────────────────────────────────────────────────
 def run_set_status(cfg, section_ids: list[int], status: str, author="researcher",
                     out=None) -> dict:
-    """Set (or reset) `prose_section.status` for one or more sections directly, as its own
-    reviewer action -- distinct from `run_import_chapter`'s content-edit round trip, which also
-    happens to touch `status` (always to 'draft') as a side effect of a body rewrite. This is the
-    dedicated command: read a section, decide it's read/approved (or that an earlier approval
-    needs reopening), and record just that, with no body change at all.
-
-    `status` must be a live value of `cfg_enum prose_section_status` (draft / in_review / approved
-    / archived) -- checked here, not left for the applicator to discover. Generates a `PROSE`
-    patch (`prose_section`/`set_status`, a new, narrower sibling of the existing `approve` op —
-    that one is approve-only and one-directional; this one moves either way and is the general
-    case). Writes no DB row itself; apply with `scripts/apply_session_patch.py`, the same boundary
-    every other operation in this module keeps."""
+    """Set (or reset) `prose_section.status` for one or more sections as its own reviewer action,
+    with no body change. `status` must be a live `cfg_enum prose_section_status` value (draft /
+    in_review / approved / archived). Generates a `PROSE` patch (`prose_section`/`set_status`, which
+    moves either way; `approve` is approve-only). Writes no DB row itself."""
     if not section_ids:
         raise ValueError("prose.set_status needs --section-ids")
     valid_statuses = cfg.enum("prose_section_status")

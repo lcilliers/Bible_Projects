@@ -1,75 +1,34 @@
-"""operations.py — the writer mechanism for the debate analytic process's core schema (BUILD.md
-§61's `hib`/`hib_referent_option`/`verse_hib`/`phenomenon`/`operation`/`operation_party`), work
-package `operations-ingest`. Full design record: `iba/app/reports/
-b3-b5-operations-schema-design-20260805.md` (the two shapes named there; this is shape 1, a
-registered write step) + `iba/app/reports/debate-analytic-process-digest-20260805.md` (Steps 1,
-3-5, and "how this gets controlled").
+"""operations.py — the writer for the debate analytic process's core schema (`hib`/
+`hib_referent_option`/`verse_hib`/`phenomenon`/`operation`/`operation_party`, and the closing
+tables), work package `operations-ingest`. The analytical work (identifying a HIB, isolating a
+phenomenon, writing an operation) is done by an AI/researcher reading pass; this module turns that
+pass's already-decided findings into validated, grant-checked rows: a JSON payload in, rows out.
 
-**What this is, and isn't.** The analytical work — identifying a HIB, isolating a phenomenon,
-writing an operation's process/source/target — is still done by an AI/researcher reading pass
-against the method docs, exactly as every other analytical boundary in this app draws it (Claude
-Code mechanical, Claude AI/researcher analytical). What THIS module mechanises is turning that
-pass's *already-decided* findings into validated, grant-checked DB rows — a JSON payload file in,
-structured rows out, same shape as the main Bible-study programme's own patch-application pattern
-(`apply_session_patch.py`), adapted to this app's dispatcher/cfg_step architecture instead of a
-side-script.
+**Reconciliation-gated writes** (`_reconcile()`, shared by every writer). These tables are the
+adjudicated record, so a re-run must never silently discard prior findings:
+- Each incoming item is classified against the live rows for the same scope by a natural key (HIB:
+  `label`; phenomenon: `verse` + `hib_label` + `ordinal`; operation: `verse` + `hib_label` +
+  `phenomenon_ordinal`) as **unchanged** (left untouched), **changed** or **new**.
+- Every pre-existing row the payload doesn't address is a hard stop: the payload must repeat it or
+  name it in a `remove` list with a `reason`.
+- Every changed item and every removal needs a reconciliation note, or the call fails
+  (`unreconciled`) before any row is touched.
+- Then: unchanged rows are left alone, new rows inserted, changed rows updated in place (same id),
+  removed rows soft-deleted.
+- A reconciliation report is written on every call, filed under
+  `report.verse_analysis_output_dir/<book_label or book>/` via `reportkit.write_report`.
 
-**Reconciliation-gated writes (2026-08-06, closing BUILD.md §61-63's own open gap).** The original
-build of this module (§61-63) wrote every table with unconditional "clean re-derivation" —
-soft-delete everything in the write's scope, blind-insert everything in the payload — identical to
-`passage.build`'s own convention. That's the *correct* shape for `passage.build` (a passage is a
-pure, deterministic derivation FROM `verse_hib` — recomputing it is re-deriving a materialized view
-off already-adjudicated data, not re-deciding anything). It is the WRONG shape here: `hib`/
-`phenomenon`/`operation` are themselves the adjudicated, interpretive record — re-running one of
-these three steps against a book/passage that already has rows must not be able to silently discard
-prior findings just because a fresh payload didn't happen to repeat them.
+**Steps**, each failing cleanly (never a partial write) on any unresolved reference or
+unreconciled item:
+- `hib.set` (scope book) — the HIB register: `hib` + `hib_referent_option` + `verse_hib`.
+- `phenomenon.set` (needs -Chapters/-Range) — the phenomena register for one tracked passage. Sets
+  `passage.phenomena_complete_at` iff every `verse_hib` pair for the passage's verses has a live
+  `phenomenon` row, and clears it otherwise.
+- `operation.set` (needs -Chapters/-Range) — operations + parties. Refuses (`phenomena-incomplete`)
+  while `passage.phenomena_complete_at` is NULL.
+- `closing.set` — linkages, insufficiencies, emergent questions, validation notes.
 
-The researcher's own description of how Step 1 (and, by the same shape, Steps 3-5) actually works,
-first run or re-run alike: **read the verses in scope; get every item per the definition; compare
-that reading against what's already in the DB; validate the list against the DB; where the fresh
-reading differs, adjudicate and correct the DB** — intelligent reconciliation, not blind
-regeneration. `_reconcile()` below is the mechanical enforcement of exactly that, shared by all
-three writers:
-
-- Every incoming item is classified against the current live DB rows for the same scope, by a
-  natural key (HIB: `label`; phenomenon: `verse` + `hib_label` + `ordinal`; operation: `verse` +
-  `hib_label` + `phenomenon_ordinal`) — **unchanged** (identical content, left completely untouched,
-  original row/id/created_at preserved), **changed** (same key, different content), or **new**.
-- **Every pre-existing row not addressed by the incoming payload at all is a hard stop, not a
-  silent drop.** The payload must either repeat it (unchanged or corrected) or name it explicitly
-  in a `remove` list with a `reason`. This is the direct mechanical answer to "use the DB info to
-  ensure the read isn't missing something" — the write refuses to proceed while any pre-existing
-  item is unaccounted for, rather than trusting the payload to be exhaustive on faith.
-- **Every `changed` item and every `remove` entry must carry a reconciliation note** (why the prior
-  DB content was wrong, or why the item no longer belongs) — missing one fails the whole call
-  (`unreconciled`) before any row is touched. `new`/`unchanged` items need no note — there's nothing
-  to reconcile.
-- Only once every existing row is accounted for and every change/removal is justified does the
-  write proceed — `unchanged` rows are left alone, `new` rows are inserted, `changed` rows are
-  soft-deleted-and-reinserted (their note kept in the reconciliation log below, not the row itself —
-  none of the six tables carry a note column; adding one is future schema work, not required to
-  close this gap), `removed` rows are soft-deleted only.
-- **A reconciliation report is written on every call, changes or none** — filed book-scoped under
-  `report.verse_analysis_output_dir/<book_label or book>/` (fixed 2026-08-08; previously
-  `lib.reportkit.oneoff_path`, landing flat in `governance.oneoff_report_dir` — a real filing bug,
-  not the intended design; see `_write_reconciliation_report`'s own docstring), versioned +
-  archived-on-regenerate via `reportkit.write_report` — an auditable record of what was found
-  unchanged, what was corrected and why, what was added, and what was removed and why, for every
-  invocation, not only the ones with corrections.
-
-**Three steps, one per digest stage, each fails cleanly (never partially writes) on any unresolved
-reference OR any unreconciled item:**
-
-- `hib.set` (scope book) — Step 1's HIB register: `hib` + `hib_referent_option` + `verse_hib`.
-- `phenomenon.set` (scope book, needs -Chapters/-Range) — Step 3's phenomena register for one
-  already-tracked passage. **Sets `passage.phenomena_complete_at`** once written, iff every
-  `verse_hib` pair for the passage's verses now has a matching live `phenomenon` row (unchanged +
-  new + corrected) — the mechanical half of the digest's "how does phase separation get controlled"
-  question (the other half is `operation.set` refusing to run at all until this is set).
-- `operation.set` (scope book, needs -Chapters/-Range) — Step 4-5's operations + parties. Refuses
-  outright (`phenomena-incomplete`) if `passage.phenomena_complete_at` is still NULL.
-
-Payload JSON shape for each step is documented on its own function below.
+Each step's payload shape is documented above its function.
 """
 
 from __future__ import annotations
@@ -138,20 +97,12 @@ def _verse_id(ctx: Ctx, osis: str) -> int | None:
 
 
 def _find_new_model_passage(ctx: Ctx, book: str, lo: int, hi: int, vlo, vhi):
-    """`phenomenon.set`/`operation.set` must only ever attach real analytical content to a
-    `hib-continuity` (B4-era) passage row, never a legacy (`rule IS NULL`, pre-B4 char-continuity)
-    one — even though `passagetrack.find_tracked_passage` itself resolves by range identity alone
-    and doesn't distinguish the two (it's shared with `report.passage_debate`/`passage.debate_sync`,
-    which legitimately still work against legacy rows for books not yet re-processed under
-    HIB-continuity, so that shared function is deliberately left as-is, not narrowed here).
-
-    Why this matters: `passage.build` reruns freely wipe any `rule IS NOT NULL` row with no linked
-    content, but never touches a legacy row except on the one-time transition. If `phenomenon.set`
-    were ever able to resolve a legacy row for an exact-matching range, real Step 3+ content could
-    get attached to a row a later `passage.build` run has no reconciliation-awareness of at all
-    (legacy rows aren't checked for linked phenomena the way `rule IS NOT NULL` rows are) — silently
-    orphaning it. Returns `(row, problem)`: `row` is `None` and `problem` names the issue whenever
-    nothing resolves, or only a legacy row does."""
+    """`phenomenon.set`/`operation.set` attach content only to a `hib-continuity` passage row, never a
+    legacy one (`rule IS NULL`). `passagetrack.find_tracked_passage` resolves by range alone (it is
+    shared with report.passage_debate / passage.debate_sync, which still use legacy rows), so the
+    check is here: content on a legacy row would be invisible to `passage.build`'s reconciliation.
+    Returns `(row, problem)`: `row` is None and `problem` names the issue when nothing resolves, or
+    only a legacy row does."""
     row = passagetrack.find_tracked_passage(ctx.db.conn, book, lo, hi, vlo, vhi)
     if row is None:
         return None, None
@@ -172,23 +123,10 @@ class LexicalIncomplete(Exception):
 
 
 def _check_lexical_complete(ctx: Ctx, verse_ids: set[int], osis_by_id: dict[int, str]) -> None:
-    """Digest Step 0, now a coded hard gate rather than an analyst-confirmed fact (2026-08-06,
-    researcher direction: "step 1 of the debate pipeline is to validate that the book+chapter has a
-    valid lexical... if lexicals are incomplete, hard stop"). Scoped to exactly the verses a
-    `hib.set` payload references — not the whole book — since that's the actual scope the analyst
-    is working (a book-wide sweep naturally covers a book-wide set of verse ids; a single-chapter
-    pass covers just that chapter's).
-
-    Deliberately verse-existence-agnostic: only checks verses that ARE live in `verse` (the caller
-    already filtered `hib.set`'s payload down to resolvable verse ids before calling this) — a verse
-    genuinely absent from the `verse` table is `governance.verse_gap_by_design` (2026-07-29 ruling:
-    concordance-driven onboarding, not a data-integrity error) and is never a candidate here at all,
-    exactly the researcher's "ignore missing verses in the verse table, it is intentional."
-
-    "Deleted" filtering, both directions: only live (`deleted=0`) verse rows ever reach this
-    function (via `_verse_id`), and only live (`deleted=0`) `verse_lexical` rows count toward
-    coverage — a verse whose only lexical rows were soft-deleted (e.g. superseded by a re-run) reads
-    as genuinely missing, not covered by stale rows."""
+    """Digest Step 0 as a hard gate: every verse a `hib.set` payload references must have a complete
+    lexical. Scoped to those verses only. Only live verse rows reach this check (a verse absent from
+    `verse` is governance.verse_gap_by_design), and only live `verse_lexical` rows count toward
+    coverage."""
     if not verse_ids:
         return
     ph = ",".join("?" * len(verse_ids))
@@ -211,22 +149,16 @@ class QualityCheckIncomplete(Exception):
 
 
 def _required_quality_checks(ctx: Ctx, step: str) -> list[str]:
-    """check_keys this step must get a real attestation for -- REQUIRED, ACTIVE, and NOT already
-    mechanically enforced elsewhere (`enforced_by IS NULL`; a check like `hib.set/kind-enum-
-    membership` is already fully automated by `_valid_hib_kinds` and asking for a redundant note
-    on top of an already-automated check would just be noise, not real discipline)."""
+    """check_keys this step must get a real attestation for: REQUIRED, ACTIVE, and not already
+    mechanically enforced elsewhere (`enforced_by IS NULL`)."""
     return [r["check_key"] for r in ctx.db.rows(
         "SELECT check_key FROM cfg_quality_check WHERE step=? AND required=1 AND active=1 "
         "AND enforced_by IS NULL ORDER BY ordinal", (step,))]
 
 
 def _prose_concept_text(ctx: Ctx, concept_key: str) -> str | None:
-    """Resolve a cfg_prose_concept row to its actual, live prose text -- found live 2026-08-30
-    (escalation #1235): cfg_prose_concept exists to be exactly this pointer, but nothing in the
-    app ever dereferenced one. Minimal, targeted resolution for the one concept currently needed
-    (`inner_being_definition`) -- a general cfg_prose_concept -> prose_section_type link is a
-    separate, larger design question, noted but not decided in the cfg-table purpose/success
-    review (escalation #1130), not built here."""
+    """Resolve a cfg_prose_concept row to its live prose text (#1235), for the one concept currently
+    needed (`inner_being_definition`)."""
     if concept_key != "inner_being_definition":
         return None
     conn = prosestore.open_db(ctx.cfg)
@@ -240,21 +172,16 @@ def _prose_concept_text(ctx: Ctx, concept_key: str) -> str | None:
         conn.close()
 
 
-# check_key -> the cfg_prose_concept it depends on, surfaced in the failure message when that
-# check is missing its attestation -- found live 2026-08-30 (escalation #1235): the attestor had
-# no live text to judge against, only the question's own free-standing paraphrase.
+# check_key -> the cfg_prose_concept it depends on, shown in the failure message when that check is
+# missing its attestation (#1235)
 _QUALITY_CHECK_CONCEPT = {"genuinely-inner-being": "inner_being_definition"}
 
 
 def _check_quality_attestations(ctx: Ctx, items: dict, required: list[str]) -> None:
-    """items: {key: raw payload item dict} for every NEW or CHANGED entry this call is about to
-    write (unchanged/removed entries need no fresh attestation -- nothing new is being asserted
-    about them). Each item must carry `quality_checks: {check_key: "<the analyst's own reasoning,
-    non-empty>"}` covering every key in `required`. Researcher, 2026-08-06: "the controls should
-    include self check quality control... does this make sense" -- this is that check, made
-    mechanical: not a semantic judge (no code can verify "is this really a human being"), but a
-    hard requirement that the judgement was actually made and written down, per item, every time,
-    not silently skipped. Raises QualityCheckIncomplete (never partial) if anything's missing."""
+    """items: {key: raw payload item dict} for every NEW or CHANGED entry this call will write. Each
+    must carry `quality_checks: {check_key: "<the analyst's own reasoning, non-empty>"}` covering every
+    key in `required`: not a semantic judge, but a hard requirement that the judgement was made and
+    written down per item. Raises QualityCheckIncomplete (never partial) if anything is missing."""
     if not required:
         return
     problems = []
@@ -320,23 +247,10 @@ def _write_reconciliation_report(ctx: Ctx, step: str, scope_label: str, book: st
                                  book_label: str | None,
                                  unchanged: list, changed: list, new: list, removed: list,
                                  notes: dict, quality_notes: dict | None = None) -> pathlib.Path:
-    """Persist an auditable record of every reconciliation decision this call made — every call,
-    not only ones with corrections.
-
-    Filing corrected 2026-08-08 (found live: landing flat in `governance.oneoff_report_dir` instead
-    of the book-scoped folder every sibling book tool uses). This is per-book analytical output, the
-    same class as `lexical.build`/`report.verse_span_meaning`/the narrative — not a "one-off
-    investigatory" report (that's what `reportkit.oneoff_path`/`build_verse_span_meaning_extract.py`
-    are correctly for). Now files under `report.verse_analysis_output_dir/<book_label or book>/`,
-    same inline convention `versespanmeaningreport.py`/`lexical.py`/`passagedebatereport.py`/
-    `narrativegenerate.py`/`wholebookread.py` all already use — versioned + archived-on-regenerate
-    via `reportkit.write_report` instead of a plain overwrite.
-
-    `quality_notes` (2026-08-06): {key: {check_key: note}} for every new/changed item — the
-    quality-check attestations `_check_quality_attestations` already required before this call was
-    allowed to write anything. Recorded here so the judgement is auditable after the fact, not just
-    gate-checked and discarded — researcher's own standard for reconciliation_note, extended to
-    match."""
+    """Persist an auditable record of every reconciliation decision this call made, every call. Filed
+    as per-book analytical output under `report.verse_analysis_output_dir/<book_label or book>/`,
+    versioned and archived on regenerate via `reportkit.write_report`. `quality_notes`:
+    {key: {check_key: note}} for every new/changed item, so the attestations stay auditable."""
     lines = [
         f"# {step} reconciliation — {scope_label}", "",
         f"> Generated {_now()}. {len(unchanged)} unchanged, {len(changed)} corrected, "
@@ -373,35 +287,25 @@ def _write_reconciliation_report(ctx: Ctx, step: str, scope_label: str, book: st
 
 # ── hib.set ────────────────────────────────────────────────────────────────────────────────────
 # payload: {"book": "Dan", "hibs": [
-#   {"label": "Daniel", "kind": "named_individual", "verses": ["Dan.2.13", ...],  <- THIS CALL'S
-#      OWN -Chapters/-Range SCOPE ONLY, never a book-wide reconstruction (revised 2026-08-08,
-#      researcher direction: "the entire pipeline will only concern itself with the chapter"),
+#   {"label": "Daniel", "kind": "named_individual", "verses": ["Dan.2.13", ...],  <- this call's
+#      own -Chapters/-Range scope only, never a book-wide reconstruction,
 #    "referent_options": [{"reading_text": "...", "textual_grounds": "...", "adopted": true}, ...],
-#      -- omit/empty unless THIS call is actually asserting a referent-crux reading; an absent or
-#         empty list here never touches (and never wipes) whatever's already on record,
-#    "reconciliation_note": "..."   -- required only if this label's SCOPE-VERSE content (or kind,
-#                                      or an explicitly-provided referent_options) already differs
-#                                      from what's on record for THIS scope; omit for a genuinely
-#                                      new HIB or a same-content repeat,
+#      -- omit/empty unless this call asserts a referent-crux reading; an absent or empty list
+#         never touches what's already on record,
+#    "reconciliation_note": "..."   -- required only if this label's scope-verse content (or kind,
+#                                      or provided referent_options) differs from the record for
+#                                      this scope,
 #    "quality_checks": {...}},
 #  ...],
-#  "remove": [{"label": "...", "reason": "..."}]   -- optional. A label named here must already
-#     have a live footprint IN THIS CALL'S OWN SCOPE — a HIB with no presence here (e.g.
-#     Belshazzar, Dan 8, when running Dan 2) is never reachable from 'remove' on this call; run the
-#     removal from a call scoped to where it actually appears. Removes the WHOLE HIB identity
-#     (book-wide), not just this scope's claim on it — narrowing just this scope's verse-set is a
-#     'changed' entry (a smaller `verses` list), not a removal.
+#  "remove": [{"label": "...", "reason": "..."}]   -- optional. The label must have a live footprint
+#     in this call's own scope. Removes the whole HIB identity (book-wide); narrowing this scope's
+#     verse set is a 'changed' entry (a smaller `verses` list), not a removal.
 #
-# Matching against an existing HIB is book-wide BY LABEL (so "Daniel" extending from Dan 1 into
-# Dan 2 resolves to the SAME row — CRUD, never a duplicate insert) — only the reconciliation
-# completeness check ("every pre-existing item must be addressed or removed") and the verse_hib
-# writes are scope-limited. See PLAN-revise-hib-set-scope-and-crud-v1-20260808.md for the full
-# reasoning; this supersedes the whole-book-payload shape this docstring described until now.
+# Matching an existing HIB is book-wide by label (so "Daniel" in Dan 1 and Dan 2 is the same row);
+# the completeness check and the verse_hib writes are scope-limited.
 def _verse_sort_key(osis: str) -> tuple[int, int]:
-    """(chapter, verse) from an OSIS id, for canonical reading-order comparison. `verse.id` is a
-    surrogate PK with NO relationship to reading order (confirmed live, Dan 2: ids scattered
-    across the whole numeric range) — `first_verse_id` can never be computed by comparing raw ids,
-    only by parsing the OSIS reference itself."""
+    """(chapter, verse) from an OSIS id, for reading-order comparison: `verse.id` is a surrogate key
+    with no relation to reading order."""
     parts = osis.split(".")
     if len(parts) == 3 and parts[1].isdigit() and parts[2].isdigit():
         return (int(parts[1]), int(parts[2]))
@@ -409,12 +313,9 @@ def _verse_sort_key(osis: str) -> tuple[int, int]:
 
 
 def _valid_enum(ctx: Ctx, name: str) -> set[str] | None:
-    """`cfg_enum WHERE name=?` — returns None (skip the check) if the enum isn't registered/active
-    yet (e.g. its `configmaint.propose` approval is still pending) — a not-yet-approved enum must
-    never masquerade as "nothing is valid," it must simply not gate anything until it exists live.
-    Shared by `hib.kind` (`hib_kind`, the six-type scheme from the researcher's own prior training
-    pass, nahum-1-inner-being-training-20260803.md) and `operation.decision` (`operation_decision`,
-    the four-value closed set WA-interpretation-questions-v1.4 Part C names)."""
+    """`cfg_enum WHERE name=?` -- None (skip the check) if the enum isn't active yet, so a pending enum
+    never reads as "nothing is valid". Used for `hib.kind` (`hib_kind`) and `operation.decision`
+    (`operation_decision`)."""
     rows = ctx.db.rows("SELECT value FROM cfg_enum WHERE name=? AND inactive=0", (name,))
     return {r["value"] for r in rows} if rows else None
 
@@ -457,8 +358,7 @@ def hib_set(ctx: Ctx) -> Outcome:
                     f"{len(missing_verses)} verse reference(s) not found in the verse table: "
                     f"{missing_verses[:5]}{' ...' if len(missing_verses) > 5 else ''}")
 
-    # New 2026-08-08: a payload may only claim verses actually inside THIS call's own scope --
-    # "the pipeline will only concern itself with the chapter," enforced, not just intended.
+    # a payload may only claim verses inside this call's own scope
     out_of_scope = sorted(referenced_osis - scope_osis)
     if out_of_scope:
         return fail("out-of-scope-verse",
@@ -466,8 +366,7 @@ def hib_set(ctx: Ctx) -> Outcome:
                     f"scope ({book} {scope_token}): "
                     f"{out_of_scope[:5]}{' ...' if len(out_of_scope) > 5 else ''}")
 
-    # Step 0/1 hard gate (2026-08-06 direction): every verse this payload actually covers must
-    # already have a complete lexical before any HIB work is accepted for it.
+    # hard gate: every verse this payload covers must have a complete lexical first
     live_verse_ids = {vid for vid in verse_id_by_osis.values() if vid is not None}
     osis_by_id = {vid: osis for osis, vid in verse_id_by_osis.items()}
     try:
@@ -478,10 +377,7 @@ def hib_set(ctx: Ctx) -> Outcome:
                     f"verse_lexical row — build the lexical first (VerseLexical.ps1): "
                     f"{e.missing[:5]}{' ...' if len(e.missing) > 5 else ''}")
 
-    # Reasonability/existence check (researcher, 2026-08-06: "test for existence and
-    # non-existence... the control rules must be defined in config") -- every hib.kind must be a
-    # real, live value of enum.hib_kind, not free text. Skipped (not silently passed as "fine") if
-    # the enum itself isn't active yet -- see _valid_hib_kinds.
+    # every hib.kind must be a live value of enum.hib_kind (skipped while the enum isn't active)
     valid_kinds = _valid_hib_kinds(ctx)
     if valid_kinds is not None:
         bad_kinds = sorted({h["kind"] for h in hibs if h.get("kind") not in valid_kinds})
@@ -490,9 +386,7 @@ def hib_set(ctx: Ctx) -> Outcome:
                        f"{len(bad_kinds)} hib.kind value(s) not in enum.hib_kind "
                        f"{sorted(valid_kinds)}: {bad_kinds}")
 
-    # Book-wide identity lookup (2026-08-08) -- separate from the scope-limited completeness check
-    # below. Read-only, and book-wide only for identity-matching ("Daniel" extending from Dan 1
-    # into Dan 2 must resolve to the SAME row) -- everything else in this call stays inside scope.
+    # book-wide identity lookup by label; everything else in this call stays inside scope
     all_by_label: dict[str, dict] = {}
     for r in ctx.db.rows(
             "SELECT id, label, kind, first_verse_id FROM hib WHERE book=? AND deleted=0", (book,)):
@@ -508,12 +402,8 @@ def hib_set(ctx: Ctx) -> Outcome:
 
     incoming_by_label = {h["label"]: h for h in hibs}
 
-    # `current` -- what `_reconcile` checks completeness against -- is scope-LIMITED (2026-08-08):
-    # only a label with an EXISTING footprint in this call's own scope is included, so a book HIB
-    # with no presence here (Belshazzar, Dan 8, when running Dan 2) is never pulled in and never
-    # needs mentioning. Referent options only enter the comparison when the payload itself touches
-    # them for this label -- an absent/empty list never wipes (or spuriously conflicts with)
-    # whatever's already on record.
+    # `current` (what _reconcile checks completeness against) holds only labels with a footprint in
+    # this scope. Referent options enter the comparison only when the payload touches them.
     current = {}
     for label, row in all_by_label.items():
         scope_verses_for_label = sorted(v for v in row["verses"] if v in scope_osis)
@@ -539,15 +429,9 @@ def hib_set(ctx: Ctx) -> Outcome:
                     f"{len(e.problems)} item(s) need reconciliation before this can write: "
                     f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
 
-    # not-already-excluded floor check (cfg_quality_check, found live 2026-08-30, escalation
-    # #1235): a label that already exists book-wide (all_by_label) but had no footprint in THIS
-    # call's own scope reconciles as "new" above -- exactly the shape a previously set-aside
-    # referent takes when a fresh payload gives it a footprint in a different range. Check whether
-    # any of that HIB's own phenomena already carry a live operation.decision='set_aside'; if so,
-    # this is a real candidate for silent reintroduction and needs the researcher's/Claude's own
-    # textual-grounds judgement (the quality check itself), not a script deciding it either way --
-    # so this surfaces as a problem requiring the payload to address it (via reconciliation_note),
-    # not a silent pass-through.
+    # a label that exists book-wide but not in this scope reconciles as "new": if any of its phenomena
+    # carry a live operation.decision='set_aside', it needs a reconciliation_note (#1235), not a
+    # silent reintroduction
     reintroduced = []
     for label in new:
         row = all_by_label.get(label)
@@ -577,13 +461,7 @@ def hib_set(ctx: Ctx) -> Outcome:
                     f"{len(e.problems)} item(s), nothing written: "
                     f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
 
-    # Cascade guard (2026-08-07, schema-remediation-design-20260807.md §4 -- Finding 3 of
-    # debate-schema-traceability-gap-findings-20260807.md): a HIB removal must not silently orphan
-    # already-written Step 3+ work. `removed` labels are, by construction, already restricted to
-    # ones with a footprint in THIS scope (they came through `current`, which is scope-filtered) --
-    # a book-wide-only removal (no presence here) is never reachable from this call. Refuse
-    # OUTRIGHT (never partial) -- same "fail clean before any row is touched" convention as every
-    # other check in this function.
+    # cascade guard: removing a HIB must not orphan written Step 3+ work; refused outright
     if removed:
         removed_ids = [current[l]["id"] for l in removed]
         ph = ",".join("?" * len(removed_ids))
@@ -605,10 +483,8 @@ def hib_set(ctx: Ctx) -> Outcome:
 
     now = _now()
 
-    # `removed` -- full removal of the HIB entity, book-wide (soft-delete hib + all its children).
-    # 'remove' means this identified HIB doesn't genuinely warrant HIB status at all (method rule
-    # `hib-still-warranted`), not "retract just this chapter's claim" -- that narrower case is a
-    # `changed` scope-verse shrink, handled in the CRUD loop below.
+    # `removed`: the HIB is not warranted at all (method rule hib-still-warranted) -- soft-delete the
+    # HIB and its children book-wide. Retracting one chapter's claim is a `changed` verse shrink.
     for label in removed:
         hib_id = current[label]["id"]
         before_row = all_by_label[label]
@@ -625,10 +501,7 @@ def hib_set(ctx: Ctx) -> Outcome:
         existing = all_by_label.get(label)   # book-wide match, regardless of scope-only new/changed
 
         if existing:
-            # EXTEND an existing book-wide HIB -- real CRUD, never a duplicate insert. Real
-            # first_verse_id recompute: canonical-earliest of (existing verses UNION this call's),
-            # never the payload's own array order (that convention only ever made sense when a
-            # payload was a whole-set replacement, which it no longer is).
+            # extend an existing book-wide HIB; first_verse_id = canonical-earliest of existing and new verses
             hib_id = existing["id"]
             all_verses_osis = sorted(set(existing["verses"]) | set(payload_verses))
             new_first_osis = min(all_verses_osis, key=_verse_sort_key)
@@ -642,7 +515,7 @@ def hib_set(ctx: Ctx) -> Outcome:
                 _log_change(ctx, "hib.set", "hib", "update", {"id": hib_id},
                            set_={"kind": h["kind"], "first_verse_id": new_first_id}, before=before)
         else:
-            # Genuinely new HIB, never seen anywhere in the book before.
+            # a new HIB
             first_osis = min(payload_verses, key=_verse_sort_key)
             first_id = _verse_id(ctx, first_osis)
             hib_id = ctx.db.write("hib", {
@@ -652,11 +525,7 @@ def hib_set(ctx: Ctx) -> Outcome:
                        set_={"book": book, "label": label, "kind": h["kind"],
                              "first_verse_id": first_id})
 
-        # referent_options -- only touched if THIS call's payload actually provides them for this
-        # label; an absent/empty list never wipes what's already on record (2026-08-08). Real
-        # per-row CRUD by ordinal position (same upgrade as operation_party, researcher direction:
-        # "full CRUD is required for all table update controls") -- only a position whose content
-        # actually differs is touched, not a blanket soft-delete-and-reinsert of every option.
+        # referent_options: touched only if this call provides them; per-row CRUD by ordinal position
         if h.get("referent_options"):
             prior_by_ord = {o["ordinal"]: o for o in (existing or {}).get("opts") or []}
             new_opts = h["referent_options"]
@@ -697,9 +566,7 @@ def hib_set(ctx: Ctx) -> Outcome:
                 n_opt += 1
                 n_opt += 1
 
-        # verse_hib -- real per-row CRUD (2026-08-08): insert only links not already live, delete
-        # only links this scope's payload genuinely drops. Never touches a verse_hib row outside
-        # this call's own scope, for ANY label, extended or brand new.
+        # verse_hib: per-row CRUD within this call's scope only
         existing_links_in_scope = {v for v in (existing["verses"] if existing else []) if v in scope_osis}
         payload_links = set(payload_verses)
         for osis in payload_links - existing_links_in_scope:
@@ -724,9 +591,7 @@ def hib_set(ctx: Ctx) -> Outcome:
     report_path = _write_reconciliation_report(ctx, "hib.set", scope_label, book, book_label,
                                                unchanged, changed, new, removed, notes, quality_notes)
 
-    # Output by type (researcher, 2026-08-06: "count by type; list by type") -- the book's FULL
-    # live state after this call, unaffected by the scope change above (this report always
-    # reflected the whole book, by design, not just what one call touched).
+    # output by type: the book's full live state after this call (count by type; list by type)
     by_kind: dict[str, list[str]] = {}
     for r in ctx.db.rows("SELECT label, kind FROM hib WHERE book=? AND deleted=0 ORDER BY kind, label",
                          (book,)):
@@ -843,8 +708,7 @@ def phenomenon_set(ctx: Ctx) -> Outcome:
                     f"{len(e.problems)} item(s), nothing written: "
                     f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
 
-    # Cascade guard (2026-08-07, same rule as hib.set, item h -- "not just for hib"): a phenomenon
-    # removal must not silently orphan an already-written operation.
+    # cascade guard: removing a phenomenon must not orphan a written operation
     if removed:
         removed_ids = [current[k]["id"] for k in removed]
         ph = ",".join("?" * len(removed_ids))
@@ -862,11 +726,8 @@ def phenomenon_set(ctx: Ctx) -> Outcome:
     _may(ctx, "phenomenon.set", "debate_change_detail")
 
     now = _now()
-    # `changed` phenomena UPDATE the existing row IN PLACE (same id), not soft-delete-and-reinsert
-    # -- a new id would silently orphan any `operation.phenomenon_id` already pointing at it (same
-    # fix as hib.set; passage.py's own established precedent). `removed` still soft-deletes (the
-    # guard above already confirmed no live operation depends on it). Per-row audit logging added
-    # 2026-08-07 -- the underlying CRUD here was already correct, only the trace was missing.
+    # `changed` phenomena are updated in place (same id), since operation.phenomenon_id points at
+    # them; `removed` soft-deletes (the guard confirmed no live operation depends on it)
     for key in removed:
         row_id = current[key]["id"]
         ctx.db.conn.execute("UPDATE phenomenon SET deleted=1 WHERE id=?", (row_id,))
@@ -891,8 +752,7 @@ def phenomenon_set(ctx: Ctx) -> Outcome:
             new_id = ctx.db.write("phenomenon", row)
             _log_change(ctx, "phenomenon.set", "phenomenon", "insert", {"id": new_id}, set_=row)
 
-    # completeness check -- every verse_hib pair for this passage's verses must now have a LIVE
-    # phenomenon (unchanged + new + corrected; removed items drop back out of the live set).
+    # completeness: every verse_hib pair for this passage's verses must have a live phenomenon
     verse_ids = [r["verse_id"] for r in ctx.db.rows(
         "SELECT verse_id FROM verse_passage WHERE passage_id=? AND deleted=0", (passage_id,))]
     vh_pairs = set()
@@ -907,17 +767,13 @@ def phenomenon_set(ctx: Ctx) -> Outcome:
         if key in by_key:
             vid, hid, _, _ = by_key[key]
         else:
-            # unchanged item not resent in this call's payload isn't possible under this design
-            # (unchanged still means "present in incoming, matched current") -- kept defensive.
+            # defensive: an unchanged item is always present in incoming
             continue
         live_pairs.add((vid, hid))
     missing = vh_pairs - live_pairs
     if missing:
-        # Explicitly re-open the gate, not just "leave it as whatever it was" -- a legitimate
-        # removal/correction can make a previously-complete register incomplete again, and
-        # operation.set must re-block in that case, not keep trusting a stale phenomena_complete_at
-        # from before this call. (Bug in the original §61-63 build: it only ever set the gate
-        # forward, never cleared it -- caught and fixed in this same reconciliation pass.)
+        # set the gate explicitly either way: a removal or correction can make a complete register
+        # incomplete again, and operation.set must then block
         ctx.db.conn.execute("UPDATE passage SET phenomena_complete_at=NULL WHERE id=?", (passage_id,))
         _log_change(ctx, "phenomenon.set", "passage", "update", {"id": passage_id},
                    set_={"phenomena_complete_at": None},
@@ -952,20 +808,13 @@ def phenomenon_set(ctx: Ctx) -> Outcome:
 #                 "hib_label": "..."|omit, "enablement_only": false}],
 #    "targets": [{"kind": "...", "detail": "...", "hib_label": "..."|omit}], "reconciliation_note": "..."}
 #  ...],
-# `hib_label` (2026-08-07, Finding 2 of debate-schema-traceability-gap-findings-20260807.md):
-# optional, only when this party genuinely IS a previously-registered HIB (via hib.set) -- resolved
-# to `operation_party.hib_id`, a real structural link, not just the `detail` free-text gloss. Must
-# name a live HIB for this book or the call fails (unresolved-reference); omit entirely for a party
-# that isn't itself a registered HIB (kind='self'/'non_human'/'object_situation'/'none', or a human
-# not (yet) worth registering as its own HIB).
+# `hib_label` on a party: only when the party is a registered HIB (via hib.set); resolved to
+# `operation_party.hib_id`. Must name a live HIB for this book (else unresolved-reference); omit it
+# otherwise.
 #  "remove": [{"verse": "...", "hib_label": "...", "phenomenon_ordinal": 0, "reason": "..."}]}
 def _operation_content(o: dict) -> tuple:
-    """`p["hib_id"]` must already be resolved (an int or None) on every party dict passed in here
-    -- callers building FROM the DB already have it; callers building from a fresh payload resolve
-    `hib_label` to `hib_id` via `hib_by_label` before calling (Finding 2, debate-schema-
-    traceability-gap-findings-20260807.md -- the party's HIB link is part of the operation's real
-    content now, not just `detail` free text, so a hib_label change must register as a 'changed'
-    item like anything else)."""
+    """`p["hib_id"]` must already be resolved (an int or None) on every party dict: the party's HIB
+    link is part of the operation's content, so a hib_label change registers as 'changed'."""
     parties = lambda lst: tuple(sorted(
         ((p["kind"], p.get("detail") or "", bool(p.get("enablement_only")), p.get("hib_id"))
          for p in lst or []),
@@ -1039,12 +888,7 @@ def operation_set(ctx: Ctx) -> Outcome:
         else:
             removals[(r["verse"], r["hib_label"], r.get("phenomenon_ordinal", 0))] = r.get("reason")
 
-    # Party hib_label resolution (2026-08-07, Finding 2 of debate-schema-traceability-gap-findings-
-    # 20260807.md): an optional `hib_label` on a source/target party -- when the party IS a
-    # previously-registered HIB, this is what actually links `operation_party.hib_id` structurally,
-    # instead of the free-text `detail` field being the only record of it. Same fail-fast convention
-    # as every other reference in this payload: an unresolvable hib_label is a hard stop, not a
-    # silently-dropped link.
+    # a party's optional `hib_label` links operation_party.hib_id; unresolvable is a hard stop
     for o in operations:
         for party in list(o.get("sources", [])) + list(o.get("targets", [])):
             label = party.get("hib_label")
@@ -1055,9 +899,7 @@ def operation_set(ctx: Ctx) -> Outcome:
         return fail("unresolved-reference",
                     f"{len(problems)} problem(s): {problems[:5]}{' ...' if len(problems) > 5 else ''}")
 
-    # existence check (2026-08-06): decision is a genuinely closed 4-value set (WA-interpretation-
-    # questions-v1.4 Part C) -- action_type deliberately is NOT enum-checked (Part B.10: "no
-    # controlled vocabulary is being built"), so only decision gets this treatment.
+    # decision is a closed 4-value set (operation_decision); action_type is deliberately not enum-checked
     valid_decisions = _valid_enum(ctx, "operation_decision")
     if valid_decisions is not None:
         bad = sorted({o.get("decision") for _, o in by_key.values()
@@ -1117,9 +959,7 @@ def operation_set(ctx: Ctx) -> Outcome:
                     f"{len(e.problems)} item(s), nothing written: "
                     f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
 
-    # Cascade guard (2026-08-07, same rule as hib.set/phenomenon.set): an operation removal must
-    # not silently orphan an already-written passage_linkage (Step 7 can name any operation as
-    # either endpoint of a linkage).
+    # cascade guard: removing an operation must not orphan a written passage_linkage
     if removed:
         removed_ids = [current[k]["id"] for k in removed]
         ph = ",".join("?" * len(removed_ids))
@@ -1138,13 +978,8 @@ def operation_set(ctx: Ctx) -> Outcome:
     _may(ctx, "operation.set", "debate_change_detail")
 
     now = _now()
-    # `changed` operations UPDATE the existing row IN PLACE (same id) -- a new id would silently
-    # orphan any `passage_linkage.from/to_operation_id` already pointing at it. `operation_party`
-    # children: real per-row CRUD by (role, ordinal) position (2026-08-08, researcher direction --
-    # "full CRUD is required for all table update controls", upgraded from the previously-approved
-    # soft-delete-and-reinsert-under-a-changed-parent convention, tech ref sec2.2 step 7) -- only a
-    # position whose content actually differs is touched; a `removed` operation's parties are still
-    # fully soft-deleted (the whole operation is gone, nothing to diff against).
+    # `changed` operations are updated in place (same id; passage_linkage points at them).
+    # operation_party: per-row CRUD by (role, ordinal); a removed operation's parties are soft-deleted.
     for key in removed:
         op_id = current[key]["id"]
         live = ctx.db.rows(
@@ -1217,8 +1052,7 @@ def operation_set(ctx: Ctx) -> Outcome:
                         _log_change(ctx, "operation.set", "operation_party", "update",
                                    {"id": old_party["id"]}, set_=new_row, before=dict(old_party))
                         n_party += 1
-                    # same -- genuinely nothing to do, no write, no log, no count (this is the
-                    # actual point of real CRUD: an untouched position stays untouched).
+                    # same: no write, no log, no count
                 else:
                     party_id = ctx.db.write("operation_party", new_row)
                     _log_change(ctx, "operation.set", "operation_party", "insert",
@@ -1239,13 +1073,8 @@ def operation_set(ctx: Ctx) -> Outcome:
 
 
 # ── closing.set ────────────────────────────────────────────────────────────────────────────────
-# Step 7 (digest) / WA-interpretation-questions-v1.4 Part C sections 4-8, for one already-tracked
-# hib-continuity passage. Refuses (`operations-incomplete`) until every live phenomenon in the
-# passage has at least one live operation — computed live each call (design doc: "no other counters
-# are stored... always computed live from verse_hib/phenomenon/operation"), the same DB-as-control
-# principle as the phenomena_complete_at gate, just not itself a stored column (nothing downstream
-# needs it as a gate the way operation.set needs phenomena_complete_at — this is the pipeline's
-# final content-writing step, so a live check at the point of use is enough).
+# Step 7 for one tracked hib-continuity passage. Refuses (`operations-incomplete`) until every live
+# phenomenon in the passage has a live operation -- computed live each call, not stored.
 #
 # payload: {"book": "Dan",
 #   "linkages": [{"from_verse":"Dan.8.1","from_hib_label":"Daniel","from_phenomenon_ordinal":0,
@@ -1307,9 +1136,7 @@ def closing_set(ctx: Ctx) -> Outcome:
         return fail("no-passage", f"no tracked hib-continuity passage for {book} this range")
     passage_id = passage_row["id"]
 
-    # Operations-completeness, computed live -- every live phenomenon in this passage must have a
-    # live operation (digest Step 4: "every phenomenon needs an operation, even if the decision is
-    # 'set aside'") before Step 7 closing sections are written against it.
+    # every live phenomenon in this passage must have a live operation (even 'set aside')
     phen_ids = {r["id"] for r in ctx.db.rows(
         "SELECT id FROM phenomenon WHERE passage_id=? AND deleted=0", (passage_id,))}
     op_phen_ids = {r["phenomenon_id"] for r in ctx.db.rows(
@@ -1329,12 +1156,8 @@ def closing_set(ctx: Ctx) -> Outcome:
 
     now = _now()
     problems: list[str] = []
-    # Each entry: (list_name, table, current, incoming, resolved_raw, reconciled) -- reconciled but
-    # NOT yet written. 2026-08-07: quality-check attestations must be verified BEFORE any row is
-    # written (the same boundary hib.set/phenomenon.set/operation.set already draw) -- previously
-    # this function wrote each section immediately after reconciling it. Restructured to reconcile
-    # all four sections first, check quality attestations once against the combined new+changed
-    # set, and only then write anything.
+    # (list_name, table, current, incoming, resolved_raw, reconciled): all four sections are reconciled
+    # and quality-checked before anything is written
     plan: list[tuple[str, str, dict, dict, dict, tuple]] = []
 
     # -- linkages --
@@ -1464,13 +1287,8 @@ def closing_set(ctx: Ctx) -> Outcome:
                     f"{len(problems)} problem(s), nothing written: "
                     f"{problems[:5]}{' ...' if len(problems) > 5 else ''}")
 
-    # Quality-check attestations -- BEFORE any row is written (same boundary hib.set/
-    # phenomenon.set/operation.set draw). closing.set is the first step with FOUR heterogeneous
-    # item types under one step name -- `_required_quality_checks(ctx, "closing.set")` returns
-    # every required check_key across ALL of them, which would wrongly demand a linkage's own
-    # attestation on an emergent_question (found live, 2026-08-07, before this ever shipped: an
-    # emergent_question was asked to attest `linkage-genuinely-registered`). Filtered per list_name
-    # by its own check_key naming convention -- checked once per section, not once combined.
+    # quality-check attestations before any write, filtered per section by its own check_key naming
+    # convention (each section has its own required checks)
     LIST_QUALITY_PREFIX = {
         "linkages": "linkage-", "insufficiencies": "insufficiency-",
         "emergent_questions": "emergent-question-", "validation_notes": "validation-finding-",
@@ -1487,14 +1305,7 @@ def closing_set(ctx: Ctx) -> Outcome:
                         f"{len(e.problems)} item(s), nothing written: "
                         f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
 
-    # Now write every section for real. Real per-row CRUD (2026-08-08, researcher direction --
-    # "full CRUD is required for all table update controls"): `changed` items UPDATE the existing
-    # row IN PLACE (same id), `new` items INSERT fresh, `removed` items soft-delete only -- was:
-    # soft-delete-and-reinsert-under-a-new-id for BOTH changed and new, the same antipattern
-    # hib.set/phenomenon.set/operation.set already had fixed for their own parent rows. None of
-    # these four tables currently has a downstream FK pointing at its own id, so the old shape
-    # never orphaned anything structurally -- but a stable id across a correction is still the more
-    # traceable, auditable shape, and the researcher's direction was unqualified.
+    # write: `changed` items update in place (same id), `new` insert, `removed` soft-delete
     ROW_COLUMNS = {
         "passage_linkage": ("from_operation_id", "to_operation_id", "note"),
         "passage_insufficiency": ("verse_id", "note"),
