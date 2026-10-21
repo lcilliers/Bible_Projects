@@ -261,7 +261,7 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
          cfgquality.find_unpushed_commits(APP.parent.parent)),
         ("PS scripts bypassing run.py", "an active PS script calling iba.app.(handlers|lib|tools) "
          "directly instead of dispatching through iba.app.run",
-         cfgquality.find_ps_scripts_bypassing_runpy(APP)),
+         cfgquality.find_ps_scripts_bypassing_runpy(conn, APP)),
         ("Steps without a PS entry point", "an active cfg_step whose work package has no "
          "cfg_work_package.ps_script",
          cfgquality.find_steps_without_ps_script(conn)),

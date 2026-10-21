@@ -294,7 +294,7 @@ def validate(ctx: Ctx) -> Outcome:
         "unpushed_commits": (
             cfgquality.find_unpushed_commits(PROJECT_ROOT), "unpushed local commit finding(s)"),
         "ps_scripts_bypassing_runpy": (
-            cfgquality.find_ps_scripts_bypassing_runpy(APP_ROOT),
+            cfgquality.find_ps_scripts_bypassing_runpy(ctx.db.conn, APP_ROOT),
             "PS script(s) bypassing run.py"),
         "steps_without_ps_script": (
             cfgquality.find_steps_without_ps_script(ctx.db.conn),

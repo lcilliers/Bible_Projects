@@ -16,7 +16,7 @@ I have read the governance settings, behaviour rules and escalation rules, and w
 | G:governance.base_data_spine | not engaged | Verse, span, strong and parse must agree; no base-data work is in hand. No build task chosen yet; re-assessed when the researcher names one. |  |
 | G:governance.behaviour_boundary.backup_recovery | not engaged | Placement ruling only: durability falls under the sqlite class. Nothing written to a DB yet. |  |
 | G:governance.behaviour_boundary.git_commit | engaged | Commit and push count as terminal discipline; any commit this session follows the terminal rule. |  |
-| G:governance.build_md_on_code_change | engaged | The #2206 code edits under iba/app get their BUILD.md section in the same pass. | iba/app/BUILD.md sec 372 |
+| G:governance.build_md_on_code_change | engaged | The #2206 code edits under iba/app get their BUILD.md section in the same pass. | iba/app/BUILD.md sec 372 and 373 |
 | G:governance.config_control | engaged | The new compliance setting goes in through the audited configmaint write. | run DEVMODE-2206-READING-WASTE-20261021 iba/app/migration/archive/reading_waste_2206_v1_20261021.py |
 | G:governance.confmaint_configs | not engaged | Config-maintenance behaviour comes from configmaint-module settings. No cfg write yet. |  |
 | G:governance.engineering_documentation_folder | not engaged | Cross-cutting design notes go in iba/docs, escalation deliverables in outputs/escalation. No note written yet. |  |
@@ -38,13 +38,12 @@ I have read the governance settings, behaviour rules and escalation rules, and w
 | G:governance.ps_worksheet_sync_on_change | not engaged | A changed ps parameter list must be mirrored in the Excel sheets in the same pass. No build task chosen yet; re-assessed when the researcher names one. |  |
 | G:governance.redundancy_archiving | not engaged | Stale one-offs are archived daily; nothing made redundant yet. |  |
 | G:governance.reports_must_persist | not engaged | A check that reports must write to its configured path. No build task chosen yet; re-assessed when the researcher names one. |  |
-| G:governance.rules_must_be_config_driven | engaged | On the coming instruction I first confirm the rules for it are in cfg rows, and escalate any that live only in a document. |  |
+| G:governance.rules_must_be_config_driven | engaged | On the coming instruction I first confirm the rules for it are in cfg rows, and escalate any that live only in a document. | #2208 v7 iba/app/lib/cfgquality.py |
 | G:governance.scope_iba_app | engaged | The app is the controller for all work; the developer task will be done inside it. |  |
 | G:governance.scope_iba_db | engaged | Process control and base data live in iba.db; I query there. |  |
 | G:governance.scope_project | not engaged | States config covers the whole project; nothing specific to do yet. |  |
 | G:governance.scope_research_db | not engaged | research_db holds prose only; I have no reason to open it. |  |
 | G:governance.scripts_and_routines | not engaged | Every script belongs to a module, utility or library, else is temp_ prefixed. None created yet. |  |
-| G:governance.scripts_ps_dir | not engaged | PS entry points live in iba/app/ps; matters if I add one. |  |
 | G:governance.scripts_python_dir | not engaged | Python tools live in iba/app/tools; matters if I add one. |  |
 | G:governance.session_log_required_content | engaged | At close I write a log with the six required sections, real ids, paths and git output. |  |
 | G:governance.session_log_triggers_commit | engaged | Session close writes the log, clears findings, commits and pushes, then commits the git section alone. |  |
@@ -98,7 +97,7 @@ I have read the governance settings, behaviour rules and escalation rules, and w
 | B:43 | not engaged | New ps scripts dispatch through run.py except the two named exceptions. No build task chosen yet; re-assessed when the researcher names one. |  |
 | B:44 | engaged | A new decision met while building stops the work and goes back for design; my own slips I fix and record. | #2208 v1 outputs/escalation/2206-low-config-density-utilities-v1-20261021.md |
 | B:45 | not engaged | Answering decision items uses Update, self-correctables use ResolveSelfCorrectable; no answers made yet. |  |
-| B:46 | engaged | The #2206 test plan covers every changed path, is run, and its results go on #2206. | outputs/escalation/2206-reading-waste-test-results-v1-20261021.md |
+| B:46 | engaged | The #2206 test plan covers every changed path, is run, and its results go on #2206. | outputs/escalation/2206-reading-waste-test-results-v1-20261021.md outputs/escalation/2208-ps-dir-setting-test-results-v1-20261021.md |
 | B:48 | not engaged | Prose-section writes need a change-log row in the same transaction; no prose writes. |  |
 | B:49 | not engaged | Version column on covered rows points to its log row; no prose writes. |  |
 | B:50 | not engaged | Log payload holds the prior state; no prose writes. |  |
@@ -119,7 +118,7 @@ I have read the governance settings, behaviour rules and escalation rules, and w
 | B:66 | not engaged | Cluster labels revisited when membership changes; no cluster changes. |  |
 | B:67 | engaged | I keep research_db out of any IBA result except prose and maintenance utilities. |  |
 | B:68 | not engaged | ib_observation changes only via a real fresh LLM answer; no observation work. |  |
-| B:75 | engaged | The cfg write in this session went through apply_logged under a DEVMODE run id. | run DEVMODE-2206-READING-WASTE-20261021 |
+| B:75 | engaged | The cfg write in this session went through apply_logged under a DEVMODE run id. | run DEVMODE-2206-READING-WASTE-20261021 and DEVMODE-2208-PS-DIR-SETTING-20261021 |
 | B:80 | not engaged | Open-items lines in files carry a live handle; none written yet. |  |
 | B:81 | engaged | This file: each rule restated in my words, ack given, conflicts listed, start check passing, evidence added later. |  |
 | B:82 | engaged | At close nothing is committed while Session-Close shows an open finding. |  |

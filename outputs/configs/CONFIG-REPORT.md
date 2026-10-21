@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-21T17:49:17Z |
+| generated_at | 2026-10-21T18:03:13Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -180,7 +180,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**936** registered module(s) — **483** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **816** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**937** registered module(s) — **484** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **817** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -720,6 +720,7 @@ _(none)_
 | prosestore | iba/app/lib/prosestore.py | The DB-canonical prose store: extract, search, chapter export/import. Escalation #784, 2026-08-21 -- incorporates operations previously standalone in scripts/build_programme_prose_extract.py, scripts/search_prose.py, scripts/export_prose_chapter_edit.py, scripts/import_prose_chapter_edit.py into the app. | ✓ |  |  |
 | ps_charanswer | iba/app/ps/CharAnswer.ps1 | Front door for the char-answers stage (cluster-reading work package). | ✓ | ✓ | app core, outside the utility config-density check |
 | ps_charreading | iba/app/ps/CharReading.ps1 | Front door for the char-reading stage (cluster-reading work package). | ✓ | ✓ | app core, outside the utility config-density check |
+| ps_dir_setting_2208_v1_20261021 | iba/app/migration/archive/ps_dir_setting_2208_v1_20261021.py | ONE-OFF migration -- escalation #2208: adds governance.scripts_ps_dir to compliance.value_settings, through configmaint.apply_logged under run_id DEVMODE-2208-PS-DIR-SETTING-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | ps_lexical_readiness | iba/app/ps/Lexical-Readiness.ps1 | Front door for lexical.readiness (verse-lexical work package). | ✓ | ✓ | app core, outside the utility config-density check |
 | ps_lib_notify | iba/app/ps/_lib/Notify.ps1 | PS helper library: completion notifications for the PS front doors. | ✓ | ✓ | app core, outside the utility config-density check |
 | ps_relationalreading | iba/app/ps/RelationalReading.ps1 | Front door for lexical.relational (verse-lexical work package). | ✓ | ✓ | app core, outside the utility config-density check |
@@ -1150,7 +1151,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | behaviour | compliance.copy_shingle_words | 3 | #2173 P2 B: n for the n-word runs used to tell a copied restatement from a reading |
 | behaviour | compliance.dir | Logs/compliance/ | #2173 P2: folder of the session compliance files COMPLIANCE-<date>-<session8>.md |
 | behaviour | compliance.engaged_statuses | ['engaged'] | #2173 P2 D: the statuses whose rows need evidence at close |
-| behaviour | compliance.value_settings | ['governance.escalation_worksheet_path', 'governance.oneoff_report_archive_dir', 'governance.oneoff_report_dir', 'governance.oneoff_report_format', 'governance.oneoff_report_naming_pattern', 'governance.ps_worksheet_path', 'governance.session_log_dir'] | #2206 option 3: governance settings holding a plain value (a path, a format), read by the code that uses them; lib/compliance.py leaves them out of the delivered rules and the compliance file |
+| behaviour | compliance.value_settings | ['governance.escalation_worksheet_path', 'governance.oneoff_report_archive_dir', 'governance.oneoff_report_dir', 'governance.oneoff_report_format', 'governance.oneoff_report_naming_pattern', 'governance.ps_worksheet_path', 'governance.scripts_ps_dir', 'governance.session_log_dir'] | #2206 option 3: governance settings holding a plain value (a path, a format), read by the code that uses them; lib/compliance.py leaves them out of the delivered rules and the compliance file |
 | candidate | candidate.concept_delimiter_pattern | [:/] | a character in a candidate.load input word signalling more than one concept -- split into one sub-item per piece before validating, rather than reject or guess which half is right |
 | candidate | candidate.lemma_base_pattern | ^([HG]\d+)([A-Z]?)$ | capture group 1 = the base Strong's (sub-letters stripped) — the lemma key. The seed/stamp key on this. |
 | candidate | candidate.load_report_path | iba/app/reports/candidate-load.md | where candidate.load persists its per-run duplicates/exceptions report |

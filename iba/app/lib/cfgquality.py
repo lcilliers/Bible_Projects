@@ -635,6 +635,16 @@ _VALIDATESET_RE = re.compile(
 _VALIDATESET_ITEM_RE = re.compile(r"'([^']*)'|\"([^\"]*)\"")
 
 
+def ps_dir(conn: sqlite3.Connection, app_root: pathlib.Path) -> pathlib.Path:
+    """The PS entry-point folder, from cfg_setting governance.scripts_ps_dir (repo-root-relative;
+    #2208). `app_root` is iba/app, so the repo root is two levels up."""
+    row = conn.execute("SELECT value FROM cfg_setting WHERE key='governance.scripts_ps_dir' AND "
+                       "inactive=0").fetchone()
+    if row is None:
+        raise KeyError("cfg_setting governance.scripts_ps_dir is missing or inactive")
+    return app_root.parent.parent / json.loads(row[0])
+
+
 def _ps_validateset_drift(conn: sqlite3.Connection, ps_path: pathlib.Path, ps_label: str,
                           enum_map: dict) -> list[str]:
     """Every `enum_map` parameter's `[ValidateSet(...)]` values in `ps_path` must exactly match the
@@ -674,7 +684,7 @@ def find_escalation_ps_validateset_drift(conn: sqlite3.Connection, app_root: pat
                                          ) -> list[str]:
     """Escalation.ps1's `_PS_VALIDATESET_ENUM_MAP` parameters against their cfg_enum groups
     (after `-Decision`'s lowercase transform). ADVISORY: the script may not be updated yet."""
-    return _ps_validateset_drift(conn, app_root / "ps" / "Escalation.ps1", "Escalation.ps1",
+    return _ps_validateset_drift(conn, ps_dir(conn, app_root) / "Escalation.ps1", "Escalation.ps1",
                                  _PS_VALIDATESET_ENUM_MAP)
 
 
@@ -689,7 +699,7 @@ def find_folderpurpose_ps_validateset_drift(conn: sqlite3.Connection, app_root: 
     """`FolderPurpose.ps1`'s `-Type`/`-Status` `[ValidateSet(...)]` values against the live cfg_enum
     groups they mirror (#977). folderpurpose.auto_assess() checks its own literal vocabulary at run
     time."""
-    return _ps_validateset_drift(conn, app_root / "ps" / "FolderPurpose.ps1", "FolderPurpose.ps1",
+    return _ps_validateset_drift(conn, ps_dir(conn, app_root) / "FolderPurpose.ps1", "FolderPurpose.ps1",
                                  _FOLDERPURPOSE_PS_VALIDATESET_ENUM_MAP)
 
 
@@ -765,7 +775,7 @@ def find_ps_worksheet_drift(conn: sqlite3.Connection, app_root: pathlib.Path,
     wb = openpyxl.load_workbook(wb_path, data_only=False)
     tabs = _index_ps_worksheet_tabs(wb)
     out = []
-    for ps_file in sorted((app_root / "ps").glob("*.ps1")):
+    for ps_file in sorted(ps_dir(conn, app_root).glob("*.ps1")):
         if ps_file.stem in _PS_WORKSHEET_SKIP_STEMS:
             continue
         key = f"iba\\app\\ps\\{ps_file.name}".lower()
@@ -804,7 +814,7 @@ def find_escalation_worksheet_drift(conn: sqlite3.Connection, app_root: pathlib.
                                              project_root)
     if error:
         return [error]
-    live = _ps_param_names(app_root / "ps" / "Escalation.ps1")
+    live = _ps_param_names(ps_dir(conn, app_root) / "Escalation.ps1")
     wb = openpyxl.load_workbook(wb_path, data_only=False)
     used = {c[1:] for ws in wb.worksheets for row in ws.iter_rows(values_only=True)
            for c in row if isinstance(c, str) and c.startswith("-") and " " not in c}
@@ -1059,16 +1069,16 @@ def find_unpushed_commits(project_root: pathlib.Path) -> list[str]:
     return [f"{count} local commit(s) ahead of the upstream branch, not pushed"]
 
 
-def find_ps_scripts_bypassing_runpy(app_root: pathlib.Path) -> list[str]:
+def find_ps_scripts_bypassing_runpy(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
     """`cfg_behaviour_rule` 43: every PS script under iba/app/ps/ that performs an operation calls
     `python -m iba.app.run`, not a module directly. Named exceptions: Start-Iba.ps1, and
     Escalation.ps1's manual front-door actions. A simple substring scan."""
-    ps_dir = app_root / "ps"
-    if not ps_dir.exists():
+    folder = ps_dir(conn, app_root)
+    if not folder.exists():
         return []
     exempt = {"Start-Iba.ps1", "Escalation.ps1"}
     out = []
-    for f in sorted(ps_dir.glob("*.ps1")):
+    for f in sorted(folder.glob("*.ps1")):
         if f.name in exempt:
             continue
         try:
@@ -1078,7 +1088,7 @@ def find_ps_scripts_bypassing_runpy(app_root: pathlib.Path) -> list[str]:
         has_runpy = re.search(r"python\s+-m\s+iba\.app\.run\b", text) is not None
         has_direct = re.search(r"python\s+-m\s+iba\.app\.(handlers|lib|tools)\b", text) is not None
         if has_direct and not has_runpy:
-            out.append(f"iba/app/ps/{f.name} calls iba.app.(handlers|lib|tools) directly, no "
+            out.append(f"{f.relative_to(app_root.parent.parent).as_posix()} calls iba.app.(handlers|lib|tools) directly, no "
                       f"iba.app.run dispatch found in the same file")
     return out
 

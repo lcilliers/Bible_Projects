@@ -18236,3 +18236,28 @@ raised #2207 for 19 findings new since #2107. Before the duplicate fix, two live
 version to #2197 (v3, v4).
 
 **Docs:** GOVERNANCE.md sections 5, 6 and 7; USER-GUIDE.md sections 2.1, 3.2 and 4.
+
+## 373. The PS folder is read from governance.scripts_ps_dir (2026-10-21, escalation #2208, for #2177)
+
+Researcher, verbatim (chat 2026-10-21): "#2208: approve option (a), make the code read
+governance.scripts_ps_dir." Found while building #2206 option 3: no code read the setting, and
+`iba/app/lib/cfgquality.py` built the folder as a literal at 5 sites.
+
+**Code:** `iba/app/lib/cfgquality.py` `ps_dir(conn, app_root)` reads the setting (repo-root-relative)
+and raises `KeyError` if it is missing or inactive. It is used by
+`find_escalation_ps_validateset_drift`, `find_folderpurpose_ps_validateset_drift`,
+`find_ps_worksheet_drift`, `find_escalation_worksheet_drift` and `find_ps_scripts_bypassing_runpy`,
+which now takes `conn` (callers in `handlers/configmaint.py` and `lib/cfgreport.py` updated). Its
+finding text gives the path relative to the repo root; for the live folder that text is unchanged,
+so validate's fingerprints still match.
+
+**Config:** migration `iba/app/migration/archive/ps_dir_setting_2208_v1_20261021.py`, run
+`DEVMODE-2208-PS-DIR-SETTING-20261021`, 2 `apply_logged` writes: `governance.scripts_ps_dir` added to
+`compliance.value_settings` (8 keys), and its own `cfg_utility` row. `governance.scripts_python_dir`
+stays delivered: no code reads it yet.
+
+**Tests:** `iba/app/tools/temp_2208_ps_dir_test_run.py` on a `copy_db` copy, 6/6 pass:
+`outputs/escalation/2208-ps-dir-setting-test-results-v1-20261021.md`.
+
+**Live:** `configmaint.validate` run RUN-20261021_190253_956-CONFIGMAINT matched open #2207 as
+identical (no new version), so the change altered no finding.
