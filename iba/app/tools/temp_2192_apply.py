@@ -14,9 +14,7 @@ import sys
 
 def main(target: str, patch: str) -> int:
     path = pathlib.Path(target)
-    raw = path.read_bytes().decode("utf8")
-    nl = "\r\n" if "\r\n" in raw else "\n"
-    lines = raw.split(nl)
+    lines = path.read_bytes().decode("utf8").split("\n")   # each line keeps its own trailing \r
     blocks, cur = [], None
     for line in pathlib.Path(patch).read_text(encoding="utf8").splitlines():
         m = re.fullmatch(r"@@ (\d+)-(\d+)", line.strip())
@@ -32,9 +30,10 @@ def main(target: str, patch: str) -> int:
             print(f"bad or overlapping range {start}-{end}")
             return 1
         last = start
-        indent = re.match(r"\s*", lines[start - 1]).group(0)
-        lines[start - 1:end] = [n.replace("{I}", indent) for n in new]
-    path.write_bytes(nl.join(lines).encode("utf8"))
+        indent = re.match(r"[ \t]*", lines[start - 1]).group(0)
+        cr = "\r" if lines[start - 1].endswith("\r") else ""
+        lines[start - 1:end] = [n.replace("{I}", indent) + cr for n in new]
+    path.write_bytes("\n".join(lines).encode("utf8"))
     print(f"{path}: {len(blocks)} block(s) applied")
     return 0
 

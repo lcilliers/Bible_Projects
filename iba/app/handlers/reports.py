@@ -1,13 +1,7 @@
-"""reports handlers — thin dispatcher adapters over report.py / validation.py.
-
-Both modules already had their own reusable generate functions (report.generate, validation.
-generate/generate_book); this just wraps them in the standard `def h(ctx) -> Outcome` contract so
-they're registered work packages/steps like everything else in the app, instead of standalone
-scripts nothing else knows about — the same gap configuration_maintenance closed for
-cfgload/cfgcheck/cfgreport. Mostly read-only — the one exception is
-`verse_span_meaning_report` (see `report.auto_backfill_before_render`, 2026-07-26): it may write
-to the raw/lexicon-parsed layer via `raw.backfill_meaning_for`, gated by that setting, before
-rendering. Every other report here writes nothing to the DB.
+"""reports handlers — thin dispatcher adapters over report.py / validation.py and the report
+modules, in the standard `def h(ctx) -> Outcome` contract. Read-only, except
+`verse_span_meaning_report`, which may write to the raw/lexicon-parsed layer via
+`raw.backfill_meaning_for` before rendering (gated by `report.auto_backfill_before_render`).
 """
 
 from __future__ import annotations
@@ -38,12 +32,8 @@ def word_report(ctx: Ctx) -> Outcome:
     return ok(f"wrote {out}", path=str(out))
 
 
-# Researcher's standing rule, 2026-07-30: "if a validation runs for a module operation... it would
-# escalate and record an escalation report." Found live: validation_word/validation_book computed
-# real PASS/WARN/FAIL verdicts but ALWAYS returned ok() regardless — a hard FAIL never surfaced as
-# anything but a number inside a message string. Both now follow the same escalate-on-finding shape
-# every other quality check in this app already uses (passage.validate/lexicon.validate/
-# configmaint.validate) — clean is still a plain ok(), a FAIL/WARN escalates once per run.
+# validation_word/validation_book: clean is ok(); a FAIL/WARN escalates once per run, like every
+# other quality check.
 def _validation_outcome(ctx: Ctx, scope_label: str, out, overall: str, p: int, w: int, f: int
                         ) -> Outcome:
     if overall == "PASS":
@@ -53,8 +43,7 @@ def _validation_outcome(ctx: Ctx, scope_label: str, out, overall: str, p: int, w
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision = answered["next_action"]
-        # escalation #798/#799 SS4: decision_required now resolves via Update()'s manual
-        # vocabulary (approved) not AnswerRun's dispatcher vocabulary (approve).
+        # decision_required resolves via Update's vocabulary (approved)
         if decision in ("approve", "approved"):
             return ok(f"acknowledged: {overall} ({p} pass, {w} warn, {f} fail) -> {out} — "
                       f"researcher confirmed these findings are known/acceptable",
@@ -65,10 +54,7 @@ def _validation_outcome(ctx: Ctx, scope_label: str, out, overall: str, p: int, w
                        path=str(out), overall=overall, passes=p, warns=w, fails=f)
         return fail("needs-revision", f"researcher comment: {answered['comment'] or '(none)'}")
 
-    # escalation #798/#799 SS3.7 (researcher, 2026-08-22): built now as uniformly
-    # decision_required, per instruction -- the per-check classification (some findings look like
-    # real code bugs, some like genuine open questions, per the design doc's own worked examples
-    # from validation.py) is NOT built in this pass.
+    # raised as decision_required for every finding (no per-check classification)
     return escalate(
         "needs-review",
         question=f"Validation for {scope_label}: {overall} ({p} pass, {w} warn, {f} fail) — see "
@@ -101,8 +87,8 @@ def manifest_rebuild(ctx: Ctx) -> Outcome:
 
 
 def manifest_search(ctx: Ctx) -> Outcome:
-    """Field:value or free-text search against file_manifest. -Query is a per-call parameter (like
-    table_export's -Table), not config — a search term isn't a policy anyone proposes to change."""
+    """Field:value or free-text search against file_manifest. -Query is a per-call parameter, not
+    config."""
     query = ctx.params.get("Query")
     if not query:
         return fail("missing-query", "manifest.search requires a -Query parameter")
@@ -125,11 +111,9 @@ def content_index_rebuild(ctx: Ctx) -> Outcome:
 
 
 def content_index_search(ctx: Ctx) -> Outcome:
-    """Incremental refresh then a key_type:value (strong:H2734, gloss:anger, word:anger) or
-    bare-value lookup against content_index. -Query is a per-call parameter, not config — same
-    reasoning as manifest_search's -Query. -Csv (optional, any non-empty value) also writes the
-    FULL result set as .csv — the .md report caps at 500 rows for readability, a large query
-    (gloss:compassion, 23,098+ hits) needs the untruncated set for real spreadsheet review."""
+    """Incremental refresh then a key_type:value (strong:H2734, gloss:anger, word:anger) or bare-value
+    lookup against content_index. -Query is a per-call parameter. -Csv (any non-empty value) also
+    writes the full result set as .csv (the .md report caps at 500 rows)."""
     query = ctx.params.get("Query")
     if not query:
         return fail("missing-query", "content_index.search requires a -Query parameter")
@@ -162,23 +146,10 @@ def retention_report(ctx: Ctx) -> Outcome:
 
 
 def table_export(ctx: Ctx) -> Outcome:
-    """CSV dump of every DATA table, verbatim — config governs its own concerns; the DEDICATED
-    config report writer (configmaint.report) already owns cfg_* content, so this excludes it
-    (found 2026-07-22 — the tool used to dump cfg_* too, a real duplication bug). -Out/-Table stay
-    plain PS parameters (a one-off destination/subset override), not config — same boundary the
-    researcher drew 2026-07-22: a parameter explained in the script's own inline help isn't a
-    setting just because the script is now dispatcher-registered. -Database (added 2026-08-29,
-    escalation #1007) is the same kind of plain override, resolved via `ctx.cfg.database_path` —
-    the registered project_database enum, not a literal path — so this can dump bible_research.db
-    tables (e.g. the observation-question catalogue) as readily as iba.db's own.
-
-    `table_export.output_dir` is a per-database map (same JSON-map shape as `prose.
-    book_output_dir`), not a single path — changed same day, once cross-database dumping made a
-    single flat folder mix iba.db and bible_research.db CSVs together (found live: this handler's
-    own first bible_research run landed right next to iba.db's, in `Workflow/schema/`, no
-    separation at all). A database missing from the map is a real config gap, not something to
-    default around — same "unknown book raises" posture `prosestore.output_dir_for` already
-    established for the equivalent gap there."""
+    """CSV dump of every DATA table, verbatim; cfg_* content belongs to configmaint.report and is
+    excluded. -Out/-Table/-Database are plain per-call overrides; -Database resolves through
+    `ctx.cfg.database_path` (the project_database enum). `table_export.output_dir` is a per-database
+    map; a database missing from it is a config gap and raises."""
     only = ctx.params.get("Table")
     only = only.split(",") if isinstance(only, str) else only
     database = ctx.params.get("Database") or "iba"
@@ -217,10 +188,7 @@ def word_registry_span_report(ctx: Ctx) -> Outcome:
 
 
 def strong_verse_report(ctx: Ctx) -> Outcome:
-    """`ctx.word_id` is already resolved by the dispatcher (run.py: any step with 'Word' in
-    params gets `wrow = db.get('word_registry', word=params['Word'])` before the handler runs) —
-    reused here rather than a second lookup. Word-not-found is therefore a dispatcher-level fact,
-    not something this handler re-derives."""
+    """`ctx.word_id` is resolved by the dispatcher (run.py, for any step with 'Word' in params)."""
     if ctx.word_id is None:
         return fail("word-not-found", f"{ctx.params['Word']!r} is not in the registry")
     strong = ctx.params["Strong"]
@@ -243,9 +211,8 @@ def span_analysis_report(ctx: Ctx) -> Outcome:
 
 
 def batch_progress_report(ctx: Ctx) -> Outcome:
-    """Live progress monitor over `run_batch` (escalation #1756) -- read-only, no write-grant
-    needed. All three params optional/combine with AND; no filters = every currently-running batch
-    DB-wide (the live-right-now view)."""
+    """Live progress monitor over `run_batch` (#1756), read-only. All three params optional, combined
+    with AND; no filters = every currently running batch."""
     filter_run_id = ctx.params.get("FilterRunId") or None
     step = ctx.params.get("Step") or None
     selector_key = ctx.params.get("SelectorKey") or None
@@ -257,19 +224,14 @@ def batch_progress_report(ctx: Ctx) -> Outcome:
 
 
 def verse_span_meaning_report(ctx: Ctx) -> Outcome:
-    """Book-scoped, needs -Book plus exactly one of -Chapters/-Range. STEP-dependent (AMBIGUOUS-
-    span live disambiguation) — versespanmeaningreport.write_report() reads step.required_for_runs
-    itself and raises StepUnavailable when required and down; caught here into a clean fail(),
-    resolved by cfg_on_fail(report.verse_span_meaning, unreachable) rather than crashing the run.
+    """Book-scoped, needs -Book plus exactly one of -Chapters/-Range. STEP-dependent (live
+    disambiguation of AMBIGUOUS spans): versespanmeaningreport.write_report() raises StepUnavailable
+    when STEP is required and down, caught here into a clean fail() (cfg_on_fail
+    report.verse_span_meaning / unreachable).
 
-    `report.auto_backfill_before_render` (cfg_setting, module `report`, default True — researcher's
-    direct 2026-07-26 instruction, answering the open question left by the prior session): before
-    rendering, run the identical pull `Raw-Backfill.ps1` does (raw.backfill_meaning_for) for any
-    span in this exact book+range whose strong is not yet registered. A report is never silently
-    left at partial coverage waiting on a separate manual step. Set False to go back to a pure
-    read-only render (STEP-down still refuses rendering if step.required_for_runs is True, exactly
-    as before — this setting only controls whether a gap gets auto-filled, not whether STEP itself
-    is required)."""
+    `report.auto_backfill_before_render` (default True): before rendering, run the same pull as
+    `Raw-Backfill.ps1` (raw.backfill_meaning_for) for any span in this book+range whose strong is not
+    registered. False makes it a pure read-only render. It does not change whether STEP is required."""
     book = ctx.params["Book"]
     book_label = ctx.params.get("BookLabel")
     if ctx.params.get("Range"):
@@ -296,12 +258,9 @@ def verse_span_meaning_report(ctx: Ctx) -> Outcome:
 
 
 def lexical_report(ctx: Ctx) -> Outcome:
-    """Book-scoped, needs -Book plus exactly one of -Chapters/-Range, same call shape as
-    `verse_span_meaning_report` (the step this replaces). Pure render off `verse_lexical` —
-    no STEP dependency, no backfill, no DB write here at all; `lexical.build` (ordinal 0 of
-    the same `verse-lexical` work package) is what populates the table this reads. `no-
-    readings` fires when nothing has been built yet for this exact range (`cfg_on_fail` resolves
-    the message, matching every other step's convention)."""
+    """Book-scoped, needs -Book plus exactly one of -Chapters/-Range. Pure render off
+    `verse_lexical` (populated by `lexical.build`): no STEP, no backfill, no DB write. `no-readings`
+    when nothing is built for this range (message from cfg_on_fail)."""
     book = ctx.params["Book"]
     book_label = ctx.params.get("BookLabel")
     if ctx.params.get("Range"):
@@ -325,19 +284,10 @@ def lexical_report(ctx: Ctx) -> Outcome:
 
 
 def lexical_exceptions_report(ctx: Ctx) -> Outcome:
-    """Escalation #1383, build spec §G.1 — the per-run self-audit / exception report for the most
-    recent `lexical.enrich` run over this verse range. Read-only against `verse_lexical`/
-    `verse_lexical_note`; never an independent write. Deliberately a plain tally against Layer 1's
-    complete enumeration, no "confirms"/"validates"/"closes the gap" framing (method-and-drift-
-    mitigation doc's own corrected Layer-3 discipline, baked into the template's own structure).
-
-    Verse-scoped since escalation #1451 (2026-09-05, full record `iba/docs/1451-window1-layer2-
-    verse-scoped-redesign-v1-20260905.md`) — no `passage` row is resolved or required, same
-    correction already made to `handlers/lexical.py:enrich()`. Found live producing this report
-    for the first time against real #1451 output: every one of the 10 test verses has no `passage`
-    row by design, so the old `passagetrack.find_tracked_passage`/`no-passage` gate would have
-    refused all 10. Verses now resolve directly via `fetch_verses`, and both queries below filter
-    by `verse_id` instead of joining through `verse_passage`/`passage_id`."""
+    """The per-run self-audit / exception report for the latest `lexical.enrich` run over this verse
+    range (#1383). Read-only against `verse_lexical`/`verse_lexical_note`. A plain tally against Layer
+    1's complete enumeration, no "confirms"/"validates" framing. Verse-scoped (#1451): verses resolve
+    via `fetch_verses` and queries filter by `verse_id`; no `passage` row is needed."""
     book = ctx.params["Book"]
     book_label = ctx.params.get("BookLabel")
     if ctx.params.get("Range"):
@@ -372,12 +322,8 @@ def lexical_exceptions_report(ctx: Ctx) -> Outcome:
     connectives = [r for r in note_rows if r["note_type"] == "connective"]
     n_unclassified_conn = sum(1 for r in connectives if (r["value_text"] or "") == "UNCLASSIFIED")
 
-    # Standing integrity check (escalation #1520 root-cause fix, §D of `iba/docs/1520-verse-
-    # lexical-crud-safety-review-v1-20260905.md`): a live note whose verse_lexical_id/
-    # target_verse_lexical_id points at a soft-deleted verse_lexical row is a genuine dangling
-    # reference (the code slot it names truly no longer exists — `write_readings_for_span`'s
-    # identity-stable write only ever deletes a slot for real when it disappears from the span).
-    # Should always be 0; surfaced here rather than only discoverable via a failed enrich call.
+    # standing integrity check (#1520): a live note pointing at a soft-deleted verse_lexical row is a
+    # genuine dangling reference. Should always be 0.
     orphaned_anchor = ctx.db.rows(
         f"SELECT n.id, n.note_type FROM verse_lexical_note n "
         f"JOIN verse_lexical vl ON vl.id=n.verse_lexical_id "
@@ -434,12 +380,10 @@ def _parse_filter_list(raw: str) -> list[str]:
 
 
 def lexical_extract(ctx: Ctx) -> Outcome:
-    """Escalation #1383, build spec §G.2 — multi-filter JSON extract over verse_lexical/
-    verse_lexical_note, feeding Stage 2's own input assembly. Read-only. Every filter accepts a
-    single value or a comma-list; a `verse` filter also accepts an OSIS reference range
-    (`Gen.1.1-Gen.1.10`). Filters combine with AND across keys, OR within one key's list.
-    Omitting every filter is refused (`no-filter`) — this step is never an unbounded full-corpus
-    dump."""
+    """Multi-filter JSON extract over verse_lexical/verse_lexical_note (#1383). Read-only. Every
+    filter takes a single value or a comma-list; a `verse` filter also takes an OSIS range
+    (`Gen.1.1-Gen.1.10`). AND across keys, OR within a key's list. No filter at all is refused
+    (`no-filter`)."""
     passage_f = ctx.params.get("PassageFilter")
     verse_f = ctx.params.get("VerseFilter")
     surface_f = ctx.params.get("SurfaceFilter")
@@ -456,13 +400,8 @@ def lexical_extract(ctx: Ctx) -> Outcome:
                     f"({','.join('?' * len(ids))}) AND deleted=0)")
         args += ids
     if verse_f:
-        # Real bug found live testing this step (escalation #1450, 2026-09-04): a naive
-        # `osisId >= ? AND osisId <= ?` range compares STRINGS, not chapter/verse numbers —
-        # "John.1.10" sorts lexicographically BEFORE "John.1.5" ('1' < '5' at the first differing
-        # character), so a "John.1.1-John.1.5" range silently swept in John.1.10-John.1.19 and
-        # more. Fixed: every osisId in scope is parsed to (book, chapter, verse) and compared
-        # numerically, matching `versespanmeaningreport.fetch_verses`'s own established
-        # convention (`verse` has no chapter/verse COLUMNS to filter on directly — checked live).
+        # osisId ranges are compared on parsed (book, chapter, verse) numbers, not strings ("John.1.10"
+        # sorts before "John.1.5"), as in versespanmeaningreport.fetch_verses
         resolved_ids: list[int] = []
         for v in _parse_filter_list(verse_f):
             if "-" in v and v.count(".") >= 2:
@@ -506,9 +445,6 @@ def lexical_extract(ctx: Ctx) -> Outcome:
                 args.append(s)
         where.append("(" + " OR ".join(clauses) + ")")
 
-    # resolved_sense/language DROPPED from verse_lexical 2026-09-16 (#1706 Phase B) -- role is now
-    # a JSON array of cluster codes, not the old content/function tag; resolved_sense's replacement
-    # lives at the new Layer 2 `verse_meaning` stage (ib_observation), not this table.
     rows = ctx.db.rows(
         f"SELECT vl.id AS verse_lexical_id, v.osisId AS verse, vl.strong, vl.role, vl.position, "
         f"vl.surface, vl.testament, vl.party_kind "
@@ -527,15 +463,8 @@ def lexical_extract(ctx: Ctx) -> Outcome:
                 {"note_type": n["note_type"], "resolution_status": n["resolution_status"],
                  "value_text": n["value_text"], "evidence_text": n["evidence_text"]})
 
-    # Cluster short name(s), computed here at report time -- NOT a stored verse_lexical column
-    # (researcher decision, 2026-09-05: avoids the backfill-cost/staleness problem already named
-    # in BUILD.md #230 for is_negator/party_kind -- cluster_strong keeps changing, as today's own
-    # T4-T9 build proves, and a stored column would go stale every time it does). Joined on the
-    # EXACT strong code, never base-stripped (the strong_related lesson, escalation #1451 review
-    # session, 2026-09-05 -- cluster_strong is keyed like strong_related, not like the base-keyed
-    # cfg_lexical_code_class convention). A code can belong to more than one cluster at once
-    # (confirmed live: H0034 is both M24 and T2) -- all live memberships are returned, comma-joined
-    # by short_name, never silently collapsed to one.
+    # cluster short name(s), computed at report time (cluster_strong keeps changing), joined on the
+    # exact strong code; every live membership is returned, comma-joined
     strong_codes = sorted(set(r["strong"] for r in rows if r["strong"]))
     clusters_by_strong: dict[str, list[str]] = {}
     if strong_codes:
@@ -619,8 +548,7 @@ def schema_overview_report(ctx: Ctx) -> Outcome:
 
 
 def schema_overview_bible_research_report(ctx: Ctx) -> Outcome:
-    """The bible_research.db counterpart -- escalation #1306, 2026-08-31. See
-    schemareport.write_report_bible_research's own docstring for the design."""
+    """The bible_research.db counterpart (#1306); see schemareport.write_report_bible_research."""
     path = pathlib.Path(ctx.cfg.required_setting("report.schema_overview_bible_research_path"))
     out = schemareport.write_report_bible_research(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
@@ -639,19 +567,15 @@ def cluster_report(ctx: Ctx) -> Outcome:
 
 
 def obs_catalogue_report(ctx: Ctx) -> Outcome:
-    """Structural review of `wa_obs_question_catalogue` (bible_research.db) on its own — no join
-    to `finding`/`finding_question_link`. See `lib/cataloguereport.py` module docstring for the
-    full design rationale (escalation #1007, second half)."""
+    """Structural review of `wa_obs_question_catalogue` (bible_research.db) on its own; see
+    `lib/cataloguereport.py`."""
     path = pathlib.Path(ctx.cfg.required_setting("report.obs_catalogue_path"))
     out = cataloguereport.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
 
 
 def escalation_list(ctx: Ctx) -> Outcome:
-    """D4/D16/D23 (register v9) — the escalation-reporting work package's List step, now dispatched
-    through run.py like every other report instead of Escalation.ps1 invoking
-    `python -m iba.app.lib.escalation list` directly. Content unchanged — esc.write_list_report
-    already writes the full open-items report, now including the D15 exception sections."""
+    """The escalation-reporting List step (dispatched through run.py): esc.write_list_report."""
     path = pathlib.Path(ctx.cfg.required_setting("escalation.list_report_path"))
     out, rows = esc.write_list_report(ctx.cfg, ctx.db, path)
     n_open = sum(1 for r in rows if r["state"] in esc.state_group(ctx.db, "open"))   # #2173 G1
@@ -660,27 +584,24 @@ def escalation_list(ctx: Ctx) -> Outcome:
 
 
 def escalation_history(ctx: Ctx) -> Outcome:
-    """D4/D16/D23 — the escalation-reporting work package's History step. Needs -Id."""
+    """The escalation-reporting History step. Needs -Id."""
     eid = ctx.params.get("Id")
     if not eid:
         return fail("missing-id", "escalation.history requires a -Id parameter")
     try:
-        eid = esc.resolve_id(ctx.db, eid)      # escalation #2000: -Id also takes a thread alias
+        eid = esc.resolve_id(ctx.db, eid)      # -Id also takes a thread alias
     except ValueError as exc:
         return fail("bad-parameter", str(exc))
-    # id-prefixed stem, 2026-08-26 (escalation #857, researcher direct instruction) -- was
-    # escalation-{eid}-history.md (id buried mid-name); versioning is now write_report()'s job
-    # (BUILD.md sec60), not this path's -- write_history_report returns the actual written path.
+    # id-prefixed stem; write_report() versions it and returns the path written
     path = pathlib.Path(ctx.cfg.required_setting("escalation.history_report_dir")) / f"{eid}-escalation-history.md"
     out = esc.write_history_report(ctx.cfg, ctx.db, int(eid), path)
     return ok(f"wrote {out}", path=str(out))
 
 
 def escalation_thread(ctx: Ctx) -> Outcome:
-    """escalation #2000 -- the escalation-reporting work package's Thread step (`Escalation.ps1
-    -Action Thread`): the open threads, or one thread in full with -Id OT-nn. Optional -State
-    (on-hold|in-progress) narrows the list. The console message carries the short list itself,
-    so the query is answered without opening the file (ruling 6)."""
+    """The Thread step (`Escalation.ps1 -Action Thread`, #2000): the open threads, or one thread in
+    full with -Id OT-nn. Optional -State (on-hold|in-progress) narrows the list. The console message
+    carries the short list."""
     path = pathlib.Path(ctx.cfg.required_setting("escalation.thread_report_path"))
     try:
         out, lines = esc.write_thread_report(ctx.cfg, ctx.db, path,
@@ -692,16 +613,16 @@ def escalation_thread(ctx: Ctx) -> Outcome:
 
 
 def escalation_thread_export(ctx: Ctx) -> Outcome:
-    """escalation #2000 -- the Export step (`Escalation.ps1 -Action Export -Type thread`):
-    regenerates the open threads register .md from the escalation table. Run at session-close."""
+    """The Export step (`Escalation.ps1 -Action Export -Type thread`, #2000): regenerates the open
+    threads register .md from the escalation table. Run at session-close."""
     path = pathlib.Path(ctx.cfg.required_setting("escalation.thread_register_path"))
     out, n = esc.write_thread_register(ctx.cfg, ctx.db, path)
     return ok(f"{n} thread(s) -> {out}", path=str(out), threads=n)
 
 
 def escalation_context(ctx: Ctx) -> Outcome:
-    """escalation #2173 P1 -- `Escalation.ps1 -Action Context`: every file each open escalation
-    names (any field, any version), resolved to its latest live version. Read-only."""
+    """`Escalation.ps1 -Action Context` (#2173): every file each open escalation names (any field,
+    any version), resolved to its latest live version. Read-only."""
     from ..lib import escalationcontext
     path = pathlib.Path(ctx.cfg.required_setting("escalation.context_report_path"))
     out, items = escalationcontext.write_report(ctx.cfg, ctx.db, path)
@@ -715,8 +636,8 @@ def escalation_context(ctx: Ctx) -> Outcome:
 
 
 def escalation_thread_audit(ctx: Ctx) -> Outcome:
-    """escalation #2173 P5 -- `Escalation.ps1 -Action ThreadAudit`: thread quality, validity and
-    integrity findings (T-a .. T-g), by thread item. Read-only."""
+    """`Escalation.ps1 -Action ThreadAudit` (#2173): thread quality, validity and integrity findings
+    (T-a .. T-g), by thread item. Read-only."""
     from ..lib import threadaudit
     path = pathlib.Path(ctx.cfg.required_setting("escalation.thread_audit_report_path"))
     out, F = threadaudit.write_report(ctx.cfg, ctx.db, path)
