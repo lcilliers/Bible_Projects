@@ -142,3 +142,6 @@ No study work: the study is on hold.
 - #2177: the umbrella; the full pick-up record is v12.
 
 ## 6. Git
+- branch: main
+- first commit: 435cedf6b75bb76ae5fdfbeefeef65f0a9a3182d
+- push: `825e180a..435cedf6  main -> main` to github.com/lcilliers/Bible_Projects
