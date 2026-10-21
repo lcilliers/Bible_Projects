@@ -1,58 +1,20 @@
-"""lexicalenrichgenerate.py — the LLM-calling half of `lexical.run`'s Layer 2 path (escalation
-#1549 continued, 2026-09-07). Researcher, verbatim: "I was expecting to see a routine that
-efficiently package the datasets for llm processing. I am aware that layer 2 will consume llm and
-it must be part of the routine, rather than parking it." Before this, a Layer 2 call with no
-`-PayloadPath` produced the notes briefing pack and stopped — a human/AI reading pass happened
-OUTSIDE the routine, by hand. This module closes that gap: batches the resolved verse-list into
-`passage.max_verses`-sized chunks (the same bound `lexical.enrich`'s own write path already
-enforces — never a full-cluster push in one call, matching `project_api_reads_budget_bounded_small_
-batches`), and for each chunk assembles a package, estimates its cost, calls the Anthropic Messages
-API, parses the response into the exact JSON shape `lexicalenrich.enrich_passage` already expects,
-and logs real usage — same shape as `handlers/reports:run` -> `lib/narrativegenerate.py`
-(`report.book_narrative_generate`), the one other place this app makes a live LLM call.
+"""lexicalenrichgenerate.py — the LLM-calling half of `lexical.run`'s Layer 2 path (#1549).
+Batches the resolved verse list into `passage.max_verses`-sized chunks (never a full cluster in one
+call); for each chunk assembles a package, estimates its cost, calls the Anthropic Messages API,
+parses the reply into the JSON shape `lexicalenrich.enrich_passage` expects, and logs real usage.
 
-**Config-driven from the start, unlike its own template.** `narrativegenerate.py` is CURRENTLY
-flagged non-compliant in `cfg_utility` (escalation #648) for exactly this: `API_URL`/`API_VERSION`/
-`CHARS_PER_TOKEN` hardcoded as module constants instead of `cfg_setting` rows. This module does not
-repeat that — every one of those, plus model/token/rate/cost-cap/log-path, is `cfg_setting` (module
-`lexical`), changeable via `configmaint.propose` with no code change.
+**Config-driven**: URL, API version, chars-per-token, model, token limits, rates, cost cap and log
+path are `cfg_setting` rows (module `lexical`).
 
-**The system prompt is built from the DB, not a static doc.** `narrativegenerate.py` reads two
-Markdown files off disk as its instructions. This module instead reuses `_notes_payload_dict`'s own
-catalogue (`cfg_method_rule`, `cfg_enum` note_type/resolution_status values) — the same content a
-human reading pass gets in the notes briefing — programmatically assembled into the system prompt.
-Deliberately NOT a second copy of the payload-guide doc's prose: that doc can drift from the live
-config (found live, escalation #1548, same session's own history) — a prompt built from the config
-itself cannot drift from it by construction.
+**System prompt built from the DB**: the catalogue `_notes_payload_dict` uses (`cfg_method_rule`,
+the `cfg_enum` note_type/resolution_status values), so it cannot drift from config. Only
+lexical.enrich's own rules are included. The prompt carries STRICT BOUNDARIES: the verse list is
+closed, positions/code_ordinals come from the given codes, note volume is bounded, no prose
+outside the JSON.
 
-**Payload optimization pass, same session** (researcher: "did you optimise the payload... are you
-passing more data through than what is necessary... did you do all the preprocessing that can be
-done... is the process clear and concise... did you prepare boundaries so it would not drift"):
-first version reused `_notes_payload_dict`'s human-briefing shape verbatim, unexamined. Checked
-live against real M10c data and found genuinely wasteful: `cluster` (no method rule references it),
-`existing_notes: []` sent on every code even though 100% were empty on a fresh cluster, and all 18
-method_rules (5 of them `lexical.build`'s own MECHANICAL rules — language/testament derivation, the
-H0853 exception — describing work already done, not this call's task) sent regardless of relevance.
-`_lean_code`/`_instructions`'s `enrich_rules` filter fix this: ~10% smaller content on a real 20-verse/
-531-code chunk, plus 5 irrelevant rules dropped from the prompt entirely. A STRICT BOUNDARIES section
-was added to the prompt — verse list is closed and stated explicitly, positions/code_ordinals must
-come from the given codes, note volume is bounded to what genuinely applies, no prose outside the
-JSON shape. Also found live at the time: `resolved_sense` up to 3,938 chars for 277 strongs, filed
-as escalation #1575 and then, per direct researcher instruction the same day ("remove it from the
-column for all the lexicals"), removed corpus-wide at the SOURCE (`lib/lexical.py:resolve_code`
-no longer writes it, for any code) — BUILD.md #254. `_lean_code` no longer even truncates it; the
-field is dropped from the LLM payload entirely, since every row's value is now `None` regardless.
-
-**Preprocessing NOT done, deliberately** — a broader win was considered and rejected: pre-classifying
-`role='function'` codes as mechanically `inert` (skipping the LLM for them entirely) would have cut
-the batch by ~36% (measured: 2,262 of 6,329 M10c codes are role='function'). Rejected because
-`connective` and `polarity`(negation) note_types both legitimately apply to function-role codes —
-a blanket role-based filter would silently reintroduce the exact "selective attention" bug this
-app's own method rules were built to eliminate (`mechanical-columns-run-on-every-code-no-selection`,
-found live 2026-09-03, Gal 5:16-17). A safer, narrower mechanical pre-filter (skip `status=
-'unregistered'` codes entirely) is sound in principle but contributed nothing on this particular
-cluster (M10c: 0 of 6,329 codes are unregistered) — not built, since there was no real case to prove
-it against yet.
+**Lean payload** (`_lean_code`): only fields a lexical.enrich rule uses; `existing_notes` omitted
+when empty. Function-role codes are still sent: `connective` and `polarity` notes apply to them
+(mechanical-columns-run-on-every-code-no-selection).
 """
 
 from __future__ import annotations
@@ -76,11 +38,7 @@ _JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
 
 def _instructions(cfg, note_type_values: list[str], resolution_status_values: list[str],
                   method_rules: list[dict], verse_refs: list[str]) -> str:
-    # Only lexical.enrich's OWN rules -- lexical.build's mechanical rules (language/testament
-    # derivation, the H0853 exception, narrative_morph being Hebrew-only, etc.) describe work
-    # already done before this call, not this call's own task. Including them was pure noise/token
-    # cost the model has no use for -- found live answering the researcher's own "is the payload
-    # optimized" question, same turn as #1575.
+    # only lexical.enrich's own rules; lexical.build's mechanical rules describe work already done
     enrich_rules = [r for r in method_rules if r["step"] == "lexical.enrich"]
     rules_text = "\n".join(f"- {r['rule_key']}: {r['rule_text']}" for r in enrich_rules)
     return (
@@ -130,23 +88,16 @@ def _instructions(cfg, note_type_values: list[str], resolution_status_values: li
 
 
 def _lean_code(c: dict) -> dict:
-    """LLM-specific projection off `_notes_payload_dict`'s human-facing code row: drops fields with
-    no demonstrated bearing on any lexical.enrich method rule (`cluster` — not referenced by any
-    rule, kept in the human notes briefing only), omits `existing_notes` entirely when empty rather
-    than sending `[]` on every one of potentially thousands of codes (measured live: 100% of a
-    fresh cluster's codes have empty existing_notes — pure overhead for a first pass), and drops
-    `resolved_sense` entirely — escalation #1575 removed it corpus-wide (it served no purpose,
-    `resolve_code()` no longer writes it at all), so every row's value is now `None` and sending the
-    key at all would be pure per-code overhead for zero information."""
+    """LLM projection of `_notes_payload_dict`'s code row: drops fields no lexical.enrich rule uses
+    (`cluster`, kept in the human briefing) and omits `existing_notes` when empty."""
     return {k: v for k, v in c.items() if k not in ("cluster", "existing_notes", "resolved_sense")} \
         | ({"existing_notes": c["existing_notes"]} if c.get("existing_notes") else {})
 
 
 def assemble_batch_package(ctx, verse_ids: list[int]) -> dict:
-    """One chunk (already capped to <= passage.max_verses by the caller). Returns the package plus
-    a pre-call cost estimate — never calls the network itself. Builds a LEAN, LLM-specific content
-    shape (`_lean_code`), not `_notes_payload_dict`'s output verbatim — that function's shape is for
-    a human reading a briefing file, not for minimizing what an API call pays to transmit."""
+    """One chunk (capped to <= passage.max_verses by the caller). Returns the package plus a pre-call
+    cost estimate; never calls the network. Builds the lean shape (`_lean_code`), not the human
+    briefing shape."""
     from ..handlers.lexical import _notes_payload_dict   # local import, avoids a circular top-level
     payload = _notes_payload_dict(ctx, verse_ids)
     verse_refs = [v["verse"] for v in payload["verses"]]
@@ -172,22 +123,10 @@ def assemble_batch_package(ctx, verse_ids: list[int]) -> dict:
 
 
 def call_api(ctx, package: dict) -> dict:
-    """One live Messages API call. Returns {"text", "input_tokens", "output_tokens"}. URL/version
-    are cfg_setting, not module constants (see module docstring).
-
-    `thinking` explicitly disabled -- found live 2026-09-17 building `lexical.meaning`
-    (`versereadinggenerate.py`, which calls this same function): the API defaults to extended
-    thinking even when the `thinking` parameter is omitted entirely, and with
-    `max_output_tokens=8000` the ENTIRE budget was consumed by thinking (`stop_reason=max_tokens`,
-    `output_tokens_details.thinking_tokens=8000`), leaving zero tokens for the actual answer --
-    real money spent for a genuinely empty response, `parse_response` correctly rejecting it but
-    only after the spend already happened. `package["max_output_tokens"]` (`lexical.
-    llm_max_output_tokens`) was sized for the answer alone, same assumption this whole cost-
-    estimation model has always made -- disabling thinking here keeps that assumption true, not
-    silently redefining what the setting means. `narrativegenerate.py`'s own `call_api`-shaped
-    function makes the identical request shape and is very likely exposed to the same bug -- not
-    fixed here (outside this build's scope), flagged live in the same escalation (#1706) this fix
-    belongs to."""
+    """One live Messages API call. Returns {"text", "input_tokens", "output_tokens"}. URL/version are
+    cfg_setting. Extended thinking is disabled explicitly (the API otherwise defaults to it and can
+    spend the whole output budget on thinking), so `lexical.llm_max_output_tokens` is the answer's own
+    budget, as the cost estimate assumes."""
     import requests
     key = _api_key()
     url = ctx.cfg.required_setting("lexical.llm_api_url")
@@ -223,8 +162,7 @@ def parse_response(text: str) -> dict:
     if m:
         candidate = m.group(1)
     try:
-        # strict=False: escalation #1826 -- tolerate raw control characters inside note text
-        # (Python's own documented leniency), not a custom sanitizer.
+        # strict=False: tolerate raw control characters inside note text (#1826)
         parsed = json.loads(candidate, strict=False)
     except json.JSONDecodeError as e:
         raise BadModelResponse(f"model reply is not valid JSON: {e} -- first 300 chars: {text[:300]!r}")

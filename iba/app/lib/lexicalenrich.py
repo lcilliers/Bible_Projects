@@ -1,42 +1,22 @@
-"""lexicalenrich.py — Stage 1 Layer 2 engine: `verse_lexical_note` capture + `passage.genre`/
-`lexical_complete_at`, JSON-payload-driven. Escalation #1383, full build spec §C.2/§D.2/§E.2.
+"""lexicalenrich.py — Stage 1 Layer 2 engine: `verse_lexical_note` capture, JSON-payload-driven
+(#1383). Kept apart from `lib/lexical.py` (Layer 1, mechanical). The verse_lexical_note mechanism
+is superseded by ib_observation (#1597).
 
-Separate module from `lib/lexical.py` (open item 5 of the build spec, resolved by
-`migration/build_verse_lexical_window1_layer1_layer2_v1_20260904.py`'s own docstring §4) — Layer 1
-(mechanical) and Layer 2 (judgement-bearing) stay in their own files, matching the design doc's own
-C.1/C.2 split.
+The analytical work (idiom sense, related-word sorting, pronoun/entity resolution, structural-
+pattern naming) is done by an AI/researcher reading pass before this module is called; it turns
+that pass's decided findings into validated, grant-checked `verse_lexical_note` rows.
 
-**What this is, and isn't** — same framing `handlers/operations.py` already states for
-`phenomenon.set`/`hib.set`: the analytical work (idiom sense, related-word sorting, pronoun/entity
-resolution, structural-pattern naming) is done by an AI/researcher reading pass against the method
-docs, BEFORE this module is ever called. This module mechanises turning that pass's *already-
-decided* findings into validated, grant-checked `verse_lexical_note` rows — a JSON payload in,
-structured rows out, same shape as `operations.py`'s own `phenomenon.set`.
+**Reconciliation** -- a local copy of `_reconcile()` (no `lib -> handlers` dependency): each note is
+`unchanged`/`changed`/`new` against the live state by key `(verse_lexical_id, note_type)`; a
+`changed` item needs a `reconciliation_note`; a pre-existing item the payload doesn't repeat or
+list under `remove` is a hard stop (`unreconciled`).
 
-**Reconciliation, reused not re-derived** (design doc §E.4): a local copy of `_reconcile()` —
-duplicated rather than imported from `handlers/operations.py`, matching this codebase's own
-established convention of small per-file helpers (`debateaudit.py`'s own docstring: "unlike this
-app's own small `_may`/`_now` helpers, which each handler file defines locally") and keeping this
-`lib/` module free of a `lib -> handlers` runtime dependency (no other `lib` module has one).
-Every incoming note is classified `unchanged`/`changed`/`new` against the block's current live
-state, by key `(verse_lexical_id, note_type)`; every `changed` item needs a `reconciliation_note`;
-every pre-existing item not addressed by the payload (repeated or listed under `remove`) is a hard
-stop (`unreconciled`), never a silent drop.
+**Writes** -- a `changed` note is soft-deleted and reinserted (fresh `id`): nothing points at
+`verse_lexical_note.id`.
 
-**Write convention — differs from `phenomenon.set`, deliberately** (design doc §E.4): a `changed`
-note is soft-deleted-and-reinserted (fresh `id`), NOT updated in place — `verse_lexical_note` has
-no downstream FK dependent yet (unlike `phenomenon`, whose `id` `operation.phenomenon_id` points
-at), so there is nothing to orphan by minting a new id. Matches `verse_lexical`'s own
-`write_readings_for_span` convention, not `phenomenon.set`'s in-place UPDATE.
-
-**Addressing a code within a payload note** (design doc §C.2, addressing mechanics resolved here —
-the source table names two alternative shapes, "verse+position" or "strong+code_ordinal", without
-spelling out the exact resolution when a span carries more than one code at the same `position`;
-resolved as a self-correctable implementation choice, not a new design axis): every note key
-supplies `verse` (osisId) + `position` (`verse_lexical.position`, the span-level word position) +
-`code_ordinal` (defaults to 0 — the common single-code-per-span case) — together these are a unique
-key on the NEW `position` column plus the existing `code_ordinal`, resolved directly against
-`verse_lexical` with no join back through `span` needed.
+**Addressing a code** -- every note key gives `verse` (osisId) + `position`
+(`verse_lexical.position`) + `code_ordinal` (default 0), a unique key resolved directly against
+`verse_lexical`.
 """
 
 from __future__ import annotations
@@ -96,14 +76,9 @@ class UnresolvedReference(Exception):
 
 def resolve_verse_lexical_id(conn, verse_id_by_osis: dict[str, int | None], osis: str,
                              position: int, code_ordinal: int = 0) -> int | None:
-    """`verse_id_by_osis` is pre-populated with the target verse(s) actually being enriched, but a
-    note's own `target_verse`/`related_codes` may legitimately name a DIFFERENT verse — exactly the
-    "targeted read of an adjacent verse" the verse-scoped design calls for (escalation #1451,
-    2026-09-05: reading adjacent verses on demand to resolve one specific need, never a
-    pre-declared multi-verse block). Falls back to a live `verse` lookup, caching the result into
-    the dict, rather than requiring the caller to have pre-fetched every verse a note might ever
-    reference — found live testing this exact case (a cross-verse entity_link failed with
-    `unknown-target` until this fallback was added)."""
+    """`verse_id_by_osis` holds the verses being enriched, but a note's `target_verse`/`related_codes`
+    may name an adjacent verse (a targeted read, #1451): falls back to a live `verse` lookup and caches
+    it."""
     vid = verse_id_by_osis.get(osis)
     if vid is None:
         row = conn.execute(
@@ -121,9 +96,8 @@ def resolve_verse_lexical_id(conn, verse_id_by_osis: dict[str, int | None], osis
 # ── note_type quality checks (design doc §D.2) ──────────────────────────────────────────────────
 
 def _quality_problems_for_note(conn, item: dict, verse_lexical_id: int, code_classes) -> list[str]:
-    """`item`: the already-resolved note dict (note_type/resolution_status/target_id/related_ids/
-    value_text). Returns a list of quality-defect messages (empty = no defect) — checked per
-    §D.2's own note_type table, not exhaustively re-derived from first principles."""
+    """`item`: the resolved note dict (note_type/resolution_status/target_id/related_ids/value_text).
+    Returns quality-defect messages (empty = none), per the note_type table."""
     problems: list[str] = []
     note_type = item["note_type"]
     status = item["resolution_status"]
@@ -154,12 +128,7 @@ def _quality_problems_for_note(conn, item: dict, verse_lexical_id: int, code_cla
                 problems.append("recurrence_role_shift note's target/related row is a DIFFERENT "
                                 "(strong, morph_code) pair than the source row")
     if note_type == "cross_lemma_shared_gloss":
-        # resolved_sense DROPPED from verse_lexical 2026-09-16 (#1706 Phase B) -- the "does the
-        # target share the source's resolved_sense" half of this check has no data left to compare
-        # (its replacement lives at the new Layer 2 verse_meaning stage, not this table). Retained:
-        # the same-strong-code check, which needs no resolved_sense at all. This whole note_type/
-        # verse_lexical_note mechanism is superseded architecture (#1597, ib_observation) -- not
-        # rebuilt here, just kept from crashing on a column that no longer exists.
+        # only the same-strong-code check remains (verse_lexical no longer carries resolved_sense)
         target = item.get("target_id")
         if target:
             cmp_row = conn.execute(
@@ -180,18 +149,12 @@ def _quality_problems_for_note(conn, item: dict, verse_lexical_id: int, code_cla
 def enrich_passage(conn, passage_id: int | None, verse_ids_in_passage: list[int],
                    verse_id_by_osis: dict[str, int], genre: str | None,
                    notes_payload: list[dict], removals_payload: list[dict]) -> dict:
-    """`notes_payload`/`removals_payload`: already the raw payload's own `notes`/`remove` lists
-    (handler has already loaded/parsed the JSON). Returns a dict of counts on success; raises
-    `UnresolvedReference`/`ReconciliationError` (handler turns each into a clean `fail()`) —
+    """`notes_payload`/`removals_payload`: the payload's own `notes`/`remove` lists. Returns counts;
+    raises `UnresolvedReference`/`ReconciliationError` (the handler turns each into a clean `fail()`),
     never a partial write.
 
-    `passage_id`: NULLABLE, verse-scoped redesign (escalation #1451, 2026-09-05 — full record
-    `iba/docs/1451-window1-layer2-verse-scoped-redesign-v1-20260905.md`). Window 1 Layer 2 no
-    longer depends on a pre-registered `passage` row — `passage`/`passage.build` is Window 2's own
-    debate-pipeline construct, gated by `hib.set`, and Window 1 must never depend on HIB-gated
-    infrastructure. Every `verse_lexical_note` row is already addressable by its own `verse_id`
-    (set below from the note's own target verse) — `passage_id` is kept only as a column for a
-    future, still-undesigned Window 2 linkage, always `None` from this call path for now."""
+    `passage_id`: nullable and always `None` from this path (verse-scoped, #1451); every note is
+    addressed by its own `verse_id`."""
     problems: list[str] = []
     resolved_notes: dict[tuple, dict] = {}   # key -> {content, note (reconciliation), raw}
     for n in notes_payload:
@@ -236,12 +199,7 @@ def enrich_passage(conn, passage_id: int | None, verse_ids_in_passage: list[int]
     if problems:
         raise UnresolvedReference(problems)
 
-    # Verse-scoped (escalation #1451, 2026-09-05): "currently live" means live for the verse(s)
-    # actually being enriched this call, found by `verse_id` (every note's own column, set from
-    # its target verse) — not `passage_id`, which is None in the new design. Second occurrence of
-    # the same bug already fixed once in `check_completeness()`; missed here on the first pass,
-    # found live testing a cross-verse reconciliation (a real 'remove' was reported as targeting a
-    # non-live note because this query matched nothing against `passage_id=NULL`).
+    # "currently live" = live for the verses enriched this call, found by `verse_id` (#1451)
     ph = ",".join("?" * len(verse_ids_in_passage)) if verse_ids_in_passage else "NULL"
     current_rows = conn.execute(
         f"SELECT n.id, n.verse_lexical_id, n.note_type, n.resolution_status, "
@@ -287,10 +245,8 @@ def enrich_passage(conn, passage_id: int | None, verse_ids_in_passage: list[int]
 
     if genre is not None and passage_id is not None:
         conn.execute("UPDATE passage SET genre=? WHERE id=?", (genre, passage_id))
-    # else: genre supplied with no passage_id (the verse-scoped, #1451 default) — nowhere to
-    # persist it yet. Not silently dropped without record: caller (handlers/lexical.py:enrich)
-    # surfaces this in its own return message. Where per-verse genre should live long-term is
-    # undesigned, same open item as completeness tracking.
+    # else: genre with no passage_id (the verse-scoped default) has nowhere to persist; the caller
+    # (handlers/lexical.py:enrich) reports it in its message
 
     genre_dropped = genre is not None and passage_id is None
     return {"unchanged": len(unchanged), "changed": len(changed), "new": len(new),
@@ -298,15 +254,9 @@ def enrich_passage(conn, passage_id: int | None, verse_ids_in_passage: list[int]
 
 
 def check_completeness(conn, verse_ids_in_passage: list[int]) -> tuple[bool, list[str]]:
-    """§D.2's control-total, applied: every non-'inert'-role code (i.e. every live `verse_lexical`
-    row for these verses) must carry ≥1 live `verse_lexical_note` row. Returns (complete, missing)
-    — `missing` is a list of `verse:position` strings, capped by the caller for the message
-    (same `problems[:5]` convention as every other handler).
-
-    Verse-scoped (escalation #1451, 2026-09-05): filters `verse_lexical_note` by `verse_id`
-    (a column every note already carries, set from its own target verse), not `passage_id` — no
-    `passage` row exists in the new design. `verse_ids_in_passage` keeps its historical name
-    (call sites pass the target verse's own id, singly or in a small set)."""
+    """The control total: every live `verse_lexical` row for these verses must carry >=1 live
+    `verse_lexical_note` row. Returns (complete, missing); `missing` is `verse:position` strings.
+    Filters by `verse_id` (#1451); `verse_ids_in_passage` takes the target verse id(s)."""
     if not verse_ids_in_passage:
         return True, []
     ph = ",".join("?" * len(verse_ids_in_passage))
@@ -322,19 +272,9 @@ def check_completeness(conn, verse_ids_in_passage: list[int]) -> tuple[bool, lis
 
 
 def layer1_state(conn, verse_ids: list[int]) -> dict:
-    """Precheck for `VerseLexical.ps1`'s `lexical.enrich` auto-chain (escalation found live,
-    2026-09-05 — see BUILD.md #234): does Layer 1 already have live rows for these verses, and
-    does Layer 2 already have live notes attached to them?
-
-    Exists because `lexical.build`'s version-aware write ALWAYS mints fresh `verse_lexical` ids
-    on every run, even when the new content is byte-identical to what's already there (documented,
-    intentional — the original test plan's B4 case). Nothing in that design accounts for
-    `verse_lexical_note.verse_lexical_id`, a plain FK with no cascade/re-point step: an
-    unconditional rebuild on a verse that already has Layer 2 notes silently orphans every one of
-    them (their FK points at the now soft-deleted old row) — found live on Rom.9.14 when the
-    auto-chain default was first tested against a verse that already had notes. Callers use this
-    to skip the auto-build when Layer 1 is already present (nothing to gain from rebuilding
-    identical content) and to refuse/warn before a forced rebuild that would orphan existing notes.
+    """Precheck for `VerseLexical.ps1`'s `lexical.enrich` auto-chain: does Layer 1 already have live
+    rows for these verses, and does Layer 2 already have live notes on them? Callers use it to skip the
+    auto-build when Layer 1 is present and to warn before a forced rebuild.
     """
     if not verse_ids:
         return {"has_layer1": False, "has_notes": False}
@@ -349,10 +289,6 @@ def layer1_state(conn, verse_ids: list[int]) -> dict:
 
 
 def set_lexical_complete(conn, passage_id: int, complete: bool) -> None:
-    """UNUSED from #1451 onward — no `passage` row exists to hang completeness on in the
-    verse-scoped design; where per-verse completeness should live long-term is still undesigned
-    (`iba/docs/1451-window1-layer2-verse-scoped-redesign-v1-20260905.md`'s own open item).
-    `handlers/lexical.py:enrich()` no longer calls this. Left in place, not deleted, so a future
-    design has the exact prior write shape to reference or repurpose."""
+    """Not called: there is no `passage` row to hold completeness in the verse-scoped design (#1451)."""
     conn.execute("UPDATE passage SET lexical_complete_at=? WHERE id=?",
                (_now() if complete else None, passage_id))
