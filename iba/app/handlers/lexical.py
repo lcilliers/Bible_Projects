@@ -1,39 +1,18 @@
-"""lexical.py — dispatcher handler for `lexical.build`/`lexical.enrich` (the old `-Book`+range
-signature, ordinals 0/2, left in place but superseded for cluster/strong-driven work — see `run`
-below) and `lexical.run` (ordinal 5, the real front door since the researcher's 2026-09-07
-correction: "it is fundamentally built on books and passages which contradicts the analytic
-operation for clusters and groups of strongs"). `build`/`enrich` are thin adapters over
-`lib/lexical.py`/`lib/lexicalenrich.py` — payload loading + verse resolution + write-grant checks
-live here (handler layer), the actual reconciliation/write logic lives in those lib modules
-(escalation #1383, build spec §C.2/§E.2).
+"""lexical.py — dispatcher handler for the lexical steps.
 
-`run` (step `lexical.run`) resolves a selector (`-ClusterCode`/`-Word`/`-StrongList`/`-VerseList`,
-via `lib/lexicalscope.py`) to a verse-id list ONCE, then `-Mode` picks the work
-(`Layer1AndLayer2`/`Layer1Only`/`Layer2Only`) — Layer 2 never independently re-resolves scope, it's
-always handed the ids Layer 1 already has. `_notes_payload_dict`/`_write_notes_payload` are the
-former standalone `lexical.notes` step (escalation #1549's original ask), folded into `run`'s own
-Layer-2 path rather than kept as a separate command to remember to run first — researcher
-instruction, 2026-09-07: "yes include lexical.note production, but suppressed by a flag. default -
-output the result." Produced on by default whenever `-Mode` includes Layer 2 (before any write is
-attempted — it's the briefing pack a reading pass needs BEFORE deciding what a payload should say,
-never the payload itself), opt out with `-SuppressNotes`. Content: every live `verse_lexical`
-column per code (not the narrower subset `report.lexical_extract` returns), the verse's own base
-text, any already-live `verse_lexical_note` rows (so a re-run sees what the reconciliation rule will
-require it to re-address), and the catalogue — `cfg_method_rule` (queryable home for every
-note_type rule since #1449/#1450/#1451/#1527) plus `cfg_enum`'s `note_type`/`resolution_status`
-value lists. Never a DB write itself, regardless of mode.
-
-**Verse-scoped since escalation #1451 (2026-09-05)** — `enrich`/`run` never resolve or require a
-`passage` row (dropped the `passagetrack.find_tracked_passage`/`no-passage` gate entirely).
-`passage`/`passage.build` is Window 2's own debate-pipeline construct, gated by `hib.set`; Window 1
-Layer 2 must never depend on HIB-gated infrastructure — full design record `iba/docs/1451-
-window1-layer2-verse-scoped-redesign-v1-20260905.md`.
-
-Auto-backfill reused unchanged from `report.verse_span_meaning`'s own pattern (`report.
-auto_backfill_before_render`, `raw.backfill_meaning_for`) — a content-role code with no `strong`
-row yet gets pulled from STEP before building, same researcher instruction (2026-07-26), same
-setting, not a new one. `build`/`enrich` still use it; `run` calls `build_for_verse_ids` directly
-(no auto-backfill wired in yet — open item, not needed for the cases tested so far).
+  lexical.run (the front door): resolves a selector (`-ClusterCode`/`-Word`/`-StrongList`/
+    `-VerseList`, via `lib/lexicalscope.py`) to a verse-id list once; `-Mode` picks the work
+    (`Layer1AndLayer2`/`Layer1Only`/`Layer2Only`). Layer 2 always uses the ids Layer 1 resolved.
+    Any mode involving Layer 2 first writes the notes briefing pack (`_notes_payload_dict`),
+    unless `-SuppressNotes`. `run` calls `build_for_verse_ids` directly, without auto-backfill.
+  lexical.build / lexical.enrich: the -Book + range adapters over `lib/lexical.py` /
+    `lib/lexicalenrich.py` (payload loading, verse resolution, write-grant checks here; the
+    reconciliation and writes in those modules). Verse-scoped: no `passage` row is resolved or
+    required (#1451). Auto-backfill as in report.verse_span_meaning
+    (`report.auto_backfill_before_render`, `raw.backfill_meaning_for`).
+  lexical.readiness: the 3-leg base-data readiness check (#1606).
+  lexical.meaning / lexical.relational: the verse-reading stage against ib_observation/ib_node
+    (word-level, then relational; #1706, #1860).
 """
 
 from __future__ import annotations
@@ -106,25 +85,16 @@ def build(ctx: Ctx) -> Outcome:
         **totals)
 
 
-# ── lexical.readiness — the 3-leg base-data readiness check (#1606, Phase A item 1) ─────────────
-# Registered 2026-09-16 (escalation #1706 Phase A/#1711 build). Researcher's own framing, #1606:
-# "lexical readiness is a precursor for the lexical reading stage, which is a precursor for the
-# sub group." Read-only, always persists a report (governance.reports_must_persist), escalates
-# only on a FATAL finding -- same shape as spine.check, deliberately not merged into it (spine
-# covers the whole-project verse/span/strong spine; this is lexical-build-specific: it also checks
-# the cluster-allocation precondition Layer 1's new `role` column depends on, which spine.check has
-# no reason to know about).
+# ── lexical.readiness — the 3-leg base-data readiness check (#1606) ────────────────────────────
+# Read-only, always persists a report (governance.reports_must_persist), escalates only on a FATAL
+# finding. Separate from spine.check: it also checks the cluster-allocation precondition Layer 1's
+# `role` column depends on.
 #
-# Leg 1 -- every live verse has >=1 live span (a verse present but never segmented can't build).
-# Leg 2 -- every live span's strong_variant code resolves to a live `strong` row (same desync
-#          spine.check already reports; duplicated here deliberately -- #1606's own framing is one
-#          cohesive 3-leg check, not "2 legs plus a pointer to a different report").
-# Leg 3 -- every live `strong` row that actually OCCURS in a live span (not every row in the table
-#          -- an unused placeholder strong is a different question, not this check's concern) has
-#          >=1 live `cluster_strong` allocation. This is the one Layer 1's redesigned `role` column
-#          (a JSON array of cluster_strong.cluster_code, #1706 Phase B item 3) depends on directly:
-#          a strong with zero allocation would resolve to an empty array, which the new pre-run
-#          validator (see `_check_role_readiness` in lib/lexical.py) treats as a hard failure.
+# Leg 1 -- every live verse has >=1 live span.
+# Leg 2 -- every live span's strong_variant code resolves to a live `strong` row.
+# Leg 3 -- every live `strong` that occurs in a live span has >=1 live `cluster_strong` allocation
+#          (Layer 1's `role` is the JSON array of its cluster codes; an empty one is a hard failure
+#          in lib/lexical.py `_check_role_readiness`).
 
 def readiness(ctx: Ctx) -> Outcome:
     conn = ctx.db.conn
@@ -146,9 +116,7 @@ def readiness(ctx: Ctx) -> Outcome:
 
     allocated = {r[0] for r in conn.execute(
         "SELECT DISTINCT strong FROM cluster_strong WHERE deleted=0")}
-    # base-strip via lib.lexical._base isn't needed here -- cluster_strong.strong carries the exact
-    # suffixed code (same convention as span_codes above), matching reference_strong_related_keyed_
-    # on_exact_code_not_base's own lesson: compare exact codes, never base-strip before the lookup.
+    # cluster_strong.strong carries the exact suffixed code: compare exact codes, never the base
     occurring_live_strong = span_codes & live_strong
     leg3_missing = sorted(occurring_live_strong - allocated)
 
@@ -206,8 +174,8 @@ def _write_readiness_report(ctx: Ctx, findings: dict) -> pathlib.Path:
 #  ...],
 #  "remove": [{"verse": "...", "position": N, "note_type": "...", "reason": "..."}]}
 class BadPayload(Exception):
-    """PayloadPath missing/unreadable, not valid JSON, or missing a required key — always caught
-    and turned into a clean fail(), never left to crash the run with a raw traceback."""
+    """PayloadPath missing/unreadable, not valid JSON, or missing a required key -- turned into a
+    clean fail(), never a raw traceback."""
 
 
 def _load_payload(ctx: Ctx) -> dict:
@@ -246,11 +214,7 @@ def enrich(ctx: Ctx) -> Outcome:
     if not notes and not removals:
         return fail("empty-payload", "payload has no 'notes' or 'remove' entries")
 
-    # Verse-scoped (escalation #1451, 2026-09-05 — full record `iba/docs/1451-window1-layer2-
-    # verse-scoped-redesign-v1-20260905.md`): no `passage` row is resolved or required. `passage`/
-    # `passage.build` is Window 2's own debate-pipeline construct, gated by `hib.set` — Window 1
-    # Layer 2 must never depend on it. Verses resolve directly from -Book/-Range/-Chapters, same
-    # helper `lexical.build` and `report.verse_span_meaning` already use.
+    # verse-scoped (#1451): verses resolve directly from -Book/-Range/-Chapters, no passage row
     fetched = fetch_verses(ctx.db.conn, book, lo, hi, verse_lo, verse_hi)
     if not fetched:
         return fail("no-verses", f"{book} this range has no live verse rows")
@@ -266,12 +230,8 @@ def enrich(ctx: Ctx) -> Outcome:
 
     _may(ctx, "lexical.enrich", "verse_lexical_note")
 
-    # Real bug found live testing this handler (escalation #1450, 2026-09-04): the completeness
-    # check used to run AFTER enrich_passage()'s writes, with the incomplete branch calling
-    # commit() -- which committed the whole pending transaction, notes included, on exactly the
-    # failure path documented as "never a partial write" (design spec §E.2). Fixed: on
-    # incomplete-block, ROLLBACK instead of commit -- verified live (5 test notes written then
-    # correctly discarded, 0 live verse_lexical_note rows after the rollback).
+    # the completeness check runs before commit: an incomplete block rolls back, never a partial
+    # write (#1450)
     try:
         counts = lexicalenrich.enrich_passage(ctx.db.conn, passage_id, verse_ids, verse_id_by_osis,
                                               genre, notes, removals)
@@ -294,10 +254,7 @@ def enrich(ctx: Ctx) -> Outcome:
                    f"{missing[:5]}{' ...' if len(missing) > 5 else ''} — every applicable code "
                    f"needs a finding or an explicit checked_empty/unresolved")
 
-    # No lexicalenrich.set_lexical_complete() call -- there is no `passage` row to hang
-    # completeness on in the verse-scoped design (escalation #1451). Where per-verse completeness
-    # should persist long-term is still undesigned; the check above still gates the write, it's
-    # just not recorded anywhere yet.
+    # per-verse completeness is checked above but not recorded anywhere (no passage row to hold it)
     ctx.db.conn.commit()
 
     genre_note = " (genre supplied but not persisted -- no per-verse home designed yet)" \
@@ -307,27 +264,16 @@ def enrich(ctx: Ctx) -> Outcome:
              f"block complete{genre_note}", **counts)
 
 
-# ── lexical.notes briefing pack — folded into lexical.run's Layer 2 path, 2026-09-07 ────────────
-#
-# Retired as its own Book/Range-scoped step (was never registered -- superseded before approval,
-# escalations #1551/#1552). Researcher instruction, this session: "yes include lexical.note
-# production, but suppressed by a flag. default - output the result." -- so this is no longer a
-# separate command to remember to run first; `run()` produces it automatically as part of any
-# Layer-2-involving call, `-SuppressNotes` opts out. Generalized off a verse_id list (no `book`
-# param -- a cluster/strong-driven scope is cross-book) rather than Book/Range.
+# ── lexical.notes briefing pack — produced by lexical.run's Layer 2 path ─────────────────────────
+# Built off a verse_id list (a cluster/strong scope is cross-book); `-SuppressNotes` opts out.
 
 def _notes_payload_dict(ctx: Ctx, verse_ids: list[int]) -> dict:
-    """Never a DB write -- this is the briefing pack a reading pass needs BEFORE it can decide what
-    a Layer 2 payload should say, not the payload itself (that decision is a human/AI judgement
-    call this function cannot make). Same content shape as the original #1549 `lexical.notes`
-    design: every live `verse_lexical` column per code, the verse's own base text, any already-live
-    `verse_lexical_note` rows (so a re-run sees what the reconciliation rule will require it to
-    re-address), cluster tags, and the full `cfg_method_rule`/`cfg_enum` catalogue."""
-    # resolved_sense/ambiguity_note/language DROPPED from verse_lexical 2026-09-16 (#1706 Phase B)
-    # -- this whole `lexical.enrich`/verse_lexical_note-based Layer 2 path is superseded by the new
-    # ib_observation architecture (#1691/#1597 resolution-by-architecture) and retired in cfg_step
-    # the same unit of work; this SQL fix keeps it from crashing on the dropped columns in the
-    # meantime, it does not resurrect the path as a going concern -- see module docstring banner.
+    """Never a DB write: the briefing pack a reading pass needs before deciding what a Layer 2
+    payload should say. Every live `verse_lexical` column per code, the verse's base text, any live
+    `verse_lexical_note` rows (so a re-run sees what it must re-address), cluster tags, and the full
+    `cfg_method_rule`/`cfg_enum` catalogue."""
+    # this verse_lexical_note-based Layer 2 path is superseded by ib_observation (#1706); the SQL
+    # only avoids columns dropped from verse_lexical
     ph = ",".join("?" * len(verse_ids))
     code_rows = ctx.db.rows(
         f"SELECT vl.id AS verse_lexical_id, v.osisId AS verse, vl.position, vl.code_ordinal, "
@@ -348,9 +294,7 @@ def _notes_payload_dict(ctx: Ctx, verse_ids: list[int]) -> dict:
                 f"WHERE verse_lexical_id IN ({ph2}) AND deleted=0", tuple(vlids)):
             notes_by_vlid.setdefault(n["verse_lexical_id"], []).append(dict(n))
 
-    # Cluster tags -- same lookup/rationale as report.lexical_extract (2026-09-05): computed at
-    # request time, never a stored verse_lexical column (cluster_strong keeps changing), keyed on
-    # the EXACT strong code (strong_related lesson), every live membership returned.
+    # cluster tags: computed at request time on the exact strong code, every live membership
     strong_codes = sorted({r["strong"] for r in code_rows if r["strong"]})
     clusters_by_strong: dict[str, list[str]] = {}
     if strong_codes:
@@ -385,12 +329,8 @@ def _notes_payload_dict(ctx: Ctx, verse_ids: list[int]) -> dict:
     verse_rows = ctx.db.rows(
         f"SELECT osisId, text FROM verse WHERE id IN ({ph}) AND deleted=0", tuple(verse_ids))
 
-    # verse.text is NULL for 722 of 29,759 live verses (found live building this) -- those verses
-    # were onboarded via a path (handlers/raw.py:verses/call3_strong) that only ever wrote
-    # osisId/reference/preview, never text itself. Rather than silently showing "text": null (a real
-    # gap, briefing pack is supposed to be self-contained), reconstruct it from the codes already
-    # resolved for that verse -- every one already carries its own `surface` word in position
-    # order, no HTML-parsing of `preview` needed. Labeled, not passed off as the genuine field.
+    # verse.text is NULL for some verses (onboarded without text): reconstructed from the resolved
+    # codes' own surface words in position order, and labelled as reconstructed
     surfaces_by_verse: dict[str, list[tuple[int, str]]] = {}
     for c in codes:
         if c["surface"]:
@@ -424,31 +364,17 @@ def _write_notes_payload(ctx: Ctx, verse_ids: list[int]) -> tuple[pathlib.Path, 
     return path, payload
 
 
-# ── lexical.run — the real front door, researcher correction 2026-09-07 ────────────────────────
+# ── lexical.run — the front door ──────────────────────────────────────────────────────────────
+# The input is a cross-book verse list from a cluster or group of strongs: ClusterCode/Word ->
+# strong-list (lexicalscope.resolve_strongs) -> verse-list (lexicalscope.
+# resolve_verse_ids_for_strongs, via span.strong_variant). VerseList takes a known verse set.
 #
-# "the current code is stale... it is fundamentally built on books and passages which contradicts
-# the analytic operation for clusters and groups of strongs." The real input is a scattered,
-# cross-book verse list generated as a subset via a cluster or group of strongs -- resolution:
-# ClusterCode/Word -> strong-list (lexicalscope.resolve_strongs) -> verse-list
-# (lexicalscope.resolve_verse_ids_for_strongs, span.strong_variant -- NOT strong_verse, see that
-# module's own docstring for why). VerseList is a fourth selector for a verse set that's already
-# known (e.g. carried forward from a prior session's own finding) -- no strong/cluster involved.
+# One entry point; `-Mode` picks the work and verse-list resolution happens once. Layer 1's write
+# (`build_for_verse_ids`) is identity-stable, so rebuilding unchanged verses is a no-op that never
+# orphans a Layer 2 note. Layer2Only skips the write and fails fast (`no-layer1`) naming any verse
+# without Layer 1.
 #
-# "my vision is that you will be able to set a flag that can select: do layer 1 and layer 2; do
-# layer 1 without a refresh of layer 2; do layer 2 without a refresh of layer 1. in all cases input
-# is in the front end of layer 1, and the update choice takes place from there. layer 2 always gets
-# its primary data [prompt] from layer 1." -- one entry point, `-Mode` picks the work, verse-list
-# resolution happens exactly once regardless of mode. Layer 1's own write (`build_for_verse_ids`)
-# is already identity-stable (escalation #1520/#1451) -- a Layer1Only or Layer1AndLayer2 call on
-# verses that haven't changed is a safe no-op, never orphans a live Layer 2 note. Layer2Only skips
-# the write entirely and fails fast (`no-layer1`) naming any verse that has none yet.
-#
-# Cap: one config setting (`lexical.run_max_verses`), enforced once against the resolved verse-list
-# before any work happens -- not split by layer. Researcher, 2026-09-07: "I am OK for adding a max
-# cap in config to prevent the system grinding to a halt" -- stated as a blunt safety ceiling, not a
-# tuned per-layer budget; "we have as yet no method to confirm or prototype how the reading list
-# should look like to be effective" is the reason NOT to over-design this now. A future split
-# (Layer 1 unbounded, Layer 2 capped) is a config change, not a code change, if it turns out needed.
+# Cap: `lexical.run_max_verses`, enforced once against the resolved verse list before any work.
 
 _MODES = ("Layer1AndLayer2", "Layer1Only", "Layer2Only")
 
@@ -483,12 +409,9 @@ def run(ctx: Ctx) -> Outcome:
                 strong_list=strong_list,
                 word=selectors["Word"])
             verse_ids = lexicalscope.resolve_verse_ids_for_strongs(conn, strongs)
-            # -StrongList is already validated against real span presence inside resolve_strongs
-            # itself; -ClusterCode/-Word are NOT (a cluster/word's own tagging can carry a stale
-            # code -- found live, 3 real cluster_strong rows do exactly this, see
-            # lexicalscope.strongs_with_no_occurrence's own docstring). Surfaced as a named warning
-            # in the result, never silently dropped -- narrowing a cluster's content without saying
-            # so is exactly the kind of oversight this build was corrected for.
+            # -StrongList is validated against span presence in resolve_strongs; -ClusterCode/-Word are
+            # not (a cluster can carry a stale code, lexicalscope.strongs_with_no_occurrence), so such codes
+            # are reported as a named warning, never dropped silently
             if given[0] in ("ClusterCode", "Word"):
                 zero_occurrence = lexicalscope.strongs_with_no_occurrence(conn, strongs)
     except ValueError as e:
@@ -507,9 +430,7 @@ def run(ctx: Ctx) -> Outcome:
 
     if mode in ("Layer1AndLayer2", "Layer1Only"):
         _may(ctx, "lexical.run", "verse_lexical")
-        # STEP-availability gate REMOVED here 2026-09-16 (#1706 Phase B) -- Layer 1 no longer
-        # calls STEP at all (resolve_code's old live_step_meaning ambiguity fallback is gone with
-        # ambiguity_note/resolved_sense); this mode's own write path has no STEP dependency left.
+        # Layer 1 has no STEP dependency (#1706)
         try:
             build_totals = lexical.build_for_verse_ids(conn, verse_ids)
         except lexical.NotReady as e:
@@ -535,18 +456,13 @@ def run(ctx: Ctx) -> Outcome:
     if mode in ("Layer1AndLayer2", "Layer2Only"):
         _may(ctx, "lexical.run", "verse_lexical_note")
 
-        # The briefing pack (old #1549 `lexical.notes`) -- researcher instruction, 2026-09-07:
-        # "yes include lexical.note production, but suppressed by a flag. default - output the
-        # result." Produced BEFORE any write attempt (reflects current state, "layer 2 always gets
-        # its primary data prompt from layer 1" -- this IS that prompt), on by default, opt out
-        # with -SuppressNotes.
+        # the briefing pack, produced before any write (it is Layer 2's prompt data); -SuppressNotes opts out
         if not ctx.params.get("SuppressNotes"):
             notes_path, _ = _write_notes_payload(ctx, verse_ids)
 
         raw_payload = ctx.params.get("PayloadPath")
         if raw_payload:
-            # Manual path -- a payload already decided by a reading pass (human or a separate AI
-            # session), unchanged from the original design.
+            # manual path: a payload already decided by a reading pass
             path = pathlib.Path(raw_payload)
             if not path.exists():
                 return fail("bad-payload", f"PayloadPath {path} does not exist")
@@ -590,21 +506,16 @@ def run(ctx: Ctx) -> Outcome:
             conn.commit()
 
         elif ctx.params.get("NoAutoLLM"):
-            # Explicit opt-out -- the old behaviour, notes briefing only, nothing written.
+            # explicit opt-out: notes briefing only, nothing written
             if notes_path is None:
                 return fail("bad-payload", "-PayloadPath is required to write Layer 2 when both "
                                            "-NoAutoLLM and -SuppressNotes are given -- nothing to do")
 
         else:
-            # DEFAULT since researcher instruction 2026-09-07: "layer 2 will consume llm and it
-            # must be part of the routine, rather than parking it." Batched by passage.max_verses
-            # (same bound lexical.enrich's own manual path already enforces) -- never one call over
-            # the whole resolved scope. Each chunk: assemble -> cost-estimate -> hard cap check
-            # (same "an approved specification is the approval" pattern as narrative.generate,
-            # escalation #798/#799 SS3.4 -- no separate pause, the configured cap IS the gate) ->
-            # live call -> parse -> write via the SAME enrich_passage/check_completeness path the
-            # manual payload uses -> log real usage. One chunk's failure stops the whole run
-            # (report-stop) rather than silently completing a partial cluster.
+            # default: LLM Layer 2, batched by passage.max_verses. Each chunk: assemble -> cost estimate ->
+            # hard cap check (the configured cap is the approval) -> live call -> parse -> write via the same
+            # enrich_passage/check_completeness path as a manual payload -> log real usage. One chunk's
+            # failure stops the run (report-stop).
             max_verses = int(ctx.cfg.required_module_setting("cfg_passage", "passage.max_verses"))
             max_cost_per_batch = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
             chunks = [verse_ids[i:i + max_verses] for i in range(0, len(verse_ids), max_verses)]
@@ -697,36 +608,15 @@ def run(ctx: Ctx) -> Outcome:
              **(build_totals or {}), **({f"note_{k}": v for k, v in (enrich_counts or {}).items()}))
 
 
-# ── lexical.meaning — the `verse-reading` stage execution (#1706 Phase C, 2026-09-17) ────────────
-#
-# Per-cluster, pre-subgroup Layer 2 against the LIVE ib_observation/ib_node architecture -- NOT
-# lexical.enrich's retired verse_lexical_note shape. `-Preview` (default true) assembles every batch
-# and reports the cost estimate WITHOUT calling the API or writing anything -- this is a brand-new,
-# never-yet-run mechanism; the existing project convention ("the configured cost cap IS the
-# approval, no separate pause" -- lexical.run's own Layer 2 path) governs ONGOING runs once this has
-# been validated live at least once, not the very first invocation of untested code. `-Preview:$false`
-# runs for real: live API call per batch, `lib/recordingpass.py` writes every result in the same
-# unit of work (checklist rule 0.3), never a deferred batch pickup.
+# ── lexical.meaning — the verse-reading stage (#1706) ───────────────────────────────────────────
+# Per-cluster, pre-subgroup, against ib_observation/ib_node. `-Preview` (default true) assembles
+# every batch and reports the cost estimate without calling the API or writing. `-Preview:$false`
+# runs for real: a live API call per batch, `lib/recordingpass.py` writing each result in the same
+# unit of work.
 
 def _chunk_verses_fixed_size(verse_ids: list[int], max_verses: int) -> list[list[int]]:
-    """#1842, 2026-09-22, researcher instruction verbatim: "batching based on strongs is
-    inappropriate, the units of operation is verses not strongs." Supersedes
-    `_chunk_verses_by_strong_density` below (kept, unused, for provenance -- not deleted, since its
-    own docstring records real prior findings that still matter for context). Plain fixed-size
-    grouping of verse_ids in the caller's own order -- never reordered, never split mid-verse.
-
-    The strong-density approach this replaces was adopted 2026-09-21 specifically because a FIXED
-    verse count was found unsafe back then (M67's 5-verse chunks ranged 6-21 distinct M-code
-    strongs). Checked live before reverting (2026-09-22, M49's 193-verse scope): per-verse M-tagged
-    strong density ranges 1-10 (median 3), and the chunk that actually failed under strong-density
-    chunking was only 3 verses (union of 8 strongs) -- i.e. batching by strongs did not actually
-    prevent the failure it was adopted to prevent; it just chose a different, less predictable
-    grouping of verses than a fixed verse count would. Reverting to fixed-size does not
-    mathematically guarantee no single verse can ever be too dense (max seen: 10 strongs on its
-    own, worse than the union that just failed) -- rather, it bounds the failure to ONE verse at a
-    time, which is far cheaper to detect and retry than losing an arbitrarily-sized multi-verse
-    batch to the same failure, and matches the researcher's own stated model of what the unit of
-    work is."""
+    """Fixed-size groups of verse_ids in the caller's order, never reordered or split mid-verse.
+    The unit of operation is verses, not strongs (#1842); a failure is bounded to one batch."""
     if not verse_ids:
         return []
     return [verse_ids[i:i + max_verses] for i in range(0, len(verse_ids), max_verses)]
@@ -734,17 +624,8 @@ def _chunk_verses_fixed_size(verse_ids: list[int], max_verses: int) -> list[list
 
 def _chunk_verses_by_strong_density(conn, verse_ids: list[int], max_strongs: int
                                     ) -> list[list[int]]:
-    """SUPERSEDED 2026-09-22 by `_chunk_verses_fixed_size` above (escalation #1842) -- kept for
-    provenance only, no longer called from `meaning()`. #1825/#1826/#1827: groups verse_ids
-    (already in caller's own order -- never reordered) into chunks whose CUMULATIVE distinct
-    M-code strong count stays <= max_strongs -- front-loading means output volume tracks strong
-    count, not verse count, so this is the real cost driver to cap, not a proxy. Greedy, single
-    pass: a verse whose own M-code strong set is entirely already in the running chunk total costs
-    nothing extra; a verse that would push the chunk over the cap starts a new chunk instead. A
-    single verse whose OWN strong count alone exceeds max_strongs still gets its own one-verse
-    chunk (never split mid-verse, never silently dropped) -- flagged
-    via a printed note since that one chunk will still risk truncation, but the alternative
-    (splitting one verse's own front-loaded battery across two calls) is not designed."""
+    """Not called: superseded by `_chunk_verses_fixed_size` (#1842). Grouped verse_ids into chunks
+    whose cumulative distinct M-code strong count stays <= max_strongs."""
     if not verse_ids:
         return []
     ph = ",".join("?" * len(verse_ids))
@@ -789,17 +670,11 @@ def meaning(ctx: Ctx) -> Outcome:
     cluster_code = ctx.params.get("ClusterCode")
     if not cluster_code:
         return fail("bad-selector", "-ClusterCode is required")
-    # ctx.params values are always strings (CLI --param Key=Value) -- "false"/"0"/"" must NOT be
-    # truthy, unlike a bare Python string. Missing key defaults to preview-on (see module banner:
-    # never a live call by default for a just-built, never-yet-run mechanism).
+    # ctx.params values are strings: "false"/"0"/"" are off; missing means preview on
     preview_raw = ctx.params.get("Preview", "true")
     preview = str(preview_raw).strip().lower() not in ("false", "0", "no")
-    # -Force (#1824 v10/v11, Fix 3): a deliberate reconciliation rerun needs to bypass
-    # batchcontrol.already_committed's permanent skip -- without it, "rerun Stage 1 to reconcile"
-    # can never actually re-examine anything already committed. Never the default (missing/"false"/
-    # "0" all mean off, same truthy convention as -Preview above); this is the ONLY lever that
-    # triggers any correction to existing ib_observation rows, per the design doc's own governing
-    # principle (no offline scripts ever touch old data -- only a real rerun's fresh output does).
+    # -Force: a deliberate reconciliation rerun bypasses batchcontrol.already_committed's skip; the only
+    # lever that corrects existing ib_observation rows (via fresh output). Off unless set.
     force_raw = ctx.params.get("Force", "false")
     force = str(force_raw).strip().lower() in ("true", "1", "yes")
 
@@ -808,13 +683,8 @@ def meaning(ctx: Ctx) -> Outcome:
         strongs = lexicalscope.resolve_strongs(conn, cluster_code=cluster_code)
     except ValueError as e:
         return fail("bad-selector", str(e))
-    # -VerseList (2026-09-22): restricts the run to an explicit, small verse subset instead of the
-    # cluster's full remaining-work resolution -- needed for a cheap, disposable live test (e.g.
-    # validating a rerun's behaviour against a handful of verses that already carry pre-existing
-    # observations), same helper the legacy lexical.run step already uses for its own -VerseList.
-    # -ClusterCode is still required alongside it: member-strong context, prompt framing, and the
-    # M0.6.5/M0.6.6 relational vantage are all this cluster's own, not derivable from the verses
-    # alone -- VerseList narrows WHICH of that cluster's verses to run, not which cluster's pass.
+    # -VerseList narrows which of this cluster's verses to run (e.g. a cheap test on a few verses);
+    # -ClusterCode is still required for member strongs, prompt framing and the relational vantage
     verse_list_raw = ctx.params.get("VerseList")
     if verse_list_raw:
         refs = [x.strip() for x in verse_list_raw.split(",") if x.strip()]
@@ -827,11 +697,8 @@ def meaning(ctx: Ctx) -> Outcome:
     if not verse_ids:
         return fail("no-verses", f"{cluster_code} resolved to 0 verses")
 
-    # Pre-verse-reading freshness gate (#1719, researcher instruction 2026-09-17): refuse to run
-    # against a cluster whose Layer 1 role data is stale relative to CURRENT cluster_strong
-    # membership -- found live on M67/M60, where 9 member strongs were silently invisible to the
-    # LLM because cluster_strong changed after Layer 1's last build for their verses. Hard stop,
-    # same pattern as every other readiness check in this module -- never a silent partial run.
+    # freshness gate (#1719): refuse if Layer 1 role data is stale against current cluster_strong
+    # membership. Hard stop, never a partial run.
     stale = lexical.stale_role_strongs_for_cluster(conn, cluster_code, strongs)
     if stale:
         return fail("layer1-stale",
@@ -841,14 +708,8 @@ def meaning(ctx: Ctx) -> Outcome:
                    f"lexical.build for the verses containing these strongs before verse-reading: "
                    f"{stale}")
 
-    # Whole-verse exclusion (#1824 v18, researcher instruction 2026-09-22, verbatim: "when M32
-    # cluster is processed then all the analysis for verses already analysed previously is not
-    # recreated... if the second read of the verse finds additional observations then something
-    # went wrong in the first reading"). Since BUILD #316, the FIRST cluster's pass to touch a
-    # verse already does complete Stage 1 analysis of every M-code word in it -- a LATER cluster
-    # whose own strong happens to occur in that same verse should not re-derive it at all.
-    # -Force intentionally bypasses this (a deliberate reconciliation rerun, Fix 3, exists
-    # precisely to re-examine already-covered material) -- never applied together.
+    # whole-verse exclusion (#1824): the first cluster's pass to touch a verse analyses every M-code
+    # word in it, so a later cluster does not re-derive it. -Force bypasses this.
     fully_covered_ids: set = set()
     if not force:
         fully_covered_ids = stage1coverage.fully_covered_verse_ids(
@@ -862,14 +723,7 @@ def meaning(ctx: Ctx) -> Outcome:
                  preview=preview, cluster_code=cluster_code,
                  fully_covered_verse_count=len(fully_covered_ids))
 
-    # #1842, 2026-09-22, researcher instruction verbatim: "batching based on strongs is
-    # inappropriate, the units of operation is verses not strongs." Reverts the #1723/#1825-1827
-    # strong-density chunking (kept above as `_chunk_verses_by_strong_density`, unused, for
-    # provenance) back to fixed verse-count chunking -- see `_chunk_verses_fixed_size`'s own
-    # docstring for why the 2026-09-21 objection to a fixed count no longer holds as the deciding
-    # factor: the strong-density approach's own M49 failure (confirmed 2026-09-22) was a 3-verse
-    # chunk, not an unusually strong-dense one, so it was not actually delivering the safety its
-    # own adoption assumed.
+    # fixed verse-count chunking (#1842)
     max_verses = int(ctx.cfg.setting("lexical.meaning_max_verses_per_batch", 1))
     max_cost_per_batch = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
     chunks = _chunk_verses_fixed_size(verse_ids, max_verses)
@@ -901,10 +755,8 @@ def meaning(ctx: Ctx) -> Outcome:
         if preview:
             continue
 
-        # Resume/skip (escalation #1756): this exact batch (by content, not position) was already
-        # committed by a PRIOR run -- never re-pay for it. Checked fresh per batch, not cached, so
-        # a batch another concurrent/prior process just finished is picked up too. -Force (#1824
-        # Fix 3) deliberately overrides this for an explicit reconciliation pass.
+        # resume/skip (#1756): a batch already committed (matched by content, checked fresh) is not
+        # re-paid; -Force overrides
         if already_done and not force:
             skipped_batches += 1
             continue
@@ -945,11 +797,8 @@ def meaning(ctx: Ctx) -> Outcome:
                 similarity_threshold=float(ctx.cfg.setting("cluster.recording_similarity_threshold", 0.85)))
             conn.commit()
         except Exception as e:
-            # Crash safeguard (#1756): ANY uncaught exception in the risky window (API call
-            # through record_batch's own commit) is recorded here before re-raising, so the
-            # run_batch row never sits at 'running' forever for a genuinely handled failure --
-            # only a real process death (kill, crash, power loss) leaves it there, which is
-            # exactly the signal a resume needs to distinguish "dead run" from "not started yet".
+            # crash safeguard (#1756): record any exception in the risky window before re-raising, so a
+            # run_batch row left at 'running' means only a real process death
             batchcontrol.fail_batch(conn, batch_id, f"{type(e).__name__}: {e}")
             raise
         batchcontrol.commit_batch(conn, batch_id, cost_usd=round(real_cost, 4))
@@ -960,10 +809,7 @@ def meaning(ctx: Ctx) -> Outcome:
 
     if preview:
         already_n = sum(1 for b in batch_summaries if b["already_committed"])
-        # #1756: only the batches NOT already committed would actually cost anything on a live
-        # run -- UNLESS -Force (#1824 Fix 3) is set, in which case every batch will actually be
-        # re-called, so the estimate must include the already-committed ones too, not just the
-        # remaining-work subset.
+        # cost: only uncommitted batches, unless -Force re-calls every batch
         total_cost = sum(b["est_cost_usd"] for b in batch_summaries
                          if force or not b["already_committed"])
         already_note = ("" if not already_n else
@@ -979,27 +825,13 @@ def meaning(ctx: Ctx) -> Outcome:
                  preview=True, batches=batch_summaries, cluster_code=cluster_code,
                  verse_count=len(verse_ids), strong_count=len(strongs), force=force)
 
-    # cluster.status advancement MOVED to `relational()` (escalation #1860, 2026-09-23 split) --
-    # `lexical.relational` is now the true final stage of verse-reading (word-level -> relational),
-    # so that's the only correct point to check completeness and advance ordinal 2 -> 3. A
-    # `lexical.meaning` (word-level-only) run no longer touches cluster.status at all.
+    # cluster.status advances in relational(), the final verse-reading stage (#1860)
 
-    # LLM validation check (#1824 v14, researcher instruction 2026-09-22, verbatim: "stage 1 need
-    # to pre-calculate the expected result for each scope, and measure the result received from
-    # llm as the llm validation check"). Runs against the FULL requested verse_ids scope (not just
-    # the batches that got a fresh call this time -- -Force-skipped-vs-not doesn't change what
-    # SHOULD exist), read-only, no LLM call of its own. Scoped to family="word_level" (#1860) --
-    # this step never writes the relational codes, so they must not be reported MISSING here.
-    # Full per-row detail persisted to a report (governance.reports_must_persist); the summary
-    # counts are folded into this call's own message text so they survive into `run.outcome` (the
-    # counts dict itself is not persisted -- same gap BUILD.md #274 already flagged for
-    # `unresolved_note` above).
+    # LLM validation check (#1824): expected vs received word-level rows over the full requested
+    # scope, read-only. Per-row detail goes to a report; the summary counts go into the message, the
+    # only part run.outcome keeps.
     coverage = stage1coverage.validate_coverage(conn, cluster_code, verse_ids, family="word_level")
-    # Config-defined path (escalation #1824 governance audit, 2026-09-22) -- was a hardcoded
-    # f-string, which governance.reports_must_persist's own "config-defined report path"
-    # requirement doesn't actually allow; report.stage1_coverage_validation_pattern registered to
-    # match the established report.batch_progress_path/report.lexical_notes_output_pattern
-    # precedent.
+    # report path from config (report.stage1_coverage_validation_pattern)
     coverage_pattern = ctx.cfg.required_setting("report.stage1_coverage_validation_pattern")
     coverage_report_path = pathlib.Path(
         coverage_pattern.format(cluster_code=cluster_code, run_id=ctx.run_id))
@@ -1020,11 +852,7 @@ def meaning(ctx: Ctx) -> Outcome:
 
     total_cost = sum(c["cost_usd"] for c in llm_summary)
     unresolved_n = record_summary["unresolved_occurrence_count"]
-    # The reasons themselves, not just the count -- run.outcome only ever persists the message
-    # STRING (checked live: the `counts` dict this Outcome also carries is never written to the
-    # `run` table), so anything not folded into the message is lost the moment this process exits.
-    # Found live 2026-09-17 needing to re-call a live API a second time, at real cost, just to see
-    # why Stage 2's own observations had failed -- the exact gap BUILD.md #274 first flagged here.
+    # the reasons themselves go into the message: run.outcome keeps only the message string
     unresolved_note = (f", {unresolved_n} unresolved occurrence(s): "
                        f"{'; '.join(record_summary['unresolved_detail'][:5])}"
                        f"{' ...' if unresolved_n > 5 else ''}") if unresolved_n else ""
@@ -1042,16 +870,11 @@ def meaning(ctx: Ctx) -> Outcome:
 
 
 def relational(ctx: Ctx) -> Outcome:
-    """`lexical.relational` (escalation #1860, 2026-09-23 word-level/relational split) -- the
-    relational half of the former single `lexical.meaning`: M0.6.5/M0.6.6/D7.7.1/M0.7.1-16/M0.8.1.
-    Mirrors `meaning()`'s batch/cost/resume/coverage-validation structure closely (same cost-preview
-    discipline, same resume-by-content-hash, same whole-verse-exclusion optimisation), with two
-    differences: (1) a hard readiness gate refuses to run against any verse whose M-code words
-    don't all have committed word-level (`lexical.meaning`) observations yet -- relational grounds
-    on those findings, it must not run ahead of them; (2) the `cluster.status`
-    `t_cluster_assignment_completed -> ready_for_subgroup_allocation` transition check, which lived
-    in `meaning()` before the split, moves here -- this is the true final stage of verse-reading
-    now."""
+    """`lexical.relational` (#1860): the relational questions (M0.6.5/M0.6.6/D7.7.1/M0.7.1-16/
+    M0.8.1). Same batch/cost/resume/coverage-validation structure as `meaning()`, plus: (1) a hard
+    readiness gate refusing any verse whose M-code words lack committed word-level observations;
+    (2) the `cluster.status` `t_cluster_assignment_completed -> ready_for_subgroup_allocation`
+    transition, since this is the final stage of verse-reading."""
     _may(ctx, "lexical.relational", "ib_observation")
     _may(ctx, "lexical.relational", "ib_node")
     _may(ctx, "lexical.relational", "run_batch")
@@ -1090,11 +913,8 @@ def relational(ctx: Ctx) -> Outcome:
                    f"lexical.build for the verses containing these strongs before verse-reading: "
                    f"{stale}")
 
-    # Readiness gate (#1860, 2026-09-23): hard stop, same shape as the Layer1-stale check above and
-    # `lexical.readiness`'s own FATAL stop -- relational grounds on committed word-level findings
-    # (versereadinggenerate._word_level_findings), so it refuses to run at all against a verse
-    # whose M-code words don't already have them, rather than silently proceeding with thinner
-    # grounding for that verse.
+    # readiness gate (#1860): relational grounds on committed word-level findings, so a verse
+    # without them stops the run
     if not force:
         gaps = stage1coverage.missing_word_level_coverage(conn, cluster_code, verse_ids)
         if gaps:
@@ -1216,8 +1036,7 @@ def relational(ctx: Ctx) -> Outcome:
                  preview=True, batches=batch_summaries, cluster_code=cluster_code,
                  verse_count=len(verse_ids), strong_count=len(strongs), force=force)
 
-    # The true final stage of verse-reading (#1860) -- checked and advanced at the end of every
-    # live (non-preview) lexical.relational run against the cluster's full resolved verse list.
+    # the final stage of verse-reading: checked and advanced after every live run (#1860)
     status_result = clusterstatus.advance_if_verse_reading_complete(conn, cluster_code)
     conn.commit()
 

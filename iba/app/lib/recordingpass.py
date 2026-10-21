@@ -1,26 +1,20 @@
-"""recordingpass.py — the single writer for `ib_observation`/`ib_node` (escalation #1693's design,
-built 2026-09-17). Per checklist rule 0.1: only this module ever writes these two tables; every
-other routine (`versereadinggenerate.py` included) produces JSON output only. Per rule 0.5: verse
-references are resolved fresh from `iba.db` at write time, never trusted from LLM-authored text.
+"""recordingpass.py — the single writer for `ib_observation`/`ib_node` (#1693). Only this module
+writes these two tables; every other routine (`versereadinggenerate.py` included) produces JSON
+only. Verse references are resolved fresh from `iba.db` at write time, never trusted from
+LLM-authored text.
 
-**Same/broaden/new — #1693 §3, implemented as its own explicitly-simple first version**, per that
-design's own closing note ("not decided here, deliberately left to implementation... a first
-working version is expected to be simple... refined from real behaviour"):
-1. Exact match on `obs_text` AND the full set of grounding references — a true duplicate, no-op
-   (rule 7, "there is a risk of duplication in such cases -- and would rather have a duplicate,
-   than none at all"; only the exact-match case is worth catching cheaply).
-2. Same `(cluster_code, stage, strong, question_code)`, different `obs_text`, similarity above the
-   threshold — a superficial difference: align, edit `obs_text` in place, add the new occurrence's
-   `ib_node` row(s) against the SAME `observation_id` (rule 2).
-3. Same coordinates, different `obs_text`, similarity below the threshold — genuinely expands:
-   a NEW `ib_observation` row, linked back via `ib_node.traced_observation_id` (rule 3).
-4. No existing row at those coordinates at all — a plain new observation.
-Similarity (rule 5, "not a direct text match only... judgement, mainly use heuristics and simple
-meaning") is `difflib.SequenceMatcher` on the normalized text — a real heuristic, not a from-scratch
-similarity engine, exactly as rule 5 asks for.
+Same/broaden/new for a fresh answer, by question family:
+  - per-occurrence questions (M0.7, M0.8.1, M0.5.11: one word in one verse; M0.6.5/M0.6.6/D7.7.1:
+    one fact per verse): identity is structural. The candidate pool is scoped to the occurrence
+    (or the verse), so 0 candidates = new, 1 = align, 2+ = legacy duplicates, consolidated (#1824,
+    #1832).
+  - word-level questions (M0.1/M0.5, a fact about the strong, cluster_code NULL): exact text match
+    only; anything else is a distinct observation (#1849).
+  - every other question: within the cluster-wide pool, a structured-key match (surface + morph +
+    meaning keywords) or `difflib.SequenceMatcher` similarity above the threshold aligns and edits
+    in place; below it, a new row linked via `ib_node.traced_observation_id`.
 
-The LLM never assigns ids, never checks for duplicates, never decides edit-vs-new (rule 0.2) --
-all of that is this module's job, not the model's.
+The LLM never assigns ids, checks for duplicates, or decides edit-vs-new.
 """
 
 from __future__ import annotations
@@ -31,10 +25,7 @@ import json
 import re
 
 
-SIMILARITY_THRESHOLD = 0.85  # fallback default only (escalation #1753 B3) -- live callers pass
-                              # cfg_setting cluster.recording_similarity_threshold instead; this
-                              # constant is what a caller gets if it omits similarity_threshold
-                              # entirely (e.g. a one-off migration).
+SIMILARITY_THRESHOLD = 0.85  # fallback only; callers pass cfg_setting cluster.recording_similarity_threshold
 
 
 class UnresolvedOccurrence(Exception):
@@ -80,42 +71,16 @@ _VERSE_LEVEL_OCCURRENCE_CODES = ("M0.6.5", "M0.6.6", "D7.7.1")
 
 
 def _is_strong_specific_occurrence_question(question_code: str | None) -> bool:
-    """M0.7.1-16 and M0.8.1 -- explicitly about "[this word]" (versereadinggenerate.py's own
-    prompt text), a genuinely word-specific finding even though it's per-verse not per-strong-ever.
-    M0.8.1 (#1836, 2026-09-22, T2/T3 elevation-candidate) joins this family for the same reason:
-    it is a fact about ONE specific non-M-code word's own candidacy, never a shared verse-level
-    fact multiple words could co-report (unlike M0.6.5/M0.6.6/D7.7.1). Identity for these stays
-    exact (verse, strong) occurrence -- count-based same/broaden/new (#1824 v10/v11 Fix 1/2),
-    unchanged by the #1824 v22 cross-strong fix below.
-
-    M0.5.11 joins this family, 2026-09-23: caught live while extending the word-level (M0.1/M0.5)
-    branch to structural matching -- its own text is "In this verse, where this occurrence's
-    meaning diverges from the term's usual sense elsewhere..." -- exactly this family's shape
-    (per-verse, word-specific, genuinely varies occurrence to occurrence), not a once-ever-per-
-    strong fact. It only ever matched `_WORD_LEVEL_QUESTION_PREFIXES`' bare "M0.5" prefix, which
-    was never meant to catch it. Confirmed live before fixing: H1245 (baqash) alone had 148 live
-    M0.5.11 rows, each about a genuinely different verse -- forcing the word-level branch's "2+
-    candidates = same fact" rule over this pool would have wrongly consolidated 147 distinct
-    findings into one. Caught in verification, never run live."""
+    """Per-occurrence, word-specific questions: M0.7.1-16, M0.8.1 (one non-M-code word's own
+    elevation candidacy, #1836) and M0.5.11 (where this occurrence's meaning diverges from the
+    term's usual sense). Identity is the exact (verse, strong) occurrence."""
     return bool(question_code) and (
         question_code.startswith("M0.7") or question_code in ("M0.8.1", "M0.5.11"))
 
 
 def _is_per_occurrence_question(question_code: str | None) -> bool:
-    """#1824 v10 (design doc `iba/docs/1824-stage1-reconciliation-design-v1-20260922.md`, Fix 1):
-    M0.7.*/M0.8.1 and the relational questions are explicitly per-verse -- 'a strong can genuinely
-    behave differently verse to verse' (BUILD #310) -- as opposed to M0.1/M0.5's word-level, verse-
-    invariant facts. #1840, 2026-09-22: this used to restate `question_code.startswith("M0.7")`
-    itself rather than calling `_is_strong_specific_occurrence_question` -- when M0.8.1 joined that
-    family (#1836), only THIS function's own copy of the condition was updated to include it, not
-    the one below, so M0.8.1 silently fell through to the word-level keyword/similarity branch
-    instead of the exact-occurrence count-based one. Confirmed live: Ezra.7.17/H9010/M0.8.1 has 3
-    `ib_observation` rows all citing the SAME single node (surface='bulls'), chained via
-    `traced_observation_id` -- the tell-tale sign of the word-level "new-expands-existing" path,
-    not genuine distinct occurrences. Delegating to the single strong-specific predicate below
-    (rather than keeping two hand-written copies of the same set) is the actual fix "prevent it
-    going forward" asks for -- the two conditions can no longer drift apart because there is only
-    one of them."""
+    """Per-occurrence questions (#1824): the strong-specific family plus the relational verse-level
+    ones. Delegates to the two predicates so the sets cannot drift apart (#1840)."""
     if not question_code:
         return False
     return (_is_strong_specific_occurrence_question(question_code) or
@@ -123,50 +88,20 @@ def _is_per_occurrence_question(question_code: str | None) -> bool:
 
 
 def _is_verse_level_occurrence_question(question_code: str | None) -> bool:
-    """M0.6.5/M0.6.6/D7.7.1 -- researcher instruction 2026-09-22 (escalation #1832), verbatim:
-    "near duplicates are not allowed. this applies across clusters and strongs." ... "duplication
-    across questions should not be eliminated, however, near duplication within a question is an
-    issue." Investigated live: these three ARE genuinely verse-level facts asked redundantly once
-    per M-code strong present (D7.7.1's operation word, M0.6.6's whole-network composition are the
-    SAME fact regardless which strong "asks"; M0.6.5's own progressive-per-word design still
-    produces heavy content overlap even though each strong's own vantage clause differs) --
-    confirmed live: 20/23/18 separate observations across just a 5-verse test, one per (verse,
-    strong), none ever sharing a citation, because `_existing_candidates` hard-filtered by
-    strong+cluster_code for every per-occurrence question including these three. Candidate pool
-    for these three is now verse-scoped only (any strong, any cluster) -- identity is no longer
-    "guaranteed same fact by exact occurrence match" (M0.7's own reasoning), so matching uses the
-    same keyword/similarity mechanism word-level questions already use, not count-based 0/1/>1;
-    a genuinely distinct per-word contribution (e.g. M0.6.5's own vantage) scores low and is kept
-    as its own new-expands-existing row, never forced to merge."""
+    """M0.6.5/M0.6.6/D7.7.1: verse-level facts asked once per M-code strong present. Near duplicates
+    within a question are not allowed, across clusters and strongs (#1832), so their candidate pool is
+    verse-scoped (any strong, any cluster)."""
     return question_code in _VERSE_LEVEL_OCCURRENCE_CODES
 
 
 def _existing_candidates(conn, cluster_code: str, stage: str, strong: str | None,
                          question_code: str | None,
                          occurrence_refs: set[tuple] | None = None) -> list[dict]:
-    """#1824 v10, Fix 1 -- researcher's own question: "how do you know what row to expect."
-    Checked live and confirmed a real gap: this pool used to be cluster+stage+strong+question_code
-    ONLY, no verse filter, for every question type -- correct for word-level questions (a fact
-    about the strong, not any one verse) but wrong for per-occurrence ones, where it let a fresh
-    answer get compared against a candidate from a COMPLETELY DIFFERENT VERSE (confirmed: 22 of 61
-    matches in a live test traced cross-verse). For M0.7 (strong-specific), first narrow to
-    candidates that already have an `ib_node` citation for one of THIS observation's own
-    (strong, verse_reference) occurrence pairs -- a direct lookup answering "does a row for this
-    occurrence exist," not a heuristic guess left to keyword/similarity scoring downstream.
-
-    #1832, 2026-09-22 -- for M0.6.5/M0.6.6/D7.7.1 (verse-level occurrence questions), `strong` and
-    `cluster_code` are BOTH dropped from the filter: the researcher's own instruction ("near
-    duplicates are not allowed... applies across clusters and strongs... duplication across
-    questions should not be eliminated, however, near duplication within a question is an issue")
-    scopes the candidate pool to stage+question_code+VERSE only, any strong, any cluster's pass.
-    #1832 v2 correction: identity within this pool is NOT decided by keyword/similarity scoring
-    (tried first, failed live -- `meaning_keywords` is freely LLM-generated, not a stable identity
-    key across separate calls) -- these three are architecturally single-fact-per-verse questions,
-    so `record_one_observation` treats "2+ candidates in this pool" as guaranteed same-fact legacy
-    duplication, same count-based logic M0.7 already uses."""
-    # `o.` prefix throughout -- both ib_observation and ib_node carry a cluster_code column, so an
-    # unqualified reference is ambiguous the moment the JOIN branch below is used (found live:
-    # "OperationalError: ambiguous column name: cluster_code" on the first real test of this).
+    """The candidate pool for a fresh answer. Word-level questions: cluster + stage + strong +
+    question_code, any verse. Strong-specific occurrence questions: narrowed to candidates already
+    citing one of this observation's (strong, verse_reference) occurrences (#1824). Verse-level
+    questions: stage + question_code + verse only, any strong, any cluster (#1832)."""
+    # `o.` prefix: ib_observation and ib_node both carry cluster_code
     if _is_verse_level_occurrence_question(question_code) and occurrence_refs:
         verse_refs = sorted({verse_ref for _, verse_ref in occurrence_refs})
         ph = ",".join("?" * len(verse_refs))
@@ -178,11 +113,7 @@ def _existing_candidates(conn, cluster_code: str, stage: str, strong: str | None
 
     where = ["o.stage=?"]
     params: list = [stage]
-    # cluster_code=None (word-level M0.1/M0.5, 2026-09-23 ruling) needs "IS NULL", not "=?" --
-    # SQL NULL never equals NULL via "=?", so passing None as a bound param here would silently
-    # match ZERO existing rows on every call, breaking word-level identity entirely (every answer
-    # would look "new," never recognised as already-covered). Same IS-NULL pattern already used
-    # below for strong/question_code, applied here for the same reason.
+    # cluster_code None (word-level) needs IS NULL: NULL never equals a bound "=?"
     if cluster_code is None:
         where.append("o.cluster_code IS NULL")
     else:
@@ -215,21 +146,10 @@ def _existing_candidates(conn, cluster_code: str, stage: str, strong: str | None
 
 
 def _consolidate_duplicates(conn, canonical_id: int, duplicate_ids: list[int]) -> None:
-    """#1824 v10/v11, Fix 2 rule 3 -- called ONLY when a real fresh answer for an exact occurrence
-    (per Fix 1's own correct scoping) finds MORE than one pre-existing candidate: legacy
-    duplication from before Fix 1 existed. Soft-withdraws the duplicates (never a physical delete,
-    matching the project's existing soft-delete convention) and re-points their `ib_node`
-    citations onto the canonical so no occurrence record is lost.
-
-    Deliberately does NOT use `ib_observation.supersedes_observation_id` -- checked its own
-    `cfg_column.use` before touching it (per `governance.table_columns`) and it reads "synthesis
-    stage only, ... the append-only supersedes chain": a different stage's own column, not this
-    one's to repurpose. Same principle BUILD #312 already applied this session (a genuinely new
-    column for `meaning_keywords` rather than overloading `stable_key`'s unrelated documented
-    purpose) -- `status='withdrawn'` alone (a value this column's own use-text already lists:
-    "observation is incorrect or not useful") is sufficient for Stage 1's own needs; which
-    observation now holds an occurrence's citations is reconstructable from `ib_node` directly,
-    without a forward pointer this table's own governance doesn't authorise here."""
+    """When a fresh answer for an exact occurrence finds more than one candidate (legacy
+    duplication, #1824): soft-withdraws the duplicates (status='withdrawn', never a delete) and
+    re-points their `ib_node` citations onto the canonical, so no occurrence record is lost.
+    `supersedes_observation_id` is not used: per its cfg_column.use it belongs to the synthesis stage."""
     _assert_valid_ib_status(conn, "withdrawn")
     for dup_id in duplicate_ids:
         conn.execute("UPDATE ib_observation SET status='withdrawn', updated_at=? WHERE id=?",
@@ -255,42 +175,26 @@ _WORD_LEVEL_QUESTION_PREFIXES = ("M0.1", "M0.5")
 
 
 def _is_word_level_question(question_code: str | None) -> bool:
-    """M0.1.x/M0.5.x -- a fact about the STRONG alone. Researcher ruling, 2026-09-23 (escalation
-    #1849 follow-on, verbatim: "cluster has no role to play, the keys for further analysis is
-    strong and verse"): these questions no longer carry any cluster/characteristic framing (see
-    the 2026-09-23 catalogue reword) and no longer resolve or need a cluster_code at all -- one
-    canonical `ib_observation` per (strong, question_code), full stop, `cluster_code IS NULL`.
-
-    EXCLUDES M0.5.11 despite the "M0.5" prefix match -- it is a strong-specific OCCURRENCE
-    question (see `_is_strong_specific_occurrence_question`'s own docstring), not a once-ever
-    word-level fact; routed there instead, checked explicitly here so the two predicates can never
-    silently overlap."""
+    """M0.1.x/M0.5.x -- a fact about the strong alone (researcher ruling, #1849: the keys are strong
+    and verse): one canonical `ib_observation` per (strong, question_code), `cluster_code IS NULL`.
+    Excludes M0.5.11, a strong-specific occurrence question."""
     return (bool(question_code) and question_code.startswith(_WORD_LEVEL_QUESTION_PREFIXES)
            and not _is_strong_specific_occurrence_question(question_code))
 
 
 def _effective_cluster_code(conn, pass_cluster_code: str, strong: str | None,
                             question_code: str | None) -> str | None:
-    """Word-level (M0.1/M0.5) observations carry NO cluster_code at all as of 2026-09-23 (see
-    `_is_word_level_question`) -- these are strong-only facts, and resolving any cluster for them
-    (even the strong's own "true" M-code, as this function used to do pre-2026-09-23 per #1815)
-    re-introduces exactly the dependency the researcher's ruling removed. Every other question
-    type (relational M0.6.5/M0.6.6/D7.7.1, per-occurrence M0.7/M0.8.1) stays keyed to the PASS's
-    own cluster_code, unchanged -- only which cluster nominally "owns" the row's `cluster_code`
-    column, not whether the row itself can merge (`_existing_candidates`'s verse-level branch
-    already merges across clusters on content, not cluster identity, per #1832)."""
+    """The cluster_code an observation is filed under: None for word-level questions (strong-only
+    facts), otherwise the pass's own cluster_code. Verse-level rows still merge across clusters on
+    content (`_existing_candidates`, #1832)."""
     if _is_word_level_question(question_code):
         return None
     return pass_cluster_code
 
 
 def _window_for(conn, question_code: str | None) -> str | None:
-    """window is DERIVED from the catalogue question, never invented ad hoc (#1723 -- the old
-    #1691 definition duplicated `stage`; the new one is the question's own registered angle).
-    Cross-checked against the live cfg_enum, added 2026-09-20 (escalation #1796):
-    ib_observation.window is a registered cfg_enum group, but the actual value always came from
-    wa_obs_question_catalogue.window with nothing ever checking the two stay in sync -- a typo or
-    stale row in the catalogue could silently write a window value the enum doesn't even list."""
+    """window is derived from the catalogue question's own registered angle (#1723), and checked
+    against the ib_observation.window cfg_enum (#1796)."""
     if not question_code:
         return None
     row = conn.execute(
@@ -309,16 +213,9 @@ def _window_for(conn, question_code: str | None) -> str | None:
 
 
 class InvalidQuestionCode(Exception):
-    """question_code doesn't resolve to a real, live catalogue leaf question. Found live 2026-09-17
-    redoing M67 under the #1723 front-loading rework: under heavier per-batch load, the model
-    sometimes collapsed several M0.1.x/M0.5.x sub-answers into one combined note filed under the
-    bare component code ('M0.1'/'M0.5') instead of a real leaf code -- 38 strongs ended up with
-    ZERO properly-coded word-level battery answers, just two unbindable blobs each, and (worse)
-    the front-loading skip-check would have silently treated them as already-covered forever.
-    Confirms and closes the same gap #1719 already flagged for D7.7-vs-D7.7.1 drift and the literal
-    string 'none' -- no live FK/validation existed at write time. Refusing the whole observation
-    (not writing a phantom row under a bogus code) is the fix, matching checklist rule 0.7 ("a gap
-    is a load-time finding, not silently accepted")."""
+    """question_code doesn't resolve to a live catalogue leaf question (e.g. a bare component code
+    such as 'M0.1' or the string 'none', #1723). The whole observation is refused rather than written
+    under a bogus code: a gap is a load-time finding, not silently accepted."""
 
 
 def _validate_question_code(conn, question_code: str | None) -> None:
@@ -334,12 +231,8 @@ def _validate_question_code(conn, question_code: str | None) -> None:
 
 
 class InvalidTag(Exception):
-    """tag doesn't resolve to a real, active `cfg_enum` value for `ib_observation.tag`. Found live
-    2026-09-17 (escalation #1723 v10-v15): `tag` had NO write-time validation at all, unlike
-    `question_code` (fixed the same day) -- the literal string 'none' (15 rows) leaked through
-    despite never being a registered enum value, alongside `answered-no-flag` being used as a
-    non-discriminating 77%-of-corpus default. Refusing the write (not silently accepting an
-    unregistered string) matches the question_code fix and checklist rule 0.7."""
+    """tag doesn't resolve to an active `cfg_enum` value for `ib_observation.tag` (#1723). Refused,
+    as for question_code."""
 
 
 def _validate_tag(conn, tag: str) -> None:
@@ -352,24 +245,13 @@ def _validate_tag(conn, tag: str) -> None:
             f"refusing to write an observation under it")
 
 
-# NOT adding an ib_observation.meaning_source validator here (checked live 2026-09-20, escalation
-# #1796, before writing one): 37+ distinct free-form strings are already live against this 3-value
-# enum (e.g. "strong_meaning_tree; lsj; mounce", "role list", "cluster_codes") -- enforcing the
-# clean 3 values at write time would skip-and-discard nearly every future observation that sets
-# this field. Deliberately left as a genuine, still-open orphan rather than papering over it with a
-# dormant function that would fool the orphan-checker's text scan without actually protecting
-# anything (a real risk: the checker only greps for the lookup TEXT, not whether it's ever called).
-# This is exactly escalation #1771's own open question (redesigning the field's shape) -- surfaced
-# there with this concrete measurement, not decided here.
+# ib_observation.meaning_source is not validated: live values are free-form strings, far outside
+# its 3-value enum; the field's shape is the open question of #1771.
 
 
 def _validate_stage(conn, stage: str) -> None:
-    """stage is caller-supplied (a Python literal naming the calling pipeline stage), never model-
-    output -- a mismatch here is a programming bug, not a data-quality finding, so this asserts
-    (ValueError) rather than the soft skip-and-report convention used for the model-supplied fields
-    above. Added live 2026-09-20 (escalation #1796): ib_observation.stage was a registered cfg_enum
-    group nothing ever looked up by name at runtime. Queried fresh each call, same as
-    _validate_tag/_validate_question_code above -- not cached, for the same reason they aren't."""
+    """stage is caller-supplied (a literal naming the calling pipeline stage), never model output,
+    so a mismatch is a programming bug: asserts (ValueError) against the cfg_enum, queried fresh."""
     valid = {r[0] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.stage' AND inactive=0")}
     if stage not in valid:
@@ -380,15 +262,8 @@ _DEGENERATE_OBS_TEXT = re.compile(r"^\s*(none|n/?a|null|nothing|-)\s*\.?\s*$", r
 
 
 class InvalidObservationText(Exception):
-    """obs_text is a bare negation with no actual content -- e.g. the literal string "none" alone,
-    not "none -- <real explanation>" (the latter has substance despite the awkward lead-in and is
-    NOT rejected by this check). Found live 2026-09-17 (escalation #1723 v16), researcher spotting
-    it directly: id 524 (H0629/M0.5.4/Ezra.7.17) was the four-character string "none", nothing
-    else -- and it TRACED to observation 417, which already held the real answer for this
-    strong+question. A content-less duplicate is worse than no row at all: it looks answered
-    (defeating the front-loading skip-check) while adding zero information. Same family of gap as
-    #282 (question_code) and #283 (tag) -- refusing the write, not silently accepting an empty
-    claim, per checklist rule 0.7."""
+    """obs_text is a bare negation with no content, e.g. "none" alone ("none -- <explanation>" is
+    allowed). Refused: a content-less row looks answered while adding nothing (#1723)."""
 
 
 def _validate_obs_text(conn, obs_text: str) -> None:
@@ -399,10 +274,8 @@ def _validate_obs_text(conn, obs_text: str) -> None:
 
 
 def _assert_valid_ib_status(conn, status: str) -> None:
-    """status is a fixed internal literal at both call sites below ('draft'), never model-output --
-    same rationale as _validate_stage: an assertion catching a future typo/drift, not a data-quality
-    soft-skip. Added 2026-09-20 (escalation #1796): ib_observation.status was a registered cfg_enum
-    group nothing ever looked up by name at runtime."""
+    """status is a fixed internal literal ('draft'), never model output: asserts against the
+    cfg_enum, like _validate_stage."""
     valid = {r[0] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.status' AND inactive=0")}
     if status not in valid:
@@ -428,12 +301,9 @@ def _insert_observation(conn, cluster_code: str, stage: str, tag: str, strong: s
 
 def _keyword_match_candidate(conn, candidate: dict, new_keywords: set[str],
                              new_forms: set[tuple]) -> bool:
-    """#1824, researcher instruction verbatim: "similarity is not matching sentences. Similarly
-    to matching keys... match a) surface b) meaning extraction keywords c) morph." Structured-key
-    match, used instead of prose similarity when the model supplies `meaning_keywords` -- BOTH
-    conditions must hold, not either alone: matching grammatical form alone (a homonym reused with
-    a different sense) isn't enough, and matching keywords alone (two unrelated occurrences that
-    happen to share a concept word) isn't enough either."""
+    """Structured-key match, used instead of prose similarity when the model supplies
+    `meaning_keywords` (#1824: match surface, meaning keywords and morph). Both form and keywords must
+    match: form alone could be a homonym in another sense, keywords alone two unrelated occurrences."""
     cand_keywords_raw = candidate["meaning_keywords"] if "meaning_keywords" in candidate.keys() else None
     if not cand_keywords_raw or not new_keywords:
         return False
@@ -464,21 +334,12 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
                            source_json_serial: int | None, subgroup_id: int | None = None,
                            subgroup_code: str | None = None,
                            similarity_threshold: float = SIMILARITY_THRESHOLD) -> dict:
-    """One model-produced observation -> same/broaden/new decision -> DB write(s). Returns a
-    small report dict for the caller's own summary, never raises on an unresolved occurrence for
-    the WHOLE observation -- only the individual bad occurrence is skipped and reported, per
-    checklist rule 0.7 ("a gap is a load-time finding, not silently accepted") -- surfaced, not
-    fatal to the rest of the batch.
+    """One model-produced observation -> same/broaden/new decision -> DB write(s). Returns a small
+    report dict. An unresolved occurrence is skipped and reported, not fatal to the observation.
 
-    `subgroup_id`/`subgroup_code` are the CALLER's own known subgroup (Stage 3/4 are scoped to
-    exactly one subgroup by construction -- no lookup or inference needed, the caller already
-    knows it). Found live 2026-09-18 (researcher's own review of the data): `ib_observation.
-    cluster_subgroup_id`/`ib_node.cluster_subgroup_code` are real, already-registered columns
-    (`cfg_column`) this module had never populated at all, for any of the 4 live stages. Per their
-    own `cfg_column.use` text, both stay NULL for stage=verse-reading (pre-subgroup) and
-    stage=char-subgroup (process (b)'s own cluster-level observations, "above single-subgroup
-    scope") -- correct by construction here since neither of those call sites passes a value;
-    Stage 3/4 (char-reading/char-answers) now pass their own subgroup explicitly."""
+    `subgroup_id`/`subgroup_code`: the caller's own subgroup for Stage 3/4 (char-reading/
+    char-answers), written to ib_observation.cluster_subgroup_id / ib_node.cluster_subgroup_code.
+    NULL for verse-reading and char-subgroup, per those columns' cfg_column.use."""
     strong = obs.get("strong")
     question_code = obs.get("question_code")
     tag = obs["tag"]
@@ -502,17 +363,11 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     except InvalidObservationText as e:
         return {"action": "skipped-invalid-obs-text", "unresolved": [str(e)]}
 
-    # meaning_source is deliberately NOT validated here -- see this file's own note near
-    # ib_observation.meaning_source above for why (massive live drift from the 3-value enum,
-    # escalation #1796/#1771).
-
-    # #1723: a word-level (M0.1/M0.5) observation is filed under the STRONG's own actual M-code,
-    # not the pass's cluster_code -- lets a later cluster's own pass find it as already covered
-    # regardless of which cluster's pass originally front-loaded it.
+    # word-level questions are filed with no cluster_code; others under the pass's cluster
     effective_cluster_code = _effective_cluster_code(conn, cluster_code, strong, question_code)
 
     claimed_occurrences = obs.get("occurrences", [])
-    resolved_occurrences = []  # list of (occurrence_strong, resolved_dict) -- NOT always `strong`
+    resolved_occurrences = []  # (occurrence_strong, resolved_dict) -- not always `strong`
     unresolved = []
     for occ in claimed_occurrences:
         occ_strong = occ.get("strong", strong)
@@ -521,31 +376,15 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
                 conn, occ_strong, occ["verse"], occ.get("surface"), occ.get("morph_code"))))
         except UnresolvedOccurrence as e:
             unresolved.append(str(e))
-    # Found live 2026-09-18, Stage 4's first real run: a genuine whole-subgroup NEGATIVE finding
-    # ("no evidence of X across this subgroup's material") legitimately cites no occurrence at all
-    # -- its own evidence is the accumulated Stage 1/2/3 material it was given as input, already
-    # grounded elsewhere, not a specific verse. Treating that the same as "the model cited verses
-    # that don't resolve" (a REAL data-quality problem, still skipped below) silently discarded 10
-    # substantive answers on the very first char-answers run. Distinguish by cause: the model
-    # provided zero occurrences (write it, 0 ib_node rows) vs. it provided some and NONE resolved
-    # (skip and report, unchanged). Harmless for Stages 1-3, which have never sent an empty
-    # `occurrences` list in practice (every claim they make is tied to a specific given verse).
+    # zero occurrences claimed is a legitimate whole-subgroup finding (written with no nodes);
+    # occurrences claimed but none resolving is skipped and reported
     if not resolved_occurrences and claimed_occurrences:
         return {"action": "skipped-no-resolvable-occurrences", "unresolved": unresolved}
 
-    # Found live 2026-09-18 building Stage 4 (checklist §3 rule 3, subgroup-wide slants with
-    # `strong: null` on the observation but a real strong per occurrence): using the OUTER
-    # `strong` here (as before) would collapse every occurrence's ref to (None, verse), and
-    # `_insert_node` below would then write ib_node.strong=NULL for every occurrence regardless of
-    # which member strong it actually belongs to -- silently losing exactly the per-occurrence
-    # strong attribution the whole point of a subgroup-wide observation depends on. Harmless for
-    # Stages 1-3 (their occurrences never set their own "strong", so occ_strong == strong always,
-    # identical behaviour to before).
+    # each occurrence keeps its own strong (subgroup-wide observations have strong=None)
     new_refs = {(occ_strong, o["verse_reference"]) for occ_strong, o in resolved_occurrences}
 
-    # #1824 v10, Fix 1: per-occurrence questions get their candidate pool narrowed to this exact
-    # occurrence BEFORE any matching runs (computed from new_refs, just moved up so it's available
-    # here) -- word-level questions are unaffected (occurrence_refs is simply unused for them).
+    # per-occurrence questions get their pool narrowed to this exact occurrence first
     candidates = _existing_candidates(conn, effective_cluster_code, stage, strong, question_code,
                                       occurrence_refs=new_refs)
 
@@ -560,32 +399,10 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     traced = None
 
     if _is_per_occurrence_question(question_code):
-        # #1824 v10/v11 Fix 2 (M0.7, exact verse+strong identity) and #1832 v2, 2026-09-22
-        # correction (M0.6.5/M0.6.6/D7.7.1, verse+question identity, no strong): identity for
-        # EVERY per-occurrence question is now structural, not a keyword/similarity judgement
-        # call. `_existing_candidates` already scopes the pool correctly per question type (exact
-        # occurrence for M0.7; verse-only, any strong/cluster for the other three) -- given that
-        # pool, "2+ existing rows" can ONLY mean legacy duplication of the identical fact, by
-        # construction (M0.7: same word, same verse, same question, nothing else it could be;
-        # M0.6.5/M0.6.6/D7.7.1: these are architecturally single-fact-per-verse questions -- one
-        # operation word, one whole-network composition, one progressive relational synthesis --
-        # so multiple strongs asking the same question about the same verse are describing the
-        # SAME fact, not independently-different ones). #1832's first attempt used keyword/
-        # similarity scoring here instead and failed live testing: `meaning_keywords` is freely
-        # LLM-generated text, not a stable identity key -- two independent calls describing the
-        # identical fact produced disjoint keyword sets (confirmed: 2Cor.8.7/D7.7.1, zero overlap
-        # between "corinthians-initiate/excel-operation/object-of-increase" and "Corinthians-
-        # excel/self-directed-growth" for the SAME underlying finding), so a rerun added a new
-        # unmerged duplicate instead of clearing anything -- 0 rows withdrawn on a 5-verse live
-        # test. Escalation #1834. Count-based matching sidesteps the unstable-keyword problem
-        # entirely: no text judgement needed when the pool itself already guarantees "same fact."
-        #
-        # NOTE: word-level (M0.1/M0.5) questions do NOT belong in this branch, even briefly (an
-        # earlier pass this same session put them here, caught and reverted before shipping) --
-        # their candidate pool (exact strong+question_code, any VERSE) does NOT guarantee "2+ rows
-        # = same fact" the way the exact-occurrence pools above do: two independently span-grounded
-        # answers for the same term CAN legitimately differ by occurrence (researcher, 2026-09-23).
-        # See the `_is_word_level_question` branch below for their own exact-text-match logic.
+        # Identity is structural: the pool is already scoped to the occurrence (M0.7 family) or the
+        # verse (M0.6.5/M0.6.6/D7.7.1, single-fact-per-verse), so 2+ rows can only be duplicates of the
+        # same fact. Keyword/similarity scoring is not used: meaning_keywords is free LLM text, not a
+        # stable identity key (#1834). Word-level questions do not belong here (see below).
         if not candidates:
             observation_id = _insert_observation(
                 conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
@@ -600,11 +417,8 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
             observation_id = best["id"]
             action = "aligned-superficial-edit"
         else:
-            # Legacy duplication (multiple existing rows for the SAME occurrence+question, from
-            # before Fix 1 existed) -- only discovered and only cleaned up because a real fresh
-            # answer just arrived for this exact occurrence (design doc §3, governing principle:
-            # no offline consolidation, ever). Canonical = most existing citations (richest),
-            # earliest created_at as the deterministic tie-break.
+            # legacy duplication, cleaned up only when a fresh answer for this occurrence arrives (no
+            # offline consolidation). Canonical = most citations, earliest created_at as tie-break.
             ranked = sorted(
                 candidates,
                 key=lambda c: (-len(_existing_node_refs(conn, c["id"])), c["created_at"]))
@@ -616,25 +430,13 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
             _consolidate_duplicates(conn, canonical["id"], duplicate_ids)
             observation_id = canonical["id"]
             action = "aligned-superficial-edit-consolidated"
-        # No similarity score applies here -- identity came from Fix 1's exact-occurrence
-        # scoping, not a keyword/similarity comparison. `best`/`best_score` stay None so the
-        # return below reports similarity_score=None for every per-occurrence action, honestly.
+        # identity came from scoping, not similarity, so no score is reported
         best = None
         best_score = None
     elif _is_word_level_question(question_code):
-        # 2026-09-23, researcher correction (escalation #1849 follow-on, verbatim): "Every word
-        # observation answer must be at span (word in verse context) level. Saying that you can
-        # resolve the observation question without looking at the verse/span/morph means it is a
-        # generic answer." Generation for these questions now happens per occurrence (the
-        # front-loading skip that used to prevent this is retired -- see versereadinggenerate.py),
-        # so two candidates in this pool are NOT guaranteed to be the same fact the way the
-        # exact-occurrence families above are: a genuinely different occurrence of the same term
-        # may show a genuinely different aspect. Identity here is EXACT TEXT MATCH ONLY, never
-        # assumed sameness by count -- deliberately the stricter, more conservative choice given
-        # this exact codebase's own lesson (escalation #1834) that fuzzy/keyword matching on
-        # freely-generated text is unreliable: an exact match is genuine independently-grounded
-        # convergence (share it, add this occurrence's node); anything else is kept as its own
-        # distinct observation, never force-merged on the assumption it "must really be the same."
+        # each word-level answer is grounded in its own occurrence (#1849), so two candidates are not
+        # assumed to be the same fact: an exact text match shares the observation; anything else is its
+        # own distinct observation.
         exact = next((c for c in candidates if c["obs_text"] == obs_text), None)
         if exact is not None:
             observation_id = exact["id"]
@@ -648,11 +450,7 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
         best = None
         best_score = None
     else:
-        # Every other question type (char-reading/char-answers free-form synthesis, science
-        # questions, anything with no dedicated identity rule above): unchanged from before --
-        # cluster-wide candidate pool, keyword/similarity matching decides update-vs-new exactly
-        # as it did prior to #1824 v10. NOT used by word-level (M0.1/M0.5) any more -- see the
-        # dedicated branch above.
+        # every other question type: cluster-wide pool, keyword/similarity decides update-vs-new
         new_forms = {(o["surface"], o["morph_code"]) for _, o in resolved_occurrences}
         best = None
         best_score = 0.0
@@ -665,10 +463,7 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
                 best, best_score = cand, score
 
         if best is not None and best_score >= similarity_threshold:
-            # Researcher instruction, 2026-09-20 (escalation #1782): editing an existing
-            # observation's text invalidates whatever review state it had (e.g. resolved) --
-            # reset to 'draft' so it is re-reviewed, same as a brand-new observation, rather than
-            # silently keeping a stale status against changed content.
+            # edited text resets the review status to 'draft' (#1782)
             _assert_valid_ib_status(conn, "draft")
             conn.execute("UPDATE ib_observation SET obs_text=?, status=?, updated_at=? WHERE id=?",
                         (obs_text, "draft", _now(), best["id"]))
@@ -690,17 +485,8 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
 
     _REUSES_OBSERVATION_ID = ("aligned-superficial-edit", "aligned-superficial-edit-consolidated")
     existing_refs = _existing_node_refs(conn, observation_id) if action in _REUSES_OBSERVATION_ID else set()
-    # seq must continue from this observation_id's own current max, not restart at 0 -- UNIQUE
-    # (observation_id, seq) fails otherwise the moment a LATER batch/call appends a new occurrence
-    # to an observation an EARLIER batch/call already wrote nodes against (the "aligned-superficial-
-    # edit" path, the only one that reuses an existing observation_id rather than inserting a fresh
-    # one). Found live 2026-09-18: M49's Stage 1 run hit this on its first real multi-batch verse-
-    # reading pass. Queried fresh each call (not cached) so it sees writes from this same
-    # transaction too, same "resolve fresh, never trust a stale count" discipline this module
-    # already applies to strong/verse resolution. The "-consolidated" variant (#1824 v10/v11)
-    # reuses observation_id the same way -- `_consolidate_duplicates` already re-pointed the
-    # duplicates' own nodes onto it before this line runs, so MAX(seq) here already accounts for
-    # them.
+    # seq continues from this observation's current max (UNIQUE (observation_id, seq)); queried fresh,
+    # so it sees this transaction's own writes and nodes re-pointed by _consolidate_duplicates
     if action in _REUSES_OBSERVATION_ID:
         seq = conn.execute(
             "SELECT COALESCE(MAX(seq), 0) FROM ib_node WHERE observation_id=?",
@@ -713,15 +499,8 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
         if ref in existing_refs:
             continue
         seq += 1
-        # `cluster_code` (the PASS's own), not `effective_cluster_code` -- found live 2026-09-23
-        # (escalation #1860 split's own first real live-LLM test, the first end-to-end exercise of
-        # the #1852/#1853 word-level-cluster-agnostic rework against real model output):
-        # `effective_cluster_code` is None for word-level questions (correct for ib_observation's
-        # OWNERSHIP semantics -- these are strong-only shared facts), but ib_node.cluster_code is
-        # NOT NULL and means something different -- which cluster's PASS actually cited/produced
-        # this occurrence, a real value regardless of whether the observation itself is shared.
-        # Using effective_cluster_code here crashed every word-level write with "NOT NULL
-        # constraint failed: ib_node.cluster_code" the moment a real M0.1/M0.5 answer arrived.
+        # ib_node.cluster_code is the PASS that cited the occurrence (NOT NULL), not the observation's
+        # effective_cluster_code, which is None for word-level questions
         node_id = _insert_node(
             conn, observation_id, cluster_code, occ_strong, o["verse_reference"],
             o["surface"], o["morph_code"], question_code, stage, seq, traced_observation_id=traced,
@@ -737,19 +516,11 @@ def record_batch(conn, cluster_code: str, stage: str, model_output: dict,
                  source_json_serial: int | None = None, subgroup_id: int | None = None,
                  subgroup_code: str | None = None,
                  similarity_threshold: float = SIMILARITY_THRESHOLD) -> dict:
-    """Every observation in one model reply, in the same unit of work (checklist rule 0.3: assemble
-    -> run -> record fires immediately after, never a deferred batch pickup). Caller commits.
+    """Every observation in one model reply, in the same unit of work. Caller commits.
 
-    `unresolved_detail` carries the actual reason strings, not just a count (found live 2026-09-17,
-    twice -- BUILD.md #274 first flagged this as a gap for Stage 1, then it directly cost real
-    diagnostic ability redoing Stage 2's M67 run: a whole observation's citation failure was
-    reported only as a bare number, with no way afterward to tell whether it was a real defect or
-    an ordinary LLM verse-citation slip, short of a fresh, non-reproducible, real-money re-call).
-    Every caller should log/persist this, not just the count.
-
-    `subgroup_id`/`subgroup_code`: pass the caller's own known subgroup for a per-subgroup stage
-    (Stage 3/4) -- see `record_one_observation`'s own docstring. Omitted (None) for stages not
-    scoped to one subgroup (verse-reading, char-subgroup), which is the correct value for them."""
+    `unresolved_detail` carries the reason strings, not just a count; callers should log them.
+    `subgroup_id`/`subgroup_code`: see `record_one_observation`; None for stages not scoped to one
+    subgroup."""
     results = [record_one_observation(conn, cluster_code, stage, obs, source_json_serial,
                                       subgroup_id, subgroup_code, similarity_threshold)
               for obs in model_output.get("observations", [])]
