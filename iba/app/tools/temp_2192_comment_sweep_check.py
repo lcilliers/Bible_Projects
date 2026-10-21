@@ -100,6 +100,30 @@ def blocks(path: str) -> int:
     return 0
 
 
+def hits(paths: list[str]) -> int:
+    """Only the comment runs / docstrings that contain a marker line, per file."""
+    for path in paths:
+        src = (ROOT / path).read_text(encoding="utf8")
+        raw = src.split("\n")
+        groups, last = [], None
+        for n, line in doc_lines(src):
+            if last is not None and n == last + 1:
+                groups[-1].append((n, line))
+            else:
+                groups.append([(n, line)])
+            last = n
+        shown = [g for g in groups if any(MARK.search(l) for _, l in g)]
+        if shown:
+            print(f"######## {path}")
+        for g in shown:
+            for n, line in g:
+                trailing = line.startswith("#") and not raw[n - 1].lstrip().startswith("#")
+                print(f"{n}{' T' if trailing else ''}: {line}")
+            print("--")
+    return 0
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
-    sys.exit(check() if cmd == "check" else count() if cmd == "count" else blocks(sys.argv[2]))
+    sys.exit(check() if cmd == "check" else count() if cmd == "count"
+             else hits(sys.argv[2:]) if cmd == "hits" else blocks(sys.argv[2]))
