@@ -1,40 +1,20 @@
 """Passage handler — register the debate's own input scope as the passage. Config-governed.
 
-**Redefined 2026-08-06 (researcher direction, following the HIB-distribution visualization across
-Dan 8 / Jonah 1 / Hos 1 / Mic 1).** Passaging is about the capacity to digest a scope, not about
-finding a narrative structure within it — across all four sampled chapters, no natural sub-chapter
-break existed: every HIB's phenomena related to another HIB's, on equal footing with a single HIB's
-own movement across verses. The HIB-continuity run-forming algorithm (2026-08-05, B4) is RETIRED
-in this pass, not just its parameters tuned — it was still trying to derive a narratively-meaningful
-boundary from HIB co-presence, and the visualization showed that doesn't correspond to anything
-real at the scale this study reads at (a single chapter, occasionally a short run of them).
+**Rule.** A passage IS the debate's input scope (`-Chapters`/`-Range`), registered verbatim, never
+algorithmically sub-divided: passaging is about the capacity to digest a scope, not a narrative
+structure within it. The payload carries the analyst's reading of the whole scope in light of the
+HIBs already identified (`verse_hib`): a high-level story (`story_summary`) and a self-assessment of
+whether the scope can be read as a whole without quality loss (`feasible`/`feasibility_note`). If
+not, the step refuses (`scope-too-complex`), writes no row, and tells the operator to narrow the
+scope. This handler validates, grant-checks and commits the decision.
 
-**New rule.** A passage IS the debate's own input scope (`-Chapters`/`-Range`) — registered
-verbatim, never algorithmically sub-divided. This step's real job: read the whole scope in light of
-the HIBs already identified (`verse_hib`, Step 1), synthesise a high-level story (`story_summary`),
-and self-assess whether the scope can actually be read as a whole without quality loss
-(`feasible`/`feasibility_note`). Refuses outright (`scope-too-complex`) if not — no passage row is
-written, and the failure message tells the operator to narrow the scope and resubmit, rather than
-silently sub-dividing it. Like `hib.set`/`phenomenon.set`/`operation.set`, this judgement is the
-analyst's own, already made before calling this step — the payload carries the decision, this
-handler validates, grant-checks, and commits it.
+**Reconciliation, single item.** One row per exact scope. If a live passage exists for this scope,
+`story_summary`/`feasibility_note` are compared: identical is a no-op; different needs a
+`reconciliation_note` (else `unreconciled`) and the row is updated in place -- same `id`,
+`verse_passage` untouched -- so a correction never orphans a `phenomenon`/`operation`.
 
-**Reconciliation, single-item shape.** Because a passage is now exactly one row per exact scope,
-there is nothing to derive or rebuild. If a live passage already exists for this precise scope, its
-`story_summary`/`feasibility_note` are compared to the incoming payload: identical is a no-op,
-different requires a `reconciliation_note` (else `unreconciled`), and the row is updated IN PLACE —
-same `id`, `verse_passage` rows untouched (verse coverage can't change for an identical scope), so a
-story correction can never orphan a `phenomenon`/`operation` the way a boundary change could under
-the old algorithm.
-
-**Legacy transition, unchanged in spirit.** A live legacy (`rule IS NULL`, pre-B4) row matching the
-EXACT same scope is soft-deleted on the one-time transition — "we are not reconciling the old with
-the new." A legacy row for a different scope is simply left alone.
-
-**Retired in this same pass** (BUILD.md): the whole run-forming loop; `passage.min_shared_hibs`,
-`passage.cross_chapter`, `passage.default_rule` (no algorithm left to configure); `passage.
-review_over`'s auto-flagging (the feasibility self-assessment now does this job, as a real reading
-judgement rather than a verse-count threshold) — all deactivated via `configmaint.propose`.
+**Legacy rows.** A live legacy row (`rule IS NULL`) for the exact same scope is soft-deleted on the
+one-time transition; a legacy row for another scope is left alone.
 """
 
 from __future__ import annotations
@@ -68,8 +48,8 @@ def _resolve_range(ctx: Ctx):
 
 
 class BadPayload(Exception):
-    """PayloadPath missing/unreadable, not valid JSON, or missing a required key — always caught
-    and turned into a clean fail(), never left to crash the run with a raw traceback."""
+    """PayloadPath missing/unreadable, not valid JSON, or missing a required key -- turned into a
+    clean fail(), never a raw traceback."""
 
 
 def _load_payload(ctx: Ctx) -> dict:
@@ -140,18 +120,9 @@ def build(ctx: Ctx) -> Outcome:
     existing = passagetrack.find_tracked_passage(ctx.db.conn, book, lo, hi, vlo, vhi)
     now = _now()
 
-    # A verse belongs to at most one live passage (verse_passage.verse_id is DB-unique) -- found
-    # live, 2026-08-06: a scope that only PARTIALLY overlaps a wider existing passage (rather than
-    # matching it exactly) was neither caught by the exact-match check above nor by anything else,
-    # and crashed the write outright on the UNIQUE constraint, mid-transaction (the crash itself
-    # then exposed a second bug, in run.py's own crash handler -- see that file). Checked
-    # explicitly here, before any write is attempted: every OTHER live passage (not `existing`
-    # itself, which the exact-match branch above already handles) that owns any verse in this
-    # scope. Legacy (`rule IS NULL`) overlaps are superseded wholesale, same "not reconciling old
-    # with new" rule as an exact-match legacy row -- the WHOLE legacy passage is retired, not just
-    # the overlapping verses, since partial-splitting historical data isn't worth the complexity.
-    # A new-model (`rule IS NOT NULL`) overlap with a genuinely DIFFERENT scope is a real conflict
-    # between two operator-chosen scopes and is refused outright, not auto-resolved.
+    # A verse belongs to at most one live passage (verse_passage.verse_id is unique), so a scope that
+    # partly overlaps another live passage is checked before any write: a legacy overlapping passage
+    # is retired whole; a new-model passage with a different scope is a conflict and refused.
     ph2 = ",".join("?" * len(verse_ids))
     overlaps = ctx.db.rows(
         f"SELECT DISTINCT p.id, p.ref, p.rule FROM passage p JOIN verse_passage vp "
@@ -165,9 +136,8 @@ def build(ctx: Ctx) -> Outcome:
                     f"with a different scope: {refs} -- pick a non-overlapping scope, or address "
                     f"the existing one(s) first")
     def _retire_legacy_passage(row_id: int, ref_hint: str) -> None:
-        """Full soft-delete of a legacy passage + its verse_passage children -- the "not
-        reconciling old with new" transition, real CRUD delete (not a correction), logged per row
-        for the same traceability every other debate writer now carries (2026-08-08)."""
+        """Full soft-delete of a legacy passage + its verse_passage children (the legacy transition),
+        logged per row."""
         live_vp = ctx.db.rows(
             "SELECT id, verse_id, is_anchor FROM verse_passage WHERE deleted=0 AND passage_id=?",
             (row_id,))
@@ -185,8 +155,7 @@ def build(ctx: Ctx) -> Outcome:
         _retire_legacy_passage(r["id"], r["ref"])
 
     if existing and existing["rule"] is None:
-        # legacy (pre-B4) row, exact-scope match -- one-time transition, unconditional, not
-        # reconciled, matching every other legacy-row transition in this pipeline.
+        # legacy row, exact-scope match: one-time transition, unconditional, not reconciled
         _retire_legacy_passage(existing["id"], existing["ref"])
         existing = None
 
@@ -235,18 +204,11 @@ def build(ctx: Ctx) -> Outcome:
 
 
 # ── validate (standalone, on-demand) ──────────────────────────────────────────
-# review_over already catches passages that are too LONG; nothing catches the opposite —
-# the 1.56-verses/passage average found earlier, and passage.cross_chapter being pure
-# documentation (handlers never read it — see configmaint's orphan check). This does NOT invent
-# a fragmentation threshold — the passage rule itself is still pending the researcher's own
-# confirmation (raised earlier this session) — it reports the real distribution and lets the
-# researcher decide, same shape as candidate.validate: one escalation per invocation, standalone,
-# not tied to every build-passages run.
+# Reports the live verse_count distribution and escalates when a book breaches cfg_passage's
+# thresholds. One escalation per invocation, not tied to every build-passages run.
 def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: list, by_book: list,
                           scope_sql: str, scope_args: tuple) -> pathlib.Path:
-    """Persist the current distribution — per the researcher's 2026-07-21 ruling that a quality
-    check's output must persist to a report file like every other report in the app, not live
-    only in a terminal print + an escalation row."""
+    """Persist the current distribution to the report file (governance.reports_must_persist)."""
     path = pathlib.Path(ctx.cfg.required_module_setting("cfg_passage", "passage.quality_report_path"))
     intro = [
         f"> Generated {_now()} by `passage.validate`. Read-only findings, not a gate.", "",
@@ -261,14 +223,7 @@ def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: l
                   + [f"| {r['book']} | {r['n']} | {r['avg']:.2f} | {r['single']} |" for r in by_book],
     }
     L = reportkit.render_scaffold(ctx.db.conn, "passage.validate", sections, intro=intro)
-    # Found 2026-07-30 (researcher: "it seems to include deleted items"): `write_csv_pairing`'s
-    # default is a verbatim FULL-table dump (no `deleted` filter at all — appropriate for a cfg_*
-    # audit trail, wrong here) — for `passage`/`verse_passage` that meant the CSV export sat right
-    # next to a report saying "24 passages" while containing all 18,528/25,244 rows, 99%+ of them
-    # soft-deleted by the 2026-07-26 passage-system retirement (`retract_passage_system.py`).
-    # Harmless before that retirement (the whole table WAS the live data); wrong now that most of
-    # it is historical. Pass the same deleted=0 rows the report itself computed from, via
-    # `row_filter`, exactly the mechanism `write_csv_pairing` already has for this.
+    # the CSV pairing gets the same deleted=0 rows the report used (row_filter), not a full-table dump
     live_passages = ctx.db.rows(f"SELECT * FROM passage WHERE deleted=0{scope_sql}", scope_args)
     live_ids = [r["id"] for r in live_passages]
     ph = ",".join("?" * len(live_ids)) if live_ids else "NULL"
@@ -282,20 +237,10 @@ def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: l
 
 
 def validate(ctx: Ctx) -> Outcome:
-    """Corpus-wide by default (no `-Book`) — the original 2026-07-21 check on the raw
-    char-continuity distribution. With `-Book`, scoped to one book — reactivated 2026-07-28
-    (`reactivate_passage_quality.py`) for a second, distinct purpose the original check predates:
-    a spot-check on the debate-range sizes `report.passage_debate` produced for a completed book
-    (e.g. Dan 11's 45-verse range — was that the right call?), not on raw span fragmentation. Both
-    purposes share one query/report/escalation shape since both are ultimately "look at the live
-    verse_count distribution and judge it" — scoping is the only difference that matters.
-
-    escalation #798/#799 SS3.5: used to `escalate()` unconditionally on every run, no threshold
-    at all -- "iterative design, ask every time" (researcher, 2026-08-22). Now checks each book's
-    distribution against `cfg_passage.passage.max_single_verse_pct`/
-    `passage.max_avg_verses_per_passage` and only escalates if at least one book actually breaches
-    a bound; an already-in-bounds distribution is accepted automatically, same shape as
-    `cluster.validate`/`lexicon.validate`."""
+    """Corpus-wide by default (no `-Book`); with `-Book`, scoped to one book (e.g. a spot-check of
+    the debate-range sizes `report.passage_debate` produced). Checks each book's distribution against
+    `cfg_passage` `passage.max_single_verse_pct` / `passage.max_avg_verses_per_passage` and escalates
+    only if a book breaches a bound."""
     book = ctx.params.get("Book")
     scope_sql = " AND book=?" if book else ""
     scope_args = (book,) if book else ()
@@ -319,9 +264,8 @@ def validate(ctx: Ctx) -> Outcome:
     report_path = _write_quality_report(ctx, total, avg, single, dist, by_book,
                                         scope_sql, scope_args)
 
-    # per-book breach check against cfg_passage's thresholds -- the book's own TOTAL verse count
-    # (from `verse`, via osisId's book prefix) is the single-verse-pct denominator, not the book's
-    # passage count.
+    # per-book breach check: the single-verse-pct denominator is the book's total verse count (from
+    # `verse`, via the osisId book prefix), not its passage count
     verse_book_filter = " AND SUBSTR(osisId, 1, INSTR(osisId, '.') - 1) = ?" if book else ""
     verse_totals = {r["book"]: r["n"] for r in ctx.db.rows(
         f"SELECT SUBSTR(osisId, 1, INSTR(osisId, '.') - 1) book, COUNT(*) n FROM verse "
@@ -351,8 +295,7 @@ def validate(ctx: Ctx) -> Outcome:
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision = answered["next_action"]
-        # escalation #798/#799 SS4: decision_required now resolves via Update()'s manual
-        # vocabulary (approved) not AnswerRun's dispatcher vocabulary (approve).
+        # decision_required resolves via Update's vocabulary (approved)
         if decision in ("approve", "approved"):
             return ok(f"acknowledged: {total} passages {scope_label}, {min_vc}-{max_vc} "
                       f"verses/passage (avg {avg:.2f}), {single} ({100*single/total:.0f}%) "
@@ -385,16 +328,11 @@ def validate(ctx: Ctx) -> Outcome:
 
 
 # ── debate_sync (standalone, on-demand) ───────────────────────────────────────
-# The missing half of the report.passage_debate lifecycle (GOVERNANCE.md §3B, 2026-07-30):
-# write_scaffold() writes the file and passagetrack.record_debate() records its tracked status,
-# but that only ever runs once, immediately after the scaffold is written — at that instant the
-# file always still holds the fill-in placeholder, so the tracked status can only ever come out
-# 'scaffold' from that call. Nothing previously re-checked status after the researcher/AI filled
-# the file in by hand. This step closes that gap: read-only against the debate file (it does NOT
-# regenerate or rewrite it — rerunning report.passage_debate on an already-filled range would
-# silently overwrite real content with a blank scaffold and flip status back to 'scaffold',
-# exactly the corruption BUILD.md's report.passage_debate entry already warns against), DB-write
-# only to the tracked `passage` row via the existing, already-tested `passagetrack.record_debate`.
+# Re-checks a debate file's tracked status after it is filled in by hand: write_scaffold() records
+# it only once, when the file still holds the placeholder. Read-only against the debate file (it
+# never regenerates it: re-running report.passage_debate on a filled range would overwrite real
+# content with a blank scaffold); writes only the tracked `passage` row via
+# `passagetrack.record_debate`.
 def debate_sync(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
     book_label = ctx.params.get("BookLabel")
@@ -426,20 +364,12 @@ def debate_sync(ctx: Ctx) -> Outcome:
 
 
 # ── passage.suggest_boundary ──────────────────────────────────────────────────────────────────
-# Escalation #1383, build spec §C.3/§B.12. Read-only, no table write (cfg_write_grant has no row
-# for this step) — proposes a candidate NEXT passage boundary from cheap mechanical proxy signals
-# only (narrative_morph density, the legacy bible_research.db.verse.genre book-level tag, a
-# chapter-boundary stop) — explicitly NOT the real genre determination
-# (`proxy-signals-not-genre-determination`), which still happens as lexical.enrich's own first
-# move once the passage is confirmed. Human-confirmation gate: this only ever proposes; the
-# researcher confirms/adjusts, `passage.build` (unchanged) still does the actual registration
-# (`human-confirmation-gate`).
-#
-# **First-cut heuristic, not yet tuned against real data** (named plainly, not overclaimed): the
-# "coherence" test below is a simple binary — does this verse's own narrative_morph density sit on
-# the same side of a >0/=0 split as the block's first verse? A real threshold/banding scheme would
-# need tuning against a real corpus sample, which is exactly the kind of thing this build's own
-# standing constraint defers to a fresh, separate testing session, not decided here.
+# Read-only, no table write (#1383). Proposes a candidate next passage boundary from cheap proxy
+# signals only (narrative_morph density, the legacy bible_research.db.verse.genre book-level tag, a
+# chapter-boundary stop) -- not the genre determination itself (proxy-signals-not-genre-
+# determination). It only proposes; the researcher confirms, and `passage.build` registers
+# (human-confirmation-gate). The coherence test is a simple binary: is this verse's narrative_morph
+# density on the same side of a >0/=0 split as the block's first verse.
 def _research_db_path(iba_conn) -> str:
     import json as _json
     row = iba_conn.execute(
@@ -452,11 +382,9 @@ def _research_db_path(iba_conn) -> str:
 
 
 def _legacy_genre_tag(ctx: Ctx, osis: str) -> str | None:
-    """Cross-database read (governance.scope_iba_db: iba.db owns process control, but the legacy
-    coarse genre tag itself still lives in bible_research.db.verse — same cross-db read pattern
-    `cataloguewrite.py`/`prosestore.py` already established). Best-effort: returns None (never
-    raises) if the legacy DB/table/row isn't reachable — a proxy signal going missing narrows the
-    proposal's own signal_summary, it never blocks the suggestion."""
+    """Cross-database read: the legacy coarse genre tag lives in bible_research.db.verse. Returns None
+    (never raises) if the legacy DB/table/row isn't reachable; a missing signal narrows the
+    proposal's signal_summary, it never blocks it."""
     import sqlite3 as _sqlite3
     try:
         path = _research_db_path(ctx.db.conn)
@@ -472,10 +400,8 @@ def _legacy_genre_tag(ctx: Ctx, osis: str) -> str | None:
 
 
 def _parse_chapter_verse(osis: str, book: str) -> tuple[int, int] | None:
-    """`verse` has no chapter/verse COLUMNS (checked live, escalation #1450 — a real bug in an
-    earlier draft of this handler queried them as columns and crashed) — every other reader in
-    this app (`versespanmeaningreport.fetch_verses`) derives them by parsing `osisId` instead;
-    mirrored here rather than querying columns that don't exist."""
+    """`verse` has no chapter/verse columns: derived by parsing `osisId`, as
+    `versespanmeaningreport.fetch_verses` does."""
     parts = (osis or "").split(".")
     if len(parts) != 3 or parts[0] != book or not parts[1].isdigit() or not parts[2].isdigit():
         return None

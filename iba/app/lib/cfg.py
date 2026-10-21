@@ -26,11 +26,8 @@ _VERSION_TABLES = (
     "cfg_write_grant", "cfg_work_package", "cfg_step", "cfg_setting", "cfg_on_fail",
     "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule", "cfg_utility", "cfg_trigger",
 )
-# NOTE (2026-08-07): several cfg_* tables added after this list was written (cfg_quality_check,
-# cfg_method_rule, cfg_report*, cfg_change_detail) are NOT in this list either — an existing,
-# unresolved gap noted here rather than silently fixed as a side effect of the schema-remediation
-# work this session; widening _VERSION_TABLES policy is a separate decision from adding cfg_index,
-# which belongs here on its own terms (it drives DDL exactly like cfg_column/cfg_unique already do).
+# Several later cfg_* tables (cfg_quality_check, cfg_method_rule, cfg_report*) are not in this list;
+# whether to widen it is an open decision.
 
 DB_PATH = pathlib.Path(__file__).resolve().parent.parent / "db" / "iba.db"
 TRACE = os.environ.get("IBA_TRACE") == "1"
@@ -43,9 +40,8 @@ def _trace(what: str, value) -> None:
 
 
 class NonCompliantUtility(RuntimeError):
-    """Raised by `Cfg.assert_utility_compliant()` — the module has a live `cfg_utility` row
-    flagging hardcoded values that should be `cfg_setting`-driven (escalation #648), so it must
-    not run as-is."""
+    """Raised by `Cfg.assert_utility_compliant()`: the module's `cfg_utility` row flags hardcoded
+    values that should be `cfg_setting`-driven (#648), so it must not run as-is."""
 
 
 class Cfg:
@@ -64,9 +60,7 @@ class Cfg:
 
     # ── settings (scalar rules) ──────────────────────────────────────────────
     def setting(self, key: str, default=None):
-        # inactive=0 filter added 2026-07-29 (escalation #334) — until this, `inactive` was
-        # validator-only metadata: EVERY reader in this class ignored it, so "retiring" a row
-        # never actually stopped it being read and applied. See BUILD.md sec37/GOVERNANCE.md sec15D.
+        # inactive rows are never read (#334)
         r = self.conn.execute(
             "SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
         val = json.loads(r["value"]) if r else default
@@ -74,19 +68,9 @@ class Cfg:
         return val
 
     def required_setting(self, key: str):
-        """Same lookup as `.setting()`, but NO literal default parameter -- raises if the key is
-        missing or inactive, exactly the discipline `database_path()` already applies to database
-        paths (`no database.{name}.path setting`, no silent fallback). Added 2026-08-29, researcher
-        direct instruction after a full-codebase sweep found 41 of 60 `.setting(key, "literal")`
-        call sites for output locations had a hardcoded literal that had drifted out of sync with
-        the live `cfg_setting` row it was meant to default from -- current runtime behaviour was
-        never actually wrong (`.setting()` always reads the live row first), but the literal was
-        genuinely hardcoded, unverified, and unenforced: nothing ever checked it stayed in sync,
-        and it silently would have taken over the moment the row went missing/inactive. Every call
-        site that resolves a report/output path, or any other value that must be a single live
-        config source of truth (not "config, or else this string"), now uses this instead of
-        `.setting(key, "literal/path")` -- a missing/renamed/deactivated setting fails loudly here,
-        not silently at the last hardcoded value it happened to agree with. See BUILD.md sec209."""
+        """Same lookup as `.setting()`, but with NO default parameter: raises if the key is missing or
+        inactive. Used for report/output paths and any value that must have a single live config source,
+        so a missing, renamed or deactivated setting fails loudly instead of falling back to a literal."""
         r = self.conn.execute(
             "SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
         if r is None:
@@ -99,9 +83,8 @@ class Cfg:
 
     def module_setting(self, table: str, key: str, default=None):
         """Generic reader for a per-module settings table shaped like cfg_setting (key/value/use/
-        inactive) but scoped to one module -- e.g. cfg_passage (escalation #798/#799,
-        governance.module.config). `table` is always a literal name supplied by the calling code,
-        never external input."""
+        inactive), e.g. cfg_passage (governance.module.config). `table` is always a literal from the
+        calling code, never external input."""
         r = self.conn.execute(
             f'SELECT value FROM "{table}" WHERE key=? AND inactive=0', (key,)).fetchone()
         val = json.loads(r["value"]) if r else default
@@ -109,9 +92,8 @@ class Cfg:
         return val
 
     def required_module_setting(self, table: str, key: str):
-        """Same as `.required_setting()`, for a per-module settings table instead of `cfg_setting`
-        -- no literal default parameter, raises if the row is missing/inactive. Companion to
-        `.module_setting()`, added the same round (2026-08-29, no-hardcoded-locations ruling)."""
+        """Same as `.required_setting()`, for a per-module settings table: no default, raises if the row
+        is missing or inactive."""
         r = self.conn.execute(
             f'SELECT value FROM "{table}" WHERE key=? AND inactive=0', (key,)).fetchone()
         if r is None:
@@ -123,18 +105,10 @@ class Cfg:
         return val
 
     def database_path(self, name: str) -> pathlib.Path:
-        """Project-root-relative path to a registered project database, per `cfg_enum
-        'project_database'`/`database.<name>.path` (escalation #723's settings; this method is
-        their real consumer, added escalation #727 after both sat as genuine orphans — nothing
-        read them). `database.<name>.path` is always READ (real `.setting()` usage either way, not
-        skipped for 'iba') — but the RETURN VALUE for `name='iba'` is the already-known `DB_PATH`,
-        not a value re-derived from the setting: bootstrapping the very first connection has to use
-        the hardcoded `DB_PATH` constant (reading it from a row inside the database it locates
-        would be circular, the same class of exception `lib/cfg.py` itself is `config_exempt`
-        for) — but by the time this method runs, that connection already exists, so reading the
-        setting here is a genuine post-bootstrap VERIFICATION (does the configured value still
-        match where the DB actually lives?), not a bootstrap dependency. A mismatch is real drift,
-        surfaced by `init.py`'s startup check, not silently ignored."""
+        """Project-root-relative path to a registered project database (`cfg_enum 'project_database'`,
+        `database.<name>.path`). The setting is always read; for `name='iba'` the return value is the
+        bootstrap `DB_PATH` (reading it from the database it locates would be circular), and a mismatch
+        with the setting is drift that `init.py`'s startup check surfaces."""
         repo_root = DB_PATH.resolve().parent.parent.parent.parent
         rel = self.setting(f"database.{name}.path")
         if rel is None:
@@ -148,13 +122,9 @@ class Cfg:
         return repo_root / rel
 
     # ── the schema (data tables built from here) ─────────────────────────────
-    # `database='iba'` explicit on both queries below — escalation #653 (2026-08-17) widened
-    # cfg_table/cfg_column to describe bible_research.db too (governance.tables/.table_columns:
-    # "applies to all databases"), and the two DBs genuinely share table names (cluster/passage/
-    # verse/word_registry, confirmed live) for DIFFERENT tables. `Cfg` is *"THE ONLY WAY THE APP
-    # READS CONFIG"* for THIS running app's own DB — it must never resolve the other database's
-    # row by accident (lib/db.py:build_data_tables() reads cfg_column and creates data tables from
-    # it; scoping wrong here would try to build bible_research.db's tables inside iba.db).
+# `database='iba'` explicit on both queries: cfg_table/cfg_column also describe bible_research.db,
+# which shares table names for different tables, and lib/db.py:build_data_tables() builds iba.db's
+# tables from cfg_column.
     def tables(self) -> list[str]:
         rows = [r["name"] for r in self.conn.execute(
             "SELECT name FROM cfg_table WHERE database='iba' ORDER BY rowid")]
@@ -172,11 +142,8 @@ class Cfg:
         return {r["name"] for r in self.columns(table)}
 
     def indexes(self, table: str) -> list[tuple[str, list[str]]]:
-        """Secondary (non-unique) indexes to build for this table — [(index_name, [cols])],
-        cols in cfg_index.ordinal order, indexes in name order. `cfg_index` added 2026-08-07
-        (schema-remediation-design-20260807.md): `build_data_tables()` already emitted FK/UNIQUE
-        from config but had no mechanism for plain indexes at all — every FK column app-wide was a
-        full-table-scan join target, invisible only because current row counts are still small."""
+        """Secondary (non-unique) indexes to build for this table -- [(index_name, [cols])], cols in
+        cfg_index.ordinal order, indexes in name order."""
         rows = self.conn.execute(
             "SELECT name, col FROM cfg_index WHERE table_name=? ORDER BY name, ordinal",
             (table,)).fetchall()
@@ -188,10 +155,9 @@ class Cfg:
         return result
 
     def triggers(self, table: str, database: str = "iba") -> list[str]:
-        """The CREATE TRIGGER statements registered for this table, in ordinal then name order.
-        `cfg_trigger` added 2026-10-13 (escalation #2110): a trigger is schema exactly like a
-        column or an index, so `lib/db.py:trigger_ddl()` rebuilds it from config and
-        `cfgquality.find_unregistered_triggers` checks the live databases against it."""
+        """The CREATE TRIGGER statements registered for this table (cfg_trigger, #2110), in ordinal then
+        name order: `lib/db.py:trigger_ddl()` rebuilds them and `cfgquality.find_unregistered_triggers`
+        checks the live databases against them."""
         rows = [r["sql"] for r in self.conn.execute(
             "SELECT sql FROM cfg_trigger WHERE database=? AND table_name=? AND inactive=0 "
             "ORDER BY ordinal, name", (database, table))]
@@ -199,11 +165,8 @@ class Cfg:
         return rows
 
     def unique_key(self, table: str, database: str = "iba") -> list[str]:
-        """The dedup key — the composite UNIQUE, else the single UNIQUE column, else the PK.
-        `database` defaults to 'iba' (matches `may_write()`'s convention) — added escalation
-        #723's supporting infra: all three queries here were missing a database filter entirely,
-        the same shared-table-name ambiguity (`passage` exists in both DBs) `may_write()`/
-        `columns()` were already fixed for, just never applied to this method."""
+        """The dedup key -- the composite UNIQUE, else the single UNIQUE column, else the PK. `database`
+        defaults to 'iba' (table names are shared across the two databases)."""
         comp = [r["col"] for r in self.conn.execute(
             "SELECT col FROM cfg_unique WHERE database=? AND table_name=? ORDER BY ordinal",
             (database, table))]
@@ -239,19 +202,11 @@ class Cfg:
         return r["route"]
 
     def assert_utility_compliant(self, file_path: str) -> None:
-        """Raises `NonCompliantUtility` if `file_path`'s own `cfg_utility` row is flagged
-        non-compliant (`purpose` prefixed `'NON-COMPLIANT (escalation #648'`) — the enforcement
-        half of the researcher's 2026-08-17 instruction: a script with known hardcoded-config
-        violations, put back into use, must signal that it needs revision (move the flagged
-        values to `cfg_setting`) before running, not run silently as before. Called by a module's
-        own entry point (its real caller — a handler dispatched via `run.py` — is the only place
-        this can be checked in code); a caller passes its own `file_path` (typically `__file__`
-        made project-relative). Deliberately narrow: only the ~2 of 105 flagged files that are
-        importable library modules with a real dispatcher-reachable caller can be checked this
-        way — the other ~103 are standalone scripts invoked directly (`python scripts/foo.py`),
-        with no code-level checkpoint to hook into at all; enforcement for those is process
-        discipline (check `cfg_utility` before running one), not something code can gate. See
-        `governance.noncompliant_script_gate` for the full policy text."""
+        """Raises `NonCompliantUtility` if `file_path`'s `cfg_utility` row is flagged non-compliant
+        (`purpose` prefixed `'NON-COMPLIANT (escalation #648'`): a script with known hardcoded-config
+        violations must be revised before it runs. Called by a module's own entry point with its own
+        project-relative `file_path`. Only importable modules with a dispatcher-reachable caller can be
+        gated this way; for standalone scripts it is process discipline (governance.noncompliant_script_gate)."""
         row = self.conn.execute(
             "SELECT purpose FROM cfg_utility WHERE file_path=?", (file_path,)).fetchone()
         if row and row["purpose"] and row["purpose"].startswith("NON-COMPLIANT (escalation #648"):
@@ -261,10 +216,8 @@ class Cfg:
                 f"or iba/app/reports/hardcoded-constants-sweep-20260817.md, for what needs to move.")
 
     def may_write(self, writer: str, database: str = "iba") -> set[str]:
-        """Which tables this writer (an api, a step, or 'run') is granted to write.
-        `database='iba'` default — escalation #680 widened cfg_write_grant to differentiate
-        iba.db from bible_research.db (they share table names for different tables); every
-        current call site writes to iba.db only, so the default keeps them all unchanged."""
+        """Which tables this writer (an api, a step, or 'run') is granted to write. `database` defaults
+        to 'iba' (the two databases share table names)."""
         rows = {r["table_name"] for r in self.conn.execute(
             "SELECT table_name FROM cfg_write_grant WHERE writer=? AND database=? AND inactive=0",
             (writer, database))}
@@ -287,21 +240,16 @@ class Cfg:
         return r
 
     def is_chained(self, work_package: str) -> bool:
-        """True if every step of this work package runs under one run_id in one PS invocation
-        (so 'done' should wait for the last step); False if each step is invoked independently
-        (so 'done' should fire on that step's own first ok/report-continue/self-heal). See
-        cfg_work_package.chained, migration/add_work_package_chained_column.py. Not filtered by
-        inactive here — by the time this is called, `run.py`'s own dispatch gate has already
-        refused an inactive package/step outright; this only ever runs for an active one."""
+        """True if every step of this work package runs under one run_id in one PS invocation ('done'
+        waits for the last step); False if each step runs independently ('done' fires on that step's own
+        continue path). cfg_work_package.chained. Only called for an active package (run.py's gate)."""
         r = self.conn.execute("SELECT chained FROM cfg_work_package WHERE name=?",
                               (work_package,)).fetchone()
         return bool(r["chained"]) if r else True   # default chained=True: the old, safer behaviour
 
     def work_package_inactive(self, work_package: str) -> bool:
-        """True if `work_package` has a `cfg_work_package` row and it is `inactive=1`, OR it has no
-        row at all (an unknown package is never dispatchable either). Used by `run.py`'s dispatch
-        gate (escalation #334) — checked explicitly, before anything else happens, not inferred
-        from `step()`/`sequence()` silently returning nothing."""
+        """True if `work_package` has an inactive `cfg_work_package` row, or no row at all. Used by
+        `run.py`'s dispatch gate (#334)."""
         r = self.conn.execute("SELECT inactive FROM cfg_work_package WHERE name=?",
                               (work_package,)).fetchone()
         return True if r is None else bool(r["inactive"])
@@ -314,11 +262,8 @@ class Cfg:
         return True if r is None else bool(r["inactive"])
 
     def step_kind(self, work_package: str, step: str) -> str | None:
-        """`cfg_step.kind` (`'operations'` | `'utility'`) for `(work_package, step)`, or `None` if
-        unset/unknown. Added 2026-07-30 — the researcher's operations/utility classification
-        (`migration/bootstrap_step_kind.py`). Used by `run.py`'s dispatch gate: a step with no kind
-        is refused the same way an inactive one already is — "routines not in the table[s] need
-        special permission [a `configmaint.propose` classification] to be used.\""""
+        """`cfg_step.kind` (`'operations'` | `'utility'`) for `(work_package, step)`, or `None` if unset.
+        `run.py` refuses a step with no kind."""
         r = self.conn.execute("SELECT kind FROM cfg_step WHERE work_package=? AND step=?",
                               (work_package, step)).fetchone()
         return r["kind"] if r else None
@@ -337,14 +282,8 @@ class Cfg:
         return rows
 
     def config_version(self) -> str:
-        """Found 2026-07-22: this was a static string from config/rules.json's seed, written
-        once by cfgload.py and never touched again — configmaint.propose (the primary way config
-        changes now) doesn't update it, so every run since 2026-07-21 pinned the SAME stale
-        version regardless of how many real changes had been applied. Fixed by computing it live
-        from the actual content of every cfg_* table (_VERSION_TABLES) — no write, no discipline
-        required, always accurate, and it changes the moment the config actually does. The
-        'app-0.1.0' prefix is kept as the human-readable major-version label from the original
-        seed; the hash is what makes it a real fingerprint of current state."""
+        """The config version: computed live from the content of every cfg_* table in _VERSION_TABLES, so
+        it changes the moment the config does. 'app-0.1.0' is the human-readable major-version prefix."""
         base = self.conn.execute(
             "SELECT value FROM cfg_meta WHERE key='config_version'").fetchone()
         prefix = base["value"] if base else "app"
