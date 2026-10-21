@@ -9,6 +9,7 @@ works from. Temporary: archived once #2192 is done.
 Usage:  python iba/app/tools/temp_2192_comment_sweep_check.py check|count|blocks FILE
 """
 import ast
+import difflib
 import io
 import pathlib
 import re
@@ -29,7 +30,7 @@ def scope() -> list[pathlib.Path]:
     return sorted(files + list((ROOT / ".claude/hooks").glob("*.py")))
 
 
-def stripped(src: str) -> str:
+def stripped(src: str, indent=None) -> str:
     tree = ast.parse(src)
     for node in ast.walk(tree):
         if isinstance(node, (ast.Module, ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
@@ -37,7 +38,7 @@ def stripped(src: str) -> str:
             if body and isinstance(body[0], ast.Expr) and isinstance(body[0].value, ast.Constant) \
                     and isinstance(body[0].value.value, str):
                 node.body = body[1:] or [ast.Pass()]
-    return ast.dump(tree, include_attributes=False)
+    return ast.dump(tree, include_attributes=False, indent=indent)
 
 
 def doc_lines(src: str):
@@ -54,7 +55,7 @@ def check() -> int:
     bad = 0
     for rel in out:
         p = ROOT / rel
-        if not p.exists() or "migration" in p.parts:
+        if not p.exists() or "migration" in p.parts or p.name.startswith("temp_"):
             continue
         new = p.read_text(encoding="utf8")
         old = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=ROOT, capture_output=True,
@@ -67,6 +68,10 @@ def check() -> int:
             bad += 1
             continue
         print(f"{'ok  ' if same else 'FAIL'} {rel}" + ("" if same else ": code changed"))
+        if not same:
+            diff = difflib.unified_diff(stripped(old, 1).splitlines(), stripped(new, 1).splitlines(),
+                                        lineterm="", n=6)
+            print("\n".join(list(diff)[:40]))
         bad += 0 if same else 1
     print(f"{len(out)} changed file(s), {bad} failing")
     return 1 if bad else 0
