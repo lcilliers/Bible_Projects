@@ -124,4 +124,8 @@ No study work: the study is on hold.
 
 ## 6. Git
 
-(written after the first commit)
+- Branch: `main`
+- Session close commit: `f32e830c81bc2d36ca399b7b70d90d404155ac06` (Session-Close.ps1 exit 0,
+  `iba/app/reports/session-close-v152-20261021.md`)
+- Push: `2bba8e86..f32e830c  main -> main` to `https://github.com/lcilliers/Bible_Projects.git`
+- Work commits this session: `17e202a9` through `2bba8e86`, each pushed when made.
