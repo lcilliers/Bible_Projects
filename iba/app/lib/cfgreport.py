@@ -49,18 +49,15 @@ def _table(headers: list[str], rows: list[list]) -> list[str]:
     return out
 
 
-# the same 14 config-content tables the escalation #310 bootstrap added `inactive` to
-# (bootstrap_inactive_column.py) — kept here too rather than imported, so this list stays a
-# deliberate, reviewable fact the same way CFG_TABLES/REPORT_STEPS are, not a generic scan.
+# the config-content tables that carry `inactive` (#310), listed deliberately rather than scanned
 INACTIVE_TABLES = (
     "cfg_setting", "cfg_step", "cfg_work_package", "cfg_write_grant", "cfg_report",
     "cfg_report_section", "cfg_report_csv_table", "cfg_candidate_rule", "cfg_enum",
     "cfg_on_fail", "cfg_status_flow", "cfg_book_order", "cfg_api", "cfg_connection",
 )
 
-# table -> the SQL expression identifying one inactive row, readably. cfg_candidate_rule is
-# grouped by kind+count instead (below) — individual accept/reject Strong's codes would make the
-# list unreadable at real volume (289 rows in one kind alone).
+# table -> the SQL expression identifying one inactive row. cfg_candidate_rule is grouped by
+# kind+count instead (individual codes would make the list unreadable at volume).
 _INACTIVE_LABEL = {
     "cfg_setting": "key",
     "cfg_step": "work_package || '/' || step",
@@ -78,12 +75,8 @@ _INACTIVE_LABEL = {
 }
 
 
-# Known whole-subsystem retirements — a bulk `inactive=1` sweep for a deliberately closed decision,
-# not evidence of stalled/unfinished work. Named explicitly (same discipline `DATA_TABLES`/
-# `REPORT_STEPS` already use elsewhere) so "Inactive configs (367 rows...)" doesn't read as an
-# unexplained pile — found 2026-07-30 (researcher's own read of this section) that it does exactly
-# that with no attribution at all. Checked, not assumed: every one of the 367 rows was individually
-# traced and every single one belongs to one of these two events, zero left over.
+# Known whole-subsystem retirements (a bulk `inactive=1` sweep for a closed decision), named so the
+# inactive-configs section attributes each row instead of showing an unexplained pile.
 _RETIREMENT_EVENTS = (
     ("candidate", "candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; "
                  "migration/retract_candidate_system.py)"),
@@ -93,11 +86,9 @@ _RETIREMENT_EVENTS = (
 
 
 def _classify_retirement(table: str, label: str) -> str | None:
-    """Which known retirement event a deactivated row belongs to, or None if unattributed.
-    Checked by substring on the row's own identity (module/step/table names), not by table alone
-    or a hardcoded count, so this stays accurate as either event's rows change AND so a genuinely
-    NEW/unrelated deactivation surfaces as unattributed instead of silently blending into the
-    total the way the plain count already was doing."""
+    """Which known retirement event a deactivated row belongs to, or None. Matched by substring on
+    the row's own identity (module/step/table names), so a new, unrelated deactivation shows as
+    unattributed."""
     if table == "cfg_candidate_rule":
         return "candidate"          # the table's entire purpose is candidate meaning-net inputs
     low = label.lower()
@@ -108,12 +99,8 @@ def _classify_retirement(table: str, label: str) -> str | None:
 
 
 def _utilities_table(q) -> list[str]:
-    """Full `cfg_utility` registry — module/file/purpose/active/exempt — added 2026-07-30 per the
-    researcher's own read of §0: "is the utility in the cfg.utility table? the contents page of
-    the report does not include the utility table." There was no way to cross-reference a §0
-    finding against the actual registry without a raw SQL query; this makes it browsable in the
-    same document, with `config_exempt`/`config_exempt_reason` (new columns, `migration/
-    add_cfg_utility_config_exempt.py`) visible right next to each module."""
+    """The full `cfg_utility` registry -- module/file/purpose/active/exempt, with
+    `config_exempt`/`config_exempt_reason` -- so section 0 findings can be cross-referenced here."""
     rows = q("SELECT module, file_path, purpose, inactive, config_exempt, config_exempt_reason "
              "FROM cfg_utility ORDER BY module")
     n_exempt = sum(1 for r in rows if r["config_exempt"])
@@ -129,11 +116,8 @@ def _utilities_table(q) -> list[str]:
     ]
     for r in rows:
         S.append("| " + " | ".join([
-            # escalation #1365, 2026-08-31: found live -- module is cfg_utility's PRIMARY KEY but
-            # SQLite does not auto-enforce NOT NULL on a non-INTEGER PK, so a malformed insert (see
-            # escalation #1364's fix) can still leave it NULL; this table render crashed the whole
-            # report on that one bad row instead of degrading gracefully like every other column
-            # here already does.
+            # a NULL module (possible: SQLite does not enforce NOT NULL on a non-INTEGER primary key) renders
+            # as blank instead of crashing the report (#1365)
             r["module"] or "",
             r["file_path"] or "",
             (r["purpose"] or "").replace("|", "\\|"),
@@ -145,12 +129,9 @@ def _utilities_table(q) -> list[str]:
 
 
 def _inactive_configs(q) -> list[str]:
-    """Every deactivated config row, escalation #310 — DEACTIVATED, not deleted: excluded from
-    configmaint.validate's coherence/orphan/justification checks (see cfgquality.py), but listed
-    here in full so nothing goes quietly missing. cfg_candidate_rule is summarised by kind+count
-    (individual Strong's codes at real volume would swamp the report, not inform it). Also
-    attributes every row to a known retirement event (`_RETIREMENT_EVENTS`) where one applies —
-    see that constant's comment for why."""
+    """Every deactivated config row (#310): excluded from configmaint.validate's checks, listed here
+    in full so nothing goes missing. cfg_candidate_rule is summarised by kind+count. Each row is
+    attributed to a known retirement event (`_RETIREMENT_EVENTS`) where one applies."""
     lines: list[str] = []
     total_rows = 0
     total_tables = 0
@@ -191,14 +172,9 @@ def _inactive_configs(q) -> list[str]:
 
 def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
             csv_export: bool | None = None) -> pathlib.Path:
-    """csv_export: True always writes the CSV pairing (an explicit `-Step Report` run); False
-    always skips it; None (the default) defers to `configmaint.csv_export_on_auto_report`
-    (default off) -- escalation #1314, 2026-08-31. Before this, every call here (including the
-    one `validate()` fires on each finding) wrote a fresh timestamped CSV per table via
-    reportkit's own never-overwrite convention -- confirmed live: ~4700 files accumulated under
-    Workflow/schema/archive/ in one session's back-to-back proposals. An explicit report run
-    still gets its CSV pairing; the frequent auto-triggered regeneration no longer does unless
-    the researcher opts in."""
+    """csv_export: True always writes the CSV pairing (an explicit `-Step Report` run); False always
+    skips it; None (the default) defers to `configmaint.csv_export_on_auto_report` (default off), so
+    frequent auto-triggered regeneration does not pile up CSVs (#1314)."""
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     q = lambda sql, p=(): conn.execute(sql, p).fetchall()
@@ -231,24 +207,15 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
          cfgquality.find_missing_report_paths(conn)),
         ("Stale filled_by", "cfg_column.filled_by names a now-inactive step",
          cfgquality.find_filled_by_referencing_inactive_step(conn)),
-        # "Stale governance docs" retired 2026-10-21 (#2186): GOVERNANCE.md now changes only when the
-        # mechanism changes (governance.governance_md_on_rule_change), so a config change newer than
-        # the file is not a finding. Control files are checked at every close (SC15).
         ("Unregistered lib modules", "iba/app/lib/*.py with no cfg_utility row",
          cfgquality.find_unregistered_lib_modules(conn, APP)),
-        # NOTE: deliberately NOT spelling out the literal call-site pattern here (see the
-        # `find_utility_config_density` docstring for why) — `find_orphan_configs`-style checks in
-        # this app work by substring-scanning a file's raw text, docstrings and comments included;
-        # writing the literal pattern into THIS file's own source would falsely mark cfgreport.py
-        # itself as "using" it. Found live 2026-07-30: an earlier draft of this exact line did
-        # exactly that, silently dropping cfgreport.py off its own report's flagged list.
+        # this file must not spell out the call-site pattern the usage checks scan for (they read raw text,
+        # comments included), or it would count as using it
         ("Low config-density utilities", "NON-EXEMPT cfg_utility module with zero real Cfg-method "
          "call sites of its own (see §2 Utilities registry for the full module list, including "
          "the 11 already declared config_exempt)",
          cfgquality.find_utility_config_density(conn)),
-        # 2026-07-30 — extending find_orphan_configs' usage check past cfg_setting/cfg_enum to the
-        # three other tables that had none (researcher: "your validations is only touching settings
-        # and enum and not incorporating all the other config tables").
+        # usage checks beyond cfg_setting/cfg_enum
         ("Orphan book_order", "cfg.book_order() unused, or a duplicate book/ordinal",
          cfgquality.find_orphan_book_order(conn, APP)),
         ("Orphan connection keys", "a cfg_connection key not read via cfg.connection(...) anywhere",
@@ -260,14 +227,11 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
          "in governance.oneoff_report_dir (oneoff_path() found 2026-08-08 to version without "
          "archiving, BUILD.md §83) — the rest belong in archive/",
          cfgquality.find_report_version_clutter(conn, APP)),
-        # 2026-08-28 (escalation #971/#976, researcher: "configmaint should validate every
-        # location reference in every config").
+        # every location reference in every config must resolve
         ("Unresolvable location settings", "a *_dir/*_path/*_folder value (cfg_setting or any "
          "per-module table shaped like it) that does not resolve to a real folder on disk",
          cfgquality.find_unresolvable_location_settings(conn, APP.parent.parent)),
-        # Both wired into configmaint.validate already (handlers/configmaint.py) but never
-        # mirrored here until now — found 2026-08-28 fixing #977, the same "mirror drifted from
-        # source" class of gap this whole session kept surfacing, this time in the mirror itself.
+        # both wired into configmaint.validate as well
         ("Escalation.ps1 ValidateSet drift", "a -Parameter's [ValidateSet(...)] values not "
          "matching the live cfg_enum group it's supposed to mirror",
          cfgquality.find_escalation_ps_validateset_drift(conn, APP)),
@@ -277,25 +241,20 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
         ("Hand-rolled versioning", "a script building a -v{n} filename by hand instead of via "
          "filingkit.versioned_path()/reportkit.oneoff_path()",
          cfgquality.find_hand_rolled_versioning(conn, APP.parent.parent)),
-        # 2026-08-29 (escalation #1007 follow-on) — a PS script's live param() list drifted from
-        # its own tab in ps tools worksheet.xlsx, or (Escalation.ps1 specifically) from every
-        # -Flag header used anywhere in the researcher's own escalation actions worksheet.xlsx.
+        # PS param() lists vs. the ps tools worksheet; Escalation.ps1 vs. the escalation actions worksheet
         ("PS/worksheet drift", "a script's live param() names not matching its tab's flag headers "
          "in governance.ps_worksheet_path",
          cfgquality.find_ps_worksheet_drift(conn, APP, APP.parent.parent)),
         ("Escalation.ps1/worksheet drift", "an Escalation.ps1 parameter not used as a -Flag header "
          "anywhere in governance.escalation_worksheet_path",
          cfgquality.find_escalation_worksheet_drift(conn, APP, APP.parent.parent)),
-        # 2026-09-03 (escalation #1384, researcher: "every validation report must include a
-        # detail list of all configs that is not enforced, and the reason") — the master finding.
+        # every behaviour rule not mechanically enforced, with its reason
         ("Unenforced behaviour rules", "an active cfg_behaviour_rule row whose enforcement_status "
          "is not mechanically_enforced — see the row's own enforced_by text for the reason "
          "(mechanically checkable but not yet built, a genuine judgement call, or a class of rule "
          "with no durable artifact to check)",
          cfgquality.find_unenforced_behaviour_rules(conn)),
-        # 2026-09-03 (escalation #1388, researcher correction of #1384's own audit): the row above
-        # trusts enforcement_status/enforced_by as asserted; this one actually verifies the
-        # delivery mechanism a context_delivered/not_mechanically_checkable row claims.
+        # conversational rules whose claimed delivery mechanism does not verify
         ("Undelivered conversational rules", "an active cfg_behaviour_rule row classified "
          "context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory "
          "file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) "
@@ -322,13 +281,8 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
          "{IBA_DB,Research_DB}/, or with a space in its name, or untitled",
          cfgquality.find_query_file_convention_violations(APP.parent.parent)),
     ]
-    # this section is the ACTIONABLE detail behind configmaint.validate's escalation — that
-    # escalation question stays short (counts + this report path) precisely because every item
-    # is listed here in full, once, not repeated inline in the question every time it fires.
-    # Deliberately NOT including "Inactive configs" here (moved to its own §1, 2026-07-30, per the
-    # researcher's own read: "the section 0 Finding for researcher action should only include items
-    # that need my decision. The list of soft deleted items does not belong there" — a deactivated
-    # row is, by definition, an already-made decision recorded for the audit trail, not a live ask.
+    # the actionable detail behind configmaint.validate's escalation, listed once in full. Inactive
+    # configs are not here (section 1): a deactivated row is a decision already made.
     S = [
         "_Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s "
         "escalation, which references this section by path rather than repeating it. Not errors "
@@ -365,8 +319,8 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
         [r["module"], r["key"], r["value"], r["use"]] for r in q(
             'SELECT module, key, value, "use" AS "use" FROM cfg_setting ORDER BY module, key')])
 
-    # escalation #2180: the control map -- each kind of control content, its one home, when the
-    # home is read, and where replaced versions go (kept out of the routine read path).
+    # the control map (#2180): each kind of control content, its one home, when the home is read, and
+    # where replaced versions go
     sections["control_map"] = _table(
         ["kind", "home_type", "home", "read_when", "history_home", "description"], [
             [r["kind"], r["home_type"], r["home"], r["read_when"], r["history_home"],
@@ -420,9 +374,7 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
     for r in q("SELECT table_name, col FROM cfg_unique ORDER BY table_name, ordinal"):
         uniq.setdefault(r["table_name"], []).append(r["col"])
     S = []
-    # database='iba' — this report describes THIS app's own schema; escalation #653 (2026-08-17)
-    # widened cfg_table/cfg_column to also carry bible_research.db's tables (governance.tables:
-    # "applies to all databases"), which is its own report, not folded into this one silently.
+    # database='iba': this report describes this app's own schema
     for t in q("SELECT name, grain, \"use\" AS \"use\" FROM cfg_table WHERE database='iba' "
               "ORDER BY rowid"):
         S.append(f"### {t['name']}")
@@ -457,26 +409,12 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
     sections["report_governance"] = _report_governance(q)
 
     L = reportkit.render_scaffold(conn, STEP, sections, intro=intro)
-    # csv_export_dir independently config-driven (configmaint.csv_export_dir), NOT derived from
-    # out_path.parent -- escalation #929/#736, 2026-08-28: the CSV pairing used to be a hardcoded
-    # sibling of wherever configmaint.report_path pointed, so it silently followed that setting
-    # around and couldn't be repointed on its own (found while relocating configmaint.report_path
-    # off iba/app/config/ -- the CSV side-output kept regenerating back at the OLD app-relative
-    # location instead of the researcher's chosen workflow/schema). Falls back to the pre-existing
-    # sibling-of-report behaviour if the new setting is ever removed, so this never regresses to a
-    # crash if the row goes missing.
-    # Uses the real Cfg accessor (not a raw SELECT) so cfgquality.find_orphan_configs sees this
-    # setting as genuinely applied -- 2026-08-28, caught live by the validator itself, which
-    # requires an actual `.setting(` call site in the same file for a plain (non-governance)
-    # cfg_setting. Cfg() is a second, separate connection to the same DB (its own docstring:
-    # "cheap; make one per process") -- fine under WAL, and this function otherwise deliberately
-    # avoids the full Cfg/Db bootstrap for its main `conn`.
+    # the CSV pairing's folder is its own setting (configmaint.csv_export_dir), falling back to the
+    # report's folder if the setting is missing. Read through Cfg so the usage check sees it applied.
     from .cfg import Cfg as _Cfg
     _cfg_probe = _Cfg(db_path)
     csv_export_value = _cfg_probe.setting("configmaint.csv_export_dir")
-    # escalation #1314: caller-explicit csv_export wins; otherwise defer to the setting, off by
-    # default (missing/'0'/'false' all read as off -- same treatment as any other boolean
-    # cfg_setting in this app, e.g. Cfg.flag()'s own convention).
+    # a caller-explicit csv_export wins; otherwise the setting (missing/'0'/'false' = off) (#1314)
     if csv_export is None:
         auto_flag = _cfg_probe.setting("configmaint.csv_export_on_auto_report")
         csv_export = str(auto_flag).strip().lower() in ("1", "true", "yes") if auto_flag else False
@@ -491,11 +429,8 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
 
 
 def _report_governance(q) -> list[str]:
-    """Per PLAN-reports-config-governance-v1-20260722.md §10.1 — the answer to 'when I look at a
-    report, am I seeing everything related to it': one block per report, every config item that
-    governs it, joined together here so nothing needs to be found by cross-referencing 5 tables by
-    hand. Generated fresh every run — can't drift from the live rows the way a hand-written summary
-    could."""
+    """One block per report: every config item that governs it, joined here so nothing needs
+    cross-referencing across tables by hand. Generated fresh every run."""
     L = [
         "_One block per registered report — everything that governs it, joined from `cfg_report`, "
         "`cfg_report_section`, `cfg_report_csv_table`, `cfg_work_package`, and `cfg_on_fail`. The "
@@ -545,8 +480,7 @@ def _report_governance(q) -> list[str]:
 
 def _grants(q) -> dict[str, list[str]]:
     g: dict[str, list[str]] = {}
-    # database='iba' -- this report describes THIS app; escalation #680 widened cfg_write_grant
-    # to (eventually) also carry bible_research.db-scoped grants, its own report if ever needed.
+    # database='iba': this report describes this app's own grants
     for r in q("SELECT writer, table_name FROM cfg_write_grant WHERE database='iba' "
               "ORDER BY writer, table_name"):
         g.setdefault(r["writer"], []).append(r["table_name"])

@@ -21,11 +21,7 @@ import re
 from .base import Ctx, Outcome, ok, fail
 from ..lib.stepapi import StepUnavailable, preview_to_text
 
-# Fallback only — the real value is `cfg_setting raw.strong_base_pattern` (module `raw`), the
-# single home for this fact after it was found duplicated three ways: here, in
-# `lib/versespanmeaningreport.py`, and in the now-inactive `candidate.lemma_base_pattern`
-# (GOVERNANCE.md §5, 2026-07-22 — named then, closed 2026-07-29). Kept byte-identical so behaviour
-# is unchanged whether or not the cfg_setting row has been approved yet.
+# Fallback only: the real value is `cfg_setting raw.strong_base_pattern` (module `raw`).
 _BASE_RE_FALLBACK = r"^([HG]\d+)([A-Z]?)$"
 
 
@@ -49,15 +45,8 @@ def _write(ctx: Ctx, writer: str, table: str, row: dict, upsert=True):
 
 def _split_def(ctx: Ctx, medium_def: str) -> tuple[str, str]:
     marker = ctx.cfg.required_setting("meaning.head_marker")
-    # Found 2026-07-21: for a subset of vocabInfos entries (mostly sub-lettered codes, e.g.
-    # H0639G/H/I), STEP's mediumDef separates tree lines with literal '<br>' tags instead of a
-    # real newline. partition("\n") then finds nothing, so the WHOLE marker-stripped remainder
-    # (head text + <br>-joined tree, unsplit) landed in `head` — and `tree` came back empty, so
-    # strong_meaning_tree was never populated for these lemmas either. Normalising <br> to \n
-    # first fixes both. 228/3463 strong_sense rows were affected; see migration/
-    # repair_strong_sense_head.py for the one-off repair of already-fetched strongs. Found
-    # 2026-07-21 (later same day): 242 tree rows still used the uppercase '<BR>' variant, missed
-    # by a case-sensitive match — made case-insensitive here.
+# STEP's mediumDef sometimes separates tree lines with '<br>' / '<BR>' instead of a newline:
+# normalised (case-insensitive) to \n first, so the head/tree split works.
     d = re.sub(r"<br\s*/?>", "\n", (medium_def or ""), flags=re.IGNORECASE).strip()
     if d.startswith(marker.strip()):
         head, _, tree = d[len(marker.strip()):].strip().partition("\n")
@@ -82,20 +71,15 @@ def discover(ctx: Ctx) -> Outcome:
     d = ctx.step.call1_meanings(ctx.word)
     seeds = [x["strongNumber"] for x in d.get("definitions", [])
              if x.get("strongNumber") and not ctx.step.is_particle(x["strongNumber"])]
-    # relatedNos: only if config says to follow it (it says no). Found 2026-07-29: this used to be
-    # `if true: pass` — a setting that changed nothing regardless of its value, since the expansion
-    # was never built. Now fails loudly instead of silently no-op'ing, so flipping the setting is
-    # either a real behaviour change (once built) or an honest refusal — never a silent non-event.
+    # relatedNos expansion is not built: following it fails loudly rather than silently doing nothing
     if ctx.cfg.setting("discovery.follow_related", False):
         return fail("follow-related-not-built",
                    "discovery.follow_related is true, but relatedNos expansion was never "
                    "implemented — set it back to false, or implement the expansion before relying "
                    "on it (see handlers/raw.py:discover)")
     if not seeds:
-        # escalation #798/#799 SS3.6: word registration is researcher-instructed (the researcher
-        # named this exact word); re-asking "register anyway?" every time is redundant. Config-
-        # driven instead -- default 'reject' (researcher, 2026-08-22: "it should not happen",
-        # treated as anomalous until decided otherwise for a specific case).
+        # word registration is researcher-instructed: the zero-strongs case is config-driven
+        # (raw.zero_strongs_action, default 'reject')
         action = ctx.cfg.required_setting("raw.zero_strongs_action")
         if action == "reject":
             return fail("zero-strongs",
@@ -110,11 +94,8 @@ def discover(ctx: Ctx) -> Outcome:
 
 # ── detail (the meaning) ─────────────────────────────────────────────────────
 def write_tree_rows(ctx: Ctx, lemma: str, strong_variant: str, tree: str, c: dict) -> None:
-    """Write strong_meaning_tree rows for ONE exact code (`strong_variant`). Factored out of
-    detail_one (2026-07-26) so migration/fix_strong_meaning_tree_collapse.py can re-fetch and
-    write a sibling's own tree text without re-running the whole detail_one pipeline (whose
-    early-return on an already-registered `strong` row would otherwise make a targeted re-fetch a
-    no-op). See that migration + BUILD.md sec24/sec25 for why a sibling can need its own row."""
+    """Write strong_meaning_tree rows for ONE exact code (`strong_variant`), separately from
+    detail_one, so a sibling's own tree text can be re-fetched and written on its own."""
     for i, line in enumerate(x for x in tree.split("\n") if x.strip()):
         m = re.match(r"^(\d+[a-z]?\d*\))\s*(.*)$", line.strip())
         sc, txt = (m.group(1), m.group(2)) if m else ("", line.strip())
@@ -125,29 +106,20 @@ def write_tree_rows(ctx: Ctx, lemma: str, strong_variant: str, tree: str, c: dic
 
 
 def detail_one(ctx: Ctx, code: str, c: dict, origin: str = "word") -> None:
-    """Fetch + write the meaning for ONE strong (call2). Reusable per-strong, so a single
-    strong can be added to a word WITHOUT re-pulling the word's other strongs.
+    """Fetch + write the meaning for ONE strong (call2), so a strong can be added to a word without
+    re-pulling the word's other strongs.
 
-    strong_meaning_tree.strong_variant (2026-07-26, migration/fix_strong_meaning_tree_collapse.py):
-    the tree-write guard used to be keyed on lemma_key ALONE ("does ANY row exist for this base"),
-    which meant whichever sibling code was fetched FIRST silently claimed the base row and every
-    OTHER sibling's own (already correctly fetched) tree text was discarded — real data loss for
-    genuine homonym collapses like H3581A/H3581B (BUILD.md sec19/sec24). Now keyed on the EXACT
-    resolved code: a sibling only skips the write if ITS OWN (lemma_key, strong_variant) row
-    already exists, never because a different sibling's row does.
+    The tree write is keyed on the exact code (lemma_key, strong_variant): a sibling skips only if
+    its own row exists, so homonym siblings (e.g. H3581A/H3581B) each keep their own tree text.
 
-    `origin` ('word' | 'backfill', 2026-08-11, bootstrap_strong_origin_column_20260811.py):
-    stamped on the `strong` row at creation — 'word' from `detail()` (a registry word's own
-    onboarding), 'backfill' from `backfill_meaning_for()` (book-scoped completeness sweep,
-    independent of any word). STICKY on the already-exists path: a code that started as
-    'backfill' and is now being requested as 'word' (a real word legitimately claims it) gets
-    upgraded; never the reverse."""
+    `origin` ('word' | 'backfill') is stamped on the `strong` row at creation: 'word' from
+    `detail()`, 'backfill' from `backfill_meaning_for()`. On an existing row, 'backfill' is upgraded
+    to 'word' when a word claims the code; never the reverse."""
     greek = ctx.cfg.required_setting("language.greek_prefix")
     existing = ctx.db.get("strong", strongNumber=code)
     if existing:
-        # NOTE: _write(..., upsert=True) is dedup-only (Db.upsert returns early on an existing
-        # key, it does not update it) — an upgrade needs a real UPDATE, done here directly with
-        # the same grant check _write would have applied.
+        # _write(..., upsert=True) only dedups (it never updates an existing key), so the upgrade is a
+        # direct UPDATE with the same grant check
         if origin == "word" and existing["origin"] == "backfill":
             if "strong" not in ctx.cfg.may_write("call2_getInfo"):
                 raise PermissionError(
@@ -228,21 +200,14 @@ def verses(ctx: Ctx) -> Outcome:
     return ok(msg, **c)
 
 
-# ── related (scoped to THIS word's own strongs — not lexicon.related's full-corpus rebuild) ──
-# Found 2026-08-10 (`receive`, BUILD.md sec98): the `new-word` chain had no step that populated
-# `strong_related` at all — only the book-scoped `raw.backfill_meaning` auto-chained it
-# (`raw.backfill_meaning_for` -> `lexicon.fetch_related_for`). Per-word onboarding silently left
-# every newly-registered code without its related-terms fetch until someone happened to check.
-# Reuses `lexicon.fetch_related_for` UNCHANGED — same writer grant ('lexicon.related' ->
-# 'strong_related', already held), `clear_first=False` (append, never wipes another word's already-
-# fetched codes). Deliberately NOT `lexicon.related` itself, which does one live STEP call per
-# EVERY strong row in the whole DB (thousands) — wasteful for a single word's handful of codes.
+# ── related (scoped to THIS word's own strongs) ─────────────────────────────────────────────────
+# The new-word chain's strong_related fetch: `lexicon.fetch_related_for` with the same writer grant
+# ('lexicon.related' -> 'strong_related'), `clear_first=False` (append, never wiping another word's
+# codes). Not `lexicon.related` itself, which makes one STEP call per strong row in the whole DB.
 def related(ctx: Ctx) -> Outcome:
     codes = _strongs_for_word(ctx)
-    # "0 strong_related rows" = "needs fetching" — the SAME coverage signal lexicon.validate
-    # itself already uses (`NOT EXISTS ... strong_related`); a code STEP genuinely returns no
-    # relatedNos for is indistinguishable from "never fetched" either way, by design (matches the
-    # existing convention project-wide, not a new ambiguity introduced here).
+    # "0 strong_related rows" = "needs fetching", as in lexicon.validate (a code with no relatedNos
+    # looks the same as never fetched)
     missing = [c for c in codes if ctx.db.count("strong_related", strong=c, deleted=0) == 0]
     if not missing:
         return ok(f"0 of {len(codes)} strong(s) needed a related-terms fetch — already covered")
@@ -257,16 +222,10 @@ def related(ctx: Ctx) -> Outcome:
              f"{counts['errors']} fetch error(s))", **counts)
 
 
-# ── lexical (verse_lexical, scoped to THIS word's own verses — the chain's closing step) ──────
-# Found the same session (sec98): `strong_meaning_parsed` itself was never being rebuilt for a new
-# word's codes either (no `lexicon.parse` step in the chain), so even where `verse_lexical` rows
-# DID exist for a word's verses (built earlier for some OTHER word sharing the same verse), they
-# could be resolving against a stale/absent parsed layer for THIS word's own codes. Runs LAST in
-# the chain (after lexicon.parse + raw.write + raw.validate) so it always reads the FRESH parsed
-# layer and the FULLY validated span set. Reuses `lib.lexical.build_for_verse_ids` (version-aware:
-# supersedes a stale reading, never overwrites in place) — this step both BUILDS and, by that same
-# supersede mechanism, IS the "check that the lexicals are correct" the researcher asked for; a
-# verse whose spans/parsed-meaning haven't changed since its last build is a safe, cheap no-op.
+# ── lexical (verse_lexical, scoped to THIS word's own verses -- the chain's closing step) ────────
+# Runs last in the chain (after lexicon.parse + raw.write + raw.validate), so it reads the fresh
+# parsed layer and the validated span set. `lib.lexical.build_for_verse_ids` is identity-stable:
+# unchanged verses write nothing, changed ones are corrected in place.
 def lexical(ctx: Ctx) -> Outcome:
     if "verse_lexical" not in ctx.cfg.may_write("lexical.build"):
         raise PermissionError("write-grant violation: 'lexical.build' may not write 'verse_lexical'")
@@ -280,9 +239,7 @@ def lexical(ctx: Ctx) -> Outcome:
     if not verse_ids:
         return ok("0 verse(s) to build — word has no strong_verse rows yet")
 
-    # STEP-availability gate REMOVED here 2026-09-16 (#1706 Phase B) -- Layer 1 no longer calls
-    # STEP at all (resolve_code's old live_step_meaning ambiguity fallback is gone with
-    # ambiguity_note/resolved_sense); this step's own write path has no STEP dependency left.
+    # Layer 1 has no STEP dependency (#1706)
     from ..lib import lexical as lexlib
     try:
         totals = lexlib.build_for_verse_ids(ctx.db.conn, verse_ids)
@@ -315,12 +272,9 @@ def _record(ctx: Ctx, check_name: str, result: str, detail: str):
 
 
 def validate(ctx: Ctx) -> Outcome:
-    # check 1: the parse-check — span recovers strong_verse
-    # span.strong_variant can hold MORE THAN ONE code since the 2026-07-25 model fix
-    # (parse_spans keeps a tag's combined codes together, e.g. "G1722 G0054" — a real
-    # combined unit in STEP's own HTML, not artificial duplication). A code counts as
-    # recovered if it appears as one whitespace-delimited token in some span row for
-    # that verse, not only as an exact single-value match against the whole column.
+    # check 1: the parse-check -- span recovers strong_verse. span.strong_variant can hold more than
+    # one code (a combined unit in STEP's HTML, e.g. "G1722 G0054"): a code counts as recovered if it
+    # is one whitespace-delimited token in some span row for that verse.
     code_verses: dict[str, set] = {}
     for r in ctx.db.rows("SELECT verse_id, strong_variant FROM span WHERE deleted=0"):
         for tok in (r["strong_variant"] or "").split():
@@ -356,12 +310,8 @@ def validate(ctx: Ctx) -> Outcome:
 
 
 # ── reconcile (cluster-assign every one of the word's own codes, ordinal 7) ───────────────────
-# 2026-08-12, backfill-cluster-triage-plan-v3 point (c): "new-word must complete the entire
-# process up to the build/update of the lexical for each verse for qualifying strongs." Runs LAST
-# in the new-word chain (after raw.validate) so every code already has its verses/spans validated
-# before classification is attempted. Absorbs what the `receive` rebuild (BUILD.md sec98/99) was
-# scoped to wire in — `strongreconcile.reconcile()` already owns the full classify/promote cascade,
-# this step is just "call it once per this word's own codes."
+# Runs last in the new-word chain (after raw.validate): strongreconcile.reconcile() once per this
+# word's own codes.
 def reconcile(ctx: Ctx) -> Outcome:
     from ..lib import strongreconcile
     tallies: dict[str, int] = {}
@@ -373,15 +323,9 @@ def reconcile(ctx: Ctx) -> Outcome:
             unclassified.append(code)
     parts = ", ".join(f"{k}: {v}" for k, v in sorted(tallies.items()))
     msg = f"{len(_strongs_for_word(ctx))} strong(s) cluster-reconciled — {parts}"
-    # escalation #1606, researcher instruction 2026-09-15, verbatim: "reconcile() must check and
-    # guarantee that strong-cluster is in sync... it should not be possible to add/modify a strong
-    # without updating the cluster membership." strongreconcile.reconcile() itself stays pure and
-    # never escalates (used inside DB-wide sweeps too, cluster.py:assign) — this is the STEP-level
-    # caller's job, matching the handler contract (name the condition, cfg_on_fail decides the
-    # path). Previously this always returned ok() regardless of how many codes came back
-    # unclassified — the exact gap #1606 traced live: an automatic classification ATTEMPT ran on
-    # every strong, but a failed attempt was never surfaced, only caught later (if at all) by a
-    # manually-invoked cluster.validate sweep.
+    # strong-cluster sync must be guaranteed (#1606): reconcile() itself never escalates (it also runs
+    # inside DB-wide sweeps), so this step names the condition when codes come back unclassified and
+    # cfg_on_fail decides the path
     if unclassified:
         return fail("unclassified", msg + f" — {len(unclassified)} strong(s) got no cluster "
                     f"assignment at all (no HIGH-confidence precedent match): "
@@ -390,19 +334,10 @@ def reconcile(ctx: Ctx) -> Outcome:
 
 
 # ── backfill (book/range; meaning ONLY, no verses) ────────────────────────────────────────────
-# 2026-07-25, added same day as the lexicon-parsed layer. Researcher's finding, working from the
-# verse:span:meaning report (tools/build_verse_span_meaning_extract.py): a "(not yet registered)"
-# span is often a supporting term that still matters for reading a passage, even though nobody has
-# onboarded it as its own study WORD (the only route strong/strong_meaning_tree/strong_lexicon get
-# populated today - raw.detail, per-word). Recommended approach (of three the researcher named -
-# pull everything from STEP up front, pull live at report-render time, or pull progressively per
-# passage): progressive, per-passage, PERSISTED - avoids a wasteful full-Bible pull of codes never
-# actually studied, and avoids re-hitting STEP on every report re-run instead of building real DB
-# coverage. No new "meaning pulled" marker column needed: a `strong` row existing with no matching
-# `strong_verse` row already IS "meaning pulled, verses not" - exactly how the report already
-# detects coverage. Reuses detail_one() as-is (already meaning-only, already independent of
-# verses() - the split the researcher was asking for already existed, just only ever invoked from
-# the per-word new-word chain) rather than duplicating its STEP-parsing logic.
+# A "(not yet registered)" span is often a supporting term that matters for reading a passage. The
+# backfill pulls meaning progressively, per passage, and persists it (no full-Bible pull, no
+# re-hitting STEP on every report). A `strong` row with no `strong_verse` row means "meaning pulled,
+# verses not". Reuses detail_one().
 def _verse_range_filter(osis_id: str, book: str, lo_ch: int, hi_ch: int,
                         verse_lo: int | None, verse_hi: int | None) -> bool:
     parts = (osis_id or "").split(".")
@@ -418,13 +353,9 @@ def _verse_range_filter(osis_id: str, book: str, lo_ch: int, hi_ch: int,
 
 def backfill_meaning_for(ctx: Ctx, book: str, lo_ch: int, hi_ch: int,
                          verse_lo: int | None, verse_hi: int | None) -> dict:
-    """The core of raw.backfill_meaning, factored out (2026-07-26) so a caller OTHER than the
-    standalone `raw-backfill` step can trigger the identical pull without re-implementing the
-    range/STEP/parse/related plumbing — specifically report.verse_span_meaning's
-    `report.auto_backfill_before_render` (researcher's direct 2026-07-26 instruction: don't leave
-    a report at partial coverage as a silent manual follow-up step). Raises StepUnavailable
-    (uncaught) if STEP is down AND there is something to backfill — same as `raw.backfill_meaning`
-    itself, just not pre-wrapped into a fail() here since callers differ in how they report it."""
+    """The core of raw.backfill_meaning, shared with report.verse_span_meaning's
+    `report.auto_backfill_before_render`. Raises StepUnavailable (uncaught) if STEP is down and there
+    is something to backfill; callers decide how to report it."""
     rows = ctx.db.rows(
         "SELECT v.osisId AS osis_id, sp.strong_variant AS sv FROM span sp "
         "JOIN verse v ON v.id = sp.verse_id "
@@ -450,18 +381,14 @@ def backfill_meaning_for(ctx: Ctx, book: str, lo_ch: int, hi_ch: int,
     for code in missing:
         detail_one(ctx, code, c, origin="backfill")
 
-    # keep the downstream layers in sync AS PART OF this method (researcher's 2026-07-25
-    # instruction — a manual lexicon.parse re-run was missed once already after the first backfill
-    # run). Import here, not at module top, to avoid a name collision with this function's own
-    # local `c["lexicon"]` counter.
+    # keep the downstream layers in sync as part of this method; imported here to avoid a clash with
+    # the local `c["lexicon"]` counter
     from .lexicon import fetch_related_for, rebuild_parsed_tables
     parsed_counts = rebuild_parsed_tables(ctx)
     related_counts = fetch_related_for(ctx, missing, clear_first=False)
 
-    # cluster-assign the newly-backfilled codes (2026-08-12, backfill-cluster-triage-plan-v3):
-    # this is scenario (b) of "when do new strongs surface" — a code created here has no later
-    # per-word chain to reconcile it in (backfill_meaning_for is book-scoped, not word-scoped), so
-    # reconcile() runs inline, right here, the only point this code will ever pass through.
+    # cluster-assign the newly backfilled codes: a code created here passes through no later
+    # per-word chain, so reconcile() runs inline
     from ..lib import strongreconcile
     reconcile_tallies: dict[str, int] = {}
     for code in missing:
@@ -503,9 +430,8 @@ def backfill_meaning(ctx: Ctx) -> Outcome:
           f"relatedNos fetched for the {result['missing_before']} newly-registered strong(s) "
           f"({result['strong_related']} related row(s), {result['errors']} fetch error(s)); "
           f"cluster-reconciled ({tallies or 'nothing to reconcile'}).")
-    # escalation #1606 — same guarantee as strong.reconcile above: a backfill-discovered code has
-    # no per-word chain to catch this any other way (backfill_meaning_for's own comment), so this
-    # is the only point it will ever pass through.
+    # same guarantee as strong.reconcile (#1606): this is the only point a backfill-discovered code
+    # passes through
     unclassified_n = result["reconcile_tallies"].get("unclassified", 0)
     if unclassified_n:
         return fail("unclassified", msg + f" — {unclassified_n} strong(s) got no cluster "
