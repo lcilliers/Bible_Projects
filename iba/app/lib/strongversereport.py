@@ -1,39 +1,21 @@
-"""strongversereport.py — on-demand verse restatement, by ONE Strong's reference. Formalises the
-2026-08-10 preview work (`iba/app/reports/g2128-verse-lexical-by-strong-sample-20260810.md` and
-`g2127-verse-lexical-by-strong-sample-20260810.md`) into a real, config-driven report.
+"""strongversereport.py — on-demand verse restatement for ONE Strong's code:
 
-Design, carried over from the two samples (researcher's own answers, verbatim):
+1. **Scope = one Strong's code, all its verses**: every verse whose `verse_lexical.strong` is this
+   exact code, whole Bible.
+2. **Inline annotation**: the verse text stays intact, with the matched span's surface annotated in
+   place: `**surface** [strong: senses]`.
+3. **Exact-variant senses only**: every `strong_meaning_parsed` row for this strong_variant, never a
+   base-lemma fallback (per-span exactness is the point of this report).
+4. **Collisions never dropped**: surfaces are matched with a word-boundary regex ("bless" does not
+   match inside "blessing"); a surface matching 0 or >1 times is flagged `UNRESOLVED`, never guessed.
 
-1. **Scope = one Strong's code, ALL its verses** (not one example verse) — every verse
-   `verse_lexical.strong` matches this exact code, whole Bible. This is what keeps volume
-   manageable: a registry word's full verse set can run into the thousands (see
-   `verse-lexical-by-registry-20260810.md`); one Strong's code is orders of magnitude smaller —
-   G2128 was 8 verses, G2127 was 40.
-2. **Inline annotation**, not a separate table — the verse text stays intact, with only the
-   matched span's surface text annotated in place: `**surface** [strong: senses]`.
-3. **Exact-variant senses only** — every `strong_meaning_parsed` row for THIS strong_variant
-   exactly, never a sibling/base-collapsed fallback (unlike `wordregistryspanreport.py`, which
-   falls back to the base lemma for a sub-lettered code with no rows of its own — that fallback is
-   deliberately NOT used here, since this report's whole reason to exist is per-span exactness).
-4. **Collisions never silently dropped.** The G2127 test found a real bug in plain substring
-   search (`"bless"` inside `"blessing"`) — fixed with a word-boundary regex, verified against
-   every row in both test cases. A surface that still doesn't match exactly once (0 or >1 matches)
-   is flagged `UNRESOLVED` in the output, never guessed.
+Two data shapes handled explicitly:
+- **Combined-tag spans** (e.g. `strong_variant='G2532 G2127'`): found through `verse_lexical.strong`,
+  which has one row per code, and labelled `{strong}+{other codes} combined tag`.
+- **Empty-surface spans** (the other half of a combined tag can carry no English surface): rendered
+  as a structured aside under the verse.
 
-Two data shapes G2128 (the first, easier test) never exercised, found building G2127, both handled
-explicitly here:
-- **Combined-tag spans** — STEP tags more than one Strong's code on one rendering unit (e.g.
-  `strong_variant='G2532 G2127'`). `verse_lexical.strong` decomposes these into one row per code
-  (querying `span.strong_variant` by exact string MISSES them — a real bug in the first draft of
-  the G2127 preview, fixed before this was built). Labelled `{strong}+{other codes} combined tag`
-  in the annotation rather than presented as a pure single-code occurrence.
-- **Empty-surface spans** — the other half of a combined tag can carry no independent English
-  surface text at all. Cannot be inline-substituted; rendered as a structured aside under the
-  verse instead.
-
-STEP's `call2_getInfo` "count" field (`strong.count`) is dictionary-wide, not a verse count —
-root-caused live 2026-08-10 (BUILD.md sec88). Shown here only as a labelled caveat, never used for
-anything.
+`strong.count` (STEP's "count") is dictionary-wide, not a verse count: shown only as a labelled caveat.
 """
 
 from __future__ import annotations

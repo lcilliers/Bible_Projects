@@ -49,28 +49,15 @@ def fail(condition: str, message="", **counts) -> Outcome:
 def escalate(condition: str, question: str, preset: dict, tried: str,
             resolution_kind: str = "decision_required", needs_followup: bool = False,
             title: str | None = None, **counts) -> Outcome:
-    """`resolution_kind` (escalation #798/#799): every handler-authored `escalate()` call is, by
-    construction, a genuine judgement point the handler's own logic decided it can't resolve --
-    that's why it's calling this at all, not the config the handler is checking against. Default
-    is `decision_required` for exactly that reason; a handler would only ever override it if it
-    has its own, narrower reason to believe a given call is self_correctable instead (none do,
-    as of this build -- see the design doc's SS3 review).
+    """`resolution_kind`: a handler-authored `escalate()` is a judgement point the handler cannot
+    resolve, so the default is `decision_required`; a handler overrides it only with its own reason.
 
-    `needs_followup` (found live 2026-08-31, escalation #1301): set True when approval alone does
-    not finish the job -- the handler's own logic requires a distinct follow-up action after the
-    researcher approves (configmaint.propose is the standing example: approving a proposal only
-    records the decision, a second Claude-driven re-run with -RunId is what actually calls
-    _apply()). Left False, the standard decision_required transition (approved + a resolution ->
-    completed) fires immediately on approval, which is correct for a plain judgement call but wrong
-    here -- it marked #1238-1256 'completed' while every one of their writes was still unapplied,
-    caught only because they were independently re-verified against the live DB rather than
-    trusted from the escalation's own state.
+    `needs_followup` (#1301): True when approval alone does not finish the job and a distinct follow-up
+    action follows (e.g. configmaint.propose: the write happens on the re-run with -RunId); approval
+    then routes the item back to Claude instead of completing it.
 
-    `title` (escalation #1326, 2026-08-31): a real, pre-validated title-shaped short_description
-    (<=60 chars, no clause-stitching) -- when given, `raise_()` uses it directly instead of lossily
-    truncating `question` (which is free to be a real, longer, REPRESENTATIVE description). Omit it
-    only when the caller genuinely has no better title to give (the old sanitise-by-truncation
-    fallback still applies then, unchanged)."""
+    `title` (#1326): a pre-validated, title-shaped short_description (<=60 chars); `raise_()` uses it
+    instead of truncating `question`, which can then be the full description."""
     o = Outcome(condition, question, counts)
     o.escalation = {"question": question, "preset": preset, "tried": tried, "type": "prompted",
                     "resolution_kind": resolution_kind, "needs_followup": needs_followup,

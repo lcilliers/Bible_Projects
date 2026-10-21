@@ -1,37 +1,19 @@
 """subgroupgenerate.py — the LLM-calling half of `cluster.subgroup` (process b, the `char-subgroup`
-stage, escalation #1706 Phase F / design #1690, built 2026-09-17). Sibling to
-`versereadinggenerate.py`, same separation: this module only assembles the payload and calls the
-API; `recordingpass.py` is the only thing that ever writes `cluster_subgroup`/
-`cluster_subgroup_strong` (single-writer discipline, checklist rule 0.1).
+stage, #1706 / #1690). Assembles the payload and calls the API; `recordingpass.py` is the only writer
+of `cluster_subgroup`/`cluster_subgroup_strong`.
 
-**Whole-cluster, ONE call, never batched** (`full-cluster-read-before-assignment`, #1690 §2(a)) —
-unlike `lexical.meaning`'s per-`passage.max_verses` chunking, subgroup formation is a holistic
-judgement over the cluster's ENTIRE member-strong set at once; splitting it into batches would
-mean no batch ever sees the full picture rule (a) requires. If a cluster's estimated cost/token
-count is too large for one call, the run refuses (cost-cap, same discipline as every other stage)
-rather than silently chunking against the rule's own intent.
+**Whole cluster, ONE call, never batched** (`full-cluster-read-before-assignment`, #1690 §2(a)):
+subgroup formation is a judgement over the cluster's entire member-strong set. A cluster too large for
+one call is refused (cost cap), never chunked.
 
-**Input, per member strong:** `strong.stepGloss`/`stepTransliteration` (the gloss/surface reading
-rule (a) requires), its Stage 1 (`verse-reading`) `ib_observation` rows already captured in the DB
-(the real analytical grounding — this is what makes subgroup formation MEANING-based rather than a
-cold read of dictionary glosses alone, #1690 §2(b)), and its distinct surface forms actually
-occurring in the corpus (deduped, capped — never a full occurrence dump, `project_api_reads_budget_
-bounded_small_batches`).
+**Input per member strong:** `strong.stepGloss`/`stepTransliteration`, its Stage 1 (`verse-reading`)
+observations (the meaning-based grounding, #1690 §2(b)), and its distinct surface forms in the corpus
+(deduped, capped).
 
-**`placement_note` vs `observations` — corrected 2026-09-17, researcher's own words this session:**
-*"the mechanism is not undecided, the capture program for the ib_observation from the llm must
-place the item on the observation... it sounds to me that the llm instructions does not include
-the flag [tag] types, with the result that llm is not actually helping to identify the observation.
-a placement note is by definition a comment about the observation, and not the observation
-itself."* The first version of this module gave the LLM no `observations` output at all and no
-`tag` vocabulary — so every substantive analytical claim it wanted to make had nowhere to go except
-`placement_note`, which is structurally the wrong place for it. Fixed: the LLM now gets the SAME
-`ib_observation.tag` vocabulary Stage 1 already uses and a dedicated `observations` array in its
-output shape, captured by the exact same `recordingpass.record_batch` mechanism Stage 1's
-`ib_observation`/`ib_node` capture already uses (`stage='char-subgroup'`) — no separate
-classification heuristic needed, because the LLM now states directly which output is which.
-`placement_note` is redefined strictly as a short pointer/rationale for the placement decision
-itself (why this strong is in this subgroup, or why it's FLAGged) — never the substantive claim.
+**Output:** the placement plus an `observations` array using the same `ib_observation.tag`
+vocabulary as Stage 1, captured by `recordingpass.record_batch` (`stage='char-subgroup'`).
+`placement_note` is only a short rationale for the placement itself (why this strong is in this
+subgroup, or why it is FLAGged), never a substantive claim.
 """
 
 from __future__ import annotations
@@ -60,8 +42,7 @@ def parse_response(text: str) -> dict:
     if m:
         candidate = m.group(1)
     try:
-        # strict=False: escalation #1826 -- tolerate raw control characters inside obs_text
-        # (Python's own documented leniency), not a custom sanitizer.
+        # strict=False: tolerate raw control characters inside obs_text (#1826)
         parsed = json.loads(candidate, strict=False)
     except json.JSONDecodeError as e:
         raise BadModelResponse(f"model reply is not valid JSON: {e} -- first 300 chars: {text[:300]!r}")

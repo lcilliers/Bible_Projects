@@ -65,11 +65,8 @@ class Step:
         EXPECTED data'. A stale/degraded/untagged server that still answers the port FAILS
         this and cannot report up. Returns the evidence it checked, so 'up' is a fact, not a
         claim; raises StepUnavailable with the specific reason on any miss."""
-        # Fallback defaults corrected 2026-07-29 (were "" / 1 — vacuous no-ops that would have
-        # silently defeated this whole probe if the cfg_setting rows were ever lost; the DB's
-        # real, deliberately-set values are "God" / 1000, confirmed live during this session's
-        # own `Start-Iba.ps1` run against H0430/2088 verses). Kept byte-identical to the DB so a
-        # missing row degrades to the SAME check, not a weaker one.
+        # fallback defaults equal the DB's set values ("God" / 1000), so a missing row degrades to the same
+        # check, not a weaker one
         probe = self.cfg.required_setting("step.probe_strong")
         want_gloss = self.cfg.required_setting("step.expect_gloss_contains")
         min_verses = int(self.cfg.setting("step.expect_min_verses", 1000))
@@ -138,20 +135,11 @@ class Step:
         return total, list(seen.values())
 
     def parse_spans(self, preview: str) -> list[dict]:
-        """One row per HTML <span> TAG, not per code (corrected 2026-07-25 — see
-        migration/rebuild_span_combined_units.py). STEP tags a span with the FULL set
-        of source-language codes it aligned to that one rendering unit — e.g.
-        strong='G1722 G0054' on "purity" (the preposition ἐν fused with its noun for
-        this one English word), or a Hebrew word's root plus its attached prefix/
-        suffix particles. Confirmed against a live STEP re-fetch: this combination is
-        in STEP's own source HTML, not introduced downstream — splitting it into one
-        row per code (the old behaviour) misattributed the OTHER codes' surface text
-        onto the code that has none of its own, and broke the particle off from the
-        word it's semantically bound to. strong_variant and morph_code now keep the
-        tag's full space-separated code/morph list together; position is the running
-        TAG index (not code index). is_particle is 1 only if EVERY code in the tag is
-        a particle (a tag mixing a content word with attached particles is not itself
-        a pure particle)."""
+        """One row per HTML <span> TAG, not per code: STEP tags a span with the full set of source codes
+        aligned to that rendering unit (e.g. strong='G1722 G0054' on "purity", or a Hebrew root with its
+        attached particles), as in its own source HTML. strong_variant and morph_code keep the tag's full
+        space-separated lists; position is the running TAG index; is_particle is 1 only if every code in
+        the tag is a particle."""
         out, pos = [], 0
         for morph_list, strong_list, surface in self.span_re.findall(preview):
             codes = strong_list.split()
@@ -169,13 +157,9 @@ def strip_html(html: str) -> str:
 
 
 def preview_to_text(preview: str | None) -> str:
-    """verse.preview (STEP interlinear HTML) -> verse.text (clean, tag-free plain
-    text). Single source of truth for this derivation — was duplicated ad hoc in the
-    one-off backfill (iba/app/tools/_apply_verse_plaintext_column.py, escalation
-    #1063) and never wired into ingestion itself (handlers/raw.py:verses_one), so
-    every verse row written since that one-time run carried text=NULL despite
-    cfg_column(verse.text).filled_by already claiming 'handlers/raw.py:verses'
-    (escalation #1662, 2026-09-10 — 723 rows found stale this way)."""
+    """verse.preview (STEP interlinear HTML) -> verse.text (clean, tag-free plain text). The single
+    source of this derivation, used at ingestion (handlers/raw.py:verses_one) and by the backfill tool
+    (#1063, #1662)."""
     if not preview:
         return ""
     s = preview

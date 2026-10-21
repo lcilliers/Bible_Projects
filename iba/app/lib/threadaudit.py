@@ -1,8 +1,5 @@
-"""threadaudit.py -- quality, validity and integrity of the open threads (escalation #2173 P5).
-
-Researcher, chat 2026-10-20 (verbatim): *"the threads start up work is incomplete. it does not do
-any quality or validity work, does not do any integrity checks. Counts and stats are meaningless if
-they do not lead to real disclosure."*
+"""threadaudit.py -- quality, validity and integrity of the open threads (#2173 P5): findings that
+lead to disclosure, not counts.
 
 Read-only. Every finding is named by its thread item (OT-nn.n) or thread (OT-nn) with its reason:
 

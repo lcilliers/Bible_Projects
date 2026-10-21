@@ -1,15 +1,9 @@
-"""prose handlers — thin dispatcher adapters over `iba.app.lib.prosestore`.
-
-Registers the DB-canonical prose store's operations as the `prose` work package. The original four
-(extract, search, chapter export, chapter import — escalation #784: these tables/columns were fully
-catalogued in `cfg_table`/`cfg_column` but had zero live IBA code operating on them) are read-only
-against `prose_section`/`prose_section_type`; `prose.import_chapter` generates a patch file but
-writes nothing to the database itself (same boundary the standalone script always had — apply via
-`scripts/apply_session_patch.py`). A fifth, `prose.flag` (escalation #829 sec12.4, angle a), writes
-directly to `wa_data_quality_flags` — the one write this module performs itself, not gated behind a
-patch file. Two more, `prose.flag_fix_propose`/`prose.flag_fix_apply` (escalation #890 D5, angle
-b), add propose/apply on top of angle a — propose writes a review report only, apply generates a
-patch (same read-only/patch-generating boundary as import_chapter, no new DB-write exception).
+"""prose handlers — thin dispatcher adapters over `iba.app.lib.prosestore`, the `prose` work package.
+extract, search, chapter export and chapter import are read-only against `prose_section`/
+`prose_section_type` (`prose.import_chapter` generates a patch, applied by
+`scripts/apply_session_patch.py`). `prose.flag` writes directly to `wa_data_quality_flags`, the one
+direct write. `prose.flag_fix_propose` writes a review report only; `prose.flag_fix_apply` generates
+a patch.
 """
 
 from __future__ import annotations

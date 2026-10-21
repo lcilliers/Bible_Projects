@@ -1,38 +1,20 @@
 """charanswergenerate.py — the LLM-calling half of `cluster.answer` (the `char-answers` stage,
-process (d), escalation #1706 Phase F stage 4, built 2026-09-18). Sibling to
-`charreadinggenerate.py`, same separation: this module only assembles the payload and calls the
-API; `recordingpass.py` is the only thing that ever writes `ib_observation`/`ib_node`.
+process (d), #1706). Assembles the payload and calls the API; `recordingpass.py` is the only writer of
+`ib_observation`/`ib_node`.
 
-**Scope grain: per-subgroup, never the whole cluster** (`#1682` §4A rule 1 / checklist §3 rule 1) —
-one LLM call per `cluster_subgroup`, answering the catalogue's "characteristic-grain" battery
-against that subgroup's accumulated evidence (Stage 1/2/3's own observations plus full occurrence
-data). Same output shape as Stages 1–3 ({"observations": [...]}) -- the only real difference from
-Stage 3 is that `question_code` is now genuinely populated with catalogue leaf codes, and an
-observation may be grounded in the SUBGROUP as a whole (`strong: null`, each occurrence carrying
-its OWN `strong`) rather than one specific member strong.
+**Scope: per subgroup** (#1682 §4A rule 1): one call per `cluster_subgroup`, answering the
+characteristic-grain battery against the subgroup's evidence (Stage 1/2/3 observations plus full
+occurrence data). Output {"observations": [...]} with real catalogue `question_code`s; an observation
+may be grounded in the subgroup as a whole (`strong: null`, each occurrence carrying its own `strong`).
 
-**Battery scope, deliberately narrowed, both exclusions already-documented gaps, not new
-judgement calls of this build:**
-1. Every active leaf question whose `scope` is `Characteristic (HIB behaviour)` /
-   `Characteristic relational` / `The HIB` / `Other non-human beings` -- the four scope values
-   `#1682` §4A itself names as "answered across the family's evidence as a whole" (as opposed to
-   `Word/term (lexical)`/`Verse-context`, which Stage 1 already substantially covers at occurrence
-   grain).
-2. `D7.7.1` excluded -- despite carrying scope `Characteristic (HIB behaviour)` in the catalogue,
-   this exact code is ALREADY answered by Stage 1 (`versereadinggenerate.py`'s own catalogue
-   linkage, per-verse/per-home-strong) -- answering it again here would duplicate, not extend,
-   existing live data. The scope-label vs. actual-answering-stage mismatch is a real, noted
-   discrepancy, not silently resolved by picking one side.
-3. Science-extract-dependent questions excluded (`question_text LIKE '%science extract%'` --
-   currently `D9.1.1`/`D9.2.1`/`D11.2.1`/`D12.1.1`) -- the checklist's own Stage 4 status names this
-   wiring "not decided or built" (`BUILD.md` #287's own carried-forward checklist). Answering these
-   without the science-extract file actually wired in would either invent an unsupported claim or
-   silently ignore the question's own explicit instruction -- neither is this build's call to make.
-4. `cross_family_or_cluster_flags` (checklist §3 rule 5) is NOT requested from the model this
-   build -- its own `tag` value is explicitly still unchosen (checklist "still-open items" list),
-   unlike `needs_adjacent_verse_context` (registered this same session, #1706 v36) which IS ready
-   to use. Inventing a tag name here would bake a design decision into a code build, not apply one
-   already made.
+**Battery scope:**
+1. Every active leaf question whose `scope` is `Characteristic (HIB behaviour)` / `Characteristic
+   relational` / `The HIB` / `Other non-human beings` (#1682 §4A).
+2. `D7.7.1` excluded: Stage 1 already answers it, although its catalogue scope is
+   `Characteristic (HIB behaviour)`.
+3. Science-extract-dependent questions excluded (`question_text LIKE '%science extract%'`): the
+   science-extract wiring is not built.
+4. `cross_family_or_cluster_flags` is not requested: its `tag` value is not chosen.
 """
 
 from __future__ import annotations
@@ -60,8 +42,7 @@ def parse_response(text: str) -> dict:
     if m:
         candidate = m.group(1)
     try:
-        # strict=False: escalation #1826 -- tolerate raw control characters inside obs_text
-        # (Python's own documented leniency), not a custom sanitizer.
+        # strict=False: tolerate raw control characters inside obs_text (#1826)
         parsed = json.loads(candidate, strict=False)
     except json.JSONDecodeError as e:
         raise BadModelResponse(f"model reply is not valid JSON: {e} -- first 300 chars: {text[:300]!r}")
@@ -154,16 +135,10 @@ def assemble_subgroup_package(ctx, cluster_code: str, subgroup_row: dict,
 
 def compute_question_checks(conn, cluster_code: str, member_strongs: list[str],
                             question_codes: list[str]) -> list[dict]:
-    """Stage 4's own completeness check, code-computed after the write, same discipline as Stage
-    3's `compute_strong_checks` -- but the unit here is a CATALOGUE QUESTION, not an occurrence
-    (this stage answers questions, it doesn't scan occurrences fresh). `ib_observation` has no
-    subgroup identifier column at all (checked live, schema fixed, not this build's call to
-    change) -- a subgroup's own coverage is recovered via its member strongs' `ib_node` rows
-    instead, since every strong belongs to exactly one subgroup by construction (checklist §1 rule
-    9): a question counts as answered for this subgroup if some `char-answers` observation for it
-    has at least one `ib_node` row citing one of this subgroup's own member strongs (works whether
-    the observation's own `strong` is set directly, or null with per-occurrence strong, per the
-    2026-09-18 `recordingpass.py` fix)."""
+    """Stage 4's completeness check, computed by code after the write; the unit is a catalogue
+    question. `ib_observation` has no subgroup column, so a question counts as answered for this
+    subgroup if some `char-answers` observation for it has an `ib_node` citing one of the subgroup's
+    member strongs (each strong belongs to exactly one subgroup)."""
     if not member_strongs:
         return [{"question_code": q, "answered": False} for q in question_codes]
     ph = ",".join("?" * len(member_strongs))

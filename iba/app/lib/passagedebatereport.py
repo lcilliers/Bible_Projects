@@ -41,14 +41,8 @@ from .versespanmeaningreport import (detect_verse_gaps, fetch_verses, gap_note,
 
 
 class BaseExtractMissing(Exception):
-    """The verse_lexical data this range's debate depends on has not been built yet. Was a
-    filesystem check against report.verse_span_meaning's MD output (extract_path.exists()) —
-    swapped 2026-08-05 to a DB check against verse_lexical, the mechanical-lexical replacement
-    (report.verse_span_meaning is retired; see t1-t3-design-decisions-20260805.md — "T1-T3" there
-    is this table's original dev-only name, retired in favour of "the lexical" per the
-    researcher's own terminology, same day). Digesting the full analytic method (HIB/phenomenon/
-    operation) into this scaffold is separate follow-on work — see
-    debate-analytic-process-digest-20260805.md — this change only swaps the existence gate."""
+    """The verse_lexical data this range's debate depends on has not been built yet (a DB check
+    against verse_lexical)."""
 
 
 class MethodDocMissing(Exception):

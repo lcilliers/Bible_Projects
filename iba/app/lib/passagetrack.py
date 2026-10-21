@@ -1,23 +1,15 @@
 """passagetrack.py — the completion-tracking record for the verse-fanout method (`report.
-verse_span_meaning` + `report.passage_debate`), built on the repurposed `passage`/`verse_passage`
-tables (`migration/repurpose_passage_tracking.py`; the tables' prior candidate-driven use is
-retired, BUILD.md §23 — the retired 18,504/24,763 rows stay, `deleted=1`, untouched).
+verse_span_meaning` + `report.passage_debate`), on the `passage`/`verse_passage` tables.
 
-One `passage` row per distinct book/range that has been run through either report step,
-cross-referenced to every verse it covers via `verse_passage` — so a book's completion can be
-read off directly (which verses have zero passage coverage yet) and any verse can be traced back
-to its passage, its extract, and its debate.
+One `passage` row per distinct book/range run through either report step, cross-referenced to every
+verse it covers via `verse_passage`, so a book's completion can be read directly (which verses have no
+passage yet) and any verse traced to its passage, extract and debate.
 
-**What this deliberately does NOT do.** It does not digest the debate's analytical content
-(operations, subjects, decisions) into the DB — the researcher's own words, 2026-07-27: "I have
-not yet decided on how to digest the detail of the debate into the DB, this is still emerging."
-`debate_status` is a coarse, mechanical signal only (does the file still contain an unreplaced
-`<!-- fill in -->` placeholder?), not a content model.
+It does not digest the debate's analytical content into the DB. `debate_status` is a coarse,
+mechanical signal only (does the file still contain an unreplaced `<!-- fill in -->` placeholder?).
 
-Called from `handlers/reports.py`'s two report handlers on a successful write — `record_extract`
-after `report.verse_span_meaning`, `record_debate` after `report.passage_debate` — so the record
-updates in the same run that produces the file, per the researcher's explicit requirement that
-this be "linked into the run," not a separate manual bookkeeping step.
+Called from `handlers/reports.py`'s two report handlers on a successful write (`record_extract`,
+`record_debate`), so the record updates in the same run that produces the file.
 """
 
 from __future__ import annotations
@@ -91,11 +83,9 @@ def _upsert_passage(cfg, writer: str, book: str, book_label: str, verses: list[d
 
 def _sync_verse_passage(cfg, writer: str, passage_id: int, verses: list[dict],
                         anchor_verse_id: int):
-    """Every verse in `verses` ends up pointing (live, deleted=0) at `passage_id`. A verse
-    previously live-linked to a DIFFERENT passage (range boundaries changed on a re-run) has
-    that old link soft-deleted first — `verse_id` may have at most one LIVE passage link
-    (idx_verse_passage_verse_id_live), the same invariant the old system declared, now enforced
-    for live rows only."""
+    """Every verse in `verses` ends up pointing (live, deleted=0) at `passage_id`. A verse live-linked
+    to a different passage has that link soft-deleted first: a verse has at most one live passage link
+    (idx_verse_passage_verse_id_live)."""
     _grant(cfg, writer, "verse_passage")
     conn = cfg.conn
     for v in verses:

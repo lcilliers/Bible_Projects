@@ -1,44 +1,18 @@
-"""taggingguidance.py — the ONE shared source of `ib_observation.tag` definitions for every LLM-
-calling generator stage (escalation #1836, 2026-09-22, restarting the `#1770` thread the researcher
-flagged as silently dropped: *"we did substantial work on this before - you just lost it silently...
-TAG IS AN IMPORTANT TOOL make use of it."*).
+"""taggingguidance.py — the one shared source of `ib_observation.tag` definitions for every
+LLM-calling generator stage (#1836, #1770). `cfg_column.use` for `ib_observation.tag` says the enum is
+shared across all stages; this module is that shared definition set, so every active tag reaches the
+model with a real definition.
 
-**What was actually lost** (found live, not guessed): escalation #1770's own full audit
-(`iba/docs/1770-tag-system-audit-v1-20260919.md`) already diagnosed this exact problem in full --
-`cfg_column.use` for `ib_observation.tag` says the enum is "shared across all stages, not
-partitioned per stage," but the CODE never implemented that: 4 independent generator modules each
-built their own `tag_values` list and their own guidance text (`versereadinggenerate.py` owned a
-`TAG_GUIDANCE` dict covering 8 of 19 active tags; `charreadinggenerate.py` had a third, separate,
-hand-written prose block; `subgroupgenerate.py` had ZERO guidance at all). The audit's own closing
-line -- *"Nothing built or changed by this audit. Waiting on your direction for what 'restart from
-scratch' should actually produce."* -- was answered with a bare "noted" and never followed up.
-This module IS that follow-through.
+Definitions are sourced, in priority order, from (1) the tag taxonomy consolidation doc
+(`iba/docs/1706-tag-taxonomy-consolidation-v1-20260917.md`), (2) `cfg_method_rule` rows defining a
+tag's meaning (`no-human-context` #97, `data-error` #98, `needs_adjacent_verse_context` #74/#104),
+(3) how a tag is used live, where neither exists. `alternative-meaning` (more than one candidate
+reading where the data supports more than one) and `surface-gloss-divergence` (span.surface vs
+stepGloss, a form-level fact) are distinct concepts, and their definitions keep them apart.
 
-**Every active tag now has a real, sourced definition** -- no more silent gaps reaching the model
-as a bare, unexplained name in a list. Sourced from, in priority order: (1) the original consolidation
-doc (`iba/docs/1706-tag-taxonomy-consolidation-v1-20260917.md`) where the 21-value enum first came
-from, (2) `cfg_method_rule` rows that already defined a tag's meaning but were never wired into any
-prompt (`no-human-context` rule #97, `data-error` rule #98, `needs_adjacent_verse_context` rules
-#74/#104), (3) direct inspection of how a tag is actually being used live, where neither of the
-above exists. One real drift caught doing this: `alternative-meaning` (rule 6 -- "more than one
-candidate reading where the DATA supports more than one," i.e. genuine ambiguity) and
-`surface-gloss-divergence` (rule 8 -- "span.surface vs stepGloss divergence," a form-level fact)
-are DIFFERENT concepts by original design, but live `M0.5.11` usage shows them being applied
-interchangeably to the same "this occurrence's sense diverges from the base gloss" pattern -- their
-shared root cause was that NEITHER ever had a real definition reach the LLM before now (`alternative-
-meaning` had literally zero guidance anywhere in code). Not retroactively fixed here (existing rows
-are a separate backlog decision, same principle already established this session for observation
-dedup) -- restoring the correct distinction in the prompt is what stops the drift going forward.
-
-**Stage-scoping** (`STAGE_TAGS`): not every tag is meaningful at every stage's own grain. Two tags
-are inherently CROSS-OCCURRENCE (comparing a strong's own occurrences against each other across
-MULTIPLE verses) -- `verse-grouping`, `difference-inference` -- and structurally cannot apply to
-`verse-reading` (Stage 1), which only ever sees one verse at a time by design. Offering them there
-anyway (the old per-module `tag_values` query did, with zero stage filtering, exactly what #1770's
-audit flagged as the missing piece: *"No config artifact currently enforces which tags are valid
-for which stage."*) invites a nonsensical choice. This is a plain Python allowlist, not a new
-`cfg_setting`/DB table -- the same lean, in-code convention the original `TAG_GUIDANCE` dict already
-used; a config-driven version is a reasonable future refinement, not required to close this gap.
+**Stage scoping** (`STAGE_TAGS`): `verse-grouping` and `difference-inference` compare a strong's
+occurrences across several verses, so they are not offered to `verse-reading` (Stage 1), which sees
+one verse at a time. A plain Python allowlist.
 """
 
 from __future__ import annotations
@@ -154,11 +128,9 @@ def tags_for_stage(stage: str, tag_values: list[str]) -> list[str]:
 
 
 def guidance_block(tag_values: list[str]) -> str:
-    """Renders the standard '`tag` is a categorisation value, not just a peculiarity flag' framing
-    plus one definition line per tag in `tag_values` that has a known definition -- the same
-    rendering every stage previously hand-rolled (or, for `subgroupgenerate.py`, never rendered at
-    all). A tag in `tag_values` with no entry here is silently omitted, never crashes the prompt
-    build -- but every currently-active tag DOES have an entry (see module docstring)."""
+    """Renders the standard '`tag` is a categorisation value, not just a peculiarity flag' framing plus
+    one definition line per tag in `tag_values` that has a definition. A tag without one is omitted,
+    never crashing the prompt build."""
     lines = "\n".join(f"  - {t}: {TAG_GUIDANCE[t]}" for t in tag_values if t in TAG_GUIDANCE)
     return (
         f"`tag` is a categorisation value, not just a peculiarity flag -- it must let someone "

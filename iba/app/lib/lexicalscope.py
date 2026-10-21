@@ -1,21 +1,10 @@
-"""lexicalscope.py — selector-to-verse-id resolution for `lexical.run` (escalation #1549 rework,
-2026-09-07). The old `-Book`+one-contiguous-`-Range`/`-Chapters` entry point `lexical.build`/
-`lexical.enrich` shared is stale, researcher's own words: "it is fundamentally built on books and
-passages which contradicts the analytic operation for clusters and groups of strongs." The real
-input is a scattered, cross-book verse list generated as a subset via a cluster or group of
-strongs — cluster/word are both converted to a strong-list first, which converts to a verse-list,
-the actual lexical unit ("Implicitly a cluster request is in effect a request for a series of
-strongs that is implicitly a series of verses").
+"""lexicalscope.py — selector-to-verse-id resolution for `lexical.run` (#1549). The input is a
+cross-book verse list from a cluster or group of strongs: cluster/word -> strong-list -> verse-list.
 
-**Why `span.strong_variant`, not `strong_verse`** — found and rejected live, same session:
-`strong_verse` (used by `handlers/raw.py:lexical`, the per-WORD rebuild step) looked like the
-obvious strong→verse lookup, but it undercounts — it's only populated for strongs belonging to an
-individually-onboarded `word_registry` word. Verified: cluster M01's 100 strongs resolve to 892
-verses via `strong_verse` vs **933** via `span.strong_variant` (the raw per-token STEP parse,
-populated corpus-wide regardless of onboarding status) — a real 41-verse gap. `span.strong_variant`
-is the complete source; matched as a whole space-separated token (a span can carry a compound code,
-e.g. "H1234 H5678" — confirmed live, 118,922 of 378,149 live spans are compound), never a substring
-match and never base-stripped (`reference_strong_related_keyed_on_exact_code_not_base`).
+Verses come from `span.strong_variant`, not `strong_verse`: `strong_verse` is populated only for
+strongs of an onboarded `word_registry` word, while `span.strong_variant` is the corpus-wide STEP parse.
+Codes are matched as whole space-separated tokens (a span can carry a compound code, e.g.
+"H1234 H5678"), never as a substring and never base-stripped.
 """
 
 from __future__ import annotations
@@ -78,15 +67,9 @@ def resolve_strongs(conn: sqlite3.Connection, cluster_code: str | None = None,
         return [r["strong"] for r in rows]
 
     deduped = list(dict.fromkeys(strong_list))   # preserve order
-    # Guard against the known exact-suffix trap (reference_strong_related_keyed_on_exact_code_not_
-    # base): a bare code like "H0430" matches NOTHING in `span.strong_variant`, which is always
-    # suffixed ("H0430G") -- confirmed live, this exact case, while building this module. Validated
-    # against ACTUAL SPAN PRESENCE, not the `strong` catalogue table -- found live, same session,
-    # that `strong` undercounts too: 409 distinct span tokens (each with 1-2 real occurrences) have
-    # no `strong` row at all yet (a `lexicon.parse` coverage lag, not a corruption), and validating
-    # a -StrongList entry against `strong` would wrongly reject every one of those as "not found"
-    # even though it resolves real verses. `strong` is still used, separately, to build the "did you
-    # mean" suggestion when a code genuinely isn't attested anywhere.
+    # validated against span presence, not the `strong` table (some span codes have no `strong` row
+    # yet), and on the exact suffixed code (a bare "H0430" matches nothing in span.strong_variant);
+    # `strong` only builds the "did you mean" suggestion for a code not attested at all
     span_tokens = _span_token_set(conn)
     bad = [s for s in deduped if s not in span_tokens]
     if bad:

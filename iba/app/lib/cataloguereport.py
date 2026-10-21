@@ -1,21 +1,13 @@
-"""cataloguereport.py — structural report over `wa_obs_question_catalogue` (bible_research.db),
-deliberately scoped to that ONE table (no joins to `finding`/`finding_question_link`/etc. — this is
-a review of the catalogue's own shape, not a findings report). Built 2026-08-29, escalation #1007
-(second half of the catalogue-tool thread — the first half, extraction + table consolidation, is
-BUILD.md secs 200-206; this is the "structured report, no findings" the researcher asked for on
-top of that).
+"""cataloguereport.py — structural report over `wa_obs_question_catalogue` (bible_research.db), scoped
+to that one table (no joins to findings): a review of the catalogue's own shape, to evaluate and
+augment the questions and their structure (#1007).
 
-Content follows directly from the table's own `cfg_column.use` notes (already on file, written
-during #1007's earlier phases) — every structural problem named there is surfaced here as an actual
-section, not just described in prose: the status/deleted lifecycle disagreement, the two competing
-section-naming schemes (`Section N` vs `Tn`), the tier/component gaps, question_code prefix sprawl,
-and date_added format inconsistency. Purpose (researcher, verbatim): "to evaluate and augment the
-questions and structure around it."
+Every structural problem named in the table's `cfg_column.use` notes is a section: the
+status/deleted lifecycle disagreement, the two section-naming schemes (`Section N` vs `Tn`), the
+tier/component gaps, question_code prefix sprawl, and date_added format inconsistency.
 
-Reads `bible_research.db` directly via `cfg.database_path('bible_research')` (the same cross-
-database pattern `lib/prosestore.py` already uses) — `reportkit`'s scaffold machinery still reads
-its own config (`cfg_report`/`cfg_report_section`) off `cfg.conn` (iba.db), since that's where
-every report's config lives regardless of which database its DATA comes from.
+Reads `bible_research.db` via `cfg.database_path('bible_research')`; the report scaffold's config
+(`cfg_report`/`cfg_report_section`) comes from `cfg.conn` (iba.db).
 """
 
 from __future__ import annotations
@@ -204,9 +196,5 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
 
     L = reportkit.render_scaffold(cfg.conn, "report.obs_catalogue", sections, intro=intro)
 
-    # No CSV pairing here (researcher correction, 2026-08-29) -- a verbatim wa_obs_question_
-    # catalogue dump already exists via the governed table.export mechanism (table_export.
-    # output_dir -> Workflow/schema/bible_research/wa_obs_question_catalogue.csv). Writing a
-    # second copy under this report's own export/ folder would just be a duplicate destination
-    # for the same table, which is exactly what table_export.output_dir exists to prevent.
+    # no CSV pairing: the table's verbatim dump is table.export's (table_export.output_dir)
     return reportkit.write_report(cfg.conn, "report.obs_catalogue", path, L)
