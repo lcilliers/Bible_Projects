@@ -1,8 +1,8 @@
 """init.py — the app bootstrap. Prepare the environment; report ready.
 
 The startup sequence, idempotent:
-  1. validate the config seeds (cfgcheck) — refuse to start on incoherent config
-  2. load the config into the DB if it is not already there (or --reload to reseed)
+  1-2. the config must be in the DB (the DB is the master copy; there is no seed to reload from):
+     refuse to start without it -- restore a snapshot (iba/app/db/snapshots/) or the NAS backup
   3. build the data tables from the config if they are missing (or --reset to rebuild)
   4. pre-flight STEP — up AND answering with the tagged module
   5. how the last session ended (S6, escalation #2173): uncommitted work, a missing close
@@ -14,7 +14,6 @@ A check that passes is silent; only a problem is printed, and problems come firs
 
 Run it before the first run of a session:
     python -m iba.app.init            # prepare + status (idempotent)
-    python -m iba.app.init --reload   # reseed the config from the JSON
     python -m iba.app.init --reset    # rebuild the data tables (drops data)
 """
 
@@ -25,7 +24,7 @@ import sqlite3
 import sys
 
 from .lib.cfg import Cfg, DB_PATH
-from .lib import cfgload, compliance, db as dbmod, sessionwindow
+from .lib import compliance, db as dbmod, sessionwindow
 
 
 def _config_loaded() -> bool:
@@ -49,22 +48,17 @@ def _data_tables_exist(cfg: Cfg) -> bool:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--reload", action="store_true", help="reseed the config from the JSON")
     ap.add_argument("--reset", action="store_true", help="rebuild the data tables (DROPS data)")
     a = ap.parse_args()
 
     print("IBA app — startup")
     problems: list[str] = []          # printed first; a passing check prints nothing (P0)
 
-    # 1-2. config
-    if a.reload or not _config_loaded():
-        try:
-            _, counts = cfgload.load()
-        except cfgload.ConfigRejected as e:
-            print(f"  ✗ {e}", file=sys.stderr)
-            return 1
-        problems.append(f"config was (re)loaded from the seeds ({sum(counts.values())} rows in "
-                        f"{len(counts)} cfg_* tables) — confirm this was intended")
+    # 1-2. config: the DB is the master copy
+    if not _config_loaded():
+        print(f"  ✗ no config in {DB_PATH} -- restore a snapshot (iba/app/db/snapshots/) or the NAS "
+              f"backup; there is no seed to reload from", file=sys.stderr)
+        return 1
     cfg = Cfg()
 
     # 3. data tables

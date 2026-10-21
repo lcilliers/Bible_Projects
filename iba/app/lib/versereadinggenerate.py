@@ -33,7 +33,7 @@ from __future__ import annotations
 import json
 import re
 
-from .narrativegenerate import _api_key, ApiKeyMissing, ApiCallFailed  # noqa: F401 -- re-exported
+from .lexicalenrichgenerate import _api_key, ApiKeyMissing, ApiCallFailed  # noqa: F401 -- re-exported
 from .lexicalenrichgenerate import call_api, log_usage  # reuse, don't duplicate
 from .lexicalenrichgenerate import CostCapExceeded, BadModelResponse  # noqa: F401 -- re-exported
 from . import stage1coverage

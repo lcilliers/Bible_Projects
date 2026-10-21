@@ -1,8 +1,8 @@
 """cfg.py — the runtime config reader. THE ONLY WAY THE APP READS CONFIG.
 
 Reads exclusively from the cfg_* tables in the DATABASE. Never opens a JSON file.
-The JSON is the seed (cfgload.py wrote it into the DB); this is what the running app
-consults, from its first decision to its last.
+The DB is the master copy of the config; this is what the running app consults, from its first
+decision to its last.
 
 Every read is TRACED. Set IBA_TRACE=1 and every config lookup prints who read what —
 so the governance chain is visible, not asserted.
@@ -17,17 +17,11 @@ import pathlib
 import sqlite3
 import sys
 
-# every cfg_* table that is actual CONFIG CONTENT (an input the app reads) — excludes the audit
-# trails (cfg_change_log, cfg_change_detail) and cfg_meta itself, which would make the hash
-# depend on its own prior value. Kept as a named list (not a LIKE 'cfg_%' scan) so a future
-# audit-only cfg_* table doesn't silently start affecting the version.
-_VERSION_TABLES = (
-    "cfg_table", "cfg_column", "cfg_unique", "cfg_index", "cfg_enum", "cfg_connection", "cfg_api",
-    "cfg_write_grant", "cfg_work_package", "cfg_step", "cfg_setting", "cfg_on_fail",
-    "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule", "cfg_utility", "cfg_trigger",
-)
-# Several later cfg_* tables (cfg_quality_check, cfg_method_rule, cfg_report*) are not in this list;
-# whether to widen it is an open decision.
+# The config version hashes every active cfg_* rule table (cfg_table category='rule'), so a new rule
+# table counts automatically; audit logs (category 'log') and cfg_meta itself (whose value would
+# feed its own hash) are left out (#2201).
+_VERSION_TABLES_SQL = ("SELECT name FROM cfg_table WHERE database='iba' AND category='rule' "
+                       "AND inactive=0 AND substr(name, 1, 4)='cfg_' AND name<>'cfg_meta' ORDER BY name")
 
 DB_PATH = pathlib.Path(__file__).resolve().parent.parent / "db" / "iba.db"
 TRACE = os.environ.get("IBA_TRACE") == "1"
@@ -282,13 +276,14 @@ class Cfg:
         return rows
 
     def config_version(self) -> str:
-        """The config version: computed live from the content of every cfg_* table in _VERSION_TABLES, so
-        it changes the moment the config does. 'app-0.1.0' is the human-readable major-version prefix."""
+        """The config version: computed live from the content of every active cfg_* rule table
+        (_VERSION_TABLES_SQL), so it changes the moment the config does. 'app-0.1.0' is the
+        human-readable major-version prefix."""
         base = self.conn.execute(
             "SELECT value FROM cfg_meta WHERE key='config_version'").fetchone()
         prefix = base["value"] if base else "app"
         h = hashlib.sha256()
-        for t in _VERSION_TABLES:
+        for (t,) in self.conn.execute(_VERSION_TABLES_SQL).fetchall():
             for row in self.conn.execute(f'SELECT * FROM "{t}" ORDER BY rowid'):
                 h.update("|".join("" if v is None else str(v) for v in row).encode("utf-8"))
             h.update(b"\x00")

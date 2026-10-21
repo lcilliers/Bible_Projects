@@ -18,7 +18,7 @@ from ..lib import manifest as manifest_mod
 from ..lib import retention as retention_mod
 from ..lib import batchprogressreport
 from ..lib import (cataloguereport, clusterreport, registryreport, schemareport, seedreport,
-                   spanreport, strongreport, strongversereport, wordregistryspanreport)
+                   spanreport, strongreport, strongversereport)
 from ..lib import (lexical, passagedebatereport, passagetrack, reportkit, versespanmeaningreport,
                    wholebookread)
 from ..lib.stepapi import StepUnavailable
@@ -177,13 +177,6 @@ def seed_candidate_report(ctx: Ctx) -> Outcome:
 def strong_meaning_report(ctx: Ctx) -> Outcome:
     path = pathlib.Path(ctx.cfg.required_setting("report.strong_meaning_path"))
     out = strongreport.write_report(ctx.cfg, path)
-    return ok(f"wrote {out}", path=str(out))
-
-
-def word_registry_span_report(ctx: Ctx) -> Outcome:
-    out = wordregistryspanreport.write_report(ctx.cfg, ctx.params["Word"])
-    if out is None:
-        return fail("word-not-found", f"{ctx.params['Word']!r} is not in the registry")
     return ok(f"wrote {out}", path=str(out))
 
 

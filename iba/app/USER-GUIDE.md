@@ -24,7 +24,7 @@ history at `archive/docs/user-guide-md-history-to-20261021.md`.
 |---|---|
 | Python 3.14 | with `requests` (`python -m pip install requests`) |
 | STEP Bible | the local server at `http://localhost:8989`, module `ESV_th`; the app never uses the web |
-| `ANTHROPIC_API_KEY` | only for the steps that call the Claude API: the cluster-reading stages (§7) and `iba/app/ps/Book-Narrative.ps1` (§6); from the environment or the repo-root `.env` |
+| `ANTHROPIC_API_KEY` | only for the steps that call the Claude API: the cluster-reading stages (§7); from the environment or the repo-root `.env` |
 
 The database is `iba/app/db/iba.db` (git-ignored). `bible_research.db` is the prose store only
 (`governance.scope_research_db`).
@@ -66,8 +66,9 @@ A check that passes prints nothing. It then prints, in full from the database, t
 this session, and ends `READY` or `NOT READY`. Runs refuse to start without STEP
 (`step.required_for_runs`).
 
-- `-Reload` reseeds the config from the JSON seeds.
 - `-Reset` rebuilds the data tables. It drops all data and keeps the config.
+- The config lives only in iba.db. If it is missing, the bootstrap refuses to start; restore a
+  snapshot (`iba/app/db/snapshots/`) or the NAS backup.
 
 **The compliance file** (`Logs/compliance/COMPLIANCE-<date>-<session8>.md`) has one row per rule
 delivered in the session's mode, keyed `G:<governance setting>`, `B:<behaviour rule id>`,
@@ -336,8 +337,6 @@ iba\app\ps\VerseLexical.ps1 -Book Dan -Chapters 1-12 -BookLabel Daniel
 **2. Register a passage:**
 
 ```powershell
-iba\app\ps\Build-Passages.ps1 -Book Gal -Suggest                       # propose a boundary; no write
-iba\app\ps\Build-Passages.ps1 -Book Gal -Suggest -Confirm -PayloadPath <json>
 iba\app\ps\Build-Passages.ps1 -Book Gal -Range 5:16-17 -PayloadPath <json>
 ```
 
@@ -361,28 +360,14 @@ Write the payload, then re-run the same command. After `closing.set`, the report
 - A step can be run on its own with
   `Operations-Ingest.ps1 -Step <step> -Book … -Chapters|-Range … -PayloadPath …`.
 
-**4. Book-level outputs:**
+**4. Book-level output:**
 
 ```powershell
 iba\app\ps\WholeBookRead-Report.ps1 -Book Amos -BookLabel Amos
-iba\app\ps\Book-Narrative.ps1 -Book Amos -BookLabel Amos
 ```
 
 `iba/app/ps/WholeBookRead-Report.ps1` reads the filled scaffold-model debates (Amos, Hosea, Joel, Jonah,
 Micah, Obadiah). It does not yet read books produced by `iba/app/ps/Debate-Run.ps1`.
-
-`iba/app/ps/Book-Narrative.ps1` generates a book's narrative through the Claude API, then checks it.
-- It estimates the cost before calling.
-- Over `narrative.generate_max_cost` it refuses.
-- Under the cap it pauses for approval:
-
-```powershell
-iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve -AnsweredBy Researcher
-iba\app\ps\Book-Narrative.ps1 -Book Amos -BookLabel Amos -RunId <run_id>
-```
-
-The model and rates are `narrative.*` settings. The real usage of each call is appended to
-`narrative.usage_log_path`.
 
 ---
 
@@ -491,7 +476,6 @@ iba\app\ps\SpanAnalysis-Report.ps1                   # span coverage per book
 iba\app\ps\SchemaOverview-Report.ps1                 # iba.db data schema, live
 iba\app\ps\SchemaOverview-BibleResearch-Report.ps1   # bible_research.db schema, live
 iba\app\ps\Registry-Report.ps1                       # word_registry, joined to strong, grouped by sense
-iba\app\ps\WordRegistrySpan-Report.ps1 -Word fear    # a word's Strong's in meaning clusters, with their surface forms
 iba\app\ps\StrongVerse-Report.ps1 -Word blessing -Strong G2127   # every verse of one Strong's, annotated
 iba\app\ps\Passage-Quality.ps1 [-Book <book>]        # passage size distribution
 iba\app\ps\Log-Retention.ps1                         # run/escalation/validation log health (read-only)
@@ -503,8 +487,7 @@ iba\app\ps\Export-Tables.ps1 [-Table a,b] [-Out <dir>]   # data tables to CSV, v
 **Report notes:**
 - **Which reports are configurable:** report content is set by `report.*` and `validation.show_*`
   settings, changed through §4.
-- **WordRegistrySpan and StrongVerse:** an unknown word, or a Strong's not linked to the word,
-  fails cleanly.
+- **StrongVerse:** an unknown word, or a Strong's not linked to the word, fails cleanly.
 - **StrongVerse:** shows exact `strong_variant` senses only. It labels combined-tag spans, and
   flags as `UNRESOLVED` any surface that doesn't match its verse exactly once.
 

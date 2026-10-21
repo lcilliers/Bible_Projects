@@ -16,7 +16,6 @@
     The app needs NO .env and NO secrets: STEP is the local server named in config,
     with no key. The only external requirement is the local STEP server running.
 
-.PARAMETER Reload   Reseed the config from the JSON into the DB.
 .PARAMETER Reset    Rebuild the data tables (DROPS data). Config is kept.
 
 .EXAMPLE
@@ -25,7 +24,7 @@
 #>
 
 [CmdletBinding()]
-param([switch] $Reload, [switch] $Reset)
+param([switch] $Reset)
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
@@ -45,7 +44,6 @@ try {
 
 # 1-4. bootstrap (config, DB, STEP)
 $flags = @()
-if ($Reload) { $flags += '--reload' }
 if ($Reset)  { $flags += '--reset' }
 python -m iba.app.init @flags
 exit $LASTEXITCODE

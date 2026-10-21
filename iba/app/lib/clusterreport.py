@@ -8,7 +8,6 @@ resolution and are reported as a count, never in the gap list.
 
 from __future__ import annotations
 
-import csv
 import pathlib
 import re
 from collections import Counter
@@ -46,20 +45,6 @@ def _stem_key(gloss: str, suffixes: list[str], prefix_len: int) -> str:
             w = w[: -len(suf)]
             break
     return w[:prefix_len] if len(w) > prefix_len else w
-
-
-def _write_csv_direct(out_dir: pathlib.Path, name: str, header: list[str], rows: list[list]) -> pathlib.Path:
-    """Plain, unregistered CSV write (not through `reportkit.write_csv_pairing`'s `cfg_report_csv_table`
-    machinery — that path requires a config-write-grant round trip per new table; this one doesn't
-    touch the DB at all, it's filesystem-only). Used by the backfill-typology section so its full
-    row-level detail persists next to the summarised markdown, per governance.reports_must_persist."""
-    out_dir.mkdir(parents=True, exist_ok=True)
-    p = out_dir / f"{name}.csv"
-    with p.open("w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(header)
-        w.writerows(rows)
-    return p
 
 
 def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
@@ -170,8 +155,8 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     sections["cluster_summary"] = summary_lines
 
 # ── backfill vocabulary outside the cluster taxonomy: typed and ordered so individual outliers stay
-# visible. Not registered in cfg_report_section (renders via render_scaffold's extra_keys) or
-# cfg_report_csv_table (its CSVs are written directly).
+# visible. Section `backfill_typology` and its three CSVs are registered (cfg_report_section,
+# cfg_report_csv_table virtual rows, #2201).
     bf_freq_threshold = int(cfg.setting("report.cluster_backfill_closedclass_freq", 1000))
     bf_kw_minlen = int(cfg.setting("report.cluster_backfill_keyword_minlen", 4))
     bf_crossmatch_cap = int(cfg.setting("report.cluster_backfill_crossmatch_cap", 60))
@@ -241,9 +226,8 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
             by_cluster_ct[c] += 1
 
     n_untagged = len(bf_untagged)
+    pct = lambda rows: f"{100*len(rows)/n_untagged:.0f}%" if n_untagged else "–"
     bf_lines = [
-        '<a id="backfill-vocabulary-outside-the-cluster-taxonomy"></a>',
-        "## Backfill vocabulary outside the cluster taxonomy", "",
         "`strong.origin='backfill'` is out of scope for cluster mapping by design (book-scoped "
         "lexical-completeness sweep, independent of any word — see the intro note above). This "
         "section checks that the exclusion isn't hiding anything worth a second look: it types the "
@@ -257,15 +241,15 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     bf_lines += _tbl(
         ["type", "heuristic", "count", "% of untagged", "verdict"],
         [["proper nouns / place names", "capitalized single-word gloss", len(proper),
-          f"{100*len(proper)/n_untagged:.0f}%", "correctly out of scope"],
+          pct(proper), "correctly out of scope"],
          ["grammatical markers / construct forms",
           "bracketed gloss, e.g. `[the]`, `[Valley of] Achor`", len(bracket),
-          f"{100*len(bracket)/n_untagged:.0f}%", "correctly out of scope"],
+          pct(bracket), "correctly out of scope"],
          [f"high-frequency closed-class (count ≥ {bf_freq_threshold})",
           "pronouns/prepositions/conjunctions — listed in full below", len(closed),
-          f"{100*len(closed)/n_untagged:.0f}%", "correctly out of scope"],
+          pct(closed), "correctly out of scope"],
          ["candidate vocabulary (the residual)", "everything else — real content words",
-          len(candidates), f"{100*len(candidates)/n_untagged:.0f}%", "this section's actual subject"]])
+          len(candidates), pct(candidates), "this section's actual subject"]])
     bf_lines.append("")
 
     bf_lines.append(
@@ -353,25 +337,24 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         "FROM strong s WHERE s.deleted=0 AND s.origin='word' AND NOT EXISTS "
         "(SELECT 1 FROM cluster_strong cs WHERE cs.strong=s.strongNumber AND cs.deleted=0) "
         "ORDER BY s.language, s.strongNumber")
-    reportkit.write_csv_pairing(conn, "report.cluster", path.parent / "export",
-                                row_filter={"cluster_strong": cluster_strong_joined,
-                                           "strong_without_cluster": strong_without_cluster})
-
-    export_dir = path.parent / "export"
     typology = ([("proper_noun", r) for r in proper] + [("grammatical_marker", r) for r in bracket]
                + [("closed_class", r) for r in closed] + [("candidate_vocabulary", r) for r in candidates])
-    _write_csv_direct(export_dir, "backfill_typology",
-                      ["strongNumber", "stepGloss", "stepTransliteration", "language", "count", "type"],
-                      [[r["strongNumber"], r["stepGloss"], r["stepTransliteration"], r["language"],
-                        r["count"], t] for t, r in typology])
-    _write_csv_direct(export_dir, "backfill_crossmatch",
-                      ["strongNumber", "stepGloss", "count", "matched_clusters", "matched_words"],
-                      [[r["strongNumber"], r["stepGloss"], r["count"], ",".join(sorted(hc)),
-                        ",".join(sorted(hw))] for r, hc, hw in crossmatch])
-    _write_csv_direct(export_dir, "backfill_residual",
-                      ["strongNumber", "stepGloss", "stepTransliteration", "language", "count", "stem_key"],
-                      [[r["strongNumber"], r["stepGloss"], r["stepTransliteration"], r["language"],
-                        r["count"], _stem_key(r["stepGloss"], suffixes, prefix_len)] for r in unmatched])
+    bf_typology = [{"strongNumber": r["strongNumber"], "stepGloss": r["stepGloss"],
+                    "stepTransliteration": r["stepTransliteration"], "language": r["language"],
+                    "count": r["count"], "type": t} for t, r in typology]
+    bf_crossmatch = [{"strongNumber": r["strongNumber"], "stepGloss": r["stepGloss"], "count": r["count"],
+                      "matched_clusters": ",".join(sorted(hc)), "matched_words": ",".join(sorted(hw))}
+                     for r, hc, hw in crossmatch]
+    bf_residual = [{"strongNumber": r["strongNumber"], "stepGloss": r["stepGloss"],
+                    "stepTransliteration": r["stepTransliteration"], "language": r["language"],
+                    "count": r["count"], "stem_key": _stem_key(r["stepGloss"], suffixes, prefix_len)}
+                   for r in unmatched]
+    reportkit.write_csv_pairing(conn, "report.cluster", path.parent / "export",
+                                row_filter={"cluster_strong": cluster_strong_joined,
+                                           "strong_without_cluster": strong_without_cluster,
+                                           "backfill_typology": bf_typology,
+                                           "backfill_crossmatch": bf_crossmatch,
+                                           "backfill_residual": bf_residual})
 
     path = reportkit.write_report(conn, "report.cluster", path, L)
     return path

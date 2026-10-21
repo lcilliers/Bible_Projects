@@ -20,7 +20,7 @@ from __future__ import annotations
 import json
 import re
 
-from .narrativegenerate import ApiKeyMissing, ApiCallFailed  # noqa: F401 -- re-exported
+from .lexicalenrichgenerate import ApiKeyMissing, ApiCallFailed  # noqa: F401 -- re-exported
 from .lexicalenrichgenerate import call_api, log_usage  # reuse, don't duplicate
 from .lexicalenrichgenerate import CostCapExceeded, BadModelResponse  # noqa: F401 -- re-exported
 from .versereadinggenerate import _meaning_sources  # reuse, don't duplicate

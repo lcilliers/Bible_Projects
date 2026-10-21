@@ -173,9 +173,6 @@ class Db:
 
 if __name__ == "__main__":
     import sys
-    from . import cfgload
-    if "--load" in sys.argv:
-        cfgload.load()
     p = build(reset_data="--reset" in sys.argv)
     cfg = Cfg()
     print(f"data tables built from config in {p}")

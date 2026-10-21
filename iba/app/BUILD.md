@@ -17825,3 +17825,46 @@ approval for it." Plan, approved with the recommended options:
   Two memory pointers repointed to the archive paths. Manifest v10 rebuilt.
 - **Also:** `cfg_setting backup.pre_run_snapshot_policy` corrected to the backup-API snapshot
   (#2193 follow-up), migration `iba/app/migration/archive/snapshot_policy_text_v1_20261021.py`.
+
+## 370. Retired templates, redundant seed code and non-compliant stages; backfill section registered (2026-10-21, escalations #2199, #2201, for #2177)
+
+#2199, researcher: "as far as I know the templates are no longer used - retire". #2201, researcher:
+"1 - as recommended; 2 - register it; 3 - seems like redundant code - retire; 4 - retire, it was
+replaced; 5 - retire both, they are non compliant; 6- i am not aware that passages are used in
+this way - retire".
+
+- **Migration** `iba/app/migration/archive/apply_2199_2201_decisions_v1_20261021.py`, run
+  `DEVMODE-2201-DECISIONS-20261021` (74 `apply_logged` writes), tested on a backup-API copy. Correction
+  run `DEVMODE-2201-WORDAUDIT-PS-CORRECTION-20261021`: work package `word-audit` `ps_script` set to
+  NULL; `Word-Audit.ps1` never existed.
+- **#2199:** five `cfg_behaviour_class` descriptions and the `oneoff_report_naming_pattern` use text
+  no longer name archived docs/ templates.
+- **#2201 (1):** `cfg._VERSION_TABLES` is no longer a hand-kept list. `config_version` reads the
+  active rule-category `cfg_*` tables from `cfg_table`.
+- **(2):** the cluster report's backfill section is registered: `cfg_report_section`
+  `backfill_typology`, plus three virtual `cfg_report_csv_table` rows (`backfill_typology`,
+  `backfill_crossmatch`, `backfill_residual`) written through `reportkit.write_csv_pairing`.
+  `_write_csv_direct` removed. A latent division by zero, shown now that every backfill strong is
+  tagged, fixed (#2204).
+- **(3):** the seed path retired: `lib/cfgload.py` and `lib/cfgcheck.py` → `lib/archive/`;
+  `init.py --reload`, `db.py --load` and `Start-Iba.ps1 -Reload` removed. Config lives only in
+  iba.db; without it `init.py` points to a snapshot or NAS restore.
+- **(4):** `handlers/wordaudit.py` → `handlers/archive/`; work package `word-audit` and its steps
+  inactive.
+- **(5):** `lib/narrativegenerate.py`, `lib/wordregistryspanreport.py` → `lib/archive/`;
+  `handlers/narrative.py` → `handlers/archive/`; `ps/Book-Narrative.ps1`,
+  `ps/WordRegistrySpan-Report.ps1` → `ps/archive/`. Work packages `book-narrative` and
+  `word-registry-span-report` inactive, together with their steps, reports, sections and on-fail rows, the 10
+  narrative/method settings and the `narrative_required_channel` enum. The shared Claude-API helpers
+  (`_api_key`, `ApiKeyMissing`, `ApiCallFailed`) moved into `lib/lexicalenrichgenerate.py`. Five live
+  LLM modules imported them from narrativegenerate, and the first validate stopped on it (#2203).
+- **(6):** step `passage.suggest_boundary` inactive; its handler section in `handlers/passage.py`
+  and `Build-Passages.ps1 -Suggest/-Confirm` removed.
+- **Also retired:** `iba/app/UTILITIES.md` → `iba/app/archive/`; its content is in `cfg_utility`.
+- **Docs:** USER-GUIDE.md entries for the removed switches and scripts removed. ps tools worksheet:
+  the Book-Narrative and WordRegistrySpan-Report tabs and Index rows are removed, along with Start-Iba -Reload
+  and Build-Passages -Suggest/-Confirm (prior version
+  `iba/docs/archive/ps tools worksheet-before-2201-20261021.xlsx`); drift check clean.
+- **Verified:** every live iba/app module imports. `configmaint.validate` ok
+  (`CONFIG-REPORT-v602-20261021.md`); its only finding is the 4 orphan enums open in #2197. Cluster report run
+  `RUN-20261021_150411_138-CLUSTER-REPORT` ok.

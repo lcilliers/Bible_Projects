@@ -42,7 +42,7 @@ def _now() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-# ── validate: coherence-check the LIVE cfg_* tables (ports lib/cfgcheck.py to the DB) ──
+# ── validate: coherence-check the LIVE cfg_* tables ──
 def _validate_live(conn: sqlite3.Connection) -> list[str]:
     e: list[str] = []
     q = lambda sql, p=(): conn.execute(sql, p).fetchall()

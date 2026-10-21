@@ -20,9 +20,34 @@ when empty. Function-role codes are still sent: `connective` and `polarity` note
 from __future__ import annotations
 
 import json
+import os
+import pathlib
 import re
 
-from .narrativegenerate import _api_key, ApiKeyMissing, ApiCallFailed  # reuse, don't duplicate
+
+class ApiKeyMissing(Exception):
+    """ANTHROPIC_API_KEY not found in the environment or repo-root .env."""
+
+
+class ApiCallFailed(Exception):
+    """The Messages API returned a non-2xx response."""
+
+
+def _api_key() -> str:
+    """ANTHROPIC_API_KEY from the environment, else from the repo-root .env (shared by every
+    LLM-calling stage)."""
+    key = os.getenv("ANTHROPIC_API_KEY")
+    if key:
+        return key
+    env_path = pathlib.Path(".env")
+    if env_path.exists():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            if line.strip().startswith("ANTHROPIC_API_KEY="):
+                key = line.split("=", 1)[1].strip().strip('"').strip("'")
+                if key:
+                    return key
+    raise ApiKeyMissing("ANTHROPIC_API_KEY not set in the environment or found in .env at the "
+                        "repo root -- add it there (never commit it)")
 
 
 class CostCapExceeded(Exception):
