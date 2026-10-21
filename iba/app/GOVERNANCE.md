@@ -76,6 +76,15 @@ write is checked against `cfg_write_grant`. `IBA_TRACE=1` prints the config read
 - **A change to config registers itself in the same unit of work:** a new table in `cfg_table` and
   `cfg_column`, a new step in `cfg_step`, `cfg_utility` and `cfg_write_grant`, and so on
   (`cfg_behaviour_rule` 62).
+- **Every script is in a utility or module, or it is retired** (#2200). Controlled means an active
+  `cfg_utility` row, the handler of a `cfg_step`, the `ps_script` of an active `cfg_work_package`,
+  or a hook named in `.claude/settings.json`. Any other script sits in its folder's `archive/`, and
+  its `cfg_utility` row is inactive. A migration runs once, then moves to `iba/app/migration/archive/`
+  in the same unit of work.
+- **Running a retired script needs the researcher's approval.** `.claude/hooks/gate_retired_script.py`
+  (PreToolUse, Bash and PowerShell) refuses a command that runs a retired script, unless an
+  escalation naming its path carries an `approved` written by the researcher. Reading a retired
+  file is never blocked.
 - **Not built:** a hard technical block on writing `cfg_*` by any other path. Today it is the
   sanctioned path by rule.
 
@@ -87,6 +96,8 @@ write is checked against `cfg_write_grant`. `IBA_TRACE=1` prints the config read
   - enums
   - value quality through `cfg_column.expectation` (`enum.<name>`, `pattern:<key>`)
   - tables, columns or triggers in the live schema but missing from `cfg_table`/`cfg_column`/`cfg_trigger`
+  - a live script (`.py`/`.ps1` outside `archive/`) in no utility or module, or a retired script left
+    outside `archive/` (§4)
 - **Findings** are raised as an escalation and listed in the config report's section 0:
   - orphan configs, read by nothing
   - behaviour rules whose enforcement is only declared
@@ -127,9 +138,9 @@ The `escalation` table holds every open item, task, issue, decision and thread
 
 ## 8. Open, not decided
 
-- `iba/config/` keeps only what live code reads: `DBSchema/` and the two JSON files under
-  `utility/` read by `iba/scripts/build_dbschema.py` and `iba/scripts/probe_step_api.py`. They sit
-  outside `cfg_*`. The rest of the second configurator design was retired on the researcher's
+- `iba/config/` keeps `DBSchema/` and two JSON files under `utility/`, read only by the retired
+  history copies `iba/scripts/archive/build_dbschema.py` and `iba/scripts/archive/probe_step_api.py`
+  (#2200). They sit outside `cfg_*` (#2188). The rest of the second configurator design was retired on the researcher's
   instruction (#2182) and is history in `iba/config/archive/configurator-design-to-20261021/`.
 - `cfg_column.source` and `filled_by` are recorded but not enforced. `expectation` is enforced
   (§5).

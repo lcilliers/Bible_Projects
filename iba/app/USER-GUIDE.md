@@ -271,7 +271,8 @@ iba\app\ps\Config-Maintenance.ps1 -Step Propose -Table cfg_setting -Op update `
 - **App Mode:** Propose is the only path for a `cfg_*` row. It writes one row, after a coherence
   check, and commits only on approval. Every write is logged in `cfg_change_detail`.
 - **Developer Mode:** config work is one idempotent migration under `iba/app/migration/`, writing
-  through `configmaint.apply_logged()` (rule 75). Single-row Propose is not used there.
+  through `configmaint.apply_logged()` (rule 75). Single-row Propose is not used there. A migration
+  registers itself inactive, runs once, and then moves to `iba/app/migration/archive/`.
 - **The control map** (`cfg_control_home`, config report section 15) says where each kind of
   control lives.
 
@@ -563,29 +564,19 @@ iba\app\ps\Prose.ps1 -Step FlagFixApply -ProposalFile <report>.json -SectionIds 
 
 ---
 
-## 12. Scripts not in active use
+## 12. Retired scripts
 
-Their work packages are inactive, so the dispatcher refuses them:
-- `iba/app/ps/BookNarrative-Generate.ps1`
-- `iba/app/ps/BookNarrative-Validate.ps1`
-- `iba/app/ps/Candidate-Curate.ps1`
-- `iba/app/ps/Candidate-Quality.ps1`
-- `iba/app/ps/Chapter-Generate.ps1`
-- `iba/app/ps/ContentIndex-Rebuild.ps1`
-- `iba/app/ps/PassageDebate-Report.ps1`
-- `iba/app/ps/PassageDebate-Sync.ps1`
-- `iba/app/ps/SeedCandidate-Report.ps1`
-- `iba/app/ps/Set-Candidates.ps1`
-- `iba/app/ps/VerseSpanMeaning-Report.ps1`
+Every script that is in no utility or module is retired: it sits in its folder's `archive/`
+(e.g. `iba/app/ps/archive/`, `scripts/archive/`, `iba/app/migration/archive/`) with an inactive
+`cfg_utility` row. That includes the PS scripts of inactive work packages and every applied
+migration. The full list is `outputs/escalation/2200-retire-list-v1-20261021.json`.
 
-These are standalone investigation utilities with no work package:
-- `iba/app/ps/create-iba-view-template.ps1`
-- `iba/app/ps/create-passage-view-and-export.ps1`
-- `iba/app/ps/create-passages-by-book-view-and-export.ps1`
-- `iba/app/ps/export-iba-config-tables.ps1`
-- `iba/app/ps/generate-iba-db-schema-report.ps1`
-
-`iba/app/migration/` holds one-off migrations, which are not part of any routine.
+- **To use a retired script,** the researcher approves it: Claude raises an escalation naming the
+  script's path and why it's needed, and the researcher's `approved` on it lets that one script run.
+  Without it, the hook `.claude/hooks/gate_retired_script.py` refuses the command. Reading a retired
+  file is always allowed.
+- **A new script** is registered in `cfg_utility` in the same unit of work; `configmaint.validate`
+  fails on any live script in no utility or module (`temp_*` excepted).
 
 **Database copies.** Every run takes a pre-run snapshot in `iba/app/db/snapshots/`. To test against
 a copy of iba.db, make it with the backup API, never a file copy (which misses writes still in
@@ -608,7 +599,7 @@ control. In `iba/app/`:
 - `init.py`: the bootstrap
 - `lib/`: the modules
 - `handlers/`: the step handlers
-- `migration/`: one-off migrations
+- `migration/`: a migration being written; applied ones are in `migration/archive/`
 - `tools/`: utilities
 - `db/iba.db`: the database
 - `db/snapshots/`: the pre-run copies

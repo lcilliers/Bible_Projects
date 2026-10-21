@@ -49,6 +49,19 @@
         ]
       }
     ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/gate_retired_script.py\"",
+            "timeout": 10,
+            "statusMessage": "Checking for retired scripts..."
+          }
+        ]
+      }
+    ],
     "UserPromptExpansion": [
       {
         "matcher": "developer-mode",

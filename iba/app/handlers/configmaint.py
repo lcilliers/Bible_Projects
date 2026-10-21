@@ -221,6 +221,8 @@ def validate(ctx: Ctx) -> Outcome:
     a researcher judgement (an orphan config, a setting that may belong in its own table) are raised
     as one escalation per run listing everything found."""
     errors = _validate_live(ctx.db.conn)
+    # a live script in no utility or module is a hard error (#2198, #2200)
+    errors += cfgquality.find_unregistered_project_scripts(ctx.db.conn, PROJECT_ROOT)
     if errors:
         error_summary = "; ".join(errors)
         # Every run has a fresh run_id, so run.py's idempotency guard never catches a repeat: an
@@ -244,10 +246,6 @@ def validate(ctx: Ctx) -> Outcome:
                            "column(s) with a stale filled_by"),
         "unregistered_lib_modules": (cfgquality.find_unregistered_lib_modules(ctx.db.conn, APP_ROOT),
                                     "lib module(s) missing a cfg_utility row"),
-        # project-wide counterpart to unregistered_lib_modules (advisory: a known older backlog)
-        "unregistered_project_scripts": (
-            cfgquality.find_unregistered_project_scripts(ctx.db.conn, PROJECT_ROOT),
-            "project-wide script(s) missing a cfg_utility row"),
         "low_config_density_utilities": (cfgquality.find_utility_config_density(ctx.db.conn),
                                         "utility module(s) with zero cfg.setting()/cfg.enum() usage"),
         # usage checks beyond cfg_setting/cfg_enum

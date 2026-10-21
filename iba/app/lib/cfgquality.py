@@ -444,30 +444,39 @@ def find_unregistered_triggers(conn: sqlite3.Connection, project_root: pathlib.P
 
 def find_unregistered_project_scripts(conn: sqlite3.Connection,
                                       project_root: pathlib.Path) -> list[str]:
-    """governance.new_utility_registration_timing: every `.py` file in the project outside iba/app/
-    needs a `cfg_utility.file_path` row (matched by project-root-relative path). `temp_*` files are
-    exempt (governance.scripts_and_routines). ADVISORY: a known backlog of older unregistered files
-    exists, and this check is for catching new drift."""
+    """Every live `.py`/`.ps1` in the project outside an `archive/` folder must be in a utility or
+    module (#2200, #2198; governance.new_utility_registration_timing): an active `cfg_utility` row,
+    the handler module of a `cfg_step`, the `ps_script` of an active `cfg_work_package`, a hook or
+    script named in `.claude/settings.json`, or a package marker (`__init__.py`). `temp_*` files are
+    exempt (governance.scripts_and_routines). A file whose `cfg_utility` row is inactive but which
+    still sits outside `archive/` is a retired script left live. A HARD error in configmaint.validate:
+    anything else is retired into its folder's `archive/` (the researcher's ruling, #2200)."""
     # excluded on any path component (nested virtualenvs such as scripts/analytics/venv/)
     _EXCLUDE_ANYWHERE = {".git", "archive", "__pycache__", ".venv", "venv", "node_modules",
                         "site-packages"}
-    registered = {pathlib.PurePosixPath(r[0]) for r in
-                 conn.execute("SELECT file_path FROM cfg_utility")}
+    util = {r[0]: r[1] for r in conn.execute("SELECT file_path, inactive FROM cfg_utility")}
+    handlers = {r[0].split(":")[0].replace(".", "/") + ".py" for r in conn.execute(
+        "SELECT handler FROM cfg_step WHERE handler IS NOT NULL")}
+    ps_scripts = {(r[0] or "").replace("\\", "/") for r in conn.execute(
+        "SELECT ps_script FROM cfg_work_package WHERE inactive=0")}
+    settings = project_root / ".claude" / "settings.json"
+    settings_text = settings.read_text(encoding="utf-8", errors="ignore") if settings.exists() else ""
     out: list[str] = []
-    for f in sorted(project_root.rglob("*.py")):
+    for f in sorted(list(project_root.rglob("*.py")) + list(project_root.rglob("*.ps1"))):
         rel = f.relative_to(project_root)
-        parts = rel.parts
-        if not parts:
+        if not rel.parts or _EXCLUDE_ANYWHERE & set(rel.parts):
             continue
-        if _EXCLUDE_ANYWHERE & set(parts):
-            continue
-        if parts[0] == "iba" and len(parts) > 1 and parts[1] == "app":
-            continue  # iba/app/ is checked by find_unregistered_lib_modules (lib/ only; #2198)
         if f.stem == "__init__" or f.stem.startswith("temp_"):
             continue
-        rel_posix = pathlib.PurePosixPath(rel.as_posix())
-        if rel_posix not in registered:
-            out.append(f"{rel_posix} has no cfg_utility row (governance.new_utility_registration_timing)")
+        rel_posix = rel.as_posix()
+        if util.get(rel_posix) == 0 or rel_posix in handlers or rel_posix in ps_scripts:
+            continue
+        if rel.parts[0] == ".claude" and f.name in settings_text:
+            continue
+        if util.get(rel_posix) == 1:
+            out.append(f"{rel_posix} is retired (cfg_utility inactive) but not in archive/ -- move it")
+        else:
+            out.append(f"{rel_posix} is in no utility or module -- register it or retire it to archive/")
     return out
 
 

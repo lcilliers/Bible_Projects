@@ -17780,3 +17780,48 @@ the sweep on active code only."
   reachability).
 - **Open items found in comments**, which no escalation carried, are raised as #2201. Unused
   functions inside active files are added to #2200, and study-side exclusions to #2190.
+
+## 369. Every script not in a utility or module retired; use of a retired script gated (2026-10-21, escalations #2200, #2198, for #2177)
+
+Researcher, verbatim: "my view is that you should retire all the scripts that is not already in the
+utilities or modules. and ensure that using a retired script is gated on me explicitely giving
+approval for it." Plan, approved with the recommended options:
+`outputs/escalation/2200-retire-uncontrolled-scripts-plan-v1-20261021.md`.
+
+- **Retired: 798 scripts**, each moved (`git mv`) into its folder's `archive/` with an inactive
+  `cfg_utility` row: `scripts/` 330, `iba/app/migration/` 245 (every applied migration),
+  `_analytics/` 163 study scripts (filing only), `iba/app/tools/` 20, `iba/app/ps/` 16 (the PS
+  scripts of inactive work packages, plus five hardcoded-path utilities), `engine/` 13,
+  `iba/prototype/`, `iba/scripts/` and `query_db.py` 10, `iba/app/handlers/candidate.py`. The list
+  with each file's destination is `outputs/escalation/2200-retire-list-v1-20261021.json`. The inactive
+  work packages' `ps_script` and the candidate steps' handlers point at the archive paths.
+  Migration `iba/app/migration/archive/retire_uncontrolled_scripts_v1_20261021.py`, run
+  `DEVMODE-2200-RETIRE-SCRIPTS-20261021` (824 `apply_logged` writes), tested on a backup-API copy.
+- **Kept and registered active (in use):** `iba/app/ps/Start-Iba.ps1`, `Behaviour.ps1`,
+  `Debate-Run.ps1`; the scheduled-task backup scripts (`scripts/backup_db_to_nas.py`,
+  `backup_watchdog.ps1`, `mirror_to_nas.ps1`, `notify_backup_alert.ps1`,
+  `install_backup_watchdog_task.ps1`); `scripts/apply_session_patch.py` (prose patches). Also
+  registered, by `iba/app/migration/archive/register_active_app_files_v1_20261021.py` (run
+  `DEVMODE-2198-REGISTER-ACTIVE-FILES-20261021`): `run.py`, `init.py`, `report.py`, `validation.py`,
+  `handlers/base.py`, two tools, the PS helper library, the six PS front doors that dispatch active
+  work packages. `narrativegenerate.py` and `wordregistryspanreport.py` are active again; their
+  NON-COMPLIANT purpose stays for #2201.
+- **The gate:** `.claude/hooks/gate_retired_script.py`, a PreToolUse hook on Bash and PowerShell,
+  wired in `.claude/settings.json`. It refuses a command that runs a retired script (under
+  `archive/`, `cfg_utility` inactive, or moved there) unless an escalation naming the path carries an
+  `approved` written by the researcher. Reading is never blocked; an internal error allows the
+  command and logs to `.claude/.gate-retired-script.log`. Test plan, 22 cases, all pass:
+  `outputs/escalation/2200-gate-test-results-v1-20261021.md` (runner archived:
+  `iba/app/tools/archive/temp_2200_gate_test.py`). The harness loads hooks at session start, so the
+  gate is live from the next session.
+- **Validate:** `cfgquality.find_unregistered_project_scripts` now covers every live `.py`/`.ps1`
+  project-wide (iba/app included) and is a **hard error** in `configmaint.validate`. It flags a script
+  in no utility or module, and a retired script left outside `archive/`. Tested: a planted
+  unregistered file stopped validate with 1 coherence error (#2202, closed as the test), and the
+  clean project passes (`CONFIG-REPORT-v601-20261021.md`).
+- **Docs:** GOVERNANCE.md §4/§5/§8, USER-GUIDE.md §3/§12/§13. ps tools worksheet: the 16 retired
+  scripts' tabs and Index rows removed (prior version
+  `iba/docs/archive/ps tools worksheet-before-2200-20261021.xlsx`); worksheet drift checks clean.
+  Two memory pointers repointed to the archive paths. Manifest v10 rebuilt.
+- **Also:** `cfg_setting backup.pre_run_snapshot_policy` corrected to the backup-API snapshot
+  (#2193 follow-up), migration `iba/app/migration/archive/snapshot_policy_text_v1_20261021.py`.
