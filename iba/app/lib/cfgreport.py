@@ -246,11 +246,10 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
         ("Escalation.ps1/worksheet drift", "an Escalation.ps1 parameter not used as a -Flag header "
          "anywhere in governance.escalation_worksheet_path",
          cfgquality.find_escalation_worksheet_drift(conn, APP, APP.parent.parent)),
-        # every behaviour rule not mechanically enforced, with its reason
+        # every behaviour rule with no control, with its reason (#2206 option 2a)
         ("Unenforced behaviour rules", "an active cfg_behaviour_rule row whose enforcement_status "
-         "is not mechanically_enforced — see the row's own enforced_by text for the reason "
-         "(mechanically checkable but not yet built, a genuine judgement call, or a class of rule "
-         "with no durable artifact to check)",
+         "is neither mechanically_enforced nor context_delivered (the compliance file restates and "
+         "proves those) — see the row's own enforced_by text for the reason",
          cfgquality.find_unenforced_behaviour_rules(conn)),
         # conversational rules whose claimed delivery mechanism does not verify
         ("Undelivered conversational rules", "an active cfg_behaviour_rule row classified "

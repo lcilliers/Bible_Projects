@@ -80,13 +80,25 @@ def withheld(conn, mode: str = "standard") -> dict[str, int]:
     return out
 
 
+def value_settings(conn) -> set[str]:
+    """Governance settings that hold a plain value (a path, a format), not a rule
+    (cfg_setting compliance.value_settings, #2206 option 3): the code that uses each reads it, so
+    they are not delivered or restated."""
+    row = conn.execute("SELECT value FROM cfg_setting WHERE key='compliance.value_settings' AND "
+                       "inactive=0").fetchone()
+    return set(json.loads(row[0])) if row else set()
+
+
 def rules(conn, mode: str = "standard") -> list[dict]:
     """Every active rule of the three sets delivered at start, in delivery order. Behaviour rules
-    are scoped by deliver_when (deliver_set)."""
+    are scoped by deliver_when (deliver_set); plain-value settings are left out (value_settings)."""
     allowed = deliver_set(conn, mode)
+    values = value_settings(conn)
     out = []
     for r in conn.execute("SELECT key, value FROM cfg_setting WHERE module='governance' AND "
                           "inactive=0 ORDER BY key"):
+        if r[0] in values:
+            continue
         try:
             text = json.loads(r[1])
         except Exception:

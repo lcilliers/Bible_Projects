@@ -98,12 +98,16 @@ write is checked against `cfg_write_grant`. `IBA_TRACE=1` prints the config read
   - tables, columns or triggers in the live schema but missing from `cfg_table`/`cfg_column`/`cfg_trigger`
   - a live script (`.py`/`.ps1` outside `archive/`) in no utility or module, or a retired script left
     outside `archive/` (§4)
-- **Findings** are raised as an escalation and listed in the config report's section 0:
+- **Findings** are listed in full in the config report's section 0:
   - orphan configs, read by nothing
-  - behaviour rules whose enforcement is only declared
+  - behaviour rules with no control: neither mechanically enforced nor restated and proved through
+    the compliance file (`enforcement_status` `context_delivered`)
   - rule text that a governance document restates
+- **Only new findings are asked.** An escalation is raised only for findings not in the last
+  approved one. It carries counts, a fingerprint per finding and the report path, never the lists.
 
-Every active governance setting and behaviour rule is delivered by the start routine (§7).
+Every active behaviour rule, and every governance setting except the plain values named in
+`cfg_setting compliance.value_settings`, is delivered by the start routine (§7).
 
 ## 6. Escalations
 
@@ -121,13 +125,15 @@ The `escalation` table holds every open item, task, issue, decision and thread
 - **Hand-over to the researcher:** governed by `cfg_behaviour_rule` 63.
 - **Threads** (`type='thread'`, alias `OT-nn`) carry the open-threads register as items and
   responses (`cfg_behaviour_rule` 74). The register file is generated, never edited.
-- **History:** every version of an item is a row in `escalation_history`.
+- **History:** every version of an item is a row in `escalation_history`, read with
+  `-Action History`. The list report shows each item's latest version only.
 
 ## 7. Session routines
 
 - **Start:** `.claude/commands/start-project.md`. `iba/app/ps/Start-Iba.ps1` runs `init.py`: config check and
   load, data tables, the STEP pre-flight, how the last session ended. It then prints every active
-  governance setting, behaviour rule and escalation rule in full, from the database. The session
+  governance setting (less `compliance.value_settings`), behaviour rule and escalation rule in full,
+  from the database. The session
   restates each one in its compliance file, and `Compliance.ps1 -Action Check -Phase Start` must pass
   (`cfg_behaviour_rule` 81).
 - **Close:** `.claude/commands/session-close.md`. `iba/app/ps/Session-Close.ps1` checks what the session did,

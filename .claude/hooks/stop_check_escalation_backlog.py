@@ -9,7 +9,9 @@ already generated.
 Not filtered by age: genuine multi-session work also sits at next_action_assigned_to='Claude', so the
 message asks for a triage (acknowledge, or do the cycle), not a full resolution of every item.
 Threads at on-hold are left out (they rest there by design; only an in-progress thread counts as work
-first, cfg_escalation 4 / T5); every other type counts.
+first, cfg_escalation 4 / T5); every other type counts. An item whose latest version was written in
+this session is left out too (#2206 option 5): it is being worked, so it is not stale. The session's
+start is the SessionStart record, .claude/.session-boundary-state.json `at`.
 
 Never blocks on its own failure: a DB lock, a missing file or a query error allows the stop, so a
 broken check never becomes a way to get stuck."""
@@ -17,6 +19,17 @@ import json
 import os
 import sqlite3
 import sys
+
+
+def _session_start(project_dir: str) -> str:
+    """This session's start (UTC ISO) from the SessionStart record; with none, a time no history row
+    reaches, so nothing is left out."""
+    try:
+        with open(os.path.join(project_dir, ".claude", ".session-boundary-state.json"),
+                  encoding="utf-8") as f:
+            return json.load(f).get("at") or "9999"
+    except Exception:
+        return "9999"
 
 
 def main() -> None:
@@ -52,7 +65,9 @@ def main() -> None:
             "WHERE next_action_assigned_to='Claude' "
             f"AND state IN ({','.join('?' * len(live))}) "
             "AND NOT (type='thread' AND state!='in-progress') "   # #2000, cfg_escalation 4 / T5
-            "ORDER BY id", live
+            "AND NOT EXISTS (SELECT 1 FROM escalation_history h WHERE h.escalation_id=escalation.id "
+            "AND h.answered_at >= ?) "                             # worked this session (#2206)
+            "ORDER BY id", [*live, _session_start(project_dir)]
         ).fetchall()
         conn.close()
     except Exception:

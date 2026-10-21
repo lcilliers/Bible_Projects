@@ -77,6 +77,9 @@ delivered in the session's mode, keyed `G:<governance setting>`, `B:<behaviour r
 - `study_active`, while `cfg_setting behaviour.study_state` is `active`
 - `developer_mode`, only with `-Mode Developer`
 
+Governance settings that hold a plain value (a path, a format) are not delivered and get no row:
+they are listed in `cfg_setting compliance.value_settings`.
+
 The mode is written into the file, and Check reads it from there. Each row is filled with status
 `engaged` or `not engaged` and, in your own words, what the rule requires this session or why it is
 not engaged. A copied rule text is a finding. Also filled: the acknowledgement sentence
@@ -168,7 +171,7 @@ Every open item, task, issue, decision and thread is an escalation (rule 40), wo
 ### 3.2 Commands
 
 ```powershell
-# see what's open (with each item's history); one item's full story
+# see what's open (latest version of each item; parked items one line each); one item's full story
 iba\app\ps\Escalation.ps1 -Action List
 iba\app\ps\Escalation.ps1 -Action History -Id 741
 
@@ -261,7 +264,7 @@ Item notes:
 ## 4. Configuration
 
 ```powershell
-iba\app\ps\Config-Maintenance.ps1 -Step Validate     # read-only coherence check; findings escalate once
+iba\app\ps\Config-Maintenance.ps1 -Step Validate     # read-only coherence check; only findings new since the last approved one escalate
 iba\app\ps\Config-Maintenance.ps1 -Step Report       # the config report, at configmaint.report_path
 
 iba\app\ps\Config-Maintenance.ps1 -Step Propose -Table cfg_setting -Op update `

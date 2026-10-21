@@ -18191,3 +18191,48 @@ why. Moves into an archive/ folder were made with git mv.
 - **Hooks: replaced history taken out of comments (#2192, sec 368); registered (#2198, sec 369):**
   `.claude/hooks/gate_developer_mode_entry.py`, `.claude/hooks/session_boundary_track.py`,
   `.claude/hooks/stop_check_escalation_backlog.py`, `.claude/hooks/track_prompt_submit.py`
+
+## 372. Reading waste cut: validate asks only new findings, rule lists trimmed, list and Stop hook narrowed (2026-10-21, escalation #2206, for #2177)
+
+Researcher, verbatim (chat 2026-10-21): "Approve options 1, 2a, 2b, 3, 4 and 5 in #2206 (v2 file);
+build them with the sec 42 fix." Options and why each control exists:
+`outputs/escalation/2177-reading-waste-options-v2-20261021.md`.
+
+**Code:**
+- `iba/app/handlers/configmaint.py` (`validate`): the escalation and every `ok`/`fail` carry counts,
+  not finding lists (sec 42 standard restored; #2197 held 41,180 characters, #2207 holds 2,642).
+  Option 1: findings already in the last approved advisory escalation are not asked again; only new
+  ones escalate. The stored context is one JSON line: summary, counts, new counts, a 12-character
+  fingerprint per finding, report path. A re-run that changes the findings appends a new line to the
+  open item, so approving it acknowledges exactly that set. Label "behaviour rule(s) with no control".
+- `iba/app/lib/escalation.py`: `finding_fingerprint()`, `acknowledged_findings()` (reads the last
+  JSON line; items raised before #2206 hold the lists, fingerprinted on read). `write_list_report()`
+  (option 4): open items at their latest version, parked items one line each; history by
+  `-Action History`.
+- `iba/app/lib/cfgquality.py` (`find_unenforced_behaviour_rules`, option 2a): `context_delivered`
+  rules are not listed (the compliance file restates and proves them). 81 listed before, 13 now.
+  `iba/app/lib/cfgreport.py`: the section text to match.
+- `iba/app/lib/compliance.py` (option 3): `value_settings()`; `rules()` leaves out the settings in
+  `cfg_setting compliance.value_settings`. 52 governance rows before, 45 now.
+- `.claude/hooks/stop_check_escalation_backlog.py` (option 5): an item with a history row written
+  since this session's start (`.claude/.session-boundary-state.json` `at`) does not block. With no
+  record, nothing is left out.
+
+**Config:** migration `iba/app/migration/archive/reading_waste_2206_v1_20261021.py`, run
+`DEVMODE-2206-READING-WASTE-20261021`, 2 `apply_logged` writes: `cfg_setting
+compliance.value_settings` (7 keys) and its own `cfg_utility` row. `governance.scripts_ps_dir` and
+`governance.scripts_python_dir` stay delivered: no code reads them (#2208).
+
+**Option 2b:** the 12 low-config-density utilities, one decision each, plus whether the check should
+count SQL reads of `cfg_*` (5 of the 12 read config that way):
+`outputs/escalation/2206-low-config-density-utilities-v1-20261021.md`.
+
+**Tests:** `iba/app/tools/temp_2206_reading_waste_test_run.py` on a `copy_db` copy, 15/15 pass:
+`outputs/escalation/2206-reading-waste-test-results-v1-20261021.md`. Testing found one defect, fixed
+before the live run: the stored JSON lacked the summary that `open_duplicate` matches on.
+
+**Live:** #2197 withdrawn (option 1). `configmaint.validate` run RUN-20261021_184858_466-CONFIGMAINT
+raised #2207 for 19 findings new since #2107. Before the duplicate fix, two live runs each added a
+version to #2197 (v3, v4).
+
+**Docs:** GOVERNANCE.md sections 5, 6 and 7; USER-GUIDE.md sections 2.1, 3.2 and 4.

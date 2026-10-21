@@ -218,8 +218,9 @@ _ADVISORY_TRIED = ("coherence checks passed; these are advisory findings, not er
 
 def validate(ctx: Ctx) -> Outcome:
     """Hard coherence errors (schema/FK/enum breaks) fail outright, report-stop. Findings that need
-    a researcher judgement (an orphan config, a setting that may belong in its own table) are raised
-    as one escalation per run listing everything found."""
+    a researcher judgement (an orphan config, a setting that may belong in its own table) go to
+    CONFIG-REPORT.md in full; an escalation is raised only for findings not yet acknowledged, and
+    carries counts, fingerprints and the report path, never the lists (BUILD.md sec 42, #2206)."""
     errors = _validate_live(ctx.db.conn)
     # a live script in no utility or module is a hard error (#2198, #2200)
     errors += cfgquality.find_unregistered_project_scripts(ctx.db.conn, PROJECT_ROOT)
@@ -281,10 +282,10 @@ def validate(ctx: Ctx) -> Outcome:
         "escalation_worksheet_drift": (
             cfgquality.find_escalation_worksheet_drift(ctx.db.conn, APP_ROOT, PROJECT_ROOT),
             "Escalation.ps1/worksheet drift finding(s)"),
-        # every behaviour rule not mechanically enforced, with its reason (enforcement_status)
+        # every behaviour rule with no control, with its reason (enforcement_status, #2206)
         "unenforced_behaviour_rules": (
             cfgquality.find_unenforced_behaviour_rules(ctx.db.conn),
-            "behaviour rule(s) not mechanically enforced"),
+            "behaviour rule(s) with no control"),
         # conversational rules whose claimed delivery does not verify
         "undelivered_conversational_rules": (
             cfgquality.find_undelivered_conversational_rules(ctx.db.conn, PROJECT_ROOT),
@@ -311,8 +312,9 @@ def validate(ctx: Ctx) -> Outcome:
             cfgquality.find_query_file_convention_violations(PROJECT_ROOT),
             "SQL scratch file(s) violating the scripts/SQLite/ folder convention"),
     }
-    preset = {k: v[0] for k, v in findings.items()}
-    if not any(preset.values()):
+    # counts only: the full lists live in CONFIG-REPORT.md, never in the escalation (BUILD.md sec 42)
+    counts = {k: len(v) for k, (v, _) in findings.items() if v}
+    if not counts:
         return ok("cfg_* tables are coherent — schema FKs, may_source, handlers, on_fail, "
                   "status flow, regex settings, report fields all check out; no orphans, no "
                   "settings needing justification, no stale filled_by references, GOVERNANCE.md "
@@ -328,6 +330,8 @@ def validate(ctx: Ctx) -> Outcome:
     report_path = cfgreport.generate(
         out_path=pathlib.Path(ctx.cfg.required_setting("configmaint.report_path")))
     summary = ", ".join(f"{len(v)} {label}" for v, label in findings.values() if v)
+    fingerprints = {k: sorted(esc.finding_fingerprint(i) for i in v)
+                    for k, (v, _) in findings.items() if v}
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
@@ -336,16 +340,30 @@ def validate(ctx: Ctx) -> Outcome:
         if decision in ("approve", "approved"):
             return ok(f"acknowledged: {summary} — researcher confirmed these are known/acceptable "
                       f"(full detail in {report_path})",
-                      **preset)
+                      **counts)
         if decision == "reject":
             return fail("findings-rejected",
                        "researcher flagged these findings as needing action, not just acknowledgement",
-                       **preset)
+                       **counts)
         return fail("needs-revision", f"researcher comment: {answered['comment'] or '(none)'}")
 
-    question = (f"cfg_* is structurally coherent, but has findings needing your judgement: "
-               f"{summary}. Full detail (every item, by category) written to {report_path} — "
-               f"see the \"findings\" section.")
+    # #2206 option 1: a finding already acknowledged (the latest approved advisory escalation) is
+    # not asked again; only findings new since then are
+    base_id, acknowledged = esc.acknowledged_findings(ctx.db, ctx.step_id, _ADVISORY_TRIED[:40])
+    new = {k: [i for i in v if esc.finding_fingerprint(i) not in acknowledged.get(k, set())]
+           for k, (v, _) in findings.items() if v}
+    new_summary = ", ".join(f"{len(new[k])} {label}" for k, (v, label) in findings.items()
+                            if new.get(k))
+    if base_id and not new_summary:
+        return ok(f"no new findings: {summary}, all acknowledged in #{base_id}. Full detail in "
+                  f"{report_path}", **counts, acknowledged_in=base_id)
+    since = f" since #{base_id} was acknowledged" if base_id else ""
+    question = (f"cfg_* is structurally coherent, but has new findings{since} needing your "
+               f"judgement: {new_summary}. All findings: {summary}. Full detail (every item, by "
+               f"category) written to {report_path} — see the \"findings\" section.")
+    # `summary` stays in the stored context: open_duplicate matches an unchanged re-run on it
+    preset = {"summary": summary, "counts": counts, "new": {k: len(v) for k, v in new.items() if v},
+              "fingerprints": fingerprints, "report_path": str(report_path)}
 
     # an identical finding already open from an earlier run is not raised again; matched on
     # `summary` (stable), not `question` (embeds a versioned report path)
@@ -353,20 +371,22 @@ def validate(ctx: Ctx) -> Outcome:
     if dup:
         return ok(f"identical to already-open escalation #{dup['id']} (raised {dup['raised_at']}) "
                   f"— not re-raised; answer #{dup['id']} to resolve this finding. Full detail in "
-                  f"{report_path}", **preset, existing_escalation_id=dup["id"])
+                  f"{report_path}", **counts, existing_escalation_id=dup["id"])
 
     # the findings changed while an advisory escalation is still open: record them on it (#2108)
     prior = esc.open_for_step(ctx.db, ctx.step_id, _ADVISORY_TRIED[:40])
     if prior:
         esc.update(ctx.cfg, ctx.db, prior["id"], originator="Claude",
                    comment=f"configmaint.validate re-run {ctx.run_id}: the findings changed, now "
-                           f"{summary}. Full detail in {report_path}.",
-                   context=f"findings as of {ctx.run_id}: {summary}",
+                           f"{new_summary} new{since}; all findings: {summary}. Full detail in "
+                           f"{report_path}.",
+                   # one JSON line: approving this item acknowledges exactly this set
+                   context=json.dumps({"findings_as_of": ctx.run_id, **preset}),
                    # D26: work cannot be attached to an item left at 'raised'
                    state="in-progress" if prior["state"] == "raised" else None)
         return ok(f"findings changed since open escalation #{prior['id']} -- recorded on it as a new "
                   f"version, not re-raised. Full detail in {report_path}",
-                  **preset, existing_escalation_id=prior["id"])
+                  **counts, existing_escalation_id=prior["id"])
 
     return escalate(
         "needs-review",

@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-21T14:00:41Z |
+| generated_at | 2026-10-21T17:49:17Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -95,88 +95,20 @@ _(none)_
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
-**Unenforced behaviour rules** (81) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
-17. [chat] #17 confirm-before-nontrivial-work — context_delivered
-18. [chat] #18 output-to-file-not-chat-only — context_delivered
-19. [chat] #19 factual-discipline-no-guessing — context_delivered
-20. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
-21. [chat] #21 chat-items-become-escalations — context_delivered
-22. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
-23. [chat] #23 close-the-loop-not-just-report — context_delivered
-24. [chat] #24 show-evidence-dont-smooth-over — context_delivered
-25. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-26. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-27. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-28. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-29. [chat] #98 fix-standard-violations-dont-ask — context_delivered
-30. [chat] #99 read-instruction-in-whole-chat-context — context_delivered
-31. [chat] #100 names-not-bare-codes — context_delivered
-32. [chat] #101 ready-to-run-commands — context_delivered
-33. [chat] #102 status-reports-checked-facts-only — context_delivered
-34. [development] #38 root-fix-not-one-off — context_delivered
-35. [development] #39 simple-steps-not-engineered-designs — context_delivered
-36. [development] #40 open-items-route-through-escalation — context_delivered
-37. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
-38. [development] #46 test-plan-per-module-utility — deliberately_deferred
-39. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
-40. [development] #66 cluster-label-must-track-membership — buildable_not_built
-41. [development] #75 devmode-config-writes-are-audited — context_delivered
-42. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-43. [development] #103 match-established-convention-when-extending — context_delivered
-44. [development] #104 check-new-rules-against-existing-first — context_delivered
-45. [development] #105 diagnosis-is-not-licence-to-build — context_delivered
-46. [development] #106 no-per-item-approval-steps-in-designs — context_delivered
-47. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
-48. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-49. [documentation] #33 single-living-register-update-in-place — context_delivered
-50. [documentation] #34 source-of-truth-is-written-record — context_delivered
-51. [documentation] #96 replaced-history-out-of-read-path — context_delivered
-52. [filing] #56 naming-shape — partially_enforced
-53. [filing] #57 snapshot-vs-living-document — context_delivered
-54. [filing] #58 archiving-trigger — partially_enforced
-55. [filing] #59 claude-code-filing-obligations — context_delivered
-56. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-57. [filing] #83 authoritative-source-only — context_delivered
-58. [llm_output] #4 inferential-not-confirmed — context_delivered
-59. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
-60. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
-61. [llm_output] #69 let-scripture-speak-no-imputed-synthesis — context_delivered
-62. [llm_output] #70 cluster-tags-loose-no-retagging — context_delivered
-63. [llm_output] #72 route-verses-hib-other-beings-data-only — context_delivered
-64. [llm_output] #73 read-verse-by-role-of-each-mcode-word — context_delivered
-65. [llm_output] #77 claims-register-keeps-narrative-honest — context_delivered
-66. [sqlite] #1 verify-before-acting — context_delivered
-67. [sqlite] #11 readonly-by-default — context_delivered
-68. [sqlite] #13 dont-assume-which-database — context_delivered
-69. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
-70. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
-71. [sqlite] #67 bible-research-db-excluded-from-iba-results — context_delivered
-72. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
-73. [sqlite] #71 reuse-extracted-base-data-set-based-mcode — context_delivered
-74. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-75. [sqlite] #107 enumerate-link-tables-before-orphan-verdict — context_delivered
-76. [study_method] #84 fan-out-progressive-strands — context_delivered
-77. [study_method] #85 prose-only-on-instruction — context_delivered
-78. [study_method] #86 narrative-reset-and-weave-record — context_delivered
-79. [study_method] #87 narrative-chapter-text-rules — context_delivered
-80. [study_method] #88 weave-not-fit — context_delivered
-81. [study_method] #89 change-of-character-recorded — context_delivered
-82. [study_method] #90 weaving-carries-meaning — context_delivered
-83. [study_method] #91 narration-probes-not-restates — context_delivered
-84. [study_method] #92 no-unnecessary-holding — context_delivered
-85. [study_method] #93 strand-checks-its-m47-verses — context_delivered
-86. [study_method] #94 strand-pull-scans-glosses-across-codes — context_delivered
-87. [study_method] #95 verse-sets-only-through-raw-layer — context_delivered
-88. [study_method] #109 read-verses-before-asking — context_delivered
-89. [study_method] #110 surface-is-the-sensitivity-lens — context_delivered
-90. [study_method] #111 filters-are-working-aids — context_delivered
-91. [study_method] #112 narrative-is-story-claims-are-derived — context_delivered
-92. [terminal] #2 step-not-done-without-validated-output — context_delivered
-93. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
-94. [terminal] #27 heredoc-powershell-only — context_delivered
-95. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
-96. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
-97. [terminal] #108 tool-layer-escaping-checks — context_delivered
+**Unenforced behaviour rules** (13) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
+17. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+18. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+19. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+20. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+21. [development] #46 test-plan-per-module-utility — deliberately_deferred
+22. [development] #66 cluster-label-must-track-membership — buildable_not_built
+23. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+24. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+25. [filing] #56 naming-shape — partially_enforced
+26. [filing] #58 archiving-trigger — partially_enforced
+27. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+28. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
+29. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
 
 **Undelivered conversational rules** (0) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
 _(none)_
@@ -185,40 +117,40 @@ _(none)_
 _(none)_
 
 **PS scripts bypassing run.py** (2) — an active PS script calling iba.app.(handlers|lib|tools) directly instead of dispatching through iba.app.run:
-98. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
-99. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+30. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+31. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
 
 **Steps without a PS entry point** (0) — an active cfg_step whose work package has no cfg_work_package.ps_script:
 _(none)_
 
 **Escalation-file naming drift** (27) — a Workflow/Catalogue or iba/docs file whose own header names an escalation the filename doesn't carry as its prefix:
-100. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-101. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
-102. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-103. iba/docs/archive/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-104. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
-105. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
-106. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
-107. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
-108. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
-109. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
-110. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
-111. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
-112. iba/docs/archive/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
-113. iba/docs/archive/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
-114. iba/docs/archive/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
-115. iba/docs/archive/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-116. iba/docs/archive/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
-117. iba/docs/archive/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-118. iba/docs/archive/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-119. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-120. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
-121. iba/docs/archive/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
-122. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
-123. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-124. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
-125. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
-126. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
+32. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+33. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
+34. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+35. iba/docs/archive/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+36. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
+37. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
+38. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
+39. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
+40. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
+41. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
+42. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
+43. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
+44. iba/docs/archive/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
+45. iba/docs/archive/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
+46. iba/docs/archive/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
+47. iba/docs/archive/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+48. iba/docs/archive/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
+49. iba/docs/archive/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+50. iba/docs/archive/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+51. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+52. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
+53. iba/docs/archive/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
+54. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
+55. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+56. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
+57. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
+58. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
 
 **Config hedge phrases** (0) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
 _(none)_
@@ -227,8 +159,8 @@ _(none)_
 _(none)_
 
 **Query file convention** (2) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
-127. scripts/SQLite/IBA_DB/Untitled-1.sqlite3-query — untitled, needs a real descriptive name
-128. scripts/SQLite/IBA_DB/Untitled-2.sqlite3-query — untitled, needs a real descriptive name
+59. scripts/SQLite/IBA_DB/Untitled-1.sqlite3-query — untitled, needs a real descriptive name
+60. scripts/SQLite/IBA_DB/Untitled-2.sqlite3-query — untitled, needs a real descriptive name
 
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
@@ -248,7 +180,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**935** registered module(s) — **482** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **815** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**936** registered module(s) — **483** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **816** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -796,6 +728,7 @@ _(none)_
 | purge | iba/app/handlers/purge.py | purge.py -- app-wide soft-delete purge audit + execute + database retirement (escalation #1766/#1868/#1872/#1873): per-table soft-deleted counts + live-dependency safety check (audit, read-only); allow-listed soft-deleted-row removal (execute, preview-then-live); and full-table clearing of every cfg_table.inactive=1 table for a database, with dangling-FK cleanup on retained tables (retire_database, preview-then-live). All three always persist a report. | ✓ |  |  |
 | query_db | archive/query_db.py | prose_section_type joined to active current prose_section rows -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | quotecheck | iba/app/lib/quotecheck.py | quotecheck.py -- the narrative quote check moved into the app (#2173 G14). | ✓ | ✓ | pure functions over a connection: the callers read narrative.quote_min_words and pass it |
+| reading_waste_2206_v1_20261021 | iba/app/migration/archive/reading_waste_2206_v1_20261021.py | ONE-OFF migration -- escalation #2206: inserts compliance.value_settings, through configmaint.apply_logged under run_id DEVMODE-2206-READING-WASTE-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | rebuild_prose_section_fk_v1_20260905 | iba/app/migration/archive/rebuild_prose_section_fk_v1_20260905.py | ONE-OFF migration, escalation #1452 (approved 2026-09-05) -- rebuilds bible_research.db's prose_section table, correcting its stale FK (was REFERENCES prose_section_type_old, a nonexistent leftover-rename table; now correctly REFERENCES prose_section_type). Rename/recreate/copy/drop pattern matching retire_cfg_prose_chapter_v1_20260827.py; all 1035 rows preserved with ids intact, 5 indexes + 3 FTS-sync triggers recreated, FTS rowid linkage verified 0 mismatches, PRAGMA foreign_key_check clean post-rebuild. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | recordingpass | iba/app/lib/recordingpass.py | recordingpass.py — the single writer for `ib_observation`/`ib_node` (escalation #1693's design, | ✓ |  |  |
 | reframe_what_is_to_what_does_show_v1_20260923 | iba/app/migration/archive/reframe_what_is_to_what_does_show_v1_20260923.py | ONE-OFF migration -- researcher instruction 2026-09-23: reframe bare 'what is <stored field>' questions to 'what does it show' (morph example). Fixed M0.5.2 (had the literal morph antipattern) and M0.5.3 (missed in earlier reworks, also lacked span-grounding entirely). Run once, then set inactive=1. |  |  |  |
@@ -1217,6 +1150,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | behaviour | compliance.copy_shingle_words | 3 | #2173 P2 B: n for the n-word runs used to tell a copied restatement from a reading |
 | behaviour | compliance.dir | Logs/compliance/ | #2173 P2: folder of the session compliance files COMPLIANCE-<date>-<session8>.md |
 | behaviour | compliance.engaged_statuses | ['engaged'] | #2173 P2 D: the statuses whose rows need evidence at close |
+| behaviour | compliance.value_settings | ['governance.escalation_worksheet_path', 'governance.oneoff_report_archive_dir', 'governance.oneoff_report_dir', 'governance.oneoff_report_format', 'governance.oneoff_report_naming_pattern', 'governance.ps_worksheet_path', 'governance.session_log_dir'] | #2206 option 3: governance settings holding a plain value (a path, a format), read by the code that uses them; lib/compliance.py leaves them out of the delivered rules and the compliance file |
 | candidate | candidate.concept_delimiter_pattern | [:/] | a character in a candidate.load input word signalling more than one concept -- split into one sub-item per piece before validating, rather than reject or guess which half is right |
 | candidate | candidate.lemma_base_pattern | ^([HG]\d+)([A-Z]?)$ | capture group 1 = the base Strong's (sub-letters stripped) — the lemma key. The seed/stamp key on this. |
 | candidate | candidate.load_report_path | iba/app/reports/candidate-load.md | where candidate.load persists its per-run duplicates/exceptions report |

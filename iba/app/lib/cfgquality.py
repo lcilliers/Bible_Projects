@@ -914,12 +914,14 @@ def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.
 
 # ── unenforced behaviour rules ─────────────────────────────────────────────────────────────────
 def find_unenforced_behaviour_rules(conn: sqlite3.Connection) -> list[str]:
-    """Every active `cfg_behaviour_rule` whose `enforcement_status` (cfg_enum
-    `behaviour_rule_enforcement_status`) is not `mechanically_enforced` (#1384). ADVISORY: an
-    unenforced rule is a known state to track."""
+    """Every active `cfg_behaviour_rule` with no control (#1384): its `enforcement_status` (cfg_enum
+    `behaviour_rule_enforcement_status`) is neither `mechanically_enforced` nor `context_delivered`.
+    A context_delivered rule is restated at session start and proved at close by the compliance
+    file (#2173 P2, lib/compliance.py), so it is not counted here (#2206 option 2a). ADVISORY."""
     rows = conn.execute(
         "SELECT id, class, rule_key, enforcement_status FROM cfg_behaviour_rule "
-        "WHERE active=1 AND (enforcement_status IS NULL OR enforcement_status != 'mechanically_enforced') "
+        "WHERE active=1 AND (enforcement_status IS NULL OR enforcement_status NOT IN "
+        "('mechanically_enforced', 'context_delivered')) "
         "ORDER BY class, id").fetchall()
     out = []
     for r in rows:
