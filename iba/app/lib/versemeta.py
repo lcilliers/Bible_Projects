@@ -1,15 +1,7 @@
-"""versemeta.py — verse_meta.status maintenance, escalation #1661.
-
-Researcher instruction, verbatim: "Add an additional column to verse_meta to set the status of
-the verse. Status values: exclude; anchor; citated; analysed. ... create a ps routine whereby
-researcher can update the status for a range of verses by comma delimited refences. Ignore the
-status anchor, it is already included as a separate column [that's verse_meta.is_passage_anchor].
-Updated column must be stamped if the status change."
-
-Column + `cfg_enum verse_meta_status` domain (exclude/citated/analysed) built by
-migration/add_verse_meta_status_column_v1_20260910.py. This module is the ongoing write path —
-a standalone utility (like lib/escalation.py), not a run.py dispatcher step, since it's a direct
-researcher-driven maintenance action, not a repeatable pipeline stage.
+"""versemeta.py — verse_meta.status maintenance (#1661): sets the status (cfg_enum
+verse_meta_status: exclude/citated/analysed) for a list of verse references and stamps the change.
+The passage anchor is its own column (verse_meta.is_passage_anchor). A standalone utility, not a
+run.py step: a direct researcher-driven maintenance action.
 
 CLI:
     python -m iba.app.lib.versemeta set-status --references "Gen.1.1,Rom 1:1,Rom.1.2" --status analysed [--db PATH]

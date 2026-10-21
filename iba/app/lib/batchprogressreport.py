@@ -48,10 +48,7 @@ def generate(conn, run_id: str | None = None, step: str | None = None,
     failed = [r for r in rows if r["status"] == "failed"]
     total_cost = sum(r["cost_usd"] or 0 for r in committed)
 
-    # If no explicit filter was given at all, the "live right now" view is every currently-running
-    # row DB-wide, not the last 500 rows regardless of filter -- that's the actual live-monitor use
-    # case (found live building this: without this branch, an unfiltered call would just dump
-    # whatever's most recent, running or not, which isn't "what's in progress right now").
+    # no filter at all: every currently running row DB-wide (the live view), not the latest rows
     if not (run_id or step or selector_key):
         running = [dict(r) for r in conn.execute(
             "SELECT * FROM run_batch WHERE status='running' ORDER BY started_at")]

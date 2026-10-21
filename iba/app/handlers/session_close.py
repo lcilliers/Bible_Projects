@@ -1,17 +1,13 @@
-"""session_close.py -- session-close detection (escalation #1875; rebuilt 2026-10-20, escalation
-#2173, session-close change proposal v1 SC1-SC14).
+"""session_close.py -- session-close detection (#1875, #2173).
 
 What session-close is for: to end a session so that nothing done, decided or left open in it exists
-only in the chat or in an unrecorded file, and so that the base data and the narrative are sound.
-The old checks compared records with records (the CLI's own write confirmations against
-escalation_history, C1), listed files instead of checking them (C2), were cleared by any BUILD.md
-edit (C3) and passed when the git window was missing (C4). This handler now checks the work
-against its record. Detection only: it never writes a fix (remediation is Claude's, in
-.claude/commands/session-close.md). Every finding has a stable key; it is cleared only by being
+only in the chat or in an unrecorded file, and so that the base data and the narrative are sound. It
+checks the work against its record. Detection only: it never writes a fix (remediation is Claude's,
+in .claude/commands/session-close.md). Every finding has a stable key; it is cleared only by being
 fixed (it no longer appears) or by a disposition in the session compliance file's
 `## Close dispositions` section that names an open item carrying it (checked here).
 
-  SC1  session and window   no session id or no boundary record FAILS the close (C4)
+  SC1  session and window   no session id or no boundary record FAILS the close
   SC2  spine                handlers/spine.compute: span->strong, verse<->span, strong->cluster,
                             strong->meaning vs STEP. FATAL findings come first.
   SC3  researcher's words   every researcher message in the transcript must appear (normalised)
@@ -38,7 +34,7 @@ fixed (it no longer appears) or by a disposition in the session compliance file'
                             in the window (a changed file, a cfg_* table with a cfg_change_detail
                             row in the window, or #nnnn vN written in the window).
   SC10 BUILD.md coverage    every code/config file changed (session_close.build_scope) is NAMED
-                            in the lines BUILD.md gained in the window (C3).
+                            in the lines BUILD.md gained in the window.
   SC12 publish              whether the narrative copy (a chapter changed) and the threads export
                             (a thread row changed, or the register file differs from the table --
                             it embeds rule text) are needed; each runs only then.

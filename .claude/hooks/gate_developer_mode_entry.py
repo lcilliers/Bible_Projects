@@ -1,31 +1,13 @@
 #!/usr/bin/env python
-"""Claude Code UserPromptExpansion hook (matcher: "developer-mode"): structurally refuses to
-expand the /developer-mode command unless this session both (a) began via a genuinely fresh
-SessionStart event ("startup" or "clear" -- not "resume", "compact", or "fork"), and (b) has had
-no prior user prompt since that event -- i.e. /developer-mode is the FIRST thing typed.
+"""Claude Code UserPromptExpansion hook (matcher: "developer-mode"): refuses to expand the
+/developer-mode command unless this session (a) began via a fresh SessionStart ("startup" or
+"clear", not "resume", "compact" or "fork") and (b) has had no prior user prompt since -- i.e.
+/developer-mode is the first thing typed (#1380). It runs in the harness before Claude sees the
+prompt, so it cannot be argued past the way an in-context rule can.
 
-Why this exists (escalation #1380, researcher instruction 2026-09-02): the command's own
-markdown text already told Claude not to self-invoke this mid-session, but that is Claude's own
-instruction-following, not enforcement -- proven live 2026-09-02 when a standard-mode session
-discussed switching to Developer Mode mid-conversation and nothing external stopped the
-discussion. This hook fires BEFORE Claude ever sees the expanded prompt, from the harness itself,
-so it cannot be rationalised past the way an in-context rule can.
-
-Fails CLOSED (blocks) on every kind of uncertainty -- missing state file, session_id mismatch,
-unrecognised start_source -- deliberately, because for a gate like this a silent false "allow" is
-the dangerous failure (looks like protection, isn't), whereas a false "block" is loud and
-immediately visible to the researcher, who can then have this fixed rather than unknowingly
-relying on a gate that was never actually engaging.
-
-Schema caveat, stated plainly rather than assumed away: Claude Code's public docs do not confirm
-(a) the exact UserPromptExpansion matcher-string convention ("developer-mode" vs
-"/developer-mode" vs something else) or (b) whether this event fires for custom
-`.claude/commands/*.md` commands at all. This hook's actual engagement therefore needs a live
-verification pass the first time a real fresh-session /developer-mode is attempted after this
-was wired in -- check .claude/.session-boundary-debug.jsonl for a "UserPromptExpansion" line to
-confirm it fired, and correct the matcher in .claude/settings.json if it did not. The command's
-own markdown carries a redundant, non-structural fallback check for exactly this reason -- belt
-and suspenders, not a substitute for this hook actually engaging.
+Fails CLOSED on any uncertainty (missing state file, session_id mismatch, unrecognised start_source):
+a false block is visible and fixable; a false allow is not. The command's own markdown carries a
+redundant fallback check.
 """
 import json
 import os
@@ -67,10 +49,8 @@ def main() -> None:
     except Exception:
         pass
 
-    # Read THIS session's own record (escalation #1894, 2026-09-30), not the shared
-    # .session-boundary-state.json: the shared file is overwritten by whichever session in this
-    # folder started or resumed last, which made this gate wrongly refuse a genuinely fresh
-    # session whenever another session resumed after it.
+    # this session's own record (#1894), not the shared .session-boundary-state.json, which another
+    # session resuming later would overwrite
     session_id = payload.get("session_id")
     if session_id:
         state_path = os.path.join(claude_dir, "session-boundary", f"{session_id}.json")

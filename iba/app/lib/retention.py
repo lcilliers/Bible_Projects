@@ -1,16 +1,10 @@
-"""retention.py — log growth / run-health visibility for the append-only audit tables
-(`run`, `escalation`, `validation_result`). No pruning or deletion here — that is a policy
-decision for the researcher, not this app's to assume (raised 2026-07-22: "are there a
-maintenance routine to maintain log file, else they will grow out of hand" — this is the
-routine's READ side: a persisted status report, run on demand, showing exactly what would need
-a decision. A delete/archive routine is a deliberate next step once a retention POLICY is chosen,
-not built here.
+"""retention.py — log growth / run-health visibility for the append-only audit tables (`run`,
+`escalation`, `validation_result`): a persisted status report, run on demand. No pruning or deletion:
+that waits on a retention policy the researcher chooses.
 
-Also identifies CHAINED-package runs stuck mid-sequence with no escalation pending — these are
-NOT relabelled 'done' (see migration/fix_stuck_run_states.py's reasoning: a chained run stuck
-mid-sequence may genuinely be an abandoned/incomplete run, e.g. a standalone `candidate.seed`
-test that was never meant to continue to `candidate.set` — relabelling it would misrepresent what
-happened). They are archival CANDIDATES, surfaced here for a real decision.
+Also lists CHAINED-package runs stuck mid-sequence with no escalation pending. They are not relabelled
+'done' (a chained run stuck mid-sequence may be a deliberate standalone test); they are archival
+candidates for a decision.
 """
 
 from __future__ import annotations
@@ -69,17 +63,9 @@ def build(cfg) -> dict:
         ORDER BY r.started_at
     """)]
 
-    # 2026-08-06: the non-chained equivalent, previously uncovered. A non-chained package's run
-    # (operations-ingest, configuration-maintenance, reports, ...) transitions to 'done' the moment
-    # its single step resolves on a continue path (run.py:207) — there is NO legitimate reason for
-    # one to still read 'running' with no escalation pending, unlike a chained run (which might be
-    # a deliberate standalone test mid-sequence). A stuck non-chained run is therefore an
-    # UNAMBIGUOUS crash signal (process killed/power lost between the step's own write-transaction
-    # commit boundary and run.py's own final `db.update("run", ..., state="done")` call) — not an
-    # archival judgement call the way stuck_chained is. Answer: re-submit the same call: the write
-    # transaction inside the handler was never committed (sqlite3's default deferred-transaction
-    # isolation — see debate-pipeline-technical-reference-20260806.md sec2's disaster-recovery
-    # note), so the DB genuinely holds no partial state to clean up first.
+    # a non-chained run left 'running' with no escalation pending: it reaches 'done' as soon as its step
+    # resolves, so this is a crash signal (killed between the handler's commit and run.py's final
+    # update). Re-submit the same call: the handler's uncommitted transaction left no partial state.
     out["stuck_nonchained"] = [dict(r) for r in conn.execute("""
         SELECT r.run_id, r.work_package, r.state, r.resume_point, r.runs_over, r.started_at
         FROM run r JOIN cfg_work_package wp ON wp.name = r.work_package

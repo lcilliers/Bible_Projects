@@ -1,24 +1,11 @@
-"""wordaudit.py — the `word-audit` work package (escalation #672, plan v4 Phase 1).
+"""wordaudit.py — the `word-audit` work package (#672): registered, dispatchable steps under run.py's
+gates, with stub handlers. Each step does minimal bookkeeping and otherwise returns
+`not-yet-implemented`; it is not a port of `engine/audit_word.py`.
 
-**Deliberately stub handlers, not a port.** Per escalation #656's standing rule ("redesign, don't
-auto-adopt") and `feedback_never_model_output_on_prior_unreviewed_pass`, this is NOT
-`engine/audit_word.py`'s logic copied over. Registering these 10 steps (`BUILD.md` §127) made the
-work package real and dispatchable — `run.py`'s gates (`module_blocking`, `step_kind`,
-`cfg_write_grant`) all apply to it exactly like every other work package. What each step actually
-DOES, beyond the minimal real bookkeeping below, is deliberately left `not-yet-implemented` rather
-than faked, because writing this handler surfaced a genuine open question that has to be answered
-first, not guessed at:
-
-**The word-identity question.** `engine/audit_word.py`'s file-discovery convention
-(`research/discovery/{registry_no:03d}_{word}_..._{YYYYMMDD}.json`) keys off
-`bible_research.db.word_registry.no` — the LEGACY 222-word registry (32 columns, `no`/
-`phase1_status`/`cluster_assignment`/... — see `BUILD.md` §126). `run.py`'s `Ctx.word_id` resolves
-against `iba.db`'s OWN `word_registry` (6 columns: `id`/`word`/`source`/`status`/...) — a different,
-newer, currently-smaller table for the raw/new-word pipeline. These are NOT the same registry, and
-nothing yet states how (or whether) a word progressing through `word-audit` should read/write
-`bible_research.db`'s legacy row at all — that's exactly the same "does `word.*` need a second,
-`bible_research.db`-scoped DB connection" question `bootstrap_word_audit.py`'s own docstring
-already flagged for `cfg_write_grant`. One open question, two symptoms — not answered here.
+Open question blocking the real steps: `engine/audit_word.py` keys off
+`bible_research.db.word_registry.no` (the legacy registry), while `Ctx.word_id` resolves against
+`iba.db`'s own `word_registry`. How, or whether, a word in `word-audit` reads or writes the legacy row
+is not decided.
 
     python -m iba.app.run word-audit --step word.load_json --run-id <id> --param Word=<word>
 """

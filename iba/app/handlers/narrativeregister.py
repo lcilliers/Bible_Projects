@@ -1,4 +1,4 @@
-"""narrativeregister handlers -- work package `narrative-register` (escalation #2110).
+"""narrativeregister handlers -- work package `narrative-register` (#2110).
 
 One handler per Narrative-Register.ps1 action, dispatched through run.py (cfg_behaviour_rule 43).
 The logic is in lib/narrativeregister.py; a handler only checks the caller, opens the step's write
@@ -106,9 +106,9 @@ def export(ctx: Ctx) -> Outcome:
 
 
 def quote_check(ctx: Ctx) -> Outcome:
-    """escalation #2173 G14 -- `Narrative-Register.ps1 -Action QuoteCheck -File <chapter.md>
-    [-Against <previous.md>]`: every quotation in the file (or only in the lines it added against
-    -Against) must be found in the ESV text (lib/quotecheck.py). Read-only."""
+    """`Narrative-Register.ps1 -Action QuoteCheck -File <chapter.md> [-Against <previous.md>]` (#2173):
+    every quotation in the file (or only in the lines it added against -Against) must be found in the
+    ESV text (lib/quotecheck.py). Read-only."""
     import pathlib
     from ..lib import quotecheck
     f = ctx.params.get("File")

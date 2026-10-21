@@ -1,13 +1,9 @@
-"""narrativecopy.py — copy the current inner-being narrative files to the learning4comfort inbox.
-
-Escalation #1941 (researcher, 2026-10-04): "A) this project (bible_study_projects) does not publish
-directly to github b) on completion of a section of work or on request, the current
-...inner-being-narrative files are copied to C:\\learning4comfort\\publication-inbox\\... c)
-session-close trigger the copy in b)". Inbox folder: the_inner_being (researcher, same day).
+"""narrativecopy.py — copy the current inner-being narrative files to the learning4comfort inbox
+(governance.no_direct_github_publish, #1941). Inbox folder: the_inner_being.
 
 What it does:
 - Source = cfg_setting narrative.copy_source_dir. What is copied is decided by the chapter table
-  (escalation #2155 D3, researcher 2026-10-18: publishing follows the table): exactly the active
+  (#2155): exactly the active
   narrative_chapter rows' current files, in reading order. A top-level .md file in the folder that
   is no chapter's current file is reported ("not a chapter") and not copied; a chapter whose file
   is missing is an error. The archive/ subfolder is never copied.

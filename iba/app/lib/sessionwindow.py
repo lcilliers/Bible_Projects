@@ -1,11 +1,9 @@
 """sessionwindow.py -- the running Claude Code session, its start, its git window and its transcript
-(escalation #2173; factored out of handlers/session_close.py so start-up and close share one
-definition).
+(#2173), shared by start-up and close.
 
-Session identity (escalation #1894 option A): CLAUDE_CODE_SESSION_ID, else the newest transcript
-that contains the given marker. Never the shared .session-boundary-state.json, which whichever
-session started last overwrites. The session start is this session's own boundary record
-(.claude/session-boundary/{id}.json, written by the SessionStart hook).
+Session identity (#1894): CLAUDE_CODE_SESSION_ID, else the newest transcript containing the given
+marker; never the shared .session-boundary-state.json. The session start is this session's own
+boundary record (.claude/session-boundary/{id}.json, written by the SessionStart hook).
 """
 
 from __future__ import annotations

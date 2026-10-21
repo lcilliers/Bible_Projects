@@ -1,8 +1,5 @@
-"""escalationcontext.py -- what every open escalation points to (escalation #2173 P1, 2026-10-20).
-
-Researcher, chat 2026-10-20 (verbatim): *"the reports or links mentioned in every open escalation
-must be read and taken into account"*; *"check in content, context and resolution becuase you are
-not consistent in where you put the links"*; *"only read latest versions of the files"*.
+"""escalationcontext.py -- what every open escalation points to (#2173 P1): the files linked in any
+open escalation are read, at their latest version.
 
 For every OPEN escalation (cfg_enum escalation_state_open: raised, in-progress, re-assigned --
 parked items are read when they are taken up; threads are audited by threadaudit.py), it collects

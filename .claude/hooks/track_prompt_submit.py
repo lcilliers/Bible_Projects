@@ -1,21 +1,11 @@
 #!/usr/bin/env python
-"""Claude Code UserPromptSubmit hook: records the id of the FIRST user prompt seen since the
-last session-boundary event, so gate_developer_mode_entry.py can tell "this /developer-mode
-invocation IS the first thing in this session" apart from "this session already had other
-activity" (escalation #1380). Part of the same three-file mechanism as
-session_boundary_track.py and gate_developer_mode_entry.py -- read that file's docstring for the
-full design rationale, including the schema-uncertainty handling.
+"""Claude Code UserPromptSubmit hook: records the id of the FIRST user prompt seen since the last
+session-boundary event, so gate_developer_mode_entry.py can tell whether /developer-mode is the
+first thing in this session (#1380). Never blocks; fires on every user turn.
 
-Never blocks (UserPromptSubmit CAN block per the docs, but this hook's only job is recording --
-the actual refusal happens in gate_developer_mode_entry.py). Fires on every user turn, no
-matcher filter.
-
-Deliberately uses prompt_id EQUALITY rather than a turn counter: whether or not this hook and
-UserPromptExpansion both fire for the same slash-command turn (undocumented, and in which order)
-does not matter -- either way, the first prompt_id recorded after a fresh session-boundary event
-is the one the gate compares against, and if nothing has been recorded yet the gate treats that
-as "nothing came before this" rather than failing closed on an implementation detail it can't
-control.
+Uses prompt_id equality rather than a turn counter, so the relative order of this hook and
+UserPromptExpansion on the same turn does not matter; if nothing is recorded yet, the gate treats
+it as "nothing came before this".
 """
 import json
 import os
@@ -64,8 +54,7 @@ def main() -> None:
         except Exception:
             pass
 
-    # Per-session record (escalation #1894): same update, on this session's own file, which
-    # gate_developer_mode_entry.py reads. Not affected by other sessions starting later.
+    # per-session record (#1894), read by gate_developer_mode_entry.py
     if session_id and prompt_id:
         per_session_path = os.path.join(claude_dir, "session-boundary", f"{session_id}.json")
         try:

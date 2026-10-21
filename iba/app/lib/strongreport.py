@@ -28,13 +28,9 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     with_tree = q("SELECT COUNT(DISTINCT lemma_key) n FROM strong_meaning_tree "
                  "WHERE deleted=0")[0]["n"]
 
-    # joined against every strong row, not just existing strong_lexicon rows — a strong entry
-    # with no strong_lexicon row at all is the same as "neither", not invisible. with_lexicon is
-    # derived from this same breakdown (both+lsj_only+mounce_only) rather than a second,
-    # independent un-joined query against strong_lexicon, so the intro figure and the
-    # lexicon_completeness table below can never structurally disagree (escalation #275: they
-    # happened to already match on live data, 1506, but via two different queries — one of them
-    # not join-safe against a future orphan/duplicate strong_lexicon row).
+# joined against every strong row (a strong with no strong_lexicon row counts as "neither");
+# with_lexicon is derived from this same breakdown, so the intro figure and the lexicon_completeness
+# table cannot disagree (#275)
     both = q("SELECT COUNT(*) n FROM strong s JOIN strong_lexicon sl ON sl.strong=s.strongNumber "
            "AND sl.deleted=0 WHERE s.deleted=0 AND sl.lsj IS NOT NULL "
            "AND sl.mounce IS NOT NULL")[0]["n"]
@@ -112,9 +108,7 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
               [[r["registry_word"], r["strongNumber"], r["gloss"], r["n_senses"]]
                for r in by_registry]))
 
-    # with_lexicon/neither_lexicon computed above (single source of truth shared with the intro
-    # summary, escalation #275) — this table just presents the same numbers, plus an explicit
-    # reconciling total so the intro figure and this breakdown can never look mismatched.
+    # the same numbers as the intro (#275), plus a reconciling total
     sections["lexicon_completeness"] = _tbl(
         ["lsj", "mounce", "strong rows"],
         [["✓", "✓", both], ["✓", "", lsj_only], ["", "✓", mounce_only],

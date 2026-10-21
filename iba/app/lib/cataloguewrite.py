@@ -1,26 +1,12 @@
-"""cataloguewrite.py — validated partial UPDATE of `wa_obs_question_catalogue`
-(bible_research.db), by `obs_id`. Escalation #1007, researcher instruction (verbatim, this chat
-turn): "start to build the table update tool... auto fill (catalogue version, last_modified
-etc)... allow for resetting any column except (obs_id); key obs_id; [for a] column not specified
-then ignore, else set old value with new value. I dont think there is any history control on this
-table and I don't think it is necessary."
+"""cataloguewrite.py — validated partial UPDATE of `wa_obs_question_catalogue` (bible_research.db) by
+`obs_id` (#1007): any column except `obs_id` can be set; columns not named are untouched. A plain
+`UPDATE` with no history table and no approval cycle (configmaint.propose governs `cfg_*` rows only;
+this is ordinary content).
 
-No change-log/history table — deliberate, per the researcher's own instruction above (contrast
-`record_change_log`/`cfg_change_detail`, which DO exist for the tables that need them). A plain
-`UPDATE`, not a propose/approve cycle — `configmaint.propose`'s approval gate is specific to
-`cfg_*` rows (`governance.config_control`); this table is ordinary content, same class as
-`prosestore.run_flag`'s direct write to `wa_data_quality_flags`.
-
-Two columns are auto-filled when the caller doesn't name them in `-Set` (still overridable by
-naming them explicitly — the "resetting any column except obs_id" instruction covers these too):
-
-- `last_modified` — always `datetime.now(UTC)`, ISO-8601, matching the project-wide date
-  convention (SQLite has no native DATETIME affinity).
-- `catalogue_version` — `f"v2-{today}"`, matching the dominant live convention (188/424 rows use
-  exactly the `v2-YYYY-MM-DD` shape — see `report.obs_catalogue`'s "naming schemes" section). The
-  column has 6 different conventions in the live data with no single correct answer, so this
-  default is a judgment call, not a fact — flagged as such when this tool was delivered, easy to
-  override per-call by naming `catalogue_version` in `-Set`.
+Auto-filled unless named in `-Set`:
+- `last_modified` -- `datetime.now(UTC)`, ISO-8601.
+- `catalogue_version` -- `f"v2-{today}"`, the most common live convention (`v2-YYYY-MM-DD`); the
+  column has several conventions, so name it in `-Set` to override.
 """
 
 from __future__ import annotations
@@ -77,11 +63,8 @@ def run_update(cfg, obs_id: int, set_: dict) -> dict:
         final.setdefault("catalogue_version", f"v2-{_today()}")
 
         ssql = ", ".join(f'"{k}"=?' for k in final)
-        # Bounded retry on a transient lock — same pattern/rationale as
-        # reportkit.archive_before_write (escalation #1320): a genuinely held-open connection
-        # (e.g. a SQLite viewer with bible_research.db open) still surfaces the real
-        # OperationalError after these retries, uncaught, exactly as before -- this only clears a
-        # moment's contention, seen twice live testing this tool in one session.
+        # bounded retry on a transient lock (as reportkit.archive_before_write); a connection held open
+        # longer still raises OperationalError
         for attempt in range(_LOCK_RETRIES):
             try:
                 conn.execute(f'UPDATE "{_TABLE}" SET {ssql} WHERE {_KEY}=?',
