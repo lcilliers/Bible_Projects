@@ -18,7 +18,7 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | G:governance.base_data_spine | not engaged | no base-data work is in scope; study on hold and no task touches verse, span, strong or cluster data yet |  |
 | G:governance.behaviour_boundary.backup_recovery | not engaged | a classification decision only; it tells me where durability rules live, nothing to do unless I write data |  |
 | G:governance.behaviour_boundary.git_commit | engaged | my commits follow the terminal-class commit discipline, so B:26 is the rule I apply when I commit |  |
-| G:governance.build_md_on_code_change | engaged | if I change anything under iba/app, I add the change record to iba/app/BUILD.md in that same piece of work |  |
+| G:governance.build_md_on_code_change | engaged | if I change anything under iba/app, I add the change record to iba/app/BUILD.md in that same piece of work | iba/app/BUILD.md |
 | G:governance.config_control | engaged | any cfg row I touch is subject to the configmaint rules; in this mode that means apply_logged, see B:75 |  |
 | G:governance.confmaint_configs | not engaged | I will not alter the configmaint module's own rules unless the task is exactly that |  |
 | G:governance.engineering_documentation_folder | not engaged | no engineering note written yet; a general design note would go to iba/docs, an escalation deliverable to outputs/escalation |  |
@@ -66,7 +66,7 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | G:registry.folder_naming_convention | not engaged | no per-word registry output produced |  |
 | G:report.book_folder_naming_convention | not engaged | no per-book output produced |  |
 | G:report.cluster_folder_naming_convention | not engaged | no per-cluster output produced |  |
-| B:1 | engaged | before acting on any database fact I query the live database for it rather than trusting memory or an earlier report |  |
+| B:1 | engaged | before acting on any database fact I query the live database for it rather than trusting memory or an earlier report | #2198 v1 |
 | B:2 | engaged | I call a step finished only after I have looked at the file or rows it was meant to produce |  |
 | B:3 | engaged | where content already has a home I point to it instead of repeating it in another file or reply |  |
 | B:4 | engaged | anything I conclude that is not grounded in source data is marked inferential |  |
@@ -80,8 +80,8 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | B:13 | engaged | I confirm which database holds a table before querying it |  |
 | B:14 | not engaged | no SQL scratch file kept yet; one would go under scripts/SQLite in its database's folder |  |
 | B:16 | engaged | I never use AskUserQuestion; judgement calls go into a review md file, short questions in plain chat |  |
-| B:17 | engaged | before doing any non-trivial build I state my understanding, approach and affected files, and wait for a yes |  |
-| B:18 | engaged | substantial plans or analysis go into an md file first; chat gets a summary and the path |  |
+| B:17 | engaged | before doing any non-trivial build I state my understanding, approach and affected files, and wait for a yes | outputs/escalation/2177-reset-backlog-plan-v1-20261021.md |
+| B:18 | engaged | substantial plans or analysis go into an md file first; chat gets a summary and the path | outputs/escalation/2177-reset-backlog-plan-v1-20261021.md |
 | B:19 | engaged | where a fact is missing I stop and ask rather than fill the gap with a guess |  |
 | B:20 | engaged | I point out a cheaper route (targeted reads, dry runs, no needless subagents) before taking a costly one |  |
 | B:21 | engaged | an open item or judgement call that comes up in chat becomes an escalation in that same turn |  |
@@ -89,10 +89,10 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | B:23 | engaged | a fix task ends with the fix built and verified, not just a finding written up |  |
 | B:24 | engaged | when I report state I show the actual query output, and keep structural passes separate from fitness claims |  |
 | B:25 | engaged | read-only checks I just run; writes stay inside the approved task |  |
-| B:26 | engaged | each commit I make is pushed straight away, and I commit as units finish rather than all at the end |  |
+| B:26 | engaged | each commit I make is pushed straight away, and I commit as units finish rather than all at the end | commit 17e202a9 |
 | B:27 | engaged | multi-line strings for commands are PowerShell here-strings, never bash heredocs |  |
 | B:28 | engaged | if the researcher pastes an error I fix or explain that error, never sidestep it |  |
-| B:29 | engaged | each fix is tested on a made-up bad case and on real data, and each site separately |  |
+| B:29 | engaged | each fix is tested on a made-up bad case and on real data, and each site separately | #2195 v4 |
 | B:31 | engaged | any new guidance the researcher gives today is written into its cfg row or owning document today |  |
 | B:32 | engaged | a record I mark complete either resolves each point or flags it as unresolved, no vague pointers |  |
 | B:33 | engaged | I update existing registers in place and never start a rival one |  |
@@ -121,28 +121,28 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | B:59 | engaged | before creating a file I decide its proper folder, follow naming rules, archive what it replaces, and ask if the place is unclear |  |
 | B:60 | engaged | tool report output stays at its configured path; authored escalation deliverables go to outputs/escalation |  |
 | B:61 | engaged | I leave inactive tables, columns and rows out of anything I report unless asked for history |  |
-| B:62 | engaged | any schema, step or setting change I make registers itself in the matching cfg table in the same piece of work |  |
+| B:62 | engaged | any schema, step or setting change I make registers itself in the matching cfg table in the same piece of work | iba/app/migration/register_20261021_migrations_v1_20261021.py; #2196 v2 |
 | B:63 | engaged | to hand an item I hold to the researcher I set ready_for_approval, assign it and write the resolution in one call, only when it is truly ready |  |
 | B:64 | not engaged | no escalation deliverable file created yet; one would start with the escalation id |  |
 | B:65 | not engaged | no audit deliverable planned; one would be checked against the open queue, scope definitions and itself first |  |
 | B:66 | not engaged | no cluster membership change planned |  |
 | B:67 | engaged | I do not draw on bible_research.db for any IBA result outside its prose tables |  |
 | B:68 | not engaged | no ib_observation correction work; study on hold |  |
-| B:75 | engaged | any cfg write I make in this mode goes through configmaint.apply_logged with a DEVMODE run id |  |
+| B:75 | engaged | any cfg write I make in this mode goes through configmaint.apply_logged with a DEVMODE run id | cfg_change_detail runs DEVMODE-2195-RULE59-POINTER-20261021, DEVMODE-2196-REGISTER-MIGRATIONS-20261021 |
 | B:80 | engaged | any Open items line I write names a live OT or escalation handle |  |
 | B:81 | engaged | this file is my restatement; I add evidence for each engaged row as I produce it | RUN-20261021_095727_933-COMPLIANCE check_start ok |
 | B:82 | engaged | at close I commit nothing until Session-Close.ps1 is clean or each finding is properly dispositioned here |  |
 | B:83 | engaged | I work only from C:\Bible_study_projects and ignore other copies unless the researcher names one |  |
 | B:96 | engaged | when I change content its live home keeps only the new version; old text goes to its history home |  |
-| B:97 | engaged | each task this session is checked against the Developer Mode boundary, gets an escalation, is tested on a copy, and every reply opens with the banner |  |
-| B:98 | engaged | if I find work off an established standard I fix it rather than ask |  |
+| B:97 | engaged | each task this session is checked against the Developer Mode boundary, gets an escalation, is tested on a copy, and every reply opens with the banner | #2195 v4; #2196 v2 |
+| B:98 | engaged | if I find work off an established standard I fix it rather than ask | #2196 v2 |
 | B:99 | engaged | I read each instruction against the whole conversation so far |  |
 | B:100 | engaged | I show any code together with its name or gloss |  |
 | B:101 | engaged | where the researcher must run something I give the full PowerShell command |  |
 | B:102 | engaged | my reports state only checked facts with their context, grouped as the researcher framed the question |  |
 | B:103 | engaged | anything I add to an established structure follows its existing convention |  |
 | B:104 | not engaged | no new rule proposed yet; before one I would search the rule set for overlap |  |
-| B:105 | engaged | a diagnosed gap goes to the researcher as a decision before I design or build its fix |  |
+| B:105 | engaged | a diagnosed gap goes to the researcher as a decision before I design or build its fix | outputs/escalation/2177-reset-backlog-plan-v1-20261021.md |
 | B:106 | not engaged | no workflow being designed; if one is, no per-item approval steps by default |  |
 | B:107 | not engaged | no orphan or unlinked verdict planned; before one I would check every link table |  |
 | B:108 | engaged | text written through tools is checked for escape damage (backslash-b, dollar signs, here-strings) |  |
@@ -154,7 +154,7 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | E:7 | engaged | files named in escalation text use their full repo-relative path |  |
 | E:11 | not engaged | no export and wipe of the escalation table planned |  |
 | E:12 | engaged | if I close an issue that changes a rule or app behaviour I raise the documentation task in the same turn |  |
-| E:13 | engaged | when the researcher says start work on an item, my next Update moves it to in-progress first |  |
+| E:13 | engaged | when the researcher says start work on an item, my next Update moves it to in-progress first | #2195 v3; #2188 v3; #2191 v2; #2192 v2; #2193 v2 |
 | E:15 | engaged | I reassign to the researcher only for a real decision, with the evidence and options included |  |
 | E:16 | engaged | before starting an issue or task I match it against open threads |  |
 | E:17 | engaged | items I raise default to raised; threads go in at on-hold |  |
