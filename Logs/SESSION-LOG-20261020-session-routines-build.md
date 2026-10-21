@@ -76,6 +76,16 @@ Claude's, within the approved design (none needed a new researcher decision):
 
 ## 6. Git
 
+_Second close, 2026-10-21:_ branch `main`, commit pushed (output of `git push`, `git log -1`,
+`git status -sb`; `Session-Close.ps1` 0 open findings, `iba/app/reports/session-close-v145-20261021.md`):
+
+```
+To https://github.com/lcilliers/Bible_Projects.git
+   4e814058..25d1e67a  main -> main
+25d1e67a19d57b92e1cd108d786665341e3d9048 2026-10-21 04:35:27 +0100 session 20261021: #2173 cost estimate; build not approved, kept
+## main...origin/main
+```
+
 _First close, 2026-10-20 (kept as written):_
 
 Branch `main`. Session commit, pushed (output of `git push`, `git log -1` and `git status -sb`):
