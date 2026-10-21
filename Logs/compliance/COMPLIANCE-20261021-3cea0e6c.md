@@ -84,7 +84,7 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | B:18 | engaged | substantial plans or analysis go into an md file first; chat gets a summary and the path | outputs/escalation/2177-reset-backlog-plan-v1-20261021.md |
 | B:19 | engaged | where a fact is missing I stop and ask rather than fill the gap with a guess |  |
 | B:20 | engaged | I point out a cheaper route (targeted reads, dry runs, no needless subagents) before taking a costly one |  |
-| B:21 | engaged | an open item or judgement call that comes up in chat becomes an escalation in that same turn |  |
+| B:21 | engaged | an open item or judgement call that comes up in chat becomes an escalation in that same turn | #2192 v5; #2201 v1 |
 | B:22 | engaged | once the researcher approves a plan I carry it through without asking again at each step |  |
 | B:23 | engaged | a fix task ends with the fix built and verified, not just a finding written up |  |
 | B:24 | engaged | when I report state I show the actual query output, and keep structural passes separate from fitness claims |  |
@@ -99,8 +99,8 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | B:34 | engaged | claims about past decisions or state cite the file, table or commit they come from |  |
 | B:36 | engaged | I write no superlative unless I checked every candidate |  |
 | B:37 | not engaged | no new analytical work in a dev session with the study on hold |  |
-| B:38 | engaged | a bug that belongs to a class is fixed in the shared code, not item by item |  |
-| B:39 | engaged | I build the simplest thing that solves the problem, no speculative frameworks |  |
+| B:38 | engaged | a bug that belongs to a class is fixed in the shared code, not item by item | #2193 (snapshot() fixed at the shared mechanism) |
+| B:39 | engaged | I build the simplest thing that solves the problem, no speculative frameworks | iba/app/BUILD.md sec 368 |
 | B:40 | engaged | findings from reviews, validation runs or checks get an escalation row, never a silent fix or code comment | #2195 v1 |
 | B:41 | not engaged | no new hand-operated module yet; one would get a PS entry point in iba/app/ps |  |
 | B:42 | not engaged | no tool change yet; when one is made USER-GUIDE.md changes with it |  |
@@ -120,7 +120,7 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | B:58 | engaged | when I supersede a snapshot I move the old one to archive in the same piece of work |  |
 | B:59 | engaged | before creating a file I decide its proper folder, follow naming rules, archive what it replaces, and ask if the place is unclear |  |
 | B:60 | engaged | tool report output stays at its configured path; authored escalation deliverables go to outputs/escalation |  |
-| B:61 | engaged | I leave inactive tables, columns and rows out of anything I report unless asked for history |  |
+| B:61 | engaged | I leave inactive tables, columns and rows out of anything I report unless asked for history | #2192 v5; outputs/escalation/2192-retired-code-for-archiving-v1-20261021.md |
 | B:62 | engaged | any schema, step or setting change I make registers itself in the matching cfg table in the same piece of work | iba/app/migration/register_20261021_migrations_v1_20261021.py; #2196 v2 |
 | B:63 | engaged | to hand an item I hold to the researcher I set ready_for_approval, assign it and write the resolution in one call, only when it is truly ready |  |
 | B:64 | not engaged | no escalation deliverable file created yet; one would start with the escalation id |  |
@@ -133,7 +133,7 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | B:81 | engaged | this file is my restatement; I add evidence for each engaged row as I produce it | RUN-20261021_095727_933-COMPLIANCE check_start ok |
 | B:82 | engaged | at close I commit nothing until Session-Close.ps1 is clean or each finding is properly dispositioned here |  |
 | B:83 | engaged | I work only from C:\Bible_study_projects and ignore other copies unless the researcher names one |  |
-| B:96 | engaged | when I change content its live home keeps only the new version; old text goes to its history home |  |
+| B:96 | engaged | when I change content its live home keeps only the new version; old text goes to its history home | iba/app/BUILD.md sec 368; #2192 |
 | B:97 | engaged | each task this session is checked against the Developer Mode boundary, gets an escalation, is tested on a copy, and every reply opens with the banner | #2195 v4; #2196 v2 |
 | B:98 | engaged | if I find work off an established standard I fix it rather than ask | #2196 v2 |
 | B:99 | engaged | I read each instruction against the whole conversation so far |  |
@@ -150,7 +150,7 @@ At the time of writing no development task has been chosen. Rows marked `not eng
 | E:2 | engaged | before raising an item I check that the same issue in the same state is not already open |  |
 | E:3 | not engaged | the gate is switched off pending redesign, so nothing blocks runs this session |  |
 | E:4 | engaged | open items assigned to Claude come before any new work; on-hold threads do not count |  |
-| E:5 | engaged | chat items become escalations in the same turn, with the operative words quoted verbatim |  |
+| E:5 | engaged | chat items become escalations in the same turn, with the operative words quoted verbatim | #2188 v5; #2191 v4; #2192 v4, v7 |
 | E:7 | engaged | files named in escalation text use their full repo-relative path |  |
 | E:11 | not engaged | no export and wipe of the escalation table planned |  |
 | E:12 | engaged | if I close an issue that changes a rule or app behaviour I raise the documentation task in the same turn |  |

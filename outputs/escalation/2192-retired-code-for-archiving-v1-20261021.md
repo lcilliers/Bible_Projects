@@ -6,7 +6,7 @@ the sweep on active code only."
 
 ## Method
 
-Run by `iba/app/tools/temp_2192_active_reach.py`, read-only. The modules checked are the 115 under
+Run by `iba/app/tools/temp_2192_active_reach.py` (now `iba/app/tools/archive/`), read-only. The modules checked are the 115 under
 `iba/app/` (migrations, archive and `__init__` excluded). A module **serves an active function** if
 an active entry point reaches it, directly or through imports. Imports inside functions count, and
 so does the handler lookup in `run.py`. The entry points are:
