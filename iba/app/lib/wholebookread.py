@@ -41,14 +41,9 @@ import sqlite3
 
 from . import passagetrack, reportkit
 
-# Known-historical tolerant variants — kept because past debate files were genuinely written with
-# these headings (see module docstring). NOT the single source of truth for "what heading does
-# report.passage_debate write today" — that's `cfg_report_section.heading` (step
-# 'report.passage_debate', section_key 'emergent'/'linkages'), read live in `_heading_pattern()`
-# below and always folded in as an extra alternative. Found 2026-07-29: before this fix, these two
-# were the ONLY source of truth for what this reader accepts — a `configmaint.propose` change to
-# `report.passage_debate`'s own heading config could silently desync this reader from its writer,
-# the same failure shape BUILD.md §33 already hit once by hand.
+# Tolerant variants for headings older debate files were written with. The live heading is
+# `cfg_report_section.heading` (step 'report.passage_debate', section_key 'emergent'/'linkages'),
+# read in `_heading_pattern()` and always added as an alternative, so this reader follows its writer.
 _EQ_HEADING_FALLBACK = r"^##\s+Emergent[- ]questions?\s+log"
 _LINKAGE_HEADING_FALLBACK = r"^##\s+(Passage-level linkages?|Linkages surfaced)"
 NEXT_H2_RE = re.compile(r"^##\s+\S", re.MULTILINE)

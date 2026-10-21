@@ -55,9 +55,9 @@ def _span_val(db, sp, field, held):
 
 
 def generate(word: str, cfg: Cfg | None = None) -> pathlib.Path | None:
-    """Build the word-raw report and write it to config-governed output_dir/output_pattern.
-    Returns the path, or None if the word isn't in the DB. Split out from main() 2026-07-21 so
-    this can be called as a dispatcher step (handlers/reports.py), not only as a standalone CLI."""
+    """Build the word-raw report and write it to config-governed output_dir/output_pattern. Returns
+    the path, or None if the word isn't in the DB. Used by main() and by the dispatcher step
+    (handlers/reports.py)."""
     own_cfg = cfg is None
     cfg = cfg or Cfg()
     db = Db(cfg)

@@ -1,19 +1,10 @@
 """debateaudit.py — the shared per-row CRUD audit trail for every debate writer (`hib.set`,
-`passage.build`, `phenomenon.set`, `operation.set`, `closing.set`). Researcher direction,
-2026-08-08: "each entry (insert, update, delete) must have entries in the table to be able to trace
-the changes to the run... full CRUD is required for all table update controls."
+`passage.build`, `phenomenon.set`, `operation.set`, `closing.set`): every insert, update and delete
+is traceable to its run.
 
-Writes to `debate_change_detail` (`run_id, writer, table_name, op, where_json, set_json,
-before_json, applied_at`) — mirrors `cfg_change_detail`'s own shape exactly (the existing per-row
-audit trail for `configmaint.propose` writes), kept as a separate table since this is data-write
-audit, not config-write audit. Originally built as `hib_change_detail` (BUILD.md §81, `hib.set`
-only), renamed once its scope broadened to every debate writer
-(`migration/rename_hib_change_detail_to_debate_change_detail_20260808.py`).
-
-Centralised here rather than duplicated per-handler (unlike this app's own small `_may`/`_now`
-helpers, which each handler file defines locally) because the audit shape must stay byte-identical
-across all 5 writers — a meatier, more error-prone thing to keep in sync by hand five times than a
-three-line helper.
+Writes `debate_change_detail` (`run_id, writer, table_name, op, where_json, set_json, before_json,
+applied_at`), the same shape as `cfg_change_detail` but for data writes. One shared module, so the
+audit shape stays identical across all five writers.
 """
 
 from __future__ import annotations

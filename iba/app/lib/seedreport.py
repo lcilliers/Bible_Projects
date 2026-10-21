@@ -1,8 +1,6 @@
-"""seedreport.py — analysis of `candidate_seed`, one of the four "missing reports" from
-PLAN-reports-config-governance-v1-20260722.md §3.1. Broader than `candidate.validate` (which is
-error/exception-focused): the whole-seed picture — counts by decision/layer/role, tag-length and
-per-lemma distribution, the busiest lemmas, and an open-vs-resolved trend over time. First-cut
-content, per the researcher's 2026-07-22 agreement (§9.3) — expected to be expanded once built.
+"""seedreport.py — analysis of `candidate_seed`: the whole-seed picture (broader than
+`candidate.validate`, which is exception-focused) -- counts by decision/layer/role, tag-length and
+per-lemma distribution, the busiest lemmas, and an open-vs-resolved trend over time.
 """
 
 from __future__ import annotations

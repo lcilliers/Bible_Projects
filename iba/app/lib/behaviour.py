@@ -1,14 +1,8 @@
-"""behaviour.py — util.behaviour. Query/report front-end for `cfg_behaviour_class`/
-`cfg_behaviour_rule` (escalations #715/#732/#733).
+"""behaviour.py — util.behaviour: query/report front-end for `cfg_behaviour_class`/
+`cfg_behaviour_rule` (#715/#732/#733), behind Behaviour.ps1. Read-only; rules are written through
+configmaint (apply_logged in Developer Mode).
 
-Read-only — content is written by the one-off migration scripts
-(`bootstrap_behaviour_rules_v1_20260818.py` and its cycle-2/3/... siblings), not this module. This
-closes a completeness gap found live during #733's structural read-through: the operational-
-behaviour system had three build cycles (37 rules, 5 classes) and no supporting PS entry point —
-only reachable via raw sqlite3/ad-hoc Python — exactly what
-`development.every-interactive-module-needs-ps-script` (added the same cycle) exists to catch.
-
-CLI (module path: iba.app.lib.behaviour, invoked as `python -m iba.app.lib.behaviour`):
+CLI (`python -m iba.app.lib.behaviour`):
     python -m iba.app.lib.behaviour list [--class=chat|terminal|sqlite|documentation|llm_output|development]
 """
 

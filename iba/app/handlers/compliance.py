@@ -1,4 +1,4 @@
-"""handlers/compliance.py -- the session compliance file (escalation #2173 P2), as steps:
+"""handlers/compliance.py -- the session compliance file (#2173 P2), as steps:
 compliance.template (write the skeleton for this session, one row per active rule) and
 compliance.check_start (parts B and C: every rule restated or marked not engaged, none copied,
 the acknowledgement, every rule naming a retired thing named in the conflicts section). The close

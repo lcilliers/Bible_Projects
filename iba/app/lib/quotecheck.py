@@ -1,11 +1,7 @@
-"""quotecheck.py -- the narrative quote check, moved into the app (escalation #2173 G14).
-
-Before this, four copies sat in cluster folders (M01, M25, M08 x2) against
-governance.scripts_and_routines, and whether it ran at close depended on memory. This is the M08
-version (#2156), the most complete: every double-quoted part of a line, split at an ellipsis (... or
-the ellipsis character), with [bracketed] insertions blanked, must occur in the ESV text of iba.db
-`verse` joined in canonical order (cfg_book_order, chapter, verse), so a quotation running across a
-verse boundary is found. Case and punctuation are normalised. Parts under
+"""quotecheck.py -- the narrative quote check (#2173 G14): every double-quoted part of a line, split
+at an ellipsis (... or the ellipsis character), with [bracketed] insertions blanked, must occur in the
+ESV text of iba.db `verse` joined in canonical order (cfg_book_order, chapter, verse), so a quotation
+running across a verse boundary is found. Case and punctuation are normalised. Parts under
 narrative.quote_min_words words are not checked. Read-only.
 
 check_lines() is used by the narrative_register.quote_check step (Narrative-Register.ps1 -Action

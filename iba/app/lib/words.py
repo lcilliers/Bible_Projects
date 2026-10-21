@@ -10,13 +10,9 @@ from BOTH ends. It does NOT change case — the researcher's capitalisation is p
 in storage; word matching is done case-insensitively instead (so 'Fear' and 'fear' are
 one word without forcing a stored form).
 
-BUG FIXED 2026-07-22: the trailing strip used to remove ANY trailing non-letter run
-unconditionally, including a closing bracket that legitimately paired with an opening
-one earlier in the word — 'blindness (spiritual)' silently lost its ')' on every entry,
-becoming 'blindness (spiritual'. '[hypocrisy]' (a whole-word wrapper, the case this rule
-exists for) must still strip cleanly. The distinguishing test: does removing the
-trailing junk leave an unmatched opening bracket behind? If yes, the junk isn't stray —
-it's closing something real, so it's kept.
+A trailing run that closes a bracket opened earlier in the word is kept ('blindness (spiritual)'
+keeps its ')'), while a whole-word wrapper still strips ('[hypocrisy]'): the test is whether removing
+the trailing run would leave an unmatched opening bracket.
 """
 
 from __future__ import annotations

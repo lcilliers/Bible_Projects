@@ -1,16 +1,9 @@
 """filingkit.py — the project-wide filing utility: naming-shape, same-day `-v{n}` versioning, and
-archive-before-overwrite, for ANY writer, not just `iba/app/reports/`.
-
-Escalation #863/#971/#992. `iba/docs/file-naming-and-location-governance-plan-v1-20260826.md` §2
-scoped this: `reportkit.oneoff_path()`'s own logic (same-day `-v{n}` bump, archive-before-write,
-collision handling) is already a correct implementation of the `filing` behaviour class's rules
-(`naming-shape`, `snapshot-vs-living-document`, `archiving-trigger` — `cfg_behaviour_rule`, class
-`filing`) — this generalises it rather than inventing new machinery, so every future report/output
-writer project-wide (IBA or main-project side) has a single function to call instead of hand-
-imitating the shape. `reportkit.oneoff_path()` now delegates here instead of duplicating the logic
-— one implementation, two entry points (the original for backward compatibility with every existing
-`governance.oneoff_*`-configured caller, this one for a caller that wants its own directory/naming/
-archive-dir instead of the `iba/app/reports/`-side defaults).
+archive-before-overwrite, for any writer (#863/#971/#992). Implements the `filing` behaviour class
+rules (`naming-shape`, `snapshot-vs-living-document`, `archiving-trigger`), so every report/output
+writer calls one function instead of imitating the shape. `reportkit.oneoff_path()` delegates here
+for `governance.oneoff_*`-configured callers; `versioned_path()` serves a caller with its own
+directory, naming and archive dir.
 """
 
 from __future__ import annotations

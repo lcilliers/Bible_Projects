@@ -64,17 +64,10 @@ CFG_DDL = [
 
     """CREATE TABLE cfg_work_package (
         name TEXT PRIMARY KEY, ps_script TEXT, runs_over TEXT, chained INTEGER DEFAULT 0)""",
-    # chained=1: every step runs under one run_id in one PS invocation (its PS wrapper `foreach`s
-    # the whole cfg_step sequence) — run.py's dispatcher only marks 'done' at the LAST step.
-    # chained=0: each step is invoked independently, one per run_id — 'done' fires on that step's
-    # own first ok/report-continue/self-heal, regardless of ordinal position. Added 2026-07-22
-    # (migration/add_work_package_chained_column.py) after 185 runs were found stuck 'paused'/
-    # 'running' forever: the old "done only at last-in-sequence" logic never fires for a
-    # standalone step, which by definition can never BE the last step of a multi-step
-    # registration it only ever partially executes. NOTE: run.json (the JSON seed this table is
-    # normally loaded from) does not currently exist at its live path to carry a `chained` field
-    # per package — this DDL is ready for it, but the seed itself is not yet rebuilt; the
-    # migration set the live values directly.
+# chained=1: every step runs under one run_id in one PS invocation (its PS wrapper loops the whole
+# cfg_step sequence); run.py marks 'done' only at the last step. chained=0: each step is invoked
+# independently, one per run_id; 'done' fires on that step's own continue path. The live values were
+# set by migration; the run.json seed does not carry a `chained` field.
 
     """CREATE TABLE cfg_step (
         work_package TEXT, ordinal INTEGER, step TEXT,
