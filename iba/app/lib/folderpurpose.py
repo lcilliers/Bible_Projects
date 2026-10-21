@@ -1,17 +1,12 @@
-"""folderpurpose.py — the `folder_purpose` reference table: seed/refresh from a live directory
-scan (Method A), cross-check against `cfg_setting` `*_dir`/`*_path` values (Method B), and hand-edit
-`type`/`status`/`usage_description` (Method C).
+"""folderpurpose.py — the `folder_purpose` reference table: seed/refresh from a live directory scan
+(Method A), cross-check against `cfg_setting` `*_dir`/`*_path` values (Method B), hand-edit
+`type`/`status`/`usage_description` (Method C), and auto-assess type/status (Method D) (#971).
 
-Escalation #971 (`iba/docs/folder-purpose-governance-plan-v5-20260828.md` and successors). Reference/
-data table, like `books` (`bible_research.db`) — registered once in `cfg_table`/`cfg_column`
-(`folder_purpose_build_v1_20260828.py`), but its rows are maintained directly here, not through
-`configmaint.propose` per change (that gate governs `cfg_*` rule tables; this is project-structure
-fact, the same category `books` is).
+A reference/data table registered in `cfg_table`/`cfg_column`, maintained directly here, not through
+`configmaint.propose` (that gate governs `cfg_*` rule tables; this is project-structure fact).
 
-Directory-walk logic here deliberately mirrors `manifest.py`'s own scan (same `manifest.skip_dirs`
-exclusions, same project root) rather than importing it, because this module walks *directories*
-(one row per folder) where `manifest.py` walks *files* (one row per file) — different unit, same
-tree, same exclusions.
+The directory walk mirrors `manifest.py`'s scan (same `manifest.skip_dirs` exclusions, same root)
+but walks directories (one row per folder) where manifest walks files.
 """
 
 from __future__ import annotations
@@ -96,13 +91,8 @@ def seed_from_scan(cfg) -> dict:
     existing = {r["folder_path"]: dict(r) for r in
                conn.execute("SELECT * FROM folder_purpose")}
 
-    # manifest_category/manifest_currency computed from the SAME classify_category()/
-    # compute_currency() folder_purpose's own lookup falls back to (Part D, BUILD.md §191) —
-    # recomputed on every Seed, new row or refreshed, so a manifest.py rule change propagates
-    # here automatically instead of needing a separate one-off backfill script re-run by hand
-    # (found live 2026-08-28: the first Seed after this function was written never set these two
-    # columns for new rows at all — only a one-time manual script had; fixed here, the real "keep
-    # it maintained" gap, not just the one-off data it happened to leave behind).
+    # manifest_category/manifest_currency come from manifest's classify_category()/compute_currency(),
+    # recomputed on every Seed, new row or refreshed, so a manifest rule change propagates here
     from . import manifest as manifest_mod
 
     new_count = 0
@@ -168,11 +158,9 @@ def normalize_setting_value(raw: str) -> str | None:
 
 
 def _module_setting_tables(conn: sqlite3.Connection) -> list[str]:
-    """Every per-module settings table shaped like cfg_setting (key/value/use/inactive) but scoped
-    to one module — cfg_prose, cfg_passage, and any future one (governance.module.config) —
-    discovered live, not hardcoded, so a new module table is picked up automatically rather than
-    silently missed the way cfg_prose was found to be missed live, 2026-08-28 (researcher: "I
-    notice there are folders which I would have expected to have config-governed entries")."""
+    """Every per-module settings table shaped like cfg_setting (key/value/use/inactive), e.g.
+    cfg_prose, cfg_passage (governance.module.config), discovered live so a new module table is
+    picked up automatically."""
     tables = [r[0] for r in conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg_%'")]
     shaped = []
@@ -314,23 +302,15 @@ def show(cfg, folder_path: str) -> dict | None:
 
 
 # ---------------------------------------------------------------------------
-# Method D — auto-assess: fill type/status wherever determinable from the disk/config facts
-# Methods A/B already gathered, only leaving genuinely ambiguous rows for a human. Researcher,
-# 2026-08-28: "where the folder_purpose_type can be determined by you, you must fill and maintain
-# it. the folder_purpose_status status must be assessed by you and filled, only prompting me if
-# you are unsure."
+# Method D — auto-assess: fill type/status wherever the disk/config facts gathered by Methods A/B
+# determine them, leaving only genuinely ambiguous rows for a human.
 # ---------------------------------------------------------------------------
 
 _RECENT_DAYS = 90  # a folder touched more recently than this reads as actively maintained
 
 
-# manifest_category values that mean "this is where SOURCE CODE lives" — genuinely operational,
-# but never a write-DESTINATION, so cross_check_settings' invariant ("no folder used by the
-# system without a governed_by_setting") must not expect a setting to point at one of these.
-# Corrected 2026-08-28: the first version of this function put 'workflow'/'session'/'log'/
-# 'patch'/'directive'/'import' in the same 'operations' bucket as these — live-checked and found
-# wrong: 27 iba/ subfolders and 5 scripts/ subfolders (source code, no output path to govern)
-# tripped the invariant as false anomalies the moment CrossCheck ran against them for real.
+# manifest_category values where source code lives: operational, but never a write destination, so
+# cross_check_settings does not expect a governed_by_setting for them
 _CODE_CATEGORIES = frozenset({"iba", "code", "script"})
 
 
@@ -387,19 +367,11 @@ _ASSESS_STATUS_VALUES = {"authoritative", "stale"}  # the only two _assess_statu
 
 
 def auto_assess(cfg) -> dict:
-    """Method D. Fills type/status for every row still missing either, using only Methods A/B's
-    own gathered facts (governed_by_setting, manifest_category/currency, file counts, mtime) —
-    never guesses at 'mixed'/'reallocate' (those need real content judgement, not metadata) or at
-    a category-less ('other') folder's type. usage_description and last_reviewed_at are left for
-    a human via Method C — this only fills the two structured fields that ARE determinable.
-
-    Validates its own literal vocabulary against the live cfg_enum before writing anything —
-    escalation #977's actual gap, found fixing it: `_assess_type`/`_assess_status`'s hardcoded
-    `return` strings were never checked against `cfg.enum()` at all (unlike `set_purpose()`, which
-    does), so a drifted or mistyped literal here would have written silently. Fails loudly instead
-    (raises), once per call, not per row — cheaper and catches the same class of bug
-    `find_folderpurpose_ps_validateset_drift` now catches for the PS front door's own copy.
-    Returns {"assessed": N, "left_uncertain": [folder_path, ...]}."""
+    """Method D. Fills type/status for every row missing either, from Methods A/B's facts
+    (governed_by_setting, manifest_category/currency, file counts, mtime); never guesses 'mixed'/
+    'reallocate' or an 'other' folder's type. usage_description and last_reviewed_at are left for a
+    human (Method C). Checks its own literal vocabulary against the live cfg_enum before writing and
+    raises on drift (#977). Returns {"assessed": N, "left_uncertain": [folder_path, ...]}."""
     conn: sqlite3.Connection = cfg.conn
     live_type = set(cfg.enum("folder_purpose_type"))
     live_status = set(cfg.enum("folder_purpose_status"))

@@ -1,29 +1,14 @@
-"""export_tables_csv.py — dump every DATA table in the live DB to CSV, one file per table.
-
-For direct review of the DB's actual content — no summarisation, no truncation, no report
-narrative sitting between you and the data. Every data table, every column, every row, verbatim.
-
-EXCLUDES cfg_* tables (fixed 2026-07-22 — it used to dump those too, duplicating
-`configmaint.report`/`CONFIG-REPORT.md`, the dedicated config report writer; one owner per
-concern, per PLAN-reports-config-governance-v1-20260722.md §3.5/§2C).
-
-Archives the previous same-named file before overwriting (fixed 2026-07-23, escalation #273 —
-shares `reportkit.archive_before_write`, the same convention every report/CSV writer now follows).
-Default output folder consolidated into `iba/app/reports/export/` the same day — there used to be
-a second, separate `iba/app/export/` that only this tool wrote to, while every report's own CSV
-pairing wrote into `iba/app/reports/export/`; one export folder, not two.
+"""export_tables_csv.py — dump every DATA table of a project database to CSV, one file per table:
+every column, every row, verbatim. Excludes cfg_* tables (configmaint.report owns those). The
+previous same-named file is archived before writing (`reportkit.archive_before_write`).
 
     python -m iba.app.tools.export_tables_csv                       # -> iba/app/reports/export/*.csv
     python -m iba.app.tools.export_tables_csv --out some/dir
     python -m iba.app.tools.export_tables_csv --table candidate_seed lemma_inventory
     python -m iba.app.tools.export_tables_csv --database bible_research --table wa_obs_question_catalogue
 
-Cross-database support (added 2026-08-29, escalation #1007): a `db_path` override lets this dump
-either project database, not just iba.db -- e.g. the catalogue tables, which live in
-bible_research.db (`cfg_table.database='bible_research'`), same two-database split
-`lib/prosestore.py` already connects across via `cfg.database_path(name)`. `--table` filtering
-still applies verbatim in either database; the `cfg_%` exclusion is a no-op for bible_research.db
-(it has no cfg_* tables of its own) so it stays correct without a database-conditional.
+`--database` selects the database through `cfg.database_path(name)`; `--table` filtering applies in
+either.
 """
 
 from __future__ import annotations

@@ -76,9 +76,8 @@ def validate(ctx: Ctx) -> Outcome:
         "SELECT s.strongNumber, s.stepGloss FROM strong s WHERE s.deleted=0 AND NOT EXISTS "
         "(SELECT 1 FROM cluster_strong cs WHERE cs.strong = s.strongNumber AND cs.deleted=0)")
 
-    # Both queries mirror reconcile()'s own needs_word test exactly (word-optional set — T2/T3 by
-    # default, config-driven — 2026-08-12 correction: T3 is "by its nature ... not word specific",
-    # only a real M-cluster/FLAG classification still needs a word_registry link).
+# Both queries mirror reconcile()'s needs_word test (the word-optional set, T2/T3 by default,
+# config-driven: only an M-cluster/FLAG classification needs a word_registry link).
     word_optional = strongreconcile._word_optional_clusters(ctx)
     backfill_non_t2 = ctx.db.rows(
         "SELECT s.strongNumber, s.stepGloss, s.origin FROM strong s WHERE s.deleted=0 AND EXISTS "
@@ -106,23 +105,15 @@ def validate(ctx: Ctx) -> Outcome:
     counts = {"total": total, "unclassified": len(unclassified), "not_promoted": len(not_promoted)}
     report_path = _write_report(ctx, counts, unclassified, no_word, sibling_rows)
 
-    # escalation #1606, researcher instruction 2026-09-15: a plain unclassified count used to be
-    # reported but never escalated on its own -- exactly why the 111-strong backlog went unnoticed
-    # until a manual sweep found it. Now counts as a finding, same footing as the two named
-    # exception shapes, not a separate lesser category.
+    # unclassified strongs count as a finding, like the two named exception shapes (#1606)
     total_findings = len(unclassified) + len(no_word) + len(sibling_rows)
     if not total_findings:
         return ok(f"{total} strong(s) checked — 0 unclassified, "
                  f"{counts['not_promoted']} not-yet-promoted, 0 exceptions — "
                  f"report written to {report_path}", **counts)
 
-    # escalation #1707, researcher instruction 2026-09-15, verbatim: "this report is as expected.
-    # Can be signed off. This situation should no longer create an exception everytime it runs."
-    # A fresh run_id every invocation meant a prior run's 'approved' could never be recognised by a
-    # later run (answered_for_run below is scoped to THIS run only) -- checked here FIRST, across
-    # every past run for this step: if the current findings don't exceed what was already approved,
-    # acknowledge silently rather than re-raising the same known backlog. A genuine increase in any
-    # count still escalates fresh, same as before.
+    # a fresh run_id every invocation: an already-approved situation is recognised across all past runs
+    # for this step (#1707); only an increase in any count escalates again
     current = {"unclassified": len(unclassified), "no_word": len(no_word),
               "sibling_conflict": len(sibling_rows)}
     baseline = esc.answered_baseline_for_step(ctx.db, ctx.step_id, current)
@@ -136,10 +127,7 @@ def validate(ctx: Ctx) -> Outcome:
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision, comment = answered["next_action"], answered["comment"]
-        # escalation #798/#799 SS4: this is decision_required, so it's now resolved via Update()'s
-        # manual vocabulary (approved/reject/revise/noted), not AnswerRun's dispatcher vocabulary
-        # (approve/reject/revise/hold/noted) -- only 'approve'/'approved' differ in spelling
-        # between the two, everything else already matches.
+        # decision_required resolves via Update's vocabulary (approved/reject/revise/noted)
         if decision in ("approve", "approved"):
             return ok(f"acknowledged: {len(unclassified)} unclassified / {len(no_word)} no-word / "
                      f"{len(sibling_rows)} sibling-conflict finding(s) — researcher confirmed "
@@ -298,19 +286,15 @@ def subgroup(ctx: Ctx) -> Outcome:
              subgroup_status_result=subgroup_status_result)
 
 
-# ── reading (process c, the `char-reading` stage, #1682/#1706 Phase F stage 3) ──────────────────
+# ── reading (the `char-reading` stage, #1682/#1706) ──────────────────────────────────────────────
 #
-# Per-SUBGROUP, normally ONE LLM call, never the whole cluster (#1682 §2 rule 1) -- given one
-# subgroup's member strongs, their full corpus-wide occurrence lists, all meaning sources, and
-# Stage 1/2's own already-captured observations as grounding. Escalation #1761 (researcher's own
-# rule, 2026-09-18): a member strong whose own occurrence count exceeds the cap is split by
-# SURFACE into multiple calls instead of refusing the whole subgroup (`assemble_subgroup_packages`
-# returns >1 package in that case) -- normally still exactly 1. `-Preview` (default true) assembles
-# every package and reports the total cost estimate WITHOUT calling the API or writing anything,
-# same discipline as every other stage. `-Preview:$false` runs for real: one live API call PER
-# package, `recordingpass.record_batch` writes stage='char-reading' observations for each,
-# per-strong completeness is computed by CODE (not trusted from the model) after ALL packages are
-# done, then `cluster_subgroup.status` advances to `ready_for_answer` once, not per package.
+# Per subgroup, normally one LLM call: the subgroup's member strongs, their full occurrence lists,
+# all meaning sources, and Stage 1/2 observations as grounding. A member strong over the occurrence
+# cap is split by SURFACE into several packages (#1761). `-Preview` (default true) assembles every
+# package and reports the cost estimate without calling the API or writing. `-Preview:$false` runs
+# one live call per package, `recordingpass.record_batch` writes stage='char-reading' observations,
+# per-strong completeness is computed by code after all packages, and `cluster_subgroup.status`
+# advances to `ready_for_answer` once.
 
 def reading(ctx: Ctx) -> Outcome:
     _may(ctx, "cluster.reading", "ib_observation")

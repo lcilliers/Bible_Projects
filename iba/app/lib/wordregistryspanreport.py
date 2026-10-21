@@ -1,46 +1,24 @@
-"""wordregistryspanreport.py — word_registry -> word_strong -> strong -> parse-meaning -> unique
-span analysis, for one registry word. Built at the researcher's request 2026-08-09, generalising
-the ad-hoc `tools/word_strong_span_report.py` prototype into a registered report
-(`report.word_registry_span`) per PLAN-reports-config-governance-v1-20260722.md. Restructured
-twice the same day:
+"""wordregistryspanreport.py — word_registry -> word_strong -> strong -> parse-meaning -> unique span
+analysis for one registry word (`report.word_registry_span`).
 
-1. Cluster by meaning rather than list flat by Strong's number (researcher: "the parse meaning
-   must list the similar meaning together") — `_cluster_by_related_strong` below, using
-   `strong_related` (STEP's own root-family cross-reference data), not a guessed similarity
-   measure. Checked live against 'fear' (62 Strong's): 12 real multi-member clusters (e.g.
-   G0870/G1630/G1719/G4423/G5398/G5399/G5400/G5401, the φόβος/φοβέω root family), 21 singletons.
-
-2. Two more fixes, same day: (a) the ToC links didn't actually work — see the module docstring in
-   `reportkit.py`'s `render_scaffold` for the root cause (renderer-dependent auto-slug mismatch,
-   fixed there with explicit `<a id>` anchors; the same fix is applied here for this report's OWN
-   in-body cluster ToC). (b) the researcher noticed the root-based clustering can legitimately
-   split words an English reader would call synonyms into different sections (e.g. 'devout' shows
-   up in two etymologically UNRELATED clusters — `strong_related` confirms zero edges between
-   them; STEP genuinely records no shared root). Root-based clustering is correct and stays as the
-   actual section structure — but the researcher also wants a second, English-gloss-based grouping
-   layer purely for the table of contents, so browsing shows "several rows for the different
-   variations of fear" together even though they're separate root families. See
-   `_index_group_clusters` below.
+Sections cluster Strong's by root family (`_cluster_by_related_strong`, from `strong_related`, STEP's
+root cross-reference data). The table of contents also groups clusters by English gloss
+(`_index_group_clusters`), so variations of one English word appear together even across unrelated
+root families. Explicit `<a id>` anchors make the in-body ToC links work in every renderer.
 
 Chain:
   word_registry (word)
     -> word_strong (word_id -> strong, exact code incl. suffix)
          -> strong (gloss/transliteration/language/count)
-         -> strong_meaning_parsed (lemma_key = strong; falls back to the base lemma — e.g. H3372
-              for H3372G — when the suffixed sub-entry has no rows of its own, since STEP's meaning
-              tree lives under the base and is shared across sub-entries)
-         -> verse_lexical (strong match, deleted=0) -> span (surface = the actual inflected/
-              translated text form tagged) -> verse (reference/text, one example per unique surface)
+         -> strong_meaning_parsed (the exact strong_variant row; falls back to the base lemma, e.g.
+              H3372 for H3372G, when the sub-entry has no row of its own)
+         -> verse_lexical (strong match, deleted=0) -> span (surface = the inflected/translated text
+              form tagged) -> verse (reference/text, one example per unique surface)
 
-"Unique span" = distinct `span.surface` values tagged with that Strong's — the different surface
-realisations ("applications") a lemma took across its occurrences, not `resolved_sense` (checked:
-fixed per Strong's in this data, so surface diversity carries the real signal here).
+"Unique span" = distinct `span.surface` values tagged with that Strong's.
 
-`strong.count` (STEP's `call2_getInfo` "count" field) is fixed Strong's-dictionary reference data
-— NOT a verse-occurrence count in this app's Bible text, confirmed live 2026-08-10 (BUILD.md §88):
-it returns byte-identical regardless of which Bible module/version is queried, including modules
-that can't sensibly answer for the code at all. Shown here relabelled, alongside the real local
-`verse_lexical` occurrence/verse counts — never presented alone as if it meant "how many verses."
+`strong.count` (STEP's "count") is Strong's-dictionary reference data, not a verse count in this
+app's text: shown relabelled, alongside the real local `verse_lexical` occurrence/verse counts.
 """
 
 from __future__ import annotations
@@ -161,9 +139,8 @@ def _index_group_clusters(clusters: list[list[str]], cluster_words: list[set[str
 
 
 def write_report(cfg, word: str) -> pathlib.Path | None:
-    """Checked for compliance first (escalation #648, 2026-08-17) — this module's own STEP
-    constant is hardcoded, flagged NON-COMPLIANT in cfg_utility; using it now signals (via
-    cfg.assert_utility_compliant) that it needs revision before this is called again."""
+    """Checked for compliance first (#648): this module's STEP constant is flagged NON-COMPLIANT in
+    cfg_utility, so cfg.assert_utility_compliant stops it until revised."""
     cfg.assert_utility_compliant("iba/app/lib/wordregistryspanreport.py")
     conn = cfg.conn
     q = lambda sql, p=(): conn.execute(sql, p).fetchall()
@@ -240,19 +217,8 @@ def write_report(cfg, word: str) -> pathlib.Path | None:
                 body.append(f"**Strong's:** {strong}")
                 body.append("")
             if srow:
-                # `strong.count` (STEP's call2_getInfo "count" field) is NOT a verse-occurrence
-                # count — confirmed live 2026-08-10 (iba/app/reports/g2128-verse-lexical-by-
-                # strong-sample-20260810.md addendum): calling getInfo for the SAME code under
-                # nine different {version} values, including Hebrew-only modules that can't
-                # sensibly answer for a Greek code at all, returned the IDENTICAL count every
-                # time. It is fixed Strong's-dictionary reference data (global, corpus-
-                # independent — plausibly NT+LXX+cited literature per the lsjDefs citations),
-                # never scoped to any Bible text this app actually holds. Labelling it "STEP
-                # total count" implied it meant "how many verses does this occur in" — wrong,
-                # and the true figure (this DB's actual verse_lexical coverage) is usually far
-                # smaller (e.g. G2128: dictionary count 52 vs 8 real verses). Replaced with the
-                # real local occurrence/verse counts; the dictionary number is kept alongside,
-                # relabelled so it can't be misread as a verse count again.
+                # `strong.count` is dictionary reference data, not a verse count: shown relabelled next to the
+                # real local occurrence/verse counts
                 occ = q("SELECT COUNT(*) n, COUNT(DISTINCT vl.verse_id) v FROM verse_lexical vl "
                        "WHERE vl.strong=? AND vl.deleted=0", (strong,))[0]
                 body.append(f"transliteration: *{srow['stepTransliteration']}* &nbsp;|&nbsp; "
@@ -265,19 +231,7 @@ def write_report(cfg, word: str) -> pathlib.Path | None:
                 body.append("*(no `strong` row for this code — not yet onboarded)*")
             body.append("")
 
-            # Bug found + fixed 2026-08-10, building on `healing`'s meaning-table backfill
-            # (BUILD.md — same session): this was querying `lemma_key=?` with the FULL
-            # sub-lettered code — but `strong_meaning_tree`/`strong_meaning_parsed`.lemma_key is
-            # always the BASE (added by migration/fix_strong_meaning_tree_collapse.py,
-            # 2026-07-26, which gave both tables a `strong_variant` column for exactly this exact-
-            # match case and updated every OTHER reader — `versespanmeaningreport.py`,
-            # `build_verse_span_meaning_extract.py` — to use it; this report was never migrated).
-            # `lemma_key=strong` for a sub-lettered code (e.g. 'H7965I') never matches anything
-            # (no row's lemma_key is ever 'H7965I', only 'H7965'), so this ALWAYS fell through to
-            # the base fallback below, silently, for every sub-lettered code — even ones that DO
-            # have their own exact-variant row (confirmed live: `healing`'s H7965G-L/H2492A/H5414P
-            # kept showing "no rows under X itself" immediately AFTER their own exact-variant rows
-            # were backfilled, because this query was never actually capable of finding them).
+            # lemma_key is always the base: look up the exact strong_variant row first, then the base
             senses = q("SELECT sense_code, gloss FROM strong_meaning_parsed "
                       "WHERE strong_variant=? AND deleted=0 ORDER BY sort", (strong,))
             fallback_base = None

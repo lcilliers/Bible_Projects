@@ -1,38 +1,23 @@
-"""contentindex.py — file-content concordance search (round 2, governance-alignment register item
-#6 / escalation #691). Built on top of `manifest.py` (round 1): `file_manifest` is the coverage
-baseline this cross-checks against, so no `.md` file with real content silently falls outside
+"""contentindex.py — file-content concordance search over `.md` files (#691), built on
+`manifest.py`: `file_manifest` is the coverage baseline, so no `.md` file with content falls outside
 search.
 
-**Predefined-key concordance, NOT free-text FTS** (researcher, 2026-08-15: "the search keys will
-be predefined" / "we can use DB tables (e.g. strong numbers and gloss) as the keys"). Three key
-sources, all already inside `iba.db` — no cross-database read (researcher's own framing: "IBA App
-is the engine for all processing related tables... research_db will be used for analytic
-findings"):
+**Predefined-key concordance, not free-text FTS.** Three key sources, all in `iba.db`:
+  - `strong.strongNumber` -- e.g. `H2734`
+  - `strong.stepGloss` -- the English gloss text
+  - `word_registry.word` -- the project's English-word list
 
-  - `strong.strongNumber` — e.g. `H2734` (15,293 rows)
-  - `strong.stepGloss` — the English gloss text (9,165 distinct values, measured live)
-  - `word_registry.word` — the project's own English-word list (180 rows, measured live)
+**Matching is tokenize + n-gram + set lookup, not a regex alternation** (one alternation over
+thousands of keys is impractically slow). Every gloss is at most 6 words, so each line's words are
+checked as 1..6-word windows against a lowercased key set, O(line length). Strong's numbers get a
+regex extract + set-membership pass (`[HG]\\d{4,5}[A-Z]?`).
 
-**Matching is tokenize + n-gram + set lookup, NOT a giant regex alternation** — tested live before
-committing to this design: compiling a single `re` alternation over the ~9,300 gloss+word keys
-hung outright (catastrophic cost at this pattern count, confirmed by direct measurement, not
-assumed from theory). Every gloss is at most 6 words (measured: 5,725 single-word, down to 3
-six-word glosses, nothing longer) — so each line's words are tokenized once, then checked as
-1..6-word windows against a lowercased key set, which is O(line length) and independent of key
-count. Strong's numbers get a separate, simpler regex-extract + set-membership pass (fixed shape,
-`[HG]\\d{4,5}[A-Z]?`, no tokenization needed).
+**Incremental.** `search()` first runs an mtime-based `refresh()` (only `.md` files new/changed since
+`content_index_scan`'s last pass are rescanned), then queries the index and returns hits with
+`file_manifest` metadata, file path and line number. `rebuild()` is the full rescan.
 
-**Incremental, per the researcher's own flow** ("search must search the file metadata, and then
-the content, and then update the index... result will include the file reference and location"):
-`search()` runs an mtime-based incremental `refresh()` first — only `.md` files new/changed since
-`content_index_scan`'s last pass are re-scanned — then queries the now-current index, then returns
-hits enriched with `file_manifest`'s own metadata alongside the content hit's file path and line
-number. `rebuild()` (a full rescan, clearing both tables first) exists separately for the explicit
-full-reindex case, same split as `manifest.py`'s `rebuild()`.
-
-Scope: `.md` files only, project-wide, including `archive/` — reads `file_manifest` (built by
-`manifest.rebuild`) as the file list rather than re-walking the tree itself, so manifest and
-content-index coverage can never silently diverge.
+Scope: `.md` files project-wide, `archive/` included, taken from `file_manifest`, so manifest and
+index coverage cannot diverge.
 """
 
 from __future__ import annotations
@@ -49,16 +34,11 @@ PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[3]  # lib/ -> app -> iba
 
 _STRONG_RE = re.compile(r"\b([HG]\d{4,5}[A-Z]?)\b")
 _TOKEN_RE = re.compile(r"[A-Za-z']+")
-_MAX_NGRAM = 6  # longest gloss is 6 words, measured live 2026-08-17 — see module docstring
+_MAX_NGRAM = 6  # the longest gloss, in words
 
-# Found live 2026-08-17, before the first real rebuild ran: a 50-file sample produced 19,118 hits
-# (382/file) — checked why, not assumed acceptable. strong.stepGloss genuinely carries single-word
-# glosses for Hebrew/Greek conjunctions/particles ('and', 'or', 'not', 'this', 'that', 'with',
-# 'for', 'as', 'so', 'if', 'no', 'i', 'on' all confirmed present) — real STEP data, not an error,
-# but useless as SEARCH KEYS: virtually every line of English prose contains them, defeating the
-# concordance's actual purpose (finding meaningful term occurrences, not every file in the
-# project). Excluded from 1-WORD key matching only — a multi-word gloss/phrase containing one of
-# these is unaffected, already specific enough on its own.
+# Single-word glosses of conjunctions/particles ('and', 'or', 'not', 'this', 'with', ...) occur in
+# nearly every line, so they are excluded from 1-word key matching only; a multi-word gloss
+# containing one is still matched.
 _STOPWORDS = {
     "a", "an", "the", "and", "or", "but", "if", "so", "as", "of", "to", "in", "on", "at", "by",
     "for", "with", "from", "into", "onto", "upon", "over", "under", "about", "not", "no", "nor",
@@ -93,11 +73,8 @@ def _build_keys(cfg) -> tuple[set[str], dict[int, dict[str, list[tuple[str, str]
             return
         ngram_map[n].setdefault(" ".join(words), []).append((key_type, value))
 
-    # T2-assigned strongs excluded, researcher 2026-08-17: "gloss for any T2 cluster terms can be
-    # excluded" — T2 is cluster's own "landing zone for codes not included in analysis" (per
-    # cluster.use), so its glosses are noise for a study-focused concordance. Filtered by STRONG,
-    # not by gloss text: a gloss shared between a T2 strong and a real-cluster strong (both can
-    # exist — 30 strongs carry both, measured live) still gets indexed via the real-cluster one.
+    # glosses of T2-assigned strongs are excluded (T2 is the cluster for codes not in the analysis);
+    # filtered by strong, so a gloss shared with a real-cluster strong is still indexed
     for (gloss,) in conn.execute(
             "SELECT DISTINCT stepGloss FROM strong WHERE deleted=0 AND stepGloss IS NOT NULL "
             "AND stepGloss != '' AND strongNumber NOT IN "
@@ -137,18 +114,16 @@ def _scan_lines(text: str, strong_numbers: set[str],
 
 
 def _exclude_patterns(cfg) -> list[str]:
-    """Active `cfg_content_index_exclude` patterns — a file path or folder prefix. Empty table =
-    exclude nothing (the default is "include all .md except", per the researcher's own framing,
-    2026-08-17 — found live that some generated dumps produce pathological hit density)."""
+    """Active `cfg_content_index_exclude` patterns (a file path or folder prefix). Empty = exclude
+    nothing."""
     conn: sqlite3.Connection = cfg.conn
     return [r[0] for r in conn.execute(
         "SELECT pattern FROM cfg_content_index_exclude WHERE inactive=0")]
 
 
 def _size_override_patterns(cfg) -> list[str]:
-    """Active `cfg_content_index_size_override` patterns — a file matching one is included even
-    if it's at/above `content_index.exclude_size_threshold_bytes`. "Manually released if needed"
-    (researcher, 2026-08-17)."""
+    """Active `cfg_content_index_size_override` patterns: a matching file is included even at/above
+    `content_index.exclude_size_threshold_bytes`."""
     conn: sqlite3.Connection = cfg.conn
     return [r[0] for r in conn.execute(
         "SELECT pattern FROM cfg_content_index_size_override WHERE inactive=0")]

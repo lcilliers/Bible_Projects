@@ -1,27 +1,19 @@
-"""purge.py -- app-wide soft-delete purge audit + execute (escalation #1766, researcher approved
-build 2026-09-19: "Approve to build. Do not run a purge as yet."; execute half built 2026-09-24,
-escalation #1868, researcher instruction "proceed with the safe to purge"; retire_database added
-2026-09-24, researcher ruling "all the finding related tables in research DB should be inactive
-and... all the records in those table are no longer relevant and can be purged").
+"""purge.py -- app-wide soft-delete purge audit + execute (#1766, #1868).
 
 `audit(ctx)` -- read-only. For every table with a registered soft-delete column (`cfg_column.name`
-IN `deleted`/`delete_flagged`, across BOTH `iba` and `bible_research`), counts soft-deleted rows;
-for any table over `purge.unsafe_check_min_soft_deleted`, checks `cfg_column.fk` for a live row
-elsewhere still referencing one of its soft-deleted PKs and flags the table UNSAFE if so. Persists
-a report every run (governance.reports_must_persist). Removes nothing.
+IN `deleted`/`delete_flagged`, in both `iba` and `bible_research`), counts soft-deleted rows; for a
+table over `purge.unsafe_check_min_soft_deleted`, checks `cfg_column.fk` for a live row elsewhere
+still referencing one of its soft-deleted PKs and flags the table UNSAFE if so. Persists a report
+every run (governance.reports_must_persist). Removes nothing.
 
-`execute(ctx)` -- recomputes the same safe/unsafe split fresh (never trusts a cached audit report --
-data may have changed since it was written), intersects it with `cfg_write_grant` (writer=
-'purge.execute') so only explicitly allow-listed tables are ever touched, then either previews
-(`-Preview` default true: counts only, nothing written) or actually deletes every soft-deleted row
-in each granted-and-currently-safe table, one transaction per database, and verifies each table
-reads back 0 soft-deleted rows afterward. A table that is UNSAFE (or ungranted) is always skipped
-and reported as skipped, never silently included. Persists a report every run.
+`execute(ctx)` -- recomputes the safe/unsafe split fresh, intersects it with `cfg_write_grant`
+(writer='purge.execute') so only allow-listed tables are touched, then previews (`-Preview`, default
+true: counts only) or deletes every soft-deleted row in each granted, currently safe table, one
+transaction per database, and verifies each reads back 0 soft-deleted rows. An UNSAFE or ungranted
+table is skipped and reported. Persists a report every run.
 
-bible_research.db is in scope for both functions -- `cfg_behaviour_rule`
-'bible-research-db-excluded-from-iba-results' explicitly exempts registered DB-hygiene/maintenance
-utilities (amended 2026-09-24, escalation #1868/#1870) from the general exclusion, since this is
-administrative housekeeping, not analytical investigation.
+bible_research.db is in scope: cfg_behaviour_rule bible-research-db-excluded-from-iba-results exempts
+registered DB-hygiene utilities.
 """
 
 from __future__ import annotations

@@ -1,24 +1,13 @@
 """iba/app/lib/debaterun.py — readiness checks + staging-path resolution for Debate-Run.ps1.
 
-The debate pipeline (hib.set -> passage.build -> phenomenon.set -> operation.set -> closing.set)
-is entirely DB-driven for its own GATING — each step's own handler already checks the previous
-step's DB write (BUILD.md §65/§71). This module exists only so `Debate-Run.ps1` can decide, before
-calling a step, whether to (a) skip it (already satisfied — a rerun would just reconcile to the
-same state), (b) run it (a staging payload is ready), or (c) stop and name the exact staging path
-needed next. It deliberately MIRRORS each handler's own gate check rather than reimplementing new
-rules — kept in sync by hand, same as any other small cross-cutting helper in this app; the
-handlers themselves remain the authority, this is only a read-only convenience for orchestration.
+The debate pipeline (hib.set -> passage.build -> phenomenon.set -> operation.set -> closing.set) is
+gated by each step's own handler. This module lets `Debate-Run.ps1` decide before calling a step
+whether to (a) skip it (already satisfied), (b) run it (a staging payload is ready), or (c) stop and
+name the staging path needed next. It mirrors each handler's gate check; the handlers stay the
+authority.
 
-Deliberately excludes running `lexical.build` itself — the lexical is a separate, book-scoped,
-run-ahead-of-time prerequisite (`VerseLexical.ps1`), not part of this per-scope debate sequence
-(researcher direction, 2026-08-06). It DOES include `lexical_complete_for_scope` (added 2026-08-07)
-— a standalone, whole-scope, pre-flight version of the same check `hib.set`'s own hard gate
-(`operations.py:_check_lexical_complete`) already makes, but that one only fires once an analytical
-pass has already been submitted as a payload, scoped to exactly the verses THAT payload happens to
-reference — never the whole book+chapter scope, and never before reading starts. Found live
-2026-08-07: `Debate-Run.ps1` had no equivalent of its own, despite the researcher's own words
-(quoted verbatim in `_check_lexical_complete`'s docstring) describing this as genuinely "step 1 of
-the debate pipeline," run before HIB reading begins, not a side-effect of trying to submit one.
+`lexical.build` itself is not run here (the lexical is a book-scoped prerequisite, `VerseLexical.ps1`),
+but `lexical_complete_for_scope` checks it for the whole book+chapter scope before HIB reading starts.
 """
 from __future__ import annotations
 
@@ -68,19 +57,10 @@ def _scope_verse_ids(conn: sqlite3.Connection, book: str, chapters, range_) -> l
 
 def lexical_complete_for_scope(conn: sqlite3.Connection, book: str, chapters, range_
                                ) -> tuple[bool, list[str]]:
-    """Step 1 of the debate pipeline, run BEFORE any HIB reading starts (researcher direction,
-    2026-08-06, quoted verbatim in operations.py:_check_lexical_complete — this is the standalone,
-    whole-scope form of that same check, missing until now).
-
-    Reads live verses for the whole book+chapter scope from `verse` (fetch_verses already filters
-    `deleted=0`); a verse genuinely absent from `verse` is never fetched at all, so it's
-    automatically ignored — matching `governance.verse_gap_by_design` / "ignore missing verses in
-    the verse table, it is intentional" without any extra logic. Checks each against live (
-    `deleted=0`) `verse_lexical` rows — a verse whose only lexical rows were soft-deleted (e.g.
-    superseded by a rerun) reads as genuinely missing, same "filter out deleted... lexicals" rule.
-
-    Returns (complete, missing_osis_ids) — missing is empty and complete=True iff every live verse
-    in scope has at least one live verse_lexical row."""
+    """Step 1 of the debate pipeline, run before any HIB reading: the whole-scope form of
+    operations.py:_check_lexical_complete. Reads live verses for the book+chapter scope
+    (fetch_verses filters deleted=0; verses absent from `verse` are by design) and checks each against
+    live `verse_lexical` rows. Returns (complete, missing_osis_ids)."""
     verses = fetch_verses(conn, book, *resolve_range(chapters, range_))
     if not verses:
         return False, []
