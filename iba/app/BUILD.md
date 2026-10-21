@@ -18285,7 +18285,7 @@ Migration `iba/app/migration/archive/rule_scope_2209_v1_20261021.py`, run
   query, or a path written. It collects:
   - the linked non-general rules;
   - the method rules of a PS tool's steps;
-  - the tool's usage lines from USER-GUIDE.md.
+  - the tool's usage lines from USER-GUIDE.md (with an action given, that action's lines only).
   It refuses the first use in a session once, with their full text; the re-issued call passes.
   State is kept in `.claude/.rules-shown.json`. An internal error lets the call through and is
   logged.

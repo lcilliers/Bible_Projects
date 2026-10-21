@@ -86,8 +86,9 @@ def run(tool, tin, session="S1", e=None):
 
 upd = {"command": ".\\iba\\app\\ps\\Escalation.ps1 -Action Update -Id 5 -AnsweredBy Claude"}
 d, r = run("PowerShell", upd)
-case("H1", "first Escalation Update: refused with its rules (63, 45, escalation 13) and usage",
-     d == "deny" and "B:63" in r and "B:45" in r and "E:13" in r and "-Action Update" in r and "B:19" not in r,
+case("H1", "first Escalation Update: refused with its rules (63, 45, escalation 13) and only the Update usage",
+     d == "deny" and "B:63" in r and "B:45" in r and "E:13" in r and "-Action Update" in r and "B:19" not in r
+     and "How to run Escalation.ps1 (" not in r and "-Action Raise" not in r,
      f"{d}; {len(r)} chars; refs: {sorted(set(l.split(' ')[1] for l in r.splitlines() if l.startswith('- ')))}")
 d, _ = run("PowerShell", upd)
 case("H2", "the same call re-issued passes", d == "allow", d)

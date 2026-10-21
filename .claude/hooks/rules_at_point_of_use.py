@@ -150,8 +150,9 @@ def usage_for(root: Path, ops) -> list[tuple[str, list[str]]]:
     except OSError:
         return []
     out = []
+    with_action = {v.split(" ")[0] for k, v in ops if k == "ps" and " " in v}
     for kind, value in ops:
-        if kind != "ps":
+        if kind != "ps" or value in with_action:   # the action's own lines are enough
             continue
         script, _, action = value.partition(" ")
         lines, i = [], 0
