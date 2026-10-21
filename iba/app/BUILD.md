@@ -17657,3 +17657,21 @@ For SC10. These moves were made under §362 (#2182 §6) and the test-script arch
 - `iba/config/archive/configurator-design-to-20261021/wide/reconciliations.md`
 
 Also changed: `iba/app/handlers/configmaint.py`, which drops the retired `stale_docs` finding (§361).
+
+## 365. Rule 59 dead pointer dropped; the 2026-10-21 migrations registered (2026-10-21, escalations #2195, #2196, for #2177)
+
+- **#2195.** `cfg_behaviour_rule` 59 (claude-code-filing-obligations) ended with a pointer to
+  `docs/interaction-preferences.md`, archived under #2177 as
+  `archive/docs/interaction-preferences-history-to-20261021.md`. The developer-mode start check
+  (`compliance.retired_mentions`) listed it. The pointer is dropped; the rule already states the
+  protocol. Migration `iba/app/migration/rule59_drop_dead_pointer_v1_20261021.py`, run
+  `DEVMODE-2195-RULE59-POINTER-20261021`.
+- **#2196.** The nine Developer Mode migrations of 2026-10-21 (#2178-#2187) had no `cfg_utility`
+  row (governance.new_utility_registration_timing). `find_unregistered_project_scripts` skips
+  `iba/app/`, so validate did not report it. Registered, with the #2195 and #2196 scripts, as
+  inactive one-off migrations. Migration
+  `iba/app/migration/register_20261021_migrations_v1_20261021.py`, run
+  `DEVMODE-2196-REGISTER-MIGRATIONS-20261021`.
+
+Both were tested first on a copy of iba.db made with the SQLite backup API (dry run, apply, rerun
+skipped), then applied live. Validate (`CONFIG-REPORT-v599-20261021`) shows no new finding.
