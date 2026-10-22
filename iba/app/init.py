@@ -103,9 +103,9 @@ def main() -> int:
         for x in problems:
             print(f"  ! {x}")
 
-    # 6. the rules, in full, from the DB (#305; #2173 P2 A). The session compliance file
-    # (Compliance.ps1 -Action Template, then -Action Check -Phase Start) restates each one.
-    print("\n  RULES (comply with every one this session; restate each in the compliance file):")
+    # 6. the general rules, in full, from the DB (#305; #2173 P2 A). The rules of an operation come
+    # at its point of use (#2209). The session compliance file restates each general rule.
+    print("\n  RULES (general; comply with every one this session; restate each in the compliance file):")
     for line in compliance.deliver_lines(cfg.conn):
         print(line)
     cfg.close()

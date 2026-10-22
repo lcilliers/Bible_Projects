@@ -23,7 +23,8 @@ approval gate as bypassed.
 ## 2. Load the rules
 
 Write and fill this session's compliance file with the rules that apply in Developer Mode
-(`deliver_when` `always` and `developer_mode`, plus `study_active` while the study is active):
+(the general rules, `cfg_rule_scope`, with `deliver_when` `always` and `developer_mode`, plus
+`study_active` while the study is active; the rest come at their point of use):
 
 ```powershell
 .\iba\app\ps\Compliance.ps1 -Action Template -Mode Developer

@@ -251,12 +251,6 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
          "is neither mechanically_enforced nor context_delivered (the compliance file restates and "
          "proves those) — see the row's own enforced_by text for the reason",
          cfgquality.find_unenforced_behaviour_rules(conn)),
-        # conversational rules whose claimed delivery mechanism does not verify
-        ("Undelivered conversational rules", "an active cfg_behaviour_rule row classified "
-         "context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory "
-         "file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) "
-         "does not actually verify live",
-         cfgquality.find_undelivered_conversational_rules(conn, APP.parent.parent)),
         ("Unpushed commits", "a local commit not yet pushed to the upstream branch",
          cfgquality.find_unpushed_commits(APP.parent.parent)),
         ("PS scripts bypassing run.py", "an active PS script calling iba.app.(handlers|lib|tools) "

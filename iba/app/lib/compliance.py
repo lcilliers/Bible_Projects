@@ -89,15 +89,28 @@ def value_settings(conn) -> set[str]:
     return set(json.loads(row[0])) if row else set()
 
 
+def point_of_use(conn) -> set[str] | None:
+    """Rule refs with no `general` link in cfg_rule_scope (#2209 part b): they reach Claude at the
+    point of use (.claude/hooks/rules_at_point_of_use.py), so they are not delivered at start or
+    restated. None when cfg_rule_scope does not exist: then every rule is delivered."""
+    if not conn.execute("SELECT 1 FROM sqlite_master WHERE name='cfg_rule_scope'").fetchone():
+        return None
+    linked = {r for (r,) in conn.execute("SELECT rule_ref FROM cfg_rule_scope WHERE inactive=0")}
+    general = {r for (r,) in conn.execute("SELECT rule_ref FROM cfg_rule_scope WHERE inactive=0 "
+                                          "AND scope_kind='general'")}
+    return linked - general
+
+
 def rules(conn, mode: str = "standard") -> list[dict]:
-    """Every active rule of the three sets delivered at start, in delivery order. Behaviour rules
-    are scoped by deliver_when (deliver_set); plain-value settings are left out (value_settings)."""
+    """Every active rule delivered at start, in delivery order: the general rules only (#2209 part
+    b; point_of_use). Behaviour rules are scoped by deliver_when (deliver_set); plain-value settings
+    are left out (value_settings)."""
     allowed = deliver_set(conn, mode)
-    values = value_settings(conn)
+    values = value_settings(conn) | (point_of_use(conn) or set())
     out = []
     for r in conn.execute("SELECT key, value FROM cfg_setting WHERE module='governance' AND "
                           "inactive=0 ORDER BY key"):
-        if r[0] in values:
+        if f"G:{r[0]}" in values or r[0] in values:
             continue
         try:
             text = json.loads(r[1])
@@ -106,12 +119,14 @@ def rules(conn, mode: str = "standard") -> list[dict]:
         out.append(dict(id=f"G:{r[0]}", key=r[0], text=str(text)))
     for r in conn.execute("SELECT id, class, rule_key, rule_text, enforcement_status, deliver_when "
                           "FROM cfg_behaviour_rule WHERE active=1 ORDER BY id"):
-        if r[5] not in allowed:
+        if r[5] not in allowed or f"B:{r[0]}" in values:
             continue
         out.append(dict(id=f"B:{r[0]}", key=f"{r[1]}.{r[2]}", text=r[3],
                         status=r[4]))
     for r in conn.execute("SELECT id, rule_key, rule_text FROM cfg_escalation WHERE active=1 "
                           "ORDER BY id"):
+        if f"E:{r[0]}" in values:
+            continue
         out.append(dict(id=f"E:{r[0]}", key=r[1], text=r[2]))
     return out
 
@@ -134,6 +149,10 @@ def deliver_lines(conn, mode: str = "standard") -> list[str]:
     if w:
         L += ["", "  -- not delivered this session (their condition does not hold): "
               + ", ".join(f"{n} {k}" for k, n in sorted(w.items())) + " --"]
+    pou = point_of_use(conn)
+    if pou:
+        L += ["", f"  -- {len(pou)} more rules reach you at their point of use: the first use of an "
+              f"operation in a session is refused once with its rules (cfg_rule_scope, #2209) --"]
     return L
 
 
@@ -296,8 +315,9 @@ def check_start(cfg, path: pathlib.Path) -> list[dict]:
                                           "reading)"))
     for rid in f["rows"]:
         if rid not in live:
-            F.append(dict(key=rid, reason="row for a rule that is not delivered in this session's "
-                                          "mode (retired, unknown, or its condition does not hold)"))
+            F.append(dict(key=rid, reason="row for a rule that is not delivered at start in this "
+                                          "session's mode (delivered at its point of use, retired, "
+                                          "unknown, or its condition does not hold)"))
     for rid, hits in retired_mentions(conn, f["mode"]).items():
         if rid not in f["conflicts"]:
             F.append(dict(key=rid, reason="names retired things (" + "; ".join(hits[:3])

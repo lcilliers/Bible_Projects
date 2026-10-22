@@ -30,7 +30,8 @@ MIGRATION_RX = re.compile(r"iba[/\\]app[/\\]migration[/\\][\w.-]+\.py")
 SQL_RX = re.compile(r"\bsqlite3\b|\.db\b")
 # only a command counts, not text that mentions one (a heredoc body, a commit message): each is
 # matched at the start of a line or command segment
-SEG_SPLIT_RX = re.compile(r"\n|;|&&|\|\||\|")
+# a pipe counts only with a space either side, so a grep alternation ("a\|b") is not split
+SEG_SPLIT_RX = re.compile(r"\n|;|&&|\|\||\s\|\s")
 PS_START_RX = re.compile(r"^(?:&\s*)?[\"']?\.?[\\/]?[\w\\/.-]*\.ps1\b|^(?:pwsh|powershell)(?:\.exe)?\s.*-File\s",
                          re.IGNORECASE)
 GIT_START_RX = re.compile(r"^(?:cd\s+\S+\s*)?git\s+(?:-C\s+\S+\s+)?(commit|push)\b")

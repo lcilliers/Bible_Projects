@@ -191,9 +191,10 @@
                         regenerates `_analytics/cross-cluster-web/open-threads-register.md`
                         (escalation.thread_register_path). Session-close runs it only when a
                         thread row changed in the session (SC12, #2173).
-    -Action Context      #2173 P1, at session start: every file each OPEN escalation (raised,
-                        in-progress, re-assigned) names in any field of any version, resolved to
-                        its latest live version (escalation.context_report_path). Findings:
+    -Action Context [-Id n]  #2173 P1: every file each OPEN escalation (raised, in-progress,
+                        re-assigned) names in any field of any version, resolved to its latest live
+                        version (escalation.context_report_path); with -Id, one escalation in any
+                        state, run when it is taken up (#2209). Findings:
                         `missing` (no live version) and `bare` (bare filename, cfg_escalation
                         rule 7). Read-only, through run.py (escalation.context).
     -Action ThreadAudit  #2173 P5, at session start: thread quality, validity and integrity
@@ -484,9 +485,11 @@ switch ($Action) {
         exit $code
     }
     'Context' {
-        # escalation #2173 P1: what every open escalation points to (start-project step 4).
+        # escalation #2173 P1; #2209: with -Id, the files of one escalation, read when it is taken up.
         $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-ESCALATION-CONTEXT"
-        $json = python -m iba.app.run escalation-reporting --step escalation.context --run-id $runId
+        $params = @()
+        if ($Id) { $params += @('--param', "Id=$Id") }
+        $json = python -m iba.app.run escalation-reporting --step escalation.context --run-id $runId @params
         $code = $LASTEXITCODE
         $res = $json | ConvertFrom-Json
         Write-Host "  $($res.message)"

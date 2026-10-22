@@ -159,16 +159,19 @@ def resolve(raw: str, root: pathlib.Path, names: _Names) -> dict:
     return dict(named=raw, resolved=None, status="missing", note="no live version exists")
 
 
-def collect(cfg, db) -> list[dict]:
-    """[{escalation, refs: [{named, field, version, resolved, status, note}], findings}]"""
+def collect(cfg, db, eid: int | None = None) -> list[dict]:
+    """[{escalation, refs: [{named, field, version, resolved, status, note}], findings}] for every
+    open escalation, or for escalation `eid` alone in any state (read when it is taken up, #2209)."""
     root = _repo_root()
     exts = cfg.required_setting("escalation.context_file_extensions")
     names = _Names(root)
     open_s = esc.state_group(db, "open")
     ph = ",".join("?" * len(open_s))
     out = []
-    for e in db.rows(f"SELECT * FROM escalation WHERE state IN ({ph}) AND type != 'thread' "
-                     f"ORDER BY id", open_s):
+    rows = (db.rows("SELECT * FROM escalation WHERE id=?", (eid,)) if eid is not None else
+            db.rows(f"SELECT * FROM escalation WHERE state IN ({ph}) AND type != 'thread' "
+                    f"ORDER BY id", open_s))
+    for e in rows:
         seen: dict[str, dict] = {}
         for h in db.rows("SELECT * FROM escalation_history WHERE escalation_id=? ORDER BY version",
                          (e["id"],)):
@@ -193,15 +196,17 @@ def collect(cfg, db) -> list[dict]:
     return out
 
 
-def write_report(cfg, db, path: pathlib.Path) -> tuple[pathlib.Path, list[dict]]:
-    items = collect(cfg, db)
+def write_report(cfg, db, path: pathlib.Path, eid: int | None = None
+                 ) -> tuple[pathlib.Path, list[dict]]:
+    items = collect(cfg, db, eid)
     n_find = sum(len(i["findings"]) for i in items)
     L = [f"> Generated {_now()} by `Escalation.ps1 -Action Context` (#2173 P1). Every file named "
          f"in any field of any version of each open escalation (raised, in-progress, "
          f"re-assigned), resolved to its latest live version. **Read the resolved file**, not the "
          f"one named. Findings: `missing` = no live version exists (the escalation points at "
          f"nothing); `bare` = a bare filename (cfg_escalation rule 7).", "",
-         f"- open escalations: {len(items)}; findings: **{n_find}**", ""]
+         f"- {'escalation #' + str(eid) if eid is not None else 'open escalations: ' + str(len(items))}; "
+         f"findings: **{n_find}**", ""]
     sections: dict[str, list[str]] = {"items": []}
     body = sections["items"]
     for i in items:

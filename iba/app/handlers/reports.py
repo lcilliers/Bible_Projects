@@ -614,11 +614,14 @@ def escalation_thread_export(ctx: Ctx) -> Outcome:
 
 
 def escalation_context(ctx: Ctx) -> Outcome:
-    """`Escalation.ps1 -Action Context` (#2173): every file each open escalation names (any field,
-    any version), resolved to its latest live version. Read-only."""
+    """`Escalation.ps1 -Action Context [-Id n]` (#2173; #2209): every file each open escalation names
+    (any field, any version), resolved to its latest live version; with -Id, one escalation, read
+    when it is taken up. Read-only."""
     from ..lib import escalationcontext
     path = pathlib.Path(ctx.cfg.required_setting("escalation.context_report_path"))
-    out, items = escalationcontext.write_report(ctx.cfg, ctx.db, path)
+    eid = ctx.params.get("Id")
+    out, items = escalationcontext.write_report(ctx.cfg, ctx.db, path,
+                                                int(eid) if eid not in (None, "") else None)
     n_find = sum(len(i["findings"]) for i in items)
     lines = [f"{len(items)} open escalation(s), {sum(len(i['refs']) for i in items)} file "
              f"reference(s), {n_find} finding(s) -> {out}"]

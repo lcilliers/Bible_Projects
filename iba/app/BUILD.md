@@ -18306,3 +18306,50 @@ Migration `iba/app/migration/archive/rule_scope_2209_v1_20261021.py`, run
 
 **Not yet done (part b):** the start routine still delivers every rule, and the other check layers
 are unchanged. Each is to be assessed on its origin before it is cut.
+
+## 375. Start delivers the general rules only; an escalation's files are read when it is taken up (2026-10-22, escalation #2209 part (b), for #2177)
+
+Researcher, verbatim (chat 2026-10-22): "#2209: approve part (a), and rows 1 to 5 of the part (b)
+layer review." Review: `outputs/escalation/2209-layer-review-v1-20261021.md`.
+
+**Rows 1-3:** `iba/app/lib/compliance.py` `point_of_use()`. `rules()` leaves out every rule with no
+`general` link in `cfg_rule_scope`, so three things follow:
+- the start print (`iba/app/init.py`) covers the general rules only;
+- the compliance template and the start check cover the general rules only;
+- the close check SC6, which reads the file's rows, covers them too.
+
+Counts: 41 rules in Developer Mode, 40 in standard, where it was about 138. The start print ends with
+the count that comes at point of use (122). With no `cfg_rule_scope` table, every rule is delivered.
+The start-check finding text names point-of-use delivery. `cfg_behaviour_rule` 81 text is amended
+to match: migration `iba/app/migration/archive/rule81_general_2209_v1_20261022.py`, run
+`DEVMODE-2209-RULE81-GENERAL-20261022`, 2 writes. The hook surfaced the conflict when it showed
+rule 81 at this session's first compliance check.
+
+**Row 4:** `find_undelivered_conversational_rules`, `verify_behaviour_rule_delivery` and their
+patterns are removed from `iba/app/lib/cfgquality.py`, with their entries in
+`handlers/configmaint.py` and `lib/cfgreport.py`. Delivery is now checked by `find_rule_scope_gaps`.
+
+**Row 5:** `Escalation.ps1 -Action Context -Id <id>`, through `lib/escalationcontext.collect(eid)`
+and `handlers/reports.escalation_context`, reads one escalation in any state.
+`.claude/commands/start-project.md` step 4 now:
+- lists the open escalations (`-Action List`);
+- reads an escalation's files with `-Action Context -Id` when it is taken up, not at start.
+
+**Hook fix:** a grep alternation (`"a\|b"`) was split as a pipe. A pipe now needs a space either
+side (`.claude/hooks/rules_at_point_of_use.py`; tests H17, H18).
+
+**Tests:**
+- `iba/app/tools/temp_2209b_layers_test_run.py`, 12/12 pass:
+  `outputs/escalation/2209-layers-test-results-v1-20261022.md`.
+- Part (a) plan re-run, 22/22 pass.
+
+**Live:**
+- this session's compliance file trimmed to the 41 general rows; the start check passes;
+- validate RUN-20261022_041830_545-CONFIGMAINT is coherent and matches #2207 as identical;
+- `Context -Id 2209` ran.
+
+**Docs:**
+- GOVERNANCE.md sections 5 and 7;
+- USER-GUIDE.md sections 2.1 and 3.2;
+- `.claude/commands/start-project.md` steps 2 to 4 and 6;
+- `.claude/commands/developer-mode.md` step 2.

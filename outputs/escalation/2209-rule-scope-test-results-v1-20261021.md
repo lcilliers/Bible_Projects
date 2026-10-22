@@ -2,9 +2,9 @@
 
 Escalation #2209 part (a). Test plan: `iba/app/tools/temp_2209_rule_scope_test_run.py`, run 2026-10-21 on a copy of iba.db made with `lib/dbsnapshot.copy_db`; the hook ran against the copy (IBA_RULES_DB) in a scratch project folder. No live DB, state file or report written by the test. Synthetic cases: T1, T4, H9, H12, H13, H15. T2 checks the live run record, since archived scripts are gated (#2200).
 
-Found live and fixed: the first hook matched words inside text (a heredoc body mentioning git commit), not only commands. Commands are now matched at the start of a line or segment; H13-H15 cover it. Also trimmed: with an action given, only that action's usage is shown, not the whole tool's (H1).
+Found live and fixed: the first hook matched words inside text (a heredoc body mentioning git commit), not only commands. Commands are now matched at the start of a line or segment; H13-H15 cover it. Also trimmed: with an action given, only that action's usage is shown, not the whole tool's (H1). Found live 2026-10-22 and fixed: a grep alternation ("a\|b") was split as a pipe; a pipe now needs a space either side (H17, H18).
 
-20/20 pass.
+22/22 pass.
 
 | case | what | result | evidence |
 |---|---|---|---|
@@ -28,3 +28,5 @@ Found live and fixed: the first hook matched words inside text (a heredoc body m
 | H14 | git after cd ... && is a command: refused once | PASS | deny |
 | H15 | a PS call after a here-string is found with its action; the here-string text is not | PASS | deny; refs B:63=True |
 | H16 | a migration run: refused once with the migration rules (75, 62) | PASS | deny |
+| H17 | a grep alternation naming a PS script or git is text, not a command: passes | PASS | allow;  |
+| H18 | a PS call piped to Out-String is still found | PASS | deny |

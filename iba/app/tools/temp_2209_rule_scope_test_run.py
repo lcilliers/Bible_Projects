@@ -136,6 +136,14 @@ d, r = run("Bash", {"command": "python iba/app/migration/x_v1_20261021.py --db y
 case("H16", "a migration run: refused once with the migration rules (75, 62)",
      d == "deny" and "B:75" in r and "B:62" in r and "B:11" not in r, d)
 
+d, r = run("Bash", {"command": 'grep -n "Action Context\\|Start-Iba.ps1  \\|git commit" iba/app/USER-GUIDE.md'},
+           session="S11")
+case("H17", "a grep alternation naming a PS script or git is text, not a command: passes", d == "allow",
+     f"{d}; {r[:120]}")
+d, r = run("PowerShell", {"command": ".\\iba\\app\\ps\\Escalation.ps1 -Action List | Out-String -Width 300"},
+           session="S12")
+case("H18", "a PS call piped to Out-String is still found", d == "deny" and "-Action List" in r, d)
+
 out = scratch / "results.md"
 out.write_text("| case | what | result | evidence |\n|---|---|---|---|\n" +
                "\n".join(f"| {a} | {b} | {c} | {d} |" for a, b, c, d in results) + "\n", encoding="utf-8")

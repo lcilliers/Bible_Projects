@@ -108,8 +108,9 @@ write is checked against `cfg_write_grant`. `IBA_TRACE=1` prints the config read
 - **Only new findings are asked.** An escalation is raised only for findings not in the last
   approved one. It carries counts, a fingerprint per finding and the report path, never the lists.
 
-Every active behaviour rule, and every governance setting except the plain values named in
-`cfg_setting compliance.value_settings`, is delivered by the start routine (§7).
+Every active rule is delivered: a `general` rule by the start routine, every other rule at the
+point of use of the operations `cfg_rule_scope` links it to (§7). Governance settings that are
+plain values (`cfg_setting compliance.value_settings`) are read by the code that uses them.
 
 ## 6. Escalations
 
@@ -133,10 +134,9 @@ The `escalation` table holds every open item, task, issue, decision and thread
 ## 7. Session routines
 
 - **Start:** `.claude/commands/start-project.md`. `iba/app/ps/Start-Iba.ps1` runs `init.py`: config check and
-  load, data tables, the STEP pre-flight, how the last session ended. It then prints every active
-  governance setting (less `compliance.value_settings`), behaviour rule and escalation rule in full,
-  from the database. The session
-  restates each one in its compliance file, and `Compliance.ps1 -Action Check -Phase Start` must pass
+  load, data tables, the STEP pre-flight, how the last session ended. It then prints the general
+  rules (a `general` link in `cfg_rule_scope`) in full, from the database. The session restates
+  each one in its compliance file, and `Compliance.ps1 -Action Check -Phase Start` must pass
   (`cfg_behaviour_rule` 81).
 - **At the point of use:** `cfg_rule_scope` links each rule to the operations it governs: a PS tool
   and action, git, a migration, a database query, or a file path written. Rules with scope `general`

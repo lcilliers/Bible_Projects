@@ -47,10 +47,10 @@ Stop-Process -Id <pid>
 The command (`.claude/commands/start-project.md`) runs these, in order:
 
 ```powershell
-iba\app\ps\Start-Iba.ps1                              # bootstrap; prints NEEDS ACTION, then the rules
+iba\app\ps\Start-Iba.ps1                              # bootstrap; prints NEEDS ACTION, then the general rules
 iba\app\ps\Compliance.ps1 -Action Template            # this session's compliance file
 iba\app\ps\Compliance.ps1 -Action Check -Phase Start  # exit 3 until it passes
-iba\app\ps\Escalation.ps1 -Action Context             # open escalations and the files they name
+iba\app\ps\Escalation.ps1 -Action List                # open escalations, latest version only
 iba\app\ps\Escalation.ps1 -Action ThreadCheck -AnsweredBy Claude
 iba\app\ps\Escalation.ps1 -Action ThreadAudit
 ```
@@ -62,16 +62,17 @@ iba\app\ps\Escalation.ps1 -Action ThreadAudit
 - checks how the last session ended: uncommitted paths, an uncommitted session log, a newest
   commit that is not a close's final commit, or a log naming no commit
 
-A check that passes prints nothing. It then prints, in full from the database, the rules that apply
-this session, and ends `READY` or `NOT READY`. Runs refuse to start without STEP
+A check that passes prints nothing. It then prints, in full from the database, the general rules
+that apply this session (those with a `general` link in `cfg_rule_scope`; the rest come at their
+point of use), and ends `READY` or `NOT READY`. Runs refuse to start without STEP
 (`step.required_for_runs`).
 
 - `-Reset` rebuilds the data tables. It drops all data and keeps the config.
 - The config lives only in iba.db. If it is missing, the bootstrap refuses to start; restore a
   snapshot (`iba/app/db/snapshots/`) or the NAS backup.
 
-**The compliance file** (`Logs/compliance/COMPLIANCE-<date>-<session8>.md`) has one row per rule
-delivered in the session's mode, keyed `G:<governance setting>`, `B:<behaviour rule id>`,
+**The compliance file** (`Logs/compliance/COMPLIANCE-<date>-<session8>.md`) has one row per general
+rule delivered in the session's mode, keyed `G:<governance setting>`, `B:<behaviour rule id>`,
 `E:<escalation rule id>`. A behaviour rule is delivered by `cfg_behaviour_rule.deliver_when`:
 - `always`
 - `study_active`, while `cfg_setting behaviour.study_state` is `active`
@@ -227,7 +228,8 @@ iba\app\ps\Escalation.ps1 -Action Correction -Id <id> -AnsweredBy … [-ShortDes
 **What open escalations point to** (read at every start):
 
 ```powershell
-iba\app\ps\Escalation.ps1 -Action Context    # every file any version names, resolved to its latest live version
+iba\app\ps\Escalation.ps1 -Action Context -Id <id>   # when an item is taken up: every file it names, resolved to its latest live version
+iba\app\ps\Escalation.ps1 -Action Context            # the same for every open escalation
 ```
 
 Findings: `missing` (no live version) and `bare` (a bare filename).

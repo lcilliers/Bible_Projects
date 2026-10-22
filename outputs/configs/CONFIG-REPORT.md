@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-21T19:48:01Z |
+| generated_at | 2026-10-22T03:19:01Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -110,9 +110,6 @@ _(none)_
 28. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
 29. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
 
-**Undelivered conversational rules** (0) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
-_(none)_
-
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
 
@@ -180,7 +177,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**939** registered module(s) — **486** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **819** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**940** registered module(s) — **487** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **820** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -747,6 +744,7 @@ _(none)_
 | reword_word_level_questions_strong_keyed_v1_20260923 | iba/app/migration/archive/reword_word_level_questions_strong_keyed_v1_20260923.py | ONE-OFF migration -- researcher ruling 2026-09-23: cluster dropped from M0.1.x/M0.5.x, reworded to single-term facts via strong_related for the relational ones; M0.5.10 retired. Run once, then set inactive=1. |  |  |  |
 | rule59_drop_dead_pointer_v1_20261021 | iba/app/migration/archive/rule59_drop_dead_pointer_v1_20261021.py | ONE-OFF migration -- escalation #2195: drops the dead pointer to the archived docs/interaction-preferences.md from cfg_behaviour_rule 59, through configmaint.apply_logged under run_id DEVMODE-2195-RULE59-POINTER-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | rule63_approval_handover_checks_v1_20261021 | iba/app/migration/archive/rule63_approval_handover_checks_v1_20261021.py | ONE-OFF migration -- escalation #2178: adds the approval hand-over checks to cfg_behaviour_rule 63, every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2178-RULE63-HANDOVER-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| rule81_general_2209_v1_20261022 | iba/app/migration/archive/rule81_general_2209_v1_20261022.py | ONE-OFF migration -- escalation #2209: rule 81 text to general-rule delivery, through configmaint.apply_logged under run_id DEVMODE-2209-RULE81-GENERAL-20261022. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | rule97_copy_with_backup_api_v1_20261021 | iba/app/migration/archive/rule97_copy_with_backup_api_v1_20261021.py | ONE-OFF migration -- escalation #2193: rule 97 names dbsnapshot.copy_db as how a database test copy is made, through configmaint.apply_logged under run_id DEVMODE-2193-RULE97-BACKUP-COPY-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | rule_delivery_scope_v1_20261021 | iba/app/migration/archive/rule_delivery_scope_v1_20261021.py | ONE-OFF migration -- escalation #2185: scopes the start-up rule print and the compliance restatement to the session (deliver_when), every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2185-RULE-DELIVERY-SCOPE-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | rule_scope_2209_v1_20261021 | iba/app/migration/archive/rule_scope_2209_v1_20261021.py | ONE-OFF migration -- escalation #2209: creates cfg_rule_scope and links every rule to its operations, through configmaint.apply_logged under run_id DEVMODE-2209-RULE-SCOPE-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |

@@ -36,9 +36,11 @@ config reloaded, tables created, a database path that does not exist, STEP not a
 known-answer probe, and **how the last session ended** (`lib/sessionwindow.last_close_findings`,
 S6): uncommitted paths, an uncommitted session log, a newest commit that is not a session-close's
 final commit (`session_close.final_commit_marker`) with the commits since the last close, and a
-newest session log that names no existing commit in its git section. Then it prints **every**
-active governance setting (`G:`), behaviour rule (`B:`) and escalation rule (`E:`) in full, from
-the database. Read them: step 3 restates each one.
+newest session log that names no existing commit in its git section. Then it prints the
+**general** rules in full, from the database: governance settings (`G:`), behaviour rules (`B:`)
+and escalation rules (`E:`) with a `general` link in `cfg_rule_scope`. Read them: step 3 restates
+each one. The rules of an operation reach you at its first use in the session
+(`.claude/hooks/rules_at_point_of_use.py`, #2209).
 
 Report each NEEDS ACTION line first. NOT READY stops the start. If the last session did not end
 with a completed close, say so and name the commits; read that session's log only then.
@@ -49,7 +51,7 @@ with a completed close, say so and name the commits; read that session's log onl
 .\iba\app\ps\Compliance.ps1 -Action Template
 ```
 
-It writes `Logs/compliance/COMPLIANCE-<date>-<session8>.md` with one row per active rule. Fill it
+It writes `Logs/compliance/COMPLIANCE-<date>-<session8>.md` with one row per general rule. Fill it
 (`cfg_behaviour_rule` session-compliance-restated-and-proved):
 
 - **Acknowledgement:** the exact sentence in `compliance.acknowledgement`.
@@ -72,22 +74,26 @@ you produce it; session-close checks it (SC6). The researcher may spot-check any
 rule: a wrong, vague or copied restatement means the rule was not understood, and the session
 stops there until it is re-read.
 
-## 4. Open escalations and what they point to (P1)
+## 4. Open escalations (P1)
 
 ```powershell
-.\iba\app\ps\Escalation.ps1 -Action Context
+.\iba\app\ps\Escalation.ps1 -Action List
 ```
 
-It writes `escalation.context_report_path` (versioned): for every **open** escalation (raised,
-in-progress, re-assigned; `cfg_enum escalation_state_open`; on-hold is parked and is read when
-taken up), every file named in any field of any version, resolved to its **latest live version**.
-Findings: `missing` (no live version; the escalation points at nothing) and `bare` (a bare
-filename, escalation rule 7).
+It writes `escalation.list_report_path`: each open escalation at its latest version, parked items
+one line each. Name the open items, those assigned to Claude first (escalation rule 4). Their files
+are not read now.
 
-Then **read the resolved latest file(s) of each open escalation** with its question in mind, and
-say per escalation what they show for its next action: what is decided, what is still open, and
-whether a newer file supersedes what the escalation describes. Name the `missing`/`bare`
-findings. Items assigned to Claude come first (escalation rule 4).
+**When an escalation is taken up** (worked, or moved to in-progress), read what it points to first:
+
+```powershell
+.\iba\app\ps\Escalation.ps1 -Action Context -Id <id>
+```
+
+It writes `escalation.context_report_path`: every file the escalation names in any field of any
+version, resolved to its **latest live version**. Findings: `missing` (no live version) and `bare`
+(a bare filename, escalation rule 7). Read the resolved files with its question in mind before
+acting on it.
 
 ## 5. Threads (P5)
 
@@ -113,7 +119,7 @@ hand.
 In chat, in this order, findings only:
 
 1. Everything wrong or needing action (FATAL first): NEEDS ACTION lines; the last-session check.
-2. The open escalations, each with what its files show for its next action; the Context findings.
+2. The open escalations, those assigned to Claude first.
 3. The compliance file: passed, and the rules named in its conflicts section.
 4. The thread findings.
 

@@ -288,10 +288,6 @@ def validate(ctx: Ctx) -> Outcome:
         "unenforced_behaviour_rules": (
             cfgquality.find_unenforced_behaviour_rules(ctx.db.conn),
             "behaviour rule(s) with no control"),
-        # conversational rules whose claimed delivery does not verify
-        "undelivered_conversational_rules": (
-            cfgquality.find_undelivered_conversational_rules(ctx.db.conn, PROJECT_ROOT),
-            "behaviour rule(s) claiming conversational delivery that does not actually verify"),
         # mechanical checks of individual behaviour rules (#1384)
         "unpushed_commits": (
             cfgquality.find_unpushed_commits(PROJECT_ROOT), "unpushed local commit finding(s)"),
