@@ -37,7 +37,7 @@ from .lexicalenrichgenerate import _api_key, ApiKeyMissing, ApiCallFailed  # noq
 from .lexicalenrichgenerate import call_api, log_usage  # reuse, don't duplicate
 from .lexicalenrichgenerate import CostCapExceeded, BadModelResponse  # noqa: F401 -- re-exported
 from . import stage1coverage
-from .taggingguidance import TAG_GUIDANCE, tags_for_stage, guidance_block  # noqa: F401 -- TAG_GUIDANCE re-exported for other stages
+from .taggingguidance import tags_for_stage, guidance_block
 
 
 _JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
@@ -307,7 +307,7 @@ def assemble_word_level_batch_package(ctx, cluster_code: str, verse_ids: list[in
     question_texts = [{"question_code": q["question_code"], "question_text": q["question_text"]}
                       for q in questions]
 
-    tag_values = tags_for_stage("verse-reading", [r["value"] for r in conn.execute(
+    tag_values = tags_for_stage(ctx.cfg, "verse-reading", [r["value"] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
         "ORDER BY ordinal")])
 
@@ -318,7 +318,7 @@ def assemble_word_level_batch_package(ctx, cluster_code: str, verse_ids: list[in
 
     instructions = _word_level_instructions(
         cluster_code, question_texts, tag_values, rules_text,
-        [v["verse"] for v in verses_out], sorted(all_m_code_strongs), len(checklist_items))
+        [v["verse"] for v in verses_out], sorted(all_m_code_strongs), len(checklist_items), ctx.cfg)
     content = json.dumps({"cluster_code": cluster_code, "verses": verses_out,
                           "meaning_sources_by_strong": meaning_by_strong,
                           "expected_items": checklist_items},
@@ -363,7 +363,7 @@ def assemble_relational_batch_package(ctx, cluster_code: str, verse_ids: list[in
     question_texts = [{"question_code": q["question_code"], "question_text": q["question_text"]}
                       for q in questions]
 
-    tag_values = tags_for_stage("verse-reading", [r["value"] for r in conn.execute(
+    tag_values = tags_for_stage(ctx.cfg, "verse-reading", [r["value"] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
         "ORDER BY ordinal")])
 
@@ -374,7 +374,7 @@ def assemble_relational_batch_package(ctx, cluster_code: str, verse_ids: list[in
 
     instructions = _relational_instructions(
         cluster_code, question_texts, tag_values, rules_text,
-        verse_refs, sorted(all_m_code_strongs), len(checklist_items))
+        verse_refs, sorted(all_m_code_strongs), len(checklist_items), ctx.cfg)
     content = json.dumps({"cluster_code": cluster_code, "verses": verses_out,
                           "meaning_sources_by_strong": meaning_by_strong,
                           "word_level_findings_by_verse": word_level_findings,
@@ -418,11 +418,11 @@ def _checklist_boilerplate(expected_item_count: int) -> str:
 
 def _word_level_instructions(cluster_code: str, questions: list[dict], tag_values: list[str],
                              rules_text: str, verse_refs: list[str],
-                             all_m_code_strongs: list[str], expected_item_count: int) -> str:
+                             all_m_code_strongs: list[str], expected_item_count: int, cfg) -> str:
     """`lexical.meaning`'s prompt (#1860): M0.1 (Name and Naming) + M0.5 (Lexical and Semantic
     Analysis)."""
     q_text = "\n".join(f"- {q['question_code']}: {q['question_text']}" for q in questions)
-    tag_guidance_text = guidance_block(tag_values)
+    tag_guidance_text = guidance_block(cfg, tag_values)
     return (
         f"You are producing word-level verse-reading observations for cluster {cluster_code}, "
         f"the pre-subgroup Layer 2 word-level pass (`lexical.meaning` -- the relational half of "
@@ -481,12 +481,12 @@ def _word_level_instructions(cluster_code: str, questions: list[dict], tag_value
 
 def _relational_instructions(cluster_code: str, questions: list[dict], tag_values: list[str],
                              rules_text: str, verse_refs: list[str],
-                             all_m_code_strongs: list[str], expected_item_count: int) -> str:
+                             all_m_code_strongs: list[str], expected_item_count: int, cfg) -> str:
     """`lexical.relational`'s prompt (#1860): M0.6.5, M0.6.6, D7.7.1, M0.7.1-16, M0.8.1. Every verse in
     scope has passed the readiness gate; its word-level findings are given as
     `word_level_findings_by_verse`."""
     q_text = "\n".join(f"- {q['question_code']}: {q['question_text']}" for q in questions)
-    tag_guidance_text = guidance_block(tag_values)
+    tag_guidance_text = guidance_block(cfg, tag_values)
     return (
         f"You are producing relational verse-reading observations for cluster {cluster_code}, "
         f"the pre-subgroup Layer 2 relational pass (`lexical.relational` -- the word-level half of "

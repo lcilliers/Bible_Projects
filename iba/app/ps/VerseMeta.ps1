@@ -1,8 +1,7 @@
 <#
 .SYNOPSIS
-    verse_meta.status maintenance — escalation #1661. Standalone utility (like Escalation.ps1),
-    not a run.py dispatcher step, since this is a direct researcher-driven maintenance action, not
-    a repeatable pipeline stage.
+    verse_meta.status maintenance -- escalation #1661. Dispatched through run.py (work package
+    `verse-meta`, step `verse_meta.set_status`, #2207).
 
 .DESCRIPTION
     -Step SetStatus   set `verse_meta.status` for one or more verses, given as a comma-delimited
@@ -12,7 +11,8 @@
                        re-setting the same status again leaves it untouched. `status` must be a
                        live value of `cfg_enum verse_meta_status` (exclude / citated / analysed —
                        'anchor' is deliberately NOT part of this domain: that's already
-                       `verse_meta.is_passage_anchor`, set elsewhere).
+                       `verse_meta.is_passage_anchor`, set elsewhere). Exits 1 if the status is not
+                       valid or any reference is not found.
 
 .PARAMETER Step         SetStatus
 .PARAMETER References   comma-delimited verse references (SetStatus)
@@ -51,6 +51,19 @@ if ($Step -eq 'SetStatus') {
         Write-Host "SetStatus needs -References and -Status." -ForegroundColor Yellow
         exit 1
     }
-    python -m iba.app.lib.versemeta set-status --references $References --status $Status
-    exit $LASTEXITCODE
+    $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-VERSE-META"
+    Write-IbaRunHeader -WorkPackage 'verse-meta' -RunId $runId
+
+    $json = python -m iba.app.run verse-meta --step verse_meta.set_status --run-id $runId `
+        --param "References=$References" --param "Status=$Status"
+    $code = $LASTEXITCODE
+    $res  = $json | ConvertFrom-Json
+    Write-IbaStepResult -Step 'verse_meta.set_status' -Path '' -Message $res.message -Code $code
+    if ($res.counts) {
+        if ($res.counts.updated)     { Write-Host "  updated: $($res.counts.updated)" }
+        if ($res.counts.already_set) { Write-Host "  already set: $($res.counts.already_set)" }
+        if ($res.counts.not_found)   { Write-Host "  NOT FOUND: $($res.counts.not_found)" -ForegroundColor Yellow }
+    }
+    if ($code -eq 0 -and $res.condition -ne 'ok') { exit 1 }
+    exit $code
 }

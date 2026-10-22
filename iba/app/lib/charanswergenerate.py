@@ -104,12 +104,12 @@ def assemble_subgroup_package(ctx, cluster_code: str, subgroup_row: dict,
         "AND active=1 ORDER BY ordinal, rule_key").fetchall()
     rules_text = "\n".join(f"- {r['rule_key']}: {r['rule_text']}" for r in rules)
 
-    tag_values = tags_for_stage("char-answers", [r["value"] for r in conn.execute(
+    tag_values = tags_for_stage(ctx.cfg, "char-answers", [r["value"] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
         "ORDER BY ordinal")])
 
     instructions = _instructions(cluster_code, subgroup_row, rules_text, sorted(member_strongs),
-                                 questions, tag_values)
+                                 questions, tag_values, ctx.cfg)
     content = json.dumps({
         "cluster_code": cluster_code, "subgroup_code": subgroup_row["subgroup_code"],
         "label": subgroup_row["label"], "core_description": subgroup_row["core_description"],
@@ -152,7 +152,7 @@ def compute_question_checks(conn, cluster_code: str, member_strongs: list[str],
 
 def _instructions(cluster_code: str, subgroup_row: dict, rules_text: str,
                   member_strongs: list[str], questions: list[dict],
-                  tag_values: list[str]) -> str:
+                  tag_values: list[str], cfg) -> str:
     q_text = "\n".join(f"- {q['question_code']} ({q['scope']}): {q['question_text']}"
                        for q in questions)
     return (
@@ -179,7 +179,7 @@ def _instructions(cluster_code: str, subgroup_row: dict, rules_text: str,
         f"Answer these catalogue questions (one or more observations per question_code, per the "
         f"multiple-slants rule above):\n{q_text}\n\n"
         f"Valid `tag` values: {tag_values}\n"
-        f"{guidance_block(tag_values)}\n\n"
+        f"{guidance_block(cfg, tag_values)}\n\n"
         f"STRICT BOUNDARIES — do not exceed this task:\n"
         f"- `question_code` MUST be one of the exact leaf codes listed above -- never a bare "
         f"component code, never a code not in this list.\n"

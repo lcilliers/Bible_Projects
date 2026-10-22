@@ -1,15 +1,11 @@
 """behaviour.py — util.behaviour: query/report front-end for `cfg_behaviour_class`/
-`cfg_behaviour_rule` (#715/#732/#733), behind Behaviour.ps1. Read-only; rules are written through
-configmaint (apply_logged in Developer Mode).
-
-CLI (`python -m iba.app.lib.behaviour`):
-    python -m iba.app.lib.behaviour list [--class=chat|terminal|sqlite|documentation|llm_output|development]
+`cfg_behaviour_rule` (#715/#732/#733), run as step behaviour.list (handlers/reports.py) behind
+Behaviour.ps1. Read-only; rules are written through configmaint (apply_logged in Developer Mode).
 """
 
 from __future__ import annotations
 
 import pathlib
-import sys
 
 from . import reportkit
 from .cfg import Cfg
@@ -54,24 +50,3 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path,
     text = "\n".join(lines).rstrip() + "\n"
     path.write_text(text, encoding="utf-8")
     return path, total
-
-
-def main() -> int:
-    cfg = Cfg()
-    db = Db(cfg)
-    argv = sys.argv[1:]
-    if len(argv) >= 1 and argv[0] == "list":
-        class_filter = None
-        for a in argv[1:]:
-            if a.startswith("--class="):
-                class_filter = a.split("=", 1)[1]
-        path = pathlib.Path(cfg.required_setting("behaviour.list_report_path"))
-        out, total = write_list_report(cfg, db, path, class_filter)
-        print(f"  {total} active behaviour rule(s) -> {out}")
-        return 0
-    print("usage: python -m iba.app.lib.behaviour list [--class=<class>]")
-    return 1
-
-
-if __name__ == "__main__":
-    sys.exit(main())

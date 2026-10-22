@@ -18498,3 +18498,159 @@ Tests:
 - Real transcript d74187d6: 4 failures, no repeat; before the fix, 2 false repeats.
 - Synthetic transcript: a duplicated result is counted once; a real repeat of the same exception is
   still a repeat; a different exception is a different kind.
+
+## 381. The 7 cfg rows that named the renamed plans now name their new paths (2026-10-22, escalation #2207)
+
+Session 0995b2cd, Developer Mode (researcher: "start 2207 in developer mode"). This closes the
+**Not done** of section 380.
+
+`iba/app/migration/archive/renamed_paths_2207_v1_20261022.py`, run `DEVMODE-2207-RENAMED-PATHS-20261022`,
+8 writes through `configmaint.apply_logged`:
+- `cfg_table folder_purpose.use` and `cfg_behaviour_rule` 60 `source` name
+  `iba/docs/971-folder-purpose-governance-plan-v5-20260828.md`.
+- `cfg_behaviour_class filing.authoritative_doc` and `cfg_behaviour_rule` 56 to 59 `source` name
+  `iba/docs/863-file-naming-and-location-governance-plan-v1-20260826.md`.
+- Rules 56 to 59 also cited `docs/file-organisation-rules.md`, which is no longer on disk. It was
+  archived under #2177 as `archive/docs/file-organisation-rules-history-to-20261021.md`, which still
+  has the cited sections (2.1, 2.3/2.3a, 4/4.1, 5). The citation now names the archived file.
+- The script registers itself in `cfg_utility`, inactive, at its archive path.
+
+`cfg_change_detail` rows that name the old paths are history and are unchanged.
+
+Tests, on `dbsnapshot.copy_db` copies:
+- Dry run: 8 writes listed, nothing written.
+- Apply: 8 writes, 8 `cfg_change_detail` rows for the run; none of the 7 rows names an old path.
+- Re-run: "already applied -- skipped".
+- Synthetic: on a copy with rule 58 re-keyed, the script stops with "missing row" and exit 1,
+  writing nothing.
+
+Live: 8 writes applied; a re-run skips. `configmaint.validate` (RUN-20261022_053616_882-CONFIGMAINT,
+`outputs/configs/CONFIG-REPORT-v609-20261022.md`): no new findings.
+
+## 382. Behaviour.ps1 and VerseMeta.ps1 dispatch through run.py (2026-10-22, escalation #2207 item 1)
+
+Session 0995b2cd, Developer Mode (researcher: "Continue #2207 with item 1: Behaviour.ps1 and
+VerseMeta.ps1 through run.py."). The approved fix-not-count part 2 (`cfg_behaviour_rule` 43): the two
+scripts called `python -m iba.app.lib.behaviour` and `python -m iba.app.lib.versemeta` directly, so
+neither run left a `run` row.
+
+**Code:**
+- `iba/app/handlers/reports.py` `behaviour_list`: step `behaviour.list`, reading
+  `behaviour.list_report_path` and the optional `Class` param.
+- `iba/app/handlers/versemeta.py` (new) `set_status`: step `verse_meta.set_status`.
+  - It checks its `cfg_write_grant` on `verse_meta` before writing.
+  - A status that is not in `cfg_enum verse_meta_status` is outcome `bad-parameter`.
+  - An unknown reference is outcome `not-found`; the other references are still set.
+  - Both outcomes are usage outcomes on the `report-continue` path, so nothing is escalated, the same
+    convention as `escalation.thread` and `narrative_register.*`.
+- `iba/app/ps/Behaviour.ps1` and `iba/app/ps/VerseMeta.ps1` call `python -m iba.app.run` as
+  `Log-Retention.ps1` does. Parameters are unchanged, so the PS tools worksheet and USER-GUIDE.md
+  stand. VerseMeta.ps1 still exits 1 on a bad status or an unknown reference.
+- `iba/app/lib/behaviour.py` and `iba/app/lib/versemeta.py` lose their `main()` CLIs, so the direct
+  route is gone; the logic functions are unchanged.
+
+**Config:** `iba/app/migration/archive/ps_through_runpy_2207_v1_20261022.py`, run
+`DEVMODE-2207-PS-THROUGH-RUNPY-20261022`, 14 writes through `configmaint.apply_logged`:
+- work packages `behaviour` and `verse-meta`;
+- steps `behaviour.list` (utility) and `verse_meta.set_status` (operations);
+- the write grant `verse_meta.set_status` on `verse_meta`;
+- two `cfg_on_fail` rules;
+- `cfg_utility` purposes for `behaviour`, `versemeta`, `VerseMeta.ps1` and `iba_app_ps_behaviour`;
+- `cfg_column` `verse_meta.status` and `status_changed_at` `filled_by`;
+- its own inactive `cfg_utility` row.
+
+Tests, on a `dbsnapshot.copy_db` copy (harness calls `run.run_step` with `Cfg` pointed at the copy;
+the behaviour report path redirected to the scratchpad):
+- Migration: dry run 14 writes; apply 14; re-run skipped.
+- `behaviour.list`:
+  - all classes: 106 rules, report written;
+  - `Class=chat`: 18 rules, only that class in the report;
+  - unknown class: 0 rules, ok.
+- `verse_meta.set_status`:
+  - Rom.12.9 (osisId form) and 2Cor 6:6 (display form) set to analysed, both stamped;
+  - the same again: 0 updated, 2 already set, timestamps unchanged;
+  - status `anchor`: `bad-parameter`, nothing written;
+  - one real reference and `Xyz.9.9`: `not-found`, the real one handled.
+  - No escalation raised by any of these; every run row `done`.
+- Synthetic: with the write grant inactive, the step is refused with a write-grant violation.
+- `find_ps_scripts_bypassing_runpy`: none.
+
+Live: 14 writes applied; a re-run skips. Run live:
+- `Behaviour.ps1 -Action List -Class chat`: 18 rules, then the full list, 106 rules.
+- `VerseMeta.ps1 -Step SetStatus` with no references: stops before dispatch, exit 1.
+
+The VerseMeta.ps1 dispatch path was tested on the copy only, never live. `configmaint.validate`
+(RUN-20261022_054832_154-CONFIGMAINT, `outputs/configs/CONFIG-REPORT-v610-20261022.md`): the
+PS-scripts-bypassing-run.py finding is gone; no new findings.
+
+## 383. Utilities with no config: 3 of 7 fixed, 4 put to the researcher (2026-10-22, escalation #2207 item 2)
+
+Session 0995b2cd, Developer Mode (researcher: "Continue #2207 with item 2: the 7 utilities with no
+config."). Built: the parts already approved (#2207 v4 D4/D5/D11, v7, v9).
+
+A live check before building found that the approved table was wrong on two points.
+`iba/app/lib/lexicalscope.py` is used by three live steps, and `iba/app/lib/batchcontrol.py` is the
+skip-already-committed guard of five live LLM steps. Those two, with `catalogue`,
+`clusterfamilyscan` and `backup_db_to_nas`, are not built. They are written up with options in
+`outputs/escalation/2207-item2-utility-decisions-v1-20261022.md`.
+
+**Batch monitoring scrapped:**
+- To archive/ (`git mv`): `iba/app/lib/batchprogressreport.py` and `iba/app/ps/BatchProgress.ps1`.
+- `iba/app/handlers/reports.py` loses `batch_progress_report` and its import.
+- `iba/app/USER-GUIDE.md` section 7 loses the BatchProgress line.
+- `run_batch` and `batchcontrol` are unchanged.
+
+**lexicalenrich retired with its retired steps (`lexical.enrich`, `lexical.run`, both already
+`cfg_step.inactive=1`):**
+- `iba/app/lib/lexicalenrich.py` to archive/.
+- `iba/app/handlers/lexical.py` loses `enrich`, `run` and their helpers (`BadPayload`,
+  `_load_payload`, `_notes_payload_dict`, `_write_notes_payload`, `_MODES`): 1082 to 634 lines.
+  `build`, `readiness`, `meaning` and `relational` are untouched.
+- `iba/app/lib/lexicalenrichgenerate.py` loses its lexical.run-only parts (`_instructions`,
+  `_lean_code`, `assemble_batch_package`, `parse_response`). It keeps the shared call layer
+  (`_api_key`, `call_api`, `log_usage`, the exceptions) that four live generators import.
+
+**taggingguidance definitions into config:**
+- The 20 tag definitions are `cfg_setting ib_observation.tag_guidance`.
+- The per-stage exclusions are `ib_observation.tag_stage_excluded`: verse-reading leaves out
+  `verse-grouping` and `difference-inference`.
+- Both were copied from the code's own values.
+- `tags_for_stage` and `guidance_block` take the `Cfg` and read both through `required_setting`.
+  The callers now pass `ctx.cfg`: `iba/app/lib/charanswergenerate.py`,
+  `iba/app/lib/charreadinggenerate.py`, `iba/app/lib/subgroupgenerate.py` and
+  `iba/app/lib/versereadinggenerate.py`; the prompt builders gain a `cfg` parameter.
+- The unused `TAG_GUIDANCE` re-export is gone.
+
+**Config:** `iba/app/migration/archive/utilities_2207_v1_20261022.py`, run
+`DEVMODE-2207-UTILITIES-20261022`, 35 writes:
+- retired:
+  - work package `batch-progress-report` and step `report.batch_progress`;
+  - its `cfg_report` row and 4 `cfg_report_section` rows;
+  - setting `report.batch_progress_path`;
+  - the `cfg_utility` rows of `batchprogressreport` and `lexicalenrich`, at their archive paths;
+  - the settings `lexical.run_max_verses` and `report.lexical_notes_output_pattern`, which were
+    read only by the removed `run`;
+  - the enum groups `note_type` and `resolution_status`, which only the removed Layer 2 briefing
+    pack looked up (their table `verse_lexical_note` is already inactive in `cfg_table`);
+- inserted: the 2 tag settings and the migration's own inactive `cfg_utility` row.
+
+Tests, on `dbsnapshot.copy_db` copies:
+- Migration: dry run 35, apply 35, re-run skipped.
+- The rows land as retired: work package, step, report sections, enums, utilities at their
+  archive paths.
+- Tag prompt text: `guidance_block(tags_for_stage(...))` is identical to the text captured from
+  the old code, for all four stages and an unknown stage.
+- Synthetic: with `ib_observation.tag_guidance` inactive, the prompt build raises instead of
+  sending an empty definition list.
+- Real package builds for cluster M07, no API call, no writes:
+  - Stage 2 subgroup: tag lines present, cross-occurrence tags offered.
+  - Stage 1 word level and relational: tag lines present, cross-occurrence tags not offered.
+- Every touched module imports; no undefined names.
+- Every `cfgquality` check run on the migrated copy:
+  - orphan configs 0;
+  - utilities with no config 4 (the four in the decisions file);
+  - the only other new item is the migration itself before it was archived.
+
+Live: 35 writes applied; a re-run skips. `configmaint.validate` (RUN-20261022_060156_191-CONFIGMAINT,
+`outputs/configs/CONFIG-REPORT-v611-20261022.md`): 4 utilities with no config (was 7), no new
+findings.

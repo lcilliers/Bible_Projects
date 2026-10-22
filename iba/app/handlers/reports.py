@@ -13,10 +13,10 @@ from . import raw as raw_mod
 from .. import report as report_mod
 from .. import validation as validation_mod
 from ..lib import contentindex as contentindex_mod
+from ..lib import behaviour as behaviour_mod
 from ..lib import escalation as esc
 from ..lib import manifest as manifest_mod
 from ..lib import retention as retention_mod
-from ..lib import batchprogressreport
 from ..lib import (cataloguereport, clusterreport, registryreport, schemareport, seedreport,
                    spanreport, strongreport, strongversereport)
 from ..lib import (lexical, passagedebatereport, passagetrack, reportkit, versespanmeaningreport,
@@ -145,6 +145,14 @@ def retention_report(ctx: Ctx) -> Outcome:
     return ok(f"wrote {out}", path=str(out))
 
 
+def behaviour_list(ctx: Ctx) -> Outcome:
+    """behaviour.list: every active behaviour rule, optionally one -Class, to
+    behaviour.list_report_path."""
+    path = pathlib.Path(ctx.cfg.required_setting("behaviour.list_report_path"))
+    out, total = behaviour_mod.write_list_report(ctx.cfg, ctx.db, path, ctx.params.get("Class") or None)
+    return ok(f"{total} active behaviour rule(s) -> {out}", path=str(out))
+
+
 def table_export(ctx: Ctx) -> Outcome:
     """CSV dump of every DATA table, verbatim; cfg_* content belongs to configmaint.report and is
     excluded. -Out/-Table/-Database are plain per-call overrides; -Database resolves through
@@ -200,19 +208,6 @@ def strong_verse_report(ctx: Ctx) -> Outcome:
 def span_analysis_report(ctx: Ctx) -> Outcome:
     path = pathlib.Path(ctx.cfg.required_setting("report.span_analysis_path"))
     out = spanreport.write_report(ctx.cfg, path)
-    return ok(f"wrote {out}", path=str(out))
-
-
-def batch_progress_report(ctx: Ctx) -> Outcome:
-    """Live progress monitor over `run_batch` (#1756), read-only. All three params optional, combined
-    with AND; no filters = every currently running batch."""
-    filter_run_id = ctx.params.get("FilterRunId") or None
-    step = ctx.params.get("Step") or None
-    selector_key = ctx.params.get("SelectorKey") or None
-    lines = batchprogressreport.generate(
-        ctx.db.conn, run_id=filter_run_id, step=step, selector_key=selector_key)
-    path = pathlib.Path(ctx.cfg.required_setting("report.batch_progress_path"))
-    out = reportkit.write_report(ctx.db.conn, "report.batch_progress", path, lines)
     return ok(f"wrote {out}", path=str(out))
 
 

@@ -156,7 +156,7 @@ def assemble_subgroup_packages(ctx, cluster_code: str, subgroup_row: dict,
         "AND active=1 ORDER BY ordinal, rule_key").fetchall()
     rules_text = "\n".join(f"- {r['rule_key']}: {r['rule_text']}" for r in rules)
 
-    tag_values = tags_for_stage("char-reading", [r["value"] for r in conn.execute(
+    tag_values = tags_for_stage(ctx.cfg, "char-reading", [r["value"] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
         "ORDER BY ordinal")])
 
@@ -169,7 +169,7 @@ def assemble_subgroup_packages(ctx, cluster_code: str, subgroup_row: dict,
     def _build(batch_profiles: dict, batch_label: str, batch_key: str, partial_note: str | None
               ) -> dict:
         instructions = _instructions(cluster_code, subgroup_row, rules_text, sorted(member_strongs),
-                                     tag_values, partial_note)
+                                     tag_values, partial_note, cfg=ctx.cfg)
         content = json.dumps({
             "cluster_code": cluster_code, "subgroup_code": subgroup_row["subgroup_code"],
             "label": subgroup_row["label"], "core_description": subgroup_row["core_description"],
@@ -237,7 +237,7 @@ def compute_strong_checks(conn, member_strongs: list[str],
 
 def _instructions(cluster_code: str, subgroup_row: dict, rules_text: str,
                   member_strongs: list[str], tag_values: list[str],
-                  partial_note: str | None = None) -> str:
+                  partial_note: str | None = None, *, cfg) -> str:
     partial_block = f"\n\nIMPORTANT -- PARTIAL OCCURRENCE COVERAGE THIS PASS: {partial_note}\n" \
                     if partial_note else ""
     return (
@@ -264,7 +264,7 @@ def _instructions(cluster_code: str, subgroup_row: dict, rules_text: str,
         f"Prefer `tightly-related`/`no-direct-connection` for a cross-strong-within-subgroup "
         f"comparison (this subgroup's own core task); `surface-gloss-divergence` only for a NEW "
         f"divergence pattern not already covered by this strong's own Stage 1 observations.\n"
-        f"{guidance_block(tag_values)}\n\n"
+        f"{guidance_block(cfg, tag_values)}\n\n"
         f"STRICT BOUNDARIES — do not exceed this task:\n"
         f"- Every `strong` value you write must be one of {member_strongs}.\n"
         f"- Every `verse` value in `occurrences` must be one you were actually given for that "

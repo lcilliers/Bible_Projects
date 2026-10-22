@@ -1,16 +1,11 @@
 """versemeta.py — verse_meta.status maintenance (#1661): sets the status (cfg_enum
 verse_meta_status: exclude/citated/analysed) for a list of verse references and stamps the change.
-The passage anchor is its own column (verse_meta.is_passage_anchor). A standalone utility, not a
-run.py step: a direct researcher-driven maintenance action.
-
-CLI:
-    python -m iba.app.lib.versemeta set-status --references "Gen.1.1,Rom 1:1,Rom.1.2" --status analysed [--db PATH]
+The passage anchor is its own column (verse_meta.is_passage_anchor). Run as step
+verse_meta.set_status (handlers/versemeta.py), behind VerseMeta.ps1.
 """
 from __future__ import annotations
 
-import argparse
 import datetime
-import sys
 
 from .cfg import Cfg
 
@@ -66,41 +61,3 @@ def run_set_status(cfg: Cfg, references: list[str], status: str) -> dict:
         updated.append(v["osisId"])
     conn.commit()
     return {"status": status, "updated": updated, "unchanged": unchanged, "not_found": not_found}
-
-
-def main() -> int:
-    ap = argparse.ArgumentParser(prog="python -m iba.app.lib.versemeta")
-    sub = ap.add_subparsers(dest="cmd", required=True)
-
-    p = sub.add_parser("set-status", help="set verse_meta.status for a comma-delimited list of "
-                                          "verse references")
-    p.add_argument("--references", required=True,
-                    help="comma-delimited verse references, osisId ('Rom.1.1') or display form "
-                         "('Rom 1:1') -- either is accepted per reference")
-    p.add_argument("--status", required=True, help="one of cfg_enum verse_meta_status")
-    p.add_argument("--db", default=None)
-
-    args = ap.parse_args()
-    cfg = Cfg(args.db) if args.db else Cfg()
-    try:
-        if args.cmd == "set-status":
-            result = run_set_status(cfg, args.references.split(","), args.status)
-            print(f"  status={result['status']!r}: {len(result['updated'])} updated, "
-                  f"{len(result['unchanged'])} already set, {len(result['not_found'])} not found")
-            if result["updated"]:
-                print("  updated:", ", ".join(result["updated"]))
-            if result["unchanged"]:
-                print("  already set:", ", ".join(result["unchanged"]))
-            if result["not_found"]:
-                print("  NOT FOUND:", ", ".join(result["not_found"]))
-            return 1 if result["not_found"] else 0
-    except ValueError as exc:
-        print(f"error: {exc}", file=sys.stderr)
-        return 1
-    finally:
-        cfg.close()
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main())

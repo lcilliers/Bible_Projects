@@ -391,7 +391,6 @@ to run it. Each stage refuses a cluster or subgroup not at its required status.
 iba\app\ps\VerseReading.ps1 -ClusterCode M67 [-Live]                    # Stage 1, word level (lexical.meaning)
 iba\app\ps\RelationalReading.ps1 -ClusterCode M67 [-VerseList "2Cor.8.8,Rom.12.8"] [-Live]   # Stage 1, relational half
 iba\app\ps\Run-Stage1Batch.ps1 -ClusterCodes "M35,M51,M61" [-Live -MaxTotalCostUsd 15.00]  # several clusters, unattended
-iba\app\ps\BatchProgress.ps1 [-Step lexical.meaning -SelectorKey M49]   # watch a running batch
 iba\app\ps\ClusterSubgroup.ps1 -ClusterCode M67 [-Live]                 # Stage 2, subgroups (one call per cluster)
 iba\app\ps\CharReading.ps1 -ClusterCode M67 -SubgroupCode <code> [-Live]   # Stage 3, per subgroup
 iba\app\ps\CharAnswer.ps1 -ClusterCode M67 -SubgroupCode <code> [-Live]    # Stage 4, the question battery
