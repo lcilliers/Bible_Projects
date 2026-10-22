@@ -18353,3 +18353,25 @@ side (`.claude/hooks/rules_at_point_of_use.py`; tests H17, H18).
 - USER-GUIDE.md sections 2.1 and 3.2;
 - `.claude/commands/start-project.md` steps 2 to 4 and 6;
 - `.claude/commands/developer-mode.md` step 2.
+
+## 376. Escalation Context reads dot-folder, escaped and outside paths correctly (2026-10-22, escalation #2211)
+
+Researcher, verbatim (chat 2026-10-22): "Fix #2211 (Context drops the dot from .claude/ paths)."
+`iba/app/lib/escalationcontext.py`, one mechanism with four faults, fixed together (rule 38):
+- `extract_paths` stripped a leading dot (`.claude/x` read as `claude/x`); it now strips only
+  trailing punctuation.
+- `resolve` looked a candidate that ran on through prose up by the whole tail; it now uses the last
+  word.
+- `resolve` crashed on a path outside the project (an escalation naming Python's `socket.py`); such a
+  path is now a `missing` finding, "outside the project".
+- `resolve` missed in-project paths stored with doubled separators (JSON-escaped); repeated slashes
+  are collapsed.
+
+**Tests:**
+- synthetic: a dot-folder path with a trailing full stop, a trailing comma, `./`, a prose run, an
+  outside path; each resolves as expected;
+- real: #2209's `.claude/hooks/...` reference now resolves;
+- real: #1758 went from a crash, with 12 false `missing`, to 3 real findings (an outside path, a
+  migration with no live copy, a bare `BUILD.md`).
+
+The full 400-escalation before/after scan was stopped, to save cost.

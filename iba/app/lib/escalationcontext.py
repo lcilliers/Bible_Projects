@@ -92,7 +92,8 @@ def extract_paths(text: str, exts: list[str]) -> list[str]:
                     r"(?![A-Za-z0-9])", re.IGNORECASE)
     out = []
     for m in rx.finditer(text):
-        p = m.group("p").strip().strip(".,:")
+        # trailing punctuation only: a leading dot belongs to the path (.claude/..., #2211)
+        p = m.group("p").strip().rstrip(".,:").lstrip(",:")
         if p.lower().startswith(("http://", "https://")) or len(p) < 4:
             continue
         out.append(p)
@@ -102,7 +103,7 @@ def extract_paths(text: str, exts: list[str]) -> list[str]:
 def resolve(raw: str, root: pathlib.Path, names: _Names) -> dict:
     """{'named', 'resolved', 'status', 'note'} for one raw reference.
     status: current | newer | archived | bare | missing."""
-    p = raw.replace("\\", "/")
+    p = re.sub(r"/{2,}", "/", raw.replace("\\", "/"))   # a JSON-escaped path doubles its separators (#2211)
     rp = str(root).replace("\\", "/").rstrip("/") + "/"
     if p.lower().startswith(rp.lower()):
         p = p[len(rp):]
@@ -112,6 +113,8 @@ def resolve(raw: str, root: pathlib.Path, names: _Names) -> dict:
     cands = [" ".join(words[i:]) for i in range(len(words))]
     bare = "/" not in p
     for cand in cands:
+        if re.match(r"^[A-Za-z]:/|^/", cand):   # outside the project: not resolvable here (#2211)
+            continue
         cpath = root / cand
         parts = pathlib.PurePosixPath(cand).parts
         folder = cpath.parent
@@ -132,8 +135,13 @@ def resolve(raw: str, root: pathlib.Path, names: _Names) -> dict:
                 return dict(named=raw, resolved=rel, status="newer",
                             note="a newer version than the one named exists")
             return dict(named=raw, resolved=rel, status="current", note="")
-    # by file name anywhere (a bare name, or a path whose folder moved)
-    name = pathlib.PurePosixPath(p).name
+    # by file name anywhere (a bare name, or a path whose folder moved); a candidate that ran on
+    # through prose is looked up by its last word (#2211)
+    if re.match(r"^[A-Za-z]:/|^/", p):
+        return dict(named=raw, resolved=None, status="missing",
+                    note="outside the project (rule 83: not an authoritative source)")
+    bare = "/" not in cands[-1]
+    name = pathlib.PurePosixPath(cands[-1]).name
     base, _ = _split_version(pathlib.PurePosixPath(name).stem)
     suffix = pathlib.PurePosixPath(name).suffix.lower()
     hits = names.by_name.get(name.lower(), [])
