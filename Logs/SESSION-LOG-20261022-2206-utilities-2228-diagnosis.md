@@ -73,4 +73,11 @@ Parked:
 
 ## 6. Git
 
-Written after the first commit.
+- branch: main
+- commit: 212c6c92c7e5d8f8436e2bec2d43d68c6f37560b
+- push:
+
+```
+To https://github.com/lcilliers/Bible_Projects.git
+   bcc93ba0..212c6c92  main -> main
+```
