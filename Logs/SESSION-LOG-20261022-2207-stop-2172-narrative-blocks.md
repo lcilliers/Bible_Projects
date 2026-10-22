@@ -93,4 +93,10 @@ Session id: `0995b2cd-9227-4f35-9fbc-af8e49dcb9ff` (Developer Mode). Close repor
 
 ## 6. Git
 
-_(written after the first commit)_
+- Branch: `main`.
+- Session-close commit: `42d268ff19d01e744e98cc4db7aef79290c76d68` ("session 20261022: session close --
+  session log, compliance evidence and dispositions, cluster names in the #2172 analysis, BUILD.md
+  sec 385").
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git  bca3dcff..42d268ff  main -> main`.
+- Earlier commits this session, each pushed: 52a2e2fc, 52f9f490, a694b60c, 028b0f91, 1a706768,
+  3174757f, bca3dcff.
