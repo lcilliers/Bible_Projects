@@ -104,3 +104,10 @@ Session id: `ac12e7c5-9668-4a70-ac93-a5627fd602c4` (Developer Mode). Close repor
 - **#2177, Claude:** the reset parent stays open until every element is done.
 
 ## 6. Git
+
+- branch: `main`
+- session-close commit: `18b19149f4ed229fff00f5d7f4fb061f58966919` ("session 20261022: session
+  close -- session log, compliance evidence and dispositions, ...")
+- push output: `To https://github.com/lcilliers/Bible_Projects.git   6ad8ae5e..18b19149  main -> main`
+- Session-Close.ps1 before the commit: RUN-20261022_051334_046-SESSION-CLOSE, 0 open findings
+  (`iba/app/reports/session-close-v156-20261022.md`)
