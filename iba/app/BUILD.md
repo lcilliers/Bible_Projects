@@ -18654,3 +18654,61 @@ Tests, on `dbsnapshot.copy_db` copies:
 Live: 35 writes applied; a re-run skips. `configmaint.validate` (RUN-20261022_060156_191-CONFIGMAINT,
 `outputs/configs/CONFIG-REPORT-v611-20261022.md`): 4 utilities with no config (was 7), no new
 findings.
+
+## 384. The narrative's text in the register: chapters render from blocks (2026-10-22, escalation #2172 step A)
+
+Session 0995b2cd, Developer Mode. This is build step A of the reading process design v2
+(`outputs/escalation/2172-reading-process-design-v2-20261022.md`, approved with option B: "sounds
+good to proceed with the build"). The narrative is kept in iba.db with its claims. The chapter files
+are rendered from it, and from step 6 of the design on they are only exports.
+
+**Schema:** `narrative_section.block_text` (TEXT, registered in `cfg_column`). It holds a section's
+block verbatim: its heading line and every line up to the next heading. The opening row holds the
+title line and the opening. The block includes its heading line so that an empty body and a body of
+one blank line render differently, and the rebuild stays exact.
+
+**Code (`iba/app/lib/narrativeregister.py`):**
+- `split_blocks(text)` cuts a chapter into blocks aligned with `parse_chapter`'s sections, and
+  `"\n".join(blocks)` gives back the text exactly.
+- `render_chapter(conn, chapter_id)` rebuilds a chapter from its current blocks in ordinal order.
+- `_sync_bodies` stores the blocks after `_sync_sections`, and refuses unless the database then
+  renders the file exactly. `Record` (every chapter of a weave) and `AddChapter` call it, so a
+  recorded weave keeps the blocks current.
+- `check` reports a chapter whose file differs from the database, with the first differing line.
+- **Defect fixed at the shared method:** sections were matched by heading alone, so a heading
+  repeated under another parent got no row.
+  - The case: Ch 10.1 has "The words" under Fear and under Anxiety. The register held 24 sections
+    for the file's 25, and Check did not report it.
+  - Now `_section_row_for` prefers the row with the same parent and never matches a row twice.
+  - `_sync_sections` returns each section's row id, and the passage placement in `Record` and
+    `_sync_citations` use those ids instead of a heading lookup (`_section_ids`).
+
+**Migration:** `iba/app/migration/archive/narrative_blocks_2172_v1_20261022.py`, run
+`DEVMODE-2172-NARRATIVE-BLOCKS-20261022`:
+- adds the column and its `cfg_column` row;
+- aligns every chapter's sections through `_sync_sections` (Ch 10.1: 24 to 25; no passage needed
+  moving);
+- stores the blocks, and refuses unless all 35 chapters with a file render exactly.
+
+USER-GUIDE.md section 8.1 describes the blocks.
+
+Tests, on `dbsnapshot.copy_db` copies (chapter files read live; any file written went to a scratch
+chapter folder, with the copy's `narrative.copy_source_dir` pointed there):
+- Migration: dry run writes nothing; apply: 35 chapters render exactly; re-run unchanged.
+- Ch 10.1: two "The words" rows, ordinals 6 and 12, parents Fear and Anxiety; 25 current
+  sections; no current section without a block.
+- Check on the migrated copy: the same 46 findings as live (claims no passage tells); no chapter
+  differs.
+- Synthetic: a line planted in the Anxiety block is reported as "Ch 10.1 ... differs ... at line
+  156".
+- A real weave through `Record`: 10.1 v24, with a sentence added under the second "The words". It
+  was recorded with "nothing unaccounted for", and the database renders v24 exactly; Check then
+  shows no difference.
+- `_section_ids` maps the two headings to two distinct rows.
+- No unregistered column.
+
+Live: applied; a re-run changes nothing. `Narrative-Register.ps1 -Action Check`
+(RUN-20261022_073443_522-NARRATIVEREG): the same 46 findings, no chapter differs.
+`configmaint.validate` (RUN-20261022_073454_538-CONFIGMAINT): the same 4 utility and 13 rule
+findings. Its parked advisory tier wrote a version on #2207 only because the count changed against
+its last snapshot.

@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-22T05:02:14Z |
+| generated_at | 2026-10-22T06:35:17Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -138,7 +138,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**945** registered module(s) — **492** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **828** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**946** registered module(s) — **493** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **829** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -663,6 +663,7 @@ _(none)_
 | meaning_source_2207_v1_20261022 | iba/app/migration/archive/meaning_source_2207_v1_20261022.py | ONE-OFF migration -- escalation #2207: meaning_source sources and aliases, through configmaint.apply_logged under run_id DEVMODE-2207-MEANING-SOURCE-20261022. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | memory_rules_to_config_v1_20261021 | iba/app/migration/archive/memory_rules_to_config_v1_20261021.py | ONE-OFF migration -- escalation #2184: moves the live rules held only in Claude memory into config, every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2184-MEMORY-RULES-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | migration | iba/app/migration/archive/add_escalation_needs_followup_column_20260830.py | ONE-OFF: adds escalation.needs_claude_followup / escalation_history.needs_claude_followup (INTEGER, default 0). Idempotent. escalation #1075. |  |  |  |
+| narrative_blocks_2172_v1_20261022 | iba/app/migration/archive/narrative_blocks_2172_v1_20261022.py | ONE-OFF migration -- escalation #2172 step A: narrative_section.block_text, each chapter's blocks from its current file, run_id DEVMODE-2172-NARRATIVE-BLOCKS-20261022. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | narrative_chapter_table_config_v1_20261018 | iba/app/migration/archive/narrative_chapter_table_config_v1_20261018.py | ONE-OFF migration -- escalation #2155: the chapter table as the authority for the chapters (kind/purpose/purpose_ref columns, enum, setting, add_chapter step, grants, behaviour rule, the approved purposes, Structure log entries), every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2155-CHAPTER-20261018. inactive=1 once applied. |  |  |  |
 | narrative_claim_register_config_v1_20261013 | iba/app/migration/archive/narrative_claim_register_config_v1_20261013.py | ONE-OFF migration -- escalation #2110, build steps 1 and 2: config (cfg_trigger new; enums, settings, behaviour rule, work package narrative-register, steps, grants, on_fail, reports, utilities) and schema (11 narrative_* tables, indexes, 19 history triggers, all from config through lib/db.py), every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2110-CONFIG-20261013. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | narrative_claim_register_import_v1_20261013 | iba/app/migration/archive/narrative_claim_register_import_v1_20261013.py | ONE-OFF import -- escalation #2110, build steps 6 and 7 (spec sec6): --preview reads the claim register v1-v51 (R1), its 53 dated sections (R2), the narrative index (R3), the imputed-readings audit (R5) and digest sec4 (R6), plus the current chapter headings and citations, and writes the preview JSON/md and the review list beside the specification -- no DB write. --apply --preview-file imports the APPROVED preview as it stands (writer migration), once; it refuses a second run. Applied 2026-10-13 (researcher: "process the import"): 81 claims, 129 updates, 35 chapters, 347 sections, 6,267 citations. inactive=1 once applied. |  |  |  |
@@ -3165,6 +3166,7 @@ _one row per section heading in a chapter_ — One row per section heading in a 
 | renamed_from_id | INTEGER |  |  |  | narrative_section.id | when a heading is renamed, the old row | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
 | created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| block_text | TEXT |  |  |  |  | the section's block of the chapter, verbatim: its heading line and every line up to the next heading (the opening row: the title line and the opening). The chapters render from these blocks in ordinal order (narrativeregister.render_chapter); NULL on a row that is no longer current | escalation #2172, reading process design v2 (option B) |
 
 ### narrative_claim
 _one row per claim_ — The register: one row per claim. A claim is a statement derived from sources (verses, later science) that goes beyond their mere text, held in its own plain wording. A quotation is not a claim. escalation #2110, spec sec3.3 (researcher, round 3)

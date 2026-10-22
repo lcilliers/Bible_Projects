@@ -430,6 +430,50 @@ def parse_chapter(text: str) -> tuple[str, list[Section], list[Passage]]:
     return title, sections, passages
 
 
+_HEADING_RX = re.compile(r"^(#{1,4})\s+(.*\S)\s*$")
+
+
+def split_blocks(text: str) -> list[str]:
+    """The chapter as blocks, verbatim, aligned with parse_chapter's sections: block 0 is the
+    opening (the title line and everything before the first section heading); block i is section
+    i's heading line and every line up to the next heading. "\\n".join(blocks) == text (#2172)."""
+    blocks: list[list[str]] = [[]]
+    title = False
+    for line in text.split("\n"):
+        h = _HEADING_RX.match(line)
+        if h and not (len(h.group(1)) == 1 and not title):
+            blocks.append([])
+        elif h:
+            title = True
+        blocks[-1].append(line)
+    return ["\n".join(b) for b in blocks]
+
+
+def render_chapter(conn, chapter_id: int) -> str:
+    """The chapter as the database holds it: its current blocks in section order."""
+    rows = conn.execute("SELECT block_text FROM narrative_section WHERE chapter_id=? AND "
+                        "last_version IS NULL ORDER BY ordinal", (chapter_id,)).fetchall()
+    return "\n".join(r[0] or "" for r in rows)
+
+
+def _first_difference(a: str, b: str) -> int:
+    la, lb = a.split("\n"), b.split("\n")
+    return next((i + 1 for i, (x, y) in enumerate(zip(la, lb)) if x != y), min(len(la), len(lb)) + 1)
+
+
+def _sync_bodies(w: "Writer", ch, text: str, ids: dict[int, int]) -> None:
+    """Each current section row gets its block's text from the chapter file (`ids` from
+    _sync_sections). Refused unless the database then renders the file exactly."""
+    for i, block in enumerate(split_blocks(text)):
+        if i not in ids:
+            raise Refused(f"Ch {ch['chapter_no']}: block {i} has no section row")
+        w.update("narrative_section", {"id": ids[i]}, {"block_text": block})
+    rendered = render_chapter(w.conn, ch["id"])
+    if rendered != text:
+        raise Refused(f"Ch {ch['chapter_no']}: the database text would differ from the file at line "
+                      f"{_first_difference(rendered, text)}")
+
+
 def chapter_dir(cfg) -> pathlib.Path:
     return PROJECT_ROOT / cfg.setting("narrative.copy_source_dir")
 
@@ -772,6 +816,7 @@ def add_chapter(cfg, w: Writer, p: dict) -> str:
     cur = p.get("CurrentFile")
     sections: list[Section] = []
     version = None
+    text = ""
     if cur:
         path = chapter_dir(cfg) / cur
         if not path.is_file():
@@ -780,7 +825,8 @@ def add_chapter(cfg, w: Writer, p: dict) -> str:
         if not fv:
             raise Refused(f"-CurrentFile {cur!r} is not named <stem>-vN-YYYYMMDD.md")
         stem, version = fv
-        _, sections, _ = parse_chapter(path.read_text(encoding="utf-8"))
+        text = path.read_text(encoding="utf-8")
+        _, sections, _ = parse_chapter(text)
     elif not no_file:
         raise Refused(f"-CurrentFile is required for a {kind!r} chapter (only "
                       f"{cfg.required_setting('narrative.chapter_kinds_without_file')} have no file)")
@@ -799,7 +845,7 @@ def add_chapter(cfg, w: Writer, p: dict) -> str:
             "replaces_original": p.get("ReplacesOriginal") or "—"})
         ch = conn.execute("SELECT * FROM narrative_chapter WHERE id=?", (cid,)).fetchone()
         if sections:
-            _sync_sections(conn, w, ch, sections, version)
+            _sync_bodies(w, ch, text, _sync_sections(conn, w, ch, sections, version))
         _structure_entry(w, f"Chapter {no} {p['Title']} added",
                          f"New chapter {no} {p['Title']} ({kind}; reading order {order}, {where}"
                          f"{'; later chapters +1' if moved else ''}). Purpose: {p['Purpose']}",
@@ -1004,13 +1050,15 @@ def record(cfg, w: Writer, p: dict) -> str:
         declared: set[int] = set()            # passages the JSON names as moved or removed
         parsed = {}
         for ch, c, f in chapters:            # every chapter's sections first: a passage may move into one
-            _, sections, passages = parse_chapter(f.read_text(encoding="utf-8"))
-            _sync_sections(conn, w, ch, sections, c["to_version"],
-                           {r["to"]: r["from"] for r in c.get("renames", [])})
-            parsed[ch["chapter_no"]] = (ch, sections, passages)
+            text = f.read_text(encoding="utf-8")
+            _, sections, passages = parse_chapter(text)
+            ids = _sync_sections(conn, w, ch, sections, c["to_version"],
+                                 {r["to"]: r["from"] for r in c.get("renames", [])})
+            _sync_bodies(w, ch, text, ids)
+            parsed[ch["chapter_no"]] = (ch, sections, passages, ids)
         for ch, c, f in chapters:
             old_file = ch["current_file"]
-            _, sections, passages = parsed[ch["chapter_no"]]
+            _, sections, passages, ids = parsed[ch["chapter_no"]]
             moved = {plain(x["anchor"]).lower(): x for x in c.get("passages", [])}
             for prow in conn.execute("SELECT * FROM narrative_passage WHERE chapter_id=? AND "
                                      "last_version IS NULL", (ch["id"],)).fetchall():
@@ -1024,14 +1072,14 @@ def record(cfg, w: Writer, p: dict) -> str:
                     declared.add(prow["id"])
                     continue
                 if entry and entry.get("to_chapter"):     # a split or merge: the passage keeps its row
-                    tch, tsecs, tps = parsed[_chapter(conn, entry["to_chapter"])["chapter_no"]]
+                    tch, tsecs, tps, tids = parsed[_chapter(conn, entry["to_chapter"])["chapter_no"]]
                     hit = find_passage(tps, look)
                     if len(hit) != 1:
                         raise Refused(f"passage '{entry['anchor']}' is not found once in Ch {tch['chapter_no']}'s "
                                       f"new file ({len(hit)} matches)")
                     ps = hit[0]
                     w.update("narrative_passage", {"id": prow["id"]}, {
-                        "chapter_id": tch["id"], "section_id": _section_row_for(conn, tch["id"], tsecs[ps.section].heading),
+                        "chapter_id": tch["id"], "section_id": tids.get(ps.section),
                         "passage_text": ps.text, "anchor_text": anchor_of(ps.text), "ordinal": ps.ordinal})
                     changed_passages.add(prow["id"])
                     declared.add(prow["id"])
@@ -1049,7 +1097,7 @@ def record(cfg, w: Writer, p: dict) -> str:
                 new_anchor = anchor_of(ps.text)
                 if new_anchor != prow["anchor_text"]:
                     sets["anchor_text"] = new_anchor
-                sec_row = _section_row_for(conn, ch["id"], sections[ps.section].heading)
+                sec_row = ids.get(ps.section)
                 if sec_row and sec_row != prow["section_id"]:
                     sets["section_id"] = sec_row
                 if sets:
@@ -1130,25 +1178,44 @@ def record(cfg, w: Writer, p: dict) -> str:
     return "\n  ".join([f"update {uid} recorded: {up['title']}"] + (findings or ["nothing unaccounted for"]))
 
 
-def _section_row_for(conn, chapter_id: int, heading: str) -> int | None:
-    r = conn.execute("SELECT id FROM narrative_section WHERE chapter_id=? AND heading=? AND "
-                     "last_version IS NULL", (chapter_id, heading)).fetchone()
-    return r[0] if r else None
+def _section_row_for(conn, chapter_id: int, heading: str, parent_id: int | None = None,
+                     used: set[int] | frozenset = frozenset()) -> int | None:
+    """The current row for a heading. A heading may repeat in a chapter under different parents
+    (10.1: 'The words' under Fear and under Anxiety): the row with the same parent is preferred, and
+    a row already matched (`used`) is never matched twice (#2172)."""
+    for r in conn.execute("SELECT id, parent_section_id FROM narrative_section WHERE chapter_id=? AND "
+                          "heading=? AND last_version IS NULL ORDER BY (parent_section_id IS ?) DESC, "
+                          "ordinal", (chapter_id, heading, parent_id)).fetchall():
+        if r[0] not in used:
+            return r[0]
+    return None
+
+
+def _section_ids(conn, ch, sections: list[Section]) -> dict[int, int]:
+    """{index in `sections`: current row id}, matched as `_sync_sections` matches; read-only."""
+    ids: dict[int, int] = {}
+    for i, s in enumerate(sections):
+        parent = ids.get(s.parent) if s.parent is not None else None
+        sid = _section_row_for(conn, ch["id"], s.heading, parent, set(ids.values()))
+        if sid is not None:
+            ids[i] = sid
+    return ids
 
 
 def _sync_sections(conn, w: Writer, ch, sections: list[Section], version: int,
-                   renames: dict[str, str] | None = None) -> None:
+                   renames: dict[str, str] | None = None) -> dict[int, int]:
     """Headings now in the file get a row (first_version = version) if they have none; current rows
     whose heading is gone get last_version = version - 1. `renames` {new heading: old heading}: the
-    new row carries renamed_from_id, and the passages under the old row follow it to the new one."""
+    new row carries renamed_from_id, and the passages under the old row follow it to the new one.
+    Returns {index in `sections`: row id}."""
     ids: dict[int, int] = {}
     now = set()
     renames = renames or {}
     for i, s in enumerate(sections):
-        sid = _section_row_for(conn, ch["id"], s.heading)
         parent = ids.get(s.parent) if s.parent is not None else None
+        sid = _section_row_for(conn, ch["id"], s.heading, parent, now)
         if sid is None:
-            old = _section_row_for(conn, ch["id"], renames[s.heading]) if s.heading in renames else None
+            old = _section_row_for(conn, ch["id"], renames[s.heading], parent, now) if s.heading in renames else None
             if s.heading in renames and old is None:
                 raise Refused(f"chapter {ch['chapter_no']}: rename from {renames[s.heading]!r} -- no "
                               f"current section has that heading")
@@ -1168,6 +1235,7 @@ def _sync_sections(conn, w: Writer, ch, sections: list[Section], version: int,
                           (ch["id"],)).fetchall():
         if r[0] not in now:
             w.update("narrative_section", {"id": r[0]}, {"last_version": version - 1})
+    return ids
 
 
 def _sync_citations(cfg, w: Writer, vx: VerseIndex, ch, sections, passages, from_v, to_v) -> None:
@@ -1176,9 +1244,10 @@ def _sync_citations(cfg, w: Writer, vx: VerseIndex, ch, sections, passages, from
     conn = cfg.conn
     want: dict[tuple, dict] = {}
     where: dict[tuple, str] = {}
+    ids = _section_ids(conn, ch, sections)
     for ps in passages:
         heading = sections[ps.section].heading
-        sid = _section_row_for(conn, ch["id"], heading)
+        sid = ids.get(ps.section)
         prow = conn.execute("SELECT id FROM narrative_passage WHERE chapter_id=? AND anchor_text=? AND "
                             "last_version IS NULL", (ch["id"], anchor_of(ps.text))).fetchone()
         for r in parse_refs(ps.text, vx):
@@ -1348,7 +1417,12 @@ def check(cfg, p: dict) -> tuple[list[str], list[str]]:
         if newer and newer[-1][1] != ch["current_file"]:
             problems.append(f"Ch {ch['chapter_no']}: a newer file is on disk ({newer[-1][1]}) than the "
                             f"register's current file ({ch['current_file']}) -- record the weave")
-        _, sections, passages = parse_chapter(path.read_text(encoding="utf-8"))
+        text = path.read_text(encoding="utf-8")
+        rendered = render_chapter(conn, ch["id"])
+        if rendered != text:
+            problems.append(f"Ch {ch['chapter_no']}: the database text differs from {ch['current_file']} "
+                            f"at line {_first_difference(rendered, text)} -- record the weave")
+        _, sections, passages = parse_chapter(text)
         files_text[ch["id"]] = passages
         headings = {s.heading for s in sections}
         for s in conn.execute("SELECT heading FROM narrative_section WHERE chapter_id=? AND last_version IS NULL",

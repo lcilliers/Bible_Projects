@@ -462,8 +462,13 @@ iba\app\ps\Narrative-Register.ps1 -Action QuoteCheck -File <chapter.md> [-Agains
   per run. `Check` lists every current one.
 - **Direct edits in the database** are logged as `direct edit`. Run `Export` and then `Check`
   afterwards.
-- **`narrative_passage`** holds only passages that tell a claim. A coverage scan must split the
-  chapter files (`parse_chapter`) and match rows by `opens_with`.
+- **The chapter text is in the database:** each current `narrative_section` row holds its block of
+  the chapter verbatim (`block_text`: the heading line and everything up to the next heading), and
+  the chapter renders from its blocks (`render_chapter`). `Record` and `AddChapter` store the
+  blocks. `Check` reports any chapter whose file differs from the database, with the line. A
+  heading may repeat in a chapter under a different parent.
+- **`narrative_passage`** holds only passages that tell a claim. A coverage scan reads the blocks
+  (`split_blocks` / `parse_chapter` on `render_chapter`) and matches rows by `opens_with`.
 
 ### 8.2 Copying the narrative to learning4comfort
 
