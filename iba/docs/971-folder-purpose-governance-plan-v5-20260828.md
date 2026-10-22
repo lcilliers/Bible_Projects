@@ -16,7 +16,7 @@
    side, not IBA. The folder census's own 14th pattern, never addressed.
 2. #736's own unbuilt gap: a project-wide `filing` `cfg_behaviour_class` + `cfg_behaviour_rule` rows +
    a shared utility generalising `oneoff_path()` + a `configmaint.validate` naming-drift check — fully
-   spec'd already in [`file-naming-and-location-governance-plan-v1-20260826.md`](file-naming-and-location-governance-plan-v1-20260826.md)
+   spec'd already in [`863-file-naming-and-location-governance-plan-v1-20260826.md`](863-file-naming-and-location-governance-plan-v1-20260826.md)
    §2–§3 (escalation #863), approved in scope but never built.
 3. The researcher's own framing this round: a mechanism — "likely a `cfg_folder_purpose` table naming
    every live project folder's intended purpose, **paired with a utility that maps files against

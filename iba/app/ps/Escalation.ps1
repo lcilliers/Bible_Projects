@@ -41,7 +41,7 @@
         and similar) no longer escalates at all — logged by the engine, errors only (`BUILD.md`
         §153) — word-scoped -Action Answer is RETIRED, not replaced.
 
-    **Decision-vs-defect axis, 2026-08-22** (`iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md`,
+    **Decision-vs-defect axis, 2026-08-22** (`iba/docs/798-escalation-decision-vs-defect-axis-proposal-v5-20260822.md`,
     escalation #798/#799 — `cfg_behaviour_rule` 'decision-points-are-terminal-not-inline'): every
     item now carries `resolution_kind` — `decision_required` (a genuine judgement call; the ONLY
     thing this vocabulary answers) or `self_correctable` (a code/config execution slip against an

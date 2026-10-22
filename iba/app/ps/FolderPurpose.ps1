@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
     The `folder_purpose` table editor and its two automated methods — escalation #971
-    (`iba/docs/folder-purpose-governance-plan-v5-20260828.md`). One row per folder in the project
+    (`iba/docs/971-folder-purpose-governance-plan-v5-20260828.md`). One row per folder in the project
     tree, giving the researcher visibility into what every folder is for and its current status.
 
 .DESCRIPTION

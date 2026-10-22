@@ -1,7 +1,7 @@
 # Lexical inner-being reading checklist — v1
 
 > Escalation #1378/#1379. Extracted from the Dan 1:8 worked example
-> ([`1379-lexical-to-finding-worked-example-v1-20260901.md`](1379-lexical-to-finding-worked-example-v1-20260901.md)) —
+> ([`1378-lexical-to-finding-worked-example-v1-20260901.md`](1378-lexical-to-finding-worked-example-v1-20260901.md)) —
 > every item below corresponds to a real miss-and-correction in that session, not an invented step.
 > This is a checklist candidate, not yet adopted as a governed procedure.
 

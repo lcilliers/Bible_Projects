@@ -1,5 +1,5 @@
 """add_resolution_kind_column_v1_20260822.py — ONE-OFF, idempotent. Stage 2 (schema half) of the
-build approved on escalation #798 (design: iba/docs/escalation-decision-vs-defect-axis-proposal-
+build approved on escalation #798 (design: iba/docs/798-escalation-decision-vs-defect-axis-proposal-
 v5-20260822.md), tracked on #799. Adds the `resolution_kind` column itself — the design's own text
 implies it (a value "required at Raise" must have somewhere to live) but Stage 1's migration only
 built the config side (enum + requirement row); the column was a gap in that pass, closed here

@@ -1,6 +1,6 @@
 # Characteristic-related tables — full inventory across both databases
 
-> Escalation #1007 (adjacent). v2 — supersedes
+> Escalation #1376 (#1007 adjacent). v2 — supersedes
 > [`1376-characteristic-tables-cross-db-inventory-v1-20260901.md`](archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md)
 > (archived). Adds: the programme's own definition of a characteristic, an expanding terminology
 > glossary, the real Model A cluster-assignment algorithm (traced to the actual code and its

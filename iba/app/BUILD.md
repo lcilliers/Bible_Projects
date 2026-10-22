@@ -18461,3 +18461,40 @@ Live: no orphan configs remain (4 before #2207).
   the transcript, so the disposition names the point-of-use fix (#2207 part 3).
 - `iba/app/USER-GUIDE.md`, Prose section: the patch-apply line named `scripts/apply_session_patch.py`,
   retired in sec 377. It now points to #2212 (how a prose patch is applied is open).
+
+## 380. Escalation files carry their id; repeated-failure check counts each failure once (2026-10-22, escalation #2207)
+
+Session d74187d6, standard mode. The researcher chose Developer Mode for the rest of the #2207
+backlog, because every remaining item writes cfg rows (#2207 v14, v15).
+
+**Renames** (`find_escalation_file_naming_violations`, #2207 part 2), by `git mv`:
+- `Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md` becomes `1378-...`: its
+  header names #1378 (Lexical-to-finding pipeline).
+- `iba/docs/`: `795-escalation-type-routing-proposal-v1-20260822.md`,
+  `798-escalation-decision-vs-defect-axis-proposal-v5-20260822.md`,
+  `863-file-naming-and-location-governance-plan-v1-20260826.md`,
+  `890-prose-add-edit-rules-proposal-v1-20260826.md`,
+  `971-folder-purpose-governance-plan-v5-20260828.md`.
+- `Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md` keeps its name.
+  Its header now names #1376, its own item. Before, it named only #1007, as an adjacent item.
+
+Live references were updated in `iba/app/ps/Escalation.ps1`, `iba/app/ps/FolderPurpose.ps1`,
+`iba/app/migration/add_resolution_kind_column_v1_20260822.py`,
+`iba/app/migration/bootstrap_decision_vs_defect_axis_v1_20260822.py`, the 971 plan and
+`Workflow/Catalogue/1379-lexical-inner-being-checklist-v1-20260901.md`. History files are unchanged.
+
+**Not done:** 7 cfg rows still name the old paths: `cfg_table folder_purpose.use`,
+`cfg_behaviour_class filing.authoritative_doc`, and `cfg_behaviour_rule` 56 to 60 `source`. They go
+in the Developer Mode migration (#2207 v15).
+
+**Code:** `iba/app/lib/sessionwindow.py` `failed_calls` (SC16, #2207 part 3) had two faults:
+- A tool result that appears twice in the transcript is now counted once, by `tool_use_id`. One
+  failed `sqlite3` call had been counted as a repeat.
+- A Python traceback's kind is now its exception line (`TypeError: ...`), not the shared
+  `Traceback (most recent call last):` header. Before, two different errors were reported as one
+  repeated mistake.
+
+Tests:
+- Real transcript d74187d6: 4 failures, no repeat; before the fix, 2 false repeats.
+- Synthetic transcript: a duplicated result is counted once; a real repeat of the same exception is
+  still a repeat; a different exception is a different kind.

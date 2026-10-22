@@ -1,5 +1,5 @@
 """bootstrap_decision_vs_defect_axis_v1_20260822.py — ONE-OFF, idempotent. Stage 1 of the build
-approved on escalation #798 (design: iba/docs/escalation-decision-vs-defect-axis-proposal-v5-
+approved on escalation #798 (design: iba/docs/798-escalation-decision-vs-defect-axis-proposal-v5-
 20260822.md, read with v4 — v5 supersedes v1-v3 in full, v4's §1/§2/§5/§6 are the parts v5 left
 unchanged). Build tracked on escalation #799.
 

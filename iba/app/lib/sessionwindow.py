@@ -155,7 +155,7 @@ def failed_calls(transcript: pathlib.Path) -> list[dict]:
     operation, kind, text}]. `kind` is the error's first line with digits blanked, so the same
     mistake made twice has the same kind. The point-of-use hook's rule display is left out: it is a
     deliberate first-use refusal, not a failure."""
-    calls, out = {}, []
+    calls, out, seen = {}, [], set()
     with transcript.open("r", encoding="utf-8", errors="replace") as fh:
         for line in fh:
             try:
@@ -173,6 +173,9 @@ def failed_calls(transcript: pathlib.Path) -> list[dict]:
                 if c.get("type") == "tool_use":
                     calls[c.get("id")] = (c.get("name") or "", c.get("input") or {})
                 elif c.get("type") == "tool_result" and c.get("is_error"):
+                    if c.get("tool_use_id") in seen:     # the transcript can hold a result twice
+                        continue
+                    seen.add(c.get("tool_use_id"))
                     body = c.get("content")
                     if isinstance(body, list):
                         body = "\n".join(x.get("text", "") for x in body if isinstance(x, dict))
@@ -180,8 +183,12 @@ def failed_calls(transcript: pathlib.Path) -> list[dict]:
                     if _RULES_SHOWN in body:
                         continue
                     tool, inp = calls.get(c.get("tool_use_id"), ("", {}))
-                    first = next((ln.strip() for ln in body.splitlines() if ln.strip()
-                                  and not re.fullmatch(r"Exit code \d+", ln.strip())), "")
+                    lines = [ln.strip() for ln in body.splitlines() if ln.strip()
+                             and not re.fullmatch(r"Exit code \d+", ln.strip())]
+                    # a Python traceback is named by its exception line, not its common header
+                    exc = [ln for ln in lines if re.match(r"[\w.]+(Error|Exception|Exit)\b", ln)]
+                    first = (exc or lines)[-1] if lines and lines[0].startswith("Traceback") else \
+                        (lines[0] if lines else "")
                     first = re.sub(r"<[^>]+>", "", first)
                     out.append(dict(at=e.get("timestamp") or "", tool=tool,
                                     operation=_operation(tool, inp),
