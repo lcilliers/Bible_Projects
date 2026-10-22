@@ -70,3 +70,7 @@ Claude's self-correctable fixes:
   study re-opens.
 
 ## 6. Git
+
+- Branch: `main`.
+- Commit: `240084ce85d53c81af2b35e9f0e4d4af19ac4478` ("session 20261022: #2219 open-item handling in strand reading -- ...").
+- Push: `To https://github.com/lcilliers/Bible_Projects.git` / `17a8c612..240084ce  main -> main`.
