@@ -50,3 +50,7 @@ cfg rows, so the researcher chose Developer Mode for the rest of the work.
   `cfg_behaviour_rule` 56 to 60 `source`), then the backlog in #2207 v14.
 
 ## 6. Git
+
+- Branch: `main`
+- Commit: `316cfe3dfb638fa00c1e1140f5ebf13ac5ed5d96`
+- Push: `10d74a34..316cfe3d  main -> main` (https://github.com/lcilliers/Bible_Projects.git)
