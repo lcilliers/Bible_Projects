@@ -71,4 +71,7 @@ Claude's self-correctable fixes, made and closed:
 
 ## 6. Git
 
-_(written after the first commit)_
+- Branch: `main`
+- Commit: `a54fe1ab` — "session 20261022: #2172 reading process built -- Strand-Reading.ps1 (define, context, record, gather, map, derive, rewrite, account), claims told per block, ..."
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `55975aa7..a54fe1ab  main -> main`
+- Not followed this session: rule 26 (commits as units of work complete). Everything was committed once, at close.
