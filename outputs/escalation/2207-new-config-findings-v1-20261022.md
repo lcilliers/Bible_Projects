@@ -99,12 +99,14 @@ recommends yes. It is a defect in the check, fixed once, and it clears 5 false f
 
 | Item | Approve / reject / revise | Comment |
 |---|---|---|
-| A: the naming check skips archive/ |  |  |
-| B: archive Untitled-1; rename Untitled-2 |  |  |
-| C: "no control" counts buildable and deferred only |  |  |
-| D1: retire apply_session_patch (your 2026-08-18 ruling) |  |  |
-| D2: new task for backup_db_to_nas constants |  |  |
-| D4, D11: exempt |  |  |
-| D5, D6: retire with their retired steps |  |  |
-| D7: check literals, then exempt |  |  |
-| E: the check counts SQL reads of cfg tables |  |  |
+| A: the naming check skips archive/ | approve | no need to fix archive files  |
+| B: archive Untitled-1; rename Untitled-2 | approve | no longer required  |
+| C: "no control" counts buildable and deferred only | revise | partially_enforce is an indication that the controls have not been completed, and the count tell you to fix something |
+| D1: retire apply_session_patch (your 2026-08-18 ruling) | revise | utilities without configs are a violation of a rule that utilities must be governed by configs, therefore the count must lead to a fix |
+| D2: new task for backup_db_to_nas constants | revise |  i guess the routine is not working correctly, so it need fixing, not just counting |
+| D4, D11: exempt | revise | the whole plan for the was to have a method to monitor long running batches, it has never worked satisfactorily so scrap it |
+| D5, D6: retire with their retired steps | approve | sadly another idea that never worked |
+| D7: check literals, then exempt | revise | not sure which literals you want to check, is this a another system wide check |
+| E: the check counts SQL reads of cfg tables | revise | what is the purpose of this count, does it serve any value |
+
+researcher comment the counts are senseless if it does not lead to any action. I don't need to have reems of stats that only report things that have no real consequence for quality, control, compliance and performance and you do not have to count things over and over again if there are no issues.  Device a method to trap the your errors and stop counting senseless to show me you are doing a good job.
