@@ -1,6 +1,6 @@
 # Narrative claim register
 
-*Published from iba.db on 2026-10-19. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-22. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 ## Chapters
 
@@ -212,14 +212,12 @@ File `02-life-breath-and-death-v29-20261019.md` (v29) · draft · chapter
 **Life set before a person**
 
 - **C-118** Life and death are set before a person to choose; life is chosen by doing, seeking and holding on (in full)
-- **C-119** Long days are promised with some commands, and the Preacher sets the righteous who perish beside them; both are stated (in part)
 - **C-119** Long days are promised with some commands, and the Preacher sets the righteous who perish beside them; both are stated (in full)
-- **C-118** Life and death are set before a person to choose; life is chosen by doing, seeking and holding on (in part)
 - **C-120** Wisdom marks where the way to death ends, and some of what kills a person is named from within (in full)
-- **C-123** The same message is death to one and life to another (in full)
 - **C-121** God has no pleasure in anyone's death and calls for turning; the turning is a considered act that reaches back over the past, and trust can lean the wrong way (in full)
-- **C-124** Another's death can be laid at a person's hand (in full) — also told in: 10.10 *(opening)* (pointer)
 - **C-122** Life can be wrongly kept or taken by lying words (in full)
+- **C-123** The same message is death to one and life to another (in full)
+- **C-124** Another's death can be laid at a person's hand (in full) — also told in: 10.10 *(opening)* (pointer)
 
 **Living before God**
 
@@ -236,7 +234,6 @@ File `02-life-breath-and-death-v29-20261019.md` (v29) · draft · chapter
 
 - **C-82** Death is spoken of as the breath taken away (in full)
 - **C-83** Death comes to everyone, and falls alike on those the world would set apart (in full)
-- **C-83** Death comes to everyone, and falls alike on those the world would set apart (in part: Death falls alike on those the world would set apart)
 - **C-84** The same death is met in different ways, and nothing goes with the dead (in full)
 - **C-137** The law weighs a life by what it has begun, and names what a death can leave unfinished (in full)
 - **C-138** What lies beyond death is not shown to a person (in full)
@@ -252,7 +249,6 @@ File `02-life-breath-and-death-v29-20261019.md` (v29) · draft · chapter
 **Death and sin**
 
 - **C-85** Scripture ties death to sin from the first command (in full)
-- **C-85** Scripture ties death to sin from the first command (in part)
 - **C-86** James and Paul trace death's coming from within: desire, sin, death (in full)
 - **C-87** Each person answers for his own sin, and sin can be put away while a death still follows (in part)
 - **C-144** Where a verse sets death against eternal life (Romans 6:23) it speaks of more than the body's death; other verses do not say which death, and are left as written (in full)
@@ -269,51 +265,46 @@ File `02-life-breath-and-death-v29-20261019.md` (v29) · draft · chapter
 
 **Dead to sin**
 
-- **C-150** The believer has already died to sin, to the law and to the powers of the world, and a putting to death is still to be done (in full) — also told in: 14 *Revived, restored, renewed* (pointer)
 - **C-141** "Dead in" trespasses and "died to" sin are opposites: death under sin, and death that ends its rule (in full) — also told in: 02 *Death spoken of in more than one way* (in full)
+- **C-150** The believer has already died to sin, to the law and to the powers of the world, and a putting to death is still to be done (in full) — also told in: 14 *Revived, restored, renewed* (pointer)
 
 **Going down to Sheol**
 
 - **C-93** One way the Old Testament speaks of where the dying go is going down to Sheol; it says where Sheol lies (beneath, the measure of depth) but not what it is made of (in full)
-- **C-93** One way the Old Testament speaks of where the dying go is going down to Sheol; it says where Sheol lies (beneath, the measure of depth) but not what it is made of (in part)
 - **C-94** The righteous speak of going down to Sheol, as the wicked are said to (in full)
 - **C-95** The manner of going down to Sheol is named: mourning, with sorrow, in peace, with blood, silently, alive (in full)
 - **C-96** The way to Sheol is already walked in the heart before the end comes (in full)
 - **C-97** Sheol is pictured as never satisfied, and the same picture is used of the eyes and the greed of man (in full) — also told in: 05 *From throat to corpse* (pointer)
 - **C-98** Nothing in Sheol is hidden from God and he is there; and Sheol does not praise him. Both are stated (in full)
-- **C-98** Nothing in Sheol is hidden from God and he is there; and Sheol does not praise him. Both are stated (in part)
 - **C-99** Sheol and Hades are named beside death as a power that holds the dead, gives them up to judgment and is ended (in full)
 
 **Sleep and waking**
 
 - **C-89** Scripture speaks of death as sleep, and gives its hope against death as waking (in full)
-- **C-151** Kings and Chronicles tell the deaths of kings as sleeping with their fathers (36 verses) (in full)
-- **C-89** Scripture speaks of death as sleep, and gives its hope against death as waking (in part)
 - **C-90** Paul uses sleep to speak to grief: grief with hope is set apart from grief without hope, and the hope rests on Christ's rising (in full)
 - **C-91** The calls on God to wake speak from how it feels when God does not act (in full)
 - **C-92** The waking of the dead is not the same for all (in full) — also told in: 02 *Life, and judgment* (in full)
+- **C-151** Kings and Chronicles tell the deaths of kings as sleeping with their fathers (36 verses) (in full)
 
 **Life weighed**
 
 - **C-133** People weigh their own lives: loathed, worn down, enjoyed, and not consisting in possessions (in full)
-- **C-133** People weigh their own lives: loathed, worn down, enjoyed, and not consisting in possessions (in part)
 - **C-134** Where the hope of seeing good has gone, life is weighed as a breath (in full)
-- **C-288** In the siege of Jerusalem a slow death by hunger is called worse than death by the sword (in full)
-- **C-136** Death's certainty can be turned into a reason to indulge, and Scripture answers it (in full)
 - **C-135** The difference in how a life is weighed lies in what each verse sets life beside (in full)
+- **C-136** Death's certainty can be turned into a reason to indulge, and Scripture answers it (in full)
+- **C-288** In the siege of Jerusalem a slow death by hunger is called worse than death by the sword (in full)
 
 **Facing death**
 
+- **C-145** In Acts a lie contrived in the heart is followed at once by death, and fear comes on all who hear (in full) — also told in: 02 *Death and sin* (in full)
 - **C-152** The coming of death is often met with anguish and terror, and the fear of dying shapes what people do (in full)
 - **C-153** "The king of terrors" is Bildad's word, said of Job, and God's verdict on the friends stands over it (in full)
-- **C-145** In Acts a lie contrived in the heart is followed at once by death, and fear comes on all who hear (in full) — also told in: 02 *Death and sin* (in full)
 - **C-154** The nearness of death is given a purpose: to rely on God who raises the dead (in full)
 - **C-321** Barzillai asks to die in his own city near his parents' grave and gives his place at court to another (in full)
 
 **Those left behind**
 
 - **C-155** A death is met by those who remain: grief, not watching, fasting and then eating, reproach, limits on mourning, mourning withheld, and death not taken to heart (in full)
-- **C-155** A death is met by those who remain: grief, not watching, fasting and then eating, reproach, limits on mourning, mourning withheld, and death not taken to heart (in part)
 
 **Wanting to die**
 
@@ -322,20 +313,20 @@ File `02-life-breath-and-death-v29-20261019.md` (v29) · draft · chapter
 
 **Soul, spirit and heart at death**
 
-- **C-100** At death the soul departs, dies, is poured out, is named to the very end, and has an end beyond death (in full)
-- **3-7** The soul departs at death (Gen 35:18) (in part)
-- **C-101** The soul in these verses is the person: the one who dies, and the one who is ransomed (in full)
 - **2-15** The spirit is prominent in worship and is what is committed to God at death (E §13.4). Pro 20:27 uses *neshamah* "breath", not *rûaḥ* [lexical], and is outside the reading. The human spirit is equally temper, trouble and provocation (Pro 29:11; Gen 41:8; Act 17:16) (in part)
-- **3-13** "The body apart from the spirit is dead" (Jam 2:26) (in full)
+- **3-7** The soul departs at death (Gen 35:18) (in part)
 - **3-9** Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. The verses that name Sheol or Hades speak of the soul and never of the spirit. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9) (in part) — also told in: 02 *Delivered from death* (in full); 09 *Lines that are often drawn, but that I cannot find* (in part)
+- **3-13** "The body apart from the spirit is dead" (Jam 2:26) (in full)
+- **C-100** At death the soul departs, dies, is poured out, is named to the very end, and has an end beyond death (in full)
+- **C-101** The soul in these verses is the person: the one who dies, and the one who is ransomed (in full)
 - **C-102** The verses that name Sheol or Hades speak of the soul and never of the spirit (in full) — also told in: 09 *Lines that are often drawn, but that I cannot find* (in part)
 - **C-103** The heart can die before the body does; no verse found speaks of the heart after death (in part)
 
 **Delivered from death**
 
+- **2-3** Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) (in part)
 - **3-9** Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. The verses that name Sheol or Hades speak of the soul and never of the spirit. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9) (in full) — also told in: 02 *Soul, spirit and heart at death* (in part); 09 *Lines that are often drawn, but that I cannot find* (in part)
 - **C-104** Death is pictured as something that surrounds and holds, with waves, cords, snares and gates (in full)
-- **2-3** Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) (in part)
 - **C-105** Deliverance from death is for something: walking before God among the living and telling of him (in full)
 
 **Made alive**
@@ -380,13 +371,13 @@ File `02-life-breath-and-death-v29-20261019.md` (v29) · draft · chapter
 **Waited for**
 
 - **10-4** The body's redemption at the end stands (Rom 8:23; 1Co 15:42–44), told in Chapter 2. The text renews the inner self "day by day" (2Co 4:16); renewal is both God's gift (Eze 36:26) and the person's task (Eze 18:31). Assigning each phase to one component is not stated (in part: the redemption of our bodies (Rom 8:23))
-- **C-280** Paul sets the creation's eager waiting and groaning before the believers' own inward groaning (in part: Rom 8:19-23)
 - **C-278** The coming resurrection is given as a reason for how a person lives now: giving without return, enduring, self-control, steadfast work (in full)
+- **C-280** Paul sets the creation's eager waiting and groaning before the believers' own inward groaning (in part: Rom 8:19-23)
 
 **Life, and judgment**
 
 - **C-92** The waking of the dead is not the same for all (in full) — also told in: 02 *Sleep and waking* (in full)
-- **C-139** Scripture speaks of death in more than one way: the body's death, death in the living, dying to sin, a death beyond death, death as a power, and the living made like the dead (in part: a death beyond death) — also told in: 02 *Death spoken of in more than one way* (in full); 02 *Death spoken of in more than one way* (in full)
+- **C-139** Scripture speaks of death in more than one way: the body's death, death in the living, dying to sin, a death beyond death, death as a power, and the living made like the dead (in part: a death beyond death) — also told in: 02 *Death spoken of in more than one way* (in full)
 - **C-296** At the judgment the shut-out weep and gnash their teeth at a sight: others inside, themselves outside (in full)
 
 **After death**
@@ -414,13 +405,13 @@ File `04-the-heart-v22-20261019.md` (v22) · draft · chapter
 
 **The heart and anger**
 
-- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: Uzziah's heart lifted up when he was strong) — also told in: 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
-- **C-237** The charge of pride can come from another's anger or from a ready explanation, and the verses do not make it true (in part) — also told in: 10.4 *When anger thinks* (in part); 10.14 *The proud brought low, the lowly raised* (in full); 10.15 *Where it ends* (in full)
 - **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: The heart that turns it) — also told in: 04 *The heart humbled* (in full); 10.7 *Willing* (in part); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: Uzziah's heart lifted up when he was strong) — also told in: 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+- **C-237** The charge of pride can come from another's anger or from a ready explanation, and the verses do not make it true (in part) — also told in: 10.4 *When anger thinks* (in part); 10.14 *The proud brought low, the lowly raised* (in full); 10.15 *Where it ends* (in full)
 
 **The heart is the source**
 
-- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: the heart of the contrite revived) — also told in: 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: the heart of the contrite revived) — also told in: 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
 
 **The heart judges itself**
 
@@ -434,7 +425,7 @@ File `04-the-heart-v22-20261019.md` (v22) · draft · chapter
 
 - **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in full) — also told in: 04 *The heart and anger* (in part); 10.7 *Willing* (in part); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-178** God humbles to show what is in the heart, to teach what a person lives by, and to do him good in the end, against the heart that lifts itself up in plenty (in part: testing the heart; hearts bowed down) — also told in: 10.14 *Being humbled by God* (in full)
-- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part) — also told in: 04 *The heart is the source* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part) — also told in: 04 *The heart is the source* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
 - **C-268** 'Poor and needy', said of oneself, comes with the stricken heart and the gaunt body and ends in an appeal for help (in part: Psalm 109:22-26)
 
 ### 05 — The soul
@@ -443,7 +434,7 @@ File `05-the-soul-v9-20261015.md` (v9) · draft · chapter
 
 **From throat to corpse**
 
-- **C-97** Sheol is pictured as never satisfied, and the same picture is used of the eyes and the greed of man (pointer: Sheol's appetite (Isaiah 5:14)) — also told in: 02 *Going down to Sheol* (in full)
+- **C-97** Sheol is pictured as never satisfied, and the same picture is used of the eyes and the greed of man (pointer) — also told in: 02 *Going down to Sheol* (in full)
 
 **Rest for the soul**
 
@@ -455,12 +446,11 @@ File `06-the-spirit-v14-20261018.md` (v14) · draft · chapter
 
 **The human spirit**
 
-- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: a broken spirit can keep a person from hearing) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
-- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part) — also told in: 09 *Lines that are often drawn, but that I cannot find* (in part); 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
-- **C-267** Matthew 5:3 places poverty in the spirit, not in what a person has, and the next blessing is on those who mourn (in part: poor in spirit (Matthew 5:3-4))
 - **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in full) — also told in: 09 *Lines that are often drawn, but that I cannot find* (in part); 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
-- **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in part: the spirits of prophets subject to prophets) — also told in: 10.14 *Submitting* (in full)
 - **5-2** Replaced by the profile in 05: moved, stirred, troubled, crushed, revived, fervent, ruled, self-knowing (dep §2.3b; C §11.3; B §9.3) (in full)
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: a broken spirit can keep a person from hearing) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
+- **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in part: the spirits of prophets subject to prophets) — also told in: 10.14 *Submitting* (in full)
+- **C-267** Matthew 5:3 places poverty in the spirit, not in what a person has, and the next blessing is on those who mourn (in part: poor in spirit (Matthew 5:3-4))
 
 ### 07 — Flesh
 
@@ -476,7 +466,7 @@ File `09-where-the-words-part-v4-20261014.md` (v4) · draft · chapter
 
 **Lines that are often drawn, but that I cannot find**
 
-- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part: the spirit haughty before a fall) — also told in: 06 *The human spirit* (in part); 06 *The human spirit* (in full); 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part: the spirit haughty before a fall) — also told in: 06 *The human spirit* (in full); 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **3-9** Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. The verses that name Sheol or Hades speak of the soul and never of the spirit. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9) (in part) — also told in: 02 *Soul, spirit and heart at death* (in part); 02 *Delivered from death* (in full)
 - **C-102** The verses that name Sheol or Hades speak of the soul and never of the spirit (in part) — also told in: 02 *Soul, spirit and heart at death* (in full)
 
@@ -498,7 +488,7 @@ File `10-01-feeling-v23-20261019.md` (v23) · draft · activity
 
 **How a feeling rises**
 
-- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the heart lifted up when Uzziah was strong) — also told in: 04 *The heart and anger* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the heart lifted up when Uzziah was strong) — also told in: 04 *The heart and anger* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
 - **C-316** At the king's feast every guest was set free to do as he desired before the merry heart gave its command (in full)
 
 ### 10.2 — Knowing and hearing
@@ -507,15 +497,15 @@ File `10-02-knowing-and-hearing-v21-20261019.md` (v21) · draft · activity
 
 **(opening)**
 
-- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: a crushed spirit can block hearing) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
-- **C-260** The poor wise man who saved the city was forgotten and his words not heard; what was seen in him was his poverty (in full)
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: a crushed spirit can block hearing) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
 - **C-222** Pride is set against hearing: it will not take rebuke or advice, and the scoffer is known by what he will not receive (in part: the word scorned) — also told in: 10.2 *Pride and hearing* (in full); 10.15 *Pride and hearing* (in full)
 - **C-224** God works to keep pride from a person: by warnings that open the ear, and by a thorn given against conceit (in part: God opens the ear to conceal pride) — also told in: 10.15 *Pride and hearing* (in full)
 - **C-259** God names judging the cause of the poor and needy as knowing him, and sets it against eyes and heart given only to gain (in full) — also told in: 10.6 *Possessions* (pointer)
+- **C-260** The poor wise man who saved the city was forgotten and his words not heard; what was seen in him was his poverty (in full)
 
 **Humility and hearing**
 
-- **C-187** Humility goes with the ear that can take a reproof and a word, and does not answer before it hears (in full) — also told in: 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part)
+- **C-187** Humility goes with the ear that can take a reproof and a word, and does not answer before it hears (in full) — also told in: 10.14 *Humility as a way of walking* (in full)
 
 **Pride and hearing**
 
@@ -535,8 +525,8 @@ File `10-03-remembering-and-forgetting-v9-20261019.md` (v9) · draft · activity
 
 **Remembering as a cure, and remembering as hope**
 
-- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: against the pride of having) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
-- **C-246** In the Preacher's picture of old age, fear comes as the body fails, with no enemy behind it, and the call is to remember the Creator before those days (pointer: Before old age (Ecc 12:1)) — also told in: 10.12 *Fear that comes upon a person* (in full)
+- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: against the pride of having) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+- **C-246** In the Preacher's picture of old age, fear comes as the body fails, with no enemy behind it, and the call is to remember the Creator before those days (pointer) — also told in: 10.12 *Fear that comes upon a person* (in full)
 
 ### 10.4 — Thinking
 
@@ -544,7 +534,7 @@ File `10-04-thinking-v15-20261019.md` (v15) · draft · activity
 
 **What thinking does**
 
-- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: Uzziah strong, then proud) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: Uzziah strong, then proud) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
 - **C-317** A wrong expectation can be what a teaching answers (in full)
 
 **When anger thinks**
@@ -577,7 +567,7 @@ File `10-06-wanting-v28-20261019.md` (v28) · draft · activity
 
 **Thirst answered**
 
-- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the giver forgotten) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the giver forgotten) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
 
 **A person**
 
@@ -585,7 +575,7 @@ File `10-06-wanting-v28-20261019.md` (v28) · draft · activity
 
 **Jealousy and envy**
 
-- **C-209** Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart (in part: the pride of the tree and the given beauty) — also told in: 12 *Pride and the lifted-up heart and spirit* (in part); 12 *Pride and the lifted-up heart and spirit* (in full)
+- **C-209** Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart (in part: the pride of the tree and the given beauty) — also told in: 12 *Pride and the lifted-up heart and spirit* (in full)
 
 **Possessions**
 
@@ -602,12 +592,12 @@ File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · ac
 
 **Being chosen**
 
-- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in part: Put on: humility put on, turned toward others) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
+- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in part: Put on: humility put on, turned toward others) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Toward one another* (in full)
 
 **Others around a choice**
 
-- **C-223** Presumption acts on its own word where another word was given: speaking what God did not command, going up when told not to, not keeping the decision given (in part: presumption is the opposite) — also told in: 10.7 *Presumption* (in full); 10.9 *Kept from what would rule* (in part); 10.15 *The words* (pointer); 10.15 *Pride and hearing* (in full)
 - **C-176** The humbling God does not take knowledge of is kept alongside self-pleasure and oppression and leaves the seen naked uncovered; Ahab's, against himself when the word came, was answered (in part: the humbling beside oppression) — also told in: 10.14 *A humbling God does not take knowledge of* (in full); 13.1 *Choosing* (in part)
+- **C-223** Presumption acts on its own word where another word was given: speaking what God did not command, going up when told not to, not keeping the decision given (in part: presumption is the opposite) — also told in: 10.7 *Presumption* (in full); 10.9 *Kept from what would rule* (in part); 10.15 *The words* (pointer); 10.15 *Pride and hearing* (in full)
 
 **Taking the lower place**
 
@@ -619,8 +609,8 @@ File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · ac
 
 **Planning**
 
-- **C-329** The mind can be set downward, on earthly things, and the call is to set it on things above (in part: minds set on earthly things)
 - **C-313** Joseph's counsel plans against a famine he has been shown (in full)
+- **C-329** The mind can be set downward, on earthly things, and the call is to set it on things above (in part: minds set on earthly things)
 
 **Presumption**
 
@@ -638,7 +628,7 @@ File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft · activity
 
 **(opening)**
 
-- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part: the spirit judged: haughty or lowly, crushed or contrite) — also told in: 06 *The human spirit* (in part); 06 *The human spirit* (in full); 09 *Lines that are often drawn, but that I cannot find* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
+- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part: the spirit judged: haughty or lowly, crushed or contrite) — also told in: 06 *The human spirit* (in full); 09 *Lines that are often drawn, but that I cannot find* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
 
 ### 10.9 — Relating to God
 
@@ -649,7 +639,7 @@ File `10-09-relating-to-god-v28-20261019.md` (v28) · draft · activity
 - **C-169** Humbling oneself is done before someone: God, or the prophet who carries his word (in part: done before him, or before his word) — also told in: 10.14 *It faces someone* (in full)
 - **C-170** Most often a person humbles himself when a word reaches him, and the humbling owns that God is right (in part: its words own that God is right) — also told in: 10.14 *It answers a word heard* (in full)
 - **C-173** To humble oneself under God's hand is also to put down what one carries, because he cares; the lifting is his to time (in part: puts down what he carries) — also told in: 10.14 *What goes with it* (in full)
-- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: God sees it) — also told in: 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *God sees it, and answers in measure* (in full); 10.14 *God sees it, and answers in measure* (in part)
+- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: God sees it) — also told in: 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *God sees it, and answers in measure* (in full)
 - **C-193** Submitting to God and humbling oneself are said as one (in part: submitting and drawing near) — also told in: 10.14 *Submitting* (in full)
 
 **When God hides his face**
@@ -678,8 +668,8 @@ File `10-10-relating-to-others-v35-20261019.md` (v35) · draft · activity
 
 **(opening)**
 
-- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in part: a spirit of gentleness) — also told in: 10.10 *Humility toward one another* (in full); 10.10 *Holding authority over another* (in part); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
 - **C-124** Another's death can be laid at a person's hand (pointer) — also told in: 02 *Life set before a person* (in full)
+- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in part: a spirit of gentleness) — also told in: 10.10 *Humility toward one another* (in full); 10.10 *Holding authority over another* (in part); 10.14 *Toward one another* (in full)
 
 **Care, discouragement and hiding between people**
 
@@ -687,7 +677,7 @@ File `10-10-relating-to-others-v35-20261019.md` (v35) · draft · activity
 
 **Fear that arrives with a person**
 
-- **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (pointer) — also told in: 10.12 *Dread laid on others* (in part); 10.12 *Dread laid on others* (in part)
+- **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (pointer) — also told in: 10.12 *Dread laid on others* (in part)
 
 **Making others afraid**
 
@@ -699,9 +689,9 @@ File `10-10-relating-to-others-v35-20261019.md` (v35) · draft · activity
 
 **Humility toward one another**
 
-- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in full) — also told in: 10.7 *Being chosen* (in part); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
-- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in full) — also told in: 10.10 *(opening)* (in part); 10.10 *Holding authority over another* (in part); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
-- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.10 *Holding authority over another* (in part); 10.10 *Holding authority over another* (in part); 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
+- **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in full) — also told in: 10.7 *Being chosen* (in part); 10.14 *Toward one another* (in full)
+- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in full) — also told in: 10.10 *(opening)* (in part); 10.10 *Holding authority over another* (in part); 10.14 *Toward one another* (in full)
+- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.10 *Holding authority over another* (in part); 10.14 *Submitting* (in full)
 - **C-198** Jesus is given as the ground and example of humility toward others (in part: the ground is this mind) — also told in: 10.14 *Jesus* (in full)
 
 **Pride over another**
@@ -713,14 +703,13 @@ File `10-10-relating-to-others-v35-20261019.md` (v35) · draft · activity
 
 **Holding authority over another**
 
-- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in part: elders not domineering; humility toward one another) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
-- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in part: remembering what one was) — also told in: 10.10 *(opening)* (in part); 10.10 *Humility toward one another* (in full); 10.14 *Toward one another* (in full); 10.14 *Toward one another* (in full)
-- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in part: submission with its ground) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Submitting* (in full); 10.14 *Submitting* (in full)
+- **C-192** Gentleness in meeting a wrong is joined to watching oneself, remembering what one was, and leaving the outcome to God (in part: remembering what one was) — also told in: 10.10 *(opening)* (in part); 10.10 *Humility toward one another* (in full); 10.14 *Toward one another* (in full)
+- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in part: elders not domineering; humility toward one another / submission with its ground) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Submitting* (in full)
 - **C-302** The one who holds power holds life for those under it, and in Jesus' parable the king uses it to release out of pity (in full)
 
 **Loyalty and honour**
 
-- **C-165** People hold to someone, or to something, even to death, and the readiness can fail (pointer) — also told in: 02 *Dying to the Lord* (in full); 02 *Dying to the Lord* (in full)
+- **C-165** People hold to someone, or to something, even to death, and the readiness can fail (pointer) — also told in: 02 *Dying to the Lord* (in full)
 - **C-303** Loyalty can fail at its post: Abner did not keep watch over the Lord's anointed, while David refused to strike him (in full)
 - **C-304** Joab yielded the honour of taking Rabbah to David (in full)
 - **C-305** Solomon on his throne showed honour upward to his mother, then refused her request (in full)
@@ -750,9 +739,9 @@ File `10-12-fear-v16-20261019.md` (v16) · draft · key characteristic
 - **C-282** Fear and anguish are shown in the body, and the verses see them first in the hands: hands fall at a report, grow feeble as the heart melts, and are held as in labour (in part: the hands fall; hands and heart; the posture of labour)
 - **C-283** Fear is aimed at the hands, and the answer is given to the hands (in part: fear aimed at the hands; the answer given to the hands)
 - **C-284** In Lamentations 4:6 the Hebrew says that hands did not writhe in or on her; the ESV's 'no hands were wrung for her' takes it as grief, and the words also allow that no human hand worked Sodom's fall (in full)
-- **C-287** One Hebrew root, chul, is labour pain, trembling, anguish of heart, the dance, the whirling storm and patient waiting (pointer) — also told in: 11 *4. One word, opposite values* (in full)
 - **C-285** In 2 Samuel 4:1 the ESV's 'his courage failed' renders 'his hands dropped' (in full)
 - **C-286** In the hands verses, what weakens the hands is something heard, and what strengthens them is a word, another person, or God asked to do it (in full)
+- **C-287** One Hebrew root, chul, is labour pain, trembling, anguish of heart, the dance, the whirling storm and patient waiting (pointer) — also told in: 11 *4. One word, opposite values* (in full)
 
 **The fear of God**
 
@@ -760,9 +749,8 @@ File `10-12-fear-v16-20261019.md` (v16) · draft · key characteristic
 
 **Dread laid on others**
 
-- **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (in part: in Esther no giver is named) — also told in: 10.10 *Fear that arrives with a person* (pointer)
+- **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (in part: the peoples in Esther's day / in Esther no giver is named) — also told in: 10.10 *Fear that arrives with a person* (pointer)
 - **C-294** In Ezekiel 21:15 the melting heart is what the sword is given for (in part: Ezekiel 21:15)
-- **C-245** Dread on a people is not always said to come from God: in Esther it falls with no giver named, and brings many of the peoples over to the name of those they fear (in part: the peoples in Esther's day) — also told in: 10.10 *Fear that arrives with a person* (pointer)
 
 **What changes it**
 
@@ -775,8 +763,8 @@ File `10-13-anger-v15-20261019.md` (v15) · draft · key characteristic
 
 **What it rises at**
 
-- **C-290** Samson's hot anger has its ground in being outwitted through his wife; the Spirit's rushing goes with the striking at Ashkelon (in part: Being outwitted through someone close) — also told in: 10.13 *Other parties* (in part)
 - **C-263** The indignation at the ointment, first said to themselves, named the poor as its reason, and Jesus put doing good to the poor in the hearers' own will (in part: the disciples' indignation (Mark 14:4-7))
+- **C-290** Samson's hot anger has its ground in being outwitted through his wife; the Spirit's rushing goes with the striking at Ashkelon (in part: Being outwitted through someone close) — also told in: 10.13 *Other parties* (in part)
 - **C-307** Anger can rise at contempt for a request that rested on good done (in full)
 - **C-308** Anger can rest on a misreading and still decide, and it abates when its object is gone (in full)
 
@@ -792,8 +780,8 @@ File `10-13-anger-v15-20261019.md` (v15) · draft · key characteristic
 **The heart that turns, and the heart that does not**
 
 - **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: the same heart provoked the anger and turned it) — also told in: 04 *The heart and anger* (in part); 04 *The heart humbled* (in full); 10.7 *Willing* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
-- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: Rehoboam) — also told in: 10.9 *Humbling oneself before God* (in part); 10.14 *God sees it, and answers in measure* (in full); 10.14 *God sees it, and answers in measure* (in part)
-- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in full) — also told in: 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part); 11 *What changes the character* (in part)
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in full) — also told in: 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full); 11 *What changes the character* (in part)
+- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: Rehoboam) — also told in: 10.9 *Humbling oneself before God* (in part); 10.14 *God sees it, and answers in measure* (in full)
 
 **Shelter, and who can stand**
 
@@ -802,7 +790,7 @@ File `10-13-anger-v15-20261019.md` (v15) · draft · key characteristic
 
 **The responses, gathered**
 
-- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part); 11 *What changes the character* (in part)
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full); 11 *What changes the character* (in part)
 
 **Those who carry it out**
 
@@ -841,17 +829,15 @@ File `10-14-humility-v4-20261018.md` (v4) · draft · key characteristic
 
 **What it is set against**
 
-- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part: the same call met two hearts) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part); 11 *What changes the character* (in part)
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part: the same call met two hearts) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *Distress does not decide it* (in full); 11 *What changes the character* (in part)
 
 **Distress does not decide it**
 
 - **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in full) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 11 *What changes the character* (in part)
-- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part: Amon) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 11 *What changes the character* (in part)
 
 **God sees it, and answers in measure**
 
 - **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in full) — also told in: 10.9 *Humbling oneself before God* (in part); 10.13 *The heart that turns, and the heart that does not* (in part)
-- **C-175** God sees the one who humbles himself and answers, in measure; the humbling does not hold by itself (in part: Rehoboam) — also told in: 10.9 *Humbling oneself before God* (in part); 10.13 *The heart that turns, and the heart that does not* (in part)
 
 **A humbling God does not take knowledge of**
 
@@ -866,12 +852,11 @@ File `10-14-humility-v4-20261018.md` (v4) · draft · key characteristic
 **The proud brought low, the lowly raised**
 
 - **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in full) — also told in: 12 *Pride and the lifted-up heart and spirit* (in part)
-- **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in part: the lifted-up thing made to give way) — also told in: 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-181** Only God lifts up and puts down; a person cannot abase the proud (in full)
-- **C-257** God's reversal of high and low is done so that he is known, and is as sure as his word (in part: Ezekiel 17:24)
-- **C-235** In the proverbs pride brings its own fall, with no other hand named; elsewhere God brings it down (in part) — also told in: 10.15 *Where it ends* (in full); 10.15 *Where it ends* (in full)
 - **C-182** The boast is moved from what a person has to what God does (in full) — also told in: 05 *Rest for the soul* (in part); 10.15 *The boast* (in full); 11 *4. One word, opposite values* (in part)
+- **C-235** In the proverbs pride brings its own fall, with no other hand named; elsewhere God brings it down (in part) — also told in: 10.15 *Where it ends* (in full)
 - **C-237** The charge of pride can come from another's anger or from a ready explanation, and the verses do not make it true (in full) — also told in: 04 *The heart and anger* (in part); 10.4 *When anger thinks* (in part); 10.15 *Where it ends* (in full)
+- **C-257** God's reversal of high and low is done so that he is known, and is as sure as his word (in part: Ezekiel 17:24)
 
 **The humble**
 
@@ -883,10 +868,7 @@ File `10-14-humility-v4-20261018.md` (v4) · draft · key characteristic
 **Humility as a way of walking**
 
 - **C-187** Humility goes with the ear that can take a reproof and a word, and does not answer before it hears (in full) — also told in: 10.2 *Humility and hearing* (in full)
-- **C-187** Humility goes with the ear that can take a reproof and a word, and does not answer before it hears (in part) — also told in: 10.2 *Humility and hearing* (in full)
-- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part: what to bring, and a way to walk) — also told in: 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
 - **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in full) — also told in: 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
-- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
 
 **A lowly and contrite spirit**
 
@@ -901,9 +883,9 @@ File `10-14-humility-v4-20261018.md` (v4) · draft · key characteristic
 **Submitting**
 
 - **C-193** Submitting to God and humbling oneself are said as one (in full) — also told in: 10.9 *Humbling oneself before God* (in part)
-- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.10 *Humility toward one another* (in full); 10.10 *Holding authority over another* (in part); 10.10 *Holding authority over another* (in part)
-- **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in full) — also told in: 06 *The human spirit* (in part)
+- **C-194** Submission among people is told with a ground that faces God and, where the passage goes on, with a duty on the other side (in full) — also told in: 10.10 *Humility toward one another* (in full); 10.10 *Holding authority over another* (in part)
 - **C-195** Refusing submission is right where the truth of the gospel is at stake (in full)
+- **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in full) — also told in: 06 *The human spirit* (in part)
 
 **Jesus**
 
@@ -914,7 +896,7 @@ File `10-14-humility-v4-20261018.md` (v4) · draft · key characteristic
 **The Old Testament and the New**
 
 - **C-200** The same lines of humility run through both Testaments; the New differs in emphasis, adding humility toward one another, and in one new thing, Christ, in whom God's lowering is done in a human life (in full)
-- **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in part: what God did, the Son did in a human life) — also told in: 13.1 *Lowering himself* (in part); 13.1 *Lowering himself* (in full)
+- **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in part: what God did, the Son did in a human life) — also told in: 13.1 *Lowering himself* (in full)
 
 **When humility changes character**
 
@@ -926,21 +908,19 @@ File `10-15-pride-v3-20261019.md` (v3) · draft · key characteristic
 
 **(opening)**
 
-- **C-212** The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew (in full) — also told in: 10.15 *The words* (in part); 10.15 *The words* (in full); 11 *4. One word, opposite values* (in part); 13.1 *Majesty* (in part)
+- **C-212** The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew (in full) — also told in: 10.15 *The words* (in full); 11 *4. One word, opposite values* (in part); 13.1 *Majesty* (in part)
 - **C-213** Pride, the boast and the mock belong together in the verses (in full)
 
 **The words**
 
-- **C-212** The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew (in part: the same verbs for God being high and for the proud heart) — also told in: 10.15 *(opening)* (in full); 11 *4. One word, opposite values* (in part); 13.1 *Majesty* (in part)
 - **C-212** The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew (in full) — also told in: 10.15 *(opening)* (in full); 11 *4. One word, opposite values* (in part); 13.1 *Majesty* (in part)
 - **C-223** Presumption acts on its own word where another word was given: speaking what God did not command, going up when told not to, not keeping the decision given (pointer) — also told in: 10.7 *Others around a choice* (in part); 10.7 *Presumption* (in full); 10.9 *Kept from what would rule* (in part); 10.15 *Pride and hearing* (in full)
-- **C-243** One Greek word is rendered both boast and rejoice: the boast in self and joy in hope and in suffering (in full)
 - **C-240** God's majesty is challenged and not overturned; his laughter answers only those who rise against him and is never aimed at the weak (in part: also used of God's laughter at those who rise against him) — also told in: 13.1 *Majesty* (in full)
+- **C-243** One Greek word is rendered both boast and rejoice: the boast in self and joy in hope and in suffering (in full)
 
 **Given, then held as one's own**
 
 - **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in full) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
-- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: your heart lifted up, you forget; it is he who gives you power) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
 - **C-215** Pride credits to its own hand what was done through it (in full) — also told in: 10.13 *Those who carry it out* (in part); 11 *Authority as a standing* (in part); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-216** The same word names an honour God chooses, gives or restores, and what was given can be turned into pride (in full) — also told in: 13.1 *Majesty* (in part)
 - **C-325** The great city gives herself the glory that the same verb elsewhere gives to God (in full) — also told in: 11 *4. One word, opposite values* (in part)
@@ -952,8 +932,8 @@ File `10-15-pride-v3-20261019.md` (v3) · draft · key characteristic
 - **C-218** Pride claims a place that is God's: likeness to the Most High, a god's seat, his temple (in full)
 - **C-219** Pride deceives the one who holds it, and the fear one inspires in others can feed it (in full)
 - **C-220** Pride shuts God out of the thoughts, is set against faith, and gives no rest (in full)
-- **C-324** Pride's heart tells itself it will not be moved and that loss and mourning will not come, and it does not lay its end to heart (in full) — also told in: 04 *The heart speaks to itself* (in part)
 - **C-221** Pride shows in the eyes, the walk and what is worn, and the verses join it to ease (in full)
+- **C-324** Pride's heart tells itself it will not be moved and that loss and mourning will not come, and it does not lay its end to heart (in full) — also told in: 04 *The heart speaks to itself* (in part)
 
 **Pride and hearing**
 
@@ -969,15 +949,14 @@ File `10-15-pride-v3-20261019.md` (v3) · draft · key characteristic
 
 **The boast**
 
-- **C-228** The verses do not condemn boasting as such; they judge it by what it rests on (in full)
-- **C-228** The verses do not condemn boasting as such; they judge it by what it rests on (in part: the boasts judged)
-- **C-244** A plan can presume on time it does not own; the boast about tomorrow is set against saying If the Lord wills (in part: do not boast about tomorrow) — also told in: 10.7 *Presumption* (in full)
-- **C-229** Boasting in oneself is excluded because what is held was given: grace, gift, and God's choosing of the low (in full)
 - **C-182** The boast is moved from what a person has to what God does (in full) — also told in: 05 *Rest for the soul* (in part); 10.14 *The proud brought low, the lowly raised* (in full); 11 *4. One word, opposite values* (in part)
-- **C-327** Glorying in shame does the boast's work turned upside down; against it stand the citizenship in heaven and the glorious body to come (in full) — also told in: 11 *4. One word, opposite values* (in part)
+- **C-228** The verses do not condemn boasting as such; they judge it by what it rests on (in full)
+- **C-229** Boasting in oneself is excluded because what is held was given: grace, gift, and God's choosing of the low (in full)
 - **C-230** Boasting in weakness claims no more than is so, and makes room for Christ's power (in full)
 - **C-231** The right measure of oneself, and of one's boast, is the measure God assigned; thinking oneself something when one is nothing is self-deception (in full)
 - **C-232** A boast can be in another person, and it puts the one who boasts at stake on the other's conduct (in full) — also told in: 10.10 *Pride over another* (in full)
+- **C-244** A plan can presume on time it does not own; the boast about tomorrow is set against saying If the Lord wills (in part: do not boast about tomorrow) — also told in: 10.7 *Presumption* (in full)
+- **C-327** Glorying in shame does the boast's work turned upside down; against it stand the citizenship in heaven and the glorious body to come (in full) — also told in: 11 *4. One word, opposite values* (in part)
 
 **The mock**
 
@@ -987,11 +966,11 @@ File `10-15-pride-v3-20261019.md` (v3) · draft · key characteristic
 
 **Where it ends**
 
-- **C-235** In the proverbs pride brings its own fall, with no other hand named; elsewhere God brings it down (in full) — also told in: 10.14 *The proud brought low, the lowly raised* (in part)
 - **C-210** Death brings pride down (in part: Your pomp is brought down to Sheol) — also told in: 12 *Pride and the lifted-up heart and spirit* (in full)
+- **C-235** In the proverbs pride brings its own fall, with no other hand named; elsewhere God brings it down (in full) — also told in: 10.14 *The proud brought low, the lowly raised* (in part)
 - **C-236** The one who is high by nature comes near the low; those who make themselves high are known from afar (in full) — also told in: 13.1 *Majesty* (in part)
-- **C-326** What comes to the self-glorifying city is in like measure to her self-glory and luxury: the mourning she said she would never see (in full)
 - **C-237** The charge of pride can come from another's anger or from a ready explanation, and the verses do not make it true (in full) — also told in: 04 *The heart and anger* (in part); 10.4 *When anger thinks* (in part); 10.14 *The proud brought low, the lowly raised* (in full)
+- **C-326** What comes to the self-glorifying city is in like measure to her self-glory and luxury: the mourning she said she would never see (in full)
 
 **The other face**
 
@@ -1003,34 +982,33 @@ File `11-other-sides-of-the-inner-being-v39-20261019.md` (v39) · draft · chapt
 
 **2. Thresholds: the merry heart and the sad heart**
 
-- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the heart lifted up when Uzziah was strong) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
+- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the heart lifted up when Uzziah was strong) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
 
 **3. The parts give way in sequence**
 
 - **C-205** The parts of the inner person give way in sequence: soul, spirit, heart under an enemy, then a turn; heart, then spirit, then body under sorrow (in full)
-- **C-205** The parts of the inner person give way in sequence: soul, spirit, heart under an enemy, then a turn; heart, then spirit, then body under sorrow (in part)
 
 **4. One word, opposite values**
 
-- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: crushed by an enemy, or offered to God) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 14 *Revived, restored, renewed* (in part)
-- **C-208** In pride, thinking goes wrong at the point of comparing: a person makes himself like God, or shrinks God to his own size (in part: how pride rises) — also told in: 12 *Pride and the lifted-up heart and spirit* (in full)
-- **C-242** One Hebrew word, ebrah, names the overflow of anger and the overflow of pride (in full)
 - **C-182** The boast is moved from what a person has to what God does (in part: the boast moves) — also told in: 05 *Rest for the soul* (in part); 10.14 *The proud brought low, the lowly raised* (in full); 10.15 *The boast* (in full)
-- **C-212** The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew (in part: one family of words is God's majesty and human pride) — also told in: 10.15 *(opening)* (in full); 10.15 *The words* (in part); 10.15 *The words* (in full); 13.1 *Majesty* (in part)
-- **C-238** The same words are not pride when the height is given or faces God: a heart lifted up in God's ways, strength of soul given, a heart not lifted up and at rest (in full) — also told in: 10.15 *The other face* (in full)
-- **C-325** The great city gives herself the glory that the same verb elsewhere gives to God (in part: Revelation 18:7) — also told in: 10.15 *Given, then held as one's own* (in full)
-- **C-327** Glorying in shame does the boast's work turned upside down; against it stand the citizenship in heaven and the glorious body to come (in part: Philippians 3:19, 21) — also told in: 10.15 *The boast* (in full)
-- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
+- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in full); 11 *What changes the character* (in part); 13.1 *Delight* (in part)
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: crushed by an enemy, or offered to God) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 14 *Revived, restored, renewed* (in part)
+- **C-208** In pride, thinking goes wrong at the point of comparing: a person makes himself like God, or shrinks God to his own size (in part: how pride rises) — also told in: 12 *Pride and the lifted-up heart and spirit* (in full)
+- **C-212** The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew (in part: one family of words is God's majesty and human pride) — also told in: 10.15 *(opening)* (in full); 10.15 *The words* (in full); 13.1 *Majesty* (in part)
 - **C-233** Mocking takes the sufferer's trust in God as its target, and the sufferer answers God, not the mockers (in part: the mockers' taunt) — also told in: 10.5 *Speech before words* (in part); 10.15 *The mock* (in full); 13.1 *Delight* (in part)
+- **C-238** The same words are not pride when the height is given or faces God: a heart lifted up in God's ways, strength of soul given, a heart not lifted up and at rest (in full) — also told in: 10.15 *The other face* (in full)
+- **C-242** One Hebrew word, ebrah, names the overflow of anger and the overflow of pride (in full)
 - **C-279** 'Imperishable' is said of the raised body and also of what is within or held for a person: love, the seed of new birth, the beauty of a gentle spirit, an inheritance (in full) — also told in: 02 *Changed* (in full)
 - **C-287** One Hebrew root, chul, is labour pain, trembling, anguish of heart, the dance, the whirling storm and patient waiting (in full) — also told in: 10.12 *Fear in the body* (pointer)
+- **C-325** The great city gives herself the glory that the same verb elsewhere gives to God (in part: Revelation 18:7) — also told in: 10.15 *Given, then held as one's own* (in full)
+- **C-327** Glorying in shame does the boast's work turned upside down; against it stand the citizenship in heaven and the glorious body to come (in part: Philippians 3:19, 21) — also told in: 10.15 *The boast* (in full)
 
 **What changes the character**
 
-- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full); 10.14 *Distress does not decide it* (in part)
-- **C-289** Under siege the hands of women called compassionate boiled their own children; the verse names when, not why (pointer) — also told in: 10.10 *Friends, company and care* (in part)
-- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *4. One word, opposite values* (in part); 13.1 *Delight* (in part)
+- **C-174** Distress does not decide whether a person humbles himself; the same pressure or call meets two hearts, and the verses do not say why (in part) — also told in: 10.13 *The heart that turns, and the heart that does not* (in full); 10.13 *The responses, gathered* (in part); 10.14 *What it is set against* (in part); 10.14 *Distress does not decide it* (in full)
+- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part) — also told in: 10.14 *Humility as a way of walking* (in full); 11 *4. One word, opposite values* (in part); 13.1 *Delight* (in part)
 - **C-201** Humility changes character with who acts, toward whom, and to what end (in full) — also told in: 10.14 *When humility changes character* (in full)
+- **C-289** Under siege the hands of women called compassionate boiled their own children; the verse names when, not why (pointer) — also told in: 10.10 *Friends, company and care* (in part)
 
 **Authority as a standing**
 
@@ -1047,17 +1025,16 @@ File `12-when-the-inner-being-goes-wrong-v26-20261019.md` (v26) · draft + held 
 
 **Pride and the lifted-up heart and spirit**
 
-- **C-207** Pride is placed in the heart and in the spirit (in full) — also told in: 10.15 *The heart that says what God says* (pointer)
-- **C-208** In pride, thinking goes wrong at the point of comparing: a person makes himself like God, or shrinks God to his own size (in full) — also told in: 11 *4. One word, opposite values* (in part)
-- **C-209** Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart (in part: the great tree) — also told in: 10.6 *Jealousy and envy* (in part)
-- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (pointer) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 13.1 *Majesty* (in part)
-- **C-209** Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart (in full) — also told in: 10.6 *Jealousy and envy* (in part)
-- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part: the spirit weighed: haughty or lowly) — also told in: 06 *The human spirit* (in part); 06 *The human spirit* (in full); 09 *Lines that are often drawn, but that I cannot find* (in part); 10.8 *(opening)* (in part)
+- **2-2** No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside (in part: the spirit weighed: haughty or lowly) — also told in: 06 *The human spirit* (in full); 09 *Lines that are often drawn, but that I cannot find* (in part); 10.8 *(opening)* (in part)
 - **C-168** Humility is always set against a rising: the proud heart, the lifted-up self, the stiff neck, the haughty eyes (pointer) — also told in: 10.14 *(opening)* (in full)
 - **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: Hezekiah and Belshazzar) — also told in: 04 *The heart and anger* (in part); 04 *The heart humbled* (in full); 10.7 *Willing* (in part); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full)
-- **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in part: the day against pride) — also told in: 10.14 *The proud brought low, the lowly raised* (in full); 10.14 *The proud brought low, the lowly raised* (in part)
+- **C-180** What God brings low is a bearing, haughty looks and lofty pride, not only a rank, so that the Lord alone is exalted (in part: the day against pride) — also told in: 10.14 *The proud brought low, the lowly raised* (in full)
+- **C-207** Pride is placed in the heart and in the spirit (in full) — also told in: 10.15 *The heart that says what God says* (pointer)
+- **C-208** In pride, thinking goes wrong at the point of comparing: a person makes himself like God, or shrinks God to his own size (in full) — also told in: 11 *4. One word, opposite values* (in part)
+- **C-209** Pride can grow from a beauty that was given: given, blameless, then trade, violence and a proud heart (in full) — also told in: 10.6 *Jealousy and envy* (in part)
 - **C-210** Death brings pride down (in full) — also told in: 10.15 *Where it ends* (in part)
 - **C-211** Pride can design its own honour, and the honour it designed becomes the measure of its fall (in full)
+- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (pointer) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 13.1 *Majesty* (in part)
 - **C-215** Pride credits to its own hand what was done through it (in part) — also told in: 10.13 *Those who carry it out* (in part); 10.15 *Given, then held as one's own* (in full); 11 *Authority as a standing* (in part)
 
 **False peace**
@@ -1082,9 +1059,9 @@ File `13-01-divine-v31-20261019.md` (v31) · draft · other beings
 
 **Delight**
 
-- **C-233** Mocking takes the sufferer's trust in God as its target, and the sufferer answers God, not the mockers (in part: the mockers) — also told in: 10.5 *Speech before words* (in part); 10.15 *The mock* (in full); 11 *4. One word, opposite values* (in part)
-- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part: the offerings delighted in after the broken heart) — also told in: 10.14 *Humility as a way of walking* (in part); 10.14 *Humility as a way of walking* (in full); 10.14 *Humility as a way of walking* (in part); 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part)
+- **C-188** What God looks to is set against a religious act in the humility passages (the fast, the walk, the house, the broken heart), as in the other passages gathered in 13.1; the offering follows the broken heart (in part: the offerings delighted in after the broken heart) — also told in: 10.14 *Humility as a way of walking* (in full); 11 *4. One word, opposite values* (in part); 11 *What changes the character* (in part)
 - **C-206** The offering is weighed by what is inside the one who brings it: an ear opened, the law in the heart, a broken heart, a love that lasts (in full)
+- **C-233** Mocking takes the sufferer's trust in God as its target, and the sufferer answers God, not the mockers (in part: the mockers) — also told in: 10.5 *Speech before words* (in part); 10.15 *The mock* (in full); 11 *4. One word, opposite values* (in part)
 - **C-247** Ezra's heart set to study the Law, to do it and to teach it is given straight after the good hand of God on him, as its ground in him (pointer) — also told in: 10.7 *Setting the heart* (in part)
 - **C-252** Those on whom God's good hand rests name it as the reason for what came about, and it is said to be for good on all who seek him (in full)
 
@@ -1096,18 +1073,17 @@ File `13-01-divine-v31-20261019.md` (v31) · draft · other beings
 
 **Majesty**
 
-- **C-212** The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew (in part: the same words) — also told in: 10.15 *(opening)* (in full); 10.15 *The words* (in part); 10.15 *The words* (in full); 11 *4. One word, opposite values* (in part)
-- **C-239** God's majesty is his own and everlasting, shown in what he does, turned toward help, and joined to what only he does (in full)
-- **C-217** Pride at its full height says of itself what is true only of God: the proud city's "I am, and there is no one besides me" repeats God's self-statement (in full) — also told in: 10.15 *The heart that says what God says* (in full)
-- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the height he gives) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 10.15 *Given, then held as one's own* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer)
+- **C-212** The same Hebrew words name God's majesty and human pride; the English marks the difference, not the Hebrew (in part: the same words) — also told in: 10.15 *(opening)* (in full); 10.15 *The words* (in full); 11 *4. One word, opposite values* (in part)
+- **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the height he gives) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer)
 - **C-216** The same word names an honour God chooses, gives or restores, and what was given can be turned into pride (in part: the pride of Jacob whom he loves) — also told in: 10.15 *Given, then held as one's own* (in full)
+- **C-217** Pride at its full height says of itself what is true only of God: the proud city's "I am, and there is no one besides me" repeats God's self-statement (in full) — also told in: 10.15 *The heart that says what God says* (in full)
 - **C-236** The one who is high by nature comes near the low; those who make themselves high are known from afar (in part: he regards the lowly) — also told in: 10.15 *Where it ends* (in full)
+- **C-239** God's majesty is his own and everlasting, shown in what he does, turned toward help, and joined to what only he does (in full)
 - **C-240** God's majesty is challenged and not overturned; his laughter answers only those who rise against him and is never aimed at the weak (in full) — also told in: 10.15 *The words* (in part)
 - **C-241** The Son's majesty is received and grounded, stands beside his being handed over, and does not defend itself against mockery; he did not grasp what pride grasps (in full) — also told in: 10.15 *The mock* (pointer)
 
 **Lowering himself**
 
-- **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in part) — also told in: 10.14 *The Old Testament and the New* (in part)
 - **C-202** The lowering that the Old Testament tells of God is done in the Son in a human life (in full) — also told in: 10.14 *The Old Testament and the New* (in part)
 - **C-203** God sees and answers the one who humbles himself, gives favor to the humble, humbles to test and do good, brings the proud low and looks on a humble estate (in full) — also told in: 13.1 *Willing* (in part)
 
@@ -1133,8 +1109,8 @@ File `14-made-new-v19-20261015.md` (v19) · draft + held · chapter
 
 **Revived, restored, renewed**
 
-- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part)
-- **C-150** The believer has already died to sin, to the law and to the powers of the world, and a putting to death is still to be done (pointer) — also told in: 02 *Dead to sin* (in full); 02 *Dead to sin* (in full)
+- **C-150** The believer has already died to sin, to the law and to the powers of the world, and a putting to death is still to be done (pointer) — also told in: 02 *Dead to sin* (in full)
+- **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 06 *The human spirit* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part)
 
 ### 15 — Beyond the named words
 
@@ -1173,7 +1149,7 @@ File `—` (v—) · deferred · deferred
 | # | Original claim | Verdict | Claim now | Told in |
 |---|---|---|---|---|
 | 2-1 | "The soul who sins shall die" (Eze 18:4, 20); "if anyone [*nephesh*] sins" (Lev 5) makes the soul the seat of sin | Restated | In these verses *nephesh* is the person, the one who answers for sin; it is not a faculty inside the person. The soul is the accountable, answerable self (D §3.1, §11.2) | — |
-| 2-2 | The human spirit is never described as sinning: "consistent silence across 1,340 passages" | Restated | No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside | 06 *The human spirit* (in part); 06 *The human spirit* (in full); 09 *Lines that are often drawn, but that I cannot find* (in part); 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part) |
+| 2-2 | The human spirit is never described as sinning: "consistent silence across 1,340 passages" | Restated | No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside | 06 *The human spirit* (in full); 09 *Lines that are often drawn, but that I cannot find* (in part); 10.8 *(opening)* (in part); 12 *Pride and the lifted-up heart and spirit* (in part) |
 | 2-3 | Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) | Stands | Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) | 02 *Delivered from death* (in part) |
 | 2-4 | Animals are *nephesh ḥayyâ* just as man is (Gen 1:20–24; 2:7; 9:10) | Stands | Animals are *nephesh ḥayyâ* just as man is (Gen 1:20–24; 2:7; 9:10) | — |
 | 2-5 | Animals almost never have *rûaḥ*; Ecc 3:21 is the only exception; Gen 7:22 uses *neshamah*, not *rûaḥ* | Withdrawn | Animals almost never have *rûaḥ*; Ecc 3:21 is the only exception; Gen 7:22 uses *neshamah*, not *rûaḥ* | — |

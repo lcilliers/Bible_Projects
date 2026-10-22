@@ -25,6 +25,26 @@ def _find_verse(conn, ref: str):
         "SELECT id, osisId, reference FROM verse WHERE reference=? AND deleted=0", (ref,)).fetchone()
 
 
+_RANK = {None: 0, "analysed": 1, "citated": 2}
+
+
+def mark(conn, verse_ids, status: str) -> int:
+    """The reading process's coverage marks (#2172, build decision 3): a verse read is 'analysed', a
+    verse the narrative cites is 'citated'; 'citated' replaces 'analysed' and is never stepped back,
+    and 'exclude' is never overwritten. No commit (the caller's unit of work). Returns rows changed."""
+    if status not in ("analysed", "citated"):
+        raise ValueError(f"mark() sets analysed or citated, not {status!r}")
+    now, n = _now(), 0
+    for vid in set(verse_ids):
+        r = conn.execute("SELECT status FROM verse_meta WHERE verse_id=? AND deleted=0", (vid,)).fetchone()
+        if r is None or r[0] == "exclude" or _RANK.get(r[0], 3) >= _RANK[status]:
+            continue
+        conn.execute("UPDATE verse_meta SET status=?, status_changed_at=?, updated_at=? WHERE verse_id=?",
+                     (status, now, now, vid))
+        n += 1
+    return n
+
+
 def run_set_status(cfg: Cfg, references: list[str], status: str) -> dict:
     """Set verse_meta.status for each verse named in `references` (comma-split by the caller).
     `status_changed_at` is stamped ONLY on an actual value change (the researcher's own "stamped

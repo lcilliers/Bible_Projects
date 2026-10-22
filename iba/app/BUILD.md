@@ -18726,3 +18726,90 @@ Close-time fixes:
 - Cluster codes are named in `outputs/escalation/2172-september-october-analysis-v1-20261022.md`
   and in section 383 (rule 100).
 - The compliance file's evidence is complete for every engaged rule.
+
+## 386. The reading process: Strand-Reading.ps1, tellings per block, the narrative written in the database (2026-10-22, escalation #2172 steps 1 to 7)
+
+Session 691d410b, Developer Mode. The build of `outputs/escalation/2172-process-build-plan-v1-20261022.md`
+(researcher, verbatim: "Approved: option A on all five points of the #2172 build plan. Proceed with
+the build in the section 5 order."; later "proceed to build it properly"). Design:
+`outputs/escalation/2172-reading-process-design-v2-20261022.md`. Test plan and results:
+`iba/docs/2172-strand-reading-test-plan-v1-20261022.md`.
+
+**Schema** (`iba/app/migration/archive/strand_reading_schema_2172_v1_20261022.py`, run
+`DEVMODE-2172-STRAND-SCHEMA-20261022`; tables built from their `cfg_column` rows by `db.table_ddl`,
+triggers from `cfg_trigger`):
+- `ib_observation` gains `setting`, `meaning`, `implication`, `chain`, `basis` (`cfg_enum
+  ib_observation.basis`: stated, read), `parties`, `run_id`; stage `strand-reading`, tag
+  `key-statement`.
+- `narrative_claim_source.observation_id`; source kind `observation`.
+- New: `reading_strand` (a strand, its home cluster, its escalation, state), `reading_strand_strong`
+  (its words), `reading_strand_hit` (one row per strong in a verse: face, parties, reason,
+  observation, run).
+- `narrative_claim_telling` rebuilt with `section_id` (the block) and `passage_id` nullable. The 432
+  current passage tellings became 378 block tellings (43 claim-block groups merged: 'in full' if any
+  passage told it in full, else 'in part' with the parts joined, else 'pointer'); the passage rows
+  stay at the new status `superseded`. Claims in the narrative: 260 before and after, the same set.
+  The history triggers now work per block: `in_narrative` is a current, non-pointer telling in a
+  current block; a block's text change logs 'telling changed' per claim with the block before and
+  after (`trg_narrative_section_block_au`); a block retired recomputes `in_narrative`
+  (`trg_narrative_section_retire_au`); a telling moved logs 'passage moved' unless it follows a rename
+  (`trg_narrative_telling_move_au`).
+- `narrative_register.record` retired with its write grants (the weave recorded from a chapter
+  file); its `cfg_on_fail` row in `record_retire_onfail_2172_v1_20261022.py` (#2214).
+
+**Register** (`iba/app/lib/narrativeregister.py`; `iba/app/handlers/narrativeregister.py`;
+`iba/app/ps/Narrative-Register.ps1`):
+- Tell and Untell name a block (`-Section "<heading>"` or `"Parent > Heading"`; `_block()`); one
+  current telling per claim and block (`tell_block()`).
+- `EditSection` keeps the block whole through a rename (the tellings follow; the old row stays as
+  history), a level change or an addition, then publishes the chapter. Defect found in testing and
+  fixed: it changed a block without publishing, so Check found the Ch 11 file differing.
+- `rewrite()`: blocks rewritten, added or retired whole. Safeguard 3: every claim a block told is
+  still told, or accounted for as moved (to a block that tells it after the rewrite) or withdrawn
+  (the claim already withdrawn), or nothing is written. Every quotation must be in the ESV text; a
+  block opens with its own heading line and holds no other. Citations are re-derived per block
+  (`sync_block_citations`).
+- `publish_chapter()`: the chapter written from the database as its next version; the file it
+  replaces moves to `archive/`.
+- Find, History, Export and Check read the block tellings. Check now reports a chapter file edited
+  outside the register, a block not opening with its heading, two current tellings in one block, and
+  a telling in a retired block; the passage-anchor check is gone (`narrative_passage` is history).
+- Removed as dead: `record`, `_passage_row`, `_sync_citations`, `_section_ids`, `plain`, `anchor_of`,
+  `opens_with`, `find_passage`, the `Passage` class; `parse_chapter` returns the sections only.
+
+**The reading process** (`iba/app/lib/strandreading.py`, `iba/app/handlers/strandreading.py`,
+`iba/app/ps/Strand-Reading.ps1`, work package `strand-reading`; config in
+`strand_reading_steps_2172_v1_20261022.py` and `strand_reading_enums_2172_v1_20261022.py`):
+- Steps `define`, `context`, `record`, `gather`, `map`, `derive`, `rewrite`, `account`, each with its
+  write grants, its 'refused' route, and (report steps) a `cfg_report` row; output folder
+  `strand_reading.output_dir`.
+- Observations are written only through `iba/app/lib/recordingpass.py`
+  (`record_strand_observations`, `set_disposition`); coverage through `iba/app/lib/versemeta.py`
+  `mark()` (no commit; `citated` replaces `analysed`, `exclude` never overwritten).
+- The close gate: `cfg_escalation_requirement` check kind `strand_account_clean` on Update and
+  ResolveSelfCorrectable (`iba/app/lib/escalation.py`): the strand's escalation cannot reach
+  completed or closed while a hit has no face or reason or an observation has no disposition. #2215:
+  the setting's module and the check kind were missing from their `cfg_enum` lists; added.
+
+**Governance:** `governance.narrative_home` (`narrative_home_2172_v1_20261022.py`), the ruling option B
+needed: the narrative is kept in iba.db with its claims, the chapter files are exports; the control
+map's `study_state` and `study_output` rows follow. B:76 names Strand-Reading.ps1; B:76-78 also
+govern it (`cfg_rule_scope`). GOVERNANCE.md section 6 names the close gates. USER-GUIDE.md section 8:
+8.1 rewritten for blocks, 8.2 the reading process (8.3 the copy to learning4comfort). The PS tools
+worksheet: the Narrative-Register tab rebuilt (no `-Passage`, no Record), a Strand-Reading tab.
+
+**Tests** (runners `iba/app/tools/temp_2172_*_test_run.py`, on `dbsnapshot.copy_db` copies, scratch
+chapter and report folders): register 23 of 23, rewrite 20 of 20, strand reading 40 of 40, Map
+handler 1 of 1. Found and recorded: #2213 (45 in-part tellings with no part, 32 claims).
+
+**Live:** snapshots `iba/app/db/snapshots/iba-20261022T082531Z-before-2172-strand-schema.db` and
+`iba-20261022T083623Z-before-2172-strand-steps.db`; `configmaint.validate` ok; Narrative-Register Check:
+the same 46 findings as before the build (current claims no block tells), no chapter file differs;
+Export regenerated the three register files. No strand is defined and nothing is read (the study is
+on hold).
+
+## 387. Session 691d410b close: files not named above by their exact path (2026-10-22, #2172)
+
+Section 386's files, by the paths they have:
+- `iba/app/migration/archive/strand_reading_schema_2172_v1_20261022.py`, `iba/app/migration/archive/record_retire_onfail_2172_v1_20261022.py`, `iba/app/migration/archive/strand_reading_steps_2172_v1_20261022.py`, `iba/app/migration/archive/strand_reading_enums_2172_v1_20261022.py`, `iba/app/migration/archive/narrative_home_2172_v1_20261022.py`: the five one-off migrations, each run live once (run ids in section 386) and moved to archive/, where each registered itself (cfg_utility, inactive);
+- `iba/app/tools/temp_2172_register_test_run.py`, `iba/app/tools/temp_2172_rewrite_test_run.py`, `iba/app/tools/temp_2172_strand_test_run.py`, `iba/app/tools/temp_2172_map_handler_test_run.py`: the temporary test runners of `iba/docs/2172-strand-reading-test-plan-v1-20261022.md` (temp_, exempt from registration; each takes a scratch folder and writes only to a database copy).

@@ -83,10 +83,6 @@ def edit_section(ctx: Ctx) -> Outcome:
     return _write(ctx, nr.edit_section)
 
 
-def record(ctx: Ctx) -> Outcome:
-    return _write(ctx, nr.record)
-
-
 def find(ctx: Ctx) -> Outcome:
     return _report(ctx, nr.find, "narrative-register-find")
 

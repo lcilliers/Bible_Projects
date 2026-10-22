@@ -355,6 +355,14 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
                                  "escalation_id=? AND status='open'", (self_id,))[0]["n"]
                 if n_open:
                     raise ValueError(f"{r['message']} ({n_open} open item(s) on #{self_id})")
+        elif kind == "strand_account_clean":
+            # #2172 safeguard 5: the escalation that records a strand reaches completed/closed only when
+            # every hit has a face or a reason and every observation a disposition (strandreading).
+            if self_id is not None and field_val in ("completed", "closed"):
+                from . import strandreading
+                gaps = strandreading.gate_message(db.conn, self_id)
+                if gaps:
+                    raise ValueError(f"{r['message']} ({gaps})")
         else:
             raise ValueError(f"unknown cfg_escalation_requirement.check_kind {kind!r}")
 

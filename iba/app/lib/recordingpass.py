@@ -568,6 +568,45 @@ def record_batch(conn, cluster_code: str, stage: str, model_output: dict,
            "unresolved_detail": unresolved_detail}
 
 
+STRAND_STAGE, STRAND_TAG = "strand-reading", "key-statement"
+STRAND_PARTS = ("setting", "meaning", "implication", "chain", "basis", "parties")
+
+
+def record_strand_observations(conn, cluster_code: str, run_id: str, observations: list[dict]) -> dict:
+    """The observations of one strand reading (#2172 step 2): one row per key statement, the October
+    ledger's parts as columns, grounded by one ib_node per verse and strong. Each observation's
+    `occurrences` are resolved by the caller with resolve_occurrence() before anything is written.
+    `supersedes` (an observation id) withdraws the earlier row, naming the new one. Caller commits.
+    Returns {key: observation id}."""
+    _validate_stage(conn, STRAND_STAGE)
+    _validate_tag(conn, STRAND_TAG)
+    ids = {}
+    for o in observations:
+        _validate_obs_text(conn, o["text"])
+        strongs = {occ["strong"] for occ in o["occurrences"]}
+        oid = _insert_observation(conn, cluster_code, STRAND_STAGE, STRAND_TAG,
+                                  strongs.pop() if len(strongs) == 1 else None, None, o["text"],
+                                  "verse-text", None, supersedes_observation_id=o.get("supersedes"))
+        conn.execute(f"UPDATE ib_observation SET {', '.join(p + '=?' for p in STRAND_PARTS)}, run_id=? WHERE id=?",
+                     [o.get(p) for p in STRAND_PARTS] + [run_id, oid])
+        for seq, occ in enumerate(o["occurrences"]):
+            _insert_node(conn, oid, cluster_code, occ["strong"], occ["verse_reference"], occ["surface"],
+                         occ["morph_code"], None, STRAND_STAGE, seq)
+        if o.get("supersedes"):
+            conn.execute("UPDATE ib_observation SET status='withdrawn', revisit_note=?, updated_at=? WHERE id=?",
+                         (f"superseded by observation {oid} (run {run_id})", _now(), o["supersedes"]))
+        ids[o["key"]] = oid
+    return ids
+
+
+def set_disposition(conn, observation_id: int, status: str, note: str | None, run_id: str) -> None:
+    """An observation's disposition (#2172 design decision 5): resolved (a claim carries it), open
+    (held as a thread item), silent or withdrawn; the reason or the item goes in revisit_note."""
+    _assert_valid_ib_status(conn, status)
+    conn.execute("UPDATE ib_observation SET status=?, revisit_note=?, run_id=?, updated_at=? WHERE id=?",
+                 (status, note, run_id, _now(), observation_id))
+
+
 class SubgroupWriteError(Exception):
     """A defect in process (b)'s own output JSON -- structurally invalid, not a resolvable data
     gap (missing label, missing FLAG reason, a strong placed twice or not at all). Fails the WHOLE

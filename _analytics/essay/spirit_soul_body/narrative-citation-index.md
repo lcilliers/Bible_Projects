@@ -1,6 +1,6 @@
 # Narrative citation index
 
-*Published from iba.db on 2026-10-19. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-22. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 | Verse | Cited in | Claims resting on it |
 |---|---|---|
@@ -2556,7 +2556,7 @@
 | Isa 57:4 | 10.6 *As heat* | — |
 | Isa 57:5 | 10.6 *As heat* (quoted) | — |
 | Isa 57:10 | 10.3 *Forgetting God* (quoted) | — |
-| Isa 57:11 | 10.1 *What fear does* (quoted); 10.1 *The words*; 10.3 *Forgetting God* (quoted) | — |
+| Isa 57:11 | 10.1 *The words*; 10.1 *What fear does* (quoted); 10.3 *Forgetting God* (quoted) | — |
 | Isa 57:15 | 02 *Life that returns* (quoted); 04 *The heart is the source* (quoted); 06 *The human spirit* (quoted); 10.14 *A lowly and contrite spirit* (quoted); 10.15 *The words* (quoted); 13.1 *Lowering himself* (quoted); 14 *Revived, restored, renewed* (quoted) | C-167, C-189, C-202 |
 | Isa 57:16 | 02 *Breath lent, and held by God* (quoted); 06 *The human spirit* (quoted); 10.13 *Why it is held back* (quoted); 10.14 *A lowly and contrite spirit* (quoted); 14 *Revived, restored, renewed* (quoted) | C-116, C-189 |
 | Isa 57:17 | 10.9 *When God hides his face* (quoted) | C-254 |
@@ -3193,7 +3193,7 @@
 | Mat 5:42 | 10.10 *Loyalty and honour* (quoted) | — |
 | Mat 6:10 | 10.7 *Willing* (quoted) | — |
 | Mat 6:21 | 04 *The heart holds what is put into it* (quoted) | — |
-| Mat 6:25 | 10.1 *Anxiety* (quoted); 10.1 *The words*; 10.1 *When feeling changes character*; 11 *4. One word, opposite values* | — |
+| Mat 6:25 | 10.1 *The words*; 10.1 *Anxiety* (quoted); 10.1 *When feeling changes character*; 11 *4. One word, opposite values* | — |
 | Mat 6:26 | 10.1 *The words*; 10.1 *Meeting anxiety* (quoted) | — |
 | Mat 6:27 | 10.1 *The words*; 10.1 *What anxiety does* (quoted) | — |
 | Mat 6:28 | 10.1 *The words* | — |

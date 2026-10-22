@@ -125,6 +125,9 @@ The `escalation` table holds every open item, task, issue, decision and thread
   ResolveSelfCorrectable).
 - **`needs_followup`:** sends an approved item back to Claude instead of closing it.
 - **What each move may do:** `cfg_escalation_transition` and `cfg_escalation_requirement`.
+- **Close gates** are `cfg_escalation_requirement` check kinds, evaluated in `lib/escalation.py`:
+  `no_open_thread_items` (a thread, T6) and `strand_account_clean` (the escalation that records a
+  reading strand, #2172: the facts are `lib/strandreading.account_gaps`).
 - **Hand-over to the researcher:** governed by `cfg_behaviour_rule` 63.
 - **Threads** (`type='thread'`, alias `OT-nn`) carry the open-threads register as items and
   responses (`cfg_behaviour_rule` 74). The register file is generated, never edited.

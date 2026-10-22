@@ -1,6 +1,6 @@
 # Narrative claim changes
 
-*Published from iba.db on 2026-10-19. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-22. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 ## 2026-10-19 — OT-05.16: self-glory (Rev 18:7, Php 3:19), read outward and woven (#2160 group C)
 

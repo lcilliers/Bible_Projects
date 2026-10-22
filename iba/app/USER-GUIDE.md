@@ -420,14 +420,13 @@ after every write; never edit them:
 # write
 iba\app\ps\Narrative-Register.ps1 -Action AddClaim -Text "…" -BeyondText "…" -Source "Ecc 7:9; Job 36:13" -MainChapter 8 -By Claude
 iba\app\ps\Narrative-Register.ps1 -Action Edit -Claim C-12 -Text "…" -Verdict Restated -By Claude
-iba\app\ps\Narrative-Register.ps1 -Action Tell -Claim C-12 -Chapter 8 -Passage "<opening words>" -Kind "in part" -Part "…" -By Claude
-iba\app\ps\Narrative-Register.ps1 -Action Untell -Claim C-12 -Chapter 8 -Passage "<opening words>" -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action Tell -Claim C-12 -Chapter 8 -Section "<heading>" -Kind "in part" -Part "…" -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action Untell -Claim C-12 -Chapter 8 -Section "<heading>" -By Claude
 iba\app\ps\Narrative-Register.ps1 -Action Withdraw -Claim C-12 -Note "why" -By Researcher
 iba\app\ps\Narrative-Register.ps1 -Action EditNote -Heading "…" -Text "…" -By Researcher
 iba\app\ps\Narrative-Register.ps1 -Action AddChapter -Chapter 10.16 -Title "…" -Kind "key characteristic" -Purpose "…" -PurposeRef "#nnnn" -After 10.15 -CurrentFile "<file>.md" -Note "why" -By Claude
 iba\app\ps\Narrative-Register.ps1 -Action EditChapter -Chapter 9 -NewNumber 2 -By Claude
 iba\app\ps\Narrative-Register.ps1 -Action EditSection -Chapter 10.1 -Section "<heading>" -NewHeading "<new>" -By Claude
-iba\app\ps\Narrative-Register.ps1 -Action Record -File "<the weave's update JSON>" -By Claude
 
 # read-only (reports in narrative.register_report_dir)
 iba\app\ps\Narrative-Register.ps1 -Action Find -Verse "1 Samuel 24:5"
@@ -444,15 +443,21 @@ iba\app\ps\Narrative-Register.ps1 -Action QuoteCheck -File <chapter.md> [-Agains
 - **`-Source`** is one string. Items are separated by `;` or ` | `. Each is a verse reference in any
   spelling the chapters use (ranges and lists included), or `lexical:`, `science:` or `study file:`
   followed by text. A new claim needs `-BeyondText` and at least one source.
-- **`-Passage`** is the passage's opening words. A passage is a paragraph, a bullet, a table row
-  or a block quote. A list directly under a paragraph belongs to that paragraph's passage.
+- **`-Section`** names a block by its heading. Where a heading repeats in a chapter under
+  different parents (10.1: "The words" under Fear and under Anxiety), name it as
+  `"Parent > Heading"`; the chapter's opening is `"(opening)"`.
+
+**The narrative is held in the database, in blocks (#2172).** A block is a heading and its text
+(`narrative_section.block_text`); a claim is told by a block (`narrative_claim_telling.section_id`,
+one current telling per claim and block). The chapter files are exports: each change to a block is
+followed by the chapter written from the database as its next version, and the file it replaces
+moves to the folder's `archive/`. The narrative text is written through `Strand-Reading.ps1 -Step
+Rewrite` (section 8.2), never in a chapter file.
 
 **Actions:**
-- **`Record`** takes one weave's whole update as JSON (the shape is in `record()`'s docstring in
-  `iba/app/lib/narrativeregister.py`). It refuses, writing nothing, when anything it names does not
-  exist, a version does not match the file on disk, or the update was already recorded. It then
-  lists the changed passages and other tellings to read for consistency. With `from_version` =
-  `to_version`, it re-reads a chapter's citations without a version bump.
+- **`EditSection`** renames a block (the old row stays as history and its tellings move to the
+  new one), changes its level or place, adds an empty block (`-Level`), or retires it
+  (`-LastVersion`); the chapter is then published.
 - **Chapters** are added and changed only through `AddChapter`/`EditChapter`. `AddChapter` needs
   `-Kind`, `-Purpose`, `-PurposeRef`, and `-After` or `-ReadingOrder`, plus a `-CurrentFile` on disk
   unless the kind is in `narrative.chapter_kinds_without_file`.
@@ -462,15 +467,71 @@ iba\app\ps\Narrative-Register.ps1 -Action QuoteCheck -File <chapter.md> [-Agains
   per run. `Check` lists every current one.
 - **Direct edits in the database** are logged as `direct edit`. Run `Export` and then `Check`
   afterwards.
-- **The chapter text is in the database:** each current `narrative_section` row holds its block of
-  the chapter verbatim (`block_text`: the heading line and everything up to the next heading), and
-  the chapter renders from its blocks (`render_chapter`). `Record` and `AddChapter` store the
-  blocks. `Check` reports any chapter whose file differs from the database, with the line. A
-  heading may repeat in a chapter under a different parent.
-- **`narrative_passage`** holds only passages that tell a claim. A coverage scan reads the blocks
-  (`split_blocks` / `parse_chapter` on `render_chapter`) and matches rows by `opens_with`.
+- **`AddChapter`** imports a new chapter from its file once (`-CurrentFile`); after that the chapter
+  lives in the database.
+- **`Check`** reports a chapter file that differs from the database (the file was edited outside the
+  register), a newer chapter file than the register's, a block not opening with its heading line,
+  two current tellings of one claim in one block, a telling in a block no longer in the narrative,
+  and current claims no block tells.
+- **`narrative_passage`** is history: the paragraphs that told claims before #2172. It is no longer
+  written; a coverage scan reads the blocks (`render_chapter`).
 
-### 8.2 Copying the narrative to learning4comfort
+### 8.2 Reading a strand (`iba/app/ps/Strand-Reading.ps1`)
+
+The reading process (#2172): Claude reads and writes in the session; the app gives everything
+already known, records the results as rows and checks facts. One strand at a time, in seven steps
+after `Define`. Write steps take `-By Claude|Researcher`; a refusal writes nothing. The JSON shape
+of each step is in its docstring in `iba/app/lib/strandreading.py`. Reports go to
+`strand_reading.output_dir`, one folder per strand.
+
+```powershell
+iba\app\ps\Strand-Reading.ps1 -Step Define -Strand flesh-body -Title "Flesh and body" -Cluster M48 -Escalation 2162 -Strongs "H1320,G4561" -By Claude
+iba\app\ps\Strand-Reading.ps1 -Step Context -Strand flesh-body -By Claude
+iba\app\ps\Strand-Reading.ps1 -Step Record -Strand flesh-body -File "<reading.json>" -By Claude
+iba\app\ps\Strand-Reading.ps1 -Step Gather -Strand flesh-body
+iba\app\ps\Strand-Reading.ps1 -Step Map -Strand flesh-body -File "<map.json>" -By Claude
+iba\app\ps\Strand-Reading.ps1 -Step Derive -Strand flesh-body -File "<derive.json>" -By Claude
+iba\app\ps\Strand-Reading.ps1 -Step Rewrite -Strand flesh-body -File "<rewrite.json>" -By Claude
+iba\app\ps\Strand-Reading.ps1 -Step Account -Strand flesh-body
+```
+
+- **`Define`** creates a strand: its code (lowercase-hyphenated), title, home cluster, the
+  escalation that is its record, and its words (exact codes, as in `verse_lexical`: `H0639G`). On an
+  open strand, `-Strongs` adds words.
+- **`Context`** (step 1) writes a hit row for every live occurrence of the strand's words (one per
+  verse and strong), then the context file: the words, every observation already on those words
+  and verses (September's drafts included), the open thread items that match by strong, verse,
+  cluster or strand, and every hit with its verse text, surface, morph, coverage and face so far.
+- **`Record`** (step 2) records a reading: observations, one per key statement, with setting,
+  meaning, implication, chain, basis (`stated` or `read`) and parties, each grounded on the verses
+  and strongs it names; and for each hit read, a face or a stated reason it has none. An earlier
+  observation corrected is named in `supersedes` and withdrawn. Every quotation is checked against
+  the ESV text. The verses read are marked `analysed`. It refuses a hit that is not the strand's,
+  a hit with both or neither a face and a reason, a verse where the strong does not occur, and a
+  quotation not in the text.
+- **`Gather`** (step 3) lists every block related to the strand (it cites a strand verse, or tells
+  a claim resting on the strand's verses or observations) with its full text and its tellings, and
+  the claims on the strand's verses that no block tells.
+- **`Map`** (step 4) records what each related block tells: each statement names its claim(s), a
+  new claim (added and told there), or an item (held on the strand's escalation, quoted). It
+  refuses while any related block is not mapped.
+- **`Derive`** (step 5) writes new, adjusted and withdrawn claims, each resting on at least one
+  observation or verse (an observation is a claim source, kind `observation`), and each
+  observation's disposition: carried by a claim (`resolved`), held on an item (`open`), `silent` or
+  `withdrawn` with the reason.
+- **`Rewrite`** (step 6) writes blocks anew, whole: a block names the claims it tells, and every
+  claim it told before is still told, or accounted for as moved (to a block that tells it), or
+  withdrawn (the claim withdrawn first, in Derive). New blocks are placed after a named block;
+  retired blocks leave the narrative. The citations are re-derived from the text, the quotations
+  checked, the cited verses marked `citated` (`citated` replaces `analysed`; `exclude` is never
+  overwritten), and each chapter touched is published from the database.
+- **`Account`** (step 7) writes the strand from the tables: its gaps (hits unread, observations not
+  disposed), then for judgement the claims told nowhere, every observation and its claim, every
+  claim and the block that tells it, every hit and its verse's coverage.
+- **The close gate:** the strand's escalation cannot reach `completed` or `closed` while any hit
+  has no face or reason, or any observation has no disposition.
+
+### 8.3 Copying the narrative to learning4comfort
 
 ```powershell
 iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1 [-DryRun]

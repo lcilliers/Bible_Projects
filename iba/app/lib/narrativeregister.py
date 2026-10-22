@@ -2,17 +2,22 @@
 
 Specification: `_analytics/essay/spirit_soul_body/wa-essay-narrative-record-
 db-specification-v1-20261013.md`. A **claim** is a statement derived from sources that goes beyond
-their mere text, held in its own wording; the **narrative** is the story, recorded here only as the
-**passages** that tell claims; claims and passages are joined many to many. Every change keeps its
-before and after: the history triggers (cfg_trigger, `trg_narrative_*`) write
-`narrative_claim_change` rows on any edit, direct or through this module; this module then marks
-the rows it caused as `basis='recorded'` with its own provenance (and the update, for Record).
+their mere text, held in its own wording; the **narrative** is the story, held here as **blocks**
+(narrative_section.block_text: a heading and its text) that tell claims; claims and blocks are joined
+many to many (#2172; the passage rows before it are history). The database is the narrative: a
+chapter file is its export (publish_chapter). Every change keeps its before and after: the history
+triggers (cfg_trigger, `trg_narrative_*`) write `narrative_claim_change` rows on any edit, direct or
+through this module; this module then marks the rows it caused as `basis='recorded'` with its own
+provenance (and the update, for a rewrite).
 
 Parts:
   references   parse_refs()      chapter/register references -> verse rows (alias map in config)
-  chapters     parse_chapter()   a chapter file -> sections and passages (paragraphs, bullets, rows)
+  chapters     parse_chapter()   a chapter file -> sections (AddChapter imports a chapter once)
+               render_chapter()  the chapter from its blocks; publish_chapter() writes it as a file
   actions      add_claim, edit, tell, untell, withdraw, edit_note, add_chapter, edit_chapter,
-               edit_section, record   (chapters: #2155, the chapter table is the authority)
+               edit_section   (chapters: #2155, the chapter table is the authority)
+  rewrite      rewrite()         blocks rewritten, added or retired whole, with the claims each
+                                 tells; every claim a block told is accounted for (#2172 safeguard 3)
   read-only    find, history, check
   publishing   export            the three fixed-name files (spec sec8)
 
@@ -83,11 +88,11 @@ class Writer:
         return self.conn.execute(f'UPDATE "{table}" SET {s} WHERE {w}',
                                  list(sets.values()) + list(where.values())).rowcount
 
-    def move_passages(self, from_section: int, to_section: int) -> int:
-        """The current passages of one section row move to another (a heading renamed)."""
-        self._grant("narrative_passage")
-        return self.conn.execute("UPDATE narrative_passage SET section_id=? WHERE section_id=? AND "
-                                 "last_version IS NULL", (to_section, from_section)).rowcount
+    def move_tellings(self, from_section: int, to_section: int) -> int:
+        """The current tellings of one block move to another (a heading renamed, #2172)."""
+        self._grant("narrative_claim_telling")
+        return self.conn.execute("UPDATE narrative_claim_telling SET section_id=? WHERE section_id=? AND "
+                                 "status='current'", (to_section, from_section)).rowcount
 
     def note_unresolved(self, vx: "VerseIndex", row: dict, where: str) -> None:
         """Keep a reference just written that matches no verse, for the output and the escalation."""
@@ -341,13 +346,6 @@ class Section:
     parent: int | None          # index into the section list
 
 
-@dataclasses.dataclass
-class Passage:
-    section: int                # index into the section list
-    ordinal: int
-    text: str
-
-
 _FILE_RX = re.compile(r"^(?P<stem>.+)-v(?P<v>\d+)-(?P<d>\d{8})\.md$")
 
 
@@ -356,78 +354,25 @@ def file_version(name: str) -> tuple[str, int] | None:
     return (m.group("stem"), int(m.group("v"))) if m else None
 
 
-def plain(s: str) -> str:
-    """Text for matching: markdown emphasis and bullet markers removed, spaces collapsed."""
-    s = re.sub(r"^\s*(?:[-*+]|\d+\.)\s+", "", s)
-    s = re.sub(r"[*_`]", "", s)
-    s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
-    return re.sub(r"\s+", " ", s).strip()
-
-
-def anchor_of(text: str, words: int = 12) -> str:
-    return " ".join(plain(text).split(" ")[:words])
-
-
-def parse_chapter(text: str) -> tuple[str, list[Section], list[Passage]]:
-    """(title, sections, passages). Section 0 is the opening (level 0, before the first heading).
-    A passage is a paragraph, one bullet (with its continuation lines), one table data row, or one
-    block quote."""
+def parse_chapter(text: str) -> tuple[str, list[Section]]:
+    """(title, sections) of a chapter file. Section 0 is the opening (level 0, before the first
+    heading); the sections line up with split_blocks()."""
     title = ""
     sections = [Section("(opening)", 0, 0, None)]
-    passages: list[Passage] = []
-    cur = 0
     stack: list[int] = []
-    block: list[str] = []
-    counts: dict[int, int] = {}
-
-    def add(t: str) -> None:
-        t = t.strip()
-        if not t:
-            return
-        counts[cur] = counts.get(cur, 0) + 1
-        passages.append(Passage(cur, counts[cur], t))
-
-    def flush() -> None:
-        nonlocal block
-        if not block:
-            return
-        if all(l.lstrip().startswith("|") for l in block):
-            rows = [l for l in block if not re.fullmatch(r"\s*\|[\s:|-]+\|\s*", l)]
-            for r in rows[1:]:          # the first row is the header
-                add(r)
-        elif re.match(r"\s*(?:[-*+]|\d+\.)\s", block[0]):
-            item: list[str] = []
-            for l in block:
-                if re.match(r"\s*(?:[-*+]|\d+\.)\s", l) and item and not l.startswith("    "):
-                    add("\n".join(item))
-                    item = []
-                item.append(l)
-            add("\n".join(item))
-        else:
-            add("\n".join(block))
-        block = []
-
     for line in text.splitlines():
-        h = re.match(r"^(#{1,4})\s+(.*\S)\s*$", line)
-        if h:
-            flush()
-            level = len(h.group(1))
-            if level == 1 and not title:
-                title = h.group(2)
-                continue
-            while stack and sections[stack[-1]].level >= level:
-                stack.pop()
-            sections.append(Section(h.group(2), level, len(sections), stack[-1] if stack else None))
-            cur = len(sections) - 1
-            stack.append(cur)
-        elif not line.strip():
-            flush()
-        elif re.fullmatch(r"\s*-{3,}\s*", line):
-            flush()
-        else:
-            block.append(line)
-    flush()
-    return title, sections, passages
+        h = _HEADING_RX.match(line)
+        if not h:
+            continue
+        level = len(h.group(1))
+        if level == 1 and not title:
+            title = h.group(2)
+            continue
+        while stack and sections[stack[-1]].level >= level:
+            stack.pop()
+        sections.append(Section(h.group(2), level, len(sections), stack[-1] if stack else None))
+        stack.append(len(sections) - 1)
+    return title, sections
 
 
 _HEADING_RX = re.compile(r"^(#{1,4})\s+(.*\S)\s*$")
@@ -476,17 +421,6 @@ def _sync_bodies(w: "Writer", ch, text: str, ids: dict[int, int]) -> None:
 
 def chapter_dir(cfg) -> pathlib.Path:
     return PROJECT_ROOT / cfg.setting("narrative.copy_source_dir")
-
-
-def opens_with(text: str, opening: str) -> bool:
-    """True when `text` opens with the words of `opening`, compared word by word with case,
-    quotation marks, emphasis and other punctuation ignored."""
-    want = re.findall(r"\w+", plain(opening).lower())
-    return bool(want) and re.findall(r"\w+", plain(text).lower())[:len(want)] == want
-
-
-def find_passage(passages: list[Passage], opening: str) -> list[Passage]:
-    return [p for p in passages if opens_with(p.text, opening)]
 
 
 # ══ lookups ═════════════════════════════════════════════════════════════════════════════════════
@@ -638,35 +572,40 @@ def edit(cfg, w: Writer, p: dict) -> str:
     return f"claim {c['claim_ref']} changed: {', '.join(sets) or ''}{' + sources' if sources else ''}"
 
 
-def _passage_row(cfg, w: Writer | None, ch, opening: str, create: bool):
-    """The narrative_passage row for the passage that opens with `opening` in the chapter's current
-    file; created (with its section) when create=True and it has no row yet."""
-    conn = cfg.conn
-    if not opening:
-        raise Refused("-Passage (the passage's opening words) is required")
-    path = _chapter_file(cfg, ch)
-    _, sections, passages = parse_chapter(path.read_text(encoding="utf-8"))
-    found = find_passage(passages, opening)
-    if not found:
-        raise Refused(f"no passage in {path.name} opens with {opening!r}")
-    if len(found) > 1:
-        raise Refused(f"{len(found)} passages in {path.name} open with {opening!r}; give more words")
-    ps = found[0]
-    anchor = anchor_of(ps.text)
-    row = conn.execute("SELECT * FROM narrative_passage WHERE chapter_id=? AND last_version IS NULL "
-                       "AND anchor_text=?", (ch["id"], anchor)).fetchone()
-    if row or not create:
-        return row, ps
-    sec = sections[ps.section]
-    srow = conn.execute("SELECT id FROM narrative_section WHERE chapter_id=? AND heading=? AND "
-                        "last_version IS NULL", (ch["id"], sec.heading)).fetchone()
-    if srow is None:
-        raise Refused(f"section {sec.heading!r} has no narrative_section row; run -Action Check, "
-                      f"then -Action EditSection to add it")
-    pid = w.insert("narrative_passage", {
-        "chapter_id": ch["id"], "section_id": srow[0], "ordinal": ps.ordinal, "anchor_text": anchor,
-        "passage_text": ps.text, "first_version": ch["current_version"]})
-    return conn.execute("SELECT * FROM narrative_passage WHERE id=?", (pid,)).fetchone(), ps
+def _block(conn, ch, spec: str | None):
+    """The current block (narrative_section row) of a chapter, named by its heading, or by
+    'Parent > Heading' where a heading repeats under different parents (10.1: 'The words' under Fear
+    and under Anxiety); '(opening)' is the chapter's opening block (#2172)."""
+    if not (spec or "").strip():
+        raise Refused("-Section (the block's heading, or 'Parent > Heading') is required")
+    parts = [x.strip() for x in spec.split(">")]
+    rows = conn.execute("SELECT s.*, ps.heading AS parent_heading FROM narrative_section s LEFT JOIN "
+                        "narrative_section ps ON ps.id=s.parent_section_id WHERE s.chapter_id=? AND "
+                        "s.heading=? AND s.last_version IS NULL ORDER BY s.ordinal",
+                        (ch["id"], parts[-1])).fetchall()
+    if len(parts) > 1:
+        rows = [r for r in rows if r["parent_heading"] == parts[-2]]
+    if not rows:
+        raise Refused(f"Ch {ch['chapter_no']} has no current block {spec!r}")
+    if len(rows) > 1:
+        raise Refused(f"Ch {ch['chapter_no']} has {len(rows)} current blocks headed {parts[-1]!r}; name it "
+                      f"as 'Parent > Heading' (parents: {', '.join(r['parent_heading'] or '-' for r in rows)})")
+    return rows[0]
+
+
+def _block_telling(conn, claim_id: int, section_id: int):
+    return conn.execute("SELECT * FROM narrative_claim_telling WHERE claim_id=? AND section_id=? AND "
+                        "passage_id IS NULL", (claim_id, section_id)).fetchone()
+
+
+def tell_block(w: Writer, claim_id: int, section_id: int, kind: str, part: str | None) -> None:
+    """One current telling of a claim in a block: inserted, restored or changed (the triggers log it)."""
+    t = _block_telling(w.conn, claim_id, section_id)
+    if t is None:
+        w.insert("narrative_claim_telling", {"claim_id": claim_id, "section_id": section_id,
+                                             "kind": kind, "part_told": part})
+    else:
+        w.update("narrative_claim_telling", {"id": t["id"]}, {"status": "current", "kind": kind, "part_told": part})
 
 
 def tell(cfg, w: Writer, p: dict) -> str:
@@ -676,51 +615,36 @@ def tell(cfg, w: Writer, p: dict) -> str:
     kind = p.get("Kind") or "in full"
     _check_enum(cfg.enum("narrative_telling_kind"), kind, "-Kind")
     if kind == "in part" and not (p.get("Part") or "").strip():
-        raise Refused("-Part is required with -Kind 'in part': which part of the claim the passage tells")
-    _chapter_file(cfg, ch)
+        raise Refused("-Part is required with -Kind 'in part': which part of the claim the block tells")
+    sec = _block(conn, ch, p.get("Section"))
+    t = _block_telling(conn, c["id"], sec["id"])
+    if t and t["status"] == "current":
+        raise Refused(f"{c['claim_ref']} is already told in that block (as {t['kind']!r}); one telling per "
+                      f"claim and block -- Untell it first")
 
     def go():
         since = _max_change_id(conn)
-        prow, _ = _passage_row(cfg, w, ch, p.get("Passage"), create=True)
-        t = conn.execute("SELECT * FROM narrative_claim_telling WHERE claim_id=? AND passage_id=?",
-                         (c["id"], prow["id"])).fetchone()
-        if t and t["status"] == "current":
-            raise Refused(f"{c['claim_ref']} is already told in that passage (as {t['kind']!r}); one "
-                          f"telling per claim and passage -- Untell it first, or change it through Record")
-        if t:
-            w.update("narrative_claim_telling", {"id": t["id"]},
-                     {"status": "current", "kind": kind, "part_told": p.get("Part")})
-        else:
-            w.insert("narrative_claim_telling", {"claim_id": c["id"], "passage_id": prow["id"],
-                                                 "kind": kind, "part_told": p.get("Part")})
+        tell_block(w, c["id"], sec["id"], kind, p.get("Part"))
         w.mark_changes(since, "Narrative-Register.ps1 -Action Tell", note=p.get("Note"))
-        return prow["id"]
-    pid = _atomic(conn, go)
-    return f"{c['claim_ref']} told in Ch {ch['chapter_no']}, passage {pid} ({kind})"
+    _atomic(conn, go)
+    return f"{c['claim_ref']} told in Ch {ch['chapter_no']} *{sec['heading']}* ({kind})"
 
 
 def untell(cfg, w: Writer, p: dict) -> str:
     conn = cfg.conn
     c = _claim(conn, p.get("Claim"))
     ch = _chapter(conn, p.get("Chapter"))
-    rows = conn.execute(
-        "SELECT t.id, p.anchor_text, p.passage_text FROM narrative_claim_telling t JOIN "
-        "narrative_passage p ON p.id=t.passage_id WHERE t.claim_id=? AND p.chapter_id=? AND "
-        "t.status='current'", (c["id"], ch["id"])).fetchall()
-    want = p.get("Passage") or ""
-    if not want.strip():
-        raise Refused("-Passage (the passage's opening words) is required")
-    hit = [r for r in rows if opens_with(r["passage_text"], want)]
-    if len(hit) != 1:
-        raise Refused(f"{len(hit)} current telling(s) of {c['claim_ref']} in Ch {ch['chapter_no']} "
-                      f"open with {p.get('Passage')!r}; exactly one is needed")
+    sec = _block(conn, ch, p.get("Section"))
+    t = _block_telling(conn, c["id"], sec["id"])
+    if not t or t["status"] != "current":
+        raise Refused(f"{c['claim_ref']} is not told in Ch {ch['chapter_no']} *{sec['heading']}*")
 
     def go():
         since = _max_change_id(conn)
-        w.update("narrative_claim_telling", {"id": hit[0]["id"]}, {"status": "removed"})
+        w.update("narrative_claim_telling", {"id": t["id"]}, {"status": "removed"})
         w.mark_changes(since, "Narrative-Register.ps1 -Action Untell", note=p.get("Note"))
     _atomic(conn, go)
-    return f"{c['claim_ref']} no longer told in that passage of Ch {ch['chapter_no']}"
+    return f"{c['claim_ref']} no longer told in Ch {ch['chapter_no']} *{sec['heading']}*"
 
 
 def withdraw(cfg, w: Writer, p: dict) -> str:
@@ -826,7 +750,7 @@ def add_chapter(cfg, w: Writer, p: dict) -> str:
             raise Refused(f"-CurrentFile {cur!r} is not named <stem>-vN-YYYYMMDD.md")
         stem, version = fv
         text = path.read_text(encoding="utf-8")
-        _, sections, _ = parse_chapter(text)
+        _, sections = parse_chapter(text)
     elif not no_file:
         raise Refused(f"-CurrentFile is required for a {kind!r} chapter (only "
                       f"{cfg.required_setting('narrative.chapter_kinds_without_file')} have no file)")
@@ -906,46 +830,62 @@ def edit_chapter(cfg, w: Writer, p: dict) -> str:
 
 
 def edit_section(cfg, w: Writer, p: dict) -> str:
+    """A block's heading, level or place changed, or a block added or retired; the chapter is then
+    published from the database as its next version (the file is an export, #2172)."""
     conn = cfg.conn
     ch = _chapter(conn, p.get("Chapter"))
-    sec = conn.execute("SELECT * FROM narrative_section WHERE chapter_id=? AND heading=? AND "
-                       "last_version IS NULL", (ch["id"], p.get("Section"))).fetchone()
+    try:
+        sec = _block(conn, ch, p.get("Section"))
+    except Refused:
+        if "Section" not in p or p.get("Level") is None or ">" in (p.get("Section") or ""):
+            raise
+        sec = None
     sets = {}
     for prm, col in (("NewHeading", "heading"), ("Level", "level"), ("Ordinal", "ordinal"),
                      ("LastVersion", "last_version")):
         if p.get(prm) is not None:
             sets[col] = p[prm]
+    v_from, v_to = ch["current_version"], (ch["current_version"] or 0) + 1
     if sec is None:
-        if not p.get("Section") or p.get("Level") is None:
-            raise Refused(f"section {p.get('Section')!r} does not exist in Ch {ch['chapter_no']}; "
-                          f"give -Section and -Level to add it")
-
         def add():
             n = conn.execute("SELECT COALESCE(MAX(ordinal), 0) + 1 FROM narrative_section WHERE "
                              "chapter_id=?", (ch["id"],)).fetchone()[0]
             w.insert("narrative_section", {"chapter_id": ch["id"], "heading": p["Section"],
                                            "level": int(p["Level"]), "ordinal": int(p.get("Ordinal") or n),
-                                           "first_version": ch["current_version"]})
-        _atomic(conn, add)
-        return f"section {p['Section']!r} added to Ch {ch['chapter_no']}"
+                                           "first_version": v_to,
+                                           "block_text": _heading_line(int(p["Level"]), p["Section"])})
+            return publish_chapter(cfg, w, ch, v_to).name
+        f = _atomic(conn, add)
+        return f"section {p['Section']!r} added to Ch {ch['chapter_no']}; published {f}"
     if not sets:
         raise Refused("nothing to change: give -NewHeading, -Level, -Ordinal or -LastVersion")
 
+    if sec["level"] and ("heading" in sets or "level" in sets):     # the block's heading line follows
+        lines = (sec["block_text"] or "").split("\n")
+        lines[0] = _heading_line(int(sets.get("level", sec["level"])), sets.get("heading", sec["heading"]))
+        block = "\n".join(lines)
+    else:
+        block = sec["block_text"]
+
     def go():
-        if "heading" in sets:     # a rename keeps the old row as history
-            w.update("narrative_section", {"id": sec["id"]}, {"last_version": ch["current_version"]})
+        since = _max_change_id(conn)
+        if "heading" in sets:     # a rename keeps the old row as history; the tellings follow the block
+            w.update("narrative_section", {"id": sec["id"]}, {"last_version": v_from})
             new = {k: sec[k] for k in ("chapter_id", "level", "parent_section_id", "ordinal")}
             new.update({k: v for k, v in sets.items() if k != "last_version"})
-            nid = w.insert("narrative_section", {**new, "first_version": ch["current_version"],
-                                                 "renamed_from_id": sec["id"]})
-            w.move_passages(sec["id"], nid)
+            nid = w.insert("narrative_section", {**new, "first_version": v_to,
+                                                 "renamed_from_id": sec["id"], "block_text": block})
+            w.move_tellings(sec["id"], nid)
         else:
-            w.update("narrative_section", {"id": sec["id"]}, sets)
-    _atomic(conn, go)
-    return f"section {p.get('Section')!r} in Ch {ch['chapter_no']} changed: {', '.join(sets)}"
+            w.update("narrative_section", {"id": sec["id"]}, {**sets, "block_text": block})
+        f = publish_chapter(cfg, w, ch, v_to).name
+        w.mark_changes(since, "Narrative-Register.ps1 -Action EditSection", note=p.get("Note"))
+        return f
+    f = _atomic(conn, go)
+    return f"section {p.get('Section')!r} in Ch {ch['chapter_no']} changed: {', '.join(sets)}; published {f}"
 
 
-# ── Record (spec sec5.1) ────────────────────────────────────────────────────────────────────────
+# ── Rewrite: the narrative written in blocks, in the database (#2172 step 6) ─────────────────────
 def _escalation_exists(conn, kind: str, value: str) -> bool:
     if kind == "escalation":
         return conn.execute("SELECT 1 FROM escalation WHERE id=?", (int(value.lstrip("#")),)).fetchone() is not None
@@ -959,30 +899,120 @@ def _escalation_exists(conn, kind: str, value: str) -> bool:
     return True
 
 
-def record(cfg, w: Writer, p: dict) -> str:
-    """One weave's whole update from a JSON file. Shape (all keys but update optional):
-    {"update": {"update_date","title","strand","researcher_instruction","method","source_files":[],
-                "scripts":[],"claims_changed_note","not_woven_note","structure_change",
-                "structure_reason","quote_parts","quote_failures","quote_note","notes"},
-     "refs": [{"kind": "escalation|thread|thread item", "value": "1998|OT-29|OT-29.1"}],
-     "chapters": [{"chapter": "10.13", "from_version": 7, "to_version": 8, "file": "<new file>",
-                   "renames": [{"from": "<old heading>", "to": "<new heading>"}],
-                   "passages": [{"anchor": "<old opening words>", "new_anchor": "<new>"|null (removed),
-                                 "to_chapter": "<chapter it moves to, for a split or merge>"}]}],
-     "claims": [{"key": "n1", "new": {"text","beyond_text","origin","verdict","i_read","sources"}},
-                {"ref": "C-12", "edit": {"text","verdict","status","note"}}],
-     "tellings": [{"claim": "C-12"|"n1", "chapter": "10.13", "passage": "<opening words>",
-                   "kind": "in full|in part|pointer", "part": "...", "action": "add|change|remove"}]}"""
+def _heading_line(level: int, heading: str) -> str:
+    return f"{'#' * level} {heading}"
+
+
+def _check_block_text(sec, text: str, title_line: str | None) -> None:
+    """A block is its heading line and the lines up to the next heading: it opens with its own
+    heading line (the opening block: with the chapter's title line) and holds no other heading."""
+    lines = text.split("\n")
+    want = title_line if sec["level"] == 0 else _heading_line(sec["level"], sec["heading"])
+    if want is not None and lines[0] != want:
+        raise Refused(f"block *{sec['heading']}* must open with its heading line {want!r}, not {lines[0]!r} "
+                      f"(a heading is renamed with EditSection)")
+    extra = [ln for ln in lines[1:] if _HEADING_RX.match(ln)]
+    if extra:
+        raise Refused(f"block *{sec['heading']}* holds another heading ({extra[0]!r}); a new heading is a "
+                      f"new block")
+
+
+def sync_block_citations(cfg, w: Writer, vx: "VerseIndex", ch, sid: int, text: str, from_v, to_v) -> list[int]:
+    """The block's citation rows re-derived from its text: a reference no longer there gets
+    last_version = from_v; a new one is inserted with first_version = to_v. Returns the verse ids
+    the block now cites."""
     conn = cfg.conn
-    fpath = pathlib.Path(p.get("File") or "")
-    if not fpath.is_absolute():
-        fpath = PROJECT_ROOT / fpath
-    if not fpath.is_file():
-        raise Refused(f"-File {p.get('File')!r} not found")
-    try:
-        data = json.loads(fpath.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise Refused(f"-File is not valid JSON: {exc}") from exc
+    want: dict[str, dict] = {}
+    for r in parse_refs(text, vx):
+        if r.normalised in want:
+            continue
+        vt = conn.execute("SELECT text FROM verse WHERE id=?", (r.verse_id,)).fetchone() if r.verse_id else None
+        want[r.normalised] = {"chapter_id": ch["id"], "section_id": sid, "verse_id": r.verse_id,
+                              "ref_as_written": r.as_written, "ref_normalised": r.normalised,
+                              "quoted": int(quoted(text, vt[0] if vt else None)), "first_version": to_v}
+    have = {r["ref_normalised"]: r for r in conn.execute(
+        "SELECT * FROM narrative_citation WHERE section_id=? AND last_version IS NULL", (sid,))}
+    for ref, r in have.items():
+        if ref not in want:
+            w.update("narrative_citation", {"id": r["id"]}, {"last_version": from_v})
+    for ref, row in want.items():
+        if ref not in have:
+            w.insert("narrative_citation", row)
+            w.note_unresolved(vx, row, f"Ch {ch['chapter_no']} block {sid}")
+        else:
+            sets = {k: row[k] for k in ("ref_as_written", "verse_id", "quoted") if have[ref][k] != row[k]}
+            if sets:
+                w.update("narrative_citation", {"id": have[ref]["id"]}, sets)
+    return [r["verse_id"] for r in want.values() if r["verse_id"]]
+
+
+def _archive_dir(cfg) -> pathlib.Path:
+    return chapter_dir(cfg) / "archive"
+
+
+def publish_chapter(cfg, w: Writer, ch, version: int) -> pathlib.Path:
+    """The chapter file written from the database as version `version` (the file is an export, #2172);
+    the file it replaces moves to the folder's archive/ (rule 58). Refused unless the written file
+    reads back exactly as the database renders it."""
+    text = render_chapter(cfg.conn, ch["id"])
+    name = f"{ch['file_stem']}-v{version}-{_today().replace('-', '')}.md"
+    path = chapter_dir(cfg) / name
+    if path.exists():
+        raise Refused(f"Ch {ch['chapter_no']}: {name} is already on disk")
+    path.write_text(text, encoding="utf-8", newline="\n")
+    if path.read_text(encoding="utf-8") != text:
+        raise Refused(f"Ch {ch['chapter_no']}: {name} does not read back as the database renders it")
+    old = chapter_dir(cfg) / (ch["current_file"] or "")
+    if ch["current_file"] and old.is_file() and old != path:
+        _archive_dir(cfg).mkdir(exist_ok=True)
+        old.replace(_archive_dir(cfg) / old.name)
+    w.update("narrative_chapter", {"id": ch["id"]}, {"current_version": version, "current_file": name})
+    return path
+
+
+def _order_block_after(w: Writer, ch, after) -> int:
+    """Room for a new block right after `after` and its sub-blocks: the later current blocks move
+    down one. Returns the new block's ordinal."""
+    conn = w.conn
+    later = conn.execute("SELECT id, level, ordinal FROM narrative_section WHERE chapter_id=? AND "
+                         "last_version IS NULL AND ordinal > ? ORDER BY ordinal", (ch["id"], after["ordinal"])).fetchall()
+    order = after["ordinal"] + 1
+    for r in later:
+        if after["level"] and r["level"] > after["level"]:
+            order = r["ordinal"] + 1         # a sub-block of `after` stays above the new one
+            continue
+        break
+    for r in reversed([x for x in later if x["ordinal"] >= order]):
+        w.update("narrative_section", {"id": r["id"]}, {"ordinal": r["ordinal"] + 1})
+    return order
+
+
+def _parent_for(conn, ch, order: int, level: int) -> int | None:
+    r = conn.execute("SELECT id FROM narrative_section WHERE chapter_id=? AND last_version IS NULL AND "
+                     "ordinal < ? AND level < ? AND level > 0 ORDER BY ordinal DESC LIMIT 1",
+                     (ch["id"], order, level)).fetchone()
+    return r[0] if r else None
+
+
+def rewrite(cfg, w: Writer, data: dict, provenance: str) -> dict:
+    """Blocks of the narrative rewritten, added or retired in the database, each whole, with the
+    claims each block tells; then each chapter touched is published from the database. Shape:
+    {"update": {"update_date","title","strand","researcher_instruction","method","notes"},
+     "refs": [{"kind": "escalation|thread|thread item", "value": "2172|OT-29|OT-29.1"}],
+     "blocks": [{"chapter": "7",
+                 "section": "<heading>|<Parent > Heading>"            (an existing block), or
+                 "new": {"heading", "level", "after": "<block>"}      (a new block),
+                 "text": "<the whole block: its heading line, then its text>"   (omitted with retire),
+                 "retire": true                                      (the block leaves the narrative),
+                 "tells": [{"claim": "C-12", "kind": "in full|in part|pointer", "part": "..."}],
+                 "accounts": [{"claim": "C-5", "as": "kept|moved|withdrawn",
+                               "to": {"chapter": "7", "section": "<block>"}}]}]}
+    Safeguard 3 (#2172): every claim the block told before is still told there, or accounted for --
+    kept, moved (a block named in `to` tells it after this rewrite) or withdrawn (the claim's status
+    is withdrawn) -- or nothing is written. Every quotation must be in the ESV text.
+    Returns {"update_id", "chapters": {no: file}, "cited_verse_ids": [...], "quote_parts"}."""
+    from . import quotecheck
+    conn = cfg.conn
     up = data.get("update") or {}
     if not up.get("title") or not up.get("update_date"):
         raise Refused("update.title and update.update_date are required")
@@ -993,189 +1023,153 @@ def record(cfg, w: Writer, p: dict) -> str:
         _check_enum(cfg.enum("narrative_update_ref_kind"), r.get("kind"), "refs.kind")
         if not _escalation_exists(conn, r["kind"], str(r["value"])):
             raise Refused(f"{r['kind']} {r['value']!r} does not exist")
+    blocks = data.get("blocks") or []
+    if not blocks:
+        raise Refused("blocks: at least one block is required")
+    kinds = cfg.enum("narrative_telling_kind")
+    corpus = quotecheck.Corpus(conn)
+    min_words = int(cfg.required_setting("narrative.quote_min_words"))
+    skip = quotecheck.titles(conn)
+    # validate everything before any write
+    plan, seen, quote_parts, bad_quotes = [], set(), 0, []
+    for i, b in enumerate(blocks):
+        ch = _chapter(conn, b.get("chapter"))
+        where = f"blocks[{i}] (Ch {ch['chapter_no']})"
+        if bool(b.get("section")) == bool(b.get("new")):
+            raise Refused(f"{where}: give one of section (an existing block) or new")
+        sec = _block(conn, ch, b["section"]) if b.get("section") else None
+        if sec is not None:
+            if sec["id"] in seen:
+                raise Refused(f"{where}: block *{sec['heading']}* is named twice")
+            seen.add(sec["id"])
+        new = b.get("new")
+        retire = bool(b.get("retire"))
+        if new:
+            if not new.get("heading") or not isinstance(new.get("level"), int) or new["level"] < 1:
+                raise Refused(f"{where}: new needs heading and a level of 1 or more")
+            _block(conn, ch, new.get("after"))
+            if retire:
+                raise Refused(f"{where}: a new block cannot be retired")
+        text = b.get("text")
+        if retire and text:
+            raise Refused(f"{where}: a retired block has no text")
+        if not retire:
+            if not (text or "").strip():
+                raise Refused(f"{where}: text is required")
+            title = None
+            if sec is not None and sec["level"] == 0:
+                title = (sec["block_text"] or "").split("\n")[0]
+            _check_block_text(sec if sec is not None else {"level": new["level"], "heading": new["heading"]},
+                              text, title)
+            n, bad = quotecheck.check_lines(corpus, text.split("\n"), min_words, skip)
+            quote_parts += n
+            bad_quotes += [f"{where}: \"{q}\"" for q in bad]
+        if retire and conn.execute("SELECT 1 FROM narrative_section WHERE parent_section_id=? AND "
+                                   "last_version IS NULL", (sec["id"],)).fetchone():
+            raise Refused(f"{where}: *{sec['heading']}* has current sub-blocks; retire them first")
+        tells = []
+        for t in b.get("tells") or []:
+            c = _claim(conn, t.get("claim"))
+            kind = t.get("kind") or "in full"
+            _check_enum(kinds, kind, f"{where} tells.kind")
+            if kind == "in part" and not (t.get("part") or "").strip():
+                raise Refused(f"{where}: {c['claim_ref']} is told 'in part' with no part")
+            if c["status"] == "withdrawn":
+                raise Refused(f"{where}: {c['claim_ref']} is withdrawn and cannot be told")
+            tells.append((c, kind, t.get("part")))
+        if retire and tells:
+            raise Refused(f"{where}: a retired block tells no claim")
+        plan.append({"ch": ch, "sec": sec, "new": new, "retire": retire, "text": text, "tells": tells,
+                     "accounts": b.get("accounts") or [], "where": where})
+    if bad_quotes:
+        raise Refused("quotation(s) not found in the ESV text:\n  " + "\n  ".join(bad_quotes))
+    # safeguard 3: every claim each named block tells now is still told there, or accounted for
+    told_after = {x["sec"]["id"]: {c["id"] for c, _, _ in x["tells"]} for x in plan if x["sec"] is not None}
+    missing = []
+    for x in plan:
+        if x["sec"] is None:
+            continue
+        sid = x["sec"]["id"]
+        acc = {_claim(conn, a.get("claim"))["id"]: a for a in x["accounts"]}
+        for cid, ref in conn.execute("SELECT t.claim_id, c.claim_ref FROM narrative_claim_telling t JOIN "
+                                     "narrative_claim c ON c.id=t.claim_id WHERE t.section_id=? AND "
+                                     "t.status='current'", (sid,)).fetchall():
+            a = acc.get(cid)
+            if a is None or a.get("as") == "kept":
+                if cid not in told_after[sid]:
+                    missing.append(f"{x['where']} *{x['sec']['heading']}*: {ref} is told there now and "
+                                   f"{'is kept but no longer told' if a else 'is not accounted for'}")
+            elif a.get("as") == "moved":
+                to = a.get("to") or {}
+                tch = _chapter(conn, to.get("chapter"))
+                tsec = _block(conn, tch, to.get("section"))
+                after = told_after.get(tsec["id"])
+                there = cid in after if after is not None else conn.execute(
+                    "SELECT 1 FROM narrative_claim_telling WHERE claim_id=? AND section_id=? AND status='current'",
+                    (cid, tsec["id"])).fetchone() is not None
+                if not there or tsec["id"] == sid:
+                    missing.append(f"{x['where']}: {ref} 'moved' to Ch {tch['chapter_no']} *{tsec['heading']}*, "
+                                   f"which does not tell it")
+            elif a.get("as") == "withdrawn":
+                if conn.execute("SELECT status FROM narrative_claim WHERE id=?", (cid,)).fetchone()[0] != "withdrawn":
+                    missing.append(f"{x['where']}: {ref} is accounted 'withdrawn' but the claim is not withdrawn "
+                                   f"(withdraw it in the Derive step first)")
+            else:
+                missing.append(f"{x['where']}: {ref}: 'as' must be kept, moved or withdrawn")
+    if missing:
+        raise Refused("claims told before are not accounted for (safeguard 3):\n  " + "\n  ".join(missing))
     vx = VerseIndex(cfg)
-    chapters = []
-    for c in data.get("chapters", []):
-        ch = _chapter(conn, c.get("chapter"))
-        f = chapter_dir(cfg) / (c.get("file") or "")
-        fv = file_version(f.name)
-        if not f.is_file() or not fv or fv[1] != int(c.get("to_version", -1)):
-            raise Refused(f"chapter {ch['chapter_no']}: file {c.get('file')!r} is not on disk or its "
-                          f"version is not to_version {c.get('to_version')}")
-        if ch["current_version"] is not None and int(c.get("from_version", -1)) != ch["current_version"]:
-            raise Refused(f"chapter {ch['chapter_no']}: from_version {c.get('from_version')} does not "
-                          f"match the register's current version {ch['current_version']}")
-        chapters.append((ch, c, f))
-    in_record = {ch["chapter_no"] for ch, _, _ in chapters}
-    for ch, c, f in chapters:
-        for x in c.get("passages", []):
-            if x.get("to_chapter") and _chapter(conn, x["to_chapter"])["chapter_no"] not in in_record:
-                raise Refused(f"passage '{x.get('anchor')}' moves to Ch {x['to_chapter']}, which is not "
-                              f"among this record's chapters (its new file must be named too)")
-    new_keys = {}
-    for cl in data.get("claims", []):
-        if "new" in cl:
-            n = cl["new"]
-            if not n.get("text"):
-                raise Refused(f"claims[{cl.get('key')}].new.text is required")
-            _check_enum(cfg.enum("narrative_claim_origin"), n.get("origin") or "narrative", "claims.new.origin")
-            _check_enum(cfg.enum("narrative_claim_verdict"), n.get("verdict"), "claims.new.verdict")
-            new_keys[cl.get("key")] = None
-        else:
-            _claim(conn, cl.get("ref"))
-            e = cl.get("edit") or {}
-            _check_enum(cfg.enum("narrative_claim_verdict"), e.get("verdict"), "claims.edit.verdict")
-            _check_enum(cfg.enum("narrative_claim_status"), e.get("status"), "claims.edit.status")
-    for t in data.get("tellings", []):
-        if t.get("claim") not in new_keys:
-            _claim(conn, t.get("claim"))
-        _chapter(conn, t.get("chapter"))
-        _check_enum(cfg.enum("narrative_telling_kind"), t.get("kind") or "in full", "tellings.kind")
-        if t.get("action", "add") not in ("add", "change", "remove"):
-            raise Refused(f"tellings.action {t.get('action')!r} must be add, change or remove")
-    findings: list[str] = []
 
     def go():
         since = _max_change_id(conn)
         uid = w.insert("narrative_update", {
             **{k: up.get(k) for k in ("update_date", "title", "strand", "researcher_instruction", "method",
-                                      "claims_changed_note", "not_woven_note", "structure_change",
-                                      "structure_reason", "quote_parts", "quote_failures", "quote_note",
                                       "notes")},
-            "source_files": "\n".join(up.get("source_files") or []) or None,
-            "scripts": "\n".join(up.get("scripts") or []) or None})
+            "quote_parts": quote_parts, "quote_failures": 0})
         for r in data.get("refs", []):
             w.insert("narrative_update_ref", {"update_id": uid, "kind": r["kind"], "value": str(r["value"])})
-        changed_passages: set[int] = set()
-        declared: set[int] = set()            # passages the JSON names as moved or removed
-        parsed = {}
-        for ch, c, f in chapters:            # every chapter's sections first: a passage may move into one
-            text = f.read_text(encoding="utf-8")
-            _, sections, passages = parse_chapter(text)
-            ids = _sync_sections(conn, w, ch, sections, c["to_version"],
-                                 {r["to"]: r["from"] for r in c.get("renames", [])})
-            _sync_bodies(w, ch, text, ids)
-            parsed[ch["chapter_no"]] = (ch, sections, passages, ids)
-        for ch, c, f in chapters:
-            old_file = ch["current_file"]
-            _, sections, passages, ids = parsed[ch["chapter_no"]]
-            moved = {plain(x["anchor"]).lower(): x for x in c.get("passages", [])}
-            for prow in conn.execute("SELECT * FROM narrative_passage WHERE chapter_id=? AND "
-                                     "last_version IS NULL", (ch["id"],)).fetchall():
-                entry = next((v for k, v in moved.items() if opens_with(prow["anchor_text"], v["anchor"])), None)
-                look = (entry.get("new_anchor") or entry["anchor"]) if entry else prow["anchor_text"]
-                if entry and "new_anchor" in entry and entry["new_anchor"] is None and not entry.get("to_chapter"):
-                    w.update("narrative_passage", {"id": prow["id"]}, {"last_version": c["from_version"]})
-                    w.update("narrative_claim_telling", {"passage_id": prow["id"], "status": "current"},
-                             {"status": "removed"})     # each claim it told logs 'telling removed'
-                    changed_passages.add(prow["id"])
-                    declared.add(prow["id"])
-                    continue
-                if entry and entry.get("to_chapter"):     # a split or merge: the passage keeps its row
-                    tch, tsecs, tps, tids = parsed[_chapter(conn, entry["to_chapter"])["chapter_no"]]
-                    hit = find_passage(tps, look)
-                    if len(hit) != 1:
-                        raise Refused(f"passage '{entry['anchor']}' is not found once in Ch {tch['chapter_no']}'s "
-                                      f"new file ({len(hit)} matches)")
-                    ps = hit[0]
-                    w.update("narrative_passage", {"id": prow["id"]}, {
-                        "chapter_id": tch["id"], "section_id": tids.get(ps.section),
-                        "passage_text": ps.text, "anchor_text": anchor_of(ps.text), "ordinal": ps.ordinal})
-                    changed_passages.add(prow["id"])
-                    declared.add(prow["id"])
-                    continue
-                hit = find_passage(passages, look)
-                if len(hit) != 1:
-                    findings.append(f"Ch {ch['chapter_no']}: passage {prow['id']} ('{prow['anchor_text']}') "
-                                    f"{'not found' if not hit else 'matches ' + str(len(hit)) + ' passages'} "
-                                    f"in {f.name} and not accounted for in the JSON")
-                    continue
-                ps = hit[0]
-                sets = {}
-                if ps.text != prow["passage_text"]:
-                    sets["passage_text"] = ps.text
-                new_anchor = anchor_of(ps.text)
-                if new_anchor != prow["anchor_text"]:
-                    sets["anchor_text"] = new_anchor
-                sec_row = ids.get(ps.section)
-                if sec_row and sec_row != prow["section_id"]:
-                    sets["section_id"] = sec_row
-                if sets:
-                    w.update("narrative_passage", {"id": prow["id"]}, sets)
-                    if "passage_text" in sets:
-                        changed_passages.add(prow["id"])
-            w.update("narrative_chapter", {"id": ch["id"]},
-                     {"current_version": c["to_version"], "current_file": f.name})
-            _sync_citations(cfg, w, vx, ch, sections, passages, c["from_version"], c["to_version"])
+        versions: dict[int, tuple] = {}
+        cited: set[int] = set()
+        for x in plan:
+            ch = conn.execute("SELECT * FROM narrative_chapter WHERE id=?", (x["ch"]["id"],)).fetchone()
+            v_from, v_to = versions.setdefault(ch["id"], (ch["current_version"], (ch["current_version"] or 0) + 1))
+            if x["new"]:
+                after = _block(conn, ch, x["new"]["after"])
+                order = _order_block_after(w, ch, after)
+                sid = w.insert("narrative_section", {
+                    "chapter_id": ch["id"], "heading": x["new"]["heading"], "level": x["new"]["level"],
+                    "parent_section_id": _parent_for(conn, ch, order, x["new"]["level"]), "ordinal": order,
+                    "first_version": v_to, "block_text": x["text"]})
+            else:
+                sid = x["sec"]["id"]
+            if x["retire"]:
+                for (tid,) in conn.execute("SELECT id FROM narrative_claim_telling WHERE section_id=? AND "
+                                           "status='current'", (sid,)).fetchall():
+                    w.update("narrative_claim_telling", {"id": tid}, {"status": "removed"})
+                sync_block_citations(cfg, w, vx, ch, sid, "", v_from, v_to)
+                w.update("narrative_section", {"id": sid}, {"last_version": v_from})
+                continue
+            if x["sec"] is not None:
+                w.update("narrative_section", {"id": sid}, {"block_text": x["text"]})
+            keep = set()
+            for c, kind, part in x["tells"]:
+                tell_block(w, c["id"], sid, kind, part)
+                keep.add(c["id"])
+            for tid, cid in conn.execute("SELECT id, claim_id FROM narrative_claim_telling WHERE section_id=? "
+                                         "AND status='current'", (sid,)).fetchall():
+                if cid not in keep:
+                    w.update("narrative_claim_telling", {"id": tid}, {"status": "removed"})
+            cited.update(sync_block_citations(cfg, w, vx, ch, sid, x["text"], v_from, v_to))
+        files = {}
+        for chid, (v_from, v_to) in versions.items():
+            ch = conn.execute("SELECT * FROM narrative_chapter WHERE id=?", (chid,)).fetchone()
+            files[ch["chapter_no"]] = publish_chapter(cfg, w, ch, v_to).name
             conn.execute("UPDATE narrative_claim_change SET chapter_version_from=?, chapter_version_to=?, "
                          "file_before=?, file_after=? WHERE id > ? AND chapter_id=?",
-                         (c["from_version"], c["to_version"], old_file, f.name, since, ch["id"]))
-        for cl in data.get("claims", []):
-            if "new" in cl:
-                n = cl["new"]
-                cid = w.insert("narrative_claim", {
-                    "origin": n.get("origin") or "narrative", "claim_text": n["text"],
-                    "beyond_text": n.get("beyond_text"), "i_read": int(bool(n.get("i_read"))),
-                    "verdict": n.get("verdict") or "New", "status": "current"})
-                new_ref = conn.execute("SELECT claim_ref FROM narrative_claim WHERE id=?", (cid,)).fetchone()[0]
-                for s in _parse_sources(cfg, vx, "; ".join(n.get("sources") or [])):
-                    w.insert("narrative_claim_source", {"claim_id": cid, **s})
-                    w.note_unresolved(vx, s, f"claim {new_ref} source")
-                new_keys[cl.get("key")] = cid
-            else:
-                c0 = _claim(conn, cl["ref"])
-                e = cl.get("edit") or {}
-                sets = {k2: e[k1] for k1, k2 in (("text", "claim_text"), ("verdict", "verdict"),
-                                                   ("status", "status")) if e.get(k1)}
-                if sets:
-                    w.update("narrative_claim", {"id": c0["id"]}, sets)
-        accounted: set[int] = set()
-        for t in data.get("tellings", []):
-            cid = new_keys.get(t["claim"]) or _claim(conn, t["claim"])["id"]
-            ch = _chapter(conn, t["chapter"])
-            prow, _ = _passage_row(cfg, w, ch, t.get("passage"), create=t.get("action", "add") != "remove")
-            if prow is None:
-                raise Refused(f"telling {t}: the passage has no row to remove from")
-            accounted.add(prow["id"])
-            cur = conn.execute("SELECT * FROM narrative_claim_telling WHERE claim_id=? AND passage_id=?",
-                               (cid, prow["id"])).fetchone()
-            act = t.get("action", "add")
-            if act == "remove":
-                if not cur:
-                    raise Refused(f"telling {t}: no telling to remove")
-                w.update("narrative_claim_telling", {"id": cur["id"]}, {"status": "removed"})
-            elif cur:
-                w.update("narrative_claim_telling", {"id": cur["id"]},
-                         {"status": "current", "kind": t.get("kind") or cur["kind"],
-                          "part_told": t.get("part", cur["part_told"])})
-            else:
-                w.insert("narrative_claim_telling", {"claim_id": cid, "passage_id": prow["id"],
-                                                     "kind": t.get("kind") or "in full",
-                                                     "part_told": t.get("part")})
-        for pid in sorted(changed_passages - accounted - declared):
-            for r in conn.execute("SELECT c.claim_ref, p.anchor_text FROM narrative_claim_telling t "
-                                  "JOIN narrative_claim c ON c.id=t.claim_id JOIN narrative_passage p "
-                                  "ON p.id=t.passage_id WHERE t.passage_id=? AND t.status='current'", (pid,)):
-                findings.append(f"passage {pid} ('{r['anchor_text']}') changed and tells {r['claim_ref']}; "
-                                f"the JSON does not account for it -- read the telling")
-        claims_touched = {r[0] for r in conn.execute(
-            "SELECT DISTINCT claim_id FROM narrative_claim_change WHERE id > ? AND passage_id IS NOT NULL",
-            (since,))}
-        for cid in sorted(claims_touched):
-            others = conn.execute(
-                "SELECT c.claim_ref, ch.chapter_no, s.heading FROM narrative_claim_telling t JOIN "
-                "narrative_passage p ON p.id=t.passage_id JOIN narrative_chapter ch ON ch.id=p.chapter_id "
-                "LEFT JOIN narrative_section s ON s.id=p.section_id JOIN narrative_claim c ON c.id=t.claim_id "
-                "WHERE t.claim_id=? AND t.status='current' AND t.passage_id NOT IN (SELECT passage_id FROM "
-                "narrative_claim_change WHERE id > ? AND passage_id IS NOT NULL)", (cid, since)).fetchall()
-            for o in others:
-                findings.append(f"{o['claim_ref']} is also told in Ch {o['chapter_no']} "
-                                f"*{o['heading'] or '(opening)'}* -- read it for consistency")
-        w.mark_changes(since, f"Narrative-Register.ps1 -Action Record -File {p.get('File')}",
-                       update_id=uid, change_date=up["update_date"])
-        return uid
-    uid = _atomic(conn, go)
-    return "\n  ".join([f"update {uid} recorded: {up['title']}"] + (findings or ["nothing unaccounted for"]))
+                         (v_from, v_to, ch["current_file"], files[ch["chapter_no"]], since, chid))
+        w.mark_changes(since, provenance, update_id=uid, change_date=up["update_date"])
+        return {"update_id": uid, "chapters": files, "cited_verse_ids": sorted(cited), "quote_parts": quote_parts}
+    return _atomic(conn, go)
 
 
 def _section_row_for(conn, chapter_id: int, heading: str, parent_id: int | None = None,
@@ -1191,22 +1185,11 @@ def _section_row_for(conn, chapter_id: int, heading: str, parent_id: int | None 
     return None
 
 
-def _section_ids(conn, ch, sections: list[Section]) -> dict[int, int]:
-    """{index in `sections`: current row id}, matched as `_sync_sections` matches; read-only."""
-    ids: dict[int, int] = {}
-    for i, s in enumerate(sections):
-        parent = ids.get(s.parent) if s.parent is not None else None
-        sid = _section_row_for(conn, ch["id"], s.heading, parent, set(ids.values()))
-        if sid is not None:
-            ids[i] = sid
-    return ids
-
-
 def _sync_sections(conn, w: Writer, ch, sections: list[Section], version: int,
                    renames: dict[str, str] | None = None) -> dict[int, int]:
     """Headings now in the file get a row (first_version = version) if they have none; current rows
     whose heading is gone get last_version = version - 1. `renames` {new heading: old heading}: the
-    new row carries renamed_from_id, and the passages under the old row follow it to the new one.
+    new row carries renamed_from_id, and the tellings of the old block follow it to the new one.
     Returns {index in `sections`: row id}."""
     ids: dict[int, int] = {}
     now = set()
@@ -1225,7 +1208,7 @@ def _sync_sections(conn, w: Writer, ch, sections: list[Section], version: int,
                                                  "renamed_from_id": old})
             if old is not None:
                 w.update("narrative_section", {"id": old}, {"last_version": version - 1})
-                w.move_passages(old, sid)
+                w.move_tellings(old, sid)
         else:
             w.update("narrative_section", {"id": sid}, {"level": s.level, "ordinal": s.ordinal,
                                                          "parent_section_id": parent})
@@ -1238,51 +1221,12 @@ def _sync_sections(conn, w: Writer, ch, sections: list[Section], version: int,
     return ids
 
 
-def _sync_citations(cfg, w: Writer, vx: VerseIndex, ch, sections, passages, from_v, to_v) -> None:
-    """The chapter's citation rows brought to the new version: a citation no longer present gets
-    last_version = from_v; a new one is inserted with first_version = to_v."""
-    conn = cfg.conn
-    want: dict[tuple, dict] = {}
-    where: dict[tuple, str] = {}
-    ids = _section_ids(conn, ch, sections)
-    for ps in passages:
-        heading = sections[ps.section].heading
-        sid = ids.get(ps.section)
-        prow = conn.execute("SELECT id FROM narrative_passage WHERE chapter_id=? AND anchor_text=? AND "
-                            "last_version IS NULL", (ch["id"], anchor_of(ps.text))).fetchone()
-        for r in parse_refs(ps.text, vx):
-            key = (sid, r.normalised)
-            if key in want:
-                continue
-            vt = conn.execute("SELECT text FROM verse WHERE id=?", (r.verse_id,)).fetchone() if r.verse_id else None
-            want[key] = {"chapter_id": ch["id"], "section_id": sid, "passage_id": prow[0] if prow else None,
-                         "verse_id": r.verse_id, "ref_as_written": r.as_written, "ref_normalised": r.normalised,
-                         "quoted": int(quoted(ps.text, vt[0] if vt else None)), "first_version": to_v}
-            where[key] = f"Ch {ch['chapter_no']} *{heading}*"
-    have = {(r["section_id"], r["ref_normalised"]): r for r in conn.execute(
-        "SELECT * FROM narrative_citation WHERE chapter_id=? AND last_version IS NULL", (ch["id"],))}
-    for key, r in have.items():
-        if key not in want:
-            w.update("narrative_citation", {"id": r["id"]}, {"last_version": from_v})
-    for key, row in want.items():
-        if key not in have:
-            w.insert("narrative_citation", row)
-            w.note_unresolved(vx, row, where[key])
-        else:      # a corrected parse (#2136), or a verse since added to the verse table (#2138)
-            sets = {k: row[k] for k in ("ref_as_written", "verse_id") if have[key][k] != row[k]}
-            if "verse_id" in sets:
-                sets["quoted"] = row["quoted"]
-            if sets:
-                w.update("narrative_citation", {"id": have[key]["id"]}, sets)
-
-
 # ══ read-only: find, history, check ═════════════════════════════════════════════════════════════
 def _told_in(conn, claim_id: int) -> list[str]:
     return [f"{r['chapter_no']} *{r['heading'] or '(opening)'}* ({r['kind']})" for r in conn.execute(
-        "SELECT ch.chapter_no, s.heading, t.kind FROM narrative_claim_telling t JOIN narrative_passage p "
-        "ON p.id=t.passage_id JOIN narrative_chapter ch ON ch.id=p.chapter_id LEFT JOIN narrative_section s "
-        "ON s.id=p.section_id WHERE t.claim_id=? AND t.status='current' AND p.last_version IS NULL "
-        "ORDER BY ch.reading_order, s.ordinal, p.ordinal", (claim_id,))]
+        "SELECT ch.chapter_no, s.heading, t.kind FROM narrative_claim_telling t JOIN narrative_section s "
+        "ON s.id=t.section_id JOIN narrative_chapter ch ON ch.id=s.chapter_id WHERE t.claim_id=? AND "
+        "t.status='current' AND s.last_version IS NULL ORDER BY ch.reading_order, s.ordinal", (claim_id,))]
 
 
 def find(cfg, p: dict) -> tuple[list[str], list[str]]:
@@ -1300,9 +1244,9 @@ def find(cfg, p: dict) -> tuple[list[str], list[str]]:
     if p.get("NotInNarrative") in ("1", "true", "True"):
         where.append("c.in_narrative=0"); title.append("not in the narrative")
     if p.get("ToldInMoreThanOne") in ("1", "true", "True"):
-        where.append("(SELECT COUNT(*) FROM narrative_claim_telling t JOIN narrative_passage pp ON "
-                     "pp.id=t.passage_id WHERE t.claim_id=c.id AND t.status='current' AND t.kind<>'pointer' "
-                     "AND pp.last_version IS NULL) > 1")
+        where.append("(SELECT COUNT(*) FROM narrative_claim_telling t JOIN narrative_section ss ON "
+                     "ss.id=t.section_id WHERE t.claim_id=c.id AND t.status='current' AND t.kind<>'pointer' "
+                     "AND ss.last_version IS NULL) > 1")
         title.append("told in more than one place")
     if p.get("Chapter"):
         ch = _chapter(conn, p["Chapter"])
@@ -1311,8 +1255,8 @@ def find(cfg, p: dict) -> tuple[list[str], list[str]]:
             sec_clause, sec_args = " AND s.heading LIKE ?", [f"%{p['Section']}%"]
             title.append(f"section '{p['Section']}'")
         where.append("(c.main_chapter_id=? OR c.id IN (SELECT t.claim_id FROM narrative_claim_telling t "
-                     "JOIN narrative_passage pp ON pp.id=t.passage_id LEFT JOIN narrative_section s ON "
-                     f"s.id=pp.section_id WHERE pp.chapter_id=? AND t.status='current'{sec_clause}))")
+                     "JOIN narrative_section s ON s.id=t.section_id WHERE s.chapter_id=? AND "
+                     f"t.status='current'{sec_clause}))")
         args += [ch["id"], ch["id"], *sec_args]; title.append(f"Ch {ch['chapter_no']}")
     elif p.get("Section"):
         raise Refused("-Section needs -Chapter")
@@ -1397,10 +1341,10 @@ def history(cfg, p: dict) -> tuple[list[str], list[str]]:
 
 
 def check(cfg, p: dict) -> tuple[list[str], list[str]]:
-    """Chapters, sections and passage anchors against the files on disk (spec sec5)."""
+    """The chapters, their blocks and their published files (spec sec5; the database is the narrative
+    and the file its export, #2172)."""
     conn = cfg.conn
     problems: list[str] = []
-    files_text: dict[int, list[Passage]] = {}
     chs = conn.execute("SELECT * FROM narrative_chapter WHERE inactive=0 ORDER BY reading_order").fetchall()
     for ch in chs:
         path = chapter_dir(cfg) / (ch["current_file"] or "")
@@ -1416,37 +1360,31 @@ def check(cfg, p: dict) -> tuple[list[str], list[str]]:
                        if file_version(x.name))
         if newer and newer[-1][1] != ch["current_file"]:
             problems.append(f"Ch {ch['chapter_no']}: a newer file is on disk ({newer[-1][1]}) than the "
-                            f"register's current file ({ch['current_file']}) -- record the weave")
+                            f"register's current file ({ch['current_file']}) -- the narrative is edited in the "
+                            f"database (Strand-Reading.ps1 -Step Rewrite), not in the file")
         text = path.read_text(encoding="utf-8")
         rendered = render_chapter(conn, ch["id"])
         if rendered != text:
-            problems.append(f"Ch {ch['chapter_no']}: the database text differs from {ch['current_file']} "
-                            f"at line {_first_difference(rendered, text)} -- record the weave")
-        _, sections, passages = parse_chapter(text)
-        files_text[ch["id"]] = passages
-        headings = {s.heading for s in sections}
-        for s in conn.execute("SELECT heading FROM narrative_section WHERE chapter_id=? AND last_version IS NULL",
-                              (ch["id"],)):
-            if s[0] not in headings:
-                problems.append(f"Ch {ch['chapter_no']}: section *{s[0]}* is current in the register but "
-                                f"not in {path.name}")
-        reg = {s[0] for s in conn.execute("SELECT heading FROM narrative_section WHERE chapter_id=? AND "
-                                           "last_version IS NULL", (ch["id"],))}
-        for h in sorted(headings - reg):
-            problems.append(f"Ch {ch['chapter_no']}: heading *{h}* in {path.name} has no section row")
-    for prow in conn.execute("SELECT p.*, ch.chapter_no FROM narrative_passage p JOIN narrative_chapter ch "
-                             "ON ch.id=p.chapter_id WHERE p.last_version IS NULL").fetchall():
-        ps = files_text.get(prow["chapter_id"])
-        if ps is None:
-            continue
-        if not find_passage(ps, prow["anchor_text"]):
-            elsewhere = [conn.execute("SELECT chapter_no FROM narrative_chapter WHERE id=?", (cid,)).fetchone()[0]
-                         for cid, pl in files_text.items() if cid != prow["chapter_id"] and find_passage(pl, prow["anchor_text"])]
-            problems.append(f"Ch {prow['chapter_no']}: passage {prow['id']} ('{prow['anchor_text']}') is no "
-                            f"longer in its chapter file" + (f" -- found in Ch {', '.join(elsewhere)}: a move "
-                                                              f"to confirm" if elsewhere else ""))
+            problems.append(f"Ch {ch['chapter_no']}: {ch['current_file']} differs from the database at line "
+                            f"{_first_difference(rendered, text)} -- the file was edited outside the register")
+        for b_ in conn.execute("SELECT heading, level, block_text FROM narrative_section WHERE chapter_id=? AND "
+                               "last_version IS NULL AND level > 0", (ch["id"],)):
+            if (b_["block_text"] or "").split("\n")[0] != _heading_line(b_["level"], b_["heading"]):
+                problems.append(f"Ch {ch['chapter_no']}: block *{b_['heading']}* does not open with its heading line")
+    for r in conn.execute("SELECT c.claim_ref, ch.chapter_no, s.heading, COUNT(*) n FROM narrative_claim_telling t "
+                          "JOIN narrative_claim c ON c.id=t.claim_id JOIN narrative_section s ON s.id=t.section_id "
+                          "JOIN narrative_chapter ch ON ch.id=s.chapter_id WHERE t.status='current' "
+                          "GROUP BY t.claim_id, t.section_id HAVING n > 1"):
+        problems.append(f"claim {r['claim_ref']} has {r['n']} current tellings in Ch {r['chapter_no']} "
+                        f"*{r['heading']}*; one per block")
+    for r in conn.execute("SELECT c.claim_ref, ch.chapter_no, s.heading FROM narrative_claim_telling t JOIN "
+                          "narrative_claim c ON c.id=t.claim_id JOIN narrative_section s ON s.id=t.section_id JOIN "
+                          "narrative_chapter ch ON ch.id=s.chapter_id WHERE t.status='current' AND "
+                          "s.last_version IS NOT NULL"):
+        problems.append(f"claim {r['claim_ref']} is told in Ch {r['chapter_no']} *{r['heading']}*, a block no "
+                        f"longer in the narrative")
     for r in conn.execute("SELECT claim_ref FROM narrative_claim WHERE status='current' AND in_narrative=0"):
-        problems.append(f"claim {r[0]} is current but no current passage tells it")
+        problems.append(f"claim {r[0]} is current but no current block tells it")
     vx = VerseIndex(cfg)                  # an unresolved reference is an error (#2134)
     for r in conn.execute("SELECT ch.chapter_no, s.heading, ci.ref_as_written, ci.ref_normalised FROM "
                           "narrative_citation ci JOIN narrative_chapter ch ON ch.id=ci.chapter_id LEFT JOIN "
@@ -1532,9 +1470,9 @@ def export(cfg) -> list[pathlib.Path]:
         for s in conn.execute("SELECT * FROM narrative_section WHERE chapter_id=? AND last_version IS NULL "
                               "ORDER BY ordinal", (ch["id"],)):
             told = conn.execute(
-                "SELECT DISTINCT c.id, c.claim_ref, c.claim_text, t.kind, t.part_told FROM narrative_claim_telling t "
-                "JOIN narrative_passage p ON p.id=t.passage_id JOIN narrative_claim c ON c.id=t.claim_id WHERE "
-                "p.section_id=? AND t.status='current' AND p.last_version IS NULL ORDER BY p.ordinal, c.id",
+                "SELECT c.id, c.claim_ref, c.claim_text, t.kind, t.part_told FROM narrative_claim_telling t "
+                "JOIN narrative_claim c ON c.id=t.claim_id WHERE t.section_id=? AND t.status='current' "
+                "ORDER BY c.id",
                 (s["id"],)).fetchall()
             if not told:
                 continue
