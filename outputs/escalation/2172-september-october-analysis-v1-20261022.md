@@ -32,7 +32,7 @@ verse-reading, char-subgroup, char-reading, char-answers (#1690 to #1697, #1711)
 | `run`, `run_batch` | what ran, resumable, no double spend | 4,491, 236 |
 | `ib_observation_enhancer_log` | every rule-driven change to an observation | 7,183 |
 
-**What it delivered:** observations for three clusters only: M67 (3,183), M83 (1,553) and M49 (954).
+**What it delivered:** observations for three clusters only: M67 Sloth & Diligence (3,183), M83 Seeking & Inquiring (1,553) and M49 Thanksgiving (954).
 Another 5,712 word-level rows have no cluster. Status today: 6,527 draft and 4,953 withdrawn.
 Nothing from it reached the narrative. `narrative_claim_source` has no kind that points to an
 observation, and only 141 verses are both grounded in `ib_node` and cited in the narrative.
@@ -106,7 +106,7 @@ archived.
      verse and a word, with a meaning and a basis. It is held in two places, and only the md one
      was used.
 2. **The link from reading to claim went by hand.**
-   - A claim's source is a verse, or a "study file" given as text (40 rows, e.g. "M47 reading
+   - A claim's source is a verse, or a "study file" given as text (40 rows, e.g. "M47 Inner Seat reading
      pointers ...").
    - No claim points to the observation it came from.
    - A weave names its reading only as a file path in `narrative_update.source_files` (73 of 160

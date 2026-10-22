@@ -1,9 +1,9 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-22T04:25:24Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-22T06:43:02Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `d74187d6-1173-4993-9516-9f985fd9ac3b` (CLAUDE_CODE_SESSION_ID); started 2026-10-22T04:15:24Z; window base commit `10d74a347b2dae086b5f6e9bfc7fd8e974db84ad`
-- compliance file: `Logs/compliance/COMPLIANCE-20261022-d74187d6.md`; session log: `Logs/SESSION-LOG-20261022-2207-renames-mode-choice.md`
+- session: `0995b2cd-9227-4f35-9fbc-af8e49dcb9ff` (CLAUDE_CODE_SESSION_ID); started 2026-10-22T04:27:55Z; window base commit `67e2a71d43e87d743cef17af5b4c24561a1fdb5c`
+- compliance file: `Logs/compliance/COMPLIANCE-20261022-0995b2cd.md`; session log: `Logs/SESSION-LOG-20261022-2207-stop-2172-narrative-blocks.md`
 - **open findings: 0**; cleared by disposition: 1
 
 
@@ -41,7 +41,7 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:1b209244`: researcher message 2026-10-22T04:15 is too short to be matched; name where it is recorded: "proceed with 2207" -- disposition: no record needed: a bare 'proceed with 2207' that started the work recorded in #2207 v14
+- cleared `SC3:bcd4de78`: researcher message 2026-10-22T05:35 is too short to be matched; name where it is recorded: "A then 1" -- disposition: recorded in #2177 v25
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register

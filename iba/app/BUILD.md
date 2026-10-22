@@ -18642,7 +18642,7 @@ Tests, on `dbsnapshot.copy_db` copies:
   the old code, for all four stages and an unknown stage.
 - Synthetic: with `ib_observation.tag_guidance` inactive, the prompt build raises instead of
   sending an empty definition list.
-- Real package builds for cluster M07, no API call, no writes:
+- Real package builds for cluster M07 (Shame & Confusion), no API call, no writes:
   - Stage 2 subgroup: tag lines present, cross-occurrence tags offered.
   - Stage 1 word level and relational: tag lines present, cross-occurrence tags not offered.
 - Every touched module imports; no undefined names.
@@ -18712,3 +18712,17 @@ Live: applied; a re-run changes nothing. `Narrative-Register.ps1 -Action Check`
 `configmaint.validate` (RUN-20261022_073454_538-CONFIGMAINT): the same 4 utility and 13 rule
 findings. Its parked advisory tier wrote a version on #2207 only because the count changed against
 its last snapshot.
+
+## 385. Session 0995b2cd close: files not named above by their exact path (2026-10-22, #2207, #2172)
+
+Section 383's changes, by the paths they now have:
+- `iba/app/lib/archive/batchprogressreport.py` and `iba/app/ps/archive/BatchProgress.ps1`: moved
+  to archive/ (`git mv`) when the batch monitoring was scrapped;
+- `iba/app/lib/archive/lexicalenrich.py`: moved to archive/ with the retired steps;
+- `iba/app/lib/taggingguidance.py`: rewritten to read `cfg_setting ib_observation.tag_guidance`
+  and `ib_observation.tag_stage_excluded` through the `Cfg` it is given.
+
+Close-time fixes:
+- Cluster codes are named in `outputs/escalation/2172-september-october-analysis-v1-20261022.md`
+  and in section 383 (rule 100).
+- The compliance file's evidence is complete for every engaged rule.
