@@ -18451,3 +18451,13 @@ Live: no orphan configs remain (4 before #2207).
 
 **Not done:** the generator prompts (`lib/subgroupgenerate.py`, `charreadinggenerate.py`,
 `charanswergenerate.py`) still ask for free text. The writer now normalises it.
+
+## 379. Session ac12e7c5 close: files not named above, and close-time fixes (2026-10-22, #2209, #2207, #2212)
+
+- `iba/app/handlers/reports.py` and `iba/app/ps/Escalation.ps1`: `-Action Context -Id` (#2209 part
+  (b) row 5, sec 375). The handler passes `Id` to `escalationcontext.write_report`; the PS front door
+  passes `-Id` as a run.py param. The help text names it.
+- `iba/app/handlers/session_close.py`: SC16 accepts `:: fixed: <where>`. A repeated failure stays in
+  the transcript, so the disposition names the point-of-use fix (#2207 part 3).
+- `iba/app/USER-GUIDE.md`, Prose section: the patch-apply line named `scripts/apply_session_patch.py`,
+  retired in sec 377. It now points to #2212 (how a prose patch is applied is open).

@@ -543,7 +543,8 @@ iba\app\ps\Prose.ps1 -Step FlagFixApply -ProposalFile <report>.json -SectionIds 
 
 **How the steps write:**
 - **Patch-generating steps:** `ImportChapter`, `SetStatus` and `FlagFixApply` write a `PROSE` patch.
-  Apply it with `scripts/apply_session_patch.py`; these steps write no row themselves.
+  These steps write no row themselves. The script that applied the patch is retired; how a patch
+  is applied now is open (#2212).
 - **`Flag`** writes one `wa_data_quality_flags` row directly.
 - **`ImportChapter`** refuses an edit file from which a section has disappeared. Retire a section
   with status `archived` instead.

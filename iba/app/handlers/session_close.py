@@ -45,7 +45,8 @@ fixed (it no longer appears) or by a disposition in the session compliance file'
                             session_close.always_read_max_bytes.
   SC16 repeated failures    a PS tool action that failed twice in the session, or any other call
                             that failed twice with the same error (sessionwindow.failed_calls,
-                            #2207): fixed at its point of use, or carried by an open item.
+                            #2207): `fixed: <where>` (it stays in the transcript, so the line names
+                            the point-of-use fix), or carried by an open item.
 SC7 (remediation), SC11 (re-run) and SC13 (commit, blocked while any finding is open) are steps of
 the command; Session-Close.ps1 exits 3 while any finding is open. SC14: this report is the close's
 persisted record.
@@ -503,7 +504,8 @@ def _apply_dispositions(F, disp, handles, db, since) -> None:
                 f["note"] = "the named #n vN does not exist or was not written this session"
         elif (low.startswith("no record needed:") and f["step"] == "SC3") or \
                 (low.startswith("not held:") and f["step"] == "SC4" and f["key"].startswith("SC4b")) or \
-                (low.startswith("not scripture:") and f["key"].startswith("SC5b")):
+                (low.startswith("not scripture:") and f["key"].startswith("SC5b")) or                 (low.startswith("fixed:") and f["step"] == "SC16"):   # a repeat stays in the transcript:
+            # the disposition names where it was fixed (#2207 part 3)
             if len(d.split(":", 1)[1].strip()) >= 8:
                 f["cleared"] = True
             else:
@@ -545,10 +547,11 @@ def _sc16(tpath) -> list[dict]:
     import hashlib
     groups: dict[str, list[dict]] = {}
     for f in sw.failed_calls(tpath):
-        if ".ps1" in f["operation"]:
-            key = f"SC16:{f['operation']}"
+        op = re.sub(r"\s+", "_", f["operation"])   # a key has no spaces: dispositions parse on \S+
+        if ".ps1" in op:
+            key = f"SC16:{op}"
         else:
-            key = f"SC16:{f['operation']}:{hashlib.sha1(f['kind'].encode()).hexdigest()[:8]}"
+            key = f"SC16:{op}:{hashlib.sha1(f['kind'].encode()).hexdigest()[:8]}"
         groups.setdefault(key, []).append(f)
     return [dict(key=k, step="SC16",
                  text=f"{fs[0]['operation']} failed {len(fs)} times this session: "

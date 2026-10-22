@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-21T17:07:33Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-22T04:14:11Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `3cea0e6c-e050-4cb4-9290-4e4885f10990` (CLAUDE_CODE_SESSION_ID); started 2026-10-21T08:55:05Z; window base commit `fdc0baa2e08abe418b2e6e28e855a329a788314a`
-- compliance file: `Logs/compliance/COMPLIANCE-20261021-3cea0e6c.md`; session log: `Logs/SESSION-LOG-20261021-iba-reset-retirement.md`
-- **open findings: 0**; cleared by disposition: 11
+- session: `ac12e7c5-9668-4a70-ac93-a5627fd602c4` (CLAUDE_CODE_SESSION_ID); started 2026-10-21T17:12:09Z; window base commit `80ef670493ffb11817cc799d3a0972ad0bf6814a`
+- compliance file: `Logs/compliance/COMPLIANCE-20261021-ac12e7c5.md`; session log: `Logs/SESSION-LOG-20261022-rules-at-point-of-use.md`
+- **open findings: 0**; cleared by disposition: 16
 
 
 ## Contents
@@ -21,6 +21,7 @@
 - [SC10](#sc10-buildmd-coverage)
 - [SC12](#sc12-publish)
 - sc15
+- sc16
 
 <a id="summary"></a>
 ## Summary
@@ -45,19 +46,14 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:e694ab28`: researcher message 2026-10-21T09:42 is in no escalation comment written this session: "2188 - pause this work until the study is restarted and the narration can be aligned between the rules. 2191  Prose store - architecture document is superceded " -- disposition: recorded in #2188 v5
-- cleared `SC3:1300e98b`: researcher message 2026-10-21T13:51 is in no escalation comment written this session: "I hit my usage limit while you were working, but it has reset now. Please continue from where you left off." -- disposition: no record needed: a continuation prompt after a usage-limit reset; no decision or instruction
-- cleared `SC3:d92cbc92`: researcher message 2026-10-21T14:01 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-<tools-" -- disposition: no record needed: the automatic context-compaction summary, not a researcher message
-- cleared `SC3:fcbd9554`: researcher message 2026-10-21T17:00 is too short to be matched; name where it is recorded: "run /session-close" -- disposition: no record needed: the command that started this session close
+_no finding_
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:d92cbc92`: researcher message 2026-10-21T14:01 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-<tools-" -- disposition: not held: the automatic context-compaction summary, not a researcher message; its pending list is done or in #2171/#2177/#2205
+- cleared `SC4b:7bc94c2f`: researcher message 2026-10-21T19:30 holds, defers or asks to check something; name its register item: "you are slowly moving the right direction.  When I started with the IBA and config journey, I was hoping that the before you proceed to perform a specific proce" -- disposition: in register #2177
+- cleared `SC4b:cafb50c1`: researcher message 2026-10-21T19:36 holds, defers or asks to check something; name its register item: "making this rule work, would do two things:  a) verify that every process know exactly what rules should be in place, are are in place for each operation b) get" -- disposition: in register #2177
+- cleared `SC4b:41029040`: researcher message 2026-10-22T03:30 holds, defers or asks to check something; name its register item: "you will soon run out of tokens, then the study will be parked again" -- disposition: not held: a caution about token cost, acted on by closing the session (#2177 v23)
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -93,3 +89,11 @@ _no finding_
 - threads register export: not needed (no thread row changed)
 
 _no finding_
+
+- cleared `SC16:Escalation.ps1_-Action_Raise`: Escalation.ps1 -Action Raise failed 2 times this session: Raise needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default pr; Raise needs -Question and -Comment (minimum: what this item is about). -- disposition: fixed: the point-of-use hook now shows the Raise usage line before the first Raise of a session (#2209, cfg_rule_scope)
+- cleared `SC16:Bash:_mkdir:dd601df0`: Bash: mkdir failed 2 times this session: ls: cannot access 'outputs/escalation/archive/2177-reading*': No such file or directory -- disposition: fixed: a shell slip (ls on a file not yet moved); the file move now goes through one checked command
+- cleared `SC16:Bash:_ls:36e0d0e9`: Bash: ls failed 2 times this session: ls: cannot access 'iba/app/migration/*20261021*.py': No such file or directory -- disposition: fixed: a shell slip (listing an archived migration from its old folder); migrations are named from iba/app/migration/archive
+- cleared `SC16:Bash:_mv:ea90733f`: Bash: mv failed 2 times this session: Traceback (most recent call last): -- disposition: fixed: a Python heredoc assertion that caught a wrong match before writing; the assert is the guard
+- cleared `SC16:Compliance.ps1_-Action_Template`: Compliance.ps1 -Action Template failed 2 times this session: Traceback (most recent call last): -- disposition: fixed: run under Windows PowerShell 5; the scripts are run with the PowerShell tool (pwsh 7) only
+- cleared `SC16:Bash:_python:ea90733f`: Bash: python failed 2 times this session: Traceback (most recent call last): -- disposition: fixed: Python heredoc assertions that refused a wrong edit; edits now use the Edit tool where exact matching matters
+- cleared `SC16:Session-Close.ps1`: Session-Close.ps1 failed 4 times this session: work package : session-close -- disposition: carried #2207
