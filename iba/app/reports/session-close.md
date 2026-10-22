@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-22T09:13:15Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-22T12:07:04Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `691d410b-cdfa-4fe4-a9ed-d36cfccc293d` (CLAUDE_CODE_SESSION_ID); started 2026-10-22T06:44:16Z; window base commit `55975aa71006f1b9d1f05f6aacc7ad5f3202c949`
-- compliance file: `Logs/compliance/COMPLIANCE-20261022-691d410b.md`; session log: `Logs/SESSION-LOG-20261022-2172-strand-reading-build.md`
-- **open findings: 0**; cleared by disposition: 54
+- session: `6c511f74-b972-40bd-beb3-c64ce8d4b665` (CLAUDE_CODE_SESSION_ID); started 2026-10-22T09:55:56Z; window base commit `17a8c612a531454d87f430598a84ca211c0cf79e`
+- compliance file: `Logs/compliance/COMPLIANCE-20261022-6c511f74.md`; session log: `Logs/SESSION-LOG-20261022-2219-open-items-catch-up-b.md`
+- **open findings: 0**; cleared by disposition: 12
 
 
 ## Contents
@@ -46,64 +46,31 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-_no finding_
+- cleared `SC3:671b57d0`: researcher message 2026-10-22T10:53 is in no escalation comment written this session: "<task-notification>
+<task-id>bp70epqhe</task-id>
+<tool-use-id>toolu_0137gbTjSkdtsCfvV5BqCais</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
+- cleared `SC3:5c1f5ded`: researcher message 2026-10-22T11:07 is in no escalation comment written this session: "<task-notification>
+<task-id>buxh5cvs9</task-id>
+<tool-use-id>toolu_01BesyEzuf483uZevj2E9JjT</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
+- cleared `SC3:d75ddab1`: researcher message 2026-10-22T11:20 is in no escalation comment written this session: "<task-notification>
+<task-id>b16xpgdj3</task-id>
+<tool-use-id>toolu_019sC7XbKVx1s5guAKCdeEKz</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
+- cleared `SC3:5129f1d2`: researcher message 2026-10-22T12:01 is too short to be matched; name where it is recorded: "/exit-development-mode" -- disposition: no record needed: the command to leave Developer Mode, carried out (marker removed)
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:18be20a0`: researcher message 2026-10-22T08:59 holds, defers or asks to check something; name its register item: "approved 2172 for your follow up" -- disposition: in register #2172
+- cleared `SC4b:d6b14aa0`: researcher message 2026-10-22T10:04 holds, defers or asks to check something; name its register item: "Q1 M63 is likely to closest. Did you check the location of associated strongs?  Q2 - this should not happen. report it to investigate.  Use open items to raise " -- disposition: in register #2216
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
 
 Chapters changed: none; quote parts checked: 0; register check findings now: 46.
 
-- cleared `SC5c:new:90dd8120`: register check, new since the previous close: claim I-2 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:4a70ffd7`: register check, new since the previous close: claim I-3 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:7d50cf16`: register check, new since the previous close: claim I-4 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:cabff5c8`: register check, new since the previous close: claim I-6 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:f8d94264`: register check, new since the previous close: claim 1-1 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:2b6d2e04`: register check, new since the previous close: claim 1-2 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:a695e99e`: register check, new since the previous close: claim 1-3 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:197d991b`: register check, new since the previous close: claim 1-5 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:914f1f76`: register check, new since the previous close: claim 1-6 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:15e95e80`: register check, new since the previous close: claim 2-1 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:08b47cd0`: register check, new since the previous close: claim 2-4 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:6932beb2`: register check, new since the previous close: claim 2-8 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:d142f0a0`: register check, new since the previous close: claim 2-10 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:514231da`: register check, new since the previous close: claim 2-11 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:8bcbe147`: register check, new since the previous close: claim 2-12 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:e3b5916a`: register check, new since the previous close: claim 2-14 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:59eadfe8`: register check, new since the previous close: claim 2-16 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:9289905b`: register check, new since the previous close: claim 3-1 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:2ad7d665`: register check, new since the previous close: claim 3-2 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:2118ecb8`: register check, new since the previous close: claim 3-3 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:43d17a18`: register check, new since the previous close: claim 3-4 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:d8e5cc12`: register check, new since the previous close: claim 3-5 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:85b7a240`: register check, new since the previous close: claim 3-8 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:8f073986`: register check, new since the previous close: claim 3-11 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:93edb327`: register check, new since the previous close: claim 3-14 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:aec228fc`: register check, new since the previous close: claim 4-1 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:35f6c1e5`: register check, new since the previous close: claim 4-2 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:551af1ee`: register check, new since the previous close: claim 4-3 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:a72de27d`: register check, new since the previous close: claim 4-4 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:8caccf68`: register check, new since the previous close: claim 4-5 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:b8884c49`: register check, new since the previous close: claim 4-7 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:1e1ed93e`: register check, new since the previous close: claim 4-9 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:478d8b49`: register check, new since the previous close: claim 4-10 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:f1e1bc22`: register check, new since the previous close: claim 5-1 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:eb323497`: register check, new since the previous close: claim 5-3 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:99dbfcb0`: register check, new since the previous close: claim 6-1 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:da4a3a52`: register check, new since the previous close: claim 6-3 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:563f3525`: register check, new since the previous close: claim 8-1 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:784e7308`: register check, new since the previous close: claim 9-1 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:fdffc28a`: register check, new since the previous close: claim 9-3 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:5c3aee2f`: register check, new since the previous close: claim 9-4 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:10e313a7`: register check, new since the previous close: claim 9-5 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:f2044af3`: register check, new since the previous close: claim 10-1 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:0a2c9d99`: register check, new since the previous close: claim 10-2 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:6fee5eb5`: register check, new since the previous close: claim 10-3 is current but no current block tells it -- disposition: carried #2172
-- cleared `SC5c:new:dcd8372e`: register check, new since the previous close: claim 10-7 is current but no current block tells it -- disposition: carried #2172
+_no finding_
 
 <a id="sc6-rule-compliance"></a>
 ## SC6 Rule compliance
@@ -129,8 +96,8 @@ _no finding_
 ## SC12 Publish
 
 - narrative copy: not needed (no chapter changed)
-- threads register export: not needed (no thread row changed)
+- threads register export: RUN (a thread row changed)
 
 _no finding_
 
-- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: work package : configuration-maintenance -- disposition: fixed: the two coherence errors were this build's missed cascades, fixed and closed in #2214 and #2215; validate ok since
+- cleared `SC16:Session-Close.ps1`: Session-Close.ps1 failed 3 times this session: work package : session-close -- disposition: carried #2220

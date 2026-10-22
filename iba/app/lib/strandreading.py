@@ -21,19 +21,28 @@ side; it refuses only on a fact. One strand at a time:
             'citated'
   7 account the strand from the tables, gaps as text; account_gaps() is also the close gate
 
+Open items (#2219): Context records every open thread item that matches the strand (its words, the
+clusters they sit in, its verses, its code; escalation.match_open_items) as an item to answer
+(reading_strand_item 'matched'). Record, Map and Derive raise the new items they find on the strand's
+own thread (reading_strand.thread_id, raised on first use; reading_strand_item 'raised'). A matched
+item is answered by a thread response (Escalation.ps1 -Action Update -Id OT-nn -Item ...); the close
+gate refuses while one has no response since it was matched.
+
 Every write action validates first and raises Refused before writing; a refusal inside a write is
 rolled back (narrativeregister._atomic). Writes go through narrativeregister.Writer (cfg_write_grant);
-ib_observation/ib_node only through recordingpass.
+ib_observation/ib_node only through recordingpass; thread items only through escalation.
 """
 from __future__ import annotations
 
 import json
 import pathlib
 
+from . import escalation
 from . import narrativeregister as nr
 from . import quotecheck
 from . import recordingpass
 from . import versemeta
+from .db import Db
 
 Refused = nr.Refused
 PARTS = recordingpass.STRAND_PARTS
@@ -115,6 +124,108 @@ def strand_observations(conn, sid: int) -> list:
         "WHERE h.strand_id=? AND o.stage=? ORDER BY o.id", (sid, recordingpass.STRAND_STAGE)).fetchall()
 
 
+# ══ open items (#2219) ══════════════════════════════════════════════════════════════════════════
+def strand_clusters(conn, s) -> list[str]:
+    """The strand's home cluster and every cluster its words are assigned to."""
+    return sorted({s["cluster_code"]} | {r[0] for r in conn.execute(
+        "SELECT DISTINCT cs.cluster_code FROM cluster_strong cs JOIN reading_strand_strong ss ON ss.strong=cs.strong "
+        "WHERE ss.strand_id=? AND COALESCE(cs.deleted, 0)=0", (s["id"],))})
+
+
+def match_items(cfg, w: nr.Writer, s) -> int:
+    """Every open item matching the strand, not yet recorded against it, recorded as 'matched'."""
+    conn = cfg.conn
+    verses = [r[0] for r in conn.execute(
+        "SELECT DISTINCT v.reference FROM reading_strand_hit h JOIN verse v ON v.id=h.verse_id WHERE h.strand_id=? "
+        "AND v.reference IS NOT NULL", (s["id"],))]
+    why: dict[int, set] = {}
+    for _, it, q in escalation.match_open_items(Db(cfg), clusters=strand_clusters(conn, s), strongs=_strongs(
+            conn, s["id"]), verses=verses, strands=[s["code"]]):
+        why.setdefault(it["id"], set()).add(q)
+    n = 0
+    for iid, qs in why.items():
+        if not conn.execute("SELECT 1 FROM reading_strand_item WHERE strand_id=? AND item_id=?", (s["id"], iid)).fetchone():
+            on = ", ".join(sorted(qs))
+            w.insert("reading_strand_item", {"strand_id": s["id"], "item_id": iid, "source": "matched",
+                                             "matched_on": on if len(on) <= 300 else on[:297] + "..."})
+            n += 1
+    return n
+
+
+def item_specs(cfg, specs, at: str, errors: list) -> list[tuple]:
+    """'kind:value :: note' -> (kind, value, note), checked before anything is written."""
+    kinds = cfg.enum("escalation_thread_item_kind")
+    out = []
+    for sp in specs or []:
+        try:
+            k, v, n = escalation.parse_item_spec(str(sp))
+        except ValueError as exc:
+            errors.append(f"{at}: {exc}")
+            continue
+        if k not in kinds or not v:
+            errors.append(f"{at}: item {sp!r} needs kind:value, kind one of {kinds}")
+            continue
+        out.append((k, v, n))
+    return out
+
+
+def raise_items(cfg, w: nr.Writer, s, items: list[tuple], where: str) -> list[str]:
+    """New open items on the strand's own thread (raised on first use, or again when the last one
+    completed), each linked to the strand as 'raised'; an item already open there is reused.
+    Returns 'OT-nn.n' for each. Runs inside the step's transaction."""
+    if not items:
+        return []
+    conn, db = cfg.conn, Db(cfg)
+    s = conn.execute("SELECT * FROM reading_strand WHERE id=?", (s["id"],)).fetchone()
+    tid = s["thread_id"]
+    if tid is not None and escalation._current(db, tid)["state"] not in escalation._THREAD_OPEN_STATES:
+        tid = None
+    try:
+        if tid is None:
+            tid = escalation.raise_new(
+                cfg, db, f"Open items from strand {s['code']}"[:60], "strandreading", "thread",
+                comment=f"Open items found while reading strand {s['code']} ({s['title']}, #{s['escalation_id']}); "
+                        f"raised by Strand-Reading ({where}, #2219).",
+                resolution_kind="self_correctable", originator=w.who,
+                comes_back_when="a strand whose words, clusters or verses match an item (Strand-Reading Context)",
+                items=items)
+            w.update("reading_strand", {"id": s["id"]}, {"thread_id": tid})
+        else:
+            have = {(r["kind"], r["value"].lower()): r for r in escalation._thread_items(db, tid)}
+            new = [i for i in items if (i[0], i[1].lower()) not in have]
+            for k, v, _ in items:
+                r = have.get((k, v.lower()))
+                if r is not None and r["status"] != "open":
+                    escalation.update(cfg, db, tid, item_refs=[str(r["item_no"])], response_kind="reopened",
+                                      respond=f"found again reading strand {s['code']} ({where})", originator=w.who)
+            if new:
+                escalation.update(cfg, db, tid, add_items=new, originator=w.who)
+    except ValueError as exc:
+        raise Refused(f"the open item(s) could not be raised: {exc}") from exc
+    alias = escalation._current(db, tid)["alias"]
+    refs = []
+    for k, v, _ in items:
+        it = conn.execute("SELECT id, item_no FROM escalation_thread_item WHERE escalation_id=? AND kind=? AND "
+                          "value=? COLLATE NOCASE", (tid, k, v)).fetchone()
+        if not conn.execute("SELECT 1 FROM reading_strand_item WHERE strand_id=? AND item_id=?",
+                            (s["id"], it["id"])).fetchone():
+            w.insert("reading_strand_item", {"strand_id": s["id"], "item_id": it["id"], "source": "raised",
+                                             "matched_on": where})
+        refs.append(f"{alias}.{it['item_no']}")
+    return refs
+
+
+def strand_items(conn, sid: int) -> list:
+    """The strand's items with their state: the latest response since each was recorded."""
+    return conn.execute(
+        "SELECT ri.source, ri.matched_on, ri.created_at, i.id item_id, i.item_no, i.kind, i.value, i.status, i.note, "
+        "e.alias, (SELECT r.kind || ': ' || r.text FROM escalation_thread_item_response r WHERE r.item_id=i.id AND "
+        "r.responded_at >= ri.created_at ORDER BY r.id DESC LIMIT 1) answer FROM reading_strand_item ri JOIN "
+        "escalation_thread_item i ON i.id=ri.item_id JOIN escalation e ON e.id=i.escalation_id AND "
+        "e.version=(SELECT MAX(version) FROM escalation x WHERE x.id=e.id) WHERE ri.strand_id=? "
+        "ORDER BY ri.source, e.id, i.item_no", (sid,)).fetchall()
+
+
 # ══ define ══════════════════════════════════════════════════════════════════════════════════════
 def define(cfg, w: nr.Writer, p: dict) -> str:
     """A new strand (-Strand -Title -Cluster -Escalation -Strongs), or more words for an open one
@@ -175,7 +286,7 @@ def context(cfg, w: nr.Writer, p: dict) -> tuple[list[str], str]:
     """(report lines, console line). Writes the strand's new hits first."""
     conn = cfg.conn
     s = _open_strand(conn, p.get("Strand"))
-    added = nr._atomic(conn, lambda: refresh_hits(conn, w, s))
+    added, matched = nr._atomic(conn, lambda: (refresh_hits(conn, w, s), match_items(cfg, w, s)))
     words = _strongs(conn, s["id"])
     hits = conn.execute(
         "SELECT h.*, v.osisId, v.reference, v.text, vm.status AS vstatus, (SELECT GROUP_CONCAT(DISTINCT vl.morph_code) "
@@ -210,19 +321,17 @@ def context(cfg, w: nr.Writer, p: dict) -> tuple[list[str], str]:
             text = o["obs_text"] + "".join(f" · {k}: {o[k]}" for k in ("meaning", "implication", "chain") if o[k])
             L.append(f"| {o['id']} | {o['stage']} | {o['status']} | {_cell(text)} | {', '.join(vs[:8])}"
                      f"{' …' if len(vs) > 8 else ''} |")
-    refs = {h["reference"] for h in hits if h["reference"]}
-    items = conn.execute(
-        "SELECT e.alias, i.item_no, i.kind, i.value, i.note FROM escalation_thread_item i JOIN escalation e ON "
-        "e.id=i.escalation_id AND e.version=(SELECT MAX(version) FROM escalation x WHERE x.id=e.id) WHERE "
-        "i.status='open' AND ((i.kind='strong' AND i.value IN (SELECT strong FROM reading_strand_strong WHERE "
-        "strand_id=?)) OR (i.kind='cluster' AND i.value=?) OR (i.kind='strand' AND i.value=?)) ORDER BY e.id, i.item_no",
-        (s["id"], s["cluster_code"], s["code"])).fetchall()
-    items += [r for r in conn.execute(
-        "SELECT e.alias, i.item_no, i.kind, i.value, i.note FROM escalation_thread_item i JOIN escalation e ON "
-        "e.id=i.escalation_id AND e.version=(SELECT MAX(version) FROM escalation x WHERE x.id=e.id) WHERE "
-        "i.status='open' AND i.kind='verse' ORDER BY e.id, i.item_no") if r["value"] in refs]
-    L += ["", f"## Open thread items that match ({len(items)})", ""]
-    L += [f"- {r['alias']}.{r['item_no']} {r['kind']}:{r['value']}{' — ' + r['note'] if r['note'] else ''}" for r in items]
+    items = [r for r in strand_items(conn, s["id"]) if r["source"] == "matched"]
+    todo = sum(1 for r in items if not r["answer"])
+    L += ["", f"## Open items to answer ({len(items)}; {todo} not yet answered; {matched} new this run)", "",
+          f"Matched on the strand's words, the clusters they sit in ({', '.join(strand_clusters(conn, s))}), its "
+          f"verses and its code. Each must be answered before the strand's escalation can close: "
+          f"`Escalation.ps1 -Action Update -Id OT-nn -Item OT-nn.n -ResponseKind touched|narrowed|forward|ruling|"
+          f"note|closed -Respond \"...\" -Via {s['escalation_id']} -AnsweredBy Claude`.", ""]
+    if items:
+        L += ["| Item | Matched on | Item text | Answered since matched |", "|---|---|---|---|"]
+        L += [f"| {r['alias']}.{r['item_no']} {r['kind']}:{_cell(r['value'])} | {_cell(r['matched_on'])} | "
+              f"{_cell(r['note'])} | {_cell(r['answer']) or '**not yet**'} |" for r in items]
     L += ["", "## The hits", "", "Each hit needs a face, or a stated reason it has none (Record).", ""]
     for st in words:
         L += [f"### {_word(conn, st)}", "", "| Verse | Surface | Morph | Coverage | Face / reason | Text |",
@@ -232,19 +341,21 @@ def context(cfg, w: nr.Writer, p: dict) -> tuple[list[str], str]:
             L.append(f"| {h['reference'] or h['osisId']} | {_cell(h['surface'])} | {_cell(h['morph'])} | "
                      f"{h['vstatus'] or '—'} | {_cell(fr)} | {_cell(h['text'])} |")
         L.append("")
-    return L, f"{s['code']}: {len(hits)} hit(s), {read} read; {len(obs)} observation(s) already; {len(items)} open item(s)"
+    return L, (f"{s['code']}: {len(hits)} hit(s), {read} read; {len(obs)} observation(s) already; {len(items)} open "
+               f"item(s) to answer ({matched} new, {todo} not yet answered)")
 
 
 # ══ 2 record ════════════════════════════════════════════════════════════════════════════════════
 def record(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
     """-File: {"observations": [{"key", "text", "setting", "meaning", "implication", "chain",
     "basis": "stated|read", "parties", "verses": [{"verse": "Gen 6:5", "strong": "H3820"}],
-    "supersedes": <observation id>}],
+    "supersedes": <observation id>, "stable_key": "<strand>:<source row id>", "note": "<revisit note>"}],
     "hits": [{"verse", "strong", "face", "parties", "observation": "<key>|<id>"} |
-             {"verse", "strong", "reason"}]}.
+             {"verse", "strong", "reason"}],
+    "items": ["verse:Rom 7:15 :: what is open", ...]}  (new open items found in the reading).
     Refused, with nothing written, on: a hit not in the strand, or with neither (or both) a face and
     a reason; an observation with no text, meaning or basis, or a verse in which its strong does not
-    occur; a quotation not in its verse."""
+    occur; a quotation not in its verse; an item that is not kind:value."""
     conn = cfg.conn
     s = _open_strand(conn, p.get("Strand"))
     data = _load_json(p)
@@ -275,7 +386,8 @@ def record(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
                 "SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'", (o["supersedes"],)).fetchone():
             errors.append(f"{where}: supersedes {o['supersedes']} is not a live observation")
         quotes += _quote_check(conn, cfg, [o.get(k) for k in ("text", "setting", "meaning", "implication", "chain")], where)
-        obs.append({**{k: o.get(k) for k in ("key", "text", "supersedes") + PARTS}, "occurrences": occs})
+        obs.append({**{k: o.get(k) for k in ("key", "text", "supersedes", "stable_key", "note") + PARTS},
+                    "occurrences": occs})
     hits = []
     for i, h in enumerate(data.get("hits") or []):
         where = f"hits[{i}]"
@@ -296,8 +408,9 @@ def record(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
                 "SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'", (ob,)).fetchone():
             errors.append(f"{where}: observation {ob!r} is neither a key in this file nor a live observation")
         hits.append((row, h))
-    if not data.get("observations") and not data.get("hits"):
-        errors.append("the file has no observations and no hits")
+    new_items = item_specs(cfg, data.get("items"), "items", errors)
+    if not data.get("observations") and not data.get("hits") and not data.get("items"):
+        errors.append("the file has no observations, no hits and no items")
     if errors or quotes:
         raise Refused("\n  ".join(["the reading is not recorded:"] + errors + (
             ["quotation(s) not found in the ESV text:"] + quotes if quotes else [])))
@@ -315,12 +428,13 @@ def record(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
         vids = {row["verse_id"] for row, _ in hits} | {
             conn.execute("SELECT id FROM verse WHERE osisId=?", (occ["verse_reference"],)).fetchone()[0]
             for o in obs for occ in o["occurrences"]}
-        return ids, versemeta.mark(conn, vids, "analysed")
-    ids, marked = nr._atomic(conn, go)
+        return ids, versemeta.mark(conn, vids, "analysed"), raise_items(cfg, w, s, new_items, f"Record {run_id}")
+    ids, marked, raised = nr._atomic(conn, go)
     left = conn.execute("SELECT COUNT(*) FROM reading_strand_hit WHERE strand_id=? AND face IS NULL AND reason IS NULL",
                         (s["id"],)).fetchone()[0]
     return (f"{s['code']}: {len(ids)} observation(s) recorded ({', '.join(f'{k}={v}' for k, v in ids.items()) or '-'}); "
-            f"{len(hits)} hit(s) read; {marked} verse(s) marked analysed; {left} hit(s) still unread")
+            f"{len(hits)} hit(s) read; {marked} verse(s) marked analysed; {left} hit(s) still unread; "
+            f"{len(raised)} open item(s) raised ({', '.join(raised) or '-'})")
 
 
 # ══ 3 gather ════════════════════════════════════════════════════════════════════════════════════
@@ -375,14 +489,15 @@ def gather(cfg, p: dict) -> tuple[list[str], str]:
 
 
 # ══ 4 map ═══════════════════════════════════════════════════════════════════════════════════════
-def map_blocks(cfg, w: nr.Writer, p: dict) -> tuple[str, list[str]]:
+def map_blocks(cfg, w: nr.Writer, p: dict) -> str:
     """-File: {"blocks": [{"chapter", "section", "statements": [
         {"text": "<the statement>", "claims": [{"claim": "C-12", "kind": "in full|in part|pointer", "part"}]} |
         {"text", "new_claim": {"text", "beyond_text", "sources": ["Rom 7:22", ...], "kind", "part"}} |
-        {"text", "item": "<why it is held>"}]}]}
+        {"text", "item": "<why it is held>" | "kind:value :: note"}]}]}
     Every related block (Gather) must be mapped, and every statement must name its claim(s), a new
     claim, or an item. Told claims become the block's tellings; a new claim is added and told; an item
-    is returned for the strand's escalation. Returns (message, items)."""
+    is raised as an open item on the strand's thread: as given when it is kind:value, else
+    chapter:'Ch n heading: "statement"' with the reason as its note."""
     conn = cfg.conn
     s = _open_strand(conn, p.get("Strand"))
     data = _load_json(p)
@@ -431,7 +546,10 @@ def map_blocks(cfg, w: nr.Writer, p: dict) -> tuple[str, list[str]]:
                 except Refused as exc:
                     errors.append(f"{at}: {exc}")
             else:
-                plan.append(("item", sec, f"{where}: \"{st['text']}\" -- {st['item']}"))
+                spec = str(st["item"])
+                if spec.split(":", 1)[0].strip().lower() not in cfg.enum("escalation_thread_item_kind"):
+                    spec = f"chapter:Ch {ch['chapter_no']} {sec['heading']}: \"{st['text'].strip()}\" :: {spec}"
+                plan += [("item", sec, i) for i in item_specs(cfg, [spec], at, errors)]
     unmapped = set(related_blocks(conn, s["id"])) - seen
     for sid in sorted(unmapped):
         r = conn.execute("SELECT s.heading, ch.chapter_no FROM narrative_section s JOIN narrative_chapter ch ON "
@@ -462,11 +580,10 @@ def map_blocks(cfg, w: nr.Writer, p: dict) -> tuple[str, list[str]]:
                 nr.tell_block(w, cid, sec["id"], nc.get("kind") or "in full", nc.get("part"))
                 new.append(conn.execute("SELECT claim_ref FROM narrative_claim WHERE id=?", (cid,)).fetchone()[0])
         w.mark_changes(since, f"Strand-Reading.ps1 -Step Map -Strand {s['code']}")
-        return told, new
-    told, new = nr._atomic(conn, go)
-    items = [x[2] for x in plan if x[0] == "item"]
+        return told, new, raise_items(cfg, w, s, [x[2] for x in plan if x[0] == "item"], "Map")
+    told, new, raised = nr._atomic(conn, go)
     return (f"{s['code']}: {len(seen)} block(s) mapped; {told} telling(s) recorded; {len(new)} new claim(s) "
-            f"({', '.join(new) or '-'}); {len(items)} statement(s) held on #{s['escalation_id']}"), items
+            f"({', '.join(new) or '-'}); {len(raised)} statement(s) held as open item(s) ({', '.join(raised) or '-'})")
 
 
 # ══ 5 derive ════════════════════════════════════════════════════════════════════════════════════
@@ -482,6 +599,7 @@ def derive(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
         {"claim": "C-13", "withdraw": "<why>"}],
      "dispositions": [{"observation": 12, "as": "claim", "claim": "C-12|n1"} |
                       {"observation": 13, "as": "held", "item": "OT-29.4|#2172"} |
+                      {"observation": 13, "as": "held", "new_item": "verse:Rom 7:15 :: what is open"} |
                       {"observation": 14, "as": "silent|withdrawn", "reason": "..."}]}
     A new or adjusted claim rests on at least one observation or verse. A disposition 'claim' names
     a claim that has the observation as a source after this step (added if it is not)."""
@@ -543,9 +661,14 @@ def derive(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
                     errors.append(f"{at}: {exc}")
         elif how == "held":
             item = str(d.get("item") or "")
-            kind = "escalation" if item.startswith("#") else "thread item" if "." in item else "thread"
-            if not item or not nr._escalation_exists(conn, kind, item):
-                errors.append(f"{at}: held needs an existing item (OT-nn.n, OT-nn or #nnnn)")
+            if bool(item) == bool(d.get("new_item")):
+                errors.append(f"{at}: held needs an existing item (OT-nn.n, OT-nn or #nnnn) or a new_item, one of them")
+            elif d.get("new_item"):
+                d = {**d, "spec": (item_specs(cfg, [d["new_item"]], at, errors) or [None])[0]}
+            else:
+                kind = "escalation" if item.startswith("#") else "thread item" if "." in item else "thread"
+                if not nr._escalation_exists(conn, kind, item):
+                    errors.append(f"{at}: held item {item} does not exist")
         elif how in ("silent", "withdrawn"):
             if not (d.get("reason") or "").strip():
                 errors.append(f"{at}: {how} needs a reason")
@@ -588,6 +711,8 @@ def derive(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
                 w.update("narrative_claim", {"id": cr["id"]}, {"status": "withdrawn"})
         w._grant("ib_observation")
         for d in disp:
+            if d.get("spec"):
+                d["item"] = raise_items(cfg, w, s, [d["spec"]], f"Derive, observation {d['observation']}")[0]
             note = d.get("reason") or (f"held: {d['item']}" if d["as"] == "held" else None)
             if d["as"] == "claim":
                 cid = keys.get(d["claim"]) or nr._claim(conn, d["claim"])["id"]
@@ -628,12 +753,16 @@ def rewrite(cfg, w: nr.Writer, p: dict) -> str:
 
 # ══ 7 account ═══════════════════════════════════════════════════════════════════════════════════
 def account_gaps(conn, sid: int) -> dict[str, list[str]]:
-    """The facts the close gate stands on (safeguards 1 and 2): unread hits and undisposed observations."""
+    """The facts the close gate stands on (safeguards 1 and 2, and #2219): unread hits, undisposed
+    observations, and matched open items with no response since they were matched."""
     unread = [f"{r[0]} {r[1]}" for r in conn.execute(
         "SELECT COALESCE(v.reference, v.osisId), h.strong FROM reading_strand_hit h JOIN verse v ON v.id=h.verse_id "
         "WHERE h.strand_id=? AND h.face IS NULL AND h.reason IS NULL ORDER BY v.id", (sid,))]
     undisposed = [f"observation {o['id']}" for o in strand_observations(conn, sid) if o["status"] == "draft"]
-    return {"hits with no face or reason": unread, "observations with no disposition": undisposed}
+    unanswered = [f"{r['alias']}.{r['item_no']}" for r in strand_items(conn, sid)
+                  if r["source"] == "matched" and not r["answer"]]
+    return {"hits with no face or reason": unread, "observations with no disposition": undisposed,
+            "open items matched and not answered": unanswered}
 
 
 def gate_message(conn, escalation_id: int) -> str | None:
@@ -687,6 +816,14 @@ def account(cfg, p: dict) -> tuple[list[str], str]:
                                               "observation_id IS NOT NULL", (c["id"],))]
         L.append(f"| {c['claim_ref']} {_cell(c['claim_text'])} | {'; '.join(nr._told_in(conn, c['id'])) or '— (told nowhere)'} | "
                  f"{', '.join(ob) or '—'} |")
+    its = strand_items(conn, s["id"])
+    L += ["", f"## Open items ({len(its)})", "",
+          "Matched: found by Context, answered by a thread response. Raised: found in this strand's reading.", "",
+          "| Item | Source | Matched on / raised in | Item text | Item status | Latest response since |",
+          "|---|---|---|---|---|---|"]
+    L += [f"| {r['alias']}.{r['item_no']} {r['kind']}:{_cell(r['value'])} | {r['source']} | {_cell(r['matched_on'])} | "
+          f"{_cell(r['note'])} | {r['status']} | "
+          f"{_cell(r['answer']) or ('**not yet**' if r['source'] == 'matched' else '—')} |" for r in its]
     L += ["", f"## Hits ({len(hits)})", "", "| Verse | Strong | Face / reason | Observation | Coverage |",
           "|---|---|---|---|---|"]
     for h in hits:

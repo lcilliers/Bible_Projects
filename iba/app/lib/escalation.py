@@ -786,6 +786,32 @@ def _verse_match(item_value: str, query: str) -> bool:
     return a[2] <= b[3] and b[2] <= a[3]
 
 
+_CLUSTER_CODE = r"^([MT]\d+)([a-z]*)$"
+_STRONG_CODE = r"^([HG]\d+)([A-Z]*)$"
+
+
+def match_open_items(db: Db, *, clusters=(), strongs=(), verses=(), strands=()) -> list[tuple]:
+    """(thread, item, query) for every open item of every thread not completed that matches: a
+    cluster or Strong's by code (_code_match), a verse inside a range or chapter, a strand by its
+    code. One matcher for Match and for Strand-Reading Context (#2219)."""
+    ph = ",".join("?" * len(_THREAD_OPEN_STATES))
+    threads = db.rows(f"SELECT * FROM escalation WHERE type='thread' AND state IN ({ph}) "
+                      f"ORDER BY CAST(substr(alias, 4) AS INTEGER)", _THREAD_OPEN_STATES)
+    out = []
+    for t in threads:
+        for it in _thread_items(db, t["id"], "open"):
+            v = it["value"]
+            if it["kind"] == "cluster":
+                out += [(t, it, q) for q in clusters if _code_match(v, q, _CLUSTER_CODE)]
+            elif it["kind"] == "strong":
+                out += [(t, it, q) for q in strongs if _code_match(v, q, _STRONG_CODE, _strong_norm)]
+            elif it["kind"] == "verse":
+                out += [(t, it, q) for q in verses if _verse_match(v, q)]
+            elif it["kind"] == "strand":
+                out += [(t, it, q) for q in strands if v.strip().lower() == q.strip().lower()]
+    return out
+
+
 def match_threads(cfg: Cfg, db: Db, *, clusters=(), strongs=(), verses=(), for_ref=None,
                   who: str | None = None) -> list[str]:
     """T1. Matches clusters / Strong's / verses against the open items of every thread not
@@ -802,24 +828,11 @@ def match_threads(cfg: Cfg, db: Db, *, clusters=(), strongs=(), verses=(), for_r
         who = _check_assignee(db, who)
     if not (clusters or strongs or verses):
         raise ValueError("Match needs at least one -Cluster, -Strong or -Verse")
-    ph = ",".join("?" * len(_THREAD_OPEN_STATES))
-    threads = db.rows(f"SELECT * FROM escalation WHERE type='thread' AND state IN ({ph}) "
-                      f"ORDER BY CAST(substr(alias, 4) AS INTEGER)", _THREAD_OPEN_STATES)
+    by_thread: dict[int, tuple] = {}
+    for t, it, q in match_open_items(db, clusters=clusters, strongs=strongs, verses=verses):
+        by_thread.setdefault(t["id"], (t, []))[1].append(f"{it['item_no']} {it['value']} ({q})")
     lines, now = [], _now()
-    for t in threads:
-        hits = []
-        for it in _thread_items(db, t["id"], "open"):
-            v = it["value"]
-            if it["kind"] == "cluster":
-                hits += [f"{it['item_no']} {v} ({q})" for q in clusters
-                         if _code_match(v, q, r"^(M\d+)([a-z]*)$")]
-            elif it["kind"] == "strong":
-                hits += [f"{it['item_no']} {v} ({q})" for q in strongs
-                         if _code_match(v, q, r"^([HG]\d+)([A-Z]*)$", _strong_norm)]
-            elif it["kind"] == "verse":
-                hits += [f"{it['item_no']} {v} ({q})" for q in verses if _verse_match(v, q)]
-        if not hits:
-            continue
+    for t, hits in by_thread.values():
         label = f"{t['alias']} · #{t['id']}"
         line = f"{label} [{t['state']}] {t['short_description']} -- items {'; '.join(hits)}"
         if for_id is not None:

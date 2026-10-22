@@ -40,7 +40,11 @@ for key, val in (("narrative.copy_source_dir", str(chap)), ("narrative.claim_reg
                  ("strand_reading.output_dir", str(S / "strands"))):
     c.execute("UPDATE cfg_setting SET value=? WHERE key=?", (json.dumps(val), key))
 c.commit()
+has_items = c.execute("SELECT 1 FROM sqlite_master WHERE name='reading_strand_item'").fetchone()
 c.close()
+if not has_items:      # #2219 under test before it is live: its migration applied to the copy
+    subprocess.run([sys.executable, str(ROOT / "iba/app/migration/strand_items_2219_v1_20261022.py"), "--db", str(DB)],
+                   check=True, capture_output=True)
 
 cfg = Cfg(DB)
 conn = cfg.conn
@@ -52,7 +56,7 @@ ESC = 2172
 
 
 def W(step):
-    return nr.Writer(conn, f"strand_reading.{step}", "test")
+    return nr.Writer(conn, f"strand_reading.{step}", "Claude")    # an open item's raiser is Claude|Researcher (#2219)
 
 
 def count(sql, *a):
@@ -213,13 +217,17 @@ case("map: a related block left out refused", lambda: sr.map_blocks(cfg, W("map"
 case("map: a statement with no claim, new claim or item refused", lambda: sr.map_blocks(cfg, W("map"), P(File=jf("m2", {
     "blocks": [{**mapping["blocks"][0], "statements": [{"text": "bare"}]}] + mapping["blocks"][1:]}))), "give the statement")
 mres = []
-case("map: every block mapped", lambda: mres.append(sr.map_blocks(cfg, W("map"), P(File=jf("m3", mapping)))) or mres[-1][0])
+case("map: every block mapped", lambda: mres.append(sr.map_blocks(cfg, W("map"), P(File=jf("m3", mapping)))) or mres[-1])
 new_ref = conn.execute("SELECT claim_ref FROM narrative_claim WHERE claim_text='A test claim from the narrative.'").fetchone()
 results.append(("map: new claim added and told in its block", "PASS" if new_ref and count(
     "SELECT COUNT(*) FROM narrative_claim_telling t JOIN narrative_claim c ON c.id=t.claim_id WHERE c.claim_ref=? AND "
     "t.section_id=? AND t.status='current'", new_ref[0], blocks[0]["id"]) == 1 else "FAIL", new_ref[0] if new_ref else "-"))
-results.append(("map: held statements returned for the escalation", "PASS" if mres and len(mres[-1][1]) == len(blocks)
-                else "FAIL", mres[-1][1][:1] if mres else "-"))
+raised = conn.execute("SELECT i.kind, i.value, i.note FROM reading_strand_item ri JOIN escalation_thread_item i ON "
+                      "i.id=ri.item_id WHERE ri.strand_id=? AND ri.source='raised'", (s["id"],)).fetchall()
+results.append(("map: held statements raised as open items on the strand's thread (#2219)", "PASS" if len(raised) ==
+                len(blocks) and all(r["kind"] == "chapter" and r["note"] == "test: held for later" for r in raised) and
+                conn.execute("SELECT thread_id FROM reading_strand WHERE id=?", (s["id"],)).fetchone()[0] else "FAIL",
+                [dict(r) for r in raised[:1]]))
 
 # 5 Derive
 other = conn.execute("SELECT id FROM ib_observation WHERE status='draft' AND stage<>'strand-reading' LIMIT 1").fetchone()[0]
@@ -228,7 +236,7 @@ case("derive: an observation not the strand's refused", lambda: sr.derive(cfg, W
 case("derive: a new claim with no source refused", lambda: sr.derive(cfg, W("derive"), P(File=jf("d2", {
     "claims": [{"key": "n1", "new": {"text": "t", "beyond_text": "b"}}]})), "RUN-T"), "rests on at least one")
 case("derive: held on an item that does not exist refused", lambda: sr.derive(cfg, W("derive"), P(File=jf("d3", {
-    "dispositions": [{"observation": o2["id"], "as": "held", "item": "OT-999.9"}]})), "RUN-T"), "existing item")
+    "dispositions": [{"observation": o2["id"], "as": "held", "item": "OT-999.9"}]})), "RUN-T"), "does not exist")
 case("derive: new claim on the observation, disposed as carried", lambda: sr.derive(cfg, W("derive"), P(File=jf("d4", {
     "claims": [{"key": "n1", "new": {"text": "A derived test claim.", "beyond_text": "test", "observations": [o2["id"]]}},
                {"claim": new_ref[0], "withdraw": "test"}],
@@ -262,6 +270,10 @@ rest = conn.execute("SELECT h.*, v.osisId FROM reading_strand_hit h JOIN verse v
                     "h.face IS NULL AND h.reason IS NULL", (s["id"],)).fetchall()
 case("record: the remaining hits", lambda: sr.record(cfg, W("record"), P(File=jf("r8", {
     "hits": [{"verse": h["osisId"], "strong": WORD, "face": "B. Another test face"} for h in rest]})), "RUN-TEST-R8"))
+for it in [r for r in sr.strand_items(conn, s["id"]) if r["source"] == "matched" and not r["answer"]]:   # #2219
+    tid = conn.execute("SELECT escalation_id FROM escalation_thread_item WHERE id=?", (it["item_id"],)).fetchone()[0]
+    esc.update(cfg, db, tid, item_refs=[str(it["item_no"])], response_kind="touched",
+               respond="test: taken into account", originator="Claude")
 try:
     results.append(("gate: close allowed once the account is clean", "PASS" if gate() == "passes" else "FAIL", ""))
 except ValueError as exc:

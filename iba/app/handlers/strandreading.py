@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import pathlib
 
-from ..lib import escalation
 from ..lib import narrativeregister as nr
 from ..lib import reportkit
 from ..lib import strandreading as sr
@@ -81,24 +80,7 @@ def gather(ctx: Ctx) -> Outcome:
 
 
 def map_blocks(ctx: Ctx) -> Outcome:
-    """Statements held as items go onto the strand's escalation as one comment, quoted."""
-    try:
-        w = _writer(ctx)
-        message, items = sr.map_blocks(ctx.cfg, w, ctx.params)
-    except nr.Refused as exc:
-        return fail("refused", str(exc))
-    message = _unresolved(ctx, w, message)
-    if items:
-        s = sr.strand(ctx.cfg.conn, ctx.params.get("Strand"))
-        try:
-            message += "\n  " + escalation.update(
-                ctx.cfg, ctx.db, s["escalation_id"], originator=_who(ctx),
-                comment=f"Strand-Reading Map ({s['code']}, {ctx.run_id}): statements in the narrative held, "
-                        f"no claim yet:\n" + "\n".join(f"- {i}" for i in items))
-        except ValueError as exc:
-            message += f"\n  NOT recorded on #{s['escalation_id']} ({exc}); the held statements:\n  " + "\n  ".join(items)
-    paths = nr.export(ctx.cfg)
-    return ok(f"{message}\n  published: {', '.join(p.name for p in paths)}")
+    return _write(ctx, lambda w: sr.map_blocks(ctx.cfg, w, ctx.params))
 
 
 def derive(ctx: Ctx) -> Outcome:

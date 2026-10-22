@@ -576,8 +576,9 @@ def record_strand_observations(conn, cluster_code: str, run_id: str, observation
     """The observations of one strand reading (#2172 step 2): one row per key statement, the October
     ledger's parts as columns, grounded by one ib_node per verse and strong. Each observation's
     `occurrences` are resolved by the caller with resolve_occurrence() before anything is written.
-    `supersedes` (an observation id) withdraws the earlier row, naming the new one. Caller commits.
-    Returns {key: observation id}."""
+    `supersedes` (an observation id) withdraws the earlier row, naming the new one. `stable_key` (a
+    source row's own id, '<strand>:<ID>') and `note` (revisit_note) are kept when given (#2172
+    catch-up). Caller commits. Returns {key: observation id}."""
     _validate_stage(conn, STRAND_STAGE)
     _validate_tag(conn, STRAND_TAG)
     ids = {}
@@ -587,8 +588,9 @@ def record_strand_observations(conn, cluster_code: str, run_id: str, observation
         oid = _insert_observation(conn, cluster_code, STRAND_STAGE, STRAND_TAG,
                                   strongs.pop() if len(strongs) == 1 else None, None, o["text"],
                                   "verse-text", None, supersedes_observation_id=o.get("supersedes"))
-        conn.execute(f"UPDATE ib_observation SET {', '.join(p + '=?' for p in STRAND_PARTS)}, run_id=? WHERE id=?",
-                     [o.get(p) for p in STRAND_PARTS] + [run_id, oid])
+        conn.execute(f"UPDATE ib_observation SET {', '.join(p + '=?' for p in STRAND_PARTS)}, run_id=?, stable_key=?, "
+                     f"revisit_note=? WHERE id=?",
+                     [o.get(p) for p in STRAND_PARTS] + [run_id, o.get("stable_key"), o.get("note"), oid])
         for seq, occ in enumerate(o["occurrences"]):
             _insert_node(conn, oid, cluster_code, occ["strong"], occ["verse_reference"], occ["surface"],
                          occ["morph_code"], None, STRAND_STAGE, seq)

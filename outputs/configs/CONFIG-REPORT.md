@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-22T08:43:56Z |
+| generated_at | 2026-10-22T11:21:03Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -138,7 +138,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**954** registered module(s) — **499** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **834** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**956** registered module(s) — **501** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **836** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -345,6 +345,7 @@ _(none)_
 | catalogue_column_governance_v1_20260921 | iba/app/migration/archive/catalogue_column_governance_v1_20260921.py | ONE-OFF migration -- escalation #1818 v2: fixes prompt_seq (9 rows) + status/deleted disagreement (4 rows), registers cfg_enum for status/tier/scope, upgrades cfg_column.use for section/prompt_seq/tier/scope/status, marks section superseded by dimension. Run once, then set inactive=1. |  |  |  |
 | cataloguereport | iba/app/lib/cataloguereport.py | report.obs_catalogue -- wa_obs_question_catalogue structural review, no findings joins | ✓ |  |  |
 | cataloguewrite | iba/app/lib/cataloguewrite.py | obs_catalogue.update -- validated partial UPDATE of wa_obs_question_catalogue by obs_id, auto-filling last_modified/catalogue_version where not explicitly given. Escalation #1007. | ✓ |  |  |
+| catchup_october_ledgers_2172_v1_20261022 | iba/app/migration/archive/catchup_october_ledgers_2172_v1_20261022.py | ONE-OFF -- escalation #2172 catch-up B: the October row ledgers into ib_observation through Strand-Reading Define, Context and Record; run_id CATCHUP-2172-B-20261022. inactive once run. |  | ✓ | one-off catch-up script (#2172 catch-up B), run once |
 | cfg | iba/app/lib/cfg.py | cfg.py — the runtime config reader. THE ONLY WAY THE APP READS CONFIG. | ✓ | ✓ | defines .setting()/.enum() itself — the config reader; cannot call its own accessor. |
 | cfgcheck | iba/app/lib/archive/cfgcheck.py | cfgcheck.py — the config-maintenance / validation utility for the app config. |  | ✓ | validates the raw seed dict before any Cfg/DB object exists — structurally cannot call .setting()/.enum(). |
 | cfgload | iba/app/lib/archive/cfgload.py | cfgload.py — load the JSON SEEDS into the config tables in the DATABASE. |  | ✓ | writes the seed INTO the cfg_* tables (creates + populates them) — same class as migration/ scripts, already excluded from usage-checks for the same reason. |
@@ -1075,6 +1076,7 @@ _(none)_
 | split_obs_catalogue_mechanical_interpretive_codes_v1_20260904 | iba/app/migration/archive/split_obs_catalogue_mechanical_interpretive_codes_v1_20260904.py | ONE-OFF migration, escalation #1444/#1383 -- splits 5 bundled wa_obs_question_catalogue codes (T0.1.2, T4.6.2, T4.6.3, T7.2.2, T1.4.1) each into a mechanical (Word/term lexical) + interpretive child pair, soft-deleting the old unified code. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | stage1coverage | iba/app/lib/stage1coverage.py | Deterministic expected-vs-actual coverage validation for Stage 1 (lexical.meaning + lexical.relational, escalation #1824 v14 / #1860). expected_nodes()/validate_coverage()/fully_covered_verse_ids()/missing_word_level_coverage() -- all read-only against live verse_lexical/ib_observation/ib_node state, never call an LLM. Caught live by configmaint.validate 2026-09-23 (pre-existing registration gap, unrelated to this files own content) while this file was being extended for the #1860 split -- registered now rather than left open. | ✓ | ✓ | legitimate zero, same shape as pathaudit.py: takes a pre-opened conn and reads live tables directly, resolves no cfg.setting()/cfg.enum() of its own -- its caller (handlers/lexical.py) is the one that reads lexical.* settings. |
 | stepapi | iba/app/lib/stepapi.py | stepapi.py — the three STEP calls. Governed by config, fully. | ✓ |  |  |
+| strand_items_2219_v1_20261022 | iba/app/migration/archive/strand_items_2219_v1_20261022.py | ONE-OFF migration -- escalation #2219 option A: reading_strand_item, reading_strand.thread_id, the strand steps' grants, the close gate on open items; run_id DEVMODE-2219-STRAND-ITEMS-20261022. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | strand_reading_enums_2172_v1_20261022 | iba/app/migration/archive/strand_reading_enums_2172_v1_20261022.py | ONE-OFF migration -- escalation #2172/#2215: enum values config_module strand_reading and check kind strand_account_clean; Tell/Untell step text; run_id DEVMODE-2172-STRAND-ENUMS-20261022. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | strand_reading_schema_2172_v1_20261022 | iba/app/migration/archive/strand_reading_schema_2172_v1_20261022.py | ONE-OFF migration -- escalation #2172 build step 1: ib_observation parts, claim source observation, reading_strand tables, tellings per block; run_id DEVMODE-2172-STRAND-SCHEMA-20261022. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | strand_reading_steps_2172_v1_20261022 | iba/app/migration/archive/strand_reading_steps_2172_v1_20261022.py | ONE-OFF migration -- escalation #2172: work package strand-reading, its steps, grants, reports and setting; the strand close gate; rule links; run_id DEVMODE-2172-STRAND-STEPS-20261022. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -1661,13 +1663,13 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
 | 0 | strand_reading.define | iba.app.handlers.strandreading:define | none | a strand: its code, title, cluster, escalation and word family (-Strongs); adds words to an open strand -- see lib/strandreading.py (escalation #2172) |
-| 1 | strand_reading.context | iba.app.handlers.strandreading:context | none | step 1: every hit with its text and lexical data, the observations already on those words and verses, the open thread items that match, each verse's coverage -> the context file -- see lib/strandreading.py (escalation #2172) |
-| 2 | strand_reading.record | iba.app.handlers.strandreading:record | none | step 2: the reading recorded -- observations (grounded, quote-checked), a face or a reason per hit read; read verses marked analysed -- see lib/strandreading.py (escalation #2172) |
+| 1 | strand_reading.context | iba.app.handlers.strandreading:context | none | step 1: every hit with its text and lexical data, the observations already on those words and verses, each verse's coverage; every open thread item matching the strand's words, their clusters, its verses or its code recorded as an item to answer -> the context file -- see lib/strandreading.py (escalation #2172, #2219) |
+| 2 | strand_reading.record | iba.app.handlers.strandreading:record | none | step 2: the reading recorded -- observations (grounded, quote-checked), a face or a reason per hit read, new open items found (raised on the strand's thread); read verses marked analysed -- see lib/strandreading.py (escalation #2172, #2219) |
 | 3 | strand_reading.gather | iba.app.handlers.strandreading:gather | none | step 3: every narrative block related to the strand, with its text and tellings (read-only) -- see lib/strandreading.py (escalation #2172) |
-| 4 | strand_reading.map | iba.app.handlers.strandreading:map_blocks | none | step 4: each related block's statements mapped to the claims register; an unclaimed statement becomes a new claim or an item on the strand's escalation -- see lib/strandreading.py (escalation #2172) |
-| 5 | strand_reading.derive | iba.app.handlers.strandreading:derive | none | step 5: new, adjusted and withdrawn claims, each resting on observations or verses; each observation's disposition -- see lib/strandreading.py (escalation #2172) |
+| 4 | strand_reading.map | iba.app.handlers.strandreading:map_blocks | none | step 4: each related block's statements mapped to the claims register; an unclaimed statement becomes a new claim or an open item on the strand's thread -- see lib/strandreading.py (escalation #2172, #2219) |
+| 5 | strand_reading.derive | iba.app.handlers.strandreading:derive | none | step 5: new, adjusted and withdrawn claims, each resting on observations or verses; each observation's disposition (held: an existing open item or a new one raised on the strand's thread) -- see lib/strandreading.py (escalation #2172, #2219) |
 | 6 | strand_reading.rewrite | iba.app.handlers.strandreading:rewrite | none | step 6: blocks written anew, whole (every claim a block told accounted for); the chapters published from the database; cited verses marked citated -- see lib/strandreading.py (escalation #2172) |
-| 7 | strand_reading.account | iba.app.handlers.strandreading:account | none | step 7: the strand from the tables, gaps as text (read-only); the same facts are the close gate -- see lib/strandreading.py (escalation #2172) |
+| 7 | strand_reading.account | iba.app.handlers.strandreading:account | none | step 7: the strand from the tables, gaps as text (read-only), its open items with their answers; the same facts are the close gate -- see lib/strandreading.py (escalation #2172, #2219) |
 
 **strong-meaning-report** — runs over `none` · script `iba/app/ps/StrongMeaning-Report.ps1`
 | # | step | handler | scope | does |
@@ -1897,11 +1899,11 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | registry.create | word_registry |
 | report.debate | passage |
 | run | escalation, run, validation_result, word_registry |
-| strand_reading.context | reading_strand_hit |
+| strand_reading.context | reading_strand_hit, reading_strand_item |
 | strand_reading.define | reading_strand, reading_strand_strong |
-| strand_reading.derive | ib_observation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling |
-| strand_reading.map | narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling |
-| strand_reading.record | ib_node, ib_observation, reading_strand_hit, verse_meta |
+| strand_reading.derive | ib_observation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, reading_strand, reading_strand_item |
+| strand_reading.map | narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, reading_strand, reading_strand_item |
+| strand_reading.record | ib_node, ib_observation, reading_strand, reading_strand_hit, reading_strand_item, verse_meta |
 | strand_reading.rewrite | narrative_chapter, narrative_citation, narrative_claim_change, narrative_claim_telling, narrative_section, narrative_update, narrative_update_ref, verse_meta |
 | strong.reconcile | strong |
 | verse_meta.set_status | verse_meta |
@@ -3072,8 +3074,8 @@ __ — Cluster-reading pipeline observation: one typed finding produced while re
 | meaning_source | TEXT |  |  |  |  | which of the 3 meaning tables/columns (strong_meaning_tree, strong_lexicon.lsj, strong_lexicon.mounce) an observation drew its data from -- any meaning-reading stage (verse_meaning and reading both read all 3 as complementary evidence), not reading-only. Corrected 2026-09-17, escalation #1706: previously read 'reading stage only', the same stage-scoping mistake corrected for `tag`. |  |
 | status | TEXT |  |  |  |  | Where the observation stands (6-value lifecycle, researcher-defined 2026-09-20, escalation #1782): draft (just written or edited by the pipeline, not yet looked at by the observation_enhancer or a human -- the write-time default as of this round) \| needs-corroboration (observation detail is incomplete or needs revision) \| open (not yet confirmed -- NOTE: no current writer sets this since draft was introduced; kept live pending the researchers call on whether to retire it) \| silent (captured but not included in any subsequent analysis) \| withdrawn (observation is incorrect or not useful) \| resolved (set only once the observation is cleared for inclusion in analysis). |  |
 | supersedes_observation_id | INTEGER |  |  |  | ib_observation.id | synthesis stage only, self-referencing, the append-only supersedes chain |  |
-| stable_key | TEXT |  |  |  |  | the generating JSON file's own name |  |
-| revisit_note | TEXT |  |  |  |  | synthesis stage only |  |
+| stable_key | TEXT |  |  |  |  | the generating JSON file's own name; for a strand-reading observation imported from a ledger (#2172 catch-up), '<strand>:<ledger ID>' |  |
+| revisit_note | TEXT |  |  |  |  | synthesis stage; for a strand-reading observation, its disposition note (#2172): the October disposition and the row's touches until step C sets the status, then the claim, item or reason |  |
 | source_json_serial | INTEGER |  |  |  |  | the LLM session's own local numbering within its JSON, distinct from id |  |
 | created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC |  |
 | updated_at | TEXT |  |  |  |  | set whenever obs_text is broadened in place |  |
@@ -3409,6 +3411,7 @@ _one row per strand_ — #2172: a strand read through the reading process (Stran
 | note | TEXT |  |  |  |  | free note | escalation #2172, build plan v1 (outputs/escalation/2172-process-build-plan-v1-20261022.md) |
 | created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2172, build plan v1 (outputs/escalation/2172-process-build-plan-v1-20261022.md) |
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2172, build plan v1 (outputs/escalation/2172-process-build-plan-v1-20261022.md) |
+| thread_id | INTEGER |  |  |  | escalation.id | the strand's own thread (type thread) for the open items its reading raises; set when the first is raised, and again if that thread has completed (#2219) | escalation #2219, option A (outputs/escalation/2219-open-item-handling-in-strand-reading-v1-20261022.md) |
 
 ### reading_strand_strong
 _one row per strong in a strand's word family_ — #2172: the word family a strand reads; its hits are every live verse_lexical occurrence of these strongs
@@ -3439,6 +3442,19 @@ dedup key: `strand_id, verse_id, strong`
 | run_id | TEXT |  |  |  |  | the Strand-Reading run that read the hit | escalation #2172, build plan v1 (outputs/escalation/2172-process-build-plan-v1-20261022.md) |
 | created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2172, build plan v1 (outputs/escalation/2172-process-build-plan-v1-20261022.md) |
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2172, build plan v1 (outputs/escalation/2172-process-build-plan-v1-20261022.md) |
+
+### reading_strand_item
+_one row per open thread item a strand must answer or has raised_ — #2219: the open items of a strand -- 'matched' (Strand-Reading Context: an open item matching the strand's words, their clusters, its verses or its code; the close gate refuses while one has no thread response since it was matched) or 'raised' (found in the strand's reading, on its own thread)
+dedup key: `strand_id, item_id`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2219, option A (outputs/escalation/2219-open-item-handling-in-strand-reading-v1-20261022.md) |
+| strand_id | INTEGER |  | ✓ |  | reading_strand.id | the strand | escalation #2219, option A (outputs/escalation/2219-open-item-handling-in-strand-reading-v1-20261022.md) |
+| item_id | INTEGER |  | ✓ |  | escalation_thread_item.id | the open item (escalation_thread_item) | escalation #2219, option A (outputs/escalation/2219-open-item-handling-in-strand-reading-v1-20261022.md) |
+| source | TEXT |  | ✓ |  |  | cfg_enum reading_strand_item_source: matched (to answer) or raised (found in the reading) | escalation #2219, option A (outputs/escalation/2219-open-item-handling-in-strand-reading-v1-20261022.md) |
+| matched_on | TEXT |  |  |  |  | matched: the strand's words, clusters, verses or code it matched; raised: the step that raised it | escalation #2219, option A (outputs/escalation/2219-open-item-handling-in-strand-reading-v1-20261022.md) |
+| created_at | TEXT |  | ✓ |  |  | when the item was recorded against the strand (ISO-8601 UTC); a matched item is answered by a thread response at or after this | escalation #2219, option A (outputs/escalation/2219-open-item-handling-in-strand-reading-v1-20261022.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2219, option A (outputs/escalation/2219-open-item-handling-in-strand-reading-v1-20261022.md) |
 
 <a id="11-enums"></a>
 ## 11. Enums
@@ -3509,6 +3525,7 @@ dedup key: `strand_id, verse_id, strong`
 | prose_section_type_book_label | Programme, Detail design, Findings, Essays, Word Index and Glossary |
 | prose_section_type_lifecycle_tag | source, v1, v2, v3 |
 | prose_section_type_source_stage | programme, session_a, session_b, session_b_phase9, session_c, session_d, synthesis, verse-analysis, findings, essay, contributor |
+| reading_strand_item_source | matched, raised |
 | reading_strand_state | closed, open, withdrawn |
 | record_change_log_change_type | insert, change, delete |
 | record_change_log_status | change_proposed, change_applied, declined |

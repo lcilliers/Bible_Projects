@@ -263,8 +263,9 @@ Item notes:
 - **Naming an item:** `-Item` takes `OT-16.2`, the bare number, `cluster:M03`, or a value unique in
   the thread.
 - **A note** follows ` :: `.
-- **Matching:** M10 matches M10c; a Strong's number matches its exact code, else its zero-padded
-  base; a verse matches inside a range or chapter.
+- **Matching:** M10 matches M10c (T codes too: T3); a Strong's number matches its exact code, else
+  its zero-padded base; a verse matches inside a range or chapter. Strand-Reading Context uses the
+  same matching (section 8.2).
 - **Linked tasks:** when a task an item references changes state, the item follows it.
 
 ---
@@ -500,25 +501,31 @@ iba\app\ps\Strand-Reading.ps1 -Step Account -Strand flesh-body
   open strand, `-Strongs` adds words.
 - **`Context`** (step 1) writes a hit row for every live occurrence of the strand's words (one per
   verse and strong), then the context file: the words, every observation already on those words
-  and verses (September's drafts included), the open thread items that match by strong, verse,
-  cluster or strand, and every hit with its verse text, surface, morph, coverage and face so far.
+  and verses (September's drafts included), the open items to answer, and every hit with its verse
+  text, surface, morph, coverage and face so far. **Open items to answer:** every open thread item
+  matching the strand's words (exact code or zero-padded base, as Match), the clusters those words
+  sit in (the home cluster and every other), its verses (inside a range or chapter) or its code is
+  recorded against the strand, each shown with its answer so far.
 - **`Record`** (step 2) records a reading: observations, one per key statement, with setting,
   meaning, implication, chain, basis (`stated` or `read`) and parties, each grounded on the verses
   and strongs it names; and for each hit read, a face or a stated reason it has none. An earlier
-  observation corrected is named in `supersedes` and withdrawn. Every quotation is checked against
-  the ESV text. The verses read are marked `analysed`. It refuses a hit that is not the strand's,
-  a hit with both or neither a face and a reason, a verse where the strong does not occur, and a
-  quotation not in the text.
+  observation corrected is named in `supersedes` and withdrawn. An observation brought in from a
+  source row keeps that row's id in `stable_key` (`<strand>:<ID>`) and a `note` (its `revisit_note`). Every quotation is checked against
+  the ESV text. The verses read are marked `analysed`. New open items found in the reading go in
+  `items` (`"verse:Rom 7:15 :: what is open"`). It refuses a hit that is not the strand's, a hit
+  with both or neither a face and a reason, a verse where the strong does not occur, a quotation
+  not in the text, and an item that is not `kind:value`.
 - **`Gather`** (step 3) lists every block related to the strand (it cites a strand verse, or tells
   a claim resting on the strand's verses or observations) with its full text and its tellings, and
   the claims on the strand's verses that no block tells.
 - **`Map`** (step 4) records what each related block tells: each statement names its claim(s), a
-  new claim (added and told there), or an item (held on the strand's escalation, quoted). It
+  new claim (added and told there), or an item: an open item on the strand's thread, as given when
+  it is `kind:value`, else `chapter:Ch n heading: "statement"` with the reason as its note. It
   refuses while any related block is not mapped.
 - **`Derive`** (step 5) writes new, adjusted and withdrawn claims, each resting on at least one
   observation or verse (an observation is a claim source, kind `observation`), and each
-  observation's disposition: carried by a claim (`resolved`), held on an item (`open`), `silent` or
-  `withdrawn` with the reason.
+  observation's disposition: carried by a claim (`resolved`), held on an item (`open`: an existing
+  `item`, or a `new_item` raised on the strand's thread), `silent` or `withdrawn` with the reason.
 - **`Rewrite`** (step 6) writes blocks anew, whole: a block names the claims it tells, and every
   claim it told before is still told, or accounted for as moved (to a block that tells it), or
   withdrawn (the claim withdrawn first, in Derive). New blocks are placed after a named block;
@@ -526,10 +533,24 @@ iba\app\ps\Strand-Reading.ps1 -Step Account -Strand flesh-body
   checked, the cited verses marked `citated` (`citated` replaces `analysed`; `exclude` is never
   overwritten), and each chapter touched is published from the database.
 - **`Account`** (step 7) writes the strand from the tables: its gaps (hits unread, observations not
-  disposed), then for judgement the claims told nowhere, every observation and its claim, every
-  claim and the block that tells it, every hit and its verse's coverage.
+  disposed, matched open items not answered), then for judgement the claims told nowhere, every
+  observation and its claim, every claim and the block that tells it, every open item with its
+  source and answer, every hit and its verse's coverage.
+- **The strand's thread:** the open items a strand raises (Record, Map, Derive) go on its own
+  thread, `Open items from strand <code>`, raised on first use (`reading_strand.thread_id`); an item
+  already there is reused, and reopened if it was settled. They are for later strands, not gated.
+- **Answering a matched item:** a thread response, recorded the usual way (section 3.3), naming
+  the strand's escalation:
+
+  ```powershell
+  iba\app\ps\Escalation.ps1 -Action Update -Id OT-16 -Item OT-16.2 -ResponseKind touched -Respond "how the reading took it into account" -Via 2162 -AnsweredBy Claude
+  ```
+
+  Any response kind answers it (`touched`, `narrowed`, `forward`, `ruling`, `note`, or a settling
+  `closed`); a response made before the item was matched does not.
 - **The close gate:** the strand's escalation cannot reach `completed` or `closed` while any hit
-  has no face or reason, or any observation has no disposition.
+  has no face or reason, any observation has no disposition, or any matched open item has no
+  response since it was matched.
 
 ### 8.3 Copying the narrative to learning4comfort
 

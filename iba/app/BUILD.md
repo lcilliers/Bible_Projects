@@ -18813,3 +18813,87 @@ on hold).
 Section 386's files, by the paths they have:
 - `iba/app/migration/archive/strand_reading_schema_2172_v1_20261022.py`, `iba/app/migration/archive/record_retire_onfail_2172_v1_20261022.py`, `iba/app/migration/archive/strand_reading_steps_2172_v1_20261022.py`, `iba/app/migration/archive/strand_reading_enums_2172_v1_20261022.py`, `iba/app/migration/archive/narrative_home_2172_v1_20261022.py`: the five one-off migrations, each run live once (run ids in section 386) and moved to archive/, where each registered itself (cfg_utility, inactive);
 - `iba/app/tools/temp_2172_register_test_run.py`, `iba/app/tools/temp_2172_rewrite_test_run.py`, `iba/app/tools/temp_2172_strand_test_run.py`, `iba/app/tools/temp_2172_map_handler_test_run.py`: the temporary test runners of `iba/docs/2172-strand-reading-test-plan-v1-20261022.md` (temp_, exempt from registration; each takes a scratch folder and writes only to a database copy).
+
+## 388. Open-item handling in the reading process: matched, raised, answered before close (2026-10-22, escalation #2219)
+
+Researcher, chat 2026-10-22 (verbatim): "#2219: approve option A. Build and test it on a copy first,
+then run catch-up B for #2172." Design: `outputs/escalation/2219-open-item-handling-in-strand-reading-v1-20261022.md`
+section 3, option A. The question that raised it: the #2172 build listed matching open items in the
+context file, but nothing created items on discovery or required the matched ones to be answered.
+
+**Schema and config** (`iba/app/migration/archive/strand_items_2219_v1_20261022.py`, run
+`DEVMODE-2219-STRAND-ITEMS-20261022`, 29 cfg writes through `apply_logged`, a second run writes
+nothing): table `reading_strand_item` (strand, thread item, source `matched` or `raised`, what it
+matched on, when; enum `reading_strand_item_source`); `reading_strand.thread_id`, the strand's own
+thread; write grants for Context (`reading_strand_item`) and Record, Map, Derive (`reading_strand_item`,
+`reading_strand`); the `does` text of five strand steps; the message of the close gate
+`strand_account_clean`.
+
+**Code:**
+- `iba/app/lib/escalation.py`: `match_open_items()`, one matcher for `Escalation.ps1 -Action Match`
+  and for Strand-Reading Context (a cluster or Strong's by code with the base rule, a verse inside a
+  range or chapter, a strand by its code). `match_threads()` now uses it. The cluster pattern takes T
+  codes (`T3`), which it missed before: live, Match on T3 now finds OT-05.29 and OT-108.13.
+- `iba/app/lib/strandreading.py`: Context records every matching open item against the strand
+  (`match_items`: its words, every cluster they are assigned to, its verses, its code) and lists
+  each with its answer. Record (`items`), Map (a held statement) and Derive (`held` with `new_item`)
+  raise new items on the strand's own thread (`raise_items`: raised on first use, again when that
+  thread has completed; an existing item reused, reopened if settled), inside the step's
+  transaction. `account_gaps()` adds the matched items with no thread response since they were
+  matched, so the close gate refuses on them; Account lists every item with its source and answer.
+- `iba/app/handlers/strandreading.py`: Map no longer writes held statements as a comment on the
+  strand's escalation; they are open items.
+- `iba/app/ps/Strand-Reading.ps1`: help text (no parameter change).
+
+**Docs:** USER-GUIDE.md section 8.2 (Context, Record, Map, Derive, Account, the strand's thread,
+answering a matched item, the close gate) and the matching note in 3.3. GOVERNANCE.md unchanged: its
+close-gate line already points to `lib/strandreading.account_gaps`. Test plan
+`iba/docs/2172-strand-reading-test-plan-v1-20261022.md` section 4.
+
+**Tests** (on `dbsnapshot.copy_db` copies with the migration applied before it went live): #2219
+`iba/app/tools/temp_2219_strand_items_test_run.py` 21 of 21; the #2172 runners again, register 23 of
+23, rewrite 20 of 20, strand reading 40 of 40 (`temp_2172_strand_test_run.py` updated: the writer is
+Claude, Map's held statements checked as open items, matched items answered before the clean gate),
+Map handler 1 of 1 (updated to the new behaviour). 105 of 105. Runners changed: `iba/app/tools/temp_2172_strand_test_run.py`, `iba/app/tools/temp_2172_map_handler_test_run.py`; new: `iba/app/tools/temp_2219_strand_items_test_run.py` (temp_, each takes a scratch folder and writes only to a database copy).
+
+**Live:** snapshot `iba/app/db/snapshots/iba-20261022T103226Z-before-2219-strand-items.db`; migration
+applied and moved to `archive/`; `configmaint.validate` ok (no finding beyond #2207's).
+
+## 389. Catch-up B: the October ledgers into the tables (2026-10-22, escalation #2172)
+
+Researcher, chat 2026-10-22 (verbatim): "#2219: approve option A. Build and test it on a copy first,
+then run catch-up B for #2172." Plan: `outputs/escalation/2172-catch-up-plan-v1-20261022.md` section 2
+B, with the decisions of #2172 v26-v29 (origin of thought homed at M64 Will & Resolve; the October
+disposition kept as a note; verses with no strand word and hits with no face left out and listed,
+#2216 and #2217).
+
+**Code:** `iba/app/lib/recordingpass.py` `record_strand_observations` and `iba/app/lib/strandreading.py`
+Record keep an observation's optional `stable_key` and `note` (revisit_note); test case D6a in
+`iba/app/tools/temp_2219_strand_items_test_run.py` (22 of 22). USER-GUIDE.md 8.2 Record.
+
+**Script:** `iba/app/migration/archive/catchup_october_ledgers_2172_v1_20261022.py` (one-off, registered
+in cfg_utility inactive; run `CATCHUP-2172-B-20261022`). Through the reading process's own steps: Define
+(words: the Strong's codes of each strand's unit pulls), Context (hits, matched open items), Record (one
+observation per ledger row: head as text, the ledger's parts to their columns, S/R to stated/read and
+S+R to read, each verse grounded on the strand words in it, `stable_key` '<strand>:<ID>', the October
+disposition and touches in revisit_note, status draft; faces from the unit pulls onto the hits, anger's
+parties from its faces files). What Record refuses is listed and left out. Also restates the cfg_column
+use of ib_observation.stable_key and revisit_note.
+
+**Dry runs** on two `dbsnapshot.copy_db` copies, the second after a fix (a head split inside a quotation):
+691 observations both times. **Live:** snapshot `iba/app/db/snapshots/iba-20261022T110730Z-before-2172-catch-up-b.db`;
+report `outputs/escalation/2172-catch-up-b-v1-20261022.md` with the import and context files in
+`outputs/escalation/2172-catch-up-b-v1-20261022/`; `configmaint.validate` ok (no finding beyond #2207's).
+
+| Strand | Home | Words | Hits | Faced | Ledger rows | Recorded | Open items matched |
+|---|---|---|---|---|---|---|---|
+| fear | M01 Fear & Awe | 94 | 1012 | 1012 | 167 | 149 | 7 |
+| anger | M02 Anger & Wrath | 65 | 892 | 892 | 375 | 326 | 7 |
+| life-death | M25 Life & Death | 26 | 2218 | 2218 | 188 | 170 | 17 |
+| origin-of-thought | M64 Will & Resolve | 23 | 358 | 0 | 53 | 46 | 28 |
+
+Left out (92 rows): 45 with no verse holding a strand word (#2216), 40 with no basis (the 31 rows of
+anger at the inner seat and 9 rows of the anger strand ledger's link table), 7 refused for a quotation
+not in the ESV text (word glosses in quotation marks, and FE-38's inserted "[Joshua]"). 1,062 cited
+verses hold no strand word and were left out of the grounding (#2216). Origin of thought's 358 hits
+have no face (#2217).

@@ -11,18 +11,23 @@
       Define   -Strand flesh-body -Title "Flesh and body" -Cluster M48 -Escalation 2162 -Strongs "H1320,G4561"
                (an open strand: -Strand -Strongs adds words)
       Context  -Strand <code>      every hit with its text and lexical data, the observations already
-                                   on those words and verses, the open thread items that match, each
-                                   verse's coverage -> outputs/strand-reading/<code>/<code>-context-vN.md
-      Record   -Strand <code> -File <reading.json>   observations, and a face or a reason per hit read
+                                   on those words and verses, the open items to answer (matched on its
+                                   words, their clusters, its verses, its code), each verse's coverage
+                                   -> outputs/strand-reading/<code>/<code>-context-vN.md
+      Record   -Strand <code> -File <reading.json>   observations, a face or a reason per hit read, new open items
       Gather   -Strand <code>      every narrative block related to the strand, with its text and tellings
       Map      -Strand <code> -File <map.json>       each related block's statements to the claims register
+                                                     (an unclaimed one held as an open item)
       Derive   -Strand <code> -File <derive.json>    new, adjusted and withdrawn claims; observation dispositions
       Rewrite  -Strand <code> -File <rewrite.json>   blocks written anew, whole; chapters published
-      Account  -Strand <code>      the strand from the tables, gaps as text
+      Account  -Strand <code>      the strand from the tables, gaps as text, its open items and answers
 
     The JSON shapes are in lib/strandreading.py (each step's docstring). Write steps (Define,
-    Context, Record, Map, Derive, Rewrite) need -By Claude|Researcher. The strand's escalation cannot
-    reach completed or closed while a hit has no face or reason or an observation has no disposition.
+    Context, Record, Map, Derive, Rewrite) need -By Claude|Researcher. New open items go on the
+    strand's own thread; a matched item is answered with Escalation.ps1 -Action Update -Id OT-nn
+    -Item OT-nn.n -ResponseKind ... -Respond ... The strand's escalation cannot reach completed or
+    closed while a hit has no face or reason, an observation has no disposition, or a matched open
+    item has no response since it was matched.
 
 .EXAMPLE
     iba\app\ps\Strand-Reading.ps1 -Step Context -Strand flesh-body -By Claude
