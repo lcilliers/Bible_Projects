@@ -18375,3 +18375,45 @@ Researcher, verbatim (chat 2026-10-22): "Fix #2211 (Context drops the dot from .
   migration with no live copy, a bare `BUILD.md`).
 
 The full 400-escalation before/after scan was stopped, to save cost.
+
+## 377. Fix, don't count: first backlog fixes, and Claude's repeated failures trapped at close (2026-10-22, escalation #2207)
+
+Researcher, verbatim (chat 2026-10-22): "#2207: approve parts 1 to 3 of the fix-not-count method."
+Method: `outputs/escalation/2207-fix-not-count-v1-20261022.md`. This section covers the first
+backlog fixes and part 3.
+
+**Backlog fixes (part 2), checked on a `copy_db` copy, then live:**
+- `iba/app/lib/cfgquality.py`:
+  - `find_escalation_file_naming_violations` skips `archive/` folders (A). 27 findings before, the 7
+    live files now.
+  - `find_utility_config_density` counts SQL reads of `cfg_*` tables as config use, searched in the
+    raw text (E). 12 findings before, 7 now.
+  - A stray 0x08 byte, written where `\b` was meant (rule 108), was found and repaired before commit.
+- B: `scripts/SQLite/IBA_DB/Untitled-1.sqlite3-query` and `Untitled-2.sqlite3-query` moved to
+  `scripts/archive/`.
+- Migration `iba/app/migration/archive/fix_not_count_2207_v1_20261022.py`, run
+  `DEVMODE-2207-FIX-NOT-COUNT-20261022`, 5 writes:
+  - `wa_obs_question_catalogue` scope/status/tier now carry their enum expectation (the data
+    conforms). Orphan enums: 4 before, 1 now.
+  - `scripts_apply_session_patch` set inactive, per the 2026-08-18 ruling; the file moved to
+    `scripts/archive/`.
+
+**Part 3:** `iba/app/lib/sessionwindow.py` `failed_calls()` reads the session transcript for tool
+results marked as errors, with each one's operation and error kind. The point-of-use hook's rule
+display is left out. `iba/app/handlers/session_close.py` adds step SC16: a PS tool action that
+failed twice in the session, or any other call failing twice with the same error, is a finding. It
+is fixed at its point of use, or carried by an open item. Tests:
+- synthetic: a double `Raise` failure is a finding; the hook display, a success and a single failure
+  are not;
+- real: this session's transcript gives 5 findings, `Escalation.ps1 -Action Raise` among them.
+
+**Left for the next build:**
+- `ib_observation.meaning_source`: its enum does not match the data (a decision);
+- `taggingguidance`: tag definitions hardcoded;
+- `backup_db_to_nas`: constants into config;
+- scrap the batch monitoring and retire lexicalenrich/lexicalscope, which touches
+  `handlers/cluster.py` and `handlers/lexical.py`;
+- catalogue config; clusterfamilyscan literals;
+- 2 PS scripts through run.py; 7 file renames;
+- the 13 rules not fully controlled;
+- then part 1: advisory findings become errors.

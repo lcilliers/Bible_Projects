@@ -130,6 +130,65 @@ def commit_exists(h: str) -> bool:
         return False
 
 
+_RULES_SHOWN = "Rules for this operation ("   # the point-of-use hook's deliberate refusal (#2209)
+
+
+def _operation(tool: str, inp: dict) -> str:
+    """A short operation key for a tool call: a PS script with its -Action/-Step, a command's first
+    word, or the top folder a file is written in."""
+    if tool in ("Bash", "PowerShell"):
+        cmd = inp.get("command", "")
+        m = re.search(r"([\w.-]+\.ps1)\b(?:.*?-(Action|Step)\s+['\"]?([\w.-]+))?", cmd, re.S)
+        if m:
+            return f"{m.group(1)} -{m.group(2)} {m.group(3)}" if m.group(2) else m.group(1)
+        first = re.sub(r"^(?:(?:cd|export)\s+\S+\s*&&\s*|\w+=\S+\s*(?:&&\s*)?)+", "", cmd.strip()).split()
+        return f"{tool}: {first[0] if first else ''}"
+    if tool in ("Edit", "Write", "Read"):
+        p = (inp.get("file_path") or "").replace("\\", "/")
+        rel = p.split("Bible_study_projects/", 1)[-1]
+        return f"{tool}: {rel.split('/')[0] if '/' in rel else rel}"
+    return tool
+
+
+def failed_calls(transcript: pathlib.Path) -> list[dict]:
+    """Claude's tool calls in the session that came back as errors (#2207 part 3): [{at, tool,
+    operation, kind, text}]. `kind` is the error's first line with digits blanked, so the same
+    mistake made twice has the same kind. The point-of-use hook's rule display is left out: it is a
+    deliberate first-use refusal, not a failure."""
+    calls, out = {}, []
+    with transcript.open("r", encoding="utf-8", errors="replace") as fh:
+        for line in fh:
+            try:
+                e = json.loads(line)
+            except Exception:
+                continue
+            if e.get("isSidechain"):
+                continue
+            content = (e.get("message") or {}).get("content")
+            if not isinstance(content, list):
+                continue
+            for c in content:
+                if not isinstance(c, dict):
+                    continue
+                if c.get("type") == "tool_use":
+                    calls[c.get("id")] = (c.get("name") or "", c.get("input") or {})
+                elif c.get("type") == "tool_result" and c.get("is_error"):
+                    body = c.get("content")
+                    if isinstance(body, list):
+                        body = "\n".join(x.get("text", "") for x in body if isinstance(x, dict))
+                    body = str(body or "")
+                    if _RULES_SHOWN in body:
+                        continue
+                    tool, inp = calls.get(c.get("tool_use_id"), ("", {}))
+                    first = next((ln.strip() for ln in body.splitlines() if ln.strip()
+                                  and not re.fullmatch(r"Exit code \d+", ln.strip())), "")
+                    first = re.sub(r"<[^>]+>", "", first)
+                    out.append(dict(at=e.get("timestamp") or "", tool=tool,
+                                    operation=_operation(tool, inp),
+                                    kind=re.sub(r"\d+", "#", first)[:100], text=first[:200]))
+    return out
+
+
 def user_messages(transcript: pathlib.Path) -> list[dict]:
     """The researcher's own messages in the session: [{uuid, at, text}]. Tool results, hook and
     system text, and Claude Code's command wrappers are not the researcher's words; a slash command

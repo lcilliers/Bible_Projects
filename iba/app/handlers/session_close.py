@@ -43,6 +43,9 @@ fixed (it no longer appears) or by a disposition in the session compliance file'
                             names resolves and is not in an archive/ unless the line marks it as
                             history; no replaced-history text (rule 96); an always-read file within
                             session_close.always_read_max_bytes.
+  SC16 repeated failures    a PS tool action that failed twice in the session, or any other call
+                            that failed twice with the same error (sessionwindow.failed_calls,
+                            #2207): fixed at its point of use, or carried by an open item.
 SC7 (remediation), SC11 (re-run) and SC13 (commit, blocked while any finding is open) are steps of
 the command; Session-Close.ps1 exits 3 while any finding is open. SC14: this report is the close's
 persisted record.
@@ -532,12 +535,34 @@ def _save_state(cfg, session_id, state, problems) -> None:
                     encoding="utf-8")
 
 
+def _sc16(tpath) -> list[dict]:
+    """#2207 part 3: a mistake Claude made twice in the session is a defect at its point of use.
+    A PS tool action that failed twice, or any other call that failed twice with the same error, is
+    a finding. It clears when fixed where it happens (a cfg_rule_scope link, a USER-GUIDE line, a
+    tool that refuses the call), dispositioned `fixed` or carried by an open item."""
+    if not tpath:
+        return []
+    import hashlib
+    groups: dict[str, list[dict]] = {}
+    for f in sw.failed_calls(tpath):
+        if ".ps1" in f["operation"]:
+            key = f"SC16:{f['operation']}"
+        else:
+            key = f"SC16:{f['operation']}:{hashlib.sha1(f['kind'].encode()).hexdigest()[:8]}"
+        groups.setdefault(key, []).append(f)
+    return [dict(key=k, step="SC16",
+                 text=f"{fs[0]['operation']} failed {len(fs)} times this session: "
+                      + "; ".join(sorted({x['text'][:120] for x in fs})))
+            for k, fs in groups.items() if len(fs) > 1]
+
+
 # ── report ───────────────────────────────────────────────────────────────────────────────────
 _STEP_TITLES = {"SC1": "SC1 Session and window", "SC2": "SC2 Spine (FATAL)",
                 "SC3": "SC3 Researcher's words recorded", "SC4": "SC4 Open items in the register",
                 "SC5": "SC5 Analysis integrity", "SC6": "SC6 Rule compliance",
                 "SC8": "SC8 Session log", "SC9": "SC9 Decisions reached their targets",
-                "SC10": "SC10 BUILD.md coverage", "SC15": "SC15 Control files"}
+                "SC10": "SC10 BUILD.md coverage", "SC15": "SC15 Control files",
+                "SC16": "SC16 Claude's repeated failures"}
 
 
 def _write_report(ctx, ident, F, info) -> pathlib.Path:
@@ -629,6 +654,7 @@ def check(ctx: Ctx) -> Outcome:
         F += _sc10(cfg, base, changed)
         F += [dict(key=k, step="SC15", text=t)
               for k, t in cfgquality.find_control_file_problems(db.conn, root)]
+        F += _sc16(tpath)
         info["publish"] = _sc12(cfg, db, root, changed, since)
         disp = compliance.parse(cpath)["dispositions"] if cpath else {}
     else:

@@ -594,6 +594,7 @@ def _cfg_method_pattern() -> re.Pattern:
 
 
 _CFG_METHOD_RE = None  # built on first use, keeping the dependency on cfg one-way
+_CFG_SQL_RE = re.compile(r"\b(?:FROM|JOIN|UPDATE|INTO)\s+cfg_\w+", re.IGNORECASE)
 
 
 def find_utility_config_density(conn: sqlite3.Connection) -> list[str]:
@@ -611,7 +612,10 @@ def find_utility_config_density(conn: sqlite3.Connection) -> list[str]:
         if not path.exists():
             out.append(f"cfg_utility {r['module']!r} — {path} no longer exists on disk")
             continue
-        if not _CFG_METHOD_RE.search(_code_only_text(path)):
+        code = _code_only_text(path)
+        # config read through a Cfg method, or by SQL on a cfg_* table (#2207 E)
+        # SQL lives in string literals, so it is searched in the raw text
+        if not (_CFG_METHOD_RE.search(code) or _CFG_SQL_RE.search(path.read_text(encoding="utf-8", errors="ignore"))):
             out.append(f"cfg_utility {r['module']!r} ({path}) has zero Cfg-method call sites "
                       f"(.setting()/.enum()/.tables()/... under any variable name) — confirm this "
                       f"is a legitimate zero (mark `cfg_utility.config_exempt=1` via "
@@ -1039,6 +1043,8 @@ def find_escalation_file_naming_violations(conn: sqlite3.Connection, project_roo
             continue
         for f in sorted(folder.rglob("*.md")):
             rel = f.relative_to(project_root).as_posix()
+            if "archive" in f.relative_to(folder).parts[:-1]:   # history is not renamed (#2207 A)
+                continue
             if " " in f.name:
                 out.append(f"{rel} — filename contains a space (naming-shape: hyphens only)")
             if f.stem.lower().startswith("untitled"):
