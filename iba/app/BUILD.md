@@ -18417,3 +18417,37 @@ is fixed at its point of use, or carried by an open item. Tests:
 - 2 PS scripts through run.py; 7 file renames;
 - the 13 rules not fully controlled;
 - then part 1: advisory findings become errors.
+
+## 378. ib_observation.meaning_source: an enum of the real sources, applied when an observation is written (2026-10-22, escalation #2207)
+
+Researcher, verbatim (chat 2026-10-22): "meaning_source: option B, enum of the real sources; the
+stored text is left until rows are re-run." The column held 67 distinct free-text spellings of a
+few sources, written by the model, and 1,213 NULL.
+
+**Config:** migration `iba/app/migration/archive/meaning_source_2207_v1_20261022.py`, run
+`DEVMODE-2207-MEANING-SOURCE-20261022`, 8 writes:
+- `cfg_enum ib_observation.meaning_source` holds the sources: `strong_meaning_tree`,
+  `strong_lexicon.lsj`, `strong_lexicon.mounce`, `strong_lexicon`, `verse-text`, `role-tags`,
+  `cluster`, `observations` and `n/a`. `strong_lexicon` (unspecified) and `observations` (earlier
+  readings) were added because the data names them.
+- `cfg_setting ib_observation.meaning_source_aliases` (module cluster) maps each spelling used to its
+  source.
+
+**Code:**
+- `iba/app/lib/recordingpass.py` `normalise_meaning_source()`. It splits on ; , + or /, maps each part
+  through the aliases, and joins in enum order. Any "n/a ..." becomes `n/a`. An unknown part skips
+  the observation (`skipped-invalid-meaning-source`), as an invalid tag does.
+  `record_one_observation`, the single writer (rule 68), applies it. Stored rows are untouched.
+- `iba/app/lib/cfgquality.py` `find_orphan_configs`: a setting read by SQL (`cfg_setting WHERE
+  key='...'`) counts as read, the same as an enum group (#2207 E).
+
+**Tests on a `copy_db` copy:**
+- all 67 live spellings map, to 17 normalised forms;
+- edge cases: mixed order, `n/a (pronoun)`, NULL, blank, a capitalised alias;
+- an unknown part is refused;
+- stored rows are unchanged.
+
+Live: no orphan configs remain (4 before #2207).
+
+**Not done:** the generator prompts (`lib/subgroupgenerate.py`, `charreadinggenerate.py`,
+`charanswergenerate.py`) still ask for free text. The writer now normalises it.

@@ -245,8 +245,40 @@ def _validate_tag(conn, tag: str) -> None:
             f"refusing to write an observation under it")
 
 
-# ib_observation.meaning_source is not validated: live values are free-form strings, far outside
-# its 3-value enum (an orphan-config finding in configmaint.validate).
+class InvalidMeaningSource(ValueError):
+    pass
+
+
+def normalise_meaning_source(conn, raw: str | None) -> str | None:
+    """The model's meaning_source text as the real sources it names (#2207): each part (split on ; , +
+    or /) mapped through cfg_setting ib_observation.meaning_source_aliases to a value of cfg_enum
+    ib_observation.meaning_source, joined '; ' in enum order. Any 'n/a ...' is 'n/a'. An unknown part
+    skips the observation (InvalidMeaningSource), as an unknown tag does. Stored rows are not touched (rule 68)."""
+    if raw is None or not str(raw).strip():
+        return None
+    import json
+    import re
+    text = str(raw).strip()
+    order = [r[0] for r in conn.execute(
+        "SELECT value FROM cfg_enum WHERE name='ib_observation.meaning_source' AND inactive=0 "
+        "ORDER BY ordinal")]
+    if text.lower().startswith("n/a"):
+        return "n/a"
+    row = conn.execute("SELECT value FROM cfg_setting WHERE key='ib_observation.meaning_source_aliases' "
+                       "AND inactive=0").fetchone()
+    aliases = json.loads(row[0]) if row else {}
+    found = set()
+    for part in re.split(r"\s*[;,+/]\s*", text):
+        p = part.strip().lower()
+        if not p:
+            continue
+        src = p if p in order else aliases.get(p)
+        if src is None:
+            raise InvalidMeaningSource(f"meaning_source part {part!r} is not a source in cfg_enum "
+                             f"ib_observation.meaning_source nor an alias in "
+                             f"ib_observation.meaning_source_aliases -- refusing to write")
+        found.add(src)
+    return "; ".join(v for v in order if v in found) or None
 
 
 def _validate_stage(conn, stage: str) -> None:
@@ -344,7 +376,10 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     question_code = obs.get("question_code")
     tag = obs["tag"]
     obs_text = obs["obs_text"]
-    meaning_source = obs.get("meaning_source")
+    try:
+        meaning_source = normalise_meaning_source(conn, obs.get("meaning_source"))
+    except InvalidMeaningSource as e:
+        return {"action": "skipped-invalid-meaning-source", "unresolved": [str(e)]}
 
     _validate_stage(conn, stage)
 

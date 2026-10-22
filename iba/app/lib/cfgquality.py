@@ -151,6 +151,8 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
         used = any((f'"{key}"' in text or f"'{key}'" in text)
                   and (".setting(" in text or ".required_setting(" in text)
                   for text in per_file.values())
+        # or read by SQL, as the cfg_enum groups may be (#2207 E)
+        used = used or any(f"cfg_setting WHERE key='{key}'" in text for text in per_file.values())
         if not used and module == "database" and _DATABASE_PATH_KEY.match(key):
             # Cfg.database_path() reads it through an f-string key (#748); confirmed by its call site
             cfgpy = per_file.get(app_root / "lib" / "cfg.py", "")
