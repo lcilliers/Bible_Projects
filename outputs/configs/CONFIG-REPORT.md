@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-22T11:21:03Z |
+| generated_at | 2026-10-22T14:44:31Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -48,11 +48,8 @@ _(none)_
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
 
-**Low config-density utilities** (4) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-1. cfg_utility 'scripts_backup_db_to_nas' (scripts\backup_db_to_nas.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-2. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-3. cfg_utility 'lexicalscope' (iba\app\lib\lexicalscope.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-4. cfg_utility 'clusterfamilyscan' (iba\app\lib\clusterfamilyscan.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+**Low config-density utilities** (0) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
+_(none)_
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -66,8 +63,8 @@ _(none)_
 **Report version clutter** (0) — more than one version of a one-off report simultaneously live in governance.oneoff_report_dir (oneoff_path() found 2026-08-08 to version without archiving, BUILD.md §83) — the rest belong in archive/:
 _(none)_
 
-**Unresolvable location settings** (1) — a *_dir/*_path/*_folder value (cfg_setting or any per-module table shaped like it) that does not resolve to a real folder on disk:
-5. cfg_setting.strand_reading.output_dir = '"outputs/strand-reading"' — 'outputs/strand-reading' does not exist as a folder on disk (project-root-relative)
+**Unresolvable location settings** (0) — a *_dir/*_path/*_folder value (cfg_setting or any per-module table shaped like it) that does not resolve to a real folder on disk:
+_(none)_
 
 **Escalation.ps1 ValidateSet drift** (0) — a -Parameter's [ValidateSet(...)] values not matching the live cfg_enum group it's supposed to mirror:
 _(none)_
@@ -76,7 +73,7 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-6. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+1. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
 **PS/worksheet drift** (0) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
 _(none)_
@@ -85,19 +82,19 @@ _(none)_
 _(none)_
 
 **Unenforced behaviour rules** (13) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-7. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-8. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-9. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-10. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-11. [development] #46 test-plan-per-module-utility — deliberately_deferred
-12. [development] #66 cluster-label-must-track-membership — buildable_not_built
-13. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-14. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-15. [filing] #56 naming-shape — partially_enforced
-16. [filing] #58 archiving-trigger — partially_enforced
-17. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-18. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
-19. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+2. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+3. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+4. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+5. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+6. [development] #46 test-plan-per-module-utility — deliberately_deferred
+7. [development] #66 cluster-label-must-track-membership — buildable_not_built
+8. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+9. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+10. [filing] #56 naming-shape — partially_enforced
+11. [filing] #58 archiving-trigger — partially_enforced
+12. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+13. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
+14. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -138,7 +135,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**956** registered module(s) — **501** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **836** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**956** registered module(s) — **503** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **837** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -356,7 +353,7 @@ _(none)_
 | claude_md_rules_to_config_v1_20261021 | iba/app/migration/archive/claude_md_rules_to_config_v1_20261021.py | ONE-OFF migration -- escalation #2181: moves the rules CLAUDE.md held with no cfg_* home into config, every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2181-CLAUDE-MD-RULES-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | clear_content_index | iba/app/migration/clear_content_index_20260821.py | One-off migration: escalation #758 -- empties content_index + content_index_scan (the current design judged unsupportable, decommissioned pending redesign #770). | ✓ | ✓ | one-off migration script -- writes directly into content_index/content_index_scan via raw sqlite3, same class as cfgload.py |
 | clusterassign | iba/app/lib/clusterassign.py | cluster.assign -- allocates strongs to M-code clusters | ✓ |  |  |
-| clusterfamilyscan | iba/app/lib/clusterfamilyscan.py | Escalation #1598: candidate-generation via strong_related lexical-family data instead of gloss-keyword matching, with proper-noun filtering. Not a bulk-apply tool -- surfaces candidates for individual verse-check + JSON-batch review via apply_1598_cluster_batch.py. Validated: reliable for place/party/collective candidates, unreliable for M-code thematic fit (documented in module docstring). | ✓ |  |  |
+| clusterfamilyscan | iba/app/lib/archive/clusterfamilyscan.py | Escalation #1598: candidate-generation via strong_related lexical-family data instead of gloss-keyword matching, with proper-noun filtering. Not a bulk-apply tool -- surfaces candidates for individual verse-check + JSON-batch review via apply_1598_cluster_batch.py. Validated: reliable for place/party/collective candidates, unreliable for M-code thematic fit (documented in module docstring). |  |  |  |
 | clusterreport | iba/app/lib/clusterreport.py | report.cluster -- cluster content/quality report | ✓ |  |  |
 | clusterstatus | iba/app/lib/clusterstatus.py | clusterstatus.py — the `cluster.status` lifecycle transitions `#1697` designed but never built | ✓ |  |  |
 | compliance | iba/app/lib/compliance.py | compliance.py -- rule compliance read at start and proved at close (#2173 P2): delivery of the rules, the session compliance file, its start and close checks. | ✓ |  |  |
@@ -409,7 +406,7 @@ _(none)_
 | flag_management_build_v1_20260823 | iba/app/migration/archive/flag_management_build_v1_20260823.py | ONE-OFF migration, escalation #833 (Flag Management) -- repurposes wa_quality_flag_types/wa_data_quality_flags for prose-quality checks, adds cfg_column.inactive, retires phase2_flag_types, marks 2 dead columns inactive, records wa_session_research_flags' retention. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | folderpurpose | iba/app/lib/folderpurpose.py | folderpurpose.py -- folder_purpose table: seed/refresh from a live directory scan (Method A), cross-check against cfg_setting *_dir/*_path values (Method B), and hand-edit type/status/usage_description (Method C). Escalation #971. | ✓ |  |  |
 | handlers_base | iba/app/handlers/base.py | Handler contract: Ctx, Outcome, ok/fail/escalate, used by every handler. | ✓ | ✓ | app core, outside the utility config-density check |
-| handlers_catalogue | iba/app/handlers/catalogue.py | Thin dispatcher adapter over cataloguewrite.py, registers obs_catalogue.update as a work-package step. | ✓ |  |  |
+| handlers_catalogue | iba/app/handlers/catalogue.py | Thin dispatcher adapter over cataloguewrite.py, registers obs_catalogue.update as a work-package step. | ✓ | ✓ | thin step wrapper: checks -ObsId and -Set; the write and its rules are in lib/cataloguewrite.py (#2207 decision 3a) |
 | handlers_compliance | iba/app/handlers/compliance.py | handlers/compliance.py -- the compliance.template and compliance.check_start steps (#2173 P2). | ✓ | ✓ | thin step wrappers: every setting is read in lib/compliance.py, which they call |
 | handlers_narrativeregister | iba/app/handlers/narrativeregister.py | handlers/narrativeregister.py -- the run.py handlers for work package narrative-register (one per Narrative-Register.ps1 action); the logic is in lib/narrativeregister.py (escalation #2110). | ✓ |  |  |
 | handlers_strandreading | iba/app/handlers/strandreading.py | handlers/strandreading.py -- the run.py handlers for work package strand-reading (one per Strand-Reading.ps1 step); the logic is in lib/strandreading.py (escalation #2172). | ✓ |  |  |
@@ -658,7 +655,7 @@ _(none)_
 | lexical | iba/app/lib/lexical.py | lexical.py — the the lexical (`verse_lexical`) engine: T1-T3 of the verse-lexical technique Extended 2026-09-04 (escalation #1383): also computes position/surface/language/testament/is_negator/narrative_morph/gloss_consistent_in_verse/party_kind and applies the H0853 role exception. | ✓ |  |  |
 | lexicalenrich | iba/app/lib/archive/lexicalenrich.py | Stage 1 Layer 2 engine: verse_lexical_note capture + passage.genre/lexical_complete_at, JSON-payload-driven. Escalation #1383. |  |  |  |
 | lexicalenrichgenerate | iba/app/lib/lexicalenrichgenerate.py | The LLM-calling half of lexical.run Layer 2 (escalation #1549 continued) -- batches the verse-list, assembles a lean cost-estimated package per batch, calls the Anthropic Messages API, parses the response, writes via lexicalenrich.enrich_passage, logs real usage. Config-driven from the start (module lexical), unlike its own template narrativegenerate.py which is flagged non-compliant. | ✓ |  |  |
-| lexicalscope | iba/app/lib/lexicalscope.py | Selector-to-verse-id resolution for lexical.run (escalation #1549 rework) -- cluster/word/strong-list/verse-list all converge to a verse-id list via span.strong_variant (exact-token match), never strong_verse (verified undercounting). | ✓ |  |  |
+| lexicalscope | iba/app/lib/lexicalscope.py | Selector-to-verse-id resolution: a cluster, word, Strong's list or verse list resolves to verse ids via span.strong_variant (exact-token match), never strong_verse. Used by steps lexical.meaning, lexical.relational, cluster.subgroup and by lib/clusterstatus.py. | ✓ | ✓ | pure SQL resolver over span, cluster_strong and word_strong: no value in it is a setting (#2207 decision 1a) |
 | lexicon | iba/app/handlers/lexicon.py | handlers/lexicon.py -- Lexicon-parsed-layer handlers (L2b): parse/related/validate steps for the lexicon-parse work package. rebuild_parsed_tables() is the full parse rebuild (also called directly by raw.backfill_meaning); as of escalation #1655 (2026-09-10) it also adds a standing lemma-derived-with-note fallback for any strong code STEP returns no exact-variant result for, so every live strong code has parse coverage matching strong's own grain. | ✓ |  |  |
 | lexiconparse | iba/app/lib/lexiconparse.py | lexiconparse.py — the governed parse of the raw lexicon layer (strong_meaning_tree.sense_text, | ✓ |  |  |
 | m0_5_11_surface_cue_v1_20260923 | iba/app/migration/archive/m0_5_11_surface_cue_v1_20260923.py | ONE-OFF migration -- researcher instruction 2026-09-23: names surface-form variation as the explicit diagnostic cue for M0.5.11's divergence check. Run once, then set inactive=1. |  |  |  |
@@ -869,7 +866,7 @@ _(none)_
 | scripts_audit_step_extract_archiving | scripts/archive/_audit_step_extract_archiving.py | Auditor + applicator for STEP Extracts archiving. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | scripts_backfill_root_families | scripts/archive/backfill_root_families.py | backfill_root_families.py -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | scripts_backfill_span_match | scripts/archive/_backfill_span_match.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). _backfill_span_match.py |  |  |  |
-| scripts_backup_db_to_nas | scripts/backup_db_to_nas.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). backup_db_to_nas.py — consistent off-Drive backup of bible_research.db to the NAS. | ✓ |  |  |
+| scripts_backup_db_to_nas | scripts/backup_db_to_nas.py | backup_db_to_nas.py -- consistent off-Drive backup of bible_research.db or iba.db to the NAS (integrity check, backup-API snapshot, hash-verified copy, grandfather-father-son pruning, local status and alert). Settings from cfg_setting backup.nas_db_backup, with a built-in fallback when iba.db cannot be read. | ✓ |  |  |
 | scripts_backup_watchdog | scripts/backup_watchdog.ps1 | Watchdog over the NAS backup jobs, run by the scheduled task 'BibleResearch Backup Watchdog'. | ✓ | ✓ | operational script outside the dispatcher (#2200) |
 | scripts_batch_audit | scripts/archive/_batch_audit.py | _batch_audit.py — Run audit_word on all registries that need it. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | scripts_batch_extract | scripts/archive/_batch_extract.py | _batch_extract.py — Run STEP extraction for all words that need a discovery JSON. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
@@ -1116,6 +1113,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- |
 | backup | backup.alerting_policy | NAS backup tasks alert on failure; Outlook SMTP is blocked from this network, alerting uses Gmail instead. |  |
 | backup | backup.iba_db_gap | RESOLVED 2026-08-17 (escalation #703): iba.db now has its own dedicated NAS backup+alerting script -- scripts/backup_db_to_nas.py, generalized to serve both databases (filename prefix, pruning lineage, and alert job identity all derived from --source, not hardcoded), scheduled task "IBA DB Backup to NAS" (daily 18:10, staggered 10 min after bible_research.db's 18:00 task). Found and fixed while resolving this: a 2026-07-19 commit had accidentally repointed the shared script's DEFAULT_SOURCE to iba.db, so the 18:00 task had been backing up iba.db under misleading bible_research_-prefixed names for ~29 days, leaving bible_research.db with no dedicated integrity-checked backup in that window -- confirmed via NAS file-size comparison, not assumed. Restored + root-fixed (prefix now derived, not constant) so this class of accident cannot silently recur. |  |
+| backup | backup.nas_db_backup | {'default_source': 'database/bible_research.db', 'target': '\\\\LSUK-SYNRACK\\HomeMedia\\bible_study_projects\\db_backups', 'log_name': 'backup_log.txt', 'status_dir': 'C:\\Users\\lerouxc\\nas_mirror_logs', 'keep_recent': 24, 'keep_daily': 30, 'keep_weekly': 26, 'min_bytes': {'bible_research': 10485760, 'iba': 419430400}, 'min_bytes_default': 10485760} | Settings of scripts/backup_db_to_nas.py: default source (project-relative), NAS target folder, NAS log file name, local status folder, the three retention tiers (keep_recent, keep_daily, keep_weekly) and the per-database size floor in bytes (min_bytes by source stem, min_bytes_default otherwise). If iba.db cannot be read the script uses its built-in copy of these values and says so in its log line. |
 | backup | backup.nas_db_backup_schedule | database/bible_research.db backed up daily 18:00 (task 'BibleResearch DB Backup to NAS') and iba/app/db/iba.db daily 18:10 (task 'IBA DB Backup to NAS'), both by scripts/backup_db_to_nas.py, to \\LSUK-SYNRACK\HomeMedia\bible_study_projects\db_backups\. Each run integrity-checks, hash-verifies the NAS copy and refuses a source under its PER-DATABASE size floor (bible_research 10 MB, iba 400 MB; #2141, 2026-10-14 -- a single 50 MB floor had refused the prose-only bible_research.db since 2026-09-28). Tasks run in a hidden window (pwsh -WindowStyle Hidden) so closing a console cannot kill them (#2141); missed runs are not caught up (researcher, 2026-10-14). scripts/backup_watchdog.ps1 (daily 19:00 + logon) alerts on FAIL or >26 h staleness for mirror, dbbackup and dbbackup_iba. |  |
 | backup | backup.nas_full_mirror_schedule | whole project folder + memory mirrored daily 18:30 (Windows scheduled task 'BibleResearch Full Mirror to NAS', scripts/mirror_to_nas.ps1, robocopy /MIR, run in a hidden window since #2141) to \\LSUK-SYNRACK\HomeMedia\bible_study_projects\mirror\ + claude-backup\. The mirror also carries a copy of both databases as files, without an integrity check; the integrity-checked, hash-verified DB backups are the separate 18:00 (bible_research.db) and 18:10 (iba.db) tasks -- see backup.nas_db_backup_schedule. |  |
 | backup | backup.pre_run_snapshot_policy | a full DB snapshot (made with the SQLite backup API, lib/dbsnapshot.copy_db) is taken automatically before every NEW run (run.py:_ensure_run -> lib/dbsnapshot.snapshot()), never on resume -- this already covers every step in every pipeline; retention.snapshot_keep_count controls how many are kept (oldest pruned first). IBA_NO_SNAPSHOT=1 skips it for a tight loop. |  |
@@ -1207,7 +1205,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.session_log_dir | Logs/ | where every SESSION-LOG-*.md narrative work-session record lives -- consolidated 2026-08-17 (escalation #682) from 5 scattered locations (iba/logs/, outputs/session-logs/, Workflow/Sessionlogs/, repo root) into this one, case-insensitive-filesystem-safe existing folder. |
 | governance | governance.session_log_required_content | Every session has a session log in governance.session_log_dir (SESSION-LOG-<date>-<topic>.md) naming the session id and carrying six sections, headed as in session_close.log_sections: (1) date and a one-line scope summary of the session; (2) every escalation touched, by id, with its outcome (raised/updated/resolved/rejected) -- the actual ids, not narrative paraphrase; (3) every file or deliverable created or changed, with its path; (4) decisions made, distinguishing the researcher's own decisions from self_correctable fixes Claude made and closed, each naming where it was recorded (a file path, a cfg_* table, or #nnnn vN) -- checked by session-close SC9; (5) open items carried into the next session -- what is left, and for whom, by OT-nn.n or #nnnn; (6) the git state of the session's commit (governance.session_log_triggers_commit): branch, commit hash and the push output, from the actual git output, written after the first commit and committed alone. A log missing any of these is incomplete; session-close (SC8) fails without it. | Answers escalation #911 (2026-08-27): the content a session log must carry, previously unstated anywhere in cfg_* or governance prose -- only governance.session_log_dir (where) and governance.session_log_triggers_commit (the commit consequence) existed. Derived from the log's own stated purpose (continuity across sessions) and the existing patch/escalation convention of naming ids and files explicitly rather than narrating them, not from reading prior logs for precedent (governance.past_precedent_investigation_signals_missing_config). |
 | governance | governance.session_log_triggers_commit | A /session-close cycle (.claude/commands/session-close.md) includes writing the session's log (governance.session_log_required_content) and ends in the full commit-and-push cycle in the same unit of work: the log is written, Session-Close.ps1 shows no open finding, everything outstanding is staged and committed with a proper message and pushed, then the log's git section (item 6) is written and committed alone ('session log git confirmation') and pushed; confirm clean/pushed from the actual git output. |  |
-| governance | governance.study_status | ON HOLD since 2026-10-19. Researcher, verbatim: 'you have officially been put on hold until I have the enthusiasm and the will power to re-open the study.' No study work (readings, weaves, strands, audits) is started, continued or proposed until the researcher re-opens it. Reason and state at hold: escalation #2172 (readings did not reliably reach the narrative and the claims register; no control enforces completeness); #2171 (M07/M53) trial and batch 1 read, nothing woven. | Whether the study is active or on hold, and why. Read at session start (module governance). Changed only on the researcher's instruction. Moved from the CLAUDE.md banner 2026-10-21 (escalation #2181). |
+| governance | governance.study_status | ON HOLD since 2026-10-22. Researcher, verbatim: 'I am again placing the study on hold because you are not ready and did not build the code as expected.' No study work (readings, weaves, strands, audits) is started, continued or proposed until the researcher re-opens it. Reason: escalation #2228 (the reading process forces a whole-strand rebuild for any subset, does not start from work already done, and cannot take its scope from the request); it is to be broken down and fixed in a Developer Mode session first. | Whether the study is active or on hold, and why. Read at session start (module governance). Changed only on the researcher's instruction. Moved from the CLAUDE.md banner 2026-10-21 (escalation #2181). |
 | governance | governance.table_columns | each column in each table in the project must be listed in cfg_column with a proper use text. This applies to all databases and all tables. Updating a column in any routine must validate the use of the column against this config. Deviation from the rules must be escalated. |  |
 | governance | governance.tables | each table in the project must be listed in cfg_table with a proper use text. This applies to all databases. Tables no longer in use must be set as inactive. |  |
 | governance | governance.utility.config | each utility must have its own config table in the cfg_* series to control all aspects of the utility |  |

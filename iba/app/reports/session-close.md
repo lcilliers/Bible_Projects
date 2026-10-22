@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-22T12:07:04Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-22T14:47:47Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `6c511f74-b972-40bd-beb3-c64ce8d4b665` (CLAUDE_CODE_SESSION_ID); started 2026-10-22T09:55:56Z; window base commit `17a8c612a531454d87f430598a84ca211c0cf79e`
-- compliance file: `Logs/compliance/COMPLIANCE-20261022-6c511f74.md`; session log: `Logs/SESSION-LOG-20261022-2219-open-items-catch-up-b.md`
-- **open findings: 0**; cleared by disposition: 12
+- session: `45f739ba-488f-4dd4-99f0-7e1b7d8da374` (CLAUDE_CODE_SESSION_ID); started 2026-10-22T12:08:32Z; window base commit `bcc93ba06e20a7b789fb60cb5259e7785b1d6b4a`
+- compliance file: `Logs/compliance/COMPLIANCE-20261022-45f739ba.md`; session log: `Logs/SESSION-LOG-20261022-2206-utilities-2228-diagnosis.md`
+- **open findings: 0**; cleared by disposition: 5
 
 
 ## Contents
@@ -36,34 +36,22 @@ _no finding_
 <a id="sc2-spine-fatal"></a>
 ## SC2 Spine (FATAL)
 
-- cleared `SC2:unverified:G0001G`: G0001G: local gap in strong_lexicon.mounce not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2205
-- cleared `SC2:unverified:G4528H`: G4528H: local gap in strong_lexicon.mounce not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2205
-- cleared `SC2:unverified:G6094`: G6094: local gap in strong_lexicon.mounce not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2205
-- cleared `SC2:unverified:H0430H`: H0430H: local gap in strong_meaning_tree not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2205
-- cleared `SC2:unverified:H1121A`: H1121A: local gap in strong_meaning_tree not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2205
-- cleared `SC2:unverified:H5945H`: H5945H: local gap in strong_meaning_tree not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2205
+_no finding_
 
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:671b57d0`: researcher message 2026-10-22T10:53 is in no escalation comment written this session: "<task-notification>
-<task-id>bp70epqhe</task-id>
-<tool-use-id>toolu_0137gbTjSkdtsCfvV5BqCais</tool-use-id>
-<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
-- cleared `SC3:5c1f5ded`: researcher message 2026-10-22T11:07 is in no escalation comment written this session: "<task-notification>
-<task-id>buxh5cvs9</task-id>
-<tool-use-id>toolu_01BesyEzuf483uZevj2E9JjT</tool-use-id>
-<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
-- cleared `SC3:d75ddab1`: researcher message 2026-10-22T11:20 is in no escalation comment written this session: "<task-notification>
-<task-id>b16xpgdj3</task-id>
-<tool-use-id>toolu_019sC7XbKVx1s5guAKCdeEKz</tool-use-id>
-<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
-- cleared `SC3:5129f1d2`: researcher message 2026-10-22T12:01 is too short to be matched; name where it is recorded: "/exit-development-mode" -- disposition: no record needed: the command to leave Developer Mode, carried out (marker removed)
+- cleared `SC3:0d845013`: researcher message 2026-10-22T12:47 is in no escalation comment written this session: "<task-notification>
+<task-id>b10c94zkt</task-id>
+<tool-use-id>toolu_017ZapJLV7SnBNgBTmgfUcpm</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: a background-task notification, not a researcher message
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:d6b14aa0`: researcher message 2026-10-22T10:04 holds, defers or asks to check something; name its register item: "Q1 M63 is likely to closest. Did you check the location of associated strongs?  Q2 - this should not happen. report it to investigate.  Use open items to raise " -- disposition: in register #2216
+- cleared `SC4b:f887f3e6`: researcher message 2026-10-22T12:15 holds, defers or asks to check something; name its register item: "#2206 is no longer on hold" -- disposition: not held: the message lifts a hold; #2206 taken off hold (v13) and completed (v18)
+- cleared `SC4b:90a935e2`: researcher message 2026-10-22T12:39 holds, defers or asks to check something; name its register item: "I declare the study is no longer on hold" -- disposition: not held: the message lifts the study hold; applied by #2226 and #2227
+- cleared `SC4b:7f9fbdbd`: researcher message 2026-10-22T14:41 holds, defers or asks to check something; name its register item: "#2228 is sort of in the right direction.  but i can see it will just lead to another disaster.  we need to break it down and working in a standard session is no" -- disposition: in register #2228
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -100,4 +88,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Session-Close.ps1`: Session-Close.ps1 failed 3 times this session: work package : session-close -- disposition: carried #2220
+- cleared `SC16:Config-Maintenance.ps1_-Step_Propose`: Config-Maintenance.ps1 -Step Propose failed 4 times this session: [31;1mInvoke-Expression: [31;1mMissing argument in parameter list.[0m; work package : configuration-maintenance -- disposition: carried #2220

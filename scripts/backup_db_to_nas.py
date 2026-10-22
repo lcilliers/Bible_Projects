@@ -54,8 +54,53 @@ from pathlib import Path
 # _prefix() below) instead of hardcoded "bible_research_", so a future default-source change can't
 # silently mislabel backups the same way again -- root-fixed, not just reverted.
 _ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_SOURCE = _ROOT / "database" / "bible_research.db"
-DEFAULT_TARGET = Path(r"\\LSUK-SYNRACK\HomeMedia\bible_study_projects\db_backups")
+
+# The settings live in cfg_setting backup.nas_db_backup (#2207 decision 5a). The backup must still
+# run when iba.db cannot be read -- it is one of the databases this script protects -- so these
+# built-in values are used then, and the run says so in its log line.
+_BUILTIN = {
+    "default_source": "database/bible_research.db",
+    "target": r"\\LSUK-SYNRACK\HomeMedia\bible_study_projects\db_backups",
+    "log_name": "backup_log.txt",
+    "status_dir": r"C:\Users\lerouxc\nas_mirror_logs",
+    # grandfather-father-son: a backup is KEPT if it satisfies ANY tier
+    "keep_recent": 24,   # the N most-recent backups, always
+    "keep_daily": 30,    # newest backup of each of the last D calendar days (UTC)
+    "keep_weekly": 26,   # newest backup of each of the last W ISO weeks
+    # size floor against stubs, per database (keyed on the source stem, see _prefix; #2141)
+    "min_bytes": {"bible_research": 10485760, "iba": 419430400},
+    "min_bytes_default": 10485760,   # any other --source
+}
+
+
+def _load_settings() -> tuple[dict, str]:
+    """The backup settings from config, or the built-in values when iba.db cannot be read.
+    Returns the settings and where they came from, for the log."""
+    try:
+        sys.path.insert(0, str(_ROOT))
+        from iba.app.lib.cfg import Cfg
+        cfg = Cfg()
+        try:
+            found = cfg.setting("backup.nas_db_backup")
+        finally:
+            cfg.conn.close()
+        if not isinstance(found, dict):
+            return dict(_BUILTIN), "built-in values (cfg_setting backup.nas_db_backup not found)"
+        missing = set(_BUILTIN) - set(found)
+        if missing:
+            return dict(_BUILTIN), f"built-in values (backup.nas_db_backup lacks {sorted(missing)})"
+        return found, "cfg_setting backup.nas_db_backup"
+    except Exception as e:   # iba.db missing, locked or corrupt: the backup must still run
+        return dict(_BUILTIN), f"built-in values (iba.db not readable: {e})"
+
+
+SETTINGS, SETTINGS_SOURCE = _load_settings()
+DEFAULT_SOURCE = _ROOT / SETTINGS["default_source"]
+DEFAULT_TARGET = Path(SETTINGS["target"])
+LOG_NAME = SETTINGS["log_name"]
+KEEP_RECENT = SETTINGS["keep_recent"]
+KEEP_DAILY = SETTINGS["keep_daily"]
+KEEP_WEEKLY = SETTINGS["keep_weekly"]
 
 
 def _prefix(source: Path) -> str:
@@ -64,30 +109,12 @@ def _prefix(source: Path) -> str:
     return source.stem
 
 
-LOG_NAME = "backup_log.txt"
-
-# Retention (grandfather-father-son): a backup is KEPT if it satisfies ANY tier.
-KEEP_RECENT = 24   # the N most-recent backups, always
-KEEP_DAILY = 30    # newest backup of each of the last D calendar days (UTC)
-KEEP_WEEKLY = 26   # newest backup of each of the last W ISO weeks
-
-# Size guard against stubs, set PER DATABASE (escalation #2141, 2026-10-14). A single 50 MB floor
-# refused bible_research.db every night from 2026-09-28: after the prose-only purge (2026-09-27) it
-# is ~36 MB, so it had no NAS backup for 17 days. Keyed on the source stem (see _prefix); each
-# floor sits well under that DB's real size on 2026-10-14 (bible_research 36 MB, iba 810 MB).
-MIN_PLAUSIBLE_BYTES = {
-    "bible_research": 10 * 1024 * 1024,
-    "iba": 400 * 1024 * 1024,
-}
-MIN_PLAUSIBLE_BYTES_DEFAULT = 10 * 1024 * 1024  # any other --source
-
-
 def _min_bytes(source: Path) -> int:
-    return MIN_PLAUSIBLE_BYTES.get(_prefix(source), MIN_PLAUSIBLE_BYTES_DEFAULT)
+    return SETTINGS["min_bytes"].get(_prefix(source), SETTINGS["min_bytes_default"])
 
 # Local (off-NAS) status + alert. The normal backup_log.txt lives ON the NAS, so when
 # the NAS is down the failure leaves no local trace — this writes one and raises alerts.
-_STATUS_DIR = Path(r"C:\Users\lerouxc\nas_mirror_logs")
+_STATUS_DIR = Path(SETTINGS["status_dir"])
 _RC_DETAIL = {
     0: "OK",
     2: "source DB not found",
@@ -254,7 +281,8 @@ def main() -> tuple[int, str]:
     dest_name = f"{prefix}_{_ts()}{suffix}.db"
     dest = target / dest_name
 
-    _log(target, f"START backup of {source} ({size/1024/1024:.1f} MB) -> {dest_name}", args.dry_run)
+    _log(target, f"START backup of {source} ({size/1024/1024:.1f} MB) -> {dest_name}; "
+                 f"settings: {SETTINGS_SOURCE}", args.dry_run)
     if args.dry_run:
         _log(target, "DRY-RUN: would snapshot, verify, move, prune.", args.dry_run)
         prune(target, prefix, dry=True)

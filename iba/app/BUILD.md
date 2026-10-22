@@ -18897,3 +18897,30 @@ anger at the inner seat and 9 rows of the anger strand ledger's link table), 7 r
 not in the ESV text (word glosses in quotation marks, and FE-38's inserted "[Joshua]"). 1,062 cited
 verses hold no strand word and were left out of the grounding (#2216). Origin of thought's 358 hits
 have no face (#2217).
+
+## 390. The last four utilities with no config: two exempt, one retired, the backup script reads config (2026-10-22, escalations #2207, #2206)
+
+The researcher's decisions on #2207 item 2 (`outputs/escalation/2207-item2-utility-decisions-v1-20261022.md`),
+option a on all five, built in standard mode: each `cfg_*` row through `configmaint.propose` with its
+own approval (#2221 to #2225), then applied with its `-RunId`.
+
+| Decision | Change | Proposal |
+|---|---|---|
+| 1a | `cfg_utility lexicalscope`: `config_exempt=1` (pure SQL resolver, no setting); purpose no longer names the retired `lexical.run` | #2221, RUN-20261022_132839_010-CONFIGMAINT |
+| 2a | `iba/app/lib/batchcontrol.py` kept as the skip-already-committed guard; no change | -- |
+| 3a | `cfg_utility handlers_catalogue`: `config_exempt=1` (thin wrapper over `lib/cataloguewrite.py`) | #2222, RUN-20261022_132855_931-CONFIGMAINT |
+| 4a | `iba/app/lib/clusterfamilyscan.py` moved to `iba/app/lib/archive/clusterfamilyscan.py`; its row inactive with the archive path | #2223, RUN-20261022_132901_485-CONFIGMAINT |
+| 5a | new `cfg_setting backup.nas_db_backup` (module `backup`) with the script's values; `scripts/backup_db_to_nas.py` reads it | #2224, RUN-20261022_132906_794-CONFIGMAINT |
+| 5a | `cfg_utility scripts_backup_db_to_nas` purpose: no longer NON-COMPLIANT, names its setting | #2225, RUN-20261022_132911_839-CONFIGMAINT |
+
+**`scripts/backup_db_to_nas.py`.** `_load_settings()` reads `backup.nas_db_backup` through `Cfg.setting`.
+The script keeps a built-in copy of the same values (`_BUILTIN`) and uses it when iba.db cannot be
+opened or read, when the setting is missing, or when it lacks a key, because the script backs up
+iba.db itself. Each run's START log line names where its settings came from.
+
+**Tests.** Dry run for iba.db before the setting existed: rc 0, "built-in values (cfg_setting
+backup.nas_db_backup not found)". After apply: the stored value equals `_BUILTIN`; dry run rc 0,
+"settings: cfg_setting backup.nas_db_backup". With `Cfg` replaced by one that raises
+`DatabaseError`: built-in values, reason logged. With a setting missing keys: built-in values, the
+missing keys named. **Live:** `configmaint.validate` RUN-20261022_133328_308-CONFIGMAINT ok; the
+"utilities with no config" finding is gone (4 before); no new findings.
