@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-23T11:43:53Z |
+| generated_at | 2026-10-23T12:19:14Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -75,27 +75,27 @@ _(none)_
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
 2. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
-**PS/worksheet drift** (1) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-3. Reading.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\reading.ps1' in some tab's first rows)
+**PS/worksheet drift** (0) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
+_(none)_
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
 **Unenforced behaviour rules** (14) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-4. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-5. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-6. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-7. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-8. [development] #46 test-plan-per-module-utility — deliberately_deferred
-9. [development] #66 cluster-label-must-track-membership — buildable_not_built
-10. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-11. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-12. [filing] #56 naming-shape — partially_enforced
-13. [filing] #58 archiving-trigger — partially_enforced
-14. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-15. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
-16. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-17. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
+3. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+4. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+5. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+6. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+7. [development] #46 test-plan-per-module-utility — deliberately_deferred
+8. [development] #66 cluster-label-must-track-membership — buildable_not_built
+9. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+10. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+11. [filing] #56 naming-shape — partially_enforced
+12. [filing] #58 archiving-trigger — partially_enforced
+13. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+14. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
+15. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+16. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -136,7 +136,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**981** registered module(s) — **518** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **849** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**982** registered module(s) — **519** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **850** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -1102,6 +1102,7 @@ _(none)_
 | strongreconcile | iba/app/lib/strongreconcile.py | strong reconciliation utility | ✓ |  |  |
 | strongreport | iba/app/lib/strongreport.py | strongreport.py — analysis of the meaning-parse layer (`strong` + `strong_lexicon` + | ✓ | ✓ | receives cfg.conn from its caller; no settings/enums of its own. |
 | strongversereport | iba/app/lib/strongversereport.py | on-demand verse restatement, by ONE Strongs reference -- formalises the G2128/G2127 preview samples | ✓ | ✓ | receives cfg.conn from its caller; the one setting it reads (report.strong_verse_output_dir) belongs to module report, matching registryreport.py precedent |
+| study_active_2228_v1_20261023 | iba/app/migration/archive/study_active_2228_v1_20261023.py | ONE-OFF migration -- the study re-opened on the researcher's instruction (2026-10-23, after #2228): behaviour.study_state active, governance.study_status; run_id DEVMODE-2228-STUDY-ACTIVE-20261023. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | subgroupgenerate | iba/app/lib/subgroupgenerate.py | subgroupgenerate.py — the LLM-calling half of `cluster.subgroup` (process b, the `char-subgroup` | ✓ |  |  |
 | synergise_rule_2228_v1_20261023 | iba/app/migration/archive/synergise_rule_2228_v1_20261023.py | ONE-OFF migration -- escalation #2228: cfg_behaviour_rule synergise-from-tables-not-memory (general, study_active); run_id DEVMODE-2228-SYNERGISE-RULE-20261023. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | taggingguidance | iba/app/lib/taggingguidance.py | taggingguidance.py -- the one shared source of ib_observation.tag definitions for every LLM-calling generator stage (escalation #1836); imported by four generators. | ✓ |  |  |
@@ -1145,7 +1146,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | backup | backup.pre_run_snapshot_policy | a full DB snapshot (made with the SQLite backup API, lib/dbsnapshot.copy_db) is taken automatically before every NEW run (run.py:_ensure_run -> lib/dbsnapshot.snapshot()), never on resume -- this already covers every step in every pipeline; retention.snapshot_keep_count controls how many are kept (oldest pruned first). IBA_NO_SNAPSHOT=1 skips it for a tight loop. |  |
 | backup | backup.write_atomicity_guarantee | every DB write happens inside one atomic transaction -- sqlite3 default deferred-transaction isolation, nothing commits until a handler's own single final commit(). A hard kill (power loss, session breakdown, process death) at any point before that commits NOTHING -- the DB file is left exactly as it was before the call started, and re-submitting the identical call is always safe. |  |
 | behaviour | behaviour.list_report_path | outputs/configs/behaviour-rules-list.md | output path for Behaviour.ps1 -Action List / python -m iba.app.lib.behaviour list |
-| behaviour | behaviour.study_state | on_hold | The study's state flag (cfg_enum study_state): 'active' delivers the study_active rules at start; 'on_hold' withholds them. Set only on the researcher's instruction; the ruling and reason are in governance.study_status. Escalation #2185. |
+| behaviour | behaviour.study_state | active | The study's state flag (cfg_enum study_state): 'active' delivers the study_active rules at start; 'on_hold' withholds them. Set only on the researcher's instruction; the ruling and reason are in governance.study_status. Escalation #2185. |
 | behaviour | compliance.acknowledgement | I have read the governance settings, behaviour rules and escalation rules, and will comply with them. | #2173 P2 C: the sentence the compliance file must carry (checked) |
 | behaviour | compliance.copy_min_words | 8 | #2173 P2 B: a restatement under this many words is not judged as a copy (a short line on the same subject shares most of its word runs with the rule without copying it) |
 | behaviour | compliance.copy_share_max | 0.6 | #2173 P2 B: a restatement whose n-word runs occur in the rule text at this share or more is a copy, not a reading (a finding) |
@@ -1231,7 +1232,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.session_log_dir | Logs/ | where every SESSION-LOG-*.md narrative work-session record lives -- consolidated 2026-08-17 (escalation #682) from 5 scattered locations (iba/logs/, outputs/session-logs/, Workflow/Sessionlogs/, repo root) into this one, case-insensitive-filesystem-safe existing folder. |
 | governance | governance.session_log_required_content | Every session has a session log in governance.session_log_dir (SESSION-LOG-<date>-<topic>.md) naming the session id and carrying six sections, headed as in session_close.log_sections: (1) date and a one-line scope summary of the session; (2) every escalation touched, by id, with its outcome (raised/updated/resolved/rejected) -- the actual ids, not narrative paraphrase; (3) every file or deliverable created or changed, with its path; (4) decisions made, distinguishing the researcher's own decisions from self_correctable fixes Claude made and closed, each naming where it was recorded (a file path, a cfg_* table, or #nnnn vN) -- checked by session-close SC9; (5) open items carried into the next session -- what is left, and for whom, by OT-nn.n or #nnnn; (6) the git state of the session's commit (governance.session_log_triggers_commit): branch, commit hash and the push output, from the actual git output, written after the first commit and committed alone. A log missing any of these is incomplete; session-close (SC8) fails without it. | Answers escalation #911 (2026-08-27): the content a session log must carry, previously unstated anywhere in cfg_* or governance prose -- only governance.session_log_dir (where) and governance.session_log_triggers_commit (the commit consequence) existed. Derived from the log's own stated purpose (continuity across sessions) and the existing patch/escalation convention of naming ids and files explicitly rather than narrating them, not from reading prior logs for precedent (governance.past_precedent_investigation_signals_missing_config). |
 | governance | governance.session_log_triggers_commit | A /session-close cycle (.claude/commands/session-close.md) includes writing the session's log (governance.session_log_required_content) and ends in the full commit-and-push cycle in the same unit of work: the log is written, Session-Close.ps1 shows no open finding, everything outstanding is staged and committed with a proper message and pushed, then the log's git section (item 6) is written and committed alone ('session log git confirmation') and pushed; confirm clean/pushed from the actual git output. |  |
-| governance | governance.study_status | ON HOLD since 2026-10-22. Researcher, verbatim: 'I am again placing the study on hold because you are not ready and did not build the code as expected.' No study work (readings, weaves, strands, audits) is started, continued or proposed until the researcher re-opens it. Reason: escalation #2228 (the reading process forces a whole-strand rebuild for any subset, does not start from work already done, and cannot take its scope from the request); it is to be broken down and fixed in a Developer Mode session first. | Whether the study is active or on hold, and why. Read at session start (module governance). Changed only on the researcher's instruction. Moved from the CLAUDE.md banner 2026-10-21 (escalation #2181). |
+| governance | governance.study_status | ACTIVE since 2026-10-23. Researcher, verbatim: 'I will be returning to standard mode and restart the study, so you can release the hold on the study, then do a session-close'. Study work (readings, weaves, audits) is done through the reading process: iba/app/ps/Reading.ps1 (Open, Record, Check, Synergy, Apply, Publish, Account; escalation #2228), a reading of one scope through three gates (recorded, synergised, published), with the narrative in iba.db (governance.narrative_home). The strand steps are retired (#2228 D-a). | Whether the study is active or on hold, and why. Read at session start (module governance). Changed only on the researcher's instruction. Moved from the CLAUDE.md banner 2026-10-21 (escalation #2181). |
 | governance | governance.table_columns | each column in each table in the project must be listed in cfg_column with a proper use text. This applies to all databases and all tables. Updating a column in any routine must validate the use of the column against this config. Deviation from the rules must be escalated. |  |
 | governance | governance.tables | each table in the project must be listed in cfg_table with a proper use text. This applies to all databases. Tables no longer in use must be set as inactive. |  |
 | governance | governance.utility.config | each utility must have its own config table in the cfg_* series to control all aspects of the utility |  |
@@ -1311,7 +1312,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | reading | reading.output_dir | outputs/reading | where Reading.ps1 writes each reading's gap JSON, synergy JSON and account, one folder per reading (escalation #2228) |
 | reading_index | reading_index.max_seconds | 120 | time guard on a build: it stops between files once past this many seconds and the next build carries on (researcher 2026-10-23, #2228: 'the tool does not work for longer than expected') |
 | reading_index | reading_index.output_dir | outputs/reading-index | where Reading-Index.ps1 -Step Report writes the coverage report (#2228) |
-| reading_index | reading_index.roots | ['_analytics/Clusters'] | the folders Reading-Index.ps1 indexes (repo-relative; archive/ folders inside are skipped). Only the cluster readings, by the researcher's exclusions of 2026-10-22 (#2228) |
+| reading_index | reading_index.roots | ['_analytics/Clusters', '_analytics/cross-cluster-web/origin-of-thought'] | the folders Reading-Index.ps1 indexes (repo-relative; archive/ folders inside are skipped). The cluster readings, by the researcher exclusions of 2026-10-22 (#2228), and the origin-of-thought strand folder, so the verses its October ledger cites come up as read_in_files_only gaps (#2216 option B, researcher 2026-10-23) |
 | registry | registry.duplicate_shared_threshold | 1.0 | fraction of a new words seed strongs an existing word must already hold for registry.create to warn it may be a duplicate/typo (1.0 = must share ALL strongs) |
 | registry | registry.strip_ends_pattern | [^A-Za-z] | on entry, strip runs of these from BOTH ends of the word ('[hypocrisy]' -> 'hypocrisy'); internal hyphens/spaces kept. Word matching is case-insensitive. |
 | report | report.auto_backfill_before_render | True | report.verse_span_meaning auto-runs raw.backfill_meaning_for() for any span whose strong is not yet registered, for the exact book+range being rendered, before writing the report -- researchers direct 2026-07-26 instruction (do not leave partial-coverage reports as a silent manual follow-up step) |
