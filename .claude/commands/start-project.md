@@ -105,7 +105,7 @@ acting on it.
 ThreadCheck (rule T5) is reported only if it moved a thread or closed an item, naming each move.
 ThreadAudit writes `escalation.thread_audit_report_path`: findings by thread item, T-a (handle
 does not resolve), T-b (no note), T-c (referred escalation closed, item open), T-d (open on a
-worked strand, `escalation.worked_strand_escalations`), T-e (verse already told), T-f (thread
+worked strand, `escalation.worked_strand_escalations`, and opened before it was worked), T-e (verse already told), T-f (thread
 shape), T-g (register file out of date). Report the findings by check with their items (the
 report path for the full list); a check with none is not mentioned.
 

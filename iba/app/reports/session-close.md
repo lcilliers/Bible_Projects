@@ -1,9 +1,9 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-23T16:01:03Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-23T16:45:32Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `fdbef305-1bb6-457b-888d-80a491479be6` (CLAUDE_CODE_SESSION_ID); started 2026-10-23T12:39:05Z; window base commit `3111492741d0b2eb8354214735534059e52b9612`
-- compliance file: `Logs/compliance/COMPLIANCE-20261023-fdbef305.md`; session log: `Logs/SESSION-LOG-20261023-2212-prose-patch-apply.md`
+- session: `0e1dad0b-9f09-4558-ae0f-a900ebc06b67` (CLAUDE_CODE_SESSION_ID); started 2026-10-23T16:03:16Z; window base commit `6d84948431ea77523cedc49f12835d36703a68d2`
+- compliance file: `Logs/compliance/COMPLIANCE-20261023-0e1dad0b.md`; session log: `Logs/SESSION-LOG-20261023-2240-2205-2246-thread-audit.md`
 - **open findings: 0**; cleared by disposition: 3
 
 
@@ -41,7 +41,9 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:66ca99a3`: researcher message 2026-10-23T12:43 is in no escalation comment written this session: "#2166 I think this can be closed, the new method is exactly the solution." -- disposition: recorded in #2166 v3
+- cleared `SC3:21e17e86`: researcher message 2026-10-23T16:09 is in no escalation comment written this session: "Take up #2240 (escalation.history crash on #729) first." -- disposition: no record needed: a bare instruction to start work on #2240, carried out and recorded in #2240 v2
+- cleared `SC3:bdda1f4a`: researcher message 2026-10-23T16:18 is in no escalation comment written this session: "ThreadAudit (escalation-thread-audit-v8-20261023.md) found five items under T-d, “should have been cleared”: each sits on a strand whose escalations are all com" -- disposition: recorded in #2246 v1
+- cleared `SC3:ec04d068`: researcher message 2026-10-23T16:43 is too short to be matched; name where it is recorded: "Run session-close." -- disposition: no record needed: the instruction to run this registered close, carried out by run RUN-20261023_174346_869-SESSION-CLOSE
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -79,9 +81,8 @@ _no finding_
 ## SC12 Publish
 
 - narrative copy: not needed (no chapter changed)
-- threads register export: not needed (no thread row changed)
+- threads register export: RUN (a thread row changed)
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 3 times this session: error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; error: decision_required items may only move to noted from a CURRENT next_action of ready_for_approval -- noted reaches ; escalation #2241 v4 -> state='completed', next_action='approved', assigned_to='Claude' -- disposition: fixed: my own slip, not a tool defect: twice I tried to close a decision item straight to approved/noted; corrected the same turn by the documented two-step (ready_for_approval then approved, #2166 v2 and v3), the path B:45 and USER-GUIDE sec 3 give at the point of use. The third line counted is a successful update from a call whose exit came from a later designed stop.
-- cleared `SC16:Prose.ps1_-Step_ApplyPatch`: Prose.ps1 -Step ApplyPatch failed 2 times this session: (1287, '2026-09-18T05:36:39Z') ('draft',); /usr/bin/bash: -c: line 139: unexpected EOF while looking for matching `'' -- disposition: carried #2245
+_no finding_

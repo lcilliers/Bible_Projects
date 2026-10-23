@@ -1,6 +1,6 @@
 # Base-data spine integrity check
 
-> Generated 2026-10-20T15:31:18Z by `spine.check` (#1613; extended #2173 P3). Read-only. Checks: span -> strong, verse <-> span, strong -> cluster, strong -> meaning (strong_sense, strong_meaning_tree, strong_lexicon against what STEP holds for each local gap). The parse tables stay retired. Every FATAL finding needs action.
+> Generated 2026-10-23T16:14:12Z by `spine.check` (#1613; extended #2173 P3). Read-only. Checks: span -> strong, verse <-> span, strong -> cluster, strong -> meaning (strong_sense, strong_meaning_tree, strong_lexicon against what STEP holds for each local gap). The parse tables stay retired. Every FATAL finding needs action.
 
 - live strongs checked: 15455; Strong's codes named by live spans: 15455
 - **FATAL findings: 0**

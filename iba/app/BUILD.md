@@ -19244,3 +19244,48 @@ The grants already existed.
 RUN-20261023_141514_208-PROSE, refused as designed; the stop's escalation #2244 resolved as a test
 artefact). Results: `outputs/escalation/2212-apply-patch-test-results-v1-20261023.md`. The live
 database was not written.
+
+## 401. escalation.history: an id with no escalation is a usage error, not a crash (2026-10-23, escalation #2240)
+
+**Defect:** `Escalation.ps1 -Action History -Id 729` crashed (run RUN-20261023_134620_195-ESCALATION-HISTORY,
+raised as run_error #2240). Escalation #729 has no row: ids below 736 are partly absent since the
+escalation table was rebuilt. `iba/app/lib/escalation.py` `write_history_report` raises `ValueError`
+for an unknown id, and `iba/app/handlers/reports.py` `escalation_history` did not catch it, so
+`iba/app/run.py` recorded it as an uncaught exception. The handler's own `resolve_id` call and the
+Thread step already return `fail("bad-parameter", ...)` for the same kind of slip.
+
+**Fix:** `iba/app/handlers/reports.py` `escalation_history` wraps `write_history_report` in the same
+`except ValueError` -> `fail("bad-parameter", ...)`. The raw CLI (`python -m iba.app.lib.escalation
+history <id>`) is unchanged: every command there lets a `ValueError` through. No config change, and
+no USER-GUIDE.md change, since the command and its parameters are as documented.
+
+**Tests (live, read-only step):**
+- `-Id 729`: prints "usage error, not recorded as an escalation -- check -Id (id or OT-nn) — no
+  escalation #729"; max escalation id stays 2245, so no new escalation;
+- `-Id 2240`: writes `outputs/escalation/2240-escalation-history-v2-20261023.md`;
+- `-Id OT-108`: writes `outputs/escalation/2218-escalation-history-v1-20261023.md`.
+
+## 402. Thread audit T-d: an item opened after its strand was worked is not a leftover (2026-10-23, escalation #2246)
+
+**Defect:** T-d ("should have been cleared") flagged OT-108.3 (M64 Will & Resolve), OT-108.4 (M72
+Authority & Dominion), OT-108.5 (M08 Pride & Arrogance), OT-108.6 (M09 Humility & Lowliness) and
+OT-108.8 (M18 Desire & Longing). Each is a #2172 catch-up item for October reading files never
+recorded as observations, opened 2026-10-22, after its strand escalations completed (8 to 15
+October). T-d read a completed strand as proof that every open item on it was stale, whatever the
+item's date. Evidence and options: `outputs/escalation/2246-thread-audit-td-review-v1-20261023.md`.
+
+**Decision:** researcher 2026-10-23, verbatim: "Option A.  These open items must be read and pass all
+three gates." The second sentence is recorded as a note on each of the five items (OT-108 v18).
+
+**Change:** `iba/app/lib/threadaudit.py`. New `_worked_at`: per worked cluster, the latest
+`escalation_history.answered_at` at state `completed` among its listed escalations. T-d now flags a
+`cluster:` or `strong:` item only for worked strands it was opened before (`opened_at`, NOT NULL).
+No config change: `escalation.worked_strand_escalations` is read as before.
+`.claude/commands/start-project.md` step 5 names the date rule.
+
+**Tests:** `iba/app/tools/temp_2246_td_test_run.py` on a copy of iba.db: 6/6 pass (results
+`outputs/escalation/2246-td-test-results-v1-20261023.md`). Real data: the five items are no longer
+findings. Synthetic: a cluster item and a strong item opened before their strand are findings, a
+strong item opened after is not, and a cluster item opened one day before is a finding. Live
+`Escalation.ps1 -Action ThreadAudit`: 0 findings (`outputs/escalation/escalation-thread-audit-v10-20261023.md`),
+after the register was regenerated for the OT-108 notes.

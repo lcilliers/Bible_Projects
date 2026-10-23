@@ -8,9 +8,11 @@ Read-only. Every finding is named by its thread item (OT-nn.n) or thread (OT-nn)
                          escalation: an escalation that exists
   T-b  handle note       an open item with no note saying what to pick up (OT-05 ruling #2006)
   T-c  referred work     an open escalation: item whose escalation is closed
-  T-d  should be cleared an open cluster:/strong: item on a strand already worked; worked =
-                         every escalation listed for that cluster in cfg_setting
-                         escalation.worked_strand_escalations is completed (from state, not memory)
+  T-d  should be cleared an open cluster:/strong: item on a strand already worked, opened before
+                         the strand was; worked = every escalation listed for that cluster in
+                         cfg_setting escalation.worked_strand_escalations is completed (from state,
+                         not memory). An item opened after the last of them completed is new work
+                         the strand left, not a leftover (#2246 option A)
   T-e  already told      an open verse: item whose verse a current narrative citation tells
   T-f  thread shape      an open thread with no open item; with no comes-back-when; a superseded
                          item or thread whose successor (OT-nn[.n] / #nnnn) does not exist
@@ -54,6 +56,14 @@ def _worked_clusters(cfg, db) -> dict[str, list[int]]:
     return worked
 
 
+def _worked_at(db, worked: dict[str, list[int]]) -> dict[str, str]:
+    """{cluster: when its strand was worked} -- the latest completion among its listed escalations."""
+    return {cluster: db.rows(
+        f"SELECT max(answered_at) AS at FROM escalation_history WHERE state='completed' AND "
+        f"escalation_id IN ({','.join('?' * len(ids))})", ids)[0]["at"] or ""
+        for cluster, ids in worked.items()}
+
+
 def audit(cfg, db) -> list[dict]:
     """[{check, ref, reason}] -- one per finding."""
     conn = db.conn
@@ -75,6 +85,7 @@ def audit(cfg, db) -> list[dict]:
     for s, cl in conn.execute("SELECT strong, cluster_code FROM cluster_strong WHERE deleted=0"):
         strong_cluster.setdefault(s, set()).add(cl)
     worked = _worked_clusters(cfg, db)
+    worked_at = _worked_at(db, worked)
     terminal = set(esc.state_group(db, "terminal"))
     live = set(esc.live_states(db))
 
@@ -122,15 +133,17 @@ def audit(cfg, db) -> list[dict]:
             if i["status"] != "open":
                 continue
             kind, val = i["kind"], (i["value"] or "").strip()
+            # worked strands this item predates (#2246 option A)
+            stale = {cl for cl, at in worked_at.items() if i["opened_at"] < at}
             if not (i["note"] or "").strip():
                 add("T-b", ref, f"{kind}:{val} has no note saying what to pick up")
             if kind == "cluster":
                 if val not in clusters:
                     add("T-a", ref, f"cluster {val!r} is not a live cluster")
-                elif val in worked:
+                elif val in stale:
                     add("T-d", ref, f"cluster {val} is a worked strand "
-                                    f"(#{', #'.join(map(str, worked[val]))} completed); the item is "
-                                    f"still open")
+                                    f"(#{', #'.join(map(str, worked[val]))} completed after the item "
+                                    f"was opened); the item is still open")
             elif kind == "strong":
                 # a base code (H6942) stands for its lettered variants (H6942A, H6942H)
                 codes = [val] if val in strongs else [
@@ -139,7 +152,7 @@ def audit(cfg, db) -> list[dict]:
                     add("T-a", ref, f"strong {val!r} is not a live strong (nor the base of one)")
                 else:
                     hit = sorted(set().union(*(strong_cluster.get(x, set()) for x in codes))
-                                 & set(worked))
+                                 & stale)
                     if hit:
                         add("T-d", ref, f"strong {val} belongs to worked strand(s) "
                                         f"{', '.join(hit)}; the item is still open")

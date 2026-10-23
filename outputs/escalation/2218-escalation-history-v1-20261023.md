@@ -1,0 +1,56 @@
+# Escalation deep history
+
+## #2218 — Catch-up: readings and gaps not yet in the tables
+type=thread source=researcher
+
+**v1** (2026-10-22T10:07:23Z, Claude) state=on-hold next_action= assigned_to=Claude
+> **short description (set this version):** Catch-up: readings and gaps not yet in the tables
+> **comment (set this version):** Open items from the #2172 catch-up plan (outputs/escalation/2172-catch-up-plan-v1-20261022.md section 3). Researcher, chat 2026-10-22 (verbatim): "Q2 - this should not happen. report it to investigate.  Use open items to raise it. Q3 - raise an escalation  and add a open item ... Q5 register all these open readings as open items". Items: #2216 (Q2) and #2217 (Q3); and, one item per cluster naming every file, the prose readings of 6 to 19 October (M64 Will & Resolve, M72 Authority & Dominion, M08 Pride & Arrogance, M09 Humility & Lowliness, M07 Shame & Confusion with M53 Dishonor & Disgrace, M18 Desire & Longing) not yet recorded as observations. Extracting them is reading work, held until the study re-opens.
+
+**v2** (2026-10-22T10:19:53Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 10 cluster:M06 added; item 11 cluster:M15 added; item 12 cluster:M26 added; item 13 cluster:T3 added; item 14 cluster:M84 added; item 15 cluster:M63 added; item 16 cluster:M20 added; item 17 cluster:T2 added
+
+**v3** (2026-10-22T10:20:04Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 3 (cluster:M64) note -- note by Claude: Researcher 2026-10-22 (#2172 decision 1): the origin of thought strand is homed at M64 Will & Resolve; its M64 words are H2803I, H2803H, H2803G chashab (devise, plan) and H3336 yetser (frame, purpose), 106 pull rows in _analytics/cross-cluster-web/origin-of-thought/change-of-character-thought-words-pull-v1-20261001.csv. Its words in other clusters are items OT-108.10 to OT-108.17.
+
+**v4** (2026-10-22T13:05:32Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** Waits on #2228 (the reading process forces a whole-strand rebuild for any subset; diagnosis outputs/escalation/2228-subset-rebuild-diagnosis-v1-20261022.md). Recording faces or answering items on the present code would run into the same whole-strand gate.
+
+**v5** (2026-10-23T11:10:30Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 10 (scope:Pro 6:18 and 69 more verses) note (via #2172) -- note by Claude: reworded (#2236); was: cluster:M06 :: Malice & Enmity. #2172 decision 1 (researcher 2026-10-22: origin of thought homed at M64 Will & Resolve; "the other cluster readings will all become open items"). Origin of thought ledger: _analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md; its words in this cluster (pull _analytics/cross-cluster-web/origin-of-thought/change-of-character-thought-words-pull-v1-20261001.csv):  H4284 machashabah (thought, plan) 56 rows; H4209 mezimmah (purpose, scheme) 19 rows. Not read in this cluster.
+
+**v6** (2026-10-23T11:10:30Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 11 (scope:Eph 2:3 and 58 more verses) note (via #2172) -- note by Claude: reworded (#2236); was: cluster:M15 :: Knowing & Understanding. #2172 decision 1 (researcher 2026-10-22: origin of thought homed at M64 Will & Resolve; "the other cluster readings will all become open items"). Origin of thought ledger: _analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md; its words in this cluster (pull _analytics/cross-cluster-web/origin-of-thought/change-of-character-thought-words-pull-v1-20261001.csv):  H2803J chashab (regard, consider) 26; G1271 dianoia (mind) 12; G3540 noema (thought) 6; H7476 rayon (thought) 6; G1761 enthumesis (reflection) 4; G3053 logismos (reasoning) 2; H7454 rea (thought) 2; G1270 dianoema (thought) 1; H6248 ashtuth (thought) 1. Not read in this cluster.
+
+**v7** (2026-10-23T11:10:31Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 12 (scope:1Cor 13:5 and 37 more verses) note (via #2172) -- note by Claude: reworded (#2236); was: cluster:M26 :: Judgment & Condemnation. #2172 decision 1 (researcher 2026-10-22: origin of thought homed at M64 Will & Resolve; "the other cluster readings will all become open items"). Origin of thought ledger: _analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md; its words in this cluster (pull _analytics/cross-cluster-web/origin-of-thought/change-of-character-thought-words-pull-v1-20261001.csv):  G3049 logizomai (reckon, consider) 39 rows. Not read in this cluster.
+
+**v8** (2026-10-23T11:10:32Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 13 (scope:Eze 32:2 and 27 more verses) note (via #2172) -- note by Claude: reworded (#2236); was: cluster:T3 :: Operations. #2172 decision 1 (researcher 2026-10-22: origin of thought homed at M64 Will & Resolve; "the other cluster readings will all become open items"). Origin of thought ledger: _analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md; its words in this cluster (pull _analytics/cross-cluster-web/origin-of-thought/change-of-character-thought-words-pull-v1-20261001.csv):  H1819 damah (be like, liken, ponder) 30 rows. Not read in this cluster.
+
+**v9** (2026-10-23T11:10:33Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 14 (scope:Psa 38:12 and 23 more verses) note (via #2172) -- note by Claude: reworded (#2236); was: cluster:M84 :: Outcry & Shouting. #2172 decision 1 (researcher 2026-10-22: origin of thought homed at M64 Will & Resolve; "the other cluster readings will all become open items"). Origin of thought ledger: _analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md; its words in this cluster (pull _analytics/cross-cluster-web/origin-of-thought/change-of-character-thought-words-pull-v1-20261001.csv):  H1897 hagah (meditate, mutter) 25 rows. Not read in this cluster.
+
+**v10** (2026-10-23T11:10:33Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 15 (scope:1Ti 2:8 and 26 more verses) note (via #2172) -- note by Claude: reworded (#2236); was: cluster:M63 :: Reasoning & Interpretation. #2172 decision 1 (researcher 2026-10-22: origin of thought homed at M64 Will & Resolve; "the other cluster readings will all become open items"). Origin of thought ledger: _analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md; its words in this cluster (pull _analytics/cross-cluster-web/origin-of-thought/change-of-character-thought-words-pull-v1-20261001.csv):  G1260 dialogizomai (reason, discuss) 15; G1261 dialogismos (reasoning) 14. Not read in this cluster.
+
+**v11** (2026-10-23T11:10:34Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 16 (scope:Psa 94:19; Psa 139:23) note (via #2172) -- note by Claude: reworded (#2236); was: cluster:M20 :: Doubt & Discouragement. #2172 decision 1 (researcher 2026-10-22: origin of thought homed at M64 Will & Resolve; "the other cluster readings will all become open items"). Origin of thought ledger: _analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md; its words in this cluster (pull _analytics/cross-cluster-web/origin-of-thought/change-of-character-thought-words-pull-v1-20261001.csv):  H8312 sarappim (disquieting thoughts) 2 rows. M20 was read in September (_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-phenomena-v3-20260928.md), before this strand.
+
+**v12** (2026-10-23T11:10:35Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 17 (scope:1Ki 18:21; Job 20:2; Job 4:13) note (via #2172) -- note by Claude: reworded (#2236); was: cluster:T2 :: Supplementary. #2172 decision 1 (researcher 2026-10-22: origin of thought homed at M64 Will & Resolve; "the other cluster readings will all become open items"). Origin of thought ledger: _analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md; its words in this cluster (pull _analytics/cross-cluster-web/origin-of-thought/change-of-character-thought-words-pull-v1-20261001.csv):  H5587A, H5587B seippim (divided thoughts) 3 rows. Not read in this cluster.
+
+**v13** (2026-10-23T12:12:55Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 18 scope:Psa 36:4 and 77 more verses added (via #2217)
+
+**v14** (2026-10-23T12:13:22Z, Claude) state=on-hold next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 2 (#2217) superseded by Claude -- #2217 reached supersede: Superseded by open items on thread OT-108 (#2218). Every origin-of-thought strand hit with no face and no reason (358; fear, anger and life-death have none) now falls on the verses of an open item: 280 on OT-108.10 to OT-108.17 (its words in M06, M15, M26, T3, M84, M63, M20, T2) and 78 on OT-108.18, registered 2026-10-23 through iba/app/ps/Open-Item.ps1 for the M64 Will & Resolve home words H2803G… (T6)
+
+**v15** (2026-10-23T12:13:56Z, Claude) state=in-progress next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: #2216 is now in-progress (T3/T5)
+
+**v16** (2026-10-23T12:21:23Z, Claude) state=on-hold next_action= assigned_to=Claude
+> **comment (set this version):** OT-108: item 1 (#2216) closed by Claude -- #2216 reached completed: Closed under option B (researcher 2026-10-23, verbatim: "Option B"). Finding: the October ledgers cited 1,062 verses holding none of their strand words (fear 123, anger 762, life-death 134, origin of thought 43; 849 distinct verses). The cause was not sorted (option B). It cannot recur: a reading Record refuses an observation whose verse does not hold its strong (iba/app/lib/strandreading.py check… (T6)
+
+**v17** (2026-10-23T12:23:13Z, Claude) state=on-hold next_action= assigned_to=Claude
+> **comment (set this version):** Session 6ef9f8f4, 2026-10-23: researcher instructions on items OT-108.1 (#2216) and OT-108.2 (#2217), verbatim. (1) "Start with the two escalations assigned to Claude: #2216 and #2217." -- worked: plan outputs/escalation/2216-2217-plan-v1-20261023.md, #2217 v6, #2216 v5. (2) "Go ahead with the #2217 plan: register the open item for the 78 M64 hits, re-check coverage, then supersede #2217." -- done: OT-108.18 added, 358 of 358 hits on an open item verse, #2217 v7 superseded. (3) "I approved #2239. Apply it, rebuild the reading index, check the origin-of-thought ledger is indexed, then close #2216." -- #2239 had no approval recorded at that point (v2 ready_for_approval), so nothing was applied. (4) "2239 approved ready for your action" -- #2239 v3 approved; applied and completed (v4), reading index rebuilt, ledger indexed, #2216 v8 completed.

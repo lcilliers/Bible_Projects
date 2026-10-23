@@ -582,7 +582,10 @@ def escalation_history(ctx: Ctx) -> Outcome:
         return fail("bad-parameter", str(exc))
     # id-prefixed stem; write_report() versions it and returns the path written
     path = pathlib.Path(ctx.cfg.required_setting("escalation.history_report_dir")) / f"{eid}-escalation-history.md"
-    out = esc.write_history_report(ctx.cfg, ctx.db, int(eid), path)
+    try:
+        out = esc.write_history_report(ctx.cfg, ctx.db, int(eid), path)
+    except ValueError as exc:       # an id with no escalation row (#2240), a usage slip, not a crash
+        return fail("bad-parameter", str(exc))
     return ok(f"wrote {out}", path=str(out))
 
 
