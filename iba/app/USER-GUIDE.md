@@ -751,12 +751,16 @@ iba\app\ps\Prose.ps1 -Step SetStatus -SectionIds 22 -Status draft|in_review|appr
 iba\app\ps\Prose.ps1 -Step Flag -FlagCode "Terminology change" -Description "…"
 iba\app\ps\Prose.ps1 -Step FlagFixPropose -FlagCode "…" -Find "old" -Replace "new"
 iba\app\ps\Prose.ps1 -Step FlagFixApply -ProposalFile <report>.json -SectionIds 12,47 -FlagCode "…"
+iba\app\ps\Prose.ps1 -Step ApplyPatch -PatchFile <patch>.json [-DryRun]
 ```
 
 **How the steps write:**
-- **Patch-generating steps:** `ImportChapter`, `SetStatus` and `FlagFixApply` write a `PROSE` patch.
-  These steps write no row themselves. The script that applied the patch is retired; how a patch
-  is applied now is open (#2212).
+- **Patch-generating steps:** `ImportChapter`, `SetStatus` and `FlagFixApply` write a `PROSE` patch
+  to `prose.patch_output_dir`. These steps write no row themselves.
+- **`ApplyPatch`** applies a reviewed patch: every operation in one transaction, or none. Run it
+  with `-DryRun` first: that applies the operations and rolls them back, so it checks them against
+  the live rows. It refuses a patch already applied, and a patch touching a table the
+  `apply_session_patch` writer has no `cfg_write_grant` for.
 - **`Flag`** writes one `wa_data_quality_flags` row directly.
 - **`ImportChapter`** refuses an edit file from which a section has disappeared. Retire a section
   with status `archived` instead.
@@ -766,7 +770,7 @@ iba\app\ps\Prose.ps1 -Step FlagFixApply -ProposalFile <report>.json -SectionIds 
 **The flag-fix cycle:**
 1. Raise the flag with `Flag`.
 2. Run `FlagFixPropose` and read its report.
-3. Run `FlagFixApply` for the chosen sections, and apply the patch.
+3. Run `FlagFixApply` for the chosen sections, then `ApplyPatch` on the patch it writes.
 4. Close the flag on its row once the patch is applied.
 
 ---

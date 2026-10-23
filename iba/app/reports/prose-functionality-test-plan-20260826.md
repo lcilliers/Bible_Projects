@@ -65,7 +65,8 @@ entry point exercised too (noted per-step where relevant).
 **Full current parameter set, quoted directly from the script** (`iba/app/ps/Prose.ps1`):
 
 ```
--Step         Extract | Search | ExportChapter | ImportChapter | Flag | FlagFixPropose | FlagFixApply   [required]
+-Step         Extract | Search | ExportChapter | ImportChapter | Flag | FlagFixPropose | FlagFixApply |
+              SetStatus | ApplyPatch                                                           [required]
 -Book         book_label (Extract/ExportChapter)
 -Chapter      chapter number (Extract/ExportChapter, combine with -Book)
 -TypeId       single prose_section_type.id (ExportChapter, instead of -Book/-Chapter)
@@ -83,7 +84,9 @@ entry point exercised too (noted per-step where relevant).
 -Replace      literal replacement text (FlagFixPropose)
 -ProposalFile path to a FlagFixPropose report .json (FlagFixApply)
 -SectionIds   comma-separated prose_section.id list, approved from the report (FlagFixApply)
--Out          output path override (all steps)
+-PatchFile    path to a generated patch .json (ApplyPatch)
+-DryRun       apply the patch and roll it back, writing nothing (ApplyPatch)            [switch]
+-Out          output path override (all steps but ApplyPatch)
 -Trace        print every config read (IBA_TRACE)                                [switch]
 ```
 
@@ -168,8 +171,7 @@ archived.
 `##` heading (leave every `<!-- PROSE_... -->` marker line untouched), save, then run the same
 command as 4a. **Expect:** succeeds — writes a patch to `Sessions\Patches\`, archives your edited
 file to `outputs\markdown\prose-edits\archive\`. **Do not apply the generated patch** unless you
-actually want that content change live (apply via
-`python scripts\apply_session_patch.py <the patch file>`, `--dry-run` first).
+actually want that content change live (apply with test 8, `-DryRun` first).
 
 **4c — delete-detection (escalation #890 D3):** export a fresh chapter (test 3 again), open it,
 delete one entire section block (from its `<!-- PROSE_SECTION_ID: N -->` line down to the `---`
@@ -223,6 +225,35 @@ iba\app\ps\Prose.ps1 -Step FlagFixApply -ProposalFile <same report>.json -Sectio
 
 ---
 
+### Test 8 — `ApplyPatch` (the one write to the prose tables, escalation #2212)
+
+Cases 8c to 8k are run by `iba/app/tools/temp_2212_apply_patch_test.py` on copies of
+`bible_research.db` (`lib/dbsnapshot.copy_db`), never the live file. 8a and 8b run the front door.
+
+- **8a — no patch file:** `iba\app\ps\Prose.ps1 -Step ApplyPatch` **Expect:** "ApplyPatch needs
+  -PatchFile." and exit 1.
+- **8b — file not found, through run.py:** `iba\app\ps\Prose.ps1 -Step ApplyPatch -PatchFile
+  nothere.json -DryRun` **Expect:** bad-params, "no patch file at nothere.json"; nothing written.
+- **8c — dry run of a SetStatus patch:** every operation runs, then rolls back. **Expect:**
+  counts reported, and the copy's `prose_section` and `record_change_log` unchanged.
+- **8d — live SetStatus patch:** **Expect:** the section's status changed; one
+  `record_change_log` row with `change_source` = the patch id and a payload holding the prior
+  status; the section's `version` = that log row's id.
+- **8e — the same patch again:** **Expect:** refused, "already applied".
+- **8f — a supersede patch (the ImportChapter and FlagFixApply shape):** **Expect:** body and
+  word_count changed, heading kept; the log payload holds the old body.
+- **8g — a table without a grant** (`prose_section_dimension_link`): **Expect:** refused, naming
+  the table; nothing written.
+- **8h — a good operation followed by a bad one:** **Expect:** refused, the first one rolled
+  back; row and log counts unchanged.
+- **8i — an unknown operation:** **Expect:** refused, "not supported".
+- **8j — `prose_section_type` update of an immutable field (`code`):** **Expect:** refused.
+- **8k — `session_a_replace` on a section not authored by `claude_code` (rule 52):** **Expect:**
+  refused.
+- **8l — no patch id, or no operations:** **Expect:** refused.
+
+---
+
 ## Sequencing note
 
 Tests 1/2/5b/6/7b are fully independent and safe to run in any order, any number of times — none
@@ -230,7 +261,7 @@ of them write anything that needs cleanup (test 5a is the one exception: it's a 
 up the test row after). Tests 3/4a/4c are also safe (export + refused import, nothing written).
 **Test 4b and a real `FlagFixApply` (test 7a) are the only two that can end in a patch you might
 actually apply** — treat generating the patch as safe/repeatable, but stop before running
-`apply_session_patch.py` on it unless the content change is one you actually want.
+`-Step ApplyPatch` without `-DryRun` on it unless the content change is one you actually want.
 
 ---
 

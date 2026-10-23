@@ -19192,3 +19192,55 @@ Files changed this session that s391-s398 describe but do not name by path:
   writes): the study re-opened on the researcher's instruction (verbatim on #2238 v1).
   - `behaviour.study_state` is now `active`.
   - `governance.study_status` is ACTIVE since 2026-10-23, with study work going through `Reading.ps1`.
+
+## 400. The prose patch apply back as a registered step: prose.apply_patch (2026-10-23, escalation #2212)
+
+Researcher, verbatim (chat 2026-10-23): "Option A - the patch was closed in error." Option A of
+`outputs/escalation/2212-plan-v1-20261023.md`. Sec 377 retired `scripts/apply_session_patch.py`, but
+`prose.import_chapter`, `prose.flag_fix_apply` and `prose.set_status` still write `PROSE` patches,
+so nothing could apply them. Built in standard mode; the config rows go through `configmaint.propose`
+(researcher: "you do not need developer mode - prepare the changes and present them to me for
+approval.").
+
+**Code:**
+- `iba/app/lib/prosestore.py`, section "patch apply":
+  - `apply_patch(conn, patch, granted, dry_run)` ports the prose operations of the archived script:
+    `prose_section` insert / supersede / delete / approve / set_status / session_a_replace /
+    bulk_supersede, `prose_section_type` insert / update, and `prose_section_verse_link` insert.
+  - Every write logs through `_log_change`, the `record_change_log` choke point (rules 48-50):
+    the payload holds the prior state, and the target's `version` is the log id.
+  - One transaction, all or nothing. `dry_run` applies every operation and rolls back.
+  - Refusals, nothing written: a table without a `cfg_write_grant` for writer `apply_session_patch`
+    (so the dimension and finding link inserts of the old script are refused); a patch id already
+    used as a `record_change_log.change_source`; an unknown operation; any failing operation.
+  - `run_apply_patch(cfg, patch_file, dry_run)` reads the grant through `cfg.may_write`.
+- Changed from the archived script:
+  - "Already applied" is read from `record_change_log` rather than `engine_run_log`, which has no
+    grant.
+  - A `session_a_replace` on a row not authored by `claude_code` is refused; it used to update
+    0 rows silently (rule 52).
+  - A `prose_section_type` update naming an immutable field is refused; it used to be dropped
+    with a note.
+  - No file backup: the transaction and the prior state in `record_change_log` cover a rollback,
+    and the NAS backup runs daily (`backup.nas_db_backup_schedule`).
+  - The patch file stays where it is: `prose.patch_output_dir` is already `archive/patches`.
+- `iba/app/handlers/prose.py`: `apply_patch` handler. The three generators' messages name
+  `Prose.ps1 -Step ApplyPatch`.
+- `iba/app/ps/Prose.ps1`: `-Step ApplyPatch`, `-PatchFile`, `-DryRun`. The PS tools worksheet's
+  Prose tab gains both flags.
+- `iba/app/USER-GUIDE.md` sec 11 and `iba/app/reports/prose-functionality-test-plan-20260826.md`
+  (test 8) updated.
+
+**Config:** approved by the researcher ("Approved: #2212 and config proposals #2241, #2242,
+#2243.") and applied by `configmaint.propose` re-runs:
+- #2241 `cfg_step prose.apply_patch` inserted (RUN-20261023_135916_764-CONFIGMAINT);
+- #2242 `cfg_step prose.flag_fix_apply` does text (RUN-20261023_135941_564-CONFIGMAINT);
+- #2243 `cfg_utility prosestore` purpose (RUN-20261023_135949_631-CONFIGMAINT).
+
+The grants already existed.
+
+**Tests:** `iba/app/tools/temp_2212_apply_patch_test.py`, each case on its own copy of
+`bible_research.db`: 11/11. 8a passes on the front door, and 8b through `run.py` (run
+RUN-20261023_141514_208-PROSE, refused as designed; the stop's escalation #2244 resolved as a test
+artefact). Results: `outputs/escalation/2212-apply-patch-test-results-v1-20261023.md`. The live
+database was not written.

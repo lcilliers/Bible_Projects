@@ -17,18 +17,21 @@
                           the flag mechanism, escalation #890 D5
     -Step FlagFixApply   after reviewing a FlagFixPropose report, generate a PROSE supersede patch
                           for the approved -SectionIds (re-checks each section fresh; no DB write —
-                          apply via scripts/apply_session_patch.py, same as ImportChapter)
+                          apply with -Step ApplyPatch, same as ImportChapter)
     -Step SetStatus      set (or reset) -Status directly on one or more -SectionIds, no body
                           touched -- the reviewer's own "I've read this" / "reopen this" action,
                           separate from an ImportChapter content edit (escalation #918, 2026-08-27,
                           superseding cfg_prose_chapter's now-removed chapter-status tracking; no
-                          DB write here either — apply via scripts/apply_session_patch.py)
+                          DB write here either — apply with -Step ApplyPatch)
+    -Step ApplyPatch     apply a reviewed patch from ImportChapter, FlagFixApply or SetStatus to
+                          bible_research.db, in one transaction, each write logged in
+                          record_change_log (escalation #2212). -DryRun applies and rolls back.
 
     CHAPTER_NAMES / BOOK_STAGE_MAP / search default limit / edit file dir are config
     (cfg_prose, escalation #829) — see Config-Maintenance.ps1 -Step Propose to change them.
 
 .PARAMETER Step         Extract | Search | ExportChapter | ImportChapter | Flag | FlagFixPropose |
-                         FlagFixApply
+                         FlagFixApply | SetStatus | ApplyPatch
 .PARAMETER Book         book_label (Extract/ExportChapter)
 .PARAMETER Chapter      chapter number (Extract/ExportChapter, combine with -Book)
 .PARAMETER TypeId       single prose_section_type.id (ExportChapter, instead of -Book/-Chapter)
@@ -53,7 +56,9 @@
                          or the section(s) to change (SetStatus)
 .PARAMETER Status        the new prose_section.status value — draft | in_review | approved |
                          archived, per cfg_enum prose_section_status (SetStatus)
-.PARAMETER Out          output path override (all steps)
+.PARAMETER PatchFile    path to a generated patch .json (ApplyPatch)
+.PARAMETER DryRun       apply the patch and roll it back, writing nothing (ApplyPatch)
+.PARAMETER Out          output path override (all steps but ApplyPatch)
 .PARAMETER Trace        Print every config read (IBA_TRACE).
 
 .EXAMPLE
@@ -72,11 +77,13 @@
     .\Prose.ps1 -Step FlagFixApply -ProposalFile outputs/markdown/prose-flag-fix-proposal-20260826T120000Z.json -SectionIds 12,47 -FlagCode "Terminology change"
 .EXAMPLE
     .\Prose.ps1 -Step SetStatus -SectionIds 22 -Status approved
+.EXAMPLE
+    .\Prose.ps1 -Step ApplyPatch -PatchFile archive/patches/wa-prose-set-status-20261023T120000Z.json -DryRun
 #>
 
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory = $true)] [ValidateSet('Extract', 'Search', 'ExportChapter', 'ImportChapter', 'Flag', 'FlagFixPropose', 'FlagFixApply', 'SetStatus')] [string] $Step,
+    [Parameter(Mandatory = $true)] [ValidateSet('Extract', 'Search', 'ExportChapter', 'ImportChapter', 'Flag', 'FlagFixPropose', 'FlagFixApply', 'SetStatus', 'ApplyPatch')] [string] $Step,
     [string] $Book,
     [int] $Chapter,
     [int] $TypeId,
@@ -95,6 +102,8 @@ param(
     [string] $ProposalFile,
     [string] $SectionIds,
     [ValidateSet('draft', 'in_review', 'approved', 'archived')] [string] $Status,
+    [string] $PatchFile,
+    [switch] $DryRun,
     [string] $Out,
     [switch] $Trace
 )
@@ -114,7 +123,7 @@ if ($ready -ne '1') {
     exit 1
 }
 
-$stepMap = @{ Extract = 'prose.extract'; Search = 'prose.search'; ExportChapter = 'prose.export_chapter'; ImportChapter = 'prose.import_chapter'; Flag = 'prose.flag'; FlagFixPropose = 'prose.flag_fix_propose'; FlagFixApply = 'prose.flag_fix_apply'; SetStatus = 'prose.set_status' }
+$stepMap = @{ Extract = 'prose.extract'; Search = 'prose.search'; ExportChapter = 'prose.export_chapter'; ImportChapter = 'prose.import_chapter'; Flag = 'prose.flag'; FlagFixPropose = 'prose.flag_fix_propose'; FlagFixApply = 'prose.flag_fix_apply'; SetStatus = 'prose.set_status'; ApplyPatch = 'prose.apply_patch' }
 $stepId  = $stepMap[$Step]
 $runId   = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-PROSE"
 
@@ -137,6 +146,8 @@ if ($PSBoundParameters.ContainsKey('Replace')) { $paramArgs += @('--param', "Rep
 if ($ProposalFile) { $paramArgs += @('--param', "ProposalFile=$ProposalFile") }
 if ($SectionIds) { $paramArgs += @('--param', "SectionIds=$SectionIds") }
 if ($Status) { $paramArgs += @('--param', "Status=$Status") }
+if ($PatchFile) { $paramArgs += @('--param', "PatchFile=$PatchFile") }
+if ($DryRun) { $paramArgs += @('--param', "DryRun=true") }
 if ($Out) { $paramArgs += @('--param', "Out=$Out") }
 
 if ($Step -eq 'Search' -and -not $Query) { Write-Host "Search needs -Query." -ForegroundColor Yellow; exit 1 }
@@ -147,6 +158,7 @@ if ($Step -eq 'Flag' -and (-not $FlagCode -or -not $Description)) { Write-Host "
 if ($Step -eq 'FlagFixPropose' -and (-not $FlagCode -or -not $PSBoundParameters.ContainsKey('Find') -or -not $PSBoundParameters.ContainsKey('Replace'))) { Write-Host "FlagFixPropose needs -FlagCode, -Find and -Replace." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'FlagFixApply' -and (-not $ProposalFile -or -not $SectionIds)) { Write-Host "FlagFixApply needs -ProposalFile and -SectionIds." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'SetStatus' -and (-not $SectionIds -or -not $Status)) { Write-Host "SetStatus needs -SectionIds and -Status." -ForegroundColor Yellow; exit 1 }
+if ($Step -eq 'ApplyPatch' -and -not $PatchFile) { Write-Host "ApplyPatch needs -PatchFile." -ForegroundColor Yellow; exit 1 }
 
 Write-IbaRunHeader -WorkPackage 'prose' -Step $stepId -RunId $runId
 

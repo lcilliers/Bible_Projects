@@ -1,9 +1,9 @@
 """prose handlers — thin dispatcher adapters over `iba.app.lib.prosestore`, the `prose` work package.
 extract, search, chapter export and chapter import are read-only against `prose_section`/
-`prose_section_type` (`prose.import_chapter` generates a patch, applied by
-`scripts/apply_session_patch.py`). `prose.flag` writes directly to `wa_data_quality_flags`, the one
-direct write. `prose.flag_fix_propose` writes a review report only; `prose.flag_fix_apply` generates
-a patch.
+`prose_section_type` (`prose.import_chapter` generates a patch). `prose.flag` writes directly to
+`wa_data_quality_flags`. `prose.flag_fix_propose` writes a review report only; `prose.flag_fix_apply`
+and `prose.set_status` generate a patch. `prose.apply_patch` applies a reviewed patch (#2212), the
+one write to the prose tables.
 """
 
 from __future__ import annotations
@@ -76,7 +76,7 @@ def import_chapter(ctx: Ctx) -> Outcome:
         return fail("bad-params", str(e))
     return ok(
         f"generated patch for {result['sections']} section(s) -> {result['path']} "
-        f"(review + apply with scripts/apply_session_patch.py)",
+        f"(review, then Prose.ps1 -Step ApplyPatch -PatchFile <it>)",
         **result,
     )
 
@@ -117,7 +117,7 @@ def flag_fix_apply(ctx: Ctx) -> Outcome:
         return fail("bad-params", str(e))
     return ok(
         f"generated patch for {result['sections']} section(s) -> {result['path']} "
-        f"(review + apply with scripts/apply_session_patch.py)",
+        f"(review, then Prose.ps1 -Step ApplyPatch -PatchFile <it>)",
         **result,
     )
 
@@ -140,6 +140,23 @@ def set_status(ctx: Ctx) -> Outcome:
         return fail("bad-params", str(e))
     return ok(
         f"generated patch for {result['sections']} section(s) -> {result['path']} "
-        f"(review + apply with scripts/apply_session_patch.py)",
+        f"(review, then Prose.ps1 -Step ApplyPatch -PatchFile <it>)",
         **result,
+    )
+
+
+def apply_patch(ctx: Ctx) -> Outcome:
+    p = ctx.params
+    if not p.get("PatchFile"):
+        return fail("bad-params", "apply_patch needs -PatchFile <patch .json>")
+    dry_run = _truthy(p.get("DryRun"))
+    try:
+        result = prosestore.run_apply_patch(ctx.cfg, p["PatchFile"], dry_run=dry_run)
+    except (ValueError, FileNotFoundError) as e:
+        return fail("bad-params", str(e))
+    done = "dry run, nothing written" if dry_run else "applied"
+    return ok(
+        f"{result['patch_id']}: {result['operations']} operation(s) {done} -> {result['counts']}",
+        path=result["path"], patch_id=result["patch_id"], operations=result["operations"],
+        dry_run=dry_run, **result["counts"],
     )
