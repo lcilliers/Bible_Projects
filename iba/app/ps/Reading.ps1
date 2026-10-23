@@ -41,7 +41,8 @@ param(
     [string] $Step,
     [Parameter(Mandatory = $true)] [string] $Label,
     [ValidateSet('Claude', 'Researcher')] [string] $By,
-    [string] $Escalation, [string] $Home, [string] $Note, [string] $File,
+    # -Home is an alias: a variable named $Home is PowerShell's read-only $HOME (#2248)
+    [string] $Escalation, [Alias('Home')] [string] $HomeCluster, [string] $Note, [string] $File,
     [string] $Cluster, [string] $Subgroup, [string] $Strand, [string] $Word, [string] $Strong,
     [string] $Verse, [string] $Chapter, [string] $Section, [string] $Claim, [string] $Observation,
     [string] $Item, [string] $Thread, [string] $OnlyStrong, [string] $Reviewed,
@@ -61,11 +62,12 @@ $stepId = "reading.$($Step.ToLower())"
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-READING"
 
 $paramArgs = @()
-foreach ($name in @('Label', 'By', 'Escalation', 'Home', 'Note', 'File', 'Cluster', 'Subgroup', 'Strand', 'Word',
+foreach ($name in @('Label', 'By', 'Escalation', 'HomeCluster', 'Note', 'File', 'Cluster', 'Subgroup', 'Strand', 'Word',
                     'Strong', 'Verse', 'Chapter', 'Section', 'Claim', 'Observation', 'Item', 'Thread', 'OnlyStrong',
                     'Reviewed')) {
     $value = Get-Variable -Name $name -ValueOnly
-    if ($PSBoundParameters.ContainsKey($name)) { $paramArgs += @('--param', "$name=$value") }
+    $key = if ($name -eq 'HomeCluster') { 'Home' } else { $name }   # run.py's parameter stays Home
+    if ($PSBoundParameters.ContainsKey($name)) { $paramArgs += @('--param', "$key=$value") }
 }
 
 Write-IbaRunHeader -WorkPackage 'reading' -Step $stepId -RunId $runId

@@ -37,7 +37,7 @@ I have read the governance settings, behaviour rules and escalation rules, and w
 | B:24 | engaged | When I report database state I show the actual query and rows, and keep a structural pass apart from fitness of the values. | iba/app/BUILD.md sec 401 |
 | B:25 | engaged | I run read-only checks freely; anything that writes to the database or code stays inside an approved task. | #2246 v3 |
 | B:27 | engaged | Multi-line arguments in commands I run or give use PowerShell single-quoted here-strings, never bash heredocs. | iba/app/BUILD.md sec 402 |
-| B:28 | not engaged | The researcher pasted no console error this session. |  |
+| B:28 | engaged | The Publish front-door failure was diagnosed to its cause and fixed, not routed around; the step's own completion was checked in the tables. | #2252 v2 |
 | B:31 | engaged | New guidance or corrections the researcher gives this session are written into a cfg row or the owning document before the session ends. | OT-108 v18 (note on items 3, 4, 5, 6, 8) |
 | B:34 | engaged | Claims I make about past decisions or project state cite the file, row or commit they rest on. | iba/app/BUILD.md sec 401 |
 | B:36 | not engaged | No superlative was written. |  |
@@ -50,7 +50,7 @@ I have read the governance settings, behaviour rules and escalation rules, and w
 | B:101 | engaged | Whenever the researcher must run something (an approval, a PS step), I give the full PowerShell command ready to paste. | #2205 v4 |
 | B:102 | engaged | The startup report and any later summary carry only checked facts with context, grouped by the researcher's question, with no bare numbers. | #2205 v3 |
 | B:105 | engaged | If I diagnose a gap this session, I send the design to the researcher as decision_required before any build, and never log build work as self_correctable. | #2246 v2, outputs/escalation/2246-thread-audit-td-review-v1-20261023.md |
-| B:114 | not engaged | No reading or synergy work was done; the five catch-up readings are carried on OT-108. |  |
+| B:114 | engaged | Batch A of #2247 is recorded first (gate 1) and its synergy is built only from the tables through Reading.ps1, never from my memory of the October files or of this conversation. | outputs/reading/m64-choose/m64-choose-synergy.json |
 | E:4 | engaged | Open escalations assigned to me come before any other work; I name them first and treat only in-progress threads as work-first. | #2240 v2 |
 | E:5 | engaged | The next task comes from an escalation, and anything the researcher or I raise in chat about an item is recorded in an escalation the same turn, with the instruction quoted verbatim. | #2246 v3 |
 
@@ -65,4 +65,5 @@ _(session-close: one line per finding still open: `- <finding key> :: fixed` | `
 - SC3:21e17e86 :: no record needed: a bare instruction to start work on #2240, carried out and recorded in #2240 v2
 - SC3:bdda1f4a :: recorded in #2246 v1
 - SC3:ec04d068 :: no record needed: the instruction to run this registered close, carried out by run RUN-20261023_174346_869-SESSION-CLOSE
+- SC3:2c64c8ed :: no record needed: the instruction to run this registered close a second time, carried out by run RUN-20261023_184606_790-SESSION-CLOSE
 

@@ -26,8 +26,10 @@ escalation and openitem. Every write step validates first and raises Refused wit
 """
 from __future__ import annotations
 
+import contextlib
 import datetime
 import hashlib
+import io
 import json
 import pathlib
 import re
@@ -48,7 +50,8 @@ STATES = ("open", "recorded", "synergised", "published")
 GAP_OF = {"not read": "not_read", "read in files only": "read_in_files_only", "hit unread": "hit_unread",
           "meaning missing": "meaning_missing", "open item": "open_item"}
 NOT_SCOPE = ("Label", "Escalation", "Home", "By", "File", "Note")
-SETTLE = ("closed", "withdrawn", "superseded", "forward")
+SETTLE = ("closed", "withdrawn", "superseded", "forward", "touched")
+PART_MARK = "read in part"      # a gate 2 `touched` response: the item reaches past the reading (#2250 option A)
 
 
 def _now() -> str:
@@ -416,9 +419,29 @@ def _carried(conn, oid: int) -> bool:
                         "cs.observation_id=? AND c.status='current'", (oid,)).fetchone() is not None
 
 
-def gate2_gaps(conn, root: pathlib.Path, r) -> list[str]:
+def _reaches_past(cfg, row, vids) -> bool:
+    """True when a thread item's target holds a verse outside the reading's verses (#2250): it may then be settled
+    as read in part. A worded item's target is its verses; any other kind is resolved as Verse-Scope -Item does."""
+    if row["kind"] == "scope":
+        target = {x[0] for x in cfg.conn.execute(
+            "SELECT verse_id FROM escalation_thread_item_verse WHERE item_id=? AND deleted=0", (row["id"],))}
+    else:
+        res = vs.Resolver(cfg)
+        res._item(row["kind"], (row["value"] or "").strip(), "item")
+        target = set(res.routes)
+    return bool(target - set(vids))
+
+
+def _read_in_part(conn, row, label: str) -> bool:
+    return conn.execute("SELECT 1 FROM escalation_thread_item_response WHERE item_id=? AND kind='touched' AND text "
+                        "LIKE ?", (row["id"], f"%(reading {label}, #2228 gate 2, {PART_MARK})%")).fetchone() is not None
+
+
+def gate2_gaps(cfg, root: pathlib.Path, r) -> list[str]:
     """Every observation on the scope carried by a current claim or disposed (open = held on an item, silent);
-    every current claim on the scope told; every open item matched to the scope settled."""
+    every current claim on the scope told; every open item matched to the scope settled, or, when its target
+    reaches past the reading, recorded as read in part (#2250)."""
+    conn = cfg.conn
     out = []
     obs = scope_observations(conn, r["id"])
     for o in obs:
@@ -434,8 +457,9 @@ def gate2_gaps(conn, root: pathlib.Path, r) -> list[str]:
         except Refused as exc:
             out.append(str(exc))
             continue
-        if row["status"] == "open":
-            out.append(f"{it['item']}: still open (settle it: closed, withdrawn, superseded or forward)")
+        if row["status"] == "open" and not _read_in_part(conn, row, r["label"]):
+            out.append(f"{it['item']}: still open (settle it: closed, withdrawn, superseded or forward; or touched "
+                       f"when its target reaches past the reading)")
     return out
 
 
@@ -457,7 +481,7 @@ def check(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
     if r["state"] == "recorded":
         if not r["synergy_file"]:
             raise Refused(f"reading {r['label']} has no synergy JSON yet (Reading.ps1 -Step Synergy, then Apply)")
-        gaps = gate2_gaps(conn, root, r)
+        gaps = gate2_gaps(cfg, root, r)
         if gaps:
             raise Refused("\n  ".join([f"reading {r['label']} is not past gate 2 ({len(gaps)} gap(s)):"] + gaps[:60]
                                       + ([f"... and {len(gaps) - 60} more"] if len(gaps) > 60 else [])))
@@ -521,7 +545,9 @@ def synergy(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
                    "\"<why>\"; new_claims [{key, text, beyond_text, verdict, sources, observations, tell}]; rewrite: "
                    "the Narrative rewrite shape (update, refs, blocks) or null; open_items[].settle {\"as\": "
                    "\"closed\", \"answer\"} | {\"as\": \"withdrawn\", \"reason\"} | {\"as\": \"superseded\", \"by\"} | "
-                   "{\"as\": \"forward\", \"new_item\": {Open-Item add shape}}. Then Reading.ps1 -Step Apply.",
+                   "{\"as\": \"forward\", \"new_item\": {Open-Item add shape}} | {\"as\": \"touched\", \"found\"} "
+                   "(only for an item whose target reaches past the reading: it stays open). Then Reading.ps1 "
+                   "-Step Apply.",
             "observations": O, "claims": C, "new_claims": [], "blocks": B, "rewrite": None, "open_items": I}
     path = out_dir(cfg, root, r["label"]) / f"{r['label']}-synergy.json"
     if path.exists():
@@ -591,15 +617,20 @@ def apply(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
         if how not in SETTLE:
             errors.append(f"{at}: settle.as is one of {SETTLE}")
             continue
-        text = {"closed": s.get("answer"), "withdrawn": s.get("reason"), "superseded": s.get("by")}.get(how)
+        text = {"closed": s.get("answer"), "withdrawn": s.get("reason"), "superseded": s.get("by"),
+                "touched": s.get("found")}.get(how)
         if how != "forward" and len((text or "").strip()) < (2 if how == "superseded" else 10):
-            errors.append(f"{at}: {how} needs {'answer' if how == 'closed' else 'reason' if how == 'withdrawn' else 'by'}")
+            errors.append(f"{at}: {how} needs " + {"closed": "answer", "withdrawn": "reason", "superseded": "by",
+                                                   "touched": "found"}[how])
         if how == "superseded" and not re.search(r"OT-\d+\.\d+|#\d+", s.get("by") or ""):
             errors.append(f"{at}: superseded names the item or escalation that carries it (OT-nn.n or #nnnn)")
         if how == "forward":
             s = {**s, "checked": items.check(s.get("new_item"), at, errors)}
         try:
-            _thread_item(conn, it.get("item"))
+            _, row = _thread_item(conn, it.get("item"))
+            if how == "touched" and not _reaches_past(cfg, row, verse_ids(conn, r["id"])):
+                errors.append(f"{at}: its target lies wholly inside the reading -- settle it closed, withdrawn, "
+                              f"superseded or forward (touched is for an item read in part, #2250)")
         except Refused as exc:
             errors.append(f"{at}: {exc}")
         settle.append((it["item"], how, s))
@@ -642,6 +673,8 @@ def apply(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
             if how == "forward":
                 new_ref = items.raise_(s["checked"], f"{ref} carried forward")
                 how, text = "superseded", f"carried forward to {new_ref} (reading {r['label']}, #2228 gate 2)"
+            elif how == "touched":
+                text = f"{s['found']} (reading {r['label']}, #2228 gate 2, {PART_MARK})"
             else:
                 text = {"closed": s.get("answer"), "withdrawn": s.get("reason"),
                         "superseded": s.get("by")}[how] + f" (reading {r['label']}, #2228 gate 2)"
@@ -689,9 +722,12 @@ def publish(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
     nr._atomic(conn, go)
     source = root / cfg.required_setting("narrative.copy_source_dir")
     target = pathlib.Path(cfg.required_setting("narrative.learning4comfort_inbox_dir"))
-    rc = narrativecopy.run(str(source), str(target), False, narrativecopy.chapter_files(conn))
+    report = io.StringIO()          # the copy prints its report; stdout carries run.py's JSON reply (#2252)
+    with contextlib.redirect_stdout(report):
+        rc = narrativecopy.run(str(source), str(target), False, narrativecopy.chapter_files(conn))
     if rc:
-        raise Refused(f"the copy to the learning4comfort inbox failed (narrativecopy rc {rc}); the reading stays synergised")
+        raise Refused(f"the copy to the learning4comfort inbox failed (narrativecopy rc {rc}); the reading stays "
+                      f"synergised\n  {report.getvalue().strip()}")
     bad = []
     for no in nos:
         ch = nr._chapter(conn, str(no))
@@ -732,7 +768,7 @@ def account(cfg, p: dict, root: pathlib.Path) -> tuple[list[str], str]:
         gaps = gate1_gaps(conn, root, r)
         L += [f"## Gate 1 gaps ({len(gaps)})", ""] + [f"- {g}" for g in gaps]
     elif r["state"] == "recorded":
-        gaps = gate2_gaps(conn, root, r) if r["synergy_file"] else ["no synergy JSON yet (Reading.ps1 -Step Synergy)"]
+        gaps = gate2_gaps(cfg, root, r) if r["synergy_file"] else ["no synergy JSON yet (Reading.ps1 -Step Synergy)"]
         L += [f"## Gate 2 gaps ({len(gaps)})", ""] + [f"- {g}" for g in gaps]
     elif r["state"] == "synergised":
         L += ["## Gate 3", "", "Publish the touched chapters and copy them to the inbox (Reading.ps1 -Step Publish)."]

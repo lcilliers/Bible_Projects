@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-23T16:45:32Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-23T17:47:40Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `0e1dad0b-9f09-4558-ae0f-a900ebc06b67` (CLAUDE_CODE_SESSION_ID); started 2026-10-23T16:03:16Z; window base commit `6d84948431ea77523cedc49f12835d36703a68d2`
 - compliance file: `Logs/compliance/COMPLIANCE-20261023-0e1dad0b.md`; session log: `Logs/SESSION-LOG-20261023-2240-2205-2246-thread-audit.md`
-- **open findings: 0**; cleared by disposition: 3
+- **open findings: 0**; cleared by disposition: 4
 
 
 ## Contents
@@ -44,6 +44,7 @@ _no finding_
 - cleared `SC3:21e17e86`: researcher message 2026-10-23T16:09 is in no escalation comment written this session: "Take up #2240 (escalation.history crash on #729) first." -- disposition: no record needed: a bare instruction to start work on #2240, carried out and recorded in #2240 v2
 - cleared `SC3:bdda1f4a`: researcher message 2026-10-23T16:18 is in no escalation comment written this session: "ThreadAudit (escalation-thread-audit-v8-20261023.md) found five items under T-d, “should have been cleared”: each sits on a strand whose escalations are all com" -- disposition: recorded in #2246 v1
 - cleared `SC3:ec04d068`: researcher message 2026-10-23T16:43 is too short to be matched; name where it is recorded: "Run session-close." -- disposition: no record needed: the instruction to run this registered close, carried out by run RUN-20261023_174346_869-SESSION-CLOSE
+- cleared `SC3:2c64c8ed`: researcher message 2026-10-23T17:45 is too short to be matched; name where it is recorded: "Run session-close." -- disposition: no record needed: the instruction to run this registered close a second time, carried out by run RUN-20261023_184606_790-SESSION-CLOSE
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -53,7 +54,7 @@ _no finding_
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
 
-Chapters changed: none; quote parts checked: 0; register check findings now: 46.
+Chapters changed: none; quote parts checked: 0; register check findings now: 45.
 
 _no finding_
 

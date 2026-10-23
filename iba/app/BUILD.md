@@ -19289,3 +19289,79 @@ findings. Synthetic: a cluster item and a strong item opened before their strand
 strong item opened after is not, and a cluster item opened one day before is a finding. Live
 `Escalation.ps1 -Action ThreadAudit`: 0 findings (`outputs/escalation/escalation-thread-audit-v10-20261023.md`),
 after the register was regenerated for the OT-108 notes.
+
+## 403. Reading.ps1 -Home binds again: the parameter is -HomeCluster with -Home as its alias (2026-10-23, escalation #2248)
+
+**Defect:** `iba\app\ps\Reading.ps1 -Step Open ... -Home M64` failed before the step ran: "Cannot
+overwrite variable Home because it is read-only or constant." The script declared `[string] $Home`,
+which is PowerShell's automatic `$HOME` (names are case-insensitive), so `-Home` as documented in
+`iba/app/USER-GUIDE.md` sec 8.2 could not be used from PowerShell.
+
+**Fix:**
+- `iba/app/ps/Reading.ps1`: `[Alias('Home')] [string] $HomeCluster`; the loop passes it to run.py as
+  `Home`, so `lib/reading.py` is unchanged and `-Home` works as documented.
+- `iba/docs/ps tools worksheet.xlsx`, Reading tab: header G4 `-Home` -> `-HomeCluster` (the declared
+  name, `governance.ps_worksheet_sync_on_change`); the compiled command builds from it.
+- `iba/app/USER-GUIDE.md` sec 8.2: names the alias, and that a list of codes is quoted.
+
+**Tests:** `(Get-Command iba\app\ps\Reading.ps1).Parameters['HomeCluster'].Aliases` is `Home`, and
+`Home` is no parameter of its own. Real case: `Reading.ps1 -Step Open -Label m64-choose -Escalation
+2247 -Home M64 -Item OT-108.3 -OnlyStrong '...'` ran (RUN-20261023_180606_248-READING), reading
+opened with 185 verses, `outputs/reading/m64-choose/m64-choose-gaps.json` written.
+
+## 404. Reading gate 2: an open item reaching past the reading may be read in part (2026-10-23, escalation #2250)
+
+**Gap:** gate 2 passed only when every matched open item was closed, withdrawn, superseded or carried
+forward. None of the 15 items matched by reading `m64-choose` (#2247 batch A) lies wholly inside its
+185 verses, so each would have been superseded by a successor in every batch. Options:
+`outputs/escalation/2250-gate2-partial-items-review-v1-20261023.md`.
+
+**Decision:** researcher 2026-10-23, verbatim: "proceed as suggested, I think that is the only way to
+make practical sense of it." Option A, read in part (#2250 v3).
+
+**Change:** `iba/app/lib/reading.py`.
+- `SETTLE` gains `touched`, and `PART_MARK` is "read in part".
+- New `_reaches_past`: an item's target against the reading's verses. A worded item's target comes
+  from `escalation_thread_item_verse`; any other kind is resolved as `Verse-Scope -Item` resolves it.
+- New `_read_in_part`: the gate 2 `touched` response this reading wrote.
+- Apply takes `{"as": "touched", "found"}` only for an item reaching past the reading, and refuses
+  one lying wholly inside. It writes a `touched` response marked "(reading <label>, #2228 gate 2,
+  read in part)", and the item stays open.
+- `gate2_gaps` (now given `cfg`) accepts an open item that this reading read in part.
+- The synergy JSON's `how` names the new shape.
+- `iba/app/USER-GUIDE.md` sec 8.2 updated.
+
+**Tests:** `iba/app/tools/temp_2250_reading_partial_test_run.py` on a copy of iba.db: 5/5
+(`outputs/escalation/2250-reading-partial-test-results-v1-20261023.md`):
+- P0: set-up; OT-11.1 reaches past the 3 test verses, and a new item lies inside.
+- P1: touched on an item lying inside is refused.
+- P2: touched with no `found` is refused.
+- P3: gate 2 is refused while the item reaching past is left unsettled.
+- P4: touched is applied, the item stays open, and gate 2 passes.
+
+Regression, the #2228 plan (`iba/app/tools/temp_2228_reading_test_run.py`) run on a copy with its
+output redirected: 23/29. The six fails are not regressions:
+- R0 expects the #2228 migration still to be applied, and it is live since #2228.
+- R1a to R1e are each refused as designed, but also expect no `reading` row, and the copy holds
+  `m64-choose`.
+
+R10 to R14 (synergy, apply, gate 2) all pass.
+
+## 405. Reading.ps1 -Step Publish: the copy report no longer breaks the reply (2026-10-23, escalation #2252)
+
+**Defect:** publishing reading `m64-choose` (#2247) through `iba\app\ps\Reading.ps1 -Step Publish`
+ran to the end (reading published, chapters 10.7, 11 and 13.1), but the PS front door failed with
+"ConvertFrom-Json: Unexpected character encountered" at `iba/app/ps/Reading.ps1` line 76.
+`iba/app/lib/reading.py` `publish` calls `iba/app/lib/narrativecopy.py` `run`, which prints its copy
+report to stdout, the stream that carries run.py's JSON reply. The #2228 test plan calls the
+handler directly, so it never met this.
+
+**Fix:** `iba/app/lib/reading.py` `publish` captures the copy report (`contextlib.redirect_stdout`)
+and adds it to the refusal message when the copy fails. `narrativecopy.run` is unchanged, since its
+own front door, `Copy-NarrativeToLearning4Comfort.ps1`, prints the report on purpose.
+
+**Tests:**
+- On the #2250 test copy (reading `t-part`, synergised), `handlers.reading.publish` passed gate 3
+  and wrote nothing to stdout.
+- Before the fix, the #2228 regression run printed the copy report.
+- The live reading `m64-choose` was already published (2026-10-23T17:42:37Z, account v2: 0 gaps).

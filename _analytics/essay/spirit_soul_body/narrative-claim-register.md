@@ -1,6 +1,6 @@
 # Narrative claim register
 
-*Published from iba.db on 2026-10-22. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-23. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 ## Chapters
 
@@ -590,14 +590,43 @@ File `10-06-wanting-v28-20261019.md` (v28) · draft · activity
 
 File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · activity
 
+**The words**
+
+- **C-339** Choosing weighs worth: understanding and a good name are chosen above riches, and the heart is given a worth. (in part: to be chosen, in the sense of preferred) — also told in: 10.7 *What draws it* (in part)
+
+**What a choice rests on**
+
+- **C-336** Choosing the good rests on knowing and on being taught; the choice binds the one who makes it as a witness, and is held by holding fast. (in part: knowing how, and being taught the way to choose) — also told in: 10.7 *Holding a choice* (in part)
+
+**What draws it**
+
+- **C-335** A choice can follow what the eye finds attractive or useful, and the choice can separate. (in part: what is seen as pleasant draws the choice)
+- **C-337** Choosing against God is taught by iniquity, drawn by envy and the soul's delight, made to escape affliction, and ends in shame. (in part: desire, the soul's delight and envy named beside the choice) — also told in: 10.7 *What follows a choice* (in part); 10.7 *Choices weighed by another* (in part)
+- **C-339** Choosing weighs worth: understanding and a good name are chosen above riches, and the heart is given a worth. (in part: preferring one good above another) — also told in: 10.7 *The words* (in part)
+- **C-341** Choosing is joined to the inner being: in God to his heart and his soul, in people to the heart, the soul's delight and its appetite. (in part: the soul's delight beside the choice) — also told in: 10.7 *Others around a choice* (in part); 13.1 *Choosing* (in part)
+
+**Choosing before God**
+
+- **C-338** The choice is the chooser's own: it is placed on them and not on another, honoured by others, and given of one's own accord. (in part: giving and going of their own accord) — also told in: 10.7 *A choice that is honoured* (in part); 10.7 *Choices weighed by another* (in part)
+
 **Being chosen**
 
 - **C-190** Humility between people is a way of counting the other, worn toward them, and named with bearing with and forgiving (in part: Put on: humility put on, turned toward others) — also told in: 10.10 *Humility toward one another* (in full); 10.14 *Toward one another* (in full)
+- **C-332** God chooses a people out of love, not for their number; the choosing names them his treasured possession and his chosen ones, does not cast them off, and is for their knowing him. (in part: the choosing comes first; knowing is what it is for) — also told in: 13.1 *Choosing* (in part)
+- **C-333** God's choosing of a person for a task brings that person near and lays a charge on them; the one chosen still has to act. (in part: brought near; called to be strong and do it) — also told in: 13.1 *Choosing* (in part)
+- **C-334** When people choose others for a task, they choose by a fitness already seen in them; being chosen does not secure faithfulness. (in part: when people choose a person they choose by what is already seen in him)
 
 **Others around a choice**
 
 - **C-176** The humbling God does not take knowledge of is kept alongside self-pleasure and oppression and leaves the seen naked uncovered; Ahab's, against himself when the word came, was answered (in part: the humbling beside oppression) — also told in: 10.14 *A humbling God does not take knowledge of* (in full); 13.1 *Choosing* (in part)
 - **C-223** Presumption acts on its own word where another word was given: speaking what God did not command, going up when told not to, not keeping the decision given (in part: presumption is the opposite) — also told in: 10.7 *Presumption* (in full); 10.9 *Kept from what would rule* (in part); 10.15 *The words* (pointer); 10.15 *Pride and hearing* (in full)
+- **C-331** God chooses a place to set his name, and his eyes and heart are there; the people's offerings, joy, judgement and prayer turn toward it, and the choice can be cast off and made again. (in part: the people at the place God chose, and turned toward it in prayer) — also told in: 13.1 *Choosing* (in part)
+- **C-340** What God chooses shows what pleases him: justice and freeing the oppressed above an outward humbling; whom he appoints is his own choice. (in part: an inner act weighed by what God chooses) — also told in: 13.1 *Choosing* (in part)
+- **C-341** Choosing is joined to the inner being: in God to his heart and his soul, in people to the heart, the soul's delight and its appetite. (in part: desire near and far; heart and soul turned toward the chosen city) — also told in: 10.7 *What draws it* (in part); 13.1 *Choosing* (in part)
+
+**A choice that is honoured**
+
+- **C-338** The choice is the chooser's own: it is placed on them and not on another, honoured by others, and given of one's own accord. (in part: the escaped slave and Barzillai given the choice) — also told in: 10.7 *Choosing before God* (in part); 10.7 *Choices weighed by another* (in part)
 
 **Taking the lower place**
 
@@ -606,6 +635,10 @@ File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · ac
 **Setting the heart**
 
 - **C-247** Ezra's heart set to study the Law, to do it and to teach it is given straight after the good hand of God on him, as its ground in him (in part: Set to study, to do and to teach (Ezra 7:10)) — also told in: 13.1 *Delight* (pointer)
+
+**Holding a choice**
+
+- **C-336** Choosing the good rests on knowing and on being taught; the choice binds the one who makes it as a witness, and is held by holding fast. (in part: the choice binds the chooser and is held by holding fast) — also told in: 10.7 *What a choice rests on* (in part)
 
 **Planning**
 
@@ -621,6 +654,19 @@ File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · ac
 
 - **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: Belshazzar has not humbled his heart) — also told in: 04 *The heart and anger* (in part); 04 *The heart humbled* (in full); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-314** Daniel's visions picture the will made absolute: doing as one pleases and becoming great, even against the Prince of the host (in full)
+
+**Life and death set before a person**
+
+- **C-342** A choice between living and dying can be held open: Paul names both as good and does not settle it by choosing. (in full)
+
+**What follows a choice**
+
+- **C-337** Choosing against God is taught by iniquity, drawn by envy and the soul's delight, made to escape affliction, and ends in shame. (in part: shame at the thing chosen) — also told in: 10.7 *What draws it* (in part); 10.7 *Choices weighed by another* (in part)
+
+**Choices weighed by another**
+
+- **C-337** Choosing against God is taught by iniquity, drawn by envy and the soul's delight, made to escape affliction, and ends in shame. (in part: the friends read the choice from the words and from suffering) — also told in: 10.7 *What draws it* (in part); 10.7 *What follows a choice* (in part)
+- **C-338** The choice is the chooser's own: it is placed on them and not on another, honoured by others, and given of one's own accord. (in part: you must choose, and not I) — also told in: 10.7 *Choosing before God* (in part); 10.7 *A choice that is honoured* (in part)
 
 ### 10.8 — Right and wrong
 
@@ -1017,6 +1063,7 @@ File `11-other-sides-of-the-inner-being-v39-20261019.md` (v39) · draft · chapt
 
 **8. God has a heart and a soul**
 
+- **2-12** "God is spirit" (Joh 4:24) stands. But Scripture speaks freely of God's soul ("my soul shall not abhor you", Lev 26:11; "my soul hates", Isa 1:14; "my soul delights", Isa 42:1; he swears by his soul, Amo 6:8) and God's heart (Gen 6:6; Hos 11:8). No ranking of the words follows (dep §3.10) (in full)
 - **C-322** God names his heart and eyes as set on a place (in full)
 
 ### 12 — When the inner being goes wrong
@@ -1052,6 +1099,11 @@ File `13-01-divine-v31-20261019.md` (v31) · draft · other beings
 **Choosing**
 
 - **C-176** The humbling God does not take knowledge of is kept alongside self-pleasure and oppression and leaves the seen naked uncovered; Ahab's, against himself when the word came, was answered (in part: the self-humbling beside oppression) — also told in: 10.7 *Others around a choice* (in part); 10.14 *A humbling God does not take knowledge of* (in full)
+- **C-331** God chooses a place to set his name, and his eyes and heart are there; the people's offerings, joy, judgement and prayer turn toward it, and the choice can be cast off and made again. (in part: his eyes and heart at the place he chose; he blesses and gathers there) — also told in: 10.7 *Others around a choice* (in part)
+- **C-332** God chooses a people out of love, not for their number; the choosing names them his treasured possession and his chosen ones, does not cast them off, and is for their knowing him. (in part: not for what they were: his set heart and love) — also told in: 10.7 *Being chosen* (in part)
+- **C-333** God's choosing of a person for a task brings that person near and lays a charge on them; the one chosen still has to act. (in part: the servant chosen with delight; the staff that makes the choice plain) — also told in: 10.7 *Being chosen* (in part)
+- **C-340** What God chooses shows what pleases him: justice and freeing the oppressed above an outward humbling; whom he appoints is his own choice. (in part: what he chooses is turned toward others) — also told in: 10.7 *Others around a choice* (in part)
+- **C-341** Choosing is joined to the inner being: in God to his heart and his soul, in people to the heart, the soul's delight and its appetite. (in part: his eyes and heart at the place; the soul well pleased in the servant) — also told in: 10.7 *What draws it* (in part); 10.7 *Others around a choice* (in part)
 
 **Willing**
 
@@ -1159,7 +1211,7 @@ File `—` (v—) · deferred · deferred
 | 2-9 | The spirit is "almost never associated with eating, appetite or physical needs" | Withdrawn | The spirit is "almost never associated with eating, appetite or physical needs" | — |
 | 2-10 | *Nephesh* is connected to throat and appetite | Widened | *Nephesh* is connected to throat and appetite | — |
 | 2-11 | Spirit is intangible (Joh 3:8; Luk 24:39) and set against flesh (Mat 26:41; Gal 5:17; Isa 31:3) | Restated | Stands for the NT. In the OT, flesh is frail, not hostile, and "a heart of flesh" is God's gift (Eze 36:26). The hostility of flesh to Spirit is NT-specific (dep §3.5) | — |
-| 2-12 | "God is never described as 'God is soul'"; the spirit is the higher, more divine part | Restated | "God is spirit" (Joh 4:24) stands. But Scripture speaks freely of God's soul ("my soul shall not abhor you", Lev 26:11; "my soul hates", Isa 1:14; "my soul delights", Isa 42:1; he swears by his soul, Amo 6:8) and God's heart (Gen 6:6; Hos 11:8). No ranking of the words follows (dep §3.10) | — |
+| 2-12 | "God is never described as 'God is soul'"; the spirit is the higher, more divine part | Restated | "God is spirit" (Joh 4:24) stands. But Scripture speaks freely of God's soul ("my soul shall not abhor you", Lev 26:11; "my soul hates", Isa 1:14; "my soul delights", Isa 42:1; he swears by his soul, Amo 6:8) and God's heart (Gen 6:6; Hos 11:8). No ranking of the words follows (dep §3.10) | 11 *8. God has a heart and a soul* (in full) |
 | 2-13 | The soul sits in a middle position, the interface between body and spirit | Withdrawn | The soul sits in a middle position, the interface between body and spirit | — |
 | 2-14 | The soul is self-ward (Deu 12:15; 1Sa 22:2) | Restated | The soul is the needing self, and much of its need is for God: "My soul thirsts for you" (Psa 63:1); "To you, O Lord, I lift up my soul" (Psa 25:1); "Bless the Lord, O my soul" (Psa 103:1) (dep §2.2b) | — |
 | 2-15 | The spirit is God-ward (Rom 8:16; Joh 4:24; Ecc 12:7; Pro 20:27 "the lamp of the Lord"; Luk 23:46; Act 7:59) | Restated | The spirit is prominent in worship and is what is committed to God at death (E §13.4). Pro 20:27 uses *neshamah* "breath", not *rûaḥ* [lexical], and is outside the reading. The human spirit is equally temper, trouble and provocation (Pro 29:11; Gen 41:8; Act 17:16) | 02 *Soul, spirit and heart at death* (in part) |
@@ -1282,7 +1334,6 @@ File `—` (v—) · deferred · deferred
 | 2-9 | The spirit is "almost never associated with eating, appetite or physical needs" | withdrawn | Withdrawn |
 | 2-10 | *Nephesh* is connected to throat and appetite | current | Widened |
 | 2-11 | Stands for the NT. In the OT, flesh is frail, not hostile, and "a heart of flesh" is God's gift (Eze 36:26). The hostility of flesh to Spirit is NT-specific (dep §3.5) | current | Restated |
-| 2-12 | "God is spirit" (Joh 4:24) stands. But Scripture speaks freely of God's soul ("my soul shall not abhor you", Lev 26:11; "my soul hates", Isa 1:14; "my soul delights", Isa 42:1; he swears by his soul, Amo 6:8) and God's heart (Gen 6:6; Hos 11:8). No ranking of the words follows (dep §3.10) | current | Restated |
 | 2-13 | The soul sits in a middle position, the interface between body and spirit | withdrawn | Withdrawn |
 | 2-14 | The soul is the needing self, and much of its need is for God: "My soul thirsts for you" (Psa 63:1); "To you, O Lord, I lift up my soul" (Psa 25:1); "Bless the Lord, O my soul" (Psa 103:1) (dep §2.2b) | current | Restated |
 | 2-16 | The verse puts soul and spirit beside joints and marrow, which are adjacent, and its end point is the heart: "discerning the thoughts and intentions of the heart". It shows closeness that only the word can divide. It is one of several places the words part; others are added (1Co 15:45; 1Co 14:14–15; the *psychikos* / *pneumatikos* contrast in 1Co 2:14; 15:44–46) (dep §3.4; B §8) | current | Restated |
@@ -1332,13 +1383,16 @@ File `—` (v—) · deferred · deferred
 | 10-7 | 1Th 5:23 as the final word | current | Stands |
 | K-1 | "Spirit first, soul second, body third"; "inside out" | withdrawn | Withdrawn |
 | K-2 | Science "catching up" with Scripture | held | Held |
+| C-343 | When a people choose a king, their choosing and the Lord's setting of him are stated together; the choice binds loyalty, and a king chosen for themselves can meet no answer from the Lord. | held | New |
+| C-344 | God can put the choosing into a person's hands and act on what they choose. | held | New |
+| C-345 | God's choosing can take the form of a testing in affliction. | held | New |
 
 ## Tally
 
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 246 |
+| narrative | New | 261 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1347,4 +1401,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-330 claims; 260 told in the narrative, 70 not.
+345 claims; 273 told in the narrative, 72 not.

@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-23T13:14:19Z |
+| generated_at | 2026-10-23T17:34:04Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -63,8 +63,8 @@ _(none)_
 **Report version clutter** (0) — more than one version of a one-off report simultaneously live in governance.oneoff_report_dir (oneoff_path() found 2026-08-08 to version without archiving, BUILD.md §83) — the rest belong in archive/:
 _(none)_
 
-**Unresolvable location settings** (1) — a *_dir/*_path/*_folder value (cfg_setting or any per-module table shaped like it) that does not resolve to a real folder on disk:
-1. cfg_setting.reading.output_dir = '"outputs/reading"' — 'outputs/reading' does not exist as a folder on disk (project-root-relative)
+**Unresolvable location settings** (0) — a *_dir/*_path/*_folder value (cfg_setting or any per-module table shaped like it) that does not resolve to a real folder on disk:
+_(none)_
 
 **Escalation.ps1 ValidateSet drift** (0) — a -Parameter's [ValidateSet(...)] values not matching the live cfg_enum group it's supposed to mirror:
 _(none)_
@@ -73,10 +73,10 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-2. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+1. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
-**PS/worksheet drift** (0) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-_(none)_
+**PS/worksheet drift** (1) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
+2. Reading.ps1: ps tools worksheet.xlsx tab 'Reading' is missing flag column(s) ['HOME', 'Home'] — the script has these parameters now
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
@@ -1200,7 +1200,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.governance_md_on_rule_change | A change to how config governs the code (a new kind of config table, a new change path, a new check, a new session routine) updates GOVERNANCE.md's current description in the same unit of work, and its change record goes to BUILD.md. A single rule or setting change is set in cfg_* (configmaint.propose, or apply_logged in Developer Mode) and recorded in cfg_change_detail; it needs no GOVERNANCE.md entry. GOVERNANCE.md never holds a rule the config does not. | researcher ruling 2026-07-22: no rule should exist only in GOVERNANCE.md; the config is the source of truth, GOVERNANCE.md is the overview of it |
 | governance | governance.module.config | each operating module must have a config table (or tables) in the cfg_* series to control all aspects of the module's operation |  |
 | governance | governance.module_utility_test_plan | From now on, case-by-case as development happens (not retrofitted): every module/utility design must include a test plan covering all its meaningful interaction/parameter/option combinations; the test plan is kept current (updated in the same unit of work whenever the functional component changes); it is RUN after the approved design is built, as a required stage of the existing plan/propose/design -> approve -> build -> approve cycle; and its actual results are included in the build's escalation resolution, not just asserted. Full rationale and origin: cfg_behaviour_rule (development/test-plan-per-module-utility). | Read explicitly every session by init.py's governance-rules printout (Start-Iba.ps1) -- the only real enforcement a process rule like this has. Applies project-wide, not IBA-only, same as governance.operational_behaviour_control. |
-| governance | governance.narrative_home | The inner-being narrative is kept in iba.db with its claims: each chapter as blocks (narrative_section.block_text, a heading and its text) and each claim told by a block (narrative_claim_telling). The chapter files in narrative.copy_source_dir are exports written from the database; the narrative is written through Strand-Reading.ps1 -Step Rewrite and the block actions of Narrative-Register.ps1, never in a chapter file. bible_research.db prose_section keeps the programme and glossary prose, which stay live. | researcher 2026-10-22 on escalation #2172 (reading process design v2, option B, approved: "sounds good to proceed with the build"; prose_section's programme and glossary prose are not dead) |
+| governance | governance.narrative_home | The inner-being narrative is kept in iba.db with its claims: each chapter as blocks (narrative_section.block_text, a heading and its text) and each claim told by a block (narrative_claim_telling). The chapter files in narrative.copy_source_dir are exports written from the database; the narrative is written through Reading.ps1 -Step Apply and the block actions of Narrative-Register.ps1, never in a chapter file. bible_research.db prose_section keeps the programme and glossary prose, which stay live. | researcher 2026-10-22 on escalation #2172 (reading process design v2, option B, approved: "sounds good to proceed with the build"; prose_section's programme and glossary prose are not dead) |
 | governance | governance.new_utility_registration_timing | Any new script or routine, anywhere in the project, must be registered in cfg_utility (and cfg_step/cfg_write_grant if it writes data) in the same unit of work it is created -- operationalizes governance.scripts_and_routines with a timing rule and a real enforcement check (configmaint.validate: find_unregistered_project_scripts). |  |
 | governance | governance.no_direct_github_publish | Bible_study_projects never publishes to GitHub itself (no Actions workflow, no push to a site repo). Narrative files reach learning4comfort only by Copy-NarrativeToLearning4Comfort.ps1, run on completion of a section of work, on request, and at /session-close when a chapter changed in the session (SC12). | Escalation #1941, researcher verbatim 2026-10-04: "A) this project (bible_study_projects) does not publish directly to github b) on completion of a section of work or on request, the current ...inner-being-narrative files are copied to C:\\learning4comfort\\publication-inbox\\... c) session-close trigger the copy in b)". See CLAUDE.md section 12 and GOVERNANCE.md. |
 | governance | governance.oneoff_report_archive_dir | archive | archive subfolder (relative to governance.oneoff_report_dir) that oneoff_path() moves a superseded one-off report version into before writing the next one -- same shape as write_report/cfg_report.archive_dir, added 2026-08-08 (BUILD.md sec83) once oneoff_path was found to have versioned without ever archiving. |

@@ -528,7 +528,8 @@ States: `open` -> `recorded` -> `synergised` -> `published`.
 
 - **`Open`** takes the scope selectors of `iba/app/ps/Verse-Scope.ps1` (section 8.3; a selection above 2,500
   verses is held until `-Reviewed`), `-Escalation` (an open task or issue) and `-Home` (the cluster
-  new observations are grounded under). It keeps the verses (`reading_verse`), collates the scope
+  new observations are grounded under; `-Home` is the alias of `-HomeCluster`, since PowerShell's
+  `$HOME` is read-only). A list of codes is quoted: `-OnlyStrong 'H0977,H0972'`. It keeps the verses (`reading_verse`), collates the scope
   (section 8.5; `<label>-collation.json`) and writes the **gap JSON** (`<label>-gaps.json`): one
   section per gap type of the recording phase, each with its guide text. The gap types are config:
   `cfg_enum reading_gap_type` and `cfg_setting reading.gap_types` (phase, guide, the table each
@@ -562,13 +563,16 @@ States: `open` -> `recorded` -> `synergised` -> `published`.
   - blocks rewritten whole (`rewrite`, the `Narrative-Register` rewrite shape; cited verses marked
     `citated`);
   - each matched open item settled: `closed` with its answer, `withdrawn`, `superseded` by a named
-    item, or `forward` to a new item (added, and the old one superseded by it).
+    item, or `forward` to a new item (added, and the old one superseded by it). An item whose target
+    reaches past the reading's verses may instead be `touched` with what was `found`: it is read in
+    part and stays open under its own handle, to be closed by the reading that reads the rest (#2250).
+    An item lying wholly inside the reading cannot be `touched`.
 
   Open items are closed only here, after synergy, never at gate 1.
 - **`Check`** passes **gate 2** when:
   - every observation on the scope is carried by a current claim, or held or silent;
   - every current claim on the scope is told in a block, or held;
-  - every open item in the synergy JSON is settled.
+  - every open item in the synergy JSON is settled, or read in part by this reading.
 - **`Publish`** (gate 3) publishes each chapter the reading touched whose file differs from the
   database. It copies the chapters to the learning4comfort inbox (section 8.6) and checks each touched
   chapter is there byte-identical.
