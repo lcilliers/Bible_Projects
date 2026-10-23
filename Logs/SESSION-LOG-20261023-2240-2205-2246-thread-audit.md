@@ -69,3 +69,10 @@ Session id: `0e1dad0b-9f09-4558-ae0f-a900ebc06b67` (standard mode). Close report
 - Open for the researcher, untouched: #2161, #2238.
 
 ## 6. Git
+
+- Branch: `main`.
+- Session commit: `8acded5650c8df8c6b94fd556a8092f1e79dd0c1` ("session 20261023: #2240 escalation.history
+  treats an unknown id as a usage error ...").
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` /
+  `6d849484..8acded56  main -> main`.
+- This section is committed alone as "session 20261023: session log git confirmation".
