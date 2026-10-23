@@ -159,3 +159,11 @@ file: `Logs/compliance/COMPLIANCE-20261023-0e1dad0b.md`.
   `6d849484..8acded56  main -> main`.
 - Git confirmation commit: `f35003ffce0ad4623ba59c32b951d54b6cd9b17f`, pushed
   `8acded56..f35003ff  main -> main`.
+
+**Second close:**
+- Branch: `main`.
+- Session commit: `b7307aad10df7089cfb243b27a4f5280c9bc1b3e` ("session 20261023: #2247 OT-108.3 batch A
+  (M64 choose words, reading m64-choose) through all three gates ...").
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` /
+  `f35003ff..b7307aad  main -> main`.
+- This section is committed alone as "session 20261023: session log git confirmation".
