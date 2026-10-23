@@ -78,4 +78,7 @@ Session id: `17ac2129-4964-4787-9bc5-5c1c32d28250` (Developer Mode). Close repor
 
 ## 6. Git
 
-_(written after the first commit)_
+- Branch: `main`.
+- Commit: `990ae00b`, "session 20261023: #2228 the reading process built and closed -- ...".
+- Push: `To https://github.com/lcilliers/Bible_Projects.git  5215b0e8..990ae00b  main -> main`.
+- This section is committed alone as "session 20261023: session log git confirmation".
