@@ -74,3 +74,10 @@ Session id: `fdbef305-1bb6-457b-888d-80a491479be6` (standard mode). Close report
 - Open for the researcher, untouched: #2161, #2205, #2238.
 
 ## 6. Git
+
+- Branch: `main`.
+- Session commit: `aaf234a4f12e2c0d1a2d9479ccabb6f86f6086de` ("session 20261023: #2212 the prose
+  patch apply back as a registered step ...").
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` /
+  `31114927..aaf234a4  main -> main`.
+- This section is committed alone as "session 20261023: session log git confirmation".
