@@ -66,4 +66,8 @@ hits. Fixed by OT-108.18, recorded in #2217 v6 and v7.
 
 ## 6. Git
 
-_(written after the first commit)_
+- Branch: `main`
+- Session commit: `d2312d472c5ed60b057676eb47cf8b4d6c154323`
+  ("session 20261023: #2217 superseded -- OT-108.18 registered ...")
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `9694dc28..d2312d47  main -> main`
+- This section is committed alone as "session 20261023: session log git confirmation".
