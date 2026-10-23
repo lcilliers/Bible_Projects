@@ -346,24 +346,15 @@ def context(cfg, w: nr.Writer, p: dict) -> tuple[list[str], str]:
 
 
 # ══ 2 record ════════════════════════════════════════════════════════════════════════════════════
-def record(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
-    """-File: {"observations": [{"key", "text", "setting", "meaning", "implication", "chain",
-    "basis": "stated|read", "parties", "verses": [{"verse": "Gen 6:5", "strong": "H3820"}],
-    "supersedes": <observation id>, "stable_key": "<strand>:<source row id>", "note": "<revisit note>"}],
-    "hits": [{"verse", "strong", "face", "parties", "observation": "<key>|<id>"} |
-             {"verse", "strong", "reason"}],
-    "items": ["verse:Rom 7:15 :: what is open", ...]}  (new open items found in the reading).
-    Refused, with nothing written, on: a hit not in the strand, or with neither (or both) a face and
-    a reason; an observation with no text, meaning or basis, or a verse in which its strong does not
-    occur; a quotation not in its verse; an item that is not kind:value."""
+def check_observations(cfg, vx, entries: list[tuple[str, dict]], errors: list, quotes: list) -> list[dict]:
+    """Observation specs checked before anything is written: [(where, {"key", "text", "setting", "meaning",
+    "implication", "chain", "basis", "parties", "verses": [{"verse", "strong"}], "supersedes", "stable_key",
+    "note"})] -> the specs record_strand_observations() takes, each with its occurrences resolved. Problems go
+    to `errors`, quotations not in the ESV text to `quotes`."""
     conn = cfg.conn
-    s = _open_strand(conn, p.get("Strand"))
-    data = _load_json(p)
-    vx = nr.VerseIndex(cfg)
     bases = cfg.enum("ib_observation.basis")
-    obs, keys, errors, quotes = [], set(), [], []
-    for i, o in enumerate(data.get("observations") or []):
-        where = f"observations[{i}] ({o.get('key')})"
+    obs, keys = [], set()
+    for where, o in entries:
         if not o.get("key") or o["key"] in keys:
             errors.append(f"{where}: a unique key is required")
         keys.add(o.get("key"))
@@ -388,6 +379,27 @@ def record(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
         quotes += _quote_check(conn, cfg, [o.get(k) for k in ("text", "setting", "meaning", "implication", "chain")], where)
         obs.append({**{k: o.get(k) for k in ("key", "text", "supersedes", "stable_key", "note") + PARTS},
                     "occurrences": occs})
+    return obs
+
+
+def record(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
+    """-File: {"observations": [{"key", "text", "setting", "meaning", "implication", "chain",
+    "basis": "stated|read", "parties", "verses": [{"verse": "Gen 6:5", "strong": "H3820"}],
+    "supersedes": <observation id>, "stable_key": "<strand>:<source row id>", "note": "<revisit note>"}],
+    "hits": [{"verse", "strong", "face", "parties", "observation": "<key>|<id>"} |
+             {"verse", "strong", "reason"}],
+    "items": ["verse:Rom 7:15 :: what is open", ...]}  (new open items found in the reading).
+    Refused, with nothing written, on: a hit not in the strand, or with neither (or both) a face and
+    a reason; an observation with no text, meaning or basis, or a verse in which its strong does not
+    occur; a quotation not in its verse; an item that is not kind:value."""
+    conn = cfg.conn
+    s = _open_strand(conn, p.get("Strand"))
+    data = _load_json(p)
+    vx = nr.VerseIndex(cfg)
+    errors, quotes = [], []
+    obs = check_observations(cfg, vx, [(f"observations[{i}] ({o.get('key')})", o)
+                                       for i, o in enumerate(data.get("observations") or [])], errors, quotes)
+    keys = {o["key"] for o in obs}
     hits = []
     for i, h in enumerate(data.get("hits") or []):
         where = f"hits[{i}]"
@@ -592,8 +604,33 @@ def _obs_source(conn, oid: int) -> dict:
     return {"source_kind": "observation", "observation_id": oid, "source_text": f"observation {oid}: {o[0][:200]}"}
 
 
+class _StrandItems:
+    """New open items held by a disposition, for a strand: 'kind:value :: note' on the strand's thread."""
+
+    def __init__(self, cfg, w, s):
+        self.cfg, self.w, self.s = cfg, w, s
+
+    def check(self, spec, at: str, errors: list):
+        return (item_specs(self.cfg, [spec], at, errors) or [None])[0]
+
+    def raise_(self, checked, where: str) -> str:
+        return raise_items(self.cfg, self.w, self.s, [checked], where)[0]
+
+
 def derive(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
-    """-File: {"claims": [
+    """The strand's Derive step (retired, #2228 D-a): derive_core() over the strand's observations."""
+    conn = cfg.conn
+    s = _open_strand(conn, p.get("Strand"))
+    mine = {o["id"] for o in strand_observations(conn, s["id"])}
+    made, n = derive_core(cfg, w, _load_json(p), run_id, mine, f"Strand-Reading.ps1 -Step Derive -Strand {s['code']}",
+                          _StrandItems(cfg, w, s), "the strand's")
+    return (f"{s['code']}: {n['new']} new claim(s) ({', '.join(made) or '-'}), {n['edit']} adjusted, {n['withdraw']} "
+            f"withdrawn; {n['disposed']} observation(s) disposed")
+
+
+def derive_core(cfg, w: nr.Writer, data: dict, run_id: str, mine: set, provenance: str, items,
+                whose: str) -> tuple[list[str], dict]:
+    """{"claims": [
         {"key": "n1", "new": {"text", "beyond_text", "verdict", "sources": ["Rom 7:22"], "observations": [12]}},
         {"claim": "C-12", "edit": {"text", "beyond_text", "verdict", "sources": [...], "observations": [...]}},
         {"claim": "C-13", "withdraw": "<why>"}],
@@ -602,12 +639,13 @@ def derive(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
                       {"observation": 13, "as": "held", "new_item": "verse:Rom 7:15 :: what is open"} |
                       {"observation": 14, "as": "silent|withdrawn", "reason": "..."}]}
     A new or adjusted claim rests on at least one observation or verse. A disposition 'claim' names
-    a claim that has the observation as a source after this step (added if it is not)."""
+    a claim that has the observation as a source after this step (added if it is not). `mine` is the
+    set of observations the caller may use; `items` checks and raises a held disposition's new_item
+    (.check(spec, at, errors) -> checked, .raise_(checked, where) -> 'OT-nn.n'). Validates everything,
+    then writes in one unit. Returns (new claim refs, counts); the keys of new claims map to their ids
+    in counts['keys']."""
     conn = cfg.conn
-    s = _open_strand(conn, p.get("Strand"))
-    data = _load_json(p)
     vx = nr.VerseIndex(cfg)
-    mine = {o["id"] for o in strand_observations(conn, s["id"])}
     verdicts = cfg.enum("narrative_claim_verdict")
     errors, plan, keys = [], [], {}
 
@@ -615,7 +653,7 @@ def derive(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
         out = []
         for oid in lst or []:
             if oid not in mine:
-                errors.append(f"{at}: observation {oid} is not one of the strand's observations")
+                errors.append(f"{at}: observation {oid} is not one of {whose} observations")
             out.append(oid)
         return out
     for i, c in enumerate(data.get("claims") or []):
@@ -664,7 +702,7 @@ def derive(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
             if bool(item) == bool(d.get("new_item")):
                 errors.append(f"{at}: held needs an existing item (OT-nn.n, OT-nn or #nnnn) or a new_item, one of them")
             elif d.get("new_item"):
-                d = {**d, "spec": (item_specs(cfg, [d["new_item"]], at, errors) or [None])[0]}
+                d = {**d, "spec": items.check(d["new_item"], at, errors)}
             else:
                 kind = "escalation" if item.startswith("#") else "thread item" if "." in item else "thread"
                 if not nr._escalation_exists(conn, kind, item):
@@ -712,7 +750,7 @@ def derive(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
         w._grant("ib_observation")
         for d in disp:
             if d.get("spec"):
-                d["item"] = raise_items(cfg, w, s, [d["spec"]], f"Derive, observation {d['observation']}")[0]
+                d["item"] = items.raise_(d["spec"], f"Derive, observation {d['observation']}")
             note = d.get("reason") or (f"held: {d['item']}" if d["as"] == "held" else None)
             if d["as"] == "claim":
                 cid = keys.get(d["claim"]) or nr._claim(conn, d["claim"])["id"]
@@ -723,14 +761,11 @@ def derive(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
             recordingpass.set_disposition(conn, d["observation"], status_of[d["as"]], note, run_id)
         conn.execute("UPDATE narrative_claim_change SET change_kind='claim restated' WHERE id > ? AND "
                      "change_kind='edited' AND claim_before IS NOT claim_after AND note IS NULL", (since,))
-        w.mark_changes(since, f"Strand-Reading.ps1 -Step Derive -Strand {s['code']}")
+        w.mark_changes(since, provenance)
         return made
     made = nr._atomic(conn, go)
-    n_new = sum(1 for x in plan if x[0] == "new")
-    n_edit = sum(1 for x in plan if x[0] == "edit")
-    n_wd = sum(1 for x in plan if x[0] == "withdraw")
-    return (f"{s['code']}: {n_new} new claim(s) ({', '.join(made) or '-'}), {n_edit} adjusted, {n_wd} withdrawn; "
-            f"{len(disp)} observation(s) disposed")
+    return made, {"new": sum(1 for x in plan if x[0] == "new"), "edit": sum(1 for x in plan if x[0] == "edit"),
+                  "withdraw": sum(1 for x in plan if x[0] == "withdraw"), "disposed": len(disp), "keys": keys}
 
 
 # ══ 6 rewrite ═══════════════════════════════════════════════════════════════════════════════════

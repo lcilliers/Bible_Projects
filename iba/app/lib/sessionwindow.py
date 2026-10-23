@@ -150,11 +150,12 @@ def _operation(tool: str, inp: dict) -> str:
     return tool
 
 
-def failed_calls(transcript: pathlib.Path) -> list[dict]:
+def failed_calls(transcript: pathlib.Path, designed_stops=()) -> list[dict]:
     """Claude's tool calls in the session that came back as errors (#2207 part 3): [{at, tool,
     operation, kind, text}]. `kind` is the error's first line with digits blanked, so the same
     mistake made twice has the same kind. The point-of-use hook's rule display is left out: it is a
-    deliberate first-use refusal, not a failure."""
+    deliberate first-use refusal, not a failure. So is a result carrying one of `designed_stops`
+    (e.g. COMMIT BLOCKED): a tool stopping by design, not failing (#2220)."""
     calls, out, seen = {}, [], set()
     with transcript.open("r", encoding="utf-8", errors="replace") as fh:
         for line in fh:
@@ -180,7 +181,7 @@ def failed_calls(transcript: pathlib.Path) -> list[dict]:
                     if isinstance(body, list):
                         body = "\n".join(x.get("text", "") for x in body if isinstance(x, dict))
                     body = str(body or "")
-                    if _RULES_SHOWN in body:
+                    if _RULES_SHOWN in body or any(m in body for m in designed_stops):
                         continue
                     tool, inp = calls.get(c.get("tool_use_id"), ("", {}))
                     lines = [ln.strip() for ln in body.splitlines() if ln.strip()

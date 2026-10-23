@@ -43,7 +43,7 @@ _WORD_FROM_UNDERSCORE = re.compile(r'^([a-z]+)_\d+')
 _WORD_FROM_LONG = re.compile(r'(?:registry|reg)\d+-([a-z]+)', re.I)
 
 # Evaluated top-to-bottom; first match wins. An `archive/` segment anywhere overrides to "archived"
-# regardless of this table (checked first in compute_currency).
+# regardless of this table and of a folder_purpose currency (in_archive, checked first in _scan).
 _CURRENCY_RULES = [
     ("sessions-v2/", "current"), ("workflow/", "current"), ("research/", "current"),
     ("docs/", "current"), ("outputs/", "current"), ("scripts/", "current"),
@@ -105,9 +105,15 @@ def extract_word(filename: str) -> str | None:
     return None
 
 
+def in_archive(rel_path: str) -> bool:
+    """An `archive/` segment anywhere in the path (not `_archive/`)."""
+    p = rel_path.replace("\\", "/").lower()
+    return p.startswith("archive/") or "/archive/" in p
+
+
 def compute_currency(rel_path: str) -> str:
     p = rel_path.replace("\\", "/").lower()
-    if p.startswith("archive/") or "/archive/" in p:
+    if in_archive(p):
         return "archived"
     for prefix, status in _CURRENCY_RULES:
         if p.startswith(prefix):
@@ -319,7 +325,8 @@ def _scan(cfg) -> list[dict]:
                     break
             category = fp_category or classify_category(rel)
             file_type = classify_type(fname, category, rel)
-            currency = fp_currency or compute_currency(rel)
+            # an archive/ segment overrides a folder_purpose currency set on a parent folder (#2232)
+            currency = "archived" if in_archive(rel) else (fp_currency or compute_currency(rel))
             entries.append({
                 "path": rel, "category": category, "file_type": file_type, "currency": currency,
                 "archived": 1 if currency == "archived" else 0,

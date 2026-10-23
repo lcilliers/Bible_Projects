@@ -272,11 +272,12 @@ def _span(vx: VerseIndex, code: str, c1: int, v1: int, c2: int, v2: int):
     return rows
 
 
-def parse_refs(text: str, vx: VerseIndex, follow_ons: bool = True) -> list[Ref]:
+def parse_refs(text: str, vx: VerseIndex, follow_ons: bool = True, bare_follow_ons: bool = True) -> list[Ref]:
     """Every verse reference in `text` (a passage or a source list), expanded to one Ref per verse.
     A capitalised word that is not a book alias is not a reference and is skipped. Bare follow-ons
     in parentheses -- '(8:12)', '(5)' -- take book (and chapter) from the reference before them in
-    the same text (test plan 3.9, 3.10)."""
+    the same text (test plan 3.9, 3.10). bare_follow_ons=False skips a follow-on that is only a
+    number, '(5)', and keeps '(v. 5)': in study files a bare number is mostly a word count (#2228)."""
     hits: list[tuple[int, int, str, list]] = []          # (start, end, as_written, rows)
     last_book, last_ch, last_end = None, None, -1
     events = []
@@ -301,7 +302,7 @@ def parse_refs(text: str, vx: VerseIndex, follow_ons: bool = True) -> list[Ref]:
         elif kind == "cv":
             rows, last_ch = _expand(vx, last_book, m.group("body"), last_ch)
         else:
-            if last_ch is None:
+            if last_ch is None or (not bare_follow_ons and not re.match(r"\(\s*vv?\.?", m.group(0))):
                 continue
             rows, last_ch = _expand(vx, last_book, m.group("body"), last_ch)
         taken.append((s, e))
@@ -1361,7 +1362,7 @@ def check(cfg, p: dict) -> tuple[list[str], list[str]]:
         if newer and newer[-1][1] != ch["current_file"]:
             problems.append(f"Ch {ch['chapter_no']}: a newer file is on disk ({newer[-1][1]}) than the "
                             f"register's current file ({ch['current_file']}) -- the narrative is edited in the "
-                            f"database (Strand-Reading.ps1 -Step Rewrite), not in the file")
+                            f"database (Reading.ps1 -Step Apply), not in the file")
         text = path.read_text(encoding="utf-8")
         rendered = render_chapter(conn, ch["id"])
         if rendered != text:

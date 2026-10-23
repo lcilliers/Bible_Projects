@@ -55,6 +55,9 @@ def run_set_status(cfg: Cfg, references: list[str], status: str) -> dict:
     if status not in valid:
         raise ValueError(f"status {status!r} is not a live value of cfg_enum "
                           f"'verse_meta_status' ({valid!r})")
+    if status == "analysed":
+        raise ValueError("'analysed' is set only at gate 1 of a reading (Reading.ps1 -Step Check; #2228 D-c), "
+                         "never by hand")
 
     conn = cfg.conn
     updated, unchanged, not_found = [], [], []

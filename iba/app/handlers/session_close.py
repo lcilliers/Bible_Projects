@@ -537,16 +537,18 @@ def _save_state(cfg, session_id, state, problems) -> None:
                     encoding="utf-8")
 
 
-def _sc16(tpath) -> list[dict]:
+def _sc16(tpath, designed_stops=()) -> list[dict]:
     """#2207 part 3: a mistake Claude made twice in the session is a defect at its point of use.
     A PS tool action that failed twice, or any other call that failed twice with the same error, is
     a finding. It clears when fixed where it happens (a cfg_rule_scope link, a USER-GUIDE line, a
-    tool that refuses the call), dispositioned `fixed` or carried by an open item."""
+    tool that refuses the call), dispositioned `fixed` or carried by an open item. A designed stop
+    (a result carrying one of `designed_stops`, session_close.sc16_designed_stops) is not a failure
+    (#2220)."""
     if not tpath:
         return []
     import hashlib
     groups: dict[str, list[dict]] = {}
-    for f in sw.failed_calls(tpath):
+    for f in sw.failed_calls(tpath, designed_stops):
         op = re.sub(r"\s+", "_", f["operation"])   # a key has no spaces: dispositions parse on \S+
         if ".ps1" in op:
             key = f"SC16:{op}"
@@ -657,7 +659,7 @@ def check(ctx: Ctx) -> Outcome:
         F += _sc10(cfg, base, changed)
         F += [dict(key=k, step="SC15", text=t)
               for k, t in cfgquality.find_control_file_problems(db.conn, root)]
-        F += _sc16(tpath)
+        F += _sc16(tpath, cfg.required_setting("session_close.sc16_designed_stops"))
         info["publish"] = _sc12(cfg, db, root, changed, since)
         disp = compliance.parse(cpath)["dispositions"] if cpath else {}
     else:

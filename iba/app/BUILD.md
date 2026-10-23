@@ -18924,3 +18924,271 @@ backup.nas_db_backup not found)". After apply: the stored value equals `_BUILTIN
 `DatabaseError`: built-in values, reason logged. With a setting missing keys: built-in values, the
 missing keys named. **Live:** `configmaint.validate` RUN-20261022_133328_308-CONFIGMAINT ok; the
 "utilities with no config" finding is gone (4 before); no new findings.
+
+## 391. The scope resolver: any request to a collection of verses (2026-10-22, escalations #2228, #2233)
+
+Tool 1 of the #2228 discovery (`outputs/escalation/2228-discovery-scope-and-known-v3-20261022.md`
+section 3), built in Developer Mode to the approved design
+(`outputs/escalation/2228-scope-resolver-design-v1-20261022.md`; researcher 2026-10-22: "r1 approved,
+r2 groups and batches are a grouping of convenience"). Groups and batches are given on the command
+line or in a request file; there is no table of named collections.
+
+| Part | Change |
+|---|---|
+| `iba/app/lib/versescope.py` | new. `normalise_request()` merges the command line with a request file; `resolve()` runs each selector as one set-based query (`json_each` on the indexed `verse_lexical.strong`, not the full `span` scan of `lexicalscope`), unions the verses with their routes, applies `-OnlyStrong`, sorts by `cfg_book_order`. Selectors: cluster, subgroup, strand, word, strong, verse (through `narrativeregister.parse_refs`), chapter with optional block heading, claim, observation, thread item, thread. `ScopeError` for a request that cannot be answered; a code from a grouping table that occurs nowhere is reported, not raised. |
+| `iba/app/handlers/versescope.py` | new. Step `verse_scope.resolve`: reads `-File`, writes `<label>-<YYYYMMDD>.json` under `verse_scope.output_dir` through `filingkit.versioned_path` (same-day `-v2`, earlier version archived); `ScopeError` -> condition `refused`. |
+| `iba/app/ps/Verse-Scope.ps1` | new entry point, through `run.py`, work package `verse-scope`. |
+| `iba/docs/ps tools worksheet.xlsx` | new tab `Verse-Scope` and Index row (`governance.ps_worksheet_sync_on_change`). |
+| config, `iba/app/migration/archive/verse_scope_2228_v1_20261022.py` (run DEVMODE-2228-VERSE-SCOPE-20261022) | `cfg_work_package verse-scope`, `cfg_step verse_scope.resolve`, `cfg_on_fail` refused -> report-continue, `cfg_setting verse_scope.output_dir`, `cfg_enum config_module verse_scope`, `cfg_utility` for the three files (`versescope` config-exempt: pure SQL resolver, the handler reads the setting) and the migration. No write grant: the step writes no table. |
+| config, `iba/app/migration/archive/bare_strong_rule_2233_v1_20261022.py` (run DEVMODE-2233-BARE-STRONG-20261022) | `cfg_behaviour_rule` B:113 `bare-strong-decomposed-to-derivatives` (study_method, mechanically enforced by `Resolver.decompose`), delivered at point of use for `Verse-Scope.ps1` and `Strand-Reading.ps1`. |
+
+**The rule as built.** A bare code (H0430, also written H430) that does not occur itself stands for
+every lettered code of its base that occurs in `verse_lexical` (H0430G, H0430H, H0430I, H0430J); a bare
+code that occurs itself, and a suffixed code, are taken as they are. Checked 2026-10-22: no base carries
+both a bare and a lettered code; 29 bare codes in `word_strong` occur nowhere and all decompose.
+
+**Slip, found and fixed in this unit of work.** The first live apply added the setting's module
+`verse_scope` without its `cfg_enum config_module` member; `configmaint.validate`
+(RUN-20261022_192129_070-CONFIGMAINT) report-stopped with 2 coherence errors (#2234). The enum row was
+added to the migration, and the test plan gained T19 (the validator's hard checks on the copy) so the
+miss is caught before a live apply.
+
+**Tests.** `iba/app/tools/temp_2228_verse_scope_test_run.py` on a `dbsnapshot.copy_db` copy, expected
+values by plain SQL: 35/35 PASS (`outputs/escalation/2228-scope-resolver-test-results-v2-20261022.md`).
+Live: `Verse-Scope.ps1 -Label anger-bosom -Cluster M02 -OnlyStrong H3708A` -> 22 verses, exit 0;
+`-Strong H9999` -> refused; `configmaint.validate` RUN-20261022_192639_573-CONFIGMAINT ok, no new
+findings.
+
+## 392. Two corrections from the #2228 discovery: ib_observation's description, archived files in the manifest (2026-10-23, escalations #2231, #2232)
+
+**#2231.** The discovery read `cfg_table.use` for `ib_observation` as "a small transitional store of 81
+observations". That text is on the inactive `bible_research.db` row of the same name, not on the
+`iba.db` row; the finding as raised was wrong. The `iba.db` row did name only the cluster-reading
+writers and had no grain. `iba/app/migration/archive/ib_observation_use_2231_v1_20261023.py` (run
+DEVMODE-2231-IB-OBSERVATION-USE-20261023) sets grain `one row per observation` and a use naming every
+stage and every step with a write grant on the table. The inactive row is left as it is.
+
+**#2232.** `iba/app/lib/manifest.py` `_scan` took a `folder_purpose` currency set on a parent folder
+before the archive rule, so a file in `_analytics/Bible_Books/Eccl/archive/` took `Eccl`'s `current`.
+That contradicted the module's own rule (an `archive/` segment anywhere is archived). New
+`in_archive()`; `_scan` applies it first. `_archive/` folders, deliberately current in
+`folder_purpose`, are not archive folders and are unchanged. USER-GUIDE.md section 10 says so.
+
+**Tests.** `iba/app/tools/temp_2231_2232_test_run.py` on a `dbsnapshot.copy_db` copy, 13/13 PASS
+(`outputs/escalation/2231-2232-test-results-v1-20261023.md`): migration idempotent; the iba row names
+all 8 writer steps; the inactive row untouched; `in_archive` on six synthetic paths; a manifest rebuild
+on the copy leaves no file under `archive/` unarchived, keeps all 328 `_archive/` files current, and
+every one of the 1,234 rows whose currency changed is under `archive/`. **Live:** Manifest-Rebuild
+RUN-20261023_054106_577-MANIFEST-REBUILD (25,016 files: 7,249 active, 17,767 archived); 0 archive rows
+unarchived; live `_analytics` `.md` 2,449, equal to the files on disk; `configmaint.validate`
+RUN-20261023_054126_525-CONFIGMAINT ok, no new findings.
+
+## 393. The cluster reading index, collating a scope, and the guard on size and time (2026-10-23, escalation #2228)
+
+Built in Developer Mode on the researcher's decisions of 2026-10-23 on
+`outputs/escalation/2228-cluster-reading-index-design-v1-20261023.md` ("D1 - the tool should include an
+override, either on time or size of result ... D2 - proceed with this index as part of the developer mode")
+and the permission later that day to "continue to build out 2228". Tools 3-5 of discovery v3 are one tool,
+designed in `outputs/escalation/2228-verse-collate-design-v1-20261023.md`.
+
+| Part | Change |
+|---|---|
+| guard on the scope resolver | `lib/versescope.resolve` refuses a result over `verse_scope.max_verses` (4000: the largest M cluster, M72, has 3,972) or a request still resolving after `verse_scope.max_seconds` (30); the message lists verses per selector, widest first, so the request can be reformed. `-Thread OT-108` (29,743 verses) is refused. `cfg_utility versescope` no longer config-exempt. |
+| `lib/narrativeregister.parse_refs` | new optional `bare_follow_ons` (default unchanged): False skips a follow-on that is only a number, `(220)`, mostly a word count in study files. Default behaviour checked identical to the committed version over 2,935 texts. |
+| `lib/readingindex.py`, `handlers/readingindex.py`, `ps/Reading-Index.ps1` | new. Build: the `.md` files under `reading_index.roots` (`_analytics/Clusters`), archive folders skipped, one row per verse reference with file, heading section, line, line kind and how found; incremental by sha256; a changed or removed file's earlier rows kept, marked deleted (no physical delete); stops between files after `reading_index.max_seconds` (120). Report: coverage. Line endings normalised as a text read sees them. |
+| `lib/versecollate.py`, `handlers/versecollate.py`, `ps/Verse-Collate.ps1` | new. Per verse of a resolved scope: text, inner-being words, status, draft observations (October disposition), strand hits, claims and their tellings, citing blocks, matching open items, and the lines of the cluster files naming it (only those lines read); lexicon once per strong; seven gaps. Guard `verse_collate.max_seconds` (120). Writes `<label>-<YYYYMMDD>.json` and `.md`. |
+| config: `migration/archive/reading_index_2228_v1_20261023.py` (DEVMODE-2228-READING-INDEX-20261023, 76 writes) | tables `reading_file`, `reading_section`, `reading_ref` from `cfg_column`, their indexes and enums; work package `reading-index`, two steps, grants, `cfg_report`; settings `reading_index.*` and the two `verse_scope.*` guard settings. |
+| config: `migration/archive/verse_collate_2228_v1_20261023.py` (DEVMODE-2228-VERSE-COLLATE-20261023, 11 writes) | work package `verse-collate`, step, route, settings `verse_collate.*`; index `idx_ib_node_verse_reference` (ib_node had no index on its verse). |
+| config: `migration/archive/synergise_rule_2228_v1_20261023.py` (DEVMODE-2228-SYNERGISE-RULE-20261023) | B:114 `synergise-from-tables-not-memory` (study_method, general, delivered while the study is active): scope, collate, record the gaps, then synergise from the tables only, never from memory; a session may break between recording and synergising. |
+| docs | USER-GUIDE.md 8.3 (guard), 8.4 (reading index), 8.5 (collation), 8.6 renumbered; PS tools worksheet tabs Reading-Index and Verse-Collate. |
+
+**Tests** (each on a `dbsnapshot.copy_db` copy): scope resolver 36/36
+(`outputs/escalation/2228-scope-resolver-test-results-v3-20261023.md`), collation 14/14
+(`outputs/escalation/2228-verse-collate-test-results-v1-20261023.md`), reading index
+(`outputs/escalation/archive/2228-cluster-reading-index-test-results-v1-20261023.md`; re-run with the 2,500 guard: `outputs/escalation/2228-cluster-reading-index-test-results-v2-20261023.md`, 20/20). Found and fixed while
+testing: the build kept `\r\n` and so read two references differently from a text read (R1); a test
+assertion on file lines too naive for ranges (C2, the line now carries the reference as written).
+**Live:** Reading-Index Build RUN-20261023_063538_619-READINDEX: 230 files, 50,352 references to
+10,989 distinct verses, 549 to nothing; unchanged rebuild 0.7 s; Verse-Collate anger-bosom: 22 verses;
+Verse-Scope `-Thread OT-108` refused; `configmaint.validate` RUN-20261023_063656_997-CONFIGMAINT ok, no
+new findings.
+
+**Held for the researcher** (`outputs/escalation/2228-recording-by-scope-decision-v1-20261023.md`):
+recording the gaps of a scope (a reading keyed on the scope, or scope inside a strand, or record only),
+what a reading closes on, `analysed`, and marking the end of recording before synergising.
+
+## 394. The scope guard held for review at 2,500; SC16 does not count designed stops (2026-10-23, escalations #2228, #2220)
+
+Two changes the researcher decided on 2026-10-23, built in Developer Mode. Config by
+`iba/app/migration/archive/guard_review_sc16_2228_2220_v1_20261023.py` (run
+DEVMODE-2228-2220-GUARD-SC16-20261023, 3 writes).
+
+**#2228 (1):** "any verse selection above 2500 should be subject to a review before proceeding".
+`verse_scope.max_verses` 4000 -> 2500, and a result above it is held for review, not refused: it proceeds
+only with `-Reviewed "<the review>"`, kept in the answer as `reviewed` (`lib/versescope.resolve`,
+`normalise_request`). `Verse-Scope.ps1` and `Verse-Collate.ps1` gain `-Reviewed`; the worksheet tabs are
+rebuilt with it. Above 2,500 now: M72, M47, M65, every T cluster, threads of many clusters. The time guard
+still refuses. Tests: scope resolver 38/38 (`outputs/escalation/2228-scope-resolver-test-results-v4-20261023.md`);
+live, `-Cluster M72` is held with the instruction.
+
+**#2220 decision B:** `lib/sessionwindow.failed_calls` skips a failed tool result carrying one of the
+markers in the new `session_close.sc16_designed_stops` (COMMIT BLOCKED, NOT PASSED, a config change needs
+researcher approval); `handlers/session_close._sc16` passes the setting. A real hard error is still
+counted. Tests 4/4 (`outputs/escalation/2220-sc16-test-results-v1-20261023.md`): on the transcript of
+session 45f739ba the four Propose stops are no longer a finding. USER-GUIDE.md 2.2 gains the SC16 row.
+
+`configmaint.validate` RUN-20261023_102509_820-CONFIGMAINT ok, no new findings.
+
+## 395. Open items registered to a clear purpose: Open-Item.ps1 (2026-10-23, escalation #2236)
+
+On the researcher's decisions of 2026-10-23 on `outputs/escalation/2236-open-items-review-and-design-v1-20261023.md`
+(verbatim on #2236 v3): an item states what to read for and why it is open; a cluster item reads the target
+cluster's related term against the source analysis's strong, not the cluster as a whole; one purpose per item, a
+wider one split; stragglers reviewed; an item without a clear purpose avoided. Design
+`outputs/escalation/2236-open-item-design-v2-20261023.md`.
+
+| Part | Change |
+|---|---|
+| `lib/openitem.py`, `handlers/openitem.py`, `ps/Open-Item.ps1` | new. Add, Reword, Split (each also from a `-File` list, one unit), Due, Review. Thread changes through `escalation.update` (history, lifecycle E:18); worded fields and target verses by the step's own grants. Reword keeps the earlier wording in the item's history; Split records the old item superseded by the new. |
+| `lib/escalation.match_open_items` | a worded item (kind `scope`) matches a verse on its target verses only, and a cluster on its target cluster when `home` is on; legacy items unchanged. |
+| `lib/versecollate.py` | matches with `home=False`: worded items show on their target verses only. |
+| config: `migration/archive/open_item_2236_v1_20261023.py` (DEVMODE-2236-OPEN-ITEM-20261023, 50 writes) | `escalation_thread_item` gains `origin_escalation_id`, `anchor`, `source_terms`, `target_cluster`, `target_terms`, `read_for`, `why`, `comes_back_when`, `target_verses`, `worded_at`; new table `escalation_thread_item_verse`; item kind `scope`; work package `open-item` with five steps, grants, `cfg_report`; settings `open_item.max_verses` (200), `open_item.review_age_days` (60), `open_item.output_dir`; rule B:115 `open-item-has-a-clear-purpose` at point of use for Open-Item.ps1, Escalation.ps1 and Strand-Reading.ps1. |
+| docs | USER-GUIDE.md 3.3; PS tools worksheet tab Open-Item. |
+
+**Tests** 20/20 on a copy (`outputs/escalation/2236-open-item-test-results-v1-20261023.md`): add, the seven
+refusals (including a real 303-verse target refused for splitting), duplicate, reword of a legacy item with its
+history, reword again keeping the earlier target as deleted rows, split, matching on target verses and home,
+collation, Due, Review, an atomic `-File` batch, the thread audit untouched, validate hard checks. **Live:**
+Review RUN-20261023_112652_871-OPENITEM: 323 open items, 0 worded (the baseline); Escalation.ps1 -Action Thread
+and ThreadAudit run as before; `configmaint.validate` RUN-20261023_112830_441-CONFIGMAINT ok, no new findings.
+
+## 396. OT-103 reworded to one read purpose per item; B:74 in line; a verse target with its terms (2026-10-23, escalation #2236)
+
+The researcher, 2026-10-23 (verbatim on #2236 v5): "(i) single read purpose is not the same a single verse. the
+purpose (e.g. a face, or perspective) is likely to cover multiple verses and strongs ... The last think we need is to
+have to approve each and every open item through a standard escalation process." Open items are managed through
+Open-Item.ps1 with no per-item approval; each rewording is in the item's history and in the Review report.
+
+- **B:74** (open threads carried as escalations) brought in line with B:115:
+  - items are registered and reworded through Open-Item.ps1, one read purpose each
+  - there is no approval step for a thread or any item
+
+  Done by `migration/archive/b74_open_items_2236_v1_20261023.py` (DEVMODE-2236-B74-20261023).
+- **`lib/openitem.resolve_target`:** a `-Verse` target may carry `-Source`, `-TargetCluster` and
+  `-TargetTerms`. The verses are the purpose's own and the terms are recorded. The label shows the
+  count once. Test O14 added, O2e changed: 21/21
+  (`outputs/escalation/2236-open-item-test-results-v2-20261023.md`).
+- **OT-103 reworded live** (RUN-20261023_114208_956-OPENITEM, one `-File` unit,
+  `outputs/open-items/ot103-reword-v1-20261023.json`), from its source
+  `_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-mcode-face-combinations-v1-20261005.csv`:
+  - **66 cluster items**, one per M-code co-occurring with anger. Each targets its shared anger verses (1 to 73), with the anger strongs in them as source, the M-code's strongs named in the CSV as target terms, read for "how the two operate together, face by face" (the faces named), and the origin the anger strand's task #1963.
+  - **The verse item Eze 19:14,** forwarded to M03.
+  - One item per M-code and face would have given 834 items, 666 of them a single verse.
+
+  Review: 323 open, 67 worded.
+
+## 397. The remaining open-item threads reworded; 295 open, 284 worded (2026-10-23, escalation #2236)
+
+The researcher, 2026-10-23: "Continue: reword OT-97 next, then the remaining threads one by one." No per-item
+approval (B:74, B:115); each rewording is in the item's history, its spec in `outputs/open-items/`.
+
+- **OT-97:** 18 reworded, 34 split into 96 purpose items across five source families (M18 group B, M18 group C,
+  M18 x M72, M72 group B, M08); 15 verse items: 7 reworded, 7 superseded by their carriers, Est 9:5 closed
+  (`ot97-reword`, `ot97-split`, `ot97-verse-items-reword`).
+- **OT-105 and OT-106:** 32 reworded from `m09-poor-needy-split` (origin #2148); 2 source pointers withdrawn
+  (`ot105-106-reword`, `ot105-106-relabel`).
+- **OT-05:** 17 reworded; 3 added (OT-05.60 the body changed, 43 verses; OT-05.61 put on, all 26 G1746 verses;
+  OT-05.62 the body words for #2172, 62 verses); 31 superseded; 4 closed; T2 withdrawn. B1/B2 (body groups) are
+  not carried as items: put to the researcher (`ot05-reword`, `ot05-add`, `ot05-61-reword`).
+- **The rest** (`rest-reword-v1-20261023.json`, RUN-20261023_121011_640-OPENITEM, 44 items;
+  `rest-settle-v1-20261023.json`, 45 supersede/close/withdraw through Escalation.ps1):
+  - OT-107: all 19 kept, each its own purpose (origin #2156); OT-108.10-.17: the origin-of-thought words per
+    cluster (origin #2172).
+  - One purpose per thread, the rest superseded: OT-01 (.3), OT-11 (.1), OT-94 (.1), OT-102 (.1), OT-104 (.1),
+    OT-99 (.2), OT-12 (.1); OT-98 .4, .11, .12.
+  - Two purposes: OT-91 (.1 qadash with its sister senses; .5 the nazar consecration verses); OT-92 (.1 the 166
+    route A/A+B choosing verses; .3 God's replies). OT-92.2 closed: the researcher directed the routing 2026-10-07.
+  - Single items reworded: OT-03.1 (74 verses, origin #1950), OT-07.5, OT-100.1 (81 verses).
+  - No reading purpose left: OT-93 withdrawn (parked by the researcher, #1978); OT-06.1 superseded by #1893;
+    OT-09.1 superseded by #2228 (collation lists the file-only verses per scope); OT-101 moved to task #2237
+    (narrative style guide v3). OT-93, OT-06, OT-09 and OT-101 completed on their last item.
+- **Not worded (11):** 4 escalation links (OT-05.10, .56; OT-108.1, .2), which point to escalations and have
+  nothing to read; OT-108.3-.9, the October prose files not yet recorded as observations (#2172 decision 5).
+  These are recording work, not reads, and wait for the #2228 recording-by-scope decisions.
+
+Review RUN-20261023_121137_124-OPENITEM (`outputs/open-items/open-items-review-v4-20261023.md`): 295 open
+items, 284 worded, 11 not yet worded, 0 past 60 days.
+
+## 398. The reading process built: Reading.ps1, three gates; the strand steps retired (2026-10-23, escalation #2228)
+
+The researcher, 2026-10-23, on design v2 (`outputs/escalation/2228-reading-process-design-v2-20261023.md`):
+"D-a - retire started steps, it has been superceded; D-b - yes. ; D-c - yes; E-d yes". Recorded on #2228 with
+how each is read; the build approved with a follow-up.
+
+- **Migration** `migration/archive/reading_process_2228_v1_20261023.py` (DEVMODE-2228-READING-20261023, 166 cfg
+  writes):
+  - **Tables:** `reading` (label, escalation, home cluster, request, state, gap and synergy files, gate times,
+    chapters touched) and `reading_verse`.
+  - **Enums:** `reading_state`; `reading_gap_type` (7), with `cfg_setting reading.gap_types` holding each
+    type's phase, guide text and target tables.
+  - **Work package `reading`:** seven steps with their grants and `refused` routes; `cfg_report` for
+    Account; `reading.output_dir`.
+  - **The close gate `readings_published`:** the escalation anchoring a reading cannot complete while the
+    reading is not published.
+  - **D-a:**
+    - **Retired:** the eight strand steps, their work package, grants, routes and reports, and the
+      `strand_account_clean` gate.
+    - **Moved:** the rule links of Strand-Reading.ps1 to Reading.ps1, with B:114 added.
+    - **B:76:** names Reading.ps1 -Step Apply.
+    - **Strands:** the four open ones are set `superseded`, their rows kept.
+- **Code:**
+  - `lib/reading.py`, `handlers/reading.py`, `ps/Reading.ps1` (new).
+  - `lib/strandreading.py`: `check_observations()` and `derive_core()` are pulled out of Record and
+    Derive so the reading reuses them.
+  - `lib/escalation.py`: check kind `readings_published`.
+  - `lib/versemeta.run_set_status`: refuses `analysed` (D-c, only gate 1 sets it).
+  - Messages naming Strand-Reading now name Reading.ps1.
+  - `handlers/strandreading.py` and `ps/Strand-Reading.ps1` moved to `archive/`.
+- **D-b:** new open items at Record (`new_items`) and Apply (`new_item` on a disposition, `forward` on a
+  settle) go through `openitem.add`.
+- **Tests:** `tools/temp_2228_reading_test_run.py` on a copy, with the narrative folder and the
+  learning4comfort inbox redirected: 29/29 (`outputs/escalation/2228-reading-test-results-v1-20261023.md`).
+  - **Covered:** every step and gate end to end on a three-verse scope. Refusals cover Open's guards (the
+    2,500 review included), a false quotation, a record row that does not exist, a malformed record, a
+    meaning gap given a new row, another reading's file, a synergy file not built from the tables, and a
+    superseded settle with no carrier. Gates 1 and 2 refuse before their work is done. The close gate
+    holds until Publish, and validate is clean.
+  - **Found and fixed by the run:** a `{"table", "id"}` record was skipped unchecked; the retired steps'
+    `cfg_on_fail` rows were left active.
+  - **Not exercised here:** Apply's `rewrite` path. It passes the file to `narrativeregister.rewrite`,
+    whose own tests stand (#2172).
+- **Live:** migration applied; `configmaint.validate` RUN-20261023_124329_203-CONFIGMAINT ok. Its one change
+  is the list of inactive rows, now holding the retired strand steps and routes, recorded on #2207. PS
+  worksheet: a Reading tab, the Strand-Reading tab and Index row marked retired; no drift. USER-GUIDE s8.2
+  rewritten for the reading.
+- **Noted:** the unworded OT-108.3 to .9 (cluster-kind items) match any scope that holds a word of their
+  cluster, so readings will meet them until they are recorded. The study stays on hold; no reading was
+  opened live.
+
+## 399. Session 2026-10-23 close: the files of #2220, #2228 and #2236 named; the study re-opened (escalations #2220, #2228, #2238)
+
+Files changed this session that s391-s398 describe but do not name by path:
+
+- `iba/app/handlers/session_close.py` and `iba/app/lib/sessionwindow.py`: SC16 no longer counts a
+  designed stop as a failed call (#2220 decision B, s394).
+- `iba/app/lib/narrativeregister.py`:
+  - `parse_refs(..., bare_follow_ons=...)` (s391);
+  - the Check message names `Reading.ps1 -Step Apply` (s398).
+- `iba/app/lib/versemeta.py`: `run_set_status` refuses `analysed` (D-c, s398).
+- `iba/app/ps/Narrative-Register.ps1`: its help names Reading.ps1 (s398).
+- Retired and moved to `archive/` (s398): `iba/app/handlers/archive/strandreading.py`,
+  `iba/app/ps/archive/Strand-Reading.ps1`.
+- Test scripts:
+  - `iba/app/tools/temp_2220_sc16_test_run.py` (4/4);
+  - `iba/app/tools/temp_2228_reading_index_test_run.py` (20/20);
+  - `iba/app/tools/temp_2228_verse_collate_test_run.py` (14/14);
+  - `iba/app/tools/temp_2236_open_item_test_run.py` (21/21).
+- `iba/app/migration/archive/study_active_2228_v1_20261023.py` (DEVMODE-2228-STUDY-ACTIVE-20261023, 3 cfg
+  writes): the study re-opened on the researcher's instruction (verbatim on #2238 v1).
+  - `behaviour.study_state` is now `active`.
+  - `governance.study_status` is ACTIVE since 2026-10-23, with study work going through `Reading.ps1`.

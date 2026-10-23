@@ -121,6 +121,7 @@ It checks the session's work against its record. Each finding has a stable key:
 | SC10 | a code or config file changed (`session_close.build_scope`) not named in what BUILD.md gained |
 | SC12 | whether the narrative copy and the threads export are needed |
 | SC15 | a control file (`session_close.control_kinds`) missing, naming a path that does not resolve or points into an archive without marking it as history, carrying replaced-history text, or (read every conversation) over `session_close.always_read_max_bytes` |
+| SC16 | a PS tool action that failed twice in the session, or any other call that failed twice with the same error; a designed stop (`session_close.sc16_designed_stops`: COMMIT BLOCKED, NOT PASSED, a Propose waiting for approval) is not a failure |
 
 **To clear a finding:** fix it, or write a disposition in the compliance file's
 `## Close dispositions` section as `- <key> :: <disposition>`:
@@ -259,13 +260,39 @@ in-progress work references it, and completes when its last item is settled. The
 | raise a thread | `.\Escalation.ps1 -Action Raise -Type thread -Question "title" -Comment "…" -ComesBackWhen "…" -Item cluster:M15 -ResolutionKind SelfCorrectable -AnsweredBy Claude` |
 | regenerate the register file | `.\Escalation.ps1 -Action Export -Type thread` (never edit the file) |
 
+**Registering an item to a clear purpose** (`iba/app/ps/Open-Item.ps1`, #2236, rule B:115): an
+open item points from the analysis in hand to related work without interrupting it. It has a target
+scoped to verses, says what to read for and why it is open, and is cleared at some point.
+
+```powershell
+iba\app\ps\Open-Item.ps1 -Action Add -Thread OT-103 -Origin 2172 -Anchor strong:H0639G -Source H0639G -TargetCluster M58 -TargetTerms H7489A -ReadFor "…" -Why "…" -ComesBackWhen "…"
+iba\app\ps\Open-Item.ps1 -Action Add -Thread OT-102 -Origin 2172 -Anchor verse:"Num 11:15" -Verse "Num 11:10-15" -ReadFor "…" -Why "…" -ComesBackWhen "…"
+iba\app\ps\Open-Item.ps1 -Action Reword -Item OT-103.1 <the same parameters>      # or -File <specs.json> for many
+iba\app\ps\Open-Item.ps1 -Action Split -Item OT-97.1 -File <parts.json>          # one purpose per item
+iba\app\ps\Open-Item.ps1 -Action Due -Cluster M58                               # items that come back when M58 is worked
+iba\app\ps\Open-Item.ps1 -Action Review                                         # stragglers -> open_item.output_dir
+```
+
+- **The target:**
+  - **A cluster item** reads the target cluster's related term(s) against the source analysis's strong. Its verses are the ones holding both.
+  - **Or a verse target:** `-Verse`.
+  - **The limit:** at most `open_item.max_verses` (200). A wider target is refused: split it.
+- **Refused, nothing written:** no target, `-ReadFor`, `-Why` or `-ComesBackWhen` in words; an
+  origin that is not a task or issue; an anchor that does not resolve; a target term not in the target
+  cluster; source and target never in the same verse; the same target read for the same thing on the
+  thread. A `-File` batch is one unit: one refusal writes none of it.
+- **A worded item** (kind `scope`) matches a scope on its target verses only (Match,
+  Verse-Collate, a reading's Open and Synergy). Its target cluster is its home: `-Action Due`.
+- **Reword** keeps the earlier wording in the item's history. **Split** records the old item
+  superseded by the new ones. Answering and closing stay with `iba/app/ps/Escalation.ps1` (or a reading's gate 2).
+
 Item notes:
 - **Naming an item:** `-Item` takes `OT-16.2`, the bare number, `cluster:M03`, or a value unique in
   the thread.
 - **A note** follows ` :: `.
 - **Matching:** M10 matches M10c (T codes too: T3); a Strong's number matches its exact code, else
-  its zero-padded base; a verse matches inside a range or chapter. Strand-Reading Context uses the
-  same matching (section 8.2).
+  its zero-padded base; a verse matches inside a range or chapter. A reading uses the same
+  matching (section 8.2).
 - **Linked tasks:** when a task an item references changes state, the item follows it.
 
 ---
@@ -452,8 +479,8 @@ iba\app\ps\Narrative-Register.ps1 -Action QuoteCheck -File <chapter.md> [-Agains
 (`narrative_section.block_text`); a claim is told by a block (`narrative_claim_telling.section_id`,
 one current telling per claim and block). The chapter files are exports: each change to a block is
 followed by the chapter written from the database as its next version, and the file it replaces
-moves to the folder's `archive/`. The narrative text is written through `Strand-Reading.ps1 -Step
-Rewrite` (section 8.2), never in a chapter file.
+moves to the folder's `archive/`. The narrative text is written through `Reading.ps1 -Step
+Apply` (section 8.2), never in a chapter file.
 
 **Actions:**
 - **`EditSection`** renames a block (the old row stays as history and its tellings move to the
@@ -477,82 +504,179 @@ Rewrite` (section 8.2), never in a chapter file.
 - **`narrative_passage`** is history: the paragraphs that told claims before #2172. It is no longer
   written; a coverage scan reads the blocks (`render_chapter`).
 
-### 8.2 Reading a strand (`iba/app/ps/Strand-Reading.ps1`)
+### 8.2 A reading (`iba/app/ps/Reading.ps1`)
 
-The reading process (#2172): Claude reads and writes in the session; the app gives everything
-already known, records the results as rows and checks facts. One strand at a time, in seven steps
-after `Define`. Write steps take `-By Claude|Researcher`; a refusal writes nothing. The JSON shape
-of each step is in its docstring in `iba/app/lib/strandreading.py`. Reports go to
-`strand_reading.output_dir`, one folder per strand.
+The reading process (#2228, design `outputs/escalation/2228-reading-process-design-v2-20261023.md`):
+a **reading** is the work on one scope, anchored on a task or issue, and passes three gates in order.
+Each gate is checked by the tool from the tables, not asserted. Claude reads and writes in the session;
+the app resolves the scope, gives everything already known, writes the records as rows and checks.
+Write steps take `-By Claude|Researcher`; a refusal writes nothing. Files go to `reading.output_dir`,
+one folder per reading.
 
 ```powershell
-iba\app\ps\Strand-Reading.ps1 -Step Define -Strand flesh-body -Title "Flesh and body" -Cluster M48 -Escalation 2162 -Strongs "H1320,G4561" -By Claude
-iba\app\ps\Strand-Reading.ps1 -Step Context -Strand flesh-body -By Claude
-iba\app\ps\Strand-Reading.ps1 -Step Record -Strand flesh-body -File "<reading.json>" -By Claude
-iba\app\ps\Strand-Reading.ps1 -Step Gather -Strand flesh-body
-iba\app\ps\Strand-Reading.ps1 -Step Map -Strand flesh-body -File "<map.json>" -By Claude
-iba\app\ps\Strand-Reading.ps1 -Step Derive -Strand flesh-body -File "<derive.json>" -By Claude
-iba\app\ps\Strand-Reading.ps1 -Step Rewrite -Strand flesh-body -File "<rewrite.json>" -By Claude
-iba\app\ps\Strand-Reading.ps1 -Step Account -Strand flesh-body
+iba\app\ps\Reading.ps1 -Step Open -Label anger-bosom -Escalation 2172 -Home M02 -Strong H2436 -By Claude
+iba\app\ps\Reading.ps1 -Step Record -Label anger-bosom -By Claude          # the gap JSON, filled
+iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # gate 1
+iba\app\ps\Reading.ps1 -Step Synergy -Label anger-bosom -By Claude
+iba\app\ps\Reading.ps1 -Step Apply -Label anger-bosom -By Claude           # the synergy JSON, filled
+iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # gate 2
+iba\app\ps\Reading.ps1 -Step Publish -Label anger-bosom -By Claude         # gate 3
+iba\app\ps\Reading.ps1 -Step Account -Label anger-bosom
 ```
 
-- **`Define`** creates a strand: its code (lowercase-hyphenated), title, home cluster, the
-  escalation that is its record, and its words (exact codes, as in `verse_lexical`: `H0639G`). On an
-  open strand, `-Strongs` adds words.
-- **`Context`** (step 1) writes a hit row for every live occurrence of the strand's words (one per
-  verse and strong), then the context file: the words, every observation already on those words
-  and verses (September's drafts included), the open items to answer, and every hit with its verse
-  text, surface, morph, coverage and face so far. **Open items to answer:** every open thread item
-  matching the strand's words (exact code or zero-padded base, as Match), the clusters those words
-  sit in (the home cluster and every other), its verses (inside a range or chapter) or its code is
-  recorded against the strand, each shown with its answer so far.
-- **`Record`** (step 2) records a reading: observations, one per key statement, with setting,
-  meaning, implication, chain, basis (`stated` or `read`) and parties, each grounded on the verses
-  and strongs it names; and for each hit read, a face or a stated reason it has none. An earlier
-  observation corrected is named in `supersedes` and withdrawn. An observation brought in from a
-  source row keeps that row's id in `stable_key` (`<strand>:<ID>`) and a `note` (its `revisit_note`). Every quotation is checked against
-  the ESV text. The verses read are marked `analysed`. New open items found in the reading go in
-  `items` (`"verse:Rom 7:15 :: what is open"`). It refuses a hit that is not the strand's, a hit
-  with both or neither a face and a reason, a verse where the strong does not occur, a quotation
-  not in the text, and an item that is not `kind:value`.
-- **`Gather`** (step 3) lists every block related to the strand (it cites a strand verse, or tells
-  a claim resting on the strand's verses or observations) with its full text and its tellings, and
-  the claims on the strand's verses that no block tells.
-- **`Map`** (step 4) records what each related block tells: each statement names its claim(s), a
-  new claim (added and told there), or an item: an open item on the strand's thread, as given when
-  it is `kind:value`, else `chapter:Ch n heading: "statement"` with the reason as its note. It
-  refuses while any related block is not mapped.
-- **`Derive`** (step 5) writes new, adjusted and withdrawn claims, each resting on at least one
-  observation or verse (an observation is a claim source, kind `observation`), and each
-  observation's disposition: carried by a claim (`resolved`), held on an item (`open`: an existing
-  `item`, or a `new_item` raised on the strand's thread), `silent` or `withdrawn` with the reason.
-- **`Rewrite`** (step 6) writes blocks anew, whole: a block names the claims it tells, and every
-  claim it told before is still told, or accounted for as moved (to a block that tells it), or
-  withdrawn (the claim withdrawn first, in Derive). New blocks are placed after a named block;
-  retired blocks leave the narrative. The citations are re-derived from the text, the quotations
-  checked, the cited verses marked `citated` (`citated` replaces `analysed`; `exclude` is never
-  overwritten), and each chapter touched is published from the database.
-- **`Account`** (step 7) writes the strand from the tables: its gaps (hits unread, observations not
-  disposed, matched open items not answered), then for judgement the claims told nowhere, every
-  observation and its claim, every claim and the block that tells it, every open item with its
-  source and answer, every hit and its verse's coverage.
-- **The strand's thread:** the open items a strand raises (Record, Map, Derive) go on its own
-  thread, `Open items from strand <code>`, raised on first use (`reading_strand.thread_id`); an item
-  already there is reused, and reopened if it was settled. They are for later strands, not gated.
-- **Answering a matched item:** a thread response, recorded the usual way (section 3.3), naming
-  the strand's escalation:
+States: `open` -> `recorded` -> `synergised` -> `published`.
 
-  ```powershell
-  iba\app\ps\Escalation.ps1 -Action Update -Id OT-16 -Item OT-16.2 -ResponseKind touched -Respond "how the reading took it into account" -Via 2162 -AnsweredBy Claude
-  ```
+- **`Open`** takes the scope selectors of `iba/app/ps/Verse-Scope.ps1` (section 8.3; a selection above 2,500
+  verses is held until `-Reviewed`), `-Escalation` (an open task or issue) and `-Home` (the cluster
+  new observations are grounded under). It keeps the verses (`reading_verse`), collates the scope
+  (section 8.5; `<label>-collation.json`) and writes the **gap JSON** (`<label>-gaps.json`): one
+  section per gap type of the recording phase, each with its guide text. The gap types are config:
+  `cfg_enum reading_gap_type` and `cfg_setting reading.gap_types` (phase, guide, the table each
+  records into). Adding a gap type is a config change.
+- **`Record`** (gate 1 work) writes each item's `record`:
+  - `{"new": {...}}`: an observation (text, meaning, basis, setting, implication, chain, parties,
+    `verses: [{"verse", "strong"}]`, `supersedes`), quote-checked against the ESV text; or a face on a
+    strand hit (`face`, `parties`, `observation`, or `reason`); or, for an open item, `{"response":
+    "..."}`, written as a `touched` response.
+  - `{"table", "id"}`: an existing row that covers the item.
+  - `{"reason": "..."}`: nothing to record, and why.
 
-  Any response kind answers it (`touched`, `narrowed`, `forward`, `ruling`, `note`, or a settling
-  `closed`); a response made before the item was matched does not.
-- **The close gate:** the strand's escalation cannot reach `completed` or `closed` while any hit
-  has no face or reason, any observation has no disposition, or any matched open item has no
-  response since it was matched.
+  New open items go in `new_items`, in the `Open-Item.ps1 -Action Add` shape (D-b). The ids are
+  written back into the file, so the JSON is the reading's record. A meaning gap takes no new row
+  here: pull it through its own route and name the row.
+- **`Check`** passes **gate 1** when every item has an id that exists, or a reason, and every new
+  item is added. The reading's verses are then marked `analysed`. This is the only way a verse
+  becomes `analysed` (D-c); `Verse-Meta` refuses it.
+- **`Synergy`** builds the **synergy JSON** by reading all the tables for the scope, never memory
+  (B:114). It lists:
+  - every live observation on the scope, with the claims that carry it;
+  - every current or held claim resting on the scope's verses or observations, with where it is told;
+  - every block citing the scope or telling those claims, with its text;
+  - every open item matched to the scope, with what gate 1 recorded for it.
+- **`Apply`** (gate 2 work) refuses a file not built by this reading's last Synergy. It writes:
+  - new claims (each resting on observations or verses, the source naming its observation), edits
+    and withdrawals;
+  - each observation's claim, or its disposition (`held` on an item or a `new_item`, `silent`,
+    `withdrawn`);
+  - tellings (`tell`), and claims held (`hold`);
+  - blocks rewritten whole (`rewrite`, the `Narrative-Register` rewrite shape; cited verses marked
+    `citated`);
+  - each matched open item settled: `closed` with its answer, `withdrawn`, `superseded` by a named
+    item, or `forward` to a new item (added, and the old one superseded by it).
 
-### 8.3 Copying the narrative to learning4comfort
+  Open items are closed only here, after synergy, never at gate 1.
+- **`Check`** passes **gate 2** when:
+  - every observation on the scope is carried by a current claim, or held or silent;
+  - every current claim on the scope is told in a block, or held;
+  - every open item in the synergy JSON is settled.
+- **`Publish`** (gate 3) publishes each chapter the reading touched whose file differs from the
+  database. It copies the chapters to the learning4comfort inbox (section 8.6) and checks each touched
+  chapter is there byte-identical.
+- **`Account`** writes the reading from the tables: its gates, and the gaps at the gate it is at.
+- **The close gate:** the escalation that anchors a reading cannot reach `completed` or `closed`
+  while the reading is not published or withdrawn.
+
+**The strand steps are retired (#2228 D-a, 2026-10-23).** `iba/app/ps/archive/Strand-Reading.ps1` (history) and its handler are
+in `archive/`, and the four strands (fear, anger, life-death, origin-of-thought) are `superseded`.
+Their rows stay: their hits and faces are read as table sources. A hit still unread is a `hit_unread`
+gap in any reading that reaches its verse. `lib/strandreading.py` stays as the library the reading
+reuses (observation checks, `derive_core`).
+
+### 8.3 The verses of a request (`iba/app/ps/Verse-Scope.ps1`)
+
+The scope resolver (#2228): any request becomes the collection of verses it stands for, written as
+a JSON file. It reads only. Selectors add verses and are combined as a union; give as many as the
+request needs. A group or batch is given on the command line or kept in a request file.
+
+```powershell
+iba\app\ps\Verse-Scope.ps1 -Label anger-bosom -Cluster M02 -OnlyStrong H3708A
+iba\app\ps\Verse-Scope.ps1 -Label ot108 -Thread OT-108
+iba\app\ps\Verse-Scope.ps1 -Label batch-1 -File "<request.json>"
+```
+
+| Selector | Example | Gives |
+|---|---|---|
+| `-Cluster` | `M02` or `M02,M01` | the verses of the cluster's live strongs |
+| `-Subgroup` | `A_thanksgiving_act` | the verses of a cluster subgroup's strongs |
+| `-Strand` | `anger` | the verses of a strand's word family |
+| `-Word` | `anger` | the verses of a `word_registry` word's strongs |
+| `-Strong` | `H0430` or `G3563G` | a bare code stands for all its derivatives (H0430G, H0430H, ...); a suffixed code for itself |
+| `-Verse` | `"Psa 10:2; Luk 14:12-14; Rom 8"` | the verses named: lists, ranges, ranges across chapters, whole chapters |
+| `-Chapter` [`-Section`] | `10.1`, `-Section "The bosom"` | the verses the chapter's current blocks cite, or one block's |
+| `-Claim` | `C-330` | the claim's verse sources |
+| `-Observation` | `12478` | the verses the observation is grounded on |
+| `-Item` / `-Thread` | `OT-108.3` / `OT-108` | a thread item by its kind, or every open item of the thread |
+| `-File` | a request file (JSON) | the same keys as lists, e.g. `{"cluster": ["M02"], "verse": ["Psa 10:2"], "chapter": [{"chapter": "10.1", "section": "The bosom"}], "only_strong": ["H3708A"]}` |
+
+- **`-OnlyStrong`** keeps only the verses holding one of the given codes (a bare code again stands for
+  its derivatives): the focus on some of the derivatives.
+- **A chapter, block or claim gives only the verses it cites.** Whether to pull in more verses through
+  a narrative or a claim is a judgement call, not made here.
+- **The file** goes to `verse_scope.output_dir` as `<label>-<YYYYMMDD>.json`; a second run with the
+  same label on the same day writes `-v2` and archives the first. Each verse carries `routes`: which
+  selector brought it in, through which code, heading or reference. `not_resolved` lists, with the
+  reason, every reference with no verse row (missing by design, `governance.verse_gap_by_design`),
+  block that cites no verse, claim source that is not a verse, thread item whose kind names no verse,
+  and code in a cluster, word or strand list that occurs nowhere.
+- **Refused, nothing written:** no selector, an unknown cluster, subgroup, strand, word, chapter,
+  block, claim, observation or thread, or a Strong's code the request names that occurs nowhere (the
+  message suggests its derivatives).
+- **Held for review:** a result of more verses than `verse_scope.max_verses` (2,500; above it: M72,
+  M47, M65, every T cluster, a thread of many clusters). Reform it (fewer selectors, or
+  `-OnlyStrong`), or, once the researcher has reviewed it, re-run with `-Reviewed "<the review>"`;
+  the review is kept in the JSON. **Refused:** a request still resolving after
+  `verse_scope.max_seconds` (30). Either message lists the verses per selector, widest first.
+
+### 8.4 Where the cluster files name a verse (`iba/app/ps/Reading-Index.ps1`)
+
+The cluster reading index (#2228): the study files under `reading_index.roots` (only
+`_analytics/Clusters`; `archive/` folders skipped) read once, every verse reference recorded with
+its file, heading section and line (`reading_file`, `reading_section`, `reading_ref`).
+
+```powershell
+iba\app\ps\Reading-Index.ps1 -Step Build     # new and changed files read; removed ones marked
+iba\app\ps\Reading-Index.ps1 -Step Report    # coverage report -> reading_index.output_dir
+```
+
+- **Build** reads a file again only when its content changed (sha256). The earlier rows of a
+  changed or removed file are kept, marked deleted. A build stops between files once past
+  `reading_index.max_seconds` (120) and says how many are left; run it again to carry on.
+- **What counts as a reference:** a book named (`Jer 8:18`, `explicit`); a follow-on that takes its
+  book from the reference before it, `(8:21)` (`follow-on c:v`) or `(v. 22)` (`follow-on v.`). A
+  bare number in brackets, `(220)`, is not taken: in these files it is mostly a word count. A
+  whole chapter (`Psa 51`) is kept as a chapter. A reference that resolves to nothing is kept with
+  its reason and listed in the report.
+- **Each row** carries the line it stands on and its kind (`heading`, `table row`, `bullet`,
+  `paragraph`). A file whose rows are already in `ib_observation` (the October ledgers) is indexed
+  too, with the count in `reading_file.imported_observations`.
+
+### 8.5 What is known and what is missing for a scope (`iba/app/ps/Verse-Collate.ps1`)
+
+The collation (#2228): the scope is resolved as `iba/app/ps/Verse-Scope.ps1` resolves it (the same selectors
+and the same guard), then for every verse in it everything the project already holds, and the gaps.
+It reads only. This is the step before any recording, so that work already done is not done again.
+
+```powershell
+iba\app\ps\Verse-Collate.ps1 -Label anger-bosom -Cluster M02 -OnlyStrong H3708A
+```
+
+- **Per verse:** the ESV text; the inner-being words (M clusters) with sense and cluster; `verse_meta`
+  status; the draft observations (with any October disposition); the strand hits with face or
+  reason; the claims resting on the verse and the blocks that tell them; the blocks citing it; the
+  matching open thread items (as `Escalation.ps1 -Action Match` matches: the verse, its M strongs,
+  their clusters); and the lines of the cluster files that name it, with file, section and line
+  (only those lines are read). **Once per strong:** sense, meaning-tree senses, and for Greek the
+  Mounce entry (LSJ given only as its size).
+- **Gaps per verse:** `not read` (no observation and no strand face; `analysed` alone does not
+  count), `read in files only`, `hit unread`, `observed, no claim`, `claim not told`, `open item`,
+  `meaning missing`.
+- **Files:** `verse_collate.output_dir/<label>-<YYYYMMDD>.json` (the full record) and `.md` (gap
+  counts, one line per verse, the lexicon). A cluster file changed since it was indexed is named;
+  run `Reading-Index.ps1 -Step Build`.
+- **Guard:** the scope's own (`verse_scope.max_verses`, `verse_scope.max_seconds`), and
+  `verse_collate.max_seconds` (120). Past it the run is refused: reform the scope.
+
+### 8.6 Copying the narrative to learning4comfort
 
 ```powershell
 iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1 [-DryRun]
@@ -606,7 +730,9 @@ iba\app\ps\Purge-SoftDeletes.ps1 [-Action Audit|Execute|Retire] [-Live] [-Databa
 **What each tool needs:**
 - **Manifest search fields:** `registry:`, `type:`, `category:`, `currency:`, `cluster:`, `word:`,
   `date:`, `archived:`, `ext:`.
-- **Manifest-Rebuild:** run it after moving files, before relying on a search.
+- **Manifest-Rebuild:** run it after moving files, before relying on a search. A file under an
+  `archive/` folder is always `archived`, whatever currency its parent folder has in `folder_purpose`
+  (an `_archive/` folder is not an archive folder).
 - **FolderPurpose:** run `Seed` after a reorganisation, before `Manifest-Rebuild`. `Set` is the only
   way to hand-set a folder's type, status or description.
 - **ContentIndex:** exclusions are rows of `cfg_content_index_exclude`, changed through §4.

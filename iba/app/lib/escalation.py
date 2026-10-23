@@ -363,6 +363,14 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
                 gaps = strandreading.gate_message(db.conn, self_id)
                 if gaps:
                     raise ValueError(f"{r['message']} ({gaps})")
+        elif kind == "readings_published":
+            # #2228: the escalation that anchors a reading reaches completed/closed only when each of its
+            # readings is published or withdrawn (lib/reading).
+            if self_id is not None and field_val in ("completed", "closed"):
+                from . import reading
+                gaps = reading.gate_message(db.conn, self_id)
+                if gaps:
+                    raise ValueError(f"{r['message']} ({gaps})")
         else:
             raise ValueError(f"unknown cfg_escalation_requirement.check_kind {kind!r}")
 
@@ -790,10 +798,12 @@ _CLUSTER_CODE = r"^([MT]\d+)([a-z]*)$"
 _STRONG_CODE = r"^([HG]\d+)([A-Z]*)$"
 
 
-def match_open_items(db: Db, *, clusters=(), strongs=(), verses=(), strands=()) -> list[tuple]:
+def match_open_items(db: Db, *, clusters=(), strongs=(), verses=(), strands=(), home=True) -> list[tuple]:
     """(thread, item, query) for every open item of every thread not completed that matches: a
     cluster or Strong's by code (_code_match), a verse inside a range or chapter, a strand by its
-    code. One matcher for Match and for Strand-Reading Context (#2219)."""
+    code. One matcher for Match, Verse-Collate and a reading (#2219, #2228). A worded item (kind 'scope',
+    #2236) matches a verse on its target verses only, and a cluster only on its target cluster (its
+    home) when `home` is true; never a whole cluster's verses."""
     ph = ",".join("?" * len(_THREAD_OPEN_STATES))
     threads = db.rows(f"SELECT * FROM escalation WHERE type='thread' AND state IN ({ph}) "
                       f"ORDER BY CAST(substr(alias, 4) AS INTEGER)", _THREAD_OPEN_STATES)
@@ -801,7 +811,15 @@ def match_open_items(db: Db, *, clusters=(), strongs=(), verses=(), strands=()) 
     for t in threads:
         for it in _thread_items(db, t["id"], "open"):
             v = it["value"]
-            if it["kind"] == "cluster":
+            if it["kind"] == "scope":
+                if verses:
+                    refs = {r[0] for r in db.rows(
+                        "SELECT v.reference FROM escalation_thread_item_verse x JOIN verse v ON v.id=x.verse_id "
+                        "WHERE x.item_id=? AND x.deleted=0", (it["id"],))}
+                    out += [(t, it, q) for q in verses if any(_verse_match(ref, q) for ref in refs)]
+                if home and it["target_cluster"]:
+                    out += [(t, it, q) for q in clusters if _code_match(it["target_cluster"], q, _CLUSTER_CODE)]
+            elif it["kind"] == "cluster":
                 out += [(t, it, q) for q in clusters if _code_match(v, q, _CLUSTER_CODE)]
             elif it["kind"] == "strong":
                 out += [(t, it, q) for q in strongs if _code_match(v, q, _STRONG_CODE, _strong_norm)]
