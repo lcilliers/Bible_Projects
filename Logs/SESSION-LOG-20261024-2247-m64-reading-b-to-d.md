@@ -113,3 +113,9 @@ The researcher's:
 The parked items assigned to Claude are unchanged: #2171, #2172, #2207, #2235.
 
 ## 6. Git
+
+- Branch: `main`.
+- Commit: `4eee6b31` ("session 20261024: #2247 OT-108.3 batches B (m64-willing), C (m64-plan, OT-108.18 closed) and D
+  (m64-dedicate) through all three gates ..."), 51 files changed.
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `0256b015..4eee6b31  main -> main`.
+- This section is committed alone as `session 20261024: session log git confirmation`.
