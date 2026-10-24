@@ -1,0 +1,2026 @@
+{
+ "reading": "m64-willing",
+ "reading_id": 2,
+ "escalation": 2247,
+ "home": "M64",
+ "opened": "2026-10-23T19:11:41Z",
+ "scope": [
+  {
+   "kind": "cluster",
+   "value": "M64",
+   "name": "Will & Resolve",
+   "strongs": [
+    {
+     "code": "G0138",
+     "sense": "to choose"
+    },
+    {
+     "code": "G0140",
+     "sense": "to choose"
+    },
+    {
+     "code": "G0830",
+     "sense": "self-chosen"
+    },
+    {
+     "code": "G1011",
+     "sense": "to plan"
+    },
+    {
+     "code": "G1012",
+     "sense": "plan"
+    },
+    {
+     "code": "G1013",
+     "sense": "plan"
+    },
+    {
+     "code": "G1014",
+     "sense": "to plan"
+    },
+    {
+     "code": "G4286",
+     "sense": "purpose"
+    },
+    {
+     "code": "G4388",
+     "sense": "to plan/present"
+    },
+    {
+     "code": "G4401",
+     "sense": "to choose"
+    },
+    {
+     "code": "G5427",
+     "sense": "purpose"
+    },
+    {
+     "code": "H0014",
+     "sense": "be willing"
+    },
+    {
+     "code": "H0908",
+     "sense": "to devise"
+    },
+    {
+     "code": "H0972",
+     "sense": "chosen"
+    },
+    {
+     "code": "H0977",
+     "sense": "to choose"
+    },
+    {
+     "code": "H2161",
+     "sense": "to plan"
+    },
+    {
+     "code": "H2162",
+     "sense": "plan"
+    },
+    {
+     "code": "H2803G",
+     "sense": "design/skillful"
+    },
+    {
+     "code": "H2803H",
+     "sense": "count/regard as"
+    },
+    {
+     "code": "H2803I",
+     "sense": "devise/plot/plan"
+    },
+    {
+     "code": "H3336",
+     "sense": "intention"
+    },
+    {
+     "code": "H5081G",
+     "sense": "willing"
+    },
+    {
+     "code": "H5144A",
+     "sense": "to dedicate"
+    },
+    {
+     "code": "H5779",
+     "sense": "to plan"
+    },
+    {
+     "code": "H6246",
+     "sense": "to plan"
+    },
+    {
+     "code": "H6634",
+     "sense": "to will"
+    },
+    {
+     "code": "H6942H",
+     "sense": "dedicate"
+    },
+    {
+     "code": "H7148",
+     "sense": "chosen"
+    }
+   ],
+   "verses": 468,
+   "item": "OT-108.3"
+  }
+ ],
+ "how": "Fill each item's `record` with one of {\"new\": {...}}, {\"table\": \"...\", \"id\": n} or {\"reason\": \"...\"}, then Reading.ps1 -Step Record -Label m64-willing -File <this file>. New open items go in `new_items` (the Open-Item.ps1 -Action Add shape, D-b).",
+ "new_items": [],
+ "sections": {
+  "hit_unread": {
+   "guide": "A strand hit with no face and no reason. Give the hit its face (and the observation it goes into), or the reason it has none.",
+   "records_in": [
+    "reading_strand_hit"
+   ],
+   "items": []
+  },
+  "meaning_missing": {
+   "guide": "A word in scope with no meaning senses (or, for Greek, no Mounce entry). Pull it through the spine route and name the row, or give the reason it is not needed for this reading.",
+   "records_in": [
+    "strong_meaning_tree",
+    "strong_lexicon"
+   ],
+   "items": []
+  },
+  "not_read": {
+   "guide": "A verse with no observation and no strand face. Read it in its passage; record what it states about the inner being (a new observation), name an existing observation that already covers it, or give the reason it holds nothing.",
+   "records_in": [
+    "ib_observation"
+   ],
+   "items": [
+    {
+     "verse": "Lev 26:21",
+     "words": [
+      "contrary (H7147, M06)",
+      "listen (H8085G, M41)",
+      "sins (H2403B, M56)",
+      "will (H0014, M64)"
+     ],
+     "text": "“Then if you walk contrary to me and will not listen to me, I will continue striking you, sevenfold for your sins.",
+     "known": "file lines: 0",
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "1Ch 19:19",
+     "words": [
+      "became subject (H5647G, M36)",
+      "save (H3467, M45)",
+      "willing (H0014, M64)"
+     ],
+     "text": "And when the servants of Hadadezer saw that they had been defeated by Israel, they made peace with David and became subject to him. So the Syrians were not willing to save the Ammonites anymore.",
+     "known": "file lines: 0",
+     "record": {
+      "table": "ib_observation",
+      "id": 12498
+     }
+    }
+   ]
+  },
+  "open_item": {
+   "guide": "An open item that matches the scope: read for what it asks, and record what the reading found (an observation, or a response of kind touched). It is not closed here: closing is decided in synergy (gate 2).",
+   "records_in": [
+    "ib_observation",
+    "escalation_thread_item_response"
+   ],
+   "items": [
+    {
+     "item": "OT-108.3",
+     "value": "M64",
+     "read_for": null,
+     "note": "Will & Resolve: 13 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M64 - will-resolve/m64-choose-test-reading-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-v3-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch1-isaiah-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch2-psalm-promise-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch3-own-accord-together-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch4-job-weighed-by-another-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2b-reading-batch1-chosen-ot-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2b-reading-batch2-chosen-nt-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch1-chosen-place-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch2-others-ot-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch3-others-nt-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md",
+     "verses": [
+      "Gen 24:5",
+      "Gen 24:8",
+      "Exo 10:27",
+      "Exo 35:5",
+      "Exo 35:22",
+      "Lev 26:21",
+      "Deu 1:26",
+      "Deu 2:30",
+      "Deu 10:10",
+      "Deu 13:8",
+      "Deu 23:5",
+      "Deu 25:7",
+      "Deu 29:20",
+      "Jos 24:10",
+      "Judg 11:17",
+      "Judg 19:10",
+      "Judg 19:25",
+      "Judg 20:13",
+      "1Sa 15:9",
+      "1Sa 22:17",
+      "1Sa 26:23",
+      "1Sa 31:4",
+      "2Sa 2:21",
+      "2Sa 6:10",
+      "2Sa 12:17",
+      "2Sa 13:14",
+      "2Sa 13:16",
+      "2Sa 13:25",
+      "2Sa 14:29",
+      "2Sa 23:16",
+      "2Sa 23:17",
+      "1Ki 20:8",
+      "1Ki 22:49",
+      "2Ki 8:19",
+      "2Ki 13:23",
+      "2Ki 24:4",
+      "1Ch 10:4",
+      "1Ch 11:18",
+      "1Ch 11:19",
+      "1Ch 19:19",
+      "1Ch 28:21",
+      "2Ch 21:7",
+      "2Ch 29:31",
+      "Job 39:9",
+      "Psa 51:12",
+      "Psa 81:11",
+      "Pro 1:10",
+      "Pro 1:25",
+      "Pro 1:30",
+      "Pro 6:35",
+      "Isa 1:19",
+      "Isa 28:12",
+      "Isa 30:9",
+      "Isa 30:15",
+      "Isa 42:24",
+      "Eze 3:7",
+      "Eze 20:8",
+      "Dan 4:17",
+      "Dan 4:25",
+      "Dan 4:32",
+      "Dan 4:35",
+      "Dan 5:19",
+      "Dan 5:21",
+      "Dan 7:19"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 677,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Batch B of #2247 (the willing words H0014 abah, H6634, H5081G nadib; 64 verses): the October reading m64-will-reading-v1 (Part 1, Hebrew and Aramaic) carried into 11 observations, one for each of its groups; all 57 gap verses recorded, and 7 verses already observed for other words grounded in them for the will word. Plan/devise/purpose (C) and dedicate (D) remain."
+      }
+     }
+    },
+    {
+     "item": "OT-108.4",
+     "value": "M72",
+     "read_for": null,
+     "note": "Authority & Dominion: 3 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M72 - authority-dominion/m72-group-B-trial-reading-v1-20261012.md; _analytics/Clusters/M72 - authority-dominion/m72-group-B-reading-v1-20261012.md; _analytics/Clusters/M72 - authority-dominion/ot-97-38-m72-forward-marks-reading-v1-20261018.md",
+     "verses": [
+      "Deu 2:30",
+      "Jos 24:10",
+      "Judg 11:17",
+      "1Sa 22:17",
+      "1Sa 26:23",
+      "2Sa 13:25",
+      "2Sa 14:29",
+      "1Ch 28:21",
+      "Dan 4:17",
+      "Dan 4:25",
+      "Dan 4:32",
+      "Dan 5:21"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 678,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Read with M64 in batch B: M72 words stand in 12 willing verses (kings refusing a request, the king's command refused, the Most High ruling the kingdom, Dan 4:17), recorded under the M64 group observations; the M72 files themselves are not read."
+      }
+     }
+    },
+    {
+     "item": "OT-108.7",
+     "value": "M07",
+     "read_for": null,
+     "note": "Shame & Confusion: 2 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M07 - shame-confusion/m07-m53-trial-reading-v1-20261019.md; _analytics/Clusters/M07 - shame-confusion/m07-m53-batch1-reading-v1-20261019.md",
+     "verses": [
+      "Deu 23:5"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 679,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Read with M64 in batch B: Deu 23:5 (the curse turned into a blessing, the Lord would not listen to Balaam) recorded under the M64 observation on God's will and its reasons; the M07 files are not read."
+      }
+     }
+    },
+    {
+     "item": "OT-108.8",
+     "value": "M18",
+     "read_for": null,
+     "note": "Desire & Longing: 20 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M18 - desire-longing/m18-group-A-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B1-delight-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B2-pleasant-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B-correction-reread-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-D-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-E-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-F-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-G-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-held-items-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-m02-inner-being-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-m25-inner-being-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B-no-carrier-reading-v1-20261011.md; _analytics/Clusters/M18 - desire-longing/m18-group-B-remaining-role-reading-v2-20261011.md; _analytics/Clusters/M18 - desire-longing/m18-group-C-reading-batch1-v1-20261012.md; _analytics/Clusters/M18 - desire-longing/m18-group-C-reading-batch2-3-v1-20261012.md; _analytics/Clusters/M18 - desire-longing/m18-m72-shared-reading-v1-20261012.md; _analytics/Clusters/M18 - desire-longing/ot-105-9-m18-poor-seen-reading-v1-20261018.md; _analytics/Clusters/M18 - desire-longing/ot-97-68-m18-forward-mark-reading-v1-20261018.md; _analytics/Clusters/M18 - desire-longing/ot-98-2-3-m72-shared-reading-v1-20261019.md; _analytics/Clusters/M18 - desire-longing/ot-98-2-data-verses-reading-v1-20261019.md",
+     "verses": [
+      "Deu 25:7",
+      "Deu 29:20"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 680,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Read with M64 in batch B: Deu 25:7 (does not wish to take his brother's wife) recorded under the M64 observation on a refusal that costs; Deu 29:20 grounded for its will word; the M18 files are not read."
+      }
+     }
+    },
+    {
+     "item": "OT-103.40",
+     "value": "M60: H0639G+H2534+H6225+... x H3722A+H5375I+H5547+... (8 verses)",
+     "read_for": "how M60 Confession & Forgiveness and anger operate together in these 8 shared verses, face by face: Slow to anger: the name, and forbearance (2); God's anger restrained, deferred, turned, ended (2); God angry with his people as a whole (1); God's anger called down on others (1); and 2 more faces",
+     "note": "how M60 Confession & Forgiveness and anger operate together in these 8 shared verses, face by face: Slow to anger: the name, and forbearance (2); God's anger restrained, deferred, turned, ended (2); God angry with his people as a whole (1); God's anger called down on others (1); and 2 more faces",
+     "verses": [
+      "Deu 29:20"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 681,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Deu 29:20 read in batch B for its will word only (the Lord will not be willing to forgive the self-blessing heart), grounded in the M64 observation on God's will; the M60 and anger faces are not read here."
+      }
+     }
+    },
+    {
+     "item": "OT-97.64",
+     "value": "Psa 81:11-14",
+     "read_for": "Israel would not submit and was given over to stubborn hearts (81:11-12); what the subduing of their enemies (81:14) hangs on: the stubbornness (M30)",
+     "note": "Israel would not submit and was given over to stubborn hearts (81:11-12); what the subduing of their enemies (81:14) hangs on: the stubbornness (M30)",
+     "verses": [
+      "Psa 81:11"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 682,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Psa 81:11 read in batch B: Israel would not submit, and was given over to stubborn hearts (81:12), recorded under the M64 observation on refusing God's good; what 81:14 hangs on is not read here."
+      }
+     }
+    },
+    {
+     "item": "OT-103.1",
+     "value": "M58: H0639G+H3707+H2734+... x H7489A+H7563+H7451H+... (73 verses)",
+     "read_for": "how M58 Wickedness and anger operate together in these 73 shared verses, face by face: People provoke God to anger: what provokes (16); God angry with his people as a whole (4); Anger in the lists of what is put away (3); God's anger kindled against his people: the formula, with cause and act (3); and 35 more faces",
+     "note": "how M58 Wickedness and anger operate together in these 73 shared verses, face by face: People provoke God to anger: what provokes (16); God angry with his people as a whole (4); Anger in the lists of what is put away (3); God's anger kindled against his people: the formula, with cause and act (3); and 35 more faces",
+     "verses": [
+      "Eze 20:8"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 683,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Eze 20:8 read in batch B for its will word only (not willing to listen to me), grounded in the M64 observation on refusing God's good; the M58 and anger faces are not read here."
+      }
+     }
+    },
+    {
+     "item": "OT-103.9",
+     "value": "M30: H0639G+H2534+H2734+... x H5800A+H4784+H3988A+... (42 verses)",
+     "read_for": "how M30 Rebellion & Stubbornness and anger operate together in these 42 shared verses, face by face: People provoke God to anger: what provokes (4); God's wrath held back, not stirred, not poured (3); God angry with his people as a whole (3); God's anger in lament, prayer and thanks (3); and 20 more faces",
+     "note": "how M30 Rebellion & Stubbornness and anger operate together in these 42 shared verses, face by face: People provoke God to anger: what provokes (4); God's wrath held back, not stirred, not poured (3); God angry with his people as a whole (3); God's anger in lament, prayer and thanks (3); and 20 more faces",
+     "verses": [
+      "Eze 20:8"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 684,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Eze 20:8 read in batch B for its will word only (they rebelled and were not willing to listen), grounded in the M64 observation on refusing God's good; the M30 and anger faces are not read here."
+      }
+     }
+    },
+    {
+     "item": "OT-103.11",
+     "value": "M41: H0639G+H2734+H2534+... x H8085G+H8085H+H4617+... (39 verses)",
+     "read_for": "how M41 Being Heard and anger operate together in these 39 shared verses, face by face: God's wrath comes upon, goes out against or uproots his people: the cause named (4); Anger kindled by what is heard or seen (3); Indignation for one wronged (3); Lament (qinah): the word is lament, not anger (3); and 24 more faces",
+     "note": "how M41 Being Heard and anger operate together in these 39 shared verses, face by face: God's wrath comes upon, goes out against or uproots his people: the cause named (4); Anger kindled by what is heard or seen (3); Indignation for one wronged (3); Lament (qinah): the word is lament, not anger (3); and 24 more faces",
+     "verses": [
+      "Eze 20:8"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 685,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Eze 20:8 read in batch B for its will word only (not willing to listen to me), grounded in the M64 observation on refusing God's good; the M41 and anger faces are not read here."
+      }
+     }
+    },
+    {
+     "item": "OT-108.6",
+     "value": "M09",
+     "read_for": null,
+     "note": "Humility & Lowliness: 7 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch1-reading-v1-20261015.md; _analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch2-reading-v1-20261015.md; _analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch3-reading-v1-20261015.md; _analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch4-reading-v1-20261015.md; _analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch5-reading-v1-20261015.md; _analytics/Clusters/M09 - humility-lowliness/m09-no-other-mcode-reading-v1-20261015.md; _analytics/Clusters/M09 - humility-lowliness/ot-97-17-m09-forward-marks-reading-v1-20261018.md",
+     "verses": [
+      "Dan 4:17",
+      "Dan 5:19"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 686,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "response": "Read with M64 in batch B: Dan 4:17 (sets over it the lowliest of men) and Dan 5:19 recorded under the M64 observation on the absolute human will under the Most High; the M09 files are not read."
+      }
+     }
+    }
+   ]
+  },
+  "read_in_files_only": {
+   "guide": "A verse the cluster files read (their lines are given) with no observation in the tables. Carry the reading into a table: a new observation from what the files say and the verse states, an existing observation, or the reason the files' reading holds nothing.",
+   "records_in": [
+    "ib_observation"
+   ],
+   "items": [
+    {
+     "verse": "Gen 24:5",
+     "words": [
+      "willing (H0014, M64)"
+     ],
+     "text": "The servant said to him, “ Perhaps the woman may not be willing to follow me to this land. Must I then take your son back to the land from which you came?”",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:99 - **Gen 24.** The servant looks ahead to another person's will: *\"Perhaps the woman may not be willing to follow me to this land\"* (24:5). Abraham answers with what God will do, *\"he will send his angel before you\"* (24:7), and with a way out: *\"if the woman is not willing to follow you, then you will be free from this oath of mine\"* (24:8). The woman's will is allowed for in the plan.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:184 5. **Gen 24:5–8.** Planning ahead allows for another person's will (*\"Perhaps the woman may not be willing\"*)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12498
+     }
+    },
+    {
+     "verse": "Gen 24:8",
+     "words": [
+      "free (H5352, M26)",
+      "willing (H0014, M64)"
+     ],
+     "text": "But if the woman is not willing to follow you, then you will be free from this oath of mine; only you must not take my son back there.”",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:99 - **Gen 24.** The servant looks ahead to another person's will: *\"Perhaps the woman may not be willing to follow me to this land\"* (24:5). Abraham answers with what God will do, *\"he will send his angel before you\"* (24:7), and with a way out: *\"if the woman is not willing to follow you, then you will be free from this oath of mine\"* (24:8). The woman's will is allowed for in the plan.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:184 5. **Gen 24:5–8.** Planning ahead allows for another person's will (*\"Perhaps the woman may not be willing\"*)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12498
+     }
+    },
+    {
+     "verse": "Exo 10:27",
+     "words": [
+      "hardened (H2388G, M23)",
+      "he would (H0014, M64)",
+      "heart (H3820A, M47)"
+     ],
+     "text": "But the Lord hardened Pharaoh’s heart, and he would not let them go.",
+     "file_lines": [
+      "_analytics/Clusters/M02 - anger-wrath/wa-investigation-god-hardening-own-heart-findings-v1-20260929.md:46   - Pharaoh (Exo 4:21; 7:3; 9:12; 10:1, 20, 27; 11:10; 14:4, 8) and the Egyptians (14:17)",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-life-body-condition-batchG-v3-20260928.md:250 | **Hardening** | \"I will **harden** [*strengthen*] his heart\" (Exo 4:21); \"Pharaoh's heart **was hardened**\" (Exo 7:13, 22; 8:19; 9:12, 35; 10:20, 27; 11:10; 14:4, 8, 17); \"to **harden** their hearts … that they should come against Israel\" (Jos 11:20); \"you shall not **harden** your heart or shut your hand against your poor brother\" (Deu 15:7); Zedekiah \"**hardened** his heart against turning to the Lord\" (2Ch 36:13) |",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:181    - H0014 \"be willing\" filed under M30 because it appears as \"would not\" (1Ch 11:19; 2Sa 23:17 \"he would not drink it\"). It is kept only where it is the heart's or spirit's refusal (Exo 10:27; Deu 2:30; Eze 3:7).",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:694   - \"the Lord hardened Pharaoh's heart, and he would not let them go\" (Exo 10:27); \"Pharaoh's heart is hardened; he refuses\" (Exo 7:14)",
+      "_analytics/Clusters/M64 - will-resolve/m64-include-verses-placement-proposal-v1-20261008.md:27 | Deu 2:30 | Ch 6 v10 quotes the will word, \"would not let us pass by him\", with the hardened spirit; Ch 4 v12 has the same for Exo 10:27 | Carried for the will reading since #1986. |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:41 | Exo 10:27 | *ʾāḇâ* \"would (not)\" | Ch 4 v12 *A hardened heart will not*: \"he would not let them go\" |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:57 ### Exo 10:27 · read",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md:82 | Exo 10:27 | H0014 be willing \"he would\" | H3820A heart \"heart\" |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-uncited-verses-v1-20261006.md:14 ## Exo 10:27",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:375 > **Q2 M64: Include: new (#1986).** Corroborates Ch 11 §1 *God hardens*. New, for #1986: an unwillingness whose cause and purpose the verse states (God hardened his spirit, to give him into Israel's hand); Exo 10:27 has the same two things.",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:379 Moses sent *\"words of peace\"* (v26) and asked to pass by the road only (vv27–29). *\"But Sihon … would not let us pass by him, for the Lord your God hardened his spirit and made his heart obstinate, that he might give him into your hand\"* (v30).",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:387 **Not yet carried:** the unwillingness and its stated cause. This verse is in the #1986 will set. Exo 10:27 in the same set has the same two things in one verse: *\"the Lord hardened Pharaoh's heart, and he would not let them go\"*.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:54 - **A request:** *\"he would not let them go\"* (Exo 10:27); *\"the king of Edom would not listen … he would not consent\"* (Judg 11:17); *\"Joab would not come to him\"* (2Sa 14:29).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:63 - *\"the Lord hardened Pharaoh's heart, and he would not let them go\"* (Exo 10:27)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:84 - *\"the Lord hardened Pharaoh's heart, and he would not let them go\"* (Exo 10:27). Pharaoh had offered part (*\"only let your flocks and your herds remain behind\"*, 10:24). Moses would not bargain: *\"not a hoof shall be left behind\"* (10:26).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:199   - Willing: the heart or spirit hardened, stubborn or lifted up (Exo 10:27; Deu 2:30; Eze 3:7; Psa 81:12; Deu 29:19; Dan 5:20); the willing heart and spirit (Exo 35:21–22; 2Ch 29:31; Psa 51:12).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:30 - **9 of the 29 marked M64 × M47 verses** (`m64-m47-marked-verses-v1-20261006`) are in this set: Exo 10:27, Exo 35:5, Exo 35:22, 2Sa 23:17, 1Ch 11:19, 2Ch 29:31, Eze 3:7, Dan 5:21, 1Co 12:11."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12494,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "God's act on the heart is named beside the person's \"would not\": \"the Lord hardened Pharaoh's heart, and he would not let them go\" (Exo 10:27); \"Sihon the king of Heshbon would not let us pass by him, for the Lord your God hardened his spirit and made his heart obstinate, that he might give him into your hand\" (Deu 2:30).",
+       "meaning": "The verses give both the hardened heart or spirit and the unwillingness, and in Deu 2:30 the purpose; they do not explain more.",
+       "setting": "Exodus 10 (after Pharaoh's partial offer, 10:24-26); Deuteronomy 2 (after Moses' words of peace, 2:26-29).",
+       "implication": "The unwilling will and the state of the heart and spirit are named together.",
+       "parties": "God; Pharaoh; Sihon; Moses and Israel",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Exo 10:27",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Deu 2:30",
+         "strong": "H0014"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Exo 35:5",
+     "words": [
+      "generous (H5081G, M64)",
+      "heart (H3820A, M47)"
+     ],
+     "text": "Take from among you a contribution to the Lord. Whoever is of a generous heart, let him bring the Lord’s contribution: gold, silver, and bronze;",
+     "file_lines": [
+      "_analytics/Clusters/M47 - inner-seat/M47-inner-seat-depiction-v1-20260927.md:104 - *Being moved to give:* \"everyone whose heart stirred him … and everyone whose spirit moved him\" (Exo 35:21); also Exo 25:2; 35:5, 22, 26, 29; 36:2; 2Ki 12:4 (\"the money that a man's heart prompts him to bring\").",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-moral-condition-batchD-v2-20260928.md:120 | **Evidence** | 4 pairs at d1:<br>• \"whoever is of a generous heart\" (Exo 35:5)<br>• \"all who were of a willing heart\" (Exo 35:22; 2Ch 29:31)<br>• \"uphold me with a willing spirit\" (Psa 51:12) [H1]<br>This is the freewill family of Batch C §1.4 (*nādav*, Exo 35:21, 29). |",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-moral-condition-batchD-v2-20260928.md:889 - \"Whoever is of a generous heart\" (Exo 35:5); \"all who were of a willing heart\" (Exo 35:22; 2Ch 29:31)",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:28 | **Covered by a parallel verse** that is placed | 3 | Exo 35:5, 1Ch 11:19, 2Ch 6:38 |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:68 | Exo 35:5 | Exo 35:22 | Moses' call, *\"Whoever is of a generous heart, let him bring\"*. It was read with 35:21–22 in the will reading (`m64-will-reading-v1`, Part 1). 35:22 is placed. |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:66 ### Exo 35:5 · read",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md:83 | Exo 35:5 | H5081G noble: willing \"generous\" | H3820A heart \"heart\" |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-uncited-verses-v1-20261006.md:23 ## Exo 35:5",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:369 **Not yet carried:** 36:2 sets God putting skill in the mind beside the heart that \"stirred him up to come\". This is a willing to come. It belongs to the will reading (#1986), where Exo 35:5 and 35:22 (H5081G, \"willing\") are in the set.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:76 - *\"Whoever is of a generous heart, let him bring the Lord's contribution\"* (Exo 35:5)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:91 - **Moved from inside:** *\"they came, everyone whose heart stirred him, and everyone whose spirit moved him\"* (Exo 35:21), then *\"All who were of a willing heart brought\"* (35:22). Moses had said *\"Whoever is of a generous heart, let him bring\"* (35:5).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:30 - **9 of the 29 marked M64 × M47 verses** (`m64-m47-marked-verses-v1-20261006`) are in this set: Exo 10:27, Exo 35:5, Exo 35:22, 2Sa 23:17, 1Ch 11:19, 2Ch 29:31, Eze 3:7, Dan 5:21, 1Co 12:11."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12495,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "The willing heart and spirit (nādîb): \"Whoever is of a generous heart, let him bring\" (Exo 35:5); \"All who were of a willing heart brought\" (Exo 35:22), after \"everyone whose heart stirred him\" (35:21); after consecration, \"all who were of a willing heart brought burnt offerings\" (2Ch 29:31); with God's plan for the temple, \"with you in all the work will be every willing man who has skill\" (1Ch 28:21); and asked of God, \"uphold me with a willing spirit\" (Psa 51:12).",
+       "meaning": "Willingness rises in the person, the heart stirring them to give, and is also upheld by God in prayer; a plan given by God and the willing who carry it out stand together.",
+       "setting": "Exodus 35 (the tabernacle offering); 1 Chronicles 28 (the temple plan, 28:19); 2 Chronicles 29 (Hezekiah); Psalm 51.",
+       "implication": "The willing heart is named with giving, consecration and skill for service.",
+       "parties": "the people of Israel; David and Solomon; Hezekiah's assembly; the psalmist and God",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Exo 35:5",
+         "strong": "H5081G"
+        },
+        {
+         "verse": "Exo 35:22",
+         "strong": "H5081G"
+        },
+        {
+         "verse": "1Ch 28:21",
+         "strong": "H5081G"
+        },
+        {
+         "verse": "Psa 51:12",
+         "strong": "H5081G"
+        },
+        {
+         "verse": "2Ch 29:31",
+         "strong": "H5081G"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Exo 35:22",
+     "words": [
+      "heart (H3820A, M47)",
+      "willing (H5081G, M64)"
+     ],
+     "text": "So they came, both men and women. All who were of a willing heart brought brooches and earrings and signet rings and armlets, all sorts of gold objects, every man dedicating an offering of gold to the Lord.",
+     "file_lines": [
+      "_analytics/Clusters/M18 - desire-longing/m18-m47-validation-register-v1-20261009.md:28 | Carried by a parallel | 8 | For example Exo 25:2 by Exo 35:21–22, and 2Ch 7:10 by 1Ki 8:66 |",
+      "_analytics/Clusters/M47 - inner-seat/M47-inner-seat-depiction-v1-20260927.md:104 - *Being moved to give:* \"everyone whose heart stirred him … and everyone whose spirit moved him\" (Exo 35:21); also Exo 25:2; 35:5, 22, 26, 29; 36:2; 2Ki 12:4 (\"the money that a man's heart prompts him to bring\").",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-moral-condition-batchD-v2-20260928.md:120 | **Evidence** | 4 pairs at d1:<br>• \"whoever is of a generous heart\" (Exo 35:5)<br>• \"all who were of a willing heart\" (Exo 35:22; 2Ch 29:31)<br>• \"uphold me with a willing spirit\" (Psa 51:12) [H1]<br>This is the freewill family of Batch C §1.4 (*nādav*, Exo 35:21, 29). |",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-moral-condition-batchD-v2-20260928.md:889 - \"Whoever is of a generous heart\" (Exo 35:5); \"all who were of a willing heart\" (Exo 35:22; 2Ch 29:31)",
+      "_analytics/Clusters/M64 - will-resolve/m64-include-verses-placement-proposal-v1-20261008.md:67 Add a bullet after the Exo 35:21–22 bullet:",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:42 | Exo 35:22 | *nāḏîḇ* \"willing\" | Ch 4 v12 *A willing heart gives*; 10.7 v16 *Willing*, *The willing heart* |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:68 | Exo 35:5 | Exo 35:22 | Moses' call, *\"Whoever is of a generous heart, let him bring\"*. It was read with 35:21–22 in the will reading (`m64-will-reading-v1`, Part 1). 35:22 is placed. |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:75 ### Exo 35:22 · read",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md:84 | Exo 35:22 | H5081G noble: willing \"willing\" | H3820A heart \"heart\" |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-uncited-verses-v1-20261006.md:32 ## Exo 35:22",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:77 - *\"All who were of a willing heart brought\"* (Exo 35:22; also 2Ch 29:31; 1Ch 28:21)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:91 - **Moved from inside:** *\"they came, everyone whose heart stirred him, and everyone whose spirit moved him\"* (Exo 35:21), then *\"All who were of a willing heart brought\"* (35:22). Moses had said *\"Whoever is of a generous heart, let him bring\"* (35:5).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:199   - Willing: the heart or spirit hardened, stubborn or lifted up (Exo 10:27; Deu 2:30; Eze 3:7; Psa 81:12; Deu 29:19; Dan 5:20); the willing heart and spirit (Exo 35:21–22; 2Ch 29:31; Psa 51:12).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:216 | *nāḏîḇ* | a heart moved to give (Exo 35:22); a willing spirit asked of God (Psa 51:12) | Whether it rises in the person (*\"whose heart stirred him\"*) or is upheld by God (*\"uphold me\"*). Both are said |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:30 - **9 of the 29 marked M64 × M47 verses** (`m64-m47-marked-verses-v1-20261006`) are in this set: Exo 10:27, Exo 35:5, Exo 35:22, 2Sa 23:17, 1Ch 11:19, 2Ch 29:31, Eze 3:7, Dan 5:21, 1Co 12:11."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12495
+     }
+    },
+    {
+     "verse": "Deu 1:26",
+     "words": [
+      "Yet you would (H0014, M64)",
+      "command (H6310I, M65)",
+      "rebelled (H4784, M30)"
+     ],
+     "text": "“ Yet you would not go up, but rebelled against the command of the Lord your God.",
+     "file_lines": [
+      "_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-phenomena-v3-20260928.md:489   - with rebellion: \"you would not go up, but rebelled\" (Deu 1:26)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:104 4. **Placed already** (in the narrative for another reason, #1987): Deu 1:26; 2:30; 1Sa 31:4; Psa 51:12; Pro 6:35; Dan 5:19; Act 25:20; 1Ti 2:8. Each still needs reading for its will word.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:63 - **Melted hearts:** *\"Yet you would not go up, but rebelled\"* (Deu 1:26). Then *\"you murmured in your tents\"* (1:27) and *\"Our brothers have made our hearts melt\"* (1:28).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:68 - **The land:** the spies brought fruit and said *\"It is a good land\"* (Deu 1:25), *\"Yet you would not go up\"* (1:26).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:204 - **Fear.** In the plan set, fear is mostly in the one plotted against (*\"terror on every side\"*, Psa 31:13). In the will set, fear stops the willing: the armor-bearer (1Sa 31:4); David and the ark (2Sa 6:9–10, changed by what he heard, 6:12); melted hearts (Deu 1:26–28). For 10.12.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:227 - **Already in the narrative for another reason** (#1987): Deu 1:26; 2:30; 1Sa 31:4; Psa 51:12; Pro 6:35; Dan 5:19; Act 25:20; 1Ti 2:8; Act 27:43 (as a plan verse in 10.10). Each is now read for its will word above.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:42 | Deu 1:26 | \"would\" (not go up) | 10.5 Speaking, *Grumbling* | \"you would not go up, but rebelled\", as what went with grumbling | yes, but for grumbling |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "What God offered and was refused was good: the land, \"Yet you would not go up, but rebelled\" (Deu 1:26); rest, \"This is rest; give rest to the weary,\" \"yet they would not hear\" (Isa 28:12); \"In returning and rest you shall be saved\" \"But you were unwilling\" (Isa 30:15), with their own plan, \"We will flee upon horses\" (30:16); \"children unwilling to hear the instruction of the Lord\" (Isa 30:9); \"Israel would not submit to me\" (Psa 81:11), \"So I gave them over to their stubborn hearts, to follow their own counsels\" (81:12); \"would have none of my reproof\" (Pro 1:25), \"would have none of my counsel\" (Pro 1:30); \"whose law they would not obey\" (Isa 42:24); \"will not listen to me\" (Lev 26:21); \"not willing to listen to me: because all the house of Israel have a hard forehead and a stubborn heart\" (Eze 3:7); \"they rebelled against me and were not willing to listen to me\" (Eze 20:8). Once the will is invited with if: \"If you are willing and obedient, you shall eat the good of the land\" (Isa 1:19).",
+       "meaning": "Refusing God is refusing his good (land, rest, counsel); the refusal is set beside the people's own plans and counsels, and beside a hard or stubborn heart.",
+       "setting": "Leviticus 26, Deuteronomy 1, Psalm 81, Proverbs 1, Isaiah 1, 28, 30 and 42, Ezekiel 3 and 20.",
+       "implication": "Pro 1:29-31 and Psa 81:11-12 set choosing, willing and one's own counsels in one sentence, and being given over to them is what follows.",
+       "parties": "Israel; God; the prophets",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Deu 1:26",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Isa 28:12",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Isa 30:9",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Isa 30:15",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Psa 81:11",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Pro 1:25",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Pro 1:30",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Isa 1:19",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Isa 42:24",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Lev 26:21",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Eze 3:7",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Eze 20:8",
+         "strong": "H0014"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Deu 2:30",
+     "words": [
+      "hand (H3027H, M72)",
+      "heart (H3824, M47)",
+      "king (H4428G, M72)",
+      "obstinate (H0553, M23)",
+      "spirit (H7307G, M47)",
+      "would (H0014, M64)"
+     ],
+     "text": "But Sihon the king of Heshbon would not let us pass by him, for the Lord your God hardened his spirit and made his heart obstinate, that he might give him into your hand, as he is this day.",
+     "file_lines": [
+      "_analytics/Clusters/M02 - anger-wrath/wa-investigation-god-hardening-own-heart-findings-v1-20260929.md:47   - Sihon: \"the Lord your God **hardened his spirit** and made his heart obstinate\" (Deu 2:30)",
+      "_analytics/Clusters/M18 - desire-longing/m18-m47-validation-worksheet-v1-20261009.md:712 - batch C [11. Cross-cutting observations for Batch C [Claude reading]]: 3. **The human spirit carries energy and disposition, more than choice.** It is \"moved\" to give (Exo 35:21), \"fervent\" (Rom 12:11), \"willing\" against weak flesh (Mat 26:41), patient or proud (Ecc 7:8), ruled (Pro 16:32), hardened with the heart (Deu 2:30), not faithful (Psa 78:8), and crushed or contrite (Psa 34:18; 51:17). **Planning and choosing are rarely predicated of the human spirit** [obser",
+      "_analytics/Clusters/M18 - desire-longing/m18-m47-validation-worksheet-v1-20261009.md:713 - batch C [11. Cross-cutting observations for Batch C [Claude reading]]: 4. **Heart and spirit are paired in the orientation verses** (Exo 35:21; Deu 2:30; Psa 51:17; 78:8; Isa 57:15; Eze 11:19; 36:26). **Heart and soul are paired in the \"all your heart and all your soul\" formula** for seeking and returning (Deu 4:29; 1Ki 8:48; 2Ch 15:12).",
+      "_analytics/Clusters/M18 - desire-longing/m18-m47-validation-worksheet-v1-20261009.md:786 - batch C [11. Cross-cutting observations for Batch C [Claude reading]]: 3. **The human spirit carries energy and disposition, more than choice.** It is \"moved\" to give (Exo 35:21), \"fervent\" (Rom 12:11), \"willing\" against weak flesh (Mat 26:41), patient or proud (Ecc 7:8), ruled (Pro 16:32), hardened with the heart (Deu 2:30), not faithful (Psa 78:8), and crushed or contrite (Psa 34:18; 51:17). **Planning and choosing are rarely predicated of the human spirit** [obser",
+      "_analytics/Clusters/M18 - desire-longing/m18-m47-validation-worksheet-v1-20261009.md:962 - batch C [11. Cross-cutting observations for Batch C [Claude reading]]: 3. **The human spirit carries energy and disposition, more than choice.** It is \"moved\" to give (Exo 35:21), \"fervent\" (Rom 12:11), \"willing\" against weak flesh (Mat 26:41), patient or proud (Ecc 7:8), ruled (Pro 16:32), hardened with the heart (Deu 2:30), not faithful (Psa 78:8), and crushed or contrite (Psa 34:18; 51:17). **Planning and choosing are rarely predicated of the human spirit** [obser",
+      "_analytics/Clusters/M47 - inner-seat/M47-inner-seat-depiction-v1-20260927.md:300 - *Hardened by God:* \"the Lord your God hardened his spirit and made his heart obstinate\" (Deu 2:30).",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-life-body-condition-batchG-v3-20260928.md:254 - \"the Lord your God **hardened his spirit** and **made his heart obstinate** [*strong*]\" (Deu 2:30) [H1]",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-setting-narrative-batchH-v1-20260928.md:83   - \"the Lord your God **hardened his spirit and made his heart obstinate**, that he might give him into your hand\" (Deu 2:30) [H1] (Sihon)",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:181    - H0014 \"be willing\" filed under M30 because it appears as \"would not\" (1Ch 11:19; 2Sa 23:17 \"he would not drink it\"). It is kept only where it is the heart's or spirit's refusal (Exo 10:27; Deu 2:30; Eze 3:7).",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:695   - \"the Lord your God hardened his spirit and made his heart obstinate\" (Deu 2:30) [H1] — **spirit and heart hardened together**",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:762 3. **The human spirit carries energy and disposition, more than choice.** It is \"moved\" to give (Exo 35:21), \"fervent\" (Rom 12:11), \"willing\" against weak flesh (Mat 26:41), patient or proud (Ecc 7:8), ruled (Pro 16:32), hardened with the heart (Deu 2:30), not faithful (Psa 78:8), and crushed or contrite (Psa 34:18; 51:17). **Planning and choosing are rarely predicated of the human spirit** [observation, not a count].",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:763 4. **Heart and spirit are paired in the orientation verses** (Exo 35:21; Deu 2:30; Psa 51:17; 78:8; Isa 57:15; Eze 11:19; 36:26). **Heart and soul are paired in the \"all your heart and all your soul\" formula** for seeking and returning (Deu 4:29; 1Ki 8:48; 2Ch 15:12).",
+      "_analytics/Clusters/M64 - will-resolve/m64-include-verses-placement-proposal-v1-20261008.md:18 | **Already carried now**, nothing to add | 6 | Isa 42:1, Deu 2:30, 1Ch 28:9, 1Ch 29:18, Psa 32:2, Pro 1:29 (mostly; one line proposed in §3.11) |",
+      "_analytics/Clusters/M64 - will-resolve/m64-include-verses-placement-proposal-v1-20261008.md:27 | Deu 2:30 | Ch 6 v10 quotes the will word, \"would not let us pass by him\", with the hardened spirit; Ch 4 v12 has the same for Exo 10:27 | Carried for the will reading since #1986. |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md:59 | Deu 2:30 | H0014 be willing \"would\" | H7307G spirit \"spirit\"; H3824 heart \"heart\" | 6. The spirit · The human spirit · ¶10<br>9. Where the words part · Lines that are often drawn, but that I cannot find · ¶2<br>11. Patterns of the inner life · 1. The inner being is acted upon as much as it acts · ¶2 |",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:91 | Deu 2:30 | ✅ Accurate | Include: new (#1986) | M23 obstinate |",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:641 | Deu 2:30 | the hardened spirit (Ch 6, 9, 11) | no | the unwillingness and its stated cause (#1986) |",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:658 - **The other 17 have something the narrative does not carry for M64.** ~~In 6 of them the narrative never quotes the M64 word at all: Isa 42:1, Luk 10:42, Phili 1:22, Deu 2:30, Psa 32:2 and Isa 10:7.~~ *(v2: in 4 of them the narrative never quotes the M64 word: Isa 42:1, Luk 10:42, Phili 1:22 and Deu 2:30. Isa 10:7 is quoted in 10.13, and Psa 32:2's counting through Rom 4:8 in 10.9.)*",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:658 - **The other 17 have something the narrative does not carry for M64.** ~~In 6 of them the narrative never quotes the M64 word at all: Isa 42:1, Luk 10:42, Phili 1:22, Deu 2:30, Psa 32:2 and Isa 10:7.~~ *(v2: in 4 of them the narrative never quotes the M64 word: Isa 42:1, Luk 10:42, Phili 1:22 and Deu 2:30. Isa 10:7 is quoted in 10.13, and Psa 32:2's counting through Rom 4:8 in 10.9.)*",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:64 - *\"the Lord your God hardened his spirit and made his heart obstinate\"* (Deu 2:30)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:104 4. **Placed already** (in the narrative for another reason, #1987): Deu 1:26; 2:30; 1Sa 31:4; Psa 51:12; Pro 6:35; Dan 5:19; Act 25:20; 1Ti 2:8. Each still needs reading for its will word.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:21   - Sihon was asked to sell food and water and let Israel pass *\"only by the road\"* (Deu 2:27–29), and *\"would not let us pass\"* (2:30)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:85 - *\"the Lord your God hardened his spirit and made his heart obstinate\"* (Deu 2:30).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:87 In both, the verses name God's act on the heart or spirit beside the person's \"would not\". They give the purpose: *\"that he might give him into your hand\"* (Deu 2:30). They do not explain the rest. 13.1 already has the parallel, God acting on hearts (2Th 2:11; Rom 11:8).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:199   - Willing: the heart or spirit hardened, stubborn or lifted up (Exo 10:27; Deu 2:30; Eze 3:7; Psa 81:12; Deu 29:19; Dan 5:20); the willing heart and spirit (Exo 35:21–22; 2Ch 29:31; Psa 51:12).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:227 - **Already in the narrative for another reason** (#1987): Deu 1:26; 2:30; 1Sa 31:4; Psa 51:12; Pro 6:35; Dan 5:19; Act 25:20; 1Ti 2:8; Act 27:43 (as a plan verse in 10.10). Each is now read for its will word above.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:43 | Deu 2:30 | \"would\" (not let us pass) | Ch 6, Ch 9, Ch 11 | \"hardened his spirit and made his heart obstinate\" | no |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12494
+     }
+    },
+    {
+     "verse": "Deu 10:10",
+     "words": [
+      "destroy (H7843, M55)",
+      "listened (H8085G, M41)",
+      "unwilling (H0014, M64)"
+     ],
+     "text": "“ I myself stayed on the mountain, as at the first time, forty days and forty nights, and the Lord listened to me that time also. The Lord was unwilling to destroy you.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:68 - *\"The Lord was unwilling to destroy you\"* (Deu 10:10)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:142 - **After intercession:** *\"the Lord listened to me that time also. The Lord was unwilling to destroy you\"* (Deu 10:10).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:232   - **Also B:** Deu 10:10 (Moses' intercession), Deu 29:20 (the self-blessing heart), Dan 4:25 and 4:32 (the king's learning), Dan 5:21, Luk 22:42."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12497,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "God's will, and the reason each verse gives: after intercession, \"the Lord listened to me that time also. The Lord was unwilling to destroy you\" (Deu 10:10); for a promise, \"the Lord was not willing to destroy Judah, for the sake of David his servant\" (2Ki 8:19), \"because of the covenant that he had made with David\" (2Ch 21:7); in grace, \"the Lord was gracious to them and had compassion on them\" \"and would not destroy them\" (2Ki 13:23); out of love, \"the Lord your God would not listen to Balaam\" \"because the Lord your God loved you\" (Deu 23:5; Jos 24:10). And against: \"the Lord will not be willing to forgive him\" (Deu 29:20), of the one who \"blesses himself in his heart\" (29:19); \"he filled Jerusalem with innocent blood, and the Lord would not pardon\" (2Ki 24:4).",
+       "meaning": "God's not willing to destroy rests on intercession, promise, covenant, compassion and love; his not willing to forgive rests on a self-blessing stubborn heart and on innocent blood.",
+       "setting": "Deuteronomy, Joshua, Kings, Chronicles; route A (God's will), for 13.1.",
+       "implication": "The human heart is named in Deu 29:19-20 as what God's unwillingness answers.",
+       "parties": "God; Moses; David and his house; Balaam; Manasseh's Jerusalem; the self-blessing man",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Deu 10:10",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Ki 8:19",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Ch 21:7",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Ki 13:23",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Deu 23:5",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Jos 24:10",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Ki 24:4",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Deu 29:20",
+         "strong": "H0014"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Deu 13:8",
+     "words": [
+      "conceal (H3680, M45)",
+      "listen (H8085G, M41)",
+      "pity (H2347, M50)",
+      "spare (H2550, M05)",
+      "yield (H0014, M64)"
+     ],
+     "text": "you shall not yield to him or listen to him, nor shall your eye pity him, nor shall you spare him, nor shall you conceal him.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:27 - **An enticement:** *\"If your brother … or your friend who is as your own soul entices you secretly … you shall not yield to him\"* (Deu 13:6–8). *\"My son, if sinners entice you, do not consent\"* (Pro 1:10).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:48 - The faithful refuse enticement and demand (Deu 13:8; Pro 1:10; 1Ki 20:8).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:203   - Willing: pressing (Judg 19:7–9; 2Sa 13:25–27), enticing (Deu 13:6–8; Pro 1:10), the crowd (Mar 15:15), friends restraining or encouraging (Act 19:30–31; 18:27), objection (Act 28:19), consent sought so that the good is free (Phm 14)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12499
+     }
+    },
+    {
+     "verse": "Deu 23:5",
+     "words": [
+      "blessing (H1293, M80)",
+      "curse (H7045, M07)",
+      "listen (H8085G, M41)",
+      "loved (H0157G, M51)",
+      "would (H0014, M64)"
+     ],
+     "text": "But the Lord your God would not listen to Balaam; instead the Lord your God turned the curse into a blessing for you, because the Lord your God loved you.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:145 - **Out of love, against a hired curse:** *\"the Lord your God would not listen to Balaam; instead the Lord your God turned the curse into a blessing for you, because the Lord your God loved you\"* (Deu 23:5; Jos 24:10).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12497
+     }
+    },
+    {
+     "verse": "Deu 25:7",
+     "words": [
+      "refuses (H3985, M30)",
+      "will (H0014, M64)",
+      "wish (H2654A, M18)"
+     ],
+     "text": "And if the man does not wish to take his brother’s wife, then his brother’s wife shall go up to the gate to the elders and say, ‘My husband’s brother refuses to perpetuate his brother’s name in Israel; he will not perform the duty of a husband’s brother to me.’",
+     "file_lines": [
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B-bucket1-list-v1-20261009.md:58 | 22 | Deu 25:7 | H2654A \"wish\" | And if the man does not wish to take his brother’s wife, then his brother’s wife shall go up to the gate to the elders and say, ‘My husband’s brother refuses to perpetuate his brother’s name in Israel; he will not perform the duty of a husband’s brother to me.’ |  |",
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B-correction-reread-v1-20261009.md:32 | Deu 25:7–8 | refusing a duty, and the public naming | the refusal | 10.10, *Loyalty and honour* |",
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B-verb-delight-passages-v1-20261009.md:116 ### Deu 25:7",
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B-verb-split-v1-20261009.md:29 | 12 | Deu 25:7 | wish |  |",
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B-verse-list-v1-20261009.md:338 | 12 | Deu 25:7 | wish | 1 |  |",
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B-worksheet-v1-20261009.md:2679 ### Deu 25:7",
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B1-delight-reading-v1-20261009.md:34 | Wishing | Job 9:3; 13:3; 33:32; Deu 25:7–8 | to contend with God; to justify another; not wanting a duty |",
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B1-delight-reading-v1-20261009.md:108 - **Not wanting a duty:** \"if the man does not wish to take his brother's wife … if he persists, saying, I do not wish to take her\" (Deu 25:7–8). Then the gate, the sandal, the spit, and the name \"The house of him who had his sandal pulled off\" (25:9–10). The law does not force the wanting. It makes the not-wanting public and gives it a name.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:54 - The man who *\"does not wish to take his brother's wife\"*, and *\"persists, saying, 'I do not wish to take her'\"*, is publicly shamed (Deu 25:7–9)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12500
+     }
+    },
+    {
+     "verse": "Jos 24:10",
+     "words": [
+      "I would (H0014, M64)",
+      "blessed (H1288, M80)",
+      "delivered (H5337, M45)",
+      "hand (H3027H, M72)",
+      "listen (H8085G, M41)"
+     ],
+     "text": "but I would not listen to Balaam. Indeed, he blessed you. So I delivered you out of his hand.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-choose-test-reading-v1-20261007.md:17 - *\"it was not by your sword or by your bow\"* (v3–12)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:145 - **Out of love, against a hired curse:** *\"the Lord your God would not listen to Balaam; instead the Lord your God turned the curse into a blessing for you, because the Lord your God loved you\"* (Deu 23:5; Jos 24:10).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12497
+     }
+    },
+    {
+     "verse": "Judg 11:17",
+     "words": [
+      "consent (H0014, M64)",
+      "king (H4428G, M72)",
+      "listen (H8085G, M41)"
+     ],
+     "text": "Israel then sent messengers to the king of Edom, saying, ‘Please let us pass through your land,’ but the king of Edom would not listen. And they sent also to the king of Moab, but he would not consent. So Israel remained at Kadesh.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:54 - **A request:** *\"he would not let them go\"* (Exo 10:27); *\"the king of Edom would not listen … he would not consent\"* (Judg 11:17); *\"Joab would not come to him\"* (2Sa 14:29).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:20   - *\"Please let us pass through your land\"* (Judg 11:17)"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12498,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "The Hebrew will (ʾabâ) answers what another puts before it: a request, \"Please let us pass through your land,\" and the king of Moab \"would not consent\" (Judg 11:17); \"Let my servants go with your servants in the ships,\" but \"Jehoshaphat was not willing\" (1Ki 22:49); after days of pressing, \"the man would not spend the night\" (Judg 19:10); Absalom \"pressed him, but he would not go\" (2Sa 13:25); \"Joab would not come\" (2Sa 14:29). A plan allows for another's will: \"Perhaps the woman may not be willing to follow me\" (Gen 24:5), with a way out, \"if the woman is not willing to follow you, then you will be free from this oath\" (Gen 24:8). After defeat, \"the Syrians were not willing to save the Ammonites anymore\" (1Ch 19:19).",
+       "meaning": "In these narratives the will is seldom shown starting on its own: it is the inner yes or no to what someone else asks, presses or offers, and another person's plan has to reckon with it.",
+       "setting": "Genesis, Judges, Samuel, Kings, Chronicles; requests between kings, households and servants.",
+       "implication": "What a person has seen can change what they are willing to do (1Ch 19:19, after the defeat). Pressing can bend a will: Absalom pressed until the king let the sons go (2Sa 13:27).",
+       "parties": "the kings of Edom and Moab; Jehoshaphat; the Levite and his father-in-law; David and Absalom; Joab; Abraham's servant and the woman; the Syrians",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Judg 11:17",
+         "strong": "H0014"
+        },
+        {
+         "verse": "1Ki 22:49",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Judg 19:10",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Sa 13:25",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Sa 14:29",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Gen 24:5",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Gen 24:8",
+         "strong": "H0014"
+        },
+        {
+         "verse": "1Ch 19:19",
+         "strong": "H0014"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Judg 19:10",
+     "words": [
+      "would (H0014, M64)"
+     ],
+     "text": "But the man would not spend the night. He rose up and departed and arrived opposite Jebus (that is, Jerusalem ). He had with him a couple of saddled donkeys, and his concubine was with him.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:24   - The Levite's father-in-law pressed him day after day (Judg 19:7–9), *\"But the man would not spend the night\"* (19:10)"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12498
+     }
+    },
+    {
+     "verse": "Judg 19:25",
+     "words": [
+      "knew (H3045, M15)",
+      "listen (H8085G, M41)",
+      "seized (H2388H, M23)",
+      "would (H0014, M64)"
+     ],
+     "text": "But the men would not listen to him. So the man seized his concubine and made her go out to them. And they knew her and abused her all night until the morning. And as the dawn began to break, they let her go.",
+     "file_lines": [
+      "_analytics/Clusters/M47 - inner-seat/M47-x-relating-to-others-batchF-v4-20260928.md:327 | Judg 19:22–25 | They reach Gibeah | \"**As they were making their hearts merry**, behold, the men of the city … beating on the door\" (19:22) | The concubine is abused all night (19:25) |",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-relating-to-others-batchF-v4-20260928.md:327 | Judg 19:22–25 | They reach Gibeah | \"**As they were making their hearts merry**, behold, the men of the city … beating on the door\" (19:22) | The concubine is abused all night (19:25) |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:32   - The old man at Gibeah pleading with the men of the city (Judg 19:23–25)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:50 **A refusal that is violent:** Amnon *\"would not listen to her, and being stronger than she, he violated her\"* (2Sa 13:14). The men of Gibeah *\"would not listen\"* (Judg 19:25). Here the \"would not\" is the stronger one shutting out the plea of the weaker."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12502
+     }
+    },
+    {
+     "verse": "Judg 20:13",
+     "words": [
+      "death (H4191, M25)",
+      "evil (H7451I, M58)",
+      "listen (H8085G, M41)",
+      "would (H0014, M64)"
+     ],
+     "text": "Now therefore give up the men, the worthless fellows in Gibeah, that we may put them to death and purge evil from Israel.” But the Benjaminites would not listen to the voice of their brothers, the people of Israel.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:33   - Israel calling on Benjamin to give up the guilty (Judg 20:12–13)"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12502
+     }
+    },
+    {
+     "verse": "1Sa 15:9",
+     "words": [
+      "and would (H0014, M64)",
+      "despised (H5240, M58)",
+      "devoted to destruction (H2763A, M55)",
+      "good (H2896B, M05)",
+      "spared (H2550, M05)",
+      "utterly destroy (H2763A, M55)"
+     ],
+     "text": "But Saul and the people spared Agag and the best of the sheep and of the oxen and of the fattened calves and the lambs, and all that was good, and would not utterly destroy them. All that was despised and worthless they devoted to destruction.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:55 - Saul and the people *\"spared Agag and the best of the sheep … and would not utterly destroy them. All that was despised and worthless they devoted to destruction\"* (1Sa 15:9). The refusal was selective. They destroyed what they did not value and kept what they did. God's word follows: *\"he has turned back from following me\"* (15:11), and *\"Samuel was angry, and he cried to the Lord all night\"* (15:11)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12500
+     }
+    },
+    {
+     "verse": "1Sa 22:17",
+     "words": [
+      "kill (H4191, M25)",
+      "king (H4428G, M72)",
+      "knew (H3045, M15)",
+      "would (H0014, M64)"
+     ],
+     "text": "And the king said to the guard who stood about him, “ Turn and kill the priests of the Lord, because their hand also is with David, and they knew that he fled and did not disclose it to me.” But the servants of the king would not put out their hand to strike the priests of the Lord.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:55 - **A command:** the king's servants *\"would not put out their hand to strike the priests of the Lord\"* (1Sa 22:17). The armor-bearer *\"would not, for he feared greatly\"* (1Sa 31:4).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:26 - **A command:** Saul's guard was ordered to kill the priests, and they *\"would not put out their hand\"* (1Sa 22:17). Saul ordered his armor-bearer, who *\"would not, for he feared greatly\"* (1Sa 31:4).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:45 - The king's servants would not kill the priests of the Lord. Doeg did (1Sa 22:17–18)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12499,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "A refusal that keeps faith: \"the servants of the king would not put out their hand to strike the priests of the Lord\" (1Sa 22:17); David, \"I would not put out my hand against the Lord's anointed\" (1Sa 26:23); David longed for the water of Bethlehem, \"But he would not drink of it. He poured it out to the Lord\" (2Sa 23:16), \"Shall I drink the blood of the men who went at the risk of their lives?\" (2Sa 23:17; 1Ch 11:18-19). The faithful refuse enticement and demand: \"you shall not yield to him or listen to him\" (Deu 13:8); \"if sinners entice you, do not consent\" (Pro 1:10); \"Do not listen or consent\" (1Ki 20:8).",
+       "meaning": "The will's no can be faithfulness: to God's anointed and priests, to the lives of others, and against enticement, even from one's own household or friend.",
+       "setting": "Samuel, Chronicles, Deuteronomy 13, Proverbs 1, 1 Kings 20; a king's command, a gift brought at risk, an enticement, a demand.",
+       "implication": "A person's own longing can be met and still refused for the sake of others, with the reason said aloud before the Lord (2Sa 23:17).",
+       "parties": "Saul's guard; David; the three mighty men; the one enticed and the enticer; the elders of Israel",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "1Sa 22:17",
+         "strong": "H0014"
+        },
+        {
+         "verse": "1Sa 26:23",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Sa 23:16",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Sa 23:17",
+         "strong": "H0014"
+        },
+        {
+         "verse": "1Ch 11:18",
+         "strong": "H0014"
+        },
+        {
+         "verse": "1Ch 11:19",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Deu 13:8",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Pro 1:10",
+         "strong": "H0014"
+        },
+        {
+         "verse": "1Ki 20:8",
+         "strong": "H0014"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "1Sa 26:23",
+     "words": [
+      "I would (H0014, M64)",
+      "faithfulness (H0530, M13)",
+      "hand (H3027H, M72)",
+      "righteousness (H6666, M12)"
+     ],
+     "text": "The Lord rewards every man for his righteousness and his faithfulness, for the Lord gave you into my hand today, and I would not put out my hand against the Lord’s anointed.",
+     "file_lines": [
+      "_analytics/Clusters/M47 - inner-seat/M47-x-setting-narrative-batchH-v1-20260928.md:592 7. **David's heart reads kings rightly.** Both flights to Achish begin in the heart (1Sa 21:12; 27:1). The second follows immediately on Saul's oath and confession (26:21–25) (§1.8).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:46 - David *\"would not put out my hand against the Lord's anointed\"* (1Sa 26:23). He sets it beside a prayer: *\"as your life was precious this day in my sight, so may my life be precious in the sight of the Lord\"* (26:24).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:214 | *ʾāḇâ* | refusing God (Isa 30:15); refusing sin (Pro 1:10); refusing to harm the anointed (1Sa 26:23); refusing a gift for others' sake (2Sa 23:17); refusing a plea by force (2Sa 13:14); refusing in grief (2Sa 12:17); God not willing to destroy (2Ki 8:19); God not willing to forgive (Deu 29:20) | What is refused, and for whose sake. The passages give the reason each time: faith, fear, grief, honour, force, covenant, love, a stubborn heart |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12499
+     }
+    },
+    {
+     "verse": "2Sa 2:21",
+     "words": [
+      "turn aside (H5493I, M11)",
+      "would (H0014, M64)"
+     ],
+     "text": "Abner said to him, “Turn aside to your right hand or to your left, and seize one of the young men and take his spoil.” But Asahel would not turn aside from following him.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:34 - **A warning:** Abner warned Asahel twice, *\"Turn aside from following me. Why should I strike you to the ground?\"*, and *\"he refused to turn aside\"* (2Sa 2:21–23).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:53 - Asahel would not turn aside, and he died (2Sa 2:21–23)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12500,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "A refusal can cost the one who makes it: warned to turn aside, \"Asahel would not turn aside from following him\" (2Sa 2:21), and he died; \"if the man does not wish to take his brother's wife,\" she goes to the elders at the gate (Deu 25:7), and he is publicly shamed (25:9-10); Saul and the people \"spared Agag and the best of the sheep\" and \"would not utterly destroy them. All that was despised and worthless they devoted to destruction\" (1Sa 15:9).",
+       "meaning": "The will's no carries consequences for the one who refuses: death, public shame, or God's rejection. Saul's refusal was selective: what they valued they kept.",
+       "setting": "2 Samuel 2 (Abner and Asahel); Deuteronomy 25 (the brother-in-law's duty); 1 Samuel 15 (Agag).",
+       "implication": "A selective obedience is still a refusal: God says of Saul, \"he has turned back from following me\" (1Sa 15:11).",
+       "parties": "Asahel and Abner; the brother-in-law, the widow and the elders; Saul and the people",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "2Sa 2:21",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Deu 25:7",
+         "strong": "H0014"
+        },
+        {
+         "verse": "1Sa 15:9",
+         "strong": "H0014"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "2Sa 6:10",
+     "words": [
+      "take (H5493G, M11)",
+      "willing (H0014, M64)"
+     ],
+     "text": "So David was not willing to take the ark of the Lord into the city of David. But David took it aside to the house of Obed-edom the Gittite.",
+     "file_lines": [
+      "_analytics/Clusters/M02 - anger-wrath/anger-cross-ledger-overview-v2-20261005.md:411 | 2Sa 6:7–10 = 1Ch 13:10–13 | God strikes Uzzah → **David angry at God** → David afraid of God → avoidance (the ark set aside) | U1 §37 |",
+      "_analytics/Clusters/M02 - anger-wrath/anger-strand-observation-ledger-v1-20261001.md:151 | AN-79 | **Near the holy**: the priest's grief withheld lest wrath come; David's anger, then fear, then **resolved by watching another household live with the ark** | Lev 10:3, 6; 2Sa 6:8–12 | S | 10.8, 10.1 | W |",
+      "_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-phenomena-v2-20260928.md:507   - **Withdrawal from what God struck:** David will not take the ark home (2Sa 6:10). **The anger ends in avoidance**, and the ark's blessing goes to Obed-edom instead (6:11).",
+      "_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-phenomena-v2-20260928.md:1041 | 2Sa 6:7–10 = 1Ch 13:10–13 | God strikes Uzzah → **David angry at God** → David afraid of God → avoidance (the ark set aside) |",
+      "_analytics/Clusters/M64 - will-resolve/m64-being-chosen-account-v1-20261008.md:35 - **Celebrating.** *\"It was before the Lord, who chose me above your father and above all his house … and I will celebrate before the Lord\"* (2Sa 6:21). The celebrating had stopped at Uzzah's death, when David was angry, afraid and unwilling (6:8–10). It came back when he heard of the Lord's blessing (6:12).",
+      "_analytics/Clusters/M64 - will-resolve/m64-choose-2b-reading-batch1-chosen-ot-v1-20261008.md:14 - 2 Samuel 6:1–23",
+      "_analytics/Clusters/M64 - will-resolve/m64-choose-2b-reading-batch1-chosen-ot-v1-20261008.md:230 **The chosen still go through anger, fear and refusal.** David was angry, afraid and unwilling between the two celebrations (2Sa 6:8–10). His own heart's wish to build was refused, though he was chosen (1Ch 28:2–4).",
+      "_analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch2-others-ot-v1-20261008.md:11 - 2 Samuel 6:1–23 (read for §2b; read again here for Michal)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:60   - David *\"was afraid of the Lord that day, and he said, 'How can the ark of the Lord come to me?' So David was not willing to take the ark\"* (2Sa 6:9–10). Then *\"it was told King David, 'The Lord has blessed the household of Obed-edom'\"*, and *\"David went and brought up the ark of God … with rejoicing\"* (6:12). What David heard changed what he was willing to do.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:204 - **Fear.** In the plan set, fear is mostly in the one plotted against (*\"terror on every side\"*, Psa 31:13). In the will set, fear stops the willing: the armor-bearer (1Sa 31:4); David and the ark (2Sa 6:9–10, changed by what he heard, 6:12); melted hearts (Deu 1:26–28). For 10.12.",
+      "_analytics/Clusters/M64 - will-resolve/verse-narrative-ot-crossref-v3-change-record-v1-20261009.md:94 | 10.7 Choosing and setting direction | Jos 24:31; Act 15:22, 25; 2Sa 6:20 (twice); 2Sa 6:8–10; 2Pe 1:5–7; Deu 16:11; 1Ki 8:39; 1Sa 20:33; 1Sa 20:42; Joh 15:18; Psa 106:6; Act 15:12; Psa 119:30; Luk 10:40; Act 27:11; Dan 6:4; 1Ki 12:32; 2Sa 13:28; 2Sa 14:29–30; Jam 3:5; Dan 4:27; Dan 4:34; Isa 8:6; Isa 65:12; Isa 56:4 |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12501,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "A refusal from inside a feeling: fear, \"David was afraid of the Lord that day\" and \"was not willing to take the ark of the Lord into the city of David\" (2Sa 6:9-10), until \"it was told King David, The Lord has blessed the household of Obed-edom\" (6:12); grief, the elders came \"to raise him from the ground, but he would not, nor did he eat food with them\" (2Sa 12:17); jealousy, \"He will accept no compensation; he will refuse though you multiply gifts\" (Pro 6:35).",
+       "meaning": "Fear, grief and jealousy hold the will in a no; what a person then hears can change what they are willing to do.",
+       "setting": "2 Samuel 6 (the ark) and 12 (the child); Proverbs 6 (the wronged husband). The armor-bearer who \"would not, for he feared greatly\" (1Sa 31:4; 1Ch 10:4) is already observed (11876).",
+       "implication": "The feelings of M01 fear, grief and jealousy act on the will, in the verses themselves.",
+       "parties": "David; the elders of his house; the jealous husband",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "2Sa 6:10",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Sa 12:17",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Pro 6:35",
+         "strong": "H0014"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "2Sa 12:17",
+     "words": [
+      "he would (H0014, M64)"
+     ],
+     "text": "And the elders of his house stood beside him, to raise him from the ground, but he would not, nor did he eat food with them.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:61 - **Grief:** David fasting for the child, *\"the elders of his house stood beside him, to raise him from the ground, but he would not, nor did he eat food with them\"* (2Sa 12:17).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:206 - **Grief** (2Sa 12:17) and **jealousy** (Pro 6:34–35) fix the will in place. For 10.1 and 10.13.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:214 | *ʾāḇâ* | refusing God (Isa 30:15); refusing sin (Pro 1:10); refusing to harm the anointed (1Sa 26:23); refusing a gift for others' sake (2Sa 23:17); refusing a plea by force (2Sa 13:14); refusing in grief (2Sa 12:17); God not willing to destroy (2Ki 8:19); God not willing to forgive (Deu 29:20) | What is refused, and for whose sake. The passages give the reason each time: faith, fear, grief, honour, force, covenant, love, a stubborn heart |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12501
+     }
+    },
+    {
+     "verse": "2Sa 13:14",
+     "words": [
+      "he would (H0014, M64)",
+      "listen (H8085G, M41)",
+      "stronger (H2388G, M23)",
+      "violated (H6031B, M24)"
+     ],
+     "text": "But he would not listen to her, and being stronger than she, he violated her and lay with her.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:30   - Tamar: *\"No, my brother, do not violate me … But he would not listen to her\"* (2Sa 13:12–14)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:50 **A refusal that is violent:** Amnon *\"would not listen to her, and being stronger than she, he violated her\"* (2Sa 13:14). The men of Gibeah *\"would not listen\"* (Judg 19:25). Here the \"would not\" is the stronger one shutting out the plea of the weaker.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:214 | *ʾāḇâ* | refusing God (Isa 30:15); refusing sin (Pro 1:10); refusing to harm the anointed (1Sa 26:23); refusing a gift for others' sake (2Sa 23:17); refusing a plea by force (2Sa 13:14); refusing in grief (2Sa 12:17); God not willing to destroy (2Ki 8:19); God not willing to forgive (Deu 29:20) | What is refused, and for whose sake. The passages give the reason each time: faith, fear, grief, honour, force, covenant, love, a stubborn heart |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12502,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "The same verb names a violent refusal: Amnon \"would not listen to her, and being stronger than she, he violated her\" (2Sa 13:14), and again \"he would not listen to her\" when she pleaded not to be sent away (2Sa 13:16); at Gibeah \"the men would not listen to him\" (Judg 19:25); \"the Benjaminites would not listen to the voice of their brothers\" when asked to give up the guilty (Judg 20:13).",
+       "meaning": "Here the will's no is the stronger shutting out the plea of the weaker, or a people shielding evil against the call to purge it.",
+       "setting": "2 Samuel 13 (Amnon and Tamar); Judges 19 to 20 (Gibeah and Benjamin).",
+       "implication": "Refusing to listen is the inner act that comes before the outrage in these passages.",
+       "parties": "Amnon and Tamar; the men of Gibeah, the old man and the Levite; Benjamin and Israel",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "2Sa 13:14",
+         "strong": "H0014"
+        },
+        {
+         "verse": "2Sa 13:16",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Judg 19:25",
+         "strong": "H0014"
+        },
+        {
+         "verse": "Judg 20:13",
+         "strong": "H0014"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "2Sa 13:16",
+     "words": [
+      "he would (H0014, M64)",
+      "listen (H8085G, M41)",
+      "wrong (H7451I, M58)"
+     ],
+     "text": "But she said to him, “ No, my brother, for this wrong in sending me away is greater than the other that you did to me.” But he would not listen to her.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:31   - Tamar again, after (13:16)"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12502
+     }
+    },
+    {
+     "verse": "2Sa 13:25",
+     "words": [
+      "blessing (H1288, M80)",
+      "burdensome (H3513H, M75)",
+      "he would (H0014, M64)",
+      "king (H4428G, M72)"
+     ],
+     "text": "But the king said to Absalom, “ No, my son, let us not all go, lest we be burdensome to you.” He pressed him, but he would not go but gave him his blessing.",
+     "file_lines": [
+      "_analytics/Clusters/M02 - anger-wrath/anger-cross-ledger-overview-v2-20261005.md:413 | 2Sa 13:20–39 | \"do not take this to heart\" → the king very angry, **no act** → the brother's hatred waits two years → killing → **the king's spirit longs for the killer** | U1 §37 |",
+      "_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-phenomena-v2-20260928.md:1043 | 2Sa 13:20–39 | \"do not take this to heart\" → the king very angry, **no act** → the brother's hatred waits two years → killing → **the king's spirit longs for the killer** |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:25   - Absalom *\"pressed him, but he would not go\"* (2Sa 13:25)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:100 - **2Sa 13:24–28.** Absalom's planning meets David's will. Absalom invited the king, who *\"would not go\"* (13:25). Then *\"Absalom pressed him until he let Amnon and all the king's sons go with him\"* (13:27), and he ordered Amnon's death (13:28). The planner presses the will of another until it gives way.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:100 - **2Sa 13:24–28.** Absalom's planning meets David's will. Absalom invited the king, who *\"would not go\"* (13:25). Then *\"Absalom pressed him until he let Amnon and all the king's sons go with him\"* (13:27), and he ordered Amnon's death (13:28). The planner presses the will of another until it gives way.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:185 6. **2Sa 13:24–28.** A planner presses another's will until it gives way, and the plan goes on to murder.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:203   - Willing: pressing (Judg 19:7–9; 2Sa 13:25–27), enticing (Deu 13:6–8; Pro 1:10), the crowd (Mar 15:15), friends restraining or encouraging (Act 19:30–31; 18:27), objection (Act 28:19), consent sought so that the good is free (Phm 14)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12498
+     }
+    },
+    {
+     "verse": "2Sa 14:29",
+     "words": [
+      "king (H4428G, M72)",
+      "would (H0014, M64)"
+     ],
+     "text": "Then Absalom sent for Joab, to send him to the king, but Joab would not come to him. And he sent a second time, but Joab would not come.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-strand-quick-summary-v1-20261006.md:100 | H0014 + H0014 | 2 | 2Sa 14:29; Eze 3:7 |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:54 - **A request:** *\"he would not let them go\"* (Exo 10:27); *\"the king of Edom would not listen … he would not consent\"* (Judg 11:17); *\"Joab would not come to him\"* (2Sa 14:29).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:101 - **2Sa 14:29–31.** *\"Joab would not come\"*, twice. Absalom set Joab's field on fire, and *\"Then Joab arose and went\"*. Another way of forcing a will.",
+      "_analytics/Clusters/M64 - will-resolve/verse-narrative-ot-crossref-v3-change-record-v1-20261009.md:94 | 10.7 Choosing and setting direction | Jos 24:31; Act 15:22, 25; 2Sa 6:20 (twice); 2Sa 6:8–10; 2Pe 1:5–7; Deu 16:11; 1Ki 8:39; 1Sa 20:33; 1Sa 20:42; Joh 15:18; Psa 106:6; Act 15:12; Psa 119:30; Luk 10:40; Act 27:11; Dan 6:4; 1Ki 12:32; 2Sa 13:28; 2Sa 14:29–30; Jam 3:5; Dan 4:27; Dan 4:34; Isa 8:6; Isa 65:12; Isa 56:4 |",
+      "_analytics/Clusters/M64 - will-resolve/verse-narrative-ot-crossref-v3-change-record-v1-20261009.md:96 | 10.10 Relating to others | 2Sa 19:23, Est 5:14, 2Sa 13:28, 2Sa 14:29–31 |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12498
+     }
+    },
+    {
+     "verse": "2Sa 23:16",
+     "words": [
+      "he would (H0014, M64)"
+     ],
+     "text": "Then the three mighty men broke through the camp of the Philistines and drew water out of the well of Bethlehem that was by the gate and carried and brought it to David. But he would not drink of it. He poured it out to the Lord",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:58 - **Something offered at a cost to others:** David *\"would not drink it\"* and gives his reason: *\"Shall I drink the blood of the men who went at the risk of their lives?\"* (2Sa 23:16–17).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:35 - **A gift:** water from Bethlehem, brought at the risk of three men's lives (2Sa 23:16–17; 1Ch 11:18–19).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:47 - David *\"said longingly, 'Oh, that someone would give me water'\"* (2Sa 23:15). When it came, *\"he would not drink of it. He poured it out to the Lord and said, 'Far be it from me, O Lord, that I should do this. Shall I drink the blood of the men who went at the risk of their lives?'\"* (23:16–17). His own longing was met, and he refused it for the sake of the men's lives. He gave the reason aloud, before the Lord.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:205 - **Wanting and refusing.** David's longing for the water, then his refusal for the men's sake (2Sa 23:15–17). For 10.6 *Wanting*, beside choosing."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12499
+     }
+    },
+    {
+     "verse": "2Sa 23:17",
+     "words": [
+      "he would (H0014, M64)",
+      "lives (H5315H, M47)"
+     ],
+     "text": "and said, “ Far be it from me, O Lord, that I should do this. Shall I drink the blood of the men who went at the risk of their lives?” Therefore he would not drink it. These things the three mighty men did.",
+     "file_lines": [
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:161 | **M30** Rebellion & Stubbornness | §9.1–9.7 | **R4** (spirit class, Psa 106:33) · **R5** H4784 at 1Sa 30:6 (old-system). Misfiles: H6569 \"dung\" at Exo 29:14; Lev 4:11; 8:17; 16:27; Num 19:5 (heuristic); H7419 at Eze 32:5 and H4651 at Job 41:23 (heuristic); H0014 at 1Ch 11:19; 2Sa 23:17 (old-system); H5800A at 2Ki 2:2, 4, 6; 4:30; Gen 2:24 (heuristic). H5620 at 1Ki 21:5 is already review-flagged in the DB (LLM · low · review_flag=1). |",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:181    - H0014 \"be willing\" filed under M30 because it appears as \"would not\" (1Ch 11:19; 2Sa 23:17 \"he would not drink it\"). It is kept only where it is the heart's or spirit's refusal (Exo 10:27; Deu 2:30; Eze 3:7).",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:44 | 2Sa 23:17 | *ʾāḇâ* \"would (not)\" | 10.7 v16 *What changes the character*: \"a refusal that honours others at a cost to oneself\"; Ch 11 v18 face *Willing* |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:69 | 1Ch 11:19 | 2Sa 23:17 | The same event in the same words. 1 Chronicles adds \"before my God\": *\"Far be it from me before my God that I should do this\"*. 2Sa 23:17 is placed. 1Ch 11:16 is missing from iba.db `verse` (data note only). |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:69 | 1Ch 11:19 | 2Sa 23:17 | The same event in the same words. 1 Chronicles adds \"before my God\": *\"Far be it from me before my God that I should do this\"*. 2Sa 23:17 is placed. 1Ch 11:16 is missing from iba.db `verse` (data note only). |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:72 **For you:** whether the parallels should also be cited beside the placed verse (for example, \"2 Samuel 23:17; 1 Chronicles 11:19\"). My recommendation is no, except perhaps 1Ch 11:19 for \"before my God\". The placed verse already carries the M64 word.",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:22 | **Set aside**: only in data notes, the cluster cross-reference or a ruling item | 3 (2Sa 23:17, 1Ch 11:19, Isa 49:7) |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:43    - 2Sa 23:17 and 1Ch 11:19: H0014 as \"he would not drink it\". Kept only where it is the heart's or the spirit's refusal.",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:102 ### 2Sa 23:17 · set aside",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md:89 | 2Sa 23:17 | H0014 be willing \"he would\" | H5315H soul: life \"lives\" |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-uncited-verses-v1-20261006.md:79 ## 2Sa 23:17",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:58 - **Something offered at a cost to others:** David *\"would not drink it\"* and gives his reason: *\"Shall I drink the blood of the men who went at the risk of their lives?\"* (2Sa 23:16–17).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:35 - **A gift:** water from Bethlehem, brought at the risk of three men's lives (2Sa 23:16–17; 1Ch 11:18–19).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:47 - David *\"said longingly, 'Oh, that someone would give me water'\"* (2Sa 23:15). When it came, *\"he would not drink of it. He poured it out to the Lord and said, 'Far be it from me, O Lord, that I should do this. Shall I drink the blood of the men who went at the risk of their lives?'\"* (23:16–17). His own longing was met, and he refused it for the sake of the men's lives. He gave the reason aloud, before the Lord.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:205 - **Wanting and refusing.** David's longing for the water, then his refusal for the men's sake (2Sa 23:15–17). For 10.6 *Wanting*, beside choosing.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:214 | *ʾāḇâ* | refusing God (Isa 30:15); refusing sin (Pro 1:10); refusing to harm the anointed (1Sa 26:23); refusing a gift for others' sake (2Sa 23:17); refusing a plea by force (2Sa 13:14); refusing in grief (2Sa 12:17); God not willing to destroy (2Ki 8:19); God not willing to forgive (Deu 29:20) | What is refused, and for whose sake. The passages give the reason each time: faith, fear, grief, honour, force, covenant, love, a stubborn heart |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:30 - **9 of the 29 marked M64 × M47 verses** (`m64-m47-marked-verses-v1-20261006`) are in this set: Exo 10:27, Exo 35:5, Exo 35:22, 2Sa 23:17, 1Ch 11:19, 2Ch 29:31, Eze 3:7, Dan 5:21, 1Co 12:11."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12499
+     }
+    },
+    {
+     "verse": "1Ki 20:8",
+     "words": [
+      "consent (H0014, M64)",
+      "listen (H8085G, M41)"
+     ],
+     "text": "And all the elders and all the people said to him, “Do not listen or consent.”",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:28 - **A demand:** Ben-hadad demanded wives, children, silver and gold, and the elders said, *\"Do not listen or consent\"* (1Ki 20:5–8). The king's answer kept a line: *\"All that you first demanded of your servant I will do, but this thing I cannot do\"* (20:9).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:48 - The faithful refuse enticement and demand (Deu 13:8; Pro 1:10; 1Ki 20:8)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12499
+     }
+    },
+    {
+     "verse": "1Ki 22:49",
+     "words": [
+      "willing (H0014, M64)"
+     ],
+     "text": "Then Ahaziah the son of Ahab said to Jehoshaphat, “Let my servants go with your servants in the ships,” but Jehoshaphat was not willing.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:22   - Ahaziah: *\"Let my servants go with your servants in the ships,\" but Jehoshaphat was not willing* (1Ki 22:49)"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12498
+     }
+    },
+    {
+     "verse": "2Ki 8:19",
+     "words": [
+      "destroy (H7843, M55)",
+      "willing (H0014, M64)"
+     ],
+     "text": "Yet the Lord was not willing to destroy Judah, for the sake of David his servant, since he promised to give a lamp to him and to his sons forever.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:69 - *\"the Lord was not willing to destroy Judah, for the sake of David his servant\"* (2Ki 8:19)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:143 - **For a promise:** *\"Yet the Lord was not willing to destroy Judah, for the sake of David his servant, since he promised to give a lamp to him\"* (2Ki 8:19; 2Ch 21:7, *\"because of the covenant\"*).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:214 | *ʾāḇâ* | refusing God (Isa 30:15); refusing sin (Pro 1:10); refusing to harm the anointed (1Sa 26:23); refusing a gift for others' sake (2Sa 23:17); refusing a plea by force (2Sa 13:14); refusing in grief (2Sa 12:17); God not willing to destroy (2Ki 8:19); God not willing to forgive (Deu 29:20) | What is refused, and for whose sake. The passages give the reason each time: faith, fear, grief, honour, force, covenant, love, a stubborn heart |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12497
+     }
+    },
+    {
+     "verse": "2Ki 13:23",
+     "words": [
+      "and would (H0014, M64)",
+      "compassion (H7355, M50)",
+      "covenant (H1285, M32)",
+      "destroy (H7843, M55)",
+      "gracious (H2603A, M50)"
+     ],
+     "text": "But the Lord was gracious to them and had compassion on them, and he turned toward them, because of his covenant with Abraham, Isaac, and Jacob, and would not destroy them, nor has he cast them from his presence until now.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:144 - **In grace:** *\"the Lord was gracious to them and had compassion on them, and he turned toward them, because of his covenant … and would not destroy them\"* (2Ki 13:23).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12497
+     }
+    },
+    {
+     "verse": "2Ki 24:4",
+     "words": [
+      "innocent (H5355A, M12)",
+      "pardon (H5545, M60)",
+      "would (H0014, M64)"
+     ],
+     "text": "and also for the innocent blood that he had shed. For he filled Jerusalem with innocent blood, and the Lord would not pardon.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:70 - *\"the Lord would not pardon\"* (2Ki 24:4)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:147 - **For innocent blood:** *\"For he filled Jerusalem with innocent blood, and the Lord would not pardon\"* (2Ki 24:4).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12497
+     }
+    },
+    {
+     "verse": "1Ch 11:18",
+     "words": [
+      "would (H0014, M64)"
+     ],
+     "text": "Then the three mighty men broke through the camp of the Philistines and drew water out of the well of Bethlehem that was by the gate and took it and brought it to David. But David would not drink it. He poured it out to the Lord",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:35 - **A gift:** water from Bethlehem, brought at the risk of three men's lives (2Sa 23:16–17; 1Ch 11:18–19)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12499
+     }
+    },
+    {
+     "verse": "1Ch 11:19",
+     "words": [
+      "he would (H0014, M64)",
+      "lives (H5315H, M47)",
+      "risk (H5315H, M47)"
+     ],
+     "text": "and said, “ Far be it from me before my God that I should do this. Shall I drink the lifeblood of these men? For at the risk of their lives they brought it.” Therefore he would not drink it. These things did the three mighty men.",
+     "file_lines": [
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:161 | **M30** Rebellion & Stubbornness | §9.1–9.7 | **R4** (spirit class, Psa 106:33) · **R5** H4784 at 1Sa 30:6 (old-system). Misfiles: H6569 \"dung\" at Exo 29:14; Lev 4:11; 8:17; 16:27; Num 19:5 (heuristic); H7419 at Eze 32:5 and H4651 at Job 41:23 (heuristic); H0014 at 1Ch 11:19; 2Sa 23:17 (old-system); H5800A at 2Ki 2:2, 4, 6; 4:30; Gen 2:24 (heuristic). H5620 at 1Ki 21:5 is already review-flagged in the DB (LLM · low · review_flag=1). |",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:181    - H0014 \"be willing\" filed under M30 because it appears as \"would not\" (1Ch 11:19; 2Sa 23:17 \"he would not drink it\"). It is kept only where it is the heart's or spirit's refusal (Exo 10:27; Deu 2:30; Eze 3:7).",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:28 | **Covered by a parallel verse** that is placed | 3 | Exo 35:5, 1Ch 11:19, 2Ch 6:38 |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:69 | 1Ch 11:19 | 2Sa 23:17 | The same event in the same words. 1 Chronicles adds \"before my God\": *\"Far be it from me before my God that I should do this\"*. 2Sa 23:17 is placed. 1Ch 11:16 is missing from iba.db `verse` (data note only). |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:72 **For you:** whether the parallels should also be cited beside the placed verse (for example, \"2 Samuel 23:17; 1 Chronicles 11:19\"). My recommendation is no, except perhaps 1Ch 11:19 for \"before my God\". The placed verse already carries the M64 word.",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:72 **For you:** whether the parallels should also be cited beside the placed verse (for example, \"2 Samuel 23:17; 1 Chronicles 11:19\"). My recommendation is no, except perhaps 1Ch 11:19 for \"before my God\". The placed verse already carries the M64 word.",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:22 | **Set aside**: only in data notes, the cluster cross-reference or a ruling item | 3 (2Sa 23:17, 1Ch 11:19, Isa 49:7) |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:129 ### 1Ch 11:19 · set aside",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md:92 | 1Ch 11:19 | H0014 be willing \"he would\" | H5315H soul: life \"risk\"; H5315H soul: life \"lives\" |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-uncited-verses-v1-20261006.md:106 ## 1Ch 11:19",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:35 - **A gift:** water from Bethlehem, brought at the risk of three men's lives (2Sa 23:16–17; 1Ch 11:18–19).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:30 - **9 of the 29 marked M64 × M47 verses** (`m64-m47-marked-verses-v1-20261006`) are in this set: Exo 10:27, Exo 35:5, Exo 35:22, 2Sa 23:17, 1Ch 11:19, 2Ch 29:31, Eze 3:7, Dan 5:21, 1Co 12:11."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12499
+     }
+    },
+    {
+     "verse": "1Ch 28:21",
+     "words": [
+      "command (H1697G, M65)",
+      "officers (H8269, M72)",
+      "service (H5656H, M36)",
+      "skill (H2451, M16)",
+      "willing man (H5081G, M64)"
+     ],
+     "text": "And behold the divisions of the priests and the Levites for all the service of the house of God; and with you in all the work will be every willing man who has skill for any kind of service; also the officers and all the people will be wholly at your command.”",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-choose-2b-reading-batch1-chosen-ot-v1-20261008.md:15 - 1 Chronicles 28:1–21. v16 is missing from the table; the gap does not touch the reading.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:77 - *\"All who were of a willing heart brought\"* (Exo 35:22; also 2Ch 29:31; 1Ch 28:21)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:93 - **Willing, together with a plan.** David gives Solomon the plan for the temple. *\"All this he made clear to me in writing from the hand of the Lord, all the work to be done according to the plan\"* (1Ch 28:19). Then *\"Be strong and courageous and do it … with you in all the work will be every willing man who has skill\"* (28:20–21). A plan from God and the willing who carry it out stand together.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:183 4. **1Ch 28:19–21.** The plan from the hand of the Lord, and *\"every willing man who has skill\"*. This is the positive pairing: a plan given, and the willing who carry it out."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12495
+     }
+    },
+    {
+     "verse": "2Ch 21:7",
+     "words": [
+      "covenant (H1285, M32)",
+      "destroy (H7843, M55)",
+      "made (H3772H, M32)",
+      "willing (H0014, M64)"
+     ],
+     "text": "Yet the Lord was not willing to destroy the house of David, because of the covenant that he had made with David, and since he had promised to give a lamp to him and to his sons forever.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:143 - **For a promise:** *\"Yet the Lord was not willing to destroy Judah, for the sake of David his servant, since he promised to give a lamp to him\"* (2Ki 8:19; 2Ch 21:7, *\"because of the covenant\"*).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12497
+     }
+    },
+    {
+     "verse": "Job 39:9",
+     "words": [
+      "serve (H5647G, M36)",
+      "willing (H0014, M64)"
+     ],
+     "text": "“Is the wild ox willing to serve you? Will he spend the night at your manger?",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:51 *ʾāḇâ* (H0014) has 52 verses. **50 of them are negated**: \"would not\", \"not willing\", \"unwilling\", \"refuse\", \"would have none\". The other two are a question that expects \"no\" (*\"Is the wild ox willing to serve you?\"*, Job 39:9) and a condition (*\"If you are willing and obedient, you shall eat the good of the land\"*, Isa 1:19).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:158 **Nature (13.4):** *\"Is the wild ox willing to serve you? Will he spend the night at your manger?\"* (Job 39:9), among the creatures God sets beyond a man's control.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:226 - **13.4 Nature:** Job 39:9.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:233 - **Nature (13.4):** Job 39:9."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12503,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "Among the creatures God sets beyond a man's control: \"Is the wild ox willing to serve you? Will he spend the night at your manger?\" (Job 39:9).",
+       "meaning": "The will word is used of a beast that will not serve a man, in God's questions to Job.",
+       "setting": "Job 39, the LORD's speech; nature (13.4).",
+       "implication": "Willingness here belongs to a creature, not the inner being; the verse holds it as God's question to Job's power.",
+       "parties": "God; Job; the wild ox",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Job 39:9",
+         "strong": "H0014"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Psa 51:12",
+     "words": [
+      "joy (H8342, M04)",
+      "salvation (H3468, M79)",
+      "spirit (H7307G, M47)",
+      "uphold (H5564, M70)",
+      "willing (H5081G, M64)"
+     ],
+     "text": "Restore to me the joy of your salvation, and uphold me with a willing spirit.",
+     "file_lines": [
+      "_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-phenomena-v3-20260928.md:225     - Psa 51:9 → 51:10 \"Create in me a clean heart, O God, and renew a right spirit within me\". **New in v3:** when God is asked to hide his face *from the sin*, the next request places the remedy in **the heart and spirit**. The seat is where the cleansing is to happen. The requests go on: \"Cast me not away from your presence, and take not your Holy Spirit from me\" (51:11), then \"uphold me with a willing spirit\" (51:12). **The face hidden from the sin (51:9) is set against the presence not withdrawn from the person (51:11).** Between them stand two spirits: God's, which is not to be taken away, and the human's, which is to be renewed and made willing.",
+      "_analytics/Clusters/M47 - inner-seat/M47-inner-seat-depiction-v1-20260927.md:301 - *A willing spirit:* Psa 51:12; \"The spirit indeed is willing, but the flesh is weak\" (Mat 26:41; Mar 14:38).",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-feeling-batchA-v3-20260928.md:398 - \"Restore to me the joy of your salvation, and uphold me with a willing spirit\" (Psa 51:12) [H]",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-feeling-batchA-v3-20260928.md:399   - **Revisit 2026-09-28:** one of **four spirits in Psa 51:10–17**: right, Holy, willing, broken. See **Batch F §5**.",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-life-body-condition-batchG-v3-20260928.md:790 - \"**uphold me** with a willing spirit\" (Psa 51:12) — Batch F §5",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-moral-condition-batchD-v2-20260928.md:120 | **Evidence** | 4 pairs at d1:<br>• \"whoever is of a generous heart\" (Exo 35:5)<br>• \"all who were of a willing heart\" (Exo 35:22; 2Ch 29:31)<br>• \"uphold me with a willing spirit\" (Psa 51:12) [H1]<br>This is the freewill family of Batch C §1.4 (*nādav*, Exo 35:21, 29). |",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-moral-condition-batchD-v2-20260928.md:890 - \"uphold me with a willing spirit\" (Psa 51:12) [H1]",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-relating-to-god-batchE-v2-20260928.md:932 - **Spirit:** \"Restore to me the joy of your salvation, and uphold me with a willing spirit\" (Psa 51:12) [H1]; \"my spirit rejoices in God my Savior\" (Luk 1:47) [H1].",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-relating-to-others-batchF-v4-20260928.md:273 **Context Psa 51:10–17 — four spirits in eight verses:**",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:643   - Read in context, Psa 51:17 ends a sequence of four spirits: right (v10), Holy (v11), willing (v12), broken (v17).",
+      "_analytics/Clusters/M64 - will-resolve/m64-include-verses-placement-proposal-v1-20261008.md:75 > … (Psalm 51:10, 12). The next verse goes on: *\"Then I will teach transgressors your ways, and sinners will return to you\"* (51:13).",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md:67 | Psa 51:12 | H5081G noble: willing \"willing\" | H7307G spirit \"spirit\" | 6. The spirit · The human spirit · ¶11 |",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:36 - Psa 31:9–18, 32:1–5, 51:10–13 and 140:1–5",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:73 - **Psa 51:12**: Ch 6 takes \"a willing spirit\" as the human spirit; the verse does not say whose.",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:98 | Psa 51:12 | ⚠ Check | Include: new (#1986) | M04 joy restored |",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:648 | Psa 51:12 | the willing spirit (Ch 6) | yes, for the spirit | willingness asked of God (#1986) |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:78 - It is asked of God: *\"uphold me with a willing spirit\"* (Psa 51:12).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:104 4. **Placed already** (in the narrative for another reason, #1987): Deu 1:26; 2:30; 1Sa 31:4; Psa 51:12; Pro 6:35; Dan 5:19; Act 25:20; 1Ti 2:8. Each still needs reading for its will word.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:94 - **Asked of God:** *\"Create in me a clean heart, O God, and renew a right spirit within me … take not your Holy Spirit from me. Restore to me the joy of your salvation, and uphold me with a willing spirit\"* (Psa 51:10–12). Clean heart, right spirit, Holy Spirit and willing spirit are asked for in one prayer. The willing spirit is something God upholds.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:199   - Willing: the heart or spirit hardened, stubborn or lifted up (Exo 10:27; Deu 2:30; Eze 3:7; Psa 81:12; Deu 29:19; Dan 5:20); the willing heart and spirit (Exo 35:21–22; 2Ch 29:31; Psa 51:12).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:216 | *nāḏîḇ* | a heart moved to give (Exo 35:22); a willing spirit asked of God (Psa 51:12) | Whether it rises in the person (*\"whose heart stirred him\"*) or is upheld by God (*\"uphold me\"*). Both are said |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:227 - **Already in the narrative for another reason** (#1987): Deu 1:26; 2:30; 1Sa 31:4; Psa 51:12; Pro 6:35; Dan 5:19; Act 25:20; 1Ti 2:8; Act 27:43 (as a plan verse in 10.10). Each is now read for its will word above.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:45 | Psa 51:12 | \"willing\" (spirit) | Ch 6, *The human spirit* | \"Uphold me with a willing spirit\", for the spirit | yes, for the spirit |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12495
+     }
+    },
+    {
+     "verse": "Psa 81:11",
+     "words": [
+      "listen (H8085G, M41)",
+      "submit (H0014, M64)"
+     ],
+     "text": "“But my people did not listen to my voice; Israel would not submit to me.",
+     "file_lines": [
+      "_analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch5-reading-v1-20261015.md:168 - **The OT words read in batches 1–3 carry no submission verb of this kind.** The nearest are Gen 16:9 (Hagar told to submit), Psa 81:11 (*\"Israel would not submit to me\"*) and 2Ch 30:8 (*\"yield yourselves to the Lord\"*). The OT side of the analysis is to be checked against those.",
+      "_analytics/Clusters/M09 - humility-lowliness/m09-humbling-ot-nt-and-jesus-v1-20261015.md:74 - **The OT verses read have nothing of that range.** The nearest are Gen 16:9 (*\"submit to her\"*), Psa 81:11 (*\"Israel would not submit to me\"*) and 2Ch 30:8 (*\"yield yourselves to the Lord\"*).",
+      "_analytics/Clusters/M09 - humility-lowliness/m09-humility-reconcile-v1-20261015.md:83   - 10.7, Psa 81:10–12 in *Willing*",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:57 - **God's call:** *\"In returning and rest you shall be saved; in quietness and in trust shall be your strength.\" But you were unwilling* (Isa 30:15); *\"Israel would not submit to me\"* (Psa 81:11); *\"not willing to listen to me: because all the house of Israel have a hard forehead and a stubborn heart\"* (Eze 3:7).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:70 - **Being filled:** *\"Open your mouth wide, and I will fill it.\" But my people did not listen to my voice; Israel would not submit to me* (Psa 81:10–11).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:76 - *\"Israel would not submit to me. So I gave them over to their stubborn hearts, to follow their own counsels\"* (Psa 81:11–12).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:81 **Pro 1:29–31 and Psa 81:11–12 put choosing, willing and one's own counsels or devices into a single sentence.** In Proverbs: did not choose, would have none of my counsel, their own devices. In the psalm: would not submit, their stubborn hearts, their own counsels. These are the places where Scripture itself sets the acts side by side. Both say what follows: being given over to one's own counsels, and being filled with one's own devices. They do not say these acts form one sequence in every person, and these notes do not say it either.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:181 2. **Psa 81:11–12.** Would not submit, given over to stubborn hearts, to follow their own counsels."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "Pro 1:10",
+     "words": [
+      "consent (H0014, M64)",
+      "entice (H6601B, M77)",
+      "sinners (H2400, M56)"
+     ],
+     "text": "My son, if sinners entice you, do not consent.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:27 - **An enticement:** *\"If your brother … or your friend who is as your own soul entices you secretly … you shall not yield to him\"* (Deu 13:6–8). *\"My son, if sinners entice you, do not consent\"* (Pro 1:10).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:48 - The faithful refuse enticement and demand (Deu 13:8; Pro 1:10; 1Ki 20:8).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:180 1. **Pro 1:29–31.** Did not choose the fear of the Lord, would have none of my counsel, are filled with their own devices: choosing, willing and devising in one sentence. Earlier in the same chapter, *\"if sinners entice you, do not consent. If they say, 'Come with us, let us lie in wait for blood'\"* (1:10–11) puts the will's \"no\" right against a group plot. That is plotting as written in 10.10.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:203   - Willing: pressing (Judg 19:7–9; 2Sa 13:25–27), enticing (Deu 13:6–8; Pro 1:10), the crowd (Mar 15:15), friends restraining or encouraging (Act 19:30–31; 18:27), objection (Act 28:19), consent sought so that the good is free (Phm 14).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:214 | *ʾāḇâ* | refusing God (Isa 30:15); refusing sin (Pro 1:10); refusing to harm the anointed (1Sa 26:23); refusing a gift for others' sake (2Sa 23:17); refusing a plea by force (2Sa 13:14); refusing in grief (2Sa 12:17); God not willing to destroy (2Ki 8:19); God not willing to forgive (Deu 29:20) | What is refused, and for whose sake. The passages give the reason each time: faith, fear, grief, honour, force, covenant, love, a stubborn heart |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:224 - **10.6 Wanting:** David's water. **10.12 Fear:** the armor-bearer, the ark, melted hearts. **10.1 and 10.13:** grief and jealousy. **10.10:** Pro 1:10–11 (consent refused to a plot), Absalom pressing David, Pilate and the crowd.",
+      "_analytics/Clusters/m10-family-synthesis-K_error_deception-20260911.md:44 its own verse set.** Its 19 verses include straightforwardly negative enticement to sin (Prov 1:10"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12499
+     }
+    },
+    {
+     "verse": "Pro 1:25",
+     "words": [
+      "and (H0014, M64)",
+      "counsel (H6098, M16)"
+     ],
+     "text": "because you have ignored all my counsel and would have none of my reproof,",
+     "file_lines": [
+      "_analytics/Clusters/M08 - pride-arrogance/m08-batch5-reading-v1-20261015.md:125 - Wisdom: *\"Because I have called and you refused to listen ... I also will laugh at your calamity; I will mock when terror strikes you\"* (Pro 1:24–26).",
+      "_analytics/Clusters/M08 - pride-arrogance/m08-pride-synergy-v1-20261015.md:141   - God's derision answers only those who rise against him (Psa 2:2–4; 59:7–8; Pro 1:24–26; 3:34). In these verses it is never aimed at the weak.",
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:26 - Pro 1:20–33 and 16:1–9",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:56 - **Counsel and reproof:** *\"you have ignored all my counsel and would have none of my reproof\"* (Pro 1:25; 1:30). The word for counsel, *ʿēṣāh* (H6098, M16), is one the ESV elsewhere renders \"plan\".",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:71 - **His Spirit and words:** *\"If you turn at my reproof, behold, I will pour out my spirit to you; I will make my words known to you\"* (Pro 1:23), before *\"you … would have none of my reproof\"* (1:25)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "Pro 1:30",
+     "words": [
+      "counsel (H6098, M16)",
+      "despised (H5006, M30)",
+      "would (H0014, M64)"
+     ],
+     "text": "would have none of my counsel and despised all my reproof,",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md:26 - Pro 1:20–33 and 16:1–9",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:56 - **Counsel and reproof:** *\"you have ignored all my counsel and would have none of my reproof\"* (Pro 1:25; 1:30). The word for counsel, *ʿēṣāh* (H6098, M16), is one the ESV elsewhere renders \"plan\".",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:77 - *\"Because they hated knowledge and did not choose the fear of the Lord, would have none of my counsel and despised all my reproof, therefore they shall eat the fruit of their way, and have their fill of their own devices\"* (Pro 1:29–31).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:81 **Pro 1:29–31 and Psa 81:11–12 put choosing, willing and one's own counsels or devices into a single sentence.** In Proverbs: did not choose, would have none of my counsel, their own devices. In the psalm: would not submit, their stubborn hearts, their own counsels. These are the places where Scripture itself sets the acts side by side. Both say what follows: being given over to one's own counsels, and being filled with one's own devices. They do not say these acts form one sequence in every person, and these notes do not say it either.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:180 1. **Pro 1:29–31.** Did not choose the fear of the Lord, would have none of my counsel, are filled with their own devices: choosing, willing and devising in one sentence. Earlier in the same chapter, *\"if sinners entice you, do not consent. If they say, 'Come with us, let us lie in wait for blood'\"* (1:10–11) puts the will's \"no\" right against a group plot. That is plotting as written in 10.10."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "Pro 6:35",
+     "words": [
+      "accept (H5375Q, M50)",
+      "accept (H6440N, M50)",
+      "refuse (H0014, M64)"
+     ],
+     "text": "He will accept no compensation; he will refuse though you multiply gifts.",
+     "file_lines": [
+      "_analytics/Clusters/M02 - anger-wrath/anger-observation-ledger-unit2-v1-20261005.md:125 | AG-74 | **The husband's fury.** \"For jealousy makes a man furious, and he will not spare when he takes revenge. He will accept no compensation; he will refuse though you multiply gifts\"; \"Wrath is cruel, anger is overwhelming, but who can stand before jealousy?\" | **Setting:** Pro 6:20–35, the warning against adultery. **Meaning:** jealousy \"makes\" a man furious, and the fury refuses any gift (contrast Pro 21:14, where a gift averts anger). **Implies:** Eze 16:38 and Pro 6:34 both set jealous fury in the setting of adultery, one God's and one a husband's. I set them side by side; no verse joins them. | jealousy → furious → will not spare, no compensation (Pro 6:34–35) | Pro 6:34–35; Pro 27:4 | S; pairing R | the husband; the adulterer | 10.1, 11 (D) | D; pairing W |",
+      "_analytics/Clusters/M02 - anger-wrath/anger-observation-ledger-unit2-v1-20261005.md:125 | AG-74 | **The husband's fury.** \"For jealousy makes a man furious, and he will not spare when he takes revenge. He will accept no compensation; he will refuse though you multiply gifts\"; \"Wrath is cruel, anger is overwhelming, but who can stand before jealousy?\" | **Setting:** Pro 6:20–35, the warning against adultery. **Meaning:** jealousy \"makes\" a man furious, and the fury refuses any gift (contrast Pro 21:14, where a gift averts anger). **Implies:** Eze 16:38 and Pro 6:34 both set jealous fury in the setting of adultery, one God's and one a husband's. I set them side by side; no verse joins them. | jealousy → furious → will not spare, no compensation (Pro 6:34–35) | Pro 6:34–35; Pro 27:4 | S; pairing R | the husband; the adulterer | 10.1, 11 (D) | D; pairing W |",
+      "_analytics/Clusters/M02 - anger-wrath/anger-observation-ledger-unit2-v1-20261005.md:125 | AG-74 | **The husband's fury.** \"For jealousy makes a man furious, and he will not spare when he takes revenge. He will accept no compensation; he will refuse though you multiply gifts\"; \"Wrath is cruel, anger is overwhelming, but who can stand before jealousy?\" | **Setting:** Pro 6:20–35, the warning against adultery. **Meaning:** jealousy \"makes\" a man furious, and the fury refuses any gift (contrast Pro 21:14, where a gift averts anger). **Implies:** Eze 16:38 and Pro 6:34 both set jealous fury in the setting of adultery, one God's and one a husband's. I set them side by side; no verse joins them. | jealousy → furious → will not spare, no compensation (Pro 6:34–35) | Pro 6:34–35; Pro 27:4 | S; pairing R | the husband; the adulterer | 10.1, 11 (D) | D; pairing W |",
+      "_analytics/Clusters/M02 - anger-wrath/anger-observation-ledger-unit2-v1-20261005.md:288 - jealousy → furious → will not spare, no compensation (Pro 6:34–35)",
+      "_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-phenomena-v2-20260928.md:159   - **Jealousy makes it unappeasable:** \"jealousy makes a man furious, and he will not spare when he takes revenge. He will accept no compensation\" (Pro 6:34–35). **This is the one anger in Proverbs that a gift will not avert.** Compare §23: \"A gift in secret averts anger\" (Pro 21:14).",
+      "_analytics/Clusters/M18 - desire-longing/m18-group-D-reading-v1-20261009.md:44 Num 5:14–31. The \"spirit of jealousy\" comes over the husband whether the wife \"has defiled herself\" or \"has not\" (5:14): the law itself says the jealousy may be wrong. The offering is \"of jealousy … of remembrance\", with no oil and no frankincense (5:15). The matter is not his to settle: \"he shall set the woman before the Lord\" (5:30); \"The man shall be free from iniquity\" (5:31). Beside Pro 6:34–35, where a husband's jealousy \"will accept no compensation\", **I read** the law as taking the jealousy out of the husband's hands and putting it before God. Num 5:18 and 5:25 (the ritual) are carried by this account.",
+      "_analytics/Clusters/M18 - desire-longing/m18-held-items-reading-v1-20261009.md:70 - **Whose it is:** God's, Elijah's, Joshua's, a husband's (Pro 6:34–35, in 10.1), a sister's (Gen 30:1, in 10.6)",
+      "_analytics/Clusters/M18 - desire-longing/m18-held-items-reading-v1-20261009.md:76 - **10.6, new section *Jealousy and envy*:** the human faces, with pointers to Job 5:2, Pro 6:34–35, 14:30, 27:4, Gen 30:1 and Song 8:6 where they already stand.",
+      "_analytics/Clusters/M18 - desire-longing/m18-m02-inner-being-reading-v1-20261009.md:146 10.1 said *\"Grief makes it tender; jealousy makes it hard\"* as if the verses said it. They do not say so. Mark 3:5 joins anger with grief. Pro 6:34–35 joins it with jealousy and says the fury refuses every gift. The comparison is mine, so it is restated as a reading.",
+      "_analytics/Clusters/M18 - desire-longing/m18-m02-validation-register-v1-20261009.md:44 | 10.1 | v15 | Pro 6:34–35 restated with \"I read\" |",
+      "_analytics/Clusters/M18 - desire-longing/m18-m02-validation-worksheet-v1-20261009.md:197 - observation-ledger-unit2 [B.4 With jealousy (face 2D), and as a husband's fury (2S)]: | AG-74 | **The husband's fury.** \"For jealousy makes a man furious, and he will not spare when he takes revenge. He will accept no compensation; he will refuse though you multiply gifts\"; \"Wrath is cruel, anger is overwhelming, but who can stand before jealousy?\" | **Setting:** Pro 6:20–35, the warning against adultery. **Meaning:** jealousy \"makes\" a man furious, and the fury refuses any gift (c",
+      "_analytics/Clusters/M18 - desire-longing/m18-m02-validation-worksheet-v1-20261009.md:229 - observation-ledger-unit2 [B.4 With jealousy (face 2D), and as a husband's fury (2S)]: | AG-74 | **The husband's fury.** \"For jealousy makes a man furious, and he will not spare when he takes revenge. He will accept no compensation; he will refuse though you multiply gifts\"; \"Wrath is cruel, anger is overwhelming, but who can stand before jealousy?\" | **Setting:** Pro 6:20–35, the warning against adultery. **Meaning:** jealousy \"makes\" a man furious, and the fury refuses any gift (c",
+      "_analytics/Clusters/M18 - desire-longing/m18-m02-validation-worksheet-v1-20261009.md:366 - observation-ledger-unit2 [B.4 With jealousy (face 2D), and as a husband's fury (2S)]: | AG-74 | **The husband's fury.** \"For jealousy makes a man furious, and he will not spare when he takes revenge. He will accept no compensation; he will refuse though you multiply gifts\"; \"Wrath is cruel, anger is overwhelming, but who can stand before jealousy?\" | **Setting:** Pro 6:20–35, the warning against adultery. **Meaning:** jealousy \"makes\" a man furious, and the fury refuses any gift (c",
+      "_analytics/Clusters/M18 - desire-longing/m18-m02-validation-worksheet-v1-20261009.md:369 - observation-ledger-unit2 [G. Chains the verses state (#1946)]: - jealousy → furious → will not spare, no compensation (Pro 6:34–35)",
+      "_analytics/Clusters/M18 - desire-longing/m18-shared-m47-m25-m02-validation-v1-20261009.md:121 - **Analysis:** M02 AG-74, \"The husband's fury\" (face 2S). Setting Pro 6:20–35; jealousy \"makes\" the fury, and the fury refuses a gift. The F.5 note sets this beside Eze 16:38 and says no verse joins them.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:104 4. **Placed already** (in the narrative for another reason, #1987): Deu 1:26; 2:30; 1Sa 31:4; Psa 51:12; Pro 6:35; Dan 5:19; Act 25:20; 1Ti 2:8. Each still needs reading for its will word.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:62 - **Jealousy:** *\"For jealousy makes a man furious … He will accept no compensation; he will refuse though you multiply gifts\"* (Pro 6:34–35).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:206 - **Grief** (2Sa 12:17) and **jealousy** (Pro 6:34–35) fix the will in place. For 10.1 and 10.13.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:227 - **Already in the narrative for another reason** (#1987): Deu 1:26; 2:30; 1Sa 31:4; Psa 51:12; Pro 6:35; Dan 5:19; Act 25:20; 1Ti 2:8; Act 27:43 (as a plan verse in 10.10). Each is now read for its will word above.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:46 | Pro 6:35 | \"refuse\" | 10.1, Ch 11 §4 | \"He will accept no compensation\" (jealousy) | no |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12501
+     }
+    },
+    {
+     "verse": "Isa 1:19",
+     "words": [
+      "obedient (H8085H, M41)",
+      "willing (H0014, M64)"
+     ],
+     "text": "If you are willing and obedient, you shall eat the good of the land;",
+     "file_lines": [
+      "_analytics/Clusters/M18 - desire-longing/m18-m25-inner-being-reading-v1-20261009.md:288 **Verses:** Mat 19:17–22; Joh 5:40 (with 5:42–44); Rut 3:13 (with 4:4–6); 2Ti 3:12. Compared with Isa 1:19 and 1Ti 6:9 (in 10.7).",
+      "_analytics/Clusters/M18 - desire-longing/m18-m25-inner-being-reading-v1-20261009.md:299 - **Compare Isa 1:19**, *\"If you are willing and obedient, you shall eat the good of the land\"*. Both put the will before a good with an \"if\".",
+      "_analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch1-isaiah-v1-20261007.md:8 - Isa 1:1–31",
+      "_analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch1-isaiah-v1-20261007.md:64 - the two outcomes: *\"If you are willing and obedient, you shall eat the good of the land\"*; *\"but if you refuse and rebel, you shall be eaten by the sword\"* (v19–20)",
+      "_analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch1-isaiah-v1-20261007.md:133 - **The choice is laid out as an offer, with both outcomes (Isa 1:16–20).** *\"cease to do evil, learn to do good\"*; *\"willing\"* or *\"refuse\"*; eat, or be eaten. In Isa 7:15 the right choice also ends in eating.",
+      "_analytics/Clusters/M64 - will-resolve/m64-choosing-account-v1-20261007.md:44 The choice is laid out with both its sides and both its ends: *\"cease to do evil, learn to do good\"*; *\"If you are willing and obedient, you shall eat the good of the land\"*; *\"but if you refuse and rebel, you shall be eaten by the sword\"* (Isa 1:16–20).",
+      "_analytics/Clusters/M64 - will-resolve/m64-choosing-account-v1-20261007.md:138 - The child who refuses the evil and chooses the good eats *\"curds and honey\"*, the food of *\"everyone who is left in the land\"* (Isa 7:15, 22). In the other oracle, *\"If you are willing and obedient, you shall eat the good of the land\"* (Isa 1:19).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:51 *ʾāḇâ* (H0014) has 52 verses. **50 of them are negated**: \"would not\", \"not willing\", \"unwilling\", \"refuse\", \"would have none\". The other two are a question that expects \"no\" (*\"Is the wild ox willing to serve you?\"*, Job 39:9) and a condition (*\"If you are willing and obedient, you shall eat the good of the land\"*, Isa 1:19).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:72 - **Cleansing, after reasoning:** *\"Come now, let us reason together … though your sins are like scarlet, they shall be as white as snow … If you are willing and obedient, you shall eat the good of the land; but if you refuse and rebel, you shall be eaten by the sword\"* (Isa 1:18–20). This is the one place in the set where the will is invited with \"if\". Both ways are set out, as in *Life and death set before a person* (10.7)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "Isa 28:12",
+     "words": [
+      "hear (H8085G, M41)",
+      "repose (H4774, M33)",
+      "rest (H4496H, M33)",
+      "rest (H5117, M33)",
+      "they would (H0014, M64)",
+      "weary (H5889, M24)"
+     ],
+     "text": "to whom he has said, “ This is rest; give rest to the weary; and this is repose ”; yet they would not hear.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:69 - **Rest:** *\"This is rest; give rest to the weary; and this is repose\"; yet they would not hear* (Isa 28:12). *\"In returning and rest you shall be saved; in quietness and in trust shall be your strength.\" But you were unwilling* (Isa 30:15)."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "Isa 30:9",
+     "words": [
+      "hear (H8085G, M41)",
+      "instruction (H8451, M54)",
+      "lying (H3586, M14)",
+      "rebellious (H4805H, M30)",
+      "unwilling (H0014, M64)"
+     ],
+     "text": "For they are a rebellious people, lying children, children unwilling to hear the instruction of the Lord;",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:60 **Isaiah 30 joins the refusing will to planning in one passage.** It opens: *\"Ah, stubborn children,\" declares the Lord, \"who carry out a plan, but not mine\"* (Isa 30:1). It goes on to the people *\"unwilling to hear the instruction of the Lord\"* (30:9) and ends the oracle with *\"But you were unwilling\"* (30:15). Here refusing God's word goes with carrying out a plan of one's own. This is the closest the Hebrew verses come to your continuum, and it is a single passage, not a pattern.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:182 3. **Isa 30:1, 9, 15–16.** A plan *\"but not mine\"*; unwilling to hear; unwilling, and *\"No! We will flee upon horses.\"* The refusal and the people's own plan are in their own mouth together."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "Isa 30:15",
+     "words": [
+      "Holy One (H6918G, M61)",
+      "quietness (H8252, M33)",
+      "rest (H5183A, M33)",
+      "saved (H3467, M45)",
+      "strength (H1369, M23)",
+      "trust (H0985, M19)",
+      "unwilling (H0014, M64)"
+     ],
+     "text": "For thus said the Lord God, the Holy One of Israel, “ In returning and rest you shall be saved; in quietness and in trust shall be your strength.” But you were unwilling,",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:57 - **God's call:** *\"In returning and rest you shall be saved; in quietness and in trust shall be your strength.\" But you were unwilling* (Isa 30:15); *\"Israel would not submit to me\"* (Psa 81:11); *\"not willing to listen to me: because all the house of Israel have a hard forehead and a stubborn heart\"* (Eze 3:7).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:60 **Isaiah 30 joins the refusing will to planning in one passage.** It opens: *\"Ah, stubborn children,\" declares the Lord, \"who carry out a plan, but not mine\"* (Isa 30:1). It goes on to the people *\"unwilling to hear the instruction of the Lord\"* (30:9) and ends the oracle with *\"But you were unwilling\"* (30:15). Here refusing God's word goes with carrying out a plan of one's own. This is the closest the Hebrew verses come to your continuum, and it is a single passage, not a pattern.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:69 - **Rest:** *\"This is rest; give rest to the weary; and this is repose\"; yet they would not hear* (Isa 28:12). *\"In returning and rest you shall be saved; in quietness and in trust shall be your strength.\" But you were unwilling* (Isa 30:15).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:75 - *\"But you were unwilling, and you said, 'No! We will flee upon horses'\"* (Isa 30:15–16). The refusal is said in their own words, together with their own plan. The chapter opened with *\"stubborn children … who carry out a plan, but not mine\"* (30:1). They told the prophets, *\"Do not prophesy to us what is right; speak to us smooth things\"* (30:10).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:182 3. **Isa 30:1, 9, 15–16.** A plan *\"but not mine\"*; unwilling to hear; unwilling, and *\"No! We will flee upon horses.\"* The refusal and the people's own plan are in their own mouth together.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:214 | *ʾāḇâ* | refusing God (Isa 30:15); refusing sin (Pro 1:10); refusing to harm the anointed (1Sa 26:23); refusing a gift for others' sake (2Sa 23:17); refusing a plea by force (2Sa 13:14); refusing in grief (2Sa 12:17); God not willing to destroy (2Ki 8:19); God not willing to forgive (Deu 29:20) | What is refused, and for whose sake. The passages give the reason each time: faith, fear, grief, honour, force, covenant, love, a stubborn heart |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "Isa 42:24",
+     "words": [
+      "law (H8451, M54)",
+      "looter (H4933, M24)",
+      "obey (H8085H, M41)",
+      "sinned (H2398, M56)",
+      "they would (H0014, M64)",
+      "ways (H1870G, M76)"
+     ],
+     "text": "Who gave up Jacob to the looter, and Israel to the plunderers? Was it not the Lord, against whom we have sinned, in whose ways they would not walk, and whose law they would not obey?",
+     "file_lines": [
+      "_analytics/Clusters/M02 - anger-wrath/anger-observation-ledger-unit1-v1-20261005.md:90 | AG-08 | **Struck, and not taken to heart.** \"So he poured on him the heat of his anger and the might of battle; it set him on fire all around, but he did not understand; it burned him up, but he did not take it to heart.\" | **Setting:** Isa 42:24: \"Who gave up Jacob to the looter …? Was it not the Lord, against whom we have sinned\". **Meaning:** the anger is felt in full and not understood. **Implies:** suffering under the anger does not by itself bring understanding; Jer 23:20 places understanding \"in the latter days\" (AG-29). | anger poured → not understood, not taken to heart | Isa 42:24–25 | S | God; Jacob/Israel | 04 (heart: D), 13 (D) | D |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "Eze 3:7",
+     "words": [
+      "hard (H2389, M23)",
+      "heart (H3820A, M47)",
+      "listen (H8085G, M41)",
+      "stubborn (H7186, M30)",
+      "willing (H0014, M64)"
+     ],
+     "text": "But the house of Israel will not be willing to listen to you, for they are not willing to listen to me: because all the house of Israel have a hard forehead and a stubborn heart.",
+     "file_lines": [
+      "_analytics/Clusters/M47 - inner-seat/M47-x-feeling-batchA-v3-20260928.md:97 | **Evidence** | 8 pairs / 7 verses. Surfaces: stubborn, hard, harsh, fierce, impudent, troubled. \"a hard forehead and a stubborn heart\" (Eze 3:7); \"harsh slavery\" (Exo 6:9). See §0.2. |",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-feeling-batchA-v3-20260928.md:174    | H7186 \"severe\" | **Faintness** | \"stubborn / hard / harsh\" (Eze 3:7 \"stubborn heart\"; Exo 6:9 \"harsh slavery\") |",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-knowing-speaking-batchB-v3-20260928.md:314 - \"a hard forehead and a stubborn heart … not willing to listen\" (Eze 3:7)",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-life-body-condition-batchG-v3-20260928.md:253 - \"**strong of heart**\" = \"**stubborn**\" (Eze 2:4; 3:7)",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:181    - H0014 \"be willing\" filed under M30 because it appears as \"would not\" (1Ch 11:19; 2Sa 23:17 \"he would not drink it\"). It is kept only where it is the heart's or spirit's refusal (Exo 10:27; Deu 2:30; Eze 3:7).",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:704 - **Unwillingness to listen:** \"they are not willing to listen to me: because all the house of Israel have a hard forehead and a stubborn heart\" (Eze 3:7).",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:53 | Eze 3:7 | *ʾāḇâ* \"willing\" | Ch 4 v12 *A stubborn heart will not listen* |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:219 ### Eze 3:7 · read",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md:103 | Eze 3:7 | H0014 be willing \"willing\"; H0014 be willing \"willing\" | H3820A heart \"heart\" |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-uncited-verses-v1-20261006.md:206 ## Eze 3:7",
+      "_analytics/Clusters/M64 - will-resolve/m64-strand-quick-summary-v1-20261006.md:100 | H0014 + H0014 | 2 | 2Sa 14:29; Eze 3:7 |",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:57 - **God's call:** *\"In returning and rest you shall be saved; in quietness and in trust shall be your strength.\" But you were unwilling* (Isa 30:15); *\"Israel would not submit to me\"* (Psa 81:11); *\"not willing to listen to me: because all the house of Israel have a hard forehead and a stubborn heart\"* (Eze 3:7).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:65 - *\"a hard forehead and a stubborn heart\"* (Eze 3:7)",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:79 - *\"a hard forehead and a stubborn heart\"* (Eze 3:7).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:199   - Willing: the heart or spirit hardened, stubborn or lifted up (Exo 10:27; Deu 2:30; Eze 3:7; Psa 81:12; Deu 29:19; Dan 5:20); the willing heart and spirit (Exo 35:21–22; 2Ch 29:31; Psa 51:12).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:30 - **9 of the 29 marked M64 × M47 verses** (`m64-m47-marked-verses-v1-20261006`) are in this set: Exo 10:27, Exo 35:5, Exo 35:22, 2Sa 23:17, 1Ch 11:19, 2Ch 29:31, Eze 3:7, Dan 5:21, 1Co 12:11."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12496
+     }
+    },
+    {
+     "verse": "Dan 4:17",
+     "words": [
+      "Most High (H5943, M72)",
+      "end (H1701, M16)",
+      "he will (H6634, M64)",
+      "holy ones (H6922, M61)",
+      "kingdom (H4437, M72)",
+      "know (H3046, M15)",
+      "lowliest (H8215, M09)",
+      "rules (H7990, M72)"
+     ],
+     "text": "The sentence is by the decree of the watchers, the decision by the word of the holy ones, to the end that the living may know that the Most High rules the kingdom of men and gives it to whom he will and sets over it the lowliest of men.’",
+     "file_lines": [
+      "_analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch1-reading-v1-20261015.md:177 - God *\"sets over it the lowliest of men\"* (Dan 4:17)",
+      "_analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch1-reading-v1-20261015.md:241 - **Already cited:** 2Ch 12:7, 12:12, 32:26, 33:12 and 2Ki 22:19 (10.13, where humbling turns wrath); 2Ki 22:19, 2Ch 32:26 and Dan 5:19, 22 (Ch 4); Dan 4:17, 37 (13.1); Deu 8:3 (Ch 2); Pro 16:19 (Ch 12); 2Ch 7:14 (Ch 14); Isa 58:3, 5 (10.1, 10.7, 13.1). None is in a section about humbling, because there is none.",
+      "_analytics/Clusters/M09 - humility-lowliness/m09-humbling-ot-nt-and-jesus-v1-20261015.md:168 - **13.1 already holds** Dan 4:17 and 4:37 (*Willing*), Psa 51:16–17 (*Delight*), Jam 4:4–6 (*Jealousy*) and Isa 58:3, 5 (*Choosing*). None is placed for God's lowering.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42.",
+      "_analytics/Clusters/M72 - authority-dominion/m72-group-B-reading-v1-20261012.md:604 - Dan 4:17, 25, 32 (13.1 *Willing*)",
+      "_analytics/Clusters/M72 - authority-dominion/m72-group-B-trial-reading-v1-20261012.md:7 **Selection.** Nine verses across the main B words: *exousia* \"authority\" (Joh 19:10–11), *māšal* \"rule\" (Pro 16:32; 29:2), *rādāh* \"rule over\" (Lev 25:43), *šālaṭ* \"get dominion\" (Psa 119:133), *kurieuō* \"have dominion\" (Rom 6:14), *katakurieuō* \"domineering\" (1Pe 5:3), and *šallîṭ* \"rules\" with God as ruler (Dan 4:17). The selection tests three things: authority between people, ruling turned inward, and where the \"character of God only\" line falls inside B. Passages are from iba.db `verse` (ESV).",
+      "_analytics/Clusters/M72 - authority-dominion/m72-group-B-trial-reading-v1-20261012.md:9 **What earlier work holds.** Ch 11 §7, *The inner being is governed*, already opens: *\"Scripture takes the words it uses for ruling, serving, guarding and judging in society and turns them inward\"*. It cites Pro 16:32 and Col 3:15 (G1018, also B). 10.13 *Governed, and put away* has Pro 16:32. 10.10 *The fear of God and the weak* has Lev 25:43. 13.1 *Willing* has Dan 4:17.",
+      "_analytics/Clusters/M72 - authority-dominion/m72-group-B-trial-reading-v1-20261012.md:72 ## 4. God's rule (Dan 4:17)",
+      "_analytics/Clusters/M72 - authority-dominion/m72-group-B-trial-reading-v1-20261012.md:100 | Dan 4:17 | said of God | God's character only (carried) | 13.1 |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12504,
+      "run_id": "RUN-20261023_201541_584-READING",
+      "new": {
+       "text": "The Aramaic will word (ṣəbâ) sets an absolute human will under the Most High: of Nebuchadnezzar, \"Whom he would, he killed, and whom he would, he kept alive\" (Dan 5:19); what he was to learn, \"the Most High rules the kingdom of men and gives it to whom he will\" (Dan 4:17, 25, 32; 5:21); and \"he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his hand\" (Dan 4:35). Daniel uses the same word: \"I desired to know the truth about the fourth beast\" (Dan 7:19).",
+       "meaning": "A king's will made absolute is brought down so that he knows whose will rules; the next verse names what happened in him, \"his heart was lifted up and his spirit was hardened\" (Dan 5:20).",
+       "setting": "Daniel 4 and 5 (Nebuchadnezzar and Belshazzar); Daniel 7 (the vision).",
+       "implication": "The lowliest can be set over the kingdom (Dan 4:17); learning came when \"my reason returned to me\" (Dan 4:34).",
+       "parties": "Nebuchadnezzar; the Most High; the watchers; Daniel",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Dan 4:17",
+         "strong": "H6634"
+        },
+        {
+         "verse": "Dan 4:25",
+         "strong": "H6634"
+        },
+        {
+         "verse": "Dan 4:32",
+         "strong": "H6634"
+        },
+        {
+         "verse": "Dan 4:35",
+         "strong": "H6634"
+        },
+        {
+         "verse": "Dan 5:21",
+         "strong": "H6634"
+        },
+        {
+         "verse": "Dan 5:19",
+         "strong": "H6634"
+        },
+        {
+         "verse": "Dan 7:19",
+         "strong": "H6634"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Dan 4:25",
+     "words": [
+      "Most High (H5943, M72)",
+      "he will (H6634, M64)",
+      "kingdom (H4437, M72)",
+      "know (H3046, M15)",
+      "rules (H7990, M72)"
+     ],
+     "text": "that you shall be driven from among men, and your dwelling shall be with the beasts of the field. You shall be made to eat grass like an ox, and you shall be wet with the dew of heaven, and seven periods of time shall pass over you, till you know that the Most High rules the kingdom of men and gives it to whom he will.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:232   - **Also B:** Deu 10:10 (Moses' intercession), Deu 29:20 (the self-blessing heart), Dan 4:25 and 4:32 (the king's learning), Dan 5:21, Luk 22:42.",
+      "_analytics/Clusters/M72 - authority-dominion/m72-group-B-reading-v1-20261012.md:604 - Dan 4:17, 25, 32 (13.1 *Willing*)",
+      "_analytics/Clusters/M72 - authority-dominion/m72-group-B-trial-reading-v1-20261012.md:75 - the same sentence again (4:25)",
+      "_analytics/Clusters/M72 - authority-dominion/m72-group-B-weave-record-v1-20261012.md:66 | Dan 4:22–30 | the king over the earth; promised back \"from the time that you know\" | pride (4:30); the counsel of mercy to the oppressed (4:27) |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12504
+     }
+    },
+    {
+     "verse": "Dan 4:32",
+     "words": [
+      "Most High (H5943, M72)",
+      "he will (H6634, M64)",
+      "kingdom (H4437, M72)",
+      "know (H3046, M15)",
+      "rules (H7990, M72)"
+     ],
+     "text": "and you shall be driven from among men, and your dwelling shall be with the beasts of the field. And you shall be made to eat grass like an ox, and seven periods of time shall pass over you, until you know that the Most High rules the kingdom of men and gives it to whom he will.”",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:190 11. **Dan 4:27–35.** Counsel offered and not taken; the human will made absolute; the Most High *\"does according to his will\"*; reason returned.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42.",
+      "_analytics/Clusters/M72 - authority-dominion/m72-group-B-reading-v1-20261012.md:604 - Dan 4:17, 25, 32 (13.1 *Willing*)"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12504
+     }
+    },
+    {
+     "verse": "Dan 4:35",
+     "words": [
+      "host (H2429, M23)",
+      "to his will (H6634, M64)"
+     ],
+     "text": "all the inhabitants of the earth are accounted as nothing, and he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his hand or say to him, “ What have you done?”",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:85 - *\"he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his hand\"* (4:35).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:136 - **The return:** *\"my reason returned to me, and I blessed the Most High\"* (4:34), and *\"he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his hand\"* (4:35); *\"those who walk in pride he is able to humble\"* (4:37).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:190 11. **Dan 4:27–35.** Counsel offered and not taken; the human will made absolute; the Most High *\"does according to his will\"*; reason returned.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12504
+     }
+    },
+    {
+     "verse": "Dan 5:21",
+     "words": [
+      "Most High (H5943, M72)",
+      "body (H1655, M47)",
+      "he will (H6634, M64)",
+      "kingdom (H4437, M72)",
+      "knew (H3046, M15)",
+      "mind (H3825, M47)",
+      "rules (H7990, M72)"
+     ],
+     "text": "He was driven from among the children of mankind, and his mind was made like that of a beast, and his dwelling was with the wild donkeys. He was fed grass like an ox, and his body was wet with the dew of heaven, until he knew that the Most High God rules the kingdom of mankind and sets over it whom he will.",
+     "file_lines": [
+      "_analytics/Clusters/M08 - pride-arrogance/m08-batch2-reading-v1-20261015.md:40 - **Greatness and majesty.** *\"the Most High God gave Nebuchadnezzar your father kingship and greatness and glory and majesty ... But when his heart was lifted up and his spirit was hardened so that he dealt proudly, he was brought down\"* (Dan 5:18–20). It lasted *\"until he knew that the Most High God rules the kingdom of mankind\"* (5:21).",
+      "_analytics/Clusters/M09 - humility-lowliness/m09-humbling-batch1-reading-v1-20261015.md:240 - **M47 (#1979 check, by word):** the heart verses read here are 2Ch 32:25–26, 2Ki 22:19, 2Ch 34:27, Lev 26:41, Dan 5:20–22, Dan 10:12, Psa 107:12, Deu 8:2, 14, 17 and Deu 9:4–5. Their placements in Ch 4 *The heart* are checked at the cross-check.",
+      "_analytics/Clusters/M47 - inner-seat/M47-inner-seat-depiction-v1-20260927.md:193 - *Aramaic lēvav (H3825) is mostly \"mind\":* Dan 2:30; 4:16; 5:21; 7:4.",
+      "_analytics/Clusters/M47 - inner-seat/M47-inner-seat-depiction-v1-20260927.md:196 - ◆ fringe: a human heart/mind can be exchanged for a beast's and back: \"let his mind be changed from a man's, and let a beast's mind be given to him\" (Dan 4:16; 5:21); a beast is \"given the mind of a man\" (Dan 7:4).",
+      "_analytics/Clusters/M47 - inner-seat/M47-inner-seat-depiction-v1-20260927.md:640 21. Man's heart/mind exchanged for a beast's (Dan 4:16; 5:21; 7:4).",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-setting-narrative-batchH-v1-20260928.md:99 - \"when **his heart was lifted up and his spirit was hardened** … he was brought down from his **kingly throne**\" (Dan 5:20). Then \"**his mind was made like that of a beast** … **until he knew that the Most High God rules** the kingdom of mankind\" (5:21). See Batch G §14.10.",
+      "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md:405 - \"his mind was made like that of a beast … until he knew that the Most High … sets over it whom he will\" (Dan 5:21).",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:54 | Dan 5:21 | *ṣəḇâ* \"he will\" | 10.7 v16 *Willing* (the will made absolute, and the Most High who \"sets over it whom he will\") |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md:237 ### Dan 5:21 · read",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md:106 | Dan 5:21 | H6634 to will \"he will\" | H3825 heart \"mind\" |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-uncited-verses-v1-20261006.md:235 ## Dan 5:21",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md:102 2. **Route them under rule 72.** By scan, God's or the Spirit's will (route A) is 21 verses: Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Luk 22:42 (with B); Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9. Job 39:9 is the wild ox (13.4 Nature).",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:231 - **A (other beings) — 21 verses:** Deu 10:10; 23:5; 29:20; Jos 24:10; 2Ki 8:19; 13:23; 24:4; 2Ch 21:7; Dan 4:17, 25, 32, 35; 5:21; Mat 11:27; Luk 10:22; Rom 9:19; 1Co 12:11; Heb 6:17; Jam 1:18; 2Pe 3:9; Luk 22:42.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md:232   - **Also B:** Deu 10:10 (Moses' intercession), Deu 29:20 (the self-blessing heart), Dan 4:25 and 4:32 (the king's learning), Dan 5:21, Luk 22:42.",
+      "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md:30 - **9 of the 29 marked M64 × M47 verses** (`m64-m47-marked-verses-v1-20261006`) are in this set: Exo 10:27, Exo 35:5, Exo 35:22, 2Sa 23:17, 1Ch 11:19, 2Ch 29:31, Eze 3:7, Dan 5:21, 1Co 12:11."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12504
+     }
+    }
+   ]
+  }
+ }
+}

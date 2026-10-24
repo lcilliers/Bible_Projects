@@ -1,0 +1,609 @@
+{
+ "reading": "m64-dedicate",
+ "reading_id": 4,
+ "built_at": "2026-10-24T03:04:58Z",
+ "built_from": "the tables (B:114)",
+ "how": "Fill: observations[].claim (a claim ref or a new_claims key) or .disposition {\"as\": \"held\", \"item\": \"OT-nn.n|#n\"} | {\"as\": \"held\", \"new_item\": {Open-Item add shape}} | {\"as\": \"silent|withdrawn\", \"reason\"}; claims[].tell [{\"chapter\", \"section\", \"kind\", \"part\"}], .hold \"<reason>\", .edit {text, beyond_text, verdict, sources, observations}, .withdraw \"<why>\"; new_claims [{key, text, beyond_text, verdict, sources, observations, tell}]; rewrite: the Narrative rewrite shape (update, refs, blocks) or null; open_items[].settle {\"as\": \"closed\", \"answer\"} | {\"as\": \"withdrawn\", \"reason\"} | {\"as\": \"superseded\", \"by\"} | {\"as\": \"forward\", \"new_item\": {Open-Item add shape}} | {\"as\": \"touched\", \"found\"} (only for an item whose target reaches past the reading: it stays open). Then Reading.ps1 -Step Apply.",
+ "observations": [
+  {
+   "observation": 5258,
+   "stage": "verse-reading",
+   "status": "open",
+   "text": "In Ezek.14.7 'consult' carries the nuance of hypocritical or corrupted inquiry -- the idolater comes to a prophet to consult God while harboring idols in his heart; the impact is that the surface act of seeking is emptied of sincerity, contrasting sharply with the sincere seeking of Isa.55.6 and 2Chr.1.5.",
+   "meaning": null,
+   "verses": [
+    "Ezek.14.7"
+   ],
+   "carried_by": [],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 5263,
+   "stage": "verse-reading",
+   "status": "silent",
+   "text": "Other M-codes in Ezek.14.7 (M01 sojourn, M64 separates, M47 heart, M15 putting, M77 stumbling block, M56 iniquity, M43 prophet, M22 answer) surround the consulting act but are not positively related to it: darash here is corrupted by co-present idolatry (M77/M56) rather than harmonizing with them -- the seeking is nullified by what accompanies it, a distinct vantage from any prior finding.",
+   "meaning": null,
+   "verses": [
+    "Ezek.14.7"
+   ],
+   "carried_by": [],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 5268,
+   "stage": "verse-reading",
+   "status": "silent",
+   "text": "In Ezek.14.7, H1875 is the role-T3 operation: the idolater ('any one', party) initiates consulting, directed toward God via a prophet (parties), though the act is compromised by the idolater's simultaneous devotion to idols.",
+   "meaning": null,
+   "verses": [
+    "Ezek.14.7"
+   ],
+   "carried_by": [],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 7088,
+   "stage": "char-reading",
+   "status": "open",
+   "text": "Isa.31.1 and Ezek.14.7 both use 'consult' of illegitimate or compromised inquiry -- Isa.31.1 negates true consultation of the Lord in favor of trust in horses/chariots, while Ezek.14.7 depicts an idolater hypocritically approaching a prophet to consult God while harboring idols in his heart. Both instances show darash's consultation-sense corrupted or withheld by competing loyalties.",
+   "meaning": null,
+   "verses": [
+    "Isa.31.1",
+    "Ezek.14.7"
+   ],
+   "carried_by": [],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 7288,
+   "stage": "char-answers",
+   "status": "open",
+   "text": "Seeking takes hold rightly under conditions of wholeheartedness and sincerity: 'set your mind and heart to seek' (1Chr.22.19), 'with all their heart and with all their soul' (2Chr.15.12), and freedom from co-present idolatry -- in Ezek.14.7 the presence of idols in the heart is what disqualifies otherwise-outward consultation. Genuine seeking requires an undivided heart free from rival objects of devotion.",
+   "meaning": null,
+   "verses": [
+    "1Chr.22.19",
+    "2Chr.15.12",
+    "Ezek.14.7"
+   ],
+   "carried_by": [],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 7289,
+   "stage": "char-answers",
+   "status": "resolved",
+   "text": "Seeking is blocked or nullified when the heart harbors idols or a stumbling block of iniquity even while outwardly consulting God -- Ezek.14.3, 14.7 explicitly describe men who 'have taken their idols into their hearts' yet 'come to a prophet to consult me' -- God declares he will not let himself be consulted (or will answer in judgment) in such cases; similarly pride (Ps.10.4 'in the pride of his face') suppresses seeking altogether.",
+   "meaning": null,
+   "verses": [
+    "Ezek.14.3",
+    "Ezek.14.7",
+    "Ps.10.4"
+   ],
+   "carried_by": [
+    "C-387"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 7290,
+   "stage": "char-answers",
+   "status": "resolved",
+   "text": "The person whose outward act of inquiry does not take hold rightly is inwardly divided: Ezek.14.3-7 describes them as having 'taken their idols into their hearts' and 'put the stumbling block of their iniquity before their face' -- the inner-being state is one of divided loyalty and self-deception, performing the religious gesture of consultation while the heart remains given to a rival object of devotion.",
+   "meaning": null,
+   "verses": [
+    "Ezek.14.3",
+    "Ezek.14.7"
+   ],
+   "carried_by": [
+    "C-387"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 7306,
+   "stage": "char-answers",
+   "status": "open",
+   "text": "Uptake of a sought answer from another (a prophet, an oracle) is blocked when the inquirer's heart harbors rival loyalties -- Ezek.14.3-7 shows that idols hidden in the heart nullify the legitimacy of the consultation even though the outward act of inquiry is performed; genuine uptake requires the wholehearted disposition seen elsewhere (2Chr.15.12).",
+   "meaning": null,
+   "verses": [
+    "Ezek.14.3",
+    "Ezek.14.7"
+   ],
+   "carried_by": [],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 7307,
+   "stage": "char-answers",
+   "status": "resolved",
+   "text": "The person who inquires but does not genuinely take up what is sought (as in Ezek.14.3-7) is inwardly divided, harboring 'idols... into their heart' and 'the stumbling block of their iniquity before their face' -- an inner-being state of duplicity, where the outward gesture of consultation masks an unyielded heart.",
+   "meaning": null,
+   "verses": [
+    "Ezek.14.3",
+    "Ezek.14.7"
+   ],
+   "carried_by": [
+    "C-387"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 7311,
+   "stage": "char-answers",
+   "status": "open",
+   "text": "The pattern of engagement shows heart/soul faculties (mind, will, affection) consistently engaged when seeking is genuine (1Chr.22.19 'set your mind and heart', 2Chr.15.12 'with all their heart and with all their soul'), while purely external/ritual engagement without heart involvement is exposed as illegitimate (Ezek.14.3-7) -- indicating the characteristic's nature is fundamentally a volitional-relational act requiring the engagement of the inner faculties, not a mechanical or merely verbal performance.",
+   "meaning": null,
+   "verses": [
+    "1Chr.22.19",
+    "2Chr.15.12",
+    "Ezek.14.7"
+   ],
+   "carried_by": [],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 7315,
+   "stage": "char-answers",
+   "status": "open",
+   "text": "At its edge, seeking excludes casual, passive, or half-hearted attention -- it resists mere outward performance without inner devotion (Ezek.14.3-7's idol-hearted consulters are the negative exemplar), and it excludes self-sufficiency/pride that renders inquiry unnecessary (Ps.10.4).",
+   "meaning": null,
+   "verses": [
+    "Ezek.14.7",
+    "Ps.10.4"
+   ],
+   "carried_by": [],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 12525,
+   "stage": "strand-reading",
+   "status": "open",
+   "text": "Holiness rules with little inner act: priests are to \"abstain from the holy things of the people of Israel, which they dedicate to me, so that they do not profane my holy name\" (Lev 22:2); \"Thus you shall keep the people of Israel separate from their uncleanness, lest they die in their uncleanness by defiling my tabernacle\" (Lev 15:31); \"Aaron was set apart to dedicate the most holy things\" (1Ch 23:13).",
+   "meaning": "The word names the keeping of holy things and the separating from uncleanness; no inner act is stated.",
+   "verses": [
+    "Lev.22.2",
+    "Lev.15.31",
+    "1Chr.23.13"
+   ],
+   "carried_by": [],
+   "claim": null,
+   "disposition": {
+    "as": "held",
+    "item": "OT-91.11"
+   }
+  },
+  {
+   "observation": 12526,
+   "stage": "strand-reading",
+   "status": "resolved",
+   "text": "Among the vowed gifts, a person dedicates what is his own: \"When a man dedicates his house as a holy gift to the Lord, the priest shall value it as either good or bad\" (Lev 27:14); part of his land, \"the valuation shall be in proportion to its seed\" (27:16), from or after the jubilee (27:17-18); a field he has bought (27:22). The gift can be taken back at a cost: \"if the donor wishes to redeem his house, he shall add a fifth\" (27:15; 27:19). If it is not redeemed, \"it shall not be redeemed anymore\" (27:20).",
+   "meaning": "Dedicating is a person giving what is his own to the Lord, and the gift is measured by another, can be bought back at a cost, and can be lost for good.",
+   "verses": [
+    "Lev.27.14",
+    "Lev.27.15",
+    "Lev.27.16",
+    "Lev.27.17",
+    "Lev.27.18",
+    "Lev.27.19",
+    "Lev.27.22"
+   ],
+   "carried_by": [
+    "C-385"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 12527,
+   "stage": "strand-reading",
+   "status": "resolved",
+   "text": "What is already the Lord's cannot be given as one's own: \"a firstborn of animals, which as a firstborn belongs to the Lord, no man may dedicate; whether ox or sheep, it is the Lord's\" (Lev 27:26). Where it is commanded, the dedication is set beside a remembered redemption: \"Consecrate to me all the firstborn ... is mine\" (Exo 13:2), then \"Remember this day in which you came out from Egypt\" (13:3); \"All the firstborn males ... you shall dedicate to the Lord your God\" (Deu 15:19), after \"you were a slave in the land of Egypt, and the Lord your God redeemed you\" (15:15).",
+   "meaning": "The giving has a limit: what belongs to the Lord is not the giver's to offer, and the commanded dedication answers a redemption remembered.",
+   "verses": [
+    "Lev.27.26",
+    "Exod.13.2",
+    "Deut.15.19"
+   ],
+   "carried_by": [
+    "C-386"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 12528,
+   "stage": "strand-reading",
+   "status": "resolved",
+   "text": "The same giving can be turned to an idol. Micah's mother: \"I dedicate the silver to the Lord from my hand for my son, to make a carved image and a metal image\" (Judg 17:3), in days when \"Everyone did what was right in his own eyes\" (17:6). Israel \"came to Baal-peor and consecrated themselves to the thing of shame, and became detestable like the thing they loved\" (Hos 9:10), after \"Like grapes in the wilderness, I found Israel\". And one \"who separates himself from me, taking his idols into his heart\" (Eze 14:7), whose heart God means to \"lay hold of\" (14:5).",
+   "meaning": "Giving oneself or one's goods can go to an idol in the Lord's name; a person becomes like what he gives himself to and loves, and separating from God is done with idols taken into the heart.",
+   "verses": [
+    "Judg.17.3",
+    "Hos.9.10",
+    "Ezek.14.7"
+   ],
+   "carried_by": [
+    "C-387"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 12529,
+   "stage": "strand-reading",
+   "status": "resolved",
+   "text": "Kings and leaders give back the spoil of victory: \"These also King David dedicated to the Lord, together with the silver and gold that he dedicated from all the nations he subdued\" (2Sa 8:11; 1Ch 18:11), in a passage that ends \"the Lord gave victory to David wherever he went\" (2Sa 8:14). \"From spoil won in battles they dedicated gifts for the maintenance of the house of the Lord\" (1Ch 26:27); and what \"Samuel the seer and Saul the son of Kish and Abner the son of Ner and Joab the son of Zeruiah had dedicated\" (26:28).",
+   "meaning": "What was won is given back to the Lord who gave the victory, for his house.",
+   "verses": [
+    "2Sam.8.11",
+    "1Chr.18.11",
+    "1Chr.26.26",
+    "1Chr.26.27",
+    "1Chr.26.28"
+   ],
+   "carried_by": [
+    "C-389"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 12530,
+   "stage": "strand-reading",
+   "status": "resolved",
+   "text": "\"Jehoash king of Judah took all the sacred gifts that Jehoshaphat and Jehoram and Ahaziah his fathers, the kings of Judah, had dedicated, and his own sacred gifts ... and sent these to Hazael king of Syria. Then Hazael went away from Jerusalem\" (2Ki 12:18), when Hazael \"set his face to go up against Jerusalem\" (12:17).",
+   "meaning": "What was given to God, by the fathers and by the king himself, is taken back to buy off a threat.",
+   "verses": [
+    "2Kgs.12.18"
+   ],
+   "carried_by": [
+    "C-390"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 12531,
+   "stage": "strand-reading",
+   "status": "resolved",
+   "text": "\"Behold, I am about to build a house for the name of the Lord my God and dedicate it to him\" (2Ch 2:4), after \"Solomon purposed to build a temple\" (2:1), and with \"But who is able to build him a house, since heaven, even highest heaven, cannot contain him? Who am I to build a house for him, except as a place to make offerings before him?\" (2:6).",
+   "meaning": "The house is dedicated inside a purpose, and the one who dedicates it asks who he is to do it.",
+   "verses": [
+    "2Chr.2.4"
+   ],
+   "carried_by": [
+    "C-391"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 12532,
+   "stage": "strand-reading",
+   "status": "resolved",
+   "text": "Giving in abundance and with joy: \"the people of Israel gave in abundance\" (2Ch 31:5) and brought \"the tithe of the dedicated things that had been dedicated to the Lord their God\" (31:6), and when Hezekiah \"saw the heaps, they blessed the Lord and his people Israel\" (31:8). In Nehemiah \"they set apart that which was for the Levites\" (Neh 12:47), where \"God had made them rejoice with great joy\" (12:43).",
+   "meaning": "The setting apart of gifts is done in abundance and joy, and is answered with blessing.",
+   "verses": [
+    "2Chr.31.6",
+    "Neh.12.47"
+   ],
+   "carried_by": [
+    "C-392"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 12533,
+   "stage": "strand-reading",
+   "status": "resolved",
+   "text": "\"Before I formed you in the womb I knew you, and before you were born I consecrated you; I appointed you a prophet to the nations\" (Jer 1:5). Jeremiah answers, \"Ah, Lord God! Behold, I do not know how to speak, for I am only a youth\" (1:6), and is told, \"Do not be afraid of them, for I am with you to deliver you\" (1:8).",
+   "meaning": "God's dedicating of a person comes before the person knows or wills; the person's answer is a shrinking that God meets with a sending and a presence.",
+   "verses": [
+    "Jer.1.5"
+   ],
+   "carried_by": [
+    "C-393"
+   ],
+   "claim": null,
+   "disposition": null
+  },
+  {
+   "observation": 12534,
+   "stage": "strand-reading",
+   "status": "resolved",
+   "text": "\"Should I weep and abstain in the fifth month, as I have done for so many years?\" (Zec 7:3). God answers with the aim: \"When you fasted and mourned in the fifth month and in the seventh, for these seventy years, was it for me that you fasted?\" (7:5), \"do you not eat for yourselves and drink for yourselves?\" (7:6).",
+   "meaning": "Abstaining is judged by whom it was for, not by its long keeping.",
+   "verses": [
+    "Zech.7.3"
+   ],
+   "carried_by": [
+    "C-388"
+   ],
+   "claim": null,
+   "disposition": null
+  }
+ ],
+ "claims": [
+  {
+   "claim": "9-3",
+   "status": "current",
+   "text": "Idols are taken \"into their hearts\" (Eze 14:3–7); the heart \"goes after\" idols (Eze 20:16); a \"spirit of whoredom\" leads astray (Hos 4:12) (dep §2.1i, §2.3c)",
+   "told_in": [
+    "12 *Idols taken inside* (in part)"
+   ],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  },
+  {
+   "claim": "C-385",
+   "status": "current",
+   "text": "Dedicating is a person giving what is his own to the Lord; the gift is valued by another, can be bought back at a cost, and can be lost for good.",
+   "told_in": [],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  },
+  {
+   "claim": "C-386",
+   "status": "current",
+   "text": "What already belongs to the Lord cannot be given as one's own; where the firstborn is commanded, the dedication is set beside a remembered redemption.",
+   "told_in": [],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  },
+  {
+   "claim": "C-387",
+   "status": "current",
+   "text": "Giving oneself or one's goods can be turned to an idol, even in the Lord's name; a person becomes like what he gives himself to and loves, and separating from God is done with idols taken into the heart.",
+   "told_in": [
+    "12 *Idols taken inside* (in part)"
+   ],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  },
+  {
+   "claim": "C-388",
+   "status": "current",
+   "text": "Abstaining is judged by whom it was for, not by how long it was kept.",
+   "told_in": [],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  },
+  {
+   "claim": "C-389",
+   "status": "current",
+   "text": "Kings and leaders give the spoil of victory back to the Lord who gave the victory, for his house.",
+   "told_in": [],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  },
+  {
+   "claim": "C-390",
+   "status": "current",
+   "text": "A dedication can be undone: gifts given to God by the fathers and by the king himself are taken back to buy off a threat.",
+   "told_in": [],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  },
+  {
+   "claim": "C-391",
+   "status": "current",
+   "text": "The house is dedicated inside a purpose, and the one who dedicates it asks who he is to build it.",
+   "told_in": [],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  },
+  {
+   "claim": "C-392",
+   "status": "current",
+   "text": "The setting apart of gifts is done in abundance and joy, and is answered with blessing.",
+   "told_in": [],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  },
+  {
+   "claim": "C-393",
+   "status": "current",
+   "text": "God's dedicating of a person comes before the person knows or wills, and the person's shrinking answer is met with a sending and a presence.",
+   "told_in": [],
+   "tell": null,
+   "hold": null,
+   "edit": null,
+   "withdraw": null
+  }
+ ],
+ "new_claims": [],
+ "blocks": [
+  {
+   "chapter": "12",
+   "section": "Idols taken inside",
+   "text": "## Idols taken inside\n\nIdolatry is not only a matter of statues. God says to Ezekiel of Israel's elders, \"these men have taken their idols into their hearts\" (Ezekiel 14:3). Their hearts \"went after their idols\" (Ezekiel 20:16). And Hosea: \"a spirit of whoredom has led them astray\" (Hosea 4:12). \"The spirit of whoredom is within them, and they know not the Lord\" (Hosea 5:4).\n\nIt also starts in the power to imagine and design. Paul says, \"we ought not to think that the divine being is like gold or silver or stone, an image formed by the art and imagination of man\" (Acts 17:29). Habakkuk sees the maker turned upside down: \"its maker trusts in his own creation when he makes speechless idols!\" (Habakkuk 2:18). The word for \"creation\" there is the word for the heart's inclination (Chapter 10.4).\n\nIsaiah first says what the delight comes to: *\"All who fashion idols are nothing, and the things they delight in do not profit. Their witnesses neither see nor know, that they may be put to shame\"* (Isaiah 44:9).\n\nIsaiah shows the man who makes one: \"He takes a part of it and warms himself; he kindles a fire and bakes bread. Also he makes a god and worships it\" (Isaiah 44:15). \"Also he warms himself and says, 'Aha, I am warm, I have seen the fire!' And the rest of it he makes into a god, his idol, and falls down to it and worships it\" (44:16–17). The same log gives him comfort and a god. The prophet says what is inside: \"No one considers, nor is there knowledge or discernment\" (44:19); \"a deluded heart has led him astray, and he cannot deliver himself or say, 'Is there not a lie in my right hand?'\" (44:20). A body satisfied and a heart deceived stand in one man. He is pleased with the warmth and does not see what he has done with the rest. Babylon's counsellors are the same kind of fire: \"No coal for warming oneself is this, no fire to sit before!\" (47:14).\n"
+  }
+ ],
+ "rewrite": {
+  "update": {
+   "update_date": "2026-10-24",
+   "title": "10.7 Dedicating: the dedicate verses read in their passages",
+   "strand": null,
+   "researcher_instruction": "Researcher 2026-10-24, verbatim: \"#2256 option (3): tell the 8 claims in a new 10.7 block now, hold 12525 on OT-91.11, withdraw OT-91.10 and OT-108.34.\"",
+   "method": "Reading.ps1 m64-dedicate gate 2: the 27 dedicate verses read in their passages (outputs/escalation/2247-batch-d-verses-in-context-v1-20261024.md), the block written from claims C-385 to C-393",
+   "notes": "New block after Choosing before God. The holiness rules (Lev 22:2, Lev 15:31, 1Ch 23:13) are not told here; observation 12525 is held on OT-91.11 for M61."
+  },
+  "refs": [
+   {
+    "kind": "escalation",
+    "value": "2256"
+   }
+  ],
+  "blocks": [
+   {
+    "chapter": "10.7",
+    "new": {
+     "heading": "Dedicating",
+     "level": 2,
+     "after": "Choosing before God"
+    },
+    "text": "## Dedicating\n\nTo dedicate, *qādash*, is to give something to the Lord and set it apart for him. In most of these verses the one who gives is a person, and what is given is his own.\n\nA man can dedicate his house or his field, and the law then sets its worth.\n- *\"When a man dedicates his house as a holy gift to the Lord, the priest shall value it as either good or bad; as the priest values it, so it shall stand\"* (Leviticus 27:14).\n- He can buy it back at a cost: *\"if the donor wishes to redeem his house, he shall add a fifth to the valuation price, and it shall be his\"* (27:15).\n- A field can be lost for good: *\"if he does not wish to redeem the field, or if he has sold the field to another man, it shall not be redeemed anymore\"* (27:20).\n\nThe worth of the gift is set by the priest, not by the one who gives it.\n\nSome things cannot be given, because they are already the Lord's: *\"a firstborn of animals, which as a firstborn belongs to the Lord, no man may dedicate; whether ox or sheep, it is the Lord's\"* (Leviticus 27:26). Where the firstborn is commanded, the command comes with a memory.\n- *\"Consecrate to me all the firstborn. Whatever is the first to open the womb among the people of Israel, both of man and of beast, is mine\"* (Exodus 13:2), and straight after it, *\"Remember this day in which you came out from Egypt\"* (13:3).\n- *\"All the firstborn males that are born of your herd and flock you shall dedicate to the Lord your God\"* (Deuteronomy 15:19), a few verses after *\"You shall remember that you were a slave in the land of Egypt, and the Lord your God redeemed you\"* (15:15).\n\nKings and leaders dedicate what they have won.\n- *\"These also King David dedicated to the Lord, together with the silver and gold that he dedicated from all the nations he subdued\"* (2 Samuel 8:11; 1 Chronicles 18:11). The passage ends, *\"And the Lord gave victory to David wherever he went\"* (2 Samuel 8:14).\n- *\"From spoil won in battles they dedicated gifts for the maintenance of the house of the Lord\"* (1 Chronicles 26:27). The givers named include *\"Samuel the seer and Saul the son of Kish and Abner the son of Ner and Joab the son of Zeruiah\"* (26:28).\n\nSolomon dedicates the house inside a plan, and with a question. *\"Now Solomon purposed to build a temple for the name of the Lord\"* (2 Chronicles 2:1). *\"Behold, I am about to build a house for the name of the Lord my God and dedicate it to him\"* (2:4). Then: *\"But who is able to build him a house, since heaven, even highest heaven, cannot contain him? Who am I to build a house for him, except as a place to make offerings before him?\"* (2:6).\n\nThe giving is done in abundance, and with joy.\n- Under Hezekiah *\"the people of Israel gave in abundance\"* (2 Chronicles 31:5), and brought *\"the tithe of the dedicated things that had been dedicated to the Lord their God, and laid them in heaps\"* (31:6). *\"When Hezekiah and the princes came and saw the heaps, they blessed the Lord and his people Israel\"* (31:8).\n- In the days of Nehemiah *\"they set apart that which was for the Levites\"* (Nehemiah 12:47), on the day when *\"God had made them rejoice with great joy\"* (12:43).\n\nA dedication can be taken back. When Hazael *\"set his face to go up against Jerusalem\"* (2 Kings 12:17), *\"Jehoash king of Judah took all the sacred gifts that Jehoshaphat and Jehoram and Ahaziah his fathers, the kings of Judah, had dedicated, and his own sacred gifts … and sent these to Hazael king of Syria. Then Hazael went away from Jerusalem\"* (12:18). The verse does not say what moved him.\n\nThe same giving can go to an idol.\n- Micah's mother: *\"I dedicate the silver to the Lord from my hand for my son, to make a carved image and a metal image\"* (Judges 17:3). The chapter ends, *\"Everyone did what was right in his own eyes\"* (17:6).\n- Israel *\"came to Baal-peor and consecrated themselves to the thing of shame, and became detestable like the thing they loved\"* (Hosea 9:10). The verse opens with God: *\"Like grapes in the wilderness, I found Israel\"*. The word there is *nāzar*, \"to separate, set apart\".\n- Ezekiel names *\"any one of the house of Israel\"* *\"who separates himself from me, taking his idols into his heart\"* (Ezekiel 14:7), the same word. Chapter 12 (*Idols taken inside*) follows the heart.\n\nThe same *nāzar* is used of abstaining, and God asks what it was for. *\"Should I weep and abstain in the fifth month, as I have done for so many years?\"* (Zechariah 7:3). The answer is a question: *\"When you fasted and mourned in the fifth month and in the seventh, for these seventy years, was it for me that you fasted?\"* (7:5).\n\nGod also dedicates a person, before the person is born. *\"Before I formed you in the womb I knew you, and before you were born I consecrated you; I appointed you a prophet to the nations\"* (Jeremiah 1:5). Jeremiah answers, *\"Ah, Lord God! Behold, I do not know how to speak, for I am only a youth\"* (1:6), and is told, *\"Do not be afraid of them, for I am with you to deliver you\"* (1:8).",
+    "tells": [
+     {
+      "claim": "C-385",
+      "kind": "in full",
+      "part": null
+     },
+     {
+      "claim": "C-386",
+      "kind": "in full",
+      "part": null
+     },
+     {
+      "claim": "C-387",
+      "kind": "in full",
+      "part": null
+     },
+     {
+      "claim": "C-388",
+      "kind": "in full",
+      "part": null
+     },
+     {
+      "claim": "C-389",
+      "kind": "in full",
+      "part": null
+     },
+     {
+      "claim": "C-390",
+      "kind": "in full",
+      "part": null
+     },
+     {
+      "claim": "C-391",
+      "kind": "in full",
+      "part": null
+     },
+     {
+      "claim": "C-392",
+      "kind": "in full",
+      "part": null
+     },
+     {
+      "claim": "C-393",
+      "kind": "in full",
+      "part": null
+     }
+    ]
+   }
+  ]
+ },
+ "open_items": [
+  {
+   "item": "OT-108.8",
+   "value": "M18",
+   "read_for": "Desire & Longing: 20 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M18 - desire-longing/m18-group-A-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B1-delight-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B2-pleasant-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B-correction-reread-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-D-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-E-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-F-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-G-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-held-items-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-m02-inner-being-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-m25-inner-being-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B-no-carrier-reading-v1-20261011.md; _analytics/Clusters/M18 - desire-longing/m18-group-B-remaining-role-reading-v2-20261011.md; _analytics/Clusters/M18 - desire-longing/m18-group-C-reading-batch1-v1-20261012.md; _analytics/Clusters/M18 - desire-longing/m18-group-C-reading-batch2-3-v1-20261012.md; _analytics/Clusters/M18 - desire-longing/m18-m72-shared-reading-v1-20261012.md; _analytics/Clusters/M18 - desire-longing/ot-105-9-m18-poor-seen-reading-v1-20261018.md; _analytics/Clusters/M18 - desire-longing/ot-97-68-m18-forward-mark-reading-v1-20261018.md; _analytics/Clusters/M18 - desire-longing/ot-98-2-3-m72-shared-reading-v1-20261019.md; _analytics/Clusters/M18 - desire-longing/ot-98-2-data-verses-reading-v1-20261019.md",
+   "gate1": {
+    "table": "escalation_thread_item_response",
+    "id": 756,
+    "run_id": "RUN-20261024_040152_541-READING",
+    "new": {
+     "response": "Batch D of #2247 reached this item's verses for the dedicate words only, recorded under the M64 observations; what this item reads for is not read here."
+    }
+   },
+   "settle": null
+  },
+  {
+   "item": "OT-108.4",
+   "value": "M72",
+   "read_for": "Authority & Dominion: 3 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M72 - authority-dominion/m72-group-B-trial-reading-v1-20261012.md; _analytics/Clusters/M72 - authority-dominion/m72-group-B-reading-v1-20261012.md; _analytics/Clusters/M72 - authority-dominion/ot-97-38-m72-forward-marks-reading-v1-20261018.md",
+   "gate1": {
+    "table": "escalation_thread_item_response",
+    "id": 757,
+    "run_id": "RUN-20261024_040152_541-READING",
+    "new": {
+     "response": "Batch D of #2247 reached this item's verses for the dedicate words only, recorded under the M64 observations; what this item reads for is not read here."
+    }
+   },
+   "settle": null
+  },
+  {
+   "item": "OT-108.7",
+   "value": "M07",
+   "read_for": "Shame & Confusion: 2 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M07 - shame-confusion/m07-m53-trial-reading-v1-20261019.md; _analytics/Clusters/M07 - shame-confusion/m07-m53-batch1-reading-v1-20261019.md",
+   "gate1": {
+    "table": "escalation_thread_item_response",
+    "id": 758,
+    "run_id": "RUN-20261024_040152_541-READING",
+    "new": {
+     "response": "Batch D of #2247 reached this item's verses for the dedicate words only, recorded under the M64 observations; what this item reads for is not read here."
+    }
+   },
+   "settle": null
+  },
+  {
+   "item": "OT-91.10",
+   "value": "Lev 22:2; Lev 15:31; 1Ch 23:13",
+   "read_for": "the holiness rules among the dedicate words, observation 12525: priests abstaining from the holy things lest they profane his name (Lev 22:2, nazar), the people kept separate from uncleanness (Lev 15:31, nazar), Aaron set apart to dedicate the most holy things (1Ch 23:13, qadash): read with M61 Purity & Holiness",
+   "gate1": null,
+   "settle": {
+    "as": "withdrawn",
+    "reason": "withdrawn on the researcher's ruling (#2256 option 3): observation 12525 is held on OT-91.11, the M61 reading of qadash, instead"
+   }
+  },
+  {
+   "item": "OT-91.11",
+   "value": "Isa 66:17 and 129 more verses",
+   "read_for": "qadash in its M61 senses (H6942G consecrate, H6942K holiness, H6942J prepare, H6942I forfeit), read against its dedicate sense, read in #2247 batch D as the will's giving to God: whether consecration in these verses is the will's giving, holiness, or both",
+   "gate1": null,
+   "settle": {
+    "as": "touched",
+    "found": "batch D read the 22 dedicate verses and recorded the holiness rules (observation 12525, held here); the M61 senses of qadash are not read here"
+   }
+  },
+  {
+   "item": "OT-108.33",
+   "value": "Eze 14:7; 1Ch 22:19; 2Ch 15:12; Isa 31:1",
+   "read_for": "the M83 seeking drafts on Eze 14:7: 5258 (consulting emptied of sincerity), 7088 (compromised inquiry, with Isa 31:1), 7288, 7306, 7311 and 7315 (when seeking takes hold): carry each by a claim on seeking, or dispose of it",
+   "gate1": null,
+   "settle": {
+    "as": "touched",
+    "found": "batch D reached Eze 14:7 only; the M83 seeking drafts held here are not read here"
+   }
+  },
+  {
+   "item": "OT-108.34",
+   "value": "Lev 27:14 and 20 more verses",
+   "read_for": "the eight held claims of reading m64-dedicate: C-385 (giving what is one's own), C-386 (what is already his), C-388 (abstaining judged by its aim), C-389 (the spoil given back), C-390 (a dedication undone), C-391 (the house dedicated inside a purpose), C-392 (giving with joy), C-393 (God's dedicating of Jeremiah): tell each in a block of 10.7 Choosing and setting direction (C-393 also 13.1), or withdraw it",
+   "gate1": null,
+   "settle": {
+    "as": "withdrawn",
+    "reason": "withdrawn on the researcher's ruling (#2256 option 3): the 8 claims it held are told in the new 10.7 block Dedicating"
+   }
+  }
+ ]
+}

@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-23T17:47:40Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-24T03:31:08Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `0e1dad0b-9f09-4558-ae0f-a900ebc06b67` (CLAUDE_CODE_SESSION_ID); started 2026-10-23T16:03:16Z; window base commit `6d84948431ea77523cedc49f12835d36703a68d2`
-- compliance file: `Logs/compliance/COMPLIANCE-20261023-0e1dad0b.md`; session log: `Logs/SESSION-LOG-20261023-2240-2205-2246-thread-audit.md`
-- **open findings: 0**; cleared by disposition: 4
+- session: `79edf1db-f44d-46de-aaef-ec5371e7e5c3` (CLAUDE_CODE_SESSION_ID); started 2026-10-23T19:06:06Z; window base commit `0256b0156b00b7562d647bde7072a302c06e3c11`
+- compliance file: `Logs/compliance/COMPLIANCE-20261023-79edf1db.md`; session log: `Logs/SESSION-LOG-20261024-2247-m64-reading-b-to-d.md`
+- **open findings: 0**; cleared by disposition: 7
 
 
 ## Contents
@@ -41,20 +41,22 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:21e17e86`: researcher message 2026-10-23T16:09 is in no escalation comment written this session: "Take up #2240 (escalation.history crash on #729) first." -- disposition: no record needed: a bare instruction to start work on #2240, carried out and recorded in #2240 v2
-- cleared `SC3:bdda1f4a`: researcher message 2026-10-23T16:18 is in no escalation comment written this session: "ThreadAudit (escalation-thread-audit-v8-20261023.md) found five items under T-d, “should have been cleared”: each sits on a strand whose escalations are all com" -- disposition: recorded in #2246 v1
-- cleared `SC3:ec04d068`: researcher message 2026-10-23T16:43 is too short to be matched; name where it is recorded: "Run session-close." -- disposition: no record needed: the instruction to run this registered close, carried out by run RUN-20261023_174346_869-SESSION-CLOSE
-- cleared `SC3:2c64c8ed`: researcher message 2026-10-23T17:45 is too short to be matched; name where it is recorded: "Run session-close." -- disposition: no record needed: the instruction to run this registered close a second time, carried out by run RUN-20261023_184606_790-SESSION-CLOSE
+- cleared `SC3:f7a9c321`: researcher message 2026-10-23T19:40 is in no escalation comment written this session: "Continue #2247 with batch D: dedicate." -- disposition: no record needed: a bare go-ahead for batch D under the approved plan decision 1a, acted on from #2247 v8
+- cleared `SC3:72c6d543`: researcher message 2026-10-24T03:08 is in no escalation comment written this session: "approved for your action" -- disposition: no record needed: a bare approval of #2255, which the researcher recorded in #2255 v3
+- cleared `SC3:61781cd5`: researcher message 2026-10-24T03:17 is in no escalation comment written this session: "2257 and 2258 approved for your follow up" -- disposition: no record needed: a bare approval of #2257 and #2258, which the researcher recorded in #2257 v3 and #2258 v3
+- cleared `SC3:fcee670e`: researcher message 2026-10-24T03:19 is in no escalation comment written this session: "approved 2188 for you follow up" -- disposition: no record needed: a bare approval of #2188's mapping step, which the researcher recorded in #2188 v7
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-_no finding_
+- cleared `SC4b:386954eb`: researcher message 2026-10-24T03:10 holds, defers or asks to check something; name its register item: "#2256 option (3): tell the 8 claims in a new 10.7 block now, hold 12525 on OT-91.11, withdraw OT-91.10 and OT-108.34." -- disposition: in register OT-91.11
+- cleared `SC4b:61781cd5`: researcher message 2026-10-24T03:17 holds, defers or asks to check something; name its register item: "2257 and 2258 approved for your follow up" -- disposition: not held: an approval, applied in #2257 v4 and #2258 v4
+- cleared `SC4b:fcee670e`: researcher message 2026-10-24T03:19 holds, defers or asks to check something; name its register item: "approved 2188 for you follow up" -- disposition: not held: an approval of the #2188 mapping step, done in #2188 v8 and closed in #2188 v10
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
 
-Chapters changed: none; quote parts checked: 0; register check findings now: 45.
+Chapters changed: 10-07-choosing-and-setting-direction-v35-20261024.md; quote parts checked: 16; register check findings now: 42.
 
 _no finding_
 
@@ -81,7 +83,7 @@ _no finding_
 <a id="sc12-publish"></a>
 ## SC12 Publish
 
-- narrative copy: not needed (no chapter changed)
+- narrative copy: RUN (a chapter changed)
 - threads register export: RUN (a thread row changed)
 
 _no finding_

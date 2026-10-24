@@ -1,0 +1,990 @@
+{
+ "reading": "m64-dedicate",
+ "reading_id": 4,
+ "escalation": 2247,
+ "home": "M64",
+ "opened": "2026-10-23T19:41:08Z",
+ "scope": [
+  {
+   "kind": "cluster",
+   "value": "M64",
+   "name": "Will & Resolve",
+   "strongs": [
+    {
+     "code": "G0138",
+     "sense": "to choose"
+    },
+    {
+     "code": "G0140",
+     "sense": "to choose"
+    },
+    {
+     "code": "G0830",
+     "sense": "self-chosen"
+    },
+    {
+     "code": "G1011",
+     "sense": "to plan"
+    },
+    {
+     "code": "G1012",
+     "sense": "plan"
+    },
+    {
+     "code": "G1013",
+     "sense": "plan"
+    },
+    {
+     "code": "G1014",
+     "sense": "to plan"
+    },
+    {
+     "code": "G4286",
+     "sense": "purpose"
+    },
+    {
+     "code": "G4388",
+     "sense": "to plan/present"
+    },
+    {
+     "code": "G4401",
+     "sense": "to choose"
+    },
+    {
+     "code": "G5427",
+     "sense": "purpose"
+    },
+    {
+     "code": "H0014",
+     "sense": "be willing"
+    },
+    {
+     "code": "H0908",
+     "sense": "to devise"
+    },
+    {
+     "code": "H0972",
+     "sense": "chosen"
+    },
+    {
+     "code": "H0977",
+     "sense": "to choose"
+    },
+    {
+     "code": "H2161",
+     "sense": "to plan"
+    },
+    {
+     "code": "H2162",
+     "sense": "plan"
+    },
+    {
+     "code": "H2803G",
+     "sense": "design/skillful"
+    },
+    {
+     "code": "H2803H",
+     "sense": "count/regard as"
+    },
+    {
+     "code": "H2803I",
+     "sense": "devise/plot/plan"
+    },
+    {
+     "code": "H3336",
+     "sense": "intention"
+    },
+    {
+     "code": "H5081G",
+     "sense": "willing"
+    },
+    {
+     "code": "H5144A",
+     "sense": "to dedicate"
+    },
+    {
+     "code": "H5779",
+     "sense": "to plan"
+    },
+    {
+     "code": "H6246",
+     "sense": "to plan"
+    },
+    {
+     "code": "H6634",
+     "sense": "to will"
+    },
+    {
+     "code": "H6942H",
+     "sense": "dedicate"
+    },
+    {
+     "code": "H7148",
+     "sense": "chosen"
+    }
+   ],
+   "verses": 468,
+   "item": "OT-108.3"
+  }
+ ],
+ "how": "Fill each item's `record` with one of {\"new\": {...}}, {\"table\": \"...\", \"id\": n} or {\"reason\": \"...\"}, then Reading.ps1 -Step Record -Label m64-dedicate -File <this file>. New open items go in `new_items` (the Open-Item.ps1 -Action Add shape, D-b).",
+ "new_items": [],
+ "sections": {
+  "hit_unread": {
+   "guide": "A strand hit with no face and no reason. Give the hit its face (and the observation it goes into), or the reason it has none.",
+   "records_in": [
+    "reading_strand_hit"
+   ],
+   "items": []
+  },
+  "meaning_missing": {
+   "guide": "A word in scope with no meaning senses (or, for Greek, no Mounce entry). Pull it through the spine route and name the row, or give the reason it is not needed for this reading.",
+   "records_in": [
+    "strong_meaning_tree",
+    "strong_lexicon"
+   ],
+   "items": []
+  },
+  "not_read": {
+   "guide": "A verse with no observation and no strand face. Read it in its passage; record what it states about the inner being (a new observation), name an existing observation that already covers it, or give the reason it holds nothing.",
+   "records_in": [
+    "ib_observation"
+   ],
+   "items": []
+  },
+  "open_item": {
+   "guide": "An open item that matches the scope: read for what it asks, and record what the reading found (an observation, or a response of kind touched). It is not closed here: closing is decided in synergy (gate 2).",
+   "records_in": [
+    "ib_observation",
+    "escalation_thread_item_response"
+   ],
+   "items": [
+    {
+     "item": "OT-91.1",
+     "value": "2Sa 8:11 and 21 more verses",
+     "read_for": "qadash 'dedicate' (H6942H, M64) read with its sister senses (consecrate, forfeit, prepare, holiness; M61), not apart: what the dedication is, and whether it is will or holiness",
+     "note": "qadash 'dedicate' (H6942H, M64) read with its sister senses (consecrate, forfeit, prepare, holiness; M61), not apart: what the dedication is, and whether it is will or holiness",
+     "verses": [
+      "Exo 13:2",
+      "Lev 27:14",
+      "Lev 27:15",
+      "Lev 27:16",
+      "Lev 27:17",
+      "Lev 27:18",
+      "Lev 27:19",
+      "Lev 27:22",
+      "Lev 27:26",
+      "Deu 15:19",
+      "Judg 17:3",
+      "2Sa 8:11",
+      "2Ki 12:18",
+      "1Ch 18:11",
+      "1Ch 23:13",
+      "1Ch 26:26",
+      "1Ch 26:27",
+      "1Ch 26:28",
+      "2Ch 2:4",
+      "2Ch 31:6",
+      "Neh 12:47",
+      "Jer 1:5"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 753,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "response": "The 22 qadash 'dedicate' verses read in their passages: mostly the will's act of giving to God (its own goods, measured and redeemable; limited by what is already his; turned to idols; undone; given with joy; God's dedicating of Jeremiah), with 1Ch 23:13 an office of holiness. The sister senses (M61) are not read here."
+      }
+     }
+    },
+    {
+     "item": "OT-108.3",
+     "value": "M64",
+     "read_for": null,
+     "note": "Will & Resolve: 13 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M64 - will-resolve/m64-choose-test-reading-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-v3-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch1-isaiah-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch2-psalm-promise-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch3-own-accord-together-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch4-job-weighed-by-another-v1-20261007.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2b-reading-batch1-chosen-ot-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2b-reading-batch2-chosen-nt-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch1-chosen-place-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch2-others-ot-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch3-others-nt-v1-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md; _analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md",
+     "verses": [
+      "Exo 13:2",
+      "Lev 15:31",
+      "Lev 22:2",
+      "Lev 27:14",
+      "Lev 27:15",
+      "Lev 27:16",
+      "Lev 27:17",
+      "Lev 27:18",
+      "Lev 27:19",
+      "Lev 27:22",
+      "Lev 27:26",
+      "Deu 15:19",
+      "Judg 17:3",
+      "2Sa 8:11",
+      "2Ki 12:18",
+      "1Ch 18:11",
+      "1Ch 23:13",
+      "1Ch 26:26",
+      "1Ch 26:27",
+      "1Ch 26:28",
+      "2Ch 2:4",
+      "2Ch 31:6",
+      "Neh 12:47",
+      "Jer 1:5",
+      "Eze 14:7",
+      "Hos 9:10",
+      "Zec 7:3"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 754,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "response": "Batch D of #2247 (dedicate: H6942H qadash, H5144A nazar; 27 verses), read in their passages (outputs/escalation/2247-batch-d-verses-in-context-v1-20261024.md; rule study_method.read-the-verse-first, #2253): 10 observations recorded. With batches A to C, every M64 verse of OT-108.3 is now read."
+      }
+     }
+    },
+    {
+     "item": "OT-91.5",
+     "value": "Hos 9:10; Lev 15:31; Lev 22:2; Zec 7:3; Eze 14:7",
+     "read_for": "nazar 'to dedicate, separate' (H5144A) in its consecration verses, with Eze 14:7 (separating oneself from me): consecration as holiness, for M61",
+     "note": "nazar 'to dedicate, separate' (H5144A) in its consecration verses, with Eze 14:7 (separating oneself from me): consecration as holiness, for M61",
+     "verses": [
+      "Lev 15:31",
+      "Lev 22:2",
+      "Eze 14:7",
+      "Hos 9:10",
+      "Zec 7:3"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 755,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "response": "The five nazar verses read in their passages: Hos 9:10 (self consecrated to what is loved), Eze 14:7 (separating from God with idols in the heart) and Zec 7:3 (abstaining judged by its aim) hold the inner act; Lev 22:2 and Lev 15:31 are holiness rules, recorded for M61."
+      }
+     }
+    },
+    {
+     "item": "OT-108.8",
+     "value": "M18",
+     "read_for": null,
+     "note": "Desire & Longing: 20 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M18 - desire-longing/m18-group-A-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B1-delight-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B2-pleasant-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B-correction-reread-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-D-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-E-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-F-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-G-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-held-items-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-m02-inner-being-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-m25-inner-being-reading-v1-20261009.md; _analytics/Clusters/M18 - desire-longing/m18-group-B-no-carrier-reading-v1-20261011.md; _analytics/Clusters/M18 - desire-longing/m18-group-B-remaining-role-reading-v2-20261011.md; _analytics/Clusters/M18 - desire-longing/m18-group-C-reading-batch1-v1-20261012.md; _analytics/Clusters/M18 - desire-longing/m18-group-C-reading-batch2-3-v1-20261012.md; _analytics/Clusters/M18 - desire-longing/m18-m72-shared-reading-v1-20261012.md; _analytics/Clusters/M18 - desire-longing/ot-105-9-m18-poor-seen-reading-v1-20261018.md; _analytics/Clusters/M18 - desire-longing/ot-97-68-m18-forward-mark-reading-v1-20261018.md; _analytics/Clusters/M18 - desire-longing/ot-98-2-3-m72-shared-reading-v1-20261019.md; _analytics/Clusters/M18 - desire-longing/ot-98-2-data-verses-reading-v1-20261019.md",
+     "verses": [
+      "Lev 27:14"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 756,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "response": "Batch D of #2247 reached this item's verses for the dedicate words only, recorded under the M64 observations; what this item reads for is not read here."
+      }
+     }
+    },
+    {
+     "item": "OT-108.4",
+     "value": "M72",
+     "read_for": null,
+     "note": "Authority & Dominion: 3 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M72 - authority-dominion/m72-group-B-trial-reading-v1-20261012.md; _analytics/Clusters/M72 - authority-dominion/m72-group-B-reading-v1-20261012.md; _analytics/Clusters/M72 - authority-dominion/ot-97-38-m72-forward-marks-reading-v1-20261018.md",
+     "verses": [
+      "2Sa 8:11",
+      "2Ki 12:18",
+      "1Ch 18:11",
+      "1Ch 26:26",
+      "1Ch 26:28",
+      "Zec 7:3"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 757,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "response": "Batch D of #2247 reached this item's verses for the dedicate words only, recorded under the M64 observations; what this item reads for is not read here."
+      }
+     }
+    },
+    {
+     "item": "OT-108.7",
+     "value": "M07",
+     "read_for": null,
+     "note": "Shame & Confusion: 2 prose reading file(s) of 6 to 19 October not yet recorded as observations (#2172 catch-up, decision 5): _analytics/Clusters/M07 - shame-confusion/m07-m53-trial-reading-v1-20261019.md; _analytics/Clusters/M07 - shame-confusion/m07-m53-batch1-reading-v1-20261019.md",
+     "verses": [
+      "Hos 9:10"
+     ],
+     "record": {
+      "table": "escalation_thread_item_response",
+      "id": 758,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "response": "Batch D of #2247 reached this item's verses for the dedicate words only, recorded under the M64 observations; what this item reads for is not read here."
+      }
+     }
+    }
+   ]
+  },
+  "read_in_files_only": {
+   "guide": "A verse the cluster files read (their lines are given) with no observation in the tables. Carry the reading into a table: a new observation from what the files say and the verse states, an existing observation, or the reason the files' reading holds nothing.",
+   "records_in": [
+    "ib_observation"
+   ],
+   "items": [
+    {
+     "verse": "Exo 13:2",
+     "words": [
+      "Consecrate (H6942H, M64)",
+      "firstborn (H1060, M37)",
+      "open (H6363A, M37)"
+     ],
+     "text": "“ Consecrate to me all the firstborn. Whatever is the first to open the womb among the people of Israel, both of man and of beast, is mine.”",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:37   - Exo 13:2 \"Consecrate\" is Piel. 2Ch 31:6 \"dedicated\" is Pual. All the others are Hiphil.",
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:72 | Exo 13:2 | \"Consecrate\" HVpv2ms | M37 firstborn \"firstborn\"; M37 firstborn \"open\" | “ Consecrate to me all the firstborn. Whatever is the first to open the womb among the people of Israel, both of man and of beast, is mine.” |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12527
+     }
+    },
+    {
+     "verse": "Lev 15:31",
+     "words": [
+      "defiling (H2930A, M10c)",
+      "die (H4191, M25)",
+      "keep (H5144A, M64)",
+      "uncleanness (H2932, M10c)"
+     ],
+     "text": "“Thus you shall keep the people of Israel separate from their uncleanness, lest they die in their uncleanness by defiling my tabernacle that is in their midst.”",
+     "file_lines": [
+      "_analytics/Clusters/M25 - life-death/life-death-strand-overview-data-v1-20261002.md:111 | M10c | Defilement | 26 | 15 | to die + to defile 6 (Eze 44:25, Lev 11:39, Lev 15:31); death + to defile 3 (Lev 11:31, Lev 11:32, Num 6:7); living thing + unclean 3 (Lev 11:47, Lev 5:2) |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:9   - The four other H5144A verses (Hos 9:10, Lev 15:31, Lev 22:2, Zec 7:3) are consecration, not M64 reading. This is noted on OT-91.",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:102   - \"keep\" separate from uncleanness (Lev 15:31)",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:181    - the other four H5144A verses (Hos 9:10, Lev 15:31, Lev 22:2, Zec 7:3), not read for M64"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12525
+     }
+    },
+    {
+     "verse": "Lev 22:2",
+     "words": [
+      "Speak (H1696G, M65)",
+      "abstain (H5144A, M64)",
+      "dedicate (H6942G, M61)",
+      "holy (H6944G, M61)",
+      "holy things (H6944G, M61)"
+     ],
+     "text": "“ Speak to Aaron and his sons so that they abstain from the holy things of the people of Israel, which they dedicate to me, so that they do not profane my holy name: I am the Lord.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:9   - The four other H5144A verses (Hos 9:10, Lev 15:31, Lev 22:2, Zec 7:3) are consecration, not M64 reading. This is noted on OT-91.",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:101   - \"abstain\" from the holy things (Lev 22:2) and in a fast (Zec 7:3)",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:181    - the other four H5144A verses (Hos 9:10, Lev 15:31, Lev 22:2, Zec 7:3), not read for M64"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12525,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "Holiness rules with little inner act: priests are to \"abstain from the holy things of the people of Israel, which they dedicate to me, so that they do not profane my holy name\" (Lev 22:2); \"Thus you shall keep the people of Israel separate from their uncleanness, lest they die in their uncleanness by defiling my tabernacle\" (Lev 15:31); \"Aaron was set apart to dedicate the most holy things\" (1Ch 23:13).",
+       "meaning": "The word names the keeping of holy things and the separating from uncleanness; no inner act is stated.",
+       "setting": "Leviticus 15 and 22; 1 Chronicles 23. For M61 Purity & Holiness.",
+       "implication": "These verses belong to the holiness reading, where the word's M61 senses are read.",
+       "parties": "Aaron and his sons; the people of Israel",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Lev 22:2",
+         "strong": "H5144A"
+        },
+        {
+         "verse": "Lev 15:31",
+         "strong": "H5144A"
+        },
+        {
+         "verse": "1Ch 23:13",
+         "strong": "H6942H"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Lev 27:14",
+     "words": [
+      "bad (H7451A, M58)",
+      "dedicates (H6942H, M64)",
+      "good (H2896A, M18)",
+      "holy (H6944G, M61)",
+      "value (H6186B, M26)",
+      "values (H6186B, M26)"
+     ],
+     "text": "“When a man dedicates his house as a holy gift to the Lord, the priest shall value it as either good or bad; as the priest values it, so it shall stand.",
+     "file_lines": [
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B-verse-list-v1-20261009.md:185 | 159 | Lev 27:14 | good | 2 |  |",
+      "_analytics/Clusters/M18 - desire-longing/m18-group-B-worksheet-v1-20261009.md:1381 ### Lev 27:14",
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:73 | Lev 27:14 | \"dedicates\" HVhi3ms | M61 holiness \"holy\"; M26 to value \"value\"; M18 pleasant \"good\"; M58 bad: harmful \"bad\"; M26 to value \"values\" | “When a man dedicates his house as a holy gift to the Lord, the priest shall value it as either good or bad; as the priest values it, so it shall stand. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12526,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "Among the vowed gifts, a person dedicates what is his own: \"When a man dedicates his house as a holy gift to the Lord, the priest shall value it as either good or bad\" (Lev 27:14); part of his land, \"the valuation shall be in proportion to its seed\" (27:16), from or after the jubilee (27:17-18); a field he has bought (27:22). The gift can be taken back at a cost: \"if the donor wishes to redeem his house, he shall add a fifth\" (27:15; 27:19). If it is not redeemed, \"it shall not be redeemed anymore\" (27:20).",
+       "meaning": "Dedicating is a person giving what is his own to the Lord, and the gift is measured by another, can be bought back at a cost, and can be lost for good.",
+       "setting": "Leviticus 27, the law of vowed gifts. The ESV's \"wishes\" renders the redeem verb with \"if\" (H1350A, H0518A); no will word stands in the Hebrew.",
+       "implication": "The giver's act is real, and the law sets its worth and its limits, not the giver.",
+       "parties": "the giver; the priest; the Lord",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Lev 27:14",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Lev 27:15",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Lev 27:16",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Lev 27:17",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Lev 27:18",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Lev 27:19",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Lev 27:22",
+         "strong": "H6942H"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Lev 27:15",
+     "words": [
+      "donor (H6942H, M64)"
+     ],
+     "text": "And if the donor wishes to redeem his house, he shall add a fifth to the valuation price, and it shall be his.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:74 | Lev 27:15 | \"donor\" HVhrmsa | — | And if the donor wishes to redeem his house, he shall add a fifth to the valuation price, and it shall be his. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12526
+     }
+    },
+    {
+     "verse": "Lev 27:16",
+     "words": [
+      "dedicates (H6942H, M64)"
+     ],
+     "text": "“If a man dedicates to the Lord part of the land that is his possession, then the valuation shall be in proportion to its seed. A homer of barley seed shall be valued at fifty shekels of silver.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:75 | Lev 27:16 | \"dedicates\" HVhi3ms | — | “If a man dedicates to the Lord part of the land that is his possession, then the valuation shall be in proportion to its seed. A homer of barley seed shall be valued at fifty shekels of silver. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12526
+     }
+    },
+    {
+     "verse": "Lev 27:17",
+     "words": [
+      "dedicates (H6942H, M64)"
+     ],
+     "text": "If he dedicates his field from the year of jubilee, the valuation shall stand,",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:76 | Lev 27:17 | \"dedicates\" HVhi3ms | — | If he dedicates his field from the year of jubilee, the valuation shall stand, |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12526
+     }
+    },
+    {
+     "verse": "Lev 27:18",
+     "words": [
+      "calculate (H2803H, M64)",
+      "dedicates (H6942H, M64)"
+     ],
+     "text": "but if he dedicates his field after the jubilee, then the priest shall calculate the price according to the years that remain until the year of jubilee, and a deduction shall be made from the valuation.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:77 | Lev 27:18 | \"dedicates\" HVhi3ms | M64 to devise: count \"calculate\" | but if he dedicates his field after the jubilee, then the priest shall calculate the price according to the years that remain until the year of jubilee, and a deduction shall be made from the valuation. |",
+      "_analytics/Clusters/M64 - will-resolve/m64-plan-looking-ahead-scan-v1-20261008.md:111 - *\"the priest shall calculate the price according to the years that remain until the year of jubilee\"* (Lev 27:18). See also Lev 25:27, 50, 52 and 27:23.",
+      "_analytics/Clusters/M64 - will-resolve/m64-strand-quick-summary-v1-20261006.md:107 | H6942H + H2803H | 1 | Lev 27:18 |",
+      "_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md:166 | **Reckoning that serves release** | Lev 25:27, 50, 52; 27:18, 23; Num 18:27, 30 | Setting: redemption, jubilee, offering. Joined with: the year of release | The calculation exists to set someone or something free (S) |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12526
+     }
+    },
+    {
+     "verse": "Lev 27:19",
+     "words": [
+      "dedicates (H6942H, M64)"
+     ],
+     "text": "And if he who dedicates the field wishes to redeem it, then he shall add a fifth to its valuation price, and it shall remain his.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:78 | Lev 27:19 | \"dedicates\" HVhrmsa | — | And if he who dedicates the field wishes to redeem it, then he shall add a fifth to its valuation price, and it shall remain his. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12526
+     }
+    },
+    {
+     "verse": "Lev 27:22",
+     "words": [
+      "dedicates (H6942H, M64)"
+     ],
+     "text": "If he dedicates to the Lord a field that he has bought, which is not a part of his possession,",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:79 | Lev 27:22 | \"dedicates\" HVhi3ms | — | If he dedicates to the Lord a field that he has bought, which is not a part of his possession, |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12526
+     }
+    },
+    {
+     "verse": "Lev 27:26",
+     "words": [
+      "dedicate (H6942H, M64)",
+      "firstborn (H1060, M37)",
+      "firstborn (H1069, M37)"
+     ],
+     "text": "“ But a firstborn of animals, which as a firstborn belongs to the Lord, no man may dedicate; whether ox or sheep, it is the Lord’s.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:80 | Lev 27:26 | \"dedicate\" HVhi3ms | M37 firstborn \"firstborn\"; M37 to be/bear firstborn \"firstborn\" | “ But a firstborn of animals, which as a firstborn belongs to the Lord, no man may dedicate; whether ox or sheep, it is the Lord’s. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12527,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "What is already the Lord's cannot be given as one's own: \"a firstborn of animals, which as a firstborn belongs to the Lord, no man may dedicate; whether ox or sheep, it is the Lord's\" (Lev 27:26). Where it is commanded, the dedication is set beside a remembered redemption: \"Consecrate to me all the firstborn ... is mine\" (Exo 13:2), then \"Remember this day in which you came out from Egypt\" (13:3); \"All the firstborn males ... you shall dedicate to the Lord your God\" (Deu 15:19), after \"you were a slave in the land of Egypt, and the Lord your God redeemed you\" (15:15).",
+       "meaning": "The giving has a limit: what belongs to the Lord is not the giver's to offer, and the commanded dedication answers a redemption remembered.",
+       "setting": "Leviticus 27, Exodus 13, Deuteronomy 15.",
+       "implication": "The firstborn is given back because it is already his, not offered from the giver's store.",
+       "parties": "the Lord; Israel; the owner of the firstborn",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Lev 27:26",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Exo 13:2",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Deu 15:19",
+         "strong": "H6942H"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Deu 15:19",
+     "words": [
+      "dedicate (H6942H, M64)",
+      "firstborn (H1060, M37)",
+      "work (H5647I, M67)"
+     ],
+     "text": "“ All the firstborn males that are born of your herd and flock you shall dedicate to the Lord your God. You shall do no work with the firstborn of your herd, nor shear the firstborn of your flock.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:81 | Deu 15:19 | \"dedicate\" HVhi2ms | M37 firstborn \"firstborn\"; M67 to serve: labour \"work\"; M37 firstborn \"firstborn\"; M37 firstborn \"firstborn\" | “ All the firstborn males that are born of your herd and flock you shall dedicate to the Lord your God. You shall do no work with the firstborn of your herd, nor shear the firstborn of your flock. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12527
+     }
+    },
+    {
+     "verse": "Judg 17:3",
+     "words": [
+      "carved image (H6459, M55)",
+      "dedicate (H6942H, M64)"
+     ],
+     "text": "And he restored the 1,100 pieces of silver to his mother. And his mother said, “I dedicate the silver to the Lord from my hand for my son, to make a carved image and a metal image. Now therefore I will restore it to you.”",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:13   - Judg 17:3 is one ESV word over two Hebrew forms, HVhaa and HVhp1cs (\"I wholly dedicate\").",
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:82 | Judg 17:3 | \"dedicate\" HVhaa; \"dedicate\" HVhp1cs | M55 idol \"carved image\" | And he restored the 1,100 pieces of silver to his mother. And his mother said, “I dedicate the silver to the Lord from my hand for my son, to make a carved image and a metal image. Now therefore I will restore it to you.” |",
+      "_analytics/Clusters/M64 - will-resolve/m64-strand-quick-summary-v1-20261006.md:81 All surface counts are taken from distinct hits. In the raw CSV, H0014's rows appear four times over (see §1.1), and the Judg 17:3 position appears four times (see §4).",
+      "_analytics/Clusters/M64 - will-resolve/m64-strand-quick-summary-v1-20261006.md:109 **Judg 17:3** has two H6942H rows at one position (\"I dedicate\"; morph HVhaa + HVhp1cs, codes 0 and 2 of one span). That is one ESV word over two Hebrew forms, not a duplicate. It is a single hit in the counts above."
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12528,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "The same giving can be turned to an idol. Micah's mother: \"I dedicate the silver to the Lord from my hand for my son, to make a carved image and a metal image\" (Judg 17:3), in days when \"Everyone did what was right in his own eyes\" (17:6). Israel \"came to Baal-peor and consecrated themselves to the thing of shame, and became detestable like the thing they loved\" (Hos 9:10), after \"Like grapes in the wilderness, I found Israel\". And one \"who separates himself from me, taking his idols into his heart\" (Eze 14:7), whose heart God means to \"lay hold of\" (14:5).",
+       "meaning": "Giving oneself or one's goods can go to an idol in the Lord's name; a person becomes like what he gives himself to and loves, and separating from God is done with idols taken into the heart.",
+       "setting": "Judges 17 (Micah's shrine); Hosea 9 (Baal-peor); Ezekiel 14 (the elders with idols in their hearts).",
+       "implication": "What is loved shapes the one who gives himself to it (Hos 9:10).",
+       "parties": "Micah and his mother; Israel at Baal-peor; the house of Israel and the sojourner; God",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Judg 17:3",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Hos 9:10",
+         "strong": "H5144A"
+        },
+        {
+         "verse": "Eze 14:7",
+         "strong": "H5144A"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "2Sa 8:11",
+     "words": [
+      "King (H4428G, M72)",
+      "dedicated (H6942H, M64)"
+     ],
+     "text": "These also King David dedicated to the Lord, together with the silver and gold that he dedicated from all the nations he subdued,",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:12   - 2Sa 8:11, 1Ch 26:28 and Neh 12:47 have two separate hits each.",
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:83 | 2Sa 8:11 | \"dedicated\" HVhp3ms; \"dedicated\" HVhp3ms | M72 king \"King\" | These also King David dedicated to the Lord, together with the silver and gold that he dedicated from all the nations he subdued, |",
+      "_analytics/Clusters/M64 - will-resolve/m64-strand-quick-summary-v1-20261006.md:98 | H6942H + H6942H | 3 | 1Ch 26:28; 2Sa 8:11; Neh 12:47 |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12529,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "Kings and leaders give back the spoil of victory: \"These also King David dedicated to the Lord, together with the silver and gold that he dedicated from all the nations he subdued\" (2Sa 8:11; 1Ch 18:11), in a passage that ends \"the Lord gave victory to David wherever he went\" (2Sa 8:14). \"From spoil won in battles they dedicated gifts for the maintenance of the house of the Lord\" (1Ch 26:27); and what \"Samuel the seer and Saul the son of Kish and Abner the son of Ner and Joab the son of Zeruiah had dedicated\" (26:28).",
+       "meaning": "What was won is given back to the Lord who gave the victory, for his house.",
+       "setting": "2 Samuel 8, 1 Chronicles 18 and 26 (the treasuries).",
+       "implication": "Men at odds with one another stand in one list of givers (1Ch 26:28).",
+       "parties": "David; the heads of the fathers' houses and commanders; Samuel, Saul, Abner, Joab; Shelomoth",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "2Sa 8:11",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "1Ch 18:11",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "1Ch 26:26",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "1Ch 26:27",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "1Ch 26:28",
+         "strong": "H6942H"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "2Ki 12:18",
+     "words": [
+      "dedicated (H6942H, M64)",
+      "king (H4428G, M72)",
+      "kings (H4428G, M72)",
+      "king’s (H4428G, M72)",
+      "sacred gifts (H6944G, M61)"
+     ],
+     "text": "Jehoash king of Judah took all the sacred gifts that Jehoshaphat and Jehoram and Ahaziah his fathers, the kings of Judah, had dedicated, and his own sacred gifts, and all the gold that was found in the treasuries of the house of the Lord and of the king’s house, and sent these to Hazael king of Syria. Then Hazael went away from Jerusalem.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:84 | 2Ki 12:18 | \"dedicated\" HVhp3cp | M72 king \"king\"; M61 holiness \"sacred gifts\"; M72 king \"kings\"; M61 holiness \"sacred gifts\"; M72 king \"king’s\"; M72 king \"king\" | Jehoash king of Judah took all the sacred gifts that Jehoshaphat and Jehoram and Ahaziah his fathers, the kings of Judah, had dedicated, and his own sacred gifts, and all the gold that was found in the treasuries of the house of the Lord and of the king’s house, and sent these to Hazael king of Syria. Then Hazael went away from Jerusalem. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12530,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "\"Jehoash king of Judah took all the sacred gifts that Jehoshaphat and Jehoram and Ahaziah his fathers, the kings of Judah, had dedicated, and his own sacred gifts ... and sent these to Hazael king of Syria. Then Hazael went away from Jerusalem\" (2Ki 12:18), when Hazael \"set his face to go up against Jerusalem\" (12:17).",
+       "meaning": "What was given to God, by the fathers and by the king himself, is taken back to buy off a threat.",
+       "setting": "2 Kings 12; two verses later his servants struck him down (12:20). No inner state is named.",
+       "implication": "A dedication can be undone when something else is put first.",
+       "parties": "Jehoash; his fathers; Hazael",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "2Ki 12:18",
+         "strong": "H6942H"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "1Ch 18:11",
+     "words": [
+      "King (H4428G, M72)",
+      "dedicated (H6942H, M64)"
+     ],
+     "text": "These also King David dedicated to the Lord, together with the silver and gold that he had carried off from all the nations, from Edom, Moab, the Ammonites, the Philistines, and Amalek.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:85 | 1Ch 18:11 | \"dedicated\" HVhp3ms | M72 king \"King\" | These also King David dedicated to the Lord, together with the silver and gold that he had carried off from all the nations, from Edom, Moab, the Ammonites, the Philistines, and Amalek. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12529
+     }
+    },
+    {
+     "verse": "1Ch 23:13",
+     "words": [
+      "dedicate (H6942H, M64)",
+      "holy things (H6944G, M61)",
+      "minister (H8334, M36)",
+      "most (H6944G, M61)",
+      "pronounce blessings (H1288, M80)"
+     ],
+     "text": "The sons of Amram: Aaron and Moses. Aaron was set apart to dedicate the most holy things, that he and his sons forever should make offerings before the Lord and minister to him and pronounce blessings in his name forever.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:86 | 1Ch 23:13 | \"dedicate\" HVhcc | M61 holiness \"most\"; M61 holiness \"holy things\"; M36 to minister \"minister\"; M80 to bless \"pronounce blessings\" | The sons of Amram: Aaron and Moses. Aaron was set apart to dedicate the most holy things, that he and his sons forever should make offerings before the Lord and minister to him and pronounce blessings in his name forever. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12525
+     }
+    },
+    {
+     "verse": "1Ch 26:26",
+     "words": [
+      "commanders (H8269, M72)",
+      "dedicated (H6942H, M64)",
+      "gifts (H6944G, M61)",
+      "heads (H7218H, M72)",
+      "king (H4428G, M72)",
+      "officers (H8269, M72)"
+     ],
+     "text": "This Shelomoth and his brothers were in charge of all the treasuries of the dedicated gifts that David the king and the heads of the fathers’ houses and the officers of the thousands and the hundreds and the commanders of the army had dedicated.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:87 | 1Ch 26:26 | \"dedicated\" HVhp3ms | M61 holiness \"gifts\"; M72 king \"king\"; M72 head: leader \"heads\"; M72 ruler \"officers\"; M72 ruler \"commanders\" | This Shelomoth and his brothers were in charge of all the treasuries of the dedicated gifts that David the king and the heads of the fathers’ houses and the officers of the thousands and the hundreds and the commanders of the army had dedicated. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12529
+     }
+    },
+    {
+     "verse": "1Ch 26:27",
+     "words": [
+      "battles (H4421, M10)",
+      "dedicated gifts (H6942H, M64)",
+      "maintenance (H2388G, M23)"
+     ],
+     "text": "From spoil won in battles they dedicated gifts for the maintenance of the house of the Lord.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:88 | 1Ch 26:27 | \"dedicated gifts\" HVhp3cp | M10 battle \"battles\"; M23 to strengthen: strengthen \"maintenance\" | From spoil won in battles they dedicated gifts for the maintenance of the house of the Lord. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12529
+     }
+    },
+    {
+     "verse": "1Ch 26:28",
+     "words": [
+      "care (H3027H, M72)",
+      "dedicated (H6942H, M64)",
+      "dedicated gifts (H6942H, M64)"
+     ],
+     "text": "Also all that Samuel the seer and Saul the son of Kish and Abner the son of Ner and Joab the son of Zeruiah had dedicated — all dedicated gifts were in the care of Shelomoth and his brothers.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:12   - 2Sa 8:11, 1Ch 26:28 and Neh 12:47 have two separate hits each.",
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:89 | 1Ch 26:28 | \"dedicated\" HVhp3ms; \"dedicated gifts\" HVhrmsa | M72 hand: power \"care\" | Also all that Samuel the seer and Saul the son of Kish and Abner the son of Ner and Joab the son of Zeruiah had dedicated — all dedicated gifts were in the care of Shelomoth and his brothers. |",
+      "_analytics/Clusters/M64 - will-resolve/m64-strand-quick-summary-v1-20261006.md:98 | H6942H + H6942H | 3 | 1Ch 26:28; 2Sa 8:11; Neh 12:47 |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12529
+     }
+    },
+    {
+     "verse": "2Ch 2:4",
+     "words": [
+      "burnt offerings (H5930A, M36)",
+      "dedicate (H6942H, M64)"
+     ],
+     "text": "Behold, I am about to build a house for the name of the Lord my God and dedicate it to him for the burning of incense of sweet spices before him, and for the regular arrangement of the showbread, and for burnt offerings morning and evening, on the Sabbaths and the new moons and the appointed feasts of the Lord our God, as ordained forever for Israel.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:90 | 2Ch 2:4 | \"dedicate\" HVhcc | M36 burnt offering \"burnt offerings\" | Behold, I am about to build a house for the name of the Lord my God and dedicate it to him for the burning of incense of sweet spices before him, and for the regular arrangement of the showbread, and for burnt offerings morning and evening, on the Sabbaths and the new moons and the appointed feasts of the Lord our God, as ordained forever for Israel. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12531,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "\"Behold, I am about to build a house for the name of the Lord my God and dedicate it to him\" (2Ch 2:4), after \"Solomon purposed to build a temple\" (2:1), and with \"But who is able to build him a house, since heaven, even highest heaven, cannot contain him? Who am I to build a house for him, except as a place to make offerings before him?\" (2:6).",
+       "meaning": "The house is dedicated inside a purpose, and the one who dedicates it asks who he is to do it.",
+       "setting": "2 Chronicles 2 (Solomon to Hiram).",
+       "implication": "The dedication is held with a humbling question.",
+       "parties": "Solomon; Hiram; the Lord",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "2Ch 2:4",
+         "strong": "H6942H"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "2Ch 31:6",
+     "words": [
+      "dedicated (H6942H, M64)",
+      "dedicated things (H6944G, M61)"
+     ],
+     "text": "And the people of Israel and Judah who lived in the cities of Judah also brought in the tithe of cattle and sheep, and the tithe of the dedicated things that had been dedicated to the Lord their God, and laid them in heaps.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:91 | 2Ch 31:6 | \"dedicated\" HVPsmpa | M61 holiness \"dedicated things\" | And the people of Israel and Judah who lived in the cities of Judah also brought in the tithe of cattle and sheep, and the tithe of the dedicated things that had been dedicated to the Lord their God, and laid them in heaps. |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12532,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "Giving in abundance and with joy: \"the people of Israel gave in abundance\" (2Ch 31:5) and brought \"the tithe of the dedicated things that had been dedicated to the Lord their God\" (31:6), and when Hezekiah \"saw the heaps, they blessed the Lord and his people Israel\" (31:8). In Nehemiah \"they set apart that which was for the Levites\" (Neh 12:47), where \"God had made them rejoice with great joy\" (12:43).",
+       "meaning": "The setting apart of gifts is done in abundance and joy, and is answered with blessing.",
+       "setting": "2 Chronicles 31 (Hezekiah); Nehemiah 12 (the dedication of the wall).",
+       "implication": "Joy in the giving is named beside the act.",
+       "parties": "the people; Hezekiah and the princes; the Levites and priests",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "2Ch 31:6",
+         "strong": "H6942H"
+        },
+        {
+         "verse": "Neh 12:47",
+         "strong": "H6942H"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Neh 12:47",
+     "words": [
+      "set apart (H6942H, M64)",
+      "singers (H7891, M22)"
+     ],
+     "text": "And all Israel in the days of Zerubbabel and in the days of Nehemiah gave the daily portions for the singers and the gatekeepers; and they set apart that which was for the Levites; and the Levites set apart that which was for the sons of Aaron.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:12   - 2Sa 8:11, 1Ch 26:28 and Neh 12:47 have two separate hits each.",
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:92 | Neh 12:47 | \"set apart\" HVhrmpa; \"set apart\" HVhrmpa | M22 to sing \"singers\" | And all Israel in the days of Zerubbabel and in the days of Nehemiah gave the daily portions for the singers and the gatekeepers; and they set apart that which was for the Levites; and the Levites set apart that which was for the sons of Aaron. |",
+      "_analytics/Clusters/M64 - will-resolve/m64-strand-quick-summary-v1-20261006.md:98 | H6942H + H6942H | 3 | 1Ch 26:28; 2Sa 8:11; Neh 12:47 |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12532
+     }
+    },
+    {
+     "verse": "Jer 1:5",
+     "words": [
+      "consecrated (H6942H, M64)",
+      "knew (H3045, M15)",
+      "prophet (H5030, M43)"
+     ],
+     "text": "“ Before I formed you in the womb I knew you, and before you were born I consecrated you; I appointed you a prophet to the nations.”",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md:93 | Jer 1:5 | \"consecrated\" HVhp1cs | M15 to know \"knew\"; M43 prophet \"prophet\" | “ Before I formed you in the womb I knew you, and before you were born I consecrated you; I appointed you a prophet to the nations.” |"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12533,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "\"Before I formed you in the womb I knew you, and before you were born I consecrated you; I appointed you a prophet to the nations\" (Jer 1:5). Jeremiah answers, \"Ah, Lord God! Behold, I do not know how to speak, for I am only a youth\" (1:6), and is told, \"Do not be afraid of them, for I am with you to deliver you\" (1:8).",
+       "meaning": "God's dedicating of a person comes before the person knows or wills; the person's answer is a shrinking that God meets with a sending and a presence.",
+       "setting": "Jeremiah 1, the call; route A and B.",
+       "implication": "The dedication is God's act, and the will that answers it is the person's.",
+       "parties": "God; Jeremiah",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Jer 1:5",
+         "strong": "H6942H"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "verse": "Hos 9:10",
+     "words": [
+      "became detestable (H8251, M58)",
+      "consecrated (H5144A, M64)",
+      "loved (H0157G, M51)",
+      "shame (H1322, M07)"
+     ],
+     "text": "Like grapes in the wilderness, I found Israel. Like the first fruit on the fig tree in its first season, I saw your fathers. But they came to Baal-peor and consecrated themselves to the thing of shame, and became detestable like the thing they loved.",
+     "file_lines": [
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:9   - The four other H5144A verses (Hos 9:10, Lev 15:31, Lev 22:2, Zec 7:3) are consecration, not M64 reading. This is noted on OT-91.",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:100   - \"consecrated\" themselves to Baal-peor (Hos 9:10)",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:181    - the other four H5144A verses (Hos 9:10, Lev 15:31, Lev 22:2, Zec 7:3), not read for M64"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12528
+     }
+    },
+    {
+     "verse": "Zec 7:3",
+     "words": [
+      "abstain (H5144A, M64)",
+      "hosts (H6635B, M72)",
+      "prophets (H5030, M43)",
+      "weep (H1058, M03)"
+     ],
+     "text": "saying to the priests of the house of the Lord of hosts and the prophets, “Should I weep and abstain in the fifth month, as I have done for so many years?”",
+     "file_lines": [
+      "_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-recovery-consolidation-data-v1-20261005.md:1063 - U2 L901 (not carried: Zec 7:10): **Seat (v3).** **In the verse:** Zec 7:12 \"hearts diamond-hard\". **The people's own. Genuine** (A v3 §2.2; B v3 §3.2; E v2 §6; pilot §2). The same verse has \"his Spirit\" (**God's; divine**). **Outside:** Zec 7:10 \"devise evil against another in your heart\" (D v2 §2.2; C v3 §2.1).",
+      "_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-unit2-phenomena-v3-20260929.md:1609 | **(v3)** Rom 2:5 | \"heart\" *kardia* (G2588) | WR §59 | the presumer's own, **hard and impenitent** | genuine | A v3 §2.2; C v3 §9.3; pilot §2 |",
+      "_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-unit2-phenomena-v3-20260929.md:1714 | **(v3)** Luk 3:7 (FL) | Luk 3:6 \"all flesh\" | humankind | E v2 §11.1, §13 | §58 |",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:9   - The four other H5144A verses (Hos 9:10, Lev 15:31, Lev 22:2, Zec 7:3) are consecration, not M64 reading. This is noted on OT-91.",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:101   - \"abstain\" from the holy things (Lev 22:2) and in a fast (Zec 7:3)",
+      "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md:181    - the other four H5144A verses (Hos 9:10, Lev 15:31, Lev 22:2, Zec 7:3), not read for M64"
+     ],
+     "record": {
+      "table": "ib_observation",
+      "id": 12534,
+      "run_id": "RUN-20261024_040152_541-READING",
+      "new": {
+       "text": "\"Should I weep and abstain in the fifth month, as I have done for so many years?\" (Zec 7:3). God answers with the aim: \"When you fasted and mourned in the fifth month and in the seventh, for these seventy years, was it for me that you fasted?\" (7:5), \"do you not eat for yourselves and drink for yourselves?\" (7:6).",
+       "meaning": "Abstaining is judged by whom it was for, not by its long keeping.",
+       "setting": "Zechariah 7, the question from Bethel.",
+       "implication": "A practice held for years can be asked what it was for.",
+       "parties": "the people of Bethel; the priests and prophets; the Lord",
+       "basis": "read",
+       "verses": [
+        {
+         "verse": "Zec 7:3",
+         "strong": "H5144A"
+        }
+       ]
+      }
+     }
+    }
+   ]
+  }
+ }
+}

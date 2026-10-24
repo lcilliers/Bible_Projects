@@ -1,6 +1,6 @@
 # Narrative citation index
 
-*Published from iba.db on 2026-10-23. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-24. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 | Verse | Cited in | Claims resting on it |
 |---|---|---|
@@ -31,20 +31,20 @@
 | Gen 4:8 | 10.13 *What it does next* (quoted) | — |
 | Gen 4:14 | 10.9 *When God hides his face* (quoted) | — |
 | Gen 6:2 | — | C-335 |
-| Gen 6:5 | 10.0 *Where I am answerable* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 11 *8. God has a heart and a soul* (quoted); 12 *The heart as the source* (quoted) | 4-4, 9-1 |
+| Gen 6:5 | 10.0 *Where I am answerable* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 11 *8. God has a heart and a soul* (quoted); 12 *The heart as the source* (quoted) | 4-4, 9-1, C-369, C-371 |
 | Gen 6:6 | 10.1 *God feels* (quoted); 11 *8. God has a heart and a soul* (quoted) | 2-12 |
 | Gen 6:12 | 07 *What flesh means* (quoted) | — |
 | Gen 6:17 | 02 *Breath lent, and held by God* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted) | 2-5, C-117 |
 | Gen 7:15 | 09 *Lines that are often drawn, but that I cannot find* (quoted) | 2-5 |
 | Gen 7:22 | 02 *Breath lent, and held by God* (quoted) | 2-5, 2-5, C-117 |
-| Gen 8:21 | 04 *The heart speaks to itself*; 11 *8. God has a heart and a soul* (quoted); 12 *The heart as the source* (quoted) | 9-1 |
+| Gen 8:21 | 04 *The heart speaks to itself*; 11 *8. God has a heart and a soul* (quoted); 12 *The heart as the source* (quoted) | 9-1, C-361, C-369 |
 | Gen 9:2 | 10.12 *Dread laid on others* (quoted); 10.12 *Other parties* | — |
 | Gen 9:10 | 02 *Life breathed in* (quoted) | 2-4 |
-| Gen 11:6 | 10.7 *Planning* (quoted) | — |
+| Gen 11:6 | 10.7 *Planning* (quoted) | C-360 |
 | Gen 13:8 | 10.10 *Anger between people* (quoted) | — |
 | Gen 13:11 | — | C-335 |
 | Gen 15:1 | 10.1 *What changes it* (quoted); 10.1 *Meeting fear* (quoted); 10.9 *"Fear not"* (quoted); 10.12 *"Fear not"* (quoted) | — |
-| Gen 15:6 | 10.4 *What thinking does* (quoted); 10.9 *(opening)* (quoted); 11 *4. One word, opposite values* (quoted) | — |
+| Gen 15:6 | 10.4 *What thinking does* (quoted); 10.9 *(opening)* (quoted); 11 *4. One word, opposite values* (quoted) | C-372 |
 | Gen 16:6 | 10.14 *Submitting* | — |
 | Gen 16:7 | 10.14 *Submitting* | — |
 | Gen 16:8 | 10.14 *Submitting* | — |
@@ -66,9 +66,9 @@
 | Gen 20:16 | 10.7 *A choice that is honoured* (quoted) | — |
 | Gen 21:16 | 02 *Those left behind* (quoted) | C-155 |
 | Gen 22:12 | 10.9 *Fearing God as a way of life* (quoted) | — |
-| Gen 24:5 | 10.7 *Willing* (quoted) | — |
+| Gen 24:5 | 10.7 *Willing* (quoted) | C-346 |
 | Gen 24:7 | 10.7 *Willing* (quoted) | — |
-| Gen 24:8 | 10.7 *Willing* (quoted) | — |
+| Gen 24:8 | 10.7 *Willing* (quoted) | C-346 |
 | Gen 24:45 | 04 *The heart speaks to itself* (quoted) | — |
 | Gen 25:8 | 02 *What death is* (quoted); 02 *Going down to Sheol* (quoted) | C-93 |
 | Gen 25:32 | 10.6 *Wanting and death* (quoted); 10.7 *Life and death set before a person* (quoted) | — |
@@ -88,7 +88,7 @@
 | Gen 28:17 | 10.9 *Afraid in his presence* (quoted) | — |
 | Gen 30:1 | 02 *Wanting to die* (quoted); 10.6 *Wanting and death* (quoted) | C-156 |
 | Gen 30:2 | 10.13 *What it rises at* (quoted) | — |
-| Gen 31:15 | 10.4 *What thinking does* (quoted) | — |
+| Gen 31:15 | 10.4 *What thinking does* (quoted) | C-372 |
 | Gen 31:27 | 10.11 *Hiding from people* | — |
 | Gen 31:30 | 10.6 *A person* (quoted) | — |
 | Gen 31:31 | 10.6 *A person* (quoted); 10.11 *Hiding from people* (quoted) | — |
@@ -149,7 +149,7 @@
 | Gen 49:14 | 10.7 *What draws it* (quoted) | — |
 | Gen 49:15 | 10.1 *When delight is only the measure* (quoted); 10.7 *What draws it* (quoted) | — |
 | Gen 50:19 | 10.10 *Speaking to another's fear* (quoted); 11 *4. One word, opposite values* (quoted) | — |
-| Gen 50:20 | 02 *Breath lent, and held by God* (quoted); 10.7 *Planning* (quoted); 11 *What changes the character*; 11 *8. God has a heart and a soul* (quoted); 13.1 *Purposing* (quoted) | C-113 |
+| Gen 50:20 | 02 *Breath lent, and held by God* (quoted); 10.7 *Planning* (quoted); 11 *What changes the character*; 11 *8. God has a heart and a soul* (quoted); 13.1 *Purposing* (quoted) | C-113, C-361 |
 | Gen 50:21 | 10.9 *(opening)* (quoted); 10.10 *Speaking to another's fear* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Gen 50:24 | 02 *Dying to the Lord* (quoted) | — |
 | Exo 1:5 | 05 *From throat to corpse* (quoted) | — |
@@ -168,7 +168,9 @@
 | Exo 9:21 | 10.7 *Fear and choosing* (quoted) | — |
 | Exo 9:30 | 10.8 *(opening)* (quoted) | — |
 | Exo 10:3 | 10.14 *What it is set against* (quoted) | — |
-| Exo 10:27 | 04 *The heart decides and is moved* (quoted) | — |
+| Exo 10:27 | 04 *The heart decides and is moved* (quoted) | C-351 |
+| Exo 13:2 | 10.7 *Dedicating* (quoted) | C-386 |
+| Exo 13:3 | 10.7 *Dedicating* (quoted) | — |
 | Exo 14:5 | 11 *1. The inner being is acted upon as much as it acts* (quoted); 12 *Hardening and stubbornness* (quoted) | — |
 | Exo 14:8 | 11 *1. The inner being is acted upon as much as it acts* (quoted); 12 *Hardening and stubbornness* | — |
 | Exo 14:10 | 10.1 *What changes it* (quoted); 10.1 *When feeling changes character*; 10.12 *What changes it* (quoted); 11 *4. One word, opposite values*; 11 *What changes the character* (quoted) | — |
@@ -212,6 +214,7 @@
 | Exo 28:38 | 13.1 *Delight* (quoted) | — |
 | Exo 30:15 | 05 *The soul is hunted and rescued* | — |
 | Exo 31:3 | 06 *God's Spirit and the human person* (quoted) | — |
+| Exo 31:4 | — | C-365 |
 | Exo 32:10 | 10.13 *Pleading, and standing in the breach* (quoted) | — |
 | Exo 32:11 | 10.13 *Pleading, and standing in the breach* | — |
 | Exo 32:12 | 10.13 *The words* (quoted); 10.13 *Turned, and not turned* (quoted); 10.13 *Pleading, and standing in the breach* | — |
@@ -223,20 +226,23 @@
 | Exo 34:8 | 10.9 *Anger toward God, and before God* | — |
 | Exo 34:14 | 13.1 *Jealousy* (quoted) | — |
 | Exo 34:24 | 13.1 *Delight* (quoted) | — |
+| Exo 35:5 | — | C-352 |
 | Exo 35:21 | 03 *Side by side* (quoted); 04 *The heart decides and is moved* (quoted); 06 *The human spirit* (quoted); 10.7 *Setting the heart* (quoted); 10.7 *Willing* (quoted) | 1-1 |
-| Exo 35:22 | 04 *The heart decides and is moved* (quoted); 06 *The human spirit* (quoted); 10.7 *Willing* (quoted); 10.7 *What changes the character* | — |
+| Exo 35:22 | 04 *The heart decides and is moved* (quoted); 06 *The human spirit* (quoted); 10.7 *Willing* (quoted); 10.7 *What changes the character* | C-352 |
 | Exo 35:32 | 10.4 *Where thoughts come from* (quoted) | — |
-| Exo 35:35 | 10.4 *Where thoughts come from* (quoted); 10.4 *What thinking does*; 11 *1. The inner being is acted upon as much as it acts* (quoted) | — |
+| Exo 35:35 | 10.4 *Where thoughts come from* (quoted); 10.4 *What thinking does*; 11 *1. The inner being is acted upon as much as it acts* (quoted) | C-365, C-366 |
 | Exo 36:2 | 10.7 *Willing* (quoted) | — |
 | Lev 1:3 | 13.1 *Delight* (quoted) | — |
 | Lev 1:4 | 13.1 *Delight* (quoted) | — |
 | Lev 5 | — | 2-1 |
 | Lev 5:1 | 12 *The soul answers for it* | 2-1 |
 | Lev 5:17 | — | 2-1 |
+| Lev 7:18 | — | C-372 |
 | Lev 10:3 | 10.13 *Bearing it* (quoted) | — |
 | Lev 10:6 | 10.13 *Bearing it* (quoted); 11 *4. One word, opposite values* | — |
 | Lev 10:20 | 10.10 *Anger between people* (quoted); 10.13 *How it is answered* (quoted) | — |
 | Lev 16:29 | 05 *From throat to corpse* (quoted) | 1-3 |
+| Lev 17:4 | — | C-372 |
 | Lev 17:11 | 05 *From throat to corpse* (quoted) | 2-8 |
 | Lev 18:5 | 02 *Life set before a person* (quoted) | C-118 |
 | Lev 19:3 | 10.10 *Reverence for people* (quoted); 10.12 *Fear between people* (quoted) | — |
@@ -245,7 +251,7 @@
 | Lev 22:21 | 13.1 *Delight* (quoted) | — |
 | Lev 25:43 | 10.10 *The fear of God and the weak*; 11 *Authority as a standing* (quoted) | — |
 | Lev 25:46 | 10.10 *The fear of God and the weak*; 11 *Authority as a standing* (quoted) | — |
-| Lev 25:50 | 10.4 *What thinking does* (quoted); 11 *4. One word, opposite values* | — |
+| Lev 25:50 | 10.4 *What thinking does* (quoted); 11 *4. One word, opposite values* | C-372 |
 | Lev 25:53 | 10.10 *The fear of God and the weak*; 11 *Authority as a standing* (quoted) | — |
 | Lev 25:55 | 10.10 *The fear of God and the weak*; 11 *Authority as a standing* (quoted) | — |
 | Lev 26 | 11 *8. God has a heart and a soul* (no verse row) | — |
@@ -254,10 +260,20 @@
 | Lev 26:15 | 11 *8. God has a heart and a soul* (quoted) | — |
 | Lev 26:16 | 10.12 *Fear that comes upon a person* (quoted) | — |
 | Lev 26:17 | 10.12 *Fear that comes upon a person* (quoted); 11 *Authority as a standing* (quoted) | — |
+| Lev 26:21 | — | C-350 |
 | Lev 26:30 | 11 *8. God has a heart and a soul* (quoted) | — |
 | Lev 26:40 | 10.14 *Where it happens* (quoted); 10.14 *What goes with it* | — |
 | Lev 26:41 | 04 *The heart humbled* (quoted); 10.14 *Where it happens* (quoted); 10.14 *What goes with it* | C-171 |
 | Lev 26:44 | 11 *8. God has a heart and a soul* (quoted) | — |
+| Lev 27:14 | 10.7 *Dedicating* (quoted) | C-385 |
+| Lev 27:15 | 10.7 *Dedicating* (quoted) | C-385 |
+| Lev 27:16 | — | C-385 |
+| Lev 27:17 | — | C-385 |
+| Lev 27:18 | — | C-385 |
+| Lev 27:19 | — | C-385 |
+| Lev 27:20 | 10.7 *Dedicating* (quoted) | — |
+| Lev 27:22 | — | C-385 |
+| Lev 27:26 | 10.7 *Dedicating* (quoted) | C-386 |
 | Num 5:14 | 06 *"A spirit of …" — what comes upon a person* (quoted); 10.6 *Jealousy and envy* (quoted); 11 *What changes the character* | 9-4 |
 | Num 5:15 | 10.6 *Jealousy and envy* (quoted) | — |
 | Num 5:30 | 10.6 *Jealousy and envy* (quoted); 11 *What changes the character* | — |
@@ -325,7 +341,7 @@
 | Num 22:27 | 10.13 *What it does next* (quoted); 10.13 *Other parties* (quoted) | — |
 | Num 22:29 | 10.1 *How a feeling rises* (quoted) | — |
 | Num 23:8 | 10.5 *Anger in words* (quoted); 11 *4. One word, opposite values* (quoted) | — |
-| Num 23:9 | 10.4 *What thinking does* (quoted) | — |
+| Num 23:9 | 10.4 *What thinking does* (quoted) | C-372 |
 | Num 23:10 | 02 *Soul, spirit and heart at death* (quoted); 02 *Dying to the Lord* (quoted) | C-100, C-101, C-163 |
 | Num 24:1 | 10.7 *Choosing before God* (quoted); 13.1 *Delight* | — |
 | Num 24:2 | 10.7 *Choosing before God* (quoted) | — |
@@ -335,13 +351,13 @@
 | Num 27:3 | — | C-87 |
 | Deu 1:19 | 10.12 *The words* | — |
 | Deu 1:25 | 10.7 *Willing* (quoted) | — |
-| Deu 1:26 | 04 *The heart decides and is moved* (quoted); 10.5 *Grumbling* (quoted); 10.7 *Willing* (quoted); 10.12 *What fear does* (quoted) | — |
+| Deu 1:26 | 04 *The heart decides and is moved* (quoted); 10.5 *Grumbling* (quoted); 10.7 *Willing* (quoted); 10.12 *What fear does* (quoted) | C-349, C-350 |
 | Deu 1:27 | 10.5 *Grumbling* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Deu 1:28 | 04 *The heart decides and is moved* (quoted); 10.5 *Grumbling* (quoted); 10.7 *Willing* (quoted); 10.12 *What fear does* (quoted) | — |
 | Deu 1:41 | 10.15 *Pride and hearing* (quoted) | C-223 |
 | Deu 1:42 | 10.7 *Presumption* (quoted); 10.15 *Pride and hearing* (quoted) | C-223 |
 | Deu 1:43 | 10.7 *Presumption* (quoted); 10.15 *Pride and hearing* (quoted) | C-223 |
-| Deu 2:30 | 04 *The heart decides and is moved* (quoted); 06 *The human spirit* (quoted); 09 *Lines that are often drawn, but that I cannot find*; 11 *1. The inner being is acted upon as much as it acts* (quoted) | 2-2, 2-2 |
+| Deu 2:30 | 04 *The heart decides and is moved* (quoted); 06 *The human spirit* (quoted); 09 *Lines that are often drawn, but that I cannot find*; 11 *1. The inner being is acted upon as much as it acts* (quoted) | 2-2, 2-2, C-351 |
 | Deu 3:26 | 10.13 *Pleading, and standing in the breach* (quoted) | — |
 | Deu 4:9 | 11 *7. The inner being is governed* (quoted) | — |
 | Deu 4:10 | 02 *Living before God* (quoted); 10.2 *(opening)* (quoted) | C-131 |
@@ -382,7 +398,7 @@
 | Deu 9:6 | 10.3 *When remembering changes character* | — |
 | Deu 9:7 | 10.3 *Remembering as a cure, and remembering as hope* (quoted); 10.3 *When remembering changes character*; 10.13 *Connections* | — |
 | Deu 9:19 | 10.13 *Pleading, and standing in the breach* (quoted); 10.13 *Connections* (quoted) | — |
-| Deu 10:10 | 13.1 *Willing* (quoted) | — |
+| Deu 10:10 | 13.1 *Willing* (quoted) | C-354 |
 | Deu 10:12 | 10.9 *(opening)* (quoted); 10.9 *Fearing God as a way of life* (quoted); 10.12 *(opening)* (quoted); 10.12 *The fear of God* (quoted); 10.12 *Connections* | — |
 | Deu 10:15 | 13.1 *Choosing* (quoted) | C-332 |
 | Deu 10:16 | 13.1 *Choosing* (quoted) | — |
@@ -401,10 +417,12 @@
 | Deu 12:21 | 10.7 *Others around a choice* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* (quoted); 11 *What changes the character* | — |
 | Deu 13:6 | 10.7 *Willing* (quoted) | — |
 | Deu 13:7 | 10.7 *Willing* | — |
-| Deu 13:8 | 10.7 *Willing* (quoted) | — |
+| Deu 13:8 | 10.7 *Willing* (quoted) | C-347 |
 | Deu 14:1 | 02 *Those left behind* (quoted) | C-155 |
 | Deu 14:23 | 10.7 *Others around a choice* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Deu 14:26 | 05 *The soul wants* (quoted); 10.7 *Others around a choice* (quoted) | — |
+| Deu 15:15 | 10.7 *Dedicating* (quoted) | — |
+| Deu 15:19 | 10.7 *Dedicating* (quoted) | C-386 |
 | Deu 16:3 | 02 *Living before God* (quoted); 10.3 *(opening)* (quoted) | C-131 |
 | Deu 16:11 | 10.7 *Others around a choice* (quoted) | — |
 | Deu 16:12 | 10.7 *Others around a choice* (quoted) | — |
@@ -421,7 +439,7 @@
 | Deu 18:21 | — | C-223 |
 | Deu 18:22 | 10.15 *Pride and hearing* (quoted) | C-223 |
 | Deu 19:6 | 10.10 *Anger between people* (quoted) | — |
-| Deu 19:19 | 10.4 *What is devised comes back* (quoted); 10.10 *Plotting against another* (quoted) | — |
+| Deu 19:19 | 10.4 *What is devised comes back* (quoted); 10.10 *Plotting against another* (quoted) | C-358 |
 | Deu 19:20 | 10.8 *(opening)* (quoted); 10.10 *Plotting against another* (quoted) | — |
 | Deu 20:5 | 02 *What death is* (quoted) | C-137 |
 | Deu 20:6 | 02 *What death is* (quoted) | C-137 |
@@ -429,11 +447,11 @@
 | Deu 20:8 | 10.1 *What fear does* (quoted); 10.1 *God feels*; 10.10 *(opening)* (quoted); 10.12 *What fear does* (quoted); 11 *4. One word, opposite values*; 11 *What changes the character*; 11 *6. Inner states pass between people* | — |
 | Deu 21:11 | 10.6 *Through the eye* (quoted) | — |
 | Deu 21:14 | 10.1 *Delight* (quoted) | — |
-| Deu 23:5 | 13.1 *Willing* (quoted) | — |
+| Deu 23:5 | 13.1 *Willing* (quoted) | C-354 |
 | Deu 23:16 | 10.7 *What a choice rests on* (quoted); 10.7 *A choice that is honoured* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | C-338 |
 | Deu 24:6 | 05 *From throat to corpse* (quoted) | — |
 | Deu 24:16 | 02 *Death and sin* (quoted) | C-87 |
-| Deu 25:7 | 10.1 *When delight is only the measure* (quoted); 10.10 *Loyalty and honour* (quoted) | — |
+| Deu 25:7 | 10.1 *When delight is only the measure* (quoted); 10.10 *Loyalty and honour* (quoted) | C-348 |
 | Deu 25:8 | 10.10 *Loyalty and honour* (quoted) | — |
 | Deu 25:9 | 10.10 *Loyalty and honour* (quoted) | — |
 | Deu 25:10 | 10.10 *Loyalty and honour* (quoted) | — |
@@ -446,7 +464,7 @@
 | Deu 28:66 | 02 *Life weighed* (quoted); 10.1 *Where it turns* (quoted); 10.13 *Dread and trembling* | C-133 |
 | Deu 28:67 | 10.1 *What fear does* (quoted); 10.13 *Dread and trembling* (quoted) | — |
 | Deu 29:19 | 04 *The heart decides and is moved* (quoted); 10.13 *How it is provoked* (quoted); 12 *False peace* (quoted); 13.1 *Willing* (quoted); 13.1 *Jealousy* (quoted) | — |
-| Deu 29:20 | 04 *The heart decides and is moved* (quoted); 11 *4. One word, opposite values*; 13.1 *Willing* (quoted); 13.1 *Jealousy* (quoted) | — |
+| Deu 29:20 | 04 *The heart decides and is moved* (quoted); 11 *4. One word, opposite values*; 13.1 *Willing* (quoted); 13.1 *Jealousy* (quoted) | C-354 |
 | Deu 29:24 | 10.13 *Reading the ruin* (quoted); 10.13 *The responses, gathered* (quoted) | — |
 | Deu 29:25 | 10.13 *Reading the ruin* (quoted) | — |
 | Deu 29:29 | 10.2 *Understanding that is hidden* (quoted); 10.13 *Reading the ruin* (quoted) | — |
@@ -463,7 +481,7 @@
 | Deu 31:16 | 10.9 *When God hides his face* (quoted) | — |
 | Deu 31:17 | 10.9 *When God hides his face* (quoted); 10.13 *Reading the ruin* (quoted) | — |
 | Deu 31:18 | 10.9 *When God hides his face* (quoted) | — |
-| Deu 31:21 | 04 *The heart is hidden, and God sees it* (quoted); 10.3 *Remembering as a cure, and remembering as hope* (quoted); 10.4 *Small, passing, and wholly seen* (quoted); 10.9 *(opening)* (quoted) | — |
+| Deu 31:21 | 04 *The heart is hidden, and God sees it* (quoted); 10.3 *Remembering as a cure, and remembering as hope* (quoted); 10.4 *Small, passing, and wholly seen* (quoted); 10.9 *(opening)* (quoted) | C-363 |
 | Deu 31:27 | 10.13 *How it is provoked* (quoted) | — |
 | Deu 31:29 | 10.13 *How it is provoked* (quoted) | — |
 | Deu 32:15 | 10.13 *How it is provoked* (quoted); 13.1 *Jealousy* (quoted) | — |
@@ -493,7 +511,7 @@
 | Jos 23:14 | 10.2 *(opening)* (quoted) | — |
 | Jos 23:15 | 10.2 *(opening)* (quoted) | — |
 | Jos 24:3 | 10.7 *Choosing before God* (quoted); 13.1 *Choosing* (quoted) | — |
-| Jos 24:10 | 13.1 *Willing* (quoted) | — |
+| Jos 24:10 | 13.1 *Willing* (quoted) | C-354 |
 | Jos 24:13 | 13.1 *Choosing* (quoted) | — |
 | Jos 24:14 | 10.7 *What a choice rests on* (quoted) | — |
 | Jos 24:15 | 10.7 *(opening)* (quoted); 10.7 *The words* (quoted); 10.7 *What a choice rests on* (quoted); 10.7 *Whose measure* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values*; 11 *What changes the character* (quoted) | C-336 |
@@ -526,7 +544,7 @@
 | Judg 9:23 | 06 *Other spirits* (quoted) | 9-4 |
 | Judg 9:54 | 02 *Wanting to die* (quoted) | C-157 |
 | Judg 10:14 | — | C-337 |
-| Judg 11:17 | 10.7 *Willing* (quoted) | — |
+| Judg 11:17 | 10.7 *Willing* (quoted) | C-346 |
 | Judg 13:22 | 10.4 *What thinking does* (quoted); 10.9 *(opening)* (quoted) | — |
 | Judg 13:23 | 10.4 *What thinking does* (quoted) | — |
 | Judg 14:6 | 06 *God's Spirit and the human person* (quoted) | I-6 |
@@ -553,15 +571,18 @@
 | Judg 16:28 | 11 *2. Thresholds: the merry heart and the sad heart*; 11 *3. The parts give way in sequence* (quoted) | — |
 | Judg 16:29 | 11 *2. Thresholds: the merry heart and the sad heart* | — |
 | Judg 16:30 | 02 *Wanting to die*; 02 *Soul, spirit and heart at death* (quoted); 11 *2. Thresholds: the merry heart and the sad heart*; 11 *3. The parts give way in sequence* (quoted) | C-100, C-156, C-157 |
+| Judg 17:3 | 10.7 *Dedicating* (quoted) | C-387 |
+| Judg 17:6 | 10.7 *Dedicating* (quoted) | — |
 | Judg 17:11 | 10.7 *Willing* (quoted) | — |
 | Judg 17:13 | 10.7 *Willing* (quoted) | — |
 | Judg 19:7 | 10.7 *Willing* | — |
 | Judg 19:8 | 10.7 *Willing* | — |
 | Judg 19:9 | 10.7 *Willing* | — |
-| Judg 19:10 | 10.7 *Willing* (quoted) | — |
+| Judg 19:10 | 10.7 *Willing* (quoted) | C-346 |
 | Judg 19:22 | 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | — |
-| Judg 19:25 | 10.7 *Willing* | — |
-| Judg 19:30 | 10.7 *Planning* (quoted) | — |
+| Judg 19:25 | 10.7 *Willing* | C-347 |
+| Judg 19:30 | 10.7 *Planning* (quoted) | C-359 |
+| Judg 20:13 | — | C-347 |
 | Judg 20:16 | — | C-334 |
 | Judg 21:21 | 11 *4. One word, opposite values* (quoted) | C-287 |
 | Rut 1:8 | 02 *After death* (quoted) | C-166 |
@@ -632,7 +653,7 @@
 | 1Sa 14:40 | 10.7 *Whose measure* (quoted) | — |
 | 1Sa 14:43 | 02 *Dying to the Lord* (quoted) | C-165 |
 | 1Sa 14:45 | 02 *Living before God* (quoted); 10.5 *The oath* (quoted); 11 *What changes the character* (quoted) | C-127 |
-| 1Sa 15:9 | 10.7 *Willing* (quoted); 10.13 *What it does next* (quoted) | — |
+| 1Sa 15:9 | 10.7 *Willing* (quoted); 10.13 *What it does next* (quoted) | C-348 |
 | 1Sa 15:11 | 10.7 *Willing* (quoted); 10.13 *What it does next* (quoted) | — |
 | 1Sa 15:21 | 13.1 *Delight* (quoted) | — |
 | 1Sa 15:22 | 13.1 *Delight* (quoted) | — |
@@ -663,7 +684,7 @@
 | 1Sa 18:12 | 10.1 *What fear does* (quoted) | — |
 | 1Sa 18:21 | 10.10 *Plotting against another* (quoted) | — |
 | 1Sa 18:22 | 10.1 *When delight is only the measure* (quoted); 10.10 *Plotting against another* (quoted) | — |
-| 1Sa 18:25 | 10.0 *The path can start with a feeling* (quoted); 10.4 *When anger thinks* (quoted); 10.4 *Connections*; 10.10 *Plotting against another* (quoted) | — |
+| 1Sa 18:25 | 10.0 *The path can start with a feeling* (quoted); 10.4 *When anger thinks* (quoted); 10.4 *Connections*; 10.10 *Plotting against another* (quoted) | C-356 |
 | 1Sa 18:29 | 10.1 *What fear does* (quoted); 10.6 *Precious* (quoted); 10.10 *Fear that hardens, and fear that gathers*; 10.12 *What fear does* (quoted); 11 *4. One word, opposite values* | — |
 | 1Sa 18:30 | 11 *4. One word, opposite values* (quoted) | — |
 | 1Sa 19:1 | 10.10 *Loyalty and honour* (quoted) | — |
@@ -682,7 +703,7 @@
 | 1Sa 20:42 | 10.7 *Others around a choice* | — |
 | 1Sa 21:1 | 10.10 *Fear that arrives with a person* (quoted) | — |
 | 1Sa 22:2 | — | 2-14 |
-| 1Sa 22:17 | 10.7 *Willing* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | — |
+| 1Sa 22:17 | 10.7 *Willing* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | C-347 |
 | 1Sa 22:18 | 10.7 *Willing* (quoted) | — |
 | 1Sa 23:20 | 05 *The soul wants* (quoted) | — |
 | 1Sa 24:5 | 04 *The heart judges itself* (quoted); 08 *The Old Testament does this with the heart* (quoted) | — |
@@ -703,7 +724,7 @@
 | 1Sa 26:16 | 10.10 *Loyalty and honour* (quoted) | C-303 |
 | 1Sa 26:18 | 10.10 *Loyalty and honour* (quoted) | C-303 |
 | 1Sa 26:21 | 05 *The soul is hunted and rescued* (quoted); 13.1 *Delight* (quoted) | — |
-| 1Sa 26:23 | 10.7 *Willing*; 10.7 *What changes the character* | — |
+| 1Sa 26:23 | 10.7 *Willing*; 10.7 *What changes the character* | C-347 |
 | 1Sa 26:24 | 10.7 *Willing* (quoted) | — |
 | 1Sa 27:1 | 04 *The heart speaks to itself* (quoted); 10.0 *From a thought to a deed* (quoted) | — |
 | 1Sa 28:5 | 04 *The heart feels* (quoted); 10.1 *Fear* (quoted); 10.12 *Fear that comes upon a person* (quoted) | — |
@@ -711,7 +732,7 @@
 | 1Sa 28:20 | 07 *Flesh answers the inner being* (quoted) | — |
 | 1Sa 30:6 | 05 *The soul suffers* | — |
 | 1Sa 30:12 | 03 *Causes running in every direction* (quoted); 06 *The human spirit* (quoted) | 2-9 |
-| 1Sa 31:4 | 10.7 *Fear and choosing* (quoted); 10.7 *Willing* (quoted); 10.12 *What fear does* (quoted) | — |
+| 1Sa 31:4 | 10.7 *Fear and choosing* (quoted); 10.7 *Willing* (quoted); 10.12 *What fear does* (quoted) | C-349 |
 | 2Sa 1:9 | 02 *Wanting to die* (quoted) | C-156, C-157 |
 | 2Sa 1:10 | — | C-157 |
 | 2Sa 1:11 | — | C-157 |
@@ -722,7 +743,7 @@
 | 2Sa 1:16 | 02 *Wanting to die* | C-157 |
 | 2Sa 1:23 | 10.10 *Loyalty and honour* (quoted) | — |
 | 2Sa 1:26 | 10.1 *What is found pleasant* (quoted) | — |
-| 2Sa 2:21 | 10.7 *Willing* | — |
+| 2Sa 2:21 | 10.7 *Willing* | C-348 |
 | 2Sa 2:22 | 10.7 *Willing* | — |
 | 2Sa 2:23 | 10.7 *Willing* (quoted) | — |
 | 2Sa 3:21 | 05 *The soul wants* (quoted) | — |
@@ -738,11 +759,13 @@
 | 2Sa 6:7 | 10.13 *At whom* (quoted); 10.13 *Reading the ruin* (quoted) | — |
 | 2Sa 6:8 | 10.1 *Where it turns*; 10.7 *Being chosen*; 10.9 *Anger toward God, and before God* (quoted); 10.13 *Angry with oneself, and at God* (quoted); 10.13 *Connections* | — |
 | 2Sa 6:9 | 10.1 *Where it turns* (quoted); 10.7 *Being chosen*; 10.7 *Willing* (quoted); 10.9 *Anger toward God, and before God* (quoted); 10.12 *What fear does* (quoted); 10.13 *What it does next* (quoted); 10.13 *Connections* | — |
-| 2Sa 6:10 | 10.1 *Where it turns* (quoted); 10.7 *Being chosen*; 10.7 *Willing* (quoted); 10.12 *What fear does* (quoted) | — |
+| 2Sa 6:10 | 10.1 *Where it turns* (quoted); 10.7 *Being chosen*; 10.7 *Willing* (quoted); 10.12 *What fear does* (quoted) | C-349 |
 | 2Sa 6:12 | 10.1 *Where it turns* (quoted); 10.7 *Willing* (quoted); 10.12 *What fear does*; 10.13 *Bearing it* (quoted) | — |
 | 2Sa 6:16 | 04 *The heart feels* (quoted); 10.7 *Others around a choice* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* (quoted) | — |
 | 2Sa 6:20 | 10.7 *Whose measure* (quoted); 10.7 *Being chosen*; 10.7 *Others around a choice*; 10.7 *What changes the character*; 11 *What changes the character* (quoted) | — |
 | 2Sa 6:21 | 10.7 *Whose measure* (quoted); 10.7 *Being chosen* (quoted); 13.1 *Choosing* (quoted) | — |
+| 2Sa 8:11 | 10.7 *Dedicating* (quoted) | C-389 |
+| 2Sa 8:14 | 10.7 *Dedicating* (quoted) | — |
 | 2Sa 9:7 | 10.10 *Speaking to another's fear* (quoted) | — |
 | 2Sa 9:8 | 10.10 *(opening)* (quoted); 11 *What changes the character* (quoted) | — |
 | 2Sa 11:1 | 10.6 *Coveting* (quoted) | — |
@@ -757,7 +780,7 @@
 | 2Sa 12:9 | 10.6 *Coveting* (quoted) | — |
 | 2Sa 12:13 | 02 *Death and sin* (quoted); 10.13 *Reading the ruin* | C-87 |
 | 2Sa 12:14 | 02 *Death and sin* (quoted); 10.13 *Reading the ruin* | C-87 |
-| 2Sa 12:17 | 10.1 *Where it turns* (quoted); 10.7 *Willing* (quoted) | — |
+| 2Sa 12:17 | 10.1 *Where it turns* (quoted); 10.7 *Willing* (quoted) | C-349 |
 | 2Sa 12:18 | 10.5 *Fear and the mouth* (quoted) | — |
 | 2Sa 12:21 | 02 *Those left behind* (quoted) | C-155 |
 | 2Sa 12:22 | 02 *Life asked for* (quoted) | C-155 |
@@ -765,9 +788,10 @@
 | 2Sa 12:28 | 10.10 *Loyalty and honour* (quoted) | C-304 |
 | 2Sa 12:30 | 10.10 *Loyalty and honour* (quoted) | C-304 |
 | 2Sa 13:12 | 10.7 *Willing* (quoted) | — |
-| 2Sa 13:14 | 10.7 *Willing* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | — |
+| 2Sa 13:14 | 10.7 *Willing* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | C-347 |
+| 2Sa 13:16 | — | C-347 |
 | 2Sa 13:22 | 10.13 *What it does next* (quoted) | — |
-| 2Sa 13:25 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted) | — |
+| 2Sa 13:25 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted) | C-346 |
 | 2Sa 13:27 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted) | — |
 | 2Sa 13:28 | 10.5 *Fear and the mouth* (quoted); 10.7 *Willing*; 10.10 *Plotting against another*; 11 *2. Thresholds: the merry heart and the sad heart* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | 2Sa 13:39 | 10.1 *Where it turns* (quoted) | — |
@@ -776,7 +800,7 @@
 | 2Sa 14:13 | 10.7 *Planning* (quoted) | — |
 | 2Sa 14:14 | 02 *What death is* (quoted); 10.4 *Small, passing, and wholly seen* (quoted); 10.7 *Planning* (quoted); 13.1 *Purposing* (quoted) | — |
 | 2Sa 14:19 | 10.7 *Planning* (quoted) | — |
-| 2Sa 14:29 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted) | — |
+| 2Sa 14:29 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted) | C-346 |
 | 2Sa 14:30 | 10.7 *Willing*; 10.10 *Plotting against another* | C-301 |
 | 2Sa 14:31 | 10.10 *Plotting against another* | C-301 |
 | 2Sa 14:32 | 10.10 *Plotting against another* (quoted) | C-301 |
@@ -821,8 +845,8 @@
 | 2Sa 22:47 | 02 *Living before God* (quoted) | — |
 | 2Sa 23:3 | 10.10 *The fear of God and the weak* (quoted) | — |
 | 2Sa 23:15 | 10.6 *Beside choosing* (quoted); 10.7 *Willing* | — |
-| 2Sa 23:16 | 10.6 *Beside choosing* (quoted); 10.7 *Willing* (quoted) | — |
-| 2Sa 23:17 | 10.6 *Beside choosing* (quoted); 10.7 *Willing*; 10.7 *What changes the character*; 11 *4. One word, opposite values* | — |
+| 2Sa 23:16 | 10.6 *Beside choosing* (quoted); 10.7 *Willing* (quoted) | C-347 |
+| 2Sa 23:17 | 10.6 *Beside choosing* (quoted); 10.7 *Willing*; 10.7 *What changes the character*; 11 *4. One word, opposite values* | C-347 |
 | 2Sa 24:3 | 10.1 *When delight is only the measure* (quoted); 10.7 *Choices weighed by another* (quoted) | — |
 | 2Sa 24:4 | 10.7 *Choices weighed by another* (quoted) | — |
 | 2Sa 24:10 | 08 *The Old Testament does this with the heart* (quoted) | — |
@@ -877,7 +901,7 @@
 | 1Ki 12:26 | 10.0 *From a thought to a deed* (quoted) | — |
 | 1Ki 12:28 | 10.0 *From a thought to a deed* (quoted) | — |
 | 1Ki 12:32 | 10.7 *Planning* | — |
-| 1Ki 12:33 | 10.7 *Planning* (quoted) | — |
+| 1Ki 12:33 | 10.7 *Planning* (quoted) | C-362 |
 | 1Ki 14:16 | 10.13 *How it is provoked* (quoted); 11 *6. Inner states pass between people* (quoted) | — |
 | 1Ki 14:22 | 13.1 *Jealousy* (quoted) | — |
 | 1Ki 17:1 | 02 *Living before God* (quoted); 10.9 *The living God* (quoted) | C-126 |
@@ -900,7 +924,7 @@
 | 1Ki 19:15 | 10.6 *Jealousy and envy* (quoted) | — |
 | 1Ki 19:16 | 10.6 *Jealousy and envy* | — |
 | 1Ki 19:18 | 10.6 *Jealousy and envy* (quoted) | — |
-| 1Ki 20:8 | 10.7 *Willing* (quoted) | — |
+| 1Ki 20:8 | 10.7 *Willing* (quoted) | C-347 |
 | 1Ki 20:9 | 10.7 *Willing* (quoted) | — |
 | 1Ki 20:11 | 10.15 *The boast* (quoted) | C-244 |
 | 1Ki 20:31 | 10.10 *(opening)* (quoted) | — |
@@ -914,6 +938,7 @@
 | 1Ki 22:21 | 11 *1. The inner being is acted upon as much as it acts* (quoted) | — |
 | 1Ki 22:22 | 11 *1. The inner being is acted upon as much as it acts* (quoted); 12 *Dispositions that come upon a person, and spirits that act* | 9-4 |
 | 1Ki 22:23 | 06 *Other spirits* (quoted); 12 *Dispositions that come upon a person, and spirits that act* | 9-4 |
+| 1Ki 22:49 | — | C-346 |
 | 2Ki 1:13 | 05 *The soul is hunted and rescued* (quoted) | — |
 | 2Ki 1:14 | 05 *The soul is hunted and rescued* (quoted) | — |
 | 2Ki 1:15 | 05 *The soul is hunted and rescued* | — |
@@ -941,7 +966,7 @@
 | 2Ki 7:8 | 10.11 *Hiding what I hold* | — |
 | 2Ki 7:9 | 10.11 *Hiding what I hold* (quoted) | — |
 | 2Ki 8:5 | 02 *Life that returns* (quoted) | — |
-| 2Ki 8:19 | 11 *4. One word, opposite values*; 13.1 *Willing* (quoted) | — |
+| 2Ki 8:19 | 11 *4. One word, opposite values*; 13.1 *Willing* (quoted) | C-354 |
 | 2Ki 9:24 | 04 *The middle of things* | — |
 | 2Ki 10:4 | 10.7 *Fear and choosing* (quoted) | — |
 | 2Ki 10:5 | 10.1 *When delight is only the measure* (quoted); 10.7 *Fear and choosing* (quoted); 11 *What changes the character* | — |
@@ -949,9 +974,11 @@
 | 2Ki 10:16 | 10.6 *Jealousy and envy* (quoted); 11 *What changes the character* | — |
 | 2Ki 10:30 | 13.1 *Delight* (quoted) | — |
 | 2Ki 10:31 | 13.1 *Delight* (quoted) | — |
-| 2Ki 12:15 | 10.4 *What thinking does* (quoted); 10.10 *(opening)* (quoted) | — |
+| 2Ki 12:15 | 10.4 *What thinking does* (quoted); 10.10 *(opening)* (quoted) | C-372 |
+| 2Ki 12:17 | 10.7 *Dedicating* (quoted) | — |
+| 2Ki 12:18 | 10.7 *Dedicating* (quoted) | C-390 |
 | 2Ki 13:21 | 02 *Life that returns* (quoted) | — |
-| 2Ki 13:23 | 13.1 *Willing* (quoted) | — |
+| 2Ki 13:23 | 13.1 *Willing* (quoted) | C-354 |
 | 2Ki 14:6 | 02 *Death and sin* (quoted) | C-87 |
 | 2Ki 17:15 | 10.13 *How it is provoked* (quoted) | — |
 | 2Ki 17:33 | 10.9 *Fearing God as a way of life* (quoted); 12 *Fear that goes wrong* (quoted) | — |
@@ -969,21 +996,29 @@
 | 2Ki 23:25 | 10.13 *Turned, and not turned* (quoted) | — |
 | 2Ki 23:26 | 10.13 *Turned, and not turned* (quoted) | — |
 | 2Ki 23:27 | — | C-331 |
-| 2Ki 24:4 | 13.1 *Willing* (quoted) | — |
+| 2Ki 24:4 | 13.1 *Willing* (quoted) | C-354 |
 | 1Ch 5:25 | 06 *The human spirit* (quoted); 13.1 *Stirring* (quoted) | — |
 | 1Ch 5:26 | 06 *The human spirit* (quoted); 13.1 *Stirring* (quoted) | — |
 | 1Ch 9:24 | 06 *One word, many things* (quoted) | — |
+| 1Ch 10:4 | — | C-349 |
 | 1Ch 10:13 | 10.13 *Reading the ruin* (quoted) | — |
+| 1Ch 11:18 | — | C-347 |
+| 1Ch 11:19 | — | C-347 |
 | 1Ch 13:2 | 10.1 *When delight is only the measure* (quoted); 10.7 *Choosing together* (quoted) | — |
 | 1Ch 13:3 | 10.7 *Choosing together* (quoted) | — |
 | 1Ch 13:4 | 10.7 *Choosing together* (quoted) | — |
+| 1Ch 18:11 | 10.7 *Dedicating* (quoted) | C-389 |
+| 1Ch 19:19 | — | C-346 |
 | 1Ch 21:10 | — | C-344 |
+| 1Ch 26:26 | — | C-389 |
+| 1Ch 26:27 | 10.7 *Dedicating* (quoted) | C-389 |
+| 1Ch 26:28 | 10.7 *Dedicating* (quoted) | C-389 |
 | 1Ch 28:2 | 04 *The heart decides and is moved* (quoted) | — |
 | 1Ch 28:4 | 13.1 *Choosing* (quoted) | — |
-| 1Ch 28:9 | 10.4 *Small, passing, and wholly seen* (quoted); 10.7 *Being chosen* (quoted); 10.7 *Planning* (quoted); 10.9 *(opening)* (quoted); 13.1 *Choosing* (quoted) | — |
+| 1Ch 28:9 | 10.4 *Small, passing, and wholly seen* (quoted); 10.7 *Being chosen* (quoted); 10.7 *Planning* (quoted); 10.9 *(opening)* (quoted); 13.1 *Choosing* (quoted) | C-363 |
 | 1Ch 28:10 | 10.7 *Being chosen* (quoted) | C-333 |
 | 1Ch 28:19 | 10.7 *Willing* (quoted) | — |
-| 1Ch 28:21 | 10.7 *Willing* (quoted) | — |
+| 1Ch 28:21 | 10.7 *Willing* (quoted) | C-352 |
 | 1Ch 29:2 | 10.6 *Precious* (quoted) | — |
 | 1Ch 29:3 | 10.6 *Precious* (quoted) | — |
 | 1Ch 29:5 | 10.7 *Willing* (quoted) | — |
@@ -993,8 +1028,11 @@
 | 1Ch 29:14 | 10.7 *Willing* (quoted) | — |
 | 1Ch 29:16 | 10.7 *Willing* (quoted) | — |
 | 1Ch 29:17 | 10.7 *Willing* (quoted); 13.1 *Delight* (quoted); 14 *Thoughts taken captive* (quoted) | — |
-| 1Ch 29:18 | 10.7 *Planning* (quoted); 14 *Thoughts taken captive* (quoted) | — |
-| 2Ch 2:14 | 10.4 *What thinking does* (quoted) | — |
+| 1Ch 29:18 | 10.7 *Planning* (quoted); 14 *Thoughts taken captive* (quoted) | C-364 |
+| 2Ch 2:1 | 10.7 *Dedicating* (quoted) | — |
+| 2Ch 2:4 | 10.7 *Dedicating* (quoted) | C-391 |
+| 2Ch 2:6 | 10.7 *Dedicating* (quoted) | — |
+| 2Ch 2:14 | 10.4 *What thinking does* (quoted) | C-365 |
 | 2Ch 6:8 | 13.1 *Delight* (quoted) | — |
 | 2Ch 6:9 | 13.1 *Delight* (quoted) | — |
 | 2Ch 7:3 | 02 *Life breathed in*; 11 *4. One word, opposite values* | — |
@@ -1021,7 +1059,7 @@
 | 2Ch 19:7 | 10.7 *Fear and choosing* (quoted) | — |
 | 2Ch 20:3 | 10.12 *What fear does* (quoted) | — |
 | 2Ch 20:6 | 13.1 *Ruling* (quoted) | — |
-| 2Ch 21:7 | 13.1 *Willing* (quoted) | — |
+| 2Ch 21:7 | 13.1 *Willing* (quoted) | C-354 |
 | 2Ch 21:12 | 13.1 *Stirring* | — |
 | 2Ch 21:13 | 13.1 *Stirring* (quoted) | — |
 | 2Ch 21:14 | 13.1 *Stirring* | — |
@@ -1030,7 +1068,7 @@
 | 2Ch 21:20 | 02 *What death is* (quoted) | — |
 | 2Ch 25:4 | — | C-87 |
 | 2Ch 25:5 | — | C-334 |
-| 2Ch 26:15 | 10.4 *What thinking does* (quoted); 10.15 *Given, then held as one's own* (quoted) | C-214 |
+| 2Ch 26:15 | 10.4 *What thinking does* (quoted); 10.15 *Given, then held as one's own* (quoted) | C-214, C-365 |
 | 2Ch 26:16 | 04 *The heart and anger* (quoted); 10.1 *How a feeling rises* (quoted); 10.4 *What thinking does* (quoted); 10.15 *The words*; 10.15 *Given, then held as one's own* (quoted); 10.15 *The other face* (quoted); 11 *2. Thresholds: the merry heart and the sad heart* (quoted); 11 *4. One word, opposite values* | C-214, C-238 |
 | 2Ch 26:19 | 04 *The heart and anger*; 10.1 *How a feeling rises* (quoted); 10.13 *The words* (quoted); 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | — |
 | 2Ch 28:9 | 10.1 *When feeling changes character* (quoted); 10.9 *Anger toward God, and before God* (quoted); 10.13 *Those who carry it out* (quoted) | — |
@@ -1039,10 +1077,13 @@
 | 2Ch 28:22 | 10.13 *How it is provoked* (quoted); 10.13 *The heart that turns, and the heart that does not* (quoted); 10.13 *The responses, gathered* (quoted); 10.14 *Distress does not decide it* (quoted); 10.14 *Being humbled by God* (quoted); 11 *What changes the character* (quoted) | C-174, C-179 |
 | 2Ch 29:8 | 10.13 *Reading the ruin* (quoted) | — |
 | 2Ch 29:10 | 04 *The heart and anger* (quoted); 10.13 *Turned, and not turned* (quoted); 10.13 *Reading the ruin* (quoted); 10.13 *The responses, gathered* | — |
-| 2Ch 29:31 | 04 *The heart decides and is moved* (quoted); 10.7 *Willing* (quoted) | — |
+| 2Ch 29:31 | 04 *The heart decides and is moved* (quoted); 10.7 *Willing* (quoted) | C-352 |
 | 2Ch 30:8 | 10.14 *What it is set against* (quoted) | — |
 | 2Ch 30:10 | 10.14 *What it is set against* (quoted); 10.15 *The mock* (quoted) | C-174, C-234 |
 | 2Ch 30:11 | 10.14 *What it is set against* (quoted); 10.15 *The mock* (quoted) | C-174, C-234 |
+| 2Ch 31:5 | 10.7 *Dedicating* (quoted) | — |
+| 2Ch 31:6 | 10.7 *Dedicating* (quoted) | C-392 |
+| 2Ch 31:8 | 10.7 *Dedicating* (quoted) | — |
 | 2Ch 32:8 | 07 *What flesh means* (quoted) | — |
 | 2Ch 32:10 | 10.9 *Knowing who rules* (quoted) | C-298 |
 | 2Ch 32:11 | 10.9 *Knowing who rules* (quoted) | C-298 |
@@ -1101,10 +1142,10 @@
 | Neh 5:6 | 04 *The heart and anger* (quoted); 10.0 *How the activities connect* (quoted); 10.1 *How a feeling rises* (quoted); 10.2 *(opening)* (quoted); 10.13 *What it rises at* (quoted) | — |
 | Neh 5:7 | 04 *The heart and anger* (quoted); 10.0 *The path can start with a feeling* (quoted); 10.8 *(opening)* (quoted); 10.13 *What it does next* (quoted) | — |
 | Neh 5:15 | 10.10 *The fear of God and the weak* (quoted) | — |
-| Neh 6:2 | 10.10 *Plotting against another* (quoted); 10.11 *The hidden trap* (quoted) | — |
+| Neh 6:2 | 10.10 *Plotting against another* (quoted); 10.11 *The hidden trap* (quoted) | C-356 |
 | Neh 6:3 | 10.10 *Plotting against another* (quoted) | — |
-| Neh 6:6 | 10.10 *Plotting against another* (quoted) | — |
-| Neh 6:8 | 10.7 *Planning* (quoted); 10.10 *Plotting against another* (quoted) | — |
+| Neh 6:6 | 10.10 *Plotting against another* (quoted) | C-356 |
+| Neh 6:8 | 10.7 *Planning* (quoted); 10.10 *Plotting against another* (quoted) | C-362 |
 | Neh 6:9 | 10.5 *Fear and the mouth* (quoted); 10.10 *Plotting against another* (quoted); 10.12 *Fear in the body* (quoted) | C-283, C-286 |
 | Neh 6:13 | 10.8 *(opening)* (quoted); 10.12 *Fear between people* (quoted); 12 *Fear that goes wrong* (quoted) | — |
 | Neh 9:15 | 10.6 *Thirst answered* (quoted) | — |
@@ -1119,7 +1160,9 @@
 | Neh 9:37 | 10.7 *Willing* (quoted) | — |
 | Neh 11:1 | 10.7 *Willing* (quoted) | — |
 | Neh 11:2 | 10.7 *Willing* (quoted) | — |
-| Neh 13:13 | 10.4 *What thinking does* (quoted) | — |
+| Neh 12:43 | 10.7 *Dedicating* (quoted) | — |
+| Neh 12:47 | 10.7 *Dedicating* (quoted) | C-392 |
+| Neh 13:13 | 10.4 *What thinking does* (quoted) | C-372 |
 | Est 1:8 | 10.1 *How a feeling rises* (quoted) | C-316 |
 | Est 1:10 | 10.1 *How a feeling rises* (quoted); 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | C-316 |
 | Est 1:11 | 10.1 *How a feeling rises*; 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | — |
@@ -1163,7 +1206,7 @@
 | Est 7:8 | 10.13 *What it rises at* (quoted) | C-308 |
 | Est 7:9 | 10.10 *Plotting against another* (quoted) | — |
 | Est 7:10 | 10.10 *Plotting against another* (quoted); 10.13 *What it rises at* (quoted) | C-308 |
-| Est 8:3 | 10.10 *Plotting against another* (quoted) | — |
+| Est 8:3 | 10.10 *Plotting against another* (quoted) | C-356 |
 | Est 8:8 | 10.1 *When delight is only the measure* (quoted); 10.7 *Whose measure* (quoted) | — |
 | Est 8:17 | 10.12 *Dread laid on others* (quoted) | C-245 |
 | Est 9:1 | 10.10 *Fear that arrives with a person* (quoted) | — |
@@ -1174,7 +1217,7 @@
 | Est 9:13 | 10.7 *Whose measure* (quoted) | — |
 | Est 9:22 | 10.10 *Friends, company and care* (quoted) | C-262 |
 | Est 9:24 | 10.10 *Plotting against another* (quoted) | — |
-| Est 9:25 | 10.0 *The path runs back* (quoted); 10.0 *How the activities connect*; 10.4 *What is devised comes back* (quoted); 11 *What changes the character* | — |
+| Est 9:25 | 10.0 *The path runs back* (quoted); 10.0 *How the activities connect*; 10.4 *What is devised comes back* (quoted); 11 *What changes the character* | C-358 |
 | Job 1:1 | 10.7 *(opening)* (quoted); 10.8 *(opening)* (quoted) | — |
 | Job 1:8 | 10.7 *Choices weighed by another* (quoted) | — |
 | Job 1:9 | 10.9 *Fearing God as a way of life* (quoted) | — |
@@ -1362,7 +1405,7 @@
 | Job 37:1 | 10.12 *Fear before God* (quoted) | — |
 | Job 37:2 | 10.12 *Fear before God* (quoted) | — |
 | Job 38:17 | 02 *What death is* (quoted) | C-138 |
-| Job 39:9 | 13.1 *Willing* (quoted); 13.4 *(opening)* (quoted) | — |
+| Job 39:9 | 13.1 *Willing* (quoted); 13.4 *(opening)* (quoted) | C-355 |
 | Job 39:14 | 13.4 *(opening)* (quoted) | — |
 | Job 39:15 | 13.4 *(opening)* (quoted) | — |
 | Job 39:16 | 13.4 *(opening)* (quoted) | — |
@@ -1415,7 +1458,7 @@
 | Psa 9:17 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Psa 9:20 | 10.12 *Dread laid on others* (quoted) | — |
 | Psa 10 | 10.10 *Making others afraid* (no verse row) | — |
-| Psa 10:2 | 10.4 *When thinking changes character* (quoted); 10.4 *What is devised comes back* (quoted); 10.10 *Plotting against another* (quoted); 10.10 *Pride over another* (quoted); 10.15 *Pride over another* (quoted); 11 *What changes the character* | C-226 |
+| Psa 10:2 | 10.4 *When thinking changes character* (quoted); 10.4 *What is devised comes back* (quoted); 10.10 *Plotting against another* (quoted); 10.10 *Pride over another* (quoted); 10.15 *Pride over another* (quoted); 11 *What changes the character* | C-226, C-358 |
 | Psa 10:3 | 10.6 *Evil desire* (quoted) | — |
 | Psa 10:4 | 02 *Life breathed in* (quoted); 10.4 *What thinking does* (quoted); 10.15 *The heart that says what God says* (quoted); 11 *4. One word, opposite values*; 11 *What changes the character* | C-220 |
 | Psa 10:5 | 10.5 *From the heart to the mouth* (quoted) | — |
@@ -1440,7 +1483,7 @@
 | Psa 16:9 | 04 *The heart feels*; 07 *Flesh answers the inner being* (quoted) | — |
 | Psa 16:10 | 02 *Soul, spirit and heart at death* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted) | 3-9, 3-9, C-100, C-102 |
 | Psa 16:11 | 10.6 *Aimed at God* (quoted) | — |
-| Psa 17:3 | 10.7 *Holding a choice*; 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | — |
+| Psa 17:3 | 10.7 *Holding a choice*; 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | C-364 |
 | Psa 17:5 | 10.7 *Planning* (quoted) | — |
 | Psa 17:8 | 10.11 *Hiding another* (quoted) | — |
 | Psa 17:10 | 10.10 *Pride over another* (quoted); 10.15 *Pride over another* (quoted) | C-226 |
@@ -1533,11 +1576,11 @@
 | Psa 35:13 | 08 *The bosom* (quoted) | — |
 | Psa 35:16 | 10.13 *Anger in the body* (quoted) | C-291 |
 | Psa 35:17 | 02 *Sleep and waking* (quoted) | — |
-| Psa 35:20 | 10.5 *The tongue, the lips and the eyes devise* (quoted); 10.10 *Plotting against another* (quoted) | — |
+| Psa 35:20 | 10.5 *The tongue, the lips and the eyes devise* (quoted); 10.10 *Plotting against another* (quoted) | C-370 |
 | Psa 35:23 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted) | C-91 |
 | Psa 35:25 | 10.6 *Wanting speaks, and drives thinking* (quoted) | — |
 | Psa 36:1 | 12 *The heart as the source* (quoted) | — |
-| Psa 36:4 | 10.0 *From a thought to a deed* (quoted); 10.4 *The night and the bed* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character* | — |
+| Psa 36:4 | 10.0 *From a thought to a deed* (quoted); 10.4 *The night and the bed* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character* | C-368, C-370 |
 | Psa 36:7 | 10.6 *Aimed at God* (quoted) | — |
 | Psa 36:8 | 10.6 *Aimed at God* (quoted) | — |
 | Psa 36:9 | 02 *Where life flows from* (quoted) | — |
@@ -1553,7 +1596,7 @@
 | Psa 37:9 | 10.14 *The humble* (quoted) | C-186 |
 | Psa 37:10 | 10.14 *The humble* | C-186 |
 | Psa 37:11 | 10.1 *On God's word, and on God* (quoted); 10.14 *The words*; 10.14 *The humble* (quoted) | C-186 |
-| Psa 37:12 | 10.10 *Plotting against another* (quoted); 10.13 *Anger in the body* (quoted); 10.13 *What it does next* (quoted); 11 *4. One word, opposite values* (quoted) | C-291 |
+| Psa 37:12 | 10.10 *Plotting against another* (quoted); 10.13 *Anger in the body* (quoted); 10.13 *What it does next* (quoted); 11 *4. One word, opposite values* (quoted) | C-291, C-356 |
 | Psa 37:20 | 10.6 *Precious* (quoted) | — |
 | Psa 37:23 | 13.1 *Delight* (quoted) | — |
 | Psa 37:24 | 13.1 *Delight* (quoted) | — |
@@ -1579,9 +1622,9 @@
 | Psa 40:8 | 10.1 *On God's word, and on God*; 13.1 *Delight* (quoted) | C-206 |
 | Psa 40:10 | 10.11 *Hiding what I hold* (quoted) | — |
 | Psa 40:14 | 10.1 *Delight* (quoted) | — |
-| Psa 40:17 | 10.4 *What thinking does* (quoted); 10.4 *Small, passing, and wholly seen* (quoted); 10.9 *(opening)* (quoted); 13.1 *Purposing* (quoted) | — |
+| Psa 40:17 | 10.4 *What thinking does* (quoted); 10.4 *Small, passing, and wholly seen* (quoted); 10.9 *(opening)* (quoted); 13.1 *Purposing* (quoted) | C-361 |
 | Psa 41:5 | 10.10 *(opening)* (quoted) | — |
-| Psa 41:7 | 10.4 *When thinking changes character* (quoted); 10.5 *The tongue, the lips and the eyes devise* (quoted); 11 *What changes the character* | — |
+| Psa 41:7 | 10.4 *When thinking changes character* (quoted); 10.5 *The tongue, the lips and the eyes devise* (quoted); 11 *What changes the character* | C-370 |
 | Psa 41:9 | 10.10 *Friends, company and care* (quoted); 13.1 *Delight* (quoted) | — |
 | Psa 41:11 | 10.1 *When delight is only the measure* (quoted); 10.10 *Friends, company and care* (quoted); 13.1 *Delight* (quoted) | — |
 | Psa 42:1 | 05 *From throat to corpse* (quoted); 13.4 *(opening)* (quoted) | — |
@@ -1592,7 +1635,7 @@
 | Psa 42:8 | 10.9 *The living God* (quoted) | — |
 | Psa 44 | 02 *Sleep and waking* (no verse row) | — |
 | Psa 44:21 | 04 *The heart is hidden, and God sees it* (quoted) | — |
-| Psa 44:22 | 02 *Sleep and waking* (quoted); 10.4 *What thinking does* (quoted); 10.9 *Calling on God to wake* (quoted) | — |
+| Psa 44:22 | 02 *Sleep and waking* (quoted); 10.4 *What thinking does* (quoted); 10.9 *Calling on God to wake* (quoted) | C-372 |
 | Psa 44:23 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted); 11 *What changes the character* | C-91 |
 | Psa 44:24 | 10.9 *When God hides his face* (quoted) | — |
 | Psa 44:25 | 05 *The soul suffers* (quoted); 10.9 *When God hides his face* (quoted) | — |
@@ -1617,13 +1660,13 @@
 | Psa 51:9 | 10.9 *When God hides his face* (quoted); 11 *4. One word, opposite values* | — |
 | Psa 51:10 | 03 *Side by side* (quoted); 06 *The human spirit* (quoted); 09 *Lines that are often drawn, but that I cannot find*; 10.7 *Willing* (quoted); 10.9 *When God hides his face* (quoted); 14 *A new heart and a new spirit* (quoted) | 1-1, 2-2 |
 | Psa 51:11 | 06 *The human spirit* (quoted); 06 *God's Spirit and the human person* (quoted); 10.9 *When God hides his face* (quoted); 14 *A new heart and a new spirit* (quoted) | — |
-| Psa 51:12 | 06 *The human spirit* (quoted); 10.7 *Willing* (quoted); 14 *A new heart and a new spirit* (quoted) | — |
+| Psa 51:12 | 06 *The human spirit* (quoted); 10.7 *Willing* (quoted); 14 *A new heart and a new spirit* (quoted) | C-352 |
 | Psa 51:13 | 10.7 *Willing* (quoted) | — |
 | Psa 51:16 | 10.14 *Humility as a way of walking* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* (quoted) | C-188, C-206 |
 | Psa 51:17 | 03 *Side by side* (quoted); 10.14 *Humility as a way of walking* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* (quoted) | 1-1, C-188, C-189, C-206 |
 | Psa 51:18 | 11 *What changes the character* | C-188, C-206 |
 | Psa 51:19 | 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* | C-188, C-206 |
-| Psa 52:2 | 10.0 *From a thought to a deed* (quoted); 10.5 *The tongue, the lips and the eyes devise* (quoted) | — |
+| Psa 52:2 | 10.0 *From a thought to a deed* (quoted); 10.5 *The tongue, the lips and the eyes devise* (quoted) | C-370 |
 | Psa 52:7 | 10.6 *Possessions* (quoted) | — |
 | Psa 53:1 | 12 *Fear that goes wrong* (quoted) | — |
 | Psa 53:5 | 10.12 *Fear that comes upon a person* (quoted); 12 *Fear that goes wrong* (quoted) | — |
@@ -1730,7 +1773,7 @@
 | Psa 80:4 | 10.13 *Bearing it* (quoted); 10.13 *The responses, gathered* (quoted) | — |
 | Psa 80:18 | 02 *Life asked for* (quoted); 02 *Sleep and waking* (quoted); 10.9 *(opening)* (quoted); 10.9 *Calling on God to wake* (quoted) | — |
 | Psa 81:10 | 10.7 *Willing* (quoted) | — |
-| Psa 81:11 | 10.7 *Willing* | — |
+| Psa 81:11 | 10.7 *Willing* | C-350 |
 | Psa 81:12 | 04 *The heart decides and is moved* (quoted); 10.7 *Willing* (quoted) | — |
 | Psa 82:7 | — | C-83 |
 | Psa 84:2 | 02 *Living before God* (quoted); 05 *The soul wants* (quoted); 07 *Flesh answers the inner being* (quoted); 10.9 *The living God* (quoted) | C-130 |
@@ -1740,7 +1783,7 @@
 | Psa 86:14 | 02 *Delivered from death* (quoted) | — |
 | Psa 88 | 10.13 *Bearing it* (no verse row) | — |
 | Psa 88:3 | 02 *Life weighed* (quoted); 10.4 *What thinking does* (quoted) | C-133 |
-| Psa 88:4 | 10.4 *What thinking does* (quoted) | — |
+| Psa 88:4 | 10.4 *What thinking does* (quoted) | C-372 |
 | Psa 88:5 | 02 *Death in the living* (quoted) | C-88 |
 | Psa 88:7 | 10.13 *How it is spoken of* (quoted) | — |
 | Psa 88:10 | 02 *After death* (quoted) | C-106 |
@@ -1783,7 +1826,7 @@
 | Psa 103:1 | 05 *The soul rejoices and worships* (quoted); 05 *The soul is spoken to* (quoted) | 2-14 |
 | Psa 103:11 | 10.9 *How God meets those who fear him* (quoted) | — |
 | Psa 103:13 | 10.4 *The inclination: a shaped thing* (quoted); 10.9 *How God meets those who fear him* (quoted) | — |
-| Psa 103:14 | 10.3 *God remembers* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 10.9 *How God meets those who fear him* (quoted) | 4-4 |
+| Psa 103:14 | 10.3 *God remembers* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 10.9 *How God meets those who fear him* (quoted) | 4-4, C-369 |
 | Psa 103:17 | 10.9 *How God meets those who fear him* (quoted); 10.12 *The fear of God* (quoted) | — |
 | Psa 103:18 | 10.12 *The fear of God* (quoted) | — |
 | Psa 103:20 | 13.2 *(opening)* (quoted) | — |
@@ -1816,7 +1859,7 @@
 | Psa 106:24 | 10.5 *Grumbling* (quoted); 10.7 *Being chosen* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* (quoted) | — |
 | Psa 106:25 | 10.5 *Grumbling* (quoted) | — |
 | Psa 106:28 | 02 *After death* (quoted) | C-166 |
-| Psa 106:31 | 10.4 *When anger thinks* (quoted) | — |
+| Psa 106:31 | 10.4 *When anger thinks* (quoted) | C-372 |
 | Psa 106:33 | 06 *The human spirit* (quoted); 10.7 *Being chosen* (quoted); 10.13 *What it does next* (quoted); 10.13 *Connections* | — |
 | Psa 106:41 | 10.9 *Under rule, and longing for his* (quoted) | — |
 | Psa 106:44 | 10.9 *Under rule, and longing for his* (quoted) | — |
@@ -1929,9 +1972,9 @@
 | Psa 139:17 | 10.4 *Small, passing, and wholly seen* (quoted); 10.9 *(opening)* (quoted) | — |
 | Psa 139:18 | 02 *Sleep and waking* (quoted) | — |
 | Psa 139:23 | 10.1 *The words* (quoted); 10.1 *Meeting anxiety* (quoted); 10.4 *Thoughts that turn on the thinker* (quoted); 10.4 *Connections*; 11 *What changes the character* | — |
-| Psa 140:2 | 10.10 *Plotting against another* (quoted); 12 *The heart deceives its owner* (quoted) | — |
+| Psa 140:2 | 10.10 *Plotting against another* (quoted); 12 *The heart deceives its owner* (quoted) | C-367 |
 | Psa 140:3 | 10.5 *Anger in words* (quoted); 10.13 *What changes it* | — |
-| Psa 140:4 | 10.10 *Plotting against another* (quoted) | — |
+| Psa 140:4 | 10.10 *Plotting against another* (quoted) | C-356 |
 | Psa 140:5 | 10.11 *The words*; 10.11 *The hidden trap* (quoted); 12 *The heart deceives its owner* | — |
 | Psa 140:8 | 10.10 *Plotting against another* (quoted) | — |
 | Psa 141:4 | 10.7 *Setting the heart* (quoted) | — |
@@ -1965,7 +2008,7 @@
 | Psa 150:6 | 02 *Breath lent, and held by God* (quoted) | — |
 | Pro 1:4 | 10.4 *When thinking changes character* (quoted); 11 *What changes the character* | — |
 | Pro 1:7 | 10.1 *The fear of God* (quoted); 10.2 *(opening)* (quoted); 10.12 *The fear of God* (quoted); 10.12 *Connections* (quoted) | — |
-| Pro 1:10 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted) | — |
+| Pro 1:10 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted) | C-347 |
 | Pro 1:11 | 10.10 *Plotting against another* (quoted) | — |
 | Pro 1:12 | 02 *Going down to Sheol* (quoted) | C-97 |
 | Pro 1:13 | 10.6 *Possessions* (quoted) | — |
@@ -1973,11 +2016,11 @@
 | Pro 1:22 | 10.1 *Delight* (quoted) | — |
 | Pro 1:23 | 10.7 *Willing* (quoted) | — |
 | Pro 1:24 | — | C-240 |
-| Pro 1:25 | — | C-240 |
+| Pro 1:25 | — | C-240, C-350 |
 | Pro 1:26 | 10.2 *(opening)* (quoted); 10.12 *Fear that comes upon a person* (quoted) | C-240 |
 | Pro 1:27 | 10.12 *Fear that comes upon a person* (quoted); 10.13 *Dread and trembling* (quoted) | — |
 | Pro 1:29 | 10.2 *(opening)* (quoted); 10.7 *Willing* (quoted); 10.12 *Fear that comes upon a person* (quoted) | — |
-| Pro 1:30 | 10.7 *Willing* (quoted) | — |
+| Pro 1:30 | 10.7 *Willing* (quoted) | C-350 |
 | Pro 1:31 | 10.7 *Willing* (quoted); 10.7 *What follows a choice* (quoted) | — |
 | Pro 1:33 | 10.2 *(opening)* (quoted) | — |
 | Pro 2:2 | 10.2 *(opening)* (quoted) | — |
@@ -2010,7 +2053,7 @@
 | Pro 6:25 | 10.6 *Through the eye* (quoted) | — |
 | Pro 6:26 | 05 *The soul is hunted and rescued* (quoted) | — |
 | Pro 6:34 | 10.1 *When feeling changes character* (quoted); 10.6 *Jealousy and envy*; 10.13 *Connections*; 11 *What changes the character* | — |
-| Pro 6:35 | 10.1 *Where it turns* (quoted); 10.1 *When feeling changes character* (quoted); 10.6 *Jealousy and envy* (quoted); 10.7 *Willing* (quoted); 11 *What changes the character* (quoted) | — |
+| Pro 6:35 | 10.1 *Where it turns* (quoted); 10.1 *When feeling changes character* (quoted); 10.6 *Jealousy and envy* (quoted); 10.7 *Willing* (quoted); 11 *What changes the character* (quoted) | C-349 |
 | Pro 7:10 | 11 *4. One word, opposite values* | — |
 | Pro 7:25 | 02 *Going down to Sheol* (quoted) | C-96 |
 | Pro 7:26 | — | C-96 |
@@ -2099,7 +2142,7 @@
 | Pro 16:3 | 10.0 *The path runs back* (quoted); 10.4 *When thinking changes character* (quoted); 11 *What changes the character* | — |
 | Pro 16:5 | 12 *Pride and the lifted-up heart and spirit* (quoted) | C-207 |
 | Pro 16:6 | 10.8 *(opening)* (quoted); 10.12 *The fear of God* (quoted) | — |
-| Pro 16:9 | 04 *The heart thinks, attends and remembers* (quoted); 10.4 *Where thoughts come from* (quoted); 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | — |
+| Pro 16:9 | 04 *The heart thinks, attends and remembers* (quoted); 10.4 *Where thoughts come from* (quoted); 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | C-360, C-367 |
 | Pro 16:14 | 10.10 *Holding authority over another* (quoted); 10.13 *Other parties* (quoted); 10.13 *Connections* | C-302 |
 | Pro 16:15 | 02 *Where life flows from* (quoted); 10.10 *Holding authority over another* (quoted) | C-302, C-320 |
 | Pro 16:16 | 10.7 *The words* (quoted); 10.7 *What draws it* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | C-339 |
@@ -2108,7 +2151,7 @@
 | Pro 16:24 | 10.5 *The oath* (quoted) | — |
 | Pro 16:26 | 05 *From throat to corpse* (quoted) | — |
 | Pro 16:28 | 10.5 *Whispering* (quoted); 10.10 *Care, discouragement and hiding between people* (quoted); 11 *4. One word, opposite values* | — |
-| Pro 16:30 | 10.0 *From a thought to a deed* (quoted); 10.5 *The tongue, the lips and the eyes devise* (quoted) | — |
+| Pro 16:30 | 10.0 *From a thought to a deed* (quoted); 10.5 *The tongue, the lips and the eyes devise* (quoted) | C-370 |
 | Pro 16:32 | 06 *The human spirit* (quoted); 10.13 *Governed, and put away* (quoted); 11 *7. The inner being is governed* (quoted); 11 *Authority as a standing* (quoted) | — |
 | Pro 17:3 | 10.9 *(opening)* (quoted) | — |
 | Pro 17:4 | 10.2 *(opening)* (quoted) | — |
@@ -2178,7 +2221,7 @@
 | Pro 24:2 | 10.4 *What thinking does* (quoted); 10.5 *From the heart to the mouth* (quoted); 10.6 *Jealousy and envy*; 10.6 *Possessions* (quoted) | — |
 | Pro 24:3 | 10.6 *Possessions* (quoted) | — |
 | Pro 24:4 | 10.6 *Possessions* (quoted) | — |
-| Pro 24:8 | 10.10 *Plotting against another* (quoted) | — |
+| Pro 24:8 | 10.10 *Plotting against another* (quoted) | C-358 |
 | Pro 24:9 | 10.10 *Plotting against another* (quoted) | — |
 | Pro 24:11 | 02 *Delivered from death* (quoted) | — |
 | Pro 24:17 | 10.6 *Jealousy and envy*; 10.10 *(opening)* (quoted); 10.13 *Other parties* (quoted) | — |
@@ -2205,7 +2248,7 @@
 | Pro 27:4 | 10.6 *Jealousy and envy* (quoted); 10.13 *What the verses say about it* (quoted) | — |
 | Pro 27:5 | 10.11 *Hiding what I hold* (quoted) | — |
 | Pro 27:9 | 10.1 *Feeling and thinking* (quoted) | — |
-| Pro 27:14 | 10.4 *What thinking does* (quoted) | — |
+| Pro 27:14 | 10.4 *What thinking does* (quoted) | C-372 |
 | Pro 27:15 | 10.10 *Anger between people* (quoted) | — |
 | Pro 27:19 | 04 *The heart feels* (quoted) | — |
 | Pro 27:20 | 02 *Going down to Sheol* (quoted) | C-97 |
@@ -2222,11 +2265,11 @@
 | Pro 30:7 | 02 *Dying to the Lord* (quoted) | — |
 | Pro 30:15 | 02 *Going down to Sheol* | C-97 |
 | Pro 30:16 | 02 *Going down to Sheol* | C-97 |
-| Pro 30:32 | 10.10 *Plotting against another* (quoted) | — |
+| Pro 30:32 | 10.10 *Plotting against another* (quoted) | C-358 |
 | Pro 30:33 | 10.10 *Plotting against another* (quoted); 10.13 *The words* (quoted) | — |
 | Pro 31 | 10.7 *Planning* (no verse row) | — |
 | Pro 31:15 | 10.7 *Planning* (quoted) | — |
-| Pro 31:16 | 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | — |
+| Pro 31:16 | 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | C-359 |
 | Ecc 1:5 | 11 *What changes the character*; 13.4 *(opening)* (quoted) | — |
 | Ecc 1:13 | 04 *The heart thinks, attends and remembers* (quoted) | — |
 | Ecc 2:1 | 04 *The heart speaks to itself* (quoted) | — |
@@ -2337,7 +2380,7 @@
 | Isa 1:16 | 10.7 *Two sides* (quoted) | — |
 | Isa 1:17 | 10.7 *Two sides* (quoted) | — |
 | Isa 1:18 | 10.7 *Willing* (quoted); 10.7 *What follows a choice* (quoted); 13.1 *Choosing* (quoted) | — |
-| Isa 1:19 | 10.7 *Two sides* (quoted); 10.7 *Willing* (quoted) | — |
+| Isa 1:19 | 10.7 *Two sides* (quoted); 10.7 *Willing* (quoted) | C-350 |
 | Isa 1:20 | 10.7 *Two sides* (quoted); 10.7 *Willing* (quoted) | — |
 | Isa 1:27 | 10.7 *What follows a choice* (quoted) | — |
 | Isa 1:29 | 10.6 *Beside choosing* (quoted); 10.7 *What draws it* (quoted); 10.7 *What follows a choice* (quoted) | C-337 |
@@ -2375,7 +2418,7 @@
 | Isa 7:16 | 10.7 *What changes the character* | — |
 | Isa 7:22 | 10.7 *What follows a choice* (quoted) | — |
 | Isa 8:6 | 10.7 *The words* (quoted); 10.7 *Two sides* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* (quoted); 11 *What changes the character* | — |
-| Isa 8:10 | 10.7 *Planning* (quoted) | — |
+| Isa 8:10 | 10.7 *Planning* (quoted) | C-360 |
 | Isa 8:12 | 10.1 *What changes it* (quoted); 10.9 *"Fear not"*; 10.12 *What changes it* (quoted) | — |
 | Isa 8:13 | 10.1 *What changes it* (quoted); 10.9 *"Fear not"*; 10.12 *The words*; 10.12 *What changes it* (quoted) | — |
 | Isa 8:17 | 10.9 *When God hides his face* (quoted) | — |
@@ -2384,7 +2427,7 @@
 | Isa 9:6 | 13.1 *Ruling* (quoted) | — |
 | Isa 9:7 | 13.1 *Jealousy* (quoted) | — |
 | Isa 10:5 | 10.13 *Those who carry it out* (quoted); 10.15 *Given, then held as one's own* | C-215 |
-| Isa 10:7 | 10.13 *Those who carry it out* (quoted); 10.13 *What changes it* | — |
+| Isa 10:7 | 10.13 *Those who carry it out* (quoted); 10.13 *What changes it* | C-373 |
 | Isa 10:12 | 10.13 *Those who carry it out* (quoted) | — |
 | Isa 10:13 | 10.13 *Those who carry it out* (quoted); 10.15 *Given, then held as one's own* (quoted) | C-215 |
 | Isa 10:15 | 10.13 *Those who carry it out* (quoted); 10.15 *Given, then held as one's own* (quoted) | C-215 |
@@ -2400,7 +2443,7 @@
 | Isa 13:8 | 10.12 *Fear in the body* (quoted) | C-282 |
 | Isa 13:11 | 10.14 *The proud brought low, the lowly raised* (quoted) | C-180 |
 | Isa 13:13 | 10.13 *Dread and trembling* (quoted) | — |
-| Isa 13:17 | 10.4 *What thinking does* (quoted); 13.1 *Stirring* (quoted) | — |
+| Isa 13:17 | 10.4 *What thinking does* (quoted); 13.1 *Stirring* (quoted) | C-372 |
 | Isa 13:18 | 10.4 *What thinking does* (quoted) | — |
 | Isa 14:4 | 02 *After death*; 10.10 *Anger between people* (quoted); 12 *Pride and the lifted-up heart and spirit* | C-107 |
 | Isa 14:5 | 13.1 *Ruling* (quoted) | — |
@@ -2421,7 +2464,7 @@
 | Isa 24:17 | 10.13 *Dread and trembling* (quoted) | — |
 | Isa 24:18 | 10.13 *Dread and trembling* (quoted) | — |
 | Isa 25:8 | 02 *Changed* | — |
-| Isa 26:3 | 10.4 *The inclination: a shaped thing*; 10.7 *Planning* (quoted); 14 *Thoughts taken captive* (quoted) | 4-4 |
+| Isa 26:3 | 10.4 *The inclination: a shaped thing*; 10.7 *Planning* (quoted); 14 *Thoughts taken captive* (quoted) | 4-4, C-364, C-369 |
 | Isa 26:8 | 05 *The soul wants* (quoted); 10.6 *Aimed at God* (quoted) | — |
 | Isa 26:9 | 01 *(opening)* (quoted); 03 *Side by side* (quoted) | 1-1 |
 | Isa 26:10 | 13.1 *Majesty* (quoted) | — |
@@ -2432,7 +2475,7 @@
 | Isa 27:2 | 13.1 *Delight* (quoted) | — |
 | Isa 27:3 | 13.1 *Delight* (quoted) | — |
 | Isa 27:4 | 10.13 *Why it is held back* (quoted); 13.1 *Delight* (quoted) | — |
-| Isa 28:12 | 10.7 *Willing* (quoted); 10.7 *What changes the character* | — |
+| Isa 28:12 | 10.7 *Willing* (quoted); 10.7 *What changes the character* | C-350 |
 | Isa 28:15 | 02 *Going down to Sheol* (quoted); 10.6 *Precious* (quoted); 10.11 *Hiding another* (quoted) | C-99 |
 | Isa 28:16 | 10.6 *Precious* (quoted) | — |
 | Isa 28:18 | 02 *Going down to Sheol* (quoted) | C-99 |
@@ -2444,18 +2487,19 @@
 | Isa 29:13 | 04 *The heart is the source* (quoted); 10.1 *The fear of God* (quoted); 10.1 *What changes it* (quoted); 10.2 *Understanding that is hidden* (quoted); 10.9 *Fearing God as a way of life* (quoted); 10.12 *The fear of God* (quoted); 10.12 *What changes it* (quoted); 11 *What changes the character* (quoted); 12 *Fear that goes wrong* (quoted) | — |
 | Isa 29:14 | 02 *Death in the living* (quoted); 10.2 *Understanding that is hidden* (quoted) | C-146 |
 | Isa 29:15 | 04 *The heart is hidden, and God sees it* (quoted); 10.11 *Hiding from God* (quoted) | — |
-| Isa 29:16 | 04 *The heart is hidden, and God sees it* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 10.11 *Hiding from God* (quoted) | — |
+| Isa 29:16 | 04 *The heart is hidden, and God sees it* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 10.11 *Hiding from God* (quoted) | C-369 |
 | Isa 29:19 | 10.14 *The humble* (quoted) | — |
 | Isa 29:24 | 10.5 *Grumbling* (quoted); 14 *Revived, restored, renewed* (quoted) | — |
 | Isa 30 | 10.7 *Willing* (no verse row) | — |
 | Isa 30:1 | 10.7 *Willing* (quoted) | — |
-| Isa 30:15 | 10.7 *Willing* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | — |
+| Isa 30:9 | — | C-350 |
+| Isa 30:15 | 10.7 *Willing* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | C-350 |
 | Isa 30:16 | 10.7 *Willing* (quoted) | — |
 | Isa 31:3 | 07 *What flesh means* (quoted) | 2-11 |
 | Isa 31:4 | 10.5 *Speech before words* (quoted) | — |
 | Isa 32:11 | 10.6 *Taken away* | — |
 | Isa 32:12 | 10.6 *Taken away* (quoted) | — |
-| Isa 33:8 | 10.4 *What thinking does* (quoted) | — |
+| Isa 33:8 | 10.4 *What thinking does* (quoted) | C-372 |
 | Isa 33:14 | 10.9 *Afraid in his presence* (quoted); 11 *1. The inner being is acted upon as much as it acts* (quoted) | — |
 | Isa 33:18 | 10.1 *Feeling and thinking* (quoted); 10.12 *Fear that comes upon a person* (quoted) | — |
 | Isa 35:3 | 10.12 *Fear in the body* (quoted) | C-283, C-286 |
@@ -2477,7 +2521,7 @@
 | Isa 40:2 | 10.9 *(opening)* (quoted) | — |
 | Isa 40:6 | 07 *What flesh means* (quoted) | — |
 | Isa 40:11 | 08 *The bosom* (quoted) | — |
-| Isa 40:15 | 10.4 *What thinking does* (quoted) | — |
+| Isa 40:15 | 10.4 *What thinking does* (quoted) | C-372 |
 | Isa 40:18 | 10.9 *(opening)* (quoted) | — |
 | Isa 40:27 | 10.9 *When God hides his face* (quoted) | — |
 | Isa 40:29 | 10.9 *When God hides his face* (quoted) | — |
@@ -2491,6 +2535,7 @@
 | Isa 42:14 | 11 *What changes the character* (quoted); 13.1 *Jealousy* (quoted) | — |
 | Isa 42:20 | 13.1 *Delight* (quoted) | — |
 | Isa 42:21 | 13.1 *Delight* (quoted) | — |
+| Isa 42:24 | — | C-350 |
 | Isa 42:25 | 04 *The heart thinks, attends and remembers* (quoted); 04 *The heart and anger* (quoted); 10.13 *The heart that turns, and the heart that does not* (quoted); 10.13 *The responses, gathered* (quoted) | — |
 | Isa 43:1 | 10.1 *Meeting fear* (quoted); 10.9 *"Fear not"* (quoted); 10.12 *"Fear not"* (quoted) | — |
 | Isa 43:4 | 05 *The soul is hunted and rescued* (quoted); 13.1 *Delight* (quoted) | — |
@@ -2634,6 +2679,9 @@
 | Isa 66:12 | 10.9 *(opening)* (quoted) | — |
 | Isa 66:13 | 10.9 *(opening)* (quoted) | — |
 | Isa 66:14 | 04 *The heart and anger* (quoted) | — |
+| Jer 1:5 | 10.7 *Dedicating* (quoted) | C-393 |
+| Jer 1:6 | 10.7 *Dedicating* (quoted) | — |
+| Jer 1:8 | 10.7 *Dedicating* (quoted) | — |
 | Jer 2:13 | 02 *Where life flows from* (quoted); 10.6 *Thirst answered* (quoted) | — |
 | Jer 2:19 | 12 *Fear that goes wrong* (quoted) | — |
 | Jer 2:24 | 10.6 *As heat* (quoted); 11 *What changes the character* (quoted) | — |
@@ -2649,7 +2697,7 @@
 | Jer 4:14 | 10.0 *From a thought to a deed* (quoted); 10.0 *Where I am answerable* (quoted) | — |
 | Jer 4:19 | 04 *The heart feels* (quoted) | — |
 | Jer 4:27 | 13.1 *Purposing* (quoted) | — |
-| Jer 4:28 | 11 *4. One word, opposite values* (quoted); 13.1 *Purposing* (quoted) | — |
+| Jer 4:28 | 11 *4. One word, opposite values* (quoted); 13.1 *Purposing* (quoted) | C-377 |
 | Jer 4:31 | 02 *Breath lent, and held by God* (quoted) | C-115 |
 | Jer 5:2 | 02 *Living before God* (quoted); 10.5 *The oath* (quoted) | C-127 |
 | Jer 5:3 | 11 *4. One word, opposite values* (quoted) | C-287 |
@@ -2703,17 +2751,17 @@
 | Jer 17:16 | 10.6 *Aimed at God* (quoted) | — |
 | Jer 18 | 10.4 *When thinking changes character* (no verse row) | — |
 | Jer 18:6 | 13.1 *Purposing* (quoted) | — |
-| Jer 18:8 | 10.4 *When thinking changes character* (quoted); 11 *What changes the character* (quoted); 13.1 *Purposing* (quoted) | — |
+| Jer 18:8 | 10.4 *When thinking changes character* (quoted); 11 *What changes the character* (quoted); 13.1 *Purposing* (quoted) | C-375 |
 | Jer 18:9 | 11 *What changes the character* | — |
 | Jer 18:10 | 11 *What changes the character*; 13.1 *Purposing* (quoted) | — |
-| Jer 18:11 | 10.0 *How the activities connect*; 10.4 *When thinking changes character* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Purposing* (quoted) | — |
+| Jer 18:11 | 10.0 *How the activities connect*; 10.4 *When thinking changes character* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Purposing* (quoted) | C-375 |
 | Jer 18:12 | 10.0 *How the activities connect*; 10.4 *When thinking changes character* (quoted); 11 *What changes the character*; 13.1 *Purposing* (quoted) | — |
 | Jer 18:13 | 10.0 *How the activities connect*; 11 *What changes the character* | — |
 | Jer 18:14 | 10.0 *How the activities connect*; 11 *What changes the character* | — |
 | Jer 18:15 | 10.0 *How the activities connect*; 11 *What changes the character* | — |
 | Jer 18:16 | 10.0 *How the activities connect*; 11 *What changes the character* | — |
 | Jer 18:17 | 10.0 *How the activities connect*; 11 *What changes the character* | — |
-| Jer 18:18 | 10.0 *How the activities connect*; 10.2 *(opening)* (quoted); 10.4 *When thinking changes character* (quoted); 10.5 *The tongue, the lips and the eyes devise* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character* | — |
+| Jer 18:18 | 10.0 *How the activities connect*; 10.2 *(opening)* (quoted); 10.4 *When thinking changes character* (quoted); 10.5 *The tongue, the lips and the eyes devise* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character* | C-356 |
 | Jer 18:20 | 10.11 *The hidden trap* (quoted); 10.13 *Pleading, and standing in the breach* (quoted) | — |
 | Jer 18:21 | 10.13 *Pleading, and standing in the breach* | — |
 | Jer 18:22 | 10.13 *Pleading, and standing in the breach* (quoted) | — |
@@ -2743,10 +2791,10 @@
 | Jer 23:24 | 10.11 *Hiding from God* (quoted); 10.11 *What changes it* | — |
 | Jer 24:9 | 10.12 *The words*; 10.12 *Dread laid on others* (quoted) | — |
 | Jer 25:15 | 10.13 *How it is spoken of* (quoted) | — |
-| Jer 26:3 | 10.9 *(opening)* (quoted); 13.1 *Purposing* (quoted) | — |
+| Jer 26:3 | 10.9 *(opening)* (quoted); 13.1 *Purposing* (quoted) | C-375 |
 | Jer 26:21 | 10.1 *What fear does* (quoted); 10.7 *Fear and choosing* (quoted); 10.12 *What fear does* (quoted) | — |
 | Jer 29:10 | 13.1 *Purposing* (quoted) | — |
-| Jer 29:11 | 10.4 *Small, passing, and wholly seen* (quoted); 13.1 *Purposing* (quoted) | — |
+| Jer 29:11 | 10.4 *Small, passing, and wholly seen* (quoted); 13.1 *Purposing* (quoted) | C-361 |
 | Jer 29:13 | 13.1 *Purposing* (quoted) | — |
 | Jer 30:6 | 10.12 *Fear in the body* (quoted) | C-282 |
 | Jer 30:10 | 14 *No one to make them afraid* (quoted) | — |
@@ -2767,7 +2815,7 @@
 | Jer 33:25 | 13.1 *Choosing* (quoted) | — |
 | Jer 33:26 | 13.1 *Choosing* (quoted) | — |
 | Jer 34:5 | 02 *Those left behind* (quoted) | C-155 |
-| Jer 36:3 | 13.1 *Purposing* (quoted) | — |
+| Jer 36:3 | 13.1 *Purposing* (quoted) | C-375 |
 | Jer 36:16 | 10.2 *(opening)* (quoted); 10.12 *What changes it* (quoted); 11 *What changes the character* (quoted) | — |
 | Jer 36:23 | 10.2 *(opening)* | — |
 | Jer 36:24 | 10.2 *(opening)* (quoted); 10.12 *What changes it* (quoted); 11 *What changes the character* (quoted) | — |
@@ -2787,7 +2835,7 @@
 | Jer 44:17 | 10.2 *(opening)* (quoted) | — |
 | Jer 44:18 | 10.2 *(opening)* (quoted) | — |
 | Jer 44:22 | 10.12 *Dread laid on others* (quoted) | — |
-| Jer 48:2 | 10.10 *Plotting against another* | — |
+| Jer 48:2 | 10.10 *Plotting against another* | C-356 |
 | Jer 48:29 | 10.15 *(opening)* (quoted); 11 *4. One word, opposite values* | C-212, C-213 |
 | Jer 48:30 | 10.5 *Speech before words* (quoted) | C-213 |
 | Jer 48:31 | 10.5 *Speech before words* (quoted) | — |
@@ -2795,14 +2843,14 @@
 | Jer 48:44 | 10.13 *Dread and trembling* (quoted) | — |
 | Jer 49:16 | 10.12 *Fear between people* (quoted); 10.12 *What changes it* (quoted); 10.15 *The heart that says what God says* (quoted) | C-219 |
 | Jer 49:19 | — | C-340 |
-| Jer 49:20 | 13.1 *Purposing* (quoted) | — |
+| Jer 49:20 | 13.1 *Purposing* (quoted) | C-376 |
 | Jer 49:30 | 10.10 *Plotting against another* | — |
 | Jer 50:9 | 13.1 *Stirring* | — |
 | Jer 50:43 | 10.12 *Fear in the body* (quoted) | C-282, C-286 |
-| Jer 50:45 | 13.1 *Purposing* (quoted) | — |
+| Jer 50:45 | 13.1 *Purposing* (quoted) | C-376 |
 | Jer 51:1 | 11 *What changes the character*; 13.1 *Stirring* (quoted) | — |
 | Jer 51:11 | 06 *The human spirit* (quoted); 11 *What changes the character*; 13.1 *Purposing* (quoted); 13.1 *Stirring* (quoted) | — |
-| Jer 51:12 | 13.1 *Purposing* (quoted) | — |
+| Jer 51:12 | 13.1 *Purposing* (quoted) | C-376 |
 | Jer 51:39 | 02 *Sleep and waking* (quoted) | — |
 | Jer 51:46 | 10.12 *Fear between people* (quoted) | — |
 | Lam 1:10 | 10.6 *Taken away* (quoted) | — |
@@ -2810,11 +2858,11 @@
 | Lam 1:16 | 02 *Life that returns* (quoted); 03 *The translators move between them* | — |
 | Lam 2:4 | 10.6 *Taken away* (quoted); 10.13 *How it is spoken of* (quoted) | — |
 | Lam 2:5 | 10.6 *Taken away* (quoted) | — |
-| Lam 2:8 | 13.1 *Purposing* (quoted) | — |
+| Lam 2:8 | 13.1 *Purposing* (quoted) | C-376 |
 | Lam 2:12 | 08 *The bosom* (quoted) | — |
 | Lam 2:13 | 10.4 *What thinking does* (quoted); 11 *4. One word, opposite values* | — |
 | Lam 2:16 | 10.13 *Anger in the body* (quoted) | C-291 |
-| Lam 2:17 | 13.1 *Purposing* (quoted) | — |
+| Lam 2:17 | 13.1 *Purposing* (quoted) | C-376 |
 | Lam 2:18 | — | 1-5 |
 | Lam 2:19 | 10.9 *(opening)* (quoted); 10.13 *Bearing it* (quoted); 13.1 *Purposing* (quoted) | — |
 | Lam 2:20 | 10.13 *Bearing it* (quoted) | — |
@@ -2835,7 +2883,7 @@
 | Lam 3:33 | 10.13 *Living under God's anger* (quoted); 10.13 *Bearing it* (quoted); 10.13 *The hand that is felt* (quoted); 11 *8. God has a heart and a soul* (quoted) | — |
 | Lam 3:44 | 10.13 *The responses, gathered* (quoted) | — |
 | Lam 3:61 | 10.2 *(opening)* (quoted); 10.5 *Speech is heard* (quoted) | — |
-| Lam 4:2 | 10.4 *What thinking does* (quoted) | — |
+| Lam 4:2 | 10.4 *What thinking does* (quoted) | C-372 |
 | Lam 4:3 | 10.10 *Friends, company and care* (quoted) | — |
 | Lam 4:4 | 10.10 *Friends, company and care* (quoted) | — |
 | Lam 4:6 | 02 *Life weighed* (quoted); 10.12 *Fear in the body* (quoted) | C-284, C-288 |
@@ -2845,7 +2893,7 @@
 | Lam 5:8 | 10.9 *Under rule, and longing for his* (quoted) | — |
 | Lam 5:22 | 10.13 *Bearing it* (quoted); 10.13 *The responses, gathered* (quoted) | — |
 | Eze 2:2 | 06 *God's Spirit and the human person* (quoted) | — |
-| Eze 3:7 | 04 *The heart decides and is moved* (quoted) | — |
+| Eze 3:7 | 04 *The heart decides and is moved* (quoted) | C-350 |
 | Eze 3:10 | 10.2 *(opening)* (quoted) | — |
 | Eze 3:14 | 06 *The human spirit* (quoted); 10.9 *Anger toward God, and before God* (quoted); 10.13 *Where it sits* (quoted); 10.13 *Other parties* (quoted) | — |
 | Eze 3:15 | 10.9 *Anger toward God, and before God* (quoted) | — |
@@ -2872,7 +2920,7 @@
 | Eze 14:4 | — | 9-3 |
 | Eze 14:5 | — | 9-3 |
 | Eze 14:6 | — | 9-3 |
-| Eze 14:7 | — | 9-3 |
+| Eze 14:7 | 10.7 *Dedicating* (quoted) | 9-3, C-387 |
 | Eze 14:20 | 10.13 *Pleading, and standing in the breach* (quoted) | — |
 | Eze 16:12 | 11 *4. One word, opposite values* | — |
 | Eze 16:28 | 10.13 *How it is provoked* (quoted) | — |
@@ -2897,7 +2945,7 @@
 | Eze 18:32 | 02 *Life set before a person* (quoted); 11 *What changes the character* (quoted); 13.1 *Delight* (quoted); 14 *Revived, restored, renewed* (quoted) | C-121 |
 | Eze 20:1 | 10.4 *Where thoughts come from* (quoted) | — |
 | Eze 20:3 | 02 *Living before God* (quoted); 10.13 *How it is provoked* (quoted) | C-128 |
-| Eze 20:8 | 10.13 *What kindles it* (quoted) | — |
+| Eze 20:8 | 10.13 *What kindles it* (quoted) | C-350 |
 | Eze 20:9 | 10.13 *What kindles it* (quoted); 10.13 *Why it is held back* (quoted) | — |
 | Eze 20:16 | 12 *Idols taken inside* (quoted) | 9-3 |
 | Eze 20:32 | 13.1 *Ruling* (quoted) | — |
@@ -2964,7 +3012,7 @@
 | Eze 37:10 | 02 *Life that returns* (quoted) | — |
 | Eze 37:11 | 02 *Death in the living* (quoted) | C-146 |
 | Eze 37:14 | 02 *Life that returns* (quoted); 14 *The Spirit given into the heart* (quoted) | 10-3 |
-| Eze 38:10 | 10.4 *Where thoughts come from* (quoted); 10.10 *Plotting against another* (quoted) | — |
+| Eze 38:10 | 10.4 *Where thoughts come from* (quoted); 10.10 *Plotting against another* (quoted) | C-366 |
 | Eze 38:11 | 10.10 *Plotting against another* (quoted) | — |
 | Eze 38:19 | 13.1 *Jealousy* (quoted) | — |
 | Eze 38:20 | 13.1 *Jealousy* (quoted) | — |
@@ -2979,31 +3027,32 @@
 | Dan 2:37 | 13.1 *Ruling* (quoted) | — |
 | Dan 3:19 | 10.1 *How a feeling rises* (quoted) | — |
 | Dan 4:5 | 10.12 *Fear that comes upon a person* (quoted) | — |
-| Dan 4:17 | 13.1 *Willing* (quoted) | — |
-| Dan 4:25 | 13.1 *Willing* (quoted); 13.1 *Ruling* (quoted) | — |
+| Dan 4:17 | 13.1 *Willing* (quoted) | C-353 |
+| Dan 4:25 | 13.1 *Willing* (quoted); 13.1 *Ruling* (quoted) | C-353 |
 | Dan 4:26 | 04 *The heart decides and is moved* (quoted); 10.9 *Knowing who rules* (quoted); 11 *Authority as a standing* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
 | Dan 4:27 | 10.7 *Willing*; 10.9 *Knowing who rules* (quoted) | — |
 | Dan 4:30 | 04 *The heart decides and is moved* (quoted); 10.15 *Given, then held as one's own* (quoted); 11 *Authority as a standing* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-215 |
 | Dan 4:31 | 04 *The heart decides and is moved* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
-| Dan 4:32 | 13.1 *Willing* (quoted) | — |
+| Dan 4:32 | 13.1 *Willing* (quoted) | C-353 |
 | Dan 4:34 | 10.7 *Willing* | — |
-| Dan 4:35 | 13.1 *Willing* (quoted) | — |
+| Dan 4:35 | 13.1 *Willing* (quoted) | C-353 |
 | Dan 4:37 | 10.14 *Being humbled by God* (quoted); 13.1 *Willing* (quoted) | — |
 | Dan 5:6 | 10.0 *How the activities connect* (quoted); 10.1 *Feeling and thinking* (quoted); 10.4 *The night and the bed* (quoted); 10.4 *Connections* (quoted); 11 *3. The parts give way in sequence* (quoted) | — |
 | Dan 5:9 | 10.2 *Perplexity* (quoted) | — |
 | Dan 5:12 | 10.2 *Perplexity* (quoted); 10.4 *The night and the bed* (quoted) | — |
 | Dan 5:17 | 10.7 *Others around a choice* (quoted); 11 *Authority as a standing* (quoted) | — |
 | Dan 5:18 | 10.15 *Given, then held as one's own* (quoted); 13.1 *Majesty* (quoted) | C-214 |
-| Dan 5:19 | 04 *The heart decides and is moved* (quoted); 10.7 *Willing* (quoted); 10.7 *What changes the character*; 10.10 *Fear that arrives with a person* (quoted); 10.15 *Given, then held as one's own* | C-214 |
+| Dan 5:19 | 04 *The heart decides and is moved* (quoted); 10.7 *Willing* (quoted); 10.7 *What changes the character*; 10.10 *Fear that arrives with a person* (quoted); 10.15 *Given, then held as one's own* | C-214, C-353 |
 | Dan 5:20 | 04 *The heart decides and is moved* (quoted); 06 *The human spirit* (quoted); 10.7 *Willing* (quoted); 10.14 *What it is set against* (quoted); 10.15 *The words* (quoted); 10.15 *Given, then held as one's own* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-168, C-207, C-214 |
-| Dan 5:21 | 10.7 *Willing* (quoted); 13.1 *Willing* (quoted) | C-168 |
+| Dan 5:21 | 10.7 *Willing* (quoted); 13.1 *Willing* (quoted) | C-168, C-353 |
 | Dan 5:22 | 04 *The heart decides and is moved* (quoted); 04 *The heart humbled* (quoted); 10.7 *Willing* (quoted); 10.14 *It answers a word heard* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-168, C-170, C-171 |
 | Dan 5:23 | 02 *Breath lent, and held by God* (quoted); 10.9 *(opening)* (quoted); 10.14 *What it is set against* (quoted) | C-111, C-168 |
-| Dan 6:3 | 10.7 *Planning* (quoted) | — |
+| Dan 6:3 | 10.7 *Planning* (quoted) | C-359 |
 | Dan 6:4 | 10.7 *Planning* | — |
 | Dan 6:23 | 10.12 *Fear between people* (quoted) | — |
 | Dan 6:26 | 10.12 *Fear between people* (quoted) | — |
 | Dan 7:15 | 06 *The human spirit* (quoted) | — |
+| Dan 7:19 | — | C-353 |
 | Dan 7:28 | 04 *The heart thinks, attends and remembers* (quoted); 10.0 *From a thought to a deed* (quoted); 10.0 *How the activities connect*; 10.4 *Thoughts that turn on the thinker* (quoted) | — |
 | Dan 8:4 | 10.7 *Willing* (quoted) | C-314 |
 | Dan 8:11 | 10.15 *Where it ends* (quoted) | C-314 |
@@ -3041,11 +3090,12 @@
 | Hos 7:6 | 04 *The heart feels* | — |
 | Hos 7:7 | 04 *The heart feels* (quoted) | — |
 | Hos 7:14 | 04 *The heart speaks to itself* (quoted); 10.9 *(opening)* (quoted) | — |
-| Hos 7:15 | 10.9 *(opening)* (quoted) | — |
+| Hos 7:15 | 10.9 *(opening)* (quoted) | C-357 |
 | Hos 8:2 | 10.9 *Knowing who rules* (quoted) | — |
 | Hos 8:4 | 10.9 *Knowing who rules* (quoted) | — |
 | Hos 8:7 | 12 *Wind: the image of emptiness* (quoted) | — |
 | Hos 8:12 | 10.9 *(opening)* (quoted) | — |
+| Hos 9:10 | 10.7 *Dedicating* (quoted) | C-387 |
 | Hos 10:10 | 13.1 *Delight* (quoted) | — |
 | Hos 11:8 | 04 *The heart and anger*; 10.13 *God's heart named with his anger* (quoted); 10.13 *What changes it*; 11 *8. God has a heart and a soul* (quoted) | 2-12 |
 | Hos 11:9 | 10.13 *(opening)* (quoted); 10.13 *God's heart named with his anger* (quoted); 10.13 *What changes it* (quoted); 11 *8. God has a heart and a soul* (quoted) | — |
@@ -3078,7 +3128,7 @@
 | Amo 6:1 | 10.4 *What thinking does* (quoted) | — |
 | Amo 6:2 | 10.4 *What thinking does* (quoted) | — |
 | Amo 6:3 | 10.4 *What thinking does* (quoted) | — |
-| Amo 6:5 | 10.4 *What thinking does* (quoted) | — |
+| Amo 6:5 | 10.4 *What thinking does* (quoted) | C-365 |
 | Amo 6:8 | 11 *8. God has a heart and a soul* (quoted) | 2-12 |
 | Amo 8:11 | 10.2 *(opening)* (quoted) | — |
 | Amo 8:12 | 10.2 *(opening)* (quoted) | — |
@@ -3100,9 +3150,9 @@
 | Jon 4:9 | 02 *Wanting to die* (quoted); 10.1 *Where it turns* (quoted) | C-157 |
 | Jon 4:10 | 02 *Wanting to die* | C-157 |
 | Jon 4:11 | 02 *Wanting to die*; 10.13 *The responses, gathered* (quoted) | C-157 |
-| Mic 2:1 | 10.0 *From a thought to a deed* (quoted); 10.0 *The path runs back* (quoted); 10.0 *How the activities connect*; 10.4 *The night and the bed* (quoted); 10.4 *What is devised comes back* (quoted); 10.6 *Coveting* (quoted); 11 *What changes the character*; 13.1 *Purposing* (quoted) | — |
+| Mic 2:1 | 10.0 *From a thought to a deed* (quoted); 10.0 *The path runs back* (quoted); 10.0 *How the activities connect*; 10.4 *The night and the bed* (quoted); 10.4 *What is devised comes back* (quoted); 10.6 *Coveting* (quoted); 11 *What changes the character*; 13.1 *Purposing* (quoted) | C-368, C-370 |
 | Mic 2:2 | 10.0 *How the activities connect*; 10.6 *Coveting* (quoted); 11 *What changes the character*; 13.1 *Purposing* (quoted) | — |
-| Mic 2:3 | 10.0 *The path runs back* (quoted); 10.0 *How the activities connect*; 10.4 *What is devised comes back* (quoted); 11 *What changes the character*; 13.1 *Purposing* (quoted) | — |
+| Mic 2:3 | 10.0 *The path runs back* (quoted); 10.0 *How the activities connect*; 10.4 *What is devised comes back* (quoted); 11 *What changes the character*; 13.1 *Purposing* (quoted) | C-375 |
 | Mic 4:4 | 14 *No one to make them afraid* (quoted) | — |
 | Mic 4:10 | 11 *4. One word, opposite values* (quoted) | C-287 |
 | Mic 6:6 | 10.14 *Humility as a way of walking* (quoted) | C-188 |
@@ -3116,8 +3166,8 @@
 | Nah 1:3 | 10.9 *Anger toward God, and before God* (quoted); 10.13 *Slow to anger* (quoted); 13.1 *Jealousy* (quoted) | — |
 | Nah 1:6 | 10.13 *Shelter, and who can stand* (quoted) | — |
 | Nah 1:7 | 10.13 *Shelter, and who can stand* (quoted) | — |
-| Nah 1:9 | 10.9 *(opening)* (quoted) | — |
-| Nah 1:11 | 10.9 *(opening)* (quoted) | — |
+| Nah 1:9 | 10.9 *(opening)* (quoted) | C-357 |
+| Nah 1:11 | 10.9 *(opening)* (quoted) | C-357 |
 | Nah 2:2 | 10.15 *Given, then held as one's own* (quoted) | C-216 |
 | Hab 1:12 | 02 *Delivered from death* (quoted) | C-104 |
 | Hab 1:13 | 10.9 *Under rule, and longing for his* (quoted) | — |
@@ -3130,7 +3180,7 @@
 | Hab 2:10 | 10.6 *Possessions* (quoted) | C-253 |
 | Hab 2:15 | 10.0 *The path runs back* (quoted); 10.13 *How it is spoken of* (quoted) | — |
 | Hab 2:16 | 10.0 *The path runs back* (quoted); 10.13 *How it is spoken of* (quoted) | — |
-| Hab 2:18 | 02 *Living before God* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 12 *Idols taken inside* (quoted) | C-129 |
+| Hab 2:18 | 02 *Living before God* (quoted); 10.4 *The inclination: a shaped thing* (quoted); 12 *Idols taken inside* (quoted) | C-129, C-362, C-369 |
 | Hab 2:19 | 02 *Living before God* (quoted); 11 *What changes the character* (quoted) | C-129 |
 | Hab 2:20 | 02 *Living before God* (quoted) | C-129 |
 | Hab 3:2 | 02 *Life asked for* (quoted); 10.3 *God remembers* (quoted); 10.9 *What it rests on* (quoted) | — |
@@ -3154,7 +3204,7 @@
 | Hag 2:7 | 13.1 *Delight* (quoted) | — |
 | Hag 2:8 | 13.1 *Delight* (quoted) | — |
 | Zec 1:5 | 02 *What death is* (quoted) | C-83 |
-| Zec 1:6 | 13.1 *Purposing* (quoted) | — |
+| Zec 1:6 | 13.1 *Purposing* (quoted) | C-376 |
 | Zec 1:12 | 10.13 *Other parties* (quoted); 13.1 *Jealousy* (quoted) | — |
 | Zec 1:13 | 10.13 *Other parties* (quoted) | — |
 | Zec 1:14 | 13.1 *Jealousy* (quoted) | — |
@@ -3165,14 +3215,16 @@
 | Zec 4:1 | 10.2 *(opening)*; 13.2 *(opening)* (quoted) | — |
 | Zec 4:2 | 10.2 *(opening)* (quoted); 13.2 *(opening)* (quoted) | — |
 | Zec 6:13 | 13.1 *Ruling* (quoted) | — |
-| Zec 7:10 | 10.0 *Where I am answerable* (quoted); 10.10 *Plotting against another* (quoted) | — |
+| Zec 7:3 | 10.7 *Dedicating* (quoted) | C-388 |
+| Zec 7:5 | 10.7 *Dedicating* (quoted) | — |
+| Zec 7:10 | 10.0 *Where I am answerable* (quoted); 10.10 *Plotting against another* (quoted) | C-371 |
 | Zec 7:12 | 04 *The heart feels* (quoted); 04 *The heart and anger* (quoted); 10.2 *(opening)* (quoted); 10.13 *What kindles it* (quoted); 10.13 *The heart that turns, and the heart that does not* (quoted) | — |
 | Zec 7:13 | 10.13 *The responses, gathered* (quoted) | — |
 | Zec 8:2 | 10.13 *What kindles it* (quoted); 13.1 *Jealousy* (quoted) | — |
 | Zec 8:3 | 13.1 *Jealousy* (quoted) | — |
 | Zec 8:14 | 13.1 *Purposing* (quoted) | — |
-| Zec 8:15 | 13.1 *Purposing* (quoted) | — |
-| Zec 8:17 | 10.10 *Plotting against another* (quoted); 13.1 *Purposing* (quoted) | — |
+| Zec 8:15 | 13.1 *Purposing* (quoted) | C-377 |
+| Zec 8:17 | 10.10 *Plotting against another* (quoted); 13.1 *Purposing* (quoted) | C-356 |
 | Zec 9:9 | 10.14 *Jesus* (quoted); 10.14 *The Old Testament and the New* | C-200 |
 | Zec 9:10 | 13.1 *Ruling* (quoted) | — |
 | Zec 9:13 | 13.1 *Stirring* (quoted) | — |
@@ -3195,7 +3247,7 @@
 | Mal 3:2 | 10.7 *Others around a choice* (quoted) | — |
 | Mal 3:3 | 13.1 *Delight* (quoted) | — |
 | Mal 3:16 | 10.2 *(opening)* (quoted); 10.3 *God remembers*; 10.5 *Speech is heard* (quoted); 10.9 *(opening)* (quoted); 10.9 *How God meets those who fear him* (quoted); 10.10 *Fear that hardens, and fear that gathers* (quoted) | — |
-| Mat 1:19 | 10.7 *Willing* (quoted) | — |
+| Mat 1:19 | 10.7 *Willing* (quoted) | C-382 |
 | Mat 1:20 | 10.7 *Willing* (quoted) | — |
 | Mat 2:16 | 10.13 *What it does next* (quoted) | — |
 | Mat 3:9 | 10.13 *The heart that turns, and the heart that does not* (quoted) | — |
@@ -3252,7 +3304,7 @@
 | Mat 11:23 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Mat 11:25 | 10.2 *Understanding that is hidden* (quoted) | — |
 | Mat 11:26 | 13.1 *Willing* (quoted) | — |
-| Mat 11:27 | 13.1 *Willing* (quoted) | — |
+| Mat 11:27 | 13.1 *Willing* (quoted) | C-384 |
 | Mat 11:29 | 04 *The heart humbled* (quoted); 05 *Rest for the soul* (quoted); 10.14 *Jesus* (quoted); 11 *6. Inner states pass between people* (quoted); 13.1 *Lowering himself* (quoted) | C-197, C-202 |
 | Mat 12:7 | 13.1 *Delight* | C-206 |
 | Mat 12:14 | 13.1 *Choosing* (quoted) | — |
@@ -3453,7 +3505,7 @@
 | Mar 14:7 | 10.13 *What it rises at* (quoted) | C-263 |
 | Mar 14:31 | 02 *Dying to the Lord* (quoted) | C-165 |
 | Mar 14:33 | 10.12 *Fear before God* (quoted) | — |
-| Mar 15:15 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted); 11 *4. One word, opposite values* | — |
+| Mar 15:15 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted); 11 *4. One word, opposite values* | C-381 |
 | Mar 15:31 | 13.1 *Majesty* (quoted) | C-241 |
 | Mar 16:5 | 10.12 *Fear before God* | — |
 | Mar 16:8 | 10.12 *The fear of God* (quoted); 10.12 *What changes it* (quoted) | — |
@@ -3505,7 +3557,7 @@
 | Luk 7:15 | 02 *Those left behind* (quoted) | C-155 |
 | Luk 7:16 | 10.12 *Fear before God* (quoted) | — |
 | Luk 7:29 | 13.1 *Purposing* (quoted) | — |
-| Luk 7:30 | 13.1 *Purposing* (quoted) | — |
+| Luk 7:30 | 13.1 *Purposing* (quoted) | C-380 |
 | Luk 8:7 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
 | Luk 8:13 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
 | Luk 8:14 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
@@ -3537,7 +3589,7 @@
 | Luk 10:19 | 13.3 *(opening)* (quoted) | — |
 | Luk 10:20 | 10.1 *Where it turns* (quoted); 11 *Authority as a standing* (quoted); 13.3 *(opening)* (quoted) | — |
 | Luk 10:21 | 13.1 *Willing* (quoted) | — |
-| Luk 10:22 | 13.1 *Willing* (quoted) | — |
+| Luk 10:22 | 13.1 *Willing* (quoted) | C-384 |
 | Luk 10:27 | 03 *Adding words to name the whole* (quoted) | 4-5 |
 | Luk 10:39 | 10.7 *Holding a choice* | — |
 | Luk 10:40 | 10.1 *What anxiety does* (quoted); 10.7 *Holding a choice* | — |
@@ -3581,7 +3633,7 @@
 | Luk 14:24 | 10.13 *Other parties* (quoted) | C-258 |
 | Luk 14:28 | 10.7 *Planning* (quoted) | — |
 | Luk 14:30 | 10.7 *Planning* (quoted) | — |
-| Luk 14:31 | 10.7 *Planning* (quoted); 11 *4. One word, opposite values* | — |
+| Luk 14:31 | 10.7 *Planning* (quoted); 11 *4. One word, opposite values* | C-359 |
 | Luk 14:32 | 10.7 *Planning* (quoted) | — |
 | Luk 14:33 | 10.7 *Planning* (quoted) | — |
 | Luk 15:4 | 02 *Death spoken of in more than one way* | C-140 |
@@ -3642,7 +3694,7 @@
 | Luk 22:33 | 02 *Dying to the Lord* (quoted); 10.10 *Loyalty and honour* (quoted) | C-165 |
 | Luk 22:34 | 02 *Dying to the Lord* (quoted); 10.10 *Loyalty and honour* | C-165 |
 | Luk 22:37 | 10.4 *What thinking does* (quoted) | — |
-| Luk 22:42 | 10.7 *Willing*; 13.1 *Willing* (quoted) | — |
+| Luk 22:42 | 10.7 *Willing*; 13.1 *Willing* (quoted) | C-384 |
 | Luk 22:43 | 13.1 *Willing* | — |
 | Luk 22:44 | 13.1 *Willing* | — |
 | Luk 22:53 | 13.3 *(opening)* (quoted) | — |
@@ -3657,7 +3709,7 @@
 | Luk 23:41 | 10.12 *The fear of God* (quoted) | — |
 | Luk 23:43 | 02 *After death* (quoted) | C-110 |
 | Luk 23:46 | 02 *Soul, spirit and heart at death* (quoted) | 2-15, 3-8 |
-| Luk 23:51 | 10.7 *Planning* (quoted) | — |
+| Luk 23:51 | 10.7 *Planning* (quoted) | C-359 |
 | Luk 23:52 | 10.7 *Planning* (quoted) | — |
 | Luk 24:4 | 10.2 *Perplexity* (quoted) | — |
 | Luk 24:16 | 02 *Christ first* (quoted) | C-273 |
@@ -3747,8 +3799,8 @@
 | Joh 11:32 | 10.1 *Where it turns* (quoted) | — |
 | Joh 11:50 | 11 *8. God has a heart and a soul* (quoted) | — |
 | Joh 11:51 | 11 *8. God has a heart and a soul* (quoted) | — |
-| Joh 11:53 | 10.10 *Plotting against another*; 11 *4. One word, opposite values* (quoted) | — |
-| Joh 12:10 | 02 *Believed, questioned, denied* (quoted); 10.10 *Plotting against another* | — |
+| Joh 11:53 | 10.10 *Plotting against another*; 11 *4. One word, opposite values* (quoted) | C-356 |
+| Joh 12:10 | 02 *Believed, questioned, denied* (quoted); 10.10 *Plotting against another* | C-356 |
 | Joh 12:11 | 02 *Believed, questioned, denied* (quoted); 10.10 *Plotting against another* | — |
 | Joh 12:21 | 10.6 *Aimed at God* (quoted) | — |
 | Joh 12:23 | 10.6 *Aimed at God* (quoted) | — |
@@ -3766,6 +3818,7 @@
 | Joh 17:3 | 02 *Where life flows from* (quoted) | — |
 | Joh 17:24 | 13.1 *Willing* (quoted) | — |
 | Joh 18:38 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted) | — |
+| Joh 18:39 | — | C-381 |
 | Joh 19:8 | 10.12 *Fear between people* (quoted); 11 *Authority as a standing* (quoted) | — |
 | Joh 19:10 | 10.12 *Fear between people* (quoted); 11 *Authority as a standing* (quoted) | — |
 | Joh 19:11 | 11 *Authority as a standing* (quoted) | — |
@@ -3789,7 +3842,7 @@
 | Act 1:7 | 13.1 *Ruling* (quoted) | — |
 | Act 2:12 | 10.2 *Perplexity* (quoted) | — |
 | Act 2:14 | 10.2 *Perplexity* (quoted) | — |
-| Act 2:23 | 13.1 *Purposing* (quoted) | — |
+| Act 2:23 | 13.1 *Purposing* (quoted) | C-378 |
 | Act 2:24 | 02 *Christ first* (quoted) | — |
 | Act 2:27 | 02 *Christ first* (quoted) | 3-9, C-102 |
 | Act 2:31 | 02 *Soul, spirit and heart at death* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted) | 3-9, C-100 |
@@ -3797,7 +3850,7 @@
 | Act 4:25 | 10.4 *When anger thinks* (quoted) | — |
 | Act 4:26 | 10.4 *When anger thinks* | — |
 | Act 4:27 | 10.4 *When anger thinks* | — |
-| Act 4:28 | 13.1 *Purposing* (quoted) | — |
+| Act 4:28 | 13.1 *Purposing* (quoted) | C-378 |
 | Act 4:29 | 13.1 *Purposing* (quoted) | — |
 | Act 4:32 | 03 *Shared between people* (quoted) | — |
 | Act 5 | 10.12 *Connections* (no verse row) | — |
@@ -3810,12 +3863,12 @@
 | Act 5:18 | 10.6 *Jealousy and envy* (quoted) | — |
 | Act 5:24 | 10.2 *Perplexity* | — |
 | Act 5:25 | 10.2 *Perplexity* (quoted) | — |
-| Act 5:28 | 10.10 *Plotting against another* (quoted) | — |
+| Act 5:28 | 10.10 *Plotting against another* (quoted) | C-383 |
 | Act 5:29 | 10.10 *Plotting against another* (quoted) | — |
 | Act 5:33 | 10.13 *What it does next* (quoted) | — |
 | Act 5:34 | 10.13 *What it does next* (quoted); 10.13 *What changes it* | — |
 | Act 5:35 | 10.13 *What it does next* (quoted); 10.13 *What changes it* | — |
-| Act 5:38 | 10.7 *Planning* (quoted) | — |
+| Act 5:38 | 10.7 *Planning* (quoted) | C-360 |
 | Act 5:39 | 10.7 *Planning* (quoted) | — |
 | Act 6:3 | 10.7 *Being chosen* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* (quoted); 11 *What changes the character* | — |
 | Act 6:5 | 10.7 *The words*; 10.7 *What draws it* (quoted); 10.7 *Being chosen* (quoted); 10.7 *Choosing together*; 11 *What changes the character* | — |
@@ -3847,8 +3900,8 @@
 | Act 10:35 | 10.12 *The fear of God* (quoted) | — |
 | Act 10:41 | 02 *Christ first* (quoted) | — |
 | Act 11:18 | 14 *Revived, restored, renewed* (quoted) | — |
-| Act 11:23 | 10.7 *Planning* (quoted) | — |
-| Act 12:4 | 10.7 *Willing* (quoted) | — |
+| Act 11:23 | 10.7 *Planning* (quoted) | C-364 |
+| Act 12:4 | 10.7 *Willing* (quoted) | C-382 |
 | Act 12:5 | 10.7 *Willing* (quoted) | — |
 | Act 12:20 | 10.10 *Anger between people* | — |
 | Act 13:22 | 13.1 *Delight* (quoted) | — |
@@ -3868,7 +3921,7 @@
 | Act 15:28 | 10.7 *Choosing before God* (quoted); 13.1 *Choosing* (quoted) | — |
 | Act 15:31 | 10.7 *What follows a choice* (quoted) | — |
 | Act 15:33 | 10.7 *What follows a choice* (quoted) | — |
-| Act 15:37 | 10.7 *Planning* (quoted) | — |
+| Act 15:37 | 10.7 *Planning* (quoted) | C-359 |
 | Act 15:38 | 10.7 *Planning* (quoted) | — |
 | Act 15:39 | 10.7 *Planning* (quoted); 10.13 *What it does next* (quoted); 10.13 *What changes it* | — |
 | Act 16:16 | 06 *Other spirits* (quoted) | 9-4, 9-4 |
@@ -3888,11 +3941,11 @@
 | Act 18:10 | 10.12 *"Fear not"* (quoted) | — |
 | Act 18:20 | 10.7 *Planning* | — |
 | Act 18:21 | 10.7 *Planning* (quoted) | — |
-| Act 18:27 | 10.7 *Willing* (quoted) | — |
+| Act 18:27 | 10.7 *Willing* (quoted) | C-381 |
 | Act 19:16 | 13.3 *(opening)* (quoted) | — |
-| Act 19:30 | 10.7 *Willing* (quoted) | — |
+| Act 19:30 | 10.7 *Willing* (quoted) | C-381 |
 | Act 20:24 | 05 *Loving and hating one's own soul* (quoted) | — |
-| Act 20:27 | 13.1 *Purposing* (quoted) | — |
+| Act 20:27 | 13.1 *Purposing* (quoted) | C-376 |
 | Act 20:33 | 10.6 *Coveting* (quoted) | — |
 | Act 20:34 | 10.6 *Coveting* (quoted) | — |
 | Act 20:35 | 10.6 *Coveting* (quoted) | — |
@@ -3929,18 +3982,18 @@
 | Act 26:29 | 10.6 *A person* (quoted) | — |
 | Act 27:10 | 10.7 *Planning* (quoted) | — |
 | Act 27:11 | 10.7 *Planning* | — |
-| Act 27:12 | 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | — |
-| Act 27:13 | 10.7 *Planning* (quoted) | — |
+| Act 27:12 | 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | C-359 |
+| Act 27:13 | 10.7 *Planning* (quoted) | C-359 |
 | Act 27:14 | 10.7 *Planning* | — |
 | Act 27:24 | 10.12 *"Fear not"* (quoted) | — |
-| Act 27:39 | 10.7 *Planning* (quoted) | — |
+| Act 27:39 | 10.7 *Planning* (quoted) | C-359 |
 | Act 27:41 | 10.7 *Planning* | — |
-| Act 27:42 | 10.10 *Plotting against another* (quoted) | — |
-| Act 27:43 | 10.7 *Willing*; 10.10 *Plotting against another* (quoted) | — |
+| Act 27:42 | 10.10 *Plotting against another* (quoted) | C-356 |
+| Act 27:43 | 10.7 *Willing*; 10.10 *Plotting against another* (quoted) | C-382 |
 | Rom 1:9 | 10.9 *(opening)* (quoted) | 1-3, 1-3 |
 | Rom 1:10 | 10.7 *Planning* (quoted) | — |
 | Rom 1:11 | 10.6 *A person* (quoted); 10.7 *Planning* (quoted) | — |
-| Rom 1:13 | 10.7 *Planning* (quoted) | — |
+| Rom 1:13 | 10.7 *Planning* (quoted) | C-360 |
 | Rom 1:18 | 10.13 *What kindles it* (quoted); 10.13 *How it is spoken of* | — |
 | Rom 1:21 | 10.4 *Where thoughts come from* (quoted); 12 *Held — not yet re-examined* (quoted) | 9-7 |
 | Rom 1:22 | 12 *Held — not yet re-examined* | 9-7 |
@@ -3961,7 +4014,7 @@
 | Rom 2:18 | 10.7 *Willing* (quoted) | — |
 | Rom 2:29 | 09 *Inner and outer* (quoted); 14 *A circumcised heart* (quoted) | — |
 | Rom 3:18 | 10.12 *The fear of God* (quoted) | — |
-| Rom 3:25 | 13.1 *Purposing* (quoted) | — |
+| Rom 3:25 | 13.1 *Purposing* (quoted) | C-379 |
 | Rom 3:27 | 10.15 *The boast* (quoted) | C-229 |
 | Rom 4:8 | 10.9 *(opening)* (quoted) | — |
 | Rom 4:17 | 02 *Made alive* (quoted) | C-158 |
@@ -4012,7 +4065,7 @@
 | Rom 7:25 | 07 *Flesh in the New Testament: one word, several values* (quoted); 10.1 *On God's word, and on God*; 10.7 *Willing*; 11 *7. The inner being is governed* (quoted) | 4-7 |
 | Rom 8:2 | 14 *Revived, restored, renewed* (quoted) | — |
 | Rom 8:6 | 02 *Death in the living* (quoted); 07 *Flesh in the New Testament: one word, several values* (quoted); 10.7 *Planning* (quoted) | C-88, C-147, C-329 |
-| Rom 8:7 | 10.7 *Planning* (quoted); 10.14 *Submitting* (quoted); 12 *Flesh as an orientation* (quoted) | — |
+| Rom 8:7 | 10.7 *Planning* (quoted); 10.14 *Submitting* (quoted); 12 *Flesh as an orientation* (quoted) | C-364 |
 | Rom 8:9 | 10.14 *Submitting* | — |
 | Rom 8:10 | 02 *Death spoken of in more than one way* (quoted); 14 *Revived, restored, renewed* (quoted) | C-142 |
 | Rom 8:11 | 02 *The body raised* (quoted); 13.1 *Immortal* (quoted); 14 *Revived, restored, renewed* (quoted) | C-270, C-271 |
@@ -4025,17 +4078,17 @@
 | Rom 8:22 | 02 *Waited for* (quoted) | C-280 |
 | Rom 8:23 | 02 *Waited for* (quoted); 10.1 *Where it turns* (quoted); 14 *Revived, restored, renewed* (quoted); 14 *Held — not yet re-examined* | 10-4, C-270, C-280 |
 | Rom 8:26 | 06 *God's Spirit and the human person* (quoted); 07 *The willing spirit and the weak flesh* (quoted); 10.9 *(opening)* (quoted); 13.1 *Purposing* (quoted) | — |
-| Rom 8:27 | 10.9 *(opening)* (quoted); 13.1 *Purposing* (quoted) | — |
-| Rom 8:28 | 13.1 *Purposing* (quoted) | — |
+| Rom 8:27 | 10.9 *(opening)* (quoted); 13.1 *Purposing* (quoted) | C-380 |
+| Rom 8:28 | 13.1 *Purposing* (quoted) | C-380 |
 | Rom 8:36 | 02 *Sleep and waking* | — |
 | Rom 8:37 | 02 *Sleep and waking* (quoted) | — |
 | Rom 8:38 | 02 *Dying to the Lord* (quoted) | — |
 | Rom 8:39 | 02 *Dying to the Lord* (quoted) | — |
 | Rom 9:1 | 08 *Conscience* (quoted) | — |
-| Rom 9:11 | 13.1 *Purposing* (quoted) | — |
+| Rom 9:11 | 13.1 *Purposing* (quoted) | C-379 |
 | Rom 9:16 | 10.7 *Willing* (quoted) | — |
 | Rom 9:18 | 13.1 *Willing* (quoted) | — |
-| Rom 9:19 | 10.7 *Willing*; 13.1 *Willing* (quoted) | — |
+| Rom 9:19 | 10.7 *Willing*; 13.1 *Willing* (quoted) | C-384 |
 | Rom 9:20 | 13.1 *Willing* (quoted) | — |
 | Rom 9:21 | 13.1 *Ruling* (quoted) | — |
 | Rom 9:22 | 13.1 *Willing* (quoted) | — |
@@ -4095,7 +4148,7 @@
 | 1Cor 3:4 | 10.6 *Jealousy and envy* (quoted) | — |
 | 1Cor 3:22 | 02 *Dying to the Lord* (quoted) | C-162 |
 | 1Cor 4:3 | 10.7 *Planning* (quoted) | — |
-| 1Cor 4:5 | 10.7 *Planning* (quoted) | — |
+| 1Cor 4:5 | 10.7 *Planning* (quoted) | C-363 |
 | 1Cor 4:6 | 10.15 *The words* (quoted) | — |
 | 1Cor 4:7 | 10.15 *Given, then held as one's own* (quoted) | C-214, C-229 |
 | 1Cor 4:9 | 02 *Facing death* (quoted) | C-154 |
@@ -4135,7 +4188,7 @@
 | 1Cor 10:6 | 10.6 *Unmet, and wanting against God* (quoted) | — |
 | 1Cor 10:29 | 08 *Conscience* (quoted) | — |
 | 1Cor 11:10 | 13.2 *(opening)* (quoted) | — |
-| 1Cor 12:11 | 13.1 *Willing* (quoted) | — |
+| 1Cor 12:11 | 13.1 *Willing* (quoted) | C-384 |
 | 1Cor 12:18 | 13.1 *Willing* (quoted) | — |
 | 1Cor 12:25 | 10.1 *The words* (quoted); 10.10 *Care, discouragement and hiding between people* (quoted) | — |
 | 1Cor 13:4 | 10.15 *Pride over another* (quoted) | C-226 |
@@ -4187,7 +4240,8 @@
 | 2Cor 1:9 | 02 *Facing death* (quoted); 10.9 *(opening)* (quoted); 13.1 *Immortal* (quoted) | C-154 |
 | 2Cor 1:10 | 02 *Delivered from death* (quoted) | — |
 | 2Cor 1:12 | 08 *Conscience* (quoted) | — |
-| 2Cor 1:17 | 10.7 *Planning* (quoted) | — |
+| 2Cor 1:15 | — | C-382 |
+| 2Cor 1:17 | 10.7 *Planning* (quoted) | C-359 |
 | 2Cor 1:18 | 10.7 *Planning* (quoted) | — |
 | 2Cor 1:22 | 03 *One inside another* (quoted); 06 *God's Spirit and the human person* (quoted); 14 *The Spirit given into the heart* (quoted) | I-6, 10-1 |
 | 2Cor 1:23 | 10.10 *Holding authority over another* (quoted) | — |
@@ -4309,9 +4363,9 @@
 | Gal 6:14 | — | C-228 |
 | Eph 1:4 | 10.7 *Being chosen* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* (quoted); 13.1 *Choosing* (quoted) | — |
 | Eph 1:5 | 13.1 *Choosing* (quoted) | — |
-| Eph 1:9 | 13.1 *Purposing* (quoted) | — |
+| Eph 1:9 | 13.1 *Purposing* (quoted) | C-379 |
 | Eph 1:10 | 13.1 *Purposing* (quoted) | — |
-| Eph 1:11 | 13.1 *Purposing* (quoted) | — |
+| Eph 1:11 | 13.1 *Purposing* (quoted) | C-379 |
 | Eph 1:18 | 04 *The heart has its own sight* (quoted); 10.7 *Being chosen* (quoted) | — |
 | Eph 1:19 | 02 *The body raised* (quoted) | — |
 | Eph 1:20 | 02 *The body raised* (quoted) | — |
@@ -4329,7 +4383,7 @@
 | Eph 2:16 | 14 *Brought near* (quoted) | — |
 | Eph 2:17 | 14 *Brought near* (quoted) | — |
 | Eph 2:18 | 14 *Brought near* (quoted) | — |
-| Eph 3:11 | 13.1 *Purposing* (quoted) | — |
+| Eph 3:11 | 13.1 *Purposing* (quoted) | C-379 |
 | Eph 3:16 | 06 *God's Spirit and the human person* | — |
 | Eph 4:2 | 10.10 *Humility toward one another* (quoted); 10.14 *Toward one another* (quoted) | C-190 |
 | Eph 4:3 | 10.14 *Toward one another* (quoted) | C-190 |
@@ -4469,7 +4523,7 @@
 | 1Ti 1:15 | 10.2 *(opening)* (quoted) | — |
 | 1Ti 1:17 | 11 *4. One word, opposite values* (quoted); 13.1 *Immortal* (quoted) | — |
 | 1Ti 2:4 | 13.1 *Willing* (quoted) | — |
-| 1Ti 2:8 | 10.4 *When thinking changes character* (quoted); 10.10 *Holding authority over another* (quoted); 10.13 *(opening)* (quoted); 11 *4. One word, opposite values* | — |
+| 1Ti 2:8 | 10.4 *When thinking changes character* (quoted); 10.10 *Holding authority over another* (quoted); 10.13 *(opening)* (quoted); 11 *4. One word, opposite values* | C-374 |
 | 1Ti 2:11 | 10.10 *Holding authority over another* (quoted) | — |
 | 1Ti 2:12 | 10.10 *Holding authority over another* (quoted) | — |
 | 1Ti 2:13 | 10.10 *Holding authority over another* (quoted) | — |
@@ -4478,7 +4532,7 @@
 | 1Ti 4:2 | 08 *Conscience* | — |
 | 1Ti 5:6 | 02 *Death in the living* (quoted) | C-88, C-147 |
 | 1Ti 6:6 | 10.7 *Willing* (quoted) | — |
-| 1Ti 6:9 | 10.7 *Willing* (quoted) | — |
+| 1Ti 6:9 | 10.7 *Willing* (quoted) | C-383 |
 | 1Ti 6:10 | 10.6 *Possessions* (quoted) | — |
 | 1Ti 6:11 | 10.14 *Toward one another* | — |
 | 1Ti 6:16 | 02 *Changed* (quoted); 13.1 *Immortal* (quoted) | C-281 |
@@ -4486,7 +4540,7 @@
 | 2Ti 1:4 | 10.6 *A person* (quoted) | — |
 | 2Ti 1:7 | 06 *"A spirit of …" — what comes upon a person* (quoted); 10.12 *Fear set against faith and love* (quoted) | 9-4, 9-4 |
 | 2Ti 1:8 | 10.12 *Fear set against faith and love* (quoted) | — |
-| 2Ti 1:9 | 13.1 *Purposing* (quoted) | — |
+| 2Ti 1:9 | 13.1 *Purposing* (quoted) | C-379 |
 | 2Ti 1:10 | 02 *Changed* (quoted) | — |
 | 2Ti 2:8 | 02 *Believed, questioned, denied* (quoted) | — |
 | 2Ti 2:10 | 10.7 *Others around a choice* (quoted) | — |
@@ -4501,7 +4555,7 @@
 | 2Ti 3:5 | 12 *Held — not yet re-examined* | — |
 | 2Ti 3:6 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
 | 2Ti 3:7 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
-| 2Ti 3:10 | 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | — |
+| 2Ti 3:10 | 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | C-364 |
 | 2Ti 3:11 | 10.7 *Willing* (quoted) | — |
 | 2Ti 3:12 | 10.7 *Willing* (quoted) | — |
 | 2Ti 4:1 | 02 *Life, and judgment* (quoted) | — |
@@ -4519,7 +4573,7 @@
 | Tit 3:3 | 10.3 *Remembering in shame* (quoted); 10.6 *Wanting that owns the one who wants* (quoted); 10.10 *Humility toward one another* (quoted); 10.10 *Holding authority over another* (quoted); 10.14 *Toward one another* (quoted) | C-192 |
 | Tit 3:4 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
 | Tit 3:5 | 10.6 *Wanting that owns the one who wants* (quoted); 14 *The Spirit given into the heart* (quoted) | — |
-| Phile 13 | 10.7 *Willing* | — |
+| Phile 13 | 10.7 *Willing* | C-381 |
 | Phile 14 | 10.7 *Willing* (quoted) | — |
 | Heb 1:3 | 13.1 *Majesty* (quoted) | C-241 |
 | Heb 2:6 | 10.14 *The Old Testament and the New* | C-200 |
@@ -4535,7 +4589,7 @@
 | Heb 4:12 | 09 *Soul and spirit, by the word of God* (quoted); 10.8 *(opening)* (quoted) | 2-16 |
 | Heb 5:7 | 02 *Facing death* (quoted); 07 *Flesh in the New Testament: one word, several values* (quoted); 10.12 *Fear before God* (quoted) | C-154 |
 | Heb 6:1 | 02 *Death in the living* (quoted) | C-88, C-142 |
-| Heb 6:17 | 13.1 *Purposing* (quoted); 13.1 *Willing* (quoted) | — |
+| Heb 6:17 | 13.1 *Purposing* (quoted); 13.1 *Willing* (quoted) | C-377 |
 | Heb 6:19 | 13.1 *Purposing* (quoted) | — |
 | Heb 8:10 | 11 *1. The inner being is acted upon as much as it acts* (quoted); 14 *Written on the heart* (quoted) | — |
 | Heb 9:9 | 08 *Conscience* (quoted) | — |
@@ -4588,7 +4642,7 @@
 | Jam 1:14 | 10.6 *Wanting that owns the one who wants* (quoted); 12 *Held — not yet re-examined* | 9-6 |
 | Jam 1:15 | 02 *Death and sin* (quoted); 10.6 *Wanting and death* (quoted); 12 *The soul answers for it* (quoted); 12 *Held — not yet re-examined*; 13.1 *Willing* (quoted) | C-86, C-144 |
 | Jam 1:17 | 13.1 *Willing* (quoted) | — |
-| Jam 1:18 | 13.1 *Willing* (quoted) | — |
+| Jam 1:18 | 13.1 *Willing* (quoted) | C-384 |
 | Jam 1:19 | 10.2 *(opening)* (quoted); 10.2 *Humility and hearing* (quoted); 10.13 *Connections*; 10.14 *Humility as a way of walking* (quoted) | C-187 |
 | Jam 1:20 | 10.2 *(opening)* (quoted); 10.2 *Humility and hearing*; 10.13 *(opening)* (quoted); 10.14 *Humility as a way of walking*; 12 *Anger that goes wrong* (quoted) | C-187 |
 | Jam 1:21 | 05 *Rest for the soul* (quoted); 10.2 *Humility and hearing* (quoted); 10.14 *Humility as a way of walking* (quoted); 14 *Revived, restored, renewed* (quoted) | C-187 |
@@ -4598,7 +4652,7 @@
 | Jam 2:17 | 02 *Death in the living* (quoted); 10.7 *Being chosen* (quoted) | C-142 |
 | Jam 2:19 | 10.12 *Other parties* (quoted) | — |
 | Jam 2:26 | 02 *Death spoken of in more than one way* (quoted); 02 *Soul, spirit and heart at death* (quoted) | 3-13, C-142 |
-| Jam 3:4 | 10.7 *Willing* (quoted) | — |
+| Jam 3:4 | 10.7 *Willing* (quoted) | C-382 |
 | Jam 3:8 | 02 *Life set before a person* (quoted) | C-120 |
 | Jam 3:13 | 10.6 *Jealousy and envy* (quoted) | — |
 | Jam 3:14 | 10.6 *Jealousy and envy* (quoted); 10.15 *The boast* (quoted) | — |
@@ -4607,7 +4661,7 @@
 | Jam 4:1 | 10.6 *Unmet, and wanting against God* (quoted); 10.7 *Willing* (quoted); 10.10 *Anger between people* (quoted); 10.13 *What it rises at* (quoted); 12 *Anger that goes wrong* (quoted) | — |
 | Jam 4:2 | 10.6 *Unmet, and wanting against God* (quoted); 10.13 *Connections*; 12 *Anger that goes wrong* (quoted) | — |
 | Jam 4:3 | 10.6 *Unmet, and wanting against God* (quoted) | — |
-| Jam 4:4 | 10.7 *Willing* (quoted); 13.1 *Jealousy* (quoted) | — |
+| Jam 4:4 | 10.7 *Willing* (quoted); 13.1 *Jealousy* (quoted) | C-383 |
 | Jam 4:5 | 11 *What changes the character*; 13.1 *Jealousy* (quoted) | — |
 | Jam 4:6 | 10.14 *The humble* (quoted); 10.15 *Where it ends* (quoted); 11 *What changes the character*; 13.1 *Jealousy* (quoted); 13.1 *Lowering himself* (quoted) | C-200, C-203, C-235 |
 | Jam 4:7 | 10.9 *Humbling oneself before God* (quoted); 10.14 *What goes with it* (quoted); 10.14 *Submitting* (quoted) | C-173, C-193 |
@@ -4701,7 +4755,7 @@
 | 2Pe 3:3 | 10.2 *(opening)* (quoted); 10.6 *Wanting that owns the one who wants* (quoted) | — |
 | 2Pe 3:4 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
 | 2Pe 3:5 | 10.2 *(opening)* (quoted) | — |
-| 2Pe 3:9 | 11 *4. One word, opposite values*; 13.1 *Willing* (quoted) | — |
+| 2Pe 3:9 | 11 *4. One word, opposite values*; 13.1 *Willing* (quoted) | C-384 |
 | 1Jo 2:15 | 12 *Held — not yet re-examined* | — |
 | 1Jo 2:16 | 07 *Flesh in the New Testament: one word, several values* (quoted); 10.6 *Wanting that owns the one who wants* (quoted); 12 *Held — not yet re-examined* | — |
 | 1Jo 2:17 | 10.6 *Wanting that owns the one who wants* (quoted) | — |

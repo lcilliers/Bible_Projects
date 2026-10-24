@@ -1,6 +1,6 @@
 # Narrative claim register
 
-*Published from iba.db on 2026-10-23. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-24. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 ## Chapters
 
@@ -403,6 +403,17 @@ File `04-the-heart-v22-20261019.md` (v22) · draft · chapter
 
 - **C-324** Pride's heart tells itself it will not be moved and that loss and mourning will not come, and it does not lay its end to heart (in part: Revelation 18:7) — also told in: 10.15 *The heart that says what God says* (in full)
 
+**The heart thinks, attends and remembers**
+
+- **4-4** Hebrew has no word for "mind"; it uses *lēv* (in part: much of what we would call the mind, Scripture calls the heart)
+- **C-367** The heart is where thoughts and plans come from. (in part: it plans) — also told in: 10.4 *Where thoughts come from* (in part)
+
+**The heart decides and is moved**
+
+- **C-350** Refusing God is refusing his good, the land, rest, being filled, his counsel; the refusal stands with the people's own counsels or plan and a stubborn heart, and the will is also invited with an if. (in part: a stubborn heart will not listen) — also told in: 10.7 *Two sides* (in part); 10.7 *Willing* (in part); 10.13 *What kindles it* (in part)
+- **C-351** Where God hardens the heart or spirit, the verse names the person's unwillingness beside it, and once its purpose; the verses do not explain more. (in part: a hardened heart will not) — also told in: 06 *The human spirit* (in part); 11 *1. The inner being is acted upon as much as it acts* (in part)
+- **C-352** The willing heart and spirit are said both to rise in the person, the heart stirring them to give, and to be upheld by God when asked; a plan given by God and the willing who carry it out stand together. (in part: a willing heart gives) — also told in: 10.7 *Willing* (in part)
+
 **The heart and anger**
 
 - **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: The heart that turns it) — also told in: 04 *The heart humbled* (in full); 10.7 *Willing* (in part); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
@@ -420,6 +431,7 @@ File `04-the-heart-v22-20261019.md` (v22) · draft · chapter
 **The heart is hidden, and God sees it**
 
 - **C-256** Even the prophet sent to choose formed his thought from appearance, and God's word corrected it (in part: Samuel's thought (1 Samuel 16:6-7))
+- **C-363** Thoughts and plans are wholly open to God, the inclination is known before it acts, and the purposes of the heart will be disclosed. (in part: he knows the heart's leaning before it acts) — also told in: 10.4 *Small, passing, and wholly seen* (in part); 10.7 *Planning* (in part)
 
 **The heart humbled**
 
@@ -451,6 +463,7 @@ File `06-the-spirit-v14-20261018.md` (v14) · draft · chapter
 - **C-189** Where God and a broken heart meet he is near and heals; the verses tell the breaking by its cause and by whether it is brought to God, not by naming contrition or despair (in part: a broken spirit can keep a person from hearing) — also told in: 04 *The heart is the source* (in part); 04 *The heart humbled* (in part); 10.2 *(opening)* (in part); 10.14 *A lowly and contrite spirit* (in full); 11 *4. One word, opposite values* (in part); 14 *Revived, restored, renewed* (in part)
 - **C-196** One's own spirit is under the person: the one who speaks governs what moves in him (in part: the spirits of prophets subject to prophets) — also told in: 10.14 *Submitting* (in full)
 - **C-267** Matthew 5:3 places poverty in the spirit, not in what a person has, and the next blessing is on those who mourn (in part: poor in spirit (Matthew 5:3-4))
+- **C-351** Where God hardens the heart or spirit, the verse names the person's unwillingness beside it, and once its purpose; the verses do not explain more. (in part: Sihon's hardened spirit, and he would not let us pass) — also told in: 04 *The heart decides and is moved* (in part); 11 *1. The inner being is acted upon as much as it acts* (in part)
 
 ### 07 — Flesh
 
@@ -477,6 +490,18 @@ File `—` (v—) · draft · part heading
 ### 10.0 — The inner being at work
 
 File `10-00-the-inner-being-at-work-v7-20261015.md` (v7) · draft · opening
+
+**From a thought to a deed**
+
+- **C-370** Read together, the verses trace a path from a thought arising to the deed: lodging, reckoning, devising, the tongue, lips and eyes, then the hand and feet; no single verse lists it. (in full) — also told in: 10.5 *The tongue, the lips and the eyes devise* (in full)
+
+**The path runs back**
+
+- **C-358** What is devised comes back on the one who devised it, and the schemer is named by his plan and told to stop it at the mouth. (in full) — also told in: 10.4 *What is devised comes back* (in full); 10.10 *Plotting against another* (in part)
+
+**Where I am answerable**
+
+- **C-371** The commands meet the path from where a thought lodges onward; none addresses what first arises, though what arises is not neutral. (in full)
 
 ### 10.1 — Feeling
 
@@ -532,18 +557,53 @@ File `10-03-remembering-and-forgetting-v9-20261019.md` (v9) · draft · activity
 
 File `10-04-thinking-v15-20261019.md` (v15) · draft · activity
 
+**Where thoughts come from**
+
+- **C-366** Thoughts often arise unbidden, at night, and what arises is shaped from outside: by God's gift of skill, by instruction, or by blinding. (in part: they arise; shaped from outside)
+- **C-367** The heart is where thoughts and plans come from. (in part: they come from the heart) — also told in: 04 *The heart thinks, attends and remembers* (in part)
+
+**The inclination: a shaped thing**
+
+- **C-369** The inclination of the heart (yetser) is the same word as the potter's thing formed and as our frame; it is evil in Gen 6:5 and stayed on God in Isa 26:3. (in full) — also told in: 12 *The heart as the source* (in part)
+
 **What thinking does**
 
 - **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: Uzziah strong, then proud) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 11 *2. Thresholds: the merry heart and the sad heart* (in part); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
 - **C-317** A wrong expectation can be what a teaching answers (in full)
+- **C-365** Devising is also design and skill, given by God; its direction makes it good or evil, toward God's house, a king's strength or one's own ease. (in part: it designs)
+- **C-372** Thinking reckons worth: people reckon wrongly, being reckoned is felt from inside, God reckons truly and counts righteousness or guilt to a person, and reckoning serves release or is laid aside in trust. (in part: it reckons)
+- **C-373** Thinking likens: the Hebrew damah means both to be like and to think. (in part: it likens)
+
+**When thinking changes character**
+
+- **C-362** What the heart devises on its own can be a rival worship, a false report, or a god its maker trusts. (in part: imagination that makes gods) — also told in: 10.7 *Planning* (in part); 12 *Idols taken inside* (in part)
+- **C-374** Inner reasoning becomes an outward quarrel when it is shared and set on one's own standing. (in part: reasoning that becomes a quarrel)
+- **C-375** God's devising against a people answers what they devise, and is spoken so that they may turn; he relents. (in part: one passage, three plans) — also told in: 13.1 *Purposing* (in part)
 
 **When anger thinks**
 
 - **C-237** The charge of pride can come from another's anger or from a ready explanation, and the verses do not make it true (in part: Eliab misreads) — also told in: 04 *The heart and anger* (in part); 10.14 *The proud brought low, the lowly raised* (in full); 10.15 *Where it ends* (in full)
 
+**The night and the bed**
+
+- **C-368** The bed holds both deliberate plotting and meditation on God, and what fills the heart in the night shows by morning. (in full)
+
+**What is devised comes back**
+
+- **C-358** What is devised comes back on the one who devised it, and the schemer is named by his plan and told to stop it at the mouth. (in full) — also told in: 10.0 *The path runs back* (in full); 10.10 *Plotting against another* (in part)
+
+**Small, passing, and wholly seen**
+
+- **C-361** God also thinks and plans: his plan stands where human plans cross it, he takes thought for the one in need, and he speaks in his heart. (in part: God thinks too) — also told in: 11 *8. God has a heart and a soul* (in part); 13.1 *Purposing* (in part)
+- **C-363** Thoughts and plans are wholly open to God, the inclination is known before it acts, and the purposes of the heart will be disclosed. (in part: none of it is hidden) — also told in: 04 *The heart is hidden, and God sees it* (in part); 10.7 *Planning* (in part)
+
 ### 10.5 — Speaking
 
 File `10-05-speaking-v23-20261019.md` (v23) · draft · activity
+
+**The tongue, the lips and the eyes devise**
+
+- **C-370** Read together, the verses trace a path from a thought arising to the deed: lodging, reckoning, devising, the tongue, lips and eyes, then the hand and feet; no single verse lists it. (in full) — also told in: 10.0 *From a thought to a deed* (in full)
 
 **Speech before words**
 
@@ -588,11 +648,15 @@ File `10-06-wanting-v28-20261019.md` (v28) · draft · activity
 
 ### 10.7 — Choosing and setting direction
 
-File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · activity
+File `10-07-choosing-and-setting-direction-v35-20261024.md` (v35) · draft · activity
 
 **The words**
 
 - **C-339** Choosing weighs worth: understanding and a good name are chosen above riches, and the heart is given a worth. (in part: to be chosen, in the sense of preferred) — also told in: 10.7 *What draws it* (in part)
+
+**Two sides**
+
+- **C-350** Refusing God is refusing his good, the land, rest, being filled, his counsel; the refusal stands with the people's own counsels or plan and a stubborn heart, and the will is also invited with an if. (in part: if you are willing and obedient) — also told in: 04 *The heart decides and is moved* (in part); 10.7 *Willing* (in part); 10.13 *What kindles it* (in part)
 
 **What a choice rests on**
 
@@ -608,6 +672,18 @@ File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · ac
 **Choosing before God**
 
 - **C-338** The choice is the chooser's own: it is placed on them and not on another, honoured by others, and given of one's own accord. (in part: giving and going of their own accord) — also told in: 10.7 *A choice that is honoured* (in part); 10.7 *Choices weighed by another* (in part)
+
+**Dedicating**
+
+- **C-385** Dedicating is a person giving what is his own to the Lord; the gift is valued by another, can be bought back at a cost, and can be lost for good. (in full)
+- **C-386** What already belongs to the Lord cannot be given as one's own; where the firstborn is commanded, the dedication is set beside a remembered redemption. (in full)
+- **C-387** Giving oneself or one's goods can be turned to an idol, even in the Lord's name; a person becomes like what he gives himself to and loves, and separating from God is done with idols taken into the heart. (in full) — also told in: 12 *Idols taken inside* (in part)
+- **C-388** Abstaining is judged by whom it was for, not by how long it was kept. (in full)
+- **C-389** Kings and leaders give the spoil of victory back to the Lord who gave the victory, for his house. (in full)
+- **C-390** A dedication can be undone: gifts given to God by the fathers and by the king himself are taken back to buy off a threat. (in full)
+- **C-391** The house is dedicated inside a purpose, and the one who dedicates it asks who he is to build it. (in full)
+- **C-392** The setting apart of gifts is done in abundance and joy, and is answered with blessing. (in full)
+- **C-393** God's dedicating of a person comes before the person knows or wills, and the person's shrinking answer is met with a sending and a presence. (in full)
 
 **Being chosen**
 
@@ -644,6 +720,11 @@ File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · ac
 
 - **C-313** Joseph's counsel plans against a famine he has been shown (in full)
 - **C-329** The mind can be set downward, on earthly things, and the call is to set it on things above (in part: minds set on earthly things)
+- **C-359** Looking ahead weighs ability and cost before acting, plans under uncertainty, carries a person's word, can part companions or set one apart from a council's decision, and can plan another's good. (in part: weighing first; planning without knowing; a plan carries a word; planning together and parting; planning for another's good)
+- **C-360** A human plan is real in its reach, and its outcome rests with God. (in part: the place of it is the heart; the plan and its outcome)
+- **C-362** What the heart devises on its own can be a rival worship, a false report, or a god its maker trusts. (in part: devised from one's own heart) — also told in: 10.4 *When thinking changes character* (in part); 12 *Idols taken inside* (in part)
+- **C-363** Thoughts and plans are wholly open to God, the inclination is known before it acts, and the purposes of the heart will be disclosed. (in part: seen before it is done and shown in full) — also told in: 04 *The heart is hidden, and God sees it* (in part); 10.4 *Small, passing, and wholly seen* (in part)
+- **C-364** A purpose can be set ahead and held, for one's own speech and faithfulness; it can be kept and directed by God, and the mind's setting decides its direction. (in part: a purpose held)
 
 **Presumption**
 
@@ -654,6 +735,17 @@ File `10-07-choosing-and-setting-direction-v34-20261019.md` (v34) · draft · ac
 
 - **C-171** Humbling happens in the heart; Hezekiah's is the same heart turning back from its own pride (in part: Belshazzar has not humbled his heart) — also told in: 04 *The heart and anger* (in part); 04 *The heart humbled* (in full); 10.13 *The heart that turns, and the heart that does not* (in part); 10.14 *Where it happens* (in full); 12 *Pride and the lifted-up heart and spirit* (in part)
 - **C-314** Daniel's visions picture the will made absolute: doing as one pleases and becoming great, even against the Prince of the host (in full)
+- **C-346** In the Hebrew narratives the will mostly answers what another puts before it, a request, pressing, a command or a warning, and is almost always a refusal; a plan has to reckon with another's will, and can allow for it or press it until it gives way. (in part: the will meets something put before it; a plan meets another person's will)
+- **C-347** The same will word names a refusal that keeps faith, to the Lord's anointed, his priests, the lives of others, and against enticement, and a refusal that does violence, the stronger shutting out the plea of the weaker; the passage gives the reason each time. (in part: the no keeps faith and does violence; the will meets an enticement, a demand, a plea)
+- **C-348** A refusal can cost the one who makes it, death, public shame or God's rejection, and it can be selective: Saul refused only where he valued what he kept. (in part: a refusal can be selective; Asahel would not turn aside, and he died) — also told in: 10.10 *Loyalty and honour* (in part)
+- **C-349** Fear, a melted heart, grief and jealousy hold the will in a refusal, and what a person then hears can move it. (in part: feeling holds the will: fear, melted hearts, grief, jealousy)
+- **C-350** Refusing God is refusing his good, the land, rest, being filled, his counsel; the refusal stands with the people's own counsels or plan and a stubborn heart, and the will is also invited with an if. (in part: refusing God refuses something good; where willing and planning are named together) — also told in: 04 *The heart decides and is moved* (in part); 10.7 *Two sides* (in part); 10.13 *What kindles it* (in part)
+- **C-352** The willing heart and spirit are said both to rise in the person, the heart stirring them to give, and to be upheld by God when asked; a plan given by God and the willing who carry it out stand together. (in part: the willing heart; the same pairing of plan and will going right) — also told in: 04 *The heart decides and is moved* (in part)
+- **C-353** A king's will made absolute is brought down until he knows that the Most High rules and gives the kingdom to whom he will; the Most High does according to his will, and none can stay his hand. (in part: the will made absolute) — also told in: 13.1 *Willing* (in part)
+- **C-381** A will is weighed against another's: bent to a crowd, held back or helped by friends, or left free by one who could have kept what he wanted. (in part: a plan meets another person's will; the willing heart, Paul guards the freedom of another's will) — also told in: 10.10 *Plotting against another* (in part)
+- **C-382** The will resolves, intends and steers; a resolve can still be weighed and redirected, an intention stopped, and one will can stand against a group's plan. (in part: a resolve is still being weighed; the will steers; it can stand against a plan) — also told in: 10.10 *Plotting against another* (in part)
+- **C-383** Wanting set on riches or the world leads into a snare and into enmity with God, and an intention can be pinned on another. (in part: the will turned toward harm) — also told in: 10.10 *Plotting against another* (in part)
+- **C-384** The will word is used of the Father, the Son and the Spirit; God's will is free and stands, and at Gethsemane the Son's will is given up to the Father's. (in part: a will under another) — also told in: 13.1 *Willing* (in part)
 
 **Life and death set before a person**
 
@@ -679,6 +771,10 @@ File `10-08-right-and-wrong-v8-20261015.md` (v8) · draft · activity
 ### 10.9 — Relating to God
 
 File `10-09-relating-to-god-v28-20261019.md` (v28) · draft · activity
+
+**(opening)**
+
+- **C-357** The same devising is turned against God, by the people he had strengthened. (in part: plotting is turned against him)
 
 **Humbling oneself before God**
 
@@ -732,6 +828,11 @@ File `10-10-relating-to-others-v35-20261019.md` (v35) · draft · activity
 **Plotting against another**
 
 - **C-301** Absalom's burning of Joab's field was a demand to be seen by his father (in full)
+- **C-356** The power to look ahead is turned most often against another person: planned in the heart, done together, aimed at the righteous and the weak, hidden behind a friendly word, pinned on the other side, and met by the plea of another. (in part: planned in the heart; done together; aimed at the quiet and the weak; hidden behind something friendly; accusing the other; the one plotted against) — also told in: 10.11 *The hidden trap* (in part)
+- **C-358** What is devised comes back on the one who devised it, and the schemer is named by his plan and told to stop it at the mouth. (in part: it is named, and checked) — also told in: 10.0 *The path runs back* (in full); 10.4 *What is devised comes back* (in full)
+- **C-381** A will is weighed against another's: bent to a crowd, held back or helped by friends, or left free by one who could have kept what he wanted. (in part: it presses another's will) — also told in: 10.7 *Willing* (in part)
+- **C-382** The will resolves, intends and steers; a resolve can still be weighed and redirected, an intention stopped, and one will can stand against a group's plan. (in part: someone else may stop it) — also told in: 10.7 *Willing* (in part)
+- **C-383** Wanting set on riches or the world leads into a snare and into enmity with God, and an intention can be pinned on another. (in part: it accuses the other of a plan) — also told in: 10.7 *Willing* (in part)
 
 **Humility toward one another**
 
@@ -759,6 +860,7 @@ File `10-10-relating-to-others-v35-20261019.md` (v35) · draft · activity
 - **C-303** Loyalty can fail at its post: Abner did not keep watch over the Lord's anointed, while David refused to strike him (in full)
 - **C-304** Joab yielded the honour of taking Rabbah to David (in full)
 - **C-305** Solomon on his throne showed honour upward to his mother, then refused her request (in full)
+- **C-348** A refusal can cost the one who makes it, death, public shame or God's rejection, and it can be selective: Saul refused only where he valued what he kept. (in part: a duty refused, and the law makes the refusal public) — also told in: 10.7 *Willing* (in part)
 
 **Friends, company and care**
 
@@ -770,6 +872,10 @@ File `10-10-relating-to-others-v35-20261019.md` (v35) · draft · activity
 ### 10.11 — Hiding and disclosing
 
 File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft · activity
+
+**The hidden trap**
+
+- **C-356** The power to look ahead is turned most often against another person: planned in the heart, done together, aimed at the righteous and the weak, hidden behind a friendly word, pinned on the other side, and met by the plea of another. (in part: a friendly word as the cover) — also told in: 10.10 *Plotting against another* (in part)
 
 ### 10.12 — Fear
 
@@ -818,6 +924,10 @@ File `10-13-anger-v15-20261019.md` (v15) · draft · key characteristic
 
 - **C-291** Anger shows in the body, and the verses see it in the teeth: the angry, the plotter, the enraged hearers, gloating enemies and mockers gnash their teeth (in part: the teeth)
 - **C-292** Job pictures God's anger, as he feels it under it, as gnashing of teeth (in part: Job 16:9)
+
+**What kindles it**
+
+- **C-350** Refusing God is refusing his good, the land, rest, being filled, his counsel; the refusal stands with the people's own counsels or plan and a stubborn heart, and the will is also invited with an if. (in part: unwilling to listen) — also told in: 04 *The heart decides and is moved* (in part); 10.7 *Two sides* (in part); 10.7 *Willing* (in part)
 
 **How it is spoken of**
 
@@ -1026,6 +1136,10 @@ File `10-15-pride-v3-20261019.md` (v3) · draft · key characteristic
 
 File `11-other-sides-of-the-inner-being-v39-20261019.md` (v39) · draft · chapter
 
+**1. The inner being is acted upon as much as it acts**
+
+- **C-351** Where God hardens the heart or spirit, the verse names the person's unwillingness beside it, and once its purpose; the verses do not explain more. (in part: God hardens) — also told in: 04 *The heart decides and is moved* (in part); 06 *The human spirit* (in part)
+
 **2. Thresholds: the merry heart and the sad heart**
 
 - **C-214** Pride holds as its own what was given: strength, healing, majesty, wealth, beauty and height are given, and the heart rises on them (in part: the heart lifted up when Uzziah was strong) — also told in: 04 *The heart and anger* (in part); 10.1 *How a feeling rises* (in part); 10.3 *Remembering as a cure, and remembering as hope* (in part); 10.4 *What thinking does* (in part); 10.6 *Thirst answered* (in part); 10.15 *Given, then held as one's own* (in full); 12 *Pride and the lifted-up heart and spirit* (pointer); 13.1 *Majesty* (in part)
@@ -1065,10 +1179,16 @@ File `11-other-sides-of-the-inner-being-v39-20261019.md` (v39) · draft · chapt
 
 - **2-12** "God is spirit" (Joh 4:24) stands. But Scripture speaks freely of God's soul ("my soul shall not abhor you", Lev 26:11; "my soul hates", Isa 1:14; "my soul delights", Isa 42:1; he swears by his soul, Amo 6:8) and God's heart (Gen 6:6; Hos 11:8). No ranking of the words follows (dep §3.10) (in full)
 - **C-322** God names his heart and eyes as set on a place (in full)
+- **C-361** God also thinks and plans: his plan stands where human plans cross it, he takes thought for the one in need, and he speaks in his heart. (in part: God also thinks and plans, and speaks in his heart) — also told in: 10.4 *Small, passing, and wholly seen* (in part); 13.1 *Purposing* (in part)
 
 ### 12 — When the inner being goes wrong
 
 File `12-when-the-inner-being-goes-wrong-v26-20261019.md` (v26) · draft + held · chapter
+
+**The heart as the source**
+
+- **9-1** Scripture locates the source of evil chiefly in the heart: "out of the heart come evil thoughts" (Mat 15:19; Mar 7:21); "the heart is deceitful above all things" (Jer 17:9); sin "engraved on the tablet of their heart" (Jer 17:1). The vice-list catalogue is not yet read (D §11.1, §11.7). Added 2026-10-01: Gen 6:5's "intention" is *yēṣer*, the formed inclination of the heart. It must be read with Gen 8:21, where the same evil inclination is the ground of God's forbearance (in full)
+- **C-369** The inclination of the heart (yetser) is the same word as the potter's thing formed and as our frame; it is evil in Gen 6:5 and stayed on God in Isa 26:3. (in part: the word translated intention is yetser) — also told in: 10.4 *The inclination: a shaped thing* (in full)
 
 **Pride and the lifted-up heart and spirit**
 
@@ -1088,6 +1208,12 @@ File `12-when-the-inner-being-goes-wrong-v26-20261019.md` (v26) · draft + held 
 
 - **C-255** The tossing sea that cannot be quiet pictures the inner state of the wicked: no stillness, what is thrown up is mire, and by God's word no peace (in part: the tossing sea (Isaiah 57:20-21))
 
+**Idols taken inside**
+
+- **9-3** Idols are taken "into their hearts" (Eze 14:3–7); the heart "goes after" idols (Eze 20:16); a "spirit of whoredom" leads astray (Hos 4:12) (dep §2.1i, §2.3c) (in part: idols taken into their hearts; a spirit of whoredom leads astray)
+- **C-362** What the heart devises on its own can be a rival worship, a false report, or a god its maker trusts. (in part: the power to imagine and design) — also told in: 10.4 *When thinking changes character* (in part); 10.7 *Planning* (in part)
+- **C-387** Giving oneself or one's goods can be turned to an idol, even in the Lord's name; a person becomes like what he gives himself to and loves, and separating from God is done with idols taken into the heart. (in part: idols taken into their hearts) — also told in: 10.7 *Dedicating* (in full)
+
 ### 13 — Other beings
 
 File `13-00-other-beings-v2-20261008.md` (v2) · draft · opening
@@ -1105,9 +1231,23 @@ File `13-01-divine-v31-20261019.md` (v31) · draft · other beings
 - **C-340** What God chooses shows what pleases him: justice and freeing the oppressed above an outward humbling; whom he appoints is his own choice. (in part: what he chooses is turned toward others) — also told in: 10.7 *Others around a choice* (in part)
 - **C-341** Choosing is joined to the inner being: in God to his heart and his soul, in people to the heart, the soul's delight and its appetite. (in part: his eyes and heart at the place; the soul well pleased in the servant) — also told in: 10.7 *What draws it* (in part); 10.7 *Others around a choice* (in part)
 
+**Purposing**
+
+- **C-361** God also thinks and plans: his plan stands where human plans cross it, he takes thought for the one in need, and he speaks in his heart. (in part: plans for welfare, and thought for the one in need) — also told in: 10.4 *Small, passing, and wholly seen* (in part); 11 *8. God has a heart and a soul* (in part)
+- **C-375** God's devising against a people answers what they devise, and is spoken so that they may turn; he relents. (in part: his devising answers what people devise; he says what he intends so that people may turn) — also told in: 10.4 *When thinking changes character* (in part)
+- **C-376** God forms a plan, makes it known, carries it out, and those it came upon recognise it afterward. (in part: he forms a plan and makes it known; carried out, and seen afterward)
+- **C-377** God also purposes and does not turn back, for judgement and for good; the verses do not explain how this stands with his relenting. (in part: he also purposes and does not turn back)
+- **C-378** God's plan takes in what people do against him without excusing them. (in part: his plan takes in what people do against him)
+- **C-379** God's purpose stands before the ages, does not rest on works, and is set forth in Christ. (in part: his purpose stands before the ages; made known in Christ)
+- **C-380** The Spirit intercedes according to God's will, the purpose is turned toward those who love him, and a person can reject it for himself. (in part: the Spirit intercedes; turned toward those who love him; refused or served)
+
 **Willing**
 
 - **C-203** God sees and answers the one who humbles himself, gives favor to the humble, humbles to test and do good, brings the proud low and looks on a humble estate (in part: those who walk in pride he is able to humble) — also told in: 13.1 *Lowering himself* (in full)
+- **C-353** A king's will made absolute is brought down until he knows that the Most High rules and gives the kingdom to whom he will; the Most High does according to his will, and none can stay his hand. (in part: he does as he wills) — also told in: 10.7 *Willing* (in part)
+- **C-354** God's not being willing to destroy rests on intercession, promise, covenant, compassion and love; his not being willing to forgive rests on a heart that blesses itself and on innocent blood. (in part: he is not willing to destroy, and not willing to forgive, and the verses say why)
+- **C-355** The will word is used of a creature that will not serve a man, among those God names as beyond a man's control. (in part: nature: the wild ox) — also told in: 13.4 *(opening)* (in part)
+- **C-384** The will word is used of the Father, the Son and the Spirit; God's will is free and stands, and at Gethsemane the Son's will is given up to the Father's. (in part: the Father's will, the Son's choosing, the Spirit's willing; his will brings to life and waits; Gethsemane) — also told in: 10.7 *Willing* (in part)
 
 **Delight**
 
@@ -1154,6 +1294,10 @@ File `13-03-other-spirits-v3-20261012.md` (v3) · empty · other beings
 ### 13.4 — Nature
 
 File `13-04-nature-v5-20261012.md` (v5) · draft · other beings
+
+**(opening)**
+
+- **C-355** The will word is used of a creature that will not serve a man, among those God names as beyond a man's control. (in part: willing: the wild ox) — also told in: 13.1 *Willing* (in part)
 
 ### 14 — Made new
 
@@ -1245,7 +1389,7 @@ File `—` (v—) · deferred · deferred
 | 4-1 | Heart = emotion, thought, will, moral centre, core self | Widened | Heart = emotion, thought, will, moral centre, core self | — |
 | 4-2 | Heart + soul = the totality formula; heart + spirit = renewal | Stands | Heart + soul = the totality formula; heart + spirit = renewal | — |
 | 4-3 | The heart is "the integration point where soul and spirit meet" | Restated | No verse says the heart is where soul and spirit meet. What the verses show: the heart is the innermost place things are put, including God's Spirit (Gal 4:6), God's law, idols and eternity. Whether the heart is *the* integrating centre is left open (dep §3.7, §5) | — |
-| 4-4 | Hebrew has no word for "mind"; it uses *lēv* | Stands | Hebrew has no word for "mind"; it uses *lēv* | — |
+| 4-4 | Hebrew has no word for "mind"; it uses *lēv* | Stands | Hebrew has no word for "mind"; it uses *lēv* | 04 *The heart thinks, attends and remembers* (in part) |
 | 4-5 | Jesus "adds mind" to Deu 6:5 | Restated | The list of faculties shifts: Mat 22:37 heart · soul · mind; Mar 12:30 adds strength; Luk 10:27 reorders; the scribe says heart · understanding · strength, dropping soul, and Jesus calls the answer wise (Mar 12:33–34). What stays constant is "all" (F §2) | — |
 | 4-6 | "No spirit mentioned — perhaps implied" in the love command | Withdrawn | "No spirit mentioned — perhaps implied" in the love command | — |
 | 4-7 | Mind vs flesh (Rom 7:25); spirit vs mind in prayer (1Co 14:14–15) | Stands | Mind vs flesh (Rom 7:25); spirit vs mind in prayer (1Co 14:14–15) | — |
@@ -1283,9 +1427,9 @@ File `—` (v—) · deferred · deferred
 
 | # | Original claim | Verdict | Claim now | Told in |
 |---|---|---|---|---|
-| 9-1 | 35+ corruptions in eight families, all located in the soul | Restated / Held (Restated (location) / Held (catalogue)) | Scripture locates the source of evil chiefly in the heart: "out of the heart come evil thoughts" (Mat 15:19; Mar 7:21); "the heart is deceitful above all things" (Jer 17:9); sin "engraved on the tablet of their heart" (Jer 17:1). The vice-list catalogue is not yet read (D §11.1, §11.7). Added 2026-10-01: Gen 6:5's "intention" is *yēṣer*, the formed inclination of the heart. It must be read with Gen 8:21, where the same evil inclination is the ground of God's forbearance | — |
+| 9-1 | 35+ corruptions in eight families, all located in the soul | Restated / Held (Restated (location) / Held (catalogue)) | Scripture locates the source of evil chiefly in the heart: "out of the heart come evil thoughts" (Mat 15:19; Mar 7:21); "the heart is deceitful above all things" (Jer 17:9); sin "engraved on the tablet of their heart" (Jer 17:1). The vice-list catalogue is not yet read (D §11.1, §11.7). Added 2026-10-01: Gen 6:5's "intention" is *yēṣer*, the formed inclination of the heart. It must be read with Gen 8:21, where the same evil inclination is the ground of God's forbearance | 12 *The heart as the source* (in full) |
 | 9-2 | Every corruption is the soul's self-ward orientation without the spirit's governance | Withdrawn | Every corruption is the soul's self-ward orientation without the spirit's governance | — |
-| 9-3 | Idolatry is "unique in engaging the spirit directly" | Restated | Idols are taken "into their hearts" (Eze 14:3–7); the heart "goes after" idols (Eze 20:16); a "spirit of whoredom" leads astray (Hos 4:12) (dep §2.1i, §2.3c) | — |
+| 9-3 | Idolatry is "unique in engaging the spirit directly" | Restated | Idols are taken "into their hearts" (Eze 14:3–7); the heart "goes after" idols (Eze 20:16); a "spirit of whoredom" leads astray (Hos 4:12) (dep §2.1i, §2.3c) | 12 *Idols taken inside* (in part) |
 | 9-4 | Fourteen named evil spirits, each targeting a soul-corruption: jealousy (Num 5:14), whoredom (Hos 4:12), deep sleep (Isa 29:10), lying (1Ki 22:22), divination (Act 16:16), fear (2Ti 1:7; Rom 8:15) | Restated | Most "spirit of …" phrases name a disposition that comes upon a person; the verse does not name a being. The same phrasing is used for good gifts: a spirit of wisdom, skill, grace, justice. Some are given by God: "the Lord has poured out upon you a spirit of deep sleep" (Isa 29:10); the harmful spirit "from the Lord" (1Sa 16:14); God "sent an evil spirit" (Judg 9:23); the Lord "put a lying spirit" in the prophets' mouths (1Ki 22:23). 2Ti 1:7 says "God gave us a spirit not of fear". Spirit-beings are real (unclean spirits cast out; the spirit of divination, Act 16:16), but the one-to-one mapping to vice families is not in the text (SC; dep §2.3c; D §11.4) | — |
 | 9-5 | The foothold principle (Eph 4:26–27) | Restated / Held (Restated (verse) / Held (model)) | Updated 2026-10-01 (anger strand): Eph 4:26–27 is now read. The verse ties the "opportunity to the devil" to anger kept past sunset: "do not let the sun go down on your anger, and give no opportunity to the devil". That is woven. A general model of how the devil gains ground is not stated and stays held | — |
 | 9-6 | Flesh (Jam 1:14), devil, world as three sources (Eph 2:2–3) | Held | Flesh (Jam 1:14), devil, world as three sources (Eph 2:2–3) | — |
@@ -1352,7 +1496,6 @@ File `—` (v—) · deferred · deferred
 | 4-1 | Heart = emotion, thought, will, moral centre, core self | current | Widened |
 | 4-2 | Heart + soul = the totality formula; heart + spirit = renewal | current | Stands |
 | 4-3 | No verse says the heart is where soul and spirit meet. What the verses show: the heart is the innermost place things are put, including God's Spirit (Gal 4:6), God's law, idols and eternity. Whether the heart is *the* integrating centre is left open (dep §3.7, §5) | current | Restated |
-| 4-4 | Hebrew has no word for "mind"; it uses *lēv* | current | Stands |
 | 4-5 | The list of faculties shifts: Mat 22:37 heart · soul · mind; Mar 12:30 adds strength; Luk 10:27 reorders; the scribe says heart · understanding · strength, dropping soul, and Jesus calls the answer wise (Mar 12:33–34). What stays constant is "all" (F §2) | current | Restated |
 | 4-6 | "No spirit mentioned — perhaps implied" in the love command | withdrawn | Withdrawn |
 | 4-7 | Mind vs flesh (Rom 7:25); spirit vs mind in prayer (1Co 14:14–15) | current | Stands |
@@ -1368,9 +1511,7 @@ File `—` (v—) · deferred · deferred
 | 8-2 | What the Spirit does not produce (memory, imagination, grief, natural fear, sexuality) | held | Held |
 | 8-3 | Health effects of each quality | held | Held |
 | 8-4 | The spirit was "dead through sin" (Eph 2:1–5) | held | Held |
-| 9-1 | Scripture locates the source of evil chiefly in the heart: "out of the heart come evil thoughts" (Mat 15:19; Mar 7:21); "the heart is deceitful above all things" (Jer 17:9); sin "engraved on the tablet of their heart" (Jer 17:1). The vice-list catalogue is not yet read (D §11.1, §11.7). Added 2026-10-01: Gen 6:5's "intention" is *yēṣer*, the formed inclination of the heart. It must be read with Gen 8:21, where the same evil inclination is the ground of God's forbearance | current | Restated |
 | 9-2 | Every corruption is the soul's self-ward orientation without the spirit's governance | withdrawn | Withdrawn |
-| 9-3 | Idols are taken "into their hearts" (Eze 14:3–7); the heart "goes after" idols (Eze 20:16); a "spirit of whoredom" leads astray (Hos 4:12) (dep §2.1i, §2.3c) | current | Restated |
 | 9-4 | Most "spirit of …" phrases name a disposition that comes upon a person; the verse does not name a being. The same phrasing is used for good gifts: a spirit of wisdom, skill, grace, justice. Some are given by God: "the Lord has poured out upon you a spirit of deep sleep" (Isa 29:10); the harmful spirit "from the Lord" (1Sa 16:14); God "sent an evil spirit" (Judg 9:23); the Lord "put a lying spirit" in the prophets' mouths (1Ki 22:23). 2Ti 1:7 says "God gave us a spirit not of fear". Spirit-beings are real (unclean spirits cast out; the spirit of divination, Act 16:16), but the one-to-one mapping to vice families is not in the text (SC; dep §2.3c; D §11.4) | current | Restated |
 | 9-5 | Updated 2026-10-01 (anger strand): Eph 4:26–27 is now read. The verse ties the "opportunity to the devil" to anger kept past sunset: "do not let the sun go down on your anger, and give no opportunity to the devil". That is woven. A general model of how the devil gains ground is not stated and stays held | current | Restated |
 | 9-6 | Flesh (Jam 1:14), devil, world as three sources (Eph 2:2–3) | held | Held |
@@ -1392,7 +1533,7 @@ File `—` (v—) · deferred · deferred
 | Origin | Verdict | Claims |
 |---|---|---|
 | narrative | Corrected | 2 |
-| narrative | New | 261 |
+| narrative | New | 309 |
 | narrative | Restated | 1 |
 | original essay | Corrected | 1 |
 | original essay | Held | 9 |
@@ -1401,4 +1542,4 @@ File `—` (v—) · deferred · deferred
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 15 |
 
-345 claims; 273 told in the narrative, 72 not.
+393 claims; 324 told in the narrative, 69 not.
