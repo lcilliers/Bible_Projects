@@ -101,4 +101,11 @@ Parked with Claude: #2171, #2172 (its catch-up rows are #2266) and #2235.
 
 ## 6. Git
 
-_(written after the first commit)_
+- Branch: `main`
+- Commit: `5cb71260` session 20261024: #2161 M72 scope measured and item set drafted (plan v2, for review); #2259 …
+- Push output:
+
+```
+To https://github.com/lcilliers/Bible_Projects.git
+   a7a2e712..5cb71260  main -> main
+```
