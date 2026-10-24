@@ -1,4 +1,4 @@
-"""reading handlers -- work package `reading` (#2228).
+"""reading handlers -- work package `reading` (#2228; phases #2273).
 
 One handler per Reading.ps1 step, dispatched through run.py (cfg_behaviour_rule 43). The logic is in
 lib/reading.py; a handler checks the caller, opens the step's write grants and turns a lib Refused into the
@@ -53,6 +53,14 @@ def open(ctx: Ctx) -> Outcome:  # noqa: A001 -- the step's name
     return _write(ctx, lambda w: rd.open_(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT, file_request))
 
 
+def gather(ctx: Ctx) -> Outcome:
+    return _write(ctx, lambda w: rd.gather(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT))
+
+
+def observe(ctx: Ctx) -> Outcome:
+    return _write(ctx, lambda w: rd.observe(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT))
+
+
 def record(ctx: Ctx) -> Outcome:
     return _write(ctx, lambda w: rd.record(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT))
 
@@ -67,6 +75,10 @@ def synergy(ctx: Ctx) -> Outcome:
 
 def apply(ctx: Ctx) -> Outcome:
     return _write(ctx, lambda w: rd.apply(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT), export=True)
+
+
+def narrate(ctx: Ctx) -> Outcome:
+    return _write(ctx, lambda w: rd.narrate(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT), export=True)
 
 
 def publish(ctx: Ctx) -> Outcome:

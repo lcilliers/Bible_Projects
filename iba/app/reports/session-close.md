@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-24T14:28:43Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-24T17:10:59Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `bb615804-3b33-4dff-a1c9-ed101162c56f` (CLAUDE_CODE_SESSION_ID); started 2026-10-24T05:09:07Z; window base commit `d90e6efc0d59e24bcde9515bf14daedef58ef628`
-- compliance file: `Logs/compliance/COMPLIANCE-20261024-bb615804.md`; session log: `Logs/SESSION-LOG-20261024-config-aligned-to-reading-method.md`
-- **open findings: 0**; cleared by disposition: 3
+- session: `8e8a0eb9-e5eb-4c11-9e80-1516940a35ed` (CLAUDE_CODE_SESSION_ID); started 2026-10-24T14:31:10Z; window base commit `ce33f51124a283cec5b0af8dc333bc27f7425e10`
+- compliance file: `Logs/compliance/COMPLIANCE-20261024-8e8a0eb9.md`; session log: `Logs/SESSION-LOG-20261024-reading-phases-b1-b2.md`
+- **open findings: 0**; cleared by disposition: 0
 
 
 ## Contents
@@ -41,7 +41,7 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:7c3812f6`: researcher message 2026-10-24T06:01 is in no escalation comment written this session: "I will work on my responses, but will only submit it in about 2 hours when we have tokens again to work with." -- disposition: no record needed: a scheduling note (the researcher would submit the rulings in about two hours); no decision or instruction to record
+_no finding_
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -79,9 +79,8 @@ _no finding_
 ## SC12 Publish
 
 - narrative copy: not needed (no chapter changed)
-- threads register export: RUN (a thread row changed)
+- threads register export: not needed (no thread row changed)
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: [31;1m.\iba\app\ps\Escalation.ps1: [31;1mThe term '.\iba\app\ps\Escalation.ps1' is not recognized as a name of a cmdle; escalation #2260 v5 -> state='in-progress', next_action='review', assigned_to='Claude' -- disposition: fixed: both failures were the working directory left at outputs/escalation by an earlier cd, so .\iba\app\ps\Escalation.ps1 did not resolve; each update was re-run from the project root and applied (#2268 v12)
-- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: work package : configuration-maintenance -- disposition: fixed: both were report-stops of a working validate, not tool failures: the first found the #2268 migration not yet registered (#2269, resolved), the second carried advisory findings to #2270; the latest validate (RUN-20261024_152425_715-CONFIGMAINT) is ok
+_no finding_

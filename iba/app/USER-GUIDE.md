@@ -480,7 +480,7 @@ iba\app\ps\Narrative-Register.ps1 -Action QuoteCheck -File <chapter.md> [-Agains
 one current telling per claim and block). The chapter files are exports: each change to a block is
 followed by the chapter written from the database as its next version, and the file it replaces
 moves to the folder's `archive/`. The narrative text is written through `Reading.ps1 -Step
-Apply` (section 8.2), never in a chapter file.
+Narrate` (section 8.2), never in a chapter file.
 
 **Actions:**
 - **`EditSection`** renames a block (the old row stays as history and its tellings move to the
@@ -506,83 +506,106 @@ Apply` (section 8.2), never in a chapter file.
 
 ### 8.2 A reading (`iba/app/ps/Reading.ps1`)
 
-The reading process (#2228, design `outputs/escalation/2228-reading-process-design-v2-20261023.md`):
-a **reading** is the work on one scope, anchored on a task or issue, and passes three gates in order.
-Each gate is checked by the tool from the tables, not asserted. Claude reads and writes in the session;
-the app resolves the scope, gives everything already known, writes the records as rows and checks.
-Write steps take `-By Claude|Researcher`; a refusal writes nothing. Files go to `reading.output_dir`,
-one folder per reading.
+The reading process (#2228; on the phases of the analytic process, #2273, design
+`outputs/escalation/2273-2274-reading-phases-and-observation-record-design-v6-20261024.md`): a
+**reading** is the work on one scope with its objective, anchored on a task or issue. It passes four
+gates in order: pre, observe, claims, narrate. Each gate is checked by the tool from the tables, not
+asserted. Claude reads and writes in the session; the app resolves the scope, gives everything already
+known, writes the findings as rows and checks. Write steps take `-By Claude|Researcher`; a refusal
+writes nothing. Files go to `reading.output_dir`, one folder per reading.
 
 ```powershell
-iba\app\ps\Reading.ps1 -Step Open -Label anger-bosom -Escalation 2172 -Home M02 -Strong H2436 -By Claude
-iba\app\ps\Reading.ps1 -Step Record -Label anger-bosom -By Claude          # the gap JSON, filled
-iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # gate 1
+iba\app\ps\Reading.ps1 -Step Open -Label anger-bosom -Escalation 2172 -Home M02 -Objective "what the bosom shows of anger" -Strong H2436 -By Claude
+iba\app\ps\Reading.ps1 -Step Gather -Label anger-bosom -By Claude          # the pre-gap JSON, filled
+iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # pre gate
+iba\app\ps\Reading.ps1 -Step Observe -Label anger-bosom -By Claude
+iba\app\ps\Reading.ps1 -Step Record -Label anger-bosom -By Claude          # the observe JSON, filled
+iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # observe gate
 iba\app\ps\Reading.ps1 -Step Synergy -Label anger-bosom -By Claude
 iba\app\ps\Reading.ps1 -Step Apply -Label anger-bosom -By Claude           # the synergy JSON, filled
-iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # gate 2
-iba\app\ps\Reading.ps1 -Step Publish -Label anger-bosom -By Claude         # gate 3
+iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # claims gate
+iba\app\ps\Reading.ps1 -Step Narrate -Label anger-bosom -By Claude         # the narrate JSON, filled
+iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # narrate gate
+iba\app\ps\Reading.ps1 -Step Publish -Label anger-bosom -By Claude
 iba\app\ps\Reading.ps1 -Step Account -Label anger-bosom
 ```
 
-States: `open` -> `recorded` -> `synergised` -> `published`.
+States: `open` -> `gathered` -> `observed` -> `synergised` -> `narrated` -> `published`.
 
-- **`Open`** takes the scope selectors of `iba/app/ps/Verse-Scope.ps1` (section 8.3; a selection above 2,500
-  verses is held until `-Reviewed`), `-Escalation` (an open task or issue) and `-Home` (the cluster
-  new observations are grounded under; `-Home` is the alias of `-HomeCluster`, since PowerShell's
-  `$HOME` is read-only). A list of codes is quoted: `-OnlyStrong 'H0977,H0972'`. It keeps the verses (`reading_verse`), collates the scope
-  (section 8.5; `<label>-collation.json`) and writes the **gap JSON** (`<label>-gaps.json`): one
-  section per gap type of the recording phase, each with its guide text. The gap types are config:
-  `cfg_enum reading_gap_type` and `cfg_setting reading.gap_types` (phase, guide, the table each
-  records into). Adding a gap type is a config change.
-- **`Record`** (gate 1 work) writes each item's `record`:
-  - `{"new": {...}}`: an observation (text, meaning, basis, setting, implication, chain, parties,
-    `verses: [{"verse", "strong"}]`, `supersedes`), quote-checked against the ESV text; or a face on a
-    strand hit (`face`, `parties`, `observation`, or `reason`); or, for an open item, `{"response":
-    "..."}`, written as a `touched` response.
-  - `{"table", "id"}`: an existing row that covers the item.
-  - `{"reason": "..."}`: nothing to record, and why.
+**What a reading records: findings (#2274).** A finding is one `ib_observation`: its text, meaning,
+implication, basis (stated or read), its kind as tag and, on a party or link finding, its route. Its
+`ib_node` rows apply it to every verse and word it covers, each with the word's own cluster, the word's
+role in the finding (characteristic, qualifier, standalone), the reading that applied it, and later
+where the verse ends up (disposition). The kinds (`cfg_setting reading.observation_parts`): face,
+qualification, party, statement, link, use, term, silence. A description already live is never written
+again: the finding names it as `existing` and gains nodes. Every change to a finding or a node is kept
+with its reason in `ib_observation_change`. The finding shape (`iba/app/lib/observationrecord.py`):
 
-  New open items go in `new_items`, in the `Open-Item.ps1 -Action Add` shape (D-b). The ids are
-  written back into the file, so the JSON is the reading's record. A meaning gap takes no new row
-  here: pull it through its own route and name the row.
-- **`Check`** passes **gate 1** when every item has an id that exists, or a reason, and every new
-  item is added. The reading's verses are then marked `analysed`. This is the only way a verse
-  becomes `analysed` (D-c); `Verse-Meta` refuses it.
-- **`Synergy`** builds the **synergy JSON** by reading all the tables for the scope, never memory
-  (B:114). It lists:
-  - every live observation on the scope, with the claims that carry it;
-  - every current or held claim resting on the scope's verses or observations, with where it is told;
-  - every block citing the scope or telling those claims, with its text;
-  - every open item matched to the scope, with what gate 1 recorded for it.
-- **`Apply`** (gate 2 work) refuses a file not built by this reading's last Synergy. It writes:
-  - new claims (each resting on observations or verses, the source naming its observation), edits
-    and withdrawals;
-  - each observation's claim, or its disposition (`held` on an item or a `new_item`, `silent`,
-    `withdrawn`);
-  - tellings (`tell`), and claims held (`hold`);
-  - blocks rewritten whole (`rewrite`, the `Narrative-Register` rewrite shape; cited verses marked
-    `citated`);
-  - each matched open item settled: `closed` with its answer, `withdrawn`, `superseded` by a named
-    item, or `forward` to a new item (added, and the old one superseded by it). An item whose target
-    reaches past the reading's verses may instead be `touched` with what was `found`: it is read in
-    part and stays open under its own handle, to be closed by the reading that reads the rest (#2250).
-    An item lying wholly inside the reading cannot be `touched`.
+```json
+{"key": "f1", "kind": "qualification", "text": "...", "meaning": "...", "basis": "stated",
+ "nodes": [{"verse": "Jon 1:10", "strong": "H1419A", "cluster": "T2", "role": "qualifier"},
+           {"verse": "Jon 1:10", "strong": "H3372G", "cluster": "M01", "role": "characteristic"}]}
+```
 
-  Open items are closed only here, after synergy, never at gate 1.
-- **`Check`** passes **gate 2** when:
-  - every observation on the scope is carried by a current claim, or held or silent;
-  - every current claim on the scope is told in a block, or held;
-  - every open item in the synergy JSON is settled, or read in part by this reading.
-- **`Publish`** (gate 3) publishes each chapter the reading touched whose file differs from the
-  database. It copies the chapters to the learning4comfort inbox (section 8.6) and checks each touched
-  chapter is there byte-identical.
-- **`Account`** writes the reading from the tables: its gates, and the gaps at the gate it is at.
+A word with no cluster gets no node (a node is a classification); it is carried in the finding's text.
+A qualifier is evaluated for what it gives the characteristic, recorded as a qualification finding.
+
+- **`Open`** (0.C) takes `-Objective` (required: it defines the home of what the reading records), the
+  scope selectors of `iba/app/ps/Verse-Scope.ps1` (section 8.3; a selection above 2,500 verses is held
+  until `-Reviewed`), `-Escalation` (an open task or issue) and `-Home` (the cluster the scope is
+  anchored on; `-Home` is the alias of `-HomeCluster`). A list of codes is quoted:
+  `-OnlyStrong 'H0977,H0972'`. It keeps the verses (`reading_verse`), collates the scope (section 8.5;
+  `<label>-collation.json`) and writes the **pre-gap JSON** (`<label>-gaps.json`): one section per gap
+  type of phase `pre`, each with its guide text. The gap types are config: `cfg_enum reading_gap_type`
+  and `cfg_setting reading.gap_types` (phase pre, observe, post or narrate; guide; the table each
+  records into).
+- **`Gather`** (0.GAP pre) writes each pre-gap item's `record`: `{"finding": {...}}` (a finding,
+  quote-checked against the ESV text), `{"table", "id"}` (an existing row), `{"reason": "..."}`, a
+  face on a strand hit (`face`, `parties`, `observation`, or `reason`), or for an open item
+  `{"response": "..."}` (a `touched` response). New open items go in `new_items` (the
+  `Open-Item.ps1 -Action Add` shape). The ids are written back into the file.
+- **`Check`** passes the **pre gate** when every item has a row that exists or a reason, and every new
+  item is added.
+- **`Observe`** builds the **observe JSON** from the tables: per verse its passage, every finding
+  already applied to it with its nodes (RO2), and the **words in focus** (`cfg_setting
+  reading.focus_words`: every M-coded word, every word in `reading.non_characteristic_strongs`, every
+  T2 qualifier that is not a function word by its morph, every T5 negator); the claims on the scope;
+  and the catalogue's one-verse questions as prompts by kind (`reading.observe_prompts`; a prompt that
+  does not apply is not answered).
+- **`Record`** (D4 observe) refuses a file not built by this reading's last Observe. It writes the
+  `findings`; the `withdraw` list (a node or a finding no longer supported, with its reason); and each
+  word's `record` where no finding is applied to it: `{"reason"}`, `{"item": "OT-nn.n|#n"}` or
+  `{"new_item": {...}}`.
+- **`Check`** passes the **observe gate** when every word in focus has a live node of this reading,
+  an open item or a reason, and every finding in the file is written. The reading's verses are then
+  marked `analysed`, the only way a verse becomes `analysed`.
+- **`Synergy`** builds the **synergy JSON** from the tables (B:114): the reading's findings with their
+  live nodes, the current or held claims on the scope (with whether each rests on a finding), and the
+  open items matched to the scope.
+- **`Apply`** (D4 claims) refuses a file not built by this reading's last Synergy. It writes new
+  claims (resting on findings or verses), edits and withdrawals; each finding's `dispose` for this
+  reading's nodes: `claim`, `held` (an item or a `new_item`), `data`, `context` or `withdrawn`, with its
+  reason or carrier; and each matched open item settled: `closed`, `withdrawn`, `superseded`,
+  `forward`, or `touched` for an item whose target reaches past the reading (#2250).
+- **`Check`** passes the **claims gate** when every node of this reading is disposed (a `claim`
+  disposition carried by a current claim), every current claim on the scope rests on a finding, and
+  every matched open item is settled or read in part. It then builds the **narrate JSON**.
+- **`Narrate`** writes tellings (`tell`), claims held (`hold`) and blocks rewritten whole (`rewrite`,
+  the `Narrative-Register` rewrite shape; cited verses marked `citated`), to the narrative rules on
+  `reading.narrate`. The nodes whose claim is told are marked `told`.
+- **`Check`** passes the **narrate gate** when every current claim on the scope is told or held, and
+  every verse of the reading cited in a block has a finding or a claim behind it.
+- **`Publish`** publishes each chapter the reading touched whose file differs from the database,
+  copies the chapters to the learning4comfort inbox (section 8.6) and checks each is there
+  byte-identical.
+- **`Account`** writes the reading from the tables: its objective, its gates, the findings it applied
+  and the gaps at the gate it is at.
 - **The close gate:** the escalation that anchors a reading cannot reach `completed` or `closed`
   while the reading is not published or withdrawn.
 
 **The strand steps are retired (#2228 D-a, 2026-10-23).** `iba/app/ps/archive/Strand-Reading.ps1` (history) and its handler are
 in `archive/`, and the four strands (fear, anger, life-death, origin-of-thought) are `superseded`.
-Their rows stay: their hits and faces are read as table sources. A hit still unread is a `hit_unread`
+Their rows stay: their hits and faces are read as table sources. A hit still unread is a `face_not_gathered`
 gap in any reading that reaches its verse. `lib/strandreading.py` stays as the library the reading
 reuses (observation checks, `derive_core`).
 
