@@ -1,9 +1,9 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-24T05:01:17Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-24T14:28:43Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `b413bd16-e724-4063-a93a-7cbb20748e50` (CLAUDE_CODE_SESSION_ID); started 2026-10-24T03:33:59Z; window base commit `a7a2e7129a0dc99fa03edda3b25c94df7e11278e`
-- compliance file: `Logs/compliance/COMPLIANCE-20261024-b413bd16.md`; session log: `Logs/SESSION-LOG-20261024-2161-m72-scope-and-observation-gaps.md`
+- session: `bb615804-3b33-4dff-a1c9-ed101162c56f` (CLAUDE_CODE_SESSION_ID); started 2026-10-24T05:09:07Z; window base commit `d90e6efc0d59e24bcde9515bf14daedef58ef628`
+- compliance file: `Logs/compliance/COMPLIANCE-20261024-bb615804.md`; session log: `Logs/SESSION-LOG-20261024-config-aligned-to-reading-method.md`
 - **open findings: 0**; cleared by disposition: 3
 
 
@@ -41,13 +41,12 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:a5e527c4`: researcher message 2026-10-24T03:42 is in no escalation comment written this session: "#2238 can be closed.  its mentions to continue with OT-97 (2098) which is a extended progressive open item that will be closed as clusters comes into focus.  #2" -- disposition: recorded in #2238 v2
+- cleared `SC3:7c3812f6`: researcher message 2026-10-24T06:01 is in no escalation comment written this session: "I will work on my responses, but will only submit it in about 2 hours when we have tokens again to work with." -- disposition: no record needed: a scheduling note (the researcher would submit the rulings in about two hours); no decision or instruction to record
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:a5e527c4`: researcher message 2026-10-24T03:42 holds, defers or asks to check something; name its register item: "#2238 can be closed.  its mentions to continue with OT-97 (2098) which is a extended progressive open item that will be closed as clusters comes into focus.  #2" -- disposition: in register #2098
-- cleared `SC4b:e42dd2bd`: researcher message 2026-10-24T03:49 holds, defers or asks to check something; name its register item: "#2245 can be closed.  the prose patch will be checked when it is next used, no need to follow up this test result issue." -- disposition: not held: the researcher closed #2245 with no follow-up (#2245 v2); the prose patch is checked in its next normal use, so nothing is held or deferred
+_no finding_
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -84,4 +83,5 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: [31;1m.\iba\app\ps\Escalation.ps1: [31;1mThe term '.\iba\app\ps\Escalation.ps1' is not recognized as a name of a cmdle; escalation #2260 v5 -> state='in-progress', next_action='review', assigned_to='Claude' -- disposition: fixed: both failures were the working directory left at outputs/escalation by an earlier cd, so .\iba\app\ps\Escalation.ps1 did not resolve; each update was re-run from the project root and applied (#2268 v12)
+- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: work package : configuration-maintenance -- disposition: fixed: both were report-stops of a working validate, not tool failures: the first found the #2268 migration not yet registered (#2269, resolved), the second carried advisory findings to #2270; the latest validate (RUN-20261024_152425_715-CONFIGMAINT) is ok

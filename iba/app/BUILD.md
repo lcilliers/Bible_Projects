@@ -19365,3 +19365,88 @@ own front door, `Copy-NarrativeToLearning4Comfort.ps1`, prints the report on pur
   and wrote nothing to stdout.
 - Before the fix, the #2228 regression run printed the copy report.
 - The live reading `m64-choose` was already published (2026-10-23T17:42:37Z, account v2: 0 gaps).
+
+## 406. The config aligned to the #2268 rulings: the reading method held as config (2026-10-24, escalation #2268)
+
+**Why:** the reading process (#2228) ran without the study's method. The method lived in Workflow files (the role guide v2, the observation-rules checklist), and most study rules were delivered only on `_analytics/**` paths, which a reading never touches. The researcher's rulings R1 to R19 (#2268 v13 to v18) set the method in config. The approved change set is `outputs/escalation/2268-config-alignment-change-set-v1-20261024.md` (approval #2268 v20).
+
+**What changed (config only):** the migration `iba/app/migration/archive/config_alignment_2268_v1_20261024.py` made 312 writes through `configmaint.apply_logged` (run `DEVMODE-2268-CONFIG-ALIGNMENT-20261024`; pre-run snapshot `iba/app/db/snapshots/iba-20261024T141426Z-pre-2268-config-alignment.db`):
+- **Behaviour rules (30 updates):**
+  - 15 reworded to the phases;
+  - 5 `enforced_by` texts corrected;
+  - B:13 corrected (research_db is prose only);
+  - B:68, B:73, B:84, B:85, B:86, B:87, B:88, B:90 and B:91 retired, with their scope links. Their content is in the new method rules.
+  - 13 new scope links deliver the reworded study rules at `Reading.ps1` and `Verse-Scope.ps1`.
+- **Method rules:** 60 new rows on the reading's steps, each in its step's family:
+  - `reading.open`: RM-01 to RM-04 and RO-*;
+  - `reading.record`: RG-01 to RG-19, RW-01 to RW-11, RO-*;
+  - `reading.check`: RO7, RO12;
+  - `reading.apply`: RN-01 to RN-07, RO9.
+
+  The hook delivers them at the first use of `Reading.ps1`. RC-01 to RC-07 (D1 and D2 in a session) are inactive until build B3 creates `word.read` and `cluster.read`. 91 method rules on the API and passage steps are retired; rule 77 is re-homed to `cluster.assign`; the base-data rules are kept.
+- **Quality checks:** the 18 passage checks retired; 21 new checks on `reading.check`.
+- **Settings and enums:**
+  - `reading.gap_types` and `cfg_enum reading_gap_type` (14 gap types, R13) replaced;
+  - `ib_observation.tag_guidance` gains `key-statement` (#2263);
+  - `governance.scope_iba_db` corrected;
+  - new settings: `reading.whole_cluster_reading_start`, `reading.observation_parts`, `glossary.currency_check`;
+  - new enums: `observation_role`, `observation_route`, `observation_disposition`, and stage `reading`;
+  - `strand_reading.output_dir` retired.
+- **Control map, tables and columns:**
+  - `cfg_control_home` study_method, study_state and study_output reworded;
+  - `cfg_table` and `cfg_column` texts corrected for `ib_observation`, `ib_node`, `verse_meta` and the catalogue;
+  - `cfg_status_flow` rows for `ib_observation` by stage (R14);
+  - six `cfg_prose_concept` glossary pointers (R9).
+
+**Left for the builds** (rows read by live code change with that code, B:62):
+- `reading.output_dir` and the cluster folder rule: B7;
+- the `lexical.llm_*` family, the Stage 1 caps, the similarity threshold and the meaning-source aliases: B3;
+- the `reading_strand_*` enums: B8;
+- the worked-examples table: B10;
+- the style guide setting: W-2;
+- the passage method's work packages, steps and `method.*` settings: B12. A first try that deactivated the passage work packages failed the copy test with 9 new coherence errors (their PS scripts, on-fail, report and write-grant rows).
+
+**Tests:** 15 of 15 on backup-API copies (`outputs/escalation/2268-config-alignment-test-results-v1-20261024.md`):
+- dry run;
+- apply;
+- validate before and after with no new coherence error;
+- re-run refused;
+- every write logged;
+- gap types match their enum;
+- 53 method rules reach `Reading.ps1` through the hook's own query;
+- retired rules have no live link;
+- the D1/D2 rules are held inactive;
+- the rows left for builds are unchanged;
+- a synthetic case (expected text missing) is refused with nothing written.
+
+Live: `Config-Maintenance.ps1 -Step Validate` (RUN-20261024_151439_857) reports cfg_* structurally coherent. Its advisory findings are on #2270: six orphan configs, which are the new rows awaiting their builds.
+
+## 407. The July method file and the narrative style guide held as config (2026-10-24, escalations #2271, #2272; #2268 W-1, W-2)
+
+**Why:** under #2268 R1, no rule lives only in a file. R11 asked for "what is relevant" from the July method file, with the rest archived. R4 asked for the narrative style to be predefined in config.
+
+**What changed (config only):**
+- `iba/app/migration/archive/method_file_2271_v1_20261024.py` (run `DEVMODE-2271-METHOD-FILE-20261024`, 8 writes) adds:
+  - method rules RG-20 to RG-25 on `reading.record`: read-back; grain; content words carry the impact and T2 never stands alone; never-characteristic words; the adverbial qualifier; the simile's tenor;
+  - `cfg_setting reading.non_characteristic_strongs` (H4210, H7892, H5329, H0341, H6862).
+- `iba/app/migration/archive/style_guide_2272_v1_20261024.py` (run `DEVMODE-2272-STYLE-GUIDE-20261024`, 17 writes):
+  - adds method rules RN-08 to RN-15 on `reading.apply`: the 'I read' limit; the five prohibited patterns; voice; words and terms; evidence and citation; silence; structure and format; external parties;
+  - adds four quality checks on `reading.check`: the let-Scripture-speak pass, the external-party check, the format check, self-review;
+  - retires `cfg_setting narrative.inner_being_style_guide_path` and its scope link;
+  - B:69's `enforced_by` and `cfg_control_home` study_method no longer name the guide.
+- **Archived** to `Workflow/Instructions/archive/`:
+  - `wa-verse-analysis-method-v1-20260702.md`;
+  - `wa-inner-being-narrative-style-guide-v2-20261001.md`;
+  - its two remaining July sources, `WA-inner-being-narrative-guidance-v1-2026-07-28.md` and `WA-inner-being-narrative-hard-constraints-v1-2026-07-30.md`.
+- **Not carried:**
+  - from the method file: `ve_lexical`, markers, genre, consecutive-run passages, term batching, book, chapter and segmentation reading, story filing, the Phase-1 derivation residuals;
+  - from the style guide: its history sections, its file-record steps, and its sec 9, which R4 superseded.
+  - The worked examples in both (Psa 1:1 and 1:5; the perek driver and restraint; the withdrawn imputations of sec 1.2) go to build B10 (#2282).
+
+**Tests:** 14 of 14 on a backup-API copy (`outputs/escalation/2271-2272-test-results-v1-20261024.md`):
+- dry run, apply and re-run refused, for each migration;
+- validate with no new coherence error;
+- the rows as intended;
+- 67 method rules reach `Reading.ps1` through the hook's query.
+
+Live: pre-run snapshot `iba/app/db/snapshots/iba-20261024T142400Z-pre-2271-2272.db`; `Config-Maintenance.ps1 -Step Validate` (RUN-20261024_152425_715) ok. The one new advisory (`reading.non_characteristic_strongs` read by no code yet) is on #2270.
