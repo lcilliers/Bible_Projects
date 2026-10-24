@@ -57,3 +57,7 @@ Claude's self-correctable fixes and execution choices (closed or recorded):
 - #2171, #2172, #2235, #2218 (OT-108): study work, on hold; Claude in a standard session.
 
 ## 6. Git
+
+- Branch: `main`
+- Commit: `d279147b43c6f90d12488b864daad657303984dc` ("session 20261024: #2273 and #2274 (#2268 B1, B2) the reading on its phases and the observation record as findings and their nodes; …")
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `ce33f511..d279147b  main -> main`
