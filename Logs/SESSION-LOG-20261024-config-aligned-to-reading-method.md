@@ -72,4 +72,6 @@ Claude's self-correctable fixes and execution choices (closed or recorded):
 
 ## 6. Git
 
-_(written after the first commit)_
+- Branch: `main`
+- Commit: `14cc963f0a19d4739561ba90aaaf0772d15e2610` ("session 20261024: #2268 the reading process measured against the study's expectations; … #2269 resolved, #2270 advisories with the researcher")
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `d90e6efc..14cc963f  main -> main`
