@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-25T08:50:26Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-25T15:42:34Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `8e8a0eb9-e5eb-4c11-9e80-1516940a35ed` (CLAUDE_CODE_SESSION_ID); started 2026-10-24T14:31:10Z; window base commit `ce33f51124a283cec5b0af8dc333bc27f7425e10`
-- compliance file: `Logs/compliance/COMPLIANCE-20261024-8e8a0eb9.md`; session log: `Logs/SESSION-LOG-20261025-b3-to-progressive-reading-parked.md`
-- **open findings: 0**; cleared by disposition: 4
+- session: `c7567398-c8c6-4d65-aec3-e2153d3def24` (CLAUDE_CODE_SESSION_ID); started 2026-10-25T08:52:33Z; window base commit `9aedb9745b1706ffd86e7562bef406b91915ff31`
+- compliance file: `Logs/compliance/COMPLIANCE-20261025-c7567398.md`; session log: `Logs/SESSION-LOG-20261025-work-unit-prototype.md`
+- **open findings: 0**; cleared by disposition: 2
 
 
 ## Contents
@@ -41,14 +41,13 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:4daa3a25`: researcher message 2026-10-25T07:06 is too short to be matched; name where it is recorded: "proceed with B3" -- disposition: recorded in #2275 v2
-- cleared `SC3:78546ca5`: researcher message 2026-10-25T08:49 is too short to be matched; name where it is recorded: "close the session" -- disposition: no record needed: the instruction to run session-close, carried out by this close
+_no finding_
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:602f9734`: researcher message 2026-10-25T07:34 holds, defers or asks to check something; name its register item: "The base data extract is incomplete, there is nothing about the verse-lexical data, or the meaning.  but I have anothing concern in relation to the timing of th" -- disposition: in register #2275
-- cleared `SC4b:4dc0e149`: researcher message 2026-10-25T08:46 holds, defers or asks to check something; name its register item: "I dont want to approve individual components, without understanding how the flow is practically going to work. so I suggest that we change the build process.  I" -- disposition: in register #2268
+- cleared `SC4b:97de6ee2`: researcher message 2026-10-25T15:13 holds, defers or asks to check something; name its register item: "before proceeding to build the surface table and sub groups, I want to revisit the scope thinking.  analysis process entry point is defined by the verse collect" -- disposition: in register #2286
+- cleared `SC4b:2b22885c`: researcher message 2026-10-25T15:29 holds, defers or asks to check something; name its register item: "S1 and S2 is linked. Until all the verses have been analysed, it must be assumed that the scope subgroup is the home. I can envisage that a second reading of th" -- disposition: in register #2290
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
