@@ -64,3 +64,8 @@ _(one line per rule: `- <id>: <the conflict, both sides named / why it is not or
 
 _(session-close: one line per finding still open: `- <finding key> :: fixed` | `:: carried OT-nn.n` / `:: carried #nnnn` | `:: no record needed: <reason>` (SC3 only) | `:: in register OT-nn.n` / `#nnnn` (SC4))_
 
+- SC3:4daa3a25 :: recorded in #2275 v2
+- SC3:78546ca5 :: no record needed: the instruction to run session-close, carried out by this close
+- SC4b:602f9734 :: in register #2275
+- SC4b:4dc0e149 :: in register #2268
+

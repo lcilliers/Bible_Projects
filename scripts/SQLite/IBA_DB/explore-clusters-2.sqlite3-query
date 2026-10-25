@@ -47,7 +47,7 @@ ORDER BY v.id;   -- canonical order, if verse.id follows Bible order
 
 WITH targets(base) AS (
   select strong as base from cluster_strong
-  where cluster_strong.cluster_code = 'm64'
+  where cluster_strong.cluster_code = 'M42'
 ),
 thought_verses AS (
   SELECT DISTINCT vl.verse_id
@@ -65,133 +65,24 @@ WHERE vl.deleted = 0
 GROUP BY c.cluster_code, c.short_name, vl.strong, s.stepGloss;
 
 select * from cluster
-where cluster_code = 'M12';
+where cluster_code = 'M42';
 
 select * from cluster;
 
 
-Select C.cluster_code
-,C.short_name
-,COUNT(CS.strong) as strong_count
- from cluster C
- INNER JOIN cluster_strong CS
- ON C.cluster_code = CS.cluster_code
-WHERE C.deleted = 0
-and CS.strong in ('H4284', 'H2803', 'H7454','H7475', 'H8312', 'H5587', 'H7476', 'H6248', 'G1261', 'G1761', 'G1270', 'G3540', 'G1271', 'G3053')  
-GROUP BY C.cluster_code, C.short_name
-ORDER BY strong_count DESC
-;
-
--- Rewritten 2026-09-25 (v2): the original joined span.strong_variant (a
--- space-delimited list of Strong's codes) to targets/strong via
--- leading-wildcard LIKE on both sides -- unindexable, degenerates into a
--- nested-loop scan doing string concat + pattern match per
--- span-in-thought-verses x strong pair (~45M comparisons here) -- that's the
--- stall. v1 fixed this with a hand-rolled recursive-CTE tokenization of
--- strong_variant (~3s). v2 drops that entirely: verse_lexical is the DB's
--- own materialized one-row-per-Strong's-code-within-a-span table (cfg_table
--- use text: "DERIVED... never by re-deriving from span/strong/
--- strong_meaning_parsed directly") -- exactly the split v1 was doing by
--- hand, pre-built and indexed on both strong and verse_id. Verified same
--- result set as v1, ~1s, no recursion needed.
--- (NOT strong_verse: that table is a partial audit/assertion table -- "the
--- source's assertion 'this strong is in this verse', the check side against
--- span" -- only 4,546 of 15,455 Strong's codes, missing grammatical
--- particles like H9002 "and" entirely. Wrong scope for this query.)
-WITH targets(base) AS (
-  VALUES ('H2803'),('H4284'),('H4209'),('H6250'),('H7454'),('H7475'),('H8312'),
-         ('H5587'),('H7476'),('H6248'),('G1261'),('G1761'),('G1270'),('G3540'),
-         ('G1271'),('G3053')
-),
-thought_verses AS (
-  SELECT DISTINCT vl.verse_id
-  FROM verse_lexical vl
-  JOIN targets t ON vl.strong LIKE t.base || '%'
-  WHERE vl.deleted = 0
-)
-SELECT c.cluster_code, c.short_name, vl.strong AS strongNumber, s.stepGloss,
-       COUNT(DISTINCT vl.verse_id) AS shared_verses
-FROM verse_lexical vl
-JOIN thought_verses tv ON tv.verse_id = vl.verse_id
-JOIN strong s          ON s.strongNumber = vl.strong
-JOIN cluster_strong cs ON cs.strong = vl.strong
-JOIN cluster c         ON c.cluster_code = cs.cluster_code
-WHERE vl.deleted = 0
-  AND NOT EXISTS (SELECT 1 FROM targets t WHERE vl.strong LIKE t.base || '%')
-GROUP BY c.cluster_code, c.short_name, vl.strong, s.stepGloss
-ORDER BY shared_verses DESC;
-
--- 2026-09-27: every M47 (Inner Seat) occurrence that shares its verse with at
--- least one OTHER M-code (cluster_code LIKE 'M%', excluding M47 itself) --
--- verses where M47 is the only M-code present are excluded. One row per M47
--- occurrence (vl.id), with the other M-codes/words in that verse rolled up
--- via GROUP_CONCAT. "M-code" = cluster_code LIKE 'M%', i.e. content clusters,
--- as opposed to T-codes (grammar/party/structural buckets like T2
--- Supplementary, T8 Party-Human) which are deliberately excluded from both
--- sides of the comparison -- sanity-checked against Pro 15:11 (M47 "hearts"
--- with no other M-code in the verse), which correctly does not appear.
--- other_m_hits is scoped to verse_ids already known to contain M47 (not the
--- whole verse_lexical table) to keep this fast: ~1s vs ~9.5s unscoped, same
--- 2,832 rows either way.
-WITH m01_hits AS (
-  SELECT vl.id AS vl_id, vl.verse_id, vl.strong AS m47_strong, vl.surface AS m47_surface
-  FROM verse_lexical vl
-  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M64'
-  JOIN cluster mc ON mc.cluster_code = cs.cluster_code AND mc.deleted = 0
-  WHERE vl.deleted = 0
-),
-other_m_hits AS (
-  SELECT vl.verse_id, vl.strong, vl.surface, cs.cluster_code, c.short_name
-  FROM verse_lexical vl
-  JOIN cluster_strong cs ON cs.strong = vl.strong
-  JOIN cluster c ON c.cluster_code = cs.cluster_code AND c.deleted = 0
-  WHERE vl.deleted = 0
-    AND cs.cluster_code LIKE 'M%' AND cs.cluster_code <> 'M64'
-    AND vl.verse_id IN (SELECT verse_id FROM m01_hits)
-)
-SELECT
-  v.reference,
-  m.m47_strong,
-  ms.stepGloss AS m47_gloss,
-  m.m47_surface,
-  GROUP_CONCAT(DISTINCT o.cluster_code || ':' || o.short_name) AS other_m_clusters,
-  GROUP_CONCAT(DISTINCT o.strong || ' (' || o.surface || ')') AS other_m_words,
-  v.text
-FROM m47_hits m
-JOIN verse v ON v.id = m.verse_id
-JOIN other_m_hits o ON o.verse_id = m.verse_id
-LEFT JOIN strong ms ON ms.strongNumber = m.m47_strong
-GROUP BY m.vl_id, v.reference, m.m47_strong, ms.stepGloss, m.m47_surface, v.text
-ORDER BY v.reference;
-
--- 2026-09-27: pairwise version of the above, per Claude Chat's review of the
--- rolled-up export -- it flagged that co-occurrence-in-verse alone can't
--- distinguish a real link ("my heart rejoices") from two words that just
--- happen to share a long/narrative verse ("king ... heart ... over all
--- Israel"), and asked for word position/distance since that needs the DB.
--- One row per (M47 occurrence, other-M-code occurrence) PAIR -- not rolled
--- up -- with each word's verse_lexical.position (word/tag order within the
--- verse) and their absolute distance. Small distance = adjacent/likely
--- phrase-connected; large distance = same verse only, probably narrative
--- co-occurrence (exactly the M72/M42/M61 "king", "declares the Lord", "Holy
--- Spirit" inflation Claude Chat called out). Verse text dropped (not needed
--- -- already read). Noise-phrase filtering, thematic batching, and
--- spirit-classification (which "kind" of spirit) are Claude Chat's own next
--- analytical pass, not baked in here -- this only adds what only the DB can
--- give: the distance.
 WITH CL_hits AS (
   SELECT vl.id AS vl_id, vl.verse_id, vl.position AS cl_position,
          vl.strong AS cl_strong, vl.surface AS cl_surface
   FROM verse_lexical vl
-  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M64'
+  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M48'
   JOIN cluster mc ON mc.cluster_code = cs.cluster_code AND mc.deleted = 0
   WHERE vl.deleted = 0
 ),
-WITH CL_hits AS (
+SQL_hits AS (
   SELECT vl.id AS vl_id, vl.verse_id, vl.position AS cl_position,
          vl.strong AS cl_strong, vl.surface AS cl_surface
   FROM verse_lexical vl
-  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M64' AND cs.deleted = 0
+  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M48' AND cs.deleted = 0
   JOIN cluster mc ON mc.cluster_code = cs.cluster_code AND mc.deleted = 0
   WHERE vl.deleted = 0
 ),
@@ -204,7 +95,7 @@ other_m_hits AS (
   JOIN cluster c ON c.cluster_code = cs.cluster_code AND c.deleted = 0
   WHERE vl.deleted = 0
     AND cs.cluster_code LIKE 'M%'
-    AND cs.cluster_code <> 'M64'
+    AND cs.cluster_code <> 'M48'
     AND vl.verse_id IN (SELECT verse_id FROM CL_hits)
 )
 SELECT
@@ -212,7 +103,8 @@ SELECT
   m.cl_strong, ms.stepGloss AS cl_gloss, m.cl_surface, m.cl_position,
   o.other_strong, os.stepGloss AS other_gloss, o.other_surface,
   o.other_cluster_code, o.other_cluster_name, o.other_position,
-  ABS(m.cl_position - o.other_position) AS distance
+  ABS(m.cl_position - o.other_position) AS distance,
+  v.text
 FROM CL_hits m
 JOIN verse v ON v.id = m.verse_id
 JOIN other_m_hits o ON o.verse_id = m.verse_id

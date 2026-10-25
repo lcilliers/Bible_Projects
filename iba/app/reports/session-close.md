@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-24T17:10:59Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-25T08:50:26Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `8e8a0eb9-e5eb-4c11-9e80-1516940a35ed` (CLAUDE_CODE_SESSION_ID); started 2026-10-24T14:31:10Z; window base commit `ce33f51124a283cec5b0af8dc333bc27f7425e10`
-- compliance file: `Logs/compliance/COMPLIANCE-20261024-8e8a0eb9.md`; session log: `Logs/SESSION-LOG-20261024-reading-phases-b1-b2.md`
-- **open findings: 0**; cleared by disposition: 0
+- compliance file: `Logs/compliance/COMPLIANCE-20261024-8e8a0eb9.md`; session log: `Logs/SESSION-LOG-20261025-b3-to-progressive-reading-parked.md`
+- **open findings: 0**; cleared by disposition: 4
 
 
 ## Contents
@@ -41,12 +41,14 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-_no finding_
+- cleared `SC3:4daa3a25`: researcher message 2026-10-25T07:06 is too short to be matched; name where it is recorded: "proceed with B3" -- disposition: recorded in #2275 v2
+- cleared `SC3:78546ca5`: researcher message 2026-10-25T08:49 is too short to be matched; name where it is recorded: "close the session" -- disposition: no record needed: the instruction to run session-close, carried out by this close
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-_no finding_
+- cleared `SC4b:602f9734`: researcher message 2026-10-25T07:34 holds, defers or asks to check something; name its register item: "The base data extract is incomplete, there is nothing about the verse-lexical data, or the meaning.  but I have anothing concern in relation to the timing of th" -- disposition: in register #2275
+- cleared `SC4b:4dc0e149`: researcher message 2026-10-25T08:46 holds, defers or asks to check something; name its register item: "I dont want to approve individual components, without understanding how the flow is practically going to work. so I suggest that we change the build process.  I" -- disposition: in register #2268
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
