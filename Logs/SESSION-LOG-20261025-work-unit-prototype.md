@@ -64,3 +64,7 @@ Claude's self-correctable fixes and execution choices (closed or recorded):
 - #2171, #2172, #2235, #2218: on hold.
 
 ## 6. Git
+
+- Branch: `main`
+- Commit: `d58bee12ad2e8f1090e94d3d009c42b749eaf8d6` ("session 20261025: #2286 work unit prototyped: …")
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `9aedb974..d58bee12  main -> main`
