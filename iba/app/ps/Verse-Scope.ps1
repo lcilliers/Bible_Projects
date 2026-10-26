@@ -1,6 +1,7 @@
 <#
 .SYNOPSIS
-    The scope resolver (escalation #2228): any request -> the collection of verses, as a JSON file.
+    The scope resolver (escalation #2228; occurrence-shaped, #2295): any request -> the collection of
+    verses with their occurrences, as a JSON file.
 
 .DESCRIPTION
     Selectors add verses and are combined as a union; -OnlyStrong narrows the result to the verses
@@ -8,10 +9,18 @@
     (cfg_behaviour_rule bare-strong-decomposed-to-derivatives). Every verse carries the route that
     brought it in; what does not resolve is listed with its reason. Reads only.
 
+    Each verse lists its occurrences (one verse_lexical row each): an M-coded word with its subgroup,
+    cluster, two-sense flag, whether it brought the verse in and whether it is in the home; other
+    words as context. A mapped M cluster and a subgroup enter through their (code, surface) pairs; a
+    word enters through its surface, never word_strong (cfg_behaviour_rule 119). The home is -Home,
+    else the subgroups and M clusters named; a qualifier group or a T cluster is never a home
+    (cfg_behaviour_rule 120). A thread item of kind scope gives its stored verses.
+
       -Cluster M02[,M01]            -Subgroup <subgroup_code>     -Strand <code>      -Word <word>
       -Strong "H0430,G3563G"        -Verse "Psa 10:2; Luk 14:12-14; Rom 8"
       -Chapter 13 [-Section "<heading>"]                         -Claim C-330
       -Observation 12478            -Item OT-108.3                -Thread OT-108
+      -Home M18_desire[,M18]        the home (a subgroup or an M cluster), when not the ones named
       -File <request.json>          the same keys as lists (a batch or a kept group)
       -OnlyStrong "H3708A"          filter
       -Reviewed "<the review>"      a result over verse_scope.max_verses (2500) is held for review;
@@ -33,7 +42,9 @@ param(
     [string] $Label,
     [string] $Cluster, [string] $Subgroup, [string] $Strand, [string] $Word, [string] $Strong,
     [string] $Verse, [string] $Chapter, [string] $Section, [string] $Claim, [string] $Observation,
-    [string] $Item, [string] $Thread, [string] $File, [string] $OnlyStrong, [string] $Reviewed,
+    # -Home is an alias of HomeScope: a variable named Home would be PowerShell's read-only HOME (#2248)
+    [string] $Item, [string] $Thread, [Alias('Home')] [string] $HomeScope, [string] $File, [string] $OnlyStrong,
+    [string] $Reviewed,
     [switch] $Trace
 )
 
@@ -51,9 +62,10 @@ $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-VERSESCOPE"
 
 $paramArgs = @()
 foreach ($name in @('Label', 'Cluster', 'Subgroup', 'Strand', 'Word', 'Strong', 'Verse', 'Chapter', 'Section',
-                    'Claim', 'Observation', 'Item', 'Thread', 'File', 'OnlyStrong', 'Reviewed')) {
+                    'Claim', 'Observation', 'Item', 'Thread', 'HomeScope', 'File', 'OnlyStrong', 'Reviewed')) {
     $value = Get-Variable -Name $name -ValueOnly
-    if ($PSBoundParameters.ContainsKey($name)) { $paramArgs += @('--param', "$name=$value") }
+    $key = if ($name -eq 'HomeScope') { 'Home' } else { $name }   # run.py's parameter is Home
+    if ($PSBoundParameters.ContainsKey($name)) { $paramArgs += @('--param', "$key=$value") }
 }
 
 Write-IbaRunHeader -WorkPackage 'verse-scope' -Step $stepId -RunId $runId

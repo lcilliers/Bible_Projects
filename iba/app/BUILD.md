@@ -19613,3 +19613,47 @@ Live: pre-run snapshot `iba/app/db/snapshots/iba-20261025T210410Z-pre-2294-readi
 **What changed in config:** `cfg_method_rule` RO13 `segment-large-subgroup` on `reading.open` (ordinal 68). It is delivered as context with reading.open's rules, and no code enforces it. The change is `iba/app/migration/archive/large_subgroup_segment_2298_v1_20261026.py`, run `DEVMODE-2298-LARGE-SUBGROUP-20261026` (2 writes). It was tested on a copy, and a rerun makes no writes.
 
 **Also:** answers on #2298: Q1 the bulk mapping accepted; Q2 c, the 147 anomaly pairs stay until a reading meets them. #2301 Q4: a kept backup was taken before any pruning, `iba/app/db/iba.db.pre-2301-prune-20261026.bak`. The pruning is held to 2026-10-28 or later, for validation.
+
+## 416. The scope resolver, occurrence-shaped (2026-10-26, escalations #2295, #2287; #2286 U5)
+
+**Why:** behaviour rules B:119 to B:122 call for a scope that enters through the surface, keeps a home, shows the other subgroups of a verse without adding verses, and reads per occurrence (build plan `outputs/escalation/2286-build-plan-v4-20261025.md` section 6, U5). #2287 found the resolver dropping thread items of kind scope and claim sources of kind observation.
+
+**What changed:**
+- `iba/app/lib/versescope.py`: the answer carries `"version": 2`, the `home`, and per verse its occurrences (an M-coded word with its subgroup, cluster, kind, two-sense flag, `in_scope`, `home`, `settled_by`; `unplaced` where it has no pair) and the other clustered words as `context`.
+  - A mapped M cluster and a subgroup enter through their (code, surface) pairs, matched on the trimmed, lower-cased surface as `surfacemap.norm` holds it; a T cluster, a strand and an unmapped cluster through their codes.
+  - A word enters through its surface (`Resolver.word`), never `word_strong`; surfaces holding the word among others are listed, not taken.
+  - A current `subgroup-settlement` observation (not withdrawn, not superseded) moves its occurrence to its subgroup (`settlements`).
+  - The home is `-Home` or the subgroups and M clusters named; a qualifier group is refused as a subgroup selector or a home, a T cluster as a home.
+  - A thread item of kind scope gives its stored verses; a claim source of kind observation is followed to its nodes (`node_occurrences`, which places a node on its one occurrence, or on none where it matches several).
+- `iba/app/handlers/versescope.py` reports the home and occurrence counts; `iba/app/ps/Verse-Scope.ps1` gains `-HomeScope` (alias `-Home`; a variable named Home is PowerShell's read-only HOME, #2248).
+- `iba/app/lib/reading.py` `open_` passes the home: the request's subgroups of the home cluster, else the home cluster; a T home is refused.
+- `iba/app/lib/versecollate.py` carries each verse's occurrences and the scope's version and home.
+- Config: `iba/app/migration/archive/scope_resolver_2295_v1_20261026.py` (run `DEVMODE-2295-SCOPE-RESOLVER-20261026`, 4 writes): `verse_scope.resolve`'s description; B:119 `mechanically_enforced`, B:120 `partially_enforced`.
+- Docs: USER-GUIDE.md §8.3; `iba/docs/ps tools worksheet.xlsx` tab `Verse-Scope` gains `-HomeScope`.
+
+**Tests:** 32 of 32 on a backup-API copy (`iba/app/tools/temp_2295_scope_resolver_test_run.py`), each against plain SQL: subgroup and mapped cluster exact to the occurrence (M18: 1,370 verses, 1,510 occurrences); T cluster and unmapped cluster by codes; an unpaired occurrence reported and marked; word by surface, not word_strong; a code in several subgroups; the home rules and refusals; settlement applied, withdrawn and superseded; scope item; claim through observation; ambiguous node; the shape; the handler, collation and reading.open callers; the migration and validate checks.
+
+Live: pre-run snapshot `iba/app/db/snapshots/iba-20261026T0900Z-pre-2295-2297-2299.db`. `Verse-Scope.ps1 -Subgroup M18_desire -Home M18_desire`: 218 verses, 238 occurrences in scope and in the home, 213 other subgroups to read. `Config-Maintenance.ps1 -Step Validate` (RUN-20261026_072830_153) ok.
+
+## 417. The T-word addition as a method rule; the cluster.subgroup pipeline retired (2026-10-26, escalations #2297, #2299; #2286 U7, U9)
+
+**Why:** the researcher, 2026-10-26: "U7 seems like a simple config to add ... U9, just update the configs for the retirement". U6 (#2296) has no build now; it is actioned when a reading reaches the clusters it applies to.
+
+**What changed (config only):**
+- `iba/app/migration/archive/t_word_and_retire_2297_2299_v1_20261026.py` (run `DEVMODE-2297-2299-T-WORD-RETIRE-20261026`, 8 writes):
+  - `cfg_method_rule` RA-01 `t-word-joins-cluster` on `reading.apply` (ordinal 69): a T-coded word found to be the characteristic is recorded with its reason and added to the cluster beside its T tag; `Surface-Map.ps1 -Step Apply` places its pairs; the label is reconsidered (rule 66). No tool writes the `cluster_strong` row: there is no single-code add in `Cluster-Assign.ps1`;
+  - steps `cluster.subgroup`, `cluster.reading`, `cluster.answer` inactive; the two rule scopes on `ClusterSubgroup.ps1` inactive; B:117 `mechanically_enforced`.
+- `iba/app/migration/archive/retire_grants_2299_v1_20261026.py` (run `DEVMODE-2299-RETIRE-GRANTS-20261026`, 12 writes): the 11 write grants of the three steps inactive. The first migration left them live, and `configmaint.validate` reported them as 3 coherence errors; the test had not run the coherence check, and now does.
+- The scripts `iba/app/ps/ClusterSubgroup.ps1`, `CharReading.ps1` and `CharAnswer.ps1` stay on disk; their steps are inactive. USER-GUIDE.md §7 lists stages 2 to 4 as retired.
+
+**Tests:** 6 of 6 on a copy of the pre-run snapshot (`iba/app/tools/temp_2297_2299_config_test_run.py`): both migrations dry run, apply and re-run; RA-01; the steps, scopes, grants and B:117; the change log; the coherence and validate checks.
+
+Live: `Config-Maintenance.ps1 -Step Validate` (RUN-20261026_072830_153) ok; its advisory changes are on #2270.
+
+## 418. A prototype of the reading cycle on one JSON (2026-10-26, escalation #2304; parked)
+
+**Why:** the researcher asked for the reading cycle 0.C scope, 0.GAP pre and observe to run on one JSON, prototyped on a copy (design `outputs/escalation/2304-reading-cycle-one-json-design-v3-20261026.md`).
+
+**What changed:** `iba/app/tools/temp_2304_reading_cycle_prototype.py`, a temp script, not wired into `Reading.ps1` and not registered: `build` opens a scope on one subgroup (or a segment), gathers the verse text, passage, `verse_lexical` rows, existing observations with their nodes placed on occurrences, cluster-document lines and related open items, and lists the observe slots; `record` writes a filled file all or nothing, with `verse_lexical_id` on the new nodes, the document line as `meaning_source` of an adopted finding, and a response on each open item. It runs only on a copy (`lib/dbsnapshot.copy_db`).
+
+**Result:** on `M18_thirst` (`outputs/escalation/2304-prototype-m18-thirst-results-v1-20261026.md`): 42 verses, 44 home occurrences, no live observation on a home word, 146 document lines (7 imported), 361 slots; a partial fill refused, a full fill written. The researcher parked #2304 to record the prior reading work first (#2305).

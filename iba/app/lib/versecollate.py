@@ -54,7 +54,8 @@ def collate(cfg, request: dict, root: pathlib.Path) -> dict:
     vids = [v["verse_id"] for v in scope["verses"]]
     J = _ids(vids)
     rec = {v["verse_id"]: {"verse_id": v["verse_id"], "reference": v["reference"], "osis": v["osis"],
-                           "routes": v["routes"], "text": None, "status": None, "words": [], "observations": [],
+                           "routes": v["routes"], "occurrences": v["occurrences"], "text": None, "status": None,
+                           "words": [], "observations": [],
                            "strand_hits": [], "claims": [], "narrative": [], "open_items": [], "file_lines": [],
                            "gaps": []} for v in scope["verses"]}
 
@@ -183,7 +184,7 @@ def collate(cfg, request: dict, root: pathlib.Path) -> dict:
             g.append("meaning missing")
         counts.update(g)
     verses = [rec[v] for v in vids]
-    return {"scope": {k: scope[k] for k in ("request", "selectors", "not_resolved", "counts")},
+    return {"scope": {k: scope[k] for k in ("version", "request", "home", "selectors", "not_resolved", "counts")},
             "verses": verses, "lexicon": lexicon,
             "gaps": {k: counts.get(k, 0) for k in GAPS},
             "files_changed_since_indexed": stale,

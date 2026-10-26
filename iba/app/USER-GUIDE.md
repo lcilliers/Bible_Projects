@@ -419,15 +419,13 @@ to run it. Each stage refuses a cluster or subgroup not at its required status.
 iba\app\ps\VerseReading.ps1 -ClusterCode M67 [-Live]                    # Stage 1, word level (lexical.meaning)
 iba\app\ps\RelationalReading.ps1 -ClusterCode M67 [-VerseList "2Cor.8.8,Rom.12.8"] [-Live]   # Stage 1, relational half
 iba\app\ps\Run-Stage1Batch.ps1 -ClusterCodes "M35,M51,M61" [-Live -MaxTotalCostUsd 15.00]  # several clusters, unattended
-iba\app\ps\ClusterSubgroup.ps1 -ClusterCode M67 [-Live]                 # Stage 2, subgroups (one call per cluster)
-iba\app\ps\CharReading.ps1 -ClusterCode M67 -SubgroupCode <code> [-Live]   # Stage 3, per subgroup
-iba\app\ps\CharAnswer.ps1 -ClusterCode M67 -SubgroupCode <code> [-Live]    # Stage 4, the question battery
 iba\app\ps\Observation-Enhancer.ps1 -Action Preview|Apply -RuleKey <key>   # apply a confirmed rule to ib_observation
 ```
 
 **How the stages run:**
 - **Stage 1** refuses to run when Layer 1's `role` arrays are stale for the cluster.
-- **Stage 2** refuses a cluster that already has live subgroups.
+- **Stages 2 to 4 are retired** (#2299): `cluster.subgroup`, `cluster.reading` and `cluster.answer` are
+  inactive. Subgroups are made by the surface mapping (§7.1), and reading is the reading process (§8).
 - **Corrections to `ib_observation`** happen only by re-running a stage (rule 68). The enhancer is
   for researcher-confirmed rules only.
 
@@ -652,8 +650,8 @@ reuses (observation checks, `derive_core`).
 
 ### 8.3 The verses of a request (`iba/app/ps/Verse-Scope.ps1`)
 
-The scope resolver (#2228): any request becomes the collection of verses it stands for, written as
-a JSON file. It reads only. Selectors add verses and are combined as a union; give as many as the
+The scope resolver (#2228; occurrence-shaped, #2295): any request becomes the collection of verses it
+stands for, with their occurrences, written as a JSON file. It reads only. Selectors add verses and are combined as a union; give as many as the
 request needs. A group or batch is given on the command line or kept in a request file.
 
 ```powershell
@@ -664,18 +662,25 @@ iba\app\ps\Verse-Scope.ps1 -Label batch-1 -File "<request.json>"
 
 | Selector | Example | Gives |
 |---|---|---|
-| `-Cluster` | `M02` or `M02,M01` | the verses of the cluster's live strongs |
-| `-Subgroup` | `A_thanksgiving_act` | the verses of a cluster subgroup's strongs |
+| `-Cluster` | `M02` or `M02,M01` | a mapped M cluster: the occurrences of its (code, surface) pairs; a T cluster or an unmapped one: the occurrences of its live strongs |
+| `-Subgroup` | `M18_desire` | the occurrences of the subgroup's (code, surface) pairs, after settlements; a qualifier group is refused (rule 120) |
 | `-Strand` | `anger` | the verses of a strand's word family |
-| `-Word` | `anger` | the verses of a `word_registry` word's strongs |
+| `-Word` | `anger` | the occurrences whose surface is the word, case aside; never `word_strong` (rule 119). Surfaces holding the word among others are listed, not taken |
 | `-Strong` | `H0430` or `G3563G` | a bare code stands for all its derivatives (H0430G, H0430H, ...); a suffixed code for itself |
 | `-Verse` | `"Psa 10:2; Luk 14:12-14; Rom 8"` | the verses named: lists, ranges, ranges across chapters, whole chapters |
 | `-Chapter` [`-Section`] | `10.1`, `-Section "The bosom"` | the verses the chapter's current blocks cite, or one block's |
 | `-Claim` | `C-330` | the claim's verse sources |
 | `-Observation` | `12478` | the verses the observation is grounded on |
-| `-Item` / `-Thread` | `OT-108.3` / `OT-108` | a thread item by its kind, or every open item of the thread |
+| `-Item` / `-Thread` | `OT-108.3` / `OT-108` | a thread item by its kind (a scope item: its stored verses), or every open item of the thread |
+| `-Home` | `M18_desire` or `M18` | the home, when not the subgroups and M clusters named; never a qualifier group or a T cluster (rule 120) |
 | `-File` | a request file (JSON) | the same keys as lists, e.g. `{"cluster": ["M02"], "verse": ["Psa 10:2"], "chapter": [{"chapter": "10.1", "section": "The bosom"}], "only_strong": ["H3708A"]}` |
 
+- **Each verse lists its occurrences** (one `verse_lexical` row each): an M-coded word with its
+  subgroup, cluster, kind, two-sense flag, `in_scope` (it brought the verse in) and `home`; an M-coded
+  word with no pair is marked `unplaced`; the other clustered words are `context`. A current
+  `subgroup-settlement` observation places its occurrence in its own subgroup (rule 122). The other
+  subgroups in a verse are shown, to be read, and add no verse (rule 120). The file carries
+  `"version": 2`, the `home`, and counts of occurrences in scope, in the home and other subgroups.
 - **`-OnlyStrong`** keeps only the verses holding one of the given codes (a bare code again stands for
   its derivatives): the focus on some of the derivatives.
 - **A chapter, block or claim gives only the verses it cites.** Whether to pull in more verses through

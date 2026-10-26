@@ -1,6 +1,6 @@
 """versescope handler -- work package `verse-scope`, step verse_scope.resolve (#2228).
 
-The scope resolver: any request -> the collection of verses, as a JSON file under
+The scope resolver: any request -> the collection of verses with their occurrences, as a JSON file under
 verse_scope.output_dir (versioned and archived by lib/filingkit). The logic is in lib/versescope.py;
 the handler merges the command-line selectors with an optional request file (-File), writes the
 file and turns a ScopeError into the routed condition 'refused' (cfg_on_fail: report-continue).
@@ -46,4 +46,6 @@ def resolve(ctx: Ctx) -> Outcome:
                      f"{out['only_strong']['verses_dropped']} verse(s) dropped")
     c = out["counts"]
     return ok(f"-> {path.as_posix()}\n  " + "\n  ".join(lines)
-              + f"\n  {c['verses']} verse(s); {c['not_resolved']} not resolved", path=str(path))
+              + f"\n  home: {', '.join(out['home']) or 'none named'}"
+              + f"\n  {c['verses']} verse(s); {c['in_scope']} occurrence(s) in scope, {c['home']} in the home, "
+              f"{c['other_subgroups']} other subgroup(s) to read; {c['not_resolved']} not resolved", path=str(path))

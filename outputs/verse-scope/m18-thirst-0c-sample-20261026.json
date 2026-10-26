@@ -1,0 +1,9438 @@
+{
+ "label": "m18-thirst-0c-sample",
+ "run_id": "RUN-20261026_091743_772-VERSESCOPE",
+ "resolved_at": "2026-10-26T09:17:52Z",
+ "version": 2,
+ "request": {
+  "subgroup": [
+   "M18_thirst"
+  ]
+ },
+ "home": [
+  "M18_thirst"
+ ],
+ "selectors": [
+  {
+   "kind": "subgroup",
+   "value": "M18_thirst",
+   "name": "Thirst, hunger",
+   "strongs": [
+    {
+     "code": "G1372",
+     "sense": "to thirst"
+    },
+    {
+     "code": "G1373",
+     "sense": "thirst"
+    },
+    {
+     "code": "G4361",
+     "sense": "very hungry"
+    },
+    {
+     "code": "H6770",
+     "sense": "to thirst"
+    },
+    {
+     "code": "H6772",
+     "sense": "thirst"
+    }
+   ],
+   "subgroups": [
+    "M18_thirst"
+   ],
+   "occurrences": 44,
+   "verses": 42,
+   "entered_by": "surface pairs"
+  }
+ ],
+ "verses": [
+  {
+   "verse_id": 9810,
+   "osis": "Exod.17.3",
+   "reference": "Exo 17:3",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    },
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1011893,
+     "position": 1,
+     "strong": "H6770",
+     "surface": "thirsted",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1011899,
+     "position": 5,
+     "strong": "H3885B",
+     "surface": "grumbled",
+     "cluster": "M20",
+     "subgroup": "M20_grumbling",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1011910,
+     "position": 12,
+     "strong": "H4191",
+     "surface": "kill",
+     "cluster": "M25",
+     "subgroup": "M25_killing",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1011921,
+     "position": 15,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1011891,
+     "position": 0,
+     "strong": "H5971A",
+     "surface": "people",
+     "clusters": [
+      "T11"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011892,
+     "position": 0,
+     "strong": "H9009",
+     "surface": "people",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011894,
+     "position": 2,
+     "strong": "H8033G",
+     "surface": "there",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011895,
+     "position": 3,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011896,
+     "position": 3,
+     "strong": "H9005",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011897,
+     "position": 4,
+     "strong": "H5971A",
+     "surface": "people",
+     "clusters": [
+      "T11"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011898,
+     "position": 4,
+     "strong": "H9009",
+     "surface": "people",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011900,
+     "position": 6,
+     "strong": "H5921A",
+     "surface": "against",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011901,
+     "position": 7,
+     "strong": "H4872",
+     "surface": "Moses",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011902,
+     "position": 8,
+     "strong": "H0559",
+     "surface": "said",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011903,
+     "position": 9,
+     "strong": "H4100",
+     "surface": "Why",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011904,
+     "position": 9,
+     "strong": "H9005",
+     "surface": "Why",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011905,
+     "position": 10,
+     "strong": "H5927H",
+     "surface": "up",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011906,
+     "position": 10,
+     "strong": "H2088",
+     "surface": "up",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011907,
+     "position": 11,
+     "strong": "H4714G",
+     "surface": "Egypt",
+     "clusters": [
+      "T11"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011908,
+     "position": 11,
+     "strong": "H9006",
+     "surface": "Egypt",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011909,
+     "position": 11,
+     "strong": "H9035",
+     "surface": "Egypt",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011911,
+     "position": 12,
+     "strong": "H9005",
+     "surface": "kill",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011912,
+     "position": 13,
+     "strong": "H1121A",
+     "surface": "children",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011913,
+     "position": 13,
+     "strong": "H0853",
+     "surface": "children",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011914,
+     "position": 13,
+     "strong": "H9030",
+     "surface": "children",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011915,
+     "position": 13,
+     "strong": "H0853",
+     "surface": "children",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011916,
+     "position": 13,
+     "strong": "H9002",
+     "surface": "children",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011917,
+     "position": 14,
+     "strong": "H4735",
+     "surface": "livestock",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011918,
+     "position": 14,
+     "strong": "H9020",
+     "surface": "livestock",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011919,
+     "position": 14,
+     "strong": "H0853",
+     "surface": "livestock",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011920,
+     "position": 14,
+     "strong": "H9002",
+     "surface": "livestock",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011922,
+     "position": 15,
+     "strong": "H9003",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1011923,
+     "position": 15,
+     "strong": "H9020",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 6189,
+   "osis": "Deut.28.48",
+   "reference": "Deu 28:48",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1071134,
+     "position": 0,
+     "strong": "H5647G",
+     "surface": "serve",
+     "cluster": "M36",
+     "subgroup": "M36_serving",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1071135,
+     "position": 1,
+     "strong": "H0341",
+     "surface": "enemies",
+     "cluster": "M06",
+     "subgroup": "M06_enemies",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1071146,
+     "position": 6,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1071164,
+     "position": 17,
+     "strong": "H8045",
+     "surface": "destroyed",
+     "cluster": "M10",
+     "subgroup": "M10_destroying",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1071136,
+     "position": 1,
+     "strong": "H0853",
+     "surface": "enemies",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071137,
+     "position": 2,
+     "strong": "H0834A",
+     "surface": "whom",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071138,
+     "position": 2,
+     "strong": "H9021",
+     "surface": "whom",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071139,
+     "position": 3,
+     "strong": "H3068G",
+     "surface": "Lord",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071140,
+     "position": 3,
+     "strong": "H9033",
+     "surface": "Lord",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071141,
+     "position": 4,
+     "strong": "H7971G",
+     "surface": "send",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071142,
+     "position": 5,
+     "strong": "H7458",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071143,
+     "position": 5,
+     "strong": "H9003",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071144,
+     "position": 5,
+     "strong": "H9003",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071145,
+     "position": 5,
+     "strong": "H9031",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071147,
+     "position": 6,
+     "strong": "H9002",
+     "surface": "thirst",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071148,
+     "position": 6,
+     "strong": "H9003",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071149,
+     "position": 7,
+     "strong": "H5903",
+     "surface": "nakedness",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071150,
+     "position": 7,
+     "strong": "H9002",
+     "surface": "nakedness",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071151,
+     "position": 7,
+     "strong": "H9003",
+     "surface": "nakedness",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071152,
+     "position": 8,
+     "strong": "H2640",
+     "surface": "lacking",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071153,
+     "position": 8,
+     "strong": "H9002",
+     "surface": "lacking",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071154,
+     "position": 8,
+     "strong": "H9003",
+     "surface": "lacking",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071155,
+     "position": 9,
+     "strong": "H3605",
+     "surface": "everything",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071156,
+     "position": 10,
+     "strong": "H5414H",
+     "surface": "put",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071157,
+     "position": 11,
+     "strong": "H5923",
+     "surface": "yoke",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071158,
+     "position": 12,
+     "strong": "H1270",
+     "surface": "iron",
+     "clusters": [
+      "T12"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071159,
+     "position": 13,
+     "strong": "H5921A",
+     "surface": "on",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071160,
+     "position": 14,
+     "strong": "H6677A",
+     "surface": "neck",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071161,
+     "position": 15,
+     "strong": "H5704",
+     "surface": "until",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071162,
+     "position": 15,
+     "strong": "H9021",
+     "surface": "until",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071163,
+     "position": 16,
+     "strong": "H9043",
+     "surface": "he",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071165,
+     "position": 18,
+     "strong": "H0853",
+     "surface": "you",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1071166,
+     "position": 18,
+     "strong": "H9031",
+     "surface": "you",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 10192,
+   "osis": "Judg.4.19",
+   "reference": "Judg 4:19",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1104100,
+     "position": 7,
+     "strong": "H6770",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1104107,
+     "position": 12,
+     "strong": "H3680",
+     "surface": "covered",
+     "cluster": "M45",
+     "subgroup": "M45_covering",
+     "kind": "group",
+     "two_sense": true,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1104091,
+     "position": 0,
+     "strong": "H0559",
+     "surface": "said",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104092,
+     "position": 1,
+     "strong": "H4994",
+     "surface": "Please",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104093,
+     "position": 1,
+     "strong": "H9030",
+     "surface": "Please",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104094,
+     "position": 2,
+     "strong": "H4592",
+     "surface": "little",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104095,
+     "position": 3,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104096,
+     "position": 4,
+     "strong": "H0413",
+     "surface": "to",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104097,
+     "position": 5,
+     "strong": "H8248H",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104098,
+     "position": 5,
+     "strong": "H9034",
+     "surface": "drink",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104099,
+     "position": 6,
+     "strong": "H3588A",
+     "surface": "for",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104101,
+     "position": 8,
+     "strong": "H6605A",
+     "surface": "opened",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104102,
+     "position": 9,
+     "strong": "H4997",
+     "surface": "skin",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104103,
+     "position": 9,
+     "strong": "H0853",
+     "surface": "skin",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104104,
+     "position": 10,
+     "strong": "H2461",
+     "surface": "milk",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104105,
+     "position": 10,
+     "strong": "H9009",
+     "surface": "milk",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104106,
+     "position": 11,
+     "strong": "H8248H",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104108,
+     "position": 12,
+     "strong": "H9033",
+     "surface": "covered",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1104109,
+     "position": 13,
+     "strong": "H9033",
+     "surface": "him",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 6383,
+   "osis": "Judg.15.18",
+   "reference": "Judg 15:18",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    },
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1103066,
+     "position": 1,
+     "strong": "H6770",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1103067,
+     "position": 2,
+     "strong": "H7121G",
+     "surface": "called",
+     "cluster": "M42",
+     "subgroup": "M42_calling",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1103075,
+     "position": 9,
+     "strong": "H8668H",
+     "surface": "salvation",
+     "cluster": "M45",
+     "subgroup": "M45_saving",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1103079,
+     "position": 10,
+     "strong": "H3027H",
+     "surface": "hand",
+     "cluster": "M72",
+     "subgroup": "M72_hand",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1103083,
+     "position": 13,
+     "strong": "H4191",
+     "surface": "die",
+     "cluster": "M25",
+     "subgroup": "M25_dying",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1103087,
+     "position": 14,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1103090,
+     "position": 16,
+     "strong": "H3027H",
+     "surface": "hands",
+     "cluster": "M72",
+     "subgroup": "M72_hand",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1103065,
+     "position": 0,
+     "strong": "H3966",
+     "surface": "very",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103068,
+     "position": 3,
+     "strong": "H0413",
+     "surface": "upon",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103069,
+     "position": 4,
+     "strong": "H3068G",
+     "surface": "Lord",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103070,
+     "position": 5,
+     "strong": "H0559",
+     "surface": "said",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103071,
+     "position": 6,
+     "strong": "H0859A",
+     "surface": "You",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103072,
+     "position": 7,
+     "strong": "H5414G",
+     "surface": "granted",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103073,
+     "position": 8,
+     "strong": "H1419A",
+     "surface": "great",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103074,
+     "position": 8,
+     "strong": "H9009",
+     "surface": "great",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103076,
+     "position": 9,
+     "strong": "H9009",
+     "surface": "salvation",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103077,
+     "position": 9,
+     "strong": "H9021",
+     "surface": "salvation",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103078,
+     "position": 9,
+     "strong": "H0853",
+     "surface": "salvation",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103080,
+     "position": 10,
+     "strong": "H9003",
+     "surface": "hand",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103081,
+     "position": 11,
+     "strong": "H5650",
+     "surface": "servant",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103082,
+     "position": 12,
+     "strong": "H6258",
+     "surface": "now",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103084,
+     "position": 13,
+     "strong": "H2063",
+     "surface": "die",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103085,
+     "position": 13,
+     "strong": "H9009",
+     "surface": "die",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103086,
+     "position": 13,
+     "strong": "H9002",
+     "surface": "die",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103088,
+     "position": 14,
+     "strong": "H9003",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103089,
+     "position": 15,
+     "strong": "H5307G",
+     "surface": "fall",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103091,
+     "position": 16,
+     "strong": "H9003",
+     "surface": "hands",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103092,
+     "position": 17,
+     "strong": "H6189",
+     "surface": "uncircumcised",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1103093,
+     "position": 17,
+     "strong": "H9009",
+     "surface": "uncircumcised",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 26437,
+   "osis": "Ruth.2.9",
+   "reference": "Rut 2:9",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1116616,
+     "position": 11,
+     "strong": "H6770",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1116597,
+     "position": 0,
+     "strong": "H5869A",
+     "surface": "eyes",
+     "clusters": [
+      "T14"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116598,
+     "position": 1,
+     "strong": "H7704G",
+     "surface": "field",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116599,
+     "position": 1,
+     "strong": "H9003",
+     "surface": "field",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116600,
+     "position": 1,
+     "strong": "H9022",
+     "surface": "field",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116601,
+     "position": 2,
+     "strong": "H0834A",
+     "surface": "that",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116602,
+     "position": 3,
+     "strong": "H7114B",
+     "surface": "reaping",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116603,
+     "position": 4,
+     "strong": "H1980N",
+     "surface": "go",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116604,
+     "position": 4,
+     "strong": "H9013",
+     "surface": "go",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116605,
+     "position": 5,
+     "strong": "H0310A",
+     "surface": "after",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116606,
+     "position": 6,
+     "strong": "H3808",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116607,
+     "position": 7,
+     "strong": "H6680",
+     "surface": "charged",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116608,
+     "position": 7,
+     "strong": "H9039",
+     "surface": "charged",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116609,
+     "position": 7,
+     "strong": "H9008",
+     "surface": "charged",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116610,
+     "position": 8,
+     "strong": "H5288",
+     "surface": "young men",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116611,
+     "position": 8,
+     "strong": "H9009",
+     "surface": "young men",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116612,
+     "position": 8,
+     "strong": "H0853",
+     "surface": "young men",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116613,
+     "position": 9,
+     "strong": "H1115",
+     "surface": "not",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116614,
+     "position": 10,
+     "strong": "H5060",
+     "surface": "touch",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116615,
+     "position": 10,
+     "strong": "H9005",
+     "surface": "touch",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116617,
+     "position": 11,
+     "strong": "H9032",
+     "surface": "thirsty",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116618,
+     "position": 12,
+     "strong": "H1980G",
+     "surface": "go",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116619,
+     "position": 13,
+     "strong": "H0413",
+     "surface": "to",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116620,
+     "position": 14,
+     "strong": "H3627",
+     "surface": "vessels",
+     "clusters": [
+      "T12"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116621,
+     "position": 14,
+     "strong": "H9009",
+     "surface": "vessels",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116622,
+     "position": 15,
+     "strong": "H8354",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116623,
+     "position": 16,
+     "strong": "H5288",
+     "surface": "young men",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116624,
+     "position": 16,
+     "strong": "H9009",
+     "surface": "young men",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116625,
+     "position": 16,
+     "strong": "H9013",
+     "surface": "young men",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116626,
+     "position": 17,
+     "strong": "H7579",
+     "surface": "drawn",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116627,
+     "position": 17,
+     "strong": "H0834A",
+     "surface": "drawn",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1116628,
+     "position": 17,
+     "strong": "H9006",
+     "surface": "drawn",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 11246,
+   "osis": "2Chr.32.11",
+   "reference": "2Ch 32:11",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1205482,
+     "position": 4,
+     "strong": "H4191",
+     "surface": "die",
+     "cluster": "M25",
+     "subgroup": "M25_dying",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1205488,
+     "position": 6,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1205495,
+     "position": 10,
+     "strong": "H5337",
+     "surface": "deliver",
+     "cluster": "M45",
+     "subgroup": "M45_delivering",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1205500,
+     "position": 12,
+     "strong": "H4428G",
+     "surface": "king",
+     "cluster": "M72",
+     "subgroup": "M72_king",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1205474,
+     "position": 0,
+     "strong": "H3808",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205475,
+     "position": 1,
+     "strong": "H2396G",
+     "surface": "Hezekiah",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205476,
+     "position": 1,
+     "strong": "H9008",
+     "surface": "Hezekiah",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205477,
+     "position": 2,
+     "strong": "H5496",
+     "surface": "misleading",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205478,
+     "position": 3,
+     "strong": "H5414G",
+     "surface": "give",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205479,
+     "position": 3,
+     "strong": "H9005",
+     "surface": "give",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205480,
+     "position": 3,
+     "strong": "H0853",
+     "surface": "give",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205481,
+     "position": 3,
+     "strong": "H9036",
+     "surface": "give",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205483,
+     "position": 4,
+     "strong": "H9005",
+     "surface": "die",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205484,
+     "position": 4,
+     "strong": "H0853",
+     "surface": "die",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205485,
+     "position": 4,
+     "strong": "H9036",
+     "surface": "die",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205486,
+     "position": 5,
+     "strong": "H7458",
+     "surface": "famine",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205487,
+     "position": 5,
+     "strong": "H9003",
+     "surface": "famine",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205489,
+     "position": 6,
+     "strong": "H9002",
+     "surface": "thirst",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205490,
+     "position": 6,
+     "strong": "H9003",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205491,
+     "position": 7,
+     "strong": "H0559",
+     "surface": "tells",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205492,
+     "position": 7,
+     "strong": "H9005",
+     "surface": "tells",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205493,
+     "position": 8,
+     "strong": "H3068G",
+     "surface": "Lord",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205494,
+     "position": 9,
+     "strong": "H0430G",
+     "surface": "God",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205496,
+     "position": 10,
+     "strong": "H9025",
+     "surface": "deliver",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205497,
+     "position": 11,
+     "strong": "H3709G",
+     "surface": "hand",
+     "clusters": [
+      "T14"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205498,
+     "position": 11,
+     "strong": "H9006",
+     "surface": "hand",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205499,
+     "position": 11,
+     "strong": "H9035",
+     "surface": "hand",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1205501,
+     "position": 13,
+     "strong": "H0804G",
+     "surface": "Assyria",
+     "clusters": [
+      "T11"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 11295,
+   "osis": "Neh.9.15",
+   "reference": "Neh 9:15",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1225624,
+     "position": 9,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1225640,
+     "position": 15,
+     "strong": "H5375P",
+     "surface": "sworn",
+     "cluster": "M70",
+     "subgroup": "M70_lifting",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1225609,
+     "position": 0,
+     "strong": "H5414G",
+     "surface": "gave",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225610,
+     "position": 1,
+     "strong": "H3899H",
+     "surface": "bread",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225611,
+     "position": 1,
+     "strong": "H9002",
+     "surface": "bread",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225612,
+     "position": 2,
+     "strong": "H9006",
+     "surface": "from",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225613,
+     "position": 3,
+     "strong": "H8064",
+     "surface": "heaven",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225614,
+     "position": 4,
+     "strong": "H7458",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225615,
+     "position": 4,
+     "strong": "H9005",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225616,
+     "position": 4,
+     "strong": "H9005",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225617,
+     "position": 4,
+     "strong": "H9038",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225618,
+     "position": 5,
+     "strong": "H3318L",
+     "surface": "brought",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225619,
+     "position": 6,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225620,
+     "position": 6,
+     "strong": "H9002",
+     "surface": "water",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225621,
+     "position": 6,
+     "strong": "H9028",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225622,
+     "position": 7,
+     "strong": "H9006",
+     "surface": "of",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225623,
+     "position": 8,
+     "strong": "H5553H",
+     "surface": "rock",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225625,
+     "position": 9,
+     "strong": "H9005",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225626,
+     "position": 9,
+     "strong": "H9005",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225627,
+     "position": 9,
+     "strong": "H9038",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225628,
+     "position": 10,
+     "strong": "H0559",
+     "surface": "told",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225629,
+     "position": 10,
+     "strong": "H9028",
+     "surface": "told",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225630,
+     "position": 11,
+     "strong": "H0935G",
+     "surface": "go in",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225631,
+     "position": 11,
+     "strong": "H9005",
+     "surface": "go in",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225632,
+     "position": 11,
+     "strong": "H9005",
+     "surface": "go in",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225633,
+     "position": 11,
+     "strong": "H9038",
+     "surface": "go in",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225634,
+     "position": 12,
+     "strong": "H3423H",
+     "surface": "possess",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225635,
+     "position": 12,
+     "strong": "H9005",
+     "surface": "possess",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225636,
+     "position": 13,
+     "strong": "H0776G",
+     "surface": "land",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225637,
+     "position": 13,
+     "strong": "H9009",
+     "surface": "land",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225638,
+     "position": 13,
+     "strong": "H0853",
+     "surface": "land",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225639,
+     "position": 14,
+     "strong": "H0834A",
+     "surface": "that",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225641,
+     "position": 15,
+     "strong": "H3027S",
+     "surface": "sworn",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225642,
+     "position": 16,
+     "strong": "H5414G",
+     "surface": "give",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225643,
+     "position": 16,
+     "strong": "H9005",
+     "surface": "give",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225644,
+     "position": 16,
+     "strong": "H0853",
+     "surface": "give",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225645,
+     "position": 16,
+     "strong": "H9021",
+     "surface": "give",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225646,
+     "position": 17,
+     "strong": "H9005",
+     "surface": "them",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1225647,
+     "position": 17,
+     "strong": "H9038",
+     "surface": "them",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 16933,
+   "osis": "Neh.9.20",
+   "reference": "Neh 9:20",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1227421,
+     "position": 1,
+     "strong": "H2896A",
+     "surface": "good",
+     "cluster": "M18",
+     "subgroup": "M18_good",
+     "kind": "qualifier",
+     "two_sense": true,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1227424,
+     "position": 2,
+     "strong": "H7307G",
+     "surface": "Spirit",
+     "cluster": "M47",
+     "subgroup": "M47_spirit",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1227426,
+     "position": 3,
+     "strong": "H7919A",
+     "surface": "instruct",
+     "cluster": "M16",
+     "subgroup": "M16_teaching",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1227441,
+     "position": 12,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1227420,
+     "position": 0,
+     "strong": "H5414G",
+     "surface": "gave",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227422,
+     "position": 1,
+     "strong": "H9009",
+     "surface": "good",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227423,
+     "position": 1,
+     "strong": "H9021",
+     "surface": "good",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227425,
+     "position": 2,
+     "strong": "H9002",
+     "surface": "Spirit",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227427,
+     "position": 3,
+     "strong": "H9005",
+     "surface": "instruct",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227428,
+     "position": 4,
+     "strong": "H3808",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227429,
+     "position": 4,
+     "strong": "H9021",
+     "surface": "not",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227430,
+     "position": 5,
+     "strong": "H4513",
+     "surface": "withhold",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227431,
+     "position": 6,
+     "strong": "H4478A",
+     "surface": "manna",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227432,
+     "position": 6,
+     "strong": "H9002",
+     "surface": "manna",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227433,
+     "position": 6,
+     "strong": "H9038",
+     "surface": "manna",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227434,
+     "position": 7,
+     "strong": "H9006",
+     "surface": "from",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227435,
+     "position": 8,
+     "strong": "H6310G",
+     "surface": "mouth",
+     "clusters": [
+      "T14"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227436,
+     "position": 9,
+     "strong": "H5414G",
+     "surface": "gave",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227437,
+     "position": 10,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227438,
+     "position": 10,
+     "strong": "H9002",
+     "surface": "water",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227439,
+     "position": 10,
+     "strong": "H9028",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227440,
+     "position": 11,
+     "strong": "H9028",
+     "surface": "their",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227442,
+     "position": 12,
+     "strong": "H9005",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227443,
+     "position": 12,
+     "strong": "H9005",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1227444,
+     "position": 12,
+     "strong": "H9038",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 29018,
+   "osis": "Job.24.11",
+   "reference": "Job 24:11",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1246353,
+     "position": 5,
+     "strong": "H6770",
+     "surface": "suffer thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1246347,
+     "position": 0,
+     "strong": "H0996H",
+     "surface": "among",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1246348,
+     "position": 1,
+     "strong": "H7791A",
+     "surface": "olive rows",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1246349,
+     "position": 2,
+     "strong": "H6671",
+     "surface": "oil",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1246350,
+     "position": 2,
+     "strong": "H9028",
+     "surface": "oil",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1246351,
+     "position": 3,
+     "strong": "H1869",
+     "surface": "tread",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1246352,
+     "position": 4,
+     "strong": "H3342",
+     "surface": "winepresses",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 19999,
+   "osis": "Ps.42.2",
+   "reference": "Psa 42:2",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1267079,
+     "position": 0,
+     "strong": "H5315G",
+     "surface": "soul",
+     "cluster": "M47",
+     "subgroup": "M47_soul",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1267080,
+     "position": 1,
+     "strong": "H6770",
+     "surface": "thirsts",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1267084,
+     "position": 3,
+     "strong": "H2416A",
+     "surface": "living",
+     "cluster": "M25",
+     "subgroup": "M25_living",
+     "kind": "group",
+     "two_sense": true,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1267081,
+     "position": 2,
+     "strong": "H0430G",
+     "surface": "God",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1267082,
+     "position": 2,
+     "strong": "H9005",
+     "surface": "God",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1267083,
+     "position": 2,
+     "strong": "H9020",
+     "surface": "God",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1267085,
+     "position": 4,
+     "strong": "H0410G",
+     "surface": "God",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1267086,
+     "position": 4,
+     "strong": "H9005",
+     "surface": "God",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1267087,
+     "position": 5,
+     "strong": "H0935G",
+     "surface": "come",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1267088,
+     "position": 5,
+     "strong": "H4970",
+     "surface": "come",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1267089,
+     "position": 6,
+     "strong": "H7200G",
+     "surface": "appear",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1267090,
+     "position": 7,
+     "strong": "H6440G",
+     "surface": "before",
+     "clusters": [
+      "T14"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1267091,
+     "position": 8,
+     "strong": "H0430G",
+     "surface": "God",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 16192,
+   "osis": "Ps.63.1",
+   "reference": "Psa 63:1",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1262149,
+     "position": 0,
+     "strong": "H4210",
+     "surface": "Psalm",
+     "cluster": "M22",
+     "subgroup": "M22_not_this_sense",
+     "kind": "not_this_sense",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1262160,
+     "position": 8,
+     "strong": "H7836",
+     "surface": "seek",
+     "cluster": "M83",
+     "subgroup": "B_intensified_seeking",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1262163,
+     "position": 9,
+     "strong": "H5315G",
+     "surface": "soul",
+     "cluster": "M47",
+     "subgroup": "M47_soul",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1262166,
+     "position": 10,
+     "strong": "H6770",
+     "surface": "thirsts",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1262168,
+     "position": 11,
+     "strong": "H1320",
+     "surface": "flesh",
+     "cluster": "M47",
+     "subgroup": "M47_flesh",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1262171,
+     "position": 12,
+     "strong": "H3642",
+     "surface": "faints",
+     "cluster": "M24",
+     "subgroup": "M24_fainting",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1262174,
+     "position": 14,
+     "strong": "H5889",
+     "surface": "weary",
+     "cluster": "M24",
+     "subgroup": "M24_fainting",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1262150,
+     "position": 1,
+     "strong": "H1732",
+     "surface": "David",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262151,
+     "position": 1,
+     "strong": "H9005",
+     "surface": "David",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262152,
+     "position": 2,
+     "strong": "H9003",
+     "surface": "when",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262153,
+     "position": 3,
+     "strong": "H1961",
+     "surface": "was",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262154,
+     "position": 4,
+     "strong": "H4057A",
+     "surface": "wilderness",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262155,
+     "position": 4,
+     "strong": "H9043",
+     "surface": "wilderness",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262156,
+     "position": 4,
+     "strong": "H9003",
+     "surface": "wilderness",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262157,
+     "position": 5,
+     "strong": "H3063G",
+     "surface": "Judah",
+     "clusters": [
+      "T11"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262158,
+     "position": 6,
+     "strong": "H0430G",
+     "surface": "God",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262159,
+     "position": 7,
+     "strong": "H0410G",
+     "surface": "God",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262161,
+     "position": 8,
+     "strong": "H9020",
+     "surface": "seek",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262162,
+     "position": 8,
+     "strong": "H0859A",
+     "surface": "seek",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262164,
+     "position": 9,
+     "strong": "H9005",
+     "surface": "soul",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262165,
+     "position": 9,
+     "strong": "H9031",
+     "surface": "soul",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262167,
+     "position": 10,
+     "strong": "H9031",
+     "surface": "thirsts",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262169,
+     "position": 11,
+     "strong": "H9005",
+     "surface": "flesh",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262170,
+     "position": 11,
+     "strong": "H9031",
+     "surface": "flesh",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262172,
+     "position": 12,
+     "strong": "H9020",
+     "surface": "faints",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262173,
+     "position": 13,
+     "strong": "H6723",
+     "surface": "dry",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262175,
+     "position": 14,
+     "strong": "H9002",
+     "surface": "weary",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262176,
+     "position": 15,
+     "strong": "H0776G",
+     "surface": "land",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262177,
+     "position": 15,
+     "strong": "H9003",
+     "surface": "land",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262178,
+     "position": 15,
+     "strong": "H9020",
+     "surface": "land",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262179,
+     "position": 16,
+     "strong": "H1097",
+     "surface": "no",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1262180,
+     "position": 17,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 3396,
+   "osis": "Ps.69.21",
+   "reference": "Psa 69:21",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1251137,
+     "position": 1,
+     "strong": "H7219",
+     "surface": "poison",
+     "cluster": "M24",
+     "subgroup": "M24_not_this_sense",
+     "kind": "not_this_sense",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1251141,
+     "position": 3,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1251136,
+     "position": 0,
+     "strong": "H5414G",
+     "surface": "gave",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1251138,
+     "position": 1,
+     "strong": "H9020",
+     "surface": "poison",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1251139,
+     "position": 2,
+     "strong": "H1267",
+     "surface": "food",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1251140,
+     "position": 2,
+     "strong": "H9003",
+     "surface": "food",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1251142,
+     "position": 3,
+     "strong": "H9002",
+     "surface": "thirst",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1251143,
+     "position": 3,
+     "strong": "H9005",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1251144,
+     "position": 4,
+     "strong": "H2558",
+     "surface": "sour wine",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1251145,
+     "position": 4,
+     "strong": "H9030",
+     "surface": "sour wine",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1251146,
+     "position": 5,
+     "strong": "H8248H",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1251147,
+     "position": 5,
+     "strong": "H9020",
+     "surface": "drink",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 7775,
+   "osis": "Ps.104.11",
+   "reference": "Psa 104:11",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1254891,
+     "position": 2,
+     "strong": "H2416C",
+     "surface": "beast",
+     "cluster": "M25",
+     "subgroup": "M25_not_this_sense",
+     "kind": "not_this_sense",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1254894,
+     "position": 5,
+     "strong": "H7665",
+     "surface": "quench",
+     "cluster": "M24",
+     "subgroup": "M24_not_this_sense",
+     "kind": "not_this_sense",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1254896,
+     "position": 7,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1254889,
+     "position": 0,
+     "strong": "H8248G",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1254890,
+     "position": 1,
+     "strong": "H3605",
+     "surface": "every",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1254892,
+     "position": 3,
+     "strong": "H7704M",
+     "surface": "field",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1254893,
+     "position": 4,
+     "strong": "H6501",
+     "surface": "wild donkeys",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1254895,
+     "position": 6,
+     "strong": "H9028",
+     "surface": "their",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 16195,
+   "osis": "Isa.5.13",
+   "reference": "Isa 5:13",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1306696,
+     "position": 5,
+     "strong": "H1847",
+     "surface": "knowledge",
+     "cluster": "M15",
+     "subgroup": "M15_knowledge",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1306697,
+     "position": 6,
+     "strong": "H3519",
+     "surface": "honored",
+     "cluster": "M22",
+     "subgroup": "M22_glory",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1306706,
+     "position": 11,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1306689,
+     "position": 0,
+     "strong": "H3651C",
+     "surface": "Therefore",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306690,
+     "position": 0,
+     "strong": "H9005",
+     "surface": "Therefore",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306691,
+     "position": 1,
+     "strong": "H5971A",
+     "surface": "people",
+     "clusters": [
+      "T11"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306692,
+     "position": 2,
+     "strong": "H1540K",
+     "surface": "exile",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306693,
+     "position": 3,
+     "strong": "H9006",
+     "surface": "for",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306694,
+     "position": 3,
+     "strong": "H9020",
+     "surface": "for",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306695,
+     "position": 4,
+     "strong": "H1097",
+     "surface": "lack",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306698,
+     "position": 6,
+     "strong": "H9002",
+     "surface": "honored",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306699,
+     "position": 7,
+     "strong": "H4962",
+     "surface": "men",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306700,
+     "position": 7,
+     "strong": "H9023",
+     "surface": "men",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306701,
+     "position": 8,
+     "strong": "H7458",
+     "surface": "go hungry",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306702,
+     "position": 9,
+     "strong": "H1995A",
+     "surface": "multitude",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306703,
+     "position": 9,
+     "strong": "H9002",
+     "surface": "multitude",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306704,
+     "position": 10,
+     "strong": "H6704",
+     "surface": "parched",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1306705,
+     "position": 10,
+     "strong": "H9023",
+     "surface": "parched",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 12516,
+   "osis": "Isa.41.17",
+   "reference": "Isa 41:17",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1302687,
+     "position": 0,
+     "strong": "H6041",
+     "surface": "poor",
+     "cluster": "M24",
+     "subgroup": "M24_poor",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1302689,
+     "position": 1,
+     "strong": "H0034",
+     "surface": "needy",
+     "cluster": "M09",
+     "subgroup": "M09_poor",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1302692,
+     "position": 2,
+     "strong": "H1245",
+     "surface": "seek",
+     "cluster": "M83",
+     "subgroup": "A_general_seeking",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1302698,
+     "position": 7,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1302708,
+     "position": 14,
+     "strong": "H5800A",
+     "surface": "forsake",
+     "cluster": "M30",
+     "subgroup": "M30_forsaking",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1302688,
+     "position": 0,
+     "strong": "H9009",
+     "surface": "poor",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302690,
+     "position": 1,
+     "strong": "H9002",
+     "surface": "needy",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302691,
+     "position": 1,
+     "strong": "H9009",
+     "surface": "needy",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302693,
+     "position": 3,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302694,
+     "position": 4,
+     "strong": "H0369",
+     "surface": "none",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302695,
+     "position": 4,
+     "strong": "H9002",
+     "surface": "none",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302696,
+     "position": 5,
+     "strong": "H3956G",
+     "surface": "tongue",
+     "clusters": [
+      "T14"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302697,
+     "position": 6,
+     "strong": "H5405",
+     "surface": "parched",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302699,
+     "position": 7,
+     "strong": "H9003",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302700,
+     "position": 7,
+     "strong": "H9028",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302701,
+     "position": 8,
+     "strong": "H0589",
+     "surface": "I",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302702,
+     "position": 9,
+     "strong": "H3068G",
+     "surface": "Lord",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302703,
+     "position": 10,
+     "strong": "H6030B",
+     "surface": "answer",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302704,
+     "position": 11,
+     "strong": "H0430G",
+     "surface": "God",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302705,
+     "position": 11,
+     "strong": "H9038",
+     "surface": "God",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302706,
+     "position": 12,
+     "strong": "H3478",
+     "surface": "Israel",
+     "clusters": [
+      "T11"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302707,
+     "position": 13,
+     "strong": "H3808",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1302709,
+     "position": 15,
+     "strong": "H9038",
+     "surface": "them",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 28149,
+   "osis": "Isa.48.21",
+   "reference": "Isa 48:21",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1314309,
+     "position": 1,
+     "strong": "H6770",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1314307,
+     "position": 0,
+     "strong": "H3808",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314308,
+     "position": 0,
+     "strong": "H9002",
+     "surface": "not",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314310,
+     "position": 2,
+     "strong": "H1980J",
+     "surface": "led",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314311,
+     "position": 3,
+     "strong": "H2723",
+     "surface": "deserts",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314312,
+     "position": 3,
+     "strong": "H9003",
+     "surface": "deserts",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314313,
+     "position": 4,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314314,
+     "position": 4,
+     "strong": "H9038",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314315,
+     "position": 5,
+     "strong": "H5140",
+     "surface": "flow",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314316,
+     "position": 6,
+     "strong": "H9006",
+     "surface": "from",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314317,
+     "position": 7,
+     "strong": "H6697H",
+     "surface": "rock",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314318,
+     "position": 8,
+     "strong": "H1234",
+     "surface": "split",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314319,
+     "position": 8,
+     "strong": "H9005",
+     "surface": "split",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314320,
+     "position": 8,
+     "strong": "H9038",
+     "surface": "split",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314321,
+     "position": 9,
+     "strong": "H6697H",
+     "surface": "rock",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314322,
+     "position": 10,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1314323,
+     "position": 11,
+     "strong": "H2100G",
+     "surface": "gushed out",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 14270,
+   "osis": "Isa.49.10",
+   "reference": "Isa 49:10",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1305002,
+     "position": 3,
+     "strong": "H6770",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1305011,
+     "position": 9,
+     "strong": "H7355",
+     "surface": "pity",
+     "cluster": "M50",
+     "subgroup": "M50_mercy",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1304998,
+     "position": 0,
+     "strong": "H3808",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1304999,
+     "position": 1,
+     "strong": "H7456",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305000,
+     "position": 2,
+     "strong": "H3808",
+     "surface": "or",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305001,
+     "position": 2,
+     "strong": "H9002",
+     "surface": "or",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305003,
+     "position": 4,
+     "strong": "H3808",
+     "surface": "neither",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305004,
+     "position": 4,
+     "strong": "H9002",
+     "surface": "neither",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305005,
+     "position": 5,
+     "strong": "H8273",
+     "surface": "scorching wind",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305006,
+     "position": 5,
+     "strong": "H9038",
+     "surface": "scorching wind",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305007,
+     "position": 6,
+     "strong": "H8121",
+     "surface": "sun",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305008,
+     "position": 6,
+     "strong": "H9002",
+     "surface": "sun",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305009,
+     "position": 7,
+     "strong": "H5221",
+     "surface": "strike",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305010,
+     "position": 8,
+     "strong": "H3588A",
+     "surface": "for",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305012,
+     "position": 10,
+     "strong": "H5090A",
+     "surface": "lead",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305013,
+     "position": 10,
+     "strong": "H9038",
+     "surface": "lead",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305014,
+     "position": 11,
+     "strong": "H5921A",
+     "surface": "by",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305015,
+     "position": 11,
+     "strong": "H9002",
+     "surface": "by",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305016,
+     "position": 11,
+     "strong": "H9038",
+     "surface": "by",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305017,
+     "position": 12,
+     "strong": "H4002",
+     "surface": "springs",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305018,
+     "position": 13,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305019,
+     "position": 14,
+     "strong": "H5095",
+     "surface": "guide",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1305020,
+     "position": 15,
+     "strong": "H9038",
+     "surface": "them",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 304,
+   "osis": "Isa.50.2",
+   "reference": "Isa 50:2",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1291201,
+     "position": 4,
+     "strong": "H7121G",
+     "surface": "called",
+     "cluster": "M42",
+     "subgroup": "M42_calling",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1291205,
+     "position": 8,
+     "strong": "H3027H",
+     "surface": "hand",
+     "cluster": "M72",
+     "subgroup": "M72_hand",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1291215,
+     "position": 13,
+     "strong": "H3581B",
+     "surface": "power",
+     "cluster": "M23",
+     "subgroup": "M23_power",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1291218,
+     "position": 14,
+     "strong": "H5337",
+     "surface": "deliver",
+     "cluster": "M45",
+     "subgroup": "M45_delivering",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1291230,
+     "position": 24,
+     "strong": "H0887",
+     "surface": "stink",
+     "cluster": "M06",
+     "subgroup": "M06_hatred",
+     "kind": "group",
+     "two_sense": true,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1291235,
+     "position": 28,
+     "strong": "H4191",
+     "surface": "die",
+     "cluster": "M25",
+     "subgroup": "M25_dying",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1291236,
+     "position": 29,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1291196,
+     "position": 0,
+     "strong": "H4069",
+     "surface": "Why",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291197,
+     "position": 1,
+     "strong": "H0935G",
+     "surface": "came",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291198,
+     "position": 2,
+     "strong": "H0369",
+     "surface": "no",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291199,
+     "position": 2,
+     "strong": "H9002",
+     "surface": "no",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291200,
+     "position": 3,
+     "strong": "H0376I",
+     "surface": "man",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291202,
+     "position": 5,
+     "strong": "H0369",
+     "surface": "no",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291203,
+     "position": 6,
+     "strong": "H9002",
+     "surface": "one",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291204,
+     "position": 7,
+     "strong": "H6030B",
+     "surface": "answer",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291206,
+     "position": 9,
+     "strong": "H7114A",
+     "surface": "shortened",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291207,
+     "position": 9,
+     "strong": "H9008",
+     "surface": "shortened",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291208,
+     "position": 9,
+     "strong": "H7114A",
+     "surface": "shortened",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291209,
+     "position": 10,
+     "strong": "H9006",
+     "surface": "cannot",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291210,
+     "position": 10,
+     "strong": "H9020",
+     "surface": "cannot",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291211,
+     "position": 11,
+     "strong": "H6304",
+     "surface": "redeem",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291212,
+     "position": 12,
+     "strong": "H0518H",
+     "surface": "no",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291213,
+     "position": 12,
+     "strong": "H9002",
+     "surface": "no",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291214,
+     "position": 12,
+     "strong": "H0369",
+     "surface": "no",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291216,
+     "position": 13,
+     "strong": "H9003",
+     "surface": "power",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291217,
+     "position": 13,
+     "strong": "H9030",
+     "surface": "power",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291219,
+     "position": 14,
+     "strong": "H9005",
+     "surface": "deliver",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291220,
+     "position": 15,
+     "strong": "H2005",
+     "surface": "Behold",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291221,
+     "position": 16,
+     "strong": "H1606",
+     "surface": "rebuke",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291222,
+     "position": 16,
+     "strong": "H9003",
+     "surface": "rebuke",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291223,
+     "position": 17,
+     "strong": "H9020",
+     "surface": "I",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291224,
+     "position": 18,
+     "strong": "H2717A",
+     "surface": "dry up",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291225,
+     "position": 19,
+     "strong": "H3220G",
+     "surface": "sea",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291226,
+     "position": 20,
+     "strong": "H7760A",
+     "surface": "make",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291227,
+     "position": 21,
+     "strong": "H5104H",
+     "surface": "rivers",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291228,
+     "position": 22,
+     "strong": "H4057B",
+     "surface": "desert",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291229,
+     "position": 23,
+     "strong": "H1710",
+     "surface": "fish",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291231,
+     "position": 25,
+     "strong": "H9006",
+     "surface": "for",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291232,
+     "position": 25,
+     "strong": "H9028",
+     "surface": "for",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291233,
+     "position": 26,
+     "strong": "H0369",
+     "surface": "lack",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291234,
+     "position": 27,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1291237,
+     "position": 29,
+     "strong": "H9003",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 6747,
+   "osis": "Isa.65.13",
+   "reference": "Isa 65:13",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6770"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1298000,
+     "position": 14,
+     "strong": "H6770",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1298004,
+     "position": 17,
+     "strong": "H8055",
+     "surface": "rejoice",
+     "cluster": "M04",
+     "subgroup": "M04_rejoicing",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1298007,
+     "position": 19,
+     "strong": "H0954",
+     "surface": "put to shame",
+     "cluster": "M07",
+     "subgroup": "M07_shame",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1297982,
+     "position": 0,
+     "strong": "H3651C",
+     "surface": "Therefore",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297983,
+     "position": 0,
+     "strong": "H9005",
+     "surface": "Therefore",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297984,
+     "position": 1,
+     "strong": "H3541",
+     "surface": "thus",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297985,
+     "position": 2,
+     "strong": "H0559",
+     "surface": "says",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297986,
+     "position": 3,
+     "strong": "H0136",
+     "surface": "Lord",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297987,
+     "position": 4,
+     "strong": "H3069",
+     "surface": "God",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297988,
+     "position": 5,
+     "strong": "H2009",
+     "surface": "Behold",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297989,
+     "position": 6,
+     "strong": "H5650",
+     "surface": "servants",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297990,
+     "position": 7,
+     "strong": "H0398",
+     "surface": "eat",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297991,
+     "position": 7,
+     "strong": "H9020",
+     "surface": "eat",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297992,
+     "position": 8,
+     "strong": "H0859D",
+     "surface": "you",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297993,
+     "position": 9,
+     "strong": "H7456",
+     "surface": "hungry",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297994,
+     "position": 9,
+     "strong": "H9002",
+     "surface": "hungry",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297995,
+     "position": 10,
+     "strong": "H2009",
+     "surface": "behold",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297996,
+     "position": 11,
+     "strong": "H5650",
+     "surface": "servants",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297997,
+     "position": 12,
+     "strong": "H8354",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297998,
+     "position": 12,
+     "strong": "H9020",
+     "surface": "drink",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1297999,
+     "position": 13,
+     "strong": "H0859D",
+     "surface": "you",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1298001,
+     "position": 14,
+     "strong": "H9002",
+     "surface": "thirsty",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1298002,
+     "position": 15,
+     "strong": "H2009",
+     "surface": "behold",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1298003,
+     "position": 16,
+     "strong": "H5650",
+     "surface": "servants",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1298005,
+     "position": 17,
+     "strong": "H9020",
+     "surface": "rejoice",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1298006,
+     "position": 18,
+     "strong": "H0859D",
+     "surface": "you",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1298008,
+     "position": 19,
+     "strong": "H9002",
+     "surface": "put to shame",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 18821,
+   "osis": "Lam.4.4",
+   "reference": "Lam 4:4",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1347453,
+     "position": 5,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1347457,
+     "position": 7,
+     "strong": "H7592",
+     "surface": "beg",
+     "cluster": "M21",
+     "subgroup": "M21_entreaty",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1347448,
+     "position": 0,
+     "strong": "H3956G",
+     "surface": "tongue",
+     "clusters": [
+      "T14"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347449,
+     "position": 1,
+     "strong": "H3243J",
+     "surface": "nursing infant",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347450,
+     "position": 2,
+     "strong": "H1692",
+     "surface": "sticks",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347451,
+     "position": 3,
+     "strong": "H0413",
+     "surface": "to",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347452,
+     "position": 4,
+     "strong": "H2441",
+     "surface": "mouth",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347454,
+     "position": 5,
+     "strong": "H9003",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347455,
+     "position": 5,
+     "strong": "H9023",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347456,
+     "position": 6,
+     "strong": "H5768",
+     "surface": "children",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347458,
+     "position": 8,
+     "strong": "H3899G",
+     "surface": "food",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347459,
+     "position": 9,
+     "strong": "H0369",
+     "surface": "no",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347460,
+     "position": 10,
+     "strong": "H6566",
+     "surface": "one gives",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347461,
+     "position": 11,
+     "strong": "H9005",
+     "surface": "them",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1347462,
+     "position": 11,
+     "strong": "H9038",
+     "surface": "them",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 28921,
+   "osis": "Ezek.19.13",
+   "reference": "Eze 19:13",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1375151,
+     "position": 4,
+     "strong": "H6772",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1375145,
+     "position": 0,
+     "strong": "H6258",
+     "surface": "Now",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1375146,
+     "position": 0,
+     "strong": "H9002",
+     "surface": "Now",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1375147,
+     "position": 1,
+     "strong": "H8362",
+     "surface": "planted",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1375148,
+     "position": 2,
+     "strong": "H4057B",
+     "surface": "wilderness",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1375149,
+     "position": 2,
+     "strong": "H9003",
+     "surface": "wilderness",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1375150,
+     "position": 3,
+     "strong": "H6723",
+     "surface": "dry",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1375152,
+     "position": 4,
+     "strong": "H9002",
+     "surface": "thirsty",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1375153,
+     "position": 5,
+     "strong": "H0776G",
+     "surface": "land",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1375154,
+     "position": 5,
+     "strong": "H9003",
+     "surface": "land",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 13046,
+   "osis": "Hos.2.3",
+   "reference": "Hos 2:3",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1386217,
+     "position": 11,
+     "strong": "H4191",
+     "surface": "kill",
+     "cluster": "M25",
+     "subgroup": "M25_killing",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1386218,
+     "position": 12,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1386198,
+     "position": 0,
+     "strong": "H6435",
+     "surface": "lest",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386199,
+     "position": 1,
+     "strong": "H6584",
+     "surface": "strip",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386200,
+     "position": 2,
+     "strong": "H6174",
+     "surface": "naked",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386201,
+     "position": 2,
+     "strong": "H9034",
+     "surface": "naked",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386202,
+     "position": 3,
+     "strong": "H3322",
+     "surface": "make",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386203,
+     "position": 4,
+     "strong": "H3117G",
+     "surface": "day",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386204,
+     "position": 4,
+     "strong": "H9004",
+     "surface": "day",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386205,
+     "position": 4,
+     "strong": "H9034",
+     "surface": "day",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386206,
+     "position": 5,
+     "strong": "H3205",
+     "surface": "born",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386207,
+     "position": 6,
+     "strong": "H7760A",
+     "surface": "make",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386208,
+     "position": 6,
+     "strong": "H9044",
+     "surface": "make",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386209,
+     "position": 7,
+     "strong": "H4057B",
+     "surface": "wilderness",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386210,
+     "position": 7,
+     "strong": "H9004",
+     "surface": "wilderness",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386211,
+     "position": 7,
+     "strong": "H9034",
+     "surface": "wilderness",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386212,
+     "position": 8,
+     "strong": "H7896G",
+     "surface": "make",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386213,
+     "position": 9,
+     "strong": "H6723",
+     "surface": "parched",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386214,
+     "position": 10,
+     "strong": "H0776G",
+     "surface": "land",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386215,
+     "position": 10,
+     "strong": "H9004",
+     "surface": "land",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386216,
+     "position": 10,
+     "strong": "H9034",
+     "surface": "land",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386219,
+     "position": 12,
+     "strong": "H9003",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1386220,
+     "position": 12,
+     "strong": "H9034",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 13327,
+   "osis": "Amos.8.11",
+   "reference": "Amo 8:11",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1390981,
+     "position": 3,
+     "strong": "H5002",
+     "surface": "declares",
+     "cluster": "M43",
+     "subgroup": "M43_oracle",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1390994,
+     "position": 13,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1390997,
+     "position": 15,
+     "strong": "H8085G",
+     "surface": "hearing",
+     "cluster": "M41",
+     "subgroup": "M41_hearing",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1391001,
+     "position": 16,
+     "strong": "H1697G",
+     "surface": "words",
+     "cluster": "M65",
+     "subgroup": "M65_word",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1390978,
+     "position": 0,
+     "strong": "H2009",
+     "surface": "Behold",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390979,
+     "position": 1,
+     "strong": "H3117G",
+     "surface": "days",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390980,
+     "position": 2,
+     "strong": "H0935G",
+     "surface": "coming",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390982,
+     "position": 4,
+     "strong": "H0136",
+     "surface": "Lord",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390983,
+     "position": 5,
+     "strong": "H3069",
+     "surface": "God",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390984,
+     "position": 6,
+     "strong": "H7971G",
+     "surface": "send",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390985,
+     "position": 7,
+     "strong": "H7458",
+     "surface": "famine",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390986,
+     "position": 8,
+     "strong": "H0776G",
+     "surface": "land",
+     "clusters": [
+      "T10"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390987,
+     "position": 8,
+     "strong": "H9003",
+     "surface": "land",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390988,
+     "position": 9,
+     "strong": "H3808",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390989,
+     "position": 10,
+     "strong": "H7458",
+     "surface": "famine",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390990,
+     "position": 11,
+     "strong": "H3899H",
+     "surface": "bread",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390991,
+     "position": 11,
+     "strong": "H9005",
+     "surface": "bread",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390992,
+     "position": 12,
+     "strong": "H3808",
+     "surface": "nor",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390993,
+     "position": 12,
+     "strong": "H9002",
+     "surface": "nor",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390995,
+     "position": 14,
+     "strong": "H4325G",
+     "surface": "water",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390996,
+     "position": 14,
+     "strong": "H9005",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390998,
+     "position": 15,
+     "strong": "H9005",
+     "surface": "hearing",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1390999,
+     "position": 15,
+     "strong": "H3588B",
+     "surface": "hearing",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391000,
+     "position": 15,
+     "strong": "H0518B",
+     "surface": "hearing",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391002,
+     "position": 16,
+     "strong": "H0853",
+     "surface": "words",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391003,
+     "position": 17,
+     "strong": "H3068G",
+     "surface": "Lord",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 25615,
+   "osis": "Amos.8.13",
+   "reference": "Amo 8:13",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "H6772"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1391868,
+     "position": 6,
+     "strong": "H6772",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1391856,
+     "position": 0,
+     "strong": "H1931",
+     "surface": "that",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391857,
+     "position": 0,
+     "strong": "H9009",
+     "surface": "that",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391858,
+     "position": 1,
+     "strong": "H3117G",
+     "surface": "day",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391859,
+     "position": 1,
+     "strong": "H9003",
+     "surface": "day",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391860,
+     "position": 2,
+     "strong": "H3303",
+     "surface": "lovely",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391861,
+     "position": 2,
+     "strong": "H9009",
+     "surface": "lovely",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391862,
+     "position": 3,
+     "strong": "H1330",
+     "surface": "virgins",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391863,
+     "position": 3,
+     "strong": "H9009",
+     "surface": "virgins",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391864,
+     "position": 4,
+     "strong": "H0970",
+     "surface": "young",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391865,
+     "position": 4,
+     "strong": "H9002",
+     "surface": "young",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391866,
+     "position": 4,
+     "strong": "H9009",
+     "surface": "young",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391867,
+     "position": 5,
+     "strong": "H5968",
+     "surface": "faint",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1391869,
+     "position": 6,
+     "strong": "H9003",
+     "surface": "thirst",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 24343,
+   "osis": "Matt.5.6",
+   "reference": "Mat 5:6",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1416111,
+     "position": 0,
+     "strong": "G3107",
+     "surface": "Blessed",
+     "cluster": "M80",
+     "subgroup": "M80_blessedness",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1416115,
+     "position": 4,
+     "strong": "G1372",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1416116,
+     "position": 5,
+     "strong": "G1343",
+     "surface": "righteousness",
+     "cluster": "M12",
+     "subgroup": "M12_righteousness",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1416112,
+     "position": 1,
+     "strong": "G3588",
+     "surface": "who",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1416113,
+     "position": 2,
+     "strong": "G3983",
+     "surface": "hunger",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1416114,
+     "position": 3,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1416117,
+     "position": 6,
+     "strong": "G3754H",
+     "surface": "for",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1416118,
+     "position": 7,
+     "strong": "G0846",
+     "surface": "they",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1416119,
+     "position": 8,
+     "strong": "G5526",
+     "surface": "satisfied",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 26467,
+   "osis": "Matt.25.35",
+   "reference": "Mat 25:35",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1417856,
+     "position": 6,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1417850,
+     "position": 0,
+     "strong": "G1063",
+     "surface": "For",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417851,
+     "position": 1,
+     "strong": "G3983",
+     "surface": "hungry",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417852,
+     "position": 2,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417853,
+     "position": 3,
+     "strong": "G1325",
+     "surface": "gave",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417854,
+     "position": 4,
+     "strong": "G3427",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417855,
+     "position": 5,
+     "strong": "G5315",
+     "surface": "food",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417857,
+     "position": 7,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417858,
+     "position": 8,
+     "strong": "G3165",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417859,
+     "position": 9,
+     "strong": "G4222",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417860,
+     "position": 10,
+     "strong": "G1510",
+     "surface": "was",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417861,
+     "position": 11,
+     "strong": "G3581",
+     "surface": "stranger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417862,
+     "position": 12,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417863,
+     "position": 13,
+     "strong": "G4863",
+     "surface": "welcomed",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417864,
+     "position": 14,
+     "strong": "G3165",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 3660,
+   "osis": "Matt.25.37",
+   "reference": "Mat 25:37",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1408913,
+     "position": 1,
+     "strong": "G1342",
+     "surface": "righteous",
+     "cluster": "M12",
+     "subgroup": "M12_righteousness",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1408914,
+     "position": 2,
+     "strong": "G0611",
+     "surface": "answer",
+     "cluster": "M41",
+     "subgroup": "M41_answering",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1408925,
+     "position": 13,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1408912,
+     "position": 0,
+     "strong": "G5119",
+     "surface": "Then",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408915,
+     "position": 3,
+     "strong": "G0846",
+     "surface": "him",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408916,
+     "position": 4,
+     "strong": "G3004G",
+     "surface": "saying",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408917,
+     "position": 5,
+     "strong": "G2962G",
+     "surface": "Lord",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408918,
+     "position": 6,
+     "strong": "G4219",
+     "surface": "when",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408919,
+     "position": 7,
+     "strong": "G1492H",
+     "surface": "see",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408920,
+     "position": 8,
+     "strong": "G4571",
+     "surface": "you",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408921,
+     "position": 9,
+     "strong": "G3983",
+     "surface": "hungry",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408922,
+     "position": 10,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408923,
+     "position": 11,
+     "strong": "G5142",
+     "surface": "feed",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408924,
+     "position": 12,
+     "strong": "G2228",
+     "surface": "or",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408926,
+     "position": 14,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408927,
+     "position": 15,
+     "strong": "G4222",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 26468,
+   "osis": "Matt.25.42",
+   "reference": "Mat 25:42",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1417872,
+     "position": 7,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1417865,
+     "position": 0,
+     "strong": "G1063",
+     "surface": "For",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417866,
+     "position": 1,
+     "strong": "G3983",
+     "surface": "hungry",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417867,
+     "position": 2,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417868,
+     "position": 3,
+     "strong": "G1325",
+     "surface": "gave",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417869,
+     "position": 4,
+     "strong": "G3427",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417870,
+     "position": 5,
+     "strong": "G3756",
+     "surface": "no",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417871,
+     "position": 6,
+     "strong": "G5315",
+     "surface": "food",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417873,
+     "position": 8,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417874,
+     "position": 9,
+     "strong": "G3165",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417875,
+     "position": 10,
+     "strong": "G3756",
+     "surface": "no",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1417876,
+     "position": 11,
+     "strong": "G4222",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 3662,
+   "osis": "Matt.25.44",
+   "reference": "Mat 25:44",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1408949,
+     "position": 3,
+     "strong": "G0611",
+     "surface": "answer",
+     "cluster": "M41",
+     "subgroup": "M41_answering",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1408957,
+     "position": 11,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1408963,
+     "position": 17,
+     "strong": "G0772H",
+     "surface": "sick",
+     "cluster": "M73",
+     "subgroup": "M73_sickness",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1408969,
+     "position": 23,
+     "strong": "G1247",
+     "surface": "minister",
+     "cluster": "M36",
+     "subgroup": "M36_ministry",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1408946,
+     "position": 0,
+     "strong": "G5119",
+     "surface": "Then",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408947,
+     "position": 1,
+     "strong": "G0846",
+     "surface": "they",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408948,
+     "position": 2,
+     "strong": "G2532",
+     "surface": "also",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408950,
+     "position": 4,
+     "strong": "G3004G",
+     "surface": "saying",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408951,
+     "position": 5,
+     "strong": "G2962G",
+     "surface": "Lord",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408952,
+     "position": 6,
+     "strong": "G4219",
+     "surface": "when",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408953,
+     "position": 7,
+     "strong": "G1492H",
+     "surface": "see",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408954,
+     "position": 8,
+     "strong": "G4571",
+     "surface": "you",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408955,
+     "position": 9,
+     "strong": "G3983",
+     "surface": "hungry",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408956,
+     "position": 10,
+     "strong": "G2228",
+     "surface": "or",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408958,
+     "position": 12,
+     "strong": "G2228",
+     "surface": "or",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408959,
+     "position": 13,
+     "strong": "G3581",
+     "surface": "stranger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408960,
+     "position": 14,
+     "strong": "G2228",
+     "surface": "or",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408961,
+     "position": 15,
+     "strong": "G1131",
+     "surface": "naked",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408962,
+     "position": 16,
+     "strong": "G2228",
+     "surface": "or",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408964,
+     "position": 18,
+     "strong": "G2228",
+     "surface": "or",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408965,
+     "position": 19,
+     "strong": "G1722",
+     "surface": "in",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408966,
+     "position": 20,
+     "strong": "G5438G",
+     "surface": "prison",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408967,
+     "position": 21,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408968,
+     "position": 22,
+     "strong": "G3756",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1408970,
+     "position": 24,
+     "strong": "G4671",
+     "surface": "you",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 8691,
+   "osis": "John.4.13",
+   "reference": "Joh 4:13",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1451749,
+     "position": 1,
+     "strong": "G0611",
+     "surface": "said",
+     "cluster": "M41",
+     "subgroup": "M41_answering",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1451757,
+     "position": 8,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1451748,
+     "position": 0,
+     "strong": "G2424G",
+     "surface": "Jesus",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451750,
+     "position": 1,
+     "strong": "G2036",
+     "surface": "said",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451751,
+     "position": 2,
+     "strong": "G0846",
+     "surface": "her",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451752,
+     "position": 3,
+     "strong": "G3956",
+     "surface": "Everyone",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451753,
+     "position": 4,
+     "strong": "G4095",
+     "surface": "drinks",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451754,
+     "position": 5,
+     "strong": "G1537",
+     "surface": "of",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451755,
+     "position": 6,
+     "strong": "G3778",
+     "surface": "this",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451756,
+     "position": 7,
+     "strong": "G5204",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451758,
+     "position": 9,
+     "strong": "G3825",
+     "surface": "again",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 24933,
+   "osis": "John.4.14",
+   "reference": "Joh 4:14",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1456715,
+     "position": 10,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1456728,
+     "position": 23,
+     "strong": "G2222",
+     "surface": "life",
+     "cluster": "M25",
+     "subgroup": "M25_life",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1456702,
+     "position": 0,
+     "strong": "G1161",
+     "surface": "but",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456703,
+     "position": 1,
+     "strong": "G3739",
+     "surface": "whoever",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456704,
+     "position": 1,
+     "strong": "G0302",
+     "surface": "whoever",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456705,
+     "position": 2,
+     "strong": "G4095",
+     "surface": "drinks",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456706,
+     "position": 3,
+     "strong": "G1537",
+     "surface": "of",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456707,
+     "position": 4,
+     "strong": "G5204",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456708,
+     "position": 5,
+     "strong": "G3739",
+     "surface": "that",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456709,
+     "position": 6,
+     "strong": "G1473",
+     "surface": "I",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456710,
+     "position": 7,
+     "strong": "G1325",
+     "surface": "give",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456711,
+     "position": 8,
+     "strong": "G0846",
+     "surface": "him",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456712,
+     "position": 9,
+     "strong": "G3756",
+     "surface": "never",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456713,
+     "position": 9,
+     "strong": "G3361",
+     "surface": "never",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456714,
+     "position": 9,
+     "strong": "G0165H",
+     "surface": "never",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456716,
+     "position": 11,
+     "strong": "G5204",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456717,
+     "position": 12,
+     "strong": "G3739",
+     "surface": "that",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456718,
+     "position": 13,
+     "strong": "G1325",
+     "surface": "give",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456719,
+     "position": 14,
+     "strong": "G0846",
+     "surface": "him",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456720,
+     "position": 15,
+     "strong": "G1096",
+     "surface": "become",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456721,
+     "position": 16,
+     "strong": "G1722",
+     "surface": "in",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456722,
+     "position": 17,
+     "strong": "G0846",
+     "surface": "him",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456723,
+     "position": 18,
+     "strong": "G4077",
+     "surface": "spring",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456724,
+     "position": 19,
+     "strong": "G5204",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456725,
+     "position": 20,
+     "strong": "G0242",
+     "surface": "welling up",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456726,
+     "position": 21,
+     "strong": "G1519",
+     "surface": "to",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1456727,
+     "position": 22,
+     "strong": "G0166",
+     "surface": "eternal",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 4093,
+   "osis": "John.4.15",
+   "reference": "Joh 4:15",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1447030,
+     "position": 4,
+     "strong": "G2962H",
+     "surface": "Sir",
+     "cluster": "M72",
+     "subgroup": "M72_not_this_sense",
+     "kind": "not_this_sense",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1447037,
+     "position": 11,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1447026,
+     "position": 0,
+     "strong": "G1135G",
+     "surface": "woman",
+     "clusters": [
+      "T8"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447027,
+     "position": 1,
+     "strong": "G3004G",
+     "surface": "said",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447028,
+     "position": 2,
+     "strong": "G4314",
+     "surface": "to",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447029,
+     "position": 3,
+     "strong": "G0846",
+     "surface": "him",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447031,
+     "position": 5,
+     "strong": "G1325",
+     "surface": "give",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447032,
+     "position": 6,
+     "strong": "G3427",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447033,
+     "position": 7,
+     "strong": "G3778",
+     "surface": "this",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447034,
+     "position": 8,
+     "strong": "G5204",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447035,
+     "position": 9,
+     "strong": "G2443",
+     "surface": "so",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447036,
+     "position": 10,
+     "strong": "G3361",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447038,
+     "position": 12,
+     "strong": "G3366",
+     "surface": "or",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447039,
+     "position": 13,
+     "strong": "G2064",
+     "surface": "come",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447040,
+     "position": 14,
+     "strong": "G1759",
+     "surface": "here",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447041,
+     "position": 15,
+     "strong": "G0501",
+     "surface": "draw",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 8707,
+   "osis": "John.6.35",
+   "reference": "Joh 6:35",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1451989,
+     "position": 6,
+     "strong": "G2222",
+     "surface": "life",
+     "cluster": "M25",
+     "subgroup": "M25_life",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1451997,
+     "position": 13,
+     "strong": "G4100",
+     "surface": "believes",
+     "cluster": "M19",
+     "subgroup": "M19_believing",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1452002,
+     "position": 17,
+     "strong": "G1372",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1451982,
+     "position": 0,
+     "strong": "G1161",
+     "surface": "Jesus",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451983,
+     "position": 0,
+     "strong": "G2424G",
+     "surface": "Jesus",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451984,
+     "position": 1,
+     "strong": "G2036",
+     "surface": "said",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451985,
+     "position": 2,
+     "strong": "G0846",
+     "surface": "them",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451986,
+     "position": 3,
+     "strong": "G1473",
+     "surface": "I",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451987,
+     "position": 4,
+     "strong": "G1510",
+     "surface": "am",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451988,
+     "position": 5,
+     "strong": "G0740",
+     "surface": "bread",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451990,
+     "position": 7,
+     "strong": "G2064",
+     "surface": "comes",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451991,
+     "position": 8,
+     "strong": "G4314",
+     "surface": "to",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451992,
+     "position": 9,
+     "strong": "G3165",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451993,
+     "position": 10,
+     "strong": "G3756",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451994,
+     "position": 10,
+     "strong": "G3361",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451995,
+     "position": 11,
+     "strong": "G3983",
+     "surface": "hunger",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451996,
+     "position": 12,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451998,
+     "position": 14,
+     "strong": "G1519",
+     "surface": "in",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1451999,
+     "position": 15,
+     "strong": "G1691",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1452000,
+     "position": 16,
+     "strong": "G3756",
+     "surface": "never",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1452001,
+     "position": 16,
+     "strong": "G3361",
+     "surface": "never",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 4136,
+   "osis": "John.7.37",
+   "reference": "Joh 7:37",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1447683,
+     "position": 9,
+     "strong": "G2896",
+     "surface": "cried",
+     "cluster": "M42",
+     "subgroup": "M42_crying",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1447687,
+     "position": 12,
+     "strong": "G1372",
+     "surface": "thirsts",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1447674,
+     "position": 0,
+     "strong": "G1722",
+     "surface": "On",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447675,
+     "position": 1,
+     "strong": "G1161",
+     "surface": "the",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447676,
+     "position": 2,
+     "strong": "G2078",
+     "surface": "last",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447677,
+     "position": 3,
+     "strong": "G2250",
+     "surface": "day",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447678,
+     "position": 4,
+     "strong": "G1859",
+     "surface": "feast",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447679,
+     "position": 5,
+     "strong": "G3173",
+     "surface": "great",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447680,
+     "position": 6,
+     "strong": "G2424G",
+     "surface": "Jesus",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447681,
+     "position": 7,
+     "strong": "G2476",
+     "surface": "stood up",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447682,
+     "position": 8,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447684,
+     "position": 9,
+     "strong": "G3004G",
+     "surface": "cried",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447685,
+     "position": 10,
+     "strong": "G1437",
+     "surface": "If",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447686,
+     "position": 11,
+     "strong": "G5100",
+     "surface": "anyone",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447688,
+     "position": 13,
+     "strong": "G2064",
+     "surface": "come",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447689,
+     "position": 14,
+     "strong": "G4314",
+     "surface": "to",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447690,
+     "position": 15,
+     "strong": "G3165",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447691,
+     "position": 16,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1447692,
+     "position": 17,
+     "strong": "G4095",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 4249,
+   "osis": "John.19.28",
+   "reference": "Joh 19:28",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1449475,
+     "position": 3,
+     "strong": "G6063",
+     "surface": "knowing",
+     "cluster": "M15",
+     "subgroup": "M15_knowing",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1449484,
+     "position": 12,
+     "strong": "G1372",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1449472,
+     "position": 0,
+     "strong": "G3326",
+     "surface": "After",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449473,
+     "position": 1,
+     "strong": "G3778",
+     "surface": "this",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449474,
+     "position": 2,
+     "strong": "G2424G",
+     "surface": "Jesus",
+     "clusters": [
+      "T7"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449476,
+     "position": 4,
+     "strong": "G3754G",
+     "surface": "that",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449477,
+     "position": 5,
+     "strong": "G3956",
+     "surface": "all",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449478,
+     "position": 6,
+     "strong": "G2235",
+     "surface": "now",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449479,
+     "position": 7,
+     "strong": "G5055",
+     "surface": "finished",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449480,
+     "position": 8,
+     "strong": "G3004G",
+     "surface": "said",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449481,
+     "position": 9,
+     "strong": "G2443",
+     "surface": "to",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449482,
+     "position": 10,
+     "strong": "G5048",
+     "surface": "fulfill",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1449483,
+     "position": 11,
+     "strong": "G1124",
+     "surface": "Scripture",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 18589,
+   "osis": "Acts.10.10",
+   "reference": "Act 10:10",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G4361"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1467801,
+     "position": 2,
+     "strong": "G4361",
+     "surface": "hungry",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1467803,
+     "position": 4,
+     "strong": "G2309",
+     "surface": "wanted",
+     "cluster": "M18",
+     "subgroup": "M18_will",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1467811,
+     "position": 12,
+     "strong": "G1611",
+     "surface": "trance",
+     "cluster": "M48",
+     "subgroup": "M48_marvelling",
+     "kind": "group",
+     "two_sense": true,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1467799,
+     "position": 0,
+     "strong": "G1161",
+     "surface": "And",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1467800,
+     "position": 1,
+     "strong": "G1096",
+     "surface": "became",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1467802,
+     "position": 3,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1467804,
+     "position": 5,
+     "strong": "G1089",
+     "surface": "eat",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1467805,
+     "position": 6,
+     "strong": "G1161",
+     "surface": "but",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1467806,
+     "position": 7,
+     "strong": "G1565",
+     "surface": "they",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1467807,
+     "position": 8,
+     "strong": "G3903",
+     "surface": "preparing",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1467808,
+     "position": 9,
+     "strong": "G0846",
+     "surface": "he",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1467809,
+     "position": 10,
+     "strong": "G1968",
+     "surface": "fell",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1467810,
+     "position": 11,
+     "strong": "G1909",
+     "surface": "into",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 8062,
+   "osis": "Rom.12.20",
+   "reference": "Rom 12:20",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1477075,
+     "position": 3,
+     "strong": "G2190",
+     "surface": "enemy",
+     "cluster": "M06",
+     "subgroup": "M06_enemies",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1477080,
+     "position": 8,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1477072,
+     "position": 0,
+     "strong": "G0235",
+     "surface": "contrary",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477073,
+     "position": 1,
+     "strong": "G1437",
+     "surface": "if",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477074,
+     "position": 2,
+     "strong": "G4675",
+     "surface": "your",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477076,
+     "position": 4,
+     "strong": "G3983",
+     "surface": "hungry",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477077,
+     "position": 5,
+     "strong": "G5595",
+     "surface": "feed",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477078,
+     "position": 6,
+     "strong": "G0846",
+     "surface": "him",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477079,
+     "position": 7,
+     "strong": "G1437",
+     "surface": "if",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477081,
+     "position": 9,
+     "strong": "G0846",
+     "surface": "him",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477082,
+     "position": 10,
+     "strong": "G4222",
+     "surface": "drink",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477083,
+     "position": 11,
+     "strong": "G1063",
+     "surface": "for",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477084,
+     "position": 12,
+     "strong": "G3778",
+     "surface": "so",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477085,
+     "position": 13,
+     "strong": "G4160G",
+     "surface": "doing",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477086,
+     "position": 14,
+     "strong": "G4987",
+     "surface": "heap",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477087,
+     "position": 15,
+     "strong": "G4442",
+     "surface": "burning",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477088,
+     "position": 16,
+     "strong": "G0440",
+     "surface": "coals",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477089,
+     "position": 17,
+     "strong": "G1909",
+     "surface": "on",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477090,
+     "position": 18,
+     "strong": "G0846",
+     "surface": "his",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1477091,
+     "position": 19,
+     "strong": "G2776",
+     "surface": "head",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 24947,
+   "osis": "1Cor.4.11",
+   "reference": "1Cor 4:11",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1484952,
+     "position": 5,
+     "strong": "G1372",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1484947,
+     "position": 0,
+     "strong": "G0891",
+     "surface": "To",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1484948,
+     "position": 1,
+     "strong": "G0737",
+     "surface": "present",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1484949,
+     "position": 2,
+     "strong": "G5610",
+     "surface": "hour",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1484950,
+     "position": 3,
+     "strong": "G3983",
+     "surface": "we hunger",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1484951,
+     "position": 4,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1484953,
+     "position": 6,
+     "strong": "G1130",
+     "surface": "poorly dressed",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1484954,
+     "position": 7,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1484955,
+     "position": 8,
+     "strong": "G2852",
+     "surface": "buffeted",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1484956,
+     "position": 9,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1484957,
+     "position": 10,
+     "strong": "G0790",
+     "surface": "homeless",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 28874,
+   "osis": "2Cor.11.27",
+   "reference": "2Cor 11:27",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1373"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1489885,
+     "position": 0,
+     "strong": "G2873",
+     "surface": "toil",
+     "cluster": "M24",
+     "subgroup": "M24_toil",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1489894,
+     "position": 9,
+     "strong": "G1373",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1489897,
+     "position": 11,
+     "strong": "G3521",
+     "surface": "without food",
+     "cluster": "M21",
+     "subgroup": "M21_not_this_sense",
+     "kind": "not_this_sense",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1489886,
+     "position": 1,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489887,
+     "position": 2,
+     "strong": "G3449",
+     "surface": "hardship",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489888,
+     "position": 3,
+     "strong": "G1722",
+     "surface": "through",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489889,
+     "position": 4,
+     "strong": "G4178",
+     "surface": "many",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489890,
+     "position": 5,
+     "strong": "G0070",
+     "surface": "sleepless night",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489891,
+     "position": 6,
+     "strong": "G1722",
+     "surface": "in",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489892,
+     "position": 7,
+     "strong": "G3042",
+     "surface": "hunger",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489893,
+     "position": 8,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489895,
+     "position": 10,
+     "strong": "G4178",
+     "surface": "often",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489896,
+     "position": 11,
+     "strong": "G1722",
+     "surface": "without food",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489898,
+     "position": 12,
+     "strong": "G1722",
+     "surface": "in",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489899,
+     "position": 13,
+     "strong": "G5592",
+     "surface": "cold",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489900,
+     "position": 14,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1489901,
+     "position": 15,
+     "strong": "G1132",
+     "surface": "exposure",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 28873,
+   "osis": "Rev.7.16",
+   "reference": "Rev 7:16",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1519988,
+     "position": 4,
+     "strong": "G1372",
+     "surface": "thirst",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    }
+   ],
+   "context": [
+    {
+     "id": 1519984,
+     "position": 0,
+     "strong": "G3983",
+     "surface": "hunger",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519985,
+     "position": 1,
+     "strong": "G3756",
+     "surface": "no",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519986,
+     "position": 2,
+     "strong": "G2089",
+     "surface": "more",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519987,
+     "position": 3,
+     "strong": "G3761",
+     "surface": "neither",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519989,
+     "position": 5,
+     "strong": "G2089",
+     "surface": "anymore",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519990,
+     "position": 6,
+     "strong": "G2246",
+     "surface": "sun",
+     "clusters": [
+      "T13"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519991,
+     "position": 7,
+     "strong": "G3761",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519992,
+     "position": 7,
+     "strong": "G3361",
+     "surface": "not",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519993,
+     "position": 8,
+     "strong": "G4098",
+     "surface": "strike",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519994,
+     "position": 8,
+     "strong": "G1909",
+     "surface": "strike",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519995,
+     "position": 9,
+     "strong": "G0846",
+     "surface": "them",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519996,
+     "position": 10,
+     "strong": "G3761",
+     "surface": "nor",
+     "clusters": [
+      "T5"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519997,
+     "position": 11,
+     "strong": "G3956",
+     "surface": "any",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1519998,
+     "position": 12,
+     "strong": "G2738",
+     "surface": "scorching heat",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 8920,
+   "osis": "Rev.21.6",
+   "reference": "Rev 21:6",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1515219,
+     "position": 9,
+     "strong": "G0746",
+     "surface": "beginning",
+     "cluster": "M72",
+     "subgroup": "M72_not_this_sense",
+     "kind": "not_this_sense",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1515222,
+     "position": 12,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1515228,
+     "position": 18,
+     "strong": "G2222",
+     "surface": "life",
+     "cluster": "M25",
+     "subgroup": "M25_life",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1515210,
+     "position": 0,
+     "strong": "G2532",
+     "surface": "And",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515211,
+     "position": 1,
+     "strong": "G2036",
+     "surface": "said",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515212,
+     "position": 2,
+     "strong": "G3427",
+     "surface": "me",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515213,
+     "position": 3,
+     "strong": "G1096",
+     "surface": "done",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515214,
+     "position": 4,
+     "strong": "G1473",
+     "surface": "I",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515215,
+     "position": 5,
+     "strong": "G1510",
+     "surface": "am",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515216,
+     "position": 6,
+     "strong": "G0001G",
+     "surface": "Alpha",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515217,
+     "position": 7,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515218,
+     "position": 8,
+     "strong": "G5598",
+     "surface": "Omega",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515220,
+     "position": 10,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515221,
+     "position": 11,
+     "strong": "G5056",
+     "surface": "end",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515223,
+     "position": 13,
+     "strong": "G1473",
+     "surface": "I",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515224,
+     "position": 14,
+     "strong": "G1325",
+     "surface": "give",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515225,
+     "position": 15,
+     "strong": "G1537",
+     "surface": "from",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515226,
+     "position": 16,
+     "strong": "G4077",
+     "surface": "spring",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515227,
+     "position": 17,
+     "strong": "G5204",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1515229,
+     "position": 19,
+     "strong": "G1432",
+     "surface": "without payment",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  },
+  {
+   "verse_id": 4550,
+   "osis": "Rev.22.17",
+   "reference": "Rev 22:17",
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M18_thirst",
+     "via": "G1372"
+    }
+   ],
+   "occurrences": [
+    {
+     "id": 1514886,
+     "position": 1,
+     "strong": "G4151G",
+     "surface": "Spirit",
+     "cluster": "M47",
+     "subgroup": "M47_spirit",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1514896,
+     "position": 11,
+     "strong": "G1372",
+     "surface": "thirsty",
+     "cluster": "M18",
+     "subgroup": "M18_thirst",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": true,
+     "home": true
+    },
+    {
+     "id": 1514898,
+     "position": 13,
+     "strong": "G2309",
+     "surface": "desires",
+     "cluster": "M18",
+     "subgroup": "M18_desire",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    },
+    {
+     "id": 1514901,
+     "position": 16,
+     "strong": "G2222",
+     "surface": "life",
+     "cluster": "M25",
+     "subgroup": "M25_life",
+     "kind": "group",
+     "two_sense": false,
+     "in_scope": false,
+     "home": false
+    }
+   ],
+   "context": [
+    {
+     "id": 1514885,
+     "position": 0,
+     "strong": "G2532",
+     "surface": "The",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514887,
+     "position": 2,
+     "strong": "G2532",
+     "surface": "and",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514888,
+     "position": 3,
+     "strong": "G3565",
+     "surface": "Bride",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514889,
+     "position": 4,
+     "strong": "G3004G",
+     "surface": "say",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514890,
+     "position": 5,
+     "strong": "G2064",
+     "surface": "Come",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514891,
+     "position": 6,
+     "strong": "G2532",
+     "surface": "And",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514892,
+     "position": 7,
+     "strong": "G0191",
+     "surface": "hears",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514893,
+     "position": 8,
+     "strong": "G3004G",
+     "surface": "say",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514894,
+     "position": 9,
+     "strong": "G2064",
+     "surface": "Come",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514895,
+     "position": 10,
+     "strong": "G2532",
+     "surface": "And",
+     "clusters": [
+      "T6"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514897,
+     "position": 12,
+     "strong": "G2064",
+     "surface": "come",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514899,
+     "position": 14,
+     "strong": "G2983",
+     "surface": "take",
+     "clusters": [
+      "T3"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514900,
+     "position": 15,
+     "strong": "G5204",
+     "surface": "water",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    },
+    {
+     "id": 1514902,
+     "position": 17,
+     "strong": "G1432",
+     "surface": "without price",
+     "clusters": [
+      "T2"
+     ],
+     "in_scope": false
+    }
+   ]
+  }
+ ],
+ "not_resolved": [],
+ "counts": {
+  "verses": 42,
+  "selectors": 1,
+  "not_resolved": 0,
+  "occurrences": 117,
+  "context": 729,
+  "in_scope": 44,
+  "home": 44,
+  "other_subgroups": 54
+ }
+}

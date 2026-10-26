@@ -234,6 +234,9 @@ def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_requ
         raise Refused(unmapped)
     types = gap_types(cfg)
     request = vs.normalise_request({k: v for k, v in p.items() if k not in NOT_SCOPE}, file_request)
+    # the home (B:120): the request's subgroups of the home cluster, else the home cluster itself
+    request["home"] = [s for s in request.get("subgroup", []) if conn.execute(
+        "SELECT 1 FROM cluster_subgroup WHERE subgroup_code=? AND cluster_code=?", (s, home)).fetchone()] or [home]
     try:
         col = vc.collate(cfg, request, root)
     except (vs.ScopeError, vc.CollateError) as exc:
