@@ -53,4 +53,4 @@ Live database: migration applied (63 writes); 3,146 observations, 62 documents' 
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch `main`. Commit `fbf8533ca384ead6ab2a1ea25087033505e8304e`, "session 20261026: #2305 prior-work capture built, piloted and applied live ...". Push: the commit is on `origin/main` (`git log origin/main` shows `fbf8533c`; a second `git push` answers "Everything up-to-date"). `Session-Close.ps1` exited 0 (report `iba/app/reports/session-close-v202-20261026.md`) before the commit.
