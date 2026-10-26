@@ -1,0 +1,7557 @@
+{
+ "cluster": "M15",
+ "cluster_name": "Knowing & Understanding",
+ "built_at": "2026-10-26T04:19:16Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 460,
+  "head": 85,
+  "tail": 375,
+  "hits": 2525,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H3045",
+   "surface": "know",
+   "part": "head",
+   "hits": 555,
+   "verses": 524,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Amos.5.12",
+    "Job.21.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "know",
+   "part": "head",
+   "hits": 174,
+   "verses": 173,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "2Thess.2.6",
+    "Titus.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "know",
+   "part": "head",
+   "hits": 118,
+   "verses": 111,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "1John.2.3",
+    "2Cor.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "known",
+   "part": "head",
+   "hits": 113,
+   "verses": 113,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ps.79.10",
+    "Zech.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1847",
+   "surface": "knowledge",
+   "part": "head",
+   "hits": 81,
+   "verses": 79,
+   "gloss": "knowledge",
+   "transliteration": "da.at",
+   "samples": [
+    "Eccl.9.10",
+    "Prov.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "knows",
+   "part": "head",
+   "hits": 55,
+   "verses": 54,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Job.11.11",
+    "Nah.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "knew",
+   "part": "head",
+   "hits": 54,
+   "verses": 53,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Deut.7.15",
+    "Hos.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "understand",
+   "part": "head",
+   "hits": 45,
+   "verses": 43,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Dan.10.14",
+    "Jer.23.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1321",
+   "surface": "teaching",
+   "part": "head",
+   "hits": 38,
+   "verses": 38,
+   "gloss": "to teach",
+   "transliteration": "didaskō",
+   "samples": [
+    "Acts.5.42",
+    "Mark.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "know",
+   "part": "head",
+   "hits": 35,
+   "verses": 19,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "2Cor.12.2",
+    "Phil.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8394",
+   "surface": "understanding",
+   "part": "head",
+   "hits": 34,
+   "verses": 34,
+   "gloss": "understanding",
+   "transliteration": "te.vu.nah",
+   "samples": [
+    "Ezek.28.4",
+    "Prov.28.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "understanding",
+   "part": "head",
+   "hits": 31,
+   "verses": 31,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Hos.4.14",
+    "Ps.119.104"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1321",
+   "surface": "teach",
+   "part": "head",
+   "hits": 30,
+   "verses": 28,
+   "gloss": "to teach",
+   "transliteration": "didaskō",
+   "samples": [
+    "1John.2.27",
+    "1Tim.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "knowing",
+   "part": "head",
+   "hits": 30,
+   "verses": 30,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "2Cor.4.14",
+    "Mark.12.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1108",
+   "surface": "knowledge",
+   "part": "head",
+   "hits": 27,
+   "verses": 26,
+   "gloss": "knowledge",
+   "transliteration": "gnōsis",
+   "samples": [
+    "1Cor.14.6",
+    "2Cor.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1321",
+   "surface": "taught",
+   "part": "head",
+   "hits": 24,
+   "verses": 24,
+   "gloss": "to teach",
+   "transliteration": "didaskō",
+   "samples": [
+    "1John.2.27",
+    "John.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "known",
+   "part": "head",
+   "hits": 23,
+   "verses": 22,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Acts.9.24",
+    "Luke.19.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0998",
+   "surface": "understanding",
+   "part": "head",
+   "hits": 23,
+   "verses": 23,
+   "gloss": "understanding",
+   "transliteration": "bi.nah",
+   "samples": [
+    "Dan.9.22",
+    "Prov.30.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "think",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "1Cor.12.23",
+    "Matt.22.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "saw",
+   "part": "head",
+   "hits": 20,
+   "verses": 19,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "Rev.13.11",
+    "Rev.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1922",
+   "surface": "knowledge",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "knowledge",
+   "transliteration": "epignōsis",
+   "samples": [
+    "2Tim.3.7",
+    "Eph.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4920",
+   "surface": "understand",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to understand",
+   "transliteration": "suniēmi",
+   "samples": [
+    "Luke.2.50",
+    "Matt.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3563",
+   "surface": "mind",
+   "part": "head",
+   "hits": 18,
+   "verses": 16,
+   "gloss": "mind",
+   "transliteration": "nous",
+   "samples": [
+    "Rom.11.34",
+    "Rom.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2449",
+   "surface": "wise",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "be wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Eccl.2.15",
+    "Zech.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "knows",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "Mark.13.32",
+    "Rev.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "knowledge",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.45.20",
+    "Ps.14.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4609A",
+   "surface": "ascents",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "thought",
+   "transliteration": "ma.a.lah",
+   "samples": [
+    "Ps.120.1",
+    "Ps.121.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "knew",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "John.11.57",
+    "John.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "understand",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "2Tim.3.1",
+    "Rom.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492I",
+   "surface": "knew",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to perceive: know",
+   "transliteration": "eidō",
+   "samples": [
+    "John.18.2",
+    "Luke.4.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "known",
+   "part": "head",
+   "hits": 14,
+   "verses": 13,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Dan.2.45",
+    "Dan.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492I",
+   "surface": "know",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to perceive: know",
+   "transliteration": "eidō",
+   "samples": [
+    "Acts.7.18",
+    "John.8.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5429",
+   "surface": "wise",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "thoughtful",
+   "transliteration": "fronimos",
+   "samples": [
+    "1Cor.4.10",
+    "Matt.25.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "know",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Dan.2.8",
+    "Dan.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "knows",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "John.10.15",
+    "Luke.16.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "consider",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Isa.43.18",
+    "Job.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "make known",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Dan.4.6",
+    "Dan.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7878",
+   "surface": "meditate",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to muse",
+   "transliteration": "si.ach",
+   "samples": [
+    "Ps.119.148",
+    "Ps.119.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0998",
+   "surface": "insight",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "understanding",
+   "transliteration": "bi.nah",
+   "samples": [
+    "Prov.4.7",
+    "Prov.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "consider",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "Hag.2.18",
+    "Judg.19.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "thinks",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Gal.6.3",
+    "Phil.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "discern",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Isa.44.18",
+    "Job.6.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "understands",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Dan.8.23",
+    "Isa.57.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "understood",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "1Chr.15.22",
+    "2Sam.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "understand",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.42.25",
+    "Prov.30.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "learned",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Mark.15.45",
+    "Rev.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "perceived",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Gal.2.9",
+    "Matt.21.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1271",
+   "surface": "mind",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "mind",
+   "transliteration": "dianoia",
+   "samples": [
+    "2Pet.3.1",
+    "Eph.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1987",
+   "surface": "know",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to know/understand",
+   "transliteration": "epistamai",
+   "samples": [
+    "Acts.10.28",
+    "Jas.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1844",
+   "surface": "knowledge",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "knowledge",
+   "transliteration": "de.ah",
+   "samples": [
+    "1Sam.2.3",
+    "Isa.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "think",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Job.35.2",
+    "Job.41.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "teach",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Job.32.7",
+    "Ps.90.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7476",
+   "surface": "thoughts",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "thought",
+   "transliteration": "ra.yon",
+   "samples": [
+    "Dan.4.19",
+    "Dan.7.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "aware",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Matt.12.15",
+    "Matt.22.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "thought",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Acts.12.9",
+    "John.11.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3539",
+   "surface": "understand",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to understand",
+   "transliteration": "noeō",
+   "samples": [
+    "Heb.11.3",
+    "Matt.24.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3809",
+   "surface": "discipline",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "discipline",
+   "transliteration": "paideia",
+   "samples": [
+    "Eph.6.4",
+    "Heb.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4907",
+   "surface": "understanding",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "understanding",
+   "transliteration": "sunesis",
+   "samples": [
+    "Col.2.2",
+    "Luke.2.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "understand",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "1Cor.11.3",
+    "1Cor.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "discerning",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Gen.41.33",
+    "Hos.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1847",
+   "surface": "know",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "knowledge",
+   "transliteration": "da.at",
+   "samples": [
+    "Job.10.7",
+    "Job.33.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "certain",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Kgs.2.37",
+    "Jer.26.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "knowing",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Chr.6.29",
+    "Gen.3.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "perceived",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Eccl.2.14",
+    "Neh.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "show",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Sam.10.8",
+    "1Sam.16.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "take",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "Isa.42.25",
+    "Mal.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1106",
+   "surface": "judgment",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "resolution",
+   "transliteration": "gnōmē",
+   "samples": [
+    "1Cor.1.10",
+    "1Cor.7.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "seemed good",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Acts.15.25",
+    "Luke.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3543",
+   "surface": "supposed",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to think",
+   "transliteration": "nomizō",
+   "samples": [
+    "Acts.21.29",
+    "Acts.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3543",
+   "surface": "think",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to think",
+   "transliteration": "nomizō",
+   "samples": [
+    "Acts.17.29",
+    "Matt.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3563",
+   "surface": "minds",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "mind",
+   "transliteration": "nous",
+   "samples": [
+    "Eph.4.17",
+    "Luke.24.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4920",
+   "surface": "understood",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to understand",
+   "transliteration": "suniēmi",
+   "samples": [
+    "Matt.13.51",
+    "Matt.17.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5591",
+   "surface": "natural",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "natural",
+   "transliteration": "psuchikos",
+   "samples": [
+    "1Cor.15.44",
+    "1Cor.15.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "perceive",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Job.23.8",
+    "Ps.94.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2449",
+   "surface": "wiser",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "1Kgs.4.31",
+    "Job.35.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2938",
+   "surface": "taste",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to perceive",
+   "transliteration": "ta.am",
+   "samples": [
+    "2Sam.19.35",
+    "Ps.34.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2938",
+   "surface": "tasted",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to perceive",
+   "transliteration": "ta.am",
+   "samples": [
+    "1Sam.14.24",
+    "1Sam.14.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "acknowledge",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.33.13",
+    "Jer.14.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "consider",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Sam.24.13",
+    "Deut.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "know how",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Chr.2.8",
+    "Jer.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "learn",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Esth.2.11",
+    "Ruth.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7922",
+   "surface": "good sense",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "understanding",
+   "transliteration": "se.khel",
+   "samples": [
+    "Prov.16.22",
+    "Prov.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "learn",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "1Thess.3.5",
+    "Rev.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1128",
+   "surface": "trained",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to train",
+   "transliteration": "gumnazō",
+   "samples": [
+    "Heb.12.11",
+    "Heb.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1271",
+   "surface": "minds",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "mind",
+   "transliteration": "dianoia",
+   "samples": [
+    "1Pet.1.13",
+    "Heb.10.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1321",
+   "surface": "teaches",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to teach",
+   "transliteration": "didaskō",
+   "samples": [
+    "1John.2.27",
+    "Matt.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "seems",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Acts.17.18",
+    "Acts.25.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "supposing",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "John.11.31",
+    "John.20.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "looked",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "Rev.14.1",
+    "Rev.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "perceive",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "Mark.4.12",
+    "Matt.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1761",
+   "surface": "thoughts",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "reflection",
+   "transliteration": "enthumēsis",
+   "samples": [
+    "Heb.4.12",
+    "Matt.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3539",
+   "surface": "perceive",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to understand",
+   "transliteration": "noeō",
+   "samples": [
+    "Eph.3.4",
+    "Matt.16.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3540",
+   "surface": "minds",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "mind/thought",
+   "transliteration": "noēma",
+   "samples": [
+    "2Cor.3.14",
+    "Phil.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3543",
+   "surface": "supposing",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to think",
+   "transliteration": "nomizō",
+   "samples": [
+    "Acts.16.27",
+    "Luke.2.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4993",
+   "surface": "right mind",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be of sound mind",
+   "transliteration": "sōfroneō",
+   "samples": [
+    "Luke.8.35",
+    "Mark.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "you",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "1Cor.6.15",
+    "1Cor.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "attention",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Dan.11.30",
+    "Job.32.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "intelligent",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Eccl.9.11",
+    "Prov.18.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "perceived",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "1Sam.3.8",
+    "Prov.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1843",
+   "surface": "opinion",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "knowledge",
+   "transliteration": "de.a",
+   "samples": [
+    "Job.32.17",
+    "Job.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "counted",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Deut.2.11",
+    "Job.41.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "counts",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Job.19.11",
+    "Job.41.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "experienced",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Deut.1.15",
+    "Judg.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "has",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Chr.2.13",
+    "Prov.17.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "learned",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Sam.26.4",
+    "Esth.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Prov.12.10",
+    "Ps.144.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "skillful",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Sam.16.18",
+    "Gen.25.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "tell",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Sam.28.15",
+    "1Sam.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "knew",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Dan.5.21",
+    "Dan.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4093",
+   "surface": "knowledge",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "knowledge",
+   "transliteration": "mad.da",
+   "samples": [
+    "2Chr.1.11",
+    "2Chr.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7881",
+   "surface": "meditation",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "meditation",
+   "transliteration": "si.chah",
+   "samples": [
+    "Job.15.4",
+    "Ps.119.99"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7896K",
+   "surface": "take",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to set: consider",
+   "transliteration": "shit",
+   "samples": [
+    "Exod.7.23",
+    "Ps.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7922",
+   "surface": "discretion",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "understanding",
+   "transliteration": "se.khel",
+   "samples": [
+    "1Chr.22.12",
+    "2Chr.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8394",
+   "surface": "intelligence",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "understanding",
+   "transliteration": "te.vu.nah",
+   "samples": [
+    "Exod.35.31",
+    "Exod.36.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "find out",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "1Cor.4.19",
+    "2Cor.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "knowing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "2Pet.1.20",
+    "2Pet.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "1John.2.29",
+    "Eph.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "understood",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "1Cor.2.16",
+    "1Cor.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1106",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "resolution",
+   "transliteration": "gnōmē",
+   "samples": [
+    "Rev.17.13",
+    "Rev.17.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1271",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "mind",
+   "transliteration": "dianoia",
+   "samples": [
+    "1John.5.20",
+    "Eph.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "expect",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Luke.12.40",
+    "Matt.24.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "seem",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "1Cor.12.22",
+    "Heb.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "seemed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Gal.2.6",
+    "Gal.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "seemed influential",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Gal.2.2",
+    "Gal.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "knows",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "2Cor.12.2",
+    "2Cor.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492I",
+   "surface": "known",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to perceive: know",
+   "transliteration": "eidō",
+   "samples": [
+    "Luke.12.39",
+    "Matt.24.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1503",
+   "surface": "like",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to resemble",
+   "transliteration": "eikō",
+   "samples": [
+    "Jas.1.23",
+    "Jas.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1987",
+   "surface": "knowing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know/understand",
+   "transliteration": "epistamai",
+   "samples": [
+    "Acts.24.10",
+    "Heb.11.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1987",
+   "surface": "understand",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know/understand",
+   "transliteration": "epistamai",
+   "samples": [
+    "Jude.1.10",
+    "Mark.14.68"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3539",
+   "surface": "see",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to understand",
+   "transliteration": "noeō",
+   "samples": [
+    "Mark.7.18",
+    "Matt.15.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3543",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to think",
+   "transliteration": "nomizō",
+   "samples": [
+    "Acts.8.20",
+    "Matt.20.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3563",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "mind",
+   "transliteration": "nous",
+   "samples": [
+    "Phil.4.7",
+    "Rev.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4267",
+   "surface": "foreknew",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know/choose",
+   "transliteration": "proginōskō",
+   "samples": [
+    "Rom.11.2",
+    "Rom.8.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4920",
+   "surface": "understands",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to understand",
+   "transliteration": "suniēmi",
+   "samples": [
+    "Matt.13.23",
+    "Rom.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4993",
+   "surface": "self-controlled",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be of sound mind",
+   "transliteration": "sōfroneō",
+   "samples": [
+    "1Pet.4.7",
+    "Titus.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5424",
+   "surface": "thinking",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "thinking",
+   "transliteration": "frēn",
+   "samples": [
+    "1Cor.14.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "aware",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "1Thess.5.2",
+    "2Tim.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "knew",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "John.13.1",
+    "John.21.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "knowledge",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "1John.2.20",
+    "Acts.24.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "Acts.12.11",
+    "Eph.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "could understand",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Neh.8.2",
+    "Neh.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "learn",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Prov.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "prudent",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "1Sam.16.18",
+    "Jer.49.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "skillful",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "1Chr.25.7",
+    "2Chr.34.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "taught",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "2Chr.35.3",
+    "Neh.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Prov.14.15",
+    "Prov.21.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0998",
+   "surface": "discernment",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "understanding",
+   "transliteration": "bi.nah",
+   "samples": [
+    "Isa.27.11",
+    "Isa.29.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1843",
+   "surface": "knowledge",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "knowledge",
+   "transliteration": "de.a",
+   "samples": [
+    "Job.36.3",
+    "Job.37.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1847",
+   "surface": "unintentionally",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "knowledge",
+   "transliteration": "da.at",
+   "samples": [
+    "Deut.19.4",
+    "Deut.4.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1847",
+   "surface": "unknowingly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "knowledge",
+   "transliteration": "da.at",
+   "samples": [
+    "Josh.20.3",
+    "Josh.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2449",
+   "surface": "wisdom",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Eccl.2.19",
+    "Prov.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "count",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Job.13.24",
+    "Job.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "regarded",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Isa.29.16",
+    "Isa.29.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Gen.38.15",
+    "Ps.73.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2938",
+   "surface": "tastes",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to perceive",
+   "transliteration": "ta.am",
+   "samples": [
+    "Job.12.11",
+    "Job.34.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "cannot",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.29.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "certainty",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Jer.42.19",
+    "Jer.42.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "companions",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ps.88.18",
+    "Ps.88.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "concern",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Gen.39.6",
+    "Gen.39.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "declared",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Job.26.3",
+    "Neh.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "familiar",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Kgs.9.27",
+    "2Chr.8.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "found out",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Neh.13.10",
+    "Prov.10.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "have",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.56.11",
+    "Job.38.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "how",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.7.16",
+    "Isa.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "i",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Job.13.2",
+    "Prov.30.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "perceive",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.43.19",
+    "Isa.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Sam.1.10",
+    "Num.32.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "take note",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Sam.23.23",
+    "Jer.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "taught",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ezek.22.26",
+    "Judg.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "trained",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Chr.2.14",
+    "2Chr.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "well",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Sam.20.3",
+    "Prov.27.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "you",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Jer.40.14",
+    "Zech.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4093",
+   "surface": "learning",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "knowledge",
+   "transliteration": "mad.da",
+   "samples": [
+    "Dan.1.17",
+    "Dan.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4486",
+   "surface": "knowledge",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "knowledge",
+   "transliteration": "man.da",
+   "samples": [
+    "Dan.2.21",
+    "Dan.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4486",
+   "surface": "reason",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "knowledge",
+   "transliteration": "man.da",
+   "samples": [
+    "Dan.4.34",
+    "Dan.4.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7454",
+   "surface": "thoughts",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "thought",
+   "transliteration": "re.a",
+   "samples": [
+    "Ps.139.17",
+    "Ps.139.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "care",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "2Sam.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "Job.1.8",
+    "Job.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "mark",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "Ezek.44.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7878",
+   "surface": "talk",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to muse",
+   "transliteration": "si.ach",
+   "samples": [
+    "Prov.6.22",
+    "Ps.69.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7878",
+   "surface": "tell",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to muse",
+   "transliteration": "si.ach",
+   "samples": [
+    "1Chr.16.9",
+    "Ps.105.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7896K",
+   "surface": "consider",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to set: consider",
+   "transliteration": "shit",
+   "samples": [
+    "Jer.31.21",
+    "Ps.48.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7922",
+   "surface": "sense",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "understanding",
+   "transliteration": "se.khel",
+   "samples": [
+    "Neh.8.8",
+    "Prov.13.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7922",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "understanding",
+   "transliteration": "se.khel",
+   "samples": [
+    "Job.17.4",
+    "Ps.111.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0143",
+   "surface": "perceive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to perceive",
+   "transliteration": "aisthanomai",
+   "samples": [
+    "Luke.9.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0333",
+   "surface": "consider",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contemplate",
+   "transliteration": "anatheōreō",
+   "samples": [
+    "Heb.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0333",
+   "surface": "observed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contemplate",
+   "transliteration": "anatheōreō",
+   "samples": [
+    "Acts.17.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "decided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Luke.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "felt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Mark.5.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "found out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Mark.6.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "grasp",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Luke.18.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "had",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "1Cor.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "learning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "John.7.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "news",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Phil.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "once regarded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "2Cor.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "perceive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Luke.8.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "perceiving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "John.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "2Cor.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "shown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Jas.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "unaware",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Matt.24.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1097",
+   "surface": "virgin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ginōskō",
+   "samples": [
+    "Luke.1.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1106",
+   "surface": "consent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resolution",
+   "transliteration": "gnōmē",
+   "samples": [
+    "Phlm.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1106",
+   "surface": "decided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resolution",
+   "transliteration": "gnōmē",
+   "samples": [
+    "Acts.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1106",
+   "surface": "purpose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resolution",
+   "transliteration": "gnōmē",
+   "samples": [
+    "Rev.17.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1108",
+   "surface": "knowing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "knowledge",
+   "transliteration": "gnōsis",
+   "samples": [
+    "Phil.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1108",
+   "surface": "understanding way",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "knowledge",
+   "transliteration": "gnōsis",
+   "samples": [
+    "1Pet.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1128",
+   "surface": "train",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to train",
+   "transliteration": "gumnazō",
+   "samples": [
+    "1Tim.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1226",
+   "surface": "insist",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to insist",
+   "transliteration": "diabebaioō",
+   "samples": [
+    "Titus.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1226",
+   "surface": "make confident assertions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to insist",
+   "transliteration": "diabebaioō",
+   "samples": [
+    "1Tim.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1253",
+   "surface": "distinguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discernment",
+   "transliteration": "diakrisis",
+   "samples": [
+    "Heb.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1253",
+   "surface": "distinguish between",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discernment",
+   "transliteration": "diakrisis",
+   "samples": [
+    "1Cor.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1253",
+   "surface": "quarrel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discernment",
+   "transliteration": "diakrisis",
+   "samples": [
+    "Rom.14.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1270",
+   "surface": "thoughts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought",
+   "transliteration": "dianoēma",
+   "samples": [
+    "Luke.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1271",
+   "surface": "thoughts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mind",
+   "transliteration": "dianoia",
+   "samples": [
+    "Luke.1.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1321",
+   "surface": "directed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to teach",
+   "transliteration": "didaskō",
+   "samples": [
+    "Matt.28.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "appear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "2Cor.10.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Mark.10.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "convinced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Acts.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "imagines",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "1Cor.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "inclined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "1Cor.11.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Matt.26.66"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "presume",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Matt.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "regarded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Luke.22.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "seemed best",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Heb.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "suppose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Jas.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "supposed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "Luke.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1380",
+   "surface": "thinking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "dokeō",
+   "samples": [
+    "2Cor.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1425",
+   "surface": "understand",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hard to understand",
+   "transliteration": "dusnoētos",
+   "samples": [
+    "2Pet.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "consider",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "Acts.15.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "knew",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "John.11.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "known",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "Rom.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "see",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "Rev.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492G",
+   "surface": "understand",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to perceive: understand",
+   "transliteration": "eidō",
+   "samples": [
+    "1Cor.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1492I",
+   "surface": "understand",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to perceive: know",
+   "transliteration": "eidō",
+   "samples": [
+    "John.20.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1502",
+   "surface": "yield",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to yield",
+   "transliteration": "eikō",
+   "samples": [
+    "Gal.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1760",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reflect on",
+   "transliteration": "enthumeomai",
+   "samples": [
+    "Matt.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1760",
+   "surface": "pondering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reflect on",
+   "transliteration": "enthumeomai",
+   "samples": [
+    "Acts.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1760",
+   "surface": "think",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reflect on",
+   "transliteration": "enthumeomai",
+   "samples": [
+    "Matt.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1761",
+   "surface": "imagination",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reflection",
+   "transliteration": "enthumēsis",
+   "samples": [
+    "Acts.17.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1771",
+   "surface": "intentions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought/purpose",
+   "transliteration": "ennoia",
+   "samples": [
+    "Heb.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1771",
+   "surface": "thinking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought/purpose",
+   "transliteration": "ennoia",
+   "samples": [
+    "1Pet.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1922",
+   "surface": "acknowledge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "knowledge",
+   "transliteration": "epignōsis",
+   "samples": [
+    "Rom.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1963",
+   "surface": "intent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought",
+   "transliteration": "epinoia",
+   "samples": [
+    "Acts.8.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1987",
+   "surface": "knew",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know/understand",
+   "transliteration": "epistamai",
+   "samples": [
+    "Acts.18.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1987",
+   "surface": "knows",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know/understand",
+   "transliteration": "epistamai",
+   "samples": [
+    "Acts.26.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1987",
+   "surface": "recognize",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know/understand",
+   "transliteration": "epistamai",
+   "samples": [
+    "Acts.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1987",
+   "surface": "understands",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know/understand",
+   "transliteration": "epistamai",
+   "samples": [
+    "1Tim.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1990",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "knowing",
+   "transliteration": "epistēmōn",
+   "samples": [
+    "Jas.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2467",
+   "surface": "known",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "isēmi",
+   "samples": [
+    "Acts.26.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2529",
+   "surface": "clearly perceived",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to perceive",
+   "transliteration": "kathoraō",
+   "samples": [
+    "Rom.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2924",
+   "surface": "discerning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discerning",
+   "transliteration": "kritikos",
+   "samples": [
+    "Heb.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3053",
+   "surface": "arguments",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought",
+   "transliteration": "logismos",
+   "samples": [
+    "2Cor.10.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3053",
+   "surface": "conflicting thoughts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought",
+   "transliteration": "logismos",
+   "samples": [
+    "Rom.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3177",
+   "surface": "meaning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mean",
+   "transliteration": "methermēneuō",
+   "samples": [
+    "Acts.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3177",
+   "surface": "means",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mean",
+   "transliteration": "methermēneuō",
+   "samples": [
+    "Matt.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3191",
+   "surface": "plot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to meditate/plot",
+   "transliteration": "meletaō",
+   "samples": [
+    "Acts.4.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3191",
+   "surface": "practice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to meditate/plot",
+   "transliteration": "meletaō",
+   "samples": [
+    "1Tim.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3312",
+   "surface": "arbitrator",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "arbiter",
+   "transliteration": "meristēs",
+   "samples": [
+    "Luke.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3328",
+   "surface": "minds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change mind",
+   "transliteration": "metaballō",
+   "samples": [
+    "Acts.28.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3510",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mind",
+   "transliteration": "nefros",
+   "samples": [
+    "Rev.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3539",
+   "surface": "clearly perceived",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "noeō",
+   "samples": [
+    "Rom.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3539",
+   "surface": "think",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "noeō",
+   "samples": [
+    "Eph.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3539",
+   "surface": "think over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "noeō",
+   "samples": [
+    "2Tim.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3539",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "noeō",
+   "samples": [
+    "1Tim.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3540",
+   "surface": "designs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mind/thought",
+   "transliteration": "noēma",
+   "samples": [
+    "2Cor.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3540",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mind/thought",
+   "transliteration": "noēma",
+   "samples": [
+    "2Cor.10.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3540",
+   "surface": "thoughts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mind/thought",
+   "transliteration": "noēma",
+   "samples": [
+    "2Cor.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3543",
+   "surface": "imagining",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "nomizō",
+   "samples": [
+    "1Tim.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3543",
+   "surface": "thinks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "nomizō",
+   "samples": [
+    "1Cor.7.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3809",
+   "surface": "training",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discipline",
+   "transliteration": "paideia",
+   "samples": [
+    "2Tim.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4267",
+   "surface": "beforehand",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know/choose",
+   "transliteration": "proginōskō",
+   "samples": [
+    "2Pet.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4267",
+   "surface": "foreknown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know/choose",
+   "transliteration": "proginōskō",
+   "samples": [
+    "1Pet.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4267",
+   "surface": "known",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know/choose",
+   "transliteration": "proginōskō",
+   "samples": [
+    "Acts.26.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4894",
+   "surface": "knowledge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be aware",
+   "transliteration": "suneidō",
+   "samples": [
+    "Acts.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4894",
+   "surface": "learned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be aware",
+   "transliteration": "suneidō",
+   "samples": [
+    "Acts.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4894",
+   "surface": "realized",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be aware",
+   "transliteration": "suneidō",
+   "samples": [
+    "Acts.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4907",
+   "surface": "discernment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "sunesis",
+   "samples": [
+    "1Cor.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4907",
+   "surface": "insight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "sunesis",
+   "samples": [
+    "Eph.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4920",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "suniēmi",
+   "samples": [
+    "2Cor.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4993",
+   "surface": "sober judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be of sound mind",
+   "transliteration": "sōfroneō",
+   "samples": [
+    "Rom.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4994",
+   "surface": "train",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to train",
+   "transliteration": "sōfronizō",
+   "samples": [
+    "Titus.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5428",
+   "surface": "insight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "fronēsis",
+   "samples": [
+    "Eph.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5428",
+   "surface": "wisdom",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "fronēsis",
+   "samples": [
+    "Luke.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5429",
+   "surface": "more shrewd",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thoughtful",
+   "transliteration": "fronimos",
+   "samples": [
+    "Luke.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5429",
+   "surface": "sensible people",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thoughtful",
+   "transliteration": "fronimos",
+   "samples": [
+    "1Cor.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5591",
+   "surface": "unspiritual",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "natural",
+   "transliteration": "psuchikos",
+   "samples": [
+    "Jas.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5591",
+   "surface": "worldly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "natural",
+   "transliteration": "psuchikos",
+   "samples": [
+    "Jude.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "acquainted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "2Tim.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "can",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "Matt.27.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "comprehends",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "1Cor.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "1Pet.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "fully knew",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "Jude.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "has",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "John.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "know how",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "1Tim.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "realizing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "Rev.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "2Cor.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "respect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "1Thess.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6063",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "oida",
+   "samples": [
+    "1Tim.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0239",
+   "surface": "weighing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ponder",
+   "transliteration": "a.zan",
+   "samples": [
+    "Eccl.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "can discern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Ps.19.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "can feel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Ps.58.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "cared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Deut.32.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "carefully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Prov.23.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "closely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "1Kgs.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "comprehended",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Job.38.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "considering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Dan.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "dealt wisely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "2Chr.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "discerned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Ps.73.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "discerning men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Isa.29.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "discovered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Neh.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "examine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Jer.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "expert",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Isa.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "explain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Isa.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "gain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Prov.19.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "gaze",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Job.31.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "insight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Ezra.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "instructed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "2Chr.26.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "look",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Ps.37.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "makes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Job.32.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "mark",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Ps.50.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "observe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Prov.23.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "observes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Ps.33.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "only look",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Job.30.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "pay attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Dan.11.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "perceives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Job.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "ponder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Isa.14.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Ps.28.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "reviewed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Ezra.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "shrewd",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Isa.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "teacher",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "1Chr.25.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0995",
+   "surface": "wisdom",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to understand",
+   "transliteration": "bin",
+   "samples": [
+    "Prov.17.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0998",
+   "surface": "clearly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "bi.nah",
+   "samples": [
+    "Jer.23.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0998",
+   "surface": "discerning enough",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "bi.nah",
+   "samples": [
+    "Prov.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0998",
+   "surface": "understand",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "bi.nah",
+   "samples": [
+    "Isa.33.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0998",
+   "surface": "understand it",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "bi.nah",
+   "samples": [
+    "Dan.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0999",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "bi.nah",
+   "samples": [
+    "Dan.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1079",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mind",
+   "transliteration": "bal",
+   "samples": [
+    "Dan.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1847",
+   "surface": "skill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "knowledge",
+   "transliteration": "da.at",
+   "samples": [
+    "1Kgs.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1900",
+   "surface": "meditation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "meditation",
+   "transliteration": "ha.gut",
+   "samples": [
+    "Ps.49.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1901",
+   "surface": "groaning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "meditation",
+   "transliteration": "ha.gig",
+   "samples": [
+    "Ps.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1901",
+   "surface": "mused",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "meditation",
+   "transliteration": "ha.gig",
+   "samples": [
+    "Ps.39.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1902H",
+   "surface": "meditation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "meditation",
+   "transliteration": "hig.ga.von",
+   "samples": [
+    "Ps.19.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1902H",
+   "surface": "melody",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "meditation",
+   "transliteration": "hig.ga.von",
+   "samples": [
+    "Ps.92.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1902H",
+   "surface": "thoughts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "meditation",
+   "transliteration": "hig.ga.von",
+   "samples": [
+    "Lam.3.62"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2449",
+   "surface": "cunning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Ps.58.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2449",
+   "surface": "deal shrewdly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Exod.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2449",
+   "surface": "exceedingly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Prov.30.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2449",
+   "surface": "teach",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Ps.105.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "account",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Isa.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "consider",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Ps.77.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Prov.17.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "counted as",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Deut.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "deemed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Isa.32.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "esteemed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Isa.53.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "seem",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Isa.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803J",
+   "surface": "took her",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: think",
+   "transliteration": "cha.shav",
+   "samples": [
+    "1Sam.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2938",
+   "surface": "perceives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to perceive",
+   "transliteration": "ta.am",
+   "samples": [
+    "Prov.31.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "acknowledged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ps.32.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "acquaintances",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ps.31.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "acquainted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.53.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "among",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Job.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "appointment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Sam.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "are skilled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Amos.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "aware",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Song.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "can read",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.29.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "can understand",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Jer.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "chosen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Gen.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "close",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Job.19.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "close friends",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Kgs.10.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "come",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.29.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "comprehend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Job.37.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "considers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ps.90.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "declare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ezek.22.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "determined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Sam.20.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "discern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Sam.19.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "discovered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Sam.22.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "distinguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ezek.44.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "endowed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Dan.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "familiar friend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ps.55.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "feel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Prov.23.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "gain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Prov.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Kgs.2.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "ignorant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ps.73.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "ignored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Deut.33.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "indeed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Jer.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "instructed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Jer.31.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "know her",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Gen.38.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "know then",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Deut.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "lain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Judg.21.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "leading",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Chr.23.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "mark",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Kgs.20.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "meet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Prov.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "never",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.56.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "note",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Job.35.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "observe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ruth.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "seized",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ezek.19.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "servant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Sam.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "showed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.40.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "shown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Gen.41.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "shows",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Isa.40.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "therefore consider",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Judg.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "they were like those",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ps.74.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "told",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Kgs.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "1Chr.12.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "understood",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "2Sam.3.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "unintentionally",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Lev.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "unknown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Gen.41.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "unseen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Ps.77.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "versed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Esth.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3045",
+   "surface": "way",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ya.da",
+   "samples": [
+    "Gen.43.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "have",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Dan.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "inform",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Ezra.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "information",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Ezra.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "knows",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Dan.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "learn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Ezra.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "notify",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Ezra.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "teach",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Ezra.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3046",
+   "surface": "to me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ye.da",
+   "samples": [
+    "Dan.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3321",
+   "surface": "truth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "ye.tsav",
+   "samples": [
+    "Dan.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4093",
+   "surface": "thoughts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "knowledge",
+   "transliteration": "mad.da",
+   "samples": [
+    "Eccl.10.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4561",
+   "surface": "warnings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discipline",
+   "transliteration": "mo.sar",
+   "samples": [
+    "Job.33.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4609A",
+   "surface": "come into",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought",
+   "transliteration": "ma.a.lah",
+   "samples": [
+    "Ezek.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034A",
+   "surface": "contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be senseless",
+   "transliteration": "na.val",
+   "samples": [
+    "Mic.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034A",
+   "surface": "dishonor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be senseless",
+   "transliteration": "na.val",
+   "samples": [
+    "Jer.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034A",
+   "surface": "foolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be senseless",
+   "transliteration": "na.val",
+   "samples": [
+    "Prov.30.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034A",
+   "surface": "scoffed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be senseless",
+   "transliteration": "na.val",
+   "samples": [
+    "Deut.32.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034A",
+   "surface": "with contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be senseless",
+   "transliteration": "na.val",
+   "samples": [
+    "Nah.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6245B",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to think",
+   "transliteration": "a.shat",
+   "samples": [
+    "Jonah.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6248",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought",
+   "transliteration": "ash.tut",
+   "samples": [
+    "Job.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6250",
+   "surface": "plans",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought",
+   "transliteration": "esh.to.nah",
+   "samples": [
+    "Ps.146.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "fully expected",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "1Kgs.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "lay",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "Mal.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "let",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "1Sam.25.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "pay attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "Job.23.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "plans",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "Jer.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "regarding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "Job.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "stared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "2Kgs.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "took",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "1Sam.21.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7760K",
+   "surface": "well",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "sum",
+   "samples": [
+    "Jer.40.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7808",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thought",
+   "transliteration": "se.ach",
+   "samples": [
+    "Amos.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7878",
+   "surface": "complain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muse",
+   "transliteration": "si.ach",
+   "samples": [
+    "Job.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7878",
+   "surface": "complaint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muse",
+   "transliteration": "si.ach",
+   "samples": [
+    "Ps.55.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7878",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muse",
+   "transliteration": "si.ach",
+   "samples": [
+    "Isa.53.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7878",
+   "surface": "it",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muse",
+   "transliteration": "si.ach",
+   "samples": [
+    "Judg.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7878",
+   "surface": "of the",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muse",
+   "transliteration": "si.ach",
+   "samples": [
+    "Job.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7878",
+   "surface": "ponder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muse",
+   "transliteration": "si.ach",
+   "samples": [
+    "Ps.143.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7896K",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "shit",
+   "samples": [
+    "Prov.24.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7896K",
+   "surface": "pay attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to set: consider",
+   "transliteration": "shit",
+   "samples": [
+    "1Sam.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7920",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contemplate",
+   "transliteration": "se.khal",
+   "samples": [
+    "Dan.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7922",
+   "surface": "cunning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "se.khel",
+   "samples": [
+    "Dan.8.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7922",
+   "surface": "discerning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "se.khel",
+   "samples": [
+    "1Sam.25.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7922",
+   "surface": "shrewd",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "se.khel",
+   "samples": [
+    "1Chr.26.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7922",
+   "surface": "skill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "se.khel",
+   "samples": [
+    "2Chr.30.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7922",
+   "surface": "success",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "se.khel",
+   "samples": [
+    "Prov.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8175C",
+   "surface": "dreaded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to know",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Deut.32.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8394",
+   "surface": "days",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "te.vu.nah",
+   "samples": [
+    "Job.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8394",
+   "surface": "discernment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "te.vu.nah",
+   "samples": [
+    "Isa.44.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8394",
+   "surface": "skillful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "te.vu.nah",
+   "samples": [
+    "Ps.78.72"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8394",
+   "surface": "skillfully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "te.vu.nah",
+   "samples": [
+    "Hos.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8394",
+   "surface": "wise sayings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "understanding",
+   "transliteration": "te.vu.nah",
+   "samples": [
+    "Job.32.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

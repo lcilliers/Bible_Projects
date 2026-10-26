@@ -1,0 +1,2726 @@
+{
+ "cluster": "M64",
+ "cluster_name": "Will & Resolve",
+ "built_at": "2026-10-26T04:25:53Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 165,
+  "head": 70,
+  "tail": 95,
+  "hits": 494,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H0977",
+   "surface": "chosen",
+   "part": "head",
+   "hits": 71,
+   "verses": 69,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "Job.36.21",
+    "Ps.135.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "choose",
+   "part": "head",
+   "hits": 52,
+   "verses": 52,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "Isa.7.16",
+    "Prov.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "chose",
+   "part": "head",
+   "hits": 28,
+   "verses": 25,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "1Chr.19.10",
+    "Jer.33.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "would",
+   "part": "head",
+   "hits": 14,
+   "verses": 13,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "1Chr.11.18",
+    "Prov.1.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "willing",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "2Sam.6.10",
+    "Ezek.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "devise",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Dan.11.24",
+    "Ezek.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "he would",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "2Sam.12.17",
+    "2Sam.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0972",
+   "surface": "chosen",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "chosen",
+   "transliteration": "ba.chir",
+   "samples": [
+    "Isa.43.20",
+    "Isa.65.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "counted",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Josh.13.3",
+    "Num.18.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942H",
+   "surface": "dedicated",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to consecrate: dedicate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "2Chr.31.6",
+    "2Sam.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4286",
+   "surface": "purpose",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "purpose",
+   "transliteration": "prothesis",
+   "samples": [
+    "Eph.1.11",
+    "Eph.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "chooses",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "Isa.40.20",
+    "Isa.41.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2161",
+   "surface": "purposed",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to plan",
+   "transliteration": "za.mam",
+   "samples": [
+    "Ps.17.3",
+    "Zech.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942H",
+   "surface": "dedicate",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to consecrate: dedicate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Deut.15.19",
+    "Judg.17.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942H",
+   "surface": "dedicates",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to consecrate: dedicate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Lev.27.14",
+    "Lev.27.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "want",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "3John.1.10",
+    "Jude.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803G",
+   "surface": "skillfully",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to devise: design",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Exod.36.35",
+    "Exod.36.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "calculate",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Lev.25.50",
+    "Lev.25.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1012",
+   "surface": "plan",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "plan",
+   "transliteration": "boulē",
+   "samples": [
+    "Acts.27.42",
+    "Acts.5.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4286",
+   "surface": "presence",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "purpose",
+   "transliteration": "prothesis",
+   "samples": [
+    "Heb.9.2",
+    "Luke.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "choice",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "Prov.10.20",
+    "Song.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803G",
+   "surface": "skilled",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to devise: design",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Exod.35.35",
+    "Exod.39.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "regarded",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Gen.31.15",
+    "Lam.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6634",
+   "surface": "he will",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to will",
+   "transliteration": "tse.va",
+   "samples": [
+    "Dan.4.17",
+    "Dan.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6634",
+   "surface": "he would",
+   "part": "head",
+   "hits": 4,
+   "verses": 1,
+   "gloss": "to will",
+   "transliteration": "tse.va",
+   "samples": [
+    "Dan.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1011",
+   "surface": "wanted",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to plan",
+   "transliteration": "bouleuō",
+   "samples": [
+    "2Cor.1.17",
+    "Acts.15.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1012",
+   "surface": "purpose",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "plan",
+   "transliteration": "boulē",
+   "samples": [
+    "Heb.6.17",
+    "Luke.7.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "i would",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "1Tim.5.14",
+    "2John.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "wished",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Acts.18.27",
+    "Acts.28.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "wishing",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "2Pet.3.9",
+    "Mark.15.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "consent",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "Judg.11.17",
+    "Prov.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "unwilling",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "Deut.10.10",
+    "Isa.30.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0972",
+   "surface": "chosen ones",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "chosen",
+   "transliteration": "ba.chir",
+   "samples": [
+    "Ps.105.6",
+    "Ps.106.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803G",
+   "surface": "devise",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to devise: design",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Exod.35.32",
+    "Ps.35.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "considered",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "2Chr.9.20",
+    "Neh.13.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "devised",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Dan.11.25",
+    "Ps.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "formed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Jer.49.20",
+    "Jer.49.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "intend",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Jer.26.3",
+    "Neh.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "planned",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Jer.48.2",
+    "Ps.140.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "plans",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Prov.16.9",
+    "Prov.24.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5081G",
+   "surface": "willing",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "noble: willing",
+   "transliteration": "na.div",
+   "samples": [
+    "2Chr.29.31",
+    "Exod.35.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0830",
+   "surface": "accord",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "self-chosen",
+   "transliteration": "authairetos",
+   "samples": [
+    "2Cor.8.17",
+    "2Cor.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1011",
+   "surface": "made plans",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plan",
+   "transliteration": "bouleuō",
+   "samples": [
+    "John.11.53",
+    "John.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1012",
+   "surface": "counsel",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "plan",
+   "transliteration": "boulē",
+   "samples": [
+    "Acts.20.27",
+    "Eph.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "desire",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "1Tim.2.8",
+    "1Tim.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "desiring",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Acts.22.30",
+    "Acts.23.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "wanted",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "2Cor.1.15",
+    "Acts.25.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "will",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Jas.1.18",
+    "Jas.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5427",
+   "surface": "mind",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "purpose",
+   "transliteration": "fronēma",
+   "samples": [
+    "Rom.8.27",
+    "Rom.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5427",
+   "surface": "mind on",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "purpose",
+   "transliteration": "fronēma",
+   "samples": [
+    "Rom.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "and would",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "1Sam.15.9",
+    "2Kgs.13.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "i would",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "1Sam.26.23",
+    "Josh.24.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "they would",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "Isa.28.12",
+    "Isa.42.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "will",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "Deut.25.7",
+    "Lev.26.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0972",
+   "surface": "chosen one",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "chosen",
+   "transliteration": "ba.chir",
+   "samples": [
+    "Ps.106.23",
+    "Ps.89.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "best",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "1Chr.19.10",
+    "2Sam.10.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803G",
+   "surface": "devised",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: design",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Esth.8.3",
+    "Esth.9.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "accounted",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Isa.40.15",
+    "Isa.40.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "accounting",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "2Kgs.12.15",
+    "2Kgs.22.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "esteemed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Isa.53.3",
+    "Mal.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "regard",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Isa.13.17",
+    "Isa.33.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "devising",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Jer.18.11",
+    "Mic.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "intended",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Jer.18.8",
+    "Neh.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "meant",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Gen.50.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "plots",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Ps.36.4",
+    "Ps.52.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "plotted",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Esth.9.24",
+    "Nah.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "thought",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "1Sam.18.25",
+    "Ps.40.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3336",
+   "surface": "intention",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "intention",
+   "transliteration": "ye.tser",
+   "samples": [
+    "Gen.6.5",
+    "Gen.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5144A",
+   "surface": "abstain",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dedicate",
+   "transliteration": "na.zar",
+   "samples": [
+    "Lev.22.2",
+    "Zech.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942H",
+   "surface": "dedicated gifts",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to consecrate: dedicate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "1Chr.26.27",
+    "1Chr.26.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942H",
+   "surface": "set apart",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to consecrate: dedicate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Neh.12.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7148",
+   "surface": "chosen",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "chosen",
+   "transliteration": "qa.ri",
+   "samples": [
+    "Num.16.2",
+    "Num.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0138",
+   "surface": "choose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "haireō",
+   "samples": [
+    "Phil.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0138",
+   "surface": "choosing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "haireō",
+   "samples": [
+    "Heb.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0138",
+   "surface": "chose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "haireō",
+   "samples": [
+    "2Thess.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0140",
+   "surface": "chosen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "hairetizō",
+   "samples": [
+    "Matt.12.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1011",
+   "surface": "deliberate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "bouleuō",
+   "samples": [
+    "Luke.14.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1011",
+   "surface": "make",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "bouleuō",
+   "samples": [
+    "2Cor.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1011",
+   "surface": "planned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "bouleuō",
+   "samples": [
+    "Acts.27.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1011",
+   "surface": "plans",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "bouleuō",
+   "samples": [
+    "2Cor.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1012",
+   "surface": "decided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plan",
+   "transliteration": "boulē",
+   "samples": [
+    "Acts.27.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1012",
+   "surface": "decision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plan",
+   "transliteration": "boulē",
+   "samples": [
+    "Luke.23.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1012",
+   "surface": "purposes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plan",
+   "transliteration": "boulē",
+   "samples": [
+    "1Cor.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1013",
+   "surface": "plan",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plan",
+   "transliteration": "boulēma",
+   "samples": [
+    "Acts.27.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1013",
+   "surface": "will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plan",
+   "transliteration": "boulēma",
+   "samples": [
+    "Rom.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "chooses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Matt.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "chooses to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Luke.10.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "desired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Heb.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "glad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Phlm.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "intend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Acts.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "intending",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Acts.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "refuse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Acts.18.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "resolved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Matt.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "willing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Luke.22.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "wills",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "1Cor.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "wish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Acts.17.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1014",
+   "surface": "wishes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "boulomai",
+   "samples": [
+    "Jas.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4286",
+   "surface": "aim in life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "purpose",
+   "transliteration": "prothesis",
+   "samples": [
+    "2Tim.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4286",
+   "surface": "steadfast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "purpose",
+   "transliteration": "prothesis",
+   "samples": [
+    "Acts.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4388",
+   "surface": "intended",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan/present",
+   "transliteration": "protithēmi",
+   "samples": [
+    "Rom.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4388",
+   "surface": "put forward",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan/present",
+   "transliteration": "protithēmi",
+   "samples": [
+    "Rom.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4388",
+   "surface": "set forth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan/present",
+   "transliteration": "protithēmi",
+   "samples": [
+    "Eph.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4401",
+   "surface": "chosen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "procheirotoneō",
+   "samples": [
+    "Acts.10.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "and",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "Prov.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "refuse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "Prov.6.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "submit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "Ps.81.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "yet you would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "Deut.1.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0014",
+   "surface": "yield",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "a.vah",
+   "samples": [
+    "Deut.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0908",
+   "surface": "devised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise",
+   "transliteration": "ba.da",
+   "samples": [
+    "1Kgs.12.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0908",
+   "surface": "inventing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise",
+   "transliteration": "ba.da",
+   "samples": [
+    "Neh.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "choice men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "2Chr.25.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "choosing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "Job.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "decides",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "2Sam.15.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "2Sam.19.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "more acceptable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "Prov.21.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "preferred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "Jer.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "rather",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "Ps.84.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0977",
+   "surface": "tried",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to choose",
+   "transliteration": "ba.char",
+   "samples": [
+    "Isa.48.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2161",
+   "surface": "considers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "za.mam",
+   "samples": [
+    "Prov.31.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2161",
+   "surface": "devising evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "za.mam",
+   "samples": [
+    "Prov.30.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2161",
+   "surface": "meant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "za.mam",
+   "samples": [
+    "Deut.19.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2161",
+   "surface": "planned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "za.mam",
+   "samples": [
+    "Jer.51.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2161",
+   "surface": "plot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "za.mam",
+   "samples": [
+    "Ps.31.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2161",
+   "surface": "plots",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "za.mam",
+   "samples": [
+    "Ps.37.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2161",
+   "surface": "propose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "za.mam",
+   "samples": [
+    "Gen.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2162",
+   "surface": "evil plot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plan",
+   "transliteration": "za.mam",
+   "samples": [
+    "Ps.140.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803G",
+   "surface": "designer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: design",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Exod.35.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803G",
+   "surface": "devises",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: design",
+   "transliteration": "cha.shav",
+   "samples": [
+    "2Sam.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803G",
+   "surface": "execute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: design",
+   "transliteration": "cha.shav",
+   "samples": [
+    "2Chr.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803G",
+   "surface": "invent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: design",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Amos.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803G",
+   "surface": "skillful men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: design",
+   "transliteration": "cha.shav",
+   "samples": [
+    "2Chr.26.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "classified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Lev.25.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "counts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Ps.32.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "credited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Lev.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "hold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "2Sam.19.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "imputed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Lev.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803H",
+   "surface": "itself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: count",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Num.23.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "determined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Lam.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "have",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Jer.29.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "imagine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Ps.41.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "make",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Jer.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "plan",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Ps.140.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "plot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Nah.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "think",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Isa.10.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2803I",
+   "surface": "threatened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to devise: devise",
+   "transliteration": "cha.shav",
+   "samples": [
+    "Jonah.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3336",
+   "surface": "creation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intention",
+   "transliteration": "ye.tser",
+   "samples": [
+    "Hab.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3336",
+   "surface": "frame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intention",
+   "transliteration": "ye.tser",
+   "samples": [
+    "Ps.103.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3336",
+   "surface": "inclined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intention",
+   "transliteration": "ye.tser",
+   "samples": [
+    "Deut.31.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3336",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intention",
+   "transliteration": "ye.tser",
+   "samples": [
+    "Isa.26.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3336",
+   "surface": "plan",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intention",
+   "transliteration": "ye.tser",
+   "samples": [
+    "1Chr.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3336",
+   "surface": "purposes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intention",
+   "transliteration": "ye.tser",
+   "samples": [
+    "1Chr.29.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3336",
+   "surface": "thing formed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intention",
+   "transliteration": "ye.tser",
+   "samples": [
+    "Isa.29.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5081G",
+   "surface": "generous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "noble: willing",
+   "transliteration": "na.div",
+   "samples": [
+    "Exod.35.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5081G",
+   "surface": "willing man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "noble: willing",
+   "transliteration": "na.div",
+   "samples": [
+    "1Chr.28.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5144A",
+   "surface": "consecrated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dedicate",
+   "transliteration": "na.zar",
+   "samples": [
+    "Hos.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5144A",
+   "surface": "keep",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dedicate",
+   "transliteration": "na.zar",
+   "samples": [
+    "Lev.15.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5144A",
+   "surface": "separates",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dedicate",
+   "transliteration": "na.zar",
+   "samples": [
+    "Ezek.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5779",
+   "surface": "take",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "uts",
+   "samples": [
+    "Isa.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5779",
+   "surface": "take counsel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "uts",
+   "samples": [
+    "Judg.19.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6246",
+   "surface": "planned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plan",
+   "transliteration": "a.shit",
+   "samples": [
+    "Dan.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6634",
+   "surface": "desired to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will",
+   "transliteration": "tse.va",
+   "samples": [
+    "Dan.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6634",
+   "surface": "to his will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will",
+   "transliteration": "tse.va",
+   "samples": [
+    "Dan.4.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942H",
+   "surface": "consecrate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: dedicate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Exod.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942H",
+   "surface": "consecrated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: dedicate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Jer.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942H",
+   "surface": "donor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: dedicate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Lev.27.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

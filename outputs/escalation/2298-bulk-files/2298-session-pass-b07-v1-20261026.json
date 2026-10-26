@@ -1,0 +1,149 @@
+{
+ "M22": {
+  "groups": [
+   ["M22_glory", "Glory, honour, splendour", "glory as weight and splendour: glory, glorious, honour, majesty, splendour", "group", "renders glory"],
+   ["M22_praise", "Praise, blessing", "praise given: praise, bless, blessing, commend, extol", "group", "renders praise or blessing"],
+   ["M22_singing", "Singing, song, music", "praise sung: sing, song, singers, melody, music", "group", "renders singing"],
+   ["M22_glorifying", "Glorifying", "giving glory: glorify, glorified, glorifying", "group", "renders glorifying"],
+   ["M22_exalting", "Exalting, magnifying, lifting up", "making high or great: exalt, magnify, lift up, raise, great", "group", "renders exalting"],
+   ["M22_not_this_sense", "Not the cluster's sense", "renderings with no sense of praise: a psalm's superscription, growing up, a contribution set apart, wealth, haughtiness", "not_this_sense", "carries no sense of praise"]
+  ],
+  "surf": {
+   "M22_glory": ["glory", "glorious", "honor", "majesty", "splendor"],
+   "M22_praise": ["praise", "praised", "praises", "praising", "blessed", "bless", "blessing", "said a blessing", "commend", "extol"],
+   "M22_singing": ["song", "songs", "sing", "singers", "sing praises", "sing for joy", "sing aloud", "sang", "make melody", "music", "singing", "joy"],
+   "M22_glorifying": ["glorified", "glorify", "glorifying"],
+   "M22_exalting": ["exalted", "exalt", "exalts", "magnify", "magnified", "lift up", "lifted up", "lift", "high", "lofty", "raised", "up", "great", "greater", "great things"],
+   "M22_not_this_sense": ["psalm", "grew", "grown up", "grew up", "present", "contributed", "gave", "set apart", "wealth", "haughty"]
+  },
+  "over": {
+   "H4210|psalm": ["M22_not_this_sense", "mizmor 'A Psalm' (Ps 66:1): a superscription (RG-23)", 0],
+   "H3519|wealth": ["M22_not_this_sense", "kavod 'he has gained all this wealth' (Gen 31:1): riches", 0],
+   "H7311A|haughty": ["M22_not_this_sense", "'haughty eyes' (Prov 6:17), 'the haughty eyes you bring down' (Ps 18:27): pride, the sense of M08", 0],
+   "H7311A|present": ["M22_not_this_sense", "rum 'you shall present a contribution' (Num 15:20): the terumah", 0],
+   "H7311A|contributed": ["M22_not_this_sense", "rum 'Josiah contributed to the lay people' (2Chr 35:7)", 0],
+   "H7311A|gave": ["M22_not_this_sense", "rum 'Hezekiah gave the assembly a thousand bulls' (2Chr 30:24)", 0],
+   "H7311A|set apart": ["M22_not_this_sense", "rum 'you shall set apart for the LORD a portion' (Ezek 45:1)", 0],
+   "H1431|grew": ["M22_not_this_sense", "gadal 'Samuel grew' (1Sam 3:19), 'the child grew' (Gen 21:8)", 0],
+   "H1431|grown up": ["M22_not_this_sense", "gadal 'the young men who had grown up with him' (2Chr 10:10)", 0],
+   "H1431|grew up": ["M22_not_this_sense", "gadal 'it grew up with him' (2Sam 12:3)", 0],
+   "H1431|great": ["M22_exalting", "gadal 'Great is the LORD' (Mal 1:5); 'you have shown me great kindness' (Gen 19:19) is magnifying a deed", 1],
+   "G1392|glory": ["M22_glorifying", "doxazo 'joy that is inexpressible and filled with glory' (1Pet 1:8)", 0],
+   "H7442B|joy": ["M22_singing", "ranan 'you make the going out of the morning shout for joy' (Ps 65:8)", 0],
+   "H7311A|up": ["M22_exalting", "rum 'lift up your voice with strength' (Isa 40:9); 'take up the ashes' (Lev 6:10) is literal", 1],
+   "H7311A|high": ["M22_exalting", "rum 'they saw any high hill' (Ezek 20:28); 'with a high hand' (Num 15:30): settled per verse", 1],
+   "H7682|high": ["M22_exalting", "sagav 'such knowledge is too high for me' (Ps 139:6)", 0]
+  }
+ },
+ "M25": {
+  "groups": [
+   ["M25_dying", "Dying, being dead", "mut and apothnesko: die, died, dead, dies", "group", "renders dying"],
+   ["M25_death", "Death", "death as a state and a power: death", "group", "renders death"],
+   ["M25_killing", "Killing, putting to death", "death caused: kill, killed, put to death", "group", "renders killing"],
+   ["M25_life", "Life, breath", "life as given and held: life, breath", "group", "renders life"],
+   ["M25_living", "Living, being alive", "living out one's days: live, lived, living, lives, alive, prolong days", "group", "renders living"],
+   ["M25_not_this_sense", "Not the cluster's sense", "renderings with no sense of human life or death: beasts and living creatures, rousing from sleep", "not_this_sense", "carries no sense of life or death"]
+  ],
+  "surf": {
+   "M25_dying": ["die", "died", "dead", "dies", "surely"],
+   "M25_death": ["death"],
+   "M25_killing": ["kill", "killed", "put to death", "put him to death"],
+   "M25_life": ["life", "breath"],
+   "M25_living": ["live", "lived", "living", "lives", "alive", "long"],
+   "M25_not_this_sense": ["beasts", "beast", "living creatures", "awake"]
+  },
+  "over": {
+   "H4191|death": ["M25_dying", "mut 'he shall be put to death' (Hos 9:16 'I will put their beloved children to death', Num 35:23): death as the act of dying", 0],
+   "H2416C|beasts": ["M25_not_this_sense", "chayyah 'all you beasts of the field' (Isa 56:9): animals", 0],
+   "H2416C|beast": ["M25_not_this_sense", "chayyah 'no beast could stand before him' (Dan 8:4)", 0],
+   "H2416C|living creatures": ["M25_not_this_sense", "chayyah 'the living creatures' (Ezek 1:5): the beings of the vision", 0],
+   "H5782|awake": ["M25_not_this_sense", "'Awake! Why are you sleeping, O Lord?' (Ps 44:23): rousing", 0],
+   "H0748|long": ["M25_living", "'that he may continue long in his kingdom' (Deut 17:20), 'that you may live long' (Deut 5:33)", 0],
+   "H2416A|living": ["M25_living", "chay 'every living creature in the waters' (Lev 11:10) and 'the land of the living' (Ps 52:5): settled per verse", 1]
+  }
+ },
+ "M31": {
+  "groups": [
+   ["M31_unbelief", "Unbelief, the unbelieving", "not believing: unbelief, unbelievers, faithless, disbelieve", "group", "renders unbelief"],
+   ["M31_apostasy", "Apostasy, faithlessness", "turning faithless: meshuvah, apostasy, faithless Israel", "group", "renders apostasy"],
+   ["M31_religion", "Religion", "threskeia: religion as practised", "group", "renders religion"],
+   ["M31_not_this_sense", "Not the cluster's sense", "renderings with no sense of faith", "not_this_sense", "carries no sense of faith"]
+  ],
+  "surf": {
+   "M31_unbelief": ["unbelief", "unbelievers", "unbeliever", "not believe", "faithless", "unbelieving", "disbelieved", "disbelieve", "faithlessness", "unfaithful"],
+   "M31_apostasy": ["apostasy"],
+   "M31_religion": ["religion"],
+   "M31_not_this_sense": []
+  },
+  "over": {
+   "H4878|faithless": ["M31_apostasy", "meshuvah 'faithless Israel' (Jer 3:11, 12)", 0]
+  }
+ },
+ "M32": {
+  "groups": [
+   ["M32_covenant", "Covenant, making a covenant", "the covenant and its cutting: covenant, make, made", "group", "renders the covenant"],
+   ["M32_circumcision", "Circumcision", "the sign of the covenant: circumcise, circumcision", "group", "renders circumcision"],
+   ["M32_not_this_sense", "Not the cluster's sense", "renderings with no sense of covenant", "not_this_sense", "carries no sense of covenant"]
+  ],
+  "surf": {
+   "M32_covenant": ["covenant", "made", "make"],
+   "M32_circumcision": ["circumcised", "circumcision"],
+   "M32_not_this_sense": []
+  },
+  "over": {}
+ },
+ "M36": {
+  "groups": [
+   ["M36_offering", "Offerings", "what is brought to God: burnt offering, grain offering, offering", "group", "renders an offering"],
+   ["M36_serving", "Serving, worshiping a god", "serving God or gods: serve, served, worshipers", "group", "renders serving"],
+   ["M36_ministry", "Service, ministry, ministering", "the work of service: service, ministry, minister, ministering", "group", "renders service or ministry"],
+   ["M36_worship", "Worship, bowing down", "worship given: worship, worshiped", "group", "renders worship"],
+   ["M36_not_this_sense", "Not the cluster's sense", "renderings with no sense of worship: ordinary work, work done", "not_this_sense", "carries no sense of worship"]
+  ],
+  "surf": {
+   "M36_offering": ["burnt offering", "grain offering", "burnt offerings", "offering", "grain offerings"],
+   "M36_serving": ["serve", "served", "do", "worshipers"],
+   "M36_ministry": ["service", "ministry", "minister", "ministers", "ministering"],
+   "M36_worship": ["worship", "worshiped"],
+   "M36_not_this_sense": ["ordinary", "work"]
+  },
+  "over": {
+   "H5656I|ordinary": ["M36_not_this_sense", "'you shall not do any ordinary work' (Lev 23:7): labour", 0],
+   "H5656I|work": ["M36_not_this_sense", "'all the work' (Exod 39:42), 'to do his work' (Isa 28:21)", 0],
+   "H5647H|do": ["M36_serving", "'to do the service of the LORD' (Josh 22:27, Num 4:47)", 0],
+   "G3000|worship": ["M36_worship", "latreuo 'who worship by the Spirit of God' (Phil 3:3), 'his servants will worship him' (Rev 22:3)", 0]
+  }
+ },
+ "M41": {
+  "groups": [
+   ["M41_hearing", "Hearing, listening", "hearing and listening: hear, heard, listen, give ear", "group", "renders hearing"],
+   ["M41_obeying", "Obeying", "hearing that obeys: obey, obeyed", "group", "renders obeying"],
+   ["M41_answering", "Answering", "being answered and answering: answer, answered", "group", "renders answering"],
+   ["M41_not_this_sense", "Not the cluster's sense", "renderings with no sense of hearing", "not_this_sense", "carries no sense of hearing"]
+  ],
+  "surf": {
+   "M41_hearing": ["heard", "hear", "hears", "listen", "listened", "give ear"],
+   "M41_obeying": ["obey", "obeyed"],
+   "M41_answering": ["answered", "answer"],
+   "M41_not_this_sense": []
+  },
+  "over": {}
+ },
+ "M43": {
+  "groups": [
+   ["M43_oracle", "The oracle: 'declares the LORD'", "ne'um, the prophetic formula 'declares the LORD'", "group", "renders the oracle formula"],
+   ["M43_prophets", "Prophets", "the prophet as a person: prophet, prophets", "group", "renders the prophet"],
+   ["M43_prophesying", "Prophesying", "the act: prophesy, prophesied", "group", "renders prophesying"],
+   ["M43_signs", "Signs", "signs and wonders given: sign, signs", "group", "renders a sign"],
+   ["M43_not_this_sense", "Not the cluster's sense", "renderings with no sense of prophecy", "not_this_sense", "carries no sense of prophecy"]
+  ],
+  "surf": {
+   "M43_oracle": ["declares"],
+   "M43_prophets": ["prophet", "prophets"],
+   "M43_prophesying": ["prophesy", "prophesied"],
+   "M43_signs": ["signs", "sign"],
+   "M43_not_this_sense": []
+  },
+  "over": {}
+ }
+}

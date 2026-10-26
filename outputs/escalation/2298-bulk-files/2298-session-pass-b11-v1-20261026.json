@@ -1,0 +1,108 @@
+{
+ "M33": {
+  "groups": [
+   ["M33_peace", "Peace", "shalom and eirene as peace: peace, peaceably, peaceful, being at peace", "group", "renders peace"],
+   ["M33_wellbeing", "Well-being, welfare, safety", "shalom as being well: well, welfare, prosperity, safe, safety, health, the greeting of peace", "group", "renders well-being"],
+   ["M33_rest", "Rest, resting place, ease", "rest given or found: rest, rested, resting place, ease, refreshed, lie down", "group", "renders rest"],
+   ["M33_quiet", "Quiet, stillness, silence", "the stilled soul and tongue: quiet, still, calm, silent, keep silence, say nothing", "group", "renders quiet or silence"],
+   ["M33_not_this_sense", "Not the cluster's sense", "renderings with no sense of rest: nuach as placing or leaving a thing, the peace offering as a sacrifice, being destroyed", "not_this_sense", "carries no sense of rest or peace"]
+  ],
+  "surf": {
+   "M33_peace": ["peace", "peaceably", "peacefully", "peaceful"],
+   "M33_wellbeing": ["well", "welfare", "prosperity", "safe", "safety", "health"],
+   "M33_rest": ["rest", "rested", "rests", "resting place", "ease", "refreshed", "lie down", "satisfy"],
+   "M33_quiet": ["silent", "quiet", "quietly", "still", "silence", "keep quiet", "keep silent", "kept silence", "said nothing", "says nothing", "keep", "keep silence", "calm"],
+   "M33_not_this_sense": ["peace offerings", "peace offering", "leave", "put", "left", "set", "alone", "down", "laid", "lay", "allowed", "deposit", "free space", "let", "place", "placed", "stationed", "withhold", "destroyed"]
+  },
+  "over": {
+   "H8002|peace": ["M33_not_this_sense", "shelem 'the peace offerings' (Exod 29:28, Lev 7:29): a sacrifice", 0],
+   "H2790B|peace": ["M33_quiet", "charash 'he held his peace' (1Sam 10:27), 'do not keep silence' (Ps 83:1)", 0],
+   "H2814|peace": ["M33_quiet", "chashah 'have I not held my peace' (Isa 57:11), 'I held my peace' (Ps 39:2)", 0],
+   "H7965K|peace": ["M33_wellbeing", "shalom as the greeting 'Peace be to you' (1Sam 25:6)", 0],
+   "H8001|peace": ["M33_peace", "shelam 'Peace be multiplied to you' (Dan 6:25)", 0],
+   "H5117|satisfy": ["M33_rest", "nuach 'I will satisfy my wrath on you' (Ezek 16:42): bring to rest", 0],
+   "H5117|leave": ["M33_not_this_sense", "nuach 'do not leave your place' (Eccl 10:4), 'do not leave me to my oppressors' (Ps 119:121): leaving", 1],
+   "H1826H|destroyed": ["M33_not_this_sense", "damam 'her soldiers shall be destroyed' (Jer 49:26): silenced in death", 0]
+  }
+ },
+ "M34": {
+  "groups": [
+   ["M34_patience", "Patience, long-suffering", "makrothumia: patience, patient", "group", "renders patience"],
+   ["M34_endurance", "Endurance, steadfastness, bearing", "holding on under weight: endurance, steadfast, endure, bear with, establish", "group", "renders endurance"],
+   ["M34_striving", "Striving, struggle", "agon: strive, struggle, fight the good fight, take pains", "group", "renders striving"],
+   ["M34_blameless", "Blameless, complete", "tam: blameless, the perfect one", "group", "renders blamelessness"],
+   ["M34_nobles", "Nobles, nobility", "the noble: nobles, princes, lords, noble birth, dignified, noble things", "group", "renders nobility"],
+   ["M34_perpetuity", "Forever, ever, always (a quality of time)", "netsach, ad and alam as duration: forever, ever, everlasting, always, never; they qualify what lasts and are read where they qualify (E4)", "qualifier", "renders duration"],
+   ["M34_not_this_sense", "Not the cluster's sense", "renderings with no sense of patience: accepting a complaint, contending against Moses, literal fighting", "not_this_sense", "carries no sense of patience"]
+  ],
+  "surf": {
+   "M34_patience": ["patience", "patient"],
+   "M34_endurance": ["endurance", "steadfastness", "endure", "endures", "endured", "enduring", "bear", "bearing", "put up with", "steadfast", "established", "suffering", "from stumbling"],
+   "M34_striving": ["strive", "struggling", "struggle", "agony", "athlete", "fight", "fought", "take pains"],
+   "M34_blameless": ["blameless", "perfect one"],
+   "M34_nobles": ["nobles", "princes", "lords", "noble", "prince", "leaders", "noble things", "dignified", "more noble", "noble birth"],
+   "M34_perpetuity": ["forever", "ever", "everlasting", "never", "always", "end", "eternity", "old"],
+   "M34_not_this_sense": ["accept", "contended", "fighting"]
+  },
+  "over": {
+   "G5281|patience": ["M34_endurance", "hupomone 'with utmost patience' (2Cor 12:12), 'patience in well-doing' (Rom 2:7): endurance", 0],
+   "G0430|accept": ["M34_not_this_sense", "anechomai 'I would have reason to accept your complaint' (Acts 18:14)", 0],
+   "H5327A|contended": ["M34_not_this_sense", "natsah 'who contended against Moses' (Num 26:9): strife", 0],
+   "G0075|fighting": ["M34_not_this_sense", "agonizomai 'my servants would have been fighting' (John 18:36): literal", 0],
+   "G2553|suffering": ["M34_endurance", "kakopatheo 'for which I am suffering' (2Tim 2:9): enduring hardship", 0],
+   "H5081H|noble things": ["M34_nobles", "nadiv 'he who is noble plans noble things' (Isa 32:8): nobility of heart", 0]
+  }
+ },
+ "M35": {
+  "groups": [
+   ["M35_testing", "Testing, proving, examining", "being tried to prove: test, tested, tried, examine, approve, approved", "group", "renders testing"],
+   ["M35_tempting", "Tempting, temptation", "being enticed: tempt, temptation, the tempter", "group", "renders tempting"],
+   ["M35_trials", "Trials", "the trial undergone: trial, trials, testing", "group", "renders trials"],
+   ["M35_not_this_sense", "Not the cluster's sense", "renderings with no sense of testing: mashal as proverb, parable, byword or taunt; torment; testifying", "not_this_sense", "carries no sense of testing"]
+  ],
+  "surf": {
+   "M35_testing": ["test", "tested", "tests", "tried", "examine", "approve", "approved", "interpret"],
+   "M35_tempting": ["tempted", "tempter", "temptation"],
+   "M35_trials": ["trials", "trial", "testing"],
+   "M35_not_this_sense": ["proverb", "proverbs", "discourse", "byword", "parable", "taunt", "figures of speech", "torment", "testify"]
+  },
+  "over": {
+   "H5254G|testing": ["M35_testing", "nasah 'testing you' (Deut 8:2), 'to test Israel' (Judg 3:4)", 0],
+   "H4912|byword": ["M35_not_this_sense", "mashal 'a sign and a byword' (Ezek 14:8): the sense of M07 and M08", 0]
+  }
+ },
+ "M37": {
+  "groups": [
+   ["M37_firstborn", "Firstborn", "the firstborn and its right: firstborn, oldest, opening the womb", "group", "renders the firstborn"],
+   ["M37_foreknowledge", "Foreknowledge", "prognosis: foreknowledge", "group", "renders foreknowledge"],
+   ["M37_calling", "Calling, summoning, naming", "being called or named: call together, summon, send for, named", "group", "renders calling or naming"],
+   ["M37_not_this_sense", "Not the cluster's sense", "renderings with no sense of firstborn: qara as meeting or chance, reading writing, gaining or winning", "not_this_sense", "carries no sense of firstborn"]
+  ],
+  "surf": {
+   "M37_firstborn": ["firstborn", "oldest", "open"],
+   "M37_foreknowledge": ["foreknowledge"],
+   "M37_calling": ["called together", "together", "named", "sent", "bring"],
+   "M37_not_this_sense": ["against", "happened", "read", "made", "might win", "gain", "gains", "win"]
+  },
+  "over": {}
+ },
+ "M39": {
+  "groups": [
+   ["M39_favour", "Favour, grace", "chen: favour, grace, gracious, graceful", "group", "renders favour"],
+   ["M39_accepting", "Accepting, taking pleasure", "ratsah: accept, be pleased with, take pleasure, delight in, enjoy, make amends", "group", "renders accepting"],
+   ["M39_gifts", "Gifts, giving", "what is given: gift, gifts, presents, contributing, giving", "group", "renders a gift"],
+   ["M39_goodwill", "Goodwill, good pleasure", "eudokia: purpose, desire, goodwill", "group", "renders goodwill"],
+   ["M39_not_this_sense", "Not the cluster's sense", "renderings with no sense of gift or favour", "not_this_sense", "carries no sense of gift or favour"]
+  ],
+  "surf": {
+   "M39_favour": ["favor", "grace", "gracious", "graceful"],
+   "M39_accepting": ["accept", "accepted", "enjoy", "pleased", "delights", "favorable", "make amends", "please", "pleasure", "take pleasure", "takes pleasure", "declined"],
+   "M39_gifts": ["gift", "gifts", "given", "contributed", "presents", "giving"],
+   "M39_goodwill": ["purpose", "desire"],
+   "M39_not_this_sense": []
+  },
+  "over": {
+   "H2580|graceful": ["M39_favour", "chen 'graceful and of deadly charms' (Nah 3:4), 'a graceful doe' (Prov 5:19)", 1]
+  }
+ }
+}

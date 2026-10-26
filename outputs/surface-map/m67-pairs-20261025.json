@@ -1,0 +1,766 @@
+{
+ "cluster": "M67",
+ "cluster_name": "Sloth & Diligence",
+ "built_at": "2026-10-25T20:46:28Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 44,
+  "head": 30,
+  "tail": 14,
+  "hits": 74,
+  "allocated": 0,
+  "inherited": 24
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [
+  {
+   "code": "M67_A_dispositional_idleness",
+   "label": "Idleness as inert state or condition",
+   "description": "Terms naming the condition of being unemployed, inactive, or not engaged in expected work, applied literally to persons/land/things and metaphorically to abstract subjects.",
+   "kind": "group",
+   "anchor": "Matt.20.6"
+  },
+  {
+   "code": "M67_B_dereliction_of_duty",
+   "label": "Failure to fulfill an entrusted obligation",
+   "description": "Terms describing the neglect or abandonment of an expected duty or order, distinct from mere inactivity in that they name a relational failure toward an obligation or standard.",
+   "kind": "group",
+   "anchor": "2Thess.3.7"
+  },
+  {
+   "code": "M67_C_earnest_diligence",
+   "label": "Zealous, energetic application to a task or relationship",
+   "description": "The positive pole of the cluster: earnest, urgent, wholehearted effort applied to work, ministry, or care for others, standing as the structural opposite of idleness/sloth.",
+   "kind": "group",
+   "anchor": "Rom.12.11"
+  },
+  {
+   "code": "M67_D_administrative_thoroughness",
+   "label": "Exact, complete execution of an official command",
+   "description": "OT Aramaic/Hebrew adverbial terms denoting full, exact, unhesitating compliance with a royal or divine decree, an administrative/legal register of diligence rather than a personal virtue.",
+   "kind": "group",
+   "anchor": "Ezra.6.12"
+  }
+ ],
+ "allocations": [
+  {
+   "strong": "H5647I",
+   "surface": "work",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Isa.28.21",
+    "Isa.30.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4710",
+   "surface": "earnestness",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "diligence",
+   "transliteration": "spoudē",
+   "samples": [
+    "2Cor.7.11",
+    "Heb.6.11"
+   ],
+   "inherited": "M67_C_earnest_diligence",
+   "group": "M67_C_earnest_diligence",
+   "reason": "inherited from M67_C_earnest_diligence (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0629",
+   "surface": "diligence",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "diligently",
+   "transliteration": "os.par.na",
+   "samples": [
+    "Ezra.6.12",
+    "Ezra.6.13"
+   ],
+   "inherited": "M67_D_administrative_thoroughness",
+   "group": "M67_D_administrative_thoroughness",
+   "reason": "inherited from M67_D_administrative_thoroughness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "labor",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Deut.5.13",
+    "Ezek.29.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "workers",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Ezek.48.18",
+    "Ezek.48.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0692",
+   "surface": "idle",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "idle",
+   "transliteration": "argos",
+   "samples": [
+    "Matt.20.3",
+    "Matt.20.6"
+   ],
+   "inherited": "M67_A_dispositional_idleness",
+   "group": "M67_A_dispositional_idleness",
+   "reason": "inherited from M67_A_dispositional_idleness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0692",
+   "surface": "idlers",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "idle",
+   "transliteration": "argos",
+   "samples": [
+    "1Tim.5.13"
+   ],
+   "inherited": "M67_A_dispositional_idleness",
+   "group": "M67_A_dispositional_idleness",
+   "reason": "inherited from M67_A_dispositional_idleness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G3636",
+   "surface": "slothful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "lazy",
+   "transliteration": "oknēros",
+   "samples": [
+    "Matt.25.26",
+    "Rom.12.11"
+   ],
+   "inherited": "M67_B_dereliction_of_duty",
+   "group": "M67_B_dereliction_of_duty",
+   "reason": "inherited from M67_B_dereliction_of_duty (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4709",
+   "surface": "earnestly",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "diligently",
+   "transliteration": "spoudaiōs",
+   "samples": [
+    "2Tim.1.17",
+    "Luke.7.4"
+   ],
+   "inherited": "M67_C_earnest_diligence",
+   "group": "M67_C_earnest_diligence",
+   "reason": "inherited from M67_C_earnest_diligence (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4710",
+   "surface": "haste",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "diligence",
+   "transliteration": "spoudē",
+   "samples": [
+    "Luke.1.39",
+    "Mark.6.25"
+   ],
+   "inherited": "M67_C_earnest_diligence",
+   "group": "M67_C_earnest_diligence",
+   "reason": "inherited from M67_C_earnest_diligence (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4710",
+   "surface": "zeal",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "diligence",
+   "transliteration": "spoudē",
+   "samples": [
+    "Rom.12.11",
+    "Rom.12.8"
+   ],
+   "inherited": "M67_C_earnest_diligence",
+   "group": "M67_C_earnest_diligence",
+   "reason": "inherited from M67_C_earnest_diligence (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "till",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "2Sam.9.10",
+    "Ezek.48.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "tilled",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Ezek.36.34",
+    "Ezek.36.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "whoever works",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Prov.12.11",
+    "Prov.28.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "worker",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Gen.4.2",
+    "Zech.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7423B",
+   "surface": "slothful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "slackness",
+   "transliteration": "re.miy.yah",
+   "samples": [
+    "Prov.12.24",
+    "Prov.12.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0691",
+   "surface": "idle",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be idle",
+   "transliteration": "argeō",
+   "samples": [
+    "2Pet.2.3"
+   ],
+   "inherited": "M67_A_dispositional_idleness",
+   "group": "M67_A_dispositional_idleness",
+   "reason": "inherited from M67_A_dispositional_idleness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0692",
+   "surface": "careless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "idle",
+   "transliteration": "argos",
+   "samples": [
+    "Matt.12.36"
+   ],
+   "inherited": "M67_A_dispositional_idleness",
+   "group": "M67_A_dispositional_idleness",
+   "reason": "inherited from M67_A_dispositional_idleness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0692",
+   "surface": "ineffective",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "idle",
+   "transliteration": "argos",
+   "samples": [
+    "2Pet.1.8"
+   ],
+   "inherited": "M67_A_dispositional_idleness",
+   "group": "M67_A_dispositional_idleness",
+   "reason": "inherited from M67_A_dispositional_idleness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0692",
+   "surface": "lazy",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "idle",
+   "transliteration": "argos",
+   "samples": [
+    "Titus.1.12"
+   ],
+   "inherited": "M67_A_dispositional_idleness",
+   "group": "M67_A_dispositional_idleness",
+   "reason": "inherited from M67_A_dispositional_idleness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0692",
+   "surface": "useless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "idle",
+   "transliteration": "argos",
+   "samples": [
+    "Jas.2.20"
+   ],
+   "inherited": "M67_A_dispositional_idleness",
+   "group": "M67_A_dispositional_idleness",
+   "reason": "inherited from M67_A_dispositional_idleness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0812",
+   "surface": "idle",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be idle",
+   "transliteration": "atakteō",
+   "samples": [
+    "2Thess.3.7"
+   ],
+   "inherited": "M67_B_dereliction_of_duty",
+   "group": "M67_B_dereliction_of_duty",
+   "reason": "inherited from M67_B_dereliction_of_duty (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G3636",
+   "surface": "trouble",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lazy",
+   "transliteration": "oknēros",
+   "samples": [
+    "Phil.3.1"
+   ],
+   "inherited": "M67_B_dereliction_of_duty",
+   "group": "M67_B_dereliction_of_duty",
+   "reason": "inherited from M67_B_dereliction_of_duty (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4709",
+   "surface": "do your best",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "diligently",
+   "transliteration": "spoudaiōs",
+   "samples": [
+    "Titus.3.13"
+   ],
+   "inherited": "M67_C_earnest_diligence",
+   "group": "M67_C_earnest_diligence",
+   "reason": "inherited from M67_C_earnest_diligence (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4710",
+   "surface": "eager",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "diligence",
+   "transliteration": "spoudē",
+   "samples": [
+    "Jude.1.3"
+   ],
+   "inherited": "M67_C_earnest_diligence",
+   "group": "M67_C_earnest_diligence",
+   "reason": "inherited from M67_C_earnest_diligence (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4710",
+   "surface": "earnest care",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "diligence",
+   "transliteration": "spoudē",
+   "samples": [
+    "2Cor.8.16"
+   ],
+   "inherited": "M67_C_earnest_diligence",
+   "group": "M67_C_earnest_diligence",
+   "reason": "inherited from M67_C_earnest_diligence (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4710",
+   "surface": "effort",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "diligence",
+   "transliteration": "spoudē",
+   "samples": [
+    "2Pet.1.5"
+   ],
+   "inherited": "M67_C_earnest_diligence",
+   "group": "M67_C_earnest_diligence",
+   "reason": "inherited from M67_C_earnest_diligence (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0149",
+   "surface": "full",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "diligently",
+   "transliteration": "ad.raz.da",
+   "samples": [
+    "Ezra.7.23"
+   ],
+   "inherited": "M67_D_administrative_thoroughness",
+   "group": "M67_D_administrative_thoroughness",
+   "reason": "inherited from M67_D_administrative_thoroughness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0629",
+   "surface": "diligently",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "diligently",
+   "transliteration": "os.par.na",
+   "samples": [
+    "Ezra.5.8"
+   ],
+   "inherited": "M67_D_administrative_thoroughness",
+   "group": "M67_D_administrative_thoroughness",
+   "reason": "inherited from M67_D_administrative_thoroughness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0629",
+   "surface": "full",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "diligently",
+   "transliteration": "os.par.na",
+   "samples": [
+    "Ezra.6.8"
+   ],
+   "inherited": "M67_D_administrative_thoroughness",
+   "group": "M67_D_administrative_thoroughness",
+   "reason": "inherited from M67_D_administrative_thoroughness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0629",
+   "surface": "strictly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "diligently",
+   "transliteration": "os.par.na",
+   "samples": [
+    "Ezra.7.26"
+   ],
+   "inherited": "M67_D_administrative_thoroughness",
+   "group": "M67_D_administrative_thoroughness",
+   "reason": "inherited from M67_D_administrative_thoroughness (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "committed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Eccl.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "dress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Deut.28.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "labored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Ezek.29.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "laborer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Eccl.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Josh.16.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "performed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Ezek.29.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "plowed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Deut.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "slaves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "1Kgs.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647I",
+   "surface": "worked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: labour",
+   "transliteration": "a.vad",
+   "samples": [
+    "Deut.21.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7423B",
+   "surface": "idle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slackness",
+   "transliteration": "re.miy.yah",
+   "samples": [
+    "Prov.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7423B",
+   "surface": "slack",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slackness",
+   "transliteration": "re.miy.yah",
+   "samples": [
+    "Prov.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7423B",
+   "surface": "slackness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slackness",
+   "transliteration": "re.miy.yah",
+   "samples": [
+    "Jer.48.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8220",
+   "surface": "indolence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "idleness",
+   "transliteration": "shiph.lut",
+   "samples": [
+    "Eccl.10.18"
+   ],
+   "inherited": "M67_A_dispositional_idleness",
+   "group": "M67_A_dispositional_idleness",
+   "reason": "inherited from M67_A_dispositional_idleness (#2286 B5)",
+   "two_sense": 0
+  }
+ ]
+}

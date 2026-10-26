@@ -1,0 +1,1264 @@
+{
+ "cluster": "M35",
+ "cluster_name": "Being Tested",
+ "built_at": "2026-10-26T04:21:43Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 76,
+  "head": 32,
+  "tail": 44,
+  "hits": 220,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H5254G",
+   "surface": "test",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to test",
+   "transliteration": "na.sah",
+   "samples": [
+    "Judg.2.22",
+    "Judg.6.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4912",
+   "surface": "proverb",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "proverb",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Ezek.12.23",
+    "Ps.49.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0974",
+   "surface": "test",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to test",
+   "transliteration": "ba.chan",
+   "samples": [
+    "Jer.12.3",
+    "Job.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985G",
+   "surface": "tempted",
+   "part": "head",
+   "hits": 11,
+   "verses": 9,
+   "gloss": "to test/tempt: tempt",
+   "transliteration": "peirazō",
+   "samples": [
+    "Gal.6.1",
+    "Jas.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985H",
+   "surface": "test",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to test/tempt: test",
+   "transliteration": "peirazō",
+   "samples": [
+    "Mark.10.2",
+    "Mark.12.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5254G",
+   "surface": "tested",
+   "part": "head",
+   "hits": 11,
+   "verses": 10,
+   "gloss": "to test",
+   "transliteration": "na.sah",
+   "samples": [
+    "Dan.1.14",
+    "Ps.78.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3986G",
+   "surface": "temptation",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "temptation/testing: temptation",
+   "transliteration": "peirasmos",
+   "samples": [
+    "Luke.4.13",
+    "Matt.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4912",
+   "surface": "discourse",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "proverb",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Job.29.1",
+    "Num.23.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0929",
+   "surface": "torment",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "torment",
+   "transliteration": "basanismos",
+   "samples": [
+    "Rev.14.11",
+    "Rev.18.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "test",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "2Cor.13.5",
+    "Heb.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0974",
+   "surface": "tested",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to test",
+   "transliteration": "ba.chan",
+   "samples": [
+    "Ps.66.10",
+    "Ps.81.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4912",
+   "surface": "proverbs",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "proverb",
+   "transliteration": "ma.shal",
+   "samples": [
+    "1Kgs.4.32",
+    "Prov.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3986H",
+   "surface": "trials",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "temptation/testing: testing",
+   "transliteration": "peirasmos",
+   "samples": [
+    "Acts.20.19",
+    "Luke.22.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0974",
+   "surface": "tests",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to test",
+   "transliteration": "ba.chan",
+   "samples": [
+    "Jer.11.20",
+    "Job.34.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1384",
+   "surface": "approved",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "tested",
+   "transliteration": "dokimos",
+   "samples": [
+    "2Tim.2.15",
+    "Rom.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1598",
+   "surface": "test",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to test/tempt",
+   "transliteration": "ekpeirazō",
+   "samples": [
+    "1Cor.10.9",
+    "Matt.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985H",
+   "surface": "tested",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to test/tempt: test",
+   "transliteration": "peirazō",
+   "samples": [
+    "Heb.11.17",
+    "Rev.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4912",
+   "surface": "byword",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "proverb",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Ezek.14.8",
+    "Ps.69.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3143",
+   "surface": "testify",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to testify",
+   "transliteration": "marturomai",
+   "samples": [
+    "Eph.4.17",
+    "Gal.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3986H",
+   "surface": "trial",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "temptation/testing: testing",
+   "transliteration": "peirasmos",
+   "samples": [
+    "Gal.4.14",
+    "Rev.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4912",
+   "surface": "parable",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "proverb",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Ezek.24.3",
+    "Ps.78.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4912",
+   "surface": "taunt",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "proverb",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Hab.2.6",
+    "Mic.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5254G",
+   "surface": "testing",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to test",
+   "transliteration": "na.sah",
+   "samples": [
+    "Deut.8.2",
+    "Judg.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "approve",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "Phil.1.10",
+    "Rom.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "examine",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "1Cor.11.28",
+    "Luke.14.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "interpret",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "Luke.12.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "tested",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "1Tim.3.10",
+    "2Cor.8.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1382",
+   "surface": "test",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "test",
+   "transliteration": "dokimē",
+   "samples": [
+    "2Cor.2.9",
+    "2Cor.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3942",
+   "surface": "figures of speech",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "proverb",
+   "transliteration": "paroimia",
+   "samples": [
+    "John.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985G",
+   "surface": "tempter",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to test/tempt: tempt",
+   "transliteration": "peirazō",
+   "samples": [
+    "1Thess.3.5",
+    "Matt.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3986H",
+   "surface": "testing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "temptation/testing: testing",
+   "transliteration": "peirasmos",
+   "samples": [
+    "Heb.3.8",
+    "Luke.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0974",
+   "surface": "tried",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to test",
+   "transliteration": "ba.chan",
+   "samples": [
+    "Job.23.10",
+    "Job.34.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "accredit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "1Cor.16.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "approved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "1Thess.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "approves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "Rom.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "discern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "Eph.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "prove",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "2Cor.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "see fit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "Rom.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "tested by",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "1Pet.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "testing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "Rom.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1381",
+   "surface": "tests",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "dokimazō",
+   "samples": [
+    "1Thess.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1382",
+   "surface": "approval",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "test",
+   "transliteration": "dokimē",
+   "samples": [
+    "2Cor.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1382",
+   "surface": "character",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "test",
+   "transliteration": "dokimē",
+   "samples": [
+    "Rom.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1382",
+   "surface": "produces character",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "test",
+   "transliteration": "dokimē",
+   "samples": [
+    "Rom.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1382",
+   "surface": "proof",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "test",
+   "transliteration": "dokimē",
+   "samples": [
+    "2Cor.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1382",
+   "surface": "proven worth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "test",
+   "transliteration": "dokimē",
+   "samples": [
+    "Phil.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1383",
+   "surface": "tested genuineness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "testing",
+   "transliteration": "dokimion",
+   "samples": [
+    "1Pet.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1383",
+   "surface": "testing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "testing",
+   "transliteration": "dokimion",
+   "samples": [
+    "Jas.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1384",
+   "surface": "genuine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tested",
+   "transliteration": "dokimos",
+   "samples": [
+    "1Cor.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1384",
+   "surface": "stood the test",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tested",
+   "transliteration": "dokimos",
+   "samples": [
+    "Jas.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1384",
+   "surface": "test",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tested",
+   "transliteration": "dokimos",
+   "samples": [
+    "2Cor.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3942",
+   "surface": "figure of speech",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "proverb",
+   "transliteration": "paroimia",
+   "samples": [
+    "John.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3942",
+   "surface": "proverb",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "proverb",
+   "transliteration": "paroimia",
+   "samples": [
+    "2Pet.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3942",
+   "surface": "speech",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "proverb",
+   "transliteration": "paroimia",
+   "samples": [
+    "John.16.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3984",
+   "surface": "attempted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "test",
+   "transliteration": "peira",
+   "samples": [
+    "Heb.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3984",
+   "surface": "suffered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "test",
+   "transliteration": "peira",
+   "samples": [
+    "Heb.11.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985G",
+   "surface": "being tempted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test/tempt: tempt",
+   "transliteration": "peirazō",
+   "samples": [
+    "Luke.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985G",
+   "surface": "tempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test/tempt: tempt",
+   "transliteration": "peirazō",
+   "samples": [
+    "1Cor.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985G",
+   "surface": "tempts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test/tempt: tempt",
+   "transliteration": "peirazō",
+   "samples": [
+    "Jas.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985H",
+   "surface": "did",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test/tempt: test",
+   "transliteration": "peirazō",
+   "samples": [
+    "1Cor.10.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985H",
+   "surface": "examine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test/tempt: test",
+   "transliteration": "peirazō",
+   "samples": [
+    "2Cor.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985H",
+   "surface": "put",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test/tempt: test",
+   "transliteration": "peirazō",
+   "samples": [
+    "Heb.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985H",
+   "surface": "try",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test/tempt: test",
+   "transliteration": "peirazō",
+   "samples": [
+    "Rev.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985I",
+   "surface": "attempted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test/tempt: try",
+   "transliteration": "peirazō",
+   "samples": [
+    "Acts.16.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3985I",
+   "surface": "tried",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test/tempt: try",
+   "transliteration": "peirazō",
+   "samples": [
+    "Acts.24.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3986H",
+   "surface": "test",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "temptation/testing: testing",
+   "transliteration": "peirasmos",
+   "samples": [
+    "1Pet.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0974",
+   "surface": "proof",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "ba.chan",
+   "samples": [
+    "Ps.95.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0974",
+   "surface": "prove",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "ba.chan",
+   "samples": [
+    "Ps.26.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0974",
+   "surface": "testing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "ba.chan",
+   "samples": [
+    "Ezek.21.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0974",
+   "surface": "try",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test",
+   "transliteration": "ba.chan",
+   "samples": [
+    "Ps.139.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0976",
+   "surface": "tested",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "testing",
+   "transliteration": "bo.chan",
+   "samples": [
+    "Isa.28.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4912",
+   "surface": "parables",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "proverb",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Ezek.20.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5254H",
+   "surface": "attempted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test: try",
+   "transliteration": "na.sah",
+   "samples": [
+    "Deut.4.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5254H",
+   "surface": "try",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test: try",
+   "transliteration": "na.sah",
+   "samples": [
+    "Ps.26.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5254H",
+   "surface": "venture",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test: try",
+   "transliteration": "na.sah",
+   "samples": [
+    "Deut.28.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5254H",
+   "surface": "ventures",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to test: try",
+   "transliteration": "na.sah",
+   "samples": [
+    "Job.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

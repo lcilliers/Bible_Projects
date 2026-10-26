@@ -1,0 +1,137 @@
+{
+ "M08": {
+  "groups": [
+   ["M08_pride", "Pride, arrogance, haughtiness", "the proud disposition: pride, arrogance, haughtiness, conceit, presumption", "group", "renders pride or arrogance"],
+   ["M08_boasting", "Boasting, glorying", "pride voiced: boasting, glorying in, being proud of", "group", "renders boasting"],
+   ["M08_mocking", "Mocking, scoffing, derision", "pride that despises: mocking, scoffing, derision, a byword", "group", "renders mocking or scoffing"],
+   ["M08_majesty", "Majesty, exaltation", "rightful greatness: majesty, being exalted, triumphing gloriously", "group", "renders majesty or exaltation"],
+   ["M08_not_this_sense", "Not the cluster's sense", "renderings with no sense of pride: literal height of trees, walls and mountains, a thicket, a back, a name, rising water", "not_this_sense", "carries no sense of pride"]
+  ],
+  "surf": {
+   "M08_pride": ["pride", "proud", "proudly", "arrogance", "arrogant", "arrogant people", "haughty", "insolent", "conceited", "conceit", "becoming conceited", "puffed up", "puffs up", "presumptuously", "acted presumptuously", "proud one", "lofty pride", "lofty opinion", "more highly", "become proud", "exalts", "lovers of self", "willful", "pomp", "are", "lifted up"],
+   "M08_boasting": ["boast", "boasts", "boasted", "boasting", "boastful", "boasters", "loud boasts", "glory", "rejoice", "boast about", "confident", "triumphs", "exult"],
+   "M08_mocking": ["mocked", "mock", "mocks", "mocking", "scoffer", "scoffers", "scoff", "derision", "jeered", "scorns", "laughed", "byword"],
+   "M08_majesty": ["majesty", "majestic", "magnificence", "gloriously", "triumphed", "exalted", "uplifted", "exaltation", "preeminent", "triumph", "above"],
+   "M08_not_this_sense": ["high", "height", "heights", "heaven", "highest places", "top", "tallest", "stature", "upper", "higher", "towered", "lofty", "thicket", "back", "rahab", "swelling", "grow", "risen", "tricked", "self-control"]
+  },
+  "over": {
+   "H1361|high": ["M08_pride", "gabah 'I bring low the high tree' (Ezek 17:24), 'though you make your nest as high as the eagle's' (Jer 49:16): height as a figure of pride", 1],
+   "H1361|higher": ["M08_not_this_sense", "'as the heavens are higher than the earth' (Isa 55:9): height", 0],
+   "H1361|towered": ["M08_pride", "'it towered high ... its heart was proud of its height' (Ezek 31:10): the tree as a figure of pride", 1],
+   "H1364|high": ["M08_not_this_sense", "'afraid also of what is high' (Eccl 12:5), 'a very high mountain' (Ezek 40:2): height; settled per verse where it is pride", 1],
+   "H1364|lofty": ["M08_not_this_sense", "'the lofty will be brought low' (Isa 10:33): lofty trees, a figure of the proud, settled per verse", 1],
+   "H1364|higher": ["M08_not_this_sense", "'one horn higher than the other' (Dan 8:3), 'the high official is watched by a higher' (Eccl 5:8)", 0],
+   "H1363|pride": ["M08_pride", "'Hezekiah humbled himself for the pride of his heart' (2Chr 32:26), 'in the pride of his face' (Ps 10:4)", 0],
+   "H1363|height": ["M08_not_this_sense", "'whose height was like the height of the cedars' (Amos 2:9): stature", 0],
+   "H1346|back": ["M08_not_this_sense", "'his back is made of rows of shields' (Job 41:15); 'a rod for his back' (Prov 14:3) is pride, settled per verse", 1],
+   "H1346|triumph": ["M08_majesty", "'the sword of your triumph' (Deut 33:29)", 0],
+   "H1347|pomp": ["M08_pride", "'your pomp is brought down to Sheol' (Isa 14:11)", 0],
+   "H1347|thicket": ["M08_not_this_sense", "'the thicket of the Jordan' (Jer 12:5): the Jordan's jungle", 0],
+   "H1347|majesty": ["M08_majesty", "'the greatness of your majesty' (Exod 15:7); ge'on is also pride, settled per verse", 1],
+   "H1348|proud": ["M08_pride", "'the proud crown of the drunkards' (Isa 28:1)", 0],
+   "H1342|lifted up": ["M08_pride", "'if I lift up my head' (Job 10:16)", 1],
+   "H1342|grow": ["M08_not_this_sense", "'can papyrus grow where there is no marsh?' (Job 8:11)", 0],
+   "H1342|risen": ["M08_not_this_sense", "'the water had risen' (Ezek 47:5)", 0],
+   "H1346|swelling": ["M08_not_this_sense", "'the mountains tremble at its swelling' (Ps 46:3): the sea's surge", 0],
+   "H7293|rahab": ["M08_not_this_sense", "Rahab, the name for Egypt and the sea monster (Isa 30:7, Ps 87:4)", 0],
+   "G1702|tricked": ["M08_not_this_sense", "'he had been tricked by the wise men' (Matt 2:16): deceived", 0],
+   "G0193|self-control": ["M08_not_this_sense", "'without self-control' (2Tim 3:3): the sense of M69", 0],
+   "G2744|rejoice": ["M08_boasting", "kauchaomai 'we rejoice in hope of the glory of God' (Rom 5:2): glorying, not pride", 1],
+   "G2620|triumphs": ["M08_boasting", "'mercy triumphs over judgment' (Jas 2:13): katakauchaomai, to glory over", 0],
+   "G2620|are": ["M08_pride", "'do not be arrogant ... if you are' (Rom 11:18): the ESV split of one verb", 0],
+   "G5308|high": ["M08_not_this_sense", "'a high mountain' (Mark 9:2), 'a great, high wall' (Rev 21:12)", 0],
+   "G5308|exalted": ["M08_pride", "'what is exalted among men is an abomination' (Luke 16:15)", 0],
+   "G5308|above": ["M08_majesty", "'exalted above the heavens' (Heb 7:26)", 0],
+   "G5308|uplifted": ["M08_majesty", "'with uplifted arm he led them' (Acts 13:17)", 0],
+   "G5311|exaltation": ["M08_majesty", "'let the lowly brother boast in his exaltation' (Jas 1:9)", 0],
+   "H1361|exalted": ["M08_majesty", "'he shall be high and lifted up, and shall be exalted' (Isa 52:13)", 0],
+   "G5313|lofty opinion": ["M08_pride", "'every lofty opinion raised against the knowledge of God' (2Cor 10:5)", 0]
+  }
+ },
+ "M11": {
+  "groups": [
+   ["M11_repenting", "Repenting, turning back to God", "turning from sin to God: repent, repentance, return, turn back, change of mind", "group", "renders repenting"],
+   ["M11_relenting", "Relenting, regret", "God or man relenting: relent, regret, not revoking", "group", "renders relenting"],
+   ["M11_turning_aside", "Turning aside, going astray", "turning off the way: turn aside, go astray", "group", "renders turning aside"],
+   ["M11_departing", "Departing, turning away from", "turning away from: depart from, turn away from", "group", "renders departing from"],
+   ["M11_removing", "Removing, taking away", "sur in its causative: remove, take away, take off", "group", "renders removing"],
+   ["M11_returning", "Returning, going back", "a going back: return, returned, returning", "group", "renders returning"],
+   ["M11_not_this_sense", "Not the cluster's sense", "renderings with no sense of turning", "not_this_sense", "carries no sense of turning"]
+  ],
+  "surf": {
+   "M11_repenting": ["repent", "repentance", "repented", "repents", "turn back", "mind"],
+   "M11_relenting": ["relent", "relented", "regret", "not revoke"],
+   "M11_turning_aside": ["turn aside", "turned aside", "aside", "astray"],
+   "M11_departing": ["depart", "departed", "turn away", "turns away"],
+   "M11_removing": ["remove", "removed", "take", "took", "taken", "off", "take off"],
+   "M11_returning": ["returned", "return", "returning"],
+   "M11_not_this_sense": []
+  },
+  "over": {
+   "H7725O|turn": ["M11_repenting", "shuv 'repent and turn away from your idols' (Ezek 14:6)", 0],
+   "H7725O|return": ["M11_repenting", "'let him return to the LORD' (Isa 55:7); 'he shall not return to Egypt' (Hos 11:5) is going back", 1],
+   "H7725O|turns": ["M11_repenting", "'when the wicked turns from his wickedness' (Ezek 33:12, 18)", 0],
+   "H7725O|turned": ["M11_repenting", "'how they turned from their evil way' (Jonah 3:10)", 0],
+   "H7725O|away": ["M11_departing", "'when a righteous person turns away from his righteousness' (Ezek 18:24): turning from right", 0],
+   "H5493G|away": ["M11_removing", "sur 'the revelry shall pass away' (Amos 6:7), 'take away the regular burnt offering' (Dan 11:31)", 0],
+   "H5493I|away": ["M11_removing", "'if you take away the yoke from your midst' (Isa 58:9)", 0],
+   "H5493I|turn": ["M11_turning_aside", "'Jehu did not turn from the sins of Jeroboam' (2Kgs 10:31)", 0],
+   "H5493I|turned": ["M11_turning_aside", "'he turned aside' (1Kgs 20:39), 'they turned neither to the right nor to the left' (1Sam 6:12)", 0],
+   "H8421G|returned": ["M11_returning", "'my reason returned to me' (Dan 4:34, 36)", 0],
+   "G3338|mind": ["M11_repenting", "metamelomai 'will not change his mind' (Heb 7:21), 'he changed his mind' (Matt 27:3)", 0]
+  }
+ },
+ "M12": {
+  "groups": [
+   ["M12_righteousness", "Righteousness, the righteous", "being in the right with God and man: righteous, righteousness, righteous deeds", "group", "renders righteousness"],
+   ["M12_justice", "Justice, equity", "what is just between people: justice, a just cause, equity, a right", "group", "renders justice"],
+   ["M12_rules", "Rules, judgments, decisions", "mishpat as ordinance and verdict: rules, judgments, sentence, decision, what is prescribed", "group", "renders rules or judgments"],
+   ["M12_upright", "Upright, uprightness", "the straight way: upright, uprightness, right", "group", "renders uprightness"],
+   ["M12_integrity", "Integrity, blamelessness, innocence", "wholeness without fault: integrity, blameless, innocent, guiltless, pure, wholehearted", "group", "renders integrity or innocence"],
+   ["M12_injustice", "Injustice, unrighteousness, wrong", "the opposite: injustice, wrong, the unrighteous, unjust gain", "group", "renders injustice"],
+   ["M12_not_this_sense", "Not the cluster's sense", "renderings with no sense of righteousness: pure gold, a custom or manner, ritual purification", "not_this_sense", "carries no sense of righteousness"]
+  ],
+  "surf": {
+   "M12_righteousness": ["righteous", "righteousness", "righteous man", "righteous person", "righteous deeds"],
+   "M12_justice": ["justice", "just", "cause", "equity"],
+   "M12_rules": ["rules", "rule", "judgment", "judgments", "sentence", "decision", "prescribed"],
+   "M12_upright": ["upright", "uprightness", "right"],
+   "M12_integrity": ["blameless", "integrity", "innocent", "guiltless", "innocence", "whole", "wholly true", "without blemish", "cleanness", "pure"],
+   "M12_injustice": ["injustice", "wrong", "unrighteous", "unjust", "gain"],
+   "M12_not_this_sense": ["fine gold", "purification", "manner", "custom"]
+  },
+  "over": {
+   "H4941H|right": ["M12_justice", "'the right of the firstborn' (Deut 21:17), 'leads the humble in what is right' (Ps 25:9)", 0],
+   "H6666|right": ["M12_righteousness", "'has done what is just and right' (Ezek 18:5, 19)", 0],
+   "H6662|right": ["M12_righteousness", "'a bribe subverts the cause of those who are in the right' (Exod 23:8)", 0],
+   "H6664G|right": ["M12_righteousness", "'all your commandments are right' (Ps 119:172), 'speaks truth ... and does what is right' (Ps 15:2)", 0],
+   "H6664G|just": ["M12_righteousness", "'rulers decree what is just' (Prov 8:15)", 0],
+   "H6664G|righteous": ["M12_righteousness", "'all the words of my mouth are righteous' (Prov 8:8)", 0],
+   "G1342|just": ["M12_righteousness", "dikaios 'God considers it just' (2Thess 1:6)", 0],
+   "G1342|right": ["M12_righteousness", "dikaios 'judge with right judgment' (John 7:24)", 0],
+   "H4339|right": ["M12_upright", "meshar 'what is right' (Prov 8:6, Ps 17:2)", 0],
+   "H4941G|judgment": ["M12_rules", "mishpat 'my hand takes hold on judgment' (Deut 32:41); a verdict and the act of judging, settled per verse", 1],
+   "H4941J|manner": ["M12_not_this_sense", "'after the manner of the nations' (2Kgs 17:33): a way of doing", 0],
+   "H4941J|custom": ["M12_not_this_sense", "'the custom of the priests' (1Sam 2:13): a practice", 0],
+   "H6337|fine gold": ["M12_not_this_sense", "'fine gold' (Job 28:17, Ps 19:10): pure gold", 0],
+   "G2512|purification": ["M12_not_this_sense", "'purification for sins' (Heb 1:3), 'the time for their purification' (Luke 2:22): cleansing, the sense of M61", 0]
+  }
+ },
+ "M13": {
+  "groups": [
+   ["M13_faith", "Faith, believing", "trust that believes: faith, believe, believed", "group", "renders faith or believing"],
+   ["M13_faithfulness", "Faithfulness, being sure", "being true to one's word: faithful, faithfulness, trustworthy, sure", "group", "renders faithfulness"],
+   ["M13_truth", "Truth, being true", "what is true and the truth: truth, true, truly", "group", "renders truth"],
+   ["M13_not_this_sense", "Not the cluster's sense", "renderings with no sense of faith", "not_this_sense", "carries no sense of faith"]
+  ],
+  "surf": {
+   "M13_faith": ["faith", "believe", "believed"],
+   "M13_faithfulness": ["faithful", "faithfulness", "faithfully", "trustworthy", "sure"],
+   "M13_truth": ["truth", "true", "truly"],
+   "M13_not_this_sense": []
+  },
+  "over": {
+   "H0530|truth": ["M13_truth", "emunah 'one who seeks truth' (Jer 5:1, 3): faithfulness that is truth", 0]
+  }
+ }
+}

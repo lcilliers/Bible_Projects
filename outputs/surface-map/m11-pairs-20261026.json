@@ -1,0 +1,2264 @@
+{
+ "cluster": "M11",
+ "cluster_name": "Turning & Repentance",
+ "built_at": "2026-10-26T04:18:41Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 137,
+  "head": 41,
+  "tail": 96,
+  "hits": 553,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H5493G",
+   "surface": "away",
+   "part": "head",
+   "hits": 46,
+   "verses": 44,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Amos.6.7",
+    "Dan.11.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "depart",
+   "part": "head",
+   "hits": 37,
+   "verses": 35,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Job.15.30",
+    "Ps.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "remove",
+   "part": "head",
+   "hits": 32,
+   "verses": 32,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Jer.4.1",
+    "Lev.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "turn",
+   "part": "head",
+   "hits": 30,
+   "verses": 28,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Ezek.14.6",
+    "Isa.59.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3340",
+   "surface": "repent",
+   "part": "head",
+   "hits": 26,
+   "verses": 24,
+   "gloss": "to repent",
+   "transliteration": "metanoeō",
+   "samples": [
+    "Acts.8.22",
+    "Rev.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "turn aside",
+   "part": "head",
+   "hits": 25,
+   "verses": 25,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Deut.2.27",
+    "Deut.31.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "removed",
+   "part": "head",
+   "hits": 24,
+   "verses": 24,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "1Kgs.15.13",
+    "2Kgs.15.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5290",
+   "surface": "returned",
+   "part": "head",
+   "hits": 21,
+   "verses": 21,
+   "gloss": "to return",
+   "transliteration": "hupostrefō",
+   "samples": [
+    "Acts.21.6",
+    "Luke.8.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3341",
+   "surface": "repentance",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "repentance",
+   "transliteration": "metanoia",
+   "samples": [
+    "Acts.13.24",
+    "Acts.20.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "turned aside",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Gen.19.3",
+    "Job.34.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "relent",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "Exod.32.12",
+    "Joel.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "relented",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "Exod.32.14",
+    "Jer.31.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "take",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Deut.7.15",
+    "Exod.23.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "away",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.58.9",
+    "Jer.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "turn",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "2Kgs.10.31",
+    "Deut.17.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "not revoke",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Amos.1.11",
+    "Amos.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "repent",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Ezek.14.6",
+    "Ps.7.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5290",
+   "surface": "return",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to return",
+   "transliteration": "hupostrefō",
+   "samples": [
+    "Luke.11.24",
+    "Luke.8.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "took",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "2Chr.14.5",
+    "2Sam.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "departed",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Ezek.6.9",
+    "Isa.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "return",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Hos.11.5",
+    "Isa.55.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "turns",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Ezek.33.12",
+    "Ezek.33.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3340",
+   "surface": "repented",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to repent",
+   "transliteration": "metanoeō",
+   "samples": [
+    "Luke.10.13",
+    "Matt.12.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "off",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "1Sam.17.39",
+    "Lev.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "turn away",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Prov.13.14",
+    "Prov.13.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "aside",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "2Chr.35.12",
+    "Judg.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "turned",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "1Kgs.20.39",
+    "1Sam.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0344",
+   "surface": "return",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to return",
+   "transliteration": "anakamptō",
+   "samples": [
+    "Acts.18.21",
+    "Luke.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5290",
+   "surface": "returning",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to return",
+   "transliteration": "hupostrefō",
+   "samples": [
+    "Luke.2.43",
+    "Luke.24.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "taken",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Exod.25.15",
+    "Zeph.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "away",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Ezek.18.24",
+    "Ezek.18.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "turn back",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Ezek.33.11",
+    "Ezek.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3338",
+   "surface": "mind",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to repent",
+   "transliteration": "metamellomai",
+   "samples": [
+    "Heb.7.21",
+    "Matt.27.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3340",
+   "surface": "repents",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to repent",
+   "transliteration": "metanoeō",
+   "samples": [
+    "Luke.15.7",
+    "Luke.17.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "regret",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "1Sam.15.11",
+    "1Sam.15.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "take off",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "2Kgs.6.32",
+    "Esth.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "turns away",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Prov.14.16",
+    "Prov.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "repented",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Ps.78.34",
+    "Zech.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "turned",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Jonah.3.10",
+    "Mal.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7847",
+   "surface": "astray",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to turn aside",
+   "transliteration": "sa.tah",
+   "samples": [
+    "Num.5.12",
+    "Num.5.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8421G",
+   "surface": "returned",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to return: return",
+   "transliteration": "tuv",
+   "samples": [
+    "Dan.4.34",
+    "Dan.4.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0654",
+   "surface": "turn away",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to turn away",
+   "transliteration": "apostrefō",
+   "samples": [
+    "2Tim.4.4",
+    "Titus.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3338",
+   "surface": "regret",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to repent",
+   "transliteration": "metamellomai",
+   "samples": [
+    "2Cor.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "Num.23.19",
+    "Ps.110.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "regretted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "1Sam.15.35",
+    "Gen.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "relenting",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "Jer.15.6",
+    "Jonah.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "relents",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "Jer.8.6",
+    "Joel.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "departs",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.59.15",
+    "Lev.13.58"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "leave",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.30.11",
+    "Judg.16.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "left",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Judg.16.19",
+    "Judg.16.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "turn",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Deut.7.4",
+    "Ps.37.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "turn in",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Prov.9.16",
+    "Prov.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "turned away",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "2Chr.25.27",
+    "Job.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "fro",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Zech.7.14",
+    "Zech.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "turned away",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Ezek.18.28",
+    "Jer.31.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0488",
+   "surface": "measured back",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return",
+   "transliteration": "antimetreō",
+   "samples": [
+    "Luke.6.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0654",
+   "surface": "back",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn away",
+   "transliteration": "apostrefō",
+   "samples": [
+    "Matt.26.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0654",
+   "surface": "banish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn away",
+   "transliteration": "apostrefō",
+   "samples": [
+    "Rom.11.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0654",
+   "surface": "misleading",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn away",
+   "transliteration": "apostrefō",
+   "samples": [
+    "Luke.23.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0654",
+   "surface": "refuse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn away",
+   "transliteration": "apostrefō",
+   "samples": [
+    "Matt.5.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0654",
+   "surface": "reject him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn away",
+   "transliteration": "apostrefō",
+   "samples": [
+    "Heb.12.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0654",
+   "surface": "turned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn away",
+   "transliteration": "apostrefō",
+   "samples": [
+    "2Tim.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0654",
+   "surface": "turning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn away",
+   "transliteration": "apostrefō",
+   "samples": [
+    "Acts.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1624",
+   "surface": "avoid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn/wander away",
+   "transliteration": "ektrepō",
+   "samples": [
+    "1Tim.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1624",
+   "surface": "put out of joint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn/wander away",
+   "transliteration": "ektrepō",
+   "samples": [
+    "Heb.12.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1624",
+   "surface": "strayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn/wander away",
+   "transliteration": "ektrepō",
+   "samples": [
+    "1Tim.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1624",
+   "surface": "wander off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn/wander away",
+   "transliteration": "ektrepō",
+   "samples": [
+    "2Tim.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1624",
+   "surface": "wandered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn/wander away",
+   "transliteration": "ektrepō",
+   "samples": [
+    "1Tim.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1880",
+   "surface": "come back",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return",
+   "transliteration": "epanerchomai",
+   "samples": [
+    "Luke.10.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1880",
+   "surface": "returned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return",
+   "transliteration": "epanerchomai",
+   "samples": [
+    "Luke.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3338",
+   "surface": "minds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to repent",
+   "transliteration": "metamellomai",
+   "samples": [
+    "Matt.21.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3341",
+   "surface": "repent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "repentance",
+   "transliteration": "metanoia",
+   "samples": [
+    "Heb.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3341",
+   "surface": "repenting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "repentance",
+   "transliteration": "metanoia",
+   "samples": [
+    "2Cor.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5290",
+   "surface": "came",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return",
+   "transliteration": "hupostrefō",
+   "samples": [
+    "Mark.14.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5290",
+   "surface": "turned back",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return",
+   "transliteration": "hupostrefō",
+   "samples": [
+    "Luke.17.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2559",
+   "surface": "turned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn away",
+   "transliteration": "cha.maq",
+   "samples": [
+    "Song.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2559",
+   "surface": "waver",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn away",
+   "transliteration": "cha.maq",
+   "samples": [
+    "Jer.31.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "minds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "Exod.13.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "repent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "Job.42.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162H",
+   "surface": "sorry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be sorry: relent",
+   "transliteration": "na.cham",
+   "samples": [
+    "Gen.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5164",
+   "surface": "compassion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "repentance",
+   "transliteration": "no.cham",
+   "samples": [
+    "Hos.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "beheaded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "2Sam.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "burden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.14.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "clears away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "cut off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Ezek.23.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "deposed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "2Chr.36.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "deprive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "deprives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Job.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "far",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Ps.101.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "move",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Gen.48.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "1Sam.28.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "put",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Ps.119.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "relieved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Ps.81.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "removal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.27.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "removing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Gen.30.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "take away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Exod.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "taking away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "taking off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Gen.38.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "took off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Gen.38.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493G",
+   "surface": "without",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: remove",
+   "transliteration": "sur",
+   "samples": [
+    "Prov.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "be",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.17.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "go away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Exod.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "gone",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Hos.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "past",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "1Sam.15.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "return",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Judg.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "turn your",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Prov.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "turned away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "1Sam.28.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493H",
+   "surface": "turns aside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: depart",
+   "transliteration": "sur",
+   "samples": [
+    "Prov.16.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "avoided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "2Chr.20.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "call back",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Isa.31.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "captain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "1Sam.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "clogging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Exod.14.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "go in",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "2Kgs.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "left",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Josh.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "rebel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Hos.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "rejected",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Ps.66.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "stubbornly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Jer.6.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "turned into",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "2Kgs.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "turning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Josh.23.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "turning aside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "Dan.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5493I",
+   "surface": "ward",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside: turn aside",
+   "transliteration": "sur",
+   "samples": [
+    "2Sam.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749A",
+   "surface": "ensnare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return",
+   "transliteration": "ud",
+   "samples": [
+    "Ps.119.61"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749A",
+   "surface": "lifts up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return",
+   "transliteration": "ud",
+   "samples": [
+    "Ps.147.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749A",
+   "surface": "stand upright",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return",
+   "transliteration": "ud",
+   "samples": [
+    "Ps.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749A",
+   "surface": "upholds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return",
+   "transliteration": "ud",
+   "samples": [
+    "Ps.146.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5848A",
+   "surface": "faint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside",
+   "transliteration": "a.taph",
+   "samples": [
+    "Ps.102.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5848A",
+   "surface": "turns",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside",
+   "transliteration": "a.taph",
+   "samples": [
+    "Job.23.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "back",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Jer.4.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "brought them back",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "2Chr.19.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "restrained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Ps.78.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "returned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "2Chr.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "turn again",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "2Chr.6.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725O",
+   "surface": "turn them back",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return: repent",
+   "transliteration": "shuv",
+   "samples": [
+    "Neh.9.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7734",
+   "surface": "turned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn back",
+   "transliteration": "sug",
+   "samples": [
+    "2Sam.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7847",
+   "surface": "aside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside",
+   "transliteration": "sa.tah",
+   "samples": [
+    "Num.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7847",
+   "surface": "turn aside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside",
+   "transliteration": "sa.tah",
+   "samples": [
+    "Prov.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7847",
+   "surface": "turn away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to turn aside",
+   "transliteration": "sa.tah",
+   "samples": [
+    "Prov.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

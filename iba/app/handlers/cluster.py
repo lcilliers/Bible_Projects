@@ -13,7 +13,7 @@ import pathlib
 
 from .base import Ctx, Outcome, fail, ok, escalate
 from ..lib import batchcontrol, charanswergenerate, charreadinggenerate, clusterstatus, escalation as esc
-from ..lib import lexicalscope, recordingpass, reportkit, strongreconcile, subgroupgenerate
+from ..lib import lexicalscope, recordingpass, reportkit, strongreconcile, subgroupgenerate, surfacemap
 
 
 def _now() -> str:
@@ -35,7 +35,7 @@ def assign(ctx: Ctx) -> Outcome:
 
 # ── validate (read-only; coverage + the two named exception shapes; always persists a report) ──
 def _write_report(ctx: Ctx, counts: dict, unclassified: list[dict], no_word: list[dict],
-                  sibling: list[dict]) -> pathlib.Path:
+                  sibling: list[dict], mapping: list[dict]) -> pathlib.Path:
     path = pathlib.Path(ctx.cfg.required_setting("cluster.quality_report_path"))
     intro = [
         f"> Generated {_now()} by `cluster.validate`. Read-only findings, not a gate.",
@@ -45,6 +45,9 @@ def _write_report(ctx: Ctx, counts: dict, unclassified: list[dict], no_word: lis
         f"**{counts['not_promoted']}**",
         f"- exception — non-T2 assignment with no `word_registry` link: **{len(no_word)}**",
         f"- exception — `backfill` code with an active/clustered sibling: **{len(sibling)}**",
+        f"- surface mapping (#2294): **{sum(m['stale'] for m in mapping)}** stale pair(s); "
+        f"**{sum(1 for m in mapping if m['allocated'] and m['unallocated'])}** M cluster(s) partly mapped; "
+        f"{sum(1 for m in mapping if not m['allocated'])} not yet mapped (counted, not a finding)",
     ]
     sections = {
         "summary": [
@@ -63,6 +66,11 @@ def _write_report(ctx: Ctx, counts: dict, unclassified: list[dict], no_word: lis
         "exceptions_sibling_conflict": (
             [f"`{r['strong']}` — {r['stepGloss']!r}, cluster {r['cluster_code']}" for r in sibling]
             or ["(none)"]),
+        "surface_mapping": (
+            ["| cluster | pairs | allocated | unallocated | stale |", "|---|---|---|---|---|"]
+            + [f"| {m['cluster']} | {m['pairs']} | {m['allocated']} | {m['unallocated']} | {m['stale']} |"
+               for m in mapping if m["allocated"] or m["stale"]]
+            + [f"", f"Not yet mapped: {', '.join(m['cluster'] for m in mapping if not m['allocated'] and not m['stale']) or 'none'}"]),
     }
     L = reportkit.render_scaffold(ctx.db.conn, "cluster.validate", sections, intro=intro)
     path = reportkit.write_report(ctx.db.conn, "cluster.validate", path, L)
@@ -103,10 +111,15 @@ def validate(ctx: Ctx) -> Outcome:
                                  "cluster_code": cc or "(none)"})
 
     counts = {"total": total, "unclassified": len(unclassified), "not_promoted": len(not_promoted)}
-    report_path = _write_report(ctx, counts, unclassified, no_word, sibling_rows)
+    # the surface mapping (#2294): stale pairs and partly mapped clusters are findings; an unmapped cluster is
+    # counted only (reading.open refuses it, B:118)
+    mapping = surfacemap.overview(ctx.db.conn)
+    stale_pairs = sum(m["stale"] for m in mapping)
+    partly = sum(1 for m in mapping if m["allocated"] and m["unallocated"])
+    report_path = _write_report(ctx, counts, unclassified, no_word, sibling_rows, mapping)
 
     # unclassified strongs count as a finding, like the two named exception shapes (#1606)
-    total_findings = len(unclassified) + len(no_word) + len(sibling_rows)
+    total_findings = len(unclassified) + len(no_word) + len(sibling_rows) + stale_pairs + partly
     if not total_findings:
         return ok(f"{total} strong(s) checked — 0 unclassified, "
                  f"{counts['not_promoted']} not-yet-promoted, 0 exceptions — "
@@ -116,6 +129,8 @@ def validate(ctx: Ctx) -> Outcome:
     # for this step (#1707); only an increase in any count escalates again
     current = {"unclassified": len(unclassified), "no_word": len(no_word),
               "sibling_conflict": len(sibling_rows)}
+    # the mapping counts join the baseline only when present, so a baseline approved before #2294 still holds
+    current.update({k: v for k, v in (("stale_pairs", stale_pairs), ("partly_mapped", partly)) if v})
     baseline = esc.answered_baseline_for_step(ctx.db, ctx.step_id, current)
     if baseline is not None:
         return ok(f"{total} strong(s) checked — {len(unclassified)} unclassified, "
@@ -145,11 +160,13 @@ def validate(ctx: Ctx) -> Outcome:
         question=(f"Cluster-assignment findings: {len(unclassified)} `strong` row(s) have NO "
                  f"cluster assignment at all; {len(no_word)} strong(s) carry a non-T2 cluster "
                  f"with no word_registry link at all; {len(sibling_rows)} `backfill` strong(s) have "
-                 f"an already-active or already-clustered sibling. None is auto-resolved — "
+                 f"an already-active or already-clustered sibling; {stale_pairs} surface pair(s) are "
+                 f"stale and {partly} M cluster(s) are partly mapped (#2294). None is auto-resolved — "
                  f"approve to acknowledge as current/known state, reject to flag for action, or "
                  f"revise with a comment. Full detail: {report_path}."),
         preset={"unclassified": len(unclassified), "no_word": len(no_word),
-               "sibling_conflict": len(sibling_rows), "report_path": str(report_path)},
+               "sibling_conflict": len(sibling_rows), "stale_pairs": stale_pairs, "partly_mapped": partly,
+               "report_path": str(report_path)},
         tried="reconcile()'s own exception checks, run DB-wide across every backfill-origin strong "
               "with a cluster assignment",
         resolution_kind="decision_required")

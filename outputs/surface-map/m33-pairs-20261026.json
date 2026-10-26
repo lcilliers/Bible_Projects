@@ -1,0 +1,3973 @@
+{
+ "cluster": "M33",
+ "cluster_name": "Rest & Peace",
+ "built_at": "2026-10-26T04:21:27Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 242,
+  "head": 79,
+  "tail": 163,
+  "hits": 855,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H7965G",
+   "surface": "peace",
+   "part": "head",
+   "hits": 152,
+   "verses": 138,
+   "gloss": "peace",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Ezek.13.16",
+    "Ps.28.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1515",
+   "surface": "peace",
+   "part": "head",
+   "hits": 89,
+   "verses": 82,
+   "gloss": "peace",
+   "transliteration": "eirēnē",
+   "samples": [
+    "1Thess.5.3",
+    "2Thess.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8002",
+   "surface": "peace offerings",
+   "part": "head",
+   "hits": 67,
+   "verses": 65,
+   "gloss": "peace offering",
+   "transliteration": "she.lem",
+   "samples": [
+    "Lev.7.21",
+    "Num.29.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "rest",
+   "part": "head",
+   "hits": 35,
+   "verses": 35,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Job.3.17",
+    "Lam.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "well",
+   "part": "head",
+   "hits": 21,
+   "verses": 17,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "1Sam.17.18",
+    "2Sam.18.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "silent",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Hab.1.13",
+    "Ps.109.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8252",
+   "surface": "quiet",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "to quiet",
+   "transliteration": "sha.qat",
+   "samples": [
+    "Isa.7.4",
+    "Jer.47.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4496H",
+   "surface": "rest",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "resting",
+   "transliteration": "me.nu.chah",
+   "samples": [
+    "Ps.116.7",
+    "Ps.95.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8252",
+   "surface": "rest",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to quiet",
+   "transliteration": "sha.qat",
+   "samples": [
+    "2Chr.14.5",
+    "Josh.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "welfare",
+   "part": "head",
+   "hits": 11,
+   "verses": 9,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Isa.38.17",
+    "Jer.29.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4623",
+   "surface": "silent",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "be quiet",
+   "transliteration": "siōpaō",
+   "samples": [
+    "Mark.9.34",
+    "Matt.26.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2663",
+   "surface": "rest",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "rest",
+   "transliteration": "katapausis",
+   "samples": [
+    "Heb.3.11",
+    "Heb.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "leave",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Eccl.10.4",
+    "Ps.119.121"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8002",
+   "surface": "peace",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "peace offering",
+   "transliteration": "she.lem",
+   "samples": [
+    "Exod.29.28",
+    "Lev.7.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8002",
+   "surface": "peace offering",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "peace offering",
+   "transliteration": "she.lem",
+   "samples": [
+    "Lev.7.18",
+    "Num.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "put",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Ezek.22.20",
+    "Josh.6.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "left",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Sam.16.21",
+    "Jer.43.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0373",
+   "surface": "rest",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to give rest",
+   "transliteration": "anapauō",
+   "samples": [
+    "Matt.11.28",
+    "Matt.26.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4496H",
+   "surface": "resting place",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "resting",
+   "transliteration": "me.nu.chah",
+   "samples": [
+    "Isa.11.10",
+    "Ps.132.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "rested",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Esth.9.17",
+    "Num.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4601",
+   "surface": "silent",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be silent",
+   "transliteration": "sigaō",
+   "samples": [
+    "1Cor.14.30",
+    "Acts.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "peace",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "1Sam.10.27",
+    "Ps.83.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "set",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Ezek.40.2",
+    "Isa.46.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7599",
+   "surface": "ease",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to rest",
+   "transliteration": "sha.an",
+   "samples": [
+    "Jer.48.11",
+    "Prov.1.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965G",
+   "surface": "peaceably",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "peace",
+   "transliteration": "sha.lom",
+   "samples": [
+    "1Sam.16.4",
+    "1Sam.29.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "prosperity",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Jer.33.6",
+    "Jer.33.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "safe",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Jer.12.5",
+    "Josh.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0372",
+   "surface": "rest",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "rest",
+   "transliteration": "anapausis",
+   "samples": [
+    "Luke.11.24",
+    "Matt.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826A",
+   "surface": "still",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to silence: stationary",
+   "transliteration": "da.mam",
+   "samples": [
+    "Job.30.27",
+    "Ps.37.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826H",
+   "surface": "silence",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to silence: silent",
+   "transliteration": "da.mam",
+   "samples": [
+    "Jer.48.2",
+    "Ps.62.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2013",
+   "surface": "silence",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to silence",
+   "transliteration": "has",
+   "samples": [
+    "Amos.8.3",
+    "Judg.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "silence",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Gen.24.21",
+    "Job.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "safety",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "1Sam.20.13",
+    "2Chr.19.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0373",
+   "surface": "refreshed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to give rest",
+   "transliteration": "anapauō",
+   "samples": [
+    "1Cor.16.18",
+    "2Cor.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1055",
+   "surface": "calm",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "calm",
+   "transliteration": "galēnē",
+   "samples": [
+    "Mark.4.39",
+    "Matt.8.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1514",
+   "surface": "peace",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be at peace",
+   "transliteration": "eirēneuō",
+   "samples": [
+    "1Thess.5.13",
+    "2Cor.13.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2814",
+   "surface": "keep quiet",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be silent",
+   "transliteration": "cha.shah",
+   "samples": [
+    "1Kgs.22.3",
+    "2Kgs.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2814",
+   "surface": "keep silent",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be silent",
+   "transliteration": "cha.shah",
+   "samples": [
+    "Isa.64.12",
+    "Isa.65.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2814",
+   "surface": "peace",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be silent",
+   "transliteration": "cha.shah",
+   "samples": [
+    "Isa.57.11",
+    "Ps.39.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4494",
+   "surface": "resting place",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "resting",
+   "transliteration": "ma.no.ach",
+   "samples": [
+    "Deut.28.65",
+    "Lam.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "alone",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Exod.32.10",
+    "Hos.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "down",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Deut.26.4",
+    "Ezek.37.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "laid",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "1Kgs.13.29",
+    "1Kgs.13.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "lay",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Ezek.44.19",
+    "Josh.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7280B",
+   "surface": "rest",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rest",
+   "transliteration": "ra.ga",
+   "samples": [
+    "Jer.31.2",
+    "Jer.47.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965G",
+   "surface": "peacefully",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "peace",
+   "transliteration": "sha.lom",
+   "samples": [
+    "1Kgs.2.13",
+    "Gen.37.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "health",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "1Chr.18.10",
+    "Ps.38.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965K",
+   "surface": "peace",
+   "part": "head",
+   "hits": 3,
+   "verses": 1,
+   "gloss": "peace: greeting",
+   "transliteration": "sha.lom",
+   "samples": [
+    "1Sam.25.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8001",
+   "surface": "peace",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "peace",
+   "transliteration": "she.lam",
+   "samples": [
+    "Dan.6.25",
+    "Ezra.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8252",
+   "surface": "still",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to quiet",
+   "transliteration": "sha.qat",
+   "samples": [
+    "Job.37.17",
+    "Ps.76.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0425",
+   "surface": "rest",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "rest",
+   "transliteration": "anesis",
+   "samples": [
+    "2Cor.2.13",
+    "2Cor.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2271",
+   "surface": "quiet",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "quietness",
+   "transliteration": "hēsuchia",
+   "samples": [
+    "1Tim.2.12",
+    "Acts.22.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2271",
+   "surface": "quietly",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "quietness",
+   "transliteration": "hēsuchia",
+   "samples": [
+    "1Tim.2.11",
+    "2Thess.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2272",
+   "surface": "quiet",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "quiet",
+   "transliteration": "hēsuchios",
+   "samples": [
+    "1Pet.3.4",
+    "1Tim.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4601",
+   "surface": "keep silent",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be silent",
+   "transliteration": "sigaō",
+   "samples": [
+    "1Cor.14.28",
+    "1Cor.14.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1824",
+   "surface": "rest",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "quiet",
+   "transliteration": "do.mi",
+   "samples": [
+    "Isa.62.6",
+    "Isa.62.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826H",
+   "surface": "destroyed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to silence: silent",
+   "transliteration": "da.mam",
+   "samples": [
+    "Jer.49.26",
+    "Jer.50.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826H",
+   "surface": "kept silence",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to silence: silent",
+   "transliteration": "da.mam",
+   "samples": [
+    "Job.29.21",
+    "Job.31.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826H",
+   "surface": "silent",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to silence: silent",
+   "transliteration": "da.mam",
+   "samples": [
+    "Ps.30.12",
+    "Ps.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2013",
+   "surface": "silent",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to silence",
+   "transliteration": "has",
+   "samples": [
+    "Zech.2.13",
+    "Zeph.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "keep",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Esth.4.14",
+    "Job.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "keep silence",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Job.41.12",
+    "Ps.50.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "quiet",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Judg.18.19",
+    "Zeph.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "said nothing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Num.30.11",
+    "Num.30.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "says nothing",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Num.30.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2814",
+   "surface": "silent",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be silent",
+   "transliteration": "cha.shah",
+   "samples": [
+    "2Kgs.7.9",
+    "Isa.62.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "allowed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "1Chr.16.21",
+    "Ps.105.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "deposit",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Num.17.4",
+    "Num.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "free space",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Ezek.41.11",
+    "Ezek.41.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "let",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Eccl.5.12",
+    "Judg.16.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "place",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Exod.16.33",
+    "Ezek.37.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "placed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Chr.4.8",
+    "Exod.16.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "rests",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Kgs.2.15",
+    "Prov.14.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "satisfy",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Ezek.16.42",
+    "Ezek.21.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "stationed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Chr.1.14",
+    "2Chr.9.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "withhold",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Eccl.11.6",
+    "Eccl.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5183A",
+   "surface": "quiet",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "quietness",
+   "transliteration": "na.chat",
+   "samples": [
+    "Eccl.9.17",
+    "Prov.29.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7258",
+   "surface": "lie down",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "rest",
+   "transliteration": "re.vets",
+   "samples": [
+    "Isa.35.7",
+    "Isa.65.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965G",
+   "surface": "peaceful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "peace",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Isa.32.18",
+    "Jer.25.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "safely",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "2Sam.19.30",
+    "Isa.41.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965J",
+   "surface": "close",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "peace: friendship",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Jer.20.10",
+    "Ps.41.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965K",
+   "surface": "doing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "peace: greeting",
+   "transliteration": "sha.lom",
+   "samples": [
+    "2Sam.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965K",
+   "surface": "greet",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "peace: greeting",
+   "transliteration": "sha.lom",
+   "samples": [
+    "1Sam.10.4",
+    "1Sam.25.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965K",
+   "surface": "greeted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "peace: greeting",
+   "transliteration": "sha.lom",
+   "samples": [
+    "1Sam.17.22",
+    "1Sam.30.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8252",
+   "surface": "quietness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to quiet",
+   "transliteration": "sha.qat",
+   "samples": [
+    "Isa.30.15",
+    "Isa.32.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8367",
+   "surface": "quiet",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be quiet",
+   "transliteration": "sha.taq",
+   "samples": [
+    "Jonah.1.12",
+    "Ps.107.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0372",
+   "surface": "cease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rest",
+   "transliteration": "anapausis",
+   "samples": [
+    "Rev.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0373",
+   "surface": "refresh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give rest",
+   "transliteration": "anapauō",
+   "samples": [
+    "Phlm.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0373",
+   "surface": "relax",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give rest",
+   "transliteration": "anapauō",
+   "samples": [
+    "Luke.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0373",
+   "surface": "rests",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give rest",
+   "transliteration": "anapauō",
+   "samples": [
+    "1Pet.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0425",
+   "surface": "eased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rest",
+   "transliteration": "anesis",
+   "samples": [
+    "2Cor.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0425",
+   "surface": "liberty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rest",
+   "transliteration": "anesis",
+   "samples": [
+    "Acts.24.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0425",
+   "surface": "relief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rest",
+   "transliteration": "anesis",
+   "samples": [
+    "2Thess.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1514",
+   "surface": "live peaceably",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be at peace",
+   "transliteration": "eirēneuō",
+   "samples": [
+    "Rom.12.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1515",
+   "surface": "friendly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace",
+   "transliteration": "eirēnē",
+   "samples": [
+    "Heb.11.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1515",
+   "surface": "safe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace",
+   "transliteration": "eirēnē",
+   "samples": [
+    "Luke.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1516",
+   "surface": "peaceable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peaceful",
+   "transliteration": "eirēnikos",
+   "samples": [
+    "Jas.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1516",
+   "surface": "peaceful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peaceful",
+   "transliteration": "eirēnikos",
+   "samples": [
+    "Heb.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1517",
+   "surface": "making peace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make peace",
+   "transliteration": "eirēnopoieō",
+   "samples": [
+    "Col.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1518",
+   "surface": "peacemakers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peacemaker",
+   "transliteration": "eirēnopoios",
+   "samples": [
+    "Matt.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1879",
+   "surface": "rely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest/rely on",
+   "transliteration": "epanapauō",
+   "samples": [
+    "Rom.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1879",
+   "surface": "rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest/rely on",
+   "transliteration": "epanapauō",
+   "samples": [
+    "Luke.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1993",
+   "surface": "silenced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence",
+   "transliteration": "epistomizō",
+   "samples": [
+    "Titus.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2263",
+   "surface": "peaceful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quiet",
+   "transliteration": "ēremos",
+   "samples": [
+    "1Tim.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2270",
+   "surface": "ceased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet/give up",
+   "transliteration": "hēsuchazō",
+   "samples": [
+    "Acts.21.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2270",
+   "surface": "fell silent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet/give up",
+   "transliteration": "hēsuchazō",
+   "samples": [
+    "Acts.11.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2270",
+   "surface": "live quietly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet/give up",
+   "transliteration": "hēsuchazō",
+   "samples": [
+    "1Thess.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2270",
+   "surface": "remained silent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet/give up",
+   "transliteration": "hēsuchazō",
+   "samples": [
+    "Luke.14.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2270",
+   "surface": "rested",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet/give up",
+   "transliteration": "hēsuchazō",
+   "samples": [
+    "Luke.23.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2687",
+   "surface": "quiet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to quiet",
+   "transliteration": "katastellō",
+   "samples": [
+    "Acts.19.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2687",
+   "surface": "quieted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to quiet",
+   "transliteration": "katastellō",
+   "samples": [
+    "Acts.19.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4601",
+   "surface": "finished speaking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be silent",
+   "transliteration": "sigaō",
+   "samples": [
+    "Acts.15.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4601",
+   "surface": "kept secret",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be silent",
+   "transliteration": "sigaō",
+   "samples": [
+    "Rom.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4602",
+   "surface": "hush",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "silence",
+   "transliteration": "sigē",
+   "samples": [
+    "Acts.21.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4602",
+   "surface": "silence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "silence",
+   "transliteration": "sigē",
+   "samples": [
+    "Rev.8.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4623",
+   "surface": "peace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "siōpaō",
+   "samples": [
+    "Mark.4.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4861",
+   "surface": "full accord",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "harmonious",
+   "transliteration": "sumpsuchos",
+   "samples": [
+    "Phil.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1747",
+   "surface": "due",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "silence",
+   "transliteration": "du.miy.yah",
+   "samples": [
+    "Ps.65.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1747",
+   "surface": "rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "silence",
+   "transliteration": "du.miy.yah",
+   "samples": [
+    "Ps.22.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1747",
+   "surface": "silent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "silence",
+   "transliteration": "du.miy.yah",
+   "samples": [
+    "Ps.39.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1747",
+   "surface": "waits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "silence",
+   "transliteration": "du.miy.yah",
+   "samples": [
+    "Ps.62.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1824",
+   "surface": "keep silence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quiet",
+   "transliteration": "do.mi",
+   "samples": [
+    "Ps.83.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1824",
+   "surface": "middle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quiet",
+   "transliteration": "do.mi",
+   "samples": [
+    "Isa.38.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826A",
+   "surface": "respite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: stationary",
+   "transliteration": "da.mam",
+   "samples": [
+    "Lam.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826A",
+   "surface": "stand still",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: stationary",
+   "transliteration": "da.mam",
+   "samples": [
+    "Josh.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826A",
+   "surface": "stood still",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: stationary",
+   "transliteration": "da.mam",
+   "samples": [
+    "Josh.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826A",
+   "surface": "wait",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: stationary",
+   "transliteration": "da.mam",
+   "samples": [
+    "1Sam.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826A",
+   "surface": "without ceasing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: stationary",
+   "transliteration": "da.mam",
+   "samples": [
+    "Ps.35.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826H",
+   "surface": "aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: silent",
+   "transliteration": "da.mam",
+   "samples": [
+    "Ezek.24.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826H",
+   "surface": "go",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: silent",
+   "transliteration": "da.mam",
+   "samples": [
+    "Ps.31.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826H",
+   "surface": "keep silent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: silent",
+   "transliteration": "da.mam",
+   "samples": [
+    "Amos.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826H",
+   "surface": "peace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: silent",
+   "transliteration": "da.mam",
+   "samples": [
+    "Lev.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1826H",
+   "surface": "quieted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence: silent",
+   "transliteration": "da.mam",
+   "samples": [
+    "Ps.131.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1827",
+   "surface": "silence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "silence",
+   "transliteration": "de.ma.mah",
+   "samples": [
+    "Job.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1827",
+   "surface": "still",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "silence",
+   "transliteration": "de.ma.mah",
+   "samples": [
+    "Ps.107.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1827",
+   "surface": "whisper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "silence",
+   "transliteration": "de.ma.mah",
+   "samples": [
+    "1Kgs.19.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2013",
+   "surface": "quiet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence",
+   "transliteration": "has",
+   "samples": [
+    "Neh.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2013",
+   "surface": "quieted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to silence",
+   "transliteration": "has",
+   "samples": [
+    "Num.13.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "cease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "1Sam.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "deaf",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Mic.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "her",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Num.30.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "kept quiet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Judg.16.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "kept still",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Isa.42.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Num.30.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "say nothing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "2Sam.19.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790B",
+   "surface": "stopped speaking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "cha.resh",
+   "samples": [
+    "Jer.38.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2814",
+   "surface": "calmed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be silent",
+   "transliteration": "cha.shah",
+   "samples": [
+    "Neh.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2814",
+   "surface": "deaf",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be silent",
+   "transliteration": "cha.shah",
+   "samples": [
+    "Ps.28.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2814",
+   "surface": "hushed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be silent",
+   "transliteration": "cha.shah",
+   "samples": [
+    "Ps.107.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2814",
+   "surface": "keep silence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be silent",
+   "transliteration": "cha.shah",
+   "samples": [
+    "Eccl.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2814",
+   "surface": "nothing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be silent",
+   "transliteration": "cha.shah",
+   "samples": [
+    "Judg.18.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4494",
+   "surface": "rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resting",
+   "transliteration": "ma.no.ach",
+   "samples": [
+    "Ruth.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4494",
+   "surface": "rested",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resting",
+   "transliteration": "ma.no.ach",
+   "samples": [
+    "1Chr.6.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4494",
+   "surface": "set",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resting",
+   "transliteration": "ma.no.ach",
+   "samples": [
+    "Gen.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4496H",
+   "surface": "quartermaster",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resting",
+   "transliteration": "me.nu.chah",
+   "samples": [
+    "Jer.51.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4496H",
+   "surface": "resting places",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resting",
+   "transliteration": "me.nu.chah",
+   "samples": [
+    "Isa.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4496H",
+   "surface": "still",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resting",
+   "transliteration": "me.nu.chah",
+   "samples": [
+    "Ps.23.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4769",
+   "surface": "fold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resting",
+   "transliteration": "mar.bets",
+   "samples": [
+    "Ezek.25.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4769",
+   "surface": "lair",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "resting",
+   "transliteration": "mar.bets",
+   "samples": [
+    "Zeph.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4771",
+   "surface": "rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rest",
+   "transliteration": "mar.go.a",
+   "samples": [
+    "Jer.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4774",
+   "surface": "repose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "repose",
+   "transliteration": "mar.ge.ah",
+   "samples": [
+    "Isa.28.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "abandon",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Num.32.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "any",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Lev.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "aside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Exod.16.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "be",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Kgs.23.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "cast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Amos.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "casts down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Isa.28.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "come",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Sam.21.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "deposited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Num.17.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "free",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Ezek.41.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "gave him rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Chr.20.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "gave them rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Chr.15.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "give you rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Sam.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "given him rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Sam.7.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "given us peace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Chr.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "given you peace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "1Chr.22.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "gives rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Deut.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "got relief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Esth.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "laid it up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "1Sam.10.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "laid them down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Josh.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "laid up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Gen.39.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "lay aside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Exod.16.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "lays",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Isa.30.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "league",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Isa.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "light",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Sam.17.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "lodges",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Eccl.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "lowered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Exod.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "must",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Eccl.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "peace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Chr.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "put him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Gen.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "quietly wait",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Hab.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "satisfied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Ezek.24.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "set down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "1Sam.6.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "set him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Gen.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "settle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Isa.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "settled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Exod.10.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "tolerate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Esth.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Deut.14.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "vent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Ezek.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "waited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "1Sam.25.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5117",
+   "surface": "without laying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Ezek.42.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5118",
+   "surface": "got relief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "Esth.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5118",
+   "surface": "resting place",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rest",
+   "transliteration": "nu.ach",
+   "samples": [
+    "2Chr.6.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5183A",
+   "surface": "finds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quietness",
+   "transliteration": "na.chat",
+   "samples": [
+    "Eccl.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5183A",
+   "surface": "quietness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quietness",
+   "transliteration": "na.chat",
+   "samples": [
+    "Eccl.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5183A",
+   "surface": "rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quietness",
+   "transliteration": "na.chat",
+   "samples": [
+    "Isa.30.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5183A",
+   "surface": "set",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quietness",
+   "transliteration": "na.chat",
+   "samples": [
+    "Job.36.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5535",
+   "surface": "silence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be silent",
+   "transliteration": "sa.khat",
+   "samples": [
+    "Deut.27.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7258",
+   "surface": "fold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rest",
+   "transliteration": "re.vets",
+   "samples": [
+    "Jer.50.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7258",
+   "surface": "home",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rest",
+   "transliteration": "re.vets",
+   "samples": [
+    "Prov.24.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7280B",
+   "surface": "respite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "ra.ga",
+   "samples": [
+    "Deut.28.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7280B",
+   "surface": "set",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "ra.ga",
+   "samples": [
+    "Isa.51.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7280B",
+   "surface": "settles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rest",
+   "transliteration": "ra.ga",
+   "samples": [
+    "Isa.34.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7282",
+   "surface": "quiet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "restful",
+   "transliteration": "ra.ge.a",
+   "samples": [
+    "Ps.35.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7623A",
+   "surface": "quietly holds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to soothe",
+   "transliteration": "sha.vach",
+   "samples": [
+    "Prov.29.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7623A",
+   "surface": "still",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to soothe",
+   "transliteration": "sha.vach",
+   "samples": [
+    "Ps.89.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7623A",
+   "surface": "stills",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to soothe",
+   "transliteration": "sha.vach",
+   "samples": [
+    "Ps.65.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965G",
+   "surface": "favorable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Gen.41.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965G",
+   "surface": "perfect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Isa.26.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965H",
+   "surface": "peace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "Peace [God]",
+   "transliteration": "sha.lom ",
+   "samples": [
+    "Judg.6.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "any safety",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Zech.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "flock",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Gen.37.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965I",
+   "surface": "well-being",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: well-being",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Isa.45.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965J",
+   "surface": "friends",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: friendship",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Ps.55.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965J",
+   "surface": "friendship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: friendship",
+   "transliteration": "sha.lom",
+   "samples": [
+    "1Chr.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965J",
+   "surface": "trusted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: friendship",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Jer.38.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965K",
+   "surface": "going",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: greeting",
+   "transliteration": "sha.lom",
+   "samples": [
+    "2Sam.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965K",
+   "surface": "visit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: greeting",
+   "transliteration": "sha.lom",
+   "samples": [
+    "2Kgs.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965K",
+   "surface": "was",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: greeting",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Esth.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7965L",
+   "surface": "wholly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace: completely",
+   "transliteration": "sha.lom",
+   "samples": [
+    "Jer.13.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7987",
+   "surface": "privately",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quietness",
+   "transliteration": "she.li",
+   "samples": [
+    "2Sam.3.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8001",
+   "surface": "greeting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace",
+   "transliteration": "she.lam",
+   "samples": [
+    "Ezra.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8002",
+   "surface": "offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace offering",
+   "transliteration": "she.lem",
+   "samples": [
+    "1Kgs.8.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8002",
+   "surface": "sacrifices",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "peace offering",
+   "transliteration": "she.lem",
+   "samples": [
+    "Prov.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8252",
+   "surface": "calm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to quiet",
+   "transliteration": "sha.qat",
+   "samples": [
+    "Ezek.16.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8252",
+   "surface": "ease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to quiet",
+   "transliteration": "sha.qat",
+   "samples": [
+    "Ezek.16.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8252",
+   "surface": "quietly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to quiet",
+   "transliteration": "sha.qat",
+   "samples": [
+    "Isa.18.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8252",
+   "surface": "quiets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to quiet",
+   "transliteration": "sha.qat",
+   "samples": [
+    "Prov.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8252",
+   "surface": "settled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to quiet",
+   "transliteration": "sha.qat",
+   "samples": [
+    "Jer.48.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8253",
+   "surface": "quiet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quietness",
+   "transliteration": "she.qet",
+   "samples": [
+    "1Chr.22.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8367",
+   "surface": "ceases",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "sha.taq",
+   "samples": [
+    "Prov.26.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8367",
+   "surface": "down for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be quiet",
+   "transliteration": "sha.taq",
+   "samples": [
+    "Jonah.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

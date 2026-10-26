@@ -1,0 +1,1095 @@
+{
+ "cluster": "M43",
+ "cluster_name": "Prophecy & Vision",
+ "built_at": "2026-10-26T04:22:39Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 65,
+  "head": 10,
+  "tail": 55,
+  "hits": 1233,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H5002",
+   "surface": "declares",
+   "part": "head",
+   "hits": 361,
+   "verses": 347,
+   "gloss": "utterance",
+   "transliteration": "ne.um",
+   "samples": [
+    "Jer.23.12",
+    "Zech.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5030",
+   "surface": "prophet",
+   "part": "head",
+   "hits": 166,
+   "verses": 156,
+   "gloss": "prophet",
+   "transliteration": "na.vi",
+   "samples": [
+    "Hab.1.1",
+    "Jer.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5030",
+   "surface": "prophets",
+   "part": "head",
+   "hits": 144,
+   "verses": 135,
+   "gloss": "prophet",
+   "transliteration": "na.vi",
+   "samples": [
+    "Jer.23.31",
+    "Jer.44.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4396",
+   "surface": "prophets",
+   "part": "head",
+   "hits": 80,
+   "verses": 79,
+   "gloss": "prophet",
+   "transliteration": "profētēs",
+   "samples": [
+    "Matt.22.40",
+    "Rev.11.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4396",
+   "surface": "prophet",
+   "part": "head",
+   "hits": 62,
+   "verses": 59,
+   "gloss": "prophet",
+   "transliteration": "profētēs",
+   "samples": [
+    "Mark.1.2",
+    "Matt.24.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5012",
+   "surface": "prophesy",
+   "part": "head",
+   "hits": 51,
+   "verses": 47,
+   "gloss": "to prophesy",
+   "transliteration": "na.va",
+   "samples": [
+    "Ezek.11.4",
+    "Ezek.36.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4592",
+   "surface": "signs",
+   "part": "head",
+   "hits": 39,
+   "verses": 38,
+   "gloss": "sign",
+   "transliteration": "sēmeion",
+   "samples": [
+    "2Thess.2.9",
+    "Luke.21.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4592",
+   "surface": "sign",
+   "part": "head",
+   "hits": 38,
+   "verses": 31,
+   "gloss": "sign",
+   "transliteration": "sēmeion",
+   "samples": [
+    "2Thess.3.17",
+    "Rev.15.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5012",
+   "surface": "prophesied",
+   "part": "head",
+   "hits": 34,
+   "verses": 31,
+   "gloss": "to prophesy",
+   "transliteration": "na.va",
+   "samples": [
+    "1Chr.25.2",
+    "Jer.28.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0226G",
+   "surface": "signs",
+   "part": "head",
+   "hits": 29,
+   "verses": 29,
+   "gloss": "sign: miraculous",
+   "transliteration": "ot",
+   "samples": [
+    "Num.14.11",
+    "Ps.78.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0226H",
+   "surface": "sign",
+   "part": "tail",
+   "hits": 24,
+   "verses": 24,
+   "gloss": "sign:  indicator",
+   "transliteration": "ot",
+   "samples": [
+    "Isa.37.30",
+    "Num.17.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5012",
+   "surface": "prophesying",
+   "part": "tail",
+   "hits": 20,
+   "verses": 17,
+   "gloss": "to prophesy",
+   "transliteration": "na.va",
+   "samples": [
+    "Jer.14.14",
+    "Jer.29.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0226G",
+   "surface": "sign",
+   "part": "tail",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "sign: miraculous",
+   "transliteration": "ot",
+   "samples": [
+    "Deut.28.46",
+    "Ps.86.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1504",
+   "surface": "image",
+   "part": "tail",
+   "hits": 18,
+   "verses": 15,
+   "gloss": "image",
+   "transliteration": "eikōn",
+   "samples": [
+    "1Cor.15.49",
+    "2Cor.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4395",
+   "surface": "prophesy",
+   "part": "tail",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to prophesy",
+   "transliteration": "profēteuō",
+   "samples": [
+    "Matt.26.68",
+    "Rev.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4394",
+   "surface": "prophecy",
+   "part": "tail",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "prophecy",
+   "transliteration": "profēteia",
+   "samples": [
+    "Matt.13.14",
+    "Rev.22.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6754",
+   "surface": "images",
+   "part": "tail",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "image",
+   "transliteration": "tse.lem",
+   "samples": [
+    "1Sam.6.11",
+    "Ezek.7.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5002",
+   "surface": "oracle",
+   "part": "tail",
+   "hits": 8,
+   "verses": 5,
+   "gloss": "utterance",
+   "transliteration": "ne.um",
+   "samples": [
+    "2Sam.23.1",
+    "Num.24.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5012",
+   "surface": "prophesies",
+   "part": "tail",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to prophesy",
+   "transliteration": "na.va",
+   "samples": [
+    "1Kgs.22.8",
+    "Zech.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5197",
+   "surface": "preach",
+   "part": "tail",
+   "hits": 7,
+   "verses": 5,
+   "gloss": "to drip/prophesy",
+   "transliteration": "na.taph",
+   "samples": [
+    "Amos.7.16",
+    "Mic.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4395",
+   "surface": "prophesied",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to prophesy",
+   "transliteration": "profēteuō",
+   "samples": [
+    "Acts.21.9",
+    "Luke.1.67"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4395",
+   "surface": "prophesies",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to prophesy",
+   "transliteration": "profēteuō",
+   "samples": [
+    "1Cor.14.4",
+    "1Cor.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5002",
+   "surface": "says",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "utterance",
+   "transliteration": "ne.um",
+   "samples": [
+    "Ezek.45.9",
+    "Ps.110.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6754",
+   "surface": "image",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "image",
+   "transliteration": "tse.lem",
+   "samples": [
+    "Gen.1.27",
+    "Gen.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0226H",
+   "surface": "signs",
+   "part": "tail",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "sign:  indicator",
+   "transliteration": "ot",
+   "samples": [
+    "Isa.44.25",
+    "Ps.74.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5197",
+   "surface": "drip",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to drip/prophesy",
+   "transliteration": "na.taph",
+   "samples": [
+    "Prov.5.3",
+    "Song.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1504",
+   "surface": "likeness",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "image",
+   "transliteration": "eikōn",
+   "samples": [
+    "Luke.20.24",
+    "Matt.22.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4394",
+   "surface": "prophecies",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "prophecy",
+   "transliteration": "profēteia",
+   "samples": [
+    "1Thess.5.20",
+    "1Tim.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0852",
+   "surface": "signs",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "sign",
+   "transliteration": "at",
+   "samples": [
+    "Dan.4.3",
+    "Dan.6.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5016",
+   "surface": "prophecy",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "prophecy",
+   "transliteration": "ne.vu.ah",
+   "samples": [
+    "2Chr.15.8",
+    "2Chr.9.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5197",
+   "surface": "dropped",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to drip/prophesy",
+   "transliteration": "na.taph",
+   "samples": [
+    "Job.29.22",
+    "Judg.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7924",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "insight",
+   "transliteration": "sokh.le.ta.nu",
+   "samples": [
+    "Dan.5.11",
+    "Dan.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4396",
+   "surface": "prophet’s",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "prophet",
+   "transliteration": "profētēs",
+   "samples": [
+    "2Pet.2.16",
+    "Matt.10.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0226H",
+   "surface": "mark",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sign:  indicator",
+   "transliteration": "ot",
+   "samples": [
+    "Exod.13.16",
+    "Gen.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2808",
+   "surface": "scheme",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "explanation",
+   "transliteration": "chesh.bon",
+   "samples": [
+    "Eccl.7.25",
+    "Eccl.7.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5012",
+   "surface": "raved",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prophesy",
+   "transliteration": "na.va",
+   "samples": [
+    "1Kgs.18.29",
+    "1Sam.18.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5030",
+   "surface": "prophesy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "prophet",
+   "transliteration": "na.vi",
+   "samples": [
+    "Ezek.13.2",
+    "Jer.23.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0144",
+   "surface": "discernment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "insight",
+   "transliteration": "aisthēsis",
+   "samples": [
+    "Phil.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1504",
+   "surface": "form",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "image",
+   "transliteration": "eikōn",
+   "samples": [
+    "Heb.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1504",
+   "surface": "images",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "image",
+   "transliteration": "eikōn",
+   "samples": [
+    "Rom.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1955",
+   "surface": "interpretation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "explanation",
+   "transliteration": "epilusis",
+   "samples": [
+    "2Pet.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4307",
+   "surface": "foresight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foresight",
+   "transliteration": "pronoia",
+   "samples": [
+    "Acts.24.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4307",
+   "surface": "provision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foresight",
+   "transliteration": "pronoia",
+   "samples": [
+    "Rom.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4394",
+   "surface": "prophesying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prophecy",
+   "transliteration": "profēteia",
+   "samples": [
+    "Rev.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4394",
+   "surface": "prophetic powers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prophecy",
+   "transliteration": "profēteia",
+   "samples": [
+    "1Cor.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4395",
+   "surface": "prophesying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prophesy",
+   "transliteration": "profēteuō",
+   "samples": [
+    "Acts.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0226H",
+   "surface": "banners",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sign:  indicator",
+   "transliteration": "ot",
+   "samples": [
+    "Num.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0226H",
+   "surface": "testimony",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sign:  indicator",
+   "transliteration": "ot",
+   "samples": [
+    "Job.21.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0263",
+   "surface": "explain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "explanation",
+   "transliteration": "a.cha.va.yah",
+   "samples": [
+    "Dan.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2808",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "explanation",
+   "transliteration": "chesh.bon",
+   "samples": [
+    "Eccl.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5001",
+   "surface": "declare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prophesy",
+   "transliteration": "na.am",
+   "samples": [
+    "Jer.23.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5002",
+   "surface": "lord",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "utterance",
+   "transliteration": "ne.um",
+   "samples": [
+    "2Kgs.9.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5002",
+   "surface": "speaks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "utterance",
+   "transliteration": "ne.um",
+   "samples": [
+    "Ps.36.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5013",
+   "surface": "prophesied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prophesy",
+   "transliteration": "ne.va",
+   "samples": [
+    "Ezra.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5017",
+   "surface": "prophesying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prophesying",
+   "transliteration": "ne.vu.ah",
+   "samples": [
+    "Ezra.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5030",
+   "surface": "city",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prophet",
+   "transliteration": "na.vi",
+   "samples": [
+    "1Kgs.13.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5030",
+   "surface": "prophet’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prophet",
+   "transliteration": "na.vi",
+   "samples": [
+    "Amos.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5030",
+   "surface": "took courage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prophet",
+   "transliteration": "na.vi",
+   "samples": [
+    "2Chr.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5197",
+   "surface": "be the preacher",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to drip/prophesy",
+   "transliteration": "na.taph",
+   "samples": [
+    "Mic.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5197",
+   "surface": "dripped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to drip/prophesy",
+   "transliteration": "na.taph",
+   "samples": [
+    "Song.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5197",
+   "surface": "dripping",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to drip/prophesy",
+   "transliteration": "na.taph",
+   "samples": [
+    "Song.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5197",
+   "surface": "rain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to drip/prophesy",
+   "transliteration": "na.taph",
+   "samples": [
+    "Ps.68.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6754",
+   "surface": "phantoms",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "image",
+   "transliteration": "tse.lem",
+   "samples": [
+    "Ps.73.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6754",
+   "surface": "shadow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "image",
+   "transliteration": "tse.lem",
+   "samples": [
+    "Ps.39.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6816",
+   "surface": "wood",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "image",
+   "transliteration": "tsa.a.tsu.im",
+   "samples": [
+    "2Chr.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

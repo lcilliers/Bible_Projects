@@ -1,0 +1,1376 @@
+{
+ "cluster": "M39",
+ "cluster_name": "Gift & Favor",
+ "built_at": "2026-10-26T04:22:08Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 83,
+  "head": 37,
+  "tail": 46,
+  "hits": 233,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H2580",
+   "surface": "favor",
+   "part": "head",
+   "hits": 52,
+   "verses": 51,
+   "gloss": "favor",
+   "transliteration": "chen",
+   "samples": [
+    "1Kgs.11.19",
+    "Gen.19.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "accept",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Amos.5.22",
+    "Deut.33.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1431",
+   "surface": "gift",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "free gift",
+   "transliteration": "dōrea",
+   "samples": [
+    "Acts.2.38",
+    "Eph.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4979",
+   "surface": "gifts",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "gift",
+   "transliteration": "mat.ta.nah",
+   "samples": [
+    "Esth.9.22",
+    "Num.18.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5486",
+   "surface": "gift",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "gift",
+   "transliteration": "charisma",
+   "samples": [
+    "1Tim.4.14",
+    "Rom.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1435",
+   "surface": "gift",
+   "part": "head",
+   "hits": 8,
+   "verses": 6,
+   "gloss": "gift",
+   "transliteration": "dōron",
+   "samples": [
+    "Matt.23.18",
+    "Matt.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5486",
+   "surface": "gifts",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "gift",
+   "transliteration": "charisma",
+   "samples": [
+    "1Cor.12.30",
+    "Rom.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1435",
+   "surface": "gifts",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "gift",
+   "transliteration": "dōron",
+   "samples": [
+    "Heb.9.9",
+    "Matt.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2580",
+   "surface": "grace",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "favor",
+   "transliteration": "chen",
+   "samples": [
+    "Ps.45.2",
+    "Zech.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "accepted",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Lev.22.23",
+    "Lev.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2580",
+   "surface": "graceful",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "favor",
+   "transliteration": "chen",
+   "samples": [
+    "Nah.3.4",
+    "Prov.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4976",
+   "surface": "gift",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "gift",
+   "transliteration": "mat.tan",
+   "samples": [
+    "Prov.18.16",
+    "Prov.21.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4979",
+   "surface": "gift",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "gift",
+   "transliteration": "mat.ta.nah",
+   "samples": [
+    "Ezek.46.17",
+    "Num.18.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "enjoy",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Job.14.6",
+    "Lev.26.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "pleased",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Mic.6.7",
+    "Ps.50.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1390",
+   "surface": "gifts",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "gift",
+   "transliteration": "doma",
+   "samples": [
+    "Eph.4.8",
+    "Matt.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4978",
+   "surface": "gifts",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "gift",
+   "transliteration": "mat.te.na",
+   "samples": [
+    "Dan.2.48",
+    "Dan.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4991",
+   "surface": "gift",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "gift",
+   "transliteration": "mat.tat",
+   "samples": [
+    "Eccl.3.13",
+    "Prov.25.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1434",
+   "surface": "gift",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "free gift",
+   "transliteration": "dōrēma",
+   "samples": [
+    "Jas.1.17",
+    "Rom.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1435",
+   "surface": "given",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "gift",
+   "transliteration": "dōron",
+   "samples": [
+    "Mark.7.11",
+    "Matt.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2107",
+   "surface": "purpose",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "goodwill",
+   "transliteration": "eudokia",
+   "samples": [
+    "Eph.1.5",
+    "Eph.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2580",
+   "surface": "gracious",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "favor",
+   "transliteration": "chen",
+   "samples": [
+    "Prov.11.16",
+    "Prov.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "delights",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Isa.42.1",
+    "Prov.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "favorable",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Ps.77.7",
+    "Ps.85.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "make amends",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Lev.26.41",
+    "Lev.26.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "please",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "2Chr.10.7",
+    "Prov.16.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "pleasure",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "1Chr.29.17",
+    "Ps.147.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "take pleasure",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Hag.1.8",
+    "Ps.62.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "takes pleasure",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Ps.147.11",
+    "Ps.149.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7862",
+   "surface": "gifts",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "gift",
+   "transliteration": "shay",
+   "samples": [
+    "Ps.68.29",
+    "Ps.76.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1390",
+   "surface": "gift",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "doma",
+   "samples": [
+    "Phil.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1394",
+   "surface": "gift",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "dosis",
+   "samples": [
+    "Jas.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1394",
+   "surface": "giving",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "dosis",
+   "samples": [
+    "Phil.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1435",
+   "surface": "contributed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "dōron",
+   "samples": [
+    "Luke.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1435",
+   "surface": "presents",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "dōron",
+   "samples": [
+    "Rev.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1962",
+   "surface": "declined",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "epineuō",
+   "samples": [
+    "Acts.18.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2107",
+   "surface": "desire",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "goodwill",
+   "transliteration": "eudokia",
+   "samples": [
+    "Rom.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2107",
+   "surface": "good pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "goodwill",
+   "transliteration": "eudokia",
+   "samples": [
+    "Phil.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2107",
+   "surface": "good will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "goodwill",
+   "transliteration": "eudokia",
+   "samples": [
+    "Phil.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2107",
+   "surface": "gracious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "goodwill",
+   "transliteration": "eudokia",
+   "samples": [
+    "Matt.11.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2107",
+   "surface": "gracious will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "goodwill",
+   "transliteration": "eudokia",
+   "samples": [
+    "Luke.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2107",
+   "surface": "pleased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "goodwill",
+   "transliteration": "eudokia",
+   "samples": [
+    "Luke.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2107",
+   "surface": "resolve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "goodwill",
+   "transliteration": "eudokia",
+   "samples": [
+    "2Thess.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4380",
+   "surface": "partiality",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to favor",
+   "transliteration": "prosōpolēpteō",
+   "samples": [
+    "Jas.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5486",
+   "surface": "blessing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "charisma",
+   "samples": [
+    "2Cor.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5487",
+   "surface": "blessed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to favor",
+   "transliteration": "charitoō",
+   "samples": [
+    "Eph.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5487",
+   "surface": "favored one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to favor",
+   "transliteration": "charitoō",
+   "samples": [
+    "Luke.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0814",
+   "surface": "gifts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "esh.kar",
+   "samples": [
+    "Ps.72.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0814",
+   "surface": "payment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "esh.kar",
+   "samples": [
+    "Ezek.27.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1890",
+   "surface": "offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "hav.hav",
+   "samples": [
+    "Hos.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2580",
+   "surface": "adornment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "favor",
+   "transliteration": "chen",
+   "samples": [
+    "Prov.3.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2580",
+   "surface": "charm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "favor",
+   "transliteration": "chen",
+   "samples": [
+    "Prov.31.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2580",
+   "surface": "favor in your",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "favor",
+   "transliteration": "chen",
+   "samples": [
+    "Gen.32.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2580",
+   "surface": "magic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "favor",
+   "transliteration": "chen",
+   "samples": [
+    "Prov.17.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2580",
+   "surface": "please",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "favor",
+   "transliteration": "chen",
+   "samples": [
+    "Gen.47.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2594",
+   "surface": "favor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "favor",
+   "transliteration": "cha.ni.nah",
+   "samples": [
+    "Jer.16.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4976",
+   "surface": "gifts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "mat.tan",
+   "samples": [
+    "Prov.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4979",
+   "surface": "bribe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "mat.ta.nah",
+   "samples": [
+    "Eccl.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4979",
+   "surface": "bribes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "mat.ta.nah",
+   "samples": [
+    "Prov.15.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4979",
+   "surface": "give",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "mat.ta.nah",
+   "samples": [
+    "Deut.16.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4991",
+   "surface": "able",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "mat.tat",
+   "samples": [
+    "Ezek.46.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4991",
+   "surface": "give",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "mat.tat",
+   "samples": [
+    "Ezek.46.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4991",
+   "surface": "reward",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "mat.tat",
+   "samples": [
+    "1Kgs.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5078",
+   "surface": "gifts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "ne.deh",
+   "samples": [
+    "Ezek.16.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5083",
+   "surface": "gifts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "na.dan",
+   "samples": [
+    "Ezek.16.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5379",
+   "surface": "given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "nis.set",
+   "samples": [
+    "2Sam.19.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "acceptable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Lev.22.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "accepted me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Gen.33.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "accepts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Job.33.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "approve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Ps.49.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "approved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Eccl.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "delighted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Ps.44.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "devotion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "1Chr.29.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "enjoyed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "2Chr.36.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "favor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Job.20.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "favorite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Deut.33.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "fellow reconcile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "1Sam.29.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "hold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Ps.102.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "pardoned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Isa.40.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "popular",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Esth.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "take delight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "Job.34.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7521",
+   "surface": "took pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to accept",
+   "transliteration": "ra.tsah",
+   "samples": [
+    "1Chr.28.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7862",
+   "surface": "tribute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gift",
+   "transliteration": "shay",
+   "samples": [
+    "Isa.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

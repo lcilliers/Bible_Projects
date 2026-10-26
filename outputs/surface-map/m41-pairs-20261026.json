@@ -1,0 +1,2235 @@
+{
+ "cluster": "M41",
+ "cluster_name": "Being Heard",
+ "built_at": "2026-10-26T04:22:15Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 135,
+  "head": 10,
+  "tail": 125,
+  "hits": 1549,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H8085G",
+   "surface": "heard",
+   "part": "head",
+   "hits": 360,
+   "verses": 346,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Nah.2.13",
+    "Ps.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "hear",
+   "part": "head",
+   "hits": 330,
+   "verses": 318,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.20.10",
+    "Zech.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "answered",
+   "part": "head",
+   "hits": 165,
+   "verses": 165,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "John.7.46",
+    "John.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "listen",
+   "part": "head",
+   "hits": 151,
+   "verses": 144,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Amos.5.23",
+    "Exod.16.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "obey",
+   "part": "head",
+   "hits": 73,
+   "verses": 71,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Sam.28.18",
+    "Ps.106.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "listened",
+   "part": "head",
+   "hits": 41,
+   "verses": 41,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Hos.9.17",
+    "Ps.66.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "obeyed",
+   "part": "head",
+   "hits": 40,
+   "verses": 39,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.35.8",
+    "Judg.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "hears",
+   "part": "head",
+   "hits": 34,
+   "verses": 32,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Ezek.33.4",
+    "Prov.29.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0238",
+   "surface": "give ear",
+   "part": "head",
+   "hits": 29,
+   "verses": 29,
+   "gloss": "to listen",
+   "transliteration": "a.zan",
+   "samples": [
+    "Isa.8.9",
+    "Ps.55.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "answer",
+   "part": "head",
+   "hits": 22,
+   "verses": 22,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Mark.14.61",
+    "Mark.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "said",
+   "part": "tail",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Acts.24.25",
+    "Mark.12.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6032",
+   "surface": "answered",
+   "part": "tail",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to answer",
+   "transliteration": "a.nah",
+   "samples": [
+    "Dan.2.27",
+    "Dan.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "attention",
+   "part": "tail",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Isa.51.4",
+    "Jer.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "proclaim",
+   "part": "tail",
+   "hits": 9,
+   "verses": 7,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Amos.3.9",
+    "Jer.50.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "replied",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Acts.25.4",
+    "Matt.16.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6032",
+   "surface": "declared",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to answer",
+   "transliteration": "a.nah",
+   "samples": [
+    "Dan.6.16",
+    "Dan.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "listening",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Job.37.2",
+    "Prov.25.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0189",
+   "surface": "hearing",
+   "part": "tail",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "hearing",
+   "transliteration": "akoē",
+   "samples": [
+    "Luke.7.1",
+    "Rom.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "listen",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "2Chr.20.15",
+    "Ps.86.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "hearing",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Prov.20.12",
+    "Prov.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4617",
+   "surface": "answer",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "answer",
+   "transliteration": "ma.a.neh",
+   "samples": [
+    "Job.32.3",
+    "Prov.16.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "listens",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Prov.1.33",
+    "Zeph.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "proclaimed",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.41.26",
+    "Jer.23.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085J",
+   "surface": "understand",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to hear: understand",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Deut.28.49",
+    "Gen.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0189",
+   "surface": "heard",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "hearing",
+   "transliteration": "akoē",
+   "samples": [
+    "2Pet.2.8",
+    "Rom.10.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "attentive",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Prov.4.1",
+    "Prov.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1522",
+   "surface": "heard",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to listen to",
+   "transliteration": "eisakouō",
+   "samples": [
+    "Heb.5.7",
+    "Matt.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "attend",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Ps.142.6",
+    "Ps.55.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "listen",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.16.12",
+    "Jer.35.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "obeying",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Sam.15.22",
+    "Deut.30.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0189",
+   "surface": "ears",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hearing",
+   "transliteration": "akoē",
+   "samples": [
+    "Acts.17.20",
+    "Mark.7.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0189",
+   "surface": "fame",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hearing",
+   "transliteration": "akoē",
+   "samples": [
+    "Mark.1.28",
+    "Matt.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0238",
+   "surface": "ear",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to listen",
+   "transliteration": "a.zan",
+   "samples": [
+    "Isa.64.4",
+    "Prov.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0238",
+   "surface": "hear",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to listen",
+   "transliteration": "a.zan",
+   "samples": [
+    "Ps.135.17",
+    "Ps.77.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0238",
+   "surface": "listen",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to listen",
+   "transliteration": "a.zan",
+   "samples": [
+    "Gen.4.23",
+    "Job.34.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7183B",
+   "surface": "attentive",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "attentive",
+   "transliteration": "qash.shuv",
+   "samples": [
+    "2Chr.7.15",
+    "Ps.130.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "keep",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Job.21.2",
+    "Job.37.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "listened to",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Sam.19.6",
+    "Deut.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "announced",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.48.3",
+    "Judg.13.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "publishes",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.52.7",
+    "Nah.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0189",
+   "surface": "rumors",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hearing",
+   "transliteration": "akoē",
+   "samples": [
+    "Mark.13.7",
+    "Matt.24.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "addressed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Acts.3.12",
+    "Rev.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "declared",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Acts.10.46",
+    "Matt.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "listens",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Prov.17.4",
+    "Prov.29.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7182",
+   "surface": "diligently",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "attentiveness",
+   "transliteration": "qe.shev",
+   "samples": [
+    "Isa.21.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7183A",
+   "surface": "attentive",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "attentive",
+   "transliteration": "qash.shav",
+   "samples": [
+    "Neh.1.11",
+    "Neh.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "diligently",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Exod.15.26",
+    "Isa.55.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "heeded",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Josh.10.14",
+    "Num.21.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "listening to",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Kgs.8.28",
+    "Jer.18.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Sam.23.10",
+    "Exod.22.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "indeed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Deut.11.13",
+    "Exod.19.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "obedient",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Exod.24.7",
+    "Isa.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "declare",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.41.22",
+    "Ps.106.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "publish",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Amos.4.5",
+    "Neh.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "sound",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Chr.15.19",
+    "1Chr.16.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "summon",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.50.29",
+    "Jer.51.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "summoned",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Sam.15.4",
+    "1Sam.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "told",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.44.8",
+    "Isa.45.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0189",
+   "surface": "ear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hearing",
+   "transliteration": "akoē",
+   "samples": [
+    "1Cor.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0189",
+   "surface": "indeed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hearing",
+   "transliteration": "akoē",
+   "samples": [
+    "Acts.28.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0189",
+   "surface": "indeed hear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hearing",
+   "transliteration": "akoē",
+   "samples": [
+    "Matt.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0189",
+   "surface": "listening",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hearing",
+   "transliteration": "akoē",
+   "samples": [
+    "2Tim.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "answering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Luke.7.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "rebuked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Luke.23.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "reply",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Matt.19.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "responded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Luke.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0611",
+   "surface": "spoke",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to answer",
+   "transliteration": "apokrinō",
+   "samples": [
+    "Matt.22.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1522",
+   "surface": "listen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen to",
+   "transliteration": "eisakouō",
+   "samples": [
+    "1Cor.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1873",
+   "surface": "listened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen to",
+   "transliteration": "epakouō",
+   "samples": [
+    "2Cor.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1874",
+   "surface": "listening to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen ro",
+   "transliteration": "epakroaomai",
+   "samples": [
+    "Acts.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0238",
+   "surface": "listened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "a.zan",
+   "samples": [
+    "Job.32.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0238",
+   "surface": "listening",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "a.zan",
+   "samples": [
+    "Job.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0238",
+   "surface": "pay attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "a.zan",
+   "samples": [
+    "2Chr.24.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4617",
+   "surface": "purpose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "answer",
+   "transliteration": "ma.a.neh",
+   "samples": [
+    "Prov.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4926",
+   "surface": "hear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hearing",
+   "transliteration": "mish.ma",
+   "samples": [
+    "Isa.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6032",
+   "surface": "daniel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to answer",
+   "transliteration": "a.nah",
+   "samples": [
+    "Dan.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6032",
+   "surface": "ordered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to answer",
+   "transliteration": "a.nah",
+   "samples": [
+    "Dan.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6032",
+   "surface": "said",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to answer",
+   "transliteration": "a.nah",
+   "samples": [
+    "Dan.3.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "attended",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Ps.66.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "attention to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Zech.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "give attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Ps.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "hear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Jer.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "heeded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Prov.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "incline",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Ps.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "listening",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Song.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "paid attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Neh.9.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7181",
+   "surface": "pay attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to listen",
+   "transliteration": "qa.shav",
+   "samples": [
+    "Job.33.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7182",
+   "surface": "life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "attentiveness",
+   "transliteration": "qe.shev",
+   "samples": [
+    "2Kgs.4.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7182",
+   "surface": "paid attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "attentiveness",
+   "transliteration": "qe.shev",
+   "samples": [
+    "1Kgs.18.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7835",
+   "surface": "black",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be black",
+   "transliteration": "sha.char",
+   "samples": [
+    "Job.30.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "anyone who",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Ezek.33.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "discern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "2Sam.14.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "give ear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Ps.55.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "giving ear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Kgs.8.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "have",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.31.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "hear me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Gen.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "heard them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Neh.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "kept hearing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Sam.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "listen to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.36.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "overheard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.38.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "pay attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.29.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "2Sam.20.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "us",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Gen.23.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085G",
+   "surface": "you obey",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: hear",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Deut.30.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "carefully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Exod.23.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "diligently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Zech.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "disobeying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.42.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "disobeys",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Josh.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "faithfully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Deut.28.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "obeys",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.50.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "strictly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Deut.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085H",
+   "surface": "you, do",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: obey",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Gen.21.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "announce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "loud music",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Chr.15.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.48.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "made a proclamation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Kgs.15.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "make known",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Sam.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "music",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Chr.16.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "play loudly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Chr.15.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "proclaiming",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Ps.26.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "proclaims",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Jer.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "reported",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Neh.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "sang",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Neh.12.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "shout aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Ezek.27.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "show",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.43.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "tell",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.42.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "uttered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Ps.76.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085I",
+   "surface": "you",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: proclaim",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.48.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085J",
+   "surface": "comprehend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: understand",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Isa.33.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085J",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: understand",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Kgs.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085J",
+   "surface": "understood",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: understand",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Gen.42.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085K",
+   "surface": "discern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: judge",
+   "transliteration": "sha.ma",
+   "samples": [
+    "1Kgs.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085K",
+   "surface": "witness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: judge",
+   "transliteration": "sha.ma",
+   "samples": [
+    "Judg.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8085L",
+   "surface": "welcomed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hear: welcome",
+   "transliteration": "sha.ma",
+   "samples": [
+    "2Kgs.20.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

@@ -1,0 +1,1674 @@
+{
+ "cluster": "M21",
+ "cluster_name": "Fasting & Piety",
+ "built_at": "2026-10-26T04:19:53Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 101,
+  "head": 36,
+  "tail": 65,
+  "hits": 373,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H7592",
+   "surface": "ask",
+   "part": "head",
+   "hits": 49,
+   "verses": 48,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Mic.7.3",
+    "Ps.35.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "asked",
+   "part": "head",
+   "hits": 44,
+   "verses": 40,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "2Chr.1.11",
+    "Job.21.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "ask",
+   "part": "head",
+   "hits": 36,
+   "verses": 35,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "1John.5.15",
+    "Eph.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "ask",
+   "part": "head",
+   "hits": 21,
+   "verses": 21,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "1Thess.5.12",
+    "2Thess.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "asked",
+   "part": "head",
+   "hits": 21,
+   "verses": 21,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "Acts.18.20",
+    "John.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "inquired",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Sam.22.10",
+    "1Sam.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2150",
+   "surface": "godliness",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "piety",
+   "transliteration": "eusebeia",
+   "samples": [
+    "1Tim.6.3",
+    "2Pet.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "asked",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "1John.5.15",
+    "Mark.6.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470B",
+   "surface": "entreat",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to beg",
+   "transliteration": "cha.lah",
+   "samples": [
+    "Jer.26.19",
+    "Zech.8.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "asks",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "1Pet.3.15",
+    "Luke.11.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "asking",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "Col.1.9",
+    "Matt.20.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "asks",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Exod.13.14",
+    "Jer.23.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "inquire",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Job.8.8",
+    "Judg.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "asked for",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "Acts.12.20",
+    "Mark.15.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "asking",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Sam.8.10",
+    "Job.31.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7593",
+   "surface": "asked",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to ask",
+   "transliteration": "she.el",
+   "samples": [
+    "Dan.2.27",
+    "Ezra.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "asks",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "John.16.5",
+    "Luke.19.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1156",
+   "surface": "sought",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to ask",
+   "transliteration": "be.a",
+   "samples": [
+    "Dan.4.36",
+    "Dan.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470B",
+   "surface": "entreated",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to beg",
+   "transliteration": "cha.lah",
+   "samples": [
+    "2Chr.33.12",
+    "Dan.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "question",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Job.40.7",
+    "Job.42.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "questioned",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Gen.43.7",
+    "Judg.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "begs",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "Luke.6.30",
+    "Matt.5.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "demand",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "1Cor.1.22",
+    "Luke.12.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "begged",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "Mark.7.26",
+    "Matt.15.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "please",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "Luke.14.18",
+    "Luke.14.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "praying",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "John.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3521",
+   "surface": "fasting",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fasting",
+   "transliteration": "nēsteia",
+   "samples": [
+    "Acts.14.23",
+    "Luke.2.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3523",
+   "surface": "hungry",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fasting",
+   "transliteration": "nēstis",
+   "samples": [
+    "Mark.8.3",
+    "Matt.15.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1156",
+   "surface": "asked",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "be.a",
+   "samples": [
+    "Dan.2.23",
+    "Dan.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1156",
+   "surface": "makes",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "be.a",
+   "samples": [
+    "Dan.6.13",
+    "Dan.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470B",
+   "surface": "favor",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to beg",
+   "transliteration": "cha.lah",
+   "samples": [
+    "1Sam.13.12",
+    "Job.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470B",
+   "surface": "seek",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to beg",
+   "transliteration": "cha.lah",
+   "samples": [
+    "Prov.19.6",
+    "Ps.45.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "beg",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Lam.4.4",
+    "Ps.109.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "consulted",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Chr.10.13",
+    "2Sam.16.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "desired",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Deut.18.16",
+    "Eccl.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "earnestly",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Sam.20.28",
+    "1Sam.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "greeted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Sam.17.22",
+    "1Sam.30.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "lent",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Sam.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "made",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Sam.1.17",
+    "1Sam.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "make",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Kgs.2.16",
+    "Judg.8.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "or",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Kgs.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "request",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Kgs.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "require",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "2Sam.3.13",
+    "Deut.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "required",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Ps.137.3",
+    "Ps.40.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "asks for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "Matt.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "called",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "Acts.16.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0154",
+   "surface": "demanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "aiteō",
+   "samples": [
+    "Luke.23.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0776",
+   "surface": "without food",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fasting",
+   "transliteration": "asitia",
+   "samples": [
+    "Acts.27.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0777",
+   "surface": "without food",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fasting",
+   "transliteration": "asitos",
+   "samples": [
+    "Acts.27.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1783",
+   "surface": "intercessions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intercession",
+   "transliteration": "enteuxis",
+   "samples": [
+    "1Tim.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1783",
+   "surface": "prayer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intercession",
+   "transliteration": "enteuxis",
+   "samples": [
+    "1Tim.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "appealed to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "Luke.4.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "asked me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "Acts.23.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "asking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "Luke.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "beg",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "Luke.16.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "pray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "1John.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "question",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "John.16.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "questioned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "John.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2065",
+   "surface": "urging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "erōtaō",
+   "samples": [
+    "John.4.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2150",
+   "surface": "godly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "piety",
+   "transliteration": "eusebeia",
+   "samples": [
+    "1Tim.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2150",
+   "surface": "piety",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "piety",
+   "transliteration": "eusebeia",
+   "samples": [
+    "Acts.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2151",
+   "surface": "show godliness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show piety",
+   "transliteration": "eusebeō",
+   "samples": [
+    "1Tim.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2151",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show piety",
+   "transliteration": "eusebeō",
+   "samples": [
+    "Acts.17.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3521",
+   "surface": "fast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fasting",
+   "transliteration": "nēsteia",
+   "samples": [
+    "Acts.27.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3521",
+   "surface": "hunger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fasting",
+   "transliteration": "nēsteia",
+   "samples": [
+    "2Cor.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3521",
+   "surface": "without food",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fasting",
+   "transliteration": "nēsteia",
+   "samples": [
+    "2Cor.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4319",
+   "surface": "beg",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to beg",
+   "transliteration": "prosaiteō",
+   "samples": [
+    "John.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4319",
+   "surface": "beggar",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to beg",
+   "transliteration": "prosaiteō",
+   "samples": [
+    "Mark.10.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5241",
+   "surface": "intercedes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to intercede",
+   "transliteration": "huperentunchanō",
+   "samples": [
+    "Rom.8.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5377",
+   "surface": "god",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "God-loving",
+   "transliteration": "filotheos",
+   "samples": [
+    "2Tim.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1156",
+   "surface": "makes petition",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "be.a",
+   "samples": [
+    "Dan.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1156",
+   "surface": "petition",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "be.a",
+   "samples": [
+    "Dan.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1156",
+   "surface": "request",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "be.a",
+   "samples": [
+    "Dan.2.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1156",
+   "surface": "requested",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "be.a",
+   "samples": [
+    "Dan.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1156",
+   "surface": "seek",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "be.a",
+   "samples": [
+    "Dan.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470B",
+   "surface": "implored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to beg",
+   "transliteration": "cha.lah",
+   "samples": [
+    "Exod.32.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470B",
+   "surface": "sought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to beg",
+   "transliteration": "cha.lah",
+   "samples": [
+    "2Kgs.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2908",
+   "surface": "fasting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fasting",
+   "transliteration": "te.vat",
+   "samples": [
+    "Dan.6.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6280",
+   "surface": "multiplied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be abundant",
+   "transliteration": "a.tar",
+   "samples": [
+    "Ezek.35.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6280",
+   "surface": "profuse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be abundant",
+   "transliteration": "a.tar",
+   "samples": [
+    "Prov.27.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6282B",
+   "surface": "smoke",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "odour",
+   "transliteration": "a.tar",
+   "samples": [
+    "Ezek.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "borrow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "2Kgs.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "borrowed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "2Kgs.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "borrows anything",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Exod.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "but",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "2Sam.20.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "carefully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Gen.43.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "consults",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Ezek.21.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "craves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Deut.14.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "demanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Ps.78.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "god",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Sam.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "greet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Sam.25.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "health",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Chr.18.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "medium",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Deut.18.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "pray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Ps.122.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "procured",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "2Chr.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "requested",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Judg.8.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "seek",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "Prov.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7592",
+   "surface": "will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "sha.al",
+   "samples": [
+    "1Sam.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7593",
+   "surface": "asks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "she.el",
+   "samples": [
+    "Dan.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7593",
+   "surface": "requires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ask",
+   "transliteration": "she.el",
+   "samples": [
+    "Ezra.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8589",
+   "surface": "fasting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fasting",
+   "transliteration": "ta.a.nit",
+   "samples": [
+    "Ezra.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

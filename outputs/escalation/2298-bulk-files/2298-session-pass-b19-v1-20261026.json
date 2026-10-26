@@ -1,0 +1,107 @@
+{
+ "M71": {
+  "groups": [
+   ["M71_honour", "Honour, honouring", "time and timao: honour, honoured, honourable use", "group", "renders honour"],
+   ["M71_worthiness", "Worthiness, deserving", "axios: worthy, deserving, deserve, fitting, unworthy", "group", "renders worthiness"],
+   ["M71_greatness", "Greatness", "gedulah and godel: greatness, great", "group", "renders greatness"],
+   ["M71_splendour", "Majesty, splendour, glory", "hod and hadar: majesty, splendour, glory, glorious", "group", "renders splendour"],
+   ["M71_celebrating", "Celebrating, keeping a feast", "chagag and euphraino: celebrate, keep a feast, rejoice, be glad", "group", "renders celebrating"],
+   ["M71_not_this_sense", "Not the cluster's sense", "renderings with no sense of glory: time as a price or value, a king's colour, a majority, multiplying, desiring to hear", "not_this_sense", "carries no sense of glory"]
+  ],
+  "surf": {
+   "M71_honour": ["honor", "honors", "honored", "honorable use"],
+   "M71_worthiness": ["worthy", "deserving", "deserve", "deserves", "deserved", "keeping", "presume", "advisable", "due reward", "right", "unworthy", "worth"],
+   "M71_greatness": ["greatness", "great"],
+   "M71_splendour": ["majesty", "splendor", "majestic", "glory", "glorious"],
+   "M71_celebrating": ["keep", "celebrate", "rejoice", "glad", "feast"],
+   "M71_not_this_sense": ["price", "proceeds", "value", "color", "multiply", "majority", "desire"]
+  },
+  "over": {
+   "H1935|honor": ["M71_splendour", "hod 'you give your honor to others' (Prov 5:9), 'he shall bear royal honor' (Zech 6:13)", 0],
+   "H3367|glory": ["M71_splendour", "yeqar 'for the glory of my majesty' (Dan 4:30)", 0]
+  }
+ },
+ "M72": {
+  "groups": [
+   ["M72_king", "King, reigning", "melek and malak: king, kings, the king's, reign, reigned, made king", "group", "renders the king or reigning"],
+   ["M72_kingdom", "Kingdom", "mamlakah, malkut and basileia: kingdom, kingdoms", "group", "renders the kingdom"],
+   ["M72_throne", "Throne", "kisse: throne", "group", "renders the throne"],
+   ["M72_rulers", "Princes, officials, commanders, heads", "sar and rosh: princes, officials, commanders, heads", "group", "renders rulers"],
+   ["M72_authority", "Authority", "exousia: authority", "group", "renders authority"],
+   ["M72_hand", "Hand as power", "yad as power: hand", "group", "renders the hand as power"],
+   ["M72_hosts", "Hosts (the LORD of hosts)", "tseva'ot: hosts, in the title of the LORD", "group", "renders the LORD of hosts"],
+   ["M72_master", "Master, lord", "kurios as master: master", "group", "renders the master"],
+   ["M72_not_this_sense", "Not the cluster's sense", "renderings with no sense of authority", "not_this_sense", "carries no sense of authority"]
+  ],
+  "surf": {
+   "M72_king": ["king", "kings", "king’s", "reigned", "reign"],
+   "M72_kingdom": ["kingdom", "kingdoms"],
+   "M72_throne": ["throne"],
+   "M72_rulers": ["princes", "officials", "commanders", "commander", "heads"],
+   "M72_authority": ["authority"],
+   "M72_hand": ["hand"],
+   "M72_hosts": ["hosts"],
+   "M72_master": ["master"],
+   "M72_not_this_sense": []
+  },
+  "over": {}
+ },
+ "M73": {
+  "groups": [
+   ["M73_blindness", "Blindness", "being blind and blinding: blind, blind man, blinded, put out eyes", "group", "renders blindness"],
+   ["M73_sickness", "Sickness, disease, illness", "the body ill: sick, ill, sickness, disease, illness, fever, infirmity, ailment", "group", "renders sickness"],
+   ["M73_weakness", "Weakness, languishing", "strength lacking: weak, weakness, weaker, become weak, languish, limitations", "group", "renders weakness"],
+   ["M73_leprosy", "Leprosy", "tsara: leper, leprous", "group", "renders leprosy"],
+   ["M73_crippled", "Crippled, incurable", "the body lamed or past cure: crippled, incurable, no soundness", "group", "renders being crippled"],
+   ["M73_not_this_sense", "Not the cluster's sense", "renderings with no sense of sickness: a grievous curse", "not_this_sense", "carries no sense of sickness"]
+  ],
+  "surf": {
+   "M73_blindness": ["blind", "blind man", "blinded", "put out", "blinds"],
+   "M73_sickness": ["sick", "ill", "sickness", "diseases", "disease", "illness", "fever", "wasting disease", "affliction", "infirmities", "ailments", "ailment", "disability", "disabling", "wounded"],
+   "M73_weakness": ["weak", "weakness", "weaknesses", "weaker", "weak person", "become weak", "limitations", "languish", "languishes"],
+   "M73_leprosy": ["leper", "leprous", "leprous person", "lepers"],
+   "M73_crippled": ["crippled", "incurable", "soundness"],
+   "M73_not_this_sense": ["grievous"]
+  },
+  "over": {
+   "H4834|grievous": ["M73_not_this_sense", "marats 'cursed me with a grievous curse' (1Kgs 2:8): a bitter curse", 0]
+  }
+ },
+ "M75": {
+  "groups": [
+   ["M75_lawlessness", "Lawlessness, the lawless", "anomia and anomos: lawlessness, lawless, law-breakers, transgressors", "group", "renders lawlessness"],
+   ["M75_disobedience", "Disobedience, insubordination", "apeitheia and parakoe: disobedience, disobedient, insubordinate", "group", "renders disobedience"],
+   ["M75_hardening", "Hardening, heaviness of heart", "poroo, skleruno and kaved: harden, hardened, hardness, heavy", "group", "renders hardening"],
+   ["M75_not_this_sense", "Not the cluster's sense", "renderings with no sense of disobedience", "not_this_sense", "carries no sense of disobedience"]
+  ],
+  "surf": {
+   "M75_lawlessness": ["lawlessness", "outside the law", "lawless", "lawless people", "wicked", "law-breakers", "lawless deeds", "wickedness", "lawless one", "transgressors", "transgression"],
+   "M75_disobedience": ["disobedience", "disobedient", "insubordinate", "insubordination", "outside his control"],
+   "M75_hardening": ["hardened", "harden", "hardness", "hardening", "heavy"],
+   "M75_not_this_sense": []
+  },
+  "over": {
+   "H3513H|heavy": ["M75_hardening", "kaved 'on the aged you made your yoke exceedingly heavy' (Isa 47:6), 'he has made my chains heavy' (Lam 3:7); the hardened heart elsewhere, settled per verse", 1]
+  }
+ },
+ "M76": {
+  "groups": [
+   ["M76_way", "Way, ways, conduct", "derek as conduct: way, ways, deeds, manner", "group", "renders the way or conduct"],
+   ["M76_astray", "Going astray, staggering", "ta'ah: go astray, wander, stagger, reel", "group", "renders going astray"],
+   ["M76_wandering", "Fleeing, wandering", "nadad: flee, fled", "group", "renders fleeing"],
+   ["M76_led", "Being led, conducted", "yaval: carried, brought, led", "group", "renders being led"],
+   ["M76_not_this_sense", "Not the cluster's sense", "renderings with no sense of conduct: nud as grieving, a stray mark", "not_this_sense", "carries no sense of conduct"]
+  ],
+  "surf": {
+   "M76_way": ["way", "ways", "deeds", "manner"],
+   "M76_astray": ["astray", "stagger", "wander", "go astray", "reel"],
+   "M76_wandering": ["fled", "flee"],
+   "M76_led": ["carried", "bring", "led"],
+   "M76_not_this_sense": ["grieve", "^"]
+  },
+  "over": {
+   "H5110|grieve": ["M76_not_this_sense", "nud 'weep not for him who is dead, nor grieve for him' (Jer 22:10): grief, the sense of M03", 0],
+   "H1870G|^": ["M76_not_this_sense", "a stray mark in the ESV surface (1Sam 13:15, 2Sam 13:34): a data point to clear", 0]
+  }
+ }
+}

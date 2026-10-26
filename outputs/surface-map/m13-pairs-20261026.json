@@ -1,0 +1,1803 @@
+{
+ "cluster": "M13",
+ "cluster_name": "Faith & Faithfulness",
+ "built_at": "2026-10-26T04:18:57Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 108,
+  "head": 19,
+  "tail": 89,
+  "hits": 800,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G4102G",
+   "surface": "faith",
+   "part": "head",
+   "hits": 238,
+   "verses": 222,
+   "gloss": "faith",
+   "transliteration": "pistis",
+   "samples": [
+    "1John.5.4",
+    "1Tim.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0225",
+   "surface": "truth",
+   "part": "head",
+   "hits": 93,
+   "verses": 83,
+   "gloss": "truth",
+   "transliteration": "alētheia",
+   "samples": [
+    "1Pet.1.22",
+    "Eph.4.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4103",
+   "surface": "faithful",
+   "part": "head",
+   "hits": 44,
+   "verses": 41,
+   "gloss": "faithful",
+   "transliteration": "pistos",
+   "samples": [
+    "3John.1.5",
+    "Rev.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "faithfulness",
+   "part": "head",
+   "hits": 43,
+   "verses": 43,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Exod.34.6",
+    "Ps.91.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571H",
+   "surface": "truth",
+   "part": "head",
+   "hits": 30,
+   "verses": 30,
+   "gloss": "truth: true",
+   "transliteration": "e.met",
+   "samples": [
+    "Dan.11.2",
+    "Prov.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "believe",
+   "part": "head",
+   "hits": 29,
+   "verses": 27,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Prov.26.25",
+    "Ps.78.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0228",
+   "surface": "true",
+   "part": "head",
+   "hits": 27,
+   "verses": 25,
+   "gloss": "true",
+   "transliteration": "alēthinos",
+   "samples": [
+    "1John.2.8",
+    "John.17.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "faithfulness",
+   "part": "head",
+   "hits": 27,
+   "verses": 27,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "1Sam.26.23",
+    "Lam.3.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0227",
+   "surface": "true",
+   "part": "head",
+   "hits": 24,
+   "verses": 23,
+   "gloss": "true",
+   "transliteration": "alēthēs",
+   "samples": [
+    "1John.2.27",
+    "2Pet.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "faithful",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Isa.1.21",
+    "Prov.27.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571H",
+   "surface": "true",
+   "part": "head",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "truth: true",
+   "transliteration": "e.met",
+   "samples": [
+    "2Chr.15.3",
+    "Deut.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4103",
+   "surface": "trustworthy",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "faithful",
+   "transliteration": "pistos",
+   "samples": [
+    "1Tim.1.15",
+    "2Tim.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "faithfully",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Isa.61.8",
+    "Prov.29.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "believed",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Exod.14.31",
+    "Isa.53.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "sure",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "1Sam.2.35",
+    "Ps.19.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0225",
+   "surface": "true",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "truth",
+   "transliteration": "alētheia",
+   "samples": [
+    "2Cor.7.14",
+    "Eph.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0529",
+   "surface": "faithful",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "faithful",
+   "transliteration": "e.mun",
+   "samples": [
+    "Ps.12.1",
+    "Ps.31.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0225",
+   "surface": "truly",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "truth",
+   "transliteration": "alētheia",
+   "samples": [
+    "Acts.10.34",
+    "Acts.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "truth",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "Jer.5.1",
+    "Jer.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "trust",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Job.4.18",
+    "Mic.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "faithful",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Neh.7.2",
+    "Ps.111.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571I",
+   "surface": "true",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "truth: certain",
+   "transliteration": "e.met",
+   "samples": [
+    "Neh.9.13",
+    "Ps.119.151"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3640",
+   "surface": "little faith",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "of little faith",
+   "transliteration": "oligopistos",
+   "samples": [
+    "Matt.6.30",
+    "Matt.8.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4103",
+   "surface": "believers",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "faithful",
+   "transliteration": "pistos",
+   "samples": [
+    "1Tim.6.2",
+    "Titus.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4576",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be devout",
+   "transliteration": "sebomai",
+   "samples": [
+    "Acts.18.13",
+    "Mark.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "faithfully",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "2Chr.34.12",
+    "Prov.12.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "established",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "1Chr.17.24",
+    "1Sam.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2126",
+   "surface": "devout",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "devout",
+   "transliteration": "eulabēs",
+   "samples": [
+    "Acts.8.2",
+    "Luke.2.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4102H",
+   "surface": "faithfulness",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "faith: faithfulness",
+   "transliteration": "pistis",
+   "samples": [
+    "Matt.23.23",
+    "Rom.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4103",
+   "surface": "believe",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "faithful",
+   "transliteration": "pistos",
+   "samples": [
+    "1Tim.4.10",
+    "John.20.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4576",
+   "surface": "devout",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be devout",
+   "transliteration": "sebomai",
+   "samples": [
+    "Acts.13.43",
+    "Acts.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "faithful",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "Isa.25.1",
+    "Prov.28.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "honestly",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "2Kgs.22.7",
+    "Isa.59.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "faith",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Isa.7.9",
+    "Ps.106.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "nurse",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Num.11.12",
+    "Ruth.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "trustworthy",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Ps.111.7",
+    "Ps.93.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "good faith",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Judg.9.15",
+    "Judg.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571I",
+   "surface": "security",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "truth: certain",
+   "transliteration": "e.met",
+   "samples": [
+    "2Kgs.20.19",
+    "Jer.33.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918H",
+   "surface": "saints",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "holy: saint",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "Ps.16.3",
+    "Ps.34.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0226",
+   "surface": "truth",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be truthful",
+   "transliteration": "alētheuō",
+   "samples": [
+    "Eph.4.15",
+    "Gal.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4103",
+   "surface": "believer",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "faithful",
+   "transliteration": "pistos",
+   "samples": [
+    "2Cor.6.15",
+    "Acts.16.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4103",
+   "surface": "believing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "faithful",
+   "transliteration": "pistos",
+   "samples": [
+    "1Tim.5.16",
+    "1Tim.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4576",
+   "surface": "worshiper",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be devout",
+   "transliteration": "sebomai",
+   "samples": [
+    "Acts.16.14",
+    "Acts.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6066",
+   "surface": "little faith",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "little faith",
+   "transliteration": "oligopistia",
+   "samples": [
+    "Luke.12.28",
+    "Matt.17.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "entrusted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "1Chr.9.26",
+    "1Chr.9.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "believes",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Isa.28.16",
+    "Prov.14.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "confirmed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "1Kgs.8.26",
+    "2Chr.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "guardians",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "2Kgs.10.1",
+    "2Kgs.10.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "lasting",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Deut.28.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "reliable",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Isa.8.2",
+    "Neh.13.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "secure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Isa.22.23",
+    "Isa.22.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "trusted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "1Sam.27.12",
+    "Job.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571H",
+   "surface": "truthful",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "truth: true",
+   "transliteration": "e.met",
+   "samples": [
+    "Prov.12.19",
+    "Prov.14.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571I",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "truth: certain",
+   "transliteration": "e.met",
+   "samples": [
+    "Josh.2.12",
+    "Prov.11.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918H",
+   "surface": "holy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "holy: saint",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "2Kgs.4.9",
+    "Num.16.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8266",
+   "surface": "deal falsely",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to deal",
+   "transliteration": "sha.qar",
+   "samples": [
+    "Gen.21.23",
+    "Isa.63.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8266",
+   "surface": "false",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to deal",
+   "transliteration": "sha.qar",
+   "samples": [
+    "Ps.44.17",
+    "Ps.89.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8266",
+   "surface": "lie",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to deal",
+   "transliteration": "sha.qar",
+   "samples": [
+    "1Sam.15.29",
+    "Lev.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0225",
+   "surface": "certainly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth",
+   "transliteration": "alētheia",
+   "samples": [
+    "Luke.22.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0225",
+   "surface": "truthful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth",
+   "transliteration": "alētheia",
+   "samples": [
+    "2Cor.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0225",
+   "surface": "truthfully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth",
+   "transliteration": "alētheia",
+   "samples": [
+    "Matt.22.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0225",
+   "surface": "truthfulness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth",
+   "transliteration": "alētheia",
+   "samples": [
+    "Rom.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0227",
+   "surface": "real",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "true",
+   "transliteration": "alēthēs",
+   "samples": [
+    "Acts.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0227",
+   "surface": "truth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "true",
+   "transliteration": "alēthēs",
+   "samples": [
+    "John.19.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0228",
+   "surface": "true things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "true",
+   "transliteration": "alēthinos",
+   "samples": [
+    "Heb.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2318",
+   "surface": "worshiper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "godly",
+   "transliteration": "theosebēs",
+   "samples": [
+    "John.9.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4102G",
+   "surface": "assurance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faith",
+   "transliteration": "pistis",
+   "samples": [
+    "Acts.17.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4102G",
+   "surface": "belief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faith",
+   "transliteration": "pistis",
+   "samples": [
+    "2Thess.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4103",
+   "surface": "faith",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithful",
+   "transliteration": "pistos",
+   "samples": [
+    "Gal.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4103",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithful",
+   "transliteration": "pistos",
+   "samples": [
+    "Acts.13.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4576",
+   "surface": "devout persons",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be devout",
+   "transliteration": "sebomai",
+   "samples": [
+    "Acts.17.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0529",
+   "surface": "faith",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithful",
+   "transliteration": "e.mun",
+   "samples": [
+    "Isa.26.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0529",
+   "surface": "faithfulness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithful",
+   "transliteration": "e.mun",
+   "samples": [
+    "Deut.32.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "faith",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "Hab.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "stability",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "Isa.33.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "steady",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "Exod.17.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "Ps.119.86"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0530",
+   "surface": "trust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithfulness",
+   "transliteration": "e.mu.nah",
+   "samples": [
+    "1Chr.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Isa.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "assurance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Deut.28.66"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "bringing up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Esth.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "brought up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Lam.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "carried",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Isa.60.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "confidence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Job.29.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "despair",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Job.24.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "fail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Jer.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "foster fathers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Isa.49.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "fulfilled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "2Chr.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "stand firm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Ps.89.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "stand still",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Job.39.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "steadfast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Isa.55.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0539",
+   "surface": "verified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faithful",
+   "transliteration": "a.man",
+   "samples": [
+    "Gen.42.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0544",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithfulness",
+   "transliteration": "o.men",
+   "samples": [
+    "Isa.25.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "faith",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Ps.146.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Jer.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "show faithfulness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Mic.7.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "sure oath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Ps.132.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "true",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Jer.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "truly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Gen.47.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571G",
+   "surface": "trustworthy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: faithful",
+   "transliteration": "e.met",
+   "samples": [
+    "Exod.18.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571H",
+   "surface": "right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: true",
+   "transliteration": "e.met",
+   "samples": [
+    "Gen.24.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571H",
+   "surface": "truly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: true",
+   "transliteration": "e.met",
+   "samples": [
+    "Jer.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0571I",
+   "surface": "assured",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth: certain",
+   "transliteration": "e.met",
+   "samples": [
+    "Jer.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918H",
+   "surface": "holy one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holy: saint",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "Ps.106.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918H",
+   "surface": "holy ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holy: saint",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "Deut.33.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7187",
+   "surface": "right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth",
+   "transliteration": "qe.shot",
+   "samples": [
+    "Dan.4.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7187",
+   "surface": "truly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth",
+   "transliteration": "qe.shot",
+   "samples": [
+    "Dan.2.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7189B",
+   "surface": "right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "truth",
+   "transliteration": "qo.shet",
+   "samples": [
+    "Prov.22.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

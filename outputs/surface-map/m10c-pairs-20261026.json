@@ -1,0 +1,1240 @@
+{
+ "cluster": "M10c",
+ "cluster_name": "Defilement",
+ "built_at": "2026-10-26T04:32:37Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 75,
+  "head": 12,
+  "tail": 63,
+  "hits": 405,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H2930A",
+   "surface": "unclean",
+   "part": "head",
+   "hits": 86,
+   "verses": 75,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.11.43",
+    "Num.19.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2931",
+   "surface": "unclean",
+   "part": "head",
+   "hits": 82,
+   "verses": 73,
+   "gloss": "unclean",
+   "transliteration": "ta.me",
+   "samples": [
+    "Hos.9.3",
+    "Lev.20.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "defiled",
+   "part": "head",
+   "hits": 35,
+   "verses": 33,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Ezek.4.14",
+    "Hos.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0169",
+   "surface": "unclean",
+   "part": "head",
+   "hits": 29,
+   "verses": 27,
+   "gloss": "unclean",
+   "transliteration": "akathartos",
+   "samples": [
+    "Acts.10.28",
+    "Rev.16.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2932",
+   "surface": "uncleanness",
+   "part": "head",
+   "hits": 26,
+   "verses": 23,
+   "gloss": "uncleanness",
+   "transliteration": "tum.ah",
+   "samples": [
+    "Ezek.39.24",
+    "Ezra.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "defile",
+   "part": "head",
+   "hits": 21,
+   "verses": 20,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Ezek.20.31",
+    "Jer.7.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "impurity",
+   "part": "head",
+   "hits": 12,
+   "verses": 10,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Ezra.9.11",
+    "Num.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0167",
+   "surface": "impurity",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "impurity",
+   "transliteration": "akatharsia",
+   "samples": [
+    "1Thess.2.3",
+    "Rom.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8263",
+   "surface": "detestable",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "detestation",
+   "transliteration": "she.qets",
+   "samples": [
+    "Lev.11.11",
+    "Lev.11.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "defiles",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Ezek.18.11",
+    "Ezek.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2932",
+   "surface": "uncleannesses",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "uncleanness",
+   "transliteration": "tum.ah",
+   "samples": [
+    "Ezek.36.25",
+    "Ezek.36.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "menstrual",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Lev.15.20",
+    "Lev.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2610",
+   "surface": "polluted",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to pollute",
+   "transliteration": "cha.neph",
+   "samples": [
+    "Jer.3.2",
+    "Jer.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1351",
+   "surface": "defiled",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to defile",
+   "transliteration": "ga.al",
+   "samples": [
+    "Lam.4.14",
+    "Zeph.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1351",
+   "surface": "polluted",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to defile",
+   "transliteration": "ga.al",
+   "samples": [
+    "Mal.1.12",
+    "Mal.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2932",
+   "surface": "unclean",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "uncleanness",
+   "transliteration": "tum.ah",
+   "samples": [
+    "Ezek.24.13",
+    "Judg.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6292",
+   "surface": "tainted",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "refuse",
+   "transliteration": "pig.gul",
+   "samples": [
+    "Ezek.4.14",
+    "Lev.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "become unclean",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Hag.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "pronounce",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.13.15",
+    "Lev.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2931",
+   "surface": "defiled",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "unclean",
+   "transliteration": "ta.me",
+   "samples": [
+    "Ezek.22.5",
+    "Jer.19.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "menstrual impurity",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Ezek.18.6",
+    "Ezek.36.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "menstruation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Lev.12.2",
+    "Lev.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "unclean thing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Ezek.7.19",
+    "Ezek.7.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0167",
+   "surface": "uncleanness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "impurity",
+   "transliteration": "akatharsia",
+   "samples": [
+    "Matt.23.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0169",
+   "surface": "impure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unclean",
+   "transliteration": "akathartos",
+   "samples": [
+    "Eph.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0169",
+   "surface": "impurities",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unclean",
+   "transliteration": "akathartos",
+   "samples": [
+    "Rev.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0169",
+   "surface": "unclean thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unclean",
+   "transliteration": "akathartos",
+   "samples": [
+    "2Cor.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0234",
+   "surface": "things polluted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "defilement",
+   "transliteration": "alisgēma",
+   "samples": [
+    "Acts.15.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3393",
+   "surface": "defilements",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "defilement",
+   "transliteration": "miasma",
+   "samples": [
+    "2Pet.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3394",
+   "surface": "defiling passion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "defilement",
+   "transliteration": "miasmos",
+   "samples": [
+    "2Pet.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3435",
+   "surface": "defiled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "molunō",
+   "samples": [
+    "1Cor.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3435",
+   "surface": "defiled themselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "molunō",
+   "samples": [
+    "Rev.14.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3435",
+   "surface": "soiled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "molunō",
+   "samples": [
+    "Rev.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3436",
+   "surface": "defilement",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "defilement",
+   "transliteration": "molusmos",
+   "samples": [
+    "2Cor.7.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4510",
+   "surface": "filthy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "rupoō",
+   "samples": [
+    "Rev.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1351",
+   "surface": "defile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ga.al",
+   "samples": [
+    "Dan.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1351",
+   "surface": "defile himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ga.al",
+   "samples": [
+    "Dan.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1351",
+   "surface": "excluded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ga.al",
+   "samples": [
+    "Ezra.2.62"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1351",
+   "surface": "stained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ga.al",
+   "samples": [
+    "Isa.63.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1351",
+   "surface": "unclean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ga.al",
+   "samples": [
+    "Neh.7.64"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1352",
+   "surface": "desecrated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "defilement",
+   "transliteration": "go.el",
+   "samples": [
+    "Neh.13.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2610",
+   "surface": "defiled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pollute",
+   "transliteration": "cha.neph",
+   "samples": [
+    "Mic.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2610",
+   "surface": "greatly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pollute",
+   "transliteration": "cha.neph",
+   "samples": [
+    "Jer.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2610",
+   "surface": "lies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pollute",
+   "transliteration": "cha.neph",
+   "samples": [
+    "Isa.24.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2610",
+   "surface": "pollute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pollute",
+   "transliteration": "cha.neph",
+   "samples": [
+    "Num.35.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2610",
+   "surface": "pollutes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pollute",
+   "transliteration": "cha.neph",
+   "samples": [
+    "Num.35.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2610",
+   "surface": "seduce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pollute",
+   "transliteration": "cha.neph",
+   "samples": [
+    "Dan.11.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2610",
+   "surface": "ungodly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pollute",
+   "transliteration": "cha.neph",
+   "samples": [
+    "Jer.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2612",
+   "surface": "ungodliness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "profaneness",
+   "transliteration": "cho.neph",
+   "samples": [
+    "Isa.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2613",
+   "surface": "ungodliness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "profaneness",
+   "transliteration": "cha.nup.pah",
+   "samples": [
+    "Jer.23.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "became unclean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Ps.106.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "become",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.11.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "becomes unclean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "declared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.14.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "defiling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.15.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "polluted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "2Chr.36.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "pronounce him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.13.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "remain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.13.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "take uncleanness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.22.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2930A",
+   "surface": "uncleanness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.me",
+   "samples": [
+    "Mic.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2931",
+   "surface": "menstrual impurity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unclean",
+   "transliteration": "ta.me",
+   "samples": [
+    "Ezek.22.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2931",
+   "surface": "unclean thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unclean",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2931",
+   "surface": "uncleanness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unclean",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2931",
+   "surface": "woman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unclean",
+   "transliteration": "ta.me",
+   "samples": [
+    "Lev.15.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2932",
+   "surface": "nothing unclean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uncleanness",
+   "transliteration": "tum.ah",
+   "samples": [
+    "Judg.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2932",
+   "surface": "unclean thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uncleanness",
+   "transliteration": "tum.ah",
+   "samples": [
+    "Lev.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "filth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "2Chr.29.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "filthy thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Lam.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "impure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Ezra.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "time",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Lev.15.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "unclean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Ezek.22.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5079",
+   "surface": "uncleanness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "impurity",
+   "transliteration": "nid.dah",
+   "samples": [
+    "Zech.13.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6292",
+   "surface": "tainted meat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuse",
+   "transliteration": "pig.gul",
+   "samples": [
+    "Isa.65.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8263",
+   "surface": "abomination",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "detestation",
+   "transliteration": "she.qets",
+   "samples": [
+    "Isa.66.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8263",
+   "surface": "loathsome",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "detestation",
+   "transliteration": "she.qets",
+   "samples": [
+    "Ezek.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

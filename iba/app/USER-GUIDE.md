@@ -431,6 +431,43 @@ iba\app\ps\Observation-Enhancer.ps1 -Action Preview|Apply -RuleKey <key>   # app
 - **Corrections to `ib_observation`** happen only by re-running a stage (rule 68). The enhancer is
   for researcher-confirmed rules only.
 
+### 7.1 Surface subgroups (`iba/app/ps/Surface-Map.ps1`)
+
+A cluster's subgroups are groups of (Strong's code, surface) pairs, made per M cluster at the
+clustering stage (behaviour rules B:117, B:118; escalation #2293). Run the steps in this order for
+each cluster:
+
+```powershell
+iba\app\ps\Surface-Map.ps1 -Step Pairs -Cluster M18                 # the pairs file (reads only)
+iba\app\ps\Surface-Map.ps1 -Step Apply -Cluster M18 -File <file>    # the filled file written
+iba\app\ps\Surface-Map.ps1 -Step Tail -Cluster M18 [-Live]          # the rest, by the API
+iba\app\ps\Surface-Map.ps1 -Step Check -Cluster M18                 # the report (reads only)
+```
+
+- **Pairs** writes `outputs/surface-map/<cluster>-pairs-<date>.json` (setting
+  `cluster.surface_map.output_dir`). It lists every pair with its hits, verses, gloss and two
+  sample references, and marks it head or tail. The head is the pairs covering
+  `cluster.surface_map.head_share` (0.8) of the cluster's hits. For M49, M67 and M83 each pair
+  comes pre-filled with the subgroup its code already had.
+- **In the file,** Claude adds the groups (code `<cluster>_<slug>`, label, description, and a kind
+  of `group`, `qualifier` or `not_this_sense`). Every head pair then gets a group and a reason; tail
+  pairs may be left blank. Set `two_sense` to 1 where a pair carries two senses. To move an
+  inherited pair, start its reason with `correction:`.
+- **Apply** refuses the whole file if anything is wrong, and lists every problem. It makes the
+  cluster's anomaly group, `<cluster>_anomaly`, and puts pairs with an empty surface in it.
+- **Tail** sends the pairs still unplaced to the API: code, gloss, surface and one sample verse. It
+  uses the `lexical.llm_*` settings, with `cluster.surface_map.tail_max_output_tokens` as the
+  output ceiling. Without `-Live` it is a preview showing the cost. It refuses while any head pair
+  is unplaced, and refuses a call over `lexical.llm_max_cost_per_batch`.
+- **Check** writes `<cluster>-check-<date>.md`. It flags a group of kind `group` holding more than
+  `cluster.surface_map.max_group_share` (0.3) of the cluster's hits: look at that group, but it is
+  not a forced split. It also lists the cluster's **stale** pairs: pairs whose code has left the
+  cluster, or whose surface no longer occurs. The next Apply soft-deletes them, keeping the reason.
+- **A cluster is not read until it is mapped** (#2294). `Reading.ps1 -Step Open` refuses a reading
+  whose home is an M cluster with any unallocated or stale pair, and its message names the counts
+  and the step to run. `Cluster-Assign.ps1 -Step Validate` counts every M cluster's mapping:
+  stale pairs and partly mapped clusters are findings, while an unmapped cluster is only counted.
+
 ---
 
 ## 8. The inner-being narrative
@@ -531,6 +568,10 @@ iba\app\ps\Reading.ps1 -Step Account -Label anger-bosom
 ```
 
 States: `open` -> `gathered` -> `observed` -> `synergised` -> `narrated` -> `published`.
+
+**Open refuses an unmapped home (#2294).** A reading whose `-Home` is an M cluster with any
+unallocated or stale surface pair is refused, with the counts. Map the cluster first with
+`iba/app/ps/Surface-Map.ps1` (section 7.1).
 
 **What a reading records: findings (#2274).** A finding is one `ib_observation`: its text, meaning,
 implication, basis (stated or read), its kind as tag and, on a party or link finding, its route. Its

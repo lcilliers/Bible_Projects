@@ -1,0 +1,3996 @@
+{
+ "cluster": "M10",
+ "cluster_name": "Violence & Cruelty",
+ "built_at": "2026-10-26T04:18:19Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 243,
+  "head": 73,
+  "tail": 170,
+  "hits": 958,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H4421",
+   "surface": "war",
+   "part": "head",
+   "hits": 130,
+   "verses": 128,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "Exod.1.10",
+    "Judg.18.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "battle",
+   "part": "head",
+   "hits": 128,
+   "verses": 123,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "1Sam.17.1",
+    "1Sam.31.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2555",
+   "surface": "violence",
+   "part": "head",
+   "hits": 51,
+   "verses": 50,
+   "gloss": "violence",
+   "transliteration": "cha.mas",
+   "samples": [
+    "Hab.1.9",
+    "Isa.59.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8045",
+   "surface": "destroy",
+   "part": "head",
+   "hits": 39,
+   "verses": 38,
+   "gloss": "to destroy",
+   "transliteration": "sha.mad",
+   "samples": [
+    "Deut.6.15",
+    "Mic.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8045",
+   "surface": "destroyed",
+   "part": "head",
+   "hits": 39,
+   "verses": 38,
+   "gloss": "to destroy",
+   "transliteration": "sha.mad",
+   "samples": [
+    "2Sam.22.38",
+    "Gen.34.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "desolate",
+   "part": "head",
+   "hits": 30,
+   "verses": 29,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Dan.9.27",
+    "Mic.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "destroy",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "Mark.12.9",
+    "Rom.14.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "cause",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Isa.34.8",
+    "Jer.11.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6184",
+   "surface": "ruthless",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "ruthless",
+   "transliteration": "a.rits",
+   "samples": [
+    "Ezek.32.12",
+    "Isa.29.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7701",
+   "surface": "destruction",
+   "part": "head",
+   "hits": 14,
+   "verses": 13,
+   "gloss": "violence",
+   "transliteration": "shod",
+   "samples": [
+    "Hab.1.3",
+    "Joel.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "lost",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "Matt.10.6",
+    "Matt.15.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "perish",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "Heb.1.11",
+    "Matt.26.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "soldiers",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "Jer.38.4",
+    "Joel.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "strife",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Hab.1.3",
+    "Prov.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "lose",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "Mark.9.41",
+    "Matt.10.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "destroyed",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "Luke.17.29",
+    "Matt.22.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2717B",
+   "surface": "laid waste",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to destroy",
+   "transliteration": "cha.rev",
+   "samples": [
+    "Isa.37.18",
+    "Isa.60.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "loses",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "Luke.15.8",
+    "Matt.10.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1792",
+   "surface": "crushed",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to crush",
+   "transliteration": "da.kha",
+   "samples": [
+    "Isa.53.5",
+    "Ps.89.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "wars",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "2Chr.27.7",
+    "Ps.46.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "perishing",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "2Cor.2.15",
+    "2Cor.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "fighting",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "Josh.8.1",
+    "Josh.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "dispute",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "2Sam.15.2",
+    "Ezek.44.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1792",
+   "surface": "crush",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to crush",
+   "transliteration": "da.kha",
+   "samples": [
+    "Job.6.9",
+    "Lam.3.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4066",
+   "surface": "strife",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "strife",
+   "transliteration": "ma.don",
+   "samples": [
+    "Prov.15.18",
+    "Prov.22.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "fight",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "Judg.20.18",
+    "Judg.20.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "perished",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "1Cor.15.18",
+    "2Pet.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0394",
+   "surface": "cruel",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "cruel",
+   "transliteration": "akh.za.ri",
+   "samples": [
+    "Isa.13.9",
+    "Prov.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2717B",
+   "surface": "waste",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to destroy",
+   "transliteration": "cha.rev",
+   "samples": [
+    "Ezek.6.6",
+    "Isa.34.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "battles",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "1Sam.18.17",
+    "1Sam.25.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "case",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "2Chr.19.10",
+    "Prov.18.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7533",
+   "surface": "crushed",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to crush",
+   "transliteration": "ra.tsats",
+   "samples": [
+    "Deut.28.33",
+    "Hos.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8045",
+   "surface": "destruction",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to destroy",
+   "transliteration": "sha.mad",
+   "samples": [
+    "2Chr.20.23",
+    "Ps.92.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0007",
+   "surface": "destroyed",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to destroy",
+   "transliteration": "a.vad",
+   "samples": [
+    "Dan.2.12",
+    "Dan.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1500",
+   "surface": "robbery",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "violence",
+   "transliteration": "ge.ze.lah",
+   "samples": [
+    "Ezek.18.12",
+    "Ezek.18.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2555",
+   "surface": "violent",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "violence",
+   "transliteration": "cha.mas",
+   "samples": [
+    "Ps.140.1",
+    "Ps.25.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "beat",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "2Chr.34.7",
+    "Mic.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "warriors",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "1Kgs.12.21",
+    "Num.31.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6789",
+   "surface": "destroy",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to destroy",
+   "transliteration": "tsa.mat",
+   "samples": [
+    "Ps.101.5",
+    "Ps.101.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "indictment",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Jer.25.31",
+    "Mic.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "lawsuit",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Exod.23.2",
+    "Lam.3.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7533",
+   "surface": "broken",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to crush",
+   "transliteration": "ra.tsats",
+   "samples": [
+    "2Kgs.18.21",
+    "Isa.36.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7533",
+   "surface": "oppressed",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to crush",
+   "transliteration": "ra.tsats",
+   "samples": [
+    "1Sam.12.3",
+    "1Sam.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "perishes",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "1Pet.1.7",
+    "Jas.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1854",
+   "surface": "crush",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "da.qaq",
+   "samples": [
+    "Isa.28.28",
+    "Isa.41.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2254B",
+   "surface": "destroy",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Isa.13.5",
+    "Isa.54.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2255",
+   "surface": "destroyed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Dan.2.44",
+    "Dan.6.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2555",
+   "surface": "malicious",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "violence",
+   "transliteration": "cha.mas",
+   "samples": [
+    "Deut.19.16",
+    "Ps.35.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "crushed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "2Chr.15.6",
+    "Deut.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4066",
+   "surface": "contention",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strife",
+   "transliteration": "ma.don",
+   "samples": [
+    "Hab.1.3",
+    "Jer.15.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "quarrel",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Isa.58.4",
+    "Prov.26.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7701",
+   "surface": "violence",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "violence",
+   "transliteration": "shod",
+   "samples": [
+    "Prov.21.7",
+    "Prov.24.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "desolated",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Ezek.29.12",
+    "Ezek.30.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "lies desolate",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Lev.26.35",
+    "Lev.26.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "waste",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Hos.2.12",
+    "Jer.10.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0073",
+   "surface": "conflict",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fight",
+   "transliteration": "agōn",
+   "samples": [
+    "1Thess.2.2",
+    "Phil.1.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0073",
+   "surface": "fight",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fight",
+   "transliteration": "agōn",
+   "samples": [
+    "1Tim.6.12",
+    "2Tim.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3039",
+   "surface": "crush",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "likmaō",
+   "samples": [
+    "Luke.20.18",
+    "Matt.21.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5135",
+   "surface": "wounded",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wound",
+   "transliteration": "traumatizō",
+   "samples": [
+    "Acts.19.16",
+    "Luke.20.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5351",
+   "surface": "corrupted",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to destroy",
+   "transliteration": "ftheirō",
+   "samples": [
+    "2Cor.7.2",
+    "Rev.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0007",
+   "surface": "destroy",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "a.vad",
+   "samples": [
+    "Dan.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0393",
+   "surface": "cruel",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "cruel",
+   "transliteration": "akh.zar",
+   "samples": [
+    "Deut.32.33",
+    "Job.30.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1794",
+   "surface": "broken",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "da.khah",
+   "samples": [
+    "Ps.44.19",
+    "Ps.51.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1794",
+   "surface": "crushed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "da.khah",
+   "samples": [
+    "Ps.10.10",
+    "Ps.38.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1854",
+   "surface": "beat",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "da.qaq",
+   "samples": [
+    "2Kgs.23.6",
+    "Mic.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1854",
+   "surface": "crushed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "da.qaq",
+   "samples": [
+    "2Chr.15.16",
+    "2Sam.22.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1854",
+   "surface": "powder",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "da.qaq",
+   "samples": [
+    "2Chr.34.7",
+    "Exod.32.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2254B",
+   "surface": "broken",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Isa.10.27",
+    "Job.17.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2255",
+   "surface": "destroy",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Dan.4.23",
+    "Ezra.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2555",
+   "surface": "wrong",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "violence",
+   "transliteration": "cha.mas",
+   "samples": [
+    "1Chr.12.17",
+    "Gen.16.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2717B",
+   "surface": "desolate",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to destroy",
+   "transliteration": "cha.rev",
+   "samples": [
+    "Jer.2.12",
+    "Jer.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "crush",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "Ps.89.23",
+    "Zech.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "pieces",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "2Kgs.18.4",
+    "Job.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4272",
+   "surface": "crush",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wound",
+   "transliteration": "ma.chats",
+   "samples": [
+    "Deut.33.11",
+    "Num.24.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4272",
+   "surface": "shatter",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wound",
+   "transliteration": "ma.chats",
+   "samples": [
+    "Ps.110.5",
+    "Ps.110.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4272",
+   "surface": "shattered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wound",
+   "transliteration": "ma.chats",
+   "samples": [
+    "Job.26.12",
+    "Judg.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4272",
+   "surface": "strike",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wound",
+   "transliteration": "ma.chats",
+   "samples": [
+    "Ps.68.21",
+    "Ps.68.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4272",
+   "surface": "through",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wound",
+   "transliteration": "ma.chats",
+   "samples": [
+    "2Sam.22.39",
+    "Ps.18.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "attack",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "1Sam.7.10",
+    "2Sam.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "battle line",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "Judg.20.20",
+    "Judg.20.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4683",
+   "surface": "strife",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strife",
+   "transliteration": "mats.tsah",
+   "samples": [
+    "Prov.13.10",
+    "Prov.17.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6184",
+   "surface": "ruthless men",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "ruthless",
+   "transliteration": "a.rits",
+   "samples": [
+    "Ps.54.3",
+    "Ps.86.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6789",
+   "surface": "destroyed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to destroy",
+   "transliteration": "tsa.mat",
+   "samples": [
+    "2Sam.22.41",
+    "Ps.18.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6789",
+   "surface": "end",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to destroy",
+   "transliteration": "tsa.mat",
+   "samples": [
+    "Ps.54.5",
+    "Ps.73.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6789",
+   "surface": "out",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "tsa.mat",
+   "samples": [
+    "Ps.94.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7602B",
+   "surface": "trample",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "sha.aph",
+   "samples": [
+    "Amos.2.7",
+    "Ps.56.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7602B",
+   "surface": "tramples",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to crush",
+   "transliteration": "sha.aph",
+   "samples": [
+    "Ps.56.1",
+    "Ps.57.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7701",
+   "surface": "desolation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "violence",
+   "transliteration": "shod",
+   "samples": [
+    "Isa.59.7",
+    "Jer.48.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7701",
+   "surface": "devastation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "violence",
+   "transliteration": "shod",
+   "samples": [
+    "Isa.51.19",
+    "Isa.60.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "desolation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Ezek.30.14",
+    "Ps.69.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "desolations",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Dan.9.18",
+    "Dan.9.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "devastations",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Isa.61.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "laid waste",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Num.21.30",
+    "Ps.79.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0073",
+   "surface": "race",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fight",
+   "transliteration": "agōn",
+   "samples": [
+    "Heb.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0073",
+   "surface": "struggle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fight",
+   "transliteration": "agōn",
+   "samples": [
+    "Col.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0622",
+   "surface": "death",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "apolluō",
+   "samples": [
+    "Matt.21.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0853",
+   "surface": "destroy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "afanizō",
+   "samples": [
+    "Matt.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0853",
+   "surface": "destroys",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "afanizō",
+   "samples": [
+    "Matt.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0853",
+   "surface": "disfigure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "afanizō",
+   "samples": [
+    "Matt.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0853",
+   "surface": "perish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "afanizō",
+   "samples": [
+    "Acts.13.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0853",
+   "surface": "vanishes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "afanizō",
+   "samples": [
+    "Jas.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1311",
+   "surface": "depraved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "diaftheirō",
+   "samples": [
+    "1Tim.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1311",
+   "surface": "destroyed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "diaftheirō",
+   "samples": [
+    "Rev.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1311",
+   "surface": "destroyers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "diaftheirō",
+   "samples": [
+    "Rev.11.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1311",
+   "surface": "destroying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "diaftheirō",
+   "samples": [
+    "Rev.11.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1311",
+   "surface": "destroys",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "diaftheirō",
+   "samples": [
+    "Luke.12.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1311",
+   "surface": "wasting away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "diaftheirō",
+   "samples": [
+    "2Cor.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2352",
+   "surface": "oppressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "thrauō",
+   "samples": [
+    "Luke.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3645",
+   "surface": "destroyer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "olothreuō",
+   "samples": [
+    "Heb.11.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5351",
+   "surface": "corrupt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "ftheirō",
+   "samples": [
+    "Eph.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5351",
+   "surface": "destroy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "ftheirō",
+   "samples": [
+    "1Cor.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5351",
+   "surface": "destroyed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "ftheirō",
+   "samples": [
+    "Jude.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5351",
+   "surface": "destroys",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "ftheirō",
+   "samples": [
+    "1Cor.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5351",
+   "surface": "led astray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "ftheirō",
+   "samples": [
+    "2Cor.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5351",
+   "surface": "ruins",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "ftheirō",
+   "samples": [
+    "1Cor.15.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0007",
+   "surface": "perish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "a.vad",
+   "samples": [
+    "Jer.10.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0393",
+   "surface": "become cruel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cruel",
+   "transliteration": "akh.zar",
+   "samples": [
+    "Lam.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0393",
+   "surface": "fierce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cruel",
+   "transliteration": "akh.zar",
+   "samples": [
+    "Job.41.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0394",
+   "surface": "cruel man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cruel",
+   "transliteration": "akh.za.ri",
+   "samples": [
+    "Prov.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0394",
+   "surface": "merciless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cruel",
+   "transliteration": "akh.za.ri",
+   "samples": [
+    "Prov.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0394",
+   "surface": "merciless foe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cruel",
+   "transliteration": "akh.za.ri",
+   "samples": [
+    "Jer.30.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0395",
+   "surface": "cruel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cruel",
+   "transliteration": "akh.ze.riy.yut",
+   "samples": [
+    "Prov.27.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1500",
+   "surface": "spoil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "violence",
+   "transliteration": "ge.ze.lah",
+   "samples": [
+    "Isa.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1500",
+   "surface": "took",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "violence",
+   "transliteration": "ge.ze.lah",
+   "samples": [
+    "Lev.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1792",
+   "surface": "contrite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "da.kha",
+   "samples": [
+    "Isa.57.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1792",
+   "surface": "crushing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "da.kha",
+   "samples": [
+    "Isa.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1792",
+   "surface": "humbled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "da.kha",
+   "samples": [
+    "Jer.44.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1792",
+   "surface": "pieces",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "da.kha",
+   "samples": [
+    "Job.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1794",
+   "surface": "contrite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "da.khah",
+   "samples": [
+    "Ps.51.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1795",
+   "surface": "crushed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crushing",
+   "transliteration": "dak.kah",
+   "samples": [
+    "Deut.23.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1854",
+   "surface": "fine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "da.qaq",
+   "samples": [
+    "Deut.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1854",
+   "surface": "made dust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "da.qaq",
+   "samples": [
+    "2Chr.34.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1854",
+   "surface": "reducing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "da.qaq",
+   "samples": [
+    "2Kgs.23.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1854",
+   "surface": "small",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "da.qaq",
+   "samples": [
+    "Exod.30.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2115",
+   "surface": "crush",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "zur",
+   "samples": [
+    "Job.39.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2115",
+   "surface": "pressed out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "zur",
+   "samples": [
+    "Isa.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2115",
+   "surface": "squeezed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "zur",
+   "samples": [
+    "Judg.6.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2254B",
+   "surface": "acted very",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Neh.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2254B",
+   "surface": "corruptly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Neh.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2254B",
+   "surface": "destroys",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Mic.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2254B",
+   "surface": "himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Prov.13.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2254B",
+   "surface": "offend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Job.34.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2254B",
+   "surface": "ruin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Isa.32.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2254B",
+   "surface": "spoil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Song.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2255",
+   "surface": "harmed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.val",
+   "samples": [
+    "Dan.6.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2717B",
+   "surface": "laid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.rev",
+   "samples": [
+    "Zeph.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2717B",
+   "surface": "ravager",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.rev",
+   "samples": [
+    "Judg.16.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2717B",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "cha.rev",
+   "samples": [
+    "Isa.60.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "battered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "Isa.24.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "beaten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "Mic.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "beaten down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "Jer.46.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "Deut.1.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "pursued",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "Num.14.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3807",
+   "surface": "smashed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ka.tat",
+   "samples": [
+    "Isa.30.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4066",
+   "surface": "quarreling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "ma.don",
+   "samples": [
+    "Prov.26.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4090",
+   "surface": "discord",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "me.dan",
+   "samples": [
+    "Prov.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4090",
+   "surface": "strife",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "me.dan",
+   "samples": [
+    "Prov.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4272",
+   "surface": "crushed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wound",
+   "transliteration": "ma.chats",
+   "samples": [
+    "Hab.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4272",
+   "surface": "pierce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wound",
+   "transliteration": "ma.chats",
+   "samples": [
+    "Num.24.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4272",
+   "surface": "shatters",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wound",
+   "transliteration": "ma.chats",
+   "samples": [
+    "Job.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4272",
+   "surface": "wound",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wound",
+   "transliteration": "ma.chats",
+   "samples": [
+    "Deut.32.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4277",
+   "surface": "crushed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "ma.chaq",
+   "samples": [
+    "Judg.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "army",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "1Sam.13.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "array",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "1Chr.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "battle array",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "1Chr.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "battling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "Isa.30.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "combat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "2Chr.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "experienced warriors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "1Chr.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "line of battle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "2Chr.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "march",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "Isa.27.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "soldier",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "Isa.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "storm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "2Kgs.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4421",
+   "surface": "warfare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "battle",
+   "transliteration": "mil.cha.mah",
+   "samples": [
+    "1Kgs.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4560",
+   "surface": "act",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to commit",
+   "transliteration": "ma.sar",
+   "samples": [
+    "Num.31.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4560",
+   "surface": "provided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to commit",
+   "transliteration": "ma.sar",
+   "samples": [
+    "Num.31.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4683",
+   "surface": "fight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "mats.tsah",
+   "samples": [
+    "Isa.58.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4695",
+   "surface": "contend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "mats.tsut",
+   "samples": [
+    "Isa.41.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5142",
+   "surface": "hurt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer injury",
+   "transliteration": "ne.zaq",
+   "samples": [
+    "Ezra.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5142",
+   "surface": "hurtful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer injury",
+   "transliteration": "ne.zaq",
+   "samples": [
+    "Ezra.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5142",
+   "surface": "impaired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer injury",
+   "transliteration": "ne.zaq",
+   "samples": [
+    "Ezra.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5142",
+   "surface": "loss",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer injury",
+   "transliteration": "ne.zaq",
+   "samples": [
+    "Dan.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5642B",
+   "surface": "destroyed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "se.tar",
+   "samples": [
+    "Ezra.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6094",
+   "surface": "for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injury",
+   "transliteration": "ats.tse.vet",
+   "samples": [
+    "Job.9.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6094",
+   "surface": "sorrow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injury",
+   "transliteration": "ats.tse.vet",
+   "samples": [
+    "Prov.15.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6094",
+   "surface": "sorrows",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injury",
+   "transliteration": "ats.tse.vet",
+   "samples": [
+    "Ps.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6094",
+   "surface": "trouble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injury",
+   "transliteration": "ats.tse.vet",
+   "samples": [
+    "Prov.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6094",
+   "surface": "wounds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injury",
+   "transliteration": "ats.tse.vet",
+   "samples": [
+    "Ps.147.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6184",
+   "surface": "men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruthless",
+   "transliteration": "a.rits",
+   "samples": [
+    "Prov.11.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6184",
+   "surface": "oppressors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruthless",
+   "transliteration": "a.rits",
+   "samples": [
+    "Job.27.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6184",
+   "surface": "tyrant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruthless",
+   "transliteration": "a.rits",
+   "samples": [
+    "Isa.49.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6184",
+   "surface": "warrior",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruthless",
+   "transliteration": "a.rits",
+   "samples": [
+    "Jer.20.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6330",
+   "surface": "grief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "staggering",
+   "transliteration": "pu.qah",
+   "samples": [
+    "1Sam.25.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6481",
+   "surface": "bruised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wound",
+   "transliteration": "pa.tsa",
+   "samples": [
+    "Song.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6481",
+   "surface": "crushed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wound",
+   "transliteration": "pa.tsa",
+   "samples": [
+    "Deut.23.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6481",
+   "surface": "wounded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wound",
+   "transliteration": "pa.tsa",
+   "samples": [
+    "1Kgs.20.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6789",
+   "surface": "consumes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "tsa.mat",
+   "samples": [
+    "Ps.119.139"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6789",
+   "surface": "cut off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "tsa.mat",
+   "samples": [
+    "Ps.143.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6789",
+   "surface": "disappear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "tsa.mat",
+   "samples": [
+    "Job.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6789",
+   "surface": "flung",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "tsa.mat",
+   "samples": [
+    "Lam.3.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6789",
+   "surface": "silenced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "tsa.mat",
+   "samples": [
+    "Job.23.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6979C",
+   "surface": "battering down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "qa.rar",
+   "samples": [
+    "Isa.22.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6979C",
+   "surface": "break down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "qa.rar",
+   "samples": [
+    "Num.24.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "adversary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Job.31.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "complaint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Job.31.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "contention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Prov.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "controversy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Hos.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "disputed cases",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "2Chr.19.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "fight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Prov.18.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "pleadings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Job.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "quarreling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Exod.17.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "received",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "1Sam.25.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7379",
+   "surface": "strive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "riv",
+   "samples": [
+    "Isa.41.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7533",
+   "surface": "broke",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ra.tsats",
+   "samples": [
+    "Ezek.29.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7533",
+   "surface": "bruised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ra.tsats",
+   "samples": [
+    "Isa.42.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7533",
+   "surface": "crush",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ra.tsats",
+   "samples": [
+    "Amos.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7533",
+   "surface": "discouraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ra.tsats",
+   "samples": [
+    "Isa.42.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7533",
+   "surface": "inflicted cruelties",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ra.tsats",
+   "samples": [
+    "2Chr.16.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7533",
+   "surface": "struggled together",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "ra.tsats",
+   "samples": [
+    "Gen.25.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7602B",
+   "surface": "crushed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "sha.aph",
+   "samples": [
+    "Ezek.36.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7602B",
+   "surface": "trample on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crush",
+   "transliteration": "sha.aph",
+   "samples": [
+    "Amos.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7701",
+   "surface": "destroyed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "violence",
+   "transliteration": "shod",
+   "samples": [
+    "Hos.10.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7701",
+   "surface": "oppression",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "violence",
+   "transliteration": "shod",
+   "samples": [
+    "Ezek.45.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7701",
+   "surface": "plundered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "violence",
+   "transliteration": "shod",
+   "samples": [
+    "Ps.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7701",
+   "surface": "robbery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "violence",
+   "transliteration": "shod",
+   "samples": [
+    "Amos.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8045",
+   "surface": "demolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "sha.mad",
+   "samples": [
+    "Num.33.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8045",
+   "surface": "destroying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "sha.mad",
+   "samples": [
+    "Deut.28.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8045",
+   "surface": "not utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "sha.mad",
+   "samples": [
+    "Amos.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8045",
+   "surface": "out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "sha.mad",
+   "samples": [
+    "2Kgs.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8045",
+   "surface": "perish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "sha.mad",
+   "samples": [
+    "Ezek.32.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8045",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "sha.mad",
+   "samples": [
+    "Deut.4.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8046",
+   "surface": "consumed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to destroy",
+   "transliteration": "she.mad",
+   "samples": [
+    "Dan.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "bring desolation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Ezek.30.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "deserted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Lev.26.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "desolate places",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Isa.49.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "desolator",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Dan.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "destroy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Eccl.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "devastate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Lev.26.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "might devastate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Ezek.20.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "perish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Lam.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "ruined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Amos.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8074G",
+   "surface": "ruins",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be desolate: destroyed",
+   "transliteration": "sha.mem",
+   "samples": [
+    "Zeph.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8409",
+   "surface": "hostility",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strife",
+   "transliteration": "tig.rah",
+   "samples": [
+    "Ps.39.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8428",
+   "surface": "provoked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wound",
+   "transliteration": "ta.vah",
+   "samples": [
+    "Ps.78.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

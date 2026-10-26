@@ -1,0 +1,2904 @@
+{
+ "cluster": "M46",
+ "cluster_name": "Wealth & Riches",
+ "built_at": "2026-10-26T04:23:05Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 176,
+  "head": 51,
+  "tail": 125,
+  "hits": 734,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H5159",
+   "surface": "inheritance",
+   "part": "head",
+   "hits": 156,
+   "verses": 127,
+   "gloss": "inheritance",
+   "transliteration": "na.cha.lah",
+   "samples": [
+    "Jer.16.18",
+    "Judg.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5159",
+   "surface": "heritage",
+   "part": "head",
+   "hits": 45,
+   "verses": 44,
+   "gloss": "inheritance",
+   "transliteration": "na.cha.lah",
+   "samples": [
+    "1Kgs.8.51",
+    "Jer.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6239",
+   "surface": "riches",
+   "part": "head",
+   "hits": 30,
+   "verses": 30,
+   "gloss": "riches",
+   "transliteration": "o.sher",
+   "samples": [
+    "Prov.11.28",
+    "Ps.52.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "abundance",
+   "part": "head",
+   "hits": 30,
+   "verses": 29,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "2Chr.18.2",
+    "Ps.52.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428H",
+   "surface": "wealth",
+   "part": "head",
+   "hits": 24,
+   "verses": 23,
+   "gloss": "strength: rich",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Gen.34.29",
+    "Obad.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4145",
+   "surface": "rich",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "rich",
+   "transliteration": "plousios",
+   "samples": [
+    "Jas.1.10",
+    "Rev.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4149",
+   "surface": "riches",
+   "part": "head",
+   "hits": 18,
+   "verses": 17,
+   "gloss": "riches",
+   "transliteration": "ploutos",
+   "samples": [
+    "Eph.2.7",
+    "Rom.11.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "great",
+   "part": "head",
+   "hits": 18,
+   "verses": 17,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "1Sam.1.16",
+    "Ezek.27.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1952",
+   "surface": "wealth",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "substance",
+   "transliteration": "hon",
+   "samples": [
+    "Ezek.27.18",
+    "Prov.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6223",
+   "surface": "rich",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "rich",
+   "transliteration": "a.shir",
+   "samples": [
+    "Prov.14.20",
+    "Ps.49.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "many",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Isa.24.22",
+    "Ps.94.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "multitude",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Lam.1.5",
+    "Prov.14.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "prosper",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Dan.11.36",
+    "Jer.2.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "succeed",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "1Chr.22.11",
+    "Jer.32.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6238",
+   "surface": "rich",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to enrich",
+   "transliteration": "a.shar",
+   "samples": [
+    "Prov.13.7",
+    "Prov.21.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0694",
+   "surface": "money",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "money",
+   "transliteration": "argurion",
+   "samples": [
+    "Luke.9.3",
+    "Matt.25.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4147",
+   "surface": "rich",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "be rich",
+   "transliteration": "plouteō",
+   "samples": [
+    "1Cor.4.8",
+    "Rev.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "abundant",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Ezek.27.18",
+    "Job.37.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "much",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "2Chr.27.3",
+    "Eccl.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "prospered",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "2Chr.32.30",
+    "Gen.24.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "greatness",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Exod.15.7",
+    "Job.23.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7600",
+   "surface": "ease",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "secure",
+   "transliteration": "sha.a.nan",
+   "samples": [
+    "Job.12.5",
+    "Zech.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8082",
+   "surface": "rich",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "rich",
+   "transliteration": "sha.men",
+   "samples": [
+    "Ezek.34.14",
+    "Neh.9.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0694",
+   "surface": "pieces of silver",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "money",
+   "transliteration": "argurion",
+   "samples": [
+    "Acts.19.19",
+    "Matt.27.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0694",
+   "surface": "silver",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "money",
+   "transliteration": "argurion",
+   "samples": [
+    "Acts.3.6",
+    "Acts.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428H",
+   "surface": "riches",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "strength: rich",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Isa.30.6",
+    "Job.20.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6239",
+   "surface": "wealth",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "riches",
+   "transliteration": "o.sher",
+   "samples": [
+    "Eccl.5.19",
+    "Prov.14.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4145",
+   "surface": "rich person",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "rich",
+   "transliteration": "plousios",
+   "samples": [
+    "Luke.18.25",
+    "Matt.19.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4146",
+   "surface": "richly",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "richly",
+   "transliteration": "plousiōs",
+   "samples": [
+    "1Tim.6.17",
+    "Col.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4149",
+   "surface": "wealth",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "riches",
+   "transliteration": "ploutos",
+   "samples": [
+    "2Cor.8.2",
+    "Rev.18.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5536",
+   "surface": "money",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "money",
+   "transliteration": "chrēma",
+   "samples": [
+    "Acts.24.26",
+    "Acts.8.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1952",
+   "surface": "riches",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "substance",
+   "transliteration": "hon",
+   "samples": [
+    "Prov.11.4",
+    "Ps.119.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "triumph",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "1Kgs.22.12",
+    "2Chr.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5233",
+   "surface": "possessions",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "wealth",
+   "transliteration": "ne.khes",
+   "samples": [
+    "2Chr.1.12",
+    "Eccl.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6223",
+   "surface": "rich man",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "rich",
+   "transliteration": "a.shir",
+   "samples": [
+    "Jer.9.23",
+    "Prov.28.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "thrive",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Ezek.17.10",
+    "Ezek.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "great numbers",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "2Chr.15.9",
+    "2Chr.30.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "great quantities",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "1Chr.22.4",
+    "1Chr.29.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "number",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Esth.5.11",
+    "Josh.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "numerous",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Deut.1.10",
+    "Deut.28.62"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "plentiful",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "1Kgs.10.27",
+    "2Chr.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0019",
+   "surface": "good",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "goodness",
+   "transliteration": "agathōsunē",
+   "samples": [
+    "2Thess.1.11",
+    "Eph.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0019",
+   "surface": "goodness",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "goodness",
+   "transliteration": "agathōsunē",
+   "samples": [
+    "Gal.5.22",
+    "Rom.15.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3126",
+   "surface": "money",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wealth",
+   "transliteration": "mammōnas",
+   "samples": [
+    "Luke.16.13",
+    "Matt.6.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3126",
+   "surface": "wealth",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wealth",
+   "transliteration": "mammōnas",
+   "samples": [
+    "Luke.16.11",
+    "Luke.16.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4145",
+   "surface": "rich man",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "rich",
+   "transliteration": "plousios",
+   "samples": [
+    "Jas.1.11",
+    "Luke.16.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4148",
+   "surface": "enriched",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to enrich",
+   "transliteration": "ploutizō",
+   "samples": [
+    "1Cor.1.5",
+    "2Cor.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5366",
+   "surface": "money",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "money-loving",
+   "transliteration": "filarguros",
+   "samples": [
+    "2Tim.3.2",
+    "Luke.16.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5536",
+   "surface": "wealth",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "money",
+   "transliteration": "chrēma",
+   "samples": [
+    "Luke.18.24",
+    "Mark.10.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1878",
+   "surface": "ashes",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prosper",
+   "transliteration": "da.shen",
+   "samples": [
+    "Exod.27.3",
+    "Num.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1878",
+   "surface": "enriched",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prosper",
+   "transliteration": "da.shen",
+   "samples": [
+    "Prov.11.25",
+    "Prov.28.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1878",
+   "surface": "gorged",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prosper",
+   "transliteration": "da.shen",
+   "samples": [
+    "Isa.34.6",
+    "Isa.34.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1952",
+   "surface": "enough",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "substance",
+   "transliteration": "hon",
+   "samples": [
+    "Prov.30.15",
+    "Prov.30.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1952",
+   "surface": "goods",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "substance",
+   "transliteration": "hon",
+   "samples": [
+    "Prov.1.13",
+    "Prov.6.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428H",
+   "surface": "goods",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength: rich",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Num.31.9",
+    "Zeph.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428H",
+   "surface": "retinue",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength: rich",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Kgs.10.2",
+    "2Chr.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2633",
+   "surface": "treasure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wealth",
+   "transliteration": "cho.sen",
+   "samples": [
+    "Ezek.22.25",
+    "Prov.15.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5159",
+   "surface": "inheritances",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "inheritance",
+   "transliteration": "na.cha.lah",
+   "samples": [
+    "Josh.18.4",
+    "Josh.19.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5233",
+   "surface": "wealth",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wealth",
+   "transliteration": "ne.khes",
+   "samples": [
+    "2Chr.1.11",
+    "Josh.22.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6223",
+   "surface": "rich man’s",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "rich",
+   "transliteration": "a.shir",
+   "samples": [
+    "Prov.10.15",
+    "Prov.18.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6238",
+   "surface": "enrich",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to enrich",
+   "transliteration": "a.shar",
+   "samples": [
+    "1Sam.17.25",
+    "Ps.65.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "good",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Jer.13.10",
+    "Jer.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "prospers",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Ps.1.3",
+    "Ps.37.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "abundantly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "2Chr.31.5",
+    "Gen.30.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "great quantity",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "1Chr.22.5",
+    "2Chr.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "mass",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Ezek.19.11",
+    "Ezek.31.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "plenty",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "2Chr.31.10",
+    "Gen.27.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "quantities",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "1Chr.22.3",
+    "2Chr.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7600",
+   "surface": "complacency",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "secure",
+   "transliteration": "sha.a.nan",
+   "samples": [
+    "2Kgs.19.28",
+    "Isa.37.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8080",
+   "surface": "grew fat",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to grow fat",
+   "transliteration": "sha.men",
+   "samples": [
+    "Deut.32.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8588",
+   "surface": "delight",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "luxury",
+   "transliteration": "ta.a.nug",
+   "samples": [
+    "Eccl.2.8",
+    "Mic.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0842",
+   "surface": "content",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "self-sufficient",
+   "transliteration": "autarkēs",
+   "samples": [
+    "Phil.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2141",
+   "surface": "ability",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prosperous",
+   "transliteration": "euporeō",
+   "samples": [
+    "Acts.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2142",
+   "surface": "wealth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prosperity",
+   "transliteration": "euporia",
+   "samples": [
+    "Acts.19.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3045",
+   "surface": "delicacies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rich",
+   "transliteration": "liparos",
+   "samples": [
+    "Rev.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4145",
+   "surface": "rich man’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rich",
+   "transliteration": "plousios",
+   "samples": [
+    "Luke.16.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4147",
+   "surface": "gained wealth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be rich",
+   "transliteration": "plouteō",
+   "samples": [
+    "Rev.18.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4147",
+   "surface": "prospered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be rich",
+   "transliteration": "plouteō",
+   "samples": [
+    "Rev.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4147",
+   "surface": "riches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be rich",
+   "transliteration": "plouteō",
+   "samples": [
+    "Rom.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4148",
+   "surface": "rich",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrich",
+   "transliteration": "ploutizō",
+   "samples": [
+    "2Cor.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5094",
+   "surface": "wealth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wealth",
+   "transliteration": "timiotēs",
+   "samples": [
+    "Rev.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1878",
+   "surface": "anoint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "da.shen",
+   "samples": [
+    "Ps.23.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1878",
+   "surface": "favor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "da.shen",
+   "samples": [
+    "Ps.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1878",
+   "surface": "grown fat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "da.shen",
+   "samples": [
+    "Deut.31.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1878",
+   "surface": "refreshes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "da.shen",
+   "samples": [
+    "Prov.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1878",
+   "surface": "richly supplied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "da.shen",
+   "samples": [
+    "Prov.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1952",
+   "surface": "trifle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "substance",
+   "transliteration": "hon",
+   "samples": [
+    "Ps.44.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1991",
+   "surface": "wealth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wealth",
+   "transliteration": "hem",
+   "samples": [
+    "Ezek.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428H",
+   "surface": "profit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: rich",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Job.20.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428H",
+   "surface": "substance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: rich",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Deut.33.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428H",
+   "surface": "wealthy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: rich",
+   "transliteration": "cha.yil",
+   "samples": [
+    "2Kgs.15.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428H",
+   "surface": "yield",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: rich",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Joel.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2630",
+   "surface": "hoarded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hoard",
+   "transliteration": "cha.san",
+   "samples": [
+    "Isa.23.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2633",
+   "surface": "abundance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wealth",
+   "transliteration": "cho.sen",
+   "samples": [
+    "Isa.33.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2633",
+   "surface": "riches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wealth",
+   "transliteration": "cho.sen",
+   "samples": [
+    "Prov.27.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2633",
+   "surface": "wealth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wealth",
+   "transliteration": "cho.sen",
+   "samples": [
+    "Jer.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3502",
+   "surface": "abundance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "yit.rah",
+   "samples": [
+    "Isa.15.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3502",
+   "surface": "riches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "yit.rah",
+   "samples": [
+    "Jer.48.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3520B",
+   "surface": "goods",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "riches",
+   "transliteration": "ke.vud.dah",
+   "samples": [
+    "Judg.18.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3574",
+   "surface": "prosperity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prosperity",
+   "transliteration": "ko.sha.rah",
+   "samples": [
+    "Ps.68.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4766",
+   "surface": "abundance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "mar.veh",
+   "samples": [
+    "Isa.33.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4766",
+   "surface": "increase",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "mar.veh",
+   "samples": [
+    "Isa.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4924B",
+   "surface": "fat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fatness",
+   "transliteration": "mish.man",
+   "samples": [
+    "Isa.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4924B",
+   "surface": "richest parts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fatness",
+   "transliteration": "mish.man",
+   "samples": [
+    "Dan.11.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4924B",
+   "surface": "stout",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fatness",
+   "transliteration": "mish.man",
+   "samples": [
+    "Isa.10.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4924B",
+   "surface": "strongest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fatness",
+   "transliteration": "mish.man",
+   "samples": [
+    "Ps.78.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5159",
+   "surface": "heritages",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "inheritance",
+   "transliteration": "na.cha.lah",
+   "samples": [
+    "Isa.49.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5159",
+   "surface": "inherited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "inheritance",
+   "transliteration": "na.cha.lah",
+   "samples": [
+    "Prov.19.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5159",
+   "surface": "own",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "inheritance",
+   "transliteration": "na.cha.lah",
+   "samples": [
+    "Exod.15.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5159",
+   "surface": "possession",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "inheritance",
+   "transliteration": "na.cha.lah",
+   "samples": [
+    "Ps.78.55"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5232",
+   "surface": "goods",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wealth",
+   "transliteration": "ne.khas",
+   "samples": [
+    "Ezra.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5232",
+   "surface": "revenue",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wealth",
+   "transliteration": "ne.khas",
+   "samples": [
+    "Ezra.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5727",
+   "surface": "delighted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to luxuriate",
+   "transliteration": "a.dan",
+   "samples": [
+    "Neh.9.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6223",
+   "surface": "men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rich",
+   "transliteration": "a.shir",
+   "samples": [
+    "Mic.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6223",
+   "surface": "richest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rich",
+   "transliteration": "a.shir",
+   "samples": [
+    "Ps.45.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6238",
+   "surface": "acquire wealth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrich",
+   "transliteration": "a.shar",
+   "samples": [
+    "Prov.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6238",
+   "surface": "enriched",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrich",
+   "transliteration": "a.shar",
+   "samples": [
+    "Ezek.27.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6238",
+   "surface": "makes rich",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrich",
+   "transliteration": "a.shar",
+   "samples": [
+    "1Sam.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6238",
+   "surface": "richer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrich",
+   "transliteration": "a.shar",
+   "samples": [
+    "Dan.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6239",
+   "surface": "be far",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "riches",
+   "transliteration": "o.sher",
+   "samples": [
+    "Dan.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6239",
+   "surface": "possessions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "riches",
+   "transliteration": "o.sher",
+   "samples": [
+    "2Chr.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "advanced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Ezek.16.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "avail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Dan.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "cannot prosper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "2Chr.24.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "cannot succeed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "2Chr.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "give success",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Neh.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "prospering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Gen.24.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "prosperous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Josh.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "success",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Ps.118.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "successful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Gen.39.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "successfully accomplished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "2Chr.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "useful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Ezek.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6743B",
+   "surface": "victoriously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tsa.le.ach",
+   "samples": [
+    "Ps.45.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6744",
+   "surface": "prospered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tse.lach",
+   "samples": [
+    "Ezra.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6744",
+   "surface": "prospers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "tse.lach",
+   "samples": [
+    "Ezra.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "abound",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Ps.72.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "abundant provisions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "1Chr.12.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "and",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "1Chr.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "chariots",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "2Kgs.19.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "common sort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Ezek.23.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "countless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Nah.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "excellent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Ps.150.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "for him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Hos.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "great number",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "2Chr.29.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "greatly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "1Chr.4.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "hard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Lam.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "hosts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Nah.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "huge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "2Chr.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "increase",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Eccl.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "increased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Hos.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "length",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Isa.57.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Josh.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "made all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Job.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "numbered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "1Kgs.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "often",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "2Chr.30.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "plentifully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Job.26.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7230",
+   "surface": "strife",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abundance",
+   "transliteration": "rov",
+   "samples": [
+    "Job.33.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7600",
+   "surface": "quiet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "secure",
+   "transliteration": "sha.a.nan",
+   "samples": [
+    "Isa.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7600",
+   "surface": "untroubled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "secure",
+   "transliteration": "sha.a.nan",
+   "samples": [
+    "Isa.33.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7951",
+   "surface": "ease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "sha.lah",
+   "samples": [
+    "Job.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7951",
+   "surface": "prosper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "sha.lah",
+   "samples": [
+    "Lam.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7951",
+   "surface": "secure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "sha.lah",
+   "samples": [
+    "Ps.122.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7951",
+   "surface": "thrive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "sha.lah",
+   "samples": [
+    "Jer.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7951",
+   "surface": "who",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prosper",
+   "transliteration": "sha.lah",
+   "samples": [
+    "Job.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7959",
+   "surface": "prosperity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prosperity",
+   "transliteration": "sha.lu",
+   "samples": [
+    "Ps.30.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8080",
+   "surface": "became fat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow fat",
+   "transliteration": "sha.men",
+   "samples": [
+    "Neh.9.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8080",
+   "surface": "dull",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow fat",
+   "transliteration": "sha.men",
+   "samples": [
+    "Isa.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8080",
+   "surface": "grown fat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow fat",
+   "transliteration": "sha.men",
+   "samples": [
+    "Jer.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8082",
+   "surface": "fat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rich",
+   "transliteration": "sha.men",
+   "samples": [
+    "Ezek.34.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8082",
+   "surface": "luxury",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rich",
+   "transliteration": "sha.men",
+   "samples": [
+    "Hab.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8082",
+   "surface": "plenteous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rich",
+   "transliteration": "sha.men",
+   "samples": [
+    "Isa.30.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8082",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rich",
+   "transliteration": "sha.men",
+   "samples": [
+    "Judg.3.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8588",
+   "surface": "delightful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "luxury",
+   "transliteration": "ta.a.nug",
+   "samples": [
+    "Mic.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8588",
+   "surface": "delights",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "luxury",
+   "transliteration": "ta.a.nug",
+   "samples": [
+    "Song.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8588",
+   "surface": "luxury",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "luxury",
+   "transliteration": "ta.a.nug",
+   "samples": [
+    "Prov.19.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8667",
+   "surface": "security",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "te.su.met",
+   "samples": [
+    "Lev.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

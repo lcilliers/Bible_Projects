@@ -1,0 +1,1038 @@
+{
+ "cluster": "M37",
+ "cluster_name": "Firstborn & Foreknowledge",
+ "built_at": "2026-10-26T04:22:01Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 62,
+  "head": 21,
+  "tail": 41,
+  "hits": 248,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H1060",
+   "surface": "firstborn",
+   "part": "head",
+   "hits": 101,
+   "verses": 79,
+   "gloss": "firstborn",
+   "transliteration": "be.khor",
+   "samples": [
+    "1Chr.8.1",
+    "Deut.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122H",
+   "surface": "against",
+   "part": "head",
+   "hits": 32,
+   "verses": 32,
+   "gloss": "to encounter: toward",
+   "transliteration": "qa.ra",
+   "samples": [
+    "1Chr.19.17",
+    "Deut.1.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4416",
+   "surface": "firstborn",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "firstborn",
+   "transliteration": "prōtotokos",
+   "samples": [
+    "Luke.2.7",
+    "Rev.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1067",
+   "surface": "firstborn",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "firstborn",
+   "transliteration": "be.khi.rah",
+   "samples": [
+    "Gen.19.33",
+    "Gen.19.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7123",
+   "surface": "read",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to read",
+   "transliteration": "qe.ra",
+   "samples": [
+    "Dan.5.16",
+    "Dan.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4779",
+   "surface": "called together",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to call together",
+   "transliteration": "sunkaleō",
+   "samples": [
+    "Acts.10.24",
+    "Acts.28.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6363A",
+   "surface": "firstborn",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "firstborn",
+   "transliteration": "pe.ter",
+   "samples": [
+    "Exod.13.13",
+    "Exod.34.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564H",
+   "surface": "named",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to call: name",
+   "transliteration": "kaleō",
+   "samples": [
+    "Heb.11.18",
+    "Rom.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122I",
+   "surface": "happened",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to encounter: chanced",
+   "transliteration": "qa.ra",
+   "samples": [
+    "2Sam.20.1",
+    "Jer.44.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2770",
+   "surface": "made",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to gain",
+   "transliteration": "kerdainō",
+   "samples": [
+    "Matt.25.17",
+    "Matt.25.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2770",
+   "surface": "might win",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to gain",
+   "transliteration": "kerdainō",
+   "samples": [
+    "1Cor.9.21",
+    "1Cor.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3343",
+   "surface": "sent",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to summon",
+   "transliteration": "metapempō",
+   "samples": [
+    "Acts.10.29",
+    "Acts.24.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4779",
+   "surface": "together",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to call together",
+   "transliteration": "sunkaleō",
+   "samples": [
+    "Luke.15.6",
+    "Luke.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1060",
+   "surface": "oldest",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "firstborn",
+   "transliteration": "be.khor",
+   "samples": [
+    "2Kgs.3.27",
+    "Job.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2770",
+   "surface": "gain",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to gain",
+   "transliteration": "kerdainō",
+   "samples": [
+    "Mark.8.36",
+    "Phil.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2770",
+   "surface": "gains",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to gain",
+   "transliteration": "kerdainō",
+   "samples": [
+    "Luke.9.25",
+    "Matt.16.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2770",
+   "surface": "win",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to gain",
+   "transliteration": "kerdainō",
+   "samples": [
+    "1Cor.9.19",
+    "1Cor.9.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3343",
+   "surface": "bring",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to summon",
+   "transliteration": "metapempō",
+   "samples": [
+    "Acts.10.5",
+    "Acts.11.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4268",
+   "surface": "foreknowledge",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "foreknowledge",
+   "transliteration": "prognōsis",
+   "samples": [
+    "1Pet.1.2",
+    "Acts.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1069",
+   "surface": "firstborn",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be/bear firstborn",
+   "transliteration": "ba.khar",
+   "samples": [
+    "Deut.21.16",
+    "Lev.27.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6363A",
+   "surface": "open",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "firstborn",
+   "transliteration": "pe.ter",
+   "samples": [
+    "Exod.13.2",
+    "Exod.34.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6363A",
+   "surface": "opens",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "firstborn",
+   "transliteration": "pe.ter",
+   "samples": [
+    "Num.18.15",
+    "Num.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122H",
+   "surface": "came",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to encounter: toward",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Job.4.14",
+    "Judg.15.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122H",
+   "surface": "toward",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to encounter: toward",
+   "transliteration": "qa.ra",
+   "samples": [
+    "1Sam.25.20",
+    "1Sam.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122I",
+   "surface": "come upon",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to encounter: chanced",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jer.13.22",
+    "Jer.32.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122I",
+   "surface": "happen",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to encounter: chanced",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Gen.42.38",
+    "Gen.49.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7123",
+   "surface": "called",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to read",
+   "transliteration": "qe.ra",
+   "samples": [
+    "Dan.5.12",
+    "Dan.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7123",
+   "surface": "proclaimed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to read",
+   "transliteration": "qe.ra",
+   "samples": [
+    "Dan.3.4",
+    "Dan.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1951",
+   "surface": "called",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call/choose",
+   "transliteration": "epilegō",
+   "samples": [
+    "John.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1951",
+   "surface": "chose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call/choose",
+   "transliteration": "epilegō",
+   "samples": [
+    "Acts.15.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564H",
+   "surface": "called",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: name",
+   "transliteration": "kaleō",
+   "samples": [
+    "Luke.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564H",
+   "surface": "given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: name",
+   "transliteration": "kaleō",
+   "samples": [
+    "Luke.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564H",
+   "surface": "known as",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: name",
+   "transliteration": "kaleō",
+   "samples": [
+    "Acts.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2770",
+   "surface": "gained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "kerdainō",
+   "samples": [
+    "Matt.18.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2770",
+   "surface": "incurred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "kerdainō",
+   "samples": [
+    "Acts.27.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2770",
+   "surface": "profit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "kerdainō",
+   "samples": [
+    "Jas.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2770",
+   "surface": "won",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "kerdainō",
+   "samples": [
+    "1Pet.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3333",
+   "surface": "ask",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to summon",
+   "transliteration": "metakaleō",
+   "samples": [
+    "Acts.10.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3333",
+   "surface": "called",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to summon",
+   "transliteration": "metakaleō",
+   "samples": [
+    "Acts.20.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3333",
+   "surface": "summoned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to summon",
+   "transliteration": "metakaleō",
+   "samples": [
+    "Acts.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3333",
+   "surface": "will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to summon",
+   "transliteration": "metakaleō",
+   "samples": [
+    "Acts.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3343",
+   "surface": "send",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to summon",
+   "transliteration": "metapempō",
+   "samples": [
+    "Acts.10.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3343",
+   "surface": "sent for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to summon",
+   "transliteration": "metapempō",
+   "samples": [
+    "Acts.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3343",
+   "surface": "summon",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to summon",
+   "transliteration": "metapempō",
+   "samples": [
+    "Acts.25.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4255",
+   "surface": "decided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to predetermine",
+   "transliteration": "proaireō",
+   "samples": [
+    "2Cor.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4384",
+   "surface": "allotted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to predetermine",
+   "transliteration": "protassō",
+   "samples": [
+    "Acts.17.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4416",
+   "surface": "son",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firstborn",
+   "transliteration": "prōtotokos",
+   "samples": [
+    "Matt.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1060",
+   "surface": "first son",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firstborn",
+   "transliteration": "be.khor",
+   "samples": [
+    "Deut.25.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1069",
+   "surface": "first child",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be/bear firstborn",
+   "transliteration": "ba.khar",
+   "samples": [
+    "Jer.4.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1069",
+   "surface": "fresh fruit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be/bear firstborn",
+   "transliteration": "ba.khar",
+   "samples": [
+    "Ezek.47.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6363A",
+   "surface": "first open",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firstborn",
+   "transliteration": "pe.ter",
+   "samples": [
+    "Exod.13.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6363A",
+   "surface": "first opens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firstborn",
+   "transliteration": "pe.ter",
+   "samples": [
+    "Exod.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6363B",
+   "surface": "open",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firstborn",
+   "transliteration": "pit.rah",
+   "samples": [
+    "Num.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122H",
+   "surface": "grasp",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encounter: toward",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Prov.27.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122H",
+   "surface": "into",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encounter: toward",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Exod.14.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122H",
+   "surface": "look",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encounter: toward",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Num.24.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122I",
+   "surface": "befall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encounter: chanced",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Deut.31.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122I",
+   "surface": "breaks out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encounter: chanced",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Exod.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122I",
+   "surface": "chance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encounter: chanced",
+   "transliteration": "qa.ra",
+   "samples": [
+    "2Sam.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122I",
+   "surface": "come",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encounter: chanced",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Deut.22.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7122I",
+   "surface": "to him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encounter: chanced",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Gen.42.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7123",
+   "surface": "reads",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to read",
+   "transliteration": "qe.ra",
+   "samples": [
+    "Dan.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

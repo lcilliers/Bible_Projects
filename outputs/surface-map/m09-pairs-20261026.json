@@ -1,0 +1,1286 @@
+{
+ "cluster": "M09",
+ "cluster_name": "Humility & Lowliness",
+ "built_at": "2026-10-26T04:18:12Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 77,
+  "head": 27,
+  "tail": 50,
+  "hits": 304,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H0034",
+   "surface": "needy",
+   "part": "head",
+   "hits": 46,
+   "verses": 45,
+   "gloss": "needy",
+   "transliteration": "ev.yon",
+   "samples": [
+    "Ezek.18.12",
+    "Ps.113.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1800",
+   "surface": "poor",
+   "part": "head",
+   "hits": 35,
+   "verses": 34,
+   "gloss": "poor",
+   "transliteration": "dal",
+   "samples": [
+    "Isa.25.4",
+    "Prov.28.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4434",
+   "surface": "poor",
+   "part": "head",
+   "hits": 30,
+   "verses": 30,
+   "gloss": "poor",
+   "transliteration": "ptōchos",
+   "samples": [
+    "Jas.2.6",
+    "Luke.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7326",
+   "surface": "poor",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "be poor",
+   "transliteration": "rush",
+   "samples": [
+    "Prov.14.20",
+    "Prov.28.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0034",
+   "surface": "poor",
+   "part": "head",
+   "hits": 14,
+   "verses": 13,
+   "gloss": "needy",
+   "transliteration": "ev.yon",
+   "samples": [
+    "Esth.9.22",
+    "Ps.49.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3665",
+   "surface": "humbled",
+   "part": "head",
+   "hits": 12,
+   "verses": 10,
+   "gloss": "be humble",
+   "transliteration": "ka.na",
+   "samples": [
+    "2Chr.12.12",
+    "2Chr.30.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3665",
+   "surface": "subdued",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "be humble",
+   "transliteration": "ka.na",
+   "samples": [
+    "Judg.11.33",
+    "Judg.4.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6035",
+   "surface": "humble",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "poor",
+   "transliteration": "a.nav",
+   "samples": [
+    "Ps.25.9",
+    "Zeph.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8217",
+   "surface": "lowly",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "low",
+   "transliteration": "sha.phal",
+   "samples": [
+    "Ezek.29.15",
+    "Isa.57.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5012",
+   "surface": "humility",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "humility",
+   "transliteration": "tapeinofrosunē",
+   "samples": [
+    "1Pet.5.5",
+    "Phil.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6035",
+   "surface": "afflicted",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "poor",
+   "transliteration": "a.nav",
+   "samples": [
+    "Ps.22.26",
+    "Ps.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5013",
+   "surface": "humbled",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to humble",
+   "transliteration": "tapeinoō",
+   "samples": [
+    "Luke.14.11",
+    "Luke.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5013",
+   "surface": "humbles",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to humble",
+   "transliteration": "tapeinoō",
+   "samples": [
+    "Luke.14.11",
+    "Luke.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3665",
+   "surface": "subdue",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be humble",
+   "transliteration": "ka.na",
+   "samples": [
+    "1Chr.17.10",
+    "Ps.81.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4134",
+   "surface": "becomes poor",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be poor",
+   "transliteration": "mukh",
+   "samples": [
+    "Lev.25.35",
+    "Lev.25.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4542",
+   "surface": "poor",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "poor",
+   "transliteration": "mis.ken",
+   "samples": [
+    "Eccl.9.15",
+    "Eccl.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6035",
+   "surface": "meek",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "poor",
+   "transliteration": "a.nav",
+   "samples": [
+    "Isa.11.4",
+    "Num.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6035",
+   "surface": "poor",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "poor",
+   "transliteration": "a.nav",
+   "samples": [
+    "Isa.61.1",
+    "Job.24.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8217",
+   "surface": "deeper",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "low",
+   "transliteration": "sha.phal",
+   "samples": [
+    "Lev.13.20",
+    "Lev.14.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4434",
+   "surface": "poor man",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "poor",
+   "transliteration": "ptōchos",
+   "samples": [
+    "Luke.16.20",
+    "Luke.16.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5011",
+   "surface": "humble",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "lowly",
+   "transliteration": "tapeinos",
+   "samples": [
+    "1Pet.5.5",
+    "2Cor.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5011",
+   "surface": "lowly",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "lowly",
+   "transliteration": "tapeinos",
+   "samples": [
+    "Jas.1.9",
+    "Matt.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1800",
+   "surface": "poor man",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "poor",
+   "transliteration": "dal",
+   "samples": [
+    "Exod.23.3",
+    "Prov.19.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1800",
+   "surface": "weak",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "poor",
+   "transliteration": "dal",
+   "samples": [
+    "Ps.72.13",
+    "Ps.82.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3665",
+   "surface": "humble",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be humble",
+   "transliteration": "ka.na",
+   "samples": [
+    "2Chr.33.23",
+    "2Chr.36.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3665",
+   "surface": "humbled yourself",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "be humble",
+   "transliteration": "ka.na",
+   "samples": [
+    "2Chr.34.27",
+    "2Kgs.22.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5012",
+   "surface": "asceticism",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "humility",
+   "transliteration": "tapeinofrosunē",
+   "samples": [
+    "Col.2.18",
+    "Col.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5013",
+   "surface": "humble yourselves",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to humble",
+   "transliteration": "tapeinoō",
+   "samples": [
+    "1Pet.5.6",
+    "Jas.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5014",
+   "surface": "humiliation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "lowliness",
+   "transliteration": "tapeinōsis",
+   "samples": [
+    "Acts.8.33",
+    "Jas.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5292",
+   "surface": "submission",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "submission",
+   "transliteration": "hupotagē",
+   "samples": [
+    "2Cor.9.13",
+    "Gal.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1800",
+   "surface": "needy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "poor",
+   "transliteration": "dal",
+   "samples": [
+    "Isa.10.2",
+    "Isa.26.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2489",
+   "surface": "helpless",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "helpless",
+   "transliteration": "che.le.khah",
+   "samples": [
+    "Ps.10.14",
+    "Ps.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7326",
+   "surface": "poor man",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be poor",
+   "transliteration": "rush",
+   "samples": [
+    "Prov.19.22",
+    "Prov.28.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8214",
+   "surface": "humbled",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be low",
+   "transliteration": "she.phel",
+   "samples": [
+    "Dan.5.19",
+    "Dan.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8217",
+   "surface": "abased",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "low",
+   "transliteration": "sha.phal",
+   "samples": [
+    "2Sam.6.22",
+    "Mal.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8217",
+   "surface": "low",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "low",
+   "transliteration": "sha.phal",
+   "samples": [
+    "Ezek.17.24",
+    "Ezek.21.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0036",
+   "surface": "low",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lowly",
+   "transliteration": "agenēs",
+   "samples": [
+    "1Cor.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3635",
+   "surface": "delay",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delay",
+   "transliteration": "okneō",
+   "samples": [
+    "Acts.9.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3993",
+   "surface": "poor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "poor",
+   "transliteration": "penēs",
+   "samples": [
+    "2Cor.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4433",
+   "surface": "became poor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be poor",
+   "transliteration": "ptōcheuō",
+   "samples": [
+    "2Cor.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4434",
+   "surface": "worthless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "poor",
+   "transliteration": "ptōchos",
+   "samples": [
+    "Gal.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5011",
+   "surface": "downcast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lowly",
+   "transliteration": "tapeinos",
+   "samples": [
+    "2Cor.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5011",
+   "surface": "humble estate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lowly",
+   "transliteration": "tapeinos",
+   "samples": [
+    "Luke.1.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5013",
+   "surface": "brought low",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to humble",
+   "transliteration": "tapeinoō",
+   "samples": [
+    "Phil.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5013",
+   "surface": "humble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to humble",
+   "transliteration": "tapeinoō",
+   "samples": [
+    "2Cor.12.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5013",
+   "surface": "humbling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to humble",
+   "transliteration": "tapeinoō",
+   "samples": [
+    "2Cor.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5013",
+   "surface": "made low",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to humble",
+   "transliteration": "tapeinoō",
+   "samples": [
+    "Luke.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5014",
+   "surface": "humble estate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lowliness",
+   "transliteration": "tapeinōsis",
+   "samples": [
+    "Luke.1.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5014",
+   "surface": "lowly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lowliness",
+   "transliteration": "tapeinōsis",
+   "samples": [
+    "Phil.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5292",
+   "surface": "submissive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "submission",
+   "transliteration": "hupotagē",
+   "samples": [
+    "1Tim.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5292",
+   "surface": "submissiveness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "submission",
+   "transliteration": "hupotagē",
+   "samples": [
+    "1Tim.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0034",
+   "surface": "needy one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "needy",
+   "transliteration": "ev.yon",
+   "samples": [
+    "Ps.109.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1793A",
+   "surface": "contrite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contrite",
+   "transliteration": "dak.ka",
+   "samples": [
+    "Isa.57.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1793A",
+   "surface": "crushed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contrite",
+   "transliteration": "dak.ka",
+   "samples": [
+    "Ps.34.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1800",
+   "surface": "haggard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "poor",
+   "transliteration": "dal",
+   "samples": [
+    "2Sam.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1800",
+   "surface": "lowly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "poor",
+   "transliteration": "dal",
+   "samples": [
+    "Zeph.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1800",
+   "surface": "weaker",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "poor",
+   "transliteration": "dal",
+   "samples": [
+    "2Sam.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1800",
+   "surface": "weakest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "poor",
+   "transliteration": "dal",
+   "samples": [
+    "Judg.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3665",
+   "surface": "down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humble",
+   "transliteration": "ka.na",
+   "samples": [
+    "Ps.107.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3665",
+   "surface": "humbled himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humble",
+   "transliteration": "ka.na",
+   "samples": [
+    "2Chr.32.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3665",
+   "surface": "low",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humble",
+   "transliteration": "ka.na",
+   "samples": [
+    "Job.40.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3665",
+   "surface": "subjection",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humble",
+   "transliteration": "ka.na",
+   "samples": [
+    "Ps.106.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4134",
+   "surface": "poor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be poor",
+   "transliteration": "mukh",
+   "samples": [
+    "Lev.27.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6199",
+   "surface": "destitute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "destitute",
+   "transliteration": "ar.ar",
+   "samples": [
+    "Ps.102.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6800A",
+   "surface": "humbly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humble",
+   "transliteration": "tsa.na",
+   "samples": [
+    "Mic.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6800B",
+   "surface": "humble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "humble",
+   "transliteration": "tsa.nu.a",
+   "samples": [
+    "Prov.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7326",
+   "surface": "a",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be poor",
+   "transliteration": "rush",
+   "samples": [
+    "Prov.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7326",
+   "surface": "destitute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be poor",
+   "transliteration": "rush",
+   "samples": [
+    "Ps.82.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7326",
+   "surface": "poor man’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be poor",
+   "transliteration": "rush",
+   "samples": [
+    "Prov.19.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7326",
+   "surface": "poor person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be poor",
+   "transliteration": "rush",
+   "samples": [
+    "Prov.19.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7326",
+   "surface": "suffer want",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be poor",
+   "transliteration": "rush",
+   "samples": [
+    "Ps.34.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7807",
+   "surface": "lowly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lowly",
+   "transliteration": "shach",
+   "samples": [
+    "Job.22.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8214",
+   "surface": "humble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be low",
+   "transliteration": "she.phel",
+   "samples": [
+    "Dan.4.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8214",
+   "surface": "put down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be low",
+   "transliteration": "she.phel",
+   "samples": [
+    "Dan.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8215",
+   "surface": "lowliest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "low",
+   "transliteration": "she.phal",
+   "samples": [
+    "Dan.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8217",
+   "surface": "and its",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "low",
+   "transliteration": "sha.phal",
+   "samples": [
+    "Ezek.17.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8217",
+   "surface": "humble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "low",
+   "transliteration": "sha.phal",
+   "samples": [
+    "Ezek.17.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

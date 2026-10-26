@@ -1,0 +1,1115 @@
+{
+ "cluster": "M81",
+ "cluster_name": "Memory (act)",
+ "built_at": "2026-10-26T04:28:20Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 67,
+  "head": 11,
+  "tail": 56,
+  "hits": 406,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H2142",
+   "surface": "remember",
+   "part": "head",
+   "hits": 131,
+   "verses": 127,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Ezek.6.9",
+    "Jer.44.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7911",
+   "surface": "forget",
+   "part": "head",
+   "hits": 52,
+   "verses": 48,
+   "gloss": "to forget",
+   "transliteration": "sha.khach",
+   "samples": [
+    "Jer.2.32",
+    "Lam.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "remembered",
+   "part": "head",
+   "hits": 43,
+   "verses": 43,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Ezek.16.43",
+    "Isa.65.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7911",
+   "surface": "forgotten",
+   "part": "head",
+   "hits": 34,
+   "verses": 34,
+   "gloss": "to forget",
+   "transliteration": "sha.khach",
+   "samples": [
+    "Jer.2.32",
+    "Ps.77.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3421",
+   "surface": "remember",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to remember",
+   "transliteration": "mnēmoneuō",
+   "samples": [
+    "2Tim.2.8",
+    "Rev.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3415",
+   "surface": "remember",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to remember",
+   "transliteration": "mnaomai",
+   "samples": [
+    "1Cor.11.2",
+    "Luke.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "recorder",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "2Kgs.18.18",
+    "Isa.36.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7911",
+   "surface": "forgot",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to forget",
+   "transliteration": "sha.khach",
+   "samples": [
+    "Gen.40.23",
+    "Jer.23.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3415",
+   "surface": "remembered",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to remember",
+   "transliteration": "mnaomai",
+   "samples": [
+    "Luke.24.8",
+    "Rev.16.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "remembrance",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Isa.62.6",
+    "Num.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "mention",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Jer.20.9",
+    "Job.28.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "remembers",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Lam.1.7",
+    "Lam.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1950",
+   "surface": "forgotten",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to forget",
+   "transliteration": "epilanthanō",
+   "samples": [
+    "Luke.12.6",
+    "Matt.16.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "memorial offering",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Isa.66.3",
+    "Ps.70.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "mindful",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Neh.9.17",
+    "Ps.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7911",
+   "surface": "forgets",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to forget",
+   "transliteration": "sha.khach",
+   "samples": [
+    "Gen.27.45",
+    "Prov.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1950",
+   "surface": "neglect",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to forget",
+   "transliteration": "epilanthanō",
+   "samples": [
+    "Heb.13.16",
+    "Heb.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3421",
+   "surface": "remembering",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to remember",
+   "transliteration": "mnēmoneuō",
+   "samples": [
+    "1Thess.1.3",
+    "Acts.20.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "invoke",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "1Chr.16.4",
+    "2Sam.14.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "mentioned",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "1Sam.4.18",
+    "Isa.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5382",
+   "surface": "forget",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to forget",
+   "transliteration": "na.shah",
+   "samples": [
+    "Gen.41.51",
+    "Job.39.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5382",
+   "surface": "forgotten",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to forget",
+   "transliteration": "na.shah",
+   "samples": [
+    "Isa.44.21",
+    "Lam.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725N",
+   "surface": "call",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to return: recall",
+   "transliteration": "shuv",
+   "samples": [
+    "Deut.30.1",
+    "Lam.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725N",
+   "surface": "turn",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to return: recall",
+   "transliteration": "shuv",
+   "samples": [
+    "1Kgs.8.47",
+    "2Chr.6.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7913",
+   "surface": "forget",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "forgetful",
+   "transliteration": "sha.khe.ach",
+   "samples": [
+    "Isa.65.11",
+    "Ps.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1585",
+   "surface": "forgotten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "eklanthanō",
+   "samples": [
+    "Heb.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1950",
+   "surface": "forgets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "epilanthanō",
+   "samples": [
+    "Jas.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1950",
+   "surface": "forgetting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "epilanthanō",
+   "samples": [
+    "Phil.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1950",
+   "surface": "overlook",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "epilanthanō",
+   "samples": [
+    "Heb.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1953",
+   "surface": "forgets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "forgetfulness",
+   "transliteration": "epilēsmonē",
+   "samples": [
+    "Jas.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3024",
+   "surface": "having forgotten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "forgetfulness",
+   "transliteration": "lēthē",
+   "samples": [
+    "2Pet.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3403",
+   "surface": "mindful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "mimnēskō",
+   "samples": [
+    "Heb.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3403",
+   "surface": "remember",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "mimnēskō",
+   "samples": [
+    "Heb.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3415",
+   "surface": "remembrance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "mnaomai",
+   "samples": [
+    "Luke.1.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3421",
+   "surface": "made mention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "mnēmoneuō",
+   "samples": [
+    "Heb.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3421",
+   "surface": "remembered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "mnēmoneuō",
+   "samples": [
+    "Rev.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3421",
+   "surface": "remembers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "mnēmoneuō",
+   "samples": [
+    "John.16.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3421",
+   "surface": "thinking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "mnēmoneuō",
+   "samples": [
+    "Heb.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "and did",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Amos.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "confess",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Isa.48.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "continually",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Lam.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "do",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Jer.31.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "extol",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Song.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "make mention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Josh.23.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "male",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Exod.34.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "named",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Isa.49.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "of them but you shall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Deut.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "proclaim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Isa.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "recalling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Ezek.29.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "recount",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Isa.63.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "remembering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Ezek.23.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "remind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Ps.71.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "think",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Ps.119.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Lam.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "trust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Ps.20.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2142",
+   "surface": "warn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remember",
+   "transliteration": "za.khar",
+   "samples": [
+    "Jer.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5382",
+   "surface": "exacts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "na.shah",
+   "samples": [
+    "Job.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5382",
+   "surface": "up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "na.shah",
+   "samples": [
+    "Jer.23.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5388",
+   "surface": "forgetfulness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "forgetfulness",
+   "transliteration": "ne.shiy.yah",
+   "samples": [
+    "Ps.88.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725N",
+   "surface": "considers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return: recall",
+   "transliteration": "shuv",
+   "samples": [
+    "Isa.44.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725N",
+   "surface": "lay",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return: recall",
+   "transliteration": "shuv",
+   "samples": [
+    "Deut.4.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7725N",
+   "surface": "recall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to return: recall",
+   "transliteration": "shuv",
+   "samples": [
+    "Isa.46.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7876",
+   "surface": "unmindful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "sha.yah",
+   "samples": [
+    "Deut.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7911",
+   "surface": "city",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "sha.khach",
+   "samples": [
+    "Eccl.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7911",
+   "surface": "forgetting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "sha.khach",
+   "samples": [
+    "Job.39.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7911",
+   "surface": "forgot the",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "sha.khach",
+   "samples": [
+    "Deut.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7911",
+   "surface": "live unforgotten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forget",
+   "transliteration": "sha.khach",
+   "samples": [
+    "Deut.31.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

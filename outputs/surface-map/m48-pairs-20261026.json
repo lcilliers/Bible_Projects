@@ -1,0 +1,1122 @@
+{
+ "cluster": "M48",
+ "cluster_name": "Astonishment & Wonder",
+ "built_at": "2026-10-26T04:23:24Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 67,
+  "head": 30,
+  "tail": 37,
+  "hits": 201,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G2296",
+   "surface": "marveled",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "Luke.2.33",
+    "Matt.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4159",
+   "surface": "wonders",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "wonder",
+   "transliteration": "mo.phet",
+   "samples": [
+    "Exod.7.3",
+    "Jer.32.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "wondrous works",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Ps.105.2",
+    "Ps.106.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1605",
+   "surface": "astonished",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "be astonished",
+   "transliteration": "ekplēssō",
+   "samples": [
+    "Luke.2.48",
+    "Matt.22.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4159",
+   "surface": "sign",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "wonder",
+   "transliteration": "mo.phet",
+   "samples": [
+    "1Kgs.13.3",
+    "Ezek.24.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "wonders",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Neh.9.17",
+    "Ps.78.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6382",
+   "surface": "wonders",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "wonder",
+   "transliteration": "pe.le",
+   "samples": [
+    "Exod.15.11",
+    "Ps.77.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "marvelous",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Ps.118.23",
+    "Zech.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "marvel",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "John.3.7",
+    "John.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "wonderful",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Ps.139.14",
+    "Ps.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "astonished",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "Gal.1.6",
+    "Luke.11.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "marveling",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "Luke.20.26",
+    "Luke.24.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4159",
+   "surface": "miracles",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "wonder",
+   "transliteration": "mo.phet",
+   "samples": [
+    "Exod.4.21",
+    "Ps.105.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "hard",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Deut.30.11",
+    "Gen.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1611",
+   "surface": "amazement",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "amazement",
+   "transliteration": "ekstasis",
+   "samples": [
+    "Acts.3.10",
+    "Luke.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2284",
+   "surface": "amazed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to astonish",
+   "transliteration": "thambeō",
+   "samples": [
+    "Mark.1.27",
+    "Mark.10.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "amazed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "Acts.7.31",
+    "Matt.27.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "wondered",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "Luke.2.18",
+    "Matt.15.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4159",
+   "surface": "wonder",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "wonder",
+   "transliteration": "mo.phet",
+   "samples": [
+    "Deut.13.2",
+    "Deut.28.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "fulfill",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Lev.22.21",
+    "Num.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "wondrous deeds",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Ps.71.17",
+    "Ps.75.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "wondrously",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Job.37.5",
+    "Joel.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8540",
+   "surface": "wonders",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "wonder",
+   "transliteration": "te.mah",
+   "samples": [
+    "Dan.4.3",
+    "Dan.6.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1611",
+   "surface": "trance",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "amazement",
+   "transliteration": "ekstasis",
+   "samples": [
+    "Acts.10.10",
+    "Acts.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "surprised",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "1John.3.13",
+    "Mark.15.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4159",
+   "surface": "portent",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wonder",
+   "transliteration": "mo.phet",
+   "samples": [
+    "Isa.20.3",
+    "Ps.71.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "extraordinary",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "2Sam.1.26",
+    "Deut.28.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "marvelous works",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "1Chr.16.24",
+    "Ps.96.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "wonderful deeds",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Jer.21.2",
+    "Judg.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "wondrous",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Ps.145.5",
+    "Ps.40.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "wondrous things",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Ps.119.18",
+    "Ps.86.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6382",
+   "surface": "wonderful",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wonder",
+   "transliteration": "pe.le",
+   "samples": [
+    "Isa.9.6",
+    "Ps.119.129"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1569",
+   "surface": "utterly astounded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "astonished",
+   "transliteration": "ekthambos",
+   "samples": [
+    "Acts.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1611",
+   "surface": "astonishment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "amazement",
+   "transliteration": "ekstasis",
+   "samples": [
+    "Mark.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2285",
+   "surface": "amazed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "amazement",
+   "transliteration": "thambos",
+   "samples": [
+    "Luke.4.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2285",
+   "surface": "astonished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "amazement",
+   "transliteration": "thambos",
+   "samples": [
+    "Luke.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2285",
+   "surface": "wonder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "amazement",
+   "transliteration": "thambos",
+   "samples": [
+    "Acts.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2295",
+   "surface": "greatly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "marvel",
+   "transliteration": "thauma",
+   "samples": [
+    "Rev.17.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2295",
+   "surface": "wonder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "marvel",
+   "transliteration": "thauma",
+   "samples": [
+    "2Cor.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "astounded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "Acts.13.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "showing favoritism",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "Jude.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "wonder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "Acts.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2296",
+   "surface": "wondering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to marvel",
+   "transliteration": "thaumazō",
+   "samples": [
+    "Luke.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1724",
+   "surface": "confused",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to astonish",
+   "transliteration": "da.ham",
+   "samples": [
+    "Jer.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4159",
+   "surface": "marvels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wonder",
+   "transliteration": "mo.phet",
+   "samples": [
+    "Ps.78.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4159",
+   "surface": "miracle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wonder",
+   "transliteration": "mo.phet",
+   "samples": [
+    "Exod.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4159",
+   "surface": "portents",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wonder",
+   "transliteration": "mo.phet",
+   "samples": [
+    "Isa.8.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4652",
+   "surface": "wondrous works",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wonder",
+   "transliteration": "miph.la.ah",
+   "samples": [
+    "Job.37.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "astonishing things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Dan.11.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "destruction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Dan.8.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "difficult",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Deut.17.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "impossible",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "2Sam.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "makes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Num.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "marvelous things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Ps.98.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "marvelously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "2Chr.26.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "marvels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Exod.34.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "special",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Lev.27.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Ps.72.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "upon wonder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Isa.29.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6381",
+   "surface": "wonderful things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wonder",
+   "transliteration": "pa.la",
+   "samples": [
+    "Isa.29.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6382",
+   "surface": "terrible",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wonder",
+   "transliteration": "pe.le",
+   "samples": [
+    "Lam.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6382",
+   "surface": "wonder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wonder",
+   "transliteration": "pe.le",
+   "samples": [
+    "Isa.29.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6382",
+   "surface": "wonderful things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wonder",
+   "transliteration": "pe.le",
+   "samples": [
+    "Isa.25.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7445",
+   "surface": "exulting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "triumphing",
+   "transliteration": "re.na.nah",
+   "samples": [
+    "Job.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7445",
+   "surface": "joyful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "triumphing",
+   "transliteration": "re.na.nah",
+   "samples": [
+    "Ps.63.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7445",
+   "surface": "joyful cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "triumphing",
+   "transliteration": "re.na.nah",
+   "samples": [
+    "Job.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7445",
+   "surface": "singing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "triumphing",
+   "transliteration": "re.na.nah",
+   "samples": [
+    "Ps.100.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

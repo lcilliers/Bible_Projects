@@ -1,0 +1,1584 @@
+{
+ "cluster": "M76",
+ "cluster_name": "Walk & Conduct",
+ "built_at": "2026-10-26T04:27:39Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 96,
+  "head": 16,
+  "tail": 80,
+  "hits": 478,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H1870G",
+   "surface": "way",
+   "part": "head",
+   "hits": 161,
+   "verses": 153,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Ps.119.33",
+    "Ps.35.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "ways",
+   "part": "head",
+   "hits": 148,
+   "verses": 140,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Isa.66.3",
+    "Ps.139.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "astray",
+   "part": "head",
+   "hits": 23,
+   "verses": 21,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Jer.23.32",
+    "Prov.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2986",
+   "surface": "carried",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to conduct",
+   "transliteration": "ya.val",
+   "samples": [
+    "Hos.12.1",
+    "Job.21.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "fled",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Isa.21.15",
+    "Isa.22.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "grieve",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Jer.22.10",
+    "Jer.48.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "stagger",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Isa.19.14",
+    "Job.12.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "wander",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Isa.63.17",
+    "Ps.107.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2986",
+   "surface": "bring",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to conduct",
+   "transliteration": "ya.val",
+   "samples": [
+    "Ps.76.11",
+    "Zeph.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2986",
+   "surface": "led",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to conduct",
+   "transliteration": "ya.val",
+   "samples": [
+    "Isa.53.7",
+    "Ps.45.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "flee",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Isa.33.3",
+    "Ps.31.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "deeds",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Ezek.11.21",
+    "Ezek.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "manner",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Ezek.20.30",
+    "Gen.19.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "reel",
+   "part": "head",
+   "hits": 3,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Isa.28.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "go astray",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Prov.14.22",
+    "Ps.58.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "^",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "1Sam.13.15",
+    "2Sam.13.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "as",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Isa.10.24",
+    "Isa.10.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "conduct",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "1Kgs.8.32",
+    "2Chr.6.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "course",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Isa.3.12",
+    "Jer.2.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "fugitive",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Isa.16.3",
+    "Isa.21.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "flee",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Jer.50.8",
+    "Ps.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "sympathy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Job.2.11",
+    "Job.42.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "wander",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "2Kgs.21.8",
+    "Jer.49.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "wanderer",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Gen.4.12",
+    "Gen.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "astray",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Job.6.24",
+    "Ps.119.118"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "intoxicated",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Prov.5.19",
+    "Prov.5.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "led astray",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Prov.20.1",
+    "Prov.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "misleads",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Deut.27.18",
+    "Prov.28.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "wander",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Ps.119.10",
+    "Ps.119.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "stray",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Prov.7.25",
+    "Ps.119.110"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "wandered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Gen.21.14",
+    "Ps.107.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1704",
+   "surface": "walk among",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to walk in/among",
+   "transliteration": "emperipateō",
+   "samples": [
+    "2Cor.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1872",
+   "surface": "accompanying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to follow after",
+   "transliteration": "epakoloutheō",
+   "samples": [
+    "Mark.16.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1872",
+   "surface": "appear later",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to follow after",
+   "transliteration": "epakoloutheō",
+   "samples": [
+    "1Tim.5.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1872",
+   "surface": "devoted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to follow after",
+   "transliteration": "epakoloutheō",
+   "samples": [
+    "1Tim.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1872",
+   "surface": "follow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to follow after",
+   "transliteration": "epakoloutheō",
+   "samples": [
+    "1Pet.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "behavior",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Ezek.16.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "favors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Jer.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Prov.16.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "path",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Ps.49.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "undertakings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "1Sam.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "work",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Prov.8.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1870G",
+   "surface": "works",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "way: conduct",
+   "transliteration": "de.rekh",
+   "samples": [
+    "Job.40.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2986",
+   "surface": "bear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conduct",
+   "transliteration": "ya.val",
+   "samples": [
+    "Ps.68.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2986",
+   "surface": "brought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conduct",
+   "transliteration": "ya.val",
+   "samples": [
+    "Isa.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2986",
+   "surface": "lead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conduct",
+   "transliteration": "ya.val",
+   "samples": [
+    "Jer.31.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2986",
+   "surface": "led forth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conduct",
+   "transliteration": "ya.val",
+   "samples": [
+    "Isa.55.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2986",
+   "surface": "rescued",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conduct",
+   "transliteration": "ya.val",
+   "samples": [
+    "Job.21.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "be wanderers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Hos.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "chased away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Job.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "could not",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Esth.6.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "driven",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Job.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "fleeing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Isa.16.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "flight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Isa.10.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "fly away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Nah.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "fugitives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Jer.49.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "heads",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Ps.64.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "moved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Isa.10.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "shrink",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Nah.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "strayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Hos.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "thrown away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "2Sam.23.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "wander",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Ps.55.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5074",
+   "surface": "wanders",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "na.dad",
+   "samples": [
+    "Job.15.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "console",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Isa.51.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "drive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Ps.36.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "flee away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Jer.50.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "flitting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Prov.26.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "grieving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Jer.31.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "head",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Jer.48.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "pity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Ps.69.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "shaken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "1Kgs.14.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "shakes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Jer.18.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "sways",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Isa.24.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5110",
+   "surface": "waver",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "nud",
+   "samples": [
+    "Jer.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7683",
+   "surface": "deceived",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "sha.gag",
+   "samples": [
+    "Job.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7683",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "sha.gag",
+   "samples": [
+    "Lev.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7683",
+   "surface": "mistake",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "sha.gag",
+   "samples": [
+    "Num.15.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7683",
+   "surface": "went astray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "sha.gag",
+   "samples": [
+    "Ps.119.67"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "deceiver",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Job.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "erred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Job.19.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "error",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Ezek.45.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "mistake",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "1Sam.26.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "sins unintentionally",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Lev.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "stray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Prov.19.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "unintentionally",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Num.15.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7686",
+   "surface": "wandered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wander",
+   "transliteration": "sha.gah",
+   "samples": [
+    "Ezek.34.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "deceiving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Job.15.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "did",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Ezek.48.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "going astray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Exod.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "man staggers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Isa.19.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "mislead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Isa.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "staggers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Isa.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "strayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Isa.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "wander about",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Isa.47.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "wandering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Gen.37.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8582",
+   "surface": "wanders",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to go astray",
+   "transliteration": "ta.ah",
+   "samples": [
+    "Prov.21.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

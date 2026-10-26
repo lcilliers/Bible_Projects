@@ -1,0 +1,69 @@
+{
+ "M01": {
+  "groups": [
+   ["M01_fear", "Fear, dread, terror", "being afraid of a threat: fear, dread, terror, panic, fright", "group", "renders being afraid of a threat"],
+   ["M01_awe", "Awe, reverence, fear of God", "the fear that reveres: fear of the LORD, awe, reverence, what is awesome", "group", "renders reverent awe"],
+   ["M01_trembling", "Trembling, shuddering, quaking", "fear in the body: trembling, quaking, shuddering, writhing", "group", "renders fear shown in the body"],
+   ["M01_horror", "Horror, appalment", "being appalled or horrified at what is seen", "group", "renders horror or appalment"],
+   ["M01_not_this_sense", "Not the cluster's sense", "renderings with no sense of fear: desolation, waste, waves, an image, rage", "not_this_sense", "carries no sense of fear"]
+  ],
+  "surf": {
+   "M01_fear": ["afraid", "fear", "feared", "fears", "fearing", "fearful", "dread", "terror", "terrors", "terrify", "terrifying", "frighten", "frightened", "panic", "make them afraid", "away", "alarmed", "great", "exceedingly"],
+   "M01_awe": ["awesome", "awesome deeds", "awesome things", "stood in awe", "reverence", "respect", "awe"],
+   "M01_trembling": ["tremble", "trembled", "trembles", "trembling", "quaked", "shudder", "shakes", "disturbed", "pain"],
+   "M01_horror": ["horror", "astounded", "dreadful end"],
+   "M01_not_this_sense": ["desolation", "waste", "waves", "image", "ruin", "raged", "raging"]
+  },
+  "over": {
+   "H3372H|fear": ["M01_awe", "'fear' as reverence (Hab 3:2 'I fear, O LORD, your work'; Mal 3:5 'do not fear me'): yare' in its revering sense", 1],
+   "H3372H|feared": ["M01_awe", "'the midwives feared God' (Exod 1:17), 'my name will be feared' (Mal 1:14): revering fear", 0],
+   "H3373|fear": ["M01_awe", "'men who fear God' (Exod 18:21), 'you who fear the LORD' (Ps 135:20): the God-fearing", 0],
+   "H3373|fears": ["M01_awe", "'blessed is the man who fears the LORD' (Ps 112:1, 128:4)", 0],
+   "H3373|feared": ["M01_awe", "'they feared the LORD' (2Kgs 17:41), 'those who feared the LORD' (Mal 3:16)", 0],
+   "H3374|fear": ["M01_awe", "'the fear of the LORD' (Isa 33:6, Prov 1:29); elsewhere a dread, settled per verse", 1],
+   "H4172A|fear": ["M01_fear", "'the fear of you and the dread of you' (Gen 9:2); 'he feared me' (Mal 2:5) is reverence", 1],
+   "G5399|fear": ["M01_fear", "phobeomai: being afraid (2Cor 12:20 'I fear'), and reverent fear in other verses (Heb 4:1)", 1],
+   "G5401|fear": ["M01_fear", "phobos: 'fear and trembling' (Eph 6:5), 'in fear of her torment' (Rev 18:15); reverent in other verses", 1],
+   "H0366|awesome": ["M01_awe", "'awesome as an army with banners' (Song 6:4): awe-inspiring", 0],
+   "H3372G|awesome": ["M01_awe", "'the great and awesome day of the LORD' (Joel 2:31)", 0],
+   "H4288|terror": ["M01_fear", "'terror to evildoers' (Prov 21:15), 'far from terror' (Isa 54:14)", 0],
+   "H4288|ruin": ["M01_not_this_sense", "'the poverty of the poor is their ruin' (Prov 10:15): ruin, not fear", 0],
+   "H8047G|desolation": ["M01_not_this_sense", "'a desolation' (Jer 50:3): the land destroyed, not the person's fear", 0],
+   "H8047G|waste": ["M01_not_this_sense", "'a waste' (Jer 44:22): the land destroyed", 0],
+   "H4656|image": ["M01_not_this_sense", "'an abominable image' (1Kgs 15:13): an idol", 0],
+   "H4867|waves": ["M01_not_this_sense", "'all your waves' (Ps 88:7): waves of the sea", 0],
+   "H7264|raged": ["M01_not_this_sense", "'you raged against me' (2Kgs 19:28): rage, not fear", 0],
+   "H7264|raging": ["M01_not_this_sense", "'your raging against me' (2Kgs 19:27): rage, not fear", 0],
+   "H2427A|pain": ["M01_trembling", "'pain as of a woman in labor' (Jer 22:23, Mic 4:9): writhing anguish", 0],
+   "H7264|disturbed": ["M01_trembling", "'be disturbed no more' (1Chr 17:9), 'why have you disturbed me' (1Sam 28:15): shaken", 1]
+  }
+ },
+ "M02": {
+  "groups": [
+   ["M02_anger", "Anger, indignation", "being angry: anger, indignation, being enraged or annoyed", "group", "renders being angry"],
+   ["M02_wrath", "Wrath, fury", "anger at its height, often God's: wrath, fury", "group", "renders wrath or fury"],
+   ["M02_burning", "Anger kindled, burning", "anger as a fire: kindled, burning, fierce, hot, smoking", "group", "renders anger as a fire"],
+   ["M02_provocation", "Provocation, vexation", "anger roused by another: provoke, provocation, vexation, fretting", "group", "renders anger provoked or vexation"],
+   ["M02_strife", "Quarrel, strife", "anger between people: quarrelling, strife, contention", "group", "renders quarrel or strife"],
+   ["M02_not_this_sense", "Not the cluster's sense", "renderings with no sense of anger: a lament, venom, a place's name, heat as temperature", "not_this_sense", "carries no sense of anger"]
+  ],
+  "surf": {
+   "M02_anger": ["anger", "angry", "indignation", "indignant", "enraged", "greatly annoyed"],
+   "M02_wrath": ["wrath", "fury", "furious", "wrathful"],
+   "M02_burning": ["kindled", "burned", "burn", "burn hot", "fierce", "burning", "smoke", "heat"],
+   "M02_provocation": ["provoke", "provoked", "provoking", "provocation", "vexation", "grief", "fret"],
+   "M02_strife": ["quarrelsome", "quarreling", "strife"],
+   "M02_not_this_sense": ["lamentation", "venom", "hot", "meribah", "meribah-kadesh"]
+  },
+  "over": {
+   "H7015|lamentation": ["M02_not_this_sense", "qinah 'take up a lamentation' (Ezek 27:2): a lament, grief not anger", 0],
+   "H2534|venom": ["M02_not_this_sense", "'the venom of things that crawl' (Deut 32:24), 'venom of serpents' (Ps 140:3)", 0],
+   "G2200|hot": ["M02_not_this_sense", "'neither cold nor hot' (Rev 3:15): temperature, a figure of zeal, not anger", 0],
+   "H4809H|meribah": ["M02_not_this_sense", "Meribah, a place's name (Num 20:13): its meaning 'quarrel' is read in the verse", 0],
+   "H4809G|meribah": ["M02_not_this_sense", "Meribah, a place's name (Exod 17:7)", 0],
+   "H4809H|meribah-kadesh": ["M02_not_this_sense", "Meribah-kadesh, a place's name (Deut 32:51)", 0],
+   "H2534|heat": ["M02_burning", "'the heat of his anger' (Isa 42:25); 'the heat of wine' (Hos 7:5) is not anger", 1],
+   "H3708A|grief": ["M02_provocation", "'a foolish son is a grief to his father' (Prov 17:25): vexation", 0]
+  }
+ }
+}

@@ -1,0 +1,4581 @@
+{
+ "cluster": "M12",
+ "cluster_name": "Righteousness & Integrity",
+ "built_at": "2026-10-26T04:18:48Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 278,
+  "head": 56,
+  "tail": 222,
+  "hits": 1552,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H6662",
+   "surface": "righteous",
+   "part": "head",
+   "hits": 177,
+   "verses": 170,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Prov.20.7",
+    "Prov.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "righteousness",
+   "part": "head",
+   "hits": 119,
+   "verses": 116,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Ezek.14.20",
+    "Prov.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "justice",
+   "part": "head",
+   "hits": 110,
+   "verses": 108,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Lam.3.35",
+    "Prov.19.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "rules",
+   "part": "head",
+   "hits": 96,
+   "verses": 93,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Ezek.20.19",
+    "Lev.18.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1343",
+   "surface": "righteousness",
+   "part": "head",
+   "hits": 85,
+   "verses": 81,
+   "gloss": "righteousness",
+   "transliteration": "dikaiosunē",
+   "samples": [
+    "2Pet.3.13",
+    "Jas.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "righteousness",
+   "part": "head",
+   "hits": 65,
+   "verses": 65,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Ps.118.19",
+    "Ps.45.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "judgment",
+   "part": "head",
+   "hits": 54,
+   "verses": 52,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Deut.32.41",
+    "Hos.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "right",
+   "part": "head",
+   "hits": 50,
+   "verses": 50,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Neh.9.13",
+    "Prov.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "upright",
+   "part": "head",
+   "hits": 49,
+   "verses": 49,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Prov.11.6",
+    "Prov.15.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "righteous",
+   "part": "head",
+   "hits": 40,
+   "verses": 38,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "1John.3.7",
+    "Matt.23.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355A",
+   "surface": "innocent",
+   "part": "head",
+   "hits": 27,
+   "verses": 26,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "Isa.59.7",
+    "Job.27.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "judgments",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Ps.10.5",
+    "Ps.105.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549H",
+   "surface": "blameless",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "unblemished: blameless",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Prov.11.20",
+    "Ps.119.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "rule",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Chr.15.13",
+    "Ps.81.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "just",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Prov.16.11",
+    "Zeph.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "just",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "2Thess.1.6",
+    "Luke.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "right",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Deut.21.17",
+    "Ps.25.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "righteous",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Prov.8.8",
+    "Ps.119.144"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8537",
+   "surface": "integrity",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "integrity",
+   "transliteration": "tom",
+   "samples": [
+    "Gen.20.5",
+    "Prov.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1215",
+   "surface": "gain",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "unjust-gain",
+   "transliteration": "be.tsa",
+   "samples": [
+    "Ezek.22.13",
+    "Isa.57.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "injustice",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Job.11.14",
+    "Ps.64.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766A",
+   "surface": "injustice",
+   "part": "head",
+   "hits": 10,
+   "verses": 8,
+   "gloss": "injustice",
+   "transliteration": "a.vel",
+   "samples": [
+    "Ezek.18.24",
+    "Ezek.18.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "just",
+   "part": "head",
+   "hits": 10,
+   "verses": 5,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Prov.8.15",
+    "Ps.17.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "right",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Ps.119.172",
+    "Ps.15.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "right",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Ezek.18.19",
+    "Ezek.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "whole",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "2Chr.19.9",
+    "2Chr.25.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3476",
+   "surface": "uprightness",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "uprightness",
+   "transliteration": "yo.sher",
+   "samples": [
+    "Prov.17.26",
+    "Prov.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "cause",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Kgs.8.59",
+    "2Chr.6.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941I",
+   "surface": "prescribed",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "justice: rule",
+   "transliteration": "mish.pat",
+   "samples": [
+    "2Chr.4.20",
+    "2Chr.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0053",
+   "surface": "pure",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "pure",
+   "transliteration": "hagnos",
+   "samples": [
+    "1Tim.5.22",
+    "Jas.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "right",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "2Pet.1.13",
+    "John.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "sentence",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Jer.26.16",
+    "Jer.52.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6337",
+   "surface": "fine gold",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "pure gold",
+   "transliteration": "paz",
+   "samples": [
+    "Job.28.17",
+    "Ps.19.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "right",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Exod.23.8",
+    "Prov.24.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0094",
+   "surface": "unrighteous",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "unjust",
+   "transliteration": "adikos",
+   "samples": [
+    "1Cor.6.9",
+    "1Pet.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4339",
+   "surface": "equity",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "uprightness",
+   "transliteration": "me.shar",
+   "samples": [
+    "Prov.1.3",
+    "Ps.99.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355A",
+   "surface": "guiltless",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "Jer.2.34",
+    "Josh.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "righteous person",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "Jas.5.16",
+    "Rom.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1252",
+   "surface": "cleanness",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "cleanness",
+   "transliteration": "bor",
+   "samples": [
+    "2Sam.22.21",
+    "Job.22.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "manner",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "2Kgs.17.33",
+    "Josh.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "wrong",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Isa.61.8",
+    "Ps.119.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "righteous man",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Isa.57.1",
+    "Prov.25.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "righteous deeds",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Ezek.18.24",
+    "Isa.64.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "wholly true",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "1Kgs.8.61",
+    "2Chr.15.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8538",
+   "surface": "integrity",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "integrity",
+   "transliteration": "tum.mah",
+   "samples": [
+    "Job.2.3",
+    "Job.27.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0094",
+   "surface": "unjust",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "unjust",
+   "transliteration": "adikos",
+   "samples": [
+    "Heb.6.10",
+    "Luke.18.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0299",
+   "surface": "blameless",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "blameless",
+   "transliteration": "amōmos",
+   "samples": [
+    "Eph.1.4",
+    "Jude.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0299",
+   "surface": "without blemish",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "blameless",
+   "transliteration": "amōmos",
+   "samples": [
+    "Heb.9.14",
+    "Phil.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2512",
+   "surface": "purification",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "cleansing",
+   "transliteration": "katharismos",
+   "samples": [
+    "Heb.1.3",
+    "Luke.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4339",
+   "surface": "right",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "uprightness",
+   "transliteration": "me.shar",
+   "samples": [
+    "Prov.8.6",
+    "Ps.17.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "decision",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Prov.16.33",
+    "Zeph.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "custom",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Sam.2.13",
+    "1Sam.27.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5356A",
+   "surface": "innocence",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "innocence",
+   "transliteration": "niq.qa.von",
+   "samples": [
+    "Hos.8.5",
+    "Ps.73.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766A",
+   "surface": "wrong",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "injustice",
+   "transliteration": "a.vel",
+   "samples": [
+    "Jer.2.5",
+    "Ps.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5767",
+   "surface": "unrighteous",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "unjust",
+   "transliteration": "av.val",
+   "samples": [
+    "Job.29.17",
+    "Job.31.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "righteous",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Jer.33.15",
+    "Ps.71.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "vindication",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Isa.54.17",
+    "Jer.51.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549H",
+   "surface": "integrity",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "unblemished: blameless",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Judg.9.19",
+    "Prov.28.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0185",
+   "surface": "innocent",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "innocent",
+   "transliteration": "akeraios",
+   "samples": [
+    "Matt.10.16",
+    "Phil.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0273",
+   "surface": "blameless",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "blameless",
+   "transliteration": "amemptos",
+   "samples": [
+    "1Thess.3.13",
+    "Phil.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0283",
+   "surface": "undefiled",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pure",
+   "transliteration": "amiantos",
+   "samples": [
+    "1Pet.1.4",
+    "Jas.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "righteous one",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "Acts.22.14",
+    "Acts.7.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1215",
+   "surface": "profit",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "unjust-gain",
+   "transliteration": "be.tsa",
+   "samples": [
+    "Gen.37.26",
+    "Ps.30.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1215",
+   "surface": "unjust gain",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "unjust-gain",
+   "transliteration": "be.tsa",
+   "samples": [
+    "Prov.1.19",
+    "Prov.15.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "straight",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Prov.29.27",
+    "Ps.107.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477I",
+   "surface": "straight",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "upright:straight",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Ezek.1.23",
+    "Mic.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "injustice",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Jer.22.13",
+    "Prov.13.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941I",
+   "surface": "law",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "justice: rule",
+   "transliteration": "mish.pat",
+   "samples": [
+    "2Kgs.17.26",
+    "2Kgs.17.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "way",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Eccl.8.5",
+    "Eccl.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766A",
+   "surface": "iniquity",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "injustice",
+   "transliteration": "a.vel",
+   "samples": [
+    "Job.34.32",
+    "Ps.53.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "wickedness",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Isa.59.3",
+    "Ps.107.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "innocent",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Deut.25.1",
+    "Gen.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "just",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Deut.32.4",
+    "Job.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "righteous one",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Isa.53.11",
+    "Prov.21.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "righteous person",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Ezek.18.24",
+    "Ezek.18.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "righteously",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Jer.11.20",
+    "Prov.31.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "justice",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Deut.33.21",
+    "Ezek.45.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "righteous acts",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Dan.9.16",
+    "Ps.71.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "full",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "Deut.25.15",
+    "Ruth.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0094",
+   "surface": "dishonest",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "unjust",
+   "transliteration": "adikos",
+   "samples": [
+    "Luke.16.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0121",
+   "surface": "innocent",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "innocent",
+   "transliteration": "athōos",
+   "samples": [
+    "Matt.27.24",
+    "Matt.27.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0338",
+   "surface": "guiltless",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "innocent",
+   "transliteration": "anaitios",
+   "samples": [
+    "Matt.12.5",
+    "Matt.12.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "righteous man",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "2Pet.2.8",
+    "Matt.27.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "upright",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "Acts.10.22",
+    "Titus.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1343",
+   "surface": "right",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "righteousness",
+   "transliteration": "dikaiosunē",
+   "samples": [
+    "Acts.10.35",
+    "Eph.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1345",
+   "surface": "regulations",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "righteous act",
+   "transliteration": "dikaiōma",
+   "samples": [
+    "Heb.9.1",
+    "Heb.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1738",
+   "surface": "just",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "just",
+   "transliteration": "endikos",
+   "samples": [
+    "Heb.2.2",
+    "Rom.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2025",
+   "surface": "anointed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rub on",
+   "transliteration": "epichriō",
+   "samples": [
+    "John.9.11",
+    "John.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2512",
+   "surface": "cleansing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "cleansing",
+   "transliteration": "katharismos",
+   "samples": [
+    "Luke.5.14",
+    "Mark.1.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3833",
+   "surface": "whole armor",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "complete armor",
+   "transliteration": "panoplia",
+   "samples": [
+    "Eph.6.11",
+    "Eph.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4101",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pure",
+   "transliteration": "pistikos",
+   "samples": [
+    "John.12.3",
+    "Mark.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2141",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be clean",
+   "transliteration": "za.khakh",
+   "samples": [
+    "Job.15.15",
+    "Job.25.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3476",
+   "surface": "upright",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "uprightness",
+   "transliteration": "yo.sher",
+   "samples": [
+    "Job.6.25",
+    "Ps.119.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4339",
+   "surface": "uprightly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "uprightness",
+   "transliteration": "me.shar",
+   "samples": [
+    "Isa.33.15",
+    "Ps.58.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4339",
+   "surface": "uprightness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "uprightness",
+   "transliteration": "me.shar",
+   "samples": [
+    "1Chr.29.17",
+    "Ps.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "case",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Jer.12.1",
+    "Job.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "court",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Deut.25.1",
+    "Lev.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "vindication",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Ps.17.2",
+    "Ps.35.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "case",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Job.23.4",
+    "Num.27.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "just measure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Jer.30.11",
+    "Jer.46.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "righteousness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "2Chr.9.8",
+    "Ezek.45.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "ways",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Sam.8.11",
+    "1Sam.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5229",
+   "surface": "right",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "upright",
+   "transliteration": "ne.kho.chah",
+   "samples": [
+    "Amos.3.10",
+    "Isa.30.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5229",
+   "surface": "uprightness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "upright",
+   "transliteration": "ne.kho.chah",
+   "samples": [
+    "Isa.26.10",
+    "Isa.59.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355A",
+   "surface": "free",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "Deut.24.5",
+    "Gen.24.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355B",
+   "surface": "innocent",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "Joel.3.19",
+    "Jonah.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "iniquity",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Hab.2.12",
+    "Mic.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "violent",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "1Chr.17.9",
+    "2Sam.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "2Sam.3.34",
+    "Ps.89.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6337",
+   "surface": "gold",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pure gold",
+   "transliteration": "paz",
+   "samples": [
+    "Song.5.11",
+    "Song.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "fair",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Deut.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "justly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Isa.59.4",
+    "Prov.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664H",
+   "surface": "righteousness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "Righteousness [God]",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Jer.23.6",
+    "Jer.33.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "equity",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "1Chr.18.14",
+    "2Sam.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "righteous triumphs",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Judg.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "uncut",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "Deut.27.6",
+    "Josh.8.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8537",
+   "surface": "blameless",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "integrity",
+   "transliteration": "tom",
+   "samples": [
+    "Prov.10.29",
+    "Prov.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8537",
+   "surface": "random",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "integrity",
+   "transliteration": "tom",
+   "samples": [
+    "1Kgs.22.34",
+    "2Chr.18.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0053",
+   "surface": "innocent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "hagnos",
+   "samples": [
+    "2Cor.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0097",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "adolos",
+   "samples": [
+    "1Pet.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0172",
+   "surface": "innocent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "innocent",
+   "transliteration": "akakos",
+   "samples": [
+    "Heb.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0172",
+   "surface": "naive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "innocent",
+   "transliteration": "akakos",
+   "samples": [
+    "Rom.16.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0273",
+   "surface": "blamelessly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blameless",
+   "transliteration": "amemptos",
+   "samples": [
+    "Luke.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0273",
+   "surface": "faultless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blameless",
+   "transliteration": "amemptos",
+   "samples": [
+    "Heb.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0283",
+   "surface": "unstained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "amiantos",
+   "samples": [
+    "Heb.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0298",
+   "surface": "blemish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blameless",
+   "transliteration": "amōmētos",
+   "samples": [
+    "2Pet.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1341",
+   "surface": "righteous judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice",
+   "transliteration": "dikaiokrisia",
+   "samples": [
+    "Rom.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "innocent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "Luke.23.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "justly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "Col.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "righteous persons",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "Luke.15.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "righteous person’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "Matt.10.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1342",
+   "surface": "sincere",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "just",
+   "transliteration": "dikaios",
+   "samples": [
+    "Luke.20.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1343",
+   "surface": "justice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "dikaiosunē",
+   "samples": [
+    "Heb.11.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1343",
+   "surface": "justified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "dikaiosunē",
+   "samples": [
+    "Rom.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1345",
+   "surface": "decree",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous act",
+   "transliteration": "dikaiōma",
+   "samples": [
+    "Rom.1.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1345",
+   "surface": "justification",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous act",
+   "transliteration": "dikaiōma",
+   "samples": [
+    "Rom.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1345",
+   "surface": "precepts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous act",
+   "transliteration": "dikaiōma",
+   "samples": [
+    "Rom.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1345",
+   "surface": "righteous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous act",
+   "transliteration": "dikaiōma",
+   "samples": [
+    "Rom.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1345",
+   "surface": "righteous acts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous act",
+   "transliteration": "dikaiōma",
+   "samples": [
+    "Rev.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1345",
+   "surface": "righteous deeds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous act",
+   "transliteration": "dikaiōma",
+   "samples": [
+    "Rev.19.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1345",
+   "surface": "righteousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous act",
+   "transliteration": "dikaiōma",
+   "samples": [
+    "Rom.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1345",
+   "surface": "statutes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous act",
+   "transliteration": "dikaiōma",
+   "samples": [
+    "Luke.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1472",
+   "surface": "anoint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rub on",
+   "transliteration": "enchriō",
+   "samples": [
+    "Rev.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1506",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "eilikrinēs",
+   "samples": [
+    "Phil.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1506",
+   "surface": "sincere",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "eilikrinēs",
+   "samples": [
+    "2Pet.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2118",
+   "surface": "uprightness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "euthutēs",
+   "samples": [
+    "Heb.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2512",
+   "surface": "cleansed from",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cleansing",
+   "transliteration": "katharismos",
+   "samples": [
+    "2Pet.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3716",
+   "surface": "conduct",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be upright",
+   "transliteration": "orthopodeō",
+   "samples": [
+    "Gal.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3717",
+   "surface": "straight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright",
+   "transliteration": "orthos",
+   "samples": [
+    "Heb.12.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3717",
+   "surface": "upright",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright",
+   "transliteration": "orthos",
+   "samples": [
+    "Acts.14.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3833",
+   "surface": "armor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete armor",
+   "transliteration": "panoplia",
+   "samples": [
+    "Luke.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0197H",
+   "surface": "hall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "Hall [of Justice]",
+   "transliteration": "u.lam",
+   "samples": [
+    "1Kgs.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1215",
+   "surface": "bribe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unjust-gain",
+   "transliteration": "be.tsa",
+   "samples": [
+    "Exod.18.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1215",
+   "surface": "cut",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unjust-gain",
+   "transliteration": "be.tsa",
+   "samples": [
+    "Jer.51.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1215",
+   "surface": "selfish gain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unjust-gain",
+   "transliteration": "be.tsa",
+   "samples": [
+    "Ps.119.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1215",
+   "surface": "spoils",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unjust-gain",
+   "transliteration": "be.tsa",
+   "samples": [
+    "Judg.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2136",
+   "surface": "blameless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "innocence",
+   "transliteration": "za.khu",
+   "samples": [
+    "Dan.6.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2141",
+   "surface": "lye",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be clean",
+   "transliteration": "za.khakh",
+   "samples": [
+    "Job.9.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2141",
+   "surface": "purer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be clean",
+   "transliteration": "za.khakh",
+   "samples": [
+    "Lam.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2643",
+   "surface": "clean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "clean",
+   "transliteration": "chaph",
+   "samples": [
+    "Job.33.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2890",
+   "surface": "purer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pureness",
+   "transliteration": "te.hor",
+   "samples": [
+    "Hab.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3476",
+   "surface": "give",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "yo.sher",
+   "samples": [
+    "Prov.11.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3476",
+   "surface": "right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "yo.sher",
+   "samples": [
+    "Job.33.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3476",
+   "surface": "uprightly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "yo.sher",
+   "samples": [
+    "Eccl.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "agreement",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Dan.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "fittest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "2Kgs.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "honest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "1Sam.29.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "level",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Isa.26.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "more upright",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "2Chr.29.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "pleased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "2Sam.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "true",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "2Kgs.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "upright is",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Deut.32.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "upright man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Job.23.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "uprightly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Mic.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477G",
+   "surface": "uprightness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:right",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Ps.111.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3477I",
+   "surface": "safe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "upright:straight",
+   "transliteration": "ya.shar",
+   "samples": [
+    "Ezra.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3483",
+   "surface": "uprightness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "ye.sha.rah",
+   "samples": [
+    "1Kgs.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4339",
+   "surface": "agreement",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "me.shar",
+   "samples": [
+    "Dan.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4339",
+   "surface": "down smoothly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "me.shar",
+   "samples": [
+    "Song.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4339",
+   "surface": "level",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "me.shar",
+   "samples": [
+    "Isa.26.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4339",
+   "surface": "rightly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "me.shar",
+   "samples": [
+    "Song.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4339",
+   "surface": "smoothly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "me.shar",
+   "samples": [
+    "Prov.23.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4935",
+   "surface": "cleanse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cleansing",
+   "transliteration": "mish.i",
+   "samples": [
+    "Ezek.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "adversary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Isa.50.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "crimes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Ezek.7.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "deserve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Deut.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "judge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Ps.119.84"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "judged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Ezek.16.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "judges",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Ezek.44.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "judging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Prov.24.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "punishable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Deut.21.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "requiring decision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Deut.17.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "ruling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "2Chr.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "together",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Job.9.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941G",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: judgement",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Job.40.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "as",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Exod.21.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "deserve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Jer.49.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "kind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "2Kgs.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "righteous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Isa.58.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "rightly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Isa.28.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941H",
+   "surface": "rights",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Jer.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941I",
+   "surface": "appointment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: rule",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Ps.119.91"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941I",
+   "surface": "be",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: rule",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Jer.30.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941I",
+   "surface": "procedure established",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: rule",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Chr.24.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941I",
+   "surface": "required",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: rule",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Chr.23.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "accustomed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "2Chr.30.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "arrangements",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Ezek.42.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "due",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Deut.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "duties",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Sam.10.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "duty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Kgs.4.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "formerly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Gen.40.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "manner of life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Judg.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "order",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Chr.6.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "plan",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "Exod.26.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941J",
+   "surface": "specifications",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "justice: custom",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Kgs.6.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5343",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "ne.qe",
+   "samples": [
+    "Dan.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355A",
+   "surface": "clean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "Ps.24.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355A",
+   "surface": "exempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "1Kgs.15.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355A",
+   "surface": "free of obligation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "Num.32.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355A",
+   "surface": "innocent one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "Job.22.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355A",
+   "surface": "innocents",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "Jer.19.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5355A",
+   "surface": "liable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "innocent",
+   "transliteration": "na.qi",
+   "samples": [
+    "Exod.21.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5760",
+   "surface": "ungodly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unjust one",
+   "transliteration": "a.vil",
+   "samples": [
+    "Job.16.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5765",
+   "surface": "deals corruptly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act unjustly",
+   "transliteration": "a.val",
+   "samples": [
+    "Isa.26.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5765",
+   "surface": "unjust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act unjustly",
+   "transliteration": "a.val",
+   "samples": [
+    "Ps.71.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766A",
+   "surface": "dishonestly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "a.vel",
+   "samples": [
+    "Deut.25.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766A",
+   "surface": "till unrighteousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "a.vel",
+   "samples": [
+    "Ezek.28.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766A",
+   "surface": "unjust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "a.vel",
+   "samples": [
+    "Prov.29.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766A",
+   "surface": "unjustly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "a.vel",
+   "samples": [
+    "Ps.82.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766A",
+   "surface": "unrighteousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "a.vel",
+   "samples": [
+    "Ezek.28.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "falsehood",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Job.27.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "falsely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Job.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "unjust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Ps.43.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "unrighteousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Ps.92.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "wrongdoers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Ps.37.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5766B",
+   "surface": "wrongs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "injustice",
+   "transliteration": "av.lah",
+   "samples": [
+    "Ps.58.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5767",
+   "surface": "unjust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unjust",
+   "transliteration": "av.val",
+   "samples": [
+    "Zeph.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "he",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Ezek.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "justly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "2Sam.23.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "seems right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Prov.18.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "tyrant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Isa.49.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6662",
+   "surface": "upright",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteous",
+   "transliteration": "tsad.diq",
+   "samples": [
+    "Hos.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "deliverance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Ps.40.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "honest evidence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Prov.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "judgments",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Isa.58.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "justice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Deut.16.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "only justice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Deut.16.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "rightful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Job.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "truth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Isa.45.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "unrighteousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Jer.22.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "victory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Isa.41.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6664G",
+   "surface": "vindication",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.deq",
+   "samples": [
+    "Job.6.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6665",
+   "surface": "practicing righteousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tsid.qah",
+   "samples": [
+    "Dan.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "acquittal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Ps.69.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "deliverance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Ps.40.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "honesty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Gen.30.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "innocent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Isa.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6666",
+   "surface": "righteously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "righteousness",
+   "transliteration": "tse.da.qah",
+   "samples": [
+    "Isa.33.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6968",
+   "surface": "erect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uprightness",
+   "transliteration": "qo.me.miy.yut",
+   "samples": [
+    "Lev.26.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8000",
+   "surface": "deliver",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be complete",
+   "transliteration": "she.lem",
+   "samples": [
+    "Ezra.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8000",
+   "surface": "end",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be complete",
+   "transliteration": "she.lem",
+   "samples": [
+    "Dan.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8000",
+   "surface": "finished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be complete",
+   "transliteration": "she.lem",
+   "samples": [
+    "Ezra.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "blameless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "2Chr.16.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "city",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "Gen.33.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "complete",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "Gen.15.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "completed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "2Chr.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "full strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "Nah.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "just",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "Prov.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "peace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "Gen.34.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8003",
+   "surface": "prepared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "sha.lem",
+   "samples": [
+    "1Kgs.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8537",
+   "surface": "full",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "integrity",
+   "transliteration": "tom",
+   "samples": [
+    "Job.21.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8537",
+   "surface": "full measure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "integrity",
+   "transliteration": "tom",
+   "samples": [
+    "Isa.47.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8537",
+   "surface": "innocence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "integrity",
+   "transliteration": "tom",
+   "samples": [
+    "2Sam.15.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8537",
+   "surface": "upright",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "integrity",
+   "transliteration": "tom",
+   "samples": [
+    "Ps.78.72"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549H",
+   "surface": "blamelessly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unblemished: blameless",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Ps.15.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549H",
+   "surface": "sincerity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unblemished: blameless",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Josh.24.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549H",
+   "surface": "truth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unblemished: blameless",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Amos.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549H",
+   "surface": "uprightly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unblemished: blameless",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Ps.84.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

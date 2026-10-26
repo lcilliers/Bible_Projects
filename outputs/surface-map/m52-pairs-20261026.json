@@ -1,0 +1,628 @@
+{
+ "cluster": "M52",
+ "cluster_name": "Encouragement",
+ "built_at": "2026-10-26T04:23:59Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 37,
+  "head": 18,
+  "tail": 19,
+  "hits": 103,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G3618",
+   "surface": "build",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to build",
+   "transliteration": "oikodomeō",
+   "samples": [
+    "Luke.11.47",
+    "Rom.15.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3874",
+   "surface": "comfort",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "encouragement",
+   "transliteration": "paraklēsis",
+   "samples": [
+    "2Cor.1.4",
+    "2Cor.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3618",
+   "surface": "built",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to build",
+   "transliteration": "oikodomeō",
+   "samples": [
+    "Acts.7.47",
+    "Mark.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3874",
+   "surface": "encouragement",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "encouragement",
+   "transliteration": "paraklēsis",
+   "samples": [
+    "1Cor.14.3",
+    "Rom.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3618",
+   "surface": "builders",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to build",
+   "transliteration": "oikodomeō",
+   "samples": [
+    "Mark.12.10",
+    "Matt.21.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3618",
+   "surface": "rebuild",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to build",
+   "transliteration": "oikodomeō",
+   "samples": [
+    "Gal.2.18",
+    "Matt.27.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3619",
+   "surface": "building up",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "building",
+   "transliteration": "oikodomē",
+   "samples": [
+    "2Cor.13.10",
+    "Eph.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3874",
+   "surface": "exhortation",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "encouragement",
+   "transliteration": "paraklēsis",
+   "samples": [
+    "1Tim.4.13",
+    "Heb.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3618",
+   "surface": "builds up",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to build",
+   "transliteration": "oikodomeō",
+   "samples": [
+    "1Cor.14.4",
+    "1Cor.8.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3618",
+   "surface": "built up",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to build",
+   "transliteration": "oikodomeō",
+   "samples": [
+    "1Cor.14.17",
+    "1Pet.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3619",
+   "surface": "building",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "building",
+   "transliteration": "oikodomē",
+   "samples": [
+    "1Cor.14.12",
+    "2Cor.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3619",
+   "surface": "buildings",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "building",
+   "transliteration": "oikodomē",
+   "samples": [
+    "Mark.13.1",
+    "Matt.24.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3619",
+   "surface": "upbuilding",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "building",
+   "transliteration": "oikodomē",
+   "samples": [
+    "1Cor.14.3",
+    "2Cor.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2026",
+   "surface": "building",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to build up/upon",
+   "transliteration": "epoikodomeō",
+   "samples": [
+    "1Cor.3.10",
+    "Jude.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2026",
+   "surface": "built",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to build up/upon",
+   "transliteration": "epoikodomeō",
+   "samples": [
+    "1Cor.3.14",
+    "Eph.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3618",
+   "surface": "building",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to build",
+   "transliteration": "oikodomeō",
+   "samples": [
+    "Luke.17.28",
+    "Luke.6.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3874",
+   "surface": "appeal",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "encouragement",
+   "transliteration": "paraklēsis",
+   "samples": [
+    "1Thess.2.3",
+    "2Cor.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3874",
+   "surface": "consolation",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "encouragement",
+   "transliteration": "paraklēsis",
+   "samples": [
+    "Luke.2.25",
+    "Luke.6.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3823A",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to encourage",
+   "transliteration": "la.vav",
+   "samples": [
+    "Song.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2026",
+   "surface": "builds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to build up/upon",
+   "transliteration": "epoikodomeō",
+   "samples": [
+    "1Cor.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2026",
+   "surface": "built up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to build up/upon",
+   "transliteration": "epoikodomeō",
+   "samples": [
+    "Col.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2026",
+   "surface": "up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to build up/upon",
+   "transliteration": "epoikodomeō",
+   "samples": [
+    "Acts.20.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3618",
+   "surface": "build up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to build",
+   "transliteration": "oikodomeō",
+   "samples": [
+    "1Cor.10.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3618",
+   "surface": "encouraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to build",
+   "transliteration": "oikodomeō",
+   "samples": [
+    "1Cor.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3619",
+   "surface": "build him up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "building",
+   "transliteration": "oikodomē",
+   "samples": [
+    "Rom.15.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3619",
+   "surface": "building you up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "building",
+   "transliteration": "oikodomē",
+   "samples": [
+    "2Cor.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3619",
+   "surface": "builds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "building",
+   "transliteration": "oikodomē",
+   "samples": [
+    "Eph.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3619",
+   "surface": "built up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "building",
+   "transliteration": "oikodomē",
+   "samples": [
+    "1Cor.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3619",
+   "surface": "structure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "building",
+   "transliteration": "oikodomē",
+   "samples": [
+    "Eph.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3874",
+   "surface": "earnestly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "encouragement",
+   "transliteration": "paraklēsis",
+   "samples": [
+    "2Cor.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3888",
+   "surface": "console",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encourage",
+   "transliteration": "paramutheomai",
+   "samples": [
+    "John.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3888",
+   "surface": "consoling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encourage",
+   "transliteration": "paramutheomai",
+   "samples": [
+    "John.11.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3888",
+   "surface": "encourage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encourage",
+   "transliteration": "paramutheomai",
+   "samples": [
+    "1Thess.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3888",
+   "surface": "encouraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encourage",
+   "transliteration": "paramutheomai",
+   "samples": [
+    "1Thess.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4389",
+   "surface": "encouraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encourage",
+   "transliteration": "protrepō",
+   "samples": [
+    "Acts.18.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4837",
+   "surface": "mutually encouraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encourage",
+   "transliteration": "sumparakaleō",
+   "samples": [
+    "Rom.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3823A",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to encourage",
+   "transliteration": "la.vav",
+   "samples": [
+    "Job.11.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

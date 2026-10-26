@@ -1,0 +1,84 @@
+{
+ "M49": {
+  "groups": [
+   ["M49_not_this_sense", "Not the cluster's sense", "renderings with no sense of thanksgiving", "not_this_sense", "carries no sense of thanksgiving"]
+  ],
+  "surf": {"M49_not_this_sense": []},
+  "over": {}
+ },
+ "M83": {
+  "groups": [
+   ["M83_not_this_sense", "Not the cluster's sense", "renderings with no sense of seeking", "not_this_sense", "carries no sense of seeking"]
+  ],
+  "surf": {"M83_not_this_sense": []},
+  "over": {}
+ },
+ "M50": {
+  "groups": [
+   ["M50_chesed", "Steadfast love, kindness, loyalty", "chesed: steadfast love, kindness, dealing kindly and loyally, good deeds", "group", "renders steadfast love"],
+   ["M50_grace", "Grace, favour, graciousness", "charis and chen: grace, favour, gracious, generous", "group", "renders grace"],
+   ["M50_mercy", "Mercy, compassion, pity", "racham, eleos, splanchna: mercy, compassion, pity, sparing, affection", "group", "renders mercy or compassion"],
+   ["M50_pleading", "Pleading for grace", "chanan as seeking grace: plead, plead for mercy", "group", "renders pleading for grace"],
+   ["M50_forgiving", "Forgiving, granting freely", "charizomai: forgive, grant", "group", "renders forgiving"],
+   ["M50_partiality", "Partiality, showing favour, accepting", "lifting the face: partiality, show favour, accept", "group", "renders showing favour"],
+   ["M50_not_this_sense", "Not the cluster's sense", "renderings with no sense of grace: charis as thanks, heads literally lifted", "not_this_sense", "carries no sense of grace or mercy"]
+  ],
+  "surf": {
+   "M50_chesed": ["steadfast love", "kindness", "kindly", "love", "loyally", "good deeds"],
+   "M50_grace": ["grace", "gracious", "graciously", "generous", "favor"],
+   "M50_mercy": ["mercy", "mercies", "merciful", "compassion", "pity", "spare", "affection", "heart"],
+   "M50_pleading": ["plead", "pleaded"],
+   "M50_forgiving": ["forgiven", "forgive", "granted"],
+   "M50_partiality": ["partiality", "partial", "accept"],
+   "M50_not_this_sense": ["thanks", "thank", "lift up", "raised"]
+  },
+  "over": {
+   "H2617A|favor": ["M50_chesed", "chesed 'God gave Daniel favor' (Dan 1:9), 'she won grace and favor' (Esth 2:17)", 0],
+   "G5544|kindness": ["M50_grace", "chrestotes 'by kindness' (2Cor 6:6), 'the kindness and the severity of God' (Rom 11:22)", 0],
+   "H2603A|mercy": ["M50_mercy", "chanan 'his neighbor finds no mercy' (Prov 21:10), 'until he has mercy' (Ps 123:2)", 0],
+   "H2603A|merciful": ["M50_mercy", "chanan 'be merciful to me' (Ps 30:10, 57:1)", 0],
+   "H2603A|favor": ["M50_grace", "chanan 'he sought his favor' (Hos 12:4)", 0],
+   "H5375Q|lift up": ["M50_not_this_sense", "nasa 'you will lift up your face' (Job 11:15), 'lift up your heads, O gates' (Ps 24:7)", 1],
+   "H5375Q|raised": ["M50_not_this_sense", "nasa 'they have raised their heads' (Ps 83:2)", 0],
+   "H5375Q|accept": ["M50_partiality", "nasa panim 'perhaps he will accept me' (Gen 32:20), 'I will accept his prayer' (Job 42:8)", 0],
+   "G5485|thanks": ["M50_not_this_sense", "charis 'thanks be to God' (1Cor 15:57): thanksgiving, the sense of M49", 0],
+   "G5485|thank": ["M50_not_this_sense", "charis 'I thank him who has given me strength' (1Tim 1:12)", 0]
+  }
+ },
+ "M51": {
+  "groups": [
+   ["M51_love", "Love", "ahav, agape, agapao: love, loved, loves", "group", "renders love"],
+   ["M51_not_this_sense", "Not the cluster's sense", "renderings with no sense of love", "not_this_sense", "carries no sense of love"]
+  ],
+  "surf": {"M51_love": ["love", "loved", "loves"], "M51_not_this_sense": []},
+  "over": {}
+ },
+ "M52": {
+  "groups": [
+   ["M52_building_up", "Building up, edification", "oikodome and oikodomeo as building another up: build up, built up, building up, upbuilding", "group", "renders building up"],
+   ["M52_encouragement", "Encouragement, comfort, exhortation", "paraklesis: comfort, encouragement, exhortation, appeal, consolation", "group", "renders encouragement"],
+   ["M52_not_this_sense", "Not the cluster's sense", "renderings with no sense of encouragement: literal building, builders, buildings", "not_this_sense", "carries no sense of encouragement"]
+  ],
+  "surf": {
+   "M52_building_up": ["builds up", "built up", "building up", "upbuilding"],
+   "M52_encouragement": ["comfort", "encouragement", "exhortation", "appeal", "consolation"],
+   "M52_not_this_sense": ["build", "built", "builders", "rebuild", "building", "buildings"]
+  },
+  "over": {
+   "G3618|build": ["M52_not_this_sense", "oikodomeo 'you build the tombs of the prophets' (Luke 11:47); 'not to build on someone else's foundation' (Rom 15:20) is a figure, settled per verse", 1],
+   "G3618|built": ["M52_not_this_sense", "oikodomeo 'Solomon built a house' (Acts 7:47)", 1],
+   "G3619|building": ["M52_building_up", "oikodome 'that the church may be built up' (1Cor 14:12); 'a building from God' (2Cor 5:1)", 1],
+   "G2026|building": ["M52_building_up", "epoikodomeo 'building yourselves up in your most holy faith' (Jude 1:20)", 0],
+   "G2026|built": ["M52_building_up", "epoikodomeo 'the work that anyone has built' (1Cor 3:14), 'built on the foundation' (Eph 2:20)", 0]
+  }
+ },
+ "M54": {
+  "groups": [
+   ["M54_law", "Law, instruction", "torah and nomos: law", "group", "renders the law"],
+   ["M54_commandments", "Commandments", "mitsvah: commandment, commandments", "group", "renders a commandment"],
+   ["M54_not_this_sense", "Not the cluster's sense", "renderings with no sense of law or obedience", "not_this_sense", "carries no sense of law"]
+  ],
+  "surf": {"M54_law": ["law"], "M54_commandments": ["commandments", "commandment"], "M54_not_this_sense": []},
+  "over": {}
+ }
+}

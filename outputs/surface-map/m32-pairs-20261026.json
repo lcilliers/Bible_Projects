@@ -1,0 +1,810 @@
+{
+ "cluster": "M32",
+ "cluster_name": "Covenant",
+ "built_at": "2026-10-26T04:21:18Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 48,
+  "head": 6,
+  "tail": 42,
+  "hits": 540,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H1285",
+   "surface": "covenant",
+   "part": "head",
+   "hits": 275,
+   "verses": 256,
+   "gloss": "covenant",
+   "transliteration": "be.rit",
+   "samples": [
+    "Isa.61.8",
+    "Zech.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3772H",
+   "surface": "made",
+   "part": "head",
+   "hits": 49,
+   "verses": 49,
+   "gloss": "to cut: make [covenant]",
+   "transliteration": "ka.rat",
+   "samples": [
+    "2Sam.5.3",
+    "Ps.105.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3772H",
+   "surface": "make",
+   "part": "head",
+   "hits": 32,
+   "verses": 32,
+   "gloss": "to cut: make [covenant]",
+   "transliteration": "ka.rat",
+   "samples": [
+    "Isa.61.8",
+    "Neh.9.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1242",
+   "surface": "covenant",
+   "part": "head",
+   "hits": 28,
+   "verses": 25,
+   "gloss": "covenant",
+   "transliteration": "diathēkē",
+   "samples": [
+    "2Cor.3.14",
+    "Rev.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4135A",
+   "surface": "circumcised",
+   "part": "head",
+   "hits": 26,
+   "verses": 23,
+   "gloss": "to circumcise",
+   "transliteration": "mul",
+   "samples": [
+    "Gen.17.23",
+    "Gen.17.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4061",
+   "surface": "circumcision",
+   "part": "head",
+   "hits": 23,
+   "verses": 21,
+   "gloss": "circumcision",
+   "transliteration": "peritomē",
+   "samples": [
+    "Gal.5.6",
+    "Rom.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4061",
+   "surface": "circumcised",
+   "part": "tail",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "circumcision",
+   "transliteration": "peritomē",
+   "samples": [
+    "Phil.3.5",
+    "Rom.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4059",
+   "surface": "circumcised",
+   "part": "tail",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "to circumcise",
+   "transliteration": "peritemnō",
+   "samples": [
+    "Acts.15.1",
+    "Gal.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0203",
+   "surface": "uncircumcised",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "uncircumcision",
+   "transliteration": "akrobustia",
+   "samples": [
+    "Acts.11.3",
+    "Col.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0203",
+   "surface": "uncircumcision",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "uncircumcision",
+   "transliteration": "akrobustia",
+   "samples": [
+    "Gal.5.6",
+    "Rom.2.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6190H",
+   "surface": "foreskin",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "foreskin",
+   "transliteration": "or.lah",
+   "samples": [
+    "Jer.4.4",
+    "Lev.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6190H",
+   "surface": "foreskins",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "foreskin",
+   "transliteration": "or.lah",
+   "samples": [
+    "Gen.17.11",
+    "Gen.17.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4059",
+   "surface": "circumcise",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to circumcise",
+   "transliteration": "peritemnō",
+   "samples": [
+    "Acts.15.5",
+    "Luke.1.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3772H",
+   "surface": "covenant",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to cut: make [covenant]",
+   "transliteration": "ka.rat",
+   "samples": [
+    "1Sam.22.8",
+    "2Chr.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1242",
+   "surface": "covenants",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "covenant",
+   "transliteration": "diathēkē",
+   "samples": [
+    "Eph.2.12",
+    "Rom.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1303",
+   "surface": "made",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to make a covenant",
+   "transliteration": "diatithēmi",
+   "samples": [
+    "Acts.3.25",
+    "Heb.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3772H",
+   "surface": "making",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to cut: make [covenant]",
+   "transliteration": "ka.rat",
+   "samples": [
+    "Deut.29.14",
+    "Exod.34.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4135A",
+   "surface": "circumcise",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to circumcise",
+   "transliteration": "mul",
+   "samples": [
+    "Deut.10.16",
+    "Jer.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4135A",
+   "surface": "cut them off",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to circumcise",
+   "transliteration": "mul",
+   "samples": [
+    "Ps.118.10",
+    "Ps.118.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1242",
+   "surface": "will",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "covenant",
+   "transliteration": "diathēkē",
+   "samples": [
+    "Heb.9.16",
+    "Heb.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1303",
+   "surface": "make",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to make a covenant",
+   "transliteration": "diatithēmi",
+   "samples": [
+    "Heb.10.16",
+    "Heb.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1285",
+   "surface": "covenants",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "covenant",
+   "transliteration": "be.rit",
+   "samples": [
+    "Hos.10.4",
+    "Isa.33.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1285",
+   "surface": "league",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "covenant",
+   "transliteration": "be.rit",
+   "samples": [
+    "Ezek.30.5",
+    "Job.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1285",
+   "surface": "treaty",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "covenant",
+   "transliteration": "be.rit",
+   "samples": [
+    "1Kgs.5.12",
+    "1Sam.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0203",
+   "surface": "before",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uncircumcision",
+   "transliteration": "akrobustia",
+   "samples": [
+    "Rom.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0203",
+   "surface": "circumcised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uncircumcision",
+   "transliteration": "akrobustia",
+   "samples": [
+    "Rom.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0203",
+   "surface": "he was circumcised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uncircumcision",
+   "transliteration": "akrobustia",
+   "samples": [
+    "Rom.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0203",
+   "surface": "without being circumcised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uncircumcision",
+   "transliteration": "akrobustia",
+   "samples": [
+    "Rom.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0564",
+   "surface": "uncircumcised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "uncircumcised",
+   "transliteration": "aperitmētos",
+   "samples": [
+    "Acts.7.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1303",
+   "surface": "assign",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make a covenant",
+   "transliteration": "diatithēmi",
+   "samples": [
+    "Luke.22.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1303",
+   "surface": "assigned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make a covenant",
+   "transliteration": "diatithēmi",
+   "samples": [
+    "Luke.22.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1986",
+   "surface": "remove the marks of circumcision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to uncircumcise",
+   "transliteration": "epispaō",
+   "samples": [
+    "1Cor.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4059",
+   "surface": "accept circumcision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to circumcise",
+   "transliteration": "peritemnō",
+   "samples": [
+    "Gal.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4059",
+   "surface": "accepts circumcision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to circumcise",
+   "transliteration": "peritemnō",
+   "samples": [
+    "Gal.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4059",
+   "surface": "circumcision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to circumcise",
+   "transliteration": "peritemnō",
+   "samples": [
+    "1Cor.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4061",
+   "surface": "after",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "circumcision",
+   "transliteration": "peritomē",
+   "samples": [
+    "Rom.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1285",
+   "surface": "allies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "covenant",
+   "transliteration": "be.rit",
+   "samples": [
+    "Obad.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1285",
+   "surface": "of",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "covenant",
+   "transliteration": "be.rit",
+   "samples": [
+    "Gen.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1285",
+   "surface": "terms",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "covenant",
+   "transliteration": "be.rit",
+   "samples": [
+    "1Kgs.20.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4135A",
+   "surface": "circumcising",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to circumcise",
+   "transliteration": "mul",
+   "samples": [
+    "Josh.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4135A",
+   "surface": "fades",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to circumcise",
+   "transliteration": "mul",
+   "samples": [
+    "Ps.90.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4135A",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to circumcise",
+   "transliteration": "mul",
+   "samples": [
+    "Gen.17.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4135B",
+   "surface": "blunted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to circumcise",
+   "transliteration": "ma.lal",
+   "samples": [
+    "Ps.58.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4135B",
+   "surface": "circumcise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to circumcise",
+   "transliteration": "ma.lal",
+   "samples": [
+    "Josh.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4139",
+   "surface": "circumcision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "circumcision",
+   "transliteration": "mu.lah",
+   "samples": [
+    "Exod.4.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6190H",
+   "surface": "flesh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foreskin",
+   "transliteration": "or.lah",
+   "samples": [
+    "Jer.9.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6190H",
+   "surface": "forbidden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foreskin",
+   "transliteration": "or.lah",
+   "samples": [
+    "Lev.19.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6190H",
+   "surface": "uncircumcised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foreskin",
+   "transliteration": "or.lah",
+   "samples": [
+    "Gen.34.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

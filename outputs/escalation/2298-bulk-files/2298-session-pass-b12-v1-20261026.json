@@ -1,0 +1,131 @@
+{
+ "M42": {
+  "groups": [
+   ["M42_prayer", "Prayer, praying", "prayer to God: pray, prayed, praying, prayer, prayers", "group", "renders prayer"],
+   ["M42_supplication", "Supplication, pleading, begging", "prayer that pleads: plea, pleas for mercy, plead, beg, entreat, appeal, petition", "group", "renders supplication"],
+   ["M42_crying", "Crying out, cry for help", "the cry raised: cry, cried, cry out, outcry, cry for help, complaint", "group", "renders crying out"],
+   ["M42_calling", "Calling on, summoning, proclaiming", "calling aloud: call, called, call on, summon, invite, proclaim", "group", "renders calling"],
+   ["M42_vocation", "Calling (vocation)", "being called by God: the called, calling", "group", "renders the vocation"],
+   ["M42_exhorting", "Exhorting, urging, comforting", "parakaleo: urge, exhort, encourage, comfort", "group", "renders exhorting or comforting"],
+   ["M42_not_this_sense", "Not the cluster's sense", "renderings with no sense of prayer: qara as reading aloud, rinnah as singing or shouts of joy", "not_this_sense", "carries no sense of prayer"]
+  ],
+  "surf": {
+   "M42_prayer": ["prayer", "prayers", "pray", "prayed", "praying", "prays"],
+   "M42_supplication": ["plea", "pleas", "pleas for mercy", "plead", "beg", "wish", "entreat", "appeal", "appealed", "begged"],
+   "M42_crying": ["cried", "cry", "cry out", "cried out", "crying", "crying out", "out", "outcry", "called out", "one crying", "help", "complaint"],
+   "M42_calling": ["called", "call", "calls", "calling", "call on", "summoned", "summon", "invited", "guests", "proclaim", "proclaimed"],
+   "M42_vocation": [],
+   "M42_exhorting": ["urge", "urged", "exhort", "encourage", "encouraged", "comfort", "comforted"],
+   "M42_not_this_sense": ["read", "singing", "joy"]
+  },
+  "over": {
+   "G2822|called": ["M42_vocation", "kletos 'called to be an apostle' (Rom 1:1), 'those with him are called and chosen' (Rev 17:14)", 0],
+   "G2821|calling": ["M42_vocation", "klesis 'make your calling and election sure' (2Pet 1:10)", 0],
+   "H7121J|read": ["M42_not_this_sense", "qara 'the words of the book that the king has read' (2Kgs 22:16): reading aloud", 0],
+   "H7440|singing": ["M42_not_this_sense", "rinnah 'they break forth into singing' (Isa 14:7): the sense of M22", 0],
+   "H7440|joy": ["M42_not_this_sense", "rinnah 'shall reap with shouts of joy' (Ps 126:5): the sense of M04", 0],
+   "G2564G|called": ["M42_calling", "kaleo 'the island called Patmos' (Rev 1:9), 'the name by which he is called' (Rev 19:13): naming and calling, settled per verse", 1],
+   "H7121I|cried": ["M42_crying", "qara 'this poor man cried' (Ps 34:6)", 0],
+   "H7121I|cry": ["M42_crying", "qara 'they are in full cry after you' (Jer 12:6)", 0],
+   "H7121G|cry": ["M42_crying", "qara 'though they cry in my ears with a loud voice' (Ezek 8:18)", 0],
+   "H7121I|out": ["M42_crying", "qara 'call out for insight' (Prov 2:3)", 0],
+   "H2199|out": ["M42_crying", "za'aq 'you will cry out because of your king' (1Sam 8:18)", 0],
+   "G2896|out": ["M42_crying", "krazo 'he began to cry out' (Mark 10:47)", 0],
+   "H7768|help": ["M42_crying", "shava 'they do not cry for help' (Job 36:13)", 0],
+   "G1189|beg": ["M42_supplication", "deomai 'I beg you to look at my son' (Luke 9:38)", 0],
+   "G1189|pray": ["M42_prayer", "deomai 'pray to the Lord' (Acts 8:22)", 0],
+   "G2172|pray": ["M42_prayer", "euchomai 'we pray to God' (2Cor 13:7)", 0],
+   "G1162|prayer": ["M42_supplication", "deesis 'your prayer has been heard' (Luke 1:13): petition", 0],
+   "G1162|prayers": ["M42_supplication", "deesis 'night and day in my prayers' (2Tim 1:3)", 0],
+   "G1941|appealed": ["M42_supplication", "epikaleomai 'you have appealed to Caesar' (Acts 25:12)", 0],
+   "H7121G|guests": ["M42_calling", "qara 'the guests' (1Sam 9:24, Zeph 1:7): the invited", 0]
+  }
+ },
+ "M44": {
+  "groups": [
+   ["M44_assembly", "Assembly, congregation, church", "the gathered people: assembly, congregation, church, convocation", "group", "renders the assembly"],
+   ["M44_betrothal", "Betrothal", "the bond pledged: betroth, betrothed", "group", "renders betrothal"],
+   ["M44_companionship", "Companionship, sharing, brotherhood", "fellowship held: companions, brotherhood, share, partake", "group", "renders companionship"],
+   ["M44_agreeing", "Agreeing, confessing", "homologeo and suntithemi: confess, agree", "group", "renders agreeing or confessing"],
+   ["M44_not_this_sense", "Not the cluster's sense", "renderings with no sense of fellowship: enmity, a hostile host", "not_this_sense", "carries no sense of fellowship"]
+  ],
+  "surf": {
+   "M44_assembly": ["assembly", "church", "churches", "convocation", "convocations", "congregation", "solemn assembly", "company"],
+   "M44_betrothal": ["betrothed", "betroth"],
+   "M44_companionship": ["companions", "brotherhood", "share", "partake"],
+   "M44_agreeing": ["confess", "confessing", "agreed"],
+   "M44_not_this_sense": ["enmity", "host"]
+  },
+  "over": {
+   "H0342|enmity": ["M44_not_this_sense", "eivah 'with never-ending enmity' (Ezek 25:15): the sense of M06", 0],
+   "H6951|host": ["M44_not_this_sense", "qahal 'bring up a host against them' (Ezek 23:46): an army", 0],
+   "H6951|company": ["M44_assembly", "qahal 'a great company' (Ezek 17:17); 'let my glory not be joined to their company' (Gen 49:6)", 1]
+  }
+ },
+ "M46": {
+  "groups": [
+   ["M46_inheritance", "Inheritance, heritage", "nachalah: inheritance, heritage", "group", "renders inheritance"],
+   ["M46_riches", "Riches, wealth, being rich", "wealth held: riches, wealth, rich, possessions, enriched", "group", "renders riches"],
+   ["M46_money", "Money, silver", "money as such: money, silver, pieces of silver", "group", "renders money"],
+   ["M46_prospering", "Prospering, succeeding, ease", "tsalach: prosper, succeed, thrive, triumph, be at ease", "group", "renders prospering"],
+   ["M46_abundance", "Abundance, many, great (a quantity)", "rov: abundance, great, many, multitude, much, numerous; they qualify an amount and are read where they qualify (E4)", "qualifier", "renders an amount"],
+   ["M46_not_this_sense", "Not the cluster's sense", "renderings with no sense of wealth: goodness, pot ashes", "not_this_sense", "carries no sense of wealth"]
+  ],
+  "surf": {
+   "M46_inheritance": ["inheritance", "heritage"],
+   "M46_riches": ["riches", "wealth", "rich", "rich person", "rich man", "richly", "possessions", "enriched"],
+   "M46_money": ["money", "silver", "pieces of silver"],
+   "M46_prospering": ["prosper", "prospered", "succeed", "triumph", "thrive", "ease"],
+   "M46_abundance": ["abundance", "great", "many", "multitude", "abundant", "much", "greatness", "great numbers", "great quantities", "number", "numerous", "plentiful"],
+   "M46_not_this_sense": ["good", "goodness", "ashes"]
+  },
+  "over": {
+   "H8082|rich": ["M46_abundance", "shamen 'rich pasture' (Ezek 34:14), 'the large and rich land' (Neh 9:35): fat land", 0],
+   "H1878|enriched": ["M46_riches", "dashen 'whoever brings blessing will be enriched' (Prov 11:25)", 0],
+   "H1878|ashes": ["M46_not_this_sense", "deshen 'pots to receive its ashes' (Exod 27:3)", 0],
+   "G0019|good": ["M46_not_this_sense", "agathosune 'every resolve for good' (2Thess 1:11): the sense of M05", 0],
+   "G0019|goodness": ["M46_not_this_sense", "agathosune 'goodness' (Gal 5:22): the sense of M05", 0]
+  }
+ },
+ "M47": {
+  "groups": [
+   ["M47_heart", "Heart, mind", "lev and kardia: the heart as the seat of thought and will, mind, sense", "group", "renders the heart"],
+   ["M47_soul", "Soul", "nephesh and psuche as the soul", "group", "renders the soul"],
+   ["M47_spirit", "Spirit, spiritual", "ruach and pneuma as spirit: spirit, spirits, spiritual", "group", "renders the spirit"],
+   ["M47_conscience", "Conscience", "suneidesis: conscience", "group", "renders conscience"],
+   ["M47_flesh", "Flesh, body", "basar, sarx and soma: flesh, body, bodies", "group", "renders flesh or body"],
+   ["M47_life_self", "Life, self, person, breath", "nephesh and psuche as life and self: life, lives, person, himself, herself, breath", "group", "renders life or self"],
+   ["M47_not_this_sense", "Not the cluster's sense", "renderings with no sense of the inner seat: flesh as meat, ruach as wind", "not_this_sense", "carries no sense of the inner seat"]
+  ],
+  "surf": {
+   "M47_heart": ["heart", "hearts", "mind", "sense"],
+   "M47_soul": ["soul", "souls"],
+   "M47_spirit": ["spirit", "spirits", "spiritual"],
+   "M47_conscience": ["conscience"],
+   "M47_flesh": ["flesh", "body", "bodies"],
+   "M47_life_self": ["life", "lives", "person", "persons", "himself", "herself", "breath"],
+   "M47_not_this_sense": ["meat", "wind"]
+  },
+  "over": {
+   "H1320|meat": ["M47_not_this_sense", "basar 'bread and meat' (1Kgs 17:6): flesh as food", 0],
+   "H7307H|wind": ["M47_not_this_sense", "ruach 'striving after wind' (Eccl 2:17), 'like chaff before the wind' (Ps 83:13): wind", 1]
+  }
+ },
+ "M48": {
+  "groups": [
+   ["M48_marvelling", "Marvelling, astonishment, amazement", "wonder felt: marvel, astonished, amazed, amazement, surprised", "group", "renders marvelling"],
+   ["M48_wonders", "Wonders, signs, wondrous works", "wonder worked: wonders, signs, miracles, portent, wondrous works, marvelous", "group", "renders a wonder done"],
+   ["M48_not_this_sense", "Not the cluster's sense", "renderings with no sense of wonder: pala as too hard, as fulfilling a vow", "not_this_sense", "carries no sense of wonder"]
+  ],
+  "surf": {
+   "M48_marvelling": ["marveled", "marvel", "marveling", "wondered", "astonished", "amazed", "amazement", "surprised", "trance"],
+   "M48_wonders": ["wonders", "wondrous works", "sign", "marvelous", "wonderful", "miracles", "wonder", "wondrous deeds", "wondrously", "portent", "extraordinary", "marvelous works", "wonderful deeds", "wondrous"],
+   "M48_not_this_sense": ["hard", "fulfill"]
+  },
+  "over": {
+   "H6381|hard": ["M48_not_this_sense", "pala 'is anything too hard for the LORD?' (Gen 18:14), 'not too hard for you' (Deut 30:11): difficulty", 1],
+   "H6381|fulfill": ["M48_not_this_sense", "pala 'to fulfill a vow' (Lev 22:21)", 0],
+   "G1611|trance": ["M48_marvelling", "ekstasis 'he fell into a trance' (Acts 10:10): standing outside oneself", 1]
+  }
+ }
+}

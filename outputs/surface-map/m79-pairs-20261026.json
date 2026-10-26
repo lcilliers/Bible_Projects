@@ -1,0 +1,741 @@
+{
+ "cluster": "M79",
+ "cluster_name": "Salvation & Ransom",
+ "built_at": "2026-10-26T04:28:04Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 44,
+  "head": 8,
+  "tail": 36,
+  "hits": 293,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H3444",
+   "surface": "salvation",
+   "part": "head",
+   "hits": 69,
+   "verses": 68,
+   "gloss": "salvation",
+   "transliteration": "ye.shu.ah",
+   "samples": [
+    "Hab.3.8",
+    "Ps.74.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4991",
+   "surface": "salvation",
+   "part": "head",
+   "hits": 36,
+   "verses": 35,
+   "gloss": "salvation",
+   "transliteration": "sōtēria",
+   "samples": [
+    "1Thess.5.9",
+    "Luke.1.69"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3468",
+   "surface": "salvation",
+   "part": "head",
+   "hits": 30,
+   "verses": 29,
+   "gloss": "salvation",
+   "transliteration": "ye.sha",
+   "samples": [
+    "Ps.18.46",
+    "Ps.27.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4990",
+   "surface": "savior",
+   "part": "head",
+   "hits": 24,
+   "verses": 24,
+   "gloss": "savior",
+   "transliteration": "sōtēr",
+   "samples": [
+    "1John.4.14",
+    "Luke.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "redeem",
+   "part": "head",
+   "hits": 22,
+   "verses": 17,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Job.5.20",
+    "Job.6.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8668G",
+   "surface": "salvation",
+   "part": "head",
+   "hits": 21,
+   "verses": 20,
+   "gloss": "deliverance: salvation",
+   "transliteration": "te.shu.ah",
+   "samples": [
+    "Ps.38.22",
+    "Ps.60.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "redeemed",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Ps.71.23",
+    "Ps.78.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1350H",
+   "surface": "avenger",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "to redeem: avenge",
+   "transliteration": "ga.al",
+   "samples": [
+    "Deut.19.6",
+    "Num.35.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "ransomed",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Isa.35.10",
+    "Jer.31.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4991",
+   "surface": "saved",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "salvation",
+   "transliteration": "sōtēria",
+   "samples": [
+    "2Thess.2.13",
+    "Luke.1.71"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4992",
+   "surface": "salvation",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "saving",
+   "transliteration": "sōtērion",
+   "samples": [
+    "Eph.6.17",
+    "Luke.2.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "ransom",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Hos.13.14",
+    "Ps.49.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3468",
+   "surface": "safety",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "salvation",
+   "transliteration": "ye.sha",
+   "samples": [
+    "Job.5.11",
+    "Job.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2434",
+   "surface": "propitiation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "propitiation",
+   "transliteration": "hilasmos",
+   "samples": [
+    "1John.2.2",
+    "1John.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3084",
+   "surface": "redeem",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ransom",
+   "transliteration": "lutroō",
+   "samples": [
+    "Luke.24.21",
+    "Titus.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3444",
+   "surface": "saving",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "salvation",
+   "transliteration": "ye.shu.ah",
+   "samples": [
+    "Ps.22.1",
+    "Ps.28.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3444",
+   "surface": "saving power",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "salvation",
+   "transliteration": "ye.shu.ah",
+   "samples": [
+    "Ps.67.2",
+    "Ps.78.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3468",
+   "surface": "saving",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "salvation",
+   "transliteration": "ye.sha",
+   "samples": [
+    "Ps.20.6",
+    "Ps.69.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "redeems",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Ps.34.22",
+    "Ps.55.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2433",
+   "surface": "merciful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to propitiate",
+   "transliteration": "hilaskomai",
+   "samples": [
+    "Luke.18.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2433",
+   "surface": "propitiation for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to propitiate",
+   "transliteration": "hilaskomai",
+   "samples": [
+    "Heb.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2435",
+   "surface": "mercy seat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "propitiation",
+   "transliteration": "hilastērios",
+   "samples": [
+    "Heb.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2435",
+   "surface": "propitiation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "propitiation",
+   "transliteration": "hilastērios",
+   "samples": [
+    "Rom.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3084",
+   "surface": "ransomed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ransom",
+   "transliteration": "lutroō",
+   "samples": [
+    "1Pet.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4991",
+   "surface": "deliverance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "sōtēria",
+   "samples": [
+    "Phil.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4991",
+   "surface": "save",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "sōtēria",
+   "samples": [
+    "Heb.9.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4991",
+   "surface": "saving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "sōtēria",
+   "samples": [
+    "Heb.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4991",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "sōtēria",
+   "samples": [
+    "Acts.27.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4992",
+   "surface": "bringing salvation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "saving",
+   "transliteration": "sōtērion",
+   "samples": [
+    "Titus.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1350I",
+   "surface": "kin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to redeem: relative",
+   "transliteration": "ga.al",
+   "samples": [
+    "Num.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1350I",
+   "surface": "relatives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to redeem: relative",
+   "transliteration": "ga.al",
+   "samples": [
+    "1Kgs.16.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3444",
+   "surface": "deliverance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "ye.shu.ah",
+   "samples": [
+    "Isa.26.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3444",
+   "surface": "help",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "ye.shu.ah",
+   "samples": [
+    "2Sam.10.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3444",
+   "surface": "prosperity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "ye.shu.ah",
+   "samples": [
+    "Job.30.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3444",
+   "surface": "save",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "ye.shu.ah",
+   "samples": [
+    "Ps.80.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3444",
+   "surface": "save them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "ye.shu.ah",
+   "samples": [
+    "Ps.106.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3468",
+   "surface": "help",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "ye.sha",
+   "samples": [
+    "2Sam.23.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4190",
+   "surface": "salvation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "salvation",
+   "transliteration": "mo.sha.ah",
+   "samples": [
+    "Ps.68.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "buy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Lev.27.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "not",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Lev.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "redemption",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Num.18.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "shall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Num.18.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6299",
+   "surface": "truly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ransom",
+   "transliteration": "pa.dah",
+   "samples": [
+    "Ps.49.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8668G",
+   "surface": "help",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deliverance: salvation",
+   "transliteration": "te.shu.ah",
+   "samples": [
+    "1Chr.19.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

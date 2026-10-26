@@ -1,0 +1,1584 @@
+{
+ "cluster": "M28",
+ "cluster_name": "Envy & Greed",
+ "built_at": "2026-10-26T04:20:50Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 96,
+  "head": 45,
+  "tail": 51,
+  "hits": 255,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H2181",
+   "surface": "prostitute",
+   "part": "head",
+   "hits": 26,
+   "verses": 25,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Deut.23.18",
+    "Prov.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "whore",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Exod.34.16",
+    "Jer.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "played the whore",
+   "part": "head",
+   "hits": 17,
+   "verses": 15,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Ezek.16.26",
+    "Ezek.23.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5949",
+   "surface": "deeds",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "wantonness",
+   "transliteration": "a.li.lah",
+   "samples": [
+    "Ps.141.4",
+    "Ps.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8457",
+   "surface": "whoring",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "fornication",
+   "transliteration": "taz.nut",
+   "samples": [
+    "Ezek.16.25",
+    "Ezek.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0766",
+   "surface": "sensuality",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "debauchery",
+   "transliteration": "aselgeia",
+   "samples": [
+    "2Pet.2.2",
+    "Mark.7.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5355",
+   "surface": "envy",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "envy",
+   "transliteration": "fthonos",
+   "samples": [
+    "1Pet.2.1",
+    "Gal.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "whoring",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Ezek.6.9",
+    "Lev.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5689",
+   "surface": "lusted",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to lust",
+   "transliteration": "a.gav",
+   "samples": [
+    "Ezek.23.16",
+    "Ezek.23.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8457",
+   "surface": "whorings",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "fornication",
+   "transliteration": "taz.nut",
+   "samples": [
+    "Ezek.16.20",
+    "Ezek.16.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4559",
+   "surface": "flesh",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "fleshly",
+   "transliteration": "sarkikos",
+   "samples": [
+    "1Cor.3.1",
+    "Rom.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "prostitutes",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "1Kgs.22.38",
+    "1Kgs.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2183",
+   "surface": "whoredom",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "fornication",
+   "transliteration": "ze.nu.nim",
+   "samples": [
+    "Hos.1.2",
+    "Hos.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2052",
+   "surface": "selfish ambition",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "rivalry",
+   "transliteration": "eritheia",
+   "samples": [
+    "Jas.3.16",
+    "Phil.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4124",
+   "surface": "covetousness",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "greediness",
+   "transliteration": "pleonexia",
+   "samples": [
+    "Col.3.5",
+    "Rom.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "whored",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "1Chr.5.25",
+    "Judg.8.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "whoredom",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "2Chr.21.11",
+    "Hos.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2184",
+   "surface": "whoredom",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "fornication",
+   "transliteration": "ze.nut",
+   "samples": [
+    "Hos.4.11",
+    "Jer.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0810",
+   "surface": "debauchery",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "debauchery",
+   "transliteration": "asōtia",
+   "samples": [
+    "1Pet.4.4",
+    "Eph.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3863",
+   "surface": "jealous",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to make envious",
+   "transliteration": "parazēloō",
+   "samples": [
+    "Rom.10.19",
+    "Rom.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4124",
+   "surface": "greed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "greediness",
+   "transliteration": "pleonexia",
+   "samples": [
+    "2Pet.2.14",
+    "2Pet.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2183",
+   "surface": "whorings",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "fornication",
+   "transliteration": "ze.nu.nim",
+   "samples": [
+    "2Kgs.9.22",
+    "Nah.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2184",
+   "surface": "whoring",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "fornication",
+   "transliteration": "ze.nut",
+   "samples": [
+    "Ezek.23.27",
+    "Ezek.43.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530B",
+   "surface": "precious",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "precious thing",
+   "transliteration": "cha.mu.dah",
+   "samples": [
+    "2Chr.20.25",
+    "Dan.11.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4123",
+   "surface": "greedy",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "greedy",
+   "transliteration": "pleonektēs",
+   "samples": [
+    "1Cor.5.10",
+    "1Cor.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "unfaithful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Judg.19.2",
+    "Ps.73.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2183",
+   "surface": "whoring",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fornication",
+   "transliteration": "ze.nu.nim",
+   "samples": [
+    "Ezek.23.29",
+    "Hos.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532B",
+   "surface": "greatly loved",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "desirable thing",
+   "transliteration": "cha.mu.dah",
+   "samples": [
+    "Dan.10.11",
+    "Dan.9.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5949",
+   "surface": "misconduct",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wantonness",
+   "transliteration": "a.li.lah",
+   "samples": [
+    "Deut.22.14",
+    "Deut.22.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8457",
+   "surface": "whoring lust",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fornication",
+   "transliteration": "taz.nut",
+   "samples": [
+    "Ezek.23.17",
+    "Ezek.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0146",
+   "surface": "gain",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greedy",
+   "transliteration": "aischrokerdēs",
+   "samples": [
+    "Titus.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0146",
+   "surface": "greedy for dishonest gain",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greedy",
+   "transliteration": "aischrokerdēs",
+   "samples": [
+    "1Tim.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0147",
+   "surface": "shameful gain",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greedily",
+   "transliteration": "aischrokerdōs",
+   "samples": [
+    "1Pet.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0192",
+   "surface": "self-control",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "self-indulgence",
+   "transliteration": "akrasia",
+   "samples": [
+    "1Cor.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0192",
+   "surface": "self-indulgence",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "self-indulgence",
+   "transliteration": "akrasia",
+   "samples": [
+    "Matt.23.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0766",
+   "surface": "flesh",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "debauchery",
+   "transliteration": "aselgeia",
+   "samples": [
+    "2Pet.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0766",
+   "surface": "sensual",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "debauchery",
+   "transliteration": "aselgeia",
+   "samples": [
+    "2Pet.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0866",
+   "surface": "free from love of money",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "not greedy",
+   "transliteration": "afilarguros",
+   "samples": [
+    "Heb.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0866",
+   "surface": "not a lover of money",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "not greedy",
+   "transliteration": "afilarguros",
+   "samples": [
+    "1Tim.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1608",
+   "surface": "sexual immorality",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "ekporneuō",
+   "samples": [
+    "Jude.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2052",
+   "surface": "hostility",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rivalry",
+   "transliteration": "eritheia",
+   "samples": [
+    "2Cor.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2052",
+   "surface": "rivalries",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rivalry",
+   "transliteration": "eritheia",
+   "samples": [
+    "Gal.5.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2052",
+   "surface": "self-seeking",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rivalry",
+   "transliteration": "eritheia",
+   "samples": [
+    "Rom.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3715",
+   "surface": "passion",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lust",
+   "transliteration": "orexis",
+   "samples": [
+    "Rom.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3863",
+   "surface": "jealousy",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make envious",
+   "transliteration": "parazēloō",
+   "samples": [
+    "1Cor.10.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4123",
+   "surface": "covetous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greedy",
+   "transliteration": "pleonektēs",
+   "samples": [
+    "Eph.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4123",
+   "surface": "greed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greedy",
+   "transliteration": "pleonektēs",
+   "samples": [
+    "1Cor.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4124",
+   "surface": "coveting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greediness",
+   "transliteration": "pleonexia",
+   "samples": [
+    "Mark.7.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4124",
+   "surface": "exaction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greediness",
+   "transliteration": "pleonexia",
+   "samples": [
+    "2Cor.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4124",
+   "surface": "greedy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greediness",
+   "transliteration": "pleonexia",
+   "samples": [
+    "Eph.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4559",
+   "surface": "earthly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fleshly",
+   "transliteration": "sarkikos",
+   "samples": [
+    "2Cor.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4559",
+   "surface": "material blessings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fleshly",
+   "transliteration": "sarkikos",
+   "samples": [
+    "Rom.15.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4559",
+   "surface": "material things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fleshly",
+   "transliteration": "sarkikos",
+   "samples": [
+    "1Cor.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4559",
+   "surface": "passions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fleshly",
+   "transliteration": "sarkikos",
+   "samples": [
+    "1Pet.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4560",
+   "surface": "bodily descent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fleshly",
+   "transliteration": "sarkinos",
+   "samples": [
+    "Heb.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4560",
+   "surface": "human",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fleshly",
+   "transliteration": "sarkinos",
+   "samples": [
+    "2Cor.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5172",
+   "surface": "luxury",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "self-indulgence",
+   "transliteration": "trufē",
+   "samples": [
+    "Luke.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5172",
+   "surface": "revel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "self-indulgence",
+   "transliteration": "trufē",
+   "samples": [
+    "2Pet.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5354",
+   "surface": "envying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to envy",
+   "transliteration": "fthoneō",
+   "samples": [
+    "Gal.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5355",
+   "surface": "jealously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "envy",
+   "transliteration": "fthonos",
+   "samples": [
+    "Jas.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "commits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Hos.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "continue",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Ezek.23.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "go",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Ezek.20.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "go whoring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Ezek.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "immoral",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Gen.38.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "loose woman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Isa.57.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "molech",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Lev.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "prostitute’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Josh.6.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "prostitution",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Lev.19.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "themselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Hos.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2181",
+   "surface": "whores",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fornicate",
+   "transliteration": "za.nah",
+   "samples": [
+    "Jer.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2183",
+   "surface": "immorality",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fornication",
+   "transliteration": "ze.nu.nim",
+   "samples": [
+    "Gen.38.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2183",
+   "surface": "that",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fornication",
+   "transliteration": "ze.nu.nim",
+   "samples": [
+    "Ezek.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2184",
+   "surface": "faithlessness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fornication",
+   "transliteration": "ze.nut",
+   "samples": [
+    "Num.14.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2184",
+   "surface": "whorings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fornication",
+   "transliteration": "ze.nut",
+   "samples": [
+    "Jer.13.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530B",
+   "surface": "costly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious thing",
+   "transliteration": "cha.mu.dah",
+   "samples": [
+    "Dan.11.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532B",
+   "surface": "best",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desirable thing",
+   "transliteration": "cha.mu.dah",
+   "samples": [
+    "Gen.27.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532B",
+   "surface": "delicacies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desirable thing",
+   "transliteration": "cha.mu.dah",
+   "samples": [
+    "Dan.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532B",
+   "surface": "loved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desirable thing",
+   "transliteration": "cha.mu.dah",
+   "samples": [
+    "Dan.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4030",
+   "surface": "costly ornaments",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious thing",
+   "transliteration": "mig.da.nah",
+   "samples": [
+    "Gen.24.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4030",
+   "surface": "costly wares",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious thing",
+   "transliteration": "mig.da.nah",
+   "samples": [
+    "Ezra.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4030",
+   "surface": "precious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious thing",
+   "transliteration": "mig.da.nah",
+   "samples": [
+    "2Chr.32.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4030",
+   "surface": "valuable possessions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious thing",
+   "transliteration": "mig.da.nah",
+   "samples": [
+    "2Chr.21.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4262",
+   "surface": "precious things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desirable",
+   "transliteration": "mach.mod",
+   "samples": [
+    "Lam.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5178B",
+   "surface": "lust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lust",
+   "transliteration": "ne.cho.shet",
+   "samples": [
+    "Ezek.16.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5689",
+   "surface": "lovers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lust",
+   "transliteration": "a.gav",
+   "samples": [
+    "Jer.4.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5690",
+   "surface": "lustful talk",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lust",
+   "transliteration": "a.gav",
+   "samples": [
+    "Ezek.33.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5690",
+   "surface": "sings lustful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lust",
+   "transliteration": "a.gav",
+   "samples": [
+    "Ezek.33.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5691",
+   "surface": "lust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lust",
+   "transliteration": "a.ga.vah",
+   "samples": [
+    "Ezek.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5949",
+   "surface": "actions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wantonness",
+   "transliteration": "a.li.lah",
+   "samples": [
+    "1Sam.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5949",
+   "surface": "acts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wantonness",
+   "transliteration": "a.li.lah",
+   "samples": [
+    "Ps.103.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5949",
+   "surface": "mighty deeds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wantonness",
+   "transliteration": "a.li.lah",
+   "samples": [
+    "Ps.77.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5949",
+   "surface": "works",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wantonness",
+   "transliteration": "a.li.lah",
+   "samples": [
+    "Ps.78.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5949",
+   "surface": "wrongdoings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wantonness",
+   "transliteration": "a.li.lah",
+   "samples": [
+    "Ps.99.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6887E",
+   "surface": "uncovering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rival",
+   "transliteration": "tsa.rar",
+   "samples": [
+    "Lev.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8457",
+   "surface": "whore",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fornication",
+   "transliteration": "taz.nut",
+   "samples": [
+    "Ezek.23.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

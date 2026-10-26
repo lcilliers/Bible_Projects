@@ -1,0 +1,3967 @@
+{
+ "cluster": "M30",
+ "cluster_name": "Rebellion & Stubbornness",
+ "built_at": "2026-10-26T04:20:59Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 241,
+  "head": 92,
+  "tail": 149,
+  "hits": 763,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H5800A",
+   "surface": "forsaken",
+   "part": "head",
+   "hits": 50,
+   "verses": 48,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Isa.60.15",
+    "Ps.119.87"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "forsake",
+   "part": "head",
+   "hits": 42,
+   "verses": 41,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Isa.55.7",
+    "Ps.71.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "rejected",
+   "part": "head",
+   "hits": 34,
+   "verses": 30,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "1Sam.15.23",
+    "Jer.2.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0959",
+   "surface": "despised",
+   "part": "head",
+   "hits": 27,
+   "verses": 26,
+   "gloss": "to despise",
+   "transliteration": "ba.zah",
+   "samples": [
+    "Ps.22.24",
+    "Ps.22.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "leave",
+   "part": "head",
+   "hits": 25,
+   "verses": 24,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Jer.18.14",
+    "Prov.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "left",
+   "part": "head",
+   "hits": 24,
+   "verses": 24,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "2Chr.28.14",
+    "Jer.25.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3985",
+   "surface": "refused",
+   "part": "head",
+   "hits": 21,
+   "verses": 20,
+   "gloss": "to refuse",
+   "transliteration": "ma.en",
+   "samples": [
+    "Hos.11.5",
+    "Jer.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "abandoned",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "2Kgs.21.22",
+    "Judg.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4805H",
+   "surface": "rebellious",
+   "part": "head",
+   "hits": 18,
+   "verses": 16,
+   "gloss": "rebellion",
+   "transliteration": "me.ri",
+   "samples": [
+    "Ezek.17.12",
+    "Ezek.44.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "rebelled",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "Ezek.20.8",
+    "Hos.13.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4775",
+   "surface": "rebelled",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to rebel",
+   "transliteration": "ma.rad",
+   "samples": [
+    "2Chr.36.13",
+    "2Kgs.24.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3985",
+   "surface": "refuse",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to refuse",
+   "transliteration": "ma.en",
+   "samples": [
+    "Isa.1.20",
+    "Jer.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3027",
+   "surface": "robbers",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "robber/rebel",
+   "transliteration": "lēstēs",
+   "samples": [
+    "2Cor.11.26",
+    "Matt.21.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "despise",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Amos.5.21",
+    "Job.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "rebellious",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "Deut.9.7",
+    "Jer.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0593",
+   "surface": "rejected",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to reject",
+   "transliteration": "apodokimazō",
+   "samples": [
+    "Mark.12.10",
+    "Matt.21.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "despised",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Jer.33.24",
+    "Prov.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5637",
+   "surface": "stubborn",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to rebel",
+   "transliteration": "sa.rar",
+   "samples": [
+    "Neh.9.29",
+    "Zech.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "hard",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "Isa.14.3",
+    "Isa.19.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "deserted",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Isa.17.2",
+    "Isa.54.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3985",
+   "surface": "refuses",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to refuse",
+   "transliteration": "ma.en",
+   "samples": [
+    "Exod.22.17",
+    "Ps.77.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "shut up",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "2Chr.7.13",
+    "Deut.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2706",
+   "surface": "despise",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to despise",
+   "transliteration": "katafroneō",
+   "samples": [
+    "1Tim.4.12",
+    "Matt.18.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0959",
+   "surface": "despise",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to despise",
+   "transliteration": "ba.zah",
+   "samples": [
+    "1Sam.2.30",
+    "Ps.73.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "rejected",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "Ps.43.2",
+    "Ps.60.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "reject",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Job.8.20",
+    "Ps.36.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4775",
+   "surface": "rebel",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to rebel",
+   "transliteration": "ma.rad",
+   "samples": [
+    "Josh.22.18",
+    "Josh.22.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "rejects",
+   "part": "head",
+   "hits": 5,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "John.12.48",
+    "Luke.10.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0544",
+   "surface": "disobedient",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to disobey",
+   "transliteration": "apeitheō",
+   "samples": [
+    "Heb.11.31",
+    "Rom.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0544",
+   "surface": "not obey",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to disobey",
+   "transliteration": "apeitheō",
+   "samples": [
+    "1Pet.3.20",
+    "Rom.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3027",
+   "surface": "robber",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "robber/rebel",
+   "transliteration": "lēstēs",
+   "samples": [
+    "John.10.1",
+    "Luke.22.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0936",
+   "surface": "despise",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to despise",
+   "transliteration": "buz",
+   "samples": [
+    "Prov.1.7",
+    "Prov.6.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0959",
+   "surface": "despises",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to despise",
+   "transliteration": "ba.zah",
+   "samples": [
+    "2Kgs.19.21",
+    "Prov.15.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "despised",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Ezek.21.10",
+    "Judg.9.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5637",
+   "surface": "rebellious",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to rebel",
+   "transliteration": "sa.rar",
+   "samples": [
+    "Jer.6.28",
+    "Ps.68.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "forsakes",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Jer.14.5",
+    "Prov.15.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "forsaking",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "1Sam.8.8",
+    "Jer.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "bond",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "1Kgs.14.10",
+    "2Kgs.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "stubborn",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "Deut.31.27",
+    "Deut.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1848",
+   "surface": "despise",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to reject",
+   "transliteration": "exoutheneō",
+   "samples": [
+    "1Thess.5.20",
+    "Rom.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "rebel",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "1Sam.12.14",
+    "Isa.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "abandon",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Neh.5.10",
+    "Ps.37.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "stiff-necked",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "Exod.32.9",
+    "Exod.33.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8307",
+   "surface": "stubbornly",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "stubbornness",
+   "transliteration": "she.ri.rut",
+   "samples": [
+    "Jer.23.17",
+    "Jer.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8307",
+   "surface": "stubbornness",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "stubbornness",
+   "transliteration": "she.ri.rut",
+   "samples": [
+    "Deut.29.19",
+    "Jer.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0683",
+   "surface": "aside",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to reject",
+   "transliteration": "apōtheō",
+   "samples": [
+    "Acts.13.46",
+    "Acts.7.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0683",
+   "surface": "thrust",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to reject",
+   "transliteration": "apōtheō",
+   "samples": [
+    "Acts.13.46",
+    "Acts.7.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "restrained",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Exod.36.6",
+    "Gen.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "cast off",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "2Kgs.23.27",
+    "Jer.31.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4775",
+   "surface": "rebels",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rebel",
+   "transliteration": "ma.rad",
+   "samples": [
+    "Ezek.2.3",
+    "Ezek.20.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "bitter",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "1Sam.30.6",
+    "Ps.106.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "despise",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Jer.23.17",
+    "Num.14.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "spurned",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Lam.2.6",
+    "Ps.107.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5620",
+   "surface": "vexed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "stubborn",
+   "transliteration": "sar",
+   "samples": [
+    "1Kgs.20.43",
+    "1Kgs.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "averted",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "2Sam.24.21",
+    "2Sam.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "stopped",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Num.16.48",
+    "Num.16.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "fierce",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "2Sam.2.17",
+    "Isa.27.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "roughly",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "1Sam.20.10",
+    "Gen.42.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0683",
+   "surface": "rejected",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "apōtheō",
+   "samples": [
+    "Rom.11.1",
+    "Rom.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1848",
+   "surface": "contempt",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "exoutheneō",
+   "samples": [
+    "Luke.18.9",
+    "Luke.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1881",
+   "surface": "rise",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rebel against",
+   "transliteration": "epanistēmi",
+   "samples": [
+    "Mark.13.12",
+    "Matt.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "excused",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "Luke.14.18",
+    "Luke.14.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "refuse",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "1Tim.5.11",
+    "Heb.12.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3878",
+   "surface": "listen",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to ignore",
+   "transliteration": "parakouō",
+   "samples": [
+    "Matt.18.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3894",
+   "surface": "rebellion",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "rebellion",
+   "transliteration": "parapikrasmos",
+   "samples": [
+    "Heb.3.15",
+    "Heb.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0830H",
+   "surface": "ash heap",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "refuse",
+   "transliteration": "ash.pot",
+   "samples": [
+    "1Sam.2.8",
+    "Ps.113.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0936",
+   "surface": "despised",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to despise",
+   "transliteration": "buz",
+   "samples": [
+    "Song.8.7",
+    "Zech.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0936",
+   "surface": "despises",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to despise",
+   "transliteration": "buz",
+   "samples": [
+    "Prov.13.13",
+    "Prov.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0959",
+   "surface": "disdained",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to despise",
+   "transliteration": "ba.zah",
+   "samples": [
+    "1Sam.17.42",
+    "Esth.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "cast off",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "Lam.3.31",
+    "Ps.89.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "spurned",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "Hos.8.3",
+    "Hos.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "shut up",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "1Sam.6.10",
+    "Jer.32.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "withheld",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Hag.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "withhold",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Gen.23.6",
+    "Isa.43.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "despises",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Isa.33.15",
+    "Prov.15.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "loathe",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Job.7.16",
+    "Job.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "refuse",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Isa.7.15",
+    "Isa.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "spurn",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Lev.26.15",
+    "Lev.26.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "utterly",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Jer.14.19",
+    "Lam.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4779",
+   "surface": "rebellious",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "rebellious",
+   "transliteration": "ma.rad",
+   "samples": [
+    "Ezra.4.12",
+    "Ezra.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "disobeyed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "1Kgs.13.21",
+    "1Kgs.13.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "rebelled against",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "Num.20.24",
+    "Ps.78.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "rebels",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "Josh.1.18",
+    "Num.20.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4805H",
+   "surface": "rebellion",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "rebellion",
+   "transliteration": "me.ri",
+   "samples": [
+    "1Sam.15.23",
+    "Prov.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5637",
+   "surface": "rebels",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rebel",
+   "transliteration": "sa.rar",
+   "samples": [
+    "Hos.9.15",
+    "Isa.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "fails",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Ps.38.10",
+    "Ps.40.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "forsake them",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Isa.42.16",
+    "Neh.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "leaving",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "2Chr.24.25",
+    "Exod.23.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "able",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "2Chr.2.6",
+    "2Chr.20.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "detain",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Judg.13.15",
+    "Judg.13.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "retain",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Dan.10.16",
+    "Dan.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "harsh",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "1Sam.25.3",
+    "Exod.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "harshly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "1Kgs.12.13",
+    "2Chr.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7590",
+   "surface": "contempt",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to despise",
+   "transliteration": "shut",
+   "samples": [
+    "Ezek.28.24",
+    "Ezek.28.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8307",
+   "surface": "stubborn",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "stubbornness",
+   "transliteration": "she.ri.rut",
+   "samples": [
+    "Jer.16.12",
+    "Ps.81.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "abandoned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "1Tim.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "annuls",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "Gal.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "break",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "Mark.6.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "disregards",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "1Thess.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "nullify",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "Gal.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "reject",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "Jude.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "rejected",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "Luke.7.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "rejecting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "Mark.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "set aside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "Heb.10.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "thwart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "1Cor.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0114",
+   "surface": "whoever disregards",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "atheteō",
+   "samples": [
+    "1Thess.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0544",
+   "surface": "disobey",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disobey",
+   "transliteration": "apeitheō",
+   "samples": [
+    "1Pet.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0544",
+   "surface": "unbelief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disobey",
+   "transliteration": "apeitheō",
+   "samples": [
+    "Acts.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0544",
+   "surface": "unbelievers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disobey",
+   "transliteration": "apeitheō",
+   "samples": [
+    "Rom.15.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0544",
+   "surface": "unbelieving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disobey",
+   "transliteration": "apeitheō",
+   "samples": [
+    "Acts.14.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0683",
+   "surface": "rejecting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "apōtheō",
+   "samples": [
+    "1Tim.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1848",
+   "surface": "account",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "exoutheneō",
+   "samples": [
+    "2Cor.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1848",
+   "surface": "despised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "exoutheneō",
+   "samples": [
+    "1Cor.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1848",
+   "surface": "rejected",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "exoutheneō",
+   "samples": [
+    "Acts.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1848",
+   "surface": "scorn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "exoutheneō",
+   "samples": [
+    "Gal.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1848",
+   "surface": "standing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "exoutheneō",
+   "samples": [
+    "1Cor.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2138",
+   "surface": "reason",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compliant",
+   "transliteration": "eupeithēs",
+   "samples": [
+    "Jas.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2706",
+   "surface": "despising",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "katafroneō",
+   "samples": [
+    "Heb.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2706",
+   "surface": "disrespectful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "katafroneō",
+   "samples": [
+    "1Tim.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2706",
+   "surface": "presume",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "katafroneō",
+   "samples": [
+    "Rom.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3643",
+   "surface": "regard lightly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "oligōreō",
+   "samples": [
+    "Heb.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "asked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "Mark.15.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "beg",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "Heb.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "escape",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "Acts.25.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "have nothing more to do with",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "Titus.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "have nothing to do with",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "1Tim.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "make excuses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "Luke.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "nothing to do",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "2Tim.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3868",
+   "surface": "refused him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse/excuse",
+   "transliteration": "paraiteomai",
+   "samples": [
+    "Heb.12.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3878",
+   "surface": "overhearing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to ignore",
+   "transliteration": "parakouō",
+   "samples": [
+    "Mark.5.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3893",
+   "surface": "rebelled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rebel",
+   "transliteration": "parapikrainō",
+   "samples": [
+    "Heb.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4065",
+   "surface": "disregard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "perifroneō",
+   "samples": [
+    "Titus.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0830H",
+   "surface": "ash heaps",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuse",
+   "transliteration": "ash.pot",
+   "samples": [
+    "Lam.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0936",
+   "surface": "belittles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "buz",
+   "samples": [
+    "Prov.11.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0936",
+   "surface": "scorns",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "buz",
+   "samples": [
+    "Prov.30.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0936",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "buz",
+   "samples": [
+    "Song.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0959",
+   "surface": "contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "ba.zah",
+   "samples": [
+    "Esth.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0959",
+   "surface": "deeply despised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "ba.zah",
+   "samples": [
+    "Isa.49.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0959",
+   "surface": "despising",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "ba.zah",
+   "samples": [
+    "2Chr.36.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0959",
+   "surface": "person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "ba.zah",
+   "samples": [
+    "Dan.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2107",
+   "surface": "despise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lavish/despise",
+   "transliteration": "zul",
+   "samples": [
+    "Lam.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2107",
+   "surface": "lavish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lavish/despise",
+   "transliteration": "zul",
+   "samples": [
+    "Isa.46.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "bereft",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "Lam.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "cast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "Ps.88.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "cast us off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "Ps.74.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "discarded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "2Chr.29.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "1Chr.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "2Chr.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "reject",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "Ps.44.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "scorned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "Lam.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186A",
+   "surface": "spurn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "za.nach",
+   "samples": [
+    "Ps.77.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2413",
+   "surface": "restrain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "cha.tam",
+   "samples": [
+    "Isa.48.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2954",
+   "surface": "fat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be insensitive",
+   "transliteration": "ta.phash",
+   "samples": [
+    "Ps.119.70"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "hold back",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Ps.119.101"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "imprisoned him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Jer.32.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "kept",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "1Sam.25.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "restrain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Ps.40.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "retain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Eccl.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "shut in",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Ps.88.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "stop",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Num.11.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3607",
+   "surface": "stopped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "ka.la",
+   "samples": [
+    "Ezek.31.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3985",
+   "surface": "refusing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse",
+   "transliteration": "ma.en",
+   "samples": [
+    "Jer.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3985",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to refuse",
+   "transliteration": "ma.en",
+   "samples": [
+    "Exod.22.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "cast away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Isa.31.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "disdained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Job.30.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Isa.41.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "refused",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Isa.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "spurned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Lev.26.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3988A",
+   "surface": "vile person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "ma.as",
+   "samples": [
+    "Ps.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4651",
+   "surface": "chaff",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuse",
+   "transliteration": "map.pal",
+   "samples": [
+    "Amos.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4651",
+   "surface": "folds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuse",
+   "transliteration": "map.pal",
+   "samples": [
+    "Job.41.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4775",
+   "surface": "rebelling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rebel",
+   "transliteration": "ma.rad",
+   "samples": [
+    "Neh.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4775",
+   "surface": "rebellion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rebel",
+   "transliteration": "ma.rad",
+   "samples": [
+    "Josh.22.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4776",
+   "surface": "rebellion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rebellion",
+   "transliteration": "me.rad",
+   "samples": [
+    "Ezra.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4777",
+   "surface": "rebellion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rebellion",
+   "transliteration": "me.red",
+   "samples": [
+    "Josh.22.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4780",
+   "surface": "rebellious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rebellious",
+   "transliteration": "mar.dut",
+   "samples": [
+    "1Sam.20.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "defying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "Isa.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "disobedient",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "Neh.9.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "provocation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "Job.17.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "rebelling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "Ps.78.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4784",
+   "surface": "very",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rebel",
+   "transliteration": "ma.rah",
+   "samples": [
+    "Lam.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4805H",
+   "surface": "bitter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rebellion",
+   "transliteration": "me.ri",
+   "samples": [
+    "Job.23.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4805H",
+   "surface": "egypt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rebellion",
+   "transliteration": "me.ri",
+   "samples": [
+    "Neh.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4805H",
+   "surface": "rebels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rebellion",
+   "transliteration": "me.ri",
+   "samples": [
+    "Num.17.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "blossoms",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Eccl.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "1Sam.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "despises",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Prov.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "renounce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Ps.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "renounces",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Ps.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "revile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Ps.74.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "reviles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Ps.74.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "scorned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "2Sam.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "spurn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "Jer.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5006",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spurn",
+   "transliteration": "na.ats",
+   "samples": [
+    "2Sam.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5541A",
+   "surface": "rejected",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "sa.lah",
+   "samples": [
+    "Lam.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5541A",
+   "surface": "spurn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reject",
+   "transliteration": "sa.lah",
+   "samples": [
+    "Ps.119.118"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5637",
+   "surface": "wayward",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rebel",
+   "transliteration": "sa.rar",
+   "samples": [
+    "Prov.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "commits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Ps.10.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "deserted places",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Isa.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "deserts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Zech.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "forsook",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Judg.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "give up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Ezek.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "leaves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "Job.39.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5800A",
+   "surface": "left me behind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to leave: forsake",
+   "transliteration": "a.zav",
+   "samples": [
+    "1Sam.30.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "banned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Jer.36.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "be",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "1Chr.29.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "closed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Gen.20.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "detained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "1Sam.21.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "freely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "1Chr.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "had",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Gen.20.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "home",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Neh.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "keep",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Job.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "kept",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "1Sam.21.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "prevail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "2Chr.14.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "prevented me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Gen.16.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "recover",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "2Chr.13.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "refrained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Job.29.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "reign",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "1Sam.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "restrain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "1Sam.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "retained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Dan.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "2Chr.22.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "shut",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Isa.66.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "shut him up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "2Kgs.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "slacken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "2Kgs.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "stayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Ps.106.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "stop",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "1Kgs.18.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6113",
+   "surface": "withholds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to restrain",
+   "transliteration": "a.tsar",
+   "samples": [
+    "Job.12.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6574",
+   "surface": "dung",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuse",
+   "transliteration": "par.she.do.nah",
+   "samples": [
+    "Judg.3.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "hard things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "Ps.60.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "impudent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "Ezek.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "more severe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "2Sam.3.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "obstinate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "Isa.48.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "pressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "Judg.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "stern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "Isa.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "troubled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "1Sam.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7186",
+   "surface": "unbearable news",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "severe",
+   "transliteration": "qa.sheh",
+   "samples": [
+    "1Kgs.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7190",
+   "surface": "stubbornness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "stubbornness",
+   "transliteration": "qe.shi",
+   "samples": [
+    "Deut.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7419",
+   "surface": "carcass",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuse",
+   "transliteration": "ra.mut",
+   "samples": [
+    "Ezek.32.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7590",
+   "surface": "despise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despise",
+   "transliteration": "shut",
+   "samples": [
+    "Ezek.16.57"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7846",
+   "surface": "fall away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rebellion",
+   "transliteration": "set",
+   "samples": [
+    "Ps.101.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7846",
+   "surface": "revolters",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rebellion",
+   "transliteration": "set",
+   "samples": [
+    "Hos.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

@@ -1,0 +1,1394 @@
+{
+ "cluster": "M68",
+ "cluster_name": "Hope & Waiting",
+ "built_at": "2026-10-26T04:26:25Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 84,
+  "head": 30,
+  "tail": 54,
+  "hits": 284,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G1680",
+   "surface": "hope",
+   "part": "head",
+   "hits": 52,
+   "verses": 47,
+   "gloss": "hope",
+   "transliteration": "elpis",
+   "samples": [
+    "Heb.10.23",
+    "Rom.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8615B",
+   "surface": "hope",
+   "part": "head",
+   "hits": 30,
+   "verses": 29,
+   "gloss": "hope",
+   "transliteration": "tiq.vah",
+   "samples": [
+    "Job.8.13",
+    "Zech.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1679",
+   "surface": "hope",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "to hope/expect",
+   "transliteration": "elpizō",
+   "samples": [
+    "1Cor.15.19",
+    "1Tim.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176H",
+   "surface": "hope",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to wait: hope",
+   "transliteration": "ya.chal",
+   "samples": [
+    "Lam.3.21",
+    "Ps.130.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "wait",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Isa.40.31",
+    "Isa.49.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "hope",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Isa.51.5",
+    "Isa.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2442",
+   "surface": "wait",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to wait",
+   "transliteration": "cha.khah",
+   "samples": [
+    "Hab.2.3",
+    "Zeph.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176G",
+   "surface": "wait",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to wait: wait",
+   "transliteration": "ya.chal",
+   "samples": [
+    "2Kgs.6.33",
+    "Mic.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "looked",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Isa.5.4",
+    "Ps.69.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4327",
+   "surface": "waiting",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to wait for/welcome",
+   "transliteration": "prosdechomai",
+   "samples": [
+    "Jude.1.21",
+    "Luke.2.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176G",
+   "surface": "waited",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to wait: wait",
+   "transliteration": "ya.chal",
+   "samples": [
+    "Gen.8.12",
+    "Job.29.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8431",
+   "surface": "hope",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "hope",
+   "transliteration": "to.che.let",
+   "samples": [
+    "Job.41.9",
+    "Prov.10.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4328",
+   "surface": "waiting for",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to look for",
+   "transliteration": "prosdokaō",
+   "samples": [
+    "2Pet.3.12",
+    "Luke.8.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176H",
+   "surface": "wait",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to wait: hope",
+   "transliteration": "ya.chal",
+   "samples": [
+    "Isa.42.4",
+    "Job.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4723B",
+   "surface": "hope",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "hope",
+   "transliteration": "miq.veh",
+   "samples": [
+    "Jer.17.13",
+    "Jer.50.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "waited",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Isa.25.9",
+    "Ps.56.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1679",
+   "surface": "hoped",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to hope/expect",
+   "transliteration": "elpizō",
+   "samples": [
+    "1Pet.3.5",
+    "Acts.24.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4328",
+   "surface": "look for",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to look for",
+   "transliteration": "prosdokaō",
+   "samples": [
+    "Luke.7.19",
+    "Matt.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2442",
+   "surface": "waits",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to wait",
+   "transliteration": "cha.khah",
+   "samples": [
+    "Dan.12.12",
+    "Isa.30.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1551",
+   "surface": "waiting",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wait for",
+   "transliteration": "ekdechomai",
+   "samples": [
+    "Acts.17.16",
+    "Heb.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1679",
+   "surface": "hopes",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hope/expect",
+   "transliteration": "elpizō",
+   "samples": [
+    "1Cor.13.7",
+    "1Tim.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1679",
+   "surface": "hoping",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hope/expect",
+   "transliteration": "elpizō",
+   "samples": [
+    "Luke.23.8",
+    "Phlm.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4327",
+   "surface": "accept",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wait for/welcome",
+   "transliteration": "prosdechomai",
+   "samples": [
+    "Acts.24.15",
+    "Heb.11.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4328",
+   "surface": "expect",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to look for",
+   "transliteration": "prosdokaō",
+   "samples": [
+    "Luke.12.46",
+    "Matt.24.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4328",
+   "surface": "expecting",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to look for",
+   "transliteration": "prosdokaō",
+   "samples": [
+    "Acts.10.24",
+    "Acts.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4328",
+   "surface": "waiting",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to look for",
+   "transliteration": "prosdokaō",
+   "samples": [
+    "Acts.28.6",
+    "Luke.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "look",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Isa.64.3",
+    "Jer.13.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "wait for",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Gen.49.18",
+    "Prov.20.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7663B",
+   "surface": "hope",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to await",
+   "transliteration": "sa.var",
+   "samples": [
+    "Isa.38.18",
+    "Ps.119.166"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7663B",
+   "surface": "look",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to await",
+   "transliteration": "sa.var",
+   "samples": [
+    "Ps.104.27",
+    "Ps.145.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7664",
+   "surface": "hope",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hope",
+   "transliteration": "se.ver",
+   "samples": [
+    "Ps.119.116",
+    "Ps.146.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8615B",
+   "surface": "expectation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hope",
+   "transliteration": "tiq.vah",
+   "samples": [
+    "Prov.10.28",
+    "Prov.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0362",
+   "surface": "wait for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "anamenō",
+   "samples": [
+    "1Thess.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0603",
+   "surface": "eager expectation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "eager expectation",
+   "transliteration": "apokaradokia",
+   "samples": [
+    "Phil.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0603",
+   "surface": "eager longing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "eager expectation",
+   "transliteration": "apokaradokia",
+   "samples": [
+    "Rom.8.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1551",
+   "surface": "expecting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for",
+   "transliteration": "ekdechomai",
+   "samples": [
+    "1Cor.16.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1551",
+   "surface": "looking forward",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for",
+   "transliteration": "ekdechomai",
+   "samples": [
+    "Heb.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1551",
+   "surface": "wait",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for",
+   "transliteration": "ekdechomai",
+   "samples": [
+    "1Cor.11.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1551",
+   "surface": "waited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for",
+   "transliteration": "ekdechomai",
+   "samples": [
+    "1Pet.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1551",
+   "surface": "waits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for",
+   "transliteration": "ekdechomai",
+   "samples": [
+    "Jas.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1561",
+   "surface": "expectation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "expectation",
+   "transliteration": "ekdochē",
+   "samples": [
+    "Heb.10.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1679",
+   "surface": "expect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hope/expect",
+   "transliteration": "elpizō",
+   "samples": [
+    "Luke.6.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1679",
+   "surface": "expected",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hope/expect",
+   "transliteration": "elpizō",
+   "samples": [
+    "2Cor.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1679",
+   "surface": "hope to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hope/expect",
+   "transliteration": "elpizō",
+   "samples": [
+    "3John.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1679",
+   "surface": "hoped for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hope/expect",
+   "transliteration": "elpizō",
+   "samples": [
+    "Heb.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1679",
+   "surface": "hopes for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hope/expect",
+   "transliteration": "elpizō",
+   "samples": [
+    "Rom.8.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1680",
+   "surface": "hopes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hope",
+   "transliteration": "elpis",
+   "samples": [
+    "1John.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4037",
+   "surface": "wait",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "perimenō",
+   "samples": [
+    "Acts.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4327",
+   "surface": "accepted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for/welcome",
+   "transliteration": "prosdechomai",
+   "samples": [
+    "Heb.10.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4327",
+   "surface": "looking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for/welcome",
+   "transliteration": "prosdechomai",
+   "samples": [
+    "Luke.23.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4327",
+   "surface": "looking for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for/welcome",
+   "transliteration": "prosdechomai",
+   "samples": [
+    "Mark.15.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4327",
+   "surface": "receive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for/welcome",
+   "transliteration": "prosdechomai",
+   "samples": [
+    "Phil.2.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4327",
+   "surface": "receives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for/welcome",
+   "transliteration": "prosdechomai",
+   "samples": [
+    "Luke.15.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4327",
+   "surface": "waiting for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for/welcome",
+   "transliteration": "prosdechomai",
+   "samples": [
+    "Titus.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4327",
+   "surface": "welcome",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait for/welcome",
+   "transliteration": "prosdechomai",
+   "samples": [
+    "Rom.16.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4328",
+   "surface": "expectation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to look for",
+   "transliteration": "prosdokaō",
+   "samples": [
+    "Luke.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4328",
+   "surface": "suspense",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to look for",
+   "transliteration": "prosdokaō",
+   "samples": [
+    "Acts.27.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4328",
+   "surface": "waited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to look for",
+   "transliteration": "prosdokaō",
+   "samples": [
+    "Acts.28.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4329",
+   "surface": "expecting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "expectation",
+   "transliteration": "prosdokia",
+   "samples": [
+    "Acts.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4329",
+   "surface": "foreboding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "expectation",
+   "transliteration": "prosdokia",
+   "samples": [
+    "Luke.21.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2442",
+   "surface": "linger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait",
+   "transliteration": "cha.khah",
+   "samples": [
+    "2Kgs.9.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2442",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait",
+   "transliteration": "cha.khah",
+   "samples": [
+    "Job.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2442",
+   "surface": "waited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait",
+   "transliteration": "cha.khah",
+   "samples": [
+    "Job.32.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3175",
+   "surface": "wait",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "waiting",
+   "transliteration": "ya.chil",
+   "samples": [
+    "Lam.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176G",
+   "surface": "pain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait: wait",
+   "transliteration": "ya.chal",
+   "samples": [
+    "Jer.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176G",
+   "surface": "waiting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait: wait",
+   "transliteration": "ya.chal",
+   "samples": [
+    "Ps.69.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176G",
+   "surface": "waste time",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait: wait",
+   "transliteration": "ya.chal",
+   "samples": [
+    "2Sam.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176H",
+   "surface": "expect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait: hope",
+   "transliteration": "ya.chal",
+   "samples": [
+    "Ezek.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176H",
+   "surface": "hoped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait: hope",
+   "transliteration": "ya.chal",
+   "samples": [
+    "Ps.119.74"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176H",
+   "surface": "vain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait: hope",
+   "transliteration": "ya.chal",
+   "samples": [
+    "Ezek.19.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3176H",
+   "surface": "waited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wait: hope",
+   "transliteration": "ya.chal",
+   "samples": [
+    "Job.30.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4007",
+   "surface": "hope",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "expectation",
+   "transliteration": "mab.bat",
+   "samples": [
+    "Isa.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4007",
+   "surface": "hoped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "expectation",
+   "transliteration": "mab.bat",
+   "samples": [
+    "Isa.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4007",
+   "surface": "hopes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "expectation",
+   "transliteration": "mab.bat",
+   "samples": [
+    "Zech.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4723B",
+   "surface": "abiding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hope",
+   "transliteration": "miq.veh",
+   "samples": [
+    "1Chr.29.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "delay",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Mic.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "hoped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Job.30.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "longed for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Lam.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "looks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Job.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "patiently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Ps.40.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960A",
+   "surface": "waits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Ps.130.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7663B",
+   "surface": "hoped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "sa.var",
+   "samples": [
+    "Esth.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7663B",
+   "surface": "wait",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to await",
+   "transliteration": "sa.var",
+   "samples": [
+    "Ruth.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8431",
+   "surface": "expectation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hope",
+   "transliteration": "to.che.let",
+   "samples": [
+    "Prov.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

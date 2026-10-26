@@ -1,0 +1,110 @@
+{
+ "M74": {
+  "groups": [
+   ["M74_keeping", "Keeping, observing (commands)", "shamar and phulasso as obeying: keep, kept, observe, observance", "group", "renders keeping commands"],
+   ["M74_guarding", "Guarding, protecting, preserving", "shamar, natsar and tereo as guarding: guard, keep, preserve, keepers, custody, reserved", "group", "renders guarding"],
+   ["M74_careful", "Being careful, taking care", "shamar as heed: careful, take care, care", "group", "renders taking care"],
+   ["M74_charge", "Charge, duty, office", "mishmeret: charge, duties, guard duty, offices, service", "group", "renders a charge or duty"],
+   ["M74_watching", "Watching, watchman, staying awake", "tsaphah, shaqad and gregoreo: watch, watchman, watchtower, stay awake, watchful", "group", "renders watching"],
+   ["M74_attending", "Paying attention, devoting oneself, beware", "prosecho and skopeo: beware, pay attention, devote oneself, look to", "group", "renders paying attention"],
+   ["M74_not_this_sense", "Not the cluster's sense", "renderings with no sense of keeping", "not_this_sense", "carries no sense of keeping"]
+  ],
+  "surf": {"M74_keeping": [], "M74_guarding": [], "M74_careful": [], "M74_charge": [], "M74_watching": [], "M74_attending": [], "M74_not_this_sense": []},
+  "over": {
+   "*|H8104G": ["M74_keeping", "renders shamar as keeping commands", 0],
+   "*|H8104H": ["M74_guarding", "renders shamar as guarding", 0],
+   "*|H8104J": ["M74_careful", "renders shamar as taking heed", 0],
+   "*|H8104I": ["M74_watching", "renders shamar as watching", 0],
+   "*|H4931": ["M74_charge", "renders mishmeret, the charge kept", 0],
+   "*|H5341": ["M74_guarding", "renders natsar, guarding and preserving", 0],
+   "*|H6822": ["M74_watching", "renders tsaphah, the watchman's watch", 0],
+   "*|H8245": ["M74_watching", "renders shaqad, watching over", 0],
+   "*|H5201": ["M74_guarding", "renders natar, keeping", 0],
+   "*|H6965K": ["M74_guarding", "renders qum as setting a guard", 0],
+   "*|H7673B": ["M74_keeping", "renders shavat, keeping a Sabbath", 0],
+   "*|G4337": ["M74_attending", "renders prosecho, paying attention", 0],
+   "*|G4648": ["M74_attending", "renders skopeo, looking to", 0],
+   "*|G1127": ["M74_watching", "renders gregoreo, staying awake", 0],
+   "*|G5083I": ["M74_guarding", "renders tereo as protecting", 0],
+   "*|G5083H": ["M74_guarding", "renders tereo as keeping in custody", 0],
+   "*|G5442G": ["M74_keeping", "renders phulasso as observing", 0],
+   "*|G5442H": ["M74_guarding", "renders phulasso as guarding", 0],
+   "*|G5442I": ["M74_guarding", "renders phulasso as protecting", 0],
+   "H5341|keep": ["M74_keeping", "natsar 'I will keep it to the end' (Ps 119:33), 'keep your tongue from evil' (Ps 34:13): keeping", 0],
+   "H5341|observe": ["M74_keeping", "natsar 'let your eyes observe my ways' (Prov 23:26), 'observe his laws' (Ps 105:45)", 0],
+   "H5341|keeps": ["M74_keeping", "natsar 'the one who keeps the law' (Prov 28:7), 'my soul keeps them' (Ps 119:129)", 0],
+   "H5341|kept": ["M74_keeping", "natsar 'they kept your covenant' (Deut 33:9), 'I have kept your testimonies' (Ps 119:22)", 0],
+   "H5201|be": ["M74_not_this_sense", "natar 'will he be angry forever' (Jer 3:5): keeping anger", 0]
+  }
+ },
+ "M77": {
+  "groups": [
+   ["M77_stumbling", "Stumbling, offence, falling away", "kashal and skandalizo: stumble, stumbling block, offense, cause to sin, fall away, hindrance, without offence", "group", "renders stumbling"],
+   ["M77_persuading", "Persuading, being sure, trusting", "peitho: persuade, convinced, sure, confident, trust, obey, follow", "group", "renders persuading"],
+   ["M77_enticing", "Enticing, being deceived", "patah and deleazo: entice, enticed, deceived", "group", "renders enticing"],
+   ["M77_trials", "Trials", "massah: trials", "group", "renders trials"],
+   ["M77_not_this_sense", "Not the cluster's sense", "renderings with no sense of stumbling", "not_this_sense", "carries no sense of stumbling"]
+  ],
+  "surf": {
+   "M77_stumbling": ["stumble", "stumbled", "stumbles", "fall", "stumbling", "feeble", "overthrown", "fail", "ruin", "stumbling block", "offense", "hindrance", "causes", "to sin", "sin", "fall away", "offended", "took offense", "blameless", "clear", "no offense"],
+   "M77_persuading": ["persuaded", "sure", "convinced", "confidence", "confident", "obey", "persuade", "followed", "trust", "trusted", "persuading", "advice", "approval", "attention to", "convince", "obeying", "reassure"],
+   "M77_enticing": ["entice", "enticed", "deceived"],
+   "M77_trials": ["trials"],
+   "M77_not_this_sense": []
+  },
+  "over": {}
+ },
+ "M78": {
+  "groups": [
+   ["M78_servant", "Servant, slave, serving", "doulos and douleuo: servant, slave, bondservant, fellow servant, serve, enslaved, slavery", "group", "renders the servant or slavery"],
+   ["M78_burden", "Burden, load", "massa and baros: burden, burdens, load, carry", "group", "renders the burden"],
+   ["M78_not_this_sense", "Not the cluster's sense", "renderings with no sense of bondage: massa as the music of the Levites", "not_this_sense", "carries no sense of bondage"]
+  ],
+  "surf": {
+   "M78_servant": ["servant", "servants", "serve", "slave", "slaves", "bondservants", "bondservant", "fellow servant", "fellow servants", "slavery", "enslaved", "served", "serving"],
+   "M78_burden": ["burden", "burdens", "carry", "loads"],
+   "M78_not_this_sense": ["music"]
+  },
+  "over": {
+   "H4853A|music": ["M78_not_this_sense", "massa 'Chenaniah ... was to direct the music' (1Chr 15:22)", 0]
+  }
+ },
+ "M79": {
+  "groups": [
+   ["M79_salvation", "Salvation, Saviour", "yeshuah, soteria, soter: salvation, savior", "group", "renders salvation"],
+   ["M79_redeeming", "Redeeming, ransom", "padah: redeem, redeemed", "group", "renders redeeming"],
+   ["M79_avenger", "The avenger of blood", "go'el as the avenger", "group", "renders the avenger"],
+   ["M79_not_this_sense", "Not the cluster's sense", "renderings with no sense of salvation", "not_this_sense", "carries no sense of salvation"]
+  ],
+  "surf": {"M79_salvation": ["salvation", "savior"], "M79_redeeming": ["redeem", "redeemed"], "M79_avenger": ["avenger"], "M79_not_this_sense": []},
+  "over": {}
+ },
+ "M80": {
+  "groups": [
+   ["M80_blessing", "Blessing, blessed (by another)", "barak and berakah: bless, blessed, blessing", "group", "renders blessing"],
+   ["M80_blessedness", "Blessed (happy, fortunate)", "ashrei and makarios: blessed as fortunate", "group", "renders blessedness"],
+   ["M80_not_this_sense", "Not the cluster's sense", "renderings with no sense of blessing", "not_this_sense", "carries no sense of blessing"]
+  ],
+  "surf": {"M80_blessing": ["bless", "blessing"], "M80_blessedness": [], "M80_not_this_sense": []},
+  "over": {
+   "H1288|blessed": ["M80_blessing", "barak 'they blessed Rebekah' (Gen 24:60), 'the offspring of the blessed of the LORD' (Isa 65:23)", 0],
+   "G3107|blessed": ["M80_blessedness", "makarios 'the blessed and only Sovereign' (1Tim 6:15), 'our blessed hope' (Titus 2:13)", 0],
+   "H0835|blessed": ["M80_blessedness", "ashrei 'blessed is he who waits' (Dan 12:12), 'blessed are all who take refuge in him' (Ps 2:12)", 0]
+  }
+ },
+ "M81": {
+  "groups": [
+   ["M81_remembering", "Remembering, remembrance", "zakar and mnaomai: remember, remembered, remembrance, mention", "group", "renders remembering"],
+   ["M81_forgetting", "Forgetting", "shakach: forget, forgot, forgotten", "group", "renders forgetting"],
+   ["M81_not_this_sense", "Not the cluster's sense", "renderings with no sense of memory: the royal recorder", "not_this_sense", "carries no sense of memory"]
+  ],
+  "surf": {
+   "M81_remembering": ["remember", "remembered", "remembrance", "mention"],
+   "M81_forgetting": ["forget", "forgotten", "forgot"],
+   "M81_not_this_sense": ["recorder"]
+  },
+  "over": {
+   "H2142|recorder": ["M81_not_this_sense", "mazkir 'Joah the son of Asaph, the recorder' (2Kgs 18:18): an office", 0]
+  }
+ }
+}

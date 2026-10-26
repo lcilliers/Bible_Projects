@@ -1,0 +1,6453 @@
+{
+ "cluster": "M47",
+ "cluster_name": "Inner Seat",
+ "built_at": "2026-10-26T04:23:16Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 393,
+  "head": 33,
+  "tail": 360,
+  "hits": 3393,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H3820A",
+   "surface": "heart",
+   "part": "head",
+   "hits": 426,
+   "verses": 394,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Hos.7.14",
+    "Isa.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4151G",
+   "surface": "spirit",
+   "part": "head",
+   "hits": 340,
+   "verses": 308,
+   "gloss": "spirit/breath: spirit",
+   "transliteration": "pneuma",
+   "samples": [
+    "2Cor.6.6",
+    "Rev.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "soul",
+   "part": "head",
+   "hits": 209,
+   "verses": 200,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.66.3",
+    "Prov.23.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307G",
+   "surface": "spirit",
+   "part": "head",
+   "hits": 207,
+   "verses": 188,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Jer.51.11",
+    "Mal.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "heart",
+   "part": "head",
+   "hits": 188,
+   "verses": 173,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Job.22.22",
+    "Lev.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "flesh",
+   "part": "head",
+   "hits": 178,
+   "verses": 165,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Job.19.26",
+    "Lev.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "life",
+   "part": "head",
+   "hits": 154,
+   "verses": 136,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.38.12",
+    "Ps.54.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4983",
+   "surface": "body",
+   "part": "head",
+   "hits": 126,
+   "verses": 105,
+   "gloss": "body",
+   "transliteration": "sōma",
+   "samples": [
+    "Col.1.24",
+    "Matt.14.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "flesh",
+   "part": "head",
+   "hits": 118,
+   "verses": 100,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Eph.6.12",
+    "Rom.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307H",
+   "surface": "wind",
+   "part": "head",
+   "hits": 93,
+   "verses": 89,
+   "gloss": "spirit: breath",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Eccl.2.17",
+    "Ps.83.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2588",
+   "surface": "heart",
+   "part": "head",
+   "hits": 87,
+   "verses": 81,
+   "gloss": "heart",
+   "transliteration": "kardia",
+   "samples": [
+    "1Tim.1.5",
+    "Rev.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2588",
+   "surface": "hearts",
+   "part": "head",
+   "hits": 63,
+   "verses": 63,
+   "gloss": "heart",
+   "transliteration": "kardia",
+   "samples": [
+    "Jas.5.5",
+    "Luke.16.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "hearts",
+   "part": "head",
+   "hits": 43,
+   "verses": 41,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.35.26",
+    "Ps.105.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "person",
+   "part": "head",
+   "hits": 42,
+   "verses": 37,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Exod.12.19",
+    "Lev.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "body",
+   "part": "head",
+   "hits": 40,
+   "verses": 36,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Eccl.11.10",
+    "Lev.21.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "meat",
+   "part": "head",
+   "hits": 36,
+   "verses": 28,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "1Kgs.17.6",
+    "Ezek.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307H",
+   "surface": "breath",
+   "part": "head",
+   "hits": 35,
+   "verses": 33,
+   "gloss": "spirit: breath",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Gen.7.22",
+    "Isa.33.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590H",
+   "surface": "life",
+   "part": "head",
+   "hits": 34,
+   "verses": 28,
+   "gloss": "soul: life",
+   "transliteration": "psuchē",
+   "samples": [
+    "Matt.10.39",
+    "Phil.2.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4151G",
+   "surface": "spirits",
+   "part": "head",
+   "hits": 32,
+   "verses": 32,
+   "gloss": "spirit/breath: spirit",
+   "transliteration": "pneuma",
+   "samples": [
+    "Mark.1.27",
+    "Rev.16.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "hearts",
+   "part": "head",
+   "hits": 32,
+   "verses": 31,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "1Kgs.8.58",
+    "Ps.28.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "lives",
+   "part": "head",
+   "hits": 31,
+   "verses": 30,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Esth.9.16",
+    "Lam.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4893",
+   "surface": "conscience",
+   "part": "head",
+   "hits": 26,
+   "verses": 25,
+   "gloss": "conscience",
+   "transliteration": "suneidēsis",
+   "samples": [
+    "1Tim.1.5",
+    "Heb.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "soul",
+   "part": "head",
+   "hits": 24,
+   "verses": 21,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "1Thess.5.23",
+    "Heb.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "mind",
+   "part": "head",
+   "hits": 24,
+   "verses": 24,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Jer.11.20",
+    "Jer.7.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "persons",
+   "part": "head",
+   "hits": 23,
+   "verses": 20,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jer.52.30",
+    "Lev.18.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4152",
+   "surface": "spiritual",
+   "part": "head",
+   "hits": 21,
+   "verses": 17,
+   "gloss": "spiritual",
+   "transliteration": "pneumatikos",
+   "samples": [
+    "1Cor.10.3",
+    "Eph.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "sense",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Prov.10.21",
+    "Prov.24.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4983",
+   "surface": "bodies",
+   "part": "head",
+   "hits": 14,
+   "verses": 13,
+   "gloss": "body",
+   "transliteration": "sōma",
+   "samples": [
+    "Jas.3.3",
+    "Rom.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "souls",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "1Pet.1.22",
+    "Rev.18.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "souls",
+   "part": "head",
+   "hits": 13,
+   "verses": 8,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ezek.13.18",
+    "Prov.11.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "himself",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Job.14.22",
+    "Prov.8.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "mind",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Dan.8.25",
+    "Deut.28.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "herself",
+   "part": "head",
+   "hits": 11,
+   "verses": 10,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Num.30.12",
+    "Num.30.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "you",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.12.15",
+    "Deut.14.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "yourselves",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lev.11.43",
+    "Lev.11.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "appetite",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Eccl.6.7",
+    "Isa.56.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307H",
+   "surface": "winds",
+   "part": "tail",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "spirit: breath",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Ezek.37.9",
+    "Ps.104.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jer.50.19",
+    "Mic.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7308",
+   "surface": "spirit",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Dan.5.11",
+    "Dan.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "2Sam.3.21",
+    "Lev.26.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "me",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jer.4.31",
+    "Ps.141.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "yourself",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Job.18.4",
+    "Prov.22.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315K",
+   "surface": "creature",
+   "part": "tail",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "soul: animal",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.2.7",
+    "Lev.11.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0990J",
+   "surface": "body",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "belly: body",
+   "transliteration": "be.ten",
+   "samples": [
+    "Ps.132.11",
+    "Ps.31.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "i",
+   "part": "tail",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ezek.23.18",
+    "Ps.120.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "anyone",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lev.2.1",
+    "Lev.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2293",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "take heart",
+   "transliteration": "tharseō",
+   "samples": [
+    "John.16.33",
+    "Matt.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1472",
+   "surface": "bodies",
+   "part": "tail",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "body",
+   "transliteration": "ge.viy.yah",
+   "samples": [
+    "Ezek.1.11",
+    "Neh.9.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "soul",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.27.19",
+    "Lev.26.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590H",
+   "surface": "lives",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "soul: life",
+   "transliteration": "psuchē",
+   "samples": [
+    "1John.3.16",
+    "Acts.15.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590I",
+   "surface": "soul",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "soul: myself",
+   "transliteration": "psuchē",
+   "samples": [
+    "3John.1.2",
+    "Mark.14.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1472",
+   "surface": "body",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "body",
+   "transliteration": "ge.viy.yah",
+   "samples": [
+    "1Sam.31.10",
+    "Dan.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2436G",
+   "surface": "arms",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "bosom: embrace",
+   "transliteration": "cheq",
+   "samples": [
+    "1Kgs.1.2",
+    "Mic.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "consider",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Hag.1.5",
+    "Hag.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3825",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Dan.4.16",
+    "Dan.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "bowels",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "2Chr.21.15",
+    "2Chr.21.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "he",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Eccl.6.2",
+    "Lev.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "myself",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ezek.4.14",
+    "Jer.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "themselves",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.46.2",
+    "Isa.47.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "one",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.49.7",
+    "Num.31.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315M",
+   "surface": "dead body",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "soul: dead",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Num.9.10",
+    "Num.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1573",
+   "surface": "lose heart",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to lose heart",
+   "transliteration": "ekkakeō",
+   "samples": [
+    "2Cor.4.1",
+    "Eph.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "body",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Col.2.5",
+    "Heb.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "human being",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "1Cor.1.29",
+    "Matt.24.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2436G",
+   "surface": "bosom",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "bosom: embrace",
+   "transliteration": "cheq",
+   "samples": [
+    "Isa.40.11",
+    "Prov.5.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "himself",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Gen.17.17",
+    "Jer.30.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "kindly",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "2Sam.19.7",
+    "Gen.50.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Hos.4.11",
+    "Job.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "well",
+   "part": "tail",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ezek.44.5",
+    "Ps.48.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3826",
+   "surface": "hearts",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "heart",
+   "transliteration": "lib.bah",
+   "samples": [
+    "Prov.17.3",
+    "Ps.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "stomach",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Ezek.3.3",
+    "Lam.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "life",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.49.8",
+    "Ps.86.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "whoever",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lev.7.27",
+    "Prov.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "if anyone",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lev.5.4",
+    "Lev.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315M",
+   "surface": "dead",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "soul: dead",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lev.21.1",
+    "Num.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307I",
+   "surface": "side",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "spirit: side",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Ezek.42.18",
+    "Ezek.42.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "earthly",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Eph.6.5",
+    "Heb.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4641",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hardness of heart",
+   "transliteration": "sklērokardia",
+   "samples": [
+    "Mark.16.14",
+    "Matt.19.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590J",
+   "surface": "persons",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "soul: person",
+   "transliteration": "psuchē",
+   "samples": [
+    "Acts.27.37",
+    "Acts.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "thin",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Gen.41.19",
+    "Gen.41.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1321",
+   "surface": "flesh",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "flesh",
+   "transliteration": "be.shar",
+   "samples": [
+    "Dan.4.12",
+    "Dan.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1655",
+   "surface": "body",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "body",
+   "transliteration": "ge.shem",
+   "samples": [
+    "Dan.4.33",
+    "Dan.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "brokenhearted",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Isa.61.1",
+    "Ps.147.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Job.1.8",
+    "Prov.24.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "courage",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ezek.22.14",
+    "Jer.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "tenderly",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Gen.34.3",
+    "Hos.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Job.12.3",
+    "Job.34.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3826",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "heart",
+   "transliteration": "lib.bah",
+   "samples": [
+    "Prov.21.2",
+    "Prov.24.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "body",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Isa.49.1",
+    "Song.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Jer.31.20",
+    "Song.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "disgust",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ezek.23.28",
+    "Jer.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "ourselves",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jer.26.19",
+    "Num.31.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315K",
+   "surface": "creatures",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "soul: animal",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.1.24",
+    "Lev.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315M",
+   "surface": "body",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "soul: dead",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Num.19.13",
+    "Num.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307G",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "1Chr.28.12",
+    "Ezek.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307I",
+   "surface": "sides",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "spirit: side",
+   "transliteration": "ru.ach",
+   "samples": [
+    "1Chr.9.24",
+    "Jer.52.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307J",
+   "surface": "anger",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "spirit: temper",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Eccl.10.4",
+    "Judg.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307J",
+   "surface": "spirit",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "spirit: temper",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Eccl.7.9",
+    "Prov.29.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "flesh",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Mic.3.2",
+    "Mic.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "relative",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Lev.18.13",
+    "Lev.20.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1573",
+   "surface": "grow weary",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to lose heart",
+   "transliteration": "ekkakeō",
+   "samples": [
+    "2Thess.3.13",
+    "Gal.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2588",
+   "surface": "himself",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "heart",
+   "transliteration": "kardia",
+   "samples": [
+    "Luke.12.45",
+    "Matt.24.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2907",
+   "surface": "meat",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "meat",
+   "transliteration": "kreas",
+   "samples": [
+    "1Cor.8.13",
+    "Rom.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4151H",
+   "surface": "breath",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "spirit/breath: breath",
+   "transliteration": "pneuma",
+   "samples": [
+    "2Thess.2.8",
+    "Rev.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4152",
+   "surface": "spiritual gifts",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "spiritual",
+   "transliteration": "pneumatikos",
+   "samples": [
+    "1Cor.12.1",
+    "1Cor.14.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "another",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "1Cor.15.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4893",
+   "surface": "consciences",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "conscience",
+   "transliteration": "suneidēsis",
+   "samples": [
+    "1Tim.4.2",
+    "Titus.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4983",
+   "surface": "corpse",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "body",
+   "transliteration": "sōma",
+   "samples": [
+    "Luke.17.37",
+    "Mark.15.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4984",
+   "surface": "bodily",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bodily",
+   "transliteration": "sōmatikos",
+   "samples": [
+    "1Tim.4.8",
+    "Luke.3.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "minds",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "Acts.14.2",
+    "Acts.15.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590J",
+   "surface": "soul",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: person",
+   "transliteration": "psuchē",
+   "samples": [
+    "Acts.2.43",
+    "Acts.3.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0990J",
+   "surface": "within",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "belly: body",
+   "transliteration": "be.ten",
+   "samples": [
+    "Job.32.18",
+    "Prov.22.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "creature",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Lev.17.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "plump",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Gen.41.18",
+    "Gen.41.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1655",
+   "surface": "bodies",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "body",
+   "transliteration": "ge.shem",
+   "samples": [
+    "Dan.3.27",
+    "Dan.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2436G",
+   "surface": "breast",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "bosom: embrace",
+   "transliteration": "cheq",
+   "samples": [
+    "1Kgs.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2436G",
+   "surface": "embrace",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bosom: embrace",
+   "transliteration": "cheq",
+   "samples": [
+    "Deut.13.6",
+    "Gen.16.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2436G",
+   "surface": "embraces",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bosom: embrace",
+   "transliteration": "cheq",
+   "samples": [
+    "Deut.28.54",
+    "Deut.28.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2436G",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bosom: embrace",
+   "transliteration": "cheq",
+   "samples": [
+    "Eccl.7.9",
+    "Ps.89.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "accord",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Num.16.28",
+    "Ps.83.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "attention",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.9.21",
+    "Prov.27.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "care",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "2Sam.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "craftsman",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.36.1",
+    "Exod.36.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "minds",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Jer.14.14",
+    "Jer.23.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "themselves",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ps.74.8",
+    "Zech.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "will",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Jer.16.12",
+    "Num.24.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3825",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Dan.5.20",
+    "Dan.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Jer.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "belly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Jonah.1.17",
+    "Jonah.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "inner parts",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Isa.16.11",
+    "Isa.63.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "son",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "2Sam.16.11",
+    "Gen.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "womb",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Ps.71.6",
+    "Ruth.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "1Chr.28.9",
+    "1Sam.2.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "breath",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.1.30",
+    "Job.41.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "last",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Job.11.20",
+    "Job.31.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "lifeblood",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.9.5",
+    "Jer.2.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lam.1.11",
+    "Lam.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "she",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "2Kgs.4.27",
+    "Ezek.23.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "us",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.124.4",
+    "Ps.124.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "we",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Num.21.5",
+    "Ps.124.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315K",
+   "surface": "living creature",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: animal",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.9.12",
+    "Gen.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "greed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ezek.16.27",
+    "Hab.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "hunger",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ezek.7.19",
+    "Hos.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "soul",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Eccl.6.3",
+    "Mic.7.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "will",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.27.12",
+    "Ps.41.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315N",
+   "surface": "neck",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "soul: neck",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.105.18",
+    "Ps.69.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307G",
+   "surface": "spirits",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Num.16.22",
+    "Num.27.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307H",
+   "surface": "air",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "spirit: breath",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Jer.14.6",
+    "Job.41.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307H",
+   "surface": "blast",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "spirit: breath",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Exod.15.8",
+    "Job.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307H",
+   "surface": "windy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "spirit: breath",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Job.15.2",
+    "Job.16.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "close",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Lev.18.6",
+    "Lev.25.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "meat",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Ps.78.20",
+    "Ps.78.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2293",
+   "surface": "courage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "take heart",
+   "transliteration": "tharseō",
+   "samples": [
+    "Acts.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2588",
+   "surface": "enraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "kardia",
+   "samples": [
+    "Acts.7.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2588",
+   "surface": "heart’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "kardia",
+   "samples": [
+    "Rom.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2588",
+   "surface": "minds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "kardia",
+   "samples": [
+    "Luke.21.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2588",
+   "surface": "purpose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "kardia",
+   "samples": [
+    "Acts.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2589",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart-knower",
+   "transliteration": "kardiognōstēs",
+   "samples": [
+    "Acts.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2589",
+   "surface": "hearts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart-knower",
+   "transliteration": "kardiognōstēs",
+   "samples": [
+    "Acts.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3050",
+   "surface": "spiritual",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spiritual",
+   "transliteration": "logikos",
+   "samples": [
+    "1Pet.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3050",
+   "surface": "spiritual worship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spiritual",
+   "transliteration": "logikos",
+   "samples": [
+    "Rom.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4151G",
+   "surface": "",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit/breath: spirit",
+   "transliteration": "pneuma",
+   "samples": [
+    "1John.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4151G",
+   "surface": "breath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit/breath: spirit",
+   "transliteration": "pneuma",
+   "samples": [
+    "Rev.13.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4151H",
+   "surface": "spirit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit/breath: breath",
+   "transliteration": "pneuma",
+   "samples": [
+    "John.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4151H",
+   "surface": "wind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit/breath: breath",
+   "transliteration": "pneuma",
+   "samples": [
+    "John.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4151H",
+   "surface": "winds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit/breath: breath",
+   "transliteration": "pneuma",
+   "samples": [
+    "Heb.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4152",
+   "surface": "spiritual blessings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spiritual",
+   "transliteration": "pneumatikos",
+   "samples": [
+    "Rom.15.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4152",
+   "surface": "spiritual things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spiritual",
+   "transliteration": "pneumatikos",
+   "samples": [
+    "1Cor.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4152",
+   "surface": "spiritual truths",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spiritual",
+   "transliteration": "pneumatikos",
+   "samples": [
+    "1Cor.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "anyone",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Gal.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "bodies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "2Cor.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "bodily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Gal.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "condition",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Gal.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Jude.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "face",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Col.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "fellow jews",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Rom.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "lust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "2Pet.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "natural",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Rom.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Gal.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "people",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "1Cor.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "physical",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Rom.2.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "sensuous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "Col.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "worldly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "1Cor.7.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4561",
+   "surface": "worldly standards",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "sarx",
+   "samples": [
+    "1Cor.1.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4641",
+   "surface": "hardness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hardness of heart",
+   "transliteration": "sklērokardia",
+   "samples": [
+    "Matt.19.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4893",
+   "surface": "consciousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "conscience",
+   "transliteration": "suneidēsis",
+   "samples": [
+    "Heb.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4893",
+   "surface": "mindful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "conscience",
+   "transliteration": "suneidēsis",
+   "samples": [
+    "1Pet.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4954",
+   "surface": "same body",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "of the same body",
+   "transliteration": "sussōmos",
+   "samples": [
+    "Eph.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4983",
+   "surface": "bodily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "body",
+   "transliteration": "sōma",
+   "samples": [
+    "2Cor.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4983",
+   "surface": "slaves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "body",
+   "transliteration": "sōma",
+   "samples": [
+    "Rev.18.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4983",
+   "surface": "substance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "body",
+   "transliteration": "sōma",
+   "samples": [
+    "Col.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "being",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "1Cor.15.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "fainthearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "Heb.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "he",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "Acts.2.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "Eph.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "heartily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "Col.3.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "living",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "Rev.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "2Cor.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "Phil.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590G",
+   "surface": "thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "psuchē",
+   "samples": [
+    "Rev.16.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590H",
+   "surface": "selves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "psuchē",
+   "samples": [
+    "1Thess.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590I",
+   "surface": "us",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "psuchē",
+   "samples": [
+    "John.10.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590J",
+   "surface": "human being",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "psuchē",
+   "samples": [
+    "Rom.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590J",
+   "surface": "person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "psuchē",
+   "samples": [
+    "Rom.13.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5590J",
+   "surface": "souls",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "psuchē",
+   "samples": [
+    "Acts.2.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "and",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Jer.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "blood",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Lev.17.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "lead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Eccl.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "like those",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Ezek.23.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "lustful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Ezek.16.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "mankind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Job.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "members",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Ezek.23.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "relative",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Lev.25.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1320",
+   "surface": "relatives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Lev.18.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1472",
+   "surface": "carcass",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "body",
+   "transliteration": "ge.viy.yah",
+   "samples": [
+    "Judg.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1472",
+   "surface": "corpses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "body",
+   "transliteration": "ge.viy.yah",
+   "samples": [
+    "Ps.110.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1480",
+   "surface": "bodies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "body",
+   "transliteration": "gu.phah",
+   "samples": [
+    "1Chr.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1480",
+   "surface": "body",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "body",
+   "transliteration": "gu.phah",
+   "samples": [
+    "1Chr.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2436G",
+   "surface": "chest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bosom: embrace",
+   "transliteration": "cheq",
+   "samples": [
+    "Ps.35.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2436G",
+   "surface": "lap",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bosom: embrace",
+   "transliteration": "cheq",
+   "samples": [
+    "Ruth.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2436G",
+   "surface": "within",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bosom: embrace",
+   "transliteration": "cheq",
+   "samples": [
+    "Job.19.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "able",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "breast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Hos.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "conceit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Job.37.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "conscience",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "1Sam.25.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "consider",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Isa.41.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "considers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Isa.44.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "craftsmen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.36.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "dared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Esth.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "decided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "2Chr.24.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "disheartened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ezek.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "double",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ps.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "encouragingly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "2Chr.30.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "forgotten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ps.31.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "from",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "1Kgs.12.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "goes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ezek.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "grew proud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "2Chr.26.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "heart’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ps.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "high",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Prov.30.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.35.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "intelligence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Prov.15.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "laban",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Gen.31.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "merry-hearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Isa.24.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "midst",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Prov.23.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "myself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Neh.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "oak",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "2Sam.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "officials",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Jer.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "opinion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Prov.18.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "pay attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "1Sam.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "planned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "2Chr.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "purpose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "1Chr.12.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "1Sam.25.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "resolved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Dan.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "senseless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Jer.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "singleness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "1Chr.12.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "skillful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.35.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "skillful craftsman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.35.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "stouthearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ps.76.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "stubborn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Ezek.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.35.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "whom",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.28.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "yourself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Exod.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3820A",
+   "surface": "yourselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Gen.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3821",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "lev",
+   "samples": [
+    "Dan.7.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "anger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Deut.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "breasts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Nah.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "brokenhearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Ps.109.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "encouragingly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "2Chr.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "fainthearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Deut.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "heart’s desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Ps.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "irresolute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "2Chr.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Gen.31.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "not consider",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Hos.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "own",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Deut.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "soul",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Ps.73.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "wholehearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "Ezek.36.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3824",
+   "surface": "yours",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "le.vav",
+   "samples": [
+    "2Kgs.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3894",
+   "surface": "body",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intestine",
+   "transliteration": "le.chum",
+   "samples": [
+    "Job.20.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3894",
+   "surface": "flesh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intestine",
+   "transliteration": "le.chum",
+   "samples": [
+    "Zeph.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "breast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Ps.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "descendants",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Isa.48.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "entrails",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "2Sam.20.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "inward parts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Job.30.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "sons",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "2Chr.32.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "stomachs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Ezek.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4578",
+   "surface": "within you",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "belly",
+   "transliteration": "me.eh",
+   "samples": [
+    "Gen.25.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "distress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Prov.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "enraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "2Sam.17.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "grieved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.19.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "he",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.49.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "heart’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "1Sam.23.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "heart’s desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.35.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "inwardly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Prov.23.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "loathe my",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Job.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "myself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Job.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315G",
+   "surface": "spirit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lam.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "alive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "1Chr.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "and your",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "2Sam.19.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "deadly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "delivered my life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.38.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "fatally",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "forfeit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "2Kgs.10.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "human beings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ezek.27.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "live",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "1Kgs.20.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "murdering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.22.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "patient",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Job.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "perfume boxes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "risk",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "1Chr.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "souls",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jer.38.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315H",
+   "surface": "yourselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: life",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jer.48.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "accusers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.71.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "among them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.106.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "and",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.27.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "and they",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Zech.11.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jer.15.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "careful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Josh.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "courage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.107.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "decision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "2Kgs.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "die",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Num.23.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "distressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "1Sam.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "earnest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Prov.27.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "find",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Eccl.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "grief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lam.3.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "in my",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Job.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "my",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lam.3.58"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "own",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Prov.14.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "people",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Num.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "shown herself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jer.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "that he",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jonah.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.78.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "they",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.107.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "to him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Prov.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315I",
+   "surface": "utter contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: myself",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ezek.36.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "32,000",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Num.31.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Josh.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "altogether",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.46.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "another",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Prov.28.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "blood",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.27.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "descendants",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Exod.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Prov.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "everyone",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Exod.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Prov.28.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "members",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.36.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "people",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "shall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.17.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "slave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lev.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "soul",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Exod.31.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315J",
+   "surface": "two",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: person",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.46.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "counts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.24.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "crave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "craved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.78.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "craving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "desires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.18.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "greedy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Hos.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "lest angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Judg.18.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "let the",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Prov.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Jer.22.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ps.105.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "satisfied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.29.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "soul’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Ezek.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Num.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "thirst",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.29.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "wants",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.21.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "willing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Gen.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "wish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.23.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "you",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Deut.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315L",
+   "surface": "yourselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: appetite",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Isa.55.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5315M",
+   "surface": "bodies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soul: dead",
+   "transliteration": "ne.phesh",
+   "samples": [
+    "Lev.21.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6106I",
+   "surface": "bodies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bone: body",
+   "transliteration": "e.tsem",
+   "samples": [
+    "Lam.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6106I",
+   "surface": "body",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bone: body",
+   "transliteration": "e.tsem",
+   "samples": [
+    "Prov.16.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6371",
+   "surface": "fat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "excess fat",
+   "transliteration": "pi.mah",
+   "samples": [
+    "Job.15.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307G",
+   "surface": "living creatures",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Ezek.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307G",
+   "surface": "made life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Gen.26.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307G",
+   "surface": "no",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Eccl.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307G",
+   "surface": "spirit in",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Isa.37.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307H",
+   "surface": "cool",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit: breath",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Gen.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307J",
+   "surface": "has the",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit: temper",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Mic.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307J",
+   "surface": "i",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit: temper",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Job.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307J",
+   "surface": "self-control",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit: temper",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Prov.25.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7307J",
+   "surface": "temper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit: temper",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Prov.14.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7308",
+   "surface": "wind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Dan.2.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7308",
+   "surface": "winds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "spirit",
+   "transliteration": "ru.ach",
+   "samples": [
+    "Dan.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "body",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Prov.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "food",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Exod.21.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Prov.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "kinsman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Num.27.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "kinsmen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Jer.51.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7607",
+   "surface": "relatives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flesh",
+   "transliteration": "she.er",
+   "samples": [
+    "Lev.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7907",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "heart",
+   "transliteration": "sekh.vi",
+   "samples": [
+    "Job.38.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8270",
+   "surface": "cord",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "umbilical cord",
+   "transliteration": "shor",
+   "samples": [
+    "Ezek.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8270",
+   "surface": "flesh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "umbilical cord",
+   "transliteration": "shor",
+   "samples": [
+    "Prov.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

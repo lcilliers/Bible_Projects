@@ -1,0 +1,3246 @@
+{
+ "cluster": "M61",
+ "cluster_name": "Purity & Holiness",
+ "built_at": "2026-10-26T04:25:29Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 196,
+  "head": 33,
+  "tail": 163,
+  "hits": 1380,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H6944G",
+   "surface": "holy",
+   "part": "head",
+   "hits": 242,
+   "verses": 228,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Dan.11.30",
+    "Zech.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0040G",
+   "surface": "holy",
+   "part": "head",
+   "hits": 156,
+   "verses": 147,
+   "gloss": "holy",
+   "transliteration": "hagios",
+   "samples": [
+    "2Cor.6.6",
+    "Rev.22.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918G",
+   "surface": "holy",
+   "part": "head",
+   "hits": 62,
+   "verses": 54,
+   "gloss": "holy",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "Hos.11.9",
+    "Isa.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "sanctuary",
+   "part": "head",
+   "hits": 62,
+   "verses": 59,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Mal.2.11",
+    "Ps.114.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2889",
+   "surface": "clean",
+   "part": "head",
+   "hits": 52,
+   "verses": 45,
+   "gloss": "pure",
+   "transliteration": "ta.hor",
+   "samples": [
+    "Lev.20.25",
+    "Prov.30.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0040H",
+   "surface": "saints",
+   "part": "head",
+   "hits": 50,
+   "verses": 50,
+   "gloss": "holy: saint",
+   "transliteration": "hagios",
+   "samples": [
+    "Rev.11.18",
+    "Rev.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918G",
+   "surface": "holy one",
+   "part": "head",
+   "hits": 40,
+   "verses": 39,
+   "gloss": "holy",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "Isa.43.15",
+    "Isa.49.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "consecrate",
+   "part": "head",
+   "hits": 40,
+   "verses": 37,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Joel.2.16",
+    "Lev.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2889",
+   "surface": "pure",
+   "part": "head",
+   "hits": 37,
+   "verses": 37,
+   "gloss": "pure",
+   "transliteration": "ta.hor",
+   "samples": [
+    "Prov.15.26",
+    "Ps.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "clean",
+   "part": "head",
+   "hits": 37,
+   "verses": 34,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "2Kgs.5.12",
+    "Num.31.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "consecrated",
+   "part": "head",
+   "hits": 32,
+   "verses": 30,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "2Chr.30.8",
+    "Ezek.48.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "most",
+   "part": "head",
+   "hits": 30,
+   "verses": 28,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "2Chr.31.14",
+    "Exod.40.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549G",
+   "surface": "without blemish",
+   "part": "head",
+   "hits": 28,
+   "verses": 25,
+   "gloss": "unblemished",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Ezek.46.13",
+    "Lev.14.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "holy",
+   "part": "head",
+   "hits": 27,
+   "verses": 27,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "2Chr.36.14",
+    "Ezek.20.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "cleansed",
+   "part": "head",
+   "hits": 26,
+   "verses": 24,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Ezek.22.24",
+    "Lev.15.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy things",
+   "part": "head",
+   "hits": 26,
+   "verses": 26,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Ezek.44.13",
+    "Neh.10.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "cleanse",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Ezek.37.23",
+    "Num.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2513",
+   "surface": "pure",
+   "part": "head",
+   "hits": 14,
+   "verses": 12,
+   "gloss": "clean",
+   "transliteration": "katharos",
+   "samples": [
+    "1Tim.1.5",
+    "Rev.21.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2511",
+   "surface": "clean",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to clean",
+   "transliteration": "katharizō",
+   "samples": [
+    "Mark.7.19",
+    "Matt.23.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2134",
+   "surface": "pure",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "pure",
+   "transliteration": "zakh",
+   "samples": [
+    "Exod.27.20",
+    "Prov.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "sanctified",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "Heb.10.29",
+    "Rom.15.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0040G",
+   "surface": "saints",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "holy",
+   "transliteration": "hagios",
+   "samples": [
+    "Rev.19.8",
+    "Rev.20.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942K",
+   "surface": "holiness",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "to consecrate: holiness",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Ezek.44.19",
+    "Ezek.46.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549G",
+   "surface": "blemish",
+   "part": "head",
+   "hits": 10,
+   "verses": 8,
+   "gloss": "unblemished",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Num.28.9",
+    "Num.29.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holiness",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Amos.4.2",
+    "Ps.96.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2513",
+   "surface": "clean",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "clean",
+   "transliteration": "katharos",
+   "samples": [
+    "John.13.10",
+    "John.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2893",
+   "surface": "cleansing",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "purifying",
+   "transliteration": "to.ho.rah",
+   "samples": [
+    "Lev.13.35",
+    "Num.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "sanctifies",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Ezek.37.28",
+    "Lev.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2511",
+   "surface": "cleansed",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to clean",
+   "transliteration": "katharizō",
+   "samples": [
+    "Luke.4.27",
+    "Matt.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "sanctify",
+   "part": "head",
+   "hits": 7,
+   "verses": 5,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Isa.66.17",
+    "Lev.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549G",
+   "surface": "perfect",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "unblemished",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Job.36.4",
+    "Ps.18.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0038",
+   "surface": "sanctification",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "holiness",
+   "transliteration": "hagiasmos",
+   "samples": [
+    "1Cor.1.30",
+    "1Thess.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6922",
+   "surface": "saints",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "holy",
+   "transliteration": "qad.dish",
+   "samples": [
+    "Dan.7.21",
+    "Dan.7.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "sanctify",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "1Thess.5.23",
+    "Heb.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0862",
+   "surface": "imperishable",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "incorruptible",
+   "transliteration": "afthartos",
+   "samples": [
+    "1Pet.1.23",
+    "1Pet.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2511",
+   "surface": "cleanse",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to clean",
+   "transliteration": "katharizō",
+   "samples": [
+    "Luke.11.39",
+    "Matt.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3741",
+   "surface": "holy",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "sacred",
+   "transliteration": "hosios",
+   "samples": [
+    "1Tim.2.8",
+    "Heb.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "sacred",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "2Chr.15.18",
+    "Exod.30.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0038",
+   "surface": "holiness",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "holiness",
+   "transliteration": "hagiasmos",
+   "samples": [
+    "1Thess.4.7",
+    "Heb.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0505",
+   "surface": "sincere",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "genuine",
+   "transliteration": "anupokritos",
+   "samples": [
+    "1Pet.1.22",
+    "1Tim.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0861",
+   "surface": "imperishable",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "incorruptibility",
+   "transliteration": "aftharsia",
+   "samples": [
+    "1Cor.15.50",
+    "1Cor.15.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3392",
+   "surface": "defiled",
+   "part": "tail",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to stain",
+   "transliteration": "miainō",
+   "samples": [
+    "Heb.12.15",
+    "Titus.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1249",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "pure",
+   "transliteration": "bar",
+   "samples": [
+    "Ps.19.8",
+    "Song.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2135",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to clean",
+   "transliteration": "za.khah",
+   "samples": [
+    "Job.25.4",
+    "Prov.20.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2892A",
+   "surface": "purifying",
+   "part": "tail",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "purity",
+   "transliteration": "to.har",
+   "samples": [
+    "Lev.12.4",
+    "Lev.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918G",
+   "surface": "holy ones",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "holy",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "Ps.89.5",
+    "Ps.89.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6922",
+   "surface": "holy",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "holy",
+   "transliteration": "qad.dish",
+   "samples": [
+    "Dan.4.18",
+    "Dan.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942J",
+   "surface": "prepare",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to consecrate: prepare",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Jer.51.27",
+    "Jer.51.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "sacred gifts",
+   "part": "tail",
+   "hits": 4,
+   "verses": 2,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "1Kgs.15.15",
+    "2Kgs.12.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549I",
+   "surface": "whole",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "unblemished: complete",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Ezek.15.5",
+    "Prov.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "made holy",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "1Cor.7.14",
+    "1Tim.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0040G",
+   "surface": "holy one",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "holy",
+   "transliteration": "hagios",
+   "samples": [
+    "1John.2.20",
+    "Mark.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0042",
+   "surface": "holiness",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "holiness",
+   "transliteration": "hagiōsunē",
+   "samples": [
+    "1Thess.3.13",
+    "Rom.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1103",
+   "surface": "true",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "genuine",
+   "transliteration": "gnēsios",
+   "samples": [
+    "1Tim.1.2",
+    "Phil.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2513",
+   "surface": "clear",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "clean",
+   "transliteration": "katharos",
+   "samples": [
+    "1Tim.3.9",
+    "Rev.21.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3741",
+   "surface": "holy one",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "sacred",
+   "transliteration": "hosios",
+   "samples": [
+    "Acts.13.35",
+    "Acts.2.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "purified",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Dan.11.35",
+    "Ps.18.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "purified",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Ezra.6.20",
+    "Neh.12.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "sanctified",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Exod.29.43",
+    "Lev.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "dedicated",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "1Kgs.7.51",
+    "2Chr.31.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "gifts",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "1Chr.26.20",
+    "1Chr.28.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy offerings",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "2Chr.31.14",
+    "Ezek.42.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "thing",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Lev.22.10",
+    "Lev.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "holy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "2Tim.2.21",
+    "Rev.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "sacred",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "Matt.23.17",
+    "Matt.23.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0047",
+   "surface": "purity",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "purity",
+   "transliteration": "hagneia",
+   "samples": [
+    "1Tim.4.12",
+    "1Tim.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0048",
+   "surface": "purified",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to purify",
+   "transliteration": "hagnizō",
+   "samples": [
+    "1Pet.1.22",
+    "Acts.24.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0048",
+   "surface": "purify",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to purify",
+   "transliteration": "hagnizō",
+   "samples": [
+    "Jas.4.8",
+    "John.11.55"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0178",
+   "surface": "uncondemned",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "uncondemned",
+   "transliteration": "akatakritos",
+   "samples": [
+    "Acts.16.37",
+    "Acts.22.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0462",
+   "surface": "unholy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "unholy",
+   "transliteration": "anosios",
+   "samples": [
+    "1Tim.1.9",
+    "2Tim.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0505",
+   "surface": "genuine",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "genuine",
+   "transliteration": "anupokritos",
+   "samples": [
+    "2Cor.6.6",
+    "Rom.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0861",
+   "surface": "immortality",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "incorruptibility",
+   "transliteration": "aftharsia",
+   "samples": [
+    "2Tim.1.10",
+    "Rom.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0862",
+   "surface": "immortal",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "incorruptible",
+   "transliteration": "afthartos",
+   "samples": [
+    "1Tim.1.17",
+    "Rom.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2511",
+   "surface": "purified",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to clean",
+   "transliteration": "katharizō",
+   "samples": [
+    "Heb.9.22",
+    "Heb.9.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2511",
+   "surface": "purify",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to clean",
+   "transliteration": "katharizō",
+   "samples": [
+    "Heb.9.14",
+    "Titus.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2513",
+   "surface": "innocent",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "clean",
+   "transliteration": "katharos",
+   "samples": [
+    "Acts.18.6",
+    "Acts.20.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3742",
+   "surface": "holiness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "holiness",
+   "transliteration": "hosiotēs",
+   "samples": [
+    "Eph.4.24",
+    "Luke.1.75"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4997",
+   "surface": "self-control",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "mental soundness",
+   "transliteration": "sōfrosunē",
+   "samples": [
+    "1Tim.2.15",
+    "1Tim.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1249",
+   "surface": "clean",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pure",
+   "transliteration": "bar",
+   "samples": [
+    "Job.11.4",
+    "Prov.14.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "chosen",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "1Chr.16.41",
+    "1Chr.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Ps.18.26",
+    "Zeph.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "purify",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Dan.12.10",
+    "Isa.52.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2135",
+   "surface": "clean",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to clean",
+   "transliteration": "za.khah",
+   "samples": [
+    "Isa.1.16",
+    "Ps.73.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "purify themselves",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Isa.66.17",
+    "Neh.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4358",
+   "surface": "full armor",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "perfection",
+   "transliteration": "mikh.lol",
+   "samples": [
+    "Ezek.23.12",
+    "Ezek.38.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6922",
+   "surface": "holy one",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "holy",
+   "transliteration": "qad.dish",
+   "samples": [
+    "Dan.4.13",
+    "Dan.4.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "dedicate",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Lev.22.2",
+    "Lev.22.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "dedicated things",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "2Chr.24.7",
+    "2Chr.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy donations",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Num.5.10",
+    "Num.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy place",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Dan.9.24",
+    "Ps.134.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy portion",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Lev.24.9",
+    "Num.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549I",
+   "surface": "full",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "unblemished: complete",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Lev.23.15",
+    "Lev.25.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "consecrate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "John.17.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "consecrated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "John.10.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "hallowed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "Matt.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "hallowed be",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "Luke.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "honor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "1Pet.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0037",
+   "surface": "sanctifies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sanctify",
+   "transliteration": "hagiazō",
+   "samples": [
+    "Heb.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0040G",
+   "surface": "holiness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holy",
+   "transliteration": "hagios",
+   "samples": [
+    "2Pet.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0040H",
+   "surface": "holy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holy: saint",
+   "transliteration": "hagios",
+   "samples": [
+    "Jude.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0040H",
+   "surface": "saint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holy: saint",
+   "transliteration": "hagios",
+   "samples": [
+    "Phil.4.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0041",
+   "surface": "holiness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "hagiotēs",
+   "samples": [
+    "Heb.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0048",
+   "surface": "purified himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "hagnizō",
+   "samples": [
+    "Acts.21.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0048",
+   "surface": "purifies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "hagnizō",
+   "samples": [
+    "1John.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0048",
+   "surface": "purify yourself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "hagnizō",
+   "samples": [
+    "Acts.21.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0049",
+   "surface": "purification",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "purification",
+   "transliteration": "hagnismos",
+   "samples": [
+    "Acts.21.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0054",
+   "surface": "purity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "purity",
+   "transliteration": "hagnotēs",
+   "samples": [
+    "2Cor.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0361",
+   "surface": "without sin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sinless",
+   "transliteration": "anamartētos",
+   "samples": [
+    "John.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0861",
+   "surface": "incorruptible",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "incorruptibility",
+   "transliteration": "aftharsia",
+   "samples": [
+    "Eph.6.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0861",
+   "surface": "integrity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "incorruptibility",
+   "transliteration": "aftharsia",
+   "samples": [
+    "Titus.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1103",
+   "surface": "genuine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "genuine",
+   "transliteration": "gnēsios",
+   "samples": [
+    "2Cor.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2413",
+   "surface": "sacred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sacred",
+   "transliteration": "hieros",
+   "samples": [
+    "2Tim.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2413",
+   "surface": "temple service",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sacred",
+   "transliteration": "hieros",
+   "samples": [
+    "1Cor.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2511",
+   "surface": "cleansed her",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clean",
+   "transliteration": "katharizō",
+   "samples": [
+    "Eph.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2511",
+   "surface": "cleanses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clean",
+   "transliteration": "katharizō",
+   "samples": [
+    "1John.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2514",
+   "surface": "purification",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cleanness",
+   "transliteration": "katharotēs",
+   "samples": [
+    "Heb.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2676",
+   "surface": "restoration",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perfection",
+   "transliteration": "katartisis",
+   "samples": [
+    "2Cor.13.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2929",
+   "surface": "clear as crystal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be clear",
+   "transliteration": "krustallizō",
+   "samples": [
+    "Rev.21.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3392",
+   "surface": "defile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to stain",
+   "transliteration": "miainō",
+   "samples": [
+    "Jude.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3445",
+   "surface": "formed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to form",
+   "transliteration": "morfoō",
+   "samples": [
+    "Gal.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4695",
+   "surface": "stained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to stain",
+   "transliteration": "spiloō",
+   "samples": [
+    "Jude.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4695",
+   "surface": "staining",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to stain",
+   "transliteration": "spiloō",
+   "samples": [
+    "Jas.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4997",
+   "surface": "rational",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mental soundness",
+   "transliteration": "sōfrosunē",
+   "samples": [
+    "Acts.26.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5047",
+   "surface": "maturity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perfection",
+   "transliteration": "teleiotēs",
+   "samples": [
+    "Heb.6.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5047",
+   "surface": "perfect harmony",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perfection",
+   "transliteration": "teleiotēs",
+   "samples": [
+    "Col.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5050",
+   "surface": "fulfillment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perfection",
+   "transliteration": "teleiōsis",
+   "samples": [
+    "Luke.1.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5050",
+   "surface": "perfection",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perfection",
+   "transliteration": "teleiōsis",
+   "samples": [
+    "Heb.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1249",
+   "surface": "bright",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "bar",
+   "samples": [
+    "Song.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "approved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "1Chr.7.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "choice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Neh.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "cleanse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Jer.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "deal purely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "2Sam.22.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "polished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Isa.49.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "purge out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Ezek.20.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "sharpen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Jer.51.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "speak sincerely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Job.33.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1305",
+   "surface": "testing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to purify",
+   "transliteration": "ba.rar",
+   "samples": [
+    "Eccl.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2135",
+   "surface": "acquit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clean",
+   "transliteration": "za.khah",
+   "samples": [
+    "Mic.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2135",
+   "surface": "blameless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clean",
+   "transliteration": "za.khah",
+   "samples": [
+    "Ps.51.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2889",
+   "surface": "becomes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "ta.hor",
+   "samples": [
+    "Deut.23.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2889",
+   "surface": "clean person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "ta.hor",
+   "samples": [
+    "Num.19.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2889",
+   "surface": "clean thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "ta.hor",
+   "samples": [
+    "Job.14.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2889",
+   "surface": "pure gold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "ta.hor",
+   "samples": [
+    "Exod.39.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2889",
+   "surface": "purity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pure",
+   "transliteration": "ta.hor",
+   "samples": [
+    "Prov.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "cleanses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Lev.14.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "cleared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Job.37.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "made clean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Jer.13.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "pronounce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Lev.13.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Job.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "purge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "2Chr.34.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "purifier",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Mal.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "purify",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Mal.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2891",
+   "surface": "purify yourselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pure",
+   "transliteration": "ta.her",
+   "samples": [
+    "Gen.35.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2892A",
+   "surface": "clearness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "purity",
+   "transliteration": "to.har",
+   "samples": [
+    "Exod.24.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2892B",
+   "surface": "splendor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "clearness",
+   "transliteration": "to.har",
+   "samples": [
+    "Ps.89.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2893",
+   "surface": "become clean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "purifying",
+   "transliteration": "to.ho.rah",
+   "samples": [
+    "Ezek.44.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2893",
+   "surface": "cleanness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "purifying",
+   "transliteration": "to.ho.rah",
+   "samples": [
+    "2Chr.30.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2893",
+   "surface": "purification",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "purifying",
+   "transliteration": "to.ho.rah",
+   "samples": [
+    "Neh.12.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696C",
+   "surface": "cast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to form",
+   "transliteration": "tsur",
+   "samples": [
+    "1Kgs.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696C",
+   "surface": "fashioned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to form",
+   "transliteration": "tsur",
+   "samples": [
+    "Exod.32.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918G",
+   "surface": "because",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holy",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "Lev.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918G",
+   "surface": "holiness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holy",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "Ps.65.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6918G",
+   "surface": "ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holy",
+   "transliteration": "qa.dosh",
+   "samples": [
+    "Zech.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6922",
+   "surface": "holy ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holy",
+   "transliteration": "qad.dish",
+   "samples": [
+    "Dan.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "appointed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Ezra.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "consecrated ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Isa.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "consecrating",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "2Chr.29.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "consecration",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Exod.29.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "keep",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Jer.17.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "keeping",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "2Chr.31.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "ordain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Exod.28.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942G",
+   "surface": "purifying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: consecate",
+   "transliteration": "qa.dash",
+   "samples": [
+    "2Sam.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942I",
+   "surface": "forfeited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: forfeit",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Deut.22.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942J",
+   "surface": "apart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: prepare",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Jer.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942J",
+   "surface": "declare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: prepare",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Mic.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6942J",
+   "surface": "set apart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to consecrate: prepare",
+   "transliteration": "qa.dash",
+   "samples": [
+    "Josh.20.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "bear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Ezek.44.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "consecrated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Exod.22.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "consecrated offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "2Chr.29.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "consecrated things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Num.18.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Lev.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy food",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Ezra.2.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy gift",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Lev.27.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy land",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Ps.78.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy name",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Ps.97.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Deut.33.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "holy thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Lev.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "in the",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Lev.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Ezek.20.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "sacred portion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Deut.26.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "sacrifices",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Ezek.36.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "sacrificial",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Jer.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "sanctuary’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "2Chr.30.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6944G",
+   "surface": "thing most",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "holiness",
+   "transliteration": "qo.desh",
+   "samples": [
+    "Lev.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8502",
+   "surface": "perfection",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perfection",
+   "transliteration": "tikh.lah",
+   "samples": [
+    "Ps.119.96"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8549G",
+   "surface": "defect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unblemished",
+   "transliteration": "ta.mim",
+   "samples": [
+    "Num.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

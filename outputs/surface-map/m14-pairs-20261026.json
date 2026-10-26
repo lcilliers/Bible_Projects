@@ -1,0 +1,4496 @@
+{
+ "cluster": "M14",
+ "cluster_name": "Deceit & Falsehood",
+ "built_at": "2026-10-26T04:19:06Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 274,
+  "head": 140,
+  "tail": 134,
+  "hits": 673,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H1892",
+   "surface": "vanity",
+   "part": "head",
+   "hits": 33,
+   "verses": 29,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Eccl.2.17",
+    "Jer.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "lying",
+   "part": "head",
+   "hits": 21,
+   "verses": 21,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Prov.21.6",
+    "Prov.26.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "lies",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Hab.2.18",
+    "Ps.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3577",
+   "surface": "lies",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Prov.19.5",
+    "Ps.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "false",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Jer.51.17",
+    "Ps.119.104"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4820",
+   "surface": "deceit",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "deceit",
+   "transliteration": "mir.mah",
+   "samples": [
+    "Jer.9.6",
+    "Job.15.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "falsely",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Ezek.13.22",
+    "Hos.7.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5273",
+   "surface": "hypocrites",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "hypocrite",
+   "transliteration": "hupokritēs",
+   "samples": [
+    "Matt.22.18",
+    "Matt.24.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7723G",
+   "surface": "false",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "vanity: false",
+   "transliteration": "shav",
+   "samples": [
+    "Ezek.13.23",
+    "Zech.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "treacherous",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Jer.5.11",
+    "Prov.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "lie",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Jer.27.16",
+    "Jer.29.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6141",
+   "surface": "crooked",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "twisted",
+   "transliteration": "iq.qesh",
+   "samples": [
+    "Prov.11.20",
+    "Ps.18.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "breath",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Job.7.16",
+    "Ps.78.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "hidden",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "2Kgs.4.27",
+    "Job.28.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "falsehood",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Jer.9.3",
+    "Ps.119.163"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1388",
+   "surface": "deceit",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "deceit",
+   "transliteration": "dolos",
+   "samples": [
+    "1Pet.2.1",
+    "1Pet.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "idols",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Jer.10.8",
+    "Ps.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0481",
+   "surface": "mute",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "be dumb",
+   "transliteration": "a.lam",
+   "samples": [
+    "Ezek.3.26",
+    "Ps.39.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4820",
+   "surface": "deceitful",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "deceit",
+   "transliteration": "mir.mah",
+   "samples": [
+    "Mic.6.11",
+    "Ps.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5377",
+   "surface": "deceive",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to deceive",
+   "transliteration": "na.sha",
+   "samples": [
+    "2Chr.32.15",
+    "2Kgs.18.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5574",
+   "surface": "lie",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to lie",
+   "transliteration": "pseudomai",
+   "samples": [
+    "Col.3.9",
+    "Rev.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5578",
+   "surface": "false prophets",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "false prophet",
+   "transliteration": "pseudoprofētēs",
+   "samples": [
+    "1John.4.1",
+    "Mark.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5272",
+   "surface": "hypocrisy",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "hypocrisy",
+   "transliteration": "hupokrisis",
+   "samples": [
+    "1Pet.2.1",
+    "Gal.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "traitor",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Hab.2.5",
+    "Isa.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "vain",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Eccl.6.12",
+    "Eccl.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3576",
+   "surface": "lie",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Hab.2.3",
+    "Num.23.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3577",
+   "surface": "lying",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Ezek.13.7",
+    "Prov.30.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4820",
+   "surface": "deceitfully",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "deceit",
+   "transliteration": "mir.mah",
+   "samples": [
+    "Dan.11.23",
+    "Gen.34.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5377",
+   "surface": "deceived",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to deceive",
+   "transliteration": "na.sha",
+   "samples": [
+    "Gen.3.13",
+    "Jer.49.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7411B",
+   "surface": "deceived",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to deceive",
+   "transliteration": "ra.mah",
+   "samples": [
+    "Gen.29.25",
+    "Lam.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7723G",
+   "surface": "falsehood",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "vanity: false",
+   "transliteration": "shav",
+   "samples": [
+    "Isa.5.18",
+    "Ps.26.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0613",
+   "surface": "hidden",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to conceal",
+   "transliteration": "apokruptō",
+   "samples": [
+    "1Cor.2.7",
+    "Col.1.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5578",
+   "surface": "false prophet",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "false prophet",
+   "transliteration": "pseudoprofētēs",
+   "samples": [
+    "Acts.13.6",
+    "Rev.20.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "betrayed",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Isa.24.16",
+    "Isa.33.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "traitors",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Hab.1.13",
+    "Prov.23.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1681",
+   "surface": "report",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "slander",
+   "transliteration": "dib.bah",
+   "samples": [
+    "Gen.37.2",
+    "Num.14.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "worthless",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Isa.30.7",
+    "Jer.16.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3585",
+   "surface": "lies",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "lie",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Hos.10.13",
+    "Nah.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4820",
+   "surface": "false",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "deceit",
+   "transliteration": "mir.mah",
+   "samples": [
+    "Hos.12.7",
+    "Prov.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "hide",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Isa.1.15",
+    "Ps.55.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7423A",
+   "surface": "deceit",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "deceit",
+   "transliteration": "re.miy.yah",
+   "samples": [
+    "Ps.32.2",
+    "Ps.52.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7423A",
+   "surface": "deceitful",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "deceit",
+   "transliteration": "re.miy.yah",
+   "samples": [
+    "Mic.6.12",
+    "Ps.120.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7723G",
+   "surface": "lies",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "vanity: false",
+   "transliteration": "shav",
+   "samples": [
+    "Isa.59.4",
+    "Ps.144.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0539",
+   "surface": "deceitfulness",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "deceit",
+   "transliteration": "apatē",
+   "samples": [
+    "Heb.3.13",
+    "Matt.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1818",
+   "surface": "deceive",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to deceive",
+   "transliteration": "exapataō",
+   "samples": [
+    "2Thess.2.3",
+    "Rom.16.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1818",
+   "surface": "deceived",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to deceive",
+   "transliteration": "exapataō",
+   "samples": [
+    "1Tim.2.14",
+    "2Cor.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4646",
+   "surface": "crooked",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "crooked",
+   "transliteration": "skolios",
+   "samples": [
+    "Acts.2.40",
+    "Phil.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5574",
+   "surface": "lying",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lie",
+   "transliteration": "pseudomai",
+   "samples": [
+    "2Cor.11.31",
+    "Rom.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5579",
+   "surface": "false",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "lie",
+   "transliteration": "pseudos",
+   "samples": [
+    "2Thess.2.9",
+    "Rev.21.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5579",
+   "surface": "lie",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "lie",
+   "transliteration": "pseudos",
+   "samples": [
+    "1John.2.27",
+    "Rom.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "dealt treacherously",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Jer.12.6",
+    "Lam.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "treacherously",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Isa.48.8",
+    "Ps.59.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "vanities",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Eccl.1.2",
+    "Eccl.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2048B",
+   "surface": "mocked",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to deceive",
+   "transliteration": "ta.lal",
+   "samples": [
+    "Judg.16.10",
+    "Judg.16.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3576",
+   "surface": "liar",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Job.24.25",
+    "Job.34.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "lied",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "1Kgs.13.18",
+    "Lev.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4820",
+   "surface": "treachery",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "deceit",
+   "transliteration": "mir.mah",
+   "samples": [
+    "Ps.38.12",
+    "Ps.55.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "ignore",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Deut.22.3",
+    "Deut.22.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "deceptive",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Jer.7.4",
+    "Jer.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8419",
+   "surface": "perverse",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "perversity",
+   "transliteration": "tah.pu.khah",
+   "samples": [
+    "Deut.32.20",
+    "Prov.10.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8419",
+   "surface": "perverted",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "perversity",
+   "transliteration": "tah.pu.khah",
+   "samples": [
+    "Prov.6.14",
+    "Prov.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8649B",
+   "surface": "deceit",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "deceitfulness",
+   "transliteration": "tar.mit",
+   "samples": [
+    "Jer.14.14",
+    "Jer.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1228H",
+   "surface": "slanderers",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "slanderous",
+   "transliteration": "diabolos",
+   "samples": [
+    "1Tim.3.11",
+    "Titus.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1388",
+   "surface": "stealth",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "deceit",
+   "transliteration": "dolos",
+   "samples": [
+    "Mark.14.1",
+    "Matt.26.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2636",
+   "surface": "slander",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "slander",
+   "transliteration": "katalalia",
+   "samples": [
+    "1Pet.2.1",
+    "2Cor.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5273",
+   "surface": "hypocrite",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hypocrite",
+   "transliteration": "hupokritēs",
+   "samples": [
+    "Luke.6.42",
+    "Matt.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5569",
+   "surface": "false brothers",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "false brother",
+   "transliteration": "pseudadelfos",
+   "samples": [
+    "2Cor.11.26",
+    "Gal.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5571",
+   "surface": "false",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "false",
+   "transliteration": "pseudēs",
+   "samples": [
+    "Acts.6.13",
+    "Rev.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5579",
+   "surface": "falsehood",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "lie",
+   "transliteration": "pseudos",
+   "samples": [
+    "Eph.4.25",
+    "Rev.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5580",
+   "surface": "false christs",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "false Christ",
+   "transliteration": "pseudochristos",
+   "samples": [
+    "Mark.13.22",
+    "Matt.24.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "faithless",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Mal.2.11",
+    "Ps.119.158"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "faithlessly with",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Hos.5.7",
+    "Hos.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0901",
+   "surface": "treacherous",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "treacherous",
+   "transliteration": "ba.god",
+   "samples": [
+    "Jer.3.10",
+    "Jer.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1681",
+   "surface": "whispering",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "slander",
+   "transliteration": "dib.bah",
+   "samples": [
+    "Jer.20.10",
+    "Ps.31.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2048B",
+   "surface": "deceives",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to deceive",
+   "transliteration": "ta.lal",
+   "samples": [
+    "Jer.9.5",
+    "Job.13.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3576",
+   "surface": "lied",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Isa.57.11",
+    "Ps.78.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3576",
+   "surface": "lies",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Mic.2.11",
+    "Prov.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3577",
+   "surface": "falsehood",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Hos.12.1",
+    "Ps.62.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3577",
+   "surface": "lie",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Prov.14.5",
+    "Ps.40.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "came cringing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "2Sam.22.45",
+    "Ps.18.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "deal falsely",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Josh.24.27",
+    "Lev.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "deny",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Job.8.18",
+    "Prov.30.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "fail",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Hab.3.17",
+    "Hos.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3655",
+   "surface": "name",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to flatter",
+   "transliteration": "ka.nah",
+   "samples": [
+    "Isa.44.5",
+    "Isa.45.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3868",
+   "surface": "devious",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be devious",
+   "transliteration": "luz",
+   "samples": [
+    "Prov.14.2",
+    "Prov.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4820",
+   "surface": "fraud",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "deceit",
+   "transliteration": "mir.mah",
+   "samples": [
+    "Ps.55.11",
+    "Zeph.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "close",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Lam.3.56",
+    "Lev.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "hides",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Job.42.3",
+    "Prov.28.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6143",
+   "surface": "crooked",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "crookedness",
+   "transliteration": "iq.qe.shut",
+   "samples": [
+    "Prov.4.24",
+    "Prov.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7400",
+   "surface": "slanderer",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "slander",
+   "transliteration": "ra.khil",
+   "samples": [
+    "Jer.9.4",
+    "Lev.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7723G",
+   "surface": "empty",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "vanity: false",
+   "transliteration": "shav",
+   "samples": [
+    "Hos.10.4",
+    "Ps.41.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "deceit",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Isa.57.4",
+    "Prov.20.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "vain",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "1Sam.25.21",
+    "Ps.119.118"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "wrongfully",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Ps.35.19",
+    "Ps.38.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0539",
+   "surface": "deceit",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceit",
+   "transliteration": "apatē",
+   "samples": [
+    "Col.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0539",
+   "surface": "deceitful",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceit",
+   "transliteration": "apatē",
+   "samples": [
+    "Eph.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0539",
+   "surface": "deception",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceit",
+   "transliteration": "apatē",
+   "samples": [
+    "2Thess.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0539",
+   "surface": "deceptions",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceit",
+   "transliteration": "apatē",
+   "samples": [
+    "2Pet.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0802",
+   "surface": "faithless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "untrustworthy",
+   "transliteration": "asunthetos",
+   "samples": [
+    "Rom.1.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1228H",
+   "surface": "devil",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slanderous",
+   "transliteration": "diabolos",
+   "samples": [
+    "John.6.70"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1228H",
+   "surface": "slanderous",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slanderous",
+   "transliteration": "diabolos",
+   "samples": [
+    "2Tim.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1386",
+   "surface": "deceitful",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceitful",
+   "transliteration": "dolios",
+   "samples": [
+    "2Cor.11.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1387",
+   "surface": "deceive",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "dolioō",
+   "samples": [
+    "Rom.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1388",
+   "surface": "deceive",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceit",
+   "transliteration": "dolos",
+   "samples": [
+    "1Thess.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1388",
+   "surface": "lie",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceit",
+   "transliteration": "dolos",
+   "samples": [
+    "Rev.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1389",
+   "surface": "tamper",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to distort",
+   "transliteration": "doloō",
+   "samples": [
+    "2Cor.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1426",
+   "surface": "slander",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slander",
+   "transliteration": "dusfēmia",
+   "samples": [
+    "2Cor.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2635",
+   "surface": "slandered",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slander",
+   "transliteration": "katalaleō",
+   "samples": [
+    "1Pet.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2635",
+   "surface": "speak against",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slander",
+   "transliteration": "katalaleō",
+   "samples": [
+    "1Pet.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2635",
+   "surface": "speak evil",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slander",
+   "transliteration": "katalaleō",
+   "samples": [
+    "Jas.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2635",
+   "surface": "speaks against",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slander",
+   "transliteration": "katalaleō",
+   "samples": [
+    "Jas.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2635",
+   "surface": "speaks evil against",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slander",
+   "transliteration": "katalaleō",
+   "samples": [
+    "Jas.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2637",
+   "surface": "slanderers",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slanderous",
+   "transliteration": "katalalos",
+   "samples": [
+    "Rom.1.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2686",
+   "surface": "dealt shrewdly",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be cunning",
+   "transliteration": "katasofizomai",
+   "samples": [
+    "Acts.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2850",
+   "surface": "flattery",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flattery",
+   "transliteration": "kolakeia",
+   "samples": [
+    "1Thess.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2940",
+   "surface": "cunning",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cunning",
+   "transliteration": "kubeia",
+   "samples": [
+    "Eph.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3835",
+   "surface": "crafty",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crafty",
+   "transliteration": "panourgos",
+   "samples": [
+    "2Cor.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3884",
+   "surface": "deceiving",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "paralogizomai",
+   "samples": [
+    "Jas.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3884",
+   "surface": "delude",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "paralogizomai",
+   "samples": [
+    "Col.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4108",
+   "surface": "deceitful",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceiving",
+   "transliteration": "planos",
+   "samples": [
+    "1Tim.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4108",
+   "surface": "deceiver",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceiving",
+   "transliteration": "planos",
+   "samples": [
+    "2John.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4108",
+   "surface": "deceivers",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceiving",
+   "transliteration": "planos",
+   "samples": [
+    "2John.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4108",
+   "surface": "impostor",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceiving",
+   "transliteration": "planos",
+   "samples": [
+    "Matt.27.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4108",
+   "surface": "impostors",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceiving",
+   "transliteration": "planos",
+   "samples": [
+    "2Cor.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4273",
+   "surface": "betrayed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "traitor",
+   "transliteration": "prodotēs",
+   "samples": [
+    "Acts.7.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4273",
+   "surface": "traitor",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "traitor",
+   "transliteration": "prodotēs",
+   "samples": [
+    "Luke.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4273",
+   "surface": "treacherous",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "traitor",
+   "transliteration": "prodotēs",
+   "samples": [
+    "2Tim.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4646",
+   "surface": "unjust",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crooked",
+   "transliteration": "skolios",
+   "samples": [
+    "1Pet.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4761",
+   "surface": "twist",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to distort",
+   "transliteration": "strebloō",
+   "samples": [
+    "2Pet.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4780",
+   "surface": "covered up",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conceal",
+   "transliteration": "sunkaluptō",
+   "samples": [
+    "Luke.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4942",
+   "surface": "acted hypocritically",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to join hypocrisy",
+   "transliteration": "sunupokrinomai",
+   "samples": [
+    "Gal.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5271",
+   "surface": "pretended",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pretend",
+   "transliteration": "hupokrinō",
+   "samples": [
+    "Luke.20.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5272",
+   "surface": "insincerity",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hypocrisy",
+   "transliteration": "hupokrisis",
+   "samples": [
+    "1Tim.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5422",
+   "surface": "deceives",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "frenapataō",
+   "samples": [
+    "Gal.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5571",
+   "surface": "liars",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "false",
+   "transliteration": "pseudēs",
+   "samples": [
+    "Rev.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5573",
+   "surface": "liars",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lying",
+   "transliteration": "pseudologos",
+   "samples": [
+    "1Tim.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5574",
+   "surface": "false",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lie",
+   "transliteration": "pseudomai",
+   "samples": [
+    "Jas.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5574",
+   "surface": "falsely",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lie",
+   "transliteration": "pseudomai",
+   "samples": [
+    "Matt.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5574",
+   "surface": "lied",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lie",
+   "transliteration": "pseudomai",
+   "samples": [
+    "Acts.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5578",
+   "surface": "false",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "false prophet",
+   "transliteration": "pseudoprofētēs",
+   "samples": [
+    "Matt.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5578",
+   "surface": "prophets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "false prophet",
+   "transliteration": "pseudoprofētēs",
+   "samples": [
+    "Matt.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5579",
+   "surface": "lies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lie",
+   "transliteration": "pseudos",
+   "samples": [
+    "John.8.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5582",
+   "surface": "lie",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "falsehood",
+   "transliteration": "pseusma",
+   "samples": [
+    "Rom.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0252",
+   "surface": "brothers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "brother",
+   "transliteration": "ach",
+   "samples": [
+    "Ezra.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0391",
+   "surface": "deceitful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceptive",
+   "transliteration": "akh.zav",
+   "samples": [
+    "Mic.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0391",
+   "surface": "deceitful brook",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceptive",
+   "transliteration": "akh.zav",
+   "samples": [
+    "Jer.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0481",
+   "surface": "binding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be dumb",
+   "transliteration": "a.lam",
+   "samples": [
+    "Gen.37.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0481",
+   "surface": "silent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be dumb",
+   "transliteration": "a.lam",
+   "samples": [
+    "Isa.53.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "acted treacherously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Ps.78.57"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "are",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Jer.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "be",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Mal.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "be faithless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Mal.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "been faithless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Mal.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "betray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Isa.33.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "betraying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Isa.33.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "betrays",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Isa.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "faith with",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Exod.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "surely deal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Isa.48.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "treacherous man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Prov.25.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "treacherous men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Jer.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Jer.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0898",
+   "surface": "we",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to act treacherously",
+   "transliteration": "ba.gad",
+   "samples": [
+    "Mal.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0899A",
+   "surface": "betrayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "treachery",
+   "transliteration": "be.ged",
+   "samples": [
+    "Isa.24.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0899A",
+   "surface": "treacherous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "treachery",
+   "transliteration": "be.ged",
+   "samples": [
+    "Jer.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0900",
+   "surface": "treacherous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "treachery",
+   "transliteration": "bo.ge.dot",
+   "samples": [
+    "Zeph.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1681",
+   "surface": "evil gossip",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slander",
+   "transliteration": "dib.bah",
+   "samples": [
+    "Ezek.36.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1681",
+   "surface": "repute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slander",
+   "transliteration": "dib.bah",
+   "samples": [
+    "Prov.25.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1681",
+   "surface": "slander",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slander",
+   "transliteration": "dib.bah",
+   "samples": [
+    "Prov.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1848",
+   "surface": "slander",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slander",
+   "transliteration": "do.phi",
+   "samples": [
+    "Ps.50.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "altogether",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Job.27.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "because",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Eccl.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "empty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Zech.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "empty nothings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Job.21.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "empty talk",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Job.35.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "false gods",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Jer.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "fleeting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Prov.21.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "gained hastily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Prov.13.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "nothing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Ps.39.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "vainly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Lam.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1892",
+   "surface": "worthlessness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity",
+   "transliteration": "he.vel",
+   "samples": [
+    "Jer.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2017",
+   "surface": "upside down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perversity",
+   "transliteration": "ho.phekh",
+   "samples": [
+    "Isa.29.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2019",
+   "surface": "crooked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crooked",
+   "transliteration": "ha.phakh.pakh",
+   "samples": [
+    "Prov.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2048B",
+   "surface": "cheat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ta.lal",
+   "samples": [
+    "Exod.8.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2048B",
+   "surface": "cheated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ta.lal",
+   "samples": [
+    "Gen.31.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2048B",
+   "surface": "deceive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ta.lal",
+   "samples": [
+    "Job.13.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2048B",
+   "surface": "deluded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ta.lal",
+   "samples": [
+    "Isa.44.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2514",
+   "surface": "flattery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "flattery",
+   "transliteration": "cha.laq.qah",
+   "samples": [
+    "Dan.11.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2810",
+   "surface": "machines",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "invention",
+   "transliteration": "chish.sha.von",
+   "samples": [
+    "2Chr.26.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2810",
+   "surface": "schemes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "invention",
+   "transliteration": "chish.sha.von",
+   "samples": [
+    "Eccl.7.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3576",
+   "surface": "fail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Isa.58.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3576",
+   "surface": "false",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Job.41.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3576",
+   "surface": "liars",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Ps.116.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3576",
+   "surface": "lying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Ezek.13.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3577",
+   "surface": "deceptive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Prov.23.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3577",
+   "surface": "delusion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Ps.62.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3577",
+   "surface": "false",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Prov.21.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3577",
+   "surface": "liar",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lie",
+   "transliteration": "ka.zav",
+   "samples": [
+    "Prov.19.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "become gaunt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Ps.109.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "come cringing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Ps.66.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "come fawning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Deut.33.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "cringe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Ps.81.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "deceive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Zech.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "deceiving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Lev.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "denied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Gen.18.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "denying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Isa.59.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "false",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Job.31.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "falsely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Jer.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3584",
+   "surface": "lying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Hos.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3585",
+   "surface": "leanness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lie",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Job.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3585",
+   "surface": "treachery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lie",
+   "transliteration": "ka.chash",
+   "samples": [
+    "Hos.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3586",
+   "surface": "lying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceptive",
+   "transliteration": "ke.chash",
+   "samples": [
+    "Isa.30.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3655",
+   "surface": "flatter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to flatter",
+   "transliteration": "ka.nah",
+   "samples": [
+    "Job.32.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3655",
+   "surface": "flattery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to flatter",
+   "transliteration": "ka.nah",
+   "samples": [
+    "Job.32.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3868",
+   "surface": "devious person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be devious",
+   "transliteration": "luz",
+   "samples": [
+    "Prov.3.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3868",
+   "surface": "escape",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be devious",
+   "transliteration": "luz",
+   "samples": [
+    "Prov.4.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3868",
+   "surface": "lose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be devious",
+   "transliteration": "luz",
+   "samples": [
+    "Prov.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3868",
+   "surface": "perverseness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be devious",
+   "transliteration": "luz",
+   "samples": [
+    "Isa.30.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3891",
+   "surface": "devious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perversity",
+   "transliteration": "la.zut",
+   "samples": [
+    "Prov.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3960",
+   "surface": "slander",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slander",
+   "transliteration": "la.shan",
+   "samples": [
+    "Prov.30.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3960",
+   "surface": "slanders",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slander",
+   "transliteration": "la.shan",
+   "samples": [
+    "Ps.101.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4020",
+   "surface": "twisted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "twisted",
+   "transliteration": "mig.ba.lot",
+   "samples": [
+    "Exod.28.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4123",
+   "surface": "illusions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "ma.ha.tal.lot",
+   "samples": [
+    "Isa.30.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4820",
+   "surface": "deceiving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceit",
+   "transliteration": "mir.mah",
+   "samples": [
+    "Prov.14.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4860",
+   "surface": "deception",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guile",
+   "transliteration": "mash.sha.on",
+   "samples": [
+    "Prov.26.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5377",
+   "surface": "deluded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "na.sha",
+   "samples": [
+    "Isa.19.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5377",
+   "surface": "outwit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "na.sha",
+   "samples": [
+    "Ps.89.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5377",
+   "surface": "steal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "na.sha",
+   "samples": [
+    "Ps.55.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5377",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "na.sha",
+   "samples": [
+    "Jer.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5558",
+   "surface": "crookedness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crookedness",
+   "transliteration": "se.leph",
+   "samples": [
+    "Prov.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5558",
+   "surface": "perverseness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crookedness",
+   "transliteration": "se.leph",
+   "samples": [
+    "Prov.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Lev.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "blind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "1Sam.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "disregarded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Ezek.22.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "hides itself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Job.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "hiding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Nah.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "hypocrites",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Ps.26.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "secret",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Eccl.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5956",
+   "surface": "secret sins",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conceal",
+   "transliteration": "a.lam",
+   "samples": [
+    "Ps.90.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6121A",
+   "surface": "deceitful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "insidious",
+   "transliteration": "a.qov",
+   "samples": [
+    "Jer.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6121A",
+   "surface": "tracked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "insidious",
+   "transliteration": "a.qov",
+   "samples": [
+    "Hos.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6122",
+   "surface": "cunning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cunning",
+   "transliteration": "oq.vah",
+   "samples": [
+    "2Kgs.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6128",
+   "surface": "byways",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crooked",
+   "transliteration": "a.qal.qal",
+   "samples": [
+    "Judg.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6128",
+   "surface": "crooked ways",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crooked",
+   "transliteration": "a.qal.qal",
+   "samples": [
+    "Ps.125.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6129",
+   "surface": "twisting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crooked",
+   "transliteration": "a.qal.la.ton",
+   "samples": [
+    "Isa.27.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6141",
+   "surface": "perverse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "twisted",
+   "transliteration": "iq.qesh",
+   "samples": [
+    "Ps.101.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6618",
+   "surface": "twisted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "twisted",
+   "transliteration": "pe.tal.tol",
+   "samples": [
+    "Deut.32.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7400",
+   "surface": "goes about slandering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slander",
+   "transliteration": "ra.khil",
+   "samples": [
+    "Prov.11.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7400",
+   "surface": "slander",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slander",
+   "transliteration": "ra.khil",
+   "samples": [
+    "Ezek.22.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7400",
+   "surface": "slandering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slander",
+   "transliteration": "ra.khil",
+   "samples": [
+    "Prov.20.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7400",
+   "surface": "slanders",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slander",
+   "transliteration": "ra.khil",
+   "samples": [
+    "Jer.6.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7411B",
+   "surface": "betray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ra.mah",
+   "samples": [
+    "1Chr.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7411B",
+   "surface": "deceive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ra.mah",
+   "samples": [
+    "Josh.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7411B",
+   "surface": "deceives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deceive",
+   "transliteration": "ra.mah",
+   "samples": [
+    "Prov.26.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7423A",
+   "surface": "deceitfully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceit",
+   "transliteration": "re.miy.yah",
+   "samples": [
+    "Job.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7423A",
+   "surface": "treacherous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceit",
+   "transliteration": "re.miy.yah",
+   "samples": [
+    "Hos.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7723G",
+   "surface": "false visions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity: false",
+   "transliteration": "shav",
+   "samples": [
+    "Ezek.22.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7723G",
+   "surface": "knows",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vanity: false",
+   "transliteration": "shav",
+   "samples": [
+    "Job.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "deceitful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Prov.31.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "delusion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Jer.3.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "false hope",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Ps.33.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "give",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Prov.25.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "liar",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Prov.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "liars",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Ps.63.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "pretense",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Jer.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "treacherously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "2Sam.18.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "true",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "2Kgs.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8267",
+   "surface": "wind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deception",
+   "transliteration": "she.qer",
+   "samples": [
+    "Mic.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8419",
+   "surface": "dishonest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perversity",
+   "transliteration": "tah.pu.khah",
+   "samples": [
+    "Prov.16.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8419",
+   "surface": "dishonest things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perversity",
+   "transliteration": "tah.pu.khah",
+   "samples": [
+    "Prov.16.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8419",
+   "surface": "perverse things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perversity",
+   "transliteration": "tah.pu.khah",
+   "samples": [
+    "Prov.23.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8419",
+   "surface": "perverseness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perversity",
+   "transliteration": "tah.pu.khah",
+   "samples": [
+    "Prov.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8649A",
+   "surface": "secretly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "treachery",
+   "transliteration": "tor.mah",
+   "samples": [
+    "Judg.9.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8649B",
+   "surface": "cunning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceitfulness",
+   "transliteration": "tar.mit",
+   "samples": [
+    "Ps.119.118"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8649B",
+   "surface": "deceitful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deceitfulness",
+   "transliteration": "tar.mit",
+   "samples": [
+    "Zeph.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

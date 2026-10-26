@@ -1,0 +1,2211 @@
+{
+ "cluster": "M84",
+ "cluster_name": "Outcry & Shouting",
+ "built_at": "2026-10-26T04:28:56Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 134,
+  "head": 76,
+  "tail": 58,
+  "hits": 293,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G5455",
+   "surface": "called",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "Mark.9.35",
+    "Rev.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "shout",
+   "part": "head",
+   "hits": 15,
+   "verses": 13,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Jer.50.15",
+    "Ps.65.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2201",
+   "surface": "cry",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "outcry",
+   "transliteration": "ze.a.qah",
+   "samples": [
+    "Esth.4.1",
+    "Ezek.27.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "shouting",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "1Sam.4.6",
+    "Amos.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "shout",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Num.23.21",
+    "Ps.47.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7580",
+   "surface": "roar",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to roar",
+   "transliteration": "sha.ag",
+   "samples": [
+    "Amos.3.4",
+    "Jer.25.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "roar",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Isa.51.15",
+    "Jer.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "shouted",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "1Sam.10.24",
+    "2Chr.13.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "alarm",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Num.10.6",
+    "Num.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "calling",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "Acts.9.41",
+    "Matt.27.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "crowed",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "John.18.27",
+    "Mark.14.68"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "crows",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "Matt.26.34",
+    "Matt.26.75"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7032G",
+   "surface": "sound",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "voice: sound",
+   "transliteration": "qal",
+   "samples": [
+    "Dan.3.10",
+    "Dan.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "joyful noise",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Ps.95.1",
+    "Ps.98.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2905",
+   "surface": "cried out",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to shout",
+   "transliteration": "kraugazō",
+   "samples": [
+    "John.11.43",
+    "John.18.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5456H",
+   "surface": "sound",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "voice/sound: noise",
+   "transliteration": "fōnē",
+   "samples": [
+    "1Cor.14.8",
+    "Luke.1.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "meditate",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Ps.38.12",
+    "Ps.63.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "turmoil",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Ps.39.6",
+    "Ps.42.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "alarm",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Hos.5.8",
+    "Num.10.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7580",
+   "surface": "roaring",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to roar",
+   "transliteration": "sha.ag",
+   "samples": [
+    "Ezek.22.25",
+    "Ps.22.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7580",
+   "surface": "roars",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to roar",
+   "transliteration": "sha.ag",
+   "samples": [
+    "Amos.1.2",
+    "Joel.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2019",
+   "surface": "shouting",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to shout",
+   "transliteration": "epifōneō",
+   "samples": [
+    "Acts.12.22",
+    "Luke.23.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "call",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "John.13.13",
+    "Mark.10.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "called out",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "Acts.10.18",
+    "Luke.16.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5456H",
+   "surface": "rumblings",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "voice/sound: noise",
+   "transliteration": "fōnē",
+   "samples": [
+    "Rev.11.19",
+    "Rev.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5456H",
+   "surface": "voice",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "voice/sound: noise",
+   "transliteration": "fōnē",
+   "samples": [
+    "Rev.1.10",
+    "Rev.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "moan",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Isa.38.14",
+    "Isa.59.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "moan",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Isa.16.11",
+    "Ps.55.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2201",
+   "surface": "outcry",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "outcry",
+   "transliteration": "ze.a.qah",
+   "samples": [
+    "Jer.48.34",
+    "Neh.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "joy",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Ps.66.1",
+    "Ps.81.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7580",
+   "surface": "roared",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to roar",
+   "transliteration": "sha.ag",
+   "samples": [
+    "Amos.3.8",
+    "Jer.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2906",
+   "surface": "clamor",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "shouting",
+   "transliteration": "kraugē",
+   "samples": [
+    "Acts.23.9",
+    "Eph.4.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "crow",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "John.13.38",
+    "Luke.22.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5456H",
+   "surface": "noise",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "voice/sound: noise",
+   "transliteration": "fōnē",
+   "samples": [
+    "Rev.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "mourn",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Isa.16.7",
+    "Jer.48.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "utter",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Job.27.4",
+    "Prov.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1959",
+   "surface": "joy",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "he.dad",
+   "samples": [
+    "Jer.48.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1959",
+   "surface": "shout",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "shout",
+   "transliteration": "he.dad",
+   "samples": [
+    "Isa.16.9",
+    "Jer.25.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1959",
+   "surface": "shouting",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "shout",
+   "transliteration": "he.dad",
+   "samples": [
+    "Isa.16.10",
+    "Jer.48.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "howling",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Ps.59.14",
+    "Ps.59.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "loud",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Prov.7.11",
+    "Prov.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "moans",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Jer.48.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "roaring",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Jer.50.42",
+    "Jer.6.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "uproar",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "1Kgs.1.41",
+    "Ps.83.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5099",
+   "surface": "growling",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "roaring",
+   "transliteration": "na.ham",
+   "samples": [
+    "Prov.19.12",
+    "Prov.20.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6682",
+   "surface": "cry",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "outcry",
+   "transliteration": "tse.va.chah",
+   "samples": [
+    "Jer.14.2",
+    "Jer.46.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "triumph",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Ps.108.9",
+    "Ps.60.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7581",
+   "surface": "groaning",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "roaring",
+   "transliteration": "she.a.gah",
+   "samples": [
+    "Ps.22.1",
+    "Ps.32.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7581",
+   "surface": "roar",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "roaring",
+   "transliteration": "she.a.gah",
+   "samples": [
+    "Job.4.10",
+    "Zech.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7581",
+   "surface": "roaring",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "roaring",
+   "transliteration": "she.a.gah",
+   "samples": [
+    "Ezek.19.7",
+    "Isa.5.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "shouts",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Ps.27.6",
+    "Ps.33.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8663",
+   "surface": "shouts",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "shout",
+   "transliteration": "te.shu.ah",
+   "samples": [
+    "Job.39.7",
+    "Zech.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0995",
+   "surface": "cries",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "outcry",
+   "transliteration": "boē",
+   "samples": [
+    "Jas.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2019",
+   "surface": "against",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "epifōneō",
+   "samples": [
+    "Acts.22.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2905",
+   "surface": "cry aloud",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "kraugazō",
+   "samples": [
+    "Matt.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2905",
+   "surface": "crying",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "kraugazō",
+   "samples": [
+    "Matt.15.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2905",
+   "surface": "shouting",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "kraugazō",
+   "samples": [
+    "Acts.22.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2906",
+   "surface": "cries",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shouting",
+   "transliteration": "kraugē",
+   "samples": [
+    "Heb.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2906",
+   "surface": "cry",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shouting",
+   "transliteration": "kraugē",
+   "samples": [
+    "Matt.25.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2906",
+   "surface": "crying",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shouting",
+   "transliteration": "kraugē",
+   "samples": [
+    "Rev.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2906",
+   "surface": "voice",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shouting",
+   "transliteration": "kraugē",
+   "samples": [
+    "Rev.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3455",
+   "surface": "roaring",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "mukaomai",
+   "samples": [
+    "Rev.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "calling out",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "Luke.23.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "calls",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "John.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "cried",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "Acts.16.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5455",
+   "surface": "invite",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call",
+   "transliteration": "fōneō",
+   "samples": [
+    "Luke.14.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5456H",
+   "surface": "call",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "voice/sound: noise",
+   "transliteration": "fōnē",
+   "samples": [
+    "Matt.24.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5456H",
+   "surface": "instruments",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "voice/sound: noise",
+   "transliteration": "fōnē",
+   "samples": [
+    "1Cor.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5456H",
+   "surface": "sounded",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "voice/sound: noise",
+   "transliteration": "fōnē",
+   "samples": [
+    "Rev.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5456H",
+   "surface": "trumpet call",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "voice/sound: noise",
+   "transliteration": "fōnē",
+   "samples": [
+    "Rev.10.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5612",
+   "surface": "roaring",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ōruomai",
+   "samples": [
+    "1Pet.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "devise",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Prov.24.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "growls",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Isa.31.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "meditates",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Ps.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "muse",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Isa.33.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "mutter",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Isa.8.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "mutters",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Isa.59.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "plot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Ps.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "ponder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Ps.77.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "ponders",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Prov.15.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "sound",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Ps.115.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "talk",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Ps.71.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "tell",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Ps.35.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "uttering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Isa.59.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1897",
+   "surface": "utters",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mutter",
+   "transliteration": "ha.gah",
+   "samples": [
+    "Ps.37.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1899",
+   "surface": "mourning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "moaning",
+   "transliteration": "he.geh",
+   "samples": [
+    "Ezek.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1899",
+   "surface": "rumbling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "moaning",
+   "transliteration": "he.geh",
+   "samples": [
+    "Job.37.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1899",
+   "surface": "sigh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "moaning",
+   "transliteration": "he.geh",
+   "samples": [
+    "Ps.90.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1906",
+   "surface": "joyful shouting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "hed",
+   "samples": [
+    "Ezek.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1959",
+   "surface": "victory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "he.dad",
+   "samples": [
+    "Jer.51.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "beating wildly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Jer.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "brawler",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Prov.20.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "growl",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Isa.59.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "moaning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Ezek.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "noisy streets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Prov.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "rage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Ps.46.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "thrilled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Song.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "thunder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Isa.17.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "thundering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Isa.17.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "tumultuous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Isa.22.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1993",
+   "surface": "yearns",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "ha.mah",
+   "samples": [
+    "Jer.31.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2201",
+   "surface": "distress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "outcry",
+   "transliteration": "ze.a.qah",
+   "samples": [
+    "Isa.65.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2201",
+   "surface": "lamenting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "outcry",
+   "transliteration": "ze.a.qah",
+   "samples": [
+    "Esth.9.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2201",
+   "surface": "shouting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "outcry",
+   "transliteration": "ze.a.qah",
+   "samples": [
+    "Eccl.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6682",
+   "surface": "distress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "outcry",
+   "transliteration": "tse.va.chah",
+   "samples": [
+    "Ps.144.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6682",
+   "surface": "outcry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "outcry",
+   "transliteration": "tse.va.chah",
+   "samples": [
+    "Isa.24.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7032G",
+   "surface": "tone",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "voice: sound",
+   "transliteration": "qal",
+   "samples": [
+    "Dan.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7032H",
+   "surface": "voice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "voice",
+   "transliteration": "qal",
+   "samples": [
+    "Dan.4.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "call to battle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "2Chr.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "cried out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Judg.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "cries out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Isa.42.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Mic.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "cry aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Isa.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "gave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "1Sam.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "raised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Isa.16.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "shouting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "Judg.15.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7321",
+   "surface": "war cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shout",
+   "transliteration": "ru.a",
+   "samples": [
+    "1Sam.17.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7452",
+   "surface": "aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shouting",
+   "transliteration": "re.a",
+   "samples": [
+    "Mic.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7452",
+   "surface": "crashing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shouting",
+   "transliteration": "re.a",
+   "samples": [
+    "Job.36.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7452",
+   "surface": "shouted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shouting",
+   "transliteration": "re.a",
+   "samples": [
+    "Exod.32.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7580",
+   "surface": "groan",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "sha.ag",
+   "samples": [
+    "Ps.38.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7580",
+   "surface": "mightily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to roar",
+   "transliteration": "sha.ag",
+   "samples": [
+    "Jer.25.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7581",
+   "surface": "groanings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "roaring",
+   "transliteration": "she.a.gah",
+   "samples": [
+    "Job.3.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "battle cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Zeph.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "blast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Lev.23.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Jer.49.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "loud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Lev.25.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "loud clashing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Ps.150.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "shout of joy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Job.33.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "shouted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Ezra.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "sound",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "2Chr.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8643",
+   "surface": "trumpets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.ru.ah",
+   "samples": [
+    "Num.29.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8663",
+   "surface": "shoutings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.shu.ah",
+   "samples": [
+    "Isa.22.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8663",
+   "surface": "thunderings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shout",
+   "transliteration": "te.shu.ah",
+   "samples": [
+    "Job.36.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

@@ -1,0 +1,837 @@
+{
+ "cluster": "M70",
+ "cluster_name": "Lifting & Bearing",
+ "built_at": "2026-10-26T04:26:42Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 50,
+  "head": 27,
+  "tail": 23,
+  "hits": 118,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H5564",
+   "surface": "lay",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Num.27.18",
+    "Num.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1319",
+   "surface": "news",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "to bear tidings",
+   "transliteration": "ba.sar",
+   "samples": [
+    "1Kgs.1.42",
+    "Ps.68.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "swore",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ezek.20.23",
+    "Ezek.20.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1319",
+   "surface": "good news",
+   "part": "head",
+   "hits": 9,
+   "verses": 7,
+   "gloss": "to bear tidings",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Isa.60.6",
+    "Isa.61.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "laid",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "2Chr.29.23",
+    "Num.27.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4937A",
+   "surface": "support",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "support",
+   "transliteration": "mish.an",
+   "samples": [
+    "2Sam.22.19",
+    "Isa.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "lift up",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ps.24.9",
+    "Ps.28.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "uphold",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Isa.63.5",
+    "Ps.51.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "upholds",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Ps.145.14",
+    "Ps.37.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5582",
+   "surface": "strengthen",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to support",
+   "transliteration": "sa.ad",
+   "samples": [
+    "Judg.19.8",
+    "Ps.104.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1319",
+   "surface": "tell",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to bear tidings",
+   "transliteration": "ba.sar",
+   "samples": [
+    "1Chr.16.23",
+    "Ps.96.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "lift",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Lam.2.19",
+    "Ps.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "sworn",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ezek.44.12",
+    "Neh.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "leaned",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Amos.5.19",
+    "Ps.71.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "leans",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "2Kgs.18.21",
+    "Isa.36.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "sustained",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Gen.27.37",
+    "Ps.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "upheld",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Isa.59.16",
+    "Isa.63.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5582",
+   "surface": "refresh",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to support",
+   "transliteration": "sa.ad",
+   "samples": [
+    "1Kgs.13.7",
+    "Gen.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5582",
+   "surface": "up",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to support",
+   "transliteration": "sa.ad",
+   "samples": [
+    "Ps.119.117",
+    "Ps.94.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1319",
+   "surface": "carry",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bear tidings",
+   "transliteration": "ba.sar",
+   "samples": [
+    "2Sam.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1319",
+   "surface": "glad news",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bear tidings",
+   "transliteration": "ba.sar",
+   "samples": [
+    "Ps.40.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1319",
+   "surface": "publish",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bear tidings",
+   "transliteration": "ba.sar",
+   "samples": [
+    "2Sam.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4552",
+   "surface": "supports",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "support",
+   "transliteration": "mis.ad",
+   "samples": [
+    "1Kgs.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4937B",
+   "surface": "support",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "support",
+   "transliteration": "mish.en",
+   "samples": [
+    "Isa.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4938A",
+   "surface": "supply",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "support",
+   "transliteration": "mish.e.nah",
+   "samples": [
+    "Isa.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "accepted",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Job.42.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "bear",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ezek.44.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "lift them up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ps.24.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "lifted up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Lev.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "raised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ps.106.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "suffer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ezek.36.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "swear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ezek.36.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375P",
+   "surface": "up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: vow",
+   "transliteration": "na.sa",
+   "samples": [
+    "Deut.32.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "established",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Ps.111.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "laid siege",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Ezek.24.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "lies heavy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Ps.88.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "stay themselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Isa.48.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "stayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Isa.26.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "steady",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Ps.112.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "support",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Ezek.30.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "sustain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Song.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "took confidence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "2Chr.32.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "upholder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Ps.54.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5564",
+   "surface": "weight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.makh",
+   "samples": [
+    "Judg.16.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5582",
+   "surface": "support",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.ad",
+   "samples": [
+    "Ps.20.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5582",
+   "surface": "supported",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.ad",
+   "samples": [
+    "Ps.18.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5582",
+   "surface": "sustains",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.ad",
+   "samples": [
+    "Ps.41.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5582",
+   "surface": "upheld",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.ad",
+   "samples": [
+    "Prov.20.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5582",
+   "surface": "uphold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to support",
+   "transliteration": "sa.ad",
+   "samples": [
+    "Isa.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5979",
+   "surface": "standing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "support",
+   "transliteration": "em.dah",
+   "samples": [
+    "Mic.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

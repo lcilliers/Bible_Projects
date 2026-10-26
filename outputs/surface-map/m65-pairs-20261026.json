@@ -1,0 +1,5157 @@
+{
+ "cluster": "M65",
+ "cluster_name": "Speech & Tongue",
+ "built_at": "2026-10-26T04:26:03Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 314,
+  "head": 25,
+  "tail": 289,
+  "hits": 3040,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H1697G",
+   "surface": "word",
+   "part": "head",
+   "hits": 441,
+   "verses": 426,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.15.23",
+    "Mal.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "words",
+   "part": "head",
+   "hits": 349,
+   "verses": 333,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Amos.1.1",
+    "Ps.36.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "speak",
+   "part": "head",
+   "hits": 267,
+   "verses": 252,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.28.3",
+    "Zech.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "spoke",
+   "part": "head",
+   "hits": 241,
+   "verses": 240,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Mal.3.16",
+    "Num.31.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "word",
+   "part": "head",
+   "hits": 171,
+   "verses": 163,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Jas.1.21",
+    "Jas.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "spoken",
+   "part": "head",
+   "hits": 145,
+   "verses": 138,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ezek.36.5",
+    "Mal.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "told",
+   "part": "head",
+   "hits": 144,
+   "verses": 139,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "1Kgs.18.16",
+    "Gen.37.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "said",
+   "part": "head",
+   "hits": 131,
+   "verses": 128,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Dan.2.4",
+    "Jonah.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "tell",
+   "part": "head",
+   "hits": 103,
+   "verses": 100,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Jer.51.31",
+    "Judg.14.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "words",
+   "part": "head",
+   "hits": 58,
+   "verses": 56,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.15.15",
+    "Eph.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "speaking",
+   "part": "head",
+   "hits": 46,
+   "verses": 46,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Dan.9.22",
+    "Isa.58.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "promised",
+   "part": "head",
+   "hits": 42,
+   "verses": 42,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Josh.23.10",
+    "Ps.66.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0561",
+   "surface": "words",
+   "part": "head",
+   "hits": 40,
+   "verses": 39,
+   "gloss": "word",
+   "transliteration": "e.mer",
+   "samples": [
+    "Prov.19.7",
+    "Prov.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "say",
+   "part": "head",
+   "hits": 39,
+   "verses": 38,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Isa.38.15",
+    "Zech.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "declare",
+   "part": "head",
+   "hits": 39,
+   "verses": 38,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Jer.50.28",
+    "Ps.51.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "command",
+   "part": "head",
+   "hits": 29,
+   "verses": 25,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Eccl.8.2",
+    "Num.20.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "told",
+   "part": "head",
+   "hits": 26,
+   "verses": 25,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ezek.11.25",
+    "Gen.45.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "speaks",
+   "part": "head",
+   "hits": 25,
+   "verses": 24,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ezek.14.9",
+    "Isa.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "tell",
+   "part": "head",
+   "hits": 24,
+   "verses": 24,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Jonah.3.2",
+    "Zech.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "talked",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.45.15",
+    "Zech.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "saying",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "1Tim.1.15",
+    "John.4.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "word",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Num.27.14",
+    "Num.27.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "preached",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Eph.2.17",
+    "Gal.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0565A",
+   "surface": "word",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "word",
+   "transliteration": "im.rah",
+   "samples": [
+    "Isa.5.24",
+    "Ps.119.170"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "command",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Esth.8.14",
+    "Esth.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "commandment",
+   "part": "tail",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "1Sam.15.24",
+    "Josh.15.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "good news",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Acts.8.12",
+    "Heb.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "speech",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "1Cor.14.9",
+    "Titus.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4483",
+   "surface": "say",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to say: will say",
+   "transliteration": "ereō",
+   "samples": [
+    "Rom.3.5",
+    "Rom.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0565A",
+   "surface": "promise",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "word",
+   "transliteration": "im.rah",
+   "samples": [
+    "Ps.119.133",
+    "Ps.119.148"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "declared",
+   "part": "tail",
+   "hits": 11,
+   "verses": 10,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "1Sam.24.18",
+    "Isa.44.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "said",
+   "part": "tail",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Esth.4.12",
+    "Jonah.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "pronounced",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.36.7",
+    "Neh.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "say",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Ezek.33.31",
+    "Gen.24.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "preach the gospel",
+   "part": "tail",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Rom.1.15",
+    "Rom.15.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4406",
+   "surface": "matter",
+   "part": "tail",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "word",
+   "transliteration": "mil.lah",
+   "samples": [
+    "Dan.2.15",
+    "Dan.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "preaching",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "1Cor.9.18",
+    "Acts.5.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "talk",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Dan.10.17",
+    "Prov.24.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "talking",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.17.22",
+    "Isa.58.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "declared",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.22.23",
+    "Lev.23.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "declares",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Amos.4.13",
+    "Job.36.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "account",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Matt.12.36",
+    "Rom.14.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "message",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "2Cor.5.19",
+    "2Tim.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "says",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "2Kgs.1.9",
+    "Exod.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "word",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.23.17",
+    "Prov.21.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "answer",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.12.9",
+    "Prov.27.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4406",
+   "surface": "words",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "word",
+   "transliteration": "mil.lah",
+   "samples": [
+    "Dan.2.9",
+    "Dan.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "proclaim",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Ps.22.31",
+    "Ps.40.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "speech",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Prov.16.23",
+    "Prov.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "news",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Acts.13.32",
+    "Luke.8.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "talk",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "1Cor.4.19",
+    "2Tim.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0565A",
+   "surface": "speech",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "word",
+   "transliteration": "im.rah",
+   "samples": [
+    "Deut.32.2",
+    "Isa.29.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "utter",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Eccl.1.8",
+    "Isa.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "declare",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Ezek.38.19",
+    "Jer.18.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "message",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Num.22.7",
+    "Prov.26.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "answer",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.24.13",
+    "Prov.24.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "reported",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "1Kgs.20.17",
+    "Jer.36.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "show",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "1Sam.8.9",
+    "2Kgs.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "dictation",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Jer.36.32",
+    "Jer.36.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1834",
+   "surface": "related",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to tell",
+   "transliteration": "exēgeomai",
+   "samples": [
+    "Acts.10.8",
+    "Acts.15.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "sayings",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Luke.9.28",
+    "Matt.26.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "uttered",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ezek.13.8",
+    "Jer.25.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "utters",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.101.7",
+    "Ps.41.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "made",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.8.20",
+    "Jer.33.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "advice",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.17.4",
+    "Esth.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "commandments",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.15.11",
+    "Deut.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "reports",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Chr.9.6",
+    "Neh.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "said",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Judg.8.3",
+    "Ps.105.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "what",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Exod.16.16",
+    "Num.22.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "evidence",
+   "part": "tail",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Deut.19.15",
+    "Num.35.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "preached the gospel",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Acts.8.40",
+    "Gal.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "preaching the gospel",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Acts.8.25",
+    "Luke.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "matter",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.15.6",
+    "Acts.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "question",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Luke.20.3",
+    "Matt.21.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "report",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.11.22",
+    "Luke.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "said",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.6.5",
+    "Rom.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "say",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "2Thess.3.14",
+    "Heb.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0565A",
+   "surface": "words",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "im.rah",
+   "samples": [
+    "Ps.12.6",
+    "Ps.17.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "commanded",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.16.4",
+    "Exod.16.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "tells",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.39.12",
+    "Ps.41.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "passed",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "2Kgs.25.6",
+    "Jer.52.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "order",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Esth.2.8",
+    "Esth.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "report",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Chr.9.5",
+    "Josh.22.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4406",
+   "surface": "thing",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "word",
+   "transliteration": "mil.lah",
+   "samples": [
+    "Dan.2.10",
+    "Dan.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4406",
+   "surface": "word",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "word",
+   "transliteration": "mil.lah",
+   "samples": [
+    "Dan.2.5",
+    "Dan.4.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "answered",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "2Chr.9.2",
+    "Jer.38.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "explain",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "2Chr.9.2",
+    "Esth.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "made known",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Esth.2.10",
+    "Esth.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "gospel",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Gal.1.8",
+    "Gal.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "preach",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Eph.3.8",
+    "Gal.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "accounts",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Matt.18.23",
+    "Matt.25.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "statement",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "John.19.8",
+    "Mark.7.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "this",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Mark.8.32",
+    "Matt.19.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "utterance",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "1Cor.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0561",
+   "surface": "true",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "e.mer",
+   "samples": [
+    "Prov.22.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0562",
+   "surface": "speech",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "o.mer",
+   "samples": [
+    "Ps.19.2",
+    "Ps.19.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "answered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "2Kgs.1.10",
+    "2Kgs.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "gave",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "2Kgs.15.12",
+    "Num.22.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "persistently",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.25.3",
+    "Jer.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "say anything",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.31.24",
+    "Gen.31.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "saying",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.33.24",
+    "Jer.38.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "telling",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.11.19",
+    "Jer.43.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "promise",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.8.56",
+    "Jer.32.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "as",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.44.2",
+    "Jer.38.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "charge",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Deut.19.15",
+    "Exod.23.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "concerning",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.14.1",
+    "Jer.7.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "reported",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Chr.34.16",
+    "2Kgs.22.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "saying",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.13.4",
+    "Gen.37.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "request",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.14.15",
+    "Jer.42.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "saying",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.13.32",
+    "1Sam.18.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "spoke",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.48.27",
+    "Job.29.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "announce",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Isa.21.10",
+    "Isa.21.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "denounce",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Jer.20.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "messenger",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "2Sam.15.13",
+    "Jer.51.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "prove",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Ezra.2.59",
+    "Neh.7.61"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "uttered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Job.26.4",
+    "Job.42.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "to",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Deut.17.10",
+    "Deut.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "uttered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "1Chr.16.12",
+    "Ps.105.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1834",
+   "surface": "known",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "exēgeomai",
+   "samples": [
+    "John.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1834",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "exēgeomai",
+   "samples": [
+    "John.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1834",
+   "surface": "told",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "exēgeomai",
+   "samples": [
+    "Luke.24.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "announced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Rev.10.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2097",
+   "surface": "proclaim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak good news",
+   "transliteration": "euangelizomai",
+   "samples": [
+    "Rev.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "appearance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Col.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "book",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "complaint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.19.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "conversation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Luke.24.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "credit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Phil.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "doctrine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Heb.6.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "encouragement",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.20.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "ground",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Matt.5.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "in",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Phil.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "it",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Luke.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "justify",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.19.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "length",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Luke.23.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "letter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "2Cor.10.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "mean",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "John.7.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "messages",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Heb.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "news",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Mark.1.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "preaching",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "1Tim.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "reason",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "1Pet.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "retort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.7.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "says",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Jas.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "sentence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Rom.9.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "speaker",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.14.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "speaking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "2Cor.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "story",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Matt.28.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "talking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "3John.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "teaching",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Luke.10.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "testimony",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "John.4.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Luke.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "value",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.20.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "what",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Mark.5.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3056",
+   "surface": "why",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "logos",
+   "samples": [
+    "Acts.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4283",
+   "surface": "gospel beforehand",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak good news",
+   "transliteration": "proeuangelizomai",
+   "samples": [
+    "Gal.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4483",
+   "surface": "tell",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to say: will say",
+   "transliteration": "ereō",
+   "samples": [
+    "Rev.17.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5396",
+   "surface": "nonsense",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to talk nonsense",
+   "transliteration": "fluareō",
+   "samples": [
+    "3John.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5542",
+   "surface": "smooth talk",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "smooth talk",
+   "transliteration": "chrēstologia",
+   "samples": [
+    "Rom.16.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0561",
+   "surface": "answer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "e.mer",
+   "samples": [
+    "Judg.5.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0561",
+   "surface": "decreed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "e.mer",
+   "samples": [
+    "Job.20.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0561",
+   "surface": "fawns",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "e.mer",
+   "samples": [
+    "Gen.49.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0561",
+   "surface": "sayings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "e.mer",
+   "samples": [
+    "Prov.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0561",
+   "surface": "speaks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "e.mer",
+   "samples": [
+    "Prov.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0561",
+   "surface": "speech",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "e.mer",
+   "samples": [
+    "Job.6.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0561",
+   "surface": "speeches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "e.mer",
+   "samples": [
+    "Job.32.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0562",
+   "surface": "matter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "o.mer",
+   "samples": [
+    "Job.22.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0562",
+   "surface": "promises",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "o.mer",
+   "samples": [
+    "Ps.77.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0562",
+   "surface": "selah",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "o.mer",
+   "samples": [
+    "Hab.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0562",
+   "surface": "word",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "o.mer",
+   "samples": [
+    "Ps.68.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0565A",
+   "surface": "command",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "im.rah",
+   "samples": [
+    "Ps.147.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0565A",
+   "surface": "commands",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "im.rah",
+   "samples": [
+    "Ps.119.158"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0565A",
+   "surface": "fulfillment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "im.rah",
+   "samples": [
+    "Ps.119.123"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0565A",
+   "surface": "say",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "im.rah",
+   "samples": [
+    "Gen.4.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0981",
+   "surface": "rash",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak rashly",
+   "transliteration": "ba.tah",
+   "samples": [
+    "Lev.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0981",
+   "surface": "rash words",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak rashly",
+   "transliteration": "ba.tah",
+   "samples": [
+    "Prov.12.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0981",
+   "surface": "spoke rashly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak rashly",
+   "transliteration": "ba.tah",
+   "samples": [
+    "Ps.106.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0981",
+   "surface": "utters",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak rashly",
+   "transliteration": "ba.tah",
+   "samples": [
+    "Lev.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "addressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.18.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "adonijah",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "are",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Num.27.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "came down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "2Kgs.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "complain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "deceitfully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.34.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "decree",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.19.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "directed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Num.27.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "entreated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "2Kgs.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "explain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Josh.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "it",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Judg.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "judah",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "2Kgs.18.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "liars",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.63.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "makes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "mentioned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Esth.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.24.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "orders",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Num.32.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "plea",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Isa.32.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "plotting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.119.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "promised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "repeated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "reported",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Num.36.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "saul",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.9.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "say to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "1Chr.21.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "speech",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Prov.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "spoke to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Hos.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "spoken for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Song.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "taught",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Deut.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "then he",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Zech.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "this",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Judg.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "threaten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.73.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.18.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "told him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.44.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "told me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.27.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "use",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Prov.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "used",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.20.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "well",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Exod.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696G",
+   "surface": "words",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: speak",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.94.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "break out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Judg.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "decision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "decree",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.58.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "decreed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "foretold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "2Kgs.24.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "named",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.23.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "recited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Deut.32.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "warned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Judg.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1696I",
+   "surface": "words",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to speak: promise",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.51.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "answered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "asked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Exod.8.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "cause",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Ps.56.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "comforting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Zech.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "commandment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.15.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "conferred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "covenant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Hag.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "everything",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.15.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "has",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.23.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "manner",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.27.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "nothing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.38.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "pleased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.18.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "prayer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Kgs.6.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "proposal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.41.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "proposed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Esth.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "questions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.43.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "replied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Neh.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "request",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "say",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Judg.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "sayings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Chr.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "speak",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.19.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "spoke",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.8.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "story",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Gen.39.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "these",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.43.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.18.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Deut.15.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "told",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Exod.12.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "vision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.38.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "whatever",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.15.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "whisper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Job.26.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697G",
+   "surface": "written",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "da.var",
+   "samples": [
+    "Esth.9.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "answered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.17.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "asked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Esth.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "conversation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.38.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "eloquent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Exod.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "question",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Jer.38.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "says",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "2Sam.17.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "speak",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Job.32.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "speech",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "1Sam.16.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "spoken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "1Kgs.18.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "talk",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Job.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1697H",
+   "surface": "what",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word: speaking",
+   "transliteration": "da.var",
+   "samples": [
+    "Ezra.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1703",
+   "surface": "direction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "dab.be.ret",
+   "samples": [
+    "Deut.33.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4406",
+   "surface": "command",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "mil.lah",
+   "samples": [
+    "Dan.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4406",
+   "surface": "demand",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "mil.lah",
+   "samples": [
+    "Dan.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4406",
+   "surface": "order",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "mil.lah",
+   "samples": [
+    "Dan.3.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4406",
+   "surface": "things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "word",
+   "transliteration": "mil.lah",
+   "samples": [
+    "Dan.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "^",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "2Sam.13.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "another",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Jer.51.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "can",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Judg.14.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "certainty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Josh.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "confess",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Ps.38.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "could explain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Gen.41.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "declaring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Isa.46.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "describe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Ezek.43.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "discloses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Prov.29.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "fully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Ruth.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "give",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Job.31.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "gives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Prov.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "inform",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "2Sam.15.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "informs against",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Job.17.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "known",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Esth.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "made it clear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "2Sam.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "must",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Jer.36.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "oracles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Hos.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "plainly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "1Sam.10.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "proclaims",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Ps.19.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "pronounce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Deut.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "repeated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "1Sam.17.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "report",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Jer.36.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "revealed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Gen.41.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "shown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Ps.111.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "solve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Judg.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "speak",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Lev.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "1Sam.22.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "tell me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Gen.24.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "telling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Gen.31.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "tells",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "2Kgs.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5046",
+   "surface": "told you",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tell",
+   "transliteration": "na.gad",
+   "samples": [
+    "Mic.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "boasts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Ps.49.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "by",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "1Kgs.17.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "counsel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Josh.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "direction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Isa.30.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "go",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Prov.22.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "of",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Deut.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "say",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "2Sam.17.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "sound",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Amos.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "talk",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Eccl.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6310I",
+   "surface": "will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lip: word",
+   "transliteration": "peh",
+   "samples": [
+    "Lev.24.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

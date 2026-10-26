@@ -1,0 +1,4460 @@
+{
+ "cluster": "M06",
+ "cluster_name": "Malice & Enmity",
+ "built_at": "2026-10-26T04:17:43Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 272,
+  "head": 78,
+  "tail": 194,
+  "hits": 1042,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H0341",
+   "surface": "enemies",
+   "part": "head",
+   "hits": 192,
+   "verses": 187,
+   "gloss": "enemy",
+   "transliteration": "o.yev",
+   "samples": [
+    "Lev.26.8",
+    "Ps.92.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0341",
+   "surface": "enemy",
+   "part": "head",
+   "hits": 78,
+   "verses": 77,
+   "gloss": "enemy",
+   "transliteration": "o.yev",
+   "samples": [
+    "Exod.15.6",
+    "Ps.55.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "hate",
+   "part": "head",
+   "hits": 75,
+   "verses": 73,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Ps.5.5",
+    "Zech.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0779",
+   "surface": "cursed",
+   "part": "head",
+   "hits": 43,
+   "verses": 40,
+   "gloss": "to curse",
+   "transliteration": "a.rar",
+   "samples": [
+    "Deut.27.15",
+    "Mal.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "hated",
+   "part": "head",
+   "hits": 30,
+   "verses": 29,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Gen.29.31",
+    "Mal.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862C",
+   "surface": "adversaries",
+   "part": "head",
+   "hits": 23,
+   "verses": 23,
+   "gloss": "enemy",
+   "transliteration": "tsar",
+   "samples": [
+    "Deut.32.41",
+    "Mic.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "hates",
+   "part": "head",
+   "hits": 22,
+   "verses": 22,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Exod.23.5",
+    "Isa.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862C",
+   "surface": "foes",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "enemy",
+   "transliteration": "tsar",
+   "samples": [
+    "Jer.46.10",
+    "Lam.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "thoughts",
+   "part": "head",
+   "hits": 19,
+   "verses": 16,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Isa.55.7",
+    "Isa.55.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2190",
+   "surface": "enemies",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "enemy",
+   "transliteration": "echthros",
+   "samples": [
+    "Luke.1.71",
+    "Phil.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0779",
+   "surface": "curse",
+   "part": "head",
+   "hits": 16,
+   "verses": 13,
+   "gloss": "to curse",
+   "transliteration": "a.rar",
+   "samples": [
+    "Job.3.8",
+    "Num.23.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3404",
+   "surface": "hate",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "to hate",
+   "transliteration": "miseō",
+   "samples": [
+    "Luke.1.71",
+    "Luke.6.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3404",
+   "surface": "hated",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to hate",
+   "transliteration": "miseō",
+   "samples": [
+    "John.15.18",
+    "Matt.24.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3404",
+   "surface": "hates",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "to hate",
+   "transliteration": "miseō",
+   "samples": [
+    "1John.2.9",
+    "John.15.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "plans",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Prov.21.5",
+    "Prov.6.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862C",
+   "surface": "foe",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "enemy",
+   "transliteration": "tsar",
+   "samples": [
+    "Ps.44.10",
+    "Zech.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2190",
+   "surface": "enemy",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "enemy",
+   "transliteration": "echthros",
+   "samples": [
+    "Matt.13.25",
+    "Rom.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8135",
+   "surface": "hatred",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "hating",
+   "transliteration": "sin.ah",
+   "samples": [
+    "2Sam.13.15",
+    "Prov.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6895",
+   "surface": "curse",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to curse",
+   "transliteration": "qa.vav",
+   "samples": [
+    "Job.3.8",
+    "Num.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0937",
+   "surface": "contempt",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "contempt",
+   "transliteration": "buz",
+   "samples": [
+    "Job.31.34",
+    "Ps.119.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0341",
+   "surface": "foes",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "enemy",
+   "transliteration": "o.yev",
+   "samples": [
+    "Deut.30.7",
+    "Isa.42.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "abhor",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "Job.30.10",
+    "Ps.119.163"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "plow",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "Isa.28.24",
+    "Job.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "taskmasters",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Exod.3.7",
+    "Isa.60.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862C",
+   "surface": "enemies",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "enemy",
+   "transliteration": "tsar",
+   "samples": [
+    "Gen.14.20",
+    "Jer.50.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7147",
+   "surface": "contrary",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "hostility",
+   "transliteration": "qe.ri",
+   "samples": [
+    "Lev.26.24",
+    "Lev.26.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0887",
+   "surface": "stench",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to stink",
+   "transliteration": "ba.ash",
+   "samples": [
+    "1Sam.13.4",
+    "Eccl.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0887",
+   "surface": "stink",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to stink",
+   "transliteration": "ba.ash",
+   "samples": [
+    "Gen.34.30",
+    "Isa.50.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "plowed",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "Hos.10.13",
+    "Judg.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "discretion",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Prov.3.21",
+    "Prov.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6531",
+   "surface": "ruthlessly",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "severity",
+   "transliteration": "pe.rekh",
+   "samples": [
+    "Lev.25.43",
+    "Lev.25.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8324",
+   "surface": "enemies",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "enemy",
+   "transliteration": "sho.rer",
+   "samples": [
+    "Ps.27.11",
+    "Ps.59.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0436",
+   "surface": "opposed",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to oppose",
+   "transliteration": "anthistēmi",
+   "samples": [
+    "2Tim.4.15",
+    "Acts.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0436",
+   "surface": "resist",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to oppose",
+   "transliteration": "anthistēmi",
+   "samples": [
+    "Jas.4.7",
+    "Matt.5.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "plots",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Dan.11.25",
+    "Lam.3.60"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862C",
+   "surface": "adversary",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "enemy",
+   "transliteration": "tsar",
+   "samples": [
+    "Amos.3.11",
+    "Job.16.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "enemies",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Exod.1.10",
+    "Ezek.16.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "unloved",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Deut.21.15",
+    "Deut.21.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0436",
+   "surface": "withstand",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to oppose",
+   "transliteration": "anthistēmi",
+   "samples": [
+    "Eph.6.13",
+    "Luke.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0476",
+   "surface": "accuser",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "opponent",
+   "transliteration": "antidikos",
+   "samples": [
+    "Luke.12.58",
+    "Matt.5.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0480",
+   "surface": "adversaries",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be an opponent",
+   "transliteration": "antikeimai",
+   "samples": [
+    "Luke.13.17",
+    "Luke.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1727",
+   "surface": "against",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hostile",
+   "transliteration": "enantios",
+   "samples": [
+    "Acts.28.17",
+    "Matt.14.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1917",
+   "surface": "plot",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "plot",
+   "transliteration": "epiboulē",
+   "samples": [
+    "Acts.23.30",
+    "Acts.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2189",
+   "surface": "enmity",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hostility",
+   "transliteration": "echthra",
+   "samples": [
+    "Gal.5.20",
+    "Luke.23.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2672",
+   "surface": "curse",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to curse",
+   "transliteration": "kataraomai",
+   "samples": [
+    "Jas.3.9",
+    "Rom.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0887",
+   "surface": "stank",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to stink",
+   "transliteration": "ba.ash",
+   "samples": [
+    "Exod.16.20",
+    "Exod.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1602",
+   "surface": "abhor",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to abhor",
+   "transliteration": "ga.al",
+   "samples": [
+    "Lev.26.30",
+    "Lev.26.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "devise",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "Prov.12.20",
+    "Prov.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3933",
+   "surface": "derision",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "derision",
+   "transliteration": "la.ag",
+   "samples": [
+    "Ezek.36.4",
+    "Hos.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "devices",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Isa.65.2",
+    "Jer.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "purposes",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Jer.50.45",
+    "Jer.51.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "oppressor",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Isa.9.4",
+    "Zech.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6895",
+   "surface": "cursed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to curse",
+   "transliteration": "qa.vav",
+   "samples": [
+    "Job.5.3",
+    "Num.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6962",
+   "surface": "loathe",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to loath",
+   "transliteration": "qut",
+   "samples": [
+    "Ezek.20.43",
+    "Ps.139.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7853",
+   "surface": "accuse",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to oppose",
+   "transliteration": "sa.tan",
+   "samples": [
+    "Ps.109.4",
+    "Ps.38.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7853",
+   "surface": "accusers",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to oppose",
+   "transliteration": "sa.tan",
+   "samples": [
+    "Ps.109.29",
+    "Ps.71.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8135",
+   "surface": "hate",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hating",
+   "transliteration": "sin.ah",
+   "samples": [
+    "Eccl.9.1",
+    "Eccl.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8135",
+   "surface": "hated",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hating",
+   "transliteration": "sin.ah",
+   "samples": [
+    "2Sam.13.15",
+    "Deut.9.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "abominable",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "Job.15.16",
+    "Ps.53.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0476",
+   "surface": "adversary",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "opponent",
+   "transliteration": "antidikos",
+   "samples": [
+    "1Pet.5.8",
+    "Luke.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0663",
+   "surface": "severity",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "severity",
+   "transliteration": "apotomia",
+   "samples": [
+    "Rom.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2189",
+   "surface": "hostility",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hostility",
+   "transliteration": "echthra",
+   "samples": [
+    "Eph.2.14",
+    "Eph.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2551",
+   "surface": "reviles",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to curse/revile",
+   "transliteration": "kakologeō",
+   "samples": [
+    "Mark.7.10",
+    "Matt.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2672",
+   "surface": "cursed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to curse",
+   "transliteration": "kataraomai",
+   "samples": [
+    "Mark.11.21",
+    "Matt.25.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3404",
+   "surface": "hating",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hate",
+   "transliteration": "miseō",
+   "samples": [
+    "Jude.1.23",
+    "Titus.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5195",
+   "surface": "shamefully treated",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to mistreat",
+   "transliteration": "hubrizō",
+   "samples": [
+    "1Thess.2.2",
+    "Luke.18.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1602",
+   "surface": "loathed",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ga.al",
+   "samples": [
+    "Ezek.16.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "devises",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "Prov.6.14",
+    "Prov.6.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "plowing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "1Kgs.19.19",
+    "Job.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3401",
+   "surface": "contend",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "opponent",
+   "transliteration": "ya.riv",
+   "samples": [
+    "Isa.49.25",
+    "Ps.35.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3933",
+   "surface": "scorn",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "derision",
+   "transliteration": "la.ag",
+   "samples": [
+    "Ps.123.4",
+    "Ps.44.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3944",
+   "surface": "scoffers",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "scorning",
+   "transliteration": "la.tson",
+   "samples": [
+    "Isa.28.14",
+    "Prov.29.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "evil devices",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Prov.12.2",
+    "Prov.14.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "purpose",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Jer.51.11",
+    "Job.42.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "schemes",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Job.21.27",
+    "Ps.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "artistic designs",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Exod.31.4",
+    "Exod.35.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "plan",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Esth.9.25",
+    "Jer.18.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4895",
+   "surface": "hatred",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hatred",
+   "transliteration": "mas.te.mah",
+   "samples": [
+    "Hos.9.7",
+    "Hos.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5007A",
+   "surface": "disgrace",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "contempt",
+   "transliteration": "ne.a.tsah",
+   "samples": [
+    "2Kgs.19.3",
+    "Isa.37.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5007B",
+   "surface": "blasphemies",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "contempt",
+   "transliteration": "ne.a.tsah",
+   "samples": [
+    "Neh.9.18",
+    "Neh.9.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "exact",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Deut.15.2",
+    "Deut.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "hard pressed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "1Sam.13.6",
+    "1Sam.14.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "oppress",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Isa.3.5",
+    "Isa.58.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "oppressed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Isa.14.2",
+    "Isa.53.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6973",
+   "surface": "dread",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to loathe",
+   "transliteration": "quts",
+   "samples": [
+    "Exod.1.12",
+    "Isa.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6973",
+   "surface": "loathe",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to loathe",
+   "transliteration": "quts",
+   "samples": [
+    "Gen.27.46",
+    "Num.21.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7047",
+   "surface": "derision",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "derision",
+   "transliteration": "qe.les",
+   "samples": [
+    "Jer.20.8",
+    "Ps.44.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7589",
+   "surface": "malice",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "scorn",
+   "transliteration": "she.at",
+   "samples": [
+    "Ezek.25.15",
+    "Ezek.25.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7852",
+   "surface": "hated",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hate",
+   "transliteration": "sa.tam",
+   "samples": [
+    "Gen.27.41",
+    "Job.16.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "enemy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Prov.25.21",
+    "Prov.27.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "abhorred",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "Isa.49.7",
+    "Ps.106.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "loathed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "Isa.14.19",
+    "Ps.107.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0436",
+   "surface": "can resist",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppose",
+   "transliteration": "anthistēmi",
+   "samples": [
+    "Rom.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0436",
+   "surface": "oppose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppose",
+   "transliteration": "anthistēmi",
+   "samples": [
+    "2Tim.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0436",
+   "surface": "resists",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppose",
+   "transliteration": "anthistēmi",
+   "samples": [
+    "Rom.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0475",
+   "surface": "opponents",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppose",
+   "transliteration": "antidiatithēmi",
+   "samples": [
+    "2Tim.2.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0480",
+   "surface": "adversary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be an opponent",
+   "transliteration": "antikeimai",
+   "samples": [
+    "1Tim.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0480",
+   "surface": "contrary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be an opponent",
+   "transliteration": "antikeimai",
+   "samples": [
+    "1Tim.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0480",
+   "surface": "opponents",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be an opponent",
+   "transliteration": "antikeimai",
+   "samples": [
+    "Phil.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0480",
+   "surface": "opposed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be an opponent",
+   "transliteration": "antikeimai",
+   "samples": [
+    "Gal.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0480",
+   "surface": "opposes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be an opponent",
+   "transliteration": "antikeimai",
+   "samples": [
+    "2Thess.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0655",
+   "surface": "abhor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "apostugeō",
+   "samples": [
+    "Rom.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0786",
+   "surface": "unappeasable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "irreconcilable",
+   "transliteration": "aspondos",
+   "samples": [
+    "2Tim.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0948",
+   "surface": "abhor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "bdelussomai",
+   "samples": [
+    "Rom.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0948",
+   "surface": "detestable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "bdelussomai",
+   "samples": [
+    "Rev.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1727",
+   "surface": "against us",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hostile",
+   "transliteration": "enantios",
+   "samples": [
+    "Acts.27.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1727",
+   "surface": "facing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hostile",
+   "transliteration": "enantios",
+   "samples": [
+    "Mark.15.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1727",
+   "surface": "opponent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hostile",
+   "transliteration": "enantios",
+   "samples": [
+    "Titus.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1727",
+   "surface": "oppose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hostile",
+   "transliteration": "enantios",
+   "samples": [
+    "1Thess.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1727",
+   "surface": "opposing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hostile",
+   "transliteration": "enantios",
+   "samples": [
+    "Acts.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1758",
+   "surface": "had a grudge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppose",
+   "transliteration": "enechō",
+   "samples": [
+    "Mark.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1758",
+   "surface": "press",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppose",
+   "transliteration": "enechō",
+   "samples": [
+    "Luke.11.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1758",
+   "surface": "submit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppose",
+   "transliteration": "enechō",
+   "samples": [
+    "Gal.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1908",
+   "surface": "abuse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mistreat",
+   "transliteration": "epēreazō",
+   "samples": [
+    "Luke.6.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1908",
+   "surface": "revile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mistreat",
+   "transliteration": "epēreazō",
+   "samples": [
+    "1Pet.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1917",
+   "surface": "plots",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "epiboulē",
+   "samples": [
+    "Acts.20.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2189",
+   "surface": "hostile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hostility",
+   "transliteration": "echthra",
+   "samples": [
+    "Rom.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2190",
+   "surface": "foes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "echthros",
+   "samples": [
+    "Rev.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2190",
+   "surface": "hostile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "echthros",
+   "samples": [
+    "Col.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2551",
+   "surface": "speak evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse/revile",
+   "transliteration": "kakologeō",
+   "samples": [
+    "Mark.9.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2551",
+   "surface": "speaking evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse/revile",
+   "transliteration": "kakologeō",
+   "samples": [
+    "Acts.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2616",
+   "surface": "oppress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "katadunasteuō",
+   "samples": [
+    "Jas.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2616",
+   "surface": "oppressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "katadunasteuō",
+   "samples": [
+    "Acts.10.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2653",
+   "surface": "curse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse",
+   "transliteration": "katanathematizō",
+   "samples": [
+    "Matt.26.74"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2669",
+   "surface": "greatly distressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "kataponeō",
+   "samples": [
+    "2Pet.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2669",
+   "surface": "oppressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "kataponeō",
+   "samples": [
+    "Acts.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3404",
+   "surface": "detestable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "miseō",
+   "samples": [
+    "Rev.18.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4767",
+   "surface": "hated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hated",
+   "transliteration": "stugētos",
+   "samples": [
+    "Titus.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "afflicted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Matt.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "controls",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "2Cor.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "custody",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Luke.22.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "distress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Luke.12.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "hard pressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Phil.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "in",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Luke.19.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "occupied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Acts.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "seized",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Luke.8.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "sick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Acts.28.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "stopped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Acts.7.57"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "surround",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Luke.8.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4912",
+   "surface": "with",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hold/oppress",
+   "transliteration": "sunechō",
+   "samples": [
+    "Luke.4.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4945",
+   "surface": "conspiracy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "sunōmosia",
+   "samples": [
+    "Acts.23.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5195",
+   "surface": "insult",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mistreat",
+   "transliteration": "hubrizō",
+   "samples": [
+    "Luke.11.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5195",
+   "surface": "mistreat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mistreat",
+   "transliteration": "hubrizō",
+   "samples": [
+    "Acts.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5195",
+   "surface": "shamefully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mistreat",
+   "transliteration": "hubrizō",
+   "samples": [
+    "Matt.22.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5195",
+   "surface": "treated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to mistreat",
+   "transliteration": "hubrizō",
+   "samples": [
+    "Matt.22.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0340",
+   "surface": "enemy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be hostile",
+   "transliteration": "a.yav",
+   "samples": [
+    "Exod.23.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0341",
+   "surface": "attack",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "o.yev",
+   "samples": [
+    "Ps.69.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0341",
+   "surface": "enemy’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "o.yev",
+   "samples": [
+    "Exod.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0341",
+   "surface": "foe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "o.yev",
+   "samples": [
+    "Ps.68.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0341",
+   "surface": "lord",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "o.yev",
+   "samples": [
+    "2Sam.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0779",
+   "surface": "accursed ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse",
+   "transliteration": "a.rar",
+   "samples": [
+    "Ps.119.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0779",
+   "surface": "curses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse",
+   "transliteration": "a.rar",
+   "samples": [
+    "Gen.27.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0779",
+   "surface": "thoroughly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse",
+   "transliteration": "a.rar",
+   "samples": [
+    "Judg.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0779",
+   "surface": "will curse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse",
+   "transliteration": "a.rar",
+   "samples": [
+    "Mal.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0887",
+   "surface": "brings shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to stink",
+   "transliteration": "ba.ash",
+   "samples": [
+    "Prov.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0887",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to stink",
+   "transliteration": "ba.ash",
+   "samples": [
+    "Exod.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0887",
+   "surface": "stench to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to stink",
+   "transliteration": "ba.ash",
+   "samples": [
+    "2Sam.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0887",
+   "surface": "utter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to stink",
+   "transliteration": "ba.ash",
+   "samples": [
+    "1Sam.27.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0937",
+   "surface": "despised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contempt",
+   "transliteration": "buz",
+   "samples": [
+    "Prov.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0937",
+   "surface": "laughed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contempt",
+   "transliteration": "buz",
+   "samples": [
+    "Gen.38.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0939",
+   "surface": "despised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contempt",
+   "transliteration": "bu.zah",
+   "samples": [
+    "Neh.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0963",
+   "surface": "contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contempt",
+   "transliteration": "biz.za.von",
+   "samples": [
+    "Esth.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0973A",
+   "surface": "detested",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loath",
+   "transliteration": "ba.chel",
+   "samples": [
+    "Zech.11.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1602",
+   "surface": "abhorred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ga.al",
+   "samples": [
+    "Lev.26.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1602",
+   "surface": "abhors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ga.al",
+   "samples": [
+    "Lev.26.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1602",
+   "surface": "defiled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ga.al",
+   "samples": [
+    "2Sam.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1602",
+   "surface": "fail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ga.al",
+   "samples": [
+    "Job.21.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1602",
+   "surface": "loathe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ga.al",
+   "samples": [
+    "Jer.14.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1604",
+   "surface": "abhorred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "loathing",
+   "transliteration": "go.al",
+   "samples": [
+    "Ezek.16.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1860",
+   "surface": "abhorrence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abhorrence",
+   "transliteration": "de.ra.on",
+   "samples": [
+    "Isa.66.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1860",
+   "surface": "contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abhorrence",
+   "transliteration": "de.ra.on",
+   "samples": [
+    "Dan.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2049",
+   "surface": "mockers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mockery",
+   "transliteration": "ha.tu.lim",
+   "samples": [
+    "Job.17.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2050",
+   "surface": "attack",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plot",
+   "transliteration": "hut",
+   "samples": [
+    "Ps.62.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2092",
+   "surface": "loathes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loathe",
+   "transliteration": "za.ham",
+   "samples": [
+    "Job.33.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2186B",
+   "surface": "become foul",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to stink",
+   "transliteration": "za.nach",
+   "samples": [
+    "Isa.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2665",
+   "surface": "search",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "che.phe.s",
+   "samples": [
+    "Ps.64.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "engraved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "Jer.17.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "plan",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "Prov.3.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "plotting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "1Sam.23.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "plowers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "Ps.129.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "plowman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "Amos.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2790A",
+   "surface": "plows",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plow/plot",
+   "transliteration": "cha.rash",
+   "samples": [
+    "Isa.28.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3401",
+   "surface": "adversaries",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "opponent",
+   "transliteration": "ya.riv",
+   "samples": [
+    "Jer.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3933",
+   "surface": "mocked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "derision",
+   "transliteration": "la.ag",
+   "samples": [
+    "Ps.79.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3933",
+   "surface": "scoffing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "derision",
+   "transliteration": "la.ag",
+   "samples": [
+    "Job.34.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3934",
+   "surface": "mockers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mocking",
+   "transliteration": "la.eg",
+   "samples": [
+    "Ps.35.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3934",
+   "surface": "strange",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mocking",
+   "transliteration": "la.eg",
+   "samples": [
+    "Isa.28.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3944",
+   "surface": "scoffing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "scorning",
+   "transliteration": "la.tson",
+   "samples": [
+    "Prov.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Ps.37.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "intentions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Jer.30.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "intents",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Jer.23.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "malicious intent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Ps.139.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "mischief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Ps.21.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "schemer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Prov.24.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "thoughts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Ps.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4209",
+   "surface": "vile deeds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "me.zim.mah",
+   "samples": [
+    "Jer.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "design",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "2Chr.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "designer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Exod.35.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "devised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Esth.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "invented",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "2Chr.26.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "means",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "2Sam.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "plot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Esth.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "purpose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Jer.49.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "scheme",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Ezek.38.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "schemes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Jer.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "skilled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "Exod.35.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4284",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plot",
+   "transliteration": "ma.cha.sha.vah",
+   "samples": [
+    "1Chr.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4426",
+   "surface": "saying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mockery",
+   "transliteration": "me.li.tsah",
+   "samples": [
+    "Prov.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4426",
+   "surface": "scoffing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mockery",
+   "transliteration": "me.li.tsah",
+   "samples": [
+    "Hab.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4485",
+   "surface": "taunts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mocking",
+   "transliteration": "man.gi.nah",
+   "samples": [
+    "Lam.3.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4835",
+   "surface": "violence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "oppression",
+   "transliteration": "me.ru.tsah",
+   "samples": [
+    "Jer.22.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5007B",
+   "surface": "revilings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contempt",
+   "transliteration": "ne.a.tsah",
+   "samples": [
+    "Ezek.35.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5010",
+   "surface": "disowned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disown",
+   "transliteration": "na.ar",
+   "samples": [
+    "Lam.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5010",
+   "surface": "renounced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disown",
+   "transliteration": "na.ar",
+   "samples": [
+    "Ps.89.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "driver",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Job.39.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "every ruler",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Zech.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "exacted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "2Kgs.23.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "oppressors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Isa.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "taskmaster",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Job.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5065",
+   "surface": "tribute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "na.ga.s",
+   "samples": [
+    "Dan.11.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5230",
+   "surface": "beguiled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plot",
+   "transliteration": "na.khal",
+   "samples": [
+    "Num.25.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5230",
+   "surface": "cheat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plot",
+   "transliteration": "na.khal",
+   "samples": [
+    "Mal.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5230",
+   "surface": "conspired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plot",
+   "transliteration": "na.khal",
+   "samples": [
+    "Gen.37.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5230",
+   "surface": "deal craftily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plot",
+   "transliteration": "na.khal",
+   "samples": [
+    "Ps.105.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5344B",
+   "surface": "blasphemes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse",
+   "transliteration": "na.qav",
+   "samples": [
+    "Lev.24.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5344B",
+   "surface": "whoever",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse",
+   "transliteration": "na.qav",
+   "samples": [
+    "Lev.24.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6145",
+   "surface": "enemies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "ar",
+   "samples": [
+    "Ps.139.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6145",
+   "surface": "enemy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "ar",
+   "samples": [
+    "1Sam.28.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6531",
+   "surface": "harshness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "severity",
+   "transliteration": "pe.rekh",
+   "samples": [
+    "Ezek.34.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862C",
+   "surface": "adversary’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "tsar",
+   "samples": [
+    "Job.6.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862C",
+   "surface": "distress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "tsar",
+   "samples": [
+    "Job.36.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862C",
+   "surface": "enemy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "tsar",
+   "samples": [
+    "Lam.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862C",
+   "surface": "trouble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "tsar",
+   "samples": [
+    "Ps.107.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6895",
+   "surface": "all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to curse",
+   "transliteration": "qa.vav",
+   "samples": [
+    "Num.23.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6962",
+   "surface": "disgust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loath",
+   "transliteration": "qut",
+   "samples": [
+    "Ps.119.158"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6962",
+   "surface": "loathed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loath",
+   "transliteration": "qut",
+   "samples": [
+    "Ps.95.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6962",
+   "surface": "loathsome",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loath",
+   "transliteration": "qut",
+   "samples": [
+    "Ezek.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6973",
+   "surface": "detested",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loathe",
+   "transliteration": "quts",
+   "samples": [
+    "Lev.20.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6973",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loathe",
+   "transliteration": "quts",
+   "samples": [
+    "Num.22.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6973",
+   "surface": "loathed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loathe",
+   "transliteration": "quts",
+   "samples": [
+    "1Kgs.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6973",
+   "surface": "terrify",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loathe",
+   "transliteration": "quts",
+   "samples": [
+    "Isa.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6973",
+   "surface": "weary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loathe",
+   "transliteration": "quts",
+   "samples": [
+    "Prov.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7009",
+   "surface": "adversaries",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "adversary",
+   "transliteration": "qim",
+   "samples": [
+    "Job.22.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7047",
+   "surface": "derided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "derision",
+   "transliteration": "qe.les",
+   "samples": [
+    "Ps.79.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7048",
+   "surface": "mockery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "derision",
+   "transliteration": "qal.la.sah",
+   "samples": [
+    "Ezek.22.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7589",
+   "surface": "utter contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "scorn",
+   "transliteration": "she.at",
+   "samples": [
+    "Ezek.36.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7790",
+   "surface": "enemies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "enemy",
+   "transliteration": "shur",
+   "samples": [
+    "Ps.92.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7850",
+   "surface": "whip",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "scourge",
+   "transliteration": "sho.tet",
+   "samples": [
+    "Josh.23.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7852",
+   "surface": "grudge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.tam",
+   "samples": [
+    "Ps.55.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7852",
+   "surface": "hate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.tam",
+   "samples": [
+    "Gen.50.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7852",
+   "surface": "persecute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.tam",
+   "samples": [
+    "Job.30.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7852",
+   "surface": "severely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.tam",
+   "samples": [
+    "Gen.49.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8103",
+   "surface": "derision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "derision",
+   "transliteration": "shim.tsah",
+   "samples": [
+    "Exod.32.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "adversary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Ps.55.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "disliked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Prov.14.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "enmity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Deut.4.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "foe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Ps.106.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "hated them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Esth.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "hatred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Prov.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "not love",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Mal.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "unloved woman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Prov.30.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8130",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "sa.ne",
+   "samples": [
+    "Judg.15.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8131",
+   "surface": "who hate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hate",
+   "transliteration": "se.na",
+   "samples": [
+    "Dan.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8146",
+   "surface": "unloved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hated",
+   "transliteration": "sa.ni",
+   "samples": [
+    "Deut.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8374",
+   "surface": "abhor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to loathe",
+   "transliteration": "ta.av",
+   "samples": [
+    "Amos.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "abhorrent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "1Chr.21.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "abhors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "Ps.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "abominably",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "1Kgs.21.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "abomination",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "Ezek.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "detest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "Mic.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "more abominably",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "Ezek.16.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8581",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abhor",
+   "transliteration": "ta.av",
+   "samples": [
+    "Deut.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

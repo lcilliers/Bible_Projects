@@ -1,0 +1,3678 @@
+{
+ "cluster": "M74",
+ "cluster_name": "Keeping & Guarding",
+ "built_at": "2026-10-26T04:27:20Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 223,
+  "head": 80,
+  "tail": 143,
+  "hits": 789,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H8104G",
+   "surface": "keep",
+   "part": "head",
+   "hits": 115,
+   "verses": 114,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Job.22.15",
+    "Ps.119.168"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "careful",
+   "part": "head",
+   "hits": 47,
+   "verses": 46,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Deut.24.8",
+    "Isa.7.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "kept",
+   "part": "head",
+   "hits": 34,
+   "verses": 34,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Amos.1.11",
+    "Ps.119.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "keep",
+   "part": "head",
+   "hits": 32,
+   "verses": 31,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.7.1",
+    "Ps.141.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "guard",
+   "part": "head",
+   "hits": 23,
+   "verses": 22,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Mal.2.16",
+    "Ps.91.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "charge",
+   "part": "head",
+   "hits": 22,
+   "verses": 21,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Ezek.44.16",
+    "Lev.18.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "keep",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Ps.119.33",
+    "Ps.34.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "keeping",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Deut.13.18",
+    "Deut.30.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "keeps",
+   "part": "head",
+   "hits": 15,
+   "verses": 14,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ezek.18.9",
+    "Prov.29.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "observe",
+   "part": "head",
+   "hits": 15,
+   "verses": 14,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Exod.34.11",
+    "Neh.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "watchman",
+   "part": "head",
+   "hits": 14,
+   "verses": 13,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Ezek.33.2",
+    "Hos.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "take care",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Deut.11.16",
+    "Job.36.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "guard",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "2Kgs.11.7",
+    "Num.1.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "keeper",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "2Kgs.22.14",
+    "Jer.35.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "keepers",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Jer.4.17",
+    "Jer.52.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "kept",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "2Chr.12.10",
+    "Eccl.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "beware",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "Luke.12.1",
+    "Matt.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "keeps",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.21.23",
+    "Ps.121.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1127",
+   "surface": "watch",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to keep watch",
+   "transliteration": "grēgoreō",
+   "samples": [
+    "Matt.25.13",
+    "Matt.26.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083I",
+   "surface": "keep",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to keep: protect",
+   "transliteration": "tēreō",
+   "samples": [
+    "1Tim.5.22",
+    "Jas.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "preserve",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Ps.25.21",
+    "Ps.32.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "watchmen",
+   "part": "head",
+   "hits": 7,
+   "verses": 5,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Jer.51.12",
+    "Ps.130.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "kept",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Exod.16.23",
+    "Exod.16.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "charge",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Esth.2.15",
+    "Esth.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "guarded",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Esth.2.21",
+    "Hos.12.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "watch",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ps.56.6",
+    "Ps.59.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1127",
+   "surface": "awake",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to keep watch",
+   "transliteration": "grēgoreō",
+   "samples": [
+    "1Thess.5.10",
+    "Luke.12.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083H",
+   "surface": "kept",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to keep: guard",
+   "transliteration": "tēreō",
+   "samples": [
+    "Acts.12.5",
+    "Acts.25.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083I",
+   "surface": "kept",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to keep: protect",
+   "transliteration": "tēreō",
+   "samples": [
+    "1Pet.1.4",
+    "1Thess.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442G",
+   "surface": "keep",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to keep/guard: observe",
+   "transliteration": "fulassō",
+   "samples": [
+    "1Tim.5.21",
+    "Acts.7.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442I",
+   "surface": "guard",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to keep/guard: protect",
+   "transliteration": "fulassō",
+   "samples": [
+    "2Thess.3.3",
+    "2Tim.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "guard",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.2.11",
+    "Prov.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "watch",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Gen.31.49",
+    "Nah.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "watchmen",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Isa.52.8",
+    "Jer.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "preserves",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.13.3",
+    "Ps.97.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1127",
+   "surface": "stay awake",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to keep watch",
+   "transliteration": "grēgoreō",
+   "samples": [
+    "Mark.13.35",
+    "Mark.13.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "attention",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "Acts.16.14",
+    "Heb.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "duties",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "1Chr.25.8",
+    "Neh.13.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "guard over",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Num.18.4",
+    "Num.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "offices",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "2Chr.31.17",
+    "2Chr.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "kept",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Deut.33.9",
+    "Ps.119.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "preserve",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.14.3",
+    "Ps.16.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "preserved",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Josh.24.17",
+    "Ps.37.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "watchman",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Isa.21.12",
+    "Ps.127.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "care",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Deut.24.8",
+    "Num.23.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1127",
+   "surface": "watchful",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to keep watch",
+   "transliteration": "grēgoreō",
+   "samples": [
+    "1Cor.16.13",
+    "Col.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "paid attention",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "Acts.8.11",
+    "Acts.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442G",
+   "surface": "kept",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to keep/guard: observe",
+   "transliteration": "fulassō",
+   "samples": [
+    "Luke.18.21",
+    "Matt.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "over",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Num.18.5",
+    "Num.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "service",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Neh.12.45",
+    "Neh.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "watch",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Deut.4.15",
+    "Prov.6.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "observe",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Isa.42.20",
+    "Job.39.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "watching",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Jer.44.27",
+    "Jer.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1127",
+   "surface": "wake up",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep watch",
+   "transliteration": "grēgoreō",
+   "samples": [
+    "Rev.3.2",
+    "Rev.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "devote",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "1Tim.1.4",
+    "1Tim.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "devoting",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "1Tim.4.1",
+    "Titus.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4648",
+   "surface": "look",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch out",
+   "transliteration": "skopeō",
+   "samples": [
+    "2Cor.4.18",
+    "Phil.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083H",
+   "surface": "keep",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "tēreō",
+   "samples": [
+    "2Pet.2.9",
+    "Acts.16.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083H",
+   "surface": "kept in custody",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "tēreō",
+   "samples": [
+    "Acts.24.23",
+    "Acts.25.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083H",
+   "surface": "reserved",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "tēreō",
+   "samples": [
+    "2Pet.2.17",
+    "Jude.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442G",
+   "surface": "observance",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep/guard: observe",
+   "transliteration": "fulassō",
+   "samples": [
+    "Acts.16.4",
+    "Acts.21.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442H",
+   "surface": "guard",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep/guard: guard",
+   "transliteration": "fulassō",
+   "samples": [
+    "Acts.12.4",
+    "Luke.8.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442H",
+   "surface": "guarded",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep/guard: guard",
+   "transliteration": "fulassō",
+   "samples": [
+    "Acts.23.35",
+    "Acts.28.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442I",
+   "surface": "keep",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep/guard: protect",
+   "transliteration": "fulassō",
+   "samples": [
+    "John.12.25",
+    "Jude.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "charged",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Lev.8.35",
+    "Num.4.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "guard duty",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Num.3.25",
+    "Num.4.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "guards",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "1Chr.9.23",
+    "Neh.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "keep",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Exod.12.6",
+    "Josh.22.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5201",
+   "surface": "be",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep",
+   "transliteration": "na.tar",
+   "samples": [
+    "Jer.3.12",
+    "Jer.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5201",
+   "surface": "keepers",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep",
+   "transliteration": "na.tar",
+   "samples": [
+    "Song.8.11",
+    "Song.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "keeps",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.28.7",
+    "Ps.119.129"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "observe",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.23.26",
+    "Ps.105.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "preserved",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Ezek.6.12",
+    "Isa.49.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "watch over",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.22.12",
+    "Ps.61.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "watchtower",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "2Kgs.17.9",
+    "2Kgs.18.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "whoever guards",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.13.3",
+    "Prov.16.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "look",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Hab.2.1",
+    "Mic.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6965K",
+   "surface": "set",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to arise: guard",
+   "transliteration": "qum",
+   "samples": [
+    "Judg.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7673B",
+   "surface": "keep",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep",
+   "transliteration": "sha.vat",
+   "samples": [
+    "Lev.23.32",
+    "Lev.25.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "observed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "1Sam.1.12",
+    "Deut.33.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "guarding",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Num.3.38",
+    "Ps.119.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "have",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ezek.40.45",
+    "Ezek.40.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "keep safe",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Exod.22.10",
+    "Exod.22.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "keeping",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Num.3.28",
+    "Num.8.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "kept watch",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "1Sam.26.15",
+    "1Sam.26.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "watches over",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ps.127.1",
+    "Ps.146.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "whoever",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.13.18",
+    "Prov.22.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "in",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Exod.21.29",
+    "Exod.21.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "mark",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ps.130.3",
+    "Ps.37.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "pay",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Jonah.2.8",
+    "Ps.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "watching",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Jer.20.10",
+    "Zech.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "beware",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "2Kgs.6.9",
+    "Jer.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "close attention",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "1Kgs.8.25",
+    "2Chr.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1127",
+   "surface": "alert",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep watch",
+   "transliteration": "grēgoreō",
+   "samples": [
+    "Acts.20.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1301",
+   "surface": "keep",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep",
+   "transliteration": "diatēreō",
+   "samples": [
+    "Acts.15.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1301",
+   "surface": "treasured up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep",
+   "transliteration": "diatēreō",
+   "samples": [
+    "Luke.2.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "addicted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "1Tim.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "pay attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "2Pet.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "served",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "Heb.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "take care",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "Acts.5.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4337",
+   "surface": "watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch out",
+   "transliteration": "prosechō",
+   "samples": [
+    "Luke.21.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4648",
+   "surface": "careful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch out",
+   "transliteration": "skopeō",
+   "samples": [
+    "Luke.11.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4648",
+   "surface": "eyes on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch out",
+   "transliteration": "skopeō",
+   "samples": [
+    "Phil.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4648",
+   "surface": "watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch out",
+   "transliteration": "skopeō",
+   "samples": [
+    "Gal.6.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4648",
+   "surface": "watch out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch out",
+   "transliteration": "skopeō",
+   "samples": [
+    "Rom.16.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083H",
+   "surface": "guarding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "tēreō",
+   "samples": [
+    "Acts.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083H",
+   "surface": "guards",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "tēreō",
+   "samples": [
+    "Matt.28.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083H",
+   "surface": "held",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "tēreō",
+   "samples": [
+    "Acts.25.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083H",
+   "surface": "keeping watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "tēreō",
+   "samples": [
+    "Matt.27.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083H",
+   "surface": "kept watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "tēreō",
+   "samples": [
+    "Matt.27.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083I",
+   "surface": "abstain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: protect",
+   "transliteration": "tēreō",
+   "samples": [
+    "Acts.21.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083I",
+   "surface": "maintain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: protect",
+   "transliteration": "tēreō",
+   "samples": [
+    "Eph.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083I",
+   "surface": "protects",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: protect",
+   "transliteration": "tēreō",
+   "samples": [
+    "1John.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083I",
+   "surface": "refrain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: protect",
+   "transliteration": "tēreō",
+   "samples": [
+    "2Cor.11.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5083I",
+   "surface": "refrained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: protect",
+   "transliteration": "tēreō",
+   "samples": [
+    "2Cor.11.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442G",
+   "surface": "keeps",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep/guard: observe",
+   "transliteration": "fulassō",
+   "samples": [
+    "Rom.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442H",
+   "surface": "guards",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep/guard: guard",
+   "transliteration": "fulassō",
+   "samples": [
+    "Luke.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442I",
+   "surface": "abstain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep/guard: protect",
+   "transliteration": "fulassō",
+   "samples": [
+    "Acts.21.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442I",
+   "surface": "beware",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep/guard: protect",
+   "transliteration": "fulassō",
+   "samples": [
+    "2Tim.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442I",
+   "surface": "guarded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep/guard: protect",
+   "transliteration": "fulassō",
+   "samples": [
+    "John.17.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442I",
+   "surface": "keeping",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep/guard: protect",
+   "transliteration": "fulassō",
+   "samples": [
+    "Luke.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442I",
+   "surface": "preserved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep/guard: protect",
+   "transliteration": "fulassō",
+   "samples": [
+    "2Pet.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442I",
+   "surface": "take care",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep/guard: protect",
+   "transliteration": "fulassō",
+   "samples": [
+    "2Pet.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5442I",
+   "surface": "watching over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep/guard: protect",
+   "transliteration": "fulassō",
+   "samples": [
+    "Acts.22.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "allegiance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "1Chr.12.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "attend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "1Chr.23.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "duty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "2Kgs.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "guarding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Num.3.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "keep guard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Num.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "post",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Isa.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "posts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "2Chr.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "protect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Num.3.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "required",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Num.4.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "safekeeping",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "1Sam.22.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "sons",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "1Chr.23.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "under guard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "2Sam.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "watching",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "1Chr.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4931",
+   "surface": "watchpost",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "mish.me.ret",
+   "samples": [
+    "Hab.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5201",
+   "surface": "grudge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep",
+   "transliteration": "na.tar",
+   "samples": [
+    "Lev.19.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5201",
+   "surface": "keep",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep",
+   "transliteration": "na.tar",
+   "samples": [
+    "Ps.103.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5201",
+   "surface": "keeper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep",
+   "transliteration": "na.tar",
+   "samples": [
+    "Song.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5201",
+   "surface": "keeps",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep",
+   "transliteration": "na.tar",
+   "samples": [
+    "Nah.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5201",
+   "surface": "kept",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep",
+   "transliteration": "na.tar",
+   "samples": [
+    "Song.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5202",
+   "surface": "kept",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep",
+   "transliteration": "ne.tar",
+   "samples": [
+    "Dan.7.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "besieged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Isa.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "besiegers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Jer.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "guarding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "guards",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "hidden things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Isa.48.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "keep watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Ps.141.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "keeper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Isa.27.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "keeping",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Exod.34.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "keeps watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.24.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Nah.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "preserves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Ps.31.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "secret places",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Isa.65.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "tends",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.27.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "watcher",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Job.7.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "watchman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Job.27.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "watchmen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Jer.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5341",
+   "surface": "wily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "na.tsar",
+   "samples": [
+    "Prov.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5770",
+   "surface": "eyed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "in",
+   "samples": [
+    "1Sam.18.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "^",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "2Sam.13.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "keep watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Ps.66.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "keeping watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Prov.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "looks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Song.7.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "looks well",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Prov.31.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "marked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Job.15.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "watched",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Lam.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "watches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Ps.37.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "watching",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "1Sam.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6822",
+   "surface": "watchman’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "tsa.phah",
+   "samples": [
+    "Ezek.33.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7520",
+   "surface": "hatred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch with envy",
+   "transliteration": "ra.tsad",
+   "samples": [
+    "Ps.68.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "did",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Judg.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "do",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Deut.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "performed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Neh.12.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "performing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Lev.8.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104G",
+   "surface": "watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: obey",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ps.59.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "avoided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ps.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "bodyguard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "1Sam.28.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "care",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "2Sam.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "guard yourselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Mal.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "guards",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.27.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "keep me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Gen.28.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "protect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "2Sam.18.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "protects",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ps.41.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "saved himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "2Kgs.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "secure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "2Sam.23.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "spare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Job.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "standing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Neh.12.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "steadfast love",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ps.89.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "watch over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104H",
+   "surface": "watching over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: guard",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "be",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Jer.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "besieging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "2Sam.11.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "cherish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Hos.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "close attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "1Kgs.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "keep",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Job.14.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "observes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Eccl.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "spies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Judg.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "waiting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.8.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "waits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Job.24.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "watched",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Eccl.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "watches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Job.33.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104I",
+   "surface": "whoever heeds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: look at",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "attend to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Ps.107.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Exod.23.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "careful attention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Exod.23.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "careful to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Deut.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "diligently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Deut.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "hold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Hos.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "it",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Gen.24.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "2Chr.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8104J",
+   "surface": "whoever heeds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to keep: careful",
+   "transliteration": "sha.mar",
+   "samples": [
+    "Prov.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "guard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Ezra.8.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "kept",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Job.21.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "kept ready",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Dan.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "lie awake",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Ps.102.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "stays awake",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Ps.127.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "watch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Isa.29.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "watch over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Jer.31.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "watched over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Jer.31.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8245",
+   "surface": "watching over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to watch",
+   "transliteration": "sha.qad",
+   "samples": [
+    "Jer.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

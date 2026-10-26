@@ -1,0 +1,71 @@
+{
+ "M14": {
+  "groups": [
+   ["M14_lying", "Lying, falsehood", "speaking what is false: lie, lying, liar, falsehood, false", "group", "renders lying or falsehood"],
+   ["M14_deceit", "Deceit, deception, craft", "leading another astray: deceit, deceive, fraud, cunning, flattery, pretence", "group", "renders deceit"],
+   ["M14_treachery", "Treachery, betrayal, faithlessness", "breaking faith: treachery, betrayal, the traitor, the faithless", "group", "renders treachery"],
+   ["M14_hypocrisy", "Hypocrisy", "the face that hides the heart: hypocrisy, hypocrites, insincerity", "group", "renders hypocrisy"],
+   ["M14_pretenders", "False prophets, pretenders", "those who claim falsely: false prophets, false brothers, false christs", "group", "renders the false claimant"],
+   ["M14_slander", "Slander, whispering, evil report", "falsehood about another: slander, whispering, speaking evil against", "group", "renders slander"],
+   ["M14_crooked", "Crookedness, perversity", "the twisted way: crooked, perverse, devious, twisting", "group", "renders crookedness"],
+   ["M14_vanity", "Vanity, emptiness, worthlessness", "what is empty and false: vanity, breath, worthless, empty, vain idols", "group", "renders vanity or emptiness"],
+   ["M14_hiding", "Hiding, concealing", "keeping out of sight: hide, conceal, ignore, cover up", "group", "renders hiding"],
+   ["M14_not_this_sense", "Not the cluster's sense", "renderings with no sense of deceit: being mute, a name, crops that fail, the devil as a being", "not_this_sense", "carries no sense of deceit"]
+  ],
+  "surf": {
+   "M14_lying": ["lie", "lies", "lying", "liar", "liars", "lied", "falsely", "falsehood", "false", "deceptive", "deal falsely", "deny", "wrongfully"],
+   "M14_deceit": ["deceit", "deceitful", "deceitfully", "deceive", "deceived", "deceives", "deceiving", "deceitfulness", "deception", "deceptions", "delude", "deceiver", "deceivers", "impostor", "impostors", "fraud", "stealth", "tamper", "pretended", "cunning", "crafty", "dealt shrewdly", "flattery", "mocked", "came cringing"],
+   "M14_treachery": ["treachery", "treacherous","treacherously", "dealt treacherously", "traitor", "traitors", "betrayed", "faithless", "faithlessly with"],
+   "M14_hypocrisy": ["hypocrites", "hypocrite", "hypocrisy", "acted hypocritically", "insincerity"],
+   "M14_pretenders": ["false prophets", "false prophet", "false brothers", "false christs"],
+   "M14_slander": ["slander", "slanderers", "slanderous", "slandered", "slanderer", "speak against", "speak evil", "speaks against", "speaks evil against", "whispering", "report"],
+   "M14_crooked": ["crooked", "perverse", "perverted", "devious", "unjust", "twist"],
+   "M14_vanity": ["vanity", "vanities", "vain", "breath", "worthless", "empty", "idols"],
+   "M14_hiding": ["hidden", "hide", "hides", "ignore", "close", "covered up"],
+   "M14_not_this_sense": ["mute", "name", "fail", "devil"]
+  },
+  "over": {
+   "H0481|mute": ["M14_not_this_sense", "'you shall be mute' (Ezek 3:26), 'I am mute' (Ps 39:9): silence", 0],
+   "H3655|name": ["M14_not_this_sense", "'name himself by the name of Israel' (Isa 44:5): a surname", 0],
+   "H3584|fail": ["M14_not_this_sense", "'though the produce of the olive fail' (Hab 3:17): a crop failing", 0],
+   "G1228H|devil": ["M14_not_this_sense", "'one of you is a devil' (John 6:70): diabolos as a being, read in that sense", 0],
+   "G0613|hidden": ["M14_hiding", "'the secret and hidden wisdom of God' (1Cor 2:7): hidden, not deceit", 1],
+   "H8267|vain": ["M14_vanity", "'in vain I have guarded all that this fellow has' (1Sam 25:21)", 0],
+   "H5956|close": ["M14_hiding", "'do not close your ear' (Lam 3:56), 'if the people close their eyes' (Lev 20:4): hiding from", 0],
+   "H1681|report": ["M14_slander", "'Joseph brought a bad report of them' (Gen 37:2), 'the men who brought up a bad report' (Num 14:37)", 0],
+   "H2048B|mocked": ["M14_deceit", "'you have mocked me and told me lies' (Judg 16:10): deceived", 0],
+   "H3584|came cringing": ["M14_deceit", "'foreigners came cringing to me' (Ps 18:44): feigned submission", 0],
+   "H3584|deny": ["M14_lying", "'lest I be full and deny you' (Prov 30:9)", 0],
+   "G4646|unjust": ["M14_crooked", "'also to the unjust' masters (1Pet 2:18): skolios, crooked", 0]
+  }
+ },
+ "M16": {
+  "groups": [
+   ["M16_wisdom", "Wisdom, the wise, prudence", "wisdom of heart and life: wisdom, the wise, prudence, sound wisdom, understanding", "group", "renders wisdom"],
+   ["M16_skill", "Skill, craft", "wisdom of the hand: skill, the skilled, craftsmen, ability", "group", "renders skill"],
+   ["M16_folly", "Folly, the fool, the simple", "folly of heart and life: the fool, folly, foolishness, the simple, lacking sense, outrage", "group", "renders folly"],
+   ["M16_counsel", "Counsel, advice, plans", "counsel given and taken: counsel, advice, guidance, plans, counselors", "group", "renders counsel"],
+   ["M16_teaching", "Teaching, instruction, discipline", "wisdom handed on: teach, instruct, direct, discipline, correction", "group", "renders teaching or discipline"],
+   ["M16_craftiness", "Craftiness, cunning", "wisdom bent: craftiness, cunning", "group", "renders craftiness"],
+   ["M16_not_this_sense", "Not the cluster's sense", "renderings with no sense of wisdom: profit, a beginning or foundation, gathering, salt losing its taste, the Helper as a title", "not_this_sense", "carries no sense of wisdom"]
+  ],
+  "surf": {
+   "M16_wisdom": ["wisdom", "wise", "wise men", "wise man", "wiser", "wisest", "sound wisdom", "prudent", "prudence", "understand"],
+   "M16_skill": ["skill", "skilled", "skillful", "craftsmen", "craftsman", "ability"],
+   "M16_folly": ["fool", "fools", "folly", "foolish", "foolishly", "foolishness", "stupid", "senseless", "without understanding", "become fools", "simple", "lacks", "lack", "lacking", "outrageous thing", "outrage", "outrageous", "boastful"],
+   "M16_counsel": ["counsel", "counsels", "counselors", "council", "advice", "guidance", "plan", "plans", "purpose"],
+   "M16_teaching": ["teach", "teaches", "taught", "instruct", "direct", "show", "discipline", "instruction", "correction"],
+   "M16_craftiness": ["craftiness", "cunning", "crafty"],
+   "M16_not_this_sense": ["profit", "beginning", "first", "foundation", "gather", "gathered", "lost its taste", "helper", "success"]
+  },
+  "over": {
+   "*|H3684": ["M16_folly", "renders the fool, kesil (Prov 29:11, Eccl 10:2)", 0],
+   "G3875|helper": ["M16_not_this_sense", "'the Helper, the Holy Spirit' (John 14:26, 15:26): a title", 0],
+   "H7919A|success": ["M16_not_this_sense", "'David had success' (1Sam 18:15), 'you will have good success' (Josh 1:8): sakal as prospering; acting wisely is read per verse", 1],
+   "H7919A|understand": ["M16_wisdom", "'know and understand' (Dan 9:25), 'any who understand' (Ps 53:2)", 0],
+   "H6175|crafty": ["M16_craftiness", "'you choose the tongue of the crafty' (Job 15:5), 'he frustrates the devices of the crafty' (Job 5:12)", 0],
+   "H6612A|simple": ["M16_folly", "'the simple go on and suffer for it' (Prov 22:3): the untaught; 'the LORD preserves the simple' (Ps 116:6) is the guileless", 1],
+   "H1984C|boastful": ["M16_folly", "'the boastful shall not stand' (Ps 5:5): halal as the senseless boaster", 0]
+  }
+ }
+}

@@ -1,0 +1,578 @@
+{
+ "cluster": "M54",
+ "cluster_name": "Torah & Obedience",
+ "built_at": "2026-10-26T04:24:17Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 34,
+  "head": 4,
+  "tail": 30,
+  "hits": 642,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G3551",
+   "surface": "law",
+   "part": "head",
+   "hits": 191,
+   "verses": 151,
+   "gloss": "law",
+   "transliteration": "nomos",
+   "samples": [
+    "Phil.3.5",
+    "Rom.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8451",
+   "surface": "law",
+   "part": "head",
+   "hits": 187,
+   "verses": 181,
+   "gloss": "instruction",
+   "transliteration": "to.rah",
+   "samples": [
+    "Lev.14.54",
+    "Ps.119.113"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4687",
+   "surface": "commandments",
+   "part": "head",
+   "hits": 119,
+   "verses": 118,
+   "gloss": "commandment",
+   "transliteration": "mits.vah",
+   "samples": [
+    "Ezra.9.14",
+    "Prov.7.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4687",
+   "surface": "commandment",
+   "part": "head",
+   "hits": 36,
+   "verses": 35,
+   "gloss": "commandment",
+   "transliteration": "mits.vah",
+   "samples": [
+    "2Chr.19.10",
+    "Prov.6.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4687",
+   "surface": "command",
+   "part": "tail",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "commandment",
+   "transliteration": "mits.vah",
+   "samples": [
+    "1Kgs.13.21",
+    "Mal.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5219",
+   "surface": "obey",
+   "part": "tail",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to obey",
+   "transliteration": "hupakouō",
+   "samples": [
+    "2Thess.3.14",
+    "Eph.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8451",
+   "surface": "laws",
+   "part": "tail",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "instruction",
+   "transliteration": "to.rah",
+   "samples": [
+    "Hos.8.12",
+    "Neh.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5218",
+   "surface": "obedience",
+   "part": "tail",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "obedience",
+   "transliteration": "hupakoē",
+   "samples": [
+    "1Pet.1.22",
+    "Rom.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8451",
+   "surface": "teaching",
+   "part": "tail",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "instruction",
+   "transliteration": "to.rah",
+   "samples": [
+    "Prov.6.23",
+    "Prov.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8451",
+   "surface": "instruction",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "instruction",
+   "transliteration": "to.rah",
+   "samples": [
+    "Isa.30.9",
+    "Job.22.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4687",
+   "surface": "commanded",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "commandment",
+   "transliteration": "mits.vah",
+   "samples": [
+    "2Chr.8.14",
+    "2Chr.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5219",
+   "surface": "obeyed",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to obey",
+   "transliteration": "hupakouō",
+   "samples": [
+    "1Pet.3.6",
+    "Phil.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3551",
+   "surface": "laws",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "law",
+   "transliteration": "nomos",
+   "samples": [
+    "Heb.10.16",
+    "Heb.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3980",
+   "surface": "obey",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to obey",
+   "transliteration": "peitharcheō",
+   "samples": [
+    "Acts.5.29",
+    "Acts.5.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5218",
+   "surface": "obedient",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "obedience",
+   "transliteration": "hupakoē",
+   "samples": [
+    "1Pet.1.14",
+    "Rom.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5255",
+   "surface": "obedient",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "obedient",
+   "transliteration": "hupēkoos",
+   "samples": [
+    "2Cor.2.9",
+    "Phil.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3551",
+   "surface": "bound",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "law",
+   "transliteration": "nomos",
+   "samples": [
+    "1Cor.7.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3551",
+   "surface": "legal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "law",
+   "transliteration": "nomos",
+   "samples": [
+    "Heb.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3980",
+   "surface": "listened to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to obey",
+   "transliteration": "peitharcheō",
+   "samples": [
+    "Acts.27.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3980",
+   "surface": "obedient",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to obey",
+   "transliteration": "peitharcheō",
+   "samples": [
+    "Titus.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5218",
+   "surface": "obey",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "obedience",
+   "transliteration": "hupakoē",
+   "samples": [
+    "2Cor.10.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5219",
+   "surface": "answer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to obey",
+   "transliteration": "hupakouō",
+   "samples": [
+    "Acts.12.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5219",
+   "surface": "became obedient",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to obey",
+   "transliteration": "hupakouō",
+   "samples": [
+    "Acts.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5219",
+   "surface": "become obedient",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to obey",
+   "transliteration": "hupakouō",
+   "samples": [
+    "Rom.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5255",
+   "surface": "obey",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "obedient",
+   "transliteration": "hupēkoos",
+   "samples": [
+    "Acts.7.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5577",
+   "surface": "false testimony",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "false testimony",
+   "transliteration": "pseudomarturia",
+   "samples": [
+    "Matt.26.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5577",
+   "surface": "false witness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "false testimony",
+   "transliteration": "pseudomarturia",
+   "samples": [
+    "Matt.15.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3349",
+   "surface": "obedience",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "obedience",
+   "transliteration": "yiq.qe.hah",
+   "samples": [
+    "Gen.49.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3349",
+   "surface": "obey",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "obedience",
+   "transliteration": "yiq.qe.hah",
+   "samples": [
+    "Prov.30.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4687",
+   "surface": "charge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "commandment",
+   "transliteration": "mits.vah",
+   "samples": [
+    "Josh.22.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4687",
+   "surface": "obligation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "commandment",
+   "transliteration": "mits.vah",
+   "samples": [
+    "Neh.10.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4687",
+   "surface": "precepts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "commandment",
+   "transliteration": "mits.vah",
+   "samples": [
+    "Jer.35.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4687",
+   "surface": "terms",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "commandment",
+   "transliteration": "mits.vah",
+   "samples": [
+    "Jer.32.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8451",
+   "surface": "instructions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "instruction",
+   "transliteration": "to.rah",
+   "samples": [
+    "Deut.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

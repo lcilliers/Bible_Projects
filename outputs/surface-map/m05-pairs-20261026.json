@@ -1,0 +1,4133 @@
+{
+ "cluster": "M05",
+ "cluster_name": "Kindness & Friendship",
+ "built_at": "2026-10-26T04:17:29Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 252,
+  "head": 97,
+  "tail": 155,
+  "hits": 777,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G0018",
+   "surface": "good",
+   "part": "head",
+   "hits": 83,
+   "verses": 73,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Rom.12.9",
+    "Titus.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "good",
+   "part": "head",
+   "hits": 69,
+   "verses": 63,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "1Tim.3.13",
+    "Titus.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "good",
+   "part": "head",
+   "hits": 68,
+   "verses": 67,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Amos.5.15",
+    "Hos.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "good",
+   "part": "head",
+   "hits": 28,
+   "verses": 28,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Jer.32.41",
+    "Ps.36.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "well",
+   "part": "head",
+   "hits": 18,
+   "verses": 16,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Jer.2.33",
+    "Jonah.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5384",
+   "surface": "friends",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "friendly/friend",
+   "transliteration": "filos",
+   "samples": [
+    "Acts.27.3",
+    "Luke.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "pity",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Ezek.5.11",
+    "Joel.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5401A",
+   "surface": "kissed",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to kiss",
+   "transliteration": "na.shaq",
+   "samples": [
+    "1Kgs.19.18",
+    "1Sam.20.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5384",
+   "surface": "friend",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "friendly/friend",
+   "transliteration": "filos",
+   "samples": [
+    "Luke.11.6",
+    "Matt.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "saints",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "Prov.2.8",
+    "Ps.97.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "pleased",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Esth.2.4",
+    "Gen.41.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5401A",
+   "surface": "kiss",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to kiss",
+   "transliteration": "na.shaq",
+   "samples": [
+    "Gen.31.28",
+    "Ps.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0015",
+   "surface": "good",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to do good",
+   "transliteration": "agathopoieō",
+   "samples": [
+    "1Pet.2.20",
+    "Luke.6.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2842",
+   "surface": "fellowship",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "participation",
+   "transliteration": "koinōnia",
+   "samples": [
+    "1Cor.1.9",
+    "Gal.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "godly",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "Ps.149.1",
+    "Ps.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "go well",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Deut.22.7",
+    "Gen.12.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1654",
+   "surface": "alms",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "charity",
+   "transliteration": "eleēmosunē",
+   "samples": [
+    "Acts.3.10",
+    "Acts.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "better",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Mark.14.21",
+    "Matt.18.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5339",
+   "surface": "spare",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to spare",
+   "transliteration": "feidomai",
+   "samples": [
+    "1Cor.7.28",
+    "2Cor.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5370",
+   "surface": "kiss",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "kiss",
+   "transliteration": "filēma",
+   "samples": [
+    "Luke.7.45",
+    "Rom.16.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "spare",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Jer.51.3",
+    "Prov.6.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1309",
+   "surface": "news",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "good news",
+   "transliteration": "be.so.rah",
+   "samples": [
+    "2Kgs.7.9",
+    "2Sam.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "good things",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Gal.6.6",
+    "Luke.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "right",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Matt.15.26",
+    "Rom.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2705",
+   "surface": "kissed",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to kiss",
+   "transliteration": "katafileō",
+   "samples": [
+    "Acts.20.37",
+    "Luke.7.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4236",
+   "surface": "gentleness",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "gentleness",
+   "transliteration": "praotēs",
+   "samples": [
+    "1Cor.4.21",
+    "Gal.6.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1933",
+   "surface": "gentle",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "gentle",
+   "transliteration": "epieikēs",
+   "samples": [
+    "Jas.3.17",
+    "Titus.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "honorable",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "2Cor.8.21",
+    "Rom.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2178",
+   "surface": "kind",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "kind",
+   "transliteration": "zan",
+   "samples": [
+    "Dan.3.10",
+    "Dan.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "compassion",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "1Sam.23.21",
+    "2Chr.36.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "prosperity",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Job.21.13",
+    "Job.36.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "amend",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Jer.18.11",
+    "Jer.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "merry",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Judg.19.6",
+    "Ruth.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6038",
+   "surface": "humility",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "gentleness",
+   "transliteration": "a.na.vah",
+   "samples": [
+    "Prov.22.4",
+    "Zeph.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7401",
+   "surface": "faint",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be tender",
+   "transliteration": "ra.khakh",
+   "samples": [
+    "Isa.7.4",
+    "Job.23.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0572",
+   "surface": "generosity",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "openness",
+   "transliteration": "haplotēs",
+   "samples": [
+    "2Cor.8.2",
+    "Rom.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1654",
+   "surface": "needy",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "charity",
+   "transliteration": "eleēmosunē",
+   "samples": [
+    "Matt.6.2",
+    "Matt.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2083",
+   "surface": "friend",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "friend",
+   "transliteration": "hetairos",
+   "samples": [
+    "Matt.22.12",
+    "Matt.26.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2152",
+   "surface": "devout",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pious",
+   "transliteration": "eusebēs",
+   "samples": [
+    "Acts.10.2",
+    "Acts.22.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5543",
+   "surface": "good",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "good/kind",
+   "transliteration": "chrēstos",
+   "samples": [
+    "1Pet.2.3",
+    "Luke.5.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "spared",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "1Sam.15.15",
+    "2Sam.21.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "merciful",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "Jer.3.12",
+    "Ps.18.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "good things",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Ps.104.28",
+    "Ps.107.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "diligently",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Deut.13.14",
+    "Deut.19.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "do",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Jer.18.10",
+    "Num.10.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "soft",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "Job.41.3",
+    "Prov.15.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "tender",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "Isa.47.1",
+    "Prov.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7463",
+   "surface": "friend",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "friend",
+   "transliteration": "re.eh",
+   "samples": [
+    "2Sam.15.37",
+    "2Sam.16.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0014",
+   "surface": "good",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to do good",
+   "transliteration": "agathoergeō",
+   "samples": [
+    "1Tim.6.18",
+    "Acts.14.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "goods",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Luke.12.18",
+    "Luke.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "healthy",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Matt.7.17",
+    "Matt.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0527",
+   "surface": "tender",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "tender",
+   "transliteration": "hapalos",
+   "samples": [
+    "Mark.13.28",
+    "Matt.24.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1718",
+   "surface": "case",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to show",
+   "transliteration": "emfanizō",
+   "samples": [
+    "Acts.25.15",
+    "Acts.25.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1718",
+   "surface": "manifest",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to show",
+   "transliteration": "emfanizō",
+   "samples": [
+    "John.14.21",
+    "John.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "beautiful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Mark.14.6",
+    "Matt.26.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "noble",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "1Tim.3.1",
+    "Luke.21.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "well",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "1Tim.3.7",
+    "Acts.25.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2842",
+   "surface": "contribution",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "participation",
+   "transliteration": "koinōnia",
+   "samples": [
+    "2Cor.9.13",
+    "Rom.15.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2842",
+   "surface": "participation",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "participation",
+   "transliteration": "koinōnia",
+   "samples": [
+    "1Cor.10.16",
+    "Phil.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2842",
+   "surface": "share",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "participation",
+   "transliteration": "koinōnia",
+   "samples": [
+    "Heb.13.16",
+    "Phil.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2844",
+   "surface": "participants",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "participant",
+   "transliteration": "koinōnos",
+   "samples": [
+    "1Cor.10.18",
+    "1Cor.10.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2844",
+   "surface": "partner",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "participant",
+   "transliteration": "koinōnos",
+   "samples": [
+    "2Cor.8.23",
+    "Phlm.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2844",
+   "surface": "partners",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "participant",
+   "transliteration": "koinōnos",
+   "samples": [
+    "Heb.10.33",
+    "Luke.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4236",
+   "surface": "meekness",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "gentleness",
+   "transliteration": "praotēs",
+   "samples": [
+    "2Cor.10.1",
+    "Col.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4240",
+   "surface": "meekness",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "gentleness",
+   "transliteration": "prautēs",
+   "samples": [
+    "Jas.1.21",
+    "Jas.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5263",
+   "surface": "show",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to show",
+   "transliteration": "hupodeiknumi",
+   "samples": [
+    "Acts.9.16",
+    "Luke.6.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5263",
+   "surface": "warned",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to show",
+   "transliteration": "hupodeiknumi",
+   "samples": [
+    "Luke.3.7",
+    "Matt.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5382",
+   "surface": "hospitable",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hospitable",
+   "transliteration": "filoxenos",
+   "samples": [
+    "1Tim.3.2",
+    "Titus.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5543",
+   "surface": "kind",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "good/kind",
+   "transliteration": "chrēstos",
+   "samples": [
+    "Eph.4.32",
+    "Luke.6.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2177",
+   "surface": "produce",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "kind",
+   "transliteration": "zan",
+   "samples": [
+    "Ps.144.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "spares",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Isa.9.19",
+    "Mal.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2616A",
+   "surface": "merciful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be kind",
+   "transliteration": "cha.sad",
+   "samples": [
+    "2Sam.22.26",
+    "Ps.18.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "faithful ones",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "1Sam.2.9",
+    "Ps.50.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "kind",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "Ps.145.13",
+    "Ps.145.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "goodness",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "2Chr.6.41",
+    "Ps.23.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "well",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Judg.9.16",
+    "Ps.119.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "approved",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Lev.10.19",
+    "Lev.10.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "cheerful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "1Kgs.21.7",
+    "Prov.15.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "please",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "1Sam.20.13",
+    "Ps.69.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "right",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Deut.18.17",
+    "Deut.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "stately",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Prov.30.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5390",
+   "surface": "kisses",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "kiss",
+   "transliteration": "ne.shi.qah",
+   "samples": [
+    "Prov.27.6",
+    "Song.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5401A",
+   "surface": "kisses",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to kiss",
+   "transliteration": "na.shaq",
+   "samples": [
+    "Prov.24.26",
+    "Prov.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "inexperienced",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "1Chr.22.5",
+    "1Chr.29.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "most tender",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "Deut.28.54",
+    "Deut.28.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0016",
+   "surface": "good",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "doing good",
+   "transliteration": "agathopoiia",
+   "samples": [
+    "1Pet.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0017",
+   "surface": "good",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "doing good",
+   "transliteration": "agathopoios",
+   "samples": [
+    "1Pet.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "generosity",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Matt.20.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "good deed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Matt.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "good man",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "John.7.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "good person",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Rom.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "goodness",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Phlm.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "honest",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Eph.4.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "kind",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Titus.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "kindly",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "1Thess.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0018",
+   "surface": "well-doing",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "agathos",
+   "samples": [
+    "Rom.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0420",
+   "surface": "enduring evil",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "not resentful",
+   "transliteration": "anexikakos",
+   "samples": [
+    "2Tim.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0463",
+   "surface": "divine forbearance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tolerance",
+   "transliteration": "anochē",
+   "samples": [
+    "Rom.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0463",
+   "surface": "forbearance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tolerance",
+   "transliteration": "anochē",
+   "samples": [
+    "Rom.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0572",
+   "surface": "generous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "openness",
+   "transliteration": "haplotēs",
+   "samples": [
+    "2Cor.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0572",
+   "surface": "pure devotion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "openness",
+   "transliteration": "haplotēs",
+   "samples": [
+    "2Cor.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0572",
+   "surface": "simplicity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "openness",
+   "transliteration": "haplotēs",
+   "samples": [
+    "2Cor.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0572",
+   "surface": "sincere",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "openness",
+   "transliteration": "haplotēs",
+   "samples": [
+    "Eph.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0572",
+   "surface": "sincerity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "openness",
+   "transliteration": "haplotēs",
+   "samples": [
+    "Col.3.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0865",
+   "surface": "not loving good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hating good",
+   "transliteration": "afilagathos",
+   "samples": [
+    "2Tim.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1652",
+   "surface": "pitiable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pitiful",
+   "transliteration": "eleeinos",
+   "samples": [
+    "Rev.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1652",
+   "surface": "pitied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pitiful",
+   "transliteration": "eleeinos",
+   "samples": [
+    "1Cor.15.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1654",
+   "surface": "charity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charity",
+   "transliteration": "eleēmosunē",
+   "samples": [
+    "Acts.9.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1654",
+   "surface": "giving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charity",
+   "transliteration": "eleēmosunē",
+   "samples": [
+    "Matt.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1718",
+   "surface": "appear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "emfanizō",
+   "samples": [
+    "Heb.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1718",
+   "surface": "appeared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "emfanizō",
+   "samples": [
+    "Matt.27.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1718",
+   "surface": "clear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "emfanizō",
+   "samples": [
+    "Heb.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1718",
+   "surface": "give notice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "emfanizō",
+   "samples": [
+    "Acts.23.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1718",
+   "surface": "informed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "emfanizō",
+   "samples": [
+    "Acts.23.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1932",
+   "surface": "gentleness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentleness",
+   "transliteration": "epieikeia",
+   "samples": [
+    "2Cor.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1932",
+   "surface": "kindness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentleness",
+   "transliteration": "epieikeia",
+   "samples": [
+    "Acts.24.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1933",
+   "surface": "reasonableness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentle",
+   "transliteration": "epieikēs",
+   "samples": [
+    "Phil.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2083",
+   "surface": "playmates",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "friend",
+   "transliteration": "hetairos",
+   "samples": [
+    "Matt.11.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2108",
+   "surface": "good deed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good deed",
+   "transliteration": "euergesia",
+   "samples": [
+    "Acts.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2108",
+   "surface": "good service",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good deed",
+   "transliteration": "euergesia",
+   "samples": [
+    "1Tim.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2109",
+   "surface": "good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to do good",
+   "transliteration": "euergeteō",
+   "samples": [
+    "Acts.10.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2140",
+   "surface": "good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "doing good",
+   "transliteration": "eupoiia",
+   "samples": [
+    "Heb.13.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2152",
+   "surface": "godly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pious",
+   "transliteration": "eusebēs",
+   "samples": [
+    "2Pet.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2162",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good report",
+   "transliteration": "eufēmia",
+   "samples": [
+    "2Cor.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2261",
+   "surface": "gentle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentle",
+   "transliteration": "ēpios",
+   "samples": [
+    "1Thess.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2261",
+   "surface": "kind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentle",
+   "transliteration": "ēpios",
+   "samples": [
+    "2Tim.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2282",
+   "surface": "care",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to care for",
+   "transliteration": "thalpō",
+   "samples": [
+    "1Thess.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2282",
+   "surface": "cherishes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to care for",
+   "transliteration": "thalpō",
+   "samples": [
+    "Eph.5.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2473",
+   "surface": "him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "like-minded",
+   "transliteration": "isopsuchos",
+   "samples": [
+    "Phil.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2569",
+   "surface": "good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to do good",
+   "transliteration": "kalopoieō",
+   "samples": [
+    "2Thess.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "clear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Heb.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "excellent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Titus.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "fine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Matt.13.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "good purpose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Gal.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "goodness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Heb.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "honest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Luke.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "right thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "Jas.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2570G",
+   "surface": "view",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "kalos",
+   "samples": [
+    "1Cor.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2705",
+   "surface": "kiss",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to kiss",
+   "transliteration": "katafileō",
+   "samples": [
+    "Luke.7.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2842",
+   "surface": "participation in",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "participation",
+   "transliteration": "koinōnia",
+   "samples": [
+    "1Cor.10.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2842",
+   "surface": "partnership",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "participation",
+   "transliteration": "koinōnia",
+   "samples": [
+    "Phil.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2842",
+   "surface": "sharing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "participation",
+   "transliteration": "koinōnia",
+   "samples": [
+    "Phlm.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2842",
+   "surface": "taking part",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "participation",
+   "transliteration": "koinōnia",
+   "samples": [
+    "2Cor.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2844",
+   "surface": "partaker",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "participant",
+   "transliteration": "koinōnos",
+   "samples": [
+    "1Pet.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2844",
+   "surface": "partakers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "participant",
+   "transliteration": "koinōnos",
+   "samples": [
+    "2Pet.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2844",
+   "surface": "share",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "participant",
+   "transliteration": "koinōnos",
+   "samples": [
+    "2Cor.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2844",
+   "surface": "taken part",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "participant",
+   "transliteration": "koinōnos",
+   "samples": [
+    "Matt.23.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3352",
+   "surface": "partnership",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "participation",
+   "transliteration": "metochē",
+   "samples": [
+    "2Cor.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3356",
+   "surface": "deal gently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gentle",
+   "transliteration": "metriopatheō",
+   "samples": [
+    "Heb.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3675",
+   "surface": "mind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "like-minded",
+   "transliteration": "homofrōn",
+   "samples": [
+    "1Pet.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4235",
+   "surface": "gentle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentle",
+   "transliteration": "praos",
+   "samples": [
+    "Matt.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4239",
+   "surface": "gentle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentle",
+   "transliteration": "praus",
+   "samples": [
+    "1Pet.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4239",
+   "surface": "gentleness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentle",
+   "transliteration": "praus",
+   "samples": [
+    "1Tim.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4239",
+   "surface": "humble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentle",
+   "transliteration": "praus",
+   "samples": [
+    "Matt.21.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4239",
+   "surface": "meek",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentle",
+   "transliteration": "praus",
+   "samples": [
+    "Matt.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4240",
+   "surface": "courtesy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentleness",
+   "transliteration": "prautēs",
+   "samples": [
+    "Titus.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4240",
+   "surface": "gentleness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentleness",
+   "transliteration": "prautēs",
+   "samples": [
+    "1Pet.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4306",
+   "surface": "aim at",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to care for",
+   "transliteration": "pronoeō",
+   "samples": [
+    "2Cor.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4306",
+   "surface": "give thought to do",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to care for",
+   "transliteration": "pronoeō",
+   "samples": [
+    "Rom.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4306",
+   "surface": "provide",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to care for",
+   "transliteration": "pronoeō",
+   "samples": [
+    "1Tim.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4834",
+   "surface": "compassion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sympathize",
+   "transliteration": "sumpatheō",
+   "samples": [
+    "Heb.10.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4834",
+   "surface": "sympathize",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sympathize",
+   "transliteration": "sumpatheō",
+   "samples": [
+    "Heb.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4835",
+   "surface": "sympathy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sympathetic",
+   "transliteration": "sumpathēs",
+   "samples": [
+    "1Pet.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5263",
+   "surface": "shown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "hupodeiknumi",
+   "samples": [
+    "Acts.20.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5263",
+   "surface": "warn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "hupodeiknumi",
+   "samples": [
+    "Luke.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5339",
+   "surface": "refrain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "feidomai",
+   "samples": [
+    "2Cor.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5339",
+   "surface": "sparing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "feidomai",
+   "samples": [
+    "Acts.20.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5361",
+   "surface": "brotherly love",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "loving the brothers",
+   "transliteration": "filadelfos",
+   "samples": [
+    "1Pet.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5362",
+   "surface": "husbands",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "husband-loving",
+   "transliteration": "filandros",
+   "samples": [
+    "Titus.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5363",
+   "surface": "kindness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "benevolence",
+   "transliteration": "filanthrōpia",
+   "samples": [
+    "Acts.28.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5363",
+   "surface": "loving kindness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "benevolence",
+   "transliteration": "filanthrōpia",
+   "samples": [
+    "Titus.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5373",
+   "surface": "friendship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "friendship",
+   "transliteration": "filia",
+   "samples": [
+    "Jas.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5381",
+   "surface": "hospitality",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hospitality",
+   "transliteration": "filoxenia",
+   "samples": [
+    "Rom.12.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5381",
+   "surface": "hospitality to strangers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hospitality",
+   "transliteration": "filoxenia",
+   "samples": [
+    "Heb.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5388",
+   "surface": "children",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "child loving",
+   "transliteration": "filoteknos",
+   "samples": [
+    "Titus.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5391",
+   "surface": "humble mind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "friendly",
+   "transliteration": "filofrōn",
+   "samples": [
+    "1Pet.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5541",
+   "surface": "kind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be kind",
+   "transliteration": "chrēsteuomai",
+   "samples": [
+    "1Cor.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5543",
+   "surface": "easy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good/kind",
+   "transliteration": "chrēstos",
+   "samples": [
+    "Matt.11.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5543",
+   "surface": "kindness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good/kind",
+   "transliteration": "chrēstos",
+   "samples": [
+    "Rom.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2177",
+   "surface": "various kinds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kind",
+   "transliteration": "zan",
+   "samples": [
+    "2Chr.16.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "concern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Ezek.36.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "loath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Job.20.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "mercilessly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Hab.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "mercy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Lam.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "ruthlessly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Isa.30.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "took pity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Exod.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "unsparing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "Job.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2550",
+   "surface": "unwilling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to spare",
+   "transliteration": "cha.mal",
+   "samples": [
+    "2Sam.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "faithful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "Ps.79.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "godly one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "Ps.89.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "godly ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "Ps.149.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "holy one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "Ps.16.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2623",
+   "surface": "ungodly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pious",
+   "transliteration": "cha.sid",
+   "samples": [
+    "Ps.43.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2868",
+   "surface": "glad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "te.ev",
+   "samples": [
+    "Dan.6.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "avail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Ps.39.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "enjoy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Eccl.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "enjoyment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Eccl.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "goodly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Prov.28.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "improved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Hos.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "joyful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Eccl.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "pleasant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "2Sam.19.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Eccl.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "rich",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Ps.21.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "welfare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Esth.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896B",
+   "surface": "well-being",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "good",
+   "transliteration": "tov",
+   "samples": [
+    "Ps.25.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2949",
+   "surface": "tender care",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tender care",
+   "transliteration": "tip.pu.chim",
+   "samples": [
+    "Lam.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "adorned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "2Kgs.9.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "bestowed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "1Sam.2.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "better",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Nah.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "cheer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Eccl.11.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "commends",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Prov.15.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "dealt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Gen.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "dresses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Exod.30.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "found favor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Neh.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "glad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Judg.18.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "greater",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Ruth.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "improved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Hos.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "made glad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Eccl.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "make sweet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Isa.23.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "more famous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "1Kgs.1.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "more good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Ezek.36.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "more prosperous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Deut.30.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "pieces",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "2Kgs.11.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "plays",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Ezek.33.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "pleases",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Esth.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "prosper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Judg.17.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "seems best",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "2Sam.18.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "skillfully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Ps.33.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "small",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Deut.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Gen.32.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "therefore",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Jer.26.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "to do",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Mic.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "truly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Jer.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3190",
+   "surface": "very",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ya.tav",
+   "samples": [
+    "Deut.27.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3191",
+   "surface": "good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be good",
+   "transliteration": "ye.tav",
+   "samples": [
+    "Ezra.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5401A",
+   "surface": "kissed him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to kiss",
+   "transliteration": "na.shaq",
+   "samples": [
+    "Gen.33.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5401A",
+   "surface": "order",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to kiss",
+   "transliteration": "na.shaq",
+   "samples": [
+    "Gen.41.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5401A",
+   "surface": "touched",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to kiss",
+   "transliteration": "na.shaq",
+   "samples": [
+    "Ezek.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6037",
+   "surface": "gentleness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentleness",
+   "transliteration": "an.vah",
+   "samples": [
+    "Ps.18.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6037",
+   "surface": "meekness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentleness",
+   "transliteration": "an.vah",
+   "samples": [
+    "Ps.45.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6038",
+   "surface": "gentleness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gentleness",
+   "transliteration": "a.na.vah",
+   "samples": [
+    "2Sam.22.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "fainthearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "Deut.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "frail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "Gen.33.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "gentle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "2Sam.3.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "irresolute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "2Chr.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "tender one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "Ezek.17.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7390",
+   "surface": "weak",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tender",
+   "transliteration": "rakh",
+   "samples": [
+    "Gen.29.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7391",
+   "surface": "tender",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tenderness",
+   "transliteration": "rokh",
+   "samples": [
+    "Deut.28.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7401",
+   "surface": "penitent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be tender",
+   "transliteration": "ra.khakh",
+   "samples": [
+    "2Kgs.22.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7401",
+   "surface": "softened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be tender",
+   "transliteration": "ra.khakh",
+   "samples": [
+    "Isa.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7401",
+   "surface": "softer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be tender",
+   "transliteration": "ra.khakh",
+   "samples": [
+    "Ps.55.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7401",
+   "surface": "tender",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be tender",
+   "transliteration": "ra.khakh",
+   "samples": [
+    "2Chr.34.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

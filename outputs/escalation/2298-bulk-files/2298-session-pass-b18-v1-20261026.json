@@ -1,0 +1,76 @@
+{
+ "M64": {
+  "groups": [
+   ["M64_choosing", "Choosing, the chosen", "bachar and bachir: choose, chosen, chosen ones, choice", "group", "renders choosing"],
+   ["M64_willing", "Willing, wanting, consenting", "avah, tseva and boulomai: be willing, would, consent, want, wish, of one's own accord", "group", "renders willing"],
+   ["M64_devising", "Devising, planning, purposing", "chashav and boule: devise, plan, intend, purpose, plot, intention, mind set on", "group", "renders devising or purposing"],
+   ["M64_counting", "Counting, esteeming, regarding", "chashav as reckoning: count, calculate, regard, esteem, account", "group", "renders counting or esteeming"],
+   ["M64_dedicating", "Dedicating, setting apart", "qadash and nazar as dedication: dedicate, dedicated gifts, abstain", "group", "renders dedicating"],
+   ["M64_skill", "Skill, artistic design", "chashav as craft: skillfully, skilled, devise designs", "group", "renders skill"],
+   ["M64_not_this_sense", "Not the cluster's sense", "renderings with no sense of will: the bread of the Presence", "not_this_sense", "carries no sense of will"]
+  ],
+  "surf": {
+   "M64_choosing": ["chosen", "choose", "chose", "chooses", "chosen ones", "chosen one", "choice", "best"],
+   "M64_willing": ["would", "willing", "he would", "consent", "unwilling", "i would", "they would", "will", "and would", "he will", "accord", "want", "wanted", "wished", "wishing", "desire", "desiring"],
+   "M64_devising": ["devise", "devised", "devising", "formed", "intend", "intended", "planned", "plans", "plots", "plotted", "meant", "thought", "purposed", "plan", "made plans", "counsel", "purpose", "intention", "mind", "mind on"],
+   "M64_counting": ["counted", "calculate", "regarded", "considered", "accounted", "accounting", "esteemed", "regard"],
+   "M64_dedicating": ["dedicated", "dedicate", "dedicates", "dedicated gifts", "abstain"],
+   "M64_skill": ["skillfully", "skilled"],
+   "M64_not_this_sense": ["presence"]
+  },
+  "over": {
+   "H2803G|devise": ["M64_skill", "chashav 'to devise artistic designs' (Exod 35:32); 'they devise words of deceit' (Ps 35:20) is plotting, settled per verse", 1],
+   "H2803G|devised": ["M64_devising", "chashav 'the plot that he had devised against the Jews' (Esth 8:3, 9:25)", 0],
+   "G4286|presence": ["M64_not_this_sense", "prothesis 'the bread of the Presence' (Heb 9:2, Luke 6:4)", 0]
+  }
+ },
+ "M68": {
+  "groups": [
+   ["M68_hope", "Hope", "tiqvah, yachal and elpis: hope, hoped, hoping", "group", "renders hope"],
+   ["M68_waiting", "Waiting, expecting, looking for", "qavah, chakah and prosdechomai: wait, wait for, look for, expect", "group", "renders waiting"],
+   ["M68_not_this_sense", "Not the cluster's sense", "renderings with no sense of hope", "not_this_sense", "carries no sense of hope"]
+  ],
+  "surf": {
+   "M68_hope": ["hope", "hoped", "hopes", "hoping"],
+   "M68_waiting": ["wait", "waited", "waiting", "waits", "wait for", "waiting for", "looked", "look", "look for", "expect", "expecting", "accept"],
+   "M68_not_this_sense": []
+  },
+  "over": {
+   "G4327|accept": ["M68_waiting", "prosdechomai 'a hope in God, which these men themselves accept' (Acts 24:15); 'refusing to accept release' (Heb 11:35) is receiving", 1]
+  }
+ },
+ "M69": {
+  "groups": [
+   ["M69_self_control", "Self-control, discipline", "enkrateia and sophron: self-control, self-controlled, disciplined", "group", "renders self-control"],
+   ["M69_sobriety", "Sobriety, sober-mindedness", "nepho: sober, sober-minded", "group", "renders sobriety"],
+   ["M69_zeal", "Zeal, eagerness, earnestness", "spoude and zeloo: eager, earnest, diligent, fervent, do your best, earnestly desire, a willing spirit", "group", "renders zeal or eagerness"],
+   ["M69_not_this_sense", "Not the cluster's sense", "renderings with no sense of self-control or zeal", "not_this_sense", "carries no sense of self-control"]
+  ],
+  "surf": {
+   "M69_self_control": ["self-control", "self-controlled", "disciplined"],
+   "M69_sobriety": ["sober-minded", "sober"],
+   "M69_zeal": ["do your best", "earnestly desire", "earnest", "eager", "diligent", "fervent", "earnestly", "make much", "willing", "jealous"],
+   "M69_not_this_sense": []
+  },
+  "over": {
+   "G2206|jealous": ["M69_zeal", "zeloo 'the Jews were jealous' (Acts 17:5): zeal turned to envy, settled per verse", 1]
+  }
+ },
+ "M70": {
+  "groups": [
+   ["M70_upholding", "Upholding, supporting, sustaining", "samak and sa'ad: uphold, support, sustain, strengthen, lean on", "group", "renders upholding"],
+   ["M70_laying_hands", "Laying on of hands", "samak as laying hands on: lay, laid", "group", "renders laying on hands"],
+   ["M70_tidings", "Bearing tidings, good news", "basar: news, good news, tell, publish, carry news", "group", "renders bearing tidings"],
+   ["M70_lifting", "Lifting the hand, swearing", "nasa yad: swear, lift up, lift, bear", "group", "renders lifting or swearing"],
+   ["M70_not_this_sense", "Not the cluster's sense", "renderings with no sense of lifting or bearing", "not_this_sense", "carries no sense of lifting or bearing"]
+  ],
+  "surf": {
+   "M70_upholding": ["uphold", "upholds", "upheld", "sustained", "support", "supports", "supply", "strengthen", "refresh", "up", "leaned", "leans"],
+   "M70_laying_hands": ["lay", "laid"],
+   "M70_tidings": ["news", "good news", "tell", "carry", "glad news", "publish"],
+   "M70_lifting": ["swore", "sworn", "lift up", "lift", "accepted", "bear"],
+   "M70_not_this_sense": []
+  },
+  "over": {}
+ }
+}

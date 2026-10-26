@@ -1,0 +1,2333 @@
+{
+ "cluster": "M07",
+ "cluster_name": "Shame & Confusion",
+ "built_at": "2026-10-26T04:17:51Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 141,
+  "head": 53,
+  "tail": 88,
+  "hits": 475,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H0954",
+   "surface": "put to shame",
+   "part": "head",
+   "hits": 57,
+   "verses": 52,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Ps.44.7",
+    "Zech.10.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "ashamed",
+   "part": "head",
+   "hits": 34,
+   "verses": 31,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Jer.6.15",
+    "Zech.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1322",
+   "surface": "shame",
+   "part": "head",
+   "hits": 27,
+   "verses": 26,
+   "gloss": "shame",
+   "transliteration": "bo.shet",
+   "samples": [
+    "Ps.109.29",
+    "Zeph.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "reproach",
+   "part": "head",
+   "hits": 27,
+   "verses": 27,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Jer.15.15",
+    "Ps.69.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7045",
+   "surface": "curse",
+   "part": "head",
+   "hits": 25,
+   "verses": 25,
+   "gloss": "curse",
+   "transliteration": "qe.la.lah",
+   "samples": [
+    "Jer.44.22",
+    "Prov.26.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1870",
+   "surface": "ashamed",
+   "part": "head",
+   "hits": 11,
+   "verses": 9,
+   "gloss": "be ashamed of",
+   "transliteration": "epaischunomai",
+   "samples": [
+    "2Tim.1.8",
+    "Rom.6.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "disgrace",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Job.19.5",
+    "Prov.6.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "shame",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Isa.30.5",
+    "Jer.48.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "ashamed",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "2Sam.19.3",
+    "Ezek.16.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "confounded",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Ezek.36.32",
+    "Isa.41.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3639",
+   "surface": "dishonor",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "shame",
+   "transliteration": "ke.lim.mah",
+   "samples": [
+    "Ps.109.29",
+    "Ps.35.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3639",
+   "surface": "shame",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "shame",
+   "transliteration": "ke.lim.mah",
+   "samples": [
+    "Ezek.39.26",
+    "Ezek.44.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7036",
+   "surface": "shame",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "dishonor",
+   "transliteration": "qa.lon",
+   "samples": [
+    "Hos.4.7",
+    "Nah.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3639",
+   "surface": "disgrace",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "shame",
+   "transliteration": "ke.lim.mah",
+   "samples": [
+    "Ezek.16.52",
+    "Mic.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2617",
+   "surface": "shame",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to dishonor",
+   "transliteration": "kataischunō",
+   "samples": [
+    "1Pet.2.6",
+    "1Pet.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "scorn",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Ps.119.22",
+    "Ps.71.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "taunt",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Jer.42.18",
+    "Jer.49.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0152",
+   "surface": "shame",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "shame",
+   "transliteration": "aischunē",
+   "samples": [
+    "Jude.1.13",
+    "Rev.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "confounded",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Ezek.16.63",
+    "Zech.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "shamed",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Jer.20.11",
+    "Jer.50.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0153",
+   "surface": "ashamed",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be ashamed",
+   "transliteration": "aischunō",
+   "samples": [
+    "1Pet.4.16",
+    "Phil.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1788",
+   "surface": "respect",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to cause shame",
+   "transliteration": "entrepō",
+   "samples": [
+    "Luke.20.13",
+    "Matt.21.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0955",
+   "surface": "shame",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "shame",
+   "transliteration": "bu.shah",
+   "samples": [
+    "Ezek.7.18",
+    "Mic.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2659",
+   "surface": "disappointed",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be ashamed",
+   "transliteration": "cha.pher",
+   "samples": [
+    "Job.6.20",
+    "Ps.35.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "shame",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Dan.12.2",
+    "Ps.78.66"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "taunts",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Ps.79.12",
+    "Zeph.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3639",
+   "surface": "reproach",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "shame",
+   "transliteration": "ke.lim.mah",
+   "samples": [
+    "Ezek.34.29",
+    "Ezek.36.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3994",
+   "surface": "curse",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "curse",
+   "transliteration": "me.e.rah",
+   "samples": [
+    "Mal.2.2",
+    "Mal.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7036",
+   "surface": "disgrace",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "dishonor",
+   "transliteration": "qa.lon",
+   "samples": [
+    "Prov.11.2",
+    "Prov.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7045",
+   "surface": "cursing",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "curse",
+   "transliteration": "qe.la.lah",
+   "samples": [
+    "Prov.27.14",
+    "Ps.109.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0150",
+   "surface": "shameful",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "shameful",
+   "transliteration": "aischros",
+   "samples": [
+    "Eph.5.12",
+    "Titus.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0818",
+   "surface": "dishonor",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to dishonor",
+   "transliteration": "atimazō",
+   "samples": [
+    "Acts.5.41",
+    "Rom.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2617",
+   "surface": "put to shame",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to dishonor",
+   "transliteration": "kataischunō",
+   "samples": [
+    "2Cor.7.14",
+    "Rom.9.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2671",
+   "surface": "curse",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "curse",
+   "transliteration": "katara",
+   "samples": [
+    "Gal.3.10",
+    "Gal.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3680",
+   "surface": "reproach",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "reproach",
+   "transliteration": "oneidismos",
+   "samples": [
+    "Heb.10.33",
+    "Heb.13.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2659",
+   "surface": "disgraced",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be ashamed",
+   "transliteration": "cha.pher",
+   "samples": [
+    "Isa.54.4",
+    "Jer.50.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "blush",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Ezra.9.6",
+    "Jer.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "brought to dishonor",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Ps.40.14",
+    "Ps.69.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "shame",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Job.11.3",
+    "Prov.25.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7045",
+   "surface": "curses",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "curse",
+   "transliteration": "qe.la.lah",
+   "samples": [
+    "Deut.28.45",
+    "Deut.29.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0818",
+   "surface": "shamefully",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dishonor",
+   "transliteration": "atimazō",
+   "samples": [
+    "Luke.20.11",
+    "Mark.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0819",
+   "surface": "dishonor",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dishonour",
+   "transliteration": "atimia",
+   "samples": [
+    "1Cor.15.43",
+    "2Cor.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0819",
+   "surface": "dishonorable",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dishonour",
+   "transliteration": "atimia",
+   "samples": [
+    "2Tim.2.20",
+    "Rom.1.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0820",
+   "surface": "without honor",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dishonored",
+   "transliteration": "atimos",
+   "samples": [
+    "Mark.6.4",
+    "Matt.13.57"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1788",
+   "surface": "ashamed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cause shame",
+   "transliteration": "entrepō",
+   "samples": [
+    "1Cor.4.14",
+    "2Thess.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1788",
+   "surface": "respected",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cause shame",
+   "transliteration": "entrepō",
+   "samples": [
+    "Heb.12.9",
+    "Luke.18.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1791",
+   "surface": "shame",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "shame",
+   "transliteration": "entropē",
+   "samples": [
+    "1Cor.15.34",
+    "1Cor.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2617",
+   "surface": "dishonors",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dishonor",
+   "transliteration": "kataischunō",
+   "samples": [
+    "1Cor.11.4",
+    "1Cor.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "acts shamefully",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Prov.14.35",
+    "Prov.17.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "all",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Jer.6.15",
+    "Jer.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "embarrassed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "2Kgs.8.11",
+    "Judg.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2659",
+   "surface": "confounded",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ashamed",
+   "transliteration": "cha.pher",
+   "samples": [
+    "Isa.24.23",
+    "Isa.33.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2659",
+   "surface": "disgrace",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ashamed",
+   "transliteration": "cha.pher",
+   "samples": [
+    "Prov.13.5",
+    "Ps.83.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2659",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ashamed",
+   "transliteration": "cha.pher",
+   "samples": [
+    "Mic.3.7",
+    "Ps.71.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "become",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Ps.79.4",
+    "Ps.89.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "insolence",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Dan.11.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "reproaches",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Ps.69.20",
+    "Ps.69.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "disgraced",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Isa.50.7",
+    "Ps.44.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7036",
+   "surface": "abuse",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dishonor",
+   "transliteration": "qa.lon",
+   "samples": [
+    "Prov.22.10",
+    "Prov.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7036",
+   "surface": "dishonor",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dishonor",
+   "transliteration": "qa.lon",
+   "samples": [
+    "Prov.18.3",
+    "Prov.6.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0150",
+   "surface": "disgraceful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shameful",
+   "transliteration": "aischros",
+   "samples": [
+    "1Cor.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0152",
+   "surface": "disgraceful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "aischunē",
+   "samples": [
+    "2Cor.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0153",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "aischunō",
+   "samples": [
+    "1John.2.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0176",
+   "surface": "cannot be condemned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beyond reproach",
+   "transliteration": "akatagnōstos",
+   "samples": [
+    "Titus.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0577",
+   "surface": "throw away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to throw away",
+   "transliteration": "apoballō",
+   "samples": [
+    "Heb.10.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0685",
+   "surface": "curses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "curse",
+   "transliteration": "ara",
+   "samples": [
+    "Rom.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0818",
+   "surface": "dishonored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "atimazō",
+   "samples": [
+    "Jas.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0818",
+   "surface": "dishonoring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "atimazō",
+   "samples": [
+    "Rom.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0819",
+   "surface": "disgrace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dishonour",
+   "transliteration": "atimia",
+   "samples": [
+    "1Cor.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0819",
+   "surface": "dishonorable use",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dishonour",
+   "transliteration": "atimia",
+   "samples": [
+    "Rom.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0819",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dishonour",
+   "transliteration": "atimia",
+   "samples": [
+    "2Cor.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0820",
+   "surface": "disrepute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dishonored",
+   "transliteration": "atimos",
+   "samples": [
+    "1Cor.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0820",
+   "surface": "less honorable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dishonored",
+   "transliteration": "atimos",
+   "samples": [
+    "1Cor.12.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1165",
+   "surface": "put them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disgrace",
+   "transliteration": "deigmatizō",
+   "samples": [
+    "Col.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1165",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disgrace",
+   "transliteration": "deigmatizō",
+   "samples": [
+    "Matt.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1788",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cause shame",
+   "transliteration": "entrepō",
+   "samples": [
+    "Titus.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2617",
+   "surface": "humiliate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "kataischunō",
+   "samples": [
+    "1Cor.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2617",
+   "surface": "humiliated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "kataischunō",
+   "samples": [
+    "2Cor.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2652",
+   "surface": "accursed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "curse",
+   "transliteration": "katanathema",
+   "samples": [
+    "Rev.22.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2671",
+   "surface": "accursed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "curse",
+   "transliteration": "katara",
+   "samples": [
+    "2Pet.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2671",
+   "surface": "cursed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "curse",
+   "transliteration": "katara",
+   "samples": [
+    "Heb.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2671",
+   "surface": "cursing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "curse",
+   "transliteration": "katara",
+   "samples": [
+    "Jas.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3680",
+   "surface": "disgrace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "oneidismos",
+   "samples": [
+    "1Tim.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3680",
+   "surface": "reproaches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "oneidismos",
+   "samples": [
+    "Rom.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3681",
+   "surface": "reproach",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "disgrace",
+   "transliteration": "oneidos",
+   "samples": [
+    "Luke.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3856",
+   "surface": "contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disgrace",
+   "transliteration": "paradeigmatizō",
+   "samples": [
+    "Heb.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "acted shamefully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Hos.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "delayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Exod.32.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "despair",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Isa.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "disappointed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Ps.71.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "disgraced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Mic.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "dries up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Joel.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Judg.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "put",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Ps.119.78"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0954",
+   "surface": "put them to shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "bosh",
+   "samples": [
+    "Ps.53.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1317",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "bosh.nah",
+   "samples": [
+    "Hos.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1322",
+   "surface": "shamed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "bo.shet",
+   "samples": [
+    "Jer.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1322",
+   "surface": "shameful thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "bo.shet",
+   "samples": [
+    "Jer.3.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1322",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "bo.shet",
+   "samples": [
+    "Isa.42.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2616B",
+   "surface": "bring shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shame",
+   "transliteration": "cha.sad",
+   "samples": [
+    "Prov.25.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617B",
+   "surface": "disgrace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "che.sed",
+   "samples": [
+    "Lev.20.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617B",
+   "surface": "reproach",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "che.sed",
+   "samples": [
+    "Prov.14.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2659",
+   "surface": "ashamed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "cha.pher",
+   "samples": [
+    "Ps.34.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2659",
+   "surface": "blush",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "cha.pher",
+   "samples": [
+    "Isa.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2659",
+   "surface": "confusion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "cha.pher",
+   "samples": [
+    "Ps.70.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2659",
+   "surface": "reproach",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ashamed",
+   "transliteration": "cha.pher",
+   "samples": [
+    "Prov.19.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "byword",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Dan.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "disgraceful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Hos.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "insolently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Job.16.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "insult",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "1Sam.25.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "insults",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Lam.3.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "mocked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Ps.89.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "scoff",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Ps.74.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "scorned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Ps.22.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2781",
+   "surface": "suffer derision",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reproach",
+   "transliteration": "cher.pah",
+   "samples": [
+    "Neh.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "cast reproach",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Job.19.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "disgraced him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "1Sam.20.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "dishonor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Ps.35.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "harm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "1Sam.25.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "nothing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Judg.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "reproach",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Ruth.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "shamed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Num.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "shames",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "Prov.28.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3637",
+   "surface": "suffered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be humiliated",
+   "transliteration": "ka.lam",
+   "samples": [
+    "1Sam.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3639",
+   "surface": "confusion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "ke.lim.mah",
+   "samples": [
+    "Isa.45.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3639",
+   "surface": "humiliation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "ke.lim.mah",
+   "samples": [
+    "Isa.30.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3639",
+   "surface": "insults",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "ke.lim.mah",
+   "samples": [
+    "Job.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3640",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shame",
+   "transliteration": "ke.lim.mut",
+   "samples": [
+    "Jer.23.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3994",
+   "surface": "curses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "curse",
+   "transliteration": "me.e.rah",
+   "samples": [
+    "Deut.28.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6173",
+   "surface": "dishonor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dishonor",
+   "transliteration": "ar.vah",
+   "samples": [
+    "Ezra.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7022",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "disgrace",
+   "transliteration": "qi.qa.lon",
+   "samples": [
+    "Hab.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7034",
+   "surface": "contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "qa.lah",
+   "samples": [
+    "Isa.16.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7034",
+   "surface": "degraded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "qa.lah",
+   "samples": [
+    "Deut.25.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7034",
+   "surface": "despised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "qa.lah",
+   "samples": [
+    "Isa.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7034",
+   "surface": "dishonors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "qa.lah",
+   "samples": [
+    "Deut.27.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7034",
+   "surface": "lowly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "qa.lah",
+   "samples": [
+    "Prov.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7034",
+   "surface": "reputation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dishonor",
+   "transliteration": "qa.lah",
+   "samples": [
+    "1Sam.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7036",
+   "surface": "insult",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dishonor",
+   "transliteration": "qa.lon",
+   "samples": [
+    "Prov.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7045",
+   "surface": "cursed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "curse",
+   "transliteration": "qe.la.lah",
+   "samples": [
+    "Deut.21.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8218",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "humiliation",
+   "transliteration": "shiph.lah",
+   "samples": [
+    "Isa.32.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8381",
+   "surface": "curse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "curse",
+   "transliteration": "ta.a.lah",
+   "samples": [
+    "Lam.3.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

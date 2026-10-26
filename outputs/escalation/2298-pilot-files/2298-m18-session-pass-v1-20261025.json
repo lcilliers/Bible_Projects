@@ -1,0 +1,7532 @@
+{
+ "cluster": "M18",
+ "cluster_name": "Desire & Longing",
+ "built_at": "2026-10-25T21:11:24Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 454,
+  "head": 163,
+  "tail": 291,
+  "hits": 1510,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [
+  {
+   "code": "M18_desire",
+   "label": "Desire, craving, longing",
+   "description": "wanting what is not yet had: desire, craving, longing, coveting, lust",
+   "kind": "group",
+   "anchor": null
+  },
+  {
+   "code": "M18_delight",
+   "label": "Delight, pleasure, gladness",
+   "description": "taking pleasure in what is had or met: delight, pleasure, gladness",
+   "kind": "group",
+   "anchor": null
+  },
+  {
+   "code": "M18_will",
+   "label": "Will, wish, choosing, willingness",
+   "description": "the act of willing: will, wish, want, choose, be willing, purpose",
+   "kind": "group",
+   "anchor": null
+  },
+  {
+   "code": "M18_favour",
+   "label": "Favour, acceptance, approval",
+   "description": "being acceptable to another, or judging a thing good: favour, acceptance, 'it seemed good to'",
+   "kind": "group",
+   "anchor": null
+  },
+  {
+   "code": "M18_zeal",
+   "label": "Jealousy, zeal, envy",
+   "description": "zeal and jealousy, for or against another: jealousy, zeal, envy",
+   "kind": "group",
+   "anchor": null
+  },
+  {
+   "code": "M18_thirst",
+   "label": "Thirst, hunger",
+   "description": "thirst and hunger, of the body and of the soul",
+   "kind": "group",
+   "anchor": null
+  },
+  {
+   "code": "M18_precious",
+   "label": "Precious, costly, valued",
+   "description": "what is held dear or of great worth: precious, costly, treasures, honour",
+   "kind": "group",
+   "anchor": null
+  },
+  {
+   "code": "M18_beauty",
+   "label": "Beauty",
+   "description": "what is pleasing to the eye: beautiful, attractive, handsome, lovely",
+   "kind": "group",
+   "anchor": null
+  },
+  {
+   "code": "M18_striving",
+   "label": "Striving after",
+   "description": "the futile pursuit of 'striving after wind' (H7469)",
+   "kind": "group",
+   "anchor": null
+  },
+  {
+   "code": "M18_good",
+   "label": "Good, better, well (a quality of something)",
+   "description": "tov and its kin used as a quality of what it qualifies; a judging use is the characteristic and is settled per verse (E4, two-sense)",
+   "kind": "qualifier",
+   "anchor": null
+  },
+  {
+   "code": "M18_not_this_sense",
+   "label": "Not the cluster's sense",
+   "description": "renderings whose sense is not desire: distance, a matter, destruction, a party's name",
+   "kind": "not_this_sense",
+   "anchor": null
+  }
+ ],
+ "allocations": [
+  {
+   "strong": "H2896A",
+   "surface": "good",
+   "part": "head",
+   "hits": 224,
+   "verses": 211,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Hos.4.13",
+    "Ps.36.4"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "tov as a quality of what it qualifies in most uses; a judging use ('good in his eyes') is the characteristic, settled per verse (E4)",
+   "two_sense": 1
+  },
+  {
+   "strong": "H2896A",
+   "surface": "better",
+   "part": "head",
+   "hits": 72,
+   "verses": 71,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Jonah.4.3",
+    "Prov.16.32"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'better' renders a quality of what it qualifies (Jonah.4.3, Prov.16.32)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2307",
+   "surface": "will",
+   "part": "head",
+   "hits": 60,
+   "verses": 56,
+   "gloss": "will/desire",
+   "transliteration": "thelēma",
+   "samples": [
+    "1Cor.1.1",
+    "Rev.4.11"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'will' renders an act of the will (1Cor.1.1, Rev.4.11)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "want",
+   "part": "head",
+   "hits": 47,
+   "verses": 45,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "2Cor.1.8",
+    "Jas.2.20"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'want' renders an act of the will (2Cor.1.8, Jas.2.20)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7068",
+   "surface": "jealousy",
+   "part": "head",
+   "hits": 27,
+   "verses": 25,
+   "gloss": "jealousy",
+   "transliteration": "qin.ah",
+   "samples": [
+    "Ezek.36.5",
+    "Ps.79.5"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'jealousy' renders zeal or jealousy (Ezek.36.5, Ps.79.5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3368",
+   "surface": "precious",
+   "part": "head",
+   "hits": 25,
+   "verses": 25,
+   "gloss": "precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "1Kgs.10.2",
+    "2Chr.3.6"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'precious' renders worth or dearness (1Kgs.10.2, 2Chr.3.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "would",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Rev.11.5",
+    "Rom.13.3"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'would' renders an act of the will (Rev.11.5, Rom.13.3)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "delight",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Deut.21.14",
+    "Isa.58.2"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'delight' renders taking pleasure in (Deut.21.14, Isa.58.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7065",
+   "surface": "jealous",
+   "part": "head",
+   "hits": 18,
+   "verses": 15,
+   "gloss": "be jealous",
+   "transliteration": "qa.na",
+   "samples": [
+    "Num.25.11",
+    "Ps.106.16"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'jealous' renders zeal or jealousy (Num.25.11, Ps.106.16)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "favor",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Mal.2.13",
+    "Ps.30.5"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'favor' renders being acceptable or approved (Mal.2.13, Ps.30.5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "will",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "John.5.21",
+    "Matt.8.2"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'will' renders an act of the will (John.5.21, Matt.8.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "wish",
+   "part": "head",
+   "hits": 15,
+   "verses": 14,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "2Cor.12.20",
+    "Gal.4.20"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'wish' renders an act of the will (2Cor.12.20, Gal.4.20)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H6772",
+   "surface": "thirst",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "thirst",
+   "transliteration": "tsa.ma",
+   "samples": [
+    "Amos.8.13",
+    "Isa.50.2"
+   ],
+   "inherited": null,
+   "group": "M18_thirst",
+   "reason": "'thirst' renders thirst (Amos.8.13, Isa.50.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "well",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Jer.22.15",
+    "Jer.22.16"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'well' renders a quality of what it qualifies (Jer.22.15, Jer.22.16)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "wanted",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "1Thess.2.18",
+    "John.21.18"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'wanted' renders an act of the will (1Thess.2.18, John.21.18)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "desires",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "1John.2.17",
+    "Rom.13.14"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desires' renders wanting what is not had (1John.2.17, Rom.13.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "passions",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "1Pet.1.14",
+    "Titus.3.3"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'passions' renders wanting what is not had (1Pet.1.14, Titus.3.3)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "desire",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "1Tim.5.11",
+    "Rev.11.6"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (1Tim.5.11, Rev.11.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "delights",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Isa.66.3",
+    "Ps.37.23"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'delights' renders taking pleasure in (Isa.66.3, Ps.37.23)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1372",
+   "surface": "thirsty",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to thirst",
+   "transliteration": "dipsaō",
+   "samples": [
+    "Matt.25.37",
+    "Matt.25.42"
+   ],
+   "inherited": null,
+   "group": "M18_thirst",
+   "reason": "'thirsty' renders thirst (Matt.25.37, Matt.25.42)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "please",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Esth.3.9",
+    "Esth.5.8"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'if it please the king' (Esth 3:9): acceptable to the king; the will of the king may be read in some verses",
+   "two_sense": 1
+  },
+  {
+   "strong": "H7068",
+   "surface": "zeal",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "jealousy",
+   "transliteration": "qin.ah",
+   "samples": [
+    "Isa.59.17",
+    "Ps.119.139"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'zeal' renders zeal or jealousy (Isa.59.17, Ps.119.139)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "desire",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Prov.13.19",
+    "Prov.18.1"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (Prov.13.19, Prov.18.1)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2205",
+   "surface": "jealousy",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "zeal",
+   "transliteration": "zēlos",
+   "samples": [
+    "2Cor.12.20",
+    "Acts.5.17"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'jealousy' renders zeal or jealousy (2Cor.12.20, Acts.5.17)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "desiring",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "2Cor.8.11",
+    "Rom.9.22"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desiring' renders wanting what is not had (2Cor.8.11, Rom.9.22)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "best",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.8.14",
+    "Mic.7.4"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'best' renders a quality of what it qualifies (1Sam.8.14, Mic.7.4)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "delighted",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "1Sam.19.1",
+    "Ps.40.6"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'delighted' renders taking pleasure in (1Sam.19.1, Ps.40.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "accepted",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Isa.56.7",
+    "Lev.23.11"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'accepted' renders being acceptable or approved (Isa.56.7, Lev.23.11)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "pleasure",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Eccl.5.4",
+    "Isa.58.13"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'pleasure' renders taking pleasure in (Eccl.5.4, Isa.58.13)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H6026",
+   "surface": "delight",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to delight",
+   "transliteration": "a.nog",
+   "samples": [
+    "Isa.55.2",
+    "Ps.37.11"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'delight' renders taking pleasure in (Isa.55.2, Ps.37.11)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7469",
+   "surface": "striving",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "longing",
+   "transliteration": "re.ut",
+   "samples": [
+    "Eccl.1.14",
+    "Eccl.2.17"
+   ],
+   "inherited": null,
+   "group": "M18_striving",
+   "reason": "'striving' renders the futile pursuit of striving after wind (Eccl.1.14, Eccl.2.17)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2106",
+   "surface": "pleased",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to delight",
+   "transliteration": "eudokeō",
+   "samples": [
+    "2Pet.1.17",
+    "Col.1.19"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'well pleased' sense (2Pet 1:17); 'pleased to dwell' (Col 1:19) is will",
+   "two_sense": 1
+  },
+  {
+   "strong": "G2205",
+   "surface": "zeal",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "zeal",
+   "transliteration": "zēlos",
+   "samples": [
+    "2Cor.7.11",
+    "Phil.3.6"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'zeal' renders zeal or jealousy (2Cor.7.11, Phil.3.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "desired",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Heb.12.17",
+    "Luke.10.24"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desired' renders wanting what is not had (Heb.12.17, Luke.10.24)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G3117",
+   "surface": "far",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "long/distant",
+   "transliteration": "makros",
+   "samples": [
+    "Acts.17.27",
+    "Luke.7.6"
+   ],
+   "inherited": null,
+   "group": "M18_not_this_sense",
+   "reason": "'far' the rendering carries no desire sense (Acts.17.27, Luke.7.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "desire",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "Deut.14.26",
+    "Prov.24.1"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (Deut.14.26, Prov.24.1)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "desires",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "Eccl.6.2",
+    "Mic.7.1"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desires' renders wanting what is not had (Eccl.6.2, Mic.7.1)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "covet",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Deut.7.25",
+    "Mic.2.2"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'covet' renders wanting what is not had (Deut.7.25, Mic.2.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "desire",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Job.13.3",
+    "Ps.73.25"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (Job.13.3, Ps.73.25)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "pleases",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Eccl.8.3",
+    "Song.2.7"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'does whatever he pleases' (Eccl 8:3), 'until it pleases' (Song 2:7): what one wills",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "pleasure",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Ezek.18.23",
+    "Prov.18.2"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'pleasure' renders taking pleasure in (Ezek.18.23, Prov.18.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "desired",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "1Kgs.10.13",
+    "Ps.107.30"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desired' renders wanting what is not had (1Kgs.10.13, Ps.107.30)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "pleases",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Eccl.2.26",
+    "Eccl.7.26"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'the one who pleases God' (Eccl 2:26, 7:26): acceptable to God",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2974",
+   "surface": "pleased",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be willing",
+   "transliteration": "ya.al",
+   "samples": [
+    "2Kgs.6.3",
+    "Job.6.28"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'be pleased to go' (2Kgs 6:3): be willing",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3365",
+   "surface": "precious",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "2Kgs.1.13",
+    "2Kgs.1.14"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'precious' renders worth or dearness (2Kgs.1.13, 2Kgs.1.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H5273A",
+   "surface": "pleasant",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "pleasant",
+   "transliteration": "na.im",
+   "samples": [
+    "Prov.22.18",
+    "Ps.135.3"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'pleasant' renders taking pleasure in (Prov.22.18, Ps.135.3)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H5276",
+   "surface": "pleasant",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be pleasant",
+   "transliteration": "na.em",
+   "samples": [
+    "Gen.49.15",
+    "Prov.9.17"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'pleasant' renders taking pleasure in (Gen.49.15, Prov.9.17)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "acceptable",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Isa.58.5",
+    "Ps.19.14"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'acceptable' renders being acceptable or approved (Isa.58.5, Ps.19.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8191",
+   "surface": "delight",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "delight",
+   "transliteration": "sha.a.shu.im",
+   "samples": [
+    "Prov.8.30",
+    "Ps.119.143"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'delight' renders taking pleasure in (Prov.8.30, Ps.119.143)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1372",
+   "surface": "thirst",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to thirst",
+   "transliteration": "dipsaō",
+   "samples": [
+    "John.19.28",
+    "Rev.7.16"
+   ],
+   "inherited": null,
+   "group": "M18_thirst",
+   "reason": "'thirst' renders thirst (John.19.28, Rev.7.16)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "desire",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "Jas.1.15",
+    "Phil.1.23"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (Jas.1.15, Phil.1.23)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2106",
+   "surface": "well pleased",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to delight",
+   "transliteration": "eudokeō",
+   "samples": [
+    "Mark.1.11",
+    "Matt.3.17"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'well pleased' renders taking pleasure in (Mark.1.11, Matt.3.17)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2207",
+   "surface": "zealous",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "zealot",
+   "transliteration": "zēlōtēs",
+   "samples": [
+    "Acts.21.20",
+    "Gal.1.14"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'zealous' renders zeal or jealousy (Acts.21.20, Gal.1.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "refused",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Luke.15.28",
+    "Matt.2.18"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'refused' renders an act of the will (Luke.15.28, Matt.2.18)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "willing",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "2Thess.3.10",
+    "Matt.11.14"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'willing' renders an act of the will (2Thess.3.10, Matt.11.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "wills",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Jas.4.15",
+    "Rom.9.18"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'wills' renders an act of the will (Jas.4.15, Rom.9.18)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G5093",
+   "surface": "precious",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "precious",
+   "transliteration": "timios",
+   "samples": [
+    "1Pet.1.7",
+    "Jas.5.7"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'precious' renders worth or dearness (1Pet.1.7, Jas.5.7)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1214I",
+   "surface": "greedy",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to cut off: to gain",
+   "transliteration": "ba.tsa",
+   "samples": [
+    "Jer.8.10",
+    "Prov.15.27"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'greedy' renders wanting what is not had (Jer.8.10, Prov.15.27)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532A",
+   "surface": "pleasant",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "desire",
+   "transliteration": "chem.dah",
+   "samples": [
+    "Ezek.26.12",
+    "Ps.106.24"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'the pleasant land' (Ps 106:24), 'pleasant houses' (Ezek 26:12): things of worth",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2655",
+   "surface": "delight",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "delighting",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Mal.3.1",
+    "Ps.40.14"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'delight' renders taking pleasure in (Mal.3.1, Ps.40.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "delight",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Mal.3.12",
+    "Ps.111.2"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'delight' renders taking pleasure in (Mal.3.12, Ps.111.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "beautiful",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Esth.2.2",
+    "Isa.5.9"
+   ],
+   "inherited": null,
+   "group": "M18_beauty",
+   "reason": "'beautiful' renders beauty to the eye (Esth.2.2, Isa.5.9)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "willingly",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "1Chr.29.5",
+    "Judg.5.9"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'willingly' renders an act of the will (1Chr.29.5, Judg.5.9)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7067H",
+   "surface": "jealous",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "jealous",
+   "transliteration": "qan.na",
+   "samples": [
+    "Deut.4.24",
+    "Exod.20.5"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'jealous' renders zeal or jealousy (Deut.4.24, Exod.20.5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1971",
+   "surface": "long",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to long for",
+   "transliteration": "epipotheō",
+   "samples": [
+    "1Thess.3.6",
+    "2Tim.1.4"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'long' renders wanting what is not had (1Thess.3.6, 2Tim.1.4)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2106",
+   "surface": "pleasure",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to delight",
+   "transliteration": "eudokeō",
+   "samples": [
+    "Heb.10.38",
+    "Heb.10.8"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'pleasure' renders taking pleasure in (Heb.10.38, Heb.10.8)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "desires",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "1Tim.2.4",
+    "Luke.5.39"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desires' renders wanting what is not had (1Tim.2.4, Luke.5.39)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "will you",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Luke.22.9",
+    "Matt.26.17"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'will you' renders an act of the will (Luke.22.9, Matt.26.17)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0185",
+   "surface": "desire",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "desire",
+   "transliteration": "av.vah",
+   "samples": [
+    "1Sam.23.20",
+    "Deut.12.20"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (1Sam.23.20, Deut.12.20)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1942",
+   "surface": "destruction",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "desire",
+   "transliteration": "hav.vah",
+   "samples": [
+    "Ps.5.9",
+    "Ps.57.1"
+   ],
+   "inherited": null,
+   "group": "M18_not_this_sense",
+   "reason": "hawwah 'destruction' (Ps 5:9): ruin, not desire",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "desired",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Gen.3.6",
+    "Isa.1.29"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desired' renders wanting what is not had (Gen.3.6, Isa.1.29)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532A",
+   "surface": "precious",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "desire",
+   "transliteration": "chem.dah",
+   "samples": [
+    "2Chr.36.10",
+    "Nah.2.9"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'precious' renders worth or dearness (2Chr.36.10, Nah.2.9)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "desire",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "1Kgs.5.8",
+    "Prov.8.11"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'I will do all you desire' (1Kgs 5:8): what one wants done",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "good",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "2Sam.15.26",
+    "2Sam.3.19"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'what seems good to him' (2Sam 15:26): the judging phrase, approval; elsewhere a quality",
+   "two_sense": 1
+  },
+  {
+   "strong": "H2895",
+   "surface": "merry",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.25.36",
+    "2Sam.13.28"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'merry' renders taking pleasure in (1Sam.25.36, 2Sam.13.28)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "fine",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "2Chr.3.8",
+    "Ezra.8.27"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'fine' renders a quality of what it qualifies (2Chr.3.8, Ezra.8.27)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3368",
+   "surface": "costly",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "1Kgs.5.17",
+    "1Kgs.7.11"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'costly' renders worth or dearness (1Kgs.5.17, 1Kgs.7.11)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H6770",
+   "surface": "thirsty",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to thirst",
+   "transliteration": "tsa.me",
+   "samples": [
+    "Judg.15.18",
+    "Ruth.2.9"
+   ],
+   "inherited": null,
+   "group": "M18_thirst",
+   "reason": "'thirsty' renders thirst (Judg.15.18, Ruth.2.9)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7065",
+   "surface": "envious",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be jealous",
+   "transliteration": "qa.na",
+   "samples": [
+    "Prov.24.1",
+    "Ps.37.1"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'envious' renders zeal or jealousy (Prov.24.1, Ps.37.1)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7065",
+   "surface": "jealousy",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be jealous",
+   "transliteration": "qa.na",
+   "samples": [
+    "1Kgs.14.22",
+    "Deut.32.16"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'jealousy' renders zeal or jealousy (1Kgs.14.22, Deut.32.16)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7068",
+   "surface": "envy",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "jealousy",
+   "transliteration": "qin.ah",
+   "samples": [
+    "Ezek.35.11",
+    "Prov.14.30"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'envy' renders zeal or jealousy (Ezek.35.11, Prov.14.30)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "delight",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Prov.11.1",
+    "Prov.16.13"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'a just weight is his delight' (Prov 11:1): what is acceptable to him (ratson)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "will",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Ezra.10.11",
+    "Ps.103.21"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'will' renders an act of the will (Ezra.10.11, Ps.103.21)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7602A",
+   "surface": "pant",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to long for",
+   "transliteration": "sha.aph",
+   "samples": [
+    "Jer.14.6",
+    "Job.5.5"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'pant' renders wanting what is not had (Jer.14.6, Job.5.5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "desire",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "Jas.4.2",
+    "Luke.17.22"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (Jas.4.2, Luke.17.22)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "like",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "2Cor.11.12",
+    "Luke.20.46"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'like' renders an act of the will (2Cor.11.12, Luke.20.46)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "wishes",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "1Cor.7.39",
+    "John.3.8"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'wishes' renders an act of the will (1Cor.7.39, John.3.8)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "you would",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Matt.19.17",
+    "Matt.19.21"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'you would' renders an act of the will (Matt.19.17, Matt.19.21)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G3117",
+   "surface": "long",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "long/distant",
+   "transliteration": "makros",
+   "samples": [
+    "Acts.26.29",
+    "Luke.20.47"
+   ],
+   "inherited": null,
+   "group": "M18_not_this_sense",
+   "reason": "'short or long' (Acts 26:29), 'long prayers' (Luke 20:47): length, not longing",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4288",
+   "surface": "readiness",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "eagerness",
+   "transliteration": "prothumia",
+   "samples": [
+    "2Cor.8.12",
+    "2Cor.9.2"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'readiness' renders an act of the will (2Cor.8.12, 2Cor.9.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G5093",
+   "surface": "jewels",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "precious",
+   "transliteration": "timios",
+   "samples": [
+    "Rev.17.4",
+    "Rev.18.16"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'jewels' renders worth or dearness (Rev.17.4, Rev.18.16)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "desired",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "Jer.17.16",
+    "Ps.132.14"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desired' renders wanting what is not had (Jer.17.16, Ps.132.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1942",
+   "surface": "calamity",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "desire",
+   "transliteration": "hav.vah",
+   "samples": [
+    "Job.30.13",
+    "Job.6.2"
+   ],
+   "inherited": null,
+   "group": "M18_not_this_sense",
+   "reason": "hawwah 'calamity' (Job 30:13): ruin, not desire",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1942",
+   "surface": "ruin",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "desire",
+   "transliteration": "hav.vah",
+   "samples": [
+    "Prov.19.13",
+    "Ps.38.12"
+   ],
+   "inherited": null,
+   "group": "M18_not_this_sense",
+   "reason": "hawwah 'ruin' (Prov 19:13): ruin, not desire",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2531",
+   "surface": "desirable",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "delight",
+   "transliteration": "che.med",
+   "samples": [
+    "Ezek.23.12",
+    "Ezek.23.23"
+   ],
+   "inherited": null,
+   "group": "M18_beauty",
+   "reason": "'desirable' renders beauty to the eye (Ezek.23.12, Ezek.23.23)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2531",
+   "surface": "pleasant",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "delight",
+   "transliteration": "che.med",
+   "samples": [
+    "Amos.5.11",
+    "Isa.27.2"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'pleasant vineyards' (Amos 5:11): things of worth",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "will",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Isa.53.10",
+    "Prov.21.1"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'will' renders an act of the will (Isa.53.10, Prov.21.1)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2655",
+   "surface": "delights",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "delighting",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Mic.7.18",
+    "Ps.5.4"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'delights' renders taking pleasure in (Mic.7.18, Ps.5.4)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "matter",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Eccl.3.17",
+    "Eccl.5.8"
+   ],
+   "inherited": null,
+   "group": "M18_not_this_sense",
+   "reason": "chephets 'every matter' (Eccl 3:17): a matter, business",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "purpose",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Isa.44.28",
+    "Isa.48.14"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'purpose' renders an act of the will (Isa.44.28, Isa.48.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2836A",
+   "surface": "love",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to desire",
+   "transliteration": "cha.shaq",
+   "samples": [
+    "Deut.7.7",
+    "Isa.38.17"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'set his love on you' (Deut 7:7): attached desire, chashaq",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "well",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "1Kgs.8.18",
+    "2Chr.6.8"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'well' renders a quality of what it qualifies (1Kgs.8.18, 2Chr.6.8)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "attractive",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Gen.26.7",
+    "Gen.6.2"
+   ],
+   "inherited": null,
+   "group": "M18_beauty",
+   "reason": "'attractive' renders beauty to the eye (Gen.26.7, Gen.6.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "favorable",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "2Chr.18.12",
+    "Gen.40.16"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'favorable' renders a quality of what it qualifies (2Chr.18.12, Gen.40.16)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "handsome",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.16.12",
+    "1Sam.9.2"
+   ],
+   "inherited": null,
+   "group": "M18_beauty",
+   "reason": "'handsome' renders beauty to the eye (1Sam.16.12, 1Sam.9.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "holiday",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Esth.9.19",
+    "Esth.9.22"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'holiday' renders a quality of what it qualifies (Esth.9.19, Esth.9.22)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "pleasing",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Kgs.14.13",
+    "Esth.8.5"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'something pleasing to the LORD' (1Kgs 14:13), 'if I am pleasing in his eyes' (Esth 8:5): acceptable to another",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "precious",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "2Kgs.20.13",
+    "Isa.39.2"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'precious' renders worth or dearness (2Kgs.20.13, Isa.39.2)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2974",
+   "surface": "content",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be willing",
+   "transliteration": "ya.al",
+   "samples": [
+    "Josh.7.7",
+    "Judg.17.11"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'content' renders an act of the will (Josh.7.7, Judg.17.11)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2974",
+   "surface": "persisted",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be willing",
+   "transliteration": "ya.al",
+   "samples": [
+    "Josh.17.12",
+    "Judg.1.35"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'persisted' renders an act of the will (Josh.17.12, Judg.1.35)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4261",
+   "surface": "delight",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "desire",
+   "transliteration": "mach.mad",
+   "samples": [
+    "Ezek.24.16",
+    "Ezek.24.25"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'the delight of your eyes' (Ezek 24:16)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H5278",
+   "surface": "favor",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pleasantness",
+   "transliteration": "no.am",
+   "samples": [
+    "Ps.90.17",
+    "Zech.11.10"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'the favor of the Lord' (Ps 90:17)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7065",
+   "surface": "envied",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be jealous",
+   "transliteration": "qa.na",
+   "samples": [
+    "Ezek.31.9",
+    "Gen.30.1"
+   ],
+   "inherited": null,
+   "group": "M18_zeal",
+   "reason": "'envied' renders zeal or jealousy (Ezek.31.9, Gen.30.1)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "desire",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "2Chr.15.15",
+    "Ps.145.19"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (2Chr.15.15, Ps.145.19)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "wills",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Dan.11.16",
+    "Dan.11.36"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'wills' renders an act of the will (Dan.11.16, Dan.11.36)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8173B",
+   "surface": "delight",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to delight",
+   "transliteration": "sha.a",
+   "samples": [
+    "Ps.119.16",
+    "Ps.119.70"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'delight' renders taking pleasure in (Ps.119.16, Ps.119.70)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8669",
+   "surface": "desire",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "desire",
+   "transliteration": "te.shu.qah",
+   "samples": [
+    "Gen.3.16",
+    "Song.7.10"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (Gen.3.16, Song.7.10)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0594",
+   "surface": "acceptance",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "acceptance",
+   "transliteration": "apodochē",
+   "samples": [
+    "1Tim.1.15",
+    "1Tim.4.9"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'acceptance' renders being acceptable or approved (1Tim.1.15, 1Tim.4.9)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "covet",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "Rom.13.9",
+    "Rom.7.7"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'covet' renders wanting what is not had (Rom.13.9, Rom.7.7)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "desired",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "Luke.16.21",
+    "Luke.22.15"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desired' renders wanting what is not had (Luke.16.21, Luke.22.15)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "desires",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "1Tim.3.1",
+    "Gal.5.17"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desires' renders wanting what is not had (1Tim.3.1, Gal.5.17)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "long",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "1Pet.1.12",
+    "Rev.9.6"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'long' renders wanting what is not had (1Pet.1.12, Rev.9.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "lust",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "1Thess.4.5",
+    "2Pet.2.10"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'lust' renders wanting what is not had (1Thess.4.5, 2Pet.2.10)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1971",
+   "surface": "longing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to long for",
+   "transliteration": "epipotheō",
+   "samples": [
+    "2Cor.5.2",
+    "Phil.2.26"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'longing' renders wanting what is not had (2Cor.5.2, Phil.2.26)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1972",
+   "surface": "longing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "longing",
+   "transliteration": "epipothēsis",
+   "samples": [
+    "2Cor.7.11",
+    "2Cor.7.7"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'longing' renders wanting what is not had (2Cor.7.11, 2Cor.7.7)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2208",
+   "surface": "zealot",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "Zealot",
+   "transliteration": "zēlōtēs",
+   "samples": [
+    "Acts.1.13",
+    "Luke.6.15"
+   ],
+   "inherited": null,
+   "group": "M18_not_this_sense",
+   "reason": "'Simon the Zealot' (Luke 6:15, Acts 1:13): a party's name (RG-16)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2237",
+   "surface": "passions",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasure",
+   "transliteration": "hēdonē",
+   "samples": [
+    "Jas.4.1",
+    "Jas.4.3"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'your passions are at war' (Jas 4:1): desires",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2237",
+   "surface": "pleasures",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasure",
+   "transliteration": "hēdonē",
+   "samples": [
+    "Luke.8.14",
+    "Titus.3.3"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'riches and pleasures of life' (Luke 8:14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "choose",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Matt.20.14",
+    "Matt.20.15"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'choose' renders an act of the will (Matt.20.14, Matt.20.15)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "chose",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "1Cor.12.18",
+    "Col.1.27"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'chose' renders an act of the will (1Cor.12.18, Col.1.27)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "i would",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "1Cor.14.19",
+    "3John.1.13"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'i would' renders an act of the will (1Cor.14.19, 3John.1.13)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "mean",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Acts.17.20",
+    "Acts.2.12"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'mean' renders an act of the will (Acts.17.20, Acts.2.12)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "pleased",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Mark.9.13",
+    "Matt.17.12"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'did to him whatever they pleased' (Mark 9:13): what they willed",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "unwilling",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Matt.1.19",
+    "Matt.15.32"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'unwilling' renders an act of the will (Matt.1.19, Matt.15.32)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "who would",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Luke.16.26",
+    "Matt.5.42"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'who would' renders an act of the will (Luke.16.26, Matt.5.42)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "willing to",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Acts.26.5",
+    "Matt.23.4"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'willing to' renders an act of the will (Acts.26.5, Matt.23.4)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2581",
+   "surface": "zealot",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "Zealot",
+   "transliteration": "kananitēs kananaios",
+   "samples": [
+    "Mark.3.18",
+    "Matt.10.4"
+   ],
+   "inherited": null,
+   "group": "M18_not_this_sense",
+   "reason": "'Simon the Zealot' (Matt 10:4): a party's name (RG-16)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G3117",
+   "surface": "far off",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "long/distant",
+   "transliteration": "makros",
+   "samples": [
+    "Eph.2.13",
+    "Eph.2.17"
+   ],
+   "inherited": null,
+   "group": "M18_not_this_sense",
+   "reason": "'far off' the rendering carries no desire sense (Eph.2.13, Eph.2.17)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G5093",
+   "surface": "honor",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "precious",
+   "transliteration": "timios",
+   "samples": [
+    "Acts.5.34",
+    "Heb.13.4"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'honor' renders worth or dearness (Acts.5.34, Heb.13.4)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "craves",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "Prov.13.4",
+    "Prov.21.26"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'craves' renders wanting what is not had (Prov.13.4, Prov.21.26)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "craving",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "Num.11.34",
+    "Ps.106.14"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'craving' renders wanting what is not had (Num.11.34, Ps.106.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "longingly",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "1Chr.11.17",
+    "2Sam.23.15"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'longingly' renders wanting what is not had (1Chr.11.17, 2Sam.23.15)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "desire",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Isa.53.2",
+    "Prov.6.25"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desire' renders wanting what is not had (Isa.53.2, Prov.6.25)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "pleased",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Isa.42.21",
+    "Jonah.1.14"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'the LORD was pleased' (Isa 42:21): delight in his righteousness; Jonah 1:14 'as it pleased you' is will",
+   "two_sense": 1
+  },
+  {
+   "strong": "H2654A",
+   "surface": "wish",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Deut.25.7",
+    "Deut.25.8"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'wish' renders an act of the will (Deut.25.7, Deut.25.8)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "cares",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Jer.22.28",
+    "Jer.48.38"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'a vessel no one cares for' (Jer 22:28): no one takes pleasure in it",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2836A",
+   "surface": "desired",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to desire",
+   "transliteration": "cha.shaq",
+   "samples": [
+    "1Kgs.9.19",
+    "2Chr.8.6"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desired' renders wanting what is not had (1Kgs.9.19, 2Chr.8.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2837",
+   "surface": "desired",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "desire",
+   "transliteration": "che.sheq",
+   "samples": [
+    "1Kgs.9.1",
+    "2Chr.8.6"
+   ],
+   "inherited": null,
+   "group": "M18_desire",
+   "reason": "'desired' renders wanting what is not had (1Kgs.9.1, 2Chr.8.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "better",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "Judg.11.25",
+    "Num.11.18"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'better' renders a quality of what it qualifies (Judg.11.25, Num.11.18)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "pleased",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "2Sam.3.36",
+    "Num.24.1"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'it pleased them' (2Sam 3:36), 'it pleased the LORD' (Num 24:1): judged good, approval",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "cheerful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Prov.15.15",
+    "Zech.8.19"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'cheerful' renders taking pleasure in (Prov.15.15, Zech.8.19)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "favorably",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Kgs.22.13",
+    "2Chr.18.12"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'favorably' renders a quality of what it qualifies (1Kgs.22.13, 2Chr.18.12)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "glad",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Kgs.8.66",
+    "Esth.5.9"
+   ],
+   "inherited": null,
+   "group": "M18_delight",
+   "reason": "'glad' renders taking pleasure in (1Kgs.8.66, Esth.5.9)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "lovely",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Esth.1.11",
+    "Esth.2.7"
+   ],
+   "inherited": null,
+   "group": "M18_beauty",
+   "reason": "'lovely' renders beauty to the eye (Esth.1.11, Esth.2.7)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "more",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.1.8",
+    "Ruth.4.15"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'more' renders a quality of what it qualifies (1Sam.1.8, Ruth.4.15)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "pleasant",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "2Kgs.2.19",
+    "Eccl.11.7"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'the situation is pleasant' (2Kgs 2:19), 'light is sweet' (Eccl 11:7): a quality",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "promise",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Jer.29.10",
+    "Jer.33.14"
+   ],
+   "inherited": null,
+   "group": "M18_good",
+   "reason": "'promise' renders a quality of what it qualifies (Jer.29.10, Jer.33.14)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "seems good",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Chr.13.2",
+    "2Sam.10.12"
+   ],
+   "inherited": null,
+   "group": "M18_favour",
+   "reason": "'seems good' renders being acceptable or approved (1Chr.13.2, 2Sam.10.12)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2974",
+   "surface": "please",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be willing",
+   "transliteration": "ya.al",
+   "samples": [
+    "2Sam.7.29",
+    "Job.6.9"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'may it please you to bless' (2Sam 7:29): be willing",
+   "two_sense": 0
+  },
+  {
+   "strong": "H2974",
+   "surface": "undertaken",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be willing",
+   "transliteration": "ya.al",
+   "samples": [
+    "Gen.18.27",
+    "Gen.18.31"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'undertaken' renders an act of the will (Gen.18.27, Gen.18.31)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4261",
+   "surface": "precious",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "desire",
+   "transliteration": "mach.mad",
+   "samples": [
+    "2Chr.36.19",
+    "Hos.9.6"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'precious' renders worth or dearness (2Chr.36.19, Hos.9.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4261",
+   "surface": "treasures",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "desire",
+   "transliteration": "mach.mad",
+   "samples": [
+    "Joel.3.5",
+    "Lam.1.11"
+   ],
+   "inherited": null,
+   "group": "M18_precious",
+   "reason": "'treasures' renders worth or dearness (Joel.3.5, Lam.1.11)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "freely offered",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "1Chr.29.17",
+    "Ezra.1.6"
+   ],
+   "inherited": null,
+   "group": "M18_will",
+   "reason": "'freely offered' renders an act of the will (1Chr.29.17, Ezra.1.6)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H5278",
+   "surface": "gracious",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pleasantness",
+   "transliteration": "no.am",
+   "samples": [
+    "Prov.15.26",
+    "Prov.16.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6165",
+   "surface": "pants",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "a.rag",
+   "samples": [
+    "Ps.42.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6770",
+   "surface": "thirst",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to thirst",
+   "transliteration": "tsa.me",
+   "samples": [
+    "Isa.48.21",
+    "Isa.49.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6770",
+   "surface": "thirsts",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to thirst",
+   "transliteration": "tsa.me",
+   "samples": [
+    "Ps.42.2",
+    "Ps.63.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7065",
+   "surface": "envy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be jealous",
+   "transliteration": "qa.na",
+   "samples": [
+    "Prov.23.17",
+    "Prov.3.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7065",
+   "surface": "very",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be jealous",
+   "transliteration": "qa.na",
+   "samples": [
+    "1Kgs.19.10",
+    "1Kgs.19.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7072",
+   "surface": "jealous",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "jealous",
+   "transliteration": "qan.no",
+   "samples": [
+    "Josh.24.19",
+    "Nah.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "pleased",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Dan.8.4",
+    "Esth.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8373",
+   "surface": "long",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to long for",
+   "transliteration": "ta.av",
+   "samples": [
+    "Ps.119.174",
+    "Ps.119.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "craving",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Num.11.4",
+    "Ps.78.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0275",
+   "surface": "free from anxieties",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "untroubled",
+   "transliteration": "amerimnos",
+   "samples": [
+    "1Cor.7.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0275",
+   "surface": "out of trouble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "untroubled",
+   "transliteration": "amerimnos",
+   "samples": [
+    "Matt.28.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0701",
+   "surface": "pleased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasing",
+   "transliteration": "arestos",
+   "samples": [
+    "Acts.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0701",
+   "surface": "pleases",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasing",
+   "transliteration": "arestos",
+   "samples": [
+    "1John.3.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0701",
+   "surface": "pleasing to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasing",
+   "transliteration": "arestos",
+   "samples": [
+    "John.8.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0701",
+   "surface": "right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasing",
+   "transliteration": "arestos",
+   "samples": [
+    "Acts.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1372",
+   "surface": "thirsts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to thirst",
+   "transliteration": "dipsaō",
+   "samples": [
+    "John.7.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1373",
+   "surface": "thirst",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thirst",
+   "transliteration": "dipsos",
+   "samples": [
+    "2Cor.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "coveted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "Acts.20.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "did",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "1Cor.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "longed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "Matt.13.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "longing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "Luke.15.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1937",
+   "surface": "lustful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "epithumeō",
+   "samples": [
+    "Matt.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1938",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "one who desires",
+   "transliteration": "epithumētēs",
+   "samples": [
+    "1Cor.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "covet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "Rom.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "covetousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "Rom.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "earnestly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "Luke.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "flesh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "1Pet.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "longed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "Rev.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "lusts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "Rom.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1939",
+   "surface": "sinful desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "epithumia",
+   "samples": [
+    "2Pet.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1971",
+   "surface": "long for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "epipotheō",
+   "samples": [
+    "1Pet.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1971",
+   "surface": "yearn for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "epipotheō",
+   "samples": [
+    "Phil.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1971",
+   "surface": "yearns",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "epipotheō",
+   "samples": [
+    "Jas.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1973",
+   "surface": "long for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "longed for",
+   "transliteration": "epipothētos",
+   "samples": [
+    "Phil.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1974",
+   "surface": "longed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "longing",
+   "transliteration": "epipothia",
+   "samples": [
+    "Rom.15.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2106",
+   "surface": "content",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "eudokeō",
+   "samples": [
+    "2Cor.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2106",
+   "surface": "good pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "eudokeō",
+   "samples": [
+    "Luke.12.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2106",
+   "surface": "pleased to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "eudokeō",
+   "samples": [
+    "Rom.15.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2106",
+   "surface": "ready",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "eudokeō",
+   "samples": [
+    "1Thess.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2106",
+   "surface": "we would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "eudokeō",
+   "samples": [
+    "2Cor.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2106",
+   "surface": "willing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "eudokeō",
+   "samples": [
+    "1Thess.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2205",
+   "surface": "fury",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "zeal",
+   "transliteration": "zēlos",
+   "samples": [
+    "Heb.10.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2205",
+   "surface": "worked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "zeal",
+   "transliteration": "zēlos",
+   "samples": [
+    "Col.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2207",
+   "surface": "eager",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "zealot",
+   "transliteration": "zēlōtēs",
+   "samples": [
+    "1Cor.14.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2237",
+   "surface": "pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "hēdonē",
+   "samples": [
+    "2Pet.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2307",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "will/desire",
+   "transliteration": "thelēma",
+   "samples": [
+    "1Cor.7.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2307",
+   "surface": "desires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "will/desire",
+   "transliteration": "thelēma",
+   "samples": [
+    "Eph.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "anyone would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Matt.5.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "chosen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "1Cor.15.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "decided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "John.1.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "deliberately",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "2Pet.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "desires to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "1Pet.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "disposed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "1Cor.10.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "glad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "John.6.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "he would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Matt.27.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "human will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Rom.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "insisting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Col.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "let",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Gal.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "meant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Mark.6.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "preferred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Phlm.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "refuse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "John.5.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "they would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Matt.22.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "want to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Rom.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "wants",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Luke.13.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "we would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "2Cor.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "wished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Matt.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2309",
+   "surface": "wishing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to will/desire",
+   "transliteration": "thelō",
+   "samples": [
+    "Acts.25.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2442",
+   "surface": "desirous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "himeirō",
+   "samples": [
+    "1Thess.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2691",
+   "surface": "passions draw",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "katastrēniaō",
+   "samples": [
+    "1Tim.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3048",
+   "surface": "collecting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "collection",
+   "transliteration": "logia",
+   "samples": [
+    "1Cor.16.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3048",
+   "surface": "collection",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "collection",
+   "transliteration": "logia",
+   "samples": [
+    "1Cor.16.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3117",
+   "surface": "far away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "long/distant",
+   "transliteration": "makros",
+   "samples": [
+    "Acts.22.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3117",
+   "surface": "long way",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "long/distant",
+   "transliteration": "makros",
+   "samples": [
+    "Luke.15.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3713",
+   "surface": "aspires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to aspire",
+   "transliteration": "oregō",
+   "samples": [
+    "1Tim.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3713",
+   "surface": "craving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to aspire",
+   "transliteration": "oregō",
+   "samples": [
+    "1Tim.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3713",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to aspire",
+   "transliteration": "oregō",
+   "samples": [
+    "Heb.11.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4288",
+   "surface": "eagerness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "eagerness",
+   "transliteration": "prothumia",
+   "samples": [
+    "Acts.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4288",
+   "surface": "good will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "eagerness",
+   "transliteration": "prothumia",
+   "samples": [
+    "2Cor.8.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4356",
+   "surface": "acceptance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "acceptance",
+   "transliteration": "proslēpsis",
+   "samples": [
+    "Rom.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4361",
+   "surface": "hungry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "very hungry",
+   "transliteration": "prospeinos",
+   "samples": [
+    "Acts.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4913",
+   "surface": "delight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "sunēdomai",
+   "samples": [
+    "Rom.7.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5093",
+   "surface": "costly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "timios",
+   "samples": [
+    "Rev.18.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5093",
+   "surface": "jewel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "timios",
+   "samples": [
+    "Rev.21.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5093",
+   "surface": "most rare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "timios",
+   "samples": [
+    "Rev.21.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5369",
+   "surface": "pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure-loving",
+   "transliteration": "filēdonos",
+   "samples": [
+    "2Tim.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5389",
+   "surface": "aim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to aspire",
+   "transliteration": "filotimeomai",
+   "samples": [
+    "2Cor.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5389",
+   "surface": "ambition",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to aspire",
+   "transliteration": "filotimeomai",
+   "samples": [
+    "Rom.15.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5389",
+   "surface": "aspire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to aspire",
+   "transliteration": "filotimeomai",
+   "samples": [
+    "1Thess.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0035",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "a.viy.yo.nah",
+   "samples": [
+    "Eccl.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "crave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "Deut.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "had",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "Num.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "who desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "Amos.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "wish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "1Sam.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0183",
+   "surface": "you",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "a.vah",
+   "samples": [
+    "Isa.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0185",
+   "surface": "desires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "av.vah",
+   "samples": [
+    "Deut.18.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0185",
+   "surface": "heat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "av.vah",
+   "samples": [
+    "Jer.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0185",
+   "surface": "please",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "av.vah",
+   "samples": [
+    "Hos.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0404",
+   "surface": "urges",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to crave",
+   "transliteration": "a.khaph",
+   "samples": [
+    "Prov.16.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0627",
+   "surface": "collected",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "collection",
+   "transliteration": "a.sup.pah",
+   "samples": [
+    "Eccl.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1214I",
+   "surface": "carried out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cut off: to gain",
+   "transliteration": "ba.tsa",
+   "samples": [
+    "Lam.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1214I",
+   "surface": "get",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cut off: to gain",
+   "transliteration": "ba.tsa",
+   "samples": [
+    "Ezek.22.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1214I",
+   "surface": "make gain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cut off: to gain",
+   "transliteration": "ba.tsa",
+   "samples": [
+    "Ezek.22.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1214I",
+   "surface": "who gets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cut off: to gain",
+   "transliteration": "ba.tsa",
+   "samples": [
+    "Hab.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1942",
+   "surface": "craving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "hav.vah",
+   "samples": [
+    "Prov.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1942",
+   "surface": "deadly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "hav.vah",
+   "samples": [
+    "Ps.91.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1942",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "hav.vah",
+   "samples": [
+    "Mic.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1942",
+   "surface": "lust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "hav.vah",
+   "samples": [
+    "Prov.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1942",
+   "surface": "mischievous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "hav.vah",
+   "samples": [
+    "Prov.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1942",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "hav.vah",
+   "samples": [
+    "Ps.94.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "coveted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Josh.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "covets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Prov.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "dear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Ps.39.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "delight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Prov.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "delight in",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Isa.44.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "delights",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Job.20.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "great delight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Song.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "pleasant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Gen.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2530A",
+   "surface": "precious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.mad",
+   "samples": [
+    "Prov.21.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532A",
+   "surface": "beautiful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "chem.dah",
+   "samples": [
+    "Isa.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532A",
+   "surface": "choice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "chem.dah",
+   "samples": [
+    "Jer.25.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532A",
+   "surface": "costly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "chem.dah",
+   "samples": [
+    "2Chr.32.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532A",
+   "surface": "desirable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "chem.dah",
+   "samples": [
+    "1Sam.9.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532A",
+   "surface": "one beloved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "chem.dah",
+   "samples": [
+    "Dan.11.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532A",
+   "surface": "one’s regret",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "chem.dah",
+   "samples": [
+    "2Chr.21.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2532A",
+   "surface": "treasures",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "chem.dah",
+   "samples": [
+    "Hag.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "any",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Ezek.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "delight in",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Isa.65.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "desired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "1Kgs.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "favors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "2Sam.20.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "meant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Judg.13.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "please",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Isa.56.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "purpose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Isa.55.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "willing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Ruth.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2654A",
+   "surface": "wished to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight in",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Job.9.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2655",
+   "surface": "desires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delighting",
+   "transliteration": "cha.phets",
+   "samples": [
+    "Ps.34.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2655",
+   "surface": "please",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delighting",
+   "transliteration": "cha.phets",
+   "samples": [
+    "1Kgs.21.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2655",
+   "surface": "willing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delighting",
+   "transliteration": "cha.phets",
+   "samples": [
+    "1Chr.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2655",
+   "surface": "would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delighting",
+   "transliteration": "cha.phets",
+   "samples": [
+    "1Kgs.13.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "care",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Job.21.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "desires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "1Sam.18.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "great delight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "1Sam.15.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "is",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Eccl.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "precious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Isa.54.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "useless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Hos.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Isa.53.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "willing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "Prov.31.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2656",
+   "surface": "wishes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasure",
+   "transliteration": "che.phets",
+   "samples": [
+    "1Kgs.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2836A",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.shaq",
+   "samples": [
+    "Deut.21.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2836A",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.shaq",
+   "samples": [
+    "Deut.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2836A",
+   "surface": "longs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to desire",
+   "transliteration": "cha.shaq",
+   "samples": [
+    "Gen.34.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2837",
+   "surface": "longed for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "che.sheq",
+   "samples": [
+    "Isa.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2837",
+   "surface": "whatever",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "che.sheq",
+   "samples": [
+    "1Kgs.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2841",
+   "surface": "thick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "collection",
+   "transliteration": "chash.rah",
+   "samples": [
+    "2Sam.22.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "balak",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "Judg.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "favor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "go well",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "Deut.5.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "lovely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "Num.24.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "much",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "Song.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2895",
+   "surface": "well-off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pleasing",
+   "transliteration": "tov",
+   "samples": [
+    "Deut.15.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "and",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Nah.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "anointing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Song.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "approve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.29.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "best place",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Esth.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "better off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Eccl.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "blameless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.29.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "bountiful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Prov.22.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "discerning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.25.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "feast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.25.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "gracious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Zech.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "happier",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Lam.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "happiness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Isa.52.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "joyful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "2Chr.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "merry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Eccl.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "more beautiful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Judg.15.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "more handsome",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "2Sam.19.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "profitable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Prov.31.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "prospered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Jer.44.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "prospering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Deut.30.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "pure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Lam.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "rich",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Joel.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.29.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "safe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.24.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "searches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Job.13.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "suits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Deut.23.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "sweet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Jer.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "upright",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "2Chr.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "well disposed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "1Sam.20.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2896A",
+   "surface": "word",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "tov",
+   "samples": [
+    "Esth.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2968",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long",
+   "transliteration": "ya.av",
+   "samples": [
+    "Ps.119.131"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2974",
+   "surface": "determined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "ya.al",
+   "samples": [
+    "Hos.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2974",
+   "surface": "undertook",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "ya.al",
+   "samples": [
+    "Deut.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2974",
+   "surface": "vain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "ya.al",
+   "samples": [
+    "1Sam.17.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3357",
+   "surface": "dear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "yaq.qir",
+   "samples": [
+    "Jer.31.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3365",
+   "surface": "costly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "Ps.49.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3365",
+   "surface": "esteemed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "1Sam.18.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3365",
+   "surface": "more rare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "Isa.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3365",
+   "surface": "seldom",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "Prov.25.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3365",
+   "surface": "was priced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "Zech.11.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3368",
+   "surface": "cold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "Zech.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3368",
+   "surface": "cool",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "Prov.17.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3368",
+   "surface": "glory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "Ps.37.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3368",
+   "surface": "outweighs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "Eccl.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3368",
+   "surface": "rare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "1Sam.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3368",
+   "surface": "splendor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "precious",
+   "transliteration": "ya.qar",
+   "samples": [
+    "Job.31.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3616",
+   "surface": "longing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "longing",
+   "transliteration": "ka.leh",
+   "samples": [
+    "Deut.28.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3700",
+   "surface": "eager",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long",
+   "transliteration": "ka.saph",
+   "samples": [
+    "Ps.17.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3700",
+   "surface": "greatly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long",
+   "transliteration": "ka.saph",
+   "samples": [
+    "Gen.31.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3700",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long",
+   "transliteration": "ka.saph",
+   "samples": [
+    "Job.14.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3700",
+   "surface": "longed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long",
+   "transliteration": "ka.saph",
+   "samples": [
+    "Gen.31.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3700",
+   "surface": "longs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long",
+   "transliteration": "ka.saph",
+   "samples": [
+    "Ps.84.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3700",
+   "surface": "shameless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long",
+   "transliteration": "ka.saph",
+   "samples": [
+    "Zeph.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3970",
+   "surface": "desires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "ma.a.vay",
+   "samples": [
+    "Ps.140.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4261",
+   "surface": "beloved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "mach.mad",
+   "samples": [
+    "Hos.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4261",
+   "surface": "delightful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "mach.mad",
+   "samples": [
+    "Lam.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4261",
+   "surface": "desirable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "mach.mad",
+   "samples": [
+    "Song.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4261",
+   "surface": "pleasant places",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "mach.mad",
+   "samples": [
+    "Isa.64.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4261",
+   "surface": "pleases",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "mach.mad",
+   "samples": [
+    "1Kgs.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4261",
+   "surface": "precious things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "mach.mad",
+   "samples": [
+    "Lam.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4723C",
+   "surface": "gathered together",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "collection",
+   "transliteration": "miq.veh",
+   "samples": [
+    "Gen.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4723C",
+   "surface": "holding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "collection",
+   "transliteration": "miq.veh",
+   "samples": [
+    "Lev.11.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4723C",
+   "surface": "pools",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "collection",
+   "transliteration": "miq.veh",
+   "samples": [
+    "Exod.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "freewill offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "1Chr.29.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "1Chr.29.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "Ezra.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "moved him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "Exod.35.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "moved them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "Exod.35.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "moves him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "Exod.25.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "offered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "Neh.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "offering freely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "1Chr.29.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "Ezra.2.68"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5068",
+   "surface": "volunteer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "na.dav",
+   "samples": [
+    "2Chr.17.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5069",
+   "surface": "freely offered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "ne.dav",
+   "samples": [
+    "Ezra.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5069",
+   "surface": "freely offers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "ne.dav",
+   "samples": [
+    "Ezra.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5069",
+   "surface": "freewill offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "ne.dav",
+   "samples": [
+    "Ezra.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5069",
+   "surface": "vowed willingly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be willing",
+   "transliteration": "ne.dav",
+   "samples": [
+    "Ezra.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5273A",
+   "surface": "lovely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "na.im",
+   "samples": [
+    "2Sam.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5273A",
+   "surface": "pleasant places",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "na.im",
+   "samples": [
+    "Ps.16.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5273A",
+   "surface": "pleasantness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "na.im",
+   "samples": [
+    "Job.36.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5273A",
+   "surface": "pleasures",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "na.im",
+   "samples": [
+    "Ps.16.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5273A",
+   "surface": "truly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasant",
+   "transliteration": "na.im",
+   "samples": [
+    "Song.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5276",
+   "surface": "beauty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pleasant",
+   "transliteration": "na.em",
+   "samples": [
+    "Ezek.32.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5276",
+   "surface": "delight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be pleasant",
+   "transliteration": "na.em",
+   "samples": [
+    "Prov.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5278",
+   "surface": "beauty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasantness",
+   "transliteration": "no.am",
+   "samples": [
+    "Ps.27.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5278",
+   "surface": "pleasantness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasantness",
+   "transliteration": "no.am",
+   "samples": [
+    "Prov.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5282",
+   "surface": "pleasant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pleasantness",
+   "transliteration": "na.a.man",
+   "samples": [
+    "Isa.17.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5730B",
+   "surface": "pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delight",
+   "transliteration": "ed.nah",
+   "samples": [
+    "Gen.18.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6026",
+   "surface": "delicate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "a.nog",
+   "samples": [
+    "Deut.28.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6026",
+   "surface": "delicately bred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "a.nog",
+   "samples": [
+    "Jer.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6026",
+   "surface": "mocking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "a.nog",
+   "samples": [
+    "Isa.57.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6027",
+   "surface": "delight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delight",
+   "transliteration": "o.neg",
+   "samples": [
+    "Isa.58.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6027",
+   "surface": "pleasant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delight",
+   "transliteration": "o.neg",
+   "samples": [
+    "Isa.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6165",
+   "surface": "pant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "a.rag",
+   "samples": [
+    "Joel.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6770",
+   "surface": "suffer thirst",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to thirst",
+   "transliteration": "tsa.me",
+   "samples": [
+    "Job.24.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6770",
+   "surface": "thirsted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to thirst",
+   "transliteration": "tsa.me",
+   "samples": [
+    "Exod.17.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6772",
+   "surface": "parched ground",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thirst",
+   "transliteration": "tsa.ma",
+   "samples": [
+    "Jer.48.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6772",
+   "surface": "thirsty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thirst",
+   "transliteration": "tsa.ma",
+   "samples": [
+    "Ezek.19.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6899",
+   "surface": "collection",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "collection",
+   "transliteration": "qib.buts",
+   "samples": [
+    "Isa.57.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7065",
+   "surface": "zeal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be jealous",
+   "transliteration": "qa.na",
+   "samples": [
+    "2Sam.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7067G",
+   "surface": "jealous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "Jealous [God]",
+   "transliteration": "qan.na",
+   "samples": [
+    "Exod.34.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7068",
+   "surface": "exceedingly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "jealousy",
+   "transliteration": "qin.ah",
+   "samples": [
+    "Zech.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7068",
+   "surface": "jealous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "jealousy",
+   "transliteration": "qin.ah",
+   "samples": [
+    "Ezek.36.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "acceptance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Isa.60.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "desired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Esth.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "enjoy acceptance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Prov.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "good pleasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Ps.51.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "please",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Neh.9.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "to him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Prov.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "willfulness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Gen.49.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7522",
+   "surface": "would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "acceptance",
+   "transliteration": "ra.tson",
+   "samples": [
+    "Neh.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7602A",
+   "surface": "hastens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "sha.aph",
+   "samples": [
+    "Eccl.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7602A",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "sha.aph",
+   "samples": [
+    "Job.36.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7602A",
+   "surface": "longs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "sha.aph",
+   "samples": [
+    "Job.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7602A",
+   "surface": "sniffing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to long for",
+   "transliteration": "sha.aph",
+   "samples": [
+    "Jer.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7904",
+   "surface": "lusty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lust",
+   "transliteration": "sha.khah",
+   "samples": [
+    "Jer.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8173B",
+   "surface": "bounced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "sha.a",
+   "samples": [
+    "Isa.66.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8173B",
+   "surface": "cheer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "sha.a",
+   "samples": [
+    "Ps.94.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8173B",
+   "surface": "play",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to delight",
+   "transliteration": "sha.a",
+   "samples": [
+    "Isa.11.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8191",
+   "surface": "darling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delight",
+   "transliteration": "sha.a.shu.im",
+   "samples": [
+    "Jer.31.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8191",
+   "surface": "delighting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delight",
+   "transliteration": "sha.a.shu.im",
+   "samples": [
+    "Prov.8.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8191",
+   "surface": "pleasant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "delight",
+   "transliteration": "sha.a.shu.im",
+   "samples": [
+    "Isa.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8375",
+   "surface": "longing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "longing",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Ps.119.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "choicest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Job.33.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "craved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Ps.78.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "craves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Prov.21.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "delight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Gen.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "desired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Prov.19.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "desires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Ps.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "longing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Ps.38.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8378",
+   "surface": "wanton",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "desire",
+   "transliteration": "ta.a.vah",
+   "samples": [
+    "Ps.106.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

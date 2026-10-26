@@ -1,0 +1,1139 @@
+{
+ "cluster": "M78",
+ "cluster_name": "Slavery & Bondage",
+ "built_at": "2026-10-26T04:27:55Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 68,
+  "head": 25,
+  "tail": 43,
+  "hits": 260,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G1401",
+   "surface": "servant",
+   "part": "head",
+   "hits": 55,
+   "verses": 54,
+   "gloss": "slave",
+   "transliteration": "doulos",
+   "samples": [
+    "Luke.14.21",
+    "Luke.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1401",
+   "surface": "servants",
+   "part": "head",
+   "hits": 39,
+   "verses": 39,
+   "gloss": "slave",
+   "transliteration": "doulos",
+   "samples": [
+    "1Pet.2.16",
+    "Matt.21.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1398",
+   "surface": "serve",
+   "part": "head",
+   "hits": 13,
+   "verses": 11,
+   "gloss": "be a slave",
+   "transliteration": "douleuō",
+   "samples": [
+    "1Tim.6.2",
+    "Rom.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "burden",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "Exod.23.5",
+    "Ps.38.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1401",
+   "surface": "slave",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "slave",
+   "transliteration": "doulos",
+   "samples": [
+    "Gal.3.28",
+    "Rev.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1401",
+   "surface": "slaves",
+   "part": "head",
+   "hits": 8,
+   "verses": 6,
+   "gloss": "slave",
+   "transliteration": "doulos",
+   "samples": [
+    "1Cor.12.13",
+    "Rom.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1401",
+   "surface": "bondservants",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "slave",
+   "transliteration": "doulos",
+   "samples": [
+    "1Cor.7.23",
+    "Eph.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1401",
+   "surface": "bondservant",
+   "part": "head",
+   "hits": 6,
+   "verses": 4,
+   "gloss": "slave",
+   "transliteration": "doulos",
+   "samples": [
+    "1Cor.7.22",
+    "Eph.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4889",
+   "surface": "fellow servant",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "fellow slave",
+   "transliteration": "sundoulos",
+   "samples": [
+    "Col.1.7",
+    "Col.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "carry",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "Num.4.31",
+    "Num.4.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5450",
+   "surface": "burdens",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "burden",
+   "transliteration": "siv.lah",
+   "samples": [
+    "Exod.2.11",
+    "Exod.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1397",
+   "surface": "slavery",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "slavery",
+   "transliteration": "douleia",
+   "samples": [
+    "Gal.4.24",
+    "Gal.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4889",
+   "surface": "fellow servants",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "fellow slave",
+   "transliteration": "sundoulos",
+   "samples": [
+    "Matt.18.28",
+    "Matt.24.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0922",
+   "surface": "burden",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "burden",
+   "transliteration": "baros",
+   "samples": [
+    "Acts.15.28",
+    "Matt.20.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1398",
+   "surface": "enslaved",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be a slave",
+   "transliteration": "douleuō",
+   "samples": [
+    "Gal.4.8",
+    "John.8.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1402",
+   "surface": "enslaved",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to enslave",
+   "transliteration": "douloō",
+   "samples": [
+    "1Cor.7.15",
+    "2Pet.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5413",
+   "surface": "burdens",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "burden",
+   "transliteration": "fortion",
+   "samples": [
+    "Luke.11.46",
+    "Matt.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "loads",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "2Kgs.8.9",
+    "Neh.13.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "music",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "1Chr.15.22",
+    "1Chr.15.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5448",
+   "surface": "burden",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "burden",
+   "transliteration": "so.vel",
+   "samples": [
+    "Isa.10.27",
+    "Isa.14.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5659",
+   "surface": "slavery",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "slavery",
+   "transliteration": "av.dut",
+   "samples": [
+    "Ezra.9.8",
+    "Neh.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1398",
+   "surface": "served",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be a slave",
+   "transliteration": "douleuō",
+   "samples": [
+    "Luke.15.29",
+    "Phil.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1398",
+   "surface": "serving",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be a slave",
+   "transliteration": "douleuō",
+   "samples": [
+    "Acts.20.19",
+    "Col.3.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1398",
+   "surface": "slaves",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be a slave",
+   "transliteration": "douleuō",
+   "samples": [
+    "Gal.4.9",
+    "Titus.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1399",
+   "surface": "servant",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "female slave",
+   "transliteration": "doulē",
+   "samples": [
+    "Luke.1.38",
+    "Luke.1.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1402",
+   "surface": "become slaves",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to enslave",
+   "transliteration": "douloō",
+   "samples": [
+    "Rom.6.18",
+    "Rom.6.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3610",
+   "surface": "servant",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "slave",
+   "transliteration": "oiketēs",
+   "samples": [
+    "Luke.16.13",
+    "Rom.14.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3610",
+   "surface": "servants",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "slave",
+   "transliteration": "oiketēs",
+   "samples": [
+    "1Pet.2.18",
+    "Acts.10.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "bearing burdens",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "Num.4.24",
+    "Num.4.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "load",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "Isa.22.25",
+    "Neh.13.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "tribute",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "2Chr.17.11",
+    "Hos.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5449",
+   "surface": "bear burdens",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "burden",
+   "transliteration": "sab.bal",
+   "samples": [
+    "2Chr.2.18",
+    "2Chr.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5449",
+   "surface": "burden-bearers",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "burden",
+   "transliteration": "sab.bal",
+   "samples": [
+    "1Kgs.5.15",
+    "2Chr.34.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0922",
+   "surface": "burdens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "baros",
+   "samples": [
+    "Gal.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0922",
+   "surface": "made demands",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "baros",
+   "samples": [
+    "1Thess.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0922",
+   "surface": "weight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "baros",
+   "samples": [
+    "2Cor.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1396",
+   "surface": "under control",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enslave",
+   "transliteration": "doulagōgeō",
+   "samples": [
+    "1Cor.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1397",
+   "surface": "bondage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slavery",
+   "transliteration": "douleia",
+   "samples": [
+    "Rom.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1398",
+   "surface": "rendering service",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be a slave",
+   "transliteration": "douleuō",
+   "samples": [
+    "Eph.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1398",
+   "surface": "serves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be a slave",
+   "transliteration": "douleuō",
+   "samples": [
+    "Rom.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1398",
+   "surface": "slavery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be a slave",
+   "transliteration": "douleuō",
+   "samples": [
+    "Gal.4.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1399",
+   "surface": "female servants",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "female slave",
+   "transliteration": "doulē",
+   "samples": [
+    "Acts.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1401",
+   "surface": "servant’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "slave",
+   "transliteration": "doulos",
+   "samples": [
+    "John.18.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1402",
+   "surface": "enslave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enslave",
+   "transliteration": "douloō",
+   "samples": [
+    "Acts.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1402",
+   "surface": "servant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enslave",
+   "transliteration": "douloō",
+   "samples": [
+    "1Cor.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1402",
+   "surface": "slaves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enslave",
+   "transliteration": "douloō",
+   "samples": [
+    "Titus.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2615",
+   "surface": "makes slaves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enslave",
+   "transliteration": "katadouloō",
+   "samples": [
+    "2Cor.11.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2615",
+   "surface": "slavery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enslave",
+   "transliteration": "katadouloō",
+   "samples": [
+    "Gal.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5413",
+   "surface": "burden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "fortion",
+   "samples": [
+    "Matt.11.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5413",
+   "surface": "load",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "fortion",
+   "samples": [
+    "Gal.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0405",
+   "surface": "pressure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "e.kheph",
+   "samples": [
+    "Job.33.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2960",
+   "surface": "burden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "to.rach",
+   "samples": [
+    "Isa.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2960",
+   "surface": "weight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "to.rach",
+   "samples": [
+    "Deut.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3053",
+   "surface": "burden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "ye.hav",
+   "samples": [
+    "Ps.55.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4614",
+   "surface": "heavy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "ma.a.ma.sah",
+   "samples": [
+    "Zech.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "added burden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "2Sam.19.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "burdens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "Isa.46.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "carrying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "Num.4.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "could carry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "2Chr.20.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "desire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "Ezek.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "oracle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "Prov.31.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4853A",
+   "surface": "the",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "mas.sa",
+   "samples": [
+    "Prov.30.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5385",
+   "surface": "carry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "ne.su.ah",
+   "samples": [
+    "Isa.46.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5447",
+   "surface": "burden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "se.vel",
+   "samples": [
+    "Ps.81.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5447",
+   "surface": "burdens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "se.vel",
+   "samples": [
+    "Neh.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5447",
+   "surface": "forced labor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "se.vel",
+   "samples": [
+    "1Kgs.11.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5449",
+   "surface": "burdens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "sab.bal",
+   "samples": [
+    "Neh.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5450",
+   "surface": "heavy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burden",
+   "transliteration": "siv.lah",
+   "samples": [
+    "Exod.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "M03": {
+  "groups": [
+   ["M03_weeping", "Weeping, tears", "grief shed: weeping, tears, crying bitterly", "group", "renders weeping"],
+   ["M03_mourning", "Mourning, lament, wailing", "grief voiced for a loss: mourning, lament, wailing, dirge", "group", "renders mourning or lament"],
+   ["M03_woe", "Woe, alas", "the cry of woe or alas", "group", "renders the cry of woe"],
+   ["M03_sorrow", "Sorrow, grief, distress", "grief borne within: sorrow, grief, being troubled or distressed", "group", "renders sorrow or distress"],
+   ["M03_trouble", "Trouble, toil, misery", "grievous trouble and toil: amal, misery, bringing trouble", "group", "renders trouble or toil"],
+   ["M03_bitterness", "Bitterness", "grief as bitterness of soul", "group", "renders bitterness"],
+   ["M03_groaning", "Groaning, sighing", "grief in the breath: groaning, sighing", "group", "renders groaning or sighing"],
+   ["M03_torment", "Torment, pangs", "pain that torments: torment, pangs, travail", "group", "renders torment or pangs"],
+   ["M03_not_this_sense", "Not the cluster's sense", "renderings with no sense of grief: cords, a line, 'truly', cutting branches, a lion's growl, bitter herbs, mischief, fear", "not_this_sense", "carries no sense of grief"]
+  ],
+  "surf": {
+   "M03_weeping": ["wept", "weep", "weeping", "tears", "bitterly"],
+   "M03_mourning": ["mourning", "mourn", "mourns", "mourned", "lament", "lamented", "lamentation", "mourners", "sang a dirge", "wail", "wails", "wailing", "be wailing"],
+   "M03_woe": ["woe", "ah", "alas"],
+   "M03_sorrow": ["sorrow", "sorrowful", "grieved", "grieve", "grief", "grievous", "distressed", "sad", "painful", "troubled"],
+   "M03_trouble": ["toil", "trouble", "misery", "bring trouble"],
+   "M03_bitterness": ["bitter", "bitterness", "made bitter", "bitter pain"],
+   "M03_groaning": ["groan", "groans", "groaning", "sigh", "sighing"],
+   "M03_torment": ["torment", "tormented", "pangs", "labor"],
+   "M03_not_this_sense": ["cords", "cord", "line", "but", "nevertheless", "no", "cut", "up", "growl", "bitter herbs", "mischief", "terrified"]
+  },
+  "over": {
+   "G3076|pain": ["M03_sorrow", "'if I cause you pain' (2Cor 2:2): grief caused to another", 0],
+   "G4192|pain": ["M03_torment", "'they gnawed their tongues in anguish, for their pain' (Rev 16:11), 'no more pain' (Rev 21:4)", 0],
+   "H4751|bitter pain": ["M03_not_this_sense", "'the water of bitterness that brings the curse ... bitter pain' (Num 5:24): the literal ordeal water", 0],
+   "H4751|bitterly": ["M03_weeping", "'cry out bitterly' (Ezek 27:30), 'weep bitterly' (Isa 33:7)", 0],
+   "H5999|mischief": ["M03_not_this_sense", "'conceives mischief' (Ps 7:14): harm intended, not grief", 0],
+   "G5015|terrified": ["M03_not_this_sense", "'they were terrified' (Mark 6:50): fear, the sense of M01", 0],
+   "H1945|up": ["M03_not_this_sense", "'Up! Up! Flee' (Zech 2:6): hoy as a summons, not woe", 0],
+   "H5098|growl": ["M03_not_this_sense", "'they growl like young lions' (Isa 5:29): a lion's growl", 0],
+   "G2875|cut": ["M03_not_this_sense", "'others cut branches' (Mark 11:8): cutting, not beating the breast", 0],
+   "H4844|bitter herbs": ["M03_not_this_sense", "'with bitter herbs' (Exod 12:8): the Passover herbs", 0],
+   "H2254C|labor": ["M03_torment", "'your mother was in labor with you' (Song 8:5): the pangs of birth", 0],
+   "H0061|but": ["M03_not_this_sense", "abal 'but, truly' (2Chr 1:4): a particle", 0],
+   "H0061|nevertheless": ["M03_not_this_sense", "abal 'nevertheless' (2Chr 19:3): a particle", 0],
+   "H0061|no": ["M03_not_this_sense", "abal 'no' (Gen 17:19): a particle", 0]
+  }
+ },
+ "M04": {
+  "groups": [
+   ["M04_joy", "Joy, gladness, mirth", "joy as a state: joy, gladness, mirth, being joyful", "group", "renders the state of joy"],
+   ["M04_rejoicing", "Rejoicing, exulting", "joy acted and voiced: rejoice, exult, be glad, celebrate", "group", "renders rejoicing"],
+   ["M04_laughter", "Laughter, play", "joy in laughter and play", "group", "renders laughter or play"],
+   ["M04_pleasing", "Pleasing another", "seeking to please or being pleasing to another", "group", "renders pleasing another"],
+   ["M04_not_this_sense", "Not the cluster's sense", "renderings with no sense of joy: the pleasing aroma of an offering, a greeting", "not_this_sense", "carries no sense of joy"]
+  ],
+  "surf": {
+   "M04_joy": ["joy", "gladness", "mirth", "joyful", "pleasure", "take heart"],
+   "M04_rejoicing": ["rejoice", "rejoices", "rejoiced", "rejoicing", "glad", "exult", "exultant", "gladly", "celebrating"],
+   "M04_laughter": ["laugh", "laughs", "play"],
+   "M04_pleasing": ["please", "pleased", "pleasing"],
+   "M04_not_this_sense": ["aroma", "greetings", "hail"]
+  },
+  "over": {
+   "H5207|pleasing": ["M04_not_this_sense", "nichoach 'a pleasing aroma' (Lev 2:12, Ezek 20:28): the soothing smell of an offering", 0],
+   "H5207|aroma": ["M04_not_this_sense", "nichoach 'a pleasing aroma' (Num 28:13): the smell of an offering", 0],
+   "G5463|greetings": ["M04_not_this_sense", "chairein 'greetings' (Jas 1:1, Acts 23:26): the letter's greeting", 0],
+   "G5463|hail": ["M04_not_this_sense", "'Hail, King of the Jews' (Mark 15:18): a greeting, here in mockery", 0],
+   "H8057|pleasure": ["M04_joy", "'test you with pleasure' (Eccl 2:1), 'kept my heart from no pleasure' (Eccl 2:10): enjoyment", 0],
+   "H7832|play": ["M04_laughter", "'the wild beasts play there' (Job 40:20), 'Leviathan to play in it' (Ps 104:26)", 0]
+  }
+ },
+ "M05": {
+  "groups": [
+   ["M05_doing_good", "Doing good, generosity", "good done to another: doing good, good deeds, generosity, alms, sharing", "group", "renders good done to another"],
+   ["M05_good", "Good, better, right (a quality of something)", "agathos, kalos, tov as a quality of what they qualify; where 'good' is the good done to another it is the characteristic, settled per verse (E4)", "qualifier", "renders a quality of what it qualifies"],
+   ["M05_kindness", "Kindness, gentleness, tenderness", "the gentle disposition: kindness, gentleness, meekness, tenderness, humility", "group", "renders kindness or gentleness"],
+   ["M05_mercy", "Pity, sparing, compassion", "pity that spares: compassion, pity, sparing, mercy", "group", "renders pity that spares"],
+   ["M05_friendship", "Friendship, fellowship, affection", "bonds between people: friend, fellowship, partnership, the kiss", "group", "renders friendship or fellowship"],
+   ["M05_godly", "The godly, the faithful", "chasid and its kin: the godly, saints, the devout, the faithful ones", "group", "renders the godly"],
+   ["M05_not_this_sense", "Not the cluster's sense", "renderings with no sense of kindness: 'good news', a kind or species, showing, warning, goods, joy, approval, a faint heart", "not_this_sense", "carries no sense of kindness"]
+  ],
+  "surf": {
+   "M05_doing_good": ["good deed", "goodness", "well-doing", "generosity", "kindly", "alms", "needy", "contribution", "amend", "do"],
+   "M05_good": ["good", "better", "right", "honorable", "noble", "beautiful", "well", "healthy", "stately", "prosperity", "good things", "go well", "good man", "good person", "honest"],
+   "M05_kindness": ["kind", "gentle", "gentleness", "meekness", "humility", "tender", "soft", "most tender", "hospitable", "enduring evil"],
+   "M05_mercy": ["pity", "spare", "spared", "spares", "compassion", "merciful"],
+   "M05_friendship": ["friend", "friends", "fellowship", "participation", "share", "partner", "partners", "participants", "kiss", "kissed", "kisses"],
+   "M05_godly": ["saints", "godly", "devout", "faithful ones"],
+   "M05_not_this_sense": ["news", "case", "manifest", "show", "warned", "produce", "faint", "inexperienced", "merry", "cheerful", "pleased", "please", "approved", "diligently", "goods"]
+  },
+  "over": {
+   "G0018|good": ["M05_good", "agathos 'good': as a quality in many verses; 'hold fast to what is good' (Rom 12:9), 'ready for every good work' (Titus 3:1) is good done, settled per verse", 1],
+   "G2570G|good": ["M05_good", "kalos 'good': as a quality, and 'good works' (Titus 2:14) as good done, settled per verse", 1],
+   "H2896B|good": ["M05_good", "tov 'good': as a quality, and 'love good' (Amos 5:15) as the good itself, settled per verse", 1],
+   "H3190|good": ["M05_doing_good", "yatav 'do good' (Jer 32:41 'I will rejoice in doing them good'); 'he has ceased to do good' (Ps 36:3)", 1],
+   "G0015|good": ["M05_doing_good", "agathopoieo 'do good' (Luke 6:33, 1Pet 2:20)", 0],
+   "G0014|good": ["M05_doing_good", "agathoergeo 'do good, be rich in good works' (1Tim 6:18)", 0],
+   "G0016|good": ["M05_doing_good", "agathopoiia 'while doing good' (1Pet 4:19)", 0],
+   "G0017|good": ["M05_doing_good", "agathopoios 'those who do good' (1Pet 2:14)", 0],
+   "G5543|good": ["M05_kindness", "chrestos 'the Lord is good' (1Pet 2:3): kind; 'the old is good' (Luke 5:39) is a quality", 1],
+   "G0018|good things": ["M05_doing_good", "'share all good things with the one who teaches' (Gal 6:6)", 0],
+   "H2896B|good things": ["M05_doing_good", "'they are filled with good things' (Ps 104:28): good given", 0],
+   "G0018|generosity": ["M05_doing_good", "'do you begrudge my generosity?' (Matt 20:15)", 0],
+   "G0018|kind": ["M05_kindness", "'kind, submissive' (Titus 2:5)", 0],
+   "H2623|kind": ["M05_kindness", "'kind in all his works' (Ps 145:13, 17): chasid of the LORD", 0],
+   "H2623|merciful": ["M05_godly", "chasid 'with the merciful you show yourself merciful' (Ps 18:25), 'I am merciful' (Jer 3:12)", 1],
+   "H2616A|merciful": ["M05_mercy", "chasad 'with the merciful you show yourself merciful' (2Sam 22:26)", 0],
+   "H2178|kind": ["M05_not_this_sense", "zan 'every kind of music' (Dan 3:10): a sort, not kindness", 0],
+   "H2177|produce": ["M05_not_this_sense", "zan 'all kinds of produce' (Ps 144:13): a sort", 0],
+   "H1309|news": ["M05_not_this_sense", "besorah 'good news' (2Kgs 7:9): tidings", 0],
+   "G1718|case": ["M05_not_this_sense", "emphanizo 'laid out their case' (Acts 25:2): to inform", 0],
+   "G1718|manifest": ["M05_not_this_sense", "emphanizo 'manifest myself' (John 14:21): to show", 0],
+   "G5263|show": ["M05_not_this_sense", "hupodeiknumi 'I will show him' (Acts 9:16)", 0],
+   "G5263|warned": ["M05_not_this_sense", "hupodeiknumi 'who warned you to flee' (Matt 3:7)", 0],
+   "H7401|faint": ["M05_not_this_sense", "rakak 'do not let your heart be faint' (Isa 7:4): faintness of heart, the sense of M24", 0],
+   "H7390|inexperienced": ["M05_not_this_sense", "rak 'young and inexperienced' (1Chr 22:5): youth", 0],
+   "H3190|merry": ["M05_not_this_sense", "'let your heart be merry' (Judg 19:6): joy, the sense of M04", 0],
+   "H3190|cheerful": ["M05_not_this_sense", "'a glad heart makes a cheerful face' (Prov 15:13): joy, the sense of M04", 0],
+   "H3190|pleased": ["M05_not_this_sense", "'the young woman who pleases the king' (Esth 2:4): approval", 0],
+   "H3190|please": ["M05_not_this_sense", "'if it please my father' (1Sam 20:13): approval", 0],
+   "H3190|approved": ["M05_not_this_sense", "'Moses approved' (Lev 10:20): approval", 0],
+   "H3190|diligently": ["M05_not_this_sense", "'inquire diligently' (Deut 13:14): thoroughly", 0],
+   "G0018|goods": ["M05_not_this_sense", "'my grain and my goods' (Luke 12:18): possessions", 0],
+   "G0018|healthy": ["M05_good", "'every healthy tree bears good fruit' (Matt 7:17): a quality", 0],
+   "H3190|go well": ["M05_good", "'that it may go well with you' (Deut 22:7): well-being", 0],
+   "G2842|contribution": ["M05_doing_good", "'a contribution for the poor' (Rom 15:26), 'the generosity of your contribution' (2Cor 9:13)", 0],
+   "H3190|amend": ["M05_doing_good", "'amend your ways' (Jer 7:5): make your ways good", 0],
+   "H3190|do": ["M05_doing_good", "'the good that I had intended to do' (Jer 18:10)", 0]
+  }
+ }
+}

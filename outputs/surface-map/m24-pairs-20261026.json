@@ -1,0 +1,9535 @@
+{
+ "cluster": "M24",
+ "cluster_name": "Faintness & Despair",
+ "built_at": "2026-10-26T04:20:24Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 582,
+  "head": 256,
+  "tail": 326,
+  "hits": 1633,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H7451C",
+   "surface": "disaster",
+   "part": "head",
+   "hits": 75,
+   "verses": 71,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Jer.23.12",
+    "Mic.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "broken",
+   "part": "head",
+   "hits": 51,
+   "verses": 50,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Dan.11.22",
+    "Ezek.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6041",
+   "surface": "poor",
+   "part": "head",
+   "hits": 48,
+   "verses": 46,
+   "gloss": "afflicted",
+   "transliteration": "a.ni",
+   "samples": [
+    "Ezek.18.12",
+    "Hab.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3490",
+   "surface": "fatherless",
+   "part": "head",
+   "hits": 36,
+   "verses": 36,
+   "gloss": "orphan",
+   "transliteration": "ya.tom",
+   "samples": [
+    "Exod.22.24",
+    "Ps.94.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "dismayed",
+   "part": "head",
+   "hits": 33,
+   "verses": 30,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Jer.17.18",
+    "Obad.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6040",
+   "surface": "affliction",
+   "part": "head",
+   "hits": 32,
+   "verses": 32,
+   "gloss": "affliction",
+   "transliteration": "o.ni",
+   "samples": [
+    "Job.36.21",
+    "Ps.44.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "break",
+   "part": "head",
+   "hits": 32,
+   "verses": 32,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Jonah.1.4",
+    "Prov.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "harm",
+   "part": "head",
+   "hits": 28,
+   "verses": 27,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Esth.7.7",
+    "Jer.44.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "trouble",
+   "part": "head",
+   "hits": 25,
+   "verses": 25,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "Hab.3.16",
+    "Ps.138.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3958",
+   "surface": "suffer",
+   "part": "head",
+   "hits": 23,
+   "verses": 23,
+   "gloss": "to suffer",
+   "transliteration": "paschō",
+   "samples": [
+    "1Pet.4.15",
+    "Rev.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "distress",
+   "part": "head",
+   "hits": 22,
+   "verses": 21,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "Jonah.2.2",
+    "Ps.78.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "destruction",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Isa.59.7",
+    "Lam.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "dried up",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Ezek.19.12",
+    "Ps.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "tribulation",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "Matt.13.21",
+    "Rev.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "afflict",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "2Sam.7.10",
+    "Nah.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "afflicted",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Nah.1.12",
+    "Zech.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "trouble",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "1Kgs.20.7",
+    "Lam.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "broke",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Jer.28.10",
+    "Job.29.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6041",
+   "surface": "afflicted",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "afflicted",
+   "transliteration": "a.ni",
+   "samples": [
+    "Job.36.15",
+    "Ps.22.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3958",
+   "surface": "suffered",
+   "part": "head",
+   "hits": 14,
+   "verses": 13,
+   "gloss": "to suffer",
+   "transliteration": "paschō",
+   "samples": [
+    "1Thess.2.14",
+    "Heb.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6102",
+   "surface": "sluggard",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "sluggish",
+   "transliteration": "a.tsel",
+   "samples": [
+    "Prov.13.4",
+    "Prov.15.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "distress",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Hos.5.15",
+    "Judg.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "dismayed",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Ezek.26.18",
+    "Isa.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0957",
+   "surface": "prey",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "plunder",
+   "transliteration": "baz",
+   "samples": [
+    "Ezek.36.5",
+    "Isa.33.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "affliction",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "Acts.7.11",
+    "Jas.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "calamity",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Dan.9.14",
+    "Deut.29.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3804",
+   "surface": "sufferings",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "suffering",
+   "transliteration": "pathēma",
+   "samples": [
+    "Col.1.24",
+    "Phil.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0091",
+   "surface": "wrong",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to harm",
+   "transliteration": "adikeō",
+   "samples": [
+    "1Cor.6.8",
+    "Col.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0957",
+   "surface": "plunder",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "plunder",
+   "transliteration": "baz",
+   "samples": [
+    "Ezek.38.12",
+    "Isa.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3021",
+   "surface": "weary",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "be weary/toil",
+   "transliteration": "ya.ge.a",
+   "samples": [
+    "Jer.45.3",
+    "Lam.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5889",
+   "surface": "weary",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "faint",
+   "transliteration": "a.yeph",
+   "samples": [
+    "Isa.5.27",
+    "Job.22.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "trouble",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Ps.119.143",
+    "Ps.66.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "troubles",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "Deut.31.17",
+    "Zech.10.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3018",
+   "surface": "labor",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "toil",
+   "transliteration": "ye.gi.a",
+   "samples": [
+    "Isa.55.2",
+    "Job.39.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6087A",
+   "surface": "grieved",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to hurt",
+   "transliteration": "a.tsav",
+   "samples": [
+    "1Sam.20.34",
+    "Gen.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "labor",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "John.4.38",
+    "Phil.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "wither",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Ezek.17.9",
+    "Job.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3811",
+   "surface": "weary",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "be weary",
+   "transliteration": "la.ah",
+   "samples": [
+    "Isa.1.14",
+    "Jer.15.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3905",
+   "surface": "oppressed",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to oppress",
+   "transliteration": "la.chats",
+   "samples": [
+    "2Kgs.13.22",
+    "Judg.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218K",
+   "surface": "companies",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "head: group",
+   "transliteration": "rosh",
+   "samples": [
+    "1Sam.11.11",
+    "Judg.7.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0091",
+   "surface": "harm",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to harm",
+   "transliteration": "adikeō",
+   "samples": [
+    "Rev.11.5",
+    "Rev.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "afflictions",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "2Thess.1.4",
+    "Acts.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2873",
+   "surface": "labor",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "labor",
+   "transliteration": "kopos",
+   "samples": [
+    "1Thess.1.3",
+    "John.4.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0927",
+   "surface": "alarmed",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to dismay",
+   "transliteration": "be.hal",
+   "samples": [
+    "Dan.4.19",
+    "Dan.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0961",
+   "surface": "plunder",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "plunder",
+   "transliteration": "biz.zah",
+   "samples": [
+    "Dan.11.24",
+    "Esth.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "withers",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Ezek.17.9",
+    "Isa.40.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "wrong",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Lev.19.33",
+    "Lev.25.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4341",
+   "surface": "pain",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "pain",
+   "transliteration": "makh.ov",
+   "samples": [
+    "Jer.45.3",
+    "Ps.69.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "violated",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "2Sam.13.22",
+    "2Sam.13.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "hurt",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Eccl.5.13",
+    "Ps.38.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "leave",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Deut.31.8",
+    "Josh.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "broke in pieces",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "2Chr.23.17",
+    "2Chr.31.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "anguish",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Isa.13.8",
+    "Joel.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "dry",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Jer.51.36",
+    "Job.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "withered",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Ezek.19.12",
+    "Jonah.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3021",
+   "surface": "labored",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be weary/toil",
+   "transliteration": "ya.ge.a",
+   "samples": [
+    "Isa.47.12",
+    "Isa.47.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3021",
+   "surface": "wearied",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "be weary/toil",
+   "transliteration": "ya.ge.a",
+   "samples": [
+    "Isa.43.23",
+    "Isa.43.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3905",
+   "surface": "oppress",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to oppress",
+   "transliteration": "la.chats",
+   "samples": [
+    "Amos.6.14",
+    "Exod.23.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4341",
+   "surface": "sorrow",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "pain",
+   "transliteration": "makh.ov",
+   "samples": [
+    "2Chr.6.29",
+    "Lam.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4689",
+   "surface": "distress",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "distress",
+   "transliteration": "ma.tsoq",
+   "samples": [
+    "Deut.28.53",
+    "Jer.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5848C",
+   "surface": "faint",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to enfeeble",
+   "transliteration": "a.taph",
+   "samples": [
+    "Isa.57.16",
+    "Lam.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "humble",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Isa.58.5",
+    "Ps.55.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6041",
+   "surface": "humble",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "afflicted",
+   "transliteration": "a.ni",
+   "samples": [
+    "Ps.18.27",
+    "Zeph.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218K",
+   "surface": "company",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "head: group",
+   "transliteration": "rosh",
+   "samples": [
+    "1Sam.13.18",
+    "Judg.9.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "pieces",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Deut.12.3",
+    "Jer.52.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "shattered",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Isa.21.9",
+    "Jer.14.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0726",
+   "surface": "caught up",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to seize",
+   "transliteration": "harpazō",
+   "samples": [
+    "1Thess.4.17",
+    "2Cor.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "toil",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "Col.1.29",
+    "Luke.12.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2873",
+   "surface": "labors",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "labor",
+   "transliteration": "kopos",
+   "samples": [
+    "2Cor.11.23",
+    "2Cor.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2256B",
+   "surface": "pangs",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "pain",
+   "transliteration": "che.vel",
+   "samples": [
+    "Hos.13.13",
+    "Isa.26.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "labor",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Isa.66.7",
+    "Isa.66.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2479",
+   "surface": "anguish",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "anguish",
+   "transliteration": "chal.cha.lah",
+   "samples": [
+    "Isa.21.3",
+    "Nah.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "shattered",
+   "part": "head",
+   "hits": 4,
+   "verses": 2,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Isa.7.8",
+    "Isa.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "up",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Ezek.17.24",
+    "Isa.42.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3021",
+   "surface": "labor",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be weary/toil",
+   "transliteration": "ya.ge.a",
+   "samples": [
+    "Hab.2.13",
+    "Jer.51.58"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3286",
+   "surface": "faint",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to faint",
+   "transliteration": "ya.eph",
+   "samples": [
+    "Isa.40.30",
+    "Isa.44.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3511",
+   "surface": "pain",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "pain",
+   "transliteration": "ke.ev",
+   "samples": [
+    "Isa.17.11",
+    "Job.16.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4691",
+   "surface": "distress",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "distress",
+   "transliteration": "me.tsu.qah",
+   "samples": [
+    "Ps.107.28",
+    "Ps.107.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5889",
+   "surface": "exhausted",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "faint",
+   "transliteration": "a.yeph",
+   "samples": [
+    "Gen.25.29",
+    "Gen.25.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "humbled",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Deut.8.3",
+    "Isa.58.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "violate",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Ezek.22.10",
+    "Judg.19.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "adversity",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "2Sam.4.9",
+    "Prov.24.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "anguish",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "Jer.4.31",
+    "Jer.49.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7219",
+   "surface": "poison",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "poison",
+   "transliteration": "rosh",
+   "samples": [
+    "Amos.6.12",
+    "Ps.69.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "alone",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "2Kgs.4.27",
+    "Job.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "feeble",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Ezek.7.17",
+    "Jer.49.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "breaks",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Isa.38.13",
+    "Ps.29.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "injured",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Exod.22.14",
+    "Ezek.34.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "wrecked",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "2Chr.20.37",
+    "Ezek.27.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "hurt",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Jer.10.19",
+    "Jer.30.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "wound",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Jer.14.17",
+    "Jer.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0091",
+   "surface": "hurt",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to harm",
+   "transliteration": "adikeō",
+   "samples": [
+    "Rev.2.11",
+    "Rev.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0091",
+   "surface": "wronged",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to harm",
+   "transliteration": "adikeō",
+   "samples": [
+    "2Cor.7.2",
+    "Phlm.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0726",
+   "surface": "force",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to seize",
+   "transliteration": "harpazō",
+   "samples": [
+    "Acts.23.10",
+    "John.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1606",
+   "surface": "breathed his last",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to expire",
+   "transliteration": "ekpneō",
+   "samples": [
+    "Mark.15.37",
+    "Mark.15.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1634",
+   "surface": "last",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to expire",
+   "transliteration": "ekpsuchō",
+   "samples": [
+    "Acts.5.10",
+    "Acts.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "worked",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "1Cor.15.10",
+    "Rom.16.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2873",
+   "surface": "toil",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "labor",
+   "transliteration": "kopos",
+   "samples": [
+    "2Cor.11.27",
+    "2Thess.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2873",
+   "surface": "trouble",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "labor",
+   "transliteration": "kopos",
+   "samples": [
+    "Gal.6.17",
+    "Matt.26.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3804",
+   "surface": "suffering",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "suffering",
+   "transliteration": "pathēma",
+   "samples": [
+    "1Pet.5.9",
+    "Heb.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3958",
+   "surface": "suffering",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to suffer",
+   "transliteration": "paschō",
+   "samples": [
+    "1Pet.2.19",
+    "Acts.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "terrified",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Job.23.15",
+    "Job.23.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "terrify",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Ps.2.5",
+    "Ps.83.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "troubled",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Ps.6.2",
+    "Ps.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0927",
+   "surface": "haste",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to dismay",
+   "transliteration": "be.hal",
+   "samples": [
+    "Dan.2.25",
+    "Dan.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0957",
+   "surface": "spoil",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "plunder",
+   "transliteration": "baz",
+   "samples": [
+    "Jer.15.13",
+    "Num.31.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1809",
+   "surface": "brought",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to languish",
+   "transliteration": "da.lal",
+   "samples": [
+    "Judg.6.6",
+    "Ps.79.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "broken",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Isa.9.4",
+    "Jer.48.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "terrified",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Hab.2.17",
+    "Job.31.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "dries up",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Job.14.11",
+    "Prov.17.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "dry up",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Job.12.15",
+    "Job.18.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3018",
+   "surface": "labors",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "toil",
+   "transliteration": "ye.gi.a",
+   "samples": [
+    "Deut.28.33",
+    "Hag.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "oppress",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Ezek.18.7",
+    "Ezek.45.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "oppressor",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Jer.25.38",
+    "Jer.50.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3286",
+   "surface": "weary",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to faint",
+   "transliteration": "ya.eph",
+   "samples": [
+    "Hab.2.13",
+    "Jer.51.58"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3544",
+   "surface": "faded",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "faint",
+   "transliteration": "ke.heh",
+   "samples": [
+    "Lev.13.21",
+    "Lev.13.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3811",
+   "surface": "wearied",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be weary",
+   "transliteration": "la.ah",
+   "samples": [
+    "Isa.47.13",
+    "Jer.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4341",
+   "surface": "sorrows",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "pain",
+   "transliteration": "makh.ov",
+   "samples": [
+    "Isa.53.3",
+    "Isa.53.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4933",
+   "surface": "spoil",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "plunder",
+   "transliteration": "me.shis.sah",
+   "samples": [
+    "Hab.2.7",
+    "Isa.42.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "wither",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Ps.1.3",
+    "Ps.37.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "withers",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Isa.1.30",
+    "Isa.24.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5848C",
+   "surface": "faints",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to enfeeble",
+   "transliteration": "a.taph",
+   "samples": [
+    "Ps.143.4",
+    "Ps.77.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "might humble",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Deut.8.2",
+    "Ezra.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6695B",
+   "surface": "anguish",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "anguish",
+   "transliteration": "tsu.qah",
+   "samples": [
+    "Isa.30.6",
+    "Prov.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7219",
+   "surface": "poisonous",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "poison",
+   "transliteration": "rosh",
+   "samples": [
+    "Deut.29.18",
+    "Hos.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "go",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Prov.4.13",
+    "Song.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "idle",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Exod.5.17",
+    "Exod.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "brokenhearted",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Isa.61.1",
+    "Ps.147.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "crash",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Jer.4.20",
+    "Zeph.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8496",
+   "surface": "oppression",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "oppression",
+   "transliteration": "tokh",
+   "samples": [
+    "Ps.10.7",
+    "Ps.72.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8513",
+   "surface": "hardship",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hardship",
+   "transliteration": "te.la.ah",
+   "samples": [
+    "Exod.18.8",
+    "Neh.9.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0091",
+   "surface": "wrongdoer",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to harm",
+   "transliteration": "adikeō",
+   "samples": [
+    "Acts.25.11",
+    "Col.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0096",
+   "surface": "disqualified",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "failing",
+   "transliteration": "adokimos",
+   "samples": [
+    "1Cor.9.27",
+    "2Tim.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0724",
+   "surface": "greed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "plunder",
+   "transliteration": "harpagē",
+   "samples": [
+    "Luke.11.39",
+    "Matt.23.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0726",
+   "surface": "snatch",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seize",
+   "transliteration": "harpazō",
+   "samples": [
+    "John.10.28",
+    "John.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0840",
+   "surface": "severe",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "severe",
+   "transliteration": "austēros",
+   "samples": [
+    "Luke.19.21",
+    "Luke.19.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1590",
+   "surface": "faint",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to faint",
+   "transliteration": "ekluō",
+   "samples": [
+    "Mark.8.3",
+    "Matt.15.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "suffering",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "Eph.3.13",
+    "Rom.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2559",
+   "surface": "harm",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to harm",
+   "transliteration": "kakoō",
+   "samples": [
+    "1Pet.3.13",
+    "Acts.18.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2800",
+   "surface": "breaking",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "breaking",
+   "transliteration": "klasis",
+   "samples": [
+    "Acts.2.42",
+    "Luke.24.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "labored",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "Gal.4.11",
+    "John.4.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3600",
+   "surface": "anguish",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be anguished",
+   "transliteration": "odunaō",
+   "samples": [
+    "Luke.16.24",
+    "Luke.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3737",
+   "surface": "orphans",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "orphan",
+   "transliteration": "orfanos",
+   "samples": [
+    "Jas.1.27",
+    "John.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3804",
+   "surface": "passions",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "suffering",
+   "transliteration": "pathēma",
+   "samples": [
+    "Gal.5.24",
+    "Rom.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3958",
+   "surface": "suffers",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to suffer",
+   "transliteration": "paschō",
+   "samples": [
+    "1Cor.12.26",
+    "Matt.17.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4730",
+   "surface": "calamities",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hardship",
+   "transliteration": "stenochōria",
+   "samples": [
+    "2Cor.12.10",
+    "2Cor.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4730",
+   "surface": "distress",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hardship",
+   "transliteration": "stenochōria",
+   "samples": [
+    "Rom.2.9",
+    "Rom.8.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4884",
+   "surface": "seized",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seize",
+   "transliteration": "sunarpazō",
+   "samples": [
+    "Acts.6.12",
+    "Luke.8.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5604",
+   "surface": "birth pains",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "labor",
+   "transliteration": "ōdin",
+   "samples": [
+    "Mark.13.8",
+    "Matt.24.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "panic",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Jer.51.32",
+    "Ps.48.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0927",
+   "surface": "alarm",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dismay",
+   "transliteration": "be.hal",
+   "samples": [
+    "Dan.4.19",
+    "Dan.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0928",
+   "surface": "terror",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dismay",
+   "transliteration": "be.ha.lah",
+   "samples": [
+    "Jer.15.8",
+    "Ps.78.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0961",
+   "surface": "spoil",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "plunder",
+   "transliteration": "biz.zah",
+   "samples": [
+    "2Chr.25.13",
+    "2Chr.28.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1742",
+   "surface": "faint",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "faint",
+   "transliteration": "dav.va",
+   "samples": [
+    "Isa.1.5",
+    "Lam.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1809",
+   "surface": "brought low",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to languish",
+   "transliteration": "da.lal",
+   "samples": [
+    "Isa.17.4",
+    "Ps.116.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "wounded",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "1Chr.10.3",
+    "1Sam.31.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "writhe",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Mic.4.10",
+    "Zech.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "writhes",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Isa.26.17",
+    "Job.15.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2976",
+   "surface": "despair",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to despair",
+   "transliteration": "ya.ash",
+   "samples": [
+    "1Sam.27.1",
+    "Eccl.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2976",
+   "surface": "hopeless",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to despair",
+   "transliteration": "ya.ash",
+   "samples": [
+    "Isa.57.10",
+    "Jer.2.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "dries",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Joel.1.12",
+    "Nah.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "parched",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Isa.19.5",
+    "Isa.19.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3013",
+   "surface": "afflicted",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to suffer",
+   "transliteration": "ya.gah",
+   "samples": [
+    "Lam.1.4",
+    "Lam.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3021",
+   "surface": "toil",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be weary/toil",
+   "transliteration": "ya.ge.a",
+   "samples": [
+    "Josh.7.3",
+    "Prov.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3023",
+   "surface": "weary",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "weary",
+   "transliteration": "ya.ge.a",
+   "samples": [
+    "2Sam.17.2",
+    "Deut.25.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3287",
+   "surface": "faint",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "weary",
+   "transliteration": "ya.eph",
+   "samples": [
+    "2Sam.16.2",
+    "Isa.40.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3490",
+   "surface": "fatherless child",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "orphan",
+   "transliteration": "ya.tom",
+   "samples": [
+    "Exod.22.22",
+    "Job.24.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3490",
+   "surface": "fatherless children",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "orphan",
+   "transliteration": "ya.tom",
+   "samples": [
+    "Jer.49.11",
+    "Ps.109.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3510",
+   "surface": "pain",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to pain",
+   "transliteration": "ka.av",
+   "samples": [
+    "Job.14.22",
+    "Ps.69.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3811",
+   "surface": "impatient",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be weary",
+   "transliteration": "la.ah",
+   "samples": [
+    "Job.4.2",
+    "Job.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3811",
+   "surface": "out",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be weary",
+   "transliteration": "la.ah",
+   "samples": [
+    "Job.16.7",
+    "Prov.26.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3905",
+   "surface": "pressed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to oppress",
+   "transliteration": "la.chats",
+   "samples": [
+    "Judg.1.34",
+    "Num.22.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4290",
+   "surface": "breaking in",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "breaking",
+   "transliteration": "mach.te.ret",
+   "samples": [
+    "Exod.22.2",
+    "Jer.2.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4691",
+   "surface": "anguish",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "distress",
+   "transliteration": "me.tsu.qah",
+   "samples": [
+    "Job.15.24",
+    "Zeph.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4712",
+   "surface": "distress",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "terror",
+   "transliteration": "me.tsar",
+   "samples": [
+    "Lam.1.3",
+    "Ps.118.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4933",
+   "surface": "plundered",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "plunder",
+   "transliteration": "me.shis.sah",
+   "samples": [
+    "Jer.30.16",
+    "Zeph.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "fades",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Isa.40.7",
+    "Isa.40.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "fading",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Isa.28.1",
+    "Isa.28.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "fall",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Isa.34.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "lost heart",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "2Sam.22.46",
+    "Ps.18.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5848C",
+   "surface": "feebler",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to enfeeble",
+   "transliteration": "a.taph",
+   "samples": [
+    "Gen.30.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5888",
+   "surface": "faint",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be faint",
+   "transliteration": "iph",
+   "samples": [
+    "1Sam.14.28",
+    "1Sam.14.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5889",
+   "surface": "faint",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "faint",
+   "transliteration": "a.yeph",
+   "samples": [
+    "Deut.25.18",
+    "Isa.29.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6001A",
+   "surface": "misery",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "labour[er]",
+   "transliteration": "a.mel",
+   "samples": [
+    "Job.20.22",
+    "Job.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "humiliated",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Deut.26.6",
+    "Gen.34.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "mistreat",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Exod.22.22",
+    "Exod.22.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6041",
+   "surface": "traders",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "afflicted",
+   "transliteration": "a.ni",
+   "samples": [
+    "Zech.11.11",
+    "Zech.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6090A",
+   "surface": "pain",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "pain",
+   "transliteration": "o.tsev",
+   "samples": [
+    "1Chr.4.9",
+    "Isa.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6093",
+   "surface": "pain",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "toil",
+   "transliteration": "its.tsa.von",
+   "samples": [
+    "Gen.3.16",
+    "Gen.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6115",
+   "surface": "oppression",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "coercion",
+   "transliteration": "o.tser",
+   "samples": [
+    "Isa.53.8",
+    "Ps.107.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6296",
+   "surface": "exhausted",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to faint",
+   "transliteration": "pa.gar",
+   "samples": [
+    "1Sam.30.10",
+    "1Sam.30.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869A",
+   "surface": "trouble",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dearth",
+   "transliteration": "bats.tsa.rah",
+   "samples": [
+    "Ps.10.1",
+    "Ps.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "affliction",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "2Chr.20.9",
+    "Isa.63.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6887C",
+   "surface": "birth pains",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to distress",
+   "transliteration": "tsa.rar",
+   "samples": [
+    "Jer.48.41",
+    "Jer.49.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6887C",
+   "surface": "distress",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to distress",
+   "transliteration": "tsa.rar",
+   "samples": [
+    "Ps.102.2",
+    "Ps.59.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218K",
+   "surface": "sum",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "head: group",
+   "transliteration": "rosh",
+   "samples": [
+    "Ps.119.160",
+    "Ps.139.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7219",
+   "surface": "poisoned",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "poison",
+   "transliteration": "rosh",
+   "samples": [
+    "Jer.23.15",
+    "Jer.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "affliction",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Jer.48.16",
+    "Ps.34.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "danger",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Prov.22.3",
+    "Prov.27.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "doom",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Jer.11.15",
+    "Jer.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "down",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Ezek.1.24",
+    "Ezek.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "stay",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "1Chr.21.15",
+    "2Sam.24.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "weak",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "2Chr.15.7",
+    "Zeph.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "destroyed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Jer.22.20",
+    "Jer.48.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "torn",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "1Kgs.13.26",
+    "1Kgs.13.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "breaking",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Isa.30.13",
+    "Isa.65.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "fracture",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Lev.24.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "ruin",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Amos.6.6",
+    "Lam.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0085",
+   "surface": "distressed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be distressed",
+   "transliteration": "adēmoneō",
+   "samples": [
+    "Phil.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0085",
+   "surface": "greatly distressed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be distressed",
+   "transliteration": "adēmoneō",
+   "samples": [
+    "Mark.14.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0085",
+   "surface": "troubled",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be distressed",
+   "transliteration": "adēmoneō",
+   "samples": [
+    "Matt.26.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0091",
+   "surface": "evil",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harm",
+   "transliteration": "adikeō",
+   "samples": [
+    "Rev.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0091",
+   "surface": "evildoer",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harm",
+   "transliteration": "adikeō",
+   "samples": [
+    "Rev.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0091",
+   "surface": "wound",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harm",
+   "transliteration": "adikeō",
+   "samples": [
+    "Rev.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0091",
+   "surface": "wronging",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harm",
+   "transliteration": "adikeō",
+   "samples": [
+    "Acts.7.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0096",
+   "surface": "debased",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "failing",
+   "transliteration": "adokimos",
+   "samples": [
+    "Rom.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0096",
+   "surface": "disobedient",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "failing",
+   "transliteration": "adokimos",
+   "samples": [
+    "Titus.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0096",
+   "surface": "fail",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "failing",
+   "transliteration": "adokimos",
+   "samples": [
+    "2Cor.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0096",
+   "surface": "failed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "failing",
+   "transliteration": "adokimos",
+   "samples": [
+    "2Cor.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0096",
+   "surface": "failed the test",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "failing",
+   "transliteration": "adokimos",
+   "samples": [
+    "2Cor.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0096",
+   "surface": "test",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "failing",
+   "transliteration": "adokimos",
+   "samples": [
+    "2Cor.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0096",
+   "surface": "worthless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "failing",
+   "transliteration": "adokimos",
+   "samples": [
+    "Heb.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0540",
+   "surface": "without father",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fatherless",
+   "transliteration": "apatōr",
+   "samples": [
+    "Heb.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0560",
+   "surface": "return",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despair",
+   "transliteration": "apelpizō",
+   "samples": [
+    "Luke.6.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0642",
+   "surface": "torn away",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to orphan",
+   "transliteration": "aporfanizō",
+   "samples": [
+    "1Thess.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0674",
+   "surface": "fainting",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to faint",
+   "transliteration": "apopsuchō",
+   "samples": [
+    "Luke.21.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0724",
+   "surface": "plundering",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plunder",
+   "transliteration": "harpagē",
+   "samples": [
+    "Heb.10.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0726",
+   "surface": "away",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seize",
+   "transliteration": "harpazō",
+   "samples": [
+    "Acts.8.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0726",
+   "surface": "snatches",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seize",
+   "transliteration": "harpazō",
+   "samples": [
+    "John.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0726",
+   "surface": "snatches away",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seize",
+   "transliteration": "harpazō",
+   "samples": [
+    "Matt.13.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0726",
+   "surface": "snatching",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seize",
+   "transliteration": "harpazō",
+   "samples": [
+    "Jude.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0928H",
+   "surface": "agony",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to torture: anguish",
+   "transliteration": "basanizō",
+   "samples": [
+    "Rev.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0928H",
+   "surface": "beaten",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to torture: anguish",
+   "transliteration": "basanizō",
+   "samples": [
+    "Matt.14.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0928H",
+   "surface": "making headway painfully",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to torture: anguish",
+   "transliteration": "basanizō",
+   "samples": [
+    "Mark.6.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0928H",
+   "surface": "suffering",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to torture: anguish",
+   "transliteration": "basanizō",
+   "samples": [
+    "Matt.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0984",
+   "surface": "harm",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hurt",
+   "transliteration": "blaptō",
+   "samples": [
+    "Luke.4.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0984",
+   "surface": "hurt",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hurt",
+   "transliteration": "blaptō",
+   "samples": [
+    "Mark.16.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0992",
+   "surface": "put",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "must be put",
+   "transliteration": "blēteon",
+   "samples": [
+    "Luke.5.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1000",
+   "surface": "throw",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "throwing",
+   "transliteration": "bolē",
+   "samples": [
+    "Luke.22.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1590",
+   "surface": "fainthearted",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to faint",
+   "transliteration": "ekluō",
+   "samples": [
+    "Heb.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1590",
+   "surface": "give up",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to faint",
+   "transliteration": "ekluō",
+   "samples": [
+    "Gal.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1590",
+   "surface": "weary",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to faint",
+   "transliteration": "ekluō",
+   "samples": [
+    "Heb.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1820",
+   "surface": "despair",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despair",
+   "transliteration": "exaporeō",
+   "samples": [
+    "2Cor.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1820",
+   "surface": "despaired",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despair",
+   "transliteration": "exaporeō",
+   "samples": [
+    "2Cor.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "afflict",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "Phil.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "anguish",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "John.16.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "burdened",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "2Cor.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "distress",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "1Thess.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "persecution",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "Acts.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "sufferings",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "Rom.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "tribulations",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "Acts.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "trouble",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "Phil.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2347",
+   "surface": "troubles",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "thlipsis",
+   "samples": [
+    "1Cor.7.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2552",
+   "surface": "suffering",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "suffering",
+   "transliteration": "kakopatheia",
+   "samples": [
+    "Jas.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2559",
+   "surface": "afflict",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harm",
+   "transliteration": "kakoō",
+   "samples": [
+    "Acts.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2559",
+   "surface": "forced",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harm",
+   "transliteration": "kakoō",
+   "samples": [
+    "Acts.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2559",
+   "surface": "poisoned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harm",
+   "transliteration": "kakoō",
+   "samples": [
+    "Acts.14.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2559",
+   "surface": "violent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harm",
+   "transliteration": "kakoō",
+   "samples": [
+    "Acts.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2577G",
+   "surface": "grow weary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weary/sick: weak",
+   "transliteration": "kamnō",
+   "samples": [
+    "Heb.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2577H",
+   "surface": "sick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weary/sick: ill",
+   "transliteration": "kamnō",
+   "samples": [
+    "Jas.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "grown weary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "Rev.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "hard-working",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "2Tim.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "laborer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "1Cor.16.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "toiled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "Luke.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "wearied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "John.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "workers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "Rom.16.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2872",
+   "surface": "working hard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to labor",
+   "transliteration": "kopiaō",
+   "samples": [
+    "Acts.20.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2873",
+   "surface": "bother",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "labor",
+   "transliteration": "kopos",
+   "samples": [
+    "Luke.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2873",
+   "surface": "keeps bothering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "labor",
+   "transliteration": "kopos",
+   "samples": [
+    "Luke.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3600",
+   "surface": "great distress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be anguished",
+   "transliteration": "odunaō",
+   "samples": [
+    "Luke.2.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3600",
+   "surface": "sorrowful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be anguished",
+   "transliteration": "odunaō",
+   "samples": [
+    "Acts.20.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3601",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "anguish",
+   "transliteration": "odunē",
+   "samples": [
+    "Rom.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3601",
+   "surface": "pangs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "anguish",
+   "transliteration": "odunē",
+   "samples": [
+    "1Tim.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3642",
+   "surface": "fainthearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fainthearted",
+   "transliteration": "oligopsuchos",
+   "samples": [
+    "1Thess.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3805",
+   "surface": "must suffer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "suffering",
+   "transliteration": "pathētos",
+   "samples": [
+    "Acts.26.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4661",
+   "surface": "spoil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plunder",
+   "transliteration": "skulon",
+   "samples": [
+    "Luke.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4777",
+   "surface": "share in suffering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer with",
+   "transliteration": "sunkakopatheō",
+   "samples": [
+    "2Tim.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4777",
+   "surface": "suffering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer with",
+   "transliteration": "sunkakopatheō",
+   "samples": [
+    "2Tim.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4778",
+   "surface": "mistreated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer with",
+   "transliteration": "sunkakoucheomai",
+   "samples": [
+    "Heb.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4841",
+   "surface": "suffer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer with",
+   "transliteration": "sumpaschō",
+   "samples": [
+    "Rom.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4841",
+   "surface": "suffer together",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer with",
+   "transliteration": "sumpaschō",
+   "samples": [
+    "1Cor.12.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4884",
+   "surface": "caught",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seize",
+   "transliteration": "sunarpazō",
+   "samples": [
+    "Acts.27.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4884",
+   "surface": "dragging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seize",
+   "transliteration": "sunarpazō",
+   "samples": [
+    "Acts.19.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4928",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "anguish",
+   "transliteration": "sunochē",
+   "samples": [
+    "2Cor.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4928",
+   "surface": "distress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "anguish",
+   "transliteration": "sunochē",
+   "samples": [
+    "Luke.21.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5604",
+   "surface": "labor pains",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "labor",
+   "transliteration": "ōdin",
+   "samples": [
+    "1Thess.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5604",
+   "surface": "pangs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "labor",
+   "transliteration": "ōdin",
+   "samples": [
+    "Acts.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5605",
+   "surface": "birth pains",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be in labor",
+   "transliteration": "ōdinō",
+   "samples": [
+    "Rev.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5605",
+   "surface": "childbirth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be in labor",
+   "transliteration": "ōdinō",
+   "samples": [
+    "Gal.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5605",
+   "surface": "labor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be in labor",
+   "transliteration": "ōdinō",
+   "samples": [
+    "Gal.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "afraid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Ezra.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "alarm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Dan.11.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "gained hastily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Prov.20.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "hastens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Prov.28.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "hasty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Eccl.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "hurried",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Esth.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "hurriedly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Esth.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "hurry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "2Chr.35.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "overwhelms",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Job.22.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "quick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Eccl.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "quickly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Esth.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "rash",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Eccl.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "rushed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "2Chr.26.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "sudden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Zeph.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0926",
+   "surface": "terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dismay",
+   "transliteration": "ba.hal",
+   "samples": [
+    "Ezek.7.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0928",
+   "surface": "calamity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dismay",
+   "transliteration": "be.ha.lah",
+   "samples": [
+    "Isa.65.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0928",
+   "surface": "panic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dismay",
+   "transliteration": "be.ha.lah",
+   "samples": [
+    "Lev.26.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0961",
+   "surface": "plundered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plunder",
+   "transliteration": "biz.zah",
+   "samples": [
+    "Neh.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0961",
+   "surface": "plundering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plunder",
+   "transliteration": "biz.zah",
+   "samples": [
+    "Ezra.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1669",
+   "surface": "grows dim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "da.ev",
+   "samples": [
+    "Ps.88.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1669",
+   "surface": "languish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "da.ev",
+   "samples": [
+    "Jer.31.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1669",
+   "surface": "languishing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "da.ev",
+   "samples": [
+    "Jer.31.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1670",
+   "surface": "terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dismay",
+   "transliteration": "de.a.vah",
+   "samples": [
+    "Job.41.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1727",
+   "surface": "ache",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pine",
+   "transliteration": "duv",
+   "samples": [
+    "Lev.26.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1742",
+   "surface": "sick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faint",
+   "transliteration": "dav.va",
+   "samples": [
+    "Jer.8.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1809",
+   "surface": "air",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "da.lal",
+   "samples": [
+    "Job.28.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1809",
+   "surface": "diminish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "da.lal",
+   "samples": [
+    "Isa.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1809",
+   "surface": "hang useless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "da.lal",
+   "samples": [
+    "Prov.26.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1809",
+   "surface": "weary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "da.lal",
+   "samples": [
+    "Isa.38.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2256B",
+   "surface": "agony",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "che.vel",
+   "samples": [
+    "Isa.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2256B",
+   "surface": "pain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "che.vel",
+   "samples": [
+    "Isa.66.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2256B",
+   "surface": "pains",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "che.vel",
+   "samples": [
+    "Job.21.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2256B",
+   "surface": "sorrows",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "che.vel",
+   "samples": [
+    "Jer.49.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2256B",
+   "surface": "young",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "che.vel",
+   "samples": [
+    "Job.39.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "afraid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Ps.77.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "agony",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Ezek.30.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "born",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Isa.66.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "great",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Ezek.30.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "labored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Isa.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "pain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Jer.51.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342I",
+   "surface": "writhed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: writh in pain",
+   "transliteration": "chul",
+   "samples": [
+    "Isa.26.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2556C",
+   "surface": "cruel man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "cha.mats",
+   "samples": [
+    "Ps.71.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2826",
+   "surface": "lagging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be feeble",
+   "transliteration": "cha.shal",
+   "samples": [
+    "Deut.25.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2862",
+   "surface": "snatches away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seize",
+   "transliteration": "cha.taph",
+   "samples": [
+    "Job.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "broken down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Jer.48.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "destroyed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Jer.50.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "dismay",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Jer.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "in awe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Mal.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "panic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Isa.31.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "pieces",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Jer.51.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "scare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Job.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "terrify",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Jer.49.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2865",
+   "surface": "terror-stricken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to to be dismayed",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Isa.30.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2976",
+   "surface": "despairing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despair",
+   "transliteration": "ya.ash",
+   "samples": [
+    "Job.6.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2976",
+   "surface": "vain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to despair",
+   "transliteration": "ya.ash",
+   "samples": [
+    "Jer.18.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "dried",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Joel.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "dried out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Gen.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "put to shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Jer.10.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Ezek.17.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "wholly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Zech.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3001",
+   "surface": "wither away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "ya.vesh",
+   "samples": [
+    "Ps.102.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3013",
+   "surface": "cause grief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer",
+   "transliteration": "ya.gah",
+   "samples": [
+    "Lam.3.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3013",
+   "surface": "grieve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer",
+   "transliteration": "ya.gah",
+   "samples": [
+    "Lam.3.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3013",
+   "surface": "inflicted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer",
+   "transliteration": "ya.gah",
+   "samples": [
+    "Lam.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3013",
+   "surface": "torment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer",
+   "transliteration": "ya.gah",
+   "samples": [
+    "Job.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3013",
+   "surface": "tormentors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer",
+   "transliteration": "ya.gah",
+   "samples": [
+    "Isa.51.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3013",
+   "surface": "who mourn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to suffer",
+   "transliteration": "ya.gah",
+   "samples": [
+    "Zeph.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3018",
+   "surface": "gains",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "ye.gi.a",
+   "samples": [
+    "Jer.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3018",
+   "surface": "labored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "ye.gi.a",
+   "samples": [
+    "Jer.3.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3018",
+   "surface": "toil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "ye.gi.a",
+   "samples": [
+    "Ps.109.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3018",
+   "surface": "wealth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "ye.gi.a",
+   "samples": [
+    "Isa.45.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3018",
+   "surface": "work",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "ye.gi.a",
+   "samples": [
+    "Job.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3019",
+   "surface": "weary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weary",
+   "transliteration": "ya.gi.a",
+   "samples": [
+    "Job.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3021",
+   "surface": "wearies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weary/toil",
+   "transliteration": "ya.ge.a",
+   "samples": [
+    "Eccl.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3023",
+   "surface": "weariness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weary",
+   "transliteration": "ya.ge.a",
+   "samples": [
+    "Eccl.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "oppressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Ezek.22.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "oppresses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Ezek.18.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "oppressing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Zeph.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "oppressors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Isa.49.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "proud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Ps.123.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "subdue",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Ps.74.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "thrusting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Ezek.46.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3238",
+   "surface": "wronged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "ya.nah",
+   "samples": [
+    "Ezek.22.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3286",
+   "surface": "become exhausted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to faint",
+   "transliteration": "ya.eph",
+   "samples": [
+    "Jer.51.64"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3286",
+   "surface": "flight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to faint",
+   "transliteration": "ya.eph",
+   "samples": [
+    "Dan.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3287",
+   "surface": "exhausted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weary",
+   "transliteration": "ya.eph",
+   "samples": [
+    "Judg.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3287",
+   "surface": "weary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weary",
+   "transliteration": "ya.eph",
+   "samples": [
+    "Isa.50.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3490",
+   "surface": "become orphans",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "orphan",
+   "transliteration": "ya.tom",
+   "samples": [
+    "Lam.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3490",
+   "surface": "orphan",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "orphan",
+   "transliteration": "ya.tom",
+   "samples": [
+    "Hos.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3510",
+   "surface": "ache",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pain",
+   "transliteration": "ka.av",
+   "samples": [
+    "Prov.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3510",
+   "surface": "grieved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pain",
+   "transliteration": "ka.av",
+   "samples": [
+    "Ezek.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3510",
+   "surface": "hurt them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pain",
+   "transliteration": "ka.av",
+   "samples": [
+    "Ezek.28.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3510",
+   "surface": "ruin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pain",
+   "transliteration": "ka.av",
+   "samples": [
+    "2Kgs.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3510",
+   "surface": "sore",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pain",
+   "transliteration": "ka.av",
+   "samples": [
+    "Gen.34.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3510",
+   "surface": "wounds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pain",
+   "transliteration": "ka.av",
+   "samples": [
+    "Job.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3511",
+   "surface": "distress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "ke.ev",
+   "samples": [
+    "Ps.39.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3511",
+   "surface": "very",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "ke.ev",
+   "samples": [
+    "Job.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3544",
+   "surface": "dull",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faint",
+   "transliteration": "ke.heh",
+   "samples": [
+    "Lev.13.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3544",
+   "surface": "faint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faint",
+   "transliteration": "ke.heh",
+   "samples": [
+    "Isa.61.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3544",
+   "surface": "faintly burning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faint",
+   "transliteration": "ke.heh",
+   "samples": [
+    "Isa.42.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3544",
+   "surface": "grow dim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faint",
+   "transliteration": "ke.heh",
+   "samples": [
+    "1Sam.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3631",
+   "surface": "destruction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "failing",
+   "transliteration": "kil.la.von",
+   "samples": [
+    "Isa.10.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3631",
+   "surface": "failing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "failing",
+   "transliteration": "kil.la.von",
+   "samples": [
+    "Deut.28.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3642",
+   "surface": "faints",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pine",
+   "transliteration": "ka.mah",
+   "samples": [
+    "Ps.63.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3735",
+   "surface": "anxious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be distressed",
+   "transliteration": "ke.ra",
+   "samples": [
+    "Dan.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3811",
+   "surface": "grow weary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weary",
+   "transliteration": "la.ah",
+   "samples": [
+    "Exod.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3811",
+   "surface": "languished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weary",
+   "transliteration": "la.ah",
+   "samples": [
+    "Ps.68.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3811",
+   "surface": "wearied herself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weary",
+   "transliteration": "la.ah",
+   "samples": [
+    "Ezek.24.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3811",
+   "surface": "wearies himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weary",
+   "transliteration": "la.ah",
+   "samples": [
+    "Isa.16.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3811",
+   "surface": "wore themselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weary",
+   "transliteration": "la.ah",
+   "samples": [
+    "Gen.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3856A",
+   "surface": "languished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "la.hah",
+   "samples": [
+    "Gen.47.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3905",
+   "surface": "hold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "la.chats",
+   "samples": [
+    "2Kgs.6.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3905",
+   "surface": "oppresses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "la.chats",
+   "samples": [
+    "Ps.56.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3905",
+   "surface": "oppressing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "la.chats",
+   "samples": [
+    "1Sam.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3905",
+   "surface": "oppressors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "la.chats",
+   "samples": [
+    "Isa.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3905",
+   "surface": "pushed against",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to oppress",
+   "transliteration": "la.chats",
+   "samples": [
+    "Num.22.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4157",
+   "surface": "crushing burden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "mu.a.qah",
+   "samples": [
+    "Ps.66.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4164",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "constraint",
+   "transliteration": "mu.tsaq",
+   "samples": [
+    "Isa.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4164",
+   "surface": "cramping",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "constraint",
+   "transliteration": "mu.tsaq",
+   "samples": [
+    "Job.36.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4164",
+   "surface": "frozen fast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "constraint",
+   "transliteration": "mu.tsaq",
+   "samples": [
+    "Job.37.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4251",
+   "surface": "wounded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "suffering",
+   "transliteration": "ma.cha.luy",
+   "samples": [
+    "2Chr.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4341",
+   "surface": "suffering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "makh.ov",
+   "samples": [
+    "Lam.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4341",
+   "surface": "sufferings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "makh.ov",
+   "samples": [
+    "Exod.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4523",
+   "surface": "withholds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "despairing",
+   "transliteration": "mas",
+   "samples": [
+    "Job.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4531A",
+   "surface": "calamity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "despair",
+   "transliteration": "mas.sah",
+   "samples": [
+    "Job.9.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4689",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "ma.tsoq",
+   "samples": [
+    "Ps.119.143"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4691",
+   "surface": "distresses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "me.tsu.qah",
+   "samples": [
+    "Ps.25.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4712",
+   "surface": "pangs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "me.tsar",
+   "samples": [
+    "Ps.116.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4933",
+   "surface": "looter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plunder",
+   "transliteration": "me.shis.sah",
+   "samples": [
+    "Isa.42.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "certainly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Exod.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "crumbles away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Job.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "fade",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Isa.64.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "falling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Isa.34.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "withered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Jer.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5034B",
+   "surface": "yourselves out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to wither",
+   "transliteration": "na.vel",
+   "samples": [
+    "Exod.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5222",
+   "surface": "wretches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "smitten",
+   "transliteration": "ne.kheh",
+   "samples": [
+    "Ps.35.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5243A",
+   "surface": "cut off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "ma.lal",
+   "samples": [
+    "Job.24.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5243A",
+   "surface": "fade",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "ma.lal",
+   "samples": [
+    "Ps.37.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5243A",
+   "surface": "wither",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "ma.lal",
+   "samples": [
+    "Job.18.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5243A",
+   "surface": "withers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to languish",
+   "transliteration": "ma.lal",
+   "samples": [
+    "Job.14.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5263",
+   "surface": "sick man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to faint",
+   "transliteration": "na.sas",
+   "samples": [
+    "Isa.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5848C",
+   "surface": "fainted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enfeeble",
+   "transliteration": "a.taph",
+   "samples": [
+    "Ps.107.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5848C",
+   "surface": "fainting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enfeeble",
+   "transliteration": "a.taph",
+   "samples": [
+    "Jonah.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5888",
+   "surface": "fainting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faint",
+   "transliteration": "iph",
+   "samples": [
+    "Jer.4.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5888",
+   "surface": "grew weary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faint",
+   "transliteration": "iph",
+   "samples": [
+    "2Sam.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5888",
+   "surface": "weariness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be faint",
+   "transliteration": "iph",
+   "samples": [
+    "Judg.4.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5889",
+   "surface": "parched",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faint",
+   "transliteration": "a.yeph",
+   "samples": [
+    "Ps.143.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5889",
+   "surface": "thirsty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faint",
+   "transliteration": "a.yeph",
+   "samples": [
+    "Prov.25.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5969",
+   "surface": "fainted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fainting",
+   "transliteration": "ul.peh",
+   "samples": [
+    "Ezek.31.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6001A",
+   "surface": "worker’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "labour[er]",
+   "transliteration": "a.mel",
+   "samples": [
+    "Prov.16.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6001A",
+   "surface": "workmen’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "labour[er]",
+   "transliteration": "a.mel",
+   "samples": [
+    "Judg.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "affliction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "1Kgs.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "and",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Num.24.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "broken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Ps.102.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "could",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Judg.16.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "daunted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Isa.31.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "endured",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Ps.132.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "harshly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Gen.16.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "humiliated her",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Deut.21.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "hurt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Ps.105.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "occupied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Eccl.5.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "oppress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Gen.31.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "oppressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Exod.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "oppressors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Zeph.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "overwhelm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Ps.88.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "put down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Isa.25.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "raped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Lam.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "shared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "1Kgs.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "submit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Gen.16.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "suffered affliction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Ps.107.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Exod.22.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "torment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Judg.16.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6031B",
+   "surface": "violates",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.nah",
+   "samples": [
+    "Ezek.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6033",
+   "surface": "oppressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to afflict",
+   "transliteration": "a.na",
+   "samples": [
+    "Dan.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6039",
+   "surface": "affliction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "affliction",
+   "transliteration": "e.nut",
+   "samples": [
+    "Ps.22.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6040",
+   "surface": "afflicted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "affliction",
+   "transliteration": "o.ni",
+   "samples": [
+    "Prov.31.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6040",
+   "surface": "filled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "affliction",
+   "transliteration": "o.ni",
+   "samples": [
+    "Job.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6040",
+   "surface": "great pains",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "affliction",
+   "transliteration": "o.ni",
+   "samples": [
+    "1Chr.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6040",
+   "surface": "sorrow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "affliction",
+   "transliteration": "o.ni",
+   "samples": [
+    "Ps.88.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6041",
+   "surface": "afflicted one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afflicted",
+   "transliteration": "a.ni",
+   "samples": [
+    "Isa.54.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6041",
+   "surface": "iniquity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afflicted",
+   "transliteration": "a.ni",
+   "samples": [
+    "Ezek.18.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6041",
+   "surface": "needy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afflicted",
+   "transliteration": "a.ni",
+   "samples": [
+    "Ps.68.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6041",
+   "surface": "poor man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afflicted",
+   "transliteration": "a.ni",
+   "samples": [
+    "Ps.34.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6087A",
+   "surface": "bring me pain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hurt",
+   "transliteration": "a.tsav",
+   "samples": [
+    "1Chr.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6087A",
+   "surface": "displeased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hurt",
+   "transliteration": "a.tsav",
+   "samples": [
+    "1Kgs.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6087A",
+   "surface": "distressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hurt",
+   "transliteration": "a.tsav",
+   "samples": [
+    "Gen.45.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6087A",
+   "surface": "grieving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hurt",
+   "transliteration": "a.tsav",
+   "samples": [
+    "2Sam.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6087A",
+   "surface": "hurt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hurt",
+   "transliteration": "a.tsav",
+   "samples": [
+    "Eccl.10.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6087A",
+   "surface": "indignant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hurt",
+   "transliteration": "a.tsav",
+   "samples": [
+    "Gen.34.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6087A",
+   "surface": "injure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to hurt",
+   "transliteration": "a.tsav",
+   "samples": [
+    "Ps.56.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6088",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pain",
+   "transliteration": "a.tsav",
+   "samples": [
+    "Dan.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6089A",
+   "surface": "anxious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "e.tsev",
+   "samples": [
+    "Ps.127.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6089A",
+   "surface": "harsh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "e.tsev",
+   "samples": [
+    "Prov.15.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6089A",
+   "surface": "labors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "e.tsev",
+   "samples": [
+    "Prov.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6089A",
+   "surface": "pain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "e.tsev",
+   "samples": [
+    "Gen.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6089A",
+   "surface": "sorrow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "e.tsev",
+   "samples": [
+    "Prov.10.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6089A",
+   "surface": "toil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "e.tsev",
+   "samples": [
+    "Prov.14.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6090A",
+   "surface": "grievous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pain",
+   "transliteration": "o.tsev",
+   "samples": [
+    "Ps.139.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6093",
+   "surface": "painful toil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "its.tsa.von",
+   "samples": [
+    "Gen.5.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6101",
+   "surface": "slow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be sluggish",
+   "transliteration": "a.tsel",
+   "samples": [
+    "Judg.18.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6103",
+   "surface": "sloth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sluggishness",
+   "transliteration": "ats.lah",
+   "samples": [
+    "Eccl.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6103",
+   "surface": "slothfulness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sluggishness",
+   "transliteration": "ats.lah",
+   "samples": [
+    "Prov.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6104",
+   "surface": "idleness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sluggishness",
+   "transliteration": "ats.lut",
+   "samples": [
+    "Prov.31.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6115",
+   "surface": "barren",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "coercion",
+   "transliteration": "o.tser",
+   "samples": [
+    "Prov.30.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6563",
+   "surface": "crossroads",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plunder",
+   "transliteration": "pe.req",
+   "samples": [
+    "Obad.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6563",
+   "surface": "plunder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "plunder",
+   "transliteration": "pe.req",
+   "samples": [
+    "Nah.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6695A",
+   "surface": "troubled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsoq",
+   "samples": [
+    "Dan.9.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "adversity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Isa.30.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "afflicted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Isa.63.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "affliction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Esth.7.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Job.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "distressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Jer.48.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "enemies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Ezek.30.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "stomach",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Lam.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862B",
+   "surface": "tribulation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsar",
+   "samples": [
+    "Deut.4.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "calamities",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "Ps.71.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "distresses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "1Sam.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "suffering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "Neh.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869B",
+   "surface": "tribulation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "1Sam.26.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6869C",
+   "surface": "rival",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vexer",
+   "transliteration": "tsa.rah",
+   "samples": [
+    "1Sam.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7059",
+   "surface": "snatched away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seize",
+   "transliteration": "qa.mat",
+   "samples": [
+    "Job.22.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7059",
+   "surface": "up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seize",
+   "transliteration": "qa.mat",
+   "samples": [
+    "Job.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7089",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "anguish",
+   "transliteration": "qe.pha.dah",
+   "samples": [
+    "Ezek.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218K",
+   "surface": "divisions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "head: group",
+   "transliteration": "rosh",
+   "samples": [
+    "1Chr.12.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218K",
+   "surface": "groups",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "head: group",
+   "transliteration": "rosh",
+   "samples": [
+    "Job.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7219",
+   "surface": "bitterness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "poison",
+   "transliteration": "rosh",
+   "samples": [
+    "Lam.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7219",
+   "surface": "gall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "poison",
+   "transliteration": "rosh",
+   "samples": [
+    "Lam.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7219",
+   "surface": "venom",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "poison",
+   "transliteration": "rosh",
+   "samples": [
+    "Deut.32.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "adversity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Eccl.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "afflictions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Ps.34.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "bad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Lam.3.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "calamities",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "1Sam.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "disasters",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Deut.32.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "discomfort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Jonah.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "down ruin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "2Sam.15.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "famine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Jer.28.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "pain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Eccl.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "plight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Ps.107.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "troubles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Ps.88.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "vile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Jer.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "worst",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Ps.41.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451C",
+   "surface": "wretchedness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: harm",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Num.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "discouraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Ezra.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "drop",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Neh.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "failed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "2Sam.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "faint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Prov.24.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "fall helpless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Jer.6.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "fell helpless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Jer.50.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "forsake",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Ps.138.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "leave me alone",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Judg.11.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "loosens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Job.12.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "put off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Josh.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "refrain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Ps.37.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "relax",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Josh.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "respite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "1Sam.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "sinks down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Isa.5.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "slack",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Prov.18.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "still",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Ps.46.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "stop",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "1Sam.15.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "subsided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Judg.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "waned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Judg.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7503",
+   "surface": "weakening",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to slacken",
+   "transliteration": "ra.phah",
+   "samples": [
+    "Jer.38.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7510",
+   "surface": "feeble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "feebleness",
+   "transliteration": "riph.yon",
+   "samples": [
+    "Jer.47.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "birth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Isa.66.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "breaking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Isa.30.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "broke down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "2Chr.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "broken down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Isa.24.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "crush",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Lam.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "destroy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Jer.17.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "maimed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Zech.11.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "one breaks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Jer.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "prescribed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Job.38.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "quench",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Ps.104.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "shatters",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Ps.107.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "will abolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Hos.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7665",
+   "surface": "wounded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to break",
+   "transliteration": "sha.var",
+   "samples": [
+    "Jer.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "breaches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Ps.60.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "breaks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Prov.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "broken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Isa.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "brokenness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Isa.30.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "crashing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Job.41.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "disabled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Lev.22.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "injured",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Lev.21.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "injured foot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Lev.21.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "interpretation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Judg.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7667",
+   "surface": "that",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "she.ver",
+   "samples": [
+    "Isa.30.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7670",
+   "surface": "breaking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "shib.ba.ron",
+   "samples": [
+    "Ezek.21.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7670",
+   "surface": "destruction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breaking",
+   "transliteration": "shib.ba.ron",
+   "samples": [
+    "Jer.17.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8383",
+   "surface": "toil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "toil",
+   "transliteration": "te.u.nim",
+   "samples": [
+    "Ezek.24.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8496",
+   "surface": "man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "oppression",
+   "transliteration": "tokh",
+   "samples": [
+    "Prov.29.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8513",
+   "surface": "tribulation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hardship",
+   "transliteration": "te.la.ah",
+   "samples": [
+    "Lam.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8513",
+   "surface": "weariness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hardship",
+   "transliteration": "te.la.ah",
+   "samples": [
+    "Mal.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

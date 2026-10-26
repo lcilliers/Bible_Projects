@@ -1,0 +1,1270 @@
+{
+ "cluster": "M82",
+ "cluster_name": "Reminder & Report",
+ "built_at": "2026-10-26T04:28:32Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 76,
+  "head": 37,
+  "tail": 39,
+  "hits": 198,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G3140",
+   "surface": "witness",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "John.21.24",
+    "John.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "bear witness",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "John.15.27",
+    "John.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "warned",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Neh.13.15",
+    "Neh.9.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8052",
+   "surface": "news",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "tidings",
+   "transliteration": "she.mu.ah",
+   "samples": [
+    "1Kgs.2.28",
+    "Dan.11.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "testify",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Acts.26.5",
+    "Rev.22.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "testified",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "1Cor.15.15",
+    "Heb.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8052",
+   "surface": "report",
+   "part": "head",
+   "hits": 7,
+   "verses": 5,
+   "gloss": "tidings",
+   "transliteration": "she.mu.ah",
+   "samples": [
+    "2Chr.9.6",
+    "Jer.51.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8088B",
+   "surface": "report",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "report",
+   "transliteration": "she.ma",
+   "samples": [
+    "Deut.2.25",
+    "Hos.7.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8052",
+   "surface": "rumor",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "tidings",
+   "transliteration": "she.mu.ah",
+   "samples": [
+    "Ezek.7.26",
+    "Isa.37.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5279",
+   "surface": "remind",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to remind",
+   "transliteration": "hupomimnēskō",
+   "samples": [
+    "2Pet.1.12",
+    "Jude.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "witness",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Deut.30.19",
+    "Mal.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8088B",
+   "surface": "fame",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "report",
+   "transliteration": "she.ma",
+   "samples": [
+    "1Kgs.10.1",
+    "2Chr.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0364",
+   "surface": "remembrance",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "remembrance",
+   "transliteration": "anamnēsis",
+   "samples": [
+    "1Cor.11.24",
+    "Luke.22.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "commended",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Heb.11.39",
+    "Heb.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "testimony",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "1Tim.6.13",
+    "3John.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "well spoken",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Acts.10.22",
+    "Acts.22.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "solemnly",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "1Sam.8.9",
+    "Gen.43.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8052",
+   "surface": "message",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "tidings",
+   "transliteration": "she.mu.ah",
+   "samples": [
+    "Isa.28.19",
+    "Jer.49.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8088B",
+   "surface": "news",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "report",
+   "transliteration": "she.ma",
+   "samples": [
+    "Jer.37.5",
+    "Nah.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0363",
+   "surface": "remembered",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to remind",
+   "transliteration": "anamimnēskō",
+   "samples": [
+    "Mark.11.21",
+    "Mark.14.72"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0363",
+   "surface": "remind",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to remind",
+   "transliteration": "anamimnēskō",
+   "samples": [
+    "1Cor.4.17",
+    "2Tim.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "bears witness",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Heb.10.15",
+    "John.8.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "borne",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "1John.5.10",
+    "1John.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "testifies",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "1John.5.6",
+    "Rev.22.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3417",
+   "surface": "remember",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "remembrance",
+   "transliteration": "mneia",
+   "samples": [
+    "1Thess.3.6",
+    "2Tim.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5280",
+   "surface": "reminder",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "remembrance",
+   "transliteration": "hupomnēsis",
+   "samples": [
+    "2Pet.1.13",
+    "2Pet.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5345",
+   "surface": "report",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "news",
+   "transliteration": "fēmē",
+   "samples": [
+    "Luke.4.14",
+    "Matt.9.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "charge",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "1Kgs.21.10",
+    "1Kgs.21.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "gave",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "2Kgs.17.15",
+    "Neh.9.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "get",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Isa.8.2",
+    "Jer.32.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "testify",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Amos.3.13",
+    "Ps.50.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "warn",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "1Sam.8.9",
+    "Exod.19.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "warning",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Deut.32.46",
+    "Jer.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "you",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Deut.8.19",
+    "Lam.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8089",
+   "surface": "fame",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "report",
+   "transliteration": "sho.ma",
+   "samples": [
+    "Esth.9.4",
+    "Josh.6.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8089",
+   "surface": "report",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "report",
+   "transliteration": "sho.ma",
+   "samples": [
+    "Jer.6.24",
+    "Josh.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0363",
+   "surface": "recall",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remind",
+   "transliteration": "anamimnēskō",
+   "samples": [
+    "Heb.10.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0363",
+   "surface": "remembers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remind",
+   "transliteration": "anamimnēskō",
+   "samples": [
+    "2Cor.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0364",
+   "surface": "reminder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "remembrance",
+   "transliteration": "anamnēsis",
+   "samples": [
+    "Heb.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1878",
+   "surface": "reminder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remind",
+   "transliteration": "epanamimnēskō",
+   "samples": [
+    "Rom.15.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "bear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "John.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "bears",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "John.5.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "charged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "1Thess.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "commendation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Heb.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "commending",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Heb.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "good repute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Acts.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "reputation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "1Tim.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "spoke well",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Luke.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "testifying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Acts.26.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "warn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Rev.22.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "witnessed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Heb.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3140",
+   "surface": "witnesses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "martureō",
+   "samples": [
+    "Luke.11.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3417",
+   "surface": "mention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "remembrance",
+   "transliteration": "mneia",
+   "samples": [
+    "Rom.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3417",
+   "surface": "mentioning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "remembrance",
+   "transliteration": "mneia",
+   "samples": [
+    "1Thess.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3417",
+   "surface": "remembering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "remembrance",
+   "transliteration": "mneia",
+   "samples": [
+    "Eph.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3417",
+   "surface": "remembrance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "remembrance",
+   "transliteration": "mneia",
+   "samples": [
+    "Phil.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3420",
+   "surface": "recall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "remembrance",
+   "transliteration": "mnēmē",
+   "samples": [
+    "2Pet.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5279",
+   "surface": "bring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remind",
+   "transliteration": "hupomimnēskō",
+   "samples": [
+    "John.14.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5279",
+   "surface": "bring up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remind",
+   "transliteration": "hupomimnēskō",
+   "samples": [
+    "3John.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5279",
+   "surface": "remembered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remind",
+   "transliteration": "hupomimnēskō",
+   "samples": [
+    "Luke.22.61"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5279",
+   "surface": "remembrance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remind",
+   "transliteration": "hupomimnēskō",
+   "samples": [
+    "John.14.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5280",
+   "surface": "reminded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "remembrance",
+   "transliteration": "hupomnēsis",
+   "samples": [
+    "2Tim.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5334",
+   "surface": "word",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "news",
+   "transliteration": "fasis",
+   "samples": [
+    "Acts.21.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "admonish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Ps.81.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "approved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Job.29.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "assured",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Zech.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "give warning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Jer.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "got",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Jer.32.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "solemnly warn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "1Kgs.2.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "testified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "2Chr.24.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5749B",
+   "surface": "witnessed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to testify",
+   "transliteration": "ud",
+   "samples": [
+    "Jer.32.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8052",
+   "surface": "byword",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tidings",
+   "transliteration": "she.mu.ah",
+   "samples": [
+    "Ezek.16.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8052",
+   "surface": "us",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "tidings",
+   "transliteration": "she.mu.ah",
+   "samples": [
+    "Isa.53.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8088B",
+   "surface": "heard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "report",
+   "transliteration": "she.ma",
+   "samples": [
+    "Ps.18.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8088B",
+   "surface": "hearing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "report",
+   "transliteration": "she.ma",
+   "samples": [
+    "Job.42.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8088B",
+   "surface": "rumor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "report",
+   "transliteration": "she.ma",
+   "samples": [
+    "Job.28.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

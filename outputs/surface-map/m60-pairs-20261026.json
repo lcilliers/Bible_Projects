@@ -1,0 +1,908 @@
+{
+ "cluster": "M60",
+ "cluster_name": "Confession & Forgiveness",
+ "built_at": "2026-10-26T04:25:17Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 54,
+  "head": 16,
+  "tail": 38,
+  "hits": 284,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H3722A",
+   "surface": "make atonement",
+   "part": "head",
+   "hits": 59,
+   "verses": 55,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Ezek.45.15",
+    "Lev.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0863H",
+   "surface": "forgiven",
+   "part": "head",
+   "hits": 23,
+   "verses": 19,
+   "gloss": "to release: forgive",
+   "transliteration": "afiēmi",
+   "samples": [
+    "Acts.8.22",
+    "Rom.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "atonement",
+   "part": "head",
+   "hits": 22,
+   "verses": 21,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Num.16.46",
+    "Num.31.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0863H",
+   "surface": "forgive",
+   "part": "head",
+   "hits": 21,
+   "verses": 17,
+   "gloss": "to release: forgive",
+   "transliteration": "afiēmi",
+   "samples": [
+    "John.20.23",
+    "Matt.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5545",
+   "surface": "forgive",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "to forgive",
+   "transliteration": "sa.lach",
+   "samples": [
+    "Deut.29.20",
+    "Jer.33.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0859",
+   "surface": "forgiveness",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "forgiveness",
+   "transliteration": "afesis",
+   "samples": [
+    "Acts.2.38",
+    "Heb.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5545",
+   "surface": "forgiven",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to forgive",
+   "transliteration": "sa.lach",
+   "samples": [
+    "Lam.3.42",
+    "Num.15.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5545",
+   "surface": "pardon",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "to forgive",
+   "transliteration": "sa.lach",
+   "samples": [
+    "Isa.55.7",
+    "Jer.50.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "forgive",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "Exod.32.32",
+    "Ps.25.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3725",
+   "surface": "atonement",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "atonement",
+   "transliteration": "kip.pu.rim",
+   "samples": [
+    "Exod.29.36",
+    "Num.29.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "confess",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "1John.4.3",
+    "John.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3671",
+   "surface": "confession",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "confession",
+   "transliteration": "homologia",
+   "samples": [
+    "2Cor.9.13",
+    "Heb.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "atone",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Dan.9.24",
+    "Ps.65.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "atoned",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Deut.21.8",
+    "Ps.78.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "acknowledge",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "Luke.12.8",
+    "Matt.10.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "confesses",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "1John.2.23",
+    "1John.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "forgiven",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "Isa.33.24",
+    "Ps.32.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "forgiving",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "Exod.34.7",
+    "Num.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "pardon",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "1Sam.15.25",
+    "Exod.23.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0859",
+   "surface": "liberty",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "forgiveness",
+   "transliteration": "afesis",
+   "samples": [
+    "Luke.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0863H",
+   "surface": "forgave",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to release: forgive",
+   "transliteration": "afiēmi",
+   "samples": [
+    "Matt.18.27",
+    "Matt.18.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1813",
+   "surface": "wipe away",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to blot out",
+   "transliteration": "exaleifō",
+   "samples": [
+    "Rev.21.4",
+    "Rev.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "acknowledges",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "Luke.12.8",
+    "Matt.10.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "confessed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "John.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "appease",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Gen.32.20",
+    "Prov.16.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "atoned for",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Isa.6.7",
+    "Prov.16.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "forgave",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ps.32.5",
+    "Ps.85.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5547",
+   "surface": "forgiveness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "forgiveness",
+   "transliteration": "se.li.chah",
+   "samples": [
+    "Dan.9.9",
+    "Ps.130.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0859",
+   "surface": "forgiveness of sins",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "forgiveness",
+   "transliteration": "afesis",
+   "samples": [
+    "Heb.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0863H",
+   "surface": "forgives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to release: forgive",
+   "transliteration": "afiēmi",
+   "samples": [
+    "Luke.7.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1813",
+   "surface": "blot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blot out",
+   "transliteration": "exaleifō",
+   "samples": [
+    "Rev.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1813",
+   "surface": "blotted out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blot out",
+   "transliteration": "exaleifō",
+   "samples": [
+    "Acts.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1813",
+   "surface": "canceling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blot out",
+   "transliteration": "exaleifō",
+   "samples": [
+    "Col.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "acknowledged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "Heb.11.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "declare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "Matt.7.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "granted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "Acts.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "1Tim.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "profess",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "Titus.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3670",
+   "surface": "promised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confess/profess",
+   "transliteration": "homologeō",
+   "samples": [
+    "Matt.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "annulled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Isa.28.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "atoning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Lev.16.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "cleanses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Deut.32.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "forgive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Jer.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "Num.35.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722A",
+   "surface": "pardon",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to atone",
+   "transliteration": "kip.per",
+   "samples": [
+    "2Chr.30.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "at all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "Hos.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "ease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "Job.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "forget",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ezek.39.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "pardoning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "Mic.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375I",
+   "surface": "take",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: forgive",
+   "transliteration": "na.sa",
+   "samples": [
+    "Hos.14.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5545",
+   "surface": "forgives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forgive",
+   "transliteration": "sa.lach",
+   "samples": [
+    "Ps.103.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5545",
+   "surface": "pardoned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to forgive",
+   "transliteration": "sa.lach",
+   "samples": [
+    "Num.14.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5546",
+   "surface": "forgiving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "forgiving",
+   "transliteration": "sal.lach",
+   "samples": [
+    "Ps.86.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5547",
+   "surface": "forgive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "forgiveness",
+   "transliteration": "se.li.chah",
+   "samples": [
+    "Neh.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

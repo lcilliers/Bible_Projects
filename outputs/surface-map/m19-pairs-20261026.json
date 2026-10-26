@@ -1,0 +1,2013 @@
+{
+ "cluster": "M19",
+ "cluster_name": "Trust & Refuge",
+ "built_at": "2026-10-26T04:19:35Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 122,
+  "head": 26,
+  "tail": 96,
+  "hits": 620,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G4100",
+   "surface": "believe",
+   "part": "head",
+   "hits": 113,
+   "verses": 104,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "1John.5.10",
+    "Matt.24.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4100",
+   "surface": "believed",
+   "part": "head",
+   "hits": 74,
+   "verses": 71,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "1John.5.10",
+    "Heb.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "trust",
+   "part": "head",
+   "hits": 63,
+   "verses": 63,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Jer.9.4",
+    "Ps.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4100",
+   "surface": "believes",
+   "part": "head",
+   "hits": 32,
+   "verses": 31,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "1John.5.10",
+    "John.3.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2620",
+   "surface": "take refuge",
+   "part": "head",
+   "hits": 24,
+   "verses": 24,
+   "gloss": "to seek refuge",
+   "transliteration": "cha.sah",
+   "samples": [
+    "Prov.30.5",
+    "Ps.57.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4733",
+   "surface": "refuge",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "refuge",
+   "transliteration": "miq.lat",
+   "samples": [
+    "Josh.21.38",
+    "Num.35.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0983",
+   "surface": "securely",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "security",
+   "transliteration": "be.tach",
+   "samples": [
+    "Prov.3.23",
+    "Zeph.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4268",
+   "surface": "refuge",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "refuge",
+   "transliteration": "mach.s.seh",
+   "samples": [
+    "Ps.104.18",
+    "Ps.46.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "trusted",
+   "part": "head",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Jer.48.7",
+    "Ps.52.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "trusts",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Isa.26.3",
+    "Prov.28.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "stronghold",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Isa.23.14",
+    "Prov.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0983",
+   "surface": "safety",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "security",
+   "transliteration": "be.tach",
+   "samples": [
+    "Deut.33.28",
+    "Jer.32.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2620",
+   "surface": "refuge",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to seek refuge",
+   "transliteration": "cha.sah",
+   "samples": [
+    "Ps.141.8",
+    "Ps.57.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4100",
+   "surface": "believers",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "1Thess.2.10",
+    "Acts.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4009",
+   "surface": "trust",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "confidence",
+   "transliteration": "miv.tach",
+   "samples": [
+    "Jer.2.37",
+    "Prov.21.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "refuge",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Ps.31.4",
+    "Ps.52.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4100",
+   "surface": "entrusted",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "1Thess.2.4",
+    "Titus.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4006",
+   "surface": "confidence",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "confidence",
+   "transliteration": "pepoithēsis",
+   "samples": [
+    "2Cor.3.4",
+    "Phil.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "trusting",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "2Chr.32.10",
+    "Jer.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4498",
+   "surface": "refuge",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "refuge",
+   "transliteration": "ma.nos",
+   "samples": [
+    "2Sam.22.3",
+    "Jer.16.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375O",
+   "surface": "lift up",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to lift: trust",
+   "transliteration": "na.sa",
+   "samples": [
+    "Lam.3.41",
+    "Ps.86.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "lean",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "Mic.3.11",
+    "Prov.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "rely",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "Isa.30.12",
+    "Isa.31.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4100",
+   "surface": "believing",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "John.12.11",
+    "John.20.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0983",
+   "surface": "secure",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "security",
+   "transliteration": "be.tach",
+   "samples": [
+    "Judg.8.11",
+    "Prov.1.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0983",
+   "surface": "security",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "security",
+   "transliteration": "be.tach",
+   "samples": [
+    "Job.11.18",
+    "Judg.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "confident",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Job.40.23",
+    "Job.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "unsuspecting",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Judg.18.27",
+    "Judg.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4009",
+   "surface": "confidence",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "confidence",
+   "transliteration": "miv.tach",
+   "samples": [
+    "Jer.48.13",
+    "Prov.14.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "fortress",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Dan.11.10",
+    "Dan.11.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "protection",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Isa.27.5",
+    "Isa.30.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5756",
+   "surface": "flee for safety",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to seek refuge",
+   "transliteration": "uz",
+   "samples": [
+    "Isa.10.31",
+    "Jer.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "leaned",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "2Kgs.7.17",
+    "2Kgs.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "relied",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "2Chr.13.18",
+    "2Chr.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2292",
+   "surface": "good courage",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be confident",
+   "transliteration": "tharreō",
+   "samples": [
+    "2Cor.5.6",
+    "2Cor.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4100",
+   "surface": "entrust",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "John.2.24",
+    "Luke.16.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5287",
+   "surface": "confidence",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "confidence/essence",
+   "transliteration": "hupostasis",
+   "samples": [
+    "2Cor.11.17",
+    "Heb.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "feel secure",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Amos.6.1",
+    "Job.11.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0983",
+   "surface": "trustingly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "security",
+   "transliteration": "be.tach",
+   "samples": [
+    "Mic.2.8",
+    "Prov.3.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4268",
+   "surface": "shelter",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "refuge",
+   "transliteration": "mach.s.seh",
+   "samples": [
+    "Isa.25.4",
+    "Job.24.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "fortresses",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Dan.11.19",
+    "Dan.11.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "helmet",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Ps.108.8",
+    "Ps.60.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8594",
+   "surface": "hostages",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "security",
+   "transliteration": "ta.a.ru.vah",
+   "samples": [
+    "2Chr.25.24",
+    "2Kgs.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0803",
+   "surface": "certainty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "asfaleia",
+   "samples": [
+    "Luke.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0803",
+   "surface": "securely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "asfaleia",
+   "samples": [
+    "Acts.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0803",
+   "surface": "security",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "asfaleia",
+   "samples": [
+    "1Thess.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0804",
+   "surface": "definite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "secure",
+   "transliteration": "asfalēs",
+   "samples": [
+    "Acts.25.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0804",
+   "surface": "facts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "secure",
+   "transliteration": "asfalēs",
+   "samples": [
+    "Acts.21.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0804",
+   "surface": "real reason",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "secure",
+   "transliteration": "asfalēs",
+   "samples": [
+    "Acts.22.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0804",
+   "surface": "safe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "secure",
+   "transliteration": "asfalēs",
+   "samples": [
+    "Phil.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0804",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "secure",
+   "transliteration": "asfalēs",
+   "samples": [
+    "Heb.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2292",
+   "surface": "bold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be confident",
+   "transliteration": "tharreō",
+   "samples": [
+    "2Cor.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2292",
+   "surface": "confidence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be confident",
+   "transliteration": "tharreō",
+   "samples": [
+    "2Cor.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2292",
+   "surface": "confidently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be confident",
+   "transliteration": "tharreō",
+   "samples": [
+    "Heb.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2292",
+   "surface": "show boldness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be confident",
+   "transliteration": "tharreō",
+   "samples": [
+    "2Cor.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2294",
+   "surface": "courage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "courage/confidence",
+   "transliteration": "tharsos",
+   "samples": [
+    "Acts.28.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4006",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence",
+   "transliteration": "pepoithēsis",
+   "samples": [
+    "2Cor.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4100",
+   "surface": "",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "1John.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4100",
+   "surface": "faith",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "Matt.21.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4100",
+   "surface": "faith in",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust (in)",
+   "transliteration": "pisteuō",
+   "samples": [
+    "Acts.27.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4740",
+   "surface": "stability",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "stērigmos",
+   "samples": [
+    "2Pet.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5287",
+   "surface": "assurance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence/essence",
+   "transliteration": "hupostasis",
+   "samples": [
+    "Heb.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5287",
+   "surface": "confident",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence/essence",
+   "transliteration": "hupostasis",
+   "samples": [
+    "2Cor.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5287",
+   "surface": "nature",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence/essence",
+   "transliteration": "hupostasis",
+   "samples": [
+    "Heb.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0540",
+   "surface": "faithful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "a.man",
+   "samples": [
+    "Dan.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0540",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "a.man",
+   "samples": [
+    "Dan.2.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0540",
+   "surface": "trusted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "a.man",
+   "samples": [
+    "Dan.6.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "bold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Prov.28.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "careless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Prov.14.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "complacent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Isa.32.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "complacent ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Isa.32.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "complacent women",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Isa.32.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "confidence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Mic.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "depend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Job.39.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "felt secure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Isa.47.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "put confidence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Judg.9.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "rely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Isa.59.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "2Kgs.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0982",
+   "surface": "secure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "ba.tach",
+   "samples": [
+    "Prov.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0983",
+   "surface": "felt secure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "be.tach",
+   "samples": [
+    "Gen.34.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0983",
+   "surface": "trust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "be.tach",
+   "samples": [
+    "Isa.32.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0983",
+   "surface": "unsuspecting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "be.tach",
+   "samples": [
+    "Ezek.30.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0985",
+   "surface": "trust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trust",
+   "transliteration": "bit.chah",
+   "samples": [
+    "Isa.30.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0986",
+   "surface": "hope",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trust",
+   "transliteration": "bit.ta.chon",
+   "samples": [
+    "Eccl.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0986",
+   "surface": "rest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trust",
+   "transliteration": "bit.ta.chon",
+   "samples": [
+    "Isa.36.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0986",
+   "surface": "trust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trust",
+   "transliteration": "bit.ta.chon",
+   "samples": [
+    "2Kgs.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0987",
+   "surface": "secure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "bat.tu.chot",
+   "samples": [
+    "Job.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2620",
+   "surface": "seek shelter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek refuge",
+   "transliteration": "cha.sah",
+   "samples": [
+    "Isa.30.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2620",
+   "surface": "take",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek refuge",
+   "transliteration": "cha.sah",
+   "samples": [
+    "Ps.36.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2620",
+   "surface": "took refuge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek refuge",
+   "transliteration": "cha.sah",
+   "samples": [
+    "Deut.32.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2622",
+   "surface": "shelter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuge",
+   "transliteration": "cha.sut",
+   "samples": [
+    "Isa.30.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3690",
+   "surface": "confidence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence",
+   "transliteration": "kis.lah",
+   "samples": [
+    "Job.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3690",
+   "surface": "folly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence",
+   "transliteration": "kis.lah",
+   "samples": [
+    "Ps.85.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4009",
+   "surface": "hope",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence",
+   "transliteration": "miv.tach",
+   "samples": [
+    "Ps.65.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4009",
+   "surface": "reliance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence",
+   "transliteration": "miv.tach",
+   "samples": [
+    "Ezek.29.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4009",
+   "surface": "secure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence",
+   "transliteration": "miv.tach",
+   "samples": [
+    "Isa.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4009",
+   "surface": "trusted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence",
+   "transliteration": "miv.tach",
+   "samples": [
+    "Job.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4009",
+   "surface": "trusting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "confidence",
+   "transliteration": "miv.tach",
+   "samples": [
+    "Prov.25.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4224B",
+   "surface": "lurking places",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuge",
+   "transliteration": "ma.cha.vo",
+   "samples": [
+    "1Sam.23.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4498",
+   "surface": "flight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuge",
+   "transliteration": "ma.nos",
+   "samples": [
+    "Amos.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4498",
+   "surface": "haste",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuge",
+   "transliteration": "ma.nos",
+   "samples": [
+    "Jer.46.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4498",
+   "surface": "way of escape",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuge",
+   "transliteration": "ma.nos",
+   "samples": [
+    "Job.11.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "rock",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Ps.31.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Neh.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "strengthen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Dan.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Isa.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "strongest fortresses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Dan.11.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4581",
+   "surface": "strongholds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "security",
+   "transliteration": "ma.oz",
+   "samples": [
+    "Isa.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375O",
+   "surface": "greedy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: trust",
+   "transliteration": "na.sa",
+   "samples": [
+    "Hos.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375O",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: trust",
+   "transliteration": "na.sa",
+   "samples": [
+    "Jer.22.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375O",
+   "surface": "putting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: trust",
+   "transliteration": "na.sa",
+   "samples": [
+    "Prov.19.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375O",
+   "surface": "they",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: trust",
+   "transliteration": "na.sa",
+   "samples": [
+    "Jer.44.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5756",
+   "surface": "safe shelter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek refuge",
+   "transliteration": "uz",
+   "samples": [
+    "Exod.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5756",
+   "surface": "take refuge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek refuge",
+   "transliteration": "uz",
+   "samples": [
+    "Isa.30.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7365",
+   "surface": "trusted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to trust",
+   "transliteration": "re.chats",
+   "samples": [
+    "Dan.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7514",
+   "surface": "leaning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lean",
+   "transliteration": "ra.phaq",
+   "samples": [
+    "Song.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "leaning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "2Kgs.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "leaning on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "2Sam.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "leans",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "Job.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "leans to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "Num.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "rest yourselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "Gen.18.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8172",
+   "surface": "supported",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lean",
+   "transliteration": "sha.an",
+   "samples": [
+    "Job.24.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

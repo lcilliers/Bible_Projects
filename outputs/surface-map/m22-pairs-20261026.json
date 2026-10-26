@@ -1,0 +1,5083 @@
+{
+ "cluster": "M22",
+ "cluster_name": "Praise & Song",
+ "built_at": "2026-10-26T04:20:02Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 309,
+  "head": 74,
+  "tail": 235,
+  "hits": 1473,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G1391",
+   "surface": "glory",
+   "part": "head",
+   "hits": 152,
+   "verses": 137,
+   "gloss": "glory",
+   "transliteration": "doxa",
+   "samples": [
+    "2Cor.4.17",
+    "Rev.21.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "glory",
+   "part": "head",
+   "hits": 144,
+   "verses": 136,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "Gen.49.6",
+    "Hag.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "praise",
+   "part": "head",
+   "hits": 93,
+   "verses": 75,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Joel.2.26",
+    "Ps.22.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4210",
+   "surface": "psalm",
+   "part": "head",
+   "hits": 57,
+   "verses": 57,
+   "gloss": "melody",
+   "transliteration": "miz.mor",
+   "samples": [
+    "Ps.66.1",
+    "Ps.68.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7892A",
+   "surface": "song",
+   "part": "head",
+   "hits": 51,
+   "verses": 51,
+   "gloss": "song",
+   "transliteration": "shir",
+   "samples": [
+    "Ps.66.1",
+    "Ps.68.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8416",
+   "surface": "praise",
+   "part": "head",
+   "hits": 48,
+   "verses": 48,
+   "gloss": "praise",
+   "transliteration": "te.hil.lah",
+   "samples": [
+    "Isa.48.9",
+    "Jer.17.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "honor",
+   "part": "head",
+   "hits": 35,
+   "verses": 35,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "2Chr.1.11",
+    "Isa.22.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "singers",
+   "part": "head",
+   "hits": 33,
+   "verses": 32,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "2Chr.5.13",
+    "Ps.87.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "great",
+   "part": "head",
+   "hits": 32,
+   "verses": 32,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Gen.19.19",
+    "Mal.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "sing",
+   "part": "head",
+   "hits": 32,
+   "verses": 31,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Isa.5.1",
+    "Ps.96.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "exalted",
+   "part": "head",
+   "hits": 28,
+   "verses": 27,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "1Kgs.16.2",
+    "Ps.18.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "glorified",
+   "part": "head",
+   "hits": 26,
+   "verses": 25,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "1Pet.4.11",
+    "John.17.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2127",
+   "surface": "blessed",
+   "part": "head",
+   "hits": 23,
+   "verses": 22,
+   "gloss": "to praise/bless",
+   "transliteration": "eulogeō",
+   "samples": [
+    "Eph.1.3",
+    "Heb.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "sing praises",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Ps.108.3",
+    "Ps.146.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "glorify",
+   "part": "head",
+   "hits": 17,
+   "verses": 14,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "John.16.14",
+    "Rom.15.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "praised",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "1Chr.16.25",
+    "Isa.64.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "sing for joy",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Isa.26.19",
+    "Jer.51.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "high",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.20.28",
+    "Num.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1926",
+   "surface": "majesty",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "glory",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Lam.1.6",
+    "Ps.45.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "lifted up",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Isa.26.11",
+    "Num.20.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "up",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Isa.40.9",
+    "Lev.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "sing",
+   "part": "head",
+   "hits": 12,
+   "verses": 9,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Ps.135.3",
+    "Ps.47.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "glorious",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "Jer.14.21",
+    "Jer.17.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7892A",
+   "surface": "songs",
+   "part": "head",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "song",
+   "transliteration": "shir",
+   "samples": [
+    "Amos.8.10",
+    "Neh.12.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "exalt",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "1Chr.25.5",
+    "Dan.11.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7892B",
+   "surface": "song",
+   "part": "head",
+   "hits": 11,
+   "verses": 10,
+   "gloss": "song",
+   "transliteration": "shi.rah",
+   "samples": [
+    "Deut.31.21",
+    "Deut.31.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2129",
+   "surface": "blessing",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "praise",
+   "transliteration": "eulogia",
+   "samples": [
+    "Jas.3.10",
+    "Rom.15.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1926",
+   "surface": "splendor",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "glory",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Isa.2.19",
+    "Prov.20.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "joy",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Ps.65.8",
+    "Ps.71.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1868",
+   "surface": "praise",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "praise",
+   "transliteration": "epainos",
+   "samples": [
+    "1Pet.2.14",
+    "Eph.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2127",
+   "surface": "bless",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to praise/bless",
+   "transliteration": "eulogeō",
+   "samples": [
+    "Acts.3.26",
+    "Rom.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2128",
+   "surface": "blessed",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "praiseworthy",
+   "transliteration": "eulogētos",
+   "samples": [
+    "2Cor.11.31",
+    "Mark.14.61"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "magnify",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Dan.11.36",
+    "Dan.11.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "present",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Num.15.20",
+    "Num.18.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1391",
+   "surface": "glorious",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "glory",
+   "transliteration": "doxa",
+   "samples": [
+    "Matt.19.28",
+    "Phil.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "greater",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "1Chr.11.9",
+    "Lam.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "grown up",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "2Chr.10.10",
+    "Gen.38.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "make melody",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Ps.147.7",
+    "Ps.27.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6030C",
+   "surface": "sing",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to sing",
+   "transliteration": "a.nah",
+   "samples": [
+    "1Sam.21.11",
+    "Num.21.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "sing",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Isa.54.1",
+    "Ps.95.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "sing aloud",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Jer.31.7",
+    "Ps.51.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7682",
+   "surface": "exalted",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to exalt",
+   "transliteration": "sa.gav",
+   "samples": [
+    "Job.36.22",
+    "Ps.148.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "sang",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Exod.15.1",
+    "Num.21.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0134",
+   "surface": "praising",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to praise",
+   "transliteration": "aineō",
+   "samples": [
+    "Acts.2.47",
+    "Luke.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2127",
+   "surface": "blessing",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to praise/bless",
+   "transliteration": "eulogeō",
+   "samples": [
+    "Luke.24.53",
+    "Matt.26.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5603",
+   "surface": "song",
+   "part": "head",
+   "hits": 5,
+   "verses": 3,
+   "gloss": "song",
+   "transliteration": "ōdē",
+   "samples": [
+    "Rev.14.3",
+    "Rev.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "grew",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "1Sam.3.19",
+    "Gen.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "lift up",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ps.110.7",
+    "Ps.75.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "lofty",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Job.22.12",
+    "Prov.30.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "raised",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "2Chr.5.13",
+    "Ps.131.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7682",
+   "surface": "high",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to exalt",
+   "transliteration": "sa.gav",
+   "samples": [
+    "Prov.18.11",
+    "Ps.139.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "glorifying",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "Acts.13.48",
+    "Luke.18.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "great things",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Joel.2.20",
+    "Joel.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "grew up",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "2Sam.12.3",
+    "Job.31.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "magnified",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "2Sam.7.26",
+    "Jer.48.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "contributed",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "2Chr.35.7",
+    "Num.18.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "exalts",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "1Sam.2.7",
+    "Prov.14.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "extol",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ps.107.32",
+    "Ps.118.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "lift",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Isa.10.15",
+    "Ps.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "set apart",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.45.1",
+    "Ezek.48.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7892A",
+   "surface": "music",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "song",
+   "transliteration": "shir",
+   "samples": [
+    "1Chr.25.6",
+    "2Chr.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7892A",
+   "surface": "singing",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "song",
+   "transliteration": "shir",
+   "samples": [
+    "1Chr.25.7",
+    "Isa.24.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8416",
+   "surface": "praises",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "praise",
+   "transliteration": "te.hil.lah",
+   "samples": [
+    "Isa.60.6",
+    "Isa.63.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0103",
+   "surface": "singing",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to sing",
+   "transliteration": "adō",
+   "samples": [
+    "Col.3.16",
+    "Rev.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0134",
+   "surface": "praise",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to praise",
+   "transliteration": "aineō",
+   "samples": [
+    "Rev.19.5",
+    "Rom.15.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "glory",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "1Pet.1.8",
+    "2Cor.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1867",
+   "surface": "commend",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to praise",
+   "transliteration": "epaineō",
+   "samples": [
+    "1Cor.11.2",
+    "1Cor.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2127",
+   "surface": "said a blessing",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to praise/bless",
+   "transliteration": "eulogeō",
+   "samples": [
+    "Luke.9.16",
+    "Matt.14.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "praises",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "2Chr.29.30",
+    "Prov.31.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "praising",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "1Chr.23.30",
+    "Ezra.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2176",
+   "surface": "song",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "song",
+   "transliteration": "zim.rat",
+   "samples": [
+    "Isa.12.2",
+    "Ps.118.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "wealth",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "Gen.31.1",
+    "Isa.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "gave",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "2Chr.30.24",
+    "2Chr.35.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "haughty",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Prov.6.17",
+    "Ps.18.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "lifts",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Isa.10.15",
+    "Ps.113.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "raise",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "1Chr.15.16",
+    "Hos.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "take",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Lev.4.19",
+    "Lev.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "tall",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Deut.2.21",
+    "Deut.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7426",
+   "surface": "mounted up",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be exalted",
+   "transliteration": "ra.mom",
+   "samples": [
+    "Ezek.10.15",
+    "Ezek.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "rejoice",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Deut.32.43",
+    "Isa.61.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7624",
+   "surface": "praised",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to praise",
+   "transliteration": "she.vach",
+   "samples": [
+    "Dan.5.23",
+    "Dan.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7892A",
+   "surface": "musical",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "song",
+   "transliteration": "shir",
+   "samples": [
+    "1Chr.15.16",
+    "2Chr.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0136",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "praise",
+   "transliteration": "ainos",
+   "samples": [
+    "Luke.18.43",
+    "Matt.21.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "honored",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "1Cor.12.26",
+    "2Thess.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "praised",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "Luke.23.47",
+    "Matt.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "praising",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "Acts.4.21",
+    "Luke.17.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1740",
+   "surface": "glorified",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be glorified",
+   "transliteration": "endoxazomai",
+   "samples": [
+    "2Thess.1.10",
+    "2Thess.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2129",
+   "surface": "bountifully",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "eulogia",
+   "samples": [
+    "2Cor.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5214",
+   "surface": "hymn",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to praise",
+   "transliteration": "humneō",
+   "samples": [
+    "Mark.14.26",
+    "Matt.26.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5567",
+   "surface": "sing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing praise",
+   "transliteration": "psallō",
+   "samples": [
+    "1Cor.14.15",
+    "Rom.15.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5567",
+   "surface": "sing praise",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing praise",
+   "transliteration": "psallō",
+   "samples": [
+    "1Cor.14.15",
+    "Jas.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5603",
+   "surface": "songs",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "song",
+   "transliteration": "ōdē",
+   "samples": [
+    "Col.3.16",
+    "Eph.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "boast",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Obad.1.12",
+    "Ps.38.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "brought up",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Isa.49.21",
+    "Isa.51.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "exalted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Josh.4.14",
+    "Ps.138.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "excelled",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "1Kgs.10.23",
+    "2Chr.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "grown",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "2Kgs.4.18",
+    "Ruth.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "precious",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "1Sam.26.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "reared",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Isa.1.2",
+    "Isa.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1926",
+   "surface": "honor",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "glory",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Ps.149.9",
+    "Ps.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2158",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "song",
+   "transliteration": "za.mir",
+   "samples": [
+    "Isa.24.16",
+    "Ps.95.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2158",
+   "surface": "songs",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "song",
+   "transliteration": "za.mir",
+   "samples": [
+    "Job.35.10",
+    "Ps.119.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "praises",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Isa.12.5",
+    "Ps.66.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "sing praise",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Ps.104.33",
+    "Ps.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2172",
+   "surface": "melody",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "melody",
+   "transliteration": "zim.rah",
+   "samples": [
+    "Amos.5.23",
+    "Ps.98.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6030C",
+   "surface": "sang to",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing",
+   "transliteration": "a.nah",
+   "samples": [
+    "1Sam.18.7",
+    "Exod.15.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "higher",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Num.24.7",
+    "Ps.61.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "lifting up",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ps.75.6",
+    "Ps.75.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "offered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezra.8.25",
+    "Num.18.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "raised up",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Isa.49.11",
+    "Ps.148.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "remove",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Isa.57.14",
+    "Lev.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "took up",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "1Sam.9.24",
+    "2Kgs.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "singing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Isa.35.2",
+    "Isa.52.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7623B",
+   "surface": "commend",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to praise",
+   "transliteration": "sha.vach",
+   "samples": [
+    "Eccl.8.15",
+    "Ps.145.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7623B",
+   "surface": "glory",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to praise",
+   "transliteration": "sha.vach",
+   "samples": [
+    "1Chr.16.35",
+    "Ps.106.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7623B",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to praise",
+   "transliteration": "sha.vach",
+   "samples": [
+    "Ps.147.12",
+    "Ps.63.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7624",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to praise",
+   "transliteration": "she.vach",
+   "samples": [
+    "Dan.2.23",
+    "Dan.4.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7682",
+   "surface": "protect",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to exalt",
+   "transliteration": "sa.gav",
+   "samples": [
+    "Ps.20.1",
+    "Ps.59.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7682",
+   "surface": "safe",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to exalt",
+   "transliteration": "sa.gav",
+   "samples": [
+    "Prov.18.10",
+    "Prov.29.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "male",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Ezra.2.65",
+    "Neh.7.67"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "singing men",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "2Chr.35.25",
+    "2Sam.19.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "singing women",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "2Chr.35.25",
+    "2Sam.19.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "sung",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Isa.26.1",
+    "Job.36.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0103",
+   "surface": "sang",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "adō",
+   "samples": [
+    "Rev.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0103",
+   "surface": "sing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "adō",
+   "samples": [
+    "Rev.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0133",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "ainesis",
+   "samples": [
+    "Heb.13.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0437",
+   "surface": "give thanks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "anthomologeomai",
+   "samples": [
+    "Luke.2.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1391",
+   "surface": "another",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "doxa",
+   "samples": [
+    "2Cor.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1391",
+   "surface": "brightness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "doxa",
+   "samples": [
+    "Acts.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1391",
+   "surface": "glories",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "doxa",
+   "samples": [
+    "1Pet.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1391",
+   "surface": "glorious ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "doxa",
+   "samples": [
+    "2Pet.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1391",
+   "surface": "honor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "doxa",
+   "samples": [
+    "2Cor.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1391",
+   "surface": "honored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "doxa",
+   "samples": [
+    "Luke.14.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1391",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "doxa",
+   "samples": [
+    "Luke.17.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "exalt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "Heb.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "give glory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "Matt.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "glorifies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "John.8.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "honor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "Rom.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1392",
+   "surface": "magnify",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to glorify",
+   "transliteration": "doxazō",
+   "samples": [
+    "Rom.11.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1867",
+   "surface": "commended",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "epaineō",
+   "samples": [
+    "Luke.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1867",
+   "surface": "extol",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "epaineō",
+   "samples": [
+    "Rom.15.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1867",
+   "surface": "not",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "epaineō",
+   "samples": [
+    "1Cor.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1868",
+   "surface": "approval",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "epainos",
+   "samples": [
+    "Rom.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1868",
+   "surface": "commendation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "epainos",
+   "samples": [
+    "1Cor.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1868",
+   "surface": "famous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "epainos",
+   "samples": [
+    "2Cor.8.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2127",
+   "surface": "",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise/bless",
+   "transliteration": "eulogeō",
+   "samples": [
+    "Luke.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2127",
+   "surface": "blessings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise/bless",
+   "transliteration": "eulogeō",
+   "samples": [
+    "Heb.11.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2127",
+   "surface": "give thanks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise/bless",
+   "transliteration": "eulogeō",
+   "samples": [
+    "1Cor.14.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2129",
+   "surface": "bless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "eulogia",
+   "samples": [
+    "1Pet.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2129",
+   "surface": "flattery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "eulogia",
+   "samples": [
+    "Rom.16.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2129",
+   "surface": "gift",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "eulogia",
+   "samples": [
+    "2Cor.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2129",
+   "surface": "willing gift",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "eulogia",
+   "samples": [
+    "2Cor.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3170",
+   "surface": "enlarged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "megalunō",
+   "samples": [
+    "2Cor.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3170",
+   "surface": "extolled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "megalunō",
+   "samples": [
+    "Acts.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3170",
+   "surface": "extolling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "megalunō",
+   "samples": [
+    "Acts.10.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3170",
+   "surface": "high esteem",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "megalunō",
+   "samples": [
+    "Acts.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3170",
+   "surface": "honored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "megalunō",
+   "samples": [
+    "Phil.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3170",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "megalunō",
+   "samples": [
+    "Matt.23.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3170",
+   "surface": "magnifies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "megalunō",
+   "samples": [
+    "Luke.1.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3170",
+   "surface": "shown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "megalunō",
+   "samples": [
+    "Luke.1.58"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5214",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "humneō",
+   "samples": [
+    "Heb.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5214",
+   "surface": "singing hymns",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "humneō",
+   "samples": [
+    "Acts.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5251",
+   "surface": "highly exalted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "huperupsoō",
+   "samples": [
+    "Phil.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5567",
+   "surface": "making melody",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing praise",
+   "transliteration": "psallō",
+   "samples": [
+    "Eph.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "advanced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Esth.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "became rich",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Gen.26.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "became tall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Ezek.16.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "boasted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Zeph.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "boasts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Zeph.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "bring up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Hos.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "deals insolently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Ps.55.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "done",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "1Sam.12.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "educated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Dan.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "exalt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Josh.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "excellent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Isa.28.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "full grown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Ps.144.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "greatness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Ezek.38.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "grew older",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Exod.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "grow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Jonah.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "grows up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Gen.38.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "honored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Esth.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "increased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Isa.9.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "lifted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Ps.41.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Num.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "magnificent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "1Chr.22.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "magnified yourselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Ezek.35.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "more powerful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Esth.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "most",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "1Sam.20.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "mounted up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Ezra.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "much",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Job.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "nourished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Ezek.31.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "nourishes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Isa.44.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "promoted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Esth.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "surpass",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Zech.12.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "triumphed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Lam.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "2Kgs.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1431",
+   "surface": "wealthy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to magnify",
+   "transliteration": "ga.dal",
+   "samples": [
+    "Gen.26.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1925",
+   "surface": "glory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "he.der",
+   "samples": [
+    "Dan.11.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1926",
+   "surface": "dignity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Prov.31.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1926",
+   "surface": "garments",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Ps.110.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1926",
+   "surface": "glorious power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Ps.90.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1926",
+   "surface": "nobility",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Isa.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1926",
+   "surface": "splendid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Lev.23.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1960",
+   "surface": "thanksgiving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "huy.ye.dot",
+   "samples": [
+    "Neh.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1974",
+   "surface": "festival",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "hil.lul",
+   "samples": [
+    "Judg.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1974",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "hil.lul",
+   "samples": [
+    "Lev.19.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "celebration",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "2Chr.23.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "commended",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Prov.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "offer praises",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "1Chr.23.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "offered praises",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "2Chr.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "renowned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Ezek.26.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984B",
+   "surface": "song",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: praise",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Ps.78.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2158",
+   "surface": "psalmist",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "song",
+   "transliteration": "za.mir",
+   "samples": [
+    "2Sam.23.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2158",
+   "surface": "song",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "song",
+   "transliteration": "za.mir",
+   "samples": [
+    "Isa.25.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "make music",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Ps.101.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "melody",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Ps.149.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "play",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Ps.144.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Ps.21.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2167",
+   "surface": "sing your praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "za.mar",
+   "samples": [
+    "Ps.138.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2172",
+   "surface": "song",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "melody",
+   "transliteration": "zim.rah",
+   "samples": [
+    "Isa.51.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3029",
+   "surface": "gave thanks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "ye.da",
+   "samples": [
+    "Dan.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3029",
+   "surface": "give thanks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "ye.da",
+   "samples": [
+    "Dan.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "being",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "Ps.108.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "glorious presence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "Isa.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "honored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "Isa.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "honoring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "1Chr.17.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "splendor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "Esth.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3519",
+   "surface": "whole being",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glory",
+   "transliteration": "ka.vod",
+   "samples": [
+    "Ps.16.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4110",
+   "surface": "tested by his praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "ma.ha.lal",
+   "samples": [
+    "Prov.27.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5273B",
+   "surface": "sweet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "musical",
+   "transliteration": "na.im",
+   "samples": [
+    "2Sam.23.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6030C",
+   "surface": "all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "a.nah",
+   "samples": [
+    "Jer.25.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6030C",
+   "surface": "cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "a.nah",
+   "samples": [
+    "Exod.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6030C",
+   "surface": "raise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "a.nah",
+   "samples": [
+    "Jer.51.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6030C",
+   "surface": "sang responsively",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "a.nah",
+   "samples": [
+    "Ezra.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6030C",
+   "surface": "shouting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "a.nah",
+   "samples": [
+    "Exod.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6030C",
+   "surface": "singing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "a.nah",
+   "samples": [
+    "Exod.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezra.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "brought up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Isa.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "cease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.45.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "contribute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Lev.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "could make",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Exod.35.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Isa.13.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "defiantly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Exod.14.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "direct",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ps.74.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "eases",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Hos.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "exalted me above",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "2Sam.22.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "get",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Prov.3.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "great",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Isa.10.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "grow tall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.31.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "high heavens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ps.78.69"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "levy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Num.31.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "lifted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ps.27.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "lifted my",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Gen.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "lifter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ps.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "loud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Deut.27.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "make",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.45.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "mounted up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "presented",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Num.31.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "proud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.31.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "rose high",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Gen.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "set up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezra.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "take off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.21.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "take up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Josh.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "taken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Lev.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "taken away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Dan.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "taller",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Deut.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "top",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.17.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "triumph",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Job.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "triumphant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Deut.32.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "triumphantly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Num.33.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "uplifted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Job.38.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7311A",
+   "surface": "went up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "rum",
+   "samples": [
+    "Ezek.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7318",
+   "surface": "high praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "extolling",
+   "transliteration": "ro.mam",
+   "samples": [
+    "Ps.66.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7318",
+   "surface": "high praises",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "extolling",
+   "transliteration": "ro.mam",
+   "samples": [
+    "Ps.149.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7426",
+   "surface": "exalted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be exalted",
+   "transliteration": "ra.mom",
+   "samples": [
+    "Job.24.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7426",
+   "surface": "exalts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be exalted",
+   "transliteration": "ra.mom",
+   "samples": [
+    "Ps.118.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7426",
+   "surface": "get away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be exalted",
+   "transliteration": "ra.mom",
+   "samples": [
+    "Num.16.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7438",
+   "surface": "shouts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "song",
+   "transliteration": "ron",
+   "samples": [
+    "Ps.32.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Prov.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "cry out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Lam.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "joyous song",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Ps.98.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "joyously praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Ps.89.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "raises",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Prov.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "sang",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Job.38.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "shout",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Ps.132.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "shouted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Lev.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7442B",
+   "surface": "sung",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "ra.nan",
+   "samples": [
+    "Isa.16.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7623B",
+   "surface": "extol",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "sha.vach",
+   "samples": [
+    "Ps.117.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7623B",
+   "surface": "more fortunate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to praise",
+   "transliteration": "sha.vach",
+   "samples": [
+    "Eccl.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7682",
+   "surface": "lifted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "sa.gav",
+   "samples": [
+    "Job.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7682",
+   "surface": "lofty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "sa.gav",
+   "samples": [
+    "Isa.26.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7682",
+   "surface": "protect him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "sa.gav",
+   "samples": [
+    "Ps.91.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7682",
+   "surface": "raises",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "sa.gav",
+   "samples": [
+    "Isa.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7682",
+   "surface": "raises up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to exalt",
+   "transliteration": "sa.gav",
+   "samples": [
+    "Ps.107.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "both men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Eccl.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "chambers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Ezek.40.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "female",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Neh.7.67"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "hoot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Zeph.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "singer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "1Chr.6.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "singing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "1Sam.18.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "sings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Prov.25.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7891",
+   "surface": "women",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sing",
+   "transliteration": "shir",
+   "samples": [
+    "Eccl.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7892A",
+   "surface": "instruments",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "song",
+   "transliteration": "shir",
+   "samples": [
+    "1Chr.16.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7892A",
+   "surface": "singers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "song",
+   "transliteration": "shir",
+   "samples": [
+    "2Chr.29.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8416",
+   "surface": "famous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "te.hil.lah",
+   "samples": [
+    "Jer.49.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8416",
+   "surface": "glorious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "te.hil.lah",
+   "samples": [
+    "Ps.78.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8416",
+   "surface": "glorious deeds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "te.hil.lah",
+   "samples": [
+    "Exod.15.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8416",
+   "surface": "praised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "te.hil.lah",
+   "samples": [
+    "Zeph.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8416",
+   "surface": "renown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "praise",
+   "transliteration": "te.hil.lah",
+   "samples": [
+    "Jer.48.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

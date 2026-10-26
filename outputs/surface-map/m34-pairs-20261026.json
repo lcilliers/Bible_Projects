@@ -1,0 +1,1912 @@
+{
+ "cluster": "M34",
+ "cluster_name": "Patience & Perseverance",
+ "built_at": "2026-10-26T04:21:35Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 116,
+  "head": 54,
+  "tail": 62,
+  "hits": 312,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H5703",
+   "surface": "forever",
+   "part": "head",
+   "hits": 26,
+   "verses": 26,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Job.19.24",
+    "Ps.92.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "forever",
+   "part": "head",
+   "hits": 21,
+   "verses": 21,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Ps.52.5",
+    "Ps.74.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3115",
+   "surface": "patience",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "patience",
+   "transliteration": "makrothumia",
+   "samples": [
+    "2Cor.6.6",
+    "2Pet.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5281",
+   "surface": "endurance",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "perseverance",
+   "transliteration": "hupomonē",
+   "samples": [
+    "Rev.2.19",
+    "Rom.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5703",
+   "surface": "ever",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Dan.12.3",
+    "Ps.145.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5281",
+   "surface": "steadfastness",
+   "part": "head",
+   "hits": 11,
+   "verses": 10,
+   "gloss": "perseverance",
+   "transliteration": "hupomonē",
+   "samples": [
+    "2Pet.1.6",
+    "2Thess.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5957",
+   "surface": "forever",
+   "part": "head",
+   "hits": 11,
+   "verses": 10,
+   "gloss": "perpetuity",
+   "transliteration": "a.lam",
+   "samples": [
+    "Dan.2.4",
+    "Dan.6.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2715",
+   "surface": "nobles",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "noble",
+   "transliteration": "chor",
+   "samples": [
+    "Jer.39.6",
+    "Neh.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8535",
+   "surface": "blameless",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "complete",
+   "transliteration": "tam",
+   "samples": [
+    "Job.8.20",
+    "Prov.29.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0430",
+   "surface": "bear",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to endure",
+   "transliteration": "anechō",
+   "samples": [
+    "2Cor.11.19",
+    "Mark.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5081H",
+   "surface": "princes",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "noble",
+   "transliteration": "na.div",
+   "samples": [
+    "Ps.118.9",
+    "Ps.47.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7261",
+   "surface": "lords",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "noble",
+   "transliteration": "rav.re.van",
+   "samples": [
+    "Dan.5.1",
+    "Dan.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3114",
+   "surface": "patient",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to have patience",
+   "transliteration": "makrothumeō",
+   "samples": [
+    "1Cor.13.4",
+    "Jas.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "never",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Amos.8.7",
+    "Ps.49.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5278",
+   "surface": "endure",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to remain/endure",
+   "transliteration": "hupomenō",
+   "samples": [
+    "2Tim.2.10",
+    "Heb.12.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5081H",
+   "surface": "noble",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "noble",
+   "transliteration": "na.div",
+   "samples": [
+    "Prov.25.7",
+    "Song.7.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5278",
+   "surface": "endures",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to remain/endure",
+   "transliteration": "hupomenō",
+   "samples": [
+    "Matt.10.22",
+    "Matt.24.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5281",
+   "surface": "patience",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "perseverance",
+   "transliteration": "hupomonē",
+   "samples": [
+    "2Cor.12.12",
+    "Rom.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5081H",
+   "surface": "nobles",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "noble",
+   "transliteration": "na.div",
+   "samples": [
+    "Job.34.18",
+    "Num.21.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5957",
+   "surface": "everlasting",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "perpetuity",
+   "transliteration": "a.lam",
+   "samples": [
+    "Dan.4.3",
+    "Dan.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4586",
+   "surface": "dignified",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "noble",
+   "transliteration": "semnos",
+   "samples": [
+    "1Tim.3.8",
+    "Titus.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5278",
+   "surface": "endured",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to remain/endure",
+   "transliteration": "hupomenō",
+   "samples": [
+    "Heb.10.32",
+    "Heb.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5081H",
+   "surface": "prince",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "noble",
+   "transliteration": "na.div",
+   "samples": [
+    "Prov.17.7",
+    "Song.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "always",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Ps.103.9",
+    "Ps.9.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0075",
+   "surface": "strive",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to struggle",
+   "transliteration": "agōnizomai",
+   "samples": [
+    "1Tim.4.10",
+    "Luke.13.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0075",
+   "surface": "struggling",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to struggle",
+   "transliteration": "agōnizomai",
+   "samples": [
+    "Col.1.29",
+    "Col.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0430",
+   "surface": "bearing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to endure",
+   "transliteration": "anechō",
+   "samples": [
+    "Col.3.13",
+    "Eph.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0430",
+   "surface": "endure",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to endure",
+   "transliteration": "anechō",
+   "samples": [
+    "1Cor.4.12",
+    "2Tim.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1476",
+   "surface": "steadfast",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "steadfast",
+   "transliteration": "hedraios",
+   "samples": [
+    "1Cor.15.58",
+    "Col.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2553",
+   "surface": "suffering",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to endure",
+   "transliteration": "kakopatheō",
+   "samples": [
+    "2Tim.2.9",
+    "Jas.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3114",
+   "surface": "patience",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to have patience",
+   "transliteration": "makrothumeō",
+   "samples": [
+    "Matt.18.26",
+    "Matt.18.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4722",
+   "surface": "bear",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to endure",
+   "transliteration": "stegō",
+   "samples": [
+    "1Thess.3.1",
+    "1Thess.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2715",
+   "surface": "leaders",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "noble",
+   "transliteration": "chor",
+   "samples": [
+    "1Kgs.21.11",
+    "1Kgs.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5081H",
+   "surface": "noble things",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "noble",
+   "transliteration": "na.div",
+   "samples": [
+    "Isa.32.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5327A",
+   "surface": "contended",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "na.tsah",
+   "samples": [
+    "Num.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "end",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Jer.3.5",
+    "Job.34.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5703",
+   "surface": "eternity",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Isa.45.17",
+    "Isa.57.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5957",
+   "surface": "ever",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "perpetuity",
+   "transliteration": "a.lam",
+   "samples": [
+    "Dan.2.20",
+    "Dan.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5957",
+   "surface": "old",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "perpetuity",
+   "transliteration": "a.lam",
+   "samples": [
+    "Ezra.4.15",
+    "Ezra.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8535",
+   "surface": "perfect one",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "complete",
+   "transliteration": "tam",
+   "samples": [
+    "Song.5.2",
+    "Song.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0074",
+   "surface": "agony",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "a struggle",
+   "transliteration": "agōnia",
+   "samples": [
+    "Luke.22.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0075",
+   "surface": "athlete",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "agōnizomai",
+   "samples": [
+    "1Cor.9.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0075",
+   "surface": "fight",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "agōnizomai",
+   "samples": [
+    "1Tim.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0075",
+   "surface": "fighting",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "agōnizomai",
+   "samples": [
+    "John.18.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0075",
+   "surface": "fought",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "agōnizomai",
+   "samples": [
+    "2Tim.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0430",
+   "surface": "accept",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "anechō",
+   "samples": [
+    "Acts.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0430",
+   "surface": "enduring",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "anechō",
+   "samples": [
+    "2Thess.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0430",
+   "surface": "put up with",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "anechō",
+   "samples": [
+    "2Cor.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0464",
+   "surface": "struggle",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "antagōnizomai",
+   "samples": [
+    "Heb.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0679",
+   "surface": "from stumbling",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "without falling",
+   "transliteration": "aptaistos",
+   "samples": [
+    "Jude.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0778",
+   "surface": "take pains",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strive",
+   "transliteration": "askeō",
+   "samples": [
+    "Acts.24.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1476",
+   "surface": "established",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "steadfast",
+   "transliteration": "hedraios",
+   "samples": [
+    "1Cor.7.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2104",
+   "surface": "more noble",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "of noble birth",
+   "transliteration": "eugenēs",
+   "samples": [
+    "Acts.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2104",
+   "surface": "noble birth",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "of noble birth",
+   "transliteration": "eugenēs",
+   "samples": [
+    "1Cor.1.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2104",
+   "surface": "nobleman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "of noble birth",
+   "transliteration": "eugenēs",
+   "samples": [
+    "Luke.19.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2553",
+   "surface": "endure suffering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "kakopatheō",
+   "samples": [
+    "2Tim.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2594",
+   "surface": "endured",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "kartereō",
+   "samples": [
+    "Heb.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3114",
+   "surface": "delay long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to have patience",
+   "transliteration": "makrothumeō",
+   "samples": [
+    "Luke.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3114",
+   "surface": "patiently waited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to have patience",
+   "transliteration": "makrothumeō",
+   "samples": [
+    "Heb.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3116",
+   "surface": "patiently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "patiently",
+   "transliteration": "makrothumōs",
+   "samples": [
+    "Acts.26.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4343",
+   "surface": "perseverance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perseverance",
+   "transliteration": "proskarterēsis",
+   "samples": [
+    "Eph.6.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4586",
+   "surface": "honorable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "noble",
+   "transliteration": "semnos",
+   "samples": [
+    "Phil.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4722",
+   "surface": "bears",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "stegō",
+   "samples": [
+    "1Cor.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4722",
+   "surface": "endure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "stegō",
+   "samples": [
+    "1Cor.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4865",
+   "surface": "strive together",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "sunagōnizomai",
+   "samples": [
+    "Rom.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5159",
+   "surface": "with",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to put up with",
+   "transliteration": "tropoforeō",
+   "samples": [
+    "Acts.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5278",
+   "surface": "patient",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remain/endure",
+   "transliteration": "hupomenō",
+   "samples": [
+    "Rom.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5278",
+   "surface": "remained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remain/endure",
+   "transliteration": "hupomenō",
+   "samples": [
+    "Acts.17.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5278",
+   "surface": "remained steadfast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remain/endure",
+   "transliteration": "hupomenō",
+   "samples": [
+    "Jas.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5278",
+   "surface": "stayed behind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remain/endure",
+   "transliteration": "hupomenō",
+   "samples": [
+    "Luke.2.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5278",
+   "surface": "steadfast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to remain/endure",
+   "transliteration": "hupomenō",
+   "samples": [
+    "Jas.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5281",
+   "surface": "patient",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perseverance",
+   "transliteration": "hupomonē",
+   "samples": [
+    "Rev.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5281",
+   "surface": "patiently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perseverance",
+   "transliteration": "hupomonē",
+   "samples": [
+    "Rev.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5281",
+   "surface": "patiently endure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perseverance",
+   "transliteration": "hupomonē",
+   "samples": [
+    "2Cor.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5297",
+   "surface": "endure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "hupoferō",
+   "samples": [
+    "1Cor.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5297",
+   "surface": "endured",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "hupoferō",
+   "samples": [
+    "2Tim.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5297",
+   "surface": "endures",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to endure",
+   "transliteration": "hupoferō",
+   "samples": [
+    "1Pet.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1519",
+   "surface": "stirring up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strive",
+   "transliteration": "gi.ach",
+   "samples": [
+    "Dan.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2715",
+   "surface": "nobility",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "noble",
+   "transliteration": "chor",
+   "samples": [
+    "Eccl.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5081H",
+   "surface": "generous man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "noble",
+   "transliteration": "na.div",
+   "samples": [
+    "Prov.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5327A",
+   "surface": "fight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "na.tsah",
+   "samples": [
+    "Deut.25.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5327A",
+   "surface": "fought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "na.tsah",
+   "samples": [
+    "Lev.24.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5327A",
+   "surface": "quarreled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "na.tsah",
+   "samples": [
+    "2Sam.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5327A",
+   "surface": "strive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "na.tsah",
+   "samples": [
+    "Exod.21.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5327A",
+   "surface": "strove",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "na.tsah",
+   "samples": [
+    "Ps.60.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5327A",
+   "surface": "struggling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to struggle",
+   "transliteration": "na.tsah",
+   "samples": [
+    "Exod.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "again",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Ps.49.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "endurance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Lam.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "endure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Prov.21.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "ever",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Isa.34.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "everlasting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Ps.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "forevermore",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Ps.16.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "glory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "1Sam.15.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "people",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Jer.50.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "perpetual",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Ps.74.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "unceasing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "Jer.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5331",
+   "surface": "victory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ne.tsach",
+   "samples": [
+    "1Chr.29.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5703",
+   "surface": "eternal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Hab.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5703",
+   "surface": "everlasting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Isa.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5703",
+   "surface": "here",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Ps.132.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5703",
+   "surface": "never",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Ps.104.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5703",
+   "surface": "old",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Job.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5703",
+   "surface": "perpetually",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Amos.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5703",
+   "surface": "sit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "ad",
+   "samples": [
+    "Ps.132.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5957",
+   "surface": "never",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "perpetuity",
+   "transliteration": "a.lam",
+   "samples": [
+    "Dan.2.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6579",
+   "surface": "most noble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "noble",
+   "transliteration": "par.te.mim",
+   "samples": [
+    "Esth.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6579",
+   "surface": "nobility",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "noble",
+   "transliteration": "par.te.mim",
+   "samples": [
+    "Dan.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6579",
+   "surface": "nobles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "noble",
+   "transliteration": "par.te.mim",
+   "samples": [
+    "Esth.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7712",
+   "surface": "labored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strive",
+   "transliteration": "she.dar",
+   "samples": [
+    "Dan.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8280",
+   "surface": "striven",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strive",
+   "transliteration": "sa.rah",
+   "samples": [
+    "Gen.32.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8280",
+   "surface": "strove",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strive",
+   "transliteration": "sa.rah",
+   "samples": [
+    "Hos.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8535",
+   "surface": "consumed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "tam",
+   "samples": [
+    "Jer.6.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8535",
+   "surface": "he would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "tam",
+   "samples": [
+    "Job.9.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8535",
+   "surface": "joined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "tam",
+   "samples": [
+    "Exod.36.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8535",
+   "surface": "quiet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "tam",
+   "samples": [
+    "Gen.25.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8535",
+   "surface": "top",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complete",
+   "transliteration": "tam",
+   "samples": [
+    "Exod.26.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

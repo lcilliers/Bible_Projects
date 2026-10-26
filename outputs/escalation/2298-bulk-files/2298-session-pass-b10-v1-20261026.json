@@ -1,0 +1,109 @@
+{
+ "M26": {
+  "groups": [
+   ["M26_judging", "Judgment, judging", "judgment given and the act of judging: judgment, judgments, justice, impartial", "group", "renders judgment"],
+   ["M26_condemning", "Condemning, condemnation, punishment", "judgment against: condemn, condemnation, punishment, self-condemned", "group", "renders condemning"],
+   ["M26_justifying", "Justifying, acquitting, vindicating", "judgment for: justify, justification, acquit, vindicate, account righteous, set free", "group", "renders justifying"],
+   ["M26_vengeance", "Vengeance, avenging, repaying", "judgment returned: vengeance, avenge, avenger, repay, give justice", "group", "renders vengeance"],
+   ["M26_contending", "Contending, pleading a cause", "the case at law: contend, plead, quarrel, defend, a cause, rights", "group", "renders contending"],
+   ["M26_clearing", "Clearing, going unpunished", "naqah: clear, go unpunished, innocent, guiltless, free", "group", "renders clearing"],
+   ["M26_guilt", "Charge, guilt", "the charge laid and the guilt found: charge, guilt, guilty", "group", "renders a charge or guilt"],
+   ["M26_counting", "Counting, reckoning, regarding", "logizomai: count, consider, regard, reckon", "group", "renders counting or reckoning"],
+   ["M26_not_this_sense", "Not the cluster's sense", "renderings with no sense of judgment: reason, why, therefore, a source, a valuation, virtue, excellence", "not_this_sense", "carries no sense of judgment"]
+  ],
+  "surf": {
+   "M26_judging": ["judgment", "judgments", "impartial"],
+   "M26_condemning": ["condemn", "condemned", "condemnation", "self-condemned", "punishment"],
+   "M26_justifying": ["justified", "justify", "justifies", "justification", "justifier", "acquit", "acquitted", "vindicated", "vindicating", "declared", "appear righteous", "freed", "set free", "righteous"],
+   "M26_vengeance": ["vengeance", "avenge", "avenged", "avenger", "avenging", "take vengeance", "take", "repay", "repaid"],
+   "M26_contending": ["contend", "plead", "quarreled", "quarrel", "confronted", "case", "defend", "contended sharply", "rights"],
+   "M26_clearing": ["go unpunished", "unpunished", "free", "innocent", "guiltless", "clear", "cleaned out", "go", "leave", "means"],
+   "M26_guilt": ["charge", "charges", "guilt", "guilty", "guilt worthy", "guilt deserving"],
+   "M26_counting": ["counted", "consider", "regard", "regarded", "think", "understand"],
+   "M26_not_this_sense": ["reason", "why", "therefore", "source", "value", "excellence", "virtue", "excellencies", "return"]
+  },
+  "over": {
+   "H6663|right": ["M26_justifying", "tsadaq 'far be it from me to say that you are right' (Job 27:5), 'you have made your sisters appear righteous' (Ezek 16:52)", 0],
+   "G1344|right": ["M26_justifying", "'the righteous still do right' (Rev 22:11)", 0],
+   "G2920|justice": ["M26_judging", "krisis 'until he brings justice to victory' (Matt 12:20), 'justice was denied him' (Acts 8:33)", 0],
+   "G1556|justice": ["M26_vengeance", "ekdikeo 'give me justice against my adversary' (Luke 18:3)", 0],
+   "H1779|justice": ["M26_contending", "din 'they do not plead the cause of the fatherless ... with justice' (Jer 5:28)", 0],
+   "H1779|cause": ["M26_contending", "din 'you have maintained my just cause' (Ps 9:4)", 0],
+   "H1779|judgment": ["M26_judging", "din 'that there is a judgment' (Job 19:29), 'a king who sits on the throne of judgment' (Prov 20:8)", 0],
+   "G0156|case": ["M26_not_this_sense", "aitia 'if such is the case' (Matt 19:10)", 0],
+   "G0156|cause": ["M26_not_this_sense", "aitia 'for any cause' (Matt 19:3)", 0],
+   "G0159|cause": ["M26_not_this_sense", "aitios 'there is no cause that we can give' (Acts 19:40)", 0],
+   "G0661|repay": ["M26_not_this_sense", "'I will repay it' (Phlm 1:19): a debt", 0],
+   "G1349|justice": ["M26_condemning", "dike 'justice has not allowed him to live' (Acts 28:4)", 0],
+   "H5352|go": ["M26_clearing", "naqah 'shall you go unpunished?' (Jer 25:29)", 0],
+   "H5352|leave": ["M26_clearing", "naqah 'I will by no means leave you unpunished' (Jer 30:11)", 0],
+   "H5352|means": ["M26_clearing", "naqah 'by no means clearing the guilty' (Exod 34:7)", 0],
+   "H5358|take": ["M26_vengeance", "naqam 'to take vengeance' (Ezek 24:8)", 0],
+   "G0467|return": ["M26_not_this_sense", "'what thanksgiving can we return to God' (1Thess 3:9): giving back thanks", 0],
+   "G1344|declared": ["M26_justifying", "'they declared God just' (Luke 7:29)", 0]
+  }
+ },
+ "M28": {
+  "groups": [
+   ["M28_whoring", "Whoring, prostitution, unfaithfulness", "zanah and its kin: prostitute, whore, whoring, whoredom, unfaithful, sexual immorality", "group", "renders whoring"],
+   ["M28_sensuality", "Sensuality, debauchery, the flesh", "unbridled desire of the body: sensuality, debauchery, lust, passion, self-indulgence, fleshly", "group", "renders sensuality"],
+   ["M28_envy", "Envy, rivalry, selfish ambition", "desire against another: envy, jealousy, rivalry, selfish ambition", "group", "renders envy or rivalry"],
+   ["M28_greed", "Greed, covetousness, love of money", "desire for gain: greed, covetousness, shameful gain, love of money", "group", "renders greed"],
+   ["M28_not_this_sense", "Not the cluster's sense", "renderings with no sense of envy or greed: deeds told, precious things, being greatly loved", "not_this_sense", "carries no sense of envy or greed"]
+  ],
+  "surf": {
+   "M28_whoring": ["prostitute", "prostitutes", "whore", "played the whore", "whoring", "whorings", "whored", "whoredom", "unfaithful", "sexual immorality", "whoring lust", "misconduct"],
+   "M28_sensuality": ["sensuality", "sensual", "debauchery", "lusted", "passion", "flesh", "self-indulgence", "self-control"],
+   "M28_envy": ["envy", "jealous", "jealousy", "selfish ambition", "rivalries", "self-seeking", "hostility"],
+   "M28_greed": ["covetousness", "greed", "greedy", "gain", "greedy for dishonest gain", "shameful gain", "free from love of money", "not a lover of money"],
+   "M28_not_this_sense": ["deeds", "precious", "greatly loved"]
+  },
+  "over": {
+   "H5949|deeds": ["M28_not_this_sense", "alilah 'tell among the peoples his deeds' (Ps 9:11); 'busy myself with wicked deeds' (Ps 141:4) is wantonness, settled per verse", 1],
+   "H5949|misconduct": ["M28_whoring", "alilah 'accuses her of misconduct' (Deut 22:14): alleged unchastity", 0],
+   "G4559|flesh": ["M28_sensuality", "sarkinos 'people of the flesh' (1Cor 3:1), 'I am of the flesh' (Rom 7:14)", 0],
+   "G0192|self-control": ["M28_sensuality", "akrasia 'because of your lack of self-control' (1Cor 7:5)", 0]
+  }
+ },
+ "M30": {
+  "groups": [
+   ["M30_forsaking", "Forsaking, abandoning, leaving", "azav: forsake, abandon, desert, leave", "group", "renders forsaking"],
+   ["M30_rejecting", "Rejecting, casting off, spurning", "turning another away: reject, cast off, spurn, thrust aside", "group", "renders rejecting"],
+   ["M30_despising", "Despising, contempt", "holding in contempt: despise, disdain, contempt, loathe", "group", "renders despising"],
+   ["M30_refusing", "Refusing", "will set against: refuse, excuse oneself, refuse to listen", "group", "renders refusing"],
+   ["M30_rebellion", "Rebellion, disobedience", "rising against authority: rebel, rebellious, rebellion, disobey", "group", "renders rebellion"],
+   ["M30_stubbornness", "Stubbornness, stiff neck, sullenness", "the hardened will: stubborn, stiff-necked, stubbornness, sullen", "group", "renders stubbornness"],
+   ["M30_harshness", "Harshness, hardness", "qasheh as harsh: hard, harsh, roughly, fierce", "group", "renders harshness"],
+   ["M30_restraining", "Restraining, withholding, shutting up", "atsar and kala: shut up, restrain, withhold, detain, avert", "group", "renders restraining"],
+   ["M30_not_this_sense", "Not the cluster's sense", "renderings with no sense of rebellion: robbers, the ash heap, bond or free, being able, strength failing", "not_this_sense", "carries no sense of rebellion"]
+  ],
+  "surf": {
+   "M30_forsaking": ["forsaken", "forsake", "forsakes", "forsaking", "forsake them", "leave", "left", "abandoned", "abandon", "deserted", "leaving"],
+   "M30_rejecting": ["rejected", "reject", "rejects", "cast off", "spurned", "spurn", "aside", "thrust", "utterly"],
+   "M30_despising": ["despised", "despise", "despises", "disdained", "contempt", "loathe"],
+   "M30_refusing": ["refused", "refuse", "refuses", "excused", "listen"],
+   "M30_rebellion": ["rebellious", "rebelled", "rebel", "rebels", "rebellion", "rebelled against", "disobeyed", "disobedient", "not obey", "rise", "bitter"],
+   "M30_stubbornness": ["stubborn", "stubbornly", "stubbornness", "stiff-necked", "vexed"],
+   "M30_harshness": ["hard", "harsh", "roughly", "fierce"],
+   "M30_restraining": ["shut up", "averted", "stopped", "restrained", "withheld", "withhold", "detain", "retain"],
+   "M30_not_this_sense": ["robbers", "robber", "ash heap", "bond", "able", "fails"]
+  },
+  "over": {
+   "H5800A|leave": ["M30_forsaking", "azav 'leave your simple ways' (Prov 9:6); 'does the snow of Lebanon leave the crags' (Jer 18:14) is a figure, settled per verse", 1],
+   "H5800A|left": ["M30_forsaking", "azav 'the armed men left the captives' (2Chr 28:14) is literal; forsaking in other verses, settled per verse", 1],
+   "H5800A|leaving": ["M30_forsaking", "azav 'they had departed from him, leaving him severely wounded' (2Chr 24:25)", 1],
+   "H5800A|fails": ["M30_not_this_sense", "azav 'my strength fails me' (Ps 38:10, 40:12)", 0],
+   "H4784|bitter": ["M30_rebellion", "marah 'they made his spirit bitter' (Ps 106:33) by rebelling; 'the soul of all the people was bitter' (1Sam 30:6), settled per verse", 1],
+   "H7186|stubborn": ["M30_stubbornness", "qasheh 'how stubborn you are' (Deut 31:27), 'a stubborn people' (Deut 9:6)", 0],
+   "H7186|stiff-necked": ["M30_stubbornness", "qasheh oref 'a stiff-necked people' (Exod 32:9)", 0],
+   "H6113|able": ["M30_not_this_sense", "atsar 'who is able to build him a house' (2Chr 2:6)", 0],
+   "H6113|bond": ["M30_not_this_sense", "atsar 'bond or free' (1Kgs 14:10)", 0],
+   "H0830H|ash heap": ["M30_not_this_sense", "ashpot 'he lifts the needy from the ash heap' (1Sam 2:8): refuse", 0],
+   "G3027|robbers": ["M30_not_this_sense", "lestes 'a den of robbers' (Matt 21:13)", 0],
+   "G3027|robber": ["M30_not_this_sense", "lestes 'he is a thief and a robber' (John 10:1)", 0],
+   "H3988A|loathe": ["M30_despising", "ma'as 'I loathe my life' (Job 7:16, 9:21)", 0],
+   "H3988A|refuse": ["M30_refusing", "ma'as 'to refuse the evil and choose the good' (Isa 7:15)", 0],
+   "G3878|listen": ["M30_refusing", "parakouo 'if he refuses to listen' (Matt 18:17)", 0]
+  }
+ }
+}

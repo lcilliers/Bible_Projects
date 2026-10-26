@@ -1,0 +1,1752 @@
+{
+ "cluster": "M83",
+ "cluster_name": "Seeking & Inquiring",
+ "built_at": "2026-10-26T04:28:41Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 104,
+  "head": 21,
+  "tail": 83,
+  "hits": 539,
+  "allocated": 0,
+  "inherited": 104
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [
+  {
+   "code": "A_general_seeking",
+   "label": "Generic active seeking/searching",
+   "description": "The broad, semantically neutral act of looking for, searching after, or pursuing a person, object, or goal -- the base operational sense from which the cluster's other subgroups (intensified, judicial, devotional, physical-pursuit) branch by object and context.",
+   "kind": "group",
+   "anchor": "Matt.7.7"
+  },
+  {
+   "code": "B_intensified_seeking",
+   "label": "Intensive/exhaustive seeking and demanding",
+   "description": "Compound or intensive forms of the seeking root that add thoroughness, urgency, or added directedness to the base act -- seeking out completely, or pressing a demand/requirement to its conclusion.",
+   "kind": "group",
+   "anchor": "Luke.11.50"
+  },
+  {
+   "code": "C_hostile_pursuit",
+   "label": "Seeking with lethal or hostile intent",
+   "description": "The idiomatic extension of seeking-vocabulary (in both Hebrew and Greek) to mean hunting a person down in order to kill, arrest, or otherwise do them harm -- 'seek the life' as a fixed hostile idiom.",
+   "kind": "group",
+   "anchor": "John.5.18"
+  },
+  {
+   "code": "D_consultative_inquiry",
+   "label": "Formal consultation and diligent inquiry",
+   "description": "Deliberate, often institutional or cultic resort to an authority (God, an oracle, a prophet, a legal matter) for verdict, guidance, or investigation -- more studied and relational than casual searching.",
+   "kind": "group",
+   "anchor": "1Kgs.22.8"
+  }
+ ],
+ "allocations": [
+  {
+   "strong": "H1245",
+   "surface": "seek",
+   "part": "head",
+   "hits": 107,
+   "verses": 102,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Mal.2.7",
+    "Ps.38.12"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "seek",
+   "part": "head",
+   "hits": 49,
+   "verses": 49,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Job.5.8",
+    "Ps.38.12"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "sought",
+   "part": "head",
+   "hits": 46,
+   "verses": 45,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "2Sam.4.8",
+    "Dan.8.15"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "seek",
+   "part": "head",
+   "hits": 40,
+   "verses": 39,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "1Pet.3.11",
+    "2Cor.13.3"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "inquire",
+   "part": "head",
+   "hits": 39,
+   "verses": 37,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "1Kgs.22.8",
+    "Isa.9.13"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "seeking",
+   "part": "head",
+   "hits": 35,
+   "verses": 35,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "1Pet.5.8",
+    "Luke.11.24"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "seeks",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "1Sam.24.9",
+    "Jer.5.1"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "sought",
+   "part": "head",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "2Chr.25.15",
+    "Ps.119.94"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "seeking",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "1Kgs.20.7",
+    "Dan.9.3"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "sought",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "John.10.39",
+    "Matt.2.20"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "seeks",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "John.7.18",
+    "John.7.4"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "require",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Ezek.3.18",
+    "Gen.43.9"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "require",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Deut.18.19",
+    "Gen.9.5"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1934",
+   "surface": "seek",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to seek after",
+   "transliteration": "epizēteō",
+   "samples": [
+    "Acts.19.39",
+    "Mark.8.12"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "inquired",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezek.20.31",
+    "Lev.10.16"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7836",
+   "surface": "seek",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to seek",
+   "transliteration": "sha.char",
+   "samples": [
+    "Hos.5.15",
+    "Prov.7.15"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "looking",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Luke.2.49",
+    "Mark.1.37"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "search",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "2Sam.5.17",
+    "Jer.5.1"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "search",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezek.34.11",
+    "Ezek.34.6"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "seeking",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "2Chr.31.21",
+    "Jer.38.4"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "seeks",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Deut.22.2",
+    "Isa.16.5"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "search",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Matt.18.12",
+    "Matt.2.13"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "consult",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Deut.17.9",
+    "Isa.31.1"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "reckoning",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Gen.42.22",
+    "Gen.9.5"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "searches",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "1Chr.28.9",
+    "Job.39.8"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1567",
+   "surface": "seek",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek out",
+   "transliteration": "ekzēteō",
+   "samples": [
+    "Acts.15.17",
+    "Heb.11.6"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1934",
+   "surface": "seeking",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek after",
+   "transliteration": "epizēteō",
+   "samples": [
+    "Heb.11.14",
+    "Rom.11.7"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1934",
+   "surface": "seeks for",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek after",
+   "transliteration": "epizēteō",
+   "samples": [
+    "Luke.11.29",
+    "Matt.12.39"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "asking",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "John.16.19",
+    "Matt.12.46"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "looking for",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Acts.10.19",
+    "Acts.10.21"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "required",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "1Cor.4.2",
+    "Luke.12.48"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "asked",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Dan.1.8",
+    "Esth.2.15"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "inquired",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Dan.1.20",
+    "Judg.6.29"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "required",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Gen.31.39",
+    "Isa.1.12"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "searched",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "2Chr.22.9",
+    "Josh.2.22"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "sought out",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "1Sam.13.14",
+    "Esth.2.2"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "take vengeance",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "1Sam.20.16",
+    "Josh.22.23"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "cares",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Jer.30.17",
+    "Ps.142.4"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "searched",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezek.34.8",
+    "Judg.6.29"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezra.4.2",
+    "Ezra.6.21"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7836",
+   "surface": "seek me diligently",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to seek",
+   "transliteration": "sha.char",
+   "samples": [
+    "Prov.1.28",
+    "Prov.8.17"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1567",
+   "surface": "charged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek out",
+   "transliteration": "ekzēteō",
+   "samples": [
+    "Luke.11.50"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1567",
+   "surface": "required",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek out",
+   "transliteration": "ekzēteō",
+   "samples": [
+    "Luke.11.51"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1567",
+   "surface": "searched",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek out",
+   "transliteration": "ekzēteō",
+   "samples": [
+    "1Pet.1.10"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1567",
+   "surface": "seeks for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek out",
+   "transliteration": "ekzēteō",
+   "samples": [
+    "Rom.3.11"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1567",
+   "surface": "sought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek out",
+   "transliteration": "ekzēteō",
+   "samples": [
+    "Heb.12.17"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1934",
+   "surface": "searched for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek after",
+   "transliteration": "epizēteō",
+   "samples": [
+    "Acts.12.19"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1934",
+   "surface": "seek after",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek after",
+   "transliteration": "epizēteō",
+   "samples": [
+    "Luke.12.30"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1934",
+   "surface": "seeks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek after",
+   "transliteration": "epizēteō",
+   "samples": [
+    "Matt.16.4"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1934",
+   "surface": "sought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek after",
+   "transliteration": "epizēteō",
+   "samples": [
+    "Acts.13.7"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "endeavor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Gal.2.17"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "insist on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "1Cor.13.5"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "look",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Heb.8.7"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "look for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Acts.9.11"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "searched",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "2Tim.1.17"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "searching",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Luke.2.48"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "searching for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Luke.2.45"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "seek for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Rom.2.7"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "strive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "1Cor.14.12"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2212",
+   "surface": "trying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "zēteō",
+   "samples": [
+    "Gal.1.10"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2614",
+   "surface": "searched",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "katadiōkō",
+   "samples": [
+    "Mark.1.36"
+   ],
+   "inherited": "C_hostile_pursuit",
+   "group": "C_hostile_pursuit",
+   "reason": "inherited from C_hostile_pursuit (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "asking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Exod.10.11"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "beg",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Esth.7.7"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "begging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Ps.37.25"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "demand",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Neh.5.18"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "find",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Eccl.8.17"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "impatient",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Zech.6.7"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "implored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Ezra.8.23"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "investigated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Esth.2.23"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "look",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "1Sam.9.3"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "must have",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Prov.23.35"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "of",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Prov.21.6"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "1Sam.28.7"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "plead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Esth.4.8"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "requesting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Neh.2.4"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "seek out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "1Sam.16.16"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "seeks out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Isa.40.20"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1245",
+   "surface": "sought for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "ba.qash",
+   "samples": [
+    "Ezek.26.21"
+   ],
+   "inherited": "A_general_seeking",
+   "group": "A_general_seeking",
+   "reason": "inherited from A_general_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "account",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ps.10.15"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "ask",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezek.36.37"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "avenge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "2Chr.24.22"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "avenges",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ps.9.12"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "call",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ps.10.13"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "care",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Jer.30.14"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "cares for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Deut.11.12"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "consulted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezek.14.3"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "diligently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Lev.10.16"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "examine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezra.10.16"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "indeed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezek.14.3"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "inquirer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezek.14.10"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "inquires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Deut.18.11"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "questioned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "2Chr.31.9"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "required",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "2Chr.24.6"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "search for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Job.10.6"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "seek out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "1Chr.28.8"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "sought out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Isa.62.12"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "studied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ps.111.2"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "study",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Ezra.7.10"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1875",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "da.rash",
+   "samples": [
+    "Deut.23.21"
+   ],
+   "inherited": "D_consultative_inquiry",
+   "group": "D_consultative_inquiry",
+   "reason": "inherited from D_consultative_inquiry (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7836",
+   "surface": "diligent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "sha.char",
+   "samples": [
+    "Prov.13.24"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7836",
+   "surface": "earnestly seeks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "sha.char",
+   "samples": [
+    "Isa.26.9"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7836",
+   "surface": "seeking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "sha.char",
+   "samples": [
+    "Job.24.5"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7836",
+   "surface": "seeks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "sha.char",
+   "samples": [
+    "Prov.11.27"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7836",
+   "surface": "sought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to seek",
+   "transliteration": "sha.char",
+   "samples": [
+    "Ps.78.34"
+   ],
+   "inherited": "B_intensified_seeking",
+   "group": "B_intensified_seeking",
+   "reason": "inherited from B_intensified_seeking (#2286 B5)",
+   "two_sense": 0
+  }
+ ]
+}

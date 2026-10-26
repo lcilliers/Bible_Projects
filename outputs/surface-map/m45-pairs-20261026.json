@@ -1,0 +1,5248 @@
+{
+ "cluster": "M45",
+ "cluster_name": "Renewal & Transformation",
+ "built_at": "2026-10-26T04:22:56Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 319,
+  "head": 87,
+  "tail": 232,
+  "hits": 1365,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H3467",
+   "surface": "save",
+   "part": "head",
+   "hits": 99,
+   "verses": 98,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Lam.4.17",
+    "Ps.59.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "deliver",
+   "part": "head",
+   "hits": 93,
+   "verses": 90,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Ps.119.170",
+    "Ps.59.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "delivered",
+   "part": "head",
+   "hits": 56,
+   "verses": 55,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Isa.36.20",
+    "Ps.69.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "covered",
+   "part": "head",
+   "hits": 55,
+   "verses": 54,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Ezek.16.10",
+    "Ezek.24.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4982",
+   "surface": "saved",
+   "part": "head",
+   "hits": 51,
+   "verses": 51,
+   "gloss": "to save",
+   "transliteration": "sōzō",
+   "samples": [
+    "Acts.11.14",
+    "Rom.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "cover",
+   "part": "head",
+   "hits": 46,
+   "verses": 45,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Hos.2.9",
+    "Isa.59.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2319H",
+   "surface": "new",
+   "part": "head",
+   "hits": 45,
+   "verses": 40,
+   "gloss": "new",
+   "transliteration": "cha.dash",
+   "samples": [
+    "Lev.26.10",
+    "Ps.40.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "saved",
+   "part": "head",
+   "hits": 41,
+   "verses": 41,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Jer.4.14",
+    "Ps.80.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "help",
+   "part": "head",
+   "hits": 39,
+   "verses": 38,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "1Chr.18.5",
+    "Job.30.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2537",
+   "surface": "new",
+   "part": "head",
+   "hits": 38,
+   "verses": 32,
+   "gloss": "new",
+   "transliteration": "kainos",
+   "samples": [
+    "2Cor.5.17",
+    "Rev.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4982",
+   "surface": "save",
+   "part": "head",
+   "hits": 37,
+   "verses": 34,
+   "gloss": "to save",
+   "transliteration": "sōzō",
+   "samples": [
+    "Jas.1.21",
+    "Mark.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "satisfied",
+   "part": "head",
+   "hits": 34,
+   "verses": 32,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Lev.26.26",
+    "Mic.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2323",
+   "surface": "healed",
+   "part": "head",
+   "hits": 26,
+   "verses": 25,
+   "gloss": "to serve/heal",
+   "transliteration": "therapeuō",
+   "samples": [
+    "Mark.6.13",
+    "Matt.17.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "comfort",
+   "part": "head",
+   "hits": 26,
+   "verses": 24,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Isa.12.1",
+    "Lam.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "covers",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Mal.2.16",
+    "Prov.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "helped",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "1Chr.12.1",
+    "Ps.86.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "comforted",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Ezek.32.31",
+    "Ps.86.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "rescue",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Num.35.25",
+    "Ps.31.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "savior",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Isa.45.15",
+    "Jer.14.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "filled",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Hos.13.6",
+    "Lam.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "full",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Deut.31.20",
+    "Hos.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4982",
+   "surface": "well",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to save",
+   "transliteration": "sōzō",
+   "samples": [
+    "Acts.14.9",
+    "Matt.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "saves",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "1Sam.10.19",
+    "Ps.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2323",
+   "surface": "heal",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to serve/heal",
+   "transliteration": "therapeuō",
+   "samples": [
+    "Matt.17.16",
+    "Matt.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8668H",
+   "surface": "victory",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "deliverance: victory",
+   "transliteration": "te.shu.ah",
+   "samples": [
+    "Prov.21.31",
+    "Ps.144.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3501",
+   "surface": "new",
+   "part": "head",
+   "hits": 9,
+   "verses": 7,
+   "gloss": "new",
+   "transliteration": "neos",
+   "samples": [
+    "1Cor.5.7",
+    "Col.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "satisfy",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Ezek.7.19",
+    "Ps.145.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "covering",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Ezek.1.23",
+    "Num.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "delivers",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Prov.10.2",
+    "Prov.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8133",
+   "surface": "changed",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to change",
+   "transliteration": "she.na",
+   "samples": [
+    "Dan.3.19",
+    "Dan.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0997",
+   "surface": "help",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to help",
+   "transliteration": "boētheō",
+   "samples": [
+    "Matt.15.25",
+    "Rev.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3501",
+   "surface": "younger",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "new",
+   "transliteration": "neos",
+   "samples": [
+    "1Tim.5.11",
+    "1Tim.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "help",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "2Sam.10.11",
+    "Deut.28.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "helper",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "Ps.118.7",
+    "Ps.54.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "helps",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "1Chr.12.18",
+    "Isa.41.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "delivered",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Ps.116.8",
+    "Ps.81.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "comforts",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Isa.51.12",
+    "Isa.66.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "enough",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Hab.2.5",
+    "Ps.123.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "fill",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Prov.25.16",
+    "Prov.25.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7804",
+   "surface": "deliver",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to rescue",
+   "transliteration": "she.ziv",
+   "samples": [
+    "Dan.3.17",
+    "Dan.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4506",
+   "surface": "deliver",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to rescue",
+   "transliteration": "ruomai",
+   "samples": [
+    "Matt.6.13",
+    "Rom.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4506",
+   "surface": "delivered",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to rescue",
+   "transliteration": "ruomai",
+   "samples": [
+    "Col.1.13",
+    "Rom.15.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2318",
+   "surface": "renew",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to renew",
+   "transliteration": "cha.dash",
+   "samples": [
+    "Job.10.17",
+    "Lam.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2645",
+   "surface": "covered",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to cover",
+   "transliteration": "cha.phah",
+   "samples": [
+    "2Sam.15.30",
+    "Esth.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "salvation",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Isa.59.16",
+    "Isa.63.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "conceals",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Prov.10.18",
+    "Prov.12.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "comforters",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Job.16.2",
+    "Nah.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "rescued",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "1Sam.30.18",
+    "2Sam.22.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "plenty",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Jer.44.17",
+    "Prov.28.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "deliver",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Ps.140.1",
+    "Ps.50.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "gave victory",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "1Chr.18.13",
+    "2Sam.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4171",
+   "surface": "substitute",
+   "part": "head",
+   "hits": 4,
+   "verses": 2,
+   "gloss": "to change",
+   "transliteration": "mur",
+   "samples": [
+    "Lev.27.10",
+    "Lev.27.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "compassion",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Deut.32.36",
+    "Judg.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "console",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "2Sam.10.2",
+    "Ezek.14.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "save",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Jonah.4.6",
+    "Prov.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "helpers",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "1Chr.12.18",
+    "Job.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0236",
+   "surface": "changed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to change",
+   "transliteration": "allassō",
+   "samples": [
+    "1Cor.15.51",
+    "Heb.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2323",
+   "surface": "healing",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to serve/heal",
+   "transliteration": "therapeuō",
+   "samples": [
+    "Luke.9.6",
+    "Matt.4.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2537",
+   "surface": "fresh",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "new",
+   "transliteration": "kainos",
+   "samples": [
+    "Luke.5.38",
+    "Matt.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2619",
+   "surface": "cover",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "katakaluptō",
+   "samples": [
+    "1Cor.11.6",
+    "1Cor.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4506",
+   "surface": "rescued",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rescue",
+   "transliteration": "ruomai",
+   "samples": [
+    "2Pet.2.7",
+    "2Tim.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "profit",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "Luke.9.25",
+    "Matt.16.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "delivered",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Prov.28.18",
+    "Ps.107.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "rescue",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "2Kgs.16.7",
+    "Ezek.34.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "conceal",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Gen.37.26",
+    "Job.33.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "pity",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Jer.20.16",
+    "Ps.90.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5314",
+   "surface": "refreshed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be refreshed",
+   "transliteration": "na.phash",
+   "samples": [
+    "2Sam.16.14",
+    "Exod.31.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "surely",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "1Sam.30.8",
+    "Isa.36.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8133",
+   "surface": "change",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to change",
+   "transliteration": "she.na",
+   "samples": [
+    "Dan.2.9",
+    "Dan.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8133",
+   "surface": "different",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to change",
+   "transliteration": "she.na",
+   "samples": [
+    "Dan.7.3",
+    "Dan.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0236",
+   "surface": "change",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to change",
+   "transliteration": "allassō",
+   "samples": [
+    "Acts.6.14",
+    "Gal.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0341",
+   "surface": "renewed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to renew",
+   "transliteration": "anakainoō",
+   "samples": [
+    "2Cor.4.16",
+    "Col.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0342",
+   "surface": "renewal",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "renewal",
+   "transliteration": "anakainōsis",
+   "samples": [
+    "Rom.12.2",
+    "Titus.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1295",
+   "surface": "safely",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to save",
+   "transliteration": "diasōzō",
+   "samples": [
+    "1Pet.3.20",
+    "Acts.23.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1805",
+   "surface": "best use",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to redeem",
+   "transliteration": "exagorazō",
+   "samples": [
+    "Col.4.5",
+    "Eph.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1884",
+   "surface": "care",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "eparkeō",
+   "samples": [
+    "1Tim.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2323",
+   "surface": "cured",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve/heal",
+   "transliteration": "therapeuō",
+   "samples": [
+    "Acts.28.9",
+    "Luke.6.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2572",
+   "surface": "cover",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "kaluptō",
+   "samples": [
+    "Jas.5.20",
+    "Luke.23.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2572",
+   "surface": "covers",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "kaluptō",
+   "samples": [
+    "1Pet.4.8",
+    "Luke.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2572",
+   "surface": "veiled",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "kaluptō",
+   "samples": [
+    "2Cor.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3339",
+   "surface": "transfigured",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to transform",
+   "transliteration": "metamorfoō",
+   "samples": [
+    "Mark.9.2",
+    "Matt.17.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3339",
+   "surface": "transformed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to transform",
+   "transliteration": "metamorfoō",
+   "samples": [
+    "2Cor.3.18",
+    "Rom.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3344",
+   "surface": "turned",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to change",
+   "transliteration": "metastrefō",
+   "samples": [
+    "Acts.2.20",
+    "Jas.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4506",
+   "surface": "rescue",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rescue",
+   "transliteration": "ruomai",
+   "samples": [
+    "2Pet.2.9",
+    "2Tim.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4982",
+   "surface": "healed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to save",
+   "transliteration": "sōzō",
+   "samples": [
+    "Acts.4.9",
+    "Luke.8.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4982",
+   "surface": "made well",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to save",
+   "transliteration": "sōzō",
+   "samples": [
+    "Mark.6.56",
+    "Matt.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "benefit",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "1Cor.14.6",
+    "Heb.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "gained",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "Mark.7.11",
+    "Matt.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "gaining",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "John.12.19",
+    "Matt.27.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2318",
+   "surface": "restore",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to renew",
+   "transliteration": "cha.dash",
+   "samples": [
+    "2Chr.24.12",
+    "2Chr.24.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2319H",
+   "surface": "new thing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "new",
+   "transliteration": "cha.dash",
+   "samples": [
+    "Isa.43.19",
+    "Jer.31.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2319H",
+   "surface": "new things",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "new",
+   "transliteration": "cha.dash",
+   "samples": [
+    "Isa.42.9",
+    "Isa.48.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "delivers",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Job.36.15",
+    "Ps.34.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "rescued",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "2Sam.22.20",
+    "Ps.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2645",
+   "surface": "cover",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "cha.phah",
+   "samples": [
+    "Jer.14.3",
+    "Jer.14.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2645",
+   "surface": "lined",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "cha.phah",
+   "samples": [
+    "2Chr.3.5",
+    "2Chr.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "deliver",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Ezek.36.29",
+    "Prov.20.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "deliverer",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Judg.3.15",
+    "Judg.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "give salvation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Ps.108.6",
+    "Ps.60.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "saving",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "1Sam.14.6",
+    "1Sam.25.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "saviors",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Neh.9.27",
+    "Obad.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "working salvation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "1Sam.25.31",
+    "1Sam.25.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "closed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Ezek.31.15",
+    "Num.16.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "overwhelm",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Hab.2.17",
+    "Ps.140.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4171",
+   "surface": "change",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to change",
+   "transliteration": "mur",
+   "samples": [
+    "Hos.4.7",
+    "Ps.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4171",
+   "surface": "changed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to change",
+   "transliteration": "mur",
+   "samples": [
+    "Jer.2.11",
+    "Jer.48.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "comforter",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Lam.1.16",
+    "Lam.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "consolation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Ezek.16.54",
+    "Zech.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5165",
+   "surface": "comfort",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "comfort",
+   "transliteration": "ne.cha.mah",
+   "samples": [
+    "Job.6.10",
+    "Ps.119.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "defended",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "1Chr.11.14",
+    "2Sam.23.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "delivering",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Prov.2.12",
+    "Ps.35.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "plucked",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Amos.4.11",
+    "Zech.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "recovered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "1Sam.30.18",
+    "1Sam.30.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "taken away",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Gen.31.16",
+    "Gen.31.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5338",
+   "surface": "rescue",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rescue",
+   "transliteration": "ne.tsal",
+   "samples": [
+    "Dan.3.29",
+    "Dan.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "cover",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Job.40.22",
+    "Ps.91.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "covered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "1Chr.28.18",
+    "Ps.140.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "guardian",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Ezek.28.14",
+    "Ezek.28.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "overshadowing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Exod.25.20",
+    "Exod.37.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "wrapped",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Lam.3.43",
+    "Lam.3.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "abundance",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Ps.105.40",
+    "Ps.37.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "fills",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Job.9.18",
+    "Ps.147.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "sated",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Jer.46.10",
+    "Jer.50.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "satisfies",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Ps.103.5",
+    "Ps.107.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8132",
+   "surface": "changed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to change",
+   "transliteration": "sha.na",
+   "samples": [
+    "Eccl.8.1",
+    "Lam.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8133",
+   "surface": "be different",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to change",
+   "transliteration": "she.na",
+   "samples": [
+    "Dan.7.23",
+    "Dan.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "change",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "Job.14.20",
+    "Mal.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "changed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "1Sam.21.13",
+    "Ps.34.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0236",
+   "surface": "exchanged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "allassō",
+   "samples": [
+    "Rom.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0329",
+   "surface": "fan",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rekindle",
+   "transliteration": "anazōpureō",
+   "samples": [
+    "2Tim.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0330",
+   "surface": "revived",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to renew",
+   "transliteration": "anathallō",
+   "samples": [
+    "Phil.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0365",
+   "surface": "renewed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to renew",
+   "transliteration": "ananeoomai",
+   "samples": [
+    "Eph.4.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0482",
+   "surface": "benefit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "antilambanō",
+   "samples": [
+    "1Tim.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0482",
+   "surface": "help",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "antilambanō",
+   "samples": [
+    "Acts.20.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0482",
+   "surface": "helped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "antilambanō",
+   "samples": [
+    "Luke.1.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0997",
+   "surface": "helped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "boētheō",
+   "samples": [
+    "2Cor.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1295",
+   "surface": "brought safely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "diasōzō",
+   "samples": [
+    "Acts.27.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1295",
+   "surface": "escaped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "diasōzō",
+   "samples": [
+    "Acts.28.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1295",
+   "surface": "heal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "diasōzō",
+   "samples": [
+    "Luke.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1295",
+   "surface": "made well",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "diasōzō",
+   "samples": [
+    "Matt.14.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1295",
+   "surface": "safely through",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "diasōzō",
+   "samples": [
+    "Acts.28.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1295",
+   "surface": "save",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "diasōzō",
+   "samples": [
+    "Acts.27.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1805",
+   "surface": "redeem",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to redeem",
+   "transliteration": "exagorazō",
+   "samples": [
+    "Gal.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1805",
+   "surface": "redeemed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to redeem",
+   "transliteration": "exagorazō",
+   "samples": [
+    "Gal.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1884",
+   "surface": "cared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "eparkeō",
+   "samples": [
+    "1Tim.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1943",
+   "surface": "covered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "epikaluptō",
+   "samples": [
+    "Rom.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2323",
+   "surface": "cure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve/heal",
+   "transliteration": "therapeuō",
+   "samples": [
+    "Luke.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2323",
+   "surface": "served",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve/heal",
+   "transliteration": "therapeuō",
+   "samples": [
+    "Acts.17.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2537",
+   "surface": "covenant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "kainos",
+   "samples": [
+    "Mark.14.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2537",
+   "surface": "patch",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "kainos",
+   "samples": [
+    "Mark.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2572",
+   "surface": "covered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "kaluptō",
+   "samples": [
+    "Matt.10.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2572",
+   "surface": "swamped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "kaluptō",
+   "samples": [
+    "Matt.8.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2880",
+   "surface": "enough",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to satisfy",
+   "transliteration": "korennumi",
+   "samples": [
+    "Acts.27.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2880",
+   "surface": "want",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to satisfy",
+   "transliteration": "korennumi",
+   "samples": [
+    "1Cor.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3086",
+   "surface": "redeemer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "redeemer",
+   "transliteration": "lutrōtēs",
+   "samples": [
+    "Acts.7.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3344",
+   "surface": "distort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "metastrefō",
+   "samples": [
+    "Gal.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3345",
+   "surface": "applied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transform",
+   "transliteration": "metaschēmatizō",
+   "samples": [
+    "1Cor.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3345",
+   "surface": "disguise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transform",
+   "transliteration": "metaschēmatizō",
+   "samples": [
+    "2Cor.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3345",
+   "surface": "disguises",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transform",
+   "transliteration": "metaschēmatizō",
+   "samples": [
+    "2Cor.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3345",
+   "surface": "disguising",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transform",
+   "transliteration": "metaschēmatizō",
+   "samples": [
+    "2Cor.11.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3345",
+   "surface": "transform",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transform",
+   "transliteration": "metaschēmatizō",
+   "samples": [
+    "Phil.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3501",
+   "surface": "young",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "neos",
+   "samples": [
+    "John.21.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3501",
+   "surface": "young men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "neos",
+   "samples": [
+    "Acts.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3501",
+   "surface": "young women",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "neos",
+   "samples": [
+    "Titus.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3501",
+   "surface": "younger men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "neos",
+   "samples": [
+    "Titus.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3501",
+   "surface": "youngest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "neos",
+   "samples": [
+    "Luke.22.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3824",
+   "surface": "new world",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "regeneration",
+   "transliteration": "palingenesia",
+   "samples": [
+    "Matt.19.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3824",
+   "surface": "regeneration",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "regeneration",
+   "transliteration": "palingenesia",
+   "samples": [
+    "Titus.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3889",
+   "surface": "consolation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "comfort",
+   "transliteration": "paramuthia",
+   "samples": [
+    "1Cor.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3890",
+   "surface": "comfort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "comfort",
+   "transliteration": "paramuthion",
+   "samples": [
+    "Phil.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3931",
+   "surface": "comfort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "comfort",
+   "transliteration": "parēgoria",
+   "samples": [
+    "Col.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4028",
+   "surface": "blindfolded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "perikaluptō",
+   "samples": [
+    "Luke.22.64"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4028",
+   "surface": "cover",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "perikaluptō",
+   "samples": [
+    "Mark.14.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4028",
+   "surface": "covered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "perikaluptō",
+   "samples": [
+    "Heb.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4372",
+   "surface": "new",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "prosfatos",
+   "samples": [
+    "Heb.10.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4506",
+   "surface": "deliverer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "ruomai",
+   "samples": [
+    "Rom.11.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4506",
+   "surface": "delivers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "ruomai",
+   "samples": [
+    "1Thess.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4832",
+   "surface": "conformed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "conformed",
+   "transliteration": "summorfos",
+   "samples": [
+    "Rom.8.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4832",
+   "surface": "like",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "conformed",
+   "transliteration": "summorfos",
+   "samples": [
+    "Phil.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4878",
+   "surface": "help",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "sunantilambanomai",
+   "samples": [
+    "Luke.10.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4878",
+   "surface": "helps",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "sunantilambanomai",
+   "samples": [
+    "Rom.8.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4982",
+   "surface": "bring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "sōzō",
+   "samples": [
+    "2Tim.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4982",
+   "surface": "preserve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "sōzō",
+   "samples": [
+    "Luke.17.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4982",
+   "surface": "recover",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "sōzō",
+   "samples": [
+    "John.11.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4982",
+   "surface": "saves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "sōzō",
+   "samples": [
+    "1Pet.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "advantage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "Gal.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "benefited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "Heb.13.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "better",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "Mark.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "gain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "1Cor.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "help",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "John.6.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5623",
+   "surface": "value",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "ōfeleō",
+   "samples": [
+    "Rom.2.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2318",
+   "surface": "renewed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to renew",
+   "transliteration": "cha.dash",
+   "samples": [
+    "Ps.103.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2318",
+   "surface": "repair",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to renew",
+   "transliteration": "cha.dash",
+   "samples": [
+    "Isa.61.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2318",
+   "surface": "repaired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to renew",
+   "transliteration": "cha.dash",
+   "samples": [
+    "2Chr.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2319H",
+   "surface": "fresh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "cha.dash",
+   "samples": [
+    "Job.29.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2319H",
+   "surface": "newly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "cha.dash",
+   "samples": [
+    "Deut.24.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2323",
+   "surface": "of",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "new",
+   "transliteration": "cha.dat",
+   "samples": [
+    "Ezra.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "offer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Lam.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "plundered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Ps.7.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "pull",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Deut.25.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "pulled off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Deut.25.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "rescue",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Ps.91.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "take off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Isa.20.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "take out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Lev.14.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "taken out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Lev.14.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2502A",
+   "surface": "withdrawn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "cha.lats",
+   "samples": [
+    "Hos.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2645",
+   "surface": "overlaid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "cha.phah",
+   "samples": [
+    "2Chr.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2666",
+   "surface": "free",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be free",
+   "transliteration": "cha.phash",
+   "samples": [
+    "Lev.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2926",
+   "surface": "covered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ta.lal",
+   "samples": [
+    "Neh.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3271",
+   "surface": "covered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ya.at",
+   "samples": [
+    "Isa.61.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "delivers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Ps.138.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "give deliverance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Ps.72.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "safe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Ps.119.117"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "save us",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Ps.118.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "spare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Josh.22.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Jer.11.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3467",
+   "surface": "victory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to save",
+   "transliteration": "ya.sha",
+   "samples": [
+    "Deut.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "body",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Ezek.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "clothed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "1Chr.21.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "concealed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Job.31.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "cover yourself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Deut.22.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "dressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "1Kgs.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "hidden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Ps.40.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "hide",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Gen.18.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "ignores",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Prov.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "let",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Jer.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "overwhelmed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Ps.78.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "overwhelms",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Ps.55.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "refuge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Ps.143.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3680",
+   "surface": "thick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.sah",
+   "samples": [
+    "Job.23.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3722B",
+   "surface": "cover",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "ka.phar",
+   "samples": [
+    "Gen.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3813",
+   "surface": "covered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "la.at",
+   "samples": [
+    "2Sam.19.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4171",
+   "surface": "changes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "mur",
+   "samples": [
+    "Mic.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4171",
+   "surface": "does",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "mur",
+   "samples": [
+    "Lev.27.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4171",
+   "surface": "exchange",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "mur",
+   "samples": [
+    "Ezek.48.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4171",
+   "surface": "exchanged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "mur",
+   "samples": [
+    "Ps.106.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4171",
+   "surface": "fact",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "mur",
+   "samples": [
+    "Lev.27.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4171",
+   "surface": "give way",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "mur",
+   "samples": [
+    "Ps.46.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5150",
+   "surface": "comfort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "comfort",
+   "transliteration": "ni.chum",
+   "samples": [
+    "Isa.57.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5150",
+   "surface": "comforting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "comfort",
+   "transliteration": "ni.chum",
+   "samples": [
+    "Zech.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5150",
+   "surface": "compassion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "comfort",
+   "transliteration": "ni.chum",
+   "samples": [
+    "Hos.11.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "consoled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Ezek.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "get relief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Isa.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "relief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Gen.5.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5162G",
+   "surface": "satisfy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be sorry: comfort",
+   "transliteration": "na.cham",
+   "samples": [
+    "Ezek.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Exod.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "be rescued",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Mic.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "deliver me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Gen.32.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "deliverer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Judg.18.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "escape",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "2Sam.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "escaped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Deut.23.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "ever",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "2Kgs.18.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "plunder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Exod.3.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "plundered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Exod.12.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "rescues",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Amos.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "safe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Hab.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "saves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Prov.14.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "separate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "2Sam.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "spared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Exod.12.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "stripped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Exod.33.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "take",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Ps.119.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "take away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "Hos.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5337",
+   "surface": "took",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "na.tsal",
+   "samples": [
+    "2Chr.20.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5338",
+   "surface": "rescues",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "ne.tsal",
+   "samples": [
+    "Dan.6.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "overshadowed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "1Kgs.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "protection",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Ps.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "relieve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "1Sam.24.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "relieving himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Judg.3.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "screen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Exod.40.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "screened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Exod.40.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "stir up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Isa.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526B",
+   "surface": "stirs up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Isa.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5526E",
+   "surface": "cover",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.khakh",
+   "samples": [
+    "Exod.33.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5603",
+   "surface": "covered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.phan",
+   "samples": [
+    "1Kgs.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5603",
+   "surface": "finished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.phan",
+   "samples": [
+    "1Kgs.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5603",
+   "surface": "paneled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.phan",
+   "samples": [
+    "Hag.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5603",
+   "surface": "paneling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.phan",
+   "samples": [
+    "Jer.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5603",
+   "surface": "reserved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "sa.phan",
+   "samples": [
+    "Deut.33.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5737A",
+   "surface": "arrayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "a.dar",
+   "samples": [
+    "1Chr.12.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5737A",
+   "surface": "help",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "a.dar",
+   "samples": [
+    "1Chr.12.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5789",
+   "surface": "hasten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "ush",
+   "samples": [
+    "Joel.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5790",
+   "surface": "sustain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "ut",
+   "samples": [
+    "Isa.50.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "aid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "2Sam.21.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "furthered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "Zech.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "prevailed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "1Chr.5.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "protect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "Ezra.8.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "receive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "Dan.11.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5826",
+   "surface": "supported",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to help",
+   "transliteration": "a.zar",
+   "samples": [
+    "Ezra.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7159",
+   "surface": "cover",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "qa.ram",
+   "samples": [
+    "Ezek.37.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7159",
+   "surface": "covered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cover",
+   "transliteration": "qa.ram",
+   "samples": [
+    "Ezek.37.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "get",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Lam.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "gorge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Ezek.32.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "turn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Job.7.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7646",
+   "surface": "watered abundantly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to satisfy",
+   "transliteration": "sa.ve.a",
+   "samples": [
+    "Ps.104.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7804",
+   "surface": "delivered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "she.ziv",
+   "samples": [
+    "Dan.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7804",
+   "surface": "delivers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "she.ziv",
+   "samples": [
+    "Dan.6.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7804",
+   "surface": "has",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rescue",
+   "transliteration": "she.ziv",
+   "samples": [
+    "Dan.6.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8132",
+   "surface": "put off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.na",
+   "samples": [
+    "2Kgs.25.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8133",
+   "surface": "alter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "she.na",
+   "samples": [
+    "Ezra.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8133",
+   "surface": "alters",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "she.na",
+   "samples": [
+    "Ezra.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8133",
+   "surface": "changes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "she.na",
+   "samples": [
+    "Dan.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8133",
+   "surface": "harmed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "she.na",
+   "samples": [
+    "Dan.3.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8133",
+   "surface": "set aside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "she.na",
+   "samples": [
+    "Dan.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "advanced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "Esth.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "alter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "Ps.89.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "changing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "Jer.2.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "different",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "Esth.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "different kinds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "Esth.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "disguise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "1Kgs.14.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "otherwise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "Prov.24.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "pervert",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "Prov.31.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8138A",
+   "surface": "put off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to change",
+   "transliteration": "sha.nah",
+   "samples": [
+    "Jer.52.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8575",
+   "surface": "comfort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "consolation",
+   "transliteration": "tan.chum",
+   "samples": [
+    "Job.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8575",
+   "surface": "comforts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "consolation",
+   "transliteration": "tan.chum",
+   "samples": [
+    "Job.15.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8575",
+   "surface": "consolation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "consolation",
+   "transliteration": "tan.chum",
+   "samples": [
+    "Jer.16.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8575",
+   "surface": "consolations",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "consolation",
+   "transliteration": "tan.chum",
+   "samples": [
+    "Ps.94.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8575",
+   "surface": "consoling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "consolation",
+   "transliteration": "tan.chum",
+   "samples": [
+    "Isa.66.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8668H",
+   "surface": "safety",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deliverance: victory",
+   "transliteration": "te.shu.ah",
+   "samples": [
+    "Prov.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8668H",
+   "surface": "salvation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "deliverance: victory",
+   "transliteration": "te.shu.ah",
+   "samples": [
+    "Judg.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

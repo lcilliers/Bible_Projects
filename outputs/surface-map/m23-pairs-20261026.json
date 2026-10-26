@@ -1,0 +1,9408 @@
+{
+ "cluster": "M23",
+ "cluster_name": "Strength & Courage",
+ "built_at": "2026-10-26T04:20:16Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 574,
+  "head": 229,
+  "tail": 345,
+  "hits": 1726,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G1411",
+   "surface": "power",
+   "part": "head",
+   "hits": 83,
+   "verses": 80,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "Luke.5.17",
+    "Rev.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "army",
+   "part": "head",
+   "hits": 76,
+   "verses": 67,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Kgs.20.19",
+    "Num.31.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "strength",
+   "part": "head",
+   "hits": 60,
+   "verses": 57,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Isa.44.12",
+    "Ps.31.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "strong",
+   "part": "head",
+   "hits": 49,
+   "verses": 45,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Ezek.3.14",
+    "Hag.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5797",
+   "surface": "strength",
+   "part": "head",
+   "hits": 42,
+   "verses": 42,
+   "gloss": "strength",
+   "transliteration": "oz",
+   "samples": [
+    "Isa.45.24",
+    "Isa.52.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "power",
+   "part": "head",
+   "hits": 40,
+   "verses": 39,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Exod.15.6",
+    "Isa.50.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "repaired",
+   "part": "head",
+   "hits": 36,
+   "verses": 28,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Neh.3.20",
+    "Neh.3.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "might",
+   "part": "head",
+   "hits": 35,
+   "verses": 35,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Mic.7.16",
+    "Ps.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "valor",
+   "part": "head",
+   "hits": 26,
+   "verses": 26,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Deut.3.18",
+    "Neh.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "strong",
+   "part": "head",
+   "hits": 23,
+   "verses": 22,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Jer.21.5",
+    "Jer.31.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "hold",
+   "part": "head",
+   "hits": 22,
+   "verses": 22,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Exod.9.2",
+    "Jer.6.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Exod.32.11",
+    "Job.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2908",
+   "surface": "better",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "greater",
+   "transliteration": "kreissōn",
+   "samples": [
+    "1Cor.7.38",
+    "Phil.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "strengthened",
+   "part": "head",
+   "hits": 15,
+   "verses": 14,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Sam.16.21",
+    "Hos.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1415",
+   "surface": "possible",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "able",
+   "transliteration": "dunatos",
+   "samples": [
+    "Acts.2.24",
+    "Mark.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "valiant",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "2Sam.2.7",
+    "Neh.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5794",
+   "surface": "strong",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "strong",
+   "transliteration": "az",
+   "samples": [
+    "2Sam.22.18",
+    "Isa.26.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5797",
+   "surface": "power",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "strength",
+   "transliteration": "oz",
+   "samples": [
+    "Ezra.8.22",
+    "Hab.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5797",
+   "surface": "strong",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "strength",
+   "transliteration": "oz",
+   "samples": [
+    "Ezek.19.12",
+    "Ezek.19.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "strengthen",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Nah.3.14",
+    "Neh.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "forces",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "2Kgs.25.26",
+    "Jer.40.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5797",
+   "surface": "might",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "strength",
+   "transliteration": "oz",
+   "samples": [
+    "2Chr.30.21",
+    "Ezek.33.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "mighty works",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "Luke.10.13",
+    "Matt.13.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "subject",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "1Pet.2.13",
+    "1Pet.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "courageous",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Josh.1.6",
+    "Josh.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6099",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "mighty",
+   "transliteration": "a.tsum",
+   "samples": [
+    "Ps.135.10",
+    "Ps.35.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "besieged",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "2Sam.11.1",
+    "Dan.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3841",
+   "surface": "almighty",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "almighty",
+   "transliteration": "pantokratōr",
+   "samples": [
+    "Rev.19.15",
+    "Rev.21.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3954",
+   "surface": "confidence",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "boldness",
+   "transliteration": "parrēsia",
+   "samples": [
+    "1John.5.14",
+    "1Tim.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027W",
+   "surface": "hand",
+   "part": "head",
+   "hits": 10,
+   "verses": 8,
+   "gloss": "hand: owner",
+   "transliteration": "yad",
+   "samples": [
+    "2Kgs.17.7",
+    "Judg.3.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1754",
+   "surface": "work",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "be active",
+   "transliteration": "energeō",
+   "samples": [
+    "2Cor.4.12",
+    "Mark.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "hardened",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Exod.14.8",
+    "Exod.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "strength",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Sam.2.4",
+    "Eccl.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5797",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "strength",
+   "transliteration": "oz",
+   "samples": [
+    "Ezek.26.11",
+    "Ps.150.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "powers",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "Mark.13.25",
+    "Matt.24.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1415",
+   "surface": "able",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "able",
+   "transliteration": "dunatos",
+   "samples": [
+    "2Tim.1.12",
+    "Rom.4.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Rev.10.1",
+    "Rev.18.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3528",
+   "surface": "conquers",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to conquer",
+   "transliteration": "nikaō",
+   "samples": [
+    "Rev.2.7",
+    "Rev.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3955",
+   "surface": "boldly",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to preach boldly",
+   "transliteration": "parrēsiazomai",
+   "samples": [
+    "Acts.9.27",
+    "Eph.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "strength",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Isa.28.6",
+    "Ps.90.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "able",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Chr.26.9",
+    "Exod.18.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "miracles",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "1Cor.12.29",
+    "Heb.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "able",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Luke.13.24",
+    "Luke.20.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3528",
+   "surface": "overcome",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to conquer",
+   "transliteration": "nikaō",
+   "samples": [
+    "1John.4.4",
+    "John.16.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "power",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Ps.145.11",
+    "Ps.71.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "prevailed",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Gen.7.18",
+    "Gen.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "fast",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Jer.8.5",
+    "Job.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "warriors",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Chr.7.40",
+    "1Chr.8.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "2Chr.13.3",
+    "2Chr.26.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "might",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Eccl.9.10",
+    "Prov.24.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "strong",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "1Cor.4.10",
+    "2Cor.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "could",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Luke.14.6",
+    "Luke.8.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3954",
+   "surface": "boldness",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "boldness",
+   "transliteration": "parrēsia",
+   "samples": [
+    "2Cor.7.4",
+    "Eph.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "subjected",
+   "part": "head",
+   "hits": 6,
+   "verses": 4,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "Heb.2.5",
+    "Rom.8.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "subjection",
+   "part": "head",
+   "hits": 6,
+   "verses": 3,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "Heb.2.8",
+    "Rom.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "repair",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.24.12",
+    "2Chr.24.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "stronger",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Kgs.20.23",
+    "Dan.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "held",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Neh.4.17",
+    "Neh.4.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "seized",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Sam.15.27",
+    "Jer.49.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "host",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Exod.14.4",
+    "Exod.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "valiantly",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Ps.118.16",
+    "Ps.60.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027W",
+   "surface": "rule",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "hand: owner",
+   "transliteration": "yad",
+   "samples": [
+    "2Chr.21.8",
+    "Isa.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3524",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "mighty",
+   "transliteration": "kab.bir",
+   "samples": [
+    "Job.34.17",
+    "Job.36.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6099",
+   "surface": "mightier",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "mighty",
+   "transliteration": "a.tsum",
+   "samples": [
+    "Deut.7.1",
+    "Deut.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2479",
+   "surface": "might",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "strength",
+   "transliteration": "ischus",
+   "samples": [
+    "Eph.6.10",
+    "Rev.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2904",
+   "surface": "dominion",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "power",
+   "transliteration": "kratos",
+   "samples": [
+    "1Pet.4.11",
+    "1Tim.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3954",
+   "surface": "openly",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "boldness",
+   "transliteration": "parrēsia",
+   "samples": [
+    "John.18.20",
+    "John.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3954",
+   "surface": "plainly",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "boldness",
+   "transliteration": "parrēsia",
+   "samples": [
+    "John.10.24",
+    "John.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0046",
+   "surface": "mighty one",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "mighty",
+   "transliteration": "a.vir",
+   "samples": [
+    "Isa.1.24",
+    "Ps.132.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0202",
+   "surface": "strength",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "strength",
+   "transliteration": "on",
+   "samples": [
+    "Deut.21.17",
+    "Ps.105.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "severe",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Gen.41.56",
+    "Jer.52.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "hard",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Ezek.3.8",
+    "Job.37.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6099",
+   "surface": "strong",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "mighty",
+   "transliteration": "a.tsum",
+   "samples": [
+    "Josh.23.9",
+    "Mic.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "besiege",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "1Sam.23.8",
+    "Isa.29.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "besieging",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "Jer.21.9",
+    "Jer.32.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1753",
+   "surface": "working",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "active energy",
+   "transliteration": "energeia",
+   "samples": [
+    "Eph.1.19",
+    "Eph.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1754",
+   "surface": "works",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be active",
+   "transliteration": "energeō",
+   "samples": [
+    "Col.1.29",
+    "Eph.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2479",
+   "surface": "strength",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "strength",
+   "transliteration": "ischus",
+   "samples": [
+    "1Pet.4.11",
+    "Mark.12.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3528",
+   "surface": "conquer",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to conquer",
+   "transliteration": "nikaō",
+   "samples": [
+    "Rev.11.7",
+    "Rev.17.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3528",
+   "surface": "conquered",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to conquer",
+   "transliteration": "nikaō",
+   "samples": [
+    "Rev.3.21",
+    "Rev.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "dare",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "2Cor.10.12",
+    "Matt.22.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "submissive",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "Titus.2.5",
+    "Titus.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "submit",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "Col.3.18",
+    "Rom.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "mighty deeds",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Ps.145.12",
+    "Ps.150.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "harden",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Exod.14.4",
+    "Josh.11.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "took courage",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.15.8",
+    "2Chr.25.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388J",
+   "surface": "prevailed",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to strengthen: prevail over",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Chr.21.4",
+    "1Sam.17.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "power",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Job.21.7",
+    "Zech.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3559K",
+   "surface": "right",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to establish: right",
+   "transliteration": "kun",
+   "samples": [
+    "Exod.8.26",
+    "Ps.51.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "able",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "2Chr.2.6",
+    "2Chr.22.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6099",
+   "surface": "powerful",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "mighty",
+   "transliteration": "a.tsum",
+   "samples": [
+    "Joel.2.11",
+    "Joel.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "wide",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Hab.2.5",
+    "Isa.57.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1415",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "able",
+   "transliteration": "dunatos",
+   "samples": [
+    "Acts.7.22",
+    "Luke.24.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1415",
+   "surface": "power",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "able",
+   "transliteration": "dunatos",
+   "samples": [
+    "Rom.11.23",
+    "Rom.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1415",
+   "surface": "strong",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "able",
+   "transliteration": "dunatos",
+   "samples": [
+    "2Cor.12.10",
+    "Rom.15.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1743",
+   "surface": "strong",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to strengthen",
+   "transliteration": "endunamoō",
+   "samples": [
+    "Eph.6.10",
+    "Rom.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1754",
+   "surface": "worked",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "be active",
+   "transliteration": "energeō",
+   "samples": [
+    "Eph.1.20",
+    "Gal.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2904",
+   "surface": "might",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "power",
+   "transliteration": "kratos",
+   "samples": [
+    "Eph.1.19",
+    "Rev.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3528",
+   "surface": "overcomes",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to conquer",
+   "transliteration": "nikaō",
+   "samples": [
+    "1John.5.5",
+    "Luke.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4642",
+   "surface": "hard",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hard",
+   "transliteration": "sklēros",
+   "samples": [
+    "Acts.26.14",
+    "John.6.60"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "dared",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "Acts.5.13",
+    "John.21.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0047H",
+   "surface": "stallions",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "mighty: stallion",
+   "transliteration": "ab.bir",
+   "samples": [
+    "Jer.47.3",
+    "Jer.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0047I",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "mighty: strong",
+   "transliteration": "ab.bir",
+   "samples": [
+    "Jer.46.15",
+    "Job.34.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0202",
+   "surface": "wealth",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strength",
+   "transliteration": "on",
+   "samples": [
+    "Job.20.10",
+    "Prov.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0386",
+   "surface": "enduring",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strong",
+   "transliteration": "e.tan",
+   "samples": [
+    "Jer.5.15",
+    "Mic.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "strengthen",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Isa.41.10",
+    "Ps.89.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "prevail",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Ps.12.4",
+    "Ps.65.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "strong",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Dan.9.27",
+    "Jer.9.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "courage",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Sam.4.9",
+    "2Chr.23.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "encourage",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Sam.11.25",
+    "Deut.1.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "repairing",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Kgs.12.7",
+    "2Kgs.22.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "caught",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Sam.17.35",
+    "Exod.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "hold fast",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Job.2.9",
+    "Job.27.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "seizes",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Deut.25.11",
+    "Prov.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "take",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Isa.51.18",
+    "Job.8.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2392",
+   "surface": "strong",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strength",
+   "transliteration": "cho.zeq",
+   "samples": [
+    "Exod.13.16",
+    "Exod.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2393",
+   "surface": "strong",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strength",
+   "transliteration": "chez.qah",
+   "samples": [
+    "2Chr.12.1",
+    "Isa.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "strong",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "2Kgs.2.16",
+    "Eccl.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428I",
+   "surface": "worthy",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strength: worthy",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Kgs.1.52",
+    "Ruth.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5794",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strong",
+   "transliteration": "az",
+   "samples": [
+    "Isa.56.11",
+    "Neh.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5807",
+   "surface": "might",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strength",
+   "transliteration": "e.zuz",
+   "samples": [
+    "Isa.42.25",
+    "Ps.78.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7236",
+   "surface": "grew",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to grow great",
+   "transliteration": "re.vah",
+   "samples": [
+    "Dan.4.20",
+    "Dan.4.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "enlarge",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Isa.54.2",
+    "Ps.119.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "enlarges",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Deut.12.20",
+    "Deut.19.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8624",
+   "surface": "strong",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "strong",
+   "transliteration": "taq.qiph",
+   "samples": [
+    "Dan.2.40",
+    "Dan.2.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8630",
+   "surface": "prevail",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to prevail",
+   "transliteration": "ta.qeph",
+   "samples": [
+    "Job.14.20",
+    "Job.15.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8631",
+   "surface": "strong",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to grow strong",
+   "transliteration": "te.qeph",
+   "samples": [
+    "Dan.4.20",
+    "Dan.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0315",
+   "surface": "force",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to compel",
+   "transliteration": "anankazō",
+   "samples": [
+    "Gal.2.14",
+    "Gal.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0315",
+   "surface": "forced",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to compel",
+   "transliteration": "anankazō",
+   "samples": [
+    "2Cor.12.11",
+    "Gal.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0315",
+   "surface": "made",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to compel",
+   "transliteration": "anankazō",
+   "samples": [
+    "Mark.6.45",
+    "Matt.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "means",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "2Cor.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "mighty work",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "Mark.6.5",
+    "Mark.9.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "strength",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "2Cor.1.8",
+    "Rev.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1743",
+   "surface": "strength",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen",
+   "transliteration": "endunamoō",
+   "samples": [
+    "1Tim.1.12",
+    "Acts.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1743",
+   "surface": "strengthened",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen",
+   "transliteration": "endunamoō",
+   "samples": [
+    "2Tim.2.1",
+    "2Tim.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1754",
+   "surface": "working",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be active",
+   "transliteration": "energeō",
+   "samples": [
+    "Gal.5.6",
+    "Jas.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1991",
+   "surface": "strengthening",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen",
+   "transliteration": "epistērizō",
+   "samples": [
+    "Acts.14.22",
+    "Acts.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "mightier than",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Luke.3.16",
+    "Mark.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "strong man",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Luke.11.21",
+    "Mark.3.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "strong man’s",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Mark.3.27",
+    "Matt.12.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "could you",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Mark.14.37",
+    "Matt.26.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "counts",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Gal.5.6",
+    "Gal.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "well",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Mark.2.17",
+    "Matt.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2901",
+   "surface": "became strong",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen",
+   "transliteration": "krataioō",
+   "samples": [
+    "Luke.1.80",
+    "Luke.2.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2904",
+   "surface": "strength",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "power",
+   "transliteration": "kratos",
+   "samples": [
+    "Eph.6.10",
+    "Luke.1.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2960",
+   "surface": "lord’s",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "the Lord’s",
+   "transliteration": "kuriakos",
+   "samples": [
+    "1Cor.11.20",
+    "Rev.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3954",
+   "surface": "bold",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "boldness",
+   "transliteration": "parrēsia",
+   "samples": [
+    "2Cor.3.12",
+    "Phlm.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4119",
+   "surface": "further",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "greater",
+   "transliteration": "pleiōn pleion",
+   "samples": [
+    "Acts.24.4",
+    "Acts.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4731",
+   "surface": "firm",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "stereos",
+   "samples": [
+    "1Pet.5.9",
+    "2Tim.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4731",
+   "surface": "solid",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "stereos",
+   "samples": [
+    "Heb.5.12",
+    "Heb.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4788",
+   "surface": "imprisoned",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to confine",
+   "transliteration": "sunkleiō",
+   "samples": [
+    "Gal.3.22",
+    "Gal.3.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "boast",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "2Cor.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "submitting",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "1Pet.3.5",
+    "Eph.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0202",
+   "surface": "might",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "on",
+   "samples": [
+    "Isa.40.26",
+    "Isa.40.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0386",
+   "surface": "ever-flowing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "e.tan",
+   "samples": [
+    "Amos.5.24",
+    "Ps.74.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0386",
+   "surface": "perennial",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "e.tan",
+   "samples": [
+    "Jer.49.19",
+    "Jer.50.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0533",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "am.mits",
+   "samples": [
+    "Isa.28.2",
+    "Job.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "made firm",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Job.4.4",
+    "Prov.8.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "made strong",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Ps.80.15",
+    "Ps.80.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "2Sam.22.18",
+    "Ps.18.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "strong",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Prov.31.17",
+    "Ps.142.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "take courage",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Ps.27.14",
+    "Ps.31.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0554",
+   "surface": "strong",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "a.mots",
+   "samples": [
+    "Zech.6.3",
+    "Zech.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "mighty acts",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Deut.3.24",
+    "Ps.145.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "great",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Ps.103.11",
+    "Ps.117.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Gen.49.26",
+    "Isa.42.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "aided",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Ezra.1.6",
+    "Ezra.6.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "courageous",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Sam.10.12",
+    "2Sam.13.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "encouraged",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.35.2",
+    "Ezek.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "good courage",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Dan.10.19",
+    "Num.13.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.13.21",
+    "2Chr.27.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "repairs",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Kgs.12.12",
+    "2Kgs.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "strength",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Chr.19.13",
+    "Gen.48.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "strengthens",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Isa.41.7",
+    "Ps.147.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "strong support",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Chr.11.10",
+    "2Chr.16.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "caught hold",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Kgs.2.28",
+    "2Kgs.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "firmly",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.25.3",
+    "2Kgs.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "took",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.28.15",
+    "Jer.31.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388J",
+   "surface": "took",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: prevail over",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.8.3",
+    "Isa.41.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388J",
+   "surface": "withstand",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to strengthen: prevail over",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.13.7",
+    "2Chr.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "severe",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Kgs.17.17",
+    "1Kgs.18.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2392",
+   "surface": "strength",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "cho.zeq",
+   "samples": [
+    "Amos.6.13",
+    "Hag.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2394",
+   "surface": "force",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "force",
+   "transliteration": "choz.qah",
+   "samples": [
+    "1Sam.2.16",
+    "Ezek.34.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "armies",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Kgs.15.20",
+    "2Chr.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "soldiers",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Ezra.8.22",
+    "Nah.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "ability",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Chr.26.30",
+    "1Chr.26.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "great ability",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Chr.26.31",
+    "1Chr.26.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "man",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Sam.16.18",
+    "Ruth.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "might",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Ps.33.17",
+    "Zech.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428I",
+   "surface": "excellent",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength: worthy",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Prov.12.4",
+    "Prov.31.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2429",
+   "surface": "aloud",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Dan.3.4",
+    "Dan.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2634",
+   "surface": "strong",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "cha.son",
+   "samples": [
+    "Amos.2.9",
+    "Isa.1.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027W",
+   "surface": "me",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hand: owner",
+   "transliteration": "yad",
+   "samples": [
+    "1Sam.21.3",
+    "1Sam.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3543A",
+   "surface": "faded",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to grow dim",
+   "transliteration": "ka.hah",
+   "samples": [
+    "Lev.13.56",
+    "Lev.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3559K",
+   "surface": "certain",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to establish: right",
+   "transliteration": "kun",
+   "samples": [
+    "Deut.13.14",
+    "Deut.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "powerful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Dan.8.6",
+    "Ps.29.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5794",
+   "surface": "fierce",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "az",
+   "samples": [
+    "Gen.49.7",
+    "Isa.19.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5810",
+   "surface": "bold",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be strong",
+   "transliteration": "a.zaz",
+   "samples": [
+    "Prov.21.29",
+    "Prov.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5810",
+   "surface": "prevail",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be strong",
+   "transliteration": "a.zaz",
+   "samples": [
+    "Dan.11.12",
+    "Ps.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6099",
+   "surface": "great",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "mighty",
+   "transliteration": "a.tsum",
+   "samples": [
+    "Amos.5.12",
+    "Num.32.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6108",
+   "surface": "might",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "o.tsem",
+   "samples": [
+    "Deut.8.17",
+    "Job.30.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6109",
+   "surface": "strength",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strength",
+   "transliteration": "ots.mah",
+   "samples": [
+    "Isa.40.29",
+    "Nah.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6978",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "might",
+   "transliteration": "qav.qav",
+   "samples": [
+    "Isa.18.2",
+    "Isa.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7236",
+   "surface": "grown",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to grow great",
+   "transliteration": "re.vah",
+   "samples": [
+    "Dan.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "enlarged",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Isa.5.14",
+    "Ps.25.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "open",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Isa.57.4",
+    "Ps.81.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "wide place",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "2Sam.22.37",
+    "Ps.18.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7680",
+   "surface": "multiplied",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to grow great",
+   "transliteration": "se.ga",
+   "samples": [
+    "Dan.4.1",
+    "Dan.6.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8624",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "strong",
+   "transliteration": "taq.qiph",
+   "samples": [
+    "Dan.4.3",
+    "Ezra.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0315",
+   "surface": "compel",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to compel",
+   "transliteration": "anankazō",
+   "samples": [
+    "Luke.14.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0315",
+   "surface": "compelled",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to compel",
+   "transliteration": "anankazō",
+   "samples": [
+    "Acts.28.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0315",
+   "surface": "make",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to compel",
+   "transliteration": "anankazō",
+   "samples": [
+    "Acts.26.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0662",
+   "surface": "bold",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be bold",
+   "transliteration": "apotolmaō",
+   "samples": [
+    "Rom.10.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0949",
+   "surface": "confirm",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firm",
+   "transliteration": "bebaios",
+   "samples": [
+    "2Pet.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0949",
+   "surface": "confirmed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firm",
+   "transliteration": "bebaios",
+   "samples": [
+    "2Pet.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0949",
+   "surface": "firm",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firm",
+   "transliteration": "bebaios",
+   "samples": [
+    "Heb.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0949",
+   "surface": "guaranteed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firm",
+   "transliteration": "bebaios",
+   "samples": [
+    "Rom.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0949",
+   "surface": "reliable",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firm",
+   "transliteration": "bebaios",
+   "samples": [
+    "Heb.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0949",
+   "surface": "steadfast",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firm",
+   "transliteration": "bebaios",
+   "samples": [
+    "Heb.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0949",
+   "surface": "takes effect",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firm",
+   "transliteration": "bebaios",
+   "samples": [
+    "Heb.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0949",
+   "surface": "unshaken",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firm",
+   "transliteration": "bebaios",
+   "samples": [
+    "2Cor.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0970",
+   "surface": "force",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "force",
+   "transliteration": "bia",
+   "samples": [
+    "Acts.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0970",
+   "surface": "surf",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "force",
+   "transliteration": "bia",
+   "samples": [
+    "Acts.27.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0970",
+   "surface": "violence",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "force",
+   "transliteration": "bia",
+   "samples": [
+    "Acts.21.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0972",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "biaios",
+   "samples": [
+    "Acts.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "ability",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "Matt.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "meaning",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "1Cor.14.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "mighty",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "2Thess.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1411",
+   "surface": "powerfully",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "dunamis",
+   "samples": [
+    "Col.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1412",
+   "surface": "strengthened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to empower",
+   "transliteration": "dunamoō",
+   "samples": [
+    "Col.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1415",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "able",
+   "transliteration": "dunatos",
+   "samples": [
+    "Acts.25.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1415",
+   "surface": "competent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "able",
+   "transliteration": "dunatos",
+   "samples": [
+    "Acts.18.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1415",
+   "surface": "could",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "able",
+   "transliteration": "dunatos",
+   "samples": [
+    "Acts.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1415",
+   "surface": "powerful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "able",
+   "transliteration": "dunatos",
+   "samples": [
+    "1Cor.1.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1743",
+   "surface": "strengthens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "endunamoō",
+   "samples": [
+    "Phil.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1753",
+   "surface": "activity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "active energy",
+   "transliteration": "energeia",
+   "samples": [
+    "2Thess.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1753",
+   "surface": "energy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "active energy",
+   "transliteration": "energeia",
+   "samples": [
+    "Col.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1753",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "active energy",
+   "transliteration": "energeia",
+   "samples": [
+    "Phil.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1753",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "active energy",
+   "transliteration": "energeia",
+   "samples": [
+    "2Thess.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1754",
+   "surface": "empowered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be active",
+   "transliteration": "energeō",
+   "samples": [
+    "1Cor.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1754",
+   "surface": "empowers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be active",
+   "transliteration": "energeō",
+   "samples": [
+    "1Cor.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1754",
+   "surface": "experience",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be active",
+   "transliteration": "energeō",
+   "samples": [
+    "2Cor.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1755",
+   "surface": "activities",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "working",
+   "transliteration": "energēma",
+   "samples": [
+    "1Cor.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1755",
+   "surface": "working",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "working",
+   "transliteration": "energēma",
+   "samples": [
+    "1Cor.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1756",
+   "surface": "active",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "effective",
+   "transliteration": "energēs enargēs",
+   "samples": [
+    "Heb.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1756",
+   "surface": "effective",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "effective",
+   "transliteration": "energēs enargēs",
+   "samples": [
+    "Phlm.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1756",
+   "surface": "effective work",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "effective",
+   "transliteration": "energēs enargēs",
+   "samples": [
+    "1Cor.16.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1840",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to have power",
+   "transliteration": "exischuō",
+   "samples": [
+    "Eph.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1991",
+   "surface": "strengthened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "epistērizō",
+   "samples": [
+    "Acts.15.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "loud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Heb.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "mightier",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Matt.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "mighty men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Rev.19.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "one stronger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Luke.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "powerful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Rev.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "severe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Luke.15.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "stronger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "1Cor.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "stronger than",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "1Cor.10.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2478",
+   "surface": "wind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ischuros",
+   "samples": [
+    "Matt.14.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2479",
+   "surface": "great",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ischus",
+   "samples": [
+    "Eph.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "can do",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Phil.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "defeated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Rev.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "force",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Heb.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Matt.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "managed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Acts.27.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "overpowered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Acts.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Jas.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "prevail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Acts.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Mark.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2480",
+   "surface": "strong enough",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "ischuō",
+   "samples": [
+    "Luke.16.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2610",
+   "surface": "conquered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conquer",
+   "transliteration": "katagōnizomai",
+   "samples": [
+    "Heb.11.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2729",
+   "surface": "prevail against",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "katischuō",
+   "samples": [
+    "Matt.16.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2729",
+   "surface": "prevailed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "katischuō",
+   "samples": [
+    "Luke.23.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2900",
+   "surface": "mighty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "krataios",
+   "samples": [
+    "1Pet.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2901",
+   "surface": "strengthened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "krataioō",
+   "samples": [
+    "Eph.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2901",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "krataioō",
+   "samples": [
+    "1Cor.16.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2904",
+   "surface": "mightily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "kratos",
+   "samples": [
+    "Acts.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2904",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "kratos",
+   "samples": [
+    "Heb.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2908",
+   "surface": "higher",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greater",
+   "transliteration": "kreissōn",
+   "samples": [
+    "1Cor.12.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2908",
+   "surface": "superior",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greater",
+   "transliteration": "kreissōn",
+   "samples": [
+    "Heb.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2908",
+   "surface": "superior to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greater",
+   "transliteration": "kreissōn",
+   "samples": [
+    "Heb.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3167",
+   "surface": "great things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "megaleios",
+   "samples": [
+    "Luke.1.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3167",
+   "surface": "mighty works",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "megaleios",
+   "samples": [
+    "Acts.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3528",
+   "surface": "conquering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conquer",
+   "transliteration": "nikaō",
+   "samples": [
+    "Rev.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3528",
+   "surface": "prevail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conquer",
+   "transliteration": "nikaō",
+   "samples": [
+    "Rom.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3954",
+   "surface": "boldly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "boldness",
+   "transliteration": "parrēsia",
+   "samples": [
+    "Eph.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3954",
+   "surface": "courage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "boldness",
+   "transliteration": "parrēsia",
+   "samples": [
+    "Phil.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3954",
+   "surface": "open shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "boldness",
+   "transliteration": "parrēsia",
+   "samples": [
+    "Col.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3955",
+   "surface": "boldness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to preach boldly",
+   "transliteration": "parrēsiazomai",
+   "samples": [
+    "1Thess.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4119",
+   "surface": "far",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greater",
+   "transliteration": "pleiōn pleion",
+   "samples": [
+    "2Tim.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4119",
+   "surface": "larger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greater",
+   "transliteration": "pleiōn pleion",
+   "samples": [
+    "Luke.7.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4119",
+   "surface": "many",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greater",
+   "transliteration": "pleiōn pleion",
+   "samples": [
+    "Acts.27.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4599",
+   "surface": "strengthen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "sthenoō",
+   "samples": [
+    "1Pet.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4642",
+   "surface": "harsh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hard",
+   "transliteration": "sklēros",
+   "samples": [
+    "Jude.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4642",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hard",
+   "transliteration": "sklēros",
+   "samples": [
+    "Jas.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4732",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "stereoō",
+   "samples": [
+    "Acts.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4732",
+   "surface": "made strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "stereoō",
+   "samples": [
+    "Acts.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4732",
+   "surface": "strengthened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "stereoō",
+   "samples": [
+    "Acts.16.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4732",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "stereoō",
+   "samples": [
+    "Acts.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4733",
+   "surface": "firmness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "firmness",
+   "transliteration": "stereōma",
+   "samples": [
+    "Col.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4788",
+   "surface": "consigned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "sunkleiō",
+   "samples": [
+    "Rom.11.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4788",
+   "surface": "enclosed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "sunkleiō",
+   "samples": [
+    "Luke.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "bold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "Phil.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "dared to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "Mark.12.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "presume",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "Jude.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "showing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "2Cor.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "took courage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "Mark.15.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "venture",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "Rom.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5111",
+   "surface": "would dare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be bold",
+   "transliteration": "tolmaō",
+   "samples": [
+    "Rom.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5113",
+   "surface": "bold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bold man",
+   "transliteration": "tolmētēs",
+   "samples": [
+    "2Pet.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5242",
+   "surface": "governing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be higher",
+   "transliteration": "huperechō",
+   "samples": [
+    "Rom.13.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5242",
+   "surface": "more significant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be higher",
+   "transliteration": "huperechō",
+   "samples": [
+    "Phil.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5242",
+   "surface": "supreme",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be higher",
+   "transliteration": "huperechō",
+   "samples": [
+    "1Pet.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5242",
+   "surface": "surpasses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be higher",
+   "transliteration": "huperechō",
+   "samples": [
+    "Phil.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5242",
+   "surface": "surpassing worth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be higher",
+   "transliteration": "huperechō",
+   "samples": [
+    "Phil.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5245",
+   "surface": "conquerors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to conquer",
+   "transliteration": "hupernikaō",
+   "samples": [
+    "Rom.8.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "put",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "Eph.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "put in subjection",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "1Cor.15.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "subjection under",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "1Cor.15.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "submission",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "1Cor.14.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "submit yourselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "Jas.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5293",
+   "surface": "submits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to subject",
+   "transliteration": "hupotassō",
+   "samples": [
+    "Eph.5.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5607",
+   "surface": "are",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "being",
+   "transliteration": "ōn",
+   "samples": [
+    "Rom.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5607",
+   "surface": "exist",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "being",
+   "transliteration": "ōn",
+   "samples": [
+    "Rom.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5607",
+   "surface": "is",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "being",
+   "transliteration": "ōn",
+   "samples": [
+    "John.6.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5607",
+   "surface": "that",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "being",
+   "transliteration": "ōn",
+   "samples": [
+    "Rom.7.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0046",
+   "surface": "mighty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "a.vir",
+   "samples": [
+    "Gen.49.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0047H",
+   "surface": "steeds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty: stallion",
+   "transliteration": "ab.bir",
+   "samples": [
+    "Judg.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0047I",
+   "surface": "chief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty: strong",
+   "transliteration": "ab.bir",
+   "samples": [
+    "1Sam.21.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0047I",
+   "surface": "mighty men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty: strong",
+   "transliteration": "ab.bir",
+   "samples": [
+    "Lam.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0047I",
+   "surface": "stouthearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty: strong",
+   "transliteration": "ab.bir",
+   "samples": [
+    "Ps.76.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0047I",
+   "surface": "stubborn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty: strong",
+   "transliteration": "ab.bir",
+   "samples": [
+    "Isa.46.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0047J",
+   "surface": "angels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty: angel",
+   "transliteration": "ab.bir",
+   "samples": [
+    "Ps.78.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0153",
+   "surface": "force",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "force",
+   "transliteration": "ed.ra",
+   "samples": [
+    "Ezra.4.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0193A",
+   "surface": "bodies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ul",
+   "samples": [
+    "Ps.73.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0202",
+   "surface": "manhood",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "on",
+   "samples": [
+    "Hos.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0202",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "on",
+   "samples": [
+    "Job.40.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0202",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "on",
+   "samples": [
+    "Job.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0353",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "e.yal",
+   "samples": [
+    "Ps.88.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0360",
+   "surface": "help",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "e.ya.lut",
+   "samples": [
+    "Ps.22.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0386",
+   "surface": "continual",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "e.tan",
+   "samples": [
+    "Job.33.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0386",
+   "surface": "mighty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "e.tan",
+   "samples": [
+    "Job.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0386",
+   "surface": "normal course",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "e.tan",
+   "samples": [
+    "Exod.14.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0386",
+   "surface": "ruin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "e.tan",
+   "samples": [
+    "Prov.13.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0386",
+   "surface": "running water",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "e.tan",
+   "samples": [
+    "Deut.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0386",
+   "surface": "unmoved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "e.tan",
+   "samples": [
+    "Gen.49.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0533",
+   "surface": "grew strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "am.mits",
+   "samples": [
+    "2Sam.15.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0533",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "am.mits",
+   "samples": [
+    "Amos.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0533",
+   "surface": "matter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "am.mits",
+   "samples": [
+    "Job.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0533",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "am.mits",
+   "samples": [
+    "Isa.40.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "collect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Nah.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "could strengthen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Job.16.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "defied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "2Chr.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "determined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Ruth.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "enhances",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Prov.24.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "grow strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Isa.44.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "harden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Deut.15.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "hardened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "2Chr.36.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "hurried",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "1Kgs.12.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "make firm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Isa.35.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "obstinate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Deut.2.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "prevailed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "2Chr.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "quickly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "2Chr.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "retain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Amos.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "secure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "2Chr.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "strengthened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "2Chr.24.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0553",
+   "surface": "stronger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen",
+   "transliteration": "a.mets",
+   "samples": [
+    "Gen.25.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0555",
+   "surface": "stronger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "o.mets",
+   "samples": [
+    "Job.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0556",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "am.tsah",
+   "samples": [
+    "Zech.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0597",
+   "surface": "compulsion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to compel",
+   "transliteration": "a.nas",
+   "samples": [
+    "Esth.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0820",
+   "surface": "full vigor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "ash.man.nim",
+   "samples": [
+    "Isa.59.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "mighty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Ps.89.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "mighty men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Isa.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "mighty power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Ps.106.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "mighty strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Job.41.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1369",
+   "surface": "victory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "might",
+   "transliteration": "ge.vu.rah",
+   "samples": [
+    "Exod.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "advantage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "2Sam.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "arrogantly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Job.36.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "became strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "1Chr.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "defies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Job.15.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "grow mighty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Job.21.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "must use",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Eccl.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "strengthen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "Zech.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1396",
+   "surface": "stronger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prevail",
+   "transliteration": "ga.var",
+   "samples": [
+    "2Sam.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1432",
+   "surface": "gained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "growing",
+   "transliteration": "ga.del",
+   "samples": [
+    "Gen.26.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1432",
+   "surface": "greater",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "growing",
+   "transliteration": "ga.del",
+   "samples": [
+    "2Chr.17.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1432",
+   "surface": "grow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "growing",
+   "transliteration": "ga.del",
+   "samples": [
+    "1Sam.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1432",
+   "surface": "lustful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "growing",
+   "transliteration": "ga.del",
+   "samples": [
+    "Ezek.16.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1623",
+   "surface": "scrape",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to scrape",
+   "transliteration": "ga.rad",
+   "samples": [
+    "Job.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1679",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "do.ve",
+   "samples": [
+    "Deut.33.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "aid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Ezek.16.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "bind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Isa.22.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "caulkers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Ezek.27.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "caulking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Ezek.27.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "confirm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Dan.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "contends",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Dan.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "courageously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "dress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Nah.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "established",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "established himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "fortified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "give strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Chr.29.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "give themselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.31.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "hard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Mal.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "harder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Jer.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "helped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.29.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "join",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Neh.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "maintain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Ezek.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "maintenance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Chr.26.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "making",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Kgs.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "recovered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Isa.39.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "restoring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.34.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "retain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Mic.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "strengthening",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.28.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "support",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Lev.25.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "supported",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Dan.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "take courage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.15.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388G",
+   "surface": "urgent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: strengthen",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Exod.12.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "caught fast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Sam.18.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "fasten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Jer.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "grasped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Isa.45.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "holds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Sam.3.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "lays hold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Job.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "retained",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Judg.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "robe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Zech.8.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "seize",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Zech.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "stay",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Judg.19.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "take hold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Sam.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "takes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Prov.26.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388H",
+   "surface": "taking hold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: hold",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Judg.19.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388I",
+   "surface": "confirm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: ensure",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Kgs.15.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388I",
+   "surface": "sure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: ensure",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Deut.12.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388I",
+   "surface": "urged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: ensure",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Kgs.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388J",
+   "surface": "going against",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: prevail over",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Kgs.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388J",
+   "surface": "obtain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: prevail over",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Dan.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388J",
+   "surface": "overcame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: prevail over",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "1Kgs.16.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388J",
+   "surface": "prevail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: prevail over",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Dan.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388K",
+   "surface": "persevered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: persevere",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Neh.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388K",
+   "surface": "stand firm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: persevere",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Dan.11.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388K",
+   "surface": "strengthened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: persevere",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.32.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2388K",
+   "surface": "work resolutely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to strengthen: persevere",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Chr.32.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "harder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Ezek.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "hardest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "2Sam.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "loud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Exod.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "might",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Isa.40.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "stronger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Num.13.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2389",
+   "surface": "stubborn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "cha.zaq",
+   "samples": [
+    "Ezek.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2390",
+   "surface": "louder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "stronger",
+   "transliteration": "cha.zeq",
+   "samples": [
+    "Exod.19.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2390",
+   "surface": "stronger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "stronger",
+   "transliteration": "cha.zeq",
+   "samples": [
+    "2Sam.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2391",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "che.zeq",
+   "samples": [
+    "Ps.18.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2393",
+   "surface": "become strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "chez.qah",
+   "samples": [
+    "Dan.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2394",
+   "surface": "cruelly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "force",
+   "transliteration": "choz.qah",
+   "samples": [
+    "Judg.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2394",
+   "surface": "fiercely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "force",
+   "transliteration": "choz.qah",
+   "samples": [
+    "Judg.8.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2394",
+   "surface": "mightily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "force",
+   "transliteration": "choz.qah",
+   "samples": [
+    "Jonah.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "armed force",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Esth.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "captains",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "2Kgs.25.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "enemies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Jer.46.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "helpless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Ps.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428A",
+   "surface": "war",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: soldiers",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Ps.76.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "able-bodied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Judg.3.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "bravest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Judg.21.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Chr.11.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "valiant man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "2Sam.17.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "valiant men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "2Sam.17.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "warrior",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Judg.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428G",
+   "surface": "warriors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "1Chr.5.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428I",
+   "surface": "excellently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: worthy",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Prov.31.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2428I",
+   "surface": "worthily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength: worthy",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Ruth.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2429",
+   "surface": "army",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Dan.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2429",
+   "surface": "host",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Dan.4.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2429",
+   "surface": "loudly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Dan.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2429",
+   "surface": "mighty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Dan.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2429",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "cha.yil",
+   "samples": [
+    "Ezra.4.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2626",
+   "surface": "mighty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "cha.sin",
+   "samples": [
+    "Ps.89.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3524",
+   "surface": "feeble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "kab.bir",
+   "samples": [
+    "Isa.16.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3524",
+   "surface": "great",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "kab.bir",
+   "samples": [
+    "Job.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3524",
+   "surface": "much",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "kab.bir",
+   "samples": [
+    "Job.31.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3524",
+   "surface": "older",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "kab.bir",
+   "samples": [
+    "Job.15.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3543A",
+   "surface": "blinded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow dim",
+   "transliteration": "ka.hah",
+   "samples": [
+    "Zech.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3543A",
+   "surface": "dim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow dim",
+   "transliteration": "ka.hah",
+   "samples": [
+    "Gen.27.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3543A",
+   "surface": "faint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow dim",
+   "transliteration": "ka.hah",
+   "samples": [
+    "Ezek.21.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3543A",
+   "surface": "grow faint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow dim",
+   "transliteration": "ka.hah",
+   "samples": [
+    "Isa.42.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3543A",
+   "surface": "grown dim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow dim",
+   "transliteration": "ka.hah",
+   "samples": [
+    "Job.17.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3543A",
+   "surface": "undimmed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow dim",
+   "transliteration": "ka.hah",
+   "samples": [
+    "Deut.34.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3543A",
+   "surface": "utterly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow dim",
+   "transliteration": "ka.hah",
+   "samples": [
+    "Zech.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3559K",
+   "surface": "consider",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to establish: right",
+   "transliteration": "kun",
+   "samples": [
+    "Job.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3559K",
+   "surface": "had",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to establish: right",
+   "transliteration": "kun",
+   "samples": [
+    "1Sam.26.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3559K",
+   "surface": "measure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to establish: right",
+   "transliteration": "kun",
+   "samples": [
+    "Deut.19.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3559K",
+   "surface": "more sure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to establish: right",
+   "transliteration": "kun",
+   "samples": [
+    "1Sam.23.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3559K",
+   "surface": "pronounce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to establish: right",
+   "transliteration": "kun",
+   "samples": [
+    "Judg.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3559K",
+   "surface": "truth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to establish: right",
+   "transliteration": "kun",
+   "samples": [
+    "Ps.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "ability",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Ezra.2.69"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "cannot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Ezra.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "competent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Dan.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "force",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Job.30.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "mighty ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Ps.103.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "powerless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "2Chr.20.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "qualified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "1Chr.26.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Isa.44.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "weak",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "2Chr.14.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "wealth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Job.6.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "weary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Job.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3581B",
+   "surface": "yield",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ko.ach",
+   "samples": [
+    "Job.31.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3624",
+   "surface": "old age",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vigor",
+   "transliteration": "ke.lach",
+   "samples": [
+    "Job.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3624",
+   "surface": "vigor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vigor",
+   "transliteration": "ke.lach",
+   "samples": [
+    "Job.30.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3648",
+   "surface": "grew warm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow warm",
+   "transliteration": "ka.mar",
+   "samples": [
+    "Gen.43.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3648",
+   "surface": "hot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow warm",
+   "transliteration": "ka.mar",
+   "samples": [
+    "Lam.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3648",
+   "surface": "warm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow warm",
+   "transliteration": "ka.mar",
+   "samples": [
+    "Hos.11.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3648",
+   "surface": "yearned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow warm",
+   "transliteration": "ka.mar",
+   "samples": [
+    "1Kgs.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3893",
+   "surface": "vigor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vigor",
+   "transliteration": "le.ach",
+   "samples": [
+    "Deut.34.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3981",
+   "surface": "force",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "ma.a.mats",
+   "samples": [
+    "Job.36.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5500",
+   "surface": "scrape",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to scrape",
+   "transliteration": "sa.chah",
+   "samples": [
+    "Ezek.26.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5794",
+   "surface": "bold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "az",
+   "samples": [
+    "Dan.8.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5794",
+   "surface": "fierce men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "az",
+   "samples": [
+    "Ps.59.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5794",
+   "surface": "hard-faced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "az",
+   "samples": [
+    "Deut.28.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5794",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "az",
+   "samples": [
+    "Gen.49.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5794",
+   "surface": "roughly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "az",
+   "samples": [
+    "Prov.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5794",
+   "surface": "stronger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strong",
+   "transliteration": "az",
+   "samples": [
+    "Judg.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5797",
+   "surface": "defenses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "oz",
+   "samples": [
+    "Amos.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5797",
+   "surface": "hardness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "oz",
+   "samples": [
+    "Eccl.8.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5797",
+   "surface": "stronghold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "oz",
+   "samples": [
+    "Prov.21.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5808",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "iz.zuz",
+   "samples": [
+    "Ps.24.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5808",
+   "surface": "warrior",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "iz.zuz",
+   "samples": [
+    "Isa.43.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5810",
+   "surface": "established",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "a.zaz",
+   "samples": [
+    "Prov.8.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5810",
+   "surface": "gives strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "a.zaz",
+   "samples": [
+    "Eccl.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5810",
+   "surface": "overpowered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "a.zaz",
+   "samples": [
+    "Judg.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5810",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "a.zaz",
+   "samples": [
+    "Ps.68.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5810",
+   "surface": "prevailed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "a.zaz",
+   "samples": [
+    "Judg.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5810",
+   "surface": "sought refuge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "a.zaz",
+   "samples": [
+    "Ps.52.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5810",
+   "surface": "strong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be strong",
+   "transliteration": "a.zaz",
+   "samples": [
+    "Ps.89.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6099",
+   "surface": "might",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "a.tsum",
+   "samples": [
+    "Ps.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6099",
+   "surface": "mighty throng",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "a.tsum",
+   "samples": [
+    "Prov.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6099",
+   "surface": "powerful contenders",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "a.tsum",
+   "samples": [
+    "Prov.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6108",
+   "surface": "frame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "o.tsem",
+   "samples": [
+    "Ps.139.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6109",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "strength",
+   "transliteration": "ots.mah",
+   "samples": [
+    "Isa.47.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "bagged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "2Kgs.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "bind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "Ezek.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "bind up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "Deut.14.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "enclose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "Song.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "hem",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "Ps.139.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "lay siege",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "Isa.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "laying siege",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "1Kgs.15.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "1Kgs.20.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "siege",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "Ezek.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "stirring up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "Judg.9.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696A",
+   "surface": "tied up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confine",
+   "transliteration": "tsur",
+   "samples": [
+    "2Kgs.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6862D",
+   "surface": "flint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hard",
+   "transliteration": "tsar",
+   "samples": [
+    "Isa.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7106A",
+   "surface": "scraped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to scrape",
+   "transliteration": "qa.tsa",
+   "samples": [
+    "Lev.14.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7236",
+   "surface": "high honors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow great",
+   "transliteration": "re.vah",
+   "samples": [
+    "Dan.2.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287B",
+   "surface": "out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to scrape",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Judg.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287B",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to scrape",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Jer.5.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287B",
+   "surface": "scraped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to scrape",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Judg.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287B",
+   "surface": "tread",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to scrape",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Joel.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "bald",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Mic.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "became broader",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Ezek.41.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "derides",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "1Sam.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "exult",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Isa.60.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "given me relief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Ps.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "large",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Isa.30.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "made room",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Gen.26.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "makes room",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Prov.18.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7337",
+   "surface": "might enlarge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enlarge",
+   "transliteration": "ra.chav",
+   "samples": [
+    "Amos.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7679",
+   "surface": "extol",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow great",
+   "transliteration": "sa.ga",
+   "samples": [
+    "Job.36.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7679",
+   "surface": "makes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow great",
+   "transliteration": "sa.ga",
+   "samples": [
+    "Job.12.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7680",
+   "surface": "grow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow great",
+   "transliteration": "se.ga",
+   "samples": [
+    "Ezra.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7983",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "shil.ton",
+   "samples": [
+    "Eccl.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7983",
+   "surface": "supreme",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "shil.ton",
+   "samples": [
+    "Eccl.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8592",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "ta.a.tsu.mah",
+   "samples": [
+    "Ps.68.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8623",
+   "surface": "one stronger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mighty",
+   "transliteration": "taq.qiph",
+   "samples": [
+    "Eccl.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8631",
+   "surface": "enforce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow strong",
+   "transliteration": "te.qeph",
+   "samples": [
+    "Dan.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8631",
+   "surface": "hardened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to grow strong",
+   "transliteration": "te.qeph",
+   "samples": [
+    "Dan.5.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8632A",
+   "surface": "mighty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "might",
+   "transliteration": "te.qaph",
+   "samples": [
+    "Dan.4.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8633",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "to.qeph",
+   "samples": [
+    "Esth.9.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8633",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "to.qeph",
+   "samples": [
+    "Esth.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8633",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "power",
+   "transliteration": "to.qeph",
+   "samples": [
+    "Dan.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

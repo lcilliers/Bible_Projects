@@ -1,0 +1,391 @@
+{
+ "cluster": "M66",
+ "cluster_name": "Madness & Recklessness",
+ "built_at": "2026-10-26T04:26:13Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 23,
+  "head": 17,
+  "tail": 6,
+  "hits": 30,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H1947",
+   "surface": "madness",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "madness",
+   "transliteration": "ho.le.lah",
+   "samples": [
+    "Eccl.2.12",
+    "Eccl.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3105",
+   "surface": "mind",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rave",
+   "transliteration": "mainomai",
+   "samples": [
+    "Acts.12.15",
+    "Acts.26.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7696",
+   "surface": "mad",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be mad",
+   "transliteration": "sha.ga",
+   "samples": [
+    "1Sam.21.14",
+    "Hos.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7696",
+   "surface": "madman",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be mad",
+   "transliteration": "sha.ga",
+   "samples": [
+    "1Sam.21.15",
+    "Jer.29.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7697",
+   "surface": "madness",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "madness",
+   "transliteration": "shig.ga.on",
+   "samples": [
+    "Deut.28.28",
+    "Zech.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3105",
+   "surface": "insane",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rave",
+   "transliteration": "mainomai",
+   "samples": [
+    "John.10.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3105",
+   "surface": "minds",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rave",
+   "transliteration": "mainomai",
+   "samples": [
+    "1Cor.14.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3105",
+   "surface": "out of your mind",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rave",
+   "transliteration": "mainomai",
+   "samples": [
+    "Acts.26.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3130",
+   "surface": "out of your mind",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "insanity",
+   "transliteration": "mania",
+   "samples": [
+    "Acts.26.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3912",
+   "surface": "madman",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be insane",
+   "transliteration": "parafroneō",
+   "samples": [
+    "2Cor.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3913",
+   "surface": "madness",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "insanity",
+   "transliteration": "parafronia",
+   "samples": [
+    "2Pet.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4312",
+   "surface": "rash",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reckless",
+   "transliteration": "propetēs",
+   "samples": [
+    "Acts.19.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4312",
+   "surface": "reckless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reckless",
+   "transliteration": "propetēs",
+   "samples": [
+    "2Tim.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1948",
+   "surface": "madness",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "madness",
+   "transliteration": "ho.le.lut",
+   "samples": [
+    "Eccl.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2031",
+   "surface": "dream",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fantasies",
+   "transliteration": "har.hor",
+   "samples": [
+    "Dan.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6348",
+   "surface": "fickle",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be reckless",
+   "transliteration": "pa.chaz",
+   "samples": [
+    "Zeph.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6348",
+   "surface": "reckless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be reckless",
+   "transliteration": "pa.chaz",
+   "samples": [
+    "Judg.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6349",
+   "surface": "unstable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "recklessness",
+   "transliteration": "pa.chaz",
+   "samples": [
+    "Gen.49.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6350",
+   "surface": "recklessness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "recklessness",
+   "transliteration": "pa.cha.zut",
+   "samples": [
+    "Jer.23.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7696",
+   "surface": "driven mad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be mad",
+   "transliteration": "sha.ga",
+   "samples": [
+    "Deut.28.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7696",
+   "surface": "fellow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be mad",
+   "transliteration": "sha.ga",
+   "samples": [
+    "2Kgs.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7696",
+   "surface": "madmen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be mad",
+   "transliteration": "sha.ga",
+   "samples": [
+    "1Sam.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7697",
+   "surface": "furiously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "madness",
+   "transliteration": "shig.ga.on",
+   "samples": [
+    "2Kgs.9.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

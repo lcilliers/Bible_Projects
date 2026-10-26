@@ -1,0 +1,968 @@
+{
+ "cluster": "M80",
+ "cluster_name": "Blessing",
+ "built_at": "2026-10-26T04:28:12Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 58,
+  "head": 5,
+  "tail": 53,
+  "hits": 522,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H1288",
+   "surface": "blessed",
+   "part": "head",
+   "hits": 170,
+   "verses": 158,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Gen.24.60",
+    "Isa.65.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "bless",
+   "part": "head",
+   "hits": 117,
+   "verses": 110,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Deut.33.11",
+    "Prov.30.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1293",
+   "surface": "blessing",
+   "part": "head",
+   "hits": 52,
+   "verses": 50,
+   "gloss": "blessing",
+   "transliteration": "be.ra.khah",
+   "samples": [
+    "Prov.11.25",
+    "Prov.11.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3107",
+   "surface": "blessed",
+   "part": "head",
+   "hits": 48,
+   "verses": 47,
+   "gloss": "blessed",
+   "transliteration": "makarios",
+   "samples": [
+    "1Tim.6.15",
+    "Titus.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0835",
+   "surface": "blessed",
+   "part": "head",
+   "hits": 38,
+   "verses": 37,
+   "gloss": "blessed",
+   "transliteration": "e.sher",
+   "samples": [
+    "Dan.12.12",
+    "Ps.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1293",
+   "surface": "blessings",
+   "part": "tail",
+   "hits": 10,
+   "verses": 7,
+   "gloss": "blessing",
+   "transliteration": "be.ra.khah",
+   "samples": [
+    "Deut.28.2",
+    "Mal.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "blesses",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Isa.66.3",
+    "Prov.27.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0835",
+   "surface": "happy",
+   "part": "tail",
+   "hits": 7,
+   "verses": 5,
+   "gloss": "blessed",
+   "transliteration": "e.sher",
+   "samples": [
+    "Deut.33.29",
+    "Isa.32.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "blessing",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Gen.27.30",
+    "Gen.49.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1289",
+   "surface": "blessed",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to bless",
+   "transliteration": "be.rakh",
+   "samples": [
+    "Dan.2.19",
+    "Dan.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "cursed",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "1Kgs.21.10",
+    "Job.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "greet",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "1Sam.13.10",
+    "1Sam.25.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1293",
+   "surface": "present",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "blessing",
+   "transliteration": "be.ra.khah",
+   "samples": [
+    "1Sam.25.27",
+    "2Kgs.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1757",
+   "surface": "blessed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be blessed",
+   "transliteration": "eneulogeomai",
+   "samples": [
+    "Acts.3.25",
+    "Gal.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3106",
+   "surface": "blessed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to bless",
+   "transliteration": "makarizō",
+   "samples": [
+    "Jas.5.11",
+    "Luke.1.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3108",
+   "surface": "blessing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "blessedness",
+   "transliteration": "makarismos",
+   "samples": [
+    "Rom.4.6",
+    "Rom.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "blessed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Mal.3.12",
+    "Mal.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "called blessed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Prov.3.18",
+    "Ps.41.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "walk",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Prov.4.14",
+    "Prov.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "blessings",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Gen.48.20",
+    "Ps.72.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "curse",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Job.1.11",
+    "Job.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1293",
+   "surface": "peace",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "blessing",
+   "transliteration": "be.ra.khah",
+   "samples": [
+    "2Kgs.18.31",
+    "Isa.36.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3107",
+   "surface": "fortunate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blessed",
+   "transliteration": "makarios",
+   "samples": [
+    "Acts.26.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3107",
+   "surface": "happier",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blessed",
+   "transliteration": "makarios",
+   "samples": [
+    "1Cor.7.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3108",
+   "surface": "blessedness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blessedness",
+   "transliteration": "makarismos",
+   "samples": [
+    "Gal.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "call her blessed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Prov.31.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "call him blessed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Ps.72.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "called her blessed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Song.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "called me blessed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Job.29.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "correct",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Isa.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "direct",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Prov.23.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "guide",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Isa.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "guided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Isa.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "guides",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Isa.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0833",
+   "surface": "happy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "a.shar",
+   "samples": [
+    "Gen.30.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "abundantly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Ps.132.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Num.23.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "bless her",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Gen.17.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "bless himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Isa.65.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "bless themselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Jer.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "blesses himself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Isa.65.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "congratulate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "1Kgs.1.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "gain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Ps.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "god",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Job.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "greeted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "2Kgs.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "greets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "2Kgs.4.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "have",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Num.24.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "kneel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Ps.95.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "kneel down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Gen.24.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "knelt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "2Chr.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "1Chr.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "nothing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Num.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "pronounce blessings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "1Chr.23.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Gen.22.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1288",
+   "surface": "will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "ba.rakh",
+   "samples": [
+    "Deut.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1289",
+   "surface": "got down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to bless",
+   "transliteration": "be.rakh",
+   "samples": [
+    "Dan.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1293",
+   "surface": "most blessed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blessing",
+   "transliteration": "be.ra.khah",
+   "samples": [
+    "Ps.21.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1293",
+   "surface": "pools",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blessing",
+   "transliteration": "be.ra.khah",
+   "samples": [
+    "Ps.84.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "M15": {
+  "groups": [
+   ["M15_knowing", "Knowing, being known", "knowing a person or a fact, and being known: know, known, knew, aware, learn, acknowledge", "group", "renders knowing"],
+   ["M15_knowledge", "Knowledge", "knowledge held: knowledge", "group", "renders knowledge"],
+   ["M15_understanding", "Understanding, insight, discernment", "grasping the meaning: understand, understanding, insight, discern, perceive, good sense", "group", "renders understanding"],
+   ["M15_mind", "Mind", "the mind as the seat of thought: mind, minds", "group", "renders the mind"],
+   ["M15_thinking", "Thinking, supposing, judging", "thought formed: think, suppose, thoughts, judgment, it seemed good", "group", "renders thinking"],
+   ["M15_considering", "Considering, meditating", "turning a matter over: consider, meditate, take to heart", "group", "renders considering"],
+   ["M15_teaching", "Teaching, training, making known", "knowledge handed on: teach, teaching, discipline, trained, make known, show", "group", "renders teaching"],
+   ["M15_perceiving", "Perceiving by the senses", "knowing through sight and taste: saw, taste", "group", "renders perceiving by the senses"],
+   ["M15_not_this_sense", "Not the cluster's sense", "renderings with no sense of knowing: a Song of Ascents, the natural body", "not_this_sense", "carries no sense of knowing"]
+  ],
+  "surf": {
+   "M15_knowing": ["know", "known", "knows", "knew", "knowing", "aware", "learned", "learn", "perceived", "certain", "acknowledge", "know how"],
+   "M15_knowledge": ["knowledge"],
+   "M15_understanding": ["understand", "understands", "understood", "understanding", "insight", "discern", "discerning", "perceive", "good sense", "wise", "wiser"],
+   "M15_mind": ["mind", "minds"],
+   "M15_thinking": ["think", "thinks", "thought", "thoughts", "supposed", "seemed good", "judgment"],
+   "M15_considering": ["consider", "meditate", "take"],
+   "M15_teaching": ["teaching", "teach", "taught", "discipline", "trained", "make known", "show"],
+   "M15_perceiving": ["saw", "taste", "tasted"],
+   "M15_not_this_sense": ["ascents", "natural"]
+  },
+  "over": {
+   "H4609A|ascents": ["M15_not_this_sense", "'A Song of Ascents' (Ps 120:1, 121:1): a superscription", 0],
+   "G5591|natural": ["M15_not_this_sense", "'a natural body' (1Cor 15:44): psychikos, the body of this life", 0],
+   "G1492G|saw": ["M15_perceiving", "eido 'I saw' (Rev 13:11, 20:4): seeing", 0],
+   "H2449|wise": ["M15_understanding", "chakam 'why then have I been so very wise?' (Eccl 2:15)", 0],
+   "H3045|teach": ["M15_teaching", "yada' causative 'let years teach wisdom' (Job 32:7), 'teach us to number our days' (Ps 90:12)", 0],
+   "H3045|show": ["M15_teaching", "yada' causative 'I will show you what you shall do' (1Sam 10:8, 16:3)", 0],
+   "H3045|understand": ["M15_understanding", "yada' 'he did not understand' (Isa 42:25)", 0],
+   "H3045|consider": ["M15_considering", "yada' 'now consider and decide' (2Sam 24:13)", 0],
+   "H1847|know": ["M15_knowing", "da'at 'although you know that I am not guilty' (Job 10:7)", 0],
+   "G1097|understand": ["M15_understanding", "ginosko 'understand this' (2Tim 3:1)", 0],
+   "G6063|understand": ["M15_understanding", "oida 'I want you to understand' (1Cor 11:3)", 0]
+  }
+ },
+ "M19": {
+  "groups": [
+   ["M19_believing", "Believing", "pisteuo: believe, believers, believing", "group", "renders believing"],
+   ["M19_trust", "Trust, reliance, confidence", "resting on another: trust, rely, lean, confidence, entrusting", "group", "renders trust or reliance"],
+   ["M19_refuge", "Refuge, stronghold", "where one takes shelter: refuge, take refuge, stronghold", "group", "renders refuge"],
+   ["M19_security", "Security, safety", "the state of being safe: securely, safety, secure", "group", "renders security"],
+   ["M19_not_this_sense", "Not the cluster's sense", "renderings with no sense of trust", "not_this_sense", "carries no sense of trust"]
+  ],
+  "surf": {
+   "M19_believing": ["believe", "believed", "believes", "believers", "believing"],
+   "M19_trust": ["trust", "trusted", "trusts", "trusting", "confidence", "lean", "rely", "entrusted", "lift up"],
+   "M19_refuge": ["take refuge", "refuge", "stronghold"],
+   "M19_security": ["securely", "safety", "secure", "security"],
+   "M19_not_this_sense": []
+  },
+  "over": {
+   "H4733|refuge": ["M19_refuge", "miqlat 'the city of refuge' (Josh 21:38, Num 35:25): the asylum town; refuge as a place", 1],
+   "H5375O|lift up": ["M19_trust", "'let us lift up our hearts and hands to God' (Lam 3:41), 'to you I lift up my soul' (Ps 86:4)", 0],
+   "G4100|entrusted": ["M19_trust", "'entrusted with the gospel' (1Thess 2:4): trust placed in another", 0]
+  }
+ },
+ "M20": {
+  "groups": [
+   ["M20_anxiety", "Anxiety, worry, discouragement", "the troubled mind: anxious, cares, anxiety, discouraged", "group", "renders anxiety"],
+   ["M20_perplexity", "Perplexity, doubt", "the divided mind: perplexed, at a loss, uncertain, doubt, double-minded", "group", "renders perplexity or doubt"],
+   ["M20_grumbling", "Grumbling, murmuring", "discontent voiced: grumble, murmur, the whisperer", "group", "renders grumbling"],
+   ["M20_hiding", "Hiding, concealment", "hiding oneself or a thing, and God hiding his face: hide, hidden, conceal", "group", "renders hiding"],
+   ["M20_not_this_sense", "Not the cluster's sense", "renderings with no sense of doubt: cut off or destroyed, a sluggard burying his hand", "not_this_sense", "carries no sense of doubt"]
+  ],
+  "surf": {
+   "M20_anxiety": ["anxious", "anxious about", "cares", "anxiety", "afraid", "less anxious", "become discouraged"],
+   "M20_perplexity": ["perplexed", "loss", "uncertain", "doubt", "doubted", "double-minded"],
+   "M20_grumbling": ["grumble", "grumbled", "murmured", "whisperer"],
+   "M20_hiding": ["hide", "hidden", "hid", "hiding", "hides", "hides himself", "conceal", "hid himself", "covered up"],
+   "M20_not_this_sense": ["cut off", "be destroyed", "out", "buries"]
+  },
+  "over": {
+   "H3582|cut off": ["M20_not_this_sense", "kachad 'our adversaries are cut off' (Job 22:20): destroyed, not hidden", 0],
+   "H3582|be destroyed": ["M20_not_this_sense", "kachad 'what is to be destroyed, let it be destroyed' (Zech 11:9)", 0],
+   "H3582|out": ["M20_not_this_sense", "kachad 'I blot them out' (Exod 23:23), 'let us wipe them out' (Ps 83:4)", 0],
+   "H2934|buries": ["M20_not_this_sense", "'the sluggard buries his hand in the dish' (Prov 19:24): a figure of sloth", 0],
+   "H7279|whisperer": ["M20_grumbling", "nirgan 'a whisperer separates close friends' (Prov 16:28): the murmurer", 0]
+  }
+ },
+ "M21": {
+  "groups": [
+   ["M21_asking", "Asking, inquiring", "asking of God or man: ask, inquire, question, consult, petition", "group", "renders asking"],
+   ["M21_entreaty", "Entreaty, begging", "asking earnestly: entreat, seek the favour of, beg, pray for", "group", "renders entreaty"],
+   ["M21_godliness", "Godliness, piety", "eusebeia: godliness", "group", "renders godliness"],
+   ["M21_fasting", "Fasting", "abstaining from food before God", "group", "renders fasting"],
+   ["M21_not_this_sense", "Not the cluster's sense", "renderings with no sense of piety: being without food", "not_this_sense", "carries no sense of piety"]
+  ],
+  "surf": {
+   "M21_asking": ["ask", "asked", "asks", "asking", "asked for", "inquired", "inquire", "question", "questioned", "consulted", "demand", "sought", "makes", "desired", "earnestly", "please"],
+   "M21_entreaty": ["entreat", "entreated", "favor", "seek", "beg", "begs", "begged", "praying"],
+   "M21_godliness": ["godliness"],
+   "M21_fasting": ["fasting"],
+   "M21_not_this_sense": ["hungry"]
+  },
+  "over": {
+   "G3523|hungry": ["M21_not_this_sense", "nestis 'if I send them away hungry' (Mark 8:3, Matt 15:32): without food, not a fast", 0],
+   "H7592|beg": ["M21_entreaty", "'children beg for food' (Lam 4:4), 'let his children wander about and beg' (Ps 109:10)", 0],
+   "G0154|begs": ["M21_entreaty", "'give to the one who begs from you' (Matt 5:42)", 0]
+  }
+ }
+}

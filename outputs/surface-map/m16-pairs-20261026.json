@@ -1,0 +1,4737 @@
+{
+ "cluster": "M16",
+ "cluster_name": "Wisdom & Folly",
+ "built_at": "2026-10-26T04:19:28Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 288,
+  "head": 91,
+  "tail": 197,
+  "hits": 1092,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H2451",
+   "surface": "wisdom",
+   "part": "head",
+   "hits": 142,
+   "verses": 134,
+   "gloss": "wisdom",
+   "transliteration": "chokh.mah",
+   "samples": [
+    "2Chr.1.11",
+    "Prov.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "wise",
+   "part": "head",
+   "hits": 92,
+   "verses": 91,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Isa.31.2",
+    "Prov.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "counsel",
+   "part": "head",
+   "hits": 59,
+   "verses": 56,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Ezek.11.2",
+    "Zech.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4678",
+   "surface": "wisdom",
+   "part": "head",
+   "hits": 51,
+   "verses": 49,
+   "gloss": "wisdom",
+   "transliteration": "sofia",
+   "samples": [
+    "1Cor.2.6",
+    "Jas.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3684",
+   "surface": "fool",
+   "part": "head",
+   "hits": 35,
+   "verses": 34,
+   "gloss": "fool",
+   "transliteration": "ke.sil",
+   "samples": [
+    "Eccl.4.5",
+    "Prov.29.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "teach",
+   "part": "head",
+   "hits": 26,
+   "verses": 26,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Deut.33.10",
+    "Ps.119.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3684",
+   "surface": "fools",
+   "part": "head",
+   "hits": 25,
+   "verses": 25,
+   "gloss": "fool",
+   "transliteration": "ke.sil",
+   "samples": [
+    "Prov.1.22",
+    "Prov.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0200",
+   "surface": "folly",
+   "part": "head",
+   "hits": 23,
+   "verses": 22,
+   "gloss": "folly",
+   "transliteration": "iv.ve.let",
+   "samples": [
+    "Prov.24.9",
+    "Prov.26.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4680",
+   "surface": "wise",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "wise",
+   "transliteration": "sofos",
+   "samples": [
+    "Jas.3.13",
+    "Rom.16.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0191",
+   "surface": "fool",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "fool[ish]",
+   "transliteration": "e.vil",
+   "samples": [
+    "Prov.12.16",
+    "Prov.27.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3276",
+   "surface": "profit",
+   "part": "head",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "to gain",
+   "transliteration": "ya.al",
+   "samples": [
+    "1Sam.12.21",
+    "Jer.12.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4148G",
+   "surface": "discipline",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "discipline",
+   "transliteration": "mu.sar",
+   "samples": [
+    "Prov.6.23",
+    "Ps.50.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6612A",
+   "surface": "simple",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "simple",
+   "transliteration": "pe.ti",
+   "samples": [
+    "Prov.22.3",
+    "Ps.116.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2638",
+   "surface": "lacks",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "lacking",
+   "transliteration": "cha.ser",
+   "samples": [
+    "Prov.17.18",
+    "Prov.28.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8462",
+   "surface": "beginning",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "beginning",
+   "transliteration": "te.chil.lah",
+   "samples": [
+    "2Kgs.17.25",
+    "Ruth.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2602",
+   "surface": "foundation",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "beginning",
+   "transliteration": "katabolē",
+   "samples": [
+    "1Pet.1.20",
+    "Heb.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5036",
+   "surface": "fool",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "foolish",
+   "transliteration": "na.val",
+   "samples": [
+    "Isa.32.6",
+    "Jer.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "wise men",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Jer.50.35",
+    "Jer.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2445",
+   "surface": "wise",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "wise",
+   "transliteration": "chak.kim",
+   "samples": [
+    "Dan.2.48",
+    "Dan.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2452",
+   "surface": "wisdom",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "wisdom",
+   "transliteration": "chokh.mah",
+   "samples": [
+    "Dan.5.11",
+    "Dan.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6175",
+   "surface": "prudent",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "prudent",
+   "transliteration": "a.rum",
+   "samples": [
+    "Prov.12.16",
+    "Prov.13.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3474",
+   "surface": "foolish",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "foolish",
+   "transliteration": "mōros",
+   "samples": [
+    "1Cor.1.27",
+    "2Tim.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2451",
+   "surface": "skill",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "wisdom",
+   "transliteration": "chokh.mah",
+   "samples": [
+    "Exod.28.3",
+    "Exod.35.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8462",
+   "surface": "first",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "beginning",
+   "transliteration": "te.chil.lah",
+   "samples": [
+    "Dan.8.1",
+    "Dan.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0191",
+   "surface": "fools",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "fool[ish]",
+   "transliteration": "e.vil",
+   "samples": [
+    "Prov.1.7",
+    "Ps.107.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2445",
+   "surface": "wise men",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "wise",
+   "transliteration": "chak.kim",
+   "samples": [
+    "Dan.2.13",
+    "Dan.2.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "wise man",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Prov.9.8",
+    "Prov.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3684",
+   "surface": "foolish",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "fool",
+   "transliteration": "ke.sil",
+   "samples": [
+    "Prov.15.20",
+    "Prov.19.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4148G",
+   "surface": "instruction",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "discipline",
+   "transliteration": "mu.sar",
+   "samples": [
+    "Prov.10.17",
+    "Prov.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "council",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Ezek.13.9",
+    "Gen.49.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5528",
+   "surface": "foolishly",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be foolish",
+   "transliteration": "sa.khal",
+   "samples": [
+    "1Sam.26.21",
+    "Gen.31.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "plan",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Isa.30.1",
+    "Mic.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "understand",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Dan.9.25",
+    "Ps.53.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3472",
+   "surface": "folly",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "foolishness",
+   "transliteration": "mōria",
+   "samples": [
+    "1Cor.1.18",
+    "1Cor.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1197B",
+   "surface": "stupid",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be brutish",
+   "transliteration": "ba.ar",
+   "samples": [
+    "Jer.10.21",
+    "Jer.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "skilled",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "2Chr.2.7",
+    "Ezek.27.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4156",
+   "surface": "counsels",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "counsel",
+   "transliteration": "mo.e.tsah",
+   "samples": [
+    "Hos.11.6",
+    "Jer.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5036",
+   "surface": "foolish",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "foolish",
+   "transliteration": "na.val",
+   "samples": [
+    "Deut.32.21",
+    "Deut.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5530",
+   "surface": "fool",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "fool",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Eccl.10.3",
+    "Eccl.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "purpose",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Isa.19.17",
+    "Prov.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "success",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "1Sam.18.15",
+    "Josh.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "wise",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Dan.11.33",
+    "Job.22.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8454",
+   "surface": "sound wisdom",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "wisdom",
+   "transliteration": "tu.shiy.yah",
+   "samples": [
+    "Job.12.16",
+    "Prov.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8458",
+   "surface": "guidance",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "counsel",
+   "transliteration": "tach.bu.lah",
+   "samples": [
+    "Prov.1.5",
+    "Prov.20.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0453",
+   "surface": "foolish",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "foolish",
+   "transliteration": "anoētos",
+   "samples": [
+    "Gal.3.3",
+    "Titus.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0878",
+   "surface": "fool",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "foolish",
+   "transliteration": "afrōn",
+   "samples": [
+    "2Cor.11.16",
+    "2Cor.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0878",
+   "surface": "foolish",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "foolish",
+   "transliteration": "afrōn",
+   "samples": [
+    "2Cor.11.16",
+    "Rom.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3875",
+   "surface": "helper",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "counsellor",
+   "transliteration": "paraklētos",
+   "samples": [
+    "John.15.26",
+    "John.16.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4824",
+   "surface": "counsel",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "counsel/council",
+   "transliteration": "sumboulion",
+   "samples": [
+    "Mark.3.6",
+    "Matt.27.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1198",
+   "surface": "stupid",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "stupid",
+   "transliteration": "ba.ar",
+   "samples": [
+    "Prov.12.1",
+    "Prov.30.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1907",
+   "surface": "counselors",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "counselor",
+   "transliteration": "had.da.var",
+   "samples": [
+    "Dan.3.24",
+    "Dan.3.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "craftsmen",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Exod.36.4",
+    "Exod.36.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "skillful",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Exod.28.3",
+    "Exod.35.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "taught",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Prov.4.4",
+    "Ps.119.102"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3684",
+   "surface": "fool’s",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "fool",
+   "transliteration": "ke.sil",
+   "samples": [
+    "Eccl.10.2",
+    "Prov.18.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4148G",
+   "surface": "correction",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "discipline",
+   "transliteration": "mu.sar",
+   "samples": [
+    "Jer.2.30",
+    "Jer.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5039",
+   "surface": "folly",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "folly",
+   "transliteration": "ne.va.lah",
+   "samples": [
+    "1Sam.25.25",
+    "Isa.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5039",
+   "surface": "outrageous thing",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "folly",
+   "transliteration": "ne.va.lah",
+   "samples": [
+    "Gen.34.7",
+    "Josh.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5531B",
+   "surface": "folly",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "folly",
+   "transliteration": "sikh.lut",
+   "samples": [
+    "Eccl.10.1",
+    "Eccl.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "plans",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Isa.25.1",
+    "Jer.19.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "prudent",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Prov.10.19",
+    "Prov.19.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0801",
+   "surface": "foolish",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "senseless",
+   "transliteration": "asunetos",
+   "samples": [
+    "Rom.1.31",
+    "Rom.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3834",
+   "surface": "craftiness",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "craftiness",
+   "transliteration": "panourgia",
+   "samples": [
+    "Eph.4.14",
+    "Luke.20.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4816",
+   "surface": "gather",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to collect",
+   "transliteration": "sullegō",
+   "samples": [
+    "Matt.13.28",
+    "Matt.13.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4816",
+   "surface": "gathered",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to collect",
+   "transliteration": "sullegō",
+   "samples": [
+    "Luke.6.44",
+    "Matt.13.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "wisest",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Judg.5.29",
+    "Prov.14.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2638",
+   "surface": "lack",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "lacking",
+   "transliteration": "cha.ser",
+   "samples": [
+    "1Sam.21.15",
+    "Prov.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "advice",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "1Kgs.1.12",
+    "Prov.12.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6175",
+   "surface": "crafty",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "prudent",
+   "transliteration": "a.rum",
+   "samples": [
+    "Job.15.5",
+    "Job.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6195",
+   "surface": "prudence",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "craftiness",
+   "transliteration": "or.mah",
+   "samples": [
+    "Prov.1.4",
+    "Prov.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0801",
+   "surface": "without understanding",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "senseless",
+   "transliteration": "asunetos",
+   "samples": [
+    "Mark.7.18",
+    "Matt.15.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0877",
+   "surface": "fool",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "foolishness",
+   "transliteration": "afrosunē",
+   "samples": [
+    "2Cor.11.17",
+    "2Cor.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0877",
+   "surface": "foolishness",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "foolishness",
+   "transliteration": "afrosunē",
+   "samples": [
+    "2Cor.11.1",
+    "Mark.7.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0878",
+   "surface": "fools",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "foolish",
+   "transliteration": "afrōn",
+   "samples": [
+    "2Cor.11.19",
+    "Luke.11.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3471",
+   "surface": "lost its taste",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be foolish",
+   "transliteration": "mōrainō",
+   "samples": [
+    "Luke.14.34",
+    "Matt.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3474",
+   "surface": "fool",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "foolish",
+   "transliteration": "mōros",
+   "samples": [
+    "1Cor.3.18",
+    "Matt.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3474",
+   "surface": "fools",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "foolish",
+   "transliteration": "mōros",
+   "samples": [
+    "1Cor.4.10",
+    "Matt.23.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3834",
+   "surface": "cunning",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "craftiness",
+   "transliteration": "panourgia",
+   "samples": [
+    "2Cor.11.3",
+    "2Cor.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984C",
+   "surface": "boastful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be foolish",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Ps.5.5",
+    "Ps.75.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "craftsman",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Exod.36.1",
+    "Exod.36.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "wiser",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Ezek.28.3",
+    "Prov.26.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2451",
+   "surface": "ability",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wisdom",
+   "transliteration": "chokh.mah",
+   "samples": [
+    "Exod.31.3",
+    "Exod.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2638",
+   "surface": "lacking",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "lacking",
+   "transliteration": "cha.ser",
+   "samples": [
+    "Prov.24.30",
+    "Prov.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2973",
+   "surface": "become fools",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be foolish",
+   "transliteration": "ya.al",
+   "samples": [
+    "Isa.19.13",
+    "Jer.50.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3272B",
+   "surface": "counselors",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "counsellor",
+   "transliteration": "ya.et",
+   "samples": [
+    "Ezra.7.14",
+    "Ezra.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "direct",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Deut.17.10",
+    "Deut.24.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "instruct",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "1Sam.12.23",
+    "Ps.25.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "show",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Gen.46.28",
+    "Lev.14.57"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "teaches",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Isa.28.26",
+    "Isa.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5039",
+   "surface": "outrage",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "folly",
+   "transliteration": "ne.va.lah",
+   "samples": [
+    "Judg.20.10",
+    "Judg.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5039",
+   "surface": "outrageous",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "folly",
+   "transliteration": "ne.va.lah",
+   "samples": [
+    "2Sam.13.12",
+    "Judg.19.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "company",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Jer.15.17",
+    "Ps.111.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "counsel",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Prov.15.22",
+    "Ps.55.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "friendship",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Job.29.4",
+    "Ps.25.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "secret",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Amos.3.7",
+    "Prov.25.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "secrets",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Prov.11.13",
+    "Prov.20.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5531B",
+   "surface": "foolishness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "folly",
+   "transliteration": "sikh.lut",
+   "samples": [
+    "Eccl.10.13",
+    "Eccl.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "counselors",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Isa.19.11",
+    "Ps.119.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "schemes",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Job.18.7",
+    "Job.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "strategy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "2Kgs.18.20",
+    "Isa.36.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6195",
+   "surface": "cunning",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "craftiness",
+   "transliteration": "or.mah",
+   "samples": [
+    "Exod.21.14",
+    "Josh.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6612A",
+   "surface": "simple ones",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "simple",
+   "transliteration": "pe.ti",
+   "samples": [
+    "Prov.1.22",
+    "Prov.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "are wise",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Dan.12.10",
+    "Dan.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "deals wisely",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Prov.14.35",
+    "Prov.17.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "insight",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Dan.9.22",
+    "Job.34.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "instruct",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Neh.9.20",
+    "Ps.32.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "ponder",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Ps.101.2",
+    "Ps.64.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "prosper",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "1Kgs.2.3",
+    "Deut.29.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "prospered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "2Kgs.18.7",
+    "Jer.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8462",
+   "surface": "first time",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "beginning",
+   "transliteration": "te.chil.lah",
+   "samples": [
+    "Gen.43.18",
+    "Gen.43.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8604",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "folly",
+   "transliteration": "tiph.lah",
+   "samples": [
+    "Job.1.22",
+    "Job.24.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0453",
+   "surface": "foolish ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foolish",
+   "transliteration": "anoētos",
+   "samples": [
+    "Luke.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0453",
+   "surface": "senseless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foolish",
+   "transliteration": "anoētos",
+   "samples": [
+    "1Tim.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0454",
+   "surface": "folly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "folly",
+   "transliteration": "anoia",
+   "samples": [
+    "2Tim.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0454",
+   "surface": "fury",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "folly",
+   "transliteration": "anoia",
+   "samples": [
+    "Luke.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0878",
+   "surface": "foolish person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foolish",
+   "transliteration": "afrōn",
+   "samples": [
+    "1Cor.15.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2567",
+   "surface": "good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "teaching good",
+   "transliteration": "kalodidaskalos",
+   "samples": [
+    "Titus.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2602",
+   "surface": "conceive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "katabolē",
+   "samples": [
+    "Heb.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3471",
+   "surface": "became fools",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be foolish",
+   "transliteration": "mōrainō",
+   "samples": [
+    "Rom.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3471",
+   "surface": "made foolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be foolish",
+   "transliteration": "mōrainō",
+   "samples": [
+    "1Cor.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3473",
+   "surface": "foolish talk",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foolish talk",
+   "transliteration": "mōrologia",
+   "samples": [
+    "Eph.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3474",
+   "surface": "foolishness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foolish",
+   "transliteration": "mōros",
+   "samples": [
+    "1Cor.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3875",
+   "surface": "advocate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsellor",
+   "transliteration": "paraklētos",
+   "samples": [
+    "1John.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4469",
+   "surface": "insults",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fool",
+   "transliteration": "raka",
+   "samples": [
+    "Matt.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4679",
+   "surface": "cleverly devised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make wise",
+   "transliteration": "sofizō",
+   "samples": [
+    "2Pet.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4679",
+   "surface": "wise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make wise",
+   "transliteration": "sofizō",
+   "samples": [
+    "2Tim.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4680",
+   "surface": "skilled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "sofos",
+   "samples": [
+    "1Cor.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4680",
+   "surface": "wise men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "sofos",
+   "samples": [
+    "Matt.23.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4680",
+   "surface": "wiser",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "sofos",
+   "samples": [
+    "1Cor.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4816",
+   "surface": "gathering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to collect",
+   "transliteration": "sullegō",
+   "samples": [
+    "Matt.13.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4816",
+   "surface": "sorted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to collect",
+   "transliteration": "sullegō",
+   "samples": [
+    "Matt.13.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4824",
+   "surface": "conspired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel/council",
+   "transliteration": "sumboulion",
+   "samples": [
+    "Matt.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4824",
+   "surface": "consultation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel/council",
+   "transliteration": "sumboulion",
+   "samples": [
+    "Mark.15.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4824",
+   "surface": "council",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel/council",
+   "transliteration": "sumboulion",
+   "samples": [
+    "Acts.25.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4824",
+   "surface": "plotted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel/council",
+   "transliteration": "sumboulion",
+   "samples": [
+    "Matt.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4825",
+   "surface": "counselor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counselor",
+   "transliteration": "sumboulos",
+   "samples": [
+    "Rom.11.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4995",
+   "surface": "self-control",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "self-discipline",
+   "transliteration": "sōfronismos",
+   "samples": [
+    "2Tim.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0191",
+   "surface": "foolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fool[ish]",
+   "transliteration": "e.vil",
+   "samples": [
+    "Jer.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0191",
+   "surface": "fool’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fool[ish]",
+   "transliteration": "e.vil",
+   "samples": [
+    "Prov.27.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0191",
+   "surface": "stag",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fool[ish]",
+   "transliteration": "e.vil",
+   "samples": [
+    "Prov.7.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0191",
+   "surface": "utterly foolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fool[ish]",
+   "transliteration": "e.vil",
+   "samples": [
+    "Isa.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0196",
+   "surface": "foolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foolish",
+   "transliteration": "e.vi.li",
+   "samples": [
+    "Zech.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0200",
+   "surface": "foolishly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "folly",
+   "transliteration": "iv.ve.let",
+   "samples": [
+    "Prov.14.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0200",
+   "surface": "foolishness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "folly",
+   "transliteration": "iv.ve.let",
+   "samples": [
+    "Ps.38.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1197B",
+   "surface": "brutish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be brutish",
+   "transliteration": "ba.ar",
+   "samples": [
+    "Ezek.21.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1197B",
+   "surface": "dullest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be brutish",
+   "transliteration": "ba.ar",
+   "samples": [
+    "Ps.94.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1197B",
+   "surface": "feeds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be brutish",
+   "transliteration": "ba.ar",
+   "samples": [
+    "Exod.22.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1197B",
+   "surface": "grazed over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be brutish",
+   "transliteration": "ba.ar",
+   "samples": [
+    "Exod.22.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1198",
+   "surface": "brutish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "stupid",
+   "transliteration": "ba.ar",
+   "samples": [
+    "Ps.73.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1700",
+   "surface": "because",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause",
+   "transliteration": "div.rah",
+   "samples": [
+    "Eccl.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1700",
+   "surface": "cause",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause",
+   "transliteration": "div.rah",
+   "samples": [
+    "Job.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1700",
+   "surface": "order",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause",
+   "transliteration": "div.rah",
+   "samples": [
+    "Ps.110.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1700",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause",
+   "transliteration": "div.rah",
+   "samples": [
+    "Eccl.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1700",
+   "surface": "so",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause",
+   "transliteration": "div.rah",
+   "samples": [
+    "Eccl.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1701",
+   "surface": "end",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause",
+   "transliteration": "div.rah",
+   "samples": [
+    "Dan.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1701",
+   "surface": "order",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause",
+   "transliteration": "div.rah",
+   "samples": [
+    "Dan.2.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984C",
+   "surface": "arrogant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be foolish",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Ps.73.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984C",
+   "surface": "boast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be foolish",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Ps.75.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984C",
+   "surface": "crazed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be foolish",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Jer.25.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984C",
+   "surface": "fools",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be foolish",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Job.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984C",
+   "surface": "insane",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be foolish",
+   "transliteration": "ha.lal",
+   "samples": [
+    "1Sam.21.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984C",
+   "surface": "mad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be foolish",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Jer.50.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984C",
+   "surface": "makes fools",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be foolish",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Isa.44.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984C",
+   "surface": "went mad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be foolish",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Jer.51.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984I",
+   "surface": "deride",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: rave madly",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Ps.102.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984I",
+   "surface": "mad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: rave madly",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Eccl.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984I",
+   "surface": "madness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: rave madly",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Eccl.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984I",
+   "surface": "race",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: rave madly",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Nah.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1984I",
+   "surface": "rage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to boast: rave madly",
+   "transliteration": "ha.lal",
+   "samples": [
+    "Jer.46.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "able",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Exod.31.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "crafty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "2Sam.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "is an unwise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Hos.13.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Jer.10.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "senseless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Deut.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "skilled in working",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "1Chr.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "skillful craftsman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Exod.35.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "skillful women",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Jer.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "wisdom",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "2Sam.14.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "wise man’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Prov.21.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2450",
+   "surface": "wise ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wise",
+   "transliteration": "cha.kham",
+   "samples": [
+    "Jer.10.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2451",
+   "surface": "aged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wisdom",
+   "transliteration": "chokh.mah",
+   "samples": [
+    "Job.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2451",
+   "surface": "wits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wisdom",
+   "transliteration": "chokh.mah",
+   "samples": [
+    "Ps.107.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2638",
+   "surface": "lacked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lacking",
+   "transliteration": "cha.ser",
+   "samples": [
+    "1Kgs.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2973",
+   "surface": "foolishly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be foolish",
+   "transliteration": "ya.al",
+   "samples": [
+    "Num.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2973",
+   "surface": "sense",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be foolish",
+   "transliteration": "ya.al",
+   "samples": [
+    "Jer.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3246",
+   "surface": "began",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "ye.sud",
+   "samples": [
+    "Ezra.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3272A",
+   "surface": "agreed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to counsel",
+   "transliteration": "ye.at",
+   "samples": [
+    "Dan.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3276",
+   "surface": "all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "ya.al",
+   "samples": [
+    "Jer.23.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3276",
+   "surface": "avail",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "ya.al",
+   "samples": [
+    "Jer.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3276",
+   "surface": "better off",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "ya.al",
+   "samples": [
+    "Job.35.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3276",
+   "surface": "good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "ya.al",
+   "samples": [
+    "Job.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3276",
+   "surface": "profitable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "ya.al",
+   "samples": [
+    "Isa.44.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3276",
+   "surface": "promote",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "ya.al",
+   "samples": [
+    "Job.30.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3276",
+   "surface": "succeed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to gain",
+   "transliteration": "ya.al",
+   "samples": [
+    "Isa.47.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "give",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Deut.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "instructed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "2Kgs.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "instruction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Exod.24.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "instructs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Ps.25.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "points",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Prov.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "set",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Gen.31.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "showed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Exod.15.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "teacher",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "Hab.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3384B",
+   "surface": "teaching",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to show",
+   "transliteration": "ya.rah",
+   "samples": [
+    "2Chr.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513J",
+   "surface": "dim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: dull",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Gen.48.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513J",
+   "surface": "dull",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: dull",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Isa.59.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513J",
+   "surface": "stopped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: dull",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Zech.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3687",
+   "surface": "folly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "stupidity",
+   "transliteration": "ke.si.lut",
+   "samples": [
+    "Prov.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3688",
+   "surface": "foolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be stupid",
+   "transliteration": "ka.sal",
+   "samples": [
+    "Jer.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4148G",
+   "surface": "censure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discipline",
+   "transliteration": "mu.sar",
+   "samples": [
+    "Job.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4148G",
+   "surface": "chastisement",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discipline",
+   "transliteration": "mu.sar",
+   "samples": [
+    "Isa.53.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4148G",
+   "surface": "punishment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discipline",
+   "transliteration": "mu.sar",
+   "samples": [
+    "Jer.30.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4148G",
+   "surface": "warning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "discipline",
+   "transliteration": "mu.sar",
+   "samples": [
+    "Ezek.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4156",
+   "surface": "counsel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "mo.e.tsah",
+   "samples": [
+    "Prov.22.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4156",
+   "surface": "devices",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "mo.e.tsah",
+   "samples": [
+    "Prov.1.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4431",
+   "surface": "counsel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "me.lekh",
+   "samples": [
+    "Dan.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5036",
+   "surface": "foolish women",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foolish",
+   "transliteration": "na.val",
+   "samples": [
+    "Job.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5036",
+   "surface": "outrageous fools",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foolish",
+   "transliteration": "na.val",
+   "samples": [
+    "2Sam.13.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5036",
+   "surface": "senseless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "foolish",
+   "transliteration": "na.val",
+   "samples": [
+    "Job.30.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5039",
+   "surface": "vile thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "folly",
+   "transliteration": "ne.va.lah",
+   "samples": [
+    "Judg.19.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "confidence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Prov.3.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "gatherings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Jer.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "intimate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Job.19.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "plans",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Ps.83.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5475",
+   "surface": "secret plots",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "sod",
+   "samples": [
+    "Ps.64.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5528",
+   "surface": "foolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be foolish",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Isa.44.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5528",
+   "surface": "foolishness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be foolish",
+   "transliteration": "sa.khal",
+   "samples": [
+    "2Sam.15.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5529",
+   "surface": "folly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "folly",
+   "transliteration": "se.khel",
+   "samples": [
+    "Eccl.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5530",
+   "surface": "foolish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fool",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Jer.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5530",
+   "surface": "stupid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fool",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Jer.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5531A",
+   "surface": "folly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "folly",
+   "transliteration": "sikh.lut",
+   "samples": [
+    "Eccl.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5843",
+   "surface": "prudence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "e.ta",
+   "samples": [
+    "Dan.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "counsels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Isa.47.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "designs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Job.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "idol",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Hos.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "order",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Ezra.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "plotting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Jer.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6098",
+   "surface": "purposes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "e.tsah",
+   "samples": [
+    "Ps.106.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6191",
+   "surface": "craftiness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be shrewd",
+   "transliteration": "a.rom",
+   "samples": [
+    "Job.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6191",
+   "surface": "crafty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be shrewd",
+   "transliteration": "a.rom",
+   "samples": [
+    "Ps.83.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6191",
+   "surface": "cunning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be shrewd",
+   "transliteration": "a.rom",
+   "samples": [
+    "1Sam.23.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6191",
+   "surface": "learn prudence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be shrewd",
+   "transliteration": "a.rom",
+   "samples": [
+    "Prov.19.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6191",
+   "surface": "prudent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be shrewd",
+   "transliteration": "a.rom",
+   "samples": [
+    "Prov.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6191",
+   "surface": "very",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be shrewd",
+   "transliteration": "a.rom",
+   "samples": [
+    "1Sam.23.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6580",
+   "surface": "transgression",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "folly",
+   "transliteration": "pash",
+   "samples": [
+    "Job.35.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6612A",
+   "surface": "ignorance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "simple",
+   "transliteration": "pe.ti",
+   "samples": [
+    "Ezek.45.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6612A",
+   "surface": "ways",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "simple",
+   "transliteration": "pe.ti",
+   "samples": [
+    "Prov.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960B",
+   "surface": "gather",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to collect",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Jer.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960B",
+   "surface": "gathered together",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to collect",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Gen.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6960B",
+   "surface": "hope",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to collect",
+   "transliteration": "qa.vah",
+   "samples": [
+    "Isa.60.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7221",
+   "surface": "ever before",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "ri.shah",
+   "samples": [
+    "Ezek.36.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "act wisely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Isa.52.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "consider",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Ps.106.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "considers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Ps.41.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "deal wisely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Jer.23.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "gaining insight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Dan.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "gives thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Prov.16.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "good sense",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Prov.21.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "instructed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Prov.21.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "is prudent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Amos.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "judicious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Prov.16.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "made clear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "1Chr.28.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "more understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Ps.119.99"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "observes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Prov.21.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "one wise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Gen.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "prospers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Prov.17.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Job.34.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "showed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "2Chr.30.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "skill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Dan.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "skilled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Jer.50.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "skillful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Dan.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "study",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Neh.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "succeed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Jer.20.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "successful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "1Sam.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "understanding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Jer.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "understands",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Jer.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "wise dealing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Prov.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7919A",
+   "surface": "wisely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be prudent",
+   "transliteration": "sa.khal",
+   "samples": [
+    "Ps.36.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8454",
+   "surface": "manifold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wisdom",
+   "transliteration": "tu.shiy.yah",
+   "samples": [
+    "Job.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8454",
+   "surface": "resource",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wisdom",
+   "transliteration": "tu.shiy.yah",
+   "samples": [
+    "Job.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8454",
+   "surface": "sound judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wisdom",
+   "transliteration": "tu.shiy.yah",
+   "samples": [
+    "Prov.18.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8454",
+   "surface": "sound knowledge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wisdom",
+   "transliteration": "tu.shiy.yah",
+   "samples": [
+    "Job.26.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8454",
+   "surface": "success",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wisdom",
+   "transliteration": "tu.shiy.yah",
+   "samples": [
+    "Job.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8454",
+   "surface": "toss",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wisdom",
+   "transliteration": "tu.shiy.yah",
+   "samples": [
+    "Job.30.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8454",
+   "surface": "wisdom",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wisdom",
+   "transliteration": "tu.shiy.yah",
+   "samples": [
+    "Isa.28.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8458",
+   "surface": "counsels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "counsel",
+   "transliteration": "tach.bu.lah",
+   "samples": [
+    "Prov.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8462",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "te.chil.lah",
+   "samples": [
+    "Neh.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8604",
+   "surface": "unsavory thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "folly",
+   "transliteration": "tiph.lah",
+   "samples": [
+    "Jer.23.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8637",
+   "surface": "taught",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to teach",
+   "transliteration": "tir.gal",
+   "samples": [
+    "Hos.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

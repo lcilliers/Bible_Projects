@@ -1,0 +1,4285 @@
+{
+ "cluster": "M25",
+ "cluster_name": "Life & Death",
+ "built_at": "2026-10-26T04:20:31Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 259,
+  "head": 33,
+  "tail": 226,
+  "hits": 2513,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H4191",
+   "surface": "die",
+   "part": "head",
+   "hits": 233,
+   "verses": 217,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Hab.1.12",
+    "Prov.15.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "died",
+   "part": "head",
+   "hits": 162,
+   "verses": 155,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Exod.7.21",
+    "Jer.28.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2222",
+   "surface": "life",
+   "part": "head",
+   "hits": 132,
+   "verses": 124,
+   "gloss": "life",
+   "transliteration": "zōē",
+   "samples": [
+    "Acts.5.20",
+    "Rev.21.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "live",
+   "part": "head",
+   "hits": 131,
+   "verses": 125,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Prov.15.27",
+    "Zech.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "death",
+   "part": "head",
+   "hits": 122,
+   "verses": 120,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "Jer.9.21",
+    "Ps.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416E",
+   "surface": "life",
+   "part": "head",
+   "hits": 119,
+   "verses": 113,
+   "gloss": "life",
+   "transliteration": "chay.yim",
+   "samples": [
+    "Eccl.2.17",
+    "Exod.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "dead",
+   "part": "head",
+   "hits": 119,
+   "verses": 106,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Sam.19.6",
+    "Ezek.44.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2288",
+   "surface": "death",
+   "part": "head",
+   "hits": 108,
+   "verses": 96,
+   "gloss": "death",
+   "transliteration": "thanatos",
+   "samples": [
+    "Rev.20.14",
+    "Rev.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "death",
+   "part": "head",
+   "hits": 75,
+   "verses": 69,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Hos.9.16",
+    "Num.35.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "living",
+   "part": "head",
+   "hits": 69,
+   "verses": 66,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Lev.11.10",
+    "Ps.52.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "put to death",
+   "part": "head",
+   "hits": 64,
+   "verses": 56,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Chr.23.21",
+    "Lev.20.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "lives",
+   "part": "head",
+   "hits": 57,
+   "verses": 53,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "2Sam.12.5",
+    "Ps.18.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2198",
+   "surface": "live",
+   "part": "head",
+   "hits": 54,
+   "verses": 46,
+   "gloss": "to live",
+   "transliteration": "zaō",
+   "samples": [
+    "Gal.2.20",
+    "Luke.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "beasts",
+   "part": "head",
+   "hits": 49,
+   "verses": 47,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Isa.56.9",
+    "Job.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0599",
+   "surface": "died",
+   "part": "head",
+   "hits": 48,
+   "verses": 43,
+   "gloss": "to die",
+   "transliteration": "apothnēskō",
+   "samples": [
+    "Acts.7.4",
+    "Rom.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "live",
+   "part": "head",
+   "hits": 45,
+   "verses": 44,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Ezek.35.6",
+    "Lev.14.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2198",
+   "surface": "living",
+   "part": "head",
+   "hits": 41,
+   "verses": 41,
+   "gloss": "to live",
+   "transliteration": "zaō",
+   "samples": [
+    "1Cor.9.14",
+    "Matt.16.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "lived",
+   "part": "head",
+   "hits": 41,
+   "verses": 41,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Ezek.37.10",
+    "Gen.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "alive",
+   "part": "head",
+   "hits": 37,
+   "verses": 35,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "2Sam.19.6",
+    "Prov.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0599",
+   "surface": "die",
+   "part": "head",
+   "hits": 34,
+   "verses": 29,
+   "gloss": "to die",
+   "transliteration": "apothnēskō",
+   "samples": [
+    "1Cor.15.32",
+    "Rom.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "kill",
+   "part": "head",
+   "hits": 34,
+   "verses": 34,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Sam.1.9",
+    "Jer.43.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "dies",
+   "part": "head",
+   "hits": 30,
+   "verses": 27,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Deut.19.11",
+    "Ezek.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "surely",
+   "part": "head",
+   "hits": 30,
+   "verses": 30,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Lev.20.13",
+    "Lev.27.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "killed",
+   "part": "head",
+   "hits": 23,
+   "verses": 22,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Sam.1.16",
+    "Jer.41.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "alive",
+   "part": "head",
+   "hits": 21,
+   "verses": 21,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Ezek.13.19",
+    "Gen.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "beast",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Dan.8.4",
+    "Gen.8.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "put him to death",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Chr.33.24",
+    "Ps.37.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "awake",
+   "part": "head",
+   "hits": 19,
+   "verses": 11,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Ps.44.23",
+    "Ps.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2198",
+   "surface": "alive",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to live",
+   "transliteration": "zaō",
+   "samples": [
+    "1Thess.4.17",
+    "Rom.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2198",
+   "surface": "lives",
+   "part": "head",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "to live",
+   "transliteration": "zaō",
+   "samples": [
+    "1Tim.5.6",
+    "Rev.15.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "living creatures",
+   "part": "head",
+   "hits": 15,
+   "verses": 12,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Ezek.1.22",
+    "Ezek.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5397",
+   "surface": "breath",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "breath",
+   "transliteration": "ne.sha.mah",
+   "samples": [
+    "Job.26.4",
+    "Job.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "long",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Deut.17.20",
+    "Deut.5.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0599",
+   "surface": "dies",
+   "part": "tail",
+   "hits": 11,
+   "verses": 10,
+   "gloss": "to die",
+   "transliteration": "apothnēskō",
+   "samples": [
+    "Matt.22.24",
+    "Rom.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416E",
+   "surface": "live",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "life",
+   "transliteration": "chay.yim",
+   "samples": [
+    "Ps.104.33",
+    "Ps.146.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "life",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Deut.4.42",
+    "Ezek.20.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "give me life",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Ps.119.159",
+    "Ps.119.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "recover",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "2Kgs.1.2",
+    "Isa.38.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Ezek.3.21",
+    "Ezek.33.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "shall",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Num.26.65",
+    "Num.35.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "die",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "Deut.19.6",
+    "Gen.27.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0599",
+   "surface": "dead",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to die",
+   "transliteration": "apothnēskō",
+   "samples": [
+    "Luke.8.53",
+    "Matt.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2226",
+   "surface": "living",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "living thing",
+   "transliteration": "zōon",
+   "samples": [
+    "Rev.5.11",
+    "Rev.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2226",
+   "surface": "living creatures",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "living thing",
+   "transliteration": "zōon",
+   "samples": [
+    "Rev.14.3",
+    "Rev.15.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "life",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Ezek.7.13",
+    "Job.33.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "revive",
+   "part": "tail",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Hab.3.2",
+    "Hos.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "stirred up",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Hag.1.14",
+    "Jer.51.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "fresh",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Lev.15.13",
+    "Num.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "up",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Dan.11.2",
+    "Isa.45.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1312",
+   "surface": "corruption",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "decay",
+   "transliteration": "diafthora",
+   "samples": [
+    "Acts.13.37",
+    "Acts.2.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "dies",
+   "part": "tail",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "Eccl.3.19",
+    "Prov.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "life",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Gen.42.15",
+    "Gen.42.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "raw",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Lev.13.10",
+    "Lev.13.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2418",
+   "surface": "live",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to live",
+   "transliteration": "cha.ya",
+   "samples": [
+    "Dan.2.4",
+    "Dan.6.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "lives",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Eccl.11.8",
+    "Gen.47.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "be",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Exod.19.12",
+    "Exod.31.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "died",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "Gen.50.16",
+    "Isa.14.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "pestilence",
+   "part": "tail",
+   "hits": 5,
+   "verses": 3,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "Jer.15.2",
+    "Jer.43.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "stir up",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Ps.78.38",
+    "Song.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6315",
+   "surface": "breathes out",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to breathe",
+   "transliteration": "pu.ach",
+   "samples": [
+    "Prov.19.5",
+    "Prov.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0599",
+   "surface": "dying",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to die",
+   "transliteration": "apothnēskō",
+   "samples": [
+    "John.11.37",
+    "Luke.8.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2198",
+   "surface": "life",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to live",
+   "transliteration": "zaō",
+   "samples": [
+    "2Cor.1.8",
+    "Rom.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2198",
+   "surface": "lived",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to live",
+   "transliteration": "zaō",
+   "samples": [
+    "Luke.2.36",
+    "Rom.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2226",
+   "surface": "living creature",
+   "part": "tail",
+   "hits": 4,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "zōon",
+   "samples": [
+    "Rev.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2227",
+   "surface": "gives life",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to make alive",
+   "transliteration": "zōopoieō",
+   "samples": [
+    "1Tim.6.13",
+    "John.6.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "prolong",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Deut.4.40",
+    "Prov.28.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416E",
+   "surface": "lives",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "life",
+   "transliteration": "chay.yim",
+   "samples": [
+    "Exod.1.14",
+    "Isa.38.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "revived",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "2Kgs.13.21",
+    "Gen.45.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "spared",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Gen.12.13",
+    "Jer.38.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5397",
+   "surface": "breathed",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "breath",
+   "transliteration": "ne.sha.mah",
+   "samples": [
+    "1Kgs.15.29",
+    "Josh.11.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0979",
+   "surface": "life",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "life",
+   "transliteration": "bios",
+   "samples": [
+    "1Tim.2.2",
+    "Luke.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2288",
+   "surface": "mortal",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "death",
+   "transliteration": "thanatos",
+   "samples": [
+    "Rev.13.12",
+    "Rev.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "living creature",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Gen.8.21",
+    "Gen.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "living thing",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Gen.6.19",
+    "Job.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "next year",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Gen.18.10",
+    "Gen.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416E",
+   "surface": "lived",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "life",
+   "transliteration": "chay.yim",
+   "samples": [
+    "2Kgs.25.30",
+    "Gen.23.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "preserve",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Gen.19.32",
+    "Neh.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "restored to life",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "2Kgs.8.1",
+    "2Kgs.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "dying",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Chr.16.13",
+    "2Chr.24.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "killing",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "1Kgs.17.20",
+    "1Sam.19.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "kills",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "1Sam.2.6",
+    "Prov.21.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "you shall",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "1Kgs.2.37",
+    "2Sam.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "dead",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "Eccl.10.1",
+    "Lev.11.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "awaken",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Song.2.7",
+    "Song.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "stir",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Joel.3.7",
+    "Joel.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "stirring",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Jer.25.32",
+    "Jer.50.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "wielded",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "1Chr.11.11",
+    "2Sam.23.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0599",
+   "surface": "death",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to die",
+   "transliteration": "apothnēskō",
+   "samples": [
+    "Acts.25.11",
+    "John.4.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0979",
+   "surface": "live on",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "life",
+   "transliteration": "bios",
+   "samples": [
+    "Luke.21.4",
+    "Mark.12.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0979",
+   "surface": "property",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "life",
+   "transliteration": "bios",
+   "samples": [
+    "Luke.15.12",
+    "Luke.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2226",
+   "surface": "animals",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "living thing",
+   "transliteration": "zōon",
+   "samples": [
+    "Heb.13.11",
+    "Jude.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2227",
+   "surface": "life to",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to make alive",
+   "transliteration": "zōopoieō",
+   "samples": [
+    "Rom.4.17",
+    "Rom.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2227",
+   "surface": "made alive",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to make alive",
+   "transliteration": "zōopoieō",
+   "samples": [
+    "1Cor.15.22",
+    "1Pet.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2288",
+   "surface": "die",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "death",
+   "transliteration": "thanatos",
+   "samples": [
+    "Acts.25.11",
+    "Rom.1.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2288",
+   "surface": "must surely",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "death",
+   "transliteration": "thanatos",
+   "samples": [
+    "Mark.7.10",
+    "Matt.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3499",
+   "surface": "dead",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to put to death",
+   "transliteration": "nekroō",
+   "samples": [
+    "Heb.11.12",
+    "Rom.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "continued",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Num.9.19",
+    "Num.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "lengthen",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "1Kgs.3.14",
+    "Isa.54.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "outlived",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Josh.24.31",
+    "Judg.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "prolongs",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Eccl.7.15",
+    "Eccl.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "animal",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Gen.37.20",
+    "Gen.37.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "living creature",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Lev.11.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "living things",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Lev.11.2",
+    "Ps.104.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416E",
+   "surface": "lifetime",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "life",
+   "transliteration": "chay.yim",
+   "samples": [
+    "2Sam.18.18",
+    "Ps.30.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "certainly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "2Kgs.8.10",
+    "2Kgs.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "save",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "1Kgs.18.5",
+    "Ezek.18.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "saved alive",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Josh.6.25",
+    "Judg.21.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "dead man",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Deut.25.5",
+    "Gen.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "put her to death",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Chr.23.14",
+    "2Chr.23.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "put them to death",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Kgs.25.21",
+    "Deut.9.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "put you to death",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "1Kgs.2.26",
+    "1Kgs.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "to die",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "Jonah.4.3",
+    "Jonah.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4241",
+   "surface": "raw",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "recovery",
+   "transliteration": "mich.yah",
+   "samples": [
+    "Lev.13.10",
+    "Lev.13.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4241",
+   "surface": "reviving",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "recovery",
+   "transliteration": "mich.yah",
+   "samples": [
+    "Ezra.9.8",
+    "Ezra.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5301",
+   "surface": "blow",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to breathe",
+   "transliteration": "na.phach",
+   "samples": [
+    "Ezek.22.20",
+    "Ezek.22.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5301",
+   "surface": "boiling",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to breathe",
+   "transliteration": "na.phach",
+   "samples": [
+    "Jer.1.13",
+    "Job.41.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5301",
+   "surface": "breathe",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to breathe",
+   "transliteration": "na.phach",
+   "samples": [
+    "Ezek.37.9",
+    "Job.31.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5397",
+   "surface": "blast",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "breath",
+   "transliteration": "ne.sha.mah",
+   "samples": [
+    "2Sam.22.16",
+    "Ps.18.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "awakened",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Song.8.5",
+    "Zech.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "awakens",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Isa.50.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "roused",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Job.14.12",
+    "Zech.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "rouses",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Isa.14.9",
+    "Isa.64.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "stirring up",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Isa.13.17",
+    "Jer.50.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "stirs up",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Deut.32.11",
+    "Prov.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "wake yourself",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Isa.51.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6315",
+   "surface": "blow",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to breathe",
+   "transliteration": "pu.ach",
+   "samples": [
+    "Ezek.21.31",
+    "Song.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6315",
+   "surface": "breathes",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to breathe",
+   "transliteration": "pu.ach",
+   "samples": [
+    "Song.2.17",
+    "Song.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0599",
+   "surface": "drowned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "apothnēskō",
+   "samples": [
+    "Matt.8.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0599",
+   "surface": "killed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "apothnēskō",
+   "samples": [
+    "Heb.11.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0599",
+   "surface": "mortal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "apothnēskō",
+   "samples": [
+    "Heb.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0979",
+   "surface": "civilian",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "life",
+   "transliteration": "bios",
+   "samples": [
+    "2Tim.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0979",
+   "surface": "goods",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "life",
+   "transliteration": "bios",
+   "samples": [
+    "1John.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0979",
+   "surface": "living",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "life",
+   "transliteration": "bios",
+   "samples": [
+    "Luke.8.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0980",
+   "surface": "live",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "bioō",
+   "samples": [
+    "1Pet.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1236",
+   "surface": "lead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "diagō",
+   "samples": [
+    "1Tim.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1236",
+   "surface": "passing our days",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "diagō",
+   "samples": [
+    "Titus.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2198",
+   "surface": "come to life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "zaō",
+   "samples": [
+    "Rev.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2198",
+   "surface": "lifelong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "zaō",
+   "samples": [
+    "Heb.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2198",
+   "surface": "recovering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "zaō",
+   "samples": [
+    "John.4.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2222",
+   "surface": "lifetime",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "life",
+   "transliteration": "zōē",
+   "samples": [
+    "Luke.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2226",
+   "surface": "creatures",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "zōon",
+   "samples": [
+    "2Pet.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2227",
+   "surface": "give life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make alive",
+   "transliteration": "zōopoieō",
+   "samples": [
+    "Gal.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2227",
+   "surface": "gives them life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make alive",
+   "transliteration": "zōopoieō",
+   "samples": [
+    "John.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2227",
+   "surface": "life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make alive",
+   "transliteration": "zōopoieō",
+   "samples": [
+    "1Cor.15.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2227",
+   "surface": "life-giving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make alive",
+   "transliteration": "zōopoieō",
+   "samples": [
+    "1Cor.15.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2253",
+   "surface": "half dead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "half-dead",
+   "transliteration": "hēmithanēs",
+   "samples": [
+    "Luke.10.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2288",
+   "surface": "dead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "death",
+   "transliteration": "thanatos",
+   "samples": [
+    "Rev.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2288",
+   "surface": "deadly peril",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "death",
+   "transliteration": "thanatos",
+   "samples": [
+    "2Cor.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2288",
+   "surface": "death penalty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "death",
+   "transliteration": "thanatos",
+   "samples": [
+    "Acts.28.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2288",
+   "surface": "died",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "death",
+   "transliteration": "thanatos",
+   "samples": [
+    "Phil.2.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2288",
+   "surface": "pestilence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "death",
+   "transliteration": "thanatos",
+   "samples": [
+    "Rev.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3499",
+   "surface": "death",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to put to death",
+   "transliteration": "nekroō",
+   "samples": [
+    "Col.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3905",
+   "surface": "prolonged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prolong",
+   "transliteration": "parateinō",
+   "samples": [
+    "Acts.20.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4806",
+   "surface": "made alive together",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make alive with",
+   "transliteration": "suzōopoieō",
+   "samples": [
+    "Col.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4806",
+   "surface": "made us alive together with",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to make alive with",
+   "transliteration": "suzōopoieō",
+   "samples": [
+    "Eph.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4881",
+   "surface": "perish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die/destroy with",
+   "transliteration": "sunapollumi",
+   "samples": [
+    "Heb.11.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "defer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Isa.48.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "grow long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Ezek.12.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "long continue",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Prov.28.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "made long",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Ps.129.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "patient",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Job.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "poles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "1Kgs.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "slow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Prov.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0748",
+   "surface": "stick out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to prolong",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Isa.57.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "following spring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "2Kgs.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "green",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Ps.58.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "only raw",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "1Sam.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "peace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "1Sam.25.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "spring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Gen.26.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416A",
+   "surface": "vigorous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "alive",
+   "transliteration": "chay",
+   "samples": [
+    "Ps.38.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416B",
+   "surface": "relatives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kinsfolk",
+   "transliteration": "chay",
+   "samples": [
+    "1Sam.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "animals",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Lev.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "appetite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Job.38.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Ezek.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "lives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Ps.78.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "living thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Gen.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "wild animal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Lev.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "wild animals",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "Lev.25.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416C",
+   "surface": "wild beasts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living thing",
+   "transliteration": "chay.yah",
+   "samples": [
+    "1Sam.17.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416E",
+   "surface": "alive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "life",
+   "transliteration": "chay.yim",
+   "samples": [
+    "Lam.3.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416E",
+   "surface": "life-giving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "life",
+   "transliteration": "chay.yim",
+   "samples": [
+    "Prov.15.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416E",
+   "surface": "living",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "life",
+   "transliteration": "chay.yim",
+   "samples": [
+    "Ps.66.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2416E",
+   "surface": "rival",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "life",
+   "transliteration": "chay.yim",
+   "samples": [
+    "Lev.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2418",
+   "surface": "kept alive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.ya",
+   "samples": [
+    "Dan.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "flourish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Hos.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "give us life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Ps.80.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "given me life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Ps.119.93"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "gives me life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Ps.119.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "healed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Josh.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "keep alive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Num.31.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "leave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "1Sam.27.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "let",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Num.31.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "recovered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Isa.38.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "repaired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "1Chr.11.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "restored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "2Kgs.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "restored me to life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Ps.30.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "save alive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Josh.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "saved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Gen.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "saved them alive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Judg.8.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "saving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "Gen.19.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "spare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "1Kgs.20.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2421",
+   "surface": "up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yah",
+   "samples": [
+    "2Sam.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2422",
+   "surface": "vigorous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vigorous",
+   "transliteration": "cha.yeh",
+   "samples": [
+    "Exod.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2424",
+   "surface": "living",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "living",
+   "transliteration": "chay.yut",
+   "samples": [
+    "2Sam.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2425",
+   "surface": "lives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to live",
+   "transliteration": "cha.yay",
+   "samples": [
+    "1Sam.20.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3306",
+   "surface": "breath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "ya.phach",
+   "samples": [
+    "Jer.4.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "anyone",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Ezek.18.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "certainly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Kgs.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "destroy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Sam.20.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "died naturally",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Num.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "died out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Exod.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "forever",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Ps.48.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "it shall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Exod.31.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Num.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "means",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "1Kgs.3.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Sam.2.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "murder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Jer.41.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "must",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Sam.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "other",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "1Kgs.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "put him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Jer.26.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "put me to death",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "2Sam.14.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "slay",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Ps.34.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4191",
+   "surface": "slays",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to die",
+   "transliteration": "mut",
+   "samples": [
+    "Job.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "deadly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "Ps.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "deathly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "1Sam.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "kill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "Jer.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4194",
+   "surface": "surely die",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "death",
+   "transliteration": "ma.vet",
+   "samples": [
+    "1Sam.20.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4241",
+   "surface": "living",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "recovery",
+   "transliteration": "mich.yah",
+   "samples": [
+    "Judg.17.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4241",
+   "surface": "preserve life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "recovery",
+   "transliteration": "mich.yah",
+   "samples": [
+    "Gen.45.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4241",
+   "surface": "remained alive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "recovery",
+   "transliteration": "mich.yah",
+   "samples": [
+    "2Chr.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4241",
+   "surface": "sustenance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "recovery",
+   "transliteration": "mich.yah",
+   "samples": [
+    "Judg.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5301",
+   "surface": "blew it away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "na.phach",
+   "samples": [
+    "Hag.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5301",
+   "surface": "blows",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "na.phach",
+   "samples": [
+    "Isa.54.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5301",
+   "surface": "breathed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "na.phach",
+   "samples": [
+    "Gen.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5301",
+   "surface": "fainted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "na.phach",
+   "samples": [
+    "Jer.15.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5301",
+   "surface": "fanned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "na.phach",
+   "samples": [
+    "Job.20.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5301",
+   "surface": "snort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "na.phach",
+   "samples": [
+    "Mal.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5396",
+   "surface": "breath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breath",
+   "transliteration": "nish.ma",
+   "samples": [
+    "Dan.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5397",
+   "surface": "breathes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breath",
+   "transliteration": "ne.sha.mah",
+   "samples": [
+    "Deut.20.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5397",
+   "surface": "life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breath",
+   "transliteration": "ne.sha.mah",
+   "samples": [
+    "Isa.57.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5397",
+   "surface": "spirit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "breath",
+   "transliteration": "ne.sha.mah",
+   "samples": [
+    "Prov.20.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "arise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Hab.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "descendant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Mal.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "exulted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Job.31.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "fire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Hos.7.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "raise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Isa.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "rouse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Job.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "rouse up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Job.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "rouse yourself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Ps.73.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "stir him up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Job.41.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "stirred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Ezra.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "stirs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Job.17.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "wield",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Isa.10.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5782",
+   "surface": "woke",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rouse",
+   "transliteration": "ur",
+   "samples": [
+    "Zech.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6315",
+   "surface": "aflame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "pu.ach",
+   "samples": [
+    "Prov.29.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6315",
+   "surface": "hastens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "pu.ach",
+   "samples": [
+    "Hab.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6315",
+   "surface": "longs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "pu.ach",
+   "samples": [
+    "Ps.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6315",
+   "surface": "puffs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "pu.ach",
+   "samples": [
+    "Ps.10.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6315",
+   "surface": "speaks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to breathe",
+   "transliteration": "pu.ach",
+   "samples": [
+    "Prov.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

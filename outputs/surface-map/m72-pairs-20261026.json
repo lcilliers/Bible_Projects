@@ -1,0 +1,5531 @@
+{
+ "cluster": "M72",
+ "cluster_name": "Authority & Dominion",
+ "built_at": "2026-10-26T04:27:01Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 335,
+  "head": 22,
+  "tail": 313,
+  "hits": 5599,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H4428G",
+   "surface": "king",
+   "part": "head",
+   "hits": 1929,
+   "verses": 1507,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "1Sam.15.23",
+    "Jer.52.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "hand",
+   "part": "head",
+   "hits": 459,
+   "verses": 407,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Ezek.25.14",
+    "Jer.38.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6635B",
+   "surface": "hosts",
+   "part": "head",
+   "hits": 281,
+   "verses": 269,
+   "gloss": "[Lord of] Hosts",
+   "transliteration": "tsa.va",
+   "samples": [
+    "Isa.22.5",
+    "Ps.59.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "kings",
+   "part": "head",
+   "hits": 268,
+   "verses": 252,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "Jer.51.11",
+    "Prov.31.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "king’s",
+   "part": "head",
+   "hits": 219,
+   "verses": 203,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "Esth.9.1",
+    "Jer.39.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0932",
+   "surface": "kingdom",
+   "part": "head",
+   "hits": 156,
+   "verses": 148,
+   "gloss": "kingdom",
+   "transliteration": "basileia",
+   "samples": [
+    "Acts.20.25",
+    "Mark.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "reigned",
+   "part": "head",
+   "hits": 150,
+   "verses": 141,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "2Chr.36.8",
+    "Jer.37.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4430",
+   "surface": "king",
+   "part": "head",
+   "hits": 148,
+   "verses": 113,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "Dan.3.13",
+    "Ezra.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3678G",
+   "surface": "throne",
+   "part": "head",
+   "hits": 111,
+   "verses": 104,
+   "gloss": "throne",
+   "transliteration": "kis.se",
+   "samples": [
+    "Ezek.1.26",
+    "Prov.16.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "reign",
+   "part": "head",
+   "hits": 100,
+   "verses": 100,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Gen.37.8",
+    "Job.34.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "princes",
+   "part": "head",
+   "hits": 88,
+   "verses": 85,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Chr.24.6",
+    "Hos.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "officials",
+   "part": "head",
+   "hits": 72,
+   "verses": 68,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Ezra.9.1",
+    "Jer.52.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "heads",
+   "part": "head",
+   "hits": 66,
+   "verses": 62,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "Exod.6.25",
+    "Mic.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "authority",
+   "part": "head",
+   "hits": 64,
+   "verses": 59,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "Col.2.10",
+    "Jude.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "commanders",
+   "part": "head",
+   "hits": 62,
+   "verses": 47,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Chr.29.6",
+    "2Sam.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4467",
+   "surface": "kingdom",
+   "part": "head",
+   "hits": 55,
+   "verses": 52,
+   "gloss": "kingdom",
+   "transliteration": "mam.la.khah",
+   "samples": [
+    "Isa.19.2",
+    "Lam.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4467",
+   "surface": "kingdoms",
+   "part": "head",
+   "hits": 48,
+   "verses": 47,
+   "gloss": "kingdom",
+   "transliteration": "mam.la.khah",
+   "samples": [
+    "Ps.135.11",
+    "Zeph.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "king",
+   "part": "head",
+   "hits": 44,
+   "verses": 43,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Ezek.20.33",
+    "Jer.37.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4437",
+   "surface": "kingdom",
+   "part": "head",
+   "hits": 44,
+   "verses": 35,
+   "gloss": "kingdom",
+   "transliteration": "mal.khu",
+   "samples": [
+    "Dan.5.31",
+    "Dan.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4438",
+   "surface": "kingdom",
+   "part": "head",
+   "hits": 43,
+   "verses": 41,
+   "gloss": "royalty",
+   "transliteration": "mal.khut",
+   "samples": [
+    "Dan.11.21",
+    "Num.24.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2962H",
+   "surface": "master",
+   "part": "head",
+   "hits": 39,
+   "verses": 37,
+   "gloss": "lord: master",
+   "transliteration": "kurios",
+   "samples": [
+    "Matt.10.24",
+    "Matt.18.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "commander",
+   "part": "head",
+   "hits": 39,
+   "verses": 37,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "2Chr.17.15",
+    "Josh.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "beginning",
+   "part": "tail",
+   "hits": 36,
+   "verses": 35,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Acts.26.4",
+    "Matt.24.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "power",
+   "part": "tail",
+   "hits": 30,
+   "verses": 30,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Ps.106.10",
+    "Ps.106.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "chief",
+   "part": "tail",
+   "hits": 30,
+   "verses": 28,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "1Chr.5.7",
+    "Jer.31.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "hands",
+   "part": "tail",
+   "hits": 29,
+   "verses": 27,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Ezek.23.28",
+    "Ezra.8.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 28,
+   "verses": 24,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Gen.37.8",
+    "Ps.89.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "prince",
+   "part": "tail",
+   "hits": 28,
+   "verses": 27,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "1Chr.2.10",
+    "Ezek.34.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "head",
+   "part": "tail",
+   "hits": 27,
+   "verses": 25,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "Jer.13.21",
+    "Josh.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "captains",
+   "part": "tail",
+   "hits": 22,
+   "verses": 22,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "2Kgs.1.14",
+    "2Kgs.25.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "chief",
+   "part": "tail",
+   "hits": 21,
+   "verses": 19,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "2Chr.8.10",
+    "Gen.40.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4438",
+   "surface": "reign",
+   "part": "tail",
+   "hits": 20,
+   "verses": 19,
+   "gloss": "royalty",
+   "transliteration": "mal.khut",
+   "samples": [
+    "Ezra.4.5",
+    "Ezra.8.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "chiefs",
+   "part": "tail",
+   "hits": 20,
+   "verses": 18,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Num.31.13",
+    "Num.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4438",
+   "surface": "royal",
+   "part": "tail",
+   "hits": 18,
+   "verses": 16,
+   "gloss": "royalty",
+   "transliteration": "mal.khut",
+   "samples": [
+    "Dan.11.21",
+    "Esth.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "ruler",
+   "part": "tail",
+   "hits": 18,
+   "verses": 17,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Eccl.10.4",
+    "Prov.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "chief",
+   "part": "tail",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Num.17.6",
+    "Num.34.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "officers",
+   "part": "tail",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Chr.29.6",
+    "2Chr.36.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2962H",
+   "surface": "sir",
+   "part": "tail",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "lord: master",
+   "transliteration": "kurios",
+   "samples": [
+    "John.5.7",
+    "Rev.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4430",
+   "surface": "king’s",
+   "part": "tail",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "Dan.2.10",
+    "Ezra.7.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "leaders",
+   "part": "tail",
+   "hits": 14,
+   "verses": 12,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Josh.13.21",
+    "Josh.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0936",
+   "surface": "reign",
+   "part": "tail",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to reign",
+   "transliteration": "basileuō",
+   "samples": [
+    "1Cor.15.25",
+    "Rom.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "princes",
+   "part": "tail",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Ezek.27.21",
+    "Gen.17.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7985",
+   "surface": "dominion",
+   "part": "tail",
+   "hits": 13,
+   "verses": 9,
+   "gloss": "dominion",
+   "transliteration": "shol.tan",
+   "samples": [
+    "Dan.7.14",
+    "Dan.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "leaders",
+   "part": "tail",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Chr.23.2",
+    "Judg.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "prince",
+   "part": "tail",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Dan.10.13",
+    "Mic.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "power",
+   "part": "tail",
+   "hits": 12,
+   "verses": 10,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "Rev.20.6",
+    "Rev.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1002",
+   "surface": "citadel",
+   "part": "tail",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "palace",
+   "transliteration": "bi.rah",
+   "samples": [
+    "Esth.9.11",
+    "Esth.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "chiefs",
+   "part": "tail",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "Neh.10.14",
+    "Num.25.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "captain",
+   "part": "tail",
+   "hits": 12,
+   "verses": 11,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Gen.39.1",
+    "Gen.41.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "right",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "1Cor.9.12",
+    "1Cor.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2962H",
+   "surface": "lord",
+   "part": "tail",
+   "hits": 11,
+   "verses": 10,
+   "gloss": "lord: master",
+   "transliteration": "kurios",
+   "samples": [
+    "Matt.12.8",
+    "Matt.25.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "became king",
+   "part": "tail",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "2Chr.21.5",
+    "2Kgs.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4430",
+   "surface": "kings",
+   "part": "tail",
+   "hits": 11,
+   "verses": 9,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "Dan.2.44",
+    "Dan.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "charge",
+   "part": "tail",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Ezra.1.8",
+    "Gen.39.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5943",
+   "surface": "most high",
+   "part": "tail",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "Most High [God]",
+   "transliteration": "il.lay",
+   "samples": [
+    "Dan.3.26",
+    "Dan.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "reigns",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "1Sam.12.14",
+    "Isa.24.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "royal",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "1Kgs.11.14",
+    "Esth.9.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "ruler",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Judg.9.30",
+    "Neh.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "authorities",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "Col.1.16",
+    "Col.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "count",
+   "part": "tail",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Phil.2.3",
+    "Phil.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4475",
+   "surface": "dominion",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "dominion",
+   "transliteration": "mem.sha.lah",
+   "samples": [
+    "Jer.34.1",
+    "Ps.103.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "ruled",
+   "part": "tail",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Josh.12.5",
+    "Ps.106.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2962H",
+   "surface": "masters",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "lord: master",
+   "transliteration": "kurios",
+   "samples": [
+    "Eph.6.5",
+    "Eph.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "made him king",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "2Chr.36.1",
+    "2Kgs.23.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "now the king",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "2Chr.18.9",
+    "2Kgs.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4468",
+   "surface": "kingdom",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "kingdom",
+   "transliteration": "mam.la.khut",
+   "samples": [
+    "1Sam.15.28",
+    "Josh.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "rules",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Prov.16.32",
+    "Ps.22.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "rulers",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Col.1.16",
+    "Col.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2962H",
+   "surface": "owner",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "lord: master",
+   "transliteration": "kurios",
+   "samples": [
+    "Luke.20.15",
+    "Matt.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3678G",
+   "surface": "thrones",
+   "part": "tail",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "throne",
+   "transliteration": "kis.se",
+   "samples": [
+    "Ezek.26.16",
+    "Isa.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4467",
+   "surface": "royal",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "kingdom",
+   "transliteration": "mam.la.khah",
+   "samples": [
+    "2Chr.23.20",
+    "Josh.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "rulers",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Isa.49.7",
+    "Judg.15.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "dominion",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Gen.1.28",
+    "Ps.72.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "of",
+   "part": "tail",
+   "hits": 6,
+   "verses": 2,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Exod.18.21",
+    "Exod.18.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "direction",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Exod.38.21",
+    "Num.4.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "under the direction",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "1Chr.25.2",
+    "1Chr.25.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7990",
+   "surface": "rules",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "ruling",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Dan.4.26",
+    "Dan.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "chiefs",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "2Chr.35.9",
+    "Exod.18.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "governor",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "2Kgs.23.8",
+    "Neh.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "governors",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Kgs.20.14",
+    "1Kgs.20.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0936",
+   "surface": "reigned",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to reign",
+   "transliteration": "basileuō",
+   "samples": [
+    "Rom.5.14",
+    "Rom.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "strength",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "2Kgs.19.26",
+    "2Kgs.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3678G",
+   "surface": "seat",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "throne",
+   "transliteration": "kis.se",
+   "samples": [
+    "1Kgs.2.19",
+    "1Sam.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4430",
+   "surface": "royal",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "Ezra.5.17",
+    "Ezra.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4475",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "dominion",
+   "transliteration": "mem.sha.lah",
+   "samples": [
+    "Gen.1.16",
+    "Ps.136.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "leader",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "1Chr.11.42",
+    "Neh.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Lev.25.53",
+    "Ps.110.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7336",
+   "surface": "rulers",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to rule",
+   "transliteration": "ra.zan",
+   "samples": [
+    "Prov.31.4",
+    "Ps.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Col.2.10",
+    "Eph.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0932",
+   "surface": "kingdoms",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "kingdom",
+   "transliteration": "basileia",
+   "samples": [
+    "Luke.4.5",
+    "Matt.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "leaders",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Heb.13.17",
+    "Heb.13.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2583",
+   "surface": "influence",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "rule",
+   "transliteration": "kanōn",
+   "samples": [
+    "2Cor.10.13",
+    "2Cor.10.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2962H",
+   "surface": "master’s",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "lord: master",
+   "transliteration": "kurios",
+   "samples": [
+    "Luke.16.5",
+    "Matt.25.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2962H",
+   "surface": "owners",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "lord: master",
+   "transliteration": "kurios",
+   "samples": [
+    "Acts.16.16",
+    "Luke.19.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1055",
+   "surface": "palace",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "palace",
+   "transliteration": "bi.tan",
+   "samples": [
+    "Esth.1.5",
+    "Esth.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "custody",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Esth.2.14",
+    "Esth.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "possession",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Exod.21.16",
+    "Exod.22.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "under the command",
+   "part": "tail",
+   "hits": 3,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "2Sam.18.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "made",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "1Sam.15.11",
+    "Judg.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "make him king",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "1Chr.11.10",
+    "2Chr.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "set up",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "2Chr.21.8",
+    "Isa.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4437",
+   "surface": "kingdoms",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "kingdom",
+   "transliteration": "mal.khu",
+   "samples": [
+    "Dan.2.44",
+    "Dan.7.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4437",
+   "surface": "royal",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "kingdom",
+   "transliteration": "mal.khu",
+   "samples": [
+    "Dan.4.29",
+    "Dan.4.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4438",
+   "surface": "realm",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "royalty",
+   "transliteration": "mal.khut",
+   "samples": [
+    "2Chr.20.30",
+    "Dan.11.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4467",
+   "surface": "royal power",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "kingdom",
+   "transliteration": "mam.la.khah",
+   "samples": [
+    "2Kgs.14.5",
+    "2Kgs.15.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "dominion",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Job.25.2",
+    "Ps.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "ruling",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "2Sam.23.3",
+    "Jer.22.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "rule over",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Isa.14.2",
+    "Lev.26.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7980",
+   "surface": "power",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to domineer",
+   "transliteration": "sha.lat",
+   "samples": [
+    "Eccl.5.19",
+    "Eccl.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7981",
+   "surface": "ruler",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to rule",
+   "transliteration": "she.let",
+   "samples": [
+    "Dan.2.48",
+    "Dan.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "keeper",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Gen.39.21",
+    "Gen.39.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "rulers",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Lam.2.2",
+    "Prov.28.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "corners",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Acts.10.11",
+    "Acts.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "first",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Heb.2.3",
+    "John.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0932",
+   "surface": "royal power",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "kingdom",
+   "transliteration": "basileia",
+   "samples": [
+    "Rev.17.12",
+    "Rev.17.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0936",
+   "surface": "kings",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reign",
+   "transliteration": "basileuō",
+   "samples": [
+    "1Cor.4.8",
+    "1Tim.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0937",
+   "surface": "official",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "royal",
+   "transliteration": "basilikos",
+   "samples": [
+    "John.4.46",
+    "John.4.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0937",
+   "surface": "royal",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "royal",
+   "transliteration": "basilikos",
+   "samples": [
+    "Acts.12.21",
+    "Jas.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1850",
+   "surface": "authority over",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to have authority",
+   "transliteration": "exousiazō",
+   "samples": [
+    "1Cor.7.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Heb.11.11",
+    "Heb.11.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "1Tim.6.1",
+    "2Thess.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "ruler",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Acts.7.10",
+    "Matt.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "2Cor.9.5",
+    "Phil.2.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2715",
+   "surface": "exercise authority",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rule",
+   "transliteration": "katexousiazō",
+   "samples": [
+    "Mark.10.42",
+    "Matt.20.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2963",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "lordship",
+   "transliteration": "kuriotēs",
+   "samples": [
+    "2Pet.2.10",
+    "Jude.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4519",
+   "surface": "hosts",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hosts",
+   "transliteration": "sabaōth",
+   "samples": [
+    "Jas.5.4",
+    "Rom.9.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1002",
+   "surface": "palace",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "palace",
+   "transliteration": "bi.rah",
+   "samples": [
+    "1Chr.29.1",
+    "1Chr.29.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2632",
+   "surface": "power",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "authority",
+   "transliteration": "che.sen",
+   "samples": [
+    "Dan.2.37",
+    "Dan.4.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "care",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "1Chr.26.28",
+    "1Chr.29.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "command",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "2Chr.26.13",
+    "Num.31.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "order",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "1Chr.25.6",
+    "2Chr.23.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "service",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "1Chr.18.17",
+    "1Chr.6.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "he",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "2Kgs.23.12",
+    "Esth.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4438",
+   "surface": "kingdoms",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "royalty",
+   "transliteration": "mal.khut",
+   "samples": [
+    "Dan.8.22",
+    "Jer.10.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4438",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "royalty",
+   "transliteration": "mal.khut",
+   "samples": [
+    "1Chr.29.30",
+    "2Chr.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4467",
+   "surface": "kingship",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "kingdom",
+   "transliteration": "mam.la.khah",
+   "samples": [
+    "2Chr.13.5",
+    "Mic.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4467",
+   "surface": "reign",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "kingdom",
+   "transliteration": "mam.la.khah",
+   "samples": [
+    "Jer.27.1",
+    "Jer.28.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4475",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dominion",
+   "transliteration": "mem.sha.lah",
+   "samples": [
+    "Dan.11.5",
+    "Isa.22.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4475",
+   "surface": "realm",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dominion",
+   "transliteration": "mem.sha.lah",
+   "samples": [
+    "2Kgs.20.13",
+    "Isa.39.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "rule over",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Gen.3.16",
+    "Prov.17.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4951",
+   "surface": "government",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dominion",
+   "transliteration": "mis.rah",
+   "samples": [
+    "Isa.9.6",
+    "Isa.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "ruler",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "1Kgs.11.34",
+    "Exod.22.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "helmet",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "Ps.108.8",
+    "Ps.60.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "leaders",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "1Chr.4.42",
+    "1Chr.9.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "leading men",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "Ezra.7.28",
+    "Ezra.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "officers",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "1Chr.12.14",
+    "1Chr.12.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "you",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "2Kgs.2.3",
+    "2Kgs.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "charge",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "1Kgs.5.16",
+    "1Kgs.9.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "ruled",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Ezek.34.4",
+    "Isa.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7336",
+   "surface": "princes",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rule",
+   "transliteration": "ra.zan",
+   "samples": [
+    "Isa.40.23",
+    "Judg.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7981",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rule",
+   "transliteration": "she.let",
+   "samples": [
+    "Dan.2.38",
+    "Dan.2.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "leader",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Chr.15.22",
+    "1Chr.15.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "leading",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Ezra.10.5",
+    "Ezra.8.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "stewards",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Chr.27.31",
+    "1Chr.28.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8323A",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rule",
+   "transliteration": "sa.rar",
+   "samples": [
+    "Isa.32.1",
+    "Prov.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "authorities",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Eph.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Jude.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "basic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Heb.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "elementary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Heb.6.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "firstfruits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "2Thess.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "jurisdiction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Luke.20.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0746",
+   "surface": "original",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beginning",
+   "transliteration": "archē",
+   "samples": [
+    "Heb.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0831",
+   "surface": "exercise authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to domineer",
+   "transliteration": "authenteō",
+   "samples": [
+    "1Tim.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0932",
+   "surface": "dominion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kingdom",
+   "transliteration": "basileia",
+   "samples": [
+    "Rev.17.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0933",
+   "surface": "kings’ courts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "palace",
+   "transliteration": "basileion",
+   "samples": [
+    "Luke.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0934",
+   "surface": "royal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kingly",
+   "transliteration": "basileios",
+   "samples": [
+    "1Pet.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0936",
+   "surface": "reigning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "basileuō",
+   "samples": [
+    "Matt.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0936",
+   "surface": "reigns",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "basileuō",
+   "samples": [
+    "Rev.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0937",
+   "surface": "king’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "royal",
+   "transliteration": "basilikos",
+   "samples": [
+    "Acts.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0938G",
+   "surface": "queen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "queen",
+   "transliteration": "basilissa",
+   "samples": [
+    "Rev.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1018",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "brabeuō",
+   "samples": [
+    "Col.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "charge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "Mark.13.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "cosmic powers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "Eph.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "disposal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "Acts.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "domain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "Col.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "jurisdiction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "Luke.23.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "rightful claim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "1Cor.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1849",
+   "surface": "under control",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "authority",
+   "transliteration": "exousia",
+   "samples": [
+    "1Cor.7.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1850",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to have authority",
+   "transliteration": "exousiazō",
+   "samples": [
+    "Luke.22.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1850",
+   "surface": "dominated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to have authority",
+   "transliteration": "exousiazō",
+   "samples": [
+    "1Cor.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2230",
+   "surface": "governor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgemoneuō",
+   "samples": [
+    "Luke.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "chief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Acts.14.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "consider",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Acts.26.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "counted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Phil.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "esteem",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "1Thess.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "judged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "1Tim.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "leader",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Luke.22.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "leading",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Acts.15.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "profaned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "Heb.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2233",
+   "surface": "think",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to govern",
+   "transliteration": "hēgeomai",
+   "samples": [
+    "2Pet.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2583",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rule",
+   "transliteration": "kanōn",
+   "samples": [
+    "Gal.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2634",
+   "surface": "domineering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to master",
+   "transliteration": "katakurieuō",
+   "samples": [
+    "1Pet.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2634",
+   "surface": "lord it",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to master",
+   "transliteration": "katakurieuō",
+   "samples": [
+    "Mark.10.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2634",
+   "surface": "mastered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to master",
+   "transliteration": "katakurieuō",
+   "samples": [
+    "Acts.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2634",
+   "surface": "over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to master",
+   "transliteration": "katakurieuō",
+   "samples": [
+    "Matt.20.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2961",
+   "surface": "binding on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lord over",
+   "transliteration": "kurieuō",
+   "samples": [
+    "Rom.7.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2961",
+   "surface": "dominion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lord over",
+   "transliteration": "kurieuō",
+   "samples": [
+    "Rom.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2961",
+   "surface": "exercise lordship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lord over",
+   "transliteration": "kurieuō",
+   "samples": [
+    "Luke.22.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2961",
+   "surface": "has dominion over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lord over",
+   "transliteration": "kurieuō",
+   "samples": [
+    "Rom.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2961",
+   "surface": "lord",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lord over",
+   "transliteration": "kurieuō",
+   "samples": [
+    "Rom.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2961",
+   "surface": "lords",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lord over",
+   "transliteration": "kurieuō",
+   "samples": [
+    "1Tim.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2961",
+   "surface": "over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lord over",
+   "transliteration": "kurieuō",
+   "samples": [
+    "2Cor.1.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2962H",
+   "surface": "lords",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lord: master",
+   "transliteration": "kurios",
+   "samples": [
+    "1Cor.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2962H",
+   "surface": "sirs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lord: master",
+   "transliteration": "kurios",
+   "samples": [
+    "Acts.16.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2963",
+   "surface": "dominion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lordship",
+   "transliteration": "kuriotēs",
+   "samples": [
+    "Eph.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2963",
+   "surface": "dominions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lordship",
+   "transliteration": "kuriotēs",
+   "samples": [
+    "Col.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4821",
+   "surface": "reign",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign with",
+   "transliteration": "sumbasileuō",
+   "samples": [
+    "2Tim.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4821",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign with",
+   "transliteration": "sumbasileuō",
+   "samples": [
+    "1Cor.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5247",
+   "surface": "high positions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "authority",
+   "transliteration": "huperochē",
+   "samples": [
+    "1Tim.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5247",
+   "surface": "lofty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "authority",
+   "transliteration": "huperochē",
+   "samples": [
+    "1Cor.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0643",
+   "surface": "palatial",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "palace",
+   "transliteration": "ap.pe.den",
+   "samples": [
+    "Dan.11.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1002",
+   "surface": "castle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "palace",
+   "transliteration": "bi.rah",
+   "samples": [
+    "Neh.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1002",
+   "surface": "fortress",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "palace",
+   "transliteration": "bi.rah",
+   "samples": [
+    "Neh.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "able",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Deut.16.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Gen.41.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "bounty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "1Kgs.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "buyer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Lev.25.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "directions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Ezra.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "dominion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Jer.34.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "force",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Num.20.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "have",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Exod.10.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "helpless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Deut.28.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "his",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Jer.46.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "king",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Jer.38.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "leadership",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Num.33.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "monument",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "1Chr.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "nebuchadnezzar",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Jer.44.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "place",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Judg.18.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "spokes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Ezek.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "surrendered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Jer.50.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "trap",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Ps.141.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3027H",
+   "surface": "under custody",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hand: power",
+   "transliteration": "yad",
+   "samples": [
+    "Esth.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3678G",
+   "surface": "full moon",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "throne",
+   "transliteration": "kis.se",
+   "samples": [
+    "Job.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3678G",
+   "surface": "rulers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "throne",
+   "transliteration": "kis.se",
+   "samples": [
+    "Ps.94.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3678G",
+   "surface": "seats",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "throne",
+   "transliteration": "kis.se",
+   "samples": [
+    "2Kgs.25.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "becomes king",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Prov.30.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "began to reign",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "2Sam.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "establishment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "2Chr.36.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "indeed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Gen.37.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "kings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Hos.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "made her queen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Esth.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "made me king",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "2Chr.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "made you king",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "2Chr.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "make",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "1Sam.8.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "make me king",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "1Chr.28.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "queen",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Esth.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "reign over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "2Sam.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "reigned over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Gen.36.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "1Sam.24.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "thirty-three",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "1Kgs.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "throne",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Eccl.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427A",
+   "surface": "years",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "1Chr.29.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "^",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "2Sam.13.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "forsaking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "2Chr.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "helped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "1Kgs.20.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "judah",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "1Kgs.15.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "now the king’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "2Kgs.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "princesses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "Jer.43.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4428G",
+   "surface": "reigned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "king",
+   "transliteration": "me.lekh",
+   "samples": [
+    "Jer.37.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4437",
+   "surface": "kingly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kingdom",
+   "transliteration": "mal.khu",
+   "samples": [
+    "Dan.5.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4437",
+   "surface": "kingship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kingdom",
+   "transliteration": "mal.khu",
+   "samples": [
+    "Dan.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4437",
+   "surface": "realm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kingdom",
+   "transliteration": "mal.khu",
+   "samples": [
+    "Ezra.7.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4437",
+   "surface": "reign",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kingdom",
+   "transliteration": "mal.khu",
+   "samples": [
+    "Ezra.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4438",
+   "surface": "palace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "royalty",
+   "transliteration": "mal.khut",
+   "samples": [
+    "Esth.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4438",
+   "surface": "royal position",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "royalty",
+   "transliteration": "mal.khut",
+   "samples": [
+    "Esth.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4438",
+   "surface": "throne",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "royalty",
+   "transliteration": "mal.khut",
+   "samples": [
+    "Esth.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4467",
+   "surface": "throne",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kingdom",
+   "transliteration": "mam.la.khah",
+   "samples": [
+    "2Chr.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4468",
+   "surface": "reign",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kingdom",
+   "transliteration": "mam.la.khut",
+   "samples": [
+    "Jer.26.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4474",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dominion",
+   "transliteration": "mim.shal",
+   "samples": [
+    "Dan.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4474",
+   "surface": "dominion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dominion",
+   "transliteration": "mim.shal",
+   "samples": [
+    "Dan.11.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4474",
+   "surface": "rulers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dominion",
+   "transliteration": "mim.shal",
+   "samples": [
+    "1Chr.26.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4475",
+   "surface": "forces",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dominion",
+   "transliteration": "mem.sha.lah",
+   "samples": [
+    "2Chr.32.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4896",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rule",
+   "transliteration": "mish.tar",
+   "samples": [
+    "Job.38.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "byword",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Joel.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "charge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Gen.24.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "governors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "2Chr.23.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "indeed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Gen.37.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "one rules",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "2Sam.23.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4910",
+   "surface": "right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ma.shal",
+   "samples": [
+    "Exod.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4915B",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dominion",
+   "transliteration": "mo.shel",
+   "samples": [
+    "Dan.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4915B",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dominion",
+   "transliteration": "mo.shel",
+   "samples": [
+    "Zech.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "both",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Ezek.48.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "each",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Josh.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "houses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Num.17.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "leader",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Lev.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "offer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Num.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Josh.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "only",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Ezek.44.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "prince’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Ezek.45.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5387A",
+   "surface": "tribe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "leader",
+   "transliteration": "na.si",
+   "samples": [
+    "Num.34.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6635B",
+   "surface": "armies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "[Lord of] Hosts",
+   "transliteration": "tsa.va",
+   "samples": [
+    "Ps.68.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6635B",
+   "surface": "lord",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "[Lord of] Hosts",
+   "transliteration": "tsa.va",
+   "samples": [
+    "2Kgs.19.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "counted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "Num.31.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "directors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "Neh.12.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "graciously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "2Kgs.25.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "graciously freed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "Jer.52.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7218H",
+   "surface": "leading man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "head: leader",
+   "transliteration": "rosh",
+   "samples": [
+    "Ezra.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "again rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Ezek.29.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "descend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Lam.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "exercised authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "2Chr.8.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "lead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Ps.68.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7287A",
+   "surface": "tramples",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "ra.dah",
+   "samples": [
+    "Isa.41.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7786",
+   "surface": "ruled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "sur",
+   "samples": [
+    "Judg.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7786",
+   "surface": "set up princes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "sur",
+   "samples": [
+    "Hos.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7786",
+   "surface": "strove",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reign",
+   "transliteration": "sur",
+   "samples": [
+    "Hos.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7980",
+   "surface": "gained mastery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to domineer",
+   "transliteration": "sha.lat",
+   "samples": [
+    "Esth.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7980",
+   "surface": "get dominion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to domineer",
+   "transliteration": "sha.lat",
+   "samples": [
+    "Ps.119.133"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7980",
+   "surface": "lorded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to domineer",
+   "transliteration": "sha.lat",
+   "samples": [
+    "Neh.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7980",
+   "surface": "master",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to domineer",
+   "transliteration": "sha.lat",
+   "samples": [
+    "Eccl.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7980",
+   "surface": "mastery",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to domineer",
+   "transliteration": "sha.lat",
+   "samples": [
+    "Esth.9.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7981",
+   "surface": "overpowered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "she.let",
+   "samples": [
+    "Dan.6.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7981",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "she.let",
+   "samples": [
+    "Dan.3.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7985",
+   "surface": "dominions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dominion",
+   "transliteration": "shol.tan",
+   "samples": [
+    "Dan.7.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7989",
+   "surface": "governor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "domineering",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Gen.42.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7989",
+   "surface": "power",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "domineering",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Eccl.8.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7989",
+   "surface": "ruler",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "domineering",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Eccl.10.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7989",
+   "surface": "rulers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "domineering",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Eccl.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7990",
+   "surface": "captain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruling",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Dan.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7990",
+   "surface": "lawful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruling",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Ezra.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7990",
+   "surface": "powerful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruling",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Dan.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7990",
+   "surface": "ruled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruling",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Ezra.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7990",
+   "surface": "ruler",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruling",
+   "transliteration": "shal.lit",
+   "samples": [
+    "Dan.5.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "and",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "2Chr.25.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "became commander",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Sam.22.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "became leader",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Kgs.11.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "became their commander",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "1Chr.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "charge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Gen.47.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "general",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Judg.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "heads",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Ezra.8.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "lords",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Ezra.8.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "quartermaster",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Jer.51.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8269",
+   "surface": "taskmasters",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ruler",
+   "transliteration": "sar",
+   "samples": [
+    "Exod.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8323A",
+   "surface": "make",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "sa.rar",
+   "samples": [
+    "Num.16.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8323A",
+   "surface": "master",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "sa.rar",
+   "samples": [
+    "Esth.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8323A",
+   "surface": "prince",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rule",
+   "transliteration": "sa.rar",
+   "samples": [
+    "Num.16.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

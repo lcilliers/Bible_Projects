@@ -1,0 +1,3796 @@
+{
+ "cluster": "M63",
+ "cluster_name": "Reasoning & Interpretation",
+ "built_at": "2026-10-26T04:25:45Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 231,
+  "head": 104,
+  "tail": 127,
+  "hits": 638,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H8199",
+   "surface": "judge",
+   "part": "head",
+   "hits": 77,
+   "verses": 72,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ezek.44.24",
+    "Mic.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "judge",
+   "part": "head",
+   "hits": 37,
+   "verses": 33,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "1Pet.4.5",
+    "2Tim.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "judges",
+   "part": "head",
+   "hits": 36,
+   "verses": 36,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Jer.11.20",
+    "Zeph.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6591",
+   "surface": "interpretation",
+   "part": "head",
+   "hits": 30,
+   "verses": 26,
+   "gloss": "interpretation",
+   "transliteration": "pe.shar",
+   "samples": [
+    "Dan.2.4",
+    "Dan.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "judged",
+   "part": "head",
+   "hits": 22,
+   "verses": 21,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ezek.24.14",
+    "Ezek.36.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "judged",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Rev.11.18",
+    "Rev.20.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "counselor",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Isa.41.28",
+    "Mic.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "judges",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "1Pet.2.23",
+    "Rom.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "counselors",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Job.12.17",
+    "Prov.24.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "counsel",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "2Chr.20.21",
+    "Ps.32.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "judgment",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ezek.23.45",
+    "Jer.2.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1261",
+   "surface": "thoughts",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "reasoning",
+   "transliteration": "dialogismos",
+   "samples": [
+    "Luke.2.35",
+    "Luke.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "judge",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "1Sam.2.10",
+    "Gen.49.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "purposed",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Isa.19.12",
+    "Isa.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "took counsel",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "1Kgs.12.8",
+    "2Chr.25.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "decided",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "1Cor.2.2",
+    "Titus.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "enter into judgment",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Isa.66.16",
+    "Joel.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "rulers",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Hos.7.7",
+    "Ps.148.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1256",
+   "surface": "reasoned",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to dispute",
+   "transliteration": "dialegō",
+   "samples": [
+    "Acts.18.19",
+    "Acts.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1260",
+   "surface": "discussing",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to discuss",
+   "transliteration": "dialogizomai",
+   "samples": [
+    "Mark.9.33",
+    "Matt.16.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "pass judgment",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Rom.14.13",
+    "Rom.14.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2782",
+   "surface": "decreed",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to decide",
+   "transliteration": "cha.rats",
+   "samples": [
+    "Dan.9.27",
+    "Isa.10.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "govern",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "2Chr.1.11",
+    "Prov.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "ignorant",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "2Cor.2.11",
+    "Heb.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0052",
+   "surface": "ignorance",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "ignorance",
+   "transliteration": "agnoia",
+   "samples": [
+    "1Pet.1.14",
+    "Acts.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "condemned",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "2Thess.2.12",
+    "Rom.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "mind",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Phil.2.2",
+    "Phil.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "think",
+   "part": "head",
+   "hits": 4,
+   "verses": 2,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Phil.3.15",
+    "Rom.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "advise",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "1Kgs.12.9",
+    "2Chr.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6623",
+   "surface": "interpretation",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "interpretation",
+   "transliteration": "pit.ron",
+   "samples": [
+    "Gen.40.5",
+    "Gen.41.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "unknown",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "2Cor.6.9",
+    "Gal.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "doubt",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Jude.1.22",
+    "Matt.21.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1260",
+   "surface": "question",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to discuss",
+   "transliteration": "dialogizomai",
+   "samples": [
+    "Luke.5.22",
+    "Mark.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1329",
+   "surface": "interpret",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to interpret",
+   "transliteration": "diermēneuō",
+   "samples": [
+    "1Cor.12.30",
+    "1Cor.14.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2059",
+   "surface": "means",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to interpret",
+   "transliteration": "hermēneuō",
+   "samples": [
+    "John.1.38",
+    "John.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "condemn",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Luke.19.22",
+    "Rom.2.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "judging",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "1Cor.5.12",
+    "Matt.19.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "judgment",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "1Cor.5.3",
+    "Acts.21.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "trial",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Acts.23.6",
+    "Acts.24.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "tried",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Acts.25.10",
+    "Acts.25.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "judges",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Job.36.31",
+    "Ps.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "vindicate",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Deut.32.36",
+    "Ps.54.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "counseled",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "2Sam.17.15",
+    "Job.26.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "devised",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Hab.2.10",
+    "Isa.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "gave",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "1Kgs.12.8",
+    "2Sam.16.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "made",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Jer.49.20",
+    "Jer.49.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6622",
+   "surface": "interpreted",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to interpret",
+   "transliteration": "pa.tar",
+   "samples": [
+    "Gen.40.22",
+    "Gen.41.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "decide",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Exod.18.16",
+    "Judg.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "vindicate",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ps.26.1",
+    "Ps.43.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "be unaware",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "1Cor.10.1",
+    "Rom.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "not know",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "Rom.6.3",
+    "Rom.7.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "not recognize",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "1Cor.14.38",
+    "Acts.13.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "not understand",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "Luke.9.45",
+    "Mark.9.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "unaware",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "2Cor.1.8",
+    "Rom.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "uninformed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "1Cor.12.1",
+    "1Thess.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0483",
+   "surface": "contradict",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dispute",
+   "transliteration": "antilegō",
+   "samples": [
+    "Acts.13.45",
+    "Titus.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "distinction",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Acts.11.12",
+    "Acts.15.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "doubts",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Jas.1.6",
+    "Rom.14.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1256",
+   "surface": "disputing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dispute",
+   "transliteration": "dialegō",
+   "samples": [
+    "Acts.24.12",
+    "Jude.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1256",
+   "surface": "reasoning",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dispute",
+   "transliteration": "dialegō",
+   "samples": [
+    "Acts.19.8",
+    "Acts.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1256",
+   "surface": "talked",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dispute",
+   "transliteration": "dialegō",
+   "samples": [
+    "Acts.20.7",
+    "Acts.20.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1260",
+   "surface": "questioning",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to discuss",
+   "transliteration": "dialogizomai",
+   "samples": [
+    "Luke.3.15",
+    "Mark.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2058",
+   "surface": "interpretation",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "interpretation",
+   "transliteration": "hermēneia",
+   "samples": [
+    "1Cor.12.10",
+    "1Cor.14.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2213",
+   "surface": "questions",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "a question/dispute",
+   "transliteration": "zētēma",
+   "samples": [
+    "Acts.18.15",
+    "Acts.23.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "esteems",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Rom.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "law",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "1Cor.6.1",
+    "1Cor.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4908",
+   "surface": "understanding",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "intelligent",
+   "transliteration": "sunetos",
+   "samples": [
+    "Luke.10.21",
+    "Matt.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "agree",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "2Cor.13.11",
+    "Phil.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "harmony",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Rom.12.16",
+    "Rom.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "minds",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Col.3.2",
+    "Phil.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "observes",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Rom.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "judged",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Gen.30.6",
+    "Jer.22.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "consult",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Isa.40.14",
+    "Ps.71.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "give",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "1Kgs.1.12",
+    "Ezek.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "given",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "1Kgs.12.13",
+    "2Sam.17.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "plan",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Prov.12.20",
+    "Ps.62.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "plans",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Isa.32.7",
+    "Isa.32.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6622",
+   "surface": "can interpret",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to interpret",
+   "transliteration": "pa.tar",
+   "samples": [
+    "Gen.41.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6622",
+   "surface": "interpret",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to interpret",
+   "transliteration": "pa.tar",
+   "samples": [
+    "Gen.40.8",
+    "Gen.41.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6622",
+   "surface": "interpretation",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to interpret",
+   "transliteration": "pa.tar",
+   "samples": [
+    "Gen.40.16",
+    "Gen.41.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "bring justice",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Isa.1.17",
+    "Isa.1.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "delivered",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "2Sam.18.19",
+    "2Sam.18.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "governing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "2Chr.26.21",
+    "2Kgs.15.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "render",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Zech.7.9",
+    "Zech.8.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "ruled",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Dan.9.12",
+    "Ruth.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "ignorantly",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "1Tim.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "not knowing",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "Rom.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0050",
+   "surface": "not recognized",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ignorant",
+   "transliteration": "agnoeō",
+   "samples": [
+    "1Cor.14.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0056",
+   "surface": "ignorance",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ignorance",
+   "transliteration": "agnōsia",
+   "samples": [
+    "1Pet.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0056",
+   "surface": "no knowledge",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ignorance",
+   "transliteration": "agnōsia",
+   "samples": [
+    "1Cor.15.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0145",
+   "surface": "discernment",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sense",
+   "transliteration": "aisthētērion",
+   "samples": [
+    "Heb.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0474",
+   "surface": "holding",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to discuss",
+   "transliteration": "antiballō",
+   "samples": [
+    "Luke.24.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0483",
+   "surface": "argumentative",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dispute",
+   "transliteration": "antilegō",
+   "samples": [
+    "Titus.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0483",
+   "surface": "contrary",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dispute",
+   "transliteration": "antilegō",
+   "samples": [
+    "Rom.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0483",
+   "surface": "deny",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dispute",
+   "transliteration": "antilegō",
+   "samples": [
+    "Luke.20.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0483",
+   "surface": "objected",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dispute",
+   "transliteration": "antilegō",
+   "samples": [
+    "Acts.28.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0483",
+   "surface": "opposed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dispute",
+   "transliteration": "antilegō",
+   "samples": [
+    "Luke.2.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0483",
+   "surface": "opposes",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dispute",
+   "transliteration": "antilegō",
+   "samples": [
+    "John.19.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0483",
+   "surface": "spoken against",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dispute",
+   "transliteration": "antilegō",
+   "samples": [
+    "Acts.28.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0485",
+   "surface": "dispute",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dispute",
+   "transliteration": "antilogia",
+   "samples": [
+    "Heb.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0485",
+   "surface": "disputes",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dispute",
+   "transliteration": "antilogia",
+   "samples": [
+    "Heb.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0485",
+   "surface": "hostility",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dispute",
+   "transliteration": "antilogia",
+   "samples": [
+    "Heb.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0485",
+   "surface": "rebellion",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dispute",
+   "transliteration": "antilogia",
+   "samples": [
+    "Jude.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0781",
+   "surface": "unwise",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unwise",
+   "transliteration": "asofos",
+   "samples": [
+    "Eph.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1231",
+   "surface": "decide",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to decide",
+   "transliteration": "diaginōskō",
+   "samples": [
+    "Acts.24.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1231",
+   "surface": "determine",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to decide",
+   "transliteration": "diaginōskō",
+   "samples": [
+    "Acts.23.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "contending",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Jude.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "criticized",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Acts.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "discerning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "1Cor.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "dispute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "1Cor.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "distinctions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Jas.2.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "doubting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Jas.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "hesitation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Acts.10.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "interpret",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Matt.16.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "judged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "1Cor.11.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "sees anything different",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "1Cor.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "waver",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "Rom.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1252",
+   "surface": "weigh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge/doubt",
+   "transliteration": "diakrinō",
+   "samples": [
+    "1Cor.14.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1255",
+   "surface": "discussed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to discuss",
+   "transliteration": "dialaleō",
+   "samples": [
+    "Luke.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1255",
+   "surface": "talked about",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to discuss",
+   "transliteration": "dialaleō",
+   "samples": [
+    "Luke.1.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1256",
+   "surface": "addresses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dispute",
+   "transliteration": "dialegō",
+   "samples": [
+    "Heb.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1256",
+   "surface": "argued",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dispute",
+   "transliteration": "dialegō",
+   "samples": [
+    "Mark.9.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1260",
+   "surface": "discern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to discuss",
+   "transliteration": "dialogizomai",
+   "samples": [
+    "Luke.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1260",
+   "surface": "discussed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to discuss",
+   "transliteration": "dialogizomai",
+   "samples": [
+    "Matt.21.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1260",
+   "surface": "questioned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to discuss",
+   "transliteration": "dialogizomai",
+   "samples": [
+    "Mark.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1260",
+   "surface": "said",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to discuss",
+   "transliteration": "dialogizomai",
+   "samples": [
+    "Luke.20.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1260",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to discuss",
+   "transliteration": "dialogizomai",
+   "samples": [
+    "Luke.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1261",
+   "surface": "argument",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reasoning",
+   "transliteration": "dialogismos",
+   "samples": [
+    "Luke.9.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1261",
+   "surface": "disputing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reasoning",
+   "transliteration": "dialogismos",
+   "samples": [
+    "Phil.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1261",
+   "surface": "doubts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reasoning",
+   "transliteration": "dialogismos",
+   "samples": [
+    "Luke.24.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1261",
+   "surface": "opinions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reasoning",
+   "transliteration": "dialogismos",
+   "samples": [
+    "Rom.14.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1261",
+   "surface": "quarreling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reasoning",
+   "transliteration": "dialogismos",
+   "samples": [
+    "1Tim.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1261",
+   "surface": "reasoning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reasoning",
+   "transliteration": "dialogismos",
+   "samples": [
+    "Luke.9.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1261",
+   "surface": "thinking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reasoning",
+   "transliteration": "dialogismos",
+   "samples": [
+    "Rom.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1328",
+   "surface": "interpret",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "interpreter",
+   "transliteration": "diermēneutēs",
+   "samples": [
+    "1Cor.14.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1329",
+   "surface": "interpreted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to interpret",
+   "transliteration": "diermēneuō",
+   "samples": [
+    "Luke.24.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1329",
+   "surface": "interprets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to interpret",
+   "transliteration": "diermēneuō",
+   "samples": [
+    "1Cor.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1329",
+   "surface": "translated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to interpret",
+   "transliteration": "diermēneuō",
+   "samples": [
+    "Acts.9.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1948",
+   "surface": "decided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to decide",
+   "transliteration": "epikrinō",
+   "samples": [
+    "Luke.23.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2059",
+   "surface": "translation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to interpret",
+   "transliteration": "hermēneuō",
+   "samples": [
+    "Heb.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2213",
+   "surface": "controversies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "a question/dispute",
+   "transliteration": "zētēma",
+   "samples": [
+    "Acts.26.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2213",
+   "surface": "dispute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "a question/dispute",
+   "transliteration": "zētēma",
+   "samples": [
+    "Acts.25.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2213",
+   "surface": "question",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "a question/dispute",
+   "transliteration": "zētēma",
+   "samples": [
+    "Acts.15.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "concluded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "2Cor.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "condemning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Acts.13.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "decide",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Rom.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "determined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "1Cor.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Rev.18.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "has determined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "1Cor.7.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "have judged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Luke.7.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "judgment is",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Acts.15.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "judgment on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Col.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "judgments",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Rev.16.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "made up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "2Cor.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "passing judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Rom.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "pronounce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Matt.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "reached",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Acts.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "sue",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Matt.5.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2919",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "krinō",
+   "samples": [
+    "Acts.26.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4817",
+   "surface": "discussed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to discuss",
+   "transliteration": "sullogizomai",
+   "samples": [
+    "Luke.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4908",
+   "surface": "discerning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intelligent",
+   "transliteration": "sunetos",
+   "samples": [
+    "1Cor.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4908",
+   "surface": "intelligence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "intelligent",
+   "transliteration": "sunetos",
+   "samples": [
+    "Acts.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5380",
+   "surface": "contentious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dispute-loving",
+   "transliteration": "filoneikos",
+   "samples": [
+    "1Cor.11.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "concern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Phil.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "concerned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Phil.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "feel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Phil.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "haughty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Rom.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "minds on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Rom.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "setting your mind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Mark.8.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "thought",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "1Cor.13.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "view",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Gal.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5426",
+   "surface": "views",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to reason",
+   "transliteration": "froneō",
+   "samples": [
+    "Acts.28.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "abide",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Gen.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "arguing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "2Sam.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "bring judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Gen.15.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "dispute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Eccl.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "execute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Jer.21.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "execute judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Ps.110.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "rights",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Prov.31.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Zech.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1777",
+   "surface": "uphold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Jer.30.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2782",
+   "surface": "decided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to decide",
+   "transliteration": "cha.rats",
+   "samples": [
+    "1Kgs.20.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2782",
+   "surface": "decree",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to decide",
+   "transliteration": "cha.rats",
+   "samples": [
+    "Isa.28.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2782",
+   "surface": "determined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to decide",
+   "transliteration": "cha.rats",
+   "samples": [
+    "Job.14.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2782",
+   "surface": "growl",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to decide",
+   "transliteration": "cha.rats",
+   "samples": [
+    "Exod.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2782",
+   "surface": "moved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to decide",
+   "transliteration": "cha.rats",
+   "samples": [
+    "Josh.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2782",
+   "surface": "rouse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to decide",
+   "transliteration": "cha.rats",
+   "samples": [
+    "2Sam.5.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "advice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Exod.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "advisers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Prov.15.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "agreed together",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "2Chr.30.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "conspire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Ps.83.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "consult together",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Ps.83.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "consulted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "1Chr.13.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "determined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "2Chr.25.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "know",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Num.24.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "planned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "2Chr.32.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "take advice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Prov.13.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3289",
+   "surface": "take counsel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ya.ats",
+   "samples": [
+    "Isa.45.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4427B",
+   "surface": "took counsel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to advise",
+   "transliteration": "ma.lakh",
+   "samples": [
+    "Neh.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6590",
+   "surface": "give",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to interpret",
+   "transliteration": "pe.shar",
+   "samples": [
+    "Dan.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6590",
+   "surface": "interpret",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to interpret",
+   "transliteration": "pe.shar",
+   "samples": [
+    "Dan.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6591",
+   "surface": "interpretations",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "interpretation",
+   "transliteration": "pe.shar",
+   "samples": [
+    "Dan.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6592",
+   "surface": "interpretation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "interpretation",
+   "transliteration": "pe.sher",
+   "samples": [
+    "Eccl.8.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6623",
+   "surface": "interpretations",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "interpretation",
+   "transliteration": "pit.ron",
+   "samples": [
+    "Gen.40.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "accuser",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Job.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "argue",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Isa.43.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "argument",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Prov.29.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "become",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Gen.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "cause",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ps.72.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "condemn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ps.109.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "decide between",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Deut.25.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "decided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Exod.18.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "defend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Jer.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "deliver",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "1Sam.24.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "execute judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "2Chr.20.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "executing judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "2Chr.22.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "give justice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ps.82.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "give sentence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "1Sam.24.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "giving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ps.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "judging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Judg.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "justice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ps.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "law",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Isa.59.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "plead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "1Sam.12.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "pronounce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "1Kgs.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "punish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "1Sam.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "rendered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "1Kgs.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "rule",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Obad.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "ruler",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Amos.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "trial",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ps.37.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8199",
+   "surface": "tried",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "sha.phat",
+   "samples": [
+    "Ps.109.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8200",
+   "surface": "magistrates",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "she.phat",
+   "samples": [
+    "Ezra.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

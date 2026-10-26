@@ -1,0 +1,3318 @@
+{
+ "cluster": "M26",
+ "cluster_name": "Judgment & Condemnation",
+ "built_at": "2026-10-26T04:20:42Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 202,
+  "head": 97,
+  "tail": 105,
+  "hits": 527,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G2920",
+   "surface": "judgment",
+   "part": "head",
+   "hits": 38,
+   "verses": 37,
+   "gloss": "judgment",
+   "transliteration": "krisis",
+   "samples": [
+    "Jude.1.15",
+    "Matt.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "justified",
+   "part": "head",
+   "hits": 26,
+   "verses": 23,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "Jas.2.21",
+    "Rom.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5360",
+   "surface": "vengeance",
+   "part": "head",
+   "hits": 21,
+   "verses": 16,
+   "gloss": "vengeance",
+   "transliteration": "ne.qa.mah",
+   "samples": [
+    "Ezek.25.17",
+    "Num.31.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "contend",
+   "part": "head",
+   "hits": 21,
+   "verses": 19,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Hos.4.4",
+    "Isa.57.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5359",
+   "surface": "vengeance",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "vengeance",
+   "transliteration": "na.qam",
+   "samples": [
+    "Deut.32.35",
+    "Ezek.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "right",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Ezek.16.52",
+    "Job.27.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2917",
+   "surface": "judgment",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "judgment",
+   "transliteration": "krima",
+   "samples": [
+    "Rev.17.1",
+    "Rev.18.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "counted",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "Rom.4.22",
+    "Rom.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8201",
+   "surface": "judgments",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "judgment",
+   "transliteration": "she.phet",
+   "samples": [
+    "Ezek.30.19",
+    "Ezek.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "plead",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Hos.2.2",
+    "Jer.51.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2632",
+   "surface": "condemn",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to condemn",
+   "transliteration": "katakrinō",
+   "samples": [
+    "Rom.2.1",
+    "Rom.8.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2632",
+   "surface": "condemned",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to condemn",
+   "transliteration": "katakrinō",
+   "samples": [
+    "1Cor.11.32",
+    "2Pet.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "go unpunished",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Prov.16.5",
+    "Prov.6.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2917",
+   "surface": "condemnation",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "judgment",
+   "transliteration": "krima",
+   "samples": [
+    "2Pet.2.3",
+    "Jude.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "avenge",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Jer.9.9",
+    "Num.31.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "righteous",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Isa.53.11",
+    "Job.15.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1779",
+   "surface": "judgment",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "judgment",
+   "transliteration": "din",
+   "samples": [
+    "Job.19.29",
+    "Prov.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "avenged",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Exod.21.20",
+    "Exod.21.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "quarreled",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Gen.26.20",
+    "Num.20.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2920",
+   "surface": "justice",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "judgment",
+   "transliteration": "krisis",
+   "samples": [
+    "Acts.8.33",
+    "Matt.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "free",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Gen.24.8",
+    "Num.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "innocent",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Jer.2.35",
+    "Job.9.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0156",
+   "surface": "charge",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "cause/charge",
+   "transliteration": "aitia",
+   "samples": [
+    "Acts.23.28",
+    "Mark.15.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0156",
+   "surface": "reason",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "cause/charge",
+   "transliteration": "aitia",
+   "samples": [
+    "2Tim.1.6",
+    "Acts.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0156",
+   "surface": "why",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "cause/charge",
+   "transliteration": "aitia",
+   "samples": [
+    "2Tim.1.12",
+    "Luke.8.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0467",
+   "surface": "repay",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to repay",
+   "transliteration": "antapodidōmi",
+   "samples": [
+    "Luke.14.14",
+    "Rom.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "justify",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "Gal.3.8",
+    "Luke.16.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1557",
+   "surface": "vengeance",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "vengeance",
+   "transliteration": "ekdikēsis",
+   "samples": [
+    "2Thess.1.8",
+    "Rom.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2613",
+   "surface": "condemned",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to condemn",
+   "transliteration": "katadikazō",
+   "samples": [
+    "Jas.5.6",
+    "Matt.12.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "consider",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "2Cor.11.5",
+    "Rom.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1779",
+   "surface": "cause",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "judgment",
+   "transliteration": "din",
+   "samples": [
+    "Jer.30.13",
+    "Ps.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "guiltless",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "1Kgs.2.9",
+    "1Sam.26.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6186B",
+   "surface": "value",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to value",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Lev.27.14",
+    "Lev.27.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8201",
+   "surface": "judgment",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "judgment",
+   "transliteration": "she.phet",
+   "samples": [
+    "2Chr.24.24",
+    "Exod.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0156",
+   "surface": "guilt",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "cause/charge",
+   "transliteration": "aitia",
+   "samples": [
+    "John.18.38",
+    "John.19.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1779",
+   "surface": "rights",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "judgment",
+   "transliteration": "din",
+   "samples": [
+    "Prov.29.7",
+    "Prov.31.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "clear",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Exod.21.19",
+    "Num.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "unpunished",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Jer.30.11",
+    "Jer.46.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "avenger",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Ps.44.16",
+    "Ps.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "take vengeance",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Esth.8.13",
+    "Jer.50.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "justified",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Job.32.2",
+    "Ps.51.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "confronted",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Neh.13.17",
+    "Neh.13.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "quarrel",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Exod.21.18",
+    "Gen.26.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0703",
+   "surface": "excellence",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "virtue",
+   "transliteration": "aretē",
+   "samples": [
+    "2Pet.1.3",
+    "Phil.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0703",
+   "surface": "virtue",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "virtue",
+   "transliteration": "aretē",
+   "samples": [
+    "2Pet.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "freed",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "Acts.13.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "justifies",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "Rom.4.5",
+    "Rom.8.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1347",
+   "surface": "justification",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "justification",
+   "transliteration": "dikaiōsis",
+   "samples": [
+    "Rom.4.25",
+    "Rom.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1349",
+   "surface": "punishment",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "condemnation",
+   "transliteration": "dikē",
+   "samples": [
+    "2Thess.1.9",
+    "Jude.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1556",
+   "surface": "avenge",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to avenge",
+   "transliteration": "ekdikeō",
+   "samples": [
+    "Rev.6.10",
+    "Rom.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1556",
+   "surface": "justice",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to avenge",
+   "transliteration": "ekdikeō",
+   "samples": [
+    "Luke.18.3",
+    "Luke.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1558",
+   "surface": "avenger",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "avenging",
+   "transliteration": "ekdikos",
+   "samples": [
+    "1Thess.4.6",
+    "Rom.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2920",
+   "surface": "judgments",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "judgment",
+   "transliteration": "krisis",
+   "samples": [
+    "Rev.16.7",
+    "Rev.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "regard",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "1Cor.4.1",
+    "1Pet.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "regarded",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "Rom.2.26",
+    "Rom.8.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "think",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "2Cor.12.6",
+    "Phil.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "understand",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "2Cor.10.11",
+    "John.11.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1779",
+   "surface": "justice",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "judgment",
+   "transliteration": "din",
+   "samples": [
+    "Isa.10.2",
+    "Jer.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "cleaned out",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Zech.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "go",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Jer.25.29",
+    "Prov.17.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "leave",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Jer.30.11",
+    "Jer.46.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "means",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Exod.34.7",
+    "Nah.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "avenging",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Nah.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "take",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Ezek.24.8",
+    "Jer.51.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "vengeance",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Lev.19.18",
+    "Nah.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5360",
+   "surface": "avenged",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "vengeance",
+   "transliteration": "ne.qa.mah",
+   "samples": [
+    "2Sam.4.8",
+    "Judg.11.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "acquit",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Exod.23.7",
+    "Isa.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "appear righteous",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Ezek.16.51",
+    "Ezek.16.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "vindicating",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "1Kgs.8.32",
+    "2Chr.6.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "case",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Jer.12.1",
+    "Job.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "defend",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Ps.43.1",
+    "Ps.74.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8196",
+   "surface": "judgment",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "judgment",
+   "transliteration": "she.phot",
+   "samples": [
+    "2Chr.20.9",
+    "Ezek.23.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0087",
+   "surface": "impartial",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "impartial",
+   "transliteration": "adiakritos",
+   "samples": [
+    "Jas.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0156",
+   "surface": "case",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause/charge",
+   "transliteration": "aitia",
+   "samples": [
+    "Matt.19.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0156",
+   "surface": "cause",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause/charge",
+   "transliteration": "aitia",
+   "samples": [
+    "Matt.19.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0156",
+   "surface": "charges",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause/charge",
+   "transliteration": "aitia",
+   "samples": [
+    "Acts.25.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0156",
+   "surface": "guilt worthy",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause/charge",
+   "transliteration": "aitia",
+   "samples": [
+    "Acts.13.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0156",
+   "surface": "therefore",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cause/charge",
+   "transliteration": "aitia",
+   "samples": [
+    "Titus.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0157",
+   "surface": "charges",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "charge",
+   "transliteration": "aitiama",
+   "samples": [
+    "Acts.25.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0159",
+   "surface": "cause",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "causer",
+   "transliteration": "aitios",
+   "samples": [
+    "Acts.19.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0159",
+   "surface": "guilt",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "causer",
+   "transliteration": "aitios",
+   "samples": [
+    "Luke.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0159",
+   "surface": "guilt deserving",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "causer",
+   "transliteration": "aitios",
+   "samples": [
+    "Luke.23.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0159",
+   "surface": "guilty",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "causer",
+   "transliteration": "aitios",
+   "samples": [
+    "Luke.23.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0159",
+   "surface": "source",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "causer",
+   "transliteration": "aitios",
+   "samples": [
+    "Heb.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0467",
+   "surface": "repaid",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to repay",
+   "transliteration": "antapodidōmi",
+   "samples": [
+    "Luke.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0467",
+   "surface": "return",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to repay",
+   "transliteration": "antapodidōmi",
+   "samples": [
+    "1Thess.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0661",
+   "surface": "repay",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to repay",
+   "transliteration": "apotinō",
+   "samples": [
+    "Phlm.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0703",
+   "surface": "excellencies",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "virtue",
+   "transliteration": "aretē",
+   "samples": [
+    "1Pet.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0843",
+   "surface": "self-condemned",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "self-condemned",
+   "transliteration": "autokatakritos",
+   "samples": [
+    "Titus.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1264",
+   "surface": "contended sharply",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend sharply",
+   "transliteration": "diamachomai",
+   "samples": [
+    "Acts.23.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "acquitted",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "1Cor.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "declared",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "Luke.7.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "justifier",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "Rom.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "right",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "Rev.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "set free",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "Rom.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1344",
+   "surface": "vindicated",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "dikaioō",
+   "samples": [
+    "1Tim.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1349",
+   "surface": "justice",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "condemnation",
+   "transliteration": "dikē",
+   "samples": [
+    "Acts.28.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1556",
+   "surface": "avenged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "ekdikeō",
+   "samples": [
+    "Rev.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1556",
+   "surface": "punish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "ekdikeō",
+   "samples": [
+    "2Cor.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1557",
+   "surface": "avenged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "ekdikēsis",
+   "samples": [
+    "Acts.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1557",
+   "surface": "give justice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "ekdikēsis",
+   "samples": [
+    "Luke.18.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1557",
+   "surface": "justice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "ekdikēsis",
+   "samples": [
+    "Luke.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1557",
+   "surface": "punish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "ekdikēsis",
+   "samples": [
+    "1Pet.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1557",
+   "surface": "punishment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "ekdikēsis",
+   "samples": [
+    "2Cor.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1888",
+   "surface": "act",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "in the very act",
+   "transliteration": "epautofōros autofōros",
+   "samples": [
+    "John.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2607",
+   "surface": "condemn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to condemn",
+   "transliteration": "kataginōskō",
+   "samples": [
+    "1John.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2607",
+   "surface": "condemned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to condemn",
+   "transliteration": "kataginōskō",
+   "samples": [
+    "Gal.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2607",
+   "surface": "condemns us",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to condemn",
+   "transliteration": "kataginōskō",
+   "samples": [
+    "1John.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2613",
+   "surface": "condemn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to condemn",
+   "transliteration": "katadikazō",
+   "samples": [
+    "Luke.6.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2632",
+   "surface": "judged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to condemn",
+   "transliteration": "katakrinō",
+   "samples": [
+    "Jas.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2633",
+   "surface": "condemn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "condemnation",
+   "transliteration": "katakrisis",
+   "samples": [
+    "2Cor.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2633",
+   "surface": "condemnation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "condemnation",
+   "transliteration": "katakrisis",
+   "samples": [
+    "2Cor.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2917",
+   "surface": "condemned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "krima",
+   "samples": [
+    "Luke.24.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2917",
+   "surface": "judge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "krima",
+   "samples": [
+    "Rev.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2917",
+   "surface": "judged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "krima",
+   "samples": [
+    "Jas.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2917",
+   "surface": "judgments",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "krima",
+   "samples": [
+    "Rom.11.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2917",
+   "surface": "lawsuits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "krima",
+   "samples": [
+    "1Cor.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2917",
+   "surface": "penalty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "krima",
+   "samples": [
+    "Gal.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2920",
+   "surface": "",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "krisis",
+   "samples": [
+    "Mark.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2920",
+   "surface": "condemnation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "krisis",
+   "samples": [
+    "Jas.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2920",
+   "surface": "sentenced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "krisis",
+   "samples": [
+    "Matt.23.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "charged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "2Tim.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "claim",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "2Cor.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "considered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "Heb.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "count",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "Rom.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "count on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "2Cor.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "counting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "2Cor.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "counts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "Rom.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "discussed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "Mark.11.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "hold",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "Rom.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "let him remind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "2Cor.10.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "numbered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "Luke.22.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "reasoned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "1Cor.13.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "resentful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "1Cor.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "suspect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "2Cor.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3049",
+   "surface": "thinks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to count",
+   "transliteration": "logizomai",
+   "samples": [
+    "Rom.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5267",
+   "surface": "accountable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "accountable",
+   "transliteration": "hupodikos",
+   "samples": [
+    "Rom.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6048",
+   "surface": "condemnation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "katadikē",
+   "samples": [
+    "Acts.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6083",
+   "surface": "aware",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be conscious of",
+   "transliteration": "sunoida",
+   "samples": [
+    "1Cor.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1778",
+   "surface": "judge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to judge",
+   "transliteration": "din",
+   "samples": [
+    "Ezra.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1779",
+   "surface": "another",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "din",
+   "samples": [
+    "Deut.17.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1779",
+   "surface": "case",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "din",
+   "samples": [
+    "Job.35.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1779",
+   "surface": "fatherless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "din",
+   "samples": [
+    "Jer.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1779",
+   "surface": "legal right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "din",
+   "samples": [
+    "Deut.17.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1779",
+   "surface": "quarreling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "din",
+   "samples": [
+    "Prov.22.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4941K",
+   "surface": "judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "[Hall of] Judgment",
+   "transliteration": "mish.pat",
+   "samples": [
+    "1Kgs.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "acquit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Job.10.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "avenge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Joel.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "empty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Isa.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "guilty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Exod.34.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "not avenged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Joel.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "will",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Num.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5352",
+   "surface": "you",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to clear",
+   "transliteration": "na.qah",
+   "samples": [
+    "Jer.49.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "avenge myself",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Jer.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "avenges",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Deut.32.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "execute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Lev.26.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "he shall",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Exod.21.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "revenge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Gen.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "revengefully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Ezek.25.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "taken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Gen.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "taking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Ezek.25.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "took",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Ezek.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5358",
+   "surface": "took vengeance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to avenge",
+   "transliteration": "na.qam",
+   "samples": [
+    "Josh.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5359",
+   "surface": "avenged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "na.qam",
+   "samples": [
+    "Judg.16.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5359",
+   "surface": "takes revenge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "na.qam",
+   "samples": [
+    "Prov.6.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5360",
+   "surface": "avenge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "ne.qa.mah",
+   "samples": [
+    "Num.31.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5360",
+   "surface": "avenging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "ne.qa.mah",
+   "samples": [
+    "Ps.79.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5360",
+   "surface": "revenge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "ne.qa.mah",
+   "samples": [
+    "Jer.20.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5360",
+   "surface": "revengefully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vengeance",
+   "transliteration": "ne.qa.mah",
+   "samples": [
+    "Ezek.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6186B",
+   "surface": "taxed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to value",
+   "transliteration": "a.rakh",
+   "samples": [
+    "2Kgs.23.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6186B",
+   "surface": "values",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to value",
+   "transliteration": "a.rakh",
+   "samples": [
+    "Lev.27.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "acquitting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Deut.25.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "clear ourselves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Gen.44.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "judged right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Job.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "justice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "2Sam.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "justifies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Prov.17.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "justify",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Job.33.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "my",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Job.9.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "restored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Dan.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "righteousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Dan.12.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6663",
+   "surface": "vindicates",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to justify",
+   "transliteration": "tsa.deq",
+   "samples": [
+    "Isa.50.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "accused",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Judg.8.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "adversaries",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "1Sam.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "argue",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Prov.25.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "avenged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "1Sam.25.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "berated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Gen.31.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "brought charges",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Neh.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "cause",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Isa.51.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "chide",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Ps.103.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "complain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Judg.21.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "contended",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Isa.27.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "contends",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Judg.6.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "contention",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Hos.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "court",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Prov.25.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "defender",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Isa.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "ever",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Judg.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "judgment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Amos.7.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "pleads",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Mic.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "strives",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Isa.45.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Jer.50.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7378",
+   "surface": "taken up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to contend",
+   "transliteration": "riv",
+   "samples": [
+    "Lam.3.58"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8201",
+   "surface": "condemnation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "judgment",
+   "transliteration": "she.phet",
+   "samples": [
+    "Prov.19.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

@@ -1,0 +1,5100 @@
+{
+ "cluster": "M58",
+ "cluster_name": "Wickedness",
+ "built_at": "2026-10-26T04:25:00Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 310,
+  "head": 70,
+  "tail": 240,
+  "hits": 1502,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H7563",
+   "surface": "wicked",
+   "part": "head",
+   "hits": 241,
+   "verses": 229,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Mal.3.18",
+    "Ps.28.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "evil",
+   "part": "head",
+   "hits": 146,
+   "verses": 142,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Jer.52.2",
+    "Ps.141.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "evil",
+   "part": "head",
+   "hits": 112,
+   "verses": 106,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Ps.28.3",
+    "Zech.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "evil",
+   "part": "head",
+   "hits": 83,
+   "verses": 80,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.6.24",
+    "Ps.36.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8441",
+   "surface": "abominations",
+   "part": "head",
+   "hits": 57,
+   "verses": 55,
+   "gloss": "abomination",
+   "transliteration": "to.e.vah",
+   "samples": [
+    "Ezek.44.13",
+    "Jer.16.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "evil",
+   "part": "head",
+   "hits": 49,
+   "verses": 45,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "1John.3.12",
+    "Rom.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8441",
+   "surface": "abomination",
+   "part": "head",
+   "hits": 49,
+   "verses": 48,
+   "gloss": "abomination",
+   "transliteration": "to.e.vah",
+   "samples": [
+    "Isa.1.13",
+    "Mal.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556G",
+   "surface": "evil",
+   "part": "head",
+   "hits": 30,
+   "verses": 26,
+   "gloss": "evil/harm: evil",
+   "transliteration": "kakos",
+   "samples": [
+    "Jas.3.8",
+    "Rom.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "bad",
+   "part": "head",
+   "hits": 26,
+   "verses": 23,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "2Sam.13.22",
+    "Jer.24.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "iniquity",
+   "part": "head",
+   "hits": 25,
+   "verses": 25,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Hab.1.3",
+    "Isa.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7562",
+   "surface": "wickedness",
+   "part": "head",
+   "hits": 24,
+   "verses": 23,
+   "gloss": "wickedness",
+   "transliteration": "re.sha",
+   "samples": [
+    "Ezek.7.11",
+    "Ps.45.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "evildoers",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Hos.6.8",
+    "Job.34.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "evil",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "2Kgs.21.11",
+    "Isa.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "evildoers",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Isa.31.2",
+    "Ps.119.115"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "wicked",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "2Kgs.17.11",
+    "Jer.15.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7455",
+   "surface": "evil",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "evil",
+   "transliteration": "ro.a",
+   "samples": [
+    "Isa.1.16",
+    "Jer.44.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "displeased",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Isa.59.15",
+    "Num.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8251",
+   "surface": "detestable things",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "abomination",
+   "transliteration": "shiq.quts",
+   "samples": [
+    "Deut.29.17",
+    "Ezek.37.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "lewdness",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Ezek.16.43",
+    "Ezek.23.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "wickedness",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Ezek.16.23",
+    "Ps.94.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "unrighteousness",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "1John.1.9",
+    "Rom.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7564",
+   "surface": "wickedness",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "wickedness",
+   "transliteration": "rish.ah",
+   "samples": [
+    "Ezek.18.27",
+    "Isa.9.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0765",
+   "surface": "ungodly",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "ungodly",
+   "transliteration": "asebēs",
+   "samples": [
+    "1Pet.4.18",
+    "Rom.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "evil",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Isa.29.20",
+    "Job.15.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "harm",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Jer.7.6",
+    "Prov.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "harm",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Gen.31.7",
+    "Jer.25.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "wickedly",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "1Kgs.8.47",
+    "Dan.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "evil one",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "1John.5.19",
+    "John.17.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "wicked",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "2Thess.3.2",
+    "Matt.18.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "harmful",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "1Sam.16.15",
+    "Lev.26.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8251",
+   "surface": "abomination",
+   "part": "head",
+   "hits": 7,
+   "verses": 5,
+   "gloss": "abomination",
+   "transliteration": "shiq.quts",
+   "samples": [
+    "1Kgs.11.5",
+    "Dan.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "blaspheme",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "1Tim.1.20",
+    "2Pet.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0988",
+   "surface": "slander",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "blasphemy",
+   "transliteration": "blasfēmia",
+   "samples": [
+    "Eph.4.31",
+    "Matt.15.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2549",
+   "surface": "malice",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "evil",
+   "transliteration": "kakia",
+   "samples": [
+    "1Pet.2.1",
+    "Titus.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556G",
+   "surface": "wrong",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "evil/harm: evil",
+   "transliteration": "kakos",
+   "samples": [
+    "Rom.13.10",
+    "Rom.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "wicked",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Jer.4.14",
+    "Job.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "evils",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Ezek.6.9",
+    "Ps.40.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "condemn",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Job.34.17",
+    "Ps.94.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7563",
+   "surface": "guilty",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "1Kgs.8.32",
+    "Isa.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8251",
+   "surface": "abominations",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "abomination",
+   "transliteration": "shiq.quts",
+   "samples": [
+    "Isa.66.3",
+    "Zech.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "blaspheming",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "2Pet.2.12",
+    "Luke.22.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0988",
+   "surface": "blasphemy",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "blasphemy",
+   "transliteration": "blasfēmia",
+   "samples": [
+    "Mark.14.64",
+    "Matt.12.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "bad",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "Matt.22.10",
+    "Matt.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "grievous",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Deut.28.35",
+    "Eccl.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "trouble",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.13.17",
+    "Ps.49.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7563",
+   "surface": "wicked man",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Prov.24.15",
+    "Ps.112.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8441",
+   "surface": "abominable",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "abomination",
+   "transliteration": "to.e.vah",
+   "samples": [
+    "Ezek.16.36",
+    "Ezek.7.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "wrongdoing",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "1John.5.17",
+    "2Pet.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1442",
+   "surface": "reviled",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to blaspheme",
+   "transliteration": "ga.daph",
+   "samples": [
+    "2Kgs.19.6",
+    "Isa.37.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "depravity",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Lev.18.17",
+    "Lev.19.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "wild",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Ezek.34.25",
+    "Ezek.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "ugly",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Gen.41.21",
+    "Gen.41.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "wrong",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "1Sam.24.11",
+    "1Sam.29.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "condemns",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Prov.12.2",
+    "Prov.17.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7562",
+   "surface": "wicked",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "wickedness",
+   "transliteration": "re.sha",
+   "samples": [
+    "Job.34.8",
+    "Mic.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0946",
+   "surface": "abomination",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "abomination",
+   "transliteration": "bdelugma",
+   "samples": [
+    "Luke.16.15",
+    "Matt.24.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "cursed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Rev.16.11",
+    "Rev.16.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "reviled",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Acts.18.6",
+    "Titus.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0988",
+   "surface": "blasphemous",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "blasphemy",
+   "transliteration": "blasfēmia",
+   "samples": [
+    "Jude.1.9",
+    "Rev.17.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556G",
+   "surface": "bad",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "evil/harm: evil",
+   "transliteration": "kakos",
+   "samples": [
+    "1Cor.15.33",
+    "Rom.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556H",
+   "surface": "harm",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "evil/harm: harm",
+   "transliteration": "kakos",
+   "samples": [
+    "2Tim.4.14",
+    "Acts.16.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4189",
+   "surface": "evil",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "evil",
+   "transliteration": "ponēria",
+   "samples": [
+    "Eph.6.12",
+    "Rom.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4189",
+   "surface": "wickedness",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "evil",
+   "transliteration": "ponēria",
+   "samples": [
+    "Acts.3.26",
+    "Mark.7.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5337",
+   "surface": "evil",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "evil",
+   "transliteration": "faulos",
+   "samples": [
+    "2Cor.5.10",
+    "John.5.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "trouble",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Ps.36.3",
+    "Ps.55.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "lewd",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Ezek.16.27",
+    "Ezek.23.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "disaster",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Amos.6.3",
+    "Isa.31.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "wicked",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Ezek.11.2",
+    "Ezek.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "evildoing",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Eccl.7.15",
+    "Lam.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7455",
+   "surface": "bad",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "evil",
+   "transliteration": "ro.a",
+   "samples": [
+    "Jer.24.2",
+    "Jer.24.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "done evil",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Exod.5.23",
+    "Gen.44.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "hurt",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Isa.11.9",
+    "Ps.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Gen.38.10",
+    "Ps.64.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "wickedly",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "1Sam.12.25",
+    "Gen.19.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "worse",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "2Sam.19.7",
+    "Jer.16.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "guilty",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Isa.50.9",
+    "Job.10.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7563",
+   "surface": "wicked person",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Ezek.18.21",
+    "Ezek.18.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8262",
+   "surface": "detest",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to detest",
+   "transliteration": "shiq.qets",
+   "samples": [
+    "Deut.7.26",
+    "Lev.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "iniquity",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "2Tim.2.19",
+    "Acts.8.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "unrighteous",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "Luke.16.9",
+    "Luke.18.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0764",
+   "surface": "ungodly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be ungodly",
+   "transliteration": "asebeō",
+   "samples": [
+    "2Pet.2.6",
+    "Jude.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0824",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wrong",
+   "transliteration": "atopos",
+   "samples": [
+    "Acts.25.5",
+    "Luke.23.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0946",
+   "surface": "abominations",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "abomination",
+   "transliteration": "bdelugma",
+   "samples": [
+    "Rev.17.4",
+    "Rev.17.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "blasphemed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "2Pet.2.2",
+    "Rom.2.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "blasphemes",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Luke.12.10",
+    "Mark.3.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "derided",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Mark.15.29",
+    "Matt.27.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Rom.14.16",
+    "Titus.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0988",
+   "surface": "blasphemies",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "blasphemy",
+   "transliteration": "blasfēmia",
+   "samples": [
+    "Luke.5.21",
+    "Mark.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0989",
+   "surface": "blasphemous",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "blasphemous",
+   "transliteration": "blasfēmos",
+   "samples": [
+    "2Pet.2.11",
+    "Acts.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2549",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "evil",
+   "transliteration": "kakia",
+   "samples": [
+    "1Cor.14.20",
+    "1Pet.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2549",
+   "surface": "wickedness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "evil",
+   "transliteration": "kakia",
+   "samples": [
+    "Acts.8.22",
+    "Jas.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2554",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to do evil/harm",
+   "transliteration": "kakopoieō",
+   "samples": [
+    "1Pet.3.17",
+    "3John.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2554",
+   "surface": "harm",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to do evil/harm",
+   "transliteration": "kakopoieō",
+   "samples": [
+    "Luke.6.9",
+    "Mark.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2555",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wrongdoing",
+   "transliteration": "kakopoios",
+   "samples": [
+    "1Pet.2.14",
+    "John.18.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "evil things",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "Luke.3.19",
+    "Mark.7.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0192",
+   "surface": "evil-merodach",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "Evil-merodach",
+   "transliteration": "e.vil me.ro.dakh",
+   "samples": [
+    "2Kgs.25.27",
+    "Jer.52.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "wickedness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Isa.58.9",
+    "Mic.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205H",
+   "surface": "affliction",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "evil: trouble",
+   "transliteration": "a.ven",
+   "samples": [
+    "Hab.3.7",
+    "Job.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205H",
+   "surface": "trouble",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "evil: trouble",
+   "transliteration": "a.ven",
+   "samples": [
+    "Jer.4.15",
+    "Ps.90.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "disastrous",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Exod.33.4",
+    "Ezek.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "fierce",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Gen.37.20",
+    "Gen.37.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "sad",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Neh.2.1",
+    "Neh.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "ugly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Gen.41.20",
+    "Gen.41.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "unhappy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Eccl.1.13",
+    "Eccl.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "malice",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Ps.41.5",
+    "Ps.73.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "evildoers",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Ezek.30.12",
+    "Prov.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "please",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Exod.21.8",
+    "Gen.28.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "stingy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.23.6",
+    "Prov.28.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "evil deeds",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Hos.7.1",
+    "Ps.141.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7455",
+   "surface": "sadness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "evil",
+   "transliteration": "ro.a",
+   "samples": [
+    "Eccl.7.3",
+    "Neh.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "afflicted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Mic.4.6",
+    "Ps.44.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "begrudge",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Deut.28.54",
+    "Deut.28.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "brought calamity",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "1Kgs.17.20",
+    "Ruth.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "evildoer",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Isa.9.17",
+    "Prov.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "harshly",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Deut.26.6",
+    "Num.20.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "condemned",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Job.9.29",
+    "Ps.37.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "condemning",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "1Kgs.8.32",
+    "Deut.25.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7563",
+   "surface": "wickedness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Job.34.26",
+    "Prov.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7563",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Exod.2.13",
+    "Exod.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7564",
+   "surface": "evildoers",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wickedness",
+   "transliteration": "rish.ah",
+   "samples": [
+    "Mal.3.15",
+    "Mal.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8262",
+   "surface": "detestable",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to detest",
+   "transliteration": "shiq.qets",
+   "samples": [
+    "Lev.11.43",
+    "Lev.20.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8441",
+   "surface": "abominable practices",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "abomination",
+   "transliteration": "to.e.vah",
+   "samples": [
+    "Deut.18.9",
+    "Deut.20.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "dishonest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "Luke.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "Luke.13.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "falsehood",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "John.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "iniquities",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "Heb.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "injustice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "Rom.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "2Thess.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "wickedness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "Acts.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0093",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unrighteousness",
+   "transliteration": "adikia",
+   "samples": [
+    "2Cor.12.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0824",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrong",
+   "transliteration": "atopos",
+   "samples": [
+    "2Thess.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0824",
+   "surface": "misfortune",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrong",
+   "transliteration": "atopos",
+   "samples": [
+    "Acts.28.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0946",
+   "surface": "detestable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abomination",
+   "transliteration": "bdelugma",
+   "samples": [
+    "Rev.21.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0947",
+   "surface": "detestable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abominable",
+   "transliteration": "bdeluktos",
+   "samples": [
+    "Titus.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "blasphemers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Acts.19.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "denounced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "1Cor.10.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "malign",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "1Pet.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "railed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Luke.23.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "reviling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Acts.13.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "slandered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "1Cor.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "slanderously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Rom.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "utter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Mark.3.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0987",
+   "surface": "uttered blasphemy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "blasfēmeō",
+   "samples": [
+    "Matt.26.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0988",
+   "surface": "blaspheming",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blasphemy",
+   "transliteration": "blasfēmia",
+   "samples": [
+    "Mark.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0988",
+   "surface": "blasphemous words",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blasphemy",
+   "transliteration": "blasfēmia",
+   "samples": [
+    "Rev.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0988",
+   "surface": "utter blasphemies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blasphemy",
+   "transliteration": "blasfēmia",
+   "samples": [
+    "Rev.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0989",
+   "surface": "abusive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blasphemous",
+   "transliteration": "blasfēmos",
+   "samples": [
+    "2Tim.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0989",
+   "surface": "blasphemer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blasphemous",
+   "transliteration": "blasfēmos",
+   "samples": [
+    "1Tim.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2549",
+   "surface": "trouble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil",
+   "transliteration": "kakia",
+   "samples": [
+    "Matt.6.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2550",
+   "surface": "maliciousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "malice",
+   "transliteration": "kakoētheia",
+   "samples": [
+    "Rom.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2555",
+   "surface": "evildoer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrongdoing",
+   "transliteration": "kakopoios",
+   "samples": [
+    "1Pet.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2555",
+   "surface": "evildoers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrongdoing",
+   "transliteration": "kakopoios",
+   "samples": [
+    "1Pet.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2555",
+   "surface": "slandered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrongdoing",
+   "transliteration": "kakopoios",
+   "samples": [
+    "1Pet.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556G",
+   "surface": "evildoers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/harm: evil",
+   "transliteration": "kakos",
+   "samples": [
+    "Phil.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556G",
+   "surface": "evils",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/harm: evil",
+   "transliteration": "kakos",
+   "samples": [
+    "1Tim.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556G",
+   "surface": "harmful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/harm: evil",
+   "transliteration": "kakos",
+   "samples": [
+    "Rev.16.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556G",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/harm: evil",
+   "transliteration": "kakos",
+   "samples": [
+    "Matt.24.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556G",
+   "surface": "wretches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/harm: evil",
+   "transliteration": "kakos",
+   "samples": [
+    "Matt.21.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556G",
+   "surface": "wrongdoer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/harm: evil",
+   "transliteration": "kakos",
+   "samples": [
+    "Rom.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556H",
+   "surface": "bad things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/harm: harm",
+   "transliteration": "kakos",
+   "samples": [
+    "Luke.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2556H",
+   "surface": "resentful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/harm: harm",
+   "transliteration": "kakos",
+   "samples": [
+    "1Cor.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4189",
+   "surface": "malice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil",
+   "transliteration": "ponēria",
+   "samples": [
+    "Matt.22.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "begrudge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "Matt.20.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "envy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "Mark.7.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "evil person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "1Cor.5.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "evils",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "Acts.25.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "more evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "Matt.12.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "painful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "Rev.16.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4190",
+   "surface": "vicious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil/bad",
+   "transliteration": "ponēros",
+   "samples": [
+    "Acts.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4191",
+   "surface": "more evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "more evil",
+   "transliteration": "ponēroteros",
+   "samples": [
+    "Luke.11.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5337",
+   "surface": "vile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil",
+   "transliteration": "faulos",
+   "samples": [
+    "Jas.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5337",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil",
+   "transliteration": "faulos",
+   "samples": [
+    "John.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "crime",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Ps.56.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "idol",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Isa.66.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "iniquitous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Isa.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "nonsense",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Zech.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "unrighteous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Isa.55.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205G",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: wickedness",
+   "transliteration": "a.ven",
+   "samples": [
+    "Prov.30.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205H",
+   "surface": "calamity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: trouble",
+   "transliteration": "a.ven",
+   "samples": [
+    "Prov.22.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205H",
+   "surface": "come to nothing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: trouble",
+   "transliteration": "a.ven",
+   "samples": [
+    "Amos.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205H",
+   "surface": "delusion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: trouble",
+   "transliteration": "a.ven",
+   "samples": [
+    "Isa.41.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205H",
+   "surface": "ill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: trouble",
+   "transliteration": "a.ven",
+   "samples": [
+    "Prov.12.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205H",
+   "surface": "misfortune",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: trouble",
+   "transliteration": "a.ven",
+   "samples": [
+    "Num.23.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205H",
+   "surface": "mourners",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: trouble",
+   "transliteration": "a.ven",
+   "samples": [
+    "Hos.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0205H",
+   "surface": "mourning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil: trouble",
+   "transliteration": "a.ven",
+   "samples": [
+    "Deut.26.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0873",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad",
+   "transliteration": "bi.ysh",
+   "samples": [
+    "Ezra.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1442",
+   "surface": "blasphemed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "ga.daph",
+   "samples": [
+    "Ezek.20.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1442",
+   "surface": "reviler",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "ga.daph",
+   "samples": [
+    "Ps.44.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1442",
+   "surface": "reviles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to blaspheme",
+   "transliteration": "ga.daph",
+   "samples": [
+    "Num.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2149",
+   "surface": "vileness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vileness",
+   "transliteration": "zul.lut",
+   "samples": [
+    "Ps.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "abomination",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Judg.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "devising",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Prov.24.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "done",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Ezek.23.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Ps.26.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "evil intent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Prov.21.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "heinous crime",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Job.31.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "lewdly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Ezek.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "me with evil purpose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Ps.119.150"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "plans",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Job.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "villainy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Hos.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "wicked schemes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Isa.32.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2154",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "zim.mah",
+   "samples": [
+    "Prov.10.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3973",
+   "surface": "garbage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "refuse",
+   "transliteration": "ma.os",
+   "samples": [
+    "Lam.3.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4827",
+   "surface": "doing evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mischief",
+   "transliteration": "me.ra",
+   "samples": [
+    "Dan.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4849",
+   "surface": "wicked woman",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "mir.sha.at",
+   "samples": [
+    "2Chr.24.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5240",
+   "surface": "despised",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vile",
+   "transliteration": "ne.miv.zeh",
+   "samples": [
+    "1Sam.15.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "deadly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Ezek.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "defect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Deut.17.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "destroying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Ps.78.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "downcast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Gen.40.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Eccl.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "great",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "2Chr.21.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "heavy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.25.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "ill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Isa.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "loathsome",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Job.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "not",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "2Sam.19.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "serious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Deut.15.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "severe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.15.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "trouble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Jer.15.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "troubles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Ps.71.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "vile",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Ezek.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451A",
+   "surface": "worst",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: harmful",
+   "transliteration": "ra",
+   "samples": [
+    "Ezek.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "adversity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Ps.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "bad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Jer.42.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "badly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "1Sam.25.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "calamity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Isa.45.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "evil man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "hurt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Eccl.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "misfortunes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Num.11.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "ruin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.21.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451B",
+   "surface": "utter ruin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "cruel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Ps.144.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "displease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "1Sam.29.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "evil a",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Eccl.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "evil man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Job.21.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "evil men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Job.35.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "evil person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.11.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "evil things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Prov.15.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "evildoer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Ps.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "evils",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Ezek.20.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "harm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "2Kgs.4.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "misfortune",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "1Kgs.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "wicked women",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Jer.2.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451H",
+   "surface": "wickedness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bad: evil",
+   "transliteration": "ra",
+   "samples": [
+    "Deut.13.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "all",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Jer.24.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "dawn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Hos.10.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "evil intent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Exod.32.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "evil plan",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Esth.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "evil purpose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Exod.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "evil things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Ps.140.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "evildoer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "2Sam.3.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "exceedingly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Jonah.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "greatly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "Neh.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7451I",
+   "surface": "wrongdoing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "distress: evil",
+   "transliteration": "ra.ah",
+   "samples": [
+    "1Sam.25.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7455",
+   "surface": "as",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil",
+   "transliteration": "ro.a",
+   "samples": [
+    "Gen.41.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7455",
+   "surface": "rotten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil",
+   "transliteration": "ro.a",
+   "samples": [
+    "Jer.29.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7455",
+   "surface": "wickedness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "evil",
+   "transliteration": "ro.a",
+   "samples": [
+    "Hos.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Neh.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "badly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Gen.43.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "bring disaster",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Zech.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "deal worse",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Gen.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "dealt ill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Num.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "destroyed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Ps.74.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "displease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "2Sam.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "displeasing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Gen.21.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "do ill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Zeph.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "done great",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "1Chr.21.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "done wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Prov.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "grudging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Deut.15.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "harmed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Num.16.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "hurting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "1Sam.25.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "left",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Job.20.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "look grudgingly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Deut.15.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "more harm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "2Sam.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "sad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Neh.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "seems wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Jer.40.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "still",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "1Sam.12.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "suffer harm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Prov.13.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "surely suffer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Prov.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "went ill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Ps.106.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7489A",
+   "surface": "work disaster",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be evil",
+   "transliteration": "ra.a",
+   "samples": [
+    "Jer.25.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "declared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Job.32.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "departed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Ps.18.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "done wickedly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Dan.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "done wickedness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Ps.106.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "refute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Isa.54.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "routed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "1Sam.14.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "violate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Dan.11.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Eccl.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7561",
+   "surface": "wickedly departed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "2Sam.22.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7562",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "re.sha",
+   "samples": [
+    "Prov.16.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7562",
+   "surface": "iniquity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "re.sha",
+   "samples": [
+    "Hos.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7563",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Ezek.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7563",
+   "surface": "guilty man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Deut.25.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7563",
+   "surface": "wicked men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Jer.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7563",
+   "surface": "wicked one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wicked",
+   "transliteration": "ra.sha",
+   "samples": [
+    "Ezek.21.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7564",
+   "surface": "offense",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "rish.ah",
+   "samples": [
+    "Deut.25.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7564",
+   "surface": "own wickedness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "rish.ah",
+   "samples": [
+    "Prov.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7564",
+   "surface": "sin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "rish.ah",
+   "samples": [
+    "Prov.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7564",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wickedness",
+   "transliteration": "rish.ah",
+   "samples": [
+    "Mal.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8251",
+   "surface": "became detestable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abomination",
+   "transliteration": "shiq.quts",
+   "samples": [
+    "Hos.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8251",
+   "surface": "detestable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abomination",
+   "transliteration": "shiq.quts",
+   "samples": [
+    "Jer.16.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8251",
+   "surface": "detestable idols",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abomination",
+   "transliteration": "shiq.quts",
+   "samples": [
+    "2Chr.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8251",
+   "surface": "filth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abomination",
+   "transliteration": "shiq.quts",
+   "samples": [
+    "Nah.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8262",
+   "surface": "abhorred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to detest",
+   "transliteration": "shiq.qets",
+   "samples": [
+    "Ps.22.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8262",
+   "surface": "destruction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to detest",
+   "transliteration": "shiq.qets",
+   "samples": [
+    "Deut.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8441",
+   "surface": "abominable thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abomination",
+   "transliteration": "to.e.vah",
+   "samples": [
+    "Deut.12.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8441",
+   "surface": "despicable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abomination",
+   "transliteration": "to.e.vah",
+   "samples": [
+    "2Kgs.21.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8441",
+   "surface": "despicable practices",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abomination",
+   "transliteration": "to.e.vah",
+   "samples": [
+    "2Kgs.16.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8441",
+   "surface": "horror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "abomination",
+   "transliteration": "to.e.vah",
+   "samples": [
+    "Ps.88.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

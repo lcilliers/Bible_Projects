@@ -1,0 +1,4871 @@
+{
+ "cluster": "M01",
+ "cluster_name": "Fear & Awe",
+ "built_at": "2026-10-26T04:16:50Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 297,
+  "head": 97,
+  "tail": 200,
+  "hits": 1033,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H3372G",
+   "surface": "afraid",
+   "part": "head",
+   "hits": 89,
+   "verses": 87,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "Jonah.1.10",
+    "Zech.9.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372G",
+   "surface": "fear",
+   "part": "head",
+   "hits": 88,
+   "verses": 86,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "Isa.7.4",
+    "Zech.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "fear",
+   "part": "head",
+   "hits": 55,
+   "verses": 54,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Hab.3.2",
+    "Mal.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3374",
+   "surface": "fear",
+   "part": "head",
+   "hits": 40,
+   "verses": 40,
+   "gloss": "fear",
+   "transliteration": "yir.ah",
+   "samples": [
+    "Isa.33.6",
+    "Prov.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "fear",
+   "part": "head",
+   "hits": 37,
+   "verses": 34,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "2Cor.12.20",
+    "Heb.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5401",
+   "surface": "fear",
+   "part": "head",
+   "hits": 36,
+   "verses": 34,
+   "gloss": "fear",
+   "transliteration": "fobos",
+   "samples": [
+    "Eph.6.5",
+    "Rev.18.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3373",
+   "surface": "fear",
+   "part": "head",
+   "hits": 36,
+   "verses": 36,
+   "gloss": "afraid",
+   "transliteration": "ya.re",
+   "samples": [
+    "Exod.18.21",
+    "Ps.135.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "afraid",
+   "part": "head",
+   "hits": 34,
+   "verses": 34,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "Gal.4.11",
+    "Heb.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "awesome",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Deut.28.58",
+    "Zeph.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372G",
+   "surface": "feared",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "Ezek.11.8",
+    "Ps.76.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6343",
+   "surface": "fear",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Esth.9.2",
+    "Ps.36.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6343",
+   "surface": "terror",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Jer.49.5",
+    "Prov.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "feared",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Exod.1.17",
+    "Mal.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047H",
+   "surface": "horror",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "horror: appalled",
+   "transliteration": "sham.mah",
+   "samples": [
+    "Jer.42.18",
+    "Jer.51.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "tremble",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Deut.2.25",
+    "Hab.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "feared",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "Acts.10.2",
+    "John.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3373",
+   "surface": "fears",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "afraid",
+   "transliteration": "ya.re",
+   "samples": [
+    "Ps.112.1",
+    "Ps.128.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6343",
+   "surface": "dread",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Deut.2.25",
+    "Ps.105.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047G",
+   "surface": "desolation",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "horror: destroyed",
+   "transliteration": "sham.mah",
+   "samples": [
+    "Jer.50.3",
+    "Jer.51.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3373",
+   "surface": "feared",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "afraid",
+   "transliteration": "ya.re",
+   "samples": [
+    "2Kgs.17.41",
+    "Mal.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2851",
+   "surface": "terror",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "terror",
+   "transliteration": "chit.tit",
+   "samples": [
+    "Ezek.26.17",
+    "Ezek.32.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "fear",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Hos.3.5",
+    "Isa.51.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047G",
+   "surface": "waste",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "horror: destroyed",
+   "transliteration": "sham.mah",
+   "samples": [
+    "Jer.44.22",
+    "Jer.46.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4032",
+   "surface": "terror",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "terror",
+   "transliteration": "ma.gor",
+   "samples": [
+    "Jer.20.10",
+    "Jer.6.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0367",
+   "surface": "terror",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "terror",
+   "transliteration": "e.mah",
+   "samples": [
+    "Isa.33.18",
+    "Prov.20.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1091",
+   "surface": "terrors",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "terror",
+   "transliteration": "bal.la.hah",
+   "samples": [
+    "Job.18.14",
+    "Ps.73.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2189",
+   "surface": "horror",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "horror",
+   "transliteration": "za.a.vah",
+   "samples": [
+    "2Chr.29.8",
+    "Deut.28.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6206",
+   "surface": "dread",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to tremble",
+   "transliteration": "a.rats",
+   "samples": [
+    "Deut.1.29",
+    "Isa.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "afraid",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Jer.36.24",
+    "Ps.27.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5156",
+   "surface": "trembling",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "trembling",
+   "transliteration": "tromos",
+   "samples": [
+    "Eph.6.5",
+    "Mark.16.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "fearing",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "Acts.10.22",
+    "Gal.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342A",
+   "surface": "tremble",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to twist: tremble",
+   "transliteration": "chul",
+   "samples": [
+    "1Chr.16.30",
+    "Jer.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "afraid",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Amos.3.6",
+    "Job.11.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "make them afraid",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Ezek.39.26",
+    "Mic.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "tremble",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Ezek.26.16",
+    "Isa.41.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "trembled",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "1Sam.28.5",
+    "Exod.19.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "trembling",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "1Sam.16.4",
+    "Hos.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4172A",
+   "surface": "fear",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "fear",
+   "transliteration": "mo.ra",
+   "samples": [
+    "Gen.9.2",
+    "Mal.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2427A",
+   "surface": "pain",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "agony",
+   "transliteration": "chil",
+   "samples": [
+    "Jer.22.23",
+    "Mic.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "awesome deeds",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Ps.145.6",
+    "Ps.45.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3373",
+   "surface": "afraid",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "afraid",
+   "transliteration": "ya.re",
+   "samples": [
+    "Jer.42.11",
+    "Judg.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4172A",
+   "surface": "terror",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "fear",
+   "transliteration": "mo.ra",
+   "samples": [
+    "Deut.4.34",
+    "Jer.32.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4288",
+   "surface": "ruin",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "terror",
+   "transliteration": "me.chit.tah",
+   "samples": [
+    "Prov.10.15",
+    "Prov.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4656",
+   "surface": "image",
+   "part": "head",
+   "hits": 4,
+   "verses": 2,
+   "gloss": "horror",
+   "transliteration": "miph.le.tset",
+   "samples": [
+    "1Kgs.15.13",
+    "2Chr.15.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4867",
+   "surface": "waves",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "wave",
+   "transliteration": "mish.bar",
+   "samples": [
+    "Ps.88.7",
+    "Ps.93.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "trembled",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Ps.77.16",
+    "Ps.77.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8539",
+   "surface": "astounded",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to astounded",
+   "transliteration": "ta.mah",
+   "samples": [
+    "Jer.4.9",
+    "Job.26.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5401",
+   "surface": "respect",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "fear",
+   "transliteration": "fobos",
+   "samples": [
+    "1Pet.3.15",
+    "Rom.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0367",
+   "surface": "fear",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "terror",
+   "transliteration": "e.mah",
+   "samples": [
+    "Job.33.7",
+    "Josh.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0367",
+   "surface": "terrors",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "terror",
+   "transliteration": "e.mah",
+   "samples": [
+    "Ps.55.4",
+    "Ps.88.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1481C",
+   "surface": "afraid",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to dread",
+   "transliteration": "gur",
+   "samples": [
+    "Job.19.29",
+    "Job.41.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2731",
+   "surface": "panic",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "trembling",
+   "transliteration": "cha.ra.dah",
+   "samples": [
+    "1Sam.14.15",
+    "Jer.30.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2731",
+   "surface": "trembling",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "trembling",
+   "transliteration": "cha.ra.dah",
+   "samples": [
+    "Ezek.26.16",
+    "Isa.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3025",
+   "surface": "afraid",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to fear",
+   "transliteration": "ya.gor",
+   "samples": [
+    "Deut.28.60",
+    "Deut.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "stood in awe",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "1Kgs.3.28",
+    "Josh.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4288",
+   "surface": "terror",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "terror",
+   "transliteration": "me.chit.tah",
+   "samples": [
+    "Isa.54.14",
+    "Prov.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6427",
+   "surface": "horror",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "shuddering",
+   "transliteration": "pal.la.tsut",
+   "samples": [
+    "Ezek.7.18",
+    "Isa.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "disturbed",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "1Chr.17.9",
+    "1Sam.28.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7461A",
+   "surface": "trembling",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "trembling",
+   "transliteration": "ra.ad",
+   "samples": [
+    "Job.4.14",
+    "Ps.55.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7461B",
+   "surface": "trembling",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "trembling",
+   "transliteration": "re.a.dah",
+   "samples": [
+    "Ps.2.11",
+    "Ps.48.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8178A",
+   "surface": "horror",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "shuddering",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Ezek.27.35",
+    "Job.18.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1169",
+   "surface": "afraid",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "timid",
+   "transliteration": "deilos",
+   "samples": [
+    "Mark.4.40",
+    "Matt.8.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1568",
+   "surface": "alarmed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be awe-struck",
+   "transliteration": "ekthambeō",
+   "samples": [
+    "Mark.16.5",
+    "Mark.16.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1719",
+   "surface": "frightened",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "afraid",
+   "transliteration": "emfobos",
+   "samples": [
+    "Luke.24.37",
+    "Luke.24.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2124",
+   "surface": "reverence",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "reverence",
+   "transliteration": "eulabeia",
+   "samples": [
+    "Heb.12.28",
+    "Heb.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5141",
+   "surface": "trembling",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "tremō",
+   "samples": [
+    "Luke.8.47",
+    "Mark.5.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5401",
+   "surface": "awe",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fear",
+   "transliteration": "fobos",
+   "samples": [
+    "Acts.2.43",
+    "Luke.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0366",
+   "surface": "awesome",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "terrible",
+   "transliteration": "a.yom",
+   "samples": [
+    "Song.6.10",
+    "Song.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1091",
+   "surface": "dreadful end",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "terror",
+   "transliteration": "bal.la.hah",
+   "samples": [
+    "Ezek.26.21",
+    "Ezek.28.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1205",
+   "surface": "terror",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "terror",
+   "transliteration": "be.a.tah",
+   "samples": [
+    "Jer.14.19",
+    "Jer.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1481C",
+   "surface": "awe",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dread",
+   "transliteration": "gur",
+   "samples": [
+    "Ps.22.23",
+    "Ps.33.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2111",
+   "surface": "tremble",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "zu.a",
+   "samples": [
+    "Eccl.12.3",
+    "Hab.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342A",
+   "surface": "shakes",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to twist: tremble",
+   "transliteration": "chul",
+   "samples": [
+    "Ps.29.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "away",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Deut.28.26",
+    "Jer.7.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "panic",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "2Sam.17.2",
+    "Judg.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "terrify",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Ezek.30.9",
+    "Zech.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "trembles",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Isa.10.29",
+    "Job.37.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2730",
+   "surface": "tremble",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "trembling",
+   "transliteration": "cha.red",
+   "samples": [
+    "Ezra.10.3",
+    "Isa.66.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2730",
+   "surface": "trembled",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "trembling",
+   "transliteration": "cha.red",
+   "samples": [
+    "1Sam.4.13",
+    "Ezra.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3016",
+   "surface": "afraid",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fearing",
+   "transliteration": "ya.gor",
+   "samples": [
+    "Jer.22.25",
+    "Jer.39.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3025",
+   "surface": "dread",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to fear",
+   "transliteration": "ya.gor",
+   "samples": [
+    "Job.3.25",
+    "Ps.119.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372G",
+   "surface": "awesome",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "Joel.2.31",
+    "Mal.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372G",
+   "surface": "frighten",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "2Chr.32.18",
+    "Neh.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372G",
+   "surface": "terrifying",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "Deut.1.19",
+    "Deut.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "awesome things",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "1Chr.17.21",
+    "Isa.64.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "reverence",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Lev.19.30",
+    "Lev.26.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3373",
+   "surface": "fearful",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "afraid",
+   "transliteration": "ya.re",
+   "samples": [
+    "Deut.20.8",
+    "Judg.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3374",
+   "surface": "exceedingly",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fear",
+   "transliteration": "yir.ah",
+   "samples": [
+    "Jonah.1.10",
+    "Jonah.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6206",
+   "surface": "terrify",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "a.rats",
+   "samples": [
+    "Isa.2.19",
+    "Isa.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "dread",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Deut.28.66",
+    "Job.23.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "terror",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Ps.14.5",
+    "Ps.53.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6343",
+   "surface": "great",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Ps.14.5",
+    "Ps.53.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "quaked",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "1Sam.14.15",
+    "Isa.5.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "raged",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "2Kgs.19.28",
+    "Isa.37.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "raging",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "2Kgs.19.27",
+    "Isa.37.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "shudder",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Isa.32.10",
+    "Isa.32.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "trembles",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Hab.3.16",
+    "Prov.30.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7460",
+   "surface": "trembling",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to tremble",
+   "transliteration": "ra.ad",
+   "samples": [
+    "Dan.10.11",
+    "Ezra.10.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047G",
+   "surface": "desolate",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "horror: destroyed",
+   "transliteration": "sham.mah",
+   "samples": [
+    "Isa.5.9",
+    "Zech.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8078",
+   "surface": "dismay",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "horror",
+   "transliteration": "shim.ma.mon",
+   "samples": [
+    "Ezek.12.19",
+    "Ezek.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8186A",
+   "surface": "horrible thing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "horror",
+   "transliteration": "sha.a.ru.rah",
+   "samples": [
+    "Jer.23.14",
+    "Jer.5.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8186B",
+   "surface": "horrible thing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "horror",
+   "transliteration": "sha.a.ri.riy.yah",
+   "samples": [
+    "Hos.6.10",
+    "Jer.18.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1167",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "timidity",
+   "transliteration": "deilia",
+   "samples": [
+    "2Tim.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1168",
+   "surface": "afraid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be timid",
+   "transliteration": "deiliaō",
+   "samples": [
+    "John.14.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1169",
+   "surface": "cowardly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "timid",
+   "transliteration": "deilos",
+   "samples": [
+    "Rev.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1568",
+   "surface": "greatly amazed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be awe-struck",
+   "transliteration": "ekthambeō",
+   "samples": [
+    "Mark.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1568",
+   "surface": "troubled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be awe-struck",
+   "transliteration": "ekthambeō",
+   "samples": [
+    "Mark.14.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1630",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terrified",
+   "transliteration": "ekfobos",
+   "samples": [
+    "Heb.12.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1630",
+   "surface": "terrified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terrified",
+   "transliteration": "ekfobos",
+   "samples": [
+    "Mark.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1719",
+   "surface": "alarmed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afraid",
+   "transliteration": "emfobos",
+   "samples": [
+    "Acts.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1719",
+   "surface": "terrified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afraid",
+   "transliteration": "emfobos",
+   "samples": [
+    "Rev.11.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1719",
+   "surface": "terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afraid",
+   "transliteration": "emfobos",
+   "samples": [
+    "Acts.10.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1790",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "entromos",
+   "samples": [
+    "Acts.16.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1790",
+   "surface": "tremble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "entromos",
+   "samples": [
+    "Heb.12.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1790",
+   "surface": "trembled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "entromos",
+   "samples": [
+    "Acts.7.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2125",
+   "surface": "afraid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revere",
+   "transliteration": "eulabeomai",
+   "samples": [
+    "Acts.23.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2125",
+   "surface": "reverent fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revere",
+   "transliteration": "eulabeomai",
+   "samples": [
+    "Heb.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2317",
+   "surface": "godliness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reverence for God",
+   "transliteration": "theosebeia",
+   "samples": [
+    "1Tim.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2412",
+   "surface": "reverent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reverent",
+   "transliteration": "hieroprepēs",
+   "samples": [
+    "Titus.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4422",
+   "surface": "startled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to frighten",
+   "transliteration": "ptoeō",
+   "samples": [
+    "Luke.24.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4422",
+   "surface": "terrified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to frighten",
+   "transliteration": "ptoeō",
+   "samples": [
+    "Luke.21.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4423",
+   "surface": "frightening",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "ptoēsis",
+   "samples": [
+    "1Pet.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4426",
+   "surface": "frightened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to frighten",
+   "transliteration": "pturomai",
+   "samples": [
+    "Phil.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5141",
+   "surface": "tremble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "tremō",
+   "samples": [
+    "2Pet.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5398",
+   "surface": "fearful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fearful",
+   "transliteration": "foberos",
+   "samples": [
+    "Heb.10.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5398",
+   "surface": "fearful thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fearful",
+   "transliteration": "foberos",
+   "samples": [
+    "Heb.10.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5398",
+   "surface": "terrifying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fearful",
+   "transliteration": "foberos",
+   "samples": [
+    "Heb.12.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "awe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "Matt.27.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "be afraid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "Mark.6.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "fears",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "Acts.10.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "filled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "Mark.4.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "frightened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "John.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "respects",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "Eph.5.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "terrified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "Matt.17.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5399",
+   "surface": "whoever fears",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "fobeō",
+   "samples": [
+    "1John.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5400",
+   "surface": "terrors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fearful thing",
+   "transliteration": "fobētron",
+   "samples": [
+    "Luke.21.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5401",
+   "surface": "have",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "fobos",
+   "samples": [
+    "1Pet.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5401",
+   "surface": "respect is owed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "fobos",
+   "samples": [
+    "Rom.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5401",
+   "surface": "respectful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "fobos",
+   "samples": [
+    "1Pet.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5401",
+   "surface": "reverence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "fobos",
+   "samples": [
+    "Eph.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5401",
+   "surface": "terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "fobos",
+   "samples": [
+    "Rom.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5425",
+   "surface": "shudder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shudder",
+   "transliteration": "frissō",
+   "samples": [
+    "Jas.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G6015",
+   "surface": "awe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "deos",
+   "samples": [
+    "Heb.12.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0366",
+   "surface": "dreaded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terrible",
+   "transliteration": "a.yom",
+   "samples": [
+    "Hab.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0367",
+   "surface": "dread",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "e.mah",
+   "samples": [
+    "Job.13.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0367",
+   "surface": "dreadful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "e.mah",
+   "samples": [
+    "Gen.15.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0367",
+   "surface": "idols",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "e.mah",
+   "samples": [
+    "Jer.50.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0367",
+   "surface": "of him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "e.mah",
+   "samples": [
+    "Job.9.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0367",
+   "surface": "terrifying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "e.mah",
+   "samples": [
+    "Job.39.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0574",
+   "surface": "terrifying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terrible",
+   "transliteration": "e.me.tan",
+   "samples": [
+    "Dan.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1091",
+   "surface": "dreadful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "bal.la.hah",
+   "samples": [
+    "Ezek.27.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1091",
+   "surface": "terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "bal.la.hah",
+   "samples": [
+    "Isa.17.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1161",
+   "surface": "dreadful assaults",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "bi.u.tim",
+   "samples": [
+    "Ps.88.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1161",
+   "surface": "terrors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "bi.u.tim",
+   "samples": [
+    "Job.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1481C",
+   "surface": "dread",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "gur",
+   "samples": [
+    "Num.22.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1481C",
+   "surface": "feared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "gur",
+   "samples": [
+    "Deut.32.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1481C",
+   "surface": "fearful awe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "gur",
+   "samples": [
+    "1Sam.18.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1481C",
+   "surface": "intimidated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "gur",
+   "samples": [
+    "Deut.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1481C",
+   "surface": "tremble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "gur",
+   "samples": [
+    "Hos.10.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1763",
+   "surface": "afraid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "de.chal",
+   "samples": [
+    "Dan.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1763",
+   "surface": "dreadful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "de.chal",
+   "samples": [
+    "Dan.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1763",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "de.chal",
+   "samples": [
+    "Dan.6.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1763",
+   "surface": "feared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "de.chal",
+   "samples": [
+    "Dan.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1763",
+   "surface": "frightening",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "de.chal",
+   "samples": [
+    "Dan.2.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1763",
+   "surface": "terrifying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "de.chal",
+   "samples": [
+    "Dan.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2111",
+   "surface": "trembled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "zu.a",
+   "samples": [
+    "Esth.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2112",
+   "surface": "to tremble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "zu.a",
+   "samples": [
+    "Dan.6.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2112",
+   "surface": "trembled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "zu.a",
+   "samples": [
+    "Dan.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2113",
+   "surface": "sheer terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "ze.va.ah",
+   "samples": [
+    "Isa.28.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2119B",
+   "surface": "timid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "za.chal",
+   "samples": [
+    "Job.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2189",
+   "surface": "terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "horror",
+   "transliteration": "za.a.vah",
+   "samples": [
+    "Ezek.23.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2283",
+   "surface": "terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "chag.ga",
+   "samples": [
+    "Isa.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342A",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: tremble",
+   "transliteration": "chul",
+   "samples": [
+    "Ps.55.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342A",
+   "surface": "distressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: tremble",
+   "transliteration": "chul",
+   "samples": [
+    "Esth.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342A",
+   "surface": "trembles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: tremble",
+   "transliteration": "chul",
+   "samples": [
+    "Ps.97.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2342A",
+   "surface": "wrung",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to twist: tremble",
+   "transliteration": "chul",
+   "samples": [
+    "Lam.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2427A",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "agony",
+   "transliteration": "chil",
+   "samples": [
+    "Ps.48.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2427A",
+   "surface": "pangs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "agony",
+   "transliteration": "chil",
+   "samples": [
+    "Exod.15.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2427B",
+   "surface": "pain",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "agony",
+   "transliteration": "chi.lah",
+   "samples": [
+    "Job.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "come trembling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Hos.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "disturb",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Nah.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Isa.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "startled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Ruth.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "taken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "2Kgs.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2729",
+   "surface": "violently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "cha.rad",
+   "samples": [
+    "Gen.27.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2730",
+   "surface": "trembles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "cha.red",
+   "samples": [
+    "Isa.66.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2730",
+   "surface": "trembling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "cha.red",
+   "samples": [
+    "Judg.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2731",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "cha.ra.dah",
+   "samples": [
+    "Prov.29.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2731",
+   "surface": "said",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "cha.ra.dah",
+   "samples": [
+    "Gen.27.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2731",
+   "surface": "trouble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "cha.ra.dah",
+   "samples": [
+    "2Kgs.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2844A",
+   "surface": "dread",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "chat",
+   "samples": [
+    "Gen.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2844A",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "chat",
+   "samples": [
+    "Job.41.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2847",
+   "surface": "terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "chit.tah",
+   "samples": [
+    "Gen.35.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2849",
+   "surface": "terrors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "chat.chat",
+   "samples": [
+    "Eccl.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2866",
+   "surface": "calamity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "cha.tat",
+   "samples": [
+    "Job.6.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372G",
+   "surface": "fearful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "Jer.51.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372G",
+   "surface": "fears",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "1Kgs.1.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372G",
+   "surface": "fearsome",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "Hab.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372G",
+   "surface": "terrible",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "ya.re",
+   "samples": [
+    "Isa.21.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "afraid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Gen.28.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "awe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Ps.65.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "awe-inspiring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Ezek.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "awesome thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Exod.34.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "fearfully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Ps.139.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "fearing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Deut.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "fears",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Ps.64.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "god-fearing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Neh.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "revere",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Lev.19.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "terrifying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Deut.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3372H",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear: revere",
+   "transliteration": "ya.re",
+   "samples": [
+    "Josh.22.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3373",
+   "surface": "cautious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afraid",
+   "transliteration": "ya.re",
+   "samples": [
+    "Prov.14.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3373",
+   "surface": "reveres",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afraid",
+   "transliteration": "ya.re",
+   "samples": [
+    "Prov.13.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3373",
+   "surface": "shuns",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afraid",
+   "transliteration": "ya.re",
+   "samples": [
+    "Eccl.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3373",
+   "surface": "whoever feared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "afraid",
+   "transliteration": "ya.re",
+   "samples": [
+    "Exod.9.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3374",
+   "surface": "awesome",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "yir.ah",
+   "samples": [
+    "Ezek.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3374",
+   "surface": "commandment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "yir.ah",
+   "samples": [
+    "Isa.29.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3374",
+   "surface": "feared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "yir.ah",
+   "samples": [
+    "Ps.119.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4032",
+   "surface": "terrors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "ma.gor",
+   "samples": [
+    "Lam.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4034",
+   "surface": "dreads",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "me.go.rah",
+   "samples": [
+    "Prov.10.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4034",
+   "surface": "fears",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "me.go.rah",
+   "samples": [
+    "Ps.34.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4035",
+   "surface": "barn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "me.gu.rah",
+   "samples": [
+    "Hag.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4035",
+   "surface": "fears",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "me.gu.rah",
+   "samples": [
+    "Isa.66.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4036",
+   "surface": "terror on every side",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "`Terror on Every Side`",
+   "transliteration": "ma.gor mis.sa.viv",
+   "samples": [
+    "Jer.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4172A",
+   "surface": "dread",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "mo.ra",
+   "samples": [
+    "Deut.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4172A",
+   "surface": "feared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "mo.ra",
+   "samples": [
+    "Ps.76.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4172B",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fear",
+   "transliteration": "mo.rah",
+   "samples": [
+    "Ps.9.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4288",
+   "surface": "destruction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "me.chit.tah",
+   "samples": [
+    "Prov.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4288",
+   "surface": "horror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "me.chit.tah",
+   "samples": [
+    "Jer.48.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4288",
+   "surface": "ruined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "me.chit.tah",
+   "samples": [
+    "Prov.14.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4288",
+   "surface": "ruins",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "me.chit.tah",
+   "samples": [
+    "Ps.89.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4637",
+   "surface": "terrifying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "ma.a.ra.tsah",
+   "samples": [
+    "Isa.10.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4867",
+   "surface": "breakers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wave",
+   "transliteration": "mish.bar",
+   "samples": [
+    "Jonah.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6125",
+   "surface": "oppression",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "pressure",
+   "transliteration": "a.qah",
+   "samples": [
+    "Ps.55.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6178",
+   "surface": "gullies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dreadful",
+   "transliteration": "a.ruts",
+   "samples": [
+    "Job.30.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6206",
+   "surface": "awe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "a.rats",
+   "samples": [
+    "Isa.29.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6206",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "a.rats",
+   "samples": [
+    "Job.31.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6206",
+   "surface": "feared",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "a.rats",
+   "samples": [
+    "Ps.89.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6206",
+   "surface": "frighten",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "a.rats",
+   "samples": [
+    "Job.13.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6206",
+   "surface": "frightened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "a.rats",
+   "samples": [
+    "Josh.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6206",
+   "surface": "inspire terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "a.rats",
+   "samples": [
+    "Isa.47.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6206",
+   "surface": "strike terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "a.rats",
+   "samples": [
+    "Ps.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "awe",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Ps.119.161"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "come trembling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Mic.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "fears",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Prov.28.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "feel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Deut.28.67"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "shake",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Job.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "terrified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Isa.44.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6342",
+   "surface": "thrill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Isa.60.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6343",
+   "surface": "dreadful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Job.15.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6343",
+   "surface": "panic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Lam.3.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6343",
+   "surface": "thing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dread",
+   "transliteration": "pa.chad",
+   "samples": [
+    "Job.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6345",
+   "surface": "fear",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dread",
+   "transliteration": "pach.dah",
+   "samples": [
+    "Jer.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6426",
+   "surface": "tremble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shudder",
+   "transliteration": "pa.lats",
+   "samples": [
+    "Job.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6427",
+   "surface": "shuddering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "shuddering",
+   "transliteration": "pal.la.tsut",
+   "samples": [
+    "Job.21.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Ps.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "deeply moved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "2Sam.18.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "enraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Ezek.16.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "provoke",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Job.12.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "quakes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Joel.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "quarrel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Gen.45.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "rages",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Prov.29.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "roused",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Isa.28.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "shaken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Isa.23.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "shakes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Job.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "stirred up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Isa.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "turn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Mic.7.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7264",
+   "surface": "unrest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.gaz",
+   "samples": [
+    "Jer.50.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7268",
+   "surface": "trembling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quivering",
+   "transliteration": "rag.gaz",
+   "samples": [
+    "Deut.28.65"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7269",
+   "surface": "trembling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quivering",
+   "transliteration": "rog.zah",
+   "samples": [
+    "Ezek.12.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7297",
+   "surface": "afraid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fear",
+   "transliteration": "ra.hah",
+   "samples": [
+    "Isa.44.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7322",
+   "surface": "tremble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.phaph",
+   "samples": [
+    "Job.26.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7374",
+   "surface": "panic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "panic",
+   "transliteration": "re.tet",
+   "samples": [
+    "Jer.49.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7460",
+   "surface": "trembles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to tremble",
+   "transliteration": "ra.ad",
+   "samples": [
+    "Ps.104.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7578",
+   "surface": "trembling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trembling",
+   "transliteration": "re.tet",
+   "samples": [
+    "Hos.13.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7661",
+   "surface": "anguish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "agony",
+   "transliteration": "sha.vats",
+   "samples": [
+    "2Sam.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047G",
+   "surface": "desolations",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "horror: destroyed",
+   "transliteration": "sham.mah",
+   "samples": [
+    "Ps.46.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047G",
+   "surface": "destroyed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "horror: destroyed",
+   "transliteration": "sham.mah",
+   "samples": [
+    "Ps.73.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047H",
+   "surface": "appalling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "horror: appalled",
+   "transliteration": "sham.mah",
+   "samples": [
+    "Jer.5.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047H",
+   "surface": "astonishment",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "horror: appalled",
+   "transliteration": "sham.mah",
+   "samples": [
+    "2Chr.29.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047H",
+   "surface": "dismay",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "horror: appalled",
+   "transliteration": "sham.mah",
+   "samples": [
+    "Jer.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8047H",
+   "surface": "terror",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "horror: appalled",
+   "transliteration": "sham.mah",
+   "samples": [
+    "Jer.29.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8175A",
+   "surface": "bristle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shudder",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Ezek.32.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8175A",
+   "surface": "bristles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shudder",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Ezek.27.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8175A",
+   "surface": "shocked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to shudder",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Jer.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8175B",
+   "surface": "away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to storm",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Ps.58.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8175B",
+   "surface": "rush",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to storm",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Dan.11.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8175B",
+   "surface": "sweeps",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to storm",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Job.27.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8175B",
+   "surface": "tempest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to storm",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Ps.50.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8429",
+   "surface": "astonished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be startled",
+   "transliteration": "te.vah",
+   "samples": [
+    "Dan.3.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8539",
+   "surface": "amazed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to astounded",
+   "transliteration": "ta.mah",
+   "samples": [
+    "Eccl.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8539",
+   "surface": "amazement",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to astounded",
+   "transliteration": "ta.mah",
+   "samples": [
+    "Gen.43.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8539",
+   "surface": "astonished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to astounded",
+   "transliteration": "ta.mah",
+   "samples": [
+    "Isa.29.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8539",
+   "surface": "look aghast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to astounded",
+   "transliteration": "ta.mah",
+   "samples": [
+    "Isa.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8539",
+   "surface": "wonder",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to astounded",
+   "transliteration": "ta.mah",
+   "samples": [
+    "Hab.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8541",
+   "surface": "confusion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bewilderment",
+   "transliteration": "tim.ma.hon",
+   "samples": [
+    "Deut.28.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8541",
+   "surface": "panic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bewilderment",
+   "transliteration": "tim.ma.hon",
+   "samples": [
+    "Zech.12.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8606",
+   "surface": "inspire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "terror",
+   "transliteration": "tiph.le.tset",
+   "samples": [
+    "Jer.49.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

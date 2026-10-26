@@ -1,0 +1,730 @@
+{
+ "cluster": "M49",
+ "cluster_name": "Thanksgiving",
+ "built_at": "2026-10-26T04:23:35Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 41,
+  "head": 13,
+  "tail": 28,
+  "hits": 201,
+  "allocated": 0,
+  "inherited": 41
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [
+  {
+   "code": "A_thanksgiving_act",
+   "label": "The verbal act of giving thanks",
+   "description": "The enacted, performed speech-act of rendering thanks to God (or a benefactor), grounded in grace/favor received and offered as an ongoing habitual or spontaneous response.",
+   "kind": "group",
+   "anchor": "1Thess.5.18"
+  },
+  {
+   "code": "B_thankfulness_state",
+   "label": "The noun-named state and expression of gratitude",
+   "description": "The abstract noun-form crystallizing the act of thanksgiving into a nameable disposition, liturgical category, or corporate practice offered to God.",
+   "kind": "group",
+   "anchor": "1Tim.2.1"
+  },
+  {
+   "code": "C_thankful_disposition",
+   "label": "The settled character-trait of being thankful",
+   "description": "An adjectival quality describing a person's ongoing disposition of gratitude, commanded as an identity marker for the community rather than a discrete act.",
+   "kind": "group",
+   "anchor": "Col.3.15"
+  },
+  {
+   "code": "D_yadah_praise_confess",
+   "label": "Outward-cast acknowledgment: praise and confession before God",
+   "description": "The Hebrew verb of 'casting forth' acknowledgment toward God, covering both joyful thanksgiving/praise for benefits received and penitential confession of sin.",
+   "kind": "group",
+   "anchor": "Ps.100.4"
+  },
+  {
+   "code": "E_todah_offering_noun",
+   "label": "The instituted noun-form of thanksgiving: hymn, choir, and offering",
+   "description": "The Hebrew noun crystallizing the verbal act of yadah into concrete liturgical or cultic form -- a thanksgiving song, a choir/procession, or a sacrificial thank-offering.",
+   "kind": "group",
+   "anchor": "Lev.7.12"
+  }
+ ],
+ "allocations": [
+  {
+   "strong": "H3034",
+   "surface": "give thanks",
+   "part": "head",
+   "hits": 37,
+   "verses": 36,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Ps.118.28",
+    "Ps.138.2"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "praise",
+   "part": "head",
+   "hits": 24,
+   "verses": 22,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Ps.67.5",
+    "Ps.76.10"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8426",
+   "surface": "thanksgiving",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "thanksgiving",
+   "transliteration": "to.dah",
+   "samples": [
+    "Lev.7.12",
+    "Ps.147.7"
+   ],
+   "inherited": "E_todah_offering_noun",
+   "group": "E_todah_offering_noun",
+   "reason": "inherited from E_todah_offering_noun (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "thanks",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Isa.12.1",
+    "Isa.38.19"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2168",
+   "surface": "give thanks",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to thank",
+   "transliteration": "eucharisteō",
+   "samples": [
+    "1Cor.1.4",
+    "Eph.1.16"
+   ],
+   "inherited": "A_thanksgiving_act",
+   "group": "A_thanksgiving_act",
+   "reason": "inherited from A_thanksgiving_act (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2169",
+   "surface": "thanksgiving",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "thankfulness",
+   "transliteration": "eucharistia",
+   "samples": [
+    "1Cor.14.16",
+    "1Tim.4.4"
+   ],
+   "inherited": "B_thankfulness_state",
+   "group": "B_thankfulness_state",
+   "reason": "inherited from B_thankfulness_state (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "thank",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "1Chr.16.4",
+    "Ps.107.31"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2168",
+   "surface": "given thanks",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to thank",
+   "transliteration": "eucharisteō",
+   "samples": [
+    "Mark.14.23",
+    "Matt.26.27"
+   ],
+   "inherited": "A_thanksgiving_act",
+   "group": "A_thanksgiving_act",
+   "reason": "inherited from A_thanksgiving_act (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2168",
+   "surface": "thank",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to thank",
+   "transliteration": "eucharisteō",
+   "samples": [
+    "Phlm.1.4",
+    "Rom.1.8"
+   ],
+   "inherited": "A_thanksgiving_act",
+   "group": "A_thanksgiving_act",
+   "reason": "inherited from A_thanksgiving_act (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2168",
+   "surface": "thanks",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to thank",
+   "transliteration": "eucharisteō",
+   "samples": [
+    "Luke.17.16",
+    "Rom.7.25"
+   ],
+   "inherited": "A_thanksgiving_act",
+   "group": "A_thanksgiving_act",
+   "reason": "inherited from A_thanksgiving_act (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "acknowledge",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "1Kgs.8.35",
+    "Job.40.14"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8426",
+   "surface": "thank offerings",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "thanksgiving",
+   "transliteration": "to.dah",
+   "samples": [
+    "2Chr.29.31",
+    "Ps.56.12"
+   ],
+   "inherited": "E_todah_offering_noun",
+   "group": "E_todah_offering_noun",
+   "reason": "inherited from E_todah_offering_noun (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "confess",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Lev.26.40",
+    "Ps.32.5"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "thanksgiving",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "2Chr.5.13",
+    "Neh.12.46"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8426",
+   "surface": "gave thanks",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "thanksgiving",
+   "transliteration": "to.dah",
+   "samples": [
+    "Neh.12.38",
+    "Neh.12.40"
+   ],
+   "inherited": "E_todah_offering_noun",
+   "group": "E_todah_offering_noun",
+   "reason": "inherited from E_todah_offering_noun (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2169",
+   "surface": "thanksgivings",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "thankfulness",
+   "transliteration": "eucharistia",
+   "samples": [
+    "1Tim.2.1",
+    "2Cor.9.12"
+   ],
+   "inherited": "B_thankfulness_state",
+   "group": "B_thankfulness_state",
+   "reason": "inherited from B_thankfulness_state (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "confesses",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Lev.5.5",
+    "Prov.28.13"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "confessing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Dan.9.20",
+    "Neh.1.6"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "give you thanks",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Ps.138.1",
+    "Ps.138.4"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "made confession",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Ezra.10.1",
+    "Neh.9.3"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2168",
+   "surface": "gives thanks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to thank",
+   "transliteration": "eucharisteō",
+   "samples": [
+    "Rom.14.6"
+   ],
+   "inherited": "A_thanksgiving_act",
+   "group": "A_thanksgiving_act",
+   "reason": "inherited from A_thanksgiving_act (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2168",
+   "surface": "thanked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to thank",
+   "transliteration": "eucharisteō",
+   "samples": [
+    "Acts.28.15"
+   ],
+   "inherited": "A_thanksgiving_act",
+   "group": "A_thanksgiving_act",
+   "reason": "inherited from A_thanksgiving_act (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2169",
+   "surface": "gratitude",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thankfulness",
+   "transliteration": "eucharistia",
+   "samples": [
+    "Acts.24.3"
+   ],
+   "inherited": "B_thankfulness_state",
+   "group": "B_thankfulness_state",
+   "reason": "inherited from B_thankfulness_state (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2169",
+   "surface": "thanks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thankfulness",
+   "transliteration": "eucharistia",
+   "samples": [
+    "Rev.4.9"
+   ],
+   "inherited": "B_thankfulness_state",
+   "group": "B_thankfulness_state",
+   "reason": "inherited from B_thankfulness_state (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2170",
+   "surface": "thankful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thankful",
+   "transliteration": "eucharistos",
+   "samples": [
+    "Col.3.15"
+   ],
+   "inherited": "C_thankful_disposition",
+   "group": "C_thankful_disposition",
+   "reason": "inherited from C_thankful_disposition (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "cast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Lam.3.53"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "confessed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Neh.9.2"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "confession",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Dan.9.4"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Zech.1.21"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "gave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Neh.11.17"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "give thanks to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Ps.142.7"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "give you praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Ps.6.5"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "shoot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "Jer.50.14"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "thanking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "1Chr.23.30"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "thanks to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "2Chr.7.3"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3034",
+   "surface": "thanksgiving and",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give thanks",
+   "transliteration": "ya.dah",
+   "samples": [
+    "1Chr.25.3"
+   ],
+   "inherited": "D_yadah_praise_confess",
+   "group": "D_yadah_praise_confess",
+   "reason": "inherited from D_yadah_praise_confess (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8426",
+   "surface": "confession",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thanksgiving",
+   "transliteration": "to.dah",
+   "samples": [
+    "Ezra.10.11"
+   ],
+   "inherited": "E_todah_offering_noun",
+   "group": "E_todah_offering_noun",
+   "reason": "inherited from E_todah_offering_noun (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8426",
+   "surface": "praise",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thanksgiving",
+   "transliteration": "to.dah",
+   "samples": [
+    "Josh.7.19"
+   ],
+   "inherited": "E_todah_offering_noun",
+   "group": "E_todah_offering_noun",
+   "reason": "inherited from E_todah_offering_noun (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8426",
+   "surface": "songs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thanksgiving",
+   "transliteration": "to.dah",
+   "samples": [
+    "Ps.42.4"
+   ],
+   "inherited": "E_todah_offering_noun",
+   "group": "E_todah_offering_noun",
+   "reason": "inherited from E_todah_offering_noun (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8426",
+   "surface": "thanks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thanksgiving",
+   "transliteration": "to.dah",
+   "samples": [
+    "Ps.100.1"
+   ],
+   "inherited": "E_todah_offering_noun",
+   "group": "E_todah_offering_noun",
+   "reason": "inherited from E_todah_offering_noun (#2286 B5)",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8426",
+   "surface": "thanksgivings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "thanksgiving",
+   "transliteration": "to.dah",
+   "samples": [
+    "Neh.12.27"
+   ],
+   "inherited": "E_todah_offering_noun",
+   "group": "E_todah_offering_noun",
+   "reason": "inherited from E_todah_offering_noun (#2286 B5)",
+   "two_sense": 0
+  }
+ ]
+}

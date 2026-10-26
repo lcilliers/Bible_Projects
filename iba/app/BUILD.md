@@ -19471,3 +19471,145 @@ Live: pre-run snapshot `iba/app/db/snapshots/iba-20261024T142400Z-pre-2271-2272.
 **Tests:** 47 of 47 on a backup-API copy of the pre-run snapshot (`outputs/escalation/2273-2274-test-results-v1-20261024.md`, `iba/app/tools/temp_2273_reading_phases_test_run.py`): the migration (159 writes) and its re-run (none); the schema and config rows; every step on a trial reading of three verses with a qualifier (Jon 1:10); eleven writer refusals; every gate refusing while its gaps stand; validate on the copy.
 
 Live: pre-run snapshot `iba/app/db/snapshots/iba-20261024T165349Z-pre-2273-reading-phases.db`; `Config-Maintenance.ps1 -Step Validate` (RUN-20261024_175408_397) ok; advisories on #2270 down to 2 orphan configs (`reading.whole_cluster_reading_start`, `glossary.currency_check`) and no worksheet drift. `Reading.ps1 -Step Account -Label m64-choose` renders; `-Step Observe` on it is refused (published), nothing written.
+
+## 409. The #2286 work-unit rulings held as config (2026-10-25, escalation #2291; #2286 U1)
+
+**Why:** #2286 ruled how a work unit is made: subgroups by surface, mapped in bulk at the clustering stage, scopes by surface, reading per occurrence, settlements in the claims step (build plan `outputs/escalation/2286-build-plan-v4-20261025.md`). Under `governance.rules_must_be_config_driven` the rulings go into config before anything is built on them.
+
+**What changed (config only):**
+- `iba/app/migration/archive/surface_subgroup_rules_2291_v1_20261025.py` (run `DEVMODE-2291-SURFACE-SUBGROUP-RULES-20261025`, 20 writes) adds:
+  - behaviour rules B:117 to B:122, class study_method, delivered while the study is active and at the first use of the scripts they are scoped to: `subgroups-are-surface-groups`, `surface-mapping-conditions`, `scope-enters-through-surface`, `scope-home-and-multiplicity`, `reading-recorded-per-occurrence`, `subgroup-settled-in-claims-step`; status `buildable_not_built`;
+  - 10 `cfg_rule_scope` links to `Cluster-Assign.ps1`, `ClusterSubgroup.ps1`, `Verse-Scope.ps1` and `Reading.ps1`;
+  - `cfg_setting cluster.surface_map.head_share` = 0.8;
+  - `cfg_enum ib_observation.tag` `subgroup-settlement`, with its entry in `cfg_setting ib_observation.tag_guidance`.
+- Written with later units instead: the subgroup kinds and allocation enums (#2292, with the columns), the group size limit and the tail API (#2293, with the step).
+- The rulings are written as behaviour rules, not method rules, because `cluster.surface_map` is not yet a registered step and a method rule on an unregistered step is a validate finding.
+
+**Tests:** 10 cases on a backup-API copy (`outputs/escalation/2291-u1-config-test-v1-20261025.md`): dry run; apply; the rows; the guidance JSON keeping all 29 old entries; the self-registration; re-run refused; live untouched; validate checks on the copy (no new scope gap or hedge; +6 unenforced rules and +1 orphan config, both expected).
+
+Live: 20 writes; no dedicated pre-run snapshot was taken (the run's `cfg_change_detail` rows hold the prior state: 19 inserts and one update with its `before_json`). `Config-Maintenance.ps1 -Step Validate` (RUN-20261025_185431_098) ok; the new advisories are on #2270.
+
+## 410. The surface subgroup schema (2026-10-25, escalation #2292; #2286 U2)
+
+**Why:** under the #2286 rulings (B:117), a subgroup is a group of (code, surface) pairs, which the one-code-one-subgroup `cluster_subgroup_strong` can't hold. A subgroup has a kind, and the reading record is kept per occurrence (B:121).
+
+**What changed (schema and config):**
+- `iba/app/migration/archive/surface_subgroup_schema_2292_v1_20261025.py` (run `DEVMODE-2292-SURFACE-SUBGROUP-SCHEMA-20261025`, 37 writes; DDL built from `cfg_column` through `lib/db.table_ddl`):
+  - new table `surface_subgroup`: pair to subgroup, with the two-sense flag, status, who allocated it and the reason; unique among live rows on (`cluster_code`, `strong`, `surface`);
+  - `cluster_subgroup.kind` (group, qualifier, not_this_sense, anomaly; default `group`, which the existing 13 rows take);
+  - `ib_node.verse_lexical_id`, the occurrence a node reads, NULL until #2296;
+  - enums `cluster_subgroup.kind`, `surface_subgroup.status` and `surface_subgroup.allocated_by`, with the registry rows.
+- Write grants come with the steps that write the table (#2293, #2296).
+
+**Tests:** 16 cases on a backup-API copy (`outputs/escalation/2292-u2-schema-test-v1-20261025.md`): dry run, apply and re-run; the DDL; the registry against the schema; synthetic writes (valid pair, duplicate live pair, re-add after soft delete, missing reason, unknown code and subgroup by FK, default kind); live untouched; no new validate finding.
+
+Live: pre-run snapshot `iba/app/db/snapshots/iba-20261025T202314Z-pre-2292-surface-subgroup-schema.db`; `Config-Maintenance.ps1 -Step Validate` (RUN-20261025_202329_421) ok, nothing new on #2270.
+
+## 411. The surface mapping steps (2026-10-25, escalation #2293; #2286 U3)
+
+**Why:** behaviour rules B:117 and B:118 call for each M cluster's (code, surface) pairs to be placed in subgroups at the clustering stage: the head in session, the tail by the API, with an anomaly group and a size check. The design is `outputs/escalation/2293-surface-map-design-v1-20261025.md`; decisions D1 to D4 are on #2293 v4.
+
+**What changed:**
+- **New code:**
+  - `iba/app/lib/surfacemap.py`: the pairs file, the session pass (`apply_file`, which refuses the whole file on any problem), the API tail (`assemble_tail`, `parse_tail`, `apply_tail`; it refuses while a head pair is unplaced) and the check;
+  - `iba/app/handlers/surfacemap.py`: steps `cluster.surface_pairs`, `cluster.surface_apply`, `cluster.surface_tail`, `cluster.surface_check`;
+  - `iba/app/ps/Surface-Map.ps1`: `-Step Pairs|Apply|Tail|Check -Cluster <M code> [-File] [-Live]`.
+- **New subgroups** leave `cluster_subgroup.status` NULL: its enum is the retired pipeline's lifecycle (#2281). The provisional status is on `surface_subgroup.status`.
+- **Config:** `iba/app/migration/archive/surface_map_steps_2293_v1_20261025.py` (run `DEVMODE-2293-SURFACE-MAP-STEPS-20261025`, 28 writes):
+  - work package `cluster-surface-map`, with the four steps, their routed conditions and the grants for Apply and Tail (`cluster_subgroup`, `surface_subgroup`);
+  - settings `cluster.surface_map.max_group_share` 0.3, `cluster.surface_map.output_dir`, `cluster.surface_map.tail_max_output_tokens` 16000;
+  - the utilities;
+  - B:117 and B:118 scoped to `Surface-Map.ps1` and recorded as `partially_enforced`.
+- **Docs:** `iba/docs/ps tools worksheet.xlsx` has a new `Surface-Map` tab and index row; USER-GUIDE.md has a new section 7.1.
+
+**Tests:** 30 of 30 on a backup-API copy (`outputs/escalation/2293-u3-surface-map-test-v1-20261025.md`, `iba/app/tools/temp_2293_surface_map_test_run.py`):
+- the pairs file against direct queries;
+- the head cut (M18: 163);
+- the M67 inheritance;
+- nine Apply refusals, each writing nothing;
+- valid Apply and its idempotence;
+- the empty-surface pair to the anomaly group;
+- the M67 incorporation with a correction;
+- Tail preview, cost cap and head guard;
+- three bad replies refused;
+- one live Tail on M67 (12 pairs, $0.0232);
+- Check and the 30% flag;
+- registry and validate checks.
+
+Live: pre-run snapshot `iba/app/db/snapshots/iba-20261025T204602Z-pre-2293-surface-map-steps.db`. Through `Surface-Map.ps1`: Pairs and Check on M67 ran, and Tail refused while M67's head is unplaced.
+
+## 412. Stale and unallocated surface pairs enforced; the reading gate (2026-10-25, escalation #2294; #2286 U4)
+
+**Why:** behaviour rule B:118 says that when a code joins or leaves a cluster its pairs are allocated again, and that a cluster with unallocated or stale pairs is not read until they are. The researcher chose G-a on #2294 v4: the gate applies as worded, from now (`outputs/escalation/2294-reading-gate-decision-v1-20261025.md`).
+
+**What changed:**
+- `iba/app/lib/surfacemap.py` gains:
+  - `stale` (a live pair whose code is no longer in the cluster, or whose surface no longer occurs);
+  - `unallocated`;
+  - `overview` (every M cluster in one pass, 0.7 s);
+  - `reading_refusal`;
+  - `retire_stale`, which Apply calls first: a soft delete with the reason `stale: <why> (was: <reason>)`.
+
+  Check lists the stale pairs.
+- `iba/app/lib/reading.py` `open_` refuses a home M cluster with unallocated or stale pairs.
+- `iba/app/handlers/cluster.py` `validate` gains the mapping:
+  - a report section;
+  - stale pairs and partly mapped clusters are findings;
+  - unmapped clusters are only counted;
+  - the new counts join the baseline only when non-zero, so the baseline approved before #2294 still holds.
+- Config: `iba/app/migration/archive/reading_gate_2294_v1_20261025.py` (run `DEVMODE-2294-READING-GATE-20261025`, 4 writes) adds:
+  - `cfg_report_section` `surface_mapping` on `cluster.validate`;
+  - `cluster.validate`'s description, restated with only the current state (its dated "UPDATED" history is in this file, sections for #1606 and #1707);
+  - B:118's enforcement record.
+- USER-GUIDE.md: sections 7.1 and 8.2.
+
+**Tests:** 12 of 12 on a backup-API copy (`outputs/escalation/2294-u4-reading-gate-test-v1-20261025.md`, `iba/app/tools/temp_2294_reading_gate_test_run.py`):
+- the overview;
+- the gate refusing an unmapped M18 and a head-only M18, and passing a T cluster and a fully mapped M67;
+- validate escalating on a partly mapped cluster;
+- a code leaving M67 making its pairs stale and the gate refuse;
+- Check listing them, and Apply retiring them so the gate passes again;
+- a surface no longer occurring;
+- no new validate finding.
+
+The U3 suite re-run passes its mechanics cases.
+
+Live: pre-run snapshot `iba/app/db/snapshots/iba-20261025T210410Z-pre-2294-reading-gate.db`.
+- `Cluster-Assign.ps1 -Step Validate` (RUN-20261025_210437_762) is ok, within the #1707 baseline.
+- `Reading.ps1 -Step Open -Home M64` was refused; nothing was written.
+- `Config-Maintenance.ps1 -Step Validate` (RUN-20261025_210834_947) is ok, with nothing new on #2270.
+
+## 413. The surface mapping pilot: two fixes (2026-10-25, escalation #2298; #2286 U8a)
+
+**Why:** the pilot on M18 and M67, run on a backup-API copy (`outputs/escalation/2298-pilot-m18-m67-v1-20261025.md`), found two faults in the tail step.
+
+**What changed:**
+- `iba/app/lib/surfacemap.py` `parse_tail` matches a reply's surface with curly quotes and spacing normalised (`_match_key`), and the pair keeps its exact surface. The API had straightened the apostrophe of M18's "one’s regret", and the exact match refused the whole reply.
+- `cfg_setting cluster.surface_map.tail_max_output_tokens` goes from 16000 to 32000. M18's 291-pair tail took 14,751 output tokens, so the largest tails (375 pairs) would overrun it. The change is `iba/app/migration/archive/surface_map_tail_ceiling_2298_v1_20261025.py`, run `DEVMODE-2298-TAIL-CEILING-20261025` (2 writes); pre-run snapshot `iba/app/db/snapshots/iba-20261025T211629Z-pre-2298-tail-ceiling.db`.
+
+**Tests:** new case T7e in `iba/app/tools/temp_2293_surface_map_test_run.py`: a reply that straightens an apostrophe and changes spacing still names its pair. The suite has 29 of 31 passing; the other 2 are by design (no live call; live already holds U3). The M18 tail was then re-run on the copy: 291 pairs placed.
+
+## 414. The bulk surface mapping, and three fixes to the steps (2026-10-26, escalation #2298; #2286 U8)
+
+**Why:** the pilot was accepted (#2298 v5, P1 a and P2 a), and the other M clusters were mapped live through `Surface-Map.ps1`. The report is `outputs/escalation/2298-bulk-surface-map-v1-20261026.md`.
+
+**What changed in code (`iba/app/lib/surfacemap.py`, `iba/app/handlers/surfacemap.py`):**
+- P1: the tail instructions name the cluster's `not_this_sense` group as the place for a rendering with no sense of the cluster, and keep the anomaly group for what cannot be decided (`_not_this_sense_line`). M18's anomaly group went from 22 pairs in the pilot to 2 live.
+- `_cluster` looks the code up without case, so `M10c` is no longer refused as `M10C`.
+- `parse_tail` reads a reply with prose around its JSON object (M11's first reply was refused whole).
+- Test harness `iba/app/tools/temp_2293_surface_map_test_run.py` gains cases T7f (P1) and T7g (prose), and `--reset-mapping` to start its copy unmapped. 31 of 33 pass; the other 2 are by design (no live call; live already holds U3).
+
+**Data (live):**
+- All 80 M clusters are mapped: 13,411 pairs (4,218 session, 9,025 API, 168 inherited) in 396 groups, 5 qualifier groups, 80 not_this_sense and 80 anomaly groups.
+- 108 pairs are two-sense, and 147 sit in the anomaly groups.
+- 79 tail calls cost $10.82.
+- The session-pass specs are in `outputs/escalation/2298-bulk-files/`.
+- The runs were dispatched with `IBA_NO_SNAPSHOT=1` (the loop escape of `backup.pre_run_snapshot_policy`), after #2301 found the named pre-run snapshots pruned by the run snapshots.
+
+## 415. Large subgroups are segmented when they come into focus (2026-10-26, escalation #2298 Q3 a)
+
+**Why:** the size check flags 72 groups in 65 clusters as over 30% of their cluster's hits, almost always the cluster's core sense. The researcher kept the 30% check, and ruled that when a large subgroup is read, a pre-analysis first segments it into logical units, done when the subgroup comes into focus.
+
+**What changed in config:** `cfg_method_rule` RO13 `segment-large-subgroup` on `reading.open` (ordinal 68). It is delivered as context with reading.open's rules, and no code enforces it. The change is `iba/app/migration/archive/large_subgroup_segment_2298_v1_20261026.py`, run `DEVMODE-2298-LARGE-SUBGROUP-20261026` (2 writes). It was tested on a copy, and a rerun makes no writes.
+
+**Also:** answers on #2298: Q1 the bulk mapping accepted; Q2 c, the 147 anomaly pairs stay until a reading meets them. #2301 Q4: a kept backup was taken before any pruning, `iba/app/db/iba.db.pre-2301-prune-20261026.bak`. The pruning is held to 2026-10-28 or later, for validation.

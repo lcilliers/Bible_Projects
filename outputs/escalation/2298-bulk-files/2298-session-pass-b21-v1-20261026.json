@@ -1,0 +1,51 @@
+{
+ "M82": {
+  "groups": [
+   ["M82_witness", "Witness, testimony", "martureo: witness, bear witness, testify, testimony, attested, well spoken of", "group", "renders witness"],
+   ["M82_warning", "Warning, solemn charge", "'ud: warn, warning, solemnly charge, testify against", "group", "renders warning"],
+   ["M82_report", "News, report, fame, rumour", "shemu'ah and shema: news, report, rumour, message, fame", "group", "renders a report"],
+   ["M82_reminding", "Reminding, remembrance", "hupomimnesko and anamnesis: remind, reminder, remembrance, recall", "group", "renders reminding"],
+   ["M82_not_this_sense", "Not the cluster's sense", "renderings with no sense of reminder or report", "not_this_sense", "carries no sense of reminder or report"]
+  ],
+  "surf": {
+   "M82_witness": ["witness", "bear witness", "testify", "testified", "testifies", "testimony", "borne", "bears witness", "commended", "well spoken"],
+   "M82_warning": ["warned", "warn", "warning", "solemnly", "charge", "gave", "get", "you"],
+   "M82_report": ["news", "report", "rumor", "message", "fame"],
+   "M82_reminding": ["remind", "remembrance", "remembered", "remember", "reminder", "recall"],
+   "M82_not_this_sense": []
+  },
+  "over": {
+   "H5749B|witness": ["M82_warning", "'ud 'I call heaven and earth to witness against you' (Deut 30:19)", 0],
+   "H5749B|testify": ["M82_warning", "'ud 'hear, and testify against the house of Jacob' (Amos 3:13)", 0]
+  }
+ },
+ "M84": {
+  "groups": [
+   ["M84_shouting", "Shouting, joyful noise, triumph", "rua and teru'ah: shout, joyful noise, shout for joy, triumph, alarm", "group", "renders shouting"],
+   ["M84_roaring", "Roaring, growling, groaning", "sha'ag and hamah as roaring: roar, roaring, growling, howling, groaning", "group", "renders roaring"],
+   ["M84_outcry", "Outcry, crying out", "za'aqah and krazo: cry, outcry, cried out, clamor", "group", "renders outcry"],
+   ["M84_calling", "Calling, calling out", "phoneo: call, called, calling out, invite", "group", "renders calling"],
+   ["M84_sound", "Sound, noise, uproar", "the sound raised: sound, noise, voice, rumblings, uproar, turmoil, loud", "group", "renders sound"],
+   ["M84_murmuring", "Murmuring, meditating, moaning", "hagah: meditate, muse, mutter, moan, utter, mourn", "group", "renders murmuring or meditating"],
+   ["M84_not_this_sense", "Not the cluster's sense", "renderings with no sense of outcry: the rooster crowing", "not_this_sense", "carries no sense of outcry"]
+  ],
+  "surf": {
+   "M84_shouting": ["shout", "shouted", "shouting", "shouts", "joyful noise", "joy", "triumph", "alarm", "cry aloud"],
+   "M84_roaring": ["roar", "roars", "roared", "roaring", "growling", "growls", "howling", "groaning"],
+   "M84_outcry": ["cry", "outcry", "cries", "cried out", "crying", "clamor"],
+   "M84_calling": ["called", "calling", "call", "called out", "calling out", "calls", "cried", "invite"],
+   "M84_sound": ["sound", "rumblings", "voice", "noise", "instruments", "sounded", "trumpet call", "uproar", "turmoil", "loud"],
+   "M84_murmuring": ["meditate", "meditates", "moan", "moans", "mourn", "utter", "mutter", "muse", "devise"],
+   "M84_not_this_sense": ["crowed", "crows", "crow"]
+  },
+  "over": {
+   "G5455|crowed": ["M84_not_this_sense", "phoneo 'the rooster crowed' (John 18:27, Mark 14:68)", 0],
+   "G5455|crows": ["M84_not_this_sense", "phoneo 'before the rooster crows' (Matt 26:34)", 0],
+   "G5455|crow": ["M84_not_this_sense", "phoneo 'the rooster will not crow' (John 13:38)", 0],
+   "H1993|roaring": ["M84_roaring", "hamah 'their voice roars like the sea' (Jer 50:42, 6:23)", 0],
+   "G5456H|call": ["M84_sound", "phone 'with a loud trumpet call' (Matt 24:31)", 0],
+   "G2906|voice": ["M84_outcry", "krauge 'called with a loud voice' (Rev 14:18)", 0],
+   "G2019|against": ["M84_shouting", "epiphoneo 'why they were shouting against him' (Acts 22:24)", 0]
+  }
+ }
+}

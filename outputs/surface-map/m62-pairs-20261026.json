@@ -1,0 +1,570 @@
+{
+ "cluster": "M62",
+ "cluster_name": "Truth & Sincerity",
+ "built_at": "2026-10-26T04:25:37Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 34,
+  "head": 24,
+  "tail": 10,
+  "hits": 53,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G2117",
+   "surface": "immediately",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "Straight",
+   "transliteration": "euthus",
+   "samples": [
+    "Mark.7.25",
+    "Matt.13.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2117",
+   "surface": "straight",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "Straight",
+   "transliteration": "euthus",
+   "samples": [
+    "Luke.3.5",
+    "Matt.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2117",
+   "surface": "once",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "Straight",
+   "transliteration": "euthus",
+   "samples": [
+    "John.19.34",
+    "Mark.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1505",
+   "surface": "sincerity",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "sincerity",
+   "transliteration": "eilikrineia",
+   "samples": [
+    "1Cor.5.8",
+    "2Cor.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0573",
+   "surface": "healthy",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sound",
+   "transliteration": "haplous",
+   "samples": [
+    "Luke.11.34",
+    "Matt.6.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0950",
+   "surface": "confirmed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to confirm",
+   "transliteration": "bebaioō",
+   "samples": [
+    "1Cor.1.6",
+    "Mark.16.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0951",
+   "surface": "confirmation",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "confirmation",
+   "transliteration": "bebaiōsis",
+   "samples": [
+    "Heb.6.16",
+    "Phil.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2117",
+   "surface": "right",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "Straight",
+   "transliteration": "euthus",
+   "samples": [
+    "2Pet.2.15",
+    "Acts.8.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0278",
+   "surface": "irrevocable",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "irrevocable",
+   "transliteration": "ametamelētos",
+   "samples": [
+    "Rom.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0278",
+   "surface": "without regret",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "irrevocable",
+   "transliteration": "ametamelētos",
+   "samples": [
+    "2Cor.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0858",
+   "surface": "generous",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sincerity",
+   "transliteration": "afelotēs",
+   "samples": [
+    "Acts.2.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0950",
+   "surface": "attested",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confirm",
+   "transliteration": "bebaioō",
+   "samples": [
+    "Heb.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0950",
+   "surface": "confirm",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confirm",
+   "transliteration": "bebaioō",
+   "samples": [
+    "Rom.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0950",
+   "surface": "established",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confirm",
+   "transliteration": "bebaioō",
+   "samples": [
+    "Col.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0950",
+   "surface": "establishes",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confirm",
+   "transliteration": "bebaioō",
+   "samples": [
+    "2Cor.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0950",
+   "surface": "strengthened",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confirm",
+   "transliteration": "bebaioō",
+   "samples": [
+    "Heb.13.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0950",
+   "surface": "sustain",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confirm",
+   "transliteration": "bebaioō",
+   "samples": [
+    "1Cor.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3718",
+   "surface": "rightly handling",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cut straight",
+   "transliteration": "orthotomeō",
+   "samples": [
+    "2Tim.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0548",
+   "surface": "firm covenant",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sure",
+   "transliteration": "a.ma.nah",
+   "samples": [
+    "Neh.9.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0548",
+   "surface": "fixed provision",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sure",
+   "transliteration": "a.ma.nah",
+   "samples": [
+    "Neh.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3330",
+   "surface": "certain",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "certain",
+   "transliteration": "yats.tsiv",
+   "samples": [
+    "Dan.2.45"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3330",
+   "surface": "certainty",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "certain",
+   "transliteration": "yats.tsiv",
+   "samples": [
+    "Dan.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3330",
+   "surface": "stands fast",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "certain",
+   "transliteration": "yats.tsiv",
+   "samples": [
+    "Dan.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3330",
+   "surface": "true",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "certain",
+   "transliteration": "yats.tsiv",
+   "samples": [
+    "Dan.3.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3330",
+   "surface": "truth",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "certain",
+   "transliteration": "yats.tsiv",
+   "samples": [
+    "Dan.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5228",
+   "surface": "honest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "straightforward",
+   "transliteration": "na.kho.ach",
+   "samples": [
+    "Prov.24.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5228",
+   "surface": "right",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "straightforward",
+   "transliteration": "na.kho.ach",
+   "samples": [
+    "2Sam.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5228",
+   "surface": "straight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "straightforward",
+   "transliteration": "na.kho.ach",
+   "samples": [
+    "Prov.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5228",
+   "surface": "uprightness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "straightforward",
+   "transliteration": "na.kho.ach",
+   "samples": [
+    "Isa.57.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6422",
+   "surface": "another",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "certain",
+   "transliteration": "pal.mo.ni",
+   "samples": [
+    "Dan.8.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8626",
+   "surface": "arranging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be straight",
+   "transliteration": "ta.qan",
+   "samples": [
+    "Eccl.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8626",
+   "surface": "made straight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be straight",
+   "transliteration": "ta.qan",
+   "samples": [
+    "Eccl.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8626",
+   "surface": "make straight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be straight",
+   "transliteration": "ta.qan",
+   "samples": [
+    "Eccl.7.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8627",
+   "surface": "was established",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to confirm",
+   "transliteration": "te.qan",
+   "samples": [
+    "Dan.4.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

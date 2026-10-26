@@ -1,0 +1,132 @@
+{
+ "M06": {
+  "groups": [
+   ["M06_hatred", "Hatred, abhorring, loathing", "hatred as a disposition: hate, abhor, loathe, being odious", "group", "renders hatred"],
+   ["M06_enemies", "Enemies, adversaries, foes", "the one who is hostile: enemy, adversary, foe, opponent", "group", "renders the enemy"],
+   ["M06_cursing", "Cursing, reviling", "malice spoken: curse, revile", "group", "renders cursing"],
+   ["M06_hostility", "Hostility, opposition, accusing", "acting against another: hostility, enmity, opposing, resisting, accusing", "group", "renders hostility or opposition"],
+   ["M06_plotting", "Plotting, devising", "malice planned: plots, schemes, devices, devising evil", "group", "renders plotting"],
+   ["M06_scorn", "Contempt, scorn, derision", "malice that despises: contempt, scorn, derision, mistreatment", "group", "renders contempt or scorn"],
+   ["M06_oppression", "Oppression, harshness", "malice in rule: oppressors, taskmasters, ruling ruthlessly", "group", "renders oppression"],
+   ["M06_not_this_sense", "Not the cluster's sense", "renderings with no sense of malice: literal stench, plowing a field, discretion, artistic designs, God's purpose", "not_this_sense", "carries no sense of malice"]
+  ],
+  "surf": {
+   "M06_hatred": ["hate", "hated", "hates", "hating", "hatred", "abhor", "loathe", "loathed", "abominable", "unloved", "stench", "stink"],
+   "M06_enemies": ["enemies", "enemy", "adversaries", "foes", "foe", "adversary", "accuser", "contend"],
+   "M06_cursing": ["cursed", "curse", "reviles"],
+   "M06_hostility": ["contrary", "enmity", "hostility", "against", "opposed", "resist", "withstand", "accuse", "accusers"],
+   "M06_plotting": ["thoughts", "plans", "plots", "plot", "devices", "purposes", "plan", "devise", "devises", "schemes", "evil devices", "plow", "plowed"],
+   "M06_scorn": ["contempt", "derision", "scorn", "scoffers", "shamefully treated"],
+   "M06_oppression": ["taskmasters", "oppressor", "ruthlessly", "severity"],
+   "M06_not_this_sense": ["stank", "discretion", "purpose", "artistic designs", "plowing"]
+  },
+  "over": {
+   "H0887|stench": ["M06_hatred", "'Israel had become a stench to the Philistines' (1Sam 13:4): become odious; 'dead flies make the perfume give off a stench' (Eccl 10:1) is literal", 1],
+   "H0887|stink": ["M06_hatred", "'you have made me stink to the inhabitants' (Gen 34:30): made odious; 'their fish stink' (Isa 50:2) is literal", 1],
+   "H0887|stank": ["M06_not_this_sense", "'it bred worms and stank' (Exod 16:20), 'the Nile stank' (Exod 7:21): literal", 0],
+   "H4284|thoughts": ["M06_plotting", "'let the unrighteous forsake his thoughts' (Isa 55:7): his schemes; 'my thoughts are not your thoughts' (Isa 55:8) is God's purposes", 1],
+   "H4284|plans": ["M06_plotting", "'a heart that devises wicked plans' (Prov 6:18); 'the plans of the diligent' (Prov 21:5) is not malice", 1],
+   "H2790A|plow": ["M06_plotting", "'those who plow iniquity' (Job 4:8); 'does he who plows for sowing plow continually?' (Isa 28:24) is literal", 1],
+   "H2790A|plowed": ["M06_plotting", "'you have plowed iniquity' (Hos 10:13); 'if you had not plowed with my heifer' (Judg 14:18) is a figure", 1],
+   "H2790A|plowing": ["M06_not_this_sense", "'Elisha was plowing' (1Kgs 19:19), 'the oxen were plowing' (Job 1:14): literal", 0],
+   "H4209|discretion": ["M06_not_this_sense", "'keep sound wisdom and discretion' (Prov 3:21): prudence", 0],
+   "H4209|purpose": ["M06_not_this_sense", "'the LORD's purpose' (Jer 51:11), 'no purpose of yours can be thwarted' (Job 42:2)", 0],
+   "H4284|artistic designs": ["M06_not_this_sense", "'to devise artistic designs' (Exod 31:4): craft", 0],
+   "H4284|purposes": ["M06_plotting", "'the purposes that he has formed against the land' (Jer 50:45): God's purposes against Babylon; settled per verse", 1],
+   "G1727|against": ["M06_hostility", "'I had done nothing against our people' (Acts 28:17); 'the wind was against them' (Matt 14:24) is literal", 1],
+   "H8130|enemies": ["M06_enemies", "'they join our enemies' (Exod 1:10), sone' as 'those who hate'", 0],
+   "G0663|severity": ["M06_oppression", "'the kindness and the severity of God' (Rom 11:22): severity; settled in the reading", 1]
+  }
+ },
+ "M07": {
+  "groups": [
+   ["M07_shame", "Shame, being ashamed", "shame felt or brought: ashamed, put to shame, blushing, acting shamefully", "group", "renders shame"],
+   ["M07_confusion", "Confusion, disappointment", "being confounded or disappointed in a hope", "group", "renders confusion or disappointment"],
+   ["M07_disgrace", "Disgrace, dishonour", "loss of honour: disgrace, dishonour, being without honour", "group", "renders disgrace or dishonour"],
+   ["M07_reproach", "Reproach, taunt, scorn", "shame put on one by others: reproach, taunt, scorn", "group", "renders reproach"],
+   ["M07_curse", "Becoming a curse", "being made a curse, an object of cursing", "group", "renders the curse that shames"],
+   ["M07_not_this_sense", "Not the cluster's sense", "renderings with no sense of shame: entrepo as respect", "not_this_sense", "carries no sense of shame"]
+  ],
+  "surf": {
+   "M07_shame": ["put to shame", "ashamed", "shame", "shamed", "embarrassed", "blush", "acts shamefully", "shameful", "all"],
+   "M07_confusion": ["confounded", "disappointed"],
+   "M07_disgrace": ["disgrace", "disgraced", "dishonor", "dishonors", "dishonorable", "without honor", "brought to dishonor", "shamefully"],
+   "M07_reproach": ["reproach", "scorn", "taunt", "taunts"],
+   "M07_curse": ["curse", "curses", "cursing"],
+   "M07_not_this_sense": ["respect", "respected"]
+  },
+  "over": {
+   "G1788|respect": ["M07_not_this_sense", "entrepo 'they will respect my son' (Luke 20:13): respect, not shame", 0],
+   "G1788|respected": ["M07_not_this_sense", "entrepo 'we respected them' (Heb 12:9), 'neither respected man' (Luke 18:2)", 0],
+   "H0954|all": ["M07_shame", "'they were not at all ashamed' (Jer 6:15): the ESV's 'at all' on bosh", 0]
+  }
+ },
+ "M09": {
+  "groups": [
+   ["M09_poor", "Poor, needy, weak", "the low estate of the poor and needy", "group", "renders being poor or needy"],
+   ["M09_humility", "Humility, lowliness, meekness", "the humble disposition: humility, lowliness, meekness, humbling oneself", "group", "renders humility"],
+   ["M09_subdued", "Subdued, brought low", "being humbled by another: subdued, brought low in defeat", "group", "renders being subdued"],
+   ["M09_not_this_sense", "Not the cluster's sense", "renderings with no sense of lowliness: a skin mark appearing deeper", "not_this_sense", "carries no sense of lowliness"]
+  ],
+  "surf": {
+   "M09_poor": ["needy", "poor", "poor man", "becomes poor", "weak", "afflicted"],
+   "M09_humility": ["humble", "humility", "lowly", "meek", "humbled", "humbles", "humbled yourself", "asceticism"],
+   "M09_subdued": ["subdued", "subdue"],
+   "M09_not_this_sense": ["deeper"]
+  },
+  "over": {
+   "H6035|afflicted": ["M09_poor", "'the afflicted shall eat' (Ps 22:26): the poor; anav also carries the humble, settled per verse", 1],
+   "H6035|poor": ["M09_poor", "'good news to the poor' (Isa 61:1): anav, the poor and the humble together", 1],
+   "H6035|humble": ["M09_humility", "'he leads the humble' (Ps 25:9), 'seek humility' (Zeph 2:3)", 0],
+   "H3665|humbled": ["M09_humility", "'when he humbled himself' (2Chr 12:12, 30:11); kana' also of defeat, settled per verse", 1],
+   "G5012|asceticism": ["M09_humility", "'insisting on asceticism' (Col 2:18, 23): a false humility", 0],
+   "H8217|deeper": ["M09_not_this_sense", "'it appears deeper than the skin' (Lev 13:20): a skin mark", 0],
+   "H8217|lowly": ["M09_humility", "'with him who is of a contrite and lowly spirit' (Isa 57:15); 'the most lowly kingdom' (Ezek 29:15) is low estate", 1]
+  }
+ },
+ "M10": {
+  "groups": [
+   ["M10_war", "War, battle, fighting", "violence between peoples: war, battle, fighting, soldiers", "group", "renders war or battle"],
+   ["M10_violence", "Violence, cruelty, ruthlessness", "violence as a disposition and act: violence, cruelty, robbery, ruthlessness", "group", "renders violence or cruelty"],
+   ["M10_destroying", "Destroying, laying waste", "destruction done: destroy, lay waste, make desolate", "group", "renders destroying"],
+   ["M10_perishing", "Perishing, being lost", "apollumi and its kin undergone: perish, be lost, lose", "group", "renders perishing or being lost"],
+   ["M10_crushing", "Crushing, breaking", "violence that crushes: crush, beat, break in pieces, oppress", "group", "renders crushing"],
+   ["M10_strife", "Strife, dispute, lawsuit", "contention between people: strife, quarrel, dispute, a case at law", "group", "renders strife or dispute"],
+   ["M10_not_this_sense", "Not the cluster's sense", "renderings with no sense of violence", "not_this_sense", "carries no sense of violence"]
+  ],
+  "surf": {
+   "M10_war": ["war", "battle", "wars", "battles", "fighting", "fight", "soldiers", "warriors", "conflict"],
+   "M10_violence": ["violence", "violent", "robbery", "malicious", "wrong", "ruthless", "cruel", "wounded"],
+   "M10_destroying": ["destroy", "destroyed", "destruction", "laid waste", "waste", "desolate", "desolated", "lies desolate", "corrupted"],
+   "M10_perishing": ["perish", "perishing", "perished", "perishes", "lost", "lose", "loses"],
+   "M10_crushing": ["crushed", "crush", "beat", "broken", "oppressed", "pieces", "powder"],
+   "M10_strife": ["cause", "strife", "dispute", "case", "indictment", "lawsuit", "quarrel", "contention"],
+   "M10_not_this_sense": []
+  },
+  "over": {
+   "G0073|fight": ["M10_war", "'fight the good fight of the faith' (1Tim 6:12): the contest of faith, a figure", 1],
+   "G0073|conflict": ["M10_war", "'in the midst of much conflict' (1Thess 2:2), 'the same conflict' (Phil 1:30): struggle", 1],
+   "G0622|lost": ["M10_perishing", "'the lost sheep of the house of Israel' (Matt 10:6): lost, not destroyed", 0],
+   "G0622|destroy": ["M10_destroying", "'he will destroy the tenants' (Mark 12:9); 'do not destroy the one for whom Christ died' (Rom 14:15)", 0],
+   "G0622|destroyed": ["M10_destroying", "'fire rained and destroyed them all' (Luke 17:29)", 0],
+   "H7379|cause": ["M10_strife", "'the LORD has a day of vengeance, a year of recompense for the cause of Zion' (Isa 34:8), 'to you I have committed my cause' (Jer 11:20): riv, the case pleaded", 0]
+  }
+ },
+ "M10c": {
+  "groups": [
+   ["M10c_unclean", "Unclean, uncleanness, impurity", "the state of impurity: unclean, uncleanness, impurity", "group", "renders the state of impurity"],
+   ["M10c_defiling", "Defiling, being defiled", "the act that makes impure: defile, be defiled", "group", "renders defiling"],
+   ["M10c_detestable", "Detestable", "what is to be detested as unclean", "group", "renders the detestable"],
+   ["M10c_not_this_sense", "Not the cluster's sense", "renderings with no sense of defilement", "not_this_sense", "carries no sense of defilement"]
+  ],
+  "surf": {
+   "M10c_unclean": ["unclean", "uncleanness", "uncleannesses", "impurity", "menstrual"],
+   "M10c_defiling": ["defiled", "defile", "defiles"],
+   "M10c_detestable": ["detestable"],
+   "M10c_not_this_sense": []
+  },
+  "over": {
+   "H2930A|unclean": ["M10c_unclean", "tame' 'become unclean' (Lev 11:43, Num 19:22): the act ends in the state", 0]
+  }
+ }
+}

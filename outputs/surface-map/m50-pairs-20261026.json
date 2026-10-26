@@ -1,0 +1,2840 @@
+{
+ "cluster": "M50",
+ "cluster_name": "Grace & Mercy",
+ "built_at": "2026-10-26T04:23:42Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 172,
+  "head": 44,
+  "tail": 128,
+  "hits": 829,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H2617A",
+   "surface": "steadfast love",
+   "part": "head",
+   "hits": 191,
+   "verses": 188,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Mic.7.20",
+    "Num.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "grace",
+   "part": "head",
+   "hits": 124,
+   "verses": 116,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "John.1.17",
+    "Rev.22.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1653",
+   "surface": "mercy",
+   "part": "head",
+   "hits": 29,
+   "verses": 26,
+   "gloss": "to have mercy",
+   "transliteration": "eleeō",
+   "samples": [
+    "Jude.1.22",
+    "Luke.16.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1656",
+   "surface": "mercy",
+   "part": "head",
+   "hits": 27,
+   "verses": 26,
+   "gloss": "mercy",
+   "transliteration": "eleos",
+   "samples": [
+    "Jas.3.17",
+    "Jude.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "gracious",
+   "part": "head",
+   "hits": 27,
+   "verses": 26,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Isa.30.18",
+    "Ps.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7356B",
+   "surface": "mercy",
+   "part": "head",
+   "hits": 21,
+   "verses": 21,
+   "gloss": "compassion",
+   "transliteration": "ra.cha.mim",
+   "samples": [
+    "Dan.9.9",
+    "Deut.13.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7355",
+   "surface": "mercy",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to have compassion",
+   "transliteration": "ra.cham",
+   "samples": [
+    "Hos.2.4",
+    "Zech.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7355",
+   "surface": "compassion",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to have compassion",
+   "transliteration": "ra.cham",
+   "samples": [
+    "Isa.55.7",
+    "Jer.12.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "kindness",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Gen.19.19",
+    "Mic.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7349",
+   "surface": "merciful",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "compassionate",
+   "transliteration": "ra.chum",
+   "samples": [
+    "Exod.34.6",
+    "Ps.112.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2347",
+   "surface": "spare",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to pity",
+   "transliteration": "chus",
+   "samples": [
+    "Ezek.5.11",
+    "Ezek.9.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2587",
+   "surface": "gracious",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "gracious",
+   "transliteration": "chan.nun",
+   "samples": [
+    "Exod.34.6",
+    "Ps.116.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "favor",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "2Cor.8.4",
+    "Acts.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "mercy",
+   "part": "head",
+   "hits": 10,
+   "verses": 8,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Prov.21.10",
+    "Ps.123.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "kindly",
+   "part": "head",
+   "hits": 10,
+   "verses": 8,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "1Sam.20.8",
+    "Josh.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4697",
+   "surface": "compassion",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to pity",
+   "transliteration": "splanchnizō",
+   "samples": [
+    "Luke.15.20",
+    "Mark.9.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2347",
+   "surface": "pity",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to pity",
+   "transliteration": "chus",
+   "samples": [
+    "Isa.13.18",
+    "Jonah.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5544",
+   "surface": "kindness",
+   "part": "head",
+   "hits": 8,
+   "verses": 6,
+   "gloss": "kindness",
+   "transliteration": "chrēstotēs",
+   "samples": [
+    "2Cor.6.6",
+    "Rom.11.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7356B",
+   "surface": "compassion",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "compassion",
+   "transliteration": "ra.cha.mim",
+   "samples": [
+    "Isa.63.15",
+    "Ps.77.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "plead",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "1Kgs.8.47",
+    "Job.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "love",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Hos.12.6",
+    "Isa.54.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "thanks",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "1Cor.15.57",
+    "2Cor.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "favor",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Hos.12.4",
+    "Lam.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "generous",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Prov.14.31",
+    "Prov.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "lift up",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Job.11.15",
+    "Ps.24.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7356B",
+   "surface": "mercies",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "compassion",
+   "transliteration": "ra.cha.mim",
+   "samples": [
+    "Neh.9.27",
+    "Neh.9.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "forgiven",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "2Cor.2.10",
+    "Col.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "graciously",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Prov.26.25",
+    "Ps.119.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "merciful",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Ps.30.10",
+    "Ps.57.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "partiality",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "2Chr.19.7",
+    "Prov.24.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3629",
+   "surface": "merciful",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "compassionate",
+   "transliteration": "oiktirmōn",
+   "samples": [
+    "Jas.5.11",
+    "Luke.6.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4697",
+   "surface": "pity",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to pity",
+   "transliteration": "splanchnizō",
+   "samples": [
+    "Mark.1.41",
+    "Matt.20.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4698",
+   "surface": "affection",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "affection/entrails",
+   "transliteration": "splanchnon",
+   "samples": [
+    "2Cor.7.15",
+    "Phil.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4698",
+   "surface": "heart",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "affection/entrails",
+   "transliteration": "splanchnon",
+   "samples": [
+    "1John.3.17",
+    "Phlm.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "forgive",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "2Cor.12.13",
+    "2Cor.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "granted",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Acts.3.14",
+    "Phil.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "thank",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "1Tim.1.12",
+    "Luke.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "pleaded",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Deut.3.23",
+    "Esth.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "favor",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Dan.1.9",
+    "Esth.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "good deeds",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "2Chr.32.32",
+    "Neh.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "loyally",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "1Kgs.2.7",
+    "2Sam.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "accept",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Gen.32.20",
+    "Job.42.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "partial",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Deut.10.17",
+    "Lev.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "raised",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ps.83.2",
+    "Zech.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "show",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Job.13.8",
+    "Mal.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "show partiality",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Job.32.21",
+    "Ps.82.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "won",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Esth.2.17",
+    "Esth.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "face",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "2Kgs.9.32",
+    "Job.11.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "favor",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Gen.19.21",
+    "Mal.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "partial",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Deut.1.17",
+    "Prov.18.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1653",
+   "surface": "mercy on",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to have mercy",
+   "transliteration": "eleeō",
+   "samples": [
+    "Luke.18.38",
+    "Luke.18.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1655",
+   "surface": "merciful",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "merciful",
+   "transliteration": "eleēmōn",
+   "samples": [
+    "Heb.2.17",
+    "Matt.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3627",
+   "surface": "compassion",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to have compassion",
+   "transliteration": "oikteirō",
+   "samples": [
+    "Rom.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3628",
+   "surface": "mercies",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "compassion",
+   "transliteration": "oiktirmos",
+   "samples": [
+    "2Cor.1.3",
+    "Rom.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4698",
+   "surface": "hearts",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "affection/entrails",
+   "transliteration": "splanchnon",
+   "samples": [
+    "Col.3.12",
+    "Phlm.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "cancelled",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Luke.7.42",
+    "Luke.7.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "forgiving",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Col.3.13",
+    "Eph.4.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "benefit",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "Luke.6.32",
+    "Luke.6.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "gift",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "1Cor.16.3",
+    "Rom.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "gracious",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "Col.4.6",
+    "Luke.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "gracious thing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "1Pet.2.19",
+    "1Pet.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "thankfulness",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "1Cor.10.30",
+    "Col.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2347",
+   "surface": "spared",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to pity",
+   "transliteration": "chus",
+   "samples": [
+    "1Sam.24.10",
+    "Ezek.20.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "pity",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Ps.102.14",
+    "Ps.109.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "loyalty",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "2Sam.16.17",
+    "2Sam.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "mercy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Ps.23.6",
+    "Zech.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "partiality",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Job.34.19",
+    "Mal.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "up",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "2Sam.2.22",
+    "Num.6.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "respect",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Deut.28.50",
+    "Lam.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "show partiality",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Deut.16.19",
+    "Ps.82.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7355",
+   "surface": "pity",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to have compassion",
+   "transliteration": "ra.cham",
+   "samples": [
+    "Isa.49.10",
+    "Ps.102.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7355",
+   "surface": "show mercy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to have compassion",
+   "transliteration": "ra.cham",
+   "samples": [
+    "Exod.33.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7355",
+   "surface": "shows compassion",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to have compassion",
+   "transliteration": "ra.cham",
+   "samples": [
+    "Ps.103.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0415",
+   "surface": "ruthless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "merciless",
+   "transliteration": "aneleēmōn",
+   "samples": [
+    "Rom.1.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0448",
+   "surface": "mercy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "merciless",
+   "transliteration": "anileōs",
+   "samples": [
+    "Jas.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2155",
+   "surface": "tender heart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassionate",
+   "transliteration": "eusplanchnos",
+   "samples": [
+    "1Pet.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2155",
+   "surface": "tenderhearted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassionate",
+   "transliteration": "eusplanchnos",
+   "samples": [
+    "Eph.4.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2436",
+   "surface": "far be it",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "propitious/gracious",
+   "transliteration": "hileōs",
+   "samples": [
+    "Matt.16.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2436",
+   "surface": "merciful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "propitious/gracious",
+   "transliteration": "hileōs",
+   "samples": [
+    "Heb.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3628",
+   "surface": "compassionate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "oiktirmos",
+   "samples": [
+    "Col.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3628",
+   "surface": "mercy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "oiktirmos",
+   "samples": [
+    "Heb.10.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3628",
+   "surface": "sympathy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "oiktirmos",
+   "samples": [
+    "Phil.2.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4184",
+   "surface": "compassionate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "very compassionate",
+   "transliteration": "polusplanchnos",
+   "samples": [
+    "Jas.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4698",
+   "surface": "affections",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "affection/entrails",
+   "transliteration": "splanchnon",
+   "samples": [
+    "2Cor.6.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4698",
+   "surface": "bowels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "affection/entrails",
+   "transliteration": "splanchnon",
+   "samples": [
+    "Acts.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4698",
+   "surface": "tender",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "affection/entrails",
+   "transliteration": "splanchnon",
+   "samples": [
+    "Luke.1.78"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "bestowed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Luke.7.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "bestowed on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Phil.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "debt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Luke.7.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "forgave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Eph.4.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "freely given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "1Cor.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "gave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Gal.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "give",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Acts.25.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "give up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Acts.25.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "graciously give",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Rom.8.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "graciously given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Phlm.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5483",
+   "surface": "up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to give grace",
+   "transliteration": "charizō",
+   "samples": [
+    "Acts.25.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "credit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "Luke.6.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5485",
+   "surface": "grateful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "grace",
+   "transliteration": "charis",
+   "samples": [
+    "Heb.12.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5544",
+   "surface": "good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "chrēstotēs",
+   "samples": [
+    "Rom.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5544",
+   "surface": "goodness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "chrēstotēs",
+   "samples": [
+    "Titus.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2347",
+   "surface": "concern",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pity",
+   "transliteration": "chus",
+   "samples": [
+    "Gen.45.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2347",
+   "surface": "pitied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pity",
+   "transliteration": "chus",
+   "samples": [
+    "Ezek.16.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2551",
+   "surface": "merciful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "chem.lah",
+   "samples": [
+    "Gen.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2551",
+   "surface": "pity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "chem.lah",
+   "samples": [
+    "Isa.63.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2587",
+   "surface": "compassionate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gracious",
+   "transliteration": "chan.nun",
+   "samples": [
+    "Exod.22.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2587",
+   "surface": "is gracious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "gracious",
+   "transliteration": "chan.nun",
+   "samples": [
+    "Joel.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "begged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Gen.42.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "deals generously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Ps.112.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "entreated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "2Kgs.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "generously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Ps.37.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "graciously given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Gen.33.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "1Kgs.9.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "must plead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Job.19.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "show mercy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Deut.28.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "shown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Isa.26.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "spare",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Ps.59.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2603A",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Isa.30.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2604",
+   "surface": "plea",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Dan.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2604",
+   "surface": "showing mercy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be gracious",
+   "transliteration": "cha.nan",
+   "samples": [
+    "Dan.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "beauty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Isa.40.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "devotion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Jer.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "devout",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Isa.57.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "faithfulness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Jer.31.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "kind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Prov.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "life",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Job.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "merciful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "1Kgs.20.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2617A",
+   "surface": "steadfast",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "kindness",
+   "transliteration": "che.sed",
+   "samples": [
+    "Exod.34.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4263",
+   "surface": "yearning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "mach.mal",
+   "samples": [
+    "Ezek.24.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "favored man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Job.22.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "graciously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "2Kgs.25.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "graciously freed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Jer.52.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "grant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Gen.19.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "granted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "1Sam.25.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "high favor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "2Kgs.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "honored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Isa.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "lift",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ps.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "lifted up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ps.24.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "rank",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Isa.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "regard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "2Kgs.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "respect",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Deut.28.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "shown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Lam.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375Q",
+   "surface": "winning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: kindness",
+   "transliteration": "na.sa",
+   "samples": [
+    "Esth.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "accept",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Prov.6.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "because",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "2Kgs.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "cosmetics",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Esth.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "faced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "2Chr.25.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "favored man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Job.22.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "his",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Job.42.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "honor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Lam.4.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "honored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Isa.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Isa.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Gen.32.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "petition",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "1Sam.25.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "poor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Lev.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "prayer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Job.42.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "show",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Prov.28.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "shows",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Job.34.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "sight",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Esth.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440N",
+   "surface": "toward",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: kindness",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Job.32.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7349",
+   "surface": "compassionate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassionate",
+   "transliteration": "ra.chum",
+   "samples": [
+    "Ps.78.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7355",
+   "surface": "love",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to have compassion",
+   "transliteration": "ra.cham",
+   "samples": [
+    "Ps.18.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7355",
+   "surface": "merciful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to have compassion",
+   "transliteration": "ra.cham",
+   "samples": [
+    "Ps.116.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7355",
+   "surface": "obtain mercy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to have compassion",
+   "transliteration": "ra.cham",
+   "samples": [
+    "Prov.28.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7355",
+   "surface": "surely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to have compassion",
+   "transliteration": "ra.cham",
+   "samples": [
+    "Jer.31.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7356B",
+   "surface": "find compassion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "ra.cha.mim",
+   "samples": [
+    "2Chr.30.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7356B",
+   "surface": "heart",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "ra.cha.mim",
+   "samples": [
+    "1Kgs.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7356B",
+   "surface": "kindness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "ra.cha.mim",
+   "samples": [
+    "Zech.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7356B",
+   "surface": "pitied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "ra.cha.mim",
+   "samples": [
+    "Ps.106.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7356B",
+   "surface": "pity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "ra.cha.mim",
+   "samples": [
+    "Amos.1.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7359",
+   "surface": "mercy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassion",
+   "transliteration": "ra.cha.min",
+   "samples": [
+    "Dan.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7362",
+   "surface": "compassionate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "compassionate",
+   "transliteration": "ra.cha.ma.ni",
+   "samples": [
+    "Lam.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

@@ -1,17 +1,19 @@
 # Cluster-assignment quality report
 
-> Generated 2026-10-18T17:48:42Z by `cluster.validate`. Read-only findings, not a gate.
+> Generated 2026-10-26T06:10:31Z by `cluster.validate`. Read-only findings, not a gate.
 
 - `strong` rows with no cluster assignment at all: **0**
-- `backfill`-origin, non-T2 assignment, not yet promoted (should be `word`): **0**
-- exception — non-T2 assignment with no `word_registry` link: **4458**
+- `backfill`-origin, non-T2 assignment, not yet promoted (should be `word`): **2**
+- exception — non-T2 assignment with no `word_registry` link: **4455**
 - exception — `backfill` code with an active/clustered sibling: **2786**
+- surface mapping (#2294): **0** stale pair(s); **0** M cluster(s) partly mapped; 0 not yet mapped (counted, not a finding)
 
 ## Contents
 
 - [Summary](#summary)
 - [Exception - no word](#exception-non-t2-cluster-no-word-registry-link)
 - [Exception - sibling conflict](#exception-backfill-code-with-an-activeclustered-sibling)
+- [Surface mapping](#surface-mapping-2294)
 - unclassified
 
 <a id="summary"></a>
@@ -19,8 +21,8 @@
 
 15455 strong(s) checked
 unclassified: 0
-not yet promoted (backfill, non-T2, has a word): 0
-exception — no word: 4458
+not yet promoted (backfill, non-T2, has a word): 2
+exception — no word: 4455
 exception — sibling conflict: 2786
 
 <a id="exception-non-t2-cluster-no-word-registry-link"></a>
@@ -392,7 +394,6 @@ exception — sibling conflict: 2786
 `H7626G` — 'tribe: staff', cluster T12
 `H0175` — 'Aaron', cluster T8
 `H0256G` — 'Ahab', cluster T8
-`H0990J` — 'belly: body', cluster T14
 `H1060` — 'firstborn', cluster M37
 `H1109A` — 'Balaam', cluster T8
 `H1111` — 'Balak', cluster T8
@@ -777,7 +778,6 @@ exception — sibling conflict: 2786
 `G4862` — 'with', cluster FLAG,T2
 `G4889` — 'fellow slave', cluster M78
 `G4947` — 'Syria', cluster T11
-`G4983` — 'body', cluster T14
 `G5022` — 'bull', cluster T13
 `G5037` — 'and/both', cluster T6
 `G5083H` — 'to keep: guard', cluster M74
@@ -1175,7 +1175,6 @@ exception — sibling conflict: 2786
 `G4255` — 'to predetermine', cluster M37
 `G4349` — 'stumbling', cluster M77
 `G4553` — 'basket', cluster T12
-`G4560` — 'fleshly', cluster M28
 `G4647` — 'thorn', cluster T13
 `G4705` — 'eager', cluster M69
 `G5569` — 'false brother', cluster M14
@@ -4825,7 +4824,7 @@ exception — sibling conflict: 2786
 `H7626G` — 'tribe: staff', cluster T12
 `H0068H` — 'stone: weight', cluster T2
 `H0256G` — 'Ahab', cluster T8
-`H0990J` — 'belly: body', cluster T14
+`H0990J` — 'belly: body', cluster M47
 `H1121L` — 'son: aged', cluster T2
 `H1160H` — 'Beor', cluster T8
 `H1537G` — 'Gilgal', cluster T10
@@ -6883,7 +6882,7 @@ exception — sibling conflict: 2786
 `H4659A` — 'work', cluster T2
 `H4881A` — 'hedge', cluster T2
 `H5433A` — 'to imbibe', cluster T3
-`H6106I` — 'bone: body', cluster T2
+`H6106I` — 'bone: body', cluster M47
 `H6612B` — 'simplicity', cluster T2
 `H6735B` — 'hinge', cluster T2
 `H6793B` — 'coolness', cluster T2
@@ -7274,5 +7273,93 @@ exception — sibling conflict: 2786
 `H8607H` — 'Tiphsah', cluster T2
 `H3129M` — 'Jonathan', cluster T2
 `H4448B` — 'to rub', cluster T3
+
+<a id="surface-mapping-2294"></a>
+## Surface mapping (#2294)
+
+| cluster | pairs | allocated | unallocated | stale |
+|---|---|---|---|---|
+| M01 | 297 | 297 | 0 | 0 |
+| M02 | 211 | 211 | 0 | 0 |
+| M03 | 293 | 293 | 0 | 0 |
+| M04 | 186 | 186 | 0 | 0 |
+| M05 | 252 | 252 | 0 | 0 |
+| M06 | 272 | 272 | 0 | 0 |
+| M07 | 141 | 141 | 0 | 0 |
+| M08 | 265 | 265 | 0 | 0 |
+| M09 | 77 | 77 | 0 | 0 |
+| M10 | 243 | 243 | 0 | 0 |
+| M10c | 75 | 75 | 0 | 0 |
+| M11 | 137 | 137 | 0 | 0 |
+| M12 | 278 | 278 | 0 | 0 |
+| M13 | 108 | 108 | 0 | 0 |
+| M14 | 274 | 274 | 0 | 0 |
+| M15 | 460 | 460 | 0 | 0 |
+| M16 | 288 | 288 | 0 | 0 |
+| M18 | 454 | 454 | 0 | 0 |
+| M19 | 122 | 122 | 0 | 0 |
+| M20 | 102 | 102 | 0 | 0 |
+| M21 | 101 | 101 | 0 | 0 |
+| M22 | 309 | 309 | 0 | 0 |
+| M23 | 574 | 574 | 0 | 0 |
+| M24 | 582 | 582 | 0 | 0 |
+| M25 | 259 | 259 | 0 | 0 |
+| M26 | 202 | 202 | 0 | 0 |
+| M28 | 96 | 96 | 0 | 0 |
+| M30 | 241 | 241 | 0 | 0 |
+| M31 | 27 | 27 | 0 | 0 |
+| M32 | 48 | 48 | 0 | 0 |
+| M33 | 242 | 242 | 0 | 0 |
+| M34 | 116 | 116 | 0 | 0 |
+| M35 | 76 | 76 | 0 | 0 |
+| M36 | 166 | 166 | 0 | 0 |
+| M37 | 62 | 62 | 0 | 0 |
+| M39 | 83 | 83 | 0 | 0 |
+| M41 | 135 | 135 | 0 | 0 |
+| M42 | 304 | 304 | 0 | 0 |
+| M43 | 65 | 65 | 0 | 0 |
+| M44 | 80 | 80 | 0 | 0 |
+| M45 | 319 | 319 | 0 | 0 |
+| M46 | 176 | 176 | 0 | 0 |
+| M47 | 393 | 393 | 0 | 0 |
+| M48 | 67 | 67 | 0 | 0 |
+| M49 | 41 | 41 | 0 | 0 |
+| M50 | 172 | 172 | 0 | 0 |
+| M51 | 48 | 48 | 0 | 0 |
+| M52 | 37 | 37 | 0 | 0 |
+| M53 | 76 | 76 | 0 | 0 |
+| M54 | 34 | 34 | 0 | 0 |
+| M55 | 226 | 226 | 0 | 0 |
+| M56 | 186 | 186 | 0 | 0 |
+| M57 | 129 | 129 | 0 | 0 |
+| M58 | 310 | 310 | 0 | 0 |
+| M59 | 106 | 106 | 0 | 0 |
+| M60 | 54 | 54 | 0 | 0 |
+| M61 | 196 | 196 | 0 | 0 |
+| M62 | 34 | 34 | 0 | 0 |
+| M63 | 231 | 231 | 0 | 0 |
+| M64 | 165 | 165 | 0 | 0 |
+| M65 | 314 | 314 | 0 | 0 |
+| M66 | 23 | 23 | 0 | 0 |
+| M67 | 44 | 44 | 0 | 0 |
+| M68 | 84 | 84 | 0 | 0 |
+| M69 | 29 | 29 | 0 | 0 |
+| M70 | 50 | 50 | 0 | 0 |
+| M71 | 92 | 92 | 0 | 0 |
+| M72 | 335 | 335 | 0 | 0 |
+| M73 | 124 | 124 | 0 | 0 |
+| M74 | 223 | 223 | 0 | 0 |
+| M75 | 44 | 44 | 0 | 0 |
+| M76 | 96 | 96 | 0 | 0 |
+| M77 | 99 | 99 | 0 | 0 |
+| M78 | 68 | 68 | 0 | 0 |
+| M79 | 44 | 44 | 0 | 0 |
+| M80 | 58 | 58 | 0 | 0 |
+| M81 | 67 | 67 | 0 | 0 |
+| M82 | 76 | 76 | 0 | 0 |
+| M83 | 104 | 104 | 0 | 0 |
+| M84 | 134 | 134 | 0 | 0 |
+
+Not yet mapped: none
 
 (none)

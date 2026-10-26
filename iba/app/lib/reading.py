@@ -7,7 +7,8 @@ order, each checked from the tables by the tool, not asserted:
 
   open      0.C: the scope resolved (versescope, its 2,500 review), its objective, its verses kept (reading_verse),
             the scope collated (versecollate), and the pre-gap JSON written: one section per gap type of phase pre
-            (cfg_setting reading.gap_types), each found by its detector in PRE
+            (cfg_setting reading.gap_types), each found by its detector in PRE. Refused when the home is an M
+            cluster with unallocated or stale surface pairs (surfacemap.reading_refusal, #2294)
   gather    0.GAP pre written: each pre-gap item's record -- {"finding": ...}, {"table", "id"}, a face on a strand
             hit, a response on an open item, or {"reason": ...} -- and new open items; the ids written back
   check     the gate the reading is at: pre (open -> gathered), observe (gathered -> observed; the verses marked
@@ -43,6 +44,7 @@ from . import narrativeregister as nr
 from . import observationrecord as orec
 from . import openitem
 from . import strandreading as sr
+from . import surfacemap
 from . import versecollate as vc
 from . import versemeta
 from . import versescope as vs
@@ -227,6 +229,9 @@ def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_requ
     home = (p.get("Home") or "").strip()
     if not conn.execute("SELECT 1 FROM cluster WHERE cluster_code=?", (home,)).fetchone():
         raise Refused(f"-Home {home!r} is not a cluster (the cluster the scope is anchored on)")
+    unmapped = surfacemap.reading_refusal(conn, home)
+    if unmapped:
+        raise Refused(unmapped)
     types = gap_types(cfg)
     request = vs.normalise_request({k: v for k, v in p.items() if k not in NOT_SCOPE}, file_request)
     try:

@@ -1,0 +1,732 @@
+{
+ "cluster": "M75",
+ "cluster_name": "Disobedience & Lawlessness",
+ "built_at": "2026-10-26T04:27:29Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 44,
+  "head": 25,
+  "tail": 19,
+  "hits": 96,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H3513H",
+   "surface": "heavy",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Isa.47.6",
+    "Lam.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0458",
+   "surface": "lawlessness",
+   "part": "head",
+   "hits": 11,
+   "verses": 9,
+   "gloss": "lawlessness",
+   "transliteration": "anomia",
+   "samples": [
+    "2Thess.2.7",
+    "Matt.23.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0543",
+   "surface": "disobedience",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "disobedience",
+   "transliteration": "apeitheia",
+   "samples": [
+    "Eph.5.6",
+    "Heb.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "hardened",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Exod.8.15",
+    "Exod.8.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0545",
+   "surface": "disobedient",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "disobedient",
+   "transliteration": "apeithēs",
+   "samples": [
+    "Acts.26.19",
+    "Titus.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4456",
+   "surface": "hardened",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to harden",
+   "transliteration": "pōroō",
+   "samples": [
+    "2Cor.3.14",
+    "Mark.6.52"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0459",
+   "surface": "outside the law",
+   "part": "head",
+   "hits": 4,
+   "verses": 1,
+   "gloss": "lawless",
+   "transliteration": "anomos",
+   "samples": [
+    "1Cor.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0459",
+   "surface": "lawless",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "lawless",
+   "transliteration": "anomos",
+   "samples": [
+    "2Pet.2.8",
+    "Acts.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3876",
+   "surface": "disobedience",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "disobedience",
+   "transliteration": "parakoē",
+   "samples": [
+    "Heb.2.2",
+    "Rom.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4645",
+   "surface": "harden",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to harden",
+   "transliteration": "sklērunō",
+   "samples": [
+    "Heb.3.15",
+    "Heb.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4457",
+   "surface": "hardness",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "hardening",
+   "transliteration": "pōrōsis",
+   "samples": [
+    "Eph.4.18",
+    "Mark.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0113",
+   "surface": "lawless people",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lawless",
+   "transliteration": "athesmos",
+   "samples": [
+    "2Pet.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0113",
+   "surface": "wicked",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lawless",
+   "transliteration": "athesmos",
+   "samples": [
+    "2Pet.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0458",
+   "surface": "law-breakers",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lawlessness",
+   "transliteration": "anomia",
+   "samples": [
+    "Matt.13.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0458",
+   "surface": "lawless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lawlessness",
+   "transliteration": "anomia",
+   "samples": [
+    "Heb.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0458",
+   "surface": "lawless deeds",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lawlessness",
+   "transliteration": "anomia",
+   "samples": [
+    "Rom.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0458",
+   "surface": "wickedness",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lawlessness",
+   "transliteration": "anomia",
+   "samples": [
+    "Heb.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0459",
+   "surface": "lawless one",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lawless",
+   "transliteration": "anomos",
+   "samples": [
+    "2Thess.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0459",
+   "surface": "transgressors",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lawless",
+   "transliteration": "anomos",
+   "samples": [
+    "Luke.22.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0506",
+   "surface": "disobedient",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "insubordinate",
+   "transliteration": "anupotaktos",
+   "samples": [
+    "1Tim.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0506",
+   "surface": "insubordinate",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "insubordinate",
+   "transliteration": "anupotaktos",
+   "samples": [
+    "Titus.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0506",
+   "surface": "insubordination",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "insubordinate",
+   "transliteration": "anupotaktos",
+   "samples": [
+    "Titus.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0506",
+   "surface": "outside his control",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "insubordinate",
+   "transliteration": "anupotaktos",
+   "samples": [
+    "Heb.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3892",
+   "surface": "transgression",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lawlessness",
+   "transliteration": "paranomia",
+   "samples": [
+    "2Pet.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4457",
+   "surface": "hardening",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hardening",
+   "transliteration": "pōrōsis",
+   "samples": [
+    "Rom.11.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4643",
+   "surface": "hard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hardness",
+   "transliteration": "sklērotēs",
+   "samples": [
+    "Rom.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4645",
+   "surface": "hardened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harden",
+   "transliteration": "sklērunō",
+   "samples": [
+    "Heb.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4645",
+   "surface": "hardens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harden",
+   "transliteration": "sklērunō",
+   "samples": [
+    "Rom.9.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4645",
+   "surface": "stubborn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harden",
+   "transliteration": "sklērunō",
+   "samples": [
+    "Acts.19.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "burdensome",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "2Sam.13.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "grave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Gen.18.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "hard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Judg.20.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "harden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "1Sam.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "heavier",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Job.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "heavy burdens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Neh.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "laden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Ezek.27.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "laid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Exod.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "loads",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Hab.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "pressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "1Chr.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "pressed hard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "1Sam.31.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513H",
+   "surface": "rested heavily",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: heavy",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Judg.1.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7188",
+   "surface": "cruelly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harden",
+   "transliteration": "qa.shach",
+   "samples": [
+    "Job.39.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7188",
+   "surface": "harden",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harden",
+   "transliteration": "qa.shach",
+   "samples": [
+    "Isa.63.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7280C",
+   "surface": "hardens",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to harden",
+   "transliteration": "ra.ga",
+   "samples": [
+    "Job.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

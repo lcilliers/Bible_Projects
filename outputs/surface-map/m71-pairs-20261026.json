@@ -1,0 +1,1525 @@
+{
+ "cluster": "M71",
+ "cluster_name": "Glory & Splendor",
+ "built_at": "2026-10-26T04:26:52Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 92,
+  "head": 45,
+  "tail": 47,
+  "hits": 237,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G5092",
+   "surface": "honor",
+   "part": "head",
+   "hits": 26,
+   "verses": 26,
+   "gloss": "honor",
+   "transliteration": "timē",
+   "samples": [
+    "1Pet.1.7",
+    "1Tim.6.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "worthy",
+   "part": "head",
+   "hits": 20,
+   "verses": 18,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "Heb.11.38",
+    "Matt.22.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5091",
+   "surface": "honor",
+   "part": "head",
+   "hits": 16,
+   "verses": 12,
+   "gloss": "to honor",
+   "transliteration": "timaō",
+   "samples": [
+    "Eph.6.2",
+    "Matt.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1433",
+   "surface": "greatness",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "greatness",
+   "transliteration": "go.del",
+   "samples": [
+    "Deut.11.2",
+    "Deut.5.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1420",
+   "surface": "greatness",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "greatness",
+   "transliteration": "ge.dul.lah",
+   "samples": [
+    "Esth.1.4",
+    "Ps.145.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1935",
+   "surface": "majesty",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "splendor",
+   "transliteration": "hod",
+   "samples": [
+    "Dan.11.21",
+    "Ps.145.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1935",
+   "surface": "splendor",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "splendor",
+   "transliteration": "hod",
+   "samples": [
+    "Ps.104.1",
+    "Ps.111.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2287",
+   "surface": "keep",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to celebrate",
+   "transliteration": "cha.gag",
+   "samples": [
+    "Num.29.12",
+    "Zech.14.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3367",
+   "surface": "glory",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "honor",
+   "transliteration": "ye.qar",
+   "samples": [
+    "Dan.4.30",
+    "Dan.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "deserving",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "1Tim.1.15",
+    "1Tim.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "deserve",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "Acts.26.31",
+    "Rom.1.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2165",
+   "surface": "celebrate",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to celebrate",
+   "transliteration": "eufrainō",
+   "samples": [
+    "Luke.15.24",
+    "Luke.15.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2165",
+   "surface": "rejoice",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to celebrate",
+   "transliteration": "eufrainō",
+   "samples": [
+    "Rev.12.12",
+    "Rev.18.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2122",
+   "surface": "color",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "splendor",
+   "transliteration": "ziv",
+   "samples": [
+    "Dan.5.10",
+    "Dan.5.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "deserves",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "1Tim.5.18",
+    "Matt.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "keeping",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "Luke.3.8",
+    "Matt.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0515",
+   "surface": "worthy",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to deem worthy",
+   "transliteration": "axioō",
+   "samples": [
+    "2Thess.1.11",
+    "Heb.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5092",
+   "surface": "honorable use",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "honor",
+   "transliteration": "timē",
+   "samples": [
+    "2Tim.2.20",
+    "Rom.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5092",
+   "surface": "price",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "honor",
+   "transliteration": "timē",
+   "samples": [
+    "1Cor.7.23",
+    "Matt.27.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5092",
+   "surface": "proceeds",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "honor",
+   "transliteration": "timē",
+   "samples": [
+    "Acts.4.34",
+    "Acts.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1927",
+   "surface": "splendor",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "adornment",
+   "transliteration": "ha.da.rah",
+   "samples": [
+    "Ps.29.2",
+    "Ps.96.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1935",
+   "surface": "majestic",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "splendor",
+   "transliteration": "hod",
+   "samples": [
+    "Isa.30.30",
+    "Job.39.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2287",
+   "surface": "celebrate",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to celebrate",
+   "transliteration": "cha.gag",
+   "samples": [
+    "Lev.23.39",
+    "Lev.23.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2287",
+   "surface": "feast",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to celebrate",
+   "transliteration": "cha.gag",
+   "samples": [
+    "Exod.12.14",
+    "Exod.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0515",
+   "surface": "presume",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to deem worthy",
+   "transliteration": "axioō",
+   "samples": [
+    "Luke.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2165",
+   "surface": "glad",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to celebrate",
+   "transliteration": "eufrainō",
+   "samples": [
+    "2Cor.2.2",
+    "Acts.2.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5091",
+   "surface": "honors",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to honor",
+   "transliteration": "timaō",
+   "samples": [
+    "Mark.7.6",
+    "Matt.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5092",
+   "surface": "value",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "honor",
+   "transliteration": "timē",
+   "samples": [
+    "Acts.19.19",
+    "Col.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0142",
+   "surface": "glorious",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be glorious",
+   "transliteration": "a.dar",
+   "samples": [
+    "Exod.15.6",
+    "Isa.42.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1420",
+   "surface": "great",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "greatness",
+   "transliteration": "ge.dul.lah",
+   "samples": [
+    "1Chr.17.21",
+    "2Sam.7.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1922",
+   "surface": "honored",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Dan.4.34",
+    "Dan.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1923",
+   "surface": "majesty",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Dan.4.30",
+    "Dan.4.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1935",
+   "surface": "glory",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "splendor",
+   "transliteration": "hod",
+   "samples": [
+    "Job.40.10",
+    "Ps.8.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1935",
+   "surface": "honor",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "splendor",
+   "transliteration": "hod",
+   "samples": [
+    "Prov.5.9",
+    "Zech.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3314",
+   "surface": "splendor",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "splendor",
+   "transliteration": "yiph.ah",
+   "samples": [
+    "Ezek.28.17",
+    "Ezek.28.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513I",
+   "surface": "multiply",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to honor: many",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Nah.3.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4768",
+   "surface": "majority",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "greatness",
+   "transliteration": "mar.bit",
+   "samples": [
+    "1Chr.12.29",
+    "2Chr.30.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "advisable",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "1Cor.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "deserved",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "Luke.12.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "due reward",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "Luke.23.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "right",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "2Thess.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "unworthy",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "Acts.13.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0514",
+   "surface": "worth",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "worthy",
+   "transliteration": "axios",
+   "samples": [
+    "Rom.8.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0515",
+   "surface": "deserved",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deem worthy",
+   "transliteration": "axioō",
+   "samples": [
+    "Heb.10.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0515",
+   "surface": "desire",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deem worthy",
+   "transliteration": "axioō",
+   "samples": [
+    "Acts.28.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0515",
+   "surface": "thought best",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to deem worthy",
+   "transliteration": "axioō",
+   "samples": [
+    "Acts.15.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2016",
+   "surface": "magnificent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glorious",
+   "transliteration": "epifanēs",
+   "samples": [
+    "Acts.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2165",
+   "surface": "feasted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to celebrate",
+   "transliteration": "eufrainō",
+   "samples": [
+    "Luke.16.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2165",
+   "surface": "make",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to celebrate",
+   "transliteration": "eufrainō",
+   "samples": [
+    "2Cor.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2165",
+   "surface": "make merry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to celebrate",
+   "transliteration": "eufrainō",
+   "samples": [
+    "Rev.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2165",
+   "surface": "merry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to celebrate",
+   "transliteration": "eufrainō",
+   "samples": [
+    "Luke.12.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2165",
+   "surface": "rejoicing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to celebrate",
+   "transliteration": "eufrainō",
+   "samples": [
+    "Acts.7.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4888",
+   "surface": "glorified",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to glory with",
+   "transliteration": "sundoxazō",
+   "samples": [
+    "Rom.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5091",
+   "surface": "greatly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "timaō",
+   "samples": [
+    "Acts.28.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5091",
+   "surface": "set",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "timaō",
+   "samples": [
+    "Matt.27.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5092",
+   "surface": "honor is owed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "honor",
+   "transliteration": "timē",
+   "samples": [
+    "Rom.13.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5092",
+   "surface": "honored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "honor",
+   "transliteration": "timē",
+   "samples": [
+    "Acts.28.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5092",
+   "surface": "money",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "honor",
+   "transliteration": "timē",
+   "samples": [
+    "Matt.27.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5092",
+   "surface": "sum",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "honor",
+   "transliteration": "timē",
+   "samples": [
+    "Acts.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0142",
+   "surface": "majestic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be glorious",
+   "transliteration": "a.dar",
+   "samples": [
+    "Exod.15.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1420",
+   "surface": "distinction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greatness",
+   "transliteration": "ge.dul.lah",
+   "samples": [
+    "Esth.6.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1420",
+   "surface": "great things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greatness",
+   "transliteration": "ge.dul.lah",
+   "samples": [
+    "1Chr.17.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1420",
+   "surface": "high honor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greatness",
+   "transliteration": "ge.dul.lah",
+   "samples": [
+    "Esth.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1433",
+   "surface": "arrogance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greatness",
+   "transliteration": "go.del",
+   "samples": [
+    "Isa.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1433",
+   "surface": "arrogant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greatness",
+   "transliteration": "go.del",
+   "samples": [
+    "Isa.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1433",
+   "surface": "great",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greatness",
+   "transliteration": "go.del",
+   "samples": [
+    "Ps.79.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1921",
+   "surface": "defer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Lev.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1921",
+   "surface": "exalted places",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Isa.45.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1921",
+   "surface": "honor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Lev.19.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1921",
+   "surface": "partial to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Exod.23.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1921",
+   "surface": "shown",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Lam.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1921",
+   "surface": "splendid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Isa.63.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1921",
+   "surface": "yourself forward",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Prov.25.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1922",
+   "surface": "honor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Dan.4.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1923",
+   "surface": "greatness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "honor",
+   "transliteration": "ha.dar",
+   "samples": [
+    "Dan.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1927",
+   "surface": "attire",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "adornment",
+   "transliteration": "ha.da.rah",
+   "samples": [
+    "2Chr.20.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1927",
+   "surface": "glory",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "adornment",
+   "transliteration": "ha.da.rah",
+   "samples": [
+    "Prov.14.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1935",
+   "surface": "authority",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "splendor",
+   "transliteration": "hod",
+   "samples": [
+    "Num.27.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1935",
+   "surface": "beauty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "splendor",
+   "transliteration": "hod",
+   "samples": [
+    "Hos.14.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1935",
+   "surface": "radiant appearance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "splendor",
+   "transliteration": "hod",
+   "samples": [
+    "Dan.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2122",
+   "surface": "brightness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "splendor",
+   "transliteration": "ziv",
+   "samples": [
+    "Dan.2.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2122",
+   "surface": "splendor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "splendor",
+   "transliteration": "ziv",
+   "samples": [
+    "Dan.4.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2287",
+   "surface": "dancing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to celebrate",
+   "transliteration": "cha.gag",
+   "samples": [
+    "1Sam.30.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2287",
+   "surface": "keeping festival",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to celebrate",
+   "transliteration": "cha.gag",
+   "samples": [
+    "Ps.42.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2287",
+   "surface": "reeled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to celebrate",
+   "transliteration": "cha.gag",
+   "samples": [
+    "Ps.107.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3367",
+   "surface": "honor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "honor",
+   "transliteration": "ye.qar",
+   "samples": [
+    "Dan.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3513I",
+   "surface": "abounding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to honor: many",
+   "transliteration": "ka.ved",
+   "samples": [
+    "Prov.8.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3520A",
+   "surface": "stately",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "glorious",
+   "transliteration": "ka.vod",
+   "samples": [
+    "Ezek.23.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4768",
+   "surface": "descendants",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greatness",
+   "transliteration": "mar.bit",
+   "samples": [
+    "1Sam.2.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4768",
+   "surface": "greatness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greatness",
+   "transliteration": "mar.bit",
+   "samples": [
+    "2Chr.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4768",
+   "surface": "profit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "greatness",
+   "transliteration": "mar.bit",
+   "samples": [
+    "Lev.25.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5082",
+   "surface": "honor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "honor",
+   "transliteration": "ne.di.vah",
+   "samples": [
+    "Job.30.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

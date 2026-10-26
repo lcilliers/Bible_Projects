@@ -1,0 +1,3078 @@
+{
+ "cluster": "M56",
+ "cluster_name": "Sin & Guilt",
+ "built_at": "2026-10-26T04:24:41Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 186,
+  "head": 30,
+  "tail": 156,
+  "hits": 1478,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H5771G",
+   "surface": "iniquity",
+   "part": "head",
+   "hits": 125,
+   "verses": 118,
+   "gloss": "iniquity: crime",
+   "transliteration": "a.von",
+   "samples": [
+    "Exod.20.5",
+    "Lam.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403H",
+   "surface": "sin offering",
+   "part": "head",
+   "hits": 114,
+   "verses": 105,
+   "gloss": "sin: sin offering",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Ezek.45.23",
+    "Lev.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403B",
+   "surface": "sin",
+   "part": "head",
+   "hits": 96,
+   "verses": 90,
+   "gloss": "sin",
+   "transliteration": "chat.tat",
+   "samples": [
+    "1Sam.15.23",
+    "Ps.59.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0266",
+   "surface": "sin",
+   "part": "head",
+   "hits": 89,
+   "verses": 75,
+   "gloss": "sin",
+   "transliteration": "hamartia",
+   "samples": [
+    "1John.3.5",
+    "Rom.5.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "sinned",
+   "part": "head",
+   "hits": 85,
+   "verses": 84,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Dan.9.8",
+    "Ezek.37.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0266",
+   "surface": "sins",
+   "part": "head",
+   "hits": 74,
+   "verses": 72,
+   "gloss": "sin",
+   "transliteration": "hamartia",
+   "samples": [
+    "1John.3.5",
+    "1Thess.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403B",
+   "surface": "sins",
+   "part": "head",
+   "hits": 68,
+   "verses": 67,
+   "gloss": "sin",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Ezek.16.51",
+    "Mic.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "sin",
+   "part": "head",
+   "hits": 61,
+   "verses": 56,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Deut.20.18",
+    "Ps.119.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "transgressions",
+   "part": "head",
+   "hits": 46,
+   "verses": 45,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "Ezek.37.23",
+    "Isa.44.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771G",
+   "surface": "iniquities",
+   "part": "head",
+   "hits": 45,
+   "verses": 44,
+   "gloss": "iniquity: crime",
+   "transliteration": "a.von",
+   "samples": [
+    "Ezek.36.31",
+    "Ezek.43.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "transgression",
+   "part": "head",
+   "hits": 36,
+   "verses": 34,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "Mic.1.5",
+    "Num.14.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375J",
+   "surface": "bear",
+   "part": "head",
+   "hits": 33,
+   "verses": 31,
+   "gloss": "to lift: guilt",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ezek.44.10",
+    "Lev.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0817",
+   "surface": "guilt offering",
+   "part": "head",
+   "hits": 32,
+   "verses": 31,
+   "gloss": "guilt [offering]",
+   "transliteration": "a.sham",
+   "samples": [
+    "Ezek.40.39",
+    "Lev.6.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0268",
+   "surface": "sinners",
+   "part": "head",
+   "hits": 31,
+   "verses": 29,
+   "gloss": "sinful",
+   "transliteration": "hamartōlos",
+   "samples": [
+    "Luke.15.1",
+    "Rom.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771H",
+   "surface": "guilt",
+   "part": "head",
+   "hits": 25,
+   "verses": 24,
+   "gloss": "iniquity: guilt",
+   "transliteration": "a.von",
+   "samples": [
+    "Jer.33.8",
+    "Neh.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4202",
+   "surface": "sexual immorality",
+   "part": "head",
+   "hits": 22,
+   "verses": 22,
+   "gloss": "sexual sin",
+   "transliteration": "porneia",
+   "samples": [
+    "Rev.17.2",
+    "Rev.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "committed",
+   "part": "head",
+   "hits": 22,
+   "verses": 20,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "2Kgs.21.17",
+    "Ezek.16.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771I",
+   "surface": "punishment",
+   "part": "head",
+   "hits": 22,
+   "verses": 17,
+   "gloss": "iniquity: punishment",
+   "transliteration": "a.von",
+   "samples": [
+    "Ezek.44.10",
+    "Jer.51.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "sins",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "2Chr.6.22",
+    "Lev.4.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2399",
+   "surface": "sin",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "sin",
+   "transliteration": "chet",
+   "samples": [
+    "Isa.53.12",
+    "Lev.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "guilt",
+   "part": "head",
+   "hits": 17,
+   "verses": 17,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Hos.5.15",
+    "Isa.24.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0819",
+   "surface": "guilt",
+   "part": "head",
+   "hits": 15,
+   "verses": 13,
+   "gloss": "guiltiness",
+   "transliteration": "ash.mah",
+   "samples": [
+    "2Chr.28.13",
+    "Ezra.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2400",
+   "surface": "sinners",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "sinner",
+   "transliteration": "chat.ta",
+   "samples": [
+    "Isa.13.9",
+    "Prov.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0264",
+   "surface": "sinned",
+   "part": "head",
+   "hits": 14,
+   "verses": 12,
+   "gloss": "to sin",
+   "transliteration": "hamartanō",
+   "samples": [
+    "1Cor.7.28",
+    "Heb.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0264",
+   "surface": "sin",
+   "part": "head",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "to sin",
+   "transliteration": "hamartanō",
+   "samples": [
+    "1Cor.7.36",
+    "Eph.4.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0268",
+   "surface": "sinner",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "sinful",
+   "transliteration": "hamartōlos",
+   "samples": [
+    "Luke.15.7",
+    "Luke.19.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3900",
+   "surface": "trespasses",
+   "part": "head",
+   "hits": 12,
+   "verses": 10,
+   "gloss": "trespass",
+   "transliteration": "paraptōma",
+   "samples": [
+    "2Cor.5.19",
+    "Rom.4.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674D",
+   "surface": "transgressed",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to pass: trespass",
+   "transliteration": "a.var",
+   "samples": [
+    "Hos.8.1",
+    "Judg.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0264",
+   "surface": "sinning",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "to sin",
+   "transliteration": "hamartanō",
+   "samples": [
+    "1Cor.8.12",
+    "Heb.10.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "rebelled",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "2Kgs.1.1",
+    "Zeph.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3900",
+   "surface": "trespass",
+   "part": "tail",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "trespass",
+   "transliteration": "paraptōma",
+   "samples": [
+    "Rom.11.12",
+    "Rom.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2399",
+   "surface": "sins",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "sin",
+   "transliteration": "chet",
+   "samples": [
+    "Dan.9.16",
+    "Lam.3.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2401",
+   "surface": "sin",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "sin",
+   "transliteration": "cha.ta.ah",
+   "samples": [
+    "2Kgs.17.21",
+    "Gen.20.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "transgressors",
+   "part": "tail",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "Hos.14.9",
+    "Ps.51.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "cleanse",
+   "part": "tail",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Num.19.12",
+    "Num.19.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "sinner",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Eccl.2.26",
+    "Eccl.7.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "revolted",
+   "part": "tail",
+   "hits": 6,
+   "verses": 4,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "2Chr.21.8",
+    "2Kgs.8.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "transgressed",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "Isa.43.27",
+    "Lam.3.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4203",
+   "surface": "immorality",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to sin sexually",
+   "transliteration": "porneuō",
+   "samples": [
+    "Rev.17.2",
+    "Rev.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4205",
+   "surface": "sexually immoral",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "sexual sinner",
+   "transliteration": "pornos",
+   "samples": [
+    "1Cor.5.9",
+    "Eph.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "purify",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Exod.29.36",
+    "Num.31.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771G",
+   "surface": "guilt",
+   "part": "tail",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "iniquity: crime",
+   "transliteration": "a.von",
+   "samples": [
+    "1Sam.14.41",
+    "Ps.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0264",
+   "surface": "sins",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to sin",
+   "transliteration": "hamartanō",
+   "samples": [
+    "1Cor.6.18",
+    "Luke.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0268",
+   "surface": "sinful",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "sinful",
+   "transliteration": "hamartōlos",
+   "samples": [
+    "Luke.24.7",
+    "Luke.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4205",
+   "surface": "immoral",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "sexual sinner",
+   "transliteration": "pornos",
+   "samples": [
+    "Heb.12.16",
+    "Rev.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0817",
+   "surface": "compensation",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "guilt [offering]",
+   "transliteration": "a.sham",
+   "samples": [
+    "Lev.19.21",
+    "Lev.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "purified",
+   "part": "tail",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Ezek.43.22",
+    "Lev.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "sinning",
+   "part": "tail",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "1Sam.14.33",
+    "Hos.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403H",
+   "surface": "sin offerings",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "sin: sin offering",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Ezek.45.17",
+    "Ezek.45.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5512B",
+   "surface": "sin",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "Sin",
+   "transliteration": "sin",
+   "samples": [
+    "Exod.17.1",
+    "Num.33.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674D",
+   "surface": "transgress",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to pass: trespass",
+   "transliteration": "a.var",
+   "samples": [
+    "Josh.23.16",
+    "Ps.17.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0266",
+   "surface": "sinning",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "sin",
+   "transliteration": "hamartia",
+   "samples": [
+    "1John.3.4",
+    "1John.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3847",
+   "surface": "transgression",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "transgression",
+   "transliteration": "parabasis",
+   "samples": [
+    "Heb.2.2",
+    "Rom.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "guilty",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Hab.1.11",
+    "Jer.50.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0817",
+   "surface": "guilt",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "guilt [offering]",
+   "transliteration": "a.sham",
+   "samples": [
+    "Isa.53.10",
+    "Jer.51.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0817",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "guilt [offering]",
+   "transliteration": "a.sham",
+   "samples": [
+    "Num.5.7",
+    "Num.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403I",
+   "surface": "punishment",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "sin: punishment",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Lam.4.6",
+    "Zech.14.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375J",
+   "surface": "suffer",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to lift: guilt",
+   "transliteration": "na.sa",
+   "samples": [
+    "Ezek.18.19",
+    "Ezek.18.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771G",
+   "surface": "sin",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "iniquity: crime",
+   "transliteration": "a.von",
+   "samples": [
+    "1Kgs.17.18",
+    "Josh.22.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "rebellion",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "2Chr.10.19",
+    "Jer.33.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "offense",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "Prov.17.9",
+    "Prov.19.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0265",
+   "surface": "sin",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sin",
+   "transliteration": "hamartēma",
+   "samples": [
+    "1Cor.6.18",
+    "Mark.3.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0265",
+   "surface": "sins",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sin",
+   "transliteration": "hamartēma",
+   "samples": [
+    "Mark.3.28",
+    "Rom.3.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0266",
+   "surface": "guilt",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "hamartia",
+   "samples": [
+    "John.9.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0266",
+   "surface": "sin offerings",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sin",
+   "transliteration": "hamartia",
+   "samples": [
+    "Heb.10.6",
+    "Heb.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0266",
+   "surface": "sinful",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sin",
+   "transliteration": "hamartia",
+   "samples": [
+    "Rom.7.5",
+    "Rom.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3845",
+   "surface": "break",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to transgress",
+   "transliteration": "parabainō",
+   "samples": [
+    "Matt.15.2",
+    "Matt.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3847",
+   "surface": "transgressions",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "transgression",
+   "transliteration": "parabasis",
+   "samples": [
+    "Gal.3.19",
+    "Heb.9.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3848",
+   "surface": "break",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "transgressor",
+   "transliteration": "parabatēs",
+   "samples": [
+    "Rom.2.25",
+    "Rom.2.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3848",
+   "surface": "transgressor",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "transgressor",
+   "transliteration": "parabatēs",
+   "samples": [
+    "Gal.2.18",
+    "Jas.2.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4202",
+   "surface": "immorality",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sexual sin",
+   "transliteration": "porneia",
+   "samples": [
+    "Col.3.5",
+    "Rev.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "become guilty",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Ezek.22.4",
+    "Hos.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "condemned",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Ps.34.21",
+    "Ps.34.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "incur guilt",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "2Chr.19.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "blame",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Gen.43.9",
+    "Gen.44.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "miss",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Job.5.24",
+    "Judg.20.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2399",
+   "surface": "offense",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sin",
+   "transliteration": "chet",
+   "samples": [
+    "Deut.19.15",
+    "Deut.22.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2399",
+   "surface": "offenses",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sin",
+   "transliteration": "chet",
+   "samples": [
+    "Eccl.10.4",
+    "Gen.41.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2400",
+   "surface": "sinful",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sinner",
+   "transliteration": "chat.ta",
+   "samples": [
+    "Amos.9.8",
+    "Num.32.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403A",
+   "surface": "sin",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sin",
+   "transliteration": "chat.ta.ah",
+   "samples": [
+    "Exod.34.7",
+    "Isa.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403H",
+   "surface": "offering",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "sin: sin offering",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Lev.10.19",
+    "Lev.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674D",
+   "surface": "transgressing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to pass: trespass",
+   "transliteration": "a.var",
+   "samples": [
+    "Deut.17.2",
+    "Num.14.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771G",
+   "surface": "fault",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "iniquity: crime",
+   "transliteration": "a.von",
+   "samples": [
+    "2Sam.3.8",
+    "Ps.59.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "committed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "1Kgs.8.50",
+    "Ezek.18.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "transgress",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "Amos.4.4",
+    "Ezek.20.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "transgresses",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "Ezek.33.12",
+    "Prov.28.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0264",
+   "surface": "commit sins",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "hamartanō",
+   "samples": [
+    "1John.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0264",
+   "surface": "offense",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "hamartanō",
+   "samples": [
+    "Acts.25.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0264",
+   "surface": "sinful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "hamartanō",
+   "samples": [
+    "Titus.3.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3845",
+   "surface": "goes on ahead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transgress",
+   "transliteration": "parabainō",
+   "samples": [
+    "2John.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3845",
+   "surface": "turned aside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transgress",
+   "transliteration": "parabainō",
+   "samples": [
+    "Acts.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3847",
+   "surface": "breaking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "transgression",
+   "transliteration": "parabasis",
+   "samples": [
+    "Rom.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3847",
+   "surface": "transgressor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "transgression",
+   "transliteration": "parabasis",
+   "samples": [
+    "1Tim.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3848",
+   "surface": "transgressors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "transgressor",
+   "transliteration": "parabatēs",
+   "samples": [
+    "Jas.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3900",
+   "surface": "transgression",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "trespass",
+   "transliteration": "paraptōma",
+   "samples": [
+    "Gal.6.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4202",
+   "surface": "unrighteousness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sexual sin",
+   "transliteration": "porneia",
+   "samples": [
+    "Rom.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4203",
+   "surface": "did",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin sexually",
+   "transliteration": "porneuō",
+   "samples": [
+    "1Cor.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4203",
+   "surface": "immoral person",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin sexually",
+   "transliteration": "porneuō",
+   "samples": [
+    "1Cor.6.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4203",
+   "surface": "sexual immorality",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin sexually",
+   "transliteration": "porneuō",
+   "samples": [
+    "1Cor.10.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4205",
+   "surface": "immorality",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sexual sinner",
+   "transliteration": "pornos",
+   "samples": [
+    "1Cor.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "go unpunished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Zech.11.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "grievously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Ezek.25.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "held guilty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Prov.30.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "indeed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Lev.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "offended",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Ezek.25.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "realizes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Lev.5.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "ruined",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Ezek.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "suffer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Joel.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0816",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be guilty",
+   "transliteration": "a.sham",
+   "samples": [
+    "Num.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0817",
+   "surface": "guilt offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guilt [offering]",
+   "transliteration": "a.sham",
+   "samples": [
+    "2Kgs.12.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0817",
+   "surface": "guilty ways",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guilt [offering]",
+   "transliteration": "a.sham",
+   "samples": [
+    "Ps.68.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0817",
+   "surface": "offering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guilt [offering]",
+   "transliteration": "a.sham",
+   "samples": [
+    "Lev.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0817",
+   "surface": "sin",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guilt [offering]",
+   "transliteration": "a.sham",
+   "samples": [
+    "Lev.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0818",
+   "surface": "convicts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guilty",
+   "transliteration": "a.shem",
+   "samples": [
+    "2Sam.14.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0818",
+   "surface": "guilt offering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guilty",
+   "transliteration": "a.shem",
+   "samples": [
+    "Ezra.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0818",
+   "surface": "guilty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guilty",
+   "transliteration": "a.shem",
+   "samples": [
+    "Gen.42.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0819",
+   "surface": "done",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guiltiness",
+   "transliteration": "ash.mah",
+   "samples": [
+    "Ps.69.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0819",
+   "surface": "guilt of theirs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guiltiness",
+   "transliteration": "ash.mah",
+   "samples": [
+    "2Chr.24.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0819",
+   "surface": "sins",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guiltiness",
+   "transliteration": "ash.mah",
+   "samples": [
+    "2Chr.28.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0819",
+   "surface": "thereby become",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guiltiness",
+   "transliteration": "ash.mah",
+   "samples": [
+    "Lev.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2054",
+   "surface": "guilty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "guilty",
+   "transliteration": "va.zar",
+   "samples": [
+    "Prov.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "a sinner",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Eccl.8.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "beside",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Job.41.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "cleansing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Lev.14.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "committed an offense",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Gen.40.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "done",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Jer.37.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "done amiss",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Lev.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "done wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "2Kgs.18.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "fails",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Prov.8.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "fault",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Exod.5.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "forfeited",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Hab.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "forfeits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Prov.20.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "loss",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Gen.31.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "made them commit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "2Kgs.17.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "offender",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Isa.29.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "offers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Lev.6.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "purge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Ps.51.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "purifying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Ezek.43.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "sin offering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "2Chr.29.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "sinful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Isa.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "sinner a",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Isa.65.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "sinner’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Prov.13.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2398",
+   "surface": "way",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Prov.19.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2399",
+   "surface": "crime",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "chet",
+   "samples": [
+    "Deut.21.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2399",
+   "surface": "grievously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "chet",
+   "samples": [
+    "Lam.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2399",
+   "surface": "penalty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "chet",
+   "samples": [
+    "Ezek.23.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2399",
+   "surface": "sinfully",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "chet",
+   "samples": [
+    "Isa.31.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2400",
+   "surface": "counted offenders",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sinner",
+   "transliteration": "chat.ta",
+   "samples": [
+    "1Kgs.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2400",
+   "surface": "sinned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sinner",
+   "transliteration": "chat.ta",
+   "samples": [
+    "Num.16.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2401",
+   "surface": "sin offering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "cha.ta.ah",
+   "samples": [
+    "Ps.40.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403B",
+   "surface": "punish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Num.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403B",
+   "surface": "sinful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Deut.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403B",
+   "surface": "sinned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Job.35.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403B",
+   "surface": "wicked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Prov.13.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403B",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Deut.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2403I",
+   "surface": "purification",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin: punishment",
+   "transliteration": "chat.tat",
+   "samples": [
+    "Num.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2408",
+   "surface": "sins",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sin",
+   "transliteration": "cha.ta",
+   "samples": [
+    "Dan.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2933",
+   "surface": "stupid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to defile",
+   "transliteration": "ta.mah",
+   "samples": [
+    "Job.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375J",
+   "surface": "bore",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: guilt",
+   "transliteration": "na.sa",
+   "samples": [
+    "Isa.53.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375J",
+   "surface": "incur",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: guilt",
+   "transliteration": "na.sa",
+   "samples": [
+    "Lev.19.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5375J",
+   "surface": "pay",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to lift: guilt",
+   "transliteration": "na.sa",
+   "samples": [
+    "Prov.19.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674D",
+   "surface": "beyond",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pass: trespass",
+   "transliteration": "a.var",
+   "samples": [
+    "Num.22.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674D",
+   "surface": "bounds",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pass: trespass",
+   "transliteration": "a.var",
+   "samples": [
+    "Jer.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674D",
+   "surface": "break",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pass: trespass",
+   "transliteration": "a.var",
+   "samples": [
+    "2Chr.24.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674D",
+   "surface": "go beyond",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pass: trespass",
+   "transliteration": "a.var",
+   "samples": [
+    "Num.24.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674D",
+   "surface": "serve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pass: trespass",
+   "transliteration": "a.var",
+   "samples": [
+    "Jer.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5758",
+   "surface": "iniquities",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "iniquity",
+   "transliteration": "a.va.yah",
+   "samples": [
+    "Dan.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771G",
+   "surface": "crime",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "iniquity: crime",
+   "transliteration": "a.von",
+   "samples": [
+    "Deut.19.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771G",
+   "surface": "your iniquity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "iniquity: crime",
+   "transliteration": "a.von",
+   "samples": [
+    "Lam.4.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771H",
+   "surface": "guilty",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "iniquity: guilt",
+   "transliteration": "a.von",
+   "samples": [
+    "2Sam.19.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771H",
+   "surface": "iniquities",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "iniquity: guilt",
+   "transliteration": "a.von",
+   "samples": [
+    "Ps.65.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771H",
+   "surface": "iniquity",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "iniquity: guilt",
+   "transliteration": "a.von",
+   "samples": [
+    "Hos.10.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5771I",
+   "surface": "chastisement",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "iniquity: punishment",
+   "transliteration": "a.von",
+   "samples": [
+    "Lam.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5932",
+   "surface": "unjust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "iniquity",
+   "transliteration": "al.vah",
+   "samples": [
+    "Hos.10.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "offended",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "Prov.18.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "rebel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "Isa.48.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "rebels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "Isa.1.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "transgressing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "Isa.59.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "transgression",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "Amos.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6586",
+   "surface": "wrong",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to transgress",
+   "transliteration": "pa.sha",
+   "samples": [
+    "Prov.28.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "offenses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "Prov.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "rebellion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "Job.34.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "sinful ways",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "Ps.107.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "treason",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "1Sam.24.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "trespass",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "1Sam.25.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6588",
+   "surface": "trust",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "transgression",
+   "transliteration": "pe.sha",
+   "samples": [
+    "Exod.22.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

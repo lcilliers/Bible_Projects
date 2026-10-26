@@ -1,0 +1,3472 @@
+{
+ "cluster": "M02",
+ "cluster_name": "Anger & Wrath",
+ "built_at": "2026-10-26T04:16:57Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 211,
+  "head": 54,
+  "tail": 157,
+  "hits": 919,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H0639G",
+   "surface": "anger",
+   "part": "head",
+   "hits": 195,
+   "verses": 191,
+   "gloss": "face: anger",
+   "transliteration": "aph",
+   "samples": [
+    "Ps.55.3",
+    "Zech.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "wrath",
+   "part": "head",
+   "hits": 85,
+   "verses": 81,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Ezek.25.14",
+    "Zech.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "kindled",
+   "part": "head",
+   "hits": 36,
+   "verses": 36,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Isa.5.25",
+    "Ps.106.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "anger",
+   "part": "head",
+   "hits": 29,
+   "verses": 28,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "Deut.32.16",
+    "Ezek.16.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3709",
+   "surface": "wrath",
+   "part": "head",
+   "hits": 28,
+   "verses": 26,
+   "gloss": "wrath",
+   "transliteration": "orgē",
+   "samples": [
+    "Rev.11.18",
+    "Rom.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "angry",
+   "part": "head",
+   "hits": 27,
+   "verses": 25,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Gen.4.5",
+    "Jonah.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5678",
+   "surface": "wrath",
+   "part": "head",
+   "hits": 27,
+   "verses": 27,
+   "gloss": "fury",
+   "transliteration": "ev.rah",
+   "samples": [
+    "Gen.49.7",
+    "Zeph.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0639G",
+   "surface": "wrath",
+   "part": "head",
+   "hits": 23,
+   "verses": 23,
+   "gloss": "face: anger",
+   "transliteration": "aph",
+   "samples": [
+    "Prov.29.22",
+    "Ps.56.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7107",
+   "surface": "angry",
+   "part": "head",
+   "hits": 22,
+   "verses": 21,
+   "gloss": "be angry",
+   "transliteration": "qa.tsaph",
+   "samples": [
+    "Exod.16.20",
+    "Zech.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2740",
+   "surface": "fierce",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "burning anger",
+   "transliteration": "cha.ron",
+   "samples": [
+    "Jonah.3.9",
+    "Num.25.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7110A",
+   "surface": "wrath",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "wrath",
+   "transliteration": "qe.tseph",
+   "samples": [
+    "2Chr.19.2",
+    "Jer.50.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "fury",
+   "part": "head",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Dan.11.44",
+    "Deut.29.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2195",
+   "surface": "indignation",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "indignation",
+   "transliteration": "za.am",
+   "samples": [
+    "Dan.11.36",
+    "Ps.69.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7015",
+   "surface": "lamentation",
+   "part": "head",
+   "hits": 15,
+   "verses": 14,
+   "gloss": "dirge",
+   "transliteration": "qi.nah",
+   "samples": [
+    "Ezek.27.2",
+    "Ezek.32.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0599",
+   "surface": "angry",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "be angry",
+   "transliteration": "a.naph",
+   "samples": [
+    "Deut.9.20",
+    "Ezra.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2372",
+   "surface": "wrath",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "wrath",
+   "transliteration": "thumos",
+   "samples": [
+    "Eph.4.31",
+    "Rev.16.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2740",
+   "surface": "burning",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "burning anger",
+   "transliteration": "cha.ron",
+   "samples": [
+    "Exod.32.12",
+    "Zeph.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3709",
+   "surface": "anger",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "wrath",
+   "transliteration": "orgē",
+   "samples": [
+    "Eph.4.31",
+    "Jas.1.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "vexation",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "1Sam.1.16",
+    "Eccl.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0023",
+   "surface": "indignant",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be indignant",
+   "transliteration": "aganakteō",
+   "samples": [
+    "Mark.10.41",
+    "Matt.21.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3710",
+   "surface": "angry",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to anger",
+   "transliteration": "orgizō",
+   "samples": [
+    "Eph.4.26",
+    "Matt.5.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2195",
+   "surface": "fury",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "indignation",
+   "transliteration": "za.am",
+   "samples": [
+    "Isa.10.5",
+    "Isa.26.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "anger",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Prov.29.22",
+    "Ps.79.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "burned",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Job.32.5",
+    "Josh.7.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "provoke",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "Ezek.8.17",
+    "Jer.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "provoked",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "2Kgs.23.26",
+    "Ps.106.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4079",
+   "surface": "quarrelsome",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "contention",
+   "transliteration": "mid.yan",
+   "samples": [
+    "Prov.21.19",
+    "Prov.27.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4809H",
+   "surface": "meribah",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "Meribah",
+   "transliteration": "me.ri.vah",
+   "samples": [
+    "Num.20.13",
+    "Ps.106.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6225",
+   "surface": "smoke",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be angry",
+   "transliteration": "a.shan",
+   "samples": [
+    "Deut.29.20",
+    "Ps.104.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7110A",
+   "surface": "anger",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "wrath",
+   "transliteration": "qe.tseph",
+   "samples": [
+    "Ps.102.10",
+    "Zech.7.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "venom",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Deut.32.24",
+    "Ps.140.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "fret",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Prov.24.19",
+    "Ps.37.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2740",
+   "surface": "wrath",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "burning anger",
+   "transliteration": "cha.ron",
+   "samples": [
+    "Ezek.7.14",
+    "Neh.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2750",
+   "surface": "fierce",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "burning",
+   "transliteration": "cho.ri",
+   "samples": [
+    "1Sam.20.34",
+    "Lam.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "provoking",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "1Kgs.14.15",
+    "2Kgs.17.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "provocation",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "Deut.32.19",
+    "Ezek.20.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708B",
+   "surface": "vexation",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "vexation",
+   "transliteration": "ka.a.s",
+   "samples": [
+    "Job.17.7",
+    "Job.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7107",
+   "surface": "wrath",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be angry",
+   "transliteration": "qa.tsaph",
+   "samples": [
+    "Deut.9.22",
+    "Lev.10.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2054",
+   "surface": "quarreling",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "quarrel",
+   "transliteration": "eris",
+   "samples": [
+    "2Cor.12.20",
+    "Rom.13.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2054",
+   "surface": "strife",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "quarrel",
+   "transliteration": "eris",
+   "samples": [
+    "1Cor.3.3",
+    "Rom.1.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2200",
+   "surface": "hot",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "hot",
+   "transliteration": "zestos",
+   "samples": [
+    "Rev.3.15",
+    "Rev.3.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2372",
+   "surface": "anger",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "wrath",
+   "transliteration": "thumos",
+   "samples": [
+    "2Cor.12.20",
+    "Heb.11.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2372",
+   "surface": "fury",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "wrath",
+   "transliteration": "thumos",
+   "samples": [
+    "Rev.19.15",
+    "Rom.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "furious",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Ezek.5.15",
+    "Isa.34.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "heat",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Hos.7.5",
+    "Isa.42.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "wrathful",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Ezek.25.17",
+    "Nah.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "burn",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Gen.44.18",
+    "Judg.6.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "burn hot",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Exod.32.10",
+    "Exod.32.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "angry",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "Ezek.16.42",
+    "Ps.112.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "grief",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "Prov.17.25",
+    "Ps.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4809G",
+   "surface": "meribah",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "Meribah",
+   "transliteration": "me.ri.vah",
+   "samples": [
+    "Exod.17.7",
+    "Ps.95.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4809H",
+   "surface": "meribah-kadesh",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "Meribah",
+   "transliteration": "me.ri.vah",
+   "samples": [
+    "Deut.32.51",
+    "Ezek.47.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1278",
+   "surface": "greatly annoyed",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be vexed",
+   "transliteration": "diaponeō",
+   "samples": [
+    "Acts.16.18",
+    "Acts.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1282",
+   "surface": "enraged",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be furious",
+   "transliteration": "diapriō",
+   "samples": [
+    "Acts.5.33",
+    "Acts.7.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2372",
+   "surface": "passion",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "wrath",
+   "transliteration": "thumos",
+   "samples": [
+    "Rev.14.8",
+    "Rev.18.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3163",
+   "surface": "quarrels",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "quarrel",
+   "transliteration": "machē",
+   "samples": [
+    "2Tim.2.23",
+    "Titus.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4360",
+   "surface": "provoked",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be angry",
+   "transliteration": "prosochthizō",
+   "samples": [
+    "Heb.3.10",
+    "Heb.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0639G",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "face: anger",
+   "transliteration": "aph",
+   "samples": [
+    "2Chr.25.10",
+    "2Chr.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Mal.1.4",
+    "Prov.25.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "denounce",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Num.23.7",
+    "Num.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2197",
+   "surface": "rage",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "rage",
+   "transliteration": "za.aph",
+   "samples": [
+    "2Chr.16.10",
+    "2Chr.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2198",
+   "surface": "sullen",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "vexed",
+   "transliteration": "za.eph",
+   "samples": [
+    "1Kgs.20.43",
+    "1Kgs.21.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "poison",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Deut.32.33",
+    "Job.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "burns",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Hos.8.5",
+    "Job.42.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "hot",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Judg.14.19",
+    "Zech.10.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "incensed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Isa.41.11",
+    "Isa.45.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2740",
+   "surface": "fury",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "burning anger",
+   "transliteration": "cha.ron",
+   "samples": [
+    "Exod.15.7",
+    "Ps.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2740",
+   "surface": "hot",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "burning anger",
+   "transliteration": "cha.ron",
+   "samples": [
+    "Lam.4.11",
+    "Ps.85.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "anger",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "1Kgs.21.22",
+    "Eccl.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4079",
+   "surface": "quarreling",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "contention",
+   "transliteration": "mid.yan",
+   "samples": [
+    "Prov.18.19",
+    "Prov.19.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5590",
+   "surface": "tempestuous",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rage",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Jonah.1.11",
+    "Jonah.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5590",
+   "surface": "whirlwind",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to rage",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Hab.3.14",
+    "Zech.7.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674B",
+   "surface": "full of wrath",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be angry",
+   "transliteration": "a.var",
+   "samples": [
+    "Ps.78.21",
+    "Ps.89.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5678",
+   "surface": "fury",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fury",
+   "transliteration": "ev.rah",
+   "samples": [
+    "Prov.22.8",
+    "Ps.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5678",
+   "surface": "insolence",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "fury",
+   "transliteration": "ev.rah",
+   "samples": [
+    "Isa.16.6",
+    "Jer.48.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696B",
+   "surface": "harass",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to provoke",
+   "transliteration": "tsur",
+   "samples": [
+    "Deut.2.19",
+    "Deut.2.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7015",
+   "surface": "laments",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "dirge",
+   "transliteration": "qi.nah",
+   "samples": [
+    "2Chr.35.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7107",
+   "surface": "angered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be angry",
+   "transliteration": "qa.tsaph",
+   "samples": [
+    "Deut.1.34",
+    "Ps.106.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7107",
+   "surface": "enraged",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be angry",
+   "transliteration": "qa.tsaph",
+   "samples": [
+    "Isa.8.21",
+    "Jer.37.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0023",
+   "surface": "indignantly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be indignant",
+   "transliteration": "aganakteō",
+   "samples": [
+    "Mark.14.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0024",
+   "surface": "indignation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "indignation",
+   "transliteration": "aganaktēsis",
+   "samples": [
+    "2Cor.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1370",
+   "surface": "dissensions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dissension",
+   "transliteration": "dichostasia",
+   "samples": [
+    "Gal.5.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1370",
+   "surface": "divisions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dissension",
+   "transliteration": "dichostasia",
+   "samples": [
+    "Rom.16.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2042",
+   "surface": "provoke",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke/irritate",
+   "transliteration": "erethizō",
+   "samples": [
+    "Col.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2042",
+   "surface": "stirred up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke/irritate",
+   "transliteration": "erethizō",
+   "samples": [
+    "2Cor.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2054",
+   "surface": "dissension",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quarrel",
+   "transliteration": "eris",
+   "samples": [
+    "1Tim.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2054",
+   "surface": "dissensions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quarrel",
+   "transliteration": "eris",
+   "samples": [
+    "Titus.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2054",
+   "surface": "rivalry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quarrel",
+   "transliteration": "eris",
+   "samples": [
+    "Phil.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2371",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to quarrel",
+   "transliteration": "thumomacheō",
+   "samples": [
+    "Acts.12.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2372",
+   "surface": "enraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrath",
+   "transliteration": "thumos",
+   "samples": [
+    "Acts.19.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2373",
+   "surface": "became furious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to anger",
+   "transliteration": "thumoō",
+   "samples": [
+    "Matt.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3055",
+   "surface": "quarrels about words",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quarrel",
+   "transliteration": "logomachia",
+   "samples": [
+    "1Tim.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3163",
+   "surface": "fighting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quarrel",
+   "transliteration": "machē",
+   "samples": [
+    "2Cor.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3163",
+   "surface": "fights",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quarrel",
+   "transliteration": "machē",
+   "samples": [
+    "Jas.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3710",
+   "surface": "anger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to anger",
+   "transliteration": "orgizō",
+   "samples": [
+    "Matt.18.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3710",
+   "surface": "became furious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to anger",
+   "transliteration": "orgizō",
+   "samples": [
+    "Rev.12.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3710",
+   "surface": "raged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to anger",
+   "transliteration": "orgizō",
+   "samples": [
+    "Rev.11.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3711",
+   "surface": "quick-tempered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "quick-tempered",
+   "transliteration": "orgilos",
+   "samples": [
+    "Titus.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3859",
+   "surface": "constant friction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contention",
+   "transliteration": "paradiatribē",
+   "samples": [
+    "1Tim.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3947",
+   "surface": "irritable",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "paroxunō",
+   "samples": [
+    "1Cor.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3947",
+   "surface": "provoked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "paroxunō",
+   "samples": [
+    "Acts.17.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3948",
+   "surface": "sharp disagreement",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "stirring up",
+   "transliteration": "paroxusmos",
+   "samples": [
+    "Acts.15.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3948",
+   "surface": "stir up",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "stirring up",
+   "transliteration": "paroxusmos",
+   "samples": [
+    "Heb.10.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3949",
+   "surface": "anger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to anger",
+   "transliteration": "parorgizō",
+   "samples": [
+    "Eph.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3949",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to anger",
+   "transliteration": "parorgizō",
+   "samples": [
+    "Rom.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3950",
+   "surface": "anger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "anger",
+   "transliteration": "parorgismos",
+   "samples": [
+    "Eph.4.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4292",
+   "surface": "provoking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "prokaleō",
+   "samples": [
+    "Gal.5.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5433",
+   "surface": "rage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rage",
+   "transliteration": "fruassomai",
+   "samples": [
+    "Acts.4.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5520",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "cholaō",
+   "samples": [
+    "John.7.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0639G",
+   "surface": "anger is roused",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: anger",
+   "transliteration": "aph",
+   "samples": [
+    "Ps.76.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0639G",
+   "surface": "fierce",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: anger",
+   "transliteration": "aph",
+   "samples": [
+    "Lam.2.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0639G",
+   "surface": "forbearance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: anger",
+   "transliteration": "aph",
+   "samples": [
+    "Jer.15.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0639G",
+   "surface": "patience",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: anger",
+   "transliteration": "aph",
+   "samples": [
+    "Prov.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0639G",
+   "surface": "temper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: anger",
+   "transliteration": "aph",
+   "samples": [
+    "Prov.14.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0888",
+   "surface": "distressed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be displeased",
+   "transliteration": "be.esh",
+   "samples": [
+    "Dan.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1149",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "be.nas",
+   "samples": [
+    "Dan.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2121",
+   "surface": "raging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "raging",
+   "transliteration": "ze.don",
+   "samples": [
+    "Ps.124.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2152",
+   "surface": "burning heat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "scorching",
+   "transliteration": "zal.a.phah",
+   "samples": [
+    "Lam.5.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2152",
+   "surface": "hot indignation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "scorching",
+   "transliteration": "zal.a.phah",
+   "samples": [
+    "Ps.119.53"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2152",
+   "surface": "scorching",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "scorching",
+   "transliteration": "zal.a.phah",
+   "samples": [
+    "Ps.11.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "abhorred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Prov.24.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "accursed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Mic.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "been angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Zech.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "denounced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Num.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "enraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Dan.11.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "feels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Ps.7.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "indignation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Isa.66.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2194",
+   "surface": "whom",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be indignant",
+   "transliteration": "za.am",
+   "samples": [
+    "Prov.22.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2195",
+   "surface": "insolence",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "indignation",
+   "transliteration": "za.am",
+   "samples": [
+    "Hos.7.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2195",
+   "surface": "wrath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "indignation",
+   "transliteration": "za.am",
+   "samples": [
+    "Jer.50.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2196",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrage",
+   "transliteration": "za.aph",
+   "samples": [
+    "2Chr.26.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2196",
+   "surface": "became angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrage",
+   "transliteration": "za.aph",
+   "samples": [
+    "2Chr.26.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2196",
+   "surface": "rages",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrage",
+   "transliteration": "za.aph",
+   "samples": [
+    "Prov.19.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2196",
+   "surface": "troubled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrage",
+   "transliteration": "za.aph",
+   "samples": [
+    "Gen.40.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2196",
+   "surface": "worse condition",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrage",
+   "transliteration": "za.aph",
+   "samples": [
+    "Dan.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2197",
+   "surface": "furious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "za.aph",
+   "samples": [
+    "Isa.30.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2197",
+   "surface": "indignation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "za.aph",
+   "samples": [
+    "Mic.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2197",
+   "surface": "raging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "za.aph",
+   "samples": [
+    "Jonah.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2197",
+   "surface": "wrath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "za.aph",
+   "samples": [
+    "Prov.19.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2525",
+   "surface": "hot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hot",
+   "transliteration": "cham",
+   "samples": [
+    "Job.37.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2525",
+   "surface": "still warm",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "hot",
+   "transliteration": "cham",
+   "samples": [
+    "Josh.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2528",
+   "surface": "furious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "che.ma",
+   "samples": [
+    "Dan.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2528",
+   "surface": "fury",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "che.ma",
+   "samples": [
+    "Dan.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "2Chr.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "hot displeasure",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Deut.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "hot-tempered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "Prov.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2534",
+   "surface": "rage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "che.mah",
+   "samples": [
+    "2Kgs.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "became",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "2Chr.25.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "blazed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Num.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "burned hot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Exod.32.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "repaired",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Neh.3.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "was",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "2Chr.25.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "was angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Jonah.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2734",
+   "surface": "wrath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to be incensed",
+   "transliteration": "cha.rah",
+   "samples": [
+    "Hab.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2740",
+   "surface": "ablaze",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burning anger",
+   "transliteration": "cha.ron",
+   "samples": [
+    "Ps.58.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2740",
+   "surface": "fierceness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burning anger",
+   "transliteration": "cha.ron",
+   "samples": [
+    "Deut.13.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2740",
+   "surface": "heat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burning anger",
+   "transliteration": "cha.ron",
+   "samples": [
+    "Nah.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2740",
+   "surface": "sword",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burning anger",
+   "transliteration": "cha.ron",
+   "samples": [
+    "Jer.25.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2750",
+   "surface": "heat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burning",
+   "transliteration": "cho.ri",
+   "samples": [
+    "Deut.29.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2750",
+   "surface": "hot",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burning",
+   "transliteration": "cho.ri",
+   "samples": [
+    "Exod.11.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "become angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "Eccl.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "enraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "Neh.4.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "provocation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "Hos.12.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "provoke him to anger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "Deut.9.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "provoke me",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "Isa.65.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "provoking him to anger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "2Kgs.17.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3707",
+   "surface": "trouble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "ka.as",
+   "samples": [
+    "Ezek.32.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "fretful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "Prov.21.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "grievously",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "1Sam.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "indignation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "Ps.85.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "provocations",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "2Kgs.23.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "provoked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "1Kgs.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3708A",
+   "surface": "sorrow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "vexation",
+   "transliteration": "ka.as",
+   "samples": [
+    "Eccl.7.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4079",
+   "surface": "discord",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contention",
+   "transliteration": "mid.yan",
+   "samples": [
+    "Prov.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4079",
+   "surface": "quarrels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contention",
+   "transliteration": "mid.yan",
+   "samples": [
+    "Prov.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4079",
+   "surface": "strife",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "contention",
+   "transliteration": "mid.yan",
+   "samples": [
+    "Prov.23.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4808",
+   "surface": "quarreled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "provocation",
+   "transliteration": "me.ri.vah",
+   "samples": [
+    "Num.27.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4808",
+   "surface": "strife",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "provocation",
+   "transliteration": "me.ri.vah",
+   "samples": [
+    "Gen.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5307K",
+   "surface": "anger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fall: angry",
+   "transliteration": "na.phal",
+   "samples": [
+    "Jer.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5307K",
+   "surface": "fell",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to fall: angry",
+   "transliteration": "na.phal",
+   "samples": [
+    "Gen.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5590",
+   "surface": "greatly troubled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rage",
+   "transliteration": "sa.ar",
+   "samples": [
+    "2Kgs.6.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5590",
+   "surface": "storm-tossed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rage",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Isa.54.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5590",
+   "surface": "swirls",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to rage",
+   "transliteration": "sa.ar",
+   "samples": [
+    "Hos.13.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674B",
+   "surface": "anger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "a.var",
+   "samples": [
+    "Prov.20.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674B",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "a.var",
+   "samples": [
+    "Deut.3.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674B",
+   "surface": "full",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "a.var",
+   "samples": [
+    "Ps.78.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674B",
+   "surface": "passing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "a.var",
+   "samples": [
+    "Prov.26.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5674B",
+   "surface": "wrath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "a.var",
+   "samples": [
+    "Ps.78.62"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5678",
+   "surface": "indignation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fury",
+   "transliteration": "ev.rah",
+   "samples": [
+    "Hab.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5678",
+   "surface": "overflowings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fury",
+   "transliteration": "ev.rah",
+   "samples": [
+    "Job.40.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5678",
+   "surface": "pride",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fury",
+   "transliteration": "ev.rah",
+   "samples": [
+    "Prov.21.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6225",
+   "surface": "angry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "a.shan",
+   "samples": [
+    "Ps.80.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440M",
+   "surface": "anger",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: angry",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Jer.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6440M",
+   "surface": "face",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "face: angry",
+   "transliteration": "pa.neh",
+   "samples": [
+    "Gen.4.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696B",
+   "surface": "adversary",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "tsur",
+   "samples": [
+    "Exod.23.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6696B",
+   "surface": "might attack",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to provoke",
+   "transliteration": "tsur",
+   "samples": [
+    "Esth.8.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7015",
+   "surface": "dirge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "dirge",
+   "transliteration": "qi.nah",
+   "samples": [
+    "Jer.9.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7107",
+   "surface": "became enraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "qa.tsaph",
+   "samples": [
+    "Esth.1.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7107",
+   "surface": "bore",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "qa.tsaph",
+   "samples": [
+    "Deut.9.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7107",
+   "surface": "to wrath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "qa.tsaph",
+   "samples": [
+    "Zech.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7107",
+   "surface": "went on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "qa.tsaph",
+   "samples": [
+    "Isa.57.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7108",
+   "surface": "furious",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be angry",
+   "transliteration": "qe.tsaph",
+   "samples": [
+    "Dan.2.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7109",
+   "surface": "wrath",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrath",
+   "transliteration": "qe.tsaph",
+   "samples": [
+    "Ezra.7.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7110A",
+   "surface": "enraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrath",
+   "transliteration": "qe.tseph",
+   "samples": [
+    "Isa.34.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7110A",
+   "surface": "exceedingly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrath",
+   "transliteration": "qe.tseph",
+   "samples": [
+    "Zech.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7110A",
+   "surface": "indignation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrath",
+   "transliteration": "qe.tseph",
+   "samples": [
+    "Jer.32.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7110A",
+   "surface": "was very",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "wrath",
+   "transliteration": "qe.tseph",
+   "samples": [
+    "Zech.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7110B",
+   "surface": "twig",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "splinter",
+   "transliteration": "qe.tseph",
+   "samples": [
+    "Hos.10.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7111",
+   "surface": "splintered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "splinter",
+   "transliteration": "qe.tsa.phah",
+   "samples": [
+    "Joel.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7265",
+   "surface": "angered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to enrage",
+   "transliteration": "re.gaz",
+   "samples": [
+    "Ezra.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7266",
+   "surface": "rage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "rage",
+   "transliteration": "re.gaz",
+   "samples": [
+    "Dan.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

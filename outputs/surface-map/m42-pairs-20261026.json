@@ -1,0 +1,5036 @@
+{
+ "cluster": "M42",
+ "cluster_name": "Prayer & Petition",
+ "built_at": "2026-10-26T04:22:26Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 304,
+  "head": 84,
+  "tail": 220,
+  "hits": 1603,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H7121G",
+   "surface": "called",
+   "part": "head",
+   "hits": 161,
+   "verses": 154,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Hag.1.11",
+    "Isa.50.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564G",
+   "surface": "called",
+   "part": "head",
+   "hits": 94,
+   "verses": 91,
+   "gloss": "to call: call",
+   "transliteration": "kaleō",
+   "samples": [
+    "Rev.1.9",
+    "Rev.19.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "call",
+   "part": "head",
+   "hits": 92,
+   "verses": 89,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Ps.14.4",
+    "Zeph.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8605",
+   "surface": "prayer",
+   "part": "head",
+   "hits": 72,
+   "verses": 65,
+   "gloss": "prayer",
+   "transliteration": "te.phil.lah",
+   "samples": [
+    "Hab.3.1",
+    "Prov.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4336",
+   "surface": "pray",
+   "part": "head",
+   "hits": 43,
+   "verses": 40,
+   "gloss": "to pray",
+   "transliteration": "proseuchomai",
+   "samples": [
+    "1Thess.5.17",
+    "1Tim.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121J",
+   "surface": "read",
+   "part": "head",
+   "hits": 35,
+   "verses": 33,
+   "gloss": "to call: read out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "2Kgs.22.16",
+    "Jer.36.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "pray",
+   "part": "head",
+   "hits": 32,
+   "verses": 32,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "Jer.11.14",
+    "Ps.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "summoned",
+   "part": "head",
+   "hits": 30,
+   "verses": 30,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Isa.13.3",
+    "Jer.42.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "prayed",
+   "part": "head",
+   "hits": 29,
+   "verses": 29,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "Jonah.2.1",
+    "Jonah.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "proclaim",
+   "part": "head",
+   "hits": 20,
+   "verses": 20,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Amos.4.5",
+    "Jer.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4335",
+   "surface": "prayer",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "prayer",
+   "transliteration": "proseuchē",
+   "samples": [
+    "Acts.3.1",
+    "Rom.12.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4341",
+   "surface": "called",
+   "part": "head",
+   "hits": 19,
+   "verses": 19,
+   "gloss": "to call to/summon",
+   "transliteration": "proskaleō",
+   "samples": [
+    "Acts.23.18",
+    "Mark.3.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4336",
+   "surface": "prayed",
+   "part": "head",
+   "hits": 18,
+   "verses": 18,
+   "gloss": "to pray",
+   "transliteration": "proseuchomai",
+   "samples": [
+    "Acts.6.6",
+    "Luke.22.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4335",
+   "surface": "prayers",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "prayer",
+   "transliteration": "proseuchē",
+   "samples": [
+    "1Pet.4.7",
+    "Rom.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "cried",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Lam.2.18",
+    "Ps.107.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6818",
+   "surface": "cry",
+   "part": "head",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "cry",
+   "transliteration": "tse.a.qah",
+   "samples": [
+    "Gen.27.34",
+    "Ps.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "invited",
+   "part": "head",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "1Kgs.1.25",
+    "2Sam.15.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8467",
+   "surface": "plea",
+   "part": "head",
+   "hits": 16,
+   "verses": 15,
+   "gloss": "supplication",
+   "transliteration": "te.chin.nah",
+   "samples": [
+    "Dan.9.20",
+    "Ps.119.170"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564G",
+   "surface": "call",
+   "part": "head",
+   "hits": 15,
+   "verses": 14,
+   "gloss": "to call: call",
+   "transliteration": "kaleō",
+   "samples": [
+    "Heb.2.11",
+    "Matt.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564G",
+   "surface": "invited",
+   "part": "head",
+   "hits": 15,
+   "verses": 14,
+   "gloss": "to call: call",
+   "transliteration": "kaleō",
+   "samples": [
+    "John.2.2",
+    "Matt.22.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "cried out",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Acts.23.6",
+    "Matt.14.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4336",
+   "surface": "praying",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to pray",
+   "transliteration": "proseuchomai",
+   "samples": [
+    "Luke.1.10",
+    "Luke.9.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "cried",
+   "part": "head",
+   "hits": 15,
+   "verses": 15,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "Ezek.9.8",
+    "Judg.6.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "crying out",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Rev.12.2",
+    "Rev.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "calls",
+   "part": "head",
+   "hits": 14,
+   "verses": 13,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Amos.9.6",
+    "Hos.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "cried",
+   "part": "head",
+   "hits": 14,
+   "verses": 14,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Isa.21.8",
+    "Ps.34.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "urge",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "1Pet.2.11",
+    "1Tim.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "cried out",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "Esth.4.1",
+    "Judg.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "cry",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Ezek.8.18",
+    "Isa.34.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "called",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "Acts.9.21",
+    "Jas.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "cry out",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "Ezek.27.30",
+    "Jer.48.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7440",
+   "surface": "cry",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "cry",
+   "transliteration": "rin.nah",
+   "samples": [
+    "Ps.106.44",
+    "Ps.88.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "cry",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "Hos.7.14",
+    "Jer.11.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "calling",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Amos.7.4",
+    "Isa.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "proclaimed",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Exod.34.6",
+    "Zech.7.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7775",
+   "surface": "cry",
+   "part": "head",
+   "hits": 11,
+   "verses": 11,
+   "gloss": "cry",
+   "transliteration": "shav.ah",
+   "samples": [
+    "Jer.8.19",
+    "Ps.34.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2822",
+   "surface": "called",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "called",
+   "transliteration": "klētos",
+   "samples": [
+    "Rev.17.14",
+    "Rom.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "appeal",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Heb.13.22",
+    "Rom.15.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "begged",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Acts.13.42",
+    "Matt.8.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "comforted",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "2Cor.7.13",
+    "Luke.16.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "cry",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jer.12.6",
+    "Jer.49.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "call",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jonah.1.2",
+    "Jonah.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7440",
+   "surface": "singing",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "cry",
+   "transliteration": "rin.nah",
+   "samples": [
+    "Isa.14.7",
+    "Isa.54.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7879",
+   "surface": "complaint",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "complaint",
+   "transliteration": "si.ach",
+   "samples": [
+    "Job.21.4",
+    "Ps.102.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1162",
+   "surface": "prayer",
+   "part": "head",
+   "hits": 8,
+   "verses": 7,
+   "gloss": "petition",
+   "transliteration": "deēsis",
+   "samples": [
+    "Luke.1.13",
+    "Luke.2.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564G",
+   "surface": "calls",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to call: call",
+   "transliteration": "kaleō",
+   "samples": [
+    "1Thess.5.24",
+    "Matt.22.43"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "urged",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "1Tim.1.3",
+    "Acts.16.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "cried out",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Gen.27.34",
+    "Judg.10.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8469",
+   "surface": "pleas for mercy",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "supplication",
+   "transliteration": "ta.cha.nun",
+   "samples": [
+    "Dan.9.23",
+    "Zech.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2821",
+   "surface": "calling",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "calling",
+   "transliteration": "klēsis",
+   "samples": [
+    "2Pet.1.10",
+    "2Tim.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "cried",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Matt.14.30",
+    "Rev.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "out",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "1Sam.8.18",
+    "Isa.26.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "cry out",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Isa.65.14",
+    "Jer.49.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "called",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "1Sam.24.8",
+    "Jonah.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7440",
+   "surface": "joy",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "cry",
+   "transliteration": "rin.nah",
+   "samples": [
+    "Ps.126.5",
+    "Ps.30.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7768",
+   "surface": "cry",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to cry",
+   "transliteration": "sha.va",
+   "samples": [
+    "Hab.1.2",
+    "Isa.58.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7768",
+   "surface": "help",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to cry",
+   "transliteration": "sha.va",
+   "samples": [
+    "Job.36.13",
+    "Ps.119.147"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8469",
+   "surface": "pleas",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "supplication",
+   "transliteration": "ta.cha.nun",
+   "samples": [
+    "Dan.9.3",
+    "Job.41.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "encourage",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "1Thess.5.11",
+    "2Thess.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "exhort",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "1Thess.3.2",
+    "Titus.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6279",
+   "surface": "plead",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to pray",
+   "transliteration": "a.tar",
+   "samples": [
+    "Exod.10.17",
+    "Exod.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "cry",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Isa.19.20",
+    "Isa.33.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7596",
+   "surface": "wish",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "petition",
+   "transliteration": "she.e.lah",
+   "samples": [
+    "Esth.5.8",
+    "Esth.9.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "beg",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "Acts.26.3",
+    "Luke.9.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "called out",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "Judg.18.22",
+    "Judg.6.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "praying",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "Dan.9.20",
+    "Isa.45.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "prays",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "1Kgs.8.28",
+    "2Chr.6.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6818",
+   "surface": "outcry",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "cry",
+   "transliteration": "tse.a.qah",
+   "samples": [
+    "Gen.19.13",
+    "Neh.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "guests",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "1Sam.9.24",
+    "Zeph.1.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "summon",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "1Kgs.22.13",
+    "Ezek.38.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "called out",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "1Kgs.13.32",
+    "2Kgs.18.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "out",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "2Sam.18.28",
+    "Prov.2.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7768",
+   "surface": "cried",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to cry",
+   "transliteration": "sha.va",
+   "samples": [
+    "Ps.22.24",
+    "Ps.30.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0994",
+   "surface": "one crying",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to cry out",
+   "transliteration": "boaō",
+   "samples": [
+    "John.1.23",
+    "Matt.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1162",
+   "surface": "prayers",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "petition",
+   "transliteration": "deēsis",
+   "samples": [
+    "2Tim.1.3",
+    "Phil.1.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "pray",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "Acts.8.22",
+    "Matt.9.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "appealed",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "Acts.25.12",
+    "Acts.26.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "call on",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "1Pet.1.17",
+    "2Tim.2.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2172",
+   "surface": "pray",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to pray/wish for",
+   "transliteration": "euchomai",
+   "samples": [
+    "2Cor.13.7",
+    "3John.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "crying",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Gal.4.6",
+    "Luke.4.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "out",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Mark.10.47",
+    "Rev.18.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "comfort",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "2Cor.1.4",
+    "2Thess.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "encouraged",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "1Cor.14.31",
+    "Col.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "entreat",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "2Cor.10.1",
+    "Phil.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "implored",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Mark.5.23",
+    "Mark.6.56"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "pleaded",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "2Cor.12.8",
+    "Matt.18.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "called out",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "1Sam.13.4",
+    "2Kgs.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "proclaiming",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Esth.6.11",
+    "Jer.34.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0612",
+   "surface": "answer",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "answer",
+   "transliteration": "apokrisis",
+   "samples": [
+    "John.1.22",
+    "Luke.20.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0994",
+   "surface": "shouting",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to cry out",
+   "transliteration": "boaō",
+   "samples": [
+    "Acts.17.6",
+    "Acts.25.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1162",
+   "surface": "supplication",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "petition",
+   "transliteration": "deēsis",
+   "samples": [
+    "Eph.6.18",
+    "Phil.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "begged",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "Luke.8.38",
+    "Luke.9.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "prayed",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "Acts.10.2",
+    "Acts.4.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "called out",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Rev.10.3",
+    "Rev.18.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "beg",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "2Cor.2.8",
+    "Mark.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "urging",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Acts.16.9",
+    "Acts.19.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4336",
+   "surface": "prayer",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to pray",
+   "transliteration": "proseuchomai",
+   "samples": [
+    "Acts.14.23",
+    "Mark.11.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4336",
+   "surface": "prays",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to pray",
+   "transliteration": "proseuchomai",
+   "samples": [
+    "1Cor.11.5",
+    "1Cor.14.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4341",
+   "surface": "summoned",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to call to/summon",
+   "transliteration": "proskaleō",
+   "samples": [
+    "Acts.13.7",
+    "Matt.18.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6279",
+   "surface": "entreaty",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to pray",
+   "transliteration": "a.tar",
+   "samples": [
+    "2Chr.33.13",
+    "2Chr.33.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6279",
+   "surface": "plea",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to pray",
+   "transliteration": "a.tar",
+   "samples": [
+    "1Chr.5.20",
+    "2Sam.24.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "cried",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "1Kgs.17.20",
+    "2Chr.14.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "invite",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "1Sam.16.3",
+    "Job.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "shouted",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "2Chr.32.18",
+    "Judg.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7596",
+   "surface": "petition",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "petition",
+   "transliteration": "she.e.lah",
+   "samples": [
+    "1Sam.1.17",
+    "1Sam.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7596",
+   "surface": "request",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "petition",
+   "transliteration": "she.e.lah",
+   "samples": [
+    "1Kgs.2.16",
+    "Job.6.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8467",
+   "surface": "plea for mercy",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "supplication",
+   "transliteration": "te.chin.nah",
+   "samples": [
+    "Jer.36.7",
+    "Jer.42.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8605",
+   "surface": "prayers",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "prayer",
+   "transliteration": "te.phil.lah",
+   "samples": [
+    "Isa.1.15",
+    "Ps.72.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0994",
+   "surface": "cried out",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry out",
+   "transliteration": "boaō",
+   "samples": [
+    "Luke.18.38",
+    "Luke.9.38"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1162",
+   "surface": "supplications",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "petition",
+   "transliteration": "deēsis",
+   "samples": [
+    "1Tim.2.1",
+    "1Tim.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "appeal",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "Acts.25.11",
+    "Acts.28.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "call",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "2Cor.1.23",
+    "Acts.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "name",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "Acts.12.12",
+    "Acts.12.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2171",
+   "surface": "vow",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "a vow/prayer",
+   "transliteration": "euchē",
+   "samples": [
+    "Acts.18.18",
+    "Acts.21.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564G",
+   "surface": "calling",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call: call",
+   "transliteration": "kaleō",
+   "samples": [
+    "1Pet.3.6",
+    "Luke.19.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564G",
+   "surface": "invite",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call: call",
+   "transliteration": "kaleō",
+   "samples": [
+    "Luke.14.13",
+    "Matt.22.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564G",
+   "surface": "summoned",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call: call",
+   "transliteration": "kaleō",
+   "samples": [
+    "Acts.24.2",
+    "Matt.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2821",
+   "surface": "call",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "calling",
+   "transliteration": "klēsis",
+   "samples": [
+    "Eph.4.4",
+    "Phil.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "called",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Rev.19.17",
+    "Rev.7.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "shouted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Mark.15.14",
+    "Matt.27.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "shouting",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Mark.11.9",
+    "Matt.21.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "appealing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Jude.1.3",
+    "Matt.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "comforts",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "2Cor.1.4",
+    "2Cor.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "encouraging",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Acts.14.22",
+    "Heb.10.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "exhorted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "1Thess.2.12",
+    "Acts.11.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "invited",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Acts.28.14",
+    "Acts.8.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4336",
+   "surface": "prayers",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to pray",
+   "transliteration": "proseuchomai",
+   "samples": [
+    "Luke.20.47",
+    "Mark.12.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4341",
+   "surface": "calling",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call to/summon",
+   "transliteration": "proskaleō",
+   "samples": [
+    "Luke.7.19",
+    "Mark.8.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4341",
+   "surface": "summoning",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call to/summon",
+   "transliteration": "proskaleō",
+   "samples": [
+    "Luke.16.5",
+    "Mark.15.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4377",
+   "surface": "addressed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call to/summon",
+   "transliteration": "prosfōneō",
+   "samples": [
+    "Acts.21.40",
+    "Luke.23.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4377",
+   "surface": "called",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call to/summon",
+   "transliteration": "prosfōneō",
+   "samples": [
+    "Luke.13.12",
+    "Luke.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4377",
+   "surface": "calling",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call to/summon",
+   "transliteration": "prosfōneō",
+   "samples": [
+    "Luke.7.32",
+    "Matt.11.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1159",
+   "surface": "petition",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "petition",
+   "transliteration": "ba.u",
+   "samples": [
+    "Dan.6.13",
+    "Dan.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "call",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "2Sam.20.4",
+    "Lam.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "called",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "Josh.8.16",
+    "Judg.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6279",
+   "surface": "prayed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to pray",
+   "transliteration": "a.tar",
+   "samples": [
+    "Gen.25.21",
+    "Judg.13.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6279",
+   "surface": "prayer",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to pray",
+   "transliteration": "a.tar",
+   "samples": [
+    "Gen.25.21",
+    "Job.22.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "intervened",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "Ezek.16.52",
+    "Ps.106.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "offers",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "1Kgs.8.29",
+    "2Chr.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "prayer",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "2Chr.7.1",
+    "2Kgs.19.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6670A",
+   "surface": "shout",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry out",
+   "transliteration": "tsa.hal",
+   "samples": [
+    "Isa.12.6",
+    "Isa.24.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "arms",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Judg.10.17",
+    "Judg.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "help",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Deut.22.24",
+    "Deut.22.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "out",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Exod.22.23",
+    "Num.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6969",
+   "surface": "chant",
+   "part": "tail",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "to chant",
+   "transliteration": "qi.nen",
+   "samples": [
+    "Ezek.32.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6969",
+   "surface": "lament",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to chant",
+   "transliteration": "qi.nen",
+   "samples": [
+    "2Chr.35.25",
+    "Ezek.27.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6969",
+   "surface": "lamented",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to chant",
+   "transliteration": "qi.nen",
+   "samples": [
+    "2Sam.1.17",
+    "2Sam.3.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "cried out",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Gen.39.14",
+    "Gen.39.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "cry out",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Lev.13.45",
+    "Zech.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "predicted",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "2Kgs.23.16",
+    "2Kgs.23.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "proclaims",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Prov.12.23",
+    "Prov.20.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121J",
+   "surface": "reading",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to call: read out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jer.36.8",
+    "Jer.51.63"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7769",
+   "surface": "help",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "cry",
+   "transliteration": "shu.a",
+   "samples": [
+    "Job.30.24",
+    "Job.36.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8467",
+   "surface": "humble plea",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "supplication",
+   "transliteration": "te.chin.nah",
+   "samples": [
+    "Jer.37.20",
+    "Jer.38.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8467",
+   "surface": "mercy",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "supplication",
+   "transliteration": "te.chin.nah",
+   "samples": [
+    "Josh.11.20",
+    "Ps.55.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0310",
+   "surface": "cried out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "anaboaō",
+   "samples": [
+    "Matt.27.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0524",
+   "surface": "become callous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to become callous",
+   "transliteration": "apalgeō",
+   "samples": [
+    "Eph.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0612",
+   "surface": "answers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "answer",
+   "transliteration": "apokrisis",
+   "samples": [
+    "Luke.2.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0994",
+   "surface": "cried",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "boaō",
+   "samples": [
+    "Mark.15.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0994",
+   "surface": "cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "boaō",
+   "samples": [
+    "Luke.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0994",
+   "surface": "cry aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "boaō",
+   "samples": [
+    "Gal.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0994",
+   "surface": "crying out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "boaō",
+   "samples": [
+    "Acts.8.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1162",
+   "surface": "pray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "petition",
+   "transliteration": "deēsis",
+   "samples": [
+    "2Cor.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "ask",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "Acts.8.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "asking",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "Rom.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "begging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "2Cor.8.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "earnestly to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "Luke.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "entreat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "Gal.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "implore",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "2Cor.5.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1189",
+   "surface": "praying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "deomai",
+   "samples": [
+    "Luke.21.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1793",
+   "surface": "appeals",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call on",
+   "transliteration": "entunchanō",
+   "samples": [
+    "Rom.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1793",
+   "surface": "intercedes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call on",
+   "transliteration": "entunchanō",
+   "samples": [
+    "Rom.8.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1793",
+   "surface": "interceding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call on",
+   "transliteration": "entunchanō",
+   "samples": [
+    "Rom.8.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1793",
+   "surface": "intercession",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call on",
+   "transliteration": "entunchanō",
+   "samples": [
+    "Heb.7.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1793",
+   "surface": "petitioned",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call on",
+   "transliteration": "entunchanō",
+   "samples": [
+    "Acts.25.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "call upon",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "1Cor.1.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "called out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "Acts.7.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "calling on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "Acts.22.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "calls upon",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "Acts.2.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1941",
+   "surface": "on",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call (on)/name",
+   "transliteration": "epikaleō",
+   "samples": [
+    "Rom.10.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2171",
+   "surface": "prayer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "a vow/prayer",
+   "transliteration": "euchē",
+   "samples": [
+    "Jas.5.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2172",
+   "surface": "i would",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray/wish for",
+   "transliteration": "euchomai",
+   "samples": [
+    "Acts.26.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2172",
+   "surface": "prayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray/wish for",
+   "transliteration": "euchomai",
+   "samples": [
+    "Acts.27.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2172",
+   "surface": "wish",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray/wish for",
+   "transliteration": "euchomai",
+   "samples": [
+    "Rom.9.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2428",
+   "surface": "supplications",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "supplication",
+   "transliteration": "hiketēria",
+   "samples": [
+    "Heb.5.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564G",
+   "surface": "host",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call",
+   "transliteration": "kaleō",
+   "samples": [
+    "Luke.14.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2564G",
+   "surface": "invites",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call",
+   "transliteration": "kaleō",
+   "samples": [
+    "1Cor.10.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2821",
+   "surface": "called",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "calling",
+   "transliteration": "klēsis",
+   "samples": [
+    "Eph.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2821",
+   "surface": "condition",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "calling",
+   "transliteration": "klēsis",
+   "samples": [
+    "1Cor.7.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Matt.9.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "calling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Rev.14.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "cries out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Luke.9.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "Rom.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2896",
+   "surface": "proclaimed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "krazō",
+   "samples": [
+    "John.7.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3437",
+   "surface": "complaint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complaint",
+   "transliteration": "momfē mempsis",
+   "samples": [
+    "Col.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "after encouraging",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Acts.20.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "apologized",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Acts.16.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "asked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Acts.28.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "entreated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Luke.15.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "exhortations",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Luke.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "exhorting",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "1Pet.5.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "exhorts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Rom.12.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "give instruction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Titus.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Acts.20.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3870",
+   "surface": "imploring",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to plead/comfort",
+   "transliteration": "parakaleō",
+   "samples": [
+    "Mark.1.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4335",
+   "surface": "fervently",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prayer",
+   "transliteration": "proseuchē",
+   "samples": [
+    "Jas.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4336",
+   "surface": "keep awake",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "proseuchomai",
+   "samples": [
+    "Mark.13.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4336",
+   "surface": "pray for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "proseuchomai",
+   "samples": [
+    "Rom.8.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4341",
+   "surface": "call",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call to/summon",
+   "transliteration": "proskaleō",
+   "samples": [
+    "Jas.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4341",
+   "surface": "calling to him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call to/summon",
+   "transliteration": "proskaleō",
+   "samples": [
+    "Matt.18.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4341",
+   "surface": "calls",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call to/summon",
+   "transliteration": "proskaleō",
+   "samples": [
+    "Acts.2.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4341",
+   "surface": "sent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call to/summon",
+   "transliteration": "proskaleō",
+   "samples": [
+    "Acts.20.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4377",
+   "surface": "addressing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call to/summon",
+   "transliteration": "prosfōneō",
+   "samples": [
+    "Acts.22.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4377",
+   "surface": "over",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call to/summon",
+   "transliteration": "prosfōneō",
+   "samples": [
+    "Luke.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5581",
+   "surface": "falsely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "falsely called",
+   "transliteration": "pseudōnumos",
+   "samples": [
+    "1Tim.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "company",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "Judg.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "crying aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "2Sam.13.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "issued a proclamation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "Jonah.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "rallied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "1Sam.14.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "summon",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "2Sam.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2199",
+   "surface": "you",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "za.aq",
+   "samples": [
+    "Ps.142.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2200",
+   "surface": "cried out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "ze.iq",
+   "samples": [
+    "Dan.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2980",
+   "surface": "wailed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "ya.vav",
+   "samples": [
+    "Judg.5.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4862",
+   "surface": "desires",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "petition",
+   "transliteration": "mish.a.lah",
+   "samples": [
+    "Ps.37.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4862",
+   "surface": "petitions",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "petition",
+   "transliteration": "mish.a.lah",
+   "samples": [
+    "Ps.20.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6279",
+   "surface": "mercy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "a.tar",
+   "samples": [
+    "Isa.19.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6279",
+   "surface": "pleaded",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "a.tar",
+   "samples": [
+    "Exod.10.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6279",
+   "surface": "prayed to",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "a.tar",
+   "samples": [
+    "Exod.8.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6279",
+   "surface": "prays",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "a.tar",
+   "samples": [
+    "Job.33.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "can intercede",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "1Sam.2.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "expected",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "Gen.48.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "made",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "Ps.72.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "mediate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "1Sam.2.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "offer prayer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "Ps.32.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "offering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "1Kgs.8.54"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6419",
+   "surface": "plead",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "pa.lal",
+   "samples": [
+    "Isa.45.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6670A",
+   "surface": "aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "tsa.hal",
+   "samples": [
+    "Isa.10.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6670A",
+   "surface": "cry aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "tsa.hal",
+   "samples": [
+    "Isa.54.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6670A",
+   "surface": "neigh",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "tsa.hal",
+   "samples": [
+    "Jer.50.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6670A",
+   "surface": "neighing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "tsa.hal",
+   "samples": [
+    "Jer.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6670A",
+   "surface": "raise shouts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "tsa.hal",
+   "samples": [
+    "Jer.31.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6670A",
+   "surface": "shouted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry out",
+   "transliteration": "tsa.hal",
+   "samples": [
+    "Esth.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6681",
+   "surface": "shout",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry aloud",
+   "transliteration": "tsa.vach",
+   "samples": [
+    "Isa.42.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6739",
+   "surface": "pray",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "tse.la",
+   "samples": [
+    "Ezra.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6739",
+   "surface": "prayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to pray",
+   "transliteration": "tse.la",
+   "samples": [
+    "Dan.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "appeal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "2Kgs.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "appealed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "2Kgs.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "called",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "1Sam.10.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "cries",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Exod.22.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "cry aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Isa.42.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "cry for help",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Ps.34.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "crying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Gen.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6817",
+   "surface": "one cries",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.aq",
+   "samples": [
+    "Isa.46.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6873",
+   "surface": "cries",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.rach",
+   "samples": [
+    "Zeph.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6873",
+   "surface": "shouts aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "tsa.rach",
+   "samples": [
+    "Isa.42.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6969",
+   "surface": "chanted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to chant",
+   "transliteration": "qi.nen",
+   "samples": [
+    "Ezek.32.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6969",
+   "surface": "mourning women",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to chant",
+   "transliteration": "qi.nen",
+   "samples": [
+    "Jer.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "call upon",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Zech.13.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "cries",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Mic.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "cry out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Ps.57.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "enters suit",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Isa.59.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "invites",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Prov.18.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "invoked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jer.44.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "meets",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Isa.41.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "offer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Deut.20.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "ones",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Num.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "summoned him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Job.9.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "summoning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jer.25.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "summons",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Ps.50.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121G",
+   "surface": "will invite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call to",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Zech.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "aloud",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Judg.9.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "announced",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Lam.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "cries",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Isa.40.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "crying out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Ps.69.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "follows hard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jer.4.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "made a proclamation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Exod.32.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "make a proclamation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Lev.23.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "proclamation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jer.34.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "say",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Job.17.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121I",
+   "surface": "shout",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: call out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jer.20.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121J",
+   "surface": "dictated",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: read out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Jer.36.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7121J",
+   "surface": "reads",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to call: read out",
+   "transliteration": "qa.ra",
+   "samples": [
+    "Hab.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7440",
+   "surface": "glad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cry",
+   "transliteration": "rin.nah",
+   "samples": [
+    "Ps.42.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7440",
+   "surface": "glad songs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cry",
+   "transliteration": "rin.nah",
+   "samples": [
+    "Ps.118.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7440",
+   "surface": "gladness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cry",
+   "transliteration": "rin.nah",
+   "samples": [
+    "Prov.11.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7440",
+   "surface": "rejoice",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cry",
+   "transliteration": "rin.nah",
+   "samples": [
+    "Isa.43.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7440",
+   "surface": "sing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cry",
+   "transliteration": "rin.nah",
+   "samples": [
+    "2Chr.20.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7596",
+   "surface": "asked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "petition",
+   "transliteration": "she.e.lah",
+   "samples": [
+    "Ps.106.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7596",
+   "surface": "make",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "petition",
+   "transliteration": "she.e.lah",
+   "samples": [
+    "1Kgs.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7768",
+   "surface": "calls",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "sha.va",
+   "samples": [
+    "Ps.72.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7768",
+   "surface": "cries",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "sha.va",
+   "samples": [
+    "Job.24.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7773",
+   "surface": "cry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to cry",
+   "transliteration": "she.va",
+   "samples": [
+    "Ps.5.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7879",
+   "surface": "anxiety",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complaint",
+   "transliteration": "si.ach",
+   "samples": [
+    "1Sam.1.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7879",
+   "surface": "complaining",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complaint",
+   "transliteration": "si.ach",
+   "samples": [
+    "Prov.23.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7879",
+   "surface": "meditation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complaint",
+   "transliteration": "si.ach",
+   "samples": [
+    "Ps.104.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7879",
+   "surface": "musing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complaint",
+   "transliteration": "si.ach",
+   "samples": [
+    "1Kgs.18.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7879",
+   "surface": "talk",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "complaint",
+   "transliteration": "si.ach",
+   "samples": [
+    "2Kgs.9.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8467",
+   "surface": "favor",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "supplication",
+   "transliteration": "te.chin.nah",
+   "samples": [
+    "Ezra.9.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8467",
+   "surface": "pleas",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "supplication",
+   "transliteration": "te.chin.nah",
+   "samples": [
+    "2Chr.6.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8469",
+   "surface": "entreaties",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "supplication",
+   "transliteration": "ta.cha.nun",
+   "samples": [
+    "Prov.18.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8469",
+   "surface": "grace",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "supplication",
+   "transliteration": "ta.cha.nun",
+   "samples": [
+    "Ps.86.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8469",
+   "surface": "pleading",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "supplication",
+   "transliteration": "ta.cha.nun",
+   "samples": [
+    "Jer.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8605",
+   "surface": "prayed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prayer",
+   "transliteration": "te.phil.lah",
+   "samples": [
+    "Ps.35.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8605",
+   "surface": "thanks",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "prayer",
+   "transliteration": "te.phil.lah",
+   "samples": [
+    "Neh.11.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

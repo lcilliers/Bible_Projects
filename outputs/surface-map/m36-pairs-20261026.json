@@ -1,0 +1,2746 @@
+{
+ "cluster": "M36",
+ "cluster_name": "Worship & Service",
+ "built_at": "2026-10-26T04:21:51Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 166,
+  "head": 26,
+  "tail": 140,
+  "hits": 1138,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H5930A",
+   "surface": "burnt offering",
+   "part": "head",
+   "hits": 167,
+   "verses": 151,
+   "gloss": "burnt offering",
+   "transliteration": "o.lah",
+   "samples": [
+    "2Kgs.3.27",
+    "Lev.1.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4503G",
+   "surface": "grain offering",
+   "part": "head",
+   "hits": 129,
+   "verses": 117,
+   "gloss": "grain offering",
+   "transliteration": "min.chah",
+   "samples": [
+    "Isa.66.3",
+    "Lev.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5930A",
+   "surface": "burnt offerings",
+   "part": "head",
+   "hits": 88,
+   "verses": 83,
+   "gloss": "burnt offering",
+   "transliteration": "o.lah",
+   "samples": [
+    "Deut.12.6",
+    "Ezek.45.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "serve",
+   "part": "head",
+   "hits": 84,
+   "verses": 80,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Exod.20.5",
+    "Ps.72.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "service",
+   "part": "head",
+   "hits": 72,
+   "verses": 62,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "1Chr.28.14",
+    "1Chr.28.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "serve",
+   "part": "head",
+   "hits": 55,
+   "verses": 50,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Ezek.20.39",
+    "Jer.17.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "served",
+   "part": "head",
+   "hits": 40,
+   "verses": 39,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "1Kgs.22.53",
+    "Judg.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "minister",
+   "part": "head",
+   "hits": 38,
+   "verses": 37,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "Isa.60.10",
+    "Num.18.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "worship",
+   "part": "head",
+   "hits": 32,
+   "verses": 28,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Acts.8.27",
+    "Matt.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4503G",
+   "surface": "offering",
+   "part": "head",
+   "hits": 22,
+   "verses": 22,
+   "gloss": "grain offering",
+   "transliteration": "min.chah",
+   "samples": [
+    "Dan.9.27",
+    "Gen.4.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1248",
+   "surface": "ministry",
+   "part": "head",
+   "hits": 19,
+   "verses": 18,
+   "gloss": "service",
+   "transliteration": "diakonia",
+   "samples": [
+    "2Cor.5.18",
+    "Acts.1.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "worshiped",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Acts.10.25",
+    "Rev.20.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656G",
+   "surface": "service",
+   "part": "head",
+   "hits": 17,
+   "verses": 16,
+   "gloss": "service",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "2Chr.35.15",
+    "Isa.14.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "served",
+   "part": "head",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Hos.12.12",
+    "Judg.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "ministers",
+   "part": "head",
+   "hits": 14,
+   "verses": 13,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "Ezra.8.17",
+    "Ps.104.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "do",
+   "part": "head",
+   "hits": 13,
+   "verses": 13,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Josh.22.27",
+    "Num.4.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "ordinary",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Lev.23.7",
+    "Num.29.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "ministering",
+   "part": "head",
+   "hits": 12,
+   "verses": 12,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "1Sam.2.18",
+    "1Sam.3.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3000",
+   "surface": "serve",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to minister",
+   "transliteration": "latreuō",
+   "samples": [
+    "Heb.13.10",
+    "Heb.9.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4503G",
+   "surface": "grain offerings",
+   "part": "head",
+   "hits": 9,
+   "verses": 8,
+   "gloss": "grain offering",
+   "transliteration": "min.chah",
+   "samples": [
+    "Ezek.45.25",
+    "Jer.41.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "work",
+   "part": "head",
+   "hits": 9,
+   "verses": 7,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Exod.39.42",
+    "Isa.28.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6399",
+   "surface": "serve",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to serve",
+   "transliteration": "pe.lach",
+   "samples": [
+    "Dan.3.17",
+    "Dan.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "serve",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "1Pet.4.10",
+    "Luke.12.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1248",
+   "surface": "service",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "service",
+   "transliteration": "diakonia",
+   "samples": [
+    "1Cor.12.5",
+    "2Cor.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3000",
+   "surface": "worship",
+   "part": "head",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "to minister",
+   "transliteration": "latreuō",
+   "samples": [
+    "Phil.3.3",
+    "Rev.22.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "worshipers",
+   "part": "head",
+   "hits": 7,
+   "verses": 5,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "2Kgs.10.19",
+    "2Kgs.10.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "serves",
+   "part": "tail",
+   "hits": 6,
+   "verses": 4,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "1Pet.4.11",
+    "John.12.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5649",
+   "surface": "servants",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "servant/slave",
+   "transliteration": "a.vad",
+   "samples": [
+    "Dan.2.4",
+    "Ezra.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "attended",
+   "part": "tail",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "Esth.2.2",
+    "Gen.40.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4503G",
+   "surface": "offerings",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "grain offering",
+   "transliteration": "min.chah",
+   "samples": [
+    "Isa.1.13",
+    "Mal.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4503G",
+   "surface": "sacrifice",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "grain offering",
+   "transliteration": "min.chah",
+   "samples": [
+    "Dan.9.21",
+    "Ps.141.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "serving",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "1Sam.8.8",
+    "Gen.29.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656G",
+   "surface": "slavery",
+   "part": "tail",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "service",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Exod.6.6",
+    "Exod.6.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "labor",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Deut.26.6",
+    "Ezek.29.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5930A",
+   "surface": "burnt",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "burnt offering",
+   "transliteration": "o.lah",
+   "samples": [
+    "Lev.10.19",
+    "Lev.4.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "assistant",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "Exod.24.13",
+    "Exod.33.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "served",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "1Chr.27.1",
+    "2Sam.13.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "began to serve",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "Luke.4.39",
+    "Matt.8.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "ministering",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "Mark.1.13",
+    "Matt.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "served",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "John.12.2",
+    "Matt.20.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3009",
+   "surface": "service",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "ministry",
+   "transliteration": "leitourgia",
+   "samples": [
+    "Luke.1.23",
+    "Phil.2.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "knelt",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Matt.15.25",
+    "Matt.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "slaves",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Exod.1.14",
+    "Lev.25.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "work",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "2Chr.2.18",
+    "Exod.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Isa.19.21",
+    "Ps.102.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5673",
+   "surface": "work",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "service",
+   "transliteration": "a.vi.dah",
+   "samples": [
+    "Ezra.5.8",
+    "Ezra.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "servant",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "2Kgs.4.43",
+    "2Sam.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "ministered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "2Cor.8.19",
+    "Mark.15.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "serving",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "1Pet.1.12",
+    "Heb.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1248",
+   "surface": "relief",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "service",
+   "transliteration": "diakonia",
+   "samples": [
+    "2Cor.8.4",
+    "Acts.11.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1248",
+   "surface": "serve",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "service",
+   "transliteration": "diakonia",
+   "samples": [
+    "2Cor.11.8",
+    "Heb.1.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2322",
+   "surface": "healing",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "service",
+   "transliteration": "therapeia",
+   "samples": [
+    "Luke.9.11",
+    "Rev.22.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2999",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "ministry",
+   "transliteration": "latreia",
+   "samples": [
+    "Heb.9.1",
+    "Rom.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4574",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "object of worship",
+   "transliteration": "sebasma",
+   "samples": [
+    "2Thess.2.4",
+    "Acts.17.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4503G",
+   "surface": "grain",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "grain offering",
+   "transliteration": "min.chah",
+   "samples": [
+    "Lev.2.1",
+    "Lev.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4503G",
+   "surface": "oblation",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "grain offering",
+   "transliteration": "min.chah",
+   "samples": [
+    "1Kgs.18.29",
+    "1Kgs.18.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "became subject",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "1Chr.19.19",
+    "2Sam.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "enslaved",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Ezek.34.27",
+    "Jer.34.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "servant",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Gen.49.15",
+    "Jer.30.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "slave",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Exod.21.6",
+    "Jer.27.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "minister",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Num.3.7",
+    "Num.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647J",
+   "surface": "burdened",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to serve: burden",
+   "transliteration": "a.vad",
+   "samples": [
+    "Isa.43.23",
+    "Isa.43.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656G",
+   "surface": "serve",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "service",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Lev.25.39",
+    "Neh.3.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "minister",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Num.3.7",
+    "Num.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "use",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "1Chr.28.15",
+    "Exod.27.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "work",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "2Chr.24.12",
+    "Exod.36.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5657",
+   "surface": "servants",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "service",
+   "transliteration": "a.vud.dah",
+   "samples": [
+    "Gen.26.14",
+    "Job.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5673",
+   "surface": "affairs",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "service",
+   "transliteration": "a.vi.dah",
+   "samples": [
+    "Dan.2.49",
+    "Dan.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "ministered",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "1Chr.6.32",
+    "Ezek.44.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "servants",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "1Kgs.10.5",
+    "2Chr.9.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "service",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "2Chr.17.19",
+    "Num.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "temple service",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "2Kgs.25.14",
+    "Jer.52.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "administered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "2Cor.8.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "bringing aid",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "Rom.15.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "deacons",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "1Tim.3.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "delivered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "2Cor.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "do",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "Heb.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "helpers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "Acts.19.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "minister",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "Matt.25.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "provided",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "Luke.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "rendered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "2Tim.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "serve as deacons",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "1Tim.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1247",
+   "surface": "service",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "diakoneō",
+   "samples": [
+    "2Tim.1.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1248",
+   "surface": "distribution",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service",
+   "transliteration": "diakonia",
+   "samples": [
+    "Acts.6.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1248",
+   "surface": "serving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service",
+   "transliteration": "diakonia",
+   "samples": [
+    "Luke.10.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2322",
+   "surface": "household",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service",
+   "transliteration": "therapeia",
+   "samples": [
+    "Luke.12.42"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2407",
+   "surface": "priest",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve as priest",
+   "transliteration": "hierateuō",
+   "samples": [
+    "Luke.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2999",
+   "surface": "ritual duties",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ministry",
+   "transliteration": "latreia",
+   "samples": [
+    "Heb.9.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2999",
+   "surface": "service",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ministry",
+   "transliteration": "latreia",
+   "samples": [
+    "John.16.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2999",
+   "surface": "spiritual worship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ministry",
+   "transliteration": "latreia",
+   "samples": [
+    "Rom.12.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3000",
+   "surface": "offer",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "latreuō",
+   "samples": [
+    "Heb.12.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3000",
+   "surface": "served",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "latreuō",
+   "samples": [
+    "Rom.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3000",
+   "surface": "worshiper",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "latreuō",
+   "samples": [
+    "Heb.9.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3000",
+   "surface": "worshipers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "latreuō",
+   "samples": [
+    "Heb.10.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3000",
+   "surface": "worshiping",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "latreuō",
+   "samples": [
+    "Luke.2.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3009",
+   "surface": "ministry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ministry",
+   "transliteration": "leitourgia",
+   "samples": [
+    "Heb.8.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3009",
+   "surface": "sacrificial offering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ministry",
+   "transliteration": "leitourgia",
+   "samples": [
+    "Phil.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3009",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ministry",
+   "transliteration": "leitourgia",
+   "samples": [
+    "Heb.9.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4332",
+   "surface": "serve",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to sit near/serve",
+   "transliteration": "prosedreuō",
+   "samples": [
+    "1Cor.9.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "bow",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Rev.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "fell down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Mark.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "homage",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Mark.15.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "kneeling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Matt.20.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "knees",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Matt.18.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "worshipers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Rev.14.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "worshiping",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Rev.9.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4352",
+   "surface": "worships",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to worship",
+   "transliteration": "proskuneō",
+   "samples": [
+    "Rev.14.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4573",
+   "surface": "worshiped",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to worship",
+   "transliteration": "sebazomai",
+   "samples": [
+    "Rom.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5256",
+   "surface": "attending",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "hupēreteō",
+   "samples": [
+    "Acts.24.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5256",
+   "surface": "ministered",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "hupēreteō",
+   "samples": [
+    "Acts.20.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5256",
+   "surface": "served",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "hupēreteō",
+   "samples": [
+    "Acts.13.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4503G",
+   "surface": "burnt offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "grain offering",
+   "transliteration": "min.chah",
+   "samples": [
+    "Lev.23.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "become slaves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "1Sam.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "been",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "1Sam.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "enslave",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Jer.34.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "given",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Gen.30.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "make",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Lev.25.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "make slaves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Jer.25.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "servants",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Gen.15.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647G",
+   "surface": "serves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "a.vad",
+   "samples": [
+    "Mal.3.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "keep",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Exod.13.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "lord",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "2Chr.34.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "more",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Num.8.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "offer worship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "2Sam.15.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "serve him",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Mal.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "serves",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Mal.3.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "serving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Judg.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5647H",
+   "surface": "used",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve: minister",
+   "transliteration": "a.vad",
+   "samples": [
+    "Num.7.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5649",
+   "surface": "servant",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "servant/slave",
+   "transliteration": "a.vad",
+   "samples": [
+    "Dan.6.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656G",
+   "surface": "return",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Gen.29.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656G",
+   "surface": "servitude",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Lam.1.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "attend",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Ezra.8.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "do",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Num.4.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "doing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Exod.36.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "duties",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "1Chr.25.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "gift",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Num.18.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "kind",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "2Chr.34.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "ministry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Num.4.47"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "serving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Num.4.49"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656H",
+   "surface": "task",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: ministry",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Num.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "accessories",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Num.4.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "construction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Exod.36.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "cultivate",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Ps.104.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "hard",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Ezek.29.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "responsibility",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Exod.38.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "result",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "Isa.32.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "tilling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "1Chr.27.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5656I",
+   "surface": "workers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service: work",
+   "transliteration": "a.vo.dah",
+   "samples": [
+    "1Chr.4.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5673",
+   "surface": "service",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service",
+   "transliteration": "a.vi.dah",
+   "samples": [
+    "Ezra.6.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5930A",
+   "surface": "a burnt offering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burnt offering",
+   "transliteration": "o.lah",
+   "samples": [
+    "Exod.30.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5930A",
+   "surface": "burnt sacrifices",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burnt offering",
+   "transliteration": "o.lah",
+   "samples": [
+    "Ps.20.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5930A",
+   "surface": "offering",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burnt offering",
+   "transliteration": "o.lah",
+   "samples": [
+    "Num.28.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5930A",
+   "surface": "offerings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "burnt offering",
+   "transliteration": "o.lah",
+   "samples": [
+    "Lev.23.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6282A",
+   "surface": "worshipers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "worshiper",
+   "transliteration": "a.tar",
+   "samples": [
+    "Zeph.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6399",
+   "surface": "servants",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "pe.lach",
+   "samples": [
+    "Ezra.7.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6402",
+   "surface": "service",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "service",
+   "transliteration": "pol.chan",
+   "samples": [
+    "Ezra.7.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6642",
+   "surface": "passed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to serve",
+   "transliteration": "tsa.vat",
+   "samples": [
+    "Ruth.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8120",
+   "surface": "served",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "she.mash",
+   "samples": [
+    "Dan.7.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "assisted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "1Kgs.19.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "attending",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "1Kgs.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "care",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "Num.1.50"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "ministry",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "2Chr.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "officials",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "Prov.29.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "supplied",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "Num.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "used",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "Num.4.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8334",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to minister",
+   "transliteration": "sha.rat",
+   "samples": [
+    "Ezek.20.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

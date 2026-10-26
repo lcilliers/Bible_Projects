@@ -1,0 +1,460 @@
+{
+ "cluster": "M31",
+ "cluster_name": "Faith",
+ "built_at": "2026-10-26T04:21:07Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 27,
+  "head": 15,
+  "tail": 12,
+  "hits": 60,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G0570",
+   "surface": "unbelief",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "unbelief",
+   "transliteration": "apistia",
+   "samples": [
+    "Heb.3.19",
+    "Mark.9.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0571",
+   "surface": "unbelievers",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "unbelieving",
+   "transliteration": "apistos",
+   "samples": [
+    "2Cor.4.4",
+    "2Cor.6.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0571",
+   "surface": "unbeliever",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "unbelieving",
+   "transliteration": "apistos",
+   "samples": [
+    "1Cor.7.13",
+    "2Cor.6.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0569",
+   "surface": "not believe",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to disbelieve",
+   "transliteration": "apisteō",
+   "samples": [
+    "1Pet.2.7",
+    "Mark.16.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0571",
+   "surface": "faithless",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "unbelieving",
+   "transliteration": "apistos",
+   "samples": [
+    "Luke.9.41",
+    "Rev.21.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0571",
+   "surface": "unbelieving",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "unbelieving",
+   "transliteration": "apistos",
+   "samples": [
+    "1Cor.7.14",
+    "1Cor.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2356",
+   "surface": "religion",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "religion",
+   "transliteration": "thrēskeia",
+   "samples": [
+    "Jas.1.26",
+    "Jas.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4878",
+   "surface": "faithless",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "faithlessness",
+   "transliteration": "me.shu.vah",
+   "samples": [
+    "Jer.3.11",
+    "Jer.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0569",
+   "surface": "disbelieved",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to disbelieve",
+   "transliteration": "apisteō",
+   "samples": [
+    "Acts.28.24",
+    "Luke.24.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4878",
+   "surface": "apostasy",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "faithlessness",
+   "transliteration": "me.shu.vah",
+   "samples": [
+    "Hos.14.4",
+    "Jer.2.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0569",
+   "surface": "faithless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disbelieve",
+   "transliteration": "apisteō",
+   "samples": [
+    "2Tim.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0569",
+   "surface": "unfaithful",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to disbelieve",
+   "transliteration": "apisteō",
+   "samples": [
+    "Rom.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0570",
+   "surface": "faithlessness",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unbelief",
+   "transliteration": "apistia",
+   "samples": [
+    "Rom.3.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0570",
+   "surface": "unbelieving",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unbelief",
+   "transliteration": "apistia",
+   "samples": [
+    "Heb.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0571",
+   "surface": "disbelieve",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unbelieving",
+   "transliteration": "apistos",
+   "samples": [
+    "John.20.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0571",
+   "surface": "incredible",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unbelieving",
+   "transliteration": "apistos",
+   "samples": [
+    "Acts.26.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0571",
+   "surface": "unfaithful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "unbelieving",
+   "transliteration": "apistos",
+   "samples": [
+    "Luke.12.46"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1175",
+   "surface": "religion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "religion",
+   "transliteration": "deisidaimonia",
+   "samples": [
+    "Acts.25.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1479",
+   "surface": "self-made religion",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "self-made religion",
+   "transliteration": "ethelothrēskeia",
+   "samples": [
+    "Col.2.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2356",
+   "surface": "worship",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "religion",
+   "transliteration": "thrēskeia",
+   "samples": [
+    "Col.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4878",
+   "surface": "apostasies",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithlessness",
+   "transliteration": "me.shu.vah",
+   "samples": [
+    "Jer.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4878",
+   "surface": "backsliding",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithlessness",
+   "transliteration": "me.shu.vah",
+   "samples": [
+    "Jer.8.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4878",
+   "surface": "backslidings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithlessness",
+   "transliteration": "me.shu.vah",
+   "samples": [
+    "Jer.14.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4878",
+   "surface": "faithless one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithlessness",
+   "transliteration": "me.shu.vah",
+   "samples": [
+    "Jer.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4878",
+   "surface": "faithlessness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithlessness",
+   "transliteration": "me.shu.vah",
+   "samples": [
+    "Jer.3.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4878",
+   "surface": "turning",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithlessness",
+   "transliteration": "me.shu.vah",
+   "samples": [
+    "Hos.11.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4878",
+   "surface": "turning away",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "faithlessness",
+   "transliteration": "me.shu.vah",
+   "samples": [
+    "Prov.1.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

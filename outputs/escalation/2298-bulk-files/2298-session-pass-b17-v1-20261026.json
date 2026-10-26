@@ -1,0 +1,93 @@
+{
+ "M61": {
+  "groups": [
+   ["M61_holy", "Holy, holiness, the Holy One", "qodesh and hagios: holy, holiness, the Holy One, holy things, most holy", "group", "renders holiness"],
+   ["M61_sanctuary", "Sanctuary", "the holy place: sanctuary", "group", "renders the sanctuary"],
+   ["M61_saints", "Saints", "the holy ones: saints", "group", "renders the saints"],
+   ["M61_consecrating", "Consecrating, sanctifying", "making holy: consecrate, sanctify, sanctification", "group", "renders consecrating"],
+   ["M61_clean", "Clean, pure, cleansing", "tahor and katharos: clean, pure, cleanse, cleansing", "group", "renders cleanness"],
+   ["M61_unblemished", "Without blemish, perfect", "tamim: without blemish, perfect", "group", "renders being unblemished"],
+   ["M61_not_this_sense", "Not the cluster's sense", "renderings with no sense of holiness", "not_this_sense", "carries no sense of holiness"]
+  ],
+  "surf": {
+   "M61_holy": ["holy", "holiness", "holy one", "most", "holy things"],
+   "M61_sanctuary": ["sanctuary"],
+   "M61_saints": ["saints"],
+   "M61_consecrating": ["consecrate", "consecrated", "sanctified", "sanctifies", "sanctify", "sanctification"],
+   "M61_clean": ["clean", "pure", "cleansed", "cleanse", "cleansing"],
+   "M61_unblemished": ["without blemish", "blemish", "perfect"],
+   "M61_not_this_sense": []
+  },
+  "over": {
+   "H6942G|holy": ["M61_consecrating", "qadash 'polluted the house ... which he had made holy' (2Chr 36:14), 'keep my Sabbaths holy' (Ezek 20:20)", 0]
+  }
+ },
+ "M63": {
+  "groups": [
+   ["M63_judging", "Judging, judgment, vindicating", "shaphat, din and krino: judge, judgment, enter into judgment, vindicate, bring justice, decide a case", "group", "renders judging"],
+   ["M63_ruling", "Ruling, governing", "shaphat as rule: rulers, govern, ruled", "group", "renders ruling"],
+   ["M63_interpretation", "Interpretation", "pesher and hermeneuo: interpret, interpretation, means", "group", "renders interpretation"],
+   ["M63_counsel", "Counsel, advising, planning", "ya'ats: counsel, counselor, advise, purpose, plan, devise", "group", "renders counsel"],
+   ["M63_reasoning", "Reasoning, disputing, questioning", "reasoning aloud: reason, discuss, dispute, question, contradict, oppose", "group", "renders reasoning or disputing"],
+   ["M63_mind", "Mind, thinking, discernment", "phroneo and dialogismos: mind, think, thoughts, agree, understanding, discernment, decide", "group", "renders the mind or thinking"],
+   ["M63_ignorance", "Ignorance, not knowing", "agnoeo and agnoia: ignorant, ignorance, unaware, not know, unwise", "group", "renders ignorance"],
+   ["M63_doubt", "Doubt, making distinction", "diakrino: doubt, doubts, distinction", "group", "renders doubt"],
+   ["M63_not_this_sense", "Not the cluster's sense", "renderings with no sense of reasoning", "not_this_sense", "carries no sense of reasoning"]
+  ],
+  "surf": {
+   "M63_judging": ["judge", "judges", "judged", "judging", "judgment", "enter into judgment", "pass judgment", "condemned", "condemn", "vindicate", "bring justice", "render", "trial", "tried", "law", "decreed", "delivered", "decide"],
+   "M63_ruling": ["rulers", "govern", "governing", "ruled"],
+   "M63_interpretation": ["interpretation", "interpret", "interpreted", "can interpret", "means"],
+   "M63_counsel": ["counselor", "counselors", "counsel", "purposed", "took counsel", "advise", "counseled", "devised", "gave", "made", "consult", "give", "given", "plan", "plans"],
+   "M63_reasoning": ["reasoned", "discussing", "reasoning", "disputing", "talked", "question", "questions", "questioning", "contradict", "argumentative", "contrary", "deny", "objected", "opposed", "opposes", "spoken against", "dispute", "disputes", "hostility", "rebellion", "holding"],
+   "M63_mind": ["thoughts", "mind", "minds", "think", "agree", "harmony", "observes", "understanding", "discernment", "decided", "esteems"],
+   "M63_ignorance": ["ignorant", "ignorance", "unknown", "be unaware", "not know", "not recognize", "not understand", "unaware", "uninformed", "ignorantly", "not knowing", "not recognized", "no knowledge", "unwise"],
+   "M63_doubt": ["doubt", "doubts", "distinction"],
+   "M63_not_this_sense": []
+  },
+  "over": {
+   "H8199|delivered": ["M63_judging", "shaphat 'the LORD has delivered him from his enemies' (2Sam 18:19): vindicated", 0],
+   "G0474|holding": ["M63_reasoning", "antiballo 'what is this conversation that you are holding' (Luke 24:17)", 0]
+  }
+ },
+ "M65": {
+  "groups": [
+   ["M65_word", "Word, words, saying", "davar, emer and logos: word, words, saying", "group", "renders the word"],
+   ["M65_speaking", "Speaking, saying, talking", "davar as the act: speak, spoke, said, say, talk", "group", "renders speaking"],
+   ["M65_telling", "Telling, declaring", "nagad: tell, told, declare", "group", "renders telling"],
+   ["M65_promising", "Promising", "davar as promise: promised", "group", "renders promising"],
+   ["M65_command", "Command, the word of the mouth", "peh and davar as command: command, word of command", "group", "renders a command"],
+   ["M65_preaching", "Preaching the good news", "euangelizo: preached", "group", "renders preaching"],
+   ["M65_not_this_sense", "Not the cluster's sense", "renderings with no sense of speech", "not_this_sense", "carries no sense of speech"]
+  ],
+  "surf": {
+   "M65_word": ["word", "words", "saying"],
+   "M65_speaking": ["speak", "spoke", "spoken", "said", "speaking", "say", "speaks", "talked"],
+   "M65_telling": ["told", "tell", "declare"],
+   "M65_promising": ["promised"],
+   "M65_command": ["command"],
+   "M65_preaching": ["preached"],
+   "M65_not_this_sense": []
+  },
+  "over": {
+   "H1696G|told": ["M65_speaking", "davar 'he told them the words' (Ezek 11:25, Gen 45:27)", 0],
+   "H1696G|tell": ["M65_speaking", "davar 'tell it the message' (Jonah 3:2)", 0],
+   "H6310I|word": ["M65_command", "peh 'you rebelled against my word' (Num 27:14), 'at his word' (Num 27:21)", 0]
+  }
+ },
+ "M66": {
+  "groups": [
+   ["M66_madness", "Madness, being out of one's mind", "the mind gone: madness, mad, madman, insane, out of your mind", "group", "renders madness"],
+   ["M66_recklessness", "Recklessness, rashness", "acting without restraint: reckless, rash, fickle", "group", "renders recklessness"],
+   ["M66_not_this_sense", "Not the cluster's sense", "renderings with no sense of madness: the fancies of a dream", "not_this_sense", "carries no sense of madness"]
+  ],
+  "surf": {
+   "M66_madness": ["madness", "mad", "madman", "insane", "out of your mind", "mind", "minds"],
+   "M66_recklessness": ["rash", "reckless", "fickle"],
+   "M66_not_this_sense": ["dream"]
+  },
+  "over": {
+   "H2031|dream": ["M66_not_this_sense", "harhor 'the fancies and the visions of my head alarmed me' (Dan 4:5)", 0]
+  }
+ }
+}

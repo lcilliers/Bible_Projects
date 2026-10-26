@@ -1,0 +1,1258 @@
+{
+ "cluster": "M53",
+ "cluster_name": "Dishonor & Disgrace",
+ "built_at": "2026-10-26T04:24:07Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 76,
+  "head": 50,
+  "tail": 26,
+  "hits": 131,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "H8213",
+   "surface": "low",
+   "part": "head",
+   "hits": 11,
+   "verses": 10,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Isa.32.19",
+    "Prov.29.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "brought low",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Isa.2.12",
+    "Isa.29.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "mock",
+   "part": "head",
+   "hits": 6,
+   "verses": 5,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Isa.37.17",
+    "Ps.89.51"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "taunted",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "1Chr.20.7",
+    "Zeph.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "mocked",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Isa.37.23",
+    "Isa.37.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0216",
+   "surface": "mute",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "mute",
+   "transliteration": "alalos",
+   "samples": [
+    "Mark.7.37",
+    "Mark.9.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3058",
+   "surface": "reviled",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to revile",
+   "transliteration": "loidoreō",
+   "samples": [
+    "1Cor.4.12",
+    "John.9.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0483",
+   "surface": "mute",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "mute",
+   "transliteration": "il.lem",
+   "samples": [
+    "Exod.4.11",
+    "Prov.31.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "defied",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "1Sam.17.36",
+    "2Sam.23.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "defy",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "1Sam.17.10",
+    "1Sam.17.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "taunt",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Neh.6.13",
+    "Ps.42.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3059",
+   "surface": "reviling",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "reviling",
+   "transliteration": "loidoria",
+   "samples": [
+    "1Pet.3.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3679",
+   "surface": "reviled",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to revile",
+   "transliteration": "oneidizō",
+   "samples": [
+    "Mark.15.32",
+    "Matt.27.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5392",
+   "surface": "muzzle",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to muzzle",
+   "transliteration": "fimoō",
+   "samples": [
+    "1Cor.9.9",
+    "1Tim.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5392",
+   "surface": "silent",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to muzzle",
+   "transliteration": "fimoō",
+   "samples": [
+    "Luke.4.35",
+    "Mark.1.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1421",
+   "surface": "revilings",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "reviling",
+   "transliteration": "gid.du.phim",
+   "samples": [
+    "Isa.51.7",
+    "Zeph.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "insults",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Prov.14.31",
+    "Prov.17.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "reproach",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Job.27.6",
+    "Ps.69.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "taunts",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Ps.119.42",
+    "Ps.55.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6674",
+   "surface": "filthy",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "filthy",
+   "transliteration": "tso",
+   "samples": [
+    "Zech.3.3",
+    "Zech.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6675",
+   "surface": "dung",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "filth",
+   "transliteration": "tso.ah",
+   "samples": [
+    "2Kgs.18.27",
+    "Isa.36.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6675",
+   "surface": "filth",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "filth",
+   "transliteration": "tso.ah",
+   "samples": [
+    "Isa.4.4",
+    "Prov.30.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "down",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "2Sam.22.28",
+    "Ps.113.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "humbled",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Isa.2.11",
+    "Job.22.29"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "lowly",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Jer.13.18",
+    "Prov.16.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0808",
+   "surface": "seen exposed",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "indecency",
+   "transliteration": "aschēmosunē",
+   "samples": [
+    "Rev.16.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0808",
+   "surface": "shameless acts",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "indecency",
+   "transliteration": "aschēmosunē",
+   "samples": [
+    "Rom.1.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0880",
+   "surface": "mute",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mute",
+   "transliteration": "afōnos",
+   "samples": [
+    "1Cor.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0880",
+   "surface": "silent",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mute",
+   "transliteration": "afōnos",
+   "samples": [
+    "Acts.8.32"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0880",
+   "surface": "speechless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mute",
+   "transliteration": "afōnos",
+   "samples": [
+    "2Pet.2.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0880",
+   "surface": "without meaning",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mute",
+   "transliteration": "afōnos",
+   "samples": [
+    "1Cor.14.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2699",
+   "surface": "flesh",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mutilation",
+   "transliteration": "katatomē",
+   "samples": [
+    "Phil.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3058",
+   "surface": "revile",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revile",
+   "transliteration": "loidoreō",
+   "samples": [
+    "Acts.23.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3059",
+   "surface": "slander",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reviling",
+   "transliteration": "loidoria",
+   "samples": [
+    "1Tim.5.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3679",
+   "surface": "denounce",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revile",
+   "transliteration": "oneidizō",
+   "samples": [
+    "Matt.11.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3679",
+   "surface": "insulted",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revile",
+   "transliteration": "oneidizō",
+   "samples": [
+    "1Pet.4.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3679",
+   "surface": "others revile",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revile",
+   "transliteration": "oneidizō",
+   "samples": [
+    "Matt.5.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3679",
+   "surface": "rebuked",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revile",
+   "transliteration": "oneidizō",
+   "samples": [
+    "Mark.16.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3679",
+   "surface": "reproach",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revile",
+   "transliteration": "oneidizō",
+   "samples": [
+    "Jas.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3679",
+   "surface": "reproached",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revile",
+   "transliteration": "oneidizō",
+   "samples": [
+    "Rom.15.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3679",
+   "surface": "revile",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to revile",
+   "transliteration": "oneidizō",
+   "samples": [
+    "Luke.6.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4507",
+   "surface": "filthiness",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "filth",
+   "transliteration": "ruparia",
+   "samples": [
+    "Jas.1.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4508",
+   "surface": "filthy",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "filthy",
+   "transliteration": "ruparos",
+   "samples": [
+    "Rev.22.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4508",
+   "surface": "shabby",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "filthy",
+   "transliteration": "ruparos",
+   "samples": [
+    "Jas.2.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4509",
+   "surface": "dirt",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "filth",
+   "transliteration": "rupos",
+   "samples": [
+    "1Pet.3.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5392",
+   "surface": "silence",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muzzle",
+   "transliteration": "fimoō",
+   "samples": [
+    "1Pet.2.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5392",
+   "surface": "silenced",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muzzle",
+   "transliteration": "fimoō",
+   "samples": [
+    "Matt.22.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5392",
+   "surface": "speechless",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muzzle",
+   "transliteration": "fimoō",
+   "samples": [
+    "Matt.22.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5392",
+   "surface": "still",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muzzle",
+   "transliteration": "fimoō",
+   "samples": [
+    "Mark.4.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0483",
+   "surface": "mute man",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mute",
+   "transliteration": "il.lem",
+   "samples": [
+    "Ps.38.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0483",
+   "surface": "silent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mute",
+   "transliteration": "il.lem",
+   "samples": [
+    "Isa.56.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0483",
+   "surface": "speechless",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mute",
+   "transliteration": "il.lem",
+   "samples": [
+    "Hab.2.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1421",
+   "surface": "reviling",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "reviling",
+   "transliteration": "gid.du.phim",
+   "samples": [
+    "Isa.43.28"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2629",
+   "surface": "block",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muzzle",
+   "transliteration": "cha.sam",
+   "samples": [
+    "Ezek.39.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2629",
+   "surface": "muzzle",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to muzzle",
+   "transliteration": "cha.sam",
+   "samples": [
+    "Deut.25.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "cast contempt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "2Chr.32.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "insulted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Isa.65.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "reproaches",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Prov.27.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "risked",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Judg.5.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "scoff",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Ps.74.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "scoffs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Ps.74.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Ps.57.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2778A",
+   "surface": "taunter",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to taunt",
+   "transliteration": "cha.raph",
+   "samples": [
+    "Ps.44.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4893A",
+   "surface": "marred",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "mutilation",
+   "transliteration": "mish.chat",
+   "samples": [
+    "Isa.52.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5206",
+   "surface": "became filthy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "filth",
+   "transliteration": "ni.dah",
+   "samples": [
+    "Lam.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5356B",
+   "surface": "cleanness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bluntness",
+   "transliteration": "qe.ha.von",
+   "samples": [
+    "Amos.4.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5708",
+   "surface": "polluted",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "filth",
+   "transliteration": "id.dah",
+   "samples": [
+    "Isa.64.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6477",
+   "surface": "charge",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "bluntness",
+   "transliteration": "pe.tsi.rah",
+   "samples": [
+    "1Sam.13.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6675",
+   "surface": "filthy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "filth",
+   "transliteration": "tso.ah",
+   "samples": [
+    "Isa.28.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "abase",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Job.40.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "bring down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Ps.18.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "brings low",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "1Sam.2.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "casts",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Ps.147.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "put lower",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Prov.25.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "putting down",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Ps.75.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8213",
+   "surface": "sheol",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to abase",
+   "transliteration": "sha.phel",
+   "samples": [
+    "Isa.57.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

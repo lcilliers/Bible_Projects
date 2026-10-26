@@ -1,0 +1,2047 @@
+{
+ "cluster": "M73",
+ "cluster_name": "Sickness & Weakness",
+ "built_at": "2026-10-26T04:27:11Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 124,
+  "head": 52,
+  "tail": 72,
+  "hits": 361,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G5185",
+   "surface": "blind",
+   "part": "head",
+   "hits": 42,
+   "verses": 39,
+   "gloss": "blind",
+   "transliteration": "tuflos",
+   "samples": [
+    "John.9.13",
+    "Luke.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5787",
+   "surface": "blind",
+   "part": "head",
+   "hits": 26,
+   "verses": 23,
+   "gloss": "blind",
+   "transliteration": "iv.ver",
+   "samples": [
+    "2Sam.5.8",
+    "Isa.35.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470H",
+   "surface": "sick",
+   "part": "head",
+   "hits": 25,
+   "verses": 25,
+   "gloss": "be weak: ill",
+   "transliteration": "cha.lah",
+   "samples": [
+    "1Kgs.14.1",
+    "Deut.29.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0772G",
+   "surface": "weak",
+   "part": "head",
+   "hits": 14,
+   "verses": 12,
+   "gloss": "weak",
+   "transliteration": "asthenēs",
+   "samples": [
+    "1Cor.4.10",
+    "1Cor.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0770G",
+   "surface": "weak",
+   "part": "head",
+   "hits": 10,
+   "verses": 9,
+   "gloss": "be weak: weak",
+   "transliteration": "astheneō",
+   "samples": [
+    "2Cor.11.29",
+    "2Cor.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2483",
+   "surface": "sickness",
+   "part": "head",
+   "hits": 10,
+   "verses": 10,
+   "gloss": "sickness",
+   "transliteration": "cho.li",
+   "samples": [
+    "2Chr.21.15",
+    "Deut.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769G",
+   "surface": "weakness",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "weakness: weak",
+   "transliteration": "astheneia",
+   "samples": [
+    "2Cor.12.9",
+    "Heb.11.34"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0770H",
+   "surface": "ill",
+   "part": "head",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "be weak: ill",
+   "transliteration": "astheneō",
+   "samples": [
+    "John.11.1",
+    "John.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0770H",
+   "surface": "sick",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "be weak: ill",
+   "transliteration": "astheneō",
+   "samples": [
+    "Jas.5.14",
+    "Matt.25.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3554",
+   "surface": "diseases",
+   "part": "head",
+   "hits": 8,
+   "verses": 8,
+   "gloss": "illness",
+   "transliteration": "nosos",
+   "samples": [
+    "Luke.4.40",
+    "Matt.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6879",
+   "surface": "leper",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "be leprous",
+   "transliteration": "tsa.ra",
+   "samples": [
+    "2Kgs.5.11",
+    "2Kgs.5.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6879",
+   "surface": "leprous",
+   "part": "head",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "be leprous",
+   "transliteration": "tsa.ra",
+   "samples": [
+    "2Sam.3.29",
+    "Num.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0772H",
+   "surface": "sick",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "weak: ill",
+   "transliteration": "asthenēs",
+   "samples": [
+    "Matt.25.43",
+    "Matt.25.44"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5185",
+   "surface": "blind man",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "blind",
+   "transliteration": "tuflos",
+   "samples": [
+    "Mark.10.49",
+    "Mark.8.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0605",
+   "surface": "incurable",
+   "part": "head",
+   "hits": 6,
+   "verses": 6,
+   "gloss": "be incurable",
+   "transliteration": "a.nash",
+   "samples": [
+    "Isa.17.11",
+    "Jer.15.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0535",
+   "surface": "languish",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to weaken",
+   "transliteration": "a.mal",
+   "samples": [
+    "Isa.16.8",
+    "Isa.19.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0535",
+   "surface": "languishes",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to weaken",
+   "transliteration": "a.mal",
+   "samples": [
+    "Isa.24.7",
+    "Joel.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470A",
+   "surface": "weak",
+   "part": "head",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "be weak: weak",
+   "transliteration": "cha.lah",
+   "samples": [
+    "Ezek.34.21",
+    "Judg.16.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2483",
+   "surface": "disease",
+   "part": "head",
+   "hits": 5,
+   "verses": 4,
+   "gloss": "sickness",
+   "transliteration": "cho.li",
+   "samples": [
+    "2Chr.21.15",
+    "2Chr.21.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0732",
+   "surface": "sick",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "ill",
+   "transliteration": "arrōstos",
+   "samples": [
+    "Mark.16.18",
+    "Mark.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769G",
+   "surface": "weaknesses",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "weakness: weak",
+   "transliteration": "astheneia",
+   "samples": [
+    "2Cor.12.10",
+    "Heb.4.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2948",
+   "surface": "crippled",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "crippled",
+   "transliteration": "kullos",
+   "samples": [
+    "Matt.15.30",
+    "Matt.15.31"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470H",
+   "surface": "ill",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be weak: ill",
+   "transliteration": "cha.lah",
+   "samples": [
+    "2Sam.13.2",
+    "Gen.48.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470H",
+   "surface": "wounded",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be weak: ill",
+   "transliteration": "cha.lah",
+   "samples": [
+    "2Chr.18.33",
+    "2Chr.35.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5186",
+   "surface": "blinded",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to blind",
+   "transliteration": "tufloō",
+   "samples": [
+    "2Cor.4.4",
+    "John.12.40"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470A",
+   "surface": "become weak",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be weak: weak",
+   "transliteration": "cha.lah",
+   "samples": [
+    "Judg.16.17",
+    "Judg.16.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2483",
+   "surface": "illness",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "sickness",
+   "transliteration": "cho.li",
+   "samples": [
+    "1Kgs.17.17",
+    "2Kgs.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4974",
+   "surface": "soundness",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "soundness",
+   "transliteration": "me.tom",
+   "samples": [
+    "Ps.38.3",
+    "Ps.38.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5786",
+   "surface": "put out",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to blind",
+   "transliteration": "a.var",
+   "samples": [
+    "2Kgs.25.7",
+    "Jer.52.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6879",
+   "surface": "leprous person",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be leprous",
+   "transliteration": "tsa.ra",
+   "samples": [
+    "Lev.13.45",
+    "Lev.14.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7504",
+   "surface": "weak",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "weak",
+   "transliteration": "ra.pheh",
+   "samples": [
+    "Isa.35.3",
+    "Num.13.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0376",
+   "surface": "crippled",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "crippled",
+   "transliteration": "anapēros",
+   "samples": [
+    "Luke.14.13",
+    "Luke.14.21"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769H",
+   "surface": "infirmities",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "weakness: ill",
+   "transliteration": "astheneia",
+   "samples": [
+    "Luke.5.15",
+    "Luke.8.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0770G",
+   "surface": "weak person",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be weak: weak",
+   "transliteration": "astheneō",
+   "samples": [
+    "1Cor.8.11",
+    "Rom.14.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0772G",
+   "surface": "weaker",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "weak",
+   "transliteration": "asthenēs",
+   "samples": [
+    "1Cor.12.22",
+    "1Pet.3.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0772G",
+   "surface": "weakness",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "weak",
+   "transliteration": "asthenēs",
+   "samples": [
+    "1Cor.1.25",
+    "Heb.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3554",
+   "surface": "affliction",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "illness",
+   "transliteration": "nosos",
+   "samples": [
+    "Matt.4.23",
+    "Matt.9.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4445",
+   "surface": "fever",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be feverish",
+   "transliteration": "puressō",
+   "samples": [
+    "Mark.1.30",
+    "Matt.8.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4064",
+   "surface": "diseases",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "disease",
+   "transliteration": "mad.veh",
+   "samples": [
+    "Deut.28.60",
+    "Deut.7.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4834",
+   "surface": "grievous",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be sick",
+   "transliteration": "ma.rats",
+   "samples": [
+    "1Kgs.2.8",
+    "Mic.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5223",
+   "surface": "crippled",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "crippled",
+   "transliteration": "na.kheh",
+   "samples": [
+    "2Sam.4.4",
+    "2Sam.9.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5786",
+   "surface": "blinds",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to blind",
+   "transliteration": "a.var",
+   "samples": [
+    "Deut.16.19",
+    "Exod.23.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6879",
+   "surface": "lepers",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be leprous",
+   "transliteration": "tsa.ra",
+   "samples": [
+    "2Kgs.7.3",
+    "2Kgs.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7829",
+   "surface": "wasting disease",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "illness",
+   "transliteration": "sha.che.phet",
+   "samples": [
+    "Deut.28.22",
+    "Lev.26.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8463",
+   "surface": "diseases",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "disease",
+   "transliteration": "ta.cha.lu.im",
+   "samples": [
+    "Jer.14.18",
+    "Ps.103.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0732",
+   "surface": "ill",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "ill",
+   "transliteration": "arrōstos",
+   "samples": [
+    "1Cor.11.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769G",
+   "surface": "ailment",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness: weak",
+   "transliteration": "astheneia",
+   "samples": [
+    "Gal.4.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769G",
+   "surface": "limitations",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness: weak",
+   "transliteration": "astheneia",
+   "samples": [
+    "Rom.6.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769H",
+   "surface": "ailments",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness: ill",
+   "transliteration": "astheneia",
+   "samples": [
+    "1Tim.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769H",
+   "surface": "disability",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness: ill",
+   "transliteration": "astheneia",
+   "samples": [
+    "Luke.13.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769H",
+   "surface": "disabling",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness: ill",
+   "transliteration": "astheneia",
+   "samples": [
+    "Luke.13.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769H",
+   "surface": "diseases",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness: ill",
+   "transliteration": "astheneia",
+   "samples": [
+    "Acts.28.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769H",
+   "surface": "illness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness: ill",
+   "transliteration": "astheneia",
+   "samples": [
+    "John.11.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769H",
+   "surface": "illnesses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness: ill",
+   "transliteration": "astheneia",
+   "samples": [
+    "Matt.8.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0769H",
+   "surface": "invalid for",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness: ill",
+   "transliteration": "astheneia",
+   "samples": [
+    "John.5.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0770G",
+   "surface": "weaken",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: weak",
+   "transliteration": "astheneō",
+   "samples": [
+    "Rom.4.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0770G",
+   "surface": "weakened",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: weak",
+   "transliteration": "astheneō",
+   "samples": [
+    "Rom.8.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0770H",
+   "surface": "invalids",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: ill",
+   "transliteration": "astheneō",
+   "samples": [
+    "John.5.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0771",
+   "surface": "failings",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness",
+   "transliteration": "asthenēma",
+   "samples": [
+    "Rom.15.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0772G",
+   "surface": "crippled",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weak",
+   "transliteration": "asthenēs",
+   "samples": [
+    "Acts.4.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0772G",
+   "surface": "still weak",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weak",
+   "transliteration": "asthenēs",
+   "samples": [
+    "Rom.5.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0772H",
+   "surface": "heal",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weak: ill",
+   "transliteration": "asthenēs",
+   "samples": [
+    "Luke.9.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1133",
+   "surface": "weak women",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weak-willed woman",
+   "transliteration": "gunaikarion",
+   "samples": [
+    "2Tim.3.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3552",
+   "surface": "unhealthy craving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be sick",
+   "transliteration": "noseō",
+   "samples": [
+    "1Tim.6.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3554",
+   "surface": "disease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "illness",
+   "transliteration": "nosos",
+   "samples": [
+    "Matt.10.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4583",
+   "surface": "having seizures",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be epileptic",
+   "transliteration": "selēniazomai",
+   "samples": [
+    "Matt.4.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4583",
+   "surface": "seizures",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be epileptic",
+   "transliteration": "selēniazomai",
+   "samples": [
+    "Matt.17.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5185",
+   "surface": "blind men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "blind",
+   "transliteration": "tuflos",
+   "samples": [
+    "Matt.20.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0535",
+   "surface": "forlorn",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to weaken",
+   "transliteration": "a.mal",
+   "samples": [
+    "1Sam.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0535",
+   "surface": "grown feeble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to weaken",
+   "transliteration": "a.mal",
+   "samples": [
+    "Jer.15.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0535",
+   "surface": "languished",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to weaken",
+   "transliteration": "a.mal",
+   "samples": [
+    "Lam.2.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0535",
+   "surface": "sick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to weaken",
+   "transliteration": "a.mal",
+   "samples": [
+    "Ezek.16.30"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0535",
+   "surface": "wither",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to weaken",
+   "transliteration": "a.mal",
+   "samples": [
+    "Nah.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0535",
+   "surface": "withers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to weaken",
+   "transliteration": "a.mal",
+   "samples": [
+    "Nah.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0536",
+   "surface": "languishing",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weak",
+   "transliteration": "um.lal",
+   "samples": [
+    "Ps.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0537",
+   "surface": "feeble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weak",
+   "transliteration": "a.me.lal",
+   "samples": [
+    "Neh.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0605",
+   "surface": "became sick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be incurable",
+   "transliteration": "a.nash",
+   "samples": [
+    "2Sam.12.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0605",
+   "surface": "desperately sick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be incurable",
+   "transliteration": "a.nash",
+   "samples": [
+    "Jer.17.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0605",
+   "surface": "sickness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be incurable",
+   "transliteration": "a.nash",
+   "samples": [
+    "Jer.17.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1738",
+   "surface": "menstruation",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be sick",
+   "transliteration": "da.vah",
+   "samples": [
+    "Lev.12.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1739",
+   "surface": "become sick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sick",
+   "transliteration": "da.veh",
+   "samples": [
+    "Lam.5.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1739",
+   "surface": "faint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sick",
+   "transliteration": "da.veh",
+   "samples": [
+    "Lam.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1739",
+   "surface": "menstrual period",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sick",
+   "transliteration": "da.veh",
+   "samples": [
+    "Lev.20.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1739",
+   "surface": "unclean things",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sick",
+   "transliteration": "da.veh",
+   "samples": [
+    "Isa.30.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1739",
+   "surface": "unwell",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sick",
+   "transliteration": "da.veh",
+   "samples": [
+    "Lev.15.33"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1741",
+   "surface": "loathsome",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "illness",
+   "transliteration": "de.vay",
+   "samples": [
+    "Job.6.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H1741",
+   "surface": "sickbed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "illness",
+   "transliteration": "de.vay",
+   "samples": [
+    "Ps.41.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2456",
+   "surface": "diseased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be sick",
+   "transliteration": "cha.la",
+   "samples": [
+    "2Chr.16.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470A",
+   "surface": "faint",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: weak",
+   "transliteration": "cha.lah",
+   "samples": [
+    "Isa.57.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470A",
+   "surface": "themselves out",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: weak",
+   "transliteration": "cha.lah",
+   "samples": [
+    "Jer.12.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470H",
+   "surface": "became ill",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: ill",
+   "transliteration": "cha.lah",
+   "samples": [
+    "1Kgs.17.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470H",
+   "surface": "diseased",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: ill",
+   "transliteration": "cha.lah",
+   "samples": [
+    "1Kgs.15.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470H",
+   "surface": "fallen sick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: ill",
+   "transliteration": "cha.lah",
+   "samples": [
+    "2Kgs.13.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470H",
+   "surface": "hurt",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: ill",
+   "transliteration": "cha.lah",
+   "samples": [
+    "Prov.23.35"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2470H",
+   "surface": "strike",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak: ill",
+   "transliteration": "cha.lah",
+   "samples": [
+    "Mic.6.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2476",
+   "surface": "defeat",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness",
+   "transliteration": "cha.lu.shah",
+   "samples": [
+    "Exod.32.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2483",
+   "surface": "affliction",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sickness",
+   "transliteration": "cho.li",
+   "samples": [
+    "Jer.10.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2483",
+   "surface": "evil",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sickness",
+   "transliteration": "cho.li",
+   "samples": [
+    "Eccl.6.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2483",
+   "surface": "grief",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sickness",
+   "transliteration": "cho.li",
+   "samples": [
+    "Isa.53.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2483",
+   "surface": "griefs",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sickness",
+   "transliteration": "cho.li",
+   "samples": [
+    "Isa.53.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2483",
+   "surface": "sick",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sickness",
+   "transliteration": "cho.li",
+   "samples": [
+    "Isa.1.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2483",
+   "surface": "sicknesses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "sickness",
+   "transliteration": "cho.li",
+   "samples": [
+    "Deut.28.59"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2522",
+   "surface": "laid low",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to weaken",
+   "transliteration": "cha.lash",
+   "samples": [
+    "Job.14.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2522",
+   "surface": "low",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to weaken",
+   "transliteration": "cha.lash",
+   "samples": [
+    "Isa.14.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2522",
+   "surface": "overwhelmed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to weaken",
+   "transliteration": "cha.lash",
+   "samples": [
+    "Exod.17.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2523",
+   "surface": "weak",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weak",
+   "transliteration": "chal.lash",
+   "samples": [
+    "Joel.3.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3415",
+   "surface": "sad",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ill",
+   "transliteration": "ya.ra",
+   "samples": [
+    "1Sam.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3415",
+   "surface": "trembles",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be ill",
+   "transliteration": "ya.ra",
+   "samples": [
+    "Isa.15.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4816",
+   "surface": "faintness",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weakness",
+   "transliteration": "mo.rekh",
+   "samples": [
+    "Lev.26.36"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4834",
+   "surface": "forceful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be sick",
+   "transliteration": "ma.rats",
+   "samples": [
+    "Job.6.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4834",
+   "surface": "provokes",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be sick",
+   "transliteration": "ma.rats",
+   "samples": [
+    "Job.16.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4974",
+   "surface": "men",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "soundness",
+   "transliteration": "me.tom",
+   "samples": [
+    "Judg.20.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5136",
+   "surface": "despair",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be sick",
+   "transliteration": "nush",
+   "samples": [
+    "Ps.69.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5223",
+   "surface": "contrite",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "crippled",
+   "transliteration": "na.kheh",
+   "samples": [
+    "Isa.66.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6313",
+   "surface": "became numb",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be numb",
+   "transliteration": "pug",
+   "samples": [
+    "Gen.45.26"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6313",
+   "surface": "feeble",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be numb",
+   "transliteration": "pug",
+   "samples": [
+    "Ps.38.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6313",
+   "surface": "paralyzed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be numb",
+   "transliteration": "pug",
+   "samples": [
+    "Hab.1.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6313",
+   "surface": "wearying",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be numb",
+   "transliteration": "pug",
+   "samples": [
+    "Ps.77.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H6879",
+   "surface": "leprous disease",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be leprous",
+   "transliteration": "tsa.ra",
+   "samples": [
+    "Lev.22.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7363A",
+   "surface": "shake",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be weak",
+   "transliteration": "ra.chaph",
+   "samples": [
+    "Jer.23.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H7504",
+   "surface": "discouraged",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "weak",
+   "transliteration": "ra.pheh",
+   "samples": [
+    "2Sam.17.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8463",
+   "surface": "agony",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "disease",
+   "transliteration": "ta.cha.lu.im",
+   "samples": [
+    "2Chr.21.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8463",
+   "surface": "deadly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "disease",
+   "transliteration": "ta.cha.lu.im",
+   "samples": [
+    "Jer.16.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H8463",
+   "surface": "sicknesses",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "disease",
+   "transliteration": "ta.cha.lu.im",
+   "samples": [
+    "Deut.29.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

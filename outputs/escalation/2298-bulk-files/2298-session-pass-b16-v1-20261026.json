@@ -1,0 +1,103 @@
+{
+ "M58": {
+  "groups": [
+   ["M58_wickedness", "Wickedness, the wicked", "the wicked and their wickedness: wicked, wickedness, evildoers, ungodly, unrighteousness, iniquity, condemning as wicked", "group", "renders wickedness"],
+   ["M58_evil", "Evil", "ra and poneros as evil: evil, evils, the evil one", "group", "renders evil"],
+   ["M58_harm", "Harm, trouble, disaster", "evil as harm done or met: harm, harmful, trouble, disaster, grievous, wild, wrong", "group", "renders harm"],
+   ["M58_bad", "Bad (a quality of something)", "ra as a quality of what it qualifies: bad figs, ugly cows; read where it qualifies (E4)", "qualifier", "renders a bad quality"],
+   ["M58_abomination", "Abomination, detestable things", "to'evah and shiqquts: abomination, abominable, detestable things", "group", "renders abomination"],
+   ["M58_blasphemy", "Blasphemy, reviling", "blasphemeo and gadaph: blaspheme, blasphemy, revile, slander, curse God", "group", "renders blasphemy"],
+   ["M58_malice", "Malice", "kakia: malice", "group", "renders malice"],
+   ["M58_lewdness", "Lewdness, depravity", "zimmah: lewdness, depravity", "group", "renders lewdness"],
+   ["M58_not_this_sense", "Not the cluster's sense", "renderings with no sense of wickedness", "not_this_sense", "carries no sense of wickedness"]
+  ],
+  "surf": {
+   "M58_wickedness": ["wicked", "wicked man", "wickedness", "wickedly", "evildoers", "evildoing", "ungodly", "unrighteousness", "wrongdoing", "iniquity", "guilty", "condemn", "condemns"],
+   "M58_evil": ["evil", "evils", "evil one", "displeased"],
+   "M58_harm": ["harm", "harmful", "trouble", "disaster", "grievous", "wild", "wrong"],
+   "M58_bad": ["bad", "ugly"],
+   "M58_abomination": ["abominations", "abomination", "abominable", "detestable things"],
+   "M58_blasphemy": ["blaspheme", "blaspheming", "blasphemy", "blasphemous", "slander", "reviled", "cursed"],
+   "M58_malice": ["malice"],
+   "M58_lewdness": ["lewdness", "depravity", "lewd"],
+   "M58_not_this_sense": []
+  },
+  "over": {
+   "H7489A|displeased": ["M58_evil", "ra'a 'it displeased the LORD' (Isa 59:15): evil in his eyes, settled per verse", 1],
+   "G4190|evil one": ["M58_evil", "'the whole world lies in the power of the evil one' (1John 5:19): the evil one as a being, settled per verse", 1],
+   "G4190|bad": ["M58_bad", "poneros 'both bad and good' (Matt 22:10), 'the diseased tree bears bad fruit' (Matt 7:17)", 0],
+   "G2556G|bad": ["M58_bad", "kakos 'bad company ruins good morals' (1Cor 15:33)", 0],
+   "H7563|guilty": ["M58_wickedness", "rasha 'condemning the guilty' (1Kgs 8:32), 'who acquit the guilty' (Isa 5:23)", 0]
+  }
+ },
+ "M59": {
+  "groups": [
+   ["M59_leaving", "Leaving, departing, withdrawing", "going away from: leave, left, depart, withdraw, go away", "group", "renders leaving"],
+   ["M59_releasing", "Releasing, dismissing, sending off", "apoluo and shamat: release, dismiss, send away, let depart, settle", "group", "renders releasing"],
+   ["M59_permitting", "Permitting, letting, allowing", "aphiemi as permitting: let, permit, allow, let alone, wait", "group", "renders permitting"],
+   ["M59_forsaking", "Forsaking, casting off, neglecting", "natash: forsake, cast off, reject, neglect", "group", "renders forsaking"],
+   ["M59_reconciliation", "Reconciliation", "katallasso: reconcile, reconciliation", "group", "renders reconciliation"],
+   ["M59_divorce", "Divorce", "aphiemi and apoluo as divorce: divorce, the woman divorced", "group", "renders divorce"],
+   ["M59_not_this_sense", "Not the cluster's sense", "renderings with no sense of release: natash as spreading out, an ox stumbling, what remains, loss of life", "not_this_sense", "carries no sense of release"]
+  ],
+  "surf": {
+   "M59_leaving": ["left", "leave", "leaving", "leaves", "withdrew", "depart", "departed", "went away", "going aside", "withdrawn", "away"],
+   "M59_releasing": ["release", "released", "dismissed", "go", "sent off", "deliver", "settle"],
+   "M59_permitting": ["let", "permit", "allow", "allowed", "alone", "wait"],
+   "M59_forsaking": ["forsake", "forsaken", "forsook", "cast", "rejected", "neglect"],
+   "M59_reconciliation": ["reconciled", "reconciliation", "reconcile", "rejection"],
+   "M59_divorce": ["divorce", "woman divorced"],
+   "M59_not_this_sense": ["remains", "spread abroad", "spread out", "down", "stumbled", "loss"]
+  },
+  "over": {
+   "H5203|left": ["M59_forsaking", "natash 'David left the sheep' (1Sam 17:20, 28)", 1],
+   "G0630G|away": ["M59_releasing", "apoluo 'he sent them away' (Mark 8:9), 'send the crowds away' (Matt 14:15)", 0],
+   "G0630G|depart": ["M59_releasing", "apoluo 'now you are letting your servant depart in peace' (Luke 2:29)", 0],
+   "G0630G|departed": ["M59_releasing", "apoluo 'they departed' (Acts 28:25)", 0],
+   "G0620|left": ["M59_leaving", "apoleipo 'the cloak that I left with Carpus' (2Tim 4:13), 'angels who left their proper dwelling' (Jude 6)", 0],
+   "G0525|left": ["M59_releasing", "apallasso 'their diseases left them' (Acts 19:12)", 0],
+   "G0580|rejection": ["M59_reconciliation", "apobole 'if their rejection means the reconciliation of the world' (Rom 11:15)", 0],
+   "G0580|loss": ["M59_not_this_sense", "apobole 'there will be no loss of life' (Acts 27:22)", 0],
+   "H8058|release": ["M59_releasing", "shamat 'the manner of the release' of debts (Deut 15:2)", 0],
+   "H8058|down": ["M59_not_this_sense", "shamat 'throw her down' (2Kgs 9:33)", 0],
+   "G0863G|alone": ["M59_permitting", "aphiemi 'let it alone this year also' (Luke 13:8), 'let them alone' (Matt 15:14)", 0]
+  }
+ },
+ "M60": {
+  "groups": [
+   ["M60_atonement", "Atonement", "kipper: make atonement, atonement, atone", "group", "renders atonement"],
+   ["M60_forgiveness", "Forgiveness, pardon", "salach, aphiemi, nasa: forgive, forgiveness, pardon", "group", "renders forgiveness"],
+   ["M60_confession", "Confession, acknowledging", "homologeo: confess, confession, acknowledge", "group", "renders confession"],
+   ["M60_not_this_sense", "Not the cluster's sense", "renderings with no sense of confession or forgiveness", "not_this_sense", "carries no sense of forgiveness"]
+  ],
+  "surf": {
+   "M60_atonement": ["make atonement", "atonement", "atone", "atoned"],
+   "M60_forgiveness": ["forgiven", "forgive", "forgiveness", "pardon"],
+   "M60_confession": ["confess", "confession", "acknowledge", "confesses"],
+   "M60_not_this_sense": []
+  },
+  "over": {}
+ },
+ "M62": {
+  "groups": [
+   ["M62_straight", "Straight, right", "euthus as straight: straight, right, rightly handling", "group", "renders straightness"],
+   ["M62_sincerity", "Sincerity, soundness, singleness", "the undivided heart: sincerity, a sound eye, generous hearts", "group", "renders sincerity"],
+   ["M62_confirming", "Confirming, establishing", "bebaioo: confirm, confirmation, establish, sustain, attest", "group", "renders confirming"],
+   ["M62_certainty", "Certainty, what stands sure", "yatsiv and amanah: certain, true, stands fast, firm covenant", "group", "renders certainty"],
+   ["M62_irrevocable", "Irrevocable, without regret", "ametameletos: irrevocable, without regret", "group", "renders the irrevocable"],
+   ["M62_not_this_sense", "Not the cluster's sense", "renderings with no sense of truth: euthus as 'immediately', 'at once'", "not_this_sense", "carries no sense of truth or sincerity"]
+  ],
+  "surf": {
+   "M62_straight": ["straight", "right", "rightly handling"],
+   "M62_sincerity": ["sincerity", "healthy", "generous"],
+   "M62_confirming": ["confirmed", "confirmation", "attested", "confirm", "established", "establishes", "strengthened", "sustain"],
+   "M62_certainty": ["certain", "certainty", "stands fast", "true", "firm covenant", "fixed provision"],
+   "M62_irrevocable": ["irrevocable", "without regret"],
+   "M62_not_this_sense": ["immediately", "once"]
+  },
+  "over": {
+   "G2117|immediately": ["M62_not_this_sense", "euthus 'immediately' (Mark 7:25, Matt 13:21): time", 0],
+   "G2117|once": ["M62_not_this_sense", "euthus 'at once' (John 19:34, Mark 1:28): time", 0]
+  }
+ }
+}

@@ -1,0 +1,496 @@
+{
+ "cluster": "M69",
+ "cluster_name": "Self-Control & Zeal",
+ "built_at": "2026-10-26T04:26:34Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 29,
+  "head": 18,
+  "tail": 11,
+  "hits": 55,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G1466",
+   "surface": "self-control",
+   "part": "head",
+   "hits": 4,
+   "verses": 3,
+   "gloss": "self-control",
+   "transliteration": "enkrateia",
+   "samples": [
+    "Acts.24.25",
+    "Gal.5.23"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3525",
+   "surface": "sober-minded",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be sober",
+   "transliteration": "nēfō",
+   "samples": [
+    "1Pet.1.13",
+    "1Pet.4.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4704",
+   "surface": "do your best",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be eager",
+   "transliteration": "spoudazō",
+   "samples": [
+    "2Tim.4.9",
+    "Titus.3.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4998",
+   "surface": "self-controlled",
+   "part": "head",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "self-controlled",
+   "transliteration": "sōfrōn",
+   "samples": [
+    "1Tim.3.2",
+    "Titus.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2206",
+   "surface": "earnestly desire",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be eager",
+   "transliteration": "zēloō",
+   "samples": [
+    "1Cor.12.31",
+    "1Cor.14.39"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3524",
+   "surface": "sober-minded",
+   "part": "head",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "sober",
+   "transliteration": "nēfaleos",
+   "samples": [
+    "1Tim.3.11",
+    "1Tim.3.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4705",
+   "surface": "earnest",
+   "part": "head",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "eager",
+   "transliteration": "spoudaios",
+   "samples": [
+    "2Cor.8.17",
+    "2Cor.8.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1467",
+   "surface": "self-control",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "to self-control",
+   "transliteration": "enkrateuomai",
+   "samples": [
+    "1Cor.7.9",
+    "1Cor.9.25"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2204",
+   "surface": "fervent",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be fervent",
+   "transliteration": "zeō",
+   "samples": [
+    "Acts.18.25",
+    "Rom.12.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2206",
+   "surface": "jealous",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be eager",
+   "transliteration": "zēloō",
+   "samples": [
+    "Acts.17.5",
+    "Acts.7.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2206",
+   "surface": "make much",
+   "part": "head",
+   "hits": 2,
+   "verses": 1,
+   "gloss": "be eager",
+   "transliteration": "zēloō",
+   "samples": [
+    "Gal.4.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G3525",
+   "surface": "sober",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be sober",
+   "transliteration": "nēfō",
+   "samples": [
+    "1Thess.5.6",
+    "1Thess.5.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4289",
+   "surface": "willing",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "eager",
+   "transliteration": "prothumos",
+   "samples": [
+    "Mark.14.38",
+    "Matt.26.41"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4704",
+   "surface": "diligent",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be eager",
+   "transliteration": "spoudazō",
+   "samples": [
+    "2Pet.1.10",
+    "2Pet.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4704",
+   "surface": "eager",
+   "part": "head",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be eager",
+   "transliteration": "spoudazō",
+   "samples": [
+    "Eph.4.3",
+    "Gal.2.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1468",
+   "surface": "disciplined",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "self-controlled",
+   "transliteration": "enkratēs",
+   "samples": [
+    "Titus.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1618",
+   "surface": "earnest",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fervent",
+   "transliteration": "ektenēs",
+   "samples": [
+    "Acts.12.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G1618",
+   "surface": "earnestly",
+   "part": "head",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "fervent",
+   "transliteration": "ektenēs",
+   "samples": [
+    "1Pet.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2206",
+   "surface": "covet",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be eager",
+   "transliteration": "zēloō",
+   "samples": [
+    "Jas.4.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2206",
+   "surface": "envy",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be eager",
+   "transliteration": "zēloō",
+   "samples": [
+    "1Cor.13.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2206",
+   "surface": "feel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be eager",
+   "transliteration": "zēloō",
+   "samples": [
+    "2Cor.11.2"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2206",
+   "surface": "much",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be eager",
+   "transliteration": "zēloō",
+   "samples": [
+    "Gal.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G2206",
+   "surface": "zealous",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be eager",
+   "transliteration": "zēloō",
+   "samples": [
+    "Rev.3.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4104",
+   "surface": "believed",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be convinced",
+   "transliteration": "pistoō",
+   "samples": [
+    "2Tim.3.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4289",
+   "surface": "eager",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "eager",
+   "transliteration": "prothumos",
+   "samples": [
+    "Rom.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4704",
+   "surface": "endeavored",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be eager",
+   "transliteration": "spoudazō",
+   "samples": [
+    "1Thess.2.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4704",
+   "surface": "make every effort",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be eager",
+   "transliteration": "spoudazō",
+   "samples": [
+    "2Pet.1.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4704",
+   "surface": "strive",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be eager",
+   "transliteration": "spoudazō",
+   "samples": [
+    "Heb.4.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5431",
+   "surface": "careful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be careful",
+   "transliteration": "frontizō",
+   "samples": [
+    "Titus.3.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}

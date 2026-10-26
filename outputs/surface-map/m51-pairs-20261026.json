@@ -1,0 +1,811 @@
+{
+ "cluster": "M51",
+ "cluster_name": "Love & Devotion",
+ "built_at": "2026-10-26T04:23:51Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 48,
+  "head": 8,
+  "tail": 40,
+  "hits": 561,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [],
+ "allocations": [
+  {
+   "strong": "G0026",
+   "surface": "love",
+   "part": "head",
+   "hits": 112,
+   "verses": 104,
+   "gloss": "love",
+   "transliteration": "agapē",
+   "samples": [
+    "1John.3.16",
+    "Rom.12.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157G",
+   "surface": "love",
+   "part": "head",
+   "hits": 80,
+   "verses": 78,
+   "gloss": "to love: lover",
+   "transliteration": "a.hev",
+   "samples": [
+    "Hos.4.18",
+    "Judg.14.16"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0025",
+   "surface": "love",
+   "part": "head",
+   "hits": 76,
+   "verses": 66,
+   "gloss": "to love",
+   "transliteration": "agapaō",
+   "samples": [
+    "1Pet.1.22",
+    "3John.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157G",
+   "surface": "loved",
+   "part": "head",
+   "hits": 50,
+   "verses": 46,
+   "gloss": "to love: lover",
+   "transliteration": "a.hev",
+   "samples": [
+    "Gen.37.4",
+    "Hos.10.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157G",
+   "surface": "loves",
+   "part": "head",
+   "hits": 42,
+   "verses": 38,
+   "gloss": "to love: lover",
+   "transliteration": "a.hev",
+   "samples": [
+    "Ps.11.5",
+    "Song.3.4"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0025",
+   "surface": "loved",
+   "part": "head",
+   "hits": 40,
+   "verses": 36,
+   "gloss": "to love",
+   "transliteration": "agapaō",
+   "samples": [
+    "1John.4.19",
+    "Gal.2.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0160",
+   "surface": "love",
+   "part": "head",
+   "hits": 32,
+   "verses": 30,
+   "gloss": "love",
+   "transliteration": "a.ha.vah",
+   "samples": [
+    "2Sam.13.15",
+    "Song.2.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0025",
+   "surface": "loves",
+   "part": "head",
+   "hits": 20,
+   "verses": 17,
+   "gloss": "to love",
+   "transliteration": "agapaō",
+   "samples": [
+    "1John.2.15",
+    "1John.5.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157G",
+   "surface": "lovers",
+   "part": "tail",
+   "hits": 16,
+   "verses": 16,
+   "gloss": "to love: lover",
+   "transliteration": "a.hev",
+   "samples": [
+    "Ezek.16.37",
+    "Hos.2.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5368",
+   "surface": "love",
+   "part": "tail",
+   "hits": 13,
+   "verses": 11,
+   "gloss": "to love",
+   "transliteration": "fileō",
+   "samples": [
+    "1Cor.16.22",
+    "Matt.6.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157H",
+   "surface": "friends",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "to love: friend",
+   "transliteration": "a.hev",
+   "samples": [
+    "Prov.14.20",
+    "Ps.38.11"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0025",
+   "surface": "beloved",
+   "part": "tail",
+   "hits": 7,
+   "verses": 6,
+   "gloss": "to love",
+   "transliteration": "agapaō",
+   "samples": [
+    "Eph.1.6",
+    "Jude.1.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157G",
+   "surface": "loving",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "to love: lover",
+   "transliteration": "a.hev",
+   "samples": [
+    "Deut.30.16",
+    "Isa.56.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5000",
+   "surface": "lovely",
+   "part": "tail",
+   "hits": 5,
+   "verses": 5,
+   "gloss": "lovely",
+   "transliteration": "na.eh",
+   "samples": [
+    "Jer.6.2",
+    "Song.2.14"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157H",
+   "surface": "friend",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "to love: friend",
+   "transliteration": "a.hev",
+   "samples": [
+    "2Chr.20.7",
+    "Prov.27.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5360",
+   "surface": "brotherly affection",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "brotherly love",
+   "transliteration": "filadelfia",
+   "samples": [
+    "2Pet.1.7",
+    "Rom.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5368",
+   "surface": "kiss",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to love",
+   "transliteration": "fileō",
+   "samples": [
+    "Luke.22.47",
+    "Matt.26.48"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5368",
+   "surface": "loved",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to love",
+   "transliteration": "fileō",
+   "samples": [
+    "John.11.36",
+    "John.16.27"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5368",
+   "surface": "loves",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to love",
+   "transliteration": "fileō",
+   "samples": [
+    "John.16.27",
+    "Rev.22.15"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5368",
+   "surface": "whoever loves",
+   "part": "tail",
+   "hits": 3,
+   "verses": 2,
+   "gloss": "to love",
+   "transliteration": "fileō",
+   "samples": [
+    "John.12.25",
+    "Matt.10.37"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157G",
+   "surface": "beloved",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "to love: lover",
+   "transliteration": "a.hev",
+   "samples": [
+    "Neh.13.26",
+    "Ps.88.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5000",
+   "surface": "fitting",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "lovely",
+   "transliteration": "na.eh",
+   "samples": [
+    "Prov.26.1",
+    "Ps.147.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5360",
+   "surface": "brotherly love",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "brotherly love",
+   "transliteration": "filadelfia",
+   "samples": [
+    "1Thess.4.9",
+    "Heb.13.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0160",
+   "surface": "loved",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "love",
+   "transliteration": "a.ha.vah",
+   "samples": [
+    "1Sam.18.3",
+    "1Sam.20.17"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0160",
+   "surface": "loves",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "love",
+   "transliteration": "a.ha.vah",
+   "samples": [
+    "2Chr.2.11",
+    "Deut.7.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0026",
+   "surface": "beloved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "love",
+   "transliteration": "agapē",
+   "samples": [
+    "Col.1.13"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0026",
+   "surface": "love’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "love",
+   "transliteration": "agapē",
+   "samples": [
+    "Phlm.1.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G0026",
+   "surface": "loving",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "love",
+   "transliteration": "agapē",
+   "samples": [
+    "1Pet.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G4375",
+   "surface": "lovely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lovely",
+   "transliteration": "prosfilēs",
+   "samples": [
+    "Phil.4.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5358",
+   "surface": "good",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lover of good",
+   "transliteration": "filagathos",
+   "samples": [
+    "Titus.1.8"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5360",
+   "surface": "brotherly",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "brotherly love",
+   "transliteration": "filadelfia",
+   "samples": [
+    "1Pet.1.22"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5365",
+   "surface": "money",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "love of money",
+   "transliteration": "filarguria",
+   "samples": [
+    "1Tim.6.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5379",
+   "surface": "dispute",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "love of dispute",
+   "transliteration": "filoneikia",
+   "samples": [
+    "Luke.22.24"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "G5387",
+   "surface": "love",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "affectionate",
+   "transliteration": "filostorgos",
+   "samples": [
+    "Rom.12.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157G",
+   "surface": "like",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to love: lover",
+   "transliteration": "a.hev",
+   "samples": [
+    "Prov.15.12"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0157G",
+   "surface": "shame",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to love: lover",
+   "transliteration": "a.hev",
+   "samples": [
+    "Hos.4.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0158",
+   "surface": "lovely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lover",
+   "transliteration": "a.hav",
+   "samples": [
+    "Prov.5.19"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0158",
+   "surface": "lovers",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lover",
+   "transliteration": "a.hav",
+   "samples": [
+    "Hos.8.9"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0159",
+   "surface": "love",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beloved",
+   "transliteration": "o.hav",
+   "samples": [
+    "Prov.7.18"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0160",
+   "surface": "had",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "love",
+   "transliteration": "a.ha.vah",
+   "samples": [
+    "Gen.29.20"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H0160",
+   "surface": "loved one",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "love",
+   "transliteration": "a.ha.vah",
+   "samples": [
+    "Song.7.6"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H2245",
+   "surface": "loved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "to love",
+   "transliteration": "cha.vav",
+   "samples": [
+    "Deut.33.3"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H3033",
+   "surface": "beloved",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "beloved",
+   "transliteration": "ye.di.dut",
+   "samples": [
+    "Jer.12.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4998",
+   "surface": "beautiful",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be lovely",
+   "transliteration": "na.ah",
+   "samples": [
+    "Isa.52.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4998",
+   "surface": "befits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be lovely",
+   "transliteration": "na.ah",
+   "samples": [
+    "Ps.93.5"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H4998",
+   "surface": "lovely",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be lovely",
+   "transliteration": "na.ah",
+   "samples": [
+    "Song.1.10"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5000",
+   "surface": "becoming",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lovely",
+   "transliteration": "na.eh",
+   "samples": [
+    "Prov.17.7"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  },
+  {
+   "strong": "H5000",
+   "surface": "befits",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "lovely",
+   "transliteration": "na.eh",
+   "samples": [
+    "Ps.33.1"
+   ],
+   "inherited": null,
+   "group": null,
+   "reason": null,
+   "two_sense": 0
+  }
+ ]
+}
