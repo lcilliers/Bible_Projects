@@ -61,4 +61,6 @@ Self-correctable fixes Claude made and closed:
 
 ## 6. Git
 
-_(written after the first commit)_
+- Branch: `main`
+- Commit: `864e1a4285ffb6ed3813a58c14a9dd38e614204f` ("session 20261026: #2286 finished and closed: ...")
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `e89dca6a..864e1a42  main -> main`
