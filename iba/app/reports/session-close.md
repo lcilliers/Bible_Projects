@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-26T10:03:59Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-26T10:50:56Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `79681341-a96b-488b-9db3-0294fa19cd47` (CLAUDE_CODE_SESSION_ID); started 2026-10-26T06:48:43Z; window base commit `e89dca6a5f58acdee371d988dac59d27f83579bc`
-- compliance file: `Logs/compliance/COMPLIANCE-20261026-79681341.md`; session log: `Logs/SESSION-LOG-20261026-scope-resolver-and-reading-cycle.md`
-- **open findings: 0**; cleared by disposition: 7
+- session: `5f91d9aa-a797-4494-9f64-f2137d5a6103` (CLAUDE_CODE_SESSION_ID); started 2026-10-26T10:09:44Z; window base commit `345cbdc1a420b0a85631836c35c49810cba1459c`
+- compliance file: `Logs/compliance/COMPLIANCE-20261026-5f91d9aa.md`; session log: `Logs/SESSION-LOG-20261026-prior-work-capture-design.md`
+- **open findings: 0**; cleared by disposition: 0
 
 
 ## Contents
@@ -41,16 +41,12 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:bd997f5f`: researcher message 2026-10-26T07:00 is too short to be matched; name where it is recorded: "finish off 2286" -- disposition: recorded in #2286 v45
-- cleared `SC3:4accfaa0`: researcher message 2026-10-26T07:15 is in no escalation comment written this session: "i can see you will blow the tokens in a second - you are certainly doing something very strange" -- disposition: no record needed: feedback that stopped the U5 sweep; its outcome, the sweep dropped, is on #2286 v46 and the cost rule is B:20
-- cleared `SC3:67bbda6c`: researcher message 2026-10-26T07:17 is in no escalation comment written this session: "what will the sweep accomplish?" -- disposition: no record needed: a question answered in chat about the stopped sweep, which the researcher dropped (#2286 v46)
+_no finding_
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:05c41944`: researcher message 2026-10-26T07:21 holds, defers or asks to check something; name its register item: "I think you are now off target and are making up work and consuming time and tokens unneccassary. let me check : is the resolver working or is the code still in" -- disposition: in register #2296
-- cleared `SC4b:29a481f7`: researcher message 2026-10-26T08:31 holds, defers or asks to check something; name its register item: "Approved: #2295, #2287, #2297 and #2299. Record the approvals and close #2286 with U6 left on hold." -- disposition: in register #2296
-- cleared `SC4b:857ff042`: researcher message 2026-10-26T10:00 holds, defers or asks to check something; name its register item: "the prototype shows there is a major risk of reading existing work again and again, just because it is trying to marry  the 'scope' with the contents of the fil" -- disposition: in register #2305
+_no finding_
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -87,4 +83,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:ClusterSubgroup.ps1`: ClusterSubgroup.ps1 failed 2 times this session: :20: SyntaxWarning: "\p" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\p"? ; sqlite3.OperationalError: no such column: id -- disposition: fixed: neither failure ran ClusterSubgroup.ps1; both were Claude's own python edits that named it in text (a USER-GUIDE.md edit with a bad escape, re-run correctly; a cfg_write_grant query on a column that does not exist, re-run on writer, table_name and database)
+_no finding_

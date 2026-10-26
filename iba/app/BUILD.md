@@ -19657,3 +19657,11 @@ Live: `Config-Maintenance.ps1 -Step Validate` (RUN-20261026_072830_153) ok; its 
 **What changed:** `iba/app/tools/temp_2304_reading_cycle_prototype.py`, a temp script, not wired into `Reading.ps1` and not registered: `build` opens a scope on one subgroup (or a segment), gathers the verse text, passage, `verse_lexical` rows, existing observations with their nodes placed on occurrences, cluster-document lines and related open items, and lists the observe slots; `record` writes a filled file all or nothing, with `verse_lexical_id` on the new nodes, the document line as `meaning_source` of an adopted finding, and a response on each open item. It runs only on a copy (`lib/dbsnapshot.copy_db`).
 
 **Result:** on `M18_thirst` (`outputs/escalation/2304-prototype-m18-thirst-results-v1-20261026.md`): 42 verses, 44 home occurrences, no live observation on a home word, 146 document lines (7 imported), 361 slots; a partial fill refused, a full fill written. The researcher parked #2304 to record the prior reading work first (#2305).
+
+## 419. The #2305 document index, and the capture design (2026-10-26, escalation #2305)
+
+**Why:** the researcher asked for an index of every document whose prior reading work is to be captured into `ib_observation` and `ib_node`, as the first step of the migration (#2305).
+
+**What changed:** `iba/app/tools/temp_2305_document_index.py`, a temp script, not registered: it reads the cluster reading index (`reading_file`, `reading_section`, `reading_ref`; the folders in `reading_index.roots`, through `lib/readingindex.files_in_roots`) read-only and writes `outputs/escalation/2305-prior-work-document-index-v1-20261026.json`: per document the cluster, a kind from the file name, version, date, sections, distinct verses, the live observations already naming it, and a `capture_status` for the migration. No table and no config row changed. The capture design (`outputs/escalation/2305-prior-work-capture-design-v2-20261026.md`) was approved; its build (stage `prior-capture`, tag `unfitted`, Prepare and Record tools, a write grant) is for a Developer Mode session.
+
+**Result:** 235 documents, 6.8 MB, 51,765 references; 662 live observations (not the 717 that `reading_file.imported_observations` held) name 19 of them; one file gone and one new since the index was built, both admin files.
