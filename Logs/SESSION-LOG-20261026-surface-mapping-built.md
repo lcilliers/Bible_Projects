@@ -65,3 +65,8 @@ Claude's self-correctable fixes (closed):
 - #2270: the advisory findings, with the researcher.
 
 ## 6. Git
+
+- branch: `main`
+- commit: `55d44cac30dd1e6c77d651c4b9f414c047fef6f9` ("session 20261026: #2286 U1 to U4 and U8 built in Developer Mode ...")
+- push: `To https://github.com/lcilliers/Bible_Projects.git` / `b52f7bed..55d44cac  main -> main`
+- note: B:26 asks for commits as units complete; this session committed nothing until the close (U1 to U4 and U8 in one commit). Next session commits each unit as it is approved.
