@@ -40,4 +40,7 @@ Session id: `48c68341-5922-4307-bd5d-8727d240e254` (Developer Mode, model Sonnet
 
 ## 6. Git
 
-(written after the first commit)
+- Branch: `main`.
+- Commit: `bd742c5a5bf845037be2520be41a629c0d9f00ab`, "session 20261026: #2305 prior capture completed (M10, M47, M18, M25, M72, M20, M53, M64, clusterless: 179 documents captured, 52 nothing to capture); #2307 index gaps, #2308 node reference sweep built (Node-Resolve.ps1, NR-01 to NR-06) and run live: 20,572 nodes filled; #2309 resolved; session log and compliance file".
+- Push: done in the same command as the commit; `git status -sb` afterwards shows `## main...origin/main` with no ahead or behind count, and `origin/main` is `bd742c5a`.
+- Not committed by design: `iba/app/db/iba.db` and the other databases (ignored in `.gitignore`); a file copy of the database from before the sweep is in the session scratchpad only.
