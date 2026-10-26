@@ -44,4 +44,11 @@ Self-correctable fixes Claude made and closed:
 
 ## 6. Git
 
-_(written after the first commit)_
+- branch: `main`
+- commit: `a5b7e7d8580077f281a97cc048f5c6da2f40aefb` (session 20261026: #2305 prior-work capture indexed and designed)
+- push output:
+
+```
+To https://github.com/lcilliers/Bible_Projects.git
+   345cbdc1..a5b7e7d8  main -> main
+```
