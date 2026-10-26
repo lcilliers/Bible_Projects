@@ -1,0 +1,6246 @@
+{
+ "kind": "prior-capture",
+ "version": 1,
+ "built_at": "2026-10-26T14:59:49Z",
+ "file": {
+  "id": 1,
+  "path": "_analytics/Clusters/1682-test-m10-process-c-C_adultery-v2-20260911.md",
+  "cluster": null,
+  "sha256": "80286a7a90341e33890eaa7b126318422c38b04f1cef9cf2ba6602e5f91cb40f"
+ },
+ "fill": "findings: one per material observation the document makes about a verse (CP-01 to CP-07); lines[].answer: every line answered (captured / already_recorded / not_an_observation)",
+ "counts": {
+  "lines": 18,
+  "verses": 31,
+  "unresolved_refs": 0
+ },
+ "october": {},
+ "october_same_prefix": {},
+ "unresolved": [],
+ "verse_words": {
+  "1Cor.10.8": [
+   {
+    "verse_lexical_id": 1485373,
+    "strong": "G3366",
+    "surface": "not",
+    "morph": "CONJ-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485374,
+    "strong": "G4203",
+    "surface": "sexual immorality",
+    "morph": "V-PAS-1P",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   },
+   {
+    "verse_lexical_id": 1485375,
+    "strong": "G2531",
+    "surface": "as",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485376,
+    "strong": "G5100",
+    "surface": "some",
+    "morph": "X-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485377,
+    "strong": "G0846",
+    "surface": "them",
+    "morph": "P-GPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485378,
+    "strong": "G4203",
+    "surface": "did",
+    "morph": "V-AAI-3P",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   },
+   {
+    "verse_lexical_id": 1485379,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485380,
+    "strong": "G1501",
+    "surface": "twenty-three",
+    "morph": "A-NUI",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485381,
+    "strong": "G5140",
+    "surface": "twenty-three",
+    "morph": "A-NPF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485382,
+    "strong": "G5505",
+    "surface": "thousand",
+    "morph": "N-NPF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485383,
+    "strong": "G4098",
+    "surface": "fell",
+    "morph": "V-2AAI-3P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485384,
+    "strong": "G1722",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485385,
+    "strong": "G1520",
+    "surface": "single",
+    "morph": "A-DSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485386,
+    "strong": "G2250",
+    "surface": "day",
+    "morph": "N-DSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Col.3.5": [
+   {
+    "verse_lexical_id": 1495862,
+    "strong": "G3499",
+    "surface": "death",
+    "morph": "V-AAM-2P",
+    "clusters": [
+     "M25"
+    ],
+    "subgroups": {
+     "M25": "M25_killing"
+    }
+   },
+   {
+    "verse_lexical_id": 1495863,
+    "strong": "G3767",
+    "surface": "therefore",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495864,
+    "strong": "G3196",
+    "surface": "what",
+    "morph": "N-APN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495865,
+    "strong": "G3588",
+    "surface": "what",
+    "morph": "n/a",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495866,
+    "strong": "G1093G",
+    "surface": "earthly",
+    "morph": "N-GSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495867,
+    "strong": "G4202",
+    "surface": "immorality",
+    "morph": "N-ASF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   },
+   {
+    "verse_lexical_id": 1495868,
+    "strong": "G0167",
+    "surface": "impurity",
+    "morph": "N-ASF",
+    "clusters": [
+     "M10c"
+    ],
+    "subgroups": {
+     "M10c": "M10c_unclean"
+    }
+   },
+   {
+    "verse_lexical_id": 1495869,
+    "strong": "G3806",
+    "surface": "passion",
+    "morph": "N-ASN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495870,
+    "strong": "G2556G",
+    "surface": "evil",
+    "morph": "A-ASF",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_evil"
+    }
+   },
+   {
+    "verse_lexical_id": 1495871,
+    "strong": "G1939",
+    "surface": "desire",
+    "morph": "N-ASF",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_desire"
+    }
+   },
+   {
+    "verse_lexical_id": 1495872,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495873,
+    "strong": "G4124",
+    "surface": "covetousness",
+    "morph": "N-ASF",
+    "clusters": [
+     "M28"
+    ],
+    "subgroups": {
+     "M28": "M28_greed"
+    }
+   },
+   {
+    "verse_lexical_id": 1495874,
+    "strong": "G3748",
+    "surface": "which",
+    "morph": "R-NSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495875,
+    "strong": "G1510",
+    "surface": "is",
+    "morph": "V-PAI-3S",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495876,
+    "strong": "G1495",
+    "surface": "idolatry",
+    "morph": "N-NSF",
+    "clusters": [
+     "M55"
+    ],
+    "subgroups": {
+     "M55": "M55_idolatry"
+    }
+   }
+  ],
+  "Deut.5.18": [
+   {
+    "verse_lexical_id": 1087401,
+    "strong": "H3808",
+    "surface": "not",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1087402,
+    "strong": "H9002",
+    "surface": "not",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1087403,
+    "strong": "H5003",
+    "surface": "commit adultery",
+    "morph": "HVqi2ms",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   }
+  ],
+  "Exod.20.14": [
+   {
+    "verse_lexical_id": 1026492,
+    "strong": "H3808",
+    "surface": "not",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1026493,
+    "strong": "H5003",
+    "surface": "commit adultery",
+    "morph": "HVqi2ms",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   }
+  ],
+  "Ezek.23.37": [
+   {
+    "verse_lexical_id": 1372049,
+    "strong": "H3588A",
+    "surface": "For",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372050,
+    "strong": "H5003",
+    "surface": "adultery",
+    "morph": "HVpp3cp",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1372051,
+    "strong": "H1818",
+    "surface": "blood",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372052,
+    "strong": "H9002",
+    "surface": "blood",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372053,
+    "strong": "H3027G",
+    "surface": "hands",
+    "morph": "HNcbdc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372054,
+    "strong": "H9003",
+    "surface": "hands",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372055,
+    "strong": "H0854",
+    "surface": "With",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372056,
+    "strong": "H1544",
+    "surface": "idols",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T12"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372057,
+    "strong": "H9029",
+    "surface": "idols",
+    "morph": "HSp3fp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372058,
+    "strong": "H9002",
+    "surface": "idols",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372059,
+    "strong": "H5003",
+    "surface": "adultery",
+    "morph": "HVpp3cp",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1372060,
+    "strong": "H9029",
+    "surface": "adultery",
+    "morph": "HSp3fp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372061,
+    "strong": "H1571",
+    "surface": "have",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372062,
+    "strong": "H9002",
+    "surface": "have",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372063,
+    "strong": "H5674A",
+    "surface": "offered up",
+    "morph": "HVhp3cp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372064,
+    "strong": "H9005",
+    "surface": "offered up",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372065,
+    "strong": "H9030",
+    "surface": "offered up",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372066,
+    "strong": "H0402",
+    "surface": "food",
+    "morph": "HNcfsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372067,
+    "strong": "H9005",
+    "surface": "food",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372068,
+    "strong": "H9005",
+    "surface": "food",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372069,
+    "strong": "H9038",
+    "surface": "food",
+    "morph": "HSp3mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372070,
+    "strong": "H1121A",
+    "surface": "children",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372071,
+    "strong": "H0853",
+    "surface": "children",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372072,
+    "strong": "H0834A",
+    "surface": "whom",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372073,
+    "strong": "H9029",
+    "surface": "whom",
+    "morph": "HSp3fp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1372074,
+    "strong": "H3205",
+    "surface": "borne",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Ezek.23.43": [
+   {
+    "verse_lexical_id": 1357940,
+    "strong": "H0559",
+    "surface": "said",
+    "morph": "HVqw1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1357941,
+    "strong": "H1087",
+    "surface": "worn out",
+    "morph": "HAafsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1357942,
+    "strong": "H9005",
+    "surface": "worn out",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1357943,
+    "strong": "H5004",
+    "surface": "adultery",
+    "morph": "HNcmpa",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1357944,
+    "strong": "H6258",
+    "surface": "Now",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1357945,
+    "strong": "H2181",
+    "surface": "continue",
+    "morph": "HVqi3mp",
+    "clusters": [
+     "M28"
+    ],
+    "subgroups": {
+     "M28": "M28_whoring"
+    }
+   },
+   {
+    "verse_lexical_id": 1357946,
+    "strong": "H9024",
+    "surface": "her",
+    "morph": "HSp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1357947,
+    "strong": "H8457",
+    "surface": "whore",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M28"
+    ],
+    "subgroups": {
+     "M28": "M28_whoring"
+    }
+   },
+   {
+    "verse_lexical_id": 1357948,
+    "strong": "H9002",
+    "surface": "even",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1357949,
+    "strong": "H1931",
+    "surface": "her",
+    "morph": "HPp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Hos.3.1": [
+   {
+    "verse_lexical_id": 1385795,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385796,
+    "strong": "H0559",
+    "surface": "said",
+    "morph": "HVqw3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385797,
+    "strong": "H1980G",
+    "surface": "Go",
+    "morph": "HVqv2ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385798,
+    "strong": "H5750",
+    "surface": "again",
+    "morph": "HAcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385799,
+    "strong": "H0413",
+    "surface": "again",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385800,
+    "strong": "H9030",
+    "surface": "again",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385801,
+    "strong": "H0157G",
+    "surface": "love",
+    "morph": "HVqv2ms",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1385802,
+    "strong": "H0802G",
+    "surface": "woman",
+    "morph": "HNcfsa",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385803,
+    "strong": "H0157G",
+    "surface": "loved",
+    "morph": "HVqsfsc",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1385804,
+    "strong": "H7453",
+    "surface": "man",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385805,
+    "strong": "H5003",
+    "surface": "adulteress",
+    "morph": "HVprfsa",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1385806,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385807,
+    "strong": "H0157G",
+    "surface": "loves",
+    "morph": "HVqrmpc",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1385808,
+    "strong": "H1121G",
+    "surface": "children",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385809,
+    "strong": "H0853",
+    "surface": "children",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385810,
+    "strong": "H3478",
+    "surface": "Israel",
+    "morph": "HNpl",
+    "clusters": [
+     "T11"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385811,
+    "strong": "H1992",
+    "surface": "they",
+    "morph": "HPp3mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385812,
+    "strong": "H6437G",
+    "surface": "turn",
+    "morph": "HVqrmpa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385813,
+    "strong": "H9002",
+    "surface": "turn",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385814,
+    "strong": "H0312",
+    "surface": "other",
+    "morph": "HAampa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385815,
+    "strong": "H0430J",
+    "surface": "gods",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385816,
+    "strong": "H0413",
+    "surface": "gods",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385817,
+    "strong": "H0160",
+    "surface": "love",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1385818,
+    "strong": "H9004",
+    "surface": "love",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385819,
+    "strong": "H0809",
+    "surface": "cakes",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385820,
+    "strong": "H6025",
+    "surface": "raisins",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Hos.4.2": [
+   {
+    "verse_lexical_id": 1385489,
+    "strong": "H0422",
+    "surface": "swearing",
+    "morph": "HVqaa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385490,
+    "strong": "H3584",
+    "surface": "lying",
+    "morph": "HVpcc",
+    "clusters": [
+     "M14"
+    ],
+    "subgroups": {
+     "M14": "M14_lying"
+    }
+   },
+   {
+    "verse_lexical_id": 1385491,
+    "strong": "H7523",
+    "surface": "murder",
+    "morph": "HVqaa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385492,
+    "strong": "H1589",
+    "surface": "stealing",
+    "morph": "HVqaa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385493,
+    "strong": "H5003",
+    "surface": "adultery",
+    "morph": "HVqaa",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1385494,
+    "strong": "H6555",
+    "surface": "break",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385495,
+    "strong": "H1818",
+    "surface": "bloodshed",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385496,
+    "strong": "H9002",
+    "surface": "bloodshed",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385497,
+    "strong": "H5060",
+    "surface": "follows",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385498,
+    "strong": "H1818",
+    "surface": "bloodshed",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1385499,
+    "strong": "H9003",
+    "surface": "bloodshed",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Jas.2.11": [
+   {
+    "verse_lexical_id": 1506563,
+    "strong": "G1063",
+    "surface": "For",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506564,
+    "strong": "G2036",
+    "surface": "said",
+    "morph": "V-2AAP-NSM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506565,
+    "strong": "G3361",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506566,
+    "strong": "G3431",
+    "surface": "commit adultery",
+    "morph": "V-AAS-2S",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1506567,
+    "strong": "G2532",
+    "surface": "also",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506568,
+    "strong": "G2036",
+    "surface": "said",
+    "morph": "V-2AAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506569,
+    "strong": "G3361",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506570,
+    "strong": "G5407",
+    "surface": "murder",
+    "morph": "V-AAS-2S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506571,
+    "strong": "G1487G",
+    "surface": "If",
+    "morph": "COND",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506572,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506573,
+    "strong": "G3431",
+    "surface": "commit adultery",
+    "morph": "V-PAI-2S",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1506574,
+    "strong": "G1161",
+    "surface": "but",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506575,
+    "strong": "G5407",
+    "surface": "murder",
+    "morph": "V-PAI-2S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506576,
+    "strong": "G1096",
+    "surface": "become",
+    "morph": "V-2RAI-2S",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1506577,
+    "strong": "G3848",
+    "surface": "transgressor",
+    "morph": "N-NSM",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_transgression"
+    }
+   },
+   {
+    "verse_lexical_id": 1506578,
+    "strong": "G3551",
+    "surface": "law",
+    "morph": "N-GSM",
+    "clusters": [
+     "M54"
+    ],
+    "subgroups": {
+     "M54": "M54_law"
+    }
+   }
+  ],
+  "Jer.13.27": [
+   {
+    "verse_lexical_id": 1315233,
+    "strong": "H7200G",
+    "surface": "seen",
+    "morph": "HVqp1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315234,
+    "strong": "H8251",
+    "surface": "abominations",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_abomination"
+    }
+   },
+   {
+    "verse_lexical_id": 1315235,
+    "strong": "H5004",
+    "surface": "adulteries",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1315236,
+    "strong": "H4684",
+    "surface": "neighings",
+    "morph": "HNcfpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315237,
+    "strong": "H9002",
+    "surface": "neighings",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315238,
+    "strong": "H9022",
+    "surface": "neighings",
+    "morph": "HSp2fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315239,
+    "strong": "H2154",
+    "surface": "lewd",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_lewdness"
+    }
+   },
+   {
+    "verse_lexical_id": 1315240,
+    "strong": "H9022",
+    "surface": "lewd",
+    "morph": "HSp2fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315241,
+    "strong": "H2184",
+    "surface": "whorings",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M28"
+    ],
+    "subgroups": {
+     "M28": "M28_whoring"
+    }
+   },
+   {
+    "verse_lexical_id": 1315242,
+    "strong": "H5921A",
+    "surface": "on",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315243,
+    "strong": "H9022",
+    "surface": "on",
+    "morph": "HSp2fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315244,
+    "strong": "H1389I",
+    "surface": "hills",
+    "morph": "HNcfpa",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315245,
+    "strong": "H7704G",
+    "surface": "field",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315246,
+    "strong": "H9003",
+    "surface": "field",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315247,
+    "strong": "H0188",
+    "surface": "Woe",
+    "morph": "HTj",
+    "clusters": [
+     "M03"
+    ],
+    "subgroups": {
+     "M03": "M03_woe"
+    }
+   },
+   {
+    "verse_lexical_id": 1315248,
+    "strong": "H9022",
+    "surface": "Woe",
+    "morph": "HSp2fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315249,
+    "strong": "H3389",
+    "surface": "Jerusalem",
+    "morph": "HNpl",
+    "clusters": [
+     "T11"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315250,
+    "strong": "H9005",
+    "surface": "Jerusalem",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315251,
+    "strong": "H9032",
+    "surface": "Jerusalem",
+    "morph": "HSp2fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315252,
+    "strong": "H4970",
+    "surface": "How",
+    "morph": "HTi",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315253,
+    "strong": "H0310A",
+    "surface": "long",
+    "morph": "HAcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315254,
+    "strong": "H5750",
+    "surface": "long",
+    "morph": "HAcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1315255,
+    "strong": "H2891",
+    "surface": "made clean",
+    "morph": "HVqi2fs",
+    "clusters": [
+     "M61"
+    ],
+    "subgroups": {
+     "M61": "M61_clean"
+    }
+   },
+   {
+    "verse_lexical_id": 1315256,
+    "strong": "H3808",
+    "surface": "made clean",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Jer.23.14": [
+   {
+    "verse_lexical_id": 1338251,
+    "strong": "H5030",
+    "surface": "prophets",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M43"
+    ],
+    "subgroups": {
+     "M43": "M43_prophets"
+    }
+   },
+   {
+    "verse_lexical_id": 1338252,
+    "strong": "H9002",
+    "surface": "prophets",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338253,
+    "strong": "H9003",
+    "surface": "prophets",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338254,
+    "strong": "H3389",
+    "surface": "Jerusalem",
+    "morph": "HNpl",
+    "clusters": [
+     "T11"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338255,
+    "strong": "H7200G",
+    "surface": "seen",
+    "morph": "HVqp1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338256,
+    "strong": "H8186A",
+    "surface": "horrible thing",
+    "morph": "HAafsa",
+    "clusters": [
+     "M01"
+    ],
+    "subgroups": {
+     "M01": "M01_horror"
+    }
+   },
+   {
+    "verse_lexical_id": 1338257,
+    "strong": "H5003",
+    "surface": "adultery",
+    "morph": "HVqaa",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1338258,
+    "strong": "H1980I",
+    "surface": "walk",
+    "morph": "HVqaa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338259,
+    "strong": "H8267",
+    "surface": "lies",
+    "morph": "HNcmsa",
+    "clusters": [
+     "M14"
+    ],
+    "subgroups": {
+     "M14": "M14_lying"
+    }
+   },
+   {
+    "verse_lexical_id": 1338260,
+    "strong": "H9003",
+    "surface": "lies",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338261,
+    "strong": "H2388G",
+    "surface": "strengthen",
+    "morph": "HVpq3cp",
+    "clusters": [
+     "M23"
+    ],
+    "subgroups": {
+     "M23": "M23_strength"
+    }
+   },
+   {
+    "verse_lexical_id": 1338262,
+    "strong": "H3027G",
+    "surface": "hands",
+    "morph": "HNcbdc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338263,
+    "strong": "H7489A",
+    "surface": "evildoers",
+    "morph": "HVhrmpa",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_wickedness"
+    }
+   },
+   {
+    "verse_lexical_id": 1338264,
+    "strong": "H1115",
+    "surface": "no",
+    "morph": "HNcbsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338265,
+    "strong": "H9005",
+    "surface": "one",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338266,
+    "strong": "H0376I",
+    "surface": "one",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338267,
+    "strong": "H7725I",
+    "surface": "turns",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338268,
+    "strong": "H9006",
+    "surface": "from",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338269,
+    "strong": "H7451I",
+    "surface": "evil",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_evil"
+    }
+   },
+   {
+    "verse_lexical_id": 1338270,
+    "strong": "H3605",
+    "surface": "all",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338271,
+    "strong": "H9023",
+    "surface": "all",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338272,
+    "strong": "H1961",
+    "surface": "all",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338273,
+    "strong": "H9005",
+    "surface": "all",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338274,
+    "strong": "H9030",
+    "surface": "all",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338275,
+    "strong": "H5467",
+    "surface": "Sodom",
+    "morph": "HNpl",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338276,
+    "strong": "H9004",
+    "surface": "Sodom",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338277,
+    "strong": "H9028",
+    "surface": "Sodom",
+    "morph": "HSp3mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338278,
+    "strong": "H3427",
+    "surface": "inhabitants",
+    "morph": "HVqrmpc",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338279,
+    "strong": "H6017",
+    "surface": "Gomorrah",
+    "morph": "HNpl",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338280,
+    "strong": "H9004",
+    "surface": "Gomorrah",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338281,
+    "strong": "H9024",
+    "surface": "Gomorrah",
+    "morph": "HSp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Jer.29.23": [
+   {
+    "verse_lexical_id": 1321649,
+    "strong": "H3282",
+    "surface": "because",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321650,
+    "strong": "H0834A",
+    "surface": "because",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321651,
+    "strong": "H5039",
+    "surface": "outrageous thing",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M16"
+    ],
+    "subgroups": {
+     "M16": "M16_folly"
+    }
+   },
+   {
+    "verse_lexical_id": 1321652,
+    "strong": "H3478",
+    "surface": "Israel",
+    "morph": "HNpl",
+    "clusters": [
+     "T11"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321653,
+    "strong": "H9003",
+    "surface": "Israel",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321654,
+    "strong": "H6213H",
+    "surface": "committed",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321655,
+    "strong": "H5003",
+    "surface": "adultery",
+    "morph": "HVpw3mp",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1321656,
+    "strong": "H7453",
+    "surface": "neighbors",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321657,
+    "strong": "H0802H",
+    "surface": "wives",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321658,
+    "strong": "H0853",
+    "surface": "wives",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321659,
+    "strong": "H9028",
+    "surface": "they",
+    "morph": "HSp3mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321660,
+    "strong": "H1696G",
+    "surface": "spoken",
+    "morph": "HVpw3mp",
+    "clusters": [
+     "M65"
+    ],
+    "subgroups": {
+     "M65": "M65_speaking"
+    }
+   },
+   {
+    "verse_lexical_id": 1321661,
+    "strong": "H8034",
+    "surface": "name",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321662,
+    "strong": "H9003",
+    "surface": "name",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321663,
+    "strong": "H8267",
+    "surface": "lying",
+    "morph": "HNcmsa",
+    "clusters": [
+     "M14"
+    ],
+    "subgroups": {
+     "M14": "M14_lying"
+    }
+   },
+   {
+    "verse_lexical_id": 1321664,
+    "strong": "H9020",
+    "surface": "lying",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321665,
+    "strong": "H1697G",
+    "surface": "words",
+    "morph": "HNcmsa",
+    "clusters": [
+     "M65"
+    ],
+    "subgroups": {
+     "M65": "M65_word"
+    }
+   },
+   {
+    "verse_lexical_id": 1321666,
+    "strong": "H0834A",
+    "surface": "that",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321667,
+    "strong": "H3808",
+    "surface": "not",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321668,
+    "strong": "H6680",
+    "surface": "command",
+    "morph": "HVpp1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321669,
+    "strong": "H0595",
+    "surface": "I",
+    "morph": "HPp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321670,
+    "strong": "H9002",
+    "surface": "one",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321671,
+    "strong": "H9038",
+    "surface": "one",
+    "morph": "HSp3mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321672,
+    "strong": "H3045",
+    "surface": "knows",
+    "morph": "HVqrmsa",
+    "clusters": [
+     "M15"
+    ],
+    "subgroups": {
+     "M15": "M15_knowing"
+    }
+   },
+   {
+    "verse_lexical_id": 1321673,
+    "strong": "H9009",
+    "surface": "knows",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321674,
+    "strong": "H5707",
+    "surface": "witness",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321675,
+    "strong": "H9002",
+    "surface": "witness",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1321676,
+    "strong": "H5002",
+    "surface": "declares",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M43"
+    ],
+    "subgroups": {
+     "M43": "M43_oracle"
+    }
+   },
+   {
+    "verse_lexical_id": 1321677,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Jer.3.9": [
+   {
+    "verse_lexical_id": 1337379,
+    "strong": "H2184",
+    "surface": "whoredom",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M28"
+    ],
+    "subgroups": {
+     "M28": "M28_whoring"
+    }
+   },
+   {
+    "verse_lexical_id": 1337380,
+    "strong": "H6963B",
+    "surface": "lightly",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337381,
+    "strong": "H9006",
+    "surface": "lightly",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337382,
+    "strong": "H1961",
+    "surface": "lightly",
+    "morph": "HVqq3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337383,
+    "strong": "H2610",
+    "surface": "polluted",
+    "morph": "HVqw3fs",
+    "clusters": [
+     "M10c"
+    ],
+    "subgroups": {
+     "M10c": "M10c_defiling"
+    }
+   },
+   {
+    "verse_lexical_id": 1337384,
+    "strong": "H9024",
+    "surface": "polluted",
+    "morph": "HSp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337385,
+    "strong": "H0776G",
+    "surface": "land",
+    "morph": "HNcfsa",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337386,
+    "strong": "H9009",
+    "surface": "land",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337387,
+    "strong": "H0853",
+    "surface": "land",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337388,
+    "strong": "H5003",
+    "surface": "adultery",
+    "morph": "HVqw3fs",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1337389,
+    "strong": "H0068G",
+    "surface": "stone",
+    "morph": "HNcfsa",
+    "clusters": [
+     "T12"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337390,
+    "strong": "H9009",
+    "surface": "stone",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337391,
+    "strong": "H0853",
+    "surface": "stone",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337392,
+    "strong": "H6086H",
+    "surface": "tree",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T13"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337393,
+    "strong": "H9009",
+    "surface": "tree",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337394,
+    "strong": "H0853",
+    "surface": "tree",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1337395,
+    "strong": "H9002",
+    "surface": "tree",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Jer.7.9": [
+   {
+    "verse_lexical_id": 1338394,
+    "strong": "H1589",
+    "surface": "steal",
+    "morph": "HVqaa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338395,
+    "strong": "H9008",
+    "surface": "steal",
+    "morph": "HTi",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338396,
+    "strong": "H7523",
+    "surface": "murder",
+    "morph": "HVqaa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338397,
+    "strong": "H5003",
+    "surface": "adultery",
+    "morph": "HVqaa",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1338398,
+    "strong": "H7650",
+    "surface": "swear",
+    "morph": "HVNcc",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338399,
+    "strong": "H8267",
+    "surface": "falsely",
+    "morph": "HNcmsa",
+    "clusters": [
+     "M14"
+    ],
+    "subgroups": {
+     "M14": "M14_lying"
+    }
+   },
+   {
+    "verse_lexical_id": 1338400,
+    "strong": "H9005",
+    "surface": "falsely",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338401,
+    "strong": "H6999H",
+    "surface": "offerings",
+    "morph": "HVpcc",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338402,
+    "strong": "H1168A",
+    "surface": "Baal",
+    "morph": "HNtmsa",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338403,
+    "strong": "H9005",
+    "surface": "Baal",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338404,
+    "strong": "H1980N",
+    "surface": "go",
+    "morph": "HVqaa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338405,
+    "strong": "H0310A",
+    "surface": "after",
+    "morph": "HAcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338406,
+    "strong": "H0312",
+    "surface": "other",
+    "morph": "HAampa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338407,
+    "strong": "H0430J",
+    "surface": "gods",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338408,
+    "strong": "H0834A",
+    "surface": "that",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338409,
+    "strong": "H3808",
+    "surface": "not",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1338410,
+    "strong": "H3045",
+    "surface": "known",
+    "morph": "HVqp2mp",
+    "clusters": [
+     "M15"
+    ],
+    "subgroups": {
+     "M15": "M15_knowing"
+    }
+   }
+  ],
+  "John.8.3": [
+   {
+    "verse_lexical_id": 1458278,
+    "strong": "G1161",
+    "surface": "The",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458279,
+    "strong": "G1122",
+    "surface": "scribes",
+    "morph": "N-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458280,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458281,
+    "strong": "G5330",
+    "surface": "Pharisees",
+    "morph": "N-NPM-T",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458282,
+    "strong": "G0071",
+    "surface": "brought",
+    "morph": "V-PAI-3P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458283,
+    "strong": "G1135G",
+    "surface": "woman",
+    "morph": "N-ASF",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458284,
+    "strong": "G2638",
+    "surface": "caught",
+    "morph": "V-RPP-ASF",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458285,
+    "strong": "G1722",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458286,
+    "strong": "G3430",
+    "surface": "adultery",
+    "morph": "N-DSF",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1458287,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458288,
+    "strong": "G2476",
+    "surface": "placing",
+    "morph": "V-AAP-NPM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458289,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": null,
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458290,
+    "strong": "G1722",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1458291,
+    "strong": "G3319",
+    "surface": "midst",
+    "morph": "A-DSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "John.8.4": [
+   {
+    "verse_lexical_id": 1447713,
+    "strong": "G3004G",
+    "surface": "said",
+    "morph": "V-PAI-3P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1447714,
+    "strong": "G0846",
+    "surface": "him",
+    "morph": "P-DSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1447715,
+    "strong": "G1320",
+    "surface": "Teacher",
+    "morph": "N-VSM-T",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1447716,
+    "strong": "G3778",
+    "surface": "this",
+    "morph": "P-DSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1447717,
+    "strong": "G1135G",
+    "surface": "woman",
+    "morph": "N-NSF",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1447718,
+    "strong": "G2638",
+    "surface": "caught",
+    "morph": "V-2API-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1447719,
+    "strong": "G1888",
+    "surface": "act",
+    "morph": "A-DSM",
+    "clusters": [
+     "M26"
+    ],
+    "subgroups": {
+     "M26": "M26_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1447720,
+    "strong": "G3431",
+    "surface": "adultery",
+    "morph": "V-PPP-NSF",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   }
+  ],
+  "John.8.41": [
+   {
+    "verse_lexical_id": 1452369,
+    "strong": "G5210",
+    "surface": "You",
+    "morph": "P-2NP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452370,
+    "strong": "G4160G",
+    "surface": "doing",
+    "morph": "V-PAI-2P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452371,
+    "strong": "G2041",
+    "surface": "works",
+    "morph": "N-APN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452372,
+    "strong": "G5216",
+    "surface": "your",
+    "morph": "P-2GP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452373,
+    "strong": "G3962",
+    "surface": "father",
+    "morph": "N-GSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452374,
+    "strong": "G2036",
+    "surface": "said",
+    "morph": "V-2AAI-3P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452375,
+    "strong": "G0846",
+    "surface": "him",
+    "morph": "P-DSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452376,
+    "strong": "G2249",
+    "surface": "We",
+    "morph": "P-1NP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452377,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452378,
+    "strong": "G1080",
+    "surface": "born",
+    "morph": "V-RPI-1P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452379,
+    "strong": "G1537",
+    "surface": "of",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452380,
+    "strong": "G4202",
+    "surface": "sexual immorality",
+    "morph": "N-GSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   },
+   {
+    "verse_lexical_id": 1452381,
+    "strong": "G2192",
+    "surface": "have",
+    "morph": "V-PAI-1P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452382,
+    "strong": "G1520",
+    "surface": "one",
+    "morph": "A-ASM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452383,
+    "strong": "G3962",
+    "surface": "Father",
+    "morph": "N-ASM-T",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1452384,
+    "strong": "G2316",
+    "surface": "God",
+    "morph": "N-ASM-T",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lev.5.7": [
+   {
+    "verse_lexical_id": 1041049,
+    "strong": "H3027I",
+    "surface": "if",
+    "morph": "HNcbsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041050,
+    "strong": "H0518A",
+    "surface": "if",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041051,
+    "strong": "H9002",
+    "surface": "if",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041052,
+    "strong": "H3808",
+    "surface": "if",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041053,
+    "strong": "H1767",
+    "surface": "cannot afford",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041054,
+    "strong": "H9023",
+    "surface": "cannot afford",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041055,
+    "strong": "H5060",
+    "surface": "cannot afford",
+    "morph": "HVhi3fs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041056,
+    "strong": "H7716",
+    "surface": "lamb",
+    "morph": "HNcbsa",
+    "clusters": [
+     "T13"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041057,
+    "strong": "H0935P",
+    "surface": "bring",
+    "morph": "HVhq3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041058,
+    "strong": "H0853",
+    "surface": "compensation",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041059,
+    "strong": "H0817",
+    "surface": "sin",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_offerings"
+    }
+   },
+   {
+    "verse_lexical_id": 1041060,
+    "strong": "H0834A",
+    "surface": "that",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041061,
+    "strong": "H2398",
+    "surface": "committed",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_sin"
+    }
+   },
+   {
+    "verse_lexical_id": 1041062,
+    "strong": "H9023",
+    "surface": "committed",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041063,
+    "strong": "H8147",
+    "surface": "two",
+    "morph": "HAcfdc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041064,
+    "strong": "H8449",
+    "surface": "turtledoves",
+    "morph": "HNcbpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041065,
+    "strong": "H8147",
+    "surface": "two",
+    "morph": "HAcbdc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041066,
+    "strong": "H0176A",
+    "surface": "two",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041067,
+    "strong": "H1121H",
+    "surface": "pigeons",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041068,
+    "strong": "H3123",
+    "surface": "pigeons",
+    "morph": "HNcfsa",
+    "clusters": [
+     "T13"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041069,
+    "strong": "H0259",
+    "surface": "one",
+    "morph": "HAcfsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041070,
+    "strong": "H3068G",
+    "surface": "one",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041071,
+    "strong": "H9005",
+    "surface": "one",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041072,
+    "strong": "H2403H",
+    "surface": "sin offering",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_offerings"
+    }
+   },
+   {
+    "verse_lexical_id": 1041073,
+    "strong": "H9005",
+    "surface": "sin offering",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041074,
+    "strong": "H0259",
+    "surface": "other",
+    "morph": "HAcfsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041075,
+    "strong": "H9002",
+    "surface": "other",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1041076,
+    "strong": "H5930A",
+    "surface": "burnt offering",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M36"
+    ],
+    "subgroups": {
+     "M36": "M36_offering"
+    }
+   },
+   {
+    "verse_lexical_id": 1041077,
+    "strong": "H9005",
+    "surface": "burnt offering",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Mark.10.11": [
+   {
+    "verse_lexical_id": 1422043,
+    "strong": "G2532",
+    "surface": "And",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422044,
+    "strong": "G3004G",
+    "surface": "said",
+    "morph": "V-PAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422045,
+    "strong": "G0846",
+    "surface": "them",
+    "morph": "P-DPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422046,
+    "strong": "G3739",
+    "surface": "Whoever",
+    "morph": "R-NSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422047,
+    "strong": "G0630H",
+    "surface": "divorces",
+    "morph": "V-AAS-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422048,
+    "strong": "G0846",
+    "surface": "his",
+    "morph": "P-GSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422049,
+    "strong": "G1135H",
+    "surface": "wife",
+    "morph": "N-ASF",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422050,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422051,
+    "strong": "G1060",
+    "surface": "marries",
+    "morph": "V-AAS-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422052,
+    "strong": "G0243",
+    "surface": "another",
+    "morph": "A-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422053,
+    "strong": "G3429",
+    "surface": "commits adultery",
+    "morph": "V-PNI-3S",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1422054,
+    "strong": "G1909",
+    "surface": "against",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1422055,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": "P-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Mark.7.21": [
+   {
+    "verse_lexical_id": 1426350,
+    "strong": "G1063",
+    "surface": "For",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1426351,
+    "strong": "G2081",
+    "surface": "within",
+    "morph": "ADV",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1426352,
+    "strong": "G1537",
+    "surface": "of",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1426353,
+    "strong": "G2588",
+    "surface": "heart",
+    "morph": "N-GSF",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1426354,
+    "strong": "G0444",
+    "surface": "man",
+    "morph": "N-GPM",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1426355,
+    "strong": "G1607",
+    "surface": "come",
+    "morph": "V-PNI-3P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1426356,
+    "strong": "G2556G",
+    "surface": "evil",
+    "morph": "A-NPM",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_evil"
+    }
+   },
+   {
+    "verse_lexical_id": 1426357,
+    "strong": "G1261",
+    "surface": "thoughts",
+    "morph": "N-NPM",
+    "clusters": [
+     "M63"
+    ],
+    "subgroups": {
+     "M63": "M63_mind"
+    }
+   },
+   {
+    "verse_lexical_id": 1426358,
+    "strong": "G4202",
+    "surface": "sexual immorality",
+    "morph": "N-NPF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   },
+   {
+    "verse_lexical_id": 1426359,
+    "strong": "G2829",
+    "surface": "theft",
+    "morph": "N-NPF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1426360,
+    "strong": "G5408",
+    "surface": "murder",
+    "morph": "N-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1426361,
+    "strong": "G3430",
+    "surface": "adultery",
+    "morph": "N-NPF",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   }
+  ],
+  "Matt.15.19": [
+   {
+    "verse_lexical_id": 1414949,
+    "strong": "G1063",
+    "surface": "For",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1414950,
+    "strong": "G1537",
+    "surface": "of",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1414951,
+    "strong": "G2588",
+    "surface": "heart",
+    "morph": "N-GSF",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1414952,
+    "strong": "G1831",
+    "surface": "come",
+    "morph": "V-PNI-3P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1414953,
+    "strong": "G4190",
+    "surface": "evil",
+    "morph": "A-NPM",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_evil"
+    }
+   },
+   {
+    "verse_lexical_id": 1414954,
+    "strong": "G1261",
+    "surface": "thoughts",
+    "morph": "N-NPM",
+    "clusters": [
+     "M63"
+    ],
+    "subgroups": {
+     "M63": "M63_mind"
+    }
+   },
+   {
+    "verse_lexical_id": 1414955,
+    "strong": "G5408",
+    "surface": "murder",
+    "morph": "N-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1414956,
+    "strong": "G3430",
+    "surface": "adultery",
+    "morph": "N-NPF",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1414957,
+    "strong": "G4202",
+    "surface": "sexual immorality",
+    "morph": "N-NPF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   },
+   {
+    "verse_lexical_id": 1414958,
+    "strong": "G2829",
+    "surface": "theft",
+    "morph": "N-NPF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1414959,
+    "strong": "G5577",
+    "surface": "false witness",
+    "morph": "N-NPF",
+    "clusters": [
+     "M54"
+    ],
+    "subgroups": {
+     "M54": "M54_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1414960,
+    "strong": "G0988",
+    "surface": "slander",
+    "morph": "N-NPF",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_blasphemy"
+    }
+   }
+  ],
+  "Matt.19.18": [
+   {
+    "verse_lexical_id": 1407909,
+    "strong": "G3004G",
+    "surface": "said",
+    "morph": "V-PAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407910,
+    "strong": "G0846",
+    "surface": "him",
+    "morph": "P-DSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407911,
+    "strong": "G4169",
+    "surface": "Which",
+    "morph": "I-APF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407912,
+    "strong": "G1161",
+    "surface": "And",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407913,
+    "strong": "G2424G",
+    "surface": "Jesus",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407914,
+    "strong": "G2036",
+    "surface": "said",
+    "morph": "V-2AAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407915,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407916,
+    "strong": "G5407",
+    "surface": "murder",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407917,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407918,
+    "strong": "G3431",
+    "surface": "commit adultery",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1407919,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407920,
+    "strong": "G2813",
+    "surface": "steal",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407921,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407922,
+    "strong": "G5576",
+    "surface": "bear false witness",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Matt.19.9": [
+   {
+    "verse_lexical_id": 1407880,
+    "strong": "G1161",
+    "surface": "And",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407881,
+    "strong": "G3004G",
+    "surface": "say",
+    "morph": "V-PAI-1S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407882,
+    "strong": "G5213",
+    "surface": "you",
+    "morph": "P-2DP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407883,
+    "strong": "G3739",
+    "surface": "whoever",
+    "morph": "R-NSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407884,
+    "strong": "G0302",
+    "surface": "whoever",
+    "morph": "PRT",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407885,
+    "strong": "G0630H",
+    "surface": "divorces",
+    "morph": "V-AAS-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407886,
+    "strong": "G0846",
+    "surface": "his",
+    "morph": "P-GSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407887,
+    "strong": "G1135H",
+    "surface": "wife",
+    "morph": "N-ASF",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407888,
+    "strong": "G1487H",
+    "surface": "except",
+    "morph": "COND",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407889,
+    "strong": "G3361",
+    "surface": "except",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407890,
+    "strong": "G1909",
+    "surface": "for",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407891,
+    "strong": "G4202",
+    "surface": "sexual immorality",
+    "morph": "N-DSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   },
+   {
+    "verse_lexical_id": 1407892,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407893,
+    "strong": "G1060",
+    "surface": "marries",
+    "morph": "V-AAS-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407894,
+    "strong": "G0243",
+    "surface": "another",
+    "morph": "A-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1407895,
+    "strong": "G3429",
+    "surface": "commits adultery",
+    "morph": "V-PNI-3S",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   }
+  ],
+  "Matt.5.27": [
+   {
+    "verse_lexical_id": 1412014,
+    "strong": "G0191",
+    "surface": "heard",
+    "morph": "V-AAI-2P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1412015,
+    "strong": "G3754G",
+    "surface": "that",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1412016,
+    "strong": "G2046",
+    "surface": "said",
+    "morph": "V-API-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1412017,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1412018,
+    "strong": "G3431",
+    "surface": "commit adultery",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   }
+  ],
+  "Matt.5.28": [
+   {
+    "verse_lexical_id": 1405877,
+    "strong": "G1161",
+    "surface": "But",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405878,
+    "strong": "G1473",
+    "surface": "I",
+    "morph": "P-1NS",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405879,
+    "strong": "G3004G",
+    "surface": "say",
+    "morph": "V-PAI-1S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405880,
+    "strong": "G5213",
+    "surface": "you",
+    "morph": "P-2DP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405881,
+    "strong": "G3754G",
+    "surface": "that",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405882,
+    "strong": "G3956",
+    "surface": "everyone",
+    "morph": "A-NSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405883,
+    "strong": "G0991",
+    "surface": "looks",
+    "morph": "V-PAP-NSM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405884,
+    "strong": "G1135G",
+    "surface": "woman",
+    "morph": "N-ASF",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405885,
+    "strong": "G4314",
+    "surface": "with",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405886,
+    "strong": "G1937",
+    "surface": "lustful",
+    "morph": "V-AAN",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_desire"
+    }
+   },
+   {
+    "verse_lexical_id": 1405887,
+    "strong": "G2235",
+    "surface": "already",
+    "morph": "ADV",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405888,
+    "strong": "G3431",
+    "surface": "adultery",
+    "morph": "V-AAI-3S",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1405889,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": null,
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405890,
+    "strong": "G1722",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405891,
+    "strong": "G0846",
+    "surface": "his",
+    "morph": null,
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405892,
+    "strong": "G2588",
+    "surface": "heart",
+    "morph": "N-DSF",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   }
+  ],
+  "Matt.5.32": [
+   {
+    "verse_lexical_id": 1405893,
+    "strong": "G1161",
+    "surface": "But",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405894,
+    "strong": "G1473",
+    "surface": "I",
+    "morph": "P-1NS",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405895,
+    "strong": "G3004G",
+    "surface": "say",
+    "morph": "V-PAI-1S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405896,
+    "strong": "G5213",
+    "surface": "you",
+    "morph": "P-2DP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405897,
+    "strong": "G3754G",
+    "surface": "that",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405898,
+    "strong": "G3956",
+    "surface": "everyone",
+    "morph": "A-NSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405899,
+    "strong": "G0630H",
+    "surface": "divorces",
+    "morph": "V-PAP-NSM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405900,
+    "strong": "G0846",
+    "surface": "his",
+    "morph": "P-GSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405901,
+    "strong": "G1135H",
+    "surface": "wife",
+    "morph": "N-ASF",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405902,
+    "strong": "G3924",
+    "surface": "except",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405903,
+    "strong": "G3056",
+    "surface": "ground",
+    "morph": "N-GSM",
+    "clusters": [
+     "M65"
+    ],
+    "subgroups": {
+     "M65": "M65_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1405904,
+    "strong": "G4202",
+    "surface": "sexual immorality",
+    "morph": "N-GSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   },
+   {
+    "verse_lexical_id": 1405905,
+    "strong": "G4160G",
+    "surface": "makes",
+    "morph": "V-PAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405906,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": "P-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405907,
+    "strong": "G3431",
+    "surface": "commit adultery",
+    "morph": "V-APN",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1405908,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405909,
+    "strong": "G3739",
+    "surface": "whoever",
+    "morph": "A-NSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405910,
+    "strong": "G1060",
+    "surface": "marries",
+    "morph": "V-AAS-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405911,
+    "strong": "G1437",
+    "surface": "a",
+    "morph": "COND",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405912,
+    "strong": "G0630H",
+    "surface": "divorced",
+    "morph": "V-PAP-NSM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1405913,
+    "strong": "G3429",
+    "surface": "commits adultery",
+    "morph": "V-APN",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   }
+  ],
+  "Rev.19.2": [
+   {
+    "verse_lexical_id": 1516136,
+    "strong": "G3754G",
+    "surface": "for",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516137,
+    "strong": "G0846",
+    "surface": "his",
+    "morph": "P-GSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516138,
+    "strong": "G2920",
+    "surface": "judgments",
+    "morph": "N-NPF",
+    "clusters": [
+     "M26"
+    ],
+    "subgroups": {
+     "M26": "M26_judging"
+    }
+   },
+   {
+    "verse_lexical_id": 1516139,
+    "strong": "G0228",
+    "surface": "true",
+    "morph": "A-NPF",
+    "clusters": [
+     "M13"
+    ],
+    "subgroups": {
+     "M13": "M13_truth"
+    }
+   },
+   {
+    "verse_lexical_id": 1516140,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516141,
+    "strong": "G1342",
+    "surface": "just",
+    "morph": "A-NPF",
+    "clusters": [
+     "M12"
+    ],
+    "subgroups": {
+     "M12": "M12_righteousness"
+    }
+   },
+   {
+    "verse_lexical_id": 1516142,
+    "strong": "G3754G",
+    "surface": "for",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516143,
+    "strong": "G2919",
+    "surface": "judged",
+    "morph": "V-AAI-3S",
+    "clusters": [
+     "M63",
+     "T3"
+    ],
+    "subgroups": {
+     "M63": "M63_judging"
+    }
+   },
+   {
+    "verse_lexical_id": 1516144,
+    "strong": "G3173",
+    "surface": "great",
+    "morph": "A-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516145,
+    "strong": "G4204",
+    "surface": "prostitute",
+    "morph": "N-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516146,
+    "strong": "G3748",
+    "surface": "who",
+    "morph": "R-NSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516147,
+    "strong": "G5351",
+    "surface": "corrupted",
+    "morph": "V-IAI-3S",
+    "clusters": [
+     "M10"
+    ],
+    "subgroups": {
+     "M10": "M10_destroying"
+    }
+   },
+   {
+    "verse_lexical_id": 1516148,
+    "strong": "G1093G",
+    "surface": "earth",
+    "morph": "N-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516149,
+    "strong": "G1722",
+    "surface": "with",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516150,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": "P-GSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516151,
+    "strong": "G5495",
+    "surface": "her",
+    "morph": "N-GSF",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516152,
+    "strong": "G4202",
+    "surface": "immorality",
+    "morph": "N-DSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   },
+   {
+    "verse_lexical_id": 1516153,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516154,
+    "strong": "G1556",
+    "surface": "avenged",
+    "morph": "V-AAI-3S",
+    "clusters": [
+     "M26"
+    ],
+    "subgroups": {
+     "M26": "M26_vengeance"
+    }
+   },
+   {
+    "verse_lexical_id": 1516155,
+    "strong": "G1537",
+    "surface": "on",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516156,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": "P-GSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516157,
+    "strong": "G0129G",
+    "surface": "blood",
+    "morph": "N-ASN",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516158,
+    "strong": "G0846",
+    "surface": "his",
+    "morph": "P-GSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1516159,
+    "strong": "G1401",
+    "surface": "servants",
+    "morph": "N-GPM",
+    "clusters": [
+     "M78"
+    ],
+    "subgroups": {
+     "M78": "M78_servant"
+    }
+   }
+  ],
+  "Rev.2.21": [
+   {
+    "verse_lexical_id": 1518488,
+    "strong": "G2532",
+    "surface": "I",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1518489,
+    "strong": "G1325",
+    "surface": "gave",
+    "morph": "V-AAI-1S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1518490,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": "P-DSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1518491,
+    "strong": "G5550",
+    "surface": "time",
+    "morph": "N-ASM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1518492,
+    "strong": "G2443",
+    "surface": "to",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1518493,
+    "strong": "G3340",
+    "surface": "repent",
+    "morph": "V-AAS-3S",
+    "clusters": [
+     "M11"
+    ],
+    "subgroups": {
+     "M11": "M11_repenting"
+    }
+   },
+   {
+    "verse_lexical_id": 1518494,
+    "strong": "G2532",
+    "surface": "but",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1518495,
+    "strong": "G3756",
+    "surface": "refuses",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1518496,
+    "strong": "G3340",
+    "surface": "repent",
+    "morph": "V-AAN",
+    "clusters": [
+     "M11"
+    ],
+    "subgroups": {
+     "M11": "M11_repenting"
+    }
+   },
+   {
+    "verse_lexical_id": 1518497,
+    "strong": "G1537",
+    "surface": "of",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1518498,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": "P-GSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1518499,
+    "strong": "G4202",
+    "surface": "sexual immorality",
+    "morph": "N-GSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_immorality"
+    }
+   }
+  ],
+  "Rev.2.22": [
+   {
+    "verse_lexical_id": 1512963,
+    "strong": "G2400",
+    "surface": "Behold",
+    "morph": "INJ",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512964,
+    "strong": "G0906G",
+    "surface": "throw",
+    "morph": "V-PAI-1S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512965,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": "P-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512966,
+    "strong": "G1519",
+    "surface": "onto",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512967,
+    "strong": "G2825",
+    "surface": "sickbed",
+    "morph": "N-ASF",
+    "clusters": [
+     "T12"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512968,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512969,
+    "strong": "G3431",
+    "surface": "commit adultery",
+    "morph": "V-PAP-APM",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1512970,
+    "strong": "G3326",
+    "surface": "with",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512971,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": "P-GSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512972,
+    "strong": "G1519",
+    "surface": "into",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512973,
+    "strong": "G3173",
+    "surface": "great",
+    "morph": "A-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512974,
+    "strong": "G2347",
+    "surface": "tribulation",
+    "morph": "N-ASF",
+    "clusters": [
+     "M24"
+    ],
+    "subgroups": {
+     "M24": "M24_distress"
+    }
+   },
+   {
+    "verse_lexical_id": 1512975,
+    "strong": "G3362",
+    "surface": "unless",
+    "morph": "COND",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512976,
+    "strong": "G3340",
+    "surface": "repent",
+    "morph": "V-AAS-3P",
+    "clusters": [
+     "M11"
+    ],
+    "subgroups": {
+     "M11": "M11_repenting"
+    }
+   },
+   {
+    "verse_lexical_id": 1512977,
+    "strong": "G1537",
+    "surface": "of",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512978,
+    "strong": "G0846",
+    "surface": "her",
+    "morph": "P-GSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1512979,
+    "strong": "G2041",
+    "surface": "works",
+    "morph": "N-GPN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Rom.13.9": [
+   {
+    "verse_lexical_id": 1477985,
+    "strong": "G1063",
+    "surface": "For",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477986,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477987,
+    "strong": "G3431",
+    "surface": "commit adultery",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1477988,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477989,
+    "strong": "G5407",
+    "surface": "murder",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477990,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477991,
+    "strong": "G2813",
+    "surface": "steal",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477992,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477993,
+    "strong": "G1937",
+    "surface": "covet",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_desire"
+    }
+   },
+   {
+    "verse_lexical_id": 1477994,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477995,
+    "strong": "G1487G",
+    "surface": "any",
+    "morph": "COND",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477996,
+    "strong": "G5100",
+    "surface": "any",
+    "morph": "X-NSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477997,
+    "strong": "G2087",
+    "surface": "other",
+    "morph": "A-NSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477998,
+    "strong": "G1785",
+    "surface": "commandment",
+    "morph": "N-NSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1477999,
+    "strong": "G0346",
+    "surface": "summed up",
+    "morph": "V-PPI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1478000,
+    "strong": "G1722",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1478001,
+    "strong": "G3778",
+    "surface": "this",
+    "morph": "D-DSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1478002,
+    "strong": "G3056",
+    "surface": "word",
+    "morph": "N-DSM",
+    "clusters": [
+     "M65"
+    ],
+    "subgroups": {
+     "M65": "M65_word"
+    }
+   },
+   {
+    "verse_lexical_id": 1478003,
+    "strong": "G0025",
+    "surface": "love",
+    "morph": "V-FAI-2S",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1478004,
+    "strong": "G4675",
+    "surface": "your",
+    "morph": "P-2GS",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1478005,
+    "strong": "G4139",
+    "surface": "neighbor",
+    "morph": "ADV",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1478006,
+    "strong": "G5613",
+    "surface": "as",
+    "morph": "PRT",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1478007,
+    "strong": "G1438",
+    "surface": "yourself",
+    "morph": "F-2ASM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Rom.2.22": [
+   {
+    "verse_lexical_id": 1474524,
+    "strong": "G3004G",
+    "surface": "say",
+    "morph": "V-PAP-VSM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1474525,
+    "strong": "G3361",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1474526,
+    "strong": "G3431",
+    "surface": "commit adultery",
+    "morph": "V-PAN",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1474527,
+    "strong": "G3431",
+    "surface": "commit adultery",
+    "morph": "V-PAI-2S",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_adultery"
+    }
+   },
+   {
+    "verse_lexical_id": 1474528,
+    "strong": "G0948",
+    "surface": "abhor",
+    "morph": "V-PNP-VSM",
+    "clusters": [
+     "M06"
+    ],
+    "subgroups": {
+     "M06": "M06_hatred"
+    }
+   },
+   {
+    "verse_lexical_id": 1474529,
+    "strong": "G1497",
+    "surface": "idols",
+    "morph": "N-APN",
+    "clusters": [
+     "M55",
+     "T12"
+    ],
+    "subgroups": {
+     "M55": "M55_idolatry"
+    }
+   },
+   {
+    "verse_lexical_id": 1474530,
+    "strong": "G2416",
+    "surface": "rob temples",
+    "morph": "V-PAI-2S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   }
+  ]
+ },
+ "lines": [
+  {
+   "line_no": 36,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- moichaō (G3429) in the divorce/remarriage teaching: Matt 5:32's passive form describes a man's act (divorcing without cause) causing a third party (his wife) to be made an adulteress by her subsequent remarriage; Matt 19:9 and Mark 10:11 use the identical passive/deponent form for the remarrying party's own new status. Same morphology (passive voice), two different grammatical subjects bearing the consequence — one caused by another's act, two describing their own.",
+   "refs": [
+    {
+     "as_written": "Matt 5:32",
+     "kind": "verse",
+     "verse": "Matt.5.32"
+    },
+    {
+     "as_written": "Matt 19:9",
+     "kind": "verse",
+     "verse": "Matt.19.9"
+    },
+    {
+     "as_written": "Mark 10:11",
+     "kind": "verse",
+     "verse": "Mark.10.11"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f1"
+    ]
+   }
+  },
+  {
+   "line_no": 39,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- moicheia (G3430, noun) as a vice-list item, listed among evil thoughts/theft/murder from the heart (Mark 7:21, Matt 15:19) — the abstract-state noun naming a category of heart-originating evil rather than a specific incident.",
+   "refs": [
+    {
+     "as_written": "Mark 7:21",
+     "kind": "verse",
+     "verse": "Mark.7.21"
+    },
+    {
+     "as_written": "Matt 15:19",
+     "kind": "verse",
+     "verse": "Matt.15.19"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f2"
+    ]
+   }
+  },
+  {
+   "line_no": 42,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- moicheia's third occurrence names the specific narrative incident of the woman caught in the act (John 8:3), morph N-DSF — a dative of circumstance ('caught IN adultery'), the only occurrence naming a concrete event rather than an abstract vice-category.",
+   "refs": [
+    {
+     "as_written": "John 8:3",
+     "kind": "verse",
+     "verse": "John.8.3"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f3"
+    ]
+   }
+  },
+  {
+   "line_no": 51,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- moicheuō in general reference: Rom 2:22's rhetorical double question (present active infinitive then present active indicative, confronting the hypocrisy of teaching against adultery while committing it) and Rev 2:22's substantive participle naming 'those who commit adultery with her' as a class following Jezebel's teaching — both using the verb to characterize ongoing conduct rather than a single event.",
+   "refs": [
+    {
+     "as_written": "Rom 2:22",
+     "kind": "verse",
+     "verse": "Rom.2.22"
+    },
+    {
+     "as_written": "Rev 2:22",
+     "kind": "verse",
+     "verse": "Rev.2.22"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f4"
+    ]
+   }
+  },
+  {
+   "line_no": 57,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- porneia used relationally/identity-forming: 'we were not born of sexual immorality' (John 8:41, the Pharisees' claim of legitimate parentage) and 'she refuses to repent of her sexual immorality' (Rev 2:21, a named individual, Jezebel) — the noun tied to birth-legitimacy and to one person's persistent unrepentance, not a general category.",
+   "refs": [
+    {
+     "as_written": "John 8:41",
+     "kind": "verse",
+     "verse": "John.8.41"
+    },
+    {
+     "as_written": "Rev 2:21",
+     "kind": "verse",
+     "verse": "Rev.2.21"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f5"
+    ]
+   }
+  },
+  {
+   "line_no": 60,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- porneia paired directly with idolatry in the death-list of vices to put to death (Col 3:5, 'covetousness, which is idolatry' — the same equation LSJ notes for the word itself: 'metaphorically, idolatry').",
+   "refs": [
+    {
+     "as_written": "Col 3:5",
+     "kind": "verse",
+     "verse": "Col.3.5"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f6"
+    ]
+   }
+  },
+  {
+   "line_no": 69,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- na'aph (Qal perfect, 'dealt treacherously with you') Piel-adjacent to the figurative covenant-infidelity register: Hos 3:1's command to love an adulteress 'even as the Lord loves the children of Israel, though they turn to other gods' — this occurrence is the explicit hinge verse where the family's literal sense (marital infidelity) is stated in the same breath as its figurative application (Israel's idolatry), not merely implied by context elsewhere.",
+   "refs": [
+    {
+     "as_written": "Hos 3:1",
+     "kind": "verse",
+     "verse": "Hos.3.1"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f7"
+    ]
+   }
+  },
+  {
+   "line_no": 72,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- niuph (H5004, noun) naming Jerusalem's 'adulteries and neighings, your lewd whorings' as a catalogued list of the city's own abominations (Jer 13:27), and describing a woman 'worn out by adultery' still being used as a prostitute (Ezek 23:43) — both occurrences concrete and disparaging, no figurative-idolatry sense stated explicitly within either verse itself (unlike na'aph's Hos 3:1).",
+   "refs": [
+    {
+     "as_written": "Jer 13:27",
+     "kind": "verse",
+     "verse": "Jer.13.27"
+    },
+    {
+     "as_written": "Ezek 23:43",
+     "kind": "verse",
+     "verse": "Ezek.23.43"
+    },
+    {
+     "as_written": "Hos 3:1",
+     "kind": "verse",
+     "verse": "Hos.3.1"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f8"
+    ]
+   }
+  },
+  {
+   "line_no": 75,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- Matt 5:32 uses two different but closely related verbs for its two clauses: moichaō (G3429, 'makes her commit adultery' -- the caused-third-party sense) and moicheuō (G3431, 'commits adultery' -- the direct-agent sense for the man who marries the divorced woman), both morphologically V-APN (aorist passive infinitive) in the same verse. The verse deliberately varies between near-synonym roots to distinguish who is causing versus who is themselves committing the act.",
+   "refs": [
+    {
+     "as_written": "Matt 5:32",
+     "kind": "verse",
+     "verse": "Matt.5.32"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f9"
+    ]
+   }
+  },
+  {
+   "line_no": 86,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- moicheuō as an aorist subjunctive negated prohibition ('do not commit adultery') in three separate commandment-list citations (James's 'whole law' argument, and two Synoptic commandment recitations) — a distinct grammatical register from both the future-indicative Decalogue formula above and Matt 5:28's completed-act aorist indicative: this is live moral instruction being given, not a quotation of a fixed legal text nor a statement about a past/completed inner act.",
+   "refs": [
+    {
+     "as_written": "Matt 5:28",
+     "kind": "verse",
+     "verse": "Matt.5.28"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f10"
+    ]
+   }
+  },
+  {
+   "line_no": 104,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- na'aph as a finite or infinitive-absolute verb form, narrating a specific act rather than naming a person: a narrated historical event (Jer 29:23's 'they have committed adultery with their neighbors' wives'), an infinitive-absolute generic sin-listing (Hos 4:2, Jer 23:14, Jer 7:9, adultery catalogued alongside swearing/lying/murder/stealing), and Jeremiah's extended covenant-infidelity metaphor ('committing adultery with stone and tree,' Jer 3:9; 'they have committed adultery, and blood is on their hands,' Ezek 23:37).",
+   "refs": [
+    {
+     "as_written": "Jer 29:23",
+     "kind": "verse",
+     "verse": "Jer.29.23"
+    },
+    {
+     "as_written": "Hos 4:2",
+     "kind": "verse",
+     "verse": "Hos.4.2"
+    },
+    {
+     "as_written": "Jer 23:14",
+     "kind": "verse",
+     "verse": "Jer.23.14"
+    },
+    {
+     "as_written": "Jer 7:9",
+     "kind": "verse",
+     "verse": "Jer.7.9"
+    },
+    {
+     "as_written": "Jer 3:9",
+     "kind": "verse",
+     "verse": "Jer.3.9"
+    },
+    {
+     "as_written": "Ezek 23:37",
+     "kind": "verse",
+     "verse": "Ezek.23.37"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f11"
+    ]
+   }
+  },
+  {
+   "line_no": 112,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- The aorist indicative at Matt 5:28 is meaning-critical, not incidental: Jesus's teaching depends on the tense specifically stating the act as already, completely done at the moment of the inward look — a present or future tense here would teach something weaker (that lust leads toward adultery, not that it already constitutes it). This is exactly the kind of morph-driven distinction round 1 had no rule requiring it to surface.",
+   "refs": [
+    {
+     "as_written": "Matt 5:28",
+     "kind": "verse",
+     "verse": "Matt.5.28"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f12"
+    ]
+   }
+  },
+  {
+   "line_no": 115,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- James 2:11 itself carries two morphs of moicheuō in the same verse — an aorist subjunctive prohibition ('do not commit adultery,' repeating the command) and a present active indicative ('if you do not commit adultery but do murder') — the same verse shifts from quoting the command to describing the reader's actual, ongoing situation, marked by the tense/mood change alone.",
+   "refs": [
+    {
+     "as_written": "James 2:11",
+     "kind": "verse",
+     "verse": "Jas.2.11"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f13"
+    ]
+   }
+  },
+  {
+   "line_no": 121,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- 1 Cor 10:8 carries porneuō twice with two different morphs in one verse: a present active subjunctive ('let us not indulge,' hortatory — the Corinthians' live, present temptation) and an aorist active indicative ('as some of them did,' the wilderness generation's completed past act) — the tense shift alone marks the boundary between the historical warning-example and the present exhortation it supports.",
+   "refs": [
+    {
+     "as_written": "1 Cor 10:8",
+     "kind": "verse",
+     "verse": "1Cor.10.8"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f14"
+    ]
+   }
+  },
+  {
+   "line_no": 126,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- Rev 19:2 and Col 3:5 both render porneia as bare 'immorality' rather than 'sexual immorality' — the ESV drops the 'sexual' qualifier at exactly the two points where the word is used most abstractly/metaphorically (Babylon's corrupting influence on the earth; a general vice-list entry next to 'impurity, passion, evil desire'), while every occurrence naming a concrete act or a named person keeps 'sexual.' The English surface itself is tracking the literal/metaphorical distinction, even though the underlying Greek word doesn't formally mark it.",
+   "refs": [
+    {
+     "as_written": "Rev 19:2",
+     "kind": "verse",
+     "verse": "Rev.19.2"
+    },
+    {
+     "as_written": "Col 3:5",
+     "kind": "verse",
+     "verse": "Col.3.5"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f15"
+    ]
+   }
+  },
+  {
+   "line_no": 139,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- na'aph's Qal imperfect 2ms Decalogue citation ('you shall not commit adultery,' Exod 20:14, Deut 5:18) is the exact grammatical counterpart of this family's own Greek finding: G3431's future-active-indicative Decalogue citations (Matt 5:27, 19:18, Rom 13:9). Hebrew's imperfect-as-prohibition and Greek's future-as-imperative are each language's own way of grammaticalizing the same fixed commandment — a genuine cross-linguistic morph parallel, not merely a shared English translation choice.",
+   "refs": [
+    {
+     "as_written": "Exod 20:14",
+     "kind": "verse",
+     "verse": "Exod.20.14"
+    },
+    {
+     "as_written": "Deut 5:18",
+     "kind": "verse",
+     "verse": "Deut.5.18"
+    },
+    {
+     "as_written": "Matt 5:27, 19:18",
+     "kind": "verse",
+     "verse": "Matt.5.27"
+    },
+    {
+     "as_written": "Matt 5:27, 19:18",
+     "kind": "verse",
+     "verse": "Matt.19.18"
+    },
+    {
+     "as_written": "Rom 13:9",
+     "kind": "verse",
+     "verse": "Rom.13.9"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f16"
+    ]
+   }
+  },
+  {
+   "line_no": 142,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- This family and family H_guilt (H0817) share the exact 'sin offering'/'guilt offering' vocabulary-conflation problem already noted there, but from a different angle: G3430's John 8:3 concrete-incident use and family H's Lev 5:7 offering-vocabulary overlap both show the English surface flattening distinctions the underlying source languages keep separate. Worth a joint review of surface-rendering consistency across the whole M10 cluster, not just within one family.",
+   "refs": [
+    {
+     "as_written": "John 8:3",
+     "kind": "verse",
+     "verse": "John.8.3"
+    },
+    {
+     "as_written": "Lev 5:7",
+     "kind": "verse",
+     "verse": "Lev.5.7"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f17"
+    ]
+   }
+  },
+  {
+   "line_no": 145,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- John 8:3-4 uses both family members of this pair in adjacent verses for the same narrative incident: moicheia (G3430, the noun, 'caught IN adultery') at v.3, then moicheuō (G3431, the verb, perfect passive participle 'having been caught committing adultery') at v.4 -- the noun names the circumstance, the verb participle re-narrates the same woman's act as her defining state at the moment of accusation.",
+   "refs": [
+    {
+     "as_written": "John 8:3-4",
+     "kind": "verse",
+     "verse": "John.8.3"
+    },
+    {
+     "as_written": "John 8:3-4",
+     "kind": "verse",
+     "verse": "John.8.4"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f18"
+    ]
+   }
+  }
+ ],
+ "findings": [
+  {
+   "key": "f1",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "moichaō (G3429) in the divorce and remarriage teaching: Matt 5:32's passive form describes a man's act (divorcing without cause) causing a third party (his wife) to be made an adulteress by her subsequent remarriage; Matt 19:9 and Mark 10:11 use the identical passive or deponent form for the remarrying party's own new status. Same morphology (passive voice), two different grammatical subjects bearing the consequence: one caused by another's act, two describing their own.",
+   "flag": "process (c) output of #1682 (cluster reading of M10 family C); the document's observations are LLM-derived",
+   "nodes": [
+    {
+     "verse": "Matt 5:32",
+     "strong": "G3429",
+     "surface": "commits adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Matt 19:9",
+     "strong": "G3429",
+     "surface": "commits adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Mark 10:11",
+     "strong": "G3429",
+     "surface": "commits adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f2",
+   "kind": "use",
+   "basis": "stated",
+   "text": "moicheia (G3430, noun) as a vice-list item, listed among evil thoughts, theft and murder from the heart (Mark 7:21, Matt 15:19): the abstract-state noun naming a category of heart-originating evil rather than a specific incident.",
+   "nodes": [
+    {
+     "verse": "Mark 7:21",
+     "strong": "G3430",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Mark 7:21",
+     "strong": "G2588",
+     "surface": "heart",
+     "cluster": "M47",
+     "role": "standalone"
+    },
+    {
+     "verse": "Matt 15:19",
+     "strong": "G3430",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Matt 15:19",
+     "strong": "G2588",
+     "surface": "heart",
+     "cluster": "M47",
+     "role": "standalone"
+    }
+   ]
+  },
+  {
+   "key": "f3",
+   "kind": "use",
+   "basis": "stated",
+   "text": "moicheia's third occurrence names the specific narrative incident of the woman caught in the act (John 8:3), morph N-DSF, a dative of circumstance (caught in adultery): the only occurrence naming a concrete event rather than an abstract vice-category.",
+   "nodes": [
+    {
+     "verse": "John 8:3",
+     "strong": "G3430",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f4",
+   "kind": "use",
+   "basis": "stated",
+   "text": "moicheuō in general reference: Rom 2:22's rhetorical double question (present active infinitive then present active indicative, confronting the hypocrisy of teaching against adultery while committing it) and Rev 2:22's substantive participle naming those who commit adultery with her as a class following Jezebel's teaching: both use the verb to characterize ongoing conduct rather than a single event.",
+   "nodes": [
+    {
+     "verse": "Rom 2:22",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Rev 2:22",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f5",
+   "kind": "use",
+   "basis": "stated",
+   "text": "porneia used relationally and identity-forming: we were not born of sexual immorality (John 8:41, the Pharisees' claim of legitimate parentage) and she refuses to repent of her sexual immorality (Rev 2:21, a named individual, Jezebel): the noun tied to birth-legitimacy and to one person's persistent unrepentance, not a general category.",
+   "nodes": [
+    {
+     "verse": "John 8:41",
+     "strong": "G4202",
+     "surface": "sexual immorality",
+     "cluster": "M56",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Rev 2:21",
+     "strong": "G4202",
+     "surface": "sexual immorality",
+     "cluster": "M56",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Rev 2:21",
+     "strong": "G3340",
+     "surface": "repent",
+     "cluster": "M11",
+     "role": "qualifier"
+    }
+   ]
+  },
+  {
+   "key": "f6",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "porneia paired directly with idolatry in the death-list of vices to put to death (Col 3:5, covetousness, which is idolatry): the same equation LSJ notes for the word itself, metaphorically idolatry.",
+   "nodes": [
+    {
+     "verse": "Col 3:5",
+     "strong": "G4202",
+     "surface": "immorality",
+     "cluster": "M56",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Col 3:5",
+     "strong": "G4124",
+     "surface": "covetousness",
+     "cluster": "M28",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Col 3:5",
+     "strong": "G1495",
+     "surface": "idolatry",
+     "cluster": "M55",
+     "role": "qualifier"
+    }
+   ]
+  },
+  {
+   "key": "f7",
+   "kind": "use",
+   "basis": "stated",
+   "text": "na'aph (H5003) at Hos 3:1, the command to love an adulteress even as the Lord loves the children of Israel, though they turn to other gods: this occurrence is the explicit hinge verse where the family's literal sense (marital infidelity) is stated in the same breath as its figurative application (Israel's idolatry), not merely implied by context elsewhere.",
+   "nodes": [
+    {
+     "verse": "Hos 3:1",
+     "strong": "H5003",
+     "surface": "adulteress",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Hos 3:1",
+     "strong": "H0157G",
+     "surface": "love",
+     "cluster": "M51",
+     "role": "qualifier"
+    }
+   ]
+  },
+  {
+   "key": "f8",
+   "kind": "use",
+   "basis": "stated",
+   "text": "niuph (H5004, noun) names Jerusalem's adulteries and neighings, your lewd whorings, as a catalogued list of the city's own abominations (Jer 13:27), and describes a woman worn out by adultery still being used as a prostitute (Ezek 23:43): both occurrences concrete and disparaging, with no figurative-idolatry sense stated explicitly within either verse itself, unlike na'aph's Hos 3:1.",
+   "nodes": [
+    {
+     "verse": "Jer 13:27",
+     "strong": "H5004",
+     "surface": "adulteries",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Jer 13:27",
+     "strong": "H2154",
+     "surface": "lewd",
+     "cluster": "M58",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Jer 13:27",
+     "strong": "H2184",
+     "surface": "whorings",
+     "cluster": "M28",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Jer 13:27",
+     "strong": "H8251",
+     "surface": "abominations",
+     "cluster": "M58",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Ezek 23:43",
+     "strong": "H5004",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Ezek 23:43",
+     "strong": "H8457",
+     "surface": "whore",
+     "cluster": "M28",
+     "role": "qualifier"
+    }
+   ]
+  },
+  {
+   "key": "f9",
+   "kind": "use",
+   "basis": "stated",
+   "text": "Matt 5:32 uses two different but closely related verbs for its two clauses: moichaō (G3429, makes her commit adultery, the caused-third-party sense) and moicheuō (G3431, commits adultery, the direct-agent sense for the man who marries the divorced woman), both morphologically V-APN (aorist passive infinitive) in the same verse. The verse deliberately varies between near-synonym roots to distinguish who is causing versus who is themselves committing the act.",
+   "nodes": [
+    {
+     "verse": "Matt 5:32",
+     "strong": "G3429",
+     "surface": "commits adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Matt 5:32",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f10",
+   "kind": "use",
+   "basis": "stated",
+   "text": "moicheuō as an aorist subjunctive negated prohibition (do not commit adultery) in three separate commandment-list citations (James's whole-law argument, and two Synoptic commandment recitations: Jas 2:11, Mark 10:19, Luke 18:20): a distinct grammatical register from both the future-indicative Decalogue formula and Matt 5:28's completed-act aorist indicative: live moral instruction being given, not a quotation of a fixed legal text nor a statement about a past or completed inner act.",
+   "nodes": [
+    {
+     "verse": "Jas 2:11",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Mark 10:19",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Luke 18:20",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Matt 5:28",
+     "strong": "G3431",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "qualifier"
+    }
+   ]
+  },
+  {
+   "key": "f11",
+   "kind": "use",
+   "basis": "stated",
+   "text": "na'aph as a finite or infinitive-absolute verb form, narrating a specific act rather than naming a person: a narrated historical event (Jer 29:23, they have committed adultery with their neighbors' wives), an infinitive-absolute generic sin-listing (Hos 4:2, Jer 23:14, Jer 7:9, adultery catalogued alongside swearing, lying, murder, stealing), and Jeremiah's extended covenant-infidelity metaphor (committing adultery with stone and tree, Jer 3:9; they have committed adultery, and blood is on their hands, Ezek 23:37).",
+   "nodes": [
+    {
+     "verse": "Jer 29:23",
+     "strong": "H5003",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Hos 4:2",
+     "strong": "H5003",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Jer 23:14",
+     "strong": "H5003",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Jer 7:9",
+     "strong": "H5003",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Jer 3:9",
+     "strong": "H5003",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Ezek 23:37",
+     "strong": "H5003",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f12",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "The aorist indicative at Matt 5:28 is meaning-critical, not incidental: Jesus's teaching depends on the tense specifically stating the act as already, completely done at the moment of the inward look. A present or future tense here would teach something weaker (that lust leads toward adultery, not that it already constitutes it).",
+   "nodes": [
+    {
+     "verse": "Matt 5:28",
+     "strong": "G3431",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Matt 5:28",
+     "strong": "G1937",
+     "surface": "lustful",
+     "cluster": "M18",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Matt 5:28",
+     "strong": "G2588",
+     "surface": "heart",
+     "cluster": "M47",
+     "role": "standalone"
+    }
+   ]
+  },
+  {
+   "key": "f13",
+   "kind": "use",
+   "basis": "stated",
+   "text": "James 2:11 itself carries two morphs of moicheuō in the same verse, an aorist subjunctive prohibition (do not commit adultery, repeating the command) and a present active indicative (if you do not commit adultery but do murder): the same verse shifts from quoting the command to describing the reader's actual, ongoing situation, marked by the tense and mood change alone.",
+   "nodes": [
+    {
+     "verse": "Jas 2:11",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f14",
+   "kind": "use",
+   "basis": "stated",
+   "text": "1 Cor 10:8 carries porneuō twice with two different morphs in one verse: a present active subjunctive (let us not indulge, hortatory, the Corinthians' live present temptation) and an aorist active indicative (as some of them did, the wilderness generation's completed past act): the tense shift alone marks the boundary between the historical warning-example and the present exhortation it supports.",
+   "nodes": [
+    {
+     "verse": "1 Cor 10:8",
+     "strong": "G4203",
+     "surface": "sexual immorality",
+     "cluster": "M56",
+     "role": "characteristic"
+    },
+    {
+     "verse": "1 Cor 10:8",
+     "strong": "G4203",
+     "surface": "did",
+     "cluster": "M56",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f15",
+   "kind": "term",
+   "basis": "stated",
+   "text": "Rev 19:2 and Col 3:5 both render porneia as bare immorality rather than sexual immorality: the ESV drops the sexual qualifier at exactly the two points where the word is used most abstractly or metaphorically (Babylon's corrupting influence on the earth; a general vice-list entry next to impurity, passion, evil desire), while every occurrence naming a concrete act or a named person keeps sexual. The English surface itself tracks the literal and metaphorical distinction, even though the underlying Greek word does not formally mark it.",
+   "nodes": [
+    {
+     "verse": "Rev 19:2",
+     "strong": "G4202",
+     "surface": "immorality",
+     "cluster": "M56",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Col 3:5",
+     "strong": "G4202",
+     "surface": "immorality",
+     "cluster": "M56",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f16",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "na'aph's Qal imperfect 2ms Decalogue citation (you shall not commit adultery, Exod 20:14, Deut 5:18) is the exact grammatical counterpart of the family's Greek finding: G3431's future-active-indicative Decalogue citations (Matt 5:27, 19:18, Rom 13:9). Hebrew's imperfect-as-prohibition and Greek's future-as-imperative are each language's own way of grammaticalizing the same fixed commandment: a genuine cross-linguistic morph parallel, not merely a shared English translation choice.",
+   "nodes": [
+    {
+     "verse": "Exod 20:14",
+     "strong": "H5003",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Deut 5:18",
+     "strong": "H5003",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Matt 5:27",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Matt 19:18",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Rom 13:9",
+     "strong": "G3431",
+     "surface": "commit adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f17",
+   "kind": "unfitted",
+   "basis": "stated",
+   "text": "This family and family H_guilt (H0817) share the exact sin-offering and guilt-offering vocabulary-conflation problem, from a different angle: G3430's John 8:3 concrete-incident use and family H's Lev 5:7 offering-vocabulary overlap both show the English surface flattening distinctions that the underlying source languages keep separate. Worth a joint review of surface-rendering consistency across the whole M10 cluster, not just within one family.",
+   "nodes": [
+    {
+     "verse": "John 8:3",
+     "strong": "G3430",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Lev 5:7",
+     "strong": "H0817",
+     "surface": "sin",
+     "cluster": "M56",
+     "role": "characteristic"
+    },
+    {
+     "verse": "Lev 5:7",
+     "strong": "H2403H",
+     "surface": "sin offering",
+     "cluster": "M56",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f18",
+   "kind": "use",
+   "basis": "stated",
+   "text": "John 8:3-4 uses both family members of this pair in adjacent verses for the same narrative incident: moicheia (G3430, the noun, caught in adultery) at v.3, then moicheuō (G3431, the verb, perfect passive participle, having been caught committing adultery) at v.4: the noun names the circumstance, and the verb participle re-narrates the same woman's act as her defining state at the moment of accusation.",
+   "nodes": [
+    {
+     "verse": "John 8:3",
+     "strong": "G3430",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    },
+    {
+     "verse": "John 8:4",
+     "strong": "G3431",
+     "surface": "adultery",
+     "cluster": "M57",
+     "role": "characteristic"
+    }
+   ]
+  }
+ ]
+}

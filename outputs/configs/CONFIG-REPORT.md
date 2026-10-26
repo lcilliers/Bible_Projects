@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-26T11:35:05Z |
+| generated_at | 2026-10-26T17:18:22Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -49,8 +49,8 @@ _(none)_
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
 
-**Low config-density utilities** (0) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-_(none)_
+**Low config-density utilities** (1) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
+3. cfg_utility 'noderesolve' (iba\app\lib\noderesolve.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -74,32 +74,32 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-3. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+4. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
-**PS/worksheet drift** (0) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-_(none)_
+**PS/worksheet drift** (1) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
+5. Node-Resolve.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\node-resolve.ps1' in some tab's first rows)
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
 **Unenforced behaviour rules** (17) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-4. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-5. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-6. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-7. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-8. [development] #46 test-plan-per-module-utility — deliberately_deferred
-9. [development] #66 cluster-label-must-track-membership — buildable_not_built
-10. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-11. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-12. [filing] #56 naming-shape — partially_enforced
-13. [filing] #58 archiving-trigger — partially_enforced
-14. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-15. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-16. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
-17. [study_method] #118 surface-mapping-conditions — partially_enforced
-18. [study_method] #120 scope-home-and-multiplicity — partially_enforced
-19. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
-20. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
+6. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+7. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+8. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+9. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+10. [development] #46 test-plan-per-module-utility — deliberately_deferred
+11. [development] #66 cluster-label-must-track-membership — buildable_not_built
+12. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+13. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+14. [filing] #56 naming-shape — partially_enforced
+15. [filing] #58 archiving-trigger — partially_enforced
+16. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+17. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+18. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
+19. [study_method] #118 surface-mapping-conditions — partially_enforced
+20. [study_method] #120 scope-home-and-multiplicity — partially_enforced
+21. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
+22. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -141,12 +141,13 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1003** registered module(s) — **535** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **864** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1007** registered module(s) — **537** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **865** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
 | Copy-NarrativeToLearning4Comfort.ps1 | iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1 | PS wrapper for narrativecopy.py (-DryRun). Run on completion of a section of work, on request, and in /session-close (escalation #1941). | ✓ | ✓ | thin wrapper; config is read by narrativecopy.py |
 | Narrative-Register.ps1 | iba/app/ps/Narrative-Register.ps1 | PS entry point for the narrative claim register (escalation #2110); every action dispatches through run.py, work package narrative-register. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
+| Node-Resolve.ps1 | iba/app/ps/Node-Resolve.ps1 | PS entry point of work package node-resolve (#2308): -Step Plan\|Apply -File <plan JSON> | ✓ | ✓ | PS entry point: dispatches through run.py; its settings are the steps' own |
 | Open-Item.ps1 | iba/app/ps/Open-Item.ps1 | PS entry point for registering open items (escalation #2236); dispatches through run.py, work package open-item. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Prior-Capture.ps1 | iba/app/ps/Prior-Capture.ps1 | PS entry point of work package prior-capture (#2305): -Step Prepare\|Record\|Report -File <document or JSON> [-By] | ✓ | ✓ | PS entry point: dispatches through run.py; its settings are the steps' own |
 | Reading-Index.ps1 | iba/app/ps/Reading-Index.ps1 | PS entry point for the cluster reading index (escalation #2228); dispatches through run.py, work package reading-index. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
@@ -426,6 +427,7 @@ _(none)_
 | handlers_catalogue | iba/app/handlers/catalogue.py | Thin dispatcher adapter over cataloguewrite.py, registers obs_catalogue.update as a work-package step. | ✓ | ✓ | thin step wrapper: checks -ObsId and -Set; the write and its rules are in lib/cataloguewrite.py (#2207 decision 3a) |
 | handlers_compliance | iba/app/handlers/compliance.py | handlers/compliance.py -- the compliance.template and compliance.check_start steps (#2173 P2). | ✓ | ✓ | thin step wrappers: every setting is read in lib/compliance.py, which they call |
 | handlers_narrativeregister | iba/app/handlers/narrativeregister.py | handlers/narrativeregister.py -- the run.py handlers for work package narrative-register (one per Narrative-Register.ps1 action); the logic is in lib/narrativeregister.py (escalation #2110). | ✓ |  |  |
+| handlers_noderesolve | iba/app/handlers/noderesolve.py | noderesolve handler -- work package node-resolve: steps node_resolve.plan and node_resolve.apply (#2308) | ✓ |  |  |
 | handlers_openitem | iba/app/handlers/openitem.py | handlers/openitem.py -- the run.py handlers for work package open-item (Open-Item.ps1), one per action; the logic is in lib/openitem.py (escalation #2236). | ✓ |  |  |
 | handlers_priorcapture | iba/app/handlers/priorcapture.py | priorcapture handler -- work package prior-capture: steps prior_capture.prepare, prior_capture.record, prior_capture.report (#2305) | ✓ |  |  |
 | handlers_reading | iba/app/handlers/reading.py | handlers/reading.py -- the run.py handlers for work package reading (one per Reading.ps1 step); the logic is in lib/reading.py (escalation #2228). | ✓ |  |  |
@@ -698,6 +700,8 @@ _(none)_
 | narrativecopy | iba/app/lib/narrativecopy.py | narrativecopy.py -- copies the active chapters' current files (narrative_chapter, in reading order) from the narrative folder to the learning4comfort inbox; a .md file in the folder that is no chapter's current file is reported and not copied (#2155 D3). Earlier versions in the inbox are replaced; nothing else there is touched; never runs git (#1941). | ✓ |  |  |
 | narrativegenerate | iba/app/lib/archive/narrativegenerate.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). report.book_narrative_generate's assembly (debates + governing docs), cost estimate/cap, Anthropic Messages API call, and narrative filing |  |  |  |
 | narrativeregister | iba/app/lib/narrativeregister.py | narrativeregister.py -- the narrative claim register in iba.db (escalation #2110): the reference parser and book-alias map, the register actions (AddClaim, Edit, Tell, Untell, Withdraw, EditNote, AddChapter, EditChapter, EditSection, Find, History, Check), Export of the three published files, and the narrative held as blocks: rewrite() and publish_chapter() (#2172). See USER-GUIDE.md and GOVERNANCE.md. | ✓ |  |  |
+| node_resolve_config_2308_v1_20261026 | iba/app/migration/archive/node_resolve_config_2308_v1_20261026.py | ONE-OFF migration -- escalation #2308: work package node-resolve, its steps, grant, setting and method rules NR-01 to NR-06; run_id DEVMODE-2308-NODE-RESOLVE-CONFIG-20261026. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| noderesolve | iba/app/lib/noderesolve.py | noderesolve.py -- the sweep that resolves the occurrence, morph code and sub_group of ib_node rows through the strong and the verse: plan, apply, report (#2308, rules NR-01 to NR-06) | ✓ |  |  |
 | observationenhancer | iba/app/handlers/observationenhancer.py | observationenhancer.py -- the observation_enhancer utility (escalation #1778). preview(ctx)/apply(ctx): applies a researcher-confirmed cfg_observation_enhancer_rule (selector_sql + update_json) to ib_observation, logging every change to ib_observation_enhancer_log. | ✓ |  |  |
 | observationrecord | iba/app/lib/observationrecord.py | observationrecord.py -- the observation record (#2274): a reading's findings, one ib_observation each, applied by ib_node rows with the word's role, the reading and the verse's disposition; duplicates become nodes; every change kept with its reason (ib_observation_change). | ✓ |  |  |
 | open_item_2236_v1_20261023 | iba/app/migration/archive/open_item_2236_v1_20261023.py | ONE-OFF migration -- escalation #2236: open-item columns and verse table, work package open-item, settings, rule open-item-has-a-clear-purpose; run_id DEVMODE-2236-OPEN-ITEM-20261023. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -1320,6 +1324,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | narrative | narrative.register_report_dir | outputs/narrative-register | where Narrative-Register.ps1 -Action Find/History/Check write their dated reports (escalation #2110) |
 | narrative | narrative.scope_check_report_path | _analytics/essay/book-narrative-scope-check.md | where report.book_narrative_validate persists its findings |
 | narrative | narrative.usage_log_path | _analytics/essay/narrative-generate-usage.csv | append-only on-disk ledger of every LIVE call's real tokens/cost — scripts/cost_ledger.py (repo root) only ingests Console CSV exports, not this app's own calls, so this is the audit trail for those |
+| node_resolve | node_resolve.output_dir | outputs/node-resolve | #2308: where the sweep's plan JSON files and reports are written (versioned per day by lib/filingkit) |
 | notification | notification.header_run_id | run_id       : {run_id} | run-header line — the run's id, for Escalation.ps1 -RunId |
 | notification | notification.header_runs_over | runs over    : {runs_over} | run-header line (only book/word-scoped work packages print this) |
 | notification | notification.header_step | step         : {step} | run-header line 2 (only scripts with a selectable step print this) |
@@ -1633,6 +1638,12 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | 6 | raw.validate | iba.app.handlers.raw:validate | word | the parse-check: span vs strong_verse must agree |
 | 7 | strong.reconcile | iba.app.handlers.raw:reconcile | word | Cluster-classify and, where warranted, promote every one of the word's own codes (lib.strongreconcile.reconcile() per code) -- runs last, after raw.validate, so verses/spans are already validated before classification. Point (c), backfill-cluster-triage-plan-v3-20260812.md: new-word must complete through verse_lexical for qualifying strongs. UPDATED 2026-09-15 (escalation #1606): fails (condition='unclassified') if any of the word's own codes got no cluster assignment at all, rather than always returning ok() -- an automatic classification attempt runs on every code either way, but a failed attempt is now surfaced, not silently absorbed. |
 
+**node-resolve** — runs over `none` · script `iba/app/ps/Node-Resolve.ps1`
+| # | step | handler | scope | does |
+| --- | --- | --- | --- | --- |
+| 0 | node_resolve.plan | iba.app.handlers.noderesolve:plan | none | what the sweep would fill on ib_node (occurrence, morph code, sub_group code, looked up through the strong and the verse) and what it cannot fill, with the reason; writes the plan JSON and a report (read-only) -- see lib/noderesolve.py (escalation #2308) |
+| 1 | node_resolve.apply | iba.app.handlers.noderesolve:apply | none | the plan written to ib_node, node by node, only into null columns and only where the node still holds what the plan saw -- see lib/noderesolve.py (escalation #2308) |
+
 **observation-enhancer** — runs over `none` · script `iba/app/ps/Observation-Enhancer.ps1`
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
@@ -1869,7 +1880,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 <a id="7-on-fail-condition-path-the-fork-rules"></a>
 ## 7. on_fail — condition -> path (the fork rules)
 
-**20 of 135 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**20 of 137 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -1946,6 +1957,8 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | narrative_register.tell | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | narrative_register.untell | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | narrative_register.withdraw | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| node_resolve.apply | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| node_resolve.plan | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | open_item.add | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | open_item.due | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | open_item.review | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
@@ -2054,6 +2067,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | narrative_register.tell | narrative_claim, narrative_claim_change, narrative_claim_telling, narrative_passage |
 | narrative_register.untell | narrative_claim, narrative_claim_change, narrative_claim_telling |
 | narrative_register.withdraw | narrative_claim, narrative_claim_change |
+| node_resolve.apply | ib_node |
 | observation_enhancer.apply | cfg_observation_enhancer_rule, ib_observation, ib_observation_enhancer_log |
 | open_item.add | escalation_thread_item, escalation_thread_item_verse |
 | open_item.reword | escalation_thread_item, escalation_thread_item_verse |
@@ -3838,7 +3852,7 @@ _one row per document line that names a verse and per observation it gave (one r
 | cluster_subgroup.kind | group, qualifier, not_this_sense, anomaly |
 | cluster_subgroup.status | allocated, ready_for_reading, ready_for_answer, answer_complete, completed, re_read_needed |
 | compliance_rule_status | engaged, not engaged |
-| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit, lexical, strand_reading, verse_scope, reading_index, verse_collate, open_item, reading, prior_capture |
+| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit, lexical, strand_reading, verse_scope, reading_index, verse_collate, open_item, reading, prior_capture, node_resolve |
 | control_home_type | cfg_table, db_table, document, folder, harness |
 | control_read_when | always, session_start, when_invoked, when_needed, history_only |
 | escalation_answer | approve, reject, revise |

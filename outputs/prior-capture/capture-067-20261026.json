@@ -1,0 +1,1183 @@
+{
+ "kind": "prior-capture",
+ "version": 1,
+ "built_at": "2026-10-26T16:07:00Z",
+ "file": {
+  "id": 67,
+  "path": "_analytics/Clusters/M18 - desire-longing/m18-cluster-overview-v1-20261008.md",
+  "cluster": "M18",
+  "sha256": "6674f27a8ce7c9b5e486bc0a66876909c09b3c88f73ded995d57110994215ab5"
+ },
+ "fill": "findings: one per material observation the document makes about a verse (CP-01 to CP-07); lines[].answer: every line answered (captured / already_recorded / not_an_observation)",
+ "counts": {
+  "lines": 3,
+  "verses": 5,
+  "unresolved_refs": 14
+ },
+ "october": {},
+ "october_same_prefix": {},
+ "unresolved": [
+  {
+   "line_no": 41,
+   "ref": "Psa 139",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Pro 108",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Isa 70",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Mat 59",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Ecc 52",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Gen 46",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Deu 45",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Luk 43",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "1Sa 42",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "1Ki 41",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Joh 37",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Eze 36",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "Rom 33",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 41,
+   "ref": "2Ch 32",
+   "kind": "whole chapter"
+  }
+ ],
+ "verse_words": {
+  "Acts.1.13": [
+   {
+    "verse_lexical_id": 1473482,
+    "strong": "G2532",
+    "surface": "And",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473483,
+    "strong": "G3753",
+    "surface": "when",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473484,
+    "strong": "G1525",
+    "surface": "entered",
+    "morph": "V-2AAI-3P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473485,
+    "strong": "G0305",
+    "surface": "went up",
+    "morph": "V-2AAI-3P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473486,
+    "strong": "G1519",
+    "surface": "to",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473487,
+    "strong": "G5253",
+    "surface": "upper room",
+    "morph": "N-ASN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473488,
+    "strong": "G3757",
+    "surface": "where",
+    "morph": "ADV",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473489,
+    "strong": "G1510",
+    "surface": "were",
+    "morph": "V-IAI-3P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473490,
+    "strong": "G2650",
+    "surface": "staying",
+    "morph": "V-PAP-NPM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473491,
+    "strong": "G4074G",
+    "surface": "Peter",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473492,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473493,
+    "strong": "G2491H",
+    "surface": "John",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473494,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473495,
+    "strong": "G2385G",
+    "surface": "James",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473496,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473497,
+    "strong": "G0406",
+    "surface": "Andrew",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473498,
+    "strong": "G5376G",
+    "surface": "Philip",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473499,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473500,
+    "strong": "G2381",
+    "surface": "Thomas",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473501,
+    "strong": "G0918",
+    "surface": "Bartholomew",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473502,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473503,
+    "strong": "G3156",
+    "surface": "Matthew",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473504,
+    "strong": "G2385H",
+    "surface": "James",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473505,
+    "strong": "G0256",
+    "surface": "Alphaeus",
+    "morph": "N-GSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473506,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473507,
+    "strong": "G4613G",
+    "surface": "Simon",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473508,
+    "strong": "G2208",
+    "surface": "Zealot",
+    "morph": "N-NSM-T",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1473509,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473510,
+    "strong": "G2455G",
+    "surface": "Judas",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1473511,
+    "strong": "G2385J",
+    "surface": "James",
+    "morph": "N-GSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Isa.57.5": [
+   {
+    "verse_lexical_id": 1292377,
+    "strong": "H2552",
+    "surface": "lust",
+    "morph": "HVNrmpa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292378,
+    "strong": "H9009",
+    "surface": "lust",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292379,
+    "strong": "H0352D",
+    "surface": "oaks",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292380,
+    "strong": "H9003",
+    "surface": "oaks",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292381,
+    "strong": "H8478G",
+    "surface": "under",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292382,
+    "strong": "H3605",
+    "surface": "every",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292383,
+    "strong": "H7488B",
+    "surface": "green",
+    "morph": "HAamsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292384,
+    "strong": "H6086H",
+    "surface": "tree",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T13"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292385,
+    "strong": "H7819A",
+    "surface": "slaughter",
+    "morph": "HVqrmpc",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292386,
+    "strong": "H3206",
+    "surface": "children",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292387,
+    "strong": "H9009",
+    "surface": "children",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292388,
+    "strong": "H5158N",
+    "surface": "valleys",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292389,
+    "strong": "H9003",
+    "surface": "valleys",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292390,
+    "strong": "H8478G",
+    "surface": "under",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292391,
+    "strong": "H5585",
+    "surface": "clefts",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292392,
+    "strong": "H5553H",
+    "surface": "rocks",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1292393,
+    "strong": "H9009",
+    "surface": "rocks",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Luke.6.15": [
+   {
+    "verse_lexical_id": 1437944,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437945,
+    "strong": "G3156",
+    "surface": "Matthew",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437946,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437947,
+    "strong": "G2381",
+    "surface": "Thomas",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437948,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437949,
+    "strong": "G2385H",
+    "surface": "James",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437950,
+    "strong": "G3588",
+    "surface": "the",
+    "morph": "T-ASM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437951,
+    "strong": "G0256",
+    "surface": "Alphaeus",
+    "morph": "N-GSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437952,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437953,
+    "strong": "G4613G",
+    "surface": "Simon",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1437954,
+    "strong": "G2564G",
+    "surface": "called",
+    "morph": "V-PPP-ASM",
+    "clusters": [
+     "M42"
+    ],
+    "subgroups": {
+     "M42": "M42_calling"
+    }
+   },
+   {
+    "verse_lexical_id": 1437955,
+    "strong": "G2208",
+    "surface": "Zealot",
+    "morph": "N-ASM-T",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_not_this_sense"
+    }
+   }
+  ],
+  "Mark.3.18": [
+   {
+    "verse_lexical_id": 1429158,
+    "strong": "G0406",
+    "surface": "Andrew",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429159,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429160,
+    "strong": "G5376G",
+    "surface": "Philip",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429161,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429162,
+    "strong": "G0918",
+    "surface": "Bartholomew",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429163,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429164,
+    "strong": "G3156",
+    "surface": "Matthew",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429165,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429166,
+    "strong": "G2381",
+    "surface": "Thomas",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429167,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429168,
+    "strong": "G2385H",
+    "surface": "James",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429169,
+    "strong": "G3588",
+    "surface": "the",
+    "morph": null,
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429170,
+    "strong": "G0256",
+    "surface": "Alphaeus",
+    "morph": "N-GSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429171,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429172,
+    "strong": "G2280",
+    "surface": "Thaddaeus",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429173,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429174,
+    "strong": "G4613G",
+    "surface": "Simon",
+    "morph": "N-ASM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1429175,
+    "strong": "G2581",
+    "surface": "Zealot",
+    "morph": "N-ASM-T",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_not_this_sense"
+    }
+   }
+  ],
+  "Matt.10.4": [
+   {
+    "verse_lexical_id": 1418216,
+    "strong": "G4613G",
+    "surface": "Simon",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1418217,
+    "strong": "G2581",
+    "surface": "Zealot",
+    "morph": "N-NSM-T",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1418218,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1418219,
+    "strong": "G2455H",
+    "surface": "Judas",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1418220,
+    "strong": "G2469",
+    "surface": "Iscariot",
+    "morph": "N-NSM-P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1418221,
+    "strong": "G3588",
+    "surface": "who",
+    "morph": "T-NSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1418222,
+    "strong": "G3860",
+    "surface": "betrayed",
+    "morph": "V-2AAP-NSM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1418223,
+    "strong": "G0846",
+    "surface": "him",
+    "morph": "P-ASM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ]
+ },
+ "lines": [
+  {
+   "line_no": 41,
+   "line_kind": "paragraph",
+   "section": "(opening)",
+   "text": "Books with the most M18 verses: Psa 139, Pro 108, Isa 70, Mat 59, Ecc 52, Gen 46, Deu 45, Luk 43, 1Sa 42, 1Ki 41, Joh 37, Eze 36, Rom 33, 2Ch 32.",
+   "refs": [
+    {
+     "as_written": "Psa 139",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Pro 108",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Isa 70",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Mat 59",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Ecc 52",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Gen 46",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Deu 45",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Luk 43",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "1Sa 42",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "1Ki 41",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Joh 37",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Eze 36",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Rom 33",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "2Ch 32",
+     "kind": "whole chapter",
+     "verse": null
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f1"
+    ]
+   }
+  },
+  {
+   "line_no": 136,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| G2208, G2581 | Zealot | 4 | 4 | \"Zealot\" (2 each): Simon the Zealot in the apostle lists (Mat 10:4, Mar 3:18, Luk 6:15, Act 1:13) |",
+   "refs": [
+    {
+     "as_written": "Mat 10:4",
+     "kind": "verse",
+     "verse": "Matt.10.4"
+    },
+    {
+     "as_written": "Mar 3:18",
+     "kind": "verse",
+     "verse": "Mark.3.18"
+    },
+    {
+     "as_written": "Luk 6:15",
+     "kind": "verse",
+     "verse": "Luke.6.15"
+    },
+    {
+     "as_written": "Act 1:13",
+     "kind": "verse",
+     "verse": "Acts.1.13"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f2"
+    ]
+   }
+  },
+  {
+   "line_no": 196,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- **OT-15:** the heat family (*ḥāmam*, H2552, tagged T3) names \"a strand on desire (M18)\" as one of its triggers, for example Isa 57:5 \"you who burn with lust\".",
+   "refs": [
+    {
+     "as_written": "Isa 57:5",
+     "kind": "verse",
+     "verse": "Isa.57.5"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f3"
+    ]
+   }
+  }
+ ],
+ "findings": [
+  {
+   "key": "f1",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "2. Scale: For comparison, M64 had 28 Strong's, 493 hits and 468 verses. M18 is about three times its size.; Books with the most M18 verses: Psa 139, Pro 108, Isa 70, Mat 59, Ecc 52, Gen 46, Deu 45, Luk 43, 1Sa 42, 1Ki 41, Joh 37, Eze 36, Rom 33, 2Ch 32.",
+   "nodes": [
+    {
+     "verse": "Ps.139.21",
+     "cluster": "M18",
+     "role": "standalone",
+     "disposition_note": "the line names the whole chapter Psa 139: one node on its first verse"
+    },
+    {
+     "verse": "Gen.46.34",
+     "cluster": "M18",
+     "role": "standalone",
+     "disposition_note": "the line names the whole chapter Gen 46: one node on its first verse"
+    },
+    {
+     "verse": "Ezek.36.5",
+     "cluster": "M18",
+     "role": "standalone",
+     "disposition_note": "the line names the whole chapter Eze 36: one node on its first verse"
+    },
+    {
+     "verse": "2Chr.32.25",
+     "cluster": "M18",
+     "role": "standalone",
+     "disposition_note": "the line names the whole chapter 2Ch 32: one node on its first verse"
+    }
+   ]
+  },
+  {
+   "key": "f2",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "G2208, G2581 | Zealot | 4 | 4 | \"Zealot\" (2 each): Simon the Zealot in the apostle lists (Mat 10:4, Mar 3:18, Luk 6:15, Act 1:13)",
+   "nodes": [
+    {
+     "verse": "Matt.10.4",
+     "strong": "G2581",
+     "surface": "Zealot",
+     "cluster": "M18",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Mark.3.18",
+     "strong": "G2581",
+     "surface": "Zealot",
+     "cluster": "M18",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Luke.6.15",
+     "strong": "G2208",
+     "surface": "Zealot",
+     "cluster": "M18",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Acts.1.13",
+     "strong": "G2208",
+     "surface": "Zealot",
+     "cluster": "M18",
+     "role": "qualifier"
+    }
+   ]
+  },
+  {
+   "key": "f3",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "OT-15: the heat family (*ḥāmam*, H2552, tagged T3) names \"a strand on desire (M18)\" as one of its triggers, for example Isa 57:5 \"you who burn with lust\".",
+   "nodes": [
+    {
+     "verse": "Isa.57.5",
+     "cluster": "M18",
+     "role": "standalone",
+     "disposition_note": "the verse is cited; no M-coded word of it is named in the line"
+    }
+   ]
+  }
+ ]
+}

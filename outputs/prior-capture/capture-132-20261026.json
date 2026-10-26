@@ -1,0 +1,2037 @@
+{
+ "kind": "prior-capture",
+ "version": 1,
+ "built_at": "2026-10-26T16:35:18Z",
+ "file": {
+  "id": 132,
+  "path": "_analytics/Clusters/M25 - life-death/life-death-strand-handoff-v1-20261002.md",
+  "cluster": "M25",
+  "sha256": "80e809f4f5c0ad30d8f32ae2d686e6468f8e173fcce491a9a4ab6cc293c0b877"
+ },
+ "fill": "findings: one per material observation the document makes about a verse (CP-01 to CP-07); lines[].answer: every line answered (captured / already_recorded / not_an_observation)",
+ "counts": {
+  "lines": 2,
+  "verses": 12,
+  "unresolved_refs": 0
+ },
+ "october": {},
+ "october_same_prefix": {},
+ "unresolved": [],
+ "verse_words": {
+  "1Cor.15.26": [
+   {
+    "verse_lexical_id": 1485938,
+    "strong": "G2078",
+    "surface": "last",
+    "morph": "A-NSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485939,
+    "strong": "G2190",
+    "surface": "enemy",
+    "morph": "N-NSM",
+    "clusters": [
+     "M06"
+    ],
+    "subgroups": {
+     "M06": "M06_enemies"
+    }
+   },
+   {
+    "verse_lexical_id": 1485940,
+    "strong": "G2673",
+    "surface": "destroyed",
+    "morph": "V-PPI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485941,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-NSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   }
+  ],
+  "1Cor.15.54": [
+   {
+    "verse_lexical_id": 1483203,
+    "strong": "G3752",
+    "surface": "When",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483204,
+    "strong": "G1161",
+    "surface": "When",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483205,
+    "strong": "G3778",
+    "surface": "the",
+    "morph": "D-NSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483206,
+    "strong": "G5349",
+    "surface": "perishable",
+    "morph": "A-NSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483207,
+    "strong": "G1746",
+    "surface": "on",
+    "morph": "V-AMS-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483208,
+    "strong": "G0861",
+    "surface": "imperishable",
+    "morph": "N-ASF",
+    "clusters": [
+     "M61"
+    ],
+    "subgroups": {
+     "M61": "M61_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1483209,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483210,
+    "strong": "G3778",
+    "surface": "the",
+    "morph": "D-NSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483211,
+    "strong": "G2349",
+    "surface": "mortal",
+    "morph": "A-NSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483212,
+    "strong": "G1746",
+    "surface": "on",
+    "morph": "V-AMS-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483213,
+    "strong": "G0110",
+    "surface": "immortality",
+    "morph": "N-ASF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483214,
+    "strong": "G5119",
+    "surface": "then",
+    "morph": "ADV",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483215,
+    "strong": "G1096",
+    "surface": "pass",
+    "morph": "V-FDI-3S",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483216,
+    "strong": "G3056",
+    "surface": "saying",
+    "morph": "N-NSM",
+    "clusters": [
+     "M65"
+    ],
+    "subgroups": {
+     "M65": "M65_word"
+    }
+   },
+   {
+    "verse_lexical_id": 1483217,
+    "strong": "G1125",
+    "surface": "written",
+    "morph": "V-RPP-NSM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483218,
+    "strong": "G2288",
+    "surface": "Death",
+    "morph": "N-NSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1483219,
+    "strong": "G2666",
+    "surface": "swallowed up",
+    "morph": "V-API-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483220,
+    "strong": "G1519",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1483221,
+    "strong": "G3534",
+    "surface": "victory",
+    "morph": "N-ASN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "1Cor.15.55": [
+   {
+    "verse_lexical_id": 1485942,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-VSM-T",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1485943,
+    "strong": "G4226",
+    "surface": "where",
+    "morph": "ADV-I",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485944,
+    "strong": "G4675",
+    "surface": "your",
+    "morph": "P-2GS",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485945,
+    "strong": "G3534",
+    "surface": "victory",
+    "morph": "N-NSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485946,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-VSM-T",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1485947,
+    "strong": "G4226",
+    "surface": "where",
+    "morph": "ADV-I",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485948,
+    "strong": "G4675",
+    "surface": "your",
+    "morph": "P-2GS",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1485949,
+    "strong": "G2759",
+    "surface": "sting",
+    "morph": "N-NSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "1Cor.15.56": [
+   {
+    "verse_lexical_id": 1484614,
+    "strong": "G1161",
+    "surface": "The",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1484615,
+    "strong": "G2759",
+    "surface": "sting",
+    "morph": "N-NSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1484616,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-GSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1484617,
+    "strong": "G0266",
+    "surface": "sin",
+    "morph": "N-NSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_sin"
+    }
+   },
+   {
+    "verse_lexical_id": 1484618,
+    "strong": "G1161",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1484619,
+    "strong": "G1411",
+    "surface": "power",
+    "morph": "N-NSF",
+    "clusters": [
+     "M23"
+    ],
+    "subgroups": {
+     "M23": "M23_power"
+    }
+   },
+   {
+    "verse_lexical_id": 1484620,
+    "strong": "G0266",
+    "surface": "sin",
+    "morph": "N-GSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_sin"
+    }
+   },
+   {
+    "verse_lexical_id": 1484621,
+    "strong": "G3551",
+    "surface": "law",
+    "morph": "N-NSM",
+    "clusters": [
+     "M54"
+    ],
+    "subgroups": {
+     "M54": "M54_law"
+    }
+   }
+  ],
+  "1John.3.14": [
+   {
+    "verse_lexical_id": 1510957,
+    "strong": "G6063",
+    "surface": "know",
+    "morph": "V-RAI-1P",
+    "clusters": [
+     "M15"
+    ],
+    "subgroups": {
+     "M15": "M15_knowing"
+    }
+   },
+   {
+    "verse_lexical_id": 1510958,
+    "strong": "G3754G",
+    "surface": "that",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510959,
+    "strong": "G2249",
+    "surface": "we",
+    "morph": "P-1NP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510960,
+    "strong": "G3327",
+    "surface": "passed",
+    "morph": "V-RAI-1P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510961,
+    "strong": "G1537",
+    "surface": "of",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510962,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-GSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1510963,
+    "strong": "G1519",
+    "surface": "into",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510964,
+    "strong": "G2222",
+    "surface": "life",
+    "morph": "N-ASF",
+    "clusters": [
+     "M25"
+    ],
+    "subgroups": {
+     "M25": "M25_life"
+    }
+   },
+   {
+    "verse_lexical_id": 1510965,
+    "strong": "G3754H",
+    "surface": "because",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510966,
+    "strong": "G0025",
+    "surface": "love",
+    "morph": "V-PAI-1P",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1510967,
+    "strong": "G0080",
+    "surface": "brothers",
+    "morph": "N-APM",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510968,
+    "strong": "G3361",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510969,
+    "strong": "G0025",
+    "surface": "love",
+    "morph": "V-PAP-NSM",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1510970,
+    "strong": "G3306",
+    "surface": "abides",
+    "morph": "V-PAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510971,
+    "strong": "G1722",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1510972,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-DSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   }
+  ],
+  "Heb.2.14": [
+   {
+    "verse_lexical_id": 1505648,
+    "strong": "G1893",
+    "surface": "Since",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505649,
+    "strong": "G3767",
+    "surface": "therefore",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505650,
+    "strong": "G3813",
+    "surface": "children",
+    "morph": "N-NPN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505651,
+    "strong": "G2841",
+    "surface": "share in",
+    "morph": "V-RAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505652,
+    "strong": "G4561",
+    "surface": "flesh",
+    "morph": "N-GSF",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_flesh"
+    }
+   },
+   {
+    "verse_lexical_id": 1505653,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505654,
+    "strong": "G0129G",
+    "surface": "blood",
+    "morph": "N-GSN",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505655,
+    "strong": "G2532",
+    "surface": "he",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505656,
+    "strong": "G0846",
+    "surface": "himself",
+    "morph": "P-NSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505657,
+    "strong": "G3898",
+    "surface": "likewise",
+    "morph": "ADV",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505658,
+    "strong": "G3348",
+    "surface": "partook",
+    "morph": "V-2AAI-3S",
+    "clusters": [
+     "M44"
+    ],
+    "subgroups": {
+     "M44": "M44_companionship"
+    }
+   },
+   {
+    "verse_lexical_id": 1505659,
+    "strong": "G0846",
+    "surface": "same things",
+    "morph": "P-GPN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505660,
+    "strong": "G2443",
+    "surface": "that",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505661,
+    "strong": "G1223",
+    "surface": "through",
+    "morph": "PREP",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505662,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-GSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1505663,
+    "strong": "G2673",
+    "surface": "destroy",
+    "morph": "V-AAS-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505664,
+    "strong": "G2192",
+    "surface": "has",
+    "morph": "V-PAP-ASM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505665,
+    "strong": "G2904",
+    "surface": "power",
+    "morph": "N-ASN",
+    "clusters": [
+     "M23"
+    ],
+    "subgroups": {
+     "M23": "M23_power"
+    }
+   },
+   {
+    "verse_lexical_id": 1505666,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-GSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1505667,
+    "strong": "G5123",
+    "surface": "is",
+    "morph": "V-PAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1505668,
+    "strong": "G1228G",
+    "surface": "devil",
+    "morph": "A-ASM",
+    "clusters": [
+     "T4"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Heb.2.15": [
+   {
+    "verse_lexical_id": 1502191,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1502192,
+    "strong": "G0525",
+    "surface": "deliver",
+    "morph": "V-AAS-3S",
+    "clusters": [
+     "M59"
+    ],
+    "subgroups": {
+     "M59": "M59_releasing"
+    }
+   },
+   {
+    "verse_lexical_id": 1502193,
+    "strong": "G3778",
+    "surface": "those",
+    "morph": "D-APM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1502194,
+    "strong": "G3745",
+    "surface": "who",
+    "morph": "K-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1502195,
+    "strong": "G1223",
+    "surface": "through",
+    "morph": "PREP",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1502196,
+    "strong": "G5401",
+    "surface": "fear",
+    "morph": "N-DSM",
+    "clusters": [
+     "M01"
+    ],
+    "subgroups": {
+     "M01": "M01_fear"
+    }
+   },
+   {
+    "verse_lexical_id": 1502197,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-GSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1502198,
+    "strong": "G1510",
+    "surface": "were",
+    "morph": "V-IAI-3P",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1502199,
+    "strong": "G1777",
+    "surface": "subject",
+    "morph": "A-NPM",
+    "clusters": [
+     "M55"
+    ],
+    "subgroups": {
+     "M55": "M55_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1502200,
+    "strong": "G3956",
+    "surface": "lifelong",
+    "morph": "A-GSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1502201,
+    "strong": "G2198",
+    "surface": "lifelong",
+    "morph": "V-PAN",
+    "clusters": [
+     "M25"
+    ],
+    "subgroups": {
+     "M25": "M25_living"
+    }
+   },
+   {
+    "verse_lexical_id": 1502202,
+    "strong": "G1397",
+    "surface": "slavery",
+    "morph": "N-GSF",
+    "clusters": [
+     "M78"
+    ],
+    "subgroups": {
+     "M78": "M78_servant"
+    }
+   }
+  ],
+  "John.7.38": [
+   {
+    "verse_lexical_id": 1446505,
+    "strong": "G4100",
+    "surface": "believes",
+    "morph": "V-PAP-NSM",
+    "clusters": [
+     "M19"
+    ],
+    "subgroups": {
+     "M19": "M19_believing"
+    }
+   },
+   {
+    "verse_lexical_id": 1446506,
+    "strong": "G1519",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446507,
+    "strong": "G1691",
+    "surface": "me",
+    "morph": "P-1AS",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446508,
+    "strong": "G2531",
+    "surface": "as",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446509,
+    "strong": "G1124",
+    "surface": "Scripture",
+    "morph": "N-NSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446510,
+    "strong": "G2036",
+    "surface": "said",
+    "morph": "V-2AAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446511,
+    "strong": "G1537",
+    "surface": "Out",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446512,
+    "strong": "G0846",
+    "surface": "his",
+    "morph": "P-GSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446513,
+    "strong": "G2836",
+    "surface": "heart",
+    "morph": "N-GSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446514,
+    "strong": "G4482",
+    "surface": "flow",
+    "morph": "V-FAI-3P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446515,
+    "strong": "G4215",
+    "surface": "rivers",
+    "morph": "N-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1446516,
+    "strong": "G2198",
+    "surface": "living",
+    "morph": "V-PAP-GSN",
+    "clusters": [
+     "M25"
+    ],
+    "subgroups": {
+     "M25": "M25_living"
+    }
+   },
+   {
+    "verse_lexical_id": 1446517,
+    "strong": "G5204",
+    "surface": "water",
+    "morph": "N-GSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Prov.14.12": [
+   {
+    "verse_lexical_id": 1284120,
+    "strong": "H3426",
+    "surface": "is",
+    "morph": "HAcbsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1284121,
+    "strong": "H1870G",
+    "surface": "way",
+    "morph": "HNcbsa",
+    "clusters": [
+     "M76"
+    ],
+    "subgroups": {
+     "M76": "M76_way"
+    }
+   },
+   {
+    "verse_lexical_id": 1284122,
+    "strong": "H3477G",
+    "surface": "right",
+    "morph": "HAamsa",
+    "clusters": [
+     "M12"
+    ],
+    "subgroups": {
+     "M12": "M12_upright"
+    }
+   },
+   {
+    "verse_lexical_id": 1284123,
+    "strong": "H6440L",
+    "surface": "to",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1284124,
+    "strong": "H9005",
+    "surface": "to",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1284125,
+    "strong": "H0376G",
+    "surface": "man",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1284126,
+    "strong": "H0319",
+    "surface": "end",
+    "morph": "HNcfsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1284127,
+    "strong": "H9002",
+    "surface": "end",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1284128,
+    "strong": "H1870G",
+    "surface": "way",
+    "morph": "HNcbpc",
+    "clusters": [
+     "M76"
+    ],
+    "subgroups": {
+     "M76": "M76_way"
+    }
+   },
+   {
+    "verse_lexical_id": 1284129,
+    "strong": "H9024",
+    "surface": "way",
+    "morph": "HSp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1284130,
+    "strong": "H4194",
+    "surface": "death",
+    "morph": "HNcmsa",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   }
+  ],
+  "Prov.18.21": [
+   {
+    "verse_lexical_id": 1281322,
+    "strong": "H4194",
+    "surface": "Death",
+    "morph": "HNcmsa",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1281323,
+    "strong": "H2416E",
+    "surface": "life",
+    "morph": "HNcmpa",
+    "clusters": [
+     "M25"
+    ],
+    "subgroups": {
+     "M25": "M25_life"
+    }
+   },
+   {
+    "verse_lexical_id": 1281324,
+    "strong": "H9002",
+    "surface": "life",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1281325,
+    "strong": "H3027H",
+    "surface": "power",
+    "morph": "HNcbsc",
+    "clusters": [
+     "M72",
+     "T14"
+    ],
+    "subgroups": {
+     "M72": "M72_hand"
+    }
+   },
+   {
+    "verse_lexical_id": 1281326,
+    "strong": "H9003",
+    "surface": "power",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1281327,
+    "strong": "H3956G",
+    "surface": "tongue",
+    "morph": "HNcbsa",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1281328,
+    "strong": "H0157G",
+    "surface": "love",
+    "morph": "HVqrmpc",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1281329,
+    "strong": "H0398",
+    "surface": "eat",
+    "morph": "HVqi3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1281330,
+    "strong": "H9034",
+    "surface": "eat",
+    "morph": "HSp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1281331,
+    "strong": "H6529",
+    "surface": "fruits",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1281332,
+    "strong": "H9024",
+    "surface": "fruits",
+    "morph": "HSp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Rom.5.12": [
+   {
+    "verse_lexical_id": 1479454,
+    "strong": "G1223",
+    "surface": "Therefore",
+    "morph": "PREP",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479455,
+    "strong": "G5124",
+    "surface": "Therefore",
+    "morph": "D-ASN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479456,
+    "strong": "G5618",
+    "surface": "as",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479457,
+    "strong": "G0266",
+    "surface": "sin",
+    "morph": "N-NSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_sin"
+    }
+   },
+   {
+    "verse_lexical_id": 1479458,
+    "strong": "G1525",
+    "surface": "came",
+    "morph": "V-2AAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479459,
+    "strong": "G1519",
+    "surface": "into",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479460,
+    "strong": "G2889",
+    "surface": "world",
+    "morph": "N-ASM",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479461,
+    "strong": "G1223",
+    "surface": "through",
+    "morph": "PREP",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479462,
+    "strong": "G1520",
+    "surface": "one",
+    "morph": "A-GSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479463,
+    "strong": "G0444",
+    "surface": "man",
+    "morph": "N-GSM",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479464,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479465,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-NSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1479466,
+    "strong": "G1223",
+    "surface": "through",
+    "morph": "PREP",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479467,
+    "strong": "G0266",
+    "surface": "sin",
+    "morph": "N-GSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_sin"
+    }
+   },
+   {
+    "verse_lexical_id": 1479468,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479469,
+    "strong": "G3779",
+    "surface": "so",
+    "morph": "ADV",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479470,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-NSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1479471,
+    "strong": "G1330",
+    "surface": "spread",
+    "morph": "V-2AAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479472,
+    "strong": "G1519",
+    "surface": "to",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479473,
+    "strong": "G3956",
+    "surface": "all",
+    "morph": "A-APM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479474,
+    "strong": "G0444",
+    "surface": "men",
+    "morph": "N-APM",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479475,
+    "strong": "G1909",
+    "surface": "because",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479476,
+    "strong": "G3739",
+    "surface": "because",
+    "morph": "R-DSN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479477,
+    "strong": "G3956",
+    "surface": "all",
+    "morph": "A-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1479478,
+    "strong": "G0264",
+    "surface": "sinned",
+    "morph": "V-2AAI-3P",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_sin"
+    }
+   }
+  ],
+  "Rom.6.23": [
+   {
+    "verse_lexical_id": 1475067,
+    "strong": "G1063",
+    "surface": "For",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1475068,
+    "strong": "G3800",
+    "surface": "wages",
+    "morph": "N-NPN",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1475069,
+    "strong": "G0266",
+    "surface": "sin",
+    "morph": "N-GSF",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_sin"
+    }
+   },
+   {
+    "verse_lexical_id": 1475070,
+    "strong": "G2288",
+    "surface": "death",
+    "morph": "N-NSM",
+    "clusters": [
+     "M25",
+     "T10"
+    ],
+    "subgroups": {
+     "M25": "M25_death"
+    }
+   },
+   {
+    "verse_lexical_id": 1475071,
+    "strong": "G1161",
+    "surface": "but",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1475072,
+    "strong": "G5486",
+    "surface": "gift",
+    "morph": "N-NSN",
+    "clusters": [
+     "M39"
+    ],
+    "subgroups": {
+     "M39": "M39_gifts"
+    }
+   },
+   {
+    "verse_lexical_id": 1475073,
+    "strong": "G2316",
+    "surface": "God",
+    "morph": "N-GSM-T",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1475074,
+    "strong": "G0166",
+    "surface": "eternal",
+    "morph": "A-NSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1475075,
+    "strong": "G2222",
+    "surface": "life",
+    "morph": "N-NSF",
+    "clusters": [
+     "M25"
+    ],
+    "subgroups": {
+     "M25": "M25_life"
+    }
+   },
+   {
+    "verse_lexical_id": 1475076,
+    "strong": "G1722",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1475077,
+    "strong": "G5547",
+    "surface": "Christ",
+    "morph": "N-DSM-T",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1475078,
+    "strong": "G2424G",
+    "surface": "Jesus",
+    "morph": "N-DSM-P",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1475079,
+    "strong": "G2257",
+    "surface": "our",
+    "morph": "P-1GP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1475080,
+    "strong": "G2962G",
+    "surface": "Lord",
+    "morph": "N-DSM-T",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   }
+  ]
+ },
+ "lines": [
+  {
+   "line_no": 24,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- Joh 7:38's \"heart\" is *koilia* (G2836). Do not cite it as a heart verse.",
+   "refs": [
+    {
+     "as_written": "Joh 7:38",
+     "kind": "verse",
+     "verse": "John.7.38"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f1"
+    ]
+   }
+  },
+  {
+   "line_no": 65,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- **Expected verses** (pointers only, to be confirmed by the pull): Rom 5:12; 6:23; 1Cor 15:26, 54–56; Heb 2:14–15; 1Jo 3:14; Pro 14:12; Pro 18:21 (\"Death and life are in the power of the tongue\").",
+   "refs": [
+    {
+     "as_written": "Rom 5:12; 6:23",
+     "kind": "verse",
+     "verse": "Rom.5.12"
+    },
+    {
+     "as_written": "Rom 5:12; 6:23",
+     "kind": "verse",
+     "verse": "Rom.6.23"
+    },
+    {
+     "as_written": "1Cor 15:26, 54–56",
+     "kind": "verse",
+     "verse": "1Cor.15.26"
+    },
+    {
+     "as_written": "1Cor 15:26, 54–56",
+     "kind": "verse",
+     "verse": "1Cor.15.54"
+    },
+    {
+     "as_written": "1Cor 15:26, 54–56",
+     "kind": "verse",
+     "verse": "1Cor.15.55"
+    },
+    {
+     "as_written": "1Cor 15:26, 54–56",
+     "kind": "verse",
+     "verse": "1Cor.15.56"
+    },
+    {
+     "as_written": "Heb 2:14–15",
+     "kind": "verse",
+     "verse": "Heb.2.14"
+    },
+    {
+     "as_written": "Heb 2:14–15",
+     "kind": "verse",
+     "verse": "Heb.2.15"
+    },
+    {
+     "as_written": "1Jo 3:14",
+     "kind": "verse",
+     "verse": "1John.3.14"
+    },
+    {
+     "as_written": "Pro 14:12",
+     "kind": "verse",
+     "verse": "Prov.14.12"
+    },
+    {
+     "as_written": "Pro 18:21",
+     "kind": "verse",
+     "verse": "Prov.18.21"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f2"
+    ]
+   }
+  }
+ ],
+ "findings": [
+  {
+   "key": "f1",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "Unfinished edges: Joh 7:38's \"heart\" is *koilia* (G2836). Do not cite it as a heart verse.",
+   "nodes": [
+    {
+     "verse": "John.7.38",
+     "cluster": "M25",
+     "role": "standalone",
+     "disposition_note": "the verse is cited; no M-coded word of it is named in the line"
+    }
+   ]
+  },
+  {
+   "key": "f2",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "Expected verses (pointers only, to be confirmed by the pull): Rom 5:12; 6:23; 1Cor 15:26, 54–56; Heb 2:14–15; 1Jo 3:14; Pro 14:12; Pro 18:21 (\"Death and life are in the power of the tongue\").",
+   "nodes": [
+    {
+     "verse": "Rom.5.12",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Rom.5.12",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Rom.6.23",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Rom.6.23",
+     "strong": "G2222",
+     "surface": "life",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "1Cor.15.26",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "1Cor.15.54",
+     "strong": "G2288",
+     "surface": "Death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "1Cor.15.55",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "1Cor.15.55",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "1Cor.15.56",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "1Cor.15.56",
+     "strong": "G1411",
+     "surface": "power",
+     "cluster": "M23",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Heb.2.14",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Heb.2.14",
+     "strong": "G2904",
+     "surface": "power",
+     "cluster": "M23",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Heb.2.14",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Heb.2.15",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "1John.3.14",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "1John.3.14",
+     "strong": "G2222",
+     "surface": "life",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "1John.3.14",
+     "strong": "G2288",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Prov.14.12",
+     "strong": "H4194",
+     "surface": "death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Prov.18.21",
+     "strong": "H4194",
+     "surface": "Death",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Prov.18.21",
+     "strong": "H2416E",
+     "surface": "life",
+     "cluster": "M25",
+     "role": "qualifier"
+    },
+    {
+     "verse": "Prov.18.21",
+     "strong": "H3027H",
+     "surface": "power",
+     "cluster": "M72",
+     "role": "qualifier"
+    }
+   ]
+  }
+ ]
+}

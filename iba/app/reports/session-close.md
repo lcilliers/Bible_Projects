@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-26T14:37:27Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-26T17:27:54Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `5d0e964b-6c3b-463c-9979-16e6ce15295d` (CLAUDE_CODE_SESSION_ID); started 2026-10-26T10:52:48Z; window base commit `92dc55a552a8b0f3ade45d6411fbac705b06b695`
-- compliance file: `Logs/compliance/COMPLIANCE-20261026-5d0e964b.md`; session log: `Logs/SESSION-LOG-20261026-prior-capture-built-and-run.md`
-- **open findings: 0**; cleared by disposition: 1
+- session: `48c68341-5922-4307-bd5d-8727d240e254` (CLAUDE_CODE_SESSION_ID); started 2026-10-26T14:40:29Z; window base commit `5b57ffad89b41fd697fbee6b8651230cfd0b3218`
+- compliance file: `Logs/compliance/COMPLIANCE-20261026-48c68341.md`; session log: `Logs/SESSION-LOG-20261026-prior-capture-completion-and-node-sweep.md`
+- **open findings: 0**; cleared by disposition: 7
 
 
 ## Contents
@@ -41,7 +41,31 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-_no finding_
+- cleared `SC3:d759bd9d`: researcher message 2026-10-26T15:35 is in no escalation comment written this session: "<task-notification>
+<task-id>bfn9351po</task-id>
+<tool-use-id>toolu_015aGLVBfqKpEAFBbhffmwTu</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
+- cleared `SC3:4da39f92`: researcher message 2026-10-26T15:38 is in no escalation comment written this session: "<task-notification>
+<task-id>bwh5s4v22</task-id>
+<tool-use-id>toolu_01W4GgZZE47t5N3sapadE5K1</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
+- cleared `SC3:38dea676`: researcher message 2026-10-26T15:48 is in no escalation comment written this session: "<task-notification>
+<task-id>bnbxvqdzo</task-id>
+<tool-use-id>toolu_01En9pAuxtHf5bMBysbgs11g</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
+- cleared `SC3:eed3efad`: researcher message 2026-10-26T16:10 is in no escalation comment written this session: "while M18 is running, can you give me an overview of what is left" -- disposition: recorded in #2308 v3
+- cleared `SC3:77213b5c`: researcher message 2026-10-26T16:20 is in no escalation comment written this session: "<task-notification>
+<task-id>bi92ox71f</task-id>
+<tool-use-id>toolu_01UKo1fLmeptwxoENaZCrbAD</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
+- cleared `SC3:191c08a4`: researcher message 2026-10-26T16:35 is in no escalation comment written this session: "<task-notification>
+<task-id>bgkttrnou</task-id>
+<tool-use-id>toolu_01KiD7kH2T21Fu5HjTPrfxM2</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
+- cleared `SC3:6d2b2428`: researcher message 2026-10-26T16:44 is in no escalation comment written this session: "<task-notification>
+<task-id>bp0q0y1bj</task-id>
+<tool-use-id>toolu_01BREZLjxCVEfaEwmjbWHU5m</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not a researcher message
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -83,4 +107,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Bash:_python:fae41953`: Bash: python failed 2 times this session: KeyError: 130; KeyError: 42 -- disposition: fixed: the two KeyErrors (130 and 42) were my fill scripts naming a line that is not a reference line of its document; the scripts were corrected the same turn (a verse-less line attaches to a neighbour with a flag) and both documents recorded.
+_no finding_

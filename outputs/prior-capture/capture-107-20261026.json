@@ -1,0 +1,561 @@
+{
+ "kind": "prior-capture",
+ "version": 1,
+ "built_at": "2026-10-26T16:08:25Z",
+ "file": {
+  "id": 107,
+  "path": "_analytics/Clusters/M18 - desire-longing/m18-rule-1995-mcode-roles-redraft-v1-20261011.md",
+  "cluster": "M18",
+  "sha256": "30d80907654695ceb422ead9f0de295fe4d8fbf0551ecf5f09f3306df188153d"
+ },
+ "fill": "findings: one per material observation the document makes about a verse (CP-01 to CP-07); lines[].answer: every line answered (captured / already_recorded / not_an_observation)",
+ "counts": {
+  "lines": 4,
+  "verses": 2,
+  "unresolved_refs": 0
+ },
+ "october": {},
+ "october_same_prefix": {},
+ "unresolved": [],
+ "verse_words": {
+  "2Pet.2.13": [
+   {
+    "verse_lexical_id": 1509600,
+    "strong": "G2865",
+    "surface": "suffering wrong",
+    "morph": "V-PMP-NPM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509601,
+    "strong": "G3408",
+    "surface": "wage",
+    "morph": "N-ASM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509602,
+    "strong": "G0093",
+    "surface": "wrongdoing",
+    "morph": "N-GSF",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_wickedness"
+    }
+   },
+   {
+    "verse_lexical_id": 1509603,
+    "strong": "G2233",
+    "surface": "count",
+    "morph": "V-PNP-NPM",
+    "clusters": [
+     "M72"
+    ],
+    "subgroups": {
+     "M72": "M72_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1509604,
+    "strong": "G2237",
+    "surface": "pleasure",
+    "morph": "N-ASF",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_delight"
+    }
+   },
+   {
+    "verse_lexical_id": 1509605,
+    "strong": "G5172",
+    "surface": "revel",
+    "morph": "N-ASF",
+    "clusters": [
+     "M28"
+    ],
+    "subgroups": {
+     "M28": "M28_sensuality"
+    }
+   },
+   {
+    "verse_lexical_id": 1509606,
+    "strong": "G1722",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509607,
+    "strong": "G2250",
+    "surface": "daytime",
+    "morph": "N-DSF",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509608,
+    "strong": "G4696",
+    "surface": "blots",
+    "morph": "N-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509609,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509610,
+    "strong": "G3470",
+    "surface": "blemishes",
+    "morph": "N-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509611,
+    "strong": "G1792",
+    "surface": "reveling",
+    "morph": "V-PAP-NPM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509612,
+    "strong": "G1722",
+    "surface": "in",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509613,
+    "strong": "G0846",
+    "surface": "their",
+    "morph": "P-GPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509614,
+    "strong": "G0539",
+    "surface": "deceptions",
+    "morph": "N-DPF",
+    "clusters": [
+     "M14"
+    ],
+    "subgroups": {
+     "M14": "M14_deceit"
+    }
+   },
+   {
+    "verse_lexical_id": 1509615,
+    "strong": "G4910",
+    "surface": "feast",
+    "morph": "V-PNP-NPM",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1509616,
+    "strong": "G5213",
+    "surface": "you",
+    "morph": "P-2DP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Ps.1.1": [
+   {
+    "verse_lexical_id": 1259880,
+    "strong": "H0835",
+    "surface": "Blessed",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M80"
+    ],
+    "subgroups": {
+     "M80": "M80_blessedness"
+    }
+   },
+   {
+    "verse_lexical_id": 1259881,
+    "strong": "H0376G",
+    "surface": "man",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259882,
+    "strong": "H9009",
+    "surface": "man",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259883,
+    "strong": "H0834A",
+    "surface": "who",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259884,
+    "strong": "H1980I",
+    "surface": "walks",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259885,
+    "strong": "H3808",
+    "surface": "walks",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259886,
+    "strong": "H6098",
+    "surface": "counsel",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M16"
+    ],
+    "subgroups": {
+     "M16": "M16_counsel"
+    }
+   },
+   {
+    "verse_lexical_id": 1259887,
+    "strong": "H9003",
+    "surface": "counsel",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259888,
+    "strong": "H7563",
+    "surface": "wicked",
+    "morph": "HNcmpa",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_wickedness"
+    }
+   },
+   {
+    "verse_lexical_id": 1259889,
+    "strong": "H3808",
+    "surface": "nor",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259890,
+    "strong": "H5975G",
+    "surface": "stands",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259891,
+    "strong": "H1870G",
+    "surface": "way",
+    "morph": "HNcbsc",
+    "clusters": [
+     "M76"
+    ],
+    "subgroups": {
+     "M76": "M76_way"
+    }
+   },
+   {
+    "verse_lexical_id": 1259892,
+    "strong": "H9002",
+    "surface": "way",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259893,
+    "strong": "H9003",
+    "surface": "way",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259894,
+    "strong": "H2400",
+    "surface": "sinners",
+    "morph": "HAampa",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_sin"
+    }
+   },
+   {
+    "verse_lexical_id": 1259895,
+    "strong": "H3808",
+    "surface": "nor",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259896,
+    "strong": "H3427",
+    "surface": "sits",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259897,
+    "strong": "H4186",
+    "surface": "seat",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259898,
+    "strong": "H9002",
+    "surface": "seat",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259899,
+    "strong": "H9003",
+    "surface": "seat",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1259900,
+    "strong": "H3887",
+    "surface": "scoffers",
+    "morph": "HAampa",
+    "clusters": [
+     "M08"
+    ],
+    "subgroups": {
+     "M08": "M08_mocking"
+    }
+   }
+  ]
+ },
+ "lines": [
+  {
+   "line_no": 20,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| **role** | glossary (1066); verse-analysis method §13 | Each word in a verse has a role: **characteristic** (it behaves as a characteristic of the inner being), **qualifier / process-element** (it binds to a characteristic and gives it value or context in place), or **standalone**. Role is **per occurrence**: the same lemma can be the characteristic in one verse and a qualifier in another (§14, Psa 1:1). |",
+   "refs": [
+    {
+     "as_written": "Psa 1:1",
+     "kind": "verse",
+     "verse": "Ps.1.1"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f1"
+    ]
+   }
+  },
+  {
+   "line_no": 25,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| **main IB operation** | researcher, 2Pe 2:13 (#1993) | *\"The main IB operation of this verse is to suffer … counting it pleasure is the measurement of the reveling.\"* |",
+   "refs": [
+    {
+     "as_written": "2Pe 2:13",
+     "kind": "verse",
+     "verse": "2Pet.2.13"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f2"
+    ]
+   }
+  },
+  {
+   "line_no": 33,
+   "line_kind": "paragraph",
+   "section": "(opening)",
+   "text": "These are the M-coded words in 2Pe 2:13 (live: `verse_lexical` → `cluster_strong`):",
+   "refs": [
+    {
+     "as_written": "2Pe 2:13",
+     "kind": "verse",
+     "verse": "2Pet.2.13"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f3"
+    ]
+   }
+  },
+  {
+   "line_no": 67,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "  - researcher, 2026-10-09 on 2Pe 2:13 (#1993, verbatim as in v1), with *\"no, we are not redoing it now …\"*",
+   "refs": [
+    {
+     "as_written": "2Pe 2:13",
+     "kind": "verse",
+     "verse": "2Pet.2.13"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f4"
+    ]
+   }
+  }
+ ],
+ "findings": [
+  {
+   "key": "f1",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "role | glossary (1066); verse-analysis method §13 | Each word in a verse has a role: characteristic (it behaves as a characteristic of the inner being), qualifier / process-element (it binds to a characteristic and gives it value or context in place), or standalone. Role is per occurrence: the same lemma can be the characteristic in one verse and a qualifier in another (§14, Psa 1:1).",
+   "nodes": [
+    {
+     "verse": "Ps.1.1",
+     "cluster": "M18",
+     "role": "standalone",
+     "disposition_note": "the verse is cited; no M-coded word of it is named in the line"
+    }
+   ]
+  },
+  {
+   "key": "f2",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "main IB operation | researcher, 2Pe 2:13 (#1993) | *\"The main IB operation of this verse is to suffer … counting it pleasure is the measurement of the reveling.\"*",
+   "nodes": [
+    {
+     "verse": "2Pet.2.13",
+     "strong": "G2237",
+     "surface": "pleasure",
+     "cluster": "M18",
+     "role": "qualifier"
+    }
+   ]
+  },
+  {
+   "key": "f3",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "4. The worked case, by role: These are the M-coded words in 2Pe 2:13 (live: verse_lexical → cluster_strong): The qualifier bindings (M18 measures M28; M14 strengthens M28) are themselves interrelationships of the inner being. They are recorded as such, not dropped.",
+   "nodes": [
+    {
+     "verse": "2Pet.2.13",
+     "cluster": "M18",
+     "role": "standalone",
+     "disposition_note": "the verse is cited; no M-coded word of it is named in the line"
+    }
+   ]
+  },
+  {
+   "key": "f4",
+   "kind": "statement",
+   "basis": "stated",
+   "text": "source: researcher, 2026-10-09 on 2Pe 2:13 (#1993, verbatim as in v1), with *\"no, we are not redoing it now …\"*; researcher, 2026-10-11, the two statements in §1",
+   "nodes": [
+    {
+     "verse": "2Pet.2.13",
+     "cluster": "M18",
+     "role": "standalone",
+     "disposition_note": "the verse is cited; no M-coded word of it is named in the line"
+    }
+   ]
+  }
+ ]
+}

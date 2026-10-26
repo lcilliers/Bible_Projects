@@ -503,6 +503,23 @@ iba\app\ps\Prior-Capture.ps1 -Step Report                                       
 - **Report** writes the status report, versioned (`capture-status`, in `outputs/prior-capture/`): documents by `capture_status`, observations by tag, line
   answers, and the nodes with no `verse_lexical_id`.
 
+### 7.3 The node reference sweep (`iba/app/ps/Node-Resolve.ps1`)
+
+A migration step (escalation #2308), run after the capture: it looks up, through the strong and the verse, the
+occurrence (`verse_lexical_id`), the morph code and the sub_group code of the nodes that lack them, in every stage and
+cluster. Method rules NR-01 to NR-06 on `node_resolve.apply`.
+
+```powershell
+iba\app\ps\Node-Resolve.ps1 -Step Plan                                   # what would be filled, and what cannot (reads only)
+iba\app\ps\Node-Resolve.ps1 -Step Apply -File outputs\node-resolve\resolve-plan-<date>.json
+```
+
+- **Plan** writes the plan JSON (each node's values before and after) and a report to `outputs/node-resolve/`,
+  and lists the nodes it leaves with the reason (no sub_group defined for the strong in the cluster; the occurrences
+  disagree; several occurrences and no matching surface).
+- **Apply** writes the plan whole, into null columns only, and skips and lists a node that no longer holds what the
+  plan saw. A second Plan after Apply finds nothing to fill.
+
 ---
 
 ## 8. The inner-being narrative

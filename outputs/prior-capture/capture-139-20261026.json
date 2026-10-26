@@ -1,0 +1,1356 @@
+{
+ "kind": "prior-capture",
+ "version": 1,
+ "built_at": "2026-10-26T15:25:14Z",
+ "file": {
+  "id": 139,
+  "path": "_analytics/Clusters/M47 - inner-seat/M47-reallocation-register-v2-20260928.md",
+  "cluster": "M47",
+  "sha256": "baa7f8ccb4fcdd2aac661b4aa0132f9f21f3ed7fb326f42b70e042b286025ed0"
+ },
+ "fill": "findings: one per material observation the document makes about a verse (CP-01 to CP-07); lines[].answer: every line answered (captured / already_recorded / not_an_observation)",
+ "counts": {
+  "lines": 8,
+  "verses": 6,
+  "unresolved_refs": 3
+ },
+ "october": {},
+ "october_same_prefix": {},
+ "unresolved": [
+  {
+   "line_no": 121,
+   "ref": "Lev 11",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 130,
+   "ref": "Lev 13",
+   "kind": "whole chapter"
+  },
+  {
+   "line_no": 147,
+   "ref": "Psa 131",
+   "kind": "whole chapter"
+  }
+ ],
+ "verse_words": {
+  "1Sam.30.6": [
+   {
+    "verse_lexical_id": 1119072,
+    "strong": "H1732",
+    "surface": "David",
+    "morph": "HNpm",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119073,
+    "strong": "H9005",
+    "surface": "David",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119074,
+    "strong": "H3966",
+    "surface": "greatly",
+    "morph": "HAcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119075,
+    "strong": "H3334",
+    "surface": "distressed",
+    "morph": "HVqw3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119076,
+    "strong": "H3588A",
+    "surface": "for",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119077,
+    "strong": "H5971A",
+    "surface": "people",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T11"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119078,
+    "strong": "H9009",
+    "surface": "people",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119079,
+    "strong": "H0559",
+    "surface": "spoke",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119080,
+    "strong": "H9005",
+    "surface": "of",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119081,
+    "strong": "H5619",
+    "surface": "stoning",
+    "morph": "HVqcc",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119082,
+    "strong": "H3588A",
+    "surface": "because",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119083,
+    "strong": "H9033",
+    "surface": "because",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119084,
+    "strong": "H3605",
+    "surface": "all",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119085,
+    "strong": "H5971A",
+    "surface": "people",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T11"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119086,
+    "strong": "H9009",
+    "surface": "people",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119087,
+    "strong": "H4784",
+    "surface": "bitter",
+    "morph": "HVqp3fs",
+    "clusters": [
+     "M30"
+    ],
+    "subgroups": {
+     "M30": "M30_rebellion"
+    }
+   },
+   {
+    "verse_lexical_id": 1119088,
+    "strong": "H5315G",
+    "surface": "soul",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_soul"
+    }
+   },
+   {
+    "verse_lexical_id": 1119089,
+    "strong": "H0376I",
+    "surface": "each",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119090,
+    "strong": "H1121A",
+    "surface": "sons",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119091,
+    "strong": "H5921A",
+    "surface": "sons",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119092,
+    "strong": "H1323G",
+    "surface": "daughters",
+    "morph": "HNcfpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119093,
+    "strong": "H9023",
+    "surface": "daughters",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119094,
+    "strong": "H5921A",
+    "surface": "daughters",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119095,
+    "strong": "H9002",
+    "surface": "daughters",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119096,
+    "strong": "H1732",
+    "surface": "David",
+    "morph": "HNpm",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119097,
+    "strong": "H2388G",
+    "surface": "strengthened",
+    "morph": "HVtw3ms",
+    "clusters": [
+     "M23"
+    ],
+    "subgroups": {
+     "M23": "M23_strength"
+    }
+   },
+   {
+    "verse_lexical_id": 1119098,
+    "strong": "H9023",
+    "surface": "strengthened",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119099,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119100,
+    "strong": "H9003",
+    "surface": "Lord",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119101,
+    "strong": "H0430G",
+    "surface": "God",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1119102,
+    "strong": "H9023",
+    "surface": "God",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Col.3.12": [
+   {
+    "verse_lexical_id": 1495775,
+    "strong": "G1746",
+    "surface": "Put on",
+    "morph": "V-AMM-2P",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495776,
+    "strong": "G3767",
+    "surface": "then",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495777,
+    "strong": "G5613",
+    "surface": "as",
+    "morph": "PRT",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495778,
+    "strong": "G2316",
+    "surface": "God’s",
+    "morph": "N-GSM-T",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495779,
+    "strong": "G1588",
+    "surface": "chosen ones",
+    "morph": "A-NPM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495780,
+    "strong": "G0040G",
+    "surface": "holy",
+    "morph": "A-NPM",
+    "clusters": [
+     "M61"
+    ],
+    "subgroups": {
+     "M61": "M61_holy"
+    }
+   },
+   {
+    "verse_lexical_id": 1495781,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1495782,
+    "strong": "G0025",
+    "surface": "beloved",
+    "morph": "V-RPP-NPM",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1495783,
+    "strong": "G3628",
+    "surface": "compassionate",
+    "morph": "N-GSM",
+    "clusters": [
+     "M50"
+    ],
+    "subgroups": {
+     "M50": "M50_mercy"
+    }
+   },
+   {
+    "verse_lexical_id": 1495784,
+    "strong": "G4698",
+    "surface": "hearts",
+    "morph": "N-APN",
+    "clusters": [
+     "M50",
+     "T14"
+    ],
+    "subgroups": {
+     "M50": "M50_mercy"
+    }
+   },
+   {
+    "verse_lexical_id": 1495785,
+    "strong": "G5544",
+    "surface": "kindness",
+    "morph": "N-ASF",
+    "clusters": [
+     "M50"
+    ],
+    "subgroups": {
+     "M50": "M50_grace"
+    }
+   },
+   {
+    "verse_lexical_id": 1495786,
+    "strong": "G5012",
+    "surface": "humility",
+    "morph": "N-ASF",
+    "clusters": [
+     "M09"
+    ],
+    "subgroups": {
+     "M09": "M09_humility"
+    }
+   },
+   {
+    "verse_lexical_id": 1495787,
+    "strong": "G4236",
+    "surface": "meekness",
+    "morph": "N-ASF",
+    "clusters": [
+     "M05"
+    ],
+    "subgroups": {
+     "M05": "M05_kindness"
+    }
+   },
+   {
+    "verse_lexical_id": 1495788,
+    "strong": "G3115",
+    "surface": "patience",
+    "morph": "N-ASF",
+    "clusters": [
+     "M34"
+    ],
+    "subgroups": {
+     "M34": "M34_patience"
+    }
+   }
+  ],
+  "Jer.4.19": [
+   {
+    "verse_lexical_id": 1336471,
+    "strong": "H4578",
+    "surface": "anguish",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1336472,
+    "strong": "H4578",
+    "surface": "anguish",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1336473,
+    "strong": "H9020",
+    "surface": "anguish",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336474,
+    "strong": "H3176G",
+    "surface": "pain",
+    "morph": "HVhc1cs",
+    "clusters": [
+     "M68"
+    ],
+    "subgroups": {
+     "M68": "M68_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1336475,
+    "strong": "H9020",
+    "surface": "pain",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336476,
+    "strong": "H7023",
+    "surface": "walls",
+    "morph": "HNcfpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336477,
+    "strong": "H3820A",
+    "surface": "heart",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1336478,
+    "strong": "H3820A",
+    "surface": "heart",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1336479,
+    "strong": "H9005",
+    "surface": "heart",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336480,
+    "strong": "H9030",
+    "surface": "heart",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336481,
+    "strong": "H1993",
+    "surface": "beating wildly",
+    "morph": "HVqrmsa",
+    "clusters": [
+     "M84"
+    ],
+    "subgroups": {
+     "M84": "M84_roaring"
+    }
+   },
+   {
+    "verse_lexical_id": 1336482,
+    "strong": "H9020",
+    "surface": "beating wildly",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336483,
+    "strong": "H9020",
+    "surface": "I",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336484,
+    "strong": "H3808",
+    "surface": "cannot",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336485,
+    "strong": "H2790B",
+    "surface": "silent",
+    "morph": "HVhi1cs",
+    "clusters": [
+     "M33"
+    ],
+    "subgroups": {
+     "M33": "M33_quiet"
+    }
+   },
+   {
+    "verse_lexical_id": 1336486,
+    "strong": "H3588A",
+    "surface": "for",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336487,
+    "strong": "H5315I",
+    "surface": "I",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_life_self"
+    }
+   },
+   {
+    "verse_lexical_id": 1336488,
+    "strong": "H8085G",
+    "surface": "hear",
+    "morph": "HVqp2fs",
+    "clusters": [
+     "M41"
+    ],
+    "subgroups": {
+     "M41": "M41_hearing"
+    }
+   },
+   {
+    "verse_lexical_id": 1336489,
+    "strong": "H6963H",
+    "surface": "sound",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336490,
+    "strong": "H7782",
+    "surface": "trumpet",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T12"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336491,
+    "strong": "H8643",
+    "surface": "alarm",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M84"
+    ],
+    "subgroups": {
+     "M84": "M84_shouting"
+    }
+   },
+   {
+    "verse_lexical_id": 1336492,
+    "strong": "H9020",
+    "surface": "alarm",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1336493,
+    "strong": "H4421",
+    "surface": "war",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M10"
+    ],
+    "subgroups": {
+     "M10": "M10_war"
+    }
+   }
+  ],
+  "Job.30.22": [
+   {
+    "verse_lexical_id": 1241380,
+    "strong": "H5375G",
+    "surface": "lift",
+    "morph": "HVqi2ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1241381,
+    "strong": "H0413",
+    "surface": "on",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1241382,
+    "strong": "H7307H",
+    "surface": "wind",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1241383,
+    "strong": "H9030",
+    "surface": "wind",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1241384,
+    "strong": "H7392",
+    "surface": "ride",
+    "morph": "HVhi2ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1241385,
+    "strong": "H4127",
+    "surface": "toss",
+    "morph": "HVpu2ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1241386,
+    "strong": "H9030",
+    "surface": "toss",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1241387,
+    "strong": "H9030",
+    "surface": "toss",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1241388,
+    "strong": "H8454",
+    "surface": "toss",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M16"
+    ],
+    "subgroups": {
+     "M16": "M16_not_this_sense"
+    }
+   }
+  ],
+  "Phil.1.8": [
+   {
+    "verse_lexical_id": 1493919,
+    "strong": "G1063",
+    "surface": "For",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493920,
+    "strong": "G2316",
+    "surface": "God",
+    "morph": "N-NSM-T",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493921,
+    "strong": "G1510",
+    "surface": "is",
+    "morph": "V-PAI-3S",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493922,
+    "strong": "G3450",
+    "surface": "my",
+    "morph": "P-1GS",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493923,
+    "strong": "G3144",
+    "surface": "witness",
+    "morph": "N-NSM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493924,
+    "strong": "G5613",
+    "surface": "how",
+    "morph": "PRT",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493925,
+    "strong": "G1971",
+    "surface": "yearn for",
+    "morph": "V-PAI-1S",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_desire"
+    }
+   },
+   {
+    "verse_lexical_id": 1493926,
+    "strong": "G5209",
+    "surface": "you",
+    "morph": "P-2AP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493927,
+    "strong": "G3956",
+    "surface": "all",
+    "morph": "A-APM",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493928,
+    "strong": "G1722",
+    "surface": "with",
+    "morph": "PREP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493929,
+    "strong": "G4698",
+    "surface": "affection",
+    "morph": "N-DPN",
+    "clusters": [
+     "M50",
+     "T14"
+    ],
+    "subgroups": {
+     "M50": "M50_mercy"
+    }
+   },
+   {
+    "verse_lexical_id": 1493930,
+    "strong": "G5547",
+    "surface": "Christ",
+    "morph": "N-GSM-T",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1493931,
+    "strong": "G2424G",
+    "surface": "Jesus",
+    "morph": "N-GSM-P",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Ps.106.33": [
+   {
+    "verse_lexical_id": 1251113,
+    "strong": "H3588A",
+    "surface": "for",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1251114,
+    "strong": "H7307G",
+    "surface": "spirit",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_spirit"
+    }
+   },
+   {
+    "verse_lexical_id": 1251115,
+    "strong": "H0853",
+    "surface": "spirit",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1251116,
+    "strong": "H4784",
+    "surface": "bitter",
+    "morph": "HVhp3cp",
+    "clusters": [
+     "M30"
+    ],
+    "subgroups": {
+     "M30": "M30_rebellion"
+    }
+   },
+   {
+    "verse_lexical_id": 1251117,
+    "strong": "H0981",
+    "surface": "spoke rashly",
+    "morph": "HVpw3ms",
+    "clusters": [
+     "M65"
+    ],
+    "subgroups": {
+     "M65": "M65_speaking"
+    }
+   },
+   {
+    "verse_lexical_id": 1251118,
+    "strong": "H9023",
+    "surface": "spoke rashly",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1251119,
+    "strong": "H9023",
+    "surface": "his",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1251120,
+    "strong": "H8193G",
+    "surface": "lips",
+    "morph": "HNcfdc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1251121,
+    "strong": "H9003",
+    "surface": "lips",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ]
+ },
+ "lines": [
+  {
+   "line_no": 44,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "4. **Group V and the resolved items** T-03, T-04, C-R5 and E-R6 change nothing in `cluster_strong`. **C-R4 is file-only:** the spirit classification CSV goes v1 → v2 (Psa 106:33 → [U]).",
+   "refs": [
+    {
+     "as_written": "Psa 106:33",
+     "kind": "verse",
+     "verse": "Ps.106.33"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f1"
+    ]
+   }
+  },
+  {
+   "line_no": 72,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| T-06 | today §1 | G4698 splanchna 'affection / entrails' | G4698: T2(old) · 11v | G4698: T2 → **T14**<br>G4698: add **M50** | weak | NT use is mostly 'affection, compassion' (Phi 1:8; Col 3:12). T2 -> T14 (body part) plus M50 Grace & Mercy (compassion). Alternative M51 Love (affection). | ☐ approve ☐ amend ☐ reject |",
+   "refs": [
+    {
+     "as_written": "Phi 1:8",
+     "kind": "verse",
+     "verse": "Phil.1.8"
+    },
+    {
+     "as_written": "Col 3:12",
+     "kind": "verse",
+     "verse": "Col.3.12"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f2"
+    ]
+   }
+  },
+  {
+   "line_no": 90,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| C-R4 | Batch C R4 | Psa 106:33 whose spirit | — | no change | proposed | Spirit class, not cluster membership. Lives in the M47 spirit CSV, not a DB table. PROPOSED (file, not DB): mark Psa 106:33 H7307G as [U] in the spirit classification CSV (v1 -> v2), noting both readings (Moses' spirit / God's Spirit). | ☐ approve ☐ amend ☐ reject |",
+   "refs": [
+    {
+     "as_written": "Psa 106:33",
+     "kind": "verse",
+     "verse": "Ps.106.33"
+    },
+    {
+     "as_written": "Psa 106:33",
+     "kind": "verse",
+     "verse": "Ps.106.33"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f1"
+    ]
+   }
+  },
+  {
+   "line_no": 91,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| C-R5 | Batch C R5 | 1Sa 30:6 tagged H4784 'rebel' | — | no change | by-design | Verse-level tagging (mārâ / mārar), not membership. PROPOSED: no change. Checked 2026-09-28: STEP itself tags 1Sa 30:6 'bitter' as H4784, and verse_lexical follows the source faithfully. Recorded as a lexical note (mārâ / mārar), not corrected. | ☐ approve ☐ amend ☐ reject |",
+   "refs": [
+    {
+     "as_written": "1Sa 30:6",
+     "kind": "verse",
+     "verse": "1Sam.30.6"
+    },
+    {
+     "as_written": "1Sa 30:6",
+     "kind": "verse",
+     "verse": "1Sam.30.6"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f3"
+    ]
+   }
+  },
+  {
+   "line_no": 121,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| S-04 | Batch F §0.2 | H8263 'detestable thing' (Lev 11) | H8263: M06(old) · 11v | H8263: M06 → **M10c** | weak | Ritual abomination filed under Malice. M06 -> M10c. | ☐ approve ☐ amend ☐ reject |",
+   "refs": [
+    {
+     "as_written": "Lev 11",
+     "kind": "whole chapter",
+     "verse": null
+    }
+   ],
+   "answer": {
+    "not_an_observation": "scope or method or process record",
+    "reason": "a proposed reallocation of H8263 from M06 to M10c (item S-04), awaiting the researcher's ruling"
+   }
+  },
+  {
+   "line_no": 130,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| S-13 | Batch E §0.3 | H3548 'priest' | H3548: M36(medium) · 628v | H3548: M36 → **T8**<br>H3548: T8 + alt M36 | weak | Party term (Lev 13 procedure); parallels E-R2. M36 -> T8, M36 alternative. | ☐ approve ☐ amend ☐ reject |",
+   "refs": [
+    {
+     "as_written": "Lev 13",
+     "kind": "whole chapter",
+     "verse": null
+    }
+   ],
+   "answer": {
+    "not_an_observation": "scope or method or process record",
+    "reason": "a proposed reallocation of H3548 from M36 to T8 (item S-13), awaiting the researcher's ruling"
+   }
+  },
+  {
+   "line_no": 147,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| V-03 | Batch B §0.3 | H4609A 'thought' (Psa 131 'Ascents'), H8454 (Job 30:22 'toss') | — | no change | by-design | Verse-level tag / text difficulty. No change. | ☐ approve ☐ amend ☐ reject |",
+   "refs": [
+    {
+     "as_written": "Psa 131",
+     "kind": "whole chapter",
+     "verse": null
+    },
+    {
+     "as_written": "Job 30:22",
+     "kind": "verse",
+     "verse": "Job.30.22"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f4"
+    ]
+   }
+  },
+  {
+   "line_no": 148,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| V-04 | Batch C §0.8 | H5800A leave (oath formula), H3176G wait (Jer 4:19), H2803 devise | — | no change | by-design | Verse-level sense; M30 names 'forsaking'. No change; Jer 4:19 Kethiv/Qere is a tagging note. | ☐ approve ☐ amend ☐ reject |",
+   "refs": [
+    {
+     "as_written": "Jer 4:19",
+     "kind": "verse",
+     "verse": "Jer.4.19"
+    },
+    {
+     "as_written": "Jer 4:19",
+     "kind": "verse",
+     "verse": "Jer.4.19"
+    }
+   ],
+   "answer": {
+    "captured": [
+     "f5"
+    ]
+   }
+  }
+ ],
+ "findings": [
+  {
+   "key": "f1",
+   "kind": "use",
+   "basis": "stated",
+   "text": "Psa 106:33 (H7307G, spirit) has two readings, Moses' spirit and God's Spirit, so its spirit class is marked [U] (not determinable) in the spirit classification file, both readings noted (item C-R4, a change to the M47 spirit CSV, not to the database).",
+   "flag": "reallocation register v2; a proposal, status proposed",
+   "nodes": [
+    {
+     "verse": "Ps 106:33",
+     "strong": "H7307G",
+     "surface": "spirit",
+     "cluster": "M47",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f2",
+   "kind": "use",
+   "basis": "stated",
+   "text": "G4698 (splanchna, affection or entrails): its NT use is mostly affection and compassion (Phil 1:8; Col 3:12).",
+   "nodes": [
+    {
+     "verse": "Phil 1:8",
+     "cluster": "M47",
+     "role": "standalone",
+     "disposition_note": "the verse carries G4698 (splanchna, affection); no M-coded word of it is named in the line"
+    },
+    {
+     "verse": "Col 3:12",
+     "cluster": "M47",
+     "role": "standalone",
+     "disposition_note": "the verse carries G4698 (splanchna, affection); no M-coded word of it is named in the line"
+    }
+   ]
+  },
+  {
+   "key": "f3",
+   "kind": "unfitted",
+   "basis": "stated",
+   "text": "1 Sam 30:6 is tagged H4784 rebel, but the word is bitter (marah / marar): this is verse-level tagging, not membership. STEP itself tags 1 Sam 30:6 bitter as H4784, and verse_lexical follows the source faithfully; recorded as a lexical note, not corrected (item C-R5, checked 2026-09-28).",
+   "nodes": [
+    {
+     "verse": "1 Sam 30:6",
+     "strong": "H4784",
+     "surface": "bitter",
+     "cluster": "M30",
+     "role": "characteristic"
+    }
+   ]
+  },
+  {
+   "key": "f4",
+   "kind": "unfitted",
+   "basis": "stated",
+   "text": "H4609A thought (Psa 131, Ascents) and H8454 (Job 30:22, toss) are verse-level tag or text difficulties; no change (item V-03).",
+   "nodes": [
+    {
+     "verse": "Ps.131.1",
+     "cluster": "M47",
+     "role": "standalone",
+     "disposition_note": "the line names Psa 131 as a whole chapter: one node on its first verse (H4609A thought)"
+    },
+    {
+     "verse": "Job 30:22",
+     "cluster": "M47",
+     "role": "standalone",
+     "disposition_note": "the verse carries H8454 (toss); no M-coded word of it is named in the line"
+    }
+   ]
+  },
+  {
+   "key": "f5",
+   "kind": "unfitted",
+   "basis": "stated",
+   "text": "Jer 4:19 (H3176G, wait) is a verse-level sense: M30 names forsaking; the Kethiv/Qere at Jer 4:19 is a tagging note, no change (item V-04).",
+   "nodes": [
+    {
+     "verse": "Jer 4:19",
+     "cluster": "M47",
+     "role": "standalone",
+     "disposition_note": "the verse carries H3176G (wait); no M-coded word of it is named in the line"
+    }
+   ]
+  }
+ ]
+}

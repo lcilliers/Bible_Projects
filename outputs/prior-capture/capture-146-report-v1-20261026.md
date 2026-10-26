@@ -1,0 +1,222 @@
+# Prior-work capture: _analytics/Clusters/M47 - inner-seat/M47-x-life-body-condition-batchG-v3-20260928.md
+
+Status **captured**. 195 observation(s) written, 0 joined an identical live description, 1662 node(s); 405 line(s) answered (405 answer rows).
+
+## Unfitted observations (tag unfitted, design 2.4)
+
+none
+
+## Flags the document carries (Q5)
+
+none
+
+## Node notes (no occurrence, untagged word)
+
+- findings[0] (f1) nodes[25]: H2416A occurs 2 times in Lev.13.15 and the surface 'raw' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[0] (f1) nodes[26]: H1320 occurs 2 times in Lev.13.15 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[0] (f1) nodes[27]: H2416A occurs 2 times in Lev.13.15 and the surface 'Raw' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[0] (f1) nodes[28]: H1320 occurs 2 times in Lev.13.15 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[3] (f4) nodes[10]: H3820A occurs 2 times in Gen.8.21 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[3] (f4) nodes[11]: H3820A occurs 2 times in Gen.8.21 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[3] (f4) nodes[15]: H1320 occurs 2 times in Gen.9.15 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[3] (f4) nodes[16]: H1320 occurs 2 times in Gen.9.15 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[8] (f9) nodes[5]: H7307G occurs 3 times in Ezek.1.20 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[8] (f9) nodes[6]: H7307G occurs 3 times in Ezek.1.20 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[11] (f12) nodes[1]: H8217 occurs 2 times in Isa.57.15 and the surface 'lowly' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[11] (f12) nodes[2]: H7307G occurs 2 times in Isa.57.15 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[11] (f12) nodes[3]: H2421 occurs 2 times in Isa.57.15 and the surface 'revive' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[11] (f12) nodes[4]: H7307G occurs 2 times in Isa.57.15 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[11] (f12) nodes[5]: H8217 occurs 2 times in Isa.57.15 and the surface 'lowly' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[11] (f12) nodes[6]: H2421 occurs 2 times in Isa.57.15 and the surface 'revive' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[21] (f22) nodes[2]: H3824 occurs 2 times in Ps.104.15 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[21] (f22) nodes[4]: H3824 occurs 2 times in Ps.104.15 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[28] (f29) nodes[0]: H6960A occurs 2 times in Ps.27.14 and the surface 'Wait' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[28] (f29) nodes[4]: H6960A occurs 2 times in Ps.27.14 and the surface 'wait' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[30] (f31) nodes[27]: H0034 occurs 2 times in Deut.15.7 and the surface 'poor' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[30] (f31) nodes[30]: H0034 occurs 2 times in Deut.15.7 and the surface 'poor' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[33] (f34) nodes[5]: H3820A occurs 2 times in 2Sam.17.10 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[33] (f34) nodes[6]: H3820A occurs 2 times in 2Sam.17.10 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[34] (f35) nodes[4]: H3820A occurs 2 times in Ps.28.7 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[34] (f35) nodes[6]: H3820A occurs 2 times in Ps.28.7 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[35] (f36) nodes[8]: H3581B occurs 2 times in Job.6.12 and the surface 'strength' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[35] (f36) nodes[9]: H3581B occurs 2 times in Job.6.12 and the surface 'strength' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[38] (f39) nodes[2]: H5046 occurs 2 times in Judg.16.18 and the surface 'told' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[38] (f39) nodes[3]: H3820A occurs 2 times in Judg.16.18 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[38] (f39) nodes[4]: H5046 occurs 2 times in Judg.16.18 and the surface 'told' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[38] (f39) nodes[5]: H3820A occurs 2 times in Judg.16.18 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[40] (f41) nodes[0]: H2416A occurs 2 times in 1Sam.20.3 and the surface 'lives' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[40] (f41) nodes[2]: H2416A occurs 2 times in 1Sam.20.3 and the surface 'lives' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[40] (f41) nodes[3]: H2416A occurs 2 times in 1Sam.25.26 and the surface 'lives' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[40] (f41) nodes[5]: H2416A occurs 2 times in 1Sam.25.26 and the surface 'lives' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[40] (f41) nodes[31]: H4428G occurs 3 times in 2Sam.14.19 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[40] (f41) nodes[34]: H4428G occurs 3 times in 2Sam.14.19 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[40] (f41) nodes[35]: H4428G occurs 3 times in 2Sam.14.19 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[46] (f47) nodes[7]: H4428G occurs 2 times in 2Sam.4.8 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[46] (f47) nodes[12]: H4428G occurs 2 times in 2Sam.4.8 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[46] (f47) nodes[20]: H2416A occurs 2 times in 1Sam.20.3 and the surface 'lives' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[46] (f47) nodes[22]: H2416A occurs 2 times in 1Sam.20.3 and the surface 'lives' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[50] (f51) nodes[1]: H5315G occurs 3 times in Ezek.13.18 and the surface 'souls' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[50] (f51) nodes[2]: H5315G occurs 3 times in Ezek.13.18 and the surface 'souls' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[50] (f51) nodes[3]: H5315G occurs 3 times in Ezek.13.18 and the surface 'souls' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[50] (f51) nodes[6]: H5315G occurs 2 times in Ezek.13.19 and the surface 'souls' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[50] (f51) nodes[9]: H5315G occurs 2 times in Ezek.13.19 and the surface 'souls' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[54] (f55) nodes[8]: H5315H occurs 2 times in 1Kgs.20.39 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[54] (f55) nodes[9]: H5315H occurs 2 times in 1Kgs.20.39 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[54] (f55) nodes[10]: H5315H occurs 2 times in 1Kgs.20.42 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[54] (f55) nodes[11]: H5315H occurs 2 times in 1Kgs.20.42 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[55] (f56) nodes[10]: H0160 occurs 2 times in Song.8.7 and the surface 'love' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[55] (f56) nodes[11]: H0160 occurs 2 times in Song.8.7 and the surface 'love' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[55] (f56) nodes[15]: G5590G occurs 2 times in Matt.16.26 and the surface 'soul' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[55] (f56) nodes[16]: G5590G occurs 2 times in Matt.16.26 and the surface 'soul' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[58] (f59) nodes[3]: H5315H occurs 3 times in 1Sam.25.29 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[58] (f59) nodes[4]: H5315H occurs 3 times in 1Sam.25.29 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[63] (f64) nodes[0]: G5590H occurs 2 times in John.12.25 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[63] (f64) nodes[1]: G5590H occurs 2 times in John.12.25 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[0]: G5427 occurs 2 times in Rom.8.6 and the surface 'mind on' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[3]: G5427 occurs 2 times in Rom.8.6 and the surface 'mind on' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[7]: G2198 occurs 2 times in Rom.8.13 and the surface 'live' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[12]: G2198 occurs 2 times in Rom.8.13 and the surface 'live' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[13]: G4561 occurs 2 times in Gal.6.8 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[14]: G4561 occurs 2 times in Gal.6.8 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[15]: G4151G occurs 2 times in Gal.6.8 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[16]: G4151G occurs 2 times in Gal.6.8 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[18]: G4561 occurs 2 times in Rom.8.12 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[67] (f68) nodes[20]: G4561 occurs 2 times in Rom.8.12 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[68] (f69) nodes[0]: G2198 occurs 4 times in Gal.2.20 and the surface 'live' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[68] (f69) nodes[1]: G2198 occurs 4 times in Gal.2.20 and the surface 'live' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[68] (f69) nodes[3]: G2198 occurs 4 times in Gal.2.20 and the surface 'live' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[71] (f72) nodes[0]: G3551 occurs 2 times in Rom.8.2 and the surface 'law' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[71] (f72) nodes[3]: G3551 occurs 2 times in Rom.8.2 and the surface 'law' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[71] (f72) nodes[4]: G4151G occurs 2 times in 2Cor.3.6 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[71] (f72) nodes[5]: G4151G occurs 2 times in 2Cor.3.6 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[71] (f72) nodes[12]: G4151G occurs 2 times in Gal.5.25 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[71] (f72) nodes[13]: G4151G occurs 2 times in Gal.5.25 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[71] (f72) nodes[14]: G4151G occurs 2 times in Rom.8.11 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[71] (f72) nodes[17]: G4151G occurs 2 times in Rom.8.11 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[73] (f74) nodes[2]: G4561 occurs 3 times in Rom.8.3 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[73] (f74) nodes[3]: G4561 occurs 3 times in Rom.8.3 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[73] (f74) nodes[4]: G4561 occurs 3 times in Rom.8.3 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[73] (f74) nodes[7]: G4151G occurs 2 times in Rom.8.26 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[73] (f74) nodes[10]: G4151G occurs 2 times in Rom.8.26 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[82] (f83) nodes[2]: G2588 occurs 2 times in John.12.40 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[82] (f83) nodes[4]: G2588 occurs 2 times in John.12.40 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[82] (f83) nodes[10]: H5787 occurs 2 times in 2Sam.5.8 and the surface 'blind' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[82] (f83) nodes[13]: H5787 occurs 2 times in 2Sam.5.8 and the surface 'blind' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[85] (f86) nodes[14]: H3027H occurs 2 times in Dan.8.25 and the surface 'hand' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[85] (f86) nodes[18]: H3027H occurs 2 times in Dan.8.25 and the surface 'hand' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[90] (f91) nodes[18]: G4151G occurs 2 times in 1John.4.6 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[90] (f91) nodes[20]: G4151G occurs 2 times in 1John.4.6 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[99] (f100) nodes[8]: G4561 occurs 2 times in Phil.3.4 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[99] (f100) nodes[10]: G4561 occurs 2 times in Phil.3.4 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[100] (f101) nodes[3]: H7307G occurs 2 times in 1Chr.5.26 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[100] (f101) nodes[4]: H7307G occurs 2 times in 1Chr.5.26 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[109] (f110) nodes[5]: H4428G occurs 2 times in Dan.11.25 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[109] (f110) nodes[6]: H4428G occurs 2 times in Dan.11.25 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[122] (f123) nodes[4]: H5315H occurs 2 times in 1Kgs.19.2 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[122] (f123) nodes[5]: H5315H occurs 2 times in 1Kgs.19.2 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[135] (f136) nodes[4]: H3045 occurs 2 times in Eccl.7.25 and the surface 'know' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[135] (f136) nodes[5]: H3045 occurs 2 times in Eccl.7.25 and the surface 'know' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[142] (f143) nodes[6]: H7563 occurs 2 times in Ezek.3.19 and the surface 'wicked' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[142] (f143) nodes[8]: H7563 occurs 2 times in Ezek.3.19 and the surface 'wicked' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[145] (f146) nodes[26]: H2416A occurs 2 times in Eccl.9.4 and the surface 'living' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[145] (f146) nodes[27]: H2416A occurs 2 times in Eccl.9.4 and the surface 'living' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[145] (f146) nodes[31]: H3045 occurs 2 times in Eccl.9.5 and the surface 'know' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[145] (f146) nodes[34]: H3045 occurs 2 times in Eccl.9.5 and the surface 'know' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[152] (f153) nodes[6]: H4191 occurs 2 times in Zech.11.9 and the surface 'die' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[152] (f153) nodes[7]: H4191 occurs 2 times in Zech.11.9 and the surface 'die' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[155] (f156) nodes[9]: H7307G occurs 4 times in Isa.11.2 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[155] (f156) nodes[10]: H7307G occurs 4 times in Isa.11.2 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[155] (f156) nodes[11]: H7307G occurs 4 times in Isa.11.2 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[155] (f156) nodes[12]: H7307G occurs 4 times in Isa.11.2 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[162] (f163) nodes[3]: H7307G occurs 2 times in Eccl.3.21 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[162] (f163) nodes[4]: H7307G occurs 2 times in Eccl.3.21 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[163] (f164) nodes[8]: G5427 occurs 2 times in Rom.8.6 and the surface 'mind on' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[163] (f164) nodes[11]: G5427 occurs 2 times in Rom.8.6 and the surface 'mind on' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[163] (f164) nodes[14]: G2198 occurs 2 times in Rom.8.13 and the surface 'live' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[163] (f164) nodes[18]: G2198 occurs 2 times in Rom.8.13 and the surface 'live' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[163] (f164) nodes[19]: G3551 occurs 2 times in Rom.8.2 and the surface 'law' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[163] (f164) nodes[22]: G3551 occurs 2 times in Rom.8.2 and the surface 'law' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[164] (f165) nodes[10]: G2288 occurs 2 times in Heb.2.14 and the surface 'death' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[164] (f165) nodes[12]: G2288 occurs 2 times in Heb.2.14 and the surface 'death' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[172] (f173) nodes[6]: H7760K occurs 2 times in 2Sam.18.3 and the surface 'care' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[172] (f173) nodes[7]: H3820A occurs 2 times in 2Sam.18.3 and the surface 'care' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[172] (f173) nodes[9]: H7760K occurs 2 times in 2Sam.18.3 and the surface 'care' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[172] (f173) nodes[10]: H3820A occurs 2 times in 2Sam.18.3 and the surface 'care' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[172] (f173) nodes[18]: H7451C occurs 2 times in Jer.26.19 and the surface 'disaster' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[172] (f173) nodes[19]: H7451C occurs 2 times in Jer.26.19 and the surface 'disaster' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[178] (f179) nodes[12]: G5590G occurs 2 times in Matt.16.26 and the surface 'soul' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[178] (f179) nodes[13]: G5590G occurs 2 times in Matt.16.26 and the surface 'soul' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[179] (f180) nodes[11]: H0160 occurs 2 times in Song.8.7 and the surface 'love' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[179] (f180) nodes[12]: H0160 occurs 2 times in Song.8.7 and the surface 'love' picks none: no verse_lexical_id (for the anomaly group, B:121)
+
+## References that resolve to no single verse
+
+- line 332: 16:30 (verse)
+- line 417: Mic 6 (whole chapter)
+- line 417: Mat 16 (whole chapter)
+- line 423: Exo 30 (whole chapter)
+- line 423: Num 35 (whole chapter)
+- line 583: Lev 26 (whole chapter)
+- line 700: 1Ki 22 (whole chapter)
+- line 732: Hag 1 (whole chapter)
+- line 788: Num 11 (whole chapter)
+- line 788: 2Ki 2 (whole chapter)
+- line 878: Exo 16 (whole chapter)
+- line 879: Num 21 (whole chapter)
+- line 884: Exo 16 (whole chapter)
+- line 884: Num 21 (whole chapter)
+- line 916: Psa 116:1–9 (verse)
+- line 1048: Eze 37 (whole chapter)
+- line 1116: Judg 16 (whole chapter)
+- line 1124: Gen 45 (whole chapter)
+- line 1127: Eze 13 (whole chapter)
+- line 1137: 1Ki 22 (whole chapter)
+- line 1140: Joh 6 (whole chapter)
+- line 1160: Num 21 (whole chapter)
+- line 1168: Psa 116:9; 56:13 (verse)
+- line 1188: Psa 77 (whole chapter)
+- line 1188: Jon 4 (whole chapter)
+- line 1197: Eze 18 (whole chapter)
+- line 1197: Deu 19 (whole chapter)
+
+## Quotations not found in the ESV text (captured as written)
+
+- findings[0] (f1): "alive / living"
+- findings[0] (f1): "be able / can"
+- findings[0] (f1): "meet / toward / against"
+- findings[0] (f1): "bring / lead"
+- findings[0] (f1): "in the heart of the oak"
+- findings[1] (f2): "Living soul"
+- findings[8] (f9): "Living soul"
+- findings[21] (f22): "a morsel of bread, that you may refresh   your hearts"
+- findings[27] (f28): "be strong / strengthen"
+- findings[27] (f28): "strong of heart"
+- findings[38] (f39): "soul vexed to death"
+- findings[45] (f46): "swore secretly, 'As the Lord lives, who made our souls, I will not put you to death'"
+- findings[46] (f47): "he took his life in his hand and struck down the Philistine"
+- findings[50] (f51): "and encouraged the wicked"
+- findings[62] (f63): "let my soul die with the Philistines"
+- findings[65] (f66): "an angel touched him and said, 'Arise and eat'"
+- findings[65] (f66): "he went in the strength of that food forty days and forty nights to Horeb"
+- findings[74] (f75): "weak / languishing"
+- findings[95] (f96): "and speak to her heart"
+- findings[119] (f120): "and the spirits of the righteous made perfect"
+- findings[121] (f122): "he pursued the poor and needy and the brokenhearted, to put them to death"
+- findings[130] (f131): "asked his soul to die"
+- findings[137] (f138): "I will walk before the Lord in the land of the living"
+- findings[142] (f143): "Deliver one's soul"
+- findings[151] (f152): "living soul"
+- findings[151] (f152): "dead *nephesh*"
+- findings[152] (f153): "my soul was short with them"
+- findings[172] (f173): "hating one's life"
+- findings[172] (f173): "not loving one's life unto death"
+- findings[175] (f176): "was put to death. They buried him, for they said, 'He is the grandson of Jehoshaphat, who sought the Lord with all his heart'"
+- findings[176] (f177): "let not my lord take it to heart"
+- findings[178] (f179): "Living soul"
+- findings[179] (f180): "stumbling of heart"
+- findings[179] (f180): "does not attend"
+- findings[179] (f180): "not retained"
+- findings[179] (f180): "gathered back"
+- findings[179] (f180): "finds a ransom"
+- findings[180] (f181): "Deliver one's soul"
+- findings[189] (f190): "Life 'better' gone"
