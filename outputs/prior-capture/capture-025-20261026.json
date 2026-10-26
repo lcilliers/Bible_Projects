@@ -1,0 +1,295 @@
+{
+ "kind": "prior-capture",
+ "version": 1,
+ "built_at": "2026-10-26T13:08:01Z",
+ "file": {
+  "id": 25,
+  "path": "_analytics/Clusters/M02 - anger-wrath/anger-strand-handoff-v1-20261005.md",
+  "cluster": "M02",
+  "sha256": "e19df572b985b6fd5d3fba4af4ef87b3c00d0a4fbb2882f66cb3cbcab55a220a"
+ },
+ "fill": "findings: one per material observation the document makes about a verse (CP-01 to CP-07); lines[].answer: every line answered (captured / already_recorded / not_an_observation)",
+ "counts": {
+  "lines": 1,
+  "verses": 1,
+  "unresolved_refs": 0
+ },
+ "october": {},
+ "october_same_prefix": {},
+ "unresolved": [],
+ "verse_words": {
+  "2Kgs.23.26": [
+   {
+    "verse_lexical_id": 1169721,
+    "strong": "H0389",
+    "surface": "Still",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169722,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169723,
+    "strong": "H3808",
+    "surface": "not",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169724,
+    "strong": "H7725G",
+    "surface": "turn",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169725,
+    "strong": "H2740",
+    "surface": "burning",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M02"
+    ],
+    "subgroups": {
+     "M02": "M02_burning"
+    }
+   },
+   {
+    "verse_lexical_id": 1169726,
+    "strong": "H9006",
+    "surface": "burning",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169727,
+    "strong": "H1419A",
+    "surface": "great",
+    "morph": "HAamsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169728,
+    "strong": "H9009",
+    "surface": "great",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169729,
+    "strong": "H9023",
+    "surface": "great",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169730,
+    "strong": "H0639G",
+    "surface": "wrath",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M02",
+     "T14"
+    ],
+    "subgroups": {
+     "M02": "M02_wrath"
+    }
+   },
+   {
+    "verse_lexical_id": 1169731,
+    "strong": "H0834A",
+    "surface": "which",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169732,
+    "strong": "H0639G",
+    "surface": "anger",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M02",
+     "T14"
+    ],
+    "subgroups": {
+     "M02": "M02_anger"
+    }
+   },
+   {
+    "verse_lexical_id": 1169733,
+    "strong": "H2734",
+    "surface": "kindled",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "M02"
+    ],
+    "subgroups": {
+     "M02": "M02_burning"
+    }
+   },
+   {
+    "verse_lexical_id": 1169734,
+    "strong": "H3063G",
+    "surface": "Judah",
+    "morph": "HNpl",
+    "clusters": [
+     "T11"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169735,
+    "strong": "H9003",
+    "surface": "Judah",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169736,
+    "strong": "H9023",
+    "surface": "Judah",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169737,
+    "strong": "H5921A",
+    "surface": "because",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169738,
+    "strong": "H3605",
+    "surface": "all",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169739,
+    "strong": "H3708A",
+    "surface": "provocations",
+    "morph": "HNcmpa",
+    "clusters": [
+     "M02"
+    ],
+    "subgroups": {
+     "M02": "M02_provocation"
+    }
+   },
+   {
+    "verse_lexical_id": 1169740,
+    "strong": "H9009",
+    "surface": "provocations",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169741,
+    "strong": "H0834A",
+    "surface": "which",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169742,
+    "strong": "H4519H",
+    "surface": "Manasseh",
+    "morph": "HNpm",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169743,
+    "strong": "H9033",
+    "surface": "Manasseh",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1169744,
+    "strong": "H3707",
+    "surface": "provoked",
+    "morph": "HVhp3ms",
+    "clusters": [
+     "M02"
+    ],
+    "subgroups": {
+     "M02": "M02_provocation"
+    }
+   }
+  ]
+ },
+ "lines": [
+  {
+   "line_no": 47,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- **Faces:** a face-assign script per unit (pattern `anger-unit2-face-assign-v1-20261005.py`), with the parties columns (ruling 6.2). Every hit gets a face. Face labels carry the unit number (unit 2: 2A–2W; unit 3: 3A…); AG ids continue from AG-199; unit 5 faces 5A…. Where one verse needs two faces, set them by (reference, position), as unit 3 did for 2Ki 23:26.",
+   "refs": [
+    {
+     "as_written": "2Ki 23:26",
+     "kind": "verse",
+     "verse": "2Kgs.23.26"
+    }
+   ],
+   "answer": null
+  }
+ ],
+ "findings": []
+}

@@ -1,0 +1,208 @@
+# Prior-work capture: _analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-phenomena-v2-20260928.md
+
+Status **captured**. 319 observation(s) written, 14 joined an identical live description, 2440 node(s); 784 line(s) answered (784 answer rows).
+
+## Unfitted observations (tag unfitted, design 2.4)
+
+none
+
+## Flags the document carries (Q5)
+
+- observation 14189: verse taken from the section heading: the claim's references are bare
+- observation 14227: verse taken from the section heading: the claim's references are bare
+- observation 14231: verse taken from the section heading: the claim's references are bare
+- observation 14232: verse taken from the section heading: the claim's references are bare
+- observation 14304: verse taken from the section heading: the claim's references are bare
+
+## Node notes (no occurrence, untagged word)
+
+- findings[1] (g79) nodes[2]: H5315H occurs 2 times in 1Kgs.20.42 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[2] (g85) nodes[3]: H3190 occurs 2 times in Gen.4.7 and the surface 'well' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[4] (g95) nodes[1]: H5315H occurs 2 times in 1Kgs.20.42 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[8] (g116) nodes[1]: H1697G occurs 3 times in 2Sam.19.43 and the surface 'words' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[9] (g118) nodes[25]: G1777 occurs 3 times in Matt.5.22 and the surface 'liable' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[9] (g118) nodes[28]: G1435 occurs 2 times in Matt.5.24 and the surface 'gift' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[16] (g162) nodes[3]: H7307G occurs 2 times in Eccl.7.8 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[19] (g179) nodes[6]: H2483 occurs 2 times in 2Chr.16.12 and the surface 'disease' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[19] (g179) nodes[9]: H6879 occurs 2 times in 2Chr.26.21 and the surface 'leper' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[20] (g183) nodes[6]: H4428G occurs 3 times in Esth.1.19 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[20] (g183) nodes[8]: H4428G occurs 3 times in Esth.1.19 and the surface 'King' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[20] (g183) nodes[11]: H4428G occurs 2 times in 2Kgs.6.11 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[20] (g183) nodes[14]: H4428G occurs 2 times in 2Kgs.6.12 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[21] (g187) nodes[4]: H4428G occurs 2 times in Esth.1.10 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[21] (g187) nodes[6]: H4428G occurs 2 times in Esth.1.10 and the surface 'King' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[23] (g194) nodes[1]: H4428G occurs 2 times in 2Kgs.6.11 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[23] (g194) nodes[2]: H4428G occurs 2 times in 2Kgs.6.12 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[23] (g194) nodes[9]: H4428G occurs 2 times in Esth.1.10 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[23] (g194) nodes[11]: H4428G occurs 2 times in Esth.1.10 and the surface 'King' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[23] (g194) nodes[17]: H1320 occurs 2 times in 2Kgs.5.14 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[24] (g203) nodes[2]: H4430 occurs 3 times in Dan.2.10 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[24] (g203) nodes[4]: H4430 occurs 2 times in Dan.2.11 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[24] (g203) nodes[39]: H6944G occurs 2 times in Dan.11.30 and the surface 'holy' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[24] (g203) nodes[40]: H1285 occurs 2 times in Dan.11.30 and the surface 'covenant' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[26] (g222) nodes[5]: H4428G occurs 2 times in Esth.7.7 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[26] (g222) nodes[7]: H4428G occurs 2 times in Esth.7.10 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[27] (g228) nodes[7]: H2734 occurs 2 times in 1Sam.20.7 and the surface 'angry' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[27] (g228) nodes[26]: H8269 occurs 2 times in 1Sam.29.4 and the surface 'commanders' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[29] (g238) nodes[3]: H4428G occurs 2 times in Esth.7.10 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[31] (g243) nodes[0]: H4428G occurs 2 times in Esth.7.7 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[33] (g265) nodes[4]: H4428G occurs 2 times in Esth.7.7 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[34] (g272) nodes[9]: H0639G occurs 2 times in Job.32.2 and the surface 'anger' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[38] (g286) nodes[0]: H0639G occurs 2 times in Job.32.2 and the surface 'anger' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[39] (g291) nodes[0]: H0639G occurs 2 times in Job.32.2 and the surface 'anger' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[44] (g323) nodes[13]: H1320 occurs 2 times in Neh.5.5 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[52] (g376) nodes[31]: H3045 occurs 3 times in Eccl.1.17 and the surface 'know' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[52] (g376) nodes[54]: H3820A occurs 2 times in Eccl.11.9 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[79] (g510) nodes[3]: H1320 occurs 2 times in Num.11.13 and the surface 'meat' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[80] (g514) nodes[24]: H3190 occurs 2 times in Jonah.4.9 and the surface 'well' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[80] (g514) nodes[25]: H2734 occurs 2 times in Jonah.4.9 and the surface 'angry' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[80] (g514) nodes[40]: H1875 occurs 2 times in Isa.8.19 and the surface 'Inquire' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[80] (g514) nodes[41]: H1875 occurs 2 times in Isa.8.19 and the surface 'inquire' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[88] (g551) nodes[10]: H7068 occurs 2 times in Num.25.11 and the surface 'jealousy' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[89] (g555) nodes[1]: H5046 occurs 3 times in Judg.14.16 and the surface 'told' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[93] (g573) nodes[6]: H1697G occurs 2 times in Jer.15.16 and the surface 'words' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[93] (g573) nodes[16]: H7307G occurs 2 times in Ezek.3.14 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[93] (g573) nodes[19]: H7307G occurs 2 times in Ezek.3.14 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[93] (g573) nodes[29]: H2534 occurs 2 times in Ps.76.10 and the surface 'wrath' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[94] (g582) nodes[1]: H7307G occurs 2 times in Ezek.3.14 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[94] (g582) nodes[2]: H7307G occurs 2 times in Ezek.3.14 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[94] (g582) nodes[3]: H1697G occurs 2 times in Jer.15.16 and the surface 'words' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[95] (g589) nodes[0]: H7065 occurs 2 times in Deut.32.21 and the surface 'jealous' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[95] (g589) nodes[1]: H3707 occurs 2 times in Deut.32.21 and the surface 'anger' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[99] (g596) nodes[4]: H7065 occurs 2 times in Deut.32.21 and the surface 'jealous' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[100] (g598) nodes[1]: H7065 occurs 2 times in Deut.32.21 and the surface 'jealous' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[100] (g598) nodes[2]: H3707 occurs 2 times in Deut.32.21 and the surface 'anger' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[110] (g665) nodes[4]: G4559 occurs 2 times in 1Cor.3.3 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[111] (g673) nodes[13]: G4151G occurs 2 times in Gal.5.25 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[113] (g677) nodes[7]: G4151G occurs 2 times in Gal.5.25 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[143] (g814) nodes[5]: G2323 occurs 2 times in Luke.13.14 and the surface 'healed' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[144] (g819) nodes[2]: G2323 occurs 2 times in Luke.13.14 and the surface 'healed' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[145] (g825) nodes[6]: G2919 occurs 2 times in John.7.24 and the surface 'judge' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[153] (g871) nodes[9]: H2534 occurs 2 times in Ps.58.4 and the surface 'venom' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[158] (g900) nodes[0]: H3824 occurs 2 times in Isa.7.2 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[158] (g900) nodes[3]: H2534 occurs 2 times in Isa.51.13 and the surface 'wrath' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[158] (g900) nodes[5]: H4428G occurs 2 times in Dan.1.10 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[160] (g905) nodes[10]: H2534 occurs 2 times in Isa.51.13 and the surface 'wrath' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[162] (g911) nodes[2]: H3824 occurs 2 times in Isa.7.2 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[164] (g920) nodes[0]: H1347 occurs 2 times in Isa.16.6 and the surface 'pride' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[165] (g925) nodes[1]: H1347 occurs 2 times in Jer.48.29 and the surface 'pride' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[165] (g925) nodes[7]: H1347 occurs 2 times in Isa.16.6 and the surface 'pride' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[166] (g926) nodes[5]: H3213 occurs 2 times in Isa.16.7 and the surface 'wail' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[169] (g936) nodes[5]: G1401 occurs 2 times in Luke.14.21 and the surface 'servant' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[170] (g940) nodes[0]: G1653 occurs 2 times in Matt.18.33 and the surface 'mercy' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[179] (g970) nodes[0]: G2200 occurs 2 times in Rev.3.15 and the surface 'hot' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[185] (g983) nodes[2]: H3519 occurs 2 times in Hab.2.16 and the surface 'glory' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[187] (g989) nodes[0]: G0169 occurs 3 times in Rev.18.2 and the surface 'unclean' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[189] (g998) nodes[0]: G3077 occurs 2 times in 2Cor.7.10 and the surface 'grief' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[221] (r1043) nodes[6]: H4428G occurs 2 times in 2Sam.13.24 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[222] (r1044) nodes[0]: H5315H occurs 2 times in 1Kgs.20.42 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[223] (r1045) nodes[3]: H1320 occurs 2 times in 2Kgs.5.14 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[224] (r1046) nodes[3]: H2483 occurs 2 times in 2Chr.16.12 and the surface 'disease' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[229] (r1051) nodes[1]: H0639G occurs 2 times in Job.32.2 and the surface 'anger' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[230] (r1052) nodes[0]: H0639G occurs 2 times in Job.32.2 and the surface 'anger' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[232] (r1054) nodes[1]: H3824 occurs 2 times in Isa.7.2 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[233] (r1055) nodes[0]: H3824 occurs 2 times in Isa.7.2 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[233] (r1055) nodes[1]: H1697G occurs 2 times in Jer.15.16 and the surface 'words' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[234] (r1056) nodes[3]: H7307G occurs 2 times in Ezek.3.14 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[234] (r1056) nodes[6]: H7307G occurs 2 times in Ezek.3.14 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[235] (r1057) nodes[7]: H4428G occurs 3 times in Jer.37.17 and the surface 'King' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[235] (r1057) nodes[8]: H4428G occurs 3 times in Jer.37.17 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[236] (r1058) nodes[18]: H4430 occurs 3 times in Dan.3.24 and the surface 'King' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[236] (r1058) nodes[19]: H4430 occurs 3 times in Dan.3.24 and the surface 'king' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[237] (r1059) nodes[13]: H3190 occurs 2 times in Jonah.4.9 and the surface 'well' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[237] (r1059) nodes[14]: H2734 occurs 2 times in Jonah.4.9 and the surface 'angry' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[266] (r1108) nodes[1]: H7307G occurs 2 times in Ezek.3.14 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[266] (r1108) nodes[2]: H7307G occurs 2 times in Ezek.3.14 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[274] (r1119) nodes[16]: H7307G occurs 2 times in Ezek.3.14 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[274] (r1119) nodes[17]: H7307G occurs 2 times in Ezek.3.14 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[276] (r1121) nodes[2]: H7307G occurs 2 times in Ezek.3.14 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[276] (r1121) nodes[3]: H7307G occurs 2 times in Ezek.3.14 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[292] (r1165) nodes[1]: H5315H occurs 2 times in 1Kgs.20.42 and the surface 'life' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[294] (r1167) nodes[3]: H1320 occurs 2 times in 2Kgs.5.14 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[298] (r1171) nodes[1]: H1320 occurs 2 times in Neh.5.5 and the surface 'flesh' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[307] (r1185) nodes[10]: H7307G occurs 2 times in Eccl.7.8 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[308] (r1186) nodes[1]: H1285 occurs 2 times in Dan.11.30 and the surface 'covenant' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[311] (r1189) nodes[11]: H3820A occurs 2 times in Eccl.1.16 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[311] (r1189) nodes[19]: H3820A occurs 2 times in Eccl.7.4 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[311] (r1189) nodes[20]: H3820A occurs 2 times in Eccl.11.9 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[314] (r1192) nodes[1]: H7307G occurs 2 times in Ezek.3.14 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[314] (r1192) nodes[2]: H7307G occurs 2 times in Ezek.3.14 and the surface 'spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[317] (r1195) nodes[4]: G4151G occurs 2 times in Gal.5.25 and the surface 'Spirit' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[319] (r1197) nodes[6]: H8104H occurs 2 times in Prov.21.23 and the surface 'keeps' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[326] (r1204) nodes[0]: H3824 occurs 2 times in Isa.7.2 and the surface 'heart' picks none: no verse_lexical_id (for the anomaly group, B:121)
+- findings[331] (r1209) nodes[0]: G0169 occurs 3 times in Rev.18.2 and the surface 'unclean' picks none: no verse_lexical_id (for the anomaly group, B:121)
+
+## References that resolve to no single verse
+
+- line 114: Gen 13 (whole chapter)
+- line 115: 19:43 (verse)
+- line 115: 19:43 (verse)
+- line 115: Gen 13 (whole chapter)
+- line 115: 2Sa 19 (whole chapter)
+- line 116: Deu 2 (whole chapter)
+- line 119: Gen 13 (whole chapter)
+- line 125: 15:40 (verse)
+- line 142: 27:45 (verse)
+- line 142: 27:46 (verse)
+- line 154: Gen 27 (whole chapter)
+- line 172: 30:1 (verse)
+- line 172: 30:1 (verse)
+- line 173: 30:3 (verse)
+- line 237: Gen 39 (whole chapter)
+- line 381: Psa 6 (whole chapter)
+- line 414: 45:3 (verse)
+- line 414: 45:4 (verse)
+- line 416: 45:5, 8 (verse)
+- line 416: 45:5, 8 (verse)
+- line 419: 45:9 (verse)
+- line 423: Gen 45:2–9 (verse)
+- line 429: 49:6 (verse)
+- line 430: 49:7 (verse)
+- line 431: 49:6 (verse)
+- line 431: Gen 34 (whole chapter)
+- line 462: Lev 10 (whole chapter)
+- line 639: 1Sa 18 (whole chapter)
+- line 640: 112:8 (verse)
+- line 758: 29:8 (verse)
+- line 768: 37:3 (verse)
+- line 769: 37:5 (verse)
+- line 770: 37:7 (verse)
+- line 771: 37:8 (verse)
+- line 774: 37:2 (verse)
+- line 774: 37:9 (verse)
+- line 844: Psa 2 (whole chapter)
+- line 852: Act 19 (whole chapter)
+- line 859: Psa 2 (whole chapter)
+- line 1035: Gen 44:18–45:8 (verse)
+- line 1191: Jon 4 (whole chapter)
+- line 1249: Jon 4 (whole chapter)
+- line 1249: Job 3 (whole chapter)
+
+## Quotations not found in the ESV text (captured as written)
+
+- findings[3] (g90): "stoned to death"
+- findings[13] (g143): "until he forgets"
+- findings[21] (g187): "the merry heart as the threshold"
+- findings[23] (g194): "the most powerful heart is the least its own"
+- findings[27] (g228): "when   heard the words of Gaal"
+- findings[31] (g243): "the soul-life hunted"
+- findings[31] (g243): "whose heart has filled him to do this"
+- findings[42] (g312): "anger, grief and fasting together"
+- findings[45] (g332): "kept doing this for many days. Paul, having become greatly annoyed, turned and said to the spirit, 'I command you"
+- findings[74] (g484): "Ps 95:8 refers to God, and David's plea to not harden Gods heart"
+- findings[74] (g484): "I need to retract my reading, God is really referring the human hardening their heart towards God"
+- findings[74] (g484): "you can close this batch by reverting to your initial position of setting the hardening to be human."
+- findings[74] (g484): "if I am mistaken, then that is a material finding in its own right."
+- findings[90] (g560): "hearing → Spirit → anger → act → dread spreading to the people"
+- findings[90] (g560): "jealous anger → a harmful spirit → a spear"
+- findings[92] (g568): "God's, received by Israel: the human side is the receiving"
+- findings[104] (g621): "Haman's swing"
+- findings[104] (g621): "wealth does not satisfy a heart set on a grievance"
+- findings[106] (g631): "the seat named in the contrast figure"
+- findings[110] (g665): "I could not address you as spiritual people, but as people of the flesh"
+- findings[123] (g718): "long of nostrils"
+- findings[128] (g733): "short of spirit"
+- findings[130] (g753): "A wicked man accepts a bribe in secret to pervert"
+- findings[152] (g860): "they were sawn through in their hearts"
+- findings[307] (r1185): "sense, himself"
+- findings[307] (r1185): "patient / proud in spirit"

@@ -1,0 +1,16 @@
+import sys, re
+sys.path.insert(0, "outputs/prior-capture/work")
+from cap import Fill, _clean
+c = Fill(24, "M02")
+c.f("S33", "statement", "16 verses hold two or three of the Greek anger words (for example Eph 4:31 and Col 3:8, orgē with thymos; Gal 5:20, three words); no verse of the unit holds a Hebrew word from units 1 to 4.", [33], verses=["Eph.4.31", "Col.3.8", "Gal.5.20"])
+c.f("T40", "term", "Act 7:54 and Act 5:33: diaprió is \"to be cut through\", and the ESV renders it \"enraged\" both times; the ESV wording is recorded as it stands.", [40], verses=["Acts.7.54", "Acts.5.33"])
+c.f("T41", "term", "Rev 14:8 and Rev 18:3: thymos is rendered \"passion\" (the wine of the passion of her sexual immorality); there is no anger in either verse.", [41], verses=["Rev.14.8", "Rev.18.3"])
+c.f("T42", "term", "Rev 3:15-16: zestos, \"hot\", three hits; there is no anger in the verses.", [42], verses=["Rev.3.15", "Rev.3.16"])
+c.f("U44", "unfitted", "Act 4:25 quotes Psalm 2:1 (\"Why did the Gentiles rage\"); the Hebrew word in Psa 2:1 is not in the M02 vocabulary, and the Greek is read as it stands in Acts.", [44], verses=["Acts.4.25", "Ps.2.1"])
+c.f("S45", "statement", "Mat 3:7 and Luk 3:7 are the same saying of John the Baptist; both hits are kept.", [45], verses=["Matt.3.7", "Luke.3.7"])
+c.f("hand297", "statement", "The hand with the anger (OT-06): \"lifting holy hands without anger or quarreling\" (1Ti 2:8); \"The Father loves the Son and has given all things into his hand\" (Joh 3:35).", [297], verses=["1Tim.2.8", "John.3.35"])
+c.f("L345", "link", "\"Do not let the sun go down on your anger, and give no opportunity to the devil\" (Eph 4:26-27).", [345])
+c.not_(range(276, 290), "pointer with no content", "a verse or finding not placed in the chapters, listed by name")
+c.not_([372, 373, 375], "weave or quote-check record", "the quote check and its corrections")
+print(c.auto())
+c.done()

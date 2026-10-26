@@ -1,0 +1,5271 @@
+{
+ "kind": "prior-capture",
+ "version": 1,
+ "built_at": "2026-10-26T13:07:49Z",
+ "file": {
+  "id": 33,
+  "path": "_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-recovery-consolidation-v1-20261005.md",
+  "cluster": "M02",
+  "sha256": "cb8d5e87c7daf6ec00f86f20704204f02ae1d86b689b01429ea8169c2c4525c7"
+ },
+ "fill": "findings: one per material observation the document makes about a verse (CP-01 to CP-07); lines[].answer: every line answered (captured / already_recorded / not_an_observation)",
+ "counts": {
+  "lines": 5,
+  "verses": 31,
+  "unresolved_refs": 0
+ },
+ "october": {},
+ "october_same_prefix": {},
+ "unresolved": [],
+ "verse_words": {
+  "1Sam.1.10": [
+   {
+    "verse_lexical_id": 1117410,
+    "strong": "H1931",
+    "surface": "She",
+    "morph": "HPp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1117411,
+    "strong": "H4751",
+    "surface": "deeply",
+    "morph": "HAafsc",
+    "clusters": [
+     "M03"
+    ],
+    "subgroups": {
+     "M03": "M03_sorrow"
+    }
+   },
+   {
+    "verse_lexical_id": 1117412,
+    "strong": "H9002",
+    "surface": "deeply",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1117413,
+    "strong": "H5315I",
+    "surface": "distressed",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_life_self"
+    }
+   },
+   {
+    "verse_lexical_id": 1117414,
+    "strong": "H6419",
+    "surface": "prayed",
+    "morph": "HVtw3fs",
+    "clusters": [
+     "M42"
+    ],
+    "subgroups": {
+     "M42": "M42_prayer"
+    }
+   },
+   {
+    "verse_lexical_id": 1117415,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1117416,
+    "strong": "H5921A",
+    "surface": "Lord",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1117417,
+    "strong": "H1058",
+    "surface": "wept",
+    "morph": "HVqaa",
+    "clusters": [
+     "M03"
+    ],
+    "subgroups": {
+     "M03": "M03_weeping"
+    }
+   },
+   {
+    "verse_lexical_id": 1117418,
+    "strong": "H1058",
+    "surface": "bitterly",
+    "morph": "HVqi3fs",
+    "clusters": [
+     "M03"
+    ],
+    "subgroups": {
+     "M03": "M03_weeping"
+    }
+   }
+  ],
+  "2Chr.26.16": [
+   {
+    "verse_lexical_id": 1209558,
+    "strong": "H2393",
+    "surface": "strong",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M23"
+    ],
+    "subgroups": {
+     "M23": "M23_strength"
+    }
+   },
+   {
+    "verse_lexical_id": 1209559,
+    "strong": "H9002",
+    "surface": "strong",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209560,
+    "strong": "H9004",
+    "surface": "strong",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209561,
+    "strong": "H9023",
+    "surface": "he",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209562,
+    "strong": "H3820A",
+    "surface": "grew proud",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1209563,
+    "strong": "H1361",
+    "surface": "grew proud",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "M08"
+    ],
+    "subgroups": {
+     "M08": "M08_pride"
+    }
+   },
+   {
+    "verse_lexical_id": 1209564,
+    "strong": "H7843",
+    "surface": "destruction",
+    "morph": "HVhcc",
+    "clusters": [
+     "M55"
+    ],
+    "subgroups": {
+     "M55": "M55_destroying"
+    }
+   },
+   {
+    "verse_lexical_id": 1209565,
+    "strong": "H9005",
+    "surface": "destruction",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209566,
+    "strong": "H9023",
+    "surface": "destruction",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209567,
+    "strong": "H5704",
+    "surface": "destruction",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209568,
+    "strong": "H4603",
+    "surface": "unfaithful",
+    "morph": "HVqw3ms",
+    "clusters": [
+     "M57"
+    ],
+    "subgroups": {
+     "M57": "M57_unfaithfulness"
+    }
+   },
+   {
+    "verse_lexical_id": 1209569,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209570,
+    "strong": "H9003",
+    "surface": "Lord",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209571,
+    "strong": "H0430G",
+    "surface": "God",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209572,
+    "strong": "H0935G",
+    "surface": "entered",
+    "morph": "HVqw3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209573,
+    "strong": "H9023",
+    "surface": "entered",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209574,
+    "strong": "H1964G",
+    "surface": "temple",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209575,
+    "strong": "H0413",
+    "surface": "temple",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209576,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209577,
+    "strong": "H6999A",
+    "surface": "burn incense",
+    "morph": "HVhcc",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209578,
+    "strong": "H9005",
+    "surface": "burn incense",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209579,
+    "strong": "H5921A",
+    "surface": "on",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209580,
+    "strong": "H4196",
+    "surface": "altar",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T12"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209581,
+    "strong": "H7004",
+    "surface": "incense",
+    "morph": "HNcfsa",
+    "clusters": [
+     "T12"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1209582,
+    "strong": "H9009",
+    "surface": "incense",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "2Kgs.22.19": [
+   {
+    "verse_lexical_id": 1172595,
+    "strong": "H3282",
+    "surface": "because",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172596,
+    "strong": "H3824",
+    "surface": "heart",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1172597,
+    "strong": "H7401",
+    "surface": "penitent",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "M05"
+    ],
+    "subgroups": {
+     "M05": "M05_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1172598,
+    "strong": "H3665",
+    "surface": "humbled yourself",
+    "morph": "HVNw2ms",
+    "clusters": [
+     "M09"
+    ],
+    "subgroups": {
+     "M09": "M09_humility"
+    }
+   },
+   {
+    "verse_lexical_id": 1172599,
+    "strong": "H9021",
+    "surface": "humbled yourself",
+    "morph": "HSp2ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172600,
+    "strong": "H6440G",
+    "surface": "before",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172601,
+    "strong": "H9006",
+    "surface": "before",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172602,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172603,
+    "strong": "H8085G",
+    "surface": "heard",
+    "morph": "HVqcc",
+    "clusters": [
+     "M41"
+    ],
+    "subgroups": {
+     "M41": "M41_hearing"
+    }
+   },
+   {
+    "verse_lexical_id": 1172604,
+    "strong": "H9003",
+    "surface": "heard",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172605,
+    "strong": "H0834A",
+    "surface": "how",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172606,
+    "strong": "H9041",
+    "surface": "how",
+    "morph": "HSp2ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172607,
+    "strong": "H1696G",
+    "surface": "spoke",
+    "morph": "HVpp1cs",
+    "clusters": [
+     "M65"
+    ],
+    "subgroups": {
+     "M65": "M65_speaking"
+    }
+   },
+   {
+    "verse_lexical_id": 1172608,
+    "strong": "H5921A",
+    "surface": "against",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172609,
+    "strong": "H2088",
+    "surface": "this",
+    "morph": "HTm",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172610,
+    "strong": "H9009",
+    "surface": "this",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172611,
+    "strong": "H4725",
+    "surface": "place",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172612,
+    "strong": "H9009",
+    "surface": "place",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172613,
+    "strong": "H5921A",
+    "surface": "against",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172614,
+    "strong": "H9002",
+    "surface": "against",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172615,
+    "strong": "H3427",
+    "surface": "inhabitants",
+    "morph": "HVqrmpc",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172616,
+    "strong": "H1961",
+    "surface": "become",
+    "morph": "HVqcc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172617,
+    "strong": "H8047G",
+    "surface": "desolation",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M01"
+    ],
+    "subgroups": {
+     "M01": "M01_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1172618,
+    "strong": "H9005",
+    "surface": "desolation",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172619,
+    "strong": "H9023",
+    "surface": "desolation",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172620,
+    "strong": "H9005",
+    "surface": "desolation",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172621,
+    "strong": "H7045",
+    "surface": "curse",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M07"
+    ],
+    "subgroups": {
+     "M07": "M07_curse"
+    }
+   },
+   {
+    "verse_lexical_id": 1172622,
+    "strong": "H9002",
+    "surface": "curse",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172623,
+    "strong": "H9005",
+    "surface": "curse",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172624,
+    "strong": "H7167",
+    "surface": "torn",
+    "morph": "HVqw2ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172625,
+    "strong": "H0899B",
+    "surface": "clothes",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T12"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172626,
+    "strong": "H0853",
+    "surface": "clothes",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172627,
+    "strong": "H1058",
+    "surface": "wept",
+    "morph": "HVqw2ms",
+    "clusters": [
+     "M03"
+    ],
+    "subgroups": {
+     "M03": "M03_weeping"
+    }
+   },
+   {
+    "verse_lexical_id": 1172628,
+    "strong": "H9021",
+    "surface": "wept",
+    "morph": "HSp2ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172629,
+    "strong": "H6440G",
+    "surface": "before",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172630,
+    "strong": "H9005",
+    "surface": "before",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172631,
+    "strong": "H0595",
+    "surface": "me",
+    "morph": "HPp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172632,
+    "strong": "H8085G",
+    "surface": "heard",
+    "morph": "HVqp1cs",
+    "clusters": [
+     "M41"
+    ],
+    "subgroups": {
+     "M41": "M41_hearing"
+    }
+   },
+   {
+    "verse_lexical_id": 1172633,
+    "strong": "H9020",
+    "surface": "heard",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172634,
+    "strong": "H1571",
+    "surface": "heard",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172635,
+    "strong": "H9002",
+    "surface": "heard",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1172636,
+    "strong": "H5002",
+    "surface": "declares",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M43"
+    ],
+    "subgroups": {
+     "M43": "M43_oracle"
+    }
+   },
+   {
+    "verse_lexical_id": 1172637,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "2Sam.24.10": [
+   {
+    "verse_lexical_id": 1140328,
+    "strong": "H1732",
+    "surface": "David’s",
+    "morph": "HNpm",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140329,
+    "strong": "H3820A",
+    "surface": "heart",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1140330,
+    "strong": "H5221",
+    "surface": "struck",
+    "morph": "HVhw3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140331,
+    "strong": "H0310A",
+    "surface": "after",
+    "morph": "HAcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140332,
+    "strong": "H0853",
+    "surface": "after",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140333,
+    "strong": "H9033",
+    "surface": "after",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140334,
+    "strong": "H5608A",
+    "surface": "numbered",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140335,
+    "strong": "H3651C",
+    "surface": "numbered",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140336,
+    "strong": "H5971A",
+    "surface": "people",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T11"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140337,
+    "strong": "H9009",
+    "surface": "people",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140338,
+    "strong": "H0853",
+    "surface": "people",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140339,
+    "strong": "H1732",
+    "surface": "David",
+    "morph": "HNpm",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140340,
+    "strong": "H0559",
+    "surface": "said",
+    "morph": "HVqw3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140341,
+    "strong": "H0413",
+    "surface": "to",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140342,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140343,
+    "strong": "H2398",
+    "surface": "sinned",
+    "morph": "HVqp1cs",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_sin"
+    }
+   },
+   {
+    "verse_lexical_id": 1140344,
+    "strong": "H3966",
+    "surface": "greatly",
+    "morph": "HAcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140345,
+    "strong": "H6213A",
+    "surface": "done",
+    "morph": "HVqp1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140346,
+    "strong": "H0834A",
+    "surface": "done",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140347,
+    "strong": "H6258",
+    "surface": "now",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140348,
+    "strong": "H9002",
+    "surface": "now",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140349,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140350,
+    "strong": "H4994",
+    "surface": "please",
+    "morph": "HTj",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140351,
+    "strong": "H5674C",
+    "surface": "away",
+    "morph": "HVhv2ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140352,
+    "strong": "H5771G",
+    "surface": "iniquity",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M56"
+    ],
+    "subgroups": {
+     "M56": "M56_iniquity"
+    }
+   },
+   {
+    "verse_lexical_id": 1140353,
+    "strong": "H0853",
+    "surface": "iniquity",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140354,
+    "strong": "H5650",
+    "surface": "servant",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140355,
+    "strong": "H3966",
+    "surface": "very",
+    "morph": "HAcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140356,
+    "strong": "H5528",
+    "surface": "foolishly",
+    "morph": "HVNp1cs",
+    "clusters": [
+     "M16"
+    ],
+    "subgroups": {
+     "M16": "M16_folly"
+    }
+   },
+   {
+    "verse_lexical_id": 1140357,
+    "strong": "H9021",
+    "surface": "foolishly",
+    "morph": "HSp2ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1140358,
+    "strong": "H3588A",
+    "surface": "foolishly",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Dan.8.17": [
+   {
+    "verse_lexical_id": 1377983,
+    "strong": "H0935G",
+    "surface": "came",
+    "morph": "HVqw3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377984,
+    "strong": "H0681",
+    "surface": "near",
+    "morph": "HNcbsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377985,
+    "strong": "H5977",
+    "surface": "stood",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377986,
+    "strong": "H0935G",
+    "surface": "came",
+    "morph": "HVqcc",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377987,
+    "strong": "H9003",
+    "surface": "came",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377988,
+    "strong": "H9002",
+    "surface": "came",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377989,
+    "strong": "H9020",
+    "surface": "came",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377990,
+    "strong": "H1204",
+    "surface": "frightened",
+    "morph": "HVNp1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377991,
+    "strong": "H9043",
+    "surface": "frightened",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377992,
+    "strong": "H5307G",
+    "surface": "fell",
+    "morph": "HVqw1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377993,
+    "strong": "H5921A",
+    "surface": "on",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377994,
+    "strong": "H9012",
+    "surface": "on",
+    "morph": "HSh",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377995,
+    "strong": "H6440H",
+    "surface": "face",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377996,
+    "strong": "H0559",
+    "surface": "said",
+    "morph": "HVqw3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377997,
+    "strong": "H9020",
+    "surface": "said",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377998,
+    "strong": "H0413",
+    "surface": "to",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1377999,
+    "strong": "H0995",
+    "surface": "Understand",
+    "morph": "HVhv2ms",
+    "clusters": [
+     "M15"
+    ],
+    "subgroups": {
+     "M15": "M15_understanding"
+    }
+   },
+   {
+    "verse_lexical_id": 1378000,
+    "strong": "H9030",
+    "surface": "Understand",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1378001,
+    "strong": "H1121A",
+    "surface": "son",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1378002,
+    "strong": "H0120G",
+    "surface": "man",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1378003,
+    "strong": "H3588A",
+    "surface": "that",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1378004,
+    "strong": "H2377",
+    "surface": "vision",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1378005,
+    "strong": "H9009",
+    "surface": "vision",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1378006,
+    "strong": "H6256",
+    "surface": "time",
+    "morph": "HNcbsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1378007,
+    "strong": "H9005",
+    "surface": "time",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1378008,
+    "strong": "H7093",
+    "surface": "end",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Dan.8.18": [
+   {
+    "verse_lexical_id": 1376676,
+    "strong": "H1696G",
+    "surface": "spoken",
+    "morph": "HVpcc",
+    "clusters": [
+     "M65"
+    ],
+    "subgroups": {
+     "M65": "M65_speaking"
+    }
+   },
+   {
+    "verse_lexical_id": 1376677,
+    "strong": "H9002",
+    "surface": "spoken",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376678,
+    "strong": "H9003",
+    "surface": "spoken",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376679,
+    "strong": "H5973A",
+    "surface": "to",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376680,
+    "strong": "H9043",
+    "surface": "to",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376681,
+    "strong": "H7290",
+    "surface": "deep sleep",
+    "morph": "HVNp1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376682,
+    "strong": "H9030",
+    "surface": "deep sleep",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376683,
+    "strong": "H6440H",
+    "surface": "face",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376684,
+    "strong": "H5921A",
+    "surface": "to",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376685,
+    "strong": "H0776H",
+    "surface": "ground",
+    "morph": "HNcfsa",
+    "clusters": [
+     "T13"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376686,
+    "strong": "H9020",
+    "surface": "ground",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376687,
+    "strong": "H5060",
+    "surface": "touched",
+    "morph": "HVqw3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376688,
+    "strong": "H9011",
+    "surface": "touched",
+    "morph": "HSd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376689,
+    "strong": "H5975G",
+    "surface": "made",
+    "morph": "HVhw3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376690,
+    "strong": "H9003",
+    "surface": "made",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376691,
+    "strong": "H9030",
+    "surface": "made",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376692,
+    "strong": "H5921A",
+    "surface": "stand up",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376693,
+    "strong": "H9030",
+    "surface": "stand up",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376694,
+    "strong": "H5977",
+    "surface": "stand up",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1376695,
+    "strong": "H9020",
+    "surface": "stand up",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Esth.1.18": [
+   {
+    "verse_lexical_id": 1230399,
+    "strong": "H2088",
+    "surface": "very",
+    "morph": "HTm",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230400,
+    "strong": "H9009",
+    "surface": "very",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230401,
+    "strong": "H3117L",
+    "surface": "day",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230402,
+    "strong": "H9002",
+    "surface": "day",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230403,
+    "strong": "H9009",
+    "surface": "day",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230404,
+    "strong": "H8282",
+    "surface": "noble women",
+    "morph": "HNcfpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230405,
+    "strong": "H6539",
+    "surface": "Persia",
+    "morph": "HNpl",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230406,
+    "strong": "H4074H",
+    "surface": "Media",
+    "morph": "HNpl",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230407,
+    "strong": "H9002",
+    "surface": "Media",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230408,
+    "strong": "H0834A",
+    "surface": "who",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230409,
+    "strong": "H8085G",
+    "surface": "heard",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "M41"
+    ],
+    "subgroups": {
+     "M41": "M41_hearing"
+    }
+   },
+   {
+    "verse_lexical_id": 1230410,
+    "strong": "H4436H",
+    "surface": "queen’s",
+    "morph": "HNcfsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230411,
+    "strong": "H9009",
+    "surface": "queen’s",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230412,
+    "strong": "H1697K",
+    "surface": "behavior",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230413,
+    "strong": "H0853",
+    "surface": "behavior",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230414,
+    "strong": "H0559",
+    "surface": "say",
+    "morph": "HVqi3fp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230415,
+    "strong": "H3605",
+    "surface": "all",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230416,
+    "strong": "H9005",
+    "surface": "all",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230417,
+    "strong": "H4428G",
+    "surface": "king’s",
+    "morph": "HNcmsa",
+    "clusters": [
+     "M72"
+    ],
+    "subgroups": {
+     "M72": "M72_king"
+    }
+   },
+   {
+    "verse_lexical_id": 1230418,
+    "strong": "H9009",
+    "surface": "king’s",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230419,
+    "strong": "H8269",
+    "surface": "officials",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M72"
+    ],
+    "subgroups": {
+     "M72": "M72_rulers"
+    }
+   },
+   {
+    "verse_lexical_id": 1230420,
+    "strong": "H0963",
+    "surface": "contempt",
+    "morph": "HNcmsa",
+    "clusters": [
+     "M06"
+    ],
+    "subgroups": {
+     "M06": "M06_scorn"
+    }
+   },
+   {
+    "verse_lexical_id": 1230421,
+    "strong": "H7110A",
+    "surface": "wrath",
+    "morph": "HNcmsa",
+    "clusters": [
+     "M02"
+    ],
+    "subgroups": {
+     "M02": "M02_wrath"
+    }
+   },
+   {
+    "verse_lexical_id": 1230422,
+    "strong": "H9002",
+    "surface": "wrath",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230423,
+    "strong": "H1767",
+    "surface": "plenty",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230424,
+    "strong": "H9002",
+    "surface": "plenty",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1230425,
+    "strong": "H9004",
+    "surface": "plenty",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Gen.27.41": [
+   {
+    "verse_lexical_id": 986027,
+    "strong": "H6215G",
+    "surface": "Esau",
+    "morph": "HNpm",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986028,
+    "strong": "H7852",
+    "surface": "hated",
+    "morph": "HVqw3ms",
+    "clusters": [
+     "M06"
+    ],
+    "subgroups": {
+     "M06": "M06_hatred"
+    }
+   },
+   {
+    "verse_lexical_id": 986029,
+    "strong": "H3290",
+    "surface": "Jacob",
+    "morph": "HNpm",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986030,
+    "strong": "H0853",
+    "surface": "Jacob",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986031,
+    "strong": "H5921A",
+    "surface": "because",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986032,
+    "strong": "H1293",
+    "surface": "blessing",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M80"
+    ],
+    "subgroups": {
+     "M80": "M80_blessing"
+    }
+   },
+   {
+    "verse_lexical_id": 986033,
+    "strong": "H9009",
+    "surface": "blessing",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986034,
+    "strong": "H0834A",
+    "surface": "which",
+    "morph": "HTr",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986035,
+    "strong": "H0001G",
+    "surface": "father",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986036,
+    "strong": "H9033",
+    "surface": "father",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986037,
+    "strong": "H1288",
+    "surface": "blessed",
+    "morph": "HVpp3ms",
+    "clusters": [
+     "M80"
+    ],
+    "subgroups": {
+     "M80": "M80_blessing"
+    }
+   },
+   {
+    "verse_lexical_id": 986038,
+    "strong": "H6215G",
+    "surface": "Esau",
+    "morph": "HNpm",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986039,
+    "strong": "H0559",
+    "surface": "said",
+    "morph": "HVqw3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986040,
+    "strong": "H9023",
+    "surface": "said",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986041,
+    "strong": "H3820A",
+    "surface": "himself",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 986042,
+    "strong": "H9003",
+    "surface": "himself",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986043,
+    "strong": "H3117G",
+    "surface": "days",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986044,
+    "strong": "H0060",
+    "surface": "mourning",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M03"
+    ],
+    "subgroups": {
+     "M03": "M03_mourning"
+    }
+   },
+   {
+    "verse_lexical_id": 986045,
+    "strong": "H0001G",
+    "surface": "father",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986046,
+    "strong": "H7126G",
+    "surface": "approaching",
+    "morph": "HVqi3mp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986047,
+    "strong": "H9023",
+    "surface": "approaching",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986048,
+    "strong": "H2026",
+    "surface": "kill",
+    "morph": "HVqc1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986049,
+    "strong": "H9020",
+    "surface": "kill",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986050,
+    "strong": "H9020",
+    "surface": "my",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986051,
+    "strong": "H0251G",
+    "surface": "brother",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986052,
+    "strong": "H3290",
+    "surface": "Jacob",
+    "morph": "HNpm",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 986053,
+    "strong": "H0853",
+    "surface": "Jacob",
+    "morph": "HTo",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Hos.7.14": [
+   {
+    "verse_lexical_id": 1387829,
+    "strong": "H3808",
+    "surface": "not",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387830,
+    "strong": "H2199",
+    "surface": "cry",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "M42"
+    ],
+    "subgroups": {
+     "M42": "M42_crying"
+    }
+   },
+   {
+    "verse_lexical_id": 1387831,
+    "strong": "H9002",
+    "surface": "cry",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387832,
+    "strong": "H0413",
+    "surface": "to",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387833,
+    "strong": "H3820A",
+    "surface": "heart",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1387834,
+    "strong": "H9003",
+    "surface": "heart",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387835,
+    "strong": "H9030",
+    "surface": "heart",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387836,
+    "strong": "H9028",
+    "surface": "they",
+    "morph": "HSp3mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387837,
+    "strong": "H3213",
+    "surface": "wail",
+    "morph": "HVhi3mp",
+    "clusters": [
+     "M03"
+    ],
+    "subgroups": {
+     "M03": "M03_mourning"
+    }
+   },
+   {
+    "verse_lexical_id": 1387838,
+    "strong": "H3588A",
+    "surface": "wail",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387839,
+    "strong": "H5921A",
+    "surface": "upon",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387840,
+    "strong": "H4904",
+    "surface": "beds",
+    "morph": "HNcfpc",
+    "clusters": [
+     "T12"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387841,
+    "strong": "H1715",
+    "surface": "grain",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387842,
+    "strong": "H9028",
+    "surface": "grain",
+    "morph": "HSp3mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387843,
+    "strong": "H5921A",
+    "surface": "grain",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387844,
+    "strong": "H8492",
+    "surface": "wine",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387845,
+    "strong": "H9002",
+    "surface": "wine",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387846,
+    "strong": "H1641",
+    "surface": "gash",
+    "morph": "HVti3mp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387847,
+    "strong": "H5493I",
+    "surface": "rebel",
+    "morph": "HVqi3mp",
+    "clusters": [
+     "M11"
+    ],
+    "subgroups": {
+     "M11": "M11_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1387848,
+    "strong": "H9003",
+    "surface": "me",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1387849,
+    "strong": "H9030",
+    "surface": "me",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Isa.51.18": [
+   {
+    "verse_lexical_id": 1295805,
+    "strong": "H0369",
+    "surface": "none",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295806,
+    "strong": "H5095",
+    "surface": "guide",
+    "morph": "HVprmsa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295807,
+    "strong": "H9006",
+    "surface": "among",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295808,
+    "strong": "H9005",
+    "surface": "among",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295809,
+    "strong": "H9034",
+    "surface": "among",
+    "morph": "HSp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295810,
+    "strong": "H3605",
+    "surface": "all",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295811,
+    "strong": "H1121A",
+    "surface": "sons",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295812,
+    "strong": "H3205",
+    "surface": "borne",
+    "morph": "HVqp3fs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295813,
+    "strong": "H0369",
+    "surface": "none",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295814,
+    "strong": "H9002",
+    "surface": "none",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295815,
+    "strong": "H2388H",
+    "surface": "take",
+    "morph": "HVhrmsa",
+    "clusters": [
+     "M23"
+    ],
+    "subgroups": {
+     "M23": "M23_holding"
+    }
+   },
+   {
+    "verse_lexical_id": 1295816,
+    "strong": "H3027G",
+    "surface": "hand",
+    "morph": "HNcbsc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295817,
+    "strong": "H9003",
+    "surface": "hand",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295818,
+    "strong": "H9006",
+    "surface": "among",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295819,
+    "strong": "H9024",
+    "surface": "among",
+    "morph": "HSp3fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295820,
+    "strong": "H3605",
+    "surface": "all",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295821,
+    "strong": "H1121A",
+    "surface": "sons",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1295822,
+    "strong": "H1431",
+    "surface": "brought up",
+    "morph": "HVpp3fs",
+    "clusters": [
+     "M22"
+    ],
+    "subgroups": {
+     "M22": "M22_not_this_sense"
+    }
+   }
+  ],
+  "Jer.48.29": [
+   {
+    "verse_lexical_id": 1320523,
+    "strong": "H8085G",
+    "surface": "heard",
+    "morph": "HVqp1cp",
+    "clusters": [
+     "M41"
+    ],
+    "subgroups": {
+     "M41": "M41_hearing"
+    }
+   },
+   {
+    "verse_lexical_id": 1320524,
+    "strong": "H1347",
+    "surface": "pride",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M08"
+    ],
+    "subgroups": {
+     "M08": "M08_pride"
+    }
+   },
+   {
+    "verse_lexical_id": 1320525,
+    "strong": "H4124G",
+    "surface": "Moab",
+    "morph": "HNpl",
+    "clusters": [
+     "T11"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1320526,
+    "strong": "H3966",
+    "surface": "very",
+    "morph": "HAcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1320527,
+    "strong": "H1343",
+    "surface": "proud",
+    "morph": "HAamsa",
+    "clusters": [
+     "M08"
+    ],
+    "subgroups": {
+     "M08": "M08_pride"
+    }
+   },
+   {
+    "verse_lexical_id": 1320528,
+    "strong": "H1363",
+    "surface": "loftiness",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M08"
+    ],
+    "subgroups": {
+     "M08": "M08_pride"
+    }
+   },
+   {
+    "verse_lexical_id": 1320529,
+    "strong": "H1347",
+    "surface": "pride",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M08"
+    ],
+    "subgroups": {
+     "M08": "M08_pride"
+    }
+   },
+   {
+    "verse_lexical_id": 1320530,
+    "strong": "H9002",
+    "surface": "pride",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1320531,
+    "strong": "H9023",
+    "surface": "pride",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1320532,
+    "strong": "H1346",
+    "surface": "arrogance",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M08"
+    ],
+    "subgroups": {
+     "M08": "M08_pride"
+    }
+   },
+   {
+    "verse_lexical_id": 1320533,
+    "strong": "H9002",
+    "surface": "arrogance",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1320534,
+    "strong": "H9023",
+    "surface": "arrogance",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1320535,
+    "strong": "H7312",
+    "surface": "haughtiness",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M08"
+    ],
+    "subgroups": {
+     "M08": "M08_pride"
+    }
+   },
+   {
+    "verse_lexical_id": 1320536,
+    "strong": "H9002",
+    "surface": "haughtiness",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1320537,
+    "strong": "H9023",
+    "surface": "haughtiness",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1320538,
+    "strong": "H9023",
+    "surface": "his",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1320539,
+    "strong": "H3820A",
+    "surface": "heart",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   }
+  ],
+  "Job.21.14": [
+   {
+    "verse_lexical_id": 1238005,
+    "strong": "H0559",
+    "surface": "say",
+    "morph": "HVqw3mp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1238006,
+    "strong": "H0410G",
+    "surface": "God",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1238007,
+    "strong": "H9005",
+    "surface": "God",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1238008,
+    "strong": "H5493H",
+    "surface": "Depart",
+    "morph": "HVqv2ms",
+    "clusters": [
+     "M11"
+    ],
+    "subgroups": {
+     "M11": "M11_departing"
+    }
+   },
+   {
+    "verse_lexical_id": 1238009,
+    "strong": "H4480A",
+    "surface": "from",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1238010,
+    "strong": "H3808",
+    "surface": "not",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1238011,
+    "strong": "H9021",
+    "surface": "not",
+    "morph": "HSp2bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1238012,
+    "strong": "H2654A",
+    "surface": "desire",
+    "morph": "HVqp1cp",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_desire"
+    }
+   },
+   {
+    "verse_lexical_id": 1238013,
+    "strong": "H1847",
+    "surface": "knowledge",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M15"
+    ],
+    "subgroups": {
+     "M15": "M15_knowledge"
+    }
+   },
+   {
+    "verse_lexical_id": 1238014,
+    "strong": "H9035",
+    "surface": "knowledge",
+    "morph": "HSp1bp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1238015,
+    "strong": "H1870G",
+    "surface": "ways",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M76"
+    ],
+    "subgroups": {
+     "M76": "M76_way"
+    }
+   }
+  ],
+  "Job.21.19": [
+   {
+    "verse_lexical_id": 1234730,
+    "strong": "H0433",
+    "surface": "God",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1234731,
+    "strong": "H6845",
+    "surface": "stores up",
+    "morph": "HVqi3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1234732,
+    "strong": "H0205G",
+    "surface": "iniquity",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M58"
+    ],
+    "subgroups": {
+     "M58": "M58_wickedness"
+    }
+   },
+   {
+    "verse_lexical_id": 1234733,
+    "strong": "H9023",
+    "surface": "iniquity",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1234734,
+    "strong": "H1121A",
+    "surface": "children",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1234735,
+    "strong": "H9005",
+    "surface": "children",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1234736,
+    "strong": "H7999A",
+    "surface": "pay it out",
+    "morph": "HVpi3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1234737,
+    "strong": "H9023",
+    "surface": "pay it out",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1234738,
+    "strong": "H0413",
+    "surface": "to",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1234739,
+    "strong": "H3045",
+    "surface": "know",
+    "morph": "HVqu3ms",
+    "clusters": [
+     "M15"
+    ],
+    "subgroups": {
+     "M15": "M15_knowing"
+    }
+   },
+   {
+    "verse_lexical_id": 1234740,
+    "strong": "H9033",
+    "surface": "know",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Job.42.6": [
+   {
+    "verse_lexical_id": 1239224,
+    "strong": "H5921A",
+    "surface": "therefore",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1239225,
+    "strong": "H3651C",
+    "surface": "therefore",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1239226,
+    "strong": "H3988A",
+    "surface": "despise",
+    "morph": "HVqi1cs",
+    "clusters": [
+     "M30"
+    ],
+    "subgroups": {
+     "M30": "M30_despising"
+    }
+   },
+   {
+    "verse_lexical_id": 1239227,
+    "strong": "H5162H",
+    "surface": "repent",
+    "morph": "HVNq1cs",
+    "clusters": [
+     "M11"
+    ],
+    "subgroups": {
+     "M11": "M11_repenting"
+    }
+   },
+   {
+    "verse_lexical_id": 1239228,
+    "strong": "H6083",
+    "surface": "dust",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T13"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1239229,
+    "strong": "H5921A",
+    "surface": "dust",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1239230,
+    "strong": "H0665",
+    "surface": "ashes",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1239231,
+    "strong": "H9002",
+    "surface": "ashes",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.2.19": [
+   {
+    "verse_lexical_id": 1347674,
+    "strong": "H6965B",
+    "surface": "Arise",
+    "morph": "HVqv2fs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347675,
+    "strong": "H7442B",
+    "surface": "cry out",
+    "morph": "HVqv2fs",
+    "clusters": [
+     "M22"
+    ],
+    "subgroups": {
+     "M22": "M22_not_this_sense"
+    }
+   },
+   {
+    "verse_lexical_id": 1347676,
+    "strong": "H3915",
+    "surface": "night",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347677,
+    "strong": "H9003",
+    "surface": "night",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347678,
+    "strong": "H9005",
+    "surface": "at",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347679,
+    "strong": "H7218I",
+    "surface": "beginning",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347680,
+    "strong": "H0821",
+    "surface": "night watches",
+    "morph": "HNcfpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347681,
+    "strong": "H8210G",
+    "surface": "Pour out",
+    "morph": "HVqv2fs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347682,
+    "strong": "H3820A",
+    "surface": "heart",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1347683,
+    "strong": "H4325G",
+    "surface": "water",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T13"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347684,
+    "strong": "H9004",
+    "surface": "water",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347685,
+    "strong": "H5227",
+    "surface": "before",
+    "morph": "HAcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347686,
+    "strong": "H9022",
+    "surface": "before",
+    "morph": "HSp2fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347687,
+    "strong": "H6440H",
+    "surface": "presence",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347688,
+    "strong": "H0136",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347689,
+    "strong": "H5375P",
+    "surface": "Lift",
+    "morph": "HVqv2fs",
+    "clusters": [
+     "M70"
+    ],
+    "subgroups": {
+     "M70": "M70_lifting"
+    }
+   },
+   {
+    "verse_lexical_id": 1347690,
+    "strong": "H3709G",
+    "surface": "hands",
+    "morph": "HNcfdc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347691,
+    "strong": "H0413",
+    "surface": "hands",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347692,
+    "strong": "H9033",
+    "surface": "hands",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347693,
+    "strong": "H5921A",
+    "surface": "for",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347694,
+    "strong": "H9022",
+    "surface": "for",
+    "morph": "HSp2fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347695,
+    "strong": "H5315H",
+    "surface": "lives",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_life_self"
+    }
+   },
+   {
+    "verse_lexical_id": 1347696,
+    "strong": "H5768",
+    "surface": "children",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347697,
+    "strong": "H5848C",
+    "surface": "faint",
+    "morph": "HVqsmpa",
+    "clusters": [
+     "M24"
+    ],
+    "subgroups": {
+     "M24": "M24_fainting"
+    }
+   },
+   {
+    "verse_lexical_id": 1347698,
+    "strong": "H9009",
+    "surface": "faint",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347699,
+    "strong": "H9022",
+    "surface": "faint",
+    "morph": "HSp2fs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347700,
+    "strong": "H7458",
+    "surface": "hunger",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347701,
+    "strong": "H9003",
+    "surface": "hunger",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347702,
+    "strong": "H9003",
+    "surface": "at",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347703,
+    "strong": "H7218I",
+    "surface": "head",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347704,
+    "strong": "H3605",
+    "surface": "every",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347705,
+    "strong": "H2351",
+    "surface": "street",
+    "morph": "HNcfpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.20": [
+   {
+    "verse_lexical_id": 1347886,
+    "strong": "H9020",
+    "surface": "My",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347887,
+    "strong": "H5315G",
+    "surface": "soul",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_soul"
+    }
+   },
+   {
+    "verse_lexical_id": 1347888,
+    "strong": "H9030",
+    "surface": "soul",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347889,
+    "strong": "H2142",
+    "surface": "continually",
+    "morph": "HVqaa",
+    "clusters": [
+     "M81"
+    ],
+    "subgroups": {
+     "M81": "M81_remembering"
+    }
+   },
+   {
+    "verse_lexical_id": 1347890,
+    "strong": "H2142",
+    "surface": "remembers",
+    "morph": "HVqi3fs",
+    "clusters": [
+     "M81"
+    ],
+    "subgroups": {
+     "M81": "M81_remembering"
+    }
+   },
+   {
+    "verse_lexical_id": 1347891,
+    "strong": "H7743",
+    "surface": "bowed down",
+    "morph": "HVqu3fs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347892,
+    "strong": "H5921A",
+    "surface": "within",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.21": [
+   {
+    "verse_lexical_id": 1347824,
+    "strong": "H2063",
+    "surface": "this",
+    "morph": "HTm",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347825,
+    "strong": "H7725N",
+    "surface": "call",
+    "morph": "HVhi1cs",
+    "clusters": [
+     "M81"
+    ],
+    "subgroups": {
+     "M81": "M81_remembering"
+    }
+   },
+   {
+    "verse_lexical_id": 1347826,
+    "strong": "H0413",
+    "surface": "to",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347827,
+    "strong": "H3820A",
+    "surface": "mind",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1347828,
+    "strong": "H5921A",
+    "surface": "therefore",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347829,
+    "strong": "H9020",
+    "surface": "therefore",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347830,
+    "strong": "H3651C",
+    "surface": "therefore",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347831,
+    "strong": "H3176H",
+    "surface": "hope",
+    "morph": "HVhi1cs",
+    "clusters": [
+     "M68"
+    ],
+    "subgroups": {
+     "M68": "M68_hope"
+    }
+   }
+  ],
+  "Lam.3.22": [
+   {
+    "verse_lexical_id": 1347037,
+    "strong": "H3588A",
+    "surface": "The",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347038,
+    "strong": "H2617A",
+    "surface": "steadfast love",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M50"
+    ],
+    "subgroups": {
+     "M50": "M50_chesed"
+    }
+   },
+   {
+    "verse_lexical_id": 1347039,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347040,
+    "strong": "H3808",
+    "surface": "never",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347041,
+    "strong": "H8552",
+    "surface": "ceases",
+    "morph": "HVqp1cp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347042,
+    "strong": "H3588A",
+    "surface": "his",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347043,
+    "strong": "H7356B",
+    "surface": "mercies",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M50"
+    ],
+    "subgroups": {
+     "M50": "M50_mercy"
+    }
+   },
+   {
+    "verse_lexical_id": 1347044,
+    "strong": "H9023",
+    "surface": "mercies",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347045,
+    "strong": "H3808",
+    "surface": "never",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347046,
+    "strong": "H3615G",
+    "surface": "end",
+    "morph": "HVqp3cp",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.23": [
+   {
+    "verse_lexical_id": 1347712,
+    "strong": "H2319H",
+    "surface": "new",
+    "morph": "HAampa",
+    "clusters": [
+     "M45"
+    ],
+    "subgroups": {
+     "M45": "M45_renewing"
+    }
+   },
+   {
+    "verse_lexical_id": 1347713,
+    "strong": "H1242",
+    "surface": "morning",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347714,
+    "strong": "H9005",
+    "surface": "morning",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347716,
+    "strong": "H9021",
+    "surface": "your",
+    "morph": "HSp2ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347717,
+    "strong": "H0530",
+    "surface": "faithfulness",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M13"
+    ],
+    "subgroups": {
+     "M13": "M13_faithfulness"
+    }
+   }
+  ],
+  "Lam.3.24": [
+   {
+    "verse_lexical_id": 1346872,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346873,
+    "strong": "H9020",
+    "surface": "Lord",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346874,
+    "strong": "H2506A",
+    "surface": "portion",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346875,
+    "strong": "H0559",
+    "surface": "says",
+    "morph": "HVqp3fs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346876,
+    "strong": "H5315G",
+    "surface": "soul",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_soul"
+    }
+   },
+   {
+    "verse_lexical_id": 1346877,
+    "strong": "H5921A",
+    "surface": "therefore",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346878,
+    "strong": "H9020",
+    "surface": "therefore",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346879,
+    "strong": "H3651C",
+    "surface": "therefore",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346880,
+    "strong": "H3176H",
+    "surface": "hope",
+    "morph": "HVhi1cs",
+    "clusters": [
+     "M68"
+    ],
+    "subgroups": {
+     "M68": "M68_hope"
+    }
+   },
+   {
+    "verse_lexical_id": 1346881,
+    "strong": "H9005",
+    "surface": "him",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346882,
+    "strong": "H9033",
+    "surface": "him",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.25": [
+   {
+    "verse_lexical_id": 1347330,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347331,
+    "strong": "H2896A",
+    "surface": "good",
+    "morph": "HAamsa",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_good"
+    }
+   },
+   {
+    "verse_lexical_id": 1347332,
+    "strong": "H6960A",
+    "surface": "wait",
+    "morph": "HVqrmpc",
+    "clusters": [
+     "M68"
+    ],
+    "subgroups": {
+     "M68": "M68_waiting"
+    }
+   },
+   {
+    "verse_lexical_id": 1347333,
+    "strong": "H9005",
+    "surface": "wait",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347334,
+    "strong": "H9005",
+    "surface": "to",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347335,
+    "strong": "H5315G",
+    "surface": "soul",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_soul"
+    }
+   },
+   {
+    "verse_lexical_id": 1347336,
+    "strong": "H9033",
+    "surface": "soul",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347337,
+    "strong": "H1875",
+    "surface": "seeks",
+    "morph": "HVqi3fs",
+    "clusters": [
+     "M83"
+    ],
+    "subgroups": {
+     "M83": "D_consultative_inquiry"
+    }
+   },
+   {
+    "verse_lexical_id": 1347338,
+    "strong": "H9033",
+    "surface": "him",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.26": [
+   {
+    "verse_lexical_id": 1347339,
+    "strong": "H2896A",
+    "surface": "good",
+    "morph": "HAamsa",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_good"
+    }
+   },
+   {
+    "verse_lexical_id": 1347340,
+    "strong": "H3175",
+    "surface": "wait",
+    "morph": "HNcbsa",
+    "clusters": [
+     "M68"
+    ],
+    "subgroups": {
+     "M68": "M68_waiting"
+    }
+   },
+   {
+    "verse_lexical_id": 1347341,
+    "strong": "H9002",
+    "surface": "wait",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347342,
+    "strong": "H1748",
+    "surface": "quietly",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347343,
+    "strong": "H9002",
+    "surface": "quietly",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347344,
+    "strong": "H9005",
+    "surface": "for",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347345,
+    "strong": "H8668G",
+    "surface": "salvation",
+    "morph": "HNcfsc",
+    "clusters": [
+     "M79"
+    ],
+    "subgroups": {
+     "M79": "M79_salvation"
+    }
+   },
+   {
+    "verse_lexical_id": 1347346,
+    "strong": "H3068G",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.27": [
+   {
+    "verse_lexical_id": 1347347,
+    "strong": "H2896A",
+    "surface": "good",
+    "morph": "HAamsa",
+    "clusters": [
+     "M18"
+    ],
+    "subgroups": {
+     "M18": "M18_good"
+    }
+   },
+   {
+    "verse_lexical_id": 1347348,
+    "strong": "H1397",
+    "surface": "man",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347349,
+    "strong": "H9005",
+    "surface": "man",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347350,
+    "strong": "H3588A",
+    "surface": "that",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347351,
+    "strong": "H5375H",
+    "surface": "bear",
+    "morph": "HVqi3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347352,
+    "strong": "H5923",
+    "surface": "yoke",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347353,
+    "strong": "H9023",
+    "surface": "his",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347354,
+    "strong": "H5271A",
+    "surface": "youth",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347355,
+    "strong": "H9003",
+    "surface": "youth",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.28": [
+   {
+    "verse_lexical_id": 1347656,
+    "strong": "H3427",
+    "surface": "sit",
+    "morph": "HVqi3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347657,
+    "strong": "H0910",
+    "surface": "alone",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347658,
+    "strong": "H1826H",
+    "surface": "silence",
+    "morph": "HVqu3ms",
+    "clusters": [
+     "M33"
+    ],
+    "subgroups": {
+     "M33": "M33_quiet"
+    }
+   },
+   {
+    "verse_lexical_id": 1347659,
+    "strong": "H3588A",
+    "surface": "when",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347660,
+    "strong": "H5190",
+    "surface": "laid",
+    "morph": "HVqp3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347661,
+    "strong": "H5921A",
+    "surface": "on",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347662,
+    "strong": "H9033",
+    "surface": "him",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.29": [
+   {
+    "verse_lexical_id": 1347463,
+    "strong": "H5414H",
+    "surface": "put",
+    "morph": "HVqi3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347464,
+    "strong": "H6310G",
+    "surface": "mouth",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347465,
+    "strong": "H6083",
+    "surface": "dust",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T13"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347466,
+    "strong": "H9003",
+    "surface": "dust",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347467,
+    "strong": "H3426",
+    "surface": "be",
+    "morph": "HAcbsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347468,
+    "strong": "H9023",
+    "surface": "be",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347469,
+    "strong": "H0194",
+    "surface": "be",
+    "morph": "HD",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347470,
+    "strong": "H8615B",
+    "surface": "hope",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M68"
+    ],
+    "subgroups": {
+     "M68": "M68_hope"
+    }
+   }
+  ],
+  "Lam.3.30": [
+   {
+    "verse_lexical_id": 1347205,
+    "strong": "H5414G",
+    "surface": "give",
+    "morph": "HVqi3ms",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347206,
+    "strong": "H3895H",
+    "surface": "cheek",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347207,
+    "strong": "H9033",
+    "surface": "cheek",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347208,
+    "strong": "H5221",
+    "surface": "strikes",
+    "morph": "HVhrmsc",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347209,
+    "strong": "H9005",
+    "surface": "strikes",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347210,
+    "strong": "H7646",
+    "surface": "filled",
+    "morph": "HVqi3ms",
+    "clusters": [
+     "M45"
+    ],
+    "subgroups": {
+     "M45": "M45_satisfying"
+    }
+   },
+   {
+    "verse_lexical_id": 1347211,
+    "strong": "H2781",
+    "surface": "insults",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M07"
+    ],
+    "subgroups": {
+     "M07": "M07_reproach"
+    }
+   },
+   {
+    "verse_lexical_id": 1347212,
+    "strong": "H9003",
+    "surface": "insults",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.31": [
+   {
+    "verse_lexical_id": 1347706,
+    "strong": "H3588A",
+    "surface": "For",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347707,
+    "strong": "H0136",
+    "surface": "Lord",
+    "morph": "HNpt",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347708,
+    "strong": "H3808",
+    "surface": "not",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347709,
+    "strong": "H2186A",
+    "surface": "cast off",
+    "morph": "HVqi3ms",
+    "clusters": [
+     "M30"
+    ],
+    "subgroups": {
+     "M30": "M30_rejecting"
+    }
+   },
+   {
+    "verse_lexical_id": 1347710,
+    "strong": "H5769G",
+    "surface": "forever",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347711,
+    "strong": "H9005",
+    "surface": "forever",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.32": [
+   {
+    "verse_lexical_id": 1347047,
+    "strong": "H3588B",
+    "surface": "for",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347048,
+    "strong": "H0518B",
+    "surface": "though",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347049,
+    "strong": "H3013",
+    "surface": "cause grief",
+    "morph": "HVhp3ms",
+    "clusters": [
+     "M24"
+    ],
+    "subgroups": {
+     "M24": "M24_affliction"
+    }
+   },
+   {
+    "verse_lexical_id": 1347050,
+    "strong": "H7355",
+    "surface": "compassion",
+    "morph": "HVpq3ms",
+    "clusters": [
+     "M50"
+    ],
+    "subgroups": {
+     "M50": "M50_mercy"
+    }
+   },
+   {
+    "verse_lexical_id": 1347051,
+    "strong": "H9004",
+    "surface": "according",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347052,
+    "strong": "H7230",
+    "surface": "abundance",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M46"
+    ],
+    "subgroups": {
+     "M46": "M46_abundance"
+    }
+   },
+   {
+    "verse_lexical_id": 1347053,
+    "strong": "H9023",
+    "surface": "his",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347054,
+    "strong": "H2617A",
+    "surface": "steadfast love",
+    "morph": "HNcmpc",
+    "clusters": [
+     "M50"
+    ],
+    "subgroups": {
+     "M50": "M50_chesed"
+    }
+   }
+  ],
+  "Lam.3.33": [
+   {
+    "verse_lexical_id": 1346670,
+    "strong": "H3588A",
+    "surface": "for",
+    "morph": "HTc",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346671,
+    "strong": "H3808",
+    "surface": "not",
+    "morph": "HTn",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346672,
+    "strong": "H6031B",
+    "surface": "afflict",
+    "morph": "HVpp3ms",
+    "clusters": [
+     "M24"
+    ],
+    "subgroups": {
+     "M24": "M24_affliction"
+    }
+   },
+   {
+    "verse_lexical_id": 1346673,
+    "strong": "H3820A",
+    "surface": "heart",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1346674,
+    "strong": "H9006",
+    "surface": "heart",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346675,
+    "strong": "H3013",
+    "surface": "grieve",
+    "morph": "HVpw3ms",
+    "clusters": [
+     "M24"
+    ],
+    "subgroups": {
+     "M24": "M24_affliction"
+    }
+   },
+   {
+    "verse_lexical_id": 1346676,
+    "strong": "H9023",
+    "surface": "grieve",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346677,
+    "strong": "H1121A",
+    "surface": "children",
+    "morph": "HNcmpc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1346678,
+    "strong": "H0376G",
+    "surface": "men",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T8"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Lam.3.41": [
+   {
+    "verse_lexical_id": 1347439,
+    "strong": "H5375O",
+    "surface": "lift up",
+    "morph": "HVqi1cp",
+    "clusters": [
+     "M19"
+    ],
+    "subgroups": {
+     "M19": "M19_trust"
+    }
+   },
+   {
+    "verse_lexical_id": 1347440,
+    "strong": "H3824",
+    "surface": "hearts",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1347441,
+    "strong": "H3709G",
+    "surface": "hands",
+    "morph": "HNcfda",
+    "clusters": [
+     "T14"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347442,
+    "strong": "H9025",
+    "surface": "hands",
+    "morph": "HSp1bp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347443,
+    "strong": "H0413",
+    "surface": "hands",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347444,
+    "strong": "H0413",
+    "surface": "to",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347445,
+    "strong": "H0410G",
+    "surface": "God",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347446,
+    "strong": "H8064",
+    "surface": "heaven",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T10"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1347447,
+    "strong": "H9003",
+    "surface": "heaven",
+    "morph": "HRd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ],
+  "Neh.5.7": [
+   {
+    "verse_lexical_id": 1225166,
+    "strong": "H4427B",
+    "surface": "took counsel",
+    "morph": "HVNw3ms",
+    "clusters": [
+     "M63"
+    ],
+    "subgroups": {
+     "M63": "M63_counsel"
+    }
+   },
+   {
+    "verse_lexical_id": 1225167,
+    "strong": "H3820A",
+    "surface": "myself",
+    "morph": "HNcmsc",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_heart"
+    }
+   },
+   {
+    "verse_lexical_id": 1225168,
+    "strong": "H7378",
+    "surface": "brought charges",
+    "morph": "HVqw1cs",
+    "clusters": [
+     "M26"
+    ],
+    "subgroups": {
+     "M26": "M26_contending"
+    }
+   },
+   {
+    "verse_lexical_id": 1225169,
+    "strong": "H9030",
+    "surface": "brought charges",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225170,
+    "strong": "H5921A",
+    "surface": "against",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225171,
+    "strong": "H9020",
+    "surface": "against",
+    "morph": "HSp1bs",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225172,
+    "strong": "H2715",
+    "surface": "nobles",
+    "morph": "HNcmpa",
+    "clusters": [
+     "M34"
+    ],
+    "subgroups": {
+     "M34": "M34_nobles"
+    }
+   },
+   {
+    "verse_lexical_id": 1225173,
+    "strong": "H9009",
+    "surface": "nobles",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225174,
+    "strong": "H9012",
+    "surface": "nobles",
+    "morph": "HSh",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225175,
+    "strong": "H0854",
+    "surface": "nobles",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225176,
+    "strong": "H5461",
+    "surface": "officials",
+    "morph": "HNcmpa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225177,
+    "strong": "H9009",
+    "surface": "officials",
+    "morph": "HTd",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225178,
+    "strong": "H0854",
+    "surface": "officials",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225179,
+    "strong": "H9002",
+    "surface": "officials",
+    "morph": "HC",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225180,
+    "strong": "H0559",
+    "surface": "said",
+    "morph": "HVqw1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225181,
+    "strong": "H0859D",
+    "surface": "You",
+    "morph": "HPp2mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225182,
+    "strong": "H5375K",
+    "surface": "exacting",
+    "morph": "HVqrmpa",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225183,
+    "strong": "H9023",
+    "surface": "exacting",
+    "morph": "HSp3ms",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225184,
+    "strong": "H4855",
+    "surface": "interest",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225185,
+    "strong": "H9012",
+    "surface": "interest",
+    "morph": "HSh",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225186,
+    "strong": "H9005",
+    "surface": "interest",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225187,
+    "strong": "H9038",
+    "surface": "interest",
+    "morph": "HSp3mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225188,
+    "strong": "H0376I",
+    "surface": "each",
+    "morph": "HNcmsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225189,
+    "strong": "H0251I",
+    "surface": "brother",
+    "morph": "HNcmsc",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225190,
+    "strong": "H9003",
+    "surface": "brother",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225191,
+    "strong": "H5414I",
+    "surface": "held",
+    "morph": "HVqw1cs",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225192,
+    "strong": "H1419A",
+    "surface": "great",
+    "morph": "HAafsa",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225193,
+    "strong": "H6952",
+    "surface": "assembly",
+    "morph": "HNcfsa",
+    "clusters": [
+     "M44"
+    ],
+    "subgroups": {
+     "M44": "M44_assembly"
+    }
+   },
+   {
+    "verse_lexical_id": 1225194,
+    "strong": "H9038",
+    "surface": "assembly",
+    "morph": "HSp3mp",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1225195,
+    "strong": "H5921A",
+    "surface": "against",
+    "morph": "HR",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   }
+  ]
+ },
+ "lines": [
+  {
+   "line_no": 85,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- **Zion's lament (U2 §48)**: the body, the hunger, \"pour out your heart like water\" (Lam 2:19), \"lift up our hearts\" (3:41), and the hope in the middle (3:20–33) are not in the 5 Oct ledgers. They are in AN-67, which is woven in Ch 13.",
+   "refs": [
+    {
+     "as_written": "Lam 2:19",
+     "kind": "verse",
+     "verse": "Lam.2.19"
+    },
+    {
+     "as_written": "3:41",
+     "kind": "verse",
+     "verse": "Lam.3.41"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.20"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.21"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.22"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.23"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.24"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.25"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.26"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.27"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.28"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.29"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.30"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.31"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.32"
+    },
+    {
+     "as_written": "3:20–33",
+     "kind": "verse",
+     "verse": "Lam.3.33"
+    }
+   ],
+   "answer": null
+  },
+  {
+   "line_no": 86,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- **Insolence (U1 §30)**: Jer 48:29 \"the haughtiness of his heart\" and Hos 7:14 \"they do not cry to me from the heart\" are carried nowhere (D3a).",
+   "refs": [
+    {
+     "as_written": "Jer 48:29",
+     "kind": "verse",
+     "verse": "Jer.48.29"
+    },
+    {
+     "as_written": "Hos 7:14",
+     "kind": "verse",
+     "verse": "Hos.7.14"
+    }
+   ],
+   "answer": null
+  },
+  {
+   "line_no": 87,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- **The seer under the indignation (U2 §54)**: Dan 8:17–18 (fear, collapse, being raised) and 11:35 (the wise refined) are carried nowhere (D3b).",
+   "refs": [
+    {
+     "as_written": "Dan 8:17–18",
+     "kind": "verse",
+     "verse": "Dan.8.17"
+    },
+    {
+     "as_written": "Dan 8:17–18",
+     "kind": "verse",
+     "verse": "Dan.8.18"
+    }
+   ],
+   "answer": null
+  },
+  {
+   "line_no": 88,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- **Explaining suffering (U2 §25)**: Job 21:19, 21:14, 42:6 and 20:28 are carried nowhere (D3b).",
+   "refs": [
+    {
+     "as_written": "Job 21:19, 21:14, 42:6",
+     "kind": "verse",
+     "verse": "Job.21.19"
+    },
+    {
+     "as_written": "Job 21:19, 21:14, 42:6",
+     "kind": "verse",
+     "verse": "Job.21.14"
+    },
+    {
+     "as_written": "Job 21:19, 21:14, 42:6",
+     "kind": "verse",
+     "verse": "Job.42.6"
+    }
+   ],
+   "answer": null
+  },
+  {
+   "line_no": 101,
+   "line_kind": "table row",
+   "section": "(opening)",
+   "text": "| M-6 | **Wording slips**: 8 in U1 §37 and U2 §65 (#1974 v3: Neh 5:7; 2Ch 26:16; 1Sa 1:10; Gen 27:41; Est 1:18; 2Ki 22:19; 2Sa 24:10; Isa 51:18); unit 5 data notes cite AG-241 where AG-216 is meant | the approved readings | Corrected in place with a dated note (approved files: your ruling needed on in-place correction vs a version bump) |",
+   "refs": [
+    {
+     "as_written": "Neh 5:7",
+     "kind": "verse",
+     "verse": "Neh.5.7"
+    },
+    {
+     "as_written": "2Ch 26:16",
+     "kind": "verse",
+     "verse": "2Chr.26.16"
+    },
+    {
+     "as_written": "1Sa 1:10",
+     "kind": "verse",
+     "verse": "1Sam.1.10"
+    },
+    {
+     "as_written": "Gen 27:41",
+     "kind": "verse",
+     "verse": "Gen.27.41"
+    },
+    {
+     "as_written": "Est 1:18",
+     "kind": "verse",
+     "verse": "Esth.1.18"
+    },
+    {
+     "as_written": "2Ki 22:19",
+     "kind": "verse",
+     "verse": "2Kgs.22.19"
+    },
+    {
+     "as_written": "2Sa 24:10",
+     "kind": "verse",
+     "verse": "2Sam.24.10"
+    },
+    {
+     "as_written": "Isa 51:18",
+     "kind": "verse",
+     "verse": "Isa.51.18"
+    }
+   ],
+   "answer": null
+  }
+ ],
+ "findings": []
+}

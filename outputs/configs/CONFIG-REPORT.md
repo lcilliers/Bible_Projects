@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-26T07:28:52Z |
+| generated_at | 2026-10-26T11:35:05Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -76,30 +76,30 @@ _(none)_
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
 3. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
-**PS/worksheet drift** (1) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-4. Verse-Scope.ps1: ps tools worksheet.xlsx tab 'Verse-Scope' is missing flag column(s) ['HomeScope'] — the script has these parameters now
+**PS/worksheet drift** (0) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
+_(none)_
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
 **Unenforced behaviour rules** (17) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-5. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-6. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-7. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-8. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-9. [development] #46 test-plan-per-module-utility — deliberately_deferred
-10. [development] #66 cluster-label-must-track-membership — buildable_not_built
-11. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-12. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-13. [filing] #56 naming-shape — partially_enforced
-14. [filing] #58 archiving-trigger — partially_enforced
-15. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-16. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-17. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
-18. [study_method] #118 surface-mapping-conditions — partially_enforced
-19. [study_method] #120 scope-home-and-multiplicity — partially_enforced
-20. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
-21. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
+4. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+5. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+6. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+7. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+8. [development] #46 test-plan-per-module-utility — deliberately_deferred
+9. [development] #66 cluster-label-must-track-membership — buildable_not_built
+10. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+11. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+12. [filing] #56 naming-shape — partially_enforced
+13. [filing] #58 archiving-trigger — partially_enforced
+14. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+15. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+16. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
+17. [study_method] #118 surface-mapping-conditions — partially_enforced
+18. [study_method] #120 scope-home-and-multiplicity — partially_enforced
+19. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
+20. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -141,13 +141,14 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**999** registered module(s) — **533** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **863** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1003** registered module(s) — **535** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **864** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
 | Copy-NarrativeToLearning4Comfort.ps1 | iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1 | PS wrapper for narrativecopy.py (-DryRun). Run on completion of a section of work, on request, and in /session-close (escalation #1941). | ✓ | ✓ | thin wrapper; config is read by narrativecopy.py |
 | Narrative-Register.ps1 | iba/app/ps/Narrative-Register.ps1 | PS entry point for the narrative claim register (escalation #2110); every action dispatches through run.py, work package narrative-register. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Open-Item.ps1 | iba/app/ps/Open-Item.ps1 | PS entry point for registering open items (escalation #2236); dispatches through run.py, work package open-item. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
+| Prior-Capture.ps1 | iba/app/ps/Prior-Capture.ps1 | PS entry point of work package prior-capture (#2305): -Step Prepare\|Record\|Report -File <document or JSON> [-By] | ✓ | ✓ | PS entry point: dispatches through run.py; its settings are the steps' own |
 | Reading-Index.ps1 | iba/app/ps/Reading-Index.ps1 | PS entry point for the cluster reading index (escalation #2228); dispatches through run.py, work package reading-index. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Reading.ps1 | iba/app/ps/Reading.ps1 | PS entry point for the reading process (escalation #2228); every step dispatches through run.py, work package reading. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Strand-Reading.ps1 | iba/app/ps/archive/Strand-Reading.ps1 | PS entry point for the reading process (escalation #2172); every step dispatches through run.py, work package strand-reading. RETIRED 2026-10-23 (#2228 D-a): superseded by the reading process (Reading.ps1). |  | ✓ | thin wrapper; config is read by the handlers through run.py |
@@ -426,6 +427,7 @@ _(none)_
 | handlers_compliance | iba/app/handlers/compliance.py | handlers/compliance.py -- the compliance.template and compliance.check_start steps (#2173 P2). | ✓ | ✓ | thin step wrappers: every setting is read in lib/compliance.py, which they call |
 | handlers_narrativeregister | iba/app/handlers/narrativeregister.py | handlers/narrativeregister.py -- the run.py handlers for work package narrative-register (one per Narrative-Register.ps1 action); the logic is in lib/narrativeregister.py (escalation #2110). | ✓ |  |  |
 | handlers_openitem | iba/app/handlers/openitem.py | handlers/openitem.py -- the run.py handlers for work package open-item (Open-Item.ps1), one per action; the logic is in lib/openitem.py (escalation #2236). | ✓ |  |  |
+| handlers_priorcapture | iba/app/handlers/priorcapture.py | priorcapture handler -- work package prior-capture: steps prior_capture.prepare, prior_capture.record, prior_capture.report (#2305) | ✓ |  |  |
 | handlers_reading | iba/app/handlers/reading.py | handlers/reading.py -- the run.py handlers for work package reading (one per Reading.ps1 step); the logic is in lib/reading.py (escalation #2228). | ✓ |  |  |
 | handlers_readingindex | iba/app/handlers/readingindex.py | handlers/readingindex.py -- the run.py handlers for work package reading-index (Reading-Index.ps1 -Step Build/Report); the logic is in lib/readingindex.py (escalation #2228). | ✓ |  |  |
 | handlers_strandreading | iba/app/handlers/archive/strandreading.py | handlers/strandreading.py -- the run.py handlers for work package strand-reading (one per Strand-Reading.ps1 step); the logic is in lib/strandreading.py (escalation #2172). RETIRED 2026-10-23 (#2228 D-a): superseded by the reading process (Reading.ps1). |  |  |  |
@@ -703,6 +705,8 @@ _(none)_
 | passagedebatereport | iba/app/lib/passagedebatereport.py | passagedebatereport.py — registers the passage-debate method (`WA-passage-read-guidance` + | ✓ |  |  |
 | passagetrack | iba/app/lib/passagetrack.py | passagetrack.py — the completion-tracking record for the verse-fanout method (`report. | ✓ | ✓ | receives an already-open cfg/connection from its caller; only checks cfg.may_write(), no settings/enums of its own. |
 | pathaudit | iba/app/lib/pathaudit.py | pathaudit.py -- project-wide scan for hardcoded folder/file-path string literals not backed by a live cfg accessor. Escalation #971/#976, the automated successor to the one-off #648 sweep for the location subset specifically. | ✓ | ✓ | legitimate zero, same shape as retention.py/seedreport.py: lib/pathaudit.py takes a pre-opened Cfg object and calls .conn.execute()/normalize_setting_value() directly -- its caller (handlers/pathaudit.py) is the one that calls cfg.setting("pathaudit.report_path", ...); the lib module itself resolves no config of its own. |
+| prior_capture_config_2305_v1_20261026 | iba/app/migration/archive/prior_capture_config_2305_v1_20261026.py | ONE-OFF migration -- escalation #2305: table prior_capture_line, reading_file.capture_status, enums, work package prior-capture, its steps, grants, settings and method rules CP-01 to CP-10; run_id DEVMODE-2305-PRIOR-CAPTURE-CONFIG-20261026. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| priorcapture | iba/app/lib/priorcapture.py | priorcapture.py -- capture of prior study documents into ib_observation and ib_node: prepare, record and report (#2305, method rules CP-01 to CP-10) | ✓ |  |  |
 | prose_add_edit_rules_build_v1_20260826 | iba/app/migration/archive/prose_add_edit_rules_build_v1_20260826.py | ONE-OFF migration, escalation #890 (Prose add/edit operational rules layer) -- cfg_behaviour_rule (D2, prose_section_type creation gate), prose_section_verse_link table + cfg_table/cfg_column/cfg_write_grant (D4), cfg_step for prose.flag_fix_propose/.flag_fix_apply (D5), cfg_prose.book_stage_map use-text correction (D6, no filtering bug found). D1 (leave prose_section_finding_link's FK as-is), D3 (edit-file delete refusal) are code-only, not this migration. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | prose_change_log_build_v1_20260824 | iba/app/migration/archive/prose_change_log_build_v1_20260824.py | ONE-OFF migration, escalation #836 (Prose change log design) -- creates record_change_log, moves prose_section/prose_section_type to Model A (mutate-in-place) versioning, migrates the 91 existing superseded prose_section rows into the log then hard-deletes them, baseline-backfills version pointers for every surviving row, and registers the full cfg_table/cfg_column/cfg_enum/cfg_write_grant/cfg_behaviour_rule content. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | prose_first_layer_build_v1_20260824 | iba/app/migration/archive/prose_first_layer_build_v1_20260824.py | ONE-OFF migration, escalation #829 (Prose management IBA first-layer) -- builds cfg_prose, fills/corrects cfg_column use text, cfg_enum (5 groups), cfg_status_flow, cfg_behaviour_rule (3 rows), cfg_write_grant (3 rows), the prose work package + 5 cfg_step rows, reactivates the 4 original scripts. D10 (book_stage_map vs. book_label) deliberately deferred, not built here. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
@@ -1329,6 +1333,9 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | open_item | open_item.output_dir | outputs/open-items | where Open-Item.ps1 -Action Review writes the stragglers report (#2236) |
 | open_item | open_item.review_age_days | 60 | Open-Item.ps1 -Action Review lists worded items older than this as stragglers to deal with (#2236 D4) |
 | pathaudit | pathaudit.report_path | outputs/configs/path-audit.md | where pathaudit.scan writes its full findings report |
+| prior_capture | prior_capture.output_dir | outputs/prior-capture | #2305: where the prepare JSON files and capture reports are written (versioned per day by lib/filingkit) |
+| prior_capture | prior_capture.stage | prior-capture | #2305 Q1: the stage of an observation captured from a prior document, so the rows stay identifiable as migrated |
+| prior_capture | prior_capture.unfitted_tag | unfitted | #2305 Q2: the tag of a material observation that fits none of the eight kinds (reading.observation_parts) |
 | raw | discovery.follow_related | False | relatedNos is root-family noise (H2519 -> 'to divide', 'Mount Halak'). Not followed. |
 | raw | language.greek_prefix | G | a strong starting with this is Greek; else Hebrew |
 | raw | meaning.head_marker | :  | a mediumDef starting with this is a SENSE: head + the lemma's tree. Else the code is its own lemma. |
@@ -1669,6 +1676,13 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- | --- |
 | 0 | pathaudit.scan | iba.app.handlers.pathaudit:path_audit_scan | none | Project-wide scan (every .py file except cfg_utility.inactive=1 ones) for a string literal that looks like a project-relative path under a live top-level folder, with no live cfg accessor on the same line -- ADVISORY, needs a look per finding, not an auto-fix. |
 
+**prior-capture** — runs over `none` · script `iba/app/ps/Prior-Capture.ps1`
+| # | step | handler | scope | does |
+| --- | --- | --- | --- | --- |
+| 0 | prior_capture.prepare | iba.app.handlers.priorcapture:prepare | none | the prepare JSON of one study document: its lines that name a verse with the verses resolved, the M- and T-coded occurrences of each verse and the October ids already recorded, for Claude to fill (read-only) -- see lib/priorcapture.py (escalation #2305) |
+| 1 | prior_capture.record | iba.app.handlers.priorcapture:record | none | the filled prepare JSON written: the observations, their nodes and the answer to every line, in one transaction; the whole file refused on any problem -- see lib/priorcapture.py (escalation #2305) |
+| 2 | prior_capture.report | iba.app.handlers.priorcapture:report | none | where the capture stands: documents by status, observations and line answers by kind (read-only) -- see lib/priorcapture.py (escalation #2305) |
+
 **prose** — runs over `none` · script `iba/app/ps/Prose.ps1`
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
@@ -1855,7 +1869,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 <a id="7-on-fail-condition-path-the-fork-rules"></a>
 ## 7. on_fail — condition -> path (the fork rules)
 
-**20 of 132 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**20 of 135 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -1940,6 +1954,9 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | passage.build | no-candidates | report-stop | the book has no candidate spans — run set-candidates first |
 | passage.validate | findings-rejected | report-stop | researcher flagged the passage distribution as needing the rule revisited |
 | passage.validate | needs-revision | report-stop | researcher asked for more specific investigation (see comment) |
+| prior_capture.prepare | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| prior_capture.record | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| prior_capture.report | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | raw.backfill_meaning | invalid-range | report-stop | the -Range value could not be parsed |
 | raw.backfill_meaning | unreachable | report-stop | STEP is not reachable — cannot pull any meaning |
 | raw.discover | follow-related-not-built | report-stop | discovery.follow_related is true but relatedNos expansion was never implemented |
@@ -2044,6 +2061,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | operation.set | debate_change_detail, operation, operation_party |
 | passage.build | debate_change_detail, passage, verse_passage |
 | phenomenon.set | debate_change_detail, passage, phenomenon |
+| prior_capture.record | ib_node, ib_observation, prior_capture_line, reading_file |
 | purge.execute | candidate_seed, cluster, cluster_strong, hib, hib_referent_option, operation, operation_party, passage, passage_emergent_question, phenomenon, span, strong, strong_lexicon, strong_meaning_tree, strong_related, strong_sense, verse_hib, verse_passage, wa_obs_question_catalogue, word_strong |
 | raw.validate | validation_result |
 | raw.write | word_registry |
@@ -3658,6 +3676,8 @@ _one row per indexed study file_ — #2228 tool 2: a study file under reading_in
 | removed | INTEGER |  | ✓ |  |  | 1 when the file is gone or archived; its rows are then marked deleted | escalation #2228, cluster reading index design v1 (outputs/escalation/2228-cluster-reading-index-design-v1-20261023.md) |
 | created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2228, cluster reading index design v1 (outputs/escalation/2228-cluster-reading-index-design-v1-20261023.md) |
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2228, cluster reading index design v1 (outputs/escalation/2228-cluster-reading-index-design-v1-20261023.md) |
+| capture_status | TEXT |  | ✓ |  |  | #2305: where the document stands in the prior-work capture: not started, in progress, captured, or nothing to capture | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| capture_run_id | TEXT |  |  |  |  | #2305: the run that captured the document | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
 
 ### reading_section
 _one row per heading section of an indexed file_ — #2228 tool 2: the sections of a study file (# to #### headings; the opening before the first heading is section 0)
@@ -3785,6 +3805,22 @@ dedup key: `cluster_code, strong, surface`
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2292 (#2286 U2; outputs/escalation/2286-build-plan-v4-20261025.md) |
 | deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the pair is no longer live | escalation #2292 (#2286 U2; outputs/escalation/2286-build-plan-v4-20261025.md) |
 
+### prior_capture_line
+_one row per document line that names a verse and per observation it gave (one row for a line that gave none)_ — #2305: the answer to every line of a study document that names a verse, kept with the capture run so what was taken from each document, and why the rest was passed over, can be checked line by line (design sec 4). captured and already recorded rows name the observation; a not an observation row names its reason
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| file_id | INTEGER |  | ✓ |  | reading_file.id | the document (reading_file) | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| line_no | INTEGER |  | ✓ |  |  | the line in the document, as in reading_ref.line_no | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| answer | TEXT |  | ✓ |  |  | captured, already recorded or not an observation (design sec 4) | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| reason_class | TEXT |  |  |  |  | on a not an observation line: the class it falls in (design sec 1) | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| reason | TEXT |  |  |  |  | on a not an observation line: why, in words | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| observation_id | INTEGER |  |  |  | ib_observation.id | on a captured or already recorded line: the observation | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| run_id | TEXT |  |  |  |  | the capture run that wrote the row | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| created_at | TEXT |  | ✓ |  |  | when (ISO-8601 UTC) | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+| deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the answer is no longer live | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+
 <a id="11-enums"></a>
 ## 11. Enums
 
@@ -3802,7 +3838,7 @@ dedup key: `cluster_code, strong, surface`
 | cluster_subgroup.kind | group, qualifier, not_this_sense, anomaly |
 | cluster_subgroup.status | allocated, ready_for_reading, ready_for_answer, answer_complete, completed, re_read_needed |
 | compliance_rule_status | engaged, not engaged |
-| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit, lexical, strand_reading, verse_scope, reading_index, verse_collate, open_item, reading |
+| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit, lexical, strand_reading, verse_scope, reading_index, verse_collate, open_item, reading, prior_capture |
 | control_home_type | cfg_table, db_table, document, folder, harness |
 | control_read_when | always, session_start, when_invoked, when_needed, history_only |
 | escalation_answer | approve, reject, revise |
@@ -3826,9 +3862,9 @@ dedup key: `cluster_code, strong, surface`
 | hib_kind | named_individual, unnamed_individual, named_collection, unnamed_collection, implicit_individual, implicit_collection |
 | ib_observation.basis | read, stated |
 | ib_observation.meaning_source | strong_meaning_tree, strong_lexicon.lsj, strong_lexicon.mounce, strong_lexicon, verse-text, role-tags, cluster, observations, n/a |
-| ib_observation.stage | verse-reading, char-subgroup, char-reading, char-answers, char-synergy, strand-reading, reading |
+| ib_observation.stage | verse-reading, char-subgroup, char-reading, char-answers, char-synergy, strand-reading, reading, prior-capture |
 | ib_observation.status | resolved, needs-corroboration, open, silent, withdrawn, draft |
-| ib_observation.tag | instance-meaning, verse-grouping, difference-inference, surface-gloss-divergence, no-human-context, cross-cluster-significance, data-error, alternative-meaning, could-not-resolve, answered-no-flag, tightly-related, no-direct-connection, qualifier-for-term, no-impact, not-related-to-meaningful-word, sole-mcode-in-verse, cluster-pole-negative, cluster-pole-positive, attested-pre-nt, nt-coinage, needs_adjacent_verse_context, elevation-candidate, key-statement, face, link, party, qualification, silence, statement, term, use, subgroup-settlement |
+| ib_observation.tag | instance-meaning, verse-grouping, difference-inference, surface-gloss-divergence, no-human-context, cross-cluster-significance, data-error, alternative-meaning, could-not-resolve, answered-no-flag, tightly-related, no-direct-connection, qualifier-for-term, no-impact, not-related-to-meaningful-word, sole-mcode-in-verse, cluster-pole-negative, cluster-pole-positive, attested-pre-nt, nt-coinage, needs_adjacent_verse_context, elevation-candidate, key-statement, face, link, party, qualification, silence, statement, term, use, subgroup-settlement, unfitted |
 | ib_observation.window | meaning, action-impact, relational, literary, cognitive, affective, operational, constitutional, origin, scientific, Subgroup, faculty |
 | lexical_code_class | negator, connective_causal, connective_coordinating, connective_purpose, party_divine, party_human, party_angelic |
 | narrative_change_basis | recorded, reconstructed, direct edit |
@@ -3852,12 +3888,15 @@ dedup key: `cluster_code, strong, surface`
 | party_kind | divine, human, non_human |
 | passage_debate_status | scaffold, filled, empty, in-progress, complete |
 | passage_source | passage-build, single-verse-emergent |
+| prior_capture_line.answer | captured, already recorded, not an observation |
+| prior_capture_line.reason_class | heading, reference list, hit count, surface or gloss table, scope or method or process record, pointer with no content, weave or quote-check record, next-steps list |
 | project_database | iba, bible_research |
 | prose_section_author | claude_ai, claude_code, researcher |
 | prose_section_status | draft, in_review, approved, archived |
 | prose_section_type_book_label | Programme, Detail design, Findings, Essays, Word Index and Glossary |
 | prose_section_type_lifecycle_tag | source, v1, v2, v3 |
 | prose_section_type_source_stage | programme, session_a, session_b, session_b_phase9, session_c, session_d, synthesis, verse-analysis, findings, essay, contributor |
+| reading_file.capture_status | not started, in progress, captured, nothing to capture |
 | reading_gap_type | hit_unread, term_cluster, meaning_missing, base_missing, term_reading_missing, read_in_files_only, face_not_gathered, open_item, not_read, observation_part_missing, observation_unsupported, observed_no_claim, claim_not_told, claim_without_observation, citation_without_record |
 | reading_ref.found_by | explicit, follow-on c:v, follow-on v. |
 | reading_ref.kind | verse, whole chapter |

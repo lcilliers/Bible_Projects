@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-26T10:50:56Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-26T14:37:27Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `5f91d9aa-a797-4494-9f64-f2137d5a6103` (CLAUDE_CODE_SESSION_ID); started 2026-10-26T10:09:44Z; window base commit `345cbdc1a420b0a85631836c35c49810cba1459c`
-- compliance file: `Logs/compliance/COMPLIANCE-20261026-5f91d9aa.md`; session log: `Logs/SESSION-LOG-20261026-prior-work-capture-design.md`
-- **open findings: 0**; cleared by disposition: 0
+- session: `5d0e964b-6c3b-463c-9979-16e6ce15295d` (CLAUDE_CODE_SESSION_ID); started 2026-10-26T10:52:48Z; window base commit `92dc55a552a8b0f3ade45d6411fbac705b06b695`
+- compliance file: `Logs/compliance/COMPLIANCE-20261026-5d0e964b.md`; session log: `Logs/SESSION-LOG-20261026-prior-capture-built-and-run.md`
+- **open findings: 0**; cleared by disposition: 1
 
 
 ## Contents
@@ -83,4 +83,4 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Bash:_python:fae41953`: Bash: python failed 2 times this session: KeyError: 130; KeyError: 42 -- disposition: fixed: the two KeyErrors (130 and 42) were my fill scripts naming a line that is not a reference line of its document; the scripts were corrected the same turn (a verse-less line attaches to a neighbour with a flag) and both documents recorded.

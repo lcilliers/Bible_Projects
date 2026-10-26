@@ -111,3 +111,5 @@ JOIN other_m_hits o ON o.verse_id = m.verse_id
 LEFT JOIN strong ms ON ms.strongNumber = m.cl_strong
 LEFT JOIN strong os ON os.strongNumber = o.other_strong
 ORDER BY v.reference, m.cl_position, o.other_position;
+
+select * from surface_subgroup ssg;

@@ -1,0 +1,181 @@
+{
+ "kind": "prior-capture",
+ "version": 1,
+ "built_at": "2026-10-26T12:14:33Z",
+ "file": {
+  "id": 14,
+  "path": "_analytics/Clusters/M01 - fear-awe/fear-strand-handoff-v1-20261001.md",
+  "cluster": "M01",
+  "sha256": "732f89bd33d11fb5aa75d8a7936809d5dd2acd0d104acee7ce99e0e0223067cb"
+ },
+ "fill": "findings: one per material observation the document makes about a verse (CP-01 to CP-07); lines[].answer: every line answered (captured / already_recorded / not_an_observation)",
+ "counts": {
+  "lines": 1,
+  "verses": 1,
+  "unresolved_refs": 0
+ },
+ "october": {},
+ "october_same_prefix": {},
+ "unresolved": [],
+ "verse_words": {
+  "2Tim.1.7": [
+   {
+    "verse_lexical_id": 1500215,
+    "strong": "G1063",
+    "surface": "for",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1500216,
+    "strong": "G2316",
+    "surface": "God",
+    "morph": "N-NSM-T",
+    "clusters": [
+     "T7"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1500217,
+    "strong": "G1325",
+    "surface": "gave",
+    "morph": "V-AAI-3S",
+    "clusters": [
+     "T3"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1500218,
+    "strong": "G2254",
+    "surface": "us",
+    "morph": "P-1DP",
+    "clusters": [
+     "T2"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1500219,
+    "strong": "G4151G",
+    "surface": "spirit",
+    "morph": "N-ASN",
+    "clusters": [
+     "M47"
+    ],
+    "subgroups": {
+     "M47": "M47_spirit"
+    }
+   },
+   {
+    "verse_lexical_id": 1500220,
+    "strong": "G3756",
+    "surface": "not",
+    "morph": "PRT-N",
+    "clusters": [
+     "T5"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1500221,
+    "strong": "G1167",
+    "surface": "fear",
+    "morph": "N-GSF",
+    "clusters": [
+     "M01"
+    ],
+    "subgroups": {
+     "M01": "M01_fear"
+    }
+   },
+   {
+    "verse_lexical_id": 1500222,
+    "strong": "G0235",
+    "surface": "but",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1500223,
+    "strong": "G1411",
+    "surface": "power",
+    "morph": "N-GSF",
+    "clusters": [
+     "M23"
+    ],
+    "subgroups": {
+     "M23": "M23_power"
+    }
+   },
+   {
+    "verse_lexical_id": 1500224,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1500225,
+    "strong": "G0026",
+    "surface": "love",
+    "morph": "N-GSF",
+    "clusters": [
+     "M51"
+    ],
+    "subgroups": {
+     "M51": "M51_love"
+    }
+   },
+   {
+    "verse_lexical_id": 1500226,
+    "strong": "G2532",
+    "surface": "and",
+    "morph": "CONJ",
+    "clusters": [
+     "T6"
+    ],
+    "subgroups": {}
+   },
+   {
+    "verse_lexical_id": 1500227,
+    "strong": "G4995",
+    "surface": "self-control",
+    "morph": "N-GSM",
+    "clusters": [
+     "M16"
+    ],
+    "subgroups": {
+     "M16": "M16_not_this_sense"
+    }
+   }
+  ]
+ },
+ "lines": [
+  {
+   "line_no": 63,
+   "line_kind": "bullet",
+   "section": "(opening)",
+   "text": "- claim 9-4 (2Ti 1:7, \"spirit of fear\")",
+   "refs": [
+    {
+     "as_written": "2Ti 1:7",
+     "kind": "verse",
+     "verse": "2Tim.1.7"
+    }
+   ],
+   "answer": null
+  }
+ ],
+ "findings": []
+}

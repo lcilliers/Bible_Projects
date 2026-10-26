@@ -466,6 +466,43 @@ iba\app\ps\Surface-Map.ps1 -Step Check -Cluster M18                 # the report
   and the step to run. `Cluster-Assign.ps1 -Step Validate` counts every M cluster's mapping:
   stale pairs and partly mapped clusters are findings, while an unmapped cluster is only counted.
 
+### 7.2 Capture of prior study documents (`iba/app/ps/Prior-Capture.ps1`)
+
+A migration, not part of the standard analytic process (escalation #2305; design
+`outputs/escalation/2305-prior-work-capture-design-v2-20261026.md`; method rules CP-01 to CP-10 on
+`prior_capture.record`). Every material observation a study document makes about a verse it names is
+captured into `ib_observation` and `ib_node` as written: the verse is not read again, and nothing is
+checked, corrected or rejected. It runs in a chat session on the Sonnet model; there is no API route.
+Per document:
+
+```powershell
+iba\app\ps\Prior-Capture.ps1 -Step Prepare -File "<repo-relative path or reading_file id>"   # the JSON (reads only)
+iba\app\ps\Prior-Capture.ps1 -Step Record -File <the filled JSON>                           # written whole, or refused whole
+iba\app\ps\Prior-Capture.ps1 -Step Report                                                   # where the capture stands (reads only)
+```
+
+- **Prepare** writes `outputs/prior-capture/capture-<file id>-<date>.json` (setting
+  `prior_capture.output_dir`): every line of the document that names a verse (with its text, section
+  and verses resolved), the M- and T-coded words of each verse with their clusters and subgroups, the
+  October ids already recorded for the document, and the references that resolve to no single verse.
+  It refuses a document changed since the reading index was built (run `Reading-Index.ps1 -Step
+  Build`) and a document already captured.
+- **In the file,** Claude reads the document and fills `findings` (one per observation: kind, text,
+  basis, route on a party or link finding, and the nodes it applies to, each a verse and a word with
+  its role and the document's disposition) and the `answer` of **every** line: `captured` (the
+  finding keys), `already_recorded` (October observation ids) or `not_an_observation` with its class
+  and reason. A material observation that fits none of the eight kinds takes the tag `unfitted`.
+- **Record** refuses the whole file if any line is unanswered or anything is wrong, and lists every
+  problem. It writes the observations (stage `prior-capture`, status `draft`, `revisit_note` naming the
+  document and its lines), their nodes (the occurrence, cluster and subgroup from the tables, never
+  from the document), the line answers (`prior_capture_line`) and the document's `capture_status`, in
+  one transaction, and writes `capture-<file id>-report.md`: the unfitted observations, the flags the
+  document carries, the nodes with no occurrence, the references to no single verse and quotations not
+  found in the ESV text. No check for duplicates is made across documents; an identical live
+  description joins the first observation as further nodes.
+- **Report** writes the status report, versioned (`capture-status`, in `outputs/prior-capture/`): documents by `capture_status`, observations by tag, line
+  answers, and the nodes with no `verse_lexical_id`.
+
 ---
 
 ## 8. The inner-being narrative
