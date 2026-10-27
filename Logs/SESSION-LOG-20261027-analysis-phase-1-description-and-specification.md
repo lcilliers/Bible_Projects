@@ -51,4 +51,6 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 
 ## 6. Git
 
-(written after the commits)
+Branch: main. First close, first commit: 347de644 (the description and specification v1; pushed `c40d2878..347de644`), then 025e1dbe "session 20261027: session log git confirmation" (pushed `347de644..025e1dbe`). Second close (the lexical digest, specification v2 to v4, the build of #2320): commit 0ed841c6 "session 20261027: Analysis_phase_1 specification v4 (#2318, #2319) and the build to it (#2320): scope JSON as index, query by verse, accept/modify/soft delete, new gate; migrations, tests, docs; session log and close reports".
+
+Push output: `To https://github.com/lcilliers/Bible_Projects.git   025e1dbe..0ed841c6  main -> main`.
