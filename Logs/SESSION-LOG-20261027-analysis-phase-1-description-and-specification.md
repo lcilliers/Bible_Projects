@@ -43,4 +43,6 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 
 ## 6. Git
 
-(written after the first commit)
+Branch: main. First commit: 347de644 "session 20261027: #2318 Analysis_phase_1 description of the code and config read, and specification from the escalations; #2319 raised for section 4; session log, compliance file and close reports".
+
+Push output: `To https://github.com/lcilliers/Bible_Projects.git   c40d2878..347de644  main -> main`.
