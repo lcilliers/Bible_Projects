@@ -1,0 +1,1071 @@
+{
+ "reading": "m21-asking-test",
+ "reading_id": 5,
+ "escalation": 2316,
+ "home": "M21",
+ "objective": "Test of the three steps (0.C scope, 0.GAP pre, 0.3 observe) on subgroup M21_asking, Asking, inquiring (#2316)",
+ "opened": "2026-10-27T10:21:54Z",
+ "scope": [
+  {
+   "kind": "subgroup",
+   "value": "M21_asking",
+   "name": "Asking, inquiring",
+   "strongs": [
+    {
+     "code": "G0154",
+     "sense": "to ask"
+    },
+    {
+     "code": "G2065",
+     "sense": "to ask"
+    },
+    {
+     "code": "H1156",
+     "sense": "to ask"
+    },
+    {
+     "code": "H7592",
+     "sense": "to ask"
+    },
+    {
+     "code": "H7593",
+     "sense": "to ask"
+    }
+   ],
+   "subgroups": [
+    "M21_asking"
+   ],
+   "occurrences": 287,
+   "verses": 271,
+   "entered_by": "surface pairs"
+  }
+ ],
+ "how": "Fill each item's `record` with one of {\"finding\": <a finding: observationrecord's shape>}, {\"table\": \"...\", \"id\": n} or {\"reason\": \"...\"}; a face_not_gathered item may take {\"face\", \"parties\", \"observation\"}; an open_item may take {\"response\": what the reading found}. Then Reading.ps1 -Step Gather -Label m21-asking-test. New open items go in `new_items` (the Open-Item.ps1 -Action Add shape).",
+ "new_items": [],
+ "sections": {
+  "term_cluster": {
+   "guide": "A term in scope with no cluster (term-cluster). Route it to the cluster assignment's recovery (Cluster-Assign.ps1) and name the row, or give the reason.",
+   "records_in": [
+    "cluster_strong"
+   ],
+   "items": []
+  },
+  "meaning_missing": {
+   "guide": "A term in scope with no meaning in one of the three sources (meaning tree; for Greek, Mounce and LSJ). Pull it through the spine route and name the row, or give the reason it is not needed.",
+   "records_in": [
+    "strong_meaning_tree",
+    "strong_lexicon"
+   ],
+   "items": []
+  },
+  "base_missing": {
+   "guide": "A verse or term in scope with a missing base datum (span, Strong's). Route it to its recovery (New-Word, raw.backfill_meaning, the spine); never work round it.",
+   "records_in": [
+    "span",
+    "strong"
+   ],
+   "items": []
+  },
+  "term_reading_missing": {
+   "guide": "A term in a verse of the scope with no term reading result: meaning in context, surface variants, related terms. Record it as an observation, measured against what is expected, not by presence.",
+   "records_in": [
+    "ib_observation"
+   ],
+   "items": []
+  },
+  "face_not_gathered": {
+   "guide": "A face recorded on a ledger strand hit that no face finding holds on that surface. Link it to the finding that holds it (the face with its observation), write the face finding, or give the reason. The face story is built in the claims.",
+   "records_in": [
+    "ib_observation",
+    "reading_strand_hit"
+   ],
+   "items": [
+    {
+     "verse": "Gen 26:7",
+     "strand": "fear",
+     "strong": "H3372G",
+     "surface": "feared",
+     "record": {
+      "reason": "The face is on fear strand hit H3372G 'feared' in Gen 26:7, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 205,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Gen 43:7",
+     "strand": "life-death",
+     "strong": "H2416A",
+     "surface": "alive",
+     "record": {
+      "reason": "The face is on life-death strand hit H2416A 'alive' in Gen 43:7, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 2829,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Gen 43:27",
+     "strand": "life-death",
+     "strong": "H2416A",
+     "surface": "alive",
+     "record": {
+      "reason": "The face is on life-death strand hit H2416A 'alive' in Gen 43:27, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 2830,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Deu 18:16",
+     "strand": "life-death",
+     "strong": "H4191",
+     "surface": "die",
+     "record": {
+      "reason": "The face is on life-death strand hit H4191 'die' in Deu 18:16, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 2863,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Judg 1:1",
+     "strand": "life-death",
+     "strong": "H4194",
+     "surface": "death",
+     "record": {
+      "reason": "The face is on life-death strand hit H4194 'death' in Judg 1:1, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 2868,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Judg 13:6",
+     "strand": "fear",
+     "strong": "H3372H",
+     "surface": "awesome",
+     "record": {
+      "reason": "The face is on fear strand hit H3372H 'awesome' in Judg 13:6, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 429,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "1Sa 12:19",
+     "strand": "life-death",
+     "strong": "H4191",
+     "surface": "die",
+     "record": {
+      "reason": "The face is on life-death strand hit H4191 'die' in 1Sa 12:19, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 2637,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "1Ch 10:13",
+     "strand": "life-death",
+     "strong": "H4191",
+     "surface": "died",
+     "record": {
+      "reason": "The face is on life-death strand hit H4191 'died' in 1Ch 10:13, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 3427,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Ezr 8:22",
+     "strand": "anger",
+     "strong": "H0639G",
+     "surface": "wrath",
+     "record": {
+      "reason": "The face is on anger strand hit H0639G 'wrath' in Ezr 8:22, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 1253,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Psa 21:4",
+     "strand": "life-death",
+     "strong": "H2416E",
+     "surface": "life",
+     "record": {
+      "reason": "The face is on life-death strand hit H2416E 'life' in Psa 21:4, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 3662,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Jon 4:8",
+     "strand": "life-death",
+     "strong": "H2416E",
+     "surface": "live",
+     "record": {
+      "reason": "The face is on life-death strand hit H2416E 'live' in Jon 4:8, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 3043,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Mat 19:17",
+     "strand": "life-death",
+     "strong": "G2222",
+     "surface": "life",
+     "record": {
+      "reason": "The face is on life-death strand hit G2222 'life' in Mat 19:17, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 2762,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Luk 8:37",
+     "strand": "fear",
+     "strong": "G5401",
+     "surface": "fear",
+     "record": {
+      "reason": "The face is on fear strand hit G5401 'fear' in Luk 8:37, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 130,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Luk 9:45",
+     "strand": "fear",
+     "strong": "G5399",
+     "surface": "afraid",
+     "record": {
+      "reason": "The face is on fear strand hit G5399 'afraid' in Luk 9:45, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 841,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Joh 19:38",
+     "strand": "fear",
+     "strong": "G5401",
+     "surface": "fear",
+     "record": {
+      "reason": "The face is on fear strand hit G5401 'fear' in Joh 19:38, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 132,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Act 12:20",
+     "strand": "anger",
+     "strong": "G2371",
+     "surface": "angry",
+     "record": {
+      "reason": "The face is on anger strand hit G2371 'angry' in Act 12:20, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 1862,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Act 13:28",
+     "strand": "life-death",
+     "strong": "G2288",
+     "surface": "death",
+     "record": {
+      "reason": "The face is on life-death strand hit G2288 'death' in Act 13:28, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 3677,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "Phili 4:3",
+     "strand": "life-death",
+     "strong": "G2222",
+     "surface": "life",
+     "record": {
+      "reason": "The face is on life-death strand hit G2222 'life' in Phili 4:3, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 2794,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "1Jo 5:16",
+     "strand": "life-death",
+     "strong": "G2222",
+     "surface": "life",
+     "record": {
+      "reason": "The face is on life-death strand hit G2222 'life' in 1Jo 5:16, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 2524,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    },
+    {
+     "verse": "1Jo 5:16",
+     "strand": "life-death",
+     "strong": "G2288",
+     "surface": "death",
+     "record": {
+      "reason": "The face is on life-death strand hit G2288 'death' in 1Jo 5:16, a word outside M21_asking. It is read in this verse when Observe puts that surface in focus, where its face finding is written; no face is taken here from the ledger row.",
+      "table": "reading_strand_hit",
+      "id": 2525,
+      "run_id": "RUN-20261027_102231_227-READING"
+     }
+    }
+   ]
+  },
+  "open_item": {
+   "guide": "An open item for the verse, found by the verse and through its surfaces' Strongs and clusters, whatever its subgroup; the item shows the subgroups it reaches. Read for what it asks, and record what the reading found. It is settled at the claim step.",
+   "records_in": [
+    "ib_observation",
+    "escalation_thread_item_response"
+   ],
+   "items": [
+    {
+     "item": "OT-92.1",
+     "value": "Num 16:5 and 165 more verses",
+     "read_for": "the choosing verses routed to Ch 13 (route A and A+B: God chooses), read in their passages, not by group: what God's choosing says of God, for 13.1",
+     "note": "the choosing verses routed to Ch 13 (route A and A+B: God chooses), read in their passages, not by group: what God's choosing says of God, for 13.1",
+     "verses": [
+      "1Sa 12:13",
+      "Joh 15:16"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-92.1 reaches 1Sa 12:13, Joh 15:16 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 784,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-108.24",
+     "value": "1Sa 8:18 and 5 more verses",
+     "read_for": "the three held claims of reading m64-choose: C-343 (a people choosing a king, and the Lord setting him), C-344 (God handing a person the choice) and C-345 (choosing as testing in affliction); tell each in a block of 10.7 Choosing and setting direction, or withdraw it",
+     "note": "the three held claims of reading m64-choose: C-343 (a people choosing a king, and the Lord setting him), C-344 (God handing a person the choice) and C-345 (choosing as testing in affliction); tell each in a block of 10.7 Choosing and setting direction, or withdraw it",
+     "verses": [
+      "1Sa 12:13"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-108.24 reaches 1Sa 12:13 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 785,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-98.11",
+     "value": "1Sa 25:2-38",
+     "read_for": "1Sa 25 whole (Nabal and Abigail): a request grounded in good done, Nabal's contempt, David's anger (25:13), Abigail's intervention; 25:7-13 is already woven in 10.13 What it rises at",
+     "note": "1Sa 25 whole (Nabal and Abigail): a request grounded in good done, Nabal's contempt, David's anger (25:13), Abigail's intervention; 25:7-13 is already woven in 10.13 What it rises at",
+     "verses": [
+      "1Sa 25:8"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-98.11 reaches 1Sa 25:8 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 786,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-03.1",
+     "value": "Deu 19:6 and 73 more verses",
+     "read_for": "Q2 what happens to the spirit and soul at death: the verses where a soul or spirit word stands with a death face of the life-death strand",
+     "note": "Q2 what happens to the spirit and soul at death: the verses where a soul or spirit word stands with a death face of the life-death strand",
+     "verses": [
+      "1Ki 19:4",
+      "Jon 4:8"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-03.1 reaches 1Ki 19:4, Jon 4:8 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 787,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-103.9",
+     "value": "M30: H0639G+H2534+H2734+... x H5800A+H4784+H3988A+... (42 verses)",
+     "read_for": "how M30 Rebellion & Stubbornness and anger operate together in these 42 shared verses, face by face: People provoke God to anger: what provokes (4); God's wrath held back, not stirred, not poured (3); God angry with his people as a whole (3); God's anger in lament, prayer and thanks (3); and 20 more faces",
+     "note": "how M30 Rebellion & Stubbornness and anger operate together in these 42 shared verses, face by face: People provoke God to anger: what provokes (4); God's wrath held back, not stirred, not poured (3); God angry with his people as a whole (3); God's anger in lament, prayer and thanks (3); and 20 more faces",
+     "verses": [
+      "Ezr 8:22"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-103.9 reaches Ezr 8:22 in the M21_asking scope. Its subgroups reached: M30_anomaly, M30_despising, M30_forsaking, M30_not_this_sense, M30_rebellion, M30_refusing, M30_rejecting, M30_restraining, M30_stubbornness. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 788,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M30_anomaly",
+       "label": "Anomalies: pairs and nodes cleared by hand"
+      },
+      {
+       "subgroup": "M30_despising",
+       "label": "Despising, contempt"
+      },
+      {
+       "subgroup": "M30_forsaking",
+       "label": "Forsaking, abandoning, leaving"
+      },
+      {
+       "subgroup": "M30_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M30_rebellion",
+       "label": "Rebellion, disobedience"
+      },
+      {
+       "subgroup": "M30_refusing",
+       "label": "Refusing"
+      },
+      {
+       "subgroup": "M30_rejecting",
+       "label": "Rejecting, casting off, spurning"
+      },
+      {
+       "subgroup": "M30_restraining",
+       "label": "Restraining, withholding, shutting up"
+      },
+      {
+       "subgroup": "M30_stubbornness",
+       "label": "Stubbornness, stiff neck, sullenness"
+      }
+     ]
+    },
+    {
+     "item": "OT-103.10",
+     "value": "M06: H0639G+H2194+H2734+... x H0341+H6862C+H4209+... (39 verses)",
+     "read_for": "how M06 Malice & Enmity and anger operate together in these 39 shared verses, face by face: Denouncing; filled with his indignation (3); God angry with his people as a whole (3); God's anger in lament, prayer and thanks (3); Enemies' anger, as the one attacked bears it (2); and 24 more faces",
+     "note": "how M06 Malice & Enmity and anger operate together in these 39 shared verses, face by face: Denouncing; filled with his indignation (3); God angry with his people as a whole (3); God's anger in lament, prayer and thanks (3); Enemies' anger, as the one attacked bears it (2); and 24 more faces",
+     "verses": [
+      "Ezr 8:22"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-103.10 reaches Ezr 8:22 in the M21_asking scope. Its subgroups reached: M06_anomaly, M06_cursing, M06_enemies, M06_hatred, M06_hostility, M06_not_this_sense, M06_oppression, M06_plotting, M06_scorn. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 789,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M06_anomaly",
+       "label": "Anomalies: pairs and nodes cleared by hand"
+      },
+      {
+       "subgroup": "M06_cursing",
+       "label": "Cursing, reviling"
+      },
+      {
+       "subgroup": "M06_enemies",
+       "label": "Enemies, adversaries, foes"
+      },
+      {
+       "subgroup": "M06_hatred",
+       "label": "Hatred, abhorring, loathing"
+      },
+      {
+       "subgroup": "M06_hostility",
+       "label": "Hostility, opposition, accusing"
+      },
+      {
+       "subgroup": "M06_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M06_oppression",
+       "label": "Oppression, harshness"
+      },
+      {
+       "subgroup": "M06_plotting",
+       "label": "Plotting, devising"
+      },
+      {
+       "subgroup": "M06_scorn",
+       "label": "Contempt, scorn, derision"
+      }
+     ]
+    },
+    {
+     "item": "OT-103.15",
+     "value": "M23: H0639G+H2534+G3709+... x H5797+H2389+H3581B+... (30 verses)",
+     "read_for": "how M23 Strength & Courage and anger operate together in these 30 shared verses, face by face: Strife and quarrel between people (3); God angry with his people as a whole (2); God's wrath poured out in bringing out, gathering and ruling (2); Lament (qinah): the word is lament, not anger (2); and 21 more faces",
+     "note": "how M23 Strength & Courage and anger operate together in these 30 shared verses, face by face: Strife and quarrel between people (3); God angry with his people as a whole (2); God's wrath poured out in bringing out, gathering and ruling (2); Lament (qinah): the word is lament, not anger (2); and 21 more faces",
+     "verses": [
+      "Ezr 8:22"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-103.15 reaches Ezr 8:22 in the M21_asking scope. Its subgroups reached: M23_ability, M23_anomaly, M23_army, M23_compelling, M23_courage, M23_enlarging, M23_firm, M23_hardening, M23_holding, M23_not_this_sense, M23_power, M23_prevailing, M23_strength, M23_subjection. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 790,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M23_ability",
+       "label": "Ability, being able"
+      },
+      {
+       "subgroup": "M23_anomaly",
+       "label": "Anomalies: pairs and nodes cleared by hand"
+      },
+      {
+       "subgroup": "M23_army",
+       "label": "Army, forces, warriors"
+      },
+      {
+       "subgroup": "M23_compelling",
+       "label": "Compelling, force"
+      },
+      {
+       "subgroup": "M23_courage",
+       "label": "Courage, boldness, valour"
+      },
+      {
+       "subgroup": "M23_enlarging",
+       "label": "Enlarging, growing great"
+      },
+      {
+       "subgroup": "M23_firm",
+       "label": "Firm, steadfast, reliable"
+      },
+      {
+       "subgroup": "M23_hardening",
+       "label": "Hardening, hardness"
+      },
+      {
+       "subgroup": "M23_holding",
+       "label": "Holding, seizing, holding fast"
+      },
+      {
+       "subgroup": "M23_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M23_power",
+       "label": "Power, might, mighty works"
+      },
+      {
+       "subgroup": "M23_prevailing",
+       "label": "Prevailing, conquering, overcoming"
+      },
+      {
+       "subgroup": "M23_strength",
+       "label": "Strength, being strong, strengthening"
+      },
+      {
+       "subgroup": "M23_subjection",
+       "label": "Subjection, submission"
+      }
+     ]
+    },
+    {
+     "item": "OT-103.16",
+     "value": "M45: H0639G+H2534+G3709+... x H5826+H5337+H5162G+... (29 verses)",
+     "read_for": "how M45 Renewal & Transformation and anger operate together in these 29 shared verses, face by face: The day of wrath, and the sayings on whom it falls (3); The wrath to come, and deliverance from it (2); God's anger in lament, prayer and thanks (2); God's wrath with his people, city and land: poured out, kindled, not quenched (2); and 19 more faces",
+     "note": "how M45 Renewal & Transformation and anger operate together in these 29 shared verses, face by face: The day of wrath, and the sayings on whom it falls (3); The wrath to come, and deliverance from it (2); God's anger in lament, prayer and thanks (2); God's wrath with his people, city and land: poured out, kindled, not quenched (2); and 19 more faces",
+     "verses": [
+      "Ezr 8:22"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-103.16 reaches Ezr 8:22 in the M21_asking scope. Its subgroups reached: M45_anomaly, M45_changing, M45_comforting, M45_covering, M45_delivering, M45_healing, M45_helping, M45_not_this_sense, M45_renewing, M45_satisfying, M45_saving. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 791,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M45_anomaly",
+       "label": "Anomalies: pairs and nodes cleared by hand"
+      },
+      {
+       "subgroup": "M45_changing",
+       "label": "Changing, transforming"
+      },
+      {
+       "subgroup": "M45_comforting",
+       "label": "Comforting, consoling"
+      },
+      {
+       "subgroup": "M45_covering",
+       "label": "Covering, concealing"
+      },
+      {
+       "subgroup": "M45_delivering",
+       "label": "Delivering, rescuing"
+      },
+      {
+       "subgroup": "M45_healing",
+       "label": "Healing, being made well"
+      },
+      {
+       "subgroup": "M45_helping",
+       "label": "Helping, helper"
+      },
+      {
+       "subgroup": "M45_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M45_renewing",
+       "label": "Renewing, the new"
+      },
+      {
+       "subgroup": "M45_satisfying",
+       "label": "Satisfying, filling"
+      },
+      {
+       "subgroup": "M45_saving",
+       "label": "Saving, salvation, victory"
+      }
+     ]
+    },
+    {
+     "item": "OT-103.25",
+     "value": "M07: H0639G+H2534+H2734+... x H2781+H0954+H7045+... (17 verses)",
+     "read_for": "how M07 Shame & Confusion and anger operate together in these 17 shared verses, face by face: God's anger kindled against his people: the formula, with cause and act (2); Enemies' anger, as the one attacked bears it (2); The provocation turns back on the provoker (2); Anger at a rival honoured, a brother, or a work going forward (1); and 10 more faces",
+     "note": "how M07 Shame & Confusion and anger operate together in these 17 shared verses, face by face: God's anger kindled against his people: the formula, with cause and act (2); Enemies' anger, as the one attacked bears it (2); The provocation turns back on the provoker (2); Anger at a rival honoured, a brother, or a work going forward (1); and 10 more faces",
+     "verses": [
+      "Ezr 8:22"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-103.25 reaches Ezr 8:22 in the M21_asking scope. Its subgroups reached: M07_confusion, M07_curse, M07_disgrace, M07_not_this_sense, M07_reproach, M07_shame. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 792,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M07_confusion",
+       "label": "Confusion, disappointment"
+      },
+      {
+       "subgroup": "M07_curse",
+       "label": "Becoming a curse"
+      },
+      {
+       "subgroup": "M07_disgrace",
+       "label": "Disgrace, dishonour"
+      },
+      {
+       "subgroup": "M07_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M07_reproach",
+       "label": "Reproach, taunt, scorn"
+      },
+      {
+       "subgroup": "M07_shame",
+       "label": "Shame, being ashamed"
+      }
+     ]
+    },
+    {
+     "item": "OT-103.38",
+     "value": "M83: H0639G+H2534+H7107+... x H1245+H1875+G2212 (10 verses)",
+     "read_for": "how M83 Seeking & Inquiring and anger operate together in these 10 shared verses, face by face: Acting on God's wrath, or warned of it (2); A person's anger governed: be angry and do not sin; slow to anger; at a brother; in prayer; in the overseer; not in love (1); God angry with a named person or group (1); God's anger explained, asked about, presumed on (1); and 5 more faces",
+     "note": "how M83 Seeking & Inquiring and anger operate together in these 10 shared verses, face by face: Acting on God's wrath, or warned of it (2); A person's anger governed: be angry and do not sin; slow to anger; at a brother; in prayer; in the overseer; not in love (1); God angry with a named person or group (1); God's anger explained, asked about, presumed on (1); and 5 more faces",
+     "verses": [
+      "Ezr 8:22"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-103.38 reaches Ezr 8:22 in the M21_asking scope. Its subgroups reached: A_general_seeking, D_consultative_inquiry. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 793,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "A_general_seeking",
+       "label": "Generic active seeking/searching"
+      },
+      {
+       "subgroup": "D_consultative_inquiry",
+       "label": "Formal consultation and diligent inquiry"
+      }
+     ]
+    },
+    {
+     "item": "OT-103.52",
+     "value": "M21: H0639G+H2734+G3859+... x H2470B+H7592+G2150+... (4 verses)",
+     "read_for": "how M21 Fasting & Piety and anger operate together in these 4 shared verses, face by face: Intercession before God's anger (1); God's anger explained, asked about, presumed on (1); Strife among believers, and its source (1); The ruler's fury: Herod (1)",
+     "note": "how M21 Fasting & Piety and anger operate together in these 4 shared verses, face by face: Intercession before God's anger (1); God's anger explained, asked about, presumed on (1); Strife among believers, and its source (1); The ruler's fury: Herod (1)",
+     "verses": [
+      "Ezr 8:22",
+      "Act 12:20"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-103.52 reaches Ezr 8:22, Act 12:20 in the M21_asking scope. Its subgroups reached: M21_anomaly, M21_asking, M21_entreaty, M21_godliness, M21_not_this_sense. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 794,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M21_anomaly",
+       "label": "Anomalies: pairs and nodes cleared by hand"
+      },
+      {
+       "subgroup": "M21_asking",
+       "label": "Asking, inquiring"
+      },
+      {
+       "subgroup": "M21_entreaty",
+       "label": "Entreaty, begging"
+      },
+      {
+       "subgroup": "M21_godliness",
+       "label": "Godliness, piety"
+      },
+      {
+       "subgroup": "M21_not_this_sense",
+       "label": "Not the cluster's sense"
+      }
+     ]
+    },
+    {
+     "item": "OT-108.29",
+     "value": "Isa 65:1 and 7 more verses",
+     "read_for": "the M83 seeking drafts 7303, 7317, 7319 and 7320 (God willing to be sought; heart beside seeking; seeking before finding): carry each by a claim on seeking, or dispose of it",
+     "note": "the M83 seeking drafts 7303, 7317, 7319 and 7320 (God willing to be sought; heart beside seeking; seeking before finding): carry each by a claim on seeking, or dispose of it",
+     "verses": [
+      "Isa 65:1"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-108.29 reaches Isa 65:1 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 795,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-100.1",
+     "value": "Eph 6:12 and 80 more verses",
+     "read_for": "authority and ruling from the inner being: rule, authority, power as a state or status that works with other characteristics and parties (fear, pride, wanting, care for another), read again in the 81 verses of the M72 group B reading",
+     "note": "authority and ruling from the inner being: rule, authority, power as a state or status that works with other characteristics and parties (fear, pride, wanting, care for another), read again in the 81 verses of the M72 group B reading",
+     "verses": [
+      "Mat 21:24"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-100.1 reaches Mat 21:24 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 796,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-05.13",
+     "value": "M22: G1391+G1392+G1868+... x G1391+G1392+G1868+... (55 verses)",
+     "read_for": "M22 Praise & Song in the body-raised set (G3): G3 glory given to God (53 verses: praise, doxologies, 'fear God and give him glory' Rev 14:7, 'did not repent and give him glory' Rev 16:9). doxa G1391 and glorify G1392 are tagged M22; only this face is praise",
+     "note": "M22 Praise & Song in the body-raised set (G3): G3 glory given to God (53 verses: praise, doxologies, 'fear God and give him glory' Rev 14:7, 'did not repent and give him glory' Rev 16:9). doxa G1391 and glorify G1392 are tagged M22; only this face is praise",
+     "verses": [
+      "Joh 14:13"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-05.13 reaches Joh 14:13 in the M21_asking scope. Its subgroups reached: M22_anomaly, M22_exalting, M22_glorifying, M22_glory, M22_not_this_sense, M22_praise, M22_singing. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 797,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M22_anomaly",
+       "label": "Anomalies: pairs and nodes cleared by hand"
+      },
+      {
+       "subgroup": "M22_exalting",
+       "label": "Exalting, magnifying, lifting up"
+      },
+      {
+       "subgroup": "M22_glorifying",
+       "label": "Glorifying"
+      },
+      {
+       "subgroup": "M22_glory",
+       "label": "Glory, honour, splendour"
+      },
+      {
+       "subgroup": "M22_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M22_praise",
+       "label": "Praise, blessing"
+      },
+      {
+       "subgroup": "M22_singing",
+       "label": "Singing, song, music"
+      }
+     ]
+    },
+    {
+     "item": "OT-05.31",
+     "value": "Mat 5:16 and 119 more verses",
+     "read_for": "glory given to God, the Son's glory, God's glory (groups G3-G5): what the glory says of God's character, for 13.1 only (#1982 routing)",
+     "note": "glory given to God, the Son's glory, God's glory (groups G3-G5): what the glory says of God's character, for 13.1 only (#1982 routing)",
+     "verses": [
+      "Joh 14:13"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-05.31 reaches Joh 14:13 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 798,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-108.19",
+     "value": "Mat 22:14 and 46 more verses",
+     "read_for": "the 47 choosing verses of G1586 eklegomai (to choose), G1588 eklektos (chosen, elect) and G1589 ekloge (election): the elect, Jesus choosing, God choosing the foolish and weak; what the choosing says of the chooser and the chosen",
+     "note": "the 47 choosing verses of G1586 eklegomai (to choose), G1588 eklektos (chosen, elect) and G1589 ekloge (election): the elect, Jesus choosing, God choosing the foolish and weak; what the choosing says of the chooser and the chosen",
+     "verses": [
+      "Joh 15:16"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-108.19 reaches Joh 15:16 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 799,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-97.115",
+     "value": "M15: G2309+H7522 x G1097+H3045+G3563+... (5 verses)",
+     "read_for": "M15 Knowing & Understanding where the M18 will word (will, willing) only qualifies its act, in these 5 verses: what the M15 act is, and what the qualifying word gives it. 1Cor 14:19: I would rather speak five words with my mind (M15); Joh 16:19: Jesus knew they wanted to ask him (M21 ask, M15 know); Pro 10:32: the lips of the righteous know what is acceptable (M15); Act 17:20: we wish to know what these things mean (M15); 1Cor 7:36: if his passions are strong, let him do as he wishes: let them marry (M15 thinks)",
+     "note": "M15 Knowing & Understanding where the M18 will word (will, willing) only qualifies its act, in these 5 verses: what the M15 act is, and what the qualifying word gives it. 1Cor 14:19: I would rather speak five words with my mind (M15); Joh 16:19: Jesus knew they wanted to ask him (M21 ask, M15 know); Pro 10:32: the lips of the righteous know what is acceptable (M15); Act 17:20: we wish to know what these things mean (M15); 1Cor 7:36: if his passions are strong, let him do as he wishes: let them marry (M15 thinks)",
+     "verses": [
+      "Joh 16:19"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-97.115 reaches Joh 16:19 in the M21_asking scope. Its subgroups reached: M15_considering, M15_knowing, M15_knowledge, M15_mind, M15_not_this_sense, M15_perceiving, M15_teaching, M15_thinking, M15_understanding. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 800,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M15_considering",
+       "label": "Considering, meditating"
+      },
+      {
+       "subgroup": "M15_knowing",
+       "label": "Knowing, being known"
+      },
+      {
+       "subgroup": "M15_knowledge",
+       "label": "Knowledge"
+      },
+      {
+       "subgroup": "M15_mind",
+       "label": "Mind"
+      },
+      {
+       "subgroup": "M15_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M15_perceiving",
+       "label": "Perceiving by the senses"
+      },
+      {
+       "subgroup": "M15_teaching",
+       "label": "Teaching, training, making known"
+      },
+      {
+       "subgroup": "M15_thinking",
+       "label": "Thinking, supposing, judging"
+      },
+      {
+       "subgroup": "M15_understanding",
+       "label": "Understanding, insight, discernment"
+      }
+     ]
+    },
+    {
+     "item": "OT-97.151",
+     "value": "M21: G2309 x G2065 (1 verses)",
+     "read_for": "M21 Fasting & Piety where the M18 will word (will, willing) only qualifies its act, in these 1 verses: what the M21 act is, and what the qualifying word gives it. Joh 16:19: Jesus knew they wanted to ask him (M21 ask, M15 know)",
+     "note": "M21 Fasting & Piety where the M18 will word (will, willing) only qualifies its act, in these 1 verses: what the M21 act is, and what the qualifying word gives it. Joh 16:19: Jesus knew they wanted to ask him (M21 ask, M15 know)",
+     "verses": [
+      "Joh 16:19"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-97.151 reaches Joh 16:19 in the M21_asking scope. Its subgroups reached: M21_asking, M21_entreaty. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 801,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M21_asking",
+       "label": "Asking, inquiring"
+      },
+      {
+       "subgroup": "M21_entreaty",
+       "label": "Entreaty, begging"
+      }
+     ]
+    },
+    {
+     "item": "OT-05.27",
+     "value": "T14: G4983+G1453+G0450+... x G5495+G3788+G0129G+... (43 verses)",
+     "read_for": "T14 Body-Parts in the body-raised set (all groups): body-part words in the set: body G4983, eye G3788 (the lamp of the body; 'the eyes of your hearts' Eph 1:18), member G3196, hand (signpost #1893), blood ('flesh and blood' 1Co 15:50)",
+     "note": "T14 Body-Parts in the body-raised set (all groups): body-part words in the set: body G4983, eye G3788 (the lamp of the body; 'the eyes of your hearts' Eph 1:18), member G3196, hand (signpost #1893), blood ('flesh and blood' 1Co 15:50)",
+     "verses": [
+      "Joh 19:31"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-05.27 reaches Joh 19:31 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 802,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-05.62",
+     "value": "Mat 5:29 and 61 more verses",
+     "read_for": "the body words for the flesh-and-body reading (groups B3-B5: the body raised or redeemed, the body with the inner being, bodies otherwise; with Luk 24:39 'flesh and bones' beside 1Co 15:50 'flesh and blood', quoted but not reconciled): the body as the physical self, and the body set against or beside the inner being",
+     "note": "the body words for the flesh-and-body reading (groups B3-B5: the body raised or redeemed, the body with the inner being, bodies otherwise; with Luk 24:39 'flesh and bones' beside 1Co 15:50 'flesh and blood', quoted but not reconciled): the body as the physical self, and the body set against or beside the inner being",
+     "verses": [
+      "Joh 19:31"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-05.62 reaches Joh 19:31 in the M21_asking scope. It names no subgroup. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 803,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": []
+    },
+    {
+     "item": "OT-103.23",
+     "value": "M33: H0639G+H2534+H2734+... x H5117+H8252+H7965I+... (20 verses)",
+     "read_for": "how M33 Rest & Peace and anger operate together in these 20 shared verses, face by face: God's wrath spent, satisfied, then calm (4); Provoked with that generation; sworn in wrath (2); Intercession before God's anger (1); God angry with his people as a whole (1); and 13 more faces",
+     "note": "how M33 Rest & Peace and anger operate together in these 20 shared verses, face by face: God's wrath spent, satisfied, then calm (4); Provoked with that generation; sworn in wrath (2); Intercession before God's anger (1); God angry with his people as a whole (1); and 13 more faces",
+     "verses": [
+      "Act 12:20"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-103.23 reaches Act 12:20 in the M21_asking scope. Its subgroups reached: M33_anomaly, M33_not_this_sense, M33_peace, M33_quiet, M33_rest, M33_wellbeing. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 804,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M33_anomaly",
+       "label": "Anomalies: pairs and nodes cleared by hand"
+      },
+      {
+       "subgroup": "M33_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M33_peace",
+       "label": "Peace"
+      },
+      {
+       "subgroup": "M33_quiet",
+       "label": "Quiet, stillness, silence"
+      },
+      {
+       "subgroup": "M33_rest",
+       "label": "Rest, resting place, ease"
+      },
+      {
+       "subgroup": "M33_wellbeing",
+       "label": "Well-being, welfare, safety"
+      }
+     ]
+    },
+    {
+     "item": "OT-103.43",
+     "value": "M77: H0639G+G3709+G2372+... x H6601B+G3982+H3782+... (7 verses)",
+     "read_for": "how M77 Stumbling & Trial and anger operate together in these 7 shared verses, face by face: Anger governed: slow, quick, ruled (1); God's anger called down on others (1); God's wrath revealed, stored up, remaining, coming: the cause named (1); The fool's vexation, and anger lodging in the fool (1); and 3 more faces",
+     "note": "how M77 Stumbling & Trial and anger operate together in these 7 shared verses, face by face: Anger governed: slow, quick, ruled (1); God's anger called down on others (1); God's wrath revealed, stored up, remaining, coming: the cause named (1); The fool's vexation, and anger lodging in the fool (1); and 3 more faces",
+     "verses": [
+      "Act 12:20"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-103.43 reaches Act 12:20 in the M21_asking scope. Its subgroups reached: M77_enticing, M77_not_this_sense, M77_persuading, M77_stumbling. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 805,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M77_enticing",
+       "label": "Enticing, being deceived"
+      },
+      {
+       "subgroup": "M77_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M77_persuading",
+       "label": "Persuading, being sure, trusting"
+      },
+      {
+       "subgroup": "M77_stumbling",
+       "label": "Stumbling, offence, falling away"
+      }
+     ]
+    },
+    {
+     "item": "OT-05.17",
+     "value": "M24: G1391+G1453+G0450+... x G3958+G3804+G5604+... (14 verses)",
+     "read_for": "M24 Faintness & Despair in the body-raised set (G1, R4, R5): G1 glory to come set beside losing heart and suffering (2Co 4:16-17; Rom 8:18); M24 in G1 5, R4 4, R5 5 verses",
+     "note": "M24 Faintness & Despair in the body-raised set (G1, R4, R5): G1 glory to come set beside losing heart and suffering (2Co 4:16-17; Rom 8:18); M24 in G1 5, R4 4, R5 5 verses",
+     "verses": [
+      "Eph 3:13"
+     ],
+     "record": {
+      "response": "Pre gate, nothing read yet: OT-05.17 reaches Eph 3:13 in the M21_asking scope. Its subgroups reached: M24_affliction, M24_distress, M24_not_this_sense, M24_suffering. The verse is read in Observe with the item in view; the item is settled at the claim step, not here.",
+      "table": "escalation_thread_item_response",
+      "id": 806,
+      "run_id": "RUN-20261027_102231_227-READING"
+     },
+     "subgroups": [
+      {
+       "subgroup": "M24_affliction",
+       "label": "Affliction, being afflicted, humbled"
+      },
+      {
+       "subgroup": "M24_distress",
+       "label": "Distress, trouble, anguish"
+      },
+      {
+       "subgroup": "M24_not_this_sense",
+       "label": "Not the cluster's sense"
+      },
+      {
+       "subgroup": "M24_suffering",
+       "label": "Suffering, pain, pangs"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
