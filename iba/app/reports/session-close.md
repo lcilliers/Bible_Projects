@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-27T11:16:16Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-27T13:25:43Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `c4650151-6235-4d80-b4c9-972a8cd5e432` (CLAUDE_CODE_SESSION_ID); started 2026-10-27T10:17:08Z; window base commit `3b07c0c2b74a9a87b22b241e1ad554618417825a`
-- compliance file: `Logs/compliance/COMPLIANCE-20261027-c4650151.md`; session log: `Logs/SESSION-LOG-20261027-m21-asking-steps-1-3-test.md`
-- **open findings: 0**; cleared by disposition: 3
+- session: `95543bd0-7cc2-4f14-b7f8-02aa51147ba4` (CLAUDE_CODE_SESSION_ID); started 2026-10-27T11:19:24Z; window base commit `c40d2878dd7ccb01693dd9dc6572832b5f7e40e4`
+- compliance file: `Logs/compliance/COMPLIANCE-20261027-95543bd0.md`; session log: `Logs/SESSION-LOG-20261027-analysis-phase-1-description-and-specification.md`
+- **open findings: 0**; cleared by disposition: 1
 
 
 ## Contents
@@ -46,9 +46,7 @@ _no finding_
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:f25065ba`: researcher message 2026-10-27T10:50 holds, defers or asks to check something; name its register item: "Yes. Pick a few verses where M21_asking words stand, read and record them, and show me the findings to check before the rest." -- disposition: in register #2316
-- cleared `SC4b:3e17cc74`: researcher message 2026-10-27T11:03 holds, defers or asks to check something; name its register item: "did you check the requirements defined previously for observations?" -- disposition: in register #2316
-- cleared `SC4b:1af970eb`: researcher message 2026-10-27T11:08 holds, defers or asks to check something; name its register item: "so you failed in every respect. what do I do now. you built 3 steps without even looking at the requirements of what you need to build. step 1 - 3 is about obse" -- disposition: in register #2316
+- cleared `SC4b:3ca5b679`: researcher message 2026-10-27T12:57 holds, defers or asks to check something; name its register item: "§2.1.7 is open for interpretation.  The surfaces in the verse are not restricted to the sub group surface.  the verse observations are not only for the sub grou" -- disposition: in register #2319
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -81,7 +79,7 @@ _no finding_
 ## SC12 Publish
 
 - narrative copy: not needed (no chapter changed)
-- threads register export: RUN (a thread row changed)
+- threads register export: not needed (no thread row changed)
 
 _no finding_
 
