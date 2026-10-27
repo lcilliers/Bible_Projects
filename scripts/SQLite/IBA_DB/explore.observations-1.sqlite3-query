@@ -1,6 +1,7 @@
 -- database: ../../../iba/app/db/iba.db
 
-SELECT * FROM ib_observation
+SELECT * FROM ib_observation obs
+INNER JOIN ib_node node ON obs.id = node.observation_id
 ;
 
 

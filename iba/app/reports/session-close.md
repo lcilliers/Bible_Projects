@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-27T05:13:11Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-27T10:10:56Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `4f06a0e3-cc15-446b-bfa7-2bbd21685ff4` (CLAUDE_CODE_SESSION_ID); started 2026-10-26T17:33:14Z; window base commit `961081eba409bbb095193b14c9c1916924a4e1ca`
-- compliance file: `Logs/compliance/COMPLIANCE-20261026-4f06a0e3.md`; session log: `Logs/SESSION-LOG-20261027-gap-pre-and-surface-observe.md`
-- **open findings: 0**; cleared by disposition: 4
+- session: `6dfd4a14-17d3-4cdc-936a-98f890167798` (CLAUDE_CODE_SESSION_ID); started 2026-10-27T05:15:27Z; window base commit `0c5e0f487ff79211fa35434652647107ff083d89`
+- compliance file: `Logs/compliance/COMPLIANCE-20261027-6dfd4a14.md`; session log: `Logs/SESSION-LOG-20261027-three-steps-clearout.md`
+- **open findings: 0**; cleared by disposition: 8
 
 
 ## Contents
@@ -41,14 +41,16 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:7e1b9f22`: researcher message 2026-10-26T17:43 is in no escalation comment written this session: "I approved 2307 with a comment for your closing" -- disposition: recorded in #2307 v5
-- cleared `SC3:164c6b96`: researcher message 2026-10-27T03:43 is too short to be matched; name where it is recorded: "2311 (b)" -- disposition: recorded in #2311 v3
+_no finding_
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:7aa361d2`: researcher message 2026-10-27T03:52 holds, defers or asks to check something; name its register item: "ok, I am ready to return to the core focus we are working on, the analytic process.  we now have 0.GAP pre cleared, that it would pull into the scope json all t" -- disposition: in register #2312
-- cleared `SC4b:cb2c5c32`: researcher message 2026-10-27T04:39 holds, defers or asks to check something; name its register item: "D1 - word ALWAYS refers to surface with the imbedded Strong - NEVER to the word registry. the surface.subgroup, subgroup.cluster, strong-cluster, verse-lexical " -- disposition: in register #2312
+- cleared `SC4b:7166b021`: researcher message 2026-10-27T05:29 holds, defers or asks to check something; name its register item: "2262 is approved for you follow up" -- disposition: in register #2262
+- cleared `SC4b:54180400`: researcher message 2026-10-27T05:47 holds, defers or asks to check something; name its register item: "Approve both as proposed on #2314: close the design half of #2275 and move the retire half with #2277, #2279, #2281-#2285 into one stale-configs item; and the v" -- disposition: in register #2315
+- cleared `SC4b:3ff90528`: researcher message 2026-10-27T09:10 holds, defers or asks to check something; name its register item: "2314:  three steps design; next we will run the three steps on new, and existing sub groups.  the older tests where experimental, and is not intended to be syst" -- disposition: in register #2316
+- cleared `SC4b:fcfd0faa`: researcher message 2026-10-27T09:55 holds, defers or asks to check something; name its register item: "E1 - retire if these routines are not used elsewhere, especially in the claims cycle which is still not designed. 2. I am expecting that you have built all the " -- disposition: in register #2315
+- cleared `SC4b:d85f7358`: researcher message 2026-10-27T10:01 holds, defers or asks to check something; name its register item: "from your questions and decisions needed. it appears that we will first need to define the claims phase also, because I cannot answer your questions otherwise. " -- disposition: in register #2316
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -81,8 +83,10 @@ _no finding_
 ## SC12 Publish
 
 - narrative copy: not needed (no chapter changed)
-- threads register export: RUN (a thread row changed)
+- threads register export: not needed (no thread row changed)
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Bash:_python:70fd1ef0`: Bash: python failed 10 times this session: The server-side auto mode classifier gave no verdict (error), so auto mode cannot determine the safety of Bash. This is  -- disposition: carried #2317
+- cleared `SC16:Escalation.ps1_-Action_History`: Escalation.ps1 -Action History failed 2 times this session: The server-side auto mode classifier gave no verdict (error), so auto mode cannot determine the safety of PowerShell. Th -- disposition: carried #2317
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: [31;1m.\iba\app\ps\Escalation.ps1: [31;1mThe term '.\iba\app\ps\Escalation.ps1' is not recognized as a name of a cmdle; The server-side auto mode classifier gave no verdict (error), so auto mode cannot determine the safety of PowerShell. Th -- disposition: fixed: one call ran from the wrong folder and was re-run with the full path; the rest were the same transient command-check failure
