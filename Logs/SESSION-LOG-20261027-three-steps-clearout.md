@@ -48,4 +48,6 @@ Developer Mode session. Declaration and compliance file, then the clear-out of o
 
 ## 6. Git
 
-(set at the final commit)
+Branch: `main`. Session commit: `4aad25d73f49b7137738238f40f89319733a8394` ("session 20261027: #2260-#2267 closed ...").
+
+Push output: `0c5e0f48..4aad25d7  main -> main` to `https://github.com/lcilliers/Bible_Projects.git`.
