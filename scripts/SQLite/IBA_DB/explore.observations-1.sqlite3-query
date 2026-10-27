@@ -37,18 +37,21 @@ select * from strong;
 
 select 
 obs.id,
-obs.meaning_source,
+node.verse_reference,
+node.surface,
 obs.obs_text,
+node.cluster_subgroup_code,
 obs.tag,
 obs.window,
+obs.meaning_source,
 obs.stage,
-node.*,
-cat.question_code,
-cat.question_text
+node.*
 from ib_observation obs
 inner join ib_node node on obs.id = node.observation_id
-left join wa_obs_question_catalogue cat 
-on node.question_code = cat.question_code
+where node.cluster_code = 'M21'
+order by node.verse_reference
+
+
 ;
 
 

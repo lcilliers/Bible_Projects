@@ -1,23 +1,19 @@
 """reading.py -- the reading process (escalation #2228; on the phases of the analytic process, #2273, design
-`outputs/escalation/2273-2274-reading-phases-and-observation-record-design-v6-20261024.md`).
+`outputs/escalation/2273-2274-reading-phases-and-observation-record-design-v6-20261024.md`; Analysis_phase_1, #2320, spec
+`outputs/escalation/2318-analysis-phase-1-specification-v4-20261027.md`).
 
 A reading is the work on one scope with its objective, served by the escalation that anchors it. Its findings are
-written through observationrecord (#2274): one observation per finding, applied by nodes. It passes four gates in
-order, each checked from the tables by the tool, not asserted:
+written through observationrecord (#2274): one observation per finding, applied by nodes.
 
-  open      0.C: the scope resolved (versescope, its 2,500 review), its objective, its verses kept (reading_verse),
-            the scope collated (versecollate), and the pre-gap JSON written: one section per gap type of phase pre
-            (cfg_setting reading.gap_types), each found by its detector in PRE. Refused when the home is an M
-            cluster with unallocated or stale surface pairs (surfacemap.reading_refusal, #2294)
-  gather    0.GAP pre written: each pre-gap item's record -- {"finding": ...}, {"table", "id"}, a face on a strand
-            hit, a response on an open item, or {"reason": ...} -- and new open items; the ids written back
-  check     the gate the reading is at: pre (open -> gathered), observe (gathered -> observed; the verses marked
-            analysed), claims (observed -> synergised; the narrate JSON built) or narrate (synergised -> narrated)
-  observe   D3 and D4 input: the observe JSON built from the tables -- per verse its passage, every finding applied to
-            it with its nodes, the words in focus (reading.focus_words) -- with the claims on the scope and the
-            catalogue prompts by kind (reading.observe_prompts)
-  record    D4 observe written: the findings (observationrecord), withdrawals with their reasons, each word's open
-            item or reason
+Analysis_phase_1 (steps 1 to 3) is the verse understanding:
+  open      0.C: one subgroup (or a segment of it); the JSON that indexes the verses (reference, route, progress); the reading
+  observe   the next verses in hand: each verse's sheet is read from the tables NOW (its surfaces, its existing observations and
+            nodes, the ledger faces) and set in the JSON for the reading to fill
+  record    the filled sheets checked whole, then written in one transaction: every surface's evaluation kept in the JSON, every
+            existing observation and node accepted, modified (in place) or soft deleted, the new findings written
+  check     the Observe gate (at open): every verse done and the evaluations still agree with the live nodes; open -> observed;
+            the verses marked analysed
+The later steps (claims, narrate, publish, account) are unchanged:
   synergy   D4 claims input: the synergy JSON built from the tables: the reading's findings with their nodes, the
             claims, the matched open items (B:114)
   apply     D4 claims written: claims (strandreading.derive_core), each node's disposition, open items settled
@@ -126,13 +122,6 @@ def verse_ids(conn, rid: int) -> list[int]:
     return [r[0] for r in conn.execute("SELECT verse_id FROM reading_verse WHERE reading_id=? ORDER BY verse_id", (rid,))]
 
 
-def _items_of(data: dict):
-    """(section, index, item) for every item of the pre-gap JSON."""
-    for sec, s in (data.get("sections") or {}).items():
-        for i, it in enumerate(s.get("items") or []):
-            yield sec, i, it
-
-
 def _thread_item(conn, ref: str):
     """'OT-nn.n' -> (thread row, item row), the thread open or not."""
     m = re.fullmatch(r"(OT-\d+)\.(\d+)", (ref or "").strip(), re.I)
@@ -148,81 +137,58 @@ def _thread_item(conn, ref: str):
     return t, it
 
 
-def _row_exists(conn, table: str, rid) -> bool:
-    if not re.fullmatch(r"[a-z_]+", table or ""):
-        return False
-    if not conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)).fetchone():
-        return False
-    try:
-        return conn.execute(f'SELECT 1 FROM "{table}" WHERE id=?', (rid,)).fetchone() is not None
-    except Exception:  # noqa: BLE001 -- a table with no id column cannot hold the record
-        return False
-
-
 def _gate_fail(r, name: str, gaps: list[str]):
     raise Refused("\n  ".join([f"reading {r['label']} is not past the {name} gate ({len(gaps)} gap(s)):"] + gaps[:60]
                               + ([f"... and {len(gaps) - 60} more"] if len(gaps) > 60 else [])))
 
 
-# ══ open (0.C and the pre-gaps) ═════════════════════════════════════════════════════════════════
-def _pre_face_not_gathered(col, v, acc):
-    for h in v["strand_hits"]:
-        gathered = any(o["tag"] == "face" and any(n["strong"] == h["strong"] and n["surface"] in (None, h["surface"])
-                                                  for n in o["nodes"]) for o in v["observations"])
-        if not gathered and not h["observation_id"] and not h["reason"]:      # its face is held by no finding
-            acc.setdefault("face_not_gathered", []).append({"verse": v["reference"], "strand": h["strand"],
-                                                           "strong": h["strong"], "surface": h["surface"],
-                                                           "record": None})
+# ══ the verse loop (Analysis_phase_1, #2320; spec outputs/escalation/2318-analysis-phase-1-specification-v4-20261027.md) ═══
+# The JSON is the index of the verses in scope (reference, route, progress, the evaluation of the surfaces). The surfaces,
+# the existing observations and the nodes are read from the tables when a verse is worked, never copied into the JSON.
+SEGMENT_PARAMS = ("Surface", "Verse")
+NOT_FOR_OPEN = ("Cluster", "Strand", "Word", "Strong", "Chapter", "Section", "Claim", "Observation", "Item", "Thread",
+                "OnlyStrong", "File")
 
 
-def _pre_meaning_missing(col, v, acc):
-    found = acc.setdefault("meaning_missing", {})
-    for x in v["words"]:
-        lx = col["lexicon"].get(x["strong"], {})
-        miss = [m for m, gone in (("meaning senses", not lx.get("meaning")),
-                                  ("Mounce", x["strong"].startswith("G") and not lx.get("mounce"))) if gone]
-        if miss:
-            found.setdefault(x["strong"], {"strong": x["strong"], "missing": miss, "verses": [], "record": None})
-            if v["reference"] not in found[x["strong"]]["verses"]:
-                found[x["strong"]]["verses"].append(v["reference"])
+def _setting_loop(cfg) -> dict:
+    return orec.loop_setting(cfg)
 
 
-def _pre_open_item(col, v, acc):
-    found = acc.setdefault("open_item", {})
-    for o in v["open_items"]:
-        it = found.setdefault(o["item"], {"item": o["item"], "value": o["value"], "read_for": None,
-                                          "note": o["note"], "verses": [], "record": None})
-        if v["reference"] not in it["verses"]:
-            it["verses"].append(v["reference"])
+def _norm(s) -> str:
+    return (s or "").strip().lower()
 
 
-# The pre-gap detectors by gap type. A pre gap type with no detector gets an empty section (build B6, #2278).
-PRE = {"face_not_gathered": _pre_face_not_gathered, "meaning_missing": _pre_meaning_missing,
-       "open_item": _pre_open_item}
+def _index_path(cfg, root: pathlib.Path, label: str) -> pathlib.Path:
+    return out_dir(cfg, root, label) / f"{label}.json"
 
 
-def _item_subgroups(conn, item) -> list[dict]:
-    """The subgroups a worded open item reaches: its target cluster and target terms through surface_subgroup (#2310).
-    A cluster, strong, verse or escalation item names no target terms and reaches none."""
-    terms = [t for t in (item["target_terms"] or "").split(",") if t]
-    if not item["target_cluster"] or not terms:
-        return []
-    return [{"subgroup": r["subgroup_code"], "label": r["label"]} for r in conn.execute(
-        "SELECT DISTINCT g.subgroup_code, g.label FROM surface_subgroup s JOIN cluster_subgroup g ON "
-        f"g.id=s.cluster_subgroup_id WHERE s.deleted=0 AND s.cluster_code=? AND s.strong IN ({','.join('?' * len(terms))}) "
-        "ORDER BY g.subgroup_code", [item["target_cluster"], *terms])]
+def _save_atomic(path: pathlib.Path, data: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    tmp.replace(path)
+
+
+def _index(cfg, root: pathlib.Path, r) -> tuple[pathlib.Path, dict]:
+    path = _path(root, r["gap_file"])
+    data = _load(root, r["gap_file"], "the scope JSON")
+    if data.get("reading_id") != r["id"]:
+        raise Refused(f"the scope JSON {r['gap_file']} is not reading {r['label']}'s")
+    return path, data
 
 
 def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_request: dict | None) -> str:
-    """-Label -Escalation -Home -Objective <scope selectors as Verse-Scope.ps1> [-Reviewed] [-File request]."""
+    """-Label -Escalation -Objective -Subgroup [-Surface a,b | -Verse "Mat 7:8; ..."] [-Reviewed]: the scope, indexed in
+    the JSON (spec 1.1 to 1.8). Exactly one subgroup, or a segment of it; the home is the subgroup; no -Home."""
     conn = cfg.conn
+    loop = _setting_loop(cfg)
     label = (p.get("Label") or "").strip()
     if not label or label != label.lower() or not re.fullmatch(r"[a-z0-9][a-z0-9-]*", label):
-        raise Refused("-Label is the reading's name, lowercase-hyphenated (e.g. anger-bosom)")
+        raise Refused("-Label is the reading's name, lowercase-hyphenated (e.g. m21-asking)")
     if conn.execute("SELECT 1 FROM reading WHERE label=?", (label,)).fetchone():
         raise Refused(f"reading {label} already exists")
     objective = (p.get("Objective") or "").strip()
-    if len(objective) < 10:
+    if len(objective) < loop["min_reason_chars"]:
         raise Refused("-Objective is the scope's objective, in words (0.C: it defines the home of what is recorded)")
     try:
         eid = int(str(p.get("Escalation") or "").lstrip("#"))
@@ -230,70 +196,455 @@ def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_requ
         raise Refused("-Escalation (the task or issue that anchors the reading) is required") from None
     e = conn.execute("SELECT type, state FROM escalation e WHERE id=? AND version=(SELECT MAX(version) FROM escalation "
                      "x WHERE x.id=e.id)", (eid,)).fetchone()
-    if e is None or e["type"] not in ("task", "issue") or e["state"] in ("completed", "closed", "withdrawn"):
+    if e is None or e["type"] not in ("task", "issue") or e["state"] in escalation.state_group(conn, "terminal"):
         raise Refused(f"escalation #{eid} is not an open task or issue")
-    home = (p.get("Home") or "").strip()
-    if not conn.execute("SELECT 1 FROM cluster WHERE cluster_code=?", (home,)).fetchone():
-        raise Refused(f"-Home {home!r} is not a cluster (the cluster the scope is anchored on)")
+    if (p.get("Home") or "").strip():
+        raise Refused("-Home is not given: the home is the subgroup, and its cluster is the subgroup's (spec 1.2)")
+    other = [k for k in NOT_FOR_OPEN if (p.get(k) or "").strip()]
+    if other:
+        raise Refused(f"Analysis_phase_1 takes one -Subgroup (with -Surface or -Verse to segment it), not -{', -'.join(other)}")
+    subs = vs._split(p.get("Subgroup"))
+    if len(subs) != 1:
+        raise Refused("-Subgroup: exactly one subgroup (spec 1.1)")
+    sg = conn.execute("SELECT subgroup_code, cluster_code, kind FROM cluster_subgroup WHERE subgroup_code=? AND "
+                      "coalesce(delete_flagged,0)=0", (subs[0],)).fetchone()
+    if sg is None:
+        raise Refused(f"subgroup {subs[0]!r} is not a live cluster subgroup")
+    if sg["kind"] == "qualifier":
+        raise Refused(f"subgroup {sg['subgroup_code']} is a qualifier group and is never a home (spec 1.2)")
+    home = sg["cluster_code"]
     unmapped = surfacemap.reading_refusal(conn, home)
     if unmapped:
         raise Refused(unmapped)
-    types = gap_types(cfg)
-    request = vs.normalise_request({k: v for k, v in p.items() if k not in NOT_SCOPE}, file_request)
-    # the home (B:120): the request's subgroups of the home cluster, else the home cluster itself
-    request["home"] = [s for s in request.get("subgroup", []) if conn.execute(
-        "SELECT 1 FROM cluster_subgroup WHERE subgroup_code=? AND cluster_code=?", (s, home)).fetchone()] or [home]
+    request = {"subgroup": [sg["subgroup_code"]], "home": [sg["subgroup_code"]]}
+    if (p.get("Reviewed") or "").strip():
+        request["reviewed"] = p["Reviewed"].strip()
     try:
-        col = vc.collate(cfg, request, root)
-    except (vs.ScopeError, vc.CollateError) as exc:
+        scope = vs.resolve(cfg, request)
+    except vs.ScopeError as exc:
         raise Refused(str(exc)) from exc
-    acc: dict = {}
-    pre = [t for t, x in types.items() if x["phase"] == "pre"]
-    for v in col["verses"]:
-        for t in pre:
-            if t in PRE:
-                PRE[t](col, v, acc)
-    sections = {}
-    for t in pre:
-        items = acc.get(t, [])
-        if isinstance(items, dict):
-            items = list(items.values())
-        if t == "open_item":
-            for it in items:
-                row = _thread_item(conn, it["item"])[1]
-                it["read_for"] = row["read_for"]
-                it["subgroups"] = _item_subgroups(conn, row)
-        sections[t] = {"guide": types[t]["guide"], "records_in": types[t]["records_in"], "items": items}
+    verses = scope["verses"]
+    segment = None
+    surf = [_norm(x) for x in vs._split(p.get("Surface"))]
+    if surf:
+        verses = [v for v in verses if any(o.get("in_scope") and _norm(o["surface"]) in surf for o in v["occurrences"])]
+        segment = {"surfaces": surf}
+    if (p.get("Verse") or "").strip():
+        want = {x.verse_id for x in nr.parse_refs(p["Verse"], nr.VerseIndex(cfg)) if x.verse_id}
+        verses = [v for v in verses if v["verse_id"] in want]
+        segment = {**(segment or {}), "verses": p["Verse"].strip()}
+    if not verses:
+        raise Refused("the scope holds no verse" + (" after the segment" if segment else ""))
     folder = out_dir(cfg, root, label)
-    gap_path = folder / f"{label}-gaps.json"
-    if gap_path.exists():
-        raise Refused(f"{_rel(root, gap_path)} is already on disk")
+    path = folder / f"{label}.json"
+    if path.exists():
+        raise Refused(f"{_rel(root, path)} is already on disk")
 
     def go():
         rid = w.insert("reading", {"label": label, "escalation_id": eid, "home_cluster": home, "objective": objective,
-                                   "request": json.dumps(col["scope"]["request"], ensure_ascii=False),
-                                   "gap_file": _rel(root, gap_path), "note": p.get("Note"), "run_id": run_id})
-        for v in col["verses"]:
+                                   "request": json.dumps(scope["request"], ensure_ascii=False),
+                                   "gap_file": _rel(root, path), "note": p.get("Note"), "run_id": run_id})
+        # reading_verse: still written because the claims steps read it (not read by Analysis_phase_1; #2320 flag)
+        for v in verses:
             w.insert("reading_verse", {"reading_id": rid, "verse_id": v["verse_id"],
                                        "routes": json.dumps(v["routes"], ensure_ascii=False)})
         return rid
     rid = nr._atomic(conn, go)
-    data = {"reading": label, "reading_id": rid, "escalation": eid, "home": home, "objective": objective,
-            "opened": _now(), "scope": col["scope"]["selectors"],
-            "how": "Fill each item's `record` with one of {\"finding\": <a finding: observationrecord's shape>}, "
-                   "{\"table\": \"...\", \"id\": n} or {\"reason\": \"...\"}; a face_not_gathered item may take "
-                   "{\"face\", \"parties\", \"observation\"}; an open_item may take {\"response\": what the reading "
-                   "found}. Then Reading.ps1 -Step Gather -Label " + label + ". New open items go in `new_items` (the "
-                   "Open-Item.ps1 -Action Add shape).",
-            "new_items": [], "sections": sections}
-    _save(gap_path, data)
-    _save(folder / f"{label}-collation.json", {"label": label, "run_id": run_id, **col})
-    n = {k: len(s["items"]) for k, s in sections.items()}
-    return (f"reading {label} opened (#{eid}, home {home}): {len(col['verses'])} verse(s); pre-gaps "
-            + ", ".join(f"{k} {v}" for k, v in n.items()) + f"\n  -> {_rel(root, gap_path)}")
+    data = {"reading": label, "reading_id": rid, "escalation": eid, "subgroup": sg["subgroup_code"], "home": home,
+            "segment": segment, "objective": objective, "opened": _now(),
+            "how": "The index of the verses in scope. Reading.ps1 -Step Observe puts the next verses in hand (a sheet each: the "
+                   "surfaces, the existing observations and nodes, the ledger faces, read from the tables then); fill the "
+                   "sheets; Reading.ps1 -Step Record writes them and marks the verses done; Reading.ps1 -Step Check passes the "
+                   "gate when every verse is done.",
+            "counts": {"verses": len(verses), "done": 0},
+            "verses": [{"verse": v["reference"], "osis": v["osis"], "verse_id": v["verse_id"], "routes": v["routes"],
+                        "status": "waiting"} for v in verses]}
+    _save_atomic(path, data)
+    return (f"reading {label} opened (#{eid}, subgroup {sg['subgroup_code']}, home {home}): {len(verses)} verse(s) indexed"
+            + (f", segment {segment}" if segment else "") + f"\n  -> {_rel(root, path)}")
 
 
-# ══ gather (0.GAP pre written) ══════════════════════════════════════════════════════════════════
+# ── the sheet of one verse: read from the tables when the verse is worked ─────────────────────────
+def _sheets(cfg, conn, items: list[dict]) -> dict:
+    """{verse_id: sheet} for the verses in hand, with set-based queries over the batch (B:71)."""
+    loop = _setting_loop(cfg)
+    fw = _setting(cfg, "reading.focus_words")
+    never = _setting(cfg, "reading.non_characteristic_strongs")
+    ids = [it["verse_id"] for it in items]
+    J = json.dumps(ids)
+    osis_of = {it["verse_id"]: it["osis"] for it in items}
+    rows = conn.execute("SELECT id, verse_id, position, surface, strong, morph_code, testament, is_negator FROM verse_lexical "
+                        "WHERE deleted=0 AND verse_id IN (SELECT value FROM json_each(?)) ORDER BY verse_id, position, id",
+                        (J,)).fetchall()
+    strongs = sorted({r["strong"] for r in rows})
+    SJ = json.dumps(strongs)
+    clusters: dict = {}
+    for s, cl in conn.execute("SELECT strong, cluster_code FROM cluster_strong WHERE deleted=0 AND strong IN "
+                              "(SELECT value FROM json_each(?)) ORDER BY cluster_code", (SJ,)):
+        clusters.setdefault(s, []).append(cl)
+    subs: dict = {}
+    for s, surface, sgc in conn.execute(
+            "SELECT s.strong, s.surface, g.subgroup_code FROM surface_subgroup s JOIN cluster_subgroup g ON "
+            "g.id=s.cluster_subgroup_id WHERE s.deleted=0 AND s.strong IN (SELECT value FROM json_each(?)) "
+            "ORDER BY g.subgroup_code", (SJ,)):
+        subs.setdefault((s, surface), []).append(sgc)
+    by_verse: dict = {i: [] for i in ids}
+    for r in rows:
+        by_verse[r["verse_id"]].append(r)
+    sheets = {}
+    for it in items:
+        vid = it["verse_id"]
+        groups: dict = {}
+        for r in by_verse[vid]:
+            key = (r["strong"], _norm(r["surface"]))
+            g = groups.get(key)
+            if g is None:
+                prefix = ((r["morph_code"] or "")[:2] if r["testament"] == "OT" else (r["morph_code"] or "").split("-")[0])
+                hint = []
+                if prefix in fw["function_word_morph"].get(r["testament"], []):
+                    hint.append("grammar by its morph")
+                if r["is_negator"] or any(t in clusters.get(r["strong"], []) for t in fw["keep_tags"]):
+                    hint.append("negator or connective")
+                if any(c.startswith("M") for c in clusters.get(r["strong"], [])):
+                    hint.append("M-coded")
+                if r["strong"] in never:
+                    hint.append("never a characteristic: " + never[r["strong"]])
+                g = groups[key] = {"occurrences": [], "word": f"{r['surface']} ({r['strong']})", "strong": r["strong"],
+                                   "surface": r["surface"], "morph": r["morph_code"], "position": r["position"],
+                                   "clusters": clusters.get(r["strong"], []),
+                                   "subgroups": subs.get((r["strong"], _norm(r["surface"])), []), "hint": hint,
+                                   "evaluation": None}
+            g["occurrences"].append(r["id"])
+        sheets[vid] = {"surfaces": list(groups.values())}
+    # the existing observations and nodes on the verses (every stage, not filtered by subgroup)
+    OJ = json.dumps([it["osis"] for it in items])
+    obs: dict = {}
+    for o in conn.execute("SELECT DISTINCT o.* FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE "
+                          "o.status<>'withdrawn' AND n.verse_reference IN (SELECT value FROM json_each(?)) AND "
+                          "(n.disposition IS NULL OR n.disposition<>'withdrawn') ORDER BY o.id", (OJ,)):
+        obs[o["id"]] = o
+    nodes: dict = {}
+    for n in conn.execute("SELECT n.* FROM ib_node n WHERE n.verse_reference IN (SELECT value FROM json_each(?)) AND "
+                          "(n.disposition IS NULL OR n.disposition<>'withdrawn') ORDER BY n.observation_id, n.id", (OJ,)):
+        nodes.setdefault((n["observation_id"], n["verse_reference"]), []).append(n)
+    elsewhere = {r[0]: r[1] for r in conn.execute(
+        "SELECT observation_id, count(*) FROM ib_node WHERE observation_id IN (SELECT value FROM json_each(?)) AND "
+        "(verse_reference NOT IN (SELECT value FROM json_each(?)) OR verse_reference IS NULL) AND "
+        "(disposition IS NULL OR disposition<>'withdrawn') GROUP BY observation_id", (json.dumps(sorted(obs)), OJ))}
+    ledger: dict = {}
+    for h in conn.execute("SELECT h.id, h.verse_id, s.code, h.strong, h.surface, h.face FROM reading_strand_hit h JOIN "
+                          "reading_strand s ON s.id=h.strand_id WHERE h.verse_id IN (SELECT value FROM json_each(?)) AND "
+                          "coalesce(h.face,'')<>'' AND h.observation_id IS NULL", (J,)):
+        ledger.setdefault(h["verse_id"], []).append(
+            {"hit": h["id"], "strand": h["code"], "word": f"{h['surface']} ({h['strong']})", "face": h["face"],
+             "link": None})
+    for it in items:
+        vid, osis = it["verse_id"], it["osis"]
+        occ_by_key = {(g["strong"], _norm(g["surface"])): g["occurrences"] for g in sheets[vid]["surfaces"]}
+        occ_ids = {i for g in sheets[vid]["surfaces"] for i in g["occurrences"]}
+        existing = []
+        for (oid, ref), ns in nodes.items():
+            if ref != osis or oid not in obs:      # a node of a withdrawn observation is not shown
+                continue
+            o = obs[oid]
+            nl = []
+            for n in ns:
+                if n["verse_lexical_id"] in occ_ids:
+                    counts = n["verse_lexical_id"]
+                else:
+                    same = occ_by_key.get((n["strong"], _norm(n["surface"]))) if n["surface"] else None
+                    counts = same[0] if same and len(same) == 1 else None
+                suggest = {}
+                if counts and n["verse_lexical_id"] is None:
+                    suggest["verse_lexical_id"] = counts
+                if counts and not n["cluster_subgroup_code"] and n["strong"]:
+                    code = orec.subgroup_code(conn, n["cluster_code"], n["strong"], n["surface"])
+                    if code:
+                        suggest["cluster_subgroup_code"] = code
+                nl.append({"node": n["id"], "word": f"{n['surface']} ({n['strong']})", "role": n["role"],
+                           "occurrence": n["verse_lexical_id"], "counts_for": counts, "cluster": n["cluster_code"],
+                           "subgroup": n["cluster_subgroup_code"], "reading_id": n["reading_id"],
+                           "suggest": suggest or None, "action": None})
+            existing.append({"observation": oid, "stage": o["stage"], "kind": o["tag"], "text": o["obs_text"],
+                             "meaning": o["meaning"], "implication": o["implication"], "basis": o["basis"],
+                             "route": o["route"], "parts": json.loads(o["parts"]) if o["parts"] else None,
+                             "nodes_on_other_verses": elsewhere.get(oid, 0), "nodes": nl, "action": None})
+        sheets[vid].update({
+            "passage": _passage(conn, osis, loop["passage_window"]), "existing": existing,
+            "ledger_faces": ledger.get(vid, []), "findings": [], "fill_nodes": False, "drop_non_relevant_nodes": False,
+            "how": "Evaluate every surface: evaluation {\"result\": \"relevant\" (the characteristic, or a qualifier of it) | "
+                   "\"bears_on\" (the object, party or outward act of a relevant act: a node of that act's observation) | "
+                   "\"not_relevant\", \"reason\": \"...\"} (reason: the tests of the lexical work; a surface with no "
+                   "inner-being role gets no observation). `drop_non_relevant_nodes`: true soft deletes every existing node on a "
+                   "not_relevant surface. Check every existing observation: "
+                   "action {\"action\": \"accept\"|\"modify\"|\"delete\", \"reason\": \"...\" (modify, delete), \"set\": {...} "
+                   "(modify), \"nodes\": [{\"node\": id, \"action\": ..., \"reason\": ..., \"set\": {...}}]}; \"fill_nodes\": true "
+                   "applies every node `suggest` as a modify. A new finding goes in `findings` (observationrecord's shape, plus "
+                   "`parts`; each node names its `occurrence` id and a `role` from reading.node_roles). `ledger_faces[].link`: "
+                   "{\"observation\": id} or {\"reason\": \"...\"}."})
+        sheets[vid]["verse"] = it["verse"]
+        sheets[vid]["osis"] = osis
+        sheets[vid]["text"] = conn.execute("SELECT text FROM verse WHERE id=?", (vid,)).fetchone()[0]
+    return sheets
+
+
+def observe(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
+    """-Label [-Count n] [-Verse ref]: put the next verses in hand: their sheets are read from the tables now and set in the
+    JSON for the reading to fill."""
+    conn = cfg.conn
+    r = _at(conn, p.get("Label"), "open")
+    path, data = _index(cfg, root, r)
+    loop = _setting_loop(cfg)
+    n = int(p.get("Count") or loop["verses_per_sheet"])
+    want = None
+    if (p.get("Verse") or "").strip():
+        want = {x.verse_id for x in nr.parse_refs(p["Verse"], nr.VerseIndex(cfg)) if x.verse_id}
+    hand = [v for v in data["verses"] if v["status"] == "in_hand"]
+    pick = [v for v in data["verses"] if v["status"] == "waiting" and (want is None or v["verse_id"] in want)]
+    room = max(0, n - len(hand)) if want is None else len(pick)
+    pick = pick[:room]
+    if not hand and not pick:
+        return f"reading {r['label']}: no verse waiting or in hand ({data['counts']['done']} done)"
+    if pick:
+        sheets = _sheets(cfg, conn, pick)      # new sheets only: a sheet already in hand keeps what was filled in it
+        for v in pick:
+            v["status"] = "in_hand"
+            v["sheet"] = sheets[v["verse_id"]]
+    batch = hand + pick
+    built = _now()
+    data["built_at"] = built
+    data["counts"]["done"] = sum(1 for v in data["verses"] if v["status"] == "done")
+    _save_atomic(path, data)
+    nr._atomic(conn, lambda: w.update("reading", {"id": r["id"]}, {"observe_file": _rel(root, path),
+                                                                    "observe_built_at": built, "run_id": run_id}))
+    return (f"reading {r['label']}: {len(batch)} verse(s) in hand ({', '.join(v['verse'] for v in batch)}; "
+            f"{len(pick)} new sheet(s)); "
+            f"{data['counts']['done']} of {data['counts']['verses']} done\n  sheets in {_rel(root, path)}")
+
+
+def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
+    """Check one filled sheet whole; returns the plan (what to write), or None with the errors added."""
+    loop = _setting_loop(cfg)
+    groups_roles = orec.node_role_groups(cfg)
+    roles = orec.node_roles(cfg)
+    minc = loop["min_reason_chars"]
+    sh = v["sheet"]
+    at = v["verse"]
+    ok_reason = lambda s: len((s or "").strip()) >= minc
+    # surfaces
+    rel_groups, bear_groups, non_groups = [], [], []
+    for k, g in enumerate(sh["surfaces"]):
+        ev = g.get("evaluation")
+        if not isinstance(ev, dict) or ev.get("result") not in loop["evaluation_results"] or not ok_reason(ev.get("reason")):
+            errors.append(f"{at}: surface {g['word']} needs an evaluation {{\"result\": one of {loop['evaluation_results']}, "
+                          f"\"reason\": ...}} (a reason of {minc} characters or more)")
+            continue
+        {"relevant": rel_groups, "bears_on": bear_groups, "not_relevant": non_groups}[ev["result"]].append(g)
+    occ_group = {i: g for g in sh["surfaces"] for i in g["occurrences"]}
+    # existing observations
+    plan = {"obs": [], "nodes": [], "fill": [], "links": [], "findings": []}
+    live_after = []        # (occurrence group id, role) of nodes that stay
+    for e in sh["existing"]:
+        a = e.get("action")
+        if not isinstance(a, dict) or a.get("action") not in loop["existing_actions"]:
+            errors.append(f"{at}: observation {e['observation']} needs an action {loop['existing_actions']}")
+            continue
+        if a["action"] in ("modify", "delete") and not ok_reason(a.get("reason")):
+            errors.append(f"{at}: observation {e['observation']}: a {a['action']} needs its reason ({minc} characters or more)")
+            continue
+        if a["action"] == "modify" and not a.get("set") and not a.get("nodes"):
+            errors.append(f"{at}: observation {e['observation']}: a modify names what is set (`set`) or the nodes changed")
+            continue
+        plan["obs"].append((e["observation"], a))
+        deleted_obs = a["action"] == "delete"
+        by_node = {x.get("node"): x for x in (a.get("nodes") or []) if isinstance(x, dict)}
+        for n in e["nodes"]:
+            na = by_node.get(n["node"])
+            role, gone = n["role"], deleted_obs
+            if not na and sh.get("drop_non_relevant_nodes") and not deleted_obs and n["counts_for"] in occ_group and any(
+                    occ_group[n["counts_for"]] is x for x in non_groups):
+                na = {"action": "delete", "reason": "the surface has no inner-being role (its evaluation, #2320)"}
+            if na:
+                if na.get("action") not in loop["existing_actions"]:
+                    errors.append(f"{at}: node {n['node']} needs an action {loop['existing_actions']}")
+                    continue
+                if na["action"] in ("modify", "delete") and not ok_reason(na.get("reason")):
+                    errors.append(f"{at}: node {n['node']}: a {na['action']} needs its reason")
+                    continue
+                if na["action"] == "delete":
+                    gone = True
+                if na["action"] == "modify":
+                    role = (na.get("set") or {}).get("role", role)
+                plan["nodes"].append((n["node"], na))
+            elif sh.get("fill_nodes") and n["suggest"] and not deleted_obs:
+                plan["fill"].append((n["node"], n["suggest"]))
+            if not gone and n["counts_for"] in occ_group and role is not None:
+                live_after.append((id(occ_group[n["counts_for"]]), role))
+    for f in sh.get("findings") or []:
+        plan["findings"].append(f)
+        for nd in (f.get("nodes") or []):
+            if isinstance(nd, dict) and nd.get("strong") and nd.get("occurrence") not in occ_group:
+                errors.append(f"{at}: a finding node names the occurrence id of the word in this verse (`occurrence`)")
+            g = occ_group.get(nd.get("occurrence")) if isinstance(nd, dict) else None
+            if g is not None and nd.get("role"):
+                live_after.append((id(g), nd["role"]))
+    for hit in sh.get("ledger_faces") or []:
+        lk = hit.get("link")
+        if lk is None:
+            continue
+        if not (isinstance(lk, dict) and ((lk.get("observation") and conn.execute(
+                "SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'", (lk["observation"],)).fetchone())
+                or ok_reason(lk.get("reason")))):
+            errors.append(f"{at}: ledger face {hit['hit']}: link is {{\"observation\": a live id}} or {{\"reason\": ...}}")
+        else:
+            plan["links"].append((hit["hit"], lk))
+    # coverage (spec 4.4): relevant -> a live node with a characteristic or qualifier role; bears_on -> a live node with an
+    # object, relational target or enactment role; not_relevant -> no live node at all
+    def has(g, kind):
+        return any(gid == id(g) and role in groups_roles[kind] for gid, role in live_after)
+    for g in rel_groups:
+        if not has(g, "relevant"):
+            errors.append(f"{at}: {g['word']} is relevant, but no live node with a role from {groups_roles['relevant']} names it")
+    for g in bear_groups:
+        if not has(g, "bears_on"):
+            errors.append(f"{at}: {g['word']} bears on the act, but no live node with a role from {groups_roles['bears_on']} "
+                          f"names it")
+    for g in non_groups:
+        if any(gid == id(g) for gid, _ in live_after):
+            errors.append(f"{at}: {g['word']} has no inner-being role (evaluation) but a node still names it: delete the "
+                          f"node, set `drop_non_relevant_nodes`, or change the evaluation")
+    return plan
+
+
+def _filled(sh: dict) -> bool:
+    return (any(g.get("evaluation") for g in sh["surfaces"]) or any(e.get("action") for e in sh["existing"])
+            or bool(sh.get("findings")) or any(h.get("link") for h in sh.get("ledger_faces") or []))
+
+
+def record(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
+    """-Label: write the filled sheets of the verses in hand: evaluations kept in the JSON, existing observations and nodes
+    accepted, modified or soft deleted, new findings written -- all or nothing; the verses written are marked done."""
+    conn = cfg.conn
+    r = _at(conn, p.get("Label"), "open")
+    path, data = _index(cfg, root, r)
+    if data.get("built_at") != r["observe_built_at"] and r["observe_built_at"]:
+        raise Refused("the JSON was changed after Observe built the sheets: run Observe")
+    hand = [v for v in data["verses"] if v["status"] == "in_hand" and v.get("sheet")]
+    todo = [v for v in hand if _filled(v["sheet"])]
+    if not todo:
+        raise Refused("nothing to record: no verse in hand has a filled sheet (Reading.ps1 -Step Observe)")
+    errors, quotes = [], []
+    plans = {}
+    for v in todo:
+        pl = _validate_sheet(cfg, conn, v, errors)
+        if pl is not None:
+            plans[v["verse_id"]] = pl
+    # new findings: checked by observationrecord across the whole batch (unique keys)
+    specs = []
+    for v in todo:
+        for k, f in enumerate((plans.get(v["verse_id"]) or {}).get("findings", [])):
+            if isinstance(f, dict):
+                specs.append((f"{v['verse']} findings[{k}] ({f.get('key')})", {**f, "key": f"{v['verse_id']}:{f.get('key')}"}))
+    fplan = orec.check(cfg, specs, errors, quotes) if specs else []
+    if errors or quotes:
+        raise Refused("\n  ".join(["the sheets are not recorded:"] + errors + (
+            ["quotation(s) not found in the ESV text:"] + quotes if quotes else [])))
+    loop = _setting_loop(cfg)
+
+    def go():
+        _grant_findings(w)
+        w._grant("reading_strand_hit")
+        summary = {}
+        for v in todo:
+            pl = plans[v["verse_id"]]
+            cnt = {"accepted": 0, "modified": 0, "deleted": 0, "nodes_modified": 0, "nodes_deleted": 0, "links": 0}
+            for oid, a in pl["obs"]:
+                if a["action"] == "accept":
+                    cnt["accepted"] += 1
+                elif a["action"] == "delete":
+                    orec.withdraw_observation(conn, oid, a["reason"].strip(), r["id"], run_id, w.who)
+                    cnt["deleted"] += 1
+                else:
+                    if a.get("set"):
+                        orec.modify_observation(cfg, conn, oid, a["set"], a["reason"].strip(), r["id"], run_id, w.who)
+                    cnt["modified"] += 1
+            for nid, na in pl["nodes"]:
+                if na["action"] == "delete":
+                    orec.set_disposition(conn, nid, "withdrawn", na["reason"].strip(), r["id"], run_id, w.who)
+                    cnt["nodes_deleted"] += 1
+                elif na["action"] == "modify":
+                    orec.modify_node(cfg, conn, nid, na.get("set") or {}, na["reason"].strip(), r["id"], run_id, w.who)
+                    cnt["nodes_modified"] += 1
+            for nid, sug in pl["fill"]:
+                orec.modify_node(cfg, conn, nid, sug, "completed from verse_lexical and surface_subgroup when the verse was "
+                                 "worked (#2308 D2)", r["id"], run_id, w.who)
+                cnt["nodes_modified"] += 1
+            for hid, lk in pl["links"]:
+                if lk.get("observation"):
+                    w.update("reading_strand_hit", {"id": hid}, {"observation_id": lk["observation"], "run_id": run_id})
+                else:
+                    w.update("reading_strand_hit", {"id": hid}, {"reason": lk["reason"].strip(), "run_id": run_id})
+                cnt["links"] += 1
+            summary[v["verse_id"]] = cnt
+        written = orec.write(conn, fplan, r["id"], run_id) if fplan else {}
+        w.update("reading", {"id": r["id"]}, {"run_id": run_id})
+        return summary, written
+    summary, written = nr._atomic(conn, go)
+    at = _now()
+    for v in todo:
+        sh = v.pop("sheet")
+        v["status"] = "done"
+        v["result"] = {
+            "at": at, "run_id": run_id, "existing": summary[v["verse_id"]],
+            "surfaces": [{"word": g["word"], "occurrences": g["occurrences"], "result": g["evaluation"]["result"],
+                          "reason": g["evaluation"]["reason"].strip()} for g in sh["surfaces"]],
+            "written": {"observations": [x["observation"] for k, x in written.items() if k.startswith(f"{v['verse_id']}:")],
+                        "nodes": sum(len(x["nodes"]) for k, x in written.items() if k.startswith(f"{v['verse_id']}:"))}}
+    data["counts"]["done"] = sum(1 for x in data["verses"] if x["status"] == "done")
+    data.pop("built_at", None)
+    _save_atomic(path, data)
+    nr._atomic(conn, lambda: w.update("reading", {"id": r["id"]}, {"observe_built_at": None, "run_id": run_id}))
+    new_o = sum(1 for x in written.values() if x["new"])
+    return (f"reading {r['label']}: {len(todo)} verse(s) done ({data['counts']['done']} of {data['counts']['verses']}); "
+            f"{sum(s['accepted'] for s in summary.values())} accepted, {sum(s['modified'] for s in summary.values())} "
+            f"modified, {sum(s['deleted'] for s in summary.values())} deleted; {new_o} finding(s) new, "
+            f"{sum(len(x['nodes']) for x in written.values())} node(s)\n  evaluations and results in {_rel(root, path)}")
+
+
+def gate_observe(cfg, root: pathlib.Path, r) -> list[str]:
+    """The Observe gate (spec 4.4), checked from the JSON and the tables: every verse done; every surface evaluated in the
+    JSON still agrees with the live nodes (relevant: a characteristic or qualifier node; bears_on: an object, relational
+    target or enactment node; not_relevant: no live node); every node of this reading holds its role."""
+    conn = cfg.conn
+    groups_roles = orec.node_role_groups(cfg)
+    try:
+        _, data = _index(cfg, root, r)
+    except Refused as exc:
+        return [str(exc)]
+    out = []
+    for v in data["verses"]:
+        if v["status"] != "done":
+            out.append(f"{v['verse']}: {v['status']}, not done")
+            continue
+        occ_nodes: dict = {}
+        for n in conn.execute("SELECT n.verse_lexical_id, n.strong, n.surface, n.role FROM ib_node n JOIN ib_observation o "
+                              "ON o.id=n.observation_id WHERE n.verse_reference=? AND o.status<>'withdrawn' AND "
+                              "(n.disposition IS NULL OR n.disposition<>'withdrawn')", (v["osis"],)):
+            occ_nodes.setdefault(n["verse_lexical_id"], []).append(n)
+        for g in v["result"]["surfaces"]:
+            nodes = [n for i in g["occurrences"] for n in occ_nodes.get(i, [])]
+            res = g["result"]
+            if res in groups_roles and not any(n["role"] in groups_roles[res] for n in nodes):
+                out.append(f"{v['verse']} {g['word']}: {res}, but no live node with a role from {groups_roles[res]} names it")
+            if res == "not_relevant" and nodes:
+                out.append(f"{v['verse']} {g['word']}: no inner-being role, but a live node names it")
+    for n in conn.execute("SELECT id, observation_id FROM ib_node WHERE reading_id=? AND strong IS NOT NULL AND "
+                          "verse_reference IS NOT NULL AND role IS NULL", (r["id"],)):
+        out.append(f"node {n['id']} (observation {n['observation_id']}): no role")
+    return out
+
+
+# ── helpers the claims steps use (open items, grants, the passage) ──────────────────────────────────
 class _ReadingItems:
     """New open items (D-b): the Open-Item.ps1 -Action Add shape, through openitem.add."""
 
@@ -321,452 +672,23 @@ class _ReadingItems:
         return out.split(" ", 1)[0]
 
 
-def _new_items(items: _ReadingItems, data: dict, errors: list) -> list:
-    return [(f"new_items[{i}]", items.check(s, f"new_items[{i}]", errors))
-            for i, s in enumerate(data.get("new_items") or []) if not (isinstance(s, dict) and s.get("added"))]
-
-
 def _grant_findings(w: nr.Writer) -> None:
     for t in ("ib_observation", "ib_node", "ib_observation_change"):
         w._grant(t)
 
 
-def gather(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
-    """-Label [-File <pre-gap JSON>]: every filled `record` written or checked; nothing is written if any is wrong."""
-    conn = cfg.conn
-    r = _at(conn, p.get("Label"), "open")
-    path = _path(root, p.get("File") or r["gap_file"])
-    data = _load(root, str(path), "-File")
-    if data.get("reading_id") != r["id"]:
-        raise Refused(f"the file is the pre-gap JSON of reading {data.get('reading')!r} (id {data.get('reading_id')}), "
-                      f"not {r['label']} (id {r['id']})")
-    types = gap_types(cfg)
-    items = _ReadingItems(cfg, w)
-    errors, quotes, plan, specs = [], [], [], []
-    for sec, i, it in _items_of(data):
-        rec, at = it.get("record"), f"{sec}[{i}] ({it.get('verse') or it.get('strong') or it.get('item')})"
-        if rec is None or (isinstance(rec, dict) and rec.get("run_id") and rec.get("id") is not None):
-            continue                                   # not yet, or written by an earlier Gather (checked at Check)
-        kinds_given = [k for k in ("finding", "reason", "table", "response", "face") if rec.get(k)] \
-            if isinstance(rec, dict) else []
-        if sec == "face_not_gathered" and isinstance(rec, dict) and rec.get("reason") and not rec.get("face"):
-            kinds_given = ["face"]                     # a strand hit's reason is the hit's own record
-        if len(kinds_given) != 1:
-            errors.append(f"{at}: record is one of {{\"finding\": ...}}, {{\"table\", \"id\"}} or {{\"reason\"}} "
-                          f"(face_not_gathered: or a face; open_item: or a response)")
-            continue
-        how = kinds_given[0]
-        if how == "reason":
-            if len(rec["reason"].strip()) < 10:
-                errors.append(f"{at}: a reason says why, in words (10 characters or more)")
-            continue
-        if how == "table":
-            if rec["table"] not in types[sec]["records_in"]:
-                errors.append(f"{at}: {sec} records into {types[sec]['records_in']}, not {rec['table']}")
-            elif not _row_exists(conn, rec["table"], rec.get("id")):
-                errors.append(f"{at}: {rec['table']} {rec.get('id')} does not exist")
-            continue
-        if how == "finding":
-            if "ib_observation" not in types[sec]["records_in"]:
-                errors.append(f"{at}: {sec} does not record into a finding")
-                continue
-            key = f"{sec}:{i}"
-            specs.append((at, {**rec["finding"], "key": key}))
-            plan.append(("finding", it, key))
-        elif how == "response":
-            if sec != "open_item" or len(rec["response"].strip()) < 10:
-                errors.append(f"{at}: a response is what the reading found, on an open item (10 characters or more)")
-                continue
-            try:
-                _thread_item(conn, it["item"])
-            except Refused as exc:
-                errors.append(f"{at}: {exc}")
-                continue
-            plan.append(("touch", it, rec["response"].strip()))
-        else:                                          # a face on a strand hit
-            if sec != "face_not_gathered":
-                errors.append(f"{at}: a face is recorded on a face_not_gathered item")
-                continue
-            hit = conn.execute("SELECT h.id FROM reading_strand_hit h JOIN reading_strand s ON s.id=h.strand_id JOIN "
-                               "verse v ON v.id=h.verse_id WHERE s.code=? AND h.strong=? AND v.reference=?",
-                               (it.get("strand"), it.get("strong"), it.get("verse"))).fetchone()
-            if hit is None:
-                errors.append(f"{at}: no strand hit {it.get('strand')} {it.get('strong')} at {it.get('verse')}")
-                continue
-            if bool((rec.get("face") or "").strip()) == bool((rec.get("reason") or "").strip()):
-                errors.append(f"{at}: give a face or a reason, one of them")
-            ob = rec.get("observation")
-            if ob is not None and not conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'",
-                                                   (ob,)).fetchone():
-                errors.append(f"{at}: observation {ob} is not a live observation")
-            plan.append(("hit", it, (hit["id"], rec)))
-    fplan = orec.check(cfg, specs, errors, quotes) if specs else []
-    new_items = _new_items(items, data, errors)
-    if errors or quotes:
-        raise Refused("\n  ".join(["the pre-gaps are not gathered:"] + errors + (
-            ["quotation(s) not found in the ESV text:"] + quotes if quotes else [])))
-    if not plan and not new_items:
-        raise Refused("nothing to gather: no item has a new record, and no new item is listed")
-
-    def go():
-        _grant_findings(w)
-        written = orec.write(conn, fplan, r["id"], run_id) if fplan else {}
-        for kind, it, x in plan:
-            rec = it["record"]
-            if kind == "finding":
-                it["record"] = {**rec, "table": "ib_observation", "id": written[x]["observation"],
-                                "nodes": written[x]["nodes"], "run_id": run_id}
-            elif kind == "touch":
-                t, row = _thread_item(conn, it["item"])
-                try:
-                    escalation.update(cfg, Db(cfg), t["id"], item_refs=[str(row["item_no"])], response_kind="touched",
-                                      respond=f"{x} (reading {r['label']}, pre gate)", via=r["escalation_id"],
-                                      originator=w.who)
-                except ValueError as exc:
-                    raise Refused(f"{it['item']}: {exc}") from exc
-                resp = conn.execute("SELECT MAX(id) FROM escalation_thread_item_response WHERE item_id=?",
-                                    (row["id"],)).fetchone()[0]
-                it["record"] = {**rec, "table": "escalation_thread_item_response", "id": resp, "run_id": run_id}
-            else:
-                hid, h = x
-                w.update("reading_strand_hit", {"id": hid}, {"face": h.get("face"), "reason": h.get("reason"),
-                                                             "parties": h.get("parties"),
-                                                             "observation_id": h.get("observation"), "run_id": run_id})
-                it["record"] = {**rec, "table": "reading_strand_hit", "id": hid, "run_id": run_id}
-        added = []
-        for at, spec in new_items:
-            spec["added"] = items.raise_(spec, f"{at} (reading {r['label']})")
-            added.append(spec["added"])
-        w.update("reading", {"id": r["id"]}, {"run_id": run_id})
-        return written, added
-    written, added = nr._atomic(conn, go)
-    _save(path, data)
-    left = sum(1 for _, _, it in _items_of(data) if it.get("record") is None)
-    return (f"reading {r['label']}: {len(plan)} record(s) written ({sum(1 for x in written.values() if x['new'])} "
-            f"finding(s) new, {sum(len(x['nodes']) for x in written.values())} node(s)); {len(added)} open item(s) "
-            f"added ({', '.join(added) or '-'}); {left} item(s) still without a record\n  ids written back to "
-            f"{_rel(root, path)}")
-
-
-def gate_pre(conn, root: pathlib.Path, r) -> list[str]:
-    data = _load(root, r["gap_file"], "the pre-gap JSON")
-    out = []
-    for sec, i, it in _items_of(data):
-        rec, at = it.get("record"), f"{sec}[{i}] {it.get('verse') or it.get('strong') or it.get('item')}"
-        if not isinstance(rec, dict):
-            out.append(f"{at}: no record")
-        elif rec.get("reason") and not rec.get("id"):
-            continue
-        elif not rec.get("table") or not _row_exists(conn, rec["table"], rec.get("id")):
-            out.append(f"{at}: record {rec.get('table')} {rec.get('id')} is not a row that exists (run Gather)")
-    for i, s in enumerate(data.get("new_items") or []):
-        if not (isinstance(s, dict) and s.get("added")):
-            out.append(f"new_items[{i}]: not added (run Gather)")
-    return out
-
-
-# ══ observe (D3 and D4 input) ═══════════════════════════════════════════════════════════════════
-def _subgroups_of(conn) -> dict:
-    """{(strong, surface): [subgroup codes]} through surface_subgroup (the surface's own subgroup, #2312)."""
-    out: dict = {}
-    for strong, surface, sg in conn.execute(
-            "SELECT s.strong, s.surface, g.subgroup_code FROM surface_subgroup s JOIN cluster_subgroup g ON "
-            "g.id=s.cluster_subgroup_id WHERE s.deleted=0 ORDER BY g.subgroup_code"):
-        out.setdefault((strong, surface), []).append(sg)
-    return out
-
-
-def _has_on_surfaces(conn, osis: str, rows: list) -> dict:
-    """{verse_lexical id: [(node role, observation tag)]}: the live nodes of live findings on each surface occurrence
-    of one verse. A node belongs to an occurrence by its verse_lexical_id; one without it by verse, Strong and
-    surface when that match is unique in the verse; any other node is set aside (it names a verse and no surface)."""
-    key = {}
-    for r in rows:
-        key.setdefault((r["strong"], r["surface"]), []).append(r["id"])
-    out: dict = {r["id"]: [] for r in rows}
-    for n in conn.execute(
-            "SELECT n.verse_lexical_id, n.strong, n.surface, n.role, o.tag FROM ib_node n JOIN ib_observation o ON "
-            "o.id=n.observation_id WHERE n.verse_reference=? AND o.status<>'withdrawn' AND "
-            "(n.disposition IS NULL OR n.disposition<>'withdrawn')", (osis,)):
-        if n["verse_lexical_id"] in out:
-            out[n["verse_lexical_id"]].append((n["role"], n["tag"]))
-        elif n["verse_lexical_id"] is None and n["strong"]:
-            same = key.get((n["strong"], n["surface"])) if n["surface"] else None
-            if same is None and not n["surface"]:
-                same = [i for (s, _), ids in key.items() if s == n["strong"] for i in ids]
-            if same and len(same) == 1:
-                out[same[0]].append((n["role"], n["tag"]))
-    return out
-
-
-def surfaces_state(cfg, conn, vid: int) -> list[dict]:
-    """The surfaces of one verse that need observations, and what each already has and lacks (#2312). A surface is a
-    verse_lexical occurrence (surface with its Strong). In focus (reading.focus_words): every content word (a function
-    word is left out by its morph), the kept tags (negators, connectives), every M-coded word and the words in
-    reading.non_characteristic_strongs. Required of each (reading.surface_requirements): a node with a role, and the
-    kinds listed, or a silence finding in their place. Missing = required and not yet on a live finding."""
-    spec = _setting(cfg, "reading.focus_words")
-    req = _setting(cfg, "reading.surface_requirements")
-    never = set(_setting(cfg, "reading.non_characteristic_strongs"))
-    osis = conn.execute("SELECT osisId FROM verse WHERE id=?", (vid,)).fetchone()[0]
-    rows = conn.execute("SELECT id, position, surface, strong, morph_code, testament, is_negator FROM verse_lexical "
-                        "WHERE verse_id=? AND deleted=0 ORDER BY position, id", (vid,)).fetchall()
-    sub = _subgroups_of(conn)
-    have = _has_on_surfaces(conn, osis, rows)
-    out = []
-    for r in rows:
-        clusters = orec.word_clusters(conn, r["strong"])
-        prefix = (r["morph_code"] or "")[:2] if r["testament"] == "OT" else (r["morph_code"] or "").split("-")[0]
-        function = prefix in spec["function_word_morph"].get(r["testament"], [])
-        why = []
-        if any(c.startswith("M") for c in clusters):
-            why.append("M-code")
-        if r["strong"] in never:
-            why.append("never a characteristic (RG-23)")
-        if r["is_negator"] or any(t in clusters for t in spec["keep_tags"]):
-            why.append("negator or connective (RG-22)")
-        if not function and not why:
-            why.append("content word (RG-22)")
-        if not why:
-            continue
-        got = have[r["id"]]
-        kinds = {t for _, t in got}
-        silent = "silence" in kinds
-        missing = []
-        if req["role"] and not any(role for role, _ in got):
-            missing.append("role")
-        missing += [k for k in req["kinds"] if k not in kinds and not (silent and k in req["silence_instead_of"])]
-        out.append({"word": f"{r['surface']} ({r['strong']})", "strong": r["strong"], "surface": r["surface"],
-                    "morph": r["morph_code"], "position": r["position"], "occurrence": r["id"], "clusters": clusters,
-                    "subgroups": sub.get((r["strong"], r["surface"]), []), "in_focus_as": why,
-                    "has": sorted(kinds), "missing": missing, "record": None})
-    return out
-
-
-def _focus(cfg, conn, vid: int) -> list[dict]:
-    """The surfaces still missing an observation in one verse (the words the Observe step has to fill)."""
-    return [s for s in surfaces_state(cfg, conn, vid) if s["missing"]]
-
-
-def _open_items_for(cfg, conn, verses: list[tuple]) -> dict:
-    """{verse id: [open item, ...]}: the open thread items for each verse, by the verse and through its surfaces' Strongs
-    and clusters (a scope item by its own verses only), each with the subgroups it reaches (#2312). `verses` is
-    [(verse id, reference)]."""
-    by_ref = {ref: vid for vid, ref in verses}
-    by_strong, by_cluster = {}, {}
-    for vid, _ in verses:
-        for r in conn.execute("SELECT strong FROM verse_lexical WHERE verse_id=? AND deleted=0", (vid,)):
-            by_strong.setdefault(r["strong"], set()).add(vid)
-            for cl in orec.word_clusters(conn, r["strong"]):
-                by_cluster.setdefault(cl, set()).add(vid)
-    out: dict = {vid: [] for vid, _ in verses}
-    seen = set()
-    for t, it, qv in escalation.match_open_items(Db(cfg), clusters=sorted(by_cluster), strongs=sorted(by_strong),
-                                                 verses=sorted(by_ref), home=False):
-        for vid in ({by_ref[qv]} if qv in by_ref else by_strong.get(qv) or by_cluster.get(qv) or set()):
-            if (vid, it["id"]) in seen:
-                continue
-            seen.add((vid, it["id"]))
-            row = conn.execute("SELECT * FROM escalation_thread_item WHERE id=?", (it["id"],)).fetchone()
-            out[vid].append({"item": f"{t['alias']}.{it['item_no']}", "kind": it["kind"], "value": it["value"],
-                             "matched_on": qv, "note": it["note"], "read_for": row["read_for"],
-                             "subgroups": _item_subgroups(conn, row)})
-    return out
-
-
-def _passage(conn, osis: str) -> list[dict]:
+def _passage(conn, osis: str, window: int = 2) -> list[dict]:
     book, ch, v = osis.split(".")
-    want = [f"{book}.{ch}.{n}" for n in range(max(1, int(v) - 2), int(v) + 3)]
+    want = [f"{book}.{ch}.{n}" for n in range(max(1, int(v) - window), int(v) + window + 1)]
     rows = {r[0]: r for r in conn.execute("SELECT osisId, reference, text FROM verse WHERE deleted=0 AND osisId IN "
                                           f"({','.join('?' * len(want))})", want)}
     return [{"verse": rows[o][1], "text": rows[o][2]} for o in want if o in rows]
 
 
-def _findings_on(conn, osis: str) -> list[dict]:
-    out = []
-    for o in conn.execute("SELECT DISTINCT o.* FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE "
-                          "n.verse_reference=? AND o.status<>'withdrawn' ORDER BY o.id", (osis,)):
-        nodes = [dict(n) for n in conn.execute(
-            "SELECT id node, strong, surface, verse_lexical_id occurrence, cluster_code cluster, cluster_subgroup_code "
-            "subgroup, role, reading_id, disposition FROM ib_node WHERE "
-            "observation_id=? AND verse_reference=? AND (disposition IS NULL OR disposition<>'withdrawn')",
-            (o["id"], osis))]
-        out.append({"observation": o["id"], "stage": o["stage"], "kind": o["tag"], "text": o["obs_text"],
-                    "meaning": o["meaning"], "basis": o["basis"], "route": o["route"], "nodes": nodes})
-    return out
-
-
-def observe(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
-    """The observe JSON, built from the tables once the reading is gathered (RO2: every finding into focus)."""
-    conn = cfg.conn
-    r = _at(conn, p.get("Label"), "gathered")
-    V = []
-    vids = verse_ids(conn, r["id"])
-    refs = [(vid, conn.execute("SELECT reference FROM verse WHERE id=?", (vid,)).fetchone()[0]) for vid in vids]
-    items_on = _open_items_for(cfg, conn, refs)
-    for vid in vids:
-        v = conn.execute("SELECT osisId, reference, text FROM verse WHERE id=?", (vid,)).fetchone()
-        state = surfaces_state(cfg, conn, vid)
-        V.append({"verse": v["reference"], "osis": v["osisId"], "text": v["text"], "passage": _passage(conn, v["osisId"]),
-                  "findings_in_focus": _findings_on(conn, v["osisId"]), "open_items": items_on[vid],
-                  "surfaces_in_focus": len(state), "surfaces_complete": sum(1 for s in state if not s["missing"]),
-                  "words": [s for s in state if s["missing"]]})
-    in_focus = sorted({f["observation"] for v in V for f in v["findings_in_focus"]})
-    C = [{"claim": c["claim_ref"], "status": c["status"], "text": c["claim_text"]}
-         for c in scope_claims(conn, r["id"], in_focus)]
-    prompts = {}
-    for kind, codes in _setting(cfg, "reading.observe_prompts").items():
-        prompts[kind] = [{"code": q, "question": t} for q, t in conn.execute(
-            f"SELECT question_code, question_text FROM wa_obs_question_catalogue WHERE deleted=0 AND question_code IN "
-            f"({','.join('?' * len(codes)) or 'NULL'}) ORDER BY prompt_seq", codes)]
-    built = _now()
-    data = {"reading": r["label"], "reading_id": r["id"], "objective": r["objective"], "built_at": built,
-            "built_from": "the tables (B:114)",
-            "how": "Read each verse in its passage with every finding in focus (RO1, RO2). Record findings in "
-                   "`findings` (observationrecord's shape: key, kind, text, meaning, implication, basis, route on a "
-                   "party or link finding, nodes [{verse, strong, surface, cluster, role}]; the surface names the "
-                   "occurrence; a description already live is named as existing and gains nodes). `words` lists only "
-                   "the surfaces of the verse (a surface is a word as written with its Strong) that lack what "
-                   "reading.surface_requirements asks, as `missing`: add only that. A surface lacking nothing is not "
-                   "listed (`surfaces_complete`). `open_items` are the open items for the verse, whatever their "
-                   "subgroup. A surface that cannot be completed takes its `record`: "
-                   "{\"reason\": ...}, {\"item\": \"OT-nn.n|#n\"} or {\"new_item\": <Open-Item add shape>}. A finding "
-                   "no longer supported: `withdraw` [{\"node\": id, \"reason\"} | {\"observation\": id, \"reason\"}]. "
-                   "The prompts are the catalogue's questions by kind: a prompt that does not apply is not answered "
-                   "(RG-17). Then Reading.ps1 -Step Record -Label " + r["label"] + ".",
-            "kinds": orec.kinds(cfg), "prompts": prompts, "claims": C, "verses": V,
-            "findings": [], "withdraw": []}
-    path = out_dir(cfg, root, r["label"]) / f"{r['label']}-observe.json"
-    if path.exists():
-        path.replace(path.with_name(f"{r['label']}-observe-{built.replace(':', '').replace('-', '')}.json"))
-    _save(path, data)
-    nr._atomic(conn, lambda: w.update("reading", {"id": r["id"]}, {
-        "observe_file": _rel(root, path), "observe_built_at": built, "run_id": run_id}))
-    n_words = sum(len(v["words"]) for v in V)
-    return (f"reading {r['label']}: observe JSON built from the tables -- {len(V)} verse(s), {n_words} word(s) in "
-            f"focus, {len(in_focus)} finding(s) in focus, {len(C)} claim(s)\n  -> {_rel(root, path)}")
-
-
-# ══ record (D4 observe written) ═════════════════════════════════════════════════════════════════
 def _item_exists(conn, ref: str) -> bool:
     ref = str(ref or "")
     kind = "escalation" if ref.startswith("#") else "thread item" if "." in ref else "thread"
     return bool(ref) and nr._escalation_exists(conn, kind, ref)
-
-
-def record(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
-    """-Label [-File <observe JSON>]: the findings, withdrawals and word records written; nothing if any is wrong."""
-    conn = cfg.conn
-    r = _at(conn, p.get("Label"), "gathered")
-    path = _path(root, p.get("File") or r["observe_file"] or "")
-    data = _load(root, str(path), "-File")
-    if data.get("reading_id") != r["id"] or not r["observe_built_at"] or data.get("built_at") != r["observe_built_at"]:
-        raise Refused(f"the file is not the observe JSON built from the tables for reading {r['label']} "
-                      f"(built_at {data.get('built_at')!r}, the reading's {r['observe_built_at']!r}): run Observe")
-    items = _ReadingItems(cfg, w)
-    errors, quotes = [], []
-    todo = [(f"findings[{i}] ({f.get('key')})", f) for i, f in enumerate(data.get("findings") or [])
-            if isinstance(f, dict) and not f.get("written")]
-    fplan = orec.check(cfg, todo, errors, quotes) if todo else []
-    raise_words = []
-    for v in data.get("verses") or []:
-        for j, wd in enumerate(v.get("words") or []):
-            rec, at = wd.get("record"), f"{v['verse']} words[{j}] {wd.get('word')}"
-            if not rec or (isinstance(rec, dict) and rec.get("added")):
-                continue
-            if not isinstance(rec, dict) or len([k for k in ("reason", "item", "new_item") if rec.get(k)]) != 1:
-                errors.append(f"{at}: record is one of {{\"reason\"}}, {{\"item\"}} or {{\"new_item\"}}")
-            elif rec.get("reason") and len(rec["reason"].strip()) < 10:
-                errors.append(f"{at}: a reason says why, in words (10 characters or more)")
-            elif rec.get("item") and not _item_exists(conn, rec["item"]):
-                errors.append(f"{at}: item {rec['item']} does not exist")
-            elif rec.get("new_item"):
-                if items.check(rec["new_item"], at, errors):
-                    raise_words.append((at, wd))
-    wd_plan = []
-    for i, x in enumerate(data.get("withdraw") or []):
-        at = f"withdraw[{i}]"
-        if not isinstance(x, dict) or x.get("done"):
-            continue
-        if len((x.get("reason") or "").strip()) < 10:
-            errors.append(f"{at}: a withdrawal needs its reason, in words (RW-01)")
-        elif x.get("node") is not None:
-            if not conn.execute("SELECT 1 FROM ib_node WHERE id=? AND (disposition IS NULL OR disposition<>'withdrawn')",
-                                (x["node"],)).fetchone():
-                errors.append(f"{at}: node {x['node']} is not a live node")
-            else:
-                wd_plan.append(x)
-        elif x.get("observation") is not None:
-            if not conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'",
-                                (x["observation"],)).fetchone():
-                errors.append(f"{at}: observation {x['observation']} is not a live observation")
-            else:
-                wd_plan.append(x)
-        else:
-            errors.append(f"{at}: name the node or the observation withdrawn")
-    if errors or quotes:
-        raise Refused("\n  ".join(["the reading is not recorded:"] + errors + (
-            ["quotation(s) not found in the ESV text:"] + quotes if quotes else [])))
-    if not fplan and not raise_words and not wd_plan:
-        raise Refused("nothing to record: no new finding, no word with a new item, no withdrawal")
-
-    def go():
-        _grant_findings(w)
-        written = orec.write(conn, fplan, r["id"], run_id) if fplan else {}
-        for x in wd_plan:
-            if x.get("node") is not None:
-                orec.set_disposition(conn, x["node"], "withdrawn", x["reason"].strip(), r["id"], run_id, w.who)
-            else:
-                orec.withdraw_observation(conn, x["observation"], x["reason"].strip(), r["id"], run_id, w.who)
-        added = []
-        for at, wd in raise_words:
-            wd["record"]["added"] = items.raise_(wd["record"]["new_item"], f"{at} (reading {r['label']})")
-            added.append(wd["record"]["added"])
-        w.update("reading", {"id": r["id"]}, {"run_id": run_id})
-        return written, added
-    written, added = nr._atomic(conn, go)
-    for f in data.get("findings") or []:
-        if isinstance(f, dict) and f.get("key") in written:
-            f["written"] = {"observation": written[f["key"]]["observation"], "nodes": written[f["key"]]["nodes"],
-                            "run_id": run_id}
-    for x in wd_plan:
-        x["done"] = run_id
-    _save(path, data)
-    return (f"reading {r['label']}: {sum(1 for x in written.values() if x['new'])} finding(s) new, "
-            f"{sum(1 for x in written.values() if not x['new'])} existing applied, "
-            f"{sum(len(x['nodes']) for x in written.values())} node(s); {len(wd_plan)} withdrawal(s); {len(added)} open "
-            f"item(s) added ({', '.join(added) or '-'})\n  ids written back to {_rel(root, path)}")
-
-
-def gate_observe(cfg, root: pathlib.Path, r) -> list[str]:
-    """Every surface in focus has what reading.surface_requirements asks (on a live finding, of this reading or an
-    earlier one), or an open item or a reason (#2312); every finding in the file written; every node of this reading on
-    a word holds its role."""
-    if not r["observe_file"]:
-        return ["no observe JSON yet (Reading.ps1 -Step Observe, then Record)"]
-    data = _load(root, r["observe_file"], "the observe JSON")
-    out = []
-    conn = cfg.conn
-    for v in data.get("verses") or []:
-        vid = conn.execute("SELECT id FROM verse WHERE osisId=?", (v["osis"],)).fetchone()[0]
-        by_occ = {}
-        for wd in v.get("words") or []:
-            by_occ[wd.get("occurrence")] = wd
-        for s in surfaces_state(cfg, conn, vid):
-            if not s["missing"]:
-                continue
-            rec = (by_occ.get(s["occurrence"]) or {}).get("record") or {}
-            if (rec.get("reason") and len(rec["reason"].strip()) >= 10) or rec.get("item") or rec.get("added"):
-                continue
-            out.append(f"{v['verse']} {s['word']} ({', '.join(s['in_focus_as'])}): missing {', '.join(s['missing'])}; "
-                       f"no open item, no reason (not_read)")
-    for i, f in enumerate(data.get("findings") or []):
-        if isinstance(f, dict) and not f.get("written"):
-            out.append(f"findings[{i}] ({f.get('key')}): not written (run Record)")
-    for n in conn.execute("SELECT id, observation_id FROM ib_node WHERE reading_id=? AND strong IS NOT NULL AND "
-                          "verse_reference IS NOT NULL AND role IS NULL", (r["id"],)):
-        out.append(f"node {n['id']} (observation {n['observation_id']}): no role (observation_part_missing)")
-    return out
 
 
 # ══ synergy and apply (D4 claims, with 0.GAP post) ══════════════════════════════════════════════
@@ -1184,23 +1106,21 @@ def check(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
     conn = cfg.conn
     r = reading(conn, p.get("Label"))
     if r["state"] == "open":
-        gaps = gate_pre(conn, root, r)
-        if gaps:
-            _gate_fail(r, "pre", gaps)
-        nr._atomic(conn, lambda: w.update("reading", {"id": r["id"]}, {"state": "gathered", "gathered_at": _now(),
-                                                                      "run_id": run_id}))
-        return f"reading {r['label']}: pre gate passed -- gathered (Reading.ps1 -Step Observe next)"
-    if r["state"] == "gathered":
         gaps = gate_observe(cfg, root, r)
         if gaps:
             _gate_fail(r, "observe", gaps)
+        _, data = _index(cfg, root, r)
+        vids = [v["verse_id"] for v in data["verses"]]
 
         def go():
             w.update("reading", {"id": r["id"]}, {"state": "observed", "observed_at": _now(), "run_id": run_id})
             w._grant("verse_meta")
-            return versemeta.mark(conn, verse_ids(conn, r["id"]), "analysed")
+            return versemeta.mark(conn, vids, "analysed")
         marked = nr._atomic(conn, go)
         return f"reading {r['label']}: observe gate passed -- observed; {marked} verse(s) marked analysed"
+    if r["state"] == "gathered":
+        raise Refused(f"reading {r['label']} was gathered under the earlier process (a gap file); Analysis_phase_1 "
+                      f"(#2320) opens a reading at state open")
     if r["state"] == "observed":
         gaps = gate_post(cfg, root, r)
         if gaps:
@@ -1279,17 +1199,15 @@ def account(cfg, p: dict, root: pathlib.Path) -> tuple[list[str], str]:
          f"Escalation #{r['escalation_id']} · home {r['home_cluster']} · {n} verse(s) · state **{r['state']}**", "",
          f"Objective: {r['objective'] or 'before #2273 (none recorded)'}", "",
          "| Gate | Passed |", "|---|---|",
-         f"| Pre | {r['gathered_at'] or r['recorded_at'] or '—'} |", f"| Observe | {r['observed_at'] or '—'} |",
+         f"| Observe | {r['observed_at'] or '—'} |",
          f"| Claims | {r['synergised_at'] or '—'} |", f"| Narrate | {r['narrated_at'] or '—'} |",
          f"| Published | {r['published_at'] or '—'} |", "",
-         f"- Pre-gap JSON: `{r['gap_file']}`", f"- Observe JSON: `{r['observe_file'] or '—'}`",
+         f"- Scope JSON: `{r['gap_file']}`",
          f"- Synergy JSON: `{r['synergy_file'] or '—'}`", f"- Narrate JSON: `{r['narrate_file'] or '—'}`",
          f"- Findings applied by this reading: {len({x['observation_id'] for x in nodes})}, on {len(nodes)} node(s)",
          f"- Chapters touched: {', '.join(json.loads(r['chapters'] or '[]')) or '—'}", ""]
     gaps, name = [], None
     if r["state"] == "open":
-        gaps, name = gate_pre(conn, root, r), "Pre"
-    elif r["state"] == "gathered":
         gaps, name = gate_observe(cfg, root, r), "Observe"
     elif r["state"] == "observed":
         gaps, name = gate_post(cfg, root, r), "Claims"
@@ -1299,13 +1217,8 @@ def account(cfg, p: dict, root: pathlib.Path) -> tuple[list[str], str]:
         L += ["## Publish", "", "Publish the touched chapters and copy them to the inbox (Reading.ps1 -Step Publish)."]
     if name:
         L += [f"## {name} gate gaps ({len(gaps)})", ""] + [f"- {g}" for g in gaps]
-    data = _load(root, r["gap_file"], "the pre-gap JSON")
-    L += ["", "## Pre-gap records", "", "| Section | Items | Written | Named | Reason | None |", "|---|---|---|---|---|---|"]
-    for sec, s in (data.get("sections") or {}).items():
-        its = s.get("items") or []
-        rec = [it.get("record") or {} for it in its]
-        L.append(f"| {sec} | {len(its)} | {sum(1 for x in rec if (x.get('new') or x.get('finding')) and x.get('id'))} | "
-                 f"{sum(1 for x in rec if x.get('id') and not (x.get('new') or x.get('finding')))} | "
-                 f"{sum(1 for x in rec if x.get('reason') and not x.get('id'))} | "
-                 f"{sum(1 for it in its if it.get('record') is None)} |")
+    data = _load(root, r["gap_file"], "the scope JSON")
+    L += ["", "## Scope JSON (the index of the verses)", "", "| Status | Verses |", "|---|---|"]
+    for st in ("waiting", "in_hand", "done"):
+        L.append(f"| {st} | {sum(1 for v in data.get('verses') or [] if v.get('status') == st)} |")
     return L, f"reading {r['label']}: {r['state']}; {len(gaps)} gap(s) at the current gate"

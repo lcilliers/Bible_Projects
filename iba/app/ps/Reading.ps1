@@ -5,46 +5,42 @@
     Every step dispatches through run.py, work package reading.
 
 .DESCRIPTION
-    Claude reads and writes in the session; the app resolves the scope, gives everything already known,
-    writes the findings as rows (one observation per finding, applied by its nodes) and checks each gate
-    from the tables. One reading per scope:
+    Claude reads and writes in the session; the app resolves the scope, gives everything already known for a verse when the
+    verse is worked, writes the findings as rows (one observation per finding, applied by its nodes) and checks each gate.
+    One reading per scope. Analysis_phase_1 (the verse understanding, #2320) is steps 1 to 3:
 
-      Open     -Label anger-bosom -Escalation 2172 -Home M02 -Objective "..." <scope selectors, as
-               Verse-Scope.ps1>   0.C: the scope resolved (above 2,500 verses held until -Reviewed), its
-               verses kept, the scope collated, and the pre-gap JSON written, one section per gap type of
-               phase pre -> outputs/reading/<label>/<label>-gaps.json (and -collation.json)
-      Gather   -Label <label> [-File <pre-gap JSON>]   0.GAP pre written: each item's record ({"finding"},
-               {"table", "id"}, {"reason"}, a face, a response), new open items; ids written back
-      Observe  -Label <label>    the observe JSON built from the tables: per verse its passage, every finding
-               applied to it, the words in focus (qualifiers included), the claims, the prompts by kind
-      Record   -Label <label> [-File <observe JSON>]   the findings written (a live description gains
-               nodes), withdrawals with their reasons, each word's open item or reason
-      Check    -Label <label>    the gate the reading is at: pre (open -> gathered), observe (gathered ->
-               observed: every word in focus has a node of this reading, an open item or a reason; the
-               verses are marked analysed), claims (observed -> synergised: every node disposed, every
-               claim resting on a finding, every matched open item settled; the narrate JSON built), narrate
-               (synergised -> narrated: every claim told or held, every cited verse recorded)
+      Open     -Label m21-asking -Escalation 2320 -Objective "..." -Subgroup M21_asking [-Surface asks,asked | -Verse "Mat 7:8"]
+               0.C: ONE subgroup, or a segment of it; the home is the subgroup. Writes outputs/reading/<label>/<label>.json,
+               the index of the verses (reference, route, progress). No observation is written.
+      Observe  -Label <label> [-Count n] [-Verse ref]   the next verses in hand: each verse's sheet is read from the tables
+               NOW (surfaces, existing observations and nodes, ledger faces) and set in the JSON to be filled
+      Record   -Label <label>   the filled sheets checked whole, then written in one transaction: each surface evaluated
+               (kept in the JSON), each existing observation and node accepted, modified in place or soft deleted, new
+               findings written; the verses become done
+      Check    -Label <label>   the gate the reading is at. At open: the Observe gate (every verse done, the evaluations agree
+               with the live nodes); open -> observed; the verses marked analysed
+      (Gather is retired: its pull is the first move on each verse in Observe.)
+
+    The claims steps are unchanged:
       Synergy  -Label <label>    the synergy JSON, built from the tables (never memory)
       Apply    -Label <label> [-File <synergy JSON>]   claims, each node's disposition, open items settled
       Narrate  -Label <label> [-File <narrate JSON>]   tellings, holds, blocks rewritten; nodes told
       Publish  -Label <label>    the touched chapters published, copied to the learning4comfort inbox
-               and checked byte-identical
       Account  -Label <label>    the reading from the tables: its state and the gaps at its gate
 
-    The JSON shapes are in lib/reading.py, lib/observationrecord.py and each file's "how". Write steps
-    (all but Account) need -By Claude|Researcher. The escalation that anchors a reading cannot reach
-    completed or closed while the reading is not published.
+    The JSON shapes are in lib/reading.py and lib/observationrecord.py and each file's "how". Write steps (all but Account)
+    need -By Claude|Researcher.
 
 .EXAMPLE
-    iba\app\ps\Reading.ps1 -Step Open -Label anger-bosom -Escalation 2172 -Home M02 -Objective "what the bosom shows of anger" -Strong H2436 -By Claude
+    iba\app\ps\Reading.ps1 -Step Open -Label m21-asking -Escalation 2320 -Objective "the asking words in their verses" -Subgroup M21_asking -By Claude
 .EXAMPLE
-    iba\app\ps\Reading.ps1 -Step Record -Label anger-bosom -By Claude
+    iba\app\ps\Reading.ps1 -Step Record -Label m21-asking -By Claude
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Open', 'Gather', 'Observe', 'Record', 'Check', 'Synergy', 'Apply', 'Narrate', 'Publish', 'Account')]
+    [ValidateSet('Open', 'Observe', 'Record', 'Check', 'Synergy', 'Apply', 'Narrate', 'Publish', 'Account')]
     [string] $Step,
     [Parameter(Mandatory = $true)] [string] $Label,
     [ValidateSet('Claude', 'Researcher')] [string] $By,
@@ -52,7 +48,7 @@ param(
     [string] $Escalation, [Alias('Home')] [string] $HomeCluster, [string] $Objective, [string] $Note, [string] $File,
     [string] $Cluster, [string] $Subgroup, [string] $Strand, [string] $Word, [string] $Strong,
     [string] $Verse, [string] $Chapter, [string] $Section, [string] $Claim, [string] $Observation,
-    [string] $Item, [string] $Thread, [string] $OnlyStrong, [string] $Reviewed,
+    [string] $Item, [string] $Thread, [string] $OnlyStrong, [string] $Reviewed, [string] $Surface, [string] $Count,
     [switch] $Trace
 )
 
@@ -71,7 +67,7 @@ $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-READING"
 $paramArgs = @()
 foreach ($name in @('Label', 'By', 'Escalation', 'HomeCluster', 'Objective', 'Note', 'File', 'Cluster', 'Subgroup', 'Strand', 'Word',
                     'Strong', 'Verse', 'Chapter', 'Section', 'Claim', 'Observation', 'Item', 'Thread', 'OnlyStrong',
-                    'Reviewed')) {
+                    'Reviewed', 'Surface', 'Count')) {
     $value = Get-Variable -Name $name -ValueOnly
     $key = if ($name -eq 'HomeCluster') { 'Home' } else { $name }   # run.py's parameter stays Home
     if ($PSBoundParameters.ContainsKey($name)) { $paramArgs += @('--param', "$key=$value") }

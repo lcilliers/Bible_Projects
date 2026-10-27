@@ -113,3 +113,8 @@ LEFT JOIN strong os ON os.strongNumber = o.other_strong
 ORDER BY v.reference, m.cl_position, o.other_position;
 
 select * from surface_subgroup ssg;
+
+select * from cluster_subgroup cs
+inner join cluster c on c.cluster_code = cs.cluster_code
+where c.deleted = 0
+and c.cluster_code = 'M21';

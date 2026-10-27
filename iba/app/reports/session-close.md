@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-27T13:25:43Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-27T16:57:05Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `95543bd0-7cc2-4f14-b7f8-02aa51147ba4` (CLAUDE_CODE_SESSION_ID); started 2026-10-27T11:19:24Z; window base commit `c40d2878dd7ccb01693dd9dc6572832b5f7e40e4`
 - compliance file: `Logs/compliance/COMPLIANCE-20261027-95543bd0.md`; session log: `Logs/SESSION-LOG-20261027-analysis-phase-1-description-and-specification.md`
-- **open findings: 0**; cleared by disposition: 1
+- **open findings: 0**; cleared by disposition: 3
 
 
 ## Contents
@@ -46,7 +46,8 @@ _no finding_
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:3ca5b679`: researcher message 2026-10-27T12:57 holds, defers or asks to check something; name its register item: "§2.1.7 is open for interpretation.  The surfaces in the verse are not restricted to the sub group surface.  the verse observations are not only for the sub grou" -- disposition: in register #2319
+- cleared `SC4b:3ca5b679`: researcher message 2026-10-27T12:57 holds, defers or asks to check something; name its register item: "§2.1.7 is open for interpretation.  The surfaces in the verse are not restricted to the sub group surface.  the verse observations are not only for the sub grou" -- disposition: not held: the section 4 work it asked for was done and approved (#2319 v10; specification v4)
+- cleared `SC4b:6723eb39`: researcher message 2026-10-27T15:46 holds, defers or asks to check something; name its register item: "I agree we need to make the query by verse change. Note that we must not loose the objective to check the current observations and a) accept b) modify c) soft d" -- disposition: not held: it became a ruling the same day (#2318 v13: open items move out of phase 1; specification v4, 4.5)
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -83,4 +84,4 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: DRY RUN -- 9 write(s): cfg_on_fail update, cfg_write_grant update, cfg_write_grant update, cfg_write_grant update, cfg_w; work package : configuration-maintenance -- disposition: fixed: the two failed Validate runs reported coherence errors left by retiring the step reading.gather (#2321) and a worksheet drift on Reading.ps1; fixed by iba/app/migration/archive/analysis_phase_1_2320_v2_20261027.py and the Reading tab of iba/docs/ps tools worksheet.xlsx; the final Validate reported no new findings

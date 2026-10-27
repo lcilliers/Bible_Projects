@@ -5,10 +5,12 @@ SELECT version, type,state,next_action_assigned_to,next_action, id, short_descri
 WHERE state not in ('completed','withdraw','closed','on-hold','supersede');
 --all open escalations
 SELECT id, alias, version, type,state,next_action,next_action_assigned_to, short_description,comment,context, resolution FROM escalation 
-WHERE state not in ('completed','withdraw','closed','supersede');
+WHERE state not in ('completed','withdraw','closed','supersede')
+order by escalation.id DESC;
 --a specific escalation
 SELECT * FROM escalation 
-where id = 2110;
+where id = 2316;
+
 ;
 
 select esc.id, esc.type, eti.id as thread_item_id

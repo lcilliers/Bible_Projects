@@ -604,86 +604,83 @@ known, writes the findings as rows and checks. Write steps take `-By Claude|Rese
 writes nothing. Files go to `reading.output_dir`, one folder per reading.
 
 ```powershell
-iba\app\ps\Reading.ps1 -Step Open -Label anger-bosom -Escalation 2172 -Home M02 -Objective "what the bosom shows of anger" -Strong H2436 -By Claude
-iba\app\ps\Reading.ps1 -Step Gather -Label anger-bosom -By Claude          # the pre-gap JSON, filled
-iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # pre gate
-iba\app\ps\Reading.ps1 -Step Observe -Label anger-bosom -By Claude
-iba\app\ps\Reading.ps1 -Step Record -Label anger-bosom -By Claude          # the observe JSON, filled
-iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # observe gate
-iba\app\ps\Reading.ps1 -Step Synergy -Label anger-bosom -By Claude
-iba\app\ps\Reading.ps1 -Step Apply -Label anger-bosom -By Claude           # the synergy JSON, filled
-iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # claims gate
-iba\app\ps\Reading.ps1 -Step Narrate -Label anger-bosom -By Claude         # the narrate JSON, filled
-iba\app\ps\Reading.ps1 -Step Check -Label anger-bosom -By Claude           # narrate gate
-iba\app\ps\Reading.ps1 -Step Publish -Label anger-bosom -By Claude
-iba\app\ps\Reading.ps1 -Step Account -Label anger-bosom
+iba\app\ps\Reading.ps1 -Step Open -Label m21-asking -Escalation 2320 -Objective "the asking words in their verses" -Subgroup M21_asking -By Claude
+iba\app\ps\Reading.ps1 -Step Observe -Label m21-asking -By Claude       # the next verses in hand: their sheets
+iba\app\ps\Reading.ps1 -Step Record -Label m21-asking -By Claude        # the filled sheets written; the verses done
+iba\app\ps\Reading.ps1 -Step Check -Label m21-asking -By Claude         # the Observe gate (open -> observed)
+iba\app\ps\Reading.ps1 -Step Synergy -Label m21-asking -By Claude
+iba\app\ps\Reading.ps1 -Step Apply -Label m21-asking -By Claude         # the synergy JSON, filled
+iba\app\ps\Reading.ps1 -Step Check -Label m21-asking -By Claude         # claims gate
+iba\app\ps\Reading.ps1 -Step Narrate -Label m21-asking -By Claude       # the narrate JSON, filled
+iba\app\ps\Reading.ps1 -Step Check -Label m21-asking -By Claude         # narrate gate
+iba\app\ps\Reading.ps1 -Step Publish -Label m21-asking -By Claude
+iba\app\ps\Reading.ps1 -Step Account -Label m21-asking
 ```
 
-States: `open` -> `gathered` -> `observed` -> `synergised` -> `narrated` -> `published`.
+States: `open` -> `observed` -> `synergised` -> `narrated` -> `published`. (`gathered` belongs to readings made before
+Analysis_phase_1; the step `Gather` is retired, #2320.)
 
-**Open refuses an unmapped home (#2294).** A reading whose `-Home` is an M cluster with any
+**Analysis_phase_1 (#2320): the verse understanding.** Open, Observe, Record and the Observe gate are one
+process, specified in `outputs/escalation/2318-analysis-phase-1-specification-v4-20261027.md`. It creates the
+observations for understanding the verse; formulating the claim is the claims work (Synergy onwards), which
+uses the surrounding verses. **The scope JSON is an index** (`<label>.json`: the verses, the route that brought
+each in, its progress, and the evaluation of its surfaces); it copies no observation. **Each verse is worked by a
+query of the database**: Observe reads the verse's surfaces, its existing observations and nodes and the ledger
+faces from the tables when the verse is put in hand, so that what earlier verses wrote is seen.
+
+**Open refuses an unmapped home (#2294).** A reading whose subgroup's cluster is an M cluster with any
 unallocated or stale surface pair is refused, with the counts. Map the cluster first with
 `iba/app/ps/Surface-Map.ps1` (section 7.1).
 
-**What a reading records: findings (#2274).** A finding is one `ib_observation`: its text, meaning,
-implication, basis (stated or read), its kind as tag and, on a party or link finding, its route. Its
-`ib_node` rows apply it to every verse and word it covers, each with the word's own cluster, the word's
-role in the finding (characteristic, qualifier, standalone), the reading that applied it, and later
-where the verse ends up (disposition). The kinds (`cfg_setting reading.observation_parts`): face,
-qualification, party, statement, link, use, term, silence. A description already live is never written
-again: the finding names it as `existing` and gains nodes. Every change to a finding or a node is kept
-with its reason in `ib_observation_change`. The finding shape (`iba/app/lib/observationrecord.py`):
+**What a reading records: findings (#2274, #2320).** A finding is one `ib_observation`: its text, meaning,
+implication, basis (stated or read), its kind as tag, on a party or link finding its route, and its structured
+`parts` (`ib_observation.parts`, a JSON object: sense, evidence, **polarity** (refusal or pursuit), content,
+enactment, party, circumstance, chain, primary_operation, and typed `flags`: data-quality or discovery). Its
+`ib_node` rows apply it to every verse and word it covers, each with the occurrence (`verse_lexical_id`), the
+word's cluster and **subgroup**, the word's role in the finding, the reading that applied it, and later where
+the verse ends up (disposition). The roles of a new node (`cfg_setting reading.node_roles`): for a surface
+evaluated `relevant`, characteristic or qualifier; for a surface that `bears_on` the act, object, relational
+target or enactment. `standalone` is not a role of a new node. A word with no cluster of its own is given the T-code
+it is classified under as `cluster`. The kinds (`reading.observation_parts`): face, qualification, party,
+statement, link, use, term, silence (silence is not used by Analysis_phase_1). A description already live is
+never written again: the finding names it as `existing` and gains nodes. Every change to a finding or a node is
+kept with its reason in `ib_observation_change`. The finding shape (`iba/app/lib/observationrecord.py`):
 
 ```json
-{"key": "f1", "kind": "qualification", "text": "...", "meaning": "...", "basis": "stated",
- "nodes": [{"verse": "Jon 1:10", "strong": "H1419A", "cluster": "T2", "role": "qualifier"},
-           {"verse": "Jon 1:10", "strong": "H3372G", "cluster": "M01", "role": "characteristic"}]}
+{"key": "f1", "kind": "statement", "text": "...", "meaning": "...", "basis": "stated",
+ "parts": {"sense": "...", "polarity": "refusal", "flags": [{"type": "discovery", "text": "..."}]},
+ "nodes": [{"occurrence": 123456, "strong": "H3820A", "cluster": "M64", "role": "characteristic"},
+           {"occurrence": 123460, "strong": "H1351", "cluster": "T3", "role": "object"}]}
 ```
 
-A word with no cluster gets no node (a node is a classification); it is carried in the finding's text.
-A qualifier is evaluated for what it gives the characteristic, recorded as a qualification finding.
-
-- **`Open`** (0.C) takes `-Objective` (required: it defines the home of what the reading records), the
-  scope selectors of `iba/app/ps/Verse-Scope.ps1` (section 8.3; a selection above 2,500 verses is held
-  until `-Reviewed`), `-Escalation` (an open task or issue) and `-Home` (the cluster the scope is
-  anchored on; `-Home` is the alias of `-HomeCluster`). A list of codes is quoted:
-  `-OnlyStrong 'H0977,H0972'`. It keeps the verses (`reading_verse`), collates the scope (section 8.5;
-  `<label>-collation.json`) and writes the **pre-gap JSON** (`<label>-gaps.json`): one section per gap
-  type of phase `pre`, each with its guide text. The gap types are config: `cfg_enum reading_gap_type`
-  and `cfg_setting reading.gap_types` (phase pre, observe, post or narrate; guide; the table each
-  records into). The pre-gap types do not include a read of earlier study files (retired, #2310): that work
-  is in `ib_observation` (#2305). An `open_item` carries `subgroups`: the subgroups its target cluster and
-  terms reach through `surface_subgroup` (empty for an item with no target terms).
-- **`Gather`** (0.GAP pre) writes each pre-gap item's `record`: `{"finding": {...}}` (a finding,
-  quote-checked against the ESV text), `{"table", "id"}` (an existing row), `{"reason": "..."}`, a
-  face on a strand hit (`face`, `parties`, `observation`, or `reason`), or for an open item
-  `{"response": "..."}` (a `touched` response). New open items go in `new_items` (the
-  `Open-Item.ps1 -Action Add` shape). The ids are written back into the file.
-- **`Check`** passes the **pre gate** when every item has a row that exists or a reason, and every new
-  item is added.
-- **`Observe`** builds the **observe JSON** from the tables, on the **surface** (a word as written in
-  the verse with its Strong, one `verse_lexical` occurrence; #2312): per verse its passage, every
-  finding already applied to it with its nodes (RO2), the open items for the verse (any subgroup, with
-  the subgroups each reaches), and the surfaces in focus that still lack something. In focus
-  (`reading.focus_words`): every content word, function words left out by their morph, negators and
-  connectives kept, every M-coded word and every word in `reading.non_characteristic_strongs`. Each
-  needs a role, a face finding and a term finding, or a silence finding with its reason
-  (`reading.surface_requirements`; rules RS-01, RS-02). An existing finding counts for a surface by its
-  node's occurrence id, or by verse, Strong and surface when that names one occurrence; other nodes are
-  set aside. `words` lists only the surfaces with something `missing`; `surfaces_complete` counts the
-  rest. Also: the claims on the scope, and the catalogue's one-verse questions as prompts by kind
-  (`reading.observe_prompts`; a prompt that does not apply is not answered). A node names its surface
-  (`{verse, strong, surface, cluster, role}`) and is written with the occurrence id. Open (0.GAP pre)
-  pulls every non-withdrawn observation of the verse into the scope JSON (`<label>-collation.json`),
-  with its nodes, and every surface occurrence with its clusters and subgroups.
-- **`Record`** (D4 observe) refuses a file not built by this reading's last Observe. It writes the
-  `findings`; the `withdraw` list (a node or a finding no longer supported, with its reason); and each
-  word's `record` where no finding is applied to it: `{"reason"}`, `{"item": "OT-nn.n|#n"}` or
-  `{"new_item": {...}}`.
-- **`Check`** passes the **observe gate** when every surface in focus has what the requirements ask
-  (on a live finding of this or an earlier reading), an open item or a reason, and every finding in
-  the file is written. The reading's verses are then
-  marked `analysed`, the only way a verse becomes `analysed`.
+- **`Open`** (0.C) takes `-Objective` (required), `-Escalation` (an open task or issue) and **one**
+  `-Subgroup`, which is the home (a qualifier group is refused; `-Home` and the other selectors are refused). A
+  segment of the subgroup: `-Surface asks,asked` (the subgroup's surfaces) or `-Verse "Mat 7:8; Job 42:4"` (the
+  verses of the subgroup it keeps). A selection above 2,500 verses is held until `-Reviewed`. It writes
+  `<label>.json` and the reading row (and `reading_verse`, still, because the claims steps read it). No
+  observation is written.
+- **`Observe`** puts the next verses in hand (`-Count`, default `reading.verse_loop` `verses_per_sheet`; `-Verse`
+  to name one). Each gets a **sheet** in the JSON, read from the tables then: the text and passage; every
+  **surface** of the verse (identical Strong and surface once; a grammar hint from `reading.focus_words`), with an
+  `evaluation` to fill; the **existing observations** with a live node on the verse (every stage, any subgroup),
+  with their nodes, each with an `action` to fill and, where a node lacks its occurrence or subgroup, a `suggest`;
+  the **ledger faces** of the verse not yet linked to an observation; `findings` for new observations. A sheet
+  already in hand is not rebuilt.
+- **`Record`** checks the filled sheets whole (nothing is written if any is wrong), then writes in one
+  transaction. Every surface is evaluated `{"result": "relevant" | "bears_on" | "not_relevant", "reason": "..."}`
+  (the reason is `min_reason_chars` or more) and the evaluation is kept in the JSON, not in the tables. A
+  surface with no inner-being role gets no observation. Every existing observation takes an `action`: `accept`;
+  `modify` (changed **in place**: `set` the columns of `reading.verse_loop` `observation_set`, and per node
+  `node_set`; the old value, the new value and the reason go to `ib_observation_change`); or `delete` (the
+  observation withdrawn, or a node's disposition withdrawn, with the reason; nothing is deleted). `"fill_nodes":
+  true` applies every node `suggest`; `"drop_non_relevant_nodes": true` soft deletes the nodes on `not_relevant`
+  surfaces. A relevant surface must be named by a live node with a role of its group; a `not_relevant` surface by
+  none. A ledger face is linked `{"observation": id}` or given a `{"reason"}`. The verses become `done` and their
+  sheets leave the JSON, with a result (counts and the surface evaluations).
+- **`Check`** at `open` passes the **Observe gate** when every verse is `done` and the evaluations in the JSON
+  still agree with the live nodes (checked from the tables); the reading becomes `observed` and its verses are
+  marked `analysed`, the only way a verse becomes `analysed`. Open items are not part of Analysis_phase_1: they
+  are cleared after the claims (specification 4.5).
 - **`Synergy`** builds the **synergy JSON** from the tables (B:114): the reading's findings with their
   live nodes, the current or held claims on the scope (with whether each rests on a finding), and the
   open items matched to the scope.

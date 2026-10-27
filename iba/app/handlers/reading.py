@@ -53,10 +53,6 @@ def open(ctx: Ctx) -> Outcome:  # noqa: A001 -- the step's name
     return _write(ctx, lambda w: rd.open_(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT, file_request))
 
 
-def gather(ctx: Ctx) -> Outcome:
-    return _write(ctx, lambda w: rd.gather(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT))
-
-
 def observe(ctx: Ctx) -> Outcome:
     return _write(ctx, lambda w: rd.observe(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT))
 
