@@ -35,4 +35,4 @@ Session id: c4650151-6235-4d80-b4c9-972a8cd5e432. Mode: standard.
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. Session commit: 4104267f1eb6f3823b6884059b534751b2ed20cf. Push output: `To https://github.com/lcilliers/Bible_Projects.git   3b07c0c2..4104267f  main -> main`.
