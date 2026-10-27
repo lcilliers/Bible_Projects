@@ -165,17 +165,11 @@ def _gate_fail(r, name: str, gaps: list[str]):
 
 
 # ══ open (0.C and the pre-gaps) ═════════════════════════════════════════════════════════════════
-def _pre_read_in_files_only(col, v, acc):
-    if v["file_lines"] and not v["observations"]:
-        acc.setdefault("read_in_files_only", []).append({
-            "verse": v["reference"], "words": sorted({f"{x['surface']} ({x['strong']}, {x['cluster']})"
-                                                      for x in v["words"]}), "text": v["text"],
-            "file_lines": [f"{x['file']}:{x['line']} {x['text']}" for x in v["file_lines"]], "record": None})
-
-
 def _pre_face_not_gathered(col, v, acc):
     for h in v["strand_hits"]:
-        if not h["face"] and not h["reason"]:
+        gathered = any(o["tag"] == "face" and any(n["strong"] == h["strong"] and n["surface"] in (None, h["surface"])
+                                                  for n in o["nodes"]) for o in v["observations"])
+        if not gathered and not h["observation_id"] and not h["reason"]:      # its face is held by no finding
             acc.setdefault("face_not_gathered", []).append({"verse": v["reference"], "strand": h["strand"],
                                                            "strong": h["strong"], "surface": h["surface"],
                                                            "record": None})
@@ -203,8 +197,20 @@ def _pre_open_item(col, v, acc):
 
 
 # The pre-gap detectors by gap type. A pre gap type with no detector gets an empty section (build B6, #2278).
-PRE = {"read_in_files_only": _pre_read_in_files_only, "face_not_gathered": _pre_face_not_gathered,
-       "meaning_missing": _pre_meaning_missing, "open_item": _pre_open_item}
+PRE = {"face_not_gathered": _pre_face_not_gathered, "meaning_missing": _pre_meaning_missing,
+       "open_item": _pre_open_item}
+
+
+def _item_subgroups(conn, item) -> list[dict]:
+    """The subgroups a worded open item reaches: its target cluster and target terms through surface_subgroup (#2310).
+    A cluster, strong, verse or escalation item names no target terms and reaches none."""
+    terms = [t for t in (item["target_terms"] or "").split(",") if t]
+    if not item["target_cluster"] or not terms:
+        return []
+    return [{"subgroup": r["subgroup_code"], "label": r["label"]} for r in conn.execute(
+        "SELECT DISTINCT g.subgroup_code, g.label FROM surface_subgroup s JOIN cluster_subgroup g ON "
+        f"g.id=s.cluster_subgroup_id WHERE s.deleted=0 AND s.cluster_code=? AND s.strong IN ({','.join('?' * len(terms))}) "
+        "ORDER BY g.subgroup_code", [item["target_cluster"], *terms])]
 
 
 def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_request: dict | None) -> str:
@@ -254,7 +260,9 @@ def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_requ
             items = list(items.values())
         if t == "open_item":
             for it in items:
-                it["read_for"] = _thread_item(conn, it["item"])[1]["read_for"]
+                row = _thread_item(conn, it["item"])[1]
+                it["read_for"] = row["read_for"]
+                it["subgroups"] = _item_subgroups(conn, row)
         sections[t] = {"guide": types[t]["guide"], "records_in": types[t]["records_in"], "items": items}
     folder = out_dir(cfg, root, label)
     gap_path = folder / f"{label}-gaps.json"
@@ -458,31 +466,111 @@ def gate_pre(conn, root: pathlib.Path, r) -> list[str]:
 
 
 # ══ observe (D3 and D4 input) ═══════════════════════════════════════════════════════════════════
-def _focus(cfg, conn, vid: int) -> list[dict]:
-    """The words in focus in one verse (reading.focus_words, #2273 D8): every M-coded word, every word in
-    reading.non_characteristic_strongs, every word tagged T2 (not a function word) or T5."""
+def _subgroups_of(conn) -> dict:
+    """{(strong, surface): [subgroup codes]} through surface_subgroup (the surface's own subgroup, #2312)."""
+    out: dict = {}
+    for strong, surface, sg in conn.execute(
+            "SELECT s.strong, s.surface, g.subgroup_code FROM surface_subgroup s JOIN cluster_subgroup g ON "
+            "g.id=s.cluster_subgroup_id WHERE s.deleted=0 ORDER BY g.subgroup_code"):
+        out.setdefault((strong, surface), []).append(sg)
+    return out
+
+
+def _has_on_surfaces(conn, osis: str, rows: list) -> dict:
+    """{verse_lexical id: [(node role, observation tag)]}: the live nodes of live findings on each surface occurrence
+    of one verse. A node belongs to an occurrence by its verse_lexical_id; one without it by verse, Strong and
+    surface when that match is unique in the verse; any other node is set aside (it names a verse and no surface)."""
+    key = {}
+    for r in rows:
+        key.setdefault((r["strong"], r["surface"]), []).append(r["id"])
+    out: dict = {r["id"]: [] for r in rows}
+    for n in conn.execute(
+            "SELECT n.verse_lexical_id, n.strong, n.surface, n.role, o.tag FROM ib_node n JOIN ib_observation o ON "
+            "o.id=n.observation_id WHERE n.verse_reference=? AND o.status<>'withdrawn' AND "
+            "(n.disposition IS NULL OR n.disposition<>'withdrawn')", (osis,)):
+        if n["verse_lexical_id"] in out:
+            out[n["verse_lexical_id"]].append((n["role"], n["tag"]))
+        elif n["verse_lexical_id"] is None and n["strong"]:
+            same = key.get((n["strong"], n["surface"])) if n["surface"] else None
+            if same is None and not n["surface"]:
+                same = [i for (s, _), ids in key.items() if s == n["strong"] for i in ids]
+            if same and len(same) == 1:
+                out[same[0]].append((n["role"], n["tag"]))
+    return out
+
+
+def surfaces_state(cfg, conn, vid: int) -> list[dict]:
+    """The surfaces of one verse that need observations, and what each already has and lacks (#2312). A surface is a
+    verse_lexical occurrence (surface with its Strong). In focus (reading.focus_words): every content word (a function
+    word is left out by its morph), the kept tags (negators, connectives), every M-coded word and the words in
+    reading.non_characteristic_strongs. Required of each (reading.surface_requirements): a node with a role, and the
+    kinds listed, or a silence finding in their place. Missing = required and not yet on a live finding."""
     spec = _setting(cfg, "reading.focus_words")
+    req = _setting(cfg, "reading.surface_requirements")
     never = set(_setting(cfg, "reading.non_characteristic_strongs"))
-    out, seen = [], set()
-    for pos, surface, strong, morph, testament in conn.execute(
-            "SELECT position, surface, strong, morph_code, testament FROM verse_lexical WHERE verse_id=? AND deleted=0 "
-            "ORDER BY position, id", (vid,)):
-        clusters = orec.word_clusters(conn, strong)
+    osis = conn.execute("SELECT osisId FROM verse WHERE id=?", (vid,)).fetchone()[0]
+    rows = conn.execute("SELECT id, position, surface, strong, morph_code, testament, is_negator FROM verse_lexical "
+                        "WHERE verse_id=? AND deleted=0 ORDER BY position, id", (vid,)).fetchall()
+    sub = _subgroups_of(conn)
+    have = _has_on_surfaces(conn, osis, rows)
+    out = []
+    for r in rows:
+        clusters = orec.word_clusters(conn, r["strong"])
+        prefix = (r["morph_code"] or "")[:2] if r["testament"] == "OT" else (r["morph_code"] or "").split("-")[0]
+        function = prefix in spec["function_word_morph"].get(r["testament"], [])
         why = []
         if any(c.startswith("M") for c in clusters):
             why.append("M-code")
-        if strong in never:
+        if r["strong"] in never:
             why.append("never a characteristic (RG-23)")
-        for tag in spec["tags"]:
-            if tag in clusters:
-                prefix = (morph or "")[:2] if testament == "OT" else (morph or "").split("-")[0]
-                if tag == "T2" and prefix in spec["function_word_morph"].get(testament, []):
-                    continue
-                why.append("qualifier (T2)" if tag == "T2" else f"tagged {tag}")
-        if why and (strong, pos) not in seen:
-            seen.add((strong, pos))
-            out.append({"word": f"{surface} ({strong})", "strong": strong, "surface": surface, "morph": morph,
-                        "position": pos, "clusters": clusters, "in_focus_as": why, "record": None})
+        if r["is_negator"] or any(t in clusters for t in spec["keep_tags"]):
+            why.append("negator or connective (RG-22)")
+        if not function and not why:
+            why.append("content word (RG-22)")
+        if not why:
+            continue
+        got = have[r["id"]]
+        kinds = {t for _, t in got}
+        silent = "silence" in kinds
+        missing = []
+        if req["role"] and not any(role for role, _ in got):
+            missing.append("role")
+        missing += [k for k in req["kinds"] if k not in kinds and not (silent and k in req["silence_instead_of"])]
+        out.append({"word": f"{r['surface']} ({r['strong']})", "strong": r["strong"], "surface": r["surface"],
+                    "morph": r["morph_code"], "position": r["position"], "occurrence": r["id"], "clusters": clusters,
+                    "subgroups": sub.get((r["strong"], r["surface"]), []), "in_focus_as": why,
+                    "has": sorted(kinds), "missing": missing, "record": None})
+    return out
+
+
+def _focus(cfg, conn, vid: int) -> list[dict]:
+    """The surfaces still missing an observation in one verse (the words the Observe step has to fill)."""
+    return [s for s in surfaces_state(cfg, conn, vid) if s["missing"]]
+
+
+def _open_items_for(cfg, conn, verses: list[tuple]) -> dict:
+    """{verse id: [open item, ...]}: the open thread items for each verse, by the verse and through its surfaces' Strongs
+    and clusters (a scope item by its own verses only), each with the subgroups it reaches (#2312). `verses` is
+    [(verse id, reference)]."""
+    by_ref = {ref: vid for vid, ref in verses}
+    by_strong, by_cluster = {}, {}
+    for vid, _ in verses:
+        for r in conn.execute("SELECT strong FROM verse_lexical WHERE verse_id=? AND deleted=0", (vid,)):
+            by_strong.setdefault(r["strong"], set()).add(vid)
+            for cl in orec.word_clusters(conn, r["strong"]):
+                by_cluster.setdefault(cl, set()).add(vid)
+    out: dict = {vid: [] for vid, _ in verses}
+    seen = set()
+    for t, it, qv in escalation.match_open_items(Db(cfg), clusters=sorted(by_cluster), strongs=sorted(by_strong),
+                                                 verses=sorted(by_ref), home=False):
+        for vid in ({by_ref[qv]} if qv in by_ref else by_strong.get(qv) or by_cluster.get(qv) or set()):
+            if (vid, it["id"]) in seen:
+                continue
+            seen.add((vid, it["id"]))
+            row = conn.execute("SELECT * FROM escalation_thread_item WHERE id=?", (it["id"],)).fetchone()
+            out[vid].append({"item": f"{t['alias']}.{it['item_no']}", "kind": it["kind"], "value": it["value"],
+                             "matched_on": qv, "note": it["note"], "read_for": row["read_for"],
+                             "subgroups": _item_subgroups(conn, row)})
     return out
 
 
@@ -499,7 +587,8 @@ def _findings_on(conn, osis: str) -> list[dict]:
     for o in conn.execute("SELECT DISTINCT o.* FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE "
                           "n.verse_reference=? AND o.status<>'withdrawn' ORDER BY o.id", (osis,)):
         nodes = [dict(n) for n in conn.execute(
-            "SELECT id node, strong, surface, cluster_code cluster, role, reading_id, disposition FROM ib_node WHERE "
+            "SELECT id node, strong, surface, verse_lexical_id occurrence, cluster_code cluster, cluster_subgroup_code "
+            "subgroup, role, reading_id, disposition FROM ib_node WHERE "
             "observation_id=? AND verse_reference=? AND (disposition IS NULL OR disposition<>'withdrawn')",
             (o["id"], osis))]
         out.append({"observation": o["id"], "stage": o["stage"], "kind": o["tag"], "text": o["obs_text"],
@@ -512,10 +601,16 @@ def observe(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
     conn = cfg.conn
     r = _at(conn, p.get("Label"), "gathered")
     V = []
-    for vid in verse_ids(conn, r["id"]):
+    vids = verse_ids(conn, r["id"])
+    refs = [(vid, conn.execute("SELECT reference FROM verse WHERE id=?", (vid,)).fetchone()[0]) for vid in vids]
+    items_on = _open_items_for(cfg, conn, refs)
+    for vid in vids:
         v = conn.execute("SELECT osisId, reference, text FROM verse WHERE id=?", (vid,)).fetchone()
+        state = surfaces_state(cfg, conn, vid)
         V.append({"verse": v["reference"], "osis": v["osisId"], "text": v["text"], "passage": _passage(conn, v["osisId"]),
-                  "findings_in_focus": _findings_on(conn, v["osisId"]), "words": _focus(cfg, conn, vid)})
+                  "findings_in_focus": _findings_on(conn, v["osisId"]), "open_items": items_on[vid],
+                  "surfaces_in_focus": len(state), "surfaces_complete": sum(1 for s in state if not s["missing"]),
+                  "words": [s for s in state if s["missing"]]})
     in_focus = sorted({f["observation"] for v in V for f in v["findings_in_focus"]})
     C = [{"claim": c["claim_ref"], "status": c["status"], "text": c["claim_text"]}
          for c in scope_claims(conn, r["id"], in_focus)]
@@ -529,8 +624,12 @@ def observe(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
             "built_from": "the tables (B:114)",
             "how": "Read each verse in its passage with every finding in focus (RO1, RO2). Record findings in "
                    "`findings` (observationrecord's shape: key, kind, text, meaning, implication, basis, route on a "
-                   "party or link finding, nodes [{verse, strong, cluster, role}]; a description already live is named "
-                   "as existing and gains nodes). Every word in focus needs a node of this reading, or its `record`: "
+                   "party or link finding, nodes [{verse, strong, surface, cluster, role}]; the surface names the "
+                   "occurrence; a description already live is named as existing and gains nodes). `words` lists only "
+                   "the surfaces of the verse (a surface is a word as written with its Strong) that lack what "
+                   "reading.surface_requirements asks, as `missing`: add only that. A surface lacking nothing is not "
+                   "listed (`surfaces_complete`). `open_items` are the open items for the verse, whatever their "
+                   "subgroup. A surface that cannot be completed takes its `record`: "
                    "{\"reason\": ...}, {\"item\": \"OT-nn.n|#n\"} or {\"new_item\": <Open-Item add shape>}. A finding "
                    "no longer supported: `withdraw` [{\"node\": id, \"reason\"} | {\"observation\": id, \"reason\"}]. "
                    "The prompts are the catalogue's questions by kind: a prompt that does not apply is not answered "
@@ -639,25 +738,28 @@ def record(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
             f"item(s) added ({', '.join(added) or '-'})\n  ids written back to {_rel(root, path)}")
 
 
-def gate_observe(conn, root: pathlib.Path, r) -> list[str]:
-    """Every word in focus has a live node of this reading, an open item or a reason (#2273 D8); every finding in the
-    file written; every node of this reading on a word holds its role."""
+def gate_observe(cfg, root: pathlib.Path, r) -> list[str]:
+    """Every surface in focus has what reading.surface_requirements asks (on a live finding, of this reading or an
+    earlier one), or an open item or a reason (#2312); every finding in the file written; every node of this reading on
+    a word holds its role."""
     if not r["observe_file"]:
         return ["no observe JSON yet (Reading.ps1 -Step Observe, then Record)"]
     data = _load(root, r["observe_file"], "the observe JSON")
     out = []
+    conn = cfg.conn
     for v in data.get("verses") or []:
+        vid = conn.execute("SELECT id FROM verse WHERE osisId=?", (v["osis"],)).fetchone()[0]
+        by_occ = {}
         for wd in v.get("words") or []:
-            if conn.execute("SELECT 1 FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE "
-                            "n.reading_id=? AND n.verse_reference=? AND n.strong=? AND o.status<>'withdrawn' AND "
-                            "(n.disposition IS NULL OR n.disposition<>'withdrawn')",
-                            (r["id"], v["osis"], wd["strong"])).fetchone():
+            by_occ[wd.get("occurrence")] = wd
+        for s in surfaces_state(cfg, conn, vid):
+            if not s["missing"]:
                 continue
-            rec = wd.get("record") or {}
+            rec = (by_occ.get(s["occurrence"]) or {}).get("record") or {}
             if (rec.get("reason") and len(rec["reason"].strip()) >= 10) or rec.get("item") or rec.get("added"):
                 continue
-            out.append(f"{v['verse']} {wd.get('word')} ({', '.join(wd.get('in_focus_as') or [])}): no finding of this "
-                       f"reading applied, no open item, no reason (not_read)")
+            out.append(f"{v['verse']} {s['word']} ({', '.join(s['in_focus_as'])}): missing {', '.join(s['missing'])}; "
+                       f"no open item, no reason (not_read)")
     for i, f in enumerate(data.get("findings") or []):
         if isinstance(f, dict) and not f.get("written"):
             out.append(f"findings[{i}] ({f.get('key')}): not written (run Record)")
@@ -1089,7 +1191,7 @@ def check(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
                                                                       "run_id": run_id}))
         return f"reading {r['label']}: pre gate passed -- gathered (Reading.ps1 -Step Observe next)"
     if r["state"] == "gathered":
-        gaps = gate_observe(conn, root, r)
+        gaps = gate_observe(cfg, root, r)
         if gaps:
             _gate_fail(r, "observe", gaps)
 
@@ -1188,7 +1290,7 @@ def account(cfg, p: dict, root: pathlib.Path) -> tuple[list[str], str]:
     if r["state"] == "open":
         gaps, name = gate_pre(conn, root, r), "Pre"
     elif r["state"] == "gathered":
-        gaps, name = gate_observe(conn, root, r), "Observe"
+        gaps, name = gate_observe(cfg, root, r), "Observe"
     elif r["state"] == "observed":
         gaps, name = gate_post(cfg, root, r), "Claims"
     elif r["state"] == "synergised":

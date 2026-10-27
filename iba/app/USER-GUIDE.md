@@ -651,7 +651,9 @@ A qualifier is evaluated for what it gives the characteristic, recorded as a qua
   `<label>-collation.json`) and writes the **pre-gap JSON** (`<label>-gaps.json`): one section per gap
   type of phase `pre`, each with its guide text. The gap types are config: `cfg_enum reading_gap_type`
   and `cfg_setting reading.gap_types` (phase pre, observe, post or narrate; guide; the table each
-  records into).
+  records into). The pre-gap types do not include a read of earlier study files (retired, #2310): that work
+  is in `ib_observation` (#2305). An `open_item` carries `subgroups`: the subgroups its target cluster and
+  terms reach through `surface_subgroup` (empty for an item with no target terms).
 - **`Gather`** (0.GAP pre) writes each pre-gap item's `record`: `{"finding": {...}}` (a finding,
   quote-checked against the ESV text), `{"table", "id"}` (an existing row), `{"reason": "..."}`, a
   face on a strand hit (`face`, `parties`, `observation`, or `reason`), or for an open item
@@ -659,18 +661,28 @@ A qualifier is evaluated for what it gives the characteristic, recorded as a qua
   `Open-Item.ps1 -Action Add` shape). The ids are written back into the file.
 - **`Check`** passes the **pre gate** when every item has a row that exists or a reason, and every new
   item is added.
-- **`Observe`** builds the **observe JSON** from the tables: per verse its passage, every finding
-  already applied to it with its nodes (RO2), and the **words in focus** (`cfg_setting
-  reading.focus_words`: every M-coded word, every word in `reading.non_characteristic_strongs`, every
-  T2 qualifier that is not a function word by its morph, every T5 negator); the claims on the scope;
-  and the catalogue's one-verse questions as prompts by kind (`reading.observe_prompts`; a prompt that
-  does not apply is not answered).
+- **`Observe`** builds the **observe JSON** from the tables, on the **surface** (a word as written in
+  the verse with its Strong, one `verse_lexical` occurrence; #2312): per verse its passage, every
+  finding already applied to it with its nodes (RO2), the open items for the verse (any subgroup, with
+  the subgroups each reaches), and the surfaces in focus that still lack something. In focus
+  (`reading.focus_words`): every content word, function words left out by their morph, negators and
+  connectives kept, every M-coded word and every word in `reading.non_characteristic_strongs`. Each
+  needs a role, a face finding and a term finding, or a silence finding with its reason
+  (`reading.surface_requirements`; rules RS-01, RS-02). An existing finding counts for a surface by its
+  node's occurrence id, or by verse, Strong and surface when that names one occurrence; other nodes are
+  set aside. `words` lists only the surfaces with something `missing`; `surfaces_complete` counts the
+  rest. Also: the claims on the scope, and the catalogue's one-verse questions as prompts by kind
+  (`reading.observe_prompts`; a prompt that does not apply is not answered). A node names its surface
+  (`{verse, strong, surface, cluster, role}`) and is written with the occurrence id. Open (0.GAP pre)
+  pulls every non-withdrawn observation of the verse into the scope JSON (`<label>-collation.json`),
+  with its nodes, and every surface occurrence with its clusters and subgroups.
 - **`Record`** (D4 observe) refuses a file not built by this reading's last Observe. It writes the
   `findings`; the `withdraw` list (a node or a finding no longer supported, with its reason); and each
   word's `record` where no finding is applied to it: `{"reason"}`, `{"item": "OT-nn.n|#n"}` or
   `{"new_item": {...}}`.
-- **`Check`** passes the **observe gate** when every word in focus has a live node of this reading,
-  an open item or a reason, and every finding in the file is written. The reading's verses are then
+- **`Check`** passes the **observe gate** when every surface in focus has what the requirements ask
+  (on a live finding of this or an earlier reading), an open item or a reason, and every finding in
+  the file is written. The reading's verses are then
   marked `analysed`, the only way a verse becomes `analysed`.
 - **`Synergy`** builds the **synergy JSON** from the tables (B:114): the reading's findings with their
   live nodes, the current or held claims on the scope (with whether each rests on a finding), and the

@@ -55,7 +55,7 @@ def collate(cfg, request: dict, root: pathlib.Path) -> dict:
     J = _ids(vids)
     rec = {v["verse_id"]: {"verse_id": v["verse_id"], "reference": v["reference"], "osis": v["osis"],
                            "routes": v["routes"], "occurrences": v["occurrences"], "text": None, "status": None,
-                           "words": [], "observations": [],
+                           "words": [], "surfaces": [], "observations": [],
                            "strand_hits": [], "claims": [], "narrative": [], "open_items": [], "file_lines": [],
                            "gaps": []} for v in scope["verses"]}
 
@@ -75,14 +75,43 @@ def collate(cfg, request: dict, root: pathlib.Path) -> dict:
         rec[vid]["words"].append({"surface": surface, "strong": strong, "cluster": cl, "cluster_name": name})
         strongs.add(strong)
         clusters.add(cl)
+    # every surface occurrence of the verse (the path verse_lexical -> cluster_strong -> surface_subgroup ->
+    # cluster_subgroup, #2312): its clusters and its subgroups
+    cl_of = collections.defaultdict(set)
+    for strong, cl in conn.execute("SELECT strong, cluster_code FROM cluster_strong WHERE deleted=0"):
+        cl_of[strong].add(cl)
+    sub_of = collections.defaultdict(set)
+    for cl, strong, surface, sg in conn.execute(
+            "SELECT s.cluster_code, s.strong, s.surface, g.subgroup_code FROM surface_subgroup s JOIN cluster_subgroup g "
+            "ON g.id=s.cluster_subgroup_id WHERE s.deleted=0"):
+        sub_of[(strong, surface)].add(sg)
+    for vid, vlid, pos, surface, strong, morph in conn.execute(
+            "SELECT verse_id, id, position, surface, strong, morph_code FROM verse_lexical WHERE deleted=0 AND "
+            "verse_id IN (SELECT value FROM json_each(?)) ORDER BY verse_id, position, id", (J,)):
+        rec[vid]["surfaces"].append({"occurrence": vlid, "position": pos, "surface": surface, "strong": strong,
+                                     "morph": morph, "clusters": sorted(cl_of.get(strong, ())),
+                                     "subgroups": sorted(sub_of.get((strong, surface), ()))})
     check("reading the words")
 
-    for vid, oid, stage, tag, text, basis, note in conn.execute(
-            "SELECT DISTINCT v.id, o.id, o.stage, o.tag, coalesce(o.meaning, o.obs_text), o.basis, o.revisit_note "
-            "FROM ib_node n JOIN verse v ON v.osisId=n.verse_reference JOIN ib_observation o ON o.id=n.observation_id "
-            "AND o.status='draft' WHERE v.id IN (SELECT value FROM json_each(?)) ORDER BY v.id, o.id", (J,)):
-        rec[vid]["observations"].append({"id": oid, "stage": stage, "tag": tag, "text": text, "basis": basis,
-                                         "october_disposition": _disposition(note)})
+    # every observation of the verse that is not withdrawn (any stage, any status), with the nodes that apply it to
+    # this verse: the surface occurrence (verse_lexical_id), its role and its subgroup (#2312, #2276)
+    obs_at: dict = {}
+    for vid, oid, stage, tag, text, basis, note, status in conn.execute(
+            "SELECT DISTINCT v.id, o.id, o.stage, o.tag, coalesce(o.meaning, o.obs_text), o.basis, o.revisit_note, "
+            "o.status FROM ib_node n JOIN verse v ON v.osisId=n.verse_reference JOIN ib_observation o ON "
+            "o.id=n.observation_id AND o.status<>'withdrawn' WHERE v.id IN (SELECT value FROM json_each(?)) "
+            "ORDER BY v.id, o.id", (J,)):
+        obs_at[(vid, oid)] = {"id": oid, "stage": stage, "tag": tag, "status": status, "text": text, "basis": basis,
+                              "october_disposition": _disposition(note), "nodes": []}
+        rec[vid]["observations"].append(obs_at[(vid, oid)])
+    for vid, oid, nid, strong, surface, role, vlid, sg in conn.execute(
+            "SELECT v.id, n.observation_id, n.id, n.strong, n.surface, n.role, n.verse_lexical_id, "
+            "n.cluster_subgroup_code FROM ib_node n JOIN verse v ON v.osisId=n.verse_reference WHERE v.id IN "
+            "(SELECT value FROM json_each(?)) AND (n.disposition IS NULL OR n.disposition<>'withdrawn') "
+            "ORDER BY n.id", (J,)):
+        if (vid, oid) in obs_at:
+            obs_at[(vid, oid)]["nodes"].append({"node": nid, "strong": strong, "surface": surface, "role": role,
+                                                "verse_lexical_id": vlid, "subgroup": sg})
     for vid, code, strong, surface, face, reason, oid in conn.execute(
             "SELECT h.verse_id, s.code, h.strong, h.surface, h.face, h.reason, h.observation_id FROM reading_strand_hit h "
             "JOIN reading_strand s ON s.id=h.strand_id WHERE h.verse_id IN (SELECT value FROM json_each(?))", (J,)):
@@ -113,12 +142,13 @@ def collate(cfg, request: dict, root: pathlib.Path) -> dict:
     by_ref = {r["reference"]: vid for vid, r in rec.items()}
     by_strong = collections.defaultdict(set)
     by_cluster = collections.defaultdict(set)
-    for vid, r in rec.items():
-        for w in r["words"]:
+    for vid, r in rec.items():                          # open items reach a verse through its surfaces (#2312)
+        for w in r["surfaces"]:
             by_strong[w["strong"]].add(vid)
-            by_cluster[w["cluster"]].add(vid)
+            for cl in w["clusters"]:
+                by_cluster[cl].add(vid)
     seen = set()
-    for t, it, qv in escalation.match_open_items(Db(cfg), clusters=sorted(clusters), strongs=sorted(strongs),
+    for t, it, qv in escalation.match_open_items(Db(cfg), clusters=sorted(by_cluster), strongs=sorted(by_strong),
                                                  verses=sorted(by_ref), home=False):   # worded items: verses only
         targets = {by_ref[qv]} if qv in by_ref else by_strong.get(qv) or by_cluster.get(qv) or set()
         for vid in targets:

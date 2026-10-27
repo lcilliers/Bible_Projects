@@ -51,9 +51,9 @@ def resolve_occurrence(conn, strong: str, claimed_verse: str, claimed_surface: s
     strong + verse.osisId, disambiguating by surface/morph when a strong occurs more than once in
     the same verse. Raises UnresolvedOccurrence rather than writing an unverified node."""
     rows = conn.execute(
-        """SELECT vl.strong, vl.surface, vl.morph_code, v.osisId, v.id AS verse_id
+        """SELECT vl.id AS verse_lexical_id, vl.strong, vl.surface, vl.morph_code, v.osisId, v.id AS verse_id
            FROM verse_lexical vl JOIN verse v ON v.id=vl.verse_id
-           WHERE vl.strong=? AND v.osisId=? AND vl.deleted=0""",
+           WHERE vl.strong=? AND v.osisId=? AND vl.deleted=0 ORDER BY vl.position, vl.id""",
         (strong, claimed_verse)).fetchall()
     if not rows:
         raise UnresolvedOccurrence(
@@ -64,7 +64,7 @@ def resolve_occurrence(conn, strong: str, claimed_verse: str, claimed_surface: s
         exact = [r for r in rows if r["surface"] == claimed_surface or r["morph_code"] == claimed_morph]
         r = exact[0] if exact else rows[0]
     return {"verse_reference": r["osisId"], "verse_id": r["verse_id"], "surface": r["surface"],
-           "morph_code": r["morph_code"]}
+           "morph_code": r["morph_code"], "verse_lexical_id": r["verse_lexical_id"]}
 
 
 _VERSE_LEVEL_OCCURRENCE_CODES = ("M0.6.5", "M0.6.6", "D7.7.1")

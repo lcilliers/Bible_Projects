@@ -140,7 +140,7 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
                 continue
             if n.get("role") not in roles:
                 errors.append(f"{at}: role must be one of {roles} (the word's role in this finding)")
-            occ = {"verse_reference": None, "surface": n.get("surface"), "morph_code": None}
+            occ = {"verse_reference": None, "surface": n.get("surface"), "morph_code": None, "verse_lexical_id": None}
             if n.get("verse"):
                 try:
                     vr = sr._verse(conn, vx, n["verse"])
@@ -152,7 +152,7 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
                 errors.append(f"{at}: only a term finding applies to a word with no verse")
             p["nodes"].append({"strong": strong, "cluster": cluster, "role": n.get("role"),
                                "question": n.get("question"), "traced": n.get("traced"), "at": at,
-                               **{k: occ[k] for k in ("verse_reference", "surface", "morph_code")}})
+                               **{k: occ[k] for k in ("verse_reference", "surface", "morph_code", "verse_lexical_id")}})
         if kind == "qualification":
             got = {n.get("role") for n in p["nodes"]}
             if not {"qualifier", "characteristic"} <= got:
@@ -191,8 +191,8 @@ def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
             traced = out[traced]["observation"] if traced in out else traced
             if n.get("strong") and conn.execute(
                     "SELECT 1 FROM ib_node WHERE observation_id=? AND strong=? AND verse_reference IS ? AND "
-                    "reading_id IS ? AND role IS ?",
-                    (oid, n["strong"], n["verse_reference"], reading_id, n["role"])).fetchone():
+                    "reading_id IS ? AND role IS ? AND verse_lexical_id IS ?",
+                    (oid, n["strong"], n["verse_reference"], reading_id, n["role"], n.get("verse_lexical_id"))).fetchone():
                 continue                                  # the same application, already written
             seq += 1
             cluster = n.get("cluster") or conn.execute(
@@ -200,10 +200,11 @@ def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
                 (traced,)).fetchone()[0]
             nid = conn.execute(
                 "INSERT INTO ib_node (observation_id, cluster_code, strong, verse_reference, surface, morph_code, "
-                "question_code, traced_observation_id, source_stage, seq, role, reading_id, created_at) "
-                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "question_code, traced_observation_id, source_stage, seq, role, reading_id, created_at, verse_lexical_id) "
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (oid, cluster, n.get("strong"), n.get("verse_reference"), n.get("surface"), n.get("morph_code"),
-                 n.get("question"), traced, STAGE, seq, n.get("role"), reading_id, now)).lastrowid
+                 n.get("question"), traced, STAGE, seq, n.get("role"), reading_id, now,
+                 n.get("verse_lexical_id"))).lastrowid
             out[p["key"]]["nodes"].append(nid)
     return out
 
