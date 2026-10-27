@@ -51,4 +51,6 @@ Developer Mode session. Small cleanups (#2301 snapshot pruning, #2307 closed, #2
 
 ## 6. Git
 
-_(written after the first commit)_
+- Branch: `main`.
+- Session commit: `0fb3799ff721c5e6d36dd1f9cfd7dc61cfb68f60` "session 20261027: #2310 0.GAP pre drops the document read, open items show their subgroups; ...".
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `961081eb..0fb3799f  main -> main`.
