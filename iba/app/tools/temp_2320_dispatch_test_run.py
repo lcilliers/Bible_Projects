@@ -42,6 +42,9 @@ subprocess.run([sys.executable, str(v5), "--db", str(DB)], capture_output=True, 
 v6 = ROOT / "iba/app/migration/analysis_phase_1_2323_v4_20261027.py"
 v6 = v6 if v6.exists() else ROOT / "iba/app/migration/archive" / v6.name
 subprocess.run([sys.executable, str(v6), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v7 = ROOT / "iba/app/migration/analysis_phase_1_2320_v3_20261028.py"
+v7 = v7 if v7.exists() else ROOT / "iba/app/migration/archive" / v7.name
+subprocess.run([sys.executable, str(v7), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
 c = sqlite3.connect(DB)
 c.execute("UPDATE cfg_setting SET value=? WHERE key='reading.output_dir'", (json.dumps(str(S / "reading")),))
 c.commit()

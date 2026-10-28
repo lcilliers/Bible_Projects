@@ -16,6 +16,8 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 
 - #2323 (opened by the researcher for the live-test findings): built the `deleted` columns, the fixing of errors in the check, the kind/subgroup/stage rules, unconfirmed fixes and the `leave` action; handed over ready_for_approval (v5 to v10); on the same item the researcher's later messages are recorded (v10).
 
+- #2320 (fourth stretch): the test of Gen 43:27 failed; Record now enforces the rules for stating an observation (spec 4.1, 4.2); handed over ready_for_approval (v11); the researcher's question about a background task is recorded on v12.
+
 ## 3. Files
 
 - outputs/escalation/2318-analysis-phase-1-description-v1-20261027.md (new): the code of Open, Gather, Observe, Record and the two gates as it was before the build, with config read and data tables.
@@ -49,6 +51,9 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 
 - Researcher's decisions after the second close, each recorded on #2323 v10 and in BUILD.md section 425: the delete columns on both tables; fixes found in the check need no separate approval (recorded in `cfg_method_rule` RS-04 and #2323 v10); the kind (tag) and subgroup of a kept observation (#2323 v10); stage Analysis_phase_1 on new rows (cfg_enum ib_observation.stage, #2323 v6); stages must not filter, only the wording, so the action `leave` replaces the own_stages setting (cfg_setting reading.verse_loop, #2323 v9).
 
+- Decisions (fourth stretch): the code enforces the ten parts, the nodes of an act, the primary operation, link and party observations and the reading on kept nodes (cfg_method_rule RS-08, cfg_setting reading.verse_loop, iba/app/BUILD.md section 426, #2320 v11); the researcher's answer on whether this is the enforcement wanted is open.
+- Files (fourth stretch): iba/app/lib/reading.py, iba/app/lib/observationrecord.py, iba/app/migration/archive/analysis_phase_1_2320_v3_20261028.py, the three test files, iba/app/BUILD.md section 426, iba/app/USER-GUIDE.md section 8.2.
+
 ## 5. Open items
 
 - #2320: with the researcher for acceptance of the build and the test run; it carries a new version of the description file, the trial reading m21-asking-test (46 draft observations from the earlier process, not withdrawn), and the deletion of a stray 894 MB database copy at C:\c, created by Claude's own path error and removable only by the researcher because the folder is a protected path (Claude, then the researcher).
@@ -56,6 +61,8 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 - The older items assigned to Claude (#2161, #2259, #2305, #2308, #2268, #2301, #2171, #2172, #2235, #2262, #2276, #2278, #2280, #2296, #2303): untouched; #2276, #2278, #2280, #2262, #2296 and #2308 are met by the build and settle after the researcher's test of #2320.
 
 - #2323: with the researcher for acceptance; open there: restoring the role of strand-reading node 13896 (observation 11877) on the researcher's word; the description file needs a new version; `C:\c` (894 MB test copy) must be deleted by the researcher; #2301 (snapshot pruning) unresolved (Claude, outside Analysis_phase_1).
+
+- #2320: with the researcher for acceptance of the enforcement; the 5 GB task log bak4t901b.output in the Claude temp folder is for the researcher to delete or have deleted (#2320 v12).
 
 ## 6. Git
 

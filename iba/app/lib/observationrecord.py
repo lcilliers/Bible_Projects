@@ -99,10 +99,10 @@ def check_parts(cfg, parts, where: str, errors: list) -> None:
     if bad:
         errors.append(f"{where}: parts {bad} are not among {spec['parts']}")
     pol = parts.get("polarity")
-    if pol is not None and pol not in loop["polarity"]:
+    if pol is not None and not isinstance(pol, dict) and pol not in loop["polarity"]:
         errors.append(f"{where}: polarity must be one of {loop['polarity']}")
     flags = parts.get("flags")
-    if flags is not None:
+    if flags is not None and not isinstance(flags, dict):
         if not isinstance(flags, list):
             errors.append(f"{where}: flags is a list of {{type, text}}")
         else:
@@ -110,6 +110,46 @@ def check_parts(cfg, parts, where: str, errors: list) -> None:
                 if (not isinstance(f, dict) or f.get("type") not in spec["flag_types"]
                         or len((f.get("text") or "").strip()) < loop["min_reason_chars"]):
                     errors.append(f"{where}: flags[{k}] is {{type: one of {spec['flag_types']}, text}} in words")
+
+
+ALWAYS_PARTS = ("sense", "evidence", "circumstance")        # spec 4.2 parts 1 and 7: every observation shows these
+
+
+def complete_parts(cfg, parts, where: str, errors: list) -> None:
+    """The observation of a relevant surface covers the parts of spec 4.2 (#2323, researcher: "the observations for each surface
+    comply with the requirement"). Every key of reading.observation_parts is present: given in words (polarity: refusal or
+    pursuit; flags: a list of typed flags, empty when none), or stated absent as {"none": "why the verse shows none"}. The
+    sense with its evidence and the circumstance (how it appears here) are never absent."""
+    spec, loop = _parts_setting(cfg), loop_setting(cfg)
+    minc = loop["min_reason_chars"]
+    if not isinstance(parts, dict):
+        errors.append(f"{where}: the parts of spec 4.2 are missing: give each of {spec['parts']} in words, or "
+                      f"{{\"none\": \"why the verse shows none\"}} (sense, evidence and circumstance are always given)")
+        return
+    for key in spec["parts"]:
+        v = parts.get(key)
+        none = isinstance(v, dict) and set(v) == {"none"}
+        if v is None:
+            errors.append(f"{where}: part {key!r} is missing: give it, or {{\"none\": \"why the verse shows none\"}}")
+        elif none:
+            if key in ALWAYS_PARTS:
+                errors.append(f"{where}: part {key!r} is never absent")
+            elif len((v["none"] or "").strip()) < minc:
+                errors.append(f"{where}: part {key!r}: the reason it is absent needs {minc} characters or more")
+        elif key == "flags":
+            if not isinstance(v, list):
+                errors.append(f"{where}: flags is a list of typed flags (empty when none), or {{\"none\": reason}}")
+        elif key == "polarity":
+            if v not in loop["polarity"]:
+                errors.append(f"{where}: polarity is one of {loop['polarity']}, or {{\"none\": reason}}")
+        elif not isinstance(v, str) or len(v.strip()) < minc:
+            errors.append(f"{where}: part {key!r} is stated in words ({minc} characters or more), or {{\"none\": reason}}")
+
+
+def given(parts, key) -> bool:
+    """True when a part holds content (not absent, not empty)."""
+    v = (parts or {}).get(key)
+    return bool(v) and not (isinstance(v, dict) and set(v) == {"none"})
 
 
 def live_text(conn, text: str):
@@ -440,6 +480,9 @@ def modify_node(cfg, conn, node_id: int, sets: dict, reason: str, reading_id, ru
         if row is None or row["strong"] != n["strong"] or row["osisId"] != n["verse_reference"]:
             raise Refused(f"node {node_id}: occurrence {sets['verse_lexical_id']} is not an occurrence of "
                           f"{n['strong']} in {n['verse_reference']}")
+    if "observation_id" in sets and not conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND deleted=0",
+                                                     (sets["observation_id"],)).fetchone():
+        raise Refused(f"node {node_id}: observation {sets['observation_id']} is not a live observation")
     if "cluster_subgroup_code" in sets and sets["cluster_subgroup_code"] is not None and not conn.execute(
             "SELECT 1 FROM cluster_subgroup WHERE subgroup_code=? AND coalesce(delete_flagged,0)=0",
             (sets["cluster_subgroup_code"],)).fetchone():

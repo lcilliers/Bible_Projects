@@ -24,7 +24,8 @@ S = pathlib.Path(sys.argv[1]) / "t2323run"
 if S.exists():
     shutil.rmtree(S)
 S.mkdir(parents=True)
-DB = copy_db(S / "iba.db", ROOT / "iba/app/db/iba.db")
+_pre = ROOT / "backups/iba-pre-2323-deleted-columns-20261027.db"       # the database as the live test left it, before the delete columns
+DB = copy_db(S / "iba.db", _pre if _pre.exists() else ROOT / "iba/app/db/iba.db")
 env = {**os.environ, "PYTHONPATH": str(ROOT), "PYTHONUTF8": "1"}
 v3 = ROOT / "iba/app/migration/analysis_phase_1_2323_v1_20261027.py"
 v3 = v3 if v3.exists() else ROOT / "iba/app/migration/archive" / v3.name
@@ -40,6 +41,9 @@ subprocess.run([sys.executable, str(v5), "--db", str(DB)], capture_output=True, 
 v6 = ROOT / "iba/app/migration/analysis_phase_1_2323_v4_20261027.py"
 v6 = v6 if v6.exists() else ROOT / "iba/app/migration/archive" / v6.name
 subprocess.run([sys.executable, str(v6), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v7 = ROOT / "iba/app/migration/analysis_phase_1_2320_v3_20261028.py"
+v7 = v7 if v7.exists() else ROOT / "iba/app/migration/archive" / v7.name
+subprocess.run([sys.executable, str(v7), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
 c = sqlite3.connect(DB)
 c.execute("UPDATE cfg_setting SET value=? WHERE key='reading.output_dir'", (json.dumps(str(S / "reading")),))
 c.commit()
@@ -75,6 +79,38 @@ def idx(label):
 def save(label, data):
     (S / "reading" / label / f"{label}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
+PARTS_FULL = {"sense": "test sense in this verse", "evidence": "test evidence for the sense", "polarity": "pursuit",
+              "content": {"none": "test: no object stated in the verse"}, "enactment": {"none": "test: no outward act stated"},
+              "party": {"none": "test: no other party stated"}, "circumstance": "test circumstance in this verse",
+              "chain": {"none": "test: a single operation in the verse"}, "primary_operation": {"none": "test: not the primary one"},
+              "flags": []}
+
+
+def fixrules(sh):
+    """The reading's part of the rules for stating an observation (spec 4.1, 4.2): the parts completed on what covers a relevant
+    surface, the bears-on-only observations deleted, one statement naming the primary operation."""
+    REL = {"characteristic", "qualifier"}
+    cov = []
+    for e in sh["existing"]:
+        a = e.get("action")
+        if not a or a["action"] not in ("accept", "modify"):
+            continue
+        roles = [n["role"] for n in e["nodes"] if n["role"]]
+        if roles and not (set(roles) & REL) and a["action"] == "accept" and not a.get("nodes"):
+            e["action"] = {"action": "delete", "reason": "test: every node bears on an act, none is its characteristic"}
+        elif set(roles) & REL:
+            st = dict(a.get("set") or {})
+            st.setdefault("parts", dict(PARTS_FULL))
+            e["action"] = dict(a, action="modify", reason=a.get("reason") or "test: the parts of spec 4.2 completed", set=st)
+            cov.append(e)
+    for f in sh.get("findings") or []:
+        f["parts"] = {**PARTS_FULL, "primary_operation": "test primary operation of the verse", **(f.get("parts") or {})}
+    if cov and not sh.get("findings"):
+        e = cov[0]
+        e["action"]["set"]["tag"] = "statement"
+        e["action"]["set"]["parts"] = dict(PARTS_FULL, primary_operation="test primary operation of the verse")
+
+
 OK_KINDS = {"face", "qualification", "party", "statement", "link", "use", "term"}
 
 
@@ -92,6 +128,7 @@ def fixkinds(sh):
             a = dict(a, action="modify", reason=a.get("reason") or "test: the tag is set to the kind of what it says")
             a["set"] = {**(a.get("set") or {}), "tag": a.get("set", {}).get("tag", "statement")}
             e["action"] = a
+    fixrules(sh)
 
 
 loop = cfg.required_setting("reading.verse_loop")
@@ -173,6 +210,7 @@ case("F2", "an observation with no action and no automatic fix is refused, names
 for e in sh["existing"]:
     if not any(f.get("propose") for f in e["flags"]):
         e["action"] = {"action": "accept"}
+fixrules(sh)
 sh["confirm_fixes"] = False
 sh["fill_nodes"] = False
 save("t2323-a", d)

@@ -332,6 +332,8 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
         "(verse_reference NOT IN (SELECT value FROM json_each(?)) OR verse_reference IS NULL) AND "
         "deleted=0 GROUP BY observation_id", (json.dumps(sorted(obs)), OJ))}
     kinds = orec.kinds(cfg)
+    rel_roles_ = set(orec.node_role_groups(cfg)["relevant"])
+    bear_roles_ = set(orec.node_role_groups(cfg)["bears_on"])
     dups: dict = {}                         # a description live more than once: {text: [ids]}
     if obs:
         for txt, ids in conn.execute(
@@ -414,6 +416,18 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                 flags.append({"code": "kind_not_in_parts", "text": f"the tag {o['tag']!r} is not a kind of observation "
                               f"({[k for k in kinds if k != 'silence']}): the tag shows the type of the finding; read what it says and "
                               f"modify the tag (`set`: {{\"tag\": kind}}), or delete the observation", "propose": None})
+            if any(n_["role"] in rel_roles_ for n_ in ns):
+                perr_: list = []
+                orec.complete_parts(cfg, json.loads(o["parts"]) if o["parts"] else None, "", perr_)
+                if perr_:
+                    flags.append({"code": "parts_incomplete", "propose": None,
+                                  "text": "it covers a relevant surface but not the parts of spec 4.2 (modify `parts`): "
+                                          + "; ".join(x.lstrip(": ") for x in perr_)})
+            if ns and all(n_["role"] in bear_roles_ for n_ in ns):
+                flags.append({"code": "bears_on_only", "propose": None,
+                              "text": "every node it holds bears on an act (object, relational target, enactment): those words are "
+                                      "nodes of the observation of the act (spec 4.1): move them there (node modify `observation_id`) "
+                                      "and delete this one, or give it its characteristic or qualifier node"})
             for key_, ids_ in overlap.items():
                 if key_[0] == osis and oid in ids_ and len(ids_) > 1:
                     flags.append({"code": "same_word_same_role", "propose": None,
@@ -429,7 +443,7 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
             "passage": _passage(conn, osis, loop["passage_window"]), "existing": existing,
             "ledger_faces": ledger.get(vid, []), "findings": [], "fill_nodes": False, "drop_non_relevant_nodes": False,
             "confirm_fixes": False, "errors": [],
-            "how": "Evaluate every surface: evaluation {\"result\": \"relevant\" (the characteristic, or a qualifier of it) | "
+            "how": "Rules for stating an observation (spec 4.1, 4.2), enforced at Record: an observation that covers a relevant surface (a node with a characteristic or qualifier role) carries all the `parts`: sense, evidence, polarity, content, enactment, party, circumstance, chain, primary_operation, flags; each in words, or {\"none\": \"why the verse shows none\"} (sense, evidence and circumstance are never absent; flags is a list, empty when none). The words that bear on an act are nodes of the observation of the act, never an observation of their own (move a node: node modify `observation_id`). One statement observation names the primary_operation; a stated chain needs a link observation; a stated party needs a party observation with its route. Evaluate every surface: evaluation {\"result\": \"relevant\" (the characteristic, or a qualifier of it) | "
                    "\"bears_on\" (the object, party or outward act of a relevant act: a node of that act's observation) | "
                    "\"not_relevant\", \"reason\": \"...\"} (reason: the tests of the lexical work; a surface with no "
                    "inner-being role gets no observation). `drop_non_relevant_nodes`: true soft deletes every existing node on a "
@@ -506,6 +520,8 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
     # existing observations: each takes an action; a proposed fix is applied when the reading confirms it
     plan = {"obs": [], "nodes": [], "fill": [], "links": [], "findings": []}
     live_after = []        # (occurrence group id, role) of nodes that stay
+    after: dict = {}       # the observations that stay on the verse: {id or "new:key": {kind, parts, route}} (spec 4.1, 4.2)
+    node_dest: list = []   # (the observation a node stays in, its role)
     for e in sh["existing"]:
         a = e.get("action")
         if a is None:       # a fix found by the check is part of the check: no separate confirmation (researcher, 2026-10-27)
@@ -538,6 +554,10 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
         plan["obs"].append((e["observation"], a))
         if a["action"] == "leave":          # not Analysis_phase_1 work by its wording: untouched, its nodes count for nothing
             continue
+        if a["action"] in ("accept", "modify"):
+            st = (a.get("set") or {}) if a["action"] == "modify" else {}
+            after[e["observation"]] = {"kind": st.get("tag", e["kind"]), "parts": st["parts"] if "parts" in st else e["parts"],
+                                       "route": st.get("route", e["route"])}
         deleted_obs = a["action"] == "delete"
         by_node = {x.get("node"): x for x in (a.get("nodes") or []) if isinstance(x, dict)}
         for n in e["nodes"]:
@@ -563,9 +583,18 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
                                                  if k not in ((na or {}).get("set") or {})}))
             if not gone and n["counts_for"] in occ_group and role is not None:
                 live_after.append((id(occ_group[n["counts_for"]]), role))
+            if not gone and role is not None:
+                dest = a["into"] if a["action"] == "merge" else e["observation"]
+                if (na or {}).get("action") == "modify":
+                    dest = (na.get("set") or {}).get("observation_id", dest)
+                node_dest.append((dest, role))
     for f in sh.get("findings") or []:
         plan["findings"].append(f)
+        after[f"new:{f.get('key')}"] = {"kind": f.get("kind"), "parts": f.get("parts"), "route": f.get("route")}
         for nd in (f.get("nodes") or []):
+            if isinstance(nd, dict) and nd.get("role"):
+                node_dest.append((f"new:{f.get('key')}", nd["role"]))
+
             if isinstance(nd, dict) and nd.get("strong") and nd.get("occurrence") not in occ_group:
                 errors.append(f"{at}: a finding node names the occurrence id of the word in this verse (`occurrence`)")
             g = occ_group.get(nd.get("occurrence")) if isinstance(nd, dict) else None
@@ -596,6 +625,37 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
         if any(gid == id(g) for gid, _ in live_after):
             errors.append(f"{at}: {g['word']} has no inner-being role (evaluation) but a node still names it: delete the "
                           f"node, set `drop_non_relevant_nodes`, or change the evaluation")
+    # the rules for stating an observation (spec 4.1, 4.2; researcher: "the observations for each surface comply")
+    rel_roles = set(groups_roles["relevant"])
+    for dest in {d for d, _ in node_dest if d not in after}:
+        errors.append(f"{at}: a node is moved to or merged into observation {dest}, which is not an observation of this sheet that "
+                      f"stays (accept or modify it, or move the node elsewhere)")
+    covering = {}
+    for key, o in after.items():
+        roles = [r_ for d_, r_ in node_dest if d_ == key]
+        if not roles:
+            continue                         # no node left: the observation is soft deleted when the verse is recorded
+        label = f"observation {key}" if isinstance(key, int) else f"finding {key[4:]}"
+        if set(roles) <= set(groups_roles["bears_on"]):
+            errors.append(f"{at}: {label}: every node it holds is of a role that bears on an act ({sorted(set(roles))}): the "
+                          f"words that bear on an act are nodes of the observation of the act (spec 4.1), not an observation of "
+                          f"their own: move the nodes to the observation of the act (a node modify setting `observation_id`) and "
+                          f"delete this one")
+            continue
+        covering[key] = o
+        perr: list = []
+        orec.complete_parts(cfg, o["parts"], f"{at}: {label}", perr)
+        errors.extend(perr)
+    if covering:
+        if not any(o["kind"] == "statement" and orec.given(o["parts"], "primary_operation") for o in covering.values()):
+            errors.append(f"{at}: the primary operation is not recorded: one observation of the kind statement has the part "
+                          f"`primary_operation` in words (the operation with nothing upstream; spec 4.2 part 8)")
+        if any(orec.given(o["parts"], "chain") for o in covering.values()) and not any(o["kind"] == "link" for o in after.values()):
+            errors.append(f"{at}: a chain of operations is stated but no observation of the kind link records it (spec 4.2 part 8)")
+        if any(orec.given(o["parts"], "party") for o in covering.values()) and not any(
+                o["kind"] == "party" and o["route"] for o in after.values()):
+            errors.append(f"{at}: another party is stated but no observation of the kind party with its route "
+                          f"{sorted(cfg.enum('observation_route'))} records it (spec 4.2 part 6)")
     return plan
 
 
@@ -631,6 +691,14 @@ def _write_verse(cfg, conn, w, r, run_id: str, v: dict, pl: dict, fplan: list) -
         elif na["action"] == "modify":
             orec.modify_node(cfg, conn, nid, na.get("set") or {}, na["reason"].strip(), r["id"], run_id, w.who)
             cnt["nodes_modified"] += 1
+    gone_nodes = {nid for nid, na in pl["nodes"] if na["action"] == "delete"}
+    kept = {oid for oid, a in pl["obs"] if a["action"] in ("accept", "modify")}
+    for e in v["sheet"]["existing"]:           # the nodes this reading checked and kept name it as the reading that applied them
+        if e["observation"] in kept:
+            for n in e["nodes"]:
+                if n["node"] not in gone_nodes and n.get("reading_id") != r["id"]:
+                    orec.modify_node(cfg, conn, n["node"], {"reading_id": r["id"]}, "checked and kept by this reading (spec 4.7)",
+                                     r["id"], run_id, w.who)
     for nid, sug in pl["fill"]:
         orec.modify_node(cfg, conn, nid, sug, "completed from verse_lexical and surface_subgroup when the verse was "
                          "worked (#2308 D2)", r["id"], run_id, w.who)

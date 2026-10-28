@@ -1,0 +1,191 @@
+{
+ "reading": "m21-gen43-27",
+ "reading_id": 7,
+ "escalation": 2320,
+ "subgroup": "M21_asking",
+ "home": "M21",
+ "segment": {
+  "verses": "Gen 43:27"
+ },
+ "objective": "the asking words in Gen 43:27 (new test of Analysis_phase_1)",
+ "opened": "2026-10-28T05:20:35Z",
+ "how": "The index of the verses in scope. Reading.ps1 -Step Observe puts the next verses in hand (a sheet each: the surfaces, the existing observations and nodes, the ledger faces, read from the tables then); fill the sheets; Reading.ps1 -Step Record writes them and marks the verses done; Reading.ps1 -Step Check passes the gate when every verse is done.",
+ "counts": {
+  "verses": 1,
+  "done": 1
+ },
+ "verses": [
+  {
+   "verse": "Gen 43:27",
+   "osis": "Gen.43.27",
+   "verse_id": 9646,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-28T05:21:25Z",
+    "run_id": "RUN-20261028_052119_238-READING",
+    "existing": {
+     "accepted": 5,
+     "modified": 1,
+     "deleted": 13,
+     "merged": 0,
+     "nodes_modified": 7,
+     "nodes_deleted": 0,
+     "links": 0,
+     "orphaned": 0,
+     "left": 0
+    },
+    "left": [],
+    "surfaces": [
+     {
+      "word": "inquired (H7592)",
+      "occurrences": [
+       988898
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: Joseph inquires of his brothers about their welfare, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "welfare (H7965I)",
+      "occurrences": [
+       988899
+      ],
+      "result": "bears_on",
+      "reason": "what is asked after: the brothers welfare, the object of the inquiry"
+     },
+     {
+      "word": "welfare (H9005)",
+      "occurrences": [
+       988900,
+       988901
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "welfare (H9038)",
+      "occurrences": [
+       988902
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3mp): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "said (H0559)",
+      "occurrences": [
+       988903
+      ],
+      "result": "not_relevant",
+      "reason": "a reporting verb that introduces the spoken questions, no inner-being sense of its own here"
+     },
+     {
+      "word": "father (H0001G)",
+      "occurrences": [
+       988904
+      ],
+      "result": "bears_on",
+      "reason": "the one asked about: Joseph asks after their father, the target of the question"
+     },
+     {
+      "word": "well (H7965I)",
+      "occurrences": [
+       988905
+      ],
+      "result": "bears_on",
+      "reason": "what is asked of the father: whether he is well, the object of the first spoken question"
+     },
+     {
+      "word": "well (H9008)",
+      "occurrences": [
+       988906
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTi): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "old man (H2205H)",
+      "occurrences": [
+       988907
+      ],
+      "result": "not_relevant",
+      "reason": "a second name for the father set in apposition, no inner-being role of its own"
+     },
+     {
+      "word": "old man (H9009)",
+      "occurrences": [
+       988908
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTd): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "old man (H9026)",
+      "occurrences": [
+       988909
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp2mp): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "spoke (H0559)",
+      "occurrences": [
+       988910
+      ],
+      "result": "not_relevant",
+      "reason": "recalls the brothers earlier words about their father; a speech verb with no inner-being sense here"
+     },
+     {
+      "word": "spoke (H0834A)",
+      "occurrences": [
+       988911
+      ],
+      "result": "not_relevant",
+      "reason": "relative particle linking the old man to what they said; grammar only"
+     },
+     {
+      "word": "alive (H2416A)",
+      "occurrences": [
+       988912
+      ],
+      "result": "relevant",
+      "reason": "H2416 alive: the state asked about in the second question, whether the father still lives"
+     },
+     {
+      "word": "alive (H5750)",
+      "occurrences": [
+       988913
+      ],
+      "result": "relevant",
+      "reason": "H5750 still: binds to alive and makes the question whether he lives yet, after the time that has passed"
+     },
+     {
+      "word": "alive (H9043)",
+      "occurrences": [
+       988914
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3ms): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "alive (H9008)",
+      "occurrences": [
+       988915
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTi): preposition, suffix, article or particle, no inner-being role"
+     }
+    ],
+    "written": {
+     "observations": [],
+     "nodes": 0
+    }
+   }
+  }
+ ]
+}
