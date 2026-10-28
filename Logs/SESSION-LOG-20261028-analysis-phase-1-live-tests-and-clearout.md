@@ -54,4 +54,7 @@ Session id: 3ba1bfea-7b08-4bf4-b97f-9ab0f5edfb0a (standard mode; the code change
 
 ## 6. Git
 
-(written after the first commit)
+Branch: main
+Commit: e45398988f06d53ba8039ffc6c7c09a7c59ad93c "session 20261028: Analysis_phase_1 live tests and timed batches, m21-asking 34 of 271 verses, backlog clear-out (#2301, #2305, #2308, #2323, #2262, #2296 closed); session log, compliance file and close reports" (10 files changed, 587 insertions, 75 deletions)
+Push output: To https://github.com/lcilliers/Bible_Projects.git
+   5efceee7..e4539898  main -> main
