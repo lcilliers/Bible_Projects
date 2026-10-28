@@ -68,9 +68,8 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 
 - #2320: with the researcher for acceptance of the build and the test run; it carries a new version of the description file, the trial reading m21-asking-test (46 draft observations from the earlier process, not withdrawn), and the deletion of a stray 894 MB database copy at C:\c, created by Claude's own path error and removable only by the researcher because the folder is a protected path (Claude, then the researcher).
 - The B:27 and B:100 rule slips listed in Logs/compliance/COMPLIANCE-20261027-95543bd0.md: carried on #2320 for the next version of the description (Claude).
-- The older items assigned to Claude (#2161, #2259, #2305, #2308, #2268, #2301, #2171, #2172, #2235, #2262, #2276, #2278, #2280, #2296, #2303): untouched; #2276, #2278, #2280, #2262, #2296 and #2308 are met by the build and settle after the researcher's test of #2320.
+- The older items assigned to Claude (#2161, #2259, #2268, #2171, #2172, #2235, #2276, #2278, #2280, #2303): untouched; #2276, #2278 and #2280 wait for the claims read process.
 
-- #2323: with the researcher for acceptance; open there: restoring the role of strand-reading node 13896 (observation 11877) on the researcher's word;  (`C:\c` was checked on 2026-10-28 and does not exist); #2301 (snapshot pruning) unresolved (Claude, outside Analysis_phase_1).
 
 - #2320: with the researcher for acceptance of the enforcement; the 5 GB task log bak4t901b.output in the Claude temp folder is for the researcher to delete or have deleted (#2320 v12).
 

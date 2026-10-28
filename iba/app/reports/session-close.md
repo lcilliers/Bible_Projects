@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-28T10:26:14Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-28T10:50:38Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `95543bd0-7cc2-4f14-b7f8-02aa51147ba4` (CLAUDE_CODE_SESSION_ID); started 2026-10-27T11:19:24Z; window base commit `c40d2878dd7ccb01693dd9dc6572832b5f7e40e4`
-- compliance file: `Logs/compliance/COMPLIANCE-20261027-95543bd0.md`; session log: `Logs/SESSION-LOG-20261027-analysis-phase-1-description-and-specification.md`
-- **open findings: 0**; cleared by disposition: 15
+- session: `3ba1bfea-7b08-4bf4-b97f-9ab0f5edfb0a` (CLAUDE_CODE_SESSION_ID); started 2026-10-27T16:59:19Z; window base commit `59d8c908f0a62eddc759956c8e4fc692a1ee9ae2`
+- compliance file: `Logs/compliance/COMPLIANCE-20261027-3ba1bfea.md`; session log: `Logs/SESSION-LOG-20261028-analysis-phase-1-live-tests-and-clearout.md`
+- **open findings: 0**; cleared by disposition: 10
 
 
 ## Contents
@@ -41,37 +41,29 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:b43db790`: researcher message 2026-10-27T17:27 is in no escalation comment written this session: "<task-notification>
-<task-id>bak4t901b</task-id>
-<tool-use-id>toolu_017if9WnMV1dPfb6WD3sovqt</tool-use-id>
-<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: a system background-task notification, not a researcher message
-- cleared `SC3:cf55f005`: researcher message 2026-10-27T17:49 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-<tools-" -- disposition: no record needed: the automatic context summary after compaction, not a researcher message
-- cleared `SC3:456a7f99`: researcher message 2026-10-28T05:01 is in no escalation comment written this session: "hang on, what did you say prior capture means. what does the following mean, what is the implications:"
-
-<pasted_content id="8fc6">
-prior-capture stays in own_s" -- disposition: recorded in #2323 v10 (item 6: the question about the own_stages reply, whose pasted text is my own earlier answer)
-- cleared `SC3:77389633`: researcher message 2026-10-28T07:08 is too short to be matched; name where it is recorded: "Correct them" -- disposition: recorded in #2326 v3
-- cleared `SC3:86d29007`: researcher message 2026-10-28T07:21 is too short to be matched; name where it is recorded: "Leave them" -- disposition: recorded in #2326 v4
-- cleared `SC3:a968734c`: researcher message 2026-10-28T10:04 is in no escalation comment written this session: "what are these about: 
-
-<pasted_content id="8fc6">
-The role of `strand-reading` node 13896 is restored on your word.
-
-* The description file needs a new version" -- disposition: recorded in #2301 v9
-- cleared `SC3:6fa98d1b`: researcher message 2026-10-28T10:25 is too short to be matched; name where it is recorded: "close-session" -- disposition: no record needed: the session-close command
+- cleared `SC3:5b61c6c5`: researcher message 2026-10-27T17:19 is in no escalation comment written this session: "<pasted_content id="6b17">
+select 
+obs.id,
+node.verse_reference,
+node.seq,
+node.surface,
+obs.obs_text,
+node.cluster_subgroup_code,
+obs.tag,
+obs.window,
+obs.mean" -- disposition: recorded in #2320 v23
+- cleared `SC3:a5cb8a08`: researcher message 2026-10-28T05:28 is in no escalation comment written this session: "the following is the observation for inquired "'He inquired about their welfare' is Joseph's own act toward his brothers, in the narrative past. What he asks ab" -- disposition: recorded in #2320 v23
+- cleared `SC3:34f4ce8a`: researcher message 2026-10-28T07:28 is too short to be matched; name where it is recorded: "Approve" -- disposition: recorded in #2320 v14
+- cleared `SC3:20b08089`: researcher message 2026-10-28T07:33 is too short to be matched; name where it is recorded: "Redo five" -- disposition: recorded in #2320 v16
+- cleared `SC3:b9040bac`: researcher message 2026-10-28T10:39 is too short to be matched; name where it is recorded: "Approve #2305" -- disposition: recorded in #2305 v23
+- cleared `SC3:dde7b771`: researcher message 2026-10-28T10:47 is too short to be matched; name where it is recorded: "/close-session" -- disposition: no record needed: it is the command that starts this close
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:3ca5b679`: researcher message 2026-10-27T12:57 holds, defers or asks to check something; name its register item: "§2.1.7 is open for interpretation.  The surfaces in the verse are not restricted to the sub group surface.  the verse observations are not only for the sub grou" -- disposition: not held: the section 4 work it asked for was done and approved (#2319 v10; specification v4)
-- cleared `SC4b:6723eb39`: researcher message 2026-10-27T15:46 holds, defers or asks to check something; name its register item: "I agree we need to make the query by verse change. Note that we must not loose the objective to check the current observations and a) accept b) modify c) soft d" -- disposition: not held: it became a ruling the same day (#2318 v13: open items move out of phase 1; specification v4, 4.5)
-- cleared `SC4b:cf55f005`: researcher message 2026-10-27T17:49 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-<tools-" -- disposition: not held: the automatic context summary after compaction, not a researcher message
-- cleared `SC4b:2bebeb3c`: researcher message 2026-10-28T05:49 holds, defers or asks to check something; name its register item: "did you check c:\c before you say it exist.  why is there a task log on disk - my understanding is that all engine operations are logged in the database?  in an" -- disposition: not held: answered in the same turn and recorded in #2320 v19 (the task log was deleted after checking it; C:\c does not exist)
-- cleared `SC4b:d9880ab4`: researcher message 2026-10-28T09:10 holds, defers or asks to check something; name its register item: "the code test failed - check 2327 and 2328 and fix the errors" -- disposition: in register #2327 and #2328 (both fixed and handed over)
+- cleared `SC4b:9b605790`: researcher message 2026-10-28T09:05 holds, defers or asks to check something; name its register item: "can you check the configs regarding the files associated with analysis of clusters - what does it say" -- disposition: in register #2315
+- cleared `SC4b:0204a808`: researcher message 2026-10-28T10:31 holds, defers or asks to check something; name its register item: "approved 2320 for your follow up" -- disposition: not held: recorded as the approval on #2320 and acted on in the same turn
+- cleared `SC4b:d64159df`: researcher message 2026-10-28T10:34 holds, defers or asks to check something; name its register item: "if you actually check, instead of just using your out of date notes, then you will see that all the fixes are done, and escalations approved and closed. in addi" -- disposition: not held: acted on in the same turn (#2301 closed, v11)
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -108,6 +100,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:PowerShell:_Set-Location:7a85f476`: PowerShell: Set-Location failed 3 times this session: ok -- disposition: fixed: the Set-Location failures were hook rule prompts and a Windows PowerShell 5 parse error on a pwsh script; each call was re-issued in the right shell and succeeded
-- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 4 times this session: [31;1mInvoke-Expression: [31;1mMissing file specification after redirection operator.[0m; 2 write(s) applied (run DEVMODE-2323-STAGE-20261027, logged to cfg_change_detail): cfg_enum insert, cfg_utility insert; DRY RUN -- 9 write(s): cfg_on_fail update, cfg_write_grant update, cfg_write_grant update, cfg_write_grant update, cfg_w; work package : configuration-maintenance -- disposition: fixed: the two failed Validate runs reported coherence errors left by retiring the step reading.gather (#2321) and a worksheet drift on Reading.ps1; fixed by iba/app/migration/archive/analysis_phase_1_2320_v2_20261027.py and the Reading tab of iba/docs/ps tools worksheet.xlsx; the final Validate reported no new findings
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: At C:\Bible_study_projects\iba\app\ps\Escalation.ps1:411 char:30; [Request interrupted by user for tool use] -- disposition: fixed: the first failure was a Windows PowerShell 5 parse error of the pwsh script (re-run in pwsh) and the second a call the researcher interrupted, which had already completed (#2325 v3); no engine fault
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; error: the escalation that anchors a reading reaches completed or closed only when each of its readings is published or  -- disposition: carried #2320
