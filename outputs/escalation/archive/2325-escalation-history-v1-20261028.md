@@ -1,0 +1,12 @@
+# Escalation deep history
+
+## #2325 — Record: moving a node collides on ib_node seq
+type=issue source=researcher
+
+**v1** (2026-10-28T05:49:45Z, Claude) state=in-progress next_action=review assigned_to=Claude
+> **short description (set this version):** Record: moving a node collides on ib_node seq
+> **comment (set this version):** Researcher, chat 2026-10-28 (verbatim): 'the code was updated.  rerun Analysis_phase_1 for verse Gen 43:27'. Claude: reading m21-gen43-27-b (outputs/reading/m21-gen43-27-b/m21-gen43-27-b.json) on Gen 43:27; the sheet follows the new rules (all ten parts; findings link1 and party1 with route B; the nodes of welfare 69419, father 69423, well 69425 moved to observation 20607 by a node modify setting observation_id). Reading.ps1 -Step Record fails with 'IntegrityError: UNIQUE constraint failed: ib_node.observation_id, ib_node.seq' (run RUN-20261028_054914_685-READING): each moved node keeps seq 1 and collides with node 69417 already at seq 1 on 20607. Nothing was written (checked: nodes, observations and the reading state are as before). The node_set columns do not include seq, so a move cannot be made to work from the sheet. Fix in iba/app/lib/reading.py (the node move near line 589 and its write in _write_verse): give a moved node the next seq of the observation it moves to, logged in ib_observation_change. A correction of the build to the approved design (specification 4.1: words that bear on an act are nodes of the act's observation), no new decision.
+> **context (set this version):** iba/app/lib/reading.py; outputs/reading/m21-gen43-27-b/m21-gen43-27-b.json; escalation #2320
+
+**v2** (2026-10-28T05:52:43Z, Claude) state=in-progress next_action=review assigned_to=Claude
+> **comment (set this version):** Researcher, chat 2026-10-28 (verbatim): 'the test failed and you did not achieve your objective.  Next time, do me a favour and test your code changes in developer mode before you confirm it done.  I will open 2325 in the developer session'. Claude: recorded. Guidance for the developer session: a code change is tested end to end (here: a node move through Record on a copy, with a moved node landing on an observation that already holds a node at seq 1) before it is reported done. The tests of the earlier build did not cover that case. To be settled in the developer session: whether this guidance becomes a cfg_behaviour_rule (B:31); I have not written one, as a new rule goes through configmaint in Developer Mode.

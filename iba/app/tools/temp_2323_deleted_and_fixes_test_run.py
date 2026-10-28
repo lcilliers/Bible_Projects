@@ -44,6 +44,9 @@ subprocess.run([sys.executable, str(v6), "--db", str(DB)], capture_output=True, 
 v7 = ROOT / "iba/app/migration/analysis_phase_1_2320_v3_20261028.py"
 v7 = v7 if v7.exists() else ROOT / "iba/app/migration/archive" / v7.name
 subprocess.run([sys.executable, str(v7), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v8 = ROOT / "iba/app/migration/analysis_phase_1_2320_v4_20261028.py"
+v8 = v8 if v8.exists() else ROOT / "iba/app/migration/archive" / v8.name
+subprocess.run([sys.executable, str(v8), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
 c = sqlite3.connect(DB)
 c.execute("UPDATE cfg_setting SET value=? WHERE key='reading.output_dir'", (json.dumps(str(S / "reading")),))
 c.commit()
@@ -183,7 +186,7 @@ sil = [e for e in ex if e["kind"] == "silence"]
 stand = [(e["observation"], n["node"]) for e in ex for n in e["nodes"] if any(f["code"] == "role_standalone" for f in n["flags"])]
 case("F1", "the sheet flags the duplicate description (the later copy proposes a merge into the first), the silence kind (proposes a "
      "delete) and the standalone nodes",
-     len(merge_props) >= 1 and len(sil) >= 1 and all(any(f["code"] == "silence_kind" and f["propose"] for f in e["flags"]) for e in sil)
+     len(merge_props) >= 1 and len(sil) >= 1 and all(any(f["code"] == "unused_kind" and f["propose"] for f in e["flags"]) for e in sil)
      and len(stand) >= 1 and (dupid, True) in [(o, True) for o, _ in merge_props], (len(merge_props), len(sil), len(stand), len(ex)))
 ovl = [(e["observation"], f["code"]) for e in ex for f in e["flags"] if f["code"] == "same_word_same_role"]
 case("F1b", "observations that name the same word with the same role are listed as overlapping (the face and term pairs)",

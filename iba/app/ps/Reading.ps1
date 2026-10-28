@@ -10,7 +10,7 @@
     One reading per scope. Analysis_phase_1 (the verse understanding, #2320) is steps 1 to 3:
 
       Open     -Label m21-asking -Escalation 2320 -Objective "..." -Subgroup M21_asking [-Surface asks,asked | -Verse "Mat 7:8"]
-               0.C: ONE subgroup, or a segment of it; the home is the subgroup. Writes outputs/reading/<label>/<label>.json,
+               0.C: ONE subgroup, or a segment of it; the home is the subgroup. Writes <the home cluster's folder under _analytics/Clusters>/<label>/<label>.json,
                the index of the verses (reference, route, progress). No observation is written.
       Observe  -Label <label> [-Count n] [-Verse ref]   the next verses in hand: each verse's sheet is read from the tables
                NOW (surfaces, existing observations and nodes, ledger faces) and set in the JSON to be filled

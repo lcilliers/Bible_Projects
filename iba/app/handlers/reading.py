@@ -3,7 +3,7 @@
 One handler per Reading.ps1 step, dispatched through run.py (cfg_behaviour_rule 43). The logic is in
 lib/reading.py; a handler checks the caller, opens the step's write grants and turns a lib Refused into the
 routed condition 'refused' (cfg_on_fail: report-continue). Write steps need -By Claude|Researcher. Account
-writes its report under reading.output_dir/<label>/."""
+writes its report under the reading's folder (reading.output_dir: the home cluster's folder under _analytics/Clusters, /<label>/)."""
 from __future__ import annotations
 
 import json
@@ -87,6 +87,6 @@ def account(ctx: Ctx) -> Outcome:
     except nr.Refused as exc:
         return fail("refused", str(exc))
     label = ctx.params["Label"].strip()
-    path = PROJECT_ROOT / ctx.cfg.required_setting("reading.output_dir") / label / f"{label}-account.md"
+    path = rd.out_dir(ctx.cfg, PROJECT_ROOT, label) / f"{label}-account.md"
     out = reportkit.write_report(ctx.db.conn, ctx.step_id, path, lines)
     return ok(f"-> {out}\n  {console}", path=str(out))

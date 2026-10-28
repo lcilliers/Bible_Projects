@@ -261,9 +261,9 @@ def check(cfg, root: pathlib.Path, data: dict) -> dict:
         if f.get("basis") not in bases:
             errors.append(f"{where}: basis must be one of {bases}")
         route = f.get("route")
-        if f.get("kind") in orec.ROUTE_REQUIRED and route not in routes:
+        if f.get("kind") in orec.rules(cfg)["route_required_kinds"] and route not in routes:
             errors.append(f"{where}: a {f.get('kind')} finding carries its route, one of {routes}")
-        elif route is not None and (f.get("kind") not in orec.ROUTE_ALLOWED or route not in routes):
+        elif route is not None and (f.get("kind") not in orec.rules(cfg)["route_allowed_kinds"] or route not in routes):
             errors.append(f"{where}: route ({routes}) is held only on a party or link finding")
         sk = f.get("stable_key")
         if sk:

@@ -24,14 +24,21 @@ from __future__ import annotations
 
 import datetime
 import json
+import re
 
 from . import narrativeregister as nr
+from .cfg import Cfg
 from . import recordingpass
 from . import strandreading as sr
 
 Refused = nr.Refused
-STAGE = "Analysis_phase_1"
-ROUTE_REQUIRED, ROUTE_ALLOWED = ("party",), ("party", "link")
+
+
+def rules(cfg) -> dict:
+    """The rules for stating an observation: cfg_setting reading.observation_rules (stage, the parts never absent, the kinds not
+    used, the kinds that carry a route, the kinds that must record the primary operation, a chain and a party, the bears-on
+    refusal, the merge rule). No rule is held in the code (governance.rules_must_be_config_driven)."""
+    return cfg.required_setting("reading.observation_rules")
 
 
 def _now() -> str:
@@ -112,19 +119,36 @@ def check_parts(cfg, parts, where: str, errors: list) -> None:
                     errors.append(f"{where}: flags[{k}] is {{type: one of {spec['flag_types']}, text}} in words")
 
 
-ALWAYS_PARTS = ("sense", "evidence", "circumstance")        # spec 4.2 parts 1 and 7: every observation shows these
+def occurrence_surfaces(conn, verse_ids: list) -> dict:
+    """{verse_lexical.id: {"surface_here", "span_surface", "step_gloss"}}: the surface of each occurrence as STEP glosses its code
+    (iba/app/lib/lexical.py span_code_surfaces; #2326) and the word of the span it stands in. The build writes the same surface into
+    verse_lexical.surface, so for built rows the two agree; for a row built before that rule the sheet and a new node still get
+    the right one."""
+    from iba.app.lib import lexical
+    out = {}
+    for vid in sorted(set(verse_ids)):
+        spans = [dict(r) for r in conn.execute("SELECT id, position, surface, strong_variant FROM span WHERE verse_id=? AND deleted=0 "
+                                               "ORDER BY position", (vid,))]
+        surf = lexical.span_code_surfaces(conn, vid, spans)
+        word = {sp["id"]: sp["surface"] for sp in spans}
+        for r in conn.execute("SELECT vl.id, vl.span_id, vl.code_ordinal, vl.strong, s.stepGloss FROM verse_lexical vl "
+                              "LEFT JOIN strong s ON s.strongNumber=vl.strong WHERE vl.verse_id=? AND vl.deleted=0", (vid,)):
+            out[r["id"]] = {"surface_here": surf.get((r["span_id"], r["code_ordinal"]), word.get(r["span_id"])),
+                            "span_surface": word.get(r["span_id"]), "step_gloss": r["stepGloss"]}
+    return out
 
 
 def complete_parts(cfg, parts, where: str, errors: list) -> None:
     """The observation of a relevant surface covers the parts of spec 4.2 (#2323, researcher: "the observations for each surface
     comply with the requirement"). Every key of reading.observation_parts is present: given in words (polarity: refusal or
     pursuit; flags: a list of typed flags, empty when none), or stated absent as {"none": "why the verse shows none"}. The
-    sense with its evidence and the circumstance (how it appears here) are never absent."""
+    parts in reading.observation_rules parts_never_absent are never absent."""
     spec, loop = _parts_setting(cfg), loop_setting(cfg)
     minc = loop["min_reason_chars"]
+    never_absent = rules(cfg)["parts_never_absent"]
     if not isinstance(parts, dict):
         errors.append(f"{where}: the parts of spec 4.2 are missing: give each of {spec['parts']} in words, or "
-                      f"{{\"none\": \"why the verse shows none\"}} (sense, evidence and circumstance are always given)")
+                      f"{{\"none\": \"why the verse shows none\"}} ({never_absent} are always given)")
         return
     for key in spec["parts"]:
         v = parts.get(key)
@@ -132,7 +156,7 @@ def complete_parts(cfg, parts, where: str, errors: list) -> None:
         if v is None:
             errors.append(f"{where}: part {key!r} is missing: give it, or {{\"none\": \"why the verse shows none\"}}")
         elif none:
-            if key in ALWAYS_PARTS:
+            if key in never_absent:
                 errors.append(f"{where}: part {key!r} is never absent")
             elif len((v["none"] or "").strip()) < minc:
                 errors.append(f"{where}: part {key!r}: the reason it is absent needs {minc} characters or more")
@@ -177,12 +201,14 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
         kind = s.get("kind")
         p = {"key": key, "where": where, "existing": None, "nodes": []}
         if existing is not None:
-            row = conn.execute("SELECT id, tag, deleted FROM ib_observation WHERE id=?", (existing,)).fetchone()
+            row = conn.execute("SELECT id, tag, route, deleted FROM ib_observation WHERE id=?", (existing,)).fetchone()
             if row is None or row["deleted"]:
                 errors.append(f"{where}: existing {existing} is not a live observation")
                 continue
-            if any(s.get(k) for k in ("text", "meaning", "implication", "basis", "route")):
-                errors.append(f"{where}: an existing finding takes nodes only (a changed description is a new finding, "
+            # an existing finding takes its kind and route from the live observation (#2327): a party or link observation gains the
+            # nodes of another verse (RW-03, RO11); a kind or route given on the sheet must be the one it already has
+            if any(s.get(k) for k in ("text", "meaning", "implication", "basis")) or (s.get("route") and s["route"] != row["route"])                     or (s.get("kind") and s["kind"] != row["tag"]):
+                errors.append(f"{where}: an existing finding takes nodes only (a changed description, kind or route is a new finding, "
                               f"and the old one withdrawn with its reason)")
             p["existing"], kind = row["id"], row["tag"]
         else:
@@ -206,9 +232,9 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
             if s.get("basis") not in bases:
                 errors.append(f"{where}: basis must be one of {bases}")
             route = s.get("route")
-            if kind in ROUTE_REQUIRED and route not in routes:
+            if kind in rules(cfg)["route_required_kinds"] and route not in routes:
                 errors.append(f"{where}: a {kind} finding carries its route, one of {routes}")
-            elif route is not None and (kind not in ROUTE_ALLOWED or route not in routes):
+            elif route is not None and (kind not in rules(cfg)["route_allowed_kinds"] or route not in routes):
                 errors.append(f"{where}: route ({routes}) is held only on a party or link finding")
             quotes += sr._quote_check(conn, cfg, [s.get(k) for k in ("text", "meaning", "implication")], where)
             check_parts(cfg, s.get("parts"), where, errors)
@@ -249,14 +275,15 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
                 errors.append(f"{at}: role must be one of {roles} (the word's role in this finding)")
             occ = {"verse_reference": None, "surface": n.get("surface"), "morph_code": None, "verse_lexical_id": None}
             if n.get("occurrence") is not None:        # the occurrence itself (#2320): a word as written, with its Strong
-                row = conn.execute("SELECT vl.id, vl.strong, vl.surface, vl.morph_code, v.osisId FROM verse_lexical vl "
+                row = conn.execute("SELECT vl.id, vl.verse_id, vl.strong, vl.surface, vl.morph_code, v.osisId FROM verse_lexical vl "
                                    "JOIN verse v ON v.id=vl.verse_id WHERE vl.id=? AND vl.deleted=0",
                                    (n["occurrence"],)).fetchone()
                 if row is None or row["strong"] != strong:
                     errors.append(f"{at}: occurrence {n['occurrence']} is not a live occurrence of {strong}")
                     continue
-                occ = {"verse_reference": row["osisId"], "surface": row["surface"], "morph_code": row["morph_code"],
-                       "verse_lexical_id": row["id"]}
+                here = occurrence_surfaces(conn, [row["verse_id"]]).get(row["id"], {}).get("surface_here") or row["surface"]
+                occ = {"verse_reference": row["osisId"], "surface": here, "morph_code": row["morph_code"],
+                       "verse_lexical_id": row["id"], "pair_surface": row["surface"]}
             elif n.get("verse"):
                 try:
                     vr = sr._verse(conn, vx, n["verse"])
@@ -268,6 +295,7 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
                 errors.append(f"{at}: only a term finding applies to a word with no verse")
             p["nodes"].append({"strong": strong, "cluster": cluster, "role": n.get("role"),
                                "question": n.get("question"), "traced": n.get("traced"), "at": at,
+                               "pair_surface": occ.get("pair_surface", occ["surface"]),
                                **{k: occ[k] for k in ("verse_reference", "surface", "morph_code", "verse_lexical_id")}})
         if kind == "qualification":
             got = {n.get("role") for n in p["nodes"]}
@@ -288,6 +316,7 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
 def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
     """Write a checked plan. Returns {key: {"observation": id, "nodes": [ids], "new": bool}}. Caller commits."""
     out, now = {}, _now()
+    stage = rules(Cfg.on(conn))["stage"]            # what wrote the row: a record of origin, never a filter
     for p in plan:
         if p["existing"] is not None:
             oid, new = p["existing"], False
@@ -296,7 +325,7 @@ def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
             oid = conn.execute(
                 "INSERT INTO ib_observation (cluster_code, stage, tag, obs_text, meaning, implication, basis, route, "
                 "parts, meaning_source, status, run_id, created_at) VALUES (NULL,?,?,?,?,?,?,?,?,'verse-text','draft',?,?)",
-                (STAGE, p["kind"], p["text"], p.get("meaning"), p.get("implication"), p["basis"], p.get("route"),
+                (stage, p["kind"], p["text"], p.get("meaning"), p.get("implication"), p["basis"], p.get("route"),
                  json.dumps(parts, ensure_ascii=False) if parts else None, run_id, now)).lastrowid
             new = True
         out[p["key"]] = {"observation": oid, "nodes": [], "new": new}
@@ -319,13 +348,13 @@ def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
                 cluster = row[0] if row else None
             if cluster is None:
                 raise Refused(f"a node of finding {p['key']} has no cluster (ib_node.cluster_code is required)")
-            sg = subgroup_code(conn, cluster, n["strong"], n.get("surface")) if n.get("strong") else None
+            sg = subgroup_code(conn, cluster, n["strong"], n.get("pair_surface") or n.get("surface")) if n.get("strong") else None
             nid = conn.execute(
                 "INSERT INTO ib_node (observation_id, cluster_code, cluster_subgroup_code, strong, verse_reference, surface, "
                 "morph_code, question_code, traced_observation_id, source_stage, seq, role, reading_id, created_at, "
                 "verse_lexical_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (oid, cluster, sg, n.get("strong"), n.get("verse_reference"), n.get("surface"), n.get("morph_code"),
-                 n.get("question"), traced, STAGE, seq, n.get("role"), reading_id, now,
+                 n.get("question"), traced, stage, seq, n.get("role"), reading_id, now,
                  n.get("verse_lexical_id"))).lastrowid
             out[p["key"]]["nodes"].append(nid)
     return out
@@ -395,7 +424,7 @@ def merge_observation(conn, dup_id: int, into_id: int, reason: str, reading_id, 
     k = conn.execute("SELECT * FROM ib_observation WHERE id=?", (into_id,)).fetchone()
     if d is None or d["deleted"] or k is None or k["deleted"] or dup_id == into_id:
         raise Refused(f"merge {dup_id} into {into_id}: both must be different live observations")
-    if (d["obs_text"] or "").strip() != (k["obs_text"] or "").strip():
+    if rules(Cfg.on(conn))["merge_same_text_only"] and (d["obs_text"] or "").strip() != (k["obs_text"] or "").strip():
         raise Refused(f"merge {dup_id} into {into_id}: a merge is for the same description; the texts differ")
     seq = conn.execute("SELECT COALESCE(MAX(seq), 0) FROM ib_node WHERE observation_id=?", (into_id,)).fetchone()[0]
     moved = dropped = 0
@@ -490,6 +519,12 @@ def modify_node(cfg, conn, node_id: int, sets: dict, reason: str, reading_id, ru
     if ("cluster_code" in sets and sets["cluster_code"] is not None
             and sets["cluster_code"] not in word_clusters(conn, n["strong"])):
         raise Refused(f"node {node_id}: cluster must be one of {n['strong']}'s own clusters")
+    sets = dict(sets)
+    if "observation_id" in sets and sets["observation_id"] != n["observation_id"]:
+        # a node moved to another observation takes the next seq there (ib_node is unique on observation_id, seq; a deleted
+        # node keeps its seq, so the maximum counts it): the move would otherwise collide with the node already at its seq (#2325)
+        sets["seq"] = conn.execute("SELECT COALESCE(MAX(seq), 0) + 1 FROM ib_node WHERE observation_id=?",
+                                   (sets["observation_id"],)).fetchone()[0]
     changed = []
     for col, val in sets.items():
         if n[col] != val:

@@ -34,6 +34,7 @@ import json
 import pathlib
 import re
 
+from . import filingkit
 from . import escalation
 from . import narrativecopy
 from . import narrativeregister as nr
@@ -90,8 +91,19 @@ def _at(conn, label, state: str):
     return r
 
 
-def out_dir(cfg, root: pathlib.Path, label: str) -> pathlib.Path:
-    return root / cfg.required_setting("reading.output_dir") / label
+def out_dir(cfg, root: pathlib.Path, label: str, home: str | None = None) -> pathlib.Path:
+    """The folder of a reading: cfg_setting reading.output_dir, whose {cluster_folder} is the home cluster's folder by the filing
+    convention (report.cluster_folder_naming_convention; filingkit.cluster_folder_name): _analytics/Clusters/M21 - fasting-piety/
+    <label>/ (#2328). A setting without the placeholder is used as it stands."""
+    pattern = cfg.required_setting("reading.output_dir")
+    if "{cluster_folder}" in pattern:
+        if home is None:
+            row = cfg.conn.execute("SELECT home_cluster FROM reading WHERE label=?", (label,)).fetchone()
+            if row is None:
+                raise Refused(f"reading {label!r} does not exist: its folder is the home cluster's")
+            home = row[0]
+        pattern = pattern.replace("{cluster_folder}", filingkit.cluster_folder_name(cfg.conn, home))
+    return root / pattern / label
 
 
 def _rel(root: pathlib.Path, p: pathlib.Path) -> str:
@@ -235,7 +247,7 @@ def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_requ
         segment = {**(segment or {}), "verses": p["Verse"].strip()}
     if not verses:
         raise Refused("the scope holds no verse" + (" after the segment" if segment else ""))
-    folder = out_dir(cfg, root, label)
+    folder = out_dir(cfg, root, label, home)
     path = folder / f"{label}.json"
     if path.exists():
         raise Refused(f"{_rel(root, path)} is already on disk")
@@ -291,6 +303,8 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
     by_verse: dict = {i: [] for i in ids}
     for r in rows:
         by_verse[r["verse_id"]].append(r)
+    osur = orec.occurrence_surfaces(conn, ids)      # the surface of each occurrence as STEP glosses it (multi-code spans)
+    db_surface = {r["id"]: r["surface"] for r in rows}
     sheets = {}
     for it in items:
         vid = it["verse_id"]
@@ -309,7 +323,11 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                     hint.append("M-coded")
                 if r["strong"] in never:
                     hint.append("never a characteristic: " + never[r["strong"]])
-                g = groups[key] = {"occurrences": [], "word": f"{r['surface']} ({r['strong']})", "strong": r["strong"],
+                os_ = osur.get(r["id"]) or {}
+                here = os_.get("surface_here") or r["surface"]
+                g = groups[key] = {"occurrences": [], "word": f"{here} ({r['strong']})", "strong": r["strong"],
+                                   "surface_here": here, "span_surface": os_.get("span_surface") if os_.get("span_surface") != here else None,
+                                   "step_gloss": os_.get("step_gloss"),
                                    "surface": r["surface"], "morph": r["morph_code"], "position": r["position"],
                                    "clusters": clusters.get(r["strong"], []),
                                    "subgroups": subs.get((r["strong"], _norm(r["surface"])), []), "hint": hint,
@@ -332,6 +350,7 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
         "(verse_reference NOT IN (SELECT value FROM json_each(?)) OR verse_reference IS NULL) AND "
         "deleted=0 GROUP BY observation_id", (json.dumps(sorted(obs)), OJ))}
     kinds = orec.kinds(cfg)
+    rl_ = orec.rules(cfg)
     rel_roles_ = set(orec.node_role_groups(cfg)["relevant"])
     bear_roles_ = set(orec.node_role_groups(cfg)["bears_on"])
     dups: dict = {}                         # a description live more than once: {text: [ids]}
@@ -356,7 +375,10 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
              "link": None})
     for it in items:
         vid, osis = it["verse_id"], it["osis"]
-        occ_by_key = {(g["strong"], _norm(g["surface"])): g["occurrences"] for g in sheets[vid]["surfaces"]}
+        occ_by_key = {}
+        for g in sheets[vid]["surfaces"]:
+            occ_by_key[(g["strong"], _norm(g["surface"]))] = g["occurrences"]
+            occ_by_key.setdefault((g["strong"], _norm(g["surface_here"])), g["occurrences"])
         occ_ids = {i for g in sheets[vid]["surfaces"] for i in g["occurrences"]}
         existing = []
         for (oid, ref), ns in nodes.items():
@@ -374,8 +396,14 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                 if counts and n["verse_lexical_id"] is None:
                     suggest["verse_lexical_id"] = counts
                 nflags = []
+                if counts and n["strong"] and osur.get(counts) and osur[counts]["surface_here"] != db_surface.get(counts)                         and n["surface"] != osur[counts]["surface_here"]:
+                    suggest["surface"] = osur[counts]["surface_here"]
+                    nflags.append({"code": "surface_differs", "propose": {"set": {"surface": suggest["surface"]}},
+                                   "text": f"this occurrence is written {suggest['surface']!r} for {n['strong']} (STEP: "
+                                           f"{osur[counts]['step_gloss']!r}), the span's word {db_surface.get(counts)!r} is the "
+                                           f"other code's; the node holds {n['surface']!r}: set when the verse is recorded"})
                 if counts and n["strong"]:
-                    code = orec.subgroup_code(conn, n["cluster_code"], n["strong"], n["surface"])
+                    code = orec.subgroup_code(conn, n["cluster_code"], n["strong"], db_surface.get(counts, n["surface"]))
                     if code and code != n["cluster_subgroup_code"]:
                         suggest["cluster_subgroup_code"] = code
                         nflags.append({"code": "subgroup_missing" if not n["cluster_subgroup_code"] else "subgroup_differs",
@@ -407,11 +435,11 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                 else:
                     flags.append({"code": "duplicate_description", "propose": None,
                                   "text": f"other live copies of this description: {same[1:]}; each is merged into this one"})
-            if o["tag"] == "silence":
-                flags.append({"code": "silence_kind", "text": "the silence kind is not used by Analysis_phase_1: a surface with "
-                              "no inner-being role is not recorded",
-                              "propose": {"action": "delete", "reason": "the silence kind is not used: a surface with no "
-                                          "inner-being role is not recorded (spec 4.1; #2323)"}})
+            if o["tag"] in rl_["unused_kinds"]:
+                flags.append({"code": "unused_kind", "text": f"the kind {o['tag']!r} is not used by Analysis_phase_1 "
+                              f"(reading.observation_rules unused_kinds): a surface with no inner-being role is not recorded",
+                              "propose": {"action": "delete", "reason": f"the kind {o['tag']} is not used: a surface with no "
+                                          f"inner-being role is not recorded (spec 4.1; #2323)"}})
             elif o["tag"] not in kinds:
                 flags.append({"code": "kind_not_in_parts", "text": f"the tag {o['tag']!r} is not a kind of observation "
                               f"({[k for k in kinds if k != 'silence']}): the tag shows the type of the finding; read what it says and "
@@ -503,7 +531,8 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
     loop = _setting_loop(cfg)
     groups_roles = orec.node_role_groups(cfg)
     minc = loop["min_reason_chars"]
-    kinds_ok = set(orec.kinds(cfg)) - {"silence"}
+    rl = orec.rules(cfg)                    # the rules for stating an observation (cfg_setting reading.observation_rules)
+    kinds_ok = set(orec.kinds(cfg)) - set(rl["unused_kinds"])
     sh = v["sheet"]
     at = v["verse"]
     ok_reason = lambda s: len((s or "").strip()) >= minc
@@ -540,7 +569,7 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
             into = a.get("into")
             tgt = conn.execute("SELECT trim(obs_text) t FROM ib_observation WHERE id=? AND deleted=0 ", (into,)).fetchone() \
                 if isinstance(into, int) and into != e["observation"] else None
-            if tgt is None or tgt["t"] != (e["text"] or "").strip():
+            if tgt is None or (orec.rules(cfg)["merge_same_text_only"] and tgt["t"] != (e["text"] or "").strip()):
                 errors.append(f"{at}: observation {e['observation']}: a merge names `into`, another live observation with the "
                               f"same description")
                 continue
@@ -590,7 +619,12 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
                 node_dest.append((dest, role))
     for f in sh.get("findings") or []:
         plan["findings"].append(f)
-        after[f"new:{f.get('key')}"] = {"kind": f.get("kind"), "parts": f.get("parts"), "route": f.get("route")}
+        rowx = conn.execute("SELECT tag, route, parts FROM ib_observation WHERE id=? AND deleted=0", (f["existing"],)).fetchone()             if isinstance(f.get("existing"), int) else None
+        if rowx is not None:       # an existing finding gaining nodes: its kind, route and parts are the live observation's (#2327)
+            after[f"new:{f.get('key')}"] = {"kind": rowx["tag"], "route": rowx["route"],
+                                            "parts": json.loads(rowx["parts"]) if rowx["parts"] else None}
+        else:
+            after[f"new:{f.get('key')}"] = {"kind": f.get("kind"), "parts": f.get("parts"), "route": f.get("route")}
         for nd in (f.get("nodes") or []):
             if isinstance(nd, dict) and nd.get("role"):
                 node_dest.append((f"new:{f.get('key')}", nd["role"]))
@@ -636,7 +670,7 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
         if not roles:
             continue                         # no node left: the observation is soft deleted when the verse is recorded
         label = f"observation {key}" if isinstance(key, int) else f"finding {key[4:]}"
-        if set(roles) <= set(groups_roles["bears_on"]):
+        if rl["bears_on_only_refused"] and set(roles) <= set(groups_roles["bears_on"]):
             errors.append(f"{at}: {label}: every node it holds is of a role that bears on an act ({sorted(set(roles))}): the "
                           f"words that bear on an act are nodes of the observation of the act (spec 4.1), not an observation of "
                           f"their own: move the nodes to the observation of the act (a node modify setting `observation_id`) and "
@@ -647,15 +681,18 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
         orec.complete_parts(cfg, o["parts"], f"{at}: {label}", perr)
         errors.extend(perr)
     if covering:
-        if not any(o["kind"] == "statement" and orec.given(o["parts"], "primary_operation") for o in covering.values()):
-            errors.append(f"{at}: the primary operation is not recorded: one observation of the kind statement has the part "
-                          f"`primary_operation` in words (the operation with nothing upstream; spec 4.2 part 8)")
-        if any(orec.given(o["parts"], "chain") for o in covering.values()) and not any(o["kind"] == "link" for o in after.values()):
-            errors.append(f"{at}: a chain of operations is stated but no observation of the kind link records it (spec 4.2 part 8)")
-        if any(orec.given(o["parts"], "party") for o in covering.values()) and not any(
-                o["kind"] == "party" and o["route"] for o in after.values()):
-            errors.append(f"{at}: another party is stated but no observation of the kind party with its route "
-                          f"{sorted(cfg.enum('observation_route'))} records it (spec 4.2 part 6)")
+        po, ch, pa = rl["primary_operation"], rl["chain"], rl["party"]
+        if not any(o["kind"] == po["kind"] and orec.given(o["parts"], po["part"]) for o in covering.values()):
+            errors.append(f"{at}: the primary operation is not recorded: one observation of the kind {po['kind']} has the part "
+                          f"`{po['part']}` in words (the operation with nothing upstream; spec 4.2 part 8)")
+        if any(orec.given(o["parts"], ch["part"]) for o in covering.values()) and not any(o["kind"] == ch["kind"] for o in after.values()):
+            errors.append(f"{at}: a chain of operations is stated but no observation of the kind {ch['kind']} records it "
+                          f"(spec 4.2 part 8)")
+        if any(orec.given(o["parts"], pa["part"]) for o in covering.values()) and not any(
+                o["kind"] == pa["kind"] and (o["route"] or not pa["route_required"]) for o in after.values()):
+            errors.append(f"{at}: another party is stated but no observation of the kind {pa['kind']}"
+                          + (f" with its route {sorted(cfg.enum('observation_route'))}" if pa["route_required"] else "")
+                          + " records it (spec 4.2 part 6)")
     return plan
 
 
@@ -970,7 +1007,7 @@ def synergy(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
                    "{...}} | {\"as\": \"touched\", \"found\"} (only for an item whose target reaches past the reading). "
                    "Tellings and blocks are written at Narrate. Then Reading.ps1 -Step Apply.",
             "findings": F, "claims": C, "new_claims": [], "open_items": I}
-    path = out_dir(cfg, root, r["label"]) / f"{r['label']}-synergy.json"
+    path = out_dir(cfg, root, r["label"], r["home_cluster"]) / f"{r['label']}-synergy.json"
     if path.exists():
         path.replace(path.with_name(f"{r['label']}-synergy-{built.replace(':', '').replace('-', '')}.json"))
     _save(path, data)
@@ -1180,7 +1217,7 @@ def _build_narrate(cfg, root: pathlib.Path, r) -> pathlib.Path:
                    "the Narrative rewrite shape (update, refs, blocks) or null. The style is the narrative rules "
                    "(RN-01 onward, step reading.narrate). Then Reading.ps1 -Step Narrate -Label " + r["label"] + ".",
             "claims": C, "blocks": B, "rewrite": None}
-    path = out_dir(cfg, root, r["label"]) / f"{r['label']}-narrate.json"
+    path = out_dir(cfg, root, r["label"], r["home_cluster"]) / f"{r['label']}-narrate.json"
     if path.exists():
         path.replace(path.with_name(f"{r['label']}-narrate-{built.replace(':', '').replace('-', '')}.json"))
     _save(path, data)

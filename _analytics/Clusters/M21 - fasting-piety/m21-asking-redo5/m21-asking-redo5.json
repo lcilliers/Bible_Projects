@@ -1,0 +1,1090 @@
+{
+ "reading": "m21-asking-redo5",
+ "reading_id": 9,
+ "escalation": 2320,
+ "subgroup": "M21_asking",
+ "home": "M21",
+ "segment": {
+  "verses": "Gen 24:47; Gen 24:57; Gen 26:7; Gen 32:17; Gen 32:29"
+ },
+ "objective": "the asking words in the first five verses of m21-asking, redone under the enforced observation rules",
+ "opened": "2026-10-28T07:34:07Z",
+ "how": "The index of the verses in scope. Reading.ps1 -Step Observe puts the next verses in hand (a sheet each: the surfaces, the existing observations and nodes, the ledger faces, read from the tables then); fill the sheets; Reading.ps1 -Step Record writes them and marks the verses done; Reading.ps1 -Step Check passes the gate when every verse is done.",
+ "counts": {
+  "verses": 5,
+  "done": 5
+ },
+ "verses": [
+  {
+   "verse": "Gen 24:47",
+   "osis": "Gen.24.47",
+   "verse_id": 809,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-28T07:36:00Z",
+    "run_id": "RUN-20261028_073548_362-READING",
+    "existing": {
+     "accepted": 0,
+     "modified": 1,
+     "deleted": 0,
+     "merged": 0,
+     "nodes_modified": 0,
+     "nodes_deleted": 0,
+     "links": 0,
+     "orphaned": 0,
+     "left": 0
+    },
+    "left": [],
+    "surfaces": [
+     {
+      "word": "asked (H7592)",
+      "occurrences": [
+       975894
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: the servant asks Rebekah whose daughter she is, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "asked (H0559)",
+      "occurrences": [
+       975895
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (asked (H0559)), no inner-being sense in this verse"
+     },
+     {
+      "word": "Whose (H4310)",
+      "occurrences": [
+       975896
+      ],
+      "result": "bears_on",
+      "reason": "what is asked: the content of the question, whose daughter"
+     },
+     {
+      "word": "daughter (H1323G)",
+      "occurrences": [
+       975897,
+       975902
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (daughter (H1323G))"
+     },
+     {
+      "word": "daughter (H0853)",
+      "occurrences": [
+       975898
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTo): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "daughter (H9034)",
+      "occurrences": [
+       975899
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3fs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "you (H0859C)",
+      "occurrences": [
+       975900
+      ],
+      "result": "bears_on",
+      "reason": "the one asked: Rebekah addressed as you"
+     },
+     {
+      "word": "said (H0559)",
+      "occurrences": [
+       975901
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (said (H0559)), no inner-being sense in this verse"
+     },
+     {
+      "word": "Bethuel (H1328A)",
+      "occurrences": [
+       975903
+      ],
+      "result": "not_relevant",
+      "reason": "a name, person or place of the narrative, no inner-being role in this verse"
+     },
+     {
+      "word": "Nahor’s (H5152H)",
+      "occurrences": [
+       975904
+      ],
+      "result": "not_relevant",
+      "reason": "a name, person or place of the narrative, no inner-being role in this verse"
+     },
+     {
+      "word": "son (H1121A)",
+      "occurrences": [
+       975905
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (son (H1121A))"
+     },
+     {
+      "word": "Milcah (H4435G)",
+      "occurrences": [
+       975906
+      ],
+      "result": "not_relevant",
+      "reason": "a name, person or place of the narrative, no inner-being role in this verse"
+     },
+     {
+      "word": "Milcah (H9005)",
+      "occurrences": [
+       975907
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HRd): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "Milcah (H9033)",
+      "occurrences": [
+       975908
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3ms): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "bore (H3205)",
+      "occurrences": [
+       975909
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (bore (H3205)), no inner-being sense in this verse"
+     },
+     {
+      "word": "bore (H0834A)",
+      "occurrences": [
+       975910
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTr): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "put (H7760H)",
+      "occurrences": [
+       975911
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (put (H7760H)), no inner-being sense in this verse"
+     },
+     {
+      "word": "ring (H5141)",
+      "occurrences": [
+       975912
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (ring (H5141))"
+     },
+     {
+      "word": "ring (H9009)",
+      "occurrences": [
+       975913
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTd): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "on (H5921A)",
+      "occurrences": [
+       975914
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "nose (H0639H)",
+      "occurrences": [
+       975915
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (nose (H0639H))"
+     },
+     {
+      "word": "bracelets (H6781A)",
+      "occurrences": [
+       975916
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (bracelets (H6781A))"
+     },
+     {
+      "word": "bracelets (H9009)",
+      "occurrences": [
+       975917
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTd): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "bracelets (H9002)",
+      "occurrences": [
+       975918
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HC): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "bracelets (H9024)",
+      "occurrences": [
+       975919
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3fs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "her (H9024)",
+      "occurrences": [
+       975920
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3fs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "arms (H3027G)",
+      "occurrences": [
+       975921
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (arms (H3027G))"
+     },
+     {
+      "word": "arms (H5921A)",
+      "occurrences": [
+       975922
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     }
+    ],
+    "written": {
+     "observations": [
+      20653,
+      20654
+     ],
+     "nodes": 2
+    }
+   }
+  },
+  {
+   "verse": "Gen 24:57",
+   "osis": "Gen.24.57",
+   "verse_id": 9477,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-28T07:35:25Z",
+    "run_id": "RUN-20261028_073517_514-READING",
+    "existing": {
+     "accepted": 0,
+     "modified": 1,
+     "deleted": 0,
+     "merged": 0,
+     "nodes_modified": 0,
+     "nodes_deleted": 0,
+     "links": 0,
+     "orphaned": 0,
+     "left": 0
+    },
+    "left": [],
+    "surfaces": [
+     {
+      "word": "said (H0559)",
+      "occurrences": [
+       985432
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (said (H0559)), no inner-being sense in this verse"
+     },
+     {
+      "word": "call (H7121G)",
+      "occurrences": [
+       985433
+      ],
+      "result": "relevant",
+      "reason": "H7121 call: the family will summon her so that she can be asked herself"
+     },
+     {
+      "word": "young woman (H5291)",
+      "occurrences": [
+       985434
+      ],
+      "result": "bears_on",
+      "reason": "the one called and asked, Rebekah as the young woman"
+     },
+     {
+      "word": "young woman (H9005)",
+      "occurrences": [
+       985435
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HRd): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "ask (H7592)",
+      "occurrences": [
+       985436
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: the family decides to ask Rebekah herself, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "her (H6310G)",
+      "occurrences": [
+       985437
+      ],
+      "result": "bears_on",
+      "reason": "H6310 is the mouth: the ESV renders the idiom to ask at her mouth as ask her, so the English hides the word"
+     },
+     {
+      "word": "her (H9024)",
+      "occurrences": [
+       985438
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3fs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "her (H0853)",
+      "occurrences": [
+       985439
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTo): preposition, suffix, article or particle, no inner-being role"
+     }
+    ],
+    "written": {
+     "observations": [
+      20649,
+      20650
+     ],
+     "nodes": 2
+    }
+   }
+  },
+  {
+   "verse": "Gen 26:7",
+   "osis": "Gen.26.7",
+   "verse_id": 2950,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-28T07:36:39Z",
+    "run_id": "RUN-20261028_073631_221-READING",
+    "existing": {
+     "accepted": 0,
+     "modified": 2,
+     "deleted": 0,
+     "merged": 0,
+     "nodes_modified": 0,
+     "nodes_deleted": 0,
+     "links": 0,
+     "orphaned": 0,
+     "left": 1
+    },
+    "left": [
+     11877
+    ],
+    "surfaces": [
+     {
+      "word": "men (H0582)",
+      "occurrences": [
+       977915,
+       977931
+      ],
+      "result": "bears_on",
+      "reason": "the ones asking, the men of the place"
+     },
+     {
+      "word": "place (H4725)",
+      "occurrences": [
+       977916,
+       977933
+      ],
+      "result": "not_relevant",
+      "reason": "a name, person or place of the narrative, no inner-being role in this verse"
+     },
+     {
+      "word": "place (H9009)",
+      "occurrences": [
+       977917,
+       977934
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTd): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "asked (H7592)",
+      "occurrences": [
+       977918
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: the men of the place ask Isaac about his wife, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "wife (H0802H)",
+      "occurrences": [
+       977919,
+       977930
+      ],
+      "result": "bears_on",
+      "reason": "what is asked about: the wife"
+     },
+     {
+      "word": "wife (H9005)",
+      "occurrences": [
+       977920
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "he (H9023)",
+      "occurrences": [
+       977921
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3ms): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "said (H0559)",
+      "occurrences": [
+       977922
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (said (H0559)), no inner-being sense in this verse"
+     },
+     {
+      "word": "sister (H0269)",
+      "occurrences": [
+       977923
+      ],
+      "result": "not_relevant",
+      "reason": "a name, person or place of the narrative, no inner-being role in this verse"
+     },
+     {
+      "word": "he (H1931)",
+      "occurrences": [
+       977924
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HPp3fs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "feared (H3372G)",
+      "occurrences": [
+       977925
+      ],
+      "result": "relevant",
+      "reason": "H3372 fear: Isaac feared to say my wife; fear is the inner state that the verse gives as his reason"
+     },
+     {
+      "word": "feared (H9020)",
+      "occurrences": [
+       977926
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "feared (H3588A)",
+      "occurrences": [
+       977927
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTc): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "say (H0559)",
+      "occurrences": [
+       977928
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (say (H0559)), no inner-being sense in this verse"
+     },
+     {
+      "word": "say (H9005)",
+      "occurrences": [
+       977929
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "men (H9030)",
+      "occurrences": [
+       977932
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "kill (H2026)",
+      "occurrences": [
+       977935
+      ],
+      "result": "bears_on",
+      "reason": "what he feared: that the men would kill him"
+     },
+     {
+      "word": "kill (H9020)",
+      "occurrences": [
+       977936
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "kill (H6435)",
+      "occurrences": [
+       977937
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTc): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "Rebekah (H7259)",
+      "occurrences": [
+       977938
+      ],
+      "result": "bears_on",
+      "reason": "the person because of whom he fears, Rebekah"
+     },
+     {
+      "word": "Rebekah (H5921A)",
+      "occurrences": [
+       977939
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "she (H1931)",
+      "occurrences": [
+       977940
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HPp3fs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "attractive (H2896A)",
+      "occurrences": [
+       977941
+      ],
+      "result": "relevant",
+      "reason": "H2896 attractive: Rebekah's good appearance, which the verse gives as the reason for the fear"
+     },
+     {
+      "word": "attractive (H3588A)",
+      "occurrences": [
+       977942
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTc): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "appearance (H4758)",
+      "occurrences": [
+       977943
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (appearance (H4758))"
+     }
+    ],
+    "written": {
+     "observations": [
+      20657,
+      20658,
+      20629
+     ],
+     "nodes": 3
+    }
+   }
+  },
+  {
+   "verse": "Gen 32:17",
+   "osis": "Gen.32.17",
+   "verse_id": 9564,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-28T07:35:25Z",
+    "run_id": "RUN-20261028_073517_514-READING",
+    "existing": {
+     "accepted": 0,
+     "modified": 1,
+     "deleted": 0,
+     "merged": 0,
+     "nodes_modified": 0,
+     "nodes_deleted": 0,
+     "links": 0,
+     "orphaned": 0,
+     "left": 0
+    },
+    "left": [],
+    "surfaces": [
+     {
+      "word": "instructed (H6680)",
+      "occurrences": [
+       987170
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (instructed (H6680)), no inner-being sense in this verse"
+     },
+     {
+      "word": "instructed (H0559)",
+      "occurrences": [
+       987171
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (instructed (H0559)), no inner-being sense in this verse"
+     },
+     {
+      "word": "first (H7223G)",
+      "occurrences": [
+       987172
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (first (H7223G))"
+     },
+     {
+      "word": "first (H9009)",
+      "occurrences": [
+       987173
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTd): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "first (H0853)",
+      "occurrences": [
+       987174
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTo): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "When (H3588A)",
+      "occurrences": [
+       987175
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTc): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "When (H9005)",
+      "occurrences": [
+       987176
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "Esau (H6215G)",
+      "occurrences": [
+       987177
+      ],
+      "result": "bears_on",
+      "reason": "the one who will ask, Esau"
+     },
+     {
+      "word": "Esau (H9031)",
+      "occurrences": [
+       987178
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp2ms): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "brother (H0251G)",
+      "occurrences": [
+       987179
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (brother (H0251G))"
+     },
+     {
+      "word": "meets (H6298)",
+      "occurrences": [
+       987180
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (meets (H6298)), no inner-being sense in this verse"
+     },
+     {
+      "word": "asks (H7592)",
+      "occurrences": [
+       987181
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: Esau is expected to ask the servant, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "asks (H9020)",
+      "occurrences": [
+       987182
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "asks (H0559)",
+      "occurrences": [
+       987183
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (asks (H0559)), no inner-being sense in this verse"
+     },
+     {
+      "word": "To (H9005)",
+      "occurrences": [
+       987184
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "whom (H4310)",
+      "occurrences": [
+       987185
+      ],
+      "result": "bears_on",
+      "reason": "content of Esau's questions: to whom the servant belongs"
+     },
+     {
+      "word": "whom (H9031)",
+      "occurrences": [
+       987186
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp2ms): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "whom (H9005)",
+      "occurrences": [
+       987187
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "you (H0859A)",
+      "occurrences": [
+       987188
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HPp2ms): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "Where (H0575)",
+      "occurrences": [
+       987189
+      ],
+      "result": "bears_on",
+      "reason": "content of Esau's questions: where he is going"
+     },
+     {
+      "word": "Where (H9002)",
+      "occurrences": [
+       987190
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HC): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "going (H1980G)",
+      "occurrences": [
+       987191
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (going (H1980G)), no inner-being sense in this verse"
+     },
+     {
+      "word": "whose (H4310)",
+      "occurrences": [
+       987192
+      ],
+      "result": "bears_on",
+      "reason": "content of Esau's questions: whose the droves are"
+     },
+     {
+      "word": "whose (H9002)",
+      "occurrences": [
+       987193
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HC): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "whose (H9005)",
+      "occurrences": [
+       987194
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "ahead (H6440G)",
+      "occurrences": [
+       987195
+      ],
+      "result": "not_relevant",
+      "reason": "no inner-being role in this verse (ahead (H6440G))"
+     },
+     {
+      "word": "ahead (H9005)",
+      "occurrences": [
+       987196
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "ahead (H9021)",
+      "occurrences": [
+       987197
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp2ms): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "these (H0428)",
+      "occurrences": [
+       987198
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTm): preposition, suffix, article or particle, no inner-being role"
+     }
+    ],
+    "written": {
+     "observations": [
+      20651,
+      20652
+     ],
+     "nodes": 2
+    }
+   }
+  },
+  {
+   "verse": "Gen 32:29",
+   "osis": "Gen.32.29",
+   "verse_id": 9567,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-28T07:36:00Z",
+    "run_id": "RUN-20261028_073548_362-READING",
+    "existing": {
+     "accepted": 0,
+     "modified": 2,
+     "deleted": 0,
+     "merged": 0,
+     "nodes_modified": 0,
+     "nodes_deleted": 0,
+     "links": 0,
+     "orphaned": 0,
+     "left": 0
+    },
+    "left": [],
+    "surfaces": [
+     {
+      "word": "Jacob (H3290)",
+      "occurrences": [
+       987225
+      ],
+      "result": "bears_on",
+      "reason": "the one who asks, Jacob"
+     },
+     {
+      "word": "asked (H7592)",
+      "occurrences": [
+       987226
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: Jacob asks the man for his name, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "asked (H0559)",
+      "occurrences": [
+       987227
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (asked (H0559)), no inner-being sense in this verse"
+     },
+     {
+      "word": "Please (H4994)",
+      "occurrences": [
+       987228
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTj): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "Please (H9012)",
+      "occurrences": [
+       987229
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSh): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "tell (H5046)",
+      "occurrences": [
+       987230
+      ],
+      "result": "relevant",
+      "reason": "H5046 tell: Jacob asks that he tell him his name; the request is made by this verb"
+     },
+     {
+      "word": "name (H8034)",
+      "occurrences": [
+       987231,
+       987238
+      ],
+      "result": "bears_on",
+      "reason": "what is asked: his name"
+     },
+     {
+      "word": "said (H0559)",
+      "occurrences": [
+       987232
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or speech verb of the narrative (said (H0559)), no inner-being sense in this verse"
+     },
+     {
+      "word": "said (H9021)",
+      "occurrences": [
+       987233
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp2ms): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "Why (H4100)",
+      "occurrences": [
+       987234
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HPi): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "Why (H9005)",
+      "occurrences": [
+       987235
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "it (H2088)",
+      "occurrences": [
+       987236
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTm): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "ask (H7592)",
+      "occurrences": [
+       987237
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: the man answers by asking why Jacob asks his name"
+     },
+     {
+      "word": "name (H9005)",
+      "occurrences": [
+       987239
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "there (H8033G)",
+      "occurrences": [
+       987240
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HD): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "there (H0853)",
+      "occurrences": [
+       987241
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTo): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "there (H9033)",
+      "occurrences": [
+       987242
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3ms): preposition, suffix, article or particle, no inner-being role"
+     },
+     {
+      "word": "blessed (H1288)",
+      "occurrences": [
+       987243
+      ],
+      "result": "relevant",
+      "reason": "H1288 bless: the man blesses Jacob there, in place of giving his name"
+     },
+     {
+      "word": "blessed (H9020)",
+      "occurrences": [
+       987244
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): preposition, suffix, article or particle, no inner-being role"
+     }
+    ],
+    "written": {
+     "observations": [
+      20655,
+      20656
+     ],
+     "nodes": 2
+    }
+   }
+  }
+ ]
+}

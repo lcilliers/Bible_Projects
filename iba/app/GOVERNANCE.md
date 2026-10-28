@@ -62,7 +62,7 @@ Each `iba\app\ps\*.ps1` script that does project work dispatches through
 
 Handlers read their rules from `cfg_setting` and the domain tables. `lib/db.py` builds data tables
 from `cfg_column`, refuses a column not declared there, and takes dedup keys from `cfg_unique`. Every
-write is checked against `cfg_write_grant`. `IBA_TRACE=1` prints the config reads of a run.
+write is checked against `cfg_write_grant`. `IBA_TRACE=1` prints the config reads of a run. A library function that is given a connection and not a `Cfg` reads its rules the same way, through `Cfg.on(conn)`; a rule that is missing is an error (`required_setting`), never a fallback in the code.
 
 ## 4. Changing config
 

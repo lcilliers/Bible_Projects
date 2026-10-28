@@ -15,13 +15,70 @@ from __future__ import annotations
 import datetime
 import json
 import pathlib
+import re
 import sqlite3
 
 from . import reportkit
+from .cfg import Cfg
 from .versespanmeaningreport import (
     _BASE_RE_FALLBACK, _base, _range_str, detect_verse_gaps, fetch_verses, gap_note,
     merge_verses_and_gaps,
 )
+
+
+_SPAN_TAG = re.compile(r"<span morph='([^']*)' strong='([^']*)'>(.*?)</span>", re.S)       # STEP's own markup, not a rule
+_WORDS = re.compile(r"[A-Za-z’'\-]+")
+
+
+def gloss_alternatives(gloss, rule: dict) -> set:
+    """The alternatives of a STEP gloss that count as a surface (cfg_setting lexical.span_surface): with single_word_gloss_only an
+    untagged English word is a code's own surface only when it IS a whole alternative of the gloss ('about/through/for' -> about,
+    through, for; 'to be ashamed' -> none), never one word of a longer gloss ('be' is not 'to be ashamed')."""
+    out = set()
+    for alt in re.split("[" + re.escape(rule["gloss_alternative_separators"]) + "]", gloss or ""):
+        words = [w.lower() for w in _WORDS.findall(alt)]
+        if words and words[0] in rule["gloss_leading_words"] and len(words) > 1:
+            words = words[1:]
+        if len(words) == 1 or (not rule["single_word_gloss_only"] and words):
+            out.update(words)
+    return out
+
+
+def span_code_surfaces(conn: sqlite3.Connection, verse_id: int, spans: list[dict]) -> dict:
+    """{(span id, code ordinal): surface} for the codes of the multi-code spans whose surface is not the span's word (#2326,
+    researcher: "the surface for H5750 on the verse is wrong. according to STEP it is 'still' not alive"). STEP tags ONE span with
+    all the codes aligned to a rendering unit and leaves some of its English untagged (Gen 43:27: 'Is he still <alive>' carries
+    H2416A, H5750, H9043, H9008), so the span's word was written as the surface of every code. A code that is not a particle
+    (discovery.particle_pattern) and whose STEP gloss (strong.stepGloss) is not the span's word takes, as its surface, the untagged
+    English word just before the span (within lexical.span_surface look_back_words) that is exactly its gloss (one word of the
+    verse is claimed by one code only). Every other code keeps the span's word."""
+    cfg = Cfg.on(conn)
+    rule = cfg.required_setting("lexical.span_surface")
+    particle = re.compile(cfg.required_setting("discovery.particle_pattern"))
+    row = conn.execute("SELECT preview FROM verse WHERE id=?", (verse_id,)).fetchone()
+    seq, last, body = [], 0, (row[0] if row else "") or ""
+    for m in _SPAN_TAG.finditer(body):
+        before = re.sub(r"<[^>]+>", " ", body[last:m.start()])
+        seq.append([w.lower() for w in _WORDS.findall(before)][-rule["look_back_words"]:] if rule["look_back_words"] else [])
+        last = m.end()
+    out, used = {}, {}
+    for sp in spans:
+        codes = (sp["strong_variant"] or "").split()
+        if len(codes) < 2 or sp["position"] >= len(seq):
+            continue
+        for i, code in enumerate(codes):
+            if particle.match(code):
+                continue
+            g = conn.execute("SELECT stepGloss FROM strong WHERE strongNumber=?", (code,)).fetchone()
+            alts = gloss_alternatives(g[0] if g else None, rule)
+            if not alts or (sp["surface"] or "").lower() in alts:
+                continue
+            taken = used.setdefault(sp["position"], set())
+            hit = next((w for w in reversed(seq[sp["position"]]) if w in alts and w not in taken), None)
+            if hit:
+                taken.add(hit)
+                out[(sp["id"], i)] = hit
+    return out
 
 
 def _fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
@@ -323,6 +380,7 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int,
     testament = _testament_for(conn, book) if book else None
 
     spans = _fetch_spans(conn, verse_id)
+    code_surfaces = span_code_surfaces(conn, verse_id, spans)
     per_span_resolved: list[tuple[dict, list[dict]]] = []
     for sp in spans:
         codes = (sp["strong_variant"] or "").split()
@@ -337,6 +395,7 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int,
             sibling_codes = [c for j, c in enumerate(codes) if j != i]
             _layer1_fields(r, sp, sibling_codes, r["_language"], testament,
                           code_classes, role_codes, base_pattern)
+            r["surface"] = code_surfaces.get((sp["id"], i), r["surface"])
         per_span_resolved.append((sp, resolved))
 
     # gloss_consistent_in_verse needs the WHOLE verse's rows — one pass after every span resolved.

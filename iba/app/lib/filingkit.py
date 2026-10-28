@@ -13,6 +13,27 @@ import pathlib
 import re
 
 
+def cluster_folder_name(conn, cluster_code: str) -> str:
+    """The folder name of a cluster under _analytics/Clusters by cfg_setting report.cluster_folder_name_rule (the machine form of
+    report.cluster_folder_naming_convention): the pattern {cluster_code} - {slug} of the cluster's short_name, lowercased, & and
+    other punctuation dropped, spaces as single hyphens (M21 - fasting-piety). Every output relating to a cluster is filed in that
+    folder (#2328)."""
+    from .cfg import Cfg
+    rule = Cfg.on(conn).required_setting("report.cluster_folder_name_rule")
+    row = conn.execute("SELECT short_name FROM cluster WHERE cluster_code=? AND coalesce(deleted,0)=0", (cluster_code,)).fetchone()
+    if row is None:
+        raise ValueError(f"cluster {cluster_code!r} is not a live cluster: no folder name")
+    name = row[0] or ""
+    if rule["ampersand_to_space"]:
+        name = name.replace("&", " ")
+    if rule["lowercase"]:
+        name = name.lower()
+    if rule["drop_other_punctuation"]:
+        name = re.sub(r"[^A-Za-z0-9\s-]", "", name)
+    slug = re.sub(r"\s+", rule["word_separator"], name.strip())
+    return rule["pattern"].replace("{cluster_code}", cluster_code).replace("{slug}", slug)
+
+
 def versioned_path(cfg, topic: str, out_dir: str | pathlib.Path | None = None,
                    ext: str | None = None, naming_pattern: str | None = None,
                    archive_dir: str | None = None) -> pathlib.Path:

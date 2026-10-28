@@ -52,12 +52,20 @@ class Cfg:
         except sqlite3.Error:
             pass
 
+    @classmethod
+    def on(cls, conn):
+        """A Cfg over a connection the caller already holds (a lib function that is given a conn reads its rules from config
+        the same way as one given a Cfg: governance.rules_must_be_config_driven)."""
+        obj = cls.__new__(cls)
+        obj.conn = conn
+        return obj
+
     # ── settings (scalar rules) ──────────────────────────────────────────────
     def setting(self, key: str, default=None):
         # inactive rows are never read (#334)
         r = self.conn.execute(
             "SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
-        val = json.loads(r["value"]) if r else default
+        val = json.loads(r[0]) if r else default
         _trace(f"setting {key}", val)
         return val
 
@@ -71,7 +79,7 @@ class Cfg:
             raise KeyError(f"no active cfg_setting {key!r} -- every output location/value that "
                           f"must be config-driven needs a live row, not a hardcoded fallback in "
                           f"the calling code (governance.rules_must_be_config_driven)")
-        val = json.loads(r["value"])
+        val = json.loads(r[0])
         _trace(f"required_setting {key}", val)
         return val
 
