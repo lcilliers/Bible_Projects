@@ -37,7 +37,10 @@ select * from strong;
 
 select 
 obs.id,
+node.deleted as 'node_deleted',
+obs.deleted as 'obs_deleted',
 node.verse_reference,
+node.seq,
 node.surface,
 obs.obs_text,
 node.cluster_subgroup_code,
@@ -48,10 +51,30 @@ obs.stage,
 node.*
 from ib_observation obs
 inner join ib_node node on obs.id = node.observation_id
-where node.cluster_code = 'M21'
+where  node.cluster_subgroup_code = 'M21_asking'
+-- where node.cluster_code = 'M21'
 order by node.verse_reference
+;
 
-
+select 
+obs.id,
+node.deleted as 'node_deleted',
+obs.deleted as 'obs_deleted',
+node.verse_reference,
+node.seq,
+node.surface,
+obs.obs_text,
+node.cluster_subgroup_code,
+obs.tag,
+obs.window,
+obs.meaning_source,
+obs.stage,
+node.*
+from ib_observation obs
+inner join ib_node node on obs.id = node.observation_id and node.deleted = 0 and obs.deleted = 0
+--where  node.verse_reference = 'Gen 38:21' 
+where  node.cluster_subgroup_code = 'M21_asking'
+order by node.verse_reference
 ;
 
 

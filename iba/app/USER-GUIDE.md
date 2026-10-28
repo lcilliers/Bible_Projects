@@ -930,14 +930,13 @@ migration. The full list is `outputs/escalation/2200-retire-list-v1-20261021.jso
 - **A new script** is registered in `cfg_utility` in the same unit of work; `configmaint.validate`
   fails on any live script in no utility or module (`temp_*` excepted).
 
-**Database copies.** Every run takes a pre-run snapshot in `iba/app/db/snapshots/`. To test against
-a copy of iba.db, make it with the backup API, never a file copy (which misses writes still in
-`iba.db-wal`):
+**Database copies and rollback** (cfg_setting `backup.rollback_method`). A rollback point is not a full copy of iba.db for every run. A run takes a snapshot in `iba/app/db/snapshots/` only when the newest is older than `min_interval_minutes`; the newest `keep_recent` and the newest of each of the last `keep_daily` calendar days are kept. Before a migration or a bulk change take a **named** snapshot on purpose: it is kept in `iba/app/db/snapshots/kept/`, never pruned by the run snapshots (the newest `keep_named` are kept). To roll back, restore the newest snapshot from before the damaging change, then replay what came after from the change records (`cfg_change_detail`, `ib_observation_change`, `escalation_history`), the reading files and git; the NAS keeps a daily copy. To test against a copy of iba.db, make it with the backup API, never a file copy (which misses writes still in `iba.db-wal`):
 
 ```powershell
-python -m iba.app.lib.dbsnapshot --copy-to <path>.db       # a test copy of iba.db
-python -m iba.app.lib.dbsnapshot --reason <why>            # a snapshot now
-python -m iba.app.lib.dbsnapshot --list                    # the snapshots kept
+python -m iba.app.lib.dbsnapshot --copy-to <path>.db           # a test copy of iba.db
+python -m iba.app.lib.dbsnapshot --reason <id> --named         # a named rollback point, before a migration or bulk change
+python -m iba.app.lib.dbsnapshot --list                        # the snapshots kept (run and named)
+python -m iba.app.lib.dbsnapshot --prune                       # apply the retention now
 ```
 
 ---
@@ -954,7 +953,7 @@ control. In `iba/app/`:
 - `migration/`: a migration being written; applied ones are in `migration/archive/`
 - `tools/`: utilities
 - `db/iba.db`: the database
-- `db/snapshots/`: the pre-run copies
+- `db/snapshots/`: the run snapshots, and `kept/` the named ones (backup.rollback_method)
 - `reports/`: tool reports
 
 Escalation deliverables are in `outputs/escalation/`. Session logs are in `Logs/`.

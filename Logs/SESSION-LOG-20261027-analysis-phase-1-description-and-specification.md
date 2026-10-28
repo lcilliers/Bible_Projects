@@ -20,6 +20,8 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 
 - Fifth stretch (2026-10-28): #2323 v7 to v10, #2320 v11 to v19, #2325, #2326, #2327 and #2328 worked and handed over (#2325 v4, #2326 v4, #2327 v2, #2328 v2, #2320 v19 with the researcher).
 
+- Sixth stretch (2026-10-28): #2301 built and handed over (v9, the rollback method); #2320 v20 (node 13896 checked correct, the description file retired); backups/ cleared of 4.9 GB of copies no longer needed (recorded on #2301 v9).
+
 ## 3. Files
 
 - outputs/escalation/2318-analysis-phase-1-description-v1-20261027.md (new): the code of Open, Gather, Observe, Record and the two gates as it was before the build, with config read and data tables.
@@ -59,13 +61,16 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 - Files (fifth stretch): iba/app/lib/reading.py, observationrecord.py, lexical.py, filingkit.py, cfg.py, priorcapture.py, handlers/reading.py, ps/Reading.ps1; migrations iba/app/migration/archive/analysis_phase_1_2320_v4_20261028.py, verse_lexical_multi_code_span_surface_2326_v1_20261028.py, reading_folders_in_cluster_folder_2328_v1_20261028.py, analysis_phase_1_2323_v3 and v4; tests iba/app/tools/temp_2320_rules_in_config_test_run.py (19), temp_2326_surface_migration_test_run.py (14), temp_2328_reading_folder_test_run.py (18), temp_2327_existing_finding_test_run.py (9), temp_2325_node_move_test_run.py (11); BUILD.md sections 425 to 431; GOVERNANCE.md section 3; USER-GUIDE section 8.2; outputs/escalation/2326-verse-lexical-surface-changes-v1-20261028.tsv and 2328-reading-folder-moves-v1-20261028.tsv.
 - Decisions (fifth stretch, each recorded on its escalation): the stage does not filter and the action leave decides by wording (#2323 v9); the rules for stating an observation enforced (#2320 v11, cfg_method_rule RS-08); a node moved takes the next seq (#2325 v4); the surface of a code in a multi-code span is its STEP gloss, verse_lexical corrected for 1882 occurrences and the 3 held ones left (#2326 v3, v4); an existing party or link finding gains nodes (#2327 v2); readings filed in their home cluster's folder (#2328 v2); the rules are config rows (#2320 v18, reading.observation_rules, lexical.span_surface, report.cluster_folder_name_rule).
 
+- Files (sixth stretch): iba/app/lib/dbsnapshot.py, migration iba/app/migration/archive/backup_rollback_method_2301_v1_20261028.py, test iba/app/tools/temp_2301_rollback_method_test_run.py (19), iba/app/BUILD.md section 432, iba/app/USER-GUIDE.md (database copies and rollback), outputs/escalation/archive/2318-analysis-phase-1-description-v1-20261027.md (archived).
+- Decisions (sixth stretch): the rollback method replaces the full copy per run (cfg_setting backup.rollback_method, #2301 v8); node 13896 stays characteristic and the description file is not kept up to date (#2320 v20); backups/ cleared of unneeded copies (#2301 v9).
+
 ## 5. Open items
 
 - #2320: with the researcher for acceptance of the build and the test run; it carries a new version of the description file, the trial reading m21-asking-test (46 draft observations from the earlier process, not withdrawn), and the deletion of a stray 894 MB database copy at C:\c, created by Claude's own path error and removable only by the researcher because the folder is a protected path (Claude, then the researcher).
 - The B:27 and B:100 rule slips listed in Logs/compliance/COMPLIANCE-20261027-95543bd0.md: carried on #2320 for the next version of the description (Claude).
 - The older items assigned to Claude (#2161, #2259, #2305, #2308, #2268, #2301, #2171, #2172, #2235, #2262, #2276, #2278, #2280, #2296, #2303): untouched; #2276, #2278, #2280, #2262, #2296 and #2308 are met by the build and settle after the researcher's test of #2320.
 
-- #2323: with the researcher for acceptance; open there: restoring the role of strand-reading node 13896 (observation 11877) on the researcher's word; the description file needs a new version; (`C:\c` was checked on 2026-10-28 and does not exist); #2301 (snapshot pruning) unresolved (Claude, outside Analysis_phase_1).
+- #2323: with the researcher for acceptance; open there: restoring the role of strand-reading node 13896 (observation 11877) on the researcher's word;  (`C:\c` was checked on 2026-10-28 and does not exist); #2301 (snapshot pruning) unresolved (Claude, outside Analysis_phase_1).
 
 - #2320: with the researcher for acceptance of the enforcement; the 5 GB task log bak4t901b.output in the Claude temp folder is for the researcher to delete or have deleted (#2320 v12).
 

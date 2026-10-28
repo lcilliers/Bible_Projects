@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-28T10:01:24Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-28T10:26:14Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `95543bd0-7cc2-4f14-b7f8-02aa51147ba4` (CLAUDE_CODE_SESSION_ID); started 2026-10-27T11:19:24Z; window base commit `c40d2878dd7ccb01693dd9dc6572832b5f7e40e4`
 - compliance file: `Logs/compliance/COMPLIANCE-20261027-95543bd0.md`; session log: `Logs/SESSION-LOG-20261027-analysis-phase-1-description-and-specification.md`
-- **open findings: 0**; cleared by disposition: 13
+- **open findings: 0**; cleared by disposition: 15
 
 
 ## Contents
@@ -54,6 +54,13 @@ _no finding_
 prior-capture stays in own_s" -- disposition: recorded in #2323 v10 (item 6: the question about the own_stages reply, whose pasted text is my own earlier answer)
 - cleared `SC3:77389633`: researcher message 2026-10-28T07:08 is too short to be matched; name where it is recorded: "Correct them" -- disposition: recorded in #2326 v3
 - cleared `SC3:86d29007`: researcher message 2026-10-28T07:21 is too short to be matched; name where it is recorded: "Leave them" -- disposition: recorded in #2326 v4
+- cleared `SC3:a968734c`: researcher message 2026-10-28T10:04 is in no escalation comment written this session: "what are these about: 
+
+<pasted_content id="8fc6">
+The role of `strand-reading` node 13896 is restored on your word.
+
+* The description file needs a new version" -- disposition: recorded in #2301 v9
+- cleared `SC3:6fa98d1b`: researcher message 2026-10-28T10:25 is too short to be matched; name where it is recorded: "close-session" -- disposition: no record needed: the session-close command
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
