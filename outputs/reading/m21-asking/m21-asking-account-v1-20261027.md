@@ -1,0 +1,295 @@
+# Reading account: m21-asking
+
+Escalation #2320 · home M21 · 271 verse(s) · state **open**
+
+Objective: the asking words in their verses
+
+| Gate | Passed |
+|---|---|
+| Observe | — |
+| Claims | — |
+| Narrate | — |
+| Published | — |
+
+- Scope JSON: `outputs/reading/m21-asking/m21-asking.json`
+- Synergy JSON: `—`
+- Narrate JSON: `—`
+- Findings applied by this reading: 7, on 25 node(s)
+- Chapters touched: —
+
+## Observe gate gaps (266)
+
+- Gen 37:15: waiting, not done
+- Gen 38:21: waiting, not done
+- Gen 40:7: waiting, not done
+- Gen 43:7: waiting, not done
+- Gen 43:27: waiting, not done
+- Gen 44:19: waiting, not done
+- Exo 3:22: waiting, not done
+- Exo 11:2: waiting, not done
+- Exo 12:35: waiting, not done
+- Exo 12:36: waiting, not done
+- Exo 13:14: waiting, not done
+- Exo 18:7: waiting, not done
+- Num 27:21: waiting, not done
+- Deu 4:32: waiting, not done
+- Deu 6:20: waiting, not done
+- Deu 10:12: waiting, not done
+- Deu 13:14: waiting, not done
+- Deu 18:16: waiting, not done
+- Deu 32:7: waiting, not done
+- Jos 4:6: waiting, not done
+- Jos 4:21: waiting, not done
+- Jos 9:14: waiting, not done
+- Jos 15:18: waiting, not done
+- Jos 19:50: waiting, not done
+- Judg 1:1: waiting, not done
+- Judg 1:14: waiting, not done
+- Judg 4:20: waiting, not done
+- Judg 5:25: waiting, not done
+- Judg 8:14: waiting, not done
+- Judg 8:24: waiting, not done
+- Judg 13:6: waiting, not done
+- Judg 13:18: waiting, not done
+- Judg 18:5: waiting, not done
+- Judg 18:15: waiting, not done
+- Judg 20:18: waiting, not done
+- Judg 20:23: waiting, not done
+- Judg 20:27: waiting, not done
+- 1Sa 1:17: waiting, not done
+- 1Sa 1:20: waiting, not done
+- 1Sa 1:27: waiting, not done
+- 1Sa 2:20: waiting, not done
+- 1Sa 8:10: waiting, not done
+- 1Sa 10:22: waiting, not done
+- 1Sa 12:13: waiting, not done
+- 1Sa 12:17: waiting, not done
+- 1Sa 12:19: waiting, not done
+- 1Sa 14:37: waiting, not done
+- 1Sa 17:56: waiting, not done
+- 1Sa 19:22: waiting, not done
+- 1Sa 20:6: waiting, not done
+- 1Sa 20:28: waiting, not done
+- 1Sa 22:10: waiting, not done
+- 1Sa 22:13: waiting, not done
+- 1Sa 22:15: waiting, not done
+- 1Sa 23:2: waiting, not done
+- 1Sa 23:4: waiting, not done
+- 1Sa 25:8: waiting, not done
+- 1Sa 28:6: waiting, not done
+- 1Sa 28:16: waiting, not done
+- 1Sa 30:8: waiting, not done
+- 2Sa 2:1: waiting, not done
+- 2Sa 3:13: waiting, not done
+- 2Sa 5:19: waiting, not done
+- 2Sa 5:23: waiting, not done
+- 2Sa 8:10: waiting, not done
+- 2Sa 11:7: waiting, not done
+- 2Sa 12:20: waiting, not done
+- 2Sa 14:18: waiting, not done
+- 2Sa 16:23: waiting, not done
+- 2Sa 20:18: waiting, not done
+- 1Ki 2:16: waiting, not done
+- 1Ki 2:20: waiting, not done
+- 1Ki 2:22: waiting, not done
+- 1Ki 3:5: waiting, not done
+- 1Ki 3:10: waiting, not done
+- 1Ki 3:11: waiting, not done
+- 1Ki 3:13: waiting, not done
+- 1Ki 10:13: waiting, not done
+- 1Ki 19:4: waiting, not done
+- 2Ki 2:9: waiting, not done
+- 2Ki 2:10: waiting, not done
+- 2Ki 4:28: waiting, not done
+- 2Ki 8:6: waiting, not done
+- 1Ch 4:10: waiting, not done
+- 1Ch 10:13: waiting, not done
+- 1Ch 14:10: waiting, not done
+- 1Ch 14:14: waiting, not done
+- 1Ch 18:10: waiting, not done
+- 2Ch 1:7: waiting, not done
+- 2Ch 1:11: waiting, not done
+- 2Ch 9:12: waiting, not done
+- Ezr 5:9: waiting, not done
+- Ezr 5:10: waiting, not done
+- Ezr 7:21: waiting, not done
+- Ezr 8:22: waiting, not done
+- Neh 1:2: waiting, not done
+- Neh 13:6: waiting, not done
+- Job 8:8: waiting, not done
+- Job 12:7: waiting, not done
+- Job 21:29: waiting, not done
+- Job 31:30: waiting, not done
+- Job 38:3: waiting, not done
+- Job 40:7: waiting, not done
+- Job 42:4: waiting, not done
+- Psa 2:8: waiting, not done
+- Psa 21:4: waiting, not done
+- Psa 27:4: waiting, not done
+- Psa 35:11: waiting, not done
+- Psa 40:6: waiting, not done
+- Psa 78:18: waiting, not done
+- Psa 105:40: waiting, not done
+- Psa 137:3: waiting, not done
+- Pro 20:4: waiting, not done
+- Pro 30:7: waiting, not done
+- Ecc 2:10: waiting, not done
+- Ecc 7:10: waiting, not done
+- Isa 7:11: waiting, not done
+- Isa 7:12: waiting, not done
+- Isa 30:2: waiting, not done
+- Isa 41:28: waiting, not done
+- Isa 45:11: waiting, not done
+- Isa 58:2: waiting, not done
+- Isa 65:1: waiting, not done
+- Jer 6:16: waiting, not done
+- Jer 15:5: waiting, not done
+- Jer 18:13: waiting, not done
+- Jer 23:33: waiting, not done
+- Jer 30:6: waiting, not done
+- Jer 36:17: waiting, not done
+- Jer 37:17: waiting, not done
+- Jer 38:14: waiting, not done
+- Jer 38:27: waiting, not done
+- Jer 48:19: waiting, not done
+- Jer 50:5: waiting, not done
+- Eze 21:21: waiting, not done
+- Dan 2:10: waiting, not done
+- Dan 2:11: waiting, not done
+- Dan 2:13: waiting, not done
+- Dan 2:16: waiting, not done
+- Dan 2:23: waiting, not done
+- Dan 2:27: waiting, not done
+- Dan 2:49: waiting, not done
+- Dan 4:36: waiting, not done
+- Dan 6:4: waiting, not done
+- Dan 6:7: waiting, not done
+- Dan 6:11: waiting, not done
+- Dan 6:12: waiting, not done
+- Dan 6:13: waiting, not done
+- Dan 7:16: waiting, not done
+- Hos 4:12: waiting, not done
+- Jon 4:8: waiting, not done
+- Mic 7:3: waiting, not done
+- Hag 2:11: waiting, not done
+- Zec 10:1: waiting, not done
+- Mat 6:8: waiting, not done
+- Mat 7:7: waiting, not done
+- Mat 7:8: waiting, not done
+- Mat 7:9: waiting, not done
+- Mat 7:10: waiting, not done
+- Mat 7:11: waiting, not done
+- Mat 14:7: waiting, not done
+- Mat 16:13: waiting, not done
+- Mat 18:19: waiting, not done
+- Mat 19:17: waiting, not done
+- Mat 20:20: waiting, not done
+- Mat 20:22: waiting, not done
+- Mat 21:22: waiting, not done
+- Mat 21:24: waiting, not done
+- Mat 27:20: waiting, not done
+- Mat 27:58: waiting, not done
+- Mar 4:10: waiting, not done
+- Mar 6:22: waiting, not done
+- Mar 6:23: waiting, not done
+- Mar 6:24: waiting, not done
+- Mar 6:25: waiting, not done
+- Mar 10:35: waiting, not done
+- Mar 10:38: waiting, not done
+- Mar 11:24: waiting, not done
+- Mar 15:8: waiting, not done
+- Mar 15:43: waiting, not done
+- Luk 1:63: waiting, not done
+- Luk 5:3: waiting, not done
+- Luk 7:36: waiting, not done
+- Luk 8:37: waiting, not done
+- Luk 9:45: waiting, not done
+- Luk 11:9: waiting, not done
+- Luk 11:10: waiting, not done
+- Luk 11:11: waiting, not done
+- Luk 11:12: waiting, not done
+- Luk 11:13: waiting, not done
+- Luk 11:37: waiting, not done
+- Luk 12:48: waiting, not done
+- Luk 14:18: waiting, not done
+- Luk 14:19: waiting, not done
+- Luk 14:32: waiting, not done
+- Luk 19:31: waiting, not done
+- Luk 20:3: waiting, not done
+- Luk 22:68: waiting, not done
+- Luk 23:23: waiting, not done
+- Luk 23:25: waiting, not done
+- Luk 23:52: waiting, not done
+- Joh 1:19: waiting, not done
+- Joh 1:21: waiting, not done
+- Joh 1:25: waiting, not done
+- Joh 4:9: waiting, not done
+- Joh 4:10: waiting, not done
+- Joh 4:40: waiting, not done
+- Joh 4:47: waiting, not done
+- Joh 5:12: waiting, not done
+- Joh 8:7: waiting, not done
+- Joh 9:2: waiting, not done
+- Joh 9:15: waiting, not done
+- Joh 9:19: waiting, not done
+- Joh 9:21: waiting, not done
+- Joh 9:23: waiting, not done
+- Joh 11:22: waiting, not done
+- Joh 12:21: waiting, not done
+- Joh 14:13: waiting, not done
+- Joh 14:14: waiting, not done
+- Joh 14:16: waiting, not done
+- Joh 15:7: waiting, not done
+- Joh 15:16: waiting, not done
+- Joh 16:5: waiting, not done
+- Joh 16:19: waiting, not done
+- Joh 16:23: waiting, not done
+- Joh 16:24: waiting, not done
+- Joh 16:26: waiting, not done
+- Joh 16:30: waiting, not done
+- Joh 17:15: waiting, not done
+- Joh 17:20: waiting, not done
+- Joh 18:19: waiting, not done
+- Joh 19:31: waiting, not done
+- Joh 19:38: waiting, not done
+- Act 3:2: waiting, not done
+- Act 3:3: waiting, not done
+- Act 3:14: waiting, not done
+- Act 7:46: waiting, not done
+- Act 9:2: waiting, not done
+- Act 10:48: waiting, not done
+- Act 12:20: waiting, not done
+- Act 13:21: waiting, not done
+- Act 13:28: waiting, not done
+- Act 16:39: waiting, not done
+- Act 18:20: waiting, not done
+- Act 23:18: waiting, not done
+- Act 23:20: waiting, not done
+- Act 25:3: waiting, not done
+- Act 25:15: waiting, not done
+- 1Cor 1:22: waiting, not done
+- Eph 3:13: waiting, not done
+- Eph 3:20: waiting, not done
+- Phili 4:3: waiting, not done
+- Col 1:9: waiting, not done
+- 1Th 4:1: waiting, not done
+- 1Th 5:12: waiting, not done
+- 2Th 2:1: waiting, not done
+- Jam 1:5: waiting, not done
+- Jam 1:6: waiting, not done
+- Jam 4:2: waiting, not done
+- Jam 4:3: waiting, not done
+- 1Pe 3:15: waiting, not done
+- 1Jo 3:22: waiting, not done
+- 1Jo 5:14: waiting, not done
+- 1Jo 5:15: waiting, not done
+- 1Jo 5:16: waiting, not done
+- 2Jo 5: waiting, not done
+
+## Scope JSON (the index of the verses)
+
+| Status | Verses |
+|---|---|
+| waiting | 266 |
+| in_hand | 0 |
+| done | 5 |

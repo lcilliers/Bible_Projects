@@ -87,9 +87,9 @@ def settlements(conn) -> dict[int, tuple[int, int]]:
     (rule 122): not withdrawn and not superseded by a live observation. Its nodes name their occurrence."""
     return {vl: (sg, oid) for vl, sg, oid in conn.execute(
         "SELECT n.verse_lexical_id, o.cluster_subgroup_id, o.id FROM ib_observation o JOIN ib_node n "
-        "ON n.observation_id=o.id WHERE o.tag=? AND o.status<>'withdrawn' AND o.cluster_subgroup_id IS NOT NULL "
+        "ON n.observation_id=o.id WHERE o.tag=? AND o.deleted=0 AND o.cluster_subgroup_id IS NOT NULL "
         "AND n.verse_lexical_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM ib_observation s WHERE "
-        "s.supersedes_observation_id=o.id AND s.status<>'withdrawn') ORDER BY o.id", (SETTLEMENT_TAG,))}
+        "s.supersedes_observation_id=o.id AND s.deleted=0) ORDER BY o.id", (SETTLEMENT_TAG,))}
 
 
 def node_occurrences(conn, where: str, args) -> list[tuple]:

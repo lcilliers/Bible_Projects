@@ -207,14 +207,14 @@ def validate_coverage(conn: sqlite3.Connection, cluster_code: str, verse_ids: li
             rows = conn.execute(
                 f"SELECT n.verse_reference, n.strong, n.question_code "
                 f"FROM ib_node n JOIN ib_observation o ON o.id = n.observation_id "
-                f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
+                f"WHERE o.stage='verse-reading' AND o.deleted=0 "
                 f"AND n.verse_reference IN ({ph}) AND n.question_code IN ({cph})",
                 (*osis_list, *family_codes)).fetchall()
         else:
             rows = conn.execute(
                 f"SELECT n.verse_reference, n.strong, n.question_code "
                 f"FROM ib_node n JOIN ib_observation o ON o.id = n.observation_id "
-                f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
+                f"WHERE o.stage='verse-reading' AND o.deleted=0 "
                 f"AND n.verse_reference IN ({ph})", osis_list).fetchall()
         existing_keys = Counter((r["verse_reference"], r["strong"], r["question_code"]) for r in rows)
 
@@ -260,7 +260,7 @@ def fully_covered_verse_ids(conn: sqlite3.Connection, cluster_code: str,
     rows = conn.execute(
         f"SELECT n.verse_reference, n.strong, n.question_code "
         f"FROM ib_node n JOIN ib_observation o ON o.id = n.observation_id "
-        f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
+        f"WHERE o.stage='verse-reading' AND o.deleted=0 "
         f"AND n.verse_reference IN ({ph})", osis_list).fetchall()
     existing_by_verse: dict[str, set[tuple]] = {}
     for r in rows:
@@ -289,7 +289,7 @@ def missing_word_level_coverage(conn: sqlite3.Connection, cluster_code: str,
     rows = conn.execute(
         f"SELECT n.verse_reference, n.strong FROM ib_node n "
         f"JOIN ib_observation o ON o.id = n.observation_id "
-        f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
+        f"WHERE o.stage='verse-reading' AND o.deleted=0 "
         f"AND (o.question_code LIKE 'M0.1%' OR o.question_code LIKE 'M0.5%') "
         f"AND n.verse_reference IN ({ph})", osis_list).fetchall()
     covered_by_verse: dict[str, set[str]] = {}

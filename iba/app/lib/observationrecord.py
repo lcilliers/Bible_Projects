@@ -30,7 +30,7 @@ from . import recordingpass
 from . import strandreading as sr
 
 Refused = nr.Refused
-STAGE = "reading"
+STAGE = "Analysis_phase_1"
 ROUTE_REQUIRED, ROUTE_ALLOWED = ("party",), ("party", "link")
 
 
@@ -114,7 +114,7 @@ def check_parts(cfg, parts, where: str, errors: list) -> None:
 
 def live_text(conn, text: str):
     """The live observation holding this exact description, if any."""
-    return conn.execute("SELECT id, tag FROM ib_observation WHERE trim(obs_text)=? AND status<>'withdrawn' "
+    return conn.execute("SELECT id, tag FROM ib_observation WHERE trim(obs_text)=? AND deleted=0 "
                         "ORDER BY id LIMIT 1", ((text or "").strip(),)).fetchone()
 
 
@@ -137,8 +137,8 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
         kind = s.get("kind")
         p = {"key": key, "where": where, "existing": None, "nodes": []}
         if existing is not None:
-            row = conn.execute("SELECT id, tag, status FROM ib_observation WHERE id=?", (existing,)).fetchone()
-            if row is None or row["status"] == "withdrawn":
+            row = conn.execute("SELECT id, tag, deleted FROM ib_observation WHERE id=?", (existing,)).fetchone()
+            if row is None or row["deleted"]:
                 errors.append(f"{where}: existing {existing} is not a live observation")
                 continue
             if any(s.get(k) for k in ("text", "meaning", "implication", "basis", "route")):
@@ -240,7 +240,7 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
             t = n.get("traced")
             if t is None or t in keys:
                 continue
-            if not conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'", (t,)).fetchone():
+            if not conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND deleted=0", (t,)).fetchone():
                 errors.append(f"{n['at']}: traced {t!r} is neither a live observation nor a finding key in this file")
     return plan
 
@@ -303,8 +303,10 @@ def log(conn, observation_id: int, node_id: int | None, column: str, old, new, r
 
 
 def set_disposition(conn, node_id: int, disposition: str, note: str, reading_id, run_id: str, who: str) -> None:
-    """Where this verse ends up for the finding (cfg_enum observation_disposition), the change kept."""
-    n = conn.execute("SELECT observation_id, disposition, disposition_note FROM ib_node WHERE id=?",
+    """Where this verse ends up for the finding (cfg_enum observation_disposition; the claims step's ending of a node), the
+    change kept. A disposition of withdrawn also deletes the node (the deleted column, #2323). A reading deletes a node with
+    delete_node, which leaves the disposition alone."""
+    n = conn.execute("SELECT observation_id, disposition, disposition_note, deleted FROM ib_node WHERE id=?",
                      (node_id,)).fetchone()
     if n is None:
         raise Refused(f"node {node_id} does not exist")
@@ -312,15 +314,66 @@ def set_disposition(conn, node_id: int, disposition: str, note: str, reading_id,
         return
     log(conn, n["observation_id"], node_id, "disposition", n["disposition"], disposition, note, reading_id, run_id, who)
     conn.execute("UPDATE ib_node SET disposition=?, disposition_note=? WHERE id=?", (disposition, note, node_id))
+    if disposition == "withdrawn" and not n["deleted"]:
+        log(conn, n["observation_id"], node_id, "deleted", 0, 1, note, reading_id, run_id, who)
+        conn.execute("UPDATE ib_node SET deleted=1 WHERE id=?", (node_id,))
 
 
-def withdraw_observation(conn, observation_id: int, reason: str, reading_id, run_id: str, who: str) -> None:
-    """The finding is wrong everywhere: its status withdrawn, the change kept (nothing overwritten)."""
-    o = conn.execute("SELECT status FROM ib_observation WHERE id=?", (observation_id,)).fetchone()
-    if o is None or o["status"] == "withdrawn":
+def delete_node(conn, node_id: int, reason: str, reading_id, run_id: str, who: str) -> bool:
+    """A reading deletes a node (#2323): the deleted column, the change kept with its reason. Its disposition is not touched.
+    Returns False when it was already deleted."""
+    n = conn.execute("SELECT observation_id, deleted FROM ib_node WHERE id=?", (node_id,)).fetchone()
+    if n is None:
+        raise Refused(f"node {node_id} does not exist")
+    if n["deleted"]:
+        return False
+    log(conn, n["observation_id"], node_id, "deleted", 0, 1, reason, reading_id, run_id, who)
+    conn.execute("UPDATE ib_node SET deleted=1 WHERE id=?", (node_id,))
+    return True
+
+
+def soft_delete_observation(conn, observation_id: int, reason: str, reading_id, run_id: str, who: str) -> None:
+    """The finding is wrong everywhere: deleted=1 (and status withdrawn, kept equal for the readers that still look at status),
+    the change kept with its reason (nothing overwritten, nothing physically deleted)."""
+    o = conn.execute("SELECT status, deleted FROM ib_observation WHERE id=?", (observation_id,)).fetchone()
+    if o is None or o["deleted"]:
         raise Refused(f"observation {observation_id} is not a live observation")
-    log(conn, observation_id, None, "status", o["status"], "withdrawn", reason, reading_id, run_id, who)
-    conn.execute("UPDATE ib_observation SET status='withdrawn', updated_at=? WHERE id=?", (_now(), observation_id))
+    log(conn, observation_id, None, "deleted", 0, 1, reason, reading_id, run_id, who)
+    if o["status"] != "withdrawn":
+        log(conn, observation_id, None, "status", o["status"], "withdrawn", reason, reading_id, run_id, who)
+    conn.execute("UPDATE ib_observation SET deleted=1, status='withdrawn', updated_at=? WHERE id=?", (_now(), observation_id))
+
+
+withdraw_observation = soft_delete_observation        # the name the earlier callers use
+
+
+def merge_observation(conn, dup_id: int, into_id: int, reason: str, reading_id, run_id: str, who: str) -> dict:
+    """A duplicate description is merged into the observation that is kept (#2323, spec 4.7): its live nodes move to it (a node
+    the kept observation already holds on the same occurrence and role is deleted instead), then the duplicate is soft deleted.
+    Only the same description is merged."""
+    d = conn.execute("SELECT * FROM ib_observation WHERE id=?", (dup_id,)).fetchone()
+    k = conn.execute("SELECT * FROM ib_observation WHERE id=?", (into_id,)).fetchone()
+    if d is None or d["deleted"] or k is None or k["deleted"] or dup_id == into_id:
+        raise Refused(f"merge {dup_id} into {into_id}: both must be different live observations")
+    if (d["obs_text"] or "").strip() != (k["obs_text"] or "").strip():
+        raise Refused(f"merge {dup_id} into {into_id}: a merge is for the same description; the texts differ")
+    seq = conn.execute("SELECT COALESCE(MAX(seq), 0) FROM ib_node WHERE observation_id=?", (into_id,)).fetchone()[0]
+    moved = dropped = 0
+    for n in conn.execute("SELECT * FROM ib_node WHERE observation_id=? AND deleted=0 ORDER BY seq, id", (dup_id,)).fetchall():
+        twin = conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0 AND strong IS ? AND verse_reference IS ? "
+                            "AND verse_lexical_id IS ? AND role IS ?",
+                            (into_id, n["strong"], n["verse_reference"], n["verse_lexical_id"], n["role"])).fetchone()
+        if twin:
+            delete_node(conn, n["id"], f"the same node is on observation {into_id} (the duplicate description is merged)",
+                        reading_id, run_id, who)
+            dropped += 1
+        else:
+            seq += 1
+            log(conn, dup_id, n["id"], "observation_id", dup_id, into_id, reason, reading_id, run_id, who)
+            conn.execute("UPDATE ib_node SET observation_id=?, seq=? WHERE id=?", (into_id, seq, n["id"]))
+            moved += 1
+    soft_delete_observation(conn, dup_id, f"merged into observation {into_id}: {reason}", reading_id, run_id, who)
+    return {"moved": moved, "dropped": dropped}
 
 
 def modify_observation(cfg, conn, observation_id: int, sets: dict, reason: str, reading_id, run_id: str, who: str) -> list[str]:
@@ -328,7 +381,7 @@ def modify_observation(cfg, conn, observation_id: int, sets: dict, reason: str, 
     reason in ib_observation_change; the live row holds only the current version. Returns the columns changed."""
     loop = loop_setting(cfg)
     o = conn.execute("SELECT * FROM ib_observation WHERE id=?", (observation_id,)).fetchone()
-    if o is None or o["status"] == "withdrawn":
+    if o is None or o["deleted"]:
         raise Refused(f"observation {observation_id} is not a live observation")
     errors, quotes = [], []
     bad = sorted(set(sets) - set(loop["observation_set"]))
@@ -349,7 +402,7 @@ def modify_observation(cfg, conn, observation_id: int, sets: dict, reason: str, 
             recordingpass._validate_obs_text(conn, text)
         except recordingpass.InvalidObservationText as exc:
             errors.append(str(exc))
-        dup = conn.execute("SELECT id FROM ib_observation WHERE trim(obs_text)=? AND status<>'withdrawn' AND id<>? LIMIT 1",
+        dup = conn.execute("SELECT id FROM ib_observation WHERE trim(obs_text)=? AND deleted=0 AND id<>? LIMIT 1",
                            (text, observation_id)).fetchone()
         if dup:
             errors.append(f"this description is already live as observation {dup['id']}")

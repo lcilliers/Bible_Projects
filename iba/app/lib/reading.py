@@ -320,17 +320,31 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
     OJ = json.dumps([it["osis"] for it in items])
     obs: dict = {}
     for o in conn.execute("SELECT DISTINCT o.* FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE "
-                          "o.status<>'withdrawn' AND n.verse_reference IN (SELECT value FROM json_each(?)) AND "
-                          "(n.disposition IS NULL OR n.disposition<>'withdrawn') ORDER BY o.id", (OJ,)):
+                          "o.deleted=0 AND n.verse_reference IN (SELECT value FROM json_each(?)) AND "
+                          "n.deleted=0 ORDER BY o.id", (OJ,)):
         obs[o["id"]] = o
     nodes: dict = {}
     for n in conn.execute("SELECT n.* FROM ib_node n WHERE n.verse_reference IN (SELECT value FROM json_each(?)) AND "
-                          "(n.disposition IS NULL OR n.disposition<>'withdrawn') ORDER BY n.observation_id, n.id", (OJ,)):
+                          "n.deleted=0 ORDER BY n.observation_id, n.id", (OJ,)):
         nodes.setdefault((n["observation_id"], n["verse_reference"]), []).append(n)
     elsewhere = {r[0]: r[1] for r in conn.execute(
         "SELECT observation_id, count(*) FROM ib_node WHERE observation_id IN (SELECT value FROM json_each(?)) AND "
         "(verse_reference NOT IN (SELECT value FROM json_each(?)) OR verse_reference IS NULL) AND "
-        "(disposition IS NULL OR disposition<>'withdrawn') GROUP BY observation_id", (json.dumps(sorted(obs)), OJ))}
+        "deleted=0 GROUP BY observation_id", (json.dumps(sorted(obs)), OJ))}
+    kinds = orec.kinds(cfg)
+    dups: dict = {}                         # a description live more than once: {text: [ids]}
+    if obs:
+        for txt, ids in conn.execute(
+                "SELECT trim(obs_text), group_concat(id) FROM ib_observation WHERE deleted=0 AND trim(obs_text) IN "
+                "(SELECT trim(obs_text) FROM ib_observation WHERE id IN (SELECT value FROM json_each(?))) "
+                "GROUP BY trim(obs_text) HAVING count(*)>1", (json.dumps(sorted(obs)),)):
+            dups[txt] = sorted(int(x) for x in ids.split(","))
+    overlap: dict = {}                      # (verse, occurrence-or-word, role) -> the observations naming it
+    for (oid_, ref_), ns_ in nodes.items():
+        if oid_ in obs:
+            for n_ in ns_:
+                key_ = (ref_, n_["verse_lexical_id"] or (n_["strong"], _norm(n_["surface"])), n_["role"])
+                overlap.setdefault(key_, set()).add(oid_)
     ledger: dict = {}
     for h in conn.execute("SELECT h.id, h.verse_id, s.code, h.strong, h.surface, h.face FROM reading_strand_hit h JOIN "
                           "reading_strand s ON s.id=h.strand_id WHERE h.verse_id IN (SELECT value FROM json_each(?)) AND "
@@ -357,29 +371,77 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                 suggest = {}
                 if counts and n["verse_lexical_id"] is None:
                     suggest["verse_lexical_id"] = counts
-                if counts and not n["cluster_subgroup_code"] and n["strong"]:
+                nflags = []
+                if counts and n["strong"]:
                     code = orec.subgroup_code(conn, n["cluster_code"], n["strong"], n["surface"])
-                    if code:
+                    if code and code != n["cluster_subgroup_code"]:
                         suggest["cluster_subgroup_code"] = code
+                        nflags.append({"code": "subgroup_missing" if not n["cluster_subgroup_code"] else "subgroup_differs",
+                                       "propose": {"set": {"cluster_subgroup_code": code}},
+                                       "text": f"the subgroup of this word is {code} (surface_subgroup), the node holds "
+                                               f"{n['cluster_subgroup_code']!r}: set when the verse is recorded"})
+                if not counts:
+                    nflags.append({"code": "occurrence_unplaced", "propose": None,
+                                   "text": "the node names no occurrence of this verse and matches none by Strong and surface: it "
+                                           "counts for no surface (modify `verse_lexical_id`, or delete the node)"})
+                if n["role"] == "standalone":
+                    nflags.append({"code": "role_standalone", "propose": None,
+                                   "text": "standalone is not a role of a new node: the word is ignored (delete the node), or "
+                                           "it is a qualifier (modify the role)"})
                 nl.append({"node": n["id"], "word": f"{n['surface']} ({n['strong']})", "role": n["role"],
                            "occurrence": n["verse_lexical_id"], "counts_for": counts, "cluster": n["cluster_code"],
                            "subgroup": n["cluster_subgroup_code"], "reading_id": n["reading_id"],
-                           "suggest": suggest or None, "action": None})
+                           "suggest": suggest or None, "flags": nflags, "action": None})
+            flags = []
+            same = dups.get((o["obs_text"] or "").strip())
+            if same:
+                keep = same[0]
+                if oid != keep:
+                    flags.append({"code": "duplicate_description",
+                                  "text": f"the same description is live as observation {keep} (all copies: {same})",
+                                  "propose": {"action": "merge", "into": keep,
+                                              "reason": f"duplicate of observation {keep} (the same description), merged "
+                                                        f"when the verse was worked (#2323)"}})
+                else:
+                    flags.append({"code": "duplicate_description", "propose": None,
+                                  "text": f"other live copies of this description: {same[1:]}; each is merged into this one"})
+            if o["tag"] == "silence":
+                flags.append({"code": "silence_kind", "text": "the silence kind is not used by Analysis_phase_1: a surface with "
+                              "no inner-being role is not recorded",
+                              "propose": {"action": "delete", "reason": "the silence kind is not used: a surface with no "
+                                          "inner-being role is not recorded (spec 4.1; #2323)"}})
+            elif o["tag"] not in kinds:
+                flags.append({"code": "kind_not_in_parts", "text": f"the tag {o['tag']!r} is not a kind of observation "
+                              f"({[k for k in kinds if k != 'silence']}): the tag shows the type of the finding; read what it says and "
+                              f"modify the tag (`set`: {{\"tag\": kind}}), or delete the observation", "propose": None})
+            for key_, ids_ in overlap.items():
+                if key_[0] == osis and oid in ids_ and len(ids_) > 1:
+                    flags.append({"code": "same_word_same_role", "propose": None,
+                                  "text": f"observations {sorted(ids_)} name the same word in this verse with the role "
+                                          f"{key_[2]}: if they say the same thing, keep one (modify it to say it all) and delete "
+                                          f"the others"})
             existing.append({"observation": oid, "stage": o["stage"], "kind": o["tag"], "text": o["obs_text"],
+                             "flags": flags,
                              "meaning": o["meaning"], "implication": o["implication"], "basis": o["basis"],
                              "route": o["route"], "parts": json.loads(o["parts"]) if o["parts"] else None,
                              "nodes_on_other_verses": elsewhere.get(oid, 0), "nodes": nl, "action": None})
         sheets[vid].update({
             "passage": _passage(conn, osis, loop["passage_window"]), "existing": existing,
             "ledger_faces": ledger.get(vid, []), "findings": [], "fill_nodes": False, "drop_non_relevant_nodes": False,
+            "confirm_fixes": False, "errors": [],
             "how": "Evaluate every surface: evaluation {\"result\": \"relevant\" (the characteristic, or a qualifier of it) | "
                    "\"bears_on\" (the object, party or outward act of a relevant act: a node of that act's observation) | "
                    "\"not_relevant\", \"reason\": \"...\"} (reason: the tests of the lexical work; a surface with no "
                    "inner-being role gets no observation). `drop_non_relevant_nodes`: true soft deletes every existing node on a "
-                   "not_relevant surface. Check every existing observation: "
-                   "action {\"action\": \"accept\"|\"modify\"|\"delete\", \"reason\": \"...\" (modify, delete), \"set\": {...} "
-                   "(modify), \"nodes\": [{\"node\": id, \"action\": ..., \"reason\": ..., \"set\": {...}}]}; \"fill_nodes\": true "
-                   "applies every node `suggest` as a modify. A new finding goes in `findings` (observationrecord's shape, plus "
+                   "not_relevant surface. The check lists the errors it finds on each existing observation and node in `flags`, "
+                   "with a `propose`d fix where there is one (a duplicate description is merged into the copy kept; the silence "
+                   "kind is deleted; a node's occurrence and subgroup are completed): the fixes are part of the check and run when the "
+                   "verse is recorded, so an observation without an action takes its proposed fix; name an action to do otherwise. "
+                   "A tag that is not a kind has no automatic fix: modify it to the kind of what the verse says. Errors found by Record are written back to `errors` and the verse stays in "
+                   "hand. Check every existing observation: "
+                   "action {\"action\": \"accept\"|\"modify\"|\"delete\"|\"merge\"|\"leave\" (the wording of the observation is not verse understanding: it is left exactly as it is, with a reason; the stage says nothing about it), \"reason\": \"...\" (modify, delete), \"set\": {...} "
+                   "(modify), \"nodes\": [{\"node\": id, \"action\": ..., \"reason\": ..., \"set\": {...}}]}. "
+                   "A new finding goes in `findings` (observationrecord's shape, plus "
                    "`parts`; each node names its `occurrence` id and a `role` from reading.node_roles). `ledger_faces[].link`: "
                    "{\"observation\": id} or {\"reason\": \"...\"}."})
         sheets[vid]["verse"] = it["verse"]
@@ -426,8 +488,8 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
     """Check one filled sheet whole; returns the plan (what to write), or None with the errors added."""
     loop = _setting_loop(cfg)
     groups_roles = orec.node_role_groups(cfg)
-    roles = orec.node_roles(cfg)
     minc = loop["min_reason_chars"]
+    kinds_ok = set(orec.kinds(cfg)) - {"silence"}
     sh = v["sheet"]
     at = v["verse"]
     ok_reason = lambda s: len((s or "").strip()) >= minc
@@ -441,21 +503,41 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
             continue
         {"relevant": rel_groups, "bears_on": bear_groups, "not_relevant": non_groups}[ev["result"]].append(g)
     occ_group = {i: g for g in sh["surfaces"] for i in g["occurrences"]}
-    # existing observations
+    # existing observations: each takes an action; a proposed fix is applied when the reading confirms it
     plan = {"obs": [], "nodes": [], "fill": [], "links": [], "findings": []}
     live_after = []        # (occurrence group id, role) of nodes that stay
     for e in sh["existing"]:
         a = e.get("action")
+        if a is None:       # a fix found by the check is part of the check: no separate confirmation (researcher, 2026-10-27)
+            a = next((f["propose"] for f in e.get("flags") or [] if f.get("propose")), None)
         if not isinstance(a, dict) or a.get("action") not in loop["existing_actions"]:
-            errors.append(f"{at}: observation {e['observation']} needs an action {loop['existing_actions']}")
+            errors.append(f"{at}: observation {e['observation']} needs an action {loop['existing_actions']}"
+                          + ("; flags: " + "; ".join(f["text"] for f in e["flags"]) if e.get("flags") else ""))
             continue
-        if a["action"] in ("modify", "delete") and not ok_reason(a.get("reason")):
+        if a["action"] in ("modify", "delete", "merge", "leave") and not ok_reason(a.get("reason")):
             errors.append(f"{at}: observation {e['observation']}: a {a['action']} needs its reason ({minc} characters or more)")
             continue
         if a["action"] == "modify" and not a.get("set") and not a.get("nodes"):
             errors.append(f"{at}: observation {e['observation']}: a modify names what is set (`set`) or the nodes changed")
             continue
+        if a["action"] == "merge":
+            into = a.get("into")
+            tgt = conn.execute("SELECT trim(obs_text) t FROM ib_observation WHERE id=? AND deleted=0 ", (into,)).fetchone() \
+                if isinstance(into, int) and into != e["observation"] else None
+            if tgt is None or tgt["t"] != (e["text"] or "").strip():
+                errors.append(f"{at}: observation {e['observation']}: a merge names `into`, another live observation with the "
+                              f"same description")
+                continue
+        if a["action"] in ("accept", "modify"):
+            tag_after = (a.get("set") or {}).get("tag", e["kind"]) if a["action"] == "modify" else e["kind"]
+            if tag_after not in kinds_ok:
+                errors.append(f"{at}: observation {e['observation']}: the tag {tag_after!r} is not a kind of observation "
+                              f"{sorted(kinds_ok)} (the silence kind is not used): modify the tag to the kind of what it says, or "
+                              f"delete the observation")
+                continue
         plan["obs"].append((e["observation"], a))
+        if a["action"] == "leave":          # not Analysis_phase_1 work by its wording: untouched, its nodes count for nothing
+            continue
         deleted_obs = a["action"] == "delete"
         by_node = {x.get("node"): x for x in (a.get("nodes") or []) if isinstance(x, dict)}
         for n in e["nodes"]:
@@ -465,8 +547,8 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
                     occ_group[n["counts_for"]] is x for x in non_groups):
                 na = {"action": "delete", "reason": "the surface has no inner-being role (its evaluation, #2320)"}
             if na:
-                if na.get("action") not in loop["existing_actions"]:
-                    errors.append(f"{at}: node {n['node']} needs an action {loop['existing_actions']}")
+                if na.get("action") not in loop["existing_actions"] or na.get("action") == "merge":
+                    errors.append(f"{at}: node {n['node']} needs an action {[x for x in loop['existing_actions'] if x != 'merge']}")
                     continue
                 if na["action"] in ("modify", "delete") and not ok_reason(na.get("reason")):
                     errors.append(f"{at}: node {n['node']}: a {na['action']} needs its reason")
@@ -476,8 +558,9 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
                 if na["action"] == "modify":
                     role = (na.get("set") or {}).get("role", role)
                 plan["nodes"].append((n["node"], na))
-            elif sh.get("fill_nodes") and n["suggest"] and not deleted_obs:
-                plan["fill"].append((n["node"], n["suggest"]))
+            if n["suggest"] and not deleted_obs and not gone:     # the occurrence and subgroup are always completed
+                plan["fill"].append((n["node"], {k: v for k, v in n["suggest"].items()
+                                                 if k not in ((na or {}).get("set") or {})}))
             if not gone and n["counts_for"] in occ_group and role is not None:
                 live_after.append((id(occ_group[n["counts_for"]]), role))
     for f in sh.get("findings") or []:
@@ -493,7 +576,7 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
         if lk is None:
             continue
         if not (isinstance(lk, dict) and ((lk.get("observation") and conn.execute(
-                "SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'", (lk["observation"],)).fetchone())
+                "SELECT 1 FROM ib_observation WHERE id=? AND deleted=0", (lk["observation"],)).fetchone())
                 or ok_reason(lk.get("reason")))):
             errors.append(f"{at}: ledger face {hit['hit']}: link is {{\"observation\": a live id}} or {{\"reason\": ...}}")
         else:
@@ -518,12 +601,62 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
 
 def _filled(sh: dict) -> bool:
     return (any(g.get("evaluation") for g in sh["surfaces"]) or any(e.get("action") for e in sh["existing"])
-            or bool(sh.get("findings")) or any(h.get("link") for h in sh.get("ledger_faces") or []))
+            or bool(sh.get("findings")) or any(h.get("link") for h in sh.get("ledger_faces") or [])
+            or bool(sh.get("confirm_fixes")))
+
+
+def _write_verse(cfg, conn, w, r, run_id: str, v: dict, pl: dict, fplan: list) -> tuple[dict, dict]:
+    """One verse written: the existing observations and nodes, the ledger links, the new findings."""
+    cnt = {"accepted": 0, "modified": 0, "deleted": 0, "merged": 0, "nodes_modified": 0, "nodes_deleted": 0, "links": 0,
+           "orphaned": 0, "left": 0}
+    for oid, a in pl["obs"]:
+        if a["action"] == "leave":
+            cnt["left"] += 1
+        elif a["action"] == "accept":
+            cnt["accepted"] += 1
+        elif a["action"] == "delete":
+            orec.soft_delete_observation(conn, oid, a["reason"].strip(), r["id"], run_id, w.who)
+            cnt["deleted"] += 1
+        elif a["action"] == "merge":
+            orec.merge_observation(conn, oid, a["into"], a["reason"].strip(), r["id"], run_id, w.who)
+            cnt["merged"] += 1
+        else:
+            if a.get("set"):
+                orec.modify_observation(cfg, conn, oid, a["set"], a["reason"].strip(), r["id"], run_id, w.who)
+            cnt["modified"] += 1
+    for nid, na in pl["nodes"]:
+        if na["action"] == "delete":
+            if orec.delete_node(conn, nid, na["reason"].strip(), r["id"], run_id, w.who):
+                cnt["nodes_deleted"] += 1
+        elif na["action"] == "modify":
+            orec.modify_node(cfg, conn, nid, na.get("set") or {}, na["reason"].strip(), r["id"], run_id, w.who)
+            cnt["nodes_modified"] += 1
+    for nid, sug in pl["fill"]:
+        orec.modify_node(cfg, conn, nid, sug, "completed from verse_lexical and surface_subgroup when the verse was "
+                         "worked (#2308 D2)", r["id"], run_id, w.who)
+        cnt["nodes_modified"] += 1
+    gone_ids = {oid for oid, a in pl["obs"] if a["action"] in ("delete", "merge")}
+    cnt["orphaned"] = 0
+    for oid, _a in pl["obs"]:
+        if oid not in gone_ids and _a["action"] != "leave" and conn.execute("SELECT 1 FROM ib_node WHERE observation_id=? AND deleted=0", (oid,)).fetchone() is None \
+                and conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND deleted=0", (oid,)).fetchone():
+            orec.soft_delete_observation(conn, oid, "its last node was deleted (the surface has no inner-being role); an observation "
+                                         "with no node cannot be reached from a verse (#2323)", r["id"], run_id, w.who)
+            cnt["orphaned"] += 1
+    for hid, lk in pl["links"]:
+        if lk.get("observation"):
+            w.update("reading_strand_hit", {"id": hid}, {"observation_id": lk["observation"], "run_id": run_id})
+        else:
+            w.update("reading_strand_hit", {"id": hid}, {"reason": lk["reason"].strip(), "run_id": run_id})
+        cnt["links"] += 1
+    written = orec.write(conn, fplan, r["id"], run_id) if fplan else {}
+    return cnt, written
 
 
 def record(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
-    """-Label: write the filled sheets of the verses in hand: evaluations kept in the JSON, existing observations and nodes
-    accepted, modified or soft deleted, new findings written -- all or nothing; the verses written are marked done."""
+    """-Label: write the filled sheets of the verses in hand, one verse at a time: evaluations kept in the JSON, existing
+    observations and nodes accepted, modified, soft deleted or merged, new findings written. A verse with errors is not written;
+    its errors are put on its sheet (`errors`) and it stays in hand; the other verses are written (#2323)."""
     conn = cfg.conn
     r = _at(conn, p.get("Label"), "open")
     path, data = _index(cfg, root, r)
@@ -533,82 +666,61 @@ def record(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
     todo = [v for v in hand if _filled(v["sheet"])]
     if not todo:
         raise Refused("nothing to record: no verse in hand has a filled sheet (Reading.ps1 -Step Observe)")
-    errors, quotes = [], []
-    plans = {}
+    _grant_findings(w)
+    w._grant("reading_strand_hit")
+    done, failed, summary, written_all = [], {}, {}, {}
     for v in todo:
+        errors, quotes = [], []
         pl = _validate_sheet(cfg, conn, v, errors)
-        if pl is not None:
-            plans[v["verse_id"]] = pl
-    # new findings: checked by observationrecord across the whole batch (unique keys)
-    specs = []
-    for v in todo:
-        for k, f in enumerate((plans.get(v["verse_id"]) or {}).get("findings", [])):
-            if isinstance(f, dict):
-                specs.append((f"{v['verse']} findings[{k}] ({f.get('key')})", {**f, "key": f"{v['verse_id']}:{f.get('key')}"}))
-    fplan = orec.check(cfg, specs, errors, quotes) if specs else []
-    if errors or quotes:
-        raise Refused("\n  ".join(["the sheets are not recorded:"] + errors + (
-            ["quotation(s) not found in the ESV text:"] + quotes if quotes else [])))
-    loop = _setting_loop(cfg)
-
-    def go():
-        _grant_findings(w)
-        w._grant("reading_strand_hit")
-        summary = {}
-        for v in todo:
-            pl = plans[v["verse_id"]]
-            cnt = {"accepted": 0, "modified": 0, "deleted": 0, "nodes_modified": 0, "nodes_deleted": 0, "links": 0}
-            for oid, a in pl["obs"]:
-                if a["action"] == "accept":
-                    cnt["accepted"] += 1
-                elif a["action"] == "delete":
-                    orec.withdraw_observation(conn, oid, a["reason"].strip(), r["id"], run_id, w.who)
-                    cnt["deleted"] += 1
-                else:
-                    if a.get("set"):
-                        orec.modify_observation(cfg, conn, oid, a["set"], a["reason"].strip(), r["id"], run_id, w.who)
-                    cnt["modified"] += 1
-            for nid, na in pl["nodes"]:
-                if na["action"] == "delete":
-                    orec.set_disposition(conn, nid, "withdrawn", na["reason"].strip(), r["id"], run_id, w.who)
-                    cnt["nodes_deleted"] += 1
-                elif na["action"] == "modify":
-                    orec.modify_node(cfg, conn, nid, na.get("set") or {}, na["reason"].strip(), r["id"], run_id, w.who)
-                    cnt["nodes_modified"] += 1
-            for nid, sug in pl["fill"]:
-                orec.modify_node(cfg, conn, nid, sug, "completed from verse_lexical and surface_subgroup when the verse was "
-                                 "worked (#2308 D2)", r["id"], run_id, w.who)
-                cnt["nodes_modified"] += 1
-            for hid, lk in pl["links"]:
-                if lk.get("observation"):
-                    w.update("reading_strand_hit", {"id": hid}, {"observation_id": lk["observation"], "run_id": run_id})
-                else:
-                    w.update("reading_strand_hit", {"id": hid}, {"reason": lk["reason"].strip(), "run_id": run_id})
-                cnt["links"] += 1
-            summary[v["verse_id"]] = cnt
-        written = orec.write(conn, fplan, r["id"], run_id) if fplan else {}
-        w.update("reading", {"id": r["id"]}, {"run_id": run_id})
-        return summary, written
-    summary, written = nr._atomic(conn, go)
+        fplan = []
+        if pl is not None and not errors:
+            specs = [(f"{v['verse']} findings[{k}] ({f.get('key')})", {**f, "key": f"{v['verse_id']}:{f.get('key')}"})
+                     for k, f in enumerate(pl["findings"]) if isinstance(f, dict)]
+            fplan = orec.check(cfg, specs, errors, quotes) if specs else []
+        errors += [f"quotation not found in the ESV text: {q}" for q in quotes]
+        if not errors:
+            try:
+                summary[v["verse_id"]], written = nr._atomic(
+                    conn, lambda: _write_verse(cfg, conn, w, r, run_id, v, pl, fplan))
+                written_all.update(written)
+                done.append(v)
+                continue
+            except Refused as exc:
+                errors.append(str(exc))
+        failed[v["verse"]] = errors
+        v["sheet"]["errors"] = errors                   # the reading sees what to fix, on the sheet
     at = _now()
-    for v in todo:
+    for v in done:
         sh = v.pop("sheet")
         v["status"] = "done"
         v["result"] = {
             "at": at, "run_id": run_id, "existing": summary[v["verse_id"]],
+            "left": [e["observation"] for e in sh["existing"] if isinstance(e.get("action"), dict) and e["action"].get("action") == "leave"],
             "surfaces": [{"word": g["word"], "occurrences": g["occurrences"], "result": g["evaluation"]["result"],
                           "reason": g["evaluation"]["reason"].strip()} for g in sh["surfaces"]],
-            "written": {"observations": [x["observation"] for k, x in written.items() if k.startswith(f"{v['verse_id']}:")],
-                        "nodes": sum(len(x["nodes"]) for k, x in written.items() if k.startswith(f"{v['verse_id']}:"))}}
+            "written": {"observations": [x["observation"] for k, x in written_all.items() if k.startswith(f"{v['verse_id']}:")],
+                        "nodes": sum(len(x["nodes"]) for k, x in written_all.items() if k.startswith(f"{v['verse_id']}:"))}}
     data["counts"]["done"] = sum(1 for x in data["verses"] if x["status"] == "done")
-    data.pop("built_at", None)
+    if not any(x["status"] == "in_hand" for x in data["verses"]):
+        data.pop("built_at", None)
     _save_atomic(path, data)
-    nr._atomic(conn, lambda: w.update("reading", {"id": r["id"]}, {"observe_built_at": None, "run_id": run_id}))
-    new_o = sum(1 for x in written.values() if x["new"])
-    return (f"reading {r['label']}: {len(todo)} verse(s) done ({data['counts']['done']} of {data['counts']['verses']}); "
-            f"{sum(s['accepted'] for s in summary.values())} accepted, {sum(s['modified'] for s in summary.values())} "
-            f"modified, {sum(s['deleted'] for s in summary.values())} deleted; {new_o} finding(s) new, "
-            f"{sum(len(x['nodes']) for x in written.values())} node(s)\n  evaluations and results in {_rel(root, path)}")
+    if not done:
+        raise Refused("\n  ".join(["no verse could be recorded; the errors are on the sheets (`errors`) and the verses stay in hand:"]
+                                  + [f"{vv}: {e}" for vv, es in failed.items() for e in es]))
+    if not any(x["status"] == "in_hand" for x in data["verses"]):
+        nr._atomic(conn, lambda: w.update("reading", {"id": r["id"]}, {"observe_built_at": None, "run_id": run_id}))
+    else:
+        nr._atomic(conn, lambda: w.update("reading", {"id": r["id"]}, {"run_id": run_id}))
+    new_o = sum(1 for x in written_all.values() if x["new"])
+    msg = (f"reading {r['label']}: {len(done)} verse(s) done ({data['counts']['done']} of {data['counts']['verses']}); "
+           f"{sum(s['accepted'] for s in summary.values())} accepted, {sum(s['modified'] for s in summary.values())} modified, "
+           f"{sum(s['merged'] for s in summary.values())} merged, {sum(s['deleted'] + s['orphaned'] for s in summary.values())} "
+           f"deleted ({sum(s['orphaned'] for s in summary.values())} of them left with no node); "
+           f"{new_o} finding(s) new, {sum(len(x['nodes']) for x in written_all.values())} node(s)\n  evaluations and results in "
+           f"{_rel(root, path)}")
+    if failed:
+        msg += "\n  NOT recorded, errors on their sheets: " + "; ".join(f"{vv} ({len(es)} error(s))" for vv, es in failed.items())
+    return msg
 
 
 def gate_observe(cfg, root: pathlib.Path, r) -> list[str]:
@@ -627,9 +739,10 @@ def gate_observe(cfg, root: pathlib.Path, r) -> list[str]:
             out.append(f"{v['verse']}: {v['status']}, not done")
             continue
         occ_nodes: dict = {}
+        left = v["result"].get("left") or []
         for n in conn.execute("SELECT n.verse_lexical_id, n.strong, n.surface, n.role FROM ib_node n JOIN ib_observation o "
-                              "ON o.id=n.observation_id WHERE n.verse_reference=? AND o.status<>'withdrawn' AND "
-                              "(n.disposition IS NULL OR n.disposition<>'withdrawn')", (v["osis"],)):
+                              "ON o.id=n.observation_id WHERE n.verse_reference=? AND o.deleted=0 AND "
+                              "n.deleted=0 AND o.id NOT IN (SELECT value FROM json_each(?))", (v["osis"], json.dumps(left))):
             occ_nodes.setdefault(n["verse_lexical_id"], []).append(n)
         for g in v["result"]["surfaces"]:
             nodes = [n for i in g["occurrences"] for n in occ_nodes.get(i, [])]
@@ -696,13 +809,13 @@ def scope_observations(conn, rid: int) -> list:
     return conn.execute(
         "SELECT DISTINCT o.* FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id JOIN verse v ON "
         "v.osisId=n.verse_reference JOIN reading_verse rv ON rv.verse_id=v.id WHERE rv.reading_id=? AND "
-        "o.status<>'withdrawn' ORDER BY o.id", (rid,)).fetchall()
+        "o.deleted=0 ORDER BY o.id", (rid,)).fetchall()
 
 
 def reading_nodes(conn, rid: int) -> list:
     """The live nodes this reading applied, of live findings."""
     return conn.execute("SELECT n.* FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.reading_id=? "
-                        "AND o.status<>'withdrawn' AND (n.disposition IS NULL OR n.disposition<>'withdrawn') "
+                        "AND o.deleted=0 AND n.deleted=0 "
                         "ORDER BY n.observation_id, n.id", (rid,)).fetchall()
 
 
@@ -1095,7 +1208,7 @@ def gate_narrate(cfg, r) -> list[str]:
             "JOIN narrative_section s ON s.id=ci.section_id AND s.last_version IS NULL WHERE ci.last_version IS NULL "
             "AND ci.verse_id IN (SELECT verse_id FROM reading_verse WHERE reading_id=?)", (r["id"],)):
         if not conn.execute("SELECT 1 FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE "
-                            "n.verse_reference=? AND o.status<>'withdrawn'", (osis,)).fetchone() and \
+                            "n.verse_reference=? AND o.deleted=0", (osis,)).fetchone() and \
                 not conn.execute("SELECT 1 FROM narrative_claim_source WHERE verse_id=?", (vid,)).fetchone():
             out.append(f"{ref}: cited in a block with no finding and no claim behind it (citation_without_record)")
     return out

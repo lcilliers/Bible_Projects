@@ -101,7 +101,7 @@ def _words(conn, osis: list[str]) -> dict[str, list]:
 def october_ids(conn, path: str) -> dict:
     """The live observations that name the document in revisit_note and carry a stable_key (CP-05)."""
     named = {r[0]: r[1] for r in conn.execute(
-        "SELECT stable_key, id FROM ib_observation WHERE status<>'withdrawn' AND stable_key IS NOT NULL AND "
+        "SELECT stable_key, id FROM ib_observation WHERE deleted=0 AND stable_key IS NOT NULL AND "
         "revisit_note LIKE ? ORDER BY id", (f"%{path}%",))}
     return named
 
@@ -111,7 +111,7 @@ def october_same_prefix(conn, named: dict) -> dict:
     name the file: the document's id may be among them (Record refuses a stable_key already live)."""
     out = {}
     for pre in {k.split(":")[0] for k in named if ":" in k}:
-        for k, i in conn.execute("SELECT stable_key, id FROM ib_observation WHERE status<>'withdrawn' AND "
+        for k, i in conn.execute("SELECT stable_key, id FROM ib_observation WHERE deleted=0 AND "
                                  "stable_key LIKE ? ORDER BY id", (f"{pre}:%",)):
             if k not in named:
                 out[k] = i
@@ -267,7 +267,7 @@ def check(cfg, root: pathlib.Path, data: dict) -> dict:
             errors.append(f"{where}: route ({routes}) is held only on a party or link finding")
         sk = f.get("stable_key")
         if sk:
-            live = conn.execute("SELECT id FROM ib_observation WHERE stable_key=? AND status<>'withdrawn'",
+            live = conn.execute("SELECT id FROM ib_observation WHERE stable_key=? AND deleted=0",
                                 (sk,)).fetchone()
             if live or sk in stable:
                 errors.append(f"{where}: stable_key {sk} is already recorded"
@@ -308,7 +308,7 @@ def check(cfg, root: pathlib.Path, data: dict) -> dict:
                 used.add(k)
                 answers.append({"line_no": n, "answer": "captured", "key": k})
         for oid in a.get("already_recorded") or []:
-            if not conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'", (oid,)).fetchone():
+            if not conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND deleted=0", (oid,)).fetchone():
                 errors.append(f"{at}: already_recorded names observation {oid}, which is not live")
             else:
                 answers.append({"line_no": n, "answer": "already recorded", "observation": oid})
@@ -400,7 +400,7 @@ def report_lines(p: dict, w: dict) -> list[str]:
 def report(conn) -> tuple[list[str], str]:
     q = lambda sql: conn.execute(sql).fetchall()  # noqa: E731
     docs = q("SELECT capture_status, COUNT(*) FROM reading_file WHERE removed=0 GROUP BY 1 ORDER BY 1")
-    obs = q("SELECT tag, COUNT(*) FROM ib_observation WHERE stage='prior-capture' AND status<>'withdrawn' "
+    obs = q("SELECT tag, COUNT(*) FROM ib_observation WHERE stage='prior-capture' AND deleted=0 "
             "GROUP BY 1 ORDER BY 2 DESC")
     ans = q("SELECT answer, COUNT(*) FROM prior_capture_line WHERE deleted=0 GROUP BY 1 ORDER BY 1")
     nodes = q("SELECT COUNT(*), SUM(verse_lexical_id IS NULL) FROM ib_node WHERE source_stage='prior-capture'")[0]

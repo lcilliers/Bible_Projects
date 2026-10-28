@@ -99,7 +99,7 @@ def collate(cfg, request: dict, root: pathlib.Path) -> dict:
     for vid, oid, stage, tag, text, basis, note, status in conn.execute(
             "SELECT DISTINCT v.id, o.id, o.stage, o.tag, coalesce(o.meaning, o.obs_text), o.basis, o.revisit_note, "
             "o.status FROM ib_node n JOIN verse v ON v.osisId=n.verse_reference JOIN ib_observation o ON "
-            "o.id=n.observation_id AND o.status<>'withdrawn' WHERE v.id IN (SELECT value FROM json_each(?)) "
+            "o.id=n.observation_id AND o.deleted=0 WHERE v.id IN (SELECT value FROM json_each(?)) "
             "ORDER BY v.id, o.id", (J,)):
         obs_at[(vid, oid)] = {"id": oid, "stage": stage, "tag": tag, "status": status, "text": text, "basis": basis,
                               "october_disposition": _disposition(note), "nodes": []}
@@ -107,7 +107,7 @@ def collate(cfg, request: dict, root: pathlib.Path) -> dict:
     for vid, oid, nid, strong, surface, role, vlid, sg in conn.execute(
             "SELECT v.id, n.observation_id, n.id, n.strong, n.surface, n.role, n.verse_lexical_id, "
             "n.cluster_subgroup_code FROM ib_node n JOIN verse v ON v.osisId=n.verse_reference WHERE v.id IN "
-            "(SELECT value FROM json_each(?)) AND (n.disposition IS NULL OR n.disposition<>'withdrawn') "
+            "(SELECT value FROM json_each(?)) AND n.deleted=0 "
             "ORDER BY n.id", (J,)):
         if (vid, oid) in obs_at:
             obs_at[(vid, oid)]["nodes"].append({"node": nid, "strong": strong, "surface": surface, "role": role,

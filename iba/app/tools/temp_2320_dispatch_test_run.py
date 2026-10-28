@@ -30,6 +30,18 @@ subprocess.run([sys.executable, str(mig), "--db", str(DB)], capture_output=True,
 v2 = ROOT / "iba/app/migration/analysis_phase_1_2320_v2_20261027.py"
 v2 = v2 if v2.exists() else ROOT / "iba/app/migration/archive" / v2.name
 subprocess.run([sys.executable, str(v2), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v3 = ROOT / "iba/app/migration/analysis_phase_1_2323_v1_20261027.py"
+v3 = v3 if v3.exists() else ROOT / "iba/app/migration/archive" / v3.name
+subprocess.run([sys.executable, str(v3), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v4 = ROOT / "iba/app/migration/analysis_phase_1_2323_v2_20261027.py"
+v4 = v4 if v4.exists() else ROOT / "iba/app/migration/archive" / v4.name
+subprocess.run([sys.executable, str(v4), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v5 = ROOT / "iba/app/migration/analysis_phase_1_2323_v3_20261027.py"
+v5 = v5 if v5.exists() else ROOT / "iba/app/migration/archive" / v5.name
+subprocess.run([sys.executable, str(v5), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v6 = ROOT / "iba/app/migration/analysis_phase_1_2323_v4_20261027.py"
+v6 = v6 if v6.exists() else ROOT / "iba/app/migration/archive" / v6.name
+subprocess.run([sys.executable, str(v6), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
 c = sqlite3.connect(DB)
 c.execute("UPDATE cfg_setting SET value=? WHERE key='reading.output_dir'", (json.dumps(str(S / "reading")),))
 c.commit()

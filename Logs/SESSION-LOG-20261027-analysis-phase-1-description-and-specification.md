@@ -14,6 +14,8 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 - #2321 (raised by the failed Config-Maintenance validation, two coherence errors from the retired step reading.gather): resolved self-correctable (v2) by the migration of run DEVMODE-2320-ANALYSIS-PHASE-1-GATHER-RETIRED-20261027.
 - #2316 (Test steps 1 to 3 on new and existing subgroups): updated (v9) to point to #2318.
 
+- #2323 (opened by the researcher for the live-test findings): built the `deleted` columns, the fixing of errors in the check, the kind/subgroup/stage rules, unconfirmed fixes and the `leave` action; handed over ready_for_approval (v5 to v10); on the same item the researcher's later messages are recorded (v10).
+
 ## 3. Files
 
 - outputs/escalation/2318-analysis-phase-1-description-v1-20261027.md (new): the code of Open, Gather, Observe, Record and the two gates as it was before the build, with config read and data tables.
@@ -30,6 +32,8 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 - Database iba.db: escalation rows #2318, #2319, #2320, #2321 and updates to #2316; 27 cfg writes (run DEVMODE-2320-ANALYSIS-PHASE-1-20261027) and 9 cfg writes (run DEVMODE-2320-ANALYSIS-PHASE-1-GATHER-RETIRED-20261027), all in cfg_change_detail; the column ib_observation.parts added. No data row of ib_observation or ib_node was written live.
 - .claude/.developer-mode-active (the marker, not tracked).
 
+- Files (third close): `iba/app/lib/reading.py`, `observationrecord.py`, `priorcapture.py`, `recordingpass.py`, `stage1coverage.py`, `strandreading.py`, `versecollate.py`, `versescope.py`, `versereadinggenerate.py`; migrations `iba/app/migration/archive/analysis_phase_1_2323_v1_20261027.py` to `..._v4_20261027.py`; tests `iba/app/tools/temp_2323_deleted_and_fixes_test_run.py` (34), `temp_2320_analysis_phase_1_test_run.py` (54), `temp_2320_dispatch_test_run.py` (7); `outputs/escalation/2323-test-results-v1-20261027.md`; BUILD.md section 425; USER-GUIDE section 8.2.
+
 ## 4. Decisions
 
 - Researcher: create a new escalation to build the three steps correctly; name them Analysis_phase_1; the description is the whole of what a run may do. Recorded in #2318 v1, v2 and v8.
@@ -43,11 +47,15 @@ Session id: 95543bd0-7cc2-4f14-b7f8-02aa51147ba4. Mode: Developer Mode (marker s
 - Claude self-correctable: the first Compliance.ps1 call used the wrong shell; re-run under pwsh 7. Recorded in Logs/compliance/COMPLIANCE-20261027-95543bd0.md (B:28).
 - Not decided: a new version of the description file for the code as built (it describes the code before the build); whether a reading may keep the JSON in the cluster folder. Recorded in iba/app/BUILD.md section 424.
 
+- Researcher's decisions after the second close, each recorded on #2323 v10 and in BUILD.md section 425: the delete columns on both tables; fixes found in the check need no separate approval (recorded in `cfg_method_rule` RS-04 and #2323 v10); the kind (tag) and subgroup of a kept observation (#2323 v10); stage Analysis_phase_1 on new rows (cfg_enum ib_observation.stage, #2323 v6); stages must not filter, only the wording, so the action `leave` replaces the own_stages setting (cfg_setting reading.verse_loop, #2323 v9).
+
 ## 5. Open items
 
 - #2320: with the researcher for acceptance of the build and the test run; it carries a new version of the description file, the trial reading m21-asking-test (46 draft observations from the earlier process, not withdrawn), and the deletion of a stray 894 MB database copy at C:\c, created by Claude's own path error and removable only by the researcher because the folder is a protected path (Claude, then the researcher).
 - The B:27 and B:100 rule slips listed in Logs/compliance/COMPLIANCE-20261027-95543bd0.md: carried on #2320 for the next version of the description (Claude).
 - The older items assigned to Claude (#2161, #2259, #2305, #2308, #2268, #2301, #2171, #2172, #2235, #2262, #2276, #2278, #2280, #2296, #2303): untouched; #2276, #2278, #2280, #2262, #2296 and #2308 are met by the build and settle after the researcher's test of #2320.
+
+- #2323: with the researcher for acceptance; open there: restoring the role of strand-reading node 13896 (observation 11877) on the researcher's word; the description file needs a new version; `C:\c` (894 MB test copy) must be deleted by the researcher; #2301 (snapshot pruning) unresolved (Claude, outside Analysis_phase_1).
 
 ## 6. Git
 

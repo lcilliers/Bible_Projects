@@ -23,7 +23,7 @@ if S.exists():
     shutil.rmtree(S)
 S.mkdir(parents=True)
 SNAPS = sorted((ROOT / "iba/app/db/snapshots").glob("iba-*pre-2320-analysis-phase-1.db"))
-SOURCE = SNAPS[-1] if SNAPS else ROOT / "iba/app/db/iba.db"       # the database as it was before the migration
+SOURCE = SNAPS[-1] if SNAPS else ROOT / "iba/app/db/iba.db"       # the database before the migration, else the live one (copied)
 DB = copy_db(S / "iba.db", SOURCE)
 env = {**os.environ, "PYTHONPATH": str(ROOT), "PYTHONUTF8": "1"}
 mig = ROOT / "iba/app/migration/analysis_phase_1_2320_v1_20261027.py"
@@ -34,6 +34,18 @@ mo = [(lambda r: (r.stdout or r.stderr).strip())(subprocess.run([sys.executable,
 v2 = ROOT / "iba/app/migration/analysis_phase_1_2320_v2_20261027.py"
 v2 = v2 if v2.exists() else ROOT / "iba/app/migration/archive" / v2.name
 subprocess.run([sys.executable, str(v2), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v3 = ROOT / "iba/app/migration/analysis_phase_1_2323_v1_20261027.py"
+v3 = v3 if v3.exists() else ROOT / "iba/app/migration/archive" / v3.name
+subprocess.run([sys.executable, str(v3), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v4 = ROOT / "iba/app/migration/analysis_phase_1_2323_v2_20261027.py"
+v4 = v4 if v4.exists() else ROOT / "iba/app/migration/archive" / v4.name
+subprocess.run([sys.executable, str(v4), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v5 = ROOT / "iba/app/migration/analysis_phase_1_2323_v3_20261027.py"
+v5 = v5 if v5.exists() else ROOT / "iba/app/migration/archive" / v5.name
+subprocess.run([sys.executable, str(v5), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v6 = ROOT / "iba/app/migration/analysis_phase_1_2323_v4_20261027.py"
+v6 = v6 if v6.exists() else ROOT / "iba/app/migration/archive" / v6.name
+subprocess.run([sys.executable, str(v6), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
 c = sqlite3.connect(DB)
 c.execute("UPDATE cfg_setting SET value=? WHERE key='reading.output_dir'", (json.dumps(str(S / "reading")),))
 c.commit()
@@ -71,12 +83,36 @@ def idx(label):
 
 
 def save(label, data):
+    for v_ in data.get("verses", []):
+        if v_.get("sheet"):
+            fixkinds(v_["sheet"])
     (S / "reading" / label / f"{label}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+
+OK_KINDS = {"face", "qualification", "party", "statement", "link", "use", "term"}
+
+
+def fixkinds(sh):
+    """The reading's part of a kept observation: a tag that is not a kind is modified to one (the reading reads what it says);
+    the silence kind is deleted; the nodes' missing or different subgroup is filled."""
+    sh["fill_nodes"] = True
+    for e in sh["existing"]:
+        a = e.get("action")
+        if not a:
+            continue
+        if e["kind"] == "silence" and a["action"] in ("accept", "modify"):
+            e["action"] = {"action": "delete", "reason": "test: the silence kind is not used by Analysis_phase_1"}
+        elif e["kind"] not in OK_KINDS and a["action"] in ("accept", "modify"):
+            a = dict(a, action="modify", reason=a.get("reason") or "test: the tag is set to the kind of what it says")
+            a["set"] = {**(a.get("set") or {}), "tag": a.get("set", {}).get("tag", "statement")}
+            e["action"] = a
 
 
 # ── M: the migration ────────────────────────────────────────────────────────────────────────────────
-case("M1", "dry run writes nothing; apply writes; a second run is refused",
-     mo[0].startswith("DRY RUN") and "write(s) applied" in mo[1] and mo[2].startswith("already applied"), mo)
+FRESH = not mo[0].startswith("already applied")       # False when the source database already holds the migration
+case("M1", "dry run writes nothing; apply writes; a second run is refused (when the source already holds the migration: every "
+     "run is refused as already applied)",
+     (mo[0].startswith("DRY RUN") and "write(s) applied" in mo[1] if FRESH else mo[0].startswith("already applied"))
+     and mo[2].startswith("already applied"), mo)
 roles = orec.node_role_groups(cfg)
 case("M2", "node roles by result; standalone is not a role of a new node; the parts column exists; gather is retired",
      roles == {"relevant": ["characteristic", "qualifier"], "bears_on": ["object", "relational_target", "enactment"]}
@@ -86,6 +122,12 @@ case("M2", "node roles by result; standalone is not a role of a new node; the pa
 case("M3", "the rules are restated and the new ones are in; the write grant is live",
      len(q("SELECT 1 FROM cfg_method_rule WHERE rule_key LIKE 'RS-0%' AND active=1 AND step IN ('reading.observe','reading.open')")) >= 6
      and q("SELECT inactive FROM cfg_write_grant WHERE writer='reading.record' AND table_name='reading_strand_hit'")[0][0] == 0)
+
+case("M4", "the deleted columns exist on both tables and were backfilled: no withdrawn status or disposition left with deleted=0",
+     "deleted" in [r[1] for r in q("PRAGMA table_info(ib_observation)")] and "deleted" in [r[1] for r in q("PRAGMA table_info(ib_node)")]
+     and q("SELECT count(*) FROM ib_observation WHERE status='withdrawn' AND deleted=0")[0][0] == 0
+     and q("SELECT count(*) FROM ib_node WHERE disposition='withdrawn' AND deleted=0")[0][0] == 0
+     and q("SELECT count(*) FROM ib_observation WHERE deleted=1")[0][0] == q("SELECT count(*) FROM ib_observation WHERE status='withdrawn'")[0][0])
 
 # ── O: Open ─────────────────────────────────────────────────────────────────────────────────────────
 base = dict(Label="t2320-a", Escalation="2320", Objective="the asking words in their verses (test)", Subgroup="M21_asking",
@@ -160,8 +202,8 @@ case("S2", "the sheet holds every surface of the verse once per (Strong, surface
      len(v0["sheet"]["surfaces"]) == len({(x["strong"], x["s"]) for x in rows})
      and sum(len(g["occurrences"]) for g in v0["sheet"]["surfaces"]) == len(rows), (len(v0["sheet"]["surfaces"]), len(rows)))
 ex = {e["observation"] for e in v0["sheet"]["existing"]}
-real = {r[0] for r in q("SELECT DISTINCT o.id FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE o.status<>'withdrawn' "
-                        "AND n.verse_reference=? AND (n.disposition IS NULL OR n.disposition<>'withdrawn')", v0["osis"])}
+real = {r[0] for r in q("SELECT DISTINCT o.id FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE o.deleted=0 "
+                        "AND n.verse_reference=? AND n.deleted=0", v0["osis"])}
 case("S3", "the sheet lists every live observation with a live node on the verse (the query by verse)", ex == real, (len(ex), len(real)))
 case("S4", "the sheet carries the text, the passage and the instructions", bool(v0["sheet"]["text"]) and len(v0["sheet"]["passage"]) >= 1
      and "evaluation" in v0["sheet"]["how"])
@@ -315,11 +357,13 @@ case("R17", "a node modify is logged (or the node already held the value)", any(
      or n_before["cluster_subgroup_code"] == "M21_asking", [tuple(x) for x in nchg])
 if len(ex) > 1:
     case("R18", "a delete withdraws the observation with its reason; nothing is deleted",
-         q("SELECT status FROM ib_observation WHERE id=?", ex[1]["observation"])[0][0] == "withdrawn"
-         and q("SELECT count(*) FROM ib_observation_change WHERE observation_id=? AND new_value='withdrawn'", ex[1]["observation"])[0][0] == 1)
+         tuple(q("SELECT status, deleted FROM ib_observation WHERE id=?", ex[1]["observation"])[0]) == ("withdrawn", 1)
+         and q("SELECT count(*) FROM ib_observation_change WHERE observation_id=? AND column_name='deleted'", ex[1]["observation"])[0][0] == 1)
 if len(ex) > 2:
-    case("R19", "a node delete sets the node's disposition withdrawn with its reason",
-         q("SELECT disposition FROM ib_node WHERE id=?", ex[2]["nodes"][0]["node"])[0][0] == "withdrawn")
+    case("R19", "a node delete sets the node's deleted column with its reason and leaves its disposition alone",
+         tuple(q("SELECT deleted, disposition FROM ib_node WHERE id=?", ex[2]["nodes"][0]["node"])[0]) == (1, None)
+         and q("SELECT count(*) FROM ib_observation_change WHERE node_id=? AND column_name='deleted' AND new_value='1'",
+               ex[2]["nodes"][0]["node"])[0][0] == 1)
 syn_entry = next((n for e in ex for n in e["nodes"] if n["node"] == SYN), None) if SYN else None
 if syn_entry:
     row = q("SELECT verse_lexical_id, cluster_subgroup_code FROM ib_node WHERE id=?", SYN)[0]
@@ -329,8 +373,8 @@ if syn_entry:
 else:
     case("R20", "(no synthetic node could be set up on this verse)", False)
 case("R21", "drop_non_relevant_nodes withdrew the nodes on not_relevant surfaces: no live node names a not_relevant surface",
-     not any(q("SELECT n.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id AND o.status<>'withdrawn' WHERE n.verse_lexical_id IN (%s) "
-               "AND (n.disposition IS NULL OR n.disposition<>'withdrawn')" % ",".join(str(i) for i in g["occurrences"]))
+     not any(q("SELECT n.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id AND o.deleted=0 WHERE n.verse_lexical_id IN (%s) "
+               "AND n.deleted=0" % ",".join(str(i) for i in g["occurrences"]))
              for g in sh["surfaces"] if g["evaluation"]["result"] == "not_relevant"))
 
 # ── G: the third verse, then the gate ───────────────────────────────────────────────────────────────

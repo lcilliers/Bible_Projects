@@ -306,7 +306,7 @@ def context(cfg, w: nr.Writer, p: dict) -> tuple[list[str], str]:
                  f"{sum(1 for h in sh if h['face'] or h['reason'])} |")
     # what is already known
     obs = conn.execute(
-        "SELECT DISTINCT o.* FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE o.status<>'withdrawn' "
+        "SELECT DISTINCT o.* FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE o.deleted=0 "
         "AND (n.strong IN (SELECT strong FROM reading_strand_strong WHERE strand_id=?) OR n.verse_reference IN "
         "(SELECT v.osisId FROM reading_strand_hit h JOIN verse v ON v.id=h.verse_id WHERE h.strand_id=?)) "
         "ORDER BY o.id", (s["id"], s["id"])).fetchall()
@@ -374,7 +374,7 @@ def check_observations(cfg, vx, entries: list[tuple[str, dict]], errors: list, q
         if not occs:
             errors.append(f"{where}: at least one verse (with its strong) is required")
         if o.get("supersedes") is not None and not conn.execute(
-                "SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'", (o["supersedes"],)).fetchone():
+                "SELECT 1 FROM ib_observation WHERE id=? AND deleted=0", (o["supersedes"],)).fetchone():
             errors.append(f"{where}: supersedes {o['supersedes']} is not a live observation")
         quotes += _quote_check(conn, cfg, [o.get(k) for k in ("text", "setting", "meaning", "implication", "chain")], where)
         obs.append({**{k: o.get(k) for k in ("key", "text", "supersedes", "stable_key", "note") + PARTS},
@@ -417,7 +417,7 @@ def record(cfg, w: nr.Writer, p: dict, run_id: str) -> str:
             errors.append(f"{where} ({h.get('verse')} {h.get('strong')}): give a face or a reason, one of them")
         ob = h.get("observation")
         if ob is not None and ob not in keys and not conn.execute(
-                "SELECT 1 FROM ib_observation WHERE id=? AND status<>'withdrawn'", (ob,)).fetchone():
+                "SELECT 1 FROM ib_observation WHERE id=? AND deleted=0", (ob,)).fetchone():
             errors.append(f"{where}: observation {ob!r} is neither a key in this file nor a live observation")
         hits.append((row, h))
     new_items = item_specs(cfg, data.get("items"), "items", errors)

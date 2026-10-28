@@ -112,7 +112,7 @@ def _word_level_findings(conn, verse_refs: list[str]) -> dict[str, dict[str, lis
     rows = conn.execute(
         f"SELECT n.verse_reference, n.strong, o.question_code, o.obs_text "
         f"FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id "
-        f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
+        f"WHERE o.stage='verse-reading' AND o.deleted=0 "
         f"AND (o.question_code LIKE 'M0.1%' OR o.question_code LIKE 'M0.5%') "
         f"AND n.verse_reference IN ({ph}) ORDER BY n.strong, o.question_code",
         verse_refs).fetchall()
@@ -160,7 +160,7 @@ def _verse_cluster_agnostic_coverage(conn, verse_refs: list[str]) -> dict[str, d
     rows = conn.execute(
         f"SELECT n.verse_reference, n.strong, o.question_code "
         f"FROM ib_node n JOIN ib_observation o ON o.id = n.observation_id "
-        f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
+        f"WHERE o.stage='verse-reading' AND o.deleted=0 "
         f"AND (o.question_code IN ('M0.6.5', 'M0.6.6', 'D7.7.1', 'M0.8.1') "
         f"OR o.question_code LIKE 'M0.7%' "
         f"OR o.question_code LIKE 'M0.1%' OR o.question_code LIKE 'M0.5%') "

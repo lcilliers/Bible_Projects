@@ -152,7 +152,7 @@ def _consolidate_duplicates(conn, canonical_id: int, duplicate_ids: list[int]) -
     `supersedes_observation_id` is not used: per its cfg_column.use it belongs to the synthesis stage."""
     _assert_valid_ib_status(conn, "withdrawn")
     for dup_id in duplicate_ids:
-        conn.execute("UPDATE ib_observation SET status='withdrawn', updated_at=? WHERE id=?",
+        conn.execute("UPDATE ib_observation SET status='withdrawn', deleted=1, updated_at=? WHERE id=?",
                     (_now(), dup_id))
         seq = conn.execute("SELECT COALESCE(MAX(seq), 0) FROM ib_node WHERE observation_id=?",
                            (canonical_id,)).fetchone()[0]
@@ -595,7 +595,7 @@ def record_strand_observations(conn, cluster_code: str, run_id: str, observation
             _insert_node(conn, oid, cluster_code, occ["strong"], occ["verse_reference"], occ["surface"],
                          occ["morph_code"], None, STRAND_STAGE, seq)
         if o.get("supersedes"):
-            conn.execute("UPDATE ib_observation SET status='withdrawn', revisit_note=?, updated_at=? WHERE id=?",
+            conn.execute("UPDATE ib_observation SET status='withdrawn', deleted=1, revisit_note=?, updated_at=? WHERE id=?",
                          (f"superseded by observation {oid} (run {run_id})", _now(), o["supersedes"]))
         ids[o["key"]] = oid
     return ids
@@ -605,8 +605,8 @@ def set_disposition(conn, observation_id: int, status: str, note: str | None, ru
     """An observation's disposition (#2172 design decision 5): resolved (a claim carries it), open
     (held as a thread item), silent or withdrawn; the reason or the item goes in revisit_note."""
     _assert_valid_ib_status(conn, status)
-    conn.execute("UPDATE ib_observation SET status=?, revisit_note=?, run_id=?, updated_at=? WHERE id=?",
-                 (status, note, run_id, _now(), observation_id))
+    conn.execute("UPDATE ib_observation SET status=?, deleted=CASE WHEN ?='withdrawn' THEN 1 ELSE deleted END, revisit_note=?, run_id=?, updated_at=? WHERE id=?",
+                 (status, status, note, run_id, _now(), observation_id))
 
 
 class SubgroupWriteError(Exception):

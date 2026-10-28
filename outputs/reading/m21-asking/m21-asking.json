@@ -1,0 +1,4530 @@
+{
+ "reading": "m21-asking",
+ "reading_id": 6,
+ "escalation": 2320,
+ "subgroup": "M21_asking",
+ "home": "M21",
+ "segment": null,
+ "objective": "the asking words in their verses",
+ "opened": "2026-10-27T17:04:16Z",
+ "how": "The index of the verses in scope. Reading.ps1 -Step Observe puts the next verses in hand (a sheet each: the surfaces, the existing observations and nodes, the ledger faces, read from the tables then); fill the sheets; Reading.ps1 -Step Record writes them and marks the verses done; Reading.ps1 -Step Check passes the gate when every verse is done.",
+ "counts": {
+  "verses": 271,
+  "done": 5
+ },
+ "verses": [
+  {
+   "verse": "Gen 24:47",
+   "osis": "Gen.24.47",
+   "verse_id": 809,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-27T17:07:23Z",
+    "run_id": "RUN-20261027_170710_387-READING",
+    "existing": {
+     "accepted": 1,
+     "modified": 0,
+     "deleted": 0,
+     "nodes_modified": 0,
+     "nodes_deleted": 1,
+     "links": 0
+    },
+    "surfaces": [
+     {
+      "word": "asked (H7592)",
+      "occurrences": [
+       975894
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: the servant seeks to learn who the young woman is; the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "asked (H0559)",
+      "occurrences": [
+       975895
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (asked (H0559)), no inner-being sense here"
+     },
+     {
+      "word": "Whose (H4310)",
+      "occurrences": [
+       975896
+      ],
+      "result": "bears_on",
+      "reason": "what is asked: the content of the question, whose daughter"
+     },
+     {
+      "word": "daughter (H1323G)",
+      "occurrences": [
+       975897,
+       975902
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (daughter (H1323G)), no inner-being role in this verse"
+     },
+     {
+      "word": "daughter (H0853)",
+      "occurrences": [
+       975898
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTo): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "daughter (H9034)",
+      "occurrences": [
+       975899
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3fs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "you (H0859C)",
+      "occurrences": [
+       975900
+      ],
+      "result": "bears_on",
+      "reason": "the one asked: Rebekah addressed as you"
+     },
+     {
+      "word": "said (H0559)",
+      "occurrences": [
+       975901
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (said (H0559)), no inner-being sense here"
+     },
+     {
+      "word": "Bethuel (H1328A)",
+      "occurrences": [
+       975903
+      ],
+      "result": "not_relevant",
+      "reason": "a personal or place name in the narrative, no inner-being role in this verse"
+     },
+     {
+      "word": "Nahor’s (H5152H)",
+      "occurrences": [
+       975904
+      ],
+      "result": "not_relevant",
+      "reason": "a personal or place name in the narrative, no inner-being role in this verse"
+     },
+     {
+      "word": "son (H1121A)",
+      "occurrences": [
+       975905
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (son (H1121A)), no inner-being role in this verse"
+     },
+     {
+      "word": "Milcah (H4435G)",
+      "occurrences": [
+       975906
+      ],
+      "result": "not_relevant",
+      "reason": "a personal or place name in the narrative, no inner-being role in this verse"
+     },
+     {
+      "word": "Milcah (H9005)",
+      "occurrences": [
+       975907
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HRd): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "Milcah (H9033)",
+      "occurrences": [
+       975908
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3ms): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "bore (H3205)",
+      "occurrences": [
+       975909
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (bore (H3205)), no inner-being sense here"
+     },
+     {
+      "word": "bore (H0834A)",
+      "occurrences": [
+       975910
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTr): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "put (H7760H)",
+      "occurrences": [
+       975911
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (put (H7760H)), no inner-being sense here"
+     },
+     {
+      "word": "ring (H5141)",
+      "occurrences": [
+       975912
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (ring (H5141)), no inner-being role in this verse"
+     },
+     {
+      "word": "ring (H9009)",
+      "occurrences": [
+       975913
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTd): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "on (H5921A)",
+      "occurrences": [
+       975914
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "nose (H0639H)",
+      "occurrences": [
+       975915
+      ],
+      "result": "not_relevant",
+      "reason": "the place of an outward act, the ring put on the nose; the verse states no inner-being role for it"
+     },
+     {
+      "word": "bracelets (H6781A)",
+      "occurrences": [
+       975916
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (bracelets (H6781A)), no inner-being role in this verse"
+     },
+     {
+      "word": "bracelets (H9009)",
+      "occurrences": [
+       975917
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTd): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "bracelets (H9002)",
+      "occurrences": [
+       975918
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HC): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "bracelets (H9024)",
+      "occurrences": [
+       975919
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3fs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "her (H9024)",
+      "occurrences": [
+       975920
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3fs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "arms (H3027G)",
+      "occurrences": [
+       975921
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (arms (H3027G)), no inner-being role in this verse"
+     },
+     {
+      "word": "arms (H5921A)",
+      "occurrences": [
+       975922
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     }
+    ],
+    "written": {
+     "observations": [
+      20626
+     ],
+     "nodes": 3
+    }
+   }
+  },
+  {
+   "verse": "Gen 24:57",
+   "osis": "Gen.24.57",
+   "verse_id": 9477,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-27T17:07:23Z",
+    "run_id": "RUN-20261027_170710_387-READING",
+    "existing": {
+     "accepted": 0,
+     "modified": 0,
+     "deleted": 0,
+     "nodes_modified": 0,
+     "nodes_deleted": 0,
+     "links": 0
+    },
+    "surfaces": [
+     {
+      "word": "said (H0559)",
+      "occurrences": [
+       985432
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (said (H0559)), no inner-being sense here"
+     },
+     {
+      "word": "call (H7121G)",
+      "occurrences": [
+       985433
+      ],
+      "result": "relevant",
+      "reason": "H7121 call: the family will summon her so that she can be asked herself"
+     },
+     {
+      "word": "young woman (H5291)",
+      "occurrences": [
+       985434
+      ],
+      "result": "bears_on",
+      "reason": "the one called and asked, Rebekah as the young woman"
+     },
+     {
+      "word": "young woman (H9005)",
+      "occurrences": [
+       985435
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HRd): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "ask (H7592)",
+      "occurrences": [
+       985436
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: the family decides to ask Rebekah herself, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "her (H6310G)",
+      "occurrences": [
+       985437
+      ],
+      "result": "bears_on",
+      "reason": "H6310 is the mouth: the ESV renders the idiom to ask at her mouth as ask her, so the English hides the word"
+     },
+     {
+      "word": "her (H9024)",
+      "occurrences": [
+       985438
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3fs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "her (H0853)",
+      "occurrences": [
+       985439
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTo): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     }
+    ],
+    "written": {
+     "observations": [
+      20627
+     ],
+     "nodes": 4
+    }
+   }
+  },
+  {
+   "verse": "Gen 26:7",
+   "osis": "Gen.26.7",
+   "verse_id": 2950,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-27T17:07:23Z",
+    "run_id": "RUN-20261027_170710_387-READING",
+    "existing": {
+     "accepted": 1,
+     "modified": 0,
+     "deleted": 0,
+     "nodes_modified": 1,
+     "nodes_deleted": 0,
+     "links": 0
+    },
+    "surfaces": [
+     {
+      "word": "men (H0582)",
+      "occurrences": [
+       977915,
+       977931
+      ],
+      "result": "bears_on",
+      "reason": "the ones asking, the men of the place"
+     },
+     {
+      "word": "place (H4725)",
+      "occurrences": [
+       977916,
+       977933
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (place (H4725)), no inner-being role in this verse"
+     },
+     {
+      "word": "place (H9009)",
+      "occurrences": [
+       977917,
+       977934
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTd): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "asked (H7592)",
+      "occurrences": [
+       977918
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: the men of the place ask Isaac about his wife, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "wife (H0802H)",
+      "occurrences": [
+       977919,
+       977930
+      ],
+      "result": "bears_on",
+      "reason": "what is asked about: the wife"
+     },
+     {
+      "word": "wife (H9005)",
+      "occurrences": [
+       977920
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "he (H9023)",
+      "occurrences": [
+       977921
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3ms): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "said (H0559)",
+      "occurrences": [
+       977922
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (said (H0559)), no inner-being sense here"
+     },
+     {
+      "word": "sister (H0269)",
+      "occurrences": [
+       977923
+      ],
+      "result": "not_relevant",
+      "reason": "a personal or place name in the narrative, no inner-being role in this verse"
+     },
+     {
+      "word": "he (H1931)",
+      "occurrences": [
+       977924
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HPp3fs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "feared (H3372G)",
+      "occurrences": [
+       977925
+      ],
+      "result": "relevant",
+      "reason": "H3372 fear: Isaac feared to say my wife; fear is the inner state that the verse gives as his reason"
+     },
+     {
+      "word": "feared (H9020)",
+      "occurrences": [
+       977926
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "feared (H3588A)",
+      "occurrences": [
+       977927
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTc): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "say (H0559)",
+      "occurrences": [
+       977928
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (say (H0559)), no inner-being sense here"
+     },
+     {
+      "word": "say (H9005)",
+      "occurrences": [
+       977929
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "men (H9030)",
+      "occurrences": [
+       977932
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "kill (H2026)",
+      "occurrences": [
+       977935
+      ],
+      "result": "bears_on",
+      "reason": "what he feared: that the men would kill him"
+     },
+     {
+      "word": "kill (H9020)",
+      "occurrences": [
+       977936
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "kill (H6435)",
+      "occurrences": [
+       977937
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTc): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "Rebekah (H7259)",
+      "occurrences": [
+       977938
+      ],
+      "result": "bears_on",
+      "reason": "the person because of whom he fears, Rebekah"
+     },
+     {
+      "word": "Rebekah (H5921A)",
+      "occurrences": [
+       977939
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "she (H1931)",
+      "occurrences": [
+       977940
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HPp3fs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "attractive (H2896A)",
+      "occurrences": [
+       977941
+      ],
+      "result": "relevant",
+      "reason": "H2896 attractive: Rebekah's good appearance, which the verse gives as the reason for the fear"
+     },
+     {
+      "word": "attractive (H3588A)",
+      "occurrences": [
+       977942
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTc): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "appearance (H4758)",
+      "occurrences": [
+       977943
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (appearance (H4758)), no inner-being role in this verse"
+     }
+    ],
+    "written": {
+     "observations": [
+      20628,
+      20629
+     ],
+     "nodes": 6
+    }
+   }
+  },
+  {
+   "verse": "Gen 32:17",
+   "osis": "Gen.32.17",
+   "verse_id": 9564,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-27T17:07:23Z",
+    "run_id": "RUN-20261027_170710_387-READING",
+    "existing": {
+     "accepted": 0,
+     "modified": 0,
+     "deleted": 0,
+     "nodes_modified": 0,
+     "nodes_deleted": 0,
+     "links": 0
+    },
+    "surfaces": [
+     {
+      "word": "instructed (H6680)",
+      "occurrences": [
+       987170
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (instructed (H6680)), no inner-being sense here"
+     },
+     {
+      "word": "instructed (H0559)",
+      "occurrences": [
+       987171
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (instructed (H0559)), no inner-being sense here"
+     },
+     {
+      "word": "first (H7223G)",
+      "occurrences": [
+       987172
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (first (H7223G)), no inner-being role in this verse"
+     },
+     {
+      "word": "first (H9009)",
+      "occurrences": [
+       987173
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTd): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "first (H0853)",
+      "occurrences": [
+       987174
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTo): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "When (H3588A)",
+      "occurrences": [
+       987175
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTc): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "When (H9005)",
+      "occurrences": [
+       987176
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "Esau (H6215G)",
+      "occurrences": [
+       987177
+      ],
+      "result": "bears_on",
+      "reason": "the one who will ask, Esau"
+     },
+     {
+      "word": "Esau (H9031)",
+      "occurrences": [
+       987178
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp2ms): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "brother (H0251G)",
+      "occurrences": [
+       987179
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (brother (H0251G)), no inner-being role in this verse"
+     },
+     {
+      "word": "meets (H6298)",
+      "occurrences": [
+       987180
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (meets (H6298)), no inner-being sense here"
+     },
+     {
+      "word": "asks (H7592)",
+      "occurrences": [
+       987181
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: Esau is expected to ask the servant, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "asks (H9020)",
+      "occurrences": [
+       987182
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "asks (H0559)",
+      "occurrences": [
+       987183
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (asks (H0559)), no inner-being sense here"
+     },
+     {
+      "word": "To (H9005)",
+      "occurrences": [
+       987184
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "whom (H4310)",
+      "occurrences": [
+       987185
+      ],
+      "result": "bears_on",
+      "reason": "content of Esau's questions: to whom the servant belongs"
+     },
+     {
+      "word": "whom (H9031)",
+      "occurrences": [
+       987186
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp2ms): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "whom (H9005)",
+      "occurrences": [
+       987187
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "you (H0859A)",
+      "occurrences": [
+       987188
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HPp2ms): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "Where (H0575)",
+      "occurrences": [
+       987189
+      ],
+      "result": "bears_on",
+      "reason": "content of Esau's questions: where he is going"
+     },
+     {
+      "word": "Where (H9002)",
+      "occurrences": [
+       987190
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HC): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "going (H1980G)",
+      "occurrences": [
+       987191
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (going (H1980G)), no inner-being sense here"
+     },
+     {
+      "word": "whose (H4310)",
+      "occurrences": [
+       987192
+      ],
+      "result": "bears_on",
+      "reason": "content of Esau's questions: whose the droves are"
+     },
+     {
+      "word": "whose (H9002)",
+      "occurrences": [
+       987193
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HC): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "whose (H9005)",
+      "occurrences": [
+       987194
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "ahead (H6440G)",
+      "occurrences": [
+       987195
+      ],
+      "result": "not_relevant",
+      "reason": "an ordinary noun or adjective of the narrative (ahead (H6440G)), no inner-being role in this verse"
+     },
+     {
+      "word": "ahead (H9005)",
+      "occurrences": [
+       987196
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "ahead (H9021)",
+      "occurrences": [
+       987197
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp2ms): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "ahead (H0428)",
+      "occurrences": [
+       987198
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTm): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     }
+    ],
+    "written": {
+     "observations": [
+      20630
+     ],
+     "nodes": 5
+    }
+   }
+  },
+  {
+   "verse": "Gen 32:29",
+   "osis": "Gen.32.29",
+   "verse_id": 9567,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "done",
+   "result": {
+    "at": "2026-10-27T17:07:23Z",
+    "run_id": "RUN-20261027_170710_387-READING",
+    "existing": {
+     "accepted": 0,
+     "modified": 0,
+     "deleted": 0,
+     "nodes_modified": 0,
+     "nodes_deleted": 0,
+     "links": 0
+    },
+    "surfaces": [
+     {
+      "word": "Jacob (H3290)",
+      "occurrences": [
+       987225
+      ],
+      "result": "bears_on",
+      "reason": "the one who asks, Jacob"
+     },
+     {
+      "word": "asked (H7592)",
+      "occurrences": [
+       987226
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: Jacob asks the man for his name, the verb of inquiry of the subgroup"
+     },
+     {
+      "word": "asked (H0559)",
+      "occurrences": [
+       987227
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (asked (H0559)), no inner-being sense here"
+     },
+     {
+      "word": "Please (H4994)",
+      "occurrences": [
+       987228
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTj): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "Please (H9012)",
+      "occurrences": [
+       987229
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSh): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "tell (H5046)",
+      "occurrences": [
+       987230
+      ],
+      "result": "relevant",
+      "reason": "H5046 tell: Jacob asks that he tell him his name; the request is made by this verb"
+     },
+     {
+      "word": "name (H8034)",
+      "occurrences": [
+       987231,
+       987238
+      ],
+      "result": "bears_on",
+      "reason": "what is asked: his name"
+     },
+     {
+      "word": "said (H0559)",
+      "occurrences": [
+       987232
+      ],
+      "result": "not_relevant",
+      "reason": "an outward act or reporting verb in this verse (said (H0559)), no inner-being sense here"
+     },
+     {
+      "word": "said (H9021)",
+      "occurrences": [
+       987233
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp2ms): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "Why (H4100)",
+      "occurrences": [
+       987234
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HPi): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "Why (H9005)",
+      "occurrences": [
+       987235
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "it (H2088)",
+      "occurrences": [
+       987236
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTm): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "ask (H7592)",
+      "occurrences": [
+       987237
+      ],
+      "result": "relevant",
+      "reason": "H7592 ask: the man answers by asking why Jacob asks his name"
+     },
+     {
+      "word": "name (H9005)",
+      "occurrences": [
+       987239
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HR): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "there (H8033G)",
+      "occurrences": [
+       987240
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HD): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "there (H0853)",
+      "occurrences": [
+       987241
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HTo): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "there (H9033)",
+      "occurrences": [
+       987242
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp3ms): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     },
+     {
+      "word": "blessed (H1288)",
+      "occurrences": [
+       987243
+      ],
+      "result": "relevant",
+      "reason": "H1288 bless: the man blesses Jacob there, in place of giving his name"
+     },
+     {
+      "word": "blessed (H9020)",
+      "occurrences": [
+       987244
+      ],
+      "result": "not_relevant",
+      "reason": "grammar only (morph HSp1bs): pronoun, suffix, preposition, particle or article, carries no inner-being role"
+     }
+    ],
+    "written": {
+     "observations": [
+      20631,
+      20632
+     ],
+     "nodes": 7
+    }
+   }
+  },
+  {
+   "verse": "Gen 37:15",
+   "osis": "Gen.37.15",
+   "verse_id": 9585,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Gen 38:21",
+   "osis": "Gen.38.21",
+   "verse_id": 9601,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Gen 40:7",
+   "osis": "Gen.40.7",
+   "verse_id": 9612,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Gen 43:7",
+   "osis": "Gen.43.7",
+   "verse_id": 9641,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Gen 43:27",
+   "osis": "Gen.43.27",
+   "verse_id": 9646,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Gen 44:19",
+   "osis": "Gen.44.19",
+   "verse_id": 6272,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Exo 3:22",
+   "osis": "Exod.3.22",
+   "verse_id": 18801,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Exo 11:2",
+   "osis": "Exod.11.2",
+   "verse_id": 4768,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Exo 12:35",
+   "osis": "Exod.12.35",
+   "verse_id": 16347,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Exo 12:36",
+   "osis": "Exod.12.36",
+   "verse_id": 17844,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Exo 13:14",
+   "osis": "Exod.13.14",
+   "verse_id": 6308,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Exo 18:7",
+   "osis": "Exod.18.7",
+   "verse_id": 18802,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Num 27:21",
+   "osis": "Num.27.21",
+   "verse_id": 16675,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Deu 4:32",
+   "osis": "Deut.4.32",
+   "verse_id": 15853,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Deu 6:20",
+   "osis": "Deut.6.20",
+   "verse_id": 10021,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Deu 10:12",
+   "osis": "Deut.10.12",
+   "verse_id": 3140,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Deu 13:14",
+   "osis": "Deut.13.14",
+   "verse_id": 372,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Deu 18:16",
+   "osis": "Deut.18.16",
+   "verse_id": 10041,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Deu 32:7",
+   "osis": "Deut.32.7",
+   "verse_id": 10076,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jos 4:6",
+   "osis": "Josh.4.6",
+   "verse_id": 10116,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jos 4:21",
+   "osis": "Josh.4.21",
+   "verse_id": 10120,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jos 9:14",
+   "osis": "Josh.9.14",
+   "verse_id": 16678,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jos 15:18",
+   "osis": "Josh.15.18",
+   "verse_id": 10154,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jos 19:50",
+   "osis": "Josh.19.50",
+   "verse_id": 16680,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 1:1",
+   "osis": "Judg.1.1",
+   "verse_id": 10176,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 1:14",
+   "osis": "Judg.1.14",
+   "verse_id": 10181,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 4:20",
+   "osis": "Judg.4.20",
+   "verse_id": 10193,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 5:25",
+   "osis": "Judg.5.25",
+   "verse_id": 17984,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 8:14",
+   "osis": "Judg.8.14",
+   "verse_id": 18803,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 8:24",
+   "osis": "Judg.8.24",
+   "verse_id": 10230,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 13:6",
+   "osis": "Judg.13.6",
+   "verse_id": 3154,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 13:18",
+   "osis": "Judg.13.18",
+   "verse_id": 10271,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 18:5",
+   "osis": "Judg.18.5",
+   "verse_id": 10304,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 18:15",
+   "osis": "Judg.18.15",
+   "verse_id": 18805,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 20:18",
+   "osis": "Judg.20.18",
+   "verse_id": 10329,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 20:23",
+   "osis": "Judg.20.23",
+   "verse_id": 10330,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Judg 20:27",
+   "osis": "Judg.20.27",
+   "verse_id": 17038,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 1:17",
+   "osis": "1Sam.1.17",
+   "verse_id": 10388,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 1:20",
+   "osis": "1Sam.1.20",
+   "verse_id": 12772,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 1:27",
+   "osis": "1Sam.1.27",
+   "verse_id": 17999,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 2:20",
+   "osis": "1Sam.2.20",
+   "verse_id": 10396,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 8:10",
+   "osis": "1Sam.8.10",
+   "verse_id": 10430,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 10:22",
+   "osis": "1Sam.10.22",
+   "verse_id": 10453,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 12:13",
+   "osis": "1Sam.12.13",
+   "verse_id": 18684,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 12:17",
+   "osis": "1Sam.12.17",
+   "verse_id": 12611,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 12:19",
+   "osis": "1Sam.12.19",
+   "verse_id": 6389,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 14:37",
+   "osis": "1Sam.14.37",
+   "verse_id": 12448,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 17:56",
+   "osis": "1Sam.17.56",
+   "verse_id": 10530,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 19:22",
+   "osis": "1Sam.19.22",
+   "verse_id": 10543,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 20:6",
+   "osis": "1Sam.20.6",
+   "verse_id": 10550,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 20:28",
+   "osis": "1Sam.20.28",
+   "verse_id": 12450,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 22:10",
+   "osis": "1Sam.22.10",
+   "verse_id": 18006,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 22:13",
+   "osis": "1Sam.22.13",
+   "verse_id": 10573,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 22:15",
+   "osis": "1Sam.22.15",
+   "verse_id": 6410,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 23:2",
+   "osis": "1Sam.23.2",
+   "verse_id": 10578,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 23:4",
+   "osis": "1Sam.23.4",
+   "verse_id": 10580,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 25:8",
+   "osis": "1Sam.25.8",
+   "verse_id": 6414,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 28:6",
+   "osis": "1Sam.28.6",
+   "verse_id": 12451,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 28:16",
+   "osis": "1Sam.28.16",
+   "verse_id": 10615,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Sa 30:8",
+   "osis": "1Sam.30.8",
+   "verse_id": 10620,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 2:1",
+   "osis": "2Sam.2.1",
+   "verse_id": 10634,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 3:13",
+   "osis": "2Sam.3.13",
+   "verse_id": 10642,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 5:19",
+   "osis": "2Sam.5.19",
+   "verse_id": 10656,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 5:23",
+   "osis": "2Sam.5.23",
+   "verse_id": 10657,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 8:10",
+   "osis": "2Sam.8.10",
+   "verse_id": 13166,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 11:7",
+   "osis": "2Sam.11.7",
+   "verse_id": 18809,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 12:20",
+   "osis": "2Sam.12.20",
+   "verse_id": 2379,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 14:18",
+   "osis": "2Sam.14.18",
+   "verse_id": 5120,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 16:23",
+   "osis": "2Sam.16.23",
+   "verse_id": 16382,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Sa 20:18",
+   "osis": "2Sam.20.18",
+   "verse_id": 5127,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ki 2:16",
+   "osis": "1Kgs.2.16",
+   "verse_id": 5137,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ki 2:20",
+   "osis": "1Kgs.2.20",
+   "verse_id": 10813,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ki 2:22",
+   "osis": "1Kgs.2.22",
+   "verse_id": 10815,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ki 3:5",
+   "osis": "1Kgs.3.5",
+   "verse_id": 10819,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ki 3:10",
+   "osis": "1Kgs.3.10",
+   "verse_id": 15688,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ki 3:11",
+   "osis": "1Kgs.3.11",
+   "verse_id": 10820,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ki 3:13",
+   "osis": "1Kgs.3.13",
+   "verse_id": 18014,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ki 10:13",
+   "osis": "1Kgs.10.13",
+   "verse_id": 6525,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ki 19:4",
+   "osis": "1Kgs.19.4",
+   "verse_id": 10900,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Ki 2:9",
+   "osis": "2Kgs.2.9",
+   "verse_id": 10961,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Ki 2:10",
+   "osis": "2Kgs.2.10",
+   "verse_id": 10962,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Ki 4:28",
+   "osis": "2Kgs.4.28",
+   "verse_id": 10992,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Ki 8:6",
+   "osis": "2Kgs.8.6",
+   "verse_id": 11037,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ch 4:10",
+   "osis": "1Chr.4.10",
+   "verse_id": 1575,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ch 10:13",
+   "osis": "1Chr.10.13",
+   "verse_id": 14683,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ch 14:10",
+   "osis": "1Chr.14.10",
+   "verse_id": 11126,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ch 14:14",
+   "osis": "1Chr.14.14",
+   "verse_id": 11128,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Ch 18:10",
+   "osis": "1Chr.18.10",
+   "verse_id": 13216,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Ch 1:7",
+   "osis": "2Chr.1.7",
+   "verse_id": 11161,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Ch 1:11",
+   "osis": "2Chr.1.11",
+   "verse_id": 184,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Ch 9:12",
+   "osis": "2Chr.9.12",
+   "verse_id": 6622,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Ezr 5:9",
+   "osis": "Ezra.5.9",
+   "verse_id": 12305,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7593"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Ezr 5:10",
+   "osis": "Ezra.5.10",
+   "verse_id": 19777,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7593"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Ezr 7:21",
+   "osis": "Ezra.7.21",
+   "verse_id": 19523,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7593"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Ezr 8:22",
+   "osis": "Ezra.8.22",
+   "verse_id": 667,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Neh 1:2",
+   "osis": "Neh.1.2",
+   "verse_id": 18810,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Neh 13:6",
+   "osis": "Neh.13.6",
+   "verse_id": 18811,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Job 8:8",
+   "osis": "Job.8.8",
+   "verse_id": 18812,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Job 12:7",
+   "osis": "Job.12.7",
+   "verse_id": 18813,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Job 21:29",
+   "osis": "Job.21.29",
+   "verse_id": 18814,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Job 31:30",
+   "osis": "Job.31.30",
+   "verse_id": 18815,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Job 38:3",
+   "osis": "Job.38.3",
+   "verse_id": 18816,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Job 40:7",
+   "osis": "Job.40.7",
+   "verse_id": 18817,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Job 42:4",
+   "osis": "Job.42.4",
+   "verse_id": 5291,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Psa 2:8",
+   "osis": "Ps.2.8",
+   "verse_id": 12391,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Psa 21:4",
+   "osis": "Ps.21.4",
+   "verse_id": 18103,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Psa 27:4",
+   "osis": "Ps.27.4",
+   "verse_id": 18745,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Psa 35:11",
+   "osis": "Ps.35.11",
+   "verse_id": 18818,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Psa 40:6",
+   "osis": "Ps.40.6",
+   "verse_id": 17602,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Psa 78:18",
+   "osis": "Ps.78.18",
+   "verse_id": 2779,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Psa 105:40",
+   "osis": "Ps.105.40",
+   "verse_id": 15777,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Psa 137:3",
+   "osis": "Ps.137.3",
+   "verse_id": 18358,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Pro 20:4",
+   "osis": "Prov.20.4",
+   "verse_id": 18820,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Pro 30:7",
+   "osis": "Prov.30.7",
+   "verse_id": 14722,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Ecc 2:10",
+   "osis": "Eccl.2.10",
+   "verse_id": 1382,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Ecc 7:10",
+   "osis": "Eccl.7.10",
+   "verse_id": 11511,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Isa 7:11",
+   "osis": "Isa.7.11",
+   "verse_id": 16729,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Isa 7:12",
+   "osis": "Isa.7.12",
+   "verse_id": 11541,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Isa 30:2",
+   "osis": "Isa.30.2",
+   "verse_id": 16695,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Isa 41:28",
+   "osis": "Isa.41.28",
+   "verse_id": 16621,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Isa 45:11",
+   "osis": "Isa.45.11",
+   "verse_id": 11625,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Isa 58:2",
+   "osis": "Isa.58.2",
+   "verse_id": 17618,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Isa 65:1",
+   "osis": "Isa.65.1",
+   "verse_id": 11662,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 6:16",
+   "osis": "Jer.6.16",
+   "verse_id": 11697,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 15:5",
+   "osis": "Jer.15.5",
+   "verse_id": 13787,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 18:13",
+   "osis": "Jer.18.13",
+   "verse_id": 11756,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 23:33",
+   "osis": "Jer.23.33",
+   "verse_id": 11774,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 30:6",
+   "osis": "Jer.30.6",
+   "verse_id": 16239,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 36:17",
+   "osis": "Jer.36.17",
+   "verse_id": 11866,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 37:17",
+   "osis": "Jer.37.17",
+   "verse_id": 11878,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 38:14",
+   "osis": "Jer.38.14",
+   "verse_id": 11884,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 38:27",
+   "osis": "Jer.38.27",
+   "verse_id": 16105,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 48:19",
+   "osis": "Jer.48.19",
+   "verse_id": 11915,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jer 50:5",
+   "osis": "Jer.50.5",
+   "verse_id": 17076,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Eze 21:21",
+   "osis": "Ezek.21.21",
+   "verse_id": 18822,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 2:10",
+   "osis": "Dan.2.10",
+   "verse_id": 12313,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7593"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 2:11",
+   "osis": "Dan.2.11",
+   "verse_id": 28080,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7593"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 2:13",
+   "osis": "Dan.2.13",
+   "verse_id": 18710,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 2:16",
+   "osis": "Dan.2.16",
+   "verse_id": 18711,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 2:23",
+   "osis": "Dan.2.23",
+   "verse_id": 18712,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 2:27",
+   "osis": "Dan.2.27",
+   "verse_id": 7177,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7593"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 2:49",
+   "osis": "Dan.2.49",
+   "verse_id": 18713,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 4:36",
+   "osis": "Dan.4.36",
+   "verse_id": 18714,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 6:4",
+   "osis": "Dan.6.4",
+   "verse_id": 16309,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 6:7",
+   "osis": "Dan.6.7",
+   "verse_id": 16592,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 6:11",
+   "osis": "Dan.6.11",
+   "verse_id": 18715,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 6:12",
+   "osis": "Dan.6.12",
+   "verse_id": 12350,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 6:13",
+   "osis": "Dan.6.13",
+   "verse_id": 12351,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Dan 7:16",
+   "osis": "Dan.7.16",
+   "verse_id": 12358,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H1156"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Hos 4:12",
+   "osis": "Hos.4.12",
+   "verse_id": 16972,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jon 4:8",
+   "osis": "Jonah.4.8",
+   "verse_id": 12200,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mic 7:3",
+   "osis": "Mic.7.3",
+   "verse_id": 112,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Hag 2:11",
+   "osis": "Hag.2.11",
+   "verse_id": 12224,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Zec 10:1",
+   "osis": "Zech.10.1",
+   "verse_id": 18231,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "H7592"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 6:8",
+   "osis": "Matt.6.8",
+   "verse_id": 18390,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 7:7",
+   "osis": "Matt.7.7",
+   "verse_id": 18391,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 7:8",
+   "osis": "Matt.7.8",
+   "verse_id": 18392,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 7:9",
+   "osis": "Matt.7.9",
+   "verse_id": 18393,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 7:10",
+   "osis": "Matt.7.10",
+   "verse_id": 18394,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 7:11",
+   "osis": "Matt.7.11",
+   "verse_id": 18395,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 14:7",
+   "osis": "Matt.14.7",
+   "verse_id": 18396,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 16:13",
+   "osis": "Matt.16.13",
+   "verse_id": 3571,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 18:19",
+   "osis": "Matt.18.19",
+   "verse_id": 3589,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 19:17",
+   "osis": "Matt.19.17",
+   "verse_id": 8361,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 20:20",
+   "osis": "Matt.20.20",
+   "verse_id": 18397,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 20:22",
+   "osis": "Matt.20.22",
+   "verse_id": 3611,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 21:22",
+   "osis": "Matt.21.22",
+   "verse_id": 18398,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 21:24",
+   "osis": "Matt.21.24",
+   "verse_id": 8371,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 27:20",
+   "osis": "Matt.27.20",
+   "verse_id": 18399,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mat 27:58",
+   "osis": "Matt.27.58",
+   "verse_id": 18400,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 4:10",
+   "osis": "Mark.4.10",
+   "verse_id": 18464,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 6:22",
+   "osis": "Mark.6.22",
+   "verse_id": 8417,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 6:23",
+   "osis": "Mark.6.23",
+   "verse_id": 18401,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 6:24",
+   "osis": "Mark.6.24",
+   "verse_id": 8418,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 6:25",
+   "osis": "Mark.6.25",
+   "verse_id": 3766,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 10:35",
+   "osis": "Mark.10.35",
+   "verse_id": 3809,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 10:38",
+   "osis": "Mark.10.38",
+   "verse_id": 8443,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 11:24",
+   "osis": "Mark.11.24",
+   "verse_id": 3820,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 15:8",
+   "osis": "Mark.15.8",
+   "verse_id": 18402,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Mar 15:43",
+   "osis": "Mark.15.43",
+   "verse_id": 4555,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 1:63",
+   "osis": "Luke.1.63",
+   "verse_id": 9121,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 5:3",
+   "osis": "Luke.5.3",
+   "verse_id": 18467,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 7:36",
+   "osis": "Luke.7.36",
+   "verse_id": 18469,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 8:37",
+   "osis": "Luke.8.37",
+   "verse_id": 2827,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 9:45",
+   "osis": "Luke.9.45",
+   "verse_id": 18470,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 11:9",
+   "osis": "Luke.11.9",
+   "verse_id": 3937,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 11:10",
+   "osis": "Luke.11.10",
+   "verse_id": 18404,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 11:11",
+   "osis": "Luke.11.11",
+   "verse_id": 18405,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 11:12",
+   "osis": "Luke.11.12",
+   "verse_id": 18406,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 11:13",
+   "osis": "Luke.11.13",
+   "verse_id": 15106,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 11:37",
+   "osis": "Luke.11.37",
+   "verse_id": 18471,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 12:48",
+   "osis": "Luke.12.48",
+   "verse_id": 18407,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 14:18",
+   "osis": "Luke.14.18",
+   "verse_id": 8584,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 14:19",
+   "osis": "Luke.14.19",
+   "verse_id": 8585,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 14:32",
+   "osis": "Luke.14.32",
+   "verse_id": 18472,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 19:31",
+   "osis": "Luke.19.31",
+   "verse_id": 6864,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 20:3",
+   "osis": "Luke.20.3",
+   "verse_id": 8636,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 22:68",
+   "osis": "Luke.22.68",
+   "verse_id": 18473,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 23:23",
+   "osis": "Luke.23.23",
+   "verse_id": 18408,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 23:25",
+   "osis": "Luke.23.25",
+   "verse_id": 18409,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Luk 23:52",
+   "osis": "Luke.23.52",
+   "verse_id": 18410,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 1:19",
+   "osis": "John.1.19",
+   "verse_id": 18474,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 1:21",
+   "osis": "John.1.21",
+   "verse_id": 4066,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 1:25",
+   "osis": "John.1.25",
+   "verse_id": 1725,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 4:9",
+   "osis": "John.4.9",
+   "verse_id": 4090,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 4:10",
+   "osis": "John.4.10",
+   "verse_id": 4091,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 4:40",
+   "osis": "John.4.40",
+   "verse_id": 18475,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 4:47",
+   "osis": "John.4.47",
+   "verse_id": 18476,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 5:12",
+   "osis": "John.5.12",
+   "verse_id": 8699,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 8:7",
+   "osis": "John.8.7",
+   "verse_id": 8724,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 9:2",
+   "osis": "John.9.2",
+   "verse_id": 18477,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 9:15",
+   "osis": "John.9.15",
+   "verse_id": 8735,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 9:19",
+   "osis": "John.9.19",
+   "verse_id": 4165,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 9:21",
+   "osis": "John.9.21",
+   "verse_id": 18478,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 9:23",
+   "osis": "John.9.23",
+   "verse_id": 8737,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 11:22",
+   "osis": "John.11.22",
+   "verse_id": 7971,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 12:21",
+   "osis": "John.12.21",
+   "verse_id": 4189,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 14:13",
+   "osis": "John.14.13",
+   "verse_id": 9141,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 14:14",
+   "osis": "John.14.14",
+   "verse_id": 9142,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 14:16",
+   "osis": "John.14.16",
+   "verse_id": 18479,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 15:7",
+   "osis": "John.15.7",
+   "verse_id": 18411,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 15:16",
+   "osis": "John.15.16",
+   "verse_id": 7987,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 16:5",
+   "osis": "John.16.5",
+   "verse_id": 18480,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 16:19",
+   "osis": "John.16.19",
+   "verse_id": 8779,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 16:23",
+   "osis": "John.16.23",
+   "verse_id": 4227,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    },
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 16:24",
+   "osis": "John.16.24",
+   "verse_id": 9143,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 16:26",
+   "osis": "John.16.26",
+   "verse_id": 4228,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    },
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 16:30",
+   "osis": "John.16.30",
+   "verse_id": 18481,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 17:15",
+   "osis": "John.17.15",
+   "verse_id": 7996,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 17:20",
+   "osis": "John.17.20",
+   "verse_id": 7997,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 18:19",
+   "osis": "John.18.19",
+   "verse_id": 18482,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 19:31",
+   "osis": "John.19.31",
+   "verse_id": 18483,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Joh 19:38",
+   "osis": "John.19.38",
+   "verse_id": 2829,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 3:2",
+   "osis": "Acts.3.2",
+   "verse_id": 2525,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 3:3",
+   "osis": "Acts.3.3",
+   "verse_id": 18484,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 3:14",
+   "osis": "Acts.3.14",
+   "verse_id": 15113,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 7:46",
+   "osis": "Acts.7.46",
+   "verse_id": 18412,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 9:2",
+   "osis": "Acts.9.2",
+   "verse_id": 18413,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 10:48",
+   "osis": "Acts.10.48",
+   "verse_id": 1755,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 12:20",
+   "osis": "Acts.12.20",
+   "verse_id": 18414,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 13:21",
+   "osis": "Acts.13.21",
+   "verse_id": 18415,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 13:28",
+   "osis": "Acts.13.28",
+   "verse_id": 18416,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 16:39",
+   "osis": "Acts.16.39",
+   "verse_id": 9248,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 18:20",
+   "osis": "Acts.18.20",
+   "verse_id": 18485,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 23:18",
+   "osis": "Acts.23.18",
+   "verse_id": 9309,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 23:20",
+   "osis": "Acts.23.20",
+   "verse_id": 8887,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 25:3",
+   "osis": "Acts.25.3",
+   "verse_id": 18418,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Act 25:15",
+   "osis": "Acts.25.15",
+   "verse_id": 18419,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Cor 1:22",
+   "osis": "1Cor.1.22",
+   "verse_id": 18420,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Eph 3:13",
+   "osis": "Eph.3.13",
+   "verse_id": 1236,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Eph 3:20",
+   "osis": "Eph.3.20",
+   "verse_id": 18421,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Phili 4:3",
+   "osis": "Phil.4.3",
+   "verse_id": 9185,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Col 1:9",
+   "osis": "Col.1.9",
+   "verse_id": 18422,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Th 4:1",
+   "osis": "1Thess.4.1",
+   "verse_id": 9281,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Th 5:12",
+   "osis": "1Thess.5.12",
+   "verse_id": 18486,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Th 2:1",
+   "osis": "2Thess.2.1",
+   "verse_id": 2073,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jam 1:5",
+   "osis": "Jas.1.5",
+   "verse_id": 18423,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jam 1:6",
+   "osis": "Jas.1.6",
+   "verse_id": 18424,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jam 4:2",
+   "osis": "Jas.4.2",
+   "verse_id": 17153,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "Jam 4:3",
+   "osis": "Jas.4.3",
+   "verse_id": 18425,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Pe 3:15",
+   "osis": "1Pet.3.15",
+   "verse_id": 2853,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Jo 3:22",
+   "osis": "1John.3.22",
+   "verse_id": 18426,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Jo 5:14",
+   "osis": "1John.5.14",
+   "verse_id": 5956,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Jo 5:15",
+   "osis": "1John.5.15",
+   "verse_id": 18427,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "1Jo 5:16",
+   "osis": "1John.5.16",
+   "verse_id": 4473,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G0154"
+    }
+   ],
+   "status": "waiting"
+  },
+  {
+   "verse": "2Jo 5",
+   "osis": "2John.1.5",
+   "verse_id": 8252,
+   "routes": [
+    {
+     "kind": "subgroup",
+     "value": "M21_asking",
+     "via": "G2065"
+    }
+   ],
+   "status": "waiting"
+  }
+ ]
+}

@@ -671,10 +671,15 @@ kept with its reason in `ib_observation_change`. The finding shape (`iba/app/lib
   (the reason is `min_reason_chars` or more) and the evaluation is kept in the JSON, not in the tables. A
   surface with no inner-being role gets no observation. Every existing observation takes an `action`: `accept`;
   `modify` (changed **in place**: `set` the columns of `reading.verse_loop` `observation_set`, and per node
-  `node_set`; the old value, the new value and the reason go to `ib_observation_change`); or `delete` (the
-  observation withdrawn, or a node's disposition withdrawn, with the reason; nothing is deleted). `"fill_nodes":
-  true` applies every node `suggest`; `"drop_non_relevant_nodes": true` soft deletes the nodes on `not_relevant`
-  surfaces. A relevant surface must be named by a live node with a role of its group; a `not_relevant` surface by
+  `node_set`; the old value, the new value and the reason go to `ib_observation_change`); `delete` (soft
+  delete: the `deleted` column of `ib_observation` or `ib_node` set to 1, with the reason; nothing is
+  physically deleted; an observation whose last node is deleted is itself soft deleted); or `merge`
+  (`{"action": "merge", "into": id, "reason": ...}`: a duplicate description, identical text, moves its nodes
+  to the observation kept and is soft deleted). The sheet lists the errors the check found in `flags`, each
+  with a `propose` where a fix is known (duplicate description → merge; silence kind → delete; kind not in
+  `reading.observation_parts`, same word with the same role in two observations, node role standalone → no
+  automatic fix, modify or delete). The fixes are part of the check and need no separate confirmation (researcher, 2026-10-27): an observation without an action takes its proposed fix when the verse is recorded, and a node's occurrence and subgroup are always completed from `surface_subgroup`; name an `action` to do otherwise. What needs the reading's judgement has no automatic fix and is refused until it has an action: a tag that is not a kind (modify the tag to the kind of what the verse says, `"set": {"tag": "statement"}`, or delete), a same-word-same-role overlap, a standalone role. `fill_nodes` and `confirm_fixes` are no longer needed. Every observation on the verse is on the sheet, whatever its stage (the stage is not used to filter: it was used inconsistently). The reading decides by the wording of each one: `leave` (`{"action": "leave", "reason": ...}`) leaves an observation exactly as it is when its wording shows it is not verse understanding; it is not changed, needs no kind or subgroup and does not count for a surface. What the reading writes has the stage `Analysis_phase_1`. Record writes verse by verse: a verse with an error stays `in_hand`, its errors are written to
+  the sheet's `errors`, and the other verses are recorded (refused only when no verse could be). A relevant surface must be named by a live node with a role of its group; a `not_relevant` surface by
   none. A ledger face is linked `{"observation": id}` or given a `{"reason"}`. The verses become `done` and their
   sheets leave the JSON, with a result (counts and the surface evaluations).
 - **`Check`** at `open` passes the **Observe gate** when every verse is `done` and the evaluations in the JSON
