@@ -78,3 +78,5 @@ Push output: `To https://github.com/lcilliers/Bible_Projects.git   025e1dbe..0ed
 Third close (2026-10-28): branch main; commit 7ea1c897 "session 20261028: #2323 deleted columns ..." (also the other session's untracked compliance file and the reading m21-asking outputs, read first and committed as project records). Push output: `To https://github.com/lcilliers/Bible_Projects.git   59d8c908..7ea1c897  main -> main`.
 
 Fourth close (2026-10-28): branch main; commit 9bf3615c "session 20261028: #2320 Record enforces the rules for stating an observation ...". Push output: `To https://github.com/lcilliers/Bible_Projects.git   5fc7bbff..9bf3615c  main -> main`.
+
+Fifth close (2026-10-28): branch main; commit e2ff7916 "session 20261028: Analysis_phase_1 fixes #2323, #2325, #2326, #2327, #2328; rules for stating an observation enforced and held as config rows ...". Push output: `To https://github.com/lcilliers/Bible_Projects.git   a538ec56..e2ff7916  main -> main`.
