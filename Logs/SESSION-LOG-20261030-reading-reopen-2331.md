@@ -44,4 +44,4 @@ Claude's, within the approved option A:
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch main. Commit 511f1e97 (`session 20261030: #2331 Reading Reopen step ...`). Push output: `To https://github.com/lcilliers/Bible_Projects.git   247eec77..511f1e97  main -> main`; `git status -sb` after the push: `## main...origin/main`.
