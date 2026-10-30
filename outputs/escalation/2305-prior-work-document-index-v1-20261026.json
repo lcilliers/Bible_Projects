@@ -2,7 +2,7 @@
   "escalation": 2305,
   "title": "Capture prior reading work into ib_observation and ib_node: document index",
   "version": 1,
-  "generated_at": "2026-10-26T10:13:00Z",
+  "generated_at": "2026-10-30T09:31:04Z",
   "source": {
     "set": "the cluster reading index (#2228): every .md file under cfg_setting reading_index.roots, archive/ folders left out",
     "roots": [
@@ -26,11 +26,11 @@
     "later_version": "set when a later version of the same document is also in the set"
   },
   "totals": {
-    "documents": 235,
-    "size_bytes": 6821910,
+    "documents": 242,
+    "size_bytes": 6849106,
     "refs": 51765,
-    "already_imported_observations": 662,
-    "documents_with_imports": 19,
+    "already_imported_observations": 8706,
+    "documents_with_imports": 179,
     "by_cluster": {
       "M01": 12,
       "M02": 23,
@@ -40,10 +40,11 @@
       "M10": 19,
       "M18": 47,
       "M20": 3,
+      "M21": 3,
       "M25": 18,
       "M47": 33,
       "M53": 1,
-      "M64": 34,
+      "M64": 38,
       "M72": 8,
       "None": 10
     },
@@ -52,14 +53,14 @@
       "data": 28,
       "ledger": 21,
       "other": 5,
-      "process": 44,
-      "reading": 77,
-      "synthesis": 55
+      "process": 46,
+      "reading": 78,
+      "synthesis": 59
     },
     "by_index_state": {
       "changed since build": 1,
       "current": 233,
-      "not in index (new since build)": 1
+      "not in index (new since build)": 8
     },
     "gone_from_disk_since_build": [
       "_analytics/Clusters/cluster-assign-v6-20261018.md"
@@ -83,10 +84,10 @@
       "sections_with_refs": 5,
       "refs": 37,
       "distinct_verses": 31,
-      "already_imported_observations": 0,
+      "already_imported_observations": 18,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 2,
@@ -125,10 +126,10 @@
       "sections_with_refs": 6,
       "refs": 61,
       "distinct_verses": 48,
-      "already_imported_observations": 0,
+      "already_imported_observations": 24,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 4,
@@ -146,10 +147,10 @@
       "sections_with_refs": 2,
       "refs": 32,
       "distinct_verses": 14,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 5,
@@ -209,10 +210,10 @@
       "sections_with_refs": 12,
       "refs": 290,
       "distinct_verses": 184,
-      "already_imported_observations": 0,
+      "already_imported_observations": 102,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 8,
@@ -230,7 +231,7 @@
       "sections_with_refs": 15,
       "refs": 465,
       "distinct_verses": 210,
-      "already_imported_observations": 28,
+      "already_imported_observations": 63,
       "imported_at_index_build": 29,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -251,7 +252,7 @@
       "sections_with_refs": 4,
       "refs": 38,
       "distinct_verses": 17,
-      "already_imported_observations": 5,
+      "already_imported_observations": 9,
       "imported_at_index_build": 5,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -272,7 +273,7 @@
       "sections_with_refs": 6,
       "refs": 424,
       "distinct_verses": 241,
-      "already_imported_observations": 31,
+      "already_imported_observations": 70,
       "imported_at_index_build": 35,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -293,7 +294,7 @@
       "sections_with_refs": 8,
       "refs": 594,
       "distinct_verses": 257,
-      "already_imported_observations": 41,
+      "already_imported_observations": 78,
       "imported_at_index_build": 41,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -314,7 +315,7 @@
       "sections_with_refs": 9,
       "refs": 379,
       "distinct_verses": 293,
-      "already_imported_observations": 35,
+      "already_imported_observations": 56,
       "imported_at_index_build": 39,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -335,10 +336,10 @@
       "sections_with_refs": 5,
       "refs": 131,
       "distinct_verses": 127,
-      "already_imported_observations": 0,
+      "already_imported_observations": 62,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 14,
@@ -377,10 +378,10 @@
       "sections_with_refs": 5,
       "refs": 39,
       "distinct_verses": 30,
-      "already_imported_observations": 0,
+      "already_imported_observations": 20,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 16,
@@ -398,10 +399,10 @@
       "sections_with_refs": 6,
       "refs": 70,
       "distinct_verses": 27,
-      "already_imported_observations": 0,
+      "already_imported_observations": 17,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 17,
@@ -419,10 +420,10 @@
       "sections_with_refs": 25,
       "refs": 1753,
       "distinct_verses": 948,
-      "already_imported_observations": 0,
+      "already_imported_observations": 304,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 18,
@@ -461,7 +462,7 @@
       "sections_with_refs": 5,
       "refs": 135,
       "distinct_verses": 60,
-      "already_imported_observations": 26,
+      "already_imported_observations": 33,
       "imported_at_index_build": 26,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -482,7 +483,7 @@
       "sections_with_refs": 17,
       "refs": 604,
       "distinct_verses": 242,
-      "already_imported_observations": 57,
+      "already_imported_observations": 127,
       "imported_at_index_build": 59,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -503,7 +504,7 @@
       "sections_with_refs": 24,
       "refs": 760,
       "distinct_verses": 210,
-      "already_imported_observations": 40,
+      "already_imported_observations": 129,
       "imported_at_index_build": 42,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -524,7 +525,7 @@
       "sections_with_refs": 23,
       "refs": 877,
       "distinct_verses": 277,
-      "already_imported_observations": 44,
+      "already_imported_observations": 133,
       "imported_at_index_build": 45,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -545,7 +546,7 @@
       "sections_with_refs": 23,
       "refs": 1278,
       "distinct_verses": 383,
-      "already_imported_observations": 49,
+      "already_imported_observations": 150,
       "imported_at_index_build": 52,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -566,7 +567,7 @@
       "sections_with_refs": 28,
       "refs": 997,
       "distinct_verses": 336,
-      "already_imported_observations": 40,
+      "already_imported_observations": 127,
       "imported_at_index_build": 42,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -608,7 +609,7 @@
       "sections_with_refs": 17,
       "refs": 1015,
       "distinct_verses": 749,
-      "already_imported_observations": 83,
+      "already_imported_observations": 142,
       "imported_at_index_build": 86,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
@@ -629,10 +630,10 @@
       "sections_with_refs": 10,
       "refs": 147,
       "distinct_verses": 118,
-      "already_imported_observations": 0,
+      "already_imported_observations": 94,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 28,
@@ -650,10 +651,10 @@
       "sections_with_refs": 7,
       "refs": 73,
       "distinct_verses": 46,
-      "already_imported_observations": 0,
+      "already_imported_observations": 17,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 29,
@@ -671,10 +672,10 @@
       "sections_with_refs": 5,
       "refs": 56,
       "distinct_verses": 15,
-      "already_imported_observations": 0,
+      "already_imported_observations": 7,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 30,
@@ -692,10 +693,10 @@
       "sections_with_refs": 12,
       "refs": 168,
       "distinct_verses": 138,
-      "already_imported_observations": 0,
+      "already_imported_observations": 47,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 31,
@@ -713,10 +714,10 @@
       "sections_with_refs": 45,
       "refs": 2003,
       "distinct_verses": 856,
-      "already_imported_observations": 0,
+      "already_imported_observations": 319,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 32,
@@ -734,10 +735,10 @@
       "sections_with_refs": 4,
       "refs": 1977,
       "distinct_verses": 1006,
-      "already_imported_observations": 0,
+      "already_imported_observations": 278,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 33,
@@ -797,10 +798,10 @@
       "sections_with_refs": 4,
       "refs": 123,
       "distinct_verses": 112,
-      "already_imported_observations": 0,
+      "already_imported_observations": 8,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 36,
@@ -818,10 +819,10 @@
       "sections_with_refs": 73,
       "refs": 2995,
       "distinct_verses": 1350,
-      "already_imported_observations": 0,
+      "already_imported_observations": 474,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 37,
@@ -839,10 +840,10 @@
       "sections_with_refs": 10,
       "refs": 137,
       "distinct_verses": 112,
-      "already_imported_observations": 0,
+      "already_imported_observations": 19,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 38,
@@ -881,10 +882,10 @@
       "sections_with_refs": 6,
       "refs": 123,
       "distinct_verses": 77,
-      "already_imported_observations": 0,
+      "already_imported_observations": 24,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 40,
@@ -902,10 +903,10 @@
       "sections_with_refs": 9,
       "refs": 112,
       "distinct_verses": 82,
-      "already_imported_observations": 0,
+      "already_imported_observations": 20,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 41,
@@ -923,10 +924,10 @@
       "sections_with_refs": 23,
       "refs": 327,
       "distinct_verses": 144,
-      "already_imported_observations": 0,
+      "already_imported_observations": 56,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 42,
@@ -944,10 +945,10 @@
       "sections_with_refs": 18,
       "refs": 194,
       "distinct_verses": 68,
-      "already_imported_observations": 0,
+      "already_imported_observations": 38,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 43,
@@ -965,10 +966,10 @@
       "sections_with_refs": 9,
       "refs": 183,
       "distinct_verses": 130,
-      "already_imported_observations": 0,
+      "already_imported_observations": 33,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 44,
@@ -986,10 +987,10 @@
       "sections_with_refs": 9,
       "refs": 163,
       "distinct_verses": 122,
-      "already_imported_observations": 0,
+      "already_imported_observations": 38,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 45,
@@ -1007,10 +1008,10 @@
       "sections_with_refs": 8,
       "refs": 96,
       "distinct_verses": 65,
-      "already_imported_observations": 0,
+      "already_imported_observations": 26,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 46,
@@ -1028,10 +1029,10 @@
       "sections_with_refs": 9,
       "refs": 138,
       "distinct_verses": 110,
-      "already_imported_observations": 0,
+      "already_imported_observations": 28,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 47,
@@ -1049,10 +1050,10 @@
       "sections_with_refs": 10,
       "refs": 153,
       "distinct_verses": 116,
-      "already_imported_observations": 0,
+      "already_imported_observations": 37,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 48,
@@ -1070,10 +1071,10 @@
       "sections_with_refs": 8,
       "refs": 97,
       "distinct_verses": 82,
-      "already_imported_observations": 0,
+      "already_imported_observations": 18,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 49,
@@ -1091,10 +1092,10 @@
       "sections_with_refs": 2,
       "refs": 97,
       "distinct_verses": 85,
-      "already_imported_observations": 0,
+      "already_imported_observations": 15,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 50,
@@ -1112,10 +1113,10 @@
       "sections_with_refs": 2,
       "refs": 9,
       "distinct_verses": 6,
-      "already_imported_observations": 0,
+      "already_imported_observations": 5,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 51,
@@ -1133,10 +1134,10 @@
       "sections_with_refs": 12,
       "refs": 175,
       "distinct_verses": 150,
-      "already_imported_observations": 0,
+      "already_imported_observations": 30,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 52,
@@ -1154,10 +1155,10 @@
       "sections_with_refs": 3,
       "refs": 104,
       "distinct_verses": 86,
-      "already_imported_observations": 0,
+      "already_imported_observations": 14,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 53,
@@ -1175,10 +1176,10 @@
       "sections_with_refs": 4,
       "refs": 16,
       "distinct_verses": 7,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 54,
@@ -1196,10 +1197,10 @@
       "sections_with_refs": 14,
       "refs": 226,
       "distinct_verses": 165,
-      "already_imported_observations": 0,
+      "already_imported_observations": 44,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 55,
@@ -1217,10 +1218,10 @@
       "sections_with_refs": 12,
       "refs": 240,
       "distinct_verses": 118,
-      "already_imported_observations": 0,
+      "already_imported_observations": 54,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 56,
@@ -1238,10 +1239,10 @@
       "sections_with_refs": 9,
       "refs": 142,
       "distinct_verses": 83,
-      "already_imported_observations": 0,
+      "already_imported_observations": 45,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 57,
@@ -1259,10 +1260,10 @@
       "sections_with_refs": 9,
       "refs": 59,
       "distinct_verses": 40,
-      "already_imported_observations": 0,
+      "already_imported_observations": 22,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 58,
@@ -1280,10 +1281,10 @@
       "sections_with_refs": 10,
       "refs": 155,
       "distinct_verses": 95,
-      "already_imported_observations": 0,
+      "already_imported_observations": 41,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 59,
@@ -1301,10 +1302,10 @@
       "sections_with_refs": 10,
       "refs": 134,
       "distinct_verses": 77,
-      "already_imported_observations": 0,
+      "already_imported_observations": 39,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 60,
@@ -1364,10 +1365,10 @@
       "sections_with_refs": 10,
       "refs": 196,
       "distinct_verses": 107,
-      "already_imported_observations": 0,
+      "already_imported_observations": 40,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 63,
@@ -1385,10 +1386,10 @@
       "sections_with_refs": 3,
       "refs": 34,
       "distinct_verses": 28,
-      "already_imported_observations": 0,
+      "already_imported_observations": 1,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 64,
@@ -1406,10 +1407,10 @@
       "sections_with_refs": 4,
       "refs": 81,
       "distinct_verses": 66,
-      "already_imported_observations": 0,
+      "already_imported_observations": 14,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 65,
@@ -1427,10 +1428,10 @@
       "sections_with_refs": 10,
       "refs": 236,
       "distinct_verses": 116,
-      "already_imported_observations": 0,
+      "already_imported_observations": 34,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 66,
@@ -1448,10 +1449,10 @@
       "sections_with_refs": 4,
       "refs": 44,
       "distinct_verses": 24,
-      "already_imported_observations": 0,
+      "already_imported_observations": 17,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 67,
@@ -1469,10 +1470,10 @@
       "sections_with_refs": 3,
       "refs": 19,
       "distinct_verses": 5,
-      "already_imported_observations": 0,
+      "already_imported_observations": 3,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 68,
@@ -1490,10 +1491,10 @@
       "sections_with_refs": 4,
       "refs": 17,
       "distinct_verses": 16,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 69,
@@ -1511,10 +1512,10 @@
       "sections_with_refs": 16,
       "refs": 163,
       "distinct_verses": 160,
-      "already_imported_observations": 0,
+      "already_imported_observations": 74,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 70,
@@ -1595,10 +1596,10 @@
       "sections_with_refs": 4,
       "refs": 69,
       "distinct_verses": 69,
-      "already_imported_observations": 0,
+      "already_imported_observations": 29,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 74,
@@ -1616,10 +1617,10 @@
       "sections_with_refs": 1,
       "refs": 42,
       "distinct_verses": 31,
-      "already_imported_observations": 0,
+      "already_imported_observations": 18,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 75,
@@ -1637,10 +1638,10 @@
       "sections_with_refs": 18,
       "refs": 237,
       "distinct_verses": 158,
-      "already_imported_observations": 0,
+      "already_imported_observations": 80,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 76,
@@ -1700,10 +1701,10 @@
       "sections_with_refs": 6,
       "refs": 77,
       "distinct_verses": 77,
-      "already_imported_observations": 0,
+      "already_imported_observations": 77,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 79,
@@ -1763,10 +1764,10 @@
       "sections_with_refs": 12,
       "refs": 149,
       "distinct_verses": 102,
-      "already_imported_observations": 0,
+      "already_imported_observations": 57,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 82,
@@ -1784,10 +1785,10 @@
       "sections_with_refs": 6,
       "refs": 71,
       "distinct_verses": 49,
-      "already_imported_observations": 0,
+      "already_imported_observations": 23,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 83,
@@ -1805,10 +1806,10 @@
       "sections_with_refs": 5,
       "refs": 103,
       "distinct_verses": 91,
-      "already_imported_observations": 0,
+      "already_imported_observations": 29,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 84,
@@ -1826,10 +1827,10 @@
       "sections_with_refs": 5,
       "refs": 154,
       "distinct_verses": 144,
-      "already_imported_observations": 0,
+      "already_imported_observations": 47,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 85,
@@ -1868,10 +1869,10 @@
       "sections_with_refs": 6,
       "refs": 124,
       "distinct_verses": 107,
-      "already_imported_observations": 0,
+      "already_imported_observations": 28,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 87,
@@ -1910,10 +1911,10 @@
       "sections_with_refs": 8,
       "refs": 52,
       "distinct_verses": 50,
-      "already_imported_observations": 0,
+      "already_imported_observations": 18,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 89,
@@ -1952,10 +1953,10 @@
       "sections_with_refs": 8,
       "refs": 115,
       "distinct_verses": 95,
-      "already_imported_observations": 0,
+      "already_imported_observations": 33,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 91,
@@ -1994,10 +1995,10 @@
       "sections_with_refs": 4,
       "refs": 56,
       "distinct_verses": 52,
-      "already_imported_observations": 0,
+      "already_imported_observations": 14,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 93,
@@ -2057,10 +2058,10 @@
       "sections_with_refs": 8,
       "refs": 250,
       "distinct_verses": 190,
-      "already_imported_observations": 0,
+      "already_imported_observations": 75,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 96,
@@ -2078,10 +2079,10 @@
       "sections_with_refs": 13,
       "refs": 82,
       "distinct_verses": 77,
-      "already_imported_observations": 0,
+      "already_imported_observations": 30,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 97,
@@ -2099,10 +2100,10 @@
       "sections_with_refs": 2,
       "refs": 68,
       "distinct_verses": 67,
-      "already_imported_observations": 0,
+      "already_imported_observations": 1,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 98,
@@ -2141,10 +2142,10 @@
       "sections_with_refs": 15,
       "refs": 311,
       "distinct_verses": 168,
-      "already_imported_observations": 0,
+      "already_imported_observations": 110,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 100,
@@ -2162,10 +2163,10 @@
       "sections_with_refs": 6,
       "refs": 244,
       "distinct_verses": 194,
-      "already_imported_observations": 0,
+      "already_imported_observations": 18,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 101,
@@ -2246,10 +2247,10 @@
       "sections_with_refs": 6,
       "refs": 66,
       "distinct_verses": 54,
-      "already_imported_observations": 0,
+      "already_imported_observations": 11,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 105,
@@ -2288,10 +2289,10 @@
       "sections_with_refs": 10,
       "refs": 158,
       "distinct_verses": 101,
-      "already_imported_observations": 0,
+      "already_imported_observations": 66,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 107,
@@ -2309,10 +2310,10 @@
       "sections_with_refs": 3,
       "refs": 4,
       "distinct_verses": 2,
-      "already_imported_observations": 0,
+      "already_imported_observations": 4,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 108,
@@ -2330,10 +2331,10 @@
       "sections_with_refs": 7,
       "refs": 58,
       "distinct_verses": 35,
-      "already_imported_observations": 0,
+      "already_imported_observations": 21,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 109,
@@ -2372,10 +2373,10 @@
       "sections_with_refs": 5,
       "refs": 59,
       "distinct_verses": 32,
-      "already_imported_observations": 0,
+      "already_imported_observations": 30,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 111,
@@ -2393,10 +2394,10 @@
       "sections_with_refs": 4,
       "refs": 27,
       "distinct_verses": 11,
-      "already_imported_observations": 0,
+      "already_imported_observations": 8,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 112,
@@ -2414,10 +2415,10 @@
       "sections_with_refs": 3,
       "refs": 32,
       "distinct_verses": 24,
-      "already_imported_observations": 0,
+      "already_imported_observations": 12,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 113,
@@ -2435,10 +2436,10 @@
       "sections_with_refs": 5,
       "refs": 166,
       "distinct_verses": 85,
-      "already_imported_observations": 0,
+      "already_imported_observations": 29,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 114,
@@ -2456,10 +2457,10 @@
       "sections_with_refs": 13,
       "refs": 139,
       "distinct_verses": 114,
-      "already_imported_observations": 0,
+      "already_imported_observations": 37,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 115,
@@ -2477,10 +2478,10 @@
       "sections_with_refs": 10,
       "refs": 183,
       "distinct_verses": 143,
-      "already_imported_observations": 0,
+      "already_imported_observations": 35,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
       "seq": 116,
@@ -2498,13 +2499,76 @@
       "sections_with_refs": 22,
       "refs": 873,
       "distinct_verses": 417,
-      "already_imported_observations": 0,
+      "already_imported_observations": 183,
       "imported_at_index_build": 0,
+      "capture_status": "not started",
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
+    },
+    {
+      "seq": 117,
+      "path": "_analytics/Clusters/M21 - fasting-piety/m21-asking-test/m21-asking-trial-findings-for-checking-20261027.md",
+      "folder": "_analytics/Clusters/M21 - fasting-piety/m21-asking-test",
+      "cluster": "M21",
+      "cluster_name": "Fasting & Piety",
+      "kind_by_name": "process",
+      "version": null,
+      "date": "2026-10-27",
+      "size_bytes": 12579,
+      "reading_file_id": null,
+      "index_state": "not in index (new since build)",
+      "sections": null,
+      "sections_with_refs": null,
+      "refs": null,
+      "distinct_verses": null,
+      "already_imported_observations": 0,
+      "imported_at_index_build": null,
       "capture_status": "not started",
       "note": null
     },
     {
-      "seq": 117,
+      "seq": 118,
+      "path": "_analytics/Clusters/M21 - fasting-piety/m21-asking/m21-asking-account-v1-20261027.md",
+      "folder": "_analytics/Clusters/M21 - fasting-piety/m21-asking",
+      "cluster": "M21",
+      "cluster_name": "Fasting & Piety",
+      "kind_by_name": "synthesis",
+      "version": 1,
+      "date": "2026-10-27",
+      "size_bytes": 8932,
+      "reading_file_id": null,
+      "index_state": "not in index (new since build)",
+      "sections": null,
+      "sections_with_refs": null,
+      "refs": null,
+      "distinct_verses": null,
+      "already_imported_observations": 0,
+      "imported_at_index_build": null,
+      "capture_status": "not started",
+      "note": null
+    },
+    {
+      "seq": 119,
+      "path": "_analytics/Clusters/M21 - fasting-piety/m21-asking/m21-asking-batch-times-v1-20261028.md",
+      "folder": "_analytics/Clusters/M21 - fasting-piety/m21-asking",
+      "cluster": "M21",
+      "cluster_name": "Fasting & Piety",
+      "kind_by_name": "reading",
+      "version": 1,
+      "date": "2026-10-28",
+      "size_bytes": 2529,
+      "reading_file_id": null,
+      "index_state": "not in index (new since build)",
+      "sections": null,
+      "sections_with_refs": null,
+      "refs": null,
+      "distinct_verses": null,
+      "already_imported_observations": 0,
+      "imported_at_index_build": null,
+      "capture_status": "not started",
+      "note": null
+    },
+    {
+      "seq": 120,
       "path": "_analytics/Clusters/M25 - life-death/life-death-ch2-scene-and-linkage-proposal-v1-20261002.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2519,13 +2583,13 @@
       "sections_with_refs": 3,
       "refs": 45,
       "distinct_verses": 37,
-      "already_imported_observations": 0,
+      "already_imported_observations": 17,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 118,
+      "seq": 121,
       "path": "_analytics/Clusters/M25 - life-death/life-death-linkage-map.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2540,13 +2604,13 @@
       "sections_with_refs": 2,
       "refs": 92,
       "distinct_verses": 80,
-      "already_imported_observations": 0,
+      "already_imported_observations": 44,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 119,
+      "seq": 122,
       "path": "_analytics/Clusters/M25 - life-death/life-death-observation-ledger-unit1-v1-20261002.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2561,13 +2625,13 @@
       "sections_with_refs": 13,
       "refs": 342,
       "distinct_verses": 203,
-      "already_imported_observations": 38,
+      "already_imported_observations": 71,
       "imported_at_index_build": 40,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 120,
+      "seq": 123,
       "path": "_analytics/Clusters/M25 - life-death/life-death-observation-ledger-unit2-v1-20261002.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2582,13 +2646,13 @@
       "sections_with_refs": 23,
       "refs": 599,
       "distinct_verses": 339,
-      "already_imported_observations": 43,
+      "already_imported_observations": 81,
       "imported_at_index_build": 48,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 121,
+      "seq": 124,
       "path": "_analytics/Clusters/M25 - life-death/life-death-observation-ledger-unit3-v1-20261003.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2603,13 +2667,13 @@
       "sections_with_refs": 26,
       "refs": 806,
       "distinct_verses": 412,
-      "already_imported_observations": 49,
+      "already_imported_observations": 91,
       "imported_at_index_build": 51,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 122,
+      "seq": 125,
       "path": "_analytics/Clusters/M25 - life-death/life-death-observation-ledger-unit4-v1-20261004.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2624,13 +2688,13 @@
       "sections_with_refs": 10,
       "refs": 377,
       "distinct_verses": 121,
-      "already_imported_observations": 13,
+      "already_imported_observations": 41,
       "imported_at_index_build": 13,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 123,
+      "seq": 126,
       "path": "_analytics/Clusters/M25 - life-death/life-death-ot02-die-death-check-v3-20261014.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2645,13 +2709,13 @@
       "sections_with_refs": 11,
       "refs": 617,
       "distinct_verses": 467,
-      "already_imported_observations": 0,
+      "already_imported_observations": 129,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 124,
+      "seq": 127,
       "path": "_analytics/Clusters/M25 - life-death/life-death-ot02-r0-batch-ch2-death-v1-20261013.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2666,13 +2730,13 @@
       "sections_with_refs": 2,
       "refs": 161,
       "distinct_verses": 148,
-      "already_imported_observations": 0,
+      "already_imported_observations": 24,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 125,
+      "seq": 128,
       "path": "_analytics/Clusters/M25 - life-death/life-death-ot02-sheol-soul-spirit-life-v1-20261013.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2687,13 +2751,13 @@
       "sections_with_refs": 5,
       "refs": 44,
       "distinct_verses": 19,
-      "already_imported_observations": 0,
+      "already_imported_observations": 24,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 126,
+      "seq": 129,
       "path": "_analytics/Clusters/M25 - life-death/life-death-ot05-26-body-raised-r0-v1-20261019.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2708,13 +2772,13 @@
       "sections_with_refs": 7,
       "refs": 179,
       "distinct_verses": 115,
-      "already_imported_observations": 0,
+      "already_imported_observations": 30,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 127,
+      "seq": 130,
       "path": "_analytics/Clusters/M25 - life-death/life-death-ot05-body-raised-cuts-v1-20261014.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2729,13 +2793,13 @@
       "sections_with_refs": 5,
       "refs": 83,
       "distinct_verses": 66,
-      "already_imported_observations": 0,
+      "already_imported_observations": 17,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 128,
+      "seq": 131,
       "path": "_analytics/Clusters/M25 - life-death/life-death-ot05-body-raised-summary-v1-20261014.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2750,13 +2814,13 @@
       "sections_with_refs": 4,
       "refs": 75,
       "distinct_verses": 59,
-      "already_imported_observations": 0,
+      "already_imported_observations": 19,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 129,
+      "seq": 132,
       "path": "_analytics/Clusters/M25 - life-death/life-death-q2-q3-soul-spirit-heart-ledger-v1-20261004.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2771,13 +2835,13 @@
       "sections_with_refs": 10,
       "refs": 251,
       "distinct_verses": 127,
-      "already_imported_observations": 8,
+      "already_imported_observations": 39,
       "imported_at_index_build": 10,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 130,
+      "seq": 133,
       "path": "_analytics/Clusters/M25 - life-death/life-death-q4-body-resurrection-ledger-v1-20261002.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2792,13 +2856,13 @@
       "sections_with_refs": 6,
       "refs": 150,
       "distinct_verses": 95,
-      "already_imported_observations": 8,
+      "already_imported_observations": 35,
       "imported_at_index_build": 8,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 131,
+      "seq": 134,
       "path": "_analytics/Clusters/M25 - life-death/life-death-strand-candidate-v2-20261002.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2813,13 +2877,13 @@
       "sections_with_refs": 7,
       "refs": 197,
       "distinct_verses": 139,
-      "already_imported_observations": 0,
+      "already_imported_observations": 58,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 132,
+      "seq": 135,
       "path": "_analytics/Clusters/M25 - life-death/life-death-strand-handoff-v1-20261002.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2834,13 +2898,13 @@
       "sections_with_refs": 2,
       "refs": 12,
       "distinct_verses": 12,
-      "already_imported_observations": 0,
+      "already_imported_observations": 2,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 133,
+      "seq": 136,
       "path": "_analytics/Clusters/M25 - life-death/life-death-strand-overview-data-v1-20261002.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2861,7 +2925,7 @@
       "note": null
     },
     {
-      "seq": 134,
+      "seq": 137,
       "path": "_analytics/Clusters/M25 - life-death/life-death-unit4-h5782-reading-v1-20261004.md",
       "folder": "_analytics/Clusters/M25 - life-death",
       "cluster": "M25",
@@ -2876,13 +2940,13 @@
       "sections_with_refs": 3,
       "refs": 71,
       "distinct_verses": 64,
-      "already_imported_observations": 0,
+      "already_imported_observations": 18,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 135,
+      "seq": 138,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-handoff-batches-C-to-H-v16-20260929.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -2897,13 +2961,13 @@
       "sections_with_refs": 2,
       "refs": 32,
       "distinct_verses": 32,
-      "already_imported_observations": 0,
+      "already_imported_observations": 8,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 136,
+      "seq": 139,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-inner-seat-depiction-v1-20260927.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -2918,13 +2982,13 @@
       "sections_with_refs": 19,
       "refs": 1311,
       "distinct_verses": 1027,
-      "already_imported_observations": 0,
+      "already_imported_observations": 56,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 137,
+      "seq": 140,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-inner-seat-stocktake-v2-20260927.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -2939,13 +3003,13 @@
       "sections_with_refs": 3,
       "refs": 30,
       "distinct_verses": 17,
-      "already_imported_observations": 0,
+      "already_imported_observations": 1,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 138,
+      "seq": 141,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-other-cluster-cooccurrence-assessment-v1-20260927.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -2966,7 +3030,7 @@
       "note": null
     },
     {
-      "seq": 139,
+      "seq": 142,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-reallocation-register-v2-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -2981,13 +3045,13 @@
       "sections_with_refs": 5,
       "refs": 13,
       "distinct_verses": 6,
-      "already_imported_observations": 0,
+      "already_imported_observations": 5,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 140,
+      "seq": 143,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-seat-coverage-and-unseated-verses-v1-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3008,7 +3072,7 @@
       "note": null
     },
     {
-      "seq": 141,
+      "seq": 144,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-spirit-distinction-v1-20260927.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3023,13 +3087,13 @@
       "sections_with_refs": 3,
       "refs": 75,
       "distinct_verses": 69,
-      "already_imported_observations": 0,
+      "already_imported_observations": 15,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 142,
+      "seq": 145,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-status-overview-v1-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3050,7 +3114,7 @@
       "note": null
     },
     {
-      "seq": 143,
+      "seq": 146,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-t-code-to-m-code-question-v1-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3071,7 +3135,7 @@
       "note": null
     },
     {
-      "seq": 144,
+      "seq": 147,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-x-feeling-batchA-v3-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3086,13 +3150,13 @@
       "sections_with_refs": 32,
       "refs": 391,
       "distinct_verses": 313,
-      "already_imported_observations": 0,
+      "already_imported_observations": 109,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 145,
+      "seq": 148,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-x-knowing-speaking-batchB-v3-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3107,13 +3171,13 @@
       "sections_with_refs": 38,
       "refs": 489,
       "distinct_verses": 387,
-      "already_imported_observations": 0,
+      "already_imported_observations": 101,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 146,
+      "seq": 149,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-x-life-body-condition-batchG-v3-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3128,13 +3192,13 @@
       "sections_with_refs": 59,
       "refs": 851,
       "distinct_verses": 616,
-      "already_imported_observations": 0,
+      "already_imported_observations": 195,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 147,
+      "seq": 150,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-x-moral-condition-batchD-v2-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3149,13 +3213,13 @@
       "sections_with_refs": 67,
       "refs": 975,
       "distinct_verses": 662,
-      "already_imported_observations": 0,
+      "already_imported_observations": 235,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 148,
+      "seq": 151,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-x-relating-to-god-batchE-v2-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3170,13 +3234,13 @@
       "sections_with_refs": 62,
       "refs": 1044,
       "distinct_verses": 737,
-      "already_imported_observations": 0,
+      "already_imported_observations": 259,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 149,
+      "seq": 152,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-x-relating-to-others-batchF-v4-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3191,13 +3255,13 @@
       "sections_with_refs": 33,
       "refs": 619,
       "distinct_verses": 425,
-      "already_imported_observations": 0,
+      "already_imported_observations": 139,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 150,
+      "seq": 153,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-x-setting-narrative-batchH-v1-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3212,13 +3276,13 @@
       "sections_with_refs": 37,
       "refs": 626,
       "distinct_verses": 430,
-      "already_imported_observations": 0,
+      "already_imported_observations": 128,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 151,
+      "seq": 154,
       "path": "_analytics/Clusters/M47 - inner-seat/M47-x-willing-desiring-batchC-v3-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3233,13 +3297,13 @@
       "sections_with_refs": 62,
       "refs": 747,
       "distinct_verses": 502,
-      "already_imported_observations": 0,
+      "already_imported_observations": 182,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 152,
+      "seq": 155,
       "path": "_analytics/Clusters/M47 - inner-seat/cluster-M47-surface-forms-20260927.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3260,7 +3324,7 @@
       "note": null
     },
     {
-      "seq": 153,
+      "seq": 156,
       "path": "_analytics/Clusters/M47 - inner-seat/m47-flesh-and-body-batch1-passages-v1-20261018.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3281,7 +3345,7 @@
       "note": null
     },
     {
-      "seq": 154,
+      "seq": 157,
       "path": "_analytics/Clusters/M47 - inner-seat/m47-flesh-and-body-handoff-v1-20261018.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3296,13 +3360,13 @@
       "sections_with_refs": 2,
       "refs": 115,
       "distinct_verses": 106,
-      "already_imported_observations": 0,
+      "already_imported_observations": 4,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 155,
+      "seq": 158,
       "path": "_analytics/Clusters/M47 - inner-seat/m47-flesh-and-body-narrative-trace-v1-20261019.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3317,13 +3381,13 @@
       "sections_with_refs": 3,
       "refs": 59,
       "distinct_verses": 53,
-      "already_imported_observations": 0,
+      "already_imported_observations": 1,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 156,
+      "seq": 159,
       "path": "_analytics/Clusters/M47 - inner-seat/m47-flesh-and-body-overview-v1-20261018.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3338,13 +3402,13 @@
       "sections_with_refs": 2,
       "refs": 13,
       "distinct_verses": 11,
-      "already_imported_observations": 0,
+      "already_imported_observations": 2,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 157,
+      "seq": 160,
       "path": "_analytics/Clusters/M47 - inner-seat/m47-flesh-and-body-scope-rulings-v1-20261019.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3359,13 +3423,13 @@
       "sections_with_refs": 2,
       "refs": 32,
       "distinct_verses": 26,
-      "already_imported_observations": 0,
+      "already_imported_observations": 3,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 158,
+      "seq": 161,
       "path": "_analytics/Clusters/M47 - inner-seat/m47-flesh-body-word-complex-proposal-v1-20261018.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3386,7 +3450,7 @@
       "note": null
     },
     {
-      "seq": 159,
+      "seq": 162,
       "path": "_analytics/Clusters/M47 - inner-seat/ot-05-11-m47-body-verses-full-text-v1-20261018.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3407,7 +3471,7 @@
       "note": null
     },
     {
-      "seq": 160,
+      "seq": 163,
       "path": "_analytics/Clusters/M47 - inner-seat/ot-05-11-m47-body-with-inner-being-reading-v1-20261018.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3422,13 +3486,13 @@
       "sections_with_refs": 3,
       "refs": 42,
       "distinct_verses": 23,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 161,
+      "seq": 164,
       "path": "_analytics/Clusters/M47 - inner-seat/ot-106-3-m47-poor-own-side-reading-v1-20261018.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3443,13 +3507,13 @@
       "sections_with_refs": 4,
       "refs": 60,
       "distinct_verses": 22,
-      "already_imported_observations": 0,
+      "already_imported_observations": 9,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 162,
+      "seq": 165,
       "path": "_analytics/Clusters/M47 - inner-seat/ot-97-71-m47-forward-marks-reading-v1-20261018.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3464,13 +3528,13 @@
       "sections_with_refs": 5,
       "refs": 56,
       "distinct_verses": 24,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 163,
+      "seq": 166,
       "path": "_analytics/Clusters/M47 - inner-seat/wa-cluster-M47-framework-overview-v1-20260930.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3485,13 +3549,13 @@
       "sections_with_refs": 2,
       "refs": 19,
       "distinct_verses": 17,
-      "already_imported_observations": 0,
+      "already_imported_observations": 9,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 164,
+      "seq": 167,
       "path": "_analytics/Clusters/M47 - inner-seat/wa-cluster-M47-ib-operation-modes-consideration-v1-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3506,13 +3570,13 @@
       "sections_with_refs": 2,
       "refs": 28,
       "distinct_verses": 25,
-      "already_imported_observations": 0,
+      "already_imported_observations": 15,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 165,
+      "seq": 168,
       "path": "_analytics/Clusters/M47 - inner-seat/wa-cluster-M47-noseat-decisions-v1-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3533,7 +3597,7 @@
       "note": null
     },
     {
-      "seq": 166,
+      "seq": 169,
       "path": "_analytics/Clusters/M47 - inner-seat/wa-cluster-M47-noseat-pilot-index-v1-20260928.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3548,13 +3612,13 @@
       "sections_with_refs": 3,
       "refs": 13,
       "distinct_verses": 12,
-      "already_imported_observations": 0,
+      "already_imported_observations": 3,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 167,
+      "seq": 170,
       "path": "_analytics/Clusters/M47 - inner-seat/wa-location-seat-map-proposal-v1-20260618.md",
       "folder": "_analytics/Clusters/M47 - inner-seat",
       "cluster": "M47",
@@ -3569,13 +3633,13 @@
       "sections_with_refs": 3,
       "refs": 8,
       "distinct_verses": 8,
-      "already_imported_observations": 0,
+      "already_imported_observations": 4,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 168,
+      "seq": 171,
       "path": "_analytics/Clusters/M53 - dishonor-disgrace/m53-cluster-overview-v2-20261019.md",
       "folder": "_analytics/Clusters/M53 - dishonor-disgrace",
       "cluster": "M53",
@@ -3590,13 +3654,13 @@
       "sections_with_refs": 11,
       "refs": 222,
       "distinct_verses": 131,
-      "already_imported_observations": 0,
+      "already_imported_observations": 32,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 169,
+      "seq": 172,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-H6942H-verses-v1-20261006.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3617,7 +3681,7 @@
       "note": null
     },
     {
-      "seq": 170,
+      "seq": 173,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-being-chosen-account-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3632,13 +3696,13 @@
       "sections_with_refs": 11,
       "refs": 135,
       "distinct_verses": 79,
-      "already_imported_observations": 0,
+      "already_imported_observations": 52,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 171,
+      "seq": 174,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-2a-lead-choice-outcome-v1-20261007.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3653,13 +3717,13 @@
       "sections_with_refs": 23,
       "refs": 146,
       "distinct_verses": 100,
-      "already_imported_observations": 0,
+      "already_imported_observations": 59,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 172,
+      "seq": 175,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-2b-reading-batch1-chosen-ot-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3674,13 +3738,13 @@
       "sections_with_refs": 9,
       "refs": 395,
       "distinct_verses": 220,
-      "already_imported_observations": 0,
+      "already_imported_observations": 19,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 173,
+      "seq": 176,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-2b-reading-batch2-chosen-nt-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3695,13 +3759,13 @@
       "sections_with_refs": 10,
       "refs": 297,
       "distinct_verses": 173,
-      "already_imported_observations": 0,
+      "already_imported_observations": 23,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 174,
+      "seq": 177,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch1-chosen-place-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3716,13 +3780,13 @@
       "sections_with_refs": 10,
       "refs": 267,
       "distinct_verses": 159,
-      "already_imported_observations": 0,
+      "already_imported_observations": 32,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 175,
+      "seq": 178,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch2-others-ot-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3737,13 +3801,13 @@
       "sections_with_refs": 13,
       "refs": 414,
       "distinct_verses": 259,
-      "already_imported_observations": 0,
+      "already_imported_observations": 30,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 176,
+      "seq": 179,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-2c-reading-batch3-others-nt-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3758,13 +3822,13 @@
       "sections_with_refs": 10,
       "refs": 184,
       "distinct_verses": 89,
-      "already_imported_observations": 0,
+      "already_imported_observations": 21,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 177,
+      "seq": 180,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-mcode-hib-qualifier-v1-20261007.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3779,13 +3843,13 @@
       "sections_with_refs": 6,
       "refs": 98,
       "distinct_verses": 65,
-      "already_imported_observations": 0,
+      "already_imported_observations": 20,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 178,
+      "seq": 181,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-no-other-mcode-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3800,13 +3864,13 @@
       "sections_with_refs": 3,
       "refs": 52,
       "distinct_verses": 50,
-      "already_imported_observations": 0,
+      "already_imported_observations": 42,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 179,
+      "seq": 182,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch1-isaiah-v1-20261007.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3821,13 +3885,13 @@
       "sections_with_refs": 5,
       "refs": 161,
       "distinct_verses": 85,
-      "already_imported_observations": 0,
+      "already_imported_observations": 13,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 180,
+      "seq": 183,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch2-psalm-promise-v1-20261007.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3842,13 +3906,13 @@
       "sections_with_refs": 4,
       "refs": 111,
       "distinct_verses": 57,
-      "already_imported_observations": 0,
+      "already_imported_observations": 14,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 181,
+      "seq": 184,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch3-own-accord-together-v1-20261007.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3863,13 +3927,13 @@
       "sections_with_refs": 9,
       "refs": 250,
       "distinct_verses": 152,
-      "already_imported_observations": 0,
+      "already_imported_observations": 18,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 182,
+      "seq": 185,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-reading-batch4-job-weighed-by-another-v1-20261007.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3884,13 +3948,13 @@
       "sections_with_refs": 8,
       "refs": 167,
       "distinct_verses": 111,
-      "already_imported_observations": 0,
+      "already_imported_observations": 15,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 183,
+      "seq": 186,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-reading-v3-20261007.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3905,13 +3969,13 @@
       "sections_with_refs": 22,
       "refs": 504,
       "distinct_verses": 244,
-      "already_imported_observations": 0,
+      "already_imported_observations": 139,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 184,
+      "seq": 187,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choose-test-reading-v1-20261007.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3926,13 +3990,34 @@
       "sections_with_refs": 4,
       "refs": 44,
       "distinct_verses": 33,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
+      "capture_status": "not started",
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
+    },
+    {
+      "seq": 188,
+      "path": "_analytics/Clusters/M64 - will-resolve/m64-choose/m64-choose-account-v4-20261024.md",
+      "folder": "_analytics/Clusters/M64 - will-resolve/m64-choose",
+      "cluster": "M64",
+      "cluster_name": "Will & Resolve",
+      "kind_by_name": "synthesis",
+      "version": 4,
+      "date": "2026-10-24",
+      "size_bytes": 899,
+      "reading_file_id": null,
+      "index_state": "not in index (new since build)",
+      "sections": null,
+      "sections_with_refs": null,
+      "refs": null,
+      "distinct_verses": null,
+      "already_imported_observations": 0,
+      "imported_at_index_build": null,
       "capture_status": "not started",
       "note": null
     },
     {
-      "seq": 185,
+      "seq": 189,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-choosing-account-v1-20261007.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3947,13 +4032,34 @@
       "sections_with_refs": 17,
       "refs": 204,
       "distinct_verses": 94,
-      "already_imported_observations": 0,
+      "already_imported_observations": 78,
       "imported_at_index_build": 0,
+      "capture_status": "not started",
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
+    },
+    {
+      "seq": 190,
+      "path": "_analytics/Clusters/M64 - will-resolve/m64-dedicate/m64-dedicate-account-v1-20261024.md",
+      "folder": "_analytics/Clusters/M64 - will-resolve/m64-dedicate",
+      "cluster": "M64",
+      "cluster_name": "Will & Resolve",
+      "kind_by_name": "synthesis",
+      "version": 1,
+      "date": "2026-10-24",
+      "size_bytes": 728,
+      "reading_file_id": null,
+      "index_state": "not in index (new since build)",
+      "sections": null,
+      "sections_with_refs": null,
+      "refs": null,
+      "distinct_verses": null,
+      "already_imported_observations": 0,
+      "imported_at_index_build": null,
       "capture_status": "not started",
       "note": null
     },
     {
-      "seq": 186,
+      "seq": 191,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-gods-plans-account-v2-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3968,13 +4074,13 @@
       "sections_with_refs": 13,
       "refs": 85,
       "distinct_verses": 57,
-      "already_imported_observations": 0,
+      "already_imported_observations": 20,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 187,
+      "seq": 192,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-include-verses-placement-proposal-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -3989,13 +4095,13 @@
       "sections_with_refs": 15,
       "refs": 98,
       "distinct_verses": 60,
-      "already_imported_observations": 0,
+      "already_imported_observations": 19,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 188,
+      "seq": 193,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-completion-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4016,7 +4122,7 @@
       "note": null
     },
     {
-      "seq": 189,
+      "seq": 194,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-m47-marked-verses-v1-20261006.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4037,7 +4143,7 @@
       "note": null
     },
     {
-      "seq": 190,
+      "seq": 195,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-m47-shared-verses-crossref-v1-20261006.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4058,7 +4164,7 @@
       "note": null
     },
     {
-      "seq": 191,
+      "seq": 196,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-m47-uncited-verses-v1-20261006.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4079,7 +4185,7 @@
       "note": null
     },
     {
-      "seq": 192,
+      "seq": 197,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-others-around-choosing-account-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4094,13 +4200,13 @@
       "sections_with_refs": 11,
       "refs": 197,
       "distinct_verses": 95,
-      "already_imported_observations": 0,
+      "already_imported_observations": 65,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 193,
+      "seq": 198,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-plan-looking-ahead-scan-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4115,13 +4221,13 @@
       "sections_with_refs": 14,
       "refs": 103,
       "distinct_verses": 85,
-      "already_imported_observations": 0,
+      "already_imported_observations": 32,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 194,
+      "seq": 199,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-plan-regard-clusters-and-set-aside-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4136,13 +4242,13 @@
       "sections_with_refs": 3,
       "refs": 32,
       "distinct_verses": 26,
-      "already_imported_observations": 0,
+      "already_imported_observations": 14,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 195,
+      "seq": 200,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-plan-verses-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4157,13 +4263,34 @@
       "sections_with_refs": 2,
       "refs": 21,
       "distinct_verses": 20,
-      "already_imported_observations": 0,
+      "already_imported_observations": 5,
       "imported_at_index_build": 0,
+      "capture_status": "not started",
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
+    },
+    {
+      "seq": 201,
+      "path": "_analytics/Clusters/M64 - will-resolve/m64-plan/m64-plan-account-v1-20261023.md",
+      "folder": "_analytics/Clusters/M64 - will-resolve/m64-plan",
+      "cluster": "M64",
+      "cluster_name": "Will & Resolve",
+      "kind_by_name": "process",
+      "version": 1,
+      "date": "2026-10-23",
+      "size_bytes": 770,
+      "reading_file_id": null,
+      "index_state": "not in index (new since build)",
+      "sections": null,
+      "sections_with_refs": null,
+      "refs": null,
+      "distinct_verses": null,
+      "already_imported_observations": 0,
+      "imported_at_index_build": null,
       "capture_status": "not started",
       "note": null
     },
     {
-      "seq": 196,
+      "seq": 202,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-planning-hib-weave-account-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4178,13 +4305,13 @@
       "sections_with_refs": 6,
       "refs": 219,
       "distinct_verses": 129,
-      "already_imported_observations": 0,
+      "already_imported_observations": 87,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 197,
+      "seq": 203,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-reopened-cited-verses-reading-v2-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4199,13 +4326,13 @@
       "sections_with_refs": 31,
       "refs": 514,
       "distinct_verses": 251,
-      "already_imported_observations": 0,
+      "already_imported_observations": 116,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 198,
+      "seq": 204,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-strand-quick-summary-v1-20261006.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4220,13 +4347,13 @@
       "sections_with_refs": 2,
       "refs": 24,
       "distinct_verses": 23,
-      "already_imported_observations": 0,
+      "already_imported_observations": 14,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 199,
+      "seq": 205,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-will-and-planning-relation-scan-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4241,13 +4368,13 @@
       "sections_with_refs": 4,
       "refs": 99,
       "distinct_verses": 70,
-      "already_imported_observations": 0,
+      "already_imported_observations": 28,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 200,
+      "seq": 206,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-will-reading-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4262,13 +4389,13 @@
       "sections_with_refs": 15,
       "refs": 378,
       "distinct_verses": 212,
-      "already_imported_observations": 0,
+      "already_imported_observations": 83,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 201,
+      "seq": 207,
       "path": "_analytics/Clusters/M64 - will-resolve/m64-will-verses-v1-20261008.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4289,7 +4416,28 @@
       "note": null
     },
     {
-      "seq": 202,
+      "seq": 208,
+      "path": "_analytics/Clusters/M64 - will-resolve/m64-willing/m64-willing-account-v1-20261023.md",
+      "folder": "_analytics/Clusters/M64 - will-resolve/m64-willing",
+      "cluster": "M64",
+      "cluster_name": "Will & Resolve",
+      "kind_by_name": "synthesis",
+      "version": 1,
+      "date": "2026-10-23",
+      "size_bytes": 759,
+      "reading_file_id": null,
+      "index_state": "not in index (new since build)",
+      "sections": null,
+      "sections_with_refs": null,
+      "refs": null,
+      "distinct_verses": null,
+      "already_imported_observations": 0,
+      "imported_at_index_build": null,
+      "capture_status": "not started",
+      "note": null
+    },
+    {
+      "seq": 209,
       "path": "_analytics/Clusters/M64 - will-resolve/verse-narrative-ot-crossref-v3-change-record-v1-20261009.md",
       "folder": "_analytics/Clusters/M64 - will-resolve",
       "cluster": "M64",
@@ -4310,7 +4458,7 @@
       "note": null
     },
     {
-      "seq": 203,
+      "seq": 210,
       "path": "_analytics/Clusters/M72 - authority-dominion/m72-cluster-overview-v1-20261012.md",
       "folder": "_analytics/Clusters/M72 - authority-dominion",
       "cluster": "M72",
@@ -4325,13 +4473,13 @@
       "sections_with_refs": 6,
       "refs": 31,
       "distinct_verses": 16,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 204,
+      "seq": 211,
       "path": "_analytics/Clusters/M72 - authority-dominion/m72-completed-strand-check-test-v2-20261012.md",
       "folder": "_analytics/Clusters/M72 - authority-dominion",
       "cluster": "M72",
@@ -4346,13 +4494,13 @@
       "sections_with_refs": 2,
       "refs": 22,
       "distinct_verses": 15,
-      "already_imported_observations": 0,
+      "already_imported_observations": 9,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 205,
+      "seq": 212,
       "path": "_analytics/Clusters/M72 - authority-dominion/m72-group-B-passages-v1-20261012.md",
       "folder": "_analytics/Clusters/M72 - authority-dominion",
       "cluster": "M72",
@@ -4373,7 +4521,7 @@
       "note": null
     },
     {
-      "seq": 206,
+      "seq": 213,
       "path": "_analytics/Clusters/M72 - authority-dominion/m72-group-B-reading-v1-20261012.md",
       "folder": "_analytics/Clusters/M72 - authority-dominion",
       "cluster": "M72",
@@ -4388,13 +4536,13 @@
       "sections_with_refs": 13,
       "refs": 416,
       "distinct_verses": 282,
-      "already_imported_observations": 0,
+      "already_imported_observations": 169,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 207,
+      "seq": 214,
       "path": "_analytics/Clusters/M72 - authority-dominion/m72-group-B-trial-reading-v1-20261012.md",
       "folder": "_analytics/Clusters/M72 - authority-dominion",
       "cluster": "M72",
@@ -4409,13 +4557,13 @@
       "sections_with_refs": 6,
       "refs": 77,
       "distinct_verses": 35,
-      "already_imported_observations": 0,
+      "already_imported_observations": 24,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 208,
+      "seq": 215,
       "path": "_analytics/Clusters/M72 - authority-dominion/m72-group-B-weave-record-v1-20261012.md",
       "folder": "_analytics/Clusters/M72 - authority-dominion",
       "cluster": "M72",
@@ -4436,7 +4584,7 @@
       "note": null
     },
     {
-      "seq": 209,
+      "seq": 216,
       "path": "_analytics/Clusters/M72 - authority-dominion/m72-scope-ruling-and-focus-v2-20261012.md",
       "folder": "_analytics/Clusters/M72 - authority-dominion",
       "cluster": "M72",
@@ -4451,13 +4599,13 @@
       "sections_with_refs": 2,
       "refs": 19,
       "distinct_verses": 19,
-      "already_imported_observations": 0,
+      "already_imported_observations": 4,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 210,
+      "seq": 217,
       "path": "_analytics/Clusters/M72 - authority-dominion/ot-97-38-m72-forward-marks-reading-v1-20261018.md",
       "folder": "_analytics/Clusters/M72 - authority-dominion",
       "cluster": "M72",
@@ -4472,13 +4620,13 @@
       "sections_with_refs": 8,
       "refs": 111,
       "distinct_verses": 37,
-      "already_imported_observations": 0,
+      "already_imported_observations": 36,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 211,
+      "seq": 218,
       "path": "_analytics/Clusters/cluster-assign-v8-20261026.md",
       "folder": "_analytics/Clusters",
       "cluster": null,
@@ -4499,7 +4647,7 @@
       "note": "admin file by name; expected to hold no findings (researcher to confirm)"
     },
     {
-      "seq": 212,
+      "seq": 219,
       "path": "_analytics/Clusters/cluster-assign.md",
       "folder": "_analytics/Clusters",
       "cluster": null,
@@ -4520,7 +4668,7 @@
       "note": "admin file by name; expected to hold no findings (researcher to confirm)"
     },
     {
-      "seq": 213,
+      "seq": 220,
       "path": "_analytics/Clusters/cluster-v12-20261021.md",
       "folder": "_analytics/Clusters",
       "cluster": null,
@@ -4541,7 +4689,7 @@
       "note": "admin file by name; expected to hold no findings (researcher to confirm)"
     },
     {
-      "seq": 214,
+      "seq": 221,
       "path": "_analytics/Clusters/cluster.md",
       "folder": "_analytics/Clusters",
       "cluster": null,
@@ -4562,7 +4710,7 @@
       "note": "admin file by name; expected to hold no findings (researcher to confirm)"
     },
     {
-      "seq": 215,
+      "seq": 222,
       "path": "_analytics/Clusters/m01-m47-family-grouping-iteration-v1-20260905.md",
       "folder": "_analytics/Clusters",
       "cluster": "M01",
@@ -4583,7 +4731,7 @@
       "note": null
     },
     {
-      "seq": 216,
+      "seq": 223,
       "path": "_analytics/Clusters/m10-family-synthesis-A_destroy-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4598,13 +4746,13 @@
       "sections_with_refs": 3,
       "refs": 14,
       "distinct_verses": 9,
-      "already_imported_observations": 0,
+      "already_imported_observations": 4,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 217,
+      "seq": 224,
       "path": "_analytics/Clusters/m10-family-synthesis-B_sin-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4619,13 +4767,13 @@
       "sections_with_refs": 1,
       "refs": 20,
       "distinct_verses": 16,
-      "already_imported_observations": 0,
+      "already_imported_observations": 3,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 218,
+      "seq": 225,
       "path": "_analytics/Clusters/m10-family-synthesis-C_adultery-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4640,13 +4788,13 @@
       "sections_with_refs": 1,
       "refs": 21,
       "distinct_verses": 19,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 219,
+      "seq": 226,
       "path": "_analytics/Clusters/m10-family-synthesis-D_crime_injustice-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4661,13 +4809,13 @@
       "sections_with_refs": 4,
       "refs": 22,
       "distinct_verses": 20,
-      "already_imported_observations": 0,
+      "already_imported_observations": 7,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 220,
+      "seq": 227,
       "path": "_analytics/Clusters/m10-family-synthesis-E_corruption_perversion-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4682,13 +4830,13 @@
       "sections_with_refs": 2,
       "refs": 35,
       "distinct_verses": 21,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 221,
+      "seq": 228,
       "path": "_analytics/Clusters/m10-family-synthesis-F_violence_wound-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4703,13 +4851,13 @@
       "sections_with_refs": 3,
       "refs": 16,
       "distinct_verses": 14,
-      "already_imported_observations": 0,
+      "already_imported_observations": 4,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 222,
+      "seq": 229,
       "path": "_analytics/Clusters/m10-family-synthesis-G_transgression-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4724,13 +4872,13 @@
       "sections_with_refs": 1,
       "refs": 45,
       "distinct_verses": 45,
-      "already_imported_observations": 0,
+      "already_imported_observations": 8,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 223,
+      "seq": 230,
       "path": "_analytics/Clusters/m10-family-synthesis-I_strife-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4745,13 +4893,13 @@
       "sections_with_refs": 1,
       "refs": 17,
       "distinct_verses": 17,
-      "already_imported_observations": 0,
+      "already_imported_observations": 6,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 224,
+      "seq": 231,
       "path": "_analytics/Clusters/m10-family-synthesis-J_unfaithfulness-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4766,13 +4914,13 @@
       "sections_with_refs": 2,
       "refs": 20,
       "distinct_verses": 18,
-      "already_imported_observations": 0,
+      "already_imported_observations": 8,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 225,
+      "seq": 232,
       "path": "_analytics/Clusters/m10-family-synthesis-K_error_deception-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4787,13 +4935,13 @@
       "sections_with_refs": 1,
       "refs": 24,
       "distinct_verses": 24,
-      "already_imported_observations": 0,
+      "already_imported_observations": 12,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 226,
+      "seq": 233,
       "path": "_analytics/Clusters/m10-family-synthesis-L_defilement-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4814,7 +4962,7 @@
       "note": null
     },
     {
-      "seq": 227,
+      "seq": 234,
       "path": "_analytics/Clusters/m10-family-synthesis-M_cruelty-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4829,13 +4977,13 @@
       "sections_with_refs": 1,
       "refs": 13,
       "distinct_verses": 12,
-      "already_imported_observations": 0,
+      "already_imported_observations": 5,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 228,
+      "seq": 235,
       "path": "_analytics/Clusters/m10-family-synthesis-R_homograph_noise-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4850,13 +4998,13 @@
       "sections_with_refs": 1,
       "refs": 4,
       "distinct_verses": 4,
-      "already_imported_observations": 0,
+      "already_imported_observations": 1,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 229,
+      "seq": 236,
       "path": "_analytics/Clusters/m10-gloss-family-grouping-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4877,7 +5025,7 @@
       "note": null
     },
     {
-      "seq": 230,
+      "seq": 237,
       "path": "_analytics/Clusters/m10-guilt-subgroup-synthesis-20260911.md",
       "folder": "_analytics/Clusters",
       "cluster": "M10",
@@ -4892,13 +5040,13 @@
       "sections_with_refs": 1,
       "refs": 24,
       "distinct_verses": 20,
-      "already_imported_observations": 0,
+      "already_imported_observations": 9,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 231,
+      "seq": 238,
       "path": "_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-change-of-character-build-handoff-v1-20261001.md",
       "folder": "_analytics/cross-cluster-web/origin-of-thought",
       "cluster": null,
@@ -4913,13 +5061,13 @@
       "sections_with_refs": 3,
       "refs": 15,
       "distinct_verses": 15,
-      "already_imported_observations": 0,
+      "already_imported_observations": 2,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 232,
+      "seq": 239,
       "path": "_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-change-of-character-v1-20261001.md",
       "folder": "_analytics/cross-cluster-web/origin-of-thought",
       "cluster": null,
@@ -4934,13 +5082,13 @@
       "sections_with_refs": 6,
       "refs": 87,
       "distinct_verses": 67,
-      "already_imported_observations": 0,
+      "already_imported_observations": 13,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 233,
+      "seq": 240,
       "path": "_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-discussion.md",
       "folder": "_analytics/cross-cluster-web/origin-of-thought",
       "cluster": null,
@@ -4955,13 +5103,13 @@
       "sections_with_refs": 20,
       "refs": 343,
       "distinct_verses": 152,
-      "already_imported_observations": 0,
+      "already_imported_observations": 57,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 234,
+      "seq": 241,
       "path": "_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-narrative-fit-v1-20260930.md",
       "folder": "_analytics/cross-cluster-web/origin-of-thought",
       "cluster": null,
@@ -4976,13 +5124,13 @@
       "sections_with_refs": 3,
       "refs": 56,
       "distinct_verses": 46,
-      "already_imported_observations": 0,
+      "already_imported_observations": 10,
       "imported_at_index_build": 0,
       "capture_status": "not started",
-      "note": null
+      "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"
     },
     {
-      "seq": 235,
+      "seq": 242,
       "path": "_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-observation-ledger-v2-20261001.md",
       "folder": "_analytics/cross-cluster-web/origin-of-thought",
       "cluster": null,
@@ -4997,7 +5145,7 @@
       "sections_with_refs": 18,
       "refs": 912,
       "distinct_verses": 385,
-      "already_imported_observations": 24,
+      "already_imported_observations": 88,
       "imported_at_index_build": 46,
       "capture_status": "not started",
       "note": "has observations from the October catch-up, imported outside the observation rules (#2266)"

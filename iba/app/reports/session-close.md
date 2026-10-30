@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-30T05:27:47Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-30T10:21:32Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `b1c312b7-5fbb-4b6e-b079-599818d87bc6` (CLAUDE_CODE_SESSION_ID); started 2026-10-30T05:16:27Z; window base commit `247eec77fdc67a312caf123c6b116f5970e7e28b`
-- compliance file: `Logs/compliance/COMPLIANCE-20261030-b1c312b7.md`; session log: `Logs/SESSION-LOG-20261030-reading-reopen-2331.md`
-- **open findings: 0**; cleared by disposition: 3
+- session: `02063e4e-16df-4e1a-bb9f-7b8cda534e0f` (CLAUDE_CODE_SESSION_ID); started 2026-10-30T09:04:21Z; window base commit `81690e042a8b45a8293c3ccb2227a29499642626`
+- compliance file: `Logs/compliance/COMPLIANCE-20261030-02063e4e.md`; session log: `Logs/SESSION-LOG-20261030-observation-items-2329.md`
+- **open findings: 0**; cleared by disposition: 1
 
 
 ## Contents
@@ -41,8 +41,7 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:2e28c8b7`: researcher message 2026-10-30T05:18 is too short to be matched; name where it is recorded: "do 2329" -- disposition: recorded in #2329 v9
-- cleared `SC3:866a42c9`: researcher message 2026-10-30T05:25 is too short to be matched; name where it is recorded: "Commit" -- disposition: recorded in #2329 v9
+- cleared `SC3:8dc60ac4`: researcher message 2026-10-30T10:15 is too short to be matched; name where it is recorded: "Approve build" -- disposition: recorded in #2329 v23
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -84,4 +83,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Reading.ps1_-Step_Reopen`: Reading.ps1 -Step Reopen failed 2 times this session: /usr/bin/bash: -c: line 137: unexpected EOF while looking for matching `''; 710d9ac729eb3ac134bb25b4844c541acd4602a9 -- disposition: carried #2331 -- the two failures were a deliberate refusal test with no -Note (the reason is required, RS-09) and a Bash heredoc quoting error before the step ran; nothing to fix
+_no finding_

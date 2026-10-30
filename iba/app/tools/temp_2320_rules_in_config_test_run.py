@@ -5,6 +5,8 @@ report.cluster_folder_name_rule), and changing the row changes the behaviour, wh
 runs the behaviour with the shipped row and again with the row changed. Usage:
 python iba/app/tools/temp_2320_rules_in_config_test_run.py <scratch dir>. Prints PASS/FAIL per case."""
 import json
+import os
+import subprocess
 import pathlib
 import shutil
 import sqlite3
@@ -23,6 +25,10 @@ if S.exists():
     shutil.rmtree(S)
 S.mkdir(parents=True)
 DB = copy_db(S / "iba.db", ROOT / "iba/app/db/iba.db")
+_mig = ROOT / "iba/app/migration/analysis_phase_1_2329_v3_20261030.py"          # the nine observation items (#2329), when the copy lacks them
+_mig = _mig if _mig.exists() else ROOT / "iba/app/migration/archive" / _mig.name
+subprocess.run([sys.executable, str(_mig), "--db", str(DB)], capture_output=True, text=True,
+               env={**os.environ, "PYTHONPATH": str(ROOT), "PYTHONUTF8": "1"})
 cfg = Cfg(DB)
 conn = cfg.conn
 res = []
@@ -52,16 +58,13 @@ def with_rule(key, change):
     return lambda: put(key, old)
 
 
-FULL = {"sense": "test sense", "evidence": "test evidence for it", "polarity": "pursuit",
-        "content": {"none": "test: no object stated"}, "enactment": {"none": "test: no outward act"},
-        "party": {"none": "test: no other party"}, "circumstance": "test circumstance",
-        "chain": {"none": "test: one operation"}, "primary_operation": {"none": "test: not primary"}, "flags": []}
+FULL = {"item": "circumstance"}
 
 
 def sheet(kind="statement", parts=None, nodes=None, tag=None):
     node = {"node": 1, "word": "w (H1)", "role": "characteristic", "occurrence": 1, "counts_for": None, "cluster": "T1", "subgroup": None,
             "reading_id": None, "suggest": None, "flags": [], "action": None}
-    e = {"observation": 99999, "stage": "x", "kind": tag or kind, "text": "t", "flags": [], "meaning": None, "implication": None, "basis": None,
+    e = {"observation": 99999, "stage": "x", "kind": tag or kind, "text": "t", "flags": [], "meaning": None, "implication": None, "basis": "stated",
          "route": None, "parts": parts, "nodes_on_other_verses": 0, "nodes": nodes if nodes is not None else [node],
          "action": {"action": "accept"}}
     return {"verse": "Gen 1:1", "sheet": {"surfaces": [], "existing": [e], "findings": [], "ledger_faces": []}}
@@ -87,15 +90,15 @@ except KeyError as exc:
 conn.execute("UPDATE cfg_setting SET inactive=0 WHERE key='reading.observation_rules'")
 conn.commit()
 # ── R: reading.observation_rules ─────────────────────────────────────────────────────────────────
-p = dict(FULL, sense={"none": "test: nothing to say about the sense here"})
+p = {"item": "operation", "mode": "done"}
 e1 = []
-orec.complete_parts(cfg, p, "w", e1)
-undo = with_rule("reading.observation_rules", lambda v: v.update(parts_never_absent=[]))
+orec.check_item_parts(cfg, p, "statement", "read", None, "w", e1)
+undo = with_rule("reading.observation_items", lambda v: v.update(grounds_required_for_basis=[]))
 e2 = []
-orec.complete_parts(cfg, p, "w", e2)
+orec.check_item_parts(cfg, p, "statement", "read", None, "w", e2)
 undo()
-case("R1", "parts_never_absent: the sense stated absent is refused; with the row emptied it is accepted",
-     any("never absent" in x for x in e1) and not any("never absent" in x for x in e2), (e1, e2))
+case("R1", "grounds_required_for_basis: a read observation without grounds is refused; with the row emptied it is accepted",
+     any("grounds" in x for x in e1) and not any("grounds" in x for x in e2), (e1, e2))
 v = sheet(tag="silence", parts=FULL)
 a = [x for x in errors_of(v) if "not a kind of observation" in x]
 undo = with_rule("reading.observation_rules", lambda x: x.update(unused_kinds=[]))
@@ -109,19 +112,17 @@ undo = with_rule("reading.observation_rules", lambda x: x.update(bears_on_only_r
 b = [x for x in errors_of(sheet(parts=FULL, nodes=objnode)) if "bear on an act" in x or "bears on an act" in x]
 undo()
 case("R3", "bears_on_only_refused: an observation of bears-on nodes only is refused; with the row false it is not", a and not b, (a, b))
-a = [x for x in errors_of(sheet(parts=FULL)) if "primary operation" in x]
-undo = with_rule("reading.observation_rules", lambda x: x.update(primary_operation={"kind": "face", "part": "primary_operation"}))
-b = [x for x in errors_of(sheet(parts=FULL)) if "primary operation" in x]
+a = [x for x in errors_of(sheet(parts=FULL)) if "the item 'operation'" in x]
+undo = with_rule("reading.observation_items", lambda x: x.update(verse_always=[]))
+b = [x for x in errors_of(sheet(parts=FULL)) if "the item 'operation'" in x]
 undo()
-case("R4", "primary_operation: the kind that must record it is the row's (statement, then face)",
-     a and "kind statement" in a[0] and b and "kind face" in b[0], (a, b))
-pa = dict(FULL, party="a second party is stated in the verse")
-a = [x for x in errors_of(sheet(parts=pa)) if "another party" in x]
-undo = with_rule("reading.observation_rules", lambda x: x.update(party={"kind": "term", "part": "party", "route_required": False}))
-b = [x for x in errors_of(sheet(parts=pa)) if "another party" in x]
+case("R4", "verse_always: the verse without an operation observation is refused; with the row emptied it is not", a and not b, (a, b))
+run8 = "one two three four five six seven eight nine"
+a = orec.copies_verse(cfg, [run8], run8)
+undo = with_rule("reading.observation_items", lambda x: x.update(max_verse_words_copied=20))
+b = orec.copies_verse(cfg, [run8], run8)
 undo()
-case("R5", "party: the kind and the route requirement are the row's (party with route, then term without)",
-     a and "kind party" in a[0] and "route" in a[0] and b and "kind term" in b[0] and "route" not in b[0], (a, b))
+case("R5", "max_verse_words_copied: a run of nine words is a restatement; with the row at 20 it is not", a and b is None, (a, b))
 spec = {"key": "p", "kind": "party", "text": "a party finding with no route at all", "basis": "stated",
         "nodes": [{"strong": "H5750", "occurrence": conn.execute("SELECT id FROM verse_lexical WHERE strong='H5750' AND deleted=0 LIMIT 1").fetchone()[0],
                    "role": "qualifier", "cluster": "T2"}]}

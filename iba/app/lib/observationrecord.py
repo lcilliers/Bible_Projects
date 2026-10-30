@@ -76,9 +76,14 @@ def loop_setting(cfg) -> dict:
     return json.loads(v) if isinstance(v, str) else v
 
 
-def _parts_setting(cfg) -> dict:
-    v = cfg.required_setting("reading.observation_parts")
+def items_setting(cfg) -> dict:
+    """The nine items of an observation (cfg_setting reading.observation_items, #2329)."""
+    v = cfg.required_setting("reading.observation_items")
     return json.loads(v) if isinstance(v, str) else v
+
+
+def item_keys(cfg) -> list[str]:
+    return [i["key"] for i in items_setting(cfg)["items"]]
 
 
 def subgroup_code(conn, cluster: str | None, strong: str, surface: str | None) -> str | None:
@@ -94,32 +99,53 @@ def subgroup_code(conn, cluster: str | None, strong: str, surface: str | None) -
     return rows[0] if len(rows) == 1 else None
 
 
-def check_parts(cfg, parts, where: str, errors: list) -> None:
-    """The structured parts of a finding (ib_observation.parts, spec 4.2)."""
-    if parts is None:
-        return
-    spec, loop = _parts_setting(cfg), loop_setting(cfg)
+def check_item_parts(cfg, parts, kind, basis, route, where: str, errors: list) -> str | None:
+    """The structured parts of a finding (ib_observation.parts, #2329): the item it is, and what that item needs. Returns the item key.
+    The item names the kinds and bases it allows; a party carries its route; a read observation names its grounds; polarity, mode
+    and flag type are given where the item needs them. All from reading.observation_items."""
+    spec, loop = items_setting(cfg), loop_setting(cfg)
+    minc = loop["min_reason_chars"]
     if not isinstance(parts, dict):
-        errors.append(f"{where}: parts is an object with keys from {spec['parts']}")
-        return
-    bad = sorted(set(parts) - set(spec["parts"]))
+        errors.append(f"{where}: parts is an object with `item` (one of {item_keys(cfg)}) and, where the item needs them, "
+                      f"{[k for k in spec['parts_keys'] if k != 'item']}")
+        return None
+    bad = sorted(set(parts) - set(spec["parts_keys"]))
     if bad:
-        errors.append(f"{where}: parts {bad} are not among {spec['parts']}")
-    pol = parts.get("polarity")
-    if pol is not None and not isinstance(pol, dict) and pol not in loop["polarity"]:
-        errors.append(f"{where}: polarity must be one of {loop['polarity']}")
-    party = parts.get(rules(cfg)["party"]["part"])
-    if party is not None and spec.get("party_form") and not (isinstance(party, dict) and set(party) == {"none"}):
-        check_party(cfg, party, where, errors)
-    flags = parts.get("flags")
-    if flags is not None and not isinstance(flags, dict):
-        if not isinstance(flags, list):
-            errors.append(f"{where}: flags is a list of {{type, text}}")
-        else:
-            for k, f in enumerate(flags):
-                if (not isinstance(f, dict) or f.get("type") not in spec["flag_types"]
-                        or len((f.get("text") or "").strip()) < loop["min_reason_chars"]):
-                    errors.append(f"{where}: flags[{k}] is {{type: one of {spec['flag_types']}, text}} in words")
+        errors.append(f"{where}: parts {bad} are not among {spec['parts_keys']}")
+    item = next((i for i in spec["items"] if i["key"] == parts.get("item")), None)
+    if item is None:
+        errors.append(f"{where}: parts.item is one of {item_keys(cfg)} (the nine items of spec 4.2)")
+        return None
+    if kind not in item["kinds"]:
+        errors.append(f"{where}: the item {item['key']!r} is written as a finding of the kind {item['kinds']}, not {kind!r}")
+    if basis not in item["bases"]:
+        errors.append(f"{where}: the item {item['key']!r} has the basis {item['bases']}, not {basis!r}")
+    if basis in spec["grounds_required_for_basis"] and len((parts.get("grounds") or "").strip()) < minc:
+        errors.append(f"{where}: a {basis} observation names its grounds in the words of the verse (parts.grounds, {minc} characters or more)")
+    if item.get("polarity_required") and parts.get("polarity") not in loop["polarity"]:
+        errors.append(f"{where}: the polarity item gives parts.polarity, one of {loop['polarity']}")
+    if item.get("mode_required") and parts.get("mode") not in spec["modes"]:
+        errors.append(f"{where}: the operation item gives parts.mode, one of {spec['modes']}")
+    if item.get("flag_type_required") and parts.get("flag_type") not in spec["flag_types"]:
+        errors.append(f"{where}: the flag item gives parts.flag_type, one of {spec['flag_types']}")
+    if kind in rules(cfg)["route_required_kinds"] and not route:
+        errors.append(f"{where}: a {kind} finding carries its route")
+    return item["key"]
+
+
+def copies_verse(cfg, texts, verse_text: str) -> str | None:
+    """The first run of the verse text that an observation restates, longer than reading.observation_items max_verse_words_copied
+    words, or None (#2329: observations do not regurgitate the verse)."""
+    n = int(items_setting(cfg)["max_verse_words_copied"]) + 1
+    words = lambda t: re.findall(r"[\w']+", (t or "").lower())
+    vw = words(verse_text)
+    grams = {tuple(vw[i:i + n]) for i in range(len(vw) - n + 1)}
+    for t in texts:
+        tw = words(t)
+        for i in range(len(tw) - n + 1):
+            if tuple(tw[i:i + n]) in grams:
+                return " ".join(tw[i:i + n])
+    return None
 
 
 def occurrence_surfaces(conn, verse_ids: list) -> dict:
@@ -141,60 +167,9 @@ def occurrence_surfaces(conn, verse_ids: list) -> dict:
     return out
 
 
-def check_party(cfg, v, where: str, errors: list) -> None:
-    """A stated party (#2329): the sentence and the kind of the one who acts and of the one acted on, the shape and the kinds from
-    reading.observation_parts party_form and cfg_enum party_kind."""
-    form, minc = _parts_setting(cfg)["party_form"], loop_setting(cfg)["min_reason_chars"]
-    kinds_ = cfg.enum(form["kind_enum"])
-    if not isinstance(v, dict) or set(v) != set(form["keys"]):
-        errors.append(f"{where}: a stated party is an object with {form['keys']} (the sentence, and the kind of each party), or "
-                      f"{{\"none\": \"why the verse shows none\"}}")
-        return
-    if not isinstance(v.get("text"), str) or len(v["text"].strip()) < minc:
-        errors.append(f"{where}: party text is the sentence in words ({minc} characters or more)")
-    for k in form["kind_keys"]:
-        if v.get(k) not in kinds_:
-            errors.append(f"{where}: party {k} is one of {sorted(kinds_)}")
-
-
-def complete_parts(cfg, parts, where: str, errors: list) -> None:
-    """The observation of a relevant surface covers the parts of spec 4.2 (#2323, researcher: "the observations for each surface
-    comply with the requirement"). Every key of reading.observation_parts is present: given in words (polarity: refusal or
-    pursuit; flags: a list of typed flags, empty when none), or stated absent as {"none": "why the verse shows none"}. The
-    parts in reading.observation_rules parts_never_absent are never absent."""
-    spec, loop = _parts_setting(cfg), loop_setting(cfg)
-    minc = loop["min_reason_chars"]
-    never_absent = rules(cfg)["parts_never_absent"]
-    if not isinstance(parts, dict):
-        errors.append(f"{where}: the parts of spec 4.2 are missing: give each of {spec['parts']} in words, or "
-                      f"{{\"none\": \"why the verse shows none\"}} ({never_absent} are always given)")
-        return
-    for key in spec["parts"]:
-        v = parts.get(key)
-        none = isinstance(v, dict) and set(v) == {"none"}
-        if v is None:
-            errors.append(f"{where}: part {key!r} is missing: give it, or {{\"none\": \"why the verse shows none\"}}")
-        elif none:
-            if key in never_absent:
-                errors.append(f"{where}: part {key!r} is never absent")
-            elif len((v["none"] or "").strip()) < minc:
-                errors.append(f"{where}: part {key!r}: the reason it is absent needs {minc} characters or more")
-        elif key == "flags":
-            if not isinstance(v, list):
-                errors.append(f"{where}: flags is a list of typed flags (empty when none), or {{\"none\": reason}}")
-        elif key == "polarity":
-            if v not in loop["polarity"]:
-                errors.append(f"{where}: polarity is one of {loop['polarity']}, or {{\"none\": reason}}")
-        elif key == rules(cfg)["party"]["part"] and spec.get("party_form"):
-            check_party(cfg, v, where, errors)
-        elif not isinstance(v, str) or len(v.strip()) < minc:
-            errors.append(f"{where}: part {key!r} is stated in words ({minc} characters or more), or {{\"none\": reason}}")
-
-
 def given(parts, key) -> bool:
-    """True when a part holds content (not absent, not empty)."""
-    v = (parts or {}).get(key)
-    return bool(v) and not (isinstance(v, dict) and set(v) == {"none"})
+    """True when a part holds content."""
+    return bool((parts or {}).get(key))
 
 
 def live_text(conn, text: str):
@@ -258,7 +233,7 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
             elif route is not None and (kind not in rules(cfg)["route_allowed_kinds"] or route not in routes):
                 errors.append(f"{where}: route ({routes}) is held only on a party or link finding")
             quotes += sr._quote_check(conn, cfg, [s.get(k) for k in ("text", "meaning", "implication")], where)
-            check_parts(cfg, s.get("parts"), where, errors)
+            check_item_parts(cfg, s.get("parts"), kind, s.get("basis"), route, where, errors)
             p.update({"kind": kind, "text": text, "meaning": s.get("meaning"), "implication": s.get("implication"),
                       "basis": s.get("basis"), "route": route, "parts": s.get("parts")})
         nodes = s.get("nodes") or []
@@ -484,8 +459,11 @@ def modify_observation(cfg, conn, observation_id: int, sets: dict, reason: str, 
         errors.append(f"basis must be one of {cfg.enum('ib_observation.basis')}")
     if "route" in new and new["route"] is not None and new["route"] not in cfg.enum("observation_route"):
         errors.append(f"route must be one of {cfg.enum('observation_route')}")
-    if "parts" in sets:
-        check_parts(cfg, sets["parts"], "parts", errors)
+    if "parts" in sets or "tag" in sets or "basis" in sets or "route" in sets:
+        pj = sets["parts"] if "parts" in sets else (json.loads(o["parts"]) if o["parts"] else None)
+        if "parts" in sets or pj is not None:
+            check_item_parts(cfg, pj, sets.get("tag", o["tag"]), sets.get("basis", o["basis"]), sets.get("route", o["route"]),
+                             "parts", errors)
     if "obs_text" in new:
         text = (new["obs_text"] or "").strip()
         try:

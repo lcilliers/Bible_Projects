@@ -25,6 +25,7 @@ MIG = MIG if MIG.exists() else ROOT / "iba/app/migration/archive" / MIG.name
 mo = [(lambda r: (r.stdout or r.stderr).strip())(subprocess.run([sys.executable, str(MIG), "--db", str(DB), *a],
                                                                  capture_output=True, text=True, env=env))
       for a in (["--dry-run"], [], [])]
+subprocess.run([sys.executable, str(ROOT / "iba/app/migration/archive/analysis_phase_1_2329_v3_20261030.py"), "--db", str(DB)], capture_output=True, text=True, env=env)
 cfg = Cfg(DB)
 conn = cfg.conn
 res = []

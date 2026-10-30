@@ -55,6 +55,9 @@ subprocess.run([sys.executable, str(v8), "--db", str(DB)], capture_output=True, 
 v9 = ROOT / "iba/app/migration/analysis_phase_1_2329_v1_20261030.py"      # #2329: before, after, typed party, meaning on the sheet
 v9 = v9 if v9.exists() else ROOT / "iba/app/migration/archive" / v9.name
 subprocess.run([sys.executable, str(v9), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v10 = ROOT / "iba/app/migration/analysis_phase_1_2329_v3_20261030.py"      # #2329: the nine observation items
+v10 = v10 if v10.exists() else ROOT / "iba/app/migration/archive" / v10.name
+subprocess.run([sys.executable, str(v10), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
 c = sqlite3.connect(DB)
 c.execute("UPDATE cfg_setting SET value=? WHERE key='reading.output_dir'", (json.dumps(str(S / "reading")),))
 c.commit()
@@ -97,37 +100,88 @@ def save(label, data):
             fixkinds(v_["sheet"])
     (S / "reading" / label / f"{label}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
-PARTS_FULL = {"sense": "test sense in this verse", "evidence": "test evidence for the sense", "polarity": "pursuit",
-              "content": {"none": "test: no object stated in the verse"},
-              "before": {"none": "test: the verse does not say what led to it"}, "after": {"none": "test: the verse does not say what follows"}, "enactment": {"none": "test: no outward act stated"},
-              "party": {"none": "test: no other party stated"}, "circumstance": "test circumstance in this verse",
-              "chain": {"none": "test: a single operation in the verse"}, "primary_operation": {"none": "test: not the primary one"},
-              "flags": []}
+PARTS_FULL = {"item": "circumstance"}
 
 
 def fixrules(sh):
-    """The reading's part of the rules for stating an observation (spec 4.1, 4.2): the parts completed on what covers a relevant
-    surface, the bears-on-only observations deleted, one statement naming the primary operation."""
+    """The reading's part of the rules for stating an observation (spec 4.1, 4.2, RS-10; #2329 v3): what covers a relevant surface is one of
+    the nine items; every characteristic has its meaning observation and each other item observed or stated absent; the verse has an
+    operation; the bears-on-only observations are deleted. Rebuilt on every call (the findings it adds have the key prefix cx_)."""
     REL = {"characteristic", "qualifier"}
-    cov = []
+    routes = sorted(cfg.enum("observation_route"))
+    sh["findings"] = [f for f in sh.get("findings") or [] if not str(f.get("key", "")).startswith("cx_")]
+    occ_g = {i: g for g in sh["surfaces"] for i in g["occurrences"]}
+    cover, chars, ops, anyc = {}, {}, [], []
+
+    def mark(g, item):
+        if (g.get("evaluation") or {}).get("result") != "relevant":
+            return                       # a surface without an inner-being role keeps no node (drop_non_relevant_nodes)
+        chars[id(g)] = g
+        cover.setdefault(id(g), set()).add(item)
     for e in sh["existing"]:
         a = e.get("action")
         if not a or a["action"] not in ("accept", "modify"):
             continue
-        roles = [n["role"] for n in e["nodes"] if n["role"]]
+        eff = {}
+        for n in e["nodes"]:                  # a node's role after the actions the test gives it
+            na_ = next((x for x in (a.get("nodes") or []) if x.get("node") == n["node"]), None)
+            if na_ and na_.get("action") == "delete":
+                continue
+            eff[n["node"]] = (na_.get("set") or {}).get("role", n["role"]) if na_ and na_.get("action") == "modify" else n["role"]
+        roles = [r_ for r_ in eff.values() if r_]
         if roles and not (set(roles) & REL) and a["action"] == "accept" and not a.get("nodes"):
             e["action"] = {"action": "delete", "reason": "test: every node bears on an act, none is its characteristic"}
-        elif set(roles) & REL:
+        elif roles and not set(roles) <= {"object", "relational_target", "enactment"}:      # it covers (a standalone node covers too)
             st = dict(a.get("set") or {})
-            st.setdefault("parts", dict(PARTS_FULL))
-            e["action"] = dict(a, action="modify", reason=a.get("reason") or "test: the parts of spec 4.2 completed", set=st)
-            cov.append(e)
-    for f in sh.get("findings") or []:
-        f["parts"] = {**PARTS_FULL, "primary_operation": "test primary operation of the verse", **(f.get("parts") or {})}
-    if cov and not sh.get("findings"):
-        e = cov[0]
-        e["action"]["set"]["tag"] = "statement"
-        e["action"]["set"]["parts"] = dict(PARTS_FULL, primary_operation="test primary operation of the verse")
+            kind = st.get("tag", e["kind"])
+            item = {"party": "party", "link": "chain"}.get(kind, "circumstance")
+            if kind in ("face", "use", "term", "qualification", "silence"):
+                st["tag"], kind = "statement", "statement"
+            st["basis"] = "stated"
+            if kind == "party" and not e["route"]:
+                st["route"] = routes[0]
+            st["parts"] = {"item": item}
+            e["action"] = dict(a, action="modify", reason=a.get("reason") or "test: the observation is one of the nine items", set=st)
+            for n in e["nodes"]:
+                g = occ_g.get(n["counts_for"])
+                if g is not None and n["node"] in eff:
+                    anyc.append((item, g))
+                    if eff[n["node"]] == "characteristic":
+                        mark(g, item)
+    for f in sh["findings"]:
+        p = f.get("parts") or {}
+        if "item" not in p:
+            f["kind"], f["parts"] = "statement", {"item": "polarity", "polarity": p.get("polarity", "pursuit")}
+        for nd in f.get("nodes") or []:
+            g = occ_g.get(nd.get("occurrence"))
+            if g is not None:
+                anyc.append((f["parts"]["item"], g))
+                if nd.get("role") == "characteristic":
+                    mark(g, f["parts"]["item"])
+        if f["parts"]["item"] == "operation":
+            ops.append(f)
+    for item_, g_ in anyc:                 # an observation with a node of any role on a characteristic covers its item for it
+        if id(g_) in chars:
+            cover[id(g_)].add(item_)
+    first = None
+    for g in list(chars.values()):
+        first = first or g
+        cl = orec.word_clusters(conn, g["strong"])
+        nd = {"strong": g["strong"], "occurrence": g["occurrences"][0], "role": "characteristic", "cluster": cl[0] if cl else "T12"}
+        if "meaning" not in cover[id(g)]:
+            sh["findings"].append({"key": f"cx_m{g['occurrences'][0]}", "kind": "face", "basis": "stated", "parts": {"item": "meaning"},
+                                   "text": f"test meaning of {g['word']} in {sh['verse']}", "nodes": [dict(nd)]})
+            cover[id(g)].add("meaning")
+    if first is not None and not ops:
+        cl = orec.word_clusters(conn, first["strong"])
+        sh["findings"].append({"key": "cx_op", "kind": "statement", "basis": "stated", "parts": {"item": "operation", "mode": "done"},
+                               "text": f"test operation of {first['word']} in {sh['verse']}",
+                               "nodes": [{"strong": first["strong"], "occurrence": first["occurrences"][0], "role": "characteristic",
+                                          "cluster": cl[0] if cl else "T12"}]})
+        cover[id(first)].add("operation")
+    for g in sh["surfaces"]:
+        g["items_absent"] = ({k: "test: the verse shows none for this word" for k in orec.item_keys(cfg) if k not in cover[id(g)]}
+                             if id(g) in chars else {})
 
 
 OK_KINDS = {"face", "qualification", "party", "statement", "link", "use", "term"}
@@ -290,8 +344,7 @@ def fill_verse(v, mark_rel=1, mark_bear=1):
         nodes.append({"strong": g["strong"], "occurrence": g["occurrences"][0], "role": role, "cluster": cl[0] if cl else "T12"})
     sh["findings"] = [{"key": "f1", "kind": "statement", "text": f"test finding on {v['verse']} {rel[0]['word']}",
                        "basis": "stated", "nodes": nodes,
-                       "parts": {"sense": "test sense here", "polarity": "pursuit",
-                                 "flags": [{"type": "discovery", "text": "test discovery flag for the claims"}]}}]
+                       "parts": {"item": "polarity", "polarity": "pursuit"}}]
     sh["drop_non_relevant_nodes"] = True
     for e in sh["existing"]:
         e["action"] = {"action": "accept"}
@@ -349,9 +402,8 @@ v0 = d["verses"][0]
 case("R9", "the verse is done, its sheet is gone and its evaluations are kept in the JSON",
      v0["status"] == "done" and "sheet" not in v0 and v0["result"]["surfaces"] and all("result" in s for s in v0["result"]["surfaces"]), v0.get("status"))
 obs = q("SELECT * FROM ib_observation WHERE obs_text LIKE 'test finding on %' ")
-case("R10", "the new finding holds its parts (polarity, a typed flag) in the observation, not the node",
-     len(obs) == 1 and json.loads(obs[0]["parts"])["polarity"] == "pursuit"
-     and json.loads(obs[0]["parts"])["flags"][0]["type"] == "discovery", [o["parts"] for o in obs])
+case("R10", "the new finding holds its parts (the item and its polarity) in the observation, not the node",
+     len(obs) == 1 and json.loads(obs[0]["parts"]) == {"item": "polarity", "polarity": "pursuit"}, [o["parts"] for o in obs])
 nodes = q("SELECT * FROM ib_node WHERE observation_id=?", obs[0]["id"])
 case("R11", "its nodes name the occurrence, carry the reading and a role of the right group, and the subgroup where the word has one",
      len(nodes) >= 1 and all(n["verse_lexical_id"] for n in nodes) and all(n["reading_id"] for n in nodes)
@@ -376,7 +428,7 @@ nm = target["nodes"][0]
 n_before = q("SELECT verse_lexical_id, cluster_subgroup_code, role FROM ib_node WHERE id=?", nm["node"])[0]
 target["action"] = {"action": "modify", "reason": "test: wording corrected after reading the verse",
                     "set": {"meaning": "test corrected meaning in this verse", "tag": "statement",
-                            "parts": dict(PARTS_FULL, primary_operation="test primary operation of the verse")},
+                            "parts": dict(PARTS_FULL)},
                     "nodes": [{"node": nm["node"], "action": "modify", "reason": "test: subgroup completed",
                                "set": {"cluster_subgroup_code": "M21_asking"}}]}
 if len(ex) > 1:

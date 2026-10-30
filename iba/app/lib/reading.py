@@ -377,7 +377,8 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                                    "surface": r["surface"], "morph": r["morph_code"], "position": r["position"],
                                    "clusters": clusters.get(r["strong"], []),
                                    "subgroups": subs.get((r["strong"], _norm(r["surface"])), []), "hint": hint,
-                                   "meaning": meaning[r["strong"]], "evaluation": None}
+                                   "meaning": meaning[r["strong"]], "evaluation": None,
+                                   "items_absent": {}}
             g["occurrences"].append(r["id"])
         sheets[vid] = {"surfaces": list(groups.values())}
     # the existing observations and nodes on the verses (every stage, not filtered by subgroup)
@@ -492,10 +493,11 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                               f"modify the tag (`set`: {{\"tag\": kind}}), or delete the observation", "propose": None})
             if any(n_["role"] in rel_roles_ for n_ in ns):
                 perr_: list = []
-                orec.complete_parts(cfg, json.loads(o["parts"]) if o["parts"] else None, "", perr_)
+                orec.check_item_parts(cfg, json.loads(o["parts"]) if o["parts"] else None, o["tag"], o["basis"], o["route"], "", perr_)
                 if perr_:
-                    flags.append({"code": "parts_incomplete", "propose": None,
-                                  "text": "it covers a relevant surface but not the parts of spec 4.2 (modify `parts`): "
+                    flags.append({"code": "parts_not_an_item", "propose": None,
+                                  "text": "it covers a relevant surface but is not one of the nine items of spec 4.2 in the form of "
+                                          "reading.observation_items (modify `parts`, `tag` or `basis`, or delete it): "
                                           + "; ".join(x.lstrip(": ") for x in perr_)})
             if ns and all(n_["role"] in bear_roles_ for n_ in ns):
                 flags.append({"code": "bears_on_only", "propose": None,
@@ -515,9 +517,12 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                              "nodes_on_other_verses": elsewhere.get(oid, 0), "nodes": nl, "action": None})
         sheets[vid].update({
             "passage": _passage(conn, osis, loop["passage_window"]), "existing": existing,
+            "items": [{"no": i["no"], "key": i["key"], "name": i["name"], "kinds": i["kinds"], "bases": i["bases"], "shared": i["shared"]}
+                      for i in orec.items_setting(cfg)["items"]],
+            "nuances": _setting(cfg, "reading.nuance_pointers"),
             "ledger_faces": ledger.get(vid, []), "findings": [], "fill_nodes": False, "drop_non_relevant_nodes": False,
             "confirm_fixes": False, "errors": [],
-            "how": "Rules for stating an observation (spec 4.1, 4.2), enforced at Record: an observation that covers a relevant surface (a node with a characteristic or qualifier role) carries all the `parts`: sense, evidence, polarity, content, before, enactment, after, party, circumstance, chain, primary_operation, flags; each in words, or {\"none\": \"why the verse shows none\"} (sense, evidence and circumstance are never absent; flags is a list, empty when none). `before` is what the verse states of the prompt, state or purpose before the act; `after` is what follows the act (the answer, result or response), cited by reference when it is in a verse of `passage` (for example Gen 37:16 for Gen 37:15). A stated `party` is {\"text\": the sentence, \"acts\": the kind of the one who acts, \"acted_on\": the kind of the one acted on}, each kind from cfg_enum party_kind (divine, human, non_human). Each surface carries `meaning`: what the tables hold (tree, sense, step_gloss, related and, for Greek, lexicon); the `sense` and `evidence` parts are read from it, and a data-quality flag about meaning sources is written from what `meaning` holds or lacks, never from memory. The words that bear on an act are nodes of the observation of the act, never an observation of their own (move a node: node modify `observation_id`). One statement observation names the primary_operation; a stated chain needs a link observation; a stated party needs a party observation with its route. Evaluate every surface: evaluation {\"result\": \"relevant\" (the characteristic, or a qualifier of it) | "
+            "how": "Rules for stating an observation (spec 4.1, 4.2; RS-10), enforced at Record: each surface with a characteristic node is explored for the nine items in `items`, and each applicable item is its own observation: `parts` = {\"item\": key} and, where the item needs them, `polarity` (refusal or pursuit), `mode` (of an operation: done, foreseen, commanded, negated, reported), `flag_type` (data-quality or discovery) and `grounds` (a read observation names the words of the verse that ground it); the kind and the basis are those the item allows. An observation true of several characteristics is written once, with a node on each. An item the verse does not show gets no observation: state it in the surface's `items_absent` ({\"item\": \"why the verse shows none\"}); the meaning item is never absent, and the verse always has an operation observation. No observation restates a run of the verse text, and the text is not the same for every item. `nuances` points to where each nuance met in the readings is recorded; a nuance with no row gets one. A party observation carries its route. The operation is an action description (who or what does what) looked at from before and after as the verse itself states them; passage-level before and after are the claims process's. Each surface carries `meaning`: what the tables hold (tree, sense, step_gloss, related and, for Greek, lexicon); the `sense` and `evidence` parts are read from it, and a data-quality flag about meaning sources is written from what `meaning` holds or lacks, never from memory. The words that bear on an act are nodes of the observation of the act, never an observation of their own (move a node: node modify `observation_id`). One statement observation names the primary_operation; a stated chain needs a link observation; a stated party needs a party observation with its route. Evaluate every surface: evaluation {\"result\": \"relevant\" (the characteristic, or a qualifier of it) | "
                    "\"bears_on\" (the object, party or outward act of a relevant act: a node of that act's observation) | "
                    "\"not_relevant\", \"reason\": \"...\"} (reason: the tests of the lexical work; a surface with no "
                    "inner-being role gets no observation). `drop_non_relevant_nodes`: true soft deletes every existing node on a "
@@ -559,6 +564,7 @@ def observe(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
         sheets = _sheets(cfg, conn, pick)      # new sheets only: a sheet already in hand keeps what was filled in it
         for v in pick:
             v["status"] = "in_hand"
+            v["in_hand_at"] = _now()
             v["sheet"] = sheets[v["verse_id"]]
     batch = hand + pick
     built = _now()
@@ -607,6 +613,14 @@ def reopen(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
             f"{data['counts']['verses']} done); reason kept in the JSON\n  -> {_rel(root, path)}")
 
 
+def _elapsed(start, end) -> int | None:
+    """Seconds from a sheet put in hand to its verse recorded, from the two stamps kept in the scope JSON (#2329 timing)."""
+    if not start or not end:
+        return None
+    f = "%Y-%m-%dT%H:%M:%SZ"
+    return int((datetime.datetime.strptime(end, f) - datetime.datetime.strptime(start, f)).total_seconds())
+
+
 def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
     """Check one filled sheet whole; returns the plan (what to write), or None with the errors added."""
     loop = _setting_loop(cfg)
@@ -643,6 +657,10 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
         if a["action"] in ("modify", "delete", "merge", "leave") and not ok_reason(a.get("reason")):
             errors.append(f"{at}: observation {e['observation']}: a {a['action']} needs its reason ({minc} characters or more)")
             continue
+        if a["action"] == "modify" and a.get("set"):
+            hit_ = orec.copies_verse(cfg, [a["set"].get(k) for k in ("obs_text", "meaning", "implication")], sh.get("text"))
+            if hit_:
+                errors.append(f"{at}: observation {e['observation']}: the modified wording restates the verse text ({hit_!r}...)")
         if a["action"] == "modify" and not a.get("set") and not a.get("nodes"):
             errors.append(f"{at}: observation {e['observation']}: a modify names what is set (`set`) or the nodes changed")
             continue
@@ -667,7 +685,7 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
         if a["action"] in ("accept", "modify"):
             st = (a.get("set") or {}) if a["action"] == "modify" else {}
             after[e["observation"]] = {"kind": st.get("tag", e["kind"]), "parts": st["parts"] if "parts" in st else e["parts"],
-                                       "route": st.get("route", e["route"])}
+                                       "route": st.get("route", e["route"]), "basis": st.get("basis", e["basis"])}
         deleted_obs = a["action"] == "delete"
         by_node = {x.get("node"): x for x in (a.get("nodes") or []) if isinstance(x, dict)}
         for n in e["nodes"]:
@@ -697,18 +715,23 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
                 dest = a["into"] if a["action"] == "merge" else e["observation"]
                 if (na or {}).get("action") == "modify":
                     dest = (na.get("set") or {}).get("observation_id", dest)
-                node_dest.append((dest, role))
+                node_dest.append((dest, role, id(occ_group[n["counts_for"]]) if n["counts_for"] in occ_group else None))
     for f in sh.get("findings") or []:
         plan["findings"].append(f)
-        rowx = conn.execute("SELECT tag, route, parts FROM ib_observation WHERE id=? AND deleted=0", (f["existing"],)).fetchone()             if isinstance(f.get("existing"), int) else None
+        rowx = conn.execute("SELECT tag, route, parts, basis FROM ib_observation WHERE id=? AND deleted=0", (f["existing"],)).fetchone()             if isinstance(f.get("existing"), int) else None
         if rowx is not None:       # an existing finding gaining nodes: its kind, route and parts are the live observation's (#2327)
-            after[f"new:{f.get('key')}"] = {"kind": rowx["tag"], "route": rowx["route"],
+            after[f"new:{f.get('key')}"] = {"kind": rowx["tag"], "route": rowx["route"], "basis": rowx["basis"],
                                             "parts": json.loads(rowx["parts"]) if rowx["parts"] else None}
         else:
-            after[f"new:{f.get('key')}"] = {"kind": f.get("kind"), "parts": f.get("parts"), "route": f.get("route")}
+            after[f"new:{f.get('key')}"] = {"kind": f.get("kind"), "parts": f.get("parts"), "route": f.get("route"),
+                                            "basis": f.get("basis")}
+            hit_ = orec.copies_verse(cfg, [f.get("text"), f.get("meaning"), f.get("implication")], sh.get("text"))
+            if hit_:
+                errors.append(f"{at}: finding {f.get('key')} restates the verse text ({hit_!r}...): say what the verse shows, not the verse")
         for nd in (f.get("nodes") or []):
             if isinstance(nd, dict) and nd.get("role"):
-                node_dest.append((f"new:{f.get('key')}", nd["role"]))
+                node_dest.append((f"new:{f.get('key')}", nd["role"], id(occ_group[nd.get("occurrence")])
+                                  if nd.get("occurrence") in occ_group else None))
 
             if isinstance(nd, dict) and nd.get("strong") and nd.get("occurrence") not in occ_group:
                 errors.append(f"{at}: a finding node names the occurrence id of the word in this verse (`occurrence`)")
@@ -742,12 +765,12 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
                           f"node, set `drop_non_relevant_nodes`, or change the evaluation")
     # the rules for stating an observation (spec 4.1, 4.2; researcher: "the observations for each surface comply")
     rel_roles = set(groups_roles["relevant"])
-    for dest in {d for d, _ in node_dest if d not in after}:
+    for dest in {x[0] for x in node_dest if x[0] not in after}:
         errors.append(f"{at}: a node is moved to or merged into observation {dest}, which is not an observation of this sheet that "
                       f"stays (accept or modify it, or move the node elsewhere)")
-    covering = {}
+    covering, items_of = {}, {}
     for key, o in after.items():
-        roles = [r_ for d_, r_ in node_dest if d_ == key]
+        roles = [x[1] for x in node_dest if x[0] == key]
         if not roles:
             continue                         # no node left: the observation is soft deleted when the verse is recorded
         label = f"observation {key}" if isinstance(key, int) else f"finding {key[4:]}"
@@ -759,21 +782,37 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
             continue
         covering[key] = o
         perr: list = []
-        orec.complete_parts(cfg, o["parts"], f"{at}: {label}", perr)
+        items_of[key] = orec.check_item_parts(cfg, o["parts"], o["kind"], o["basis"], o["route"], f"{at}: {label}", perr)
         errors.extend(perr)
     if covering:
-        po, ch, pa = rl["primary_operation"], rl["chain"], rl["party"]
-        if not any(o["kind"] == po["kind"] and orec.given(o["parts"], po["part"]) for o in covering.values()):
-            errors.append(f"{at}: the primary operation is not recorded: one observation of the kind {po['kind']} has the part "
-                          f"`{po['part']}` in words (the operation with nothing upstream; spec 4.2 part 8)")
-        if any(orec.given(o["parts"], ch["part"]) for o in covering.values()) and not any(o["kind"] == ch["kind"] for o in after.values()):
-            errors.append(f"{at}: a chain of operations is stated but no observation of the kind {ch['kind']} records it "
-                          f"(spec 4.2 part 8)")
-        if any(orec.given(o["parts"], pa["part"]) for o in covering.values()) and not any(
-                o["kind"] == pa["kind"] and (o["route"] or not pa["route_required"]) for o in after.values()):
-            errors.append(f"{at}: another party is stated but no observation of the kind {pa['kind']}"
-                          + (f" with its route {sorted(cfg.enum('observation_route'))}" if pa["route_required"] else "")
-                          + " records it (spec 4.2 part 6)")
+        spec = orec.items_setting(cfg)
+        known = orec.item_keys(cfg)
+        for it_ in spec["verse_always"]:
+            if not any(items_of.get(k) == it_ for k in covering):
+                errors.append(f"{at}: the verse has no observation of the item {it_!r} (parts.item; the verse always has one, RS-10)")
+        char_ids = {gid for gid, role in live_after if role in spec["item_roles"]}
+        for g in rel_groups:
+            if id(g) not in char_ids:
+                continue
+            absent = g.get("items_absent") or {}
+            if not isinstance(absent, dict) or set(absent) - set(known):
+                errors.append(f"{at}: {g['word']}: items_absent is {{item: reason}} with items from {known}")
+                absent = {}
+            for it_ in known:
+                have = any(items_of.get(k) == it_ and any(x[0] == k and x[2] == id(g) for x in node_dest) for k in covering)
+                if have and it_ in absent:
+                    errors.append(f"{at}: {g['word']}: the item {it_!r} is observed and also stated absent: keep one")
+                elif not have and it_ in spec["surface_always"]:
+                    errors.append(f"{at}: {g['word']} is a characteristic: the item {it_!r} is never absent (an observation of it with a node on this word)")
+                elif not have and not ok_reason(absent.get(it_)):
+                    errors.append(f"{at}: {g['word']} is a characteristic: the item {it_!r} needs an observation with a node on this word, "
+                                  f"or items_absent[{it_!r}] = why the verse shows none ({minc} characters or more)")
+        shared = {i["key"]: i["shared"] for i in spec["items"]}
+        for k in covering:
+            on = {x[2] for x in node_dest if x[0] == k and x[2] in char_ids}
+            if len(on) > 1 and not shared.get(items_of.get(k), True):
+                errors.append(f"{at}: observation {k}: the item {items_of.get(k)!r} is one observation for one characteristic; it has "
+                              f"nodes on {len(on)} (write one observation per characteristic)")
     return plan
 
 
@@ -880,10 +919,11 @@ def record(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
         sh = v.pop("sheet")
         v["status"] = "done"
         v["result"] = {
-            "at": at, "run_id": run_id, "existing": summary[v["verse_id"]],
+            "at": at, "in_hand_at": v.get("in_hand_at"), "elapsed_seconds": _elapsed(v.get("in_hand_at"), at), "run_id": run_id, "existing": summary[v["verse_id"]],
             "left": [e["observation"] for e in sh["existing"] if isinstance(e.get("action"), dict) and e["action"].get("action") == "leave"],
             "surfaces": [{"word": g["word"], "occurrences": g["occurrences"], "result": g["evaluation"]["result"],
-                          "reason": g["evaluation"]["reason"].strip()} for g in sh["surfaces"]],
+                          "reason": g["evaluation"]["reason"].strip(),
+                          **({"items_absent": g["items_absent"]} if g.get("items_absent") else {})} for g in sh["surfaces"]],
             "written": {"observations": [x["observation"] for k, x in written_all.items() if k.startswith(f"{v['verse_id']}:")],
                         "nodes": sum(len(x["nodes"]) for k, x in written_all.items() if k.startswith(f"{v['verse_id']}:"))}}
     data["counts"]["done"] = sum(1 for x in data["verses"] if x["status"] == "done")
