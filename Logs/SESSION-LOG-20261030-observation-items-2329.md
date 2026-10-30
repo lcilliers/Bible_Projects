@@ -47,4 +47,4 @@ Claude's, within the approved build:
 
 ## 6. Git
 
-(written after the first commit)
+Branch main. Commit b3f54956 (`session 20261030: #2329 Analysis_phase_1 nine observation items ...`). Push output: `To https://github.com/lcilliers/Bible_Projects.git   81690e04..b3f54956  main -> main`.
