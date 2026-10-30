@@ -43,4 +43,4 @@ Claude's, within the approved design:
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. First commit: `bce50317` (session 20261030: #2329 Analysis_phase_1 observations fit for purpose ...). Push output: `f8404bc7..bce50317  main -> main` (https://github.com/lcilliers/Bible_Projects.git). Session-close re-run before the commit: 0 open findings (`iba/app/reports/session-close-v245-20261030.md`).
