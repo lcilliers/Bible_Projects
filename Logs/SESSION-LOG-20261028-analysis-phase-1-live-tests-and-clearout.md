@@ -58,3 +58,8 @@ Branch: main
 Commit: e45398988f06d53ba8039ffc6c7c09a7c59ad93c "session 20261028: Analysis_phase_1 live tests and timed batches, m21-asking 34 of 271 verses, backlog clear-out (#2301, #2305, #2308, #2323, #2262, #2296 closed); session log, compliance file and close reports" (10 files changed, 587 insertions, 75 deletions)
 Push output: To https://github.com/lcilliers/Bible_Projects.git
    5efceee7..e4539898  main -> main
+
+Second close, 2026-10-30 (Session-Close.ps1: 0 open findings, report iba/app/reports/session-close-v242-20261030.md):
+Commit: 3b97137030633aca0b5d6ea0498da264e99862a8 "session 20261030: second session-close of 3ba1bfea (0 findings), close reports, escalation list and audit exports replaced by newer versions, researcher query edit, compliance file of session 0e600700 and the #2324 history export carried along"
+Push output: To https://github.com/lcilliers/Bible_Projects.git
+   a052d25c..3b971370  main -> main
