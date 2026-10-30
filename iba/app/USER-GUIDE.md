@@ -607,6 +607,7 @@ writes nothing. Files go to `reading.output_dir`, one folder per reading.
 iba\app\ps\Reading.ps1 -Step Open -Label m21-asking -Escalation 2320 -Objective "the asking words in their verses" -Subgroup M21_asking -By Claude
 iba\app\ps\Reading.ps1 -Step Observe -Label m21-asking -By Claude       # the next verses in hand: their sheets
 iba\app\ps\Reading.ps1 -Step Record -Label m21-asking -By Claude        # the filled sheets written; the verses done
+iba\app\ps\Reading.ps1 -Step Reopen -Label m21-asking -Verse "Gen 37:15; Gen 43:27" -Note "redo under the new parts" -By Claude   # done verses back to waiting
 iba\app\ps\Reading.ps1 -Step Check -Label m21-asking -By Claude         # the Observe gate (open -> observed)
 iba\app\ps\Reading.ps1 -Step Synergy -Label m21-asking -By Claude
 iba\app\ps\Reading.ps1 -Step Apply -Label m21-asking -By Claude         # the synergy JSON, filled
@@ -616,6 +617,8 @@ iba\app\ps\Reading.ps1 -Step Check -Label m21-asking -By Claude         # narrat
 iba\app\ps\Reading.ps1 -Step Publish -Label m21-asking -By Claude
 iba\app\ps\Reading.ps1 -Step Account -Label m21-asking
 ```
+
+**Reopen (#2331).** A done verse of an open reading is put back in hand only by `-Step Reopen`: `-Verse` names the done verses, `-Note` is the reason. The verse goes to waiting; its reason, time and last result stay with it in the scope JSON (`reopened`); no observation changes. Observe then puts it in hand and Record redoes it, modifying its observations in place. Never edit the scope JSON by hand to do this.
 
 States: `open` -> `observed` -> `synergised` -> `narrated` -> `published`. (`gathered` belongs to readings made before
 Analysis_phase_1; the step `Gather` is retired, #2320.)

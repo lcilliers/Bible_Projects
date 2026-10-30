@@ -14,6 +14,8 @@
                the index of the verses (reference, route, progress). No observation is written.
       Observe  -Label <label> [-Count n] [-Verse ref]   the next verses in hand: each verse's sheet is read from the tables
                NOW (surfaces, existing observations and nodes, ledger faces) and set in the JSON to be filled
+      Reopen   -Label <label> -Verse "ref; ref" -Note "reason"   done verses returned to waiting, so Observe and Record redo
+               them by modifying their observations in place (RS-04); the reason and the last result are kept in the JSON (#2331)
       Record   -Label <label>   the filled sheets checked whole, then written in one transaction: each surface evaluated
                (kept in the JSON), each existing observation and node accepted, modified in place or soft deleted, new
                findings written; the verses become done
@@ -40,7 +42,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Open', 'Observe', 'Record', 'Check', 'Synergy', 'Apply', 'Narrate', 'Publish', 'Account')]
+    [ValidateSet('Open', 'Observe', 'Reopen', 'Record', 'Check', 'Synergy', 'Apply', 'Narrate', 'Publish', 'Account')]
     [string] $Step,
     [Parameter(Mandatory = $true)] [string] $Label,
     [ValidateSet('Claude', 'Researcher')] [string] $By,

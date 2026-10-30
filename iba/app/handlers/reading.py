@@ -57,6 +57,10 @@ def observe(ctx: Ctx) -> Outcome:
     return _write(ctx, lambda w: rd.observe(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT))
 
 
+def reopen(ctx: Ctx) -> Outcome:
+    return _write(ctx, lambda w: rd.reopen(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT))
+
+
 def record(ctx: Ctx) -> Outcome:
     return _write(ctx, lambda w: rd.record(ctx.cfg, w, ctx.params, ctx.run_id, PROJECT_ROOT))
 

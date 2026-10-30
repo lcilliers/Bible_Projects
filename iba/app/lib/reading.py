@@ -572,6 +572,41 @@ def observe(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
             f"{data['counts']['done']} of {data['counts']['verses']} done\n  sheets in {_rel(root, path)}")
 
 
+def reopen(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path) -> str:
+    """-Label -Verse "ref; ref" -Note "reason": return named done verses of an open reading to waiting, so Observe and Record
+    redo them by modifying their observations in place (RS-04, RW-01; #2331). The reason is required; the verse's last result
+    is kept in the JSON under `reopened`. No observation or node is changed here."""
+    conn = cfg.conn
+    r = _at(conn, p.get("Label"), "open")
+    path, data = _index(cfg, root, r)
+    reason = (p.get("Note") or "").strip()
+    if len(reason) < _setting_loop(cfg)["min_reason_chars"]:
+        raise Refused("-Note is the reason the verses are re-opened, in words (it is kept with each verse in the JSON)")
+    if not (p.get("Verse") or "").strip():
+        raise Refused("-Verse names the done verses to re-open (e.g. \"Gen 37:15; Gen 43:27\")")
+    refs = nr.parse_refs(p["Verse"], nr.VerseIndex(cfg))
+    want = {x.verse_id for x in refs if x.verse_id}
+    if not want:
+        raise Refused(f"-Verse {p['Verse']!r} names no verse")
+    by_id = {v["verse_id"]: v for v in data["verses"]}
+    bad = [str(x.verse_id) for x in refs if x.verse_id not in by_id]
+    if bad or len(want) != len(refs):
+        raise Refused(f"-Verse names a verse not in reading {r['label']}'s scope, or a reference that did not resolve")
+    not_done = [f"{by_id[i]['verse']} ({by_id[i]['status']})" for i in want if by_id[i]["status"] != "done"]
+    if not_done:
+        raise Refused("only a done verse is re-opened; not done: " + ", ".join(not_done))
+    at = _now()
+    for i in sorted(want, key=lambda i: data["verses"].index(by_id[i])):
+        v = by_id[i]
+        v.setdefault("reopened", []).append({"at": at, "run_id": run_id, "by": w.who, "reason": reason,
+                                              "previous_result": v.pop("result", None)})
+        v["status"] = "waiting"
+    data["counts"]["done"] = sum(1 for v in data["verses"] if v["status"] == "done")
+    _save_atomic(path, data)
+    return (f"reading {r['label']}: {len(want)} verse(s) re-opened to waiting ({data['counts']['done']} of "
+            f"{data['counts']['verses']} done); reason kept in the JSON\n  -> {_rel(root, path)}")
+
+
 def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
     """Check one filled sheet whole; returns the plan (what to write), or None with the errors added."""
     loop = _setting_loop(cfg)

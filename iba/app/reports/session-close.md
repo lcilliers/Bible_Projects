@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-30T05:08:17Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-30T05:27:47Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `61bbf6ea-69e3-4266-8d2f-fc138b710afe` (CLAUDE_CODE_SESSION_ID); started 2026-10-30T04:51:44Z; window base commit `f8404bc7bfb4c6d2a8d5935bd7ef9af48da31346`
-- compliance file: `Logs/compliance/COMPLIANCE-20261030-61bbf6ea.md`; session log: `Logs/SESSION-LOG-20261030-analysis-phase-1-fit-for-purpose-2329.md`
-- **open findings: 0**; cleared by disposition: 2
+- session: `b1c312b7-5fbb-4b6e-b079-599818d87bc6` (CLAUDE_CODE_SESSION_ID); started 2026-10-30T05:16:27Z; window base commit `247eec77fdc67a312caf123c6b116f5970e7e28b`
+- compliance file: `Logs/compliance/COMPLIANCE-20261030-b1c312b7.md`; session log: `Logs/SESSION-LOG-20261030-reading-reopen-2331.md`
+- **open findings: 0**; cleared by disposition: 3
 
 
 ## Contents
@@ -41,8 +41,8 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:842363fd`: researcher message 2026-10-30T04:54 is too short to be matched; name where it is recorded: "#2329 build" -- disposition: recorded in #2329 v4
-- cleared `SC3:1137699c`: researcher message 2026-10-30T05:05 is too short to be matched; name where it is recorded: "Standard session" -- disposition: recorded in #2329 v6
+- cleared `SC3:2e28c8b7`: researcher message 2026-10-30T05:18 is too short to be matched; name where it is recorded: "do 2329" -- disposition: recorded in #2329 v9
+- cleared `SC3:866a42c9`: researcher message 2026-10-30T05:25 is too short to be matched; name where it is recorded: "Commit" -- disposition: recorded in #2329 v9
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -84,4 +84,4 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Reading.ps1_-Step_Reopen`: Reading.ps1 -Step Reopen failed 2 times this session: /usr/bin/bash: -c: line 137: unexpected EOF while looking for matching `''; 710d9ac729eb3ac134bb25b4844c541acd4602a9 -- disposition: carried #2331 -- the two failures were a deliberate refusal test with no -Note (the reason is required, RS-09) and a Bash heredoc quoting error before the step ran; nothing to fix

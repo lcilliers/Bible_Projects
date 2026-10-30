@@ -19845,3 +19845,15 @@ Researcher, chat 2026-10-30: the goal is to tease out the operation of a charact
 **Not done:** the trial (the 39 recorded verses of `m21-asking` redone under the new parts by modifying their observations, then the researcher's check of five verses of their choosing) is reading work and is not part of this build.
 
 **The specification:** spec 4.2 is amended without renumbering (the code and rules cite its parts by number): `outputs/escalation/2318-analysis-phase-1-specification-v5-20261030.md` (v4 is in `outputs/escalation/archive/`). The references in `iba/app/lib/reading.py`, `iba/app/USER-GUIDE.md` and `iba/app/tools/temp_2320_analysis_phase_1_test_run.py`, and the `source_doc` of the ten `cfg_method_rule` rows that named v4, name v5 (migration `iba/app/migration/archive/analysis_phase_1_2329_v2_20261030.py`, run `DEVMODE-2329-SPEC-V5-SOURCE-DOC-20261030`).
+
+## 434. Reading: a done verse can be put back in hand (2026-10-30, escalation #2331)
+
+Found in the #2329 trial (standard session 698fb0d0): `Reading.ps1 -Step Observe` puts only waiting verses in hand and no step returned a done verse to waiting, so the 39 recorded m21-asking verses could not be redone by the app. Researcher, chat 2026-10-30: 'Approve A' (a re-open action in Reading.ps1 that returns named done verses to waiting with a logged reason, so Observe and Record redo them by modifying in place, RS-04); built in a Developer Mode session.
+
+**Config first** (migration `iba/app/migration/archive/reading_reopen_2331_v1_20261030.py`, run `DEVMODE-2331-READING-REOPEN-20261030`, through `apply_logged`; named snapshot `iba-20261030T052223Z-before-migration-reading-reopen-2331.db` taken before): the step `reading.reopen` (cfg_step) and the rule RS-09 (cfg_method_rule).
+
+**Code that reads it:** `iba/app/lib/reading.py` `reopen`, `iba/app/handlers/reading.py` `reopen`, `iba/app/ps/Reading.ps1` (`-Step Reopen`). `-Label -Verse "ref; ref" -Note "reason" -By`: only a done verse of an open reading is re-opened; the verse goes to waiting, and its reason, time, run and last result are kept with it in the scope JSON (`reopened`). No observation, node or database row is changed (the step holds no write grant); the redo is Observe and Record on the verse, which modify its observations in place (RS-04, RW-01).
+
+**Test (B:29, B:46; on copies):** `iba/app/tools/temp_2331_reopen_test_run.py` 16 of 16 (migration dry run, apply, second run refused; bad input refused: no reason, a too-short reason, no verse, a verse outside the scope, a verse not done, a reading not open; the real m21-asking scope JSON copy: 39 done, one re-opened with its result kept, counts down by one, the other verses untouched, no observation row added or removed, two re-opened together, Observe then puts the re-opened verse in hand with its existing observations on the sheet). Live: the wrapper refused a call with no reason and left the scope JSON byte-identical (git hash-object before and after). Config coherence check: no errors (the migration first left outside `archive/`, corrected).
+
+**Not done:** the #2329 trial itself (reading work, standard session).
