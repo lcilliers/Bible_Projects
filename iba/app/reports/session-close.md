@@ -1,6 +1,6 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-28T10:50:38Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-30T04:07:37Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `3ba1bfea-7b08-4bf4-b97f-9ab0f5edfb0a` (CLAUDE_CODE_SESSION_ID); started 2026-10-27T16:59:19Z; window base commit `59d8c908f0a62eddc759956c8e4fc692a1ee9ae2`
 - compliance file: `Logs/compliance/COMPLIANCE-20261027-3ba1bfea.md`; session log: `Logs/SESSION-LOG-20261028-analysis-phase-1-live-tests-and-clearout.md`
