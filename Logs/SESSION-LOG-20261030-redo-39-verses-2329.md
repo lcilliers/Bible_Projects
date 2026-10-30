@@ -52,4 +52,4 @@ Claude's, within the approved plan and not new design:
 
 ## 6. Git
 
-(to be written after the first commit)
+Branch main. Commit b118e7e2 (`session 20261030: #2329 redo of the 39 m21-asking verses under the nine observation items ...`). Push output: `To https://github.com/lcilliers/Bible_Projects.git   9cabadf5..b118e7e2  main -> main`.
