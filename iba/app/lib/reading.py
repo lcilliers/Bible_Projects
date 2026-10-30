@@ -1,6 +1,6 @@
 """reading.py -- the reading process (escalation #2228; on the phases of the analytic process, #2273, design
 `outputs/escalation/2273-2274-reading-phases-and-observation-record-design-v6-20261024.md`; Analysis_phase_1, #2320, spec
-`outputs/escalation/2318-analysis-phase-1-specification-v4-20261027.md`).
+`outputs/escalation/2318-analysis-phase-1-specification-v5-20261030.md`).
 
 A reading is the work on one scope with its objective, served by the escalation that anchors it. Its findings are
 written through observationrecord (#2274): one observation per finding, applied by nodes.
@@ -154,7 +154,7 @@ def _gate_fail(r, name: str, gaps: list[str]):
                               + ([f"... and {len(gaps) - 60} more"] if len(gaps) > 60 else [])))
 
 
-# ══ the verse loop (Analysis_phase_1, #2320; spec outputs/escalation/2318-analysis-phase-1-specification-v4-20261027.md) ═══
+# ══ the verse loop (Analysis_phase_1, #2320; spec outputs/escalation/2318-analysis-phase-1-specification-v5-20261030.md) ═══
 # The JSON is the index of the verses in scope (reference, route, progress, the evaluation of the surfaces). The surfaces,
 # the existing observations and the nodes are read from the tables when a verse is worked, never copied into the JSON.
 SEGMENT_PARAMS = ("Surface", "Verse")
@@ -277,6 +277,51 @@ def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_requ
 
 
 # ── the sheet of one verse: read from the tables when the verse is worked ─────────────────────────
+def _meaning(cfg, conn, testament_of: dict) -> dict:
+    """{code: what the tables hold of its meaning} for the codes of the verses in hand (cfg_setting reading.sheet_meaning, #2329): the
+    meaning tree rows, the sense head, the STEP gloss, the related words and, for the testaments named, the lexicon. By the exact code
+    (a suffixed code is never read as its base), one set-based query per table (B:71). A source with nothing held reads as empty, so the
+    reading names the gap and does not fill it from memory."""
+    want = _setting(cfg, "reading.sheet_meaning")
+    SJ = json.dumps(sorted(testament_of))
+    out = {s: {} for s in testament_of}
+    if want.get("tree"):
+        for s in out:
+            out[s]["tree"] = []
+        for s, code, text in conn.execute("SELECT strong_variant, sense_code, sense_text FROM strong_meaning_tree WHERE deleted=0 AND "
+                                          "strong_variant IN (SELECT value FROM json_each(?)) ORDER BY strong_variant, sort, id", (SJ,)):
+            out[s]["tree"].append({"sense_code": code, "text": text})
+    if want.get("sense"):
+        for s in out:
+            out[s]["sense"] = None
+        for s, head in conn.execute("SELECT strong, head FROM strong_sense WHERE deleted=0 AND strong IN (SELECT value FROM json_each(?))",
+                                    (SJ,)):
+            out[s]["sense"] = head
+    if want.get("step_gloss"):
+        for s in out:
+            out[s]["step_gloss"] = None
+        for s, gloss in conn.execute("SELECT strongNumber, stepGloss FROM strong WHERE strongNumber IN (SELECT value FROM json_each(?))",
+                                     (SJ,)):
+            out[s]["step_gloss"] = gloss
+    if want.get("related"):
+        for s in out:
+            out[s]["related"] = []
+        for s, rs, form, tr, gloss in conn.execute(
+                "SELECT strong, related_strong, related_form, related_transliteration, related_gloss FROM strong_related WHERE deleted=0 "
+                "AND strong IN (SELECT value FROM json_each(?)) ORDER BY strong, id", (SJ,)):
+            out[s]["related"].append({"strong": rs, "form": form, "transliteration": tr, "gloss": gloss})
+    lex = want.get("lexicon")
+    if lex:
+        cols = lex["columns"]
+        pick = [s for s, t in testament_of.items() if t in lex["testaments"]]
+        for s in pick:
+            out[s]["lexicon"] = {}
+        for row in conn.execute(f"SELECT strong, {', '.join(cols)} FROM strong_lexicon WHERE deleted=0 AND strong IN "
+                                "(SELECT value FROM json_each(?))", (json.dumps(pick),)):
+            out[row[0]]["lexicon"] = dict(zip(cols, row[1:]))
+    return out
+
+
 def _sheets(cfg, conn, items: list[dict]) -> dict:
     """{verse_id: sheet} for the verses in hand, with set-based queries over the batch (B:71)."""
     loop = _setting_loop(cfg)
@@ -303,7 +348,8 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
     by_verse: dict = {i: [] for i in ids}
     for r in rows:
         by_verse[r["verse_id"]].append(r)
-    osur = orec.occurrence_surfaces(conn, ids)      # the surface of each occurrence as STEP glosses it (multi-code spans)
+    meaning = _meaning(cfg, conn, {r["strong"]: r["testament"] for r in rows})
+    osur =orec.occurrence_surfaces(conn, ids)      # the surface of each occurrence as STEP glosses it (multi-code spans)
     db_surface = {r["id"]: r["surface"] for r in rows}
     sheets = {}
     for it in items:
@@ -331,7 +377,7 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                                    "surface": r["surface"], "morph": r["morph_code"], "position": r["position"],
                                    "clusters": clusters.get(r["strong"], []),
                                    "subgroups": subs.get((r["strong"], _norm(r["surface"])), []), "hint": hint,
-                                   "evaluation": None}
+                                   "meaning": meaning[r["strong"]], "evaluation": None}
             g["occurrences"].append(r["id"])
         sheets[vid] = {"surfaces": list(groups.values())}
     # the existing observations and nodes on the verses (every stage, not filtered by subgroup)
@@ -471,7 +517,7 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
             "passage": _passage(conn, osis, loop["passage_window"]), "existing": existing,
             "ledger_faces": ledger.get(vid, []), "findings": [], "fill_nodes": False, "drop_non_relevant_nodes": False,
             "confirm_fixes": False, "errors": [],
-            "how": "Rules for stating an observation (spec 4.1, 4.2), enforced at Record: an observation that covers a relevant surface (a node with a characteristic or qualifier role) carries all the `parts`: sense, evidence, polarity, content, enactment, party, circumstance, chain, primary_operation, flags; each in words, or {\"none\": \"why the verse shows none\"} (sense, evidence and circumstance are never absent; flags is a list, empty when none). The words that bear on an act are nodes of the observation of the act, never an observation of their own (move a node: node modify `observation_id`). One statement observation names the primary_operation; a stated chain needs a link observation; a stated party needs a party observation with its route. Evaluate every surface: evaluation {\"result\": \"relevant\" (the characteristic, or a qualifier of it) | "
+            "how": "Rules for stating an observation (spec 4.1, 4.2), enforced at Record: an observation that covers a relevant surface (a node with a characteristic or qualifier role) carries all the `parts`: sense, evidence, polarity, content, before, enactment, after, party, circumstance, chain, primary_operation, flags; each in words, or {\"none\": \"why the verse shows none\"} (sense, evidence and circumstance are never absent; flags is a list, empty when none). `before` is what the verse states of the prompt, state or purpose before the act; `after` is what follows the act (the answer, result or response), cited by reference when it is in a verse of `passage` (for example Gen 37:16 for Gen 37:15). A stated `party` is {\"text\": the sentence, \"acts\": the kind of the one who acts, \"acted_on\": the kind of the one acted on}, each kind from cfg_enum party_kind (divine, human, non_human). Each surface carries `meaning`: what the tables hold (tree, sense, step_gloss, related and, for Greek, lexicon); the `sense` and `evidence` parts are read from it, and a data-quality flag about meaning sources is written from what `meaning` holds or lacks, never from memory. The words that bear on an act are nodes of the observation of the act, never an observation of their own (move a node: node modify `observation_id`). One statement observation names the primary_operation; a stated chain needs a link observation; a stated party needs a party observation with its route. Evaluate every surface: evaluation {\"result\": \"relevant\" (the characteristic, or a qualifier of it) | "
                    "\"bears_on\" (the object, party or outward act of a relevant act: a node of that act's observation) | "
                    "\"not_relevant\", \"reason\": \"...\"} (reason: the tests of the lexical work; a surface with no "
                    "inner-being role gets no observation). `drop_non_relevant_nodes`: true soft deletes every existing node on a "

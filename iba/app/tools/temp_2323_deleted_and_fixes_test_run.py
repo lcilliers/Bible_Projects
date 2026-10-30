@@ -47,6 +47,9 @@ subprocess.run([sys.executable, str(v7), "--db", str(DB)], capture_output=True, 
 v8 = ROOT / "iba/app/migration/analysis_phase_1_2320_v4_20261028.py"
 v8 = v8 if v8.exists() else ROOT / "iba/app/migration/archive" / v8.name
 subprocess.run([sys.executable, str(v8), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
+v9 = ROOT / "iba/app/migration/analysis_phase_1_2329_v1_20261030.py"      # #2329: before, after, typed party, meaning on the sheet
+v9 = v9 if v9.exists() else ROOT / "iba/app/migration/archive" / v9.name
+subprocess.run([sys.executable, str(v9), "--db", str(DB)], capture_output=True, text=True, env=env, check=True)
 c = sqlite3.connect(DB)
 c.execute("UPDATE cfg_setting SET value=? WHERE key='reading.output_dir'", (json.dumps(str(S / "reading")),))
 c.commit()
@@ -83,7 +86,8 @@ def save(label, data):
     (S / "reading" / label / f"{label}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
 PARTS_FULL = {"sense": "test sense in this verse", "evidence": "test evidence for the sense", "polarity": "pursuit",
-              "content": {"none": "test: no object stated in the verse"}, "enactment": {"none": "test: no outward act stated"},
+              "content": {"none": "test: no object stated in the verse"},
+              "before": {"none": "test: the verse does not say what led to it"}, "after": {"none": "test: the verse does not say what follows"}, "enactment": {"none": "test: no outward act stated"},
               "party": {"none": "test: no other party stated"}, "circumstance": "test circumstance in this verse",
               "chain": {"none": "test: a single operation in the verse"}, "primary_operation": {"none": "test: not the primary one"},
               "flags": []}

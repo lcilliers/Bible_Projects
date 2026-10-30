@@ -108,6 +108,9 @@ def check_parts(cfg, parts, where: str, errors: list) -> None:
     pol = parts.get("polarity")
     if pol is not None and not isinstance(pol, dict) and pol not in loop["polarity"]:
         errors.append(f"{where}: polarity must be one of {loop['polarity']}")
+    party = parts.get(rules(cfg)["party"]["part"])
+    if party is not None and spec.get("party_form") and not (isinstance(party, dict) and set(party) == {"none"}):
+        check_party(cfg, party, where, errors)
     flags = parts.get("flags")
     if flags is not None and not isinstance(flags, dict):
         if not isinstance(flags, list):
@@ -138,6 +141,22 @@ def occurrence_surfaces(conn, verse_ids: list) -> dict:
     return out
 
 
+def check_party(cfg, v, where: str, errors: list) -> None:
+    """A stated party (#2329): the sentence and the kind of the one who acts and of the one acted on, the shape and the kinds from
+    reading.observation_parts party_form and cfg_enum party_kind."""
+    form, minc = _parts_setting(cfg)["party_form"], loop_setting(cfg)["min_reason_chars"]
+    kinds_ = cfg.enum(form["kind_enum"])
+    if not isinstance(v, dict) or set(v) != set(form["keys"]):
+        errors.append(f"{where}: a stated party is an object with {form['keys']} (the sentence, and the kind of each party), or "
+                      f"{{\"none\": \"why the verse shows none\"}}")
+        return
+    if not isinstance(v.get("text"), str) or len(v["text"].strip()) < minc:
+        errors.append(f"{where}: party text is the sentence in words ({minc} characters or more)")
+    for k in form["kind_keys"]:
+        if v.get(k) not in kinds_:
+            errors.append(f"{where}: party {k} is one of {sorted(kinds_)}")
+
+
 def complete_parts(cfg, parts, where: str, errors: list) -> None:
     """The observation of a relevant surface covers the parts of spec 4.2 (#2323, researcher: "the observations for each surface
     comply with the requirement"). Every key of reading.observation_parts is present: given in words (polarity: refusal or
@@ -166,6 +185,8 @@ def complete_parts(cfg, parts, where: str, errors: list) -> None:
         elif key == "polarity":
             if v not in loop["polarity"]:
                 errors.append(f"{where}: polarity is one of {loop['polarity']}, or {{\"none\": reason}}")
+        elif key == rules(cfg)["party"]["part"] and spec.get("party_form"):
+            check_party(cfg, v, where, errors)
         elif not isinstance(v, str) or len(v.strip()) < minc:
             errors.append(f"{where}: part {key!r} is stated in words ({minc} characters or more), or {{\"none\": reason}}")
 
