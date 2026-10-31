@@ -37,4 +37,4 @@ Claude's, within the request:
 
 ## 6. Git
 
-Branch and commits are written here at close.
+Branch: main. First commit: `543fe4ba4746a896cd4426b85efdd5892ae539ca` (session 20261031: M85 Other Beings cluster (24 strongs, 10 subgroups, 51 surface pairs, #2338), concept mapping spec, BUILD 437, session log, compliance file and close reports). Push output: `1a9a21cc..543fe4ba  main -> main` (https://github.com/lcilliers/Bible_Projects.git). The commit also carried `Logs/compliance/COMPLIANCE-20261031-eccac799.md`, the unfilled template of another session (eccac799, developer mode) that was lying uncommitted. Session-close re-run before the commit: 0 open findings (`iba/app/reports/session-close-v260-20261031.md`).
