@@ -53,4 +53,15 @@ Claude's, within the request:
 
 ## 6. Git
 
-Branch and commits are written here at close.
+Branch: main.
+
+Commit: 4e14453c "session 20261031: v1 concept tables (#2339, BUILD 439), 200-surface local-model pilot (BUILD 438), #2338 closed, #2340 to #2343 raised, session log, compliance file and close reports" (23 files changed, 5002 insertions, 50 deletions).
+
+Push output:
+
+```
+To https://github.com/lcilliers/Bible_Projects.git
+   641f9450..4e14453c  main -> main
+```
+
+The session log git confirmation is the next commit, alone.
