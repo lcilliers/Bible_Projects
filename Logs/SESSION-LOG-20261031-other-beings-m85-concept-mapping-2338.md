@@ -33,7 +33,7 @@ Claude's, within the request:
 
 ## 5. Open items
 
-- #2338 (Claude): build the concept mapping in the database (concept_domain, concept, concept_subgroup, each registered in config), in a Developer Mode project session; the spirit subgroup; the open choice of Feeling as four domains or one chapter.
+- #2342 (Researcher): the dual-tagged spirit subgroup, deferred.
 
 ## 6. Git
 
