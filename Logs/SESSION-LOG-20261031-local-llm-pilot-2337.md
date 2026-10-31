@@ -32,4 +32,4 @@ Claude's, within the request:
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. First commit: `0feabc6c` (session 20261031: local LLM pilot over the 39 m21-asking verses (#2337), BUILD 436, session log, compliance file and close reports). Push output: `5a4440df..0feabc6c  main -> main` (https://github.com/lcilliers/Bible_Projects.git). Session-close re-run before the commit: 0 open findings (`iba/app/reports/session-close-v257-20261031.md`).
