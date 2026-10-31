@@ -1,0 +1,4740 @@
+{
+ "items": {
+  "items": [
+   {
+    "no": 1,
+    "key": "meaning",
+    "name": "the surface and its meaning here, with the evidence",
+    "kinds": [
+     "face"
+    ],
+    "bases": [
+     "stated"
+    ],
+    "shared": false
+   },
+   {
+    "no": 2,
+    "key": "role",
+    "name": "its role: the qualifier and what it gives the characteristic",
+    "kinds": [
+     "qualification",
+     "statement"
+    ],
+    "bases": [
+     "stated",
+     "read"
+    ],
+    "shared": true
+   },
+   {
+    "no": 3,
+    "key": "polarity",
+    "name": "whether the act is a refusal or a pursuit",
+    "kinds": [
+     "statement"
+    ],
+    "bases": [
+     "stated",
+     "read"
+    ],
+    "shared": false,
+    "polarity_required": true
+   },
+   {
+    "no": 4,
+    "key": "object",
+    "name": "what the act is directed at or against",
+    "kinds": [
+     "statement"
+    ],
+    "bases": [
+     "stated",
+     "read"
+    ],
+    "shared": false
+   },
+   {
+    "no": 5,
+    "key": "enactment",
+    "name": "the outward act the inner act produces, where the verse states one",
+    "kinds": [
+     "statement"
+    ],
+    "bases": [
+     "stated",
+     "read"
+    ],
+    "shared": false
+   },
+   {
+    "no": 6,
+    "key": "party",
+    "name": "the other party and the sequence, with the route",
+    "kinds": [
+     "party"
+    ],
+    "bases": [
+     "stated",
+     "read"
+    ],
+    "shared": true
+   },
+   {
+    "no": 7,
+    "key": "circumstance",
+    "name": "how it appears here: the circumstance of the verse",
+    "kinds": [
+     "statement"
+    ],
+    "bases": [
+     "stated"
+    ],
+    "shared": true
+   },
+   {
+    "no": 8,
+    "key": "operation",
+    "name": "the operation as an action description (who or what does what), its mode, the primary one",
+    "kinds": [
+     "statement"
+    ],
+    "bases": [
+     "stated",
+     "read"
+    ],
+    "shared": false,
+    "mode_required": true
+   },
+   {
+    "no": 8,
+    "key": "chain",
+    "name": "the chain of operations the verse links in sequence",
+    "kinds": [
+     "link"
+    ],
+    "bases": [
+     "stated",
+     "read"
+    ],
+    "shared": true
+   },
+   {
+    "no": 9,
+    "key": "flag",
+    "name": "a typed flag: data-quality, or discovery for the claims process",
+    "kinds": [
+     "statement"
+    ],
+    "bases": [
+     "stated",
+     "read"
+    ],
+    "shared": true,
+    "flag_type_required": true
+   }
+  ],
+  "parts_keys": [
+   "item",
+   "mode",
+   "polarity",
+   "flag_type",
+   "grounds"
+  ],
+  "modes": [
+   "done",
+   "foreseen",
+   "commanded",
+   "negated",
+   "reported"
+  ],
+  "flag_types": [
+   "data-quality",
+   "discovery"
+  ],
+  "item_roles": [
+   "characteristic"
+  ],
+  "surface_always": [
+   "meaning"
+  ],
+  "verse_always": [
+   "operation"
+  ],
+  "grounds_required_for_basis": [
+   "read"
+  ],
+  "max_verse_words_copied": 7
+ },
+ "verses": [
+  {
+   "osisId": "Deut.10.12",
+   "reference": "Deu 10:12",
+   "text": "“And now, Israel, what does the Lord your God require of you, but to fear the Lord your God, to walk in all his ways, to love him, to serve the Lord your God with all your heart and with all your soul,",
+   "reference_observations": [
+    {
+     "id": 21056,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is a demand put as a question: what the Lord asks of Israel (tree H7592 1a1 'to ask, ask for')."
+    },
+    {
+     "id": 21057,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Fear here is reverent awe before the Lord (tree H3372 1a3 'to fear, reverence, honour, respect')."
+    },
+    {
+     "id": 21058,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Ways here is the figure for the course of a life lived toward the Lord (tree H1870 1e 'of course of life (fig.)')."
+    },
+    {
+     "id": 21059,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Love here is love of a person toward God (tree H0157 1a3 'human love for or to God')."
+    },
+    {
+     "id": 21060,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Serve here is the service of the Lord (tree H5647 1a4 'to serve (God)')."
+    },
+    {
+     "id": 21061,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "Heart and soul together say that the service is given with the whole inner seat (tree H3824 1a2 'heart (of man)'; H5315 1a 'the inner being of man')."
+    },
+    {
+     "id": 21062,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The Lord's asking is a pursuit: he looks for something from Israel."
+    },
+    {
+     "id": 21063,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The fear is required, a pursuit set before Israel."
+    },
+    {
+     "id": 21064,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The walking in his ways is required, a pursuit set before Israel."
+    },
+    {
+     "id": 21065,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The love is required, a pursuit set before Israel."
+    },
+    {
+     "id": 21066,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The service is required, a pursuit set before Israel."
+    },
+    {
+     "id": 21067,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the Lord asks is four things: to fear him, to walk in his ways, to love him and to serve him."
+    },
+    {
+     "id": 21068,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The one feared is the Lord their God."
+    },
+    {
+     "id": 21069,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The ways are the Lord's: the course he sets for them."
+    },
+    {
+     "id": 21070,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The one loved is the Lord."
+    },
+    {
+     "id": 21071,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The one served is the Lord their God."
+    },
+    {
+     "id": 21072,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "Walking is the outward act of the ways: living by the course the Lord sets."
+    },
+    {
+     "id": 21073,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The Lord asks; Israel is the one asked."
+    },
+    {
+     "id": 21074,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Israel is to fear the Lord, who is the one feared."
+    },
+    {
+     "id": 21075,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Israel is to walk in the Lord's ways and to love him."
+    },
+    {
+     "id": 21076,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Israel is to serve the Lord."
+    },
+    {
+     "id": 21077,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The speaker turns to this after recalling forty days on the mountain and the Lord's unwillingness to destroy them (Deu 10:10-11)."
+    },
+    {
+     "id": 21078,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The Lord asks Israel for four things."
+    },
+    {
+     "id": 21079,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "Israel is to fear the Lord."
+    },
+    {
+     "id": 21080,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "Israel is to live by the Lord's ways."
+    },
+    {
+     "id": 21081,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "Israel is to love the Lord."
+    },
+    {
+     "id": 21082,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "Israel is to serve the Lord with the whole inner seat."
+    },
+    {
+     "id": 21083,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The one question is answered by four infinitives: to fear, to walk, to love and to serve."
+    },
+    {
+     "id": 21084,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The four are one requirement, not four separate ones."
+    },
+    {
+     "id": 21085,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The question states what the Lord requires; it is not asked to gain information."
+    },
+    {
+     "id": 21086,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: other verses join fear, love, walking and service; the claims process tests how the four relate across them."
+    }
+   ]
+  },
+  {
+   "osisId": "Deut.13.14",
+   "reference": "Deu 13:14",
+   "text": "then you shall inquire and make search and ask diligently. And behold, if it be true and certain that such an abomination has been done among you,",
+   "reference_observations": [
+    {
+     "id": 21087,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The first verb is to inquire after a matter with care, a seeking out (tree H1875 1a2 'to consult, enquire of, seek')."
+    },
+    {
+     "id": 21088,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The second verb is to search a matter through (tree H2713 1a3 'to examine thoroughly')."
+    },
+    {
+     "id": 21089,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The third verb puts questions to people (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21090,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "Diligently, as the ESV renders it, makes the asking thorough: the verb is the Hiphil of the word for good (tree H3190 1b '(Hiphil)'), so it is done well."
+    },
+    {
+     "id": 21091,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The inquiring is a pursuit: the reader is told to go after the facts."
+    },
+    {
+     "id": 21092,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The searching is a pursuit: the matter is to be examined to its end."
+    },
+    {
+     "id": 21093,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: people are to be questioned until the report is settled."
+    },
+    {
+     "id": 21094,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the inquiring is into is the report of a wicked thing done in the city."
+    },
+    {
+     "id": 21095,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the searching examines is whether the report holds."
+    },
+    {
+     "id": 21096,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the asking draws out is what was done among them."
+    },
+    {
+     "id": 21097,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The one addressed is told to inquire, search and ask; the people of the city are those whose doing is inquired into."
+    },
+    {
+     "id": 21098,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The reader has heard (Deu 13:12-13) that worthless men have drawn the people of a city to serve other gods."
+    },
+    {
+     "id": 21099,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The reader is told to inquire into the report."
+    },
+    {
+     "id": 21100,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The reader is told to search the matter out."
+    },
+    {
+     "id": 21101,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The reader is told to question people carefully."
+    },
+    {
+     "id": 21102,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Three verbs of inquiry lead to the test of the report: it must prove true, sure and a real abomination done among them."
+    },
+    {
+     "id": 21103,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The three verbs form a stepped investigation, each going further than the last."
+    },
+    {
+     "id": 21104,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what is to be done when the report is found true is in the next verses (Deu 13:15-16); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Deut.18.16",
+   "reference": "Deu 18:16",
+   "text": "just as you desired of the Lord your God at Horeb on the day of the assembly, when you said, ‘Let me not hear again the voice of the Lord my God or see this great fire any more, lest I die.’",
+   "reference_observations": [
+    {
+     "id": 21105,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is a request made of the Lord, an asking for something to be granted (tree H7592 1a1 'to ask, ask for')."
+    },
+    {
+     "id": 21106,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Hear here is perceiving by ear the Lord's voice (tree H8085 1a1 'to hear (perceive by ear)')."
+    },
+    {
+     "id": 21107,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "See here is taking in the sight of the great fire with the eyes (tree H7200 1a1 'to see')."
+    },
+    {
+     "id": 21108,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Die here is the dying the people fear (tree H4191 1a1 'to die')."
+    },
+    {
+     "id": 21109,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: the people made a request of the Lord."
+    },
+    {
+     "id": 21110,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The negator makes the hearing something they ask to be spared: a refusal."
+    },
+    {
+     "id": 21111,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The same negator makes the seeing something they ask to be spared: a refusal."
+    },
+    {
+     "id": 21112,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The dying is what they seek to avoid: a refusal of death."
+    },
+    {
+     "id": 21113,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they asked of the Lord is recorded in what they said, a plea not to be exposed to him."
+    },
+    {
+     "id": 21114,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they asked not to hear is the voice of the Lord."
+    },
+    {
+     "id": 21115,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they asked not to see is the great fire."
+    },
+    {
+     "id": 21116,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The people asked; the Lord is the one asked."
+    },
+    {
+     "id": 21117,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The people ask not to hear or see the Lord's voice and fire; the Lord is the one whose presence is meant."
+    },
+    {
+     "id": 21118,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The people are the ones who fear to die; the Lord's presence is what they fear."
+    },
+    {
+     "id": 21119,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The speaker recalls the assembly at Horeb while speaking of the prophet to come (Deu 18:15-16)."
+    },
+    {
+     "id": 21120,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "The people made their request of the Lord at Horeb."
+    },
+    {
+     "id": 21121,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "They asked not to hear the Lord's voice again."
+    },
+    {
+     "id": 21122,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "They asked not to see the great fire again."
+    },
+    {
+     "id": 21123,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "They feared that they would die."
+    },
+    {
+     "id": 21124,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "They asked at Horeb; they said let us not hear or see; they gave their dying as the reason."
+    },
+    {
+     "id": 21125,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The voice and the fire are what they fear will bring death: his presence is too much for them."
+    },
+    {
+     "id": 21126,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the Lord's answer to the request is in the next verse (Deu 18:17); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Deut.32.7",
+   "reference": "Deu 32:7",
+   "text": "Remember the days of old; consider the years of many generations; ask your father, and he will show you, your elders, and they will tell you.",
+   "reference_observations": [
+    {
+     "id": 21127,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Remember is calling the past to mind (tree H2142 1a 'to remember, recall')."
+    },
+    {
+     "id": 21128,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Consider is giving heed to and discerning the years (tree H0995 1a3 'to observe, mark, give heed to, distinguish, consider')."
+    },
+    {
+     "id": 21129,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is putting a question to those who know (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21130,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The remembering is commanded as a pursuit: the people are to go back to the days of old."
+    },
+    {
+     "id": 21131,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The considering is commanded as a pursuit: the years are to be weighed."
+    },
+    {
+     "id": 21132,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is commanded as a pursuit: the people are to seek what the old can tell."
+    },
+    {
+     "id": 21133,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is to be remembered is the days of old."
+    },
+    {
+     "id": 21134,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is to be considered is the years of many generations."
+    },
+    {
+     "id": 21135,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The answer of the ones asked is a showing and a telling."
+    },
+    {
+     "id": 21136,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The people are told to ask; their father and their elders are the ones asked."
+    },
+    {
+     "id": 21137,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The charge follows the words that the people have repaid the Lord foolishly (Deu 32:5-6)."
+    },
+    {
+     "id": 21138,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The people are told to call the days of old to mind."
+    },
+    {
+     "id": 21139,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The people are told to weigh the years of many generations."
+    },
+    {
+     "id": 21140,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The people are told to ask their father and elders, who will show and tell."
+    },
+    {
+     "id": 21141,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Remember, consider, ask; and the father will show and the elders will tell."
+    },
+    {
+     "id": 21142,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The father and the elders are the ones who hold what the people are to learn."
+    },
+    {
+     "id": 21143,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what the father and elders will tell is not stated here; the verses that follow (Deu 32:8-9) are the passage to read."
+    }
+   ]
+  },
+  {
+   "osisId": "Deut.4.32",
+   "reference": "Deu 4:32",
+   "text": "“ For ask now of the days that are past, which were before you, since the day that God created man on the earth, and ask from one end of heaven to the other, whether such a great thing as this has ever happened or was ever heard of.",
+   "reference_observations": [
+    {
+     "id": 21035,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is an imperative to enquire, to put the question to past time and to the whole of heaven (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21036,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Heard is hearing of something, news of it reaching the ear (tree H8085 1a2 'to hear of or concerning')."
+    },
+    {
+     "id": 21037,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: the people are sent to search for an answer."
+    },
+    {
+     "id": 21038,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is asked of is the days that are past and the span of heaven, and what is asked is whether such a great thing has happened."
+    },
+    {
+     "id": 21039,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What might have been heard of is such a great thing as this."
+    },
+    {
+     "id": 21040,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The speaker commands the people to ask; the days and the span of heaven are what they are to ask."
+    },
+    {
+     "id": 21041,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The speaker follows the promise of return and mercy (Deu 4:30-31) by sending Israel to ask."
+    },
+    {
+     "id": 21042,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The people are told to ask of past days and of heaven's ends whether anything like this has happened."
+    },
+    {
+     "id": 21043,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "The question put is whether such a thing was ever heard of."
+    },
+    {
+     "id": 21044,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The people ask of the past and of heaven whether such a thing has happened or been heard of."
+    },
+    {
+     "id": 21045,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The asking is set as a test by comparison, the whole of time and heaven searched for the like."
+    },
+    {
+     "id": 21046,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what the great thing is, the passage gives in the verses after (Deu 4:33-34)."
+    }
+   ]
+  },
+  {
+   "osisId": "Deut.6.20",
+   "reference": "Deu 6:20",
+   "text": "“When your son asks you in time to come, ‘What is the meaning of the testimonies and the statutes and the rules that the Lord our God has commanded you?’",
+   "reference_observations": [
+    {
+     "id": 21047,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is a son's question about the meaning of the Lord's commands (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21048,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The son's asking is a pursuit of the meaning of the commands."
+    },
+    {
+     "id": 21049,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the son will ask about is the meaning of the testimonies, the statutes and the rules."
+    },
+    {
+     "id": 21050,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The son asks; the father is the one asked; the Lord is the one who gave the commands asked about."
+    },
+    {
+     "id": 21051,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The question arises from what the Lord has commanded, after the people are told to do what is right and good (Deu 6:18)."
+    },
+    {
+     "id": 21052,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "In time to come the son will ask his father the meaning of the commands."
+    },
+    {
+     "id": 21053,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The son asks, and the father is then to answer (Deu 6:21)."
+    },
+    {
+     "id": 21054,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "The commands are expected to raise the child's question, so that the answer can be given."
+    },
+    {
+     "id": 21055,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the answer to be given is in the next verses (Deu 6:21-22); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Exod.11.2",
+   "reference": "Exo 11:2",
+   "text": "Speak now in the hearing of the people, that they ask, every man of his neighbor and every woman of her neighbor, for silver and gold jewelry.”",
+   "reference_observations": [
+    {
+     "id": 20950,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Speak here is a command given to be spoken out to the people (tree H1696 1 'to speak, declare, converse, command, promise, warn, threaten, sing')."
+    },
+    {
+     "id": 20951,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is asking for something as a favour (tree H7592 1a2 'to ask (as a favour), borrow'), here from neighbours."
+    },
+    {
+     "id": 20952,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: each is to seek goods from the neighbour."
+    },
+    {
+     "id": 20953,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is to be spoken goes to the people."
+    },
+    {
+     "id": 20954,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is asked for is silver and gold articles."
+    },
+    {
+     "id": 20955,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Moses is to speak; the people are the ones addressed."
+    },
+    {
+     "id": 20956,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Every man asks his neighbour and every woman her neighbour; the neighbours are the ones asked."
+    },
+    {
+     "id": 20957,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The Lord is speaking to Moses before the last plague, saying that Pharaoh will let the people go (Exo 11:1)."
+    },
+    {
+     "id": 20958,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "Moses is told to speak in the hearing of the people."
+    },
+    {
+     "id": 20959,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The people are to ask their neighbours for goods."
+    },
+    {
+     "id": 20960,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Moses speaks in the hearing of the people so that they ask their neighbours."
+    },
+    {
+     "id": 20961,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The asking is laid on every man and woman, not on a chosen few."
+    },
+    {
+     "id": 20962,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: whether the asking is met with a gift or a loan, the claims process tests against the other verses of this asking."
+    }
+   ]
+  },
+  {
+   "osisId": "Exod.12.35",
+   "reference": "Exo 12:35",
+   "text": "The people of Israel had also done as Moses told them, for they had asked the Egyptians for silver and gold jewelry and for clothing.",
+   "reference_observations": [
+    {
+     "id": 20963,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is asking for something as a favour (tree H7592 1a2 'to ask (as a favour), borrow'), here the Egyptians are asked for silver, gold and clothing."
+    },
+    {
+     "id": 20964,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: the people sought goods from the Egyptians."
+    },
+    {
+     "id": 20965,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they asked for is silver and gold articles and clothing."
+    },
+    {
+     "id": 20966,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The word they followed in asking is what Moses told them."
+    },
+    {
+     "id": 20967,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The people of Israel asked; the Egyptians were the ones asked; Moses is the one whose word they followed."
+    },
+    {
+     "id": 20968,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The Egyptians are urging the people out of the land in haste (Exo 12:33) as the people leave."
+    },
+    {
+     "id": 20969,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The people of Israel asked the Egyptians for goods, as they had been told."
+    },
+    {
+     "id": 20970,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The people did as Moses told them: they asked the Egyptians for goods."
+    },
+    {
+     "id": 20971,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The asking is done under the word given by Moses and not on the people's own initiative."
+    },
+    {
+     "id": 20972,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: how the Egyptians answered the asking is not stated in this verse; the passage gives it."
+    }
+   ]
+  },
+  {
+   "osisId": "Exod.12.36",
+   "reference": "Exo 12:36",
+   "text": "And the Lord had given the people favor in the sight of the Egyptians, so that they let them have what they asked. Thus they plundered the Egyptians.",
+   "reference_observations": [
+    {
+     "id": 20973,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Favour here is the regard the Egyptians held for the people (tree H2580 1b 'favour, acceptance')."
+    },
+    {
+     "id": 20974,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is in the causative stem: the Egyptians let the people ask successfully, they grant (tree H7592 1d2 'to grant, make over to, let (one) ask (successfully)')."
+    },
+    {
+     "id": 20975,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "In the sight of the Egyptians says where the favour stands: in their eyes (tree H5869 1a2 'as showing mental qualities')."
+    },
+    {
+     "id": 20976,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The favour was given to the people."
+    },
+    {
+     "id": 20977,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is granted is whatever the people asked."
+    },
+    {
+     "id": 20978,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The favour came by the Lord's giving."
+    },
+    {
+     "id": 20979,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The granting ends in plunder: the Egyptians are stripped."
+    },
+    {
+     "id": 20980,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The Lord gives the favour; the people receive it; it is held by the Egyptians."
+    },
+    {
+     "id": 20981,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The Egyptians grant what is asked; the people are the ones who asked."
+    },
+    {
+     "id": 20982,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The Egyptians have been urging the people out in haste (Exo 12:33) and the people have asked them for goods (Exo 12:35)."
+    },
+    {
+     "id": 20983,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The Lord had given the people favour with the Egyptians."
+    },
+    {
+     "id": 20984,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The Egyptians granted the people what they asked."
+    },
+    {
+     "id": 20985,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The Lord gave favour, so that the Egyptians granted what was asked; thus the people plundered them."
+    },
+    {
+     "id": 20986,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the same favour is spoken of in Exo 3:21 and Exo 11:3; the claims process tests how it is given and what it rests on."
+    }
+   ]
+  },
+  {
+   "osisId": "Exod.13.14",
+   "reference": "Exo 13:14",
+   "text": "And when in time to come your son asks you, ‘ What does this mean?’ you shall say to him, ‘ By a strong hand the Lord brought us out of Egypt, from the house of slavery.",
+   "reference_observations": [
+    {
+     "id": 20987,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is a child's question about the meaning of what is done (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 20988,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Hand here is the Lord's power by which he acted (tree H3027 1b 'strength, power (fig.)')."
+    },
+    {
+     "id": 20989,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "Strong gives the hand its measure: a powerful hand, the strength of the Lord's act (tree H2392 'strength')."
+    },
+    {
+     "id": 20990,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: the son will seek the meaning."
+    },
+    {
+     "id": 20991,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the son will ask about is this, what has just been laid down about the firstborn (Exo 13:12-13)."
+    },
+    {
+     "id": 20992,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The strong hand acted against Egypt: Israel is brought out of it, out of the house of slavery."
+    },
+    {
+     "id": 20993,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The strong hand shows in what was done: the bringing out."
+    },
+    {
+     "id": 20994,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The son asks; the father is the one asked and is to answer."
+    },
+    {
+     "id": 20995,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The Lord acts by his hand; Israel is the one brought out."
+    },
+    {
+     "id": 20996,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The word is given with the law of the firstborn laid down in the verses before (Exo 13:12-13)."
+    },
+    {
+     "id": 20997,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "In time to come the son will ask his father what the rite means."
+    },
+    {
+     "id": 20998,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The father is to say that the Lord brought them out of Egypt by his strong hand."
+    },
+    {
+     "id": 20999,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The son asks, the father answers, and the answer is the Lord's bringing out by a strong hand."
+    },
+    {
+     "id": 21000,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The answer to the child's question about the rite is what the Lord did, not an account of the rite itself."
+    },
+    {
+     "id": 21001,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the rest of the answer, which ties the rite to the firstborn of Egypt, is in the next verse; the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Exod.18.7",
+   "reference": "Exo 18:7",
+   "text": "Moses went out to meet his father-in-law and bowed down and kissed him. And they asked each other of their welfare and went into the tent.",
+   "reference_observations": [
+    {
+     "id": 21002,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Kiss here is a greeting of affection between kin (tree H5401 1a 'to kiss', in cluster friendship)."
+    },
+    {
+     "id": 21003,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is a mutual enquiry after each other's state (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21004,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit on both sides: each seeks word of the other."
+    },
+    {
+     "id": 21005,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The one kissed is his father-in-law."
+    },
+    {
+     "id": 21006,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they asked of each other is their welfare."
+    },
+    {
+     "id": 21007,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The kiss comes with a bowing down, an outward show of respect."
+    },
+    {
+     "id": 21008,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Moses kisses; his father-in-law is the one kissed."
+    },
+    {
+     "id": 21009,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Each asks the other: Moses and his father-in-law ask one another."
+    },
+    {
+     "id": 21010,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Jethro has come to Moses in the wilderness with Moses' wife and sons (Exo 18:5-6)."
+    },
+    {
+     "id": 21011,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Moses kissed his father-in-law."
+    },
+    {
+     "id": 21012,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "They asked one another how they fared."
+    },
+    {
+     "id": 21013,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Moses goes out, bows and kisses him; then they ask of each other's welfare and go into the tent."
+    },
+    {
+     "id": 21014,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Moses honours his father-in-law as his senior in this greeting."
+    },
+    {
+     "id": 21015,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what each told the other of his welfare is not stated; the passage gives what Moses then told him (Exo 18:8)."
+    }
+   ]
+  },
+  {
+   "osisId": "Exod.3.22",
+   "reference": "Exo 3:22",
+   "text": "but each woman shall ask of her neighbor, and any woman who lives in her house, for silver and gold jewelry, and for clothing. You shall put them on your sons and on your daughters. So you shall plunder the Egyptians.”",
+   "reference_observations": [
+    {
+     "id": 20940,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is asking for something as a favour (tree H7592 1a2 'to ask (as a favour), borrow'), here asking neighbours for goods."
+    },
+    {
+     "id": 20941,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: each woman is to seek goods from her neighbour."
+    },
+    {
+     "id": 20942,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is asked for is silver and gold articles and clothing."
+    },
+    {
+     "id": 20943,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The asking ends in plunder: the Egyptians are stripped of these things."
+    },
+    {
+     "id": 20944,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Each Israelite woman asks; her neighbour and the Egyptians are the ones asked."
+    },
+    {
+     "id": 20945,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "These are God's words of what will happen when the people go out of Egypt (Exo 3:20-21)."
+    },
+    {
+     "id": 20946,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "Each woman is told to ask her neighbour and the woman in her house for goods."
+    },
+    {
+     "id": 20947,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "They ask, they put what they receive on their sons and daughters, and so they plunder the Egyptians."
+    },
+    {
+     "id": 20948,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The favour God gives the people in the sight of the Egyptians is what the asking draws on."
+    },
+    {
+     "id": 20949,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what the asking amounts to, a request granted or a borrowing, the claims process tests against the other verses of this asking."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.24.47",
+   "reference": "Gen 24:47",
+   "text": "Then I asked her, ‘ Whose daughter are you?’ She said, ‘The daughter of Bethuel, Nahor’s son, whom Milcah bore to him.’ So I put the ring on her nose and the bracelets on her arms.",
+   "reference_observations": [
+    {
+     "id": 20816,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb puts a question to a person for information (tree H7592 1a1 'to ask, ask for', 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 20817,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: he seeks to learn something from her."
+    },
+    {
+     "id": 20818,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he asks is whose daughter she is, her family."
+    },
+    {
+     "id": 20819,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The servant asks; Rebekah is the one asked and she answers him."
+    },
+    {
+     "id": 20820,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The servant is telling how it went at the spring, after she had given him and his camels drink (Gen 24:45-46)."
+    },
+    {
+     "id": 20821,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "The servant asked Rebekah to name her family."
+    },
+    {
+     "id": 20822,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "He asked, she named her father and grandfather, and then he gave her the ring and bracelets."
+    },
+    {
+     "id": 20823,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "He asks to learn whether she belongs to his master's kin."
+    },
+    {
+     "id": 20824,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the purpose behind the question is read from verse 48; the passage is needed to settle it."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.24.57",
+   "reference": "Gen 24:57",
+   "text": "They said, “Let us call the young woman and ask her.”",
+   "reference_observations": [
+    {
+     "id": 20825,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb puts a question to a person (tree H7592 1a1 'to ask, ask for'); the Hebrew has it at her mouth (H6310), so the asking is of her own word, which the English hides."
+    },
+    {
+     "id": 20826,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "Calling her gives the asking its setting: she is summoned so that she can be asked herself (tree H7121 1a5 'to summon, invite, call for')."
+    },
+    {
+     "id": 20827,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: they propose to seek her answer."
+    },
+    {
+     "id": 20828,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The asking is directed at the young woman herself, at her mouth."
+    },
+    {
+     "id": 20829,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The family propose to ask; the young woman is the one to be asked."
+    },
+    {
+     "id": 20830,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The family answer the servant's request to be sent away (Gen 24:56) by proposing to hear her."
+    },
+    {
+     "id": 20831,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "The family propose to summon her and ask her."
+    },
+    {
+     "id": 20832,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "They will call the young woman first and then ask her."
+    },
+    {
+     "id": 20833,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "They leave the answer to her own mouth rather than answer for her."
+    },
+    {
+     "id": 20834,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what they ask her is not stated in this verse; the passage gives it."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.26.7",
+   "reference": "Gen 26:7",
+   "text": "When the men of the place asked him about his wife, he said, “She is my sister,” for he feared to say, “My wife,” thinking, “lest the men of the place should kill me because of Rebekah,” because she was attractive in appearance.",
+   "reference_observations": [
+    {
+     "id": 20835,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb puts a question to a person (tree H7592 1a3 'to enquire, enquire of'); here the men's inquiry about a man's wife."
+    },
+    {
+     "id": 20836,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Fear here is being afraid of harm from people (tree H3372 1a1 'to fear, be afraid')."
+    },
+    {
+     "id": 20837,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Attractive here is pleasing to the senses, to look at (tree H2896 1a 'pleasant, agreeable (to the senses)')."
+    },
+    {
+     "id": 20838,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "In appearance says that her being attractive lies in how she looked."
+    },
+    {
+     "id": 20839,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: the men seek to learn about his wife."
+    },
+    {
+     "id": 20840,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The fear holds him back from naming her as his wife: it is a refusal to say it."
+    },
+    {
+     "id": 20841,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they asked about is his wife."
+    },
+    {
+     "id": 20842,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he feared is that the men would kill him because of Rebekah."
+    },
+    {
+     "id": 20843,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The one said to be attractive is Rebekah."
+    },
+    {
+     "id": 20844,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The fear shows in what he said: that she is his sister."
+    },
+    {
+     "id": 20845,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The men of the place ask; Isaac is the one asked."
+    },
+    {
+     "id": 20846,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Isaac fears the men of the place, and fears for his life at their hands."
+    },
+    {
+     "id": 20847,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Rebekah is the one attractive, and the one whose husband is asked about."
+    },
+    {
+     "id": 20848,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Isaac has settled in Gerar (Gen 26:6) and is among strangers when the men ask."
+    },
+    {
+     "id": 20849,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The men of the place asked Isaac about his wife."
+    },
+    {
+     "id": 20850,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "Isaac feared to call her his wife and thought the men might kill him because of her."
+    },
+    {
+     "id": 20851,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "He gives her good looks as the reason for the danger he feared."
+    },
+    {
+     "id": 20852,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The men asked; he answered she is his sister; his reason is the fear, and the fear is that they would kill him because of Rebekah, who was attractive."
+    },
+    {
+     "id": 20853,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The question about his wife is what he fears to answer truly."
+    },
+    {
+     "id": 20854,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: whether the men meant any harm is not stated; the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.32.17",
+   "reference": "Gen 32:17",
+   "text": "He instructed the first, “ When Esau my brother meets you and asks you, ‘ To whom do you belong? Where are you going? And whose are these ahead of you?’",
+   "reference_observations": [
+    {
+     "id": 20855,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb puts questions to a person (tree H7592 1a1 'to ask, ask for', 1a3 'to enquire'); here questions Jacob expects of Esau."
+    },
+    {
+     "id": 20856,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: Esau is expected to seek to learn who they are and why they come."
+    },
+    {
+     "id": 20857,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The questions are three: to whom the servant belongs, where he is going, and whose the droves ahead are."
+    },
+    {
+     "id": 20858,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Esau is expected to ask; the servant who goes first is the one asked."
+    },
+    {
+     "id": 20859,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Jacob has sent the droves ahead in separate groups with his servants (Gen 32:16) and gives each servant the words for Esau."
+    },
+    {
+     "id": 20860,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "Jacob foresees that Esau will ask the first servant three questions."
+    },
+    {
+     "id": 20861,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Esau meets the servant and asks; the servant is then to answer in the words Jacob gives (Gen 32:18)."
+    },
+    {
+     "id": 20862,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "Jacob prepares for the questioning by giving the questions in full before Esau comes."
+    },
+    {
+     "id": 20863,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: why Jacob expects these questions of Esau is not stated here; the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.32.29",
+   "reference": "Gen 32:29",
+   "text": "Then Jacob asked him, “ Please tell me your name.” But he said, “ Why is it that you ask my name?” And there he blessed him.",
+   "reference_observations": [
+    {
+     "id": 20864,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Jacob's asking is a request for something to be made known (tree H7592 1a1 'to ask, ask for', 1a3 'to enquire')."
+    },
+    {
+     "id": 20865,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The man's asking is the same verb put back to Jacob as a question about his asking, not a request for information (tree H7592 1a3)."
+    },
+    {
+     "id": 20866,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Bless here is the man's act toward Jacob (tree H1288 1a2 'to bless'; Piel 1c)."
+    },
+    {
+     "id": 20867,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "Tell states the request: that the man make himself known (tree H5046 1a1 'to tell, announce, report', 1a2 'to declare, make known, expound')."
+    },
+    {
+     "id": 20868,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "Jacob's asking is a pursuit: he seeks the name."
+    },
+    {
+     "id": 20869,
+     "kind": "statement",
+     "basis": "read",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The man's question stands in place of the name: he does not give it."
+    },
+    {
+     "id": 20870,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What Jacob asks for is the man's name."
+    },
+    {
+     "id": 20871,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the man's question turns on is Jacob's asking of his name."
+    },
+    {
+     "id": 20872,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The one blessed is Jacob."
+    },
+    {
+     "id": 20873,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Jacob asks; the man is the one asked."
+    },
+    {
+     "id": 20874,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The man asks Jacob in return; Jacob is the one questioned."
+    },
+    {
+     "id": 20875,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The man blesses; Jacob is the one blessed."
+    },
+    {
+     "id": 20876,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Jacob has just been given the name Israel (Gen 32:28) when he asks the man's name."
+    },
+    {
+     "id": 20877,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Jacob asked the man to make his name known."
+    },
+    {
+     "id": 20878,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The man answered Jacob's request with a question about it."
+    },
+    {
+     "id": 20879,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The man blessed Jacob there."
+    },
+    {
+     "id": 20880,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Jacob asks for the name; the man asks why; and there he blesses Jacob."
+    },
+    {
+     "id": 20881,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The blessing is given where the name was asked for and not given."
+    },
+    {
+     "id": 20882,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: why the man withholds his name, and what the blessing gives in its place, the passage must show (Gen 32:30)."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.37.15",
+   "reference": "Gen 37:15",
+   "text": "And a man found him wandering in the fields. And the man asked him, “ What are you seeking?”",
+   "reference_observations": [
+    {
+     "id": 20883,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb puts a question about a person's purpose (tree H7592 1a1 'to ask, ask for', 1a3 'to enquire')."
+    },
+    {
+     "id": 20884,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Seek here is seeking to find something or someone (tree H1245 1a1 'to seek to find')."
+    },
+    {
+     "id": 20885,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: the man seeks to learn what Joseph is after."
+    },
+    {
+     "id": 20886,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The seeking is a pursuit: Joseph is looking for something."
+    },
+    {
+     "id": 20887,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the man asks about is Joseph's seeking, his purpose in the fields."
+    },
+    {
+     "id": 20888,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The man asks; Joseph is the one asked."
+    },
+    {
+     "id": 20889,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Joseph is the one seeking; the man who found him is the one who asks about it."
+    },
+    {
+     "id": 20890,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Joseph has been sent by Israel to see how his brothers fare (Gen 37:14) and is alone when the man finds him."
+    },
+    {
+     "id": 20891,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "A man who came upon Joseph asked him what he was seeking."
+    },
+    {
+     "id": 20892,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "Joseph is taken to be seeking something; the question assumes it."
+    },
+    {
+     "id": 20893,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Joseph is found wandering about; the man then asks what he seeks."
+    },
+    {
+     "id": 20894,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The question draws out the seeking that the verse has not yet named."
+    },
+    {
+     "id": 20895,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what Joseph is seeking is not stated in this verse; the passage gives it."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.38.21",
+   "reference": "Gen 38:21",
+   "text": "And he asked the men of the place, “ Where is the cult prostitute who was at Enaim at the roadside?” And they said, “ No cult prostitute has been here.”",
+   "reference_observations": [
+    {
+     "id": 20896,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb puts a question about where someone is (tree H7592 1a1 'to ask, ask for', 1a3 'to enquire')."
+    },
+    {
+     "id": 20897,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: he seeks to find out where she is."
+    },
+    {
+     "id": 20898,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he asks about is the whereabouts of the cult prostitute who had been at the roadside."
+    },
+    {
+     "id": 20899,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The one sent asks; the men of the place are the ones asked and they answer him."
+    },
+    {
+     "id": 20900,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Judah's friend has been sent with the young goat to take back the pledge and has not found her (Gen 38:20)."
+    },
+    {
+     "id": 20901,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "He asked the people of the place where the woman was."
+    },
+    {
+     "id": 20902,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "He asks the men of the place where she is, and they answer that no such woman has been there."
+    },
+    {
+     "id": 20903,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "He turns to the people of the place to find her after he could not find her himself."
+    },
+    {
+     "id": 20904,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what the men's answer means for the errand, the passage must show (Gen 38:22-23)."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.40.7",
+   "reference": "Gen 40:7",
+   "text": "So he asked Pharaoh’s officers who were with him in custody in his master’s house, “ Why are your faces downcast today?”",
+   "reference_observations": [
+    {
+     "id": 20905,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb puts a question about the cause of a state (tree H7592 1a1 'to ask, ask for', 1a3 'to enquire')."
+    },
+    {
+     "id": 20906,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Downcast, said of faces, is the look of sorrow shown in the face (tree H7451, bad, unpleasant, giving pain, unhappiness)."
+    },
+    {
+     "id": 20907,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: Joseph seeks the reason for what he sees."
+    },
+    {
+     "id": 20908,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he asks about is why their faces are downcast."
+    },
+    {
+     "id": 20909,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is downcast is their faces, the outward show of their state."
+    },
+    {
+     "id": 20910,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Joseph asks; Pharaoh's officers in custody are the ones asked."
+    },
+    {
+     "id": 20911,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The officers' faces are downcast; Joseph is the one who sees it and asks."
+    },
+    {
+     "id": 20912,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Joseph has seen that they were troubled (Gen 40:6) and they are confined in his master's house."
+    },
+    {
+     "id": 20913,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Joseph asked the officers the reason for their downcast faces."
+    },
+    {
+     "id": 20914,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "The officers' faces show sorrow today."
+    },
+    {
+     "id": 20915,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Joseph asks why their faces are downcast, and they answer that they have dreamed and no one interprets (Gen 40:8)."
+    },
+    {
+     "id": 20916,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The downcast faces prompt his question: the question names the faces as what he asks about."
+    },
+    {
+     "id": 20917,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what lies behind the downcast faces is not stated in this verse; the passage gives their answer (Gen 40:8)."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.43.27",
+   "reference": "Gen 43:27",
+   "text": "And he inquired about their welfare and said, “Is your father well, the old man of whom you spoke? Is he still alive?”",
+   "reference_observations": [
+    {
+     "id": 20918,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is an inquiry after a person's state (tree H7592 1a3 'to enquire, enquire of'); here after welfare."
+    },
+    {
+     "id": 20919,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Alive here is the father's life, asked of (tree H2416 1 'living, alive')."
+    },
+    {
+     "id": 20920,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "Still asks whether the life continues after the time that has passed (tree H5750 2a 'still, yet (of continuance or persistence)')."
+    },
+    {
+     "id": 20921,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The inquiry is a pursuit: he seeks word of how they and their father are."
+    },
+    {
+     "id": 20922,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he inquires about is their welfare, and then whether their father is well."
+    },
+    {
+     "id": 20923,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he asks of the father is whether he lives still."
+    },
+    {
+     "id": 20924,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Joseph asks; his brothers are the ones asked, and their father is the one asked about."
+    },
+    {
+     "id": 20925,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The brothers have just brought the present and bowed to him in his house (Gen 43:26)."
+    },
+    {
+     "id": 20926,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Joseph inquired after the brothers' welfare."
+    },
+    {
+     "id": 20927,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Joseph asked whether the father was well and whether he still lived."
+    },
+    {
+     "id": 20928,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "He inquires after their welfare, then asks whether their father is well and whether he still lives."
+    },
+    {
+     "id": 20929,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "He takes up the brothers' own earlier words about their father."
+    },
+    {
+     "id": 20930,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the brothers' answer to both questions is in the next verse; the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.43.7",
+   "reference": "Gen 43:7",
+   "text": "They replied, “The man questioned us carefully about ourselves and our kindred, saying, ‘Is your father still alive? Do you have another brother?’ What we told him was in answer to these questions. Could we in any way know that he would say, ‘Bring your brother down ’?”",
+   "reference_observations": [
+    {
+     "id": 20781,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is the one of enquiring (tree H7592 1a3 'to enquire, enquire of'); here a close questioning about persons."
+    },
+    {
+     "id": 20782,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Alive here is the state of their father's life, asked of (tree H2416 1 'living, alive')."
+    },
+    {
+     "id": 20783,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is to tell, to make known in answer (tree H5046 1a1 'to tell, announce, report')."
+    },
+    {
+     "id": 20784,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is to know, here to come to know beforehand (tree H3045 1a1a 'to know, learn to know')."
+    },
+    {
+     "id": 20785,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "The infinitive before the finite verb makes the questioning close and thorough."
+    },
+    {
+     "id": 20786,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "Still asks whether the life continues (tree H5750 2a 'still, yet (of continuance or persistence)')."
+    },
+    {
+     "id": 20787,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "The infinitive before the finite verb strengthens the question: in any way at all."
+    },
+    {
+     "id": 20788,
+     "kind": "statement",
+     "basis": "read",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "His questioning seeks particulars from them: a pursuit of what they know of themselves."
+    },
+    {
+     "id": 20789,
+     "kind": "statement",
+     "basis": "read",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The question implies that they could not have known: a refusal of that knowledge."
+    },
+    {
+     "id": 20790,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he asked about is themselves and their kindred, and whether they have another brother."
+    },
+    {
+     "id": 20791,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he asked of their father is whether he still lives."
+    },
+    {
+     "id": 20792,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they told was in answer to his questions."
+    },
+    {
+     "id": 20793,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they say they could not know is what he would say next."
+    },
+    {
+     "id": 20794,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "What he would say, bring your brother down, is a command to act."
+    },
+    {
+     "id": 20795,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The man questions the brothers, and the question is about their father."
+    },
+    {
+     "id": 20796,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The brothers tell the man what he asked."
+    },
+    {
+     "id": 20797,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The brothers speak of the man and of what he would say."
+    },
+    {
+     "id": 20798,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "All of this is the brothers' answer to their father Israel, who has just reproached them for telling the man of another brother (Gen 43:6)."
+    },
+    {
+     "id": 20799,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "The man questioned them closely about their family."
+    },
+    {
+     "id": 20800,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "The man asked whether their father was still alive."
+    },
+    {
+     "id": 20801,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "The brothers told him no more than he asked."
+    },
+    {
+     "id": 20802,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "The brothers say they could not have known beforehand what he would say."
+    },
+    {
+     "id": 20803,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The man questioned them; what they told was in answer; they could not know that he would then say, bring your brother down."
+    },
+    {
+     "id": 20804,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The brothers set their telling between his questioning and his demand, as the reason they could not have known."
+    },
+    {
+     "id": 20805,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: whether the questioning had the purpose that its later demand shows, the verse does not say; the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Gen.44.19",
+   "reference": "Gen 44:19",
+   "text": "My lord asked his servants, saying, ‘ Have you a father, or a brother?’",
+   "reference_observations": [
+    {
+     "id": 20931,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb puts a question about their family (tree H7592 1a1 'to ask, ask for', 1a3 'to enquire')."
+    },
+    {
+     "id": 20932,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: Joseph is reported as seeking to learn whether they have family."
+    },
+    {
+     "id": 20933,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What was asked is whether they have a father or a brother."
+    },
+    {
+     "id": 20934,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Joseph, my lord, asked; his servants, Judah and his brothers, were the ones asked."
+    },
+    {
+     "id": 20935,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Judah is speaking to Joseph, pleading with him (Gen 44:18), and recalls Joseph's own question."
+    },
+    {
+     "id": 20936,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "Judah reports that Joseph asked them whether they had a father or a brother."
+    },
+    {
+     "id": 20937,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Joseph asked; Judah and his brothers answered (Gen 44:20), and Joseph then said to bring the brother down (Gen 44:21)."
+    },
+    {
+     "id": 20938,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "Judah brings Joseph's own question before him as the ground of his plea."
+    },
+    {
+     "id": 20939,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: why Joseph asked about a father and a brother is not stated here; the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Josh.15.18",
+   "reference": "Jos 15:18",
+   "text": "When she came to him, she urged him to ask her father for a field. And she dismounted from her donkey, and Caleb said to her, “ What do you want?”",
+   "reference_observations": [
+    {
+     "id": 21165,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Urge here is pressing another to make a request (tree H5496 1a1 'to incite (to a request)')."
+    },
+    {
+     "id": 21166,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is asking for something as a gift, here a field from her father (tree H7592 1a1 'to ask, ask for')."
+    },
+    {
+     "id": 21167,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The urging is a pursuit: she presses him to act for her."
+    },
+    {
+     "id": 21168,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking she urges is a pursuit of a field."
+    },
+    {
+     "id": 21169,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What she urges is that he ask her father for something."
+    },
+    {
+     "id": 21170,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is to be asked for is a field."
+    },
+    {
+     "id": 21171,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The urging shows in what she does on arrival: she dismounts."
+    },
+    {
+     "id": 21172,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "She urges him; he is the one who is to ask on her behalf."
+    },
+    {
+     "id": 21173,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "He is to ask; her father Caleb is the one asked."
+    },
+    {
+     "id": 21174,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "She comes to Othniel, who has taken Kiriath-sepher and been given Achsah as wife (Jos 15:16-17)."
+    },
+    {
+     "id": 21175,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Achsah urged him to make a request of her father."
+    },
+    {
+     "id": 21176,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "He is to ask her father for a field."
+    },
+    {
+     "id": 21177,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "She comes and urges him to ask; she dismounts; and Caleb asks her what she wants."
+    },
+    {
+     "id": 21178,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Caleb's question comes straight after her dismounting and opens the way for her own request."
+    },
+    {
+     "id": 21179,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what she asks of Caleb himself is in the next verse (Jos 15:19); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Josh.19.50",
+   "reference": "Jos 19:50",
+   "text": "By command of the Lord they gave him the city that he asked, Timnath-serah in the hill country of Ephraim. And he rebuilt the city and settled in it.",
+   "reference_observations": [
+    {
+     "id": 21180,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Command here is the Hebrew mouth (H6310): by the Lord's mouth, his word that authorises (tree H6310 1b 'mouth (as organ of speech)')."
+    },
+    {
+     "id": 21181,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is asking for something as a gift, here a city (tree H7592 1a1 'to ask, ask for')."
+    },
+    {
+     "id": 21182,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: he sought a city for himself."
+    },
+    {
+     "id": 21183,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he asked for is a city."
+    },
+    {
+     "id": 21184,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The Lord's word shows in what was done: the city was given."
+    },
+    {
+     "id": 21185,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The Lord's word stands behind the giving; those who give act on it."
+    },
+    {
+     "id": 21186,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "He asked; those distributing the land are the ones who gave."
+    },
+    {
+     "id": 21187,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The people have finished distributing the land and give Joshua an inheritance among them (Jos 19:49)."
+    },
+    {
+     "id": 21188,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The city was given by the Lord's word."
+    },
+    {
+     "id": 21189,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Joshua asked for a city and was given it."
+    },
+    {
+     "id": 21190,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "By the Lord's word they gave the city he asked for; then he rebuilt it and settled in it."
+    },
+    {
+     "id": 21191,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "His request was met under the Lord's word, not by the people's gift alone."
+    },
+    {
+     "id": 21192,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: who the one who asked is, the passage names (Jos 19:49); how his asking and the Lord's word came together is not stated."
+    }
+   ]
+  },
+  {
+   "osisId": "Josh.4.21",
+   "reference": "Jos 4:21",
+   "text": "And he said to the people of Israel, “ When your children ask their fathers in times to come, ‘ What do these stones mean?’",
+   "reference_observations": [
+    {
+     "id": 21156,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is the children's enquiry of their fathers about the stones (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21157,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The children's enquiry is a pursuit of the meaning of the stones, put to those who were there."
+    },
+    {
+     "id": 21158,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the children ask of their fathers is what these stones mean."
+    },
+    {
+     "id": 21159,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The children ask; their fathers are the ones asked."
+    },
+    {
+     "id": 21160,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Joshua has set the twelve stones up at Gilgal (Jos 4:20) and speaks to the people of Israel about them."
+    },
+    {
+     "id": 21161,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "Joshua tells the people that their children will ask their fathers about the stones in times to come."
+    },
+    {
+     "id": 21162,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The children ask their fathers; the fathers are then to let them know (Jos 4:22)."
+    },
+    {
+     "id": 21163,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "The stones are set up to draw the question from later generations."
+    },
+    {
+     "id": 21164,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the answer the fathers give is in the next verse (Jos 4:22); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Josh.4.6",
+   "reference": "Jos 4:6",
+   "text": "that this may be a sign among you. When your children ask in time to come, ‘ What do those stones mean to you?’",
+   "reference_observations": [
+    {
+     "id": 21144,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Sign here is a standing mark that calls the event to mind (tree H0226 1c 'remembrance', 1a 'a distinguishing mark')."
+    },
+    {
+     "id": 21145,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is the children's question about what the stones mean (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21146,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The children's asking is a pursuit of what the stones mean."
+    },
+    {
+     "id": 21147,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The stones are what is to be a sign among them."
+    },
+    {
+     "id": 21148,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the children ask about is the stones and what they mean."
+    },
+    {
+     "id": 21149,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The children ask; those who set up the stones and are addressed as you are the ones asked."
+    },
+    {
+     "id": 21150,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Joshua has told twelve men to take up a stone each from the Jordan (Jos 4:4-5)."
+    },
+    {
+     "id": 21151,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "The stones are to stand as a sign among the people."
+    },
+    {
+     "id": 21152,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "In time to come the children will ask what the stones mean."
+    },
+    {
+     "id": 21153,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The stones are made a sign; the children ask what they mean; the answer is given in the next verse."
+    },
+    {
+     "id": 21154,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The sign is meant to raise the children's question."
+    },
+    {
+     "id": 21155,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the answer to be given is in the next verse (Jos 4:7); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Josh.9.14",
+   "reference": "Jos 9:14",
+   "text": "So the men took some of their provisions, but did not ask counsel from the Lord.",
+   "reference_observations": [
+    {
+     "id": 20806,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is the one of enquiring of a deity (tree H7592 1a4 'to enquire of, consult (of deity, oracle)'); the counsel is the Hebrew mouth (H6310), so the asking is of the Lord's mouth, his word."
+    },
+    {
+     "id": 20807,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The negator makes the asking a refusal: the men did not consult."
+    },
+    {
+     "id": 20808,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What was not sought is counsel from the Lord, his word on the matter."
+    },
+    {
+     "id": 20809,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "In place of consulting, the men acted on the provisions: they took some of them."
+    },
+    {
+     "id": 20810,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The men did not ask; the Lord is the one not asked."
+    },
+    {
+     "id": 20811,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The men act after the Gibeonites show them the dry bread, burst wineskins and worn garments (Jos 9:12-13)."
+    },
+    {
+     "id": 20812,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "negated",
+     "obs_text": "The men did not consult the Lord."
+    },
+    {
+     "id": 20813,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "negated",
+     "obs_text": "The provisions stood as proof enough for them, so that they did not turn to the Lord."
+    },
+    {
+     "id": 20814,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The taking of the provisions is set against the consulting of the Lord."
+    },
+    {
+     "id": 20815,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what the men concluded from the provisions, and what follows from not consulting, the passage must show (Jos 9:15-16)."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.1.1",
+   "reference": "Judg 1:1",
+   "text": "After the death of Joshua, the people of Israel inquired of the Lord, “ Who shall go up first for us against the Canaanites, to fight against them?”",
+   "reference_observations": [
+    {
+     "id": 21193,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is inquiring of the Lord, consulting him for direction (tree H7592 1a4 'to enquire of, consult (of deity, oracle)')."
+    },
+    {
+     "id": 21194,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The inquiring is a pursuit: Israel seeks the Lord's direction."
+    },
+    {
+     "id": 21195,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they inquire about is who shall go up first against the Canaanites and fight them."
+    },
+    {
+     "id": 21196,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The people of Israel inquire; the Lord is the one inquired of."
+    },
+    {
+     "id": 21197,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "It is after Joshua's death, and the question is who is to lead the fighting."
+    },
+    {
+     "id": 21198,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "After Joshua died, Israel inquired of the Lord who was to go up first."
+    },
+    {
+     "id": 21199,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Israel inquires; the Lord answers that Judah shall go up (Judg 1:2); and Judah calls Simeon to go with him (Judg 1:3)."
+    },
+    {
+     "id": 21200,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "With Joshua gone, they turn to the Lord to say who leads."
+    },
+    {
+     "id": 21201,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the Lord's answer to the inquiry is in the next verse (Judg 1:2); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.1.14",
+   "reference": "Judg 1:14",
+   "text": "When she came to him, she urged him to ask her father for a field. And she dismounted from her donkey, and Caleb said to her, “ What do you want?”",
+   "reference_observations": [
+    {
+     "id": 21165,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Urge here is pressing another to make a request (tree H5496 1a1 'to incite (to a request)')."
+    },
+    {
+     "id": 21166,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is asking for something as a gift, here a field from her father (tree H7592 1a1 'to ask, ask for')."
+    },
+    {
+     "id": 21167,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The urging is a pursuit: she presses him to act for her."
+    },
+    {
+     "id": 21168,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking she urges is a pursuit of a field."
+    },
+    {
+     "id": 21169,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What she urges is that he ask her father for something."
+    },
+    {
+     "id": 21170,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is to be asked for is a field."
+    },
+    {
+     "id": 21171,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The urging shows in what she does on arrival: she dismounts."
+    },
+    {
+     "id": 21172,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "She urges him; he is the one who is to ask on her behalf."
+    },
+    {
+     "id": 21173,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "He is to ask; her father Caleb is the one asked."
+    },
+    {
+     "id": 21174,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "She comes to Othniel, who has taken Kiriath-sepher and been given Achsah as wife (Jos 15:16-17)."
+    },
+    {
+     "id": 21175,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Achsah urged him to make a request of her father."
+    },
+    {
+     "id": 21176,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "He is to ask her father for a field."
+    },
+    {
+     "id": 21177,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "She comes and urges him to ask; she dismounts; and Caleb asks her what she wants."
+    },
+    {
+     "id": 21178,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Caleb's question comes straight after her dismounting and opens the way for her own request."
+    },
+    {
+     "id": 21179,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what she asks of Caleb himself is in the next verse (Jos 15:19); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.13.18",
+   "reference": "Judg 13:18",
+   "text": "And the angel of the Lord said to him, “Why do you ask my name, seeing it is wonderful?”",
+   "reference_observations": [
+    {
+     "id": 21243,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is the angel's question put back to Manoah about his asking of the name, not a request for information (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21244,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "Wonderful gives the ground for the question: the name is beyond understanding (tree H6383 'wonderful, incomprehensible, extraordinary')."
+    },
+    {
+     "id": 21245,
+     "kind": "statement",
+     "basis": "read",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The question stands where the name would have been: he does not give it."
+    },
+    {
+     "id": 21246,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the question turns on is the asking of his name."
+    },
+    {
+     "id": 21247,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The angel of the Lord asks; Manoah is the one questioned."
+    },
+    {
+     "id": 21248,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Manoah has asked the angel's name so that he may honour him when his words come true (Judg 13:17)."
+    },
+    {
+     "id": 21249,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The angel answered Manoah's asking with a question about it."
+    },
+    {
+     "id": 21250,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Manoah asks his name; the angel asks why; Manoah then offers the young goat to the Lord (Judg 13:19)."
+    },
+    {
+     "id": 21251,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The angel gives the reason the name cannot be given instead of the name."
+    },
+    {
+     "id": 21252,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: how Manoah took the answer is not stated here; the passage shows what he did (Judg 13:19-20)."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.13.6",
+   "reference": "Judg 13:6",
+   "text": "Then the woman came and told her husband, “A man of God came to me, and his appearance was like the appearance of the angel of God, very awesome. I did not ask him where he was from, and he did not tell me his name,",
+   "reference_observations": [
+    {
+     "id": 20755,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Appearance here is what was seen of him: the sight of the man as the woman describes it (tree H4758 1b 'what is seen', 1a 'sight, phenomenon, spectacle, appearance')."
+    },
+    {
+     "id": 20756,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Awesome here describes what was seen, in the sense of inspiring awe (tree H3372 1b2 'to cause astonishment and awe, be held in awe', 1b3 'to inspire reverence or godly fear or awe')."
+    },
+    {
+     "id": 20757,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is the one of enquiring, putting a question to someone (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 20758,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is to tell or report, making something known (tree H5046 1a1 'to tell, announce, report')."
+    },
+    {
+     "id": 20759,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "In her report the man is described by his appearance, which she sets beside the angel's and calls awesome."
+    },
+    {
+     "id": 20760,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "Very raises the awe to a high degree (tree H3966 1 'exceedingly, much')."
+    },
+    {
+     "id": 20761,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The negator makes the asking a refusal: she records that she did not enquire."
+    },
+    {
+     "id": 20762,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The negator makes the telling a refusal on his side: he did not make himself known."
+    },
+    {
+     "id": 20763,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "His appearance is set beside the appearance of the angel."
+    },
+    {
+     "id": 20764,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What was not enquired about is where he came from."
+    },
+    {
+     "id": 20765,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What was not told is his name."
+    },
+    {
+     "id": 20766,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The woman speaks of the awe; the man of God is the one seen."
+    },
+    {
+     "id": 20767,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The woman did not ask; the man of God was not asked."
+    },
+    {
+     "id": 20768,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The man of God did not tell; the woman was not told."
+    },
+    {
+     "id": 20769,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "All of this is said in her report to her husband."
+    },
+    {
+     "id": 20770,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "The woman reports what she saw of the man: an appearance like the angel's."
+    },
+    {
+     "id": 20771,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "The woman reports his appearance as very awesome."
+    },
+    {
+     "id": 20772,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "negated",
+     "obs_text": "She did not enquire of him about his origin."
+    },
+    {
+     "id": 20773,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "negated",
+     "obs_text": "He did not tell her who he was."
+    },
+    {
+     "id": 20774,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "In her report the appearance, the awe, the not-asking and the not-telling are stated in that order."
+    },
+    {
+     "id": 20775,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "reported",
+     "obs_text": "His appearance carries his standing for the woman, who names him a man of God as she tells it."
+    },
+    {
+     "id": 20776,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "negated",
+     "obs_text": "She does not press him, taking his standing from how he looked."
+    },
+    {
+     "id": 20777,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "negated",
+     "obs_text": "No explanation comes from him; his presence is taken as enough."
+    },
+    {
+     "id": 20778,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The awe of his appearance and the restraint in asking and telling belong together; the appearance has nothing before it in the verse and the restraint follows it."
+    },
+    {
+     "id": 20779,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: whose awe it is, hers or general, the verse does not state; the passage is needed."
+    },
+    {
+     "id": 20780,
+     "kind": "statement",
+     "basis": "read",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the four read observations of this verse are not settled by the verse; the claims process tests them against other verses where an appearance or presence is followed by a refrained question or explanation."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.18.15",
+   "reference": "Judg 18:15",
+   "text": "And they turned aside there and came to the house of the young Levite, at the home of Micah, and asked him about his welfare.",
+   "reference_observations": [
+    {
+     "id": 21267,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is a greeting inquiry after a man's state (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21268,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit of word on the Levite's state."
+    },
+    {
+     "id": 21269,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they asked about is the Levite's welfare."
+    },
+    {
+     "id": 21270,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The asking comes with their turning aside and coming to his house."
+    },
+    {
+     "id": 21271,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The five men ask; the young Levite at Micah's house is the one asked."
+    },
+    {
+     "id": 21272,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The five men have passed on to the hill country of Ephraim and come to Micah's house (Judg 18:13), where one of them has spoken of the images (Judg 18:14)."
+    },
+    {
+     "id": 21273,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The five men asked the young Levite how he fared."
+    },
+    {
+     "id": 21274,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "They turn aside, come to the Levite's house, and ask after his welfare; then they stand at the gate (Judg 18:16)."
+    },
+    {
+     "id": 21275,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The asking is a greeting that opens the visit."
+    },
+    {
+     "id": 21276,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what the men do next at the house is told in the verses that follow (Judg 18:16-17); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.18.5",
+   "reference": "Judg 18:5",
+   "text": "And they said to him, “ Inquire of God, please, that we may know whether the journey on which we are setting out will succeed.”",
+   "reference_observations": [
+    {
+     "id": 21253,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is inquiring of God through a priest (tree H7592 1a4 'to enquire of, consult (of deity, oracle)')."
+    },
+    {
+     "id": 21254,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Know here is learning an outcome that cannot be seen beforehand (tree H3045 1a1a 'to know, learn to know')."
+    },
+    {
+     "id": 21255,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The inquiry is asked for as a pursuit: the men seek God's word on the journey."
+    },
+    {
+     "id": 21256,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The knowing is a pursuit: the men want to learn how the journey will go."
+    },
+    {
+     "id": 21257,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What is to be inquired about is the journey they are setting out on."
+    },
+    {
+     "id": 21258,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What they want to know is whether the journey will succeed."
+    },
+    {
+     "id": 21259,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The five men ask the young Levite to inquire; God is the one inquired of."
+    },
+    {
+     "id": 21260,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "The men themselves are the ones who want to know; the Levite and God are the means."
+    },
+    {
+     "id": 21261,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The men have met the young Levite at Micah's house and heard that he is Micah's priest (Judg 18:3-4)."
+    },
+    {
+     "id": 21262,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The men tell the Levite to inquire of God for them."
+    },
+    {
+     "id": 21263,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "They intend by the inquiry to know how the journey will go."
+    },
+    {
+     "id": 21264,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "They tell him to inquire so that they may know; the priest answers in the next verse (Judg 18:6)."
+    },
+    {
+     "id": 21265,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "They seek the knowledge through the priest and not for themselves alone."
+    },
+    {
+     "id": 21266,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the answer the priest gives is in the next verse (Judg 18:6); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.4.20",
+   "reference": "Judg 4:20",
+   "text": "And he said to her, “ Stand at the opening of the tent, and if any man comes and asks you, ‘ Is anyone here?’ say, ‘ No.’”",
+   "reference_observations": [
+    {
+     "id": 21202,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is a stranger's question put to her at the tent (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21203,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: a man who comes would be looking for someone."
+    },
+    {
+     "id": 21204,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the man would ask is whether anyone is there."
+    },
+    {
+     "id": 21205,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "She is to answer with one word, no."
+    },
+    {
+     "id": 21206,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "A man who comes would ask; the woman at the tent opening is the one asked."
+    },
+    {
+     "id": 21207,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "He is hiding in her tent under a rug and has asked for water (Judg 4:18-19)."
+    },
+    {
+     "id": 21208,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "He expects that a man may come and question her at the tent."
+    },
+    {
+     "id": 21209,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "She stands at the opening; if a man comes and asks, she is to answer no."
+    },
+    {
+     "id": 21210,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "foreseen",
+     "obs_text": "He puts the answer in her mouth so that he stays hidden."
+    },
+    {
+     "id": 21211,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: whether anyone came and asked is not stated here; the passage shows who came (Judg 4:22)."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.5.25",
+   "reference": "Judg 5:25",
+   "text": "He asked for water and she gave him milk; she brought him curds in a noble’s bowl.",
+   "reference_observations": [
+    {
+     "id": 21212,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is asking for something as a favour, here a drink (tree H7592 1a1 'to ask, ask for', 1a2 'to ask (as a favour)')."
+    },
+    {
+     "id": 21213,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: he sought a drink from her."
+    },
+    {
+     "id": 21214,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he asked for is water."
+    },
+    {
+     "id": 21215,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "She answers the asking by giving, and by bringing near."
+    },
+    {
+     "id": 21216,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "He asked; the woman is the one asked, and she gave."
+    },
+    {
+     "id": 21217,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "The verse is part of the song in praise of Jael, wife of Heber the Kenite (Judg 5:24)."
+    },
+    {
+     "id": 21218,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "He asked her for water."
+    },
+    {
+     "id": 21219,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "He asked for water; she gave milk and brought curds."
+    },
+    {
+     "id": 21220,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "She gives more than he asked: milk for water and curds besides."
+    },
+    {
+     "id": 21221,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: the song sets the giving beside what Jael then does (Judg 5:26); the passage and the story in Judg 4 are needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.8.14",
+   "reference": "Judg 8:14",
+   "text": "And he captured a young man of Succoth and questioned him. And he wrote down for him the officials and elders of Succoth, seventy-seven men.",
+   "reference_observations": [
+    {
+     "id": 21222,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is a close questioning of a captive for what he knows (tree H7592 1a3 'to enquire, enquire of')."
+    },
+    {
+     "id": 21223,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The questioning is a pursuit: he seeks the names from the captive."
+    },
+    {
+     "id": 21224,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What the questioning draws out is the names of the town's leaders, a count of seventy-seven."
+    },
+    {
+     "id": 21225,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "The answer takes a written form: the names are written down for him."
+    },
+    {
+     "id": 21226,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "He questions; the young man of Succoth is the one questioned."
+    },
+    {
+     "id": 21227,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Gideon has returned from battle and captured the two kings of Midian (Judg 8:12-13), and now captures a young man."
+    },
+    {
+     "id": 21228,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "He questioned the captured young man about Succoth."
+    },
+    {
+     "id": 21229,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "He captures a young man, questions him, and has the names of Succoth's leaders written down."
+    },
+    {
+     "id": 21230,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "The questioning is aimed at those who hold authority in the town."
+    },
+    {
+     "id": 21231,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what he does with the names is not stated here; the passage shows it (Judg 8:15-16)."
+    }
+   ]
+  },
+  {
+   "osisId": "Judg.8.24",
+   "reference": "Judg 8:24",
+   "text": "And Gideon said to them, “Let me make a request of you: every one of you give me the earrings from his spoil.” (For they had golden earrings, because they were Ishmaelites.)",
+   "reference_observations": [
+    {
+     "id": 21232,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is asking for something as a favour (tree H7592 1a2 'to ask (as a favour)'), here a request made of the men of Israel."
+    },
+    {
+     "id": 21233,
+     "kind": "qualification",
+     "basis": "stated",
+     "item": "role",
+     "mode": null,
+     "obs_text": "The noun from the same root names the asking as a petition (tree H7596 1a 'request, petition')."
+    },
+    {
+     "id": 21234,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The asking is a pursuit: Gideon seeks something from them."
+    },
+    {
+     "id": 21235,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "What he asks for is the earrings from each man's spoil."
+    },
+    {
+     "id": 21236,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "What he asks them to do is give."
+    },
+    {
+     "id": 21237,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Gideon asks; every one of the men of Israel is the one asked."
+    },
+    {
+     "id": 21238,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "He has just refused the rule the men of Israel offered him, saying the Lord will rule (Judg 8:22-23)."
+    },
+    {
+     "id": 21239,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "Gideon made a request of the men for their earrings."
+    },
+    {
+     "id": 21240,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "He refuses the rule, then asks for the earrings; they answer that they will give them (Judg 8:25)."
+    },
+    {
+     "id": 21241,
+     "kind": "statement",
+     "basis": "read",
+     "item": "operation",
+     "mode": "done",
+     "obs_text": "He puts it as a request, not as a command."
+    },
+    {
+     "id": 21242,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: what becomes of the earrings is told later (Judg 8:27); the passage is needed."
+    }
+   ]
+  },
+  {
+   "osisId": "Num.27.21",
+   "reference": "Num 27:21",
+   "text": "And he shall stand before Eleazar the priest, who shall inquire for him by the judgment of the Urim before the Lord. At his word they shall go out, and at his word they shall come in, both he and all the people of Israel with him, the whole congregation.”",
+   "reference_observations": [
+    {
+     "id": 21016,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The verb is inquiring of God through the priest (tree H7592 1a4 'to enquire of, consult (of deity, oracle)')."
+    },
+    {
+     "id": 21017,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "Word here is the Hebrew mouth (H6310): what Joshua's mouth says carries, the going out follows it (tree H6310 1b 'mouth (as organ of speech)')."
+    },
+    {
+     "id": 21018,
+     "kind": "face",
+     "basis": "stated",
+     "item": "meaning",
+     "mode": null,
+     "obs_text": "The same mouth governs the coming in: the word that sends them out also brings them in (tree H6310 1b)."
+    },
+    {
+     "id": 21019,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "polarity",
+     "mode": null,
+     "obs_text": "The inquiring is a pursuit of God's decision for Joshua."
+    },
+    {
+     "id": 21020,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The inquiry is made by the judgment of the Urim, the means by which God's decision is sought."
+    },
+    {
+     "id": 21021,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The going out is what the people do at his word."
+    },
+    {
+     "id": 21022,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "object",
+     "mode": null,
+     "obs_text": "The coming in is what the people do at his word."
+    },
+    {
+     "id": 21023,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "At his word they go out."
+    },
+    {
+     "id": 21024,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "enactment",
+     "mode": null,
+     "obs_text": "At his word they come in."
+    },
+    {
+     "id": 21025,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Eleazar the priest inquires for Joshua, before the Lord."
+    },
+    {
+     "id": 21026,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Joshua's word is obeyed by the people who go out at it."
+    },
+    {
+     "id": 21027,
+     "kind": "party",
+     "basis": "stated",
+     "item": "party",
+     "mode": null,
+     "obs_text": "Joshua's word is obeyed by the people who come in at it."
+    },
+    {
+     "id": 21028,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "circumstance",
+     "mode": null,
+     "obs_text": "Moses is being told how Joshua is to take his place, commissioned before Eleazar and the congregation (Num 27:19-20)."
+    },
+    {
+     "id": 21029,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "Eleazar is to inquire for Joshua by the Urim before the Lord."
+    },
+    {
+     "id": 21030,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The people are to go out at Joshua's word."
+    },
+    {
+     "id": 21031,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "operation",
+     "mode": "commanded",
+     "obs_text": "The people are to come in at Joshua's word."
+    },
+    {
+     "id": 21032,
+     "kind": "link",
+     "basis": "stated",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "Joshua stands before Eleazar, Eleazar inquires for him, and at his word the whole congregation goes out and comes in."
+    },
+    {
+     "id": 21033,
+     "kind": "link",
+     "basis": "read",
+     "item": "chain",
+     "mode": null,
+     "obs_text": "The inquiry before the Lord stands behind Joshua's word: his word carries the authority of the inquiry."
+    },
+    {
+     "id": 21034,
+     "kind": "statement",
+     "basis": "stated",
+     "item": "flag",
+     "mode": null,
+     "obs_text": "Discovery: how the Urim give the judgment, and how the people take Joshua's word, the passage and the other verses of this inquiring must show."
+    }
+   ]
+  }
+ ]
+}
