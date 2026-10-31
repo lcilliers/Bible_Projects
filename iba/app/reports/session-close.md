@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-10-31T05:31:03Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-10-31T06:40:17Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `bc4646d4-fb8c-44c2-9458-ccd5cae37828` (CLAUDE_CODE_SESSION_ID); started 2026-10-31T04:47:29Z; window base commit `5a4440dfa18c7247c049b759b57dd9d99fa27355`
-- compliance file: `Logs/compliance/COMPLIANCE-20261031-bc4646d4.md`; session log: `Logs/SESSION-LOG-20261031-local-llm-pilot-2337.md`
-- **open findings: 0**; cleared by disposition: 1
+- session: `272d94cd-8899-4c28-b095-ce8806260347` (CLAUDE_CODE_SESSION_ID); started 2026-10-31T05:39:04Z; window base commit `1a9a21cc23156691b75b2bc531381912e154216c`
+- compliance file: `Logs/compliance/COMPLIANCE-20261031-272d94cd.md`; session log: `Logs/SESSION-LOG-20261031-other-beings-m85-concept-mapping-2338.md`
+- **open findings: 0**; cleared by disposition: 4
 
 
 ## Contents
@@ -41,12 +41,14 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-_no finding_
+- cleared `SC3:2daf1c0a`: researcher message 2026-10-31T05:58 is too short to be matched; name where it is recorded: "Build them" -- disposition: recorded in #2338 v1
+- cleared `SC3:fcae1e93`: researcher message 2026-10-31T06:16 is too short to be matched; name where it is recorded: "Not yet" -- disposition: recorded in #2338 v1
+- cleared `SC3:cc533f1a`: researcher message 2026-10-31T06:24 is too short to be matched; name where it is recorded: "Keep as labels" -- disposition: recorded in #2338 v1
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-_no finding_
+- cleared `SC4b:5eec918c`: researcher message 2026-10-31T06:20 holds, defers or asks to check something; name its register item: "you are over complicating things. you literally need to check the configs for governance, and update the tables." -- disposition: not held: the researcher corrected my claim that Developer Mode was needed; the governance check it names was done in the same turn and the work followed
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -83,4 +85,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Pilot-LocalLLM.ps1_-Action_Raise`: Pilot-LocalLLM.ps1 -Action Raise failed 2 times this session: Raise needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default pr; error: short_description is 62 chars, over the 60-char title limit. It must read like a title/subject naming the topic - -- disposition: fixed: two Raise calls failed (no -AnsweredBy given; a title of 62 characters over the 60 limit); the third call, with -AnsweredBy Claude and a shorter title, raised #2337
+_no finding_

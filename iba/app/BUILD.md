@@ -19885,3 +19885,15 @@ Researcher, chat 2026-10-31: "i want to build a LLM / AI engine that read the da
 **Test (one verse, Deut.10.12, model qwen2.5:7b-instruct, CPU only, 16 GB RAM):** JSON valid, longest verse copy 2 words, operation present; 10 model observations (one per item) against 31 reference; 237 s for the verse (about 2.5 h for 39). Nothing was run on the other 38 verses.
 
 **Finding:** one pass over the whole verse with no meaning data gives one generic observation per item, far short of the per-characteristic depth. The approach is to be redesigned by the researcher (#2337).
+
+## 437. M85 Other Beings: a new M-code for the angelic and adversarial terms (2026-10-31, escalation #2338)
+
+Researcher, chat 2026-10-31: "the other being terms need to be elevated (reallocated) from T-codes to M-codes, including the advent of a new M-code. where the term is already in a M-code, it does not have to be re-allocated", then "both groups included in the cluster, but separate sub groups" (human envoys and mediums) and "leave the divine codes in T7 for now" and "Keep as labels" (T4 and T9, now empty).
+
+**Not an app build:** a data move on the researcher's instruction (rule `cluster-tags-loose-no-retagging`, re-tagging a group, precedent #2163). `cluster` and `cluster_strong` are written by `migration`; the subgroups and pairs by `cluster.surface_apply`. No cfg row, table or code of the app changed.
+
+**Files:** the one-off migration `iba/app/migration/apply_other_beings_m85_v1_20261031.py` (creates cluster M85 Other Beings; soft-deletes the T4, T9 or T2 row and inserts the M85 row for 24 strongs, each with the researcher's ruling as its rationale; idempotent), its spec `iba/docs/other-beings-m85-spec-v1-20261031.json`. Rollback point: the named snapshot `iba/app/db/snapshots/kept/iba-20261031T062042Z-pre-other-beings-m85.db`.
+
+**Surface map (`Surface-Map.ps1`, run RUN-20261031_062236_308-SURFACEMAP):** 10 groups (angel OT, angel NT, cherubim and seraphim, named archangels, human envoys, Satan, the Devil, the dragon, demons, mediums) plus the anomaly group; 51 pairs allocated by Claude with a reason each (6 flagged two-sense); check clean, no group over 30 percent (the angels are split by testament for this reason). Report `outputs/surface-map/m85-check-20261031.md`.
+
+**Stated limits:** the divine terms stay in T7; the spirit strongs stay in M47 and their dual-tagged subgroup is not built; `H0047J` (in M23) was not given pairs; the labels of the emptied T4 and T9 were not changed (researcher). The spec for the concept mapping that follows (domains as chapters, concepts as sub-chapters) is `iba/docs/concept-mapping-spec-v1-20261031.json`; its tables are not built (#2338).

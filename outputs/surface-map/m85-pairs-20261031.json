@@ -1,0 +1,928 @@
+{
+ "cluster": "M85",
+ "cluster_name": "Other Beings",
+ "built_at": "2026-10-31T06:21:51Z",
+ "head_share": 0.8,
+ "counts": {
+  "pairs": 51,
+  "head": 10,
+  "tail": 41,
+  "hits": 699,
+  "allocated": 0,
+  "inherited": 0
+ },
+ "how": "Set the groups (code <cluster>_<slug>, label, description, kind: group, qualifier or not_this_sense; anchor optional). Give every head pair a group and a reason; tail pairs may be left for the Tail step. two_sense 1 where the pair carries two senses. An inherited pair keeps its subgroup unless its surface does not fit it: then change the group and start the reason with 'correction:'. Then run -Step Apply with this file.",
+ "groups": [
+  {
+   "code": "M85_angel_ot",
+   "label": "Angel: the messenger of God (Hebrew and Aramaic)",
+   "description": "The heavenly messenger sent by God in the Old Testament: the angel of the LORD, angels ascending and descending, the angel in the furnace",
+   "kind": "group"
+  },
+  {
+   "code": "M85_angel_nt",
+   "label": "Angels: heavenly beings of the New Testament",
+   "description": "The angel as heavenly being in the New Testament: angels in heaven, the angel who speaks, the messenger of Satan, like the angels",
+   "kind": "group"
+  },
+  {
+   "code": "M85_cherubim",
+   "label": "Cherubim and seraphim",
+   "description": "The beings of the throne and the sanctuary: cherubim over the ark, in the temple, in Ezekiel's vision; the seraphim of Isaiah 6",
+   "kind": "group"
+  },
+  {
+   "code": "M85_archangels",
+   "label": "Named archangels",
+   "description": "The named chief angels: Michael, Gabriel, the archangel",
+   "kind": "group"
+  },
+  {
+   "code": "M85_envoy",
+   "label": "Human envoys and messengers",
+   "description": "Human messengers, envoys and ambassadors sent by a person or by God (prophets, priests, royal envoys): not angelic",
+   "kind": "group"
+  },
+  {
+   "code": "M85_satan",
+   "label": "Satan: the adversary and accuser",
+   "description": "Satan, the adversary and accuser, and the verb and noun of opposing",
+   "kind": "group"
+  },
+  {
+   "code": "M85_devil",
+   "label": "The Devil: the slanderer",
+   "description": "The Devil, diabolos, the slanderer",
+   "kind": "group"
+  },
+  {
+   "code": "M85_dragon",
+   "label": "The dragon",
+   "description": "The great dragon of Revelation",
+   "kind": "group"
+  },
+  {
+   "code": "M85_demons",
+   "label": "Demons and demonic oppression",
+   "description": "Demons, being demonised, demon-possession, the demonic",
+   "kind": "group"
+  },
+  {
+   "code": "M85_mediums",
+   "label": "Mediums, necromancers, divination",
+   "description": "The people and practice of consulting the dead and spirits: mediums, necromancers, the divining spirit",
+   "kind": "group"
+  }
+ ],
+ "allocations": [
+  {
+   "strong": "H4397H",
+   "surface": "angel",
+   "part": "head",
+   "hits": 101,
+   "verses": 92,
+   "gloss": "messenger: angel",
+   "transliteration": "mal.akh",
+   "samples": [
+    "Exod.23.23",
+    "Ps.35.6"
+   ],
+   "inherited": null,
+   "group": "M85_angel_ot",
+   "reason": "Hebrew/Aramaic mal'akh rendered angel(s): the messenger of God",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0032G",
+   "surface": "angel",
+   "part": "head",
+   "hits": 91,
+   "verses": 91,
+   "gloss": "angel",
+   "transliteration": "angelos",
+   "samples": [
+    "Rev.10.5",
+    "Rev.14.8"
+   ],
+   "inherited": null,
+   "group": "M85_angel_nt",
+   "reason": "angelos rendered angel(s): heavenly being",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0032G",
+   "surface": "angels",
+   "part": "head",
+   "hits": 80,
+   "verses": 78,
+   "gloss": "angel",
+   "transliteration": "angelos",
+   "samples": [
+    "Mark.13.32",
+    "Rev.14.10"
+   ],
+   "inherited": null,
+   "group": "M85_angel_nt",
+   "reason": "angelos rendered angel(s): heavenly being",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4397G",
+   "surface": "messengers",
+   "part": "head",
+   "hits": 73,
+   "verses": 68,
+   "gloss": "messenger",
+   "transliteration": "mal.akh",
+   "samples": [
+    "2Chr.36.16",
+    "2Kgs.7.15"
+   ],
+   "inherited": null,
+   "group": "M85_envoy",
+   "reason": "mal'akh 'messenger' (G-sub-entry): a human envoy or messenger, prophet or priest as God's messenger",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3742",
+   "surface": "cherubim",
+   "part": "head",
+   "hits": 65,
+   "verses": 56,
+   "gloss": "cherub",
+   "transliteration": "ke.ruv",
+   "samples": [
+    "1Kgs.6.23",
+    "1Kgs.6.28"
+   ],
+   "inherited": null,
+   "group": "M85_cherubim",
+   "reason": "cherub/seraph: throne and sanctuary beings",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1140",
+   "surface": "demons",
+   "part": "head",
+   "hits": 41,
+   "verses": 34,
+   "gloss": "demon",
+   "transliteration": "daimonion",
+   "samples": [
+    "Luke.8.33",
+    "Mark.6.13"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4567",
+   "surface": "satan",
+   "part": "head",
+   "hits": 35,
+   "verses": 33,
+   "gloss": "Satan",
+   "transliteration": "satanas",
+   "samples": [
+    "2Thess.2.9",
+    "Rev.2.9"
+   ],
+   "inherited": null,
+   "group": "M85_satan",
+   "reason": "Satanas: Satan",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1228G",
+   "surface": "devil",
+   "part": "head",
+   "hits": 33,
+   "verses": 31,
+   "gloss": "Devil",
+   "transliteration": "diabolos",
+   "samples": [
+    "Rev.12.12",
+    "Rev.20.10"
+   ],
+   "inherited": null,
+   "group": "M85_devil",
+   "reason": "diabolos: the Devil",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4397G",
+   "surface": "messenger",
+   "part": "head",
+   "hits": 25,
+   "verses": 23,
+   "gloss": "messenger",
+   "transliteration": "mal.akh",
+   "samples": [
+    "Mal.2.7",
+    "Prov.16.14"
+   ],
+   "inherited": null,
+   "group": "M85_envoy",
+   "reason": "mal'akh 'messenger' (G-sub-entry): a human envoy or messenger, prophet or priest as God's messenger",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3742",
+   "surface": "cherub",
+   "part": "head",
+   "hits": 22,
+   "verses": 16,
+   "gloss": "cherub",
+   "transliteration": "ke.ruv",
+   "samples": [
+    "2Chr.3.12",
+    "Ezek.28.14"
+   ],
+   "inherited": null,
+   "group": "M85_cherubim",
+   "reason": "cherub/seraph: throne and sanctuary beings",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1140",
+   "surface": "demon",
+   "part": "tail",
+   "hits": 18,
+   "verses": 17,
+   "gloss": "demon",
+   "transliteration": "daimonion",
+   "samples": [
+    "Mark.7.30",
+    "Matt.9.33"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7854",
+   "surface": "satan",
+   "part": "tail",
+   "hits": 18,
+   "verses": 14,
+   "gloss": "Satan",
+   "transliteration": "sa.tan",
+   "samples": [
+    "1Chr.21.1",
+    "Job.1.9"
+   ],
+   "inherited": null,
+   "group": "M85_satan",
+   "reason": "satan: Satan or the accuser",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1404",
+   "surface": "dragon",
+   "part": "tail",
+   "hits": 13,
+   "verses": 12,
+   "gloss": "dragon",
+   "transliteration": "drakōn",
+   "samples": [
+    "Rev.12.17",
+    "Rev.12.7"
+   ],
+   "inherited": null,
+   "group": "M85_dragon",
+   "reason": "drakon: the dragon",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4397H",
+   "surface": "angels",
+   "part": "tail",
+   "hits": 9,
+   "verses": 9,
+   "gloss": "messenger: angel",
+   "transliteration": "mal.akh",
+   "samples": [
+    "Gen.28.12",
+    "Ps.78.49"
+   ],
+   "inherited": null,
+   "group": "M85_angel_ot",
+   "reason": "Hebrew/Aramaic mal'akh rendered angel(s): the messenger of God",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3049",
+   "surface": "necromancers",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "spiritist",
+   "transliteration": "yid.de.o.ni",
+   "samples": [
+    "2Kgs.21.6",
+    "Lev.20.6"
+   ],
+   "inherited": null,
+   "group": "M85_mediums",
+   "reason": "medium, necromancer, spirit of divination",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7854",
+   "surface": "adversary",
+   "part": "tail",
+   "hits": 7,
+   "verses": 7,
+   "gloss": "Satan",
+   "transliteration": "sa.tan",
+   "samples": [
+    "1Kgs.11.23",
+    "Num.22.22"
+   ],
+   "inherited": null,
+   "group": "M85_satan",
+   "reason": "satan as common noun/verb (adversary, oppose): may be a human adversary, not Satan, so two senses",
+   "two_sense": 1
+  },
+  {
+   "strong": "G0032H",
+   "surface": "messenger",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "angel: messenger",
+   "transliteration": "angelos",
+   "samples": [
+    "2Cor.12.7",
+    "Mark.1.2"
+   ],
+   "inherited": null,
+   "group": "M85_angel_nt",
+   "reason": "angelos 'angel: messenger': heavenly messenger, but at times a human messenger (Luke 7.24, 9.52), so two senses",
+   "two_sense": 1
+  },
+  {
+   "strong": "G1139",
+   "surface": "demon",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "be demonised",
+   "transliteration": "daimonizomai",
+   "samples": [
+    "Matt.15.22",
+    "Matt.8.28"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4397G",
+   "surface": "envoys",
+   "part": "tail",
+   "hits": 4,
+   "verses": 4,
+   "gloss": "messenger",
+   "transliteration": "mal.akh",
+   "samples": [
+    "Isa.30.4",
+    "Isa.33.7"
+   ],
+   "inherited": null,
+   "group": "M85_envoy",
+   "reason": "mal'akh 'messenger' (G-sub-entry): a human envoy or messenger, prophet or priest as God's messenger",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0032H",
+   "surface": "messengers",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "angel: messenger",
+   "transliteration": "angelos",
+   "samples": [
+    "Luke.7.24",
+    "Luke.9.52"
+   ],
+   "inherited": null,
+   "group": "M85_angel_nt",
+   "reason": "angelos 'angel: messenger': heavenly messenger, but at times a human messenger (Luke 7.24, 9.52), so two senses",
+   "two_sense": 1
+  },
+  {
+   "strong": "G1139",
+   "surface": "oppressed by demons",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "be demonised",
+   "transliteration": "daimonizomai",
+   "samples": [
+    "Matt.4.24",
+    "Matt.8.16"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4317Q",
+   "surface": "michael",
+   "part": "tail",
+   "hits": 3,
+   "verses": 3,
+   "gloss": "Michael",
+   "transliteration": "mi.kha.el",
+   "samples": [
+    "Dan.10.13",
+    "Dan.12.1"
+   ],
+   "inherited": null,
+   "group": "M85_archangels",
+   "reason": "a named archangel or the archangel",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0743",
+   "surface": "archangel",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "archangel",
+   "transliteration": "archangelos",
+   "samples": [
+    "1Thess.4.16",
+    "Jude.1.9"
+   ],
+   "inherited": null,
+   "group": "M85_archangels",
+   "reason": "a named archangel or the archangel",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1139",
+   "surface": "demon-oppressed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be demonised",
+   "transliteration": "daimonizomai",
+   "samples": [
+    "Matt.12.22",
+    "Matt.9.32"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1139",
+   "surface": "demon-possessed",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "be demonised",
+   "transliteration": "daimonizomai",
+   "samples": [
+    "Luke.8.36",
+    "Matt.8.33"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1142",
+   "surface": "demons",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "demon",
+   "transliteration": "daimōn",
+   "samples": [
+    "Matt.8.31",
+    "Rev.18.2"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G3413",
+   "surface": "michael",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "Michael",
+   "transliteration": "michaēl",
+   "samples": [
+    "Jude.1.9",
+    "Rev.12.7"
+   ],
+   "inherited": null,
+   "group": "M85_archangels",
+   "reason": "a named archangel or the archangel",
+   "two_sense": 0
+  },
+  {
+   "strong": "H1403",
+   "surface": "gabriel",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "Gabriel",
+   "transliteration": "gav.ri.el",
+   "samples": [
+    "Dan.8.16",
+    "Dan.9.21"
+   ],
+   "inherited": null,
+   "group": "M85_archangels",
+   "reason": "a named archangel or the archangel",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3049",
+   "surface": "mediums",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "spiritist",
+   "transliteration": "yid.de.o.ni",
+   "samples": [
+    "2Kgs.23.24",
+    "Lev.19.31"
+   ],
+   "inherited": null,
+   "group": "M85_mediums",
+   "reason": "medium, necromancer, spirit of divination",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3049",
+   "surface": "necromancer",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "spiritist",
+   "transliteration": "yid.de.o.ni",
+   "samples": [
+    "Deut.18.11",
+    "Lev.20.27"
+   ],
+   "inherited": null,
+   "group": "M85_mediums",
+   "reason": "medium, necromancer, spirit of divination",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4398",
+   "surface": "angel",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "angel",
+   "transliteration": "mal.akh",
+   "samples": [
+    "Dan.3.28",
+    "Dan.6.22"
+   ],
+   "inherited": null,
+   "group": "M85_angel_ot",
+   "reason": "Hebrew/Aramaic mal'akh rendered angel(s): the messenger of God",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7700",
+   "surface": "demons",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "demon",
+   "transliteration": "shed",
+   "samples": [
+    "Deut.32.17",
+    "Ps.106.37"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "H8314B",
+   "surface": "seraphim",
+   "part": "tail",
+   "hits": 2,
+   "verses": 2,
+   "gloss": "Seraph",
+   "transliteration": "sa.raph",
+   "samples": [
+    "Isa.6.2",
+    "Isa.6.6"
+   ],
+   "inherited": null,
+   "group": "M85_cherubim",
+   "reason": "cherub/seraph: throne and sanctuary beings",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0032G",
+   "surface": "angel’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "angel",
+   "transliteration": "angelos",
+   "samples": [
+    "Rev.21.17"
+   ],
+   "inherited": null,
+   "group": "M85_angel_nt",
+   "reason": "angelos rendered angel(s): heavenly being",
+   "two_sense": 0
+  },
+  {
+   "strong": "G0032H",
+   "surface": "angel",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "angel: messenger",
+   "transliteration": "angelos",
+   "samples": [
+    "Rev.2.1"
+   ],
+   "inherited": null,
+   "group": "M85_angel_nt",
+   "reason": "angelos 'angel: messenger': heavenly messenger, but at times a human messenger (Luke 7.24, 9.52), so two senses",
+   "two_sense": 1
+  },
+  {
+   "strong": "G1139",
+   "surface": "demon-possessed man",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be demonised",
+   "transliteration": "daimonizomai",
+   "samples": [
+    "Mark.5.16"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1139",
+   "surface": "demons",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "be demonised",
+   "transliteration": "daimonizomai",
+   "samples": [
+    "Mark.5.18"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1140",
+   "surface": "divinities",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "demon",
+   "transliteration": "daimonion",
+   "samples": [
+    "Acts.17.18"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimonion in the Athenian sense 'foreign divinities' (Acts 17.18): demons or pagan deities, two senses",
+   "two_sense": 1
+  },
+  {
+   "strong": "G1140",
+   "surface": "them",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "demon",
+   "transliteration": "daimonion",
+   "samples": [
+    "Matt.12.27"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1141",
+   "surface": "demonic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "demonic",
+   "transliteration": "daimoniōdēs",
+   "samples": [
+    "Jas.3.15"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1142",
+   "surface": "demon",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "demon",
+   "transliteration": "daimōn",
+   "samples": [
+    "Luke.8.29"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G1142",
+   "surface": "demonic",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "demon",
+   "transliteration": "daimōn",
+   "samples": [
+    "Rev.16.14"
+   ],
+   "inherited": null,
+   "group": "M85_demons",
+   "reason": "daimon family: demons, demonised, the demonic",
+   "two_sense": 0
+  },
+  {
+   "strong": "G2465",
+   "surface": "angels",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "like an angel",
+   "transliteration": "isangelos",
+   "samples": [
+    "Luke.20.36"
+   ],
+   "inherited": null,
+   "group": "M85_angel_nt",
+   "reason": "isaggelos: like the angels, the heavenly state",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4436",
+   "surface": "divination",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "divining spirit",
+   "transliteration": "puthōn",
+   "samples": [
+    "Acts.16.16"
+   ],
+   "inherited": null,
+   "group": "M85_mediums",
+   "reason": "medium, necromancer, spirit of divination",
+   "two_sense": 0
+  },
+  {
+   "strong": "G4567",
+   "surface": "satan’s",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "Satan",
+   "transliteration": "satanas",
+   "samples": [
+    "Rev.2.13"
+   ],
+   "inherited": null,
+   "group": "M85_satan",
+   "reason": "Satanas: Satan",
+   "two_sense": 0
+  },
+  {
+   "strong": "H3742",
+   "surface": "appearance",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "cherub",
+   "transliteration": "ke.ruv",
+   "samples": [
+    "Ezek.10.9"
+   ],
+   "inherited": null,
+   "group": "M85_cherubim",
+   "reason": "cherub/seraph: throne and sanctuary beings",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4317M",
+   "surface": "michael",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "Michael",
+   "transliteration": "mi.kha.el",
+   "samples": [
+    "1Chr.12.20"
+   ],
+   "inherited": null,
+   "group": "M85_archangels",
+   "reason": "a named archangel or the archangel",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4397G",
+   "surface": "ambassadors",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "messenger",
+   "transliteration": "mal.akh",
+   "samples": [
+    "Ezek.17.15"
+   ],
+   "inherited": null,
+   "group": "M85_envoy",
+   "reason": "mal'akh 'messenger' (G-sub-entry): a human envoy or messenger, prophet or priest as God's messenger",
+   "two_sense": 0
+  },
+  {
+   "strong": "H4397G",
+   "surface": "sent",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "messenger",
+   "transliteration": "mal.akh",
+   "samples": [
+    "2Sam.11.1"
+   ],
+   "inherited": null,
+   "group": "M85_envoy",
+   "reason": "mal'akh 'messenger' (G-sub-entry): a human envoy or messenger, prophet or priest as God's messenger",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7854",
+   "surface": "accuser",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "Satan",
+   "transliteration": "sa.tan",
+   "samples": [
+    "Ps.109.6"
+   ],
+   "inherited": null,
+   "group": "M85_satan",
+   "reason": "satan: Satan or the accuser",
+   "two_sense": 0
+  },
+  {
+   "strong": "H7854",
+   "surface": "oppose",
+   "part": "tail",
+   "hits": 1,
+   "verses": 1,
+   "gloss": "Satan",
+   "transliteration": "sa.tan",
+   "samples": [
+    "Num.22.32"
+   ],
+   "inherited": null,
+   "group": "M85_satan",
+   "reason": "satan as common noun/verb (adversary, oppose): may be a human adversary, not Satan, so two senses",
+   "two_sense": 1
+  }
+ ]
+}
