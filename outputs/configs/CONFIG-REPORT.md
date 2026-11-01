@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-01T13:59:33Z |
+| generated_at | 2026-11-01T14:53:31Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -119,8 +119,8 @@ _(none)_
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
 
-**Query file convention** (1) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
-23. scripts/SQLite/IBA_DB/explore concepts-1.sqlite3-query — contains a space, should use hyphens
+**Query file convention** (0) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
+_(none)_
 
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
@@ -141,10 +141,11 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1025** registered module(s) — **556** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **883** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1030** registered module(s) — **561** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **885** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
+| Concept-Edit.ps1 | iba/app/ps/Concept-Edit.ps1 | PS entry point for editing the concept grouping (escalation #2355): List, Describe, AddDomain, SetDeleted; dispatches through run.py, work package concept-edit. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Copy-NarrativeToLearning4Comfort.ps1 | iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1 | PS wrapper for narrativecopy.py (-DryRun). Run on completion of a section of work, on request, and in /session-close (escalation #1941). | ✓ | ✓ | thin wrapper; config is read by narrativecopy.py |
 | Narrative-Register.ps1 | iba/app/ps/Narrative-Register.ps1 | PS entry point for the narrative claim register (escalation #2110); every action dispatches through run.py, work package narrative-register. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Node-Resolve.ps1 | iba/app/ps/Node-Resolve.ps1 | PS entry point of work package node-resolve (#2308): -Step Plan\|Apply -File <plan JSON> | ✓ | ✓ | PS entry point: dispatches through run.py; its settings are the steps' own |
@@ -158,6 +159,7 @@ _(none)_
 | Verse-Scope.ps1 | iba/app/ps/Verse-Scope.ps1 | PS entry point for the scope resolver (escalation #2228); dispatches through run.py, work package verse-scope. | ✓ | ✓ | thin wrapper; config is read by the handler through run.py |
 | VerseMeta.ps1 | iba/app/ps/VerseMeta.ps1 | PS entry point of work package verse-meta: VerseMeta.ps1 -Step SetStatus -References "Gen.1.1,Rom 1:2" -Status analysed, dispatched through run.py (step verse_meta.set_status, #2207). Escalation #1661. | ✓ | ✓ | PS entry point: the step's config is read by the handler and lib/versemeta.py |
 | add_adversarial_cluster_v1_20260905 | iba/app/migration/archive/add_adversarial_cluster_v1_20260905.py | ONE-OFF migration -- architecture correction, researcher verdict 2026-09-05: Strong's-code classification (negator/connective/party) belongs in cluster/cluster_strong, not cfg_lexical_code_class/configmaint. Creates cluster T4 'Adversarial' and reallocates H7854/G4567/G1228G from T2 to T4 (first of several tracked de-cfg-ification escalations). inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
+| add_concept_descriptions_2355_v1_20261101 | iba/app/migration/archive/add_concept_descriptions_2355_v1_20261101.py | ONE-OFF migration -- escalation #2355: description column on concept_domain, concept; run_id DEVMODE-2355-CONCEPT-DESCRIPTIONS-20261101. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | add_concise_verse_specific_rule_v1_20260921 | iba/app/migration/archive/add_concise_verse_specific_rule_v1_20260921.py | ONE-OFF migration -- escalation #1824: registers a new cfg_method_rule requiring concise, verse-specific obs_text for lexical.meaning/cluster.reading/cluster.answer, fixing the root cause of the same/broaden/new dedup never firing. Run once, then set inactive=1. |  |  |  |
 | add_elevation_candidate_question_v1_20260922 | iba/app/migration/archive/add_elevation_candidate_question_v1_20260922.py | ONE-OFF migration -- escalation #1836: registers M0.8.1 (T2/T3 elevation-candidate question) in wa_obs_question_catalogue. Run once (applied directly, script written for provenance), then set inactive=1. |  |  |  |
 | add_lexicon_header_pos_tags_setting_v1_20260910 | iba/app/migration/add_lexicon_header_pos_tags_setting_v1_20260910.py | One-off: seeds cfg_setting lexicon.header_pos_tags (22 bare POS-tag values lib/lexiconparse.py:is_header_only_line() matches against). Escalation #1668, 2026-09-10. Idempotent, safe to re-run. | ✓ | ✓ | one-off migration/tool that has already run; zero config reads is legitimate (#2107 triage E, approved under #2108) |
@@ -385,7 +387,9 @@ _(none)_
 | clusterreport | iba/app/lib/clusterreport.py | report.cluster -- cluster content/quality report | ✓ |  |  |
 | clusterstatus | iba/app/lib/clusterstatus.py | clusterstatus.py — the `cluster.status` lifecycle transitions `#1697` designed but never built | ✓ |  |  |
 | compliance | iba/app/lib/compliance.py | compliance.py -- rule compliance read at start and proved at close (#2173 P2): delivery of the rules, the session compliance file, its start and close checks. | ✓ |  |  |
+| concept_edit_2355_v1_20261101 | iba/app/migration/archive/concept_edit_2355_v1_20261101.py | ONE-OFF migration -- escalation #2355: registers the concept-edit tool; run_id DEVMODE-2355-CONCEPT-EDIT-20261101. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | concept_tables_2339_v1_20261031 | iba/app/migration/archive/concept_tables_2339_v1_20261031.py | ONE-OFF migration -- escalation #2339: tables concept_domain, concept, concept_subgroup and the load of the v1 concept grouping; run_id DEVMODE-2339-CONCEPT-TABLES-20261031. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| conceptedit | iba/app/lib/conceptedit.py | conceptedit.py -- the researcher's edits to the concept grouping (escalation #2355): the description of a domain or a concept, a new domain, a domain's delete flag. | ✓ | ✓ | an editing tool with no tunable threshold: its only rules are the concept tables' own constraints (live-unique name and ordinal checks, the delete refusal), so it reads no cfg.setting() |
 | config_alignment_2268_v1_20261024 | iba/app/migration/archive/config_alignment_2268_v1_20261024.py | ONE-OFF migration -- escalation #2268: the config alignment change set, sections 2 to 7; run_id DEVMODE-2268-CONFIG-ALIGNMENT-20261024. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | contentindex | iba/app/lib/contentindex.py | contentindex.py — file-content concordance search over .md files, keyed on Strong's numbers/glosses/words sourced from strong/word_registry. Round 2 of the manifest + content-search plan; file_manifest (round 1) is its coverage baseline. | ✓ |  |  |
 | control_file_check_v1_20261021 | iba/app/migration/archive/control_file_check_v1_20261021.py | ONE-OFF migration -- escalation #2186: session-close control-file check SC15, every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2186-CONTROL-FILE-CHECK-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -440,6 +444,7 @@ _(none)_
 | handlers_base | iba/app/handlers/base.py | Handler contract: Ctx, Outcome, ok/fail/escalate, used by every handler. | ✓ | ✓ | app core, outside the utility config-density check |
 | handlers_catalogue | iba/app/handlers/catalogue.py | Thin dispatcher adapter over cataloguewrite.py, registers obs_catalogue.update as a work-package step. | ✓ | ✓ | thin step wrapper: checks -ObsId and -Set; the write and its rules are in lib/cataloguewrite.py (#2207 decision 3a) |
 | handlers_compliance | iba/app/handlers/compliance.py | handlers/compliance.py -- the compliance.template and compliance.check_start steps (#2173 P2). | ✓ | ✓ | thin step wrappers: every setting is read in lib/compliance.py, which they call |
+| handlers_conceptedit | iba/app/handlers/conceptedit.py | handlers/conceptedit.py -- the run.py handlers for work package concept-edit (Concept-Edit.ps1, escalation #2355). | ✓ | ✓ | an editing tool with no tunable threshold: its only rules are the concept tables' own constraints (live-unique name and ordinal checks, the delete refusal), so it reads no cfg.setting() |
 | handlers_narrativeregister | iba/app/handlers/narrativeregister.py | handlers/narrativeregister.py -- the run.py handlers for work package narrative-register (one per Narrative-Register.ps1 action); the logic is in lib/narrativeregister.py (escalation #2110). | ✓ |  |  |
 | handlers_noderesolve | iba/app/handlers/noderesolve.py | noderesolve handler -- work package node-resolve: steps node_resolve.plan and node_resolve.apply (#2308) | ✓ |  |  |
 | handlers_openitem | iba/app/handlers/openitem.py | handlers/openitem.py -- the run.py handlers for work package open-item (Open-Item.ps1), one per action; the logic is in lib/openitem.py (escalation #2236). | ✓ |  |  |
@@ -1571,6 +1576,14 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | 2 | cluster.surface_tail | iba.app.handlers.surfacemap:tail | none | the API pass: the pairs still unallocated placed in the cluster's groups or its anomaly group, each with a reason (a preview with the cost unless -Live) -- see lib/surfacemap.py (escalation #2293, #2286 U3) |
 | 3 | cluster.surface_check | iba.app.handlers.surfacemap:check | none | the report of an M cluster's mapping: group sizes and shares (over cluster.surface_map.max_group_share flagged), the anomaly group, unallocated and two-sense pairs (read-only) -- see lib/surfacemap.py (escalation #2293, #2286 U3) |
 
+**concept-edit** — runs over `none` · script `iba/app/ps/Concept-Edit.ps1`
+| # | step | handler | scope | does |
+| --- | --- | --- | --- | --- |
+| 0 | concept_edit.list | iba.app.handlers.conceptedit:list_ | none | the domains and concepts with their descriptions (read-only); -Level, -DomainId, -IncludeDeleted -- see lib/conceptedit.py (escalation #2355) |
+| 1 | concept_edit.describe | iba.app.handlers.conceptedit:describe | none | set the description of a domain or a concept, one or a JSON list as one unit; the wording replaced is shown -- see lib/conceptedit.py (escalation #2355) |
+| 2 | concept_edit.add_domain | iba.app.handlers.conceptedit:add_domain | none | add a domain, last in order unless an ordinal is given -- see lib/conceptedit.py (escalation #2355) |
+| 3 | concept_edit.set_deleted | iba.app.handlers.conceptedit:set_deleted | none | set or clear the delete flag of a domain; refused while it holds live concepts -- see lib/conceptedit.py (escalation #2355) |
+
 **configuration-maintenance** — runs over `none` · script `iba/app/ps/Config-Maintenance.ps1`
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
@@ -1909,7 +1922,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 <a id="7-on-fail-condition-path-the-fork-rules"></a>
 ## 7. on_fail — condition -> path (the fork rules)
 
-**20 of 137 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**20 of 141 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -1958,6 +1971,10 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | compliance.check_start | findings-open | report-continue | the compliance file does not pass the start check -- fix it and re-run (Compliance.ps1 exits 3) |
 | compliance.check_start | no-session | report-continue | the session could not be identified -- see the message |
 | compliance.template | no-session | report-continue | the session could not be identified -- see the message |
+| concept_edit.add_domain | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| concept_edit.describe | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| concept_edit.list | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| concept_edit.set_deleted | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | configmaint.propose | change-rejected | report-stop | the researcher rejected the proposed change |
 | configmaint.propose | invalid-proposal | report-stop | the proposed change fails a coherence check — never escalated |
 | configmaint.propose | needs-revision | report-stop | the researcher asked for the proposal to be revised (see the comment) and resubmitted |
@@ -2075,6 +2092,9 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | cluster.subgroup | cluster_subgroup, cluster_subgroup_strong, ib_node, ib_observation, run_batch |
 | cluster.surface_apply | cluster_subgroup, surface_subgroup |
 | cluster.surface_tail | cluster_subgroup, surface_subgroup |
+| concept_edit.add_domain | concept_domain |
+| concept_edit.describe | concept, concept_domain |
+| concept_edit.set_deleted | concept_domain |
 | configmaint.propose | cfg_api, cfg_behaviour_class, cfg_behaviour_rule, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_content_index_exclude, cfg_content_index_size_override, cfg_control_home, cfg_enum, cfg_escalation, cfg_escalation_requirement, cfg_escalation_transition, cfg_index, cfg_lexical_code_class, cfg_meta, cfg_method_rule, cfg_observation_enhancer_rule, cfg_on_fail, cfg_passage, cfg_prose, cfg_prose_concept, cfg_quality_check, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_rule_scope, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_table_purpose, cfg_trigger, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
 | escalation | escalation, escalation_history, escalation_thread_item, escalation_thread_item_response, word_registry |
 | hib.set | debate_change_detail, hib, hib_referent_option, verse_hib |
@@ -3881,6 +3901,7 @@ dedup key: `name`
 | updated_at | TEXT |  |  |  |  | when last changed (ISO-8601 UTC) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
 | deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the row is no longer live | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| description | TEXT |  |  |  |  | what the domain is about, in the researcher's intended narrative; free text; NULL until written | escalation #2355 (researcher, chat 2026-11-01: description on concept_domain and concept, not the link table) |
 
 ### concept
 _one row per concept, in one domain_ — #2339: a concept of the grouping, a sub-chapter of its domain, named for what its subgroups share; the concept_subgroup rows say which subgroups it holds. narrative_section_id links it to the narrative section built on it and is NULL until the narrative is rebuilt on the domains
@@ -3897,6 +3918,7 @@ dedup key: `domain_id, name`
 | updated_at | TEXT |  |  |  |  | when last changed (ISO-8601 UTC) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
 | deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the row is no longer live | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| description | TEXT |  |  |  |  | what the concept is about, in the researcher's intended narrative; free text; NULL until written | escalation #2355 (researcher, chat 2026-11-01: description on concept_domain and concept, not the link table) |
 
 ### concept_subgroup
 _one row per (concept, cluster_subgroup) membership_ — #2339: which concept holds a subgroup of cluster_subgroup (kind group or qualifier). A live subgroup is in exactly one live concept. This is the link from the base data (cluster_subgroup, then surface_subgroup and verse_lexical) to the narrative

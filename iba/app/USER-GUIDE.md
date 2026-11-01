@@ -829,6 +829,30 @@ iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1 [-DryRun]
 This copies the active chapters' current files to `narrative.learning4comfort_inbox_dir`.
 Nothing is published to GitHub from here (`governance.no_direct_github_publish`).
 
+### 8.7 Editing the concept grouping (`iba/app/ps/Concept-Edit.ps1`)
+
+The concept grouping is three tables: `concept_domain` (a domain, a chapter of the narrative), `concept` (a
+sub-chapter in a domain) and `concept_subgroup` (the link table to the base data, not touched by this tool).
+`description` on a domain and on a concept is free text, empty until written (escalation #2355).
+
+```powershell
+iba\app\ps\Concept-Edit.ps1 -Action List [-Level Domain|Concept] [-DomainId 3] [-IncludeDeleted]
+iba\app\ps\Concept-Edit.ps1 -Action Describe -Level Domain|Concept -Id 3 -Description "<text>"
+iba\app\ps\Concept-Edit.ps1 -Action Describe -File <list.json>      # [{"level":"Concept","id":12,"description":"..."}, ...]
+iba\app\ps\Concept-Edit.ps1 -Action AddDomain -Name "<name>" [-Ordinal 15] [-Description "<text>"]
+iba\app\ps\Concept-Edit.ps1 -Action SetDeleted -Id 15 -Deleted 1      # 0 restores
+```
+
+- **Describe** sets the description of a live row and prints the wording it replaces (the replaced text is kept
+  only in that run's output). A `-File` list is one unit: if any entry is refused, nothing is written.
+- **AddDomain** puts the new domain last in order unless `-Ordinal` is given; the name must be free among live
+  domains and the ordinal must not be one a live domain has. The new domain has no concepts and no narrative chapter.
+- **SetDeleted** sets (`1`) or clears (`0`) the delete flag of a domain; the row stays. A domain that still holds
+  live concepts is not deleted: the refusal names them, because what becomes of them is the researcher's call.
+  A domain cannot be restored while a live domain has its name.
+- Every change is stamped with the run id and the time (`run_id`, `updated_at`); `-By Claude|Researcher` names who
+  made it (default Claude). A refusal writes nothing and is not an escalation.
+
 ---
 
 ## 9. Reports and exports

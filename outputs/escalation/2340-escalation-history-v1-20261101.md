@@ -1,0 +1,29 @@
+# Escalation deep history
+
+## #2340 — Read a table's recorded meaning before using it
+type=task source=researcher
+
+**v1** (2026-10-31T09:03:30Z, Claude) state=raised next_action=review assigned_to=Researcher
+> **short description (set this version):** Read a table's recorded meaning before using it
+> **comment (set this version):** Researcher, chat 2026-10-31, verbatim: "the problem is that you don't retain the knowledge of what all the different tables mean and contribute, and need to rediscover knowledge every time which really is not efficient or beneficial, and because you do not properly discover but do a few tests to see if your opinion holds, then I need to dig into it to figure out where you got it wrong, or is the data wrong. all of it just enrich your master and waste my time"
+
+Evidence from this session (escalation #2339): (1) The concept work took surface_subgroup as its source; its own cfg_table use text says "Surface to verse stays in verse_lexical", and the researcher had to say verse_lexical was the source. (2) v10 of #2339 stated that verse_lexical.role is per occurrence; the cfg_column use text for role says it is the strong's cluster codes copied to each occurrence, and a test of all strongs (0 of 15,455 with more than one role string) agrees; the untested statement stood in the record for the researcher to find. (3) Counts of names, particles and function words were made from a small word list and a few queries, not from the recorded meaning of the columns. The meaning of every table and column is already recorded in iba/app/db/iba.db: cfg_table.use (229 tables) and cfg_column.use, expectation, source and filled_by (2,306 columns), and a schema report exists (the schema overview script under iba/app/ps/). It was not read first.
+> **context (set this version):** iba/app/db/iba.db; .claude/hooks/rules_at_point_of_use.py
+
+**v2** (2026-10-31T09:03:38Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **resolution (set this version):** Decision sought, with its options (nothing built; B:105): how Claude is made to read what a table means before using it.
+Option A, a behaviour rule only (cfg_behaviour_rule, B:31): before a table or column is used for a count, a finding or a design, Claude reads its cfg_table.use and cfg_column.use and source, names them in its first message on the work, and states a claim about what a column holds only from that text or from a test over all rows, never from a sample. Cheap, but it depends on Claude following it, which is the failure here.
+Option B (recommended): A, plus the existing point-of-use hook (.claude/hooks/rules_at_point_of_use.py, #2209) prints the cfg_table.use and cfg_column.use of any table named in a command or script at its first use in the session, as it now prints rules, so the meaning is in front of Claude before the call runs. Needs a build and tests (B:46) and a BUILD entry; not started.
+Option C: neither; the researcher keeps correcting. Not recommended.
+Not claimed: that cfg_table and cfg_column are complete and correct; where a use text is missing or thin, that is a separate finding to raise.
+Approval sought: option A or B. On approval Claude states the rule text, or the hook design and test plan, for approval before building.
+
+**v3** (2026-10-31T16:11:26Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **comment (set this version):** Claude, 2026-10-31 (session close): a second instance of the same failure. To build the concept tables I took the table-build convention (cfg_table, cfg_column, cfg_write_grant, table_ddl, apply_logged, archive path) from the archived migration iba/app/migration/archive/surface_subgroup_schema_2292_v1_20261025.py. I did not first check iba/app/USER-GUIDE.md or iba/app/GOVERNANCE.md for a stated way to add a table, and I do not know whether one exists. Reading precedent to learn a mechanism is the signal named by the setting governance.past_precedent_investigation_signals_missing_config: either the way is stated and I did not read it, or it is not and that is a gap. Not resolved here.
+
+**v4** (2026-11-01T09:19:29Z, Researcher) state=re-assigned next_action=approved assigned_to=Claude
+> **comment (set this version):** Option A
+
+**v5** (2026-11-01T09:19:57Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **comment (set this version):** Researcher, chat 2026-11-01, verbatim: '2340 is approved for option A'. Claude: rule text drafted below for approval before any build, as the earlier resolution stated.
+> **resolution (set this version):** Approval sought: the rule text below, to be added through Config-Maintenance.ps1 -Step Propose (App Mode) as one cfg_behaviour_rule row, class development, deliver_when context_delivered, enforcement_status context_delivered (option A only, no hook). Proposed rule_key: development.read-table-meaning-before-use. Proposed rule_text: Before a table or column is used for a count, a finding, a claim or a design, Claude reads its recorded meaning in the database (cfg_table.use for the table; cfg_column.use, expectation, source and filled_by for the column) and names what it read in its first message on that work. A statement about what a column holds is made only from that recorded text or from a test over all of its rows, never from a sample or a few queries; where the recorded text is missing or thin, that is raised as a finding and the column is not assumed. A table or mechanism is added by the stated procedure in iba/app/USER-GUIDE.md or iba/app/GOVERNANCE.md; reading an archived migration to learn it is the signal in governance.past_precedent_investigation_signals_missing_config. Source: escalation #2340. On your approval of this text Claude proposes the row; that proposal pauses once more for the researcher's config approval.
