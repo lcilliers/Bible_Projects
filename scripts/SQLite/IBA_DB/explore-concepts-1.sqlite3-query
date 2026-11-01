@@ -1,0 +1,26 @@
+-- database: ../../../iba/app/db/iba.db
+
+SELECT d.id domain_id,
+d.name domain_name,
+c.id concept_id,
+c.name concept_name ,
+cs.cluster_code ,
+cs.label cluster_subgroup_name,
+s.id surface_subgroup_id,
+s.strong,
+s.surface,
+s.reason
+FROM concept_subgroup cg
+inner join concept c on cg.concept_id = c.id
+inner join concept_domain d on c.domain_id = d.id
+inner join cluster_subgroup cs on cg.cluster_subgroup_id = cs.id
+inner join surface_subgroup s on cs.id = s.cluster_subgroup_id
+;
+
+
+SELECT * FROM concept_subgroup cg
+inner join concept c on cg.concept_id = c.id
+inner join concept_domain d on c.domain_id = d.id
+inner join cluster_subgroup cs on cg.cluster_subgroup_id = cs.id
+inner join surface_subgroup s on cs.id = s.cluster_subgroup_id
+;

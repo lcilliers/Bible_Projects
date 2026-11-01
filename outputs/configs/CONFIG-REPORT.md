@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-30T09:36:15Z |
+| generated_at | 2026-11-01T13:59:33Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -119,8 +119,8 @@ _(none)_
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
 
-**Query file convention** (0) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
-_(none)_
+**Query file convention** (1) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
+23. scripts/SQLite/IBA_DB/explore concepts-1.sqlite3-query — contains a space, should use hyphens
 
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
@@ -141,7 +141,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1024** registered module(s) — **555** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **882** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1025** registered module(s) — **556** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **883** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -385,6 +385,7 @@ _(none)_
 | clusterreport | iba/app/lib/clusterreport.py | report.cluster -- cluster content/quality report | ✓ |  |  |
 | clusterstatus | iba/app/lib/clusterstatus.py | clusterstatus.py — the `cluster.status` lifecycle transitions `#1697` designed but never built | ✓ |  |  |
 | compliance | iba/app/lib/compliance.py | compliance.py -- rule compliance read at start and proved at close (#2173 P2): delivery of the rules, the session compliance file, its start and close checks. | ✓ |  |  |
+| concept_tables_2339_v1_20261031 | iba/app/migration/archive/concept_tables_2339_v1_20261031.py | ONE-OFF migration -- escalation #2339: tables concept_domain, concept, concept_subgroup and the load of the v1 concept grouping; run_id DEVMODE-2339-CONCEPT-TABLES-20261031. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | config_alignment_2268_v1_20261024 | iba/app/migration/archive/config_alignment_2268_v1_20261024.py | ONE-OFF migration -- escalation #2268: the config alignment change set, sections 2 to 7; run_id DEVMODE-2268-CONFIG-ALIGNMENT-20261024. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | contentindex | iba/app/lib/contentindex.py | contentindex.py — file-content concordance search over .md files, keyed on Strong's numbers/glosses/words sourced from strong/word_registry. Round 2 of the manifest + content-search plan; file_manifest (round 1) is its coverage baseline. | ✓ |  |  |
 | control_file_check_v1_20261021 | iba/app/migration/archive/control_file_check_v1_20261021.py | ONE-OFF migration -- escalation #2186: session-close control-file check SC15, every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2186-CONTROL-FILE-CHECK-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -2084,7 +2085,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | lexical.run | verse_lexical, verse_lexical_note |
 | lexicon.parse | strong_lsj_parsed, strong_meaning_parsed, strong_mounce_parsed |
 | lexicon.related | strong_related |
-| migration | candidate_seed, cluster, cluster_strong, lemma_inventory, narrative_chapter, narrative_citation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, narrative_index_note, narrative_passage, narrative_section, narrative_update, narrative_update_ref, span, strong, strong_lexicon, strong_lsj_parsed, strong_meaning_parsed, strong_meaning_tree, strong_mounce_parsed, strong_related, strong_sense, word_registry, word_strong |
+| migration | candidate_seed, cluster, cluster_strong, concept, concept_domain, concept_subgroup, lemma_inventory, narrative_chapter, narrative_citation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, narrative_index_note, narrative_passage, narrative_section, narrative_update, narrative_update_ref, span, strong, strong_lexicon, strong_lsj_parsed, strong_meaning_parsed, strong_meaning_tree, strong_mounce_parsed, strong_related, strong_sense, word_registry, word_strong |
 | narrative_register.add_chapter | narrative_chapter, narrative_claim_change, narrative_section, narrative_update |
 | narrative_register.add_claim | narrative_claim, narrative_claim_change, narrative_claim_source |
 | narrative_register.edit | narrative_claim, narrative_claim_change, narrative_claim_source |
@@ -3865,6 +3866,51 @@ _one row per document line that names a verse and per observation it gave (one r
 | created_at | TEXT |  | ✓ |  |  | when (ISO-8601 UTC) | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
 | deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the answer is no longer live | escalation #2305 (outputs/escalation/2305-prior-work-capture-design-v2-20261026.md) |
+
+### concept_domain
+_one row per domain of the concept grouping_ — #2339: a domain of the concept grouping, which the researcher ruled is the new basis for the narrative, domains as chapters and concepts as sub-chapters (chat 2026-10-31). Loaded from the v1 spec iba/docs/concept-mapping-spec-v1-20261031.json, made by grouping the existing subgroups; a first grouping, not a finding. narrative_chapter_id links the domain to the narrative chapter built on it and is NULL until the narrative is rebuilt on the domains
+dedup key: `name`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| name | TEXT |  | ✓ |  |  | the domain's name, as in the spec (for example Feeling: anger and grief) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| ordinal | INTEGER |  | ✓ |  |  | the domain's order, from 1, as in the spec | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| narrative_chapter_id | INTEGER |  |  |  | narrative_chapter.id | the narrative chapter built on this domain; NULL until then | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| run_id | TEXT |  |  |  |  | the run that wrote the row | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| created_at | TEXT |  | ✓ |  |  | when (ISO-8601 UTC) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| updated_at | TEXT |  |  |  |  | when last changed (ISO-8601 UTC) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the row is no longer live | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+
+### concept
+_one row per concept, in one domain_ — #2339: a concept of the grouping, a sub-chapter of its domain, named for what its subgroups share; the concept_subgroup rows say which subgroups it holds. narrative_section_id links it to the narrative section built on it and is NULL until the narrative is rebuilt on the domains
+dedup key: `domain_id, name`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| domain_id | INTEGER |  | ✓ |  | concept_domain.id | the domain the concept is in | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| name | TEXT |  | ✓ |  |  | the concept's name, as in the spec (for example Fear, dread, dismay, appalment) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| ordinal | INTEGER |  | ✓ |  |  | the concept's order within its domain, from 1, as in the spec | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| narrative_section_id | INTEGER |  |  |  | narrative_section.id | the narrative section built on this concept; NULL until then | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| run_id | TEXT |  |  |  |  | the run that wrote the row | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| created_at | TEXT |  | ✓ |  |  | when (ISO-8601 UTC) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| updated_at | TEXT |  |  |  |  | when last changed (ISO-8601 UTC) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the row is no longer live | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+
+### concept_subgroup
+_one row per (concept, cluster_subgroup) membership_ — #2339: which concept holds a subgroup of cluster_subgroup (kind group or qualifier). A live subgroup is in exactly one live concept. This is the link from the base data (cluster_subgroup, then surface_subgroup and verse_lexical) to the narrative
+dedup key: `cluster_subgroup_id`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| concept_id | INTEGER |  | ✓ |  | concept.id | the concept that holds the subgroup | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| cluster_subgroup_id | INTEGER |  | ✓ |  | cluster_subgroup.id | the subgroup held (cluster_subgroup of kind group or qualifier); unique among live rows, so a subgroup is in one concept | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| run_id | TEXT |  |  |  |  | the run that wrote the row | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| created_at | TEXT |  | ✓ |  |  | when (ISO-8601 UTC) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| updated_at | TEXT |  |  |  |  | when last changed (ISO-8601 UTC) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
+| deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the row is no longer live | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
 
 <a id="11-enums"></a>
 ## 11. Enums

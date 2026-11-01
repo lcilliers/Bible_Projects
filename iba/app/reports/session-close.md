@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-01T05:06:28Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-01T14:09:02Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `111b5732-4702-4a29-bbf0-2d43b63dded3` (CLAUDE_CODE_SESSION_ID); started 2026-10-31T16:44:24Z; window base commit `3c46a03eb03c4008041507e4da55b3ded2899f52`
-- compliance file: `Logs/compliance/COMPLIANCE-20261031-111b5732.md`; session log: `Logs/SESSION-LOG-20261101-concept-surfaces-and-inner-being-story.md`
-- **open findings: 0**; cleared by disposition: 5
+- session: `389101b8-f0e8-4448-9ada-23b2adaf68ad` (CLAUDE_CODE_SESSION_ID); started 2026-11-01T08:57:58Z; window base commit `f0c3bf8de4a5ca5b0f1690ab84ed647c9a692e51`
+- compliance file: `Logs/compliance/COMPLIANCE-20261101-389101b8.md`; session log: `Logs/SESSION-LOG-20261101-study-backlog-closed.md`
+- **open findings: 0**; cleared by disposition: 10
 
 
 ## Contents
@@ -41,23 +41,18 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:8782ee6a`: researcher message 2026-10-31T16:52 is in no escalation comment written this session: "following query provide a base to evaluate the allocations. 
-
-<pasted_content id="0596">
-SELECT d.id domain_id,
-d.name domain_name,
-c.id concept_id,
-c.name conc" -- disposition: recorded in #2344 v8
-- cleared `SC3:ba5d1dfb`: researcher message 2026-10-31T17:19 is too short to be matched; name where it is recorded: "Revise" -- disposition: recorded in #2344 v8
-- cleared `SC3:abd18df1`: researcher message 2026-11-01T04:49 is in no escalation comment written this session: "maybe the following will help you to frame your synergy: 
-
-<pasted_content id="0596">
-The narrative starts with what this study is about : understanding, throug" -- disposition: recorded in #2345 v4
+- cleared `SC3:1921b433`: researcher message 2026-11-01T09:23 is too short to be matched; name where it is recorded: "threads: option A" -- disposition: recorded in #2347 v2
+- cleared `SC3:9b02a816`: researcher message 2026-11-01T13:56 is too short to be matched; name where it is recorded: "Option A." -- disposition: recorded in #2322 v5
+- cleared `SC3:5ec6a79f`: researcher message 2026-11-01T14:04 is in no escalation comment written this session: "I am trying to work out why the following script does not produce the output in id order, just seems to ignore the order statement part: SELECT id, alias, versi" -- disposition: recorded in #2347 v2
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:a84fb6fe`: researcher message 2026-10-31T16:58 holds, defers or asks to check something; name its register item: "a simple llm should be able to take the surface word and ask : can a human be x ; can a human do x, can a human experience/express/get x.  if this test is appli" -- disposition: in register #2344
+- cleared `SC4b:3dea6a8c`: researcher message 2026-11-01T09:03 holds, defers or asks to check something; name its register item: "after many turns we finally came to the end of a long journey of trying to systematically analyse all the verses in the study.  This turns out to be an unachiev" -- disposition: in register #2347
+- cleared `SC4b:7ebe71a2`: researcher message 2026-11-01T09:14 holds, defers or asks to check something; name its register item: "all the parked items are also obsolete" -- disposition: in register #2347
+- cleared `SC4b:b4c27d35`: researcher message 2026-11-01T09:21 holds, defers or asks to check something; name its register item: "2345 yes;  2340 text approved; 2337 set on hold." -- disposition: in register #2347
+- cleared `SC4b:4c9d7f0f`: researcher message 2026-11-01T09:23 holds, defers or asks to check something; name its register item: "all the on hold threads can be closed down as superseded. non of the threads is relevant for the next phase, although the mechanism may still be used." -- disposition: in register #2347
+- cleared `SC4b:410a9643`: researcher message 2026-11-01T09:25 holds, defers or asks to check something; name its register item: "I am not ready to deal with 2350, 2349, and 2348 - the local llm deployment is on hold." -- disposition: in register #2347
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -90,8 +85,9 @@ _no finding_
 ## SC12 Publish
 
 - narrative copy: not needed (no chapter changed)
-- threads register export: not needed (no thread row changed)
+- threads register export: RUN (a thread row changed)
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 4 times this session: error: an update carrying comment/context/tried cannot leave the item at state='raised' -- move it off raised first (e.g; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; error: next_action='approved' requires resolution to be filled in (plan v3 sec3); error: reassigning a decision_required item from Claude to Researcher requires next_action=ready_for_approval in the sam -- disposition: fixed: the four refusals were the update guards working as designed (state raised, approved only from ready_for_approval, resolution required, no bare reassignment); each call was re-issued correctly and the updates are recorded at #2344 v8, #2345 v5 and #2346 v1
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: -NextAction reject needs -State (withdraw|supersede) and -Comment (the reason).; error: superseding a thread names its successor: -SupersededBy OT-nn (the open items move to it) -- escalation #2000 lif -- disposition: carried #2347
+- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: work package : configuration-maintenance -- disposition: carried #2347
