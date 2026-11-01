@@ -45,4 +45,7 @@ Session id: 389101b8-f0e8-4448-9ada-23b2adaf68ad
 
 ## 6. Git
 
-(written after the first commit)
+Branch: main
+First commit: b4155d8a session 20261101: study backlog closed (#2347), threads withdrawn, #2322 acknowledged, pilot scripts archived (BUILD 441), session log, compliance file and close reports
+Push output: To https://github.com/lcilliers/Bible_Projects.git
+   f0c3bf8d..b4155d8a  main -> main
