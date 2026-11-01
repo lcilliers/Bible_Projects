@@ -41,4 +41,4 @@ Started with `/start-project` (no NEEDS ACTION; compliance file passed). The res
 - #2161 and #2259 (Claude): in progress, not due until the claims phase is defined (#2315); untouched this session.
 
 ## 6. Git
-(written after the first commit)
+Branch: main. First commit: f31ea34185bfd74122ab6e4384e45bf08d0202ef, `session 20261101: surface allocations parked (#2344), concepts against chapters (#2343), the inner being story (#2345, #2346), BUILD 440, session log, compliance file and close reports`. Push output: `3c46a03e..f31ea341  main -> main` (https://github.com/lcilliers/Bible_Projects.git).
