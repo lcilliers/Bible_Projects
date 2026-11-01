@@ -35,3 +35,4 @@ Entered Developer Mode with `/developer-mode` (compliance file passed; the resea
 - #2337, #2348, #2349 and #2350 (parked on-hold): untouched this session.
 
 ## 6. Git
+Branch: main. First commit: fc3d47ae, `session 20261101: description columns on concept_domain and concept (#2355), Concept-Edit tool, B:123 rule scope link (#2356), BUILD 442, session log, compliance file and close reports`. Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `9bc8e460..fc3d47ae  main -> main`. The researcher's own edits to `iba/docs/escalation actions worksheet.xlsx` (made in Excel during the session) went in with this commit. The git confirmation commit follows alone.
