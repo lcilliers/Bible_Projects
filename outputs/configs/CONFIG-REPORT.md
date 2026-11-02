@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-01T14:53:31Z |
+| generated_at | 2026-11-02T10:49:24Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -33,9 +33,17 @@
 
 _Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s escalation, which references this section by path rather than repeating it. Not errors — advisory. See GOVERNANCE.md §5B._ Items are numbered (running count across every category below) so any one item can be referenced by number, e.g. "item 7" — the numbering is a snapshot of THIS regenerate, not a stable ID across runs. Historical/already-decided records (inactive configs) are §1, not here — everything below is something that actually needs your judgement.
 
-**Orphan configs** (2) — a `cfg_setting`/`cfg_enum` not referenced by any code:
+**Orphan configs** (10) — a `cfg_setting`/`cfg_enum` not referenced by any code:
 1. cfg_setting 'reading.whole_cluster_reading_start' (key not found together with a cfg.setting(...) call in any one file)
 2. cfg_setting 'glossary.currency_check' (key not found together with a cfg.setting(...) call in any one file)
+3. cfg_setting 'ollama.host' (key not found together with a cfg.setting(...) call in any one file)
+4. cfg_setting 'ollama.model' (key not found together with a cfg.setting(...) call in any one file)
+5. cfg_setting 'ollama.timeout_seconds' (key not found together with a cfg.setting(...) call in any one file)
+6. cfg_setting 'ollama.keep_alive' (key not found together with a cfg.setting(...) call in any one file)
+7. cfg_setting 'ollama.num_ctx' (key not found together with a cfg.setting(...) call in any one file)
+8. cfg_setting 'ollama.temperature' (key not found together with a cfg.setting(...) call in any one file)
+9. cfg_setting 'ollama.max_codes_per_call' (key not found together with a cfg.setting(...) call in any one file)
+10. cfg_setting 'surface_judge.batch_dir' (key not found together with a cfg.setting(...) call in any one file)
 
 **Settings needing justification** (0) — module already has its own dedicated table:
 _(none)_
@@ -50,7 +58,7 @@ _(none)_
 _(none)_
 
 **Low config-density utilities** (1) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-3. cfg_utility 'noderesolve' (iba\app\lib\noderesolve.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+11. cfg_utility 'noderesolve' (iba\app\lib\noderesolve.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -64,8 +72,8 @@ _(none)_
 **Report version clutter** (0) — more than one version of a one-off report simultaneously live in governance.oneoff_report_dir (oneoff_path() found 2026-08-08 to version without archiving, BUILD.md §83) — the rest belong in archive/:
 _(none)_
 
-**Unresolvable location settings** (0) — a *_dir/*_path/*_folder value (cfg_setting or any per-module table shaped like it) that does not resolve to a real folder on disk:
-_(none)_
+**Unresolvable location settings** (1) — a *_dir/*_path/*_folder value (cfg_setting or any per-module table shaped like it) that does not resolve to a real folder on disk:
+12. cfg_setting.surface_judge.batch_dir = '"outputs/concept-mapping/surface-group"' — 'outputs/concept-mapping/surface-group' does not exist as a folder on disk (project-root-relative)
 
 **Escalation.ps1 ValidateSet drift** (0) — a -Parameter's [ValidateSet(...)] values not matching the live cfg_enum group it's supposed to mirror:
 _(none)_
@@ -74,32 +82,32 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-4. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+13. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
 **PS/worksheet drift** (1) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-5. Node-Resolve.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\node-resolve.ps1' in some tab's first rows)
+14. Node-Resolve.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\node-resolve.ps1' in some tab's first rows)
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
 **Unenforced behaviour rules** (17) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-6. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-7. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-8. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-9. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-10. [development] #46 test-plan-per-module-utility — deliberately_deferred
-11. [development] #66 cluster-label-must-track-membership — buildable_not_built
-12. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-13. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-14. [filing] #56 naming-shape — partially_enforced
-15. [filing] #58 archiving-trigger — partially_enforced
-16. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-17. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-18. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
-19. [study_method] #118 surface-mapping-conditions — partially_enforced
-20. [study_method] #120 scope-home-and-multiplicity — partially_enforced
-21. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
-22. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
+15. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+16. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+17. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+18. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+19. [development] #46 test-plan-per-module-utility — deliberately_deferred
+20. [development] #66 cluster-label-must-track-membership — buildable_not_built
+21. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+22. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+23. [filing] #56 naming-shape — partially_enforced
+24. [filing] #58 archiving-trigger — partially_enforced
+25. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+26. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+27. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
+28. [study_method] #118 surface-mapping-conditions — partially_enforced
+29. [study_method] #120 scope-home-and-multiplicity — partially_enforced
+30. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
+31. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -141,7 +149,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1030** registered module(s) — **561** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **885** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1034** registered module(s) — **565** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **889** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -161,6 +169,7 @@ _(none)_
 | add_adversarial_cluster_v1_20260905 | iba/app/migration/archive/add_adversarial_cluster_v1_20260905.py | ONE-OFF migration -- architecture correction, researcher verdict 2026-09-05: Strong's-code classification (negator/connective/party) belongs in cluster/cluster_strong, not cfg_lexical_code_class/configmaint. Creates cluster T4 'Adversarial' and reallocates H7854/G4567/G1228G from T2 to T4 (first of several tracked de-cfg-ification escalations). inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | add_concept_descriptions_2355_v1_20261101 | iba/app/migration/archive/add_concept_descriptions_2355_v1_20261101.py | ONE-OFF migration -- escalation #2355: description column on concept_domain, concept; run_id DEVMODE-2355-CONCEPT-DESCRIPTIONS-20261101. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | add_concise_verse_specific_rule_v1_20260921 | iba/app/migration/archive/add_concise_verse_specific_rule_v1_20260921.py | ONE-OFF migration -- escalation #1824: registers a new cfg_method_rule requiring concise, verse-specific obs_text for lexical.meaning/cluster.reading/cluster.answer, fixing the root cause of the same/broaden/new dedup never firing. Run once, then set inactive=1. |  |  |  |
+| add_config_modules_2354_v1_20261102 | iba/app/migration/archive/add_config_modules_2354_v1_20261102.py | ONE-OFF migration -- escalation #2354: modules ollama and surface_judge in enum config_module; run_id DEVMODE-2354-CONFIG-MODULES-20261102. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | add_elevation_candidate_question_v1_20260922 | iba/app/migration/archive/add_elevation_candidate_question_v1_20260922.py | ONE-OFF migration -- escalation #1836: registers M0.8.1 (T2/T3 elevation-candidate question) in wa_obs_question_catalogue. Run once (applied directly, script written for provenance), then set inactive=1. |  |  |  |
 | add_lexicon_header_pos_tags_setting_v1_20260910 | iba/app/migration/add_lexicon_header_pos_tags_setting_v1_20260910.py | One-off: seeds cfg_setting lexicon.header_pos_tags (22 bare POS-tag values lib/lexiconparse.py:is_header_only_line() matches against). Escalation #1668, 2026-09-10. Idempotent, safe to re-run. | ✓ | ✓ | one-off migration/tool that has already run; zero config reads is legitimate (#2107 triage E, approved under #2108) |
 | add_meaning_keywords_column_v1_20260921 | iba/app/migration/archive/add_meaning_keywords_column_v1_20260921.py | ONE-OFF migration -- escalation #1824: adds ib_observation.meaning_keywords for the new structured-key same/broaden/new matching path. Run once, then set inactive=1. |  |  |  |
@@ -169,6 +178,8 @@ _(none)_
 | add_party_human_angelic_clusters_v1_20260905 | iba/app/migration/archive/add_party_human_angelic_clusters_v1_20260905.py | ONE-OFF migration -- part of the cfg_lexical_code_class -> cluster de-cfg-ification (escalation #1500). Creates clusters T8 (Party-Human, 8 codes) and T9 (Party-Angelic, 5 codes incl. sub-entries). inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | add_ps_scripts_dispatch_through_run_py_rule | iba/app/migration/add_ps_scripts_dispatch_through_run_py_rule_20260821.py | One-off migration: escalation #8 -- adds cfg_behaviour_rule (development, every-active-ps-script-dispatches-through-run-py). | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3, same class as cfgload.py |
 | add_resolution_kind_column | iba/app/migration/add_resolution_kind_column_v1_20260822.py | One-off migration: escalation #798/#799 Stage 2 (schema half) -- adds the resolution_kind column to escalation/escalation_history, closing a gap left by Stage 1's config-only pass. | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3, same class as cfgload.py |
+| add_surface_group_2354_v1_20261101 | iba/app/migration/archive/add_surface_group_2354_v1_20261101.py | ONE-OFF migration -- escalation #2354: surface_group column on surface_subgroup; run_id DEVMODE-2354-SURFACE-GROUP-20261101. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| add_surface_group_qualifier_2354_v1_20261102 | iba/app/migration/archive/add_surface_group_qualifier_2354_v1_20261102.py | ONE-OFF migration -- escalation #2354: qualifier value of surface_group; run_id DEVMODE-2354-SURFACE-GROUP-QUALIFIER-20261102. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | add_verse_meta_status_column_v1_20260910 | iba/app/migration/add_verse_meta_status_column_v1_20260910.py | Adds verse_meta.status + verse_meta.status_changed_at (domain: cfg_enum verse_meta_status = exclude/citated/analysed; 'anchor' deliberately excluded, already verse_meta.is_passage_anchor). Idempotent, safe to re-run. Escalation #1661. | ✓ | ✓ | one-off migration/tool that has already run; zero config reads is legitimate (#2107 triage E, approved under #2108) |
 | add_verse_substantiation_questions_v1_20260921 | iba/app/migration/archive/add_verse_substantiation_questions_v1_20260921.py | ONE-OFF migration -- escalation #1806: adds 16 new word-level, characteristic-agnostic verse-reading questions (M0.7.1-16), one per Category A char-question. Run once, then set inactive=1. |  |  |  |
 | analysis_phase_1_2320_v1_20261027 | iba/app/migration/archive/analysis_phase_1_2320_v1_20261027.py | ONE-OFF migration -- escalation #2320: Analysis_phase_1 to specification v4; run_id DEVMODE-2320-ANALYSIS-PHASE-1-20261027. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -1152,6 +1163,7 @@ _(none)_
 | surface_map_steps_2293_v1_20261025 | iba/app/migration/archive/surface_map_steps_2293_v1_20261025.py | ONE-OFF migration -- escalation #2293 (#2286 U3): work package cluster-surface-map, its four steps, grants, conditions, settings, utilities and rule scopes; run_id DEVMODE-2293-SURFACE-MAP-STEPS-20261025. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_map_tail_ceiling_2298_v1_20261025 | iba/app/migration/archive/surface_map_tail_ceiling_2298_v1_20261025.py | ONE-OFF migration -- escalation #2298: cluster.surface_map.tail_max_output_tokens 16000 -> 32000 after the M18 pilot; run_id DEVMODE-2298-TAIL-CEILING-20261025. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_observe_2312_v1_20261027 | iba/app/migration/archive/surface_observe_2312_v1_20261027.py | ONE-OFF migration -- escalation #2312: steps 1 to 3 on the surface; run_id DEVMODE-2312-SURFACE-OBSERVE-20261027. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| surface_pair_verdict_2354_v1_20261102 | iba/app/migration/archive/surface_pair_verdict_2354_v1_20261102.py | ONE-OFF migration -- escalation #2354: table surface_pair_verdict and the ollama and surface_judge settings; run_id DEVMODE-2354-PAIR-VERDICT-20261102. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_subgroup_rules_2291_v1_20261025 | iba/app/migration/archive/surface_subgroup_rules_2291_v1_20261025.py | ONE-OFF migration -- escalation #2291 (#2286 U1): the #2286 work-unit rulings as six study_method behaviour rules with their scopes, cluster.surface_map.head_share and the ib_observation tag subgroup-settlement; run_id DEVMODE-2291-SURFACE-SUBGROUP-RULES-20261025. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_subgroup_schema_2292_v1_20261025 | iba/app/migration/archive/surface_subgroup_schema_2292_v1_20261025.py | ONE-OFF migration -- escalation #2292 (#2286 U2): table surface_subgroup, cluster_subgroup.kind, ib_node.verse_lexical_id, their enums; run_id DEVMODE-2292-SURFACE-SUBGROUP-SCHEMA-20261025. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surfacemap | iba/app/lib/surfacemap.py | surfacemap.py -- the surface mapping of an M cluster (#2293, #2286 U3): the pairs file, the session pass, the API tail and the check (behaviour rules B:117, B:118) | ✓ |  |  |
@@ -1359,6 +1371,13 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | notification | notification.paused_banner_passthrough | PAUSED — {message} | chained work packages' default PAUSED banner (build-passages, set-candidates) — overridden per work package by cfg_work_package.paused_message when set (e.g. new-word) |
 | notification | notification.step_result_line |   {0,-20} {1,-14} {2} | per-step result line format (PowerShell -f) — step/path/message, colour by outcome |
 | notification | notification.stopped_banner | STOPPED — {message} | chained work packages' STOPPED banner — uniform across build-passages/set-candidates/new-word |
+| ollama | ollama.host | http://192.168.83.114:11434 | the Ollama server that judges the surfaces (#2354); address changed from .113 on 2026-11-02; Ubuntu host zeta-assist, 8 cores, 76 GB RAM, no GPU |
+| ollama | ollama.keep_alive | 30m | how long the server keeps the model in memory after a call |
+| ollama | ollama.max_codes_per_call | 8 | most codes of one surface judged in one call; a surface with more runs in several calls |
+| ollama | ollama.model | qwen3:30b | the model that judges the surfaces; chosen 2026-11-02 after a timing test (working log findings 26, 27) |
+| ollama | ollama.num_ctx | 4096 | context window of one call, in tokens (the prompt and the answer of one surface fit) |
+| ollama | ollama.temperature | 0 | 0 so that the same question gives the same answer |
+| ollama | ollama.timeout_seconds | 900 | seconds to wait for one call (CPU-only server, 23 to 29 s per surface measured; the first call after a load takes about 2 minutes) |
 | open_item | open_item.max_verses | 200 | an open item's target holds at most this many verses; a wider one is refused, to be split into separate items, one purpose each (researcher 2026-10-23, #2236 D3) |
 | open_item | open_item.output_dir | outputs/open-items | where Open-Item.ps1 -Action Review writes the stragglers report (#2236) |
 | open_item | open_item.review_age_days | 60 | Open-Item.ps1 -Action Review lists worded items older than this as stragglers to deal with (#2236 D4) |
@@ -1438,6 +1457,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | step | step.walk_max_iter | 400 | forward-walk safety bound |
 | step | step.walk_start | Gen.1.1 | forward-walk lower bound |
 | strand_reading | strand_reading.output_dir | outputs/strand-reading | where Strand-Reading.ps1 writes each strand's context, gather and account files, one folder per strand (escalation #2172) |
+| surface_judge | surface_judge.batch_dir | outputs/concept-mapping/surface-group | folder of the batch files of the surface judging (#2354): each batch is written here before anything is loaded to surface_pair_verdict |
 | table_export | table_export.output_dir | {'iba': 'Workflow/schema/iba', 'bible_research': 'Workflow/schema/bible_research'} | where table.export writes its CSVs |
 | validation | lexical.readiness_report_path | research/discovery/lexical-readiness.md | where lexical.readiness persists its findings -- #1606/#1706 Phase A |
 | validation | purge.audit_report_path | research/discovery/purge-audit.md | where purge.audit persists its findings -- escalation #1766 |
@@ -2105,7 +2125,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | lexical.run | verse_lexical, verse_lexical_note |
 | lexicon.parse | strong_lsj_parsed, strong_meaning_parsed, strong_mounce_parsed |
 | lexicon.related | strong_related |
-| migration | candidate_seed, cluster, cluster_strong, concept, concept_domain, concept_subgroup, lemma_inventory, narrative_chapter, narrative_citation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, narrative_index_note, narrative_passage, narrative_section, narrative_update, narrative_update_ref, span, strong, strong_lexicon, strong_lsj_parsed, strong_meaning_parsed, strong_meaning_tree, strong_mounce_parsed, strong_related, strong_sense, word_registry, word_strong |
+| migration | candidate_seed, cluster, cluster_strong, concept, concept_domain, concept_subgroup, lemma_inventory, narrative_chapter, narrative_citation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, narrative_index_note, narrative_passage, narrative_section, narrative_update, narrative_update_ref, span, strong, strong_lexicon, strong_lsj_parsed, strong_meaning_parsed, strong_meaning_tree, strong_mounce_parsed, strong_related, strong_sense, surface_pair_verdict, word_registry, word_strong |
 | narrative_register.add_chapter | narrative_chapter, narrative_claim_change, narrative_section, narrative_update |
 | narrative_register.add_claim | narrative_claim, narrative_claim_change, narrative_claim_source |
 | narrative_register.edit | narrative_claim, narrative_claim_change, narrative_claim_source |
@@ -3870,6 +3890,7 @@ dedup key: `cluster_code, strong, surface`
 | updated_at | TEXT |  |  |  |  | when last changed (ISO-8601 UTC) | escalation #2292 (#2286 U2; outputs/escalation/2286-build-plan-v4-20261025.md) |
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2292 (#2286 U2; outputs/escalation/2286-build-plan-v4-20261025.md) |
 | deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the pair is no longer live | escalation #2292 (#2286 U2; outputs/escalation/2286-build-plan-v4-20261025.md) |
+| surface_group | TEXT |  |  |  |  | the group of the pair for the concepts: behaviour, inner_being_state, being, qualifier (a word that describes something and is not itself a behaviour, state or being: it says where, when, how much or what kind; the use is named by the qualifier subgroup the pair sits in), or not_allocated (held back for the researcher to inspect in detail). The kinds of being are not values here: they are concept domains. Provisional and inferential (B:4) until the researcher confirms; NULL until a step writes it | escalation #2354 (researcher, chat 2026-11-01; outputs/escalation/2354-concepts-retry-plan-v3-20261101.md) |
 
 ### prior_capture_line
 _one row per document line that names a verse and per observation it gave (one row for a line that gave none)_ — #2305: the answer to every line of a study document that names a verse, kept with the capture run so what was taken from each document, and why the rest was passed over, can be checked line by line (design sec 4). captured and already recorded rows name the observation; a not an observation row names its reason
@@ -3934,6 +3955,25 @@ dedup key: `cluster_subgroup_id`
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
 | deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the row is no longer live | escalation #2339 (researcher: Build v1 tables, chat 2026-10-31; iba/docs/concept-mapping-spec-v1-20261031.json) |
 
+### surface_pair_verdict
+_one row per (strong, surface) pair of the corpus_ — #2354: the verdict on every (Strong's code, English surface) pair of verse_lexical, made once per distinct pair (not per occurrence). The home of the surface group of the pairs that have no surface_subgroup row; surface_subgroup.surface_group is filled from it for the concept pairs. pair_kind says how far the surface can be trusted as the code's own (multi-code spans carry the span's English, BUILD 428). All verdicts inferential (B:4) until the researcher confirms
+dedup key: `strong, surface`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| strong | TEXT |  | ✓ |  | strong.strongNumber | the Strong's code of the pair, with its suffix as in verse_lexical.strong | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| surface | TEXT |  | ✓ |  |  | the English rendering of the pair, lower-cased, as in verse_lexical.surface | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| pair_kind | TEXT |  | ✓ |  |  | how far the surface is the code's own, read from verse_lexical: particle (the code is H9xxx; the surface is the span's English, not trusted), own (the code has an occurrence in a span with a single non-particle code), span_shared (only in spans with two or more non-particle codes, so the surface is the unit's English); BUILD 428 and the 2354 working log finding 28 | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| surface_group | TEXT |  | ✓ |  |  | the group of the pair: behaviour, inner_being_state, being, qualifier or not_allocated (held back for the researcher to inspect). Provisional and inferential (B:4) until the researcher confirms. | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| use | TEXT |  |  |  |  | for a qualifier only: the use that makes the word one (place, time, quantity, quality, manner, reason, negation, pronoun, article, conjunction, preposition, particle, other); NULL for any other group. A pronoun is a qualifier of use pronoun: who it names is resolved when the verse is read (researcher, 2026-11-02) | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| reason | TEXT |  |  |  |  | one line on why, kept for a qualifier and for not_allocated; NULL otherwise | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| judged_by | TEXT |  | ✓ |  |  | what decided it: rule:<name> (a rule on the code) or the Ollama model name with its tag, as in ollama.model at the time | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| run_id | TEXT |  |  |  |  | the run that wrote the row | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| created_at | TEXT |  | ✓ |  |  | when (ISO-8601 UTC) | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| updated_at | TEXT |  |  |  |  | when last changed (ISO-8601 UTC) | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+| deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the row is no longer live | escalation #2354 (plan v5 outputs/escalation/2354-concepts-retry-plan-v5-20261102.md; researcher, chat 2026-11-02: use the Ollama server, details left to my judgement) |
+
 <a id="11-enums"></a>
 ## 11. Enums
 
@@ -3951,7 +3991,7 @@ dedup key: `cluster_subgroup_id`
 | cluster_subgroup.kind | group, qualifier, not_this_sense, anomaly |
 | cluster_subgroup.status | allocated, ready_for_reading, ready_for_answer, answer_complete, completed, re_read_needed |
 | compliance_rule_status | engaged, not engaged |
-| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit, lexical, strand_reading, verse_scope, reading_index, verse_collate, open_item, reading, prior_capture, node_resolve |
+| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit, lexical, strand_reading, verse_scope, reading_index, verse_collate, open_item, reading, prior_capture, node_resolve, ollama, surface_judge |
 | control_home_type | cfg_table, db_table, document, folder, harness |
 | control_read_when | always, session_start, when_invoked, when_needed, history_only |
 | escalation_answer | approve, reject, revise |
@@ -4026,8 +4066,12 @@ dedup key: `cluster_subgroup_id`
 | run_state | running, paused, done, failed |
 | step_kind | operations, utility |
 | study_state | active, on_hold |
+| surface_pair_verdict.pair_kind | particle, own, span_shared |
+| surface_pair_verdict.surface_group | behaviour, inner_being_state, being, qualifier, not_allocated |
+| surface_pair_verdict.use | place, time, quantity, quality, manner, reason, negation, pronoun, article, conjunction, preposition, particle, other |
 | surface_subgroup.allocated_by | inherited, session, api, reading, manual |
 | surface_subgroup.status | provisional, moved |
+| surface_subgroup.surface_group | behaviour, inner_being_state, being, qualifier, not_allocated |
 | table_category | rule, data, log |
 | table_purpose_kind | purpose, success |
 | verse_meta_status | exclude, citated, analysed |

@@ -24,3 +24,10 @@ inner join concept_domain d on c.domain_id = d.id
 inner join cluster_subgroup cs on cg.cluster_subgroup_id = cs.id
 inner join surface_subgroup s on cs.id = s.cluster_subgroup_id
 ;
+
+select * from concept_domain;
+
+select * from concept;
+select * from cluster_subgroup;
+select * from surface_subgroup;
+select * from concept_subgroup; 
