@@ -31,4 +31,6 @@ Declared Developer Mode (compliance file passes, marker set). No build was done.
 - #2357 (Researcher): config advisories, unchanged.
 
 ## 6. Git
-_(written after the first commit)_
+- Branch: `main`.
+- Commit: `0f1d432d658b80daca888ad2caeecf8d73d4503d` "session 20261102: Developer Mode declaration, #2354 judging discussion recorded (v16-v20), #2358 resolved, session log, compliance file and close reports".
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git   ea36b2ed..0f1d432d  main -> main`.
