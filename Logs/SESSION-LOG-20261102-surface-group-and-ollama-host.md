@@ -39,3 +39,4 @@ Entered Developer Mode to work on #2354 (Reset narrative, the concepts retry at 
 - #2354 (Researcher): the Ollama server is being reconfigured by the researcher (CPUs and memory); the address in `ollama.host` may change.
 
 ## 6. Git
+Branch: main. First commit: 3e591fe9, `session 20261102: surface group qualifier value (#2354), pair verdict table and Ollama settings, judging library and pilot, BUILD 443-446, working log, plan v5, session log, compliance file and close reports`. The first push failed with `fatal: unable to access 'https://github.com/lcilliers/Bible_Projects.git/': Could not resolve host: github.com`; the retry gave `To https://github.com/lcilliers/Bible_Projects.git` / `6eb805b8..3e591fe9  main -> main`. The researcher's own edit to `scripts/SQLite/IBA_DB/explore-concepts-1.sqlite3-query` (extra select statements) was included in the first commit.
