@@ -56,4 +56,5 @@ Code and config:
 - #2357 (config advisories) remains with the Researcher.
 
 ## 6. Git
-(filled in after the commit)
+Branch: main. Commit 4cadd943f5bd54ccd41bc3baf8555e3389f12979, `session 20261104: concept building from surface assessment (#2359), base-form tool and run (BUILD 455), surfaces-and-bases workbook, repoint v4, match controls v1-v3, families raised (#2360), session log, compliance file and close reports`.
+Push output: `To https://github.com/lcilliers/Bible_Projects.git   fd61f59e..4cadd943  main -> main`.
