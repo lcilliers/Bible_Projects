@@ -937,6 +937,23 @@ iba\app\ps\Surface-Judge.ps1 -Action Status -Batch first-split-v1-20261102
 
 ---
 
+### 8.9 The base form of a surface word (`iba/app/ps/Surface-Base.ps1`)
+
+For the words the word-structure methods leave unmatched. Each word goes to the Ollama server on its own (no verse, no Hebrew or Greek code, no neighbouring word) and comes back as a base word and its relation to it: `inflection` (tense, plural, participle, comparative, irregular forms), `derivation` (a suffix or prefix that keeps the core meaning) or `none` (no base of the same root meaning, the base is then the word itself). The rule of similar root meaning is in the question (`surface_judge.base_prompt`). Every answer is inferential until the researcher confirms it (escalation #2359). **Nothing is written to `iba.db`**: the answers are appended, one JSON line per word as it finishes, to `<surface_judge.batch_dir>/<Batch>.jsonl`.
+
+The words are listed in `<surface_judge.batch_dir>/<Batch>-input.json` as `{"words": ["sought", "wept"]}` (the end of the name is `surface_judge.base_input_suffix`).
+
+```powershell
+iba\app\ps\Surface-Base.ps1 -Action Run -Batch base-form-pilot-v1-20261104 -Limit 20   # a pilot
+iba\app\ps\Surface-Base.ps1 -Action Run -Batch base-form-v1-20261104                   # the whole list
+iba\app\ps\Surface-Base.ps1 -Action Status -Batch base-form-v1-20261104
+```
+
+- **-Batch** is lower-case words joined by hyphens, then `-v` and a number, then `-yyyymmdd`.
+- **Run** asks for the words not yet answered and prints each as it finishes. `-Limit n` stops after n words. Resumable: run it again with the same `-Batch`. A word with no usable answer after one retry is recorded with no relation and tried again on the next run. Before the first word it checks the server (answers within `ollama.connect_timeout_seconds`, has `ollama.model`) and refuses at once if not; after `surface_judge.max_consecutive_failures` words in a row with no usable answer it halts (condition `halted`); what was answered is kept.
+- A run of more than a few minutes (the whole list is about two hours) is started outside the Claude session, as in section 8.8 (rule B:125), with its output in a log under `Logs/`.
+- **Status** shows answered per relation, failed and left.
+
 ## 9. Reports and exports
 
 ```powershell

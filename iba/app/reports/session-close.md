@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-04T05:35:43Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-04T18:03:30Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `7631fc39-0dd9-4993-9a5b-cdc06793adce` (CLAUDE_CODE_SESSION_ID); started 2026-11-03T04:55:15Z; window base commit `1fc77d4a68cf46b57892496466dceb4c37efd04a`
-- compliance file: `Logs/compliance/COMPLIANCE-20261103-7631fc39.md`; session log: `Logs/SESSION-LOG-20261104-surface-judging-cycle-and-long-job-rule.md`
-- **open findings: 0**; cleared by disposition: 7
+- session: `5dc90923-c91d-49ea-bb95-5a05766d55a3` (CLAUDE_CODE_SESSION_ID); started 2026-11-04T06:01:48Z; window base commit `fd61f59ec440754f86e15250744573b1cfb4a5bc`
+- compliance file: `Logs/compliance/COMPLIANCE-20261104-5dc90923.md`; session log: `Logs/SESSION-LOG-20261104-surface-base-forms-and-families-start.md`
+- **open findings: 0**; cleared by disposition: 8
 
 
 ## Contents
@@ -41,20 +41,24 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:6c14c93e`: researcher message 2026-11-03T04:56 is too short to be matched; name where it is recorded: "Yes, bypassed" -- disposition: recorded in #2354 v37
-- cleared `SC3:17df67df`: researcher message 2026-11-03T07:01 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC3:078717b5`: researcher message 2026-11-04T09:02 is too short to be matched; name where it is recorded: "Change method" -- disposition: recorded in #2359 v15 (message 4)
+- cleared `SC3:9ed22ea1`: researcher message 2026-11-04T14:57 is too short to be matched; name where it is recorded: "Approve, run pilot" -- disposition: recorded in #2359 v15 (message 17, approval of the pilot, in the context of the base-form step)
+- cleared `SC3:12cd2dfc`: researcher message 2026-11-04T15:11 is too short to be matched; name where it is recorded: "Amend, then run" -- disposition: recorded in #2359 v15 (message 18, amendment approval, in the context of the base-form step)
+- cleared `SC3:8d0c43df`: researcher message 2026-11-04T16:12 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
-<tools-" -- disposition: no record needed: system-generated summary of the earlier conversation, not a researcher message
-- cleared `SC3:6720514c`: researcher message 2026-11-03T07:27 is too short to be matched; name where it is recorded: "sounds good." -- disposition: recorded in #2354 v37
-- cleared `SC3:e45fe6c6`: researcher message 2026-11-03T17:00 is too short to be matched; name where it is recorded: "prepare report" -- disposition: recorded in #2354 v37
-- cleared `SC3:427932dd`: researcher message 2026-11-04T05:16 is too short to be matched; name where it is recorded: "Resume now" -- disposition: recorded in #2354 v37
+
+Summar" -- disposition: no record needed: this is the harness's context-compaction summary, not a message the researcher wrote
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:17df67df`: researcher message 2026-11-03T07:01 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC4b:99ec74a0`: researcher message 2026-11-04T08:59 holds, defers or asks to check something; name its register item: "you can use the data behaviour and state groups of surfaces to model our next step. work backwards from the surfaces, show to classification against each surfac" -- disposition: in register #2359 (the second perspective was dropped by the researcher's change of direction, recorded in v15 message 3)
+- cleared `SC4b:6908f0b0`: researcher message 2026-11-04T09:59 holds, defers or asks to check something; name its register item: "I checked the excel, and there are many words that is related to a cluster or sub cluster description that are not workable, and does not aid the understanding " -- disposition: not held: a change of method, acted on at once and recorded in #2359 v15 message 8
+- cleared `SC4b:8d0c43df`: researcher message 2026-11-04T16:12 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
-<tools-" -- disposition: not held: system-generated summary of the earlier conversation, not a researcher message
+
+Summar" -- disposition: not held: the context-compaction summary, not a researcher message
+- cleared `SC4b:ec9eb20a`: researcher message 2026-11-04T18:01 holds, defers or asks to check something; name its register item: "yes, session close with proper recording and indexing of all the result outputs so it can be tracked later" -- disposition: not held: this is the session-close request, carried out in this close
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -91,4 +95,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Surface-Judge.ps1_-Action_Progress`: Surface-Judge.ps1 -Action Progress failed 3 times this session: Blocked: Start-Sleep 35 followed by: .\iba\app\ps\Surface-Judge.ps1 -Action Progress -Batch cycle-check-v1-20261103. To ; Blocked: Start-Sleep 90 followed by: .\iba\app\ps\Surface-Judge.ps1 -Action Progress -Batch first-split-v3-20261103; Get; work package : surface-judge -- disposition: fixed: the database lock was fixed in iba/app/handlers/surfacejudge.py (commit before the long work, BUILD 452); the two blocked calls were the harness refusing a foreground sleep, avoided since
+_no finding_

@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-04T05:27:57Z |
+| generated_at | 2026-11-04T15:08:52Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -142,7 +142,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1045** registered module(s) — **574** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **897** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1049** registered module(s) — **576** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **898** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -155,6 +155,7 @@ _(none)_
 | Reading-Index.ps1 | iba/app/ps/Reading-Index.ps1 | PS entry point for the cluster reading index (escalation #2228); dispatches through run.py, work package reading-index. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Reading.ps1 | iba/app/ps/Reading.ps1 | PS entry point for the reading process (escalation #2228); every step dispatches through run.py, work package reading. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Strand-Reading.ps1 | iba/app/ps/archive/Strand-Reading.ps1 | PS entry point for the reading process (escalation #2172); every step dispatches through run.py, work package strand-reading. RETIRED 2026-10-23 (#2228 D-a): superseded by the reading process (Reading.ps1). |  | ✓ | thin wrapper; config is read by the handlers through run.py |
+| Surface-Base.ps1 | iba/app/ps/Surface-Base.ps1 | PS entry point for the base form of a surface word (escalation #2359): Status, Run; dispatches through run.py, work package surface-base. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Surface-Judge.ps1 | iba/app/ps/Surface-Judge.ps1 | PS entry point for the first split of the concept surfaces (escalation #2354): Status, Run, Cycle, Progress, Stop; dispatches through run.py, work package surface-judge. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Surface-Map.ps1 | iba/app/ps/Surface-Map.ps1 | PS entry point of work package cluster-surface-map (#2293): -Step Pairs\|Apply\|Tail\|Check -Cluster <M code> [-File] [-Live] | ✓ | ✓ | PS entry point: dispatches through run.py; its settings are the steps' own |
 | Verse-Collate.ps1 | iba/app/ps/Verse-Collate.ps1 | PS entry point for collating a scope (escalation #2228); dispatches through run.py, work package verse-collate. | ✓ | ✓ | thin wrapper; config is read by the handler through run.py |
@@ -458,6 +459,7 @@ _(none)_
 | handlers_reading | iba/app/handlers/reading.py | handlers/reading.py -- the run.py handlers for work package reading (one per Reading.ps1 step); the logic is in lib/reading.py (escalation #2228). | ✓ | ✓ | thin dispatcher: every step's logic and every config read is in iba/app/lib/reading.py (its folder is resolved there by out_dir, #2328); the handler only checks the caller, opens the write grants and routes a refusal |
 | handlers_readingindex | iba/app/handlers/readingindex.py | handlers/readingindex.py -- the run.py handlers for work package reading-index (Reading-Index.ps1 -Step Build/Report); the logic is in lib/readingindex.py (escalation #2228). | ✓ |  |  |
 | handlers_strandreading | iba/app/handlers/archive/strandreading.py | handlers/strandreading.py -- the run.py handlers for work package strand-reading (one per Strand-Reading.ps1 step); the logic is in lib/strandreading.py (escalation #2172). RETIRED 2026-10-23 (#2228 D-a): superseded by the reading process (Reading.ps1). |  |  |  |
+| handlers_surfacebase | iba/app/handlers/surfacebase.py | handlers/surfacebase.py -- the run.py handlers for work package surface-base (Surface-Base.ps1, escalation #2359). | ✓ |  |  |
 | handlers_surfacejudge | iba/app/handlers/surfacejudge.py | handlers/surfacejudge.py -- the run.py handlers for work package surface-judge (Surface-Judge.ps1, escalation #2354). | ✓ |  |  |
 | handlers_surfacemap | iba/app/handlers/surfacemap.py | surfacemap handler -- work package cluster-surface-map: steps cluster.surface_pairs, cluster.surface_apply, cluster.surface_tail, cluster.surface_check (#2293) | ✓ |  |  |
 | handlers_versecollate | iba/app/handlers/versecollate.py | handlers/versecollate.py -- the run.py handler for work package verse-collate (Verse-Collate.ps1); writes the JSON and .md under verse_collate.output_dir; the logic is in lib/versecollate.py (escalation #2228). | ✓ |  |  |
@@ -1158,6 +1160,7 @@ _(none)_
 | study_active_2228_v1_20261023 | iba/app/migration/archive/study_active_2228_v1_20261023.py | ONE-OFF migration -- the study re-opened on the researcher's instruction (2026-10-23, after #2228): behaviour.study_state active, governance.study_status; run_id DEVMODE-2228-STUDY-ACTIVE-20261023. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | style_guide_2272_v1_20261024 | iba/app/migration/archive/style_guide_2272_v1_20261024.py | ONE-OFF migration -- escalation #2272 (#2268 W-2): the narrative style guide as method rules RN-08 to RN-15 and four quality checks; its setting retired; run_id DEVMODE-2272-STYLE-GUIDE-20261024. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | subgroupgenerate | iba/app/lib/subgroupgenerate.py | subgroupgenerate.py — the LLM-calling half of `cluster.subgroup` (process b, the `char-subgroup` | ✓ |  |  |
+| surface_base_2359_v1_20261104 | iba/app/migration/archive/surface_base_2359_v1_20261104.py | ONE-OFF migration -- escalation #2359: registers the surface-base tool and its settings; run_id DEVMODE-2359-SURFACE-BASE-20261104. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_judge_cycle_2354_v1_20261103 | iba/app/migration/archive/surface_judge_cycle_2354_v1_20261103.py | ONE-OFF migration -- escalation #2354: the surface judging cycle (settings, steps cycle, progress, stop); run_id DEVMODE-2354-SURFACE-JUDGE-CYCLE-20261103. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_judge_preflight_2354_v1_20261103 | iba/app/migration/archive/surface_judge_preflight_2354_v1_20261103.py | ONE-OFF migration -- escalation #2354: the server check before a surface judging run; run_id DEVMODE-2354-SURFACE-JUDGE-PREFLIGHT-20261103. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_judge_prompt_2354_v2_20261102 | iba/app/migration/archive/surface_judge_prompt_2354_v2_20261102.py | ONE-OFF migration -- escalation #2354: the surface judging prompt, v2; run_id DEVMODE-2354-SURFACE-JUDGE-PROMPT-20261102. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -1169,6 +1172,7 @@ _(none)_
 | surface_pair_verdict_2354_v1_20261102 | iba/app/migration/archive/surface_pair_verdict_2354_v1_20261102.py | ONE-OFF migration -- escalation #2354: table surface_pair_verdict and the ollama and surface_judge settings; run_id DEVMODE-2354-PAIR-VERDICT-20261102. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_subgroup_rules_2291_v1_20261025 | iba/app/migration/archive/surface_subgroup_rules_2291_v1_20261025.py | ONE-OFF migration -- escalation #2291 (#2286 U1): the #2286 work-unit rulings as six study_method behaviour rules with their scopes, cluster.surface_map.head_share and the ib_observation tag subgroup-settlement; run_id DEVMODE-2291-SURFACE-SUBGROUP-RULES-20261025. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_subgroup_schema_2292_v1_20261025 | iba/app/migration/archive/surface_subgroup_schema_2292_v1_20261025.py | ONE-OFF migration -- escalation #2292 (#2286 U2): table surface_subgroup, cluster_subgroup.kind, ib_node.verse_lexical_id, their enums; run_id DEVMODE-2292-SURFACE-SUBGROUP-SCHEMA-20261025. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| surfacebase | iba/app/lib/surfacebase.py | surfacebase.py -- the base form of a surface word, asked of the Ollama server, one call per word, keeping the rule of similar root meaning (escalation #2359). | ✓ |  |  |
 | surfacejudge | iba/app/lib/surfacejudge.py | surfacejudge.py -- the first split of the concept surfaces into behaviour, state, being or other by the Ollama server, one call per surface (escalation #2354). | ✓ |  |  |
 | surfacemap | iba/app/lib/surfacemap.py | surfacemap.py -- the surface mapping of an M cluster (#2293, #2286 U3): the pairs file, the session pass, the API tail and the check (behaviour rules B:117, B:118) | ✓ |  |  |
 | synergise_rule_2228_v1_20261023 | iba/app/migration/archive/synergise_rule_2228_v1_20261023.py | ONE-OFF migration -- escalation #2228: cfg_behaviour_rule synergise-from-tables-not-memory (general, study_active); run_id DEVMODE-2228-SYNERGISE-RULE-20261023. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -1465,6 +1469,10 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | step | step.walk_max_iter | 400 | forward-walk safety bound |
 | step | step.walk_start | Gen.1.1 | forward-walk lower bound |
 | strand_reading | strand_reading.output_dir | outputs/strand-reading | where Strand-Reading.ps1 writes each strand's context, gather and account files, one folder per strand (escalation #2172) |
+| surface_judge | surface_judge.base_form_pattern | [a-z]+(-[a-z]+)* | the shape of a usable base word in the base-form step (#2359): a regular expression the whole base must match (lower-case letters, hyphens between parts) |
+| surface_judge | surface_judge.base_input_suffix | -input.json | the end of the input list's file name in the base-form step (#2359): the words are in <surface_judge.batch_dir>/<Batch><this suffix> as {"words": [...]} |
+| surface_judge | surface_judge.base_prompt | You give the base form of one English word as the ESV Bible uses it, for a study of how Scripture describes the human inner being. English: "{surface}"  Give a base word only when the English is an inflected or derived form of it AND the two share the same root meaning. - Inflected forms count: tense, plural, participle, comparative, including irregular ones (sought: seek; wept: weep; grew: grow). - Derived forms count only when the core meaning stays the same (wonderful: wonder). - Not the same root meaning, so give the word itself: an opposite (unfaithful, faithless), a different word that only looks similar (lying is not lye), a word whose meaning has moved away from its base, and a word with no base. Answer JSON only: {"base":"...","relation":"inflection\|derivation\|none","reason":null} "reason" only when relation is none and the word looks derived: under 10 words (else null). | the question put to the server for each word in the base-form step (#2359); {surface} is replaced by the English word; the answer is JSON with base, relation and reason |
+| surface_judge | surface_judge.base_relations | ['inflection', 'derivation', 'none'] | the relations the model may answer in the base-form step (#2359): inflection (tense, plural, participle, comparative, irregular forms), derivation (a suffix or prefix that keeps the core meaning), none (no base of the same root meaning) |
 | surface_judge | surface_judge.batch_dir | outputs/concept-mapping/surface-group | folder of the batch files of the surface judging (#2354): each batch is written here before anything is loaded to surface_pair_verdict |
 | surface_judge | surface_judge.cycle_cooldown_minutes | 10 | how long the surface judging cycle rests between two work periods, in minutes (#2354), so the server's CPUs cool; 0 means no rest. A starting value, set by the researcher |
 | surface_judge | surface_judge.cycle_halt_wait_minutes | 10 | how long the surface judging cycle waits before trying again after a work period that ended with the server or the ssh tunnel not answering, in minutes (#2354) |
@@ -1893,6 +1901,12 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- | --- |
 | 0 | report.strong_verse | iba.app.handlers.reports:strong_verse_report | word | on-demand verse restatement for one Strongs reference (verse_lexical.strong exact match, whole Bible) in the context of a registry word -- inline-annotated, exact-variant senses only, combined-tag/empty-surface spans and unresolved collisions explicitly handled, never silently guessed |
 
+**surface-base** — runs over `none` · script `iba/app/ps/Surface-Base.ps1`
+| # | step | handler | scope | does |
+| --- | --- | --- | --- | --- |
+| 0 | surface_base.status | iba.app.handlers.surfacebase:status | none | how far a batch file has got against its input list of words (read-only); -Batch -- see lib/surfacebase.py (escalation #2359) |
+| 1 | surface_base.run | iba.app.handlers.surfacebase:run | none | ask the Ollama server for the base form of the words not yet answered, appending one JSON line per word to the batch file; -Batch, -Limit; resumable; writes no table -- see lib/surfacebase.py (escalation #2359) |
+
 **surface-judge** — runs over `none` · script `iba/app/ps/Surface-Judge.ps1`
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
@@ -1967,7 +1981,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 <a id="7-on-fail-condition-path-the-fork-rules"></a>
 ## 7. on_fail — condition -> path (the fork rules)
 
-**20 of 148 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**20 of 151 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -2109,6 +2123,9 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | strand_reading.map | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | strand_reading.record | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | strand_reading.rewrite | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| surface_base.run | halted | report-continue | halted, the batch file keeps what was answered -- the set number of words in a row got no usable answer (the server or the ssh tunnel stopped answering); fix the cause and run again with the same -Batch, it resumes (a usage outcome, not recorded as an escalation) |
+| surface_base.run | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| surface_base.status | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | surface_judge.cycle | halted | report-continue | halted, the batch file keeps what was judged -- the cycle made no progress for the set number of work periods in a row (the server or the ssh tunnel did not answer); fix the cause and run Cycle again with the same -Batch, it resumes (a usage outcome, not recorded as an escalation) |
 | surface_judge.cycle | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | surface_judge.progress | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
