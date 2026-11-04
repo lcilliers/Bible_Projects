@@ -32,4 +32,6 @@ Developer Mode on #2354 (Reset narrative, the first split of the concept surface
 - The running cycle: if Windows sleeps it ends; resume with the command in iba/app/USER-GUIDE.md section 8.8. #2357 (config advisories) remains with the Researcher.
 
 ## 6. Git
-(written after the commit)
+Branch: main. Commit 56abe80f853fb01285973538f99a7e5edefc93ff, `session 20261104: surface judging cycle and progress, ssh tunnel, rule B:125 for long-running jobs, #2354 record (v34-v37), BUILD 450-454, exports and progress report, session log, compliance file and close reports`.
+Push output: `To https://github.com/lcilliers/Bible_Projects.git   1fc77d4a..56abe80f  main -> main`.
+The batch file `first-split-v3-20261103.jsonl` and its progress file were committed as they stood: the cycle was still running outside the session and keeps appending, so the next session commits them again.
