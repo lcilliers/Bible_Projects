@@ -853,6 +853,88 @@ iba\app\ps\Concept-Edit.ps1 -Action SetDeleted -Id 15 -Deleted 1      # 0 restor
 - Every change is stamped with the run id and the time (`run_id`, `updated_at`); `-By Claude|Researcher` names who
   made it (default Claude). A refusal writes nothing and is not an escalation.
 
+### 8.8 The first split of the concept surfaces (`iba/app/ps/Surface-Judge.ps1`)
+
+The list is the distinct `surface` of the live rows of `surface_subgroup` (the surfaces the concepts are built on;
+rows with a blank surface are left out). Each surface goes to the Ollama server on its own, with no verse, no Hebrew
+or Greek code and no neighbouring word, and comes back as one of `behaviour`, `inner_being_state`, `being` or
+`other`. A surface goes to the first three only when it definitely belongs there, otherwise to `other`, the list
+that is cleaned up in a later pass (escalation #2354). Every answer is inferential until the researcher confirms it.
+**Nothing is written to `iba.db`**: the answers are appended, one JSON line per surface as it finishes, to
+`<surface_judge.batch_dir>/<Batch>.jsonl`.
+
+```powershell
+iba\app\ps\Surface-Judge.ps1 -Action Run -Batch first-split-v1-20261102 -Limit 20     # a pilot of 20
+iba\app\ps\Surface-Judge.ps1 -Action Run -Batch first-split-v1-20261102               # the rest of the list
+iba\app\ps\Surface-Judge.ps1 -Action Status -Batch first-split-v1-20261102
+```
+
+- **-Batch** is the batch file's name: lower-case words joined by hyphens, then `-v` and a number, then `-yyyymmdd`.
+- **Run** judges the surfaces not yet judged, most frequent first, and prints each as it finishes. `-Limit n` stops
+  after n surfaces. It is resumable: run it again with the same `-Batch` and it carries on; a surface that failed
+  (no usable answer after one retry) is recorded with no group and tried again on the next run. Ctrl+C stops after
+  the surface in hand has been written. **Before the first surface** the tool checks the server (it must answer
+  within `ollama.connect_timeout_seconds` and have the model in `ollama.model`); if not, it refuses at once, names
+  the address and writes nothing. If `surface_judge.max_consecutive_failures` (3) surfaces in a row get no usable
+  answer, the run halts (condition `halted`) and says so; what was judged is kept.
+- **The whole list, unattended: `Cycle`.** It runs for hours, so it is started outside the Claude session (see
+  **Running a long job** below), never in a Claude terminal tab. The commands:
+
+  ```powershell
+  iba\app\ps\Surface-Judge.ps1 -Action Cycle    -Batch first-split-v3-20261103   # start, or resume after any stop
+  iba\app\ps\Surface-Judge.ps1 -Action Progress -Batch first-split-v3-20261103   # from any other terminal, any time
+  iba\app\ps\Surface-Judge.ps1 -Action Stop     -Batch first-split-v3-20261103   # end it after the surface in hand
+  ```
+
+  It judges in **work periods** of `surface_judge.cycle_work_minutes` (60), opening the ssh tunnel for the period and
+  closing it at the end, then **rests** for `surface_judge.cycle_cooldown_minutes` (10) so the server's CPUs cool, and
+  repeats until every surface has an answer. If a period ends with the server or the tunnel not answering (or
+  surfaces that keep failing) it waits `surface_judge.cycle_halt_wait_minutes` (10) and tries again; after
+  `surface_judge.cycle_max_halts_in_a_row` (3) periods in a row with no progress it ends (state `halted`, condition
+  `halted`; fix the cause and run `Cycle` again). The machine is kept from sleeping while it runs. The four timings
+  are settings: change one by `configmaint`, no code.
+- **Progress** reads `<Batch>.progress.json`, which the cycle rewrites after every surface and every 30 s of a rest:
+  state (`running`, `cooling`, `waiting_after_halt`, `stopped`, `halted`, `finished`), judged per group, failed, left,
+  the mean seconds per surface over the last 50, when work resumes, and an **estimated finish** (work left at that
+  mean plus the rests). It says **NOT running** when the file has not moved for longer than a surface can take
+  (the cycle was interrupted, for example by the machine sleeping or the Claude app closing). **Stop** writes `<Batch>.stop`; the cycle ends
+  after the surface in hand (or within 5 s of a rest) with state `stopped`. Ctrl+C in the cycle's terminal does the
+  same. **Restart** is `Cycle` again with the same `-Batch`: it clears the stop flag, keeps everything judged and
+  carries on. A second `Cycle` on a batch whose progress is fresh is refused.
+- **Running a long job (rule B:125, `long-running-job-starts-outside-the-session`).** A job that runs longer than a
+  few minutes (the cycle above, any batch or loop) must not depend on the Claude session. A Claude terminal tab, a
+  child of the Bash or PowerShell tool, and a window opened from them all sit in the app's job object and end when the
+  app sleeps, restarts or closes its session: the 2026-11-03 cycle died that way at 22:57 UTC, its run row left at
+  `running` (researcher, #2354, 2026-11-04). Start it through Windows' own process service instead, output to a log:
+
+  ```powershell
+  Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{
+      CommandLine = '"C:\Program Files (x86)\PowerShell\7\pwsh.exe" -NoProfile -Command ".\iba\app\ps\Surface-Judge.ps1 -Action Cycle -Batch first-split-v3-20261103 *> C:\Bible_study_projects\Logs\surface-judge-cycle-20261104.log"'
+      CurrentDirectory = 'C:\Bible_study_projects' }          # ReturnValue 0 and a ProcessId = started
+  ```
+
+  Then check before reporting it started: the process's parent is `WmiPrvSE` and it is not in a job object (Win32
+  `IsProcessInJob` false), and `Progress` shows `judged` rising. The job has no window; its output is the log. Tell the
+  researcher how it was launched, where the log is, how to check, stop and resume it, and that **Windows sleep still
+  ends it** (resume with the same command). The machine's sleep setting is the researcher's to change.
+- **Status** reads the batch file against the list: judged per group, failed, left, and any surface in the file that
+  is no longer on the list.
+- Each line holds `surface`, `group`, `reason` (for `other` only), `judged_by` (the model), `errors`, `secs` and the
+  server's own token counts. A failed surface has `group` null.
+- How the server is reached is config too: `ollama.host` (the address), `ollama.connect_timeout_seconds`, and for ssh
+  to the machine `ollama.ssh_target` and `ollama.ssh_key` (a batch key, because the researcher's own key has a
+  passphrase; only its path is held). A refused run names them. Read these settings and the record before trying any
+  other route.
+- The server's own port (11434) does not connect from this machine while ssh does, so a run opens an ssh tunnel by
+  itself: from `127.0.0.1:<ollama.tunnel_local_port>` (11435) to the server's own port, with the batch key, and closes
+  it when the run ends. Nothing is started by hand and no passphrase is asked. If the tunnel cannot be opened the run
+  refuses at once, naming the target and key, and writes nothing. Without the setting the server is called at
+  `ollama.host` directly. The port must differ from 11434, the port of the local Ollama on this machine.
+- The server, model, limits, the four groups and the question itself are `cfg_setting` rows: modules `ollama` and
+  `surface_judge` (`surface_judge.groups`, `surface_judge.word_prompt`). The values `behaviour`,
+  `inner_being_state`, `being` and `other` are also enum values of `surface_subgroup.surface_group` and
+  `surface_pair_verdict.surface_group`, where a later step will store the confirmed groups.
+
 ---
 
 ## 9. Reports and exports

@@ -1,0 +1,13 @@
+# Escalation deep history
+
+## #2350 — Rule: read table meaning before use
+type=issue source=configmaint
+
+**v1** (2026-11-01T09:22:04Z, Claude) state=raised next_action=review assigned_to=Researcher
+> **short description (set this version):** Rule: read table meaning before use
+> **comment (set this version):** coherence-checked against the live cfg_* schema — awaiting researcher decision via `Escalation.ps1 -Action Update -Id <id> -NextAction ready_for_approval` then `-NextAction approved` (or reject/revise), then re-run this exact Config-Maintenance.ps1 command with -RunId to apply
+> **context (set this version):** {"table": "cfg_behaviour_rule", "op": "insert", "where": {}, "set": {"deliver_when": "always", "active": 1, "rule_key": "read-table-meaning-before-use", "enforced_by": "Context-delivered at session start (rule 81).", "id": 123, "enforcement_status": "context_delivered", "rule_text": "Before a table or column is used for a count, a finding, a claim or a design, Claude reads its recorded meaning in the database (cfg_table.use for the table; cfg_column.use, expectation, source and filled_by for the column) and names what it read in its first message on that work. A statement about what a column holds is made only from that recorded text or from a test over all of its rows, never from a sample or a few queries. Where the recorded text is missing or thin, that is raised as a finding and the column is not assumed. A table or mechanism is added by the stated procedure in iba/app/USER-GUIDE.md or iba/app/GOVERNANCE.md; reading an archived migration to learn it is the signal named in governance.past_precedent_investigation_signals_missing_config.", "added_at": "2026-11-01T00:00:00Z", "source": "Researcher, chat 2026-11-01 (verbatim, #2340): \"2340 text approved\"; option A \"2340 is approved for option A\". Origin: researcher, chat 2026-10-31, #2340.", "class": "development"}, "full_message": "Add behaviour rule development.read-table-meaning-before-use (option A of escalation #2340). Researcher approved the text in chat 2026-11-01: '2340 text approved'."}
+> **tried (set this version):** coherence-checked against the live cfg_* schema — awaiting researcher decision via `Escalation.ps1 -Action Update -Id <id> -NextAction ready_for_approval` then `-NextAction approved` (or reject/revise), then re-run this exact Config-Maintenance.ps1 command with -RunId to apply
+
+**v2** (2026-11-01T09:25:54Z, Claude) state=on-hold next_action=review assigned_to=Researcher
+> **comment (set this version):** Researcher, chat 2026-11-01, verbatim: 'I am not ready to deal with 2350, 2349, and 2348 - the local llm deployment is on hold.'

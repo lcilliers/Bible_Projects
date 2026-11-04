@@ -64,6 +64,8 @@ Handlers read their rules from `cfg_setting` and the domain tables. `lib/db.py` 
 from `cfg_column`, refuses a column not declared there, and takes dedup keys from `cfg_unique`. Every
 write is checked against `cfg_write_grant`. `IBA_TRACE=1` prints the config reads of a run. A library function that is given a connection and not a `Cfg` reads its rules the same way, through `Cfg.on(conn)`; a rule that is missing is an error (`required_setting`), never a fallback in the code.
 
+A routine that depends on a service outside the app (today the Ollama server) reads how the service is reached from `cfg_setting`, in the module named for the service: the address, how long to wait for it and, where it is reached over ssh, the user and the key file (`ollama.host`, `ollama.connect_timeout_seconds`, `ollama.ssh_target`, `ollama.ssh_key`); where the service's own port does not connect from this machine, the run opens an ssh tunnel with that key (no passphrase, batch mode) on the local port `ollama.tunnel_local_port` and closes it when the run ends (`server_route()` in `lib/surfacejudge.py`). It checks the service first (it answers and has what the routine needs) and refuses at once, naming the address and the configured way in, when it does not; a run halts after a configured number of calls in a row with no usable answer (`surface_judge.max_consecutive_failures`). The rule is `cfg_behaviour_rule` 124; the Ollama check is `preflight()` in `lib/surfacejudge.py`. Before a route to a service is tried, the settings and the written record are read for how it was reached before.
+
 ## 4. Changing config
 
 - **App Mode (standard):** `iba\app\ps\Config-Maintenance.ps1 -Step Propose` is the one sanctioned

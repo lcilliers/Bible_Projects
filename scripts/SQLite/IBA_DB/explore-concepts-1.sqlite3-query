@@ -31,3 +31,24 @@ select * from concept;
 select * from cluster_subgroup;
 select * from surface_subgroup;
 select * from concept_subgroup; 
+
+select surface, role from verse_lexical vl
+where deleted = 0
+  and not exists (select 1 from json_each(v.role) j where j.value = 'T10')
+group by surface,role;
+
+select v.surface
+from verse_lexical v
+where v.deleted = 0
+  and exists (select 1 from json_each(v.role) j where j.value = 'T2');
+;
+
+with t2_surfaces as (
+select v.surface
+from verse_lexical v
+where v.deleted = 0
+  and exists (select 1 from json_each(v.role) j where j.value = 'T2')
+)
+select * from t2_surfaces
+inner join verse_lexical v on t2_surfaces.surface = v.surface
+;
