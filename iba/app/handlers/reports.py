@@ -77,13 +77,15 @@ def validation_book(ctx: Ctx) -> Outcome:
 
 
 def manifest_rebuild(ctx: Ctx) -> Outcome:
-    """Full rescan of the whole project tree — filename/path metadata only. See lib/manifest.py."""
+    """Rescan the whole project tree — filename/path metadata only — and update file_manifest by path (added, updated, removed);
+    the analytic columns of a file that is still there are kept. See lib/manifest.py."""
     summary = manifest_mod.rebuild(ctx.cfg)
     path = pathlib.Path(ctx.cfg.required_setting("manifest.report_path"))
     out = manifest_mod.write_rebuild_report(ctx.cfg, path, summary)
     return ok(f"wrote {out} ({summary['total']} files: {summary['active']} active, "
-             f"{summary['archived']} archived)", path=str(out), total=summary["total"],
-             active=summary["active"], archived=summary["archived"])
+             f"{summary['archived']} archived; {summary['added']} added, {summary['removed']} removed)", path=str(out),
+             total=summary["total"], active=summary["active"], archived=summary["archived"],
+             added=summary["added"], removed=summary["removed"])
 
 
 def manifest_search(ctx: Ctx) -> Outcome:

@@ -284,6 +284,10 @@ def validate(ctx: Ctx) -> Outcome:
         "escalation_worksheet_drift": (
             cfgquality.find_escalation_worksheet_drift(ctx.db.conn, APP_ROOT, PROJECT_ROOT),
             "Escalation.ps1/worksheet drift finding(s)"),
+        # the working-file and junk rules of the surface cycle (#2361): junk surfaces not marked deleted, analytic files outside the three folders
+        "surface_hygiene": (
+            __import__("iba.app.lib.surfacehygiene", fromlist=["x"]).find_surface_hygiene(ctx.cfg, PROJECT_ROOT),
+            "surface cycle hygiene finding(s)"),
         # every behaviour rule with no control, with its reason (enforcement_status, #2206)
         "unenforced_behaviour_rules": (
             cfgquality.find_unenforced_behaviour_rules(ctx.db.conn),

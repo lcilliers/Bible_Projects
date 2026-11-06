@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
     Rebuild the project-wide file manifest (filename/path metadata for every file in the project
-    tree, incl. archives). Full rescan — replaces the file_manifest table's contents.
+    tree, incl. archives). Full rescan — updates the file_manifest table by path (new paths added, changed ones updated, vanished ones removed); the analytic columns of a surviving file are kept.
 
 .DESCRIPTION
     Writes manifest.report_path (default iba/app/reports/file-manifest.md): counts by category and

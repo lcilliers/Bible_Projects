@@ -1,0 +1,2270 @@
+[
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "hate",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "loathe",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "despise",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "abhor",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "enmity",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "doubt",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "betray",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "disbelieve",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "humble",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "lowly",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "truth",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "honest",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "sincere",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "truthful",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "fear",
+  "b": "courage",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "fear",
+  "b": "calm",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "fear",
+  "b": "peace",
+  "expected": "opposite",
+  "source": "claude",
+  "note": "exp7: a true opposite chosen by Claude for the wording test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "sorrow",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "lose",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "fail",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "sad",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "defeat",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "grief",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "die",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "death",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "evil",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "terrible",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "misery",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "perish",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "reject",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "lack",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "bad",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "love",
+  "b": "worst",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "fear",
+  "b": "joy",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "fear",
+  "b": "happy",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "fear",
+  "b": "comfort",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "fear",
+  "b": "delight",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "fear",
+  "b": "pleasure",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "forbid",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "avoid",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "ignore",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "nothing",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "refuse",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "deny",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "exclude",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "condemn",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "trust",
+  "b": "rebuke",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "shame",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "guilt",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "filth",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "weak",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "despair",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "deceit",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "vile",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "pride",
+  "b": "low",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "tell",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "reveal",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "inform",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "confirm",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "disclose",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "opposite",
+  "a": "deceive",
+  "b": "assure",
+  "expected": "not_opposite",
+  "source": "claude",
+  "note": "exp7: a word that is bad or negative but not an opposite"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "deceit",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "deceitful",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "deceitfully",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "deception",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "deceptive",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "delude",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "lie",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "mislead",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "transgression",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "iniquity",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "trespass",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "offense",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "wickedness",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "transgress",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "panic",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "horror",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "alarm",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "dismay",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "terror",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "dread",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "afraid",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "frighten",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "arrogance",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "conceit",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "haughty",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "presumption",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "proud",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "vanity",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "cherish",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "devotion",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "adore",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "affection",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "indignation",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "wrath",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "rage",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "fury",
+  "expected": "synonym",
+  "source": "claude",
+  "note": "exp10_syn.py: a true synonym chosen by Claude"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "joy",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "hope",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "peace",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "mercy",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "grace",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "compassion",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "zeal",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "passion",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "longing",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "sorrow",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "sorrow",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "grief",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "anguish",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "tremble",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "joy",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "courage",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "comfort",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "guilt",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "shame",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "grace",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "forgive",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "punish",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "death",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "righteousness",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "cunning",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "corrupt",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "perverse",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "truth",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "betray",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "steal",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "shame",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "humble",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "boast",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "glory",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "honor",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "courage",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "hate",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "envy",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "sorrow",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "quarrel",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "revenge",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "calm",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp10_syn.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "wicked",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "arrogant",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "mock",
+  "b": "scoff",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "mock",
+  "b": "scorn",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "mock",
+  "b": "insult",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "mock",
+  "b": "contemn",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "lament",
+  "b": "weep",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "lament",
+  "b": "sorrow",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "lament",
+  "b": "regret",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "confess",
+  "b": "acknowledge",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "confess",
+  "b": "declare",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "confess",
+  "b": "recognize",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "confess",
+  "b": "accept",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "honor",
+  "b": "respect",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "honor",
+  "b": "esteem",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "honor",
+  "b": "regard",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "honor",
+  "b": "glory",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "forget",
+  "b": "neglect",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "forget",
+  "b": "ignore",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "forget",
+  "b": "disregard",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "trust",
+  "b": "believe",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "trust",
+  "b": "depend",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "boast",
+  "b": "exult",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "boast",
+  "b": "glory",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "boast",
+  "b": "triumph",
+  "expected": "synonym",
+  "source": "researcher",
+  "note": "exp13_fixes.py: words the researcher said the judge wrongly refused"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "desire",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "covet",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "love",
+  "b": "hate",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "torment",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "fear",
+  "b": "distress",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "repent",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "sin",
+  "b": "condemn",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "deceive",
+  "b": "false",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "pride",
+  "b": "noble",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "anger",
+  "b": "violent",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "mock",
+  "b": "laugh",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "mock",
+  "b": "joy",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "mock",
+  "b": "despise",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "mock",
+  "b": "reject",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "trust",
+  "b": "safe",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "trust",
+  "b": "faithful",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "trust",
+  "b": "doubt",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "trust",
+  "b": "obey",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "trust",
+  "b": "truth",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "honor",
+  "b": "dishonor",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "honor",
+  "b": "shame",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "honor",
+  "b": "fear",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "synonym",
+  "a": "honor",
+  "b": "obey",
+  "expected": "distinct",
+  "source": "claude",
+  "note": "exp13_fixes.py: a companion, result or opposite that must stay out"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "able",
+  "b": "disable",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "appoint",
+  "b": "disappoint",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "believe",
+  "b": "disbelieve",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "believe",
+  "b": "unbelieving",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "blame",
+  "b": "blameless",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "call",
+  "b": "recall",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "certain",
+  "b": "uncertain",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "clean",
+  "b": "unclean",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "come",
+  "b": "overcome",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "conduct",
+  "b": "misconduct",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "count",
+  "b": "recount",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "covered",
+  "b": "discover",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "covered",
+  "b": "recover",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "cut",
+  "b": "uncut",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "deem",
+  "b": "redeem",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "defile",
+  "b": "undefiled",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "disease",
+  "b": "ease",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "disgrace",
+  "b": "grace",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "dishonest",
+  "b": "honest",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "dishonor",
+  "b": "honor",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "disobedient",
+  "b": "obedient",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "disobey",
+  "b": "obey",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "displease",
+  "b": "please",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "disqualify",
+  "b": "qualify",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "disregard",
+  "b": "regard",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "do",
+  "b": "undo",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "faith",
+  "b": "faithful",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "faith",
+  "b": "faithless",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "foreknow",
+  "b": "know",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "fresh",
+  "b": "refresh",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "godly",
+  "b": "ungodly",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "impartial",
+  "b": "partial",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "impatience",
+  "b": "patient",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "impurity",
+  "b": "pure",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "injustice",
+  "b": "justice",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "insight",
+  "b": "sight",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "insincerity",
+  "b": "sincerity",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "just",
+  "b": "unjust",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "lead",
+  "b": "mislead",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "lie",
+  "b": "rely",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "mind",
+  "b": "remind",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "mistreat",
+  "b": "treat",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "move",
+  "b": "remove",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "new",
+  "b": "renew",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "pay",
+  "b": "repay",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "reserve",
+  "b": "serve",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "return",
+  "b": "turn",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "revile",
+  "b": "vile",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "righteous",
+  "b": "unrighteous",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "shake",
+  "b": "shaken",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "spirit",
+  "b": "spiritual",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "stand",
+  "b": "understand",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "collection",
+  "step": "opposite_recall",
+  "a": "worth",
+  "b": "worthless",
+  "expected": "opposite",
+  "source": "prototype",
+  "note": "recall-gold: a prefix opposite found by the structure rules; used for the shortlist recall test"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "a burnt offering",
+  "b": null,
+  "expected": "{\"be\": false, \"do\": false, \"experience\": false, \"express\": false, \"get\": false}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "a sinner",
+  "b": null,
+  "expected": "{\"be\": true, \"do\": true, \"experience\": false, \"express\": false, \"get\": false}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abaddon",
+  "b": null,
+  "expected": "{\"be\": false, \"do\": false, \"experience\": true, \"express\": true, \"get\": false}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abandon",
+  "b": null,
+  "expected": "{\"be\": true, \"do\": true, \"experience\": true, \"express\": true, \"get\": true}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abandoned",
+  "b": null,
+  "expected": "{\"be\": true, \"do\": false, \"experience\": true, \"express\": true, \"get\": true}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abase",
+  "b": null,
+  "expected": "{\"be\": true, \"do\": false, \"experience\": true, \"express\": true, \"get\": true}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abased",
+  "b": null,
+  "expected": "{\"be\": true, \"do\": false, \"experience\": true, \"express\": true, \"get\": true}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abhor",
+  "b": null,
+  "expected": "{\"be\": true, \"do\": false, \"experience\": true, \"express\": true, \"get\": false}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abhorred",
+  "b": null,
+  "expected": "{\"be\": true, \"do\": false, \"experience\": true, \"express\": true, \"get\": true}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abhorrence",
+  "b": null,
+  "expected": "{\"be\": false, \"do\": false, \"experience\": true, \"express\": true, \"get\": true}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abhorrent",
+  "b": null,
+  "expected": "{\"be\": true, \"do\": true, \"experience\": true, \"express\": true, \"get\": true}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ },
+ {
+  "module": "group",
+  "step": "human_test",
+  "a": "abhors",
+  "b": null,
+  "expected": "{\"be\": false, \"do\": false, \"experience\": true, \"express\": true, \"get\": false}",
+  "source": "researcher",
+  "note": "the researcher's own labels on the five-question human test of 2026-10-31 (be, do, experience, express, get); a different scheme from the group"
+ }
+]

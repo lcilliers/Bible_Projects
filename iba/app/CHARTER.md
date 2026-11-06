@@ -102,3 +102,12 @@ table, "mechanism" or otherwise — goes through the full `configmaint.propose` 
 approval → apply cycle, exactly as it always has. Only registered modules/utilities run (the PS
 scripts under `iba/app/ps/`, dispatched through `python -m iba.app.run`) — no ad-hoc scripts, no
 raw DB pokes. This is §1's own "every component... must work through the app" rule.
+
+
+---
+
+## 5. The surface cycle — one worked example of the app's rule (escalation #2361)
+
+The study of how Scripture speaks of the inner being starts from the English words of the ESV (the *surfaces*). The cycle that turns them into collections of related words was first done as a prototype with scripts and files; since 2026-11-06 it is five repeatable modules over tables in `iba.db`, with the AI on zeta-assist used through one controlled route:
+**group** (what kind of word it is) → **structure** (its base by the shape of the word) → **AI base** (for the words the shape leaves unmatched) → **resolve** (the base chosen from the evidence) → **collections** (the members of each core word's collection).
+Each module reads and writes tables only; a working file is never an input to an analysis. Every change keeps its state before and after (events, superseded rows, the AI call and the prompt version that gave it), so anything can be traced back. Everything the AI gives is inferential until the researcher confirms it (B:4). The current map of the modules, their steps, tables and settings, and of the AI use, is generated into the config report (sections 16 and 17); how to run each is in `USER-GUIDE.md` sections 8.9 to 8.15.

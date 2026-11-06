@@ -1,0 +1,52 @@
+[
+ {
+  "name": "qwen3-embedding:latest",
+  "parameters": "7.6B",
+  "digest": "64b933495768fbd3b87c20583d379728a07471e0c66733a9df87cd1901b3c44b",
+  "role": "embed",
+  "purpose": "meaning vectors for the shortlist of nearest bases (4096 dimensions); chosen over nomic-embed-text on recall",
+  "route_setting": "ollama.host",
+  "status": "active",
+  "pulled_on": "2026-11-04"
+ },
+ {
+  "name": "nomic-embed-text:latest",
+  "parameters": "137M",
+  "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "role": "embed_fast",
+  "purpose": "a small fast embedding model (768 dimensions); compared and not chosen for the shortlist",
+  "route_setting": "ollama.host",
+  "status": "active",
+  "pulled_on": "2026-11-04"
+ },
+ {
+  "name": "qwen3:30b",
+  "parameters": "30.5B",
+  "digest": "ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226",
+  "role": "judge",
+  "purpose": "the judge of every question put to a surface or a word: group, base, collection judges, listing, pole, associated",
+  "route_setting": "ollama.host",
+  "status": "active",
+  "pulled_on": "2026-11-02"
+ },
+ {
+  "name": "qwen3:30b",
+  "parameters": "30.5B",
+  "digest": "ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226",
+  "role": "reviewer",
+  "purpose": "reasoning on, for the borderline band only (tested slow and not better; kept as the role for arbitration)",
+  "route_setting": "ollama.host",
+  "status": "active",
+  "pulled_on": "2026-11-02"
+ },
+ {
+  "name": "qwen2.5-coder:3b",
+  "parameters": "3.1B",
+  "digest": "f72c60cabf6237b07f6e632b2c48d533cef25eda2efbd34bed21c5e9c01e6225",
+  "role": "quick",
+  "purpose": "cheap high-volume checks; registered, not yet used by any module",
+  "route_setting": "ollama.host",
+  "status": "active",
+  "pulled_on": "2026-11-01"
+ }
+]

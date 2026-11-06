@@ -1,33 +1,30 @@
 <#
 .SYNOPSIS
-    The base form of a surface word, asked of the Ollama server (escalation #2359).
+    The base form of a surface word, asked of the AI through the AI client (escalation #2359, #2361).
 
 .DESCRIPTION
-    The list is a JSON file of English words, <surface_judge.batch_dir>/<Batch><surface_judge.base_input_suffix>
-    ({"words": [...]}). Each word goes to the server on its own (no verse, no Hebrew or Greek code); the answer is a
-    base word and the relation of the word to it: inflection, derivation, or none (no base of the same root
-    meaning). Every answer is inferential until the researcher confirms it. Nothing is written to iba.db: the
-    answers are appended, one JSON line per word as it finishes, to <surface_judge.batch_dir>/<Batch>.jsonl.
+    Module 3 of 5 of the surface cycle. For the surfaces the resolve module leaves unmatched (the shape of the word found no base), the AI is asked
+    on its own for the base word and its relation: inflection, derivation, or none (no base of the same root meaning). Each word goes to zeta-assist
+    on its own (no verse, no Hebrew or Greek code); every attempt is a row in ai_call. Every answer is inferential until you confirm it. Reads and
+    writes tables only. Then run Surface-Resolve.ps1 -Action Run, which reads the answers and decides the bases.
 
-      Status   -Batch <name>   how far the batch file has got against the input list
-      Run      -Batch <name> [-Limit n]   ask for the words not yet answered; -Limit stops after n words (a pilot is a
-               Run with a small -Limit). Resumable: run it again with the same -Batch and it carries on. A run of
-               hours is started outside the Claude session (USER-GUIDE.md section 8.8).
+      Ask   [-Limit n] [-Retry]   ask for the words waiting; -Limit stops after n words (a pilot is Ask with a small -Limit); -Retry also asks
+            the words that failed. A run of hours is started outside the Claude session (USER-GUIDE.md section 8.8, B:125).
 
-    -Batch is lower-case words joined by hyphens, then -v and a number, then -yyyymmdd.
-    The server, the model, the question and the answer shape are cfg_setting rows (modules ollama, surface_judge).
+    The earlier file route (-Action Status and Run with a batch file) was retired in stage 6 of escalation #2361.
+    The server, the model, the prompt (base.word) and the answer shape are in the registers and cfg_setting modules ollama, ai and surface_judge.
 
 .EXAMPLE
-    iba\app\ps\Surface-Base.ps1 -Action Run -Batch base-form-pilot-v1-20261104 -Limit 20
+    iba\app\ps\Surface-Base.ps1 -Action Ask -Limit 20
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Status', 'Run')]
+    [ValidateSet('Ask')]
     [string] $Action,
-    [Parameter(Mandatory = $true)] [string] $Batch,
     [string] $Limit,
+    [switch] $Retry,
     [switch] $Trace
 )
 
@@ -40,14 +37,12 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 . $PSScriptRoot\_lib\Notify.ps1
 
-$stepMap = @{ Status = 'surface_base.status'; Run = 'surface_base.run' }
-$stepId = $stepMap[$Action]
+$stepId = 'surface_base.ask'
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-SURFACEBASE"
 
 $paramArgs = @()
-foreach ($p in @('Batch', 'Limit')) {
-    if ($PSBoundParameters.ContainsKey($p)) { $paramArgs += @('--param', "$p=$($PSBoundParameters[$p])") }
-}
+if ($PSBoundParameters.ContainsKey('Limit')) { $paramArgs += @('--param', "Limit=$Limit") }
+if ($Retry) { $paramArgs += @('--param', 'Retry=true') }
 
 Write-IbaRunHeader -WorkPackage 'surface-base' -Step $stepId -RunId $runId
 $json = python -m iba.app.run surface-base --step $stepId --run-id $runId @paramArgs

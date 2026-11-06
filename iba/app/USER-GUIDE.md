@@ -939,20 +939,150 @@ iba\app\ps\Surface-Judge.ps1 -Action Status -Batch first-split-v1-20261102
 
 ### 8.9 The base form of a surface word (`iba/app/ps/Surface-Base.ps1`)
 
-For the words the word-structure methods leave unmatched. Each word goes to the Ollama server on its own (no verse, no Hebrew or Greek code, no neighbouring word) and comes back as a base word and its relation to it: `inflection` (tense, plural, participle, comparative, irregular forms), `derivation` (a suffix or prefix that keeps the core meaning) or `none` (no base of the same root meaning, the base is then the word itself). The rule of similar root meaning is in the question (`surface_judge.base_prompt`). Every answer is inferential until the researcher confirms it (escalation #2359). **Nothing is written to `iba.db`**: the answers are appended, one JSON line per word as it finishes, to `<surface_judge.batch_dir>/<Batch>.jsonl`.
-
-The words are listed in `<surface_judge.batch_dir>/<Batch>-input.json` as `{"words": ["sought", "wept"]}` (the end of the name is `surface_judge.base_input_suffix`).
+Module 3 of 5. For the words the word-structure methods leave unmatched, each word goes to the AI on its own (no verse, no Hebrew or Greek code, no neighbouring word) and comes back as a base word and its relation to it: `inflection` (tense, plural, participle, comparative, irregular forms), `derivation` (a suffix or prefix that keeps the core meaning) or `none` (no base of the same root meaning, the base is then the word itself). The rule of similar root meaning is in the prompt `base.word` (the register, section 8.13). Every answer is inferential until the researcher confirms it (escalation #2359). The words and the answers are in the tables; **no file is read or written**.
 
 ```powershell
-iba\app\ps\Surface-Base.ps1 -Action Run -Batch base-form-pilot-v1-20261104 -Limit 20   # a pilot
-iba\app\ps\Surface-Base.ps1 -Action Run -Batch base-form-v1-20261104                   # the whole list
-iba\app\ps\Surface-Base.ps1 -Action Status -Batch base-form-v1-20261104
+iba\app\ps\Surface-Base.ps1 -Action Ask -Limit 20       # a pilot: the first 20 words waiting
+iba\app\ps\Surface-Base.ps1 -Action Ask                  # all the words waiting
+iba\app\ps\Surface-Base.ps1 -Action Ask -Retry           # also the words whose last answer was not usable
+iba\app\ps\Surface-Resolve.ps1 -Action Run               # then: decide the bases from the answers (section 8.12)
 ```
 
-- **-Batch** is lower-case words joined by hyphens, then `-v` and a number, then `-yyyymmdd`.
-- **Run** asks for the words not yet answered and prints each as it finishes. `-Limit n` stops after n words. Resumable: run it again with the same `-Batch`. A word with no usable answer after one retry is recorded with no relation and tried again on the next run. Before the first word it checks the server (answers within `ollama.connect_timeout_seconds`, has `ollama.model`) and refuses at once if not; after `surface_judge.max_consecutive_failures` words in a row with no usable answer it halts (condition `halted`); what was answered is kept.
-- A run of more than a few minutes (the whole list is about two hours) is started outside the Claude session, as in section 8.8 (rule B:125), with its output in a log under `Logs/`.
-- **Status** shows answered per relation, failed and left.
+- **Ask** takes the words the resolve module leaves `unmatched` (no AI call yet), asks the AI through the client, and writes one `ai_call` row per attempt and one `run_batch` row per run. A word with no usable answer after one retry is `ai_failed` and is asked again only with `-Retry`. Before the first word the client checks the server (answers within `ollama.connect_timeout_seconds`, has the model) and refuses at once if not; after `ai.max_consecutive_failures` words in a row with no usable answer the run halts (condition `halted`); what was answered is kept.
+- The server is reached through an ssh tunnel the run opens itself (section 8.8: `ollama.ssh_target`, `ollama.ssh_key`, `ollama.tunnel_local_port`). A run of more than a few minutes (the whole list is about two hours) is started outside the Claude session (rule B:125).
+- The earlier file route (`-Action Status` and `Run` with a batch file) was retired in stage 6 of #2361; its 676 answers and 31 refusals are in `ai_call` and `surface_derivation`.
+
+### 8.10 The structure of a surface word (`iba/app/ps/Surface-Structure.ps1`, escalation #2361)
+
+Module 2 of 5 of the surface cycle. It matches a surface to a base by the shape of the word: removing an ending (`sins` to `sin`), restoring an e (`abased` to `abase`), undoing a doubled letter (`begged` to `beg`) or removing a prefix gives another surface of the list. Negating affixes and other prefixes are kept as leads, never as bases. Unmatched words get starts-with leads, outside-list bases and sibling groups. What it finds is evidence about shape, not meaning (B:4). It reads `surface_term`, `cfg_base_construct` (one row per construct; `result_kind` says what a match means; switch a row off with `inactive`) and the thresholds in `cfg_setting` module `structure`; **no file is read**.
+
+```powershell
+iba\app\ps\Surface-Structure.ps1 -Action Status               # how the structure stands against the evidence rows
+iba\app\ps\Surface-Structure.ps1 -Action Match -Check         # preview the difference
+iba\app\ps\Surface-Structure.ps1 -Action Match                # write it
+iba\app\ps\Surface-Structure.ps1 -Action Show -Surface hides  # one surface and its evidence
+```
+
+- **Match** adds the new evidence rows (`surface_derivation`, `accepted` 0, so nothing is chosen) and sets rows no longer produced to `deleted = 1`; a second Match with the same inputs changes nothing. The run's settings and counts are kept on the `run` row.
+- A surface the structure finds two bases for (`hides`: hid, hide) is `base_ambiguous` with `base_id` empty and an open `structure_conflict` flag, until the resolve step or the researcher chooses.
+- A missing setting is refused and nothing is written. Change a threshold with `configmaint.propose`, then run Match again.
+
+### 8.11 Group corrections of a surface (`iba/app/ps/Surface-Group.ps1`, escalation #2361)
+
+Module 1 of 5. A word of collection a (behaviour or inner_being_state) can have a base that the judge put in `being` or `other`, judged alone, without the sense its derived words show. The repoint corrects such a base from its derived words, as the recorded repoint of 2026-11-04 did (56 changes, 52 held pairs). It reads the tables and `cfg_setting` module `group`; **no file is read**.
+
+```powershell
+iba\app\ps\Surface-Group.ps1 -Action Status                 # what the rule would do
+iba\app\ps\Surface-Group.ps1 -Action Repoint -Check         # preview
+iba\app\ps\Surface-Group.ps1 -Action Repoint                # write
+iba\app\ps\Surface-Group.ps1 -Action Repoint -Base build    # accept a proposed base
+```
+
+- A base is corrected by itself when its derived words are inflections (plural, tense, participle, comparative), all in one group, and the base is in an automatic group (`group.repoint_auto_base_groups`, now `other`). It takes the group of its derived words; its state becomes `corrected` and a `surface_event` records the derived words.
+- A base judged `being` is **proposed**, never changed by the step alone: you name it with `-Base`. Any pair that is not an inflection, or whose derived words disagree, becomes an open `held_pair` flag; a base a flag already names is left to that reading.
+- After a correction run `Surface-Structure.ps1 -Action Match`: the base is now inside collection a. A second Repoint with the same inputs changes nothing.
+
+### 8.12 The base of a surface (`iba/app/ps/Surface-Resolve.ps1`, escalation #2361)
+
+Module 4 of 5. It decides the base of every surface of collection a from the evidence in the tables: the shape of the word (Surface-Structure), a sibling group, the AI base call (`ai_call`), or the word itself. It reads `cfg_setting` module `resolve`; **no file is read**.
+
+```powershell
+iba\app\ps\Surface-Resolve.ps1 -Action Status               # how far the stored bases are from what the evidence decides
+iba\app\ps\Surface-Resolve.ps1 -Action Run -Check           # preview
+iba\app\ps\Surface-Resolve.ps1 -Action Run                  # write
+iba\app\ps\Surface-Resolve.ps1 -Action Show -Surface hides  # stored state, decision, evidence rows
+```
+
+- The order of the evidence is `resolve.order` (structure, sibling, ollama, own). The states: `matched_structure`, `matched_sibling`, `ai_answered`, `ai_none`, `ai_failed`, `resolved_own`, `phrase_not_tested`, `out_of_scope`, `unmatched` (no AI call yet) and `base_ambiguous`.
+- `base_ambiguous` means the structure found more than one base (hides: hid, hide). Nothing is accepted and the word has no base until the AI step or you choose; each has an open `structure_conflict` flag.
+- A base you confirmed (`confirmed` or `resolved`) is never changed. Every changed term gets a `surface_event` with the state before and after. A second Run with the same evidence changes nothing.
+- Order of a normal pass: Surface-Group Repoint, Surface-Structure Match, the AI base step, Surface-Resolve Run.
+
+### 8.13 Using zeta-assist: the AI client and its control (`iba/app/ps/Ai-Control.ps1`, escalation #2361)
+
+Every AI call of the project goes through one route, `lib/aiclient.py`. It uses the **active model of the role** (`cfg_ai_model`: judge, embed, embed_fast, quick, reviewer) and the **active version of the prompt key** (`cfg_ai_prompt`), keeps the options within `ai.allowed_options`, checks the server and tunnel first, halts after `ai.max_consecutive_failures` questions in a row with no usable answer, and writes one `ai_call` row per attempt. Nothing else calls the server.
+
+```powershell
+iba\app\ps\Ai-Control.ps1 -Action Status -Live                       # registers, calls made, the models on the server
+iba\app\ps\Ai-Control.ps1 -Action Prompts -Key base.word             # every version of a prompt
+iba\app\ps\Ai-Control.ps1 -Action PromptAdd -Key base.word -Text '...{surface}...' -Note 'why' -Activate
+iba\app\ps\Ai-Control.ps1 -Action Replay -Call 6070                  # is the answer to a stored request the same?
+iba\app\ps\Ai-Control.ps1 -Action Compare -Step base                 # prompt versions and models side by side
+iba\app\ps\Surface-Base.ps1 -Action Ask -Limit 20                    # the AI base of the words waiting (pilot)
+iba\app\ps\Surface-Group.ps1 -Action Judge -Limit 20                 # the AI group of surfaces not yet judged
+```
+
+- **Prompts are versions.** A version's text never changes; `PromptAdd` makes a new one with a change note and `-Activate` makes it the one used. `Compare` shows, per version and model, how many calls were answered, refused or failed, and the seconds and tokens, so which prompt worked best is read from the calls, never stored as a claim. A prompt is edited only through this step: a text that no longer matches its hash is refused.
+- **Outcomes.** `answered` a usable answer; `refused` the server answered but the check found it not usable; `failed` the call itself failed; `halted` the run stopped on the failure rule. A word with no usable answer is `ai_failed` (base) or `failed` (group) and is asked again only with `-Retry`.
+- **Order of a normal pass:** Surface-Group Judge, Surface-Group Repoint, Surface-Structure Match, Surface-Base Ask, Surface-Resolve Run. Ask and Judge read the words from the tables; a run of more than a few minutes is started outside the Claude session (section 8.8, B:125). The test cases used by Compare are provisional (they inform, never decide).
+
+### 8.14 Collections of words (`iba/app/ps/Collection-Build.ps1`, escalation #2361)
+
+Module 5 of 5. A collection has a core word (`love`). The AI judged candidate words against it (synonym, opposite or distinct) and, for the words that are neither, whether they are still associated by meaning; this step turns those judgements in the tables into the members of each collection. It reads and writes tables; **no file is an input**.
+
+```powershell
+iba\app\ps\Collection-Build.ps1 -Action Status                                   # stored members against what the judgements decide
+iba\app\ps\Collection-Build.ps1 -Action Links -Check                             # preview
+iba\app\ps\Collection-Build.ps1 -Action Links                                    # write
+iba\app\ps\Collection-Build.ps1 -Action Show -Collection love                    # members by tier, shared ones starred
+iba\app\ps\Collection-Build.ps1 -Action Export -Name collections-v1-20261106     # a CSV view to the exports folder
+iba\app\ps\Collection-Build.ps1 -Action Set -Collection love -Status confirmed -Reason 'checked'
+iba\app\ps\Collection-Build.ps1 -Action Merge -From insult -Into slander -Reason 'one collection'
+```
+
+- **Tiers:** `core`, `synonym` and `opposite` are members (an opposite is a synonym of the core's pole); `possible_opposite` is a lead, never a member; `associated` and `set_aside` are filed beside the collection. The latest judgement of a pair decides. A word that is a member of more than one collection is `shared`.
+- **Your decisions hold.** `Set` and `Merge` are made only on your instruction and carry a reason and an event. A link you remove (set `deleted` to 1 with no successor) is not linked again by `Links`; the 18 pairs the prototype left out are recorded that way. Status lists them as withheld.
+- **Changes are traceable.** A link whose tier changes is set to deleted and points to its successor; nothing is physically deleted.
+- **Seed and Ask (the front of the process, through the AI client).** `Seed -Word X` makes a collection of a single word of collection a: the AI names its pole (`collection.pole`), whether the pole is a real word, the pole of the pole (reciprocal when it names X again), and lists synonyms and opposites into `collection_listing`. `Ask -Collection X [-Limit n]` judges the candidates: the listed words first, then the words nearest X by embedding (`collection.shortlist_size`, the vectors are a regenerable cache under the working files). Each candidate is judged synonym, opposite or distinct; a distinct word is scored and from `collection.score_threshold` (8) counts as a synonym; an opposite is checked against the pole; a word that is neither is asked for association. One `ai_call` row per question (step candidate, score, pole_check, associated), the collection as subject. Then run `Links`. A run of more than a few minutes is started outside the session (section 8.8, B:125).
+
+```powershell
+iba\app\ps\Collection-Build.ps1 -Action Seed -Word trust
+iba\app\ps\Collection-Build.ps1 -Action Ask -Collection trust -Limit 10     # a pilot
+iba\app\ps\Collection-Build.ps1 -Action Links -Check
+```
+
+### 8.15 The surface cycle as a whole — the order, the recipes, where things moved (escalation #2361)
+
+The cycle turns the English surfaces of the ESV into collections of related words. Five modules, each repeatable alone, all reading and writing tables; the AI is used only through the AI client (section 8.13). The current map of steps, tables and settings, and of the AI use, is generated into the config report (sections 16 and 17), so it is never out of date.
+
+| module | script | what it decides | section |
+|---|---|---|---|
+| 1 group | `iba/app/ps/Surface-Group.ps1` | the group of each surface (Judge asks the AI; Repoint corrects a base from its derived words) | 8.11 |
+| 2 structure | `iba/app/ps/Surface-Structure.ps1` | a surface matched to a base by the shape of the word, as evidence | 8.10 |
+| 3 AI base | `Surface-Base.ps1 -Action Ask` | the base of the words the shape leaves unmatched | 8.9 |
+| 4 resolve | `iba/app/ps/Surface-Resolve.ps1` | the base chosen from the evidence | 8.12 |
+| 5 collections | `iba/app/ps/Collection-Build.ps1` | the members of each collection; Seed and Ask use the AI | 8.14 |
+| AI control | `iba/app/ps/Ai-Control.ps1` | models, prompts, calls, replay, compare | 8.13 |
+
+**A normal pass** (each step has a `-Check` or a Status first):
+
+```powershell
+iba\app\ps\Surface-Group.ps1 -Action Judge -Limit 20          # new surfaces: their group (AI)
+iba\app\ps\Surface-Group.ps1 -Action Repoint -Check           # corrections from the derived words
+iba\app\ps\Surface-Structure.ps1 -Action Match -Check         # the shape of the word
+iba\app\ps\Surface-Base.ps1 -Action Ask -Limit 20             # the AI base of the words left unmatched
+iba\app\ps\Surface-Resolve.ps1 -Action Run -Check            # decide the bases
+iba\app\ps\Collection-Build.ps1 -Action Seed -Word trust      # a new collection (AI)
+iba\app\ps\Collection-Build.ps1 -Action Ask -Collection trust -Limit 10
+iba\app\ps\Collection-Build.ps1 -Action Links -Check          # the members from the judgements
+```
+
+**Recipes.** *Why is a word's base this?* `Surface-Resolve.ps1 -Action Show -Surface hides` (stored state, the decision, every evidence row), then `Surface-Structure.ps1 -Action Show`. *Which prompt works better?* `Ai-Control.ps1 -Action PromptAdd` a new version (a draft), `-Activate` it, run a pilot, then `-Action Compare -Step base`. *Is an answer reproducible?* `Ai-Control.ps1 -Action Replay -Call <id>`. *A word is wrong in a collection:* remove the link (set it deleted with no successor, so `Links` keeps it out) or `Set` and `Merge` the collection, with a reason. *Something looks off:* `Config-Maintenance.ps1 -Step Validate` includes the "Surface cycle hygiene" check (a junk surface not marked deleted, an analytic file outside the three folders).
+
+**Working files.** `_analytics/surfaces/working_files` (inputs that were loaded, kept as a record), `_analytics/surfaces/exports` (views generated from the tables) and `_analytics/surfaces/discarded` (methods that will not be needed again, not registered). The paths are `surfaces.*` settings; the tables hold the state. The only cache is the embedding vectors under the working files, which are regenerable. No module reads a working file.
+
+**Where things moved** (the earlier prototype, in the tables now):
+
+| earlier | now |
+|---|---|
+| the group run files (`first-split-*.jsonl`, the human tests) | `surface_term` (group, reason, state), `ai_call` (step group), `surface_eval_case` (provisional) |
+| the repoint workbook (56 changes, 52 held pairs) | `surface_event` (correct), `surface_flag` (held_pair), and the rule `Surface-Group.ps1 -Action Repoint` |
+| the structure control (`surface-match-control-v3`) | `surface_derivation` (structure, sibling), the rule `iba/app/ps/Surface-Structure.ps1` |
+| the base-form answer files | `ai_call` (ai_base), `surface_derivation` (ollama), `Surface-Base.ps1 -Action Ask` |
+| the combined-base workbook | `surface_term` (base_id, base_source, base_state), the rule `iba/app/ps/Surface-Resolve.ps1` |
+| the collections, judge, association, list and pole files, the tally and status workbooks | `collection`, `collection_link`, `collection_listing`, `ai_call`; the views by `Collection-Build.ps1 -Action Export` |
+| prompts in scripts and settings | `cfg_ai_prompt` (every version), models in `cfg_ai_model` |
+| the junk surfaces of the past | `surface_term` with `deleted = 1` (and `surface_flag` junk_surface, settled) |
 
 ## 9. Reports and exports
 
@@ -984,7 +1114,7 @@ iba\app\ps\Export-Tables.ps1 [-Table a,b] [-Out <dir>]   # data tables to CSV, v
 ## 10. Project files and housekeeping
 
 ```powershell
-iba\app\ps\Manifest-Rebuild.ps1                       # rescan every file in the project (path metadata only)
+iba\app\ps\Manifest-Rebuild.ps1                       # rescan every file in the project (path metadata only); updates by path
 iba\app\ps\Manifest-Search.ps1 -Query "type:iba-migration"   # field:value or free text against the path
 iba\app\ps\FolderPurpose.ps1 -Action Seed|CrossCheck|AutoAssess|List|Show [-FolderPath …] [-Status …]
 iba\app\ps\FolderPurpose.ps1 -Action Set -FolderPath "outputs/escalation" -Type operations -Status authoritative -UsageDescription "…"
@@ -999,7 +1129,11 @@ iba\app\ps\Purge-SoftDeletes.ps1 [-Action Audit|Execute|Retire] [-Live] [-Databa
   `date:`, `archived:`, `ext:`.
 - **Manifest-Rebuild:** run it after moving files, before relying on a search. A file under an
   `archive/` folder is always `archived`, whatever currency its parent folder has in `folder_purpose`
-  (an `_archive/` folder is not an archive folder).
+  (an `_archive/` folder is not an archive folder). The rebuild updates `file_manifest` **by path**: new
+  paths are added, changed ones updated, vanished ones removed. The analytic columns of a working file of the
+  surface cycle (`module`, `run_id`, `sha256`, `analytic_status`, `migrated_from`) are kept for every file that is
+  still there. A moved file is a new path: the module or migration that moves it registers the new path
+  (`manifest.register_analytic`) with `migrated_from`. A discarded file is not registered.
 - **FolderPurpose:** run `Seed` after a reorganisation, before `Manifest-Rebuild`. `Set` is the only
   way to hand-set a folder's type, status or description.
 - **ContentIndex:** exclusions are rows of `cfg_content_index_exclude`, changed through §4.

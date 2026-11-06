@@ -180,3 +180,7 @@ iba/app/reports/export/
 # (memory: project_git_remote_silently_blocked_by_large_file, purged 2026-07-13).
 Workflow/schema/bible_research/
 Workflow/schema/iba/
+
+# surface cycle (#2361): regenerable embedding cache and discarded embedding matrices are not kept in git
+_analytics/surfaces/working_files/collection/embeddings/
+_analytics/surfaces/discarded/*.npy

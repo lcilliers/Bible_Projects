@@ -341,21 +341,49 @@ def _scan(cfg) -> list[dict]:
     return entries
 
 
+_SCAN_COLS = ("category", "file_type", "currency", "archived", "registry", "word", "cluster", "vcb_batch", "version",
+              "date", "ext", "size_bytes", "modified_at")
+# the columns a scan does NOT own: set by the module that wrote or moved the file (register_analytic), kept across a rebuild
+ANALYTIC_COLS = ("module", "run_id", "sha256", "analytic_status", "migrated_from")
+
+
+def apply_entries(conn: sqlite3.Connection, entries: list[dict], now: str) -> dict:
+    """Bring file_manifest in line with a scan, BY PATH: a path already there is updated in its scanned columns only, a new path is
+    added, a path no longer on disk is removed. The analytic columns (module, run_id, sha256, analytic_status, migrated_from) are
+    never touched by an update, so what a module registered about a working file survives every rebuild (#2361). A file that is
+    moved is a new path: the module that moves it registers the new path (register_analytic) with migrated_from."""
+    before = {r[0] for r in conn.execute("SELECT path FROM file_manifest")}
+    cols = ("path",) + _SCAN_COLS + ("scanned_at",)
+    sets = ", ".join(f"{c}=excluded.{c}" for c in _SCAN_COLS + ("scanned_at",))
+    conn.executemany(
+        f"INSERT INTO file_manifest ({', '.join(cols)}) VALUES ({', '.join(':' + c for c in cols)}) "
+        f"ON CONFLICT(path) DO UPDATE SET {sets}",
+        [{**e, "scanned_at": now} for e in entries])
+    seen = {e["path"] for e in entries}
+    gone = before - seen
+    conn.executemany("DELETE FROM file_manifest WHERE path=?", [(p,) for p in sorted(gone)])
+    return {"added": len(seen - before), "removed": len(gone), "kept": len(seen & before)}
+
+
+def register_analytic(conn: sqlite3.Connection, path: str, *, module: str | None, run_id: str | None, sha256: str | None,
+                      analytic_status: str | None, migrated_from: str | None = None) -> bool:
+    """Record what a module knows about a working file of the surface cycle (#2361): the module, the run that wrote it, its
+    checksum, whether it is live or a regenerable cache, and the path it was moved from. False when the path is not in the
+    manifest (run Manifest-Rebuild first)."""
+    cur = conn.execute(
+        "UPDATE file_manifest SET module=?, run_id=?, sha256=?, analytic_status=?, migrated_from=? WHERE path=?",
+        (module, run_id, sha256, analytic_status, migrated_from, path))
+    return cur.rowcount == 1
+
+
 def rebuild(cfg) -> dict:
-    """Full rescan of the whole project tree. Replaces the table's contents — this is a rebuild,
-    not an incremental update (see contentindex.py for the mtime-based incremental refresh the
-    content-search step relies on for its own index)."""
+    """Rescan the whole project tree and bring the table in line with it, by path (apply_entries): added, updated and removed
+    rows are counted; the analytic columns of a path that is still there are kept. See contentindex.py for the mtime-based
+    incremental refresh the content-search step relies on for its own index."""
     conn: sqlite3.Connection = cfg.conn
     entries = _scan(cfg)
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    conn.execute("DELETE FROM file_manifest")
-    conn.executemany(
-        "INSERT INTO file_manifest (path, category, file_type, currency, archived, registry, "
-        "word, cluster, vcb_batch, version, date, ext, size_bytes, modified_at, scanned_at) "
-        "VALUES (:path,:category,:file_type,:currency,:archived,:registry,:word,:cluster,"
-        ":vcb_batch,:version,:date,:ext,:size_bytes,:modified_at,:scanned_at)",
-        [{**e, "scanned_at": now} for e in entries])
+    changes = apply_entries(conn, entries, now)
     conn.commit()
 
     by_category: dict[str, int] = {}
@@ -368,7 +396,7 @@ def rebuild(cfg) -> dict:
         "scanned_at": now, "total": len(entries),
         "active": sum(1 for e in entries if not e["archived"]),
         "archived": sum(1 for e in entries if e["archived"]),
-        "by_category": by_category, "by_currency": by_currency,
+        "by_category": by_category, "by_currency": by_currency, **changes,
     }
 
 

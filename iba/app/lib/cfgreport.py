@@ -195,6 +195,8 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
 
     sections: dict[str, list[str]] = {}
 
+    from .cfg import Cfg as _HygCfg
+    _hyg_cfg = _HygCfg(db_path)
     finding_groups = [
         ("Orphan configs", "a `cfg_setting`/`cfg_enum` not referenced by any code",
          cfgquality.find_orphan_configs(conn, APP)),
@@ -246,6 +248,10 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
         ("Escalation.ps1/worksheet drift", "an Escalation.ps1 parameter not used as a -Flag header "
          "anywhere in governance.escalation_worksheet_path",
          cfgquality.find_escalation_worksheet_drift(conn, APP, APP.parent.parent)),
+        # the working-file and junk rules of the surface cycle (#2361)
+        ("Surface cycle hygiene", "a junk surface not marked deleted, or an analytic file under _analytics/surfaces "
+         "outside the working_files, exports and discarded folders (surfaces.* settings)",
+         __import__("iba.app.lib.surfacehygiene", fromlist=["x"]).find_surface_hygiene(_hyg_cfg, APP.parent.parent)),
         # every behaviour rule with no control, with its reason (#2206 option 2a)
         ("Unenforced behaviour rules", "an active cfg_behaviour_rule row whose enforcement_status "
          "is neither mechanically_enforced nor context_delivered (the compliance file restates and "
@@ -398,6 +404,10 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
             "FROM cfg_change_log ORDER BY id")])
 
     sections["report_governance"] = _report_governance(q)
+
+    from . import surfacecyclemap
+    sections["surface_cycle_map"] = surfacecyclemap.surface_cycle_map(q)
+    sections["ai_use_map"] = surfacecyclemap.ai_use_map(q)
 
     L = reportkit.render_scaffold(conn, STEP, sections, intro=intro)
     # the CSV pairing's folder is its own setting (configmaint.csv_export_dir), falling back to the

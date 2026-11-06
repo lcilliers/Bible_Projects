@@ -1,0 +1,290 @@
+{
+ "run_id": "DEVMODE-2361-SURFACE-CYCLE-LOAD-20261106",
+ "at": "2026-11-06T06:30:43Z",
+ "counts": {
+  "surfaces": 6069,
+  "group_calls": 6069,
+  "corrections": 56,
+  "computed_bases": 171,
+  "ollama_calls": 707,
+  "ollama_answered": 676,
+  "ollama_refused": 31,
+  "deriv_structure": 1518,
+  "hits": 1386,
+  "outside_leads": 47,
+  "starts_with_leads": 85,
+  "deriv_sibling": 152,
+  "sibling_rows": 152,
+  "deriv_ollama": 676,
+  "deriv_own": 2217,
+  "state_phrase_not_tested": 1166,
+  "source_own": 2217,
+  "state_resolved_own": 642,
+  "state_matched_structure": 1246,
+  "source_structure": 1246,
+  "state_ai_answered": 387,
+  "source_ollama": 387,
+  "state_ai_none": 289,
+  "state_matched_sibling": 89,
+  "state_ai_failed": 31,
+  "flag_held_pair": 39,
+  "flag_possible_opposite": 34,
+  "flag_ai_none": 289,
+  "flag_ai_failed": 31,
+  "flag_possessive": 26,
+  "flag_junk_surface": 4,
+  "collections": 48,
+  "judge_calls": 4170,
+  "assoc_calls": 2440,
+  "list_calls": 61,
+  "pole_calls": 61,
+  "link_core": 48,
+  "link_synonym": 193,
+  "link_opposite": 38,
+  "link_set_aside": 88,
+  "link_possible_opposite": 161,
+  "link_associated": 397,
+  "listing": 748,
+  "eval_cases": 252
+ },
+ "checks": [
+  {
+   "name": "surfaces judged",
+   "got": 6069,
+   "recorded": 6069,
+   "ok": true
+  },
+  {
+   "name": "behaviour",
+   "got": 1317,
+   "recorded": 1317,
+   "ok": true
+  },
+  {
+   "name": "inner_being_state",
+   "got": 2533,
+   "recorded": 2533,
+   "ok": true
+  },
+  {
+   "name": "being",
+   "got": 716,
+   "recorded": 716,
+   "ok": true
+  },
+  {
+   "name": "other (incl. 3 junk)",
+   "got": 1503,
+   "recorded": 1503,
+   "ok": true
+  },
+  {
+   "name": "group corrections (events and state corrected)",
+   "got": [
+    56,
+    56
+   ],
+   "recorded": [
+    56,
+    56
+   ],
+   "ok": true
+  },
+  {
+   "name": "construct rules",
+   "got": 79,
+   "recorded": 79,
+   "ok": true
+  },
+  {
+   "name": "structure hits (all directions)",
+   "got": 1386,
+   "recorded": 1386,
+   "ok": true
+  },
+  {
+   "name": "structure hits by direction same/opposite/candidate",
+   "got": [
+    1287,
+    76,
+    23
+   ],
+   "recorded": [
+    1287,
+    76,
+    23
+   ],
+   "ok": true
+  },
+  {
+   "name": "Ollama calls answered / failed-or-refused",
+   "got": [
+    676,
+    31
+   ],
+   "recorded": [
+    676,
+    31
+   ],
+   "ok": true
+  },
+  {
+   "name": "Ollama answers by relation inflection/derivation/none",
+   "got": [
+    196,
+    191,
+    289
+   ],
+   "recorded": [
+    196,
+    191,
+    289
+   ],
+   "ok": true
+  },
+  {
+   "name": "base source structure/ollama/own (surfaces of collection a)",
+   "got": [
+    1246,
+    387,
+    2217
+   ],
+   "recorded": [
+    1246,
+    387,
+    2217
+   ],
+   "ok": true
+  },
+  {
+   "name": "distinct bases of collection a",
+   "got": 2481,
+   "recorded": 2481,
+   "ok": true
+  },
+  {
+   "name": "flags: held pairs (bases) / possible opposites / ai_none / ai_failed",
+   "got": [
+    39,
+    34,
+    289,
+    31
+   ],
+   "recorded": [
+    39,
+    34,
+    289,
+    31
+   ],
+   "ok": true
+  },
+  {
+   "name": "possible-opposite flags: recorded on 2026-11-04 / added from the structure control",
+   "got": [
+    22,
+    12
+   ],
+   "recorded": [
+    22,
+    12
+   ],
+   "ok": true
+  },
+  {
+   "name": "junk terms soft deleted",
+   "got": 4,
+   "recorded": 4,
+   "ok": true
+  },
+  {
+   "name": "collections",
+   "got": 48,
+   "recorded": 48,
+   "ok": true
+  },
+  {
+   "name": "recorded judgements of the five runs",
+   "got": 4170,
+   "recorded": 4170,
+   "ok": true
+  },
+  {
+   "name": "single-word bases",
+   "got": 1303,
+   "recorded": 1303,
+   "ok": true
+  },
+  {
+   "name": "tally: placed (placed + shared)",
+   "got": 255,
+   "recorded": 255,
+   "ok": true
+  },
+  {
+   "name": "tally: shared",
+   "got": 23,
+   "recorded": 23,
+   "ok": true
+  },
+  {
+   "name": "tally: set aside",
+   "got": 77,
+   "recorded": 77,
+   "ok": true
+  },
+  {
+   "name": "tally: listed only (latest run per seed live; the tally file counted 238 with superseded runs)",
+   "got": 235,
+   "recorded": 235,
+   "ok": true
+  },
+  {
+   "name": "tally: untouched (the tally file said 733)",
+   "got": 736,
+   "recorded": 736,
+   "ok": true
+  },
+  {
+   "name": "every loaded row has a load_ref (rows of the load without one)",
+   "got": 0,
+   "recorded": 0,
+   "ok": true
+  },
+  {
+   "name": "evaluation cases, all provisional",
+   "got": [
+    252,
+    252
+   ],
+   "recorded": [
+    252,
+    252
+   ],
+   "ok": true
+  },
+  {
+   "name": "one live link per (collection, term)",
+   "got": 0,
+   "recorded": 0,
+   "ok": true
+  },
+  {
+   "name": "prompts: at most one active per key",
+   "got": 0,
+   "recorded": 0,
+   "ok": true
+  },
+  {
+   "name": "the active group.word prompt equals the setting the registered tool still reads",
+   "got": true,
+   "recorded": true,
+   "ok": true
+  },
+  {
+   "name": "the active base.word prompt equals the setting the registered tool still reads",
+   "got": true,
+   "recorded": true,
+   "ok": true
+  }
+ ]
+}

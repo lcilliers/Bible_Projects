@@ -1,77 +1,73 @@
-"""surfacebase handlers -- work package `surface-base` (#2359), one step per Surface-Base.ps1 action.
+"""surfacebase handlers -- work package `surface-base` (#2359, #2361), the table route of the AI base.
 
-Status reads a batch file against the input list of words; Run asks the Ollama server for the base form of the words
-not yet answered (lib/surfacebase.py). Neither writes the database: the answers go to the batch file in cfg_setting
-surface_judge.batch_dir. A usage problem (bad batch name, missing setting or input list) is the routed condition
-'refused' and writes nothing."""
+Ask asks the AI, through lib/aiclient.py, for the base of the surfaces the resolve module leaves unmatched (and, with -Retry, the failed): prompt
+base.word, role judge, one ai_call row per attempt, a run_batch row per run; it reads and writes tables only. A usage problem (a missing setting, an
+inactive prompt) is the routed condition 'refused' and writes nothing. The earlier file route (Status and Run with a batch file) was retired in stage 6."""
 from __future__ import annotations
 
-import pathlib
-import re
 import sys
 
 from ..lib import surfacebase as sb
 from .base import Ctx, Outcome, fail, ok
 
-BATCH_NAME = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*-v[1-9][0-9]*-[0-9]{8}")
 
-
-def _batch(ctx: Ctx) -> pathlib.Path:
-    name = ctx.params.get("Batch")
-    if not name:
-        raise sb.BaseError("-Batch is required: the name of the batch file, like base-form-v1-20261104")
-    if not BATCH_NAME.fullmatch(name):
-        raise sb.BaseError(f"-Batch {name!r} is not lower-case words joined by hyphens, then -v and a number, "
-                           "then -yyyymmdd (like base-form-v1-20261104)")
-    folder = ctx.cfg.setting("surface_judge.batch_dir")
-    if not folder:
-        raise sb.BaseError("cfg_setting surface_judge.batch_dir is missing")
-    return pathlib.Path(folder) / f"{name}.jsonl"
-
-
-def status(ctx: Ctx) -> Outcome:
+def ask(ctx: Ctx) -> Outcome:
+    """Ask the AI for the base of the surfaces the resolve module leaves `unmatched` (and, with -Retry, `ai_failed`), through lib/aiclient.py:
+    prompt base.word, role judge; one ai_call row per attempt; the words come from the tables, no file is read or written. -Limit n stops after n
+    words. Afterwards run Surface-Resolve.ps1 -Action Run: it reads the calls and decides the bases."""
+    from ..lib import aiclient as ai
+    from ..lib import batchcontrol as bc
+    from ..lib import surfacejudge as sj
+    from ..lib import surfaceresolve as sr
+    from ..lib import surfacestructure as ss
+    conn = ctx.cfg.conn
     try:
-        out = _batch(ctx)
-        vals = sb.settings(ctx.cfg)
-        words = sb.input_words(vals, out)
-    except sb.BaseError as exc:
-        return fail("refused", str(exc))
-    s = sb.status(vals, words, out)
-    lines = [f"batch {out.as_posix()}" + ("" if out.exists() else " (no file yet)"),
-             f"list (words in the input file): {s['list']}",
-             f"answered: {s['answered']}  " + "  ".join(f"{r} {n}" for r, n in s["per_relation"].items()),
-             f"failed (tried, no usable answer; tried again on the next run): {s['failed']}",
-             f"left: {s['left']}"]
-    if s["not_on_list"]:
-        lines.append(f"in the file but not on the input list: {s['not_on_list']}")
-    return ok("\n  ".join(lines), answered=s["answered"], failed=s["failed"], left=s["left"])
-
-
-def run(ctx: Ctx) -> Outcome:
-    try:
-        out = _batch(ctx)
-        vals = sb.settings(ctx.cfg)
-        words = sb.input_words(vals, out)
         limit = ctx.params.get("Limit")
         if limit not in (None, ""):
             if not str(limit).isdigit() or int(limit) < 1:
-                raise sb.BaseError(f"-Limit is a whole number of at least 1, not {limit!r}")
+                raise ai.AiError(f"-Limit is a whole number of at least 1, not {limit!r}")
             limit = int(limit)
         else:
             limit = None
-    except sb.BaseError as exc:
+        retry = str(ctx.params.get("Retry", "")).lower() in ("1", "true", "yes")
+        rel = ctx.cfg.setting("surface_judge.base_relations")
+        pat = ctx.cfg.setting("surface_judge.base_form_pattern")
+        if rel is None or pat is None:
+            raise ai.AiError("cfg_setting surface_judge.base_relations or surface_judge.base_form_pattern is missing")
+        decided, _ = sr.decisions(conn, ctx.cfg)
+        want = {"unmatched"} | ({"ai_failed"} if retry else set())
+        todo = sorted((t for t, d in decided if d["state"] in want), key=lambda t: t["surface"])
+        if limit:
+            todo = todo[:limit]
+        client = ai.AiClient(ctx.cfg, "ai_base", "base", ctx.run_id)
+        client.model("judge"), client.prompt("base.word")
+    except (ai.AiError, sr.ResolveError, ss.StructureError) as exc:
         return fail("refused", str(exc))
-    ctx.cfg.conn.commit()  # run.py holds the write lock on its run row until the step ends: release it before the long work
-    # progress goes to stderr: stdout carries the step's JSON result
+    if not todo:
+        return ok("nothing to ask: no surface is waiting for an AI base" + (" (none failed either)" if retry else " (-Retry also asks the failed ones)"), asked=0)
+    bvals = {"base_relations": rel, "base_form_pattern": pat}
+    bid = bc.start_batch(conn, ctx.run_id, "surface-base", "surface_base.ask", f"ask:{ctx.run_id}", 1, bc.content_key([t["surface"] for t in todo]))
+    client.batch_id = bid
+    asked = ok_n = bad_n = 0
+    t0 = __import__("time").time()
     try:
-        res = sb.run_words(vals, words, out, limit, emit=lambda m: print(m, file=sys.stderr, flush=True))
-    except sb.BaseError as exc:  # the server check before the first word: nothing was sent or written
+        with client.session(["judge"]):
+            for t in todo:
+                w = t["surface"]
+                r = client.call("judge", "base.word", {"surface": w}, ("surface_term", t["id"]), check=lambda a, w=w: sb.check_answer(a, w, bvals),
+                                result_of=lambda a, w=w: (a.get("base") or w))
+                asked += 1
+                ok_n += r["outcome"] == "answered"
+                bad_n += r["outcome"] != "answered"
+                print(f"{w!r}: {r['outcome']}" + (f" {r['answer'].get('relation')} {r['answer'].get('base')!r}" if r["outcome"] == "answered" else f" {r['error'][:80]}"),
+                      file=sys.stderr, flush=True)
+    except ai.AiHalted as exc:
+        conn.execute("UPDATE run_batch SET model_role='judge', model=?, calls=?, secs=? WHERE id=?", (client.model("judge")[1], asked, round(__import__("time").time() - t0, 1), bid))
+        bc.fail_batch(conn, bid, str(exc))
+        return fail("halted", f"halted after {asked} words: {exc}", asked=asked, answered=ok_n, not_usable=bad_n)
+    except (ai.AiError, sj.JudgeError) as exc:
+        bc.fail_batch(conn, bid, str(exc))
         return fail("refused", str(exc))
-    left = sb.status(vals, words, out)["left"]
-    msg = (f"asked {res['asked']}, failed {res['failed']}" + (", stopped by Ctrl+C" if res["stopped"] else "")
-           + f"; {left} left; batch {out.as_posix()}")
-    if res["halted"]:
-        return fail("halted", f"halted after {vals['max_consecutive_failures']} words in a row with no usable "
-                              f"answer (the server stopped answering?): {msg}", asked=res["asked"],
-                    failed=res["failed"], left=left)
-    return ok(msg, asked=res["asked"], failed=res["failed"], left=left)
+    conn.execute("UPDATE run_batch SET model_role='judge', model=?, calls=?, secs=? WHERE id=?", (client.model("judge")[1], asked, round(__import__("time").time() - t0, 1), bid))
+    bc.commit_batch(conn, bid)
+    return ok(f"asked {asked} words: {ok_n} answered, {bad_n} not usable; batch {bid}. Next: Surface-Resolve.ps1 -Action Run", asked=asked, answered=ok_n, not_usable=bad_n)

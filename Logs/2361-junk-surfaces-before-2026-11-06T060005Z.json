@@ -1,0 +1,101 @@
+{
+ "run_id": "DEVMODE-2361-JUNK-SURFACES-20261106",
+ "at": "2026-11-06T06:00:05Z",
+ "rules": {
+  "empty": "^\\s*$",
+  "no_letter": "^[^A-Za-z]+$",
+  "punctuation_inside": "[,;:!?]"
+ },
+ "rows_before": [
+  {
+   "id": 4382,
+   "cluster_code": "M19",
+   "strong": "G4100",
+   "surface": "",
+   "cluster_subgroup_id": 164,
+   "status": "provisional",
+   "deleted": 0
+  },
+  {
+   "id": 4755,
+   "cluster_code": "M22",
+   "strong": "G2127",
+   "surface": "",
+   "cluster_subgroup_id": 183,
+   "status": "provisional",
+   "deleted": 0
+  },
+  {
+   "id": 6943,
+   "cluster_code": "M26",
+   "strong": "G2920",
+   "surface": "",
+   "cluster_subgroup_id": 257,
+   "status": "provisional",
+   "deleted": 0
+  },
+  {
+   "id": 5602,
+   "cluster_code": "M41",
+   "strong": "H8085H",
+   "surface": "you, do",
+   "cluster_subgroup_id": 207,
+   "status": "provisional",
+   "deleted": 0
+  },
+  {
+   "id": 8557,
+   "cluster_code": "M47",
+   "strong": "G4151G",
+   "surface": "",
+   "cluster_subgroup_id": 332,
+   "status": "provisional",
+   "deleted": 0
+  },
+  {
+   "id": 8859,
+   "cluster_code": "M47",
+   "strong": "H5315J",
+   "surface": "32,000",
+   "cluster_subgroup_id": 331,
+   "status": "provisional",
+   "deleted": 0
+  },
+  {
+   "id": 11559,
+   "cluster_code": "M65",
+   "strong": "H5046",
+   "surface": "^",
+   "cluster_subgroup_id": 458,
+   "status": "provisional",
+   "deleted": 0
+  },
+  {
+   "id": 12296,
+   "cluster_code": "M72",
+   "strong": "H4428G",
+   "surface": "^",
+   "cluster_subgroup_id": 502,
+   "status": "provisional",
+   "deleted": 0
+  },
+  {
+   "id": 12805,
+   "cluster_code": "M74",
+   "strong": "H6822",
+   "surface": "^",
+   "cluster_subgroup_id": 528,
+   "status": "provisional",
+   "deleted": 0
+  },
+  {
+   "id": 12562,
+   "cluster_code": "M76",
+   "strong": "H1870G",
+   "surface": "^",
+   "cluster_subgroup_id": 519,
+   "status": "provisional",
+   "deleted": 0
+  }
+ ]
+}
