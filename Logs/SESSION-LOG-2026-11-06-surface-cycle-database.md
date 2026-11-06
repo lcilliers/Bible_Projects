@@ -53,4 +53,8 @@ Decisions I made and recorded (self-correctable, within the approved design):
 
 ## 6. Git
 
-(written after the first commit)
+- branch: `main`
+- first commit: `f52f8422` — `session 20261106: the surface cycle in the database (#2361, stages 0 to 6), session log, compliance file and close reports` (196 files)
+- push: `To https://github.com/lcilliers/Bible_Projects.git   6362537f..f52f8422  main -> main`
+- left out of git (regenerable or discarded, via `.gitignore`): `_analytics/surfaces/working_files/collection/embeddings/` and `_analytics/surfaces/discarded/*.npy`
+- the second commit (this section) is `session 20261106: session log git confirmation`
