@@ -49,4 +49,7 @@ Start routine (STEP started, compliance file); then #2364 (cfg coherence), #2357
 
 ## 6. Git
 
-(written after the first commit)
+- Branch: main
+- Commit: 0ea3153dc6993b14aeb1caa137014c9979167ca3 ("session 20261107: glossary currency check (#2367), ...")
+- Push: the first push failed (`fatal: unable to access 'https://github.com/lcilliers/Bible_Projects.git/': Recv failure: Connection was reset`); the retry printed `dd1f15b1..0ea3153d  main -> main`.
+- Not staged by design: database/bible_research.db, backups/.
