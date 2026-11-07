@@ -50,4 +50,7 @@ Developer Mode declaration and compliance file; the open escalations ordered for
 
 ## 6. Git
 
-(written after the first commit)
+- Branch: main (remote origin, https://github.com/lcilliers/Bible_Projects.git).
+- Commit: e42d0602316ba0a87d0313edcc63d534d042d598 "session 20261107: multi-term units in verse_lexical (#2381), surface group entity (#2372), rebuilt #2379 exports, session log, compliance file and close reports".
+- Push output: `67e9752d..e42d0602  main -> main`. GitHub warned that outputs/escalation/archive/2379-all-surfaces-collections-verses-v1-20261107.csv is 89.21 MB (above the recommended 50 MB, below the 100 MB limit); the push went through.
+- Not in git: iba/app/db/iba.db, database/bible_research.db and backups/ (the rollback snapshot backups/iba-pre-2381-unit-columns-20261107.db).
