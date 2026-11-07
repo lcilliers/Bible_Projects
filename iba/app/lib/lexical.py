@@ -51,7 +51,8 @@ def span_code_surfaces(conn: sqlite3.Connection, verse_id: int, spans: list[dict
     H2416A, H5750, H9043, H9008), so the span's word was written as the surface of every code. A code that is not a particle
     (discovery.particle_pattern) and whose STEP gloss (strong.stepGloss) is not the span's word takes, as its surface, the untagged
     English word just before the span (within lexical.span_surface look_back_words) that is exactly its gloss (one word of the
-    verse is claimed by one code only). Every other code keeps the span's word."""
+    verse is claimed by one code only). Every other code keeps the span's word here; `apply_unit_fields` (#2381) then sets, from this
+    result, each row's surface, surface_kind and unit columns (an affix code takes its own STEP gloss)."""
     cfg = Cfg.on(conn)
     rule = cfg.required_setting("lexical.span_surface")
     particle = re.compile(cfg.required_setting("discovery.particle_pattern"))
@@ -79,6 +80,97 @@ def span_code_surfaces(conn: sqlite3.Connection, verse_id: int, spans: list[dict
                 taken.add(hit)
                 out[(sp["id"], i)] = hit
     return out
+
+
+def is_affix(code: str | None, particle: re.Pattern, rule: dict) -> bool:
+    """An affix code (a prefix or suffix of a unit): matches discovery.particle_pattern and is not one of the content codes the
+    pattern takes by mistake (cfg_setting lexical.span_surface not_affix_codes, #2381)."""
+    return bool(code) and bool(particle.match(code)) and code not in rule["not_affix_codes"]
+
+
+def affix_role(morph_code: str | None, rule: dict) -> str:
+    """prefix, suffix or affix (neither) from the start of the code's morph class (lexical.span_surface prefix_morph_classes and
+    suffix_morph_classes, #2381): Hebrew and Aramaic prefixes are conjunction, article, preposition, interrogative and relative
+    classes; suffixes are the pronominal, directional and paragogic classes."""
+    m = morph_code or ""
+    if any(m.startswith(p) for p in rule["suffix_morph_classes"]):
+        return "suffix"
+    if any(m.startswith(p) for p in rule["prefix_morph_classes"]):
+        return "prefix"
+    return "affix"
+
+
+def apply_unit_fields(conn: sqlite3.Connection, span: dict, resolved: list[dict], code_surfaces: dict,
+                      rule: dict, particle: re.Pattern) -> None:
+    """Sets, on the rows of one span (mutating `resolved`), what tells a code's own word from the unit's rendering (#2381, design
+    outputs/escalation/2381-verse-lexical-surface-fix-design-v2-20261107.md). Every row gets unit_surface (the span's whole word),
+    unit_size and unit_role. surface and surface_kind follow:
+      - a one-code unit: its own word (own);
+      - an affix code in a unit of several codes: its own STEP gloss (gloss), never the host's word;
+      - the one content code of a unit: the exact word the look-back found (code_surfaces, #2326), else the unit's word (own);
+      - a content code of a unit with two or more content codes: the exact word where found (own), else the unit's word,
+        marked shared because STEP does not say which code owns it."""
+    word = span["surface"]
+    codes = [r["strong"] for r in resolved]
+    flags = [is_affix(c, particle, rule) for c in codes]
+    content = [i for i, f in enumerate(flags) if not f]
+    for i, r in enumerate(resolved):
+        r["unit_surface"], r["unit_size"] = word, len(resolved)
+        if len(resolved) == 1:
+            r["unit_role"], r["surface_kind"] = "sole", "own"
+        elif flags[i]:
+            g = conn.execute("SELECT stepGloss FROM strong WHERE strongNumber=?", (codes[i],)).fetchone()
+            r["surface"] = (g[0] if g and g[0] else None)
+            r["surface_kind"] = "gloss"
+            r["unit_role"] = affix_role(r["morph_code"], rule)
+        else:
+            r["unit_role"] = "head" if len(content) == 1 else "content_part"
+            hit = code_surfaces.get((span["id"], i))
+            if hit:
+                r["surface"], r["surface_kind"] = hit, "own"
+            else:
+                r["surface"] = word
+                if len(content) == 1:
+                    r["surface_kind"] = "own"
+                else:   # the unit's word is this code's own when it is a whole alternative of the code's STEP gloss (as #2326 reads it)
+                    g = conn.execute("SELECT stepGloss FROM strong WHERE strongNumber=?", (codes[i],)).fetchone()
+                    own = (word or "").lower() in gloss_alternatives(g[0] if g else None, rule)
+                    r["surface_kind"] = "own" if own else "shared"
+
+
+_ROLE_ORDER = {"prefix": 0, "suffix": 2}       # every other role (sole, head, content_part, affix) sits between, by code_ordinal
+
+
+def unit_view(conn: sqlite3.Connection, verse_ids: list[int]) -> dict[int, dict]:
+    """{span id: unit} for the multi-term units (unit_size > 1) of the verses (#2381, design
+    outputs/escalation/2381-verse-lexical-surface-fix-design-v2-20261107.md). The ONE reader of a unit: the reading sheet, the scope
+    resolver and the reports call it, none rebuilds the rule. A unit is
+      {"span_id", "verse_id", "position", "rendering" (unit_surface: the unit's whole meaning, as STEP renders it),
+       "head" (the verse_lexical id of the one content code, or None), "construct", "parts"}
+    and a part is {"id", "strong", "role", "kind", "surface" (the code's own), "gloss" (the code's own STEP gloss), "morph"}.
+    Parts are in word order: prefixes, then content parts, then suffixes (an unclassified affix with the content parts), by
+    code_ordinal inside each. The construct reads the parts' own glosses in that order ('to/for + smoothness + their + them')."""
+    if not verse_ids:
+        return {}
+    rows = conn.execute(
+        "SELECT vl.id, vl.span_id, vl.verse_id, vl.position, vl.code_ordinal, vl.strong, vl.morph_code, vl.surface, vl.surface_kind, "
+        "vl.unit_surface, vl.unit_role, s.stepGloss FROM verse_lexical vl LEFT JOIN strong s ON s.strongNumber=vl.strong "
+        "WHERE vl.deleted=0 AND vl.unit_size>1 AND vl.verse_id IN (SELECT value FROM json_each(?)) "
+        "ORDER BY vl.verse_id, vl.position, vl.span_id, vl.code_ordinal", (json.dumps(list(verse_ids)),)).fetchall()
+    units: dict[int, dict] = {}
+    for r in rows:
+        u = units.setdefault(r["span_id"], {"span_id": r["span_id"], "verse_id": r["verse_id"], "position": r["position"],
+                                            "rendering": r["unit_surface"], "head": None, "construct": "", "parts": []})
+        u["parts"].append({"id": r["id"], "strong": r["strong"], "role": r["unit_role"], "kind": r["surface_kind"],
+                           "surface": r["surface"], "gloss": r["stepGloss"], "morph": r["morph_code"], "_o": r["code_ordinal"]})
+        if r["unit_role"] == "head":
+            u["head"] = r["id"]
+    for u in units.values():
+        u["parts"].sort(key=lambda p: (_ROLE_ORDER.get(p["role"], 1), p["_o"]))
+        for p in u["parts"]:
+            del p["_o"]
+        u["construct"] = " + ".join((p["gloss"] or p["surface"] or p["strong"]) for p in u["parts"])
+    return units
 
 
 def _fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
@@ -289,9 +381,11 @@ def _apply_gloss_consistency(verse_rows: list[dict]) -> None:
         r["gloss_consistent_in_verse"] = 1 if len(groups[key]) <= 1 else 0
 
 
-_CONTENT_FIELDS = ("strong", "morph_code", "role", "status",
+_LEGACY_FIELDS = ("strong", "morph_code", "role", "status",
                   "position", "surface", "testament", "is_negator",
                   "narrative_morph", "gloss_consistent_in_verse", "party_kind")
+_UNIT_FIELDS = ("unit_surface", "surface_kind", "unit_size", "unit_role")      # #2381
+_CONTENT_FIELDS = _LEGACY_FIELDS + _UNIT_FIELDS
 
 
 def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: int,
@@ -323,13 +417,16 @@ def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: in
                 "INSERT INTO verse_lexical (span_id, verse_id, code_ordinal, strong, morph_code, "
                 "role, status, created_at, deleted, position, "
                 "surface, testament, is_negator, narrative_morph, "
-                "gloss_consistent_in_verse, party_kind) "
-                "VALUES (?,?,?,?,?,?,?,?,0,?,?,?,?,?,?,?)",
+                "gloss_consistent_in_verse, party_kind, "
+                "unit_surface, surface_kind, unit_size, unit_role) "
+                "VALUES (?,?,?,?,?,?,?,?,0,?,?,?,?,?,?,?,?,?,?,?)",
                 (span_id, verse_id, ordinal, new_content["strong"], new_content["morph_code"],
                  new_content["role"], new_content["status"], now, new_content["position"],
                  new_content["surface"], new_content["testament"],
                  new_content["is_negator"], new_content["narrative_morph"],
-                 new_content["gloss_consistent_in_verse"], new_content["party_kind"]))
+                 new_content["gloss_consistent_in_verse"], new_content["party_kind"],
+                 new_content["unit_surface"], new_content["surface_kind"],
+                 new_content["unit_size"], new_content["unit_role"]))
             c["inserted"] += 1
             continue
 
@@ -337,16 +434,23 @@ def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: in
             c["unchanged"] += 1
             continue
 
+        # updated_at records a real correction: a change in a field other than the unit columns. A row whose only change is the
+        # unit columns being filled for the first time (#2381 back-fill) keeps its updated_at.
+        corrected = any(existing.get(f) != new_content[f] for f in _LEGACY_FIELDS)
         conn.execute(
             "UPDATE verse_lexical SET strong=?, morph_code=?, role=?, status=?, "
             "position=?, surface=?, testament=?, is_negator=?, "
-            "narrative_morph=?, gloss_consistent_in_verse=?, party_kind=?, updated_at=? "
+            "narrative_morph=?, gloss_consistent_in_verse=?, party_kind=?, "
+            "unit_surface=?, surface_kind=?, unit_size=?, unit_role=?, updated_at=? "
             "WHERE id=?",
             (new_content["strong"], new_content["morph_code"], new_content["role"],
              new_content["status"],
              new_content["position"], new_content["surface"],
              new_content["testament"], new_content["is_negator"], new_content["narrative_morph"],
-             new_content["gloss_consistent_in_verse"], new_content["party_kind"], now,
+             new_content["gloss_consistent_in_verse"], new_content["party_kind"],
+             new_content["unit_surface"], new_content["surface_kind"],
+             new_content["unit_size"], new_content["unit_role"],
+             now if corrected else existing.get("updated_at"),
              existing["id"]))
         c["updated"] += 1
 
@@ -381,6 +485,9 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int,
 
     spans = _fetch_spans(conn, verse_id)
     code_surfaces = span_code_surfaces(conn, verse_id, spans)
+    _cfg = Cfg.on(conn)
+    span_rule = _cfg.required_setting("lexical.span_surface")
+    particle_re = re.compile(_cfg.required_setting("discovery.particle_pattern"))
     per_span_resolved: list[tuple[dict, list[dict]]] = []
     for sp in spans:
         codes = (sp["strong_variant"] or "").split()
@@ -395,7 +502,7 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int,
             sibling_codes = [c for j, c in enumerate(codes) if j != i]
             _layer1_fields(r, sp, sibling_codes, r["_language"], testament,
                           code_classes, role_codes, base_pattern)
-            r["surface"] = code_surfaces.get((sp["id"], i), r["surface"])
+        apply_unit_fields(conn, sp, resolved, code_surfaces, span_rule, particle_re)
         per_span_resolved.append((sp, resolved))
 
     # gloss_consistent_in_verse needs the WHOLE verse's rows — one pass after every span resolved.

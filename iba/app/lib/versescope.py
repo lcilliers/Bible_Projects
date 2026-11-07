@@ -311,13 +311,14 @@ class Resolver:
 
     def word(self, word: str, **route) -> int:
         """The occurrences whose surface is the word, case aside (rule 119); never word_strong. Surfaces that
-        hold the word among other words are listed in the selector, not taken in."""
+        hold the word among other words are listed in the selector, not taken in. An affix code's own STEP gloss
+        (surface_kind 'gloss', #2381) is not the ESV word at that place and never brings a verse in."""
         w = word.strip()
         rows = self.conn.execute(
-            "SELECT id, verse_id, strong, coalesce(surface,'') FROM verse_lexical WHERE deleted=0 AND "
+            "SELECT id, verse_id, strong, coalesce(surface,'') FROM verse_lexical WHERE deleted=0 AND surface_kind<>'gloss' AND "
             "lower(trim(surface))=lower(?) ORDER BY id", (w,)).fetchall()
         near = [f"{s} ({n})" for s, n in self.conn.execute(
-            "SELECT surface, COUNT(*) FROM verse_lexical WHERE deleted=0 AND lower(trim(surface))<>lower(?) AND "
+            "SELECT surface, COUNT(*) FROM verse_lexical WHERE deleted=0 AND surface_kind<>'gloss' AND lower(trim(surface))<>lower(?) AND "
             "(' ' || lower(surface) || ' ') LIKE '% ' || lower(?) || ' %' GROUP BY surface ORDER BY 2 DESC, 1 "
             "LIMIT 12", (w, w))]
         if not rows:

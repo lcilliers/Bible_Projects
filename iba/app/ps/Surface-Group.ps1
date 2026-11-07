@@ -3,7 +3,7 @@
     Module 1 of 5 of the surface cycle: corrections of the group of a surface (escalation #2361).
 
 .DESCRIPTION
-    A word of collection a (behaviour or inner_being_state) can have a base that the judge put in 'being' or 'other', judged alone without the
+    A word of collection a (behaviour or inner_being_state) can have a base that the judge put in 'entity' or 'other', judged alone without the
     sense its derived words show. This step reads the tables (surface_term, the structure of lib/surfacestructure.py, cfg_setting module group);
     no file is read.
 

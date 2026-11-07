@@ -44,7 +44,7 @@ _pre = ROOT / "backups/iba-pre-2326-surface-20261028.db"                 # the d
 
 DB = copy_db(S / "iba.db", _pre if _pre.exists() else ROOT / "iba/app/db/iba.db")
 
-for _m in ("analysis_phase_1_2320_v4_20261028.py",):               # the rules the build reads from config (settings the copy of the older database lacks)
+for _m in ("analysis_phase_1_2320_v4_20261028.py", "verse_lexical_units_2381_v1_20261107.py"):  # the rules the build reads from config and the unit columns (#2381) the copy of the older database lacks
     _p = ROOT / "iba/app/migration" / _m
     _p = _p if _p.exists() else ROOT / "iba/app/migration/archive" / _m
     subprocess.run([sys.executable, str(_p), "--db", str(DB)], capture_output=True, text=True, check=True,
@@ -207,9 +207,12 @@ case("M8", "a second run is refused as already applied", sh().startswith("alread
 
 # ── B: the build agrees with the migration ────────────────────────────────────────────────────────
 
+_surf_before = {r[0]: r[1] for r in conn.execute("SELECT id, surface FROM verse_lexical WHERE verse_id=? AND deleted=0", (vid,))}
 c = lexical.build_for_verse(conn, vid)
-
-case("B1", "the build of Gen 43:27 after the migration finds nothing to update (it writes the same surface)", c["updated"] == 0 and c["inserted"] == 0, c)
+_kind = {r[0]: r[1] for r in conn.execute("SELECT id, surface_kind FROM verse_lexical WHERE verse_id=? AND deleted=0", (vid,))}
+_surf_after = {r[0]: r[1] for r in conn.execute("SELECT id, surface FROM verse_lexical WHERE verse_id=? AND deleted=0", (vid,))}
+case("B1", "the build of Gen 43:27 after the migration writes the same surface for every code that is not an affix (#2381 also fills the unit columns and gives affix codes their own gloss)",
+     c["inserted"] == 0 and all(_surf_after[i] == _surf_before[i] for i in _surf_before if _kind[i] != "gloss"), c)
 
 conn.rollback()
 

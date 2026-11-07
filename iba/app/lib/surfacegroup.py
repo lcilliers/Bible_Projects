@@ -1,7 +1,7 @@
 """surfacegroup -- module 1 of 5 of the surface cycle, the group corrections (escalation #2361, stage 2).
 
 The judge (Surface-Judge) puts every surface in one of four groups. A word of collection a (behaviour or inner_being_state) can have a base that
-the judge put in 'being' or 'other' (the base was judged alone, without the sense its derived words show). The recorded repoint of 2026-11-04
+the judge put in 'entity' or 'other' (the base was judged alone, without the sense its derived words show). The recorded repoint of 2026-11-04
 (#2359, 56 changes, 52 held pairs) corrected such bases from their derived words. This module is that rule, as a function of the tables:
 
   a pair is a surface of collection a whose base the structure finds OUTSIDE collection a (the structure result base_outside_input of
@@ -11,7 +11,7 @@ the judge put in 'being' or 'other' (the base was judged alone, without the sens
     - a base already carrying a held_pair flag (a human reading of an earlier run) is left to that reading;
     - a base in a group of setting group.repoint_auto_base_groups is repointed to the group of its derived words (state corrected, a surface_event
       correct with the derived words as the reason);
-    - a base in another group (being) is PROPOSED: a flag held_pair, and it is repointed only when the researcher names it (-Base).
+    - a base in another group (entity) is PROPOSED: a flag held_pair, and it is repointed only when the researcher names it (-Base).
   Everything is inferential until the researcher confirms it (B:4). The rules are cfg_setting rows (module group); no code default.
 """
 from __future__ import annotations

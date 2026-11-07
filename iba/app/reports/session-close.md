@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-07T04:40:20Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-07T17:46:45Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `d41a94c7-0638-41c1-9edf-a1bc3177d568` (CLAUDE_CODE_SESSION_ID); started 2026-11-06T17:46:11Z; window base commit `dd1f15b12cbd77e62d070f43697f54fd1cc6a7c0`
-- compliance file: `Logs/compliance/COMPLIANCE-20261106-d41a94c7.md`; session log: `Logs/SESSION-LOG-20261107-glossary-and-config-housekeeping.md`
-- **open findings: 0**; cleared by disposition: 7
+- session: `8e72859c-b408-45e1-bd42-35d4522bb098` (CLAUDE_CODE_SESSION_ID); started 2026-11-07T05:27:12Z; window base commit `67e9752df6afda96a21a8ff5d88d9d0e6d5b05b9`
+- compliance file: `Logs/compliance/COMPLIANCE-20261107-8e72859c.md`; session log: `Logs/SESSION-LOG-20261107-verse-lexical-units.md`
+- **open findings: 0**; cleared by disposition: 3
 
 
 ## Contents
@@ -41,16 +41,14 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:94207cd5`: researcher message 2026-11-06T17:46 is too short to be matched; name where it is recorded: "project-start" -- disposition: recorded in #2357 v19
-- cleared `SC3:2bf2dcaa`: researcher message 2026-11-06T18:31 is too short to be matched; name where it is recorded: "#2364 coherence" -- disposition: recorded in #2357 v19
-- cleared `SC3:5f9dec1f`: researcher message 2026-11-06T18:59 is too short to be matched; name where it is recorded: "Yes, draft them" -- disposition: recorded in #2357 v19
-- cleared `SC3:b78a86c1`: researcher message 2026-11-07T04:05 is too short to be matched; name where it is recorded: "Yes, flag draft" -- disposition: recorded in #2357 v19
-- cleared `SC3:0d6253b6`: researcher message 2026-11-07T04:25 is too short to be matched; name where it is recorded: "Close #2361" -- disposition: recorded in #2361 v24
+- cleared `SC3:43e91c8c`: researcher message 2026-11-07T08:20 is too short to be matched; name where it is recorded: "Approved, build" -- disposition: recorded in #2381 v5
+- cleared `SC3:7b106e72`: researcher message 2026-11-07T16:48 is too short to be matched; name where it is recorded: "Yes, rebuild #2379" -- disposition: recorded in #2379 v9
+- cleared `SC3:54a7d24e`: researcher message 2026-11-07T17:38 is too short to be matched; name where it is recorded: "Yes, rebuild it" -- disposition: recorded in #2379 v10
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:636c3a16`: researcher message 2026-11-06T18:46 holds, defers or asks to check something; name its register item: "orphan settings: 1) whole cluster reading is still relevant, but the rules for it will change. setup a escalation for it, as it cannot be resolved now.  2) glos" -- disposition: in register #2368
+_no finding_
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -87,4 +85,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Config-Maintenance.ps1_-Step_Propose`: Config-Maintenance.ps1 -Step Propose failed 2 times this session: Propose needs -Title on a fresh call -- a short, title-shaped name for the change (<=60 chars, no '--'). -Question is th; work package : configuration-maintenance -- disposition: carried #2378
+_no finding_

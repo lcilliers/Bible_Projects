@@ -667,7 +667,12 @@ kept with its reason in `ib_observation_change`. The finding shape (`iba/app/lib
 - **`Observe`** puts the next verses in hand (`-Count`, default `reading.verse_loop` `verses_per_sheet`; `-Verse`
   to name one). Each gets a **sheet** in the JSON, read from the tables then: the text and passage; every
   **surface** of the verse (identical Strong and surface once; a grammar hint from `reading.focus_words`), with an
-  `evaluation` to fill; the **existing observations** with a live node on the verse (every stage, any subgroup),
+  `evaluation` to fill. A multi-term unit (one STEP span with several codes) is one item: the surface of its one
+  content code carries the unit (`units`: its rendering, its parts in word order with each part's own STEP gloss and
+  role, and the construct, for example `to/for + smoothness + their + them` for "slippery paths"), and the unit's
+  prefixes and suffixes are in that surface's `occurrences`, not separate surfaces; where a unit has several content
+  codes (or none) each code is its own surface and says it is part of the unit (`shared` where the word is not
+  decided). See section 8.16 (`verse_lexical` and the unit columns). The **existing observations** with a live node on the verse (every stage, any subgroup),
   with their nodes, each with an `action` to fill and, where a node lacks its occurrence or subgroup, a `suggest`;
   the **ledger faces** of the verse not yet linked to an observation; `findings` for new observations. A sheet
   already in hand is not rebuilt.
@@ -934,8 +939,8 @@ iba\app\ps\Surface-Judge.ps1 -Action Status -Batch first-split-v1-20261102
   `ollama.host` directly. The port must differ from 11434, the port of the local Ollama on this machine.
 - The server, model, limits, the four groups and the question itself are `cfg_setting` rows: modules `ollama` and
   `surface_judge` (`surface_judge.groups`, `surface_judge.word_prompt`). The values `behaviour`,
-  `inner_being_state`, `being` and `other` are also enum values of `surface_subgroup.surface_group` and
-  `surface_pair_verdict.surface_group`, where a later step will store the confirmed groups.
+  `inner_being_state`, `entity` and `other` are also the enum values of `surface_term.surface_group`, the
+  group stored for each surface (the group is stored under the name the model is given: `surface_judge.group_stored_as` is empty).
 
 ---
 
@@ -1085,6 +1090,27 @@ iba\app\ps\Collection-Build.ps1 -Action Links -Check          # the members from
 | the collections, judge, association, list and pole files, the tally and status workbooks | `collection`, `collection_link`, `collection_listing`, `ai_call`; the views by `Collection-Build.ps1 -Action Export` |
 | prompts in scripts and settings | `cfg_ai_prompt` (every version), models in `cfg_ai_model` |
 | the junk surfaces of the past | `surface_term` with `deleted = 1` (and `surface_flag` junk_surface, settled) |
+
+### 8.16 `verse_lexical` and the multi-term unit (`iba/app/lib/lexical.py`, escalation #2381)
+
+STEP tags one span with every code of a rendering unit ("slippery paths" is `H2519 H9028 H9005 H9038`). `verse_lexical`
+keeps one row per code, and tells the code's own word from the unit's meaning:
+
+| Column | Holds |
+|---|---|
+| `surface` | what belongs to THIS code: its own word, or for an affix code its own STEP gloss (`to/for`, `his`) |
+| `unit_surface` | the unit's whole rendering, on every row of the unit |
+| `surface_kind` | `own` (its own word), `shared` (a content code of a unit with two or more content codes whose word is not decided: `surface` is the unit's rendering), `gloss` (an affix: `surface` is its own gloss) |
+| `unit_size`, `unit_role` | codes in the unit; `sole`, `head` (the one content code), `content_part`, `prefix`, `suffix`, `affix` |
+
+The rules are `cfg_setting lexical.span_surface` (the look-back, `prefix_morph_classes`, `suffix_morph_classes`,
+`not_affix_codes`) and are applied by `lexical.build` (`VerseLexical.ps1 -Step lexical.build`). A unit is read with
+`lexical.unit_view` (rendering, parts in word order: prefixes, content, suffixes; the construct, for example
+`to/for + smoothness + their + them`); the reading sheet, the scope resolver and reports use it. A word enters the
+scope resolver through `surface` of rows that are not `gloss`: an affix gloss is not the ESV word at that place.
+A join from a surface word to its occurrences (for a count, an export, a collection's evidence) takes `surface_kind`
+`own` and `shared` only. Three M-coded rows stay as the 28 October migration left them (held, see the changes file
+`outputs/escalation/2326-verse-lexical-surface-changes-v1-20261028.tsv`).
 
 ## 9. Reports and exports
 

@@ -1,0 +1,25 @@
+{
+ "_patch_meta": {
+  "patch_id": "PATCH-20261107T065933Z-PROSE-GLOSSARY-SURFACE-GROUP-ENTITY",
+  "patch_type": "PROSE",
+  "produced_at": "20261107T065933Z",
+  "session_b_status": null,
+  "researcher_approval": "PENDING",
+  "description": "Glossary entry 'surface group' (id 1131): the group of things that exist is named entity, not being (escalation #2372, researcher 2026-11-07). Applied without per-entry approval (B:126); stays draft."
+ },
+ "operations": [
+  {
+   "op_id": "GLOSSARY-1131-ENTITY",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1131,
+   "record": {
+    "heading": "surface group",
+    "body": "[DEFINITION] The first sorting of a surface text by what it names, as the ESV uses it: behaviour (something a person does or undergoes, an act, feeling, thought, speech or choice), inner_being_state (a standing condition or characteristic of a person or of the inner being: righteous, proud, humble, weak), entity (a thing that exists: a human, a plant or animal, God in all forms, an unseen power, or a part of any of these), or other (everything else, and any word that definitely belongs in none of the other three).\n\n[BACKGROUND] Held in surface_term.surface_group and judged by a model, so it is inferential until confirmed. A word that says what an entity does, is like or has undergone is not an entity, even when it describes one. The surface group is not the cluster or the concept.",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"glossary_key\": \"new.surface_group\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2367\"}"
+   }
+  }
+ ]
+}

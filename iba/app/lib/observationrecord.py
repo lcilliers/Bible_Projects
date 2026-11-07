@@ -149,21 +149,19 @@ def copies_verse(cfg, texts, verse_text: str) -> str | None:
 
 
 def occurrence_surfaces(conn, verse_ids: list) -> dict:
-    """{verse_lexical.id: {"surface_here", "span_surface", "step_gloss"}}: the surface of each occurrence as STEP glosses its code
-    (iba/app/lib/lexical.py span_code_surfaces; #2326) and the word of the span it stands in. The build writes the same surface into
-    verse_lexical.surface, so for built rows the two agree; for a row built before that rule the sheet and a new node still get
-    the right one."""
-    from iba.app.lib import lexical
+    """{verse_lexical.id: {"surface_here", "span_surface", "step_gloss", "surface_kind", "unit_role", "unit_size"}}: the code's own
+    surface (verse_lexical.surface: its own word, or for an affix code its own STEP gloss), the unit's whole rendering
+    (verse_lexical.unit_surface) and the code's own STEP gloss. The build sets the columns (iba/app/lib/lexical.py
+    apply_unit_fields, #2381); this reads them and no longer re-derives the rule."""
     out = {}
-    for vid in sorted(set(verse_ids)):
-        spans = [dict(r) for r in conn.execute("SELECT id, position, surface, strong_variant FROM span WHERE verse_id=? AND deleted=0 "
-                                               "ORDER BY position", (vid,))]
-        surf = lexical.span_code_surfaces(conn, vid, spans)
-        word = {sp["id"]: sp["surface"] for sp in spans}
-        for r in conn.execute("SELECT vl.id, vl.span_id, vl.code_ordinal, vl.strong, s.stepGloss FROM verse_lexical vl "
-                              "LEFT JOIN strong s ON s.strongNumber=vl.strong WHERE vl.verse_id=? AND vl.deleted=0", (vid,)):
-            out[r["id"]] = {"surface_here": surf.get((r["span_id"], r["code_ordinal"]), word.get(r["span_id"])),
-                            "span_surface": word.get(r["span_id"]), "step_gloss": r["stepGloss"]}
+    ids = sorted(set(verse_ids))
+    if not ids:
+        return out
+    for r in conn.execute("SELECT vl.id, vl.surface, vl.unit_surface, vl.surface_kind, vl.unit_role, vl.unit_size, s.stepGloss "
+                          "FROM verse_lexical vl LEFT JOIN strong s ON s.strongNumber=vl.strong WHERE vl.deleted=0 AND vl.verse_id IN "
+                          "(SELECT value FROM json_each(?))", (json.dumps(ids),)):
+        out[r["id"]] = {"surface_here": r["surface"], "span_surface": r["unit_surface"], "step_gloss": r["stepGloss"],
+                        "surface_kind": r["surface_kind"], "unit_role": r["unit_role"], "unit_size": r["unit_size"]}
     return out
 
 

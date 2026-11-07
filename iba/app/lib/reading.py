@@ -330,8 +330,9 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
     ids = [it["verse_id"] for it in items]
     J = json.dumps(ids)
     osis_of = {it["verse_id"]: it["osis"] for it in items}
-    rows = conn.execute("SELECT id, verse_id, position, surface, strong, morph_code, testament, is_negator FROM verse_lexical "
-                        "WHERE deleted=0 AND verse_id IN (SELECT value FROM json_each(?)) ORDER BY verse_id, position, id",
+    rows = conn.execute("SELECT id, verse_id, position, surface, strong, morph_code, testament, is_negator, span_id, code_ordinal, "
+                        "unit_surface, surface_kind, unit_role, unit_size FROM verse_lexical "
+                        "WHERE deleted=0 AND verse_id IN (SELECT value FROM json_each(?)) ORDER BY verse_id, position, span_id, code_ordinal",
                         (J,)).fetchall()
     strongs = sorted({r["strong"] for r in rows})
     SJ = json.dumps(strongs)
@@ -351,11 +352,20 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
     meaning = _meaning(cfg, conn, {r["strong"]: r["testament"] for r in rows})
     osur =orec.occurrence_surfaces(conn, ids)      # the surface of each occurrence as STEP glosses it (multi-code spans)
     db_surface = {r["id"]: r["surface"] for r in rows}
+    from . import lexical
+    units = lexical.unit_view(conn, ids)          # the multi-term units: rendering, parts in word order, construct (#2381)
     sheets = {}
     for it in items:
         vid = it["verse_id"]
         groups: dict = {}
+        by_id = {r["id"]: r for r in by_verse[vid]}
+        # an affix part of a unit that has a head joins the head's group (one evaluation for the unit; its occurrence id stays
+        # addressable for a node); in a unit with several content codes, or none, every code keeps its own group (#2381)
+        joined = {r["id"]: units[r["span_id"]]["head"] for r in by_verse[vid]
+                  if r["unit_role"] in ("prefix", "suffix") and r["span_id"] in units and units[r["span_id"]]["head"] in by_id}
         for r in by_verse[vid]:
+            if r["id"] in joined:
+                continue
             key = (r["strong"], _norm(r["surface"]))
             g = groups.get(key)
             if g is None:
@@ -378,8 +388,18 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                                    "clusters": clusters.get(r["strong"], []),
                                    "subgroups": subs.get((r["strong"], _norm(r["surface"])), []), "hint": hint,
                                    "meaning": meaning[r["strong"]], "evaluation": None,
-                                   "items_absent": {}}
+                                   "items_absent": {}, "surface_kind": r["surface_kind"], "units": []}
+                if r["unit_size"] and r["unit_size"] > 1 and r["unit_role"] != "head":
+                    g["hint"].append(f"part of the unit '{r['unit_surface']}' ({r['unit_role']}; its own word, not the unit's)"
+                                     if r["surface_kind"] != "shared" else
+                                     f"shares the unit's wording '{r['unit_surface']}' with another content code (owner not decided)")
             g["occurrences"].append(r["id"])
+            u = units.get(r["span_id"])
+            if u and all(x["span_id"] != r["span_id"] for x in g["units"]):
+                g["units"].append({"span_id": u["span_id"], "rendering": u["rendering"], "construct": u["construct"], "parts": u["parts"]})
+        for aid, head_id in joined.items():
+            h = by_id[head_id]
+            groups[(h["strong"], _norm(h["surface"]))]["occurrences"].append(aid)
         sheets[vid] = {"surfaces": list(groups.values())}
     # the existing observations and nodes on the verses (every stage, not filtered by subgroup)
     OJ = json.dumps([it["osis"] for it in items])
