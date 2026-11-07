@@ -20242,3 +20242,13 @@ No config change. The cycle itself is started as BUILD 453 and rule B:125 say.
 - **Code:** `iba/app/handlers/configmaint.py` (the validate findings gain "surface_hygiene") and `iba/app/lib/cfgreport.py` (sections 16 and 17 and the "Surface cycle hygiene" finding group); `iba/app/ps/Surface-Base.ps1` (now `Ask` only).
 - **Tests:** `iba/app/tools/archive/temp_2359_surface_base_test_run.py` (the test of the retired file route, moved to the archive); the test files of stages 2 to 6 are `temp_2361_structure_test_run.py`, `temp_2361_group_test_run.py`, `temp_2361_resolve_test_run.py`, `temp_2361_ai_test_run.py`, `temp_2361_collection_test_run.py`, `temp_2361_collection_ask_test_run.py` and `temp_2361_independence_test_run.py` under `iba/app/tools/`.
 - **Guide:** `iba/app/USER-GUIDE.md` sections 8.9 to 8.15 and `iba/app/CHARTER.md` section 5.
+
+## 467. The glossary currency check (2026-11-07, escalation #2367)
+
+**Why:** the researcher (chat 2026-11-06): the glossary check is very relevant and the new surface terminology must be covered and checked against the glossary; and (2026-11-07, "Yes, flag draft") a term with only draft entries is a finding. The setting `glossary.currency_check` had no code reading it (build B10, named in #2268).
+
+**What changed:** `iba/app/lib/cfgquality.py` gains `find_glossary_currency(cfg, conn)`: it reads the terms of `glossary.currency_check` and the glossary of `database/bible_research.db` (`prose_section` of the section types `glossary_*`, opened read-only through `cfg.database_path('bible_research')`). A term with no entry, with only archived entries, or with no approved entry (draft or in_review) is an advisory finding; so is a `cfg_prose_concept` pointer `(prose_section N)` naming an entry that is not there under that heading. It is wired into `iba/app/handlers/configmaint.py` (finding `glossary_currency`) and `iba/app/lib/cfgreport.py` (group "Glossary currency", section 0 of the config report). No table, no script, no setting changed.
+
+**Tests (B:29):** real data: the 7 terms of the setting each report "no approved entry (status: draft)", and none of the 6 `cfg_prose_concept` pointers is flagged. Synthetic database: an archived-only term, an in_review term and an unknown term each give their finding, an approved term and a good pointer give none, a pointer to an entry of another heading gives the pointer finding. `Config-Maintenance.ps1 -Step Validate` (RUN-20261107_040749_287-CONFIGMAINT) shows the group in `outputs/configs/CONFIG-REPORT-v708-20261107.md`.
+
+**Left:** the 8 surface terms are added to the setting by a proposal (#2367); every entry is draft, so the check reports each term until the researcher approves its entry (`Prose.ps1 -Step SetStatus`).

@@ -1,0 +1,144 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261106T190154Z-PROSE-GLOSSARY-SURFACE-TERMS",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-06T19:01:54Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Insert 8 draft glossary entries for the surface-cycle terms (escalation #2367). Section type glossary_programme already exists."
+  },
+  "operations": [
+    {
+      "op_id": "GLOSSARY-NEW-01-base",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "registry_id": null,
+        "heading": "base",
+        "body": "[DEFINITION] A base is the English word a surface text is an inflected or derived form of, when the two share the same root meaning (sought: seek; wonderful: wonder). It is itself a surface text: a base is a row of the same table as the surface that points to it, and a word with no base is its own base. A base is where surfaces of one root meaning are gathered before they are placed in collections.\n\n[BACKGROUND] Named 'base form' in the AI question. Held in surface_term (base_id), with the evidence in surface_derivation. Everything a model decided about a base is inferential until its state is confirmed.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"glossary_key\": \"new.base\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2367\"}"
+      }
+    },
+    {
+      "op_id": "GLOSSARY-NEW-02-inflection",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "registry_id": null,
+        "heading": "inflection",
+        "body": "[DEFINITION] The relation of a surface to its base when only the grammatical ending changes: tense, plural, participle, comparative, including irregular forms (wept: weep; grew: grow).\n\n[BACKGROUND] One of three allowed base relations (inflection, derivation, none). The relation 'none' is used when the word has no base, is only an opposite or look-alike of a candidate base, or its meaning has moved away from it.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"glossary_key\": \"new.inflection\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2367\"}"
+      }
+    },
+    {
+      "op_id": "GLOSSARY-NEW-03-derivation",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "registry_id": null,
+        "heading": "derivation",
+        "body": "[DEFINITION] The relation of a surface to its base when a different word form is made with a suffix or prefix, such as a noun from a verb or an adjective, and the core meaning stays the same (wonderful: wonder; strife: strive).\n\n[BACKGROUND] Contrast inflection, where only the grammatical ending changes. A derived form with a changed meaning is not a derivation here (undoing is not undo).",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"glossary_key\": \"new.derivation\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2367\"}"
+      }
+    },
+    {
+      "op_id": "GLOSSARY-NEW-04-surface-group",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "registry_id": null,
+        "heading": "surface group",
+        "body": "[DEFINITION] The first sorting of a surface text by what it names, as the ESV uses it: behaviour (something a person does or undergoes, an act, feeling, thought, speech or choice), inner_being_state (a standing condition or characteristic of a person or of the inner being: righteous, proud, humble, weak), being (a thing that exists: a human, a plant or animal, God in all forms, an unseen power, or a part of any of these), or other (everything else, and any word that definitely belongs in none of the other three).\n\n[BACKGROUND] Held in surface_term.surface_group and judged by a model, so it is inferential until confirmed. A word that says what an entity does, is like or has undergone is not a being, even when it describes one. The surface group is not the cluster or the concept.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"glossary_key\": \"new.surface_group\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2367\"}"
+      }
+    },
+    {
+      "op_id": "GLOSSARY-NEW-05-subgroup",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "registry_id": null,
+        "heading": "subgroup",
+        "body": "[DEFINITION] A subdivision of an M-code cluster that carries a label and a core description of which sense of the cluster theme it covers (for example M01-A). A (Strong's code, surface) pair is allocated to a subgroup at the clustering stage; the allocation is provisional, never a finding, and a pair with two senses is settled per occurrence in the claims step.\n\n[BACKGROUND] Held in cluster_subgroup; the allocation of a pair is surface_subgroup. Each live subgroup belongs to exactly one live concept (concept_subgroup).",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"glossary_key\": \"new.subgroup\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2367\"}"
+      }
+    },
+    {
+      "op_id": "GLOSSARY-NEW-06-collection",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "registry_id": null,
+        "heading": "collection",
+        "body": "[DEFINITION] A set of bases of like meaning gathered round one core word and named for it. Each member is placed by a tier: core (the seed), synonym, or opposite (confirmed by two judges); a possible opposite and an associated word are listed apart for the researcher and are not members, and a word the model listed but the judge would not bind is set aside.\n\n[BACKGROUND] Held in collection and collection_link. A collection is the finer step before a concept: it is rolled up into a concept later. Provisional and inferential until its status is confirmed.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"glossary_key\": \"new.collection\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2367\"}"
+      }
+    },
+    {
+      "op_id": "GLOSSARY-NEW-07-concept",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "registry_id": null,
+        "heading": "concept",
+        "body": "[DEFINITION] A sub-chapter of a concept domain, named for what its subgroups share. The concept holds subgroups of clusters, and a live subgroup is in exactly one live concept; it is the link from the base data to the narrative.\n\n[BACKGROUND] Held in concept and concept_subgroup. The collections of bases will be rolled up into concepts (collection.concept_id), which will replace the subgroup membership. A first grouping, not a finding.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"glossary_key\": \"new.concept\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2367\"}"
+      }
+    },
+    {
+      "op_id": "GLOSSARY-NEW-08-concept-domain",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "registry_id": null,
+        "heading": "concept domain",
+        "body": "[DEFINITION] A domain of the concept grouping, the basis the researcher ruled for the narrative: domains are chapters and concepts are sub-chapters (chat 2026-10-31).\n\n[BACKGROUND] Held in concept_domain. Loaded from the v1 specification iba/docs/concept-mapping-spec-v1-20261031.json by grouping the existing subgroups; a first grouping, not a finding.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"glossary_key\": \"new.concept_domain\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2367\"}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 8,
+    "prose_section_inserts": 8
+  }
+}

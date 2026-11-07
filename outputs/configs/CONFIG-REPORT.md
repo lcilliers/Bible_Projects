@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-06T17:35:08Z |
+| generated_at | 2026-11-07T04:33:55Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -35,10 +35,8 @@
 
 _Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s escalation, which references this section by path rather than repeating it. Not errors — advisory. See GOVERNANCE.md §5B._ Items are numbered (running count across every category below) so any one item can be referenced by number, e.g. "item 7" — the numbering is a snapshot of THIS regenerate, not a stable ID across runs. Historical/already-decided records (inactive configs) are §1, not here — everything below is something that actually needs your judgement.
 
-**Orphan configs** (3) — a `cfg_setting`/`cfg_enum` not referenced by any code:
+**Orphan configs** (1) — a `cfg_setting`/`cfg_enum` not referenced by any code:
 1. cfg_setting 'reading.whole_cluster_reading_start' (key not found together with a cfg.setting(...) call in any one file)
-2. cfg_setting 'glossary.currency_check' (key not found together with a cfg.setting(...) call in any one file)
-3. cfg_setting 'ollama.max_codes_per_call' (key not found together with a cfg.setting(...) call in any one file)
 
 **Settings needing justification** (0) — module already has its own dedicated table:
 _(none)_
@@ -52,9 +50,8 @@ _(none)_
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
 
-**Low config-density utilities** (2) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-4. cfg_utility 'noderesolve' (iba\app\lib\noderesolve.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-5. cfg_utility 'surfacebase' (iba\app\lib\surfacebase.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+**Low config-density utilities** (0) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
+_(none)_
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -78,10 +75,10 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-6. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+2. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
-**PS/worksheet drift** (1) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-7. Node-Resolve.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\node-resolve.ps1' in some tab's first rows)
+**PS/worksheet drift** (0) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
+_(none)_
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
@@ -89,24 +86,41 @@ _(none)_
 **Surface cycle hygiene** (0) — a junk surface not marked deleted, or an analytic file under _analytics/surfaces outside the working_files, exports and discarded folders (surfaces.* settings):
 _(none)_
 
+**Glossary currency** (15) — a term of glossary.currency_check with no entry, only archived entries or no approved entry in the programme glossary (bible_research.db prose_section), or a cfg_prose_concept pointer naming an entry that is not there:
+3. glossary term 'role' has no approved entry (status: draft)
+4. glossary term 'characteristic' has no approved entry (status: draft)
+5. glossary term 'operation' has no approved entry (status: draft)
+6. glossary term 'M-Code cluster' has no approved entry (status: draft)
+7. glossary term 'T2' has no approved entry (status: draft)
+8. glossary term 'T3' has no approved entry (status: draft)
+9. glossary term 'inner being' has no approved entry (status: draft)
+10. glossary term 'base' has no approved entry (status: draft)
+11. glossary term 'inflection' has no approved entry (status: draft)
+12. glossary term 'derivation' has no approved entry (status: draft)
+13. glossary term 'surface group' has no approved entry (status: draft)
+14. glossary term 'subgroup' has no approved entry (status: draft)
+15. glossary term 'collection' has no approved entry (status: draft)
+16. glossary term 'concept' has no approved entry (status: draft)
+17. glossary term 'concept domain' has no approved entry (status: draft)
+
 **Unenforced behaviour rules** (17) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-8. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-9. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-10. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-11. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-12. [development] #46 test-plan-per-module-utility — deliberately_deferred
-13. [development] #66 cluster-label-must-track-membership — buildable_not_built
-14. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-15. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-16. [filing] #56 naming-shape — partially_enforced
-17. [filing] #58 archiving-trigger — partially_enforced
-18. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-19. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-20. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
-21. [study_method] #118 surface-mapping-conditions — partially_enforced
-22. [study_method] #120 scope-home-and-multiplicity — partially_enforced
-23. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
-24. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
+18. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+19. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+20. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+21. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+22. [development] #46 test-plan-per-module-utility — deliberately_deferred
+23. [development] #66 cluster-label-must-track-membership — buildable_not_built
+24. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+25. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+26. [filing] #56 naming-shape — partially_enforced
+27. [filing] #58 archiving-trigger — partially_enforced
+28. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+29. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+30. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
+31. [study_method] #118 surface-mapping-conditions — partially_enforced
+32. [study_method] #120 scope-home-and-multiplicity — partially_enforced
+33. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
+34. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -148,7 +162,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1082** registered module(s) — **603** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **913** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1082** registered module(s) — **605** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **913** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -751,7 +765,7 @@ _(none)_
 | narrativegenerate | iba/app/lib/archive/narrativegenerate.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). report.book_narrative_generate's assembly (debates + governing docs), cost estimate/cap, Anthropic Messages API call, and narrative filing |  |  |  |
 | narrativeregister | iba/app/lib/narrativeregister.py | narrativeregister.py -- the narrative claim register in iba.db (escalation #2110): the reference parser and book-alias map, the register actions (AddClaim, Edit, Tell, Untell, Withdraw, EditNote, AddChapter, EditChapter, EditSection, Find, History, Check), Export of the three published files, and the narrative held as blocks: rewrite() and publish_chapter() (#2172). See USER-GUIDE.md and GOVERNANCE.md. | ✓ |  |  |
 | node_resolve_config_2308_v1_20261026 | iba/app/migration/archive/node_resolve_config_2308_v1_20261026.py | ONE-OFF migration -- escalation #2308: work package node-resolve, its steps, grant, setting and method rules NR-01 to NR-06; run_id DEVMODE-2308-NODE-RESOLVE-CONFIG-20261026. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
-| noderesolve | iba/app/lib/noderesolve.py | noderesolve.py -- the sweep that resolves the occurrence, morph code and sub_group of ib_node rows through the strong and the verse: plan, apply, report (#2308, rules NR-01 to NR-06) | ✓ |  |  |
+| noderesolve | iba/app/lib/noderesolve.py | noderesolve.py -- the sweep that resolves the occurrence, morph code and sub_group of ib_node rows through the strong and the verse: plan, apply, report (#2308, rules NR-01 to NR-06) | ✓ | ✓ | pure plan/apply logic over fixed schema columns (verse_lexical_id, morph_code, cluster_subgroup_code); no tunable value, its one setting node_resolve.output_dir is read by the handler iba/app/handlers/noderesolve.py |
 | observationenhancer | iba/app/handlers/observationenhancer.py | observationenhancer.py -- the observation_enhancer utility (escalation #1778). preview(ctx)/apply(ctx): applies a researcher-confirmed cfg_observation_enhancer_rule (selector_sql + update_json) to ib_observation, logging every change to ib_observation_enhancer_log. | ✓ |  |  |
 | observationrecord | iba/app/lib/observationrecord.py | observationrecord.py -- the observation record (#2274): a reading's findings, one ib_observation each, applied by ib_node rows with the word's role, the reading and the verse's disposition; duplicates become nodes; every change kept with its reason (ib_observation_change). | ✓ |  |  |
 | open_item_2236_v1_20261023 | iba/app/migration/archive/open_item_2236_v1_20261023.py | ONE-OFF migration -- escalation #2236: open-item columns and verse table, work package open-item, settings, rule open-item-has-a-clear-purpose; run_id DEVMODE-2236-OPEN-ITEM-20261023. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -1206,7 +1220,7 @@ _(none)_
 | surface_structure_2361_v1_20261106 | iba/app/migration/archive/surface_structure_2361_v1_20261106.py | ONE-OFF migration -- escalation #2361 stage 2: registers module surface-structure, its settings and the result_kind column of cfg_base_construct; run_id DEVMODE-2361-SURFACE-STRUCTURE-20261106. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_subgroup_rules_2291_v1_20261025 | iba/app/migration/archive/surface_subgroup_rules_2291_v1_20261025.py | ONE-OFF migration -- escalation #2291 (#2286 U1): the #2286 work-unit rulings as six study_method behaviour rules with their scopes, cluster.surface_map.head_share and the ib_observation tag subgroup-settlement; run_id DEVMODE-2291-SURFACE-SUBGROUP-RULES-20261025. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_subgroup_schema_2292_v1_20261025 | iba/app/migration/archive/surface_subgroup_schema_2292_v1_20261025.py | ONE-OFF migration -- escalation #2292 (#2286 U2): table surface_subgroup, cluster_subgroup.kind, ib_node.verse_lexical_id, their enums; run_id DEVMODE-2292-SURFACE-SUBGROUP-SCHEMA-20261025. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
-| surfacebase | iba/app/lib/surfacebase.py | surfacebase.py -- the shape of an AI base answer (a known relation, a base of the configured pattern): the check used by Surface-Base.ps1 -Action Ask (escalation #2359, #2361). | ✓ |  |  |
+| surfacebase | iba/app/lib/surfacebase.py | surfacebase.py -- the shape of an AI base answer (a known relation, a base of the configured pattern): the check used by Surface-Base.ps1 -Action Ask (escalation #2359, #2361). | ✓ | ✓ | check_answer takes its configured values as the argument vals; the handler iba/app/handlers/surfacebase.py reads surface_judge.base_relations and surface_judge.base_form_pattern and passes them in |
 | surfacecyclemap | iba/app/lib/surfacecyclemap.py | surfacecyclemap.py -- the generated sections 16 (the surface cycle) and 17 (the AI use map) of the config report, built from the registers (escalation #2361). | ✓ | ✓ | reads through the config report's own query function, not Cfg |
 | surfacegroup | iba/app/lib/surfacegroup.py | surfacegroup.py -- module 1 of 5 of the surface cycle: the group repoint rule, rebuilt from the recorded repoint of 2026-11-04 and reproducing it (escalation #2361). | ✓ |  |  |
 | surfacehygiene | iba/app/lib/surfacehygiene.py | surfacehygiene.py -- the working-file and junk rules of the surface cycle (surfaces.junk_rules, working_files_root, exports_root, discarded_root), checked: a live junk surface, a stray analytic file (escalation #2361). | ✓ |  |  |
@@ -1271,7 +1285,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | behaviour | compliance.dir | Logs/compliance/ | #2173 P2: folder of the session compliance files COMPLIANCE-<date>-<session8>.md |
 | behaviour | compliance.engaged_statuses | ['engaged'] | #2173 P2 D: the statuses whose rows need evidence at close |
 | behaviour | compliance.value_settings | ['governance.escalation_worksheet_path', 'governance.oneoff_report_archive_dir', 'governance.oneoff_report_dir', 'governance.oneoff_report_format', 'governance.oneoff_report_naming_pattern', 'governance.ps_worksheet_path', 'governance.scripts_ps_dir', 'governance.session_log_dir'] | #2206 option 3: governance settings holding a plain value (a path, a format), read by the code that uses them; lib/compliance.py leaves them out of the delivered rules and the compliance file |
-| behaviour | glossary.currency_check | ['role', 'characteristic', 'operation', 'M-Code cluster', 'T2', 'T3', 'inner being'] | #2268 R9, P33: the glossary terms the controlled values point to; each must exist and be current in the programme glossary (prose_section); the check is build B10 |
+| behaviour | glossary.currency_check | ['role', 'characteristic', 'operation', 'M-Code cluster', 'T2', 'T3', 'inner being', 'base', 'inflection', 'derivation', 'surface group', 'subgroup', 'collection', 'concept', 'concept domain'] | #2268 R9, P33: the glossary terms the controlled values point to; each must exist and be current in the programme glossary (prose_section); the check is build B10 |
 | candidate | candidate.concept_delimiter_pattern | [:/] | a character in a candidate.load input word signalling more than one concept -- split into one sub-item per piece before validating, rather than reject or guess which half is right |
 | candidate | candidate.lemma_base_pattern | ^([HG]\d+)([A-Z]?)$ | capture group 1 = the base Strong's (sub-letters stripped) — the lemma key. The seed/stamp key on this. |
 | candidate | candidate.load_report_path | iba/app/reports/candidate-load.md | where candidate.load persists its per-run duplicates/exceptions report |
@@ -1432,7 +1446,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | ollama | ollama.connect_timeout_seconds | 10 | how many seconds the check before a run waits for the Ollama server to answer (and to list its models) before it refuses to run (#2354); not the time allowed for a model to answer, which is ollama.timeout_seconds |
 | ollama | ollama.host | http://192.168.83.114:11434 | the Ollama server that judges the surfaces (#2354); address changed from .113 on 2026-11-02; Ubuntu host zeta-assist, 8 cores, 76 GB RAM, no GPU |
 | ollama | ollama.keep_alive | 30m | how long the server keeps the model in memory after a call |
-| ollama | ollama.max_codes_per_call | 8 | most codes of one surface judged in one call; a surface with more runs in several calls |
 | ollama | ollama.model | qwen3:30b | the model that judges the surfaces; chosen 2026-11-02 after a timing test (working log findings 26, 27) |
 | ollama | ollama.num_ctx | 4096 | context window of one call, in tokens (the prompt and the answer of one surface fit) |
 | ollama | ollama.ssh_key | ~/.ssh/id_ed25519_iba | the key file for ssh to that machine in a batch call: the researcher's own key has a passphrase and cannot be used in a batch call, so a separate key was made and authorised (Logs/compliance/COMPLIANCE-20261101-9ee0965a.md, SC16). The file is never read or printed; only its path is named |
@@ -5294,7 +5307,7 @@ settings: `structure.min_base_length`, `structure.min_computed_base_length`, `st
 |---|---|---|---|
 | surface_base.ask | operations | ask the AI through the client for the base of the surfaces the resolve module leaves unmatched; one ai_call row per attempt; -Limit, -Retry; no file | ai_call, run_batch |
 
-settings: `surface_judge.base_form_pattern`, `surface_judge.base_relations`, `surface_judge.batch_dir`, `surface_judge.cycle_cooldown_minutes`, `surface_judge.cycle_halt_wait_minutes`, `surface_judge.cycle_max_halts_in_a_row`, `surface_judge.cycle_work_minutes`, `surface_judge.group_stored_as`, `surface_judge.groups`, `surface_judge.max_consecutive_failures`, `surface_judge.word_prompt`, `ollama.connect_timeout_seconds`, `ollama.host`, `ollama.keep_alive`, `ollama.max_codes_per_call`, `ollama.model`, `ollama.num_ctx`, `ollama.ssh_key`, `ollama.ssh_target`, `ollama.temperature`, `ollama.timeout_seconds`, `ollama.tunnel_local_port`
+settings: `surface_judge.base_form_pattern`, `surface_judge.base_relations`, `surface_judge.batch_dir`, `surface_judge.cycle_cooldown_minutes`, `surface_judge.cycle_halt_wait_minutes`, `surface_judge.cycle_max_halts_in_a_row`, `surface_judge.cycle_work_minutes`, `surface_judge.group_stored_as`, `surface_judge.groups`, `surface_judge.max_consecutive_failures`, `surface_judge.word_prompt`, `ollama.connect_timeout_seconds`, `ollama.host`, `ollama.keep_alive`, `ollama.model`, `ollama.num_ctx`, `ollama.ssh_key`, `ollama.ssh_target`, `ollama.temperature`, `ollama.timeout_seconds`, `ollama.tunnel_local_port`
 
 **4 of 5  resolve: the base chosen from the evidence** · work package `surface-resolve` · script `iba/app/ps/Surface-Resolve.ps1`
 

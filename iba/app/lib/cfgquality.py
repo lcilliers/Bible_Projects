@@ -928,6 +928,51 @@ def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.
     return out
 
 
+# ── glossary currency (#2367, build B10) ───────────────────────────────────────────────────────
+def find_glossary_currency(cfg, conn: sqlite3.Connection) -> list[str]:
+    """ADVISORY. Each term in cfg_setting `glossary.currency_check` must have a live entry in the programme
+    glossary (bible_research.db prose_section, section types glossary_*): no entry, only archived entries, or
+    no approved entry (draft or in_review) is a finding. Each cfg_prose_concept pointer
+    "... (prose_section N)" must name an entry that exists under the heading the pointer names. Read only."""
+    raw = cfg.setting("glossary.currency_check")
+    terms = json.loads(raw) if isinstance(raw, str) else list(raw or [])
+    try:
+        bconn = sqlite3.connect(f"file:{cfg.database_path('bible_research').as_posix()}?mode=ro", uri=True)
+    except (sqlite3.Error, KeyError) as e:
+        return [f"the glossary database cannot be opened ({e})"]
+    out: list[str] = []
+    try:
+        rows = bconn.execute(
+            "SELECT s.id, s.heading, s.status FROM prose_section s "
+            "JOIN prose_section_type t ON t.id = s.section_type_id "
+            "WHERE t.code LIKE 'glossary%' AND COALESCE(s.delete_flagged, 0) = 0").fetchall()
+        by_head: dict[str, list[tuple]] = {}
+        for sid, head, status in rows:
+            by_head.setdefault((head or "").strip().lower(), []).append((sid, status))
+        by_id = {sid: (head or "").strip().lower() for sid, head, _ in rows}
+        for term in terms:
+            entries = by_head.get(term.strip().lower(), [])
+            if not entries:
+                out.append(f"glossary term '{term}' has no entry in the programme glossary")
+            elif all(s == "archived" for _, s in entries):
+                out.append(f"glossary term '{term}' has only archived entries")
+            elif not any(s == "approved" for _, s in entries):
+                statuses = sorted({s for _, s in entries if s != "archived"})
+                out.append(f"glossary term '{term}' has no approved entry (status: {', '.join(statuses)})")
+        for key, hint in conn.execute("SELECT concept_key, section_hint FROM cfg_prose_concept "
+                                      "WHERE section_hint LIKE '%(prose_section %'").fetchall():
+            m = re.search(r"'([^']+)' \(prose_section (\d+)\)", hint or "")
+            if not m:
+                continue
+            head, sid = m.group(1).strip().lower(), int(m.group(2))
+            if by_id.get(sid) != head:
+                out.append(f"cfg_prose_concept '{key}' points at prose_section {sid}, which is not a glossary "
+                           f"entry headed '{m.group(1)}'")
+    finally:
+        bconn.close()
+    return out
+
+
 # ── unenforced behaviour rules ─────────────────────────────────────────────────────────────────
 def find_rule_scope_gaps(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
     """#2209: every rule knows the operations it governs. A coherence ERROR, each case must be zero:

@@ -288,6 +288,10 @@ def validate(ctx: Ctx) -> Outcome:
         "surface_hygiene": (
             __import__("iba.app.lib.surfacehygiene", fromlist=["x"]).find_surface_hygiene(ctx.cfg, PROJECT_ROOT),
             "surface cycle hygiene finding(s)"),
+        # glossary terms of glossary.currency_check without a live, approved entry (#2367, build B10)
+        "glossary_currency": (
+            cfgquality.find_glossary_currency(ctx.cfg, ctx.db.conn),
+            "glossary currency finding(s)"),
         # every behaviour rule with no control, with its reason (enforcement_status, #2206)
         "unenforced_behaviour_rules": (
             cfgquality.find_unenforced_behaviour_rules(ctx.db.conn),

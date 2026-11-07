@@ -252,6 +252,11 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
         ("Surface cycle hygiene", "a junk surface not marked deleted, or an analytic file under _analytics/surfaces "
          "outside the working_files, exports and discarded folders (surfaces.* settings)",
          __import__("iba.app.lib.surfacehygiene", fromlist=["x"]).find_surface_hygiene(_hyg_cfg, APP.parent.parent)),
+        # glossary terms without a live, approved entry (#2367, build B10)
+        ("Glossary currency", "a term of glossary.currency_check with no entry, only archived entries or no "
+         "approved entry in the programme glossary (bible_research.db prose_section), or a cfg_prose_concept "
+         "pointer naming an entry that is not there",
+         cfgquality.find_glossary_currency(_hyg_cfg, conn)),
         # every behaviour rule with no control, with its reason (#2206 option 2a)
         ("Unenforced behaviour rules", "an active cfg_behaviour_rule row whose enforcement_status "
          "is neither mechanically_enforced nor context_delivered (the compliance file restates and "

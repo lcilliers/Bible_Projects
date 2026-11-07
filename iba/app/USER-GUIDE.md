@@ -304,7 +304,7 @@ iba\app\ps\Config-Maintenance.ps1 -Step Validate     # read-only coherence check
 iba\app\ps\Config-Maintenance.ps1 -Step Report       # the config report, at configmaint.report_path
 
 iba\app\ps\Config-Maintenance.ps1 -Step Propose -Table cfg_setting -Op update `
-    -Where '{"key":"passage.review_over"}' -Set '{"value":"12"}' -Question "why, and what it affects"
+    -Where '{"key":"passage.review_over"}' -Set '{"value":"12"}' -Title "short name, 60 chars max" -Question "why, and what it affects"
 #   PAUSED: a decision_required escalation. After approval (§3.2), re-run the same command with -RunId <run_id>.
 ```
 
@@ -313,6 +313,8 @@ iba\app\ps\Config-Maintenance.ps1 -Step Propose -Table cfg_setting -Op update `
 - **Developer Mode:** config work is one idempotent migration under `iba/app/migration/`, writing
   through `configmaint.apply_logged()` (rule 75). Single-row Propose is not used there. A migration
   registers itself inactive, runs once, and then moves to `iba/app/migration/archive/`.
+- **Glossary currency:** `-Step Validate` reports a term of `glossary.currency_check` that has no approved entry
+  in the programme glossary (`bible_research.db`, kept through `iba/app/ps/Prose.ps1`; drafts are flagged until approved).
 - **The control map** (`cfg_control_home`, config report section 15) says where each kind of
   control lives.
 
