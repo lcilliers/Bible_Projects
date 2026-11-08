@@ -34,4 +34,5 @@ Session: `c4e9fed5-12df-4346-8851-c74151f8675c` (Developer Mode)
 
 ## 6. Git
 
-_(written after the commits)_
+Branch: `main`. Commit: `c91d8a9fcf06a9c965e8e7ed65f9b38d6cdd4ad9` (session 20261108: #2393 the two #2379 CSV exports as methods ... ).
+Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `186c1e5f..c91d8a9f  main -> main`.
