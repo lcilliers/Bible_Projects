@@ -14,6 +14,9 @@
       Judge     ask the AI (zeta-assist, through the AI client) for the group of the surfaces not yet judged; -Limit n, -Retry also asks the
                 failed ones. One ai_call row per attempt; a long run is started outside the session (B:125).
 
+      Set       set the group of named surfaces by the researcher's ruling (#2388): -Group other, -Surface a,b,c, -Reason "the ruling, quoted,
+                with the escalation id". Stored confirmed, with a surface_event each. -Check previews. A second run changes nothing.
+
     Everything is inferential until you confirm it (B:4). After a correction run Surface-Structure.ps1 -Action Match.
 
 .EXAMPLE
@@ -25,9 +28,12 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Status', 'Repoint', 'Judge')]
+    [ValidateSet('Status', 'Repoint', 'Judge', 'Set')]
     [string] $Action,
     [string] $Base,
+    [string] $Group,
+    [string] $Surface,
+    [string] $Reason,
     [switch] $Check,
     [string] $Limit,
     [switch] $Retry,
@@ -43,12 +49,13 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 . $PSScriptRoot\_lib\Notify.ps1
 
-$stepMap = @{ Status = 'group.status'; Repoint = 'group.repoint'; Judge = 'group.judge' }
+$stepMap = @{ Status = 'group.status'; Repoint = 'group.repoint'; Judge = 'group.judge'; Set = 'group.set' }
 $stepId = $stepMap[$Action]
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-SURFACEGROUP"
 
 $paramArgs = @()
 if ($PSBoundParameters.ContainsKey('Base')) { $paramArgs += @('--param', "Base=$Base") }
+foreach ($p in 'Group', 'Surface', 'Reason') { if ($PSBoundParameters.ContainsKey($p)) { $paramArgs += @('--param', "$p=$($PSBoundParameters[$p])") } }
 if ($PSBoundParameters.ContainsKey('Limit')) { $paramArgs += @('--param', "Limit=$Limit") }
 if ($Retry) { $paramArgs += @('--param', 'Retry=true') }
 if ($Check) { $paramArgs += @('--param', 'Check=true') }

@@ -96,6 +96,38 @@ def load(conn, cfg):
     return res, cons, pairs_from(res, cons), flagged
 
 
+def set_plan(conn, groups: list, group: str, surfaces: list) -> dict:
+    """Plan of a group set by the researcher's ruling (escalation #2388): {'change': [(id, surface, before, state_before)], 'same': [surface],
+    'unknown': [surface]}. Raises GroupError for a group that is not a surface_term.surface_group value or an empty list."""
+    if group not in groups:
+        raise GroupError(f"-Group {group!r} is not one of {groups}")
+    if not surfaces:
+        raise GroupError("-Surface names no surface")
+    plan: dict = {"change": [], "same": [], "unknown": []}
+    for s in surfaces:
+        row = conn.execute("SELECT id, surface_group, group_state FROM surface_term WHERE deleted=0 AND surface=?", (s,)).fetchone()
+        if row is None:
+            plan["unknown"].append(s)
+        elif row[1] == group and row[2] == "confirmed":
+            plan["same"].append(s)
+        else:
+            plan["change"].append((row[0], s, row[1], row[2]))
+    return plan
+
+
+def write_set(conn, run_id: str, plan: dict, group: str, reason: str) -> int:
+    """Apply a set_plan: the group, state confirmed, judged_by researcher, the reason, and one surface_event (set_group) per change.
+    One transaction by the caller."""
+    now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    for tid, surface, before, state_before in plan["change"]:
+        conn.execute("UPDATE surface_term SET surface_group=?, group_state='confirmed', group_judged_by='researcher', group_reason=?, updated_at=?, run_id=? WHERE id=?",
+                     (group, reason, now, run_id, tid))
+        conn.execute("INSERT INTO surface_event (subject_kind, subject_id, action, field, value_before, value_after, by, reason, run_id, created_by) "
+                     "VALUES ('surface_term',?,'set_group','surface_group',?,?,'researcher',?,?,'surface-group')",
+                     (tid, before, group, f"{reason} (group_state before: {state_before})", run_id))
+    return len(plan["change"])
+
+
 def write(conn, run_id: str, plan: dict, named: set) -> dict:
     """Apply: corrections for 'apply' and for the 'review' bases the researcher named; held_pair flags for the rest. One transaction by the caller."""
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

@@ -20278,3 +20278,69 @@ No config change. The cycle itself is started as BUILD 453 and rule B:125 say.
 **Documents:** `iba/app/USER-GUIDE.md` (the sheet paragraph of the reading section and the new 8.16).
 
 **Not done / left:** the reports that print a verse (`handlers/reports.py`, `strongversereport.py`, `stage1coverage.py`, the Verse-Scope and StrongVerse reports) still print `surface` per code and do not yet show the unit; the sheet's `surfaces` is read only inside `reading.py` (Observe and Record; traced), while the two generators (`versereadinggenerate.py`, `charreadinggenerate.py`) read `verse_lexical` rows directly, one entry per code, so they now print an affix with its own gloss and not the host's word but do not group a unit; the held rows' release is the researcher's; the `#2379` export has not been rebuilt (the measure above stands in for it).
+
+## 470. The group step can set a group by the researcher's ruling (2026-11-07, escalation #2388)
+
+**What:** `Surface-Group.ps1 -Action Set -Group g -Surface a,b,c -Reason "..."` (step `group.set`, handler `handlers/surfacegroup.py:set_group`, rule in `lib/surfacegroup.py` `set_plan` and `write_set`). No existing action could set a group by a ruling (Status, Repoint and Judge only), and the researcher ruled 82 surfaces to `other` (25 computed bases, 16 non-state words, 41 computed bases read as not inner-being) and approved the design on #2388 v5. Each surface is stored `confirmed`, judged by `researcher`, with its reason and one `surface_event` (`set_group`, value before and after). A surface that is not a live `surface_term` refuses the whole call; a missing reason or an unknown group is refused; `-Check` previews; a second run changes nothing.
+
+**Test:** `iba/app/tools/temp_2388_set_group_test_run.py`, on a copy of `iba.db`: S1 to S5 refusals write nothing, S6 preview, S7 to S11 the real 82 surfaces (one change and one event each, no other row touched), S12 idempotence, S13 another group: 13 of 13.
+
+**Config:** the step `group.set` and the write grants `group.set` on `surface_term` and `surface_event` were applied on the researcher's approval (#2389, #2390, #2391, run ids RUN-20261107_181527_868, _181544_888, _181545_906-CONFIGMAINT); `Config-Maintenance.ps1 -Step Validate` after it finds nothing new (identical to #2357).
+
+**Run:** the 82 surfaces were set to `other` on 2026-11-08 (25 + 16 + 41, three runs, 82 `surface_event` rows `set_group` by researcher; a second run previews 0 to set). `Surface-Resolve.ps1 -Action Run` then moved the 16 corpus words to `out_of_scope`; `Surface-Group.ps1 -Action Repoint -Check` proposes nothing.
+
+**Documents:** `iba/app/USER-GUIDE.md` (8.11), `iba/docs/ps tools worksheet.xlsx` (tab Surface-Group: `-Group`, `-Surface`, `-Reason`).
+
+**Not done / left:** the 66 computed bases set to `other` stay `resolved_own` with `collection_state` untouched (Resolve decides no computed term) and the 16 words stay `untouched`, so a reader of the bases in no collection must filter on the group; `Surface-Group.ps1 -Action Judge` takes only `origin = surface`, so the 37 computed bases the researcher asked to be judged cannot be asked through it; the seeding by the dominant sub-cluster is not started (it is the `Collection-Build.ps1` Seed and Ask cycle: AI calls, a long job under B:125).
+
+## 471. Judge -Surface, computed bases out of scope in Resolve, and the pilot seeds (2026-11-08, escalation #2388)
+
+**Researcher's choices (#2388 v10, verbatim "A, B, pilot of 10"):** (1) `Surface-Group.ps1 -Action Judge -Surface a,b,c` asks the named terms including computed bases (`handlers/surfacegroup.py judge`); a name that is not a live term refuses the call; a term whose group is confirmed or corrected is not asked. (2) `lib/surfaceresolve.py`: a computed base whose group is judged and outside collection a is decided like a corpus word, `out_of_scope` with no base; and any term decided `out_of_scope` whose `collection_state` is `untouched` gets `collection_state` NULL (a term already in a collection keeps it). This also emptied `collection_state` on 28 corpus words in `entity` and `other` that were `untouched` (110 changes in the first run: 82 of the ruling and 28 of them). (3) Seeds for the 10 largest subgroups.
+
+**Run:** the 37 computed bases read as likely behaviour or state were judged (3 in the session, 34 outside it through `Win32_Process Create`, `Logs/2388-judge-37-20261108.log`, parent WmiPrvSE; 37 answered, 0 failed): 5 behaviour, 13 inner_being_state, 18 other, 1 entity. `Surface-Resolve.ps1 -Action Run` then moved the 19 in other and entity out of scope; `Surface-Structure.ps1 -Action Match` superseded 16 evidence rows; `Repoint -Check` proposes nothing; a second Resolve and Match change nothing.
+
+**Pilot seeds:** the 10 largest subgroups of the 607 unassigned word bases in behaviour or inner_being_state, **excluding the `not_this_sense` bins** (they are the largest, 16 to 6 bases, but they hold pairs that are not the cluster's sense, not a sense; excluding them is my reading and is open to the researcher). The seed of a subgroup is the base named in its label, else the most frequent base whose share of pairs in the subgroup's cluster is at least 0.5: supplication, pain, saying, disease, live, always, ask, thought, might, share (`outputs/escalation/2388-pilot-seeds-v1-20261108.json`). `Collection-Build.ps1 -Action Seed` made collections 49 to 58 (17 s each); the poles the model named are inferential and some look weak (supplication: denunciation; thought and might: themselves).
+
+**Test:** `iba/app/tools/temp_2388_set_group_test_run.py`, 19 of 19 on a copy (the Set cases S1 to S13, the Resolve cases R1 to R5, the Judge refusal J1). The AI judge itself is tested only by the live run above.
+
+**Documents:** `iba/app/USER-GUIDE.md` (8.11 Judge -Surface, 8.12 out of scope).
+
+**Ask timing and Links:** `Ask -Collection supplication -Limit 5` judged 5 words (5 synonym) in 730 s with 47 AI calls (it ran in the session and was moved to the background by the 400 s limit: B:125 asks for a start outside the session). `Links` wrote 15 links (the 10 cores and the 5 synonyms: appeal, entreaty, petition, plea, prayer); a second Links changes nothing.
+
+**Long run started (2026-11-08, researcher's go-ahead on #2388 v13):** `Collection-Build.ps1 -Action Ask` then `-Action Links` for the ten collections in turn (supplication, pain, saying, disease, live, always, ask, thought, might, share), started through `Win32_Process Create` (parent WmiPrvSE, process id 87768), log `Logs/2388-ask-pilot-20261108.log` (a START and DONE line per collection, ALL DONE at the end). Check: the log, and new `ai_call` rows of module `collection` (the first came after the vectors were read). Stop: end the process (`Stop-Process -Id 87768`, and its child pwsh). Resume: the same command again; each judged word is committed and `Ask` takes only words not yet judged, so nothing is repeated. Windows sleep ends it.
+
+**Not done / left:** `Ask` on the ten collections is running (see above); at about 146 s a word the shortlist of `collection.shortlist_size` 60 plus the 12 to 25 listed words is roughly 3 hours a collection, 30 hours for ten (an estimate from one five-word run, inferential); the other 282 subgroups.
+
+## 472. Progress control for long Ollama jobs, and the collection batch (2026-11-08, escalation #2388)
+
+**Researcher's instruction (#2388 v16, verbatim):** "continue with the other sub groups in the same way, make sure there are a proper monitor on progress, in fact, the ollama processes should always have a proper progress control method to check on progress. ensure that the processes run through the terminal that can be independent of the sleep on the desktop."
+
+**What:** `iba/app/lib/longrun.py` (the progress file `Logs/longrun/<job>.progress.json` rewritten after each item and every 30 s, the stop flag `<job>.stop`, the log, a running-or-dead test by the file's age, keep-awake through `SetThreadExecutionState`); `iba/app/handlers/longrun.py` (work package `long-run`, steps `long.plan`, `long.start`, `long.progress`, `long.stop`); `iba/app/ps/Long-Run.ps1` (Plan, Start, Progress, Stop, through `run.py`); `iba/app/tools/collection_batch_run.py` (the job `collection-batch`: Seed then Ask per sub-group, Links every 10 and at the end, three failures in a row halt it, a re-run resumes). Start launches through `Win32_Process Create` (rule B:125).
+
+**Found while building:** `Collection-Build.ps1` exits 0 on a refusal or halt, so the driver reads the output as well as the exit code. `python -I` ignores the working directory, so the module is run without `-I`.
+
+**Test:** `iba/app/tools/temp_2388_longrun_test_run.py`, 23 of 23: L1 to L10 (the lib), H1 to H9 (the handlers, including a real detached launch of a dummy job that ran to done 2 of 2), D1 to D4 (a refusal that exits 0 read as failure, a read-only action read as success, the plan, `has_collection`).
+
+**Run:** the plan is 223 sub-groups (5 without a seedable word: only computed bases), started 2026-11-08 09:01 through `Win32_Process Create` before the front door was registered (`python -m iba.app.tools.collection_batch_run --job collection-batch --run`).
+
+**Documents:** `iba/app/USER-GUIDE.md` (8.17), `iba/docs/ps tools worksheet.xlsx` (tab Long-Run, and its Index row).
+
+**Not done / left:** the config registration (work package `long-run`, the four steps, the four `cfg_utility` rows) is to be proposed through `Config-Maintenance.ps1 -Step Propose`; until it is applied `Long-Run.ps1` cannot dispatch and configmaint.validate will list the new files as unregistered. Windows sleep by hand or the lid closed still ends the job.
+
+## 473. The #2379 CSV exports as methods (2026-11-08, escalation #2393)
+
+**Built:** the two files of the #2379 analysis, `2379-surface-collections-members-verses` (v4) and `2379-behaviour-and-inner-state-surfaces` (v3), had been made by inline code that was never kept. They are now steps of work package `collection-build`: `collection.export_members` (`Collection-Build.ps1 -Action ExportMembers`) and `collection.export_surfaces` (`-Action ExportSurfaces`), each taking `-Name <name-vN-yyyymmdd>`, writing under `surfaces.exports_root`, refusing an existing file. The code is `iba/app/lib/collectionexport.py` (`build` returns header and rows from the tables, `write` writes them), with the two handlers in `iba/app/handlers/collectionbuild.py` and the two actions in `iba/app/ps/Collection-Build.ps1`.
+
+**The rules, found by matching the recorded files:** the join is member base to surface to `verse_lexical` row by surface text (lower-cased, trimmed: `verse_lexical.surface` keeps the ESV capital), to every live `cluster_strong` row of the code, to the surface's own `surface_subgroup` row, to the subgroup's concept and domain. The two files use different membership rules, and both are kept: in members-verses a link reaches its own term and the terms whose base is that term, one row per tier; in surfaces a surface takes the collections of the links on its base (or on itself when it has no other base), one row per collection with the strongest tier. A surface with no `verse_lexical` row is one row with the verse columns blank; a surface with no base has a blank base word.
+
+**Config (migration `iba/app/migration/archive/collection_export_2393_v1_20261108.py`, run `DEVMODE-2393-COLLECTION-EXPORT-20261108`, 9 writes through `apply_logged`, named snapshot `iba/app/db/snapshots/kept/iba-20261108T093654Z-pre-2393-collection-export.db`):** settings `collection.export_tiers` and `surfaces.export_groups`; steps `collection.export_members` and `collection.export_surfaces` with their `refused` conditions; `cfg_utility` rows `collectionexport` and the migration; the purpose of `Collection-Build.ps1`.
+
+**Test (on a copy of the database, `iba/app/tools/temp_2393_export_test_run.py`):** against the recorded files, restricted to rows not touched since they were written (a surface with a `surface_event` since 2026-11-07 17:40 UTC, a collection whose links changed since, and for members-verses the collections made since): members-verses 19,632 rows each side, 0 only in the old file, 0 only in the new; surfaces 89,902 rows each side, 0 and 0; both deterministic (two builds identical, two files byte-identical); handlers H1 to H8 (bad name, no name, written, existing file refused, same bytes on a second run, surfaces written, record count, a missing setting refused). Live run through the front door: 35,063 and 106,796 rows to `_analytics/surfaces/exports/`.
+
+**Not matched, stated plainly:** the recorded files are of 2026-11-07 and the tables have moved (119 `set_group` and 101 `set_base` events, 12 collections made, links of 13 collections changed); a full row-for-row match to the old files is therefore not possible and was not claimed: the rows left out of the comparison are those the changes touch. The recorded surfaces file had 4,331 rows of computed bases not yet grouped; they are now grouped `other` and so outside `surfaces.export_groups`.
+
+**Documents:** `iba/app/USER-GUIDE.md` (8.x, the Collection-Build block).
+
+**Not done / left:** the old files in `outputs/escalation/` and `outputs/escalation/archive/` are not retired (the researcher's call, after seeing the new files); `iba/docs/ps tools worksheet.xlsx` has no row for the two new actions yet; `Manifest-Rebuild.ps1` has not been run for the two new files.
+
+**Files of the #2388 work in the same working tree, named by path (sections 470 to 472):** `iba/app/ps/Surface-Group.ps1` (action `Set`, parameters `-Group`, `-Surface`, `-Reason`; step `group.set`), `iba/app/handlers/surfacegroup.py`, `iba/app/lib/surfacegroup.py`, `iba/app/lib/surfaceresolve.py`.

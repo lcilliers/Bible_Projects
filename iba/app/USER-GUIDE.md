@@ -983,7 +983,11 @@ iba\app\ps\Surface-Group.ps1 -Action Status                 # what the rule woul
 iba\app\ps\Surface-Group.ps1 -Action Repoint -Check         # preview
 iba\app\ps\Surface-Group.ps1 -Action Repoint                # write
 iba\app\ps\Surface-Group.ps1 -Action Repoint -Base build    # accept a proposed base
+iba\app\ps\Surface-Group.ps1 -Action Set -Group other -Surface all,much -Reason "Researcher, verbatim: '...' (#2388)" -Check   # preview a group set by ruling
 ```
+
+- **Judge -Surface a,b,c** (escalation #2388) asks the AI for the group of the named terms only, including a computed base (which the plain `Judge` never asks, since it takes `origin = surface`); a name that is not a live term refuses the call and nothing is asked; a term whose group is confirmed or corrected is not asked. A long list is started outside the session (B:125).
+- **Set** (escalation #2388) sets the group of the named surfaces by the researcher's ruling: `-Group` is a value of `surface_term.surface_group`, `-Surface` a comma list of live surface texts, `-Reason` the ruling, quoted, with the escalation id (required). Each surface becomes `confirmed`, judged by `researcher`, with a `surface_event` (`set_group`). A surface that is not a live term refuses the whole call and nothing is written; `-Check` previews; a second run changes nothing. A base moved to `other` leaves collection a: run `Surface-Resolve.ps1 -Action Run -Check` and `Surface-Group.ps1 -Action Repoint -Check` after it.
 
 - A base is corrected by itself when its derived words are inflections (plural, tense, participle, comparative), all in one group, and the base is in an automatic group (`group.repoint_auto_base_groups`, now `other`). It takes the group of its derived words; its state becomes `corrected` and a `surface_event` records the derived words.
 - A base judged `being` is **proposed**, never changed by the step alone: you name it with `-Base`. Any pair that is not an inflection, or whose derived words disagree, becomes an open `held_pair` flag; a base a flag already names is left to that reading.
@@ -1001,6 +1005,7 @@ iba\app\ps\Surface-Resolve.ps1 -Action Show -Surface hides  # stored state, deci
 ```
 
 - The order of the evidence is `resolve.order` (structure, sibling, ollama, own). The states: `matched_structure`, `matched_sibling`, `ai_answered`, `ai_none`, `ai_failed`, `resolved_own`, `phrase_not_tested`, `out_of_scope`, `unmatched` (no AI call yet) and `base_ambiguous`.
+- A term outside collection a is `out_of_scope` with no base and, when it was `untouched`, no `collection_state` (the column is empty for a term that is not a base). This holds for a corpus word and, since #2388, for a computed base whose group is judged and is `other` or `entity`; a term already in a collection keeps its state. A computed base not yet judged is left as it is.
 - `base_ambiguous` means the structure found more than one base (hides: hid, hide). Nothing is accepted and the word has no base until the AI step or you choose; each has an open `structure_conflict` flag.
 - A base you confirmed (`confirmed` or `resolved`) is never changed. Every changed term gets a `surface_event` with the state before and after. A second Run with the same evidence changes nothing.
 - Order of a normal pass: Surface-Group Repoint, Surface-Structure Match, the AI base step, Surface-Resolve Run.
@@ -1033,10 +1038,13 @@ iba\app\ps\Collection-Build.ps1 -Action Links -Check                            
 iba\app\ps\Collection-Build.ps1 -Action Links                                    # write
 iba\app\ps\Collection-Build.ps1 -Action Show -Collection love                    # members by tier, shared ones starred
 iba\app\ps\Collection-Build.ps1 -Action Export -Name collections-v1-20261106     # a CSV view to the exports folder
+iba\app\ps\Collection-Build.ps1 -Action ExportMembers -Name collection-members-verses-v1-20261108          # member surfaces, one row per verse, cluster and tier, with the verse text
+iba\app\ps\Collection-Build.ps1 -Action ExportSurfaces -Name behaviour-and-inner-state-surfaces-v1-20261108       # surfaces of the behaviour and inner-being-state groups, with collection and tier
 iba\app\ps\Collection-Build.ps1 -Action Set -Collection love -Status confirmed -Reason 'checked'
 iba\app\ps\Collection-Build.ps1 -Action Merge -From insult -Into slander -Reason 'one collection'
 ```
 
+- **The two #2379 exports (#2393):** `ExportMembers` and `ExportSurfaces` write the two files the explore-and-analyse work of 2026-11-07 used, from the tables, as often as you ask; the file is a view, never an input. Each row is one surface in one verse of `verse_lexical`, under one cluster of its Strong's code, with its subgroup, concept, domain and the unit columns (`surface_kind`, `unit_surface`, `unit_role`). `ExportMembers` has the members of the collections (tiers of `collection.export_tiers`), one row per tier, with the verse text. `ExportSurfaces` has every surface of the groups of `surfaces.export_groups` and the surfaces not yet grouped, with the collection and strongest tier of each membership (blank when none). Both go to `surfaces.exports_root` under `-Name` (a new version number each time; an existing file is never overwritten); register the file with `iba/app/ps/Manifest-Rebuild.ps1`. The code is `iba/app/lib/collectionexport.py`; the rules of the join are its docstring.
 - **Tiers:** `core`, `synonym` and `opposite` are members (an opposite is a synonym of the core's pole); `possible_opposite` is a lead, never a member; `associated` and `set_aside` are filed beside the collection. The latest judgement of a pair decides. A word that is a member of more than one collection is `shared`.
 - **Your decisions hold.** `Set` and `Merge` are made only on your instruction and carry a reason and an event. A link you remove (set `deleted` to 1 with no successor) is not linked again by `Links`; the 18 pairs the prototype left out are recorded that way. Status lists them as withheld.
 - **Changes are traceable.** A link whose tier changes is set to deleted and points to its successor; nothing is physically deleted.
@@ -1111,6 +1119,22 @@ scope resolver through `surface` of rows that are not `gloss`: an affix gloss is
 A join from a surface word to its occurrences (for a count, an export, a collection's evidence) takes `surface_kind`
 `own` and `shared` only. Three M-coded rows stay as the 28 October migration left them (held, see the changes file
 `outputs/escalation/2326-verse-lexical-surface-changes-v1-20261028.tsv`).
+
+### 8.17 Long jobs against the Ollama server: start, watch, stop (`iba/app/ps/Long-Run.ps1`, escalation #2388)
+
+Every long job that asks the Ollama server keeps the same three files under `Logs/longrun/`, named by the job: `<job>.progress.json` (rewritten after each item and every 30 seconds), `<job>.stop` (the flag a stop asks by) and `<job>.log`. The first job is `collection-batch`: for each sub-group of the bases not yet in a collection, a seed word is made into a collection (`Seed`) and the AI judges its candidates (`Ask`); `Links` runs after every 10 collections and at the end.
+
+```powershell
+iba\app\ps\Long-Run.ps1 -Action Plan     -Job collection-batch              # one seed word per sub-group; says how many
+iba\app\ps\Long-Run.ps1 -Action Start    -Job collection-batch [-Limit 3]   # detached; -Limit stops after that many sub-groups
+iba\app\ps\Long-Run.ps1 -Action Progress -Job collection-batch              # read-only, any time, from any terminal
+iba\app\ps\Long-Run.ps1 -Action Stop     -Job collection-batch              # ends after the collection in hand (about 12 minutes)
+```
+
+- **Progress** says the state (`running`, `finished`, `stopped`, `halted`), done of total, skipped, failed, what is in hand and since when, the mean seconds per item over the last 20 and an estimated finish, the process id and the last problem. It says **NOT running** when the file has not moved for 2 minutes: the job was interrupted and Start resumes it.
+- **Detached.** Start launches the job through Windows' own process service (rule B:125), so it does not end when the Claude app closes or restarts. It keeps the machine from idle sleep while it runs (the display may still sleep). Closing the lid or sleeping the machine by hand still ends it; Progress then says NOT running, and Start again carries on where it stopped (finished sub-groups are skipped, an existing collection is not seeded again, a judged word is not asked again). The Ollama server is another machine and is not affected.
+- **Halts.** Three sub-groups in a row that fail (a refusal, a halt, a timeout of 90 minutes) end the job in state `halted`; what was done is kept.
+- **Seeds.** A sub-group's seed is the most frequent word of the sub-group whose own sub-group share is at least 0.5, else the most frequent word. A sub-group with only computed bases has no seed and is skipped. The plan is `Logs/longrun/collection-batch.plan.json`; Plan rebuilds it from what is still unassigned.
 
 ## 9. Reports and exports
 

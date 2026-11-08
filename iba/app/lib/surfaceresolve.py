@@ -100,9 +100,12 @@ def load(conn, cfg):
     scope = cfg.setting("surfaces.scope_groups")
     if not scope or "a" not in scope:
         raise ResolveError("cfg_setting surfaces.scope_groups is missing or has no collection a")
-    terms = [dict(id=r[0], surface=r[1], form=r[2], group=r[3], base_id=r[4], source=r[5], state=r[6])
-             for r in conn.execute("SELECT id, surface, form, surface_group, base_id, base_source, base_state FROM surface_term "
-                                   "WHERE deleted=0 AND origin='surface' ORDER BY id")]
+    # corpus surfaces, and (#2388) a computed base whose group is judged and outside collection a: it is out of scope too (a computed base in
+    # collection a, or not yet judged, has no structure record and is left as it is)
+    terms = [dict(id=r[0], surface=r[1], form=r[2], group=r[3], base_id=r[4], source=r[5], state=r[6], cs=r[7])
+             for r in conn.execute("SELECT id, surface, form, surface_group, base_id, base_source, base_state, collection_state, origin FROM surface_term "
+                                   "WHERE deleted=0 AND (origin='surface' OR (origin='computed' AND surface_group IS NOT NULL)) ORDER BY id")
+             if r[8] == "surface" or r[3] not in scope["a"]]
     return vals, svals, scope["a"], terms, {r["surface"]: r for r in res["surfaces"]}, ai_results(conn, vals["resolve.ai_module"], vals["resolve.ai_step"])
 
 
@@ -129,7 +132,8 @@ def plan(conn, cfg) -> dict:
         cur = (t["base_id"], t["source"], t["state"])
         if d["base"] == t["surface"]:
             want_base = t["id"]
-        if want_base != "new" and cur == (want_base, d["source"], d["state"]) and _evidence_ok(conn, t["id"], d):
+        cs_ok = d["state"] != "out_of_scope" or t["cs"] in (None, "placed", "listed_only", "set_aside", "shared")  # #2388: out of scope holds no collection_state
+        if want_base != "new" and cur == (want_base, d["source"], d["state"]) and cs_ok and _evidence_ok(conn, t["id"], d):
             same += 1
         else:
             changes.append((t, d))
@@ -205,6 +209,8 @@ def write(conn, run_id: str, pl: dict) -> dict:
         before = f"{t['state']}:{t['base_id']}"
         conn.execute("UPDATE surface_term SET base_id=?, base_source=?, base_state=?, updated_at=?, run_id=? WHERE id=?",
                      (base_id, d["source"], d["state"], now, run_id, t["id"]))
+        if d["state"] == "out_of_scope" and t["cs"] == "untouched":
+            conn.execute("UPDATE surface_term SET collection_state=NULL WHERE id=?", (t["id"],))
         if (t["base_id"], t["source"], t["state"]) != (base_id, d["source"], d["state"]):
             conn.execute("INSERT INTO surface_event (subject_kind, subject_id, action, field, value_before, value_after, by, reason, run_id, created_by) "
                          "VALUES ('surface_term',?,'set_base','base_id',?,?,'surface-resolve',?,?,'surface-resolve')",

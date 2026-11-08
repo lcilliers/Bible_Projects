@@ -11,6 +11,8 @@
       Links     write the difference; -Check previews. A pair whose link was removed is not linked again. A second Links changes nothing.
       Show      -Collection <name>   one collection with its members by tier
       Export    -Name <name-vN-yyyymmdd>   a CSV of the collections to the exports folder (a view of the tables)
+      ExportMembers   -Name <name-vN-yyyymmdd>   a CSV of the member surfaces of the collections, one row for each verse, cluster and tier, with the verse text (the #2379 members-verses view)
+      ExportSurfaces  -Name <name-vN-yyyymmdd>   a CSV of the surfaces of the behaviour and inner-being-state groups, one row for each verse and cluster, with the collection and tier (the #2379 surfaces view)
       Set       -Collection <name> -Status indicative|confirmed|retired -Reason <text>   on your instruction
       Merge     -From <name> -Into <name> -Reason <text>   fold one collection into another, on your instruction
       Seed      -Word <word>   make a collection of a core word: the AI names its pole (a real word? reciprocal?) and lists synonyms and opposites
@@ -28,7 +30,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Status', 'Links', 'Show', 'Export', 'Set', 'Merge', 'Seed', 'Ask')]
+    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Set', 'Merge', 'Seed', 'Ask')]
     [string] $Action,
     [string] $Collection,
     [string] $Word,
@@ -51,7 +53,7 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 . $PSScriptRoot\_lib\Notify.ps1
 
-$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask' }
+$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask' }
 $stepId = $stepMap[$Action]
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-COLLECTIONBUILD"
 

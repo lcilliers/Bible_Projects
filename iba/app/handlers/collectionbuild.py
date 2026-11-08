@@ -107,6 +107,32 @@ def export(ctx: Ctx) -> Outcome:
     return ok(f"{len(rows)} links of {len({r[0] for r in rows})} collections written to {path.as_posix()} (a view of the tables, not an input); run Manifest-Rebuild.ps1 to register it", rows=len(rows))
 
 
+def _export_view(ctx: Ctx, view: str) -> Outcome:
+    """One of the two #2379 views (lib/collectionexport.py), written under surfaces.exports_root as -Name .csv; never over an existing file."""
+    from ..lib import collectionexport as ce
+    name = (ctx.params.get("Name") or "").strip()
+    if not EXPORT_NAME.fullmatch(name):
+        return fail("refused", f"-Name {name!r} is not lower-case words joined by hyphens, then -v and a number, then -yyyymmdd (like collection-members-verses-v1-20261108)")
+    try:
+        vals = ce.read_settings(ctx.cfg)
+        path = pathlib.Path(vals["root"]) / f"{name}.csv"
+        if path.exists():
+            return fail("refused", f"{path.as_posix()} already exists: choose a new version number")
+        head, rows = ce.build(ctx.cfg.conn, view, vals["tiers"], vals["groups"])
+    except ce.ExportError as exc:
+        return fail("refused", str(exc))
+    ce.write(path, head, rows)
+    return ok(f"{len(rows)} rows of the {view} view written to {path.as_posix()} (a view of the tables, not an input); run Manifest-Rebuild.ps1 to register it", rows=len(rows))
+
+
+def export_members(ctx: Ctx) -> Outcome:
+    return _export_view(ctx, "members-verses")
+
+
+def export_surfaces(ctx: Ctx) -> Outcome:
+    return _export_view(ctx, "surfaces")
+
+
 def _event(conn, run_id, cid, action, before, after, reason):
     conn.execute("INSERT INTO surface_event (subject_kind, subject_id, action, field, value_before, value_after, by, reason, run_id, created_by) "
                  "VALUES ('collection',?,?,'status',?,?,'collection-build',?,?,'collection-build')", (cid, action, before, after, reason, run_id))

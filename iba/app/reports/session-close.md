@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-07T17:46:45Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-08T13:21:38Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `8e72859c-b408-45e1-bd42-35d4522bb098` (CLAUDE_CODE_SESSION_ID); started 2026-11-07T05:27:12Z; window base commit `67e9752df6afda96a21a8ff5d88d9d0e6d5b05b9`
-- compliance file: `Logs/compliance/COMPLIANCE-20261107-8e72859c.md`; session log: `Logs/SESSION-LOG-20261107-verse-lexical-units.md`
-- **open findings: 0**; cleared by disposition: 3
+- session: `c4e9fed5-12df-4346-8851-c74151f8675c` (CLAUDE_CODE_SESSION_ID); started 2026-11-08T09:07:30Z; window base commit `186c1e5f44b089eaaacbb57004c611209a18e886`
+- compliance file: `Logs/compliance/COMPLIANCE-20261108-c4e9fed5.md`; session log: `Logs/SESSION-LOG-20261108-collection-exports-as-methods.md`
+- **open findings: 0**; cleared by disposition: 4
 
 
 ## Contents
@@ -41,14 +41,19 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:43e91c8c`: researcher message 2026-11-07T08:20 is too short to be matched; name where it is recorded: "Approved, build" -- disposition: recorded in #2381 v5
-- cleared `SC3:7b106e72`: researcher message 2026-11-07T16:48 is too short to be matched; name where it is recorded: "Yes, rebuild #2379" -- disposition: recorded in #2379 v9
-- cleared `SC3:54a7d24e`: researcher message 2026-11-07T17:38 is too short to be matched; name where it is recorded: "Yes, rebuild it" -- disposition: recorded in #2379 v10
+- cleared `SC3:affc46fc`: researcher message 2026-11-08T13:19 is too short to be matched; name where it is recorded: "Run session-close" -- disposition: no record needed: bare command to run session-close, nothing to record
+- cleared `SC3:85cc414d`: researcher message 2026-11-08T10:35 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: no record needed: automatic context-compaction summary, its content is recorded on #2393 v3 and v4
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-_no finding_
+- cleared `SC4b:85cc414d`: researcher message 2026-11-08T10:35 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: not held: automatic context-compaction summary, no holding request in it
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -85,4 +90,4 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: work package : configuration-maintenance -- disposition: carried #2404

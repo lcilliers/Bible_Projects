@@ -56,6 +56,35 @@ def repoint(ctx: Ctx) -> Outcome:
     return ok("\n  ".join(lines) + f"\n  written: {done['corrected']} corrected, {done['flagged']} flagged{note}", **done)
 
 
+def set_group(ctx: Ctx) -> Outcome:
+    """Set the group of named surfaces by the researcher's ruling (escalation #2388): -Group, -Surface a,b,c, -Reason (the ruling, quoted, with the
+    escalation id). The group is stored confirmed, judged_by researcher, with a surface_event set_group each. -Check previews. A second run changes
+    nothing. A surface that is not a live surface_term is the routed condition 'refused' and nothing is written. No file is read."""
+    conn = ctx.cfg.conn
+    group = str(ctx.params.get("Group") or "").strip()
+    reason = str(ctx.params.get("Reason") or "").strip()
+    surfaces = [s.strip().lower() for s in str(ctx.params.get("Surface") or "").split(",") if s.strip()]
+    groups = ctx.cfg.setting("surface_judge.groups")
+    if not groups:
+        return fail("refused", "cfg_setting surface_judge.groups is missing")
+    if not reason:
+        return fail("refused", "-Reason is required: the researcher's ruling, quoted, with the escalation id")
+    try:
+        plan = sg.set_plan(conn, groups, group, surfaces)
+    except sg.GroupError as exc:
+        return fail("refused", str(exc))
+    if plan["unknown"]:
+        return fail("refused", f"-Surface names {plan['unknown']}, which are not live surface_term rows: nothing written")
+    lines = [f"to set to {group}: {len(plan['change'])}" + (": " + ", ".join(f"{s} ({b})" for _, s, b, _ in plan['change']) if plan["change"] else ""),
+             f"already {group} and confirmed: {len(plan['same'])}"]
+    if str(ctx.params.get("Check", "")).lower() in ("1", "true", "yes"):
+        return ok("PREVIEW (nothing written)\n  " + "\n  ".join(lines), to_set=len(plan["change"]))
+    n = sg.write_set(conn, ctx.run_id, plan, group, reason)
+    conn.execute("UPDATE run SET counts=? WHERE run_id=?", (json.dumps({"set": n}), ctx.run_id))
+    conn.commit()
+    return ok("\n  ".join(lines) + f"\n  written: {n}. Next: Surface-Resolve.ps1 -Action Run -Check and Surface-Group.ps1 -Action Repoint -Check", set=n)
+
+
 def judge(ctx: Ctx) -> Outcome:
     """Ask the AI for the group of the surfaces not yet judged (group_state unjudged, and with -Retry failed), through lib/aiclient.py: prompt
     group.word, role judge; one ai_call row per attempt; the group, the reason and the model are stored on the surface_term with a surface_event.
@@ -80,8 +109,18 @@ def judge(ctx: Ctx) -> Outcome:
         if not groups:
             raise ai.AiError("cfg_setting surface_judge.groups is missing")
         want = ("unjudged", "failed") if retry else ("unjudged",)
-        todo = conn.execute("SELECT id, surface FROM surface_term WHERE deleted=0 AND origin='surface' AND group_state IN (%s) ORDER BY surface"
-                            % ",".join("?" * len(want)), want).fetchall()
+        named = [s.strip().lower() for s in str(ctx.params.get("Surface") or "").split(",") if s.strip()]
+        if named:
+            # #2388: the named terms, including computed bases (origin computed); a term whose group is confirmed or corrected is never asked again
+            found = {r[1]: r for r in conn.execute("SELECT id, surface, group_state FROM surface_term WHERE deleted=0 AND surface IN (%s)"
+                                                   % ",".join("?" * len(named)), named)}
+            unknown = [s for s in named if s not in found]
+            if unknown:
+                raise ai.AiError(f"-Surface names {unknown}, which are not live surface_term rows: nothing asked")
+            todo = sorted((r[0], r[1]) for r in found.values() if r[2] in ("unjudged", "failed", "judged"))
+        else:
+            todo = conn.execute("SELECT id, surface FROM surface_term WHERE deleted=0 AND origin='surface' AND group_state IN (%s) ORDER BY surface"
+                                % ",".join("?" * len(want)), want).fetchall()
         if limit:
             todo = todo[:limit]
         client = ai.AiClient(ctx.cfg, "group", "group", ctx.run_id)
