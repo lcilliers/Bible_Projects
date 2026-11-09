@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-08T13:25:23Z |
+| generated_at | 2026-11-09T07:43:21Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -77,8 +77,8 @@ _(none)_
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
 2. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
-**PS/worksheet drift** (0) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-_(none)_
+**PS/worksheet drift** (1) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
+3. Engagement.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\engagement.ps1' in some tab's first rows)
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
@@ -87,40 +87,40 @@ _(none)_
 _(none)_
 
 **Glossary currency** (15) — a term of glossary.currency_check with no entry, only archived entries or no approved entry in the programme glossary (bible_research.db prose_section), or a cfg_prose_concept pointer naming an entry that is not there:
-3. glossary term 'role' has no approved entry (status: draft)
-4. glossary term 'characteristic' has no approved entry (status: draft)
-5. glossary term 'operation' has no approved entry (status: draft)
-6. glossary term 'M-Code cluster' has no approved entry (status: draft)
-7. glossary term 'T2' has no approved entry (status: draft)
-8. glossary term 'T3' has no approved entry (status: draft)
-9. glossary term 'inner being' has no approved entry (status: draft)
-10. glossary term 'base' has no approved entry (status: draft)
-11. glossary term 'inflection' has no approved entry (status: draft)
-12. glossary term 'derivation' has no approved entry (status: draft)
-13. glossary term 'surface group' has no approved entry (status: draft)
-14. glossary term 'subgroup' has no approved entry (status: draft)
-15. glossary term 'collection' has no approved entry (status: draft)
-16. glossary term 'concept' has no approved entry (status: draft)
-17. glossary term 'concept domain' has no approved entry (status: draft)
+4. glossary term 'role' has no approved entry (status: draft)
+5. glossary term 'characteristic' has no approved entry (status: draft)
+6. glossary term 'operation' has no approved entry (status: draft)
+7. glossary term 'M-Code cluster' has no approved entry (status: draft)
+8. glossary term 'T2' has no approved entry (status: draft)
+9. glossary term 'T3' has no approved entry (status: draft)
+10. glossary term 'inner being' has no approved entry (status: draft)
+11. glossary term 'base' has no approved entry (status: draft)
+12. glossary term 'inflection' has no approved entry (status: draft)
+13. glossary term 'derivation' has no approved entry (status: draft)
+14. glossary term 'surface group' has no approved entry (status: draft)
+15. glossary term 'subgroup' has no approved entry (status: draft)
+16. glossary term 'collection' has no approved entry (status: draft)
+17. glossary term 'concept' has no approved entry (status: draft)
+18. glossary term 'concept domain' has no approved entry (status: draft)
 
 **Unenforced behaviour rules** (17) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-18. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-19. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-20. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-21. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-22. [development] #46 test-plan-per-module-utility — deliberately_deferred
-23. [development] #66 cluster-label-must-track-membership — buildable_not_built
-24. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-25. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-26. [filing] #56 naming-shape — partially_enforced
-27. [filing] #58 archiving-trigger — partially_enforced
-28. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-29. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-30. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
-31. [study_method] #118 surface-mapping-conditions — partially_enforced
-32. [study_method] #120 scope-home-and-multiplicity — partially_enforced
-33. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
-34. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
+19. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+20. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+21. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+22. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+23. [development] #46 test-plan-per-module-utility — deliberately_deferred
+24. [development] #66 cluster-label-must-track-membership — buildable_not_built
+25. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+26. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+27. [filing] #56 naming-shape — partially_enforced
+28. [filing] #58 archiving-trigger — partially_enforced
+29. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+30. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+31. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
+32. [study_method] #118 surface-mapping-conditions — partially_enforced
+33. [study_method] #120 scope-home-and-multiplicity — partially_enforced
+34. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
+35. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -162,7 +162,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1091** registered module(s) — **614** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **917** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1097** registered module(s) — **620** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **920** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -170,6 +170,7 @@ _(none)_
 | Collection-Build.ps1 | iba/app/ps/Collection-Build.ps1 | PS entry point for module 5 of 5 of the surface cycle (escalation #2361): Status, Links, Show, Export, ExportMembers, ExportSurfaces, Set, Merge, Seed, Ask; dispatches through run.py, work package collection-build. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Concept-Edit.ps1 | iba/app/ps/Concept-Edit.ps1 | PS entry point for editing the concept grouping (escalation #2355): List, Describe, AddDomain, SetDeleted; dispatches through run.py, work package concept-edit. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Copy-NarrativeToLearning4Comfort.ps1 | iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1 | PS wrapper for narrativecopy.py (-DryRun). Run on completion of a section of work, on request, and in /session-close (escalation #1941). | ✓ | ✓ | thin wrapper; config is read by narrativecopy.py |
+| Engagement.ps1 | iba/app/ps/Engagement.ps1 | PS entry point for the engagement step (escalation #2406): Pull, Record, Group, Review, Close, Check; dispatches through run.py, work package engagement. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Long-Run.ps1 | iba/app/ps/Long-Run.ps1 | PS entry point for the progress control of long Ollama jobs (escalation #2388): Plan, Start, Progress, Stop; dispatches through run.py, work package long-run. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Narrative-Register.ps1 | iba/app/ps/Narrative-Register.ps1 | PS entry point for the narrative claim register (escalation #2110); every action dispatches through run.py, work package narrative-register. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Node-Resolve.ps1 | iba/app/ps/Node-Resolve.ps1 | PS entry point of work package node-resolve (#2308): -Step Plan\|Apply -File <plan JSON> | ✓ | ✓ | PS entry point: dispatches through run.py; its settings are the steps' own |
@@ -447,6 +448,10 @@ _(none)_
 | docs_archive_pointers_v1_20261021 | iba/app/migration/archive/docs_archive_pointers_v1_20261021.py | ONE-OFF migration -- escalation #2191: repoints the cfg texts naming docs/prose-store-architecture.md after docs/ was archived, through configmaint.apply_logged under run_id DEVMODE-2191-DOCS-ARCHIVE-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | drop_verse_meta_genre_column_v1_20260909 | iba/app/migration/drop_verse_meta_genre_column_v1_20260909.py | ONE-OFF migration -- escalation #1608: drops verse_meta.genre (ALTER TABLE DROP COLUMN) and deletes its cfg_column row, per researcher verdict that genre has no role in this study's verse-focused lexical analysis. Already run live. passage.genre was NOT touched (stays inactive=1, not dropped -- researcher named verse-meta specifically). | ✓ | ✓ | one-off migration/tool that has already run; zero config reads is legitimate (#2107 triage E, approved under #2108) |
 | enforce_span_grounding_word_level_v1_20260923 | iba/app/migration/archive/enforce_span_grounding_word_level_v1_20260923.py | ONE-OFF migration -- researcher correction 2026-09-23, same day as #1849 follow-on: prior 'this term' rewording was still generic (answerable without the verse). Reworded to require span/morph grounding, matching every other live question's own 'In this verse...' convention. Run once, then set inactive=1. |  |  |  |
+| engagement | iba/app/lib/engagement.py | engagement.py -- the step before narration: what each surface of a collection does for the inner being: the pull, the check and write of the assessment, the group rule, the review of the no-bearing verses, the report (escalation #2406). | ✓ | ✓ | every value is a cfg_setting of module engagement read through settings(); the code holds no tunable value |
+| engagement_2406_v1_20261109 | iba/app/migration/archive/engagement_2406_v1_20261109.py | ONE-OFF migration -- escalation #2406: registers the engagement step; run_id DEVMODE-2406-ENGAGEMENT-20261109. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| engagement_2406_v2_module_enum_20261109 | iba/app/migration/archive/engagement_2406_v2_module_enum_20261109.py | ONE-OFF migration -- escalation #2406: adds `engagement` to cfg_enum config_module; run_id DEVMODE-2406-ENGAGEMENT-MODULE-ENUM-20261109. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| engagement_2406_v3_review_close_20261109 | iba/app/migration/archive/engagement_2406_v3_review_close_20261109.py | ONE-OFF migration -- escalation #2406: registers the engagement review and close steps; run_id DEVMODE-2406-ENGAGEMENT-REVIEW-20261109. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | engine_audit | engine/archive/audit.py | Audit framework -- WR-01 through WR-20, run after all writes. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_audit_word | engine/archive/audit_word.py | AUDIT_WORD mode (v4) -- Pre-A1 through A11, unified new-word + re-audit pipeline. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_backup | engine/archive/backup.py | DB backup management (SG-01, SG-12, SG-13) -- timestamped pre-run backup, abort if it fails. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
@@ -487,6 +492,7 @@ _(none)_
 | handlers_collectionbuild | iba/app/handlers/collectionbuild.py | handlers/collectionbuild.py -- the run.py handlers for work package collection-build (Collection-Build.ps1, escalation #2361). | ✓ | ✓ | thin adapter over lib/collectionbuild.py; the exports folder is read with Cfg.setting |
 | handlers_compliance | iba/app/handlers/compliance.py | handlers/compliance.py -- the compliance.template and compliance.check_start steps (#2173 P2). | ✓ | ✓ | thin step wrappers: every setting is read in lib/compliance.py, which they call |
 | handlers_conceptedit | iba/app/handlers/conceptedit.py | handlers/conceptedit.py -- the run.py handlers for work package concept-edit (Concept-Edit.ps1, escalation #2355). | ✓ | ✓ | an editing tool with no tunable threshold: its only rules are the concept tables' own constraints (live-unique name and ordinal checks, the delete refusal), so it reads no cfg.setting() |
+| handlers_engagement | iba/app/handlers/engagement.py | handlers for work package engagement: pull, record, group, review, close, check (escalation #2406). | ✓ | ✓ | handlers hold no rule; the rule is lib/engagement.py and cfg_setting module engagement |
 | handlers_longrun | iba/app/handlers/longrun.py | handlers/longrun.py -- the run.py handlers for work package long-run (Long-Run.ps1, escalation #2388). | ✓ | ✓ | thin adapter over lib/longrun.py; no setting is read |
 | handlers_narrativeregister | iba/app/handlers/narrativeregister.py | handlers/narrativeregister.py -- the run.py handlers for work package narrative-register (one per Narrative-Register.ps1 action); the logic is in lib/narrativeregister.py (escalation #2110). | ✓ |  |  |
 | handlers_noderesolve | iba/app/handlers/noderesolve.py | noderesolve handler -- work package node-resolve: steps node_resolve.plan and node_resolve.apply (#2308) | ✓ |  |  |
@@ -1275,6 +1281,8 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- |
 | ai | ai.allowed_options | ['temperature', 'num_ctx', 'keep_alive'] | the model options a call through the AI client may set (#2361, stage 4): the defaults come from ollama.temperature, ollama.num_ctx and ollama.keep_alive; a call that sets any other option is refused and writes nothing |
 | ai | ai.embed_batch | 64 | how many texts the AI client sends in one embedding call (#2361); one ai_call row per batch |
+| ai | ai.log_write_retries | 5 | how many more times the AI client tries to write an ai_call row after the database stays locked past the connection wait (#2405, option A, researcher 2026-11-09); after the last try the error is raised as before |
+| ai | ai.log_write_wait_seconds | 10 | seconds the AI client waits between tries to write an ai_call row when the database stays locked (#2405, option A, researcher 2026-11-09) |
 | ai | ai.max_consecutive_failures | 3 | the AI client halts a run after this many questions in a row with no usable answer (#2361, B:124); what was answered is kept |
 | ai | ai.retries | 1 | how many times the AI client asks again when an attempt fails or the answer is not usable (#2361): 1 means up to two attempts, each its own ai_call row |
 | backup | backup.alerting_policy | NAS backup tasks alert on failure; Outlook SMTP is blocked from this network, alerting uses Gmail instead. |  |
@@ -1328,6 +1336,14 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | content_index | content_index.size_profile_report_path | outputs/content_index/content-index-size-profile.md | where content_index.size_profile writes its .md-file-size report |
 | database | database.bible_research.path | database/bible_research.db | bible_research.db's file path, project-root-relative (aka research_db in prose elsewhere -- that alias isn't repeated here, see governance.project_databases). Structured counterpart, escalation #723. |
 | database | database.iba.path | iba/app/db/iba.db | iba.db's file path, project-root-relative -- structured counterpart to governance.project_databases' prose, part of escalation #723's project_database enum + path settings. |
+| engagement | engagement.group_judged_by | rule:engagement | the value of surface_term.group_judged_by when the engagement step decides a group (#2406) |
+| engagement | engagement.group_rule | {'characteristic': 'behaviour', 'qualifier': 'inner_being_state', 'none': 'other'} | the surface-level group of a member surface from its live engagement nodes (#2406, researcher 2026-11-09): behaviour if it is a characteristic in any verse, else inner_being_state if it is a qualifier in any verse, else other (it leaves the study group) |
+| engagement | engagement.no_bearing_kind | silence | the observation kind that records a surface with no inner-being bearing in a verse in the engagement assessment (#2406 Q2); Analysis_phase_1 still does not use it |
+| engagement | engagement.report_path | outputs/reports/engagement | the folder of the engagement check reports (#2406) |
+| engagement | engagement.roles | {'relevant': ['characteristic', 'qualifier'], 'bears_on': ['object', 'relational_target', 'enactment']} | the roles a surface takes in a verse in the engagement assessment: a relevant surface is a characteristic or a qualifier of an inner-being operation, a surface that bears on an act is an object, relational target or enactment; the same words as reading.node_roles (#2406) |
+| engagement | engagement.stage | engagement | the stage value written on the observations of the engagement step (#2406); kept apart from Analysis_phase_1, whose check forbids the silence kind |
+| engagement | engagement.tests | ['inner_being_vocabulary', 'idiom_or_combined_span', 'volitional_sense', 'other_party', 'negation_or_modifier', 'sequence_link', 'grammar_only'] | the relevance tests of specification 4.1 (outputs/escalation/2318-analysis-phase-1-specification-v5-20261030.md), by key; an engagement evaluation records the test the surface passed (#2406 Q3), until the researcher sets the line between behaviour and description |
+| engagement | engagement.working_dir | _analytics/surfaces/working_files/engagement | the folder of the engagement working files (the pull of a collection and the filled assessment), part of surfaces.working_files_root (#2406) |
 | escalation | escalation.context_file_extensions | ['.md', '.csv', '.py', '.ps1', '.json', '.xlsx', '.txt', '.sql', '.html', '.jsonl'] | #2173 P1: the extensions that mark a file reference in escalation text |
 | escalation | escalation.context_report_path | outputs/escalation/escalation-context.md | #2173 P1: report of every file each open escalation names, resolved to its latest live version (Escalation.ps1 -Action Context; lib/escalationcontext.py) |
 | escalation | escalation.control_objectives | the escalation table manages all open items, irrespective of source or reason -- AI or researcher raise the escalation when discovered or raised, using the escalation module |  |
@@ -1761,6 +1777,16 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- | --- |
 | 0 | content_index.size_profile | iba.app.handlers.reports:content_index_size_profile | none | read-only report of every .md file in file_manifest by size, largest first — file name, folder, size — for visual review before adding to cfg_content_index_exclude; see lib/contentindex.py |
 
+**engagement** — runs over `none` · script `iba/app/ps/Engagement.ps1`
+| # | step | handler | scope | does |
+| --- | --- | --- | --- | --- |
+| 1 | engagement.pull | iba.app.handlers.engagement:pull | none | write the working file of one collection with -Collection: its member surfaces, their verses with the ESV text and the observations already on those verses (a view of the tables, never overwritten) -- see lib/engagement.py (escalation #2406) |
+| 2 | engagement.record | iba.app.handlers.engagement:record | none | check a filled assessment against its pull, whole, and write it in one transaction with -File (-Check previews): the actions on the existing observations, one observation for each surface and role, a node for each verse -- see lib/engagement.py (escalation #2406) |
+| 3 | engagement.group | iba.app.handlers.engagement:group | none | set the surface-level group of each member surface of -Collection from its engagement nodes (-Check previews); a surface that leaves the study group is raised as one escalation, never unlinked -- see lib/engagement.py (escalation #2406) |
+| 4 | engagement.check | iba.app.handlers.engagement:check | none | report every member surface of -Collection against its verses to engagement.report_path -- see lib/engagement.py (escalation #2406) |
+| 5 | engagement.review | iba.app.handlers.engagement:review | none | write the review file of -Collection: the verses where every member surface was assessed with no bearing, the items still to be read again (ruling B of #2411) -- see lib/engagement.py (escalation #2406) |
+| 6 | engagement.close | iba.app.handlers.engagement:close | none | check the decisions on a review file with -File (-Check previews) and write them in one transaction: confirm no bearing (kept in ib_observation_change), or reopen with a role (the no-bearing node deleted, a new observation node written) -- see lib/engagement.py (escalation #2406) |
+
 **escalation-reporting** — runs over `none` · script `iba/app/ps/Escalation.ps1`
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
@@ -2123,7 +2149,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 <a id="7-on-fail-condition-path-the-fork-rules"></a>
 ## 7. on_fail — condition -> path (the fork rules)
 
-**20 of 180 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**20 of 188 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -2199,6 +2225,14 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | configmaint.validate | findings-rejected | report-stop | researcher flagged advisory findings as needing action, not acknowledgement |
 | configmaint.validate | invalid | report-stop | the live cfg_* store is incoherent |
 | configmaint.validate | needs-revision | report-stop | researcher asked for more specific investigation (see comment) |
+| engagement.check | not_assessed | report-continue | reported, nothing refused -- a member surface is not assessed in every one of its verses; the report names it |
+| engagement.check | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| engagement.close | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| engagement.group | member_left_study | report-continue | reported; the handler raised one escalation for the collection (a member surface left the study group; this step never unlinks it, R4) |
+| engagement.group | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| engagement.pull | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| engagement.record | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| engagement.review | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | escalation.history | bad-parameter | report-continue | usage error, not recorded as an escalation -- check -Id (id or OT-nn) |
 | escalation.thread | bad-parameter | report-continue | usage error, not recorded as an escalation -- check -Id (id or OT-nn) and -State (on-hold\|in-progress) |
 | group.judge | halted | report-continue | halted, what was answered is kept in ai_call -- the set number of questions in a row got no usable answer (the server or the ssh tunnel stopped answering); fix the cause and run again, it carries on with the words still waiting (a usage outcome, not recorded as an escalation) |
@@ -2343,6 +2377,9 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | concept_edit.describe | concept, concept_domain |
 | concept_edit.set_deleted | concept_domain |
 | configmaint.propose | cfg_ai_model, cfg_ai_prompt, cfg_api, cfg_base_construct, cfg_behaviour_class, cfg_behaviour_rule, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_content_index_exclude, cfg_content_index_size_override, cfg_control_home, cfg_enum, cfg_escalation, cfg_escalation_requirement, cfg_escalation_transition, cfg_index, cfg_lexical_code_class, cfg_meta, cfg_method_rule, cfg_observation_enhancer_rule, cfg_on_fail, cfg_passage, cfg_prose, cfg_prose_concept, cfg_quality_check, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_rule_scope, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_table_purpose, cfg_trigger, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
+| engagement.close | ib_node, ib_observation, ib_observation_change |
+| engagement.group | surface_event, surface_term |
+| engagement.record | ib_node, ib_observation, ib_observation_change |
 | escalation | escalation, escalation_history, escalation_thread_item, escalation_thread_item_response, word_registry |
 | group.judge | ai_call, run_batch, surface_event, surface_term |
 | group.repoint | surface_event, surface_flag, surface_term |
@@ -4479,7 +4516,7 @@ dedup key: `name, role`
 | collection_listing.kind | synonym, opposite |
 | collection_listing.outcome | bound, refused, not_in_pool, unjudged |
 | compliance_rule_status | engaged, not engaged |
-| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit, lexical, strand_reading, verse_scope, reading_index, verse_collate, open_item, reading, prior_capture, node_resolve, ollama, surface_judge, surfaces, structure, group, resolve, ai, collection |
+| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit, lexical, strand_reading, verse_scope, reading_index, verse_collate, open_item, reading, prior_capture, node_resolve, ollama, surface_judge, surfaces, structure, group, resolve, ai, collection, engagement |
 | control_home_type | cfg_table, db_table, document, folder, harness |
 | control_read_when | always, session_start, when_invoked, when_needed, history_only |
 | escalation_answer | approve, reject, revise |
@@ -4504,7 +4541,7 @@ dedup key: `name, role`
 | hib_kind | named_individual, unnamed_individual, named_collection, unnamed_collection, implicit_individual, implicit_collection |
 | ib_observation.basis | read, stated |
 | ib_observation.meaning_source | strong_meaning_tree, strong_lexicon.lsj, strong_lexicon.mounce, strong_lexicon, verse-text, role-tags, cluster, observations, n/a |
-| ib_observation.stage | verse-reading, char-subgroup, char-reading, char-answers, char-synergy, strand-reading, reading, prior-capture, Analysis_phase_1 |
+| ib_observation.stage | verse-reading, char-subgroup, char-reading, char-answers, char-synergy, strand-reading, reading, prior-capture, Analysis_phase_1, engagement |
 | ib_observation.status | resolved, needs-corroboration, open, silent, withdrawn, draft |
 | ib_observation.tag | instance-meaning, verse-grouping, difference-inference, surface-gloss-divergence, no-human-context, cross-cluster-significance, data-error, alternative-meaning, could-not-resolve, answered-no-flag, tightly-related, no-direct-connection, qualifier-for-term, no-impact, not-related-to-meaningful-word, sole-mcode-in-verse, cluster-pole-negative, cluster-pole-positive, attested-pre-nt, nt-coinage, needs_adjacent_verse_context, elevation-candidate, key-statement, face, link, party, qualification, silence, statement, term, use, subgroup-settlement, unfitted |
 | ib_observation.window | meaning, action-impact, relational, literary, cognitive, affective, operational, constitutional, origin, scientific, Subgroup, faculty |
@@ -5378,7 +5415,7 @@ settings: `collection.embed_cache`, `collection.embed_role`, `collection.export_
 | ai.replay | operations | send a stored request (-Call) again and say whether the answer is the same; recorded as step replay | ai_call |
 | ai.compare | utility | per prompt version and model: answered, refused, failed, seconds, tokens for a step (-Step) (read-only) | (reads only) |
 
-settings: `ai.allowed_options`, `ai.embed_batch`, `ai.max_consecutive_failures`, `ai.retries`
+settings: `ai.allowed_options`, `ai.embed_batch`, `ai.log_write_retries`, `ai.log_write_wait_seconds`, `ai.max_consecutive_failures`, `ai.retries`
 
 **State of the study tables** (counts at the moment of this report)
 
@@ -5386,7 +5423,7 @@ surface_term by base_state: out_of_scope 2317, matched_structure 1232, phrase_no
 
 surface_term by group_state: judged 6031, confirmed 82, unjudged 56, corrected 56
 
-collection_link by tier: associated 777, synonym 368, possible_opposite 191, set_aside 142, core 78, opposite 53
+collection_link by tier: associated 1623, synonym 716, possible_opposite 269, set_aside 233, core 159, opposite 99
 
 surface_flag by kind (open): ai_none 289, held_pair 39, possible_opposite 34, ai_failed 31, possessive 26, structure_conflict 14
 
@@ -5427,14 +5464,14 @@ Generated from `cfg_ai_model`, `cfg_ai_prompt` and `ai_call`. Every call goes th
 | module | step | role | model | prompts | answered | refused | failed | halted | avg secs |
 |---|---|---|---|---|---|---|---|---|---|
 | ai_base | base | judge | qwen3:30b | base.word v2 | 676 | 31 | 0 | 0 | 11.3 |
-| collection | associated | judge | qwen3:30b | collection.associated v1 | 4140 | 0 | 0 | 0 | 4.0 |
-| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 6094 | 0 | 0 | 0 | 4.6 |
+| collection | associated | judge | qwen3:30b | collection.associated v1 | 8944 | 0 | 0 | 0 | 4.1 |
+| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 11383 | 0 | 0 | 0 | 4.6 |
 | collection | embed | embed | qwen3-embedding:latest |  | 42 | 0 | 0 | 0 | 16.6 |
-| collection | listing | judge | qwen3:30b | collection.list v1 | 92 | 0 | 0 | 0 | 7.0 |
-| collection | pole | judge | qwen3:30b | collection.pole v1 | 123 | 0 | 0 | 0 | 4.7 |
-| collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 45 | 0 | 0 | 0 | 3.3 |
-| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 31 | 0 | 0 | 0 | 1.5 |
-| collection | score | judge | qwen3:30b | collection.score v1 | 1733 | 0 | 0 | 0 | 3.9 |
+| collection | listing | judge | qwen3:30b | collection.list v1 | 176 | 0 | 0 | 0 | 7.2 |
+| collection | pole | judge | qwen3:30b | collection.pole v1 | 291 | 0 | 0 | 0 | 3.3 |
+| collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 175 | 0 | 0 | 0 | 4.0 |
+| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 115 | 0 | 0 | 0 | 1.5 |
+| collection | score | judge | qwen3:30b | collection.score v1 | 6614 | 0 | 0 | 0 | 3.9 |
 | group | group | judge | qwen3:30b | group.word v3 | 6106 | 0 | 0 | 0 | 10.2 |
 
 **Steps that call the AI** (all through the client): `ai.replay`, `collection.ask`, `collection.seed`, `group.judge`, `surface_base.ask`

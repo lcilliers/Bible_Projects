@@ -32,23 +32,44 @@ select * from cluster_subgroup;
 select * from surface_subgroup;
 select * from concept_subgroup; 
 
-select surface, role from verse_lexical vl
-where deleted = 0
-  and not exists (select 1 from json_each(v.role) j where j.value = 'T10')
-group by surface,role;
+select surface , count(*) as surface_count from surface_subgroup
+group by surface;
 
-select v.surface
-from verse_lexical v
-where v.deleted = 0
-  and exists (select 1 from json_each(v.role) j where j.value = 'T2');
-;
 
+
+
+--check what is related to T2 surfaces
 with t2_surfaces as (
-select v.surface
+  select distinct v.surface
+  from verse_lexical v
+  where v.deleted = 0
+    and exists (select 1 from json_each(v.role) j where j.value = 'T2')
+), m_surfaces as (
+select v.surface, v.role
 from verse_lexical v
 where v.deleted = 0
-  and exists (select 1 from json_each(v.role) j where j.value = 'T2')
+ and exists (select 1 from json_each(v.role) j where j.value like 'M%')
+ group by v.surface, v.role
 )
-select * from t2_surfaces
-inner join verse_lexical v on t2_surfaces.surface = v.surface
+select * from m_surfaces
+inner join t2_surfaces t on m_surfaces.surface = t.surface ;
+
 ;
+--t3 not in surface_subgroup
+with t3_surfaces as (
+  select distinct lower(trim(v.surface)) as surface
+  from verse_lexical v
+  where v.deleted = 0
+    and exists (select 1 from json_each(v.role) j where j.value = 'T3')
+    and v.surface is not null
+    and trim(v.surface) <> ''
+), sg_surfaces as (
+  select distinct surface
+  from surface_subgroup
+  where deleted = 0
+)
+select ts.surface
+from t3_surfaces ts
+left join sg_surfaces sg on sg.surface = ts.surface
+where sg.surface is null
+order by ts.surface;

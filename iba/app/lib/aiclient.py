@@ -19,11 +19,12 @@ import contextlib
 import hashlib
 import json
 import re
+import sqlite3
 import time
 
 from . import surfacejudge as sj
 
-SETTING_KEYS = ["ai.allowed_options", "ai.retries", "ai.max_consecutive_failures", "ai.embed_batch"]
+SETTING_KEYS = ["ai.allowed_options", "ai.retries", "ai.max_consecutive_failures", "ai.embed_batch", "ai.log_write_retries", "ai.log_write_wait_seconds"]
 OLLAMA_KEYS = ["ollama.host", "ollama.timeout_seconds", "ollama.keep_alive", "ollama.num_ctx", "ollama.temperature", "ollama.connect_timeout_seconds"]
 
 
@@ -138,15 +139,24 @@ class AiClient:
     # ---- the call ------------------------------------------------------------------------------------------------------------
     def _log(self, role, model, prompt, opts, text, subject, outcome, raw=None, result=None, error=None, meta=None, secs=None) -> int:
         meta = meta or {}
-        cur = self.conn.execute(
-            "INSERT INTO ai_call (batch_id, module, step, role, model_id, model_digest, prompt_id, options, request_hash, subject_kind, subject_id, "
-            "request, answer, result, via, outcome, error, tokens_in, tokens_out, secs, run_id, created_by) "
-            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-            (self.batch_id, self.module, self.step, role, model[0], model[2], prompt[0] if prompt else None, json.dumps(opts, sort_keys=True),
-             text_hash(text), subject[0], subject[1], text, raw, result, "aiclient", outcome, error, meta.get("tokens_in"), meta.get("tokens_out"),
-             round(secs, 2) if secs is not None else None, self.run_id, "aiclient"))
-        self.conn.commit()
-        return cur.lastrowid
+        params = (self.batch_id, self.module, self.step, role, model[0], model[2], prompt[0] if prompt else None, json.dumps(opts, sort_keys=True),
+                  text_hash(text), subject[0], subject[1], text, raw, result, "aiclient", outcome, error, meta.get("tokens_in"), meta.get("tokens_out"),
+                  round(secs, 2) if secs is not None else None, self.run_id, "aiclient")
+        # the connection already waits busy_timeout for the write lock; when another writer holds it longer, try again ai.log_write_retries
+        # times, ai.log_write_wait_seconds apart, then raise as before (#2405, option A)
+        tries = int(self.vals["ai.log_write_retries"])
+        for n in range(tries + 1):
+            try:
+                cur = self.conn.execute(
+                    "INSERT INTO ai_call (batch_id, module, step, role, model_id, model_digest, prompt_id, options, request_hash, subject_kind, subject_id, "
+                    "request, answer, result, via, outcome, error, tokens_in, tokens_out, secs, run_id, created_by) "
+                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", params)
+                self.conn.commit()
+                return cur.lastrowid
+            except sqlite3.OperationalError as exc:
+                if "locked" not in str(exc) or n == tries:
+                    raise
+                time.sleep(float(self.vals["ai.log_write_wait_seconds"]))
 
     def call(self, role: str, prompt_key: str, variables: dict, subject: tuple, check=None, result_of=None, overrides: dict | None = None, step: str | None = None) -> dict:
         """One question, up to 1 + ai.retries attempts, one ai_call row per attempt. check(answer) -> list of reasons the answer is not usable;

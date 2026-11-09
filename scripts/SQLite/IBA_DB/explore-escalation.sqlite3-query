@@ -4,7 +4,8 @@
 SELECT version, type,state,next_action_assigned_to,next_action, id, short_description,comment,context, resolution FROM escalation 
 WHERE state not in ('completed','withdraw','closed','on-hold','supersede');
 --all open escalations
-SELECT id, alias, version, type,state,next_action,next_action_assigned_to, short_description,comment,context, resolution FROM escalation 
+SELECT 
+next_action,next_action_assigned_to,id,  short_description,comment,context, resolution,version, type,state FROM escalation 
 WHERE state not in ('completed','withdraw','closed','supersede')
 order by escalation.id DESC;
 --a specific escalation

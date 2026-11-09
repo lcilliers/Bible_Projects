@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-09T04:24:01Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-09T08:44:57Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `c4e9fed5-12df-4346-8851-c74151f8675c` (CLAUDE_CODE_SESSION_ID); started 2026-11-08T09:07:30Z; window base commit `186c1e5f44b089eaaacbb57004c611209a18e886`
-- compliance file: `Logs/compliance/COMPLIANCE-20261108-c4e9fed5.md`; session log: `Logs/SESSION-LOG-20261108-collection-exports-as-methods.md`
-- **open findings: 0**; cleared by disposition: 6
+- session: `aab6d969-cdd9-4d13-a43e-99ed3e216279` (CLAUDE_CODE_SESSION_ID); started 2026-11-09T06:06:59Z; window base commit `9d59869192c4150e13bcae09b3563e4847cec9be`
+- compliance file: `Logs/compliance/COMPLIANCE-20261109-aab6d969.md`; session log: `Logs/SESSION-LOG-20261109-engagement-step.md`
+- **open findings: 0**; cleared by disposition: 7
 
 
 ## Contents
@@ -41,23 +41,21 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:affc46fc`: researcher message 2026-11-08T13:19 is too short to be matched; name where it is recorded: "Run session-close" -- disposition: no record needed: bare command to run session-close, nothing to record
-- cleared `SC3:85cc414d`: researcher message 2026-11-08T10:35 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: no record needed: automatic context-compaction summary, its content is recorded on #2393 v3 and v4
-- cleared `SC3:b7e107fb`: researcher message 2026-11-08T17:19 is in no escalation comment written this session: "see the error when I run it: PS C:\Bible_study_projects> Collection-Build.ps1 -Action Export
-Collection-Build.ps1: The term 'Collection-Build.ps1' is not recogn" -- disposition: recorded in #2393 v5
+- cleared `SC3:cba5ccba`: researcher message 2026-11-09T06:13 is too short to be matched; name where it is recorded: "Confirmed, build #2406" -- disposition: recorded in #2406 v13
+- cleared `SC3:cec01463`: researcher message 2026-11-09T07:12 is in no escalation comment written this session: "<task-notification>
+<task-id>b8si57lnv</task-id>
+<tool-use-id>toolu_013pWoHX5ohWieistqumqGzA</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification (a stopped compliance-file command), not researcher words
+- cleared `SC3:b08ddeed`: researcher message 2026-11-09T07:20 is too short to be matched; name where it is recorded: "Yes, build it" -- disposition: recorded in #2406 v13
+- cleared `SC3:b830baad`: researcher message 2026-11-09T07:37 is too short to be matched; name where it is recorded: "B (recommended)" -- disposition: recorded in #2406 v13
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:85cc414d`: researcher message 2026-11-08T10:35 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: not held: automatic context-compaction summary, no holding request in it
-- cleared `SC4b:b7e107fb`: researcher message 2026-11-08T17:19 holds, defers or asks to check something; name its register item: "see the error when I run it: PS C:\Bible_study_projects> Collection-Build.ps1 -Action Export
-Collection-Build.ps1: The term 'Collection-Build.ps1' is not recogn" -- disposition: not held: a PowerShell usage error answered in chat with the full-path command, nothing deferred (recorded on #2393 v5)
+- cleared `SC4b:cec01463`: researcher message 2026-11-09T07:12 holds, defers or asks to check something; name its register item: "<task-notification>
+<task-id>b8si57lnv</task-id>
+<tool-use-id>toolu_013pWoHX5ohWieistqumqGzA</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: not held: an automated background-task notification, not researcher words
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -94,4 +92,5 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: work package : configuration-maintenance -- disposition: fixed: the validate errors were the unregistered long-run files, registered by the approved #2399 to #2402; #2404 completed with no coherence errors after
+- cleared `SC16:Collection-Build.ps1`: Collection-Build.ps1 failed 2 times this session: $paramArgs = @(); sed: can't read ps/Collection-Build.ps1: No such file or directory -- disposition: fixed: the two failures were my own mistaken reads of Collection-Build.ps1 and handlers/base.py from a shell whose working folder had moved; the files were read again by full path, no tool failed
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; error: next_action='approved' requires resolution to be filled in (plan v3 sec3) -- disposition: fixed: both refusals were my calls out of order (approving #2411 from a next_action other than ready_for_approval, and approving without a resolution); I put the item through ready_for_approval with its resolution first and the update then passed
