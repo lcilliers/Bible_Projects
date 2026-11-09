@@ -49,4 +49,4 @@ Self-correctable fix by Claude:
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. First commit: fbd5cdc0 (session 20261109: the engagement step (#2406) ...). Push output: `9d598691..fbd5cdc0  main -> main` to https://github.com/lcilliers/Bible_Projects.git.
