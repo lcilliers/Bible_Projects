@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-09T12:01:30Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-09T12:09:20Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `3e786860-fe9c-4009-a10b-28b1c03f3294` (CLAUDE_CODE_SESSION_ID); started 2026-11-08T17:35:49Z; window base commit `3e1f710564192c97f666bd79a1879a638f304c1a`
 - compliance file: `Logs/compliance/COMPLIANCE-20261108-3e786860.md`; session log: `Logs/SESSION-LOG-20261109-chapter-10-collections.md`
-- **open findings: 0**; cleared by disposition: 8
+- **open findings: 0**; cleared by disposition: 9
 
 
 ## Contents
@@ -49,6 +49,7 @@ _no finding_
 
 Summar" -- disposition: no record needed: the harness's context-continuation summary, not a researcher message
 - cleared `SC3:5adbc2c8`: researcher message 2026-11-09T11:58 is too short to be matched; name where it is recorded: "Approve, close" -- disposition: recorded in #2413 v5
+- cleared `SC3:fd8d5ce4`: researcher message 2026-11-09T12:08 is in no escalation comment written this session: "provide me with the script to run for the reporting" -- disposition: no record needed: a how-to question (the export commands), answered in chat; no decision or change followed
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
