@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-08T13:21:38Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-09T04:01:00Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `c4e9fed5-12df-4346-8851-c74151f8675c` (CLAUDE_CODE_SESSION_ID); started 2026-11-08T09:07:30Z; window base commit `186c1e5f44b089eaaacbb57004c611209a18e886`
-- compliance file: `Logs/compliance/COMPLIANCE-20261108-c4e9fed5.md`; session log: `Logs/SESSION-LOG-20261108-collection-exports-as-methods.md`
-- **open findings: 0**; cleared by disposition: 4
+- session: `3e786860-fe9c-4009-a10b-28b1c03f3294` (CLAUDE_CODE_SESSION_ID); started 2026-11-08T17:35:49Z; window base commit `3e1f710564192c97f666bd79a1879a638f304c1a`
+- compliance file: `Logs/compliance/COMPLIANCE-20261108-3e786860.md`; session log: `Logs/SESSION-LOG-20261109-chapter-10-collections.md`
+- **open findings: 0**; cleared by disposition: 1
 
 
 ## Contents
@@ -41,19 +41,12 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:affc46fc`: researcher message 2026-11-08T13:19 is too short to be matched; name where it is recorded: "Run session-close" -- disposition: no record needed: bare command to run session-close, nothing to record
-- cleared `SC3:85cc414d`: researcher message 2026-11-08T10:35 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: no record needed: automatic context-compaction summary, its content is recorded on #2393 v3 and v4
+_no finding_
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:85cc414d`: researcher message 2026-11-08T10:35 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: not held: automatic context-compaction summary, no holding request in it
+_no finding_
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -90,4 +83,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: work package : configuration-maintenance -- disposition: carried #2404
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: error: an update carrying comment/context/tried cannot leave the item at state='raised' -- move it off raised first (e.g; escalation #2376 v7 -> state='on-hold', next_action='review', assigned_to='Researcher' -- disposition: fixed: the first update was refused because the item was still at raised; retried with -State in-progress and it applied (#2376 v2)

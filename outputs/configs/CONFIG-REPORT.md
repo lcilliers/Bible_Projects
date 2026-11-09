@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-08T13:20:52Z |
+| generated_at | 2026-11-08T13:25:23Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -47,8 +47,8 @@ _(none)_
 **Stale filled_by** (0) — cfg_column.filled_by names a now-inactive step:
 _(none)_
 
-**Unregistered lib modules** (1) — iba/app/lib/*.py with no cfg_utility row:
-2. iba/app/lib/longrun.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
+**Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
+_(none)_
 
 **Low config-density utilities** (0) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
 _(none)_
@@ -75,7 +75,7 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-3. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+2. iba/app/lib/narrativeregister.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
 **PS/worksheet drift** (0) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
 _(none)_
@@ -87,40 +87,40 @@ _(none)_
 _(none)_
 
 **Glossary currency** (15) — a term of glossary.currency_check with no entry, only archived entries or no approved entry in the programme glossary (bible_research.db prose_section), or a cfg_prose_concept pointer naming an entry that is not there:
-4. glossary term 'role' has no approved entry (status: draft)
-5. glossary term 'characteristic' has no approved entry (status: draft)
-6. glossary term 'operation' has no approved entry (status: draft)
-7. glossary term 'M-Code cluster' has no approved entry (status: draft)
-8. glossary term 'T2' has no approved entry (status: draft)
-9. glossary term 'T3' has no approved entry (status: draft)
-10. glossary term 'inner being' has no approved entry (status: draft)
-11. glossary term 'base' has no approved entry (status: draft)
-12. glossary term 'inflection' has no approved entry (status: draft)
-13. glossary term 'derivation' has no approved entry (status: draft)
-14. glossary term 'surface group' has no approved entry (status: draft)
-15. glossary term 'subgroup' has no approved entry (status: draft)
-16. glossary term 'collection' has no approved entry (status: draft)
-17. glossary term 'concept' has no approved entry (status: draft)
-18. glossary term 'concept domain' has no approved entry (status: draft)
+3. glossary term 'role' has no approved entry (status: draft)
+4. glossary term 'characteristic' has no approved entry (status: draft)
+5. glossary term 'operation' has no approved entry (status: draft)
+6. glossary term 'M-Code cluster' has no approved entry (status: draft)
+7. glossary term 'T2' has no approved entry (status: draft)
+8. glossary term 'T3' has no approved entry (status: draft)
+9. glossary term 'inner being' has no approved entry (status: draft)
+10. glossary term 'base' has no approved entry (status: draft)
+11. glossary term 'inflection' has no approved entry (status: draft)
+12. glossary term 'derivation' has no approved entry (status: draft)
+13. glossary term 'surface group' has no approved entry (status: draft)
+14. glossary term 'subgroup' has no approved entry (status: draft)
+15. glossary term 'collection' has no approved entry (status: draft)
+16. glossary term 'concept' has no approved entry (status: draft)
+17. glossary term 'concept domain' has no approved entry (status: draft)
 
 **Unenforced behaviour rules** (17) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-19. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-20. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-21. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-22. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-23. [development] #46 test-plan-per-module-utility — deliberately_deferred
-24. [development] #66 cluster-label-must-track-membership — buildable_not_built
-25. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-26. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-27. [filing] #56 naming-shape — partially_enforced
-28. [filing] #58 archiving-trigger — partially_enforced
-29. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-30. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-31. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
-32. [study_method] #118 surface-mapping-conditions — partially_enforced
-33. [study_method] #120 scope-home-and-multiplicity — partially_enforced
-34. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
-35. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
+18. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+19. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+20. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+21. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+22. [development] #46 test-plan-per-module-utility — deliberately_deferred
+23. [development] #66 cluster-label-must-track-membership — buildable_not_built
+24. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+25. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+26. [filing] #56 naming-shape — partially_enforced
+27. [filing] #58 archiving-trigger — partially_enforced
+28. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+29. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+30. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
+31. [study_method] #118 surface-mapping-conditions — partially_enforced
+32. [study_method] #120 scope-home-and-multiplicity — partially_enforced
+33. [study_method] #121 reading-recorded-per-occurrence — buildable_not_built
+34. [study_method] #122 subgroup-settled-in-claims-step — buildable_not_built
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -162,7 +162,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1087** registered module(s) — **610** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **917** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1091** registered module(s) — **614** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **917** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -170,6 +170,7 @@ _(none)_
 | Collection-Build.ps1 | iba/app/ps/Collection-Build.ps1 | PS entry point for module 5 of 5 of the surface cycle (escalation #2361): Status, Links, Show, Export, ExportMembers, ExportSurfaces, Set, Merge, Seed, Ask; dispatches through run.py, work package collection-build. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Concept-Edit.ps1 | iba/app/ps/Concept-Edit.ps1 | PS entry point for editing the concept grouping (escalation #2355): List, Describe, AddDomain, SetDeleted; dispatches through run.py, work package concept-edit. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Copy-NarrativeToLearning4Comfort.ps1 | iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1 | PS wrapper for narrativecopy.py (-DryRun). Run on completion of a section of work, on request, and in /session-close (escalation #1941). | ✓ | ✓ | thin wrapper; config is read by narrativecopy.py |
+| Long-Run.ps1 | iba/app/ps/Long-Run.ps1 | PS entry point for the progress control of long Ollama jobs (escalation #2388): Plan, Start, Progress, Stop; dispatches through run.py, work package long-run. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Narrative-Register.ps1 | iba/app/ps/Narrative-Register.ps1 | PS entry point for the narrative claim register (escalation #2110); every action dispatches through run.py, work package narrative-register. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Node-Resolve.ps1 | iba/app/ps/Node-Resolve.ps1 | PS entry point of work package node-resolve (#2308): -Step Plan\|Apply -File <plan JSON> | ✓ | ✓ | PS entry point: dispatches through run.py; its settings are the steps' own |
 | Open-Item.ps1 | iba/app/ps/Open-Item.ps1 | PS entry point for registering open items (escalation #2236); dispatches through run.py, work package open-item. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
@@ -419,6 +420,7 @@ _(none)_
 | clusterfamilyscan | iba/app/lib/archive/clusterfamilyscan.py | Escalation #1598: candidate-generation via strong_related lexical-family data instead of gloss-keyword matching, with proper-noun filtering. Not a bulk-apply tool -- surfaces candidates for individual verse-check + JSON-batch review via apply_1598_cluster_batch.py. Validated: reliable for place/party/collective candidates, unreliable for M-code thematic fit (documented in module docstring). |  |  |  |
 | clusterreport | iba/app/lib/clusterreport.py | report.cluster -- cluster content/quality report | ✓ |  |  |
 | clusterstatus | iba/app/lib/clusterstatus.py | clusterstatus.py — the `cluster.status` lifecycle transitions `#1697` designed but never built | ✓ |  |  |
+| collection_batch_run | iba/app/tools/collection_batch_run.py | collection_batch_run.py -- the job collection-batch: Seed then Ask per sub-group of the bases not yet in a collection, Links every 10 (escalation #2388). | ✓ | ✓ | fixed operational values (90 min step limit, 3 failures in a row, Links every 10); the seed rule is the one of the ten pilot collections |
 | collection_export_2393_v1_20261108 | iba/app/migration/archive/collection_export_2393_v1_20261108.py | ONE-OFF migration -- escalation #2393: registers the two #2379 CSV exports as steps of collection-build; run_id DEVMODE-2393-COLLECTION-EXPORT-20261108. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | collectionask | iba/app/lib/collectionask.py | collectionask.py -- the front of module 5 of 5: seeding a collection (pole, real-word check, the model's list) and judging its candidates (embedding shortlist, synonym, score, pole check, association) through the AI client (escalation #2361). | ✓ |  |  |
 | collectionbuild | iba/app/lib/collectionbuild.py | collectionbuild.py -- module 5 of 5 of the surface cycle: the members of each collection decided from the AI judgements, reproducing the five recorded runs of 2026-11-05 (escalation #2361). | ✓ | ✓ | the rule has no tunable value: the tiers follow from the recorded relations of the judge prompts |
@@ -485,6 +487,7 @@ _(none)_
 | handlers_collectionbuild | iba/app/handlers/collectionbuild.py | handlers/collectionbuild.py -- the run.py handlers for work package collection-build (Collection-Build.ps1, escalation #2361). | ✓ | ✓ | thin adapter over lib/collectionbuild.py; the exports folder is read with Cfg.setting |
 | handlers_compliance | iba/app/handlers/compliance.py | handlers/compliance.py -- the compliance.template and compliance.check_start steps (#2173 P2). | ✓ | ✓ | thin step wrappers: every setting is read in lib/compliance.py, which they call |
 | handlers_conceptedit | iba/app/handlers/conceptedit.py | handlers/conceptedit.py -- the run.py handlers for work package concept-edit (Concept-Edit.ps1, escalation #2355). | ✓ | ✓ | an editing tool with no tunable threshold: its only rules are the concept tables' own constraints (live-unique name and ordinal checks, the delete refusal), so it reads no cfg.setting() |
+| handlers_longrun | iba/app/handlers/longrun.py | handlers/longrun.py -- the run.py handlers for work package long-run (Long-Run.ps1, escalation #2388). | ✓ | ✓ | thin adapter over lib/longrun.py; no setting is read |
 | handlers_narrativeregister | iba/app/handlers/narrativeregister.py | handlers/narrativeregister.py -- the run.py handlers for work package narrative-register (one per Narrative-Register.ps1 action); the logic is in lib/narrativeregister.py (escalation #2110). | ✓ |  |  |
 | handlers_noderesolve | iba/app/handlers/noderesolve.py | noderesolve handler -- work package node-resolve: steps node_resolve.plan and node_resolve.apply (#2308) | ✓ |  |  |
 | handlers_openitem | iba/app/handlers/openitem.py | handlers/openitem.py -- the run.py handlers for work package open-item (Open-Item.ps1), one per action; the logic is in lib/openitem.py (escalation #2236). | ✓ |  |  |
@@ -752,6 +755,7 @@ _(none)_
 | lexicon | iba/app/handlers/lexicon.py | handlers/lexicon.py -- Lexicon-parsed-layer handlers (L2b): parse/related/validate steps for the lexicon-parse work package. rebuild_parsed_tables() is the full parse rebuild (also called directly by raw.backfill_meaning); as of escalation #1655 (2026-09-10) it also adds a standing lemma-derived-with-note fallback for any strong code STEP returns no exact-variant result for, so every live strong code has parse coverage matching strong's own grain. | ✓ |  |  |
 | lexiconparse | iba/app/lib/lexiconparse.py | lexiconparse.py — the governed parse of the raw lexicon layer (strong_meaning_tree.sense_text, | ✓ |  |  |
 | long_running_job_2354_v1_20261104 | iba/app/migration/archive/long_running_job_2354_v1_20261104.py | ONE-OFF migration -- escalation #2354: the rule that a long-running job is started outside the Claude session; run_id DEVMODE-2354-LONG-RUNNING-JOB-20261104. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| longrun | iba/app/lib/longrun.py | longrun.py -- the progress control of every long Ollama job: progress file, stop flag, log, running-or-dead test, keep-awake (escalation #2388). | ✓ | ✓ | fixed operational values (30 s heartbeat, 120 s stale limit); no research parameter |
 | m0_5_11_surface_cue_v1_20260923 | iba/app/migration/archive/m0_5_11_surface_cue_v1_20260923.py | ONE-OFF migration -- researcher instruction 2026-09-23: names surface-form variation as the explicit diagnostic cue for M0.5.11's divergence check. Run once, then set inactive=1. |  |  |  |
 | manifest | iba/app/lib/manifest.py | manifest.py — the project-wide file manifest (rebuild + search). Filename/path metadata only; the baseline lib/contentindex.py (round 2) cross-checks file-content search coverage against. | ✓ |  |  |
 | meaning_source_2207_v1_20261022 | iba/app/migration/archive/meaning_source_2207_v1_20261022.py | ONE-OFF migration -- escalation #2207: meaning_source sources and aliases, through configmaint.apply_logged under run_id DEVMODE-2207-MEANING-SOURCE-20261022. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -1802,7 +1806,10 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 **long-run** — runs over `none` · script `iba/app/ps/Long-Run.ps1`
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
-| _(none)_ | _(none)_ | _(none)_ | _(none)_ | _(none)_ |
+| 0 | long.plan | iba.app.handlers.longrun:plan | none | write the plan of a long job (collection-batch: one seed word per sub-group of the bases not yet in a collection) to Logs/longrun; -Job -- see lib/longrun.py (escalation #2388) |
+| 1 | long.start | iba.app.handlers.longrun:start | none | start a long job detached through Win32_Process Create so it outlives the session, keeping the machine from idle sleep; -Job, -Limit -- see lib/longrun.py (escalation #2388) |
+| 2 | long.progress | iba.app.handlers.longrun:progress | none | state, done of total, item in hand, seconds per item, estimated finish and last problem of a long job, from its progress file (read-only); -Job -- see lib/longrun.py (escalation #2388) |
+| 3 | long.stop | iba.app.handlers.longrun:stop | none | ask a running long job to end after the item in hand by writing its stop flag; -Job -- see lib/longrun.py (escalation #2388) |
 
 **narrative-register** — runs over `none` · script `iba/app/ps/Narrative-Register.ps1`
 | # | step | handler | scope | does |
@@ -5379,7 +5386,7 @@ surface_term by base_state: out_of_scope 2317, matched_structure 1232, phrase_no
 
 surface_term by group_state: judged 6031, confirmed 82, unjudged 56, corrected 56
 
-collection_link by tier: associated 675, synonym 319, possible_opposite 177, set_aside 125, core 68, opposite 52
+collection_link by tier: associated 777, synonym 368, possible_opposite 191, set_aside 142, core 78, opposite 53
 
 surface_flag by kind (open): ai_none 289, held_pair 39, possible_opposite 34, ai_failed 31, possessive 26, structure_conflict 14
 
@@ -5420,14 +5427,14 @@ Generated from `cfg_ai_model`, `cfg_ai_prompt` and `ai_call`. Every call goes th
 | module | step | role | model | prompts | answered | refused | failed | halted | avg secs |
 |---|---|---|---|---|---|---|---|---|---|
 | ai_base | base | judge | qwen3:30b | base.word v2 | 676 | 31 | 0 | 0 | 11.3 |
-| collection | associated | judge | qwen3:30b | collection.associated v1 | 4127 | 0 | 0 | 0 | 4.0 |
-| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 6078 | 0 | 0 | 0 | 4.6 |
+| collection | associated | judge | qwen3:30b | collection.associated v1 | 4140 | 0 | 0 | 0 | 4.0 |
+| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 6094 | 0 | 0 | 0 | 4.6 |
 | collection | embed | embed | qwen3-embedding:latest |  | 42 | 0 | 0 | 0 | 16.6 |
-| collection | listing | judge | qwen3:30b | collection.list v1 | 91 | 0 | 0 | 0 | 7.0 |
-| collection | pole | judge | qwen3:30b | collection.pole v1 | 121 | 0 | 0 | 0 | 4.8 |
+| collection | listing | judge | qwen3:30b | collection.list v1 | 92 | 0 | 0 | 0 | 7.0 |
+| collection | pole | judge | qwen3:30b | collection.pole v1 | 123 | 0 | 0 | 0 | 4.7 |
 | collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 45 | 0 | 0 | 0 | 3.3 |
-| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 30 | 0 | 0 | 0 | 1.5 |
-| collection | score | judge | qwen3:30b | collection.score v1 | 1718 | 0 | 0 | 0 | 3.9 |
+| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 31 | 0 | 0 | 0 | 1.5 |
+| collection | score | judge | qwen3:30b | collection.score v1 | 1733 | 0 | 0 | 0 | 3.9 |
 | group | group | judge | qwen3:30b | group.word v3 | 6106 | 0 | 0 | 0 | 10.2 |
 
 **Steps that call the AI** (all through the client): `ai.replay`, `collection.ask`, `collection.seed`, `group.judge`, `surface_base.ask`
