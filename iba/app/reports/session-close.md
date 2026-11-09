@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-09T04:01:00Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-09T04:15:55Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `3e786860-fe9c-4009-a10b-28b1c03f3294` (CLAUDE_CODE_SESSION_ID); started 2026-11-08T17:35:49Z; window base commit `3e1f710564192c97f666bd79a1879a638f304c1a`
-- compliance file: `Logs/compliance/COMPLIANCE-20261108-3e786860.md`; session log: `Logs/SESSION-LOG-20261109-chapter-10-collections.md`
-- **open findings: 0**; cleared by disposition: 1
+- session: `9c7353a6-8ab6-4932-9ce9-4d43fbb2dc1b` (CLAUDE_CODE_SESSION_ID); started 2026-11-08T05:40:28Z; window base commit `186c1e5f44b089eaaacbb57004c611209a18e886`
+- compliance file: `Logs/compliance/COMPLIANCE-20261108-9c7353a6.md`; session log: `Logs/SESSION-LOG-20261108-related-word-evidence.md`
+- **open findings: 0**; cleared by disposition: 3
 
 
 ## Contents
@@ -46,7 +46,9 @@ _no finding_
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-_no finding_
+- cleared `SC4a:5a7a3c6a`: `Logs/SESSION-LOG-20261108-collection-exports-as-methods.md` line 32: open item #2404 is completed; #2394 is completed; #2402 is completed: "- #2404 (Claude): validate errors, awaiting #2394 to #2402." -- disposition: carried #2393
+- cleared `SC4b:37fa96c9`: researcher message 2026-11-08T09:02 holds, defers or asks to check something; name its register item: "2379 has two csv's built to pull data from the tables. can you check if the routines to produce these csv's are already built as methods, or are the adhoc routi" -- disposition: in register #2393
+- cleared `SC4b:8adf3260`: researcher message 2026-11-08T09:06 holds, defers or asks to check something; name its register item: "I will start a new developer-mode session for you to properly build these extract. I am seriously disappointed that you did not capture these exports for later " -- disposition: in register #2393
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -83,4 +85,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: error: an update carrying comment/context/tried cannot leave the item at state='raised' -- move it off raised first (e.g; escalation #2376 v7 -> state='on-hold', next_action='review', assigned_to='Researcher' -- disposition: fixed: the first update was refused because the item was still at raised; retried with -State in-progress and it applied (#2376 v2)
+_no finding_
