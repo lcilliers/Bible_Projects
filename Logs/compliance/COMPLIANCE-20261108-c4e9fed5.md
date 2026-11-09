@@ -64,10 +64,12 @@ _(none at session start)_
 
 ## Close dispositions
 
+- SC3:b7e107fb :: recorded in #2393 v5
 - SC3:affc46fc :: no record needed: bare command to run session-close, nothing to record
 - SC3:85cc414d :: no record needed: automatic context-compaction summary, its content is recorded on #2393 v3 and v4
+- SC4b:b7e107fb :: not held: a PowerShell usage error answered in chat with the full-path command, nothing deferred (recorded on #2393 v5)
 - SC4b:85cc414d :: not held: automatic context-compaction summary, no holding request in it
-- SC16:Config-Maintenance.ps1_-Step_Validate :: carried #2404
+- SC16:Config-Maintenance.ps1_-Step_Validate :: fixed: the validate errors were the unregistered long-run files, registered by the approved #2399 to #2402; #2404 completed with no coherence errors after
 
 _(session-close: one line per finding still open: `- <finding key> :: fixed` | `:: carried OT-nn.n` / `:: carried #nnnn` | `:: no record needed: <reason>` (SC3 only) | `:: in register OT-nn.n` / `#nnnn` (SC4))_
 

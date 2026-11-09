@@ -8,7 +8,7 @@ Session: `c4e9fed5-12df-4346-8851-c74151f8675c` (Developer Mode)
 
 ## 2. Escalations
 
-- #2393 updated: v3 (instruction recorded), v4 (built, handed to the Researcher as ready_for_approval).
+- #2393 updated: v3 (instruction recorded), v4 (built, handed to the Researcher as ready_for_approval), v5 (later researcher questions on the module name, the PowerShell path error and the missing members-verses file recorded; still with the Researcher).
 - #2404 held at the time (validate errors: the unregistered #2388 long-run files); completed later, #2404 v2.
 - #2379, #2388, #2392 not changed this session; acknowledged in chat.
 
