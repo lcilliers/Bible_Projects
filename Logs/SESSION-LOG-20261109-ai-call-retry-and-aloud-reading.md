@@ -42,4 +42,6 @@ Researcher's own decisions:
 
 ## 6. Git
 
-(to be written after the first commit)
+Branch: main
+Commit: 71b8f86b session 20261109: the aloud reading through the engagement step (#2406): assessment, review, Group, #2412 raised, session log, compliance file, close reports
+Push output: To https://github.com/lcilliers/Bible_Projects.git   b8b12f9f..71b8f86b  main -> main
