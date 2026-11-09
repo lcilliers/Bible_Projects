@@ -56,4 +56,5 @@ Self-correctable fix by Claude:
 
 Branch: main
 First close: commit 56098862957a27f5b061a26b46faee6c65ac2f9b (session 20261109: chapter 10 around the collections ...); push `3e1f7105..56098862  main -> main`.
+Third close (close reports and one disposition only): commit 9da081facf00154d7d0a5d39d70003a271bcc98b; push `42727aec..9da081fa  main -> main`.
 Second close (the #2413 export work): commit e2951bede242b748e6187da5e5f9097432c99050 (session 20261109: CSV exports take name and version from config ...). Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `861d12b9..e2951bed  main -> main`
