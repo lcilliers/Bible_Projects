@@ -33,5 +33,5 @@ Session: `c4e9fed5-12df-4346-8851-c74151f8675c` (Developer Mode)
 
 ## 6. Git
 
-Branch: `main`. Commit: `c91d8a9fcf06a9c965e8e7ed65f9b38d6cdd4ad9` (session 20261108: #2393 the two #2379 CSV exports as methods ... ).
-Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `186c1e5f..c91d8a9f  main -> main`.
+Close of 2026-11-09 (second close of this session). Branch: `main`. Commit: `ecfa8ba81b6d18b685d99d19820037d54e2e8dbf` (session 20261109: close of the #2393 session ...). Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `04694115..ecfa8ba8  main -> main`.
+Earlier close (2026-11-08): commit `c91d8a9fcf06a9c965e8e7ed65f9b38d6cdd4ad9` (push `186c1e5f..c91d8a9f`) and confirmation `3e1f710564192c97f666bd79a1879a638f304c1a` (push `c91d8a9f..3e1f7105`).
