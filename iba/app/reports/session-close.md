@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-09T08:44:57Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-09T09:05:50Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `aab6d969-cdd9-4d13-a43e-99ed3e216279` (CLAUDE_CODE_SESSION_ID); started 2026-11-09T06:06:59Z; window base commit `9d59869192c4150e13bcae09b3563e4847cec9be`
-- compliance file: `Logs/compliance/COMPLIANCE-20261109-aab6d969.md`; session log: `Logs/SESSION-LOG-20261109-engagement-step.md`
-- **open findings: 0**; cleared by disposition: 7
+- session: `14d28a94-80d5-4ecc-a20f-b556cfb2642c` (CLAUDE_CODE_SESSION_ID); started 2026-11-09T04:28:05Z; window base commit `9d59869192c4150e13bcae09b3563e4847cec9be`
+- compliance file: `Logs/compliance/COMPLIANCE-20261109-14d28a94.md`; session log: `Logs/SESSION-LOG-20261109-ai-call-retry-and-aloud-reading.md`
+- **open findings: 0**; cleared by disposition: 13
 
 
 ## Contents
@@ -41,21 +41,28 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:cba5ccba`: researcher message 2026-11-09T06:13 is too short to be matched; name where it is recorded: "Confirmed, build #2406" -- disposition: recorded in #2406 v13
-- cleared `SC3:cec01463`: researcher message 2026-11-09T07:12 is in no escalation comment written this session: "<task-notification>
-<task-id>b8si57lnv</task-id>
-<tool-use-id>toolu_013pWoHX5ohWieistqumqGzA</tool-use-id>
-<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification (a stopped compliance-file command), not researcher words
-- cleared `SC3:b08ddeed`: researcher message 2026-11-09T07:20 is too short to be matched; name where it is recorded: "Yes, build it" -- disposition: recorded in #2406 v13
-- cleared `SC3:b830baad`: researcher message 2026-11-09T07:37 is too short to be matched; name where it is recorded: "B (recommended)" -- disposition: recorded in #2406 v13
+- cleared `SC3:9e433509`: researcher message 2026-11-09T04:28 is too short to be matched; name where it is recorded: "project-start #2406" -- disposition: no record needed: the opening command of the session ("project-start #2406"), recorded in the compliance file
+- cleared `SC3:436cd253`: researcher message 2026-11-09T04:30 is too short to be matched; name where it is recorded: "Work #2405" -- disposition: no record needed: a bare command or choice, recorded in the context of the item it answers (#2405)
+- cleared `SC3:c80be19e`: researcher message 2026-11-09T04:33 is too short to be matched; name where it is recorded: "option A" -- disposition: no record needed: a bare command or choice, recorded in the context of the item it answers (#2405)
+- cleared `SC3:10b035c1`: researcher message 2026-11-09T04:35 is too short to be matched; name where it is recorded: "Approve both" -- disposition: no record needed: a bare command or choice, recorded in the context of the item it answers (#2407)
+- cleared `SC3:3f5c748c`: researcher message 2026-11-09T07:01 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: no record needed: the automated context-summary message, not researcher words
+- cleared `SC3:3bfe6455`: researcher message 2026-11-09T08:54 is too short to be matched; name where it is recorded: "Yes, run Group" -- disposition: recorded in #2406 v16 (the go-ahead to run Group)
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:cec01463`: researcher message 2026-11-09T07:12 holds, defers or asks to check something; name its register item: "<task-notification>
-<task-id>b8si57lnv</task-id>
-<tool-use-id>toolu_013pWoHX5ohWieistqumqGzA</tool-use-id>
-<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: not held: an automated background-task notification, not researcher words
+- cleared `SC4a:7901bb78`: `Logs/SESSION-LOG-20261109-engagement-step.md` line 45: open item #2406 is completed: "- #2406 (Claude): the real assessment of `aloud` (172 surface items, 209 existing observations): Pull, Record -Check, Record, Review, Close," -- disposition: carried #2412
+- cleared `SC4a:d0f27e14`: `Logs/SESSION-LOG-20261109-engagement-step.md` line 47: open item #2406 is completed: "- #2406 (Claude): a tab for Engagement.ps1 in iba/docs/ps tools worksheet.xlsx, and Manifest-Rebuild.ps1 for the new working file and report" -- disposition: carried #2412
+- cleared `SC4b:6262dd55`: researcher message 2026-11-09T05:19 holds, defers or asks to check something; name its register item: "this is an interesting an encouraging result. a) this step should reset the draft surface_group for each surface, as it now become an assessment based on contex" -- disposition: not held: the review of verses left out was built (Review, Close) and run on aloud in #2406
+- cleared `SC4b:4df81247`: researcher message 2026-11-09T05:57 holds, defers or asks to check something; name its register item: "R1-R4 is key to be resolved not set aside for later.  R1 :  To be honest, this is not a simple linear decision.  the point to be discovered is behaviour the sam" -- disposition: not held: R1 to R4 were settled in design v3, approved in #2406
+- cleared `SC4b:66f06ec2`: researcher message 2026-11-09T06:06 holds, defers or asks to check something; name its register item: "I will open a separate develop-mode for 2406, without closing this chat as we will come back to test the build in this chat." -- disposition: not held: the developer-mode session built #2406 and the build was tested in this chat
+- cleared `SC4b:3f5c748c`: researcher message 2026-11-09T07:01 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: not held: the automated context-summary message, not researcher words
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -92,5 +99,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Collection-Build.ps1`: Collection-Build.ps1 failed 2 times this session: $paramArgs = @(); sed: can't read ps/Collection-Build.ps1: No such file or directory -- disposition: fixed: the two failures were my own mistaken reads of Collection-Build.ps1 and handlers/base.py from a shell whose working folder had moved; the files were read again by full path, no tool failed
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; error: next_action='approved' requires resolution to be filled in (plan v3 sec3) -- disposition: fixed: both refusals were my calls out of order (approving #2411 from a next_action other than ready_for_approval, and approving without a resolution); I put the item through ready_for_approval with its resolution first and the update then passed
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 2 times this session: error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; error: next_action='approved' requires resolution to be filled in (plan v3 sec3) -- disposition: carried #2412
