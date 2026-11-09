@@ -34,4 +34,8 @@ Session id: 9c7353a6-8ab6-4932-9ce9-4d43fbb2dc1b
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: `main`. Commit: `b323c8fe` (session 20261108: related-word evidence exploration ... ).
+
+Push: `To https://github.com/lcilliers/Bible_Projects.git   a3321b62..b323c8fe  main -> main`.
+
+Left out of the commit on purpose, as belonging to the other open sessions: `Logs/longrun/collection-batch.progress.json` (live job), `Logs/compliance/COMPLIANCE-20261109-ae6e156e.md`, `_analytics/surfaces/exports/` (two new CSVs).
