@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-09T07:43:21Z |
+| generated_at | 2026-11-09T11:35:41Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -1323,6 +1323,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | cluster | ib_observation.tag_stage_excluded | {'verse-reading': ['difference-inference', 'verse-grouping'], 'char-subgroup': [], 'char-reading': [], 'char-answers': []} | per stage, the tags it may not offer (lib/taggingguidance.tags_for_stage) |
 | collection | collection.embed_cache | collection/embeddings | the folder, under surfaces.working_files_root, of the cache of embedding vectors (#2361): regenerable, one file per model digest, used only to rank candidates |
 | collection | collection.embed_role | embed | the cfg_ai_model role of the embedding model used to rank candidates (#2361) |
+| collection | collection.export_names | {'members-verses': 'collection-members-verses', 'surfaces': 'behaviour-and-inner-state-surfaces', 'collections': 'collections'} | the file name stem of each CSV export of the surface work (#2413): the view members-verses (ExportMembers), surfaces (ExportSurfaces) and collections (Export). The file is written under surfaces.exports_root as <stem>-v<n>-<yyyymmdd>.csv; the version is the next one over the live and archived files (reportkit.next_versioned_path, report.version_on_regenerate rules), and the previous live version is moved to governance.oneoff_report_archive_dir. The researcher no longer types a name. |
 | collection | collection.export_tiers | ['core', 'synonym', 'opposite'] | the tiers of a collection that count as its members in the CSV exports of the surface work (#2393); possible_opposite, associated and set_aside are listed apart and are not members |
 | collection | collection.list_max | 20 | the most words taken from each list (synonyms, opposites) the model names for a new collection (#2361) |
 | collection | collection.score_threshold | 8 | the score (0 to 10, prompt collection.score) from which a word the judge called distinct counts as a synonym (#2361); 8 is 'nearly the same, a little milder or stronger'. Read by Links and by the judging |
@@ -1739,13 +1740,13 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | 0 | collection.status | iba.app.handlers.collectionbuild:status | none | how the stored members of the collections stand against what the AI judgements decide (read-only) -- see lib/collectionbuild.py (escalation #2361) |
 | 1 | collection.links | iba.app.handlers.collectionbuild:links | none | decide the members of each collection from the AI judgements and write the difference: new links, tier changes (old row deleted, superseded_by), shared flags, word states; -Check previews; a pair whose link was removed (deleted, no successor) is not linked again -- see lib/collectionbuild.py (escalation #2361) |
 | 2 | collection.show | iba.app.handlers.collectionbuild:show | none | one collection with its members by tier, with -Collection (read-only) -- see lib/collectionbuild.py (escalation #2361) |
-| 3 | collection.export | iba.app.handlers.collectionbuild:export | none | write a CSV of the collections and their members from the tables to the exports folder, with -Name (a view, never an input) -- see lib/collectionbuild.py (escalation #2361) |
+| 3 | collection.export | iba.app.handlers.collectionbuild:export | none | write a CSV of the collections and their members from the tables to the exports folder, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input) -- see lib/collectionbuild.py (escalations #2361, #2413) |
 | 4 | collection.set | iba.app.handlers.collectionbuild:set_status | none | set the status of a collection (indicative, confirmed, retired) on the researcher's instruction, with -Reason and a surface_event -- see lib/collectionbuild.py (escalation #2361) |
 | 5 | collection.merge | iba.app.handlers.collectionbuild:merge | none | merge one collection into another on the researcher's instruction, with -Reason and a surface_event; links move or are deleted with superseded_by -- see lib/collectionbuild.py (escalation #2361) |
 | 6 | collection.seed | iba.app.handlers.collectionbuild:seed | none | make a collection of a core word: the AI client names its pole (real word, reciprocal) and lists synonyms and opposites into collection_listing; -Word -- see lib/collectionask.py (escalation #2361) |
 | 7 | collection.ask | iba.app.handlers.collectionbuild:ask | none | judge the candidates of a collection through the AI client (the words nearest the core by embedding, and the listed words): candidate, score, pole check, association; one ai_call row each; -Collection, -Limit -- see lib/collectionask.py (escalation #2361) |
-| 8 | collection.export_members | iba.app.handlers.collectionbuild:export_members | none | write a CSV of the member surfaces of the collections to the exports folder, one row for each verse, cluster and tier, with the verse text, with -Name (a view, never an input; the #2379 members-verses file) -- see lib/collectionexport.py (escalation #2393) |
-| 9 | collection.export_surfaces | iba.app.handlers.collectionbuild:export_surfaces | none | write a CSV of the surfaces of the behaviour and inner-being-state groups to the exports folder, one row for each verse and cluster, with the collection and tier of each membership, with -Name (a view, never an input; the #2379 surfaces file) -- see lib/collectionexport.py (escalation #2393) |
+| 8 | collection.export_members | iba.app.handlers.collectionbuild:export_members | none | write a CSV of the member surfaces of the collections to the exports folder, one row for each verse, cluster and tier, with the verse text, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 members-verses file) -- see lib/collectionexport.py (escalations #2393, #2413) |
+| 9 | collection.export_surfaces | iba.app.handlers.collectionbuild:export_surfaces | none | write a CSV of the surfaces of the behaviour and inner-being-state groups to the exports folder, one row for each verse and cluster, with the collection and tier of each membership, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 surfaces file) -- see lib/collectionexport.py (escalations #2393, #2413) |
 
 **concept-edit** — runs over `none` · script `iba/app/ps/Concept-Edit.ps1`
 | # | step | handler | scope | does |
@@ -5395,15 +5396,15 @@ settings: `resolve.ai_module`, `resolve.ai_step`, `resolve.order`, `resolve.prot
 | collection.status | utility | how the stored members of the collections stand against what the AI judgements decide (read-only) | (reads only) |
 | collection.links | operations | decide the members of each collection from the AI judgements and write the difference: new links, tier changes (old row deleted, superseded_by), shared flags, word states; -Check previews; a pair whose link was removed (deleted, no successor) is not linked again | collection_link, surface_term |
 | collection.show | utility | one collection with its members by tier, with -Collection (read-only) | (reads only) |
-| collection.export | utility | write a CSV of the collections and their members from the tables to the exports folder, with -Name (a view, never an input) | (reads only) |
+| collection.export | utility | write a CSV of the collections and their members from the tables to the exports folder, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input) | (reads only) |
 | collection.set | operations | set the status of a collection (indicative, confirmed, retired) on the researcher's instruction, with -Reason and a surface_event | collection, surface_event |
 | collection.merge | operations | merge one collection into another on the researcher's instruction, with -Reason and a surface_event; links move or are deleted with superseded_by | collection, collection_link, surface_event |
 | collection.seed | operations | make a collection of a core word: the AI client names its pole (real word, reciprocal) and lists synonyms and opposites into collection_listing; -Word | ai_call, collection, collection_listing, run_batch |
 | collection.ask | operations | judge the candidates of a collection through the AI client (the words nearest the core by embedding, and the listed words): candidate, score, pole check, association; one ai_call row each; -Collection, -Limit | ai_call, collection_listing, run_batch |
-| collection.export_members | utility | write a CSV of the member surfaces of the collections to the exports folder, one row for each verse, cluster and tier, with the verse text, with -Name (a view, never an input; the #2379 members-verses file) | (reads only) |
-| collection.export_surfaces | utility | write a CSV of the surfaces of the behaviour and inner-being-state groups to the exports folder, one row for each verse and cluster, with the collection and tier of each membership, with -Name (a view, never an input; the #2379 surfaces file) | (reads only) |
+| collection.export_members | utility | write a CSV of the member surfaces of the collections to the exports folder, one row for each verse, cluster and tier, with the verse text, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 members-verses file) | (reads only) |
+| collection.export_surfaces | utility | write a CSV of the surfaces of the behaviour and inner-being-state groups to the exports folder, one row for each verse and cluster, with the collection and tier of each membership, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 surfaces file) | (reads only) |
 
-settings: `collection.embed_cache`, `collection.embed_role`, `collection.export_tiers`, `collection.list_max`, `collection.score_threshold`, `collection.shortlist_size`
+settings: `collection.embed_cache`, `collection.embed_role`, `collection.export_names`, `collection.export_tiers`, `collection.list_max`, `collection.score_threshold`, `collection.shortlist_size`
 
 **AI control: models, prompts, calls, replay, compare** · work package `ai-control` · script `iba/app/ps/Ai-Control.ps1`
 
@@ -5421,9 +5422,9 @@ settings: `ai.allowed_options`, `ai.embed_batch`, `ai.log_write_retries`, `ai.lo
 
 surface_term by base_state: out_of_scope 2317, matched_structure 1232, phrase_not_tested 1166, resolved_own 716, ai_answered 387, ai_none 273, matched_sibling 89, ai_failed 31, base_ambiguous 14
 
-surface_term by group_state: judged 6031, confirmed 82, unjudged 56, corrected 56
+surface_term by group_state: judged 6023, confirmed 82, corrected 64, unjudged 56
 
-collection_link by tier: associated 1623, synonym 716, possible_opposite 269, set_aside 233, core 159, opposite 99
+collection_link by tier: associated 1905, synonym 830, possible_opposite 326, set_aside 248, core 179, opposite 120
 
 surface_flag by kind (open): ai_none 289, held_pair 39, possible_opposite 34, ai_failed 31, possessive 26, structure_conflict 14
 
@@ -5464,14 +5465,14 @@ Generated from `cfg_ai_model`, `cfg_ai_prompt` and `ai_call`. Every call goes th
 | module | step | role | model | prompts | answered | refused | failed | halted | avg secs |
 |---|---|---|---|---|---|---|---|---|---|
 | ai_base | base | judge | qwen3:30b | base.word v2 | 676 | 31 | 0 | 0 | 11.3 |
-| collection | associated | judge | qwen3:30b | collection.associated v1 | 8944 | 0 | 0 | 0 | 4.1 |
-| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 11383 | 0 | 0 | 0 | 4.6 |
+| collection | associated | judge | qwen3:30b | collection.associated v1 | 9895 | 0 | 0 | 0 | 4.1 |
+| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 12520 | 0 | 0 | 0 | 4.6 |
 | collection | embed | embed | qwen3-embedding:latest |  | 42 | 0 | 0 | 0 | 16.6 |
-| collection | listing | judge | qwen3:30b | collection.list v1 | 176 | 0 | 0 | 0 | 7.2 |
-| collection | pole | judge | qwen3:30b | collection.pole v1 | 291 | 0 | 0 | 0 | 3.3 |
-| collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 175 | 0 | 0 | 0 | 4.0 |
-| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 115 | 0 | 0 | 0 | 1.5 |
-| collection | score | judge | qwen3:30b | collection.score v1 | 6614 | 0 | 0 | 0 | 3.9 |
+| collection | listing | judge | qwen3:30b | collection.list v1 | 194 | 0 | 0 | 0 | 7.2 |
+| collection | pole | judge | qwen3:30b | collection.pole v1 | 327 | 0 | 0 | 0 | 3.2 |
+| collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 252 | 0 | 0 | 0 | 4.2 |
+| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 133 | 0 | 0 | 0 | 1.5 |
+| collection | score | judge | qwen3:30b | collection.score v1 | 7603 | 0 | 0 | 0 | 3.9 |
 | group | group | judge | qwen3:30b | group.word v3 | 6106 | 0 | 0 | 0 | 10.2 |
 
 **Steps that call the AI** (all through the client): `ai.replay`, `collection.ask`, `collection.seed`, `group.judge`, `surface_base.ask`

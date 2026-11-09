@@ -14,9 +14,28 @@ import pathlib
 import re
 
 from ..lib import collectionbuild as cb
+from ..lib import reportkit
 from .base import Ctx, Outcome, fail, ok
 
-EXPORT_NAME = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*-v[1-9][0-9]*-[0-9]{8}")
+
+def _export_target(ctx: Ctx, view: str) -> tuple[pathlib.Path, pathlib.Path]:
+    """(the new file's path, the base path of its stem) of one CSV export (#2413). The stem is cfg_setting collection.export_names[view], the folder
+    surfaces.exports_root; the version is the next one over the live and archived files (reportkit.next_versioned_path). Raises ValueError, routed as
+    'refused', on a missing setting; nothing is written."""
+    root = ctx.cfg.setting("surfaces.exports_root")
+    names = ctx.cfg.setting("collection.export_names")
+    if not root:
+        raise ValueError("cfg_setting surfaces.exports_root is missing")
+    if not isinstance(names, dict) or not names.get(view):
+        raise ValueError(f"cfg_setting collection.export_names has no stem for the view {view!r}")
+    archive = ctx.cfg.required_setting("governance.oneoff_report_archive_dir")
+    base = pathlib.Path(root) / f"{names[view]}.csv"
+    return reportkit.next_versioned_path(base, archive), base
+
+
+def _archive_prior(base: pathlib.Path, ctx: Ctx) -> None:
+    """Move the live versions of this export to the archive folder, after the new rows are built and before the new file is written."""
+    reportkit._archive_prior_versions(base, ctx.cfg.required_setting("governance.oneoff_report_archive_dir"))
 
 
 def _flag(ctx, name):
@@ -85,21 +104,17 @@ def show(ctx: Ctx) -> Outcome:
 
 def export(ctx: Ctx) -> Outcome:
     conn = ctx.cfg.conn
-    name = (ctx.params.get("Name") or "").strip()
-    if not EXPORT_NAME.fullmatch(name):
-        return fail("refused", f"-Name {name!r} is not lower-case words joined by hyphens, then -v and a number, then -yyyymmdd (like collections-v1-20261106)")
-    root = ctx.cfg.setting("surfaces.exports_root")
-    if not root:
-        return fail("refused", "cfg_setting surfaces.exports_root is missing")
-    path = pathlib.Path(root) / f"{name}.csv"
-    if path.exists():
-        return fail("refused", f"{path.as_posix()} already exists: choose a new version number")
+    try:
+        path, base = _export_target(ctx, "collections")
+    except ValueError as exc:
+        return fail("refused", str(exc))
     rows = conn.execute(
         "SELECT c.name, c.status, ct.surface, c.pole_word, c.pole_of_pole, c.pole_reciprocal, l.tier, t.surface, l.shared, t.surface_group, t.collection_state, l.reason "
         "FROM collection_link l JOIN collection c ON c.id=l.collection_id JOIN surface_term ct ON ct.id=c.core_term_id JOIN surface_term t ON t.id=l.term_id "
         "WHERE l.deleted=0 AND c.deleted=0 ORDER BY c.name, CASE l.tier WHEN 'core' THEN 0 WHEN 'synonym' THEN 1 WHEN 'opposite' THEN 2 WHEN 'possible_opposite' THEN 3 "
         "WHEN 'associated' THEN 4 ELSE 5 END, t.surface").fetchall()
     path.parent.mkdir(parents=True, exist_ok=True)
+    _archive_prior(base, ctx)
     with path.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
         w.writerow(["collection", "status", "core", "pole", "pole_of_pole", "reciprocal", "tier", "word", "shared", "group", "word_state", "reason"])
@@ -108,19 +123,17 @@ def export(ctx: Ctx) -> Outcome:
 
 
 def _export_view(ctx: Ctx, view: str) -> Outcome:
-    """One of the two #2379 views (lib/collectionexport.py), written under surfaces.exports_root as -Name .csv; never over an existing file."""
+    """One of the two #2379 views (lib/collectionexport.py), written under surfaces.exports_root as <collection.export_names stem>-v<n>-<yyyymmdd>.csv (#2413):
+    the name and version come from config and the filing rule, the previous live version is archived, and nothing is written when the build is refused."""
     from ..lib import collectionexport as ce
-    name = (ctx.params.get("Name") or "").strip()
-    if not EXPORT_NAME.fullmatch(name):
-        return fail("refused", f"-Name {name!r} is not lower-case words joined by hyphens, then -v and a number, then -yyyymmdd (like collection-members-verses-v1-20261108)")
     try:
         vals = ce.read_settings(ctx.cfg)
-        path = pathlib.Path(vals["root"]) / f"{name}.csv"
-        if path.exists():
-            return fail("refused", f"{path.as_posix()} already exists: choose a new version number")
+        path, base = _export_target(ctx, view)
         head, rows = ce.build(ctx.cfg.conn, view, vals["tiers"], vals["groups"])
-    except ce.ExportError as exc:
+    except (ce.ExportError, ValueError) as exc:
         return fail("refused", str(exc))
+    path.parent.mkdir(parents=True, exist_ok=True)
+    _archive_prior(base, ctx)
     ce.write(path, head, rows)
     return ok(f"{len(rows)} rows of the {view} view written to {path.as_posix()} (a view of the tables, not an input); run Manifest-Rebuild.ps1 to register it", rows=len(rows))
 

@@ -10,9 +10,11 @@
       Status    how the stored members stand against what the judgements decide (read-only)
       Links     write the difference; -Check previews. A pair whose link was removed is not linked again. A second Links changes nothing.
       Show      -Collection <name>   one collection with its members by tier
-      Export    -Name <name-vN-yyyymmdd>   a CSV of the collections to the exports folder (a view of the tables)
-      ExportMembers   -Name <name-vN-yyyymmdd>   a CSV of the member surfaces of the collections, one row for each verse, cluster and tier, with the verse text (the #2379 members-verses view)
-      ExportSurfaces  -Name <name-vN-yyyymmdd>   a CSV of the surfaces of the behaviour and inner-being-state groups, one row for each verse and cluster, with the collection and tier (the #2379 surfaces view)
+      Export    a CSV of the collections to the exports folder (a view of the tables)
+      ExportMembers   a CSV of the member surfaces of the collections, one row for each verse, cluster and tier, with the verse text (the #2379 members-verses view)
+      ExportSurfaces  a CSV of the surfaces of the behaviour and inner-being-state groups, one row for each verse and cluster, with the collection and tier (the #2379 surfaces view)
+                The three exports take no name: the file name is cfg_setting collection.export_names and the version is the next one by the filing rule;
+                the previous live version is moved to the archive folder (#2413).
       Set       -Collection <name> -Status indicative|confirmed|retired -Reason <text>   on your instruction
       Merge     -From <name> -Into <name> -Reason <text>   fold one collection into another, on your instruction
       Seed      -Word <word>   make a collection of a core word: the AI names its pole (a real word? reciprocal?) and lists synonyms and opposites
@@ -35,7 +37,6 @@ param(
     [string] $Collection,
     [string] $Word,
     [string] $Limit,
-    [string] $Name,
     [string] $Status,
     [string] $Reason,
     [string] $From,
@@ -58,7 +59,7 @@ $stepId = $stepMap[$Action]
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-COLLECTIONBUILD"
 
 $paramArgs = @()
-foreach ($p in @('Collection', 'Word', 'Limit', 'Name', 'Status', 'Reason', 'From', 'Into')) {
+foreach ($p in @('Collection', 'Word', 'Limit', 'Status', 'Reason', 'From', 'Into')) {
     if ($PSBoundParameters.ContainsKey($p)) { $paramArgs += @('--param', "$p=$($PSBoundParameters[$p])") }
 }
 if ($Check) { $paramArgs += @('--param', 'Check=true') }
