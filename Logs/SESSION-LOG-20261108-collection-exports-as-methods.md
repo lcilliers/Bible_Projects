@@ -9,7 +9,7 @@ Session: `c4e9fed5-12df-4346-8851-c74151f8675c` (Developer Mode)
 ## 2. Escalations
 
 - #2393 updated: v3 (instruction recorded), v4 (built, handed to the Researcher as ready_for_approval).
-- #2404 held, still assigned to Claude (validate errors: the unregistered #2388 long-run files), pending the researcher on #2394 to #2402.
+- #2404 held at the time (validate errors: the unregistered #2388 long-run files); completed later, #2404 v2.
 - #2379, #2388, #2392 not changed this session; acknowledged in chat.
 
 ## 3. Files
@@ -29,7 +29,6 @@ Session: `c4e9fed5-12df-4346-8851-c74151f8675c` (Developer Mode)
 ## 5. Open items
 
 - #2393 (Researcher): approve, retire the old files in `outputs/escalation/` and its `archive/`, add worksheet rows for the two actions in `iba/docs/ps tools worksheet.xlsx`, run `iba/app/ps/Manifest-Rebuild.ps1` for the new files.
-- #2404 (Claude): validate errors, awaiting #2394 to #2402.
 - #2379, #2388, #2392: carried unchanged.
 
 ## 6. Git
