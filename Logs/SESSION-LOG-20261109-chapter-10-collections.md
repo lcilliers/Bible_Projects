@@ -43,4 +43,6 @@ Self-correctable fix by Claude:
 
 ## 6. Git
 
-Pending: written after the session commit.
+Branch: main
+Commit: 56098862957a27f5b061a26b46faee6c65ac2f9b (session 20261109: chapter 10 around the collections ...)
+Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `3e1f7105..56098862  main -> main`
