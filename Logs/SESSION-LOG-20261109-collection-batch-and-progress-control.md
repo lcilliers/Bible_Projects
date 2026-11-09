@@ -43,4 +43,5 @@ Session: `41e7251b-aae0-4234-9426-2f9fe391cad2` (standard mode, started 2026-11-
 
 ## 6. Git
 
-(written after the first commit)
+Branch: `main`. Commit: `b6c7337d30ff8f6778745701dd339ae619bb183c` (session 20261109: progress control for long Ollama jobs (Long-Run) and the collection batch for #2388 ...).
+Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `528f93bf..b6c7337d  main -> main`.
