@@ -46,5 +46,5 @@ Claude's own calls (self-correctable): the roles for each word by the verse's co
 
 ## 6. Git
 
-(written at step 6 of the close)
+Branch main. Close commit 89962a5294ef2e946da7d2eac909b4e7037143ca (session 20261110: engagement of call, deal, new, anger, godly and choose, #2412), pushed to https://github.com/lcilliers/Bible_Projects.git: d1acc63a..89962a52 main -> main. Session-Close.ps1 showed 0 open findings (report iba/app/reports/session-close-v325-20261110.md) before the commit.
 
