@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-09T12:09:20Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-10T04:24:33Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `3e786860-fe9c-4009-a10b-28b1c03f3294` (CLAUDE_CODE_SESSION_ID); started 2026-11-08T17:35:49Z; window base commit `3e1f710564192c97f666bd79a1879a638f304c1a`
-- compliance file: `Logs/compliance/COMPLIANCE-20261108-3e786860.md`; session log: `Logs/SESSION-LOG-20261109-chapter-10-collections.md`
-- **open findings: 0**; cleared by disposition: 9
+- session: `2a57fe58-6000-4ec6-b844-b43c9e2dea3b` (CLAUDE_CODE_SESSION_ID); started 2026-11-09T12:30:33Z; window base commit `d1acc63a734f5bae226fc3188e8903536350b802`
+- compliance file: `Logs/compliance/COMPLIANCE-20261109-2a57fe58.md`; session log: `Logs/SESSION-LOG-20261110-engagement-collections.md`
+- **open findings: 0**; cleared by disposition: 14
 
 
 ## Contents
@@ -41,24 +41,34 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:9f2eff4a`: researcher message 2026-11-09T09:27 is in no escalation comment written this session: "can you check the collection-build.ps1 method.  I am trying to build the csv with verses and seems to get the right method parameters wrong every time" -- disposition: no record needed: a question about how the export is run, answered in chat; the change that followed is recorded in #2413
-- cleared `SC3:8146b340`: researcher message 2026-11-09T09:34 is too short to be matched; name where it is recorded: "Approve setting" -- disposition: recorded in #2414 v3
-- cleared `SC3:4e192225`: researcher message 2026-11-09T11:32 is too short to be matched; name where it is recorded: "Approve all three" -- disposition: recorded in #2416 v3
-- cleared `SC3:594e182c`: researcher message 2026-11-09T10:32 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC3:e57ace51`: researcher message 2026-11-09T12:55 is too short to be matched; name where it is recorded: "Whole in chunks" -- disposition: recorded in #2412 v14
+- cleared `SC3:297166ab`: researcher message 2026-11-09T15:02 is too short to be matched; name where it is recorded: "Unlink invoked" -- disposition: recorded in #2412 v14
+- cleared `SC3:aff670ae`: researcher message 2026-11-09T14:01 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: no record needed: the harness's context-continuation summary, not a researcher message
-- cleared `SC3:5adbc2c8`: researcher message 2026-11-09T11:58 is too short to be matched; name where it is recorded: "Approve, close" -- disposition: recorded in #2413 v5
-- cleared `SC3:fd8d5ce4`: researcher message 2026-11-09T12:08 is in no escalation comment written this session: "provide me with the script to run for the reporting" -- disposition: no record needed: a how-to question (the export commands), answered in chat; no decision or change followed
+Summar" -- disposition: no record needed: an automated continuation summary after context compaction, not a researcher message
+- cleared `SC3:1723a7bf`: researcher message 2026-11-09T15:05 is too short to be matched; name where it is recorded: "Approve #2423" -- disposition: recorded in #2412 v14
+- cleared `SC3:c2614f97`: researcher message 2026-11-09T15:24 is too short to be matched; name where it is recorded: "Open a reading" -- disposition: recorded in #2412 v14
+- cleared `SC3:904ae3f5`: researcher message 2026-11-09T15:46 is too short to be matched; name where it is recorded: "Unlink dealt" -- disposition: recorded in #2412 v14
+- cleared `SC3:f1a34548`: researcher message 2026-11-09T16:34 is too short to be matched; name where it is recorded: "Unlink oldest" -- disposition: recorded in #2412 v14
+- cleared `SC3:380e6134`: researcher message 2026-11-09T20:09 is too short to be matched; name where it is recorded: "Unlink sacred" -- disposition: recorded in #2412 v14
+- cleared `SC3:6607dda9`: researcher message 2026-11-09T18:40 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: no record needed: an automated continuation summary after context compaction, not a researcher message
+- cleared `SC3:41a4e834`: researcher message 2026-11-10T04:17 is too short to be matched; name where it is recorded: "Unlink choice" -- disposition: recorded in #2412 v14
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:9f2eff4a`: researcher message 2026-11-09T09:27 holds, defers or asks to check something; name its register item: "can you check the collection-build.ps1 method.  I am trying to build the csv with verses and seems to get the right method parameters wrong every time" -- disposition: not held: a how-to question answered in chat; the change request that followed became #2413, now completed
-- cleared `SC4b:594e182c`: researcher message 2026-11-09T10:32 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC4b:aff670ae`: researcher message 2026-11-09T14:01 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: not held: the harness's context-continuation summary, not a researcher message
+Summar" -- disposition: not held: an automated continuation summary, not a researcher message
+- cleared `SC4b:6607dda9`: researcher message 2026-11-09T18:40 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: not held: an automated continuation summary, not a researcher message
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -95,4 +105,5 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 4 times this session: Update needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default p; error: an update carrying comment/context/tried cannot leave the item at state='raised' -- move it off raised first (e.g; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; escalation #2376 v7 -> state='on-hold', next_action='review', assigned_to='Researcher' -- disposition: fixed: the first update was refused because the item was still at raised; retried with -State in-progress and it applied (#2376 v2)
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 4 times this session: [31;1mInvoke-Expression: [31;1mMissing argument in parameter list.[0m; Update needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default p; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; escalation #2419 v4 -> state='re-assigned', next_action='approved', assigned_to='Claude' -- disposition: fixed: usage errors, each corrected on the next call from the tool message (#2430 v3)
+- cleared `SC16:Escalation.ps1_-Action_Raise`: Escalation.ps1 -Action Raise failed 3 times this session: -ShortDescription has no effect on -Action Raise (only -Action Correction reads it) -- Raise's title comes from -Questio; Raise needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default pr; Raise needs -Question and -Comment (minimum: what this item is about). -- disposition: fixed: usage errors, each corrected on the next call from the tool message (#2430 v1)

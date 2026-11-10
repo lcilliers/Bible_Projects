@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-09T11:35:41Z |
+| generated_at | 2026-11-09T12:51:06Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -3617,14 +3617,14 @@ __ — A cluster's subgroups (#2286): groups of (code, surface) pairs held in su
 | kind | TEXT |  | ✓ |  |  | #2286 B3 (#2292): group (a surface group), qualifier (its uses mainly qualify: never a home scope, E4), not_this_sense (pairs whose sense is not the cluster's), or anomaly (the cluster's bucket of pairs and nodes cleared by hand, B2, B6) | escalation #2292 (#2286 U2; outputs/escalation/2286-build-plan-v4-20261025.md) |
 
 ### ib_observation
-_one row per observation_ — One finding: a distinct description (its text, meaning, implication, basis, kind as tag and, on a party or link finding, its route), applied through ib_node to every verse and word it covers (#2273). Written by reading.record and reading.gather. It also holds gathered rows of the older stages: the September catalogue work (verse-reading, char-*) and the October ledger work (strand-reading). Status meanings are by stage (cfg_status_flow).
+_one row per observation_ — The store of findings (observations) of the study: one distinct description (its text, meaning, implication, basis, kind as tag and, on a party or link finding, its route), applied through ib_node to every verse and word it covers (#2273). Written by reading.record and reading.gather, by Engagement.ps1 -Action Record (stage engagement, #2406) and by Prior-Capture.ps1 -Step Record (stage prior-capture). It also holds gathered rows of the older stages: the September catalogue work (verse-reading, char-*) and the October ledger work (strand-reading). Status meanings are by stage (cfg_status_flow).
 | column | type | pk | notnull | unique | fk | use | source/filled_by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | meaning_keywords | TEXT |  |  |  |  | JSON array of short key terms/concepts the LLM extracts alongside obs_text, used by recordingpass.py's structured-key same/broaden/new matching (surface+morph+keywords) -- escalation #1824, 2026-09-21. NULL for stages/questions not yet using this path (everything except the new M0.7 family so far); the existing text-similarity path remains the fallback wherever this is NULL. | escalation #1824, researcher instruction 2026-09-21 |
 | id | INTEGER | ✓ | ✓ |  |  | surrogate PK, assigned by the recording pass, never the LLM session |  |
 | cluster_code | TEXT |  |  |  | cluster.cluster_code | NULL for stage=synthesis (cross-cluster; the actual cluster(s) are recorded via ib_node rows instead) AND for word-level (M0.1.x/M0.5.x) questions in stage=verse-reading (2026-09-23: cluster has no role in these -- the observation is a fact about the strong+span alone, keyed on strong and verse, never a cluster). Required for every other stage/question type. |  |
 | cluster_subgroup_id | INTEGER |  |  |  | cluster_subgroup.id | NULL for stage=synthesis and process (b)'s own cluster-level observations (both above single-subgroup scope) |  |
-| stage | TEXT |  | ✓ |  |  | cfg_enum ib_observation.stage: verse-reading, char-subgroup, char-reading, char-answers, char-synergy (the September catalogue stages, API, retired); strand-reading (the October ledger work, gathered); reading (written by a reading from #2268 on). Status meanings are by stage (#2268 R14). |  |
+| stage | TEXT |  | ✓ |  |  | cfg_enum ib_observation.stage: verse-reading, char-subgroup, char-reading, char-answers, char-synergy (the September catalogue stages, API, retired); strand-reading (the October ledger work, gathered); prior-capture (observations captured from prior study documents by Prior-Capture.ps1, setting prior_capture.stage); reading (written by a reading from #2268 on); Analysis_phase_1 (observations written under reading.observation_rules); engagement (what a surface does for the inner being, written by Engagement.ps1, setting engagement.stage, #2406). Status meanings are by stage (#2268 R14). |  |
 | tag | TEXT |  | ✓ |  |  | enum, cfg_enum-governed (ib_observation.tag) -- shared across all stages, not partitioned per stage; most tags apply wherever the relevant condition arises (e.g. data-error, cross-cluster-significance, could-not-resolve are not reading-exclusive). Corrected 2026-09-17, escalation #1706: previously read 'stage-specific enum', which the researcher identified as the wrong model -- ib_observation is one unified record set populated across stages, not fragmented enum groups per stage. |  |
 | strong | TEXT |  |  |  |  | the strong this claim is grounded in |  |
 | question_code | TEXT |  |  |  |  | the catalogue question the observation was prompted by (wa_obs_question_catalogue, in iba.db); the foreign key is a design point |  |
@@ -5465,14 +5465,14 @@ Generated from `cfg_ai_model`, `cfg_ai_prompt` and `ai_call`. Every call goes th
 | module | step | role | model | prompts | answered | refused | failed | halted | avg secs |
 |---|---|---|---|---|---|---|---|---|---|
 | ai_base | base | judge | qwen3:30b | base.word v2 | 676 | 31 | 0 | 0 | 11.3 |
-| collection | associated | judge | qwen3:30b | collection.associated v1 | 9895 | 0 | 0 | 0 | 4.1 |
-| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 12520 | 0 | 0 | 0 | 4.6 |
+| collection | associated | judge | qwen3:30b | collection.associated v1 | 10221 | 0 | 0 | 0 | 4.1 |
+| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 12883 | 0 | 0 | 0 | 4.6 |
 | collection | embed | embed | qwen3-embedding:latest |  | 42 | 0 | 0 | 0 | 16.6 |
-| collection | listing | judge | qwen3:30b | collection.list v1 | 194 | 0 | 0 | 0 | 7.2 |
-| collection | pole | judge | qwen3:30b | collection.pole v1 | 327 | 0 | 0 | 0 | 3.2 |
-| collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 252 | 0 | 0 | 0 | 4.2 |
-| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 133 | 0 | 0 | 0 | 1.5 |
-| collection | score | judge | qwen3:30b | collection.score v1 | 7603 | 0 | 0 | 0 | 3.9 |
+| collection | listing | judge | qwen3:30b | collection.list v1 | 200 | 0 | 0 | 0 | 7.2 |
+| collection | pole | judge | qwen3:30b | collection.pole v1 | 339 | 0 | 0 | 0 | 3.2 |
+| collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 260 | 0 | 0 | 0 | 4.2 |
+| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 139 | 0 | 0 | 0 | 1.5 |
+| collection | score | judge | qwen3:30b | collection.score v1 | 7935 | 0 | 0 | 0 | 3.9 |
 | group | group | judge | qwen3:30b | group.word v3 | 6106 | 0 | 0 | 0 | 10.2 |
 
 **Steps that call the AI** (all through the client): `ai.replay`, `collection.ask`, `collection.seed`, `group.judge`, `surface_base.ask`
