@@ -49,4 +49,5 @@ Session: `77a059b4-65ef-4409-8675-22c064cc23f7` (standard mode, started 2026-11-
 
 ## 6. Git
 
-(written after the first commit)
+Branch `main`. Commit `7a053bd777ccee70e672c885ed9e96e4354e8363` ("session 20261110: phrases attached to collections (#2437), collections confirmed, ...").
+Push output: `To https://github.com/lcilliers/Bible_Projects.git   aa52fc5d..7a053bd7  main -> main`.
