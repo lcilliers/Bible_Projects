@@ -28,8 +28,8 @@ Session id: 9c7353a6-8ab6-4932-9ce9-4d43fbb2dc1b
 
 ## 5. Open items
 
-- #2392 (Claude): on hold until the #2388 matching run completes; then a hint-list design goes to the researcher as a decision.
-- #2379, #2388 (Claude): carried unchanged by the other session.
+- #2392 (Claude): on hold until the the collection-build item (closed 2026-11-10) matching run completes; then a hint-list design goes to the researcher as a decision.
+- #2379, the collection-build item (closed 2026-11-10) (Claude): carried unchanged by the other session.
 
 ## 6. Git
 

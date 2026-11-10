@@ -34,11 +34,9 @@ Researcher's own decisions:
 
 ## 5. Open items
 
-- #2412 (Claude, on hold): engagement on the other collections; which collections, in what order, and whether before #2388 has finished building them; the worksheet tab and Manifest-Rebuild.
-- #2388 (Claude): the restart of the collection batch to pick up the ai_call write retry waits for the researcher's go.
+- #2412 (Claude, on hold): engagement on the other collections; which collections, in what order, and whether before the collection-build item (closed 2026-11-10) has finished building them; the worksheet tab and Manifest-Rebuild.
 - #2379 (Claude): untouched this session.
 - #2392 (Claude): untouched this session.
-- #2409 (Claude): untouched this session.
 
 ## 6. Git
 

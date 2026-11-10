@@ -43,9 +43,8 @@ Self-correctable fix by Claude:
 ## 5. Open items
 
 - Carried in #2412 (escalation 2406 is completed): the real assessment of `aloud` (172 surface items, 209 existing observations): Pull, Record -Check, Record, Review, Close, then Group; the researcher reviews before Group.
-- #2409 (Claude): correct the recorded meaning of `ib_observation` and its `stage` column through configmaint.propose.
 - Carried in #2412 (escalation 2406 is completed): a tab for Engagement.ps1 in iba/docs/ps tools worksheet.xlsx, and Manifest-Rebuild.ps1 for the new working file and report, are not done.
-- #2379, #2388, #2392: carried unchanged.
+- #2379, the collection-build item (closed 2026-11-10), #2392: carried unchanged.
 
 ## 6. Git
 

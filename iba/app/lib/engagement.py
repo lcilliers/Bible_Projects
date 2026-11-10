@@ -7,6 +7,7 @@ folders are cfg_setting rows of module `engagement` (governance.rules_must_be_co
 
   pull(conn, cfg, name)            the working file of one collection: its member surfaces, their verses with the ESV text, and the observations
                                    already on those verses (any stage). The assessment reads the file, never the tables (D5).
+                                   With a batch number (#2388) it is one batch of the same file: see batch_plan.
   check_assessment(...)            the filled assessment, checked whole; every problem is listed and nothing is written when there is one.
   record(...)                      one transaction: the actions on the existing observations, the new observations (one for each surface and
                                    role, a node for each verse where it holds; a no-bearing surface is a silence-kind observation), their nodes.
@@ -90,8 +91,52 @@ def _clusters(conn, strong: str, surface: str) -> tuple[str | None, list]:
     return (own[0] if own else (allc[0] if allc else None)), allc
 
 
-def pull(conn, cfg, name: str) -> dict:
-    """The content of the working file (a dict), from the tables only."""
+def batch_plan(surfaces: list, size: int) -> list:
+    """The batches of a pull (escalation #2388, researcher: process in batches, work through the verses). A rule, not a choice, so the same
+    collection always gives the same batches: the surfaces in the order given (alphabetical), each whole into the batch in hand while it fits within
+    `size` verse items, else into a new batch; a surface of more than `size` items starts a new batch and is split in its verse order into batches of
+    `size`, the last of them taking the next surface. Returns a list of batches, each a list of (surface index, first item, last item + 1)."""
+    if size < 1:
+        raise EngagementError("engagement.batch_size must be a whole number of 1 or more")
+    batches, cur, used = [], [], 0
+    for si, s in enumerate(surfaces):
+        n = len(s["items"])
+        if n == 0:
+            continue
+        if n > size:
+            if cur:
+                batches.append(cur)
+            cur, used = [], 0
+            for a in range(0, n, size):
+                b = min(a + size, n)
+                cur, used = [(si, a, b)], b - a
+                if b < n:
+                    batches.append(cur)
+            continue
+        if used + n > size:
+            batches.append(cur)
+            cur, used = [], 0
+        cur.append((si, 0, n))
+        used += n
+    if cur:
+        batches.append(cur)
+    return batches
+
+
+def _batch_settings(cfg) -> int:
+    try:
+        size = cfg.required_setting("engagement.batch_size")
+    except KeyError as exc:
+        raise EngagementError(str(exc)) from exc
+    if not isinstance(size, int) or size < 1:
+        raise EngagementError("engagement.batch_size must be a whole number of 1 or more")
+    return size
+
+
+def pull(conn, cfg, name: str, batch=None, size=None) -> dict:
+    """The content of the working file (a dict), from the tables only. With `batch` (a number from 1) only that batch of the collection's surface
+    items (batch_plan, `size` or engagement.batch_size) and the existing observations whose first batch it is (the lowest batch that holds one of
+    their verses), so that each existing observation takes one action in one batch only."""
     st = settings(cfg)
     col = collection_row(conn, name)
     members = member_terms(conn, col[0], st["tiers"])
@@ -121,8 +166,27 @@ def pull(conn, cfg, name: str) -> dict:
                  for n in conn.execute("SELECT id, strong, surface, role, verse_lexical_id, cluster_code, verse_reference FROM ib_node WHERE observation_id=? "
                                        "AND deleted=0 AND verse_reference IN (%s) ORDER BY seq" % ",".join("?" * len(osis)), [o[0]] + sorted(osis))]
         existing[str(o[0])] = {"id": o[0], "stage": o[1], "tag": o[2], "text": o[3], "status": o[4], "basis": o[5], "nodes": nodes}
+    batch_info = None
+    if batch is not None:
+        if not isinstance(batch, int) or batch < 1:
+            raise EngagementError("-Batch is a whole number from 1")
+        size = size or _batch_settings(cfg)
+        plan = batch_plan(surfaces, size)
+        if batch > len(plan):
+            raise EngagementError(f"-Batch {batch}: the collection has {len(plan)} batches of up to {size} items")
+        first = {}                                          # the lowest batch that holds each verse
+        for bn, parts in enumerate(plan, 1):
+            for si, a, b in parts:
+                for it in surfaces[si]["items"][a:b]:
+                    first.setdefault(it["osisId"], bn)
+        mine = {}
+        for si, a, b in plan[batch - 1]:
+            mine.setdefault(si, []).extend(surfaces[si]["items"][a:b])
+        surfaces = [dict(surfaces[si], items=its) for si, its in sorted(mine.items())]
+        existing = {k: o for k, o in existing.items() if min((first.get(n["verse"], 10 ** 9) for n in o["nodes"]), default=10 ** 9) == batch}
+        batch_info = {"n": batch, "of": len(plan), "size": size, "items": sum(len(s["items"]) for s in surfaces)}
     return {"engagement": 1, "made_at": _now(), "collection": {"id": col[0], "name": col[1], "status": col[2], "core": col[3], "pole": col[4]},
-            "tiers": st["tiers"], "roles": st["roles"], "tests": st["tests"], "no_bearing_kind": st["no_bearing_kind"],
+            "tiers": st["tiers"], "roles": st["roles"], "tests": st["tests"], "no_bearing_kind": st["no_bearing_kind"], "batch": batch_info,
             "surfaces": surfaces, "existing_observations": existing,
             "how_to_fill": "evaluations: one for each surface item (vl_id); observations: one for each surface and role; existing: an action for each "
                            "existing observation (accept, modify, delete, merge, leave). See USER-GUIDE section 8.18."}

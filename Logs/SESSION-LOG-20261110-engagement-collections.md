@@ -37,7 +37,7 @@ Claude's own calls (self-correctable): the roles for each word by the verse's co
 
 ## 5. Open items
 
-- #2429 and #2430 (confirming the unlinks), #2379, #2388, #2392 stay open with their owners.
+- the two unlink confirmations (confirming the unlinks), #2379, the collection-build item (closed 2026-11-10), #2392 stay open with their owners.
 - #2412 stays in progress: the next collection is named by the researcher.
 - #2412: righteousness is grouped behaviour (state corrected); the researcher called it an inner-being state: not changed, to be decided.
 - #2412: possible follow-ups, not started: an Engagement.ps1 change giving a no-verse surface its own state (developer mode); a cfg_column use row for the engagement-note stage; a tab in the ps tools worksheet; Manifest-Rebuild coverage of engagement files.

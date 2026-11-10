@@ -17,6 +17,8 @@
                 the previous live version is moved to the archive folder (#2413).
       Set       -Collection <name> -Status indicative|confirmed|retired -Reason <text>   on your instruction
       Merge     -From <name> -Into <name> -Reason <text>   fold one collection into another, on your instruction
+      Gather    -Name <name> -Surface <a,b,c> -Reason <text> [-Check]   one collection of the surfaces you name, tier gathered, without the AI; for words in no collection
+                that you want assessed together (#2388)
       Seed      -Word <word>   make a collection of a core word: the AI names its pole (a real word? reciprocal?) and lists synonyms and opposites
       Ask       -Collection <name> [-Limit n]   judge the candidates (the words nearest the core by embedding, and the listed words) through the
                 AI client; then run Links. A run of more than a few minutes is started outside the session (B:125).
@@ -32,10 +34,12 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Set', 'Merge', 'Seed', 'Ask')]
+    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Set', 'Merge', 'Seed', 'Ask', 'Gather')]
     [string] $Action,
     [string] $Collection,
     [string] $Word,
+    [string] $Name,
+    [string] $Surface,
     [string] $Limit,
     [string] $Status,
     [string] $Reason,
@@ -54,12 +58,12 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 . $PSScriptRoot\_lib\Notify.ps1
 
-$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask' }
+$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather' }
 $stepId = $stepMap[$Action]
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-COLLECTIONBUILD"
 
 $paramArgs = @()
-foreach ($p in @('Collection', 'Word', 'Limit', 'Status', 'Reason', 'From', 'Into')) {
+foreach ($p in @('Collection', 'Word', 'Name', 'Surface', 'Limit', 'Status', 'Reason', 'From', 'Into')) {
     if ($PSBoundParameters.ContainsKey($p)) { $paramArgs += @('--param', "$p=$($PSBoundParameters[$p])") }
 }
 if ($Check) { $paramArgs += @('--param', 'Check=true') }

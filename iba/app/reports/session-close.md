@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-10T04:24:33Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-10T12:58:56Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `2a57fe58-6000-4ec6-b844-b43c9e2dea3b` (CLAUDE_CODE_SESSION_ID); started 2026-11-09T12:30:33Z; window base commit `d1acc63a734f5bae226fc3188e8903536350b802`
-- compliance file: `Logs/compliance/COMPLIANCE-20261109-2a57fe58.md`; session log: `Logs/SESSION-LOG-20261110-engagement-collections.md`
-- **open findings: 0**; cleared by disposition: 14
+- session: `41e7251b-aae0-4234-9426-2f9fe391cad2` (CLAUDE_CODE_SESSION_ID); started 2026-11-07T17:49:36Z; window base commit `186c1e5f44b089eaaacbb57004c611209a18e886`
+- compliance file: `Logs/compliance/COMPLIANCE-20261107-41e7251b.md`; session log: `Logs/SESSION-LOG-20261109-collection-batch-and-progress-control.md`
+- **open findings: 0**; cleared by disposition: 28
 
 
 ## Contents
@@ -41,34 +41,73 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:e57ace51`: researcher message 2026-11-09T12:55 is too short to be matched; name where it is recorded: "Whole in chunks" -- disposition: recorded in #2412 v14
-- cleared `SC3:297166ab`: researcher message 2026-11-09T15:02 is too short to be matched; name where it is recorded: "Unlink invoked" -- disposition: recorded in #2412 v14
-- cleared `SC3:aff670ae`: researcher message 2026-11-09T14:01 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC3:62e78f64`: researcher message 2026-11-07T18:04 is too short to be matched; name where it is recorded: "Sub-cluster (B)" -- disposition: recorded in #2388 v3
+- cleared `SC3:426d1abb`: researcher message 2026-11-07T18:12 is too short to be matched; name where it is recorded: "Approve both" -- disposition: recorded in #2388 v5
+- cleared `SC3:0c652060`: researcher message 2026-11-08T04:46 is in no escalation comment written this session: "<task-notification>
+<task-id>b5efup0wb</task-id>
+<tool-use-id>toolu_01RUXuZd9BPcqdHgAjKjgb1P</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notice, not the researcher's words
+- cleared `SC3:dd04be8c`: researcher message 2026-11-08T05:02 is in no escalation comment written this session: "<task-notification>
+<task-id>b250jak7z</task-id>
+<tool-use-id>toolu_01DbZwL59AsUnb7ag5827gBo</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notice, not the researcher's words
+- cleared `SC3:deca2029`: researcher message 2026-11-08T05:35 is in no escalation comment written this session: "thanks, that is at least an explanation I can associate with.  so you have a group of 10 words, and then run those 10 words through the entire corpus one at a t" -- disposition: recorded in #2388 v13
+- cleared `SC3:4ca153bb`: researcher message 2026-11-08T05:40 is in no escalation comment written this session: "<task-notification>
+<task-id>brfaptb40</task-id>
+<tool-use-id>toolu_01V5YQxbCnuwt9TfRTjBCyjQ</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notice, not the researcher's words
+- cleared `SC3:f1dab0f9`: researcher message 2026-11-08T08:52 is in no escalation comment written this session: "to you have a script to monitor progress like in the past?" -- disposition: recorded in #2388 v16
+- cleared `SC3:58cf8f1b`: researcher message 2026-11-08T06:36 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: no record needed: an automated continuation summary after context compaction, not a researcher message
-- cleared `SC3:1723a7bf`: researcher message 2026-11-09T15:05 is too short to be matched; name where it is recorded: "Approve #2423" -- disposition: recorded in #2412 v14
-- cleared `SC3:c2614f97`: researcher message 2026-11-09T15:24 is too short to be matched; name where it is recorded: "Open a reading" -- disposition: recorded in #2412 v14
-- cleared `SC3:904ae3f5`: researcher message 2026-11-09T15:46 is too short to be matched; name where it is recorded: "Unlink dealt" -- disposition: recorded in #2412 v14
-- cleared `SC3:f1a34548`: researcher message 2026-11-09T16:34 is too short to be matched; name where it is recorded: "Unlink oldest" -- disposition: recorded in #2412 v14
-- cleared `SC3:380e6134`: researcher message 2026-11-09T20:09 is too short to be matched; name where it is recorded: "Unlink sacred" -- disposition: recorded in #2412 v14
-- cleared `SC3:6607dda9`: researcher message 2026-11-09T18:40 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+Summar" -- disposition: no record needed: the automatic summary after the context ran out, not the researcher's words
+- cleared `SC3:ac68b1d7`: researcher message 2026-11-08T13:19 is too short to be matched; name where it is recorded: "Approve all nine" -- disposition: recorded in #2394 v3
+- cleared `SC3:095c1777`: researcher message 2026-11-08T10:01 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: no record needed: an automated continuation summary after context compaction, not a researcher message
-- cleared `SC3:41a4e834`: researcher message 2026-11-10T04:17 is too short to be matched; name where it is recorded: "Unlink choice" -- disposition: recorded in #2412 v14
+Summar" -- disposition: no record needed: the automatic summary after the context ran out, not the researcher's words
+- cleared `SC3:68953704`: researcher message 2026-11-08T17:22 is in no escalation comment written this session: "<pasted_content id="df2e">
+PS C:\Bible_study_projects> iba\app\ps\Long-Run.ps1 -Action Progress -Job collection-batch
+
+work package : long-run
+step         : lo" -- disposition: recorded in #2388 v19
+- cleared `SC3:589899f1`: researcher message 2026-11-10T09:08 is in no escalation comment written this session: "it looks like run completed, Can you check and provide a summary of the outcome." -- disposition: recorded in #2388 v28
+- cleared `SC3:6802c8df`: researcher message 2026-11-10T09:12 is in no escalation comment written this session: "proceed with 2388, and clearing 2405" -- disposition: recorded in #2388 v28
+- cleared `SC3:116ff44f`: researcher message 2026-11-10T09:13 is in no escalation comment written this session: "in  the meantime, provide me with a list of the 85 unmatched bases" -- disposition: recorded in #2388 v28
+- cleared `SC3:4101d653`: researcher message 2026-11-10T09:24 is in no escalation comment written this session: "<task-notification>
+<task-id>bdvxqnilk</task-id>
+<tool-use-id>toolu_01EVaCPb8TdjpsdBQdxoLpSS</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notice, not the researcher's words
+- cleared `SC3:23760035`: researcher message 2026-11-10T09:32 is too short to be matched; name where it is recorded: "Approve Gather" -- disposition: recorded in #2432 v4
+- cleared `SC3:17c7ad55`: researcher message 2026-11-10T09:40 is too short to be matched; name where it is recorded: "Approve #2434" -- disposition: recorded in #2434 v4
+- cleared `SC3:e9256064`: researcher message 2026-11-10T09:52 is too short to be matched; name where it is recorded: "Approve batches" -- disposition: recorded in #2435 v4
+- cleared `SC3:651f97b3`: researcher message 2026-11-10T10:14 is in no escalation comment written this session: "<task-notification>
+<task-id>bxsmrb11h</task-id>
+<tool-use-id>toolu_01KEyR6GoxPURZCU9faJC3Xq</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notice, not the researcher's words
+- cleared `SC3:56c18bf5`: researcher message 2026-11-10T11:48 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: no record needed: the automatic summary after the context ran out, not the researcher's words
+- cleared `SC3:32553858`: researcher message 2026-11-10T12:56 is too short to be matched; name where it is recorded: "Run session-close" -- disposition: no record needed: the instruction to run this close, recorded in the session log
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:aff670ae`: researcher message 2026-11-09T14:01 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC4b:58cf8f1b`: researcher message 2026-11-08T06:36 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: not held: an automated continuation summary, not a researcher message
-- cleared `SC4b:6607dda9`: researcher message 2026-11-09T18:40 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+Summar" -- disposition: not held: the automatic summary after the context ran out, not the researcher's words
+- cleared `SC4b:14667645`: researcher message 2026-11-08T08:57 holds, defers or asks to check something; name its register item: "continue with the other sub groups in the same way, make sure there are a proper monitor on progress, in fact, the ollama processes should always have a proper " -- disposition: not held: the progress monitor was built and registered under #2394 to #2402 (completed)
+- cleared `SC4b:095c1777`: researcher message 2026-11-08T10:01 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: not held: an automated continuation summary, not a researcher message
+Summar" -- disposition: not held: the automatic summary after the context ran out, not the researcher's words
+- cleared `SC4b:589899f1`: researcher message 2026-11-10T09:08 holds, defers or asks to check something; name its register item: "it looks like run completed, Can you check and provide a summary of the outcome." -- disposition: not held: a request for a summary, answered the same turn in #2388 v28
+- cleared `SC4b:56c18bf5`: researcher message 2026-11-10T11:48 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: not held: the automatic summary after the context ran out, not the researcher's words
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -105,5 +144,5 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 4 times this session: [31;1mInvoke-Expression: [31;1mMissing argument in parameter list.[0m; Update needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default p; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; escalation #2419 v4 -> state='re-assigned', next_action='approved', assigned_to='Claude' -- disposition: fixed: usage errors, each corrected on the next call from the tool message (#2430 v3)
-- cleared `SC16:Escalation.ps1_-Action_Raise`: Escalation.ps1 -Action Raise failed 3 times this session: -ShortDescription has no effect on -Action Raise (only -Action Correction reads it) -- Raise's title comes from -Questio; Raise needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default pr; Raise needs -Question and -Comment (minimum: what this item is about). -- disposition: fixed: usage errors, each corrected on the next call from the tool message (#2430 v1)
+- cleared `SC16:Collection-Build.ps1_-Action_Gather`: Collection-Build.ps1 -Action Gather failed 2 times this session: File "", line 4; escalation #2388 v20 -> state='re-assigned', next_action='ready_for_approval', assigned_to='Researcher' -- disposition: fixed: the first-use rules refusal was re-issued and the Gather tests pass (13 of 13)
+- cleared `SC16:Engagement.ps1_-Action_Record`: Engagement.ps1 -Action Record failed 2 times this session: /usr/bin/bash: -c: line 59: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 70: unexpected EOF while looking for matching `'' -- disposition: fixed: a shell quoting error in my command, redone with the Write tool and recorded

@@ -93,7 +93,7 @@ def show(ctx: Ctx) -> Outcome:
     except cb.CollectionError as exc:
         return fail("refused", str(exc))
     lines = [f"{c[1]} ({c[2]}); core {c[3]}; pole {c[4]} (pole of the pole {c[5]}, reciprocal {c[6]})" + (f"; merged into collection {c[7]}" if c[7] else "")]
-    for tier in ("core", "synonym", "opposite", "possible_opposite", "associated", "set_aside"):
+    for tier in ("core", "synonym", "opposite", "possible_opposite", "associated", "set_aside", "gathered"):
         ws = [r[0] + ("*" if r[1] else "") for r in conn.execute(
             "SELECT t.surface, l.shared FROM collection_link l JOIN surface_term t ON t.id=l.term_id WHERE l.collection_id=? AND l.tier=? AND l.deleted=0 "
             "ORDER BY t.surface", (c[0], tier))]
@@ -171,6 +171,22 @@ def set_status(ctx: Ctx) -> Outcome:
     _event(conn, ctx.run_id, c[0], "confirm" if status_ == "confirmed" else ("retire" if status_ == "retired" else "reopen"), c[2], status_, reason)
     conn.commit()
     return ok(f"{c[1]}: {c[2]} -> {status_} ({reason})", changed=1)
+
+
+def gather(ctx: Ctx) -> Outcome:
+    """One collection of a list of surfaces the researcher names, tier gathered, without the AI (escalation #2388). -Name, -Surface (comma list),
+    -Reason (the instruction, quoted, with the escalation id); -Check previews."""
+    conn = ctx.cfg.conn
+    surfaces = (ctx.params.get("Surface") or "").split(",")
+    try:
+        r = cb.gather(conn, ctx.run_id, ctx.params.get("Name"), surfaces, ctx.params.get("Reason") or "", dry=_flag(ctx, "Check"))
+    except cb.CollectionError as exc:
+        return fail("refused", str(exc))
+    if _flag(ctx, "Check"):
+        return ok(f"PREVIEW (nothing written): collection {(ctx.params.get('Name') or '').strip().lower()} of {r['members']} surfaces, tier gathered", members=r["members"])
+    conn.commit()
+    return ok(f"collection {(ctx.params.get('Name') or '').strip().lower()} made (id {r['collection']}) of {r['members']} surfaces, tier gathered. Next: Engagement.ps1 -Action Pull -Collection {(ctx.params.get('Name') or '').strip().lower()}",
+              collection=r["collection"], members=r["members"])
 
 
 def merge(ctx: Ctx) -> Outcome:

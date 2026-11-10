@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-09T12:51:06Z |
+| generated_at | 2026-11-10T10:04:51Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -1324,7 +1324,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | collection | collection.embed_cache | collection/embeddings | the folder, under surfaces.working_files_root, of the cache of embedding vectors (#2361): regenerable, one file per model digest, used only to rank candidates |
 | collection | collection.embed_role | embed | the cfg_ai_model role of the embedding model used to rank candidates (#2361) |
 | collection | collection.export_names | {'members-verses': 'collection-members-verses', 'surfaces': 'behaviour-and-inner-state-surfaces', 'collections': 'collections'} | the file name stem of each CSV export of the surface work (#2413): the view members-verses (ExportMembers), surfaces (ExportSurfaces) and collections (Export). The file is written under surfaces.exports_root as <stem>-v<n>-<yyyymmdd>.csv; the version is the next one over the live and archived files (reportkit.next_versioned_path, report.version_on_regenerate rules), and the previous live version is moved to governance.oneoff_report_archive_dir. The researcher no longer types a name. |
-| collection | collection.export_tiers | ['core', 'synonym', 'opposite'] | the tiers of a collection that count as its members in the CSV exports of the surface work (#2393); possible_opposite, associated and set_aside are listed apart and are not members |
+| collection | collection.export_tiers | ['core', 'synonym', 'opposite', 'gathered'] | the tiers of a collection that count as its members in the CSV exports of the surface work (#2393); possible_opposite, associated and set_aside are listed apart and are not members |
 | collection | collection.list_max | 20 | the most words taken from each list (synonyms, opposites) the model names for a new collection (#2361) |
 | collection | collection.score_threshold | 8 | the score (0 to 10, prompt collection.score) from which a word the judge called distinct counts as a synonym (#2361); 8 is 'nearly the same, a little milder or stronger'. Read by Links and by the judging |
 | collection | collection.shortlist_size | 60 | how many words nearest the core word by embedding are judged as candidates when a collection is asked (module 5 of 5, #2361); the listed words come on top |
@@ -1337,6 +1337,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | content_index | content_index.size_profile_report_path | outputs/content_index/content-index-size-profile.md | where content_index.size_profile writes its .md-file-size report |
 | database | database.bible_research.path | database/bible_research.db | bible_research.db's file path, project-root-relative (aka research_db in prose elsewhere -- that alias isn't repeated here, see governance.project_databases). Structured counterpart, escalation #723. |
 | database | database.iba.path | iba/app/db/iba.db | iba.db's file path, project-root-relative -- structured counterpart to governance.project_databases' prose, part of escalation #723's project_database enum + path settings. |
+| engagement | engagement.batch_size | 150 | the number of verse items in one batch of Engagement.ps1 -Action Pull -Batch n; a surface larger than this is split in verse order (#2388) |
 | engagement | engagement.group_judged_by | rule:engagement | the value of surface_term.group_judged_by when the engagement step decides a group (#2406) |
 | engagement | engagement.group_rule | {'characteristic': 'behaviour', 'qualifier': 'inner_being_state', 'none': 'other'} | the surface-level group of a member surface from its live engagement nodes (#2406, researcher 2026-11-09): behaviour if it is a characteristic in any verse, else inner_being_state if it is a qualifier in any verse, else other (it leaves the study group) |
 | engagement | engagement.no_bearing_kind | silence | the observation kind that records a surface with no inner-being bearing in a verse in the engagement assessment (#2406 Q2); Analysis_phase_1 still does not use it |
@@ -1747,6 +1748,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | 7 | collection.ask | iba.app.handlers.collectionbuild:ask | none | judge the candidates of a collection through the AI client (the words nearest the core by embedding, and the listed words): candidate, score, pole check, association; one ai_call row each; -Collection, -Limit -- see lib/collectionask.py (escalation #2361) |
 | 8 | collection.export_members | iba.app.handlers.collectionbuild:export_members | none | write a CSV of the member surfaces of the collections to the exports folder, one row for each verse, cluster and tier, with the verse text, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 members-verses file) -- see lib/collectionexport.py (escalations #2393, #2413) |
 | 9 | collection.export_surfaces | iba.app.handlers.collectionbuild:export_surfaces | none | write a CSV of the surfaces of the behaviour and inner-being-state groups to the exports folder, one row for each verse and cluster, with the collection and tier of each membership, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 surfaces file) -- see lib/collectionexport.py (escalations #2393, #2413) |
+| 10 | collection.gather | iba.app.handlers.collectionbuild:gather | none | make one collection of the surfaces the researcher names (tier gathered), without the AI and without a judged core; -Name, -Surface, -Reason, -Check -- see lib/collectionbuild.py (escalation #2388) |
 
 **concept-edit** — runs over `none` · script `iba/app/ps/Concept-Edit.ps1`
 | # | step | handler | scope | does |
@@ -2150,7 +2152,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 <a id="7-on-fail-condition-path-the-fork-rules"></a>
 ## 7. on_fail — condition -> path (the fork rules)
 
-**20 of 188 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**20 of 189 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -2206,6 +2208,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | collection.export | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | collection.export_members | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | collection.export_surfaces | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| collection.gather | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | collection.links | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | collection.merge | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | collection.seed | halted | report-continue | halted, what was answered is kept in ai_call -- the set number of questions in a row got no usable answer (the server or the ssh tunnel stopped answering); fix the cause and run again, it carries on with the words not yet judged (a usage outcome, not recorded as an escalation) |
@@ -5403,6 +5406,7 @@ settings: `resolve.ai_module`, `resolve.ai_step`, `resolve.order`, `resolve.prot
 | collection.ask | operations | judge the candidates of a collection through the AI client (the words nearest the core by embedding, and the listed words): candidate, score, pole check, association; one ai_call row each; -Collection, -Limit | ai_call, collection_listing, run_batch |
 | collection.export_members | utility | write a CSV of the member surfaces of the collections to the exports folder, one row for each verse, cluster and tier, with the verse text, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 members-verses file) | (reads only) |
 | collection.export_surfaces | utility | write a CSV of the surfaces of the behaviour and inner-being-state groups to the exports folder, one row for each verse and cluster, with the collection and tier of each membership, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 surfaces file) | (reads only) |
+| collection.gather | operations | make one collection of the surfaces the researcher names (tier gathered), without the AI and without a judged core; -Name, -Surface, -Reason, -Check | (reads only) |
 
 settings: `collection.embed_cache`, `collection.embed_role`, `collection.export_names`, `collection.export_tiers`, `collection.list_max`, `collection.score_threshold`, `collection.shortlist_size`
 
@@ -5422,9 +5426,9 @@ settings: `ai.allowed_options`, `ai.embed_batch`, `ai.log_write_retries`, `ai.lo
 
 surface_term by base_state: out_of_scope 2317, matched_structure 1232, phrase_not_tested 1166, resolved_own 716, ai_answered 387, ai_none 273, matched_sibling 89, ai_failed 31, base_ambiguous 14
 
-surface_term by group_state: judged 6023, confirmed 82, corrected 64, unjudged 56
+surface_term by group_state: judged 5952, corrected 135, confirmed 82, unjudged 56
 
-collection_link by tier: associated 1905, synonym 830, possible_opposite 326, set_aside 248, core 179, opposite 120
+collection_link by tier: associated 3088, synonym 1223, possible_opposite 423, set_aside 316, core 276, opposite 170, gathered 85
 
 surface_flag by kind (open): ai_none 289, held_pair 39, possible_opposite 34, ai_failed 31, possessive 26, structure_conflict 14
 
@@ -5465,14 +5469,14 @@ Generated from `cfg_ai_model`, `cfg_ai_prompt` and `ai_call`. Every call goes th
 | module | step | role | model | prompts | answered | refused | failed | halted | avg secs |
 |---|---|---|---|---|---|---|---|---|---|
 | ai_base | base | judge | qwen3:30b | base.word v2 | 676 | 31 | 0 | 0 | 11.3 |
-| collection | associated | judge | qwen3:30b | collection.associated v1 | 10221 | 0 | 0 | 0 | 4.1 |
-| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 12883 | 0 | 0 | 0 | 4.6 |
+| collection | associated | judge | qwen3:30b | collection.associated v1 | 15430 | 0 | 0 | 0 | 4.1 |
+| collection | candidate | judge | qwen3:30b | collection.synonym v2 | 18587 | 0 | 0 | 0 | 4.6 |
 | collection | embed | embed | qwen3-embedding:latest |  | 42 | 0 | 0 | 0 | 16.6 |
-| collection | listing | judge | qwen3:30b | collection.list v1 | 200 | 0 | 0 | 0 | 7.2 |
-| collection | pole | judge | qwen3:30b | collection.pole v1 | 339 | 0 | 0 | 0 | 3.2 |
-| collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 260 | 0 | 0 | 0 | 4.2 |
-| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 139 | 0 | 0 | 0 | 1.5 |
-| collection | score | judge | qwen3:30b | collection.score v1 | 7935 | 0 | 0 | 0 | 3.9 |
+| collection | listing | judge | qwen3:30b | collection.list v1 | 289 | 0 | 0 | 0 | 7.2 |
+| collection | pole | judge | qwen3:30b | collection.pole v1 | 517 | 0 | 0 | 0 | 3.0 |
+| collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 394 | 0 | 0 | 0 | 4.1 |
+| collection | real_word | judge | qwen3:30b | collection.real_word v1 | 228 | 0 | 0 | 0 | 1.5 |
+| collection | score | judge | qwen3:30b | collection.score v1 | 13204 | 0 | 0 | 0 | 3.9 |
 | group | group | judge | qwen3:30b | group.word v3 | 6106 | 0 | 0 | 0 | 10.2 |
 
 **Steps that call the AI** (all through the client): `ai.replay`, `collection.ask`, `collection.seed`, `group.judge`, `surface_base.ask`

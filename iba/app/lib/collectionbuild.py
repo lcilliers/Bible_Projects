@@ -50,7 +50,7 @@ def load(conn, threshold=None) -> dict:
     """Everything the rule reads, from the tables. threshold is cfg_setting collection.score_threshold (None: no score rule)."""
     cols = {r[0]: dict(id=r[0], core=r[1], seed=r[2], status=r[3]) for r in conn.execute(
         "SELECT c.id, c.core_term_id, t.surface, c.status FROM collection c JOIN surface_term t ON t.id=c.core_term_id "
-        "WHERE c.deleted=0 AND c.status IN ('indicative','confirmed')")}
+        "WHERE c.deleted=0 AND c.status IN ('indicative','confirmed') AND c.created_by != 'collection-gather'")}  # a gathered collection is not decided by judgements
     by_seed = {c["seed"]: c["id"] for c in cols.values()}
     tid = {r[0]: r[1] for r in conn.execute("SELECT surface, id FROM surface_term WHERE deleted=0")}
     cand, assoc, score, pole = {}, {}, {}, {}
@@ -209,3 +209,47 @@ def write(conn, run_id: str, pl: dict) -> dict:
         conn.execute("UPDATE surface_term SET collection_state=?, updated_at=?, run_id=? WHERE id=?", (state, now, run_id, term))
         done["states"] += 1
     return done
+
+
+GATHER_TIER = "gathered"
+
+
+def gather(conn, run_id: str, name: str, surfaces: list, reason: str, dry: bool = False) -> dict:
+    """One collection of a list of words the researcher names (escalation #2388), without the AI. The words are taken up as they are: tier `gathered`
+    for every one, no core word judged and no pole. The first word named is only the anchor the collection table requires (core_term_id); it is a
+    member like the others and no `core` link is written. Refuses, writing nothing, a name already in use, an empty or unknown word, a word that is
+    not untouched, and a word named twice. A term's state becomes `placed`. Links never touches these members (it decides only from AI judgements)."""
+    name = (name or "").strip().lower()
+    if not name:
+        raise CollectionError("-Name is required: the name of the new collection")
+    if not reason.strip():
+        raise CollectionError("-Reason is required: the researcher's instruction, quoted, with the escalation id")
+    words = [s.strip() for s in surfaces if s.strip()]
+    if not words:
+        raise CollectionError("-Surface is required: a comma list of surfaces")
+    if len({w.lower() for w in words}) != len(words):
+        raise CollectionError("a surface is named twice")
+    if conn.execute("SELECT 1 FROM collection WHERE lower(name)=? AND deleted=0", (name,)).fetchone():
+        raise CollectionError(f"{name!r} is already a collection")
+    ids, bad = [], []
+    for w in words:
+        row = conn.execute("SELECT id, collection_state FROM surface_term WHERE deleted=0 AND surface=?", (w,)).fetchall()
+        if len(row) != 1:
+            bad.append(f"{w!r}: " + ("not a live surface" if not row else "more than one live surface"))
+        elif row[0][1] != "untouched":
+            bad.append(f"{w!r}: already {row[0][1]} (not untouched)")
+        else:
+            ids.append(row[0][0])
+    if bad:
+        raise CollectionError("refused, nothing written: " + "; ".join(bad))
+    if dry:
+        return {"collection": None, "members": len(ids)}
+    cid = conn.execute("INSERT INTO collection (core_term_id, name, status, run_id, created_by) VALUES (?,?, 'indicative', ?, 'collection-gather')",
+                       (ids[0], name, run_id)).lastrowid
+    for tid in ids:
+        conn.execute("INSERT INTO collection_link (collection_id, term_id, tier, shared, reason, run_id, created_by) VALUES (?,?,?,0,?,?,'collection-gather')",
+                     (cid, tid, GATHER_TIER, reason.strip(), run_id))
+        conn.execute("UPDATE surface_term SET collection_state='placed', updated_at=strftime('%Y-%m-%dT%H:%M:%SZ','now'), run_id=? WHERE id=?", (run_id, tid))
+    conn.execute("INSERT INTO surface_event (subject_kind, subject_id, action, field, value_before, value_after, by, reason, run_id, created_by) "
+                 "VALUES ('collection',?,'gather','members',NULL,?,'collection-build',?,?,'collection-gather')", (cid, str(len(ids)), reason.strip(), run_id))
+    return {"collection": cid, "members": len(ids)}

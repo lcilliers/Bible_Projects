@@ -46,8 +46,6 @@ Self-correctable fix by Claude:
 
 - #2376: on hold, with the Researcher, until more collections are completed; decisions 1-4 in the outline stay open.
 - Completed since this log was written (escalation 2406, built in the engagement-step session; the continuing work is #2412): the step's method and output are to be driven out.
-- Completed since this log was written (escalation 2405; collection.ask crashed: database is locked): with Claude, not started; first check whether the #2388 job is still running.
-- #2388: long job running outside the session; with Claude.
 - #2379: with Claude, in progress.
 - #2357, #2366: with the Researcher.
 - #2392: parked.

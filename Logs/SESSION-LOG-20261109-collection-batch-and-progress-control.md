@@ -36,7 +36,6 @@ Session: `41e7251b-aae0-4234-9426-2f9fe391cad2` (standard mode, started 2026-11-
 
 ## 5. Open items
 
-- #2388 (Claude): the batch runs until about 2026-11-10 09:00; then one more `Long-Run.ps1 -Action Start -Job collection-batch` for the failed sub-group stumble; then review the collections with the researcher.
 - #2392 (Researcher): grouping-evidence decision, carried unchanged.
 - #2379 (Claude): multi-session exploration of the surface work, carried unchanged.
 - #2357 (Researcher): the config validate finding, carried unchanged.

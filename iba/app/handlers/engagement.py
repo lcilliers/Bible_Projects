@@ -22,13 +22,18 @@ def _flag(ctx, name):
 def pull(ctx: Ctx) -> Outcome:
     conn = ctx.cfg.conn
     try:
-        content = eg.pull(conn, ctx.cfg, ctx.params.get("Collection"))
-        path = eg.next_path(ctx.cfg, "pull", content["collection"]["name"])
+        braw = str(ctx.params.get("Batch") or "").strip()
+        if braw and not braw.isdigit():
+            return fail("refused", f"-Batch is a whole number from 1, not {braw!r}")
+        content = eg.pull(conn, ctx.cfg, ctx.params.get("Collection"), batch=int(braw) if braw else None)
+        b = content.get("batch")
+        path = eg.next_path(ctx.cfg, f"pull-batch{b['n']}" if b else "pull", content["collection"]["name"])
     except (eg.EngagementError, KeyError) as exc:
         return fail("refused", str(exc))
     eg.write_json(path, content)
     n_items = sum(len(s["items"]) for s in content["surfaces"])
-    return ok(f"{path.as_posix()}: collection {content['collection']['name']}, {len(content['surfaces'])} member surfaces, {n_items} surface items, "
+    where = f"batch {b['n']} of {b['of']} (up to {b['size']} items): " if b else ""
+    return ok(f"{path.as_posix()}: {where}collection {content['collection']['name']}, {len(content['surfaces'])} member surfaces, {n_items} surface items, "
               f"{len(content['existing_observations'])} existing observations on their verses", surfaces=len(content["surfaces"]), items=n_items,
               existing=len(content["existing_observations"]))
 

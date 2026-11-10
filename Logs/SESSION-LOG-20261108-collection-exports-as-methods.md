@@ -28,7 +28,7 @@ Session: `c4e9fed5-12df-4346-8851-c74151f8675c` (Developer Mode)
 
 ## 5. Open items
 
-- #2379, #2388, #2392: carried unchanged.
+- #2379, the collection-build item (closed 2026-11-10), #2392: carried unchanged.
 
 ## 6. Git
 
