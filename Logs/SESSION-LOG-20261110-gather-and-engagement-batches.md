@@ -12,6 +12,7 @@ Session: `41e7251b-aae0-4234-9426-2f9fe391cad2` (standard mode, started 2026-11-
 - #2432 (collection.gather step), #2433 (its on-fail rule), #2434 (gathered tier in collection.export_tiers), #2435 (engagement.batch_size 150): proposed through configmaint.propose, approved by the researcher in chat, applied, completed.
 - #2405 found already completed (the redo of the stumble).
 - #2436 raised for the researcher: three decisions left after the run.
+- #2437 raised after the close: the multi-word phrases and their head words.
 - #2379, #2392 not changed: acknowledged in chat. #2357 not touched.
 
 ## 3. Files
@@ -36,6 +37,7 @@ Session: `41e7251b-aae0-4234-9426-2f9fe391cad2` (standard mode, started 2026-11-
 ## 5. Open items
 
 - #2436 (Researcher): observation 20534, the 13 base words without verses, and the two previews.
+- #2437 (Claude): design for attaching the 1166 multi-word phrases to a collected head word; goes to the researcher first.
 - #2379 (Claude): multi-session exploration of the surface work, carried unchanged.
 - #2392 (Claude): grouping-evidence decision, on hold, carried unchanged.
 - #2357 (Researcher): the config validate finding, carried unchanged.

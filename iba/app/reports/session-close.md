@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-10T12:58:56Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-10T13:07:30Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `41e7251b-aae0-4234-9426-2f9fe391cad2` (CLAUDE_CODE_SESSION_ID); started 2026-11-07T17:49:36Z; window base commit `186c1e5f44b089eaaacbb57004c611209a18e886`
-- compliance file: `Logs/compliance/COMPLIANCE-20261107-41e7251b.md`; session log: `Logs/SESSION-LOG-20261109-collection-batch-and-progress-control.md`
-- **open findings: 0**; cleared by disposition: 28
+- compliance file: `Logs/compliance/COMPLIANCE-20261107-41e7251b.md`; session log: `Logs/SESSION-LOG-20261110-gather-and-engagement-batches.md`
+- **open findings: 0**; cleared by disposition: 30
 
 
 ## Contents
@@ -90,6 +90,8 @@ step         : lo" -- disposition: recorded in #2388 v19
 
 Summar" -- disposition: no record needed: the automatic summary after the context ran out, not the researcher's words
 - cleared `SC3:32553858`: researcher message 2026-11-10T12:56 is too short to be matched; name where it is recorded: "Run session-close" -- disposition: no record needed: the instruction to run this close, recorded in the session log
+- cleared `SC3:f2ca4527`: researcher message 2026-11-10T13:02 is in no escalation comment written this session: "I notice there is an open background task - what is that about" -- disposition: no record needed: a question about a leftover background wait loop, answered in chat and the loop stopped
+- cleared `SC3:4507054e`: researcher message 2026-11-10T13:03 is in no escalation comment written this session: "just to confirm, my understanding is there are only the multi word base left that is not included in collections" -- disposition: recorded in #2437 v1
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
