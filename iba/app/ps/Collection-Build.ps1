@@ -19,6 +19,8 @@
       Merge     -From <name> -Into <name> -Reason <text>   fold one collection into another, on your instruction
       Gather    -Name <name> -Surface <a,b,c> -Reason <text> [-Check]   one collection of the surfaces you name, tier gathered, without the AI; for words in no collection
                 that you want assessed together (#2388)
+      AttachPhrases   -Reason <text> [-Check]   connect each phrase to the collections of its words (tier phrase), then, for a phrase no word reaches, of its
+                own Strong's codes; flag the phrases neither reaches phrase_no_match (#2437)
       Seed      -Word <word>   make a collection of a core word: the AI names its pole (a real word? reciprocal?) and lists synonyms and opposites
       Ask       -Collection <name> [-Limit n]   judge the candidates (the words nearest the core by embedding, and the listed words) through the
                 AI client; then run Links. A run of more than a few minutes is started outside the session (B:125).
@@ -34,7 +36,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Set', 'Merge', 'Seed', 'Ask', 'Gather')]
+    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Set', 'Merge', 'Seed', 'Ask', 'Gather', 'AttachPhrases')]
     [string] $Action,
     [string] $Collection,
     [string] $Word,
@@ -58,7 +60,7 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 . $PSScriptRoot\_lib\Notify.ps1
 
-$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather' }
+$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather'; AttachPhrases = 'collection.attach_phrases' }
 $stepId = $stepMap[$Action]
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-COLLECTIONBUILD"
 

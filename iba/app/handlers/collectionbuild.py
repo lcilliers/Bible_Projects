@@ -189,6 +189,26 @@ def gather(ctx: Ctx) -> Outcome:
               collection=r["collection"], members=r["members"])
 
 
+def attach_phrases(ctx: Ctx) -> Outcome:
+    """Connect the phrases of collection a to collections by their words, then by their own Strong's codes; the phrases neither reaches are flagged
+    phrase_no_match (escalation #2437). -Reason (the instruction, quoted, with the escalation id); -Check previews."""
+    conn = ctx.cfg.conn
+    scope = ctx.cfg.setting("surfaces.scope_groups")
+    tiers = ctx.cfg.setting("collection.export_tiers")
+    if not scope or "a" not in scope or not tiers:
+        return fail("refused", "cfg_setting surfaces.scope_groups (collection a) or collection.export_tiers is missing")
+    try:
+        r = cb.attach_phrases(conn, ctx.run_id, scope["a"], tiers, ctx.params.get("Reason") or "", dry=_flag(ctx, "Check"))
+    except cb.CollectionError as exc:
+        return fail("refused", str(exc))
+    line = (f"{r['phrases']} phrases: {r['english']} reached by an English word, {r['strong']} by an own Strong's code, {r['unmatched']} reached by neither; "
+            f"links to add {r['links_to_add']}, flags to add {r['flags_to_add']}")
+    if _flag(ctx, "Check"):
+        return ok("PREVIEW (nothing written): " + line, **r)
+    conn.commit()
+    return ok("written: " + line, **r)
+
+
 def merge(ctx: Ctx) -> Outcome:
     conn = ctx.cfg.conn
     reason = (ctx.params.get("Reason") or "").strip()

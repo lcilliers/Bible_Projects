@@ -253,3 +253,90 @@ def gather(conn, run_id: str, name: str, surfaces: list, reason: str, dry: bool 
     conn.execute("INSERT INTO surface_event (subject_kind, subject_id, action, field, value_before, value_after, by, reason, run_id, created_by) "
                  "VALUES ('collection',?,'gather','members',NULL,?,'collection-build',?,?,'collection-gather')", (cid, str(len(ids)), reason.strip(), run_id))
     return {"collection": cid, "members": len(ids)}
+
+
+PHRASE_TIER = "phrase"
+PHRASE_FLAG = "phrase_no_match"
+PHRASE_ACTION = "attach_phrase"
+PHRASE_BY = "collection-attach-phrases"
+_WORD = re.compile(r"[a-z']+")
+
+
+def attach_phrases(conn, run_id: str, scope_groups: list, member_tiers: list, reason: str, dry: bool = False) -> dict:
+    """Connect each phrase of collection a to the collections of its words (escalation #2437). A phrase is a multi-word surface_term (form phrase) of
+    a group in scope_groups. Route 1, every phrase: each word of the phrase that is a live word surface_term, taken as its base (base_id, itself when
+    none), reaches the collections in which that base is a member (tiers member_tiers); the phrase gets one link of tier `phrase` to each such
+    collection, with the matched words as its reason. Route 2, only a phrase route 1 does not reach: its OWN Strong's codes (verse_lexical rows
+    of the phrase surface with surface_kind own, never the shared rows, whose owner is not decided), each read through the other own rows of the same
+    code whose surface is a word that is a member of a collection; the phrase is linked to those collections, the reason naming the code and the
+    word. A phrase neither route reaches gets one open surface_flag of kind phrase_no_match. A state of a linked phrase becomes `placed`.
+    Re-runnable: a live link or open flag already there is left as it is; nothing is deleted. Inferential (B:4): a route is a lead to read, and
+    the reason on each link says which route made it. Refuses, writing nothing, a missing reason."""
+    if not (reason or "").strip():
+        raise CollectionError("-Reason is required: the researcher's instruction, quoted, with the escalation id")
+    reason = reason.strip()
+    marks = ",".join("?" * len(scope_groups))
+    phrases = conn.execute(f"SELECT id, surface FROM surface_term WHERE deleted=0 AND origin='surface' AND form='phrase' AND surface_group IN ({marks}) ORDER BY id",
+                           list(scope_groups)).fetchall()
+    words = {r[0]: (r[1], r[2]) for r in conn.execute("SELECT surface, id, base_id FROM surface_term WHERE deleted=0 AND form='word'")}
+    tmarks = ",".join("?" * len(member_tiers))
+    member = {}
+    for term, col in conn.execute(f"SELECT l.term_id, l.collection_id FROM collection_link l JOIN collection k ON k.id=l.collection_id "
+                                  f"WHERE l.deleted=0 AND k.deleted=0 AND l.tier IN ({tmarks})", list(member_tiers)):
+        member.setdefault(term, set()).add(col)
+    cname = {r[0]: r[1] for r in conn.execute("SELECT id, name FROM collection WHERE deleted=0")}
+    by_code: dict = {}      # own strong -> {surface} of word surfaces that are members of a collection
+    for sf, st in conn.execute("SELECT DISTINCT surface, strong FROM verse_lexical WHERE deleted=0 AND surface_kind='own' AND surface IS NOT NULL"):
+        w = words.get(sf)
+        if w and member.get(w[1] or w[0]):
+            by_code.setdefault(st, set()).add(sf)
+    own_codes: dict = {}
+    for sf, st in conn.execute("SELECT DISTINCT surface, strong FROM verse_lexical WHERE deleted=0 AND surface_kind='own' AND surface IN "
+                               "(SELECT surface FROM surface_term WHERE deleted=0 AND form='phrase')"):
+        own_codes.setdefault(sf, set()).add(st)
+    have = {(r[0], r[1]) for r in conn.execute("SELECT collection_id, term_id FROM collection_link WHERE deleted=0 AND tier=?", (PHRASE_TIER,))}
+    flagged = {r[0] for r in conn.execute("SELECT subject_id FROM surface_flag WHERE deleted=0 AND kind=? AND status='open' AND subject_kind='surface_term'", (PHRASE_FLAG,))}
+    plan = []   # (phrase id, surface, {collection: [reasons]}, route)
+    unmatched = []
+    for pid, surf in phrases:
+        cols: dict = {}
+        for w in _WORD.findall(surf):
+            t = words.get(w)
+            if t:
+                for c in member.get(t[1] or t[0], ()):
+                    cols.setdefault(c, []).append(f"word {w}")
+        route = "english"
+        if not cols:
+            route = "strong"
+            for st in sorted(own_codes.get(surf, ())):
+                for sf in sorted(by_code.get(st, ())):
+                    if sf == surf:
+                        continue
+                    t = words[sf]
+                    for c in member.get(t[1] or t[0], ()):
+                        cols.setdefault(c, []).append(f"strong {st} via {sf}")
+        if cols:
+            plan.append((pid, surf, cols, route))
+        else:
+            unmatched.append((pid, surf, sorted(own_codes.get(surf, ()))))
+    new_links = [(pid, c, route, "; ".join(dict.fromkeys(rs))) for pid, surf, cols, route in plan for c, rs in cols.items() if (c, pid) not in have]
+    new_flags = [u for u in unmatched if u[0] not in flagged]
+    summary = {"phrases": len(phrases), "english": sum(1 for p in plan if p[3] == "english"), "strong": sum(1 for p in plan if p[3] == "strong"),
+               "unmatched": len(unmatched), "links_to_add": len(new_links), "flags_to_add": len(new_flags)}
+    if dry:
+        return summary
+    now_sql = "strftime('%Y-%m-%dT%H:%M:%SZ','now')"
+    for pid, c, route, why in new_links:
+        conn.execute("INSERT INTO collection_link (collection_id, term_id, tier, shared, reason, run_id, created_by) VALUES (?,?,?,0,?,?,?)",
+                     (c, pid, PHRASE_TIER, f"{route} route: {why} ({reason})", run_id, PHRASE_BY))
+    for pid, surf, cols, route in plan:
+        after = ", ".join(sorted(cname[c] for c in cols))
+        conn.execute(f"UPDATE surface_term SET collection_state='placed', updated_at={now_sql}, run_id=? WHERE id=? AND collection_state IS NOT 'placed'", (run_id, pid))
+        conn.execute("INSERT INTO surface_event (subject_kind, subject_id, action, field, value_before, value_after, by, reason, run_id, created_by) "
+                     "SELECT 'surface_term',?,?,'collections',NULL,?,?,?,?,? WHERE NOT EXISTS (SELECT 1 FROM surface_event WHERE subject_kind='surface_term' "
+                     "AND subject_id=? AND action=? AND value_after=?)",
+                     (pid, PHRASE_ACTION, after, PHRASE_BY, f"{route} route ({reason})", run_id, PHRASE_BY, pid, PHRASE_ACTION, after))
+    for pid, surf, codes in new_flags:
+        conn.execute("INSERT INTO surface_flag (subject_kind, subject_id, kind, note, status, run_id, created_by) VALUES ('surface_term',?,?,?, 'open', ?, ?)",
+                     (pid, PHRASE_FLAG, f"no word of the phrase and none of its own Strong's codes ({', '.join(codes) or 'none'}) reaches a collection ({reason})", run_id, PHRASE_BY))
+    return summary
