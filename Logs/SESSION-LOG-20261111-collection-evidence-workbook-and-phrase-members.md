@@ -49,4 +49,7 @@ Developer Mode session. Built #2477: the collection evidence report is now a Mar
 
 ## 6. Git
 
-(written after the first commit)
+- Branch: main.
+- Commit: 2f4086b3 `session 20261111: collection evidence report as a Markdown reading plus a 20-sheet Excel workbook (#2477), phrases are members of their collections with engagement and Pull -Missing (#2479), ...` (60 files).
+- Push: `To https://github.com/lcilliers/Bible_Projects.git   395d0aaf..2f4086b3  main -> main`.
+- Final commit: this log's git section, committed alone as `session 20261111: session log git confirmation`.
