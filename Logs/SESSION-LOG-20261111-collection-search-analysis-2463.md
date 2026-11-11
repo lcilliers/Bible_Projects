@@ -39,4 +39,4 @@ Standard session. Start-project run (STEP up, compliance file passed, no thread 
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. Commit d989f344dea31ffa59bb9881ab0d0ca1f2ab54af (session 20261111: #2463 collection (search) analysis raised, ... close reports). Push output: `To https://github.com/lcilliers/Bible_Projects.git   19535b9c..d989f344  main -> main`.
