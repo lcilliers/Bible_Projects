@@ -43,4 +43,4 @@ Claude's own choices, no decision needed:
 
 ## 6. Git
 
-_(written after the push)_
+Branch main. Commit 2c46d46e72599127f607a5439c24233853692627 ("session 20261110: #2412 Ollama triage test (stopped), collection search engaged (draft), ..."). Push: `66e89f84..2c46d46e  main -> main` to https://github.com/lcilliers/Bible_Projects.git.
