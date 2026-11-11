@@ -27,7 +27,7 @@
                                     given after the researcher's review, it proceeds and is recorded
       -Label <name>                 names the output file
 
-    -> outputs/verse-scope/<label>-<YYYYMMDD>.json (setting verse_scope.output_dir; a same-day
+    -> _analytics/reading-tools/verse-scope/<label>-<YYYYMMDD>.json (setting verse_scope.output_dir; a same-day
     re-run writes -v2 and archives the earlier file). The design is
     outputs/escalation/2228-scope-resolver-design-v1-20261022.md.
 

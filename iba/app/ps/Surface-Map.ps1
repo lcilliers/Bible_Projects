@@ -19,7 +19,7 @@
                                            cluster.surface_map.max_group_share is flagged), the anomaly group,
                                            unallocated and two-sense pairs. Reads only.
 
-    Files go to cluster.surface_map.output_dir (outputs/surface-map), versioned per day. The design is
+    Files go to cluster.surface_map.output_dir (_analytics/surfaces/exports/surface-map), versioned per day. The design is
     outputs/escalation/2293-surface-map-design-v1-20261025.md.
 
 .EXAMPLE

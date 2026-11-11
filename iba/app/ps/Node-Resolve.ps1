@@ -5,7 +5,7 @@
 
 .DESCRIPTION
       Plan                    what the sweep would fill on ib_node and what it cannot, with the reason. Reads only.
-                              Writes the plan JSON and its report to node_resolve.output_dir (outputs/node-resolve).
+                              Writes the plan JSON and its report to node_resolve.output_dir (_analytics/reading-tools/node-resolve).
       Apply -File <plan JSON> writes the plan: each node only into a null column, and only if it still holds what the
                               plan saw. Writes a report of the run.
 

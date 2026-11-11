@@ -444,7 +444,7 @@ iba\app\ps\Surface-Map.ps1 -Step Tail -Cluster M18 [-Live]          # the rest, 
 iba\app\ps\Surface-Map.ps1 -Step Check -Cluster M18                 # the report (reads only)
 ```
 
-- **Pairs** writes `outputs/surface-map/<cluster>-pairs-<date>.json` (setting
+- **Pairs** writes `_analytics/surfaces/exports/surface-map/<cluster>-pairs-<date>.json` (setting
   `cluster.surface_map.output_dir`). It lists every pair with its hits, verses, gloss and two
   sample references, and marks it head or tail. The head is the pairs covering
   `cluster.surface_map.head_share` (0.8) of the cluster's hits. For M49, M67 and M83 each pair
@@ -483,7 +483,7 @@ iba\app\ps\Prior-Capture.ps1 -Step Record -File <the filled JSON>               
 iba\app\ps\Prior-Capture.ps1 -Step Report                                                   # where the capture stands (reads only)
 ```
 
-- **Prepare** writes `outputs/prior-capture/capture-<file id>-<date>.json` (setting
+- **Prepare** writes `_analytics/reading-tools/prior-capture/capture-<file id>-<date>.json` (setting
   `prior_capture.output_dir`): every line of the document that names a verse (with its text, section
   and verses resolved), the M- and T-coded words of each verse with their clusters and subgroups, the
   October ids already recorded for the document, and the references that resolve to no single verse.
@@ -502,7 +502,7 @@ iba\app\ps\Prior-Capture.ps1 -Step Report                                       
   document carries, the nodes with no occurrence, the references to no single verse and quotations not
   found in the ESV text. No check for duplicates is made across documents; an identical live
   description joins the first observation as further nodes.
-- **Report** writes the status report, versioned (`capture-status`, in `outputs/prior-capture/`): documents by `capture_status`, observations by tag, line
+- **Report** writes the status report, versioned (`capture-status`, in `_analytics/reading-tools/prior-capture/`): documents by `capture_status`, observations by tag, line
   answers, and the nodes with no `verse_lexical_id`.
 
 ### 7.3 The node reference sweep (`iba/app/ps/Node-Resolve.ps1`)
@@ -516,7 +516,7 @@ iba\app\ps\Node-Resolve.ps1 -Step Plan                                   # what 
 iba\app\ps\Node-Resolve.ps1 -Step Apply -File outputs\node-resolve\resolve-plan-<date>.json
 ```
 
-- **Plan** writes the plan JSON (each node's values before and after) and a report to `outputs/node-resolve/`,
+- **Plan** writes the plan JSON (each node's values before and after) and a report to `_analytics/reading-tools/node-resolve/`,
   and lists the nodes it leaves with the reason (no sub_group defined for the strong in the cluster; the occurrences
   disagree; several occurrences and no matching surface).
 - **Apply** writes the plan whole, into null columns only, and skips and lists a node that no longer holds what the
@@ -1224,6 +1224,7 @@ iba\app\ps\Purge-SoftDeletes.ps1 [-Action Audit|Execute|Retire] [-Live] [-Databa
   surface cycle (`module`, `run_id`, `sha256`, `analytic_status`, `migrated_from`) are kept for every file that is
   still there. A moved file is a new path: the module or migration that moves it registers the new path
   (`manifest.register_analytic`) with `migrated_from`. A discarded file is not registered.
+- **Where a report goes (rule B:128, #2475):** every analytic report and extract of the study's data is filed under `_analytics/`, in the folder of its module: the surface cycle, collections and engagement under `_analytics/surfaces/exports/`, the reading-process tools under `_analytics/reading-tools/<tool>/`. The tool's `*.report_path` or `*.output_dir` setting points there and the folder is registered with `FolderPurpose.ps1 -Action Set` (type `results`) in the same unit of work. `outputs/` holds the app's own operational output (configs, escalations, validations, the content index, the narrative-register quote checks, cost history, the prose tools). The rule is `cfg_behaviour_rule` B:128 `analytic-reports-and-extracts-in-analytics`; `cfg_control_home` kinds `study_output` and `generated_report` say it.
 - **FolderPurpose:** run `Seed` after a reorganisation, before `Manifest-Rebuild`. `Set` is the only
   way to hand-set a folder's type, status or description.
 - **ContentIndex:** exclusions are rows of `cfg_content_index_exclude`, changed through §4.

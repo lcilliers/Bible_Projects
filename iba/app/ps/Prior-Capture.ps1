@@ -16,7 +16,7 @@
                                  Reads only.
 
     <document> is the repo-relative path of a study document in the reading index (reading_file), or its id.
-    Files go to prior_capture.output_dir (outputs/prior-capture), versioned per day.
+    Files go to prior_capture.output_dir (_analytics/reading-tools/prior-capture), versioned per day.
 
 .EXAMPLE
     iba\app\ps\Prior-Capture.ps1 -Step Prepare -File "_analytics/Clusters/M18 - desire-longing/m18-group-D-reading-v1-20261009.md"
