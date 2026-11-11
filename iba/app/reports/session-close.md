@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-10T16:39:13Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-11T04:58:50Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `77a059b4-65ef-4409-8675-22c064cc23f7` (CLAUDE_CODE_SESSION_ID); started 2026-11-10T13:09:21Z; window base commit `aa52fc5d39a8ce16f60d70348d27ce3c1a59c577`
-- compliance file: `Logs/compliance/COMPLIANCE-20261110-77a059b4.md`; session log: `Logs/SESSION-LOG-20261110-phrase-attachment-and-reading-design.md`
-- **open findings: 0**; cleared by disposition: 15
+- session: `cc0cba65-5ddb-4c31-8593-ad63da24aa8f` (CLAUDE_CODE_SESSION_ID); started 2026-11-10T16:42:29Z; window base commit `66e89f84b6f06603a777c0dc76cd64d256e7d2b6`
+- compliance file: `Logs/compliance/COMPLIANCE-20261110-cc0cba65.md`; session log: `Logs/SESSION-LOG-20261110-engagement-search-and-ollama-test.md`
+- **open findings: 0**; cleared by disposition: 3
 
 
 ## Contents
@@ -41,23 +41,14 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:4617850e`: researcher message 2026-11-10T13:10 is too short to be matched; name where it is recorded: "proceed with 2437" -- disposition: recorded in #2437 v2
-- cleared `SC3:04cd98c0`: researcher message 2026-11-10T13:22 is in no escalation comment written this session: "add the detail of the md to a csv. I want to see the surface related to each phrase in particular, with all the other related data." -- disposition: no record needed: a request for a report file, answered by outputs/escalation/2437-phrase-attachment-detail-v2-20261110.csv
-- cleared `SC3:9303a93f`: researcher message 2026-11-10T13:25 is in no escalation comment written this session: "I do not see the surface in english in the csv" -- disposition: no record needed: a question about the CSV, answered by the v2 CSV (own and shared Strong's codes split) and in chat
-- cleared `SC3:f9880578`: researcher message 2026-11-10T15:49 is too short to be matched; name where it is recorded: "Approve all five" -- disposition: recorded in #2438 v3
-- cleared `SC3:bc225e63`: researcher message 2026-11-10T15:54 is too short to be matched; name where it is recorded: "Approve both" -- disposition: recorded in #2445 v3
-- cleared `SC3:73f88a9d`: researcher message 2026-11-10T15:56 is too short to be matched; name where it is recorded: "Approve closing" -- disposition: recorded in #2437 v17
-- cleared `SC3:0d92bc1d`: researcher message 2026-11-10T16:02 is too short to be matched; name where it is recorded: "Yes, confirm all" -- disposition: no record needed: carried out as 277 surface_event rows (action confirm) each quoting the instruction
-- cleared `SC3:2e14e80b`: researcher message 2026-11-10T16:13 is too short to be matched; name where it is recorded: "Approve closing" -- disposition: recorded in #2447 v4
-- cleared `SC3:e0e3da44`: researcher message 2026-11-10T16:19 is too short to be matched; name where it is recorded: "Approve all six" -- disposition: recorded in #2450 v3
-- cleared `SC3:44f21311`: researcher message 2026-11-10T16:25 is in no escalation comment written this session: "2448 approved.  2357 need you attention." -- disposition: recorded in #2357 v23
-- cleared `SC3:3428960c`: researcher message 2026-11-10T16:30 is too short to be matched; name where it is recorded: "Approve both" -- disposition: recorded in #2455 v3
-- cleared `SC3:734e7704`: researcher message 2026-11-10T16:33 is too short to be matched; name where it is recorded: "Approve as recommended" -- disposition: recorded in #2448 v7
+- cleared `SC3:08ddb9a3`: researcher message 2026-11-10T16:46 is too short to be matched; name where it is recorded: "proceed with 2412" -- disposition: recorded in #2412 v28
+- cleared `SC3:3cf76055`: researcher message 2026-11-10T17:02 is too short to be matched; name where it is recorded: "stop" -- disposition: recorded in #2412 v28
+- cleared `SC3:dd253bfc`: researcher message 2026-11-10T17:11 is too short to be matched; name where it is recorded: "do 'search' next" -- disposition: recorded in #2412 v28
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:3d10e445`: researcher message 2026-11-10T16:35 holds, defers or asks to check something; name its register item: "2448 is put on hold until 2412 is completed." -- disposition: in register #2448
+_no finding_
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -94,5 +85,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 5 times this session: [31;1mEscalation.ps1: [0m; [31;1mMove-Item: [31;1mThe process cannot access the file because it is being used by another process.[0m; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; escalation #2455 v2 -> state='re-assigned', next_action='ready_for_approval', assigned_to='Researcher' -- disposition: carried #2458
-- cleared `SC16:Collection-Build.ps1`: Collection-Build.ps1 failed 2 times this session: /usr/bin/bash: -c: line 95: unexpected EOF while looking for matching `''; for lid, sh in pl["reshare"]: -- disposition: carried #2458
+_no finding_

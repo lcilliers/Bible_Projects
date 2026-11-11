@@ -20419,3 +20419,15 @@ No config change. The cycle itself is started as BUILD 453 and rule B:125 say.
 **Tested:** on a scratch copy of `iba.db`: run 1 gave 917 phrases by an English word, 177 by an own Strong's code, 72 neither, 3134 links, 72 flags, 1094 phrases placed, 1094 events, no other link changed; run 2 added nothing (idempotent); an empty reason is refused; spot checks: `became poor` reaches become, change and rich; `anxious about` reaches care by G3309. Live run `RUN-20261110_155219_251-COLLECTIONBUILD`: the same counts, checked against the tables (3134 `phrase` links on 1094 phrases, 72 open flags). The test script was a scratch file outside the project.
 
 **Not done / left:** the Strong's route is noisy for a phrase whose codes are shared by many surfaces (for example `lift up` reaches abase, increase and uncovered-words); the reason on each link says which, so a link can be removed by the researcher. `cfg_column.use` text of `collection_link.tier` and `surface_flag.kind` does not yet name the new values (proposals pending). The `-Action` hint of the `Collection-Build` tab in `ps tools worksheet.xlsx` lists AttachPhrases (no parameter was added). The same day (#2357) the missing `Engagement` tab was added to that worksheet (`-Action`, `-Collection`, `-Batch`, `-File`, `-Check`, `-Trace`), which cleared the PS/worksheet drift finding. Engagement for phrases is not run (D4).
+
+## 481. Collection study path ruling recorded as a study-method rule (2026-11-11, escalation #2412)
+
+**Researcher's ruling (#2412, 2026-11-10, verbatim):** "Going forward each collection picked up in the study will be taken through the entire path. your role will be do prepare and present the different aspects of the synergy and analysis to me in a digestable format, recording it faithfully and complete in the database so ensure the fundamental trackability of everything. there is no path for one shot bulk analysis that will produce the result."
+
+**Built:** `iba/app/migration/archive/collection_study_path_2412_v1_20261111.py` (run `DEVMODE-2412-COLLECTION-STUDY-PATH-20261111`, through `configmaint.apply_logged`): behaviour rule B:127 `collection-taken-through-whole-path-with-researcher` (class study_method, general scope, study_active, context_delivered) and its `cfg_utility` row.
+
+**Also this session (#2412):** `iba/app/lib/engagementask.py`, prompts `engagement.triage` v1 and `engagement.triage_b` v1, and `iba/app/tools/temp_2412_triage_test.py`: an Ollama triage test, stopped at 71 of 662 questions; both prompts answered bearing for all 30 items answered by both, and the model never answered none (report `outputs/escalation/2412-engagement-ollama-triage-test-v1-20261110.md`). Idle, not registered in cfg, no USER-GUIDE entry; the researcher ruled against a bulk Ollama route.
+
+**Tested:** the migration dry run listed 3 writes and the live run applied 3; not tested beyond that.
+
+**Not done / left:** #2460 (what engagement stores per verse) is open with the researcher; the engagementask module, its two prompts and the test tool have no cfg registration or USER-GUIDE entry and may be retired.
