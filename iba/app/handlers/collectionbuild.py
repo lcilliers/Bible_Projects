@@ -149,7 +149,7 @@ def export_surfaces(ctx: Ctx) -> Outcome:
 def evidence(ctx: Ctx) -> Outcome:
     """The evidence report (#2464, #2467, lib/collectionevidence.py) of one collection or a comma list (-Collection), or of a verse or list of verses (-Verse, items
     separated by a semicolon): the stored entries from the base data through the observations and the claims into the narrative, as a Markdown file and a CSV under
-    collection.evidence_path, versioned by the filing rule (the previous live versions archived). The layout is by word (or verse) then by type; -ByType gives one
+    surfaces.exports_root (the folder of the collection exports and of the results of surface analysis, #2361), versioned by the filing rule (the previous live versions archived). The layout is by word (or verse) then by type; -ByType gives one
     section for each type. Read-only on the tables; -Check builds the report and writes no file."""
     import datetime
     from ..lib import collectionevidence as ev

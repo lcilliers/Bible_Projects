@@ -31,7 +31,7 @@ Developer Mode session opened on #2463 (collection search analysis). Built the c
 - Docs: `iba/app/BUILD.md` (sections 482 to 487), `iba/app/USER-GUIDE.md` (8.14 and the SC4 and SC16 rows), `iba/docs/ps tools worksheet.xlsx` (Collection-Build tab).
 - Migrations (config writes through apply_logged, all in `iba/app/migration/archive/`): `collection_evidence_2464_v1_20261111.py`, `collection_evidence_verse_2467_v1_20261111.py`, `collection_evidence_strongs_2469_v1_20261111.py`, `cfg_cleanup_2465_v1_20261111.py`, `cfg_sc4a_own_log_2462_v1_20261111.py`, `cfg_sc16_hook_refusal_2458_v1_20261111.py`.
 - Retired to archive: `iba/app/lib/archive/engagementask.py`, `iba/app/tools/archive/temp_2412_triage_test.py`.
-- Reports: `outputs/reports/collection-evidence/` (evidence reports and CSVs of discord, console, search by type, and a verse list in both layouts).
+- Reports: `_analytics/surfaces/exports/` (evidence reports and CSVs of discord, console, search by type, and a verse list in both layouts).
 - Plans and findings: `outputs/escalation/2464-collection-evidence-report-plan-v1-20261111.md`, `outputs/escalation/2467-evidence-report-by-verse-plan-v1-20261111.md`, `outputs/escalation/2469-evidence-report-nodes-in-context-strongs-plan-v1-20261111.md`, `outputs/escalation/2457-stored-verse-counts-vs-step-findings-v1-20261111.md`, `outputs/escalation/2458-sc16-false-failures-findings-and-design-v1-20261111.md`, `outputs/escalation/2462-sc4a-other-sessions-logs-findings-and-design-v1-20261111.md`, `outputs/escalation/2460-engagement-reason-and-test-per-verse-plan-v1-20261111.md`.
 - `Logs/compliance/COMPLIANCE-20261111-8ca87189.md` and the session-close reports in `iba/app/reports/`.
 

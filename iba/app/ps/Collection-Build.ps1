@@ -17,7 +17,7 @@
                 the previous live version is moved to the archive folder (#2413).
       Evidence  -Collection <name>[,<name>...] | -Verse "<references>"  [-ByType] [-Check]   the entries stored for every aspect of the members of one or more
                 collections, or of the words of a verse or list of verses, from the base data through the observations and claims into the narrative, as a Markdown
-                file and a CSV under cfg_setting collection.evidence_path; no evaluation, nothing inferred, nothing written to a table; blatant errors and omissions
+                file and a CSV under cfg_setting surfaces.exports_root (the folder of the other collection exports); no evaluation, nothing inferred, nothing written to a table; blatant errors and omissions
                 are listed apart (#2464, #2467). Layout: by word (or verse) then by type; -ByType gives one section for each type. Verses are in Scripture order.
                 References: Book chapter:verse (Pro 6:14), a range (Pro 6:14-16, Pro 6:30-7:2), a whole chapter (Pro 6), a list of one book (Pro 6:14, 16);
                 each item starts with its book, as the verse table writes it (Mat, 1Sa, Phili) or an alias (Matthew, 1Sam, Ps); items are separated by a

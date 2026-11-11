@@ -45,7 +45,7 @@ class EvidenceError(Exception):
 
 def read_settings(cfg) -> dict:
     out = {}
-    for key, name in (("collection.export_tiers", "tiers"), ("collection.evidence_path", "path"), ("collection.evidence_name", "name"),
+    for key, name in (("collection.export_tiers", "tiers"), ("surfaces.exports_root", "path"), ("collection.evidence_name", "name"),
                       ("collection.evidence_verse_name", "verse_name")):
         out[name] = cfg.setting(key)
         if not out[name]:
