@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-11T14:31:57Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-11T17:21:05Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `ec78b300-661e-4b1f-9b90-33ec44710796` (CLAUDE_CODE_SESSION_ID); started 2026-11-11T12:53:08Z; window base commit `395d0aafea10ab0694a873517f70f097911061b8`
-- compliance file: `Logs/compliance/COMPLIANCE-20261111-ec78b300.md`; session log: `Logs/SESSION-LOG-20261111-collection-evidence-workbook-and-phrase-members.md`
-- **open findings: 0**; cleared by disposition: 3
+- session: `bb3e2920-7092-4b98-97eb-75ce272429a2` (CLAUDE_CODE_SESSION_ID); started 2026-11-11T05:04:54Z; window base commit `9a201697aa932ea76e049935b4cced2382ad7f4f`
+- compliance file: `Logs/compliance/COMPLIANCE-20261111-bb3e2920.md`; session log: `Logs/SESSION-LOG-20261111-collection-search-analysis-2463.md`
+- **open findings: 0**; cleared by disposition: 6
 
 
 ## Contents
@@ -41,14 +41,12 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:b345dc9a`: researcher message 2026-11-11T13:04 is too short to be matched; name where it is recorded: "Approved, build" -- disposition: recorded in #2477 v4
-- cleared `SC3:cfe8a317`: researcher message 2026-11-11T14:06 is too short to be matched; name where it is recorded: "Approved, build" -- disposition: recorded in #2479 v5
-- cleared `SC3:0590846c`: researcher message 2026-11-11T14:29 is too short to be matched; name where it is recorded: "Accept, keep linked" -- disposition: recorded in #2479 v7
+- cleared `SC3:f902a4b1`: researcher message 2026-11-11T05:04 is too short to be matched; name where it is recorded: "start-session" -- disposition: no record needed: the bare start-project command
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-_no finding_
+- cleared `SC4b:b25fedfc`: researcher message 2026-11-11T11:23 holds, defers or asks to check something; name its register item: "did you check escalation 2464" -- disposition: not held: a question answered the same turn by reading the history of #2464 (outputs/escalation/2464-escalation-history-v2-20261111.md); recorded in #2463 v8
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -75,7 +73,10 @@ _no finding_
 <a id="sc10-buildmd-coverage"></a>
 ## SC10 BUILD.md coverage
 
-_no finding_
+- cleared `SC10:iba/app/ps/Node-Resolve.ps1`: `iba/app/ps/Node-Resolve.ps1` changed this session and is not named in what BUILD.md gained this session -- disposition: carried #2483
+- cleared `SC10:iba/app/ps/Prior-Capture.ps1`: `iba/app/ps/Prior-Capture.ps1` changed this session and is not named in what BUILD.md gained this session -- disposition: carried #2483
+- cleared `SC10:iba/app/ps/Surface-Map.ps1`: `iba/app/ps/Surface-Map.ps1` changed this session and is not named in what BUILD.md gained this session -- disposition: carried #2483
+- cleared `SC10:iba/app/ps/Verse-Scope.ps1`: `iba/app/ps/Verse-Scope.ps1` changed this session and is not named in what BUILD.md gained this session -- disposition: carried #2483
 
 <a id="sc12-publish"></a>
 ## SC12 Publish
