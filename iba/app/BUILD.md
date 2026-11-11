@@ -20531,3 +20531,13 @@ A second migration `iba/app/migration/archive/cfg_analytic_home_2475_v2_20261111
 **Tested:** `Engagement.ps1 -Action Check` wrote its report to `_analytics/surfaces/exports/`; `Reading-Index.ps1 -Step Report` to `_analytics/reading-tools/reading-index/`; `Verse-Scope.ps1` to `_analytics/reading-tools/verse-scope/` (the test file was removed); `Config-Maintenance.ps1 -Step Validate`; `Manifest-Rebuild.ps1`. Not run: `Surface-Map.ps1`, `Node-Resolve.ps1`, `Prior-Capture.ps1` and `Open-Item.ps1` (they need their inputs; each reads its folder from its setting, which resolves to an existing folder).
 
 **Not done / left:** the 600 `folder_purpose` rows of `_analytics` marked `deleted` by Seed are old lower-case duplicates of 2026-08-28 (not from this change). Earlier BUILD sections name the old folders as written then (rule B:96).
+
+## 490. Rule B:128 points to the existing per-cluster output rule (2026-11-11, escalation #2475)
+
+**Researcher's question (2026-11-11, verbatim):** 'I am intrigued that you had to create a new config, i thought there is already a config in place for this rule'.
+
+**Found:** a rule for per-cluster output already existed: `cfg_setting` `report.cluster_folder_naming_convention` (#2328: all output relating to a cluster is filed in its folder under `_analytics/Clusters`, 'so cluster work never drifts into outputs/ or research/'), with `cfg_control_home` kind `study_output` naming `_analytics/` as the home of the study's files; and `governance.oneoff_report_dir` (`outputs/`) is the default of `reportkit.oneoff_path` for one-off reports. No rule covered the analytic output that is not per cluster, which is why eight tools wrote under `outputs/`. B:128 was added without a search of the whole rule corpus (rule B:104) and without pointing to that setting: a slip of mine.
+
+**Done:** the text of B:128 now says that output relating to one cluster stays in its cluster folder as the existing setting says, that B:128 covers the analytic output that is not per cluster, and that `governance.oneoff_report_dir` is the default for operational and escalation-tied one-off reports (migration `iba/app/migration/archive/cfg_analytic_home_2475_v3_20261111.py`, run `DEVMODE-2475-ANALYTIC-HOME-V3-20261111`, through `apply_logged`, snapshot kept).
+
+**Left for the researcher's decision:** `Surface-Map.ps1` writes files per cluster (`m01-pairs-...`), which the existing per-cluster rule would place in each cluster's folder; they now sit in `_analytics/surfaces/exports/surface-map/` (one folder for the tool, #2293). Moving them to the cluster folders needs a `{cluster_folder}` template in `cluster.surface_map.output_dir` and code, as `reading.output_dir` has.
