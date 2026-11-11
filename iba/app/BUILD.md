@@ -20541,3 +20541,33 @@ A second migration `iba/app/migration/archive/cfg_analytic_home_2475_v2_20261111
 **Done:** the text of B:128 now says that output relating to one cluster stays in its cluster folder as the existing setting says, that B:128 covers the analytic output that is not per cluster, and that `governance.oneoff_report_dir` is the default for operational and escalation-tied one-off reports (migration `iba/app/migration/archive/cfg_analytic_home_2475_v3_20261111.py`, run `DEVMODE-2475-ANALYTIC-HOME-V3-20261111`, through `apply_logged`, snapshot kept).
 
 **Left for the researcher's decision:** `Surface-Map.ps1` writes files per cluster (`m01-pairs-...`), which the existing per-cluster rule would place in each cluster's folder; they now sit in `_analytics/surfaces/exports/surface-map/` (one folder for the tool, #2293). Moving them to the cluster folders needs a `{cluster_folder}` template in `cluster.surface_map.output_dir` and code, as `reading.output_dir` has.
+
+
+## 491. Collection evidence report: a reading and an Excel workbook (2026-11-11, escalation #2477)
+
+**Researcher's instruction (2026-11-11, verbatim):** 'I want a report that is intelligent. change the csv format to excel, so you can provide each separate listing as a separate sheet. the md should fix all the problems you identified and ensure that the collection data extract is properly built up and not just long lists of data that have no connection with what it is listed for.' Plan approved ('Approved, build') from `outputs/escalation/2477-evidence-report-plan.md`.
+
+**Built:** `iba/app/lib/collectionevidencereport.py` (new) writes the Markdown report and the workbook from the data `iba/app/lib/collectionevidence.py` builds; `iba/app/handlers/collectionbuild.py` `evidence` writes `.md` and `.xlsx` and archives the previous live `.md`, `.xlsx` and `.csv`; `iba/app/ps/Collection-Build.ps1` no longer has `-ByType`. The Markdown is built up: collection at a glance, the Strong's codes behind the members (own occurrences apart from `surface_kind` shared ones), what the study recorded (engagement, other observations, catalogue counted, withdrawn counted with reason), claims (by observation apart from by verse only), phrases, faults as tables, sources. The workbook has 20 sheets, one for each listing. Faults in `collectionevidence.py` now carry the columns that identify each finding, and phrases are built into the data. The CSV writer and the by-type layout are removed.
+
+**Config (migration `iba/app/migration/archive/collection_evidence_report_2477_v1_20261111.py`, run `DEVMODE-2477-COLLECTION-EVIDENCE-REPORT-20261111`, through `apply_logged`, snapshot kept):** settings `collection.evidence_catalogue_stages` and `collection.evidence_text_chars`; `cfg_step` `collection.evidence` description; `cfg_utility` `collectionevidencereport` and the migration; the purpose of `collectionevidence`.
+
+**Result on `search`:** Markdown 1,935 lines, 300 KB (the earlier report: 38,195 lines, 3.6 MB); workbook 20 sheets, 11,307 rows. **Tested:** `iba/app/tools/temp_2477_evidence_report_test_run.py`, 18 of 18 cases pass against direct table queries (results in the escalation resolution).
+
+**Documents:** USER-GUIDE.md (Collection-Build Evidence), the help text of `Collection-Build.ps1`.
+
+
+## 492. Phrases are members of their collections, with engagement (2026-11-11, escalation #2479)
+
+**Researcher's decision (2026-11-11, verbatim):** 'the should be members, if the verses for the phrase and not the same verses as another member already included. Also, phrases that is not a repeat of another member, should have its own observations and should be covered by engagement process.' Plan approved ('Approved, build') from `outputs/escalation/2479-phrases-as-members-plan.md`.
+
+**Reading of the rule:** a phrase is a repeat of a member only when one of its `verse_lexical` rows is already a member row. For `search` none is (21 phrases, 45 rows in 42 verses; no phrase surface equals a member surface); three phrases (4 rows) share verses with a member word but are different words with their own codes and are kept.
+
+**Built:** a new setting `collection.member_tiers` (core, synonym, opposite, gathered, phrase), read by `lib/collectionexport.py`, `lib/collectionevidence.py` and `lib/engagement.py`; `collection.export_tiers` keeps the word tiers that `attach_phrases` matches a phrase against (so a phrase is never matched against phrases). `Engagement.ps1 -Action Pull -Missing` (`iba/app/ps/Engagement.ps1`, handler `iba/app/handlers/engagement.py` step `engagement.pull`, `lib/engagement.py` `pull(missing=True)`) pulls only the items with no live engagement observation and refuses when there are none. The evidence report counts the phrases as members and occurrences. The worksheet `iba/docs/ps tools worksheet.xlsx` has the `-Missing` column on the Engagement tab.
+
+**Config (migration `iba/app/migration/archive/phrase_members_2479_v1_20261111.py`, run `DEVMODE-2479-PHRASE-MEMBERS-20261111`, through `apply_logged`, snapshot kept):** `collection.member_tiers`; the `use` text of `collection.export_tiers`; the description of `cfg_step` `engagement.pull`; the migration in `cfg_utility`.
+
+**Engagement of the phrases of `search`:** `Pull -Missing` gave 45 items of 21 surfaces; the assessment (30 observations, 45 nodes: 21 relevant, 13 bears on, 11 no bearing) was checked and recorded with `Record`, and `Group` set 21 groups (six phrases, 'come upon', 'find compassion', 'more handsome', 'searched for', 'searching for' and 'sought for', now have the group other, which the rule reports; their links are not changed, R4). Every assessment is inferential until the researcher confirms it (B:4).
+
+**Tested:** `iba/app/tools/temp_2479_phrase_members_test_run.py`, 10 of 10 cases pass; `temp_2477_evidence_report_test_run.py` still 18 of 18. Config validation: no new findings.
+
+**Left:** the other 37 collections already through engagement have their phrase rows unassessed (4,309 collection-and-row pairs, 1,862 distinct verse rows of 447 phrases); one item, #2481, holds it.

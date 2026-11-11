@@ -3,7 +3,7 @@
 Both are views of tables (never an input). Every row is one surface of a base, in one verse of verse_lexical, under one cluster of its Strong's
 code, with the collection it belongs to if any:
 
-  members-verses   the surfaces of the members of the collections (tiers of `collection.export_tiers`), with the verse text.
+  members-verses   the surfaces of the members of the collections (tiers of `collection.member_tiers`), with the verse text.
   surfaces         every surface of the groups of `surfaces.export_groups` (and the surfaces not yet grouped), with the collection and tier of
                    each membership it has (blank when none), without the verse text.
 
@@ -35,7 +35,7 @@ class ExportError(Exception):
 
 def read_settings(cfg) -> dict:
     out = {}
-    for key, name in (("collection.export_tiers", "tiers"), ("surfaces.export_groups", "groups"), ("surfaces.exports_root", "root")):
+    for key, name in (("collection.member_tiers", "tiers"), ("surfaces.export_groups", "groups"), ("surfaces.exports_root", "root")):
         out[name] = cfg.setting(key)
         if not out[name]:
             raise ExportError(f"cfg_setting {key} is missing")

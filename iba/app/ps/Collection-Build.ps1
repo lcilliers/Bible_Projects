@@ -15,10 +15,11 @@
       ExportSurfaces  a CSV of the surfaces of the behaviour and inner-being-state groups, one row for each verse and cluster, with the collection and tier (the #2379 surfaces view)
                 The three exports take no name: the file name is cfg_setting collection.export_names and the version is the next one by the filing rule;
                 the previous live version is moved to the archive folder (#2413).
-      Evidence  -Collection <name>[,<name>...] | -Verse "<references>"  [-ByType] [-Check]   the entries stored for every aspect of the members of one or more
+      Evidence  -Collection <name>[,<name>...] | -Verse "<references>"  [-Check]   the entries stored for every aspect of the members of one or more
                 collections, or of the words of a verse or list of verses, from the base data through the observations and claims into the narrative, as a Markdown
-                file and a CSV under cfg_setting surfaces.exports_root (the folder of the other collection exports); no evaluation, nothing inferred, nothing written to a table; blatant errors and omissions
-                are listed apart (#2464, #2467). Layout: by word (or verse) then by type; -ByType gives one section for each type. Verses are in Scripture order.
+                report (the reading: the Strong's codes behind the members, what the study recorded for them, the claims, the phrases, the faults) and an Excel workbook (every listing
+                in full, one sheet each) under cfg_setting surfaces.exports_root (the folder of the other collection exports); no evaluation, nothing inferred, nothing written to a table
+                (#2464, #2467, #2477). Verses are in Scripture order.
                 References: Book chapter:verse (Pro 6:14), a range (Pro 6:14-16, Pro 6:30-7:2), a whole chapter (Pro 6), a list of one book (Pro 6:14, 16);
                 each item starts with its book, as the verse table writes it (Mat, 1Sa, Phili) or an alias (Matthew, 1Sam, Ps); items are separated by a
                 semicolon, the whole in quotes: -Verse "Pro 6:14-16; Mat 11:29; 1Sa 24:5"
@@ -56,7 +57,6 @@ param(
     [string] $From,
     [string] $Into,
     [switch] $Check,
-    [switch] $ByType,
     [switch] $Trace
 )
 
@@ -78,7 +78,6 @@ foreach ($p in @('Collection', 'Verse', 'Word', 'Name', 'Surface', 'Limit', 'Sta
     if ($PSBoundParameters.ContainsKey($p)) { $paramArgs += @('--param', "$p=$($PSBoundParameters[$p] -join ',')") }
 }
 if ($Check) { $paramArgs += @('--param', 'Check=true') }
-if ($ByType) { $paramArgs += @('--param', 'ByType=true') }
 
 Write-IbaRunHeader -WorkPackage 'collection-build' -Step $stepId -RunId $runId
 $json = python -m iba.app.run collection-build --step $stepId --run-id $runId @paramArgs

@@ -1,6 +1,6 @@
 # Project file manifest — rebuild summary
 
-> Generated 2026-11-11T11:43:42Z. Rescans the WHOLE project tree from the repo root (VCS/build/cache machinery excluded, per `manifest.skip_dirs`) — filename/path metadata only, no file content read. This is the baseline the content-search index (round 2) cross-checks coverage against.
+> Generated 2026-11-11T14:25:40Z. Rescans the WHOLE project tree from the repo root (VCS/build/cache machinery excluded, per `manifest.skip_dirs`) — filename/path metadata only, no file content read. This is the baseline the content-search index (round 2) cross-checks coverage against.
 
 ## Contents
 
@@ -11,25 +11,25 @@
 <a id="summary"></a>
 ## Summary
 
-- **27450** files indexed — 8923 active, 18527 archived
+- **27486** files indexed — 8934 active, 18552 archived
 
 <a id="by-category"></a>
 ## By category
 
 | category | count |
 | --- | --- |
-| report | 12001 |
+| report | 12026 |
 | workflow | 8049 |
-| iba | 1938 |
+| iba | 1946 |
 | script | 1100 |
 | import | 1036 |
 | session | 1003 |
-| log | 809 |
+| log | 810 |
 | investigation | 434 |
 | patch | 393 |
 | doc | 321 |
 | other | 171 |
-| discovery | 134 |
+| discovery | 136 |
 | backup | 23 |
 | code | 16 |
 | export | 12 |
@@ -40,8 +40,8 @@
 
 | currency | count |
 | --- | --- |
-| archived | 18527 |
-| current | 8303 |
-| historical | 579 |
+| archived | 18552 |
+| current | 8313 |
+| historical | 580 |
 | backup | 23 |
 | other | 18 |

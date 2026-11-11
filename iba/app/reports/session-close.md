@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-11T11:23:41Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-11T14:31:57Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `8ca87189-3e9b-46d2-9a09-37aaa09ed647` (CLAUDE_CODE_SESSION_ID); started 2026-11-11T05:28:21Z; window base commit `72fa544feff3ff8d91b1f93fe39fa15206e769d9`
-- compliance file: `Logs/compliance/COMPLIANCE-20261111-8ca87189.md`; session log: `Logs/SESSION-LOG-20261111-collection-evidence-report-and-app-fixes.md`
-- **open findings: 0**; cleared by disposition: 12
+- session: `ec78b300-661e-4b1f-9b90-33ec44710796` (CLAUDE_CODE_SESSION_ID); started 2026-11-11T12:53:08Z; window base commit `395d0aafea10ab0694a873517f70f097911061b8`
+- compliance file: `Logs/compliance/COMPLIANCE-20261111-ec78b300.md`; session log: `Logs/SESSION-LOG-20261111-collection-evidence-workbook-and-phrase-members.md`
+- **open findings: 0**; cleared by disposition: 3
 
 
 ## Contents
@@ -41,17 +41,9 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:45ecb300`: researcher message 2026-11-11T05:37 is too short to be matched; name where it is recorded: "Build #2464" -- disposition: recorded in #2464 v2
-- cleared `SC3:6070b3ea`: researcher message 2026-11-11T05:38 is too short to be matched; name where it is recorded: "Approve, build it" -- disposition: recorded in #2464 v2
-- cleared `SC3:c52b0a59`: researcher message 2026-11-11T05:50 is too short to be matched; name where it is recorded: "Approve, close it" -- disposition: recorded in #2464 v4
-- cleared `SC3:d05e2509`: researcher message 2026-11-11T06:08 is in no escalation comment written this session: "the report must be organised by verse, and consecutively by Scripture chapter and verse" -- disposition: no record needed: quoted verbatim in iba/app/BUILD.md section 483 and in outputs/escalation/2467-evidence-report-by-verse-plan-v1-20261111.md
-- cleared `SC3:d591b07f`: researcher message 2026-11-11T06:12 is in no escalation comment written this session: "I looked through the collection by word report.  I think the report must have two types of ordering : by type of extraction (e.g. verse-lexical, claims etc) or " -- disposition: no record needed: quoted verbatim in iba/app/BUILD.md section 483 and in outputs/escalation/2467-evidence-report-by-verse-plan-v1-20261111.md
-- cleared `SC3:efff5fac`: researcher message 2026-11-11T06:12 is in no escalation comment written this session: "also you can build the by verse report" -- disposition: no record needed: quoted verbatim in iba/app/BUILD.md section 483 (the approval to build the verse report)
-- cleared `SC3:a1d593d1`: researcher message 2026-11-11T09:50 is too short to be matched; name where it is recorded: "Approve, build it" -- disposition: no record needed: the approval of the #2469 plan, quoted in iba/app/BUILD.md section 484 and #2469 v4
-- cleared `SC3:f83b645b`: researcher message 2026-11-11T09:58 is too short to be matched; name where it is recorded: "Approve, close it" -- disposition: recorded in #2469 v4
-- cleared `SC3:7613eb46`: researcher message 2026-11-11T10:01 is too short to be matched; name where it is recorded: "cleanup 2465" -- disposition: recorded in #2465 v2
-- cleared `SC3:43ca9818`: researcher message 2026-11-11T11:03 is too short to be matched; name where it is recorded: "Approve, close it" -- disposition: recorded in #2458 v6
-- cleared `SC3:f9fcd3b7`: researcher message 2026-11-11T11:13 is in no escalation comment written this session: "all approved, 2460 ready for your action." -- disposition: no record needed: the approvals it states are the Researcher's own versions #2457 v4, #2456 v4, #2387 v4 and #2460 v5
+- cleared `SC3:b345dc9a`: researcher message 2026-11-11T13:04 is too short to be matched; name where it is recorded: "Approved, build" -- disposition: recorded in #2477 v4
+- cleared `SC3:cfe8a317`: researcher message 2026-11-11T14:06 is too short to be matched; name where it is recorded: "Approved, build" -- disposition: recorded in #2479 v5
+- cleared `SC3:0590846c`: researcher message 2026-11-11T14:29 is too short to be matched; name where it is recorded: "Accept, keep linked" -- disposition: recorded in #2479 v7
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -93,4 +85,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: work package : configuration-maintenance -- disposition: fixed: the two failing runs reported real findings (4 coherence errors, then 3), cleared by iba/app/migration/archive/cfg_cleanup_2465_v1_20261111.py under #2465; later Validate runs exit 0
+_no finding_

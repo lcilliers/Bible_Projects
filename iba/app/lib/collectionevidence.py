@@ -1,11 +1,11 @@
-"""collectionevidence.py -- the evidence report of one collection, a list of collections, or a verse or list of verses (escalations #2464, #2467).
+"""collectionevidence.py -- the evidence data of one collection, a list of collections, or a verse or list of verses (escalations #2464, #2467, #2477).
 
 It exposes the entries that exist in the database for every aspect of the words and verses in scope, from the base data through the observations and
 the claims into the narrative, and nothing else: no evaluation, no inferred data, no model call, nothing written to a table. Every row is a join
 on a stored key. Where a link in the chain has no row, the report says so (an omission shown, not judged); blatant errors are listed apart under
 "stored-data faults", each with the rule that found it.
 
-Scope. A collection: its members are those of the CSV exports (collectionexport.py): a live link of a tier in `collection.export_tiers` reaches its own
+Scope. A collection: its members are those of the CSV exports (collectionexport.py): a live link of a tier in `collection.member_tiers` reaches its own
 term and the terms whose base is that term; their occurrences are the live verse_lexical rows whose surface (lower-cased, trimmed, the key surface_term
 uses) is a member surface. Links of the other tiers are listed with their reason and do not reach verses here. A verse list: every live verse_lexical
 row of each verse (all words), with the collections and tiers each surface belongs to by any live link.
@@ -19,9 +19,8 @@ The chain from the occurrences: the observations are the ib_node rows whose vers
 narrative_claim_source rows that name one of those observations (observation_id) or one of those verses (verse_id); the narrative is the
 narrative_claim_telling of those claims, with its section and chapter.
 
-Order. Verses are in Scripture order: book in cfg_book_order, then chapter, then verse (the key of `scripture_key`). Two layouts of the same rows:
-by unit then by type (the default: a collection report has a section for each member word, a verse report one for each verse) and by type
-(`by_type`: one section for each type across the whole scope).
+Order. Verses are in Scripture order: book in cfg_book_order, then chapter, then verse (the key of `scripture_key`). The Markdown report and the Excel workbook
+are written from this data by lib/collectionevidencereport.py (#2477).
 """
 from __future__ import annotations
 
@@ -45,8 +44,9 @@ class EvidenceError(Exception):
 
 def read_settings(cfg) -> dict:
     out = {}
-    for key, name in (("collection.export_tiers", "tiers"), ("surfaces.exports_root", "path"), ("collection.evidence_name", "name"),
-                      ("collection.evidence_verse_name", "verse_name")):
+    for key, name in (("collection.member_tiers", "tiers"), ("surfaces.exports_root", "path"), ("collection.evidence_name", "name"),
+                      ("collection.evidence_verse_name", "verse_name"), ("collection.evidence_catalogue_stages", "catalogue_stages"),
+                      ("collection.evidence_text_chars", "text_chars"), ("engagement.stage", "engagement_stage")):
         out[name] = cfg.setting(key)
         if not out[name]:
             raise EvidenceError(f"cfg_setting {key} is missing")
@@ -143,8 +143,24 @@ def build_collection(conn, col: dict, tiers: list, order: Order) -> dict:
     occ.sort(key=lambda o: (o["surface"], o["sk"], o["position"] if o["position"] is not None else 0, o["code_ordinal"] or 0, o["vl_id"]))
     d["occurrences"] = occ
     _chain(conn, d, order)
+    d["phrases"] = _phrases(conn, d)
     d["faults"] = _faults(conn, d, surfaces=surfaces)
     return d
+
+
+def _phrases(conn, d: dict) -> list[dict]:
+    """The live links of tier phrase (attached by the route of their reason, not members): each phrase with its route and the live observation nodes that carry its words."""
+    out = []
+    for ln in d["links"]:
+        if ln["deleted"] or ln["tier"] != "phrase":
+            continue
+        route = re.split(r"\s+\(Researcher", ln["reason"] or "", maxsplit=1)[0]
+        n = conn.execute("SELECT count(*), count(DISTINCT n.observation_id) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id "
+                         "WHERE n.deleted=0 AND o.deleted=0 AND lower(trim(n.surface))=?", ((ln["surface"] or "").strip().lower(),)).fetchone()
+        out.append({"link": ln["id"], "term_id": ln["term_id"], "phrase": ln["surface"], "route": route, "nodes": n[0], "observations": n[1], "run": ln["run_id"],
+                    "by": ln["created_by"], "created": ln["created_at"]})
+    out.sort(key=lambda p: (p["phrase"] or "", p["link"]))
+    return out
 
 
 # ══ scope: verses ════════════════════════════════════════════════════════════════════════════════
@@ -200,6 +216,7 @@ def build_verses(conn, verses: list[dict], order: Order) -> dict:
     occ.sort(key=lambda o: (o["sk"], o["position"] if o["position"] is not None else 0, o["code_ordinal"] or 0, o["vl_id"]))
     d["occurrences"] = occ
     _chain(conn, d, order)
+    d["phrases"] = []
     d["faults"] = _faults(conn, d, surfaces=None)
     return d
 
@@ -336,17 +353,18 @@ def _strongs(conn, d: dict, full: set, every: set) -> None:
     d["strongs"] = e
 
 def _faults(conn, d: dict, surfaces) -> list[dict]:
-    """Blatant errors and omissions: each rule, in words, with the rows it found (an empty list is 'none found'). A rule that needs a collection is
-    applied only to a collection report."""
+    """Blatant errors and omissions: each rule in words, with the columns that identify a finding and the rows it found (an empty list is 'none found'). A rule that
+    needs a collection is applied only to a collection report."""
     out = []
 
-    def add(key, how, rows):
-        out.append({"key": key, "how": how, "rows": rows})
+    def add(key, how, cols, rows):
+        out.append({"key": key, "how": how, "cols": cols, "rows": rows})
+    ref_of = {osis: v[0] for osis, v in d["verse_text"].items()}
     if d["kind"] == "collection":
         col = d["collection"]
         terms, _ = _terms(conn)
-        add("link-to-missing-or-deleted-term", "live collection_link of this collection whose term_id has no live surface_term row",
-            [f"link {ln['id']} ({ln['tier']}) term_id {ln['term_id']} surface {ln['surface']!r}" for ln in d["links"]
+        add("link-to-missing-or-deleted-term", "live collection_link of this collection whose term_id has no live surface_term row", ["link", "tier", "term_id", "word"],
+            [[ln["id"], ln["tier"], ln["term_id"], ln["surface"]] for ln in d["links"]
              if not ln["deleted"] and (ln["term_id"] not in terms or terms[ln["term_id"]][10])])
         bad = []
         mid = col["merged_into_id"]
@@ -356,336 +374,34 @@ def _faults(conn, d: dict, surfaces) -> list[dict]:
             bad.append(f"merged_into_id {mid} with status {col['status']}")
         if mid and conn.execute("SELECT 1 FROM collection WHERE id=? AND deleted=0", (mid,)).fetchone() is None:
             bad.append(f"merged_into_id {mid} is not a live collection")
-        add("collection-merge-inconsistent", "collection.status and collection.merged_into_id disagree, or the target is not live", bad)
+        add("collection-merge-inconsistent", "collection.status and collection.merged_into_id disagree, or the target is not live", ["problem"], [[b] for b in bad])
         have = {o["surface"] for o in d["occurrences"]}
-        add("member-surface-with-no-occurrence", "member term of origin 'surface' that no live verse_lexical row carries",
-            [f"term {t['term_id']} {t['surface']!r} ({t['tiers']})" for t in d["terms"] if t["origin"] == "surface" and t["surface"] not in have])
+        add("member-surface-with-no-occurrence", "member term of origin 'surface' that no live verse_lexical row carries", ["term_id", "word", "tiers"],
+            [[t["term_id"], t["surface"], t["tiers"]] for t in d["terms"] if t["origin"] == "surface" and t["surface"] not in have])
     else:
-        add("verse-not-in-use", "requested verse whose verse row is soft deleted",
-            [f"{v['reference']} (verse id {v['verse_id']})" for v in d["verses"] if v["deleted"]])
+        add("verse-not-in-use", "requested verse whose verse row is soft deleted", ["verse", "verse_id"],
+            [[v["reference"], v["verse_id"]] for v in d["verses"] if v["deleted"]])
         have = {o["verse_id"] for o in d["occurrences"]}
-        add("verse-with-no-word-rows", "requested verse that no live verse_lexical row carries",
-            [f"{v['reference']} (verse id {v['verse_id']})" for v in d["verses"] if v["verse_id"] not in have])
-    add("occurrence-in-deleted-verse", "occurrence whose verse row is soft deleted",
-        [f"vl {o['vl_id']} {o['reference']}" for o in d["occurrences"] if o["verse_deleted"]])
+        add("verse-with-no-word-rows", "requested verse that no live verse_lexical row carries", ["verse", "verse_id"],
+            [[v["reference"], v["verse_id"]] for v in d["verses"] if v["verse_id"] not in have])
+    add("occurrence-in-deleted-verse", "occurrence whose verse row is soft deleted", ["vl_id", "reference"],
+        [[o["vl_id"], o["reference"]] for o in d["occurrences"] if o["verse_deleted"]])
     obs = {o["id"]: o for o in d["observations"]}
-    add("live-node-on-deleted-observation", "ib_node with deleted=0 whose observation is deleted or missing",
-        [f"node {n['id']} on observation {n['observation_id']}" for n in d["nodes"] if not n["deleted"] and (n["observation_id"] not in obs or obs[n["observation_id"]]["deleted"])])
-    add("claim-source-on-deleted-observation", "narrative_claim_source naming an observation that is deleted or missing",
-        [f"source {s['id']} claim {s['claim_id']} observation {s['observation_id']}" for s in d["claim_sources"]
+    add("live-node-on-deleted-observation", "ib_node with deleted=0 whose observation is deleted or missing (the node still names a verse and word the observation no longer covers)",
+        ["node", "observation", "observation stage", "observation tag", "observation status", "verse", "word", "Strong's code"],
+        [[n["id"], n["observation_id"], obs.get(n["observation_id"], {}).get("stage", ""), obs.get(n["observation_id"], {}).get("tag", ""),
+          obs.get(n["observation_id"], {}).get("status", "missing"), ref_of.get(n["verse_reference"], n["verse_reference"]), n["surface"], n["strong"]]
+         for n in d["nodes"] if not n["deleted"] and (n["observation_id"] not in obs or obs[n["observation_id"]]["deleted"])])
+    add("claim-source-on-deleted-observation", "narrative_claim_source naming an observation that is deleted or missing", ["source", "claim", "observation"],
+        [[s["id"], s["claim_id"], s["observation_id"]] for s in d["claim_sources"]
          if s["via"] == "observation" and (s["observation_id"] not in obs or obs[s["observation_id"]]["deleted"])])
     told = {t["claim_id"] for t in d["tellings"] if t["status"] == "current"}
-    add("claim-in-narrative-with-no-current-telling", "narrative_claim.in_narrative=1 and no current narrative_claim_telling",
-        [f"claim {c['claim_ref']} (id {c['id']})" for c in d["claims"] if c["in_narrative"] and c["id"] not in told])
+    add("claim-in-narrative-with-no-current-telling", "narrative_claim.in_narrative=1 and no current narrative_claim_telling", ["claim", "claim id"],
+        [[c["claim_ref"], c["id"]] for c in d["claims"] if c["in_narrative"] and c["id"] not in told])
     refs = {o["osis"] for o in d["occurrences"]}
-    unlinked = [f"node {r[0]} observation {r[1]} {r[2]} surface {r[3]!r}" for r in conn.execute(
-        "SELECT id, observation_id, verse_reference, lower(trim(surface)) FROM ib_node WHERE verse_lexical_id IS NULL AND deleted=0")
-        if r[2] in refs and (surfaces is None or r[3] in surfaces)]
     add("live-node-with-no-verse-lexical-id", "live ib_node in a verse of the report" + (" with a member surface" if surfaces is not None else "") +
-        " but verse_lexical_id NULL (stored, tied to no occurrence)", unlinked)
+        " but verse_lexical_id NULL (stored, tied to no occurrence)", ["node", "observation", "verse", "word"],
+        [[r[0], r[1], ref_of.get(r[2], r[2]), r[3]] for r in conn.execute(
+            "SELECT id, observation_id, verse_reference, lower(trim(surface)) FROM ib_node WHERE verse_lexical_id IS NULL AND deleted=0")
+         if r[2] in refs and (surfaces is None or r[3] in surfaces)])
     return out
-
-
-# ══ the Markdown report ══════════════════════════════════════════════════════════════════════════
-def _cell(v) -> str:
-    return "" if v is None else str(v).replace("|", "\\|").replace("\r", " ").replace("\n", " ")
-
-
-def _table(head: list, rows: list) -> list[str]:
-    if not rows:
-        return ["_no rows_", ""]
-    out = ["| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
-    out += ["| " + " | ".join(_cell(c) for c in r) + " |" for r in rows]
-    return out + [""]
-
-
-def _slice(d: dict, occ: list[dict]) -> dict:
-    """The part of the chain that belongs to these occurrences (a word's, or a verse's): the same rows, restricted by the stored keys."""
-    vl = {o["vl_id"] for o in occ}
-    vs = {o["verse_id"] for o in occ}
-    nodes = [n for n in d["nodes"] if n["vl_id"] in vl]
-    obs_ids = {n["observation_id"] for n in nodes}
-    srcs = [s for s in d["claim_sources"] if (s["via"] == "observation" and s["observation_id"] in obs_ids) or (s["via"] == "verse" and s["verse_id"] in vs)]
-    claim_ids = {s["claim_id"] for s in srcs}
-    tells = [t for t in d["tellings"] if t["claim_id"] in claim_ids]
-    sec_ids = {t["section_id"] for t in tells if t["section_id"] is not None}
-    return {"occurrences": occ, "nodes": nodes, "observations": [o for o in d["observations"] if o["id"] in obs_ids], "obs_nodes": d["obs_nodes"],
-            "verse_text": d["verse_text"], "strong_short": d["strong_short"], "strongs": d["strongs"], "placements": d["placements"], "scope_vl": d["scope_vl"],
-            "changes": [c for c in d["changes"] if c["observation_id"] in obs_ids], "claim_sources": srcs,
-            "claims": [c for c in d["claims"] if c["id"] in claim_ids], "tellings": tells, "sections": [s for s in d["sections"] if s["id"] in sec_ids]}
-
-
-def _label(code, short) -> str:
-    """A Strong's code with its native word, transliteration and gloss as stored: H3820A לֵב lev "heart"."""
-    s = short.get(code)
-    if not s:
-        return str(code or "")
-    return " ".join(x for x in (code, s[1], s[2]) if x) + (f' "{s[3]}"' if s[3] else "")
-
-
-def _node_line(n: dict, short: dict, where: str) -> str:
-    parts = [f"node {n['id']}", f"word `{n['surface']}`", f"`{_label(n['strong'], short)}`", f"role {n['role'] or '-'}", f"disposition {n['disposition'] or '-'}"]
-    if n["disposition_note"]:
-        parts.append(f"note: {_cell(n['disposition_note'])}")
-    place = "/".join(x for x in (n["cluster"], n["subgroup"]) if x)
-    if place:
-        parts.append(f"cluster {place}")
-    if n["deleted"]:
-        parts.append("node deleted")
-    parts.append(where)
-    return "  - " + "; ".join(parts)
-
-
-def _supports(s: dict, nodes: list, slice_vl: set, only_slice: bool) -> list[str]:
-    """The nodes of an observation, grouped by verse in Scripture order, each verse with its reference and text once."""
-    by = collections.defaultdict(list)
-    for n in nodes:
-        if not only_slice or n["vl_id"] in slice_vl:
-            by[n["verse_reference"] or ""].append(n)
-    L = []
-    for osis in sorted(by, key=lambda x: by[x][0]["sk"]):
-        ref, txt = s["verse_text"].get(osis, (osis or "(no verse)", None))
-        L.append(f"- **{ref}**" + (f": {_cell(txt)}" if txt else " (no text found in table verse)"))
-        for n in by[osis]:
-            where = "in this section" if n["vl_id"] in slice_vl else ("elsewhere in this report" if n["vl_id"] in s["scope_vl"] else "outside this report")
-            L.append(_node_line(n, s["strong_short"], where))
-    return L
-
-
-def _strong_entry(code: str, ent: dict, pairs: list, s: dict, lv: int) -> list[str]:
-    """One Strong's entry, every stored item of it, as a section of heading level lv."""
-    h = "#" * lv
-    sh = ent["short"]
-    L = [f"{h} Strong's entry {_label(code, s['strong_short'])}", ""]
-    if sh is None:
-        return L + ["_no row in table strong for this code_", ""]
-    head, own = ent.get("sense", (None, None))
-    L += [f"- language {sh[4]}; native word {sh[1]}; transliteration {sh[2]}; STEP gloss \"{sh[3]}\"; sense head \"{head}\"" + (" (the code is its own lemma)" if own else "")
-          + f"; origin {sh[6]}",
-          f"- counts, three different measures as stored: STEP token count {sh[5]} (a frequency, not a verse count); verses STEP attests {ent['attested']} (strong_verse); "
-          f"verse_lexical rows the parse found {ent['lexical']}", ""]
-    L += [f"{h}# Meaning trees stored under the lemma {ent['lemma']} ({len(ent['trees'])}, strong_meaning_tree; the key is the lemma, so the trees of its variants are stored together and shown in stored order, a repeated tree as stored)", ""]
-    for i, tr in enumerate(ent["trees"], 1):
-        L += [f"**Tree {i}** (rows {tr[0][0]} to {tr[-1][0]})", ""]
-        for _, code_, text in tr:
-            depth = max(1, len(re.findall(r"\d+|[a-z]", (code_ or "").rstrip(")"))))
-            L.append("  " * (depth - 1) + f"- {code_ + ' ' if code_ else ''}{_cell(text)}")
-        L.append("")
-    if not ent["trees"]:
-        L += ["_no rows in strong_meaning_tree_", ""]
-    L += [f"{h}# Related terms ({len(ent['related'])}, strong_related)", ""]
-    L += _table(["code", "native", "transliteration", "gloss"], [list(r) for r in ent["related"]])
-    if sh[4] == "Greek" or ent["lsj"] or ent["mounce"]:
-        L += [f"{h}# LSJ senses ({len(ent['lsj'])}, strong_lsj_parsed) and Mounce ({len(ent['mounce'])}, strong_mounce_parsed)", ""]
-        L += _table(["sense", "gloss", "note", "row type"], [list(r) for r in ent["lsj"]])
-        L += _table(["Mounce", "row type"], [list(r) for r in ent["mounce"]])
-    L += [f"{h}# Cluster assignments ({len(ent['clusters'])}, cluster_strong)", ""]
-    L += _table(["cluster", "name", "confidence", "operation", "review flag", "alternatives", "rationale", "source"], [list(r) for r in ent["clusters"]])
-    rows = [[surf] + list(r) for surf in sorted(pairs) for r in s["placements"].get((code, surf), [])]
-    L += [f"{h}# Placement of the surfaces of this section in subgroups (surface_subgroup, with concept and domain)", ""]
-    L += _table(["surface", "cluster", "subgroup", "label", "core description", "status", "two sense", "allocated by", "reason", "concept", "domain"], rows)
-    return L
-
-
-def _types(s: dict, lv: int, numbered: bool, seen: dict, where: str, memb_head: str) -> list[str]:
-    """The types of one slice, as sections of heading level `lv`. A body already printed in full for an earlier unit is cited, not repeated."""
-    h = "#" * lv
-    n = (lambda i: f"{i}. ") if numbered else (lambda i: "")
-    short = s["strong_short"]
-    L = []
-    occ = s["occurrences"]
-    slice_vl = {o["vl_id"] for o in occ}
-    live = {x["vl_id"] for x in s["nodes"] if not x["deleted"]}
-    nodes_of = collections.defaultdict(list)
-    for x in s["nodes"]:
-        nodes_of[x["vl_id"]].append(x)
-    L += [f"{h} {n(3)}Base data: occurrences in verse_lexical ({len(occ)} in {len({o['verse_id'] for o in occ})} verse(s); {sum(o['vl_id'] in live for o in occ)} with a live observation node)", ""]
-    L += _table(["vl_id", memb_head, "surface", "reference", "Strong's code", "morph", "pos", "surface_kind", "unit_surface", "unit_size", "unit_role", "role (clusters)", "negator",
-                 "party", "status", "observations (node role/disposition)"],
-                [[o["vl_id"], o["memb"], o["surface"], o["reference"], _label(o["strong"], short), o["morph"], o["position"], o["surface_kind"], o["unit_surface"], o["unit_size"],
-                  o["unit_role"], o["vl_role"], o["is_negator"], o["party_kind"], o["status"],
-                  "; ".join(f"{x['observation_id']}: {x['role'] or '-'}/{x['disposition'] or '-'}" + (" (node deleted)" if x["deleted"] else "") for x in nodes_of.get(o["vl_id"], []))]
-                 for o in occ])
-    L += [f"{'#' * (lv + 1)} Verse texts (ESV, from table `verse`)", ""]
-    vt = {}
-    for o in occ:
-        vt.setdefault(o["verse_id"], (o["sk"], o["reference"], o["text"]))
-    L += [f"- {ref}: {txt}" for _, ref, txt in sorted(vt.values())] + [""]
-    codes = sorted({o["strong"] for o in occ if o["strong"]})
-    L += [f"{h} {n(4)}Strong's entries ({len(codes)} codes of these occurrences)", ""]
-    for code in codes:
-        if code in seen["strong"]:
-            L += [f"- {_label(code, short)}: printed in full under {seen['strong'][code]}", ""]
-            continue
-        seen["strong"][code] = where
-        pairs = sorted({o["surface"] for o in occ if o["strong"] == code})
-        L += _strong_entry(code, s["strongs"][code], pairs, s, lv + 1)
-    L += [f"{h} {n(5)}Observations ({len(s['observations'])}), each with the nodes that support it ({len(s['nodes'])} nodes on these occurrences)", ""]
-    for o in s["observations"]:
-        L += [f"{'#' * (lv + 1)} Observation {o['id']}: stage {o['stage']}, tag {o['tag']}, status {o['status']}, deleted {o['deleted']}", ""]
-        nodes = s["obs_nodes"].get(o["id"], [])
-        if o["id"] in seen["obs"]:
-            L += [f"Printed in full under {seen['obs'][o['id']]}. Its nodes in this section:", ""]
-            L += _supports(s, nodes, slice_vl, True) + [""]
-        else:
-            seen["obs"][o["id"]] = where
-            meta = [f"{k}: {o[k]}" for k in ("strong", "window", "route", "basis", "run_id", "created_at", "updated_at", "supersedes_observation_id") if o[k] not in (None, "")]
-            L += ["- " + "; ".join(meta)]
-            for k in ("obs_text", "setting", "meaning", "implication", "chain", "parties", "parts", "revisit_note"):
-                if o[k] not in (None, ""):
-                    L += [f"- **{k}:** {_cell(o[k])}"]
-            L += ["", f"**Supports ({len(nodes)} nodes, by verse in Scripture order):**", ""]
-            L += _supports(s, nodes, slice_vl, False) + [""]
-    L += [f"{h} {n(6)}Change history of these observations and nodes ({len(s['changes'])})", ""]
-    L += _table(["id", "observation", "node", "column", "old", "new", "reason", "reading", "run", "created", "by"],
-                [[x["id"], x["observation_id"], x["node_id"], x["column"], x["old_value"], x["new_value"], x["reason"], x["reading_id"], x["run_id"], x["created_at"],
-                  x["created_by"]] for x in s["changes"]])
-    cl = {x["id"]: x for x in s["claims"]}
-    L += [f"{h} {n(7)}Claims ({len(s['claims'])}) and what they rest on ({len(s['claim_sources'])} source rows)", "",
-          "A claim source reaches this scope either by naming one of its observations (via observation) or by naming one of its verses (via verse).", ""]
-    L += _table(["source", "via", "claim", "kind", "verse_id", "reference as written", "observation", "note", "by"],
-                [[x["id"], x["via"], cl[x["claim_id"]]["claim_ref"], x["source_kind"], x["verse_id"], x["ref_as_written"], x["observation_id"], x["note"], x["created_by"]]
-                 for x in s["claim_sources"]])
-    for x in s["claims"]:
-        L += [f"{'#' * (lv + 1)} Claim {x['claim_ref']} (id {x['id']}): origin {x['origin']}, status {x['status']}, verdict {x['verdict']}"
-              + (f" / {x['part_verdict']} ({x['part_scope']})" if x["part_verdict"] else "") + f", in_narrative {x['in_narrative']}, i_read {x['i_read']}", ""]
-        if x["id"] in seen["claim"]:
-            L += [f"Printed in full under {seen['claim'][x['id']]}.", ""]
-        else:
-            seen["claim"][x["id"]] = where
-            L += [f"- **claim_text:** {_cell(x['claim_text'])}", f"- **beyond_text:** {_cell(x['beyond_text'])}", ""]
-    L += [f"{h} {n(8)}Narrative: tellings ({len(s['tellings'])}) and sections ({len(s['sections'])})", ""]
-    L += _table(["telling", "claim", "kind", "status", "part told", "section", "chapter", "heading", "section last_version"],
-                [[t["id"], cl[t["claim_id"]]["claim_ref"], t["kind"], t["status"], t["part_told"], t["section_id"] if t["section_id"] is not None else f"passage {t['passage_id']}",
-                  f"{t['chapter_no']} {t['chapter_title'] or ''}".strip(), t["heading"], t["last_version"]] for t in s["tellings"]])
-    for sec in s["sections"]:
-        L += [f"{'#' * (lv + 1)} Section {sec['id']}: chapter {sec['chapter_no']} {sec['chapter_title'] or ''}, {sec['heading']}", ""]
-        if sec["id"] in seen["sec"]:
-            L += [f"Printed in full under {seen['sec'][sec['id']]}.", ""]
-        else:
-            seen["sec"][sec["id"]] = where
-            L += ["> " + ln for ln in (sec["block_text"] or "(no block text stored)").splitlines()] + [""]
-    return L
-
-
-def _units(d: dict) -> list[tuple[str, list[dict]]]:
-    """The units of the by-unit layout: the member words of a collection (alphabetical), the verses of a verse list (Scripture order)."""
-    occ = d["occurrences"]
-    if d["kind"] == "collection":
-        by = collections.defaultdict(list)
-        for o in occ:
-            by[o["surface"]].append(o)
-        names = sorted({t["surface"] for t in d["terms"]})
-        return [(f"Word {w}", by.get(w, [])) for w in names]
-    by = collections.defaultdict(list)
-    for o in occ:
-        by[o["verse_id"]].append(o)
-    return [(f"Verse {v['reference']}", by.get(v["verse_id"], [])) for v in d["verses"]]
-
-
-def render(datas: list[dict], run_id: str, stamp: str, by_type: bool, scope_text: str = "") -> str:
-    """The Markdown report of one or more collections, or of a verse list."""
-    verse = datas[0]["kind"] == "verse"
-    title = ("Verse evidence report: " + datas[0]["name"]) if verse else "Collection evidence report: " + ", ".join(d["name"] for d in datas)
-    layout = "by type" if by_type else ("by verse, then by type" if verse else "by word, then by type")
-    L = [f"# {title}", "",
-         f"Generated {stamp} by run {run_id} (`Collection-Build.ps1 -Action Evidence`, escalations #2464 and #2467). Layout: {layout}"
-         + (" (switch -ByType)." if by_type else ".") + " Every row below is a stored table entry; nothing is evaluated or inferred, and nothing was written to a table. "
-         "A missing link in the chain is stated as no rows. Verses are in Scripture order (book in cfg_book_order, chapter, verse). "
-         + ("Each word shows the collections and tiers it belongs to by any live link. " if verse else
-            f"Members are the terms reached by a live link of the tiers {', '.join(datas[0]['tiers'])} (the term itself and the terms whose base it is). ")
-         + "The joins are in `iba/app/lib/collectionevidence.py`.", ""]
-    for d in datas:
-        seen = {"obs": {}, "claim": {}, "sec": {}, "strong": {}}
-        memb_head = "collections (tier)" if verse else "tiers"
-        if verse:
-            L += ["## Verses requested", ""]
-            L += _table(["reference", "osisId", "verse_id", "as asked", "word rows", "text"],
-                        [[v["reference"], v["osis"], v["verse_id"], v["asked"], sum(o["verse_id"] == v["verse_id"] for o in d["occurrences"]), v["text"]] for v in d["verses"]])
-        else:
-            c = d["collection"]
-            L += [f"## Collection {c['name']}", ""]
-            L += _table(["field", "value"], [[k, c[k]] for k in COLLECTION_COLS])
-            L += ["### 1. Links (live first, then removed or superseded)", ""]
-            L += _table(["link", "tier", "term_id", "word", "shared", "deleted", "superseded_by", "reason", "ai_call", "run", "by", "created", "load_ref"],
-                        [[x["id"], x["tier"], x["term_id"], x["surface"], x["shared"], x["deleted"], x["superseded_by_id"], x["reason"], x["ai_call_id"], x["run_id"],
-                          x["created_by"], x["created_at"], x["load_ref"]] for x in d["links"]])
-            L += [f"### 2. Member terms ({len(d['terms'])})", ""]
-            L += _table(["term_id", "surface", "form", "origin", "tiers", "via links", "group", "group_state", "base", "base_source", "base_state", "collection_state"],
-                        [[t["term_id"], t["surface"], t["form"], t["origin"], t["tiers"], t["links"], t["group"], t["group_state"], t["base"], t["base_source"],
-                          t["base_state"], t["collection_state"]] for t in d["terms"]])
-        if by_type:
-            L += _types(_slice(d, d["occurrences"]), 3, True, seen, "this report", memb_head)
-        else:
-            L += [f"## {'Verses' if verse else 'Words'}, each by type", ""]
-            for label, occ in _units(d):
-                L += [f"### {label}", ""]
-                L += _types(_slice(d, occ), 4, False, seen, label, memb_head)
-        L += ["### Stored-data faults (blatant errors and omissions)", ""]
-        for f in d["faults"]:
-            L += [f"- **{f['key']}** ({f['how']}): " + (f"{len(f['rows'])} found" if f["rows"] else "none found")]
-            L += [f"  - {r}" for r in f["rows"]]
-        L += [""]
-    return "\n".join(L) + "\n"
-
-
-CSV_HEAD = ["{lead1}", "{lead2}", "surface", "reference", "vl_id", "strong", "strong_translit", "strong_gloss", "morph", "surface_kind", "node_id", "node_role",
-            "node_disposition", "node_deleted", "observation_id", "obs_stage", "obs_status", "obs_deleted", "obs_text", "claim_via", "claim_ref", "claim_status",
-            "telling_status", "chapter_no", "section_heading"]
-NO_NODE = [""] * 9
-
-
-def csv_head(kind: str) -> list[str]:
-    lead = ("collection", "tiers") if kind == "collection" else ("scope", "collections")
-    return [lead[0] if h == "{lead1}" else lead[1] if h == "{lead2}" else h for h in CSV_HEAD]
-
-
-def csv_rows(datas: list[dict]) -> list[list]:
-    """One row for each occurrence, each node on it, each claim that names that node's observation, and each telling of that claim; a claim that names the
-    occurrence's verse has its own rows with the node columns blank. Left joins: a missing link leaves its columns blank. The rows are in the order of the
-    report: a collection by word then Scripture order, a verse list in Scripture order."""
-    out = []
-    for d in datas:
-        lead = d["name"] if d["kind"] == "collection" else "verses"
-        obs = {o["id"]: o for o in d["observations"]}
-        cl = {c["id"]: c for c in d["claims"]}
-        nodes = collections.defaultdict(list)
-        for n in d["nodes"]:
-            nodes[n["vl_id"]].append(n)
-        src_obs, src_verse = collections.defaultdict(list), collections.defaultdict(list)
-        for s in d["claim_sources"]:
-            if s["via"] == "observation":
-                src_obs[s["observation_id"]].append(s)
-            else:
-                src_verse[s["verse_id"]].append(s)
-        tell = collections.defaultdict(list)
-        for t in d["tellings"]:
-            tell[t["claim_id"]].append(t)
-
-        def claims(via, srcs):
-            rows = []
-            for cid in sorted({s["claim_id"] for s in srcs}):
-                for t in tell.get(cid) or [None]:
-                    rows.append([via, cl[cid]["claim_ref"], cl[cid]["status"], t["status"] if t else "", t["chapter_no"] if t else "", t["heading"] if t else ""])
-            return rows or [["", "", "", "", "", ""]]
-        for o in d["occurrences"]:
-            sh = d["strong_short"].get(o["strong"]) or (None,) * 4
-            head = [lead, o["memb"], o["surface"], o["reference"], o["vl_id"], o["strong"], sh[2] or "", sh[3] or "", o["morph"], o["surface_kind"]]
-            ns = nodes.get(o["vl_id"]) or []
-            if not ns:
-                out.append(head + NO_NODE + claims("", [])[0])
-            for n in ns:
-                ob = obs.get(n["observation_id"], {})
-                node = [n["id"], n["role"], n["disposition"], n["deleted"], n["observation_id"], ob.get("stage", ""), ob.get("status", ""), ob.get("deleted", ""), ob.get("obs_text", "")]
-                out += [head + node + r for r in claims("observation", src_obs.get(n["observation_id"], []))]
-            if src_verse.get(o["verse_id"]):
-                out += [head + NO_NODE + r for r in claims("verse", src_verse[o["verse_id"]])]
-    return out
-
-
-def write_csv(path: pathlib.Path, kind: str, rows: list) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8-sig", newline="") as f:
-        w = csv.writer(f)
-        w.writerow(csv_head(kind))
-        w.writerows(rows)

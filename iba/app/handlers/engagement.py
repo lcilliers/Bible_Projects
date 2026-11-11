@@ -25,9 +25,9 @@ def pull(ctx: Ctx) -> Outcome:
         braw = str(ctx.params.get("Batch") or "").strip()
         if braw and not braw.isdigit():
             return fail("refused", f"-Batch is a whole number from 1, not {braw!r}")
-        content = eg.pull(conn, ctx.cfg, ctx.params.get("Collection"), batch=int(braw) if braw else None)
+        content = eg.pull(conn, ctx.cfg, ctx.params.get("Collection"), batch=int(braw) if braw else None, missing=_flag(ctx, "Missing"))
         b = content.get("batch")
-        path = eg.next_path(ctx.cfg, f"pull-batch{b['n']}" if b else "pull", content["collection"]["name"])
+        path = eg.next_path(ctx.cfg, f"pull-batch{b['n']}" if b else ("pull-missing" if content.get("missing") else "pull"), content["collection"]["name"])
     except (eg.EngagementError, KeyError) as exc:
         return fail("refused", str(exc))
     eg.write_json(path, content)

@@ -57,7 +57,7 @@ def settings(cfg) -> dict:
     out["results"] = loop["evaluation_results"]
     out["existing_actions"] = loop["existing_actions"]
     out["kinds"] = orec.kinds(cfg)
-    out["tiers"] = cfg.required_setting("collection.export_tiers")
+    out["tiers"] = cfg.required_setting("collection.member_tiers")
     return out
 
 
@@ -133,10 +133,11 @@ def _batch_settings(cfg) -> int:
     return size
 
 
-def pull(conn, cfg, name: str, batch=None, size=None) -> dict:
+def pull(conn, cfg, name: str, batch=None, size=None, missing: bool = False) -> dict:
     """The content of the working file (a dict), from the tables only. With `batch` (a number from 1) only that batch of the collection's surface
     items (batch_plan, `size` or engagement.batch_size) and the existing observations whose first batch it is (the lowest batch that holds one of
-    their verses), so that each existing observation takes one action in one batch only."""
+    their verses), so that each existing observation takes one action in one batch only. With `missing` (#2479) only the items with no live observation of
+    the engagement stage are pulled, so a collection whose words are assessed is pulled again for its new members only."""
     st = settings(cfg)
     col = collection_row(conn, name)
     members = member_terms(conn, col[0], st["tiers"])
@@ -153,12 +154,19 @@ def pull(conn, cfg, name: str, batch=None, size=None) -> dict:
     for surf in sorted(by_surface):
         tid = by_surface[surf]
         items = []
+        done = _live_nodes(conn, st["stage"], surf, [r[0] for r in rows.get(surf, [])]) if missing else {}
         for r in sorted(rows.get(surf, []), key=lambda x: (x[8] or "", x[0])):
+            if r[0] in done:
+                continue
             cluster, allc = _clusters(conn, r[3], surf)
             items.append({"vl_id": r[0], "osisId": r[8], "reference": r[9], "strong": r[3], "morph_code": r[4], "cluster": cluster, "clusters": allc,
                           "surface_kind": r[5], "unit_surface": r[6], "unit_role": r[7], "text": r[10]})
             osis.add(r[8])
+        if missing and not items:
+            continue
         surfaces.append({"term_id": tid, "surface": surf, "tier": members[tid][1], "group": terms[tid][2], "group_state": terms[tid][3], "items": items})
+    if missing and not surfaces:
+        raise EngagementError(f"collection {col[1]!r}: every item of its member surfaces already has an engagement observation, nothing to pull with -Missing")
     existing = {}
     for o in conn.execute("SELECT DISTINCT o.id, o.stage, o.tag, o.obs_text, o.status, o.basis FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id "
                           f"WHERE o.deleted=0 AND n.deleted=0 AND n.verse_reference IN ({','.join('?' * len(osis))}) ORDER BY o.id", sorted(osis)):
@@ -186,7 +194,7 @@ def pull(conn, cfg, name: str, batch=None, size=None) -> dict:
         existing = {k: o for k, o in existing.items() if min((first.get(n["verse"], 10 ** 9) for n in o["nodes"]), default=10 ** 9) == batch}
         batch_info = {"n": batch, "of": len(plan), "size": size, "items": sum(len(s["items"]) for s in surfaces)}
     return {"engagement": 1, "made_at": _now(), "collection": {"id": col[0], "name": col[1], "status": col[2], "core": col[3], "pole": col[4]},
-            "tiers": st["tiers"], "roles": st["roles"], "tests": st["tests"], "no_bearing_kind": st["no_bearing_kind"], "batch": batch_info,
+            "tiers": st["tiers"], "roles": st["roles"], "tests": st["tests"], "no_bearing_kind": st["no_bearing_kind"], "batch": batch_info, "missing": bool(missing),
             "surfaces": surfaces, "existing_observations": existing,
             "how_to_fill": "evaluations: one for each surface item (vl_id); observations: one for each surface and role; existing: an action for each "
                            "existing observation (accept, modify, delete, merge, leave). See USER-GUIDE section 8.18."}

@@ -8,7 +8,7 @@
     Claude reads and writes in the session from a working file; the app pulls the file, checks the filled assessment whole and writes it.
     Everything assessed is inferential until you confirm it (B:4).
 
-      Pull     -Collection <name> [-Batch n]   write the working file of one collection (-Batch n: only batch n of the verses, engagement.batch_size items a batch, #2388) (its member surfaces, their verses with the ESV text, and the
+      Pull     -Collection <name> [-Batch n] [-Missing]   write the working file of one collection (-Batch n: only batch n of the verses, engagement.batch_size items a batch, #2388; -Missing: only the items with no engagement observation yet, #2479) (its member surfaces, their verses with the ESV text, and the
                                     observations already on those verses); a view of the tables, never overwritten
       Record   -File <assessment.json> [-Check]   check the filled assessment against its pull, whole, and write it in one transaction;
                                     -Check previews; nothing is written when anything is wrong
@@ -36,6 +36,7 @@ param(
     [string] $Batch,
     [string] $File,
     [switch] $Check,
+    [switch] $Missing,
     [switch] $Trace
 )
 
@@ -57,6 +58,7 @@ foreach ($p in @('Collection', 'File', 'Batch')) {
     if ($PSBoundParameters.ContainsKey($p)) { $paramArgs += @('--param', "$p=$($PSBoundParameters[$p])") }
 }
 if ($Check -and $Action -ne 'Check') { $paramArgs += @('--param', 'Check=true') }
+if ($Missing) { $paramArgs += @('--param', 'Missing=true') }
 
 Write-IbaRunHeader -WorkPackage 'engagement' -Step $stepId -RunId $runId
 $json = python -m iba.app.run engagement --step $stepId --run-id $runId @paramArgs
