@@ -55,4 +55,8 @@ Developer Mode session opened on #2463 (collection search analysis). Built the c
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. Commit 2212e826b5e831480fda6aa3c0c3c039eccf21b4 (session 20261111: collection evidence report (-Verse, -ByType, nodes in context, Strong's entries), SC4a and SC16 fixes, #2465 cleanup, escalations closed on instruction, session log, compliance file, close reports).
+
+Push output: `To https://github.com/lcilliers/Bible_Projects.git   72fa544f..2212e826  main -> main`.
+
+Not staged: Logs/compliance/COMPLIANCE-20261111-bb3e2920.md, the compliance file of another session (left untracked by the previous close as well).
