@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-11T05:11:51Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-11T11:23:41Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `e340460f-c4da-41fa-b563-f701a7e13e8b` (CLAUDE_CODE_SESSION_ID); started 2026-11-10T04:37:59Z; window base commit `3c2f180201b1f2fe9869ca9c67950a2ba9ad023a`
-- compliance file: `Logs/compliance/COMPLIANCE-20261110-e340460f.md`; session log: `Logs/SESSION-LOG-20261111-engagement-planning-2412.md`
-- **open findings: 0**; cleared by disposition: 21
+- session: `8ca87189-3e9b-46d2-9a09-37aaa09ed647` (CLAUDE_CODE_SESSION_ID); started 2026-11-11T05:28:21Z; window base commit `72fa544feff3ff8d91b1f93fe39fa15206e769d9`
+- compliance file: `Logs/compliance/COMPLIANCE-20261111-8ca87189.md`; session log: `Logs/SESSION-LOG-20261111-collection-evidence-report-and-app-fixes.md`
+- **open findings: 0**; cleared by disposition: 12
 
 
 ## Contents
@@ -41,31 +41,22 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:8488cbff`: researcher message 2026-11-10T04:37 is too short to be matched; name where it is recorded: "project-start" -- disposition: recorded in #2412 v30
-- cleared `SC3:ef3a4935`: researcher message 2026-11-10T16:42 is too short to be matched; name where it is recorded: "Yes, build test" -- disposition: recorded in #2412 v30
-- cleared `SC3:4f232ac9`: researcher message 2026-11-10T16:42 is too short to be matched; name where it is recorded: "Yes, fresh session" -- disposition: recorded in #2412 v30
+- cleared `SC3:45ecb300`: researcher message 2026-11-11T05:37 is too short to be matched; name where it is recorded: "Build #2464" -- disposition: recorded in #2464 v2
+- cleared `SC3:6070b3ea`: researcher message 2026-11-11T05:38 is too short to be matched; name where it is recorded: "Approve, build it" -- disposition: recorded in #2464 v2
+- cleared `SC3:c52b0a59`: researcher message 2026-11-11T05:50 is too short to be matched; name where it is recorded: "Approve, close it" -- disposition: recorded in #2464 v4
+- cleared `SC3:d05e2509`: researcher message 2026-11-11T06:08 is in no escalation comment written this session: "the report must be organised by verse, and consecutively by Scripture chapter and verse" -- disposition: no record needed: quoted verbatim in iba/app/BUILD.md section 483 and in outputs/escalation/2467-evidence-report-by-verse-plan-v1-20261111.md
+- cleared `SC3:d591b07f`: researcher message 2026-11-11T06:12 is in no escalation comment written this session: "I looked through the collection by word report.  I think the report must have two types of ordering : by type of extraction (e.g. verse-lexical, claims etc) or " -- disposition: no record needed: quoted verbatim in iba/app/BUILD.md section 483 and in outputs/escalation/2467-evidence-report-by-verse-plan-v1-20261111.md
+- cleared `SC3:efff5fac`: researcher message 2026-11-11T06:12 is in no escalation comment written this session: "also you can build the by verse report" -- disposition: no record needed: quoted verbatim in iba/app/BUILD.md section 483 (the approval to build the verse report)
+- cleared `SC3:a1d593d1`: researcher message 2026-11-11T09:50 is too short to be matched; name where it is recorded: "Approve, build it" -- disposition: no record needed: the approval of the #2469 plan, quoted in iba/app/BUILD.md section 484 and #2469 v4
+- cleared `SC3:f83b645b`: researcher message 2026-11-11T09:58 is too short to be matched; name where it is recorded: "Approve, close it" -- disposition: recorded in #2469 v4
+- cleared `SC3:7613eb46`: researcher message 2026-11-11T10:01 is too short to be matched; name where it is recorded: "cleanup 2465" -- disposition: recorded in #2465 v2
+- cleared `SC3:43ca9818`: researcher message 2026-11-11T11:03 is too short to be matched; name where it is recorded: "Approve, close it" -- disposition: recorded in #2458 v6
+- cleared `SC3:f9fcd3b7`: researcher message 2026-11-11T11:13 is in no escalation comment written this session: "all approved, 2460 ready for your action." -- disposition: no record needed: the approvals it states are the Researcher's own versions #2457 v4, #2456 v4, #2387 v4 and #2460 v5
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4a:7e9a7670`: `Logs/SESSION-LOG-20261108-collection-exports-as-methods.md` line 31: open item #2379 is completed; #2392 is completed: "- #2379, the collection-build item (closed 2026-11-10), #2392: carried unchanged." -- disposition: carried #2462
-- cleared `SC4a:92804904`: `Logs/SESSION-LOG-20261108-related-word-evidence.md` line 31: open item #2392 is completed: "- #2392 (Claude): on hold until the the collection-build item (closed 2026-11-10) matching run completes; then a hint-list design goes to th" -- disposition: carried #2462
-- cleared `SC4a:69840492`: `Logs/SESSION-LOG-20261108-related-word-evidence.md` line 32: open item #2379 is completed: "- #2379, the collection-build item (closed 2026-11-10) (Claude): carried unchanged by the other session." -- disposition: carried #2462
-- cleared `SC4a:88f75ab6`: `Logs/SESSION-LOG-20261109-ai-call-retry-and-aloud-reading.md` line 38: open item #2379 is completed: "- #2379 (Claude): untouched this session." -- disposition: carried #2462
-- cleared `SC4a:6482856f`: `Logs/SESSION-LOG-20261109-ai-call-retry-and-aloud-reading.md` line 39: open item #2392 is completed: "- #2392 (Claude): untouched this session." -- disposition: carried #2462
-- cleared `SC4a:b7250ff1`: `Logs/SESSION-LOG-20261109-chapter-10-collections.md` line 49: open item #2379 is completed: "- #2379: with Claude, in progress." -- disposition: carried #2462
-- cleared `SC4a:96457ec1`: `Logs/SESSION-LOG-20261109-chapter-10-collections.md` line 50: open item #2357 is completed; #2366 is completed: "- #2357, #2366: with the Researcher." -- disposition: carried #2462
-- cleared `SC4a:7ea4694f`: `Logs/SESSION-LOG-20261109-chapter-10-collections.md` line 51: open item #2392 is completed: "- #2392: parked." -- disposition: carried #2462
-- cleared `SC4a:c6006b5d`: `Logs/SESSION-LOG-20261109-collection-batch-and-progress-control.md` line 39: open item #2392 is completed: "- #2392 (Researcher): grouping-evidence decision, carried unchanged." -- disposition: carried #2462
-- cleared `SC4a:e720b577`: `Logs/SESSION-LOG-20261109-collection-batch-and-progress-control.md` line 40: open item #2379 is completed: "- #2379 (Claude): multi-session exploration of the surface work, carried unchanged." -- disposition: carried #2462
-- cleared `SC4a:cc08bacb`: `Logs/SESSION-LOG-20261109-collection-batch-and-progress-control.md` line 41: open item #2357 is completed: "- #2357 (Researcher): the config validate finding, carried unchanged." -- disposition: carried #2462
-- cleared `SC4a:a3e9d103`: `Logs/SESSION-LOG-20261109-engagement-step.md` line 47: open item #2379 is completed; #2392 is completed: "- #2379, the collection-build item (closed 2026-11-10), #2392: carried unchanged." -- disposition: carried #2462
-- cleared `SC4a:77871b38`: `Logs/SESSION-LOG-20261110-engagement-collections.md` line 40: open item #2379 is completed; #2392 is completed: "- the two unlink confirmations (confirming the unlinks), #2379, the collection-build item (closed 2026-11-10), #2392 stay open with their ow" -- disposition: carried #2462
-- cleared `SC4a:06c87eb3`: `Logs/SESSION-LOG-20261110-gather-and-engagement-batches.md` line 39: open item #2436 is completed: "- #2436 (Researcher): observation 20534, the 13 base words without verses, and the two previews." -- disposition: carried #2462
-- cleared `SC4a:c0ae796c`: `Logs/SESSION-LOG-20261110-gather-and-engagement-batches.md` line 40: open item #2437 is completed: "- #2437 (Claude): design for attaching the 1166 multi-word phrases to a collected head word; goes to the researcher first." -- disposition: carried #2462
-- cleared `SC4a:ba2bb719`: `Logs/SESSION-LOG-20261110-gather-and-engagement-batches.md` line 41: open item #2379 is completed: "- #2379 (Claude): multi-session exploration of the surface work, carried unchanged." -- disposition: carried #2462
-- cleared `SC4a:9bfff78a`: `Logs/SESSION-LOG-20261110-gather-and-engagement-batches.md` line 42: open item #2392 is completed: "- #2392 (Claude): grouping-evidence decision, on hold, carried unchanged." -- disposition: carried #2462
-- cleared `SC4a:c3aca091`: `Logs/SESSION-LOG-20261110-gather-and-engagement-batches.md` line 43: open item #2357 is completed: "- #2357 (Researcher): the config validate finding, carried unchanged." -- disposition: carried #2462
+_no finding_
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -102,4 +93,4 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Config-Maintenance.ps1_-Step_Validate`: Config-Maintenance.ps1 -Step Validate failed 2 times this session: work package : configuration-maintenance -- disposition: fixed: the two failing runs reported real findings (4 coherence errors, then 3), cleared by iba/app/migration/archive/cfg_cleanup_2465_v1_20261111.py under #2465; later Validate runs exit 0

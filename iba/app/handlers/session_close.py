@@ -16,7 +16,10 @@ fixed (it no longer appears) or by a disposition in the session compliance file'
                             Session-start command names (session_close.no_record_messages) need
                             none.
   SC4  open items           (a) every line of an `Open items` section in a file changed in the
-                            window names an OT-nn[.n] or #nnnn that exists and is still open;
+                            window names an OT-nn[.n] or #nnnn that exists and is still open; a
+                            session log (governance.session_log_dir, SESSION-LOG-*.md) is checked
+                            only when it names this session's id, a log of another session was
+                            checked at that session's own close (#2462);
                             (b) researcher messages with a holding word (session_close.held_words)
                             need `in register OT-nn.n|#nnnn` or `not held: reason`.
   SC5  analysis integrity   (a) every chapter file changed is a chapter's current file and a
@@ -45,7 +48,9 @@ fixed (it no longer appears) or by a disposition in the session compliance file'
                             session_close.always_read_max_bytes.
   SC16 repeated failures    a PS tool action that failed twice in the session, or any other call
                             that failed twice with the same error (sessionwindow.failed_calls,
-                            #2207): `fixed: <where>` (it stays in the transcript, so the line names
+                            #2207; a hook's refusal, "hook error: ", is not a failure, and a script
+                            is the operation only when the command runs it, not when its text only
+                            names it, #2458): `fixed: <where>` (it stays in the transcript, so the line names
                             the point-of-use fix), or carried by an open item.
 SC7 (remediation), SC11 (re-run) and SC13 (commit, blocked while any finding is open) are steps of
 the command; Session-Close.ps1 exits 3 while any finding is open. SC14: this report is the close's
@@ -197,8 +202,11 @@ def _sc3_sc4b(cfg, db, messages, since) -> tuple[list[dict], list[dict]]:
     return f3, f4
 
 
-def _sc4a(cfg, root, changed, handles) -> list[dict]:
+def _sc4a(cfg, root, changed, handles, session_id="") -> list[dict]:
+    """B:80 on every changed .md file, except another session's log (#2462): a log under governance.session_log_dir is checked only when it names this session's
+    id (the test SC8 uses to find the session's log); a long or parallel window sweeps in logs of sessions that closed earlier, each checked at its own close."""
     F = []
+    ldir = cfg.required_setting("governance.session_log_dir").strip("/")
     rx = re.compile(r"\bopen items\b", re.IGNORECASE)
     skip = cfg.required_setting("session_close.open_items_exclude")   # generated reports
     for rel in changed:
@@ -209,6 +217,8 @@ def _sc4a(cfg, root, changed, handles) -> list[dict]:
         try:
             text = p.read_text(encoding="utf-8")
         except Exception:
+            continue
+        if rel.startswith(ldir + "/") and p.name.startswith("SESSION-LOG-") and not (session_id and session_id in text):
             continue
         for _, lines in _sections(text, rx):
             for n, line in _bullets(lines):
@@ -639,7 +649,7 @@ def check(ctx: Ctx) -> Outcome:
     if session_id and since:
         messages = sw.user_messages(tpath) if tpath else []
         f3, f4b = _sc3_sc4b(cfg, db, messages, since)
-        F += f3 + _sc4a(cfg, root, changed, handles) + f4b
+        F += f3 + _sc4a(cfg, root, changed, handles, session_id) + f4b
         state = _load_state(cfg, session_id)
         f5, info = _sc5(cfg, db, root, changed, since, base, state)
         F += f5

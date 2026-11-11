@@ -146,6 +146,63 @@ def export_surfaces(ctx: Ctx) -> Outcome:
     return _export_view(ctx, "surfaces")
 
 
+def evidence(ctx: Ctx) -> Outcome:
+    """The evidence report (#2464, #2467, lib/collectionevidence.py) of one collection or a comma list (-Collection), or of a verse or list of verses (-Verse, items
+    separated by a semicolon): the stored entries from the base data through the observations and the claims into the narrative, as a Markdown file and a CSV under
+    collection.evidence_path, versioned by the filing rule (the previous live versions archived). The layout is by word (or verse) then by type; -ByType gives one
+    section for each type. Read-only on the tables; -Check builds the report and writes no file."""
+    import datetime
+    from ..lib import collectionevidence as ev
+    conn = ctx.cfg.conn
+    by_type = _flag(ctx, "ByType")
+    names, verse = str(ctx.params.get("Collection", "")).strip(), str(ctx.params.get("Verse", "")).strip()
+    try:
+        if bool(names) == bool(verse):
+            raise ev.EvidenceError("give either -Collection (one name or a comma list) or -Verse (" + ev.REF_FORM + "), not both and not neither")
+        vals = ev.read_settings(ctx.cfg)
+        order = ev.Order(conn)
+        if verse:
+            datas = [ev.build_verses(conn, ev.resolve_verses(conn, ctx.cfg, verse, order), order)]
+        else:
+            datas = [ev.build_collection(conn, c, vals["tiers"], order) for c in ev.resolve(conn, names.split(","))]
+        archive = ctx.cfg.required_setting("governance.oneoff_report_archive_dir")
+    except (ev.EvidenceError, ValueError) as exc:
+        return fail("refused", str(exc))
+    if verse:
+        slug = "-".join(re.sub(r"[^a-z0-9]+", "-", v["reference"].lower()).strip("-") for v in datas[0]["verses"][:3])
+        stem = f"{vals['verse_name']}-{slug}" if len(datas[0]["verses"]) <= 3 else f"{vals['verse_name']}-{len(datas[0]['verses'])}-verses"
+    else:
+        slug = "-".join(re.sub(r"[^a-z0-9]+", "-", d["name"].lower()).strip("-") for d in datas)
+        stem = f"{vals['name']}-{slug}" if len(slug) <= 60 else f"{vals['name']}-{len(datas)}-collections"
+    if by_type:
+        stem += "-by-type"
+    rows = ev.csv_rows(datas)
+    summary = "; ".join(f"{d['name']}: {len(d['occurrences'])} occurrences, {len(d['observations'])} observations, {len(d['claims'])} claims, {len(d['sections'])} narrative sections, "
+                        f"{sum(1 for f in d['faults'] if f['rows'])} fault rules with findings" for d in datas)
+    if _flag(ctx, "Check"):
+        return ok(f"PREVIEW (nothing written): {summary}; {len(rows)} CSV rows", rows=len(rows))
+    base = pathlib.Path(vals["path"]) / f"{stem}.md"
+    md_path = reportkit.next_versioned_path(base, archive)
+    csv_path = md_path.with_suffix(".csv")
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    text = ev.render(datas, ctx.run_id, stamp, by_type)
+    md_path.parent.mkdir(parents=True, exist_ok=True)
+    live = {f for f in md_path.parent.glob(f"{stem}-v*") if f.is_file()}
+    try:
+        reportkit._archive_prior_versions(base, archive)
+        reportkit._archive_prior_versions(base.with_suffix(".csv"), archive)
+    except OSError as exc:     # a previous file is open in another program: put back what was moved, write nothing
+        for f in live:
+            moved = md_path.parent / archive / f.name
+            if not f.exists() and moved.exists():
+                moved.replace(f)
+        return fail("refused", f"a previous version of this report is in use by another program ({exc}); close it and run again; nothing was written")
+    md_path.write_text(text, encoding="utf-8")
+    ev.write_csv(csv_path, datas[0]["kind"], rows)
+    return ok(f"{summary}\n  written: {md_path.as_posix()} and {csv_path.as_posix()} ({len(rows)} CSV rows; a view of the tables, not an input); run Manifest-Rebuild.ps1 to register them",
+              rows=len(rows))
+
+
 def _event(conn, run_id, cid, action, before, after, reason):
     conn.execute("INSERT INTO surface_event (subject_kind, subject_id, action, field, value_before, value_after, by, reason, run_id, created_by) "
                  "VALUES ('collection',?,?,'status',?,?,'collection-build',?,?,'collection-build')", (cid, action, before, after, reason, run_id))

@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-10T16:30:46Z |
+| generated_at | 2026-11-11T11:01:23Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -162,12 +162,12 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1097** registered module(s) — **620** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **920** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1106** registered module(s) — **629** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **928** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
 | Ai-Control.ps1 | iba/app/ps/Ai-Control.ps1 | PS entry point for the AI control and view (escalation #2361): Status, Prompts, PromptAdd, Replay, Compare; dispatches through run.py, work package ai-control. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
-| Collection-Build.ps1 | iba/app/ps/Collection-Build.ps1 | PS entry point for module 5 of 5 of the surface cycle (escalation #2361): Status, Links, Show, Export, ExportMembers, ExportSurfaces, Set, Merge, Seed, Ask; dispatches through run.py, work package collection-build. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
+| Collection-Build.ps1 | iba/app/ps/Collection-Build.ps1 | PS entry point for module 5 of 5 of the surface cycle (escalation #2361): Status, Links, Show, Export, ExportMembers, ExportSurfaces, Evidence, Set, Merge, Seed, Ask; dispatches through run.py, work package collection-build. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Concept-Edit.ps1 | iba/app/ps/Concept-Edit.ps1 | PS entry point for editing the concept grouping (escalation #2355): List, Describe, AddDomain, SetDeleted; dispatches through run.py, work package concept-edit. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Copy-NarrativeToLearning4Comfort.ps1 | iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1 | PS wrapper for narrativecopy.py (-DryRun). Run on completion of a section of work, on request, and in /session-close (escalation #1941). | ✓ | ✓ | thin wrapper; config is read by narrativecopy.py |
 | Engagement.ps1 | iba/app/ps/Engagement.ps1 | PS entry point for the engagement step (escalation #2406): Pull, Record, Group, Review, Close, Check; dispatches through run.py, work package engagement. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
@@ -409,6 +409,9 @@ _(none)_
 | cataloguewrite | iba/app/lib/cataloguewrite.py | obs_catalogue.update -- validated partial UPDATE of wa_obs_question_catalogue by obs_id, auto-filling last_modified/catalogue_version where not explicitly given. Escalation #1007. | ✓ |  |  |
 | catchup_october_ledgers_2172_v1_20261022 | iba/app/migration/archive/catchup_october_ledgers_2172_v1_20261022.py | ONE-OFF -- escalation #2172 catch-up B: the October row ledgers into ib_observation through Strand-Reading Define, Context and Record; run_id CATCHUP-2172-B-20261022. inactive once run. |  | ✓ | one-off catch-up script (#2172 catch-up B), run once |
 | cfg | iba/app/lib/cfg.py | cfg.py — the runtime config reader. THE ONLY WAY THE APP READS CONFIG. | ✓ | ✓ | defines .setting()/.enum() itself — the config reader; cannot call its own accessor. |
+| cfg_cleanup_2465_v1_20261111 | iba/app/migration/archive/cfg_cleanup_2465_v1_20261111.py | ONE-OFF migration -- escalation #2465: registers the enum values of the stopped #2412 triage test's ai_call rows and records the retired module engagementask; run_id DEVMODE-2465-CFG-CLEANUP-20261111. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| cfg_sc16_hook_refusal_2458_v1_20261111 | iba/app/migration/archive/cfg_sc16_hook_refusal_2458_v1_20261111.py | ONE-OFF migration -- escalation #2458: SC16 does not count a hook's refusal; run_id DEVMODE-2458-SC16-HOOK-REFUSAL-20261111. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| cfg_sc4a_own_log_2462_v1_20261111 | iba/app/migration/archive/cfg_sc4a_own_log_2462_v1_20261111.py | ONE-OFF migration -- escalation #2462: SC4a checks a session log only when it names this session's id (B:80 text); run_id DEVMODE-2462-SC4A-OWN-LOG-20261111. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | cfgcheck | iba/app/lib/archive/cfgcheck.py | cfgcheck.py — the config-maintenance / validation utility for the app config. |  | ✓ | validates the raw seed dict before any Cfg/DB object exists — structurally cannot call .setting()/.enum(). |
 | cfgload | iba/app/lib/archive/cfgload.py | cfgload.py — load the JSON SEEDS into the config tables in the DATABASE. |  | ✓ | writes the seed INTO the cfg_* tables (creates + populates them) — same class as migration/ scripts, already excluded from usage-checks for the same reason. |
 | cfgquality | iba/app/lib/cfgquality.py | cfgquality.py — shared config-quality checks, used by BOTH handlers/configmaint.py (the | ✓ | ✓ | works directly against a raw sqlite3.Connection (not a Cfg wrapper), by design — usable from both configmaint.py (has a Cfg) and cfgreport.py (doesn't); queries cfg_setting/cfg_enum via raw SQL, not Cfg's convenience methods. Found 2026-07-30 only after fixing this same check's own text-collision false negative for this file — same class of legitimate zero as the other 11, not an oversight. |
@@ -422,9 +425,14 @@ _(none)_
 | clusterreport | iba/app/lib/clusterreport.py | report.cluster -- cluster content/quality report | ✓ |  |  |
 | clusterstatus | iba/app/lib/clusterstatus.py | clusterstatus.py — the `cluster.status` lifecycle transitions `#1697` designed but never built | ✓ |  |  |
 | collection_batch_run | iba/app/tools/collection_batch_run.py | collection_batch_run.py -- the job collection-batch: Seed then Ask per sub-group of the bases not yet in a collection, Links every 10 (escalation #2388). | ✓ | ✓ | fixed operational values (90 min step limit, 3 failures in a row, Links every 10); the seed rule is the one of the ten pilot collections |
+| collection_evidence_2464_v1_20261111 | iba/app/migration/archive/collection_evidence_2464_v1_20261111.py | ONE-OFF migration -- escalation #2464: registers the collection evidence report as a step of collection-build; run_id DEVMODE-2464-COLLECTION-EVIDENCE-20261111. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| collection_evidence_strongs_2469_v1_20261111 | iba/app/migration/archive/collection_evidence_strongs_2469_v1_20261111.py | ONE-OFF migration -- escalation #2469: the evidence report shows nodes with their observation and a Strong's entry per code; run_id DEVMODE-2469-EVIDENCE-STRONGS-20261111. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| collection_evidence_verse_2467_v1_20261111 | iba/app/migration/archive/collection_evidence_verse_2467_v1_20261111.py | ONE-OFF migration -- escalation #2467: the evidence report takes a verse list and two layouts; run_id DEVMODE-2467-EVIDENCE-VERSE-20261111. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | collection_export_2393_v1_20261108 | iba/app/migration/archive/collection_export_2393_v1_20261108.py | ONE-OFF migration -- escalation #2393: registers the two #2379 CSV exports as steps of collection-build; run_id DEVMODE-2393-COLLECTION-EXPORT-20261108. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| collection_study_path_2412_v1_20261111 | iba/app/migration/archive/collection_study_path_2412_v1_20261111.py | ONE-OFF migration -- escalation #2412: the researcher's ruling on studying each collection through the whole path as one study_method behaviour rule; run_id DEVMODE-2412-COLLECTION-STUDY-PATH-20261111. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | collectionask | iba/app/lib/collectionask.py | collectionask.py -- the front of module 5 of 5: seeding a collection (pole, real-word check, the model's list) and judging its candidates (embedding shortlist, synonym, score, pole check, association) through the AI client (escalation #2361). | ✓ |  |  |
 | collectionbuild | iba/app/lib/collectionbuild.py | collectionbuild.py -- module 5 of 5 of the surface cycle: the members of each collection decided from the AI judgements, reproducing the five recorded runs of 2026-11-05 (escalation #2361). | ✓ | ✓ | the rule has no tunable value: the tiers follow from the recorded relations of the judge prompts |
+| collectionevidence | iba/app/lib/collectionevidence.py | collectionevidence.py -- the evidence report of one collection, a list of collections or a verse list: the stored entries from the base data through observations (each with the nodes that support it) and claims into the narrative, with a Strong's entry for each code, in Scripture order, by word or verse then by type or by type; read-only on the tables (escalations #2464, #2467, #2469). | ✓ | ✓ | the tiers, folder and file name stem are read from cfg_setting by the handler; the code holds no tunable value |
 | collectionexport | iba/app/lib/collectionexport.py | collectionexport.py -- the two #2379 CSV views of the surface work (members with verses; surfaces with collections), reproducible on demand from the tables (escalation #2393). | ✓ | ✓ | the tiers and groups are read from cfg_setting by the handler; the code holds no tunable value |
 | compliance | iba/app/lib/compliance.py | compliance.py -- rule compliance read at start and proved at close (#2173 P2): delivery of the rules, the session compliance file, its start and close checks. | ✓ |  |  |
 | concept_edit_2355_v1_20261101 | iba/app/migration/archive/concept_edit_2355_v1_20261101.py | ONE-OFF migration -- escalation #2355: registers the concept-edit tool; run_id DEVMODE-2355-CONCEPT-EDIT-20261101. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -452,6 +460,7 @@ _(none)_
 | engagement_2406_v1_20261109 | iba/app/migration/archive/engagement_2406_v1_20261109.py | ONE-OFF migration -- escalation #2406: registers the engagement step; run_id DEVMODE-2406-ENGAGEMENT-20261109. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | engagement_2406_v2_module_enum_20261109 | iba/app/migration/archive/engagement_2406_v2_module_enum_20261109.py | ONE-OFF migration -- escalation #2406: adds `engagement` to cfg_enum config_module; run_id DEVMODE-2406-ENGAGEMENT-MODULE-ENUM-20261109. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | engagement_2406_v3_review_close_20261109 | iba/app/migration/archive/engagement_2406_v3_review_close_20261109.py | ONE-OFF migration -- escalation #2406: registers the engagement review and close steps; run_id DEVMODE-2406-ENGAGEMENT-REVIEW-20261109. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| engagementask | iba/app/lib/archive/engagementask.py | RETIRED (#2465): the Ollama triage test of #2412 (two closed questions asked of each surface in each verse), stopped at 71 of 662 questions; the researcher ruled against a bulk Ollama route for the study result (B:127). Kept in archive/; its 77 ai_call rows (module engagementask) stay as history. |  | ✓ | retired module, kept in archive/ for reading |
 | engine_audit | engine/archive/audit.py | Audit framework -- WR-01 through WR-20, run after all writes. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_audit_word | engine/archive/audit_word.py | AUDIT_WORD mode (v4) -- Pre-A1 through A11, unified new-word + re-audit pipeline. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_backup | engine/archive/backup.py | DB backup management (SG-01, SG-12, SG-13) -- timestamped pre-run backup, abort if it fails. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
@@ -1323,6 +1332,9 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | cluster | ib_observation.tag_stage_excluded | {'verse-reading': ['difference-inference', 'verse-grouping'], 'char-subgroup': [], 'char-reading': [], 'char-answers': []} | per stage, the tags it may not offer (lib/taggingguidance.tags_for_stage) |
 | collection | collection.embed_cache | collection/embeddings | the folder, under surfaces.working_files_root, of the cache of embedding vectors (#2361): regenerable, one file per model digest, used only to rank candidates |
 | collection | collection.embed_role | embed | the cfg_ai_model role of the embedding model used to rank candidates (#2361) |
+| collection | collection.evidence_name | collection-evidence | the stem of the collection evidence report's file names (#2464); the collection names, the version and the date follow it by the filing rule |
+| collection | collection.evidence_path | outputs/reports/collection-evidence | the folder the collection evidence report (Collection-Build.ps1 -Action Evidence, #2464) writes its Markdown file and CSV to |
+| collection | collection.evidence_verse_name | verse-evidence | the stem of the verse evidence report's file names (#2467); the references, the version and the date follow it by the filing rule |
 | collection | collection.export_names | {'members-verses': 'collection-members-verses', 'surfaces': 'behaviour-and-inner-state-surfaces', 'collections': 'collections'} | the file name stem of each CSV export of the surface work (#2413): the view members-verses (ExportMembers), surfaces (ExportSurfaces) and collections (Export). The file is written under surfaces.exports_root as <stem>-v<n>-<yyyymmdd>.csv; the version is the next one over the live and archived files (reportkit.next_versioned_path, report.version_on_regenerate rules), and the previous live version is moved to governance.oneoff_report_archive_dir. The researcher no longer types a name. |
 | collection | collection.export_tiers | ['core', 'synonym', 'opposite', 'gathered'] | the tiers of a collection that count as its members in the CSV exports of the surface work (#2393); possible_opposite, associated and set_aside are listed apart and are not members |
 | collection | collection.list_max | 20 | the most words taken from each list (synonyms, opposites) the model names for a new collection (#2361) |
@@ -1610,7 +1622,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | validation | session_close.reading_file_pattern | (reading\|account\|ledger\|weave) | #2173 SC5(d): a changed file in reading_scope whose name matches this is a reading file and needs a placement per verse it names |
 | validation | session_close.reading_scope | ['_analytics/Clusters/*', '_analytics/cross-cluster-web/*'] | #2173 SC5(d): where reading files live (fnmatch; * crosses folders) |
 | validation | session_close.report_path | iba/app/reports/session-close.md | where session.close persists its findings -- escalation #1875 |
-| validation | session_close.sc16_designed_stops | ['COMMIT BLOCKED', 'NOT PASSED', 'a config change needs researcher approval'] | SC16 (repeated failures, iba/app/handlers/session_close.py): a failed tool result carrying one of these texts is a tool stopping by design, not a failure, and is not counted -- Session-Close.ps1 'COMMIT BLOCKED', Compliance.ps1 'NOT PASSED', configmaint.propose 'a config change needs researcher approval' (cfg_on_fail needs-approval). A real hard error, also exit 3, is still counted (#2220 decision B, researcher 2026-10-23) |
+| validation | session_close.sc16_designed_stops | ['COMMIT BLOCKED', 'NOT PASSED', 'a config change needs researcher approval', 'hook error: '] | SC16 (repeated failures, iba/app/handlers/session_close.py): a failed tool result carrying one of these texts is a tool stopping by design, not a failure, and is not counted -- Session-Close.ps1 'COMMIT BLOCKED', Compliance.ps1 'NOT PASSED', configmaint.propose 'a config change needs researcher approval' (cfg_on_fail needs-approval). A real hard error, also exit 3, is still counted (#2220 decision B, researcher 2026-10-23) A hook's refusal (every PreToolUse denial reads 'PreToolUse:<tool> hook error: <message>', for example the retired-script gate) is a refusal by design and is not counted either (#2458). |
 | validation | session_close.state_path | iba/app/reports/session-close-state.json | #2173 SC5(c): the register-check findings at the previous session's last close (the baseline that tells a new finding from a standing one) |
 | validation | spine.meaning_lexicon_languages | ['Greek'] | #2173 P3: languages whose strongs are checked for a strong_lexicon row (lsj, mounce). Evidence 2026-10-20: 25 Hebrew strongs sampled at random from STEP returned no lsjDefs and no shortDefMounce (LSJ and Mounce are Greek lexicons); every Greek strong has a row. |
 | validation | spine.quality_report_path | research/discovery/spine-check.md | where spine.check persists its findings |
@@ -1748,6 +1760,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | 7 | collection.ask | iba.app.handlers.collectionbuild:ask | none | judge the candidates of a collection through the AI client (the words nearest the core by embedding, and the listed words): candidate, score, pole check, association; one ai_call row each; -Collection, -Limit -- see lib/collectionask.py (escalation #2361) |
 | 8 | collection.export_members | iba.app.handlers.collectionbuild:export_members | none | write a CSV of the member surfaces of the collections to the exports folder, one row for each verse, cluster and tier, with the verse text, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 members-verses file) -- see lib/collectionexport.py (escalations #2393, #2413) |
 | 9 | collection.export_surfaces | iba.app.handlers.collectionbuild:export_surfaces | none | write a CSV of the surfaces of the behaviour and inner-being-state groups to the exports folder, one row for each verse and cluster, with the collection and tier of each membership, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 surfaces file) -- see lib/collectionexport.py (escalations #2393, #2413) |
+| 10 | collection.evidence | iba.app.handlers.collectionbuild:evidence | none | write the evidence report of one collection or a comma list (-Collection), or of a verse or list of verses (-Verse, items separated by a semicolon): the table entries stored for every aspect of the members or words, from the base data through the observations and claims into the narrative, as a Markdown file and a CSV under collection.evidence_path, versioned by the filing rule, the previous live versions archived; verses in Scripture order; laid out by word (or verse) then by type, or by type with -ByType; each observation is shown with the nodes that support it, grouped by verse with the verse text, and each Strong's code has an entry (native word, transliteration, gloss, sense, counts, meaning trees, related terms, LSJ and Mounce, cluster assignments, subgroup placement); no evaluation, nothing inferred, nothing written to a table; -Check writes no file -- see lib/collectionevidence.py (escalations #2464, #2467, #2469) |
 | 10 | collection.gather | iba.app.handlers.collectionbuild:gather | none | make one collection of the surfaces the researcher names (tier gathered), without the AI and without a judged core; -Name, -Surface, -Reason, -Check -- see lib/collectionbuild.py (escalation #2388) |
 | 11 | collection.attach_phrases | iba.app.handlers.collectionbuild:attach_phrases | none | connect each phrase of collection a to the collections of its words (tier phrase), then, for a phrase no word reaches, of its own Strong codes; flag the phrases neither reaches phrase_no_match; -Reason, -Check -- see lib/collectionbuild.py (escalation #2437) |
 
@@ -2153,7 +2166,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 <a id="7-on-fail-condition-path-the-fork-rules"></a>
 ## 7. on_fail — condition -> path (the fork rules)
 
-**20 of 190 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**20 of 191 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -2207,6 +2220,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | collection.ask | halted | report-continue | halted, what was answered is kept in ai_call -- the set number of questions in a row got no usable answer (the server or the ssh tunnel stopped answering); fix the cause and run again, it carries on with the words not yet judged (a usage outcome, not recorded as an escalation) |
 | collection.ask | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | collection.attach_phrases | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| collection.evidence | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | collection.export | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | collection.export_members | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | collection.export_surfaces | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
@@ -4598,7 +4612,7 @@ dedup key: `name, role`
 | run_state | running, paused, done, failed |
 | step_kind | operations, utility |
 | study_state | active, on_hold |
-| surface_cycle_module | group, structure, ai_base, resolve, collection |
+| surface_cycle_module | group, structure, ai_base, resolve, collection, engagementask |
 | surface_derivation.kind | inflection, derivation, lead_opposite, lead_other, lead_starts_with, own |
 | surface_derivation.method | structure, sibling, ollama, own, researcher |
 | surface_eval_case.source | researcher, claude, prototype |
@@ -4608,7 +4622,7 @@ dedup key: `name, role`
 | surface_flag.status | open, settled |
 | surface_subgroup.allocated_by | inherited, session, api, reading, manual |
 | surface_subgroup.status | provisional, moved |
-| surface_subject_kind | surface_term, surface_derivation, collection, collection_link |
+| surface_subject_kind | surface_term, surface_derivation, collection, collection_link, verse_lexical |
 | surface_term.base_source | structure, sibling, ollama, own, researcher |
 | surface_term.base_state | out_of_scope, phrase_not_tested, unmatched, matched_structure, matched_sibling, lead_only, ai_answered, ai_none, ai_failed, resolved_own, resolved, confirmed, base_ambiguous |
 | surface_term.collection_state | untouched, placed, set_aside, listed_only, shared |
@@ -5408,10 +5422,11 @@ settings: `resolve.ai_module`, `resolve.ai_step`, `resolve.order`, `resolve.prot
 | collection.ask | operations | judge the candidates of a collection through the AI client (the words nearest the core by embedding, and the listed words): candidate, score, pole check, association; one ai_call row each; -Collection, -Limit | ai_call, collection_listing, run_batch |
 | collection.export_members | utility | write a CSV of the member surfaces of the collections to the exports folder, one row for each verse, cluster and tier, with the verse text, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 members-verses file) | (reads only) |
 | collection.export_surfaces | utility | write a CSV of the surfaces of the behaviour and inner-being-state groups to the exports folder, one row for each verse and cluster, with the collection and tier of each membership, named from collection.export_names and versioned by the filing rule, the previous live version archived (a view, never an input; the #2379 surfaces file) | (reads only) |
+| collection.evidence | utility | write the evidence report of one collection or a comma list (-Collection), or of a verse or list of verses (-Verse, items separated by a semicolon): the table entries stored for every aspect of the members or words, from the base data through the observations and claims into the narrative, as a Markdown file and a CSV under collection.evidence_path, versioned by the filing rule, the previous live versions archived; verses in Scripture order; laid out by word (or verse) then by type, or by type with -ByType; each observation is shown with the nodes that support it, grouped by verse with the verse text, and each Strong's code has an entry (native word, transliteration, gloss, sense, counts, meaning trees, related terms, LSJ and Mounce, cluster assignments, subgroup placement); no evaluation, nothing inferred, nothing written to a table; -Check writes no file | (reads only) |
 | collection.gather | operations | make one collection of the surfaces the researcher names (tier gathered), without the AI and without a judged core; -Name, -Surface, -Reason, -Check | (reads only) |
 | collection.attach_phrases | operations | connect each phrase of collection a to the collections of its words (tier phrase), then, for a phrase no word reaches, of its own Strong codes; flag the phrases neither reaches phrase_no_match; -Reason, -Check | (reads only) |
 
-settings: `collection.embed_cache`, `collection.embed_role`, `collection.export_names`, `collection.export_tiers`, `collection.list_max`, `collection.score_threshold`, `collection.shortlist_size`
+settings: `collection.embed_cache`, `collection.embed_role`, `collection.evidence_name`, `collection.evidence_path`, `collection.evidence_verse_name`, `collection.export_names`, `collection.export_tiers`, `collection.list_max`, `collection.score_threshold`, `collection.shortlist_size`
 
 **AI control: models, prompts, calls, replay, compare** · work package `ai-control` · script `iba/app/ps/Ai-Control.ps1`
 
@@ -5429,7 +5444,7 @@ settings: `ai.allowed_options`, `ai.embed_batch`, `ai.log_write_retries`, `ai.lo
 
 surface_term by base_state: out_of_scope 2382, matched_structure 1215, phrase_not_tested 1166, resolved_own 702, ai_answered 374, ai_none 257, matched_sibling 83, ai_failed 27, base_ambiguous 14, unmatched 5
 
-surface_term by group_state: judged 5826, corrected 261, confirmed 82, unjudged 56
+surface_term by group_state: judged 5816, corrected 271, confirmed 82, unjudged 56
 
 collection_link by tier: phrase 3134, associated 3088, synonym 1223, possible_opposite 423, set_aside 316, core 276, opposite 170, gathered 85
 
@@ -5465,6 +5480,8 @@ Generated from `cfg_ai_model`, `cfg_ai_prompt` and `ai_call`. Every call goes th
 | collection.score | judge | v1 | 1 | closeness of meaning 0 to 10; a score of 8 or more adds a synonym the quick judge refused; fill style: str.format; {name} are variables, {{ and }} are literal braces |
 | collection.synonym | judge | v2 | 2 | judge a candidate against the core word only: synonym, opposite or distinct; fill style: str.format; {name} are variables, {{ and }} are literal braces |
 | collection.synonym_thesaurus | judge | (none) | 1 | thesaurus style yes or no question; fill style: str.format; {name} are variables, {{ and }} are literal braces |
+| engagement.triage | judge | v1 | 1 | first version: three-way triage of one surface in one verse (#2412 design D) |
+| engagement.triage_b | judge | v1 | 1 | second judge, differently worded: same three answers, inside-versus-scaffolding framing (#2412 design D) |
 | group.word | judge | v3 | 3 | put each surface to the model and get its group; fill style: str.replace of {surface} |
 
 **Where the AI has been used** (module, step; calls by outcome)
@@ -5480,6 +5497,7 @@ Generated from `cfg_ai_model`, `cfg_ai_prompt` and `ai_call`. Every call goes th
 | collection | pole_check | judge | qwen3:30b | collection.synonym v2 | 394 | 0 | 0 | 0 | 4.1 |
 | collection | real_word | judge | qwen3:30b | collection.real_word v1 | 228 | 0 | 0 | 0 | 1.5 |
 | collection | score | judge | qwen3:30b | collection.score v1 | 13204 | 0 | 0 | 0 | 3.9 |
+| engagementask | triage | judge | qwen3:30b | engagement.triage v1,engagement.triage_b v1 | 77 | 0 | 0 | 0 | 9.7 |
 | group | group | judge | qwen3:30b | group.word v3 | 6106 | 0 | 0 | 0 | 10.2 |
 
 **Steps that call the AI** (all through the client): `ai.replay`, `collection.ask`, `collection.seed`, `group.judge`, `surface_base.ask`

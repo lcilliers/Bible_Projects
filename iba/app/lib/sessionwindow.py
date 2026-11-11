@@ -133,12 +133,39 @@ def commit_exists(h: str) -> bool:
 _RULES_SHOWN = "Rules for this operation ("   # the point-of-use hook's deliberate refusal (#2209)
 
 
+_SHELL_PREFIX_RX = re.compile(r"^(?:pwsh|powershell)(?:\.exe)?\s+(?:-\w+\s+)*?-Command\s+", re.IGNORECASE)
+_FILE_RX = re.compile(r"-File\s+[\"']?([^\"'\s]+\.ps1)", re.IGNORECASE)
+
+
+def _run_script(cmd: str):
+    """The PS script a command RUNS, with its -Action or -Step, as a match of (name, flag, value); None when the command only names a script (in code text, a
+    heredoc, an argument). A script is run when it is the first word of a command segment (`.\\x.ps1`, `& "x.ps1"`, also inside `pwsh -Command "..."`) or follows
+    `-File`: the reading of .claude/hooks/gate_retired_script.py (#2458)."""
+    for seg in re.split(r"[;\n|]|&&|\|\|", cmd):
+        s = seg.strip()
+        for _ in range(3):
+            s = s.lstrip("&").strip().strip("\"'").strip()
+            s2 = _SHELL_PREFIX_RX.sub("", s)
+            if s2 == s:
+                break
+            s = s2
+        words = s.split()
+        first = words[0].strip("\"'") if words else ""
+        fm = _FILE_RX.search(seg)
+        script = first if first.lower().endswith(".ps1") else (fm.group(1) if fm else None)
+        if script:
+            m = re.search(r"([\w.-]+\.ps1)\b(?:.*?-(Action|Step)\s+['\"]?([\w.-]+))?", seg, re.S)
+            if m:
+                return m
+    return None
+
+
 def _operation(tool: str, inp: dict) -> str:
     """A short operation key for a tool call: a PS script with its -Action/-Step, a command's first
     word, or the top folder a file is written in."""
     if tool in ("Bash", "PowerShell"):
         cmd = inp.get("command", "")
-        m = re.search(r"([\w.-]+\.ps1)\b(?:.*?-(Action|Step)\s+['\"]?([\w.-]+))?", cmd, re.S)
+        m = _run_script(cmd)
         if m:
             return f"{m.group(1)} -{m.group(2)} {m.group(3)}" if m.group(2) else m.group(1)
         first = re.sub(r"^(?:(?:cd|export)\s+\S+\s*&&\s*|\w+=\S+\s*(?:&&\s*)?)+", "", cmd.strip()).split()

@@ -1,0 +1,22 @@
+# Escalation deep history
+
+## #2464 — Collection evidence report (database entries only)
+type=task source=researcher
+
+**v1** (2026-11-11T05:27:27Z, Claude) state=raised next_action=review assigned_to=Claude
+> **short description (set this version):** Collection evidence report (database entries only)
+> **comment (set this version):** Raised from #2463. Researcher, verbatim (2026-11-11): 'the first report is to gather the evidence from the database of a single or list of collections.  This report will expose the actual table entries for every aspect of the members of the collection from base data, through observations, through claims into narrative.  it is not doing evaluation of the data, except for blatant errors or omissions, it does not include inferred data, it only shows what exist in the database.  I suggest you create a escalation for the generation of this report, I will open a developer mode chat separately to access and do this work.' Work to be done in a separate Developer Mode session opened by the researcher; nothing designed or built here (B:105). Existing reports for reference: iba/app/ps/Collection-Build.ps1 (Show, ExportMembers, ExportSurfaces) and iba/app/ps/Engagement.ps1 (Check, Review); iba/app/USER-GUIDE.md section 8.14.
+
+**v2** (2026-11-11T05:45:41Z, Claude) state=in-progress next_action=review assigned_to=Claude
+> **comment (set this version):** Approved by the researcher in chat 2026-11-11 ('Approve, build it') on the plan outputs/escalation/2464-collection-evidence-report-plan-v1-20261111.md with the four recommended choices. Built in this Developer Mode session (iba/app/BUILD.md section 482).
+
+**v3** (2026-11-11T05:46:07Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **context (set this version):** iba/app/lib/collectionevidence.py; iba/app/handlers/collectionbuild.py; iba/app/ps/Collection-Build.ps1; iba/app/migration/archive/collection_evidence_2464_v1_20261111.py; iba/app/BUILD.md section 482; iba/app/USER-GUIDE.md section 8.14; outputs/reports/collection-evidence/collection-evidence-search-v1-20261111.md; outputs/reports/collection-evidence/collection-evidence-discord-console-v1-20261111.md
+> **resolution (set this version):** Approval sought: accept the collection evidence report as built and close #2464, or name what to change.
+Built: Collection-Build.ps1 -Action Evidence -Collection <name>[,<name>...] [-Check] (step collection.evidence; code iba/app/lib/collectionevidence.py; handler in iba/app/handlers/collectionbuild.py). For each collection it writes a Markdown file and a CSV under collection.evidence_path: the collection row and every link (live, then removed or superseded), the member terms, each member surface's occurrences in verse_lexical with the verse text, every observation on them with its nodes, their change history, the claims resting on them (by observation or by naming a verse) and the narrative sections that tell them, with their text. It evaluates nothing, infers nothing, calls no model, writes nothing to a table. Section 8 lists blatant errors and omissions by rule, each with its rows.
+Test results (live): search: 10 member terms, 685 occurrences, 3,353 nodes, 2,316 observations, 42 claim sources (2 by observation, 40 by verse), 1,113 live nodes on deleted observations: every count equal to an independently written query; the CSV has 685 distinct occurrences and 2,316 distinct observations. Refused with nothing written: an unknown name, no name, a name given twice. Two collections (discord, console) wrote one file pair; -Check on search, discord and uncovered-words wrote nothing; Show still works after -Collection became a string array. Config: 7 writes through apply_logged (run DEVMODE-2464-COLLECTION-EVIDENCE-20261111, rollback snapshot kept); the validation errors this build caused were cleared (3 older errors from #2412 engagementask remain in #2465).
+Shown in the report for search, as stored: 1,113 live nodes whose observation is deleted (withdrawn), and 114 live nodes with a member surface and verse but no verse_lexical_id. They are facts, not judged; raised as a separate item.
+Not done: the Collection-Build tab of iba/docs/ps tools worksheet.xlsx is not updated (validation reports no drift); the files are not yet registered with Manifest-Rebuild.ps1.
+
+**v4** (2026-11-11T05:50:52Z, Researcher) state=completed next_action=approved assigned_to=Researcher
+> **comment (set this version):** Researcher in chat 2026-11-11, verbatim: 'Approve, close it'.
