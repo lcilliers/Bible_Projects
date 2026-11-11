@@ -38,4 +38,8 @@ Project start, a fix of #2431, and planning of how to run engagement across all 
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. Commit 0d1448febf6a7c8ae65e3358fc976feecacd22e4 (session 20261111: engagement planning for all collections (#2412), #2431 resolved, #2461 and #2462 raised, session log, compliance file, close reports).
+
+Push output: `To https://github.com/lcilliers/Bible_Projects.git   9a201697..0d1448fe  main -> main`.
+
+Not staged: Logs/compliance/COMPLIANCE-20261111-bb3e2920.md, the compliance file of another session that was running in parallel.
