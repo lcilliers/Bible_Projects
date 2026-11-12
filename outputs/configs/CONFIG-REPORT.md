@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-11T14:18:51Z |
+| generated_at | 2026-11-12T13:22:58Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -5457,7 +5457,7 @@ surface_term by base_state: out_of_scope 2382, matched_structure 1215, phrase_no
 
 surface_term by group_state: judged 5795, corrected 292, confirmed 82, unjudged 56
 
-collection_link by tier: phrase 3134, associated 3088, synonym 1223, possible_opposite 423, set_aside 316, core 276, opposite 170, gathered 85
+collection_link by tier: phrase 3134, associated 2987, synonym 1223, gathered 722, possible_opposite 423, set_aside 316, core 276, opposite 170
 
 surface_flag by kind (open): ai_none 289, phrase_no_match 72, held_pair 39, possible_opposite 34, ai_failed 31, possessive 26, structure_conflict 14
 

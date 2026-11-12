@@ -1,0 +1,9 @@
+# Escalation deep history
+
+## #2484 — Add the collection to every observation node
+type=task source=researcher
+
+**v1** (2026-11-12T04:12:19Z, Claude) state=raised next_action=review assigned_to=Claude
+> **short description (set this version):** Add the collection to every observation node
+> **comment (set this version):** Researcher, verbatim (2026-11-12, session d281b154, under #2463): 'this has highlighted another node fix that should precede the missing verse-lexical fix. prior to collections, observations where often read in and related to clusters and sub clusters. this is now superseded with the collections. cluster and sub cluster allocations are no longer of analytic consequence or value, and often is misleading.  I suggest that the collection is added to nodes, and that we do a migration update for all nodes to add the collection.  add a escalation for this update, and also push the update of verse-lexical missing to a new escalation'. Claude: this item precedes the verse_lexical_id fill (raised separately). Scope: ib_node carries cluster_code and cluster_subgroup_code (14,728 of 78,099 live nodes lack a verse_lexical_id; every live node without one carries a cluster_code); the collection is to be added to every node, and a migration is to set it for all existing nodes. Decisions the design must settle before any build (B:105, B:44): how a node maps to its collection (by the node's word through collection_link, by cluster, or by the finding), which nodes have no collection or several, the column name and its recorded meaning in cfg_column, and what happens to cluster_code and cluster_subgroup_code. Nothing is built or changed.
+> **context (set this version):** iba/app/db/iba.db tables ib_node and collection; iba/app/lib/collectionevidence.py; outputs/escalation/2463-nodes-without-verse-lexical-id-findings-v1-20261112.md

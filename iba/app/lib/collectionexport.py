@@ -8,8 +8,9 @@ code, with the collection it belongs to if any:
                    each membership it has (blank when none), without the verse text.
 
 In `surfaces` a surface that is a member of a collection under two tiers is written once, with the strongest (core, synonym, opposite); in
-`members-verses` each tier is a row. A surface that no verse_lexical row carries is written once with the verse columns blank. In `members-verses` a member surface is the link's own term and the
-terms whose base is that term; in `surfaces` the surface takes the collections of the links on its base (or on itself when it has no other base). Its base word is the word of its own base (blank when it has none). The surface text joins to verse_lexical.surface lower-cased and
+`members-verses` each tier is a row. A surface that no verse_lexical row carries is written once with the verse columns blank. In both views a member surface is the link's own term and the
+terms whose base is that term, so a surface takes the collections of the links on its base and of the links on its own row, even when it has another base (#2488: the surfaces view
+used to read the base's links only and left out a derived surface that has a link of its own; engagement and the evidence report always counted it). Its base word is the word of its own base (blank when it has none). The surface text joins to verse_lexical.surface lower-cased and
 trimmed (the key surface_term uses). The cluster is every live cluster_strong row of the Strong's code; the subgroup is the surface's own
 surface_subgroup row for that cluster and code, and the concept and domain are those of the subgroup (concept_subgroup). Rows are ordered by
 surface, Strong's code and verse_lexical row, so a second run on the same tables gives the same file.
@@ -89,7 +90,7 @@ def build(conn, view: str, tiers: list, groups: list) -> tuple[list, list]:
         raise ExportError(f"-View {view!r} is not one of {', '.join(VIEWS)}")
     terms = {r[0]: r for r in conn.execute("SELECT id, surface, origin, surface_group, group_state, base_id FROM surface_term WHERE deleted=0")}
     verses = view == "members-verses"
-    member = _memberships(conn, terms, tiers, own_link=verses)
+    member = _memberships(conn, terms, tiers, own_link=True)       # both views: a link on a derived surface's own row counts (#2488)
     scope = sorted(member) if verses else sorted(sid for sid, t in terms.items() if t[3] in groups or t[3] is None)
     lex = _lexical(conn, {terms[sid][1] for sid in scope}, verses)
     clusters, cname, sub = _placement(conn)

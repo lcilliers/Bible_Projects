@@ -20571,3 +20571,23 @@ A second migration `iba/app/migration/archive/cfg_analytic_home_2475_v2_20261111
 **Tested:** `iba/app/tools/temp_2479_phrase_members_test_run.py`, 10 of 10 cases pass; `temp_2477_evidence_report_test_run.py` still 18 of 18. Config validation: no new findings.
 
 **Left:** the other 37 collections already through engagement have their phrase rows unassessed (4,309 collection-and-row pairs, 1,862 distinct verse rows of 447 phrases); one item, #2481, holds it.
+
+
+## 493. The surfaces export reads a link on a surface's own row (2026-11-12, escalation #2488)
+
+**Researcher's decision (2026-11-12, verbatim on #2488):** the surfaces whose own row carries a collection link must be included in collections; asked for the export fix after the check of which readers see them ('yes, build the export fix').
+
+**Finding:** engagement (`engagement.member_terms`), the evidence report (a link's own term and the terms of its base) and the `members-verses` export count a link on the row of a derived surface (a surface whose base is another surface). The `surfaces` view read only the links on the base (or on the surface itself when it has no other base), so it showed 165 terms as non-members: the 64 whose own row held a member-tier link, and the 101 linked on 2026-11-12 (group B).
+
+**Built:** `iba/app/lib/collectionexport.py` `build` reads `_memberships(..., own_link=True)` for both views, and the docstring and USER-GUIDE 8.x say so. No setting, table or data changed.
+
+**Tested:** `iba/app/tools/temp_2488_export_own_link_test_run.py` on a copy of iba.db, 8 of 8 pass (the base-only rule misses 165 terms; own-row links only add; the view is the same on a second run; `troubled` shows fear and tribulation; every in-scope surface the old rule missed has a collection row; the surfaces view and `members-verses` agree on the collections of every surface; engagement's members of `fear` equal the export's). `temp_2479_phrase_members_test_run.py` gives 5 of 9 with and without this change: P1, P4, P5 and P7 expect the counts of 2026-11-11 for `search` and fail because of the group B links written on 2026-11-12 (the new members of `search` add 381 unassessed word items); the change of this entry is not the cause.
+
+**Left:** the 637 surfaces linked on 2026-11-12 are new members of collections already through engagement, so their verse items are unassessed (`Engagement.ps1 -Action Pull -Missing` finds them); the expected counts of the 2479 test need re-basing; neither done here.
+
+
+## 494. Two data corrections run as migrations: nodes on withdrawn observations, and group B surfaces linked (2026-11-12, escalations #2487 and #2488)
+
+**Nodes on withdrawn observations (#2487, researcher 2026-11-12: 'active nodes for a withdrawn/softdeleted observation can simply be marked as withdrawn'):** `iba/app/migration/archive/withdraw_nodes_of_withdrawn_observations_2487_v1_20261112.py`, run `DEVMODE-2487-NODES-ON-WITHDRAWN-OBS-20261112`. The 4,962 live `ib_node` rows on 4,380 withdrawn observations were withdrawn through `observationrecord.delete_node` (`deleted=1`, a row in `ib_observation_change` with the reason; the disposition untouched). Predicted live nodes 78,099 to 73,137 and 4,962 change rows; tried on a copy, a second run changes nothing, then live with equal counts. Rollback: `iba/app/db/snapshots/kept/iba-20261112T084858Z-pre-2487-withdraw-nodes.db`.
+
+**Group B surfaces linked (#2488, researcher 2026-11-12: link them to the collections suggested by their cluster-subgroup fellows, tier gathered, the remaining few to the unassigned collection):** `iba/app/migration/archive/link_group_b_surfaces_to_collections_2488_v1_20261112.py`, run `DEVMODE-2488-GROUP-B-LINKS-20261112`, source `_analytics/surfaces/exports/study-surfaces-group-b-subgroup-fellows-v2-20261112.xlsx`, log `outputs/escalation/2488-group-b-links-v1-20261112.tsv`. 536 new gathered links, 101 `associated` links superseded by gathered, 637 surfaces `placed`, 637 `surface_event` rows (set_tier); 42 surfaces held because their earlier link to the same collection is set_aside (31) or possible_opposite (11); live links 8,715 to 9,251. Tried on a copy, a second run changes nothing, then live with equal counts. Rollback: `iba/app/db/snapshots/kept/iba-20261112T130805Z-pre-2488-group-b-links.db`. Both scripts are archived after the run (the validation check names a migration left in no utility).

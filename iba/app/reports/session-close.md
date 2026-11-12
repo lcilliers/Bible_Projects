@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-11T17:21:05Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-12T13:28:52Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `bb3e2920-7092-4b98-97eb-75ce272429a2` (CLAUDE_CODE_SESSION_ID); started 2026-11-11T05:04:54Z; window base commit `9a201697aa932ea76e049935b4cced2382ad7f4f`
-- compliance file: `Logs/compliance/COMPLIANCE-20261111-bb3e2920.md`; session log: `Logs/SESSION-LOG-20261111-collection-search-analysis-2463.md`
-- **open findings: 0**; cleared by disposition: 6
+- session: `8aa10d3c-e70b-4026-80d0-402cd5576939` (CLAUDE_CODE_SESSION_ID); started 2026-11-12T04:16:53Z; window base commit `601444b961e2a28680b51e4370e931c7deb99031`
+- compliance file: `Logs/compliance/COMPLIANCE-20261112-8aa10d3c.md`; session log: `Logs/SESSION-LOG-20261112-node-salvage-and-collection-validation.md`
+- **open findings: 0**; cleared by disposition: 12
 
 
 ## Contents
@@ -41,12 +41,31 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:f902a4b1`: researcher message 2026-11-11T05:04 is too short to be matched; name where it is recorded: "start-session" -- disposition: no record needed: the bare start-project command
+- cleared `SC3:d2045678`: researcher message 2026-11-12T04:20 is too short to be matched; name where it is recorded: "start #2484" -- disposition: recorded in #2484 v6
+- cleared `SC3:3ce85427`: researcher message 2026-11-12T06:07 is too short to be matched; name where it is recorded: "my mistake 277" -- disposition: recorded in #2487 v9
+- cleared `SC3:808417f6`: researcher message 2026-11-12T07:08 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: no record needed: the system's context-continuation summary, not a message the researcher wrote
+- cleared `SC3:93baaf79`: researcher message 2026-11-12T08:59 is in no escalation comment written this session: "<task-notification>
+<task-id>b2jr1431d</task-id>
+<tool-use-id>toolu_011QeT2Gg7sGCsnZDB4Uhnt2</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automatic background-task notification, not a message the researcher wrote
+- cleared `SC3:3baafb5a`: researcher message 2026-11-12T13:24 is too short to be matched; name where it is recorded: "Not now" -- disposition: recorded in #2488 v14
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:b25fedfc`: researcher message 2026-11-11T11:23 holds, defers or asks to check something; name its register item: "did you check escalation 2464" -- disposition: not held: a question answered the same turn by reading the history of #2464 (outputs/escalation/2464-escalation-history-v2-20261111.md); recorded in #2463 v8
+- cleared `SC4b:0f7b30fb`: researcher message 2026-11-12T04:24 holds, defers or asks to check something; name its register item: "can you check the consistency of the surface in the nodes to the verse-lexical surface. I suspect that many of the node surfaces are no longer matching the vers" -- disposition: in register #2484
+- cleared `SC4b:c0a56565`: researcher message 2026-11-12T06:06 holds, defers or asks to check something; name its register item: "D1 - there is approx 177 collections. this is the scope.  D2 R1 yes, but the finding (observation) my cover multiple surfaces which becomes nodes of the observa" -- disposition: in register #2487
+- cleared `SC4b:808417f6`: researcher message 2026-11-12T07:08 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: not held: the system's context-continuation summary, not a researcher message
+- cleared `SC4b:4d568227`: researcher message 2026-11-12T08:56 holds, defers or asks to check something; name its register item: "node 23816 for node surface spirit is in your list in the excel for out of scope nodes. it has surface group entity.  I could not find this node in the Held-ent" -- disposition: in register #2488
+- cleared `SC4b:21177f17`: researcher message 2026-11-12T09:44 holds, defers or asks to check something; name its register item: "did you check that the 887 are the only ones missing? Total surfaces of the entire scope is split into 4 groups. Except for entity and other, all surfaces shoul" -- disposition: in register #2488
+- cleared `SC4b:f659a436`: researcher message 2026-11-12T09:57 holds, defers or asks to check something; name its register item: "it is sickening.  I really do not have time to digest this at the moment. Till later then. Back to basics." -- disposition: in register #2488
+- cleared `SC4b:0380817f`: researcher message 2026-11-12T12:35 holds, defers or asks to check something; name its register item: "yes, check the 623 - I would not be surprised if they are miss judged codes that should have been inner being related, check the are in collections." -- disposition: in register #2488
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -73,10 +92,7 @@ _no finding_
 <a id="sc10-buildmd-coverage"></a>
 ## SC10 BUILD.md coverage
 
-- cleared `SC10:iba/app/ps/Node-Resolve.ps1`: `iba/app/ps/Node-Resolve.ps1` changed this session and is not named in what BUILD.md gained this session -- disposition: carried #2483
-- cleared `SC10:iba/app/ps/Prior-Capture.ps1`: `iba/app/ps/Prior-Capture.ps1` changed this session and is not named in what BUILD.md gained this session -- disposition: carried #2483
-- cleared `SC10:iba/app/ps/Surface-Map.ps1`: `iba/app/ps/Surface-Map.ps1` changed this session and is not named in what BUILD.md gained this session -- disposition: carried #2483
-- cleared `SC10:iba/app/ps/Verse-Scope.ps1`: `iba/app/ps/Verse-Scope.ps1` changed this session and is not named in what BUILD.md gained this session -- disposition: carried #2483
+_no finding_
 
 <a id="sc12-publish"></a>
 ## SC12 Publish
