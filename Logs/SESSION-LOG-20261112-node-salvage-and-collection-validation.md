@@ -54,4 +54,11 @@ For Claude:
 
 ## 6. Git
 
-(To be written after the first commit.)
+Branch `main`. First commit `8c01606a48ebcef20effcd5d711ad8855d1f4f51` ("session 20261112: nodes on withdrawn observations withdrawn (#2487), collections found not a validated base (#2488 raised), group B surfaces linked tier gathered (637), surfaces export reads own-row links, session log, compliance file, close reports, BUILD 493-494"), 37 changed files. Push output:
+
+```
+To https://github.com/lcilliers/Bible_Projects.git
+   601444b9..8c01606a  main -> main
+```
+
+Left untracked on purpose: `_analytics/surfaces/exports/.claude/` (hook state and a gate log, made because the shell ran inside the exports folder; not project content). Session-close reports at close: v355 with 0 open findings.
