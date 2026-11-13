@@ -248,6 +248,9 @@ def attach_phrases(ctx: Ctx) -> Outcome:
     """Connect the phrases of collection a to collections by their words, then by their own Strong's codes; the phrases neither reaches are flagged
     phrase_no_match (escalation #2437). -Reason (the instruction, quoted, with the escalation id); -Check previews."""
     conn = ctx.cfg.conn
+    if not _flag(ctx, "Check"):
+        return fail("refused", "the phrase rule is retired (escalation #2491 step 4, BUILD 502): a phrase is one concept placed in one collection by meaning, "
+                    "not attached to the collections of each of its words. A preview (-Check) still runs.")
     scope = ctx.cfg.setting("surfaces.scope_groups")
     tiers = ctx.cfg.setting("collection.export_tiers")
     if not scope or "a" not in scope or not tiers:

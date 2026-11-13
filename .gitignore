@@ -184,3 +184,6 @@ Workflow/schema/iba/
 # surface cycle (#2361): regenerable embedding cache and discarded embedding matrices are not kept in git
 _analytics/surfaces/working_files/collection/embeddings/
 _analytics/surfaces/discarded/*.npy
+
+# Hook state written under a folder a command ran in (not the project root): never project content (2026-11-13)
+_analytics/**/.claude/

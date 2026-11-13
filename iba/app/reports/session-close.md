@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-12T13:28:52Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-13T04:54:30Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `8aa10d3c-e70b-4026-80d0-402cd5576939` (CLAUDE_CODE_SESSION_ID); started 2026-11-12T04:16:53Z; window base commit `601444b961e2a28680b51e4370e931c7deb99031`
-- compliance file: `Logs/compliance/COMPLIANCE-20261112-8aa10d3c.md`; session log: `Logs/SESSION-LOG-20261112-node-salvage-and-collection-validation.md`
-- **open findings: 0**; cleared by disposition: 12
+- session: `4809e505-4396-4642-9c53-39171b55d802` (CLAUDE_CODE_SESSION_ID); started 2026-11-12T13:31:04Z; window base commit `dd619bd91f0f89701c27d7175e50b2254cb71fd0`
+- compliance file: `Logs/compliance/COMPLIANCE-20261112-4809e505.md`; session log: `Logs/SESSION-LOG-20261113-collection-rebuild.md`
+- **open findings: 0**; cleared by disposition: 26
 
 
 ## Contents
@@ -41,31 +41,39 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:d2045678`: researcher message 2026-11-12T04:20 is too short to be matched; name where it is recorded: "start #2484" -- disposition: recorded in #2484 v6
-- cleared `SC3:3ce85427`: researcher message 2026-11-12T06:07 is too short to be matched; name where it is recorded: "my mistake 277" -- disposition: recorded in #2487 v9
-- cleared `SC3:808417f6`: researcher message 2026-11-12T07:08 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC3:20f03949`: researcher message 2026-11-12T14:40 is too short to be matched; name where it is recorded: "Yes, withdraw them" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:cffb2990`: researcher message 2026-11-12T14:42 is too short to be matched; name where it is recorded: "Yes, regenerate" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:158a6143`: researcher message 2026-11-12T14:50 is too short to be matched; name where it is recorded: "Show me samples" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:dceb9263`: researcher message 2026-11-12T15:05 is too short to be matched; name where it is recorded: "Not now" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:3b6f6e7b`: researcher message 2026-11-12T18:01 is too short to be matched; name where it is recorded: "Yes, apply them" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:3f8db47c`: researcher message 2026-11-13T03:44 is too short to be matched; name where it is recorded: "Yes, apply them" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:2935d03d`: researcher message 2026-11-12T19:09 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: no record needed: the system's context-continuation summary, not a message the researcher wrote
-- cleared `SC3:93baaf79`: researcher message 2026-11-12T08:59 is in no escalation comment written this session: "<task-notification>
-<task-id>b2jr1431d</task-id>
-<tool-use-id>toolu_011QeT2Gg7sGCsnZDB4Uhnt2</tool-use-id>
-<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automatic background-task notification, not a message the researcher wrote
-- cleared `SC3:3baafb5a`: researcher message 2026-11-12T13:24 is too short to be matched; name where it is recorded: "Not now" -- disposition: recorded in #2488 v14
+Summar" -- disposition: no record needed: the summary of the compacted conversation inserted by the harness, not a researcher message
+- cleared `SC3:f0a77c46`: researcher message 2026-11-13T03:50 is too short to be matched; name where it is recorded: "Yes, both" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:e94b557c`: researcher message 2026-11-13T03:57 is too short to be matched; name where it is recorded: "Yes, step 3" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:a35b6477`: researcher message 2026-11-13T04:01 is too short to be matched; name where it is recorded: "Yes, step 4" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:9982a138`: researcher message 2026-11-13T04:06 is too short to be matched; name where it is recorded: "Yes, step 5" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:7bd3983a`: researcher message 2026-11-13T04:11 is too short to be matched; name where it is recorded: "Yes, step 6" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:a51e924d`: researcher message 2026-11-13T04:16 is too short to be matched; name where it is recorded: "Yes, long tail" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:0efed3be`: researcher message 2026-11-13T04:23 is too short to be matched; name where it is recorded: "Yes, both" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:75034e45`: researcher message 2026-11-13T04:32 is too short to be matched; name where it is recorded: "Yes, withdraw" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:8fc593c5`: researcher message 2026-11-13T04:34 is too short to be matched; name where it is recorded: "Yes, place them" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
+- cleared `SC3:2057300b`: researcher message 2026-11-13T04:40 is too short to be matched; name where it is recorded: "Yes, revise" -- disposition: no record needed: a bare answer recorded in the context of the item it answers (#2491 v27, #2487 v19)
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:0f7b30fb`: researcher message 2026-11-12T04:24 holds, defers or asks to check something; name its register item: "can you check the consistency of the surface in the nodes to the verse-lexical surface. I suspect that many of the node surfaces are no longer matching the vers" -- disposition: in register #2484
-- cleared `SC4b:c0a56565`: researcher message 2026-11-12T06:06 holds, defers or asks to check something; name its register item: "D1 - there is approx 177 collections. this is the scope.  D2 R1 yes, but the finding (observation) my cover multiple surfaces which becomes nodes of the observa" -- disposition: in register #2487
-- cleared `SC4b:808417f6`: researcher message 2026-11-12T07:08 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC4b:2bb0a098`: researcher message 2026-11-12T14:20 holds, defers or asks to check something; name its register item: "there are 9921 nodes with verse references, but no surface.  You can trace back the verse, through the data to get the collection or collections the verse is li" -- disposition: in register #2487
+- cleared `SC4b:537b2a55`: researcher message 2026-11-12T14:26 holds, defers or asks to check something; name its register item: "any observation that is not a statement that is founded in its verse are mall formed.  Did you check the rules for the formation of observations and mal formed " -- disposition: in register #2487
+- cleared `SC4b:ca189c3e`: researcher message 2026-11-12T15:27 holds, defers or asks to check something; name its register item: "so when you said that all the surfaces are covered in the previous session, you actually mislead me - because what you actually say is it depends on how you loo" -- disposition: in register #2491
+- cleared `SC4b:825d1d88`: researcher message 2026-11-12T17:41 holds, defers or asks to check something; name its register item: "5.1 section 4.0.  I can hardly see that words like days, right, has and had are surfaces that is either a behaviour nor a inner being state. they should not be " -- disposition: in register #2491
+- cleared `SC4b:90306a85`: researcher message 2026-11-12T17:59 holds, defers or asks to check something; name its register item: "looking at the merge proposal - good work - I was unnessarily critical of you.  Regarding D1 (excellent group - agree regroup) D2 - reverance - perhaps fear of " -- disposition: in register #2491
+- cleared `SC4b:2935d03d`: researcher message 2026-11-12T19:09 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: not held: the system's context-continuation summary, not a researcher message
-- cleared `SC4b:4d568227`: researcher message 2026-11-12T08:56 holds, defers or asks to check something; name its register item: "node 23816 for node surface spirit is in your list in the excel for out of scope nodes. it has surface group entity.  I could not find this node in the Held-ent" -- disposition: in register #2488
-- cleared `SC4b:21177f17`: researcher message 2026-11-12T09:44 holds, defers or asks to check something; name its register item: "did you check that the 887 are the only ones missing? Total surfaces of the entire scope is split into 4 groups. Except for entity and other, all surfaces shoul" -- disposition: in register #2488
-- cleared `SC4b:f659a436`: researcher message 2026-11-12T09:57 holds, defers or asks to check something; name its register item: "it is sickening.  I really do not have time to digest this at the moment. Till later then. Back to basics." -- disposition: in register #2488
-- cleared `SC4b:0380817f`: researcher message 2026-11-12T12:35 holds, defers or asks to check something; name its register item: "yes, check the 623 - I would not be surprised if they are miss judged codes that should have been inner being related, check the are in collections." -- disposition: in register #2488
+Summar" -- disposition: not held: the summary of the compacted conversation inserted by the harness, not a researcher message
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -102,4 +110,6 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:PowerShell:_cd:0ddc2f07`: PowerShell: cd failed 2 times this session: ModuleNotFoundError: No module named 'openpyxl' -- disposition: fixed: xlsx scripts are run with plain python, not python -I, which hides openpyxl; every later xlsx run worked
+- cleared `SC16:PowerShell:_cd:50ebfef1`: PowerShell: cd failed 2 times this session: copy: C:\Users\lerouxc\AppData\Local\Temp\claude\4ef92e590a942992\4809e505-4396-4642-9c53-39171b55d802\scratchpad\c2487\ -- disposition: fixed: not a failure of the command: lib.dbsnapshot prints its confirmation line 'copy: <path>' on the error stream; the run that followed each copy worked
+- cleared `SC16:PowerShell:_cd:1a34bc7e`: PowerShell: cd failed 3 times this session: copy: C:\Users\lerouxc\AppData\Local\Temp\claude\4ef92e590a942992\4809e505-4396-4642-9c53-39171b55d802\scratchpad\c2491b -- disposition: fixed: not a failure of the command: lib.dbsnapshot prints its confirmation line 'copy: <path>' on the error stream; the run that followed each copy worked

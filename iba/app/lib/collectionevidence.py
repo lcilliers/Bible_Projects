@@ -98,6 +98,16 @@ def resolve(conn, names: list[str]) -> list[dict]:
     return out
 
 
+MEMBER_TIERS = ("core", "synonym", "opposite", "gathered", "phrase")
+
+
+def _own_terms(conn, tiers) -> set:
+    """The terms with a live link of their own in a member tier. The members are surfaces (#2491): such a term is read by its own links only,
+    never also through its base."""
+    tiers = list(tiers) or list(MEMBER_TIERS)
+    return {r[0] for r in conn.execute(f"SELECT DISTINCT term_id FROM collection_link WHERE deleted=0 AND tier IN ({','.join('?' * len(tiers))})", tiers)}
+
+
 def _terms(conn):
     terms = {r[0]: r for r in conn.execute("SELECT id, surface, form, origin, surface_group, group_state, base_id, base_source, base_state, collection_state, deleted "
                                            "FROM surface_term")}
@@ -118,10 +128,11 @@ def build_collection(conn, col: dict, tiers: list, order: Order) -> dict:
         ("id", "tier", "term_id", "surface", "shared", "superseded_by_id", "reason", "ai_call_id", "run_id", "created_by", "created_at", "deleted", "load_ref"))
     d["links"].sort(key=lambda r: (r["deleted"], TIER_ORDER.get(r["tier"], 9), r["surface"] or "", r["id"]))
     member = {}   # term id -> set of (link id, tier)
+    own_terms = _own_terms(conn, tiers)
     for ln in d["links"]:
         if ln["deleted"] or ln["tier"] not in tiers:
             continue
-        reach = list(of_base.get(ln["term_id"], []))
+        reach = [s for s in of_base.get(ln["term_id"], []) if s not in own_terms]
         if ln["term_id"] in terms:
             reach.append(ln["term_id"])
         for sid in reach:
@@ -204,9 +215,10 @@ def build_verses(conn, verses: list[dict], order: Order) -> dict:
     d = {"kind": "verse", "name": ", ".join(dict.fromkeys(v["asked"] for v in verses)), "verses": verses}
     terms, of_base = _terms(conn)
     memb = collections.defaultdict(set)
+    own_terms = _own_terms(conn, MEMBER_TIERS)
     for cname, tier, tid in conn.execute("SELECT c.name, l.tier, l.term_id FROM collection_link l JOIN collection c ON c.id=l.collection_id "
                                          "WHERE l.deleted=0 AND c.deleted=0"):
-        reach = list(of_base.get(tid, [])) + ([tid] if tid in terms else [])
+        reach = [s for s in of_base.get(tid, []) if s not in own_terms] + ([tid] if tid in terms else [])
         for sid in reach:
             memb[terms[sid][1]].add((cname, tier))
     ids = {v["verse_id"] for v in verses}
