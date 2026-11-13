@@ -47,3 +47,5 @@ A Developer Mode session on the IBA app and its data. It began as the node clean
 - #2492 (Claude, raised at the close): the loose ends of the rebuild that were in no item: the node-writing path of the reading step does not yet set the collection on a new node (D5 of #2484); the 11,175 never-grouped surface texts are outside the collections by the researcher's ruling and were not searched for behaviours or states; the test runs temp_2393 and temp_2479 of the exports were not re-run after BUILD 512, and the evidence report and engagement were not compared before and after.
 
 ## 6. Git
+
+Branch: main. Commit 6b142c52b92eae5e69a68489d6490d3c94f9cf72 (session 20261113: node cleanup (#2487) and rebuild of the collections (#2491) ... 55 files, 5,356 insertions, 39 deletions). Push output: `To https://github.com/lcilliers/Bible_Projects.git   dd619bd9..6b142c52  main -> main`. Session-Close.ps1 exited 0 (0 open findings) before the commit, report `iba/app/reports/session-close-v357-20261113.md`. The named snapshots and the database are not committed.
