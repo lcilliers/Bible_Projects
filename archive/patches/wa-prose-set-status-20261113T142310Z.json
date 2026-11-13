@@ -1,0 +1,158 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261113T142310Z-PROSE-SET-STATUS",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-13T14:23:10Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Set 14 prose_section row(s) to status='approved'."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-1047-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1047,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1048-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1048,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1043-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1043,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1046-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1046,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1069-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1069,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1089-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1089,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1128-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1128,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1129-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1129,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1130-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1130,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1131-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1131,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1132-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1132,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1133-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1133,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1134-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1134,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    },
+    {
+      "op_id": "PROSE-1135-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 1135,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 14,
+    "prose_section_status_set": 14,
+    "status": "approved",
+    "skipped": []
+  }
+}

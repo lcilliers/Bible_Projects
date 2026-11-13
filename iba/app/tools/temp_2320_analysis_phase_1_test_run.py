@@ -211,9 +211,9 @@ case("M1", "dry run writes nothing; apply writes; a second run is refused (when 
      (mo[0].startswith("DRY RUN") and "write(s) applied" in mo[1] if FRESH else mo[0].startswith("already applied"))
      and mo[2].startswith("already applied"), mo)
 roles = orec.node_role_groups(cfg)
-case("M2", "node roles by result; standalone is not a role of a new node; the parts column exists; gather is retired",
-     roles == {"relevant": ["characteristic", "qualifier"], "bears_on": ["object", "relational_target", "enactment"]}
-     and "standalone" not in orec.node_roles(cfg)
+case("M2", "node roles by result; standalone is a role (recognised, B:130); the parts column exists; gather is retired",
+     roles == {"relevant": ["characteristic", "qualifier"], "bears_on": ["object", "relational_target", "enactment"], "recognised": ["standalone"]}
+     and "standalone" in orec.node_roles(cfg)
      and "parts" in [r[1] for r in q("PRAGMA table_info(ib_observation)")] and cfg.step_inactive("reading", "reading.gather"),
      (roles,))
 case("M3", "the rules are restated and the new ones are in; the write grant is live",
@@ -365,10 +365,10 @@ save("t2320-a", d)
 r = run("record", Label="t2320-a")
 case("R4", "a polarity outside refusal/pursuit is refused", r.condition == "refused" and counts() == before, r.message)
 d["verses"][0]["sheet"]["findings"][0]["parts"]["polarity"] = "pursuit"
-d["verses"][0]["sheet"]["findings"][0]["nodes"][0]["role"] = "standalone"
+d["verses"][0]["sheet"]["findings"][0]["nodes"][0]["role"] = "sideways"
 save("t2320-a", d)
 r = run("record", Label="t2320-a")
-case("R5", "the role standalone is refused for a new node", r.condition == "refused" and counts() == before, r.message)
+case("R5", "a role outside reading.node_roles is refused for a new node", r.condition == "refused" and counts() == before, r.message)
 d["verses"][0]["sheet"]["findings"][0]["nodes"][0]["role"] = "characteristic"
 saved_nodes = d["verses"][0]["sheet"]["findings"][0]["nodes"]
 cov = {n["counts_for"] for e in d["verses"][0]["sheet"]["existing"] for n in e["nodes"] if n["counts_for"]}

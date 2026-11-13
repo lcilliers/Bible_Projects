@@ -1,0 +1,147 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261113T142233Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-13T14:22:33Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 10 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-1043-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1043,
+      "record": {
+        "body": "[DEFINITION] An analytical grouping mechanism for Strong's terms, used to establish the collections. Each cluster carries an M-code (e.g. M01). M01 to M47 group Strong's terms by shared characteristics of the inner being. Two further codes extend the scheme: FLAG holds terms not yet decided into a characteristic grouping, and T2 holds supplementary terms that are not themselves inner-being terms. T3 is a related tier for action verbs and other terms not directly tied to an inner-being operation.\n\n[BACKGROUND] Clusters have served their purpose in establishing the collections and play no part in nodes and observations; cluster_code on a node is history (researcher, 2026-11-13; behaviour rules 130 and 131). The code itself is cluster.cluster_code; the bare cluster columns are ib_characteristic.cluster, verse_span_index.cluster and file_manifest.cluster. See the other \"cluster\" entry below for an unrelated, retired scheme (C01 to C22).",
+        "heading": "M-Code cluster",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1}"
+      }
+    },
+    {
+      "op_id": "PROSE-1046-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1046,
+      "record": {
+        "body": "[DEFINITION] M-code cluster with code T2 consists of Strong's codes carrying no direct inner-being connotation. These terms may serve as a qualifier to enhance another inner being term. Their analytic value is closely tied to another term, never in isolation.\n\n[BACKGROUND] T2 is a cluster_code value, like FLAG and T3, distinct from T3 (a tier for human operations and movements not tied to one cluster). Clusters play no part in nodes and observations; cluster_code on a node is history (researcher, 2026-11-13).",
+        "heading": "T2",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1261}"
+      }
+    },
+    {
+      "op_id": "PROSE-1047-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1047,
+      "record": {
+        "body": "[DEFINITION] Characteristic (short form Char) is widely used to describe inner being behaviour. It is the foundation for the programme observations of how the inner being works or manifest. The composition and naming of specific characteristics are not predefined and is part of the subject matter of the program. The word_registry.word IS NOT a characteristic and the registry should never be used as the composition of a specific Characteristic. The lemma, gloss, sub gloss or surface word used in the lexical is not synonymous to a characteristic. A specific characteristic is likely to be associated with a group of like words; the study gathers them in collections of surfaces. On a node, characteristic is the role of the word the finding is about.\n\n[BACKGROUND] Unlike the body that have a defined set of members (arms. fingers etc) , the inner being does NOT consist of a predefined list of characteristics. Characteristics cannot be measured and their structure and existence are only known by inference on the inner being behaviours. Characteristics is not a thing, it is likely to be something like a process, state, movement. The collection of behaviours, processes, actions, movements in the inner being give substance to a specific characteristic such as anger or love. Clusters and subgroups served to establish the collections and play no part in observations (researcher, 2026-11-13).",
+        "heading": "characteristic",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1}"
+      }
+    },
+    {
+      "op_id": "PROSE-1048-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1048,
+      "record": {
+        "body": "[DEFINITION] operation within the context of the inner being encapsulate or describe what and how a inner being activity is working or behaving. This includes from or to other objects outside of the inner being such as another inner being, non-inner being, or physical object.\n\n[BACKGROUND] In an observation, the operation of a statement finding is an action description (who or what does what) with its mode: done, foreseen, commanded, negated or reported (cfg_setting reading.observation_items).",
+        "heading": "operation",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1}"
+      }
+    },
+    {
+      "op_id": "PROSE-1069-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1069,
+      "record": {
+        "body": "[DEFINITION] T3 is a tier for Strong's terms describing an inner-being operation, action, or movement (often a verb) that is not tied to one specific cluster, or that applies broadly across many clusters. Unlike T2, T3 terms ARE inner-being-related: they describe an operation, not merely qualify one.\n\n[BACKGROUND] T3 is a cluster_code value, like FLAG and T2. Clusters play no part in nodes and observations; cluster_code on a node is history (researcher, 2026-11-13).",
+        "heading": "T3",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1262}"
+      }
+    },
+    {
+      "op_id": "PROSE-1132-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1132,
+      "record": {
+        "body": "[DEFINITION] A subdivision of an M-code cluster that carries a label and a core description of which sense of the cluster theme it covers (for example M01-A). A (Strong's code, surface) pair was allocated to a subgroup at the clustering stage; the allocation is provisional, never a finding.\n\n[BACKGROUND] Held in cluster_subgroup; the allocation of a pair is surface_subgroup. Subgroups served to establish the collections and play no part in nodes and observations; cluster_subgroup_code on a node is history (researcher, 2026-11-13; behaviour rules 130 and 131).",
+        "heading": "subgroup",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1292}"
+      }
+    },
+    {
+      "op_id": "PROSE-1133-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1133,
+      "record": {
+        "body": "[DEFINITION] A set of surfaces (words and phrases) of like meaning, gathered and named for the concept they share. Every surface in scope (a word or phrase of the groups behaviour and inner_being_state that has a verse) is a member of exactly one collection; a surface is in more than one only in very rare circumstances and by the researcher's ruling. A collection is made by putting like words together: synonyms, opposites, gathered. The base is only an instrument for gathering like words, never the member; a derived form is a surface with a link of its own; a phrase is one concept, placed in one collection. The collection is the unit of study: its observations, claims and narration follow it, and each collection becomes a chapter of the narration (behaviour rules 127 and 129).\n\n[BACKGROUND] Held in collection and collection_link; the members are surface_term rows placed by tier (core, synonym, opposite, gathered, phrase). A node carries the one collection of its surface (its own link, else through its base). Everything a model proposed for a collection is inferential until its status is confirmed.",
+        "heading": "collection",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1293}"
+      }
+    },
+    {
+      "op_id": "PROSE-1134-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1134,
+      "record": {
+        "body": "[DEFINITION] A sub-chapter of a concept domain, named for what its subgroups share; the first grouping of the subgroups, a link from the base data to the narrative.\n\n[BACKGROUND] Held in concept and concept_subgroup; a collection carries collection.concept_id. Since 2026-11-12 the narrative chapters follow collections (researcher; behaviour rule 129), so a concept is a first grouping, not a finding.",
+        "heading": "concept",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1294}"
+      }
+    },
+    {
+      "op_id": "PROSE-1135-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1135,
+      "record": {
+        "body": "[DEFINITION] A domain of the concept grouping: the basis the researcher ruled on 2026-10-31 for the narrative, with domains as chapters and concepts as sub-chapters.\n\n[BACKGROUND] Held in concept_domain, loaded from the v1 specification iba/docs/concept-mapping-spec-v1-20261031.json by grouping the existing subgroups. Since 2026-11-12 the narrative chapters follow collections (researcher; behaviour rule 129); the domains are a first grouping, not a finding.",
+        "heading": "concept domain",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1295}"
+      }
+    },
+    {
+      "op_id": "PROSE-1066-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1066,
+      "record": {
+        "body": "[DEFINITION] The role of a word in an observation: what the word is for that finding, judged from its verse and never from a cluster tag. On a node the roles are characteristic and qualifier (relevant to the inner being), object, relational_target and enactment (they bear on the finding), and standalone, which records that the word was recognised and has no inner-being role (cfg_setting reading.node_roles; behaviour rule 130).\n\n[BACKGROUND] Held in ib_node.role. It is a different column from verse_span_index.role, an older linguistic classification with an overlapping vocabulary. This entry is in the contentious glossary: the researcher settles it.",
+        "heading": "role",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 10,
+    "prose_section_supersedes": 10,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-word-index-and-glossary-chapter-1-v1-20261113.md"
+  }
+}

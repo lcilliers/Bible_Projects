@@ -3,18 +3,19 @@
 
 A reading records findings. Each finding is one `ib_observation`, its distinct description: text, meaning,
 implication, basis, its kind as tag and, on a party or link finding, its route. Its `ib_node` rows apply it to what it
-covers: the verse, the word (strong, surface, morph), the word's own classification (cluster_code, checked against
-cluster_strong), the word's role in the finding, the reading that applied it (its home) and, later, where the verse
-ends up (disposition). A description already live is never written twice: the finding names it (`existing`) and gains
+covers: the verse, the word (strong, surface, morph), the collection of the word's surface (own link, else its base: B:130),
+the word's role in the finding, the reading that applied it and, later, where the verse ends up (disposition). A node holds no
+cluster and no subgroup: they served to establish the collections and play no part in nodes and observations (#2495). A description already live is never written twice: the finding names it (`existing`) and gains
 nodes. Every change to a finding or a node is kept with its reason in `ib_observation_change` (RW-01).
 
 A finding spec (the shape Reading.ps1 -Step Record and -Step Gather read):
     {"key": "f1", "kind": "face|qualification|party|statement|link|use|term|silence",
      "text": "...", "meaning": "...", "implication": "...", "basis": "stated|read", "route": "A|B|C",
      "existing": <observation id, instead of text: the description is already live>,
-     "nodes": [{"verse": "Jon 1:10", "strong": "H3372G", "surface": "afraid", "cluster": "M01",
-                "role": "characteristic|qualifier|standalone", "question": "M0.5.11"},
-               {"strong": "H3372G", "cluster": "M01", "role": "characteristic"},      (a term finding, no verse)
+     "nodes": [{"verse": "Jon 1:10", "strong": "H3372G", "surface": "afraid",
+                "role": "characteristic|qualifier|object|relational_target|enactment|standalone", "question": "M0.5.11"},
+               {"occurrence": 123456, "strong": "G3117", "role": "qualifier", "supports": 123460},   (a word in no collection: the occurrence it supports)
+               {"strong": "H3372G", "role": "characteristic"},                          (a term finding, no verse)
                {"traced": <observation id or a finding key>}]}                        (a finding about a finding)
 
 check() validates a list of specs and returns the plan; write() writes it (the caller holds the write grants and
@@ -55,9 +56,19 @@ def kinds(cfg) -> list[str]:
     return out
 
 
-def word_clusters(conn, strong: str) -> list[str]:
-    return [r[0] for r in conn.execute("SELECT cluster_code FROM cluster_strong WHERE strong=? AND deleted=0 "
-                                       "ORDER BY cluster_code", (strong,))]
+def surface_collection_map(conn) -> dict:
+    """surface text (lower case) -> the one live confirmed collection of a member surface, by the shared reader (collectionexport._memberships:
+    a surface's own link, else its base), as the node checker reads it (B:130, B:129). A surface in no collection, or in more than one, is absent."""
+    from . import collectionexport as cx
+    tiers = json.loads(conn.execute("SELECT value FROM cfg_setting WHERE key='collection.member_tiers' AND inactive=0").fetchone()[0])
+    terms = {r[0]: tuple(r) for r in conn.execute("SELECT id, surface, origin, surface_group, group_state, base_id FROM surface_term WHERE deleted=0")}
+    live = {r[0] for r in conn.execute("SELECT id FROM collection WHERE deleted=0 AND status='confirmed'")}
+    found: dict = {}
+    for sid, ms in cx._memberships(conn, terms, tiers, own_link=True).items():
+        for cid, _, status, _ in ms:
+            if cid in live and status == "confirmed":
+                found.setdefault((terms[sid][1] or "").strip().lower(), set()).add(cid)
+    return {k: next(iter(v)) for k, v in found.items() if len(v) == 1}
 
 
 def node_role_groups(cfg) -> dict:
@@ -84,19 +95,6 @@ def items_setting(cfg) -> dict:
 
 def item_keys(cfg) -> list[str]:
     return [i["key"] for i in items_setting(cfg)["items"]]
-
-
-def subgroup_code(conn, cluster: str | None, strong: str, surface: str | None) -> str | None:
-    """The subgroup of a word as written: its (code, surface) pair in surface_subgroup (the cluster's, when given);
-    None when the pair is in no subgroup or in more than one."""
-    sql = ("SELECT DISTINCT g.subgroup_code FROM surface_subgroup s JOIN cluster_subgroup g ON g.id=s.cluster_subgroup_id "
-           "WHERE s.deleted=0 AND s.strong=? AND s.surface=?")
-    args = [strong, (surface or "").strip().lower()]
-    if cluster:
-        sql += " AND s.cluster_code=?"
-        args.append(cluster)
-    rows = [r[0] for r in conn.execute(sql, args)]
-    return rows[0] if len(rows) == 1 else None
 
 
 def check_item_parts(cfg, parts, kind, basis, route, where: str, errors: list) -> str | None:
@@ -183,6 +181,7 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
     kinds_ = kinds(cfg)
     bases, routes, roles = cfg.enum("ib_observation.basis"), cfg.enum("observation_route"), node_roles(cfg)
     keys, texts, plan = set(), {}, []
+    cmap = surface_collection_map(conn)
     for where, s in specs:
         if not isinstance(s, dict):
             errors.append(f"{where}: a finding is an object (key, kind, text, basis, nodes)")
@@ -249,22 +248,6 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
             if not strong:
                 errors.append(f"{at}: a node names the word (strong), or the finding it is about (traced)")
                 continue
-            clusters = word_clusters(conn, strong)
-            cluster = n.get("cluster") or (clusters[0] if len(clusters) == 1 else None)
-            if clusters:
-                if cluster is None:
-                    errors.append(f"{at}: {strong} is in several clusters {clusters}: name the cluster")
-                    continue
-                if cluster not in clusters:
-                    errors.append(f"{at}: cluster must be one of {strong}'s own clusters {clusters}")
-                    continue
-            else:          # no cluster of its own: the node's classification is the T-code found relevant (cfg_column use)
-                cluster = n.get("cluster")
-                if not cluster or not str(cluster).startswith("T") or not conn.execute(
-                        "SELECT 1 FROM cluster WHERE cluster_code=? AND coalesce(deleted,0)=0", (cluster,)).fetchone():
-                    errors.append(f"{at}: {strong} has no cluster of its own: name the T-code it is classified under "
-                                  f"(the T-code found relevant) as `cluster`")
-                    continue
             if n.get("role") not in roles:
                 errors.append(f"{at}: role must be one of {roles} (the word's role in this finding)")
             occ = {"verse_reference": None, "surface": n.get("surface"), "morph_code": None, "verse_lexical_id": None}
@@ -287,10 +270,27 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
                     continue
             elif kind != "term":
                 errors.append(f"{at}: only a term finding applies to a word with no verse")
-            p["nodes"].append({"strong": strong, "cluster": cluster, "role": n.get("role"),
+            p["nodes"].append({"strong": strong, "role": n.get("role"), "supports": n.get("supports"),
                                "question": n.get("question"), "traced": n.get("traced"), "at": at,
                                "pair_surface": occ.get("pair_surface", occ["surface"]),
                                **{k: occ[k] for k in ("verse_reference", "surface", "morph_code", "verse_lexical_id")}})
+        for nd in p["nodes"]:      # the collection of a node (B:130): its surface's; a word in no collection carries the one it supports
+            if nd.get("strong") and nd.get("verse_lexical_id"):
+                col = cmap.get((nd.get("surface") or "").strip().lower())
+                if col is None and nd.get("supports"):
+                    sup = conn.execute("SELECT surface FROM verse_lexical WHERE id=? AND deleted=0", (nd["supports"],)).fetchone()
+                    col = cmap.get(((sup[0] if sup else "") or "").strip().lower())
+                    if col is None:
+                        errors.append(f"{nd['at']}: the occurrence it supports ({nd['supports']}) is not a word of a collection")
+                nd["collection"] = col
+        if any(nd.get("strong") and nd.get("verse_lexical_id") and nd.get("collection") is None for nd in p["nodes"]):
+            own = {nd["collection"] for nd in p["nodes"] if nd.get("collection")}
+            for nd in p["nodes"]:
+                if nd.get("strong") and nd.get("verse_lexical_id") and nd.get("collection") is None:
+                    if len(own) == 1:
+                        nd["collection"] = next(iter(own))      # a supportive word carries the collection of the finding's other words
+                    else:
+                        errors.append(f"{nd['at']}: the surface {nd.get('surface')!r} is in no collection: name the occurrence it supports (`supports`)")
         if kind == "qualification":
             got = {n.get("role") for n in p["nodes"]}
             if not {"qualifier", "characteristic"} <= got:
@@ -335,21 +335,11 @@ def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
                     (oid, n["strong"], n["verse_reference"], reading_id, n["role"], n.get("verse_lexical_id"))).fetchone():
                 continue                                  # the same application, already written
             seq += 1
-            cluster = n.get("cluster")
-            if cluster is None and traced is not None:
-                row = conn.execute("SELECT cluster_code FROM ib_node WHERE observation_id=? AND cluster_code IS NOT NULL "
-                                   "LIMIT 1", (traced,)).fetchone()
-                cluster = row[0] if row else None
-            if cluster is None:
-                raise Refused(f"a node of finding {p['key']} has no cluster (ib_node.cluster_code is required)")
-            sg = subgroup_code(conn, cluster, n["strong"], n.get("pair_surface") or n.get("surface")) if n.get("strong") else None
             nid = conn.execute(
-                "INSERT INTO ib_node (observation_id, cluster_code, cluster_subgroup_code, strong, verse_reference, surface, "
-                "morph_code, question_code, traced_observation_id, source_stage, seq, role, reading_id, created_at, "
-                "verse_lexical_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                (oid, cluster, sg, n.get("strong"), n.get("verse_reference"), n.get("surface"), n.get("morph_code"),
-                 n.get("question"), traced, stage, seq, n.get("role"), reading_id, now,
-                 n.get("verse_lexical_id"))).lastrowid
+                "INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, question_code, traced_observation_id, "
+                "source_stage, seq, role, reading_id, created_at, verse_lexical_id, collection_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (oid, n.get("strong"), n.get("verse_reference"), n.get("surface"), n.get("morph_code"), n.get("question"), traced, stage, seq,
+                 n.get("role"), reading_id, now, n.get("verse_lexical_id"), n.get("collection"))).lastrowid
             out[p["key"]]["nodes"].append(nid)
     return out
 
@@ -509,13 +499,6 @@ def modify_node(cfg, conn, node_id: int, sets: dict, reason: str, reading_id, ru
     if "observation_id" in sets and not conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND deleted=0",
                                                      (sets["observation_id"],)).fetchone():
         raise Refused(f"node {node_id}: observation {sets['observation_id']} is not a live observation")
-    if "cluster_subgroup_code" in sets and sets["cluster_subgroup_code"] is not None and not conn.execute(
-            "SELECT 1 FROM cluster_subgroup WHERE subgroup_code=? AND coalesce(delete_flagged,0)=0",
-            (sets["cluster_subgroup_code"],)).fetchone():
-        raise Refused(f"node {node_id}: {sets['cluster_subgroup_code']!r} is not a live subgroup")
-    if ("cluster_code" in sets and sets["cluster_code"] is not None
-            and sets["cluster_code"] not in word_clusters(conn, n["strong"])):
-        raise Refused(f"node {node_id}: cluster must be one of {n['strong']}'s own clusters")
     sets = dict(sets)
     if "observation_id" in sets and sets["observation_id"] != n["observation_id"]:
         # a node moved to another observation takes the next seq there (ib_node is unique on observation_id, seq; a deleted

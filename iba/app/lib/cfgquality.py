@@ -915,7 +915,9 @@ def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.
             continue  # the canonical implementation itself, not a caller reinventing it
         # exempt by researcher ruling (#2108 F): prosestore.py's cross-day edit-cycle counter and the
         # one-off analysis scripts under _analytics/
-        if rel_posix == "iba/app/lib/prosestore.py" or parts[0] == "_analytics":
+        # narrativeregister.py names a chapter file <stem>-v{n}-<date>.md with n = the chapter's version in narrative_chapter (the file is an export of that
+        # version, #2172): the number comes from the database, so filingkit's same-day counter would give a different, wrong one (2026-11-13, #2494)
+        if rel_posix in ("iba/app/lib/prosestore.py", "iba/app/lib/narrativeregister.py") or parts[0] == "_analytics":
             continue
         try:
             text = f.read_text(encoding="utf-8", errors="ignore")

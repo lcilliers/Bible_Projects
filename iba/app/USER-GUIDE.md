@@ -431,98 +431,51 @@ iba\app\ps\Observation-Enhancer.ps1 -Action Preview|Apply -RuleKey <key>   # app
 - **Corrections to `ib_observation`** happen only by re-running a stage (rule 68). The enhancer is
   for researcher-confirmed rules only.
 
-### 7.1 Surface subgroups (`iba/app/ps/Surface-Map.ps1`)
+### 7.1 Retired: the subgroup map, the capture of prior documents and the node sweep (#2495)
 
-A cluster's subgroups are groups of (Strong's code, surface) pairs, made per M cluster at the
-clustering stage (behaviour rules B:117, B:118; escalation #2293). Run the steps in this order for
-each cluster:
+The scripts `iba/app/ps/archive/Surface-Map.ps1`, `iba/app/ps/archive/Prior-Capture.ps1` and `iba/app/ps/archive/Node-Resolve.ps1` are retired (2026-11-13, history): their scripts, handlers and libraries are in the `archive/` folders with inactive `cfg_utility` rows, their work packages and steps are inactive, and method rules CP-01 to CP-10 and NR-01 to NR-06 and behaviour rules 66, 117 and 118 are retired. The ruling (#2484, item 4.4): clusters and subgroups served to establish the collections and play no part in nodes and observations. A retired script runs only on the researcher's approval (section 12).
 
-```powershell
-iba\app\ps\Surface-Map.ps1 -Step Pairs -Cluster M18                 # the pairs file (reads only)
-iba\app\ps\Surface-Map.ps1 -Step Apply -Cluster M18 -File <file>    # the filled file written
-iba\app\ps\Surface-Map.ps1 -Step Tail -Cluster M18 [-Live]          # the rest, by the API
-iba\app\ps\Surface-Map.ps1 -Step Check -Cluster M18                 # the report (reads only)
-```
+- **Nodes and observations hold no cluster and no subgroup.** `ib_node.cluster_code` is nullable and written by no process; `cluster_subgroup_code` likewise; the live values stay as history. A new node takes the **collection** of its surface (its own link, else its base); a word in no collection names the occurrence it supports (`supports`) or takes the one collection of the finding's other words. A writer refuses a node it cannot place in a collection.
+- **What replaces them.** The documents' lines for a collection's verses are read in the collection reading (#2448) and processed with `iba/app/ps/Draft-Apply.ps1` (7.5); nodes with no occurrence, role or collection are listed by `iba/app/ps/Node-Check.ps1` (7.4). The old capture's answers stay in `prior_capture_line`.
+- **Still there, until the reading by collections (#2448) replaces it:** `Reading.ps1 -Step Open` opens a reading on one subgroup (the existing subgroups are history data), and behaviour rules 119 and 120 and method rules RO13, RM-03 and RO8 describe how that scope is built.
 
-- **Pairs** writes `_analytics/surfaces/exports/surface-map/<cluster>-pairs-<date>.json` (setting
-  `cluster.surface_map.output_dir`). It lists every pair with its hits, verses, gloss and two
-  sample references, and marks it head or tail. The head is the pairs covering
-  `cluster.surface_map.head_share` (0.8) of the cluster's hits. For M49, M67 and M83 each pair
-  comes pre-filled with the subgroup its code already had.
-- **In the file,** Claude adds the groups (code `<cluster>_<slug>`, label, description, and a kind
-  of `group`, `qualifier` or `not_this_sense`). Every head pair then gets a group and a reason; tail
-  pairs may be left blank. Set `two_sense` to 1 where a pair carries two senses. To move an
-  inherited pair, start its reason with `correction:`.
-- **Apply** refuses the whole file if anything is wrong, and lists every problem. It makes the
-  cluster's anomaly group, `<cluster>_anomaly`, and puts pairs with an empty surface in it.
-- **Tail** sends the pairs still unplaced to the API: code, gloss, surface and one sample verse. It
-  uses the `lexical.llm_*` settings, with `cluster.surface_map.tail_max_output_tokens` as the
-  output ceiling. Without `-Live` it is a preview showing the cost. It refuses while any head pair
-  is unplaced, and refuses a call over `lexical.llm_max_cost_per_batch`.
-- **Check** writes `<cluster>-check-<date>.md`. It flags a group of kind `group` holding more than
-  `cluster.surface_map.max_group_share` (0.3) of the cluster's hits: look at that group, but it is
-  not a forced split. It also lists the cluster's **stale** pairs: pairs whose code has left the
-  cluster, or whose surface no longer occurs. The next Apply soft-deletes them, keeping the reason.
-- **A cluster is not read until it is mapped** (#2294). `Reading.ps1 -Step Open` refuses a reading
-  whose home is an M cluster with any unallocated or stale pair, and its message names the counts
-  and the step to run. `Cluster-Assign.ps1 -Step Validate` counts every M cluster's mapping:
-  stale pairs and partly mapped clusters are findings, while an unmapped cluster is only counted.
+### 7.4 The node and observation checker (`iba/app/ps/Node-Check.ps1`)
 
-### 7.2 Capture of prior study documents (`iba/app/ps/Prior-Capture.ps1`)
-
-A migration, not part of the standard analytic process (escalation #2305; design
-`outputs/escalation/2305-prior-work-capture-design-v2-20261026.md`; method rules CP-01 to CP-10 on
-`prior_capture.record`). Every material observation a study document makes about a verse it names is
-captured into `ib_observation` and `ib_node` as written: the verse is not read again, and nothing is
-checked, corrected or rejected. It runs in a chat session on the Sonnet model; there is no API route.
-Per document:
+Escalation #2484. It checks every live node and live observation against the node rules (behaviour rules B:130 and B:131) and
+lists them by the check they fail. It reads the tables and writes nothing to any table. Method rules NC-01 to NC-04 on
+`node_check.report`.
 
 ```powershell
-iba\app\ps\Prior-Capture.ps1 -Step Prepare -File "<repo-relative path or reading_file id>"   # the JSON (reads only)
-iba\app\ps\Prior-Capture.ps1 -Step Record -File <the filled JSON>                           # written whole, or refused whole
-iba\app\ps\Prior-Capture.ps1 -Step Report                                                   # where the capture stands (reads only)
+iba\app\ps\Node-Check.ps1 -Step Report          # about 5 seconds; reads only
 ```
 
-- **Prepare** writes `_analytics/reading-tools/prior-capture/capture-<file id>-<date>.json` (setting
-  `prior_capture.output_dir`): every line of the document that names a verse (with its text, section
-  and verses resolved), the M- and T-coded words of each verse with their clusters and subgroups, the
-  October ids already recorded for the document, and the references that resolve to no single verse.
-  It refuses a document changed since the reading index was built (run `Reading-Index.ps1 -Step
-  Build`) and a document already captured.
-- **In the file,** Claude reads the document and fills `findings` (one per observation: kind, text,
-  basis, route on a party or link finding, and the nodes it applies to, each a verse and a word with
-  its role and the document's disposition) and the `answer` of **every** line: `captured` (the
-  finding keys), `already_recorded` (October observation ids) or `not_an_observation` with its class
-  and reason. A material observation that fits none of the eight kinds takes the tag `unfitted`.
-- **Record** refuses the whole file if any line is unanswered or anything is wrong, and lists every
-  problem. It writes the observations (stage `prior-capture`, status `draft`, `revisit_note` naming the
-  document and its lines), their nodes (the occurrence, cluster and subgroup from the tables, never
-  from the document), the line answers (`prior_capture_line`) and the document's `capture_status`, in
-  one transaction, and writes `capture-<file id>-report.md`: the unfitted observations, the flags the
-  document carries, the nodes with no occurrence, the references to no single verse and quotations not
-  found in the ESV text. No check for duplicates is made across documents; an identical live
-  description joins the first observation as further nodes.
-- **Report** writes the status report, versioned (`capture-status`, in `_analytics/reading-tools/prior-capture/`): documents by `capture_status`, observations by tag, line
-  answers, and the nodes with no `verse_lexical_id`.
-
-### 7.3 The node reference sweep (`iba/app/ps/Node-Resolve.ps1`)
-
-A migration step (escalation #2308), run after the capture: it looks up, through the strong and the verse, the
-occurrence (`verse_lexical_id`), the morph code and the sub_group code of the nodes that lack them, in every stage and
-cluster. Method rules NR-01 to NR-06 on `node_resolve.apply`.
-
-```powershell
-iba\app\ps\Node-Resolve.ps1 -Step Plan                                   # what would be filled, and what cannot (reads only)
-iba\app\ps\Node-Resolve.ps1 -Step Apply -File outputs\node-resolve\resolve-plan-<date>.json
-```
-
-- **Plan** writes the plan JSON (each node's values before and after) and a report to `_analytics/reading-tools/node-resolve/`,
-  and lists the nodes it leaves with the reason (no sub_group defined for the strong in the cluster; the occurrences
-  disagree; several occurrences and no matching surface).
-- **Apply** writes the plan whole, into null columns only, and skips and lists a node that no longer holds what the
-  plan saw. A second Plan after Apply finds nothing to fill.
+- **Report** writes a Markdown report (totals, a count for each check, five sample rows each) and a workbook with one sheet for
+  each check, every finding a row (node, observation, verse, surface, detail), to `_analytics/reading-tools/node-check/`
+  (setting `node_check.output_dir`).
+- The checks: a node without a live observation, surface, occurrence (`verse_lexical_id`), Strong's code, morph code, role or
+  collection; a node that differs from its `verse_lexical` row; a node on a verse that is out of scope; a node whose collection is
+  not its surface's; a duplicate node; an observation without a live node, not tied to a surface, without a relevant role node,
+  with the same text as another, with no node carrying a collection, out of scope, or (a candidate to be read) repeating the verse
+  text; a member surface of a live collection with no live node.
+- A finding says what is wrong, not what to do. A node with no collection is shown as derivable (the surface is in one collection) or
+  supportive (an entity or other surface, with what its observation offers).
 
 ---
+
+### 7.5 Prepared re-read drafts into the observation record (`iba/app/ps/Draft-Apply.ps1`)
+
+Escalation #2498 (design `outputs/escalation/2498-prior-reread-by-collection-design-v4-20261113.md` section 5; method rules DA-01 to DA-04 on `draft_apply.apply`). A re-read of study documents (done for the verses of a collection, not the document as a whole) is kept as a **load file**: one row per draft observation, matched to the existing observation it improves, or to none. Nothing is written until the load is checked.
+
+```powershell
+iba\app\ps\Draft-Apply.ps1 -Step Check -File outputs\escalation\2498-pilot-load-v1-20261113.json   # a rehearsal inside the database: nothing is written
+iba\app\ps\Draft-Apply.ps1 -Step Apply -File outputs\escalation\2498-pilot-load-v1-20261113.json   # written whole, or refused whole
+```
+
+- **Enrich:** the existing observation's text is restated in place (its kind and basis stay), each node of the draft that is already on it takes its role, and each node it lacks is added with the collection of its surface (a supportive node, the collection of the surface it supports). Every change is kept with its reason in `ib_observation_change`.
+- **Add:** a new observation in stage `prior-reread` (status draft), its `stable_key` `<reading_file id>:L<first line>:reread-<draft>` and its `revisit_note` naming the document and lines.
+- **Left:** a row with action leave changes nothing.
+- A node with no collection to carry it, or on a verse out of scope (B:130), is **not written** and is listed in the report. A text that repeats more than `max_verse_words_copied` consecutive verse words is refused. A problem anywhere refuses the whole file; a second run changes nothing.
+- The report goes to `draft_apply.output_dir` (`_analytics/reading-tools/prior-reread`). Test on a copy first (`python -m iba.app.lib.dbsnapshot --copy-to PATH`, then `python -m iba.app.lib.draftapply --db PATH --file FILE [--apply]`) and take a named snapshot (`--reason X --named`) before Apply.
 
 ## 8. The inner-being narrative
 
@@ -633,20 +586,18 @@ each in, its progress, and the evaluation of its surfaces); it copies no observa
 query of the database**: Observe reads the verse's surfaces, its existing observations and nodes and the ledger
 faces from the tables when the verse is put in hand, so that what earlier verses wrote is seen.
 
-**Open refuses an unmapped home (#2294).** A reading whose subgroup's cluster is an M cluster with any
-unallocated or stale surface pair is refused, with the counts. Map the cluster first with
-`iba/app/ps/Surface-Map.ps1` (section 7.1).
+**Open takes any subgroup (#2495).** It no longer refuses a home whose cluster has unallocated or stale surface pairs: the subgroup map is retired (section 7.1).
 
 **What a reading records: findings (#2274, #2320).** A finding is one `ib_observation`: its text, meaning,
 implication, basis (stated or read), its kind as tag, on a party or link finding its route, and its structured
 `parts` (`ib_observation.parts`, a JSON object: sense, evidence, **polarity** (refusal or pursuit), content,
 enactment, party, circumstance, chain, primary_operation, and typed `flags`: data-quality or discovery). Its
 `ib_node` rows apply it to every verse and word it covers, each with the occurrence (`verse_lexical_id`), the
-word's cluster and **subgroup**, the word's role in the finding, the reading that applied it, and later where
+word's **collection** (that of its surface), the word's role in the finding, the reading that applied it, and later where
 the verse ends up (disposition). The roles of a new node (`cfg_setting reading.node_roles`): for a surface
 evaluated `relevant`, characteristic or qualifier; for a surface that `bears_on` the act, object, relational
-target or enactment. `standalone` is not a role of a new node. A word with no cluster of its own is given the T-code
-it is classified under as `cluster`. The kinds (`reading.observation_parts`): face, qualification, party,
+target or enactment; `standalone` records that the word was recognised and has no inner-being role (B:130). A node holds no
+cluster and no subgroup (section 7.1). The kinds (`reading.observation_parts`): face, qualification, party,
 statement, link, use, term, silence (silence is not used by Analysis_phase_1). A description already live is
 never written again: the finding names it as `existing` and gains nodes. Every change to a finding or a node is
 kept with its reason in `ib_observation_change`. The finding shape (`iba/app/lib/observationrecord.py`):
@@ -654,8 +605,8 @@ kept with its reason in `ib_observation_change`. The finding shape (`iba/app/lib
 ```json
 {"key": "f1", "kind": "statement", "text": "...", "meaning": "...", "basis": "stated",
  "parts": {"sense": "...", "polarity": "refusal", "flags": [{"type": "discovery", "text": "..."}]},
- "nodes": [{"occurrence": 123456, "strong": "H3820A", "cluster": "M64", "role": "characteristic"},
-           {"occurrence": 123460, "strong": "H1351", "cluster": "T3", "role": "object"}]}
+ "nodes": [{"occurrence": 123456, "strong": "H3820A", "role": "characteristic"},
+           {"occurrence": 123460, "strong": "H1351", "role": "object"}]}
 ```
 
 - **`Open`** (0.C) takes `-Objective` (required), `-Escalation` (an open task or issue) and **one**

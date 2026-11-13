@@ -1,0 +1,1720 @@
+{
+ "_about": "Roles for the 29 fear findings of the unit 2 ledger that were recorded in October (stage strand-reading), judged from the verse (#2498, decision Q5). Each node is an existing node; its role is the only change. The default is characteristic (the node is the word the finding is about); the five exceptions carry their reason. Applied by iba/app/lib/draftapply.py.",
+ "stage_for_added": "prior-reread",
+ "documents": {
+  "92": {
+   "reading_file_id": 92,
+   "path": "_analytics/Clusters/M18 - desire-longing/m18-group-G-reading-v1-20261009.md",
+   "cluster": "M18"
+  },
+  "8": {
+   "reading_file_id": 8,
+   "path": "_analytics/Clusters/M01 - fear-awe/fear-observation-ledger-unit2-v1-20261001.md",
+   "cluster": "M01"
+  }
+ },
+ "rows": [
+  {
+   "document": 8,
+   "draft": "fear:FE-47",
+   "doc_lines": "ledger FE-47",
+   "action": "enrich",
+   "existing": 11762,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Dread and trembling are felt in the heart, the bones, the flesh, the hair and the face.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-47 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13324,
+     "verse_lexical_id": 1236060,
+     "verse": "Job.4.14",
+     "surface": "shake",
+     "strong": "H6342",
+     "morph_code": "HVhp3ms",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13325,
+     "verse_lexical_id": 1236052,
+     "verse": "Job.4.14",
+     "surface": "dread",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13326,
+     "verse_lexical_id": 1236054,
+     "verse": "Job.4.14",
+     "surface": "trembling",
+     "strong": "H7461A",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13327,
+     "verse_lexical_id": 1248621,
+     "verse": "Ps.55.4",
+     "surface": "terrors",
+     "strong": "H0367",
+     "morph_code": "HNcfpc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13328,
+     "verse_lexical_id": 1248617,
+     "verse": "Ps.55.4",
+     "surface": "anguish",
+     "strong": "H2342A",
+     "morph_code": "HVqi3ms",
+     "role": "characteristic",
+     "collection": "pain"
+    },
+    {
+     "node_id": 13329,
+     "verse_lexical_id": 1267669,
+     "verse": "Ps.55.5",
+     "surface": "Fear",
+     "strong": "H3374",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13330,
+     "verse_lexical_id": 1267673,
+     "verse": "Ps.55.5",
+     "surface": "horror",
+     "strong": "H6427",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13331,
+     "verse_lexical_id": 1267670,
+     "verse": "Ps.55.5",
+     "surface": "trembling",
+     "strong": "H7461A",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13332,
+     "verse_lexical_id": 1242444,
+     "verse": "Job.21.6",
+     "surface": "shuddering",
+     "strong": "H6427",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "amazement"
+    },
+    {
+     "node_id": 13333,
+     "verse_lexical_id": 1243402,
+     "verse": "Job.37.1",
+     "surface": "trembles",
+     "strong": "H2729",
+     "morph_code": "HVqi3ms",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13334,
+     "verse_lexical_id": 1303616,
+     "verse": "Isa.21.4",
+     "surface": "trembling",
+     "strong": "H2731",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13335,
+     "verse_lexical_id": 1303607,
+     "verse": "Isa.21.4",
+     "surface": "horror",
+     "strong": "H6427",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13336,
+     "verse_lexical_id": 1369133,
+     "verse": "Ezek.27.35",
+     "surface": "bristles",
+     "strong": "H8175A",
+     "morph_code": "HVqp3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13337,
+     "verse_lexical_id": 1369135,
+     "verse": "Ezek.27.35",
+     "surface": "horror",
+     "strong": "H8178A",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-48",
+   "doc_lines": "ledger FE-48",
+   "action": "enrich",
+   "existing": 11763,
+   "kind": null,
+   "basis": null,
+   "obs_text": "The verbs set dread and trembling as something that comes upon the person: \"dread came upon me\"; \"Fear and trembling come upon me\"; \"trembling has seized the godless\"; \"Trembling took hold of them there\"; \"a great trembling fell upon them\"; \"horror seizes them of the east\".",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-48 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13338,
+     "verse_lexical_id": 1236060,
+     "verse": "Job.4.14",
+     "surface": "shake",
+     "strong": "H6342",
+     "morph_code": "HVhp3ms",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13339,
+     "verse_lexical_id": 1236052,
+     "verse": "Job.4.14",
+     "surface": "dread",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13340,
+     "verse_lexical_id": 1236054,
+     "verse": "Job.4.14",
+     "surface": "trembling",
+     "strong": "H7461A",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13341,
+     "verse_lexical_id": 1267669,
+     "verse": "Ps.55.5",
+     "surface": "Fear",
+     "strong": "H3374",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13342,
+     "verse_lexical_id": 1267673,
+     "verse": "Ps.55.5",
+     "surface": "horror",
+     "strong": "H6427",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13343,
+     "verse_lexical_id": 1267670,
+     "verse": "Ps.55.5",
+     "surface": "trembling",
+     "strong": "H7461A",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13344,
+     "verse_lexical_id": 1295258,
+     "verse": "Isa.33.14",
+     "surface": "afraid",
+     "strong": "H6342",
+     "morph_code": "HVqp3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13345,
+     "verse_lexical_id": 1295259,
+     "verse": "Isa.33.14",
+     "surface": "trembling",
+     "strong": "H7461B",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13346,
+     "verse_lexical_id": 1247712,
+     "verse": "Ps.48.6",
+     "surface": "anguish",
+     "strong": "H2427A",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "pain"
+    },
+    {
+     "node_id": 13347,
+     "verse_lexical_id": 1247708,
+     "verse": "Ps.48.6",
+     "surface": "Trembling",
+     "strong": "H7461B",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13348,
+     "verse_lexical_id": 1381946,
+     "verse": "Dan.10.7",
+     "surface": "trembling",
+     "strong": "H2731",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13349,
+     "verse_lexical_id": 1244993,
+     "verse": "Job.18.20",
+     "surface": "horror",
+     "strong": "H8178A",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-49",
+   "doc_lines": "ledger FE-49",
+   "action": "enrich",
+   "existing": 11764,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Dread before a spirit.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-49 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13350,
+     "verse_lexical_id": 1236060,
+     "verse": "Job.4.14",
+     "surface": "shake",
+     "strong": "H6342",
+     "morph_code": "HVhp3ms",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13351,
+     "verse_lexical_id": 1236052,
+     "verse": "Job.4.14",
+     "surface": "dread",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13352,
+     "verse_lexical_id": 1236054,
+     "verse": "Job.4.14",
+     "surface": "trembling",
+     "strong": "H7461A",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-51",
+   "doc_lines": "ledger FE-51",
+   "action": "enrich",
+   "existing": 11765,
+   "kind": null,
+   "basis": null,
+   "obs_text": "One scroll, two hearings.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-51 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13353,
+     "verse_lexical_id": 1320239,
+     "verse": "Jer.36.16",
+     "surface": "fear",
+     "strong": "H6342",
+     "morph_code": "HVqp3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13354,
+     "verse_lexical_id": 1320271,
+     "verse": "Jer.36.24",
+     "surface": "afraid",
+     "strong": "H6342",
+     "morph_code": "HVqp3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-52",
+   "doc_lines": "ledger FE-52",
+   "action": "enrich",
+   "existing": 11766,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Dread leads to hiding.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-52 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13355,
+     "verse_lexical_id": 1295344,
+     "verse": "Isa.2.10",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13356,
+     "verse_lexical_id": 1295098,
+     "verse": "Isa.2.19",
+     "surface": "terrify",
+     "strong": "H6206",
+     "morph_code": "HVqcc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13357,
+     "verse_lexical_id": 1295089,
+     "verse": "Isa.2.19",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13358,
+     "verse_lexical_id": 1295125,
+     "verse": "Isa.2.21",
+     "surface": "terrify",
+     "strong": "H6206",
+     "morph_code": "HVqcc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13359,
+     "verse_lexical_id": 1295116,
+     "verse": "Isa.2.21",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13360,
+     "verse_lexical_id": 1381946,
+     "verse": "Dan.10.7",
+     "surface": "trembling",
+     "strong": "H2731",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-53",
+   "doc_lines": "ledger FE-53",
+   "action": "enrich",
+   "existing": 11767,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Fear of the many keeps a man silent and indoors.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-53 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13361,
+     "verse_lexical_id": 1235892,
+     "verse": "Job.31.34",
+     "surface": "fear",
+     "strong": "H6206",
+     "morph_code": "HVqi1cs",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-54",
+   "doc_lines": "ledger FE-54",
+   "action": "enrich",
+   "existing": 11768,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Fear of man set beside trust.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-54 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13362,
+     "verse_lexical_id": 1281495,
+     "verse": "Prov.29.25",
+     "surface": "fear",
+     "strong": "H2731",
+     "morph_code": "HNcfsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13363,
+     "verse_lexical_id": 1292206,
+     "verse": "Isa.51.13",
+     "surface": "fear",
+     "strong": "H6342",
+     "morph_code": "HVpw2ms",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13364,
+     "verse_lexical_id": 1250966,
+     "verse": "Ps.64.1",
+     "surface": "dread",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-55",
+   "doc_lines": "ledger FE-55",
+   "action": "enrich",
+   "existing": 11769,
+   "kind": null,
+   "basis": null,
+   "obs_text": "The thing feared comes.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-55 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13365,
+     "verse_lexical_id": 1236045,
+     "verse": "Job.3.25",
+     "surface": "dread",
+     "strong": "H3025",
+     "morph_code": "HVqp1cs",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13366,
+     "verse_lexical_id": 1236043,
+     "verse": "Job.3.25",
+     "surface": "fear",
+     "strong": "H6342",
+     "morph_code": "HVqp1cs",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13367,
+     "verse_lexical_id": 1236042,
+     "verse": "Job.3.25",
+     "surface": "thing",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "object",
+     "collection": "fear",
+     "reason": "role judged from the verse (#2498, Q5): Job 3:25: 'the thing that I fear' is what the dread is directed at (the thing feared); the verbs fear and dread carry the characteristic"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-57",
+   "doc_lines": "ledger FE-57",
+   "action": "enrich",
+   "existing": 11770,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Terror, pit and snare.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-57 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13368,
+     "verse_lexical_id": 1295351,
+     "verse": "Isa.24.17",
+     "surface": "Terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13369,
+     "verse_lexical_id": 1295366,
+     "verse": "Isa.24.18",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13370,
+     "verse_lexical_id": 1320288,
+     "verse": "Jer.48.43",
+     "surface": "Terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13371,
+     "verse_lexical_id": 1320303,
+     "verse": "Jer.48.44",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13372,
+     "verse_lexical_id": 1236112,
+     "verse": "Job.22.10",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13373,
+     "verse_lexical_id": 1346450,
+     "verse": "Lam.3.47",
+     "surface": "panic",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13374,
+     "verse_lexical_id": 1320332,
+     "verse": "Jer.49.5",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-58",
+   "doc_lines": "ledger FE-58",
+   "action": "enrich",
+   "existing": 11771,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Wisdom laughs at the terror of those who refused her.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-58 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13375,
+     "verse_lexical_id": 1276712,
+     "verse": "Prov.1.26",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13376,
+     "verse_lexical_id": 1276297,
+     "verse": "Prov.1.27",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13377,
+     "verse_lexical_id": 1276379,
+     "verse": "Prov.1.33",
+     "surface": "dread",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-59",
+   "doc_lines": "ledger FE-59",
+   "action": "enrich",
+   "existing": 11772,
+   "kind": null,
+   "basis": null,
+   "obs_text": "A trembling heart given in the curse.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-59 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13378,
+     "verse_lexical_id": 1081104,
+     "verse": "Deut.28.65",
+     "surface": "trembling",
+     "strong": "H7268",
+     "morph_code": "HAamsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13379,
+     "verse_lexical_id": 1069418,
+     "verse": "Deut.28.66",
+     "surface": "dread",
+     "strong": "H6342",
+     "morph_code": "HVqq2ms",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13380,
+     "verse_lexical_id": 1069441,
+     "verse": "Deut.28.67",
+     "surface": "feel",
+     "strong": "H6342",
+     "morph_code": "HVqi2ms",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13381,
+     "verse_lexical_id": 1069439,
+     "verse": "Deut.28.67",
+     "surface": "dread",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-60",
+   "doc_lines": "ledger FE-60",
+   "action": "enrich",
+   "existing": 11773,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Dread as a message and a sign.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-60 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13382,
+     "verse_lexical_id": 1309012,
+     "verse": "Isa.28.19",
+     "surface": "sheer terror",
+     "strong": "H2113",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13383,
+     "verse_lexical_id": 1351150,
+     "verse": "Ezek.12.18",
+     "surface": "trembling",
+     "strong": "H7269",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13384,
+     "verse_lexical_id": 1351179,
+     "verse": "Ezek.12.19",
+     "surface": "dismay",
+     "strong": "H8078",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-61",
+   "doc_lines": "ledger FE-61",
+   "action": "enrich",
+   "existing": 11774,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Terror where there is no terror.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-61 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13385,
+     "verse_lexical_id": 1250859,
+     "verse": "Ps.14.5",
+     "surface": "terror",
+     "strong": "H6342",
+     "morph_code": "HVqp3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13386,
+     "verse_lexical_id": 1250858,
+     "verse": "Ps.14.5",
+     "surface": "great",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13387,
+     "verse_lexical_id": 1250868,
+     "verse": "Ps.53.5",
+     "surface": "terror",
+     "strong": "H6342",
+     "morph_code": "HVqp3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13388,
+     "verse_lexical_id": 1250867,
+     "verse": "Ps.53.5",
+     "surface": "great",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13389,
+     "verse_lexical_id": 1295315,
+     "verse": "Isa.44.11",
+     "surface": "terrified",
+     "strong": "H6342",
+     "morph_code": "HVqi3mp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13390,
+     "verse_lexical_id": 1371559,
+     "verse": "Ezek.7.18",
+     "surface": "horror",
+     "strong": "H6427",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-62",
+   "doc_lines": "ledger FE-62",
+   "action": "enrich",
+   "existing": 11775,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Terror of the night",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-62 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13391,
+     "verse_lexical_id": 1289221,
+     "verse": "Song.3.8",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13392,
+     "verse_lexical_id": 1250502,
+     "verse": "Ps.91.5",
+     "surface": "fear",
+     "strong": "H3372G",
+     "morph_code": "HVqi2ms",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13393,
+     "verse_lexical_id": 1250504,
+     "verse": "Ps.91.5",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13394,
+     "verse_lexical_id": 1276651,
+     "verse": "Prov.3.25",
+     "surface": "afraid",
+     "strong": "H3372G",
+     "morph_code": "HVqj2ms",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13395,
+     "verse_lexical_id": 1276653,
+     "verse": "Prov.3.25",
+     "surface": "terror",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13396,
+     "verse_lexical_id": 1276700,
+     "verse": "Prov.3.24",
+     "surface": "afraid",
+     "strong": "H6342",
+     "morph_code": "HVqi2ms",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-64",
+   "doc_lines": "ledger FE-64",
+   "action": "enrich",
+   "existing": 11776,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Fear of a people or a person falls on others.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-64 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13397,
+     "verse_lexical_id": 1230778,
+     "verse": "Esth.8.17",
+     "surface": "fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13398,
+     "verse_lexical_id": 1230626,
+     "verse": "Esth.9.2",
+     "surface": "fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13399,
+     "verse_lexical_id": 1230806,
+     "verse": "Esth.9.3",
+     "surface": "fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13400,
+     "verse_lexical_id": 1381077,
+     "verse": "Dan.5.19",
+     "surface": "feared",
+     "strong": "H1763",
+     "morph_code": "AVqrmpa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13401,
+     "verse_lexical_id": 1381076,
+     "verse": "Dan.5.19",
+     "surface": "trembled",
+     "strong": "H2112",
+     "morph_code": "AVqrmpa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13402,
+     "verse_lexical_id": 1385284,
+     "verse": "Hos.13.1",
+     "surface": "trembling",
+     "strong": "H7578",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13403,
+     "verse_lexical_id": 1295428,
+     "verse": "Isa.14.16",
+     "surface": "tremble",
+     "strong": "H7264",
+     "morph_code": "HVhrmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-65",
+   "doc_lines": "ledger FE-65",
+   "action": "enrich",
+   "existing": 11777,
+   "kind": null,
+   "basis": null,
+   "obs_text": "The dread of the Lord falls on his own people.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-65 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13404,
+     "verse_lexical_id": 1118964,
+     "verse": "1Sam.11.7",
+     "surface": "dread",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13405,
+     "verse_lexical_id": 1200365,
+     "verse": "2Chr.19.7",
+     "surface": "fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-66",
+   "doc_lines": "ledger FE-66",
+   "action": "enrich",
+   "existing": 11778,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Trembling at another's fall.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-66 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13406,
+     "verse_lexical_id": 1370903,
+     "verse": "Ezek.26.16",
+     "surface": "tremble",
+     "strong": "H2729",
+     "morph_code": "HVqq3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13407,
+     "verse_lexical_id": 1370898,
+     "verse": "Ezek.26.16",
+     "surface": "trembling",
+     "strong": "H2731",
+     "morph_code": "HNcfpa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13408,
+     "verse_lexical_id": 1353705,
+     "verse": "Ezek.26.17",
+     "surface": "terror",
+     "strong": "H2851",
+     "morph_code": "HNcfsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13409,
+     "verse_lexical_id": 1368922,
+     "verse": "Ezek.26.18",
+     "surface": "tremble",
+     "strong": "H2729",
+     "morph_code": "HVqi3mp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13410,
+     "verse_lexical_id": 1369158,
+     "verse": "Ezek.32.10",
+     "surface": "tremble",
+     "strong": "H2729",
+     "morph_code": "HVqq3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13411,
+     "verse_lexical_id": 1369145,
+     "verse": "Ezek.32.10",
+     "surface": "bristle",
+     "strong": "H8175A",
+     "morph_code": "HVqi3mp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13412,
+     "verse_lexical_id": 1369147,
+     "verse": "Ezek.32.10",
+     "surface": "horror",
+     "strong": "H8178A",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13413,
+     "verse_lexical_id": 1369133,
+     "verse": "Ezek.27.35",
+     "surface": "bristles",
+     "strong": "H8175A",
+     "morph_code": "HVqp3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13414,
+     "verse_lexical_id": 1369135,
+     "verse": "Ezek.27.35",
+     "surface": "horror",
+     "strong": "H8178A",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13415,
+     "verse_lexical_id": 1244993,
+     "verse": "Job.18.20",
+     "surface": "horror",
+     "strong": "H8178A",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-68",
+   "doc_lines": "ledger FE-68",
+   "action": "enrich",
+   "existing": 11779,
+   "kind": null,
+   "basis": null,
+   "obs_text": "An object of dread to friends.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-68 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13416,
+     "verse_lexical_id": 1250920,
+     "verse": "Ps.31.11",
+     "surface": "dread",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-69",
+   "doc_lines": "ledger FE-69",
+   "action": "enrich",
+   "existing": 11780,
+   "kind": null,
+   "basis": null,
+   "obs_text": "God named by fear.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-69 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13417,
+     "verse_lexical_id": 978208,
+     "verse": "Gen.31.42",
+     "surface": "Fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13418,
+     "verse_lexical_id": 978244,
+     "verse": "Gen.31.53",
+     "surface": "Fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13419,
+     "verse_lexical_id": 1236116,
+     "verse": "Job.25.2",
+     "surface": "fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13420,
+     "verse_lexical_id": 1250744,
+     "verse": "Ps.89.7",
+     "surface": "awesome",
+     "strong": "H3372H",
+     "morph_code": "HVNrmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13421,
+     "verse_lexical_id": 1250740,
+     "verse": "Ps.89.7",
+     "surface": "feared",
+     "strong": "H6206",
+     "morph_code": "HVNrmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-71",
+   "doc_lines": "ledger FE-71",
+   "action": "enrich",
+   "existing": 11781,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Isa 8:12–13 (held from FE-19).",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-71 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13422,
+     "verse_lexical_id": 1294658,
+     "verse": "Isa.8.12",
+     "surface": "fear",
+     "strong": "H3372G",
+     "morph_code": "HVqi2mp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13423,
+     "verse_lexical_id": 1294659,
+     "verse": "Isa.8.12",
+     "surface": "fear",
+     "strong": "H4172A",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13424,
+     "verse_lexical_id": 1294664,
+     "verse": "Isa.8.12",
+     "surface": "dread",
+     "strong": "H6206",
+     "morph_code": "HVhi2mp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13425,
+     "verse_lexical_id": 1295137,
+     "verse": "Isa.8.13",
+     "surface": "fear",
+     "strong": "H4172A",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13426,
+     "verse_lexical_id": 1295140,
+     "verse": "Isa.8.13",
+     "surface": "dread",
+     "strong": "H6206",
+     "morph_code": "HVhrmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-73",
+   "doc_lines": "ledger FE-73",
+   "action": "enrich",
+   "existing": 11782,
+   "kind": null,
+   "basis": null,
+   "obs_text": "The same phrase, used of ruin.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-73 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13429,
+     "verse_lexical_id": 1310459,
+     "verse": "Isa.17.2",
+     "surface": "make them afraid",
+     "strong": "H2729",
+     "morph_code": "HVhrmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13430,
+     "verse_lexical_id": 1396151,
+     "verse": "Nah.2.11",
+     "surface": "disturb",
+     "strong": "H2729",
+     "morph_code": "HVhrmsa",
+     "role": "characteristic",
+     "collection": "anger"
+    },
+    {
+     "node_id": 13431,
+     "verse_lexical_id": 1236099,
+     "verse": "Job.21.9",
+     "surface": "fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-74",
+   "doc_lines": "ledger FE-74",
+   "action": "enrich",
+   "existing": 11783,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Not fearing.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-74 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13432,
+     "verse_lexical_id": 1250947,
+     "verse": "Ps.36.1",
+     "surface": "fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13433,
+     "verse_lexical_id": 1317294,
+     "verse": "Jer.2.19",
+     "surface": "fear",
+     "strong": "H6345",
+     "morph_code": "HNcfsc",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13434,
+     "verse_lexical_id": 1320271,
+     "verse": "Jer.36.24",
+     "surface": "afraid",
+     "strong": "H6342",
+     "morph_code": "HVqp3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13435,
+     "verse_lexical_id": 1230300,
+     "verse": "Esth.5.9",
+     "surface": "trembled",
+     "strong": "H2111",
+     "morph_code": "HVqrmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13436,
+     "verse_lexical_id": 1236149,
+     "verse": "Job.39.16",
+     "surface": "fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13437,
+     "verse_lexical_id": 1235913,
+     "verse": "Job.39.22",
+     "surface": "fear",
+     "strong": "H6343",
+     "morph_code": "HNcmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-75",
+   "doc_lines": "ledger FE-75",
+   "action": "enrich",
+   "existing": 11784,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Trembling at his word.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-75 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13438,
+     "verse_lexical_id": 1306684,
+     "verse": "Isa.66.2",
+     "surface": "trembles",
+     "strong": "H2730",
+     "morph_code": "HAamsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13439,
+     "verse_lexical_id": 1291172,
+     "verse": "Isa.66.5",
+     "surface": "tremble",
+     "strong": "H2730",
+     "morph_code": "HAampa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13440,
+     "verse_lexical_id": 1219807,
+     "verse": "Ezra.9.4",
+     "surface": "trembled",
+     "strong": "H2730",
+     "morph_code": "HAamsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13441,
+     "verse_lexical_id": 1219985,
+     "verse": "Ezra.10.3",
+     "surface": "tremble",
+     "strong": "H2730",
+     "morph_code": "HAampa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13442,
+     "verse_lexical_id": 1250903,
+     "verse": "Ps.119.161",
+     "surface": "awe",
+     "strong": "H6342",
+     "morph_code": "HVqp3ms",
+     "role": "characteristic",
+     "collection": "reverence"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-76",
+   "doc_lines": "ledger FE-76",
+   "action": "enrich",
+   "existing": 11785,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Fearing always, set against hardening.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-76 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13443,
+     "verse_lexical_id": 1276450,
+     "verse": "Prov.28.14",
+     "surface": "fears",
+     "strong": "H6342",
+     "morph_code": "HVprmsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13444,
+     "verse_lexical_id": 1295163,
+     "verse": "Isa.29.23",
+     "surface": "awe",
+     "strong": "H6206",
+     "morph_code": "HVhi3mp",
+     "role": "characteristic",
+     "collection": "reverence"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-77",
+   "doc_lines": "ledger FE-77",
+   "action": "enrich",
+   "existing": 11786,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Coming to God in trembling.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-77 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13445,
+     "verse_lexical_id": 1387671,
+     "verse": "Hos.11.10",
+     "surface": "trembling",
+     "strong": "H2729",
+     "morph_code": "HVqu3mp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13446,
+     "verse_lexical_id": 1387553,
+     "verse": "Hos.11.11",
+     "surface": "come trembling",
+     "strong": "H2729",
+     "morph_code": "HVqi3mp",
+     "role": "characteristic",
+     "collection": null
+    },
+    {
+     "node_id": 13447,
+     "verse_lexical_id": 1385125,
+     "verse": "Hos.3.5",
+     "surface": "fear",
+     "strong": "H6342",
+     "morph_code": "HVqq3cp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13448,
+     "verse_lexical_id": 1393850,
+     "verse": "Mic.7.17",
+     "surface": "fear",
+     "strong": "H3372H",
+     "morph_code": "HVqu3mp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13449,
+     "verse_lexical_id": 1393841,
+     "verse": "Mic.7.17",
+     "surface": "come trembling",
+     "strong": "H6342",
+     "morph_code": "HVqi3mp",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13450,
+     "verse_lexical_id": 1393845,
+     "verse": "Mic.7.17",
+     "surface": "turn",
+     "strong": "H7264",
+     "morph_code": "HVqi3mp",
+     "role": "qualifier",
+     "collection": "turn",
+     "reason": "role judged from the verse (#2498, Q5): Mic 7:17: 'turn in dread to the Lord' gives the direction of the trembling, the movement toward God (a qualifier of the dread, face: coming to God in trembling)"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-82",
+   "doc_lines": "ledger FE-82",
+   "action": "enrich",
+   "existing": 11787,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Trembling for someone or something.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-82 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13451,
+     "verse_lexical_id": 1132768,
+     "verse": "1Sam.4.13",
+     "surface": "trembled",
+     "strong": "H2730",
+     "morph_code": "HAamsa",
+     "role": "characteristic",
+     "collection": "fear"
+    },
+    {
+     "node_id": 13452,
+     "verse_lexical_id": 1172017,
+     "verse": "2Kgs.4.13",
+     "surface": "taken",
+     "strong": "H2729",
+     "morph_code": "HVqp2fs",
+     "role": "qualifier",
+     "collection": "snatch",
+     "reason": "role judged from the verse (#2498, Q5): 2Kgs 4:13: 'you have taken all this trouble' - the taking is the act that gives the trouble (the concern for the guest); the trouble is the characteristic"
+    },
+    {
+     "node_id": 13453,
+     "verse_lexical_id": 1172022,
+     "verse": "2Kgs.4.13",
+     "surface": "trouble",
+     "strong": "H2731",
+     "morph_code": "HNcfsa",
+     "role": "characteristic",
+     "collection": "tribulation"
+    },
+    {
+     "node_id": 13454,
+     "verse_lexical_id": 1230436,
+     "verse": "Esth.4.4",
+     "surface": "distressed",
+     "strong": "H2342A",
+     "morph_code": "HVtw3fs",
+     "role": "characteristic",
+     "collection": "tribulation"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-83",
+   "doc_lines": "ledger FE-83",
+   "action": "enrich",
+   "existing": 11788,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Trembling in age.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-83 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13455,
+     "verse_lexical_id": 1287370,
+     "verse": "Eccl.12.3",
+     "surface": "tremble",
+     "strong": "H2111",
+     "morph_code": "HVqi3mp",
+     "role": "standalone",
+     "collection": "fear",
+     "reason": "role judged from the verse (#2498, Q5): Eccl 12:3: 'the keepers of the house tremble' is the body's trembling in age (the ledger places it with the flesh). Recognised, no inner-being role. JUDGEMENT CALL: characteristic is the alternative"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-84",
+   "doc_lines": "ledger FE-84",
+   "action": "enrich",
+   "existing": 11789,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Two causes in one verse.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-84 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13456,
+     "verse_lexical_id": 1221474,
+     "verse": "Ezra.10.9",
+     "surface": "trembling",
+     "strong": "H7460",
+     "morph_code": "HVhrmpa",
+     "role": "characteristic",
+     "collection": "fear"
+    }
+   ]
+  },
+  {
+   "document": 8,
+   "draft": "fear:FE-85",
+   "doc_lines": "ledger FE-85",
+   "action": "enrich",
+   "existing": 11790,
+   "kind": null,
+   "basis": null,
+   "obs_text": "Lam 4:6, \"no hands were wrung for her\", is tagged with the trembling root.",
+   "reason": "role judged from the verse (#2498, Q5): the word the finding FE-85 is about, in its verse",
+   "nodes": [
+    {
+     "node_id": 13457,
+     "verse_lexical_id": 1346194,
+     "verse": "Lam.4.6",
+     "surface": "wrung",
+     "strong": "H2342A",
+     "morph_code": "HVqp3cp",
+     "role": "standalone",
+     "collection": null,
+     "reason": "role judged from the verse (#2498, Q5): Lam 4:6: 'no hands were wrung for her' is a bodily wringing; the ledger itself says the English shows no fear. Recognised, no inner-being role"
+    }
+   ]
+  }
+ ]
+}

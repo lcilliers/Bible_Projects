@@ -41,7 +41,6 @@ from . import narrativeregister as nr
 from . import observationrecord as orec
 from . import openitem
 from . import strandreading as sr
-from . import surfacemap
 from . import versecollate as vc
 from . import versemeta
 from . import versescope as vs
@@ -225,9 +224,6 @@ def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_requ
     if sg["kind"] == "qualifier":
         raise Refused(f"subgroup {sg['subgroup_code']} is a qualifier group and is never a home (spec 1.2)")
     home = sg["cluster_code"]
-    unmapped = surfacemap.reading_refusal(conn, home)
-    if unmapped:
-        raise Refused(unmapped)
     request = {"subgroup": [sg["subgroup_code"]], "home": [sg["subgroup_code"]]}
     if (p.get("Reviewed") or "").strip():
         request["reviewed"] = p["Reviewed"].strip()
@@ -336,16 +332,6 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                         (J,)).fetchall()
     strongs = sorted({r["strong"] for r in rows})
     SJ = json.dumps(strongs)
-    clusters: dict = {}
-    for s, cl in conn.execute("SELECT strong, cluster_code FROM cluster_strong WHERE deleted=0 AND strong IN "
-                              "(SELECT value FROM json_each(?)) ORDER BY cluster_code", (SJ,)):
-        clusters.setdefault(s, []).append(cl)
-    subs: dict = {}
-    for s, surface, sgc in conn.execute(
-            "SELECT s.strong, s.surface, g.subgroup_code FROM surface_subgroup s JOIN cluster_subgroup g ON "
-            "g.id=s.cluster_subgroup_id WHERE s.deleted=0 AND s.strong IN (SELECT value FROM json_each(?)) "
-            "ORDER BY g.subgroup_code", (SJ,)):
-        subs.setdefault((s, surface), []).append(sgc)
     by_verse: dict = {i: [] for i in ids}
     for r in rows:
         by_verse[r["verse_id"]].append(r)
@@ -385,8 +371,7 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                                    "surface_here": here, "span_surface": os_.get("span_surface") if os_.get("span_surface") != here else None,
                                    "step_gloss": os_.get("step_gloss"),
                                    "surface": r["surface"], "morph": r["morph_code"], "position": r["position"],
-                                   "clusters": clusters.get(r["strong"], []),
-                                   "subgroups": subs.get((r["strong"], _norm(r["surface"])), []), "hint": hint,
+                                   "hint": hint,
                                    "meaning": meaning[r["strong"]], "evaluation": None,
                                    "items_absent": {}, "surface_kind": r["surface_kind"], "units": []}
                 if r["unit_size"] and r["unit_size"] > 1 and r["unit_role"] != "head":
@@ -469,25 +454,13 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                                    "text": f"this occurrence is written {suggest['surface']!r} for {n['strong']} (STEP: "
                                            f"{osur[counts]['step_gloss']!r}), the span's word {db_surface.get(counts)!r} is the "
                                            f"other code's; the node holds {n['surface']!r}: set when the verse is recorded"})
-                if counts and n["strong"]:
-                    code = orec.subgroup_code(conn, n["cluster_code"], n["strong"], db_surface.get(counts, n["surface"]))
-                    if code and code != n["cluster_subgroup_code"]:
-                        suggest["cluster_subgroup_code"] = code
-                        nflags.append({"code": "subgroup_missing" if not n["cluster_subgroup_code"] else "subgroup_differs",
-                                       "propose": {"set": {"cluster_subgroup_code": code}},
-                                       "text": f"the subgroup of this word is {code} (surface_subgroup), the node holds "
-                                               f"{n['cluster_subgroup_code']!r}: set when the verse is recorded"})
                 if not counts:
                     nflags.append({"code": "occurrence_unplaced", "propose": None,
                                    "text": "the node names no occurrence of this verse and matches none by Strong and surface: it "
                                            "counts for no surface (modify `verse_lexical_id`, or delete the node)"})
-                if n["role"] == "standalone":
-                    nflags.append({"code": "role_standalone", "propose": None,
-                                   "text": "standalone is not a role of a new node: the word is ignored (delete the node), or "
-                                           "it is a qualifier (modify the role)"})
                 nl.append({"node": n["id"], "word": f"{n['surface']} ({n['strong']})", "role": n["role"],
-                           "occurrence": n["verse_lexical_id"], "counts_for": counts, "cluster": n["cluster_code"],
-                           "subgroup": n["cluster_subgroup_code"], "reading_id": n["reading_id"],
+                           "occurrence": n["verse_lexical_id"], "counts_for": counts, "collection": n["collection_id"],
+                           "reading_id": n["reading_id"],
                            "suggest": suggest or None, "flags": nflags, "action": None})
             flags = []
             same = dups.get((o["obs_text"] or "").strip())
@@ -548,7 +521,7 @@ def _sheets(cfg, conn, items: list[dict]) -> dict:
                    "inner-being role gets no observation). `drop_non_relevant_nodes`: true soft deletes every existing node on a "
                    "not_relevant surface. The check lists the errors it finds on each existing observation and node in `flags`, "
                    "with a `propose`d fix where there is one (a duplicate description is merged into the copy kept; the silence "
-                   "kind is deleted; a node's occurrence and subgroup are completed): the fixes are part of the check and run when the "
+                   "kind is deleted; a node's occurrence is completed): the fixes are part of the check and run when the "
                    "verse is recorded, so an observation without an action takes its proposed fix; name an action to do otherwise. "
                    "A tag that is not a kind has no automatic fix: modify it to the kind of what the verse says. Errors found by Record are written back to `errors` and the verse stays in "
                    "hand. Check every existing observation: "
@@ -726,7 +699,7 @@ def _validate_sheet(cfg, conn, v: dict, errors: list) -> dict | None:
                 if na["action"] == "modify":
                     role = (na.get("set") or {}).get("role", role)
                 plan["nodes"].append((n["node"], na))
-            if n["suggest"] and not deleted_obs and not gone:     # the occurrence and subgroup are always completed
+            if n["suggest"] and not deleted_obs and not gone:     # the occurrence is always completed
                 plan["fill"].append((n["node"], {k: v for k, v in n["suggest"].items()
                                                  if k not in ((na or {}).get("set") or {})}))
             if not gone and n["counts_for"] in occ_group and role is not None:
@@ -877,7 +850,7 @@ def _write_verse(cfg, conn, w, r, run_id: str, v: dict, pl: dict, fplan: list) -
                     orec.modify_node(cfg, conn, n["node"], {"reading_id": r["id"]}, "checked and kept by this reading (spec 4.7)",
                                      r["id"], run_id, w.who)
     for nid, sug in pl["fill"]:
-        orec.modify_node(cfg, conn, nid, sug, "completed from verse_lexical and surface_subgroup when the verse was "
+        orec.modify_node(cfg, conn, nid, sug, "completed from verse_lexical when the verse was "
                          "worked (#2308 D2)", r["id"], run_id, w.who)
         cnt["nodes_modified"] += 1
     gone_ids = {oid for oid, a in pl["obs"] if a["action"] in ("delete", "merge")}

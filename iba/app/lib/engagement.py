@@ -16,8 +16,7 @@ folders are cfg_setting rows of module `engagement` (governance.rules_must_be_co
 
 A surface in a verse is one verse_lexical row (its id is the key). A member surface of a collection is the link's own term and the terms whose
 base is that term (collectionexport._memberships, own_link=True). Everything the assessment says is inferential (B:4) until the researcher
-confirms it. Q5 (cluster): an observation takes the cluster of its first node; a node takes the cluster of the surface's own surface_subgroup row
-for its Strong's code, else the first live cluster_strong row of the code. Q6: Group never changes a collection; a surface that moves to `other`
+confirms it. Q5 (cluster, retired #2495): an observation and a node hold no cluster and no subgroup; a node takes the collection of its surface (own link, else its base). Q6: Group never changes a collection; a surface that moves to `other`
 is reported."""
 from __future__ import annotations
 
@@ -81,14 +80,6 @@ def member_terms(conn, cid: int, tiers: list) -> dict:
         if mine:
             out[sid] = (terms[sid][1], min((m[3] for m in mine), key=lambda t: ce.TIER_ORDER.get(t, 9)))
     return out
-
-
-def _clusters(conn, strong: str, surface: str) -> tuple[str | None, list]:
-    """(the node's cluster, every live cluster of the code). Q5: the surface's own subgroup row first, else the first cluster_strong row."""
-    allc = [r[0] for r in conn.execute("SELECT cluster_code FROM cluster_strong WHERE deleted=0 AND strong=? ORDER BY id", (strong,))]
-    own = [r[0] for r in conn.execute("SELECT DISTINCT cluster_code FROM surface_subgroup WHERE deleted=0 AND strong=? AND surface=? ORDER BY id",
-                                      (strong, surface))]
-    return (own[0] if own else (allc[0] if allc else None)), allc
 
 
 def batch_plan(surfaces: list, size: int) -> list:
@@ -158,8 +149,7 @@ def pull(conn, cfg, name: str, batch=None, size=None, missing: bool = False) -> 
         for r in sorted(rows.get(surf, []), key=lambda x: (x[8] or "", x[0])):
             if r[0] in done:
                 continue
-            cluster, allc = _clusters(conn, r[3], surf)
-            items.append({"vl_id": r[0], "osisId": r[8], "reference": r[9], "strong": r[3], "morph_code": r[4], "cluster": cluster, "clusters": allc,
+            items.append({"vl_id": r[0], "osisId": r[8], "reference": r[9], "strong": r[3], "morph_code": r[4],
                           "surface_kind": r[5], "unit_surface": r[6], "unit_role": r[7], "text": r[10]})
             osis.add(r[8])
         if missing and not items:
@@ -170,8 +160,8 @@ def pull(conn, cfg, name: str, batch=None, size=None, missing: bool = False) -> 
     existing = {}
     for o in conn.execute("SELECT DISTINCT o.id, o.stage, o.tag, o.obs_text, o.status, o.basis FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id "
                           f"WHERE o.deleted=0 AND n.deleted=0 AND n.verse_reference IN ({','.join('?' * len(osis))}) ORDER BY o.id", sorted(osis)):
-        nodes = [{"id": n[0], "strong": n[1], "surface": n[2], "role": n[3], "verse_lexical_id": n[4], "cluster": n[5], "verse": n[6]}
-                 for n in conn.execute("SELECT id, strong, surface, role, verse_lexical_id, cluster_code, verse_reference FROM ib_node WHERE observation_id=? "
+        nodes = [{"id": n[0], "strong": n[1], "surface": n[2], "role": n[3], "verse_lexical_id": n[4], "verse": n[5]}
+                 for n in conn.execute("SELECT id, strong, surface, role, verse_lexical_id, verse_reference FROM ib_node WHERE observation_id=? "
                                        "AND deleted=0 AND verse_reference IN (%s) ORDER BY seq" % ",".join("?" * len(osis)), [o[0]] + sorted(osis))]
         existing[str(o[0])] = {"id": o[0], "stage": o[1], "tag": o[2], "text": o[3], "status": o[4], "basis": o[5], "nodes": nodes}
     batch_info = None
@@ -284,7 +274,7 @@ def _check_observations(cfg, st: dict, items: dict, evals: dict, filled: dict, e
                 errors.append(f"{where}: its gives must name what the evaluation of ({o.get('surface')}, {vl}) gives")
             it = items[key][1]
             nodes.append({"verse_lexical_id": vl, "strong": it["strong"], "verse_reference": it["osisId"], "surface": o.get("surface"),
-                          "morph_code": it["morph_code"], "cluster": it["cluster"], "role": e.get("role") or None})
+                          "morph_code": it["morph_code"], "role": e.get("role") or None})
         plan.append({"key": k, "surface": o.get("surface"), "kind": kind, "text": (o.get("text") or "").strip(), "meaning": o.get("meaning"),
                      "implication": o.get("implication"), "basis": o.get("basis"), "role": o.get("role") or None, "gives": o.get("gives"),
                      "test": o.get("test"), "nodes": nodes})
@@ -368,6 +358,7 @@ def record(conn, cfg, run_id: str, plan: dict, who: str) -> dict:
 def _write_plan(conn, st: dict, plans: list, run_id: str, done: dict) -> None:
     """Write checked observations and their nodes (reusing a live observation with the same text, skipping a node already there)."""
     now = _now()
+    cmap = orec.surface_collection_map(conn)           # a node carries the collection of its surface (B:130); no cluster, no subgroup (#2495)
     for p in plans:
         if not p["nodes"]:
             continue
@@ -380,10 +371,9 @@ def _write_plan(conn, st: dict, plans: list, run_id: str, done: dict) -> None:
             parts = {"engagement": True, "surface": p["surface"], "role": p["role"], "test": p["test"]}
             if p["gives"]:
                 parts["gives"] = p["gives"]
-            cluster = next((n["cluster"] for n in p["nodes"] if n["cluster"]), None)
             oid = conn.execute("INSERT INTO ib_observation (cluster_code, stage, tag, strong, obs_text, meaning, implication, basis, parts, meaning_source, "
-                               "status, run_id, created_at) VALUES (?,?,?,?,?,?,?,?,?,'verse-text','draft',?,?)",
-                               (cluster, st["stage"], p["kind"], p["nodes"][0]["strong"], p["text"], p["meaning"], p["implication"], p["basis"],
+                               "status, run_id, created_at) VALUES (NULL,?,?,?,?,?,?,?,?,'verse-text','draft',?,?)",
+                               (st["stage"], p["kind"], p["nodes"][0]["strong"], p["text"], p["meaning"], p["implication"], p["basis"],
                                 json.dumps(parts, ensure_ascii=False), run_id, now)).lastrowid
             done["observations"] += 1
         done["ids"][p["key"]] = oid
@@ -391,14 +381,11 @@ def _write_plan(conn, st: dict, plans: list, run_id: str, done: dict) -> None:
         for n in p["nodes"]:
             if conn.execute("SELECT 1 FROM ib_node WHERE observation_id=? AND verse_lexical_id=? AND deleted=0", (oid, n["verse_lexical_id"])).fetchone():
                 continue
-            if not n["cluster"]:
-                raise Refused(f"observation {p['key']}: the Strong's code {n['strong']} has no live cluster (ib_node.cluster_code is required)")
             seq += 1
-            sg = orec.subgroup_code(conn, n["cluster"], n["strong"], n["surface"])
-            conn.execute("INSERT INTO ib_node (observation_id, cluster_code, cluster_subgroup_code, strong, verse_reference, surface, morph_code, "
-                         "source_stage, seq, role, reading_id, created_at, verse_lexical_id) VALUES (?,?,?,?,?,?,?,?,?,?,NULL,?,?)",
-                         (oid, n["cluster"], sg, n["strong"], n["verse_reference"], n["surface"], n["morph_code"], st["stage"], seq, n["role"], now,
-                          n["verse_lexical_id"]))
+            conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, reading_id, "
+                         "created_at, verse_lexical_id, collection_id) VALUES (?,?,?,?,?,?,?,?,NULL,?,?,?)",
+                         (oid, n["strong"], n["verse_reference"], n["surface"], n["morph_code"], st["stage"], seq, n["role"], now,
+                          n["verse_lexical_id"], cmap.get((n["surface"] or "").strip().lower())))
             done["nodes"] += 1
 
 
@@ -512,9 +499,8 @@ def review_pull(conn, cfg, name: str) -> dict:
                                 "AND o.deleted=0 AND o.stage=? AND n.verse_lexical_id=? ORDER BY n.id DESC LIMIT 1", (st["stage"], r[0])).fetchone()
             if node is None:
                 open_verses.add(r[1])             # not assessed: the verse is not for the review yet
-            cluster, allc = _clusters(conn, r[4], surf)
             by_verse[r[1]].append({"surface": surf, "tid": tid, "vl_id": r[0], "osisId": r[1], "reference": r[2], "text": r[3], "strong": r[4],
-                                   "morph_code": r[5], "cluster": cluster, "clusters": allc, "surface_kind": r[6], "unit_surface": r[7], "unit_role": r[8],
+                                   "morph_code": r[5], "surface_kind": r[6], "unit_surface": r[7], "unit_role": r[8],
                                    "node_id": node[0] if node else None, "role": node[1] if node else None, "observation_id": node[2] if node else None,
                                    "observation_text": node[3] if node else None, "confirmed": bool(node) and node[1] is None and _reviewed(conn, node[0])})
     surfaces, settled, verses = collections.defaultdict(list), 0, []
