@@ -51,4 +51,6 @@ Claude's own (self-correctable or engineering choices, recorded):
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. Commit 351e79d15fed2cd53d87577a660e6fe47d103bfa, "session 20261113: prior-document re-read pilot (loader, 35 observations enriched, 4 added, 132 fear roles), cluster and subgroup retired from nodes and observations (#2495), glossary and behaviour corrections (#2494), node checker and node salvage migrations (#2484), close reports, session logs, compliance files".
+Push output: `To https://github.com/lcilliers/Bible_Projects.git   d2526343..351e79d1  main -> main`.
+Not staged by rule: `database/bible_research.db` (the glossary edits are in it), `backups/`, the Excel lock file in `_analytics/reading-tools/node-check/`. The session-close detection finished with 0 open findings (report `iba/app/reports/session-close-v363-20261113.md`).
