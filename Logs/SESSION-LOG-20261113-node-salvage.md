@@ -38,4 +38,4 @@ Developer Mode session on the nodes and observations salvage (#2484): rules B:13
 
 ## 6. Git
 
-(written after the first commit)
+Branch: main. Commit 3a26c1ed `session 20261113: node salvage session log, compliance evidence, close dispositions, close report`. Push: `a5cf91b8..3a26c1ed  main -> main` (https://github.com/lcilliers/Bible_Projects.git). Earlier work of this session was committed in 351e79d1 and a5cf91b8.
