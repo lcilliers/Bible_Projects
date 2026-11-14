@@ -165,6 +165,8 @@ def evidence(ctx: Ctx) -> Outcome:
             datas = [ev.build_verses(conn, ev.resolve_verses(conn, ctx.cfg, verse, order), order)]
         else:
             datas = [ev.build_collection(conn, c, vals["tiers"], order) for c in ev.resolve(conn, names.split(","))]
+            for d_ in datas:
+                d_["pairs"] = ev.build_pairs(conn, d_, vals, order)
         archive = ctx.cfg.required_setting("governance.oneoff_report_archive_dir")
     except (ev.EvidenceError, ValueError) as exc:
         return fail("refused", str(exc))
@@ -242,6 +244,77 @@ def gather(ctx: Ctx) -> Outcome:
     conn.commit()
     return ok(f"collection {(ctx.params.get('Name') or '').strip().lower()} made (id {r['collection']}) of {r['members']} surfaces, tier gathered. Next: Engagement.ps1 -Action Pull -Collection {(ctx.params.get('Name') or '').strip().lower()}",
               collection=r["collection"], members=r["members"])
+
+
+def index_fill(ctx: Ctx) -> Outcome:
+    """Fill the index of the surfaces of the confirmed collections (#2503): one live row for each member surface, unplaced; a row whose surface left its collection is retired. -Check previews."""
+    from ..lib import collectionindex as ci
+    conn = ctx.cfg.conn
+    try:
+        r = ci.fill(conn, ctx.cfg, ctx.run_id, dry=_flag(ctx, "Check"))
+    except ci.IndexError_ as exc:
+        return fail("refused", str(exc))
+    if _flag(ctx, "Check"):
+        return ok(f"PREVIEW (nothing written): {r['expected']} member surfaces, {r['live']} live index rows; to add {r['add']}, to retire {r['retire']}", **r)
+    conn.commit()
+    return ok(f"index filled: {r['add']} rows added, {r['retire']} retired; {ci.counts(conn)}", **r)
+
+
+def subgroup(ctx: Ctx) -> Outcome:
+    """Make a subgroup of a collection (-Collection, -Name, -Reason) or place surfaces in it (-Surface a,b -Name -Reason [-Strong H4284]) or isolate surfaces that have no inner-being role
+    (-Surface a,b -Isolate -Reason), only on the researcher's instruction (#2503). -Check previews."""
+    from ..lib import collectionindex as ci
+    conn = ctx.cfg.conn
+    p = ctx.params
+    coll = str(p.get("Collection", "")).strip()
+    try:
+        if _flag(ctx, "Isolate") or str(p.get("Surface", "")).strip():
+            r = ci.place(conn, ctx.run_id, coll, (p.get("Name") or None), str(p.get("Surface", "")).split(","), (p.get("Strong") or None), p.get("Reason") or "",
+                         isolate=_flag(ctx, "Isolate"), dry=_flag(ctx, "Check"))
+            line = f"{r['placed']} surface(s) of {r['collection']} " + (f"placed in {r['group']}" if r["group"] else "isolated")
+        else:
+            r = ci.make_group(conn, ctx.run_id, coll, p.get("Name"), p.get("Reason") or "", dry=_flag(ctx, "Check"))
+            line = f"subgroup {r['name']!r} of {r['collection']} made"
+    except ci.IndexError_ as exc:
+        return fail("refused", str(exc))
+    if _flag(ctx, "Check"):
+        return ok("PREVIEW (nothing written): " + line, **{k: v for k, v in r.items() if isinstance(v, (int, str))})
+    conn.commit()
+    return ok(line, **{k: v for k, v in r.items() if isinstance(v, (int, str))})
+
+
+def index_check(ctx: Ctx) -> Outcome:
+    """The checker of the index (#2503): member surfaces with no row, rows of surfaces that left, a surface in two collections, duplicates, the split rule, placements that do not agree, shared flags
+    with no second link. Read-only on the tables; writes its findings as a versioned Markdown report under surfaces.exports_root (cfg_setting collection.index_check_name)."""
+    import datetime
+
+    from ..lib import collectionindex as ci
+    conn = ctx.cfg.conn
+    root, stem = ctx.cfg.setting("surfaces.exports_root"), ctx.cfg.setting("collection.index_check_name")
+    if not root or not stem:
+        return fail("refused", "cfg_setting surfaces.exports_root or collection.index_check_name is missing")
+    try:
+        found = ci.check(conn, ctx.cfg)
+        archive = ctx.cfg.required_setting("governance.oneoff_report_archive_dir")
+    except (ci.IndexError_, ValueError) as exc:
+        return fail("refused", str(exc))
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    L = ["# Collection index check", "", f"Generated {stamp} by run {ctx.run_id} (`Collection-Build.ps1 -Action IndexCheck`, escalation #2503). Read-only on the tables. Counts: {ci.counts(conn)}.", ""]
+    for f in found:
+        L += [f"## {f['key']}: {len(f['rows'])}", "", f["how"] + ".", ""]
+        if f["rows"]:
+            L += ["| " + " | ".join(f["cols"]) + " |", "|" + "---|" * len(f["cols"])]
+            L += ["| " + " | ".join(str(c).replace("|", "/") for c in r) + " |" for r in f["rows"][:200]]
+            if len(f["rows"]) > 200:
+                L += [f"_{len(f['rows']) - 200} more_"]
+            L += [""]
+    base = pathlib.Path(root) / f"{stem}.md"
+    path = reportkit.next_versioned_path(base, archive)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    reportkit._archive_prior_versions(base, archive)
+    path.write_text("\n".join(L) + "\n", encoding="utf-8")
+    n = sum(len(f["rows"]) for f in found)
+    return ok("; ".join(f"{f['key']} {len(f['rows'])}" for f in found if f["rows"]) + (" -- " if n else "no findings -- ") + f"report {path.as_posix()} (run Manifest-Rebuild.ps1 to register it)", findings=n)
 
 
 def attach_phrases(ctx: Ctx) -> Outcome:

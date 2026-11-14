@@ -23,6 +23,13 @@
                 References: Book chapter:verse (Pro 6:14), a range (Pro 6:14-16, Pro 6:30-7:2), a whole chapter (Pro 6), a list of one book (Pro 6:14, 16);
                 each item starts with its book, as the verse table writes it (Mat, 1Sa, Phili) or an alias (Matthew, 1Sam, Ps); items are separated by a
                 semicolon, the whole in quotes: -Verse "Pro 6:14-16; Mat 11:29; 1Sa 24:5"
+      Index     [-Check]   fill the index of the surfaces of the confirmed collections (one row for each member surface, unplaced; a row whose surface left its collection is
+                retired). Mechanical, no judgement (#2503)
+      Subgroup  -Collection <name> -Name <subgroup> -Reason <text>   make a subgroup of a collection (a group of its surfaces, formed in the layer 1 reading), on your instruction
+                -Collection <name> -Name <subgroup> -Surface <a,b> [-Strong <code>] -Reason <text>   place surfaces in it (-Strong places one sense of a surface)
+                -Collection <name> -Surface <a,b> -Isolate -Reason <text>   isolate surfaces with no inner-being role. -Check previews (#2503)
+      IndexCheck   the checks of the index (a member with no row, a surface that left, a surface in two collections, duplicates, the split rule, placements, stale shared flags);
+                writes a report under surfaces.exports_root (#2503)
       Set       -Collection <name> -Status indicative|confirmed|retired -Reason <text>   on your instruction
       Merge     -From <name> -Into <name> -Reason <text>   fold one collection into another, on your instruction
       Gather    -Name <name> -Surface <a,b,c> -Reason <text> [-Check]   one collection of the surfaces you name, tier gathered, without the AI; for words in no collection
@@ -44,7 +51,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Evidence', 'Set', 'Merge', 'Seed', 'Ask', 'Gather', 'AttachPhrases')]
+    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Evidence', 'Set', 'Merge', 'Seed', 'Ask', 'Gather', 'AttachPhrases', 'Index', 'Subgroup', 'IndexCheck')]
     [string] $Action,
     [string[]] $Collection,
     [string] $Verse,
@@ -56,6 +63,8 @@ param(
     [string] $Reason,
     [string] $From,
     [string] $Into,
+    [string] $Strong,
+    [switch] $Isolate,
     [switch] $Check,
     [switch] $Trace
 )
@@ -69,15 +78,16 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 . $PSScriptRoot\_lib\Notify.ps1
 
-$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Evidence = 'collection.evidence'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather'; AttachPhrases = 'collection.attach_phrases' }
+$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Evidence = 'collection.evidence'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather'; AttachPhrases = 'collection.attach_phrases'; Index = 'collection.index'; Subgroup = 'collection.subgroup'; IndexCheck = 'collection.index_check' }
 $stepId = $stepMap[$Action]
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-COLLECTIONBUILD"
 
 $paramArgs = @()
-foreach ($p in @('Collection', 'Verse', 'Word', 'Name', 'Surface', 'Limit', 'Status', 'Reason', 'From', 'Into')) {
+foreach ($p in @('Collection', 'Verse', 'Word', 'Name', 'Surface', 'Limit', 'Status', 'Reason', 'From', 'Into', 'Strong')) {
     if ($PSBoundParameters.ContainsKey($p)) { $paramArgs += @('--param', "$p=$($PSBoundParameters[$p] -join ',')") }
 }
 if ($Check) { $paramArgs += @('--param', 'Check=true') }
+if ($Isolate) { $paramArgs += @('--param', 'Isolate=true') }
 
 Write-IbaRunHeader -WorkPackage 'collection-build' -Step $stepId -RunId $runId
 $json = python -m iba.app.run collection-build --step $stepId --run-id $runId @paramArgs

@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-14T04:11:18Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-14T18:12:03Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `1ff99478-5673-4e18-9009-8311c010b281` (CLAUDE_CODE_SESSION_ID); started 2026-11-13T15:00:03Z; window base commit `a5cf91b8eb80d13f465a74c9172698d2faedd622`
-- compliance file: `Logs/compliance/COMPLIANCE-20261113-1ff99478.md`; session log: `Logs/SESSION-LOG-20261113-claim-collection-design-2486.md`
-- **open findings: 0**; cleared by disposition: 6
+- session: `296c9026-f9d4-49cf-8904-f04be58876e3` (CLAUDE_CODE_SESSION_ID); started 2026-11-14T04:14:57Z; window base commit `4cda524fa360002b5a8ab40366334916061adc92`
+- compliance file: `Logs/compliance/COMPLIANCE-20261114-296c9026.md`; session log: `Logs/SESSION-LOG-20261114-layer2-pairings-and-collection-index.md`
+- **open findings: 0**; cleared by disposition: 7
 
 
 ## Contents
@@ -41,16 +41,17 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:3498aff0`: researcher message 2026-11-13T15:14 is in no escalation comment written this session: "is sounds to me as if this is not just a problem of making links that is missing - it is about re-evaluating each of the 294 claims into the observations and id" -- disposition: recorded in #2486 v17
-- cleared `SC3:054abfdf`: researcher message 2026-11-13T17:20 is too short to be matched; name where it is recorded: "Yes, that one" -- disposition: recorded in #2486 v17
-- cleared `SC3:bfe3b8df`: researcher message 2026-11-13T17:25 is too short to be matched; name where it is recorded: "Yes, that area" -- disposition: recorded in #2486 v17
-- cleared `SC3:71d2688d`: researcher message 2026-11-13T19:05 is too short to be matched; name where it is recorded: "Enough for now" -- disposition: recorded in #2486 v17
-- cleared `SC3:68a4fc87`: researcher message 2026-11-14T04:09 is too short to be matched; name where it is recorded: "close-session" -- disposition: no record needed: the close command itself
+- cleared `SC3:92d95071`: researcher message 2026-11-14T07:54 is too short to be matched; name where it is recorded: "Yes, draft it" -- disposition: recorded in #2463 v21
+- cleared `SC3:58d38a6d`: researcher message 2026-11-14T09:51 is too short to be matched; name where it is recorded: "Closed, run it" -- disposition: recorded in #2502 v3
+- cleared `SC3:e1942662`: researcher message 2026-11-14T17:37 is too short to be matched; name where it is recorded: "Approve, build it" -- disposition: recorded in #2503 v1
+- cleared `SC3:a4b73618`: researcher message 2026-11-14T17:55 is too short to be matched; name where it is recorded: "Closed, run it" -- disposition: recorded in #2503 v3
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:bd4172af`: researcher message 2026-11-13T18:35 holds, defers or asks to check something; name its register item: "your proposals §5 is a good start. what this exercise is pointing out is we need to give more attention to what claims should be doing.  There is likely a long " -- disposition: in register #2486
+- cleared `SC4b:85ee0ff7`: researcher message 2026-11-14T05:12 holds, defers or asks to check something; name its register item: "2463:  I will not have enough tokens to go the excecution and testing of claim reading.  So, what I will do is review the evidence for the thought collection an" -- disposition: in register #2463
+- cleared `SC4b:c679016a`: researcher message 2026-11-14T06:07 holds, defers or asks to check something; name its register item: "let me answer or elaborate an a number of items: Conflict (a) not true. each surface is linked to verses, so by implication, when you create a surface grouping," -- disposition: in register #2463
+- cleared `SC4b:10e49c15`: researcher message 2026-11-14T07:51 holds, defers or asks to check something; name its register item: ".Q1 yes B130; B120 is not longer active or need modified to collections Q2 - check the observation rules. Q3 - why do you ask me if you do not check yourself fi" -- disposition: in register #2463
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity

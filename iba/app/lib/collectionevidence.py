@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import collections
 import csv
+import json
 import pathlib
 import re
 
@@ -46,7 +47,8 @@ def read_settings(cfg) -> dict:
     out = {}
     for key, name in (("collection.member_tiers", "tiers"), ("surfaces.exports_root", "path"), ("collection.evidence_name", "name"),
                       ("collection.evidence_verse_name", "verse_name"), ("collection.evidence_catalogue_stages", "catalogue_stages"),
-                      ("collection.evidence_text_chars", "text_chars"), ("engagement.stage", "engagement_stage")):
+                      ("collection.evidence_text_chars", "text_chars"), ("engagement.stage", "engagement_stage"),
+                      ("collection.evidence_pairs", "pairs")):
         out[name] = cfg.setting(key)
         if not out[name]:
             raise EvidenceError(f"cfg_setting {key} is missing")
@@ -175,6 +177,122 @@ def _phrases(conn, d: dict) -> list[dict]:
 
 
 # ══ scope: verses ════════════════════════════════════════════════════════════════════════════════
+# ══ the pairings: what lives with the member words in their verses (#2502) ═══════════════════════
+def _morph_class(morph: str, testament: str, table: dict) -> str:
+    """A grammar hint from the morph code (the classes are cfg_setting collection.evidence_pairs morph_class): NT the part before the first hyphen, OT the letter after the
+    language letter (H or A). A hint only; the morph code itself is shown beside it."""
+    if not morph:
+        return ""
+    if testament == "NT":
+        return table.get("NT", {}).get(morph.split("-")[0], "")
+    return table.get("OT", {}).get(morph[1:2], "") if len(morph) > 1 else ""
+
+
+def build_pairs(conn, d: dict, vals: dict, order: Order) -> dict:
+    """The base data of layer 2 for one collection (#2502): every live verse_lexical row of every verse that holds a member occurrence, in word order, each typed
+    (member, entity, negator, word of another collection, qualifier candidate, connective, other), and the pairings of each member occurrence with the words of its
+    verse, with side and distance. Read-only on the tables; nothing is evaluated: a type is a stored field (party_kind, is_negator, the collection of the surface, the
+    qualifier subgroup, the morph class) and a distance is a difference of stored positions. Settings: cfg_setting collection.evidence_pairs."""
+    P = vals["pairs"]
+    terms, of_base = _terms(conn)
+    st = list(P["collection_status"])
+    cols = {r[0]: r[1] for r in conn.execute(f"SELECT id, name FROM collection WHERE deleted=0 AND status IN ({','.join('?' * len(st))})", st)}
+    own = _own_terms(conn, vals["tiers"])
+    surf_cols = collections.defaultdict(set)
+    surf_cid, text_id = {}, {}
+    for cid, tid in conn.execute(f"SELECT collection_id, term_id FROM collection_link WHERE deleted=0 AND tier IN ({','.join('?' * len(vals['tiers']))})", list(vals["tiers"])):
+        if cid not in cols:
+            continue
+        for sid in [s for s in of_base.get(tid, []) if s not in own] + ([tid] if tid in terms else []):
+            surf_cols[terms[sid][1]].add(cols[cid])
+            surf_cid[terms[sid][1]] = cid
+            text_id[terms[sid][1]] = sid
+    idx = {(c_, t_, s_): (g_ or "", st_) for c_, t_, s_, g_, st_ in conn.execute(
+        "SELECT i.collection_id, i.term_id, i.strong, g.name, i.state FROM collection_subgroup_surface i LEFT JOIN collection_subgroup g ON g.id=i.subgroup_id AND g.deleted=0 WHERE i.deleted=0")}
+    mine = {t["surface"] for t in d["terms"]}
+    q = P["qualifier"]
+    qsub = {}
+    for strong, label in conn.execute("SELECT ss.strong, cs.label FROM surface_subgroup ss JOIN cluster_subgroup cs ON cs.id=ss.cluster_subgroup_id "
+                                      "WHERE ss.deleted=0 AND cs.kind=?", (q["subgroup_kind"],)):
+        qsub.setdefault(strong, label)
+    occ_ids = {o["vl_id"] for o in d["occurrences"]}
+    vids = sorted({o["verse_id"] for o in d["occurrences"]})
+    ref = {r[0]: (r[1], r[2]) for r in _in(conn, "SELECT id, reference, osisId FROM verse WHERE id IN ({in})", vids)}
+    rows = []
+    for r in _in(conn, "SELECT id, verse_id, lower(trim(surface)), strong, morph_code, position, code_ordinal, unit_role, unit_size, surface_kind, unit_surface, "
+                       "is_negator, party_kind, role, testament FROM verse_lexical WHERE deleted=0 AND verse_id IN ({in})", vids):
+        x = dict(zip(("vl_id", "verse_id", "surface", "strong", "morph", "position", "code_ordinal", "unit_role", "unit_size", "surface_kind", "unit_surface",
+                      "is_negator", "party_kind", "role", "testament"), r))
+        x["surface"] = x["surface"] or ""
+        x["reference"], x["osis"] = ref[x["verse_id"]]
+        x["sk"] = order.key(x["osis"])
+        x["morph_class"] = _morph_class(x["morph"], x["testament"], P["morph_class"])
+        try:
+            x["clusters"] = ", ".join(json.loads(x["role"])) if x["role"] else ""
+        except (TypeError, ValueError):
+            x["clusters"] = str(x["role"] or "")
+        x["collections"] = sorted(surf_cols.get(x["surface"], ()))
+        key = (surf_cid.get(x["surface"]), text_id.get(x["surface"]))
+        hit = idx.get((key[0], key[1], x["strong"])) or idx.get((key[0], key[1], None))
+        x["subgroup"], x["index_state"] = hit if hit else ("", "not indexed")     # the subgroup of the surface in its collection (#2503)
+        x["member"] = x["surface"] in mine and x["vl_id"] in occ_ids
+        why = []
+        if x["is_negator"] or any(c in q["cluster_codes"] for c in x["clusters"].split(", ")):
+            why.append("negator")
+        if x["strong"] in qsub:
+            why.append("qualifier subgroup: " + qsub[x["strong"]])
+        if x["morph_class"] in q["morph_classes"]:
+            why.append("morph: " + x["morph_class"])
+        x["qualifier"] = "; ".join(why)
+        if x["member"]:
+            x["type"] = "member of this collection"
+        elif x["party_kind"]:
+            x["type"] = "entity (" + x["party_kind"] + ")"
+        elif "negator" in why:
+            x["type"] = "negator"
+        elif x["collections"]:
+            x["type"] = "word of another collection"
+        elif why:
+            x["type"] = "qualifier candidate"
+        elif "T6" in x["clusters"].split(", "):
+            x["type"] = "connective"
+        else:
+            x["type"] = "other"
+        rows.append(x)
+    rows.sort(key=lambda x: (x["sk"], x["position"] if x["position"] is not None else 0, x["code_ordinal"] or 0, x["vl_id"]))
+    vl_ids = [x["vl_id"] for x in rows]
+    nodes = _in(conn, "SELECT n.verse_lexical_id, n.observation_id, n.role, n.surface, n.strong, n.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id "
+                      "WHERE n.deleted=0 AND o.deleted=0 AND n.verse_lexical_id IN ({in})", vl_ids)
+    obs_of = collections.defaultdict(set)
+    for n in nodes:
+        obs_of[n[0]].add(n[1])
+    for x in rows:
+        x["obs"] = sorted(obs_of.get(x["vl_id"], ()))
+    obs = {r[0]: r for r in _in(conn, "SELECT id, stage, tag, obs_text FROM ib_observation WHERE id IN ({in})", {n[1] for n in nodes})}
+    by_vl = {x["vl_id"]: x for x in rows}
+    verse_obs = []
+    for n in sorted(nodes, key=lambda n: (by_vl[n[0]]["sk"], by_vl[n[0]]["position"] or 0, n[1], n[5])):
+        x = by_vl[n[0]]
+        o = obs[n[1]]
+        verse_obs.append({"reference": x["reference"], "observation": n[1], "stage": o[1], "tag": o[2], "text": o[3], "node_surface": n[3], "node_strong": n[4], "node_role": n[2],
+                          "vl_id": n[0], "on_member": x["member"], "type": x["type"]})
+    bands = P["bands"]
+    by_verse = collections.defaultdict(list)
+    for x in rows:
+        by_verse[x["verse_id"]].append(x)
+    pairs = []
+    for m in rows:
+        if not m["member"]:
+            continue
+        for r in by_verse[m["verse_id"]]:
+            if r["vl_id"] == m["vl_id"] or r["position"] == m["position"] or r["type"] == "other":
+                continue
+            dist = abs((r["position"] or 0) - (m["position"] or 0))
+            band = "adjacent" if dist <= bands["adjacent"] else "near" if dist <= bands["near"] else "far"
+            pairs.append({"member": m, "other": r, "distance": dist, "band": band, "side": "before" if (r["position"] or 0) < (m["position"] or 0) else "after"})
+    return {"rows": rows, "pairs": pairs, "observations": verse_obs, "settings": P}
+
+
 def resolve_verses(conn, cfg, text: str, order: Order) -> list[dict]:
     """The verses of a reference list, in Scripture order. A bad item, a book that is not an alias, a verse or chapter not in the verse table, or a verse
     named twice (an overlap) refuses, naming it; nothing is written."""

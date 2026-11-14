@@ -354,6 +354,107 @@ def _body_faults(d: dict, limit: int = 25) -> list[str]:
     return L
 
 
+# ══ the pairings (#2502) ═════════════════════════════════════════════════════════════════════════
+def _nkeys(o: dict) -> list:
+    """The neighbour's key at the collection level: the collections of a word of another collection, else its type (entity, negator, qualifier candidate, ...)."""
+    return o["collections"] if o["type"] == "word of another collection" and o["collections"] else [o["type"]]
+
+
+def _sg(x: dict) -> str:
+    return x["subgroup"] or "(unplaced)"
+
+
+def _gkeys(o: dict) -> list:
+    """The neighbour's key at the subgroup level: the subgroup of a word of another collection (collection: subgroup), else its type."""
+    return [f"{c}: {_sg(o)}" for c in o["collections"]] if o["type"] == "word of another collection" and o["collections"] else [o["type"]]
+
+
+LEVELS = (("Strong's code", lambda m, d: m["strong"], lambda o: [o["strong"]]),
+          ("surface", lambda m, d: m["surface"], lambda o: [o["surface"]]),
+          ("subgroup", lambda m, d: f"{d['name']}: {_sg(m)}", _gkeys),
+          ("collection or type", lambda m, d: d["name"], _nkeys))
+
+
+def pair_rows(d: dict) -> list[list]:
+    """The pairings counted at each level: the pair of the member side and the neighbour side, with the links, verses, distance bands and sides. A neighbour word that
+    belongs to several collections counts in each at the collection level."""
+    out = []
+    for lvl, mk, nk in LEVELS:
+        agg = {}
+        for p in d["pairs"]["pairs"]:
+            for k in nk(p["other"]):
+                a = agg.setdefault((mk(p["member"], d), k, p["other"]["type"]), {"links": 0, "verses": set(), "adjacent": 0, "near": 0, "far": 0, "before": 0, "after": 0})
+                a["links"] += 1
+                a["verses"].add(p["member"]["verse_id"])
+                a[p["band"]] += 1
+                a[p["side"]] += 1
+        for (m, n, t), a in sorted(agg.items(), key=lambda kv: (-kv[1]["links"], str(kv[0]))):
+            out.append([lvl, m, n, t, a["links"], len(a["verses"]), a["adjacent"], a["near"], a["far"], a["before"], a["after"], ""])
+    return out
+
+
+def _body_pairs(d: dict, vals: dict) -> list[str]:
+    pr = d.get("pairs")
+    if not pr:
+        return []
+    rows, pairs, top = pr["rows"], pr["pairs"], int(pr["settings"].get("top_n", 15))
+    members = [x for x in rows if x["member"]]
+    L = ["## 3a. What lives with the member words in their verses (pairings)", "",
+         "The member words are not alone in their verses. This section and the workbook sheets `Verse view`, `Pairings`, `Pairing summary` and `Verse observations` put the "
+         "other words of each verse beside them, so that each word's company can be plotted and the pairings counted at the Strong's code, the surface and the collection. "
+         "A type is a stored field (the entity party_kind, the negator flag, the collection of the surface, the qualifier subgroup, the morph class); a distance is the "
+         "difference of the stored positions of two words (span order in the verse, not syntax); a side is before or after the member word. The meaning of a pairing, and what "
+         "it does for the inner being, is read in context and is recorded in the empty `reading` column of the sheets, not computed here.", "",
+         f"- {len({x['verse_id'] for x in rows})} verses hold a member occurrence; they hold {len(rows)} live verse_lexical rows, {len(members)} of them member occurrences; "
+         f"{len(pairs)} pairings of a member occurrence with a typed word of its verse (a word with no type of its own, such as an article, is in `Verse view` and not in `Pairings`).",
+         f"- Member occurrences with a live node: {sum(1 for x in members if x['obs'])} of {len(members)}; typed neighbours with a live node: "
+         f"{sum(1 for p in pairs if p['other']['obs'])} of {len(pairs)} pairings.", ""]
+    ts = collections.OrderedDict()
+    for p in pairs:
+        a = ts.setdefault(p["other"]["type"], collections.Counter())
+        a["links"] += 1
+        a[p["band"]] += 1
+        a[p["side"]] += 1
+    L += ["### 3a.1 The pairings by type of neighbour", ""]
+    L += _table(["neighbour type", "pairings", "adjacent", "near", "far", "before", "after"],
+                [[t, a["links"], a["adjacent"], a["near"], a["far"], a["before"], a["after"]] for t, a in sorted(ts.items(), key=lambda kv: -kv[1]["links"])])
+    L += [f"Bands: adjacent is a distance of up to {pr['settings']['bands']['adjacent']} position, near up to {pr['settings']['bands']['near']}, far above that "
+          "(cfg_setting collection.evidence_pairs).", ""]
+    allrows = pair_rows(d)
+    placed = sum(1 for x in members if x["subgroup"])
+    L += [f"The member occurrences placed in a subgroup of the collection index (`collection_subgroup_surface`, #2503): {placed} of {len(members)}. "
+          "The subgroup level below counts the pairings by the subgroup of the member word and, for a word of another collection, of that word; while the surfaces are unplaced it shows `(unplaced)`.", ""]
+    L += ["### 3a.2 The same pairings at each level", ""]
+    lv = []
+    for lvl, _, _ in LEVELS:
+        rs = [r for r in allrows if r[0] == lvl]
+        lv.append([lvl, len(rs), sum(1 for r in rs if r[4] == 1), sum(1 for r in rs if r[4] >= 5)])
+    L += _table(["level", "distinct pairs", "seen once", "seen five or more times"], lv)
+    L += ["A pair seen once cannot show a trend; the level at which pairs recur is the level at which the comparison can be read. The pairs of each level are in `Pairing summary`.", ""]
+    col = [r for r in allrows if r[0] == "collection or type"]
+    L += [f"### 3a.3 The most frequent partners at the collection level (top {top})", ""]
+    L += _table(["neighbour (collection or type)", "pairings", "verses", "adjacent", "near", "far", "before", "after"], [[r[2], r[4], r[5], r[6], r[7], r[8], r[9], r[10]] for r in col[:top]])
+    L += [f"### 3a.4 The most frequent Strong's code pairs (top {top})", ""]
+    cd = [r for r in allrows if r[0] == "Strong's code"]
+    L += _table(["member code", "neighbour code", "neighbour type", "pairings", "verses"], [[r[1], r[2], r[3], r[4], r[5]] for r in cd[:top]])
+    qs = collections.OrderedDict()
+    surf = collections.Counter()
+    for p in pairs:
+        for why in [w for w in p["other"]["qualifier"].split("; ") if w]:
+            key = why if why in ("negator",) else why.split(":")[0] + (": " + why.split(": ", 1)[1] if why.startswith("morph") else "")
+            qs.setdefault(key, collections.Counter())["links"] += 1
+            qs[key][p["band"]] += 1
+        if p["other"]["qualifier"]:
+            surf[(p["other"]["surface"], p["other"]["strong"], p["other"]["qualifier"])] += 1
+    L += ["### 3a.5 Qualifier candidates as pairs", "",
+          "A neighbour is a qualifier candidate when a stored field says so: the negator flag (cluster T5), a surface in a qualifier subgroup (history data), or a morph class "
+          "that qualifies (the classes are in cfg_setting collection.evidence_pairs). It is a candidate, not a finding; what a qualifier does to the pairing is read in context.", ""]
+    L += _table(["why a candidate", "pairings", "adjacent", "near", "far"], [[k, a["links"], a["adjacent"], a["near"], a["far"]] for k, a in sorted(qs.items(), key=lambda kv: -kv[1]["links"])])
+    L += [f"The most frequent qualifier candidates (top {top}):", ""]
+    L += _table(["word", "code", "why", "pairings"], [[s, c, w, n] for (s, c, w), n in surf.most_common(top)])
+    return L
+
+
 def render(datas: list[dict], vals: dict, run_id: str, stamp: str, wb_name: str) -> str:
     """The Markdown report of one or more collections, or of a verse list."""
     verse = datas[0]["kind"] == "verse"
@@ -373,6 +474,7 @@ def render(datas: list[dict], vals: dict, run_id: str, stamp: str, wb_name: str)
               "(every Strong's entry in full, every observation and node, the change history, the narrative text) is in the workbook, one sheet for each listing; the sheet is "
               "named where it is cited.", ""]
         L += _body_verse(d, P) if verse else _body_collection(d, P)
+        L += _body_pairs(d, vals)
         L += _body_recorded(d, P)
         L += _body_claims(d, P)
         L += [] if verse else _body_phrases(d, P)
@@ -429,6 +531,39 @@ def sheets(datas: list[dict], vals: dict) -> list[dict]:
          "unit word", "unit role", "unit size", "role (clusters)", "negator", "party", "status", "engagement", "other observations", "catalogue observations",
          "live nodes on withdrawn observations", "verse (ESV)"],
         each(lambda d, P: list(occ_rows(d, P))))
+    if kind == "collection" and all(d.get("pairs") for d in datas):
+        def vv_rows(d, P):
+            for x in d["pairs"]["rows"]:
+                yield [lead(d), x["reference"], x["verse_id"], x["position"], x["vl_id"], x["surface"], x["strong"], x["morph"], x["morph_class"], x["unit_surface"], x["unit_role"],
+                       x["unit_size"], x["surface_kind"], "yes" if x["member"] else "", ", ".join(x["collections"]), x["subgroup"], x["index_state"], x["party_kind"], x["is_negator"], x["qualifier"],
+                       x["type"], x["clusters"], len(x["obs"]), ", ".join(str(i) for i in x["obs"]), "read (a live node)" if x["obs"] else "no live node"]
+        add("Verse view", "every live verse_lexical row of every verse that holds a member occurrence, in word order, typed", "the verse as base data: who lives with the member word, in what order, and what the study has recorded on each word; filter by type, qualifier or collection",
+            "verse_lexical, collection_link, surface_subgroup, cluster_subgroup, ib_node, ib_observation",
+            ["scope", "reference", "verse_id", "position", "vl_id", "word", "Strong's code", "morph", "morph class (hint)", "unit word", "unit role", "unit size", "surface_kind",
+             "member", "collections of the word", "subgroup (index)", "index state", "entity (party)", "negator", "qualifier candidate (why)", "type", "clusters (history)", "live nodes (observations)",
+             "observation ids", "read status"],
+            each(lambda d, P: list(vv_rows(d, P))))
+
+        def pr_rows(d, P):
+            for p in d["pairs"]["pairs"]:
+                m, o = p["member"], p["other"]
+                yield [lead(d), m["reference"], m["surface"], m["strong"], m["vl_id"], m["position"], o["surface"], o["strong"], o["vl_id"], o["position"], p["side"], p["distance"],
+                       p["band"], o["type"], ", ".join(o["collections"]), m["subgroup"], o["subgroup"], o["qualifier"], o["party_kind"], o["is_negator"], o["morph_class"], len(m["obs"]), len(o["obs"]), ""]
+        add("Pairings", "each member occurrence with every typed word of its verse", "the pairings, one row each, with side and distance; the reading column is for the context reading",
+            "verse_lexical, collection_link, ib_node",
+            ["scope", "reference", "member word", "member code", "member vl_id", "member position", "neighbour word", "neighbour code", "neighbour vl_id", "neighbour position", "side",
+             "distance", "band", "neighbour type", "neighbour collections", "member subgroup", "neighbour subgroup", "qualifier candidate (why)", "entity (party)", "negator", "neighbour morph class (hint)",
+             "member live nodes", "neighbour live nodes", "reading"],
+            each(lambda d, P: list(pr_rows(d, P))))
+        add("Pairing summary", "the pairings counted at the Strong's code, the surface and the collection or type", "the comparative view: which pairs recur, by distance band and side; the reading column is for the context reading",
+            "verse_lexical, collection_link",
+            ["level", "member side", "neighbour side", "neighbour type", "pairings", "verses", "adjacent", "near", "far", "before", "after", "reading"],
+            each(lambda d, P: pair_rows(d)))
+        add("Verse observations", "every live observation with a node on any word of these verses", "what the study has recorded around the member words, with its text, not only on them",
+            "ib_node, ib_observation",
+            ["scope", "reference", "observation", "stage", "tag", "text", "node word", "node code", "node role", "node vl_id", "on a member occurrence", "type of the word"],
+            each(lambda d, P: [[lead(d), x["reference"], x["observation"], x["stage"], x["tag"], x["text"], x["node_surface"], x["node_strong"], x["node_role"], x["vl_id"],
+                                "yes" if x["on_member"] else "", x["type"]] for x in d["pairs"]["observations"]]))
     codes = {}
     for d in datas:
         for code, ent in d["strongs"].items():
@@ -553,6 +688,9 @@ def write_workbook(path: pathlib.Path, datas: list[dict], vals: dict, run_id: st
         w.append(sdef["head"])
         for r in sdef["rows"]:
             w.append([_clean(x) for x in r])
+            for c in w[w.max_row]:
+                if c.data_type == "f":     # text that starts with "=" (an LSJ entry) is text, not a formula: openpyxl would store a formula and Excel would repair the file (#2463)
+                    c.data_type = "s"
         for c in w[1]:
             c.font = Font(bold=True, color="FFFFFF")
             c.fill = PatternFill("solid", fgColor="305496")
