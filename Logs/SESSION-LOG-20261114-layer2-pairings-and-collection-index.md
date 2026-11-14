@@ -52,4 +52,4 @@ Claude, self-correctable (fixed and recorded):
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch `main`. First commit `21fee662` ("session 20261114: layer 2 pairings in the evidence report (#2502), collection subgroup index (#2503), claim reading comparison and working papers (#2463), close report, session log, compliance"). Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `4cda524f..21fee662  main -> main`.
