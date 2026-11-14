@@ -32,4 +32,4 @@ The researcher's decisions are recorded on #2486; none is a rule yet.
 
 ## 6. Git
 
-(written after the commits)
+Branch main. Commit 3a68694a "session 20261113: claims and collections design (#2486), thought-collection extracts, close report, session log, compliance". Push: 8a9f0f56..3a68694a main -> main (github.com/lcilliers/Bible_Projects).
