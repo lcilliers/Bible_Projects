@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-15T06:12:14Z |
+| generated_at | 2026-11-15T09:09:17Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -147,7 +147,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1136** registered module(s) — **655** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **960** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1137** registered module(s) — **656** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **961** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -176,6 +176,7 @@ _(none)_
 | Verse-Scope.ps1 | iba/app/ps/Verse-Scope.ps1 | PS entry point for the scope resolver (escalation #2228); dispatches through run.py, work package verse-scope. | ✓ | ✓ | thin wrapper; config is read by the handler through run.py |
 | VerseMeta.ps1 | iba/app/ps/VerseMeta.ps1 | PS entry point of work package verse-meta: VerseMeta.ps1 -Step SetStatus -References "Gen.1.1,Rom 1:2" -Status analysed, dispatched through run.py (step verse_meta.set_status, #2207). Escalation #1661. | ✓ | ✓ | PS entry point: the step's config is read by the handler and lib/versemeta.py |
 | add_adversarial_cluster_v1_20260905 | iba/app/migration/archive/add_adversarial_cluster_v1_20260905.py | ONE-OFF migration -- architecture correction, researcher verdict 2026-09-05: Strong's-code classification (negator/connective/party) belongs in cluster/cluster_strong, not cfg_lexical_code_class/configmaint. Creates cluster T4 'Adversarial' and reallocates H7854/G4567/G1228G from T2 to T4 (first of several tracked de-cfg-ification escalations). inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
+| add_column_rule_2504_v1_20261115 | iba/app/migration/archive/add_column_rule_2504_v1_20261115.py | ONE-OFF migration -- escalation #2504: the rule for adding a column to an existing data table; run_id DEVMODE-2504-ADD-COLUMN-RULE-20261115. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | add_concept_descriptions_2355_v1_20261101 | iba/app/migration/archive/add_concept_descriptions_2355_v1_20261101.py | ONE-OFF migration -- escalation #2355: description column on concept_domain, concept; run_id DEVMODE-2355-CONCEPT-DESCRIPTIONS-20261101. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | add_concise_verse_specific_rule_v1_20260921 | iba/app/migration/archive/add_concise_verse_specific_rule_v1_20260921.py | ONE-OFF migration -- escalation #1824: registers a new cfg_method_rule requiring concise, verse-specific obs_text for lexical.meaning/cluster.reading/cluster.answer, fixing the root cause of the same/broaden/new dedup never firing. Run once, then set inactive=1. |  |  |  |
 | add_config_modules_2354_v1_20261102 | iba/app/migration/archive/add_config_modules_2354_v1_20261102.py | ONE-OFF migration -- escalation #2354: modules ollama and surface_judge in enum config_module; run_id DEVMODE-2354-CONFIG-MODULES-20261102. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |

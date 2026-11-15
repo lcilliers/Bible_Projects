@@ -78,6 +78,9 @@ A routine that depends on a service outside the app (today the Ollama server) re
 - **A change to config registers itself in the same unit of work:** a new table in `cfg_table` and
   `cfg_column`, a new step in `cfg_step`, `cfg_utility` and `cfg_write_grant`, and so on
   (`cfg_behaviour_rule` 62).
+- **A column added to an existing data table** is registered in `cfg_column` and made with `ALTER TABLE` in the same
+  unit of work: `lib/db.py` `build_data_tables` creates a missing table from config but never adds a column to one that
+  exists (`cfg_behaviour_rule` 135, which points to rule 62 and `governance.table_columns`).
 - **Every script is in a utility or module, or it is retired** (#2200). Controlled means an active
   `cfg_utility` row, the handler of a `cfg_step`, the `ps_script` of an active `cfg_work_package`,
   or a hook named in `.claude/settings.json`. Any other script sits in its folder's `archive/`, and
