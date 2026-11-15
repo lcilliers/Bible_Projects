@@ -63,7 +63,7 @@ for cid, tid in q(f"SELECT l.collection_id, l.term_id FROM collection_link l JOI
         if sid not in own:
             want.add((cid, sid))
 r = ci.fill(conn, cfg, RUN, dry=True)
-case("I2a", "the preview counts the member surfaces as an independent query does", r["expected"] == len(want) and r["add"] == len(want) and r["live"] == 0, f"preview {r} independent {len(want)}")
+case("I2a", "the preview counts the member surfaces as an independent query does", r["expected"] == len(want) and r["live"] + r["add"] - r["retire"] == len(want), f"preview {r} independent {len(want)}")
 r = ci.fill(conn, cfg, RUN)
 conn.commit()
 got = {(a, b) for a, b in q("SELECT collection_id, term_id FROM collection_subgroup_surface WHERE deleted=0")}

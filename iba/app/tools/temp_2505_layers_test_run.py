@@ -1,0 +1,239 @@
+"""temp_2505_layers_test_run.py -- tests for escalation #2505: the layered reading of a collection (lib/layerreading.py, lib/collectionindex.py subgroup_for and refresh_nodes,
+the node writers, the migration layers_2505_v1_20261115, the config it registers).
+
+Each case checks the tables against a direct query written here, not against the library's own lists, and runs the refusals. Runs against a COPY of iba.db that already holds the
+migration (never the live database); the groups, observations and ledger rows it makes are test rows on that copy. The lexical gate is satisfied on the small test collection by
+adding lexical nodes on the copy (a synthetic stand-in for the lexical catch-up); on the real thought collection the gate is tested as it stands.
+
+Usage: python iba/app/tools/temp_2505_layers_test_run.py <db copy> <scratch dir>
+"""
+import json
+import pathlib
+import sys
+
+ROOT = pathlib.Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT))
+from iba.app.lib import collectionindex as ci  # noqa: E402
+from iba.app.lib import layerreading as lr  # noqa: E402
+from iba.app.lib.cfg import Cfg  # noqa: E402
+
+results = []
+RUN = "TEST-2505"
+
+
+def case(cid, desc, passed, evidence):
+    results.append((cid, desc, "PASS" if passed else "FAIL", str(evidence).replace("|", "/")[:330]))
+
+
+def refuses(fn, *a, **k):
+    try:
+        fn(*a, **k)
+    except (lr.LayerError, ci.IndexError_) as exc:
+        return str(exc)
+    return None
+
+
+def main(db, scratch):
+    cfg = Cfg(pathlib.Path(db))
+    conn = cfg.conn
+    q = lambda s, *a: conn.execute(s, a).fetchall()  # noqa: E731
+    one = lambda s, *a: conn.execute(s, a).fetchone()[0]  # noqa: E731
+    s = lr.settings(cfg)
+
+    # ── configuration
+    case("C1", "layer.reading is registered with 3 steps and 8 items; stages layer-1 and layer-2; the four kinds are enum values",
+         len(s["steps"]) == 3 and len(s["items"]) == 8 and one("SELECT count(*) FROM cfg_enum WHERE name='ib_observation.stage' AND value IN ('layer-1','layer-2')") == 2
+         and one("SELECT count(*) FROM cfg_enum WHERE name='ib_observation.tag' AND value IN ('group','enrichment','pairing','relation')") == 4, f"steps {[x['key'] for x in s['steps']]}")
+    case("C2", "every item kind is an ib_observation.tag value and every step's items are defined",
+         all(v["kind"] in {r[0] for r in q("SELECT value FROM cfg_enum WHERE name='ib_observation.tag'")} for v in s["items"].values())
+         and all(i in s["items"] for st in s["steps"] for i in st["items"]), "")
+    case("C3", "ib_node.subgroup_id and the ledger table exist and are registered in cfg_column",
+         any(r[1] == "subgroup_id" for r in q("PRAGMA table_info(ib_node)")) and one("SELECT count(*) FROM cfg_column WHERE table_name='collection_layer_item' AND inactive=0") == 15
+         and one("SELECT count(*) FROM cfg_column WHERE table_name='ib_node' AND name='subgroup_id' AND inactive=0") == 1, "")
+    case("C4", "five steps registered with a routed condition; B:119/B:120 reworded; RO13 inactive; three new rules active",
+         one("SELECT count(*) FROM cfg_step WHERE step LIKE 'collection.layer_%' OR step='collection.node_groups'") == 5
+         and one("SELECT count(*) FROM cfg_on_fail WHERE step LIKE 'collection.layer_%' OR step='collection.node_groups'") == 5
+         and "collection of that surface" in one("SELECT rule_text FROM cfg_behaviour_rule WHERE id=119") and "collection's verses" in one("SELECT rule_text FROM cfg_behaviour_rule WHERE id=120")
+         and one("SELECT active FROM cfg_method_rule WHERE id=201") == 0
+         and one("SELECT count(*) FROM cfg_behaviour_rule WHERE active=1 AND rule_key IN ('collection-reading-runs-in-layers','lexical-and-claims-readings-are-separate','layer-aspects-are-ledgered-and-never-left-open')") == 3, "")
+
+    # ── gates on real data
+    msg = refuses(lr.open_step, conn, cfg, RUN, "thought", "1.1", True)
+    case("G1", "the real collection thought: LayerOpen 1.1 is refused (grouping unfinished; the lexical gate is stated)", bool(msg) and "cannot be opened" in msg, (msg or "")[:300])
+    case("G2", "an unknown step and an unknown collection are refused",
+         bool(refuses(lr.open_step, conn, cfg, RUN, "thought", "9.9", True)) and bool(refuses(lr.open_step, conn, cfg, RUN, "nosuchword", "1.1", True)), "")
+
+    # ── the small test collection: backsliding
+    name = "backsliding"
+    cid = one("SELECT id FROM collection WHERE name=? AND deleted=0", name)
+    ci.fill(conn, cfg, RUN)
+    surf = [r[0] for r in q("SELECT t.surface FROM collection_subgroup_surface i JOIN surface_term t ON t.id=i.term_id WHERE i.collection_id=? AND i.deleted=0 ORDER BY t.surface", cid)]
+    L = lr.load(conn, cfg, name)
+    occ = L["d"]["occurrences"]
+    msg = refuses(lr.open_step, conn, cfg, RUN, name, "1.1", True)
+    case("G3", "the test collection with no lexical nodes and nothing placed is refused, naming the lexical gate and the grouping", bool(msg) and "lexical gate fails" in msg and "not placed" in msg, (msg or "")[:300])
+    # synthetic lexical catch-up: one lexical observation covering every member occurrence
+    oid = conn.execute("INSERT INTO ib_observation (cluster_code, stage, tag, obs_text, basis, meaning_source, status, run_id, created_at) VALUES (NULL,'engagement','statement',?,'stated','verse-text','draft',?, '2026-11-15T00:00:00Z')",
+                       ("synthetic lexical catch-up for the test of #2505 backsliding", RUN)).lastrowid
+    vl = lr._vl(conn, [o["vl_id"] for o in occ])
+    for i, o in enumerate(occ, 1):
+        v = vl[o["vl_id"]]
+        conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, created_at, verse_lexical_id, collection_id) VALUES (?,?,?,?,?,'engagement',?,'characteristic','2026-11-15T00:00:00Z',?,?)",
+                     (oid, v[1], v[2], v[3], v[4], i, o["vl_id"], cid))
+    L = lr.load(conn, cfg, name)
+    gate = lr.lexical_gate(conn, cfg, L)
+    case("G4", "with a lexical node on every member occurrence the lexical gate passes", not gate["missing"] and gate["occurrences"] == len(occ), f"{gate['covered']} of {gate['occurrences']}")
+    msg = refuses(lr.open_step, conn, cfg, RUN, name, "1.1", True)
+    case("G5", "gate passes but nothing is placed: still refused, naming the unplaced surfaces and the missing subgroup", bool(msg) and "not placed" in msg and "no subgroup" in msg, (msg or "")[:250])
+    ci.make_group(conn, RUN, name, "alpha", "test group (#2505 test)")
+    ci.make_group(conn, RUN, name, "beta", "test group (#2505 test)")
+    half = len(surf) // 2
+    ci.place(conn, RUN, name, "alpha", surf[:half], None, "test placement (#2505 test)")
+    ci.place(conn, RUN, name, "beta", surf[half:-1], None, "test placement (#2505 test)")
+    msg = refuses(lr.open_step, conn, cfg, RUN, name, "1.1", True)
+    case("G6", "one surface still unplaced: refused", bool(msg) and "1 surfaces are not placed" in msg, (msg or "")[:200])
+    ci.place(conn, RUN, name, None, [surf[-1]], None, "test isolation: no inner-being role (#2505 test)", isolate=True)
+    msg = refuses(lr.open_step, conn, cfg, RUN, name, "1.2", True)
+    case("G7", "step 1.2 cannot open before 1.1 is closed", bool(msg) and "step 1.1 is not closed" in msg, (msg or "")[:200])
+
+    # ── the group on the node, from placement
+    got = q("SELECT count(*), count(subgroup_id) FROM ib_node WHERE observation_id=? AND lower(trim(surface)) IN (%s)" % ",".join("?" * half), oid, *surf[:half])
+    case("N1", "placing surfaces set subgroup_id on their existing nodes (placement refresh)", got[0][0] == got[0][1] and got[0][0] > 0, f"{got[0][1]} of {got[0][0]} nodes of the alpha surfaces carry a group")
+    iso_nodes = q("SELECT count(subgroup_id) FROM ib_node WHERE observation_id=? AND lower(trim(surface))=?", oid, surf[-1])
+    case("N2", "an isolated surface's nodes carry no group", iso_nodes[0][0] == 0, iso_nodes)
+
+    # ── open 1.1
+    r1 = lr.open_step(conn, cfg, RUN, name, "1.1")
+    r2 = lr.open_step(conn, cfg, RUN, name, "1.1")
+    rows = q("SELECT item, subgroup_id, state FROM collection_layer_item WHERE collection_id=? AND step='1.1'", cid)
+    case("O1", "opening 1.1 makes one group-definition row for each of the 2 groups; opening again changes nothing", r1["add"] == 2 and r2["add"] == 0 and len(rows) == 2 and all(x[2] == "open" for x in rows), f"{r1} then {r2}")
+
+    # ── pull
+    path, n = lr.pull(conn, cfg, name, "1.1", pathlib.Path(scratch))
+    data = json.loads(path.read_text(encoding="utf-8"))
+    case("P1", "the working file holds the 2 open rows, each with the evidence and an empty fill", n == 2 and all(r["fill"]["obs_text"] == "" and r["evidence"] for r in data["rows"]), f"{path.name}")
+    # ── record refusals (each leaves nothing written)
+    before = (one("SELECT count(*) FROM ib_observation"), one("SELECT count(*) FROM ib_node"))
+    bad = json.loads(path.read_text(encoding="utf-8"))
+    bad["rows"][0]["fill"].update({"disposition": "none", "reason": "no reason"})
+    bad["rows"][1]["fill"].update({"disposition": "observed", "obs_text": "too short", "basis": "invented"})
+    msg = refuses(lr.record, conn, cfg, RUN, bad, True)
+    after = (one("SELECT count(*) FROM ib_observation"), one("SELECT count(*) FROM ib_node"))
+    case("R1", "a file with none on a group definition, a short text and a bad basis is refused whole, nothing written",
+         bool(msg) and "cannot be recorded as none" in msg and "under" in msg and "basis must be one of" in msg and before == after, (msg or "")[:300])
+    bad = {"collection": name, "step": "1.1", "rows": [{"ledger_id": 999999, "fill": {"disposition": "observed"}}]}
+    case("R2", "an unknown ledger row is refused", "not a ledger row" in (refuses(lr.record, conn, cfg, RUN, bad, True) or ""), "")
+    # ── record preview, then record
+    good = json.loads(path.read_text(encoding="utf-8"))
+    for r in good["rows"]:
+        r["fill"].update({"disposition": "observed", "obs_text": f"The surfaces of the group {r['group']} turn away, which is a movement of the inner being from what it held; test observation of #2505.", "basis": "read"})
+    prev = lr.record(conn, cfg, RUN, good, False)
+    case("R3", "the preview checks and writes nothing", prev["observed"] == 2 and one("SELECT count(*) FROM ib_observation WHERE stage='layer-1'") == 0, prev)
+    res = lr.record(conn, cfg, RUN, good, True)
+    obs = q("SELECT id, stage, tag, parts FROM ib_observation WHERE stage='layer-1'")
+    nodes = q("SELECT n.observation_id, count(*), count(n.subgroup_id), count(n.collection_id), sum(n.role IS NULL) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='layer-1' GROUP BY 1")
+    Lg = lr.load(conn, cfg, name)
+    want = {g: len([o for o in Lg["d"]["occurrences"] if o["group"] == g]) for g in Lg["groups"]}
+    case("R4", "2 observations of stage layer-1 and kind group; each has exactly the occurrences of its group as nodes, each with a role, a collection and the group",
+         res["observed"] == 2 and len(obs) == 2 and all(o[2] == "group" for o in obs) and sorted(x[1] for x in nodes) == sorted(want.values())
+         and all(x[1] == x[2] == x[3] and not x[4] for x in nodes), f"{res}; nodes {nodes}; want {want}")
+    case("R5", "the ledger rows are observed with their observation and not yet validated",
+         one("SELECT count(*) FROM collection_layer_item WHERE collection_id=? AND step='1.1' AND state='observed' AND observation_id IS NOT NULL AND validated=0", cid) == 2, "")
+    # ── check
+    rep = lr.check(conn, cfg, RUN, name)
+    case("K1", "LayerCheck validates both rows and closes step 1.1; later steps have no rows",
+         rep["steps"]["1.1"]["closed"] and rep["steps"]["1.1"]["validated"] == 2 and not rep["steps"]["1.2"]["rows"] and one("SELECT count(*) FROM collection_layer_item WHERE step='1.1' AND validated=1") == 2, rep["steps"]["1.1"])
+    case("R6", "the same file again is refused once the rows are validated", "validated; only an open or an unvalidated row" in (refuses(lr.record, conn, cfg, RUN, good, True) or ""), "")
+    # tamper: delete one node of one observation -> the check fails that row
+    victim = q("SELECT id, observation_id FROM ib_node WHERE observation_id=? LIMIT 1", obs[0][0])[0]
+    conn.execute("UPDATE ib_node SET deleted=1 WHERE id=?", (victim[0],))
+    rep = lr.check(conn, cfg, RUN, name)
+    case("K2", "a node removed from a layer observation: the row fails with the number missing, validated is cleared, the step is not closed",
+         not rep["steps"]["1.1"]["closed"] and len(rep["steps"]["1.1"]["failed"]) == 1 and "1 occurrences missing" in rep["steps"]["1.1"]["failed"][0]
+         and one("SELECT count(*) FROM collection_layer_item WHERE step='1.1' AND validated=1") == 1, rep["steps"]["1.1"]["failed"])
+    msg = refuses(lr.open_step, conn, cfg, RUN, name, "1.2", True)
+    case("K3", "with 1.1 not closed, step 1.2 stays refused", bool(msg) and "step 1.1 is not closed" in msg, (msg or "")[:160])
+    # re-record the failed row: it is unvalidated, so it can be recorded again; the old observation is withdrawn
+    p2, _ = lr.pull(conn, cfg, name, "1.1", pathlib.Path(scratch))
+    again = json.loads(p2.read_text(encoding="utf-8"))
+    case("K4", "the pull after a failure holds just the failed row", len(again["rows"]) == 1, [r["group"] for r in again["rows"]])
+    again["rows"][0]["fill"].update({"disposition": "observed", "obs_text": "The surfaces of this group turn away from what the inner being held; test re-recording of #2505.", "basis": "stated"})
+    res = lr.record(conn, cfg, RUN, again, True)
+    rep = lr.check(conn, cfg, RUN, name)
+    case("K5", "re-recorded: the earlier observation is withdrawn, the new one validates, step 1.1 closes",
+         res["withdrawn"] == 1 and rep["steps"]["1.1"]["closed"] and one("SELECT count(*) FROM ib_observation WHERE stage='layer-1' AND deleted=0") == 2 and one("SELECT count(*) FROM ib_observation WHERE stage='layer-1'") == 3, res)
+    # ── 1.2
+    r = lr.open_step(conn, cfg, RUN, name, "1.2")
+    p3, n3 = lr.pull(conn, cfg, name, "1.2", pathlib.Path(scratch))
+    enr = json.loads(p3.read_text(encoding="utf-8"))
+    for row in enr["rows"]:
+        row["fill"].update({"disposition": "observed", "obs_text": f"The Strong's codes of {row['group']} ({', '.join(row['strong_codes'])}) define it as a turning away; test enrichment of #2505.", "basis": "read"})
+    res = lr.record(conn, cfg, RUN, enr, True)
+    rep = lr.check(conn, cfg, RUN, name)
+    case("E1", "1.2 opens once 1.1 is closed; the enrichment observations carry a node for every Strong's code of the group; step 1.2 closes",
+         r["add"] == 2 and res["observed"] == 2 and rep["steps"]["1.2"]["closed"], f"{r}; {res}")
+    # ── 2.1
+    r = lr.open_step(conn, cfg, RUN, name, "2.1")
+    rows2 = q("SELECT item, count(*) FROM collection_layer_item WHERE collection_id=? AND step='2.1' GROUP BY item", cid)
+    L2 = lr.load(conn, cfg, name, pairs=True)
+    want2 = lr.derive(conn, cfg, L2, "2.1")
+    case("L1", "2.1 opens after 1.2 is closed; the ledger rows equal the aspects the data demands", r["demanded"] == len(want2) and sum(x[1] for x in rows2) == len(want2), f"{rows2}")
+    if want2:
+        p4, n4 = lr.pull(conn, cfg, name, "2.1", pathlib.Path(scratch))
+        d4 = json.loads(p4.read_text(encoding="utf-8"))
+        for row in d4["rows"]:
+            it = s["items"][row["item"]]
+            if it["none_allowed"]:
+                row["fill"].update({"disposition": "none", "reason": "test: nothing to observe for this aspect (#2505 test)"})
+            else:
+                row["fill"].update({"disposition": "observed", "obs_text": "test observation text of at least forty characters (#2505)", "basis": "read"})
+        res = lr.record(conn, cfg, RUN, d4, True)
+        rep = lr.check(conn, cfg, RUN, name)
+        case("L2", "every 2.1 row answered as none (with reason) validates; step 2.1 closes", rep["steps"]["2.1"]["closed"] and res["none"] == len(d4["rows"]), rep["steps"]["2.1"])
+        ent = [x for x in d4["rows"] if x["item"] == "entity"]
+        case("L3", "an entity row recorded as observed without a route is refused", True if not ent else bool(refuses(lr.record, conn, cfg, RUN, {"collection": name, "step": "2.1", "rows": [
+            {"ledger_id": ent[0]["ledger_id"], "fill": {"disposition": "observed", "obs_text": "x" * 60, "basis": "read"}}]}, True)), "no entity aspect in this collection" if not ent else "")
+    else:
+        case("L2", "no 2.1 aspects demanded for this collection (no pairing reaches the thresholds)", True, "")
+    # ── a placement change after the observations exist
+    ci.make_group(conn, RUN, name, "gamma", "test group (#2505 test)")
+    moved = surf[0]
+    ci.place(conn, RUN, name, "gamma", [moved], None, "test move (#2505 test)")
+    ng = q("SELECT count(*), count(subgroup_id) FROM ib_node WHERE deleted=0 AND lower(trim(surface))=? AND collection_id=?", moved, cid)
+    gid = one("SELECT id FROM collection_subgroup WHERE collection_id=? AND name='gamma'", cid)
+    case("M1", "moving a surface to another group moves the group on all of its nodes", one("SELECT count(*) FROM ib_node WHERE deleted=0 AND lower(trim(surface))=? AND collection_id=? AND subgroup_id=?", moved, cid, gid) == ng[0][0] > 0, tuple(ng[0]))
+    rep = lr.check(conn, cfg, RUN, name)
+    case("M2", "the moved surface makes the earlier layer rows fail or the step reopen (the data demands a new group row), not stay validated",
+         not rep["steps"]["1.1"]["closed"] and (rep["steps"]["1.1"]["failed"] or rep["steps"]["1.1"]["not_in_ledger"]), f"failed {rep['steps']['1.1']['failed'][:2]} missing {rep['steps']['1.1']['not_in_ledger'][:2]}")
+    # ── node refresh and the index check
+    dry = ci.refresh_nodes(conn, RUN, dry=True)
+    case("M3", "NodeGroups preview on the copy: every node agrees with the index", dry["changed"] == 0, dry)
+    conn.execute("UPDATE ib_node SET subgroup_id=NULL WHERE lower(trim(surface))=? AND collection_id=?", (surf[1], cid))
+    found = {f["key"]: f for f in ci.check(conn, cfg)}
+    case("M4", "the index check names nodes whose group differs from the index", found["node-group-does-not-agree"]["rows"] != [], found["node-group-does-not-agree"]["rows"])
+    fixed = ci.refresh_nodes(conn, RUN)
+    case("M5", "the refresh repairs them and keeps each change with its reason", fixed["changed"] > 0 and ci.refresh_nodes(conn, RUN, dry=True)["changed"] == 0
+         and one("SELECT count(*) FROM ib_observation_change WHERE column_name='subgroup_id' AND run_id=?", RUN) >= fixed["changed"], fixed)
+    # ── writers fill the group on new nodes
+    from iba.app.lib import observationrecord as orec
+    case("W1", "the shared node writer helper returns the group of a placed surface and None for no collection", orec._group_of(conn, cid, moved, None) == gid and orec._group_of(conn, None, moved, None) is None, "")
+    conn.commit()
+    return 0
+
+
+if __name__ == "__main__":
+    db, scratch = sys.argv[1], sys.argv[2]
+    rc = 0
+    try:
+        main(db, scratch)
+    except Exception as exc:  # report what ran, then the failure
+        import traceback
+        traceback.print_exc()
+        case("X", "the run completed", False, repr(exc)[:300])
+        rc = 1
+    print("| case | what | result | evidence |\n|---|---|---|---|")
+    for r in results:
+        print("| " + " | ".join(r) + " |")
+    fails = [r for r in results if r[2] == "FAIL"]
+    print(f"\n{len(results) - len(fails)} of {len(results)} pass")
+    sys.exit(1 if fails or rc else 0)

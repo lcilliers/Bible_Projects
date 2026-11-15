@@ -317,6 +317,116 @@ def index_check(ctx: Ctx) -> Outcome:
     return ok("; ".join(f"{f['key']} {len(f['rows'])}" for f in found if f["rows"]) + (" -- " if n else "no findings -- ") + f"report {path.as_posix()} (run Manifest-Rebuild.ps1 to register it)", findings=n)
 
 
+# ══ the layered reading (#2505) ══════════════════════════════════════════════════════════════════
+def _layer_args(ctx: Ctx):
+    coll = str(ctx.params.get("Collection", "")).strip()
+    step = str(ctx.params.get("Step", "")).strip()
+    return coll, step
+
+
+def layer_open(ctx: Ctx) -> Outcome:
+    """Open a step of the layered reading for a collection: the gates (lexical, grouping, the previous step closed), then the ledger rows the data demands. -Check previews."""
+    from ..lib import layerreading as lr
+    conn = ctx.cfg.conn
+    coll, step = _layer_args(ctx)
+    try:
+        r = lr.open_step(conn, ctx.cfg, ctx.run_id, coll, step, dry=_flag(ctx, "Check"))
+    except lr.LayerError as exc:
+        return fail("refused", str(exc))
+    line = f"step {r['step']} of {r['collection']}: the data demands {r['demanded']} aspects; {r['add']} added to the ledger, {r['retire']} retired, {r['revive']} reopened"
+    if _flag(ctx, "Check"):
+        return ok("PREVIEW (nothing written): " + line, **{k: v for k, v in r.items() if isinstance(v, int)})
+    conn.commit()
+    return ok(line + ". Next: Collection-Build.ps1 -Action LayerPull", **{k: v for k, v in r.items() if isinstance(v, int)})
+
+
+def layer_pull(ctx: Ctx) -> Outcome:
+    """Write the working file of the open rows of a step with the evidence to read; the file is filled in the session and recorded with LayerRecord."""
+    from ..lib import layerreading as lr
+    conn = ctx.cfg.conn
+    coll, step = _layer_args(ctx)
+    root = ctx.cfg.setting("layer.working_dir")
+    if not root:
+        return fail("refused", "cfg_setting layer.working_dir is missing")
+    try:
+        path, n = lr.pull(conn, ctx.cfg, coll, step, pathlib.Path(root))
+    except lr.LayerError as exc:
+        return fail("refused", str(exc))
+    return ok(f"working file with {n} rows: {path.as_posix()}. Fill each row (disposition, obs_text, basis; route where asked), then Collection-Build.ps1 -Action LayerRecord -File <file> -Check", rows=n)
+
+
+def layer_record(ctx: Ctx) -> Outcome:
+    """Check a filled working file whole and write its observations, nodes and ledger answers in one transaction. -Check previews (everything is checked, nothing kept)."""
+    from ..lib import layerreading as lr
+    conn = ctx.cfg.conn
+    file = str(ctx.params.get("File", "")).strip()
+    if not file:
+        return fail("refused", "-File is required: the filled working file from LayerPull")
+    try:
+        data = json.loads(pathlib.Path(file).read_text(encoding="utf-8"))
+        r = lr.record(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
+    except (OSError, ValueError) as exc:
+        return fail("refused", f"cannot read {file}: {exc}")
+    except lr.LayerError as exc:
+        return fail("refused", str(exc))
+    line = f"{r['observed']} observations written with {r['nodes']} nodes, {r['none']} recorded as none, {r['withdrawn']} earlier observations withdrawn"
+    if _flag(ctx, "Check"):
+        return ok("PREVIEW (nothing written): " + line, **r)
+    conn.commit()
+    return ok(line + ". Next: Collection-Build.ps1 -Action LayerCheck", **r)
+
+
+def layer_check(ctx: Ctx) -> Outcome:
+    """Validate every answered row of a collection against the tables, set `validated`, and write the findings as a versioned Markdown report (cfg_setting layer.check_name)."""
+    import datetime
+
+    from ..lib import layerreading as lr
+    conn = ctx.cfg.conn
+    coll = str(ctx.params.get("Collection", "")).strip()
+    root, stem = ctx.cfg.setting("surfaces.exports_root"), ctx.cfg.setting("layer.check_name")
+    if not root or not stem:
+        return fail("refused", "cfg_setting surfaces.exports_root or layer.check_name is missing")
+    try:
+        rep = lr.check(conn, ctx.cfg, ctx.run_id, coll)
+        archive = ctx.cfg.required_setting("governance.oneoff_report_archive_dir")
+    except (lr.LayerError, ValueError) as exc:
+        return fail("refused", str(exc))
+    conn.commit()
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    L = [f"# Layered reading check: {rep['collection']}", "",
+         f"Generated {stamp} by run {ctx.run_id} (`Collection-Build.ps1 -Action LayerCheck`, escalation #2505). Sets `validated` on the ledger rows it passes; nothing else is written.", "",
+         "## Gates", "",
+         f"- lexical gate: {rep['lexical_occurrences'] - rep['lexical_missing']} of {rep['lexical_occurrences']} member occurrences carry a lexical node with a role" + (" (fails)" if rep["lexical_missing"] else " (passes)")]
+    L += [f"- grouping: {g}" for g in rep["grouping"]]
+    if not rep["grouping"]:
+        L += ["- grouping: finished (every surface placed or isolated)"]
+    for step, r in rep["steps"].items():
+        L += ["", f"## Step {step}: {'closed' if r['closed'] else 'not closed'}", "",
+              f"{r['rows']} rows; {r['validated']} validated; {r['open']} open; {len(r['failed'])} failed; {len(r['not_in_ledger'])} demanded by the data and not in the ledger (LayerOpen)."]
+        L += [f"- failed: {x}" for x in r["failed"][:100]] + [f"- {x}" for x in r["not_in_ledger"][:100]]
+    base = pathlib.Path(root) / f"{stem}.md"
+    path = reportkit.next_versioned_path(base, archive)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    reportkit._archive_prior_versions(base, archive)
+    path.write_text("\n".join(L) + "\n", encoding="utf-8")
+    closed = [k for k, r in rep["steps"].items() if r["closed"]]
+    gate = f"fails ({rep['lexical_missing']} occurrences)" if rep["lexical_missing"] else "passes"
+    return ok(f"{rep['collection']}: lexical gate {gate}; grouping {'unfinished' if rep['grouping'] else 'finished'}; "
+              f"steps closed: {', '.join(closed) or 'none'} -- report {path.as_posix()} (run Manifest-Rebuild.ps1 to register it)", closed=len(closed))
+
+
+def node_groups(ctx: Ctx) -> Outcome:
+    """Set ib_node.subgroup_id of the live nodes from the collection index; -Check previews. Every change is kept with its reason."""
+    from ..lib import layerreading as lr
+    conn = ctx.cfg.conn
+    r = lr.node_groups(conn, ctx.run_id, dry=_flag(ctx, "Check"))
+    line = f"{r['changed']} nodes differ from the index ({r['set']} to set, {r['cleared']} to clear); {r['unchanged']} agree"
+    if _flag(ctx, "Check"):
+        return ok("PREVIEW (nothing written): " + line, **r)
+    conn.commit()
+    return ok(line + " -- changed", **r)
+
+
 def attach_phrases(ctx: Ctx) -> Outcome:
     """Connect the phrases of collection a to collections by their words, then by their own Strong's codes; the phrases neither reaches are flagged
     phrase_no_match (escalation #2437). -Reason (the instruction, quoted, with the escalation id); -Check previews."""

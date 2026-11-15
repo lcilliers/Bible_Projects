@@ -13,7 +13,7 @@ row of each verse (all words), with the collections and tiers each surface belon
 Nodes are never listed alone (#2469): each observation is a card with a Supports list of every node of the observation (in or out of the scope), grouped by verse
 in Scripture order with the verse text, each node with its word, Strong's code (native word, transliteration, gloss), role, disposition and cluster; and each Strong's code of the
 occurrences has an entry from the stored tables (strong, strong_sense, strong_meaning_tree, strong_related, strong_lsj_parsed, strong_mounce_parsed, cluster_strong,
-surface_subgroup with concept and domain, strong_verse against verse_lexical).
+surface_subgroup (the retired cluster allocation), strong_verse against verse_lexical).
 
 The chain from the occurrences: the observations are the ib_node rows whose verse_lexical_id is one of the occurrences; the claims are the
 narrative_claim_source rows that name one of those observations (observation_id) or one of those verses (verse_id); the narrative is the
@@ -32,7 +32,7 @@ import re
 
 TIER_ORDER = {"core": 0, "synonym": 1, "opposite": 2, "gathered": 3, "possible_opposite": 4, "associated": 5, "phrase": 6, "set_aside": 7}
 CHUNK = 800
-COLLECTION_COLS = ("id", "name", "status", "core_term_id", "pole_word", "pole_of_pole", "pole_reciprocal", "pole_real_word", "merged_into_id", "concept_id",
+COLLECTION_COLS = ("id", "name", "status", "core_term_id", "pole_word", "pole_of_pole", "pole_reciprocal", "pole_real_word", "merged_into_id",
                    "run_id", "created_by", "created_at", "updated_at", "load_ref")
 REF_FORM = ("a reference is `Book chapter:verse` (for example Pro 6:14), a range `Pro 6:14-16` or across chapters `Pro 6:30-7:2`, a whole chapter `Pro 6`, "
             "a list of verses of one book `Pro 6:14, 16`; each item starts with its book (as the verse table writes it, such as Mat, 1Sa, Phili, or an alias of "
@@ -432,7 +432,7 @@ def _lemma(code: str) -> str:
 def _strongs(conn, d: dict, full: set, every: set) -> None:
     """The stored data about Strong's codes: a short line for every code in `every` (native word, transliteration, gloss, language, STEP count), and the full entry for
     each code in `full`: sense head, meaning tree of the lemma, related terms, LSJ and Mounce senses (Greek), cluster assignments, the placements of (code, surface) in
-    subgroups with concept and domain, and the verses STEP attests against the verse_lexical rows (#2469). Every value is a stored row; nothing is derived."""
+    subgroups, and the verses STEP attests against the verse_lexical rows (#2469). Every value is a stored row; nothing is derived."""
     d["strong_short"] = {r[0]: r for r in _in(conn, "SELECT strongNumber, accentedUnicode, stepTransliteration, stepGloss, language, count, origin FROM strong "
                                                     "WHERE strongNumber IN ({in})", every)}
     e = {c: {"code": c, "short": d["strong_short"].get(c)} for c in full}
@@ -466,14 +466,10 @@ def _strongs(conn, d: dict, full: set, every: set) -> None:
     for r in _in(conn, "SELECT cs.strong, cs.cluster_code, c.short_name, cs.confidence, cs.operation, cs.review_flag, cs.alt_clusters, cs.rationale, cs.source FROM cluster_strong cs "
                        "LEFT JOIN cluster c ON c.cluster_code=cs.cluster_code WHERE cs.deleted=0 AND cs.strong IN ({in}) ORDER BY cs.id", full):
         e[r[0]]["clusters"].append(r[1:])
-    concept = {g: (n, dm) for g, n, dm in conn.execute(
-        "SELECT cs.cluster_subgroup_id, n.name, dm.name FROM concept_subgroup cs JOIN concept n ON n.id=cs.concept_id LEFT JOIN concept_domain dm ON dm.id=n.domain_id "
-        "WHERE cs.deleted=0 ORDER BY cs.id DESC")}
     place = collections.defaultdict(list)
     for r in _in(conn, "SELECT ss.strong, ss.surface, ss.cluster_code, g.subgroup_code, g.label, g.core_description, ss.status, ss.two_sense, ss.allocated_by, ss.reason, "
                        "ss.cluster_subgroup_id FROM surface_subgroup ss JOIN cluster_subgroup g ON g.id=ss.cluster_subgroup_id WHERE ss.deleted=0 AND ss.strong IN ({in}) ORDER BY ss.id", full):
-        cn = concept.get(r[10], (None, None))
-        place[(r[0], r[1])].append(r[2:10] + cn)
+        place[(r[0], r[1])].append(r[2:10])
     d["placements"] = dict(place)
     attested = dict(_in(conn, "SELECT strong, count(*) FROM strong_verse WHERE deleted=0 AND strong IN ({in}) GROUP BY strong", full))
     lexical = dict(_in(conn, "SELECT strong, count(*) FROM verse_lexical WHERE deleted=0 AND strong IN ({in}) GROUP BY strong", full))

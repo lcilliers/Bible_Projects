@@ -13,6 +13,7 @@ from __future__ import annotations
 import collections
 
 from . import collectionevidence as ev
+from . import observationrecord as orec
 
 NOW = "strftime('%Y-%m-%dT%H:%M:%SZ','now')"
 BY = "collection-index"
@@ -56,6 +57,44 @@ def _collection(conn, name) -> tuple[int, str]:
 def _event(conn, run_id, kind, sid, action, field, before, after, reason):
     conn.execute("INSERT INTO surface_event (subject_kind, subject_id, action, field, value_before, value_after, by, reason, run_id, created_by) VALUES (?,?,?,?,?,?,?,?,?,?)",
                  (kind, sid, action, field, before, after, BY, reason, run_id, BY))
+
+
+def subgroup_for(conn, collection_id, surface, strong):
+    """The subgroup a surface (and its Strong's code, where the surface is split) is placed in within a collection, or None: the group a node on that surface carries (#2505)."""
+    m = {r[0]: r[1] for r in conn.execute(
+        "SELECT i.strong, i.subgroup_id FROM collection_subgroup_surface i JOIN surface_term t ON t.id=i.term_id JOIN collection_subgroup g ON g.id=i.subgroup_id AND g.deleted=0 "
+        "WHERE i.deleted=0 AND i.state='placed' AND i.collection_id=? AND t.surface=?", (collection_id, (surface or "").strip().lower()))}
+    return m.get(strong) or m.get(None)
+
+
+def refresh_nodes(conn, run_id: str, dry: bool = False, collection_id=None, surfaces=None) -> dict:
+    """Set ib_node.subgroup_id of the live nodes from the index (all of them, or those of one collection and a list of surface texts). Every change is kept with its reason in
+    ib_observation_change (the node rules, B:130)."""
+    idx = collections.defaultdict(dict)
+    for cid, sf, strong, gid in conn.execute("SELECT i.collection_id, t.surface, i.strong, i.subgroup_id FROM collection_subgroup_surface i JOIN surface_term t ON t.id=i.term_id "
+                                             "JOIN collection_subgroup g ON g.id=i.subgroup_id AND g.deleted=0 WHERE i.deleted=0 AND i.state='placed'"):
+        idx[(cid, sf)][strong] = gid
+    q = "SELECT id, observation_id, collection_id, lower(trim(surface)), strong, subgroup_id FROM ib_node WHERE deleted=0 AND collection_id IS NOT NULL AND surface IS NOT NULL"
+    a = []
+    if collection_id is not None:
+        q += " AND collection_id=?"
+        a.append(collection_id)
+    todo, same = [], 0
+    names = set(surfaces) if surfaces is not None else None
+    for nid, oid, cid, sf, strong, cur in conn.execute(q, a).fetchall():
+        if names is not None and sf not in names:
+            continue
+        m = idx.get((cid, sf))
+        want = (m.get(strong) or m.get(None)) if m else None
+        if want != cur:
+            todo.append((nid, oid, cur, want))
+        else:
+            same += 1
+    if not dry:
+        for nid, oid, cur, want in todo:
+            orec.log(conn, oid, nid, "subgroup_id", cur, want, "the group of the node's surface set from the collection index (#2505)", None, run_id, "Claude")
+            conn.execute("UPDATE ib_node SET subgroup_id=? WHERE id=?", (want, nid))
+    return {"changed": len(todo), "unchanged": same, "set": sum(1 for t in todo if t[3] is not None), "cleared": sum(1 for t in todo if t[3] is None)}
 
 
 # ══ the fill ═════════════════════════════════════════════════════════════════════════════════════
@@ -150,6 +189,7 @@ def place(conn, run_id: str, collection: str, group: str | None, surfaces: list,
         _event(conn, run_id, "collection_subgroup_surface", target[0], "subgroup_isolate" if isolate else "subgroup_place", "subgroup_id", f"{target[2]}:{target[1]}", f"{state}:{gid}",
                f"{s}{' (' + strong + ')' if strong else ''}: {reason.strip()}")
         done.append(s)
+    refresh_nodes(conn, run_id, collection_id=cid, surfaces=done)      # the nodes of these surfaces carry the group (#2505)
     return {"collection": cname, "placed": len(done), "group": group}
 
 
@@ -194,6 +234,9 @@ def check(conn, cfg) -> list[dict]:
         if n < 2:
             shared.append([lid, conn.execute("SELECT name FROM collection WHERE id=?", (cid,)).fetchone()[0], terms.get(tid), tier])
     add("shared-flag-without-a-second-link", "a live member link flagged shared whose term has no second live member link (the flag may be stale; not changed here)", ["link", "collection", "term", "tier"], shared)
+    stale = refresh_nodes(conn, "check", dry=True)
+    add("node-group-does-not-agree", "live nodes whose subgroup_id differs from the group their surface is placed in (run Collection-Build.ps1 -Action NodeGroups)", ["nodes that differ", "nodes that agree"],
+        [[stale["changed"], stale["unchanged"]]] if stale["changed"] else [])
     return out
 
 

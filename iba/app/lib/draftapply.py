@@ -80,9 +80,9 @@ def _add_node(conn, oid, stage, vl, n, cols, reason, run_id):
     seq = conn.execute("SELECT COALESCE(MAX(seq),0) FROM ib_node WHERE observation_id=?", (oid,)).fetchone()[0] + 1
     nid = conn.execute(
         "INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, reading_id, "
-        "created_at, verse_lexical_id, collection_id) VALUES (?,?,?,?,?,?,?,?,NULL,?,?,?)",
+        "created_at, verse_lexical_id, collection_id, subgroup_id) VALUES (?,?,?,?,?,?,?,?,NULL,?,?,?,?)",
         (oid, vl["strong"], vl["osisId"], vl["surface"], vl["morph_code"], stage, seq, n["role"], _now(), vl["id"],
-         cols[n["collection"]])).lastrowid
+         cols[n["collection"]], orec._group_of(conn, cols[n["collection"]], vl["surface"], vl["strong"]))).lastrowid
     orec.log(conn, oid, nid, "node", None, f"added: {vl['osisId']} {vl['surface']} ({vl['strong']}) role {n['role']} collection {n['collection']}",
              reason, None, run_id, WHO)
     return nid

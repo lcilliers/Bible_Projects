@@ -12,7 +12,7 @@ In `surfaces` a surface that is a member of a collection under two tiers is writ
 terms whose base is that term that have no link of their own: a surface with a link of its own is read by its own links only, one without by the links on its base
 (#2491, the members are surfaces and each is in one collection; before it a surface took the links on its base and on its own row together, #2488). Its base word is the word of its own base (blank when it has none). The surface text joins to verse_lexical.surface lower-cased and
 trimmed (the key surface_term uses). The cluster is every live cluster_strong row of the Strong's code; the subgroup is the surface's own
-surface_subgroup row for that cluster and code, and the concept and domain are those of the subgroup (concept_subgroup). Rows are ordered by
+surface_subgroup row for that cluster and code. Rows are ordered by
 surface, Strong's code and verse_lexical row, so a second run on the same tables gives the same file.
 """
 from __future__ import annotations
@@ -25,9 +25,9 @@ VIEWS = ("members-verses", "surfaces")
 TIER_ORDER = {"core": 0, "synonym": 1, "opposite": 2}
 
 HEAD_V4 = ["collection_id", "collection", "collection_status", "tier", "base_word", "surface", "surface_group", "origin", "strong", "cluster_code", "cluster_name",
-           "subgroup_code", "cluster_subgroup_name", "domain", "concept", "reference", "osisId", "verse_text", "surface_kind", "unit_surface", "unit_role"]
+           "subgroup_code", "cluster_subgroup_name", "reference", "osisId", "verse_text", "surface_kind", "unit_surface", "unit_role"]
 HEAD_V3 = ["surface", "origin", "surface_group", "group_state", "base_id", "base_word", "collection_id", "collection", "tier", "strong", "cluster_code",
-           "cluster_name", "subgroup_code", "cluster_subgroup_name", "domain", "concept", "osisId", "surface_kind", "unit_surface", "unit_role"]
+           "cluster_name", "subgroup_code", "cluster_subgroup_name", "osisId", "surface_kind", "unit_surface", "unit_role"]
 
 
 class ExportError(Exception):
@@ -77,11 +77,8 @@ def _placement(conn):
     for s, cc in conn.execute("SELECT strong, cluster_code FROM cluster_strong WHERE deleted=0 ORDER BY id"):
         clusters[s].append(cc)
     names = dict(conn.execute("SELECT cluster_code, short_name FROM cluster").fetchall())
-    concept = {g: (n, d) for g, n, d in conn.execute(
-        "SELECT cs.cluster_subgroup_id, n.name, d.name FROM concept_subgroup cs JOIN concept n ON n.id=cs.concept_id "
-        "LEFT JOIN concept_domain d ON d.id=n.domain_id WHERE cs.deleted=0 ORDER BY cs.id DESC")}
-    sub = {(cc, s, surf): (code, label, *concept.get(gid, ("", ""))) for cc, s, surf, code, label, gid in conn.execute(
-        "SELECT ss.cluster_code, ss.strong, ss.surface, g.subgroup_code, g.label, g.id FROM surface_subgroup ss "
+    sub = {(cc, s, surf): (code, label) for cc, s, surf, code, label in conn.execute(
+        "SELECT ss.cluster_code, ss.strong, ss.surface, g.subgroup_code, g.label FROM surface_subgroup ss "
         "JOIN cluster_subgroup g ON g.id=ss.cluster_subgroup_id WHERE ss.deleted=0")}
     return clusters, names, sub
 
@@ -106,8 +103,8 @@ def build(conn, view: str, tiers: list, groups: list) -> tuple[list, list]:
         for v in sorted(lex.get(surface, []), key=lambda r: (r[1], r[6])) or [None]:
             strong = v[1] if v else ""
             for cc in (clusters.get(strong) if v else None) or [None]:
-                sg = sub.get((cc, strong, surface), ("", "", "", ""))
-                place = [cc or "", cname.get(cc, "") if cc else "", sg[0], sg[1], sg[3] or "", sg[2] or ""]
+                sg = sub.get((cc, strong, surface), ("", ""))
+                place = [cc or "", cname.get(cc, "") if cc else "", sg[0], sg[1]]
                 kind = [(v[3] or "") if v else "", (v[4] or "") if v else "", (v[5] or "") if v else ""]
                 for m in mems:
                     if verses:

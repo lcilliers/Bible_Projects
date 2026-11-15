@@ -307,6 +307,14 @@ def check(cfg, specs: list[tuple[str, dict]], errors: list, quotes: list) -> lis
     return plan
 
 
+def _group_of(conn, collection_id, surface, strong):
+    """The subgroup of the node's surface in its collection (collection.subgroup placement), or None (#2505)."""
+    if collection_id is None:
+        return None
+    from . import collectionindex as ci
+    return ci.subgroup_for(conn, collection_id, surface, strong)
+
+
 def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
     """Write a checked plan. Returns {key: {"observation": id, "nodes": [ids], "new": bool}}. Caller commits."""
     out, now = {}, _now()
@@ -337,9 +345,10 @@ def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
             seq += 1
             nid = conn.execute(
                 "INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, question_code, traced_observation_id, "
-                "source_stage, seq, role, reading_id, created_at, verse_lexical_id, collection_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "source_stage, seq, role, reading_id, created_at, verse_lexical_id, collection_id, subgroup_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (oid, n.get("strong"), n.get("verse_reference"), n.get("surface"), n.get("morph_code"), n.get("question"), traced, stage, seq,
-                 n.get("role"), reading_id, now, n.get("verse_lexical_id"), n.get("collection"))).lastrowid
+                 n.get("role"), reading_id, now, n.get("verse_lexical_id"), n.get("collection"),
+                 _group_of(conn, n.get("collection"), n.get("surface"), n.get("strong")))).lastrowid
             out[p["key"]]["nodes"].append(nid)
     return out
 

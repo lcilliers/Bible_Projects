@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-14T18:12:03Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-15T06:14:23Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `296c9026-f9d4-49cf-8904-f04be58876e3` (CLAUDE_CODE_SESSION_ID); started 2026-11-14T04:14:57Z; window base commit `4cda524fa360002b5a8ab40366334916061adc92`
-- compliance file: `Logs/compliance/COMPLIANCE-20261114-296c9026.md`; session log: `Logs/SESSION-LOG-20261114-layer2-pairings-and-collection-index.md`
-- **open findings: 0**; cleared by disposition: 7
+- session: `58e035fd-4cd5-440d-ba63-65b2f1a988f5` (CLAUDE_CODE_SESSION_ID); started 2026-11-15T04:00:52Z; window base commit `97b686fed8eaedc9abd46ad1acbed1e520263ac4`
+- compliance file: `Logs/compliance/COMPLIANCE-20261115-58e035fd.md`; session log: `Logs/SESSION-LOG-20261115-layered-reading-and-realignment.md`
+- **open findings: 0**; cleared by disposition: 5
 
 
 ## Contents
@@ -41,17 +41,15 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:92d95071`: researcher message 2026-11-14T07:54 is too short to be matched; name where it is recorded: "Yes, draft it" -- disposition: recorded in #2463 v21
-- cleared `SC3:58d38a6d`: researcher message 2026-11-14T09:51 is too short to be matched; name where it is recorded: "Closed, run it" -- disposition: recorded in #2502 v3
-- cleared `SC3:e1942662`: researcher message 2026-11-14T17:37 is too short to be matched; name where it is recorded: "Approve, build it" -- disposition: recorded in #2503 v1
-- cleared `SC3:a4b73618`: researcher message 2026-11-14T17:55 is too short to be matched; name where it is recorded: "Closed, run it" -- disposition: recorded in #2503 v3
+- cleared `SC3:a4d4c20f`: researcher message 2026-11-15T04:31 is in no escalation comment written this session: "I read through the GAPs: G1 - comply with governance, which will answer the question if the this should be done.  I can imagine that this step will call for sof" -- disposition: recorded in #2505 v1
+- cleared `SC3:8ef6f926`: researcher message 2026-11-15T05:13 is too short to be matched; name where it is recorded: "Approve #2505" -- disposition: recorded in #2505 v3
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:85ee0ff7`: researcher message 2026-11-14T05:12 holds, defers or asks to check something; name its register item: "2463:  I will not have enough tokens to go the excecution and testing of claim reading.  So, what I will do is review the evidence for the thought collection an" -- disposition: in register #2463
-- cleared `SC4b:c679016a`: researcher message 2026-11-14T06:07 holds, defers or asks to check something; name its register item: "let me answer or elaborate an a number of items: Conflict (a) not true. each surface is linked to verses, so by implication, when you create a surface grouping," -- disposition: in register #2463
-- cleared `SC4b:10e49c15`: researcher message 2026-11-14T07:51 holds, defers or asks to check something; name its register item: ".Q1 yes B130; B120 is not longer active or need modified to collections Q2 - check the observation rules. Q3 - why do you ask me if you do not check yourself fi" -- disposition: in register #2463
+- cleared `SC4b:7e9a6b90`: researcher message 2026-11-15T04:09 holds, defers or asks to check something; name its register item: "in the previous session we focussed on defining layer 1 and layer 2, defining the rules, setting what is expected, writing the different routines and method to " -- disposition: in register #2463
+- cleared `SC4b:f65a52ee`: researcher message 2026-11-15T05:15 holds, defers or asks to check something; name its register item: "if I understand the base data is sound, there is no need to revisit it. is verse lexical sound,  must the verse lexical build process be revisited.  what is the" -- disposition: in register #2507
+- cleared `SC4b:7454d01f`: researcher message 2026-11-15T06:11 holds, defers or asks to check something; name its register item: "I am out of tokens, so will come back to this point a bit later.  I believe I have answered every relevant question. some questions I did not answer, because su" -- disposition: in register #2448
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity

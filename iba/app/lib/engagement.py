@@ -383,10 +383,17 @@ def _write_plan(conn, st: dict, plans: list, run_id: str, done: dict) -> None:
                 continue
             seq += 1
             conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, reading_id, "
-                         "created_at, verse_lexical_id, collection_id) VALUES (?,?,?,?,?,?,?,?,NULL,?,?,?)",
+                         "created_at, verse_lexical_id, collection_id, subgroup_id) VALUES (?,?,?,?,?,?,?,?,NULL,?,?,?,?)",
                          (oid, n["strong"], n["verse_reference"], n["surface"], n["morph_code"], st["stage"], seq, n["role"], now,
-                          n["verse_lexical_id"], cmap.get((n["surface"] or "").strip().lower())))
+                          n["verse_lexical_id"], cmap.get((n["surface"] or "").strip().lower()),
+                          orec_group_of(conn, cmap.get((n["surface"] or "").strip().lower()), n["surface"], n["strong"])))
             done["nodes"] += 1
+
+
+def orec_group_of(conn, collection_id, surface, strong):
+    """The subgroup of the node's surface in its collection (#2505)."""
+    from . import observationrecord
+    return observationrecord._group_of(conn, collection_id, surface, strong)
 
 
 def Cfg_on(conn):

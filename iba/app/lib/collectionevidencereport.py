@@ -597,9 +597,9 @@ def sheets(datas: list[dict], vals: dict) -> list[dict]:
     place = {}
     for d in datas:
         place.update(d["placements"])
-    add("Placements", "the placement of each (code, surface) pair in subgroups, with concept and domain", "which subgroup of meaning each member word's use was allocated to",
-        "surface_subgroup, cluster_subgroup, concept, concept_domain",
-        ["code", "surface", "cluster", "subgroup", "label", "core description", "status", "two sense", "allocated by", "reason", "concept", "domain"],
+    add("Placements", "the placement of each (code, surface) pair in subgroups (the retired cluster allocation)", "which subgroup of meaning each member word's use was allocated to",
+        "surface_subgroup, cluster_subgroup",
+        ["code", "surface", "cluster", "subgroup", "label", "core description", "status", "two sense", "allocated by", "reason"],
         [[k[0], k[1]] + list(r) for k, rows in sorted(place.items()) for r in rows])
     obs_cols = ("id", "stage", "tag", "status", "strong", "window", "route", "basis", "obs_text", "setting", "meaning", "implication", "chain", "parties", "parts", "revisit_note",
                 "supersedes_observation_id", "run_id", "created_at", "updated_at")
