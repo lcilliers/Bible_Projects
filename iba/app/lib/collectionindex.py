@@ -1,11 +1,11 @@
 """collectionindex.py -- the index of the surfaces of each collection and their subgroups (escalation #2503; design outputs/escalation/2463-collection-subgroup-index-design-v1-20261114.md).
 
-Two tables. `collection_subgroup` is a group of surfaces inside one collection (a concept the researcher forms in the layer 1 reading: starting, weighing, meditation ...). `collection_subgroup_surface` is the index: one live
-row for each member surface of each confirmed collection, with its subgroup and a state: unplaced (in the index, no group yet), placed, isolated (no inner-being role: bound to its partner or excluded).
+Two tables. `collection_subgroup` is a group of surfaces inside one collection that mean the same or the same kind of thing (starting, weighing, meditation ...), judged from the dictionary meaning (lib/collectiongroup.py, #2509). `collection_subgroup_surface` is the index: one live
+row for each member surface of each confirmed collection, with its subgroup and a state: unplaced (in the index, no group yet), placed, isolated (set aside: its meaning is not the one the collection gathers).
 
 The members are the surfaces of a collection by the one rule of the evidence report (lib/collectionevidence.py): a surface with a link of its own in a member tier is read by it, one without through its base term;
 only confirmed collections. A row has strong NULL when it stands for the whole surface; a surface split between groups (one surface with two senses, such as `thoughts` as a plan and as a thought) has one row for each
-Strong's code it carries in the verses and none for the whole surface. Nothing is guessed: the fill is mechanical, a placement is the researcher's instruction with a reason, and every change but the fill is a surface_event.
+Strong's code it carries in the verses and none for the whole surface. Nothing is guessed: the fill is mechanical, a placement is a judgement of the dictionary meaning (lib/collectiongroup.py) or the researcher's correction, each with a reason, and every change but the fill is a surface_event.
 The tunable values are in cfg_setting (collection.member_tiers, collection.index_check_name, surfaces.exports_root); the code holds none.
 """
 from __future__ import annotations
@@ -127,7 +127,7 @@ def make_group(conn, run_id: str, collection: str, name: str, reason: str, dry: 
     if not name:
         raise IndexError_("-Name is required: the name of the subgroup")
     if not (reason or "").strip():
-        raise IndexError_("-Reason is required: why the subgroup is made (the researcher's instruction, quoted, with the escalation id)")
+        raise IndexError_("-Reason is required: why the subgroup is made (the meaning it holds, or the researcher's instruction quoted with the escalation id)")
     if conn.execute("SELECT 1 FROM collection_subgroup WHERE collection_id=? AND deleted=0 AND lower(name)=?", (cid, name.lower())).fetchone():
         raise IndexError_(f"collection {cname} already has a subgroup {name!r}")
     if dry:
@@ -137,16 +137,33 @@ def make_group(conn, run_id: str, collection: str, name: str, reason: str, dry: 
     return {"collection": cname, "name": name, "id": gid}
 
 
+_MEMO: dict | None = None  # surface -> codes, held only while a caller that asks many times has set it (see memo_codes)
+
+
+def memo_codes(conn, surfaces) -> dict:
+    """One scan of verse_lexical for the codes of many surfaces (the filter on lower(trim(surface)) has no index: each single lookup reads all of the table, about 3 s).
+    The caller sets `_MEMO` to the result for the length of its run and back to None after."""
+    surfaces = sorted({(s or "").strip().lower() for s in surfaces})
+    out = {s: [] for s in surfaces}
+    for i in range(0, len(surfaces), 500):
+        part = surfaces[i:i + 500]
+        for surf, code in conn.execute("SELECT DISTINCT lower(trim(surface)), strong FROM verse_lexical WHERE deleted=0 AND strong IS NOT NULL AND lower(trim(surface)) IN (%s) ORDER BY 1, 2" % ",".join("?" * len(part)), part):
+            out[surf].append(code)
+    return out
+
+
 def _codes(conn, surface: str) -> list:
+    if _MEMO is not None and surface in _MEMO:
+        return list(_MEMO[surface])
     return [r[0] for r in conn.execute("SELECT DISTINCT strong FROM verse_lexical WHERE deleted=0 AND strong IS NOT NULL AND lower(trim(surface))=? ORDER BY strong", (surface,))]
 
 
 def place(conn, run_id: str, collection: str, group: str | None, surfaces: list, strong: str | None, reason: str, isolate: bool = False, dry: bool = False) -> dict:
-    """Place surfaces of a collection in one of its subgroups (or isolate them: no inner-being role). With `strong` only that sense of the surface is placed; the surface is then split into one row for
+    """Place surfaces of a collection in one of its subgroups (or set them aside, state isolated: their meaning is not the one the collection gathers). With `strong` only that sense of the surface is placed; the surface is then split into one row for
     each Strong's code it carries in the verses (the other codes stay unplaced), as the design requires."""
     cid, cname = _collection(conn, collection)
     if not (reason or "").strip():
-        raise IndexError_("-Reason is required: why (the researcher's instruction, quoted, with the escalation id)")
+        raise IndexError_("-Reason is required: why (the judgement of the dictionary meaning, or the researcher's instruction quoted with the escalation id)")
     gid = None
     if isolate:
         if group:

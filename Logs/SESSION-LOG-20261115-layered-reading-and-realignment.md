@@ -13,7 +13,9 @@ A Developer Mode session on the IBA app. It began with the researcher's request 
 - #2502 and #2503 handed to the researcher as ready_for_approval (v4 each); not yet answered.
 - #2507 raised (lexical-structural versus inner-being observations in layer 2), updated v1 to v3 with the researcher's corrections verbatim and the legacy scan.
 - #2448 taken off hold, in progress (v16 and v17): the plan as recorded, the stale hold, the breach of its sequence.
-- #2504 read at each backlog check, on hold, not touched.
+- #2504 read at each backlog check, on hold, not touched; #2502 and #2503 approved by the researcher ("Approved #2502 and #2503") and closed.
+
+- Later in the session (after the context was continued): #2507 v4 to v7 and #2509 raised, designed (v1 rejected, v2 approved: "Approve 2509 v2, proceed with the build"), built and run on thought; the researcher's verdict that the grouping failed, recorded verbatim on #2509 v6 and v7; #2508 read, not touched.
 
 ## 3. Files
 
@@ -26,6 +28,12 @@ A Developer Mode session on the IBA app. It began with the researcher's request 
 - Records: the compliance file, this log, the close report, the config reports.
 
 ## 4. Decisions
+
+Later in the session:
+- Stages 1 to 5 as the researcher defined them; lexical and inner-being work never together: `cfg_behaviour_rule` 133 and #2507 v4.
+- The surface groups are about the meaning of the words, judged from the dictionary meaning (researcher, 2026-11-15; v1 rejected): #2509 v2 and `iba/app/BUILD.md` entry 539.
+- The grouping was built and run on thought (10 groups, 116 placed, 81 set aside, 15 uncertain) and then declared a failure by the researcher; nothing rolled back, nothing further built: #2509 v6 and v7, `iba/app/BUILD.md` entry 539 and 540.
+- The expression index on verse_lexical (a slow scan, my error): `iba/app/BUILD.md` entry 539 and the migration `verse_lexical_surface_index_2509_v8_20261115`; memory note `feedback_check_query_plan_before_scanning_big_tables.md`.
 
 Researcher's own:
 - G1 to G11 answers: do the rules in config and soft-delete the conflicting ones without asking, kinds and stages designed to drive layer 2, the group on the node if needed, the lexical gate built, the concept prototype abandoned, all housekeeping before moving on: recorded in #2505 v1.
@@ -42,12 +50,13 @@ Claude's own (recorded):
 
 ## 5. Open items
 
+- #2509 (Claude, awaiting the researcher): the researcher's decision whether the research is parked and whether the thought groups and node group ids are rolled back (snapshot `iba-20261115T182511Z-pre-2509-grouping.db`).
+- #2508 (Claude): surface and gloss anomalies, not touched.
+
 - #2448 (Claude, in progress): the collection Open and the realignment of the old reading to collections; the stale hold lifted; the breach of sequence on rules 119, 120 and RO13; the requirements v11 to v13.
 - #2507 (researcher): the process that produces the lexical-structural observations by collection; the corrected gate; the split of layer 2 into a lexical set and an inner-being set; the alignment check proposed (a classification of every old step, rule, setting and guidance section, and a validation that nothing names an old entry point undispositioned).
-- #2502 and #2503 (researcher): approval to close.
 - #2463 (Claude): the groups of thought and the lexical catch-up of its 282 occurrences (the gate refuses until then).
 - #2486 and #2376 (researcher): unchanged.
-- #2504 (Claude, on hold): no stated procedure for adding a data table.
 
 ## 6. Git
 

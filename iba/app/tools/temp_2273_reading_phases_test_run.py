@@ -120,8 +120,8 @@ prompts = json.loads(cfg.required_setting("reading.observe_prompts")) if isinsta
     cfg.required_setting("reading.observe_prompts"), str) else cfg.required_setting("reading.observe_prompts")
 codes = [c2 for v in prompts.values() for c2 in v]
 known = {r[0] for r in q("SELECT question_code FROM wa_obs_question_catalogue WHERE deleted=0")}
-case("M7", "The 53 one-verse catalogue questions are prompts, each once, each a live catalogue row",
-     len(codes) == 53 and len(set(codes)) == 53 and set(codes) <= known, len(codes))
+case("M7", "The inner-being one-verse catalogue questions are prompts (the 53 less the 17 lexical and structural ones of the lexical analysis, #2507), each once, each a live catalogue row",
+     len(codes) == 36 and len(set(codes)) == 36 and set(codes) <= known and not any(c2.startswith(("M0.1", "M0.4", "M0.5", "M0.6")) for c2 in codes), len(codes))
 old = [tuple(x) for x in q("SELECT label, state FROM reading ORDER BY id")]
 o = hr.account(Ctx(db=db, cfg=cfg, step=None, run_id="RUN-TEST-account", word="", word_id=None,
                    params={"Label": "m64-choose"}, step_id="reading.account"))

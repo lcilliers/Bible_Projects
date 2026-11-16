@@ -261,8 +261,8 @@ def index_fill(ctx: Ctx) -> Outcome:
 
 
 def subgroup(ctx: Ctx) -> Outcome:
-    """Make a subgroup of a collection (-Collection, -Name, -Reason) or place surfaces in it (-Surface a,b -Name -Reason [-Strong H4284]) or isolate surfaces that have no inner-being role
-    (-Surface a,b -Isolate -Reason), only on the researcher's instruction (#2503). -Check previews."""
+    """Make a subgroup of a collection (-Collection, -Name, -Reason) or place surfaces in it (-Surface a,b -Name -Reason [-Strong H4284]) or set aside surfaces whose meaning is not the collection's
+    (-Surface a,b -Isolate -Reason), as the researcher's correction of the grouping by meaning (#2503, #2509). -Check previews."""
     from ..lib import collectionindex as ci
     conn = ctx.cfg.conn
     p = ctx.params
@@ -325,7 +325,7 @@ def _layer_args(ctx: Ctx):
 
 
 def layer_open(ctx: Ctx) -> Outcome:
-    """Open a step of the layered reading for a collection: the gates (lexical, grouping, the previous step closed), then the ledger rows the data demands. -Check previews."""
+    """Open a step of the layered reading for a collection: the gates (the grouping finished, the previous step closed; step 1.1 needs the lexical analysis S1 closed), then the ledger rows the data demands. -Check previews."""
     from ..lib import layerreading as lr
     conn = ctx.cfg.conn
     coll, step = _layer_args(ctx)
@@ -396,7 +396,7 @@ def layer_check(ctx: Ctx) -> Outcome:
     L = [f"# Layered reading check: {rep['collection']}", "",
          f"Generated {stamp} by run {ctx.run_id} (`Collection-Build.ps1 -Action LayerCheck`, escalation #2505). Sets `validated` on the ledger rows it passes; nothing else is written.", "",
          "## Gates", "",
-         f"- lexical gate: {rep['lexical_occurrences'] - rep['lexical_missing']} of {rep['lexical_occurrences']} member occurrences carry a lexical node with a role" + (" (fails)" if rep["lexical_missing"] else " (passes)")]
+         f"- stage 1 (the lexical analysis of the words, step S1): {rep['lexical']['rows']} rows" + (" (closed)" if rep["lexical"]["closed"] else " (not closed)")]
     L += [f"- grouping: {g}" for g in rep["grouping"]]
     if not rep["grouping"]:
         L += ["- grouping: finished (every surface placed or isolated)"]
@@ -410,8 +410,8 @@ def layer_check(ctx: Ctx) -> Outcome:
     reportkit._archive_prior_versions(base, archive)
     path.write_text("\n".join(L) + "\n", encoding="utf-8")
     closed = [k for k, r in rep["steps"].items() if r["closed"]]
-    gate = f"fails ({rep['lexical_missing']} occurrences)" if rep["lexical_missing"] else "passes"
-    return ok(f"{rep['collection']}: lexical gate {gate}; grouping {'unfinished' if rep['grouping'] else 'finished'}; "
+    gate = "closed" if rep["lexical"]["closed"] else "not closed"
+    return ok(f"{rep['collection']}: stage 1 (lexical analysis) {gate}; grouping {'unfinished' if rep['grouping'] else 'finished'}; "
               f"steps closed: {', '.join(closed) or 'none'} -- report {path.as_posix()} (run Manifest-Rebuild.ps1 to register it)", closed=len(closed))
 
 
@@ -425,6 +425,61 @@ def node_groups(ctx: Ctx) -> Outcome:
         return ok("PREVIEW (nothing written): " + line, **r)
     conn.commit()
     return ok(line + " -- changed", **r)
+
+
+def group_pull(ctx: Ctx) -> Outcome:
+    """Write the working file for the grouping of a collection's surfaces by their dictionary meaning (stage 2, #2509): one row for each row of the index with the dictionary evidence."""
+    from ..lib import collectiongroup as cg
+    conn = ctx.cfg.conn
+    coll = str(ctx.params.get("Collection", "")).strip()
+    root = ctx.cfg.setting("layer.working_dir")
+    if not root:
+        return fail("refused", "cfg_setting layer.working_dir is missing")
+    try:
+        path, n = cg.pull(conn, ctx.cfg, coll, pathlib.Path(root))
+    except (cg.GroupError, ValueError) as exc:
+        return fail("refused", str(exc))
+    return ok(f"working file with {n} rows: {path.as_posix()}. Judge each surface from the dictionary evidence: the group of its meaning, or set_aside with the reason; list the groups with the meaning each holds; then "
+              f"Collection-Build.ps1 -Action GroupRecord -File <file> -Check", rows=n)
+
+
+def group_record(ctx: Ctx) -> Outcome:
+    """Check a filled grouping file whole and write the groups and placements in one transaction (-Check previews); the scrutiny report is written after a real record."""
+    import datetime
+
+    from ..lib import collectiongroup as cg
+    conn = ctx.cfg.conn
+    file = str(ctx.params.get("File", "")).strip()
+    if not file:
+        return fail("refused", "-File is required: the filled working file from GroupPull")
+    try:
+        data = json.loads(pathlib.Path(file).read_text(encoding="utf-8"))
+        r = cg.record(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"), file_name=pathlib.Path(file).name)
+    except (OSError, ValueError) as exc:
+        return fail("refused", f"cannot read {file}: {exc}")
+    except (cg.GroupError, ci_error()) as exc:
+        return fail("refused", str(exc))
+    line = (f"{r['groups_made']} groups made, {r['groups_redefined']} redefined, {r['groups_retired']} retired; {r['placed']} surfaces placed, {r['set_aside']} set aside, {r['unchanged']} unchanged")
+    if _flag(ctx, "Check"):
+        return ok("PREVIEW (nothing written): " + line, **r)
+    conn.commit()
+    path_note = ""
+    root, stem = ctx.cfg.setting("surfaces.exports_root"), ctx.cfg.setting("group.report_name")
+    if root and stem:
+        archive = ctx.cfg.required_setting("governance.oneoff_report_archive_dir")
+        base = pathlib.Path(root) / f"{stem}-{data['collection']}.md"
+        path = reportkit.next_versioned_path(base, archive)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        reportkit._archive_prior_versions(base, archive)
+        stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        path.write_text(chr(10).join(cg.report_lines(conn, data["collection"]) + [f"_Generated {stamp} by run {ctx.run_id} (`Collection-Build.ps1 -Action GroupRecord`, escalation #2509)._"]) + chr(10), encoding="utf-8")
+        path_note = f" -- scrutiny report {path.as_posix()} (run Manifest-Rebuild.ps1 to register it)"
+    return ok(line + path_note, **r)
+
+
+def ci_error():
+    from ..lib import collectionindex as ci
+    return ci.IndexError_
 
 
 def attach_phrases(ctx: Ctx) -> Outcome:

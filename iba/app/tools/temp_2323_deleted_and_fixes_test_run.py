@@ -455,8 +455,7 @@ col = vc.collate(cfg, vs.normalise_request({"subgroup": "M21_asking", "verse": "
 shown_c = {n["node"] for vv in col["verses"] for o in vv["observations"] for n in o["nodes"]}
 case("L1", "the collation (versecollate) does not show the deleted node 19107", 19107 not in shown_c, sorted(shown_c)[:10])
 files = ("iba/app/lib/reading.py", "iba/app/lib/observationrecord.py", "iba/app/lib/versecollate.py", "iba/app/lib/versescope.py",
-         "iba/app/lib/priorcapture.py", "iba/app/lib/strandreading.py", "iba/app/lib/stage1coverage.py",
-         "iba/app/lib/versereadinggenerate.py")
+         "iba/app/lib/priorcapture.py", "iba/app/lib/strandreading.py")   # stage1coverage and versereadinggenerate retired, #2507
 case("L2", "no reader of live observations or nodes still takes status or disposition 'withdrawn' as the live test",
      not any(("status<>'withdrawn'" in (ROOT / f).read_text(encoding="utf-8") or "disposition<>'withdrawn'" in (ROOT / f).read_text(encoding="utf-8")
               or "status != 'withdrawn'" in (ROOT / f).read_text(encoding="utf-8")) for f in files))

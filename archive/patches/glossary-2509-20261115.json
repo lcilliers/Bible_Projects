@@ -1,0 +1,45 @@
+{
+ "_patch_meta": {
+  "patch_id": "GLOSSARY-2509-20261115",
+  "author": "claude_code",
+  "purpose": "glossary: the grouping by meaning and the boundary of the stages (B:126; escalation #2509)"
+ },
+ "operations": [
+  {
+   "op_id": "H01",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1132,
+   "record": {
+    "heading": "subgroup",
+    "body": "[DEFINITION] A group of the surfaces of one collection that mean the same or the same kind of thing (for example starting, weighing and meditation in the collection thought), judged from the dictionary meaning of the words (the Strong's meaning) and named for the meaning its surfaces share. It is held in collection_subgroup and collection_subgroup_surface; a node carries its subgroup (ib_node.subgroup_id), so that the observations of a group are found through its nodes. A surface whose meaning is not the one the collection gathers is set aside with its reason.\n\n[BACKGROUND] Made by Collection-Build.ps1 GroupPull and GroupRecord (stage 2, #2509); the researcher corrects with Subgroup. The grouping has nothing to do with the inner being: it is about the meaning of the surface words (researcher, 2026-11-15). The earlier use of the word was the subdivision of an M-code cluster (cluster_subgroup, surface_subgroup): it served to establish the collections, is history, and plays no part in nodes and observations (researcher, 2026-11-13).",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "H02",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1142,
+   "record": {
+    "heading": "layer (collection reading)",
+    "body": "[DEFINITION] A group of steps in the reading of a collection: layer 1 step 1 (1.1) records each group of surfaces as an observation of the meaning its surfaces share, layer 1 step 2 (1.2) enriches each group from the Strong's codes of its surfaces, layer 2 (2.1) reads what the other words of the verse show with each group (pairings, qualifiers, entities, direction, relation between groups, double meaning). A step closes only when every aspect it demands is answered and validated. Every observation of these steps states what the dictionary, the verses and the stored structure show; none states what a word does for the inner being.\n\n[BACKGROUND] Not the Layer 1 and Layer 2 of Window 1. Held in cfg_setting layer.reading and the ledger collection_layer_item; run with Collection-Build.ps1 LayerOpen, LayerPull, LayerRecord and LayerCheck. The nodes of these steps carry the role lexical.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "H03",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1141,
+   "record": {
+    "heading": "stage (collection reading)",
+    "body": "[DEFINITION] The five stages of the reading of a collection, as the researcher defined them (2026-11-15): stage 1, the lexical analysis of the words (each word in its verses, lexical only; the relations between the words are base data and are not analysed); stage 2, the grouping of the surfaces by their meaning (the four surface groups, the collections of behaviour and inner_being_state, the subgroups within a collection judged from the dictionary meaning); stage 3, the verse-lexical observations (layer 1 step 2 and layer 2, verse-lexical only); stage 4, the inner-being analysis made from the stage 3 observations, the first step of claim formulation; stage 5, the claim formulation and the update of the claims register, not yet decided. Stages 1 to 3 are lexical work and carry nothing of the inner being.\n\n[BACKGROUND] Held in cfg_setting layer.reading (the steps S1, 1.1, 1.2 and 2.1) and the ib_observation.stage values lexical, layer-1 and layer-2. Stage 4 is not built. The four stages of the retired cluster pipeline (verse-reading, char-subgroup, char-reading, char-answers) are replaced by these and their observations are gathered rows.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  }
+ ]
+}

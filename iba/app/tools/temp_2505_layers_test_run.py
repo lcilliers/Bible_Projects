@@ -1,9 +1,9 @@
-"""temp_2505_layers_test_run.py -- tests for escalation #2505: the layered reading of a collection (lib/layerreading.py, lib/collectionindex.py subgroup_for and refresh_nodes,
+"""temp_2505_layers_test_run.py -- tests for escalations #2505 and #2507 (stage 1, the lexical analysis, step S1, is run in place of the earlier synthetic catch-up): the layered reading of a collection (lib/layerreading.py, lib/collectionindex.py subgroup_for and refresh_nodes,
 the node writers, the migration layers_2505_v1_20261115, the config it registers).
 
 Each case checks the tables against a direct query written here, not against the library's own lists, and runs the refusals. Runs against a COPY of iba.db that already holds the
-migration (never the live database); the groups, observations and ledger rows it makes are test rows on that copy. The lexical gate is satisfied on the small test collection by
-adding lexical nodes on the copy (a synthetic stand-in for the lexical catch-up); on the real thought collection the gate is tested as it stands.
+migration (never the live database); the groups, observations and ledger rows it makes are test rows on that copy. The lexical gate (step S1) is satisfied on the small test collection by running
+stage 1 on the copy; on the real thought collection the gate is tested as it stands.
 
 Usage: python iba/app/tools/temp_2505_layers_test_run.py <db copy> <scratch dir>
 """
@@ -41,8 +41,8 @@ def main(db, scratch):
     s = lr.settings(cfg)
 
     # ── configuration
-    case("C1", "layer.reading is registered with 3 steps and 8 items; stages layer-1 and layer-2; the four kinds are enum values",
-         len(s["steps"]) == 3 and len(s["items"]) == 8 and one("SELECT count(*) FROM cfg_enum WHERE name='ib_observation.stage' AND value IN ('layer-1','layer-2')") == 2
+    case("C1", "layer.reading is registered with 4 steps (S1, 1.1, 1.2, 2.1) and 9 items; stages lexical, layer-1 and layer-2; the kinds are enum values; 1.1 needs S1",
+         len(s["steps"]) == 4 and len(s["items"]) == 9 and s["stages"]["0"] == "lexical" and [x for x in s["steps"] if x["key"] == "1.1"][0]["needs"] == ["S1"] and one("SELECT count(*) FROM cfg_enum WHERE name='ib_observation.stage' AND value IN ('layer-1','layer-2','lexical')") == 3 and one("SELECT count(*) FROM cfg_enum WHERE name='observation_role' AND value='lexical'") == 1
          and one("SELECT count(*) FROM cfg_enum WHERE name='ib_observation.tag' AND value IN ('group','enrichment','pairing','relation')") == 4, f"steps {[x['key'] for x in s['steps']]}")
     case("C2", "every item kind is an ib_observation.tag value and every step's items are defined",
          all(v["kind"] in {r[0] for r in q("SELECT value FROM cfg_enum WHERE name='ib_observation.tag'")} for v in s["items"].values())
@@ -71,20 +71,110 @@ def main(db, scratch):
     L = lr.load(conn, cfg, name)
     occ = L["d"]["occurrences"]
     msg = refuses(lr.open_step, conn, cfg, RUN, name, "1.1", True)
-    case("G3", "the test collection with no lexical nodes and nothing placed is refused, naming the lexical gate and the grouping", bool(msg) and "lexical gate fails" in msg and "not placed" in msg, (msg or "")[:300])
-    # synthetic lexical catch-up: one lexical observation covering every member occurrence
-    oid = conn.execute("INSERT INTO ib_observation (cluster_code, stage, tag, obs_text, basis, meaning_source, status, run_id, created_at) VALUES (NULL,'engagement','statement',?,'stated','verse-text','draft',?, '2026-11-15T00:00:00Z')",
-                       ("synthetic lexical catch-up for the test of #2505 backsliding", RUN)).lastrowid
-    vl = lr._vl(conn, [o["vl_id"] for o in occ])
-    for i, o in enumerate(occ, 1):
-        v = vl[o["vl_id"]]
-        conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, created_at, verse_lexical_id, collection_id) VALUES (?,?,?,?,?,'engagement',?,'characteristic','2026-11-15T00:00:00Z',?,?)",
-                     (oid, v[1], v[2], v[3], v[4], i, o["vl_id"], cid))
+    case("G3", "the test collection with stage 1 not run and nothing placed is refused, naming step S1 and the grouping", bool(msg) and "step S1 is not closed" in msg and "not placed" in msg, (msg or "")[:300])
+    # ── stage 1, the lexical analysis (step S1): opened before any group exists; one row for each content word (RG-22)
+    words_all = sorted({lr.word_subject(o) for o in occ})
+    func = {w for w in words_all if all(lr._is_function(cfg, o) for o in occ if lr.word_subject(o) == w)}
+    words = [w for w in words_all if w not in func]
+    s1a = lr.open_step(conn, cfg, RUN, name, "S1")
+    s1b = lr.open_step(conn, cfg, RUN, name, "S1")
+    rows_s1 = q("SELECT item, subgroup_id, subject, state FROM collection_layer_item WHERE collection_id=? AND step='S1' AND state!='retired'", cid)
+    case("S1", "opening S1 makes one word-sense row for each content word (surface and lettered code), none for a function-word-only word (RG-22), no group needed; opening again changes nothing",
+         s1a["add"] == len(words) == len(rows_s1) and s1b["add"] == 0 and all(x[0] == "word-sense" and x[1] == 0 and x[3] == "open" for x in rows_s1) and {x[2] for x in rows_s1} == set(words)
+         and not ({x[2] for x in rows_s1} & func), f"{len(words)} content words, {len(func)} function-only; {s1a}")
+    pS, nS = lr.pull(conn, cfg, name, "S1", pathlib.Path(scratch))
+    dS = json.loads(pS.read_text(encoding="utf-8"))
+    r0 = dS["rows"][0]
+    case("S2", "the S1 working file holds each occurrence with its full verse and structural facts, the lexicon of the code, the prompts, the existing observations and a senses fill",
+         nS == len(words) and r0["evidence"] and "morph" in r0["evidence"][0] and "verse" in r0["evidence"][0] and "lexicon" in r0 and r0["prompts"] and "existing_observations" in r0
+         and "senses" in r0["fill"], r0["word"])
+    rows_ = dS["rows"]
+    multi = [r for r in rows_ if len(r["evidence"]) >= 2]
+    bad = json.loads(pS.read_text(encoding="utf-8"))
+    br = bad["rows"]
+    br[0]["fill"].update({"disposition": "observed", "senses": []})
+    br[1]["fill"].update({"disposition": "observed", "senses": [{"kind": "term", "obs_text": "a long enough text that names no verse of the word at all, test of the rule", "basis": "stated",
+                                                                  "occurrences": [br[1]["evidence"][0]["reference"]]}]})
+    vtext = (br[2]["evidence"][0]["verse"] or "").split()
+    br[2]["fill"].update({"disposition": "observed", "senses": [{"kind": "term", "obs_text": f"In {br[2]['evidence'][0]['reference']} the verse reads: " + " ".join(vtext[:14]), "basis": "stated",
+                                                                  "occurrences": [br[2]["evidence"][0]["reference"]]}]})
+    br[3]["fill"].update({"disposition": "observed", "senses": [{"kind": "term", "obs_text": "In Nowhere 9:9 the word stands in a sense that no verse of this collection shows, test.", "basis": "stated",
+                                                                  "occurrences": ["Nowhere 9:9"]}]})
+    mr = [r for r in br[4:] if len(r["evidence"]) >= 2]
+    if mr:
+        mr[0]["fill"].update({"disposition": "observed", "senses": [{"kind": "term", "obs_text": f"In {mr[0]['evidence'][0]['reference']} the word stands in its first sense, test of coverage by senses.",
+                                                                      "basis": "stated", "occurrences": [mr[0]["evidence"][0]["reference"]]}]})
+    before = (one("SELECT count(*) FROM ib_observation"), one("SELECT count(*) FROM ib_node"))
+    msg = refuses(lr.record, conn, cfg, RUN, bad, True)
+    after = (one("SELECT count(*) FROM ib_observation"), one("SELECT count(*) FROM ib_node"))
+    case("S3", "no senses, a text naming no verse, a text restating the verse, an occurrence that is not one of the word, and senses leaving an occurrence out are each refused, the whole file, nothing written",
+         bool(msg) and "answered by senses" in msg and "tied to its verses" in msg and "restates the verse" in msg and "is not an occurrence" in msg and (not mr or "in no sense" in msg) and before == after,
+         "missing: " + str([k for k in ("answered by senses", "tied to its verses", "restates the verse", "is not an occurrence", "in no sense") if k not in (msg or "")]) + " :: " + (msg or "")[-250:])
+    hold = [r for r in rows_ if len(r["evidence"]) == 1][0]
+    # an existing term observation of another stage, adopted by the row of one single-occurrence word (RS-04), and an inner-being one that is refused
+    ho = hold["evidence"][0]
+    aid = conn.execute("INSERT INTO ib_observation (cluster_code, stage, tag, obs_text, basis, meaning_source, status, run_id, created_at) VALUES (NULL,'prior-capture','term',?,'read','verse-text','draft',?,'2026-11-15T00:00:00Z')",
+                       (f"Test existing observation of {ho['reference']} for adoption by the lexical analysis (#2507 test).", RUN)).lastrowid
+    conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, created_at, verse_lexical_id, collection_id) VALUES (?,?,?,?,?,'prior-capture',1,NULL,'2026-11-15T00:00:00Z',?,?)",
+                 (aid, ho["strong"], ho["reference"], ho["surface"], ho["morph"], ho["occurrence"], cid))
+    inner = conn.execute("INSERT INTO ib_observation (cluster_code, stage, tag, obs_text, basis, meaning_source, status, run_id, created_at) VALUES (NULL,'engagement','term',?,'read','verse-text','draft',?,'2026-11-15T00:00:00Z')",
+                         (f"Test inner-being observation of {ho['reference']} that must not be adopted as lexical (#2507 test).", RUN)).lastrowid
+    conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, created_at, verse_lexical_id, collection_id) VALUES (?,?,?,?,?,'engagement',1,'characteristic','2026-11-15T00:00:00Z',?,?)",
+                 (inner, ho["strong"], ho["reference"], ho["surface"], ho["morph"], ho["occurrence"], cid))
+    ad_bad = {"collection": name, "step": "S1", "rows": [{"ledger_id": hold["ledger_id"], "fill": {"disposition": "adopt", "observation_id": inner, "reason": "an inner-being finding offered as adopted, test"}}]}
+    case("S3b", "an observation whose nodes carry an inner-being role is refused as an adoption", "inner-being finding" in (refuses(lr.record, conn, cfg, RUN, ad_bad, True) or ""), "")
+    # a read observation names its grounds in the words of the verse (RS-08); the grounds must be words of the verse; a quotation is the ESV's wording; the text may not restate the verse
+    row1 = [r for r in rows_ if len(r["evidence"]) == 1 and r["ledger_id"] != hold["ledger_id"]][0]
+    ref1, vtxt1 = row1["evidence"][0]["reference"], row1["evidence"][0]["verse"]
+    base_sense = {"kind": "term", "occurrences": [ref1], "obs_text": f"In {ref1} the word {row1['word']} stands in the sense the verse gives it; test observation of the grounds rule, #2507."}
+    r_nog = {"collection": name, "step": "S1", "rows": [{"ledger_id": row1["ledger_id"], "fill": {"disposition": "observed", "senses": [dict(base_sense, basis="read")]}}]}
+    r_bad = {"collection": name, "step": "S1", "rows": [{"ledger_id": row1["ledger_id"], "fill": {"disposition": "observed", "senses": [dict(base_sense, basis="read", grounds="words that are not in this verse at all")]}}]}
+    r_ok = {"collection": name, "step": "S1", "rows": [{"ledger_id": row1["ledger_id"], "fill": {"disposition": "observed", "senses": [dict(base_sense, basis="read", grounds=vtxt1[:14])]}}]}
+    case("S3c", "a read observation with no grounds, or grounds that are not words of its verse, is refused; with grounds from the verse it is accepted",
+         "names its grounds" in (refuses(lr.record, conn, cfg, RUN, r_nog, True) or "") and "are not words of the verses" in (refuses(lr.record, conn, cfg, RUN, r_bad, True) or "")
+         and refuses(lr.record, conn, cfg, RUN, r_ok, False) is None, "")
+    good = json.loads(pS.read_text(encoding="utf-8"))
+    gr = []
+    for r in good["rows"]:
+        refs = [e["reference"] for e in r["evidence"]]
+        if r["ledger_id"] == hold["ledger_id"]:
+            r["fill"].update({"disposition": "adopt", "observation_id": aid, "reason": "the existing term observation already states the word in its verse (test of adoption, #2507)"})
+        elif len(refs) >= 2:
+            r["fill"].update({"disposition": "observed", "senses": [
+                {"kind": "face", "obs_text": f"In {refs[0]} the word {r['word']} ({r['strong']}) departs from the sense it has in the other verses; test face observation of #2507.", "basis": "stated", "occurrences": [refs[0]]},
+                {"kind": "term", "obs_text": f"In {', '.join(refs[1:])} the word {r['word']} ({r['strong']}) stands in the sense the verses give it; test observation of #2507, tied to its verses.", "basis": "stated",
+                 "occurrences": refs[1:]}]})
+        else:
+            r["fill"].update({"disposition": "observed", "senses": [{"kind": "term", "obs_text": f"In {refs[0]} the word {r['word']} ({r['strong']}) stands in the sense the verse gives it; test observation of #2507, tied to its verse.",
+                                                                      "basis": "stated", "occurrences": refs}]})
+        gr.append(r)
+    prevS = lr.record(conn, cfg, RUN, good, False)
+    case("S4", "the S1 preview checks and writes nothing", prevS["observed"] >= 1 and one(f"SELECT count(*) FROM ib_observation WHERE stage='lexical' AND deleted=0 AND id IN (SELECT observation_id FROM ib_node WHERE collection_id={cid})") == 0, prevS)
+    resS = lr.record(conn, cfg, RUN, good, True)
+    obsS = q(f"SELECT id, tag, window, meaning_source, parts FROM ib_observation WHERE stage='lexical' AND deleted=0 AND id IN (SELECT observation_id FROM ib_node WHERE collection_id={cid})")
+    nodS = q("SELECT n.observation_id, count(*), count(n.collection_id), sum(n.role='lexical'), count(n.subgroup_id) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='lexical' AND n.deleted=0 AND n.collection_id=%d GROUP BY 1" % cid)
+    case("S5", "S1 observations are stage lexical, kind term or face, window meaning, the three lexicon sources, nodes with role lexical and a collection and no group yet; the adopted one is kept in place",
+         len(obsS) == resS["observed"] and resS.get("adopted") == 1 and all(o[1] in ("term", "face") and o[2] == "meaning" and "strong_meaning_tree" in o[3] for o in obsS)
+         and all(x[1] == x[2] == x[3] and x[4] == 0 for x in nodS), f"{resS}; {len(obsS)} observations")
+    an = q("SELECT role, collection_id FROM ib_node WHERE observation_id=? AND deleted=0", aid)
+    case("S6", "the adopted observation keeps its stage and gains the role lexical on its node", one("SELECT stage FROM ib_observation WHERE id=?", aid) == "prior-capture" and an[0][0] == "lexical", [tuple(x) for x in an])
+    case("S7", "a word with several occurrences is covered by its senses: a face observation of one occurrence and a term observation of the rest, each with only its own nodes",
+         all(sum(q("SELECT count(*) FROM ib_node WHERE observation_id=? AND deleted=0", o[0])[0][0] for o in obsS if json.loads(o[4])["word"] == r["subject"]) == len(r["evidence"])
+             for r in gr if len(r["evidence"]) >= 2) and any(o[1] == "face" for o in obsS) == bool(multi), f"{len(multi)} words with several occurrences")
+    repS = lr.check(conn, cfg, RUN, name)
+    case("S8", "LayerCheck validates the S1 rows and closes stage 1; the gate reports it", repS["steps"]["S1"]["closed"] and repS["lexical"]["closed"] and lr.step_closed(conn, cid, "S1"), repS["steps"]["S1"]["failed"][:2])
+    victim = q("SELECT n.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='lexical' AND o.tag='term' AND n.deleted=0 AND n.collection_id=%d LIMIT 1" % cid)[0][0]
+    conn.execute("UPDATE ib_node SET deleted=1 WHERE id=?", (victim,))
+    repS = lr.check(conn, cfg, RUN, name)
+    case("S9", "a node removed from a word observation: the row fails (the senses no longer cover its occurrences) and stage 1 is no longer closed", not repS["steps"]["S1"]["closed"] and len(repS["steps"]["S1"]["failed"]) == 1, repS["steps"]["S1"]["failed"])
+    conn.execute("UPDATE ib_node SET deleted=0 WHERE id=?", (victim,))
+    repS = lr.check(conn, cfg, RUN, name)
+    case("S10", "the node restored: stage 1 closes again", repS["steps"]["S1"]["closed"], "")
     L = lr.load(conn, cfg, name)
-    gate = lr.lexical_gate(conn, cfg, L)
-    case("G4", "with a lexical node on every member occurrence the lexical gate passes", not gate["missing"] and gate["occurrences"] == len(occ), f"{gate['covered']} of {gate['occurrences']}")
+    gate = lr.lexical_status(conn, cfg, L)
+    case("G4", "with stage 1 closed the lexical gate passes", gate["closed"], gate)
+    oid = obsS[0][0]
     msg = refuses(lr.open_step, conn, cfg, RUN, name, "1.1", True)
-    case("G5", "gate passes but nothing is placed: still refused, naming the unplaced surfaces and the missing subgroup", bool(msg) and "not placed" in msg and "no subgroup" in msg, (msg or "")[:250])
     ci.make_group(conn, RUN, name, "alpha", "test group (#2505 test)")
     ci.make_group(conn, RUN, name, "beta", "test group (#2505 test)")
     half = len(surf) // 2
@@ -97,9 +187,9 @@ def main(db, scratch):
     case("G7", "step 1.2 cannot open before 1.1 is closed", bool(msg) and "step 1.1 is not closed" in msg, (msg or "")[:200])
 
     # ── the group on the node, from placement
-    got = q("SELECT count(*), count(subgroup_id) FROM ib_node WHERE observation_id=? AND lower(trim(surface)) IN (%s)" % ",".join("?" * half), oid, *surf[:half])
+    got = q("SELECT count(*), count(n.subgroup_id) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='lexical' AND n.deleted=0 AND lower(trim(n.surface)) IN (%s)" % ",".join("?" * half), *surf[:half])
     case("N1", "placing surfaces set subgroup_id on their existing nodes (placement refresh)", got[0][0] == got[0][1] and got[0][0] > 0, f"{got[0][1]} of {got[0][0]} nodes of the alpha surfaces carry a group")
-    iso_nodes = q("SELECT count(subgroup_id) FROM ib_node WHERE observation_id=? AND lower(trim(surface))=?", oid, surf[-1])
+    iso_nodes = q("SELECT count(n.subgroup_id) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='lexical' AND n.deleted=0 AND lower(trim(n.surface))=?", surf[-1])
     case("N2", "an isolated surface's nodes carry no group", iso_nodes[0][0] == 0, iso_nodes)
 
     # ── open 1.1
@@ -126,7 +216,7 @@ def main(db, scratch):
     # ── record preview, then record
     good = json.loads(path.read_text(encoding="utf-8"))
     for r in good["rows"]:
-        r["fill"].update({"disposition": "observed", "obs_text": f"The surfaces of the group {r['group']} turn away, which is a movement of the inner being from what it held; test observation of #2505.", "basis": "read"})
+        r["fill"].update({"disposition": "observed", "obs_text": f"The surfaces of the group {r['group']} turn away, which is a movement of the inner being from what it held; test observation of #2505.", "basis": "stated"})
     prev = lr.record(conn, cfg, RUN, good, False)
     case("R3", "the preview checks and writes nothing", prev["observed"] == 2 and one("SELECT count(*) FROM ib_observation WHERE stage='layer-1'") == 0, prev)
     res = lr.record(conn, cfg, RUN, good, True)
@@ -167,7 +257,7 @@ def main(db, scratch):
     p3, n3 = lr.pull(conn, cfg, name, "1.2", pathlib.Path(scratch))
     enr = json.loads(p3.read_text(encoding="utf-8"))
     for row in enr["rows"]:
-        row["fill"].update({"disposition": "observed", "obs_text": f"The Strong's codes of {row['group']} ({', '.join(row['strong_codes'])}) define it as a turning away; test enrichment of #2505.", "basis": "read"})
+        row["fill"].update({"disposition": "observed", "obs_text": f"The Strong's codes of {row['group']} ({', '.join(row['strong_codes'])}) define it as a turning away; test enrichment of #2505.", "basis": "stated"})
     res = lr.record(conn, cfg, RUN, enr, True)
     rep = lr.check(conn, cfg, RUN, name)
     case("E1", "1.2 opens once 1.1 is closed; the enrichment observations carry a node for every Strong's code of the group; step 1.2 closes",
@@ -186,13 +276,14 @@ def main(db, scratch):
             if it["none_allowed"]:
                 row["fill"].update({"disposition": "none", "reason": "test: nothing to observe for this aspect (#2505 test)"})
             else:
-                row["fill"].update({"disposition": "observed", "obs_text": "test observation text of at least forty characters (#2505)", "basis": "read"})
+                row["fill"].update({"disposition": "observed", "obs_text": "test observation text of at least forty characters (#2505)", "basis": "stated"})
+        ent = [x for x in d4["rows"] if x["item"] == "entity"]
+        msg_route = refuses(lr.record, conn, cfg, RUN, {"collection": name, "step": "2.1", "rows": [
+            {"ledger_id": ent[0]["ledger_id"], "fill": {"disposition": "observed", "obs_text": "x" * 60, "basis": "stated", "route": "A"}}]}, True) if ent else None
         res = lr.record(conn, cfg, RUN, d4, True)
         rep = lr.check(conn, cfg, RUN, name)
         case("L2", "every 2.1 row answered as none (with reason) validates; step 2.1 closes", rep["steps"]["2.1"]["closed"] and res["none"] == len(d4["rows"]), rep["steps"]["2.1"])
-        ent = [x for x in d4["rows"] if x["item"] == "entity"]
-        case("L3", "an entity row recorded as observed without a route is refused", True if not ent else bool(refuses(lr.record, conn, cfg, RUN, {"collection": name, "step": "2.1", "rows": [
-            {"ledger_id": ent[0]["ledger_id"], "fill": {"disposition": "observed", "obs_text": "x" * 60, "basis": "read"}}]}, True)), "no entity aspect in this collection" if not ent else "")
+        case("L3", "an entity row given an inner-being route is refused: the lexical stages take no route", True if not ent else "takes no route" in (msg_route or ""), "no entity aspect in this collection" if not ent else (msg_route or "")[:160])
     else:
         case("L2", "no 2.1 aspects demanded for this collection (no pairing reaches the thresholds)", True, "")
     # ── a placement change after the observations exist

@@ -20,7 +20,7 @@ import pathlib
 import re
 import sqlite3
 
-from ..lib import cfgreport, cfgquality, valuequality, escalation as esc
+from ..lib import cfgreport, cfgquality, lexicalalignment, valuequality, escalation as esc
 from .base import Ctx, Outcome, ok, fail, escalate
 
 APP_ROOT = pathlib.Path(__file__).resolve().parent.parent   # iba/app — scanned for orphan configs
@@ -226,6 +226,8 @@ def validate(ctx: Ctx) -> Outcome:
     errors += cfgquality.find_unregistered_project_scripts(ctx.db.conn, PROJECT_ROOT)
     # every rule linked to the operations it governs (#2209)
     errors += cfgquality.find_rule_scope_gaps(ctx.db.conn, APP_ROOT)
+    # the retired names of the lexical work still described as live, and the layered reading's items without a prompt (#2507, D9)
+    errors += lexicalalignment.find(ctx.db.conn, PROJECT_ROOT)
     if errors:
         error_summary = "; ".join(errors)
         # Every run has a fresh run_id, so run.py's idempotency guard never catches a repeat: an

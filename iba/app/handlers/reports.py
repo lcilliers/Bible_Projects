@@ -274,8 +274,8 @@ def lexical_report(ctx: Ctx) -> Outcome:
 
 
 def lexical_exceptions_report(ctx: Ctx) -> Outcome:
-    """The per-run self-audit / exception report for the latest `lexical.enrich` run over this verse
-    range (#1383). Read-only against `verse_lexical`/`verse_lexical_note`. A plain tally against Layer
+    """The self-audit / exception report of the lexical work over this verse range (#1383, re-founded on the lexical
+    observations, #2507). Read-only against `verse_lexical` and the observations of stage `lexical`. A plain tally against Layer
     1's complete enumeration, no "confirms"/"validates" framing. Verse-scoped (#1451): verses resolve
     via `fetch_verses` and queries filter by `verse_id`; no `passage` row is needed."""
     book = ctx.params["Book"]
@@ -303,56 +303,45 @@ def lexical_exceptions_report(ctx: Ctx) -> Outcome:
     n_narrative = sum(1 for r in vl_rows if r["narrative_morph"])
     n_gloss_bad = sum(1 for r in vl_rows if r["gloss_consistent_in_verse"] == 0)
 
-    note_rows = ctx.db.rows(
-        f"SELECT note_type, resolution_status, value_text FROM verse_lexical_note "
-        f"WHERE verse_id IN ({ph}) AND deleted=0", tuple(verse_ids))
+    obs_rows = ctx.db.rows(
+        f"SELECT o.id, o.tag, o.status, o.basis, o.obs_text FROM ib_observation o WHERE o.stage='lexical' AND o.deleted=0 AND EXISTS ("
+        f"SELECT 1 FROM ib_node n JOIN verse_lexical vl ON vl.id=n.verse_lexical_id WHERE n.observation_id=o.id AND n.deleted=0 AND vl.verse_id IN ({ph}))", tuple(verse_ids))
     by_status: dict[str, list] = {}
-    for r in note_rows:
-        by_status.setdefault(r["resolution_status"], []).append(r)
-    connectives = [r for r in note_rows if r["note_type"] == "connective"]
-    n_unclassified_conn = sum(1 for r in connectives if (r["value_text"] or "") == "UNCLASSIFIED")
-
-    # standing integrity check (#1520): a live note pointing at a soft-deleted verse_lexical row is a
-    # genuine dangling reference. Should always be 0.
+    for r in obs_rows:
+        by_status.setdefault(f"{r['tag']} ({r['status']})", []).append(r)
+    # standing integrity check: a live node of a lexical observation on a soft-deleted verse_lexical row, or with no collection or no role, is a genuine fault (B:130)
     orphaned_anchor = ctx.db.rows(
-        f"SELECT n.id, n.note_type FROM verse_lexical_note n "
-        f"JOIN verse_lexical vl ON vl.id=n.verse_lexical_id "
-        f"WHERE n.verse_id IN ({ph}) AND n.deleted=0 AND vl.deleted=1", tuple(verse_ids))
+        f"SELECT n.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id JOIN verse_lexical vl ON vl.id=n.verse_lexical_id "
+        f"WHERE o.stage='lexical' AND o.deleted=0 AND n.deleted=0 AND vl.verse_id IN ({ph}) AND vl.deleted=1", tuple(verse_ids))
     orphaned_target = ctx.db.rows(
-        f"SELECT n.id, n.note_type FROM verse_lexical_note n "
-        f"JOIN verse_lexical vl ON vl.id=n.target_verse_lexical_id "
-        f"WHERE n.verse_id IN ({ph}) AND n.deleted=0 AND n.target_verse_lexical_id IS NOT NULL "
-        f"AND vl.deleted=1", tuple(verse_ids))
+        f"SELECT n.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id JOIN verse_lexical vl ON vl.id=n.verse_lexical_id "
+        f"WHERE o.stage='lexical' AND o.deleted=0 AND n.deleted=0 AND vl.verse_id IN ({ph}) AND (n.role IS NULL OR n.collection_id IS NULL)", tuple(verse_ids))
 
     layer1 = [
         f"- codes processed: {len(vl_rows)}",
         f"- negators found: {n_negators}",
         f"- narrative_morph fired: {n_narrative}",
         f"- gloss_consistent_in_verse=0 (data-quality): {n_gloss_bad}",
-        f"- connective notes: {len(connectives)} ({n_unclassified_conn} UNCLASSIFIED — points at "
-        f"the lexicon)",
     ]
     layer2 = [f"- {status}: {len(items)}" for status, items in sorted(by_status.items())]
     if not layer2:
-        layer2 = ["- (no verse_lexical_note rows for this passage yet)"]
-    judgement = [f"- {r['note_type']}/{r['resolution_status']}: {r['value_text'] or '(no finding text)'}"
-                for r in note_rows if r["resolution_status"] not in ("checked_empty",)]
+        layer2 = ["- (no lexical observation with a node in these verses yet: Collection-Build.ps1 -Action LayerOpen -Step S1)"]
+    judgement = [f"- {r['tag']} (observation {r['id']}): {(r['obs_text'] or '')[:200]}" for r in obs_rows if r["basis"] == "read"]
     if not judgement:
         judgement = ["- (none recorded)"]
 
     n_orphaned = len(orphaned_anchor) + len(orphaned_target)
     if n_orphaned:
-        integrity = [f"- **{n_orphaned} DANGLING reference(s) — action needed**:",
-                    f"  - {len(orphaned_anchor)} note(s) anchored on a deleted verse_lexical row",
-                    f"  - {len(orphaned_target)} note(s) targeting a deleted verse_lexical row"]
+        integrity = [f"- **{n_orphaned} fault(s) in the nodes of the lexical observations -- action needed**:",
+                    f"  - {len(orphaned_anchor)} node(s) on a deleted verse_lexical row",
+                    f"  - {len(orphaned_target)} node(s) with no role or no collection"]
     else:
-        integrity = ["- 0 dangling references (verse_lexical_id/target_verse_lexical_id all "
-                    "point at live rows)"]
+        integrity = ["- 0 faults (every live node of a lexical observation is on a live verse_lexical row, with a role and a collection)"]
 
     sections = {"layer1_tally": layer1, "layer2_dispositions": layer2, "judgement_calls": judgement,
                "integrity": integrity}
     intro = [f"> Generated by `report.lexical_exceptions` for {book} {ctx.params.get('Range') or ctx.params.get('Chapters')} "
-            f"({len(verse_ids)} verse(s)). Read-only against verse_lexical/verse_lexical_note. "
+            f"({len(verse_ids)} verse(s)). Read-only against verse_lexical and the lexical observations (stage lexical, #2507; the retired verse_lexical_note is not read). "
             f"No `passage` row involved — verse-scoped (escalation #1451)."]
     L = reportkit.render_scaffold(ctx.db.conn, "report.lexical_exceptions", sections, intro=intro,
                                   book=book, range=(ctx.params.get("Range") or ctx.params.get("Chapters")))
@@ -360,133 +349,8 @@ def lexical_exceptions_report(ctx: Ctx) -> Outcome:
     range_str = versespanmeaningreport._range_str(lo, hi, verse_lo, verse_hi)
     path = output_dir / (book_label or book) / f"{book.lower()}-{range_str}-lexical-exceptions.md"
     path = reportkit.write_report(ctx.db.conn, "report.lexical_exceptions", path, L)
-    return ok(f"wrote {path}", path=str(path), codes=len(vl_rows), notes=len(note_rows),
+    return ok(f"wrote {path}", path=str(path), codes=len(vl_rows), observations=len(obs_rows),
              dangling_references=n_orphaned)
-
-
-# ── report.lexical_extract ──────────────────────────────────────────────────────────────────────
-def _parse_filter_list(raw: str) -> list[str]:
-    return [v.strip() for v in raw.split(",") if v.strip()]
-
-
-def lexical_extract(ctx: Ctx) -> Outcome:
-    """Multi-filter JSON extract over verse_lexical/verse_lexical_note (#1383). Read-only. Every
-    filter takes a single value or a comma-list; a `verse` filter also takes an OSIS range
-    (`Gen.1.1-Gen.1.10`). AND across keys, OR within a key's list. No filter at all is refused
-    (`no-filter`)."""
-    passage_f = ctx.params.get("PassageFilter")
-    verse_f = ctx.params.get("VerseFilter")
-    surface_f = ctx.params.get("SurfaceFilter")
-    strong_f = ctx.params.get("StrongFilter")
-    if not any([passage_f, verse_f, surface_f, strong_f]):
-        return fail("no-filter", "at least one of -PassageFilter/-VerseFilter/-SurfaceFilter/"
-                                 "-StrongFilter is required — an unbounded full-corpus extract is "
-                                 "not this step's job")
-
-    where, args = ["vl.deleted=0"], []
-    if passage_f:
-        ids = _parse_filter_list(passage_f)
-        where.append(f"vl.verse_id IN (SELECT verse_id FROM verse_passage WHERE passage_id IN "
-                    f"({','.join('?' * len(ids))}) AND deleted=0)")
-        args += ids
-    if verse_f:
-        # osisId ranges are compared on parsed (book, chapter, verse) numbers, not strings ("John.1.10"
-        # sorts before "John.1.5"), as in versespanmeaningreport.fetch_verses
-        resolved_ids: list[int] = []
-        for v in _parse_filter_list(verse_f):
-            if "-" in v and v.count(".") >= 2:
-                lo_ref, hi_ref = v.split("-", 1)
-                lo_book, lo_ch, lo_vs = lo_ref.split(".")
-                hi_book, hi_ch, hi_vs = hi_ref.split(".")
-                if lo_book != hi_book:
-                    return fail("bad-filter", f"VerseFilter range {v!r} spans two books")
-                lo_ch, lo_vs, hi_ch, hi_vs = int(lo_ch), int(lo_vs), int(hi_ch), int(hi_vs)
-                for r in ctx.db.rows(
-                        "SELECT id, osisId FROM verse WHERE osisId LIKE ? AND deleted=0",
-                        (f"{lo_book}.%",)):
-                    parts = r["osisId"].split(".")
-                    if len(parts) != 3 or not parts[1].isdigit() or not parts[2].isdigit():
-                        continue
-                    ch, vs = int(parts[1]), int(parts[2])
-                    if (ch, vs) >= (lo_ch, lo_vs) and (ch, vs) <= (hi_ch, hi_vs):
-                        resolved_ids.append(r["id"])
-            else:
-                row = ctx.db.rows("SELECT id FROM verse WHERE osisId=? AND deleted=0", (v,))
-                if row:
-                    resolved_ids.append(row[0]["id"])
-        if not resolved_ids:
-            return fail("bad-filter", f"VerseFilter {verse_f!r} resolved to 0 verses")
-        where.append(f"vl.verse_id IN ({','.join('?' * len(resolved_ids))})")
-        args += resolved_ids
-    if surface_f:
-        vals = _parse_filter_list(surface_f)
-        where.append(f"vl.surface IN ({','.join('?' * len(vals))})")
-        args += vals
-    if strong_f:
-        vals = _parse_filter_list(strong_f)
-        clauses = []
-        for s in vals:
-            if "-" in s and s[0] in "HG":
-                clauses.append("vl.strong BETWEEN ? AND ?")
-                lo_s, hi_s = s.split("-", 1)
-                args += [lo_s, hi_s]
-            else:
-                clauses.append("vl.strong = ?")
-                args.append(s)
-        where.append("(" + " OR ".join(clauses) + ")")
-
-    rows = ctx.db.rows(
-        f"SELECT vl.id AS verse_lexical_id, v.osisId AS verse, vl.strong, vl.role, vl.position, "
-        f"vl.surface, vl.testament, vl.party_kind "
-        f"FROM verse_lexical vl JOIN verse v ON v.id=vl.verse_id WHERE {' AND '.join(where)} "
-        f"ORDER BY v.osisId, vl.position, vl.code_ordinal", tuple(args))
-
-    ids = [r["verse_lexical_id"] for r in rows]
-    notes_by_id: dict[int, list] = {}
-    if ids:
-        ph = ",".join("?" * len(ids))
-        for n in ctx.db.rows(
-                f"SELECT verse_lexical_id, note_type, resolution_status, value_text, "
-                f"evidence_text FROM verse_lexical_note WHERE verse_lexical_id IN ({ph}) "
-                f"AND deleted=0", tuple(ids)):
-            notes_by_id.setdefault(n["verse_lexical_id"], []).append(
-                {"note_type": n["note_type"], "resolution_status": n["resolution_status"],
-                 "value_text": n["value_text"], "evidence_text": n["evidence_text"]})
-
-    # cluster short name(s), computed at report time (cluster_strong keeps changing), joined on the
-    # exact strong code; every live membership is returned, comma-joined
-    strong_codes = sorted(set(r["strong"] for r in rows if r["strong"]))
-    clusters_by_strong: dict[str, list[str]] = {}
-    if strong_codes:
-        ph = ",".join("?" * len(strong_codes))
-        for c in ctx.db.rows(
-                f"SELECT cs.strong, cl.short_name FROM cluster_strong cs "
-                f"JOIN cluster cl ON cl.cluster_code=cs.cluster_code "
-                f"WHERE cs.strong IN ({ph}) AND cs.deleted=0", tuple(strong_codes)):
-            clusters_by_strong.setdefault(c["strong"], []).append(c["short_name"])
-
-    out_rows = []
-    for r in rows:
-        d = dict(r)
-        d["notes"] = notes_by_id.get(d["verse_lexical_id"], [])
-        d["cluster"] = ", ".join(clusters_by_strong.get(d["strong"], [])) or None
-        out_rows.append(d)
-
-    payload = {
-        "filters_applied": {"passage": passage_f, "verse": verse_f, "surface": surface_f,
-                           "strong": strong_f},
-        "rows": out_rows, "row_count": len(out_rows),
-    }
-
-    import datetime as _dt
-    import json as _json
-    output_dir = pathlib.Path(ctx.cfg.required_setting("report.lexical_extract_output_dir"))
-    pattern = ctx.cfg.required_setting("report.lexical_extract_output_pattern")
-    path = output_dir / pattern.format(run_id=ctx.run_id)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(_json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-
-    return ok(f"wrote {path} ({len(out_rows)} row(s))", path=str(path), row_count=len(out_rows))
 
 
 def passage_debate_report(ctx: Ctx) -> Outcome:

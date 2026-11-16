@@ -1,0 +1,213 @@
+{
+ "_patch_meta": {
+  "patch_id": "GLOSSARY-2507-20261115",
+  "author": "claude_code",
+  "purpose": "glossary for the terms of the lexical analysis, the observation and the collection reading (B:126; escalation #2507)"
+ },
+ "operations": [
+  {
+   "op_id": "G01",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "observation",
+    "body": "[DEFINITION] A finding of the study: a statement that interprets what its verse says and is founded in the verse, never a repeat of the verse text and never a statement the verse does not found. It is tied to verses or surfaces; the same wording and meaning is never two observations but one observation with a node for each variant it refers to. It has a kind, a basis (stated: the verse states it; read: Claude's reading, with its grounds) and a stage.\n\n[BACKGROUND] Held in ib_observation, applied through ib_node (behaviour rules 130 and 131; RW-01 to RW-11). An observation is changed only by a reading, with the reason kept in ib_observation_change; it is soft-deleted, never physically deleted. An existing observation of any stage that already says what a reading needs is adopted in place, never filtered by its stage (RS-04).",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G02",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "node",
+    "body": "[DEFINITION] The application of an observation: one row for each verse occurrence (a word as written in a verse, with its Strong's code) the observation is true of, carrying the word's role in the finding, the collection of its surface and, once the surface is placed, its subgroup. An observation has at least one node and a node does not exist without a live observation.\n\n[BACKGROUND] Held in ib_node (behaviour rule 130). The role is the word's role in this finding, judged from the verse and never from a cluster tag: characteristic and qualifier are relevant to the inner being, object, relational_target and enactment bear on the finding, standalone records that the word was recognised with no inner-being role, and lexical (a node of a stage 1 observation) records that the word was read lexically and its inner-being role has not been assessed.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G03",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "occurrence",
+    "body": "[DEFINITION] One word as it stands in one verse: a row of verse_lexical with its verse, Strong's code, surface, morph code and position. Findings are applied to occurrences, never to a lemma.\n\n[BACKGROUND] A word is read per surface and lettered Strong's code (grain); the occurrences of a word with several senses are related per code and never aggregated across codes (B:113, RG-21).",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G04",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "verse lexical",
+    "body": "[DEFINITION] The structural composition of the verse, built mechanically from the source text (verse_lexical, Window 1 Layer 1): each Strong's code of each span with its position, surface, unit (a multi-term rendering), morph, negator flag, party kind and the like. It holds the relations between the words of a verse as data (positions, neighbours) and never carries an inner-being concept.\n\n[BACKGROUND] Built by lexical.build and checked by lexical.readiness. The column verse_lexical.role holds the cluster codes of the strong (T and M codes), a cluster-era property of the code; it is not the role of a node. The lexical analysis of the words is a separate process, stage 1 of the collection reading.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G05",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "Window 1 and Window 2",
+    "body": "[DEFINITION] The two sides of the analysis (escalation #1383): Window 1 is the lexical side, Layer 1 the structure of the verse (verse_lexical) and Layer 2 the lexical enrichment of it (now the lexical observations); Window 2 is the inner-being side, which decides what is inner-being. Window 1 never determines whether something is a phenomenon or an inner-being concept; that boundary is by what the work is about, not by how mechanical it is.\n\n[BACKGROUND] The Layer 1 and Layer 2 of Window 1 are not the layers of the collection reading; see layer and stage.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G06",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "stage (collection reading)",
+    "body": "[DEFINITION] The five stages of the reading of a collection, as the researcher defined them (2026-11-15): stage 1, the lexical analysis of the words (each word in its verses, lexical only; the relations between the words are base data and are not analysed); stage 2, the grouping of the surfaces (the four surface groups, the collections of behaviour and inner_being_state, the subgroups within a collection); stage 3, the verse-lexical observations (layer 1 step 2 and layer 2, verse-lexical only); stage 4, the inner-being analysis made from the stage 3 observations, the first step of claim formulation; stage 5, the claim formulation and the update of the claims register, not yet decided.\n\n[BACKGROUND] Held in cfg_setting layer.reading (the steps S1, 1.1, 1.2 and 2.1) and the ib_observation.stage values lexical, layer-1 and layer-2. Stage 4 is not built. The four stages of the retired cluster pipeline (verse-reading, char-subgroup, char-reading, char-answers) are replaced by these and their observations are gathered rows.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G07",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "layer (collection reading)",
+    "body": "[DEFINITION] A group of steps in the reading of a collection: layer 1 step 1 (1.1) places the surfaces in groups of what each is or does for the inner being and isolates a surface with no inner-being role, layer 1 step 2 (1.2) enriches each group from the Strong's codes of its surfaces, layer 2 (2.1) reads what the other words of the verse show with each group (pairings, qualifiers, entities, direction, relation between groups, double meaning). A step closes only when every aspect it demands is answered and validated.\n\n[BACKGROUND] Not the Layer 1 and Layer 2 of Window 1. Held in cfg_setting layer.reading and the ledger collection_layer_item; run with Collection-Build.ps1 LayerOpen, LayerPull, LayerRecord and LayerCheck.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G08",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "ledger",
+    "body": "[DEFINITION] The record of what a step of the collection reading demands: one row for each aspect (a word, a group, a pairing and the like), derived from the data when the step is opened, answered by one or more observations or by none with its reason, and validated only by the check that re-derives what the row demands. A step is closed when every row is answered and validated.\n\n[BACKGROUND] Held in collection_layer_item (behaviour rule layer-aspects-are-ledgered-and-never-left-open); nothing is left hanging.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G09",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "lexical analysis",
+    "body": "[DEFINITION] Stage 1 of the reading of a collection: for each content word of the collection (a surface with its lettered Strong's code) one observation for each sense its verses give it, tied to those verses, stating what the word means in them as the verses show it, and never what it does for the inner being. Function words get no observation of their own, except negators and connectives.\n\n[BACKGROUND] Run as step S1 (item word-sense). The lexicon entries are evidence to read, never text to restate (RW-04, B:131). It is a precursor to the grouping and the claim layers; the lexical and the inner-being analysis are separate processes and never run at the same time (behaviour rule 133).",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G10",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "lexical observation",
+    "body": "[DEFINITION] An observation of stage lexical, of kind term or face, that states of a word in its verses what the verses, the lexicon and the stored structure show. It never states what the word does for the inner being, a role, an implication or a claim; where the border blurs it names the nuance and the inner-being analysis uses it (an enrichment, not a conflict).\n\n[BACKGROUND] Its nodes carry the role lexical. Written with Collection-Build.ps1 LayerRecord for the item word-sense.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G11",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "sense",
+    "body": "[DEFINITION] What a word means in a verse as the verse shows it: the words it stands with, the construction and the morph. It is not the dictionary range of the word's Strong's code, which is evidence. A word whose occurrences in a collection's verses show more than one sense has one lexical observation for each.\n\n[BACKGROUND] Distinct from gloss (a short translation tag), meaning (the lexicon text of a Strong's number) and face (a departure from the usual sense).",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G12",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "face",
+    "body": "[DEFINITION] The sense a word has in one occurrence where it departs from the sense it has in its other occurrences, for example a verb of seeing used for considering, or a word of pregnancy used of devising harm. An occurrence whose sense departs is its own observation of kind face.\n\n[BACKGROUND] Identifying and clarifying the face is lexical work (RG-09); what the faces do for the inner being, and a double meaning in different scenarios, belong to the layers that follow.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G13",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "function word",
+    "body": "[DEFINITION] A word with no content of its own in a verse: a preposition, particle, pronoun, article, suffix or the like. It gets no observation of its own, except a negator and a connective, which are read for what they do; where it stands inside a multi-term unit it is read with the unit's content code (RG-22, RG-07).\n\n[BACKGROUND] Decided from the morph code by the classes in cfg_setting layer.reading function_classes.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G14",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "observation kind",
+    "body": "[DEFINITION] The kind of finding an observation is, held as its tag: face, qualification, party, statement, link, use, term and silence (the readings of the verse), and group, enrichment, pairing and relation (the layers of the collection reading). A term observation reads a word; a face observation an occurrence that departs from the usual sense.\n\n[BACKGROUND] cfg_enum ib_observation.tag and cfg_setting reading.observation_parts. The kinds the lexical analysis writes are term and face.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G15",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1132,
+   "record": {
+    "heading": "subgroup",
+    "body": "[DEFINITION] A group of the surfaces of one collection that do the same thing for the inner being (for example starting, weighing and meditation in the collection thought), formed in the reading of the collection and held in collection_subgroup and collection_subgroup_surface; a node carries its subgroup (ib_node.subgroup_id), so that the observations of a group are found through its nodes.\n\n[BACKGROUND] The earlier use of the word was the subdivision of an M-code cluster (cluster_subgroup, surface_subgroup): it served to establish the collections, is history, and plays no part in nodes and observations (researcher, 2026-11-13; behaviour rules 130 and 131). A surface with no inner-being role is isolated in the index with its reason.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G16",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1077,
+   "record": {
+    "heading": "lexical",
+    "body": "[DEFINITION] Used adjectivally for anything concerning a word's structure and its meaning as the verses show it, as opposed to what it does for the inner being: the lexical (Window 1) work builds and reads the structural composition of the verse (verse_lexical) and states what the words mean in their verses (the lexical observations).\n\n[BACKGROUND] ve_lexical was the earlier table, verse_lexical is the live one. The lexical analysis (stage 1) and the inner-being analysis (stage 4) are separate processes with separate observations (behaviour rule 133).",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  },
+  {
+   "op_id": "G17",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1071,
+   "record": {
+    "heading": "term",
+    "body": "[DEFINITION] Used loosely throughout the project for any of: a Strong's-coded lexical entry (a specific Hebrew/Greek word-sense), a word_registry study word, or a span occurrence in a verse. Context decides which is meant. It is also the name of an observation kind: a term observation reads a word in its verses.\n\n[BACKGROUND] See grain for the project's precise rollup unit where 'term' would otherwise be ambiguous, and observation kind. Prefer grain, occurrence or Strong's number over the bare word 'term' when precision matters.",
+    "status": "draft",
+    "author": "claude_code"
+   }
+  }
+ ]
+}
