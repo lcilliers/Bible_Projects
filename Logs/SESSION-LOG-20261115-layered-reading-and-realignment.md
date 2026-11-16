@@ -60,4 +60,4 @@ Claude's own (recorded):
 
 ## 6. Git
 
-Branch: main. Commit cf4fc40ea4fd0d342fd4cb88bb68f8b98b20ad33 ("session 20261115: layered reading of a collection (#2505), housekeeping, plan of the study as recorded (#2448), legacy scan (#2507), close report, session log, compliance"), run and pushed by the researcher from their terminal after the auto-mode classifier denied the push from the session; `git status -sb` afterwards shows `## main...origin/main` with no change outstanding. The push output itself was not seen by the session. The final commit is this log alone.
+Branch: main. Commit d9f1a6f05c8aa1547497a70cc10f41230d554bbd ("session 20261115: stages and boundary of the lexical work (#2507), grouping by dictionary meaning built and run on thought (#2509, declared a failure by the researcher, not rolled back), verse_lexical surface index, glossary, BUILD 539-540, close report, session log, compliance"), pushed: `7b34c861..d9f1a6f0  main -> main` to https://github.com/lcilliers/Bible_Projects.git, after the researcher's instruction "commit and push it". An earlier commit of this session, cf4fc40e, was pushed by the researcher.
