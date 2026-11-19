@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-15T19:03:39Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-19T17:39:17Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `58e035fd-4cd5-440d-ba63-65b2f1a988f5` (CLAUDE_CODE_SESSION_ID); started 2026-11-15T04:00:52Z; window base commit `97b686fed8eaedc9abd46ad1acbed1e520263ac4`
-- compliance file: `Logs/compliance/COMPLIANCE-20261115-58e035fd.md`; session log: `Logs/SESSION-LOG-20261115-layered-reading-and-realignment.md`
-- **open findings: 0**; cleared by disposition: 15
+- session: `64d74a34-a1bd-46b4-8c83-95bcb0333189` (CLAUDE_CODE_SESSION_ID); started 2026-11-19T05:00:02Z; window base commit `26330e6ca7892e4430810da3b9e1668b78341dc5`
+- compliance file: `Logs/compliance/COMPLIANCE-20261119-64d74a34.md`; session log: `Logs/SESSION-LOG-20261119-project-map-learning-history-and-inner-being-definition.md`
+- **open findings: 0**; cleared by disposition: 7
 
 
 ## Contents
@@ -41,37 +41,22 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:a4d4c20f`: researcher message 2026-11-15T04:31 is in no escalation comment written this session: "I read through the GAPs: G1 - comply with governance, which will answer the question if the this should be done.  I can imagine that this step will call for sof" -- disposition: recorded in #2505 v1
-- cleared `SC3:8ef6f926`: researcher message 2026-11-15T05:13 is too short to be matched; name where it is recorded: "Approve #2505" -- disposition: recorded in #2505 v3
-- cleared `SC3:5783d5b0`: researcher message 2026-11-15T10:13 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC3:915416fe`: researcher message 2026-11-19T05:00 is too short to be matched; name where it is recorded: "project-start" -- disposition: no record needed: the start command, no content
+- cleared `SC3:802ac5e9`: researcher message 2026-11-19T08:57 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: no record needed: the harness's context summary, not the researcher's words
-- cleared `SC3:f78ab295`: researcher message 2026-11-15T18:26 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: no record needed: the harness's context summary, not the researcher's words
+Summar" -- disposition: no record needed: the harness context summary, not the researchers words
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:7e9a6b90`: researcher message 2026-11-15T04:09 holds, defers or asks to check something; name its register item: "in the previous session we focussed on defining layer 1 and layer 2, defining the rules, setting what is expected, writing the different routines and method to " -- disposition: in register #2463
-- cleared `SC4b:f65a52ee`: researcher message 2026-11-15T05:15 holds, defers or asks to check something; name its register item: "if I understand the base data is sound, there is no need to revisit it. is verse lexical sound,  must the verse lexical build process be revisited.  what is the" -- disposition: in register #2507
-- cleared `SC4b:7454d01f`: researcher message 2026-11-15T06:11 holds, defers or asks to check something; name its register item: "I am out of tokens, so will come back to this point a bit later.  I believe I have answered every relevant question. some questions I did not answer, because su" -- disposition: in register #2448
-- cleared `SC4b:74c1a6f5`: researcher message 2026-11-15T08:58 holds, defers or asks to check something; name its register item: "did you check? I did run the commands.   What does B105 say" -- disposition: in register #2507
-- cleared `SC4b:5783d5b0`: researcher message 2026-11-15T10:13 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC4b:6548c16d`: researcher message 2026-11-19T05:43 holds, defers or asks to check something; name its register item: "comments on v1.  §1 - Add that the project entirely lives in the databases, any documents or files is working documents and supplementary. Only results in the d" -- disposition: in register #2510
+- cleared `SC4b:4ed39acb`: researcher message 2026-11-19T06:53 holds, defers or asks to check something; name its register item: "I was hoping that you will critically evaluate what I have written, and not just repeat it. I also hoped that by doing the 1), you will relook at the history an" -- disposition: in register #2510
+- cleared `SC4b:7738c88c`: researcher message 2026-11-19T07:58 holds, defers or asks to check something; name its register item: "your analysis is partly correct.  the recent surface group work intended to resolve some of the points raised. however, my intent did not ground fully.  More im" -- disposition: in register #2510
+- cleared `SC4b:802ac5e9`: researcher message 2026-11-19T08:57 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: not held: the harness's context summary, not the researcher's words
-- cleared `SC4b:66eae823`: researcher message 2026-11-15T15:04 holds, defers or asks to check something; name its register item: "I am concerned that you are basing your design design on spotting what need to change by naming of files and configs, rather than properly reading content.   We" -- disposition: in register #2507
-- cleared `SC4b:f5f14f20`: researcher message 2026-11-15T15:42 holds, defers or asks to check something; name its register item: "I am not answering your new D1-D9 questions, because you have not properly digested my initial answers, and asked yourself a) what is necessary or required for " -- disposition: in register #2507
-- cleared `SC4b:1d92367a`: researcher message 2026-11-15T16:21 holds, defers or asks to check something; name its register item: "I am actually not sure what you have achieved with the build, because the surface groups are a fundamental part of the next steps. I thought I saw you created m" -- disposition: in register #2509
-- cleared `SC4b:b082b0b9`: researcher message 2026-11-15T16:24 holds, defers or asks to check something; name its register item: "so how do you propose I check the observations. I see no output" -- disposition: in register #2509
-- cleared `SC4b:f78ab295`: researcher message 2026-11-15T18:26 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: not held: the harness's context summary, not the researcher's words
-- cleared `SC4b:ad288ac0`: researcher message 2026-11-15T19:02 holds, defers or asks to check something; name its register item: "you know - your explanation of what you did just further show that you have not even considered or thought about what the groups are being used for.   I give up" -- disposition: in register #2509
+Summar" -- disposition: not held: the harness context summary, not the researchers words
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -108,4 +93,4 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 3 times this session: 1; error: an update carrying comment/context/tried cannot leave the item at state='raised' -- move it off raised first (e.g; escalation #2510 v3 -> state='in-progress', next_action='review', assigned_to='Claude' -- disposition: fixed: the item was moved off raised with -State in-progress (#2510 v3); every later update passed
