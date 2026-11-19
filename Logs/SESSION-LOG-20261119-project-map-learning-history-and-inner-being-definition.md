@@ -44,4 +44,4 @@ Claude's own (inference, for the researcher to correct):
 
 ## 6. Git
 
-(written after the commit)
+Branch: main. Commit 21ed5b0287a6895818b916ef13c2a2161d51984a ("session 20261119: #2510 project map, history of what the study learned (81 events, two streams), how the definition of the inner being's working grew, stage 3 and stage 4 drafts, work index, session log, compliance"), pushed: 26330e6c..21ed5b02 main -> main (https://github.com/lcilliers/Bible_Projects.git).
