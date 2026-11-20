@@ -1,0 +1,173 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261120T060928Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-20T06:09:28Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 12 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-39-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 39,
+      "record": {
+        "body": "The programme's binding rules are rows of the configuration store in `iba.db`, and they live nowhere else. `CLAUDE.md` at the project root is a pointer file: it holds no rules, no state and no history, and where it and a rule's home disagree, the home wins. `iba/app/GOVERNANCE.md` is the mechanism document for the rule store: how a `cfg_*` row is changed, what is enforced and what is still a convention. The control map (`cfg_control_home`) names the one home of each kind of content.\n\nThe rules are `cfg_setting` (scalar rules, each attributed to a module), `cfg_enum` (controlled vocabularies), `cfg_behaviour_rule` with `cfg_behaviour_class` (the classes chat, terminal, sqlite, documentation, filing, llm_output, development and study_method, each with its own rules for how operational behaviour in that class is expected to run), the escalation rules, and the other `cfg_*` tables described in Chapter 5. Each rule is a typed row, readable and changeable through exactly one path (`Config-Maintenance.ps1 -Step Propose`, or a logged migration in a Developer Mode session), and enforced by code that reads it.\n\nA session starts with `/start-project`, which prints every general rule and has Claude restate each in the session's compliance file. The other rules reach Claude at the first use of the operation they govern, so that a rule is read when it is needed. `governance.rules_must_be_config_driven` binds every other rule: no operational or process rule may exist only in prose or in memory, without a `cfg_*` row as the evidence that it governs something.",
+        "heading": "Global rules",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1228}"
+      }
+    },
+    {
+      "op_id": "PROSE-41-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 41,
+      "record": {
+        "body": "The patch mechanism is live for `bible_research.db`: a JSON object with a `_patch_meta` header, an `operations` array of typed operations against named tables, and a `_patch_summary` footer. `scripts/apply_session_patch.py` is the applicator and is run as a dry run before every live application. The format reference is held in the archived instruction document `Workflow/Instructions/archive/wa-patch-instruction-v2_11-20260507.md`.\n\nThe operation type in use is `PROSE` (insert, supersede and set_status against `prose_section`), the mechanism by which every revision of the programme prose and the glossary is made; `Prose.ps1 -Step ApplyPatch` applies a reviewed patch in one transaction or not at all. `REPAIR` operations, for cascading resets, remain part of the format.\n\nPatches are authored, reviewed and applied in distinct steps: authored by Claude, reviewed by the researcher where review is warranted, and applied by the app. `_patch_meta.researcher_approval` tracks the approval state, pending until it is reviewed. No patch reaches `bible_research.db` without passing through this format and its dry-run gate.",
+        "heading": "Patches",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1230}"
+      }
+    },
+    {
+      "op_id": "PROSE-42-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 42,
+      "record": {
+        "body": "The directive mechanism is live for `bible_research.db`: a plain-language instruction with five required elements (a title and identifier, what is to be done and why, the operations asked for, the expected outcome, and the confirmation to be returned), used where a change cannot be captured as a declarative patch, most often schema preparation ahead of a patch that depends on it. The format reference is held in the archived instruction document `Workflow/Instructions/archive/wa-directive-instruction-v1_4-20260506.md`. The schema of `iba.db` changes through the app's own migration scripts under `iba/app/migration/`, each recorded in `BUILD.md` in the same unit of work (`governance.build_md_on_code_change`).\n\nDirectives and patches are equal peers within their shared scope: together they are the exhaustive set of ways `bible_research.db` changes, and a directive, like a patch, does not reach the database without review.",
+        "heading": "Directives",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1231}"
+      }
+    },
+    {
+      "op_id": "PROSE-43-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 43,
+      "record": {
+        "body": "The operational guidance for how Claude Code works is held in the application and its documents. `/start-project` and `Start-Iba.ps1` check the configuration, the data and the STEP connection, report how the last session ended, and print the general rules; the point-of-use rules deliver every other rule when an operation is first used; and `/session-close` checks and records the end of a session. `iba/app/USER-GUIDE.md` is the entry point for using each tool of the app, `iba/app/GOVERNANCE.md` explains how configuration governs the code, `iba/app/BUILD.md` records what changed and why and is read only to assess a past state, and `iba/app/CHARTER.md` states what the app is for. This chapter holds the patch and directive mechanisms and the prose-store operations of the `bible_research.db` side.\n\nThese do the work of a single operating guide. The rules are not held in a document that can lag: they are configuration rows that print at the start of a session and arrive at the point of use, and the documents point to them.",
+        "heading": "Claude Code operating guide",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1232}"
+      }
+    },
+    {
+      "op_id": "PROSE-44-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 44,
+      "record": {
+        "body": "`iba.db`'s `word_registry` is a deliberately thin table (the word, its source, its status and timestamps), described in Chapter 4. It is the entry point for onboarding a new word of the base data and has not needed a dedicated reference guide, because it does not carry the depth of state that would call for one. The scope of the study is held in the surface and collection tables, whose procedures are in the sections that follow and in `iba/app/USER-GUIDE.md`.\n\nThere is, at present, no registry-management guide. This is named as a gap and not papered over: if the registry accretes more fields as the method matures, a guide will need writing at that point.",
+        "heading": "Registry management guide",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1233}"
+      }
+    },
+    {
+      "op_id": "PROSE-54-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 54,
+      "record": {
+        "body": "The mechanism for getting Hebrew, Greek and Aramaic word data from STEP into a structured, addressable form is the base-data layer of `iba.db`, described in Chapter 4. The entry point for a new word is `iba\\app\\ps\\New-Word.ps1`, governed by `cfg_step` and `cfg_work_package`, and the mechanical reading of each verse is built by the lexical build of the app. The operational detail lives in the configuration the app reads at each step, per the mechanism Chapter 5 describes, and not in a written procedure a reader follows by hand.",
+        "heading": "Session A — extraction and the Phase 1 data layer",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1234}"
+      }
+    },
+    {
+      "op_id": "PROSE-55-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 55,
+      "record": {
+        "body": "The collection is read through the layered reading, run with `Collection-Build.ps1` (`LayerOpen`, `LayerPull`, `LayerRecord` and `LayerCheck`) over the steps and items of `cfg_setting layer.reading`. A step is opened only when the previous one is closed; the lexical analysis of the words (step S1) closes before the grouping of the surfaces is read, and the grouping is finished before the steps that follow. The rows each step demands are the ledger `collection_layer_item`, derived from the data, and each is answered by an observation with its nodes or by a recorded none with its reason. The stages and steps are described in Chapter 2, and the rules that govern them are configuration rows, delivered at the first use of the routine. The evidence on which a collection is read, its member occurrences, its sense and its pairings, is produced by the collection evidence report from the tables.",
+        "heading": "Verse Context",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1273}"
+      }
+    },
+    {
+      "op_id": "PROSE-47-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 47,
+      "record": {
+        "body": "The grouping of the surfaces of a collection is run with `Collection-Build.ps1`: `Index` fills the index of the member surfaces, `GroupPull` writes the working file with the evidence of each surface (its Strong's codes with their lexicon evidence, its occurrences and its link), `GroupRecord` validates the whole file and writes the groups and placements in one transaction with a scrutiny report for the researcher, and `Subgroup` makes the researcher's corrections, each with its reason. The method rules are in the configuration. The surfaces are first sorted and gathered into collections by the surface cycle of five modules (Chapter 4), whose map is generated into the configuration report. A change to the collections is made class by class, tried on a copy under a named snapshot, with the counts predicted and checked, and with every change kept in `surface_event`. The procedures are in `iba/app/USER-GUIDE.md` and the rules in `GOVERNANCE.md` and the configuration.",
+        "heading": "Dimension Review",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1274}"
+      }
+    },
+    {
+      "op_id": "PROSE-67-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 67,
+      "record": {
+        "body": "A step of the reading is made ready by its opening: `LayerOpen` refuses until the previous step is closed and the grouping is finished, and then derives from the data the rows the step demands. `LayerPull` writes the working file of the open rows, each with its evidence and an empty place to fill. The escalation table's `next_action` and `resolution_kind` mechanism (Chapter 5) covers the adjacent but distinct need of tracking an open item to closure.",
+        "heading": "Session B — Analysis Readiness",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1237}"
+      }
+    },
+    {
+      "op_id": "PROSE-68-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 68,
+      "record": {
+        "body": "The reading's output is the observation, written directly to the database and not assembled into a separate document. `LayerRecord` checks the whole file (a problem anywhere refuses all) and writes the observations, their nodes and the ledger answers in one transaction; `LayerCheck` validates each answered row against the tables and writes a versioned report naming the gates, what is open and what failed. Each observation states what the dictionary, the verses and the stored structure show (Chapter 2). The other capture mechanisms are those of the last section of Chapter 4: the `Prose.ps1` round trip for prose, and the `escalation` table for judgement calls.",
+        "heading": "Session B — Analysis Output",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1275}"
+      }
+    },
+    {
+      "op_id": "PROSE-50-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 50,
+      "record": {
+        "body": "The reader-facing output is the narrative of the inner being, held in the database as chapters and sections and built by collection (Chapter 4). Claims are told in it, each with its sources. The narrative is exported from the database, and the export is copied to the inbox of the researcher's publishing site by `Copy-NarrativeToLearning4Comfort.ps1`; there is no direct publishing to GitHub. External publication decisions are outside the programme's method. The cross-linking of the existing claims to the collections, and the update of the narrative to follow them, is part of the claim formulation of stage 5.",
+        "heading": "Session C",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1239}"
+      }
+    },
+    {
+      "op_id": "PROSE-51-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 51,
+      "record": {
+        "body": "Synthesis across collections, the relations between the words and concepts of the inner being as a whole, is found in the observations of the collections and in the claims formulated from them. The inner-being analysis made from the verse-lexical observations (stage 4) and the formulation of claims (stage 5) are still being defined; they are named here as deferred and not built. The study does not carry a separate synthesis process alongside them.",
+        "heading": "Session D",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1276}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 12,
+    "prose_section_supersedes": 12,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-6-v4-20261120.md"
+  }
+}

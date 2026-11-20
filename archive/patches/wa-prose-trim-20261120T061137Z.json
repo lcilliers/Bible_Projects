@@ -1,0 +1,41 @@
+{
+ "_patch_meta": {
+  "patch_id": "PATCH-20261120T061137Z-PROSE-TRIM",
+  "patch_type": "PROSE",
+  "produced_at": "20261120T061137Z",
+  "session_b_status": null,
+  "researcher_approval": "PENDING",
+  "description": "Remove retired-method sentences from two sections (#2510)."
+ },
+ "operations": [
+  {
+   "op_id": "PROSE-25-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 25,
+   "record": {
+    "body": "Inner-being vocabulary overlaps, and the architecture answers the question of overlap at the level of the surface and the collection. Each surface of the scope is a member of exactly one collection. A surface carries the collection of its own link where it has one, and otherwise the collection of its base: a derived form is a surface with a link of its own, so it is read by that link. A node carries the one collection of its surface by this rule.\n\nEvery table of the term layer is keyed on the Strong's code or the span, never on a registry row. A term's record accumulates at the Strong's-code level from the start, so there is no per-word copy of that record to reconcile across words that share a term. `word_strong` is a many-to-many link, because a Strong's code can be discovered through more than one English word, but this raises no question of ownership: the record a Strong's code accumulates does not live under any one word.\n\nAn English surface relates to the original text through its Strong's codes, and a surface that carries more than one sense in the verses is read by the code of each sense. `strong_related` is keyed on the exact lettered code. The base of a surface is an instrument for gathering like words into a collection and never the member of a collection itself.",
+    "heading": "Ownership and cross-registry references",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"retired-method sentence removed 2026-11-20 (#2510)\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-26-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 26,
+   "record": {
+    "body": "`iba.db`'s `verse` table carries the addressable identity of a verse: its `osisId`, its reference, and the full interlinear HTML of STEP kept verbatim so that `span` can be re-derived. Every verse of the Bible is held, and each has its mechanical reading in `verse_lexical` (the previous section).\n\nA verse is in the study's scope when it holds an occurrence of a member surface of a live collection. The entity and other surfaces of an in-scope verse are in scope as nodes of the observation that covers them; a verse that holds only entity or other surfaces is out of scope and is not touched. The scope is read from the tables: an analysis reads tables and never a working file.\n\nThe verse is the place where every observation is tied to the text. Each observation is applied to its verses, words and surfaces by nodes (the section on the node), and a reading of a verse begins with the verse itself, read in its passage with all the observations already recorded for it.",
+    "heading": "Verses and the context layer",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"retired-method sentence removed 2026-11-20 (#2510)\"}"
+   }
+  }
+ ],
+ "_patch_summary": {
+  "total_operations": 2
+ }
+}

@@ -1,0 +1,69 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261120T060610Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-20T06:06:10Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 4 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-3-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 3,
+      "record": {
+        "body": "The study's scope is the vocabulary of the English Standard Version (ESV) that describes the workings of the human inner being. Each English word or phrase of the ESV is a *surface*. A surface is first sorted, by what it names, into one of four *surface groups*: behaviour, inner_being_state, entity or other. The surfaces of the groups behaviour and inner_being_state that occur in a verse are the study's scope, and each of them belongs to exactly one *collection*. A word that is neither a behaviour nor an inner-being state is not a surface of a collection; the entity and other surfaces enter the study only as the words that stand with a collection's surfaces in its verses.\n\nA collection gathers surfaces of like meaning, whether synonyms, opposites or associated words, together with the derived forms and phrases that carry the same concept, and is named for the concept its members share. A verse is in scope when it holds an occurrence of a member surface of a collection. Each surface is linked to the Hebrew and Greek words (Strong's codes) behind it, so that the English the reader holds is read against the original text it translates.\n\nScope is settled from evidence. A change to a collection is made class by class, on a copy, with its effect predicted and checked, and every change is kept with its reason. A word found wrongly placed is moved and the move is processed, so that the completeness checks of the study continue to hold.",
+        "heading": "Scope",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 93}"
+      }
+    },
+    {
+      "op_id": "PROSE-4-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 4,
+      "record": {
+        "body": "The programme is the direct continuation of the work the two Frameworks began. Its intellectual frame is Framework B's; its scale and discipline are new. The earlier work was comprehensive and synthetic; this programme is corpus-level and analytical, and it is built from the bottom up on the evidence of the biblical text.\n\nThe unit of study is the *collection*. Each collection is taken through the whole path: the lexical analysis of its words, the grouping of its surfaces, the verse-lexical observations, the inner-being analysis made from those observations, and the formulation of claims. What the study finds for a collection becomes a chapter of the narrative that carries the account to its readers. Chapter 2 describes the stages.\n\nThe programme has one working agent, Claude, directed by the researcher. Claude reads the evidence and, in most cases, decides what it settles; the researcher scrutinises that judgement and settles what the evidence cannot. Every interpretation is backed by evidence that can be traced to its verses and sources. A model on a local server is used as a controlled tool for judging words, and everything it gives is inferential until the researcher confirms it.\n\nThe whole programme is controlled by the IBA application. Every operation is a registered step, every rule is a configuration row, and every change keeps its state before and after. The project lives in its databases: the observations, claims and narrative held there are the project's results, and files are working documents or exports.\n\nThe programme's outputs have three levels. Observations tie what the text shows to its verses, words and surfaces. Claims are statements that go beyond the bare text, each held with its sources. The narrative is the programme-wide account of the human inner being as Scripture reveals it, assembled from the claims. The present prose is part of that account: the self-description that makes the programme readable as a whole.",
+        "heading": "This Inner-Being Programme",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 94}"
+      }
+    },
+    {
+      "op_id": "PROSE-6-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 6,
+      "record": {
+        "body": "The subject this programme investigates — the human inner being — is not studied only by Scripture. Neuroscience, psychology, physiology, behavioural science, and other empirical fields examine the same territory from a different direction. The programme holds both accounts open, not by accident and not as a concession, but as a deliberate methodological stance: Scripture and science together provide a fuller picture of the human person than either one produces on its own.\n\nThe two accounts are not of equal weight in this programme. Scripture is the primary lens; science is the second lens. Framework B is biblical research — its primary data is the biblical text, its primary method is lexical and contextual analysis, its conclusions are grounded in and accountable to what Scripture says. The scientific literature is engaged to illuminate, ground, and sometimes challenge the biblical account, not to generate an independent parallel dataset of equal authority. The distinction matters because a co-equal scientific programme would require a second corpus-level effort as large as the biblical one; a second-lens engagement requires disciplined, targeted use of what science has already established.\n\nEach lens provides what the other cannot. Scripture carries the theological frame that science has no instrument for: the human being created by God, bearing the divine image, corrupted by sin, being renewed by the Spirit. Scripture names the divine dimension — God as active agent within the inner life, who causes, sustains, judges, and transforms inner states. Scripture speaks of realities that empirical observation cannot reach: conscience, worship, the fear of the Lord, the operations of the Spirit, spiritual oppression and freedom. Science, for its part, provides empirical grounding — the observable expressions, biological substrates, and measurable patterns of inner life. Science describes how inner states are implemented in the body: the neurochemistry of fear, the physiology of grief, the neural correlates of shame, the brain-body systems through which cognition and emotion operate. Science offers phenomenological depth on what inner states feel like, how they develop, and what conditions produce or diminish them. And science provides a contemporary bridge: the programme's findings need to be readable by people living now, and scientific grounding gives them traction in present conversation.\n\nWhere the two accounts converge, the convergence is significant — two very different instruments pointing at the same reality. Where they diverge, the divergence is equally significant and is named rather than papered over. The programme identifies three kinds of convergence — phenomenological (the same experience described from different angles), mechanistic (science describing the how of what Scripture describes as a reality), and structural (the architecture of the inner life having the same shape in both accounts). It identifies three kinds of divergence — register divergence (the accounts addressing different levels of the same reality and only appearing to conflict), reductive divergence (a scientific account that loses dimensions the biblical account treats as primary), and genuine divergence (claims in actual tension that cannot be harmonised by reframing). The discipline is honest engagement, not forced harmonisation.\n\nThree principles govern the interaction of the two lenses. Scripture is not subordinate to science, and science is not subordinate to Scripture; they are different instruments addressing different aspects of the same reality, and neither should be forced into the other's register. The scientific account addresses the creaturely dimension of the inner being — what can be observed, measured, described from outside — while the biblical account addresses the full dimension, including the theological and spiritual realities that are invisible to empirical observation. The goal is not harmonisation but honest engagement: where science says something the biblical account does not address, the observation is noted; where science says something that appears to contradict the biblical account, the apparent contradiction is examined carefully rather than quickly resolved in either direction.\n\nIn the programme's method the science reading is part of the claims reading. It is engaged after the biblical reading of a collection is complete, as the second lens, and not as a separate pass or in parallel with the biblical reading (Chapter 2).",
+        "heading": "Science and the Bible",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 96}"
+      }
+    },
+    {
+      "op_id": "PROSE-7-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 7,
+      "record": {
+        "body": "Success for this programme has a definite shape. For a collection, it is a completed reading: every word of the collection read in its verses, its surfaces grouped by meaning, what the other words of each verse show with each group recorded, the inner-being analysis made from those observations, and the claims formulated with their sources. A reader of the chapter that results gains a considered account of that part of the inner being, grounded in the evidence and open about what remains uncertain.\n\nFor the corpus, success is the accumulation of these readings across the collections, so that the inner-being vocabulary of the ESV is covered and the relations between collections become visible: the words that stand together, the collections that overlap or oppose, the places where one concept splits into two that had been conflated. These relations are found in the observations; they are not added on top of them.\n\nFor the programme as a whole, success is a sustained and defensible account of the human inner being as Scripture reveals it, assembled from the bottom up on the evidence of the biblical text and in honest engagement with what contemporary science observes of the same territory. It is not the final word on any of its subjects; it is a careful description, accountable to the evidence it rests on, open about its boundary cases, and structured so that later work can extend or correct it from the same base.\n\nThe programme's audience is not primarily academic, though the work should be defensible in an academic setting. The intended readers are people who care about the subject: teachers, practitioners and thoughtful readers who want a careful treatment of Scripture's vocabulary of the inner life. The work is theologically serious without being technical for its own sake, empirically grounded without being reductively scientific, and structured to be navigated as well as read through.\n\nThe programme is a success if three things are true of its completed output. First, the account is demonstrably grounded in the evidence: every substantive claim traces back to the verses, words and observations that produced it. Second, the account is open where the evidence is open: unresolved questions are named as unresolved and inferences are labelled as inferences. Third, the account is useful: it changes how a reader thinks about the subject and equips them to read Scripture's inner-being texts with sharper attention.",
+        "heading": "Expected Outcome",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 97}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 4,
+    "prose_section_supersedes": 4,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-1-v1-20261120.md"
+  }
+}

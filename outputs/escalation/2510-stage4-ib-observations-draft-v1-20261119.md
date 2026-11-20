@@ -1,6 +1,6 @@
 # #2510 Stage 4, the inner-being observations: a draft built from today's analysis (draft v1, 2026-11-19)
 
-Status: DRAFT by Claude, a proposal for the researcher's decision (B:105). Stage 4 is "not yet built" (B:132); this draft is not a build and changes nothing. It rests on the lineage analysis (`outputs/escalation/2510-inner-being-definition-lineage-v1-20261119.md`), the working analysis (`outputs/escalation/2510-inner-being-working-v3-20261119.md`) and the researcher's placement of 2026-11-19 (#2510 v15): how the inner being must be read is settled at stage 4; the open questions about the working's structure are answered in the claims, from what stage 4 records. Inference is labelled (B:4). Companion: `outputs/escalation/2510-stage3-verse-lexical-observations-draft-v1-20261119.md`.
+Status: DRAFT by Claude, a proposal for the researcher's decision (B:105). Stage 4 is "not yet built" (B:132); this draft is not a build and changes nothing. It rests on the lineage analysis (`outputs/escalation/2510-inner-being-definition-lineage-v1-20261119.md`), the working analysis (`outputs/escalation/2510-inner-being-working-v3-20261119.md`) and the researcher's placement of 2026-11-19 (#2510 v15): how the inner being must be read is settled at stage 4; the open questions about the working's structure are answered in the claims, from what stage 4 records. Inference is labelled (B:4). Companion: `outputs/escalation/2510-stage3-verse-lexical-observations-draft-v3-20261120.md`.
 
 ## 1. What stage 4 is for
 

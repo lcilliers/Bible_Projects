@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-19T17:39:17Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-20T06:13:33Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `64d74a34-a1bd-46b4-8c83-95bcb0333189` (CLAUDE_CODE_SESSION_ID); started 2026-11-19T05:00:02Z; window base commit `26330e6ca7892e4430810da3b9e1668b78341dc5`
-- compliance file: `Logs/compliance/COMPLIANCE-20261119-64d74a34.md`; session log: `Logs/SESSION-LOG-20261119-project-map-learning-history-and-inner-being-definition.md`
-- **open findings: 0**; cleared by disposition: 7
+- session: `034d191d-65eb-4489-b8f0-6de0a86bf7d3` (CLAUDE_CODE_SESSION_ID); started 2026-11-19T17:40:53Z; window base commit `cf39393f0567f45b284c2cf6cafffe277d3e3e4f`
+- compliance file: `Logs/compliance/COMPLIANCE-20261119-034d191d.md`; session log: `Logs/SESSION-LOG-20261120-2510-programme-prose-and-open-questions.md`
+- **open findings: 0**; cleared by disposition: 1
 
 
 ## Contents
@@ -41,22 +41,12 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:915416fe`: researcher message 2026-11-19T05:00 is too short to be matched; name where it is recorded: "project-start" -- disposition: no record needed: the start command, no content
-- cleared `SC3:802ac5e9`: researcher message 2026-11-19T08:57 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: no record needed: the harness context summary, not the researchers words
+- cleared `SC3:b0d41770`: researcher message 2026-11-19T17:40 is too short to be matched; name where it is recorded: "proeject-start" -- disposition: no record needed: a mistyped start command (proeject-start) that began the start routine; recorded in the compliance file of this session
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:6548c16d`: researcher message 2026-11-19T05:43 holds, defers or asks to check something; name its register item: "comments on v1.  §1 - Add that the project entirely lives in the databases, any documents or files is working documents and supplementary. Only results in the d" -- disposition: in register #2510
-- cleared `SC4b:4ed39acb`: researcher message 2026-11-19T06:53 holds, defers or asks to check something; name its register item: "I was hoping that you will critically evaluate what I have written, and not just repeat it. I also hoped that by doing the 1), you will relook at the history an" -- disposition: in register #2510
-- cleared `SC4b:7738c88c`: researcher message 2026-11-19T07:58 holds, defers or asks to check something; name its register item: "your analysis is partly correct.  the recent surface group work intended to resolve some of the points raised. however, my intent did not ground fully.  More im" -- disposition: in register #2510
-- cleared `SC4b:802ac5e9`: researcher message 2026-11-19T08:57 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: not held: the harness context summary, not the researchers words
+_no finding_
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -93,4 +83,4 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 3 times this session: 1; error: an update carrying comment/context/tried cannot leave the item at state='raised' -- move it off raised first (e.g; escalation #2510 v3 -> state='in-progress', next_action='review', assigned_to='Claude' -- disposition: fixed: the item was moved off raised with -State in-progress (#2510 v3); every later update passed
+_no finding_

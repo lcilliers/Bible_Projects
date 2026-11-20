@@ -1,0 +1,28 @@
+{
+ "_patch_meta": {
+  "patch_id": "PATCH-20261120T061110Z-PROSE-PREAMBLE",
+  "patch_type": "PROSE",
+  "produced_at": "20261120T061110Z",
+  "session_b_status": null,
+  "researcher_approval": "PENDING",
+  "description": "Supersede the programme preamble to the project as built (#2510)."
+ },
+ "operations": [
+  {
+   "op_id": "PROSE-15-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 15,
+   "record": {
+    "body": "The programme prose describes the research programme: what it is, how it fits together, and how it operates. It is the programme's narrative description and the authoritative record of the programme, written to stand on its own: a reader encountering the work for the first time can use it to understand what the programme is, what it produces, and the disciplines by which it operates.\n\nThe prose is not the place for instructions on how to perform specific tasks. Procedural content, such as how a step is run, the format of a patch, or the checks a step must pass, lives in the application's configuration, `iba/app/USER-GUIDE.md` and `iba/app/GOVERNANCE.md`. The prose describes the programme; the application directs the work.\n\nThe corpus covers six areas. **Area 1** is the programme's purpose: the governing question, how the inner being is defined, where this study sits within the researcher's wider work, what a successful outcome looks like, the framework of enquiry that records each finding as an observation, and the relationship between Scripture and contemporary science as the two lenses through which the inner being is studied. **Area 2** is the research method: the five parts from the text and its data, through the vocabulary, the reading and the account, to publishing; the collection as the unit of study; the stages of the analysis; the role of science in the claims reading; the principles that govern every stage; and the constraints the programme deliberately accepts. **Area 3** is the disciplines, tools and evidential principles by which the programme operates: how findings are distinguished from hypotheses, how the researcher's authority and Claude's interpretation of the evidence divide, how continuity is kept across sessions, and how scope integrity is held. **Area 4** describes the data architecture: the two databases, the base data, the surfaces and collections, the node and the observation tables, the claims and the narrative, and the prose store. **Area 5** covers the governance that keeps the data correct over time: validation, the soft-delete discipline, consistency with sources, backup and schema discipline, failure protocols, the route by which a rule changes, and the alignment of documents with the configuration. **Area 6** describes the instruction corpus: where the rules live and how patches, directives, the operating guidance and the procedures of each part of the study are held.\n\nIndividual prose records within each area describe specific components in enough detail that a reader can understand the component without leaving the corpus. Where a record points outward to a rule, a document or a table, the pointer serves the reader reaching the binding source.\n\n**On style.** The programme's prose is direct and factual. Every sentence is either a statement about the programme or carries information the reader needs. The prose avoids framing that introduces rather than states, motive attribution, rhetorical closings, and metaphors layered on facts. Where the researcher has articulated a principle in their own words, those words are used. Factual claims are traceable to their sources: the database, the configuration and the written record. A count is not written into the prose, because it goes stale; the prose points to the report that holds it. This style carries forward through every section of the corpus and is the reference register for all future prose additions and revisions.",
+    "heading": "Programme Preamble",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"rewritten 2026-11-20 (#2510)\"}"
+   }
+  }
+ ],
+ "_patch_summary": {
+  "total_operations": 1
+ }
+}

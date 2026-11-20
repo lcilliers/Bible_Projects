@@ -1,0 +1,33 @@
+{
+ "_patch_meta": {
+  "patch_id": "GLOSSARY-2510-20261120",
+  "author": "claude_code",
+  "purpose": "glossary: claim and engagement (B:126; escalation #2510)"
+ },
+ "operations": [
+  {
+   "op_id": "G01",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "claim",
+    "status": "draft",
+    "author": "claude_code",
+    "body": "[DEFINITION] A statement derived from sources (the verses and, in the claims reading, the science reading) that goes beyond their mere text, held in its own plain wording. A quotation is not a claim. Each claim has its sources and a verdict against the wording of the original essay (stands, restated, widened, corrected or new), and is told in the narrative in full, in part or by pointer.\n\n[BACKGROUND] Held in narrative_claim, narrative_claim_source and narrative_claim_telling. Claims are formulated from the observations in stage 5 of the reading of a collection, which is not yet decided; the existing claims come from an earlier method and are not yet cross-linked to the collections."
+   }
+  },
+  {
+   "op_id": "G02",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "engagement",
+    "status": "draft",
+    "author": "claude_code",
+    "body": "[DEFINITION] A preparatory step inside the path of a collection, run with Engagement.ps1 before the collection is read. It is not the result of the study.\n\n[BACKGROUND] Behaviour rule 127 (the unit of study is the collection) names it as preparatory. Some surface judgements in surface_term carry the judge rule:engagement."
+   }
+  }
+ ]
+}
