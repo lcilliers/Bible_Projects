@@ -30,4 +30,4 @@ For the researcher, to be woven into stages 3 and 4: the 27 questions of `output
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. First commit: 263adf26 `session 20261120: #2510 programme prose rewritten to the project as built ...` (41 files changed). Push output: `cf39393f..263adf26  main -> main` to https://github.com/lcilliers/Bible_Projects.git. `database/bible_research.db` and `backups/` are git-ignored and were not committed.
