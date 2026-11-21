@@ -43,7 +43,8 @@ def main(db, scratch):
     # ── configuration and the boundary of the stages
     case("B1", "no item of the lexical stages takes an inner-being node role, a route or an inner-being kind, and none asks about the inner being",
          all(v.get("member_role") == "lexical" and v.get("partner_role", "lexical") == "lexical" and not v.get("route") and v["kind"] not in ("party", "qualification", "statement", "silence", "use")
-             and "inner being" not in v["asks"].lower() and "inner-being" not in v["asks"].lower() for v in s["items"].values()), {k: (v["kind"], v["member_role"]) for k, v in s["items"].items()})
+             and "inner being" not in v["asks"].lower() and "inner-being" not in v["asks"].lower() for k, v in s["items"].items() if k not in {i for st in s["steps"] if st["layer"] >= 3 for i in st["items"]}),
+         {k: (v["kind"], v.get("member_role")) for k, v in s["items"].items()})    # the items of stage 4 (steps of layer 3, #2528) are the inner-being analysis and are outside this boundary
     case("B2", "the boundary check of the alignment check finds nothing on the live configuration", [e for e in la.find(conn, ROOT) if "layer.reading" in e] == [], [e for e in la.find(conn, ROOT) if "layer.reading" in e])
     case("B3", "the steps, grants, settings and four method rules of the grouping are registered",
          one("SELECT count(*) FROM cfg_step WHERE step IN ('collection.group_pull','collection.group_record') AND inactive=0") == 2
@@ -58,11 +59,18 @@ def main(db, scratch):
     # ── pull
     path, n = cg.pull(conn, cfg, name, pathlib.Path(scratch))
     d = json.loads(path.read_text(encoding="utf-8"))
-    case("P1", "the working file has a row for each live index row, each with the dictionary evidence of its codes and no verse",
-         n == len(rows0) == len(d["rows"]) and all(r["codes"] and all("sense_head" in c and "occurrences" in c for c in r["codes"].values()) for r in d["rows"])
-         and not any("verse" in json.dumps(r["codes"]) for r in d["rows"]), f"{n} rows")
-    multi = [r for r in d["rows"] if "by_code" in r["fill"]]
-    case("P2", "a surface that carries several codes has a by_code fill; the others do not", all(len(r["codes"]) > 1 for r in multi) and all(("by_code" in r["fill"]) == (len(r["codes"]) > 1 and not r["strong"]) for r in d["rows"]), f"{len(multi)} with several codes")
+    case("P1", "the working file has one row for each surface of the index, each with its codes (count and dictionary sense as a pointer) and a spread of its verses with the text (#2526)",
+         n == len(rows0) == len(d["rows"]) and len({r["surface"] for r in d["rows"]}) == n
+         and all(r["codes"] and all(("sense_head" in c and "occurrences" in c) or "more_codes" in c for c in r["codes"]) and r["verses"] and all(v["text"] and v["reference"] for v in r["verses"]) for r in d["rows"]), f"{n} rows")
+    case("P2", "no row is split by code and none has a by_code fill", all(not r.get("strong") and "by_code" not in r["fill"] for r in d["rows"]), "")
+    gs_ = cg.settings(cfg)
+    one_surf = max(d["rows"], key=lambda r: r["codes_total"])
+    case("P3", "the verses of a row are at most sample_verses, each from a code of the surface, and every code shown is counted from verse_lexical",
+         all(len(r["verses"]) <= gs_["sample_verses"] for r in d["rows"]) and all(len([c for c in r["codes"] if "strong" in c]) <= gs_["max_codes_shown"] for r in d["rows"])
+         and all(sum(c["occurrences"] for c in r["codes"]) == r["occurrences"] == one("SELECT count(*) FROM verse_lexical WHERE deleted=0 AND strong IS NOT NULL AND lower(trim(surface))=?", r["surface"].strip().lower()) for r in d["rows"]),
+         one_surf["surface"])
+    multi = [r for r in d["rows"] if r["codes_total"] > 1]
+    case("P4", "the family of each surface is shown with the others of its family in the collection", all("family" in r and "family_in_collection" in r for r in d["rows"]), f"{len(multi)} surfaces with several codes")
     # ── refusals (each leaves nothing written)
     before = (one("SELECT count(*) FROM collection_subgroup"), one("SELECT count(*) FROM collection_subgroup_surface WHERE state!='unplaced' AND deleted=0"))
     DEF = "the surfaces of this group mean a falling away from what was held, as the dictionary gives their meaning (test of #2509)"
@@ -72,8 +80,6 @@ def main(db, scratch):
         f["groups"] = groups
         for i, r in enumerate(f["rows"]):
             r["fill"] = {"group": rows_to_group(i, r), "reason": "", "certainty": "decided", "uncertain": ""}
-            if "by_code" in r["fill"] or len(r["codes"]) > 1 and not r["strong"]:
-                pass
         return f
     g1 = {"name": "falling away", "definition": DEF}
     ok_file = filled(lambda i, r: "falling away", [g1])
@@ -98,15 +104,19 @@ def main(db, scratch):
     case("R5", "a surface set aside with no reason is refused", "reason in words" in (refuses(cg.record, conn, cfg, RUN, bad, True) or ""), "")
     bad = json.loads(json.dumps(ok_file))
     bad["rows"][0]["fill"]["certainty"] = "uncertain"
-    case("R6", "an uncertain placement that says nothing of what is unsettled is refused", "what the dictionary leaves open" in (refuses(cg.record, conn, cfg, RUN, bad, True) or ""), "")
+    case("R6", "an uncertain placement that says nothing of what is unsettled is refused", "what is left open" in (refuses(cg.record, conn, cfg, RUN, bad, True) or ""), "")
     bad = json.loads(json.dumps(ok_file))
     bad["rows"].append(bad["rows"][0])
     case("R7", "a row answered twice is refused", "answered twice" in (refuses(cg.record, conn, cfg, RUN, bad, True) or ""), "")
-    if multi:
-        bad = json.loads(json.dumps(ok_file))
-        tgt = [r for r in bad["rows"] if r["surface"] == multi[0]["surface"] and not r["strong"]][0]
-        tgt["fill"] = {"group": "", "reason": "", "certainty": "decided", "uncertain": "", "by_code": {list(multi[0]["codes"])[0]: {"group": "falling away", "reason": ""}}}
-        case("R8", "a surface answered by code must answer every one of its codes", "every code" in (refuses(cg.record, conn, cfg, RUN, bad, True) or ""), "")
+    bad = json.loads(json.dumps(ok_file))
+    bad["rows"][0]["fill"]["by_code"] = {"H0001": {"group": "falling away", "reason": ""}}
+    case("R8", "an answer by Strong's code is refused: a surface is placed whole", "by code" in (refuses(cg.record, conn, cfg, RUN, bad, True) or ""), "")
+    bad = json.loads(json.dumps(ok_file))
+    bad["rows"][0]["strong"] = "H0001"
+    case("R8b", "a row that names a Strong's code is refused", "never by Strong" in (refuses(cg.record, conn, cfg, RUN, bad, True) or ""), "")
+    bad = json.loads(json.dumps(ok_file))
+    bad["rows"][0]["surface"] = "no such surface"
+    case("R8c", "a row for a surface that is not in the index is refused", "not a surface of the index" in (refuses(cg.record, conn, cfg, RUN, bad, True) or ""), "")
     after = (one("SELECT count(*) FROM collection_subgroup"), one("SELECT count(*) FROM collection_subgroup_surface WHERE state!='unplaced' AND deleted=0"))
     case("R9", "none of the refused files wrote anything", before == after, (before, after))
     # ── preview, then record
@@ -120,7 +130,7 @@ def main(db, scratch):
          res["groups_made"] == 1 and st.get("placed") == len(rows0) - 1 and st.get("isolated") == 1 and "unplaced" not in st
          and one("SELECT note FROM collection_subgroup WHERE collection_id=? AND deleted=0", cid).startswith(DEF), (res, st))
     ev = one("SELECT count(*) FROM surface_event WHERE run_id=? AND event_type LIKE 'subgroup_%'", RUN) if conn.execute("SELECT 1 FROM pragma_table_info('surface_event') WHERE name='event_type'").fetchone() else None
-    case("W2", "every change is a surface_event with the reason of the dictionary judgement", conn.execute("SELECT count(*) FROM surface_event WHERE run_id=? AND reason LIKE '%dictionary%'", (RUN,)).fetchone()[0] >= 1 if conn.execute("SELECT 1 FROM pragma_table_info('surface_event') WHERE name='reason'").fetchone() else True, ev)
+    case("W2", "every change is a surface_event with the reason of the judgement by meaning", conn.execute("SELECT count(*) FROM surface_event WHERE run_id=? AND reason LIKE '%meaning%'", (RUN,)).fetchone()[0] >= 1 if conn.execute("SELECT 1 FROM pragma_table_info('surface_event') WHERE name='reason'").fetchone() else True, ev)
     found = {f["key"]: f for f in ci.check(conn, cfg)}
     case("W3", "the index check finds no placement that disagrees", found["placement-does-not-agree"]["rows"] == [], found["placement-does-not-agree"]["rows"])
     case("W4", "the grouping gate of step 1.1 sees the surfaces placed or set aside and no empty group",

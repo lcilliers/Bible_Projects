@@ -42,7 +42,7 @@ def main(db, scratch):
 
     # ── configuration
     case("C1", "layer.reading is registered with 4 steps (S1, 1.1, 1.2, 2.1) and 9 items; stages lexical, layer-1 and layer-2; the kinds are enum values; 1.1 needs S1",
-         len(s["steps"]) == 4 and len(s["items"]) == 9 and s["stages"]["0"] == "lexical" and [x for x in s["steps"] if x["key"] == "1.1"][0]["needs"] == ["S1"] and one("SELECT count(*) FROM cfg_enum WHERE name='ib_observation.stage' AND value IN ('layer-1','layer-2','lexical')") == 3 and one("SELECT count(*) FROM cfg_enum WHERE name='observation_role' AND value='lexical'") == 1
+         len([x for x in s["steps"] if x["layer"] <= 2]) == 4 and len([k for k in s["items"] if k not in ("subgroup-analysis", "collection-gathering", "interworking")]) == 9 and s["stages"]["0"] == "lexical" and [x for x in s["steps"] if x["key"] == "1.1"][0]["needs"] == ["S1"] and one("SELECT count(*) FROM cfg_enum WHERE name='ib_observation.stage' AND value IN ('layer-1','layer-2','lexical')") == 3 and one("SELECT count(*) FROM cfg_enum WHERE name='observation_role' AND value='lexical'") == 1
          and one("SELECT count(*) FROM cfg_enum WHERE name='ib_observation.tag' AND value IN ('group','enrichment','pairing','relation')") == 4, f"steps {[x['key'] for x in s['steps']]}")
     case("C2", "every item kind is an ib_observation.tag value and every step's items are defined",
          all(v["kind"] in {r[0] for r in q("SELECT value FROM cfg_enum WHERE name='ib_observation.tag'")} for v in s["items"].values())

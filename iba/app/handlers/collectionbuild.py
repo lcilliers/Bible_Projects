@@ -428,7 +428,7 @@ def node_groups(ctx: Ctx) -> Outcome:
 
 
 def group_pull(ctx: Ctx) -> Outcome:
-    """Write the working file for the grouping of a collection's surfaces by their dictionary meaning (stage 2, #2509): one row for each row of the index with the dictionary evidence."""
+    """Write the working file for the grouping of a collection's surfaces by their meaning in context (stage 2, #2509, #2526): one row for each surface, with its verses, codes and stage 1 results."""
     from ..lib import collectiongroup as cg
     conn = ctx.cfg.conn
     coll = str(ctx.params.get("Collection", "")).strip()
@@ -439,7 +439,7 @@ def group_pull(ctx: Ctx) -> Outcome:
         path, n = cg.pull(conn, ctx.cfg, coll, pathlib.Path(root))
     except (cg.GroupError, ValueError) as exc:
         return fail("refused", str(exc))
-    return ok(f"working file with {n} rows: {path.as_posix()}. Judge each surface from the dictionary evidence: the group of its meaning, or set_aside with the reason; list the groups with the meaning each holds; then "
+    return ok(f"working file with {n} rows (one for each surface): {path.as_posix()}. Judge each surface from its meaning in context (its verses, its codes, stage 1 where recorded): the subgroup of its meaning, placed whole, or set_aside with the reason where it is plainly not a member; list the subgroups with the meaning each holds; then "
               f"Collection-Build.ps1 -Action GroupRecord -File <file> -Check", rows=n)
 
 

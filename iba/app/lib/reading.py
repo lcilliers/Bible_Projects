@@ -44,6 +44,7 @@ from . import strandreading as sr
 from . import versecollate as vc
 from . import versemeta
 from . import versescope as vs
+from .verseevidence import meaning as _meaning, passage as _passage
 from .db import Db
 
 Refused = nr.Refused
@@ -273,51 +274,6 @@ def open_(cfg, w: nr.Writer, p: dict, run_id: str, root: pathlib.Path, file_requ
 
 
 # ── the sheet of one verse: read from the tables when the verse is worked ─────────────────────────
-def _meaning(cfg, conn, testament_of: dict) -> dict:
-    """{code: what the tables hold of its meaning} for the codes of the verses in hand (cfg_setting reading.sheet_meaning, #2329): the
-    meaning tree rows, the sense head, the STEP gloss, the related words and, for the testaments named, the lexicon. By the exact code
-    (a suffixed code is never read as its base), one set-based query per table (B:71). A source with nothing held reads as empty, so the
-    reading names the gap and does not fill it from memory."""
-    want = _setting(cfg, "reading.sheet_meaning")
-    SJ = json.dumps(sorted(testament_of))
-    out = {s: {} for s in testament_of}
-    if want.get("tree"):
-        for s in out:
-            out[s]["tree"] = []
-        for s, code, text in conn.execute("SELECT strong_variant, sense_code, sense_text FROM strong_meaning_tree WHERE deleted=0 AND "
-                                          "strong_variant IN (SELECT value FROM json_each(?)) ORDER BY strong_variant, sort, id", (SJ,)):
-            out[s]["tree"].append({"sense_code": code, "text": text})
-    if want.get("sense"):
-        for s in out:
-            out[s]["sense"] = None
-        for s, head in conn.execute("SELECT strong, head FROM strong_sense WHERE deleted=0 AND strong IN (SELECT value FROM json_each(?))",
-                                    (SJ,)):
-            out[s]["sense"] = head
-    if want.get("step_gloss"):
-        for s in out:
-            out[s]["step_gloss"] = None
-        for s, gloss in conn.execute("SELECT strongNumber, stepGloss FROM strong WHERE strongNumber IN (SELECT value FROM json_each(?))",
-                                     (SJ,)):
-            out[s]["step_gloss"] = gloss
-    if want.get("related"):
-        for s in out:
-            out[s]["related"] = []
-        for s, rs, form, tr, gloss in conn.execute(
-                "SELECT strong, related_strong, related_form, related_transliteration, related_gloss FROM strong_related WHERE deleted=0 "
-                "AND strong IN (SELECT value FROM json_each(?)) ORDER BY strong, id", (SJ,)):
-            out[s]["related"].append({"strong": rs, "form": form, "transliteration": tr, "gloss": gloss})
-    lex = want.get("lexicon")
-    if lex:
-        cols = lex["columns"]
-        pick = [s for s, t in testament_of.items() if t in lex["testaments"]]
-        for s in pick:
-            out[s]["lexicon"] = {}
-        for row in conn.execute(f"SELECT strong, {', '.join(cols)} FROM strong_lexicon WHERE deleted=0 AND strong IN "
-                                "(SELECT value FROM json_each(?))", (json.dumps(pick),)):
-            out[row[0]]["lexicon"] = dict(zip(cols, row[1:]))
-    return out
-
-
 def _sheets(cfg, conn, items: list[dict]) -> dict:
     """{verse_id: sheet} for the verses in hand, with set-based queries over the batch (B:71)."""
     loop = _setting_loop(cfg)
@@ -1007,14 +963,6 @@ class _ReadingItems:
 def _grant_findings(w: nr.Writer) -> None:
     for t in ("ib_observation", "ib_node", "ib_observation_change"):
         w._grant(t)
-
-
-def _passage(conn, osis: str, window: int = 2) -> list[dict]:
-    book, ch, v = osis.split(".")
-    want = [f"{book}.{ch}.{n}" for n in range(max(1, int(v) - window), int(v) + window + 1)]
-    rows = {r[0]: r for r in conn.execute("SELECT osisId, reference, text FROM verse WHERE deleted=0 AND osisId IN "
-                                          f"({','.join('?' * len(want))})", want)}
-    return [{"verse": rows[o][1], "text": rows[o][2]} for o in want if o in rows]
 
 
 def _item_exists(conn, ref: str) -> bool:

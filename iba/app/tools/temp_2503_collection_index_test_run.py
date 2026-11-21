@@ -45,6 +45,14 @@ RUN = "TEST-2503"
 tiers = list(cfg.setting("collection.member_tiers"))
 inq = ",".join("?" * len(tiers))
 
+# Clean start on the copy (#2528 B4, F6): the cases place surfaces of the collection thought, so they must not depend on whatever grouping the live data holds. The copy's
+# thought grouping is cleared as the live one was (retire its subgroups and index rows; the fill below makes the whole-surface unplaced rows); nothing is written to the live database.
+_cid = q("SELECT id FROM collection WHERE name='thought' AND deleted=0")[0][0]
+conn.execute("UPDATE collection_subgroup SET deleted=1, status='retired' WHERE collection_id=? AND deleted=0", (_cid,))
+conn.execute("UPDATE collection_subgroup_surface SET deleted=1 WHERE collection_id=? AND deleted=0", (_cid,))
+conn.execute("UPDATE ib_node SET subgroup_id=NULL WHERE collection_id=? AND subgroup_id IS NOT NULL", (_cid,))
+conn.commit()
+
 # I1 registration
 tabs = {r[0] for r in q("SELECT name FROM sqlite_master WHERE type='table'")}
 reg = q("SELECT count(*) FROM cfg_table WHERE database='iba' AND name IN ('collection_subgroup','collection_subgroup_surface')")[0][0]

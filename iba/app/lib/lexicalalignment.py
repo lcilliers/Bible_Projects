@@ -4,7 +4,8 @@ A name the study has retired (a step, a script, a generator, a table) must not b
   1. active config rows (steps, utilities, settings, method rules, behaviour rules) that name a retired entry and say nothing of its retirement;
   2. lines of the guidance documents (USER-GUIDE.md, GOVERNANCE.md, CHARTER.md) that name a retired entry and say nothing of its retirement;
   3. a live module (lib, handlers, ps, tools; archive folders excluded) that imports or runs a retired module or script;
-  4. the items of cfg_setting layer.reading: no inner-being role, route, kind or question (the boundary of stages 1 to 3, #2509); each has an `asks`, and each prompt it names is an active catalogue question.
+  4. the items of cfg_setting layer.reading: the items of stages 1 to 3 (steps of layers 0 to 2) carry no inner-being role, route, kind or question (the boundary of stages 1 to 3, #2509); each item
+     has an `asks`, and each prompt it names is an active catalogue question; the items of stage 4 (steps of layer 3, #2528) name the observation items they use, none of them the meaning.
 The retired names are cfg_setting alignment.retired_lexical; nothing here is a list in code. Read-only; returns hard errors for configmaint.validate.
 """
 from __future__ import annotations
@@ -86,7 +87,11 @@ def find(conn: sqlite3.Connection, project_root: pathlib.Path) -> list[str]:
         inner_kinds = set(json.loads(r[0]))
     r = conn.execute("SELECT value FROM cfg_setting WHERE key='layer.reading' AND inactive=0").fetchone()
     if r:
-        for key, item in json.loads(r[0]).get("items", {}).items():
+        lay4 = json.loads(r[0])
+        inner_items = {i for st in lay4.get("steps", []) if st["layer"] >= 3 for i in st["items"]}   # the items of stage 4 (steps of layer 3), the inner-being analysis; every other item is lexical work (stages 1 to 3)
+        for key, item in lay4.get("items", {}).items():
+            if key in inner_items:
+                continue
             for rk in ("member_role", "partner_role"):
                 if item.get(rk) in inner_roles:
                     errors.append(f"layer.reading item {key!r} gives its nodes the inner-being role {item[rk]!r} ({rk}): the lexical stages carry the role lexical")
@@ -97,6 +102,34 @@ def find(conn: sqlite3.Connection, project_root: pathlib.Path) -> list[str]:
                 errors.append(f"layer.reading item {key!r} is written as the inner-being kind {sorted(bad_kinds)}")
             if re.search(r"inner.being", item.get("asks") or "", re.I):
                 errors.append(f"layer.reading item {key!r} asks about the inner being: the lexical stages state what the dictionary, the verses and the structure show")
+
+    # 4b. the items of stage 4 (steps of layer 3, #2528): each names the observation items it uses (reading.observation_items), none of them the meaning of the word (stage 1) and each a
+    #     key that exists; each step of layer 3 names a stage value that is an enum value; each item asks
+    r = conn.execute("SELECT value FROM cfg_setting WHERE key='layer.reading' AND inactive=0").fetchone()
+    r2 = conn.execute("SELECT value FROM cfg_setting WHERE key='reading.observation_items' AND inactive=0").fetchone()
+    if r and r2:
+        lay3 = json.loads(r[0])
+        known = {i["key"] for i in json.loads(r2[0]).get("items", [])}
+        for st in lay3.get("steps", []):
+            if st["layer"] != 3:
+                continue
+            if lay3.get("stages", {}).get("3") not in {x[0] for x in conn.execute("SELECT value FROM cfg_enum WHERE name='ib_observation.stage' AND inactive=0")}:
+                errors.append("layer.reading stages.3 is not a value of cfg_enum ib_observation.stage")
+            for key in st["items"]:
+                item = lay3["items"].get(key)
+                if item is None:
+                    errors.append(f"layer.reading step {st['key']} names the item {key!r}, which is not defined")
+                    continue
+                uses = item.get("uses") or []
+                if not uses:
+                    errors.append(f"layer.reading item {key!r} (stage 4) names no observation item it uses (`uses`)")
+                for u in uses:
+                    if u not in known:
+                        errors.append(f"layer.reading item {key!r} uses {u!r}, which is not an item of reading.observation_items")
+                if "meaning" in uses:
+                    errors.append(f"layer.reading item {key!r} (stage 4) uses the item meaning, which is the lexical work of stages 1 and 3")
+                if not (item.get("asks") or "").strip():
+                    errors.append(f"layer.reading item {key!r} has no `asks`")
 
     # 4. the items of the layered reading: each asks, each prompt is an active catalogue question
     r = conn.execute("SELECT value FROM cfg_setting WHERE key='layer.reading' AND inactive=0").fetchone()

@@ -48,6 +48,11 @@ def step_def(s: dict, key: str) -> dict:
     raise LayerError(f"{key!r} is not a step of the layered reading ({', '.join(x['key'] for x in s['steps'])})")
 
 
+def needs_pairs(sd: dict) -> bool:
+    """A step that reads the typed pairings of the evidence report: the steps of layer 2 and a step that sets `pairs` (3.3)."""
+    return sd["layer"] == 2 or bool(sd.get("pairs"))
+
+
 def _chunks(ids):
     ids = sorted(set(ids))
     for i in range(0, len(ids), CHUNK):
@@ -139,6 +144,9 @@ def grouping_gate(conn, cfg, L) -> list[str]:
 def derive(conn, cfg, L, step: str) -> list[dict]:
     """The aspects of a step, from the data: [{item, subgroup_id, subject}]. Layer 2 aspects come from the typed pairings of the evidence report (#2502)."""
     s = settings(cfg)
+    if step_def(s, step)["layer"] == 3:     # stage 4, the inner-being analysis (#2528)
+        from . import layerinner
+        return layerinner.derive(conn, cfg, L, step)
     items = step_def(s, step)["items"]
     th = s["thresholds"]
     out = []
@@ -247,7 +255,7 @@ def step_closed(conn, cid: int, step: str) -> bool:
 def open_step(conn, cfg, run_id: str, name: str, step: str, dry: bool = False) -> dict:
     s = settings(cfg)
     sd = step_def(s, step)
-    L = load(conn, cfg, name, pairs=sd["layer"] == 2)
+    L = load(conn, cfg, name, pairs=needs_pairs(sd))
     problems = []
     if sd["layer"] >= 1:
         problems += grouping_gate(conn, cfg, L)
@@ -349,10 +357,13 @@ def _word_row(conn, s, L, lid, item, idef, subject, nodes, cap, state, reason, s
 def pull(conn, cfg, name: str, step: str, out_dir: pathlib.Path) -> tuple[pathlib.Path, int]:
     s = settings(cfg)
     sd = step_def(s, step)
-    L = load(conn, cfg, name, pairs=sd["layer"] == 2)
+    L = load(conn, cfg, name, pairs=needs_pairs(sd))
     rows = [r for r in _rows(conn, L["cid"], step) if r[6] == "open" or (r[6] == "observed" and r[9] == 0)]
     if not rows:
         raise LayerError(f"step {step} of {L['name']} has no open row (run LayerOpen, or LayerCheck to see what is validated)")
+    if sd["layer"] == 3:     # stage 4: the rows go out in batches of pull_max_rows (#2528)
+        from . import layerinner
+        return layerinner.pull(conn, cfg, L, step, rows, out_dir)
     out, seen = [], {}
     for r in rows:
         lid, _, _, item, gid, subject, state, oid, reason, val = r
@@ -452,7 +463,10 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     s = settings(cfg)
     name, step = data.get("collection"), data.get("step")
     sd = step_def(s, step)
-    L = load(conn, cfg, name, pairs=sd["layer"] == 2)
+    if sd["layer"] == 3:     # stage 4: the findings of the inner-being reading (#2528)
+        from . import layerinner
+        return layerinner.record(conn, cfg, run_id, data, keep)
+    L = load(conn, cfg, name, pairs=needs_pairs(sd))
     roles, bases, routes = set(orec.node_roles(cfg)), set(cfg.enum("ib_observation.basis")), set(cfg.enum("observation_route"))
     minr = s["min_reason_chars"]
     ledger = {r[0]: r for r in _rows(conn, L["cid"], step)}
@@ -696,9 +710,9 @@ def check(conn, cfg, run_id: str, name: str, dry: bool = False) -> dict:
     rep["lexical"] = lexical_status(conn, cfg, L1)   # stage 1 is read from its own step below, after the checks have set `validated`
     for sd in s["steps"]:
         step = sd["key"]
-        if sd["layer"] == 2 and L2 is None:
+        if needs_pairs(sd) and L2 is None:
             L2 = load(conn, cfg, name, pairs=True)
-        L = L2 if sd["layer"] == 2 else L1
+        L = L2 if needs_pairs(sd) else L1
         rows = [r for r in _rows(conn, L["cid"], step) if r[6] != "retired"]
         problems, ok_, open_ = [], 0, 0
         for r in rows:
@@ -709,6 +723,16 @@ def check(conn, cfg, run_id: str, name: str, dry: bool = False) -> dict:
                 continue
             idef = s["items"][item]
             fail = None
+            if sd["layer"] == 3:     # stage 4: re-derived and validated by layerinner.check_row (#2528)
+                from . import layerinner
+                fail = layerinner.check_row(conn, cfg, s, L, sd, r)
+                if fail:
+                    problems.append(f"{label}: {fail}")
+                else:
+                    ok_ += 1
+                if not dry:
+                    conn.execute(f"UPDATE collection_layer_item SET validated=?, updated_at={NOW}, run_id=? WHERE id=?", (0 if fail else 1, run_id, lid))
+                continue
             if idef.get("multi") and state == "observed" and not (reason or "").startswith("adopted"):
                 obs_ = [r_[0] for r_ in conn.execute("SELECT id FROM ib_observation WHERE stable_key LIKE ? AND deleted=0", (f"layer:{lid}:%",))]
                 exp = expected_nodes(L, item, gid, subject)

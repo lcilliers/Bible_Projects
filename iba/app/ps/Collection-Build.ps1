@@ -28,9 +28,10 @@
       Subgroup  -Collection <name> -Name <subgroup> -Reason <text>   make a subgroup of a collection (a group of surfaces of one meaning), as your correction of the grouping by meaning
                 -Collection <name> -Name <subgroup> -Surface <a,b> [-Strong <code>] -Reason <text>   place surfaces in it (-Strong places one sense of a surface)
                 -Collection <name> -Surface <a,b> -Isolate -Reason <text>   set aside surfaces whose meaning is not the one the collection gathers. -Check previews (#2503)
-      LayerOpen  -Collection <name> -Step S1|1.1|1.2|2.1 [-Check]   open a step of the layered reading: the gates (step 1.1 needs the lexical analysis S1 closed, the grouping finished, the previous step
-                                    closed), then the ledger rows the data demands (#2505)
-      LayerPull  -Collection <name> -Step <step>   write the working file of the open rows with the evidence to read
+      LayerOpen  -Collection <name> -Step S1|1.1|1.2|2.1|3.1|3.2|3.3 [-Check]   open a step of the layered reading: the gates (step 1.1 needs the lexical analysis S1 closed, the grouping
+                                    finished, the previous step closed; step 3.1, the first of stage 4 (the inner-being analysis), needs 1.1, 1.2 and 2.1 closed), then the ledger rows the data demands (#2505, #2528)
+      LayerPull  -Collection <name> -Step <step>   write the working file of the open rows with the evidence to read (a stage 4 file holds pull_max_rows rows: the verse in its passage, the
+                                    occurrences, the stage 1 to 3 observations, the earlier observations with their flags, the meaning evidence, the interventions)
       LayerRecord -File <filled working file> [-Check]   check the file whole and write its observations, nodes and ledger answers in one transaction
       LayerCheck -Collection <name>   validate every answered row against the tables, set validated, write the report; names what is open, failed or missing
       NodeGroups [-Check]   set the group on the live nodes from the collection index

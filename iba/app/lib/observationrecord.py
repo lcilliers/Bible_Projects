@@ -315,10 +315,12 @@ def _group_of(conn, collection_id, surface, strong):
     return ci.subgroup_for(conn, collection_id, surface, strong)
 
 
-def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
-    """Write a checked plan. Returns {key: {"observation": id, "nodes": [ids], "new": bool}}. Caller commits."""
+def write(conn, plan: list[dict], reading_id: int | None, run_id: str, stage: str | None = None, stable_key=None) -> dict:
+    """Write a checked plan. Returns {key: {"observation": id, "nodes": [ids], "new": bool}}. Caller commits.
+    `stage` is what wrote the row (default: reading.observation_rules stage); `stable_key` is an optional function of a finding's key giving the stable_key of a new observation
+    (the layered reading ties an observation to its ledger row by it, #2528)."""
     out, now = {}, _now()
-    stage = rules(Cfg.on(conn))["stage"]            # what wrote the row: a record of origin, never a filter
+    stage = stage or rules(Cfg.on(conn))["stage"]   # what wrote the row: a record of origin, never a filter
     for p in plan:
         if p["existing"] is not None:
             oid, new = p["existing"], False
@@ -326,9 +328,10 @@ def write(conn, plan: list[dict], reading_id: int | None, run_id: str) -> dict:
             parts = p.get("parts")
             oid = conn.execute(
                 "INSERT INTO ib_observation (cluster_code, stage, tag, obs_text, meaning, implication, basis, route, "
-                "parts, meaning_source, status, run_id, created_at) VALUES (NULL,?,?,?,?,?,?,?,?,'verse-text','draft',?,?)",
+                "parts, meaning_source, status, run_id, created_at, stable_key) VALUES (NULL,?,?,?,?,?,?,?,?,'verse-text','draft',?,?,?)",
                 (stage, p["kind"], p["text"], p.get("meaning"), p.get("implication"), p["basis"], p.get("route"),
-                 json.dumps(parts, ensure_ascii=False) if parts else None, run_id, now)).lastrowid
+                 json.dumps(parts, ensure_ascii=False) if parts else None, run_id, now,
+                 stable_key(p["key"]) if stable_key else None)).lastrowid
             new = True
         out[p["key"]] = {"observation": oid, "nodes": [], "new": new}
     for p in plan:
