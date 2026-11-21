@@ -19,6 +19,7 @@ What the app is for: [`iba/app/CHARTER.md`](iba/app/CHARTER.md).
 **Where to look:**
 - Rules: `cfg_behaviour_rule`, `cfg_escalation`, `cfg_setting` (module `governance`).
 - Open items and study state: the `escalation` table (`iba\app\ps\Escalation.ps1`).
+- How the project fits together (the working guide, kept current at session close): [`iba/docs/project-map.md`](iba/docs/project-map.md).
 - How to run a tool: [`iba/app/USER-GUIDE.md`](iba/app/USER-GUIDE.md).
 - How config governs the code: [`iba/app/GOVERNANCE.md`](iba/app/GOVERNANCE.md).
 - What changed and why, read only to assess a past state: [`iba/app/BUILD.md`](iba/app/BUILD.md).

@@ -45,7 +45,7 @@ def _now() -> str:
 def settings(cfg) -> dict:
     out = {}
     for key, name in (("engagement.stage", "stage"), ("engagement.roles", "roles"), ("engagement.group_rule", "group_rule"),
-                      ("engagement.no_bearing_kind", "no_bearing_kind"), ("engagement.tests", "tests"), ("engagement.working_dir", "working_dir"),
+                      ("engagement.no_bearing_kind", "no_bearing_kind"), ("engagement.no_bearing_role", "no_bearing_role"), ("engagement.tests", "tests"), ("engagement.working_dir", "working_dir"),
                       ("engagement.group_judged_by", "judged_by"), ("engagement.report_path", "report_path")):
         try:
             out[name] = cfg.required_setting(key)
@@ -274,9 +274,11 @@ def _check_observations(cfg, st: dict, items: dict, evals: dict, filled: dict, e
                 errors.append(f"{where}: its gives must name what the evaluation of ({o.get('surface')}, {vl}) gives")
             it = items[key][1]
             nodes.append({"verse_lexical_id": vl, "strong": it["strong"], "verse_reference": it["osisId"], "surface": o.get("surface"),
-                          "morph_code": it["morph_code"], "role": e.get("role") or None})
+                          "morph_code": it["morph_code"],
+                          "role": st["no_bearing_role"] if e.get("result") == "not_relevant" else (e.get("role") or None)})
         plan.append({"key": k, "surface": o.get("surface"), "kind": kind, "text": (o.get("text") or "").strip(), "meaning": o.get("meaning"),
-                     "implication": o.get("implication"), "basis": o.get("basis"), "role": o.get("role") or None, "gives": o.get("gives"),
+                     "implication": o.get("implication"), "basis": o.get("basis"),
+                     "role": st["no_bearing_role"] if kind == st["no_bearing_kind"] else (o.get("role") or None), "gives": o.get("gives"),
                      "test": o.get("test"), "nodes": nodes})
     for key, (s, i) in items.items():
         if key in evals and key not in covered:
@@ -464,13 +466,13 @@ def check_collection(conn, cfg, name: str) -> dict:
         nodes = _live_nodes(conn, st["stage"], surf, vls)
         miss = len([v for v in vls if v not in nodes])
         grp = conn.execute("SELECT surface_group, group_state FROM surface_term WHERE id=?", (tid,)).fetchone()
-        roles = collections.Counter(r or "no_bearing" for rs in nodes.values() for r in rs)
+        roles = collections.Counter(r or "unset" for rs in nodes.values() for r in rs)
         rows.append({"surface": surf, "tier": tier, "items": len(vls), "assessed": len(vls) - miss, "unassessed": miss, "roles": dict(roles),
                      "group": grp[0], "group_state": grp[1]})
         bad += 1 if miss or not vls else 0
-    nb = conn.execute("SELECT n.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.deleted=0 AND o.deleted=0 AND o.stage=? AND n.role IS NULL "
+    nb = conn.execute("SELECT n.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.deleted=0 AND o.deleted=0 AND o.stage=? AND n.role=? "
                       "AND n.verse_lexical_id IN (SELECT id FROM verse_lexical WHERE deleted=0 AND lower(trim(surface)) IN (%s))" % ",".join("?" * len(members)),
-                      [st["stage"]] + [m[0] for m in members.values()]).fetchall() if members else []
+                      [st["stage"], st["no_bearing_role"]] + [m[0] for m in members.values()]).fetchall() if members else []
     return {"collection": col[1], "surfaces": rows, "failing": bad, "no_bearing": len(nb), "reviewed": sum(1 for r in nb if _reviewed(conn, r[0]))}
 
 
@@ -509,10 +511,10 @@ def review_pull(conn, cfg, name: str) -> dict:
             by_verse[r[1]].append({"surface": surf, "tid": tid, "vl_id": r[0], "osisId": r[1], "reference": r[2], "text": r[3], "strong": r[4],
                                    "morph_code": r[5], "surface_kind": r[6], "unit_surface": r[7], "unit_role": r[8],
                                    "node_id": node[0] if node else None, "role": node[1] if node else None, "observation_id": node[2] if node else None,
-                                   "observation_text": node[3] if node else None, "confirmed": bool(node) and node[1] is None and _reviewed(conn, node[0])})
+                                   "observation_text": node[3] if node else None, "confirmed": bool(node) and node[1] == st["no_bearing_role"] and _reviewed(conn, node[0])})
     surfaces, settled, verses = collections.defaultdict(list), 0, []
     for osis, its in sorted(by_verse.items()):
-        if osis in open_verses or any(i["role"] is not None for i in its):
+        if osis in open_verses or any(i["role"] not in (None, st["no_bearing_role"]) for i in its):
             continue                                     # a surface has bearing, or is not yet assessed: not a no-bearing verse
         if all(i["confirmed"] for i in its):
             settled += 1

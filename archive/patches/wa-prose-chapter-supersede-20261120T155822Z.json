@@ -1,0 +1,30 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261120T155822Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-20T15:58:22Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 1 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-28-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 28,
+      "record": {
+        "body": "The programme's analytical grouping is the collection and, within it, the subgroup. A collection gathers surfaces of like or related behaviour (Chapter 2). A subgroup is a group of the surfaces of one collection, made so that the collection can be read in units: the subgroup is the unit of reading, and its surfaces are read together in each layer. The verses of a subgroup's surfaces travel with it through the nodes, so that an observation made for the subgroup is found for each of its verses. The concept tables of an earlier method are retired and the collection takes their place. The method that grouped the surfaces of the first collection did not serve the purpose the subgroups are for and is withdrawn; the subgroups are formed again when collection processing starts.\n\nThe readings of a collection are recorded in the observation tables. `ib_observation` holds one finding, with its stage, its kind (for example term, face, group, enrichment, pairing or relation), its text and its status. `ib_node` holds the occurrences the observation applies to (the previous section). `ib_observation_change` keeps every change to an observation with its reason, so that a withdrawal is a soft delete that can be explained. `collection_layer_item` is the ledger of the layered reading: one row for each aspect a step of the reading demands for a collection, which is closed by an observation with its nodes or by a recorded none with its reason, and is then validated by the check.\n\nThe values of the stage of an observation are `lexical` (stage 1), `layer-1` and `layer-2` (stage 3). The observations of stage 4, the inner-being analysis, are not yet defined. Observations made by earlier methods are kept as the history of those methods; a live observation must comply with the rules of the observation and the node, and one that cannot be revived to comply is retired with its nodes as a soft delete with its reason.\n\nThe reading process of the app (`Reading.ps1`) takes a reading of one scope through three gates (recorded, synergised, published) and is being aligned to collections.",
+        "heading": "The analytical grouping: collections and subgroups",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1410}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "prose_section_supersedes": 1,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-4-v5-20261120.md"
+  }
+}

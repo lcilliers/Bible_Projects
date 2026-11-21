@@ -1,0 +1,54 @@
+{
+ "_patch_meta": {
+  "patch_id": "PATCH-20261120T164000Z-PROSE-AUTHOR3",
+  "patch_type": "PROSE",
+  "produced_at": "2026-11-20T16:40:00Z",
+  "session_b_status": null,
+  "researcher_approval": "PENDING",
+  "description": "Set author claude_code on sections edited for the history, premises and chapter 6."
+ },
+ "operations": [
+  {
+   "op_id": "PROSE-13-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 13,
+   "record": {
+    "body": "The method rests on nine principles. They govern every stage of the work.\n\n**Scope is defined against the inner-being definition.** The surfaces of the study are the words and phrases of the ESV judged against the programme's working definition of an inner-being characteristic, gathered into collections of like meaning, and settled from evidence before they are read.\n\n**Base data is complete before reading.** The text, its original-language data and the mechanical reading of every verse are held before any collection is read, so that every collection is read against the same body of data.\n\n**Words are not forced into preconceived categories.** Groups are formed from the meaning of the words and what the verses engage. A category that cannot be grounded in verse evidence is not a category the programme uses.\n\n**Verses qualify by occurrence, not by interpretation.** A verse is in scope because it holds an occurrence of a member surface, irrespective of what the verse contributes.\n\n**Every finding is substantiated by data.** A finding can be traced to a specific verse, word or pattern in the evidence. A statement that cannot be traced is not recorded; an AI's output is inferential until confirmed; no guessing, no assumptions and no made-up results.\n\n**The lexical reading and the inner-being reading are separate.** What the words and the verse show is recorded first, in its own observations; what a word does for the inner being is read afterwards, from those observations, in a separate process. A step closes before the next opens, and no aspect is left open.\n\n**The database is the analytical memory.** Every observation, node, claim and change is held in the database with its reason, and a change keeps its prior state. Re-reading replaces a finding with its reason recorded, so findings stay anchored to the evidence that produced them.\n\n**Biblical lens primary, scientific lens secondary.** The biblical reading of a collection is completed before the science reading, which is part of the claims reading.\n\n**Synthesis follows analysis, bottom-up.** Claims are formulated from the observations, and the narrative is assembled from the claims. Larger claims are not made before the smaller claims on which they rest.\n\n**Where the principles come from.** The principles are the lessons of the programme's own course. Each was found when an earlier way of working failed on a concrete verse or word, and each is now enforced by a rule of the application. The programme began in January 2026 with the two Frameworks and the wish to understand spirit, soul and body. In February its scope was extended to an in-depth study of the soul within the inner being, with a registry of some two hundred words. A per-word programme followed: extraction of each word's data from STEP, a classification of its verses, and an analysis by dimensions. In May the registry and the dimensions gave way to clusters of like terms. In June the study was reset after a cold reading found that most of its claims imported a meaning the verses do not carry. Through the summer the base data was rebuilt from the verse upward, the application was built, and passages were read one at a time. In the autumn the English surface, as the reader meets it in the ESV, became what is studied, then the collection became the unit, and the collection began to be read in layers. The lessons are these.\n\n- The verse in its context decides what a word means. A dictionary entry or a code offers candidates; one code read in all its occurrences showed senses that no dictionary entry held.\n- A word in a verse is read with the other words of the verse, not alone.\n- How a word's meaning changes with circumstance is a discovery and is recorded, as the face of the word.\n- The English surface is what is studied, and the Strong's code is the lens on it: a surface can carry several codes and a code can sit under several surfaces.\n- The kind of a surface is judged from the word itself: behaviour, inner-being state, entity or other.\n- The unit of study is the collection. A registry of words and clusters of codes each failed as the unit.\n- What the words and their structure show is distinct from what they do for the inner being, and each has its own observations.\n- Analysis is not done in bulk. A model's grouping placed nearly all the surfaces it was given in one group, and a grouping made by pattern did not serve its purpose.\n- Claims are derived from sources; the narrative is the story and is not cut into claims.\n- The project lives in the databases. Rules held in documents, and instructions read afresh each session, drifted; every rule is therefore a configuration row.\n\nBeneath these lies a difficulty the programme has not resolved: to know what to look for, what is and is not a characteristic of the inner being, while discovering how such characteristics work, from the same verses. A list of characteristics, a registry of words and the Strong's codes that STEP returns each approached it, and the recognition that a characteristic is driven by its context was the turning point. The layers now keep apart the lexical meaning, the occurrences in the verses, the word in its verse and the collation of surfaces, so that each can be read on its own. How the working of the inner being is to be depicted systematically, and checked, is still being discovered. The test the researcher applies is whether the outcome is sensible, reasonable and defensible.\n\nThe principles are not independent. Defining scope against a definition makes a complete base meaningful. A complete base makes a uniform reading possible. A separate lexical reading makes the inner-being analysis answerable to evidence. The database as memory supports re-reading on the same footing as the first reading, and re-reading on a stable footing makes the bottom-up account possible. Because the data read at a re-run is the same data the prior run read, the method is reproducible.",
+    "heading": "Key methodological principles",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"author set to claude_code after the 2026-11-20 history and premises\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-47-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 47,
+   "record": {
+    "body": "The grouping of the surfaces of a collection is run with `Collection-Build.ps1`: `Index` fills the index of the member surfaces, `GroupPull` writes the working file with the evidence of each surface (its Strong's codes with their lexicon evidence, its occurrences and its link), `GroupRecord` validates the whole file and writes the groups and placements in one transaction with a scrutiny report for the researcher, and `Subgroup` makes the researcher's corrections, each with its reason. The method rules are in the configuration. The method these tools carry did not serve the first collection it was run on and is withdrawn; the subgroups are formed again when collection processing starts. The surfaces are first sorted and gathered into collections by the surface cycle of five modules (Chapter 4), whose map is generated into the configuration report. A change to the collections is made class by class, tried on a copy under a named snapshot, with the counts predicted and checked, and with every change kept in `surface_event`. The procedures are in `iba/app/USER-GUIDE.md` and the rules in `GOVERNANCE.md` and the configuration.",
+    "heading": "The grouping of the surfaces",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"author set to claude_code after the 2026-11-20 history and premises\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-55-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 55,
+   "record": {
+    "body": "The collection is read through the layered reading, run with `Collection-Build.ps1` (`LayerOpen`, `LayerPull`, `LayerRecord` and `LayerCheck`) over the steps and items of `cfg_setting layer.reading`. A step is opened only when the previous one is closed. As the configuration holds it, the lexical analysis of the words (step S1) closes before the grouping of the surfaces is read, and the grouping is finished before the steps that follow; the order of Chapter 2 governs, and the alignment of the two is open. The rows each step demands are the ledger `collection_layer_item`, derived from the data, and each is answered by an observation with its nodes or by a recorded none with its reason. The stages and steps are described in Chapter 2, and the rules that govern them are configuration rows, delivered at the first use of the routine. The evidence on which a collection is read, its member occurrences, its sense and its pairings, is produced by the collection evidence report from the tables.",
+    "heading": "The collection reading",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"author set to claude_code after the 2026-11-20 history and premises\"}"
+   }
+  }
+ ],
+ "_patch_summary": {
+  "total_operations": 3
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "_patch_meta": {
+  "patch_id": "PATCH-20261120T161000Z-PROSE-GLOSSARY",
+  "patch_type": "PROSE",
+  "produced_at": "2026-11-20T16:10:00Z",
+  "session_b_status": null,
+  "researcher_approval": "PENDING",
+  "description": "Programme glossary: subgroup, collection, concept, concept domain brought to the researcher's thread of the study."
+ },
+ "operations": [
+  {
+   "op_id": "PROSE-1132-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1132,
+   "record": {
+    "body": "[DEFINITION] A group of the surfaces of one collection, made so that the collection can be read in units: the subgroup is the unit of reading. Its surfaces are read together, first for their lexical meaning in their verses and for how they relate to one another and to the other words of the verse, then for the working of the inner being. It is held in collection_subgroup and collection_subgroup_surface; a node carries its subgroup (ib_node.subgroup_id), so that the observations of a subgroup are found through its nodes.\n\n[BACKGROUND] Stated by the researcher on 2026-11-20 (the thread of the study, recorded on escalation #2515): the subgroups make a collection digestible and become the unit of reading, and each layer of reading deposits observations for the next layer. The method that grouped the surfaces of the first collection, by dictionary meaning (Collection-Build.ps1 GroupPull and GroupRecord), did not serve this purpose and is withdrawn; the subgroups are formed again when collection processing starts. The earlier use of the word was the subdivision of an M-code cluster (cluster_subgroup, surface_subgroup): it served to establish the collections, is history, and plays no part in nodes and observations (researcher, 2026-11-13).",
+    "heading": "subgroup",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"glossary amended to the researcher's thread of the study, 2026-11-20 (B:126)\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-1133-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1133,
+   "record": {
+    "body": "[DEFINITION] A set of surfaces (words and phrases) of like or related behaviour, gathered and named for the concept they share; through the Strong's code of each surface's base the collection carries the verses its surfaces occur in, and it is read in subgroups. Every surface in scope (a word or phrase of the groups behaviour and inner_being_state that has a verse) is a member of exactly one collection; a surface is in more than one only in very rare circumstances and by the researcher's ruling. A collection is made by putting like words together: synonyms, opposites, gathered. The base is only an instrument for gathering like words, never the member; a derived form is a surface with a link of its own; a phrase is one concept, placed in one collection. The collection is the unit of study: its observations, claims and narration follow it, and each collection becomes a chapter of the narration (behaviour rules 127 and 129).\n\n[BACKGROUND] Held in collection and collection_link; the members are surface_term rows placed by tier (core, synonym, opposite, gathered, phrase). A node carries the one collection of its surface (its own link, else through its base). Everything a model proposed for a collection is inferential until its status is confirmed.",
+    "heading": "collection",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"glossary amended to the researcher's thread of the study, 2026-11-20 (B:126)\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-1134-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1134,
+   "record": {
+    "body": "[DEFINITION] Retired. A concept was a sub-chapter of a concept domain, named for what its subgroups shared: a first grouping tried in October 2026 as the link from the base data to the narrative. The collection took its place.\n\n[BACKGROUND] The concept tables (concept, concept_subgroup, concept_domain) were retired on 2026-11-15 under #2505: their rows are soft-deleted and the tables are inactive. The researcher's instruction (#2463 v31) was that the concept rows be destroyed and the concepts reformed from the collections. Since 2026-11-12 the narrative chapters follow the collections (behaviour rule 129).",
+    "heading": "concept",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"glossary amended to the researcher's thread of the study, 2026-11-20 (B:126)\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-1135-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1135,
+   "record": {
+    "body": "[DEFINITION] Retired. A concept domain was a domain of the concept grouping, the basis the researcher ruled on 2026-10-31 for the narrative, with domains as chapters and concepts as sub-chapters. The collection took its place.\n\n[BACKGROUND] Retired with the concept tables on 2026-11-15 under #2505 (rows soft-deleted, tables inactive). Since 2026-11-12 the narrative chapters follow the collections (behaviour rule 129).",
+    "heading": "concept domain",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"glossary amended to the researcher's thread of the study, 2026-11-20 (B:126)\"}"
+   }
+  }
+ ],
+ "_patch_summary": {
+  "total_operations": 4
+ }
+}

@@ -1,0 +1,43 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261120T163410Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-20T16:34:10Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 2 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-55-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 55,
+      "record": {
+        "body": "The collection is read through the layered reading, run with `Collection-Build.ps1` (`LayerOpen`, `LayerPull`, `LayerRecord` and `LayerCheck`) over the steps and items of `cfg_setting layer.reading`. A step is opened only when the previous one is closed. As the configuration holds it, the lexical analysis of the words (step S1) closes before the grouping of the surfaces is read, and the grouping is finished before the steps that follow; the order of Chapter 2 governs, and the alignment of the two is open. The rows each step demands are the ledger `collection_layer_item`, derived from the data, and each is answered by an observation with its nodes or by a recorded none with its reason. The stages and steps are described in Chapter 2, and the rules that govern them are configuration rows, delivered at the first use of the routine. The evidence on which a collection is read, its member occurrences, its sense and its pairings, is produced by the collection evidence report from the tables.",
+        "heading": "The collection reading",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1426}"
+      }
+    },
+    {
+      "op_id": "PROSE-47-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 47,
+      "record": {
+        "body": "The grouping of the surfaces of a collection is run with `Collection-Build.ps1`: `Index` fills the index of the member surfaces, `GroupPull` writes the working file with the evidence of each surface (its Strong's codes with their lexicon evidence, its occurrences and its link), `GroupRecord` validates the whole file and writes the groups and placements in one transaction with a scrutiny report for the researcher, and `Subgroup` makes the researcher's corrections, each with its reason. The method rules are in the configuration. The method these tools carry did not serve the first collection it was run on and is withdrawn; the subgroups are formed again when collection processing starts. The surfaces are first sorted and gathered into collections by the surface cycle of five modules (Chapter 4), whose map is generated into the configuration report. A change to the collections is made class by class, tried on a copy under a named snapshot, with the counts predicted and checked, and with every change kept in `surface_event`. The procedures are in `iba/app/USER-GUIDE.md` and the rules in `GOVERNANCE.md` and the configuration.",
+        "heading": "The grouping of the surfaces",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1427}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "prose_section_supersedes": 2,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-6-v5-20261120.md"
+  }
+}

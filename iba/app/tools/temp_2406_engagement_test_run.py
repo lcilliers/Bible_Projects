@@ -22,6 +22,8 @@ for mname in ("engagement_2406_v1_20261109", "engagement_2406_v2_module_enum_202
     mpath = mdir / f"{mname}.py" if (mdir / f"{mname}.py").exists() else mdir / "archive" / f"{mname}.py"
     mig = subprocess.run([sys.executable, str(mpath), "--db", str(copy), "--no-snapshot"], capture_output=True, text=True)
     print("migration:", mname, mig.stdout.strip() or mig.stderr.strip()[-300:])
+mig = subprocess.run([sys.executable, str(ROOT / "iba/app/migration/archive/silence_nodes_standalone_2525_v1_20261121.py"), "--db", str(copy)], capture_output=True, text=True)
+print("migration: silence_nodes_standalone_2525", mig.stdout.strip() or mig.stderr.strip()[-300:])
 cn = sqlite3.connect(copy)
 for key, val in (("engagement.working_dir", scratch / "work"), ("engagement.report_path", scratch / "reports")):
     cn.execute("UPDATE cfg_setting SET value=? WHERE key=?", (json.dumps(val.as_posix()), key))
@@ -151,8 +153,8 @@ case("R9", "one live engagement node for each surface item, on the item's verse_
      n("SELECT count(*) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='engagement' AND n.deleted=0") == n_items
      and n("SELECT count(DISTINCT n.verse_lexical_id) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='engagement'") == n_items,
      n("SELECT count(*) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='engagement'"))
-case("R10", "no-bearing items are silence-kind observations with a node and no role; the others carry a role",
-     n("SELECT count(*) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='engagement' AND ((o.tag='silence') != (n.role IS NULL))") == 0)
+case("R10", "no-bearing items are silence-kind observations with a node of the role standalone; the others carry their role",
+     n("SELECT count(*) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='engagement' AND ((o.tag='silence') != (n.role='standalone'))") == 0)
 case("R11", "every observation has a cluster, every node a cluster and a Strong's code", n("SELECT count(*) FROM ib_observation WHERE stage='engagement' AND cluster_code IS NULL") == 0
      and n("SELECT count(*) FROM ib_node WHERE source_stage='engagement' AND (cluster_code IS NULL OR strong IS NULL)") == 0)
 r = call(he.record, File=p)
@@ -207,9 +209,9 @@ rev_items = [(s["surface"], i) for s in rev["surfaces"] for i in s["items"]]
 role_nodes = {}
 for vl, role in conn.execute("SELECT n.verse_lexical_id, n.role FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE o.stage='engagement' AND n.deleted=0"):
     role_nodes[vl] = role
-verses_with_bearing = {i["osisId"] for s in pulled["surfaces"] for i in s["items"] if role_nodes.get(i["vl_id"])}
+verses_with_bearing = {i["osisId"] for s in pulled["surfaces"] for i in s["items"] if role_nodes.get(i["vl_id"]) not in (None, "standalone")}
 case("V2", "every review verse has no surface with bearing, every item is a no-bearing node",
-     rev_items and all(i["osisId"] not in verses_with_bearing and role_nodes.get(i["vl_id"], "x") is None for _, i in rev_items), f"{len(rev_items)} items")
+     rev_items and all(i["osisId"] not in verses_with_bearing and role_nodes.get(i["vl_id"], "x") == "standalone" for _, i in rev_items), f"{len(rev_items)} items")
 case("V3", "the review holds only member surfaces (R4)", {s for s, _ in rev_items} <= set(names))
 
 
@@ -263,7 +265,7 @@ case("V9", "Close writes: all confirmed but one reopened", r.condition == "ok" a
 case("V10", "a confirm is kept in ib_observation_change (column reviewed) with its reason",
      n("SELECT count(*) FROM ib_observation_change WHERE column_name='reviewed' AND new_value='confirmed' AND reason LIKE 'read again%'") == len(rev_items) - 1)
 case("V11", "the reopened no-bearing node is deleted with its reason and a characteristic node is written on the same verse_lexical row",
-     n("SELECT count(*) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.verse_lexical_id=? AND n.deleted=1 AND n.role IS NULL AND o.stage='engagement'", first) == 1
+     n("SELECT count(*) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.verse_lexical_id=? AND n.deleted=1 AND n.role='standalone' AND o.stage='engagement'", first) == 1
      and n("SELECT count(*) FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.verse_lexical_id=? AND n.deleted=0 AND n.role='characteristic' AND o.stage='engagement'", first) == 1
      and n("SELECT count(*) FROM ib_observation_change WHERE column_name='deleted' AND reason LIKE 'review of the no-bearing result%'") >= 1)
 r = call(he.review, Collection="aloud")

@@ -1,0 +1,570 @@
+{
+ "_patch_meta": {
+  "patch_id": "PATCH-20261120T180100Z-PROSE-TYPE-TEXT",
+  "patch_type": "PROSE",
+  "produced_at": "2026-11-20T18:01:00Z",
+  "session_b_status": null,
+  "researcher_approval": "PENDING",
+  "description": "Programme section types: label set to the heading in use and description set to the current content of the slot. No type is added; codes unchanged."
+ },
+ "operations": [
+  {
+   "op_id": "TYPE-preamble",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "preamble"
+   },
+   "set": {
+    "description": "Opening orientation for the programme prose: what the prose is, the line between description and procedure, the six areas of the corpus and the style of the prose."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_purp_scope",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_purp_scope"
+   },
+   "set": {
+    "description": "The scope of the study: the ESV surfaces of the groups behaviour and inner_being_state, each in one collection, and how scope is settled and changed."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_purp_this_inner_being_programme",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_purp_this_inner_being_programme"
+   },
+   "set": {
+    "description": "What the programme is: its unit of study and of reading, its working agent and the researcher's authority, the application that controls it and its three levels of output."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_purp_expected_outcome",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_purp_expected_outcome"
+   },
+   "set": {
+    "description": "What success looks like for a collection, for the corpus and for the programme, the intended audience and the three criteria by which the finished output is judged."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_meth_overview",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_meth_overview"
+   },
+   "set": {
+    "description": "The research method at a glance: its five parts from the text and its data to publishing, the collection as the unit of study, and the lens and sequencing commitments."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_meth_registry",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_meth_registry"
+   },
+   "set": {
+    "description": "How scope is built: the four surface groups, the surface cycle, the collections, and the caveats on each.",
+    "label": "Word selection: surfaces and collections"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_meth_flow",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_meth_flow"
+   },
+   "set": {
+    "description": "The path from the Bible text to the finished account: the base data; the stages of the analysis with the unit each reads; the subgroup and its purpose; volume, gates and fallout; the inner-being layer; where the programme stands; what is unsolved and what is not yet defined."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_meth_science",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_meth_science"
+   },
+   "set": {
+    "description": "How the second lens is engaged: when science enters (in the claims reading), the six fields, the convergence and divergence framework and the decision not to build a scientific database."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_meth_publishing",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_meth_publishing"
+   },
+   "set": {
+    "description": "The output of the programme: the narrative held in the database as chapters and sections, how claims are told in it, and what publishing does and does not mean here."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_meth_principles",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_meth_principles"
+   },
+   "set": {
+    "description": "The principles that govern every stage, the lessons of the programme's course from which they come, the difficulty not yet resolved and the researcher's test."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_meth_constraints",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_meth_constraints"
+   },
+   "set": {
+    "description": "The limits the programme accepts as commitments: scope bounded by the collections, the second-lens bound on science, no scientific database, no bulk analysis and no publication before the reading closes."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_disc_traceability",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_disc_traceability"
+   },
+   "set": {
+    "description": "The discipline that separates a finding from a hypothesis and an inferential statement: traceability to the data, the verse as the evidence, the database as the authority and verified state."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_disc_two_ai",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_disc_two_ai"
+   },
+   "set": {
+    "description": "The division of responsibility between the researcher and the single working agent, the controlled use of a local model, and the two mechanisms that carry the researcher's decisions."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_disc_session_continuity",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_disc_session_continuity"
+   },
+   "set": {
+    "description": "How continuity is kept across sessions: the databases as memory, the layers and limits of Claude's memory, and the mechanisms for starting, recording and closing a session."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_disc_tools",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_disc_tools"
+   },
+   "set": {
+    "description": "The programme's instruments and their roles: STEP Bible, Claude Code, the IBA application, the two databases, the local model server and the working file formats."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_disc_research_decisions",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_disc_research_decisions"
+   },
+   "set": {
+    "description": "The researcher's authority and accountability, Claude's expected interpretation of the evidence, the integrity of the sources and the declaration of AI use."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_disc_scope_integrity",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_disc_scope_integrity"
+   },
+   "set": {
+    "description": "The in-session discipline that keeps Claude on the task set: help forward within the researcher's scope, no autonomous extension of scope, and escalation and not guessing."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_data_database",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_data_database"
+   },
+   "set": {
+    "description": "The two databases as the programme's working memory: what each holds, the configuration store and STEP Bible as the primary source."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_data_registry",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_data_registry"
+   },
+   "set": {
+    "description": "Where scope is held: the surface and collection tables, the subgroup tables, and the thin registry that onboards a new word.",
+    "label": "Surfaces, collections and the registry"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_data_terms",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_data_terms"
+   },
+   "set": {
+    "description": "The term layer: the Strong's tables, the span and the mechanical reading of the verse, with the key each is held on."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_xref_architecture",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_xref_architecture"
+   },
+   "set": {
+    "description": "How overlap of vocabulary is handled: each surface in one collection, the collection a node carries, and the keying of the term layer on the Strong's code."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_data_verses",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_data_verses"
+   },
+   "set": {
+    "description": "The verse layer: the verse table, when a verse is in scope, and how every observation is tied to its verse."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_anchor_verse",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_anchor_verse"
+   },
+   "set": {
+    "description": "The node: how one observation is applied to a verse, a word and a surface, its roles, and the rules that keep nodes and observations consistent.",
+    "label": "The node"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_data_dimensions",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_data_dimensions"
+   },
+   "set": {
+    "description": "The analytical grouping: the collection, the subgroup, the observation tables and the ledger of the layered reading.",
+    "label": "The analytical grouping: collections and subgroups"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_data_questions",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_data_questions"
+   },
+   "set": {
+    "description": "The standing catalogue of questions as prompts, the findings of the programme as observations, and the kept record of earlier methods."
+   }
+  },
+  {
+   "op_id": "TYPE-prog_data_synthesis",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_data_synthesis"
+   },
+   "set": {
+    "description": "Claims and the narrative: the claim tables, the narrative chapters and sections, and how claims are bound to the observations that found them.",
+    "label": "Claims and the narrative"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_data_prose_store",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_data_prose_store"
+   },
+   "set": {
+    "description": "The prose store: the section types, the sections and the glossaries, the system-versioned lifecycle, and the steps of Prose.ps1.",
+    "label": "The prose store"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_data_obslog_pipeline",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_data_obslog_pipeline"
+   },
+   "set": {
+    "description": "The capture mechanisms: prose through the Prose.ps1 round trip, observations through the layered reading, and open items through the escalation table.",
+    "label": "Capture mechanisms"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_validation_standard",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_validation_standard"
+   },
+   "set": {
+    "description": "The standing checks that tell a session whether the application, the record and the study are coherent, and the quality flags of the prose store.",
+    "label": "Document validation and quality-flag architecture"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_delete_discipline",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_delete_discipline"
+   },
+   "set": {
+    "description": "The soft-delete discipline across both databases, its table-level form, and the rule against hard deletes.",
+    "label": "Soft-delete discipline"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_field_authority",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_field_authority"
+   },
+   "set": {
+    "description": "How the record stays consistent with its sources: field authority, observation-reference consistency and STEP data provenance.",
+    "label": "Record consistency with sources"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_backup_discipline",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_backup_discipline"
+   },
+   "set": {
+    "description": "Backup and schema migration discipline for each database, and the named snapshots kept before a change to the collections or the observations.",
+    "label": "Backup and schema migration discipline"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_patch_failure_protocol",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_patch_failure_protocol"
+   },
+   "set": {
+    "description": "The failure protocol: dry-run rejection of patches, routing of failures by cfg_on_fail in the application, and escalation of what cannot be resolved mechanically.",
+    "label": "Patch and directive failure protocol"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instruction_override_protocol",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instruction_override_protocol"
+   },
+   "set": {
+    "description": "How the researcher's direction travels: configuration changes by proposal and approval, the escalation table for everything else, and where the rules live.",
+    "label": "Instruction override and cross-document reference discipline"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_doc_impl_alignment",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_doc_impl_alignment"
+   },
+   "set": {
+    "description": "The principle that rules, schema, documents and prose are not assumed to be synchronised, and the rules that keep them aligned.",
+    "label": "Documentation–implementation alignment"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_global_rules",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_global_rules"
+   },
+   "set": {
+    "description": "Where the programme's binding rules live: configuration rows, printed at the start of a session or delivered at first use.",
+    "label": "Global rules"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_reference",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_reference"
+   },
+   "set": {
+    "description": "The live reference layer: the enumerations, the column definitions and the configuration report that other documents point to.",
+    "label": "Reference"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_patches",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_patches"
+   },
+   "set": {
+    "description": "The patch mechanism of bible_research.db: its format, the PROSE operation and the dry-run gate.",
+    "label": "Patches"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_directives",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_directives"
+   },
+   "set": {
+    "description": "The directive mechanism of bible_research.db, and how a schema change reaches iba.db.",
+    "label": "Directives"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_claudecode",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_claudecode"
+   },
+   "set": {
+    "description": "Where the operating guidance for Claude Code lives: the start and close routines, the point-of-use rules and the application documents.",
+    "label": "Claude Code operating guide"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_registry_guide",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_registry_guide"
+   },
+   "set": {
+    "description": "The registry management guide: none is held, and why.",
+    "label": "Registry management guide"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_session_a",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_session_a"
+   },
+   "set": {
+    "description": "How the base data is built: the entry point for a new word and the mechanical reading of the verse.",
+    "label": "Base data"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_verse_context",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_verse_context"
+   },
+   "set": {
+    "description": "How a collection is read through the layered reading: the routines, the order of the steps and the ledger.",
+    "label": "The collection reading"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_dimension_review",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_dimension_review"
+   },
+   "set": {
+    "description": "How the surfaces of a collection are grouped: the grouping routines, the status of the method, and how a collection is changed.",
+    "label": "The grouping of the surfaces"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_session_b_readiness",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_session_b_readiness"
+   },
+   "set": {
+    "description": "How a step of the reading is made ready: opening it, pulling its rows and the working file.",
+    "label": "Readiness of a step"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_session_b_output",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_session_b_output"
+   },
+   "set": {
+    "description": "How the reading's output is recorded and checked: the record step, the layer check and the other capture mechanisms.",
+    "label": "Recording observations"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_session_c",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_session_c"
+   },
+   "set": {
+    "description": "The reader-facing output: the narrative built by collection, its export, and the claims told in it.",
+    "label": "The narrative"
+   }
+  },
+  {
+   "op_id": "TYPE-prog_instr_session_d",
+   "table": "prose_section_type",
+   "operation": "update",
+   "match": {
+    "code": "prog_instr_session_d"
+   },
+   "set": {
+    "description": "Synthesis across collections and the claims: what is established, and what is deferred and not built.",
+    "label": "Claims and synthesis across collections"
+   }
+  }
+ ],
+ "_patch_summary": {
+  "total_operations": 48
+ }
+}

@@ -1,0 +1,30 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261121T044356Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-21T04:43:56Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 1 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-1066-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1066,
+      "record": {
+        "body": "[DEFINITION] The role of a word in a finding: what the word is for the finding an observation states, judged by reading the verse, for each occurrence, against the inner-being operation the verse carries. It is never taken from the cluster tag, the collection, the word's other occurrences or its usual part, so the same word can be a characteristic in one verse and a qualifier in another, and each role is its own observation applied by its nodes to the verses where it holds. On a node the roles are: characteristic (the word behaves as a characteristic of the inner being, and the finding is about it) and qualifier (it binds to a characteristic and gives it value or context in place: manner, measure, strengthening, ground, cause, object, setting or the negator of a refusal; the observation states what it gives, and the word has no account of its own from that verse), which are relevant to the inner being; object (what the act is directed at, or its content), relational_target (the party the act engages) and enactment (the outward act the inner act produces), which bear on the finding; standalone, which records that the word was recognised and has no inner-being role on any other surface of the verse; and lexical, which records that the word was read lexically and its inner-being role has not been assessed (cfg_setting reading.node_roles; behaviour rule 130). A party's role is an observation, not a field. A role is never a verdict: a verse is not closed as 'only a qualifier' or 'no bearing'.\n\n[BACKGROUND] Held in ib_node.role, required on a node that names a word and not yet set on every node (14,065 of 68,426 live nodes on 2026-11-21). The study's earlier method named three roles, characteristic, qualifier (or process-element) and standalone; the node adds object, relational_target, enactment and lexical. Two other columns are also called role and are not this one: verse_lexical.role holds the cluster codes of the word's Strong's code copied onto each occurrence, with no reading of the verse in it, and verse_span_index.role holds an older analytic role set by earlier campaigns, on part of the spans, with a vocabulary that grew by use. The role is also what the engagement step reads to set a surface's group (a characteristic in any verse makes the surface a behaviour, a qualifier only an inner-being state, no inner-being role in any verse takes it out of the study) and what the deeper reading is to be filtered on, which is not yet defined. This entry is in the contentious glossary: it stays a draft until the researcher settles it.",
+        "heading": "role",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1306}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "prose_section_supersedes": 1,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-word-index-and-glossary-chapter-1-v2-20261121.md"
+  }
+}

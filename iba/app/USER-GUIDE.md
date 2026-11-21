@@ -122,6 +122,7 @@ It checks the session's work against its record. Each finding has a stable key:
 | SC12 | whether the narrative copy and the threads export are needed |
 | SC15 | a control file (`session_close.control_kinds`) missing, naming a path that does not resolve or points into an archive without marking it as history, carrying replaced-history text, or (read every conversation) over `session_close.always_read_max_bytes` |
 | SC16 | a PS tool action that failed twice in the session, or any other call that failed twice with the same error; a designed stop (`session_close.sc16_designed_stops`: COMMIT BLOCKED, NOT PASSED, a Propose waiting for approval, a hook's refusal `hook error: `) is not a failure |
+| SC17 | the project map (`session_close.map_home`, `iba/docs/project-map.md`) has no `Current as of: <date> <commit>` line, or changed this session with a date before the session start; or a signal of `session_close.map_signals` fired (a control-map row, a `governance.*` setting, the reading stages, a table added to `cfg_table`, a completed task BUILD.md names, a Programme book section the map rests on) and the map did not change |
 
 **To clear a finding:** fix it, or write a disposition in the compliance file's
 `## Close dispositions` section as `- <key> :: <disposition>`:
@@ -129,6 +130,7 @@ It checks the session's work against its record. Each finding has a stable key:
 - for SC3, `recorded in #n vN` or `no record needed: <reason>`
 - for SC4(b), `in register …` or `not held: <reason>`
 - for a quotation, `not scripture: <reason>`
+- for SC17, update the map and its `Current as of` line, or `no change needed: <reason>` (not for a missing map file)
 
 The check verifies each one. Nothing is committed while the script exits 3 (rule 82). The close
 writes the session log (`governance.session_log_required_content`) and commits twice
@@ -581,7 +583,7 @@ enactment, party, circumstance, chain, primary_operation, and typed `flags`: dat
 word's **collection** (that of its surface), the word's role in the finding, the reading that applied it, and later where
 the verse ends up (disposition). The roles of a new node (`cfg_setting reading.node_roles`): for a surface
 evaluated `relevant`, characteristic or qualifier; for a surface that `bears_on` the act, object, relational
-target or enactment; `standalone` records that the word was recognised and has no inner-being role (B:130). A node holds no
+target or enactment; `standalone` records that the word was read in the verse and holds nothing for the inner being: it binds to nothing, and it is a role, not an absence (B:130, B:73). A node holds no
 cluster and no subgroup (section 7.1). The kinds (`reading.observation_parts`): face, qualification, party,
 statement, link, use, term, silence (silence is not used by Analysis_phase_1). A description already live is
 never written again: the finding names it as `existing` and gains nodes. Every change to a finding or a node is
@@ -1070,7 +1072,7 @@ iba\app\ps\Long-Run.ps1 -Action Stop     -Job collection-batch              # en
 
 ### 8.18 What each surface does for the inner being (`iba/app/ps/Engagement.ps1`, escalation #2406)
 
-The step between the collections and the narration. A collection's member surfaces (the link's own term, and the terms whose base is that term that have no link of their own, tiers `collection.member_tiers`, which include the phrases placed in the collection) are each assessed in every verse they occur in, with the role they take there; the surface-level group then follows from the roles and replaces the draft group. Claude reads and writes in the session from a working file; the app pulls the file, checks the filled assessment whole and writes it. Everything assessed is inferential (B:4) until you confirm it. No outside word is ever brought in (R4): a verse the member surfaces cannot account for, or a member that does not fit its collection, is a question on the collection and is not repaired here.
+The step between the collections and the narration. A collection's member surfaces (the link's own term, and the terms whose base is that term that have no link of their own, tiers `collection.member_tiers`, which include the phrases placed in the collection) are each assessed in every verse they occur in, with the role they take there; the surface-level group then follows from the roles and replaces the draft group. Claude reads and writes in the session from a working file; the app pulls the file, checks the filled assessment whole and writes it. A surface judged to have no bearing in a verse is written as a silence observation whose node takes the role `standalone` (`engagement.no_bearing_role`; your ruling on #2525), and a re-evaluation of the verse, `Review` and `Close`, reconsiders it. Everything assessed is inferential (B:4) until you confirm it. No outside word is ever brought in (R4): a verse the member surfaces cannot account for, or a member that does not fit its collection, is a question on the collection and is not repaired here.
 
 ```powershell
 iba\app\ps\Engagement.ps1 -Action Pull -Collection aloud                       # the working file of the collection

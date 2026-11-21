@@ -23,7 +23,7 @@ In the store the prose is four things (read from `bible_research.db` and `iba.db
 | The contentious glossary | `glossary_contentious` | 2 sections |
 | The concept pointers | `cfg_prose_concept` | 8 rows |
 
-Out of scope: the older prose of source stages session_a to session_d, essay, findings and contributor (history prose). `CLAUDE.md`, `CHARTER.md`, `GOVERNANCE.md`, `BUILD.md` and `USER-GUIDE.md` are not edited here; the prose points to them. The working summary from which the prose is rewritten is `outputs/escalation/2510-project-map-v2-20261119.md`.
+Out of scope: the older prose of source stages session_a to session_d, essay, findings and contributor (history prose). `CLAUDE.md`, `CHARTER.md`, `GOVERNANCE.md`, `BUILD.md` and `USER-GUIDE.md` are not edited here; the prose points to them. The working summary from which the prose is rewritten is `outputs/escalation/2510-project-map-v3-20261120.md`.
 
 The word "collection" appears in 1 of 52 sections. The book was written before the collection model, the layered reading, the node rules, the narrative in the database and the compliance and close routines.
 

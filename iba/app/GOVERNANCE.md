@@ -156,6 +156,12 @@ The `escalation` table holds every open item, task, issue, decision and thread
   (`cfg_behaviour_rule` 82). The close writes the session log
   (`governance.session_log_required_content`) and commits twice
   (`governance.session_log_triggers_commit`).
+- **The project map:** `iba/docs/project-map.md` (`cfg_control_home` kind `project_map`) is the working
+  guide to the whole project, kept current as part of close (the researcher's decision D3 on #2510).
+  Close step SC17 (`session_close.map_home`, `session_close.map_signals`) finds a change to something
+  the map describes that the map did not follow. It detects that the map was not updated; it cannot
+  judge that its text is right. The map is a working document: only results held in the databases are
+  the project's results.
 
 ## 8. Open, not decided
 

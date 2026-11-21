@@ -1,0 +1,43 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261121T044234Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-21T04:42:34Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 2 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-24-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 24,
+      "record": {
+        "body": "The term layer lives in `iba.db`, as a chain of small, single-purpose tables, each named for the processing layer it represents.\n\n`word_strong` is the discovery record: one row for each pair of an English word and a Strong's code that STEP's word search returned. It carries the link only, with no term detail, and determines which Strong's codes an onboarding run touches.\n\n`strong` is the term's identity: one row for each Strong's code, unique and global to the whole study. Meaning is deliberately not carried on this row; it is normalised into its own tables, `strong_sense`, `strong_meaning_tree`, `strong_lexicon`, `strong_lsj_parsed` and `strong_mounce_parsed`, which hold the sense hierarchy and the LSJ and Mounce enrichment. `strong_related` carries the associative and root-family relationships between codes and is keyed on the exact lettered code, never on the base code.\n\n`lemma_inventory` is the independent substrate over which the seed net runs, imported from the earlier study and deliberately not derived from the registry, so that it works as a completeness control. `candidate_seed` is the over-inclusive candidate assessment built from it, a potential and not a definite decision about whether a lemma belongs in scope, with the lexical stage as the real test.\n\nThe verse-level lexical substrate is a further chain. `span` is the immutable source parse, one row for each tag of STEP's own interlinear presentation of a verse, kept verbatim so the parse can be re-derived; a combined-unit tag is kept as one row and is not split. `span_candidate` is the candidate stamp over a span. `verse_lexical` is the derived mechanical reading of the verse: one row for each Strong's code within a span, with the cluster codes of the Strong's code in its `role` column (an association copied onto the occurrence, and not the role a word has in a finding, which is set out under the node), the sense selected by stem and voice, and any ambiguity named and not resolved. It records the verse's structural composition and says nothing of what a word does for the inner being. It is derived once from the span and read from there; everything after it reads the derived row and does not derive again from `span` or `strong`.",
+        "heading": "Terms",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1406}"
+      }
+    },
+    {
+      "op_id": "PROSE-27-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 27,
+      "record": {
+        "body": "The programme anchors a finding to a specific piece of verse evidence by the **node**. A node applies one observation to one verse, one word and one surface: it carries the verse reference, the `verse_lexical` row of the occurrence (which fixes the surface, the Strong's code and the morph code), the collection and subgroup of the surface, the role the word has in the finding, and the stage that produced it. The node is how the study finds things: the observations of a collection are found through the collection on the node, and those of a subgroup through its subgroup.\n\nWhere an observation refers to several variants, such as verses, surfaces or Strong's codes, it has a node for each variant. A live observation has at least one live node, and a node cannot exist without a live observation. Two live nodes of one observation whose indexing columns are all the same are either incomplete or a duplicate: an incomplete node is completed, and a duplicate is withdrawn with its reason. A node is withdrawn, never physically deleted.\n\nThe role of a node is what the word is for the finding the observation states, and it is judged by reading the verse. It is judged for each occurrence, against what the verse is about, the inner-being operation it carries, and never taken from the cluster tag, from the collection the surface is in, from the word's other occurrences or from the part the word usually plays. The same surface can therefore be a characteristic in one verse and a qualifier in another. Each role is its own observation, applied by its nodes to the verses where that role holds, and the difference between the verses is carried by those observations and not by the surface's group.\n\nThe roles fall into four sets. Two are relevant to the inner being. A **characteristic** is a word that behaves as a characteristic of the inner being: it carries the main inner-being operation of the verse, and it is the word the finding is about. A **qualifier** binds to a characteristic and gives it value or context in place: its manner, measure, strengthening, ground, cause, object or setting, or the negator that makes an act a refusal, and there is no fixed list. The observation of a qualifier states what it gives the characteristic; the word has no account of its own from that verse, and it is carried as a face of the word and as an interrelationship. In 'I cried aloud to the Lord', *cried* is the characteristic and *aloud* a qualifier giving volume, unless the verse treats the loudness as a purpose or effect of its own, in which case it is part of the characteristic. A word that only qualifies, or that has no inner-being role of its own, is not analysed by itself: it is bound to the characteristic it qualifies, or excluded. Three roles bear on the finding without being its characteristic or qualifier: the **object** (what the act is directed at, or its content), the **relational target** (the party the act engages) and the **enactment** (the outward act the inner act produces). `standalone` records that the word was recognised and has no inner-being role on any other surface of the verse. `lexical` records that the word was read lexically and that its inner-being role has not been assessed; the nodes of stages 1 to 3 carry it, because those stages state nothing of the inner being.\n\nA party's role is an observation and not a field of the node. 'An evil spirit acting towards the inner being' is one observation, applied by its nodes to every verse and word it affects; the programme keeps no table of parties. A role is never a verdict: a verse is not closed as 'only a qualifier' or 'no bearing', and what is recorded is what the verse is (Chapter 2, the inner-being layer).\n\nThe study's earlier method named three roles, characteristic, qualifier (or process-element) and standalone, and they remain the core. The node adds the object, the relational target and the enactment for the words that bear on a finding, and `lexical` for the words not yet assessed. Two other columns are also called role and are not the role of a node: `verse_lexical.role` holds the cluster codes of the word's Strong's code copied onto each occurrence, an association with no reading of the verse in it, and `verse_span_index.role` in `bible_research.db` holds an older analytic role set by earlier campaigns, on part of the spans and with a vocabulary that grew by use. Neither is read as the role of a word in a finding.\n\nThe role is required on a node that names a word, but it is not yet set on every node. On 2026-11-21, of the 68,426 live nodes, 14,065 had no role. Setting them has been handed to the collection reading, which has not yet reached it, and a role found wrong on an earlier-method node is corrected there.",
+        "heading": "The node",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1409}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "prose_section_supersedes": 2,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-4-v6-20261121.md"
+  }
+}

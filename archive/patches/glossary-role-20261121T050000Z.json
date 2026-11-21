@@ -1,0 +1,77 @@
+{
+ "_patch_meta": {
+  "patch_id": "PATCH-20261121T050000Z-PROSE-GLOSSARY-ROLE",
+  "patch_type": "PROSE",
+  "produced_at": "2026-11-21T05:00:00Z",
+  "session_b_status": null,
+  "researcher_approval": "PENDING",
+  "description": "Programme glossary aligned to the definition of role: role, node, qualifier, engagement, and the new entry standalone."
+ },
+ "operations": [
+  {
+   "op_id": "PROSE-1066-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1066,
+   "record": {
+    "body": "[DEFINITION] The role of a word in a finding: what the word is for the finding an observation states, judged by reading the verse, for each occurrence, against the inner-being operation the verse carries. It is never taken from the cluster tag, the collection, the word's other occurrences or its usual part, so the same word can be a characteristic in one verse and a qualifier in another, and each role is its own observation applied by its nodes to the verses where it holds. On a node the roles are: characteristic (the word behaves as a characteristic of the inner being, and the finding is about it) and qualifier (it binds to a characteristic and gives it value or context in place: manner, measure, strengthening, ground, cause, object, setting or the negator of a refusal; the observation states what it gives, and the word has no account of its own from that verse), which are relevant to the inner being; object (what the act is directed at, or its content), relational_target (the party the act engages) and enactment (the outward act the inner act produces), which bear on the finding; standalone, which records that the word was read in the verse and holds nothing for the inner being (it binds to nothing, and it is a role and not an absence; see standalone); and lexical, which records that the word was read lexically and its inner-being role has not been assessed (cfg_setting reading.node_roles; behaviour rule 130). A party's role is an observation, not a field. A role is never a verdict: a verse is not closed as 'only a qualifier' or 'no bearing'.\n\n[BACKGROUND] Held in ib_node.role, required on a node that names a word and not set on every node (14,065 of 68,426 live nodes on 2026-11-21: the nodes written by earlier methods, and the nodes of silence observations, which carry no role at present). The study's earlier method named three roles, characteristic, qualifier (or process-element) and standalone; the node adds object, relational_target, enactment and lexical. Two other columns are also called role and are not this one: verse_lexical.role holds the cluster codes of the word's Strong's code copied onto each occurrence, with no reading of the verse in it, and verse_span_index.role holds an older analytic role set by earlier campaigns, on part of the spans, with a vocabulary that grew by use. The role is also what the engagement step reads to set a surface's group (a characteristic in any verse makes the surface a behaviour, a qualifier only an inner-being state, no inner-being role in any verse takes it out of the study) and what the deeper reading is to be filtered on, which is not yet defined. This entry is in the contentious glossary: it stays a draft until the researcher settles it.",
+    "heading": "role",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"glossary aligned to the definition of role, 2026-11-21 (B:126; researcher instruction on #2524)\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-1137-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1137,
+   "record": {
+    "body": "[DEFINITION] The application of an observation: one row for each verse occurrence (a word as written in a verse, with its Strong's code) the observation is true of, carrying the word's role in the finding (characteristic, qualifier, object, relational_target, enactment, standalone or lexical; see role), the collection of its surface and, once the surface is placed, its subgroup. An observation has at least one node and a node does not exist without a live observation.\n\n[BACKGROUND] Held in ib_node (behaviour rules 130 and 73). The role is judged by reading the verse, for each occurrence, against the main inner-being operation the verse carries, and never from a cluster tag: characteristic and qualifier are relevant to the inner being; object, relational_target and enactment bear on the finding; standalone records that the word was read in the verse and holds nothing for the inner being (see standalone); and lexical (a node of a stage 1 observation) records that the word was read lexically and its inner-being role has not been assessed.",
+    "heading": "node",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"glossary aligned to the definition of role, 2026-11-21 (B:126; researcher instruction on #2524)\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-1153-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1153,
+   "record": {
+    "body": "[DEFINITION] A word or phrase that binds to a characteristic and gives it value or context in place: its manner, measure, strengthening, ground, cause, object or setting, or the negator that makes an act a refusal; there is no fixed list. A qualifier has no account of its own from that verse: what it gives the characteristic is stated in the observation, and the word is carried as a face of the word and as an interrelationship. The same word can be the characteristic in one verse and a qualifier in another. A state is qualified too.\n\n[BACKGROUND] On a node, qualifier is a role (see role), one of the two roles relevant to the inner being. In the lexical stages a qualifier is read by its grammar (negators, adjectives, adverbs, prepositions) and the word it reaches is stated; adjacency is not scope. What a qualifier gives the behaviour in place is read in the inner-being observations (stage 4).",
+    "heading": "qualifier",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"glossary aligned to the definition of role, 2026-11-21 (B:126; researcher instruction on #2524)\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-1151-SUPERSEDE",
+   "table": "prose_section",
+   "operation": "supersede",
+   "supersedes_id": 1151,
+   "record": {
+    "body": "[DEFINITION] A preparatory step inside the path of a collection, run with Engagement.ps1 before the collection is read. It assesses each member surface in each verse it occurs in by the role it takes there (characteristic or qualifier, or, bearing on the finding, object, relational_target or enactment), and writes the assessment as observations with a node for each verse where the role holds; a surface judged to have no bearing in a verse is recorded as a silence. The surface's group then follows from the roles: a characteristic in any verse makes it a behaviour, a qualifier in some verses and never a characteristic makes it an inner_being_state, and no inner-being role in any verse takes it out of the study group (cfg_setting engagement.group_rule). It is not the result of the study, and everything it assesses is inferential until the researcher confirms it.\n\n[BACKGROUND] Behaviour rule 127 (the unit of study is the collection) names it as preparatory. Some surface judgements in surface_term carry the judge rule:engagement. The nodes of a silence observation carry no role at present.",
+    "heading": "engagement",
+    "author": "claude_code",
+    "status": "draft",
+    "metadata_json": "{\"note\": \"glossary aligned to the definition of role, 2026-11-21 (B:126; researcher instruction on #2524)\"}"
+   }
+  },
+  {
+   "op_id": "PROSE-STANDALONE-INSERT",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id": 109,
+    "heading": "standalone",
+    "status": "draft",
+    "author": "claude_code",
+    "metadata_json": "{\"note\": \"glossary aligned to the definition of role, 2026-11-21 (B:126; researcher instruction on #2524)\"}",
+    "body": "[DEFINITION] A role of a word in a finding: the word was read in this verse and holds nothing for the inner being. It is neither a characteristic, nor a qualifier of one, nor the object, relational target or enactment of one, and it binds to nothing: a function word, or a word that no characteristic in the verse reaches. It is a judgement of the reading and not an absence of one, made for each occurrence, so a word can be standalone in one verse and a qualifier or a characteristic in another; where a standalone word proves to qualify a characteristic, it is a qualifier of it.\n\n[BACKGROUND] Held as the value standalone of ib_node.role (cfg_enum observation_role; cfg_setting reading.node_roles, the set recognised; behaviour rules 73 and 130). It is one of the three roles of the study's earlier method (characteristic, qualifier and standalone). The older column verse_span_index.role also holds the value, set by earlier campaigns. Not to be confused with the other uses of the word in the record, such as a script or a step that runs on its own. See role."
+   }
+  }
+ ]
+}

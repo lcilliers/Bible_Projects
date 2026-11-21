@@ -52,6 +52,13 @@ fixed (it no longer appears) or by a disposition in the session compliance file'
                             is the operation only when the command runs it, not when its text only
                             names it, #2458): `fixed: <where>` (it stays in the transcript, so the line names
                             the point-of-use fix), or carried by an open item.
+  SC17 project map          the map file (session_close.map_home) carries 'Current as of: <date>
+                            <commit>'; when a signal of session_close.map_signals fired in the window
+                            (a control-map row, a governance.* setting, the reading stages, a table
+                            added, a completed task BUILD.md names, a Programme book section the map
+                            rests on) and the map file did not change: `no change needed: <reason>`,
+                            or update the map. A map changed in the window must carry a current date.
+                            Detects that a change was not reflected; it cannot judge the map's text.
 SC7 (remediation), SC11 (re-run) and SC13 (commit, blocked while any finding is open) are steps of
 the command; Session-Close.ps1 exits 3 while any finding is open. SC14: this report is the close's
 persisted record.
@@ -470,6 +477,85 @@ def _sc10(cfg, base, changed) -> list[dict]:
     return F
 
 
+_MAP_HEADER_RX = re.compile(r"^Current as of:\s*(\d{4}-\d{2}-\d{2})\s+([0-9a-f]{7,40})\b", re.MULTILINE)
+
+
+def _signal_fired(cfg, db, sig, since, base) -> list[str]:
+    """The evidence lines for one map signal (session_close.map_signals); empty when it did not fire."""
+    kind = sig.get("kind")
+    if kind == "cfg_change":
+        rows = db.rows("SELECT table_name, op, where_json, set_json FROM cfg_change_detail "
+                       "WHERE table_name=? AND applied_at >= ?", (sig["table"], since))
+        out = []
+        for r in rows:
+            if sig.get("op") and r["op"] != sig["op"]:
+                continue
+            if sig.get("key_like"):
+                try:
+                    key = (json.loads(r["where_json"] or "{}").get("key")
+                           or json.loads(r["set_json"] or "{}").get("key") or "")
+                except Exception:
+                    key = ""
+                if not fnmatch.fnmatch(key, sig["key_like"].replace("%", "*")):
+                    continue
+                out.append(f"{r['table_name']} {r['op']} {key}")
+            else:
+                w = r["where_json"] if (r["where_json"] or "{}") != "{}" else r["set_json"]
+                out.append(f"{r['table_name']} {r['op']} {(w or '')[:80]}")
+        return out
+    if kind == "task_in_build":
+        added = sw.diff_added_text(base, "iba/app/BUILD.md") if base else ""
+        rows = db.rows("SELECT DISTINCT e.id, e.short_description FROM escalation e WHERE e.type='task' "
+                       "AND e.state='completed' AND COALESCE(e.answered_at, e.raised_at) >= ?", (since,))
+        return [f"#{r['id']} {r['short_description'][:60]}" for r in rows if f"#{r['id']}" in added]
+    if kind == "prose_section":
+        from ..lib import prosestore
+        heads = sig.get("headings", [])
+        if not heads:
+            return []
+        conn = prosestore.open_db(cfg)
+        try:
+            q = ",".join("?" * len(heads))
+            rows = conn.execute(f"SELECT heading FROM prose_section WHERE heading IN ({q}) AND "
+                                f"COALESCE(updated_at, created_at) >= ?", (*heads, since)).fetchall()
+        finally:
+            conn.close()
+        return [f"Programme book section '{r[0]}'" for r in rows]
+    return []
+
+
+def _sc17(cfg, db, root, changed, since, base) -> list[dict]:
+    """#2516: the project map (session_close.map_home) is kept current as part of session close. When
+    something the map describes changed in the window (session_close.map_signals) and the map file did
+    not, each signal is a finding; clears with `no change needed: <reason>` or by updating the map.
+    The check detects that a change was not reflected; it cannot judge that the map's text is right."""
+    home = cfg.required_setting("session_close.map_home")
+    path = root / home
+    if not path.is_file():
+        return [dict(key="SC17:home", step="SC17", text=f"the project map `{home}` does not exist")]
+    text = path.read_text(encoding="utf-8", errors="replace")
+    head = "\n".join(text.splitlines()[:12])
+    m = _MAP_HEADER_RX.search(head)
+    F = []
+    if not m:
+        F.append(dict(key="SC17:header", step="SC17",
+                      text=f"`{home}` has no 'Current as of: <date> <commit>' line in its first lines"))
+    map_changed = home in set(changed)
+    if map_changed:
+        if m and m.group(1) < since[:10]:
+            F.append(dict(key="SC17:header", step="SC17",
+                          text=f"`{home}` changed this session but its 'Current as of' date "
+                               f"{m.group(1)} is before the session start {since[:10]}"))
+        return F
+    for sig in cfg.required_setting("session_close.map_signals"):
+        ev = _signal_fired(cfg, db, sig, since, base)
+        if ev:
+            F.append(dict(key=f"SC17:{sig['name']}", step="SC17",
+                          text=f"{sig.get('describes', sig['name'])}, and `{home}` did not change: "
+                               + "; ".join(ev[:3]) + (f" (+{len(ev) - 3} more)" if len(ev) > 3 else "")))
+    return F
+
+
 def _sc12(cfg, db, root, changed, since) -> dict:
     chapters = _chapter_changes(cfg, root, changed)
     thread_rows = db.rows(
@@ -514,7 +600,9 @@ def _apply_dispositions(F, disp, handles, db, since) -> None:
                 f["note"] = "the named #n vN does not exist or was not written this session"
         elif (low.startswith("no record needed:") and f["step"] == "SC3") or \
                 (low.startswith("not held:") and f["step"] == "SC4" and f["key"].startswith("SC4b")) or \
-                (low.startswith("not scripture:") and f["key"].startswith("SC5b")) or                 (low.startswith("fixed:") and f["step"] == "SC16"):   # a repeat stays in the transcript:
+                (low.startswith("not scripture:") and f["key"].startswith("SC5b")) or \
+                (low.startswith("no change needed:") and f["step"] == "SC17" and f["key"] != "SC17:home") or \
+                (low.startswith("fixed:") and f["step"] == "SC16"):   # a repeat stays in the transcript:
             # the disposition names where it was fixed (#2207 part 3)
             if len(d.split(":", 1)[1].strip()) >= 8:
                 f["cleared"] = True
@@ -577,7 +665,7 @@ _STEP_TITLES = {"SC1": "SC1 Session and window", "SC2": "SC2 Spine (FATAL)",
                 "SC5": "SC5 Analysis integrity", "SC6": "SC6 Rule compliance",
                 "SC8": "SC8 Session log", "SC9": "SC9 Decisions reached their targets",
                 "SC10": "SC10 BUILD.md coverage", "SC15": "SC15 Control files",
-                "SC16": "SC16 Claude's repeated failures"}
+                "SC16": "SC16 Claude's repeated failures", "SC17": "SC17 Project map current"}
 
 
 def _write_report(ctx, ident, F, info) -> pathlib.Path:
@@ -670,6 +758,7 @@ def check(ctx: Ctx) -> Outcome:
         F += [dict(key=k, step="SC15", text=t)
               for k, t in cfgquality.find_control_file_problems(db.conn, root)]
         F += _sc16(tpath, cfg.required_setting("session_close.sc16_designed_stops"))
+        F += _sc17(cfg, db, root, changed, since, base)
         info["publish"] = _sc12(cfg, db, root, changed, since)
         disp = compliance.parse(cpath)["dispositions"] if cpath else {}
     else:
