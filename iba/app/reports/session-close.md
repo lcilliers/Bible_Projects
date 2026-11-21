@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-21T05:52:39Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-21T05:53:38Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `7063fa17-e22e-4eee-831c-b96c5e1ae45e` (CLAUDE_CODE_SESSION_ID); started 2026-11-21T05:33:11Z; window base commit `5a04e37069cf09b799b9645ed2b25a4a780bf1d5`
-- compliance file: `Logs/compliance/COMPLIANCE-20261121-7063fa17.md`; session log: `Logs/SESSION-LOG-20261121-role-config-glossary-and-project-map-check.md`
-- **open findings: 0**; cleared by disposition: 2
+- session: `19e3337e-aea1-4434-b72a-e90cdff0b1d6` (CLAUDE_CODE_SESSION_ID); started 2026-11-20T13:55:48Z; window base commit `5a04e37069cf09b799b9645ed2b25a4a780bf1d5`
+- compliance file: `Logs/compliance/COMPLIANCE-20261120-19e3337e.md`; session log: `Logs/SESSION-LOG-20261121-programme-book-single-source-and-followups.md`
+- **open findings: 0**; cleared by disposition: 19
 
 
 ## Contents
@@ -42,13 +42,40 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:20916f29`: researcher message 2026-11-21T05:38 is in no escalation comment written this session: "2525:  I have previously already ruled that in a verse when a surface is judged as stand alone, then it must be written to the observation.  When a verse is re-" -- disposition: recorded in #2524 v5
-- cleared `SC3:248c67c7`: researcher message 2026-11-21T05:50 is too short to be matched; name where it is recorded: "run session-close" -- disposition: no record needed: a bare command to run session-close, recorded in the session log
+- cleared `SC3:a6cb58ac`: researcher message 2026-11-20T14:04 is in no escalation comment written this session: "resolve 2511, 2513, 2512, 2514.  2510 : create a new escalation with the open item list, and then close 2510 as completed." -- disposition: no record needed: carried out as instructed, #2511 to #2514 completed (v2 each) and #2510 completed at v23, new list raised as #2515
+- cleared `SC3:d6cfe434`: researcher message 2026-11-20T14:13 is in no escalation comment written this session: "2515 Question 27 - escalation history export anomaly.  the following is the content of the comment column of 2510. Reconcile this with history report of this es" -- disposition: recorded in #2515 v2
+- cleared `SC3:89214c94`: researcher message 2026-11-20T16:26 is too short to be matched; name where it is recorded: "Not yet" -- disposition: recorded in #2517 v8
+- cleared `SC3:d5fcf43f`: researcher message 2026-11-20T16:49 is in no escalation comment written this session: "is this the document I must approve Workflow\Programme\programme_prose\wa-programme-prose-extract-20261120.md" -- disposition: no record needed: a question answered in chat, the file confirmed; the approval it led to is #2517 v16
+- cleared `SC3:71a34c86`: researcher message 2026-11-20T17:58 is in no escalation comment written this session: "did you read back the 2510 outputs to check the prose?  Did you check you history md to see what sections of prose should not be included.  I was not sure where" -- disposition: no record needed: a question answered in chat; the instruction that followed is #2517 v12
+- cleared `SC3:2e28d40f`: researcher message 2026-11-20T17:44 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: no record needed: a system context summary, not the researcher's words
+- cleared `SC3:35916d27`: researcher message 2026-11-20T18:02 is in no escalation comment written this session: "where do I find the stages 3 and 4 and 5 in the programme prose" -- disposition: no record needed: a question answered in chat; the work that followed is #2517 v12
+- cleared `SC3:d3a7b670`: researcher message 2026-11-20T18:04 is in no escalation comment written this session: "so how can you say the prose is complete. what are you measuring it against?" -- disposition: no record needed: a question answered in chat; the work that followed is #2517 v12
+- cleared `SC3:8adb07e8`: researcher message 2026-11-20T18:28 is in no escalation comment written this session: "did you include everything in the one book - programme, or did you make updates in the detail design book." -- disposition: no record needed: a question answered in chat; the correction that followed is #2517 v14
+- cleared `SC3:0c0750eb`: researcher message 2026-11-20T18:36 is too short to be matched; name where it is recorded: "Approved" -- disposition: recorded in #2517 v16
+- cleared `SC3:ee7b67ac`: researcher message 2026-11-21T03:56 is too short to be matched; name where it is recorded: "Approve all three" -- disposition: recorded in #2519 v3
+- cleared `SC3:2cd70d95`: researcher message 2026-11-20T19:45 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: no record needed: a system context summary, not the researcher's words
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-_no finding_
+- cleared `SC4b:d6cfe434`: researcher message 2026-11-20T14:13 holds, defers or asks to check something; name its register item: "2515 Question 27 - escalation history export anomaly.  the following is the content of the comment column of 2510. Reconcile this with history report of this es" -- disposition: not held: recorded and closed at #2515 v2 to v5
+- cleared `SC4b:71a34c86`: researcher message 2026-11-20T17:58 holds, defers or asks to check something; name its register item: "did you read back the 2510 outputs to check the prose?  Did you check you history md to see what sections of prose should not be included.  I was not sure where" -- disposition: not held: a question answered in chat, the work it led to recorded at #2517 v12
+- cleared `SC4b:2e28d40f`: researcher message 2026-11-20T17:44 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: not held: a system context summary, not the researcher's words
+- cleared `SC4b:a236e4c8`: researcher message 2026-11-20T18:07 holds, defers or asks to check something; name its register item: "listen carefully - you going around and around.  I just asked you to readback all the 2510 md files into prose to check if you have taken everything into accoun" -- disposition: not held: recorded at #2517 v12 and acted on the same turn
+- cleared `SC4b:c1910312`: researcher message 2026-11-20T18:41 holds, defers or asks to check something; name its register item: "2516 approved for your follow up action; resolve 2518.  2515 can be finalised, 2509 should now be clear, 2508 have previously been ruled on, is 2507 still open." -- disposition: not held: carried out the same turn, recorded at #2515 v24, #2516 v4 and #2506 v5
+- cleared `SC4b:2cd70d95`: researcher message 2026-11-20T19:45 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: not held: a system context summary, not the researcher's words
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -85,6 +112,6 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 3 times this session: [31;1mEscalation.ps1: [31;1mCannot validate argument on parameter 'State'. The argument "approved" does not belong to ; Update needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default p; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut -- disposition: fixed: the approval handshake needs ready_for_approval before approved; later calls used it, #2519 v2 and v3
 
 _no finding_
