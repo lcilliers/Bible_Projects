@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-21T05:53:38Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-21T06:48:13Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `19e3337e-aea1-4434-b72a-e90cdff0b1d6` (CLAUDE_CODE_SESSION_ID); started 2026-11-20T13:55:48Z; window base commit `5a04e37069cf09b799b9645ed2b25a4a780bf1d5`
 - compliance file: `Logs/compliance/COMPLIANCE-20261120-19e3337e.md`; session log: `Logs/SESSION-LOG-20261121-programme-book-single-source-and-followups.md`
-- **open findings: 0**; cleared by disposition: 19
+- **open findings: 0**; cleared by disposition: 20
 
 
 ## Contents
@@ -60,6 +60,7 @@ Summar" -- disposition: no record needed: a system context summary, not the rese
 
 
 Summar" -- disposition: no record needed: a system context summary, not the researcher's words
+- cleared `SC3:7620d28b`: researcher message 2026-11-21T06:47 is too short to be matched; name where it is recorded: "Yes, close now" -- disposition: no record needed: the instruction to run session-close, carried out by this close
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -112,6 +113,6 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 3 times this session: [31;1mEscalation.ps1: [31;1mCannot validate argument on parameter 'State'. The argument "approved" does not belong to ; Update needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default p; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut -- disposition: fixed: the approval handshake needs ready_for_approval before approved; later calls used it, #2519 v2 and v3
+- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 4 times this session: [31;1mEscalation.ps1: [31;1mCannot validate argument on parameter 'State'. The argument "approved" does not belong to ; [31;1mInvoke-Expression: [31;1mVariable reference is not valid. ':' was not followed by a valid variable name characte; Update needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default p; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut -- disposition: fixed: the approval handshake needs ready_for_approval before approved; later calls used it, #2519 v2 and v3
 
 _no finding_

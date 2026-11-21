@@ -17,7 +17,8 @@ The researcher's aim for this session: one set of truth, the Programme book in b
 - #2509, #2508, #2507: closed (v9, v5, v18); the anomaly list and rulings carried on #2463 (v40).
 - #2506: completed (v7) after the three config proposals were applied.
 - #2519, #2521, #2522: the config proposals, approved and applied (v4 each). #2520 withdrawn (v2), replaced by #2522.
-- #2448, #2463: untouched in substance, assigned to Claude.
+- #2463, #2448, #2486, #2376, #2377: superseded (v41, v18, v18, v8, v3) by #2526, #2528, #2529 and #2530 on the researcher's instruction.
+- #2526 (collection reading, stages 1 to 3), #2527 (pick-up point and stage ends), #2528 (stage 4), #2529 (the narrative), #2530 (stage 5): raised and updated; #2527 awaits the researcher.
 
 ## 3. Files
 
@@ -27,6 +28,7 @@ The researcher's aim for this session: one set of truth, the Programme book in b
 - Worksheet: the VerseLexical tab of iba/docs/ps tools worksheet.xlsx (stale columns and retired rows removed).
 - Reports: outputs/configs/CONFIG-REPORT.md; the escalation histories of the items above under outputs/escalation/.
 - Compliance file: Logs/compliance/COMPLIANCE-20261120-19e3337e.md.
+- Later in the session: outputs/escalation/2463-open-items-aligned-to-the-programme-v1-20261121.md, outputs/escalation/2527-where-the-programme-is-picked-up-and-the-stage-end-v2-20261121.md, outputs/escalation/2526-stages-1-to-4-readiness-audit-v1-20261121.md, outputs/escalation/2528-stage-4-and-alignment-build-brief-v1-20261121.md; the prose patch archive/patches/wa-prose-stage4-required-20261121T070000Z.json and the export Workflow/Programme/programme_prose/wa-programme-prose-extract-20261121.md.
 
 ## 4. Decisions
 
@@ -37,11 +39,15 @@ The researcher's aim for this session: one set of truth, the Programme book in b
 - Claude, self-correctable: Detail design section 128 restored from the change log after the framework was put there by mistake. Recorded in archive/patches/wa-prose-detail-design-restore-20261120T190100Z.json.
 - Claude, self-correctable: #2520 withdrawn and re-proposed as #2522 so the wording does not name a closing item. Recorded at #2520 v2.
 - Claude, self-correctable: the worksheet drift fixed. Recorded at #2506 v5.
+- Researcher: the five old items are superseded by steps aligned to the Programme book. Recorded at #2526 v1, #2527 v1, #2528 v1, #2529 v1 and the five supersede versions.
+- Researcher: stage 4 is to be fully specified and built, and the Programme book says so. Recorded at #2527 v7 and archive/patches/wa-prose-stage4-required-20261121T070000Z.json.
+- Researcher: prepare for a developer-mode session to build stage 4. Recorded at #2528 v5 and outputs/escalation/2528-stage-4-and-alignment-build-brief-v1-20261121.md.
 
 ## 5. Open items
 
-- #2448: collection reading, assigned to Claude, waiting on collection processing.
-- #2463: the rerun of the subgroup methods and the carried anomaly list, assigned to Claude.
+- #2526: collection reading, stages 1 to 3, assigned to Claude, waiting on the developer-mode build of #2528.
+- #2528: the build of stage 4 and the alignment of stages 1 to 3, assigned to Claude, needs a fresh /developer-mode session.
+- #2527: pick-up point and stage ends, with the researcher for approval.
 
 ## 6. Git
 
