@@ -58,3 +58,7 @@ First commit: 6d5bff43, "session 20261121: Programme book as single source (#251
 Push: `To https://github.com/lcilliers/Bible_Projects.git   99da595f..6d5bff43  main -> main`.
 
 Not committed by rule: database/bible_research.db (the Programme book lives there) and backups/.
+
+Second close, later the same session: commit 19b3adcf, "session 20261121: five old items aligned to the Programme book (#2526-#2530), stage 4 stated as required in the programme prose, stages 1 to 4 readiness audit, developer-mode build brief for stage 4".
+
+Push: `To https://github.com/lcilliers/Bible_Projects.git   e5d6fea2..19b3adcf  main -> main`.
