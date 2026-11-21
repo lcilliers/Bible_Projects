@@ -41,4 +41,5 @@ Session id: 7063fa17-e22e-4eee-831c-b96c5e1ae45e (Developer Mode)
 
 ## 6. Git
 
-Not yet written.
+Branch: main. Commit 071f7cf2 (session 20261121: role defined across config, glossary and programme prose ... #2506 closed).
+Push: `To https://github.com/lcilliers/Bible_Projects.git   5a04e370..071f7cf2  main -> main`.
