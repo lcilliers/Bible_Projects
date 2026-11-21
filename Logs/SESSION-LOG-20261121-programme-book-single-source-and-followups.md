@@ -45,4 +45,10 @@ The researcher's aim for this session: one set of truth, the Programme book in b
 
 ## 6. Git
 
-(written after the first commit)
+Branch: main
+
+First commit: 6d5bff43, "session 20261121: Programme book as single source (#2517), follow-ups #2506-#2518, config #2519/#2521/#2522 applied, role alignment (#2524, #2525), session-close project-map check (#2516), session log, compliance".
+
+Push: `To https://github.com/lcilliers/Bible_Projects.git   99da595f..6d5bff43  main -> main`.
+
+Not committed by rule: database/bible_research.db (the Programme book lives there) and backups/.
