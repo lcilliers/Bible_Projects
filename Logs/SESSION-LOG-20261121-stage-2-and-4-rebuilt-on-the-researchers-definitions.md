@@ -44,4 +44,4 @@ Session id: 307ff161-099e-4868-8f37-cc4ed02af521 (Developer Mode)
 
 ## 6. Git
 
-_(written after the commit)_
+Branch: main. Commits: b1c76ec7 (the build, committed on the researcher's request) and 71fb1cda (the session close: log, compliance, close report). Push: `To https://github.com/lcilliers/Bible_Projects.git   7c23eb2b..71fb1cda  main -> main`. This log's git section is committed alone as "session 20261121: session log git confirmation".
