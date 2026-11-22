@@ -41,6 +41,12 @@
                  meaning is not the one the collection gathers is set aside with its reason; writes the scrutiny report
       IndexCheck   the checks of the index (a member with no row, a surface that left, a surface in two collections, duplicates, the split rule, placements, stale shared flags);
                 writes a report under surfaces.exports_root (#2503)
+      ValidatePull   -Collection <name>   the validation after stage 4 (#2538): the scope of the collection (every live observation related to it: it carries the collection, sits on one of its
+                verses, or on a member surface with its lettered Strong's code), the structural tests, a Markdown report and the working file of every in-scope observation to read. Writes no table
+      ValidateRecord -File <sheet of actions> [-Check]   check the sheet whole and write its actions in one transaction (set the marker, defer a finding to a named collection, restate, trace, create,
+                consume, delete as neither, complete a node, annotate a deleted observation); any problem refuses all of it; -Check runs every action and rolls back
+      ValidateCheck  -Collection <name>   the completeness check in two layers, evidence first (the inner-being layer is judged only when the evidence layer passes); names what is open, deferred to a named
+                collection, or pending; writes a report. Writes no table
       Set       -Collection <name> -Status indicative|confirmed|retired -Reason <text>   on your instruction
       Merge     -From <name> -Into <name> -Reason <text>   fold one collection into another, on your instruction
       Gather    -Name <name> -Surface <a,b,c> -Reason <text> [-Check]   one collection of the surfaces you name, tier gathered, without the AI; for words in no collection
@@ -62,7 +68,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Evidence', 'Set', 'Merge', 'Seed', 'Ask', 'Gather', 'AttachPhrases', 'Index', 'Subgroup', 'IndexCheck', 'LayerOpen', 'LayerPull', 'LayerRecord', 'LayerCheck', 'NodeGroups', 'GroupPull', 'GroupRecord')]
+    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Evidence', 'Set', 'Merge', 'Seed', 'Ask', 'Gather', 'AttachPhrases', 'Index', 'Subgroup', 'IndexCheck', 'LayerOpen', 'LayerPull', 'LayerRecord', 'LayerCheck', 'NodeGroups', 'GroupPull', 'GroupRecord', 'ValidatePull', 'ValidateRecord', 'ValidateCheck')]
     [string] $Action,
     [string[]] $Collection,
     [string] $Verse,
@@ -91,7 +97,7 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 . $PSScriptRoot\_lib\Notify.ps1
 
-$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Evidence = 'collection.evidence'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather'; AttachPhrases = 'collection.attach_phrases'; Index = 'collection.index'; Subgroup = 'collection.subgroup'; IndexCheck = 'collection.index_check'; LayerOpen = 'collection.layer_open'; LayerPull = 'collection.layer_pull'; LayerRecord = 'collection.layer_record'; LayerCheck = 'collection.layer_check'; NodeGroups = 'collection.node_groups'; GroupPull = 'collection.group_pull'; GroupRecord = 'collection.group_record' }
+$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Evidence = 'collection.evidence'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather'; AttachPhrases = 'collection.attach_phrases'; Index = 'collection.index'; Subgroup = 'collection.subgroup'; IndexCheck = 'collection.index_check'; LayerOpen = 'collection.layer_open'; LayerPull = 'collection.layer_pull'; LayerRecord = 'collection.layer_record'; LayerCheck = 'collection.layer_check'; NodeGroups = 'collection.node_groups'; GroupPull = 'collection.group_pull'; GroupRecord = 'collection.group_record'; ValidatePull = 'collection.validate_pull'; ValidateRecord = 'collection.validate_record'; ValidateCheck = 'collection.validate_check' }
 $stepId = $stepMap[$Action]
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-COLLECTIONBUILD"
 

@@ -363,33 +363,32 @@ switch ($Action) {
         }
     }
     'Raise' {
+        # escalation #2540: every call-shape problem is reported in ONE refusal. Checking one at a
+        # time (and exiting) cost a caller with three mistakes three failed calls (session 20261121).
+        $problems = @()
         if (-not $Question -or -not $Comment) {
-            Write-Host "Raise needs -Question and -Comment (minimum: what this item is about)." -ForegroundColor Yellow
-            exit 1
+            $problems += "needs -Question (the short title) and -Comment (minimum: what this item is about)"
         }
-        # escalation #1719 v4, researcher: caught this same mistake recurring "numerous times" --
-        # -ShortDescription is a real parameter on this script but Raise never reads it (only
-        # -Action Correction does; Raise's own title comes from -Question, which must itself be a
-        # short, single-line, <=60-char, no-"--" title -- see cfg_behaviour_rule title-shape spec).
-        # A caller who passes -ShortDescription on a Raise, reasonably assuming it sets the title,
-        # previously had it silently dropped with no signal anything was wrong. Fail loud instead
-        # of documenting the footgun and leaving it live -- a comment nobody re-reads doesn't stop
-        # the same mistake happening again, a hard stop does.
         if ($ShortDescription) {
-            Write-Host ("-ShortDescription has no effect on -Action Raise (only -Action Correction " +
+            $problems += ("-ShortDescription has no effect on -Action Raise (only -Action Correction " +
                 "reads it) -- Raise's title comes from -Question itself, which must be short, " +
                 "single-line, <=60 chars, and contain no '--'. Put your title in -Question instead, " +
-                "and move the detail you meant for -ShortDescription into -Comment/-Context.") -ForegroundColor Yellow
-            exit 1
+                "and move the detail you meant for -ShortDescription into -Comment/-Context")
         }
         if (-not $AnsweredBy) {
-            Write-Host "Raise needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default previously misattributed >=39 history rows in one session)." -ForegroundColor Yellow
-            exit 1
+            $problems += "needs -AnsweredBy Claude|Researcher -- no default (a silent default once misattributed >=39 history rows)"
         }
         if (-not $ResolutionKind) {
-            Write-Host "Raise needs -ResolutionKind DecisionRequired|SelfCorrectable (escalation #798/#799, cfg_behaviour_rule 'decision-points-are-terminal-not-inline')." -ForegroundColor Yellow
+            $problems += "needs -ResolutionKind DecisionRequired|SelfCorrectable (escalation #798/#799, cfg_behaviour_rule 'decision-points-are-terminal-not-inline')"
+        }
+        if ($problems.Count -gt 0) {
+            Write-Host ("Raise refused, {0} problem(s):" -f $problems.Count) -ForegroundColor Yellow
+            foreach ($p in $problems) { Write-Host "  - $p" -ForegroundColor Yellow }
+            Write-Host '  e.g. .\Escalation.ps1 -Action Raise -Question "short title" -Comment "what and why" -AnsweredBy Claude -ResolutionKind SelfCorrectable [-Type task|issue|...] [-AssignedTo Claude|Researcher]' -ForegroundColor Yellow
             exit 1
         }
+        # (escalation #1719 v4: -ShortDescription on a Raise is a hard stop, not silently dropped;
+        # now one of the problems collected above.)
         $kindMap = @{ DecisionRequired = 'decision_required'; SelfCorrectable = 'self_correctable' }
         # .ToLower() -- escalation #872, 2026-08-26: ValidateSet matches case-INsensitively, so
         # e.g. -Type Task passes PS validation, but Python's cfg_enum check is exact-match and
@@ -431,16 +430,21 @@ switch ($Action) {
         python -m iba.app.lib.escalation escalate-to-decision $Id --originator=$AnsweredBy --tried=$Tried
     }
     'Update' {
-        if (-not $Id) {
-            Write-Host "Update needs -Id." -ForegroundColor Yellow
-            exit 1
-        }
+        # escalation #2540: every call-shape problem in ONE refusal (see 'Raise').
+        $problems = @()
+        if (-not $Id) { $problems += "needs -Id" }
         if (-not $AnsweredBy) {
-            Write-Host "Update needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default previously misattributed >=39 history rows in one session)." -ForegroundColor Yellow
-            exit 1
+            $problems += "needs -AnsweredBy Claude|Researcher -- no default (a silent default once misattributed >=39 history rows)"
         }
         if ($NextAction -eq 'reject' -and (-not $State -or -not $Comment)) {
-            Write-Host "-NextAction reject needs -State (withdraw|supersede) and -Comment (the reason)." -ForegroundColor Yellow
+            $problems += "-NextAction reject needs -State (withdraw|supersede) and -Comment (the reason)"
+        }
+        # -NextAction approved with no -Resolution is NOT refused here: the resolution may already be
+        # on the row; Python checks it (and the ready_for_approval authority) against the real row.
+        if ($problems.Count -gt 0) {
+            Write-Host ("Update refused, {0} problem(s):" -f $problems.Count) -ForegroundColor Yellow
+            foreach ($p in $problems) { Write-Host "  - $p" -ForegroundColor Yellow }
+            Write-Host '  e.g. .\Escalation.ps1 -Action Update -Id 123 -AnsweredBy Claude -Comment "what changed" [-NextAction ready_for_approval -Resolution "what approval is sought"] [-AssignedTo Claude|Researcher]' -ForegroundColor Yellow
             exit 1
         }
         # -NextAction approved with no -Resolution here is NOT rejected client-side -- a resolution

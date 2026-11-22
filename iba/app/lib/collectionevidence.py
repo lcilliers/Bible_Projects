@@ -268,13 +268,13 @@ def build_pairs(conn, d: dict, vals: dict, order: Order) -> dict:
         obs_of[n[0]].add(n[1])
     for x in rows:
         x["obs"] = sorted(obs_of.get(x["vl_id"], ()))
-    obs = {r[0]: r for r in _in(conn, "SELECT id, stage, tag, obs_text FROM ib_observation WHERE id IN ({in})", {n[1] for n in nodes})}
+    obs = {r[0]: r for r in _in(conn, "SELECT id, stage, tag, obs_text, nature FROM ib_observation WHERE id IN ({in})", {n[1] for n in nodes})}
     by_vl = {x["vl_id"]: x for x in rows}
     verse_obs = []
     for n in sorted(nodes, key=lambda n: (by_vl[n[0]]["sk"], by_vl[n[0]]["position"] or 0, n[1], n[5])):
         x = by_vl[n[0]]
         o = obs[n[1]]
-        verse_obs.append({"reference": x["reference"], "observation": n[1], "stage": o[1], "tag": o[2], "text": o[3], "node_surface": n[3], "node_strong": n[4], "node_role": n[2],
+        verse_obs.append({"reference": x["reference"], "observation": n[1], "stage": o[1], "tag": o[2], "text": o[3], "nature": o[4], "node_surface": n[3], "node_strong": n[4], "node_role": n[2],
                           "vl_id": n[0], "on_member": x["member"], "type": x["type"]})
     bands = P["bands"]
     by_verse = collections.defaultdict(list)
@@ -378,7 +378,7 @@ def _chain(conn, d: dict, order: Order) -> None:
     nodes.sort(key=lambda n: (sk_of[n["vl_id"]], n["id"]))
     d["nodes"] = nodes
     obs_ids = {n["observation_id"] for n in nodes}
-    obs_cols = ("id", "stage", "tag", "status", "deleted", "strong", "window", "route", "basis", "obs_text", "setting", "meaning", "implication", "chain", "parties",
+    obs_cols = ("id", "stage", "tag", "nature", "status", "deleted", "strong", "window", "route", "basis", "obs_text", "setting", "meaning", "implication", "chain", "parties",
                 "parts", "revisit_note", "supersedes_observation_id", "run_id", "created_at", "updated_at")
     d["observations"] = sorted(_dicts(_in(conn, f"SELECT {', '.join(obs_cols)} FROM ib_observation WHERE id IN ({{in}})", obs_ids), obs_cols), key=lambda o: o["id"])
     # every node of each observation, in or out of the scope, so a node is always shown with what it supports (#2469)

@@ -482,6 +482,89 @@ def ci_error():
     return ci.IndexError_
 
 
+# ══ the validation after stage 4 (#2538) ═════════════════════════════════════════════════════════════
+def _versioned_report(ctx: Ctx, stem_key: str, collection: str, lines: list[str]) -> pathlib.Path:
+    root, stem = ctx.cfg.setting("surfaces.exports_root"), ctx.cfg.setting(stem_key)
+    if not root or not stem:
+        raise ValueError(f"cfg_setting surfaces.exports_root or {stem_key} is missing")
+    archive = ctx.cfg.required_setting("governance.oneoff_report_archive_dir")
+    base = pathlib.Path(root) / f"{stem}-{collection}.md"
+    path = reportkit.next_versioned_path(base, archive)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    reportkit._archive_prior_versions(base, archive)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return path
+
+
+def validate_pull(ctx: Ctx) -> Outcome:
+    """The scope of a collection with the structural tests: a Markdown report, and the working file of every in-scope observation to read (read-only on the tables)."""
+    import datetime
+
+    from ..lib import collectionvalidate as cv
+    conn = ctx.cfg.conn
+    name = str(ctx.params.get("Collection", "")).strip()
+    wd = ctx.cfg.setting("layer.working_dir")
+    if not wd:
+        return fail("refused", "cfg_setting layer.working_dir is missing")
+    try:
+        cid = cv.collection_id(conn, name)
+        res = cv.pull(conn, ctx.cfg, cid)
+        stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        lines = cv.report_lines(conn, ctx.cfg, name, res) + ["", f"_Generated {stamp} by run {ctx.run_id} (`Collection-Build.ps1 -Action ValidatePull`, escalation #2538). Nothing was written to a table._"]
+        path = _versioned_report(ctx, "validate.pull_name", name, lines)
+        wpath = pathlib.Path(wd) / f"validate-{name}.json"
+        wpath.parent.mkdir(parents=True, exist_ok=True)
+        wpath.write_text(json.dumps(cv.worksheet(conn, res, name), ensure_ascii=False, indent=1), encoding="utf-8")
+    except (cv.ValidateError, ValueError, OSError) as exc:
+        return fail("refused", str(exc))
+    f = res["findings"]
+    return ok(f"{name}: {res['scope']['union']} observations in scope; {len(f.get('unmarked', []))} not marked; {len(f.get('word_missing', []))} word nodes missing a required column; "
+              f"{len(f.get('no_node', []))} without a node; {len(f.get('traced_dead', []))} traces to a deleted observation -- report {path.as_posix()} (run Manifest-Rebuild.ps1 to register it), "
+              f"working file {wpath.as_posix()}. Read each observation, then write the sheet of actions and Collection-Build.ps1 -Action ValidateRecord -File <sheet> -Check",
+              observations=res["scope"]["union"])
+
+
+def validate_record(ctx: Ctx) -> Outcome:
+    """Check a sheet of actions whole and write it in one transaction (-Check runs every action and rolls back). Any problem refuses the whole sheet."""
+    from ..lib import collectionvalidate as cv
+    conn = ctx.cfg.conn
+    file = str(ctx.params.get("File", "")).strip()
+    if not file:
+        return fail("refused", "-File is required: the sheet of actions")
+    try:
+        data = json.loads(pathlib.Path(file).read_text(encoding="utf-8"))
+        r = cv.record(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
+    except (OSError, ValueError) as exc:
+        return fail("refused", f"cannot read {file}: {exc}")
+    except cv.ValidateError as exc:
+        return fail("refused", str(exc))
+    line = f"{r['actions']} actions ({', '.join(f'{k} {v}' for k, v in sorted(r['by_action'].items()))}); observations created: {r['created']}"
+    if _flag(ctx, "Check"):
+        return ok("PREVIEW (nothing written): " + line, actions=r["actions"])
+    conn.commit()
+    return ok(line + ". Next: Collection-Build.ps1 -Action ValidateCheck", actions=r["actions"])
+
+
+def validate_check(ctx: Ctx) -> Outcome:
+    """The completeness check of a collection's validation in two layers (evidence first); writes the findings as a versioned Markdown report. Writes nothing to a table."""
+    import datetime
+
+    from ..lib import collectionvalidate as cv
+    conn = ctx.cfg.conn
+    name = str(ctx.params.get("Collection", "")).strip()
+    try:
+        cid = cv.collection_id(conn, name)
+        g = cv.check(conn, ctx.cfg, cid)
+        stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        lines = cv.report_lines(conn, ctx.cfg, name, g["result"], gates=g) + ["", f"_Generated {stamp} by run {ctx.run_id} (`Collection-Build.ps1 -Action ValidateCheck`, escalation #2538)._"]
+        path = _versioned_report(ctx, "validate.check_name", name, lines)
+    except (cv.ValidateError, ValueError, OSError) as exc:
+        return fail("refused", str(exc))
+    return ok(f"{name}: evidence layer {'passes' if g['evidence_passes'] else 'does not pass'}; inner-being layer "
+              f"{'passes' if g['inner_being_passes'] else ('does not pass' if g['evidence_passes'] else 'not judged')} -- report {path.as_posix()} (run Manifest-Rebuild.ps1 to register it)",
+              evidence=int(g["evidence_passes"]), inner_being=int(g["inner_being_passes"]))
+
+
 def attach_phrases(ctx: Ctx) -> Outcome:
     """Connect the phrases of collection a to collections by their words, then by their own Strong's codes; the phrases neither reaches are flagged
     phrase_no_match (escalation #2437). -Reason (the instruction, quoted, with the escalation id); -Check previews."""

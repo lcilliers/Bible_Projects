@@ -232,7 +232,7 @@ def _body_verse(d: dict, P: dict) -> list[str]:
 def _obs_line(o: dict, P: dict, n: int) -> list[str]:
     occ = sorted((P["by_vl"][x] for x in P["obs_vl"].get(o["id"], ()) if x in P["by_vl"]), key=lambda x: (x["sk"], x["vl_id"]))
     refs = list(dict.fromkeys(f"{x['reference']} ({x['surface']})" for x in occ))
-    L = [f"- **Observation {o['id']}** ({o['stage']}, tag {o['tag']}, status {o['status']}): {_cut(o['obs_text'], n)}"]
+    L = [f"- **Observation {o['id']}** ({o['stage']}, tag {o['tag']}, marker {o['nature'] or 'not yet marked'}, status {o['status']}): {_cut(o['obs_text'], n)}"]
     for k in ("meaning", "implication", "chain"):
         if o[k]:
             L.append(f"  - {k}: {_cut(o[k], n)}")
@@ -561,8 +561,8 @@ def sheets(datas: list[dict], vals: dict) -> list[dict]:
             each(lambda d, P: pair_rows(d)))
         add("Verse observations", "every live observation with a node on any word of these verses", "what the study has recorded around the member words, with its text, not only on them",
             "ib_node, ib_observation",
-            ["scope", "reference", "observation", "stage", "tag", "text", "node word", "node code", "node role", "node vl_id", "on a member occurrence", "type of the word"],
-            each(lambda d, P: [[lead(d), x["reference"], x["observation"], x["stage"], x["tag"], x["text"], x["node_surface"], x["node_strong"], x["node_role"], x["vl_id"],
+            ["scope", "reference", "observation", "stage", "tag", "marker (evidence / inner being)", "text", "node word", "node code", "node role", "node vl_id", "on a member occurrence", "type of the word"],
+            each(lambda d, P: [[lead(d), x["reference"], x["observation"], x["stage"], x["tag"], x["nature"], x["text"], x["node_surface"], x["node_strong"], x["node_role"], x["vl_id"],
                                 "yes" if x["on_member"] else "", x["type"]] for x in d["pairs"]["observations"]]))
     codes = {}
     for d in datas:
@@ -601,25 +601,25 @@ def sheets(datas: list[dict], vals: dict) -> list[dict]:
         "surface_subgroup, cluster_subgroup",
         ["code", "surface", "cluster", "subgroup", "label", "core description", "status", "two sense", "allocated by", "reason"],
         [[k[0], k[1]] + list(r) for k, rows in sorted(place.items()) for r in rows])
-    obs_cols = ("id", "stage", "tag", "status", "strong", "window", "route", "basis", "obs_text", "setting", "meaning", "implication", "chain", "parties", "parts", "revisit_note",
+    obs_cols = ("id", "stage", "tag", "nature", "status", "strong", "window", "route", "basis", "obs_text", "setting", "meaning", "implication", "chain", "parties", "parts", "revisit_note",
                 "supersedes_observation_id", "run_id", "created_at", "updated_at")
     add("Observations", "every live observation on the occurrences, all stages", "what the study recorded, one row for each finding", "ib_observation, ib_node",
-        ["scope"] + list(obs_cols) + ["nodes (all)", "occurrences in scope"],
+        ["scope"] + [("marker (evidence / inner being)" if k == "nature" else k) for k in obs_cols] + ["nodes (all)", "occurrences in scope"],
         each(lambda d, P: [[lead(d)] + [o[k] for k in obs_cols] + [len(d["obs_nodes"].get(o["id"], [])), len(P["obs_vl"].get(o["id"], ()))] for o in P["live"]]))
 
     def node_rows(d, P):
         ref = {osis: v[0] for osis, v in d["verse_text"].items()}
         for o in P["live"]:
             for n in d["obs_nodes"].get(o["id"], []):
-                yield [lead(d), o["id"], o["stage"], o["tag"], n["id"], ref.get(n["verse_reference"], n["verse_reference"]), n["surface"], n["strong"], n["role"], n["disposition"],
+                yield [lead(d), o["id"], o["stage"], o["tag"], o["nature"], n["id"], ref.get(n["verse_reference"], n["verse_reference"]), n["surface"], n["strong"], n["role"], n["disposition"],
                        n["disposition_note"], n["cluster"], n["subgroup"], n["vl_id"], "yes" if n["vl_id"] in d["scope_vl"] else "no", n["deleted"]]
     add("Observation nodes", "every node of every live observation, in or out of the scope", "where each finding applies: the verse, the word and its role", "ib_node",
-        ["scope", "observation", "stage", "tag", "node", "verse", "word", "Strong's code", "role", "disposition", "disposition note", "cluster", "subgroup", "vl_id",
+        ["scope", "observation", "stage", "tag", "marker (evidence / inner being)", "node", "verse", "word", "Strong's code", "role", "disposition", "disposition note", "cluster", "subgroup", "vl_id",
          "occurrence in scope", "node deleted"], each(lambda d, P: list(node_rows(d, P))))
     add("Withdrawn observations", "every observation on the occurrences that is withdrawn (deleted = 1)", "kept apart so that no withdrawn finding is read as a finding",
         "ib_observation, ib_observation_change",
-        ["scope", "observation", "stage", "tag", "status", "Strong's code", "obs_text", "reason as stored", "nodes (all)"],
-        each(lambda d, P: [[lead(d), o["id"], o["stage"], o["tag"], o["status"], o["strong"], o["obs_text"], P["why"].get(o["id"], "no change record"),
+        ["scope", "observation", "stage", "tag", "marker (evidence / inner being)", "status", "Strong's code", "obs_text", "reason as stored", "nodes (all)"],
+        each(lambda d, P: [[lead(d), o["id"], o["stage"], o["tag"], o["nature"], o["status"], o["strong"], o["obs_text"], P["why"].get(o["id"], "no change record"),
                             len(d["obs_nodes"].get(o["id"], []))] for o in P["withdrawn"]]))
     add("Change history", "every change to these observations and their nodes", "the record of what was altered and why", "ib_observation_change",
         ["scope", "id", "observation", "node", "column", "old", "new", "reason", "reading", "run", "created", "by"],

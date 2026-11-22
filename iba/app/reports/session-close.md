@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-21T19:15:05Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-22T20:18:38Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `2278afec-65aa-4ba0-aa26-832ef494faed` (CLAUDE_CODE_SESSION_ID); started 2026-11-21T13:23:53Z; window base commit `3e6623cc6ec427047aaeee342975f3676075ac2e`
-- compliance file: `Logs/compliance/COMPLIANCE-20261121-2278afec.md`; session log: `Logs/SESSION-LOG-20261121-thought-read-through-stage-4.md`
-- **open findings: 0**; cleared by disposition: 16
+- session: `604473ee-65af-4a4c-a924-9175f2fd29f7` (CLAUDE_CODE_SESSION_ID); started 2026-11-21T19:18:21Z; window base commit `ad05222492129399a0883f6f2cbc2952b3cffbca`
+- compliance file: `Logs/compliance/COMPLIANCE-20261121-604473ee.md`; session log: `Logs/SESSION-LOG-20261122-validation-after-stage-4-pilot-applied.md`
+- **open findings: 0**; cleared by disposition: 14
 
 
 ## Contents
@@ -37,34 +37,48 @@ _no finding_
 <a id="sc2-spine-fatal"></a>
 ## SC2 Spine (FATAL)
 
-- cleared `SC2:unverified:G0001G`: G0001G: local gap in strong_lexicon.mounce not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2539
-- cleared `SC2:unverified:G4528H`: G4528H: local gap in strong_lexicon.mounce not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2539
-- cleared `SC2:unverified:G6094`: G6094: local gap in strong_lexicon.mounce not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2539
-- cleared `SC2:unverified:H0430H`: H0430H: local gap in strong_meaning_tree not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2539
-- cleared `SC2:unverified:H1121A`: H1121A: local gap in strong_meaning_tree not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2539
-- cleared `SC2:unverified:H5945H`: H5945H: local gap in strong_meaning_tree not verified against STEP (ConnectionError: HTTPConnectionPool(host='localhost', port=8989): Max retries exceeded with url: /rest/module/getInfo/ESV_th//H5945H// (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8989): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))) -- disposition: carried #2539
+_no finding_
 
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:cbe60a18`: researcher message 2026-11-21T13:25 is too short to be matched; name where it is recorded: "Work #2527" -- disposition: no record needed: bare instruction to work #2527, answered by the work recorded on #2527 itself
-- cleared `SC3:f4e95711`: researcher message 2026-11-21T14:22 is too short to be matched; name where it is recorded: "Start step 2" -- disposition: no record needed: bare instruction to start step 2 of #2527, recorded in the context of #2527
-- cleared `SC3:2f5fb818`: researcher message 2026-11-21T17:31 is too short to be matched; name where it is recorded: "Open 3.3" -- disposition: no record needed: bare instruction to open step 3.3 of #2527, recorded in the context of #2527
-- cleared `SC3:214b5e88`: researcher message 2026-11-21T18:42 is too short to be matched; name where it is recorded: "Approve" -- disposition: recorded in #2527 v20
-- cleared `SC3:483cc8a0`: researcher message 2026-11-21T18:36 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC3:121f33af`: researcher message 2026-11-21T19:28 is in no escalation comment written this session: "2538.  The objective is to capture and systemise the analytic work to ensure that it is a repeatable process.  but before you start - did you actually inspect t" -- disposition: recorded in #2538 v24
+- cleared `SC3:bd72fe62`: researcher message 2026-11-22T06:57 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: no record needed: harness context summary after compaction, not a researcher message
-- cleared `SC3:4fa658eb`: researcher message 2026-11-21T18:52 is too short to be matched; name where it is recorded: "Approve A" -- disposition: recorded in #2537 v3
-- cleared `SC3:387b545c`: researcher message 2026-11-21T19:10 is too short to be matched; name where it is recorded: "run session-close" -- disposition: recorded in #2538 v5
+Summar" -- disposition: no record needed: a context-continuation summary written by the system, not the researcher's words
+- cleared `SC3:dbe89c5e`: researcher message 2026-11-22T08:49 is too short to be matched; name where it is recorded: "Yes, build it" -- disposition: recorded in #2538 v24
+- cleared `SC3:d4913e8a`: researcher message 2026-11-22T09:03 is too short to be matched; name where it is recorded: "Yes, promote it" -- disposition: recorded in #2538 v24
+- cleared `SC3:0376a372`: researcher message 2026-11-22T16:35 is too short to be matched; name where it is recorded: "Yes, apply it" -- disposition: recorded in #2538 v24
+- cleared `SC3:589a611d`: researcher message 2026-11-22T10:09 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: no record needed: a context-continuation summary written by the system, not the researcher's words
+- cleared `SC3:51213db0`: researcher message 2026-11-22T16:39 is too short to be matched; name where it is recorded: "start #2540 now" -- disposition: no record needed: the instruction to start #2540; the work and result are in #2540 v2 and v3
+- cleared `SC3:edbf859e`: researcher message 2026-11-22T16:42 is too short to be matched; name where it is recorded: "Approve closure" -- disposition: recorded in #2540 v3
+- cleared `SC3:9774c7db`: researcher message 2026-11-22T16:51 is in no escalation comment written this session: "<task-notification>
+<task-id>b8myrr346</task-id>
+<tool-use-id>toolu_013KvCcJms6ENsvyQMGH42ST</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not the researcher's words
+- cleared `SC3:8176b7a6`: researcher message 2026-11-22T16:56 is in no escalation comment written this session: "<pasted_content id="3e9e">
+SELECT * FROM ib_observation obs
+INNER JOIN ib_node node ON obs.id = node.observation_id
+where obs.deleted = 0
+and collection_id = 56" -- disposition: recorded in #2538 v24
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:483cc8a0`: researcher message 2026-11-21T18:36 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC4b:47ed735a`: researcher message 2026-11-22T05:08 holds, defers or asks to check something; name its register item: "This makes the validation much more complicated.  a) The validation of the evidence observations and claims observations must be separated, and not run concurre" -- disposition: in register #2538
+- cleared `SC4b:cfd3dcea`: researcher message 2026-11-22T05:25 holds, defers or asks to check something; name its register item: "open points: 1 The marker.  be careful not to confuse the marker with the role of the word.  In my mind there are just two markers. It is either evidence (obser" -- disposition: in register #2538
+- cleared `SC4b:bd72fe62`: researcher message 2026-11-22T06:57 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: not held: harness context summary, not a researcher message
+Summar" -- disposition: in register #2538
+- cleared `SC4b:589a611d`: researcher message 2026-11-22T10:09 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: in register #2538
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -101,7 +115,6 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Raise`: Escalation.ps1 -Action Raise failed 3 times this session: -ShortDescription has no effect on -Action Raise (only -Action Correction reads it) -- Raise's title comes from -Questio; Raise needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default pr; Raise needs -Question and -Comment (minimum: what this item is about). -- disposition: carried #2540
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 3 times this session: Permission for this action was denied by the Claude Code auto mode classifier. Reason: [Undermining Oversight]. If you h; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; error: next_action='approved' requires resolution to be filled in (plan v3 sec3) -- disposition: carried #2540
+_no finding_
 
 _no finding_
