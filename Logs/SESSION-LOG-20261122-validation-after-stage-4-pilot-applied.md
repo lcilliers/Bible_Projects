@@ -40,4 +40,4 @@ Session id: 604473ee-65af-4a4c-a924-9175f2fd29f7 (Developer Mode; the session sp
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: main. Commit `feccee633e3afa8a279fd60d79511fb7af547858` ("session 20261122: validation after stage 4 built, promoted and applied to 1Chr.28.9 (#2538), ..."). Push output: `To https://github.com/lcilliers/Bible_Projects.git   ad052224..feccee63  main -> main`.
