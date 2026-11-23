@@ -54,4 +54,7 @@ No API key was used or printed. No collection, surface group, observation or nod
 
 ## 6. Git
 
-(written after the commit, step 6)
+- Branch: `main`.
+- Commit: `b21bc8b3` (`session 20261123: pointed tasks, evidence report speed fix, network diagrams (#2545), WordNet pairing of the single-word surfaces with distance matrices, no-pair review and collection overlay, session log, compliance, close report`), 14 modified or deleted and 62 new paths staged with `git add -A`; `database/bible_research.db` and `backups/` were not touched.
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git   217c0203..b21bc8b3  main -> main`.
+- Session close: `iba/app/reports/session-close-v404-20261123.md`, 0 open findings after 7 dispositions in the compliance file and 8 rules named as not followed.
