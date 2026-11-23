@@ -686,11 +686,15 @@ def write_workbook(path: pathlib.Path, datas: list[dict], vals: dict, run_id: st
     for sdef in sh:
         w = wb.create_sheet(sdef["name"][:31])
         w.append(sdef["head"])
+        row_no = w.max_row
         for r in sdef["rows"]:
-            w.append([_clean(x) for x in r])
-            for c in w[w.max_row]:
-                if c.data_type == "f":     # text that starts with "=" (an LSJ entry) is text, not a formula: openpyxl would store a formula and Excel would repair the file (#2463)
-                    c.data_type = "s"
+            cleaned = [_clean(x) for x in r]
+            w.append(cleaned)
+            row_no += 1
+            if any(isinstance(x, str) and x.startswith("=") for x in cleaned):
+                for c in w[row_no]:
+                    if c.data_type == "f":     # text that starts with "=" (an LSJ entry) is text, not a formula: openpyxl would store a formula and Excel would repair the file (#2463)
+                        c.data_type = "s"
         for c in w[1]:
             c.font = Font(bold=True, color="FFFFFF")
             c.fill = PatternFill("solid", fgColor="305496")

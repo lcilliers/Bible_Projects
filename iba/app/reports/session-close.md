@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-22T20:18:38Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-23T11:23:35Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `604473ee-65af-4a4c-a924-9175f2fd29f7` (CLAUDE_CODE_SESSION_ID); started 2026-11-21T19:18:21Z; window base commit `ad05222492129399a0883f6f2cbc2952b3cffbca`
-- compliance file: `Logs/compliance/COMPLIANCE-20261121-604473ee.md`; session log: `Logs/SESSION-LOG-20261122-validation-after-stage-4-pilot-applied.md`
-- **open findings: 0**; cleared by disposition: 14
+- session: `75860879-bfa6-45ce-834d-0a11cbae93a6` (CLAUDE_CODE_SESSION_ID); started 2026-11-23T04:13:54Z; window base commit `217c02032f3f588aec546b853d3fe810967dc099`
+- compliance file: `Logs/compliance/COMPLIANCE-20261123-75860879.md`; session log: `Logs/SESSION-LOG-20261123-wordnet-surface-network.md`
+- **open findings: 0**; cleared by disposition: 7
 
 
 ## Contents
@@ -42,43 +42,22 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:121f33af`: researcher message 2026-11-21T19:28 is in no escalation comment written this session: "2538.  The objective is to capture and systemise the analytic work to ensure that it is a repeatable process.  but before you start - did you actually inspect t" -- disposition: recorded in #2538 v24
-- cleared `SC3:bd72fe62`: researcher message 2026-11-22T06:57 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC3:eb0ac828`: researcher message 2026-11-23T05:12 is too short to be matched; name where it is recorded: "core" -- disposition: recorded in #2545 v4
+- cleared `SC3:a9c3326e`: researcher message 2026-11-23T07:08 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: no record needed: a context-continuation summary written by the system, not the researcher's words
-- cleared `SC3:dbe89c5e`: researcher message 2026-11-22T08:49 is too short to be matched; name where it is recorded: "Yes, build it" -- disposition: recorded in #2538 v24
-- cleared `SC3:d4913e8a`: researcher message 2026-11-22T09:03 is too short to be matched; name where it is recorded: "Yes, promote it" -- disposition: recorded in #2538 v24
-- cleared `SC3:0376a372`: researcher message 2026-11-22T16:35 is too short to be matched; name where it is recorded: "Yes, apply it" -- disposition: recorded in #2538 v24
-- cleared `SC3:589a611d`: researcher message 2026-11-22T10:09 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: no record needed: a context-continuation summary written by the system, not the researcher's words
-- cleared `SC3:51213db0`: researcher message 2026-11-22T16:39 is too short to be matched; name where it is recorded: "start #2540 now" -- disposition: no record needed: the instruction to start #2540; the work and result are in #2540 v2 and v3
-- cleared `SC3:edbf859e`: researcher message 2026-11-22T16:42 is too short to be matched; name where it is recorded: "Approve closure" -- disposition: recorded in #2540 v3
-- cleared `SC3:9774c7db`: researcher message 2026-11-22T16:51 is in no escalation comment written this session: "<task-notification>
-<task-id>b8myrr346</task-id>
-<tool-use-id>toolu_013KvCcJms6ENsvyQMGH42ST</tool-use-id>
-<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: an automated background-task notification, not the researcher's words
-- cleared `SC3:8176b7a6`: researcher message 2026-11-22T16:56 is in no escalation comment written this session: "<pasted_content id="3e9e">
-SELECT * FROM ib_observation obs
-INNER JOIN ib_node node ON obs.id = node.observation_id
-where obs.deleted = 0
-and collection_id = 56" -- disposition: recorded in #2538 v24
+Summar" -- disposition: no record needed: the app's continuation summary of the earlier conversation, not the researcher's words
+- cleared `SC3:bb93895d`: researcher message 2026-11-23T10:11 is in no escalation comment written this session: "there are a number of words I can spot that is not pairing because they actually do not belong in the list, they should have been defined as another surface gro" -- disposition: recorded in #2545 v4
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:47ed735a`: researcher message 2026-11-22T05:08 holds, defers or asks to check something; name its register item: "This makes the validation much more complicated.  a) The validation of the evidence observations and claims observations must be separated, and not run concurre" -- disposition: in register #2538
-- cleared `SC4b:cfd3dcea`: researcher message 2026-11-22T05:25 holds, defers or asks to check something; name its register item: "open points: 1 The marker.  be careful not to confuse the marker with the role of the word.  In my mind there are just two markers. It is either evidence (obser" -- disposition: in register #2538
-- cleared `SC4b:bd72fe62`: researcher message 2026-11-22T06:57 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC4b:c2477cf3`: researcher message 2026-11-23T04:21 holds, defers or asks to check something; name its register item: "Park #2538, #2541 #2542 #2543 for now" -- disposition: in register #2538
+- cleared `SC4b:a9c3326e`: researcher message 2026-11-23T07:08 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: in register #2538
-- cleared `SC4b:589a611d`: researcher message 2026-11-22T10:09 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: in register #2538
+Summar" -- disposition: not held: the app's continuation summary, not a message of the researcher
+- cleared `SC4b:255ef038`: researcher message 2026-11-23T10:52 holds, defers or asks to check something; name its register item: "add a column in the excel to quantify/separate the items that will need manual intervention (e.g. reallocate surface to other; need decision, conflicitng sense," -- disposition: not held: the overlay and the manual-intervention column were done in this session (iba/app/BUILD.md entry 557)
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -115,6 +94,6 @@ _no finding_
 
 _no finding_
 
-_no finding_
+- cleared `SC16:Escalation.ps1_-Action_Raise`: Escalation.ps1 -Action Raise failed 3 times this session: error: short_description is 61 chars, over the 60-char title limit. It must read like a title/subject naming the topic - -- disposition: fixed: the titles were shortened to 60 characters and the Raise then succeeded (#2544 and #2545)
 
 _no finding_
