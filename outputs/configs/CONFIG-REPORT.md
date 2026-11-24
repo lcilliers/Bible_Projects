@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-22T09:13:28Z |
+| generated_at | 2026-11-23T12:11:06Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -35,8 +35,8 @@
 
 _Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s escalation, which references this section by path rather than repeating it. Not errors — advisory. See GOVERNANCE.md §5B._ Items are numbered (running count across every category below) so any one item can be referenced by number, e.g. "item 7" — the numbering is a snapshot of THIS regenerate, not a stable ID across runs. Historical/already-decided records (inactive configs) are §1, not here — everything below is something that actually needs your judgement.
 
-**Orphan configs** (0) — a `cfg_setting`/`cfg_enum` not referenced by any code:
-_(none)_
+**Orphan configs** (1) — a `cfg_setting`/`cfg_enum` not referenced by any code:
+1. cfg_setting 'surfaces.wordnet_data_dir' (key not found together with a cfg.setting(...) call in any one file)
 
 **Settings needing justification** (0) — module already has its own dedicated table:
 _(none)_
@@ -87,26 +87,26 @@ _(none)_
 _(none)_
 
 **Glossary currency** (1) — a term of glossary.currency_check with no entry, only archived entries or no approved entry in the programme glossary (bible_research.db prose_section), or a cfg_prose_concept pointer naming an entry that is not there:
-1. glossary term 'role' has no approved entry (status: draft)
+2. glossary term 'role' has no approved entry (status: draft)
 
 **Unenforced behaviour rules** (17) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-2. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-3. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-4. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-5. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-6. [development] #46 test-plan-per-module-utility — deliberately_deferred
-7. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-8. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-9. [filing] #56 naming-shape — partially_enforced
-10. [filing] #58 archiving-trigger — partially_enforced
-11. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-12. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-13. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
-14. [study_method] #120 scope-home-and-multiplicity — partially_enforced
-15. [study_method] #129 collections-are-built-on-surfaces-one-each — partially_enforced
-16. [study_method] #130 nodes-index-the-collection-and-comply-with-the-node-rules — partially_enforced
-17. [study_method] #131 observations-are-founded-unique-and-fit-the-node-rules — partially_enforced
-18. [study_method] #136 collection-validation-follows-stage-4 — partially_enforced
+3. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+4. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+5. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+6. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+7. [development] #46 test-plan-per-module-utility — deliberately_deferred
+8. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+9. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+10. [filing] #56 naming-shape — partially_enforced
+11. [filing] #58 archiving-trigger — partially_enforced
+12. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+13. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+14. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
+15. [study_method] #120 scope-home-and-multiplicity — partially_enforced
+16. [study_method] #129 collections-are-built-on-surfaces-one-each — partially_enforced
+17. [study_method] #130 nodes-index-the-collection-and-comply-with-the-node-rules — partially_enforced
+18. [study_method] #131 observations-are-founded-unique-and-fit-the-node-rules — partially_enforced
+19. [study_method] #136 collection-validation-follows-stage-4 — partially_enforced
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -1650,6 +1650,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | surfaces | surfaces.exports_root | _analytics/surfaces/exports | the folder for the results of surface analysis made for inspection (workbooks, reports, analysis documents) (#2361) |
 | surfaces | surfaces.junk_rules | {'empty': '^\\s*$', 'no_letter': '^[^A-Za-z]+$', 'punctuation_inside': '[,;:!?]'} | the rules that find a junk surface in the surface list (#2361): empty (nothing or only space), no_letter (no letter at all: a symbol or a number), punctuation_inside (a comma, semicolon, colon or mark inside the text, so the surface is a fragment of a clause, not a word or a phrase). Each value is a regular expression matched against the surface; a surface that matches any rule is junk and is set to soft delete. Read by iba/app/migration/archive/junk_surfaces_2361_v1_20261106.py and later by the surface step surface.junk_mark |
 | surfaces | surfaces.scope_groups | {'a': ['behaviour', 'inner_being_state'], 'b': ['entity'], 'c': ['other']} | which surface groups make up each collection of surfaces (#2361): a = behaviour and inner_being_state (the study of the inner being: bases and collections are built for these), b = being (entities), c = other. Read to decide base_state out_of_scope; the scope of a surface is not stored, it follows from its group |
+| surfaces | surfaces.wordnet_data_dir | data/imports/wordnet | the folder that holds corpora/wordnet, WordNet 3.0 (Princeton licence, in the folder), read through NLTK by iba/app/tools/temp_2545_wordnet_surface_pairs.py; the WordNet pairing of surfaces is an outside check on the collections, not study data |
 | surfaces | surfaces.working_files_root | _analytics/surfaces/working_files | the one folder under which every working file of the surface cycle is written (#2361): a subfolder per module (group, structure, base, collection), import/ for the only place a file may be read as an input, embeddings/ for regenerable caches |
 | table_export | table_export.output_dir | {'iba': 'Workflow/schema/iba', 'bible_research': 'Workflow/schema/bible_research'} | where table.export writes its CSVs |
 | validation | lexical.readiness_report_path | research/discovery/lexical-readiness.md | where lexical.readiness persists its findings -- #1606/#1706 Phase A |

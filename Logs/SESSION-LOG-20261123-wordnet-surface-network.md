@@ -14,7 +14,8 @@ After `/start-project` the researcher changed how Claude is used: pointed tasks 
 - the data behind the two diagrams as an Excel workbook;
 - questions on the pairing's basis, open-source dictionaries, how WordNet is used;
 - the WordNet pairing of the 2,742 single-word surfaces, WordNet held in the project, same-base pairs, derivational and similar-to relations, distance matrices (hops and weighted), the review of the surfaces with no pair with a manual-intervention class and Strong's root partners, the first overlay of the collections on the network;
-- the researcher's direction at the end: the 85 small WordNet groups are clear concepts, group 1 is ignored, the 154 surfaces with no pair are dealt with by hand.
+- the researcher's direction at the end: the 85 small WordNet groups are clear concepts, group 1 is ignored, the 154 surfaces with no pair are dealt with by hand;
+- 2026-11-24: the researcher's view that neither the collections nor the WordNet consolidation give a basis for narrative or a holistic picture; a review of the surface tables of `iba.db` and a design for holding the WordNet study in the database; preparation of that build (brief and draft programme prose), the build itself to be done in a new developer-mode chat (#2548).
 
 No API key was used or printed. No collection, surface group, observation or node was changed.
 
@@ -24,7 +25,9 @@ No API key was used or printed. No collection, surface group, observation or nod
 - #2545: updated to v3 (the researcher's finding that grace-type and fruit-of-the-Spirit words permeate the collections, which skew negative) and v4 (every researcher message of the session verbatim with what was done, the researcher's direction on the 85 groups, what is left open); on-hold, Researcher.
 - #2538, #2541, #2542, #2543: updated, parked on-hold with the researcher's comment; the stop hook listed #2538, #2541, #2542 each turn and each was acknowledged and left on hold (no reassignment, rule 63).
 - #2546: raised by the system, my first and refused proposal of the WordNet data folder setting (module `wordnet` not in the enum); resolved self-correctable, completed.
-- #2547: raised by the system, the setting `surfaces.wordnet_data_dir` = `data/imports/wordnet`, a decision for the researcher, waiting.
+- #2547: raised by the system, the setting `surfaces.wordnet_data_dir` = `data/imports/wordnet`, a decision for the researcher; approved by the researcher, completed.
+- #2545 v5: the researcher's messages after v4 (approve #2547, the `collection_a_b` sheet, the collection allocation question) recorded verbatim.
+- #2548: raised 2026-11-24 (task, Claude, on-hold): hold the WordNet surface study in `iba.db`; v2 to v4 hold the researcher's decisions (validate against `base_id`, include the surfaces outside the study, register the code, programme prose as part of the build) and the verbatim messages.
 
 ## 3. Files
 
@@ -32,7 +35,8 @@ No API key was used or printed. No collection, surface group, observation or nod
 - Resource: `data/imports/wordnet/` (WordNet 3.0, Princeton licence, downloaded from the NLTK data repository on the researcher's yes).
 - Outputs in `_analytics/surfaces/exports/`: `focus-words-collections-network-v2-20261123.png` and `.svg`; `network-diagrams-2545-data-v1-20261123.xlsx`; `wordnet-surface-pairs-v3-20261123.xlsx`; `wordnet-surface-pairs-network-v3-20261123.png` and `.svg`; `wordnet-surface-distance-hops-v3-20261123.csv`; `wordnet-surface-distance-weighted-v3-20261123.csv`; `wordnet-no-pair-review-v2-20261123.xlsx`; `wordnet-collection-overlay-v1-20261123.xlsx`; `wordnet-collection-overlay-network-v1-20261123.png` and `.svg`. Superseded versions are in `_analytics/surfaces/exports/archive/`; `wordnet-surface-pairs-v1-20261123.xlsx` is still at the folder's root because Excel had it open.
 - Misfiled drafts left unmoved: the v1 diagrams in `outputs/analysis/` (B:128), noted in #2545.
-- `iba/app/BUILD.md` entries 551 to 558; manifest `research/discovery/file-manifest-v41-20261123.md`.
+- Prepared 2026-11-24, not built: `outputs/escalation/2548-surface-relation-build-brief-v1-20261124.md` and `outputs/escalation/2548-surface-understanding-prose-draft-v1-20261124.md`. No code, table or prose store changed on 2026-11-24.
+- `iba/app/BUILD.md` entries 551 to 559; manifest `research/discovery/file-manifest-v41-20261123.md`.
 
 ## 4. Decisions
 
@@ -42,11 +46,13 @@ No API key was used or printed. No collection, surface group, observation or nod
 - Words of one base are paired into the network as `same_base`, not listed apart (researcher): recorded in `iba/app/BUILD.md` entry 554.
 - Derivational forms, pertainyms and similar-to are added to the WordNet pairing (researcher): recorded in `iba/app/BUILD.md` entry 555.
 - The review of the 154 surfaces with no pair carries a manual-intervention class and Strong's root partners (researcher): recorded in `iba/app/BUILD.md` entry 557.
+- Capture the WordNet surface study in `iba.db` as `surface_relation`, `surface_network_group` and `surface_flag` kind `wordnet_no_pair`; validate `same_base` against `surface_term.base_id`; include the surfaces of group other and the ungrouped; register the code as a controlled step (researcher, 2026-11-24): recorded in #2548 v2 and the brief `outputs/escalation/2548-surface-relation-build-brief-v1-20261124.md`.
+- The programme prose description of how surface understanding and the surface tables work together is done as part of the build, not before (researcher, 2026-11-24): recorded in #2548 v3.
 - The evidence report's slowness is fixed in `iba/app/lib/collectionevidencereport.py` (researcher: "yes, make the fix and test it on thought"): recorded in `iba/app/BUILD.md` entry 551.
 
 ## 5. Open items
 
-- The WordNet data folder setting waits for the researcher: #2547.
+- The build of the surface relation tables, the registered code and the programme prose section: #2548 (on-hold until the researcher opens a developer-mode chat).
 - The researcher's finding and direction on the 85 groups: #2545 (on-hold, Researcher); which rules and the stop hook change for the pointed-task mode: #2544 (awaits the researcher).
 - Parked on-hold by the researcher: #2538, #2541, #2542, #2543.
 - `_analytics/surfaces/exports/wordnet-surface-pairs-v1-20261123.xlsx` still to be archived (in use in Excel) and the v1 drafts in `outputs/analysis/` misfiled: carried in #2545.

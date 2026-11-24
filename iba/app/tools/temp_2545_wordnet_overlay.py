@@ -95,6 +95,7 @@ for line in [
     f"Pairs with a collection at both ends: {same + diff}; inside one collection: {same} ({observed_same:.1%}); across two collections: {diff}. Pairs with a surface that has no collection: {nocol}.",
     f"If pairs fell at random among the surfaces that have a collection, {expected_same:.1%} would fall inside one collection: WordNet pairs fall inside a collection {observed_same / expected_same:.1f} times as often as chance.",
     f"Mean weighted distance (reachable pairs; shorter = nearer): all surfaces {all_mean:.2f}; see collection_cohesion for each collection's own mean.",
+    "collection_a_b: for each two collections that WordNet pairs across (collection_pairs, most pairs first): every surface of both, its original collection, and the surfaces it is WordNet-paired with inside collection a (pairing a) and inside collection b (pairing b), each with its weight.",
     "collection_cohesion: members_in_network = members with a collection (single words); with_any_pair = members with at least one WordNet pair; with_pair_inside = members with a pair to another member of the same collection; internal_share = pairs inside / (inside + to other collections + to surfaces with no collection).",
     "WordNet is an outside source and modern English: agreement is support for a placement, disagreement is a case to read, not a verdict."]:
     ws.append([line])
@@ -112,6 +113,21 @@ sheet("surface_collection", ["surface", "surface_group", "collection", "tier", "
         sum(1 for m in G[n] if cof[n] and cof[m] == cof[n]), sum(1 for m in G[n] if cof[n] and cof[m] and cof[m] != cof[n]),
         sum(1 for m in G[n] if not cof[m])) for n, g, d in surf])
 sheet("collection_pairs", ["collection_a", "collection_b", "wordnet_pairs"], [(a, b, v) for (a, b), v in cross.most_common()])
+# one sheet for every two collections that WordNet pairs across: the surfaces of both and the pairings each surface has inside each of the two (researcher's request)
+members = collections.defaultdict(list)
+for n in has:
+    members[cof[n]].append(n)
+def partners(n, c):
+    ps = sorted((m for m in G[n] if cof[m] == c), key=lambda m: (-G[n][m]["weight"], m))
+    return ", ".join(f"{m} ({G[n][m]['weight']})" for m in ps)
+ab_rows = []
+for (a, b), v in cross.most_common():
+    for c in (a, b):
+        for n in sorted(members[c]):
+            ab_rows.append((n, cof[n], a, b, partners(n, a), partners(n, b)))
+sheet("collection_a_b", ["surface", "original collection", "collection a", "collection b", "pairing a", "pairing b"], ab_rows)
+out["collection_a_b"].column_dimensions["E"].width = 60
+out["collection_a_b"].column_dimensions["F"].width = 60
 out.save(EXP / f"wordnet-collection-overlay-v1-{S}.xlsx")
 
 # diagram: the same network and layout as the pairing diagram
