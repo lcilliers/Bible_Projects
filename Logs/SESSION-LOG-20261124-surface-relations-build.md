@@ -41,4 +41,13 @@ Developer Mode session (`/developer-mode`). The researcher asked to start work o
 
 ## 6. Git
 
-_(written after the first commit)_
+Branch: `main`.
+
+Commit: `35d6a509c270cf087366349a01045e14635e0f76` (session 20261124: WordNet surface relations held in iba.db ... #2548).
+
+Push output:
+
+```
+To https://github.com/lcilliers/Bible_Projects.git
+   6596d2a0..35d6a509  main -> main
+```
