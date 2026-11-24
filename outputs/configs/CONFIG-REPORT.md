@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-23T12:11:06Z |
+| generated_at | 2026-11-24T06:02:12Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -35,8 +35,8 @@
 
 _Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s escalation, which references this section by path rather than repeating it. Not errors — advisory. See GOVERNANCE.md §5B._ Items are numbered (running count across every category below) so any one item can be referenced by number, e.g. "item 7" — the numbering is a snapshot of THIS regenerate, not a stable ID across runs. Historical/already-decided records (inactive configs) are §1, not here — everything below is something that actually needs your judgement.
 
-**Orphan configs** (1) — a `cfg_setting`/`cfg_enum` not referenced by any code:
-1. cfg_setting 'surfaces.wordnet_data_dir' (key not found together with a cfg.setting(...) call in any one file)
+**Orphan configs** (0) — a `cfg_setting`/`cfg_enum` not referenced by any code:
+_(none)_
 
 **Settings needing justification** (0) — module already has its own dedicated table:
 _(none)_
@@ -87,26 +87,26 @@ _(none)_
 _(none)_
 
 **Glossary currency** (1) — a term of glossary.currency_check with no entry, only archived entries or no approved entry in the programme glossary (bible_research.db prose_section), or a cfg_prose_concept pointer naming an entry that is not there:
-2. glossary term 'role' has no approved entry (status: draft)
+1. glossary term 'role' has no approved entry (status: draft)
 
 **Unenforced behaviour rules** (17) — an active cfg_behaviour_rule row whose enforcement_status is neither mechanically_enforced nor context_delivered (the compliance file restates and proves those) — see the row's own enforced_by text for the reason:
-3. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-4. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
-5. [chat] #81 session-compliance-restated-and-proved — partially_enforced
-6. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
-7. [development] #46 test-plan-per-module-utility — deliberately_deferred
-8. [development] #97 developer-mode-scope-and-conduct — partially_enforced
-9. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-10. [filing] #56 naming-shape — partially_enforced
-11. [filing] #58 archiving-trigger — partially_enforced
-12. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-13. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
-14. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
-15. [study_method] #120 scope-home-and-multiplicity — partially_enforced
-16. [study_method] #129 collections-are-built-on-surfaces-one-each — partially_enforced
-17. [study_method] #130 nodes-index-the-collection-and-comply-with-the-node-rules — partially_enforced
-18. [study_method] #131 observations-are-founded-unique-and-fit-the-node-rules — partially_enforced
-19. [study_method] #136 collection-validation-follows-stage-4 — partially_enforced
+2. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+3. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+4. [chat] #81 session-compliance-restated-and-proved — partially_enforced
+5. [chat] #82 session-close-blocks-commit-on-open-findings — partially_enforced
+6. [development] #46 test-plan-per-module-utility — deliberately_deferred
+7. [development] #97 developer-mode-scope-and-conduct — partially_enforced
+8. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+9. [filing] #56 naming-shape — partially_enforced
+10. [filing] #58 archiving-trigger — partially_enforced
+11. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+12. [sqlite] #78 narrative-chapters-change-only-through-the-register — partially_enforced
+13. [study_method] #115 open-item-has-a-clear-purpose — partially_enforced
+14. [study_method] #120 scope-home-and-multiplicity — partially_enforced
+15. [study_method] #129 collections-are-built-on-surfaces-one-each — partially_enforced
+16. [study_method] #130 nodes-index-the-collection-and-comply-with-the-node-rules — partially_enforced
+17. [study_method] #131 observations-are-founded-unique-and-fit-the-node-rules — partially_enforced
+18. [study_method] #136 collection-validation-follows-stage-4 — partially_enforced
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
@@ -148,7 +148,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1152** registered module(s) — **671** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **979** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1157** registered module(s) — **675** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **981** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -171,6 +171,7 @@ _(none)_
 | Surface-Group.ps1 | iba/app/ps/Surface-Group.ps1 | PS entry point for module 1 of 5 of the surface cycle (escalation #2361): Status, Repoint; dispatches through run.py, work package surface-group. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Surface-Judge.ps1 | iba/app/ps/Surface-Judge.ps1 | PS entry point for the first split of the concept surfaces (escalation #2354): Status, Run, Cycle, Progress, Stop; dispatches through run.py, work package surface-judge. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Surface-Map.ps1 | iba/app/ps/archive/Surface-Map.ps1 | PS entry point of work package cluster-surface-map (#2293): -Step Pairs\|Apply\|Tail\|Check -Cluster <M code> [-File] [-Live] |  | ✓ | PS entry point: dispatches through run.py; its settings are the steps' own |
+| Surface-Relation.ps1 | iba/app/ps/Surface-Relation.ps1 | PS entry point for the relations between the single-word surfaces (escalation #2548); dispatches through run.py, work package surface-relation. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Surface-Resolve.ps1 | iba/app/ps/Surface-Resolve.ps1 | PS entry point for module 4 of 5 of the surface cycle (escalation #2361): Status, Run, Show; dispatches through run.py, work package surface-resolve. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Surface-Structure.ps1 | iba/app/ps/Surface-Structure.ps1 | PS entry point for module 2 of 5 of the surface cycle (escalation #2361): Status, Match, Show; dispatches through run.py, work package surface-structure. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | Verse-Collate.ps1 | iba/app/ps/Verse-Collate.ps1 | PS entry point for collating a scope (escalation #2228); dispatches through run.py, work package verse-collate. | ✓ | ✓ | thin wrapper; config is read by the handler through run.py |
@@ -521,6 +522,7 @@ _(none)_
 | handlers_surfacegroup | iba/app/handlers/surfacegroup.py | handlers/surfacegroup.py -- the run.py handlers for work package surface-group (Surface-Group.ps1, escalation #2361). | ✓ | ✓ | thin adapter: every setting is read in lib/surfacegroup.py (read_settings, through Cfg.setting) |
 | handlers_surfacejudge | iba/app/handlers/surfacejudge.py | handlers/surfacejudge.py -- the run.py handlers for work package surface-judge (Surface-Judge.ps1, escalation #2354). | ✓ |  |  |
 | handlers_surfacemap | iba/app/handlers/archive/surfacemap.py | surfacemap handler -- work package cluster-surface-map: steps cluster.surface_pairs, cluster.surface_apply, cluster.surface_tail, cluster.surface_check (#2293) |  |  |  |
+| handlers_surfacerelation | iba/app/handlers/surfacerelation.py | handlers/surfacerelation.py -- the run.py handler for work package surface-relation: Status, Load, Groups, Flag, Validate (Surface-Relation.ps1, escalation #2548). | ✓ | ✓ | thin adapter: every setting is read in lib/surfacerelation.py (read_settings, through Cfg.setting) |
 | handlers_surfaceresolve | iba/app/handlers/surfaceresolve.py | handlers/surfaceresolve.py -- the run.py handlers for work package surface-resolve (Surface-Resolve.ps1, escalation #2361). | ✓ | ✓ | thin adapter: every setting is read in lib/surfaceresolve.py (read_settings, through Cfg.setting) |
 | handlers_surfacestructure | iba/app/handlers/surfacestructure.py | handlers/surfacestructure.py -- the run.py handlers for work package surface-structure (Surface-Structure.ps1, escalation #2361). | ✓ | ✓ | thin adapter: every setting is read in lib/surfacestructure.py (read_settings, through Cfg.setting) |
 | handlers_versecollate | iba/app/handlers/versecollate.py | handlers/versecollate.py -- the run.py handler for work package verse-collate (Verse-Collate.ps1); writes the JSON and .md under verse_collate.output_dir; the logic is in lib/versecollate.py (escalation #2228). | ✓ |  |  |
@@ -1267,6 +1269,8 @@ _(none)_
 | surface_maps_2361_v1_20261106 | iba/app/migration/archive/surface_maps_2361_v1_20261106.py | ONE-OFF migration -- escalation #2361 stage 6: the generated cycle and AI use sections of the config report and the retirement of the file route of the AI base; run_id DEVMODE-2361-SURFACE-MAPS-20261106. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_observe_2312_v1_20261027 | iba/app/migration/archive/surface_observe_2312_v1_20261027.py | ONE-OFF migration -- escalation #2312: steps 1 to 3 on the surface; run_id DEVMODE-2312-SURFACE-OBSERVE-20261027. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_pair_verdict_2354_v1_20261102 | iba/app/migration/archive/surface_pair_verdict_2354_v1_20261102.py | ONE-OFF migration -- escalation #2354: table surface_pair_verdict and the ollama and surface_judge settings; run_id DEVMODE-2354-PAIR-VERDICT-20261102. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| surface_relation_register_2548_v1_20261124 | iba/app/migration/archive/surface_relation_register_2548_v1_20261124.py | ONE-OFF migration -- escalation #2548 stage 2: registers the step set Surface-Relation.ps1; run_id DEVMODE-2548-SURFACE-RELATION-REGISTER-20261124. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
+| surface_relation_schema_2548_v1_20261124 | iba/app/migration/archive/surface_relation_schema_2548_v1_20261124.py | ONE-OFF migration -- escalation #2548 stage 1: the tables surface_relation and surface_network_group, the flag kind wordnet_no_pair and the settings of the relation study; run_id DEVMODE-2548-SURFACE-RELATION-SCHEMA-20261124. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_resolve_2361_v1_20261106 | iba/app/migration/archive/surface_resolve_2361_v1_20261106.py | ONE-OFF migration -- escalation #2361 stage 3: registers module surface-resolve and its settings; run_id DEVMODE-2361-SURFACE-RESOLVE-20261106. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_structure_2361_v1_20261106 | iba/app/migration/archive/surface_structure_2361_v1_20261106.py | ONE-OFF migration -- escalation #2361 stage 2: registers module surface-structure, its settings and the result_kind column of cfg_base_construct; run_id DEVMODE-2361-SURFACE-STRUCTURE-20261106. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | surface_subgroup_rules_2291_v1_20261025 | iba/app/migration/archive/surface_subgroup_rules_2291_v1_20261025.py | ONE-OFF migration -- escalation #2291 (#2286 U1): the #2286 work-unit rulings as six study_method behaviour rules with their scopes, cluster.surface_map.head_share and the ib_observation tag subgroup-settlement; run_id DEVMODE-2291-SURFACE-SUBGROUP-RULES-20261025. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -1277,6 +1281,7 @@ _(none)_
 | surfacehygiene | iba/app/lib/surfacehygiene.py | surfacehygiene.py -- the working-file and junk rules of the surface cycle (surfaces.junk_rules, working_files_root, exports_root, discarded_root), checked: a live junk surface, a stray analytic file (escalation #2361). | ✓ |  |  |
 | surfacejudge | iba/app/lib/surfacejudge.py | surfacejudge.py -- the first split of the concept surfaces into behaviour, state, being or other by the Ollama server, one call per surface (escalation #2354). | ✓ |  |  |
 | surfacemap | iba/app/lib/surfacemap.py | surfacemap.py -- the surface mapping of an M cluster (#2293, #2286 U3): the pairs file, the session pass, the API tail and the check (behaviour rules B:117, B:118) | ✓ |  |  |
+| surfacerelation | iba/app/lib/surfacerelation.py | surfacerelation.py -- the relations between English surfaces linked by WordNet: scope, pairs, groups, flags and the check against the study bases (escalation #2548). | ✓ |  |  |
 | surfaceresolve | iba/app/lib/surfaceresolve.py | surfaceresolve.py -- module 4 of 5 of the surface cycle: the base of every surface chosen from the evidence, reproducing the recorded combined base of 2026-11-04 (escalation #2361). | ✓ |  |  |
 | surfacestructure | iba/app/lib/surfacestructure.py | surfacestructure.py -- module 2 of 5 of the surface cycle: matching a surface to a base by the shape of the word, rebuilt from the recorded control of 2026-11-04 and reproducing it exactly (escalation #2361). | ✓ |  |  |
 | synergise_rule_2228_v1_20261023 | iba/app/migration/archive/synergise_rule_2228_v1_20261023.py | ONE-OFF migration -- escalation #2228: cfg_behaviour_rule synergise-from-tables-not-memory (general, study_active); run_id DEVMODE-2228-SYNERGISE-RULE-20261023. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -1649,6 +1654,8 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | surfaces | surfaces.export_groups | ['behaviour', 'inner_being_state'] | the surface groups the surfaces export covers (#2393), with the surfaces that have no group yet (not yet judged); entity and other are outside it |
 | surfaces | surfaces.exports_root | _analytics/surfaces/exports | the folder for the results of surface analysis made for inspection (workbooks, reports, analysis documents) (#2361) |
 | surfaces | surfaces.junk_rules | {'empty': '^\\s*$', 'no_letter': '^[^A-Za-z]+$', 'punctuation_inside': '[,;:!?]'} | the rules that find a junk surface in the surface list (#2361): empty (nothing or only space), no_letter (no letter at all: a symbol or a number), punctuation_inside (a comma, semicolon, colon or mark inside the text, so the surface is a fragment of a clause, not a word or a phrase). Each value is a regular expression matched against the surface; a surface that matches any rule is junk and is set to soft delete. Read by iba/app/migration/archive/junk_surfaces_2361_v1_20261106.py and later by the surface step surface.junk_mark |
+| surfaces | surfaces.relation_pair_rules | {'source': 'wordnet', 'source_version': '3.0', 'type_order': ['same_base', 'both', 'synonym', 'derivational', 'similar', 'antonym'], 'weight': 'synsets_shared + antonym_links + derivational_links + similar_links', 'distance': '1 / weight', 'small_group_min': 2} | how a WordNet pair of surfaces gets its type and weight (#2548): the type is the first that holds in type_order (same_base: the two resolve to one WordNet base form; both: a shared synset and an antonym link; synonym: a shared synset; derivational: derivationally related form or pertainym; similar: similar-to between adjective sense groups; antonym); the weight is the sum of the link counts; the distance of a pair is 1 / weight. source_version is stored on every relation row. small_group_min is the size from which a group outside the largest is kind small |
+| surfaces | surfaces.relation_scope | {'form': 'word', 'origin': ['surface', 'computed'], 'groups': ['behaviour', 'inner_being_state'], 'moved_from_groups': ['behaviour', 'inner_being_state'], 'moved_since': '2026-11-09', 'include_unjudged': True} | which surfaces the relation study covers (#2548): the live surface_term rows of form word that are in one of groups, or unjudged (include_unjudged), or whose surface_event for surface_group records a move from one of moved_from_groups on or after moved_since (the date the study list was fixed, 2026-11-09). origin lists the origins read: a computed base is a surface of the study when it is in the groups. Verified against the study list of 2026-11-23: 2,742 surfaces, none more and none fewer. The scope of a surface is not stored: it follows from this rule |
 | surfaces | surfaces.scope_groups | {'a': ['behaviour', 'inner_being_state'], 'b': ['entity'], 'c': ['other']} | which surface groups make up each collection of surfaces (#2361): a = behaviour and inner_being_state (the study of the inner being: bases and collections are built for these), b = being (entities), c = other. Read to decide base_state out_of_scope; the scope of a surface is not stored, it follows from its group |
 | surfaces | surfaces.wordnet_data_dir | data/imports/wordnet | the folder that holds corpora/wordnet, WordNet 3.0 (Princeton licence, in the folder), read through NLTK by iba/app/tools/temp_2545_wordnet_surface_pairs.py; the WordNet pairing of surfaces is an outside check on the collections, not study data |
 | surfaces | surfaces.working_files_root | _analytics/surfaces/working_files | the one folder under which every working file of the surface cycle is written (#2361): a subfolder per module (group, structure, base, collection), import/ for the only place a file may be read as an input, embeddings/ for regenerable caches |
@@ -2165,6 +2172,15 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | 3 | surface_judge.progress | iba.app.handlers.surfacejudge:progress | none | report a cycle's progress from its progress file (read-only): state, judged per group, failed, left, speed, estimated finish; -Batch -- see lib/surfacejudge.py (escalation #2354) |
 | 4 | surface_judge.stop | iba.app.handlers.surfacejudge:stop | none | ask a running cycle to end after the surface in hand (writes the stop flag beside the batch file); -Batch -- see lib/surfacejudge.py (escalation #2354) |
 
+**surface-relation** — runs over `none` · script `iba/app/ps/Surface-Relation.ps1`
+| # | step | handler | scope | does |
+| --- | --- | --- | --- | --- |
+| 0 | relation.status | iba.app.handlers.surfacerelation:status | none | how far the stored surface relations, network groups and no-pair flags are from what WordNet gives the study surfaces (read-only) -- see lib/surfacerelation.py (escalation #2548) |
+| 1 | relation.load | iba.app.handlers.surfacerelation:load | none | write the WordNet pairs of the study surfaces into surface_relation: a changed pair or a pair no longer linked is flipped to deleted; -Check previews -- see lib/surfacerelation.py (escalation #2548) |
+| 2 | relation.groups | iba.app.handlers.surfacerelation:groups | none | write the connected groups of the live pairs into surface_network_group, the earlier grouping kept as deleted; -Check previews -- see lib/surfacerelation.py (escalation #2548) |
+| 3 | relation.flag | iba.app.handlers.surfacerelation:flag | none | one surface_flag (kind wordnet_no_pair) for each surface of a reviewed list; the list must be exactly the surfaces with no pair; -File, -Escalation, -Check -- see lib/surfacerelation.py (escalation #2548) |
+| 4 | relation.validate | iba.app.handlers.surfacerelation:validate | none | compare the WordNet same_base pairs and groups with surface_term.base_id and write a report under the exports folder; nothing is written to base_id -- see lib/surfacerelation.py (escalation #2548) |
+
 **surface-resolve** — runs over `none` · script `iba/app/ps/Surface-Resolve.ps1`
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
@@ -2244,7 +2260,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 <a id="7-on-fail-condition-path-the-fork-rules"></a>
 ## 7. on_fail — condition -> path (the fork rules)
 
-**20 of 206 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**20 of 211 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -2403,6 +2419,11 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | reading_index.report | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | registry.create | word-rejected | report-stop | the researcher rejected the word |
 | registry.exists | word-exists | report-stop | the word already exists; use a refresh run, not new-word |
+| relation.flag | refused | report-continue | refused, nothing written -- a setting is missing, WordNet is not at its folder, or the reviewed list does not match the surfaces with no pair (a usage outcome, not recorded as an escalation) |
+| relation.groups | refused | report-continue | refused, nothing written -- a setting is missing, WordNet is not at its folder, or the reviewed list does not match the surfaces with no pair (a usage outcome, not recorded as an escalation) |
+| relation.load | refused | report-continue | refused, nothing written -- a setting is missing, WordNet is not at its folder, or the reviewed list does not match the surfaces with no pair (a usage outcome, not recorded as an escalation) |
+| relation.status | refused | report-continue | refused, nothing written -- a setting is missing, WordNet is not at its folder, or the reviewed list does not match the surfaces with no pair (a usage outcome, not recorded as an escalation) |
+| relation.validate | refused | report-continue | refused, nothing written -- a setting is missing, WordNet is not at its folder, or the reviewed list does not match the surfaces with no pair (a usage outcome, not recorded as an escalation) |
 | report.book_narrative_generate | api-error | report-stop | the Messages API returned a non-2xx response |
 | report.book_narrative_generate | api-key-missing | report-stop | ANTHROPIC_API_KEY not found in the environment or repo-root .env |
 | report.book_narrative_generate | cost-cap-exceeded | report-stop | the pre-call cost estimate exceeds narrative.generate_max_cost |
@@ -2514,7 +2535,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | lexical.run | verse_lexical, verse_lexical_note |
 | lexicon.parse | strong_lsj_parsed, strong_meaning_parsed, strong_mounce_parsed |
 | lexicon.related | strong_related |
-| migration | ai_call, candidate_seed, cfg_ai_model, cfg_ai_prompt, cfg_base_construct, cluster, cluster_strong, collection, collection_layer_item, collection_link, collection_listing, collection_subgroup, collection_subgroup_surface, concept, concept_domain, concept_subgroup, file_manifest, ib_observation, lemma_inventory, narrative_chapter, narrative_citation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, narrative_index_note, narrative_passage, narrative_section, narrative_update, narrative_update_ref, run, span, strong, strong_lexicon, strong_lsj_parsed, strong_meaning_parsed, strong_meaning_tree, strong_mounce_parsed, strong_related, strong_sense, surface_derivation, surface_eval_case, surface_event, surface_flag, surface_subgroup, surface_term, word_registry, word_strong |
+| migration | ai_call, candidate_seed, cfg_ai_model, cfg_ai_prompt, cfg_base_construct, cluster, cluster_strong, collection, collection_layer_item, collection_link, collection_listing, collection_subgroup, collection_subgroup_surface, concept, concept_domain, concept_subgroup, file_manifest, ib_observation, lemma_inventory, narrative_chapter, narrative_citation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, narrative_index_note, narrative_passage, narrative_section, narrative_update, narrative_update_ref, run, span, strong, strong_lexicon, strong_lsj_parsed, strong_meaning_parsed, strong_meaning_tree, strong_mounce_parsed, strong_related, strong_sense, surface_derivation, surface_eval_case, surface_event, surface_flag, surface_network_group, surface_relation, surface_subgroup, surface_term, word_registry, word_strong |
 | narrative_register.add_chapter | narrative_chapter, narrative_claim_change, narrative_section, narrative_update |
 | narrative_register.add_claim | narrative_claim, narrative_claim_change, narrative_claim_source |
 | narrative_register.edit | narrative_claim, narrative_claim_change, narrative_claim_source |
@@ -2548,6 +2569,9 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | reading.synergy | reading |
 | reading_index.build | reading_file, reading_ref, reading_section |
 | registry.create | word_registry |
+| relation.flag | surface_flag |
+| relation.groups | surface_network_group |
+| relation.load | surface_relation |
 | report.debate | passage |
 | resolve.run | surface_derivation, surface_event, surface_term |
 | run | escalation, run, validation_result, word_registry |
@@ -4477,7 +4501,7 @@ dedup key: `subject_kind, subject_id, kind`
 | id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2361, design v3 of 2026-11-06 (the researcher's rulings of 2026-11-06) |
 | subject_kind | TEXT |  | ✓ |  |  | which table subject_id points into: surface_term, surface_derivation, collection or collection_link | escalation #2361, design v3 of 2026-11-06 (the researcher's rulings of 2026-11-06) |
 | subject_id | INTEGER |  | ✓ |  |  | the id of the row in the table named by subject_kind | escalation #2361, design v3 of 2026-11-06 (the researcher's rulings of 2026-11-06) |
-| kind | TEXT |  | ✓ |  |  | the kind of exception: possible_opposite (a negating prefix or suffix on an accepted AI base), meaning_shift (the base's meaning has moved), held_pair (a base held back from a repoint), ai_failed, ai_none, ai_disagrees (the AI base differs from the structure base), possessive (a possessive form kept apart from its base), structure_conflict, junk_surface, phrase_no_match (a phrase that no word and no own Strong code connects to a collection: to inspect, #2437), other | escalation #2361, design v3 of 2026-11-06 (the researcher's rulings of 2026-11-06) |
+| kind | TEXT |  | ✓ |  |  | the kind of exception: possible_opposite (a negating prefix or suffix on an accepted AI base), meaning_shift (the base's meaning has moved), held_pair (a base held back from a repoint), ai_failed, ai_none, ai_disagrees (the AI base differs from the structure base), possessive (a possessive form kept apart from its base), structure_conflict, junk_surface, phrase_no_match (a phrase that no word and no own Strong code connects to a collection: to inspect, #2437), other, wordnet_no_pair (a single-word surface of the relation study that WordNet pairs with no other surface: to be dealt with by hand, #2548; the class of the review and who acts are in the note) | escalation #2361, design v3 of 2026-11-06 (the researcher's rulings of 2026-11-06) |
 | note | TEXT |  |  |  |  | what was seen, in a line | escalation #2361, design v3 of 2026-11-06 (the researcher's rulings of 2026-11-06) |
 | status | TEXT |  | ✓ |  |  | open (not settled) or settled | escalation #2361, design v3 of 2026-11-06 (the researcher's rulings of 2026-11-06) |
 | escalation_id | INTEGER |  |  |  |  | the escalation.id of the item that carries the decision, when one was raised; NULL otherwise (not a foreign key: escalation keeps a row per version) | escalation #2361, design v3 of 2026-11-06 (the researcher's rulings of 2026-11-06) |
@@ -4669,6 +4693,48 @@ dedup key: `collection_id, item, subgroup_id, subject`
 | created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2505 (researcher, 2026-11-15; outputs/escalation/2505-layers-1-2-build-design-v1-20261115.md; the layer definition on #2463 v16, answers v18 to v22) |
 | deleted | INTEGER |  | ✓ |  |  | soft delete: 1 when the row is no longer live | escalation #2505 (researcher, 2026-11-15; outputs/escalation/2505-layers-1-2-build-design-v1-20261115.md; the layer definition on #2463 v16, answers v18 to v22) |
 
+### surface_relation
+_one row per unordered pair of surfaces that an outside source links, per source_ — Relations between English surfaces (#2548). Until now no table related one English surface to another: strong_related relates Strong's codes, collection_link places a base in a collection. A row here says that an OUTSIDE source (today WordNet 3.0, read through NLTK) links two surfaces of the relation study (scope in cfg_setting surfaces.relation_scope): the two terms, what kind of link (pair_type), how strong (weight) and how many links of each kind were counted. The pair is unordered: term_a_id < term_b_id, so a pair is held once. The source is modern general English, not the Bible: a row is a candidate relation to read, not a study finding, and carries no inner-being reading; a surface can be linked through a sense its verses never use. The row is derived: the step recomputes it from the source, and a changed rule or source version adds new rows and flips the earlier to deleted = 1. The distance matrices (hops, weighted: shortest path over these pairs, length 1 / weight) are not stored; they are regenerated from this table. Navigate: term_a_id and term_b_id to surface_term; the collections of the two through collection_link on their bases; the group in surface_network_group
+dedup key: `term_a_id, term_b_id, source`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| term_a_id | INTEGER |  | ✓ |  | surface_term.id | points to surface_term.id: the first surface of the pair; always the lower id of the two | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| term_b_id | INTEGER |  | ✓ |  | surface_term.id | points to surface_term.id: the second surface of the pair; always the higher id | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| pair_type | TEXT |  | ✓ |  |  | the kind of link, the first that holds in the order in cfg_setting surfaces.relation_pair_rules: same_base (the two resolve to one WordNet base form: walk, walked), both (they share a synset and an antonym link also holds), synonym (they share at least one synset), derivational (a derivationally related form or pertainym: bold, boldness, boldly), similar (similar-to between adjective sense groups: generous, bountiful), antonym (an antonym link between their lemmas) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| weight | INTEGER |  | ✓ |  |  | the strength of the pair: synsets_shared + antonym_links + derivational_links + similar_links (a pair that holds several links has them added); the length of the pair in the distance matrices is 1 / weight | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| synsets_shared | INTEGER |  | ✓ |  |  | how many WordNet synsets (senses) the two share; 0 when none | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| antonym_links | INTEGER |  | ✓ |  |  | how many antonym links join a lemma of one to a lemma of the other; 0 when none | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| derivational_links | INTEGER |  | ✓ |  |  | 1 when WordNet lists the two as derivationally related forms or pertainyms, else 0 | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| similar_links | INTEGER |  | ✓ |  |  | how many similar-to links join a sense group of one to a sense group of the other; 0 when none | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| source | TEXT |  | ✓ |  |  | the outside source that links the two | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| source_version | TEXT |  | ✓ |  |  | the version of the source the row was computed from (WordNet 3.0), so a later version does not overwrite the earlier | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| run_id | TEXT |  |  |  |  | the run that wrote the row (run.run_id) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| created_at | TEXT |  | ✓ |  |  | when (ISO-8601 UTC) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| updated_at | TEXT |  |  |  |  | when last changed (ISO-8601 UTC) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| deleted | INTEGER |  | ✓ |  |  | soft delete, version-aware as in verse_lexical: 1 when the row is no longer the current one (superseded by a later load or grouping); nothing in this cycle is ever physically deleted | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| load_ref | TEXT |  |  |  |  | for a row loaded from a recorded file: the file and line it came from; NULL for a row made by a step | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+
+### surface_network_group
+_one row per surface per grouping of the relation network_ — The connected groups of the surface relation network (#2548): a group is a set of surfaces joined by surface_relation pairs, directly or through other surfaces. One row per surface of the relation study (scope in cfg_setting surfaces.relation_scope), including the surfaces with no pair (kind no_pair, a group of one) and those WordNet does not hold (in_wordnet = 0). group_no numbers the groups by size, largest first, within one grouping; the largest group (kind main) is the loose mass of surfaces joined through shared senses; kind small is a group of 2 or more outside it. The grouping is derived: a later grouping (a changed rule or source version) flips the earlier rows to deleted = 1 and adds its own, so the earlier is kept. status stays indicative; confirmed only when the researcher recognises the group as a concept. The researcher's views of the groups are recorded as views in the escalation record (#2545, #2548), never as findings here. Navigate: term_id to surface_term; the pairs of the group in surface_relation where term_a_id or term_b_id is a member
+dedup key: `term_id`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| term_id | INTEGER |  | ✓ |  | surface_term.id | points to surface_term.id: the surface this row places in a group | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| group_no | INTEGER |  | ✓ |  |  | the number of the group within its grouping, 1 the largest; surfaces with the same number and the same run_id are one group | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| group_size | INTEGER |  | ✓ |  |  | how many surfaces the group holds; 1 for a surface with no pair | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| kind | TEXT |  | ✓ |  |  | main (the largest group), small (a group of 2 or more that is not the largest), no_pair (a group of one: WordNet pairs the surface with no other surface of the study) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| in_wordnet | INTEGER |  | ✓ |  |  | 1 when the source holds the surface, 0 when it does not (a no_pair row of a surface the source does not hold) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| status | TEXT |  | ✓ |  |  | indicative (the computed grouping, the default) or confirmed (the researcher recognised the group) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| run_id | TEXT |  |  |  |  | the run that wrote the row (run.run_id) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| created_at | TEXT |  | ✓ |  |  | when (ISO-8601 UTC) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| updated_at | TEXT |  |  |  |  | when last changed (ISO-8601 UTC) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, or 'direct edit' (the default, a row inserted outside the tool) | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| deleted | INTEGER |  | ✓ |  |  | soft delete, version-aware as in verse_lexical: 1 when the row is no longer the current one (superseded by a later load or grouping); nothing in this cycle is ever physically deleted | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+| load_ref | TEXT |  |  |  |  | for a row loaded from a recorded file: the file and line it came from; NULL for a row made by a step | escalation #2548, the researcher's decisions of 2026-11-24 (brief v1 of 2026-11-24) |
+
 <a id="11-enums"></a>
 ## 11. Enums
 
@@ -4776,14 +4842,18 @@ dedup key: `collection_id, item, subgroup_id, subject`
 | run_state | running, paused, done, failed |
 | step_kind | operations, utility |
 | study_state | active, on_hold |
-| surface_cycle_module | group, structure, ai_base, resolve, collection, engagementask |
+| surface_cycle_module | group, structure, ai_base, resolve, collection, engagementask, relation |
 | surface_derivation.kind | inflection, derivation, lead_opposite, lead_other, lead_starts_with, own |
 | surface_derivation.method | structure, sibling, ollama, own, researcher |
 | surface_eval_case.source | researcher, claude, prototype |
 | surface_eval_case.standing | provisional, confirmed |
 | surface_event.action | confirm, correct, move, remove, merge, retire, reopen, set_tier, set_group, set_base, mark_deleted, attach_phrase, gather, relink, unlink, engagement_no_verses, add, rename, subgroup_make, subgroup_place, subgroup_isolate, index_retire, index_reset, subgroup_retire |
-| surface_flag.kind | possible_opposite, meaning_shift, held_pair, ai_failed, ai_none, ai_disagrees, possessive, structure_conflict, junk_surface, other, phrase_no_match |
+| surface_flag.kind | possible_opposite, meaning_shift, held_pair, ai_failed, ai_none, ai_disagrees, possessive, structure_conflict, junk_surface, other, phrase_no_match, wordnet_no_pair |
 | surface_flag.status | open, settled |
+| surface_network_group.kind | main, small, no_pair |
+| surface_network_group.status | indicative, confirmed |
+| surface_relation.pair_type | synonym, antonym, derivational, similar, same_base, both |
+| surface_relation.source | wordnet |
 | surface_subgroup.allocated_by | inherited, session, api, reading, manual |
 | surface_subgroup.status | provisional, moved |
 | surface_subject_kind | surface_term, surface_derivation, collection, collection_link, verse_lexical, collection_subgroup, collection_subgroup_surface |
@@ -5626,7 +5696,7 @@ surface_term by group_state: judged 5435, corrected 652, confirmed 82, unjudged 
 
 collection_link by tier: associated 2395, synonym 1685, phrase 1069, possible_opposite 356, gathered 339, set_aside 216, core 169, opposite 151
 
-surface_flag by kind (open): ai_none 289, phrase_no_match 72, held_pair 39, possible_opposite 34, ai_failed 31, possessive 26, structure_conflict 14
+surface_flag by kind (open): ai_none 289, wordnet_no_pair 154, phrase_no_match 72, held_pair 39, possible_opposite 34, ai_failed 31, possessive 26, structure_conflict 14
 
 <a id="17-the-ai-use-map-models-prompts-and-calls-generated"></a>
 ## 17. The AI use map - models, prompts and calls (generated)

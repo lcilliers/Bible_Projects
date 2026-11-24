@@ -1,0 +1,30 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20261124T055723Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-11-24T05:57:23Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 1 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-9-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 9,
+      "record": {
+        "body": "The programme's scope is the set of surfaces: the English words and phrases of the ESV that name a behaviour or an inner-being state. A word enters the scope by being judged against the programme's working definition of the inner being, and that definition is the admission criterion.\n\nThe whole population of surfaces was sorted, by a process of deduction and likeness, into four surface groups: behaviour, inner_being_state, entity and other. The researcher's assessment is that this sorting is roughly nine in ten correct, within an accepted margin of error. The items placed wrongly are found in the deeper analysis and compensated for there; the sorting is not reopened to remove them first. Its purpose is to make the reading of the inner being's working possible: the first two groups hold the behaviours and states that are read, and the other two supply the words that stand with them in the verses.\n\nScope is built by the surface cycle, five modules that each read and write database tables and never a working file. The first, *group*, sorts each surface by what it names: behaviour (something a person does or undergoes, an act, feeling, thought, speech or choice), inner_being_state (a standing condition or characteristic of a person or of the inner being), entity (a thing that exists: a human, a plant or animal, God in all forms, an unseen power, or a part of any of these) or other (everything else). The second, *structure*, finds the base of a surface by the shape of the word. The third, *AI base*, proposes the base for the surfaces the shape leaves unmatched, through a model on a local server. The fourth, *resolve*, chooses the base from the evidence. The fifth, *collections*, forms the members of each core word's collection. Every change keeps its state before and after, together with the AI call and the prompt version that gave it, so that anything can be traced back. What a model gives is inferential until the researcher confirms it.\n\nThe surfaces of the groups behaviour and inner_being_state are then collated into collections by the likeness or relatedness of the behaviour they name. Each surface is connected, through the Strong's code of its base, with its verses, so a collection carries the verses of its surfaces and is the body of text from which the inner being's working is read. A collection is made by putting like words together: synonyms, opposites and gathered words. The base is only an instrument for gathering like words and is never the member; a derived form is a surface with a link of its own; a phrase is one concept and is placed in one collection. Each surface of the scope is in exactly one collection, and is in more than one only in rare circumstances and by the researcher's ruling. The name of a collection is formed from all its members as a concept that covers them. Collections whose members coincide or are close are combined, and a small collection is grouped with like-minded ones unless it is truly unique. Because each collection becomes a chapter of the narrative, it must make sense, must not overlap another, and must tell a coherent story.\n\nA collection is used in three ways. It carries the verses that are read; it is the unit through which the stages are gated; and it becomes a chapter of the narrative.\n\nThe surfaces are also related to one another outside the collections, by the pairs and groups that an outside dictionary (WordNet) gives. How the surface tables work together, and how they are used to read a verse for the inner being, is described in chapter 4, in the section 'Surfaces, collections and the registry'.\n\n**Caveats.** The sorting of the surfaces into groups is a judgement and not a measurement. Most of it was made by a model and is inferential until the researcher confirms it, a surface can be wrongly sorted, and a small remainder has not been judged. The surfaces judged are those reached through the Strong's codes that the earlier cluster method allocated; surfaces reached only through other codes have not been judged, and they reach the study only as words that stand with member surfaces. Whether that boundary stays or widens is the researcher's to decide. The collections are made from the surfaces as they are sorted, so an error in the sorting carries into a collection until the reading finds it and the word is moved by the procedure for changing a collection.\n\nA verse is in scope when it holds an occurrence of a member surface of a collection. A word that is neither a behaviour nor an inner-being state, such as a generic evaluative, motion, quantity, speech or copula word, is not a surface of a collection.",
+        "heading": "Word selection: surfaces and collections",
+        "author": "researcher",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1471}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "prose_section_supersedes": 1,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-2-v9-20261124.md"
+  }
+}

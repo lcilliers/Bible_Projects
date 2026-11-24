@@ -1014,6 +1014,7 @@ The cycle turns the English surfaces of the ESV into collections of related word
 | 4 resolve | `iba/app/ps/Surface-Resolve.ps1` | the base chosen from the evidence | 8.12 |
 | 5 collections | `iba/app/ps/Collection-Build.ps1` | the members of each collection; Seed and Ask use the AI | 8.14 |
 | AI control | `iba/app/ps/Ai-Control.ps1` | models, prompts, calls, replay, compare | 8.13 |
+| surface relations | `iba/app/ps/Surface-Relation.ps1` | the pairs and groups of single-word surfaces that WordNet links; the surfaces it leaves with no pair | 8.19 |
 
 **A normal pass** (each step has a `-Check` or a Status first):
 
@@ -1109,6 +1110,24 @@ iba\app\ps\Engagement.ps1 -Action Check -Collection aloud                       
 - **Review** (ruling B of #2411) writes `engagement-<collection>-review-<yyyymmdd>.json`: the verses where every member surface was assessed with no bearing, and the items in them not yet confirmed (the surface, the verse and its text, the no-bearing observation and node). A verse with any surface that has bearing, or any surface not yet assessed, is not in it. With nothing to review it writes no file and says how many verses are already set aside.
 - **Close** takes the review file filled in (`review` names it) with `decisions`, one for each item: `confirm` (still no bearing, with a `reason`) or `reopen` (it has bearing: `result` relevant or bears_on, `role`, `gives`, `test`, `reason`), and `observations` for the reopened items as in an assessment. It checks the file whole and writes in one transaction (`-Check` previews). A confirm is kept in `ib_observation_change` (column `reviewed`, with its reason). A reopen deletes the no-bearing node with its reason and writes a node with the role on an observation (an observation left with no live node is soft deleted). A verse is set aside only when all its surfaces are confirmed; `Review` counts those, and `Check` reports the no-bearing items and how many the review confirmed.
 - The rules are config (`cfg_setting` module `engagement`): `engagement.stage`, `.roles`, `.group_rule`, `.no_bearing_kind`, `.tests`, `.working_dir`, `.report_path`, `.group_judged_by`. The code is `iba/app/lib/engagement.py`; the test run is `iba/app/tools/temp_2406_engagement_test_run.py`.
+
+### 8.19 The relations between surfaces: WordNet pairs and groups (`iba/app/ps/Surface-Relation.ps1`, escalation #2548)
+
+No other table relates one English surface to another (`strong_related` relates Strong's codes, `collection_link` places a base in a collection). This step set holds what an outside source, WordNet 3.0 read through NLTK, says: `surface_relation` has one row per pair of surfaces (type: same_base, both, synonym, derivational, similar or antonym; weight; the counts of each kind of link), `surface_network_group` places every surface of the study in the connected group the pairs make (kind main, small or no_pair), and the surfaces with no pair carry a `surface_flag` of kind `wordnet_no_pair`. WordNet is modern general English: its links are candidate relations to read, not findings; nothing is written to `surface_term` or to a base. The settings are `surfaces.relation_scope` (which surfaces: the single-word surfaces of behaviour and inner_being_state, those moved out of them since 2026-11-09, and the unjudged), `surfaces.relation_pair_rules` (the type order, the weight, the smallest small group) and `surfaces.wordnet_data_dir`.
+
+```powershell
+iba\app\ps\Surface-Relation.ps1 -Action Status                       # stored rows against what WordNet gives (read-only)
+iba\app\ps\Surface-Relation.ps1 -Action Load -Check                  # preview the pairs
+iba\app\ps\Surface-Relation.ps1 -Action Load                         # write the pairs
+iba\app\ps\Surface-Relation.ps1 -Action Groups                       # write the connected groups
+iba\app\ps\Surface-Relation.ps1 -Action Flag -File _analytics/surfaces/exports/wordnet-no-pair-review-v2-20261123.xlsx   # one flag per no-pair surface
+iba\app\ps\Surface-Relation.ps1 -Action Validate                     # WordNet same_base and groups against surface_term.base_id (report)
+```
+
+- Order: Load, then Groups, then Flag. A second run with nothing changed writes nothing; a changed pair, or one no longer linked, is flipped to `deleted = 1` and the new one added, and a new grouping keeps the earlier as `deleted = 1`.
+- Flag refuses a list that is not exactly the live no-pair surfaces (sheet `review`, columns surface, a_inner_being_or_behaviour, a_note, b_reason_kind, b_detail, manual_intervention, who_acts). The class and who acts are in the flag note; the escalation is `-Escalation` (default 2545). Settling a flag is the researcher's.
+- Validate writes `surface-relation-validation-{date}.md` (a later run the same day is -v2, the earlier archived) under `surfaces.exports_root`: the WordNet same_base pairs whose study bases differ, and the study base groups not inside one WordNet group. A disagreement is a case to read, not a correction.
+- The hops and weighted distance matrices are not stored: they are regenerated from `surface_relation` (shortest path, a pair as long as 1 / weight). The two files of 2026-11-23 are registered in `file_manifest` as `regenerable`.
 
 ## 9. Reports and exports
 

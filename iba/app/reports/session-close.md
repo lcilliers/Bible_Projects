@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-24T05:30:30Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-24T07:48:53Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `75860879-bfa6-45ce-834d-0a11cbae93a6` (CLAUDE_CODE_SESSION_ID); started 2026-11-23T04:13:54Z; window base commit `217c02032f3f588aec546b853d3fe810967dc099`
-- compliance file: `Logs/compliance/COMPLIANCE-20261123-75860879.md`; session log: `Logs/SESSION-LOG-20261123-wordnet-surface-network.md`
-- **open findings: 0**; cleared by disposition: 11
+- session: `4e495962-a220-410b-b915-3cc04c7961e3` (CLAUDE_CODE_SESSION_ID); started 2026-11-24T05:28:20Z; window base commit `205249e3f95938b4c836c56efef4f9ad261df48a`
+- compliance file: `Logs/compliance/COMPLIANCE-20261124-4e495962.md`; session log: `Logs/SESSION-LOG-20261124-surface-relations-build.md`
+- **open findings: 0**; cleared by disposition: 3
 
 
 ## Contents
@@ -42,31 +42,19 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:eb0ac828`: researcher message 2026-11-23T05:12 is too short to be matched; name where it is recorded: "core" -- disposition: recorded in #2545 v4
-- cleared `SC3:a9c3326e`: researcher message 2026-11-23T07:08 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC3:5eb5f227`: researcher message 2026-11-24T07:46 is too short to be matched; name where it is recorded: "Approve, then commit" -- disposition: recorded in #2548 v9
+- cleared `SC3:d2b57727`: researcher message 2026-11-24T06:57 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: no record needed: the app's continuation summary of the earlier conversation, not the researcher's words
-- cleared `SC3:bb93895d`: researcher message 2026-11-23T10:11 is in no escalation comment written this session: "there are a number of words I can spot that is not pairing because they actually do not belong in the list, they should have been defined as another surface gro" -- disposition: recorded in #2545 v4
-- cleared `SC3:642dd16a`: researcher message 2026-11-23T12:10 is too short to be matched; name where it is recorded: "approve #2547" -- disposition: recorded in #2545 v5
-- cleared `SC3:715af985`: researcher message 2026-11-23T13:50 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: no record needed: the app's continuation summary of the earlier conversation, not the researcher's words
+Summar" -- disposition: no record needed: this is the automatic context summary of the earlier part of the session, not words of the researcher; the researcher's own messages are in #2548
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:c2477cf3`: researcher message 2026-11-23T04:21 holds, defers or asks to check something; name its register item: "Park #2538, #2541 #2542 #2543 for now" -- disposition: in register #2538
-- cleared `SC4b:a9c3326e`: researcher message 2026-11-23T07:08 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+- cleared `SC4b:d2b57727`: researcher message 2026-11-24T06:57 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
-Summar" -- disposition: not held: the app's continuation summary, not a message of the researcher
-- cleared `SC4b:255ef038`: researcher message 2026-11-23T10:52 holds, defers or asks to check something; name its register item: "add a column in the excel to quantify/separate the items that will need manual intervention (e.g. reallocate surface to other; need decision, conflicitng sense," -- disposition: not held: the overlay and the manual-intervention column were done in this session (iba/app/BUILD.md entry 557)
-- cleared `SC4b:715af985`: researcher message 2026-11-23T13:50 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
-
-
-Summar" -- disposition: not held: the app's continuation summary, not a message of the researcher
+Summar" -- disposition: not held: the automatic context summary, not a researcher message; its open points are carried in #2545
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity
@@ -103,7 +91,6 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Escalation.ps1_-Action_Raise`: Escalation.ps1 -Action Raise failed 3 times this session: error: short_description is 61 chars, over the 60-char title limit. It must read like a title/subject naming the topic - -- disposition: fixed: the titles were shortened to 60 characters and the Raise then succeeded (#2544 and #2545)
-- cleared `SC16:Escalation.ps1_-Action_Update`: Escalation.ps1 -Action Update failed 4 times this session: [31;1m.\iba\app\ps\Escalation.ps1: [31;1mThe term '.\iba\app\ps\Escalation.ps1' is not recognized as a name of a cmdle; [31;1mEscalation.ps1: [31;1mA positional parameter cannot be found that accepts argument 'C:\Bible_study_projects\_ana; error: decision_required items may only move to approved from a CURRENT next_action of ready_for_approval -- no shortcut; error: next_action='approved' requires resolution to be filled in (plan v3 sec3) -- disposition: fixed: the approval of #2547 was re-issued through ready_for_approval with a resolution, then approved, and the Update succeeded; a first call from the Bash tool also failed on the path
+_no finding_
 
 _no finding_

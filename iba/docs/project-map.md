@@ -1,6 +1,6 @@
 # Project map
 
-Current as of: 2026-11-21 5a04e370
+Current as of: 2026-11-24 6596d2a0
 
 Status: working draft by Claude for the researcher to check. v1 was rejected on 2026-11-19 (researcher, recorded verbatim on #2510 v5). v2 is built from the records themselves: the live databases (measured 2026-11-19, read-only), `iba/app/BUILD.md` (all 540 entries by heading, the debate, science, narrative and control entries in full), `GOVERNANCE.md`, `USER-GUIDE.md`, `CHARTER.md`, the behaviour rules, the session logs and the archived instruction and folder record. Each statement names its source in brackets. A count is a measurement on this date, not a standing fact. Section 8 holds only what the records do not answer.
 
@@ -17,7 +17,7 @@ Status: working draft by Claude for the researcher to check. v1 was rejected on 
 | The aim, the programme's concepts and their definitions | `bible_research.db` (prose only): programme prose, glossary; `iba.db` `cfg_prose_concept` points to the defining sections | Rewritten 2026-11-20 to the researcher's thread of the study (#2510); the canonical statement of the study (section 3) |
 | The text and its original-language data | `iba.db`: `verse`, `span`, `span_candidate`, `strong` with `strong_lexicon`, `strong_sense`, `strong_meaning_*`, `strong_related`, `word_strong`, `word_registry` | Complete for the Bible (section 7) |
 | The mechanical reading of each verse | `iba.db`: `verse_lexical` (one row per Strong's code per span; the verse's structural composition, not inner-being aware) | 29,760 of 29,762 verses |
-| What is studied: the words and phrases of the ESV, judged and grouped | `iba.db`: `surface_term`, `surface_derivation`, `surface_event`, `surface_flag`, `ai_call` | Judged, with 56 surfaces not yet judged |
+| What is studied: the words and phrases of the ESV, judged and grouped | `iba.db`: `surface_term`, `surface_derivation`, `surface_event`, `surface_flag`, `ai_call`; since 2026-11-24 also `surface_relation` (11,725 WordNet pairs between 2,742 single-word surfaces) and `surface_network_group` (their connected groups; #2548, step set `surface-relation`). How the surface tables work together: Programme book chapter 4, section 'Surfaces, collections and the registry' | Judged, with 56 surfaces not yet judged; WordNet relations held as candidate relations, not findings |
 | The vocabulary gathered by likeness of meaning | `iba.db`: `collection`, `collection_link`, `collection_listing`, `collection_subgroup`, `collection_subgroup_surface` | 169 confirmed collections |
 | What the text shows | `iba.db`: `ib_observation` (the finding), `ib_node` (where it applies: verse, word, surface, collection), `ib_observation_change` (every change and its reason), `collection_layer_item` (the ledger of the layered reading), `reading*` (the reading process) | Earlier-method observations in place; the new layered reading just begun (section 7) |
 | The claims and the narrative | `iba.db`: `narrative_claim`, `narrative_claim_source`, `narrative_claim_telling`, `narrative_chapter`, `narrative_section` (chapters as blocks), `narrative_citation`, `narrative_update` | A complete draft from the earlier method (section 7) |

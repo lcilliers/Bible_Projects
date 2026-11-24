@@ -1,0 +1,179 @@
+# Surface relations: WordNet against the study bases (#2548)
+
+WordNet is an outside source and modern English: a disagreement is a case to read, not a correction. Nothing is written to `surface_term.base_id`.
+
+- WordNet `same_base` pairs: 1765; the two surfaces have the same `base_id`: 1648; they have different bases: 117
+- Study base groups (a `base_id` shared by two or more surfaces of the study): 741; all members inside one WordNet group: 691; split across WordNet groups or with a no-pair member: 50
+
+## same_base pairs whose study bases differ
+
+- deserted (base deserted) / deserts (base deserts)
+- loathe (base loathe) / loathed (base none)
+- loathe (base loathe) / loathes (base none)
+- loathed (base none) / loathes (base none)
+- play (base none) / plays (base none)
+- covered (base covered) / covers (base covers)
+- dealt (base none) / deal (base deal)
+- dealt (base none) / dealing (base deal)
+- treated (base none) / treat (base none)
+- affliction (base afflict) / afflictions (base none)
+- suffering (base suffer) / sufferings (base suffering)
+- repaired (base none) / repair (base none)
+- repair (base none) / repairs (base none)
+- repaired (base none) / repairs (base none)
+- anger (base none) / angered (base none)
+- responded (base none) / respond (base respond)
+- invoke (base none) / invoked (base none)
+- entreaties (base entreaty) / entreaty (base entreat)
+- prayer (base pray) / prayers (base none)
+- blessing (base bless) / blessings (base blessing)
+- guaranteed (base none) / guarantee (base none)
+- rouse (base rouse) / roused (base none)
+- roused (base none) / rouses (base rouse)
+- thought (base thought) / think (base think)
+- thought (base thought) / thinking (base think)
+- thought (base thought) / thinks (base think)
+- broken (base broken) / break (base break)
+- broken (base broken) / breaking (base break)
+- broken (base broken) / breaks (base break)
+- broken (base broken) / broke (base break)
+- cursed (base cursed) / cursing (base cursing)
+- blasphemies (base blasphemy) / blasphemy (base blaspheme)
+- blow (base none) / blows (base none)
+- weaken (base weak) / weakened (base weaken)
+- weaken (base weak) / weakening (base weaken)
+- established (base established) / establishes (base establishes)
+- wished (base wished) / wishing (base wishing)
+- torn (base torn) / tear (base tear)
+- tears (base tear) / torn (base torn)
+- committed (base committed) / commits (base commits)
+- choice (base none) / choicest (base none)
+- realized (base realized) / realizes (base realizes)
+- realized (base realized) / realizing (base realizing)
+- realizes (base realizes) / realizing (base realizing)
+- consolation (base console) / consolations (base consolation)
+- hidden (base hide) / hid (base hid)
+- hide (base hide) / hid (base hid)
+- hid (base hid) / hides (base none)
+- hid (base hid) / hiding (base none)
+- hidden (base hide) / hides (base none)
+- hidden (base hide) / hiding (base none)
+- hide (base hide) / hides (base none)
+- hide (base hide) / hiding (base none)
+- hides (base none) / hiding (base none)
+- qualified (base none) / qualify (base qualify)
+- reckoning (base none) / reckon (base reckon)
+- consumed (base consumed) / consumes (base consumes)
+- deemed (base none) / deem (base deem)
+- deeper (base deeper) / deeply (base deeply)
+- defilement (base defile) / defilements (base none)
+- rescued (base rescued) / rescues (base rescues)
+- intentions (base none) / intention (base intent)
+- desolation (base desolate) / desolations (base desolation)
+- performed (base performed) / performing (base performing)
+- empowered (base empowered) / empowers (base empowers)
+- sinner (base sin) / sinners (base none)
+- transgression (base transgress) / transgressions (base none)
+- failing (base fail) / failings (base failing)
+- weakness (base weak) / weaknesses (base weakness)
+- fasten (base fast) / fastened (base fasten)
+- foreknew (base none) / foreknow (base foreknow)
+- foreknew (base none) / foreknown (base none)
+- foreknown (base none) / foreknow (base foreknow)
+- strengthened (base strengthen) / strengthen (base strength)
+- strengthen (base strength) / strengthening (base strengthen)
+- strengthen (base strength) / strengthens (base strengthen)
+- transfigured (base none) / transfigure (base transfigure)
+- greet (base none) / greeted (base none)
+- greet (base none) / greets (base none)
+- greeted (base none) / greets (base none)
+- hardened (base harden) / harden (base hard)
+- harden (base hard) / hardening (base harden)
+- harden (base hard) / hardens (base harden)
+- lowly (base low) / lowliest (base lowly)
+- illness (base ill) / illnesses (base illness)
+- sickness (base sick) / sicknesses (base sickness)
+- infirmities (base none) / infirmity (base infirmity)
+- wonders (base wonders) / wondered (base wondered)
+- means (base none) / meaning (base none)
+- meant (base mean) / meaning (base none)
+- means (base none) / meant (base mean)
+- intercedes (base intercedes) / interceding (base interceding)
+- stir (base stir) / stirring (base none)
+- stirred (base stir) / stirring (base none)
+- stirring (base none) / stirs (base stir)
+- yearned (base yearned) / yearning (base yearning)
+- yearns (base yearns) / yearned (base yearned)
+- yearns (base yearns) / yearning (base yearning)
+- mar (base none) / marred (base none)
+- mighty (base might) / mightier (base mighty)
+- mockers (base none) / mocker (base mock)
+- scoffers (base none) / scoffer (base scoff)
+- mourners (base none) / mourner (base mourn)
+- nourished (base none) / nourishes (base none)
+- old (base old) / oldest (base none)
+- pleading (base plead) / pleadings (base pleading)
+- polluted (base polluted) / pollutes (base pollutes)
+- used (base none) / use (base none)
+- quaked (base quaked) / quakes (base quakes)
+- risk (base none) / risked (base none)
+- saying (base say) / sayings (base saying)
+- shuns (base shun) / shun (base none)
+- silence (base silent) / silenced (base silence)
+- temptation (base tempt) / temptations (base temptation)
+- tramples (base none) / trample (base none)
+- uncleanness (base unclean) / uncleannesses (base uncleanness)
+- warning (base warn) / warnings (base warning)
+
+## Study base groups not inside one WordNet group
+
+- base flame: aflame, flame; WordNet groups []; no pair: aflame, flame
+- base shame: ashamed, shame, shamed, shameful, shameless, shames; WordNet groups [1]; no pair: shameless
+- base awe: awe, awe-inspiring; WordNet groups [1]; no pair: awe-inspiring
+- base beauty: beautiful, beauty; WordNet groups [1]; no pair: beauty
+- base fit: befits, fitting; WordNet groups [1]; no pair: befits
+- base break: break, breakers, breaking, breaks, broke, brokenhearted, law-breakers; WordNet groups [1]; no pair: breakers, law-breakers
+- base broken: broken, brokenness; WordNet groups [1]; no pair: brokenness
+- base condemn: condemn, condemnation, condemned, condemning, condemns, self-condemned, uncondemned; WordNet groups [5]; no pair: self-condemned, uncondemned
+- base corrupt: corrupt, corrupted, corruption, incorruptible; WordNet groups [1]; no pair: incorruptible
+- base deceive: deceive, deceived, deceives, deceiving, devious; WordNet groups [1]; no pair: devious
+- base disease: disease, diseased; WordNet groups []; no pair: disease, diseased
+- base exceeding: exceeding, exceedingly; WordNet groups [9]; no pair: exceedingly
+- base false: false, falsehood; WordNet groups [1, 59]
+- base favor: favor, favorable, favors; WordNet groups [1, 60]
+- base fool: fool, foolish, fools; WordNet groups [1, 61]
+- base forget: forget, forgetfulness, forgets, forgetting, forgotten; WordNet groups [1]; no pair: forgetfulness
+- base fortune: fortunate, fortune; WordNet groups [1]; no pair: fortune
+- base heart: heart, heartily, hearts; WordNet groups [1]; no pair: heartily
+- base honest: honest, honesty; WordNet groups [1]; no pair: honesty
+- base hypocrite: hypocrisy, hypocrite, hypocrites; WordNet groups [64]; no pair: hypocrisy
+- base jealous: jealous, jealously, jealousy; WordNet groups [1]; no pair: jealousy
+- base know: knew, know, knowing, knowledge, known, knows; WordNet groups [1]; no pair: knowledge
+- base length: length, lengthen; WordNet groups []; no pair: length, lengthen
+- base life: life-giving, lifetime; WordNet groups [1]; no pair: life-giving
+- base lift: lift, lifted, lifts, uplifted; WordNet groups [1]; no pair: uplifted
+- base lust: lust, lusted, lustful, lusts; WordNet groups [1]; no pair: lustful
+- base much: more, most; WordNet groups []; no pair: more, most
+- base nature: natural, nature; WordNet groups [1]; no pair: nature
+- base number: numbered, numerous; WordNet groups [1]; no pair: numerous
+- base peace: peace, peaceable, peaceful; WordNet groups [1, 31]
+- base profit: profit, profitable; WordNet groups [1]; no pair: profitable
+- base prove: proof, prove; WordNet groups [1]; no pair: proof
+- base punish: punish, punishment, unpunished; WordNet groups [74]; no pair: unpunished
+- base quarrel: quarrel, quarreled, quarreling, quarrels, quarrelsome; WordNet groups [1]; no pair: quarrelsome
+- base quick: quick, quick-tempered; WordNet groups [1, 63]
+- base rest: rest, rested, rests, unrest; WordNet groups [1]; no pair: unrest
+- base revile: revile, reviled, reviler, reviles, reviling; WordNet groups [21]; no pair: reviler
+- base safekeep: safekeep, safekeeping; WordNet groups [1]; no pair: safekeep
+- base see: saw, see, unseen; WordNet groups [1]; no pair: unseen
+- base scorn: scorn, scorned, scorners, scornful, scorns; WordNet groups [1]; no pair: scornful
+- base self-control: self-control, self-controlled; WordNet groups []; no pair: self-control, self-controlled
+- base serve: serve, served, serves, service, serving, servitude; WordNet groups [1]; no pair: servitude
+- base sin: sin, sinful, sinned, sinner, sinner’s, sinning, sins; WordNet groups [1]; no pair: sinner’s
+- base skill: skill, skilled, skillful; WordNet groups [1]; no pair: skill
+- base sober: sober, sober-minded; WordNet groups [1]; no pair: sober-minded
+- base speech: speech, speechless; WordNet groups [1]; no pair: speechless
+- base stable: stability, unstable; WordNet groups [1]; no pair: stability
+- base strive: strife, strive, striven, strives, striving, strove; WordNet groups [1, 17]
+- base thank: thank, thanked, thankful, thanking, thanks, thanksgiving; WordNet groups [1, 22]
+- base truth: truth, truthful; WordNet groups [1, 59]

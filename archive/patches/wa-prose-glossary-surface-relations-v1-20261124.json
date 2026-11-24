@@ -1,0 +1,48 @@
+{
+ "_patch_meta": {
+  "patch_id": "PATCH-20261124T060500Z-PROSE-GLOSSARY-SURFACE-RELATIONS",
+  "patch_type": "PROSE",
+  "produced_at": "2026-11-24T06:05:00Z",
+  "session_b_status": null,
+  "researcher_approval": "PENDING",
+  "description": "Insert 2 draft glossary entries for the surface relation terms (escalation #2548). Section type glossary_programme already exists."
+ },
+ "operations": [
+  {
+   "op_id": "GLOSSARY-NEW-01-surface_relation",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id_lookup": {
+     "code": "glossary_programme"
+    },
+    "registry_id": null,
+    "heading": "surface relation",
+    "body": "[DEFINITION] A link between two surfaces that an outside source, WordNet 3.0, gives: they share a sense (synonym), are opposed (antonym), are derived forms of one another (derivational), stand in similar adjective senses (similar) or resolve to one WordNet base form (same_base). Each pair is held once, with a weight that counts the links.\n\n[BACKGROUND] Held in surface_relation, one row per pair of the single-word surfaces of the relation study; the scope and the rule for type and weight are settings (surfaces.relation_scope, surfaces.relation_pair_rules). WordNet is modern general English, so a relation is a candidate to read, not a finding of the study, and nothing it gives is written to a base. It is a second view beside the collections, not a replacement for them (escalation #2548).",
+    "status": "draft",
+    "author": "claude_code",
+    "metadata_json": "{\"glossary_key\": \"new.surface_relation\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2548\"}"
+   }
+  },
+  {
+   "op_id": "GLOSSARY-NEW-02-network_group",
+   "table": "prose_section",
+   "operation": "insert",
+   "record": {
+    "section_type_id_lookup": {
+     "code": "glossary_programme"
+    },
+    "registry_id": null,
+    "heading": "network group",
+    "body": "[DEFINITION] A set of surfaces joined by surface relations, directly or through other surfaces. The largest group joins most of the surfaces into one connected mass; the smaller groups (two to fifteen surfaces) are sets of surfaces that WordNet draws together; a surface with no relation to any other is a group of one.\n\n[BACKGROUND] Held in surface_network_group, one row per surface per grouping, kind main, small or no_pair; the earlier grouping is kept when a new one is made. The researcher takes the small groups as clear concepts and deals by hand with the surfaces that have no pair; these are the researcher's readings, recorded as such (escalations #2545, #2548).",
+    "status": "draft",
+    "author": "claude_code",
+    "metadata_json": "{\"glossary_key\": \"new.network_group\", \"aliases\": [], \"proposed_citations\": [], \"source\": \"escalation #2548\"}"
+   }
+  }
+ ],
+ "_patch_summary": {
+  "total_operations": 2,
+  "prose_section_inserts": 2
+ }
+}
