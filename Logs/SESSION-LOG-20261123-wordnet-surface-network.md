@@ -63,4 +63,6 @@ No API key was used or printed. No collection, surface group, observation or nod
 - Branch: `main`.
 - Commit: `b21bc8b3` (`session 20261123: pointed tasks, evidence report speed fix, network diagrams (#2545), WordNet pairing of the single-word surfaces with distance matrices, no-pair review and collection overlay, session log, compliance, close report`), 14 modified or deleted and 62 new paths staged with `git add -A`; `database/bible_research.db` and `backups/` were not touched.
 - Push output: `To https://github.com/lcilliers/Bible_Projects.git   217c0203..b21bc8b3  main -> main`.
-- Session close: `iba/app/reports/session-close-v404-20261123.md`, 0 open findings after 7 dispositions in the compliance file and 8 rules named as not followed.
+- Second close, 2026-11-24: commit `5d4e90f17afc536dfb888946e20a181e4218aefd` (`session 20261124: surface tables review, WordNet surface relations build brief and draft programme prose (#2548), overlay collection_a_b, session log, compliance, close report`); the compliance file of the developer-mode session `4e495962` (`Logs/compliance/COMPLIANCE-20261124-4e495962.md`) was left unstaged because that session is still running.
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git   205249e3..5d4e90f1  main -> main`.
+- Session close: `iba/app/reports/session-close-v406-20261124.md`, 0 open findings after 15 dispositions in the compliance file and 8 rules named as not followed.
